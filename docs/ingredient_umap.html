@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredient Embedding Space - MediaIngredientMech</title>
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #5568d3;
+            --secondary: #64748b;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--surface);
+            border-radius: 8px;
+            align-items: center;
+        }
+
+        .controls label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .controls select,
+        .controls input[type="search"] {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .controls input[type="search"] {
+            min-width: 300px;
+        }
+
+        #umap-plot {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--surface);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+
+        .info-panel {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .info-panel h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .info-panel ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-panel li {
+            padding: 0.3rem 0;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            max-width: 300px;
+            z-index: 1000;
+        }
+
+        .tooltip-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .tooltip-row {
+            margin: 0.25rem 0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--surface);
+            border-radius: 8px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧪 Ingredient Embedding Space</h1>
+            <p class="subtitle">UMAP projection of 986 media ingredients based on knowledge graph embeddings</p>
+            <a href="index.html" class="nav-link">← Back to Home</a>
+        </header>
+
+        <div class="stats" id="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="total-ingredients">986</div>
+                <div class="stat-label">Total Ingredients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="mapped-ingredients">-</div>
+                <div class="stat-label">Mapped to Ontologies</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="unique-sources">-</div>
+                <div class="stat-label">Ontology Sources</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="median-occurrences">-</div>
+                <div class="stat-label">Median Occurrences</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <label>
+                Color by:
+                <select id="color-by">
+                    <option value="ontology_source">Ontology Source</option>
+                    <option value="mapping_status">Mapping Status</option>
+                    <option value="mapping_quality">Mapping Quality</option>
+                </select>
+            </label>
+
+            <label>
+                Size by:
+                <select id="size-by">
+                    <option value="total_occurrences">Total Occurrences</option>
+                    <option value="media_count">Media Count</option>
+                    <option value="num_synonyms">Number of Synonyms</option>
+                </select>
+            </label>
+
+            <input type="search" id="search" placeholder="🔍 Search ingredients by name or ID...">
+        </div>
+
+        <div id="umap-plot"></div>
+
+        <div class="legend" id="legend"></div>
+
+        <div class="info-panel">
+            <h2>How to Interpret This Visualization</h2>
+            <ul>
+                <li><strong>Proximity:</strong> Ingredients close together have similar semantic relationships in the knowledge graph embedding space</li>
+                <li><strong>Color:</strong> Categorical grouping (default: ontology source like CHEBI, FOODON, NCIT)</li>
+                <li><strong>Size:</strong> Metric of interest (default: total occurrences across media recipes)</li>
+                <li><strong>Hover:</strong> View detailed metadata tooltip</li>
+                <li><strong>Click:</strong> View detailed information (future: link to detail page)</li>
+                <li><strong>Zoom/Pan:</strong> Use mouse wheel to zoom, click and drag to pan</li>
+                <li><strong>Search:</strong> Type to highlight matching ingredients</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        // Load data
+        let ingredientData = [];
+
+        fetch('data/ingredient_umap.json')
+            .then(response => response.json())
+            .then(data => {
+                ingredientData = data;
+                updateStats();
+                renderUMAP();
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);
+                document.getElementById('umap-plot').innerHTML =
+                    '<p style="padding: 2rem; text-align: center; color: #ef4444;">Error loading visualization data</p>';
+            });
+
+        function updateStats() {
+            const mapped = ingredientData.filter(d => d.mapping_status === 'MAPPED').length;
+            const sources = new Set(ingredientData.map(d => d.ontology_source).filter(s => s)).size;
+            const occurrences = ingredientData.map(d => d.total_occurrences).sort((a, b) => a - b);
+            const median = occurrences[Math.floor(occurrences.length / 2)] || 0;
+
+            document.getElementById('mapped-ingredients').textContent = mapped;
+            document.getElementById('unique-sources').textContent = sources;
+            document.getElementById('median-occurrences').textContent = median;
+        }
+
+        function renderUMAP() {
+            const container = document.getElementById('umap-plot');
+            const width = container.clientWidth || 1200;
+            const height = 700;
+            const margin = { top: 20, right: 20, bottom: 40, left: 60 };
+
+            // Clear existing
+            container.innerHTML = '';
+
+            // Create SVG
+            const svg = d3.select('#umap-plot')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            const g = svg.append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            const plotWidth = width - margin.left - margin.right;
+            const plotHeight = height - margin.top - margin.bottom;
+
+            // Scales
+            const xExtent = d3.extent(ingredientData, d => d.umap_x);
+            const yExtent = d3.extent(ingredientData, d => d.umap_y);
+
+            const xScale = d3.scaleLinear()
+                .domain(xExtent)
+                .range([0, plotWidth]);
+
+            const yScale = d3.scaleLinear()
+                .domain(yExtent)
+                .range([plotHeight, 0]);
+
+            // Size scale
+            let currentSizeBy = 'total_occurrences';
+            const sizeScale = d3.scaleSqrt()
+                .domain([0, d3.max(ingredientData, d => d[currentSizeBy])])
+                .range([3, 15]);
+
+            // Color scale
+            let currentColorBy = 'ontology_source';
+            const categories = [...new Set(ingredientData.map(d => d[currentColorBy]))].filter(c => c).sort();
+            const colorScale = d3.scaleOrdinal()
+                .domain(categories)
+                .range(d3.schemeTableau10);
+
+            // Axes
+            const xAxis = d3.axisBottom(xScale).ticks(10);
+            const yAxis = d3.axisLeft(yScale).ticks(10);
+
+            g.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0,${plotHeight})`)
+                .call(xAxis)
+                .append('text')
+                .attr('x', plotWidth / 2)
+                .attr('y', 35)
+                .attr('fill', '#1e293b')
+                .attr('font-weight', 500)
+                .text('UMAP Dimension 1');
+
+            g.append('g')
+                .attr('class', 'y-axis')
+                .call(yAxis)
+                .append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -plotHeight / 2)
+                .attr('y', -45)
+                .attr('fill', '#1e293b')
+                .attr('font-weight', 500)
+                .text('UMAP Dimension 2');
+
+            // Tooltip
+            const tooltip = d3.select('#tooltip');
+
+            // Zoom behavior
+            const zoom = d3.zoom()
+                .scaleExtent([0.5, 10])
+                .on('zoom', (event) => {
+                    g.attr('transform', `translate(${margin.left + event.transform.x},${margin.top + event.transform.y}) scale(${event.transform.k})`);
+                });
+
+            svg.call(zoom);
+
+            // Draw points
+            const circles = g.selectAll('circle')
+                .data(ingredientData)
+                .join('circle')
+                .attr('cx', d => xScale(d.umap_x))
+                .attr('cy', d => yScale(d.umap_y))
+                .attr('r', d => sizeScale(d[currentSizeBy] || 1))
+                .attr('fill', d => colorScale(d[currentColorBy] || 'Unknown'))
+                .attr('fill-opacity', 0.7)
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 1)
+                .style('cursor', 'pointer')
+                .on('mouseover', function(event, d) {
+                    d3.select(this)
+                        .attr('stroke', '#000')
+                        .attr('stroke-width', 2);
+
+                    tooltip
+                        .style('opacity', 1)
+                        .style('left', (event.pageX + 10) + 'px')
+                        .style('top', (event.pageY - 10) + 'px')
+                        .html(`
+                            <div class="tooltip-title">${d.name}</div>
+                            <div class="tooltip-row">ID: ${d.id}</div>
+                            ${d.ontology_label ? `<div class="tooltip-row">Ontology: ${d.ontology_label}</div>` : ''}
+                            <div class="tooltip-row">Source: ${d.ontology_source || 'N/A'}</div>
+                            <div class="tooltip-row">Status: ${d.mapping_status}</div>
+                            <div class="tooltip-row">Occurrences: ${d.total_occurrences}</div>
+                            <div class="tooltip-row">Media count: ${d.media_count}</div>
+                            <div class="tooltip-row">Synonyms: ${d.num_synonyms}</div>
+                        `);
+                })
+                .on('mouseout', function() {
+                    d3.select(this)
+                        .attr('stroke', '#fff')
+                        .attr('stroke-width', 1);
+                    tooltip.style('opacity', 0);
+                })
+                .on('click', (event, d) => {
+                    console.log('Clicked:', d);
+                });
+
+            // Update legend
+            updateLegend(colorScale, currentColorBy);
+
+            // Controls
+            document.getElementById('color-by').addEventListener('change', (e) => {
+                currentColorBy = e.target.value;
+                const newCategories = [...new Set(ingredientData.map(d => d[currentColorBy]))].filter(c => c).sort();
+                colorScale.domain(newCategories);
+
+                circles.attr('fill', d => colorScale(d[currentColorBy] || 'Unknown'));
+                updateLegend(colorScale, currentColorBy);
+            });
+
+            document.getElementById('size-by').addEventListener('change', (e) => {
+                currentSizeBy = e.target.value;
+                sizeScale.domain([0, d3.max(ingredientData, d => d[currentSizeBy])]);
+                circles.transition()
+                    .duration(300)
+                    .attr('r', d => sizeScale(d[currentSizeBy] || 1));
+            });
+
+            document.getElementById('search').addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                circles
+                    .attr('fill-opacity', d => {
+                        if (!query) return 0.7;
+                        return (d.name.toLowerCase().includes(query) || d.id.toLowerCase().includes(query)) ? 0.9 : 0.2;
+                    })
+                    .attr('stroke-width', d => {
+                        if (!query) return 1;
+                        return (d.name.toLowerCase().includes(query) || d.id.toLowerCase().includes(query)) ? 2 : 1;
+                    });
+            });
+        }
+
+        function updateLegend(colorScale, attribute) {
+            const legend = document.getElementById('legend');
+            legend.innerHTML = '';
+
+            colorScale.domain().forEach(value => {
+                const item = document.createElement('div');
+                item.className = 'legend-item';
+                item.innerHTML = `
+                    <div class="legend-color" style="background-color: ${colorScale(value)}"></div>
+                    <span>${value || 'Unknown'}</span>
+                `;
+                legend.appendChild(item);
+            });
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (ingredientData.length > 0) {
+                renderUMAP();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -41,6 +41,10 @@ gen-docs:
 export-browser:
     python scripts/browser_export.py
 
+# Generate UMAP visualization
+generate-umap:
+    python scripts/generate_ingredient_umap.py
+
 # Build complete documentation site
 build-docs: gen-docs export-browser
     @echo "Documentation built in docs/"
