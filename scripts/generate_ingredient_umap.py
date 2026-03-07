@@ -255,6 +255,12 @@ def build_visualization_data(
 
             # Extract metadata
             preferred_term = ingredient.get('preferred_term', 'Unknown')
+
+            # Better display name for empty placeholders
+            if preferred_term.startswith('empty_'):
+                # Use identifier instead for empty placeholders
+                preferred_term = f"Unnamed Component ({ingredient_id})"
+
             mapping_status = ingredient.get('mapping_status', 'UNKNOWN')
 
             # Ontology info
