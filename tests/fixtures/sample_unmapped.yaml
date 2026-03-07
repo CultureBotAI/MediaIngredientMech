@@ -1,0 +1,215 @@
+ingredients:
+  - identifier: "UNMAPPED_001"
+    preferred_term: "peptone"
+    mapping_status: UNMAPPED
+    synonyms:
+      - synonym_text: "peptone from casein"
+        synonym_type: RAW_TEXT
+        source: "media recipe"
+        occurrence_count: 15
+      - synonym_text: "casein digest"
+        synonym_type: RELATED_SYNONYM
+        source: "media recipe"
+        occurrence_count: 5
+    occurrence_statistics:
+      total_occurrences: 85
+      media_count: 50
+    curation_history:
+      - timestamp: "2024-01-15T10:30:00"
+        curator: "auto-import"
+        action: IMPORTED
+        changes: "Imported from CultureMech - no CHEBI mapping found"
+        new_status: UNMAPPED
+    notes: "Generic peptone - could map to several CHEBI terms depending on source"
+
+  - identifier: "UNMAPPED_002"
+    preferred_term: "yeast extract"
+    mapping_status: UNMAPPED
+    synonyms:
+      - synonym_text: "yeast autolysate"
+        synonym_type: RELATED_SYNONYM
+        source: "media recipe"
+        occurrence_count: 8
+    occurrence_statistics:
+      total_occurrences: 120
+      media_count: 75
+    curation_history:
+      - timestamp: "2024-01-15T10:30:00"
+        curator: "auto-import"
+        action: IMPORTED
+        changes: "Imported from CultureMech"
+        new_status: UNMAPPED
+
+  - identifier: "UNMAPPED_003"
+    preferred_term: "trace elements solution"
+    mapping_status: NEEDS_EXPERT
+    synonyms:
+      - synonym_text: "trace metals"
+        synonym_type: RELATED_SYNONYM
+        source: "media recipe"
+        occurrence_count: 12
+      - synonym_text: "SL-10 solution"
+        synonym_type: RAW_TEXT
+        source: "DSMZ recipes"
+        occurrence_count: 3
+    occurrence_statistics:
+      total_occurrences: 60
+      media_count: 40
+    curation_history:
+      - timestamp: "2024-01-15T10:30:00"
+        curator: "auto-import"
+        action: IMPORTED
+        new_status: UNMAPPED
+      - timestamp: "2024-02-10T11:00:00"
+        curator: "auto-curator"
+        action: STATUS_CHANGED
+        previous_status: UNMAPPED
+        new_status: NEEDS_EXPERT
+        changes: "Mixture of compounds - requires expert decomposition"
+    notes: "This is a mixture, not a single compound. Needs decomposition into individual trace elements."
+
+  - identifier: "UNMAPPED_004"
+    preferred_term: "vitamin solution"
+    mapping_status: NEEDS_EXPERT
+    synonyms:
+      - synonym_text: "vitamin mix"
+        synonym_type: RELATED_SYNONYM
+        source: "media recipe"
+        occurrence_count: 7
+    occurrence_statistics:
+      total_occurrences: 45
+      media_count: 30
+    notes: "Mixture of vitamins - needs expert decomposition"
+
+  - identifier: "UNMAPPED_005"
+    preferred_term: "casamino acids"
+    mapping_status: PENDING_REVIEW
+    ontology_mapping:
+      ontology_id: "CHEBI:33709"
+      ontology_label: "amino acid"
+      ontology_source: CHEBI
+      mapping_quality: PROVISIONAL
+      evidence:
+        - evidence_type: LLM_SUGGESTION
+          source: "gpt-4"
+          confidence_score: 0.6
+          notes: "Broad match - casamino acids is a mixture of amino acids"
+    synonyms:
+      - synonym_text: "casein hydrolysate"
+        synonym_type: EXACT_SYNONYM
+        source: "Difco manual"
+        occurrence_count: 10
+    occurrence_statistics:
+      total_occurrences: 55
+      media_count: 35
+    curation_history:
+      - timestamp: "2024-01-15T10:30:00"
+        curator: "auto-import"
+        action: IMPORTED
+        new_status: UNMAPPED
+      - timestamp: "2024-02-15T16:00:00"
+        curator: "llm-assistant"
+        action: MAPPED
+        changes: "LLM suggested CHEBI:33709 (amino acid) as broad match"
+        previous_status: UNMAPPED
+        new_status: PENDING_REVIEW
+        llm_assisted: true
+        llm_model: "gpt-4"
+
+  - identifier: "UNMAPPED_006"
+    preferred_term: "agar"
+    mapping_status: IN_PROGRESS
+    synonyms:
+      - synonym_text: "agar-agar"
+        synonym_type: EXACT_SYNONYM
+        source: "common usage"
+        occurrence_count: 20
+      - synonym_text: "bacteriological agar"
+        synonym_type: RELATED_SYNONYM
+        source: "media recipe"
+        occurrence_count: 8
+    occurrence_statistics:
+      total_occurrences: 200
+      media_count: 150
+    notes: "Looking for specific CHEBI term for agar polysaccharide"
+
+  - identifier: "UNMAPPED_007"
+    preferred_term: "brain heart infusion"
+    mapping_status: AMBIGUOUS
+    synonyms:
+      - synonym_text: "BHI"
+        synonym_type: ABBREVIATION
+        source: "common usage"
+        occurrence_count: 30
+      - synonym_text: "brain heart infusion broth"
+        synonym_type: RAW_TEXT
+        source: "media recipe"
+        occurrence_count: 12
+    occurrence_statistics:
+      total_occurrences: 65
+      media_count: 40
+    notes: "Could be mapped as medium component or as the medium itself"
+
+  - identifier: "UNMAPPED_008"
+    preferred_term: "Wolfe's mineral solution"
+    mapping_status: UNMAPPED
+    synonyms:
+      - synonym_text: "mineral solution"
+        synonym_type: RELATED_SYNONYM
+        source: "media recipe"
+        occurrence_count: 4
+    occurrence_statistics:
+      total_occurrences: 18
+      media_count: 12
+
+  - identifier: "UNMAPPED_009"
+    preferred_term: "resazurin"
+    mapping_status: PENDING_REVIEW
+    ontology_mapping:
+      ontology_id: "CHEBI:8806"
+      ontology_label: "resazurin"
+      ontology_source: CHEBI
+      mapping_quality: LLM_ASSISTED
+      evidence:
+        - evidence_type: LLM_SUGGESTION
+          source: "gpt-4"
+          confidence_score: 0.95
+    occurrence_statistics:
+      total_occurrences: 30
+      media_count: 20
+    curation_history:
+      - timestamp: "2024-01-15T10:30:00"
+        curator: "auto-import"
+        action: IMPORTED
+        new_status: UNMAPPED
+      - timestamp: "2024-03-01T09:00:00"
+        curator: "llm-assistant"
+        action: MAPPED
+        previous_status: UNMAPPED
+        new_status: PENDING_REVIEW
+        llm_assisted: true
+        llm_model: "gpt-4"
+
+  - identifier: "UNMAPPED_010"
+    preferred_term: "soil extract"
+    mapping_status: REJECTED
+    synonyms:
+      - synonym_text: "soil water extract"
+        synonym_type: RAW_TEXT
+        source: "media recipe"
+        occurrence_count: 2
+    occurrence_statistics:
+      total_occurrences: 8
+      media_count: 5
+    curation_history:
+      - timestamp: "2024-01-15T10:30:00"
+        curator: "auto-import"
+        action: IMPORTED
+        new_status: UNMAPPED
+      - timestamp: "2024-02-20T13:00:00"
+        curator: "expert-curator"
+        action: STATUS_CHANGED
+        previous_status: UNMAPPED
+        new_status: REJECTED
+        changes: "Not a single compound - environmental extract with no ontology equivalent"
+    notes: "Rejected - undefined mixture from soil, no appropriate ontology term"

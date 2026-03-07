@@ -1,0 +1,148 @@
+# Invalid records for validation testing
+# Each record has specific validation errors noted in comments
+
+# Missing required fields
+missing_identifier:
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+
+missing_preferred_term:
+  identifier: "CHEBI:26710"
+  mapping_status: MAPPED
+
+missing_mapping_status:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+
+# Invalid enum values
+invalid_mapping_status:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: INVALID_STATUS
+
+invalid_ontology_source:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  ontology_mapping:
+    ontology_id: "CHEBI:26710"
+    ontology_label: "sodium chloride"
+    ontology_source: INVALID_SOURCE
+    mapping_quality: EXACT_MATCH
+
+invalid_mapping_quality:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  ontology_mapping:
+    ontology_id: "CHEBI:26710"
+    ontology_label: "sodium chloride"
+    ontology_source: CHEBI
+    mapping_quality: INVALID_QUALITY
+
+invalid_evidence_type:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  ontology_mapping:
+    ontology_id: "CHEBI:26710"
+    ontology_label: "sodium chloride"
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+      - evidence_type: INVALID_TYPE
+        source: "test"
+
+invalid_synonym_type:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  synonyms:
+    - synonym_text: "NaCl"
+      synonym_type: INVALID_TYPE
+
+invalid_curation_action:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  curation_history:
+    - timestamp: "2024-01-01T00:00:00"
+      curator: "test"
+      action: INVALID_ACTION
+
+# Invalid ontology ID pattern (should be PREFIX:DIGITS)
+invalid_ontology_id_format:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  ontology_mapping:
+    ontology_id: "chebi-26710"
+    ontology_label: "sodium chloride"
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+
+invalid_ontology_id_no_colon:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  ontology_mapping:
+    ontology_id: "CHEBI26710"
+    ontology_label: "sodium chloride"
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+
+# Missing required nested fields
+missing_ontology_mapping_fields:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  ontology_mapping:
+    ontology_id: "CHEBI:26710"
+
+missing_evidence_required_fields:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  ontology_mapping:
+    ontology_id: "CHEBI:26710"
+    ontology_label: "sodium chloride"
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+      - source: "test"
+
+missing_synonym_text:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  synonyms:
+    - synonym_type: ABBREVIATION
+
+missing_curation_event_fields:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  curation_history:
+    - curator: "test"
+
+# Type errors
+invalid_confidence_score_type:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  ontology_mapping:
+    ontology_id: "CHEBI:26710"
+    ontology_label: "sodium chloride"
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+      - evidence_type: DATABASE_MATCH
+        confidence_score: "not_a_number"
+
+invalid_occurrence_count_type:
+  identifier: "CHEBI:26710"
+  preferred_term: "sodium chloride"
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: "many"
+    media_count: 10

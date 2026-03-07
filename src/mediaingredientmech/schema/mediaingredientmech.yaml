@@ -1,0 +1,289 @@
+id: https://w3id.org/mediaingredientmech
+name: mediaingredientmech-schema
+title: MediaIngredientMech Schema
+description: >-
+  LinkML schema for curating media ingredient ontology mappings with LLM assistance tracking.
+  Provides structured workflow for mapping ingredients to CHEBI/FOODON terms with full audit trails.
+
+license: MIT
+see_also:
+  - https://github.com/KG-Hub/MediaIngredientMech
+  - https://github.com/KG-Hub/CultureMech
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  mediaingredientmech: https://w3id.org/mediaingredientmech/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  FOODON: http://purl.obolibrary.org/obo/FOODON_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  MESH: http://id.nlm.nih.gov/mesh/
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+
+default_prefix: mediaingredientmech
+default_range: string
+
+imports:
+  - linkml:types
+
+classes:
+  IngredientCollection:
+    tree_root: true
+    description: Root container for all ingredient records
+    attributes:
+      generation_date:
+        range: datetime
+        description: Timestamp when this collection was generated
+      total_count:
+        range: integer
+        description: Total number of ingredient records
+      mapped_count:
+        range: integer
+        description: Number of mapped ingredients
+      unmapped_count:
+        range: integer
+        description: Number of unmapped ingredients
+      ingredients:
+        range: IngredientRecord
+        multivalued: true
+        inlined_as_list: true
+        description: List of all ingredient records
+
+  IngredientRecord:
+    tree_root: true
+    description: >-
+      Core record for a media ingredient with ontology mapping, synonyms, and curation history.
+      Represents either a mapped ingredient (with ontology_id) or unmapped ingredient (needs curation).
+      Can serve as root element for individual YAML files or as elements in IngredientCollection.
+    attributes:
+      identifier:
+        identifier: true
+        required: true
+        description: >-
+          Unique identifier - either ontology ID (e.g., CHEBI:26710) for mapped ingredients
+          or generated UUID/placeholder (e.g., UNMAPPED_001) for unmapped ingredients
+      preferred_term:
+        required: true
+        description: Canonical name for this ingredient
+      ontology_mapping:
+        range: OntologyMapping
+        description: Ontology term mapping (CHEBI/FOODON)
+      synonyms:
+        range: IngredientSynonym
+        multivalued: true
+        inlined_as_list: true
+        description: Alternative names and raw text variants
+      mapping_status:
+        range: MappingStatusEnum
+        required: true
+        description: Current mapping status
+      occurrence_statistics:
+        range: OccurrenceStats
+        description: Usage statistics across media recipes
+      curation_history:
+        range: CurationEvent
+        multivalued: true
+        inlined_as_list: true
+        description: Audit trail of all curation actions
+      notes:
+        description: Free-text curation notes
+
+  OntologyMapping:
+    description: Mapping to an ontology term (CHEBI, FOODON, etc.)
+    attributes:
+      ontology_id:
+        required: true
+        description: Ontology term ID in CURIE format (e.g., CHEBI:26710)
+        pattern: "^[A-Z]+:[0-9]+$"
+      ontology_label:
+        required: true
+        description: Human-readable label for the term
+      ontology_source:
+        range: OntologySourceEnum
+        required: true
+        description: Source ontology
+      mapping_quality:
+        range: MappingQualityEnum
+        required: true
+        description: Quality assessment of this mapping
+      evidence:
+        range: MappingEvidence
+        multivalued: true
+        inlined_as_list: true
+        description: Evidence supporting this mapping
+
+  MappingEvidence:
+    description: Evidence for an ontology mapping
+    attributes:
+      evidence_type:
+        range: EvidenceTypeEnum
+        required: true
+        description: Type of evidence
+      source:
+        description: Source of evidence (e.g., database name, curator name)
+      confidence_score:
+        range: float
+        description: Confidence score (0.0-1.0)
+      notes:
+        description: Additional context
+
+  IngredientSynonym:
+    description: Alternative name or raw text variant for an ingredient
+    attributes:
+      synonym_text:
+        required: true
+        description: The synonym text
+      synonym_type:
+        range: SynonymTypeEnum
+        description: Type of synonym
+      source:
+        description: Where this synonym came from (e.g., database, curator)
+      occurrence_count:
+        range: integer
+        description: Number of times this variant appears
+
+  OccurrenceStats:
+    description: Statistics about ingredient usage across media
+    attributes:
+      total_occurrences:
+        range: integer
+        required: true
+        description: Total number of occurrences across all media
+      media_count:
+        range: integer
+        required: true
+        description: Number of unique media containing this ingredient
+      sample_media:
+        multivalued: true
+        description: Sample media names (for reference)
+      concentration_range:
+        description: Observed concentration range (if available)
+
+  CurationEvent:
+    description: Audit trail entry for a curation action
+    attributes:
+      timestamp:
+        range: datetime
+        required: true
+        description: When this action occurred
+      curator:
+        required: true
+        description: Who performed this action (username or system)
+      action:
+        range: CurationActionEnum
+        required: true
+        description: Type of curation action
+      changes:
+        description: Description of what changed
+      previous_status:
+        range: MappingStatusEnum
+        description: Status before this action
+      new_status:
+        range: MappingStatusEnum
+        description: Status after this action
+      llm_assisted:
+        range: boolean
+        description: Whether LLM assistance was used
+      llm_model:
+        description: LLM model identifier (if llm_assisted=true)
+      notes:
+        description: Additional context for this action
+
+enums:
+  MappingStatusEnum:
+    permissible_values:
+      MAPPED:
+        description: Has valid ontology mapping
+      UNMAPPED:
+        description: No ontology mapping exists
+      PENDING_REVIEW:
+        description: Suggested mapping awaiting review
+      IN_PROGRESS:
+        description: Currently being curated
+      NEEDS_EXPERT:
+        description: Requires expert domain knowledge
+      AMBIGUOUS:
+        description: Multiple possible interpretations
+      REJECTED:
+        description: Determined to be invalid or duplicate
+
+  MappingQualityEnum:
+    permissible_values:
+      EXACT_MATCH:
+        description: Direct exact match to ontology term
+      SYNONYM_MATCH:
+        description: Matches known synonym in ontology
+      CLOSE_MATCH:
+        description: Semantically close but not exact
+      MANUAL_CURATION:
+        description: Manually curated by expert
+      LLM_ASSISTED:
+        description: Mapping suggested by LLM, human-verified
+      PROVISIONAL:
+        description: Tentative mapping needing verification
+
+  OntologySourceEnum:
+    permissible_values:
+      CHEBI:
+        description: Chemical Entities of Biological Interest
+      FOODON:
+        description: Food Ontology
+      NCIT:
+        description: NCI Thesaurus
+      MESH:
+        description: Medical Subject Headings
+      UBERON:
+        description: Uber Anatomy Ontology
+      ENVO:
+        description: Environment Ontology
+
+  CurationActionEnum:
+    permissible_values:
+      CREATED:
+        description: Record created
+      IMPORTED:
+        description: Imported from external source
+      MAPPED:
+        description: Ontology mapping added
+      SYNONYM_ADDED:
+        description: Synonym added
+      VALIDATED:
+        description: Mapping validated
+      CORRECTED:
+        description: Mapping or data corrected
+      MERGED:
+        description: Merged with another record
+      STATUS_CHANGED:
+        description: Mapping status changed
+      ANNOTATED:
+        description: Notes or metadata added
+
+  SynonymTypeEnum:
+    permissible_values:
+      EXACT_SYNONYM:
+        description: Exact alternative name
+      RELATED_SYNONYM:
+        description: Related but not identical
+      RAW_TEXT:
+        description: Raw text from original data
+      ABBREVIATION:
+        description: Abbreviated form
+      COMMON_NAME:
+        description: Common or colloquial name
+      SYSTEMATIC_NAME:
+        description: Systematic chemical name
+
+  EvidenceTypeEnum:
+    permissible_values:
+      DATABASE_MATCH:
+        description: Direct match in ontology database
+      CURATOR_JUDGMENT:
+        description: Expert curator decision
+      LLM_SUGGESTION:
+        description: LLM-generated suggestion
+      LITERATURE:
+        description: Based on literature evidence
+      TEXT_SIMILARITY:
+        description: Based on text similarity metrics
+      CROSS_REFERENCE:
+        description: Cross-reference to other database

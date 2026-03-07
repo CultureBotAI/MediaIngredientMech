@@ -1,0 +1,30 @@
+# GitHub Pages configuration for MediaIngredientMech
+
+theme: jekyll-theme-minimal
+title: MediaIngredientMech
+description: Curated Media Ingredient Ontology Mappings with LLM-Assisted Workflows
+show_downloads: true
+
+# Exclude files from Jekyll processing
+exclude:
+  - data/
+
+# Include additional files
+include:
+  - _config.yml
+  - index.html
+  - browser.html
+
+# Plugins
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false

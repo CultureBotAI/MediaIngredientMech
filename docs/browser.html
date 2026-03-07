@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaIngredientMech Browser</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            opacity: 0.9;
+        }
+
+        .stats {
+            background: white;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            border-right: 1px solid #eee;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .controls {
+            background: white;
+            padding: 1.5rem;
+            margin: 0 auto 2rem;
+            max-width: 1200px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .ingredient-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .ingredient-card {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .ingredient-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .ingredient-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .ingredient-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-mapped {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-unmapped {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .ingredient-ontology {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .ingredient-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .meta-item {
+            color: #666;
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .synonyms {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .synonyms-label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .synonym-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .synonym-tag {
+            background: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 0.75rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #667eea;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🧪 MediaIngredientMech Browser</h1>
+        <p>Explore 1,131 curated media ingredients with ontology mappings</p>
+    </header>
+
+    <div class="stats" id="stats">
+        <div class="stat">
+            <div class="stat-value" id="total-count">-</div>
+            <div class="stat-label">Total Ingredients</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="mapped-count">-</div>
+            <div class="stat-label">Mapped to Ontologies</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="unmapped-count">-</div>
+            <div class="stat-label">Unmapped</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" id="filtered-count">-</div>
+            <div class="stat-label">Currently Showing</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <input type="text"
+               id="search"
+               class="search-box"
+               placeholder="🔍 Search ingredients by name, synonym, or ontology ID...">
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="filter-status">Mapping Status</label>
+                <select id="filter-status">
+                    <option value="">All Statuses</option>
+                    <option value="MAPPED">Mapped</option>
+                    <option value="UNMAPPED">Unmapped</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="filter-source">Ontology Source</label>
+                <select id="filter-source">
+                    <option value="">All Sources</option>
+                    <option value="CHEBI">CHEBI</option>
+                    <option value="FOODON">FOODON</option>
+                    <option value="NCIT">NCIT</option>
+                    <option value="MESH">MESH</option>
+                    <option value="UBERON">UBERON</option>
+                    <option value="ENVO">ENVO</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="filter-quality">Mapping Quality</label>
+                <select id="filter-quality">
+                    <option value="">All Qualities</option>
+                    <option value="EXACT_MATCH">Exact Match</option>
+                    <option value="SYNONYM_MATCH">Synonym Match</option>
+                    <option value="CLOSE_MATCH">Close Match</option>
+                    <option value="MANUAL_CURATION">Manual Curation</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="ingredient-list" id="ingredient-list">
+        <div class="loading">Loading ingredients...</div>
+    </div>
+
+    <footer>
+        <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="index.md">Schema Documentation</a></p>
+    </footer>
+
+    <script>
+        let allIngredients = [];
+        let filteredIngredients = [];
+
+        // Load data
+        fetch('data/ingredients.json')
+            .then(response => response.json())
+            .then(data => {
+                allIngredients = data.ingredients;
+                updateStats(data.metadata);
+                applyFilters();
+            })
+            .catch(error => {
+                document.getElementById('ingredient-list').innerHTML =
+                    '<div class="no-results">Error loading data: ' + error + '</div>';
+            });
+
+        // Update statistics
+        function updateStats(metadata) {
+            document.getElementById('total-count').textContent = metadata.total_ingredients;
+            document.getElementById('mapped-count').textContent = metadata.mapped_count;
+            document.getElementById('unmapped-count').textContent = metadata.unmapped_count;
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const statusFilter = document.getElementById('filter-status').value;
+            const sourceFilter = document.getElementById('filter-source').value;
+            const qualityFilter = document.getElementById('filter-quality').value;
+
+            filteredIngredients = allIngredients.filter(ing => {
+                const matchesSearch = !searchTerm || ing.searchable.includes(searchTerm);
+                const matchesStatus = !statusFilter || ing.mapping_status === statusFilter;
+                const matchesSource = !sourceFilter || ing.ontology_source === sourceFilter;
+                const matchesQuality = !qualityFilter || ing.mapping_quality === qualityFilter;
+
+                return matchesSearch && matchesStatus && matchesSource && matchesQuality;
+            });
+
+            document.getElementById('filtered-count').textContent = filteredIngredients.length;
+            renderIngredients();
+        }
+
+        // Render ingredients
+        function renderIngredients() {
+            const container = document.getElementById('ingredient-list');
+
+            if (filteredIngredients.length === 0) {
+                container.innerHTML = '<div class="no-results">No ingredients match your filters</div>';
+                return;
+            }
+
+            container.innerHTML = filteredIngredients.map(ing => `
+                <div class="ingredient-card">
+                    <div class="ingredient-header">
+                        <div class="ingredient-title">${escapeHtml(ing.preferred_term)}</div>
+                        <span class="badge badge-${ing.mapping_status.toLowerCase()}">${ing.mapping_status}</span>
+                    </div>
+
+                    ${ing.ontology_id ? `
+                        <div class="ingredient-ontology">
+                            🔗 ${ing.ontology_source}:${ing.ontology_id.split(':')[1]} — ${escapeHtml(ing.ontology_label)}
+                            ${ing.mapping_quality ? `<span style="color: #666; font-size: 0.85rem;">(${ing.mapping_quality})</span>` : ''}
+                        </div>
+                    ` : ''}
+
+                    <div class="ingredient-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">ID:</span> ${ing.id}
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Occurrences:</span> ${ing.total_occurrences || 0}
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Media Count:</span> ${ing.media_count || 0}
+                        </div>
+                        ${ing.curator ? `
+                        <div class="meta-item">
+                            <span class="meta-label">Curator:</span> ${ing.curator}
+                        </div>
+                        ` : ''}
+                    </div>
+
+                    ${ing.synonyms.length > 0 ? `
+                        <div class="synonyms">
+                            <div class="synonyms-label">Synonyms (${ing.synonym_count}):</div>
+                            <div class="synonym-tags">
+                                ${ing.synonyms.slice(0, 10).map(syn =>
+                                    `<span class="synonym-tag">${escapeHtml(syn).substring(0, 80)}</span>`
+                                ).join('')}
+                                ${ing.synonyms.length > 10 ? `<span class="synonym-tag">+${ing.synonyms.length - 10} more</span>` : ''}
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        // Escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Event listeners
+        document.getElementById('search').addEventListener('input', applyFilters);
+        document.getElementById('filter-status').addEventListener('change', applyFilters);
+        document.getElementById('filter-source').addEventListener('change', applyFilters);
+        document.getElementById('filter-quality').addEventListener('change', applyFilters);
+    </script>
+</body>
+</html>
