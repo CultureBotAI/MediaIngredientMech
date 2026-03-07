@@ -116,7 +116,9 @@ class IngredientUMAPGenerator:
         # Collect ingredient data
         ingredient_vectors = []
         ingredient_ids = []
+        unmapped_ids = []  # Track which ones are unmapped without embeddings
 
+        # First pass: collect all ingredients with real embeddings
         for category in ['mapped', 'unmapped']:
             category_dir = ingredients_dir / category
             if not category_dir.exists():
@@ -144,15 +146,11 @@ class IngredientUMAPGenerator:
                             found_embedding = True
 
                     # Strategy 3: For unmapped ingredients, try to find embeddings from synonyms
-                    # Look for CHEBI/ontology IDs mentioned in synonyms
                     if not found_embedding and ingredient_id.startswith('UNMAPPED'):
                         synonyms = ingredient.get('synonyms', [])
                         for syn in synonyms:
                             syn_text = syn.get('synonym_text', '')
-                            # Look for patterns like "CAS: XXXX" or chemical formulas
-                            # Try common chemical name patterns
                             import re
-                            # Extract potential CHEBI IDs from text
                             chebi_matches = re.findall(r'CHEBI:?\s*(\d+)', syn_text, re.IGNORECASE)
                             for chebi_id in chebi_matches:
                                 potential_id = f"CHEBI:{chebi_id}"
@@ -164,13 +162,28 @@ class IngredientUMAPGenerator:
                             if found_embedding:
                                 break
 
-                    # Strategy 4: Use preferred_term to search for similar chemical names
-                    # (This would require fuzzy matching - skip for now but could be added)
+                    # Strategy 4: If still not found and it's unmapped, add to unmapped list
+                    if not found_embedding and ingredient_id.startswith('UNMAPPED'):
+                        unmapped_ids.append(ingredient_id)
 
                 except Exception as e:
                     console.print(f"[red]Error loading {yaml_file.name}: {e}[/red]")
 
         console.print(f"[green]Found embeddings for {len(ingredient_ids)} ingredients[/green]")
+        console.print(f"[yellow]Adding {len(unmapped_ids)} unmapped ingredients with synthetic embeddings[/yellow]")
+
+        # Second pass: Add unmapped ingredients with synthetic embeddings
+        if len(ingredient_vectors) > 0:
+            # Create mean embedding for reference
+            mean_embedding = np.mean(ingredient_vectors, axis=0)
+
+            for unmapped_id in unmapped_ids:
+                # Create a synthetic embedding: mean + small random noise
+                # This will place unmapped ingredients in a cluster near the center
+                noise_scale = 0.1 * np.std(ingredient_vectors, axis=0)
+                synthetic_embedding = mean_embedding + np.random.randn(len(mean_embedding)) * noise_scale
+                ingredient_vectors.append(synthetic_embedding)
+                ingredient_ids.append(unmapped_id)
 
         if len(ingredient_vectors) == 0:
             raise ValueError("No ingredient embeddings found!")

@@ -201,13 +201,13 @@
     <div class="container">
         <header>
             <h1>🧪 Ingredient Embedding Space</h1>
-            <p class="subtitle">UMAP projection of 986 media ingredients based on knowledge graph embeddings</p>
+            <p class="subtitle">UMAP projection of 1,122 media ingredients (986 with KG embeddings + 136 unmapped with synthetic embeddings)</p>
             <a href="index.html" class="nav-link">← Back to Home</a>
         </header>
 
         <div class="stats" id="stats">
             <div class="stat-item">
-                <div class="stat-value" id="total-ingredients">986</div>
+                <div class="stat-value" id="total-ingredients">-</div>
                 <div class="stat-label">Total Ingredients</div>
             </div>
             <div class="stat-item">
@@ -215,8 +215,8 @@
                 <div class="stat-label">Mapped to Ontologies</div>
             </div>
             <div class="stat-item">
-                <div class="stat-value" id="unique-sources">-</div>
-                <div class="stat-label">Ontology Sources</div>
+                <div class="stat-value" id="unmapped-ingredients">-</div>
+                <div class="stat-label">Unmapped (Synthetic)</div>
             </div>
             <div class="stat-item">
                 <div class="stat-value" id="median-occurrences">-</div>
@@ -228,8 +228,8 @@
             <label>
                 Color by:
                 <select id="color-by">
-                    <option value="ontology_source">Ontology Source</option>
                     <option value="mapping_status">Mapping Status</option>
+                    <option value="ontology_source">Ontology Source</option>
                     <option value="mapping_quality">Mapping Quality</option>
                 </select>
             </label>
@@ -254,7 +254,8 @@
             <h2>How to Interpret This Visualization</h2>
             <ul>
                 <li><strong>Proximity:</strong> Ingredients close together have similar semantic relationships in the knowledge graph embedding space</li>
-                <li><strong>Color:</strong> Categorical grouping (default: ontology source like CHEBI, FOODON, NCIT)</li>
+                <li><strong>Color:</strong> Categorical grouping (default: mapping status - <span style="color: #10b981;">green = mapped</span>, <span style="color: #ef4444;">red = unmapped</span>)</li>
+                <li><strong>Unmapped Ingredients:</strong> Complex mixtures (e.g., "Allen Medium", "Biotin Vitamin Solution") without single chemical entity embeddings - shown with synthetic embeddings near cluster center</li>
                 <li><strong>Size:</strong> Metric of interest (default: total occurrences across media recipes)</li>
                 <li><strong>Hover:</strong> View detailed metadata tooltip</li>
                 <li><strong>Click:</strong> View detailed information (future: link to detail page)</li>
@@ -286,12 +287,13 @@
 
         function updateStats() {
             const mapped = ingredientData.filter(d => d.mapping_status === 'MAPPED').length;
-            const sources = new Set(ingredientData.map(d => d.ontology_source).filter(s => s)).size;
+            const unmapped = ingredientData.filter(d => d.mapping_status === 'UNMAPPED').length;
             const occurrences = ingredientData.map(d => d.total_occurrences).sort((a, b) => a - b);
             const median = occurrences[Math.floor(occurrences.length / 2)] || 0;
 
+            document.getElementById('total-ingredients').textContent = ingredientData.length;
             document.getElementById('mapped-ingredients').textContent = mapped;
-            document.getElementById('unique-sources').textContent = sources;
+            document.getElementById('unmapped-ingredients').textContent = unmapped;
             document.getElementById('median-occurrences').textContent = median;
         }
 
@@ -334,12 +336,44 @@
                 .domain([0, d3.max(ingredientData, d => d[currentSizeBy])])
                 .range([3, 15]);
 
-            // Color scale
-            let currentColorBy = 'ontology_source';
-            const categories = [...new Set(ingredientData.map(d => d[currentColorBy]))].filter(c => c).sort();
-            const colorScale = d3.scaleOrdinal()
-                .domain(categories)
-                .range(d3.schemeTableau10);
+            // Color scale - special handling for mapping_status to highlight unmapped
+            let currentColorBy = 'mapping_status';  // Start with mapping_status to show unmapped
+
+            function getColorScale(attribute) {
+                const categories = [...new Set(ingredientData.map(d => d[attribute]))].filter(c => c).sort();
+
+                // Special color scheme for mapping_status to highlight unmapped
+                if (attribute === 'mapping_status') {
+                    const colors = {
+                        'MAPPED': '#10b981',      // Green for mapped
+                        'UNMAPPED': '#ef4444',    // Red for unmapped
+                        'PENDING_REVIEW': '#f59e0b'  // Orange if any
+                    };
+                    return d3.scaleOrdinal()
+                        .domain(categories)
+                        .range(categories.map(c => colors[c] || '#64748b'));
+                } else if (attribute === 'ontology_source') {
+                    // For ontology source, use distinct colors
+                    const sourceColors = {
+                        'CHEBI': '#2563eb',
+                        'FOODON': '#059669',
+                        'NCIT': '#dc2626',
+                        'MESH': '#7c3aed',
+                        'UBERON': '#ea580c',
+                        'ENVO': '#0891b2',
+                        '': '#94a3b8'  // Grey for unmapped (no source)
+                    };
+                    return d3.scaleOrdinal()
+                        .domain(categories)
+                        .range(categories.map(c => sourceColors[c] || '#64748b'));
+                } else {
+                    return d3.scaleOrdinal()
+                        .domain(categories)
+                        .range(d3.schemeTableau10);
+                }
+            }
+
+            const colorScale = getColorScale(currentColorBy);
 
             // Axes
             const xAxis = d3.axisBottom(xScale).ticks(10);
@@ -403,8 +437,11 @@
                         .html(`
                             <div class="tooltip-title">${d.name}</div>
                             <div class="tooltip-row">ID: ${d.id}</div>
-                            ${d.ontology_label ? `<div class="tooltip-row">Ontology: ${d.ontology_label}</div>` : ''}
-                            <div class="tooltip-row">Source: ${d.ontology_source || 'N/A'}</div>
+                            ${d.mapping_status === 'UNMAPPED' ?
+                                `<div class="tooltip-row" style="color: #fbbf24;">⚠️ Unmapped (synthetic embedding)</div>` :
+                                `${d.ontology_label ? `<div class="tooltip-row">Ontology: ${d.ontology_label}</div>` : ''}`
+                            }
+                            <div class="tooltip-row">Source: ${d.ontology_source || 'None (complex mixture)'}</div>
                             <div class="tooltip-row">Status: ${d.mapping_status}</div>
                             <div class="tooltip-row">Occurrences: ${d.total_occurrences}</div>
                             <div class="tooltip-row">Media count: ${d.media_count}</div>
@@ -427,11 +464,10 @@
             // Controls
             document.getElementById('color-by').addEventListener('change', (e) => {
                 currentColorBy = e.target.value;
-                const newCategories = [...new Set(ingredientData.map(d => d[currentColorBy]))].filter(c => c).sort();
-                colorScale.domain(newCategories);
+                const newColorScale = getColorScale(currentColorBy);
 
-                circles.attr('fill', d => colorScale(d[currentColorBy] || 'Unknown'));
-                updateLegend(colorScale, currentColorBy);
+                circles.attr('fill', d => newColorScale(d[currentColorBy] || 'Unknown'));
+                updateLegend(newColorScale, currentColorBy);
             });
 
             document.getElementById('size-by').addEventListener('change', (e) => {
