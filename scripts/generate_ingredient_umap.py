@@ -126,18 +126,46 @@ class IngredientUMAPGenerator:
                 try:
                     ingredient = load_yaml(yaml_file)
                     ingredient_id = ingredient.get('identifier', '')
+                    found_embedding = False
 
-                    # Try to find embedding for this ingredient
+                    # Strategy 1: Try direct identifier match
                     if ingredient_id in self.embeddings:
                         ingredient_vectors.append(self.embeddings[ingredient_id])
                         ingredient_ids.append(ingredient_id)
-                    else:
-                        # Try ontology_mapping ID
+                        found_embedding = True
+
+                    # Strategy 2: Try ontology_mapping ID
+                    if not found_embedding:
                         ontology_mapping = ingredient.get('ontology_mapping', {})
                         ontology_id = ontology_mapping.get('ontology_id', '')
-                        if ontology_id in self.embeddings:
+                        if ontology_id and ontology_id in self.embeddings:
                             ingredient_vectors.append(self.embeddings[ontology_id])
                             ingredient_ids.append(ingredient_id)
+                            found_embedding = True
+
+                    # Strategy 3: For unmapped ingredients, try to find embeddings from synonyms
+                    # Look for CHEBI/ontology IDs mentioned in synonyms
+                    if not found_embedding and ingredient_id.startswith('UNMAPPED'):
+                        synonyms = ingredient.get('synonyms', [])
+                        for syn in synonyms:
+                            syn_text = syn.get('synonym_text', '')
+                            # Look for patterns like "CAS: XXXX" or chemical formulas
+                            # Try common chemical name patterns
+                            import re
+                            # Extract potential CHEBI IDs from text
+                            chebi_matches = re.findall(r'CHEBI:?\s*(\d+)', syn_text, re.IGNORECASE)
+                            for chebi_id in chebi_matches:
+                                potential_id = f"CHEBI:{chebi_id}"
+                                if potential_id in self.embeddings:
+                                    ingredient_vectors.append(self.embeddings[potential_id])
+                                    ingredient_ids.append(ingredient_id)
+                                    found_embedding = True
+                                    break
+                            if found_embedding:
+                                break
+
+                    # Strategy 4: Use preferred_term to search for similar chemical names
+                    # (This would require fuzzy matching - skip for now but could be added)
 
                 except Exception as e:
                     console.print(f"[red]Error loading {yaml_file.name}: {e}[/red]")
