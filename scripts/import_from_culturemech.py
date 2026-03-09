@@ -82,6 +82,11 @@ def extract_unmapped_synonyms(ingredient: dict) -> list[dict]:
     result = []
     for text in raw_texts:
         text = str(text).strip()
+
+        # Clean up "Original amount: " prefix from CultureMech notes
+        if text.startswith("Original amount: "):
+            text = text.replace("Original amount: ", "", 1).strip()
+
         if not text or text in seen:
             continue
         seen.add(text)
