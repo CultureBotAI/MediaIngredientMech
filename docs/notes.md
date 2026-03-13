@@ -17,9 +17,9 @@ Alias: notes
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CurationEvent](CurationEvent.md) | Audit trail entry for a curation action |  no  |
-| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [IngredientRecord](IngredientRecord.md) | Core record for a media ingredient with ontology mapping, synonyms, and curat... |  no  |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [CurationEvent](CurationEvent.md) | Audit trail entry for a curation action |  no  |
 
 
 

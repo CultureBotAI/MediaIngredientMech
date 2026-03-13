@@ -1,7 +1,7 @@
 generation_date: '2026-03-09T06:54:18.022301+00:00'
 total_count: 112
-mapped_count: 0
-unmapped_count: 112
+mapped_count: 65
+unmapped_count: 34
 ingredients:
 - identifier: UNMAPPED_0001
   preferred_term: Full composition available at source database
@@ -21,6 +21,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: See source for composition'
+  id: MediaIngredientMech:000001
 - identifier: UNMAPPED_0002
   preferred_term: See source for composition
   synonyms: []
@@ -36,7 +37,8 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: See source for composition'
-- identifier: UNMAPPED_0003
+  id: MediaIngredientMech:000002
+- identifier: CHEBI:32599
   preferred_term: MgSO4•7H2O
   synonyms:
   - synonym_text: MgSO4•7H2O (Sigma 230391)
@@ -48,7 +50,11 @@ ingredients:
   - synonym_text: MgSO4•7H2O(Sigma 230391)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: MgSO4•7H2O
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 29
     media_count: 29
@@ -59,8 +65,42 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.395941+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:32599 (magnesium sulfate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: MgSO4•7H2O → MgSO4 →
+      magnesium sulfate.
+
+      Original hydrate form will be preserved as HYDRATE_FORM synonym.
+
+      Highly confident exact match to CHEBI term.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0004
+  ontology_mapping:
+    ontology_id: CHEBI:32599
+    ontology_label: magnesium sulfate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.98
+      notes: 'Claude Code reasoning: Hydrate notation stripped: MgSO4•7H2O → MgSO4
+        → magnesium sulfate.
+
+        Original hydrate form will be preserved as HYDRATE_FORM synonym.
+
+        Highly confident exact match to CHEBI term.
+
+        '
+  id: MediaIngredientMech:000003
+- identifier: CHEBI:75229
   preferred_term: NaNO
   synonyms:
   - synonym_text: 'NaNO3(CAS: 7631-99-4)'
@@ -72,7 +112,11 @@ ingredients:
   - synonym_text: NaNO3(autoclave before adding)(Fisher BP360-500)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: NaNO
+    synonym_type: INCOMPLETE_FORMULA
+    source: claude_code_curation
+    notes: 'Original form before normalization: fixed_incomplete_formula'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 24
     media_count: 24
@@ -83,14 +127,48 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397051+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:75229 (sodium nitrate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula fixed: NaNO → NaNO3 → sodium
+      nitrate.
+
+      Synonym "NaNO3" confirms this correction.
+
+      Original incomplete form will be preserved as INCOMPLETE_FORMULA synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0005
+  ontology_mapping:
+    ontology_id: CHEBI:75229
+    ontology_label: sodium nitrate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula fixed: NaNO → NaNO3 → sodium
+        nitrate.
+
+        Synonym "NaNO3" confirms this correction.
+
+        Original incomplete form will be preserved as INCOMPLETE_FORMULA synonym.
+
+        '
+  id: MediaIngredientMech:000004
+- identifier: CHEBI:176843
   preferred_term: Vitamin B
   synonyms:
   - synonym_text: Vitamin B12
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 23
     media_count: 23
@@ -101,14 +179,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-10T04:40:51.348808+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:176843 (vitamin B12)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Name is ambiguous "Vitamin B", but synonym specifies
+      "Vitamin B12".
+
+      Vitamin B complex includes B1-B12, but synonym clarifies this is B12.
+
+      CHEBI:176843 represents vitamin B12 (cyanocobalamin).
+
+      Medium confidence due to ambiguous preferred name, but synonym is clear.
+
+      '
   notes: 'CultureMech placeholder_id: 8'
-- identifier: UNMAPPED_0006
+  ontology_mapping:
+    ontology_id: CHEBI:176843
+    ontology_label: vitamin B12
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.88
+      notes: 'Claude Code reasoning: Name is ambiguous "Vitamin B", but synonym specifies
+        "Vitamin B12".
+
+        Vitamin B complex includes B1-B12, but synonym clarifies this is B12.
+
+        CHEBI:176843 represents vitamin B12 (cyanocobalamin).
+
+        Medium confidence due to ambiguous preferred name, but synonym is clear.
+
+        '
+  id: MediaIngredientMech:000005
+- identifier: CHEBI:15377
   preferred_term: dH2O
   synonyms:
   - synonym_text: dH2O
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 22
     media_count: 22
@@ -119,8 +235,38 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397088+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:15377 (water)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Abbreviation expanded: dH2O → distilled water →
+      water.
+
+      Standard chemical mapping for distilled/deionized water.
+
+      '
   notes: 'CultureMech placeholder_id: 4'
-- identifier: UNMAPPED_0007
+  ontology_mapping:
+    ontology_id: CHEBI:15377
+    ontology_label: water
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.99
+      notes: 'Claude Code reasoning: Abbreviation expanded: dH2O → distilled water
+        → water.
+
+        Standard chemical mapping for distilled/deionized water.
+
+        '
+  id: MediaIngredientMech:000006
+- identifier: CHEBI:3312
   preferred_term: CaCl2•2H2O
   synonyms:
   - synonym_text: CaCl2•2H2O (Sigma C-3881)
@@ -132,7 +278,11 @@ ingredients:
   - synonym_text: CaCl2•2H2O(Sigma C-3881)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: CaCl2•2H2O
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 22
     media_count: 22
@@ -143,14 +293,44 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397112+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:3312 (calcium chloride)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: CaCl2•2H2O → CaCl2 →
+      calcium chloride.
+
+      Original dihydrate form will be preserved as HYDRATE_FORM synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0008
+  ontology_mapping:
+    ontology_id: CHEBI:3312
+    ontology_label: calcium chloride
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.98
+      notes: 'Claude Code reasoning: Hydrate notation stripped: CaCl2•2H2O → CaCl2
+        → calcium chloride.
+
+        Original dihydrate form will be preserved as HYDRATE_FORM synonym.
+
+        '
+  id: MediaIngredientMech:000007
+- identifier: ENVO:00002149
   preferred_term: Pasteurized Seawater
   synonyms:
   - synonym_text: Pasteurized Seawater
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 19
     media_count: 19
@@ -161,14 +341,56 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:00:33.817445+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to ENVO:00002149 (seawater)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: "Pasteurized" is preparation method qualifier,
+      not environmental identity.
+
+      Core material: seawater.
+
+      ENVO:00002149 represents seawater (marine environment water).
+
+      Pasteurization is a sterilization process, doesn''t change chemical identity.
+
+      High confidence mapping to generic seawater term.
+
+      '
   notes: 'CultureMech placeholder_id: 3'
-- identifier: UNMAPPED_0009
+  ontology_mapping:
+    ontology_id: ENVO:00002149
+    ontology_label: seawater
+    ontology_source: ENVO
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.92
+      notes: 'Claude Code reasoning: "Pasteurized" is preparation method qualifier,
+        not environmental identity.
+
+        Core material: seawater.
+
+        ENVO:00002149 represents seawater (marine environment water).
+
+        Pasteurization is a sterilization process, doesn''t change chemical identity.
+
+        High confidence mapping to generic seawater term.
+
+        '
+  id: MediaIngredientMech:000008
+- identifier: CHEBI:15956
   preferred_term: Biotin Vitamin Solution
   synonyms:
   - synonym_text: Biotin Vitamin Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 18
     media_count: 18
@@ -179,14 +401,56 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-10T04:40:51.349816+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:15956 (biotin)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Biotin Vitamin Solution = solution of biotin (vitamin
+      B7/vitamin H).
+
+      CHEBI:15956 represents biotin.
+
+      "Solution" is concentration/preparation qualifier, core compound is biotin.
+
+      Single-vitamin solution → maps to the vitamin compound.
+
+      '
   notes: 'CultureMech placeholder_id: 9'
-- identifier: UNMAPPED_0010
+  ontology_mapping:
+    ontology_id: CHEBI:15956
+    ontology_label: biotin
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.92
+      notes: 'Claude Code reasoning: Biotin Vitamin Solution = solution of biotin
+        (vitamin B7/vitamin H).
+
+        CHEBI:15956 represents biotin.
+
+        "Solution" is concentration/preparation qualifier, core compound is biotin.
+
+        Single-vitamin solution → maps to the vitamin compound.
+
+        '
+  id: MediaIngredientMech:000009
+- identifier: CHEBI:131527
   preferred_term: K2HPO
   synonyms:
   - synonym_text: K2HPO4(Sigma P 3786)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: K2HPO
+    synonym_type: INCOMPLETE_FORMULA
+    source: claude_code_curation
+    notes: 'Original form before normalization: fixed_incomplete_formula'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 17
     media_count: 17
@@ -197,14 +461,48 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397135+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:131527 (dipotassium hydrogen phosphate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula fixed: K2HPO → K2HPO4 → dipotassium
+      hydrogen phosphate.
+
+      Synonym "K2HPO4" confirms this correction.
+
+      Also known as dipotassium phosphate or potassium phosphate dibasic.
+
+      '
   notes: 'CultureMech placeholder_id: 4'
+  ontology_mapping:
+    ontology_id: CHEBI:131527
+    ontology_label: dipotassium hydrogen phosphate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula fixed: K2HPO → K2HPO4 → dipotassium
+        hydrogen phosphate.
+
+        Synonym "K2HPO4" confirms this correction.
+
+        Also known as dipotassium phosphate or potassium phosphate dibasic.
+
+        '
+  id: MediaIngredientMech:000010
 - identifier: UNMAPPED_0011
   preferred_term: P-IV Metal Solution
   synonyms:
   - synonym_text: P-IV Metal Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 16
     media_count: 16
@@ -215,7 +513,18 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 6'
+  - timestamp: '2026-03-11T00:55:50.605949+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 6
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000011
 - identifier: UNMAPPED_0012
   preferred_term: 'Soilwater: GR+ Medium'
   synonyms:
@@ -234,13 +543,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0013
+  id: MediaIngredientMech:000012
+- identifier: CHEBI:18385
   preferred_term: Thiamine Vitamin Solution
   synonyms:
   - synonym_text: Thiamine Vitamin Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 14
     media_count: 14
@@ -251,14 +561,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-10T04:40:51.349850+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:18385 (thiamine(1+))
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Thiamine Vitamin Solution = solution of thiamine
+      (vitamin B1).
+
+      CHEBI:18385 represents thiamine cation (active form).
+
+      "Solution" is preparation qualifier, core compound is thiamine.
+
+      Single-vitamin solution → maps to the vitamin compound.
+
+      '
   notes: 'CultureMech placeholder_id: 7'
-- identifier: UNMAPPED_0014
+  ontology_mapping:
+    ontology_id: CHEBI:18385
+    ontology_label: thiamine(1+)
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.92
+      notes: 'Claude Code reasoning: Thiamine Vitamin Solution = solution of thiamine
+        (vitamin B1).
+
+        CHEBI:18385 represents thiamine cation (active form).
+
+        "Solution" is preparation qualifier, core compound is thiamine.
+
+        Single-vitamin solution → maps to the vitamin compound.
+
+        '
+  id: MediaIngredientMech:000013
+- identifier: ENVO:00001998
   preferred_term: CR1 Soil
   synonyms:
   - synonym_text: CR1 Soil
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 14
     media_count: 14
@@ -269,8 +617,50 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:00:33.818445+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to ENVO:00001998 (soil)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: "CR1" appears to be site/sample designation (possibly
+      Cornell or crop rotation).
+
+      Core material: soil.
+
+      ENVO:00001998 represents soil (generic).
+
+      More specific soil type unknown - maps to parent term.
+
+      Site designation preserved for traceability but doesn''t affect ontology mapping.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0015
+  ontology_mapping:
+    ontology_id: ENVO:00001998
+    ontology_label: soil
+    ontology_source: ENVO
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.85
+      notes: 'Claude Code reasoning: "CR1" appears to be site/sample designation (possibly
+        Cornell or crop rotation).
+
+        Core material: soil.
+
+        ENVO:00001998 represents soil (generic).
+
+        More specific soil type unknown - maps to parent term.
+
+        Site designation preserved for traceability but doesn''t affect ontology mapping.
+
+        '
+  id: MediaIngredientMech:000014
+- identifier: CHEBI:26710
   preferred_term: NaCl
   synonyms:
   - synonym_text: NaCl (Fisher S271-500)
@@ -279,7 +669,7 @@ ingredients:
   - synonym_text: NaCl(Fisher S271-500)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 13
     media_count: 13
@@ -290,8 +680,36 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397158+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:26710 (sodium chloride)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Simple chemical formula: NaCl → sodium chloride.
+
+      Direct exact match, no normalization needed.
+
+      '
   notes: 'CultureMech placeholder_id: 6'
-- identifier: UNMAPPED_0016
+  ontology_mapping:
+    ontology_id: CHEBI:26710
+    ontology_label: sodium chloride
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.99
+      notes: 'Claude Code reasoning: Simple chemical formula: NaCl → sodium chloride.
+
+        Direct exact match, no normalization needed.
+
+        '
+  id: MediaIngredientMech:000015
+- identifier: CHEBI:88434
   preferred_term: Na2SiO3•9H2O
   synonyms:
   - synonym_text: 'Na2SiO3•9H2O(CAS: 13517-24-3)'
@@ -300,7 +718,11 @@ ingredients:
   - synonym_text: Na2SiO3•9H2O(Sigma 307815)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: Na2SiO3•9H2O
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 11
     media_count: 11
@@ -311,14 +733,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397175+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:88434 (sodium metasilicate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: Na2SiO3•9H2O → Na2SiO3
+      → sodium metasilicate.
+
+      CHEBI:88434 represents the base compound (sodium metasilicate).
+
+      Original nonahydrate form will be preserved as HYDRATE_FORM synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 3'
-- identifier: UNMAPPED_0017
+  ontology_mapping:
+    ontology_id: CHEBI:88434
+    ontology_label: sodium metasilicate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.92
+      notes: 'Claude Code reasoning: Hydrate notation stripped: Na2SiO3•9H2O → Na2SiO3
+        → sodium metasilicate.
+
+        CHEBI:88434 represents the base compound (sodium metasilicate).
+
+        Original nonahydrate form will be preserved as HYDRATE_FORM synonym.
+
+        '
+  id: MediaIngredientMech:000016
+- identifier: CHEBI:6635
   preferred_term: MgCO
   synonyms:
   - synonym_text: MgCO3(MCIB CB486)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: MgCO
+    synonym_type: INCOMPLETE_FORMULA
+    source: claude_code_curation
+    notes: 'Original form before normalization: fixed_incomplete_formula'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 11
     media_count: 11
@@ -329,14 +789,48 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397193+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:6635 (magnesium carbonate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula fixed: MgCO → MgCO3 → magnesium
+      carbonate.
+
+      Synonym "MgCO3" confirms this correction.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0018
+  ontology_mapping:
+    ontology_id: CHEBI:6635
+    ontology_label: magnesium carbonate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula fixed: MgCO → MgCO3 → magnesium
+        carbonate.
+
+        Synonym "MgCO3" confirms this correction.
+
+        '
+  id: MediaIngredientMech:000017
+- identifier: CHEBI:63036
   preferred_term: KH2PO
   synonyms:
   - synonym_text: KH2PO4(Sigma P 0662)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: KH2PO
+    synonym_type: INCOMPLETE_FORMULA
+    source: claude_code_curation
+    notes: 'Original form before normalization: fixed_incomplete_formula'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 11
     media_count: 11
@@ -347,14 +841,48 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397210+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:63036 (potassium dihydrogen phosphate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula fixed: KH2PO → KH2PO4 → potassium
+      dihydrogen phosphate.
+
+      Synonym "KH2PO4" confirms this correction.
+
+      Also known as monopotassium phosphate.
+
+      '
   notes: 'CultureMech placeholder_id: 5'
-- identifier: UNMAPPED_0019
+  ontology_mapping:
+    ontology_id: CHEBI:63036
+    ontology_label: potassium dihydrogen phosphate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula fixed: KH2PO → KH2PO4 → potassium
+        dihydrogen phosphate.
+
+        Synonym "KH2PO4" confirms this correction.
+
+        Also known as monopotassium phosphate.
+
+        '
+  id: MediaIngredientMech:000018
+- identifier: ENVO:00001998
   preferred_term: Green House Soil
   synonyms:
   - synonym_text: Green House Soil
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 11
     media_count: 11
@@ -365,8 +893,49 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:00:33.818473+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to ENVO:00001998 (soil)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: "Green House" (greenhouse) is location/source qualifier.
+
+      Core material: soil.
+
+      ENVO:00001998 represents soil (generic).
+
+      Greenhouse soil vs field soil may have different characteristics,
+
+      but both map to generic soil term in ENVO.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0020
+  ontology_mapping:
+    ontology_id: ENVO:00001998
+    ontology_label: soil
+    ontology_source: ENVO
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.88
+      notes: 'Claude Code reasoning: "Green House" (greenhouse) is location/source
+        qualifier.
+
+        Core material: soil.
+
+        ENVO:00001998 represents soil (generic).
+
+        Greenhouse soil vs field soil may have different characteristics,
+
+        but both map to generic soil term in ENVO.
+
+        '
+  id: MediaIngredientMech:000019
+- identifier: CHEBI:32588
   preferred_term: KCl
   synonyms:
   - synonym_text: KCl (Fisher P 217)
@@ -381,7 +950,7 @@ ingredients:
   - synonym_text: KCl(Fisher P 217)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 10
     media_count: 10
@@ -392,8 +961,36 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397227+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:32588 (potassium chloride)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Simple chemical formula: KCl → potassium chloride.
+
+      Direct exact match, no normalization needed.
+
+      '
   notes: 'CultureMech placeholder_id: 4'
-- identifier: UNMAPPED_0021
+  ontology_mapping:
+    ontology_id: CHEBI:32588
+    ontology_label: potassium chloride
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.99
+      notes: 'Claude Code reasoning: Simple chemical formula: KCl → potassium chloride.
+
+        Direct exact match, no normalization needed.
+
+        '
+  id: MediaIngredientMech:000020
+- identifier: CHEBI:3311
   preferred_term: CaCO
   synonyms:
   - synonym_text: CaCO3(Fisher C 64)
@@ -405,7 +1002,11 @@ ingredients:
   - synonym_text: CaCO3(optional)(Fisher C 64)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: CaCO
+    synonym_type: INCOMPLETE_FORMULA
+    source: claude_code_curation
+    notes: 'Original form before normalization: fixed_incomplete_formula'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 9
     media_count: 9
@@ -416,8 +1017,38 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397243+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:3311 (calcium carbonate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula fixed: CaCO → CaCO3 → calcium
+      carbonate.
+
+      Synonyms "CaCO3(Fisher C 64)" confirm this correction.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0022
+  ontology_mapping:
+    ontology_id: CHEBI:3311
+    ontology_label: calcium carbonate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula fixed: CaCO → CaCO3 → calcium
+        carbonate.
+
+        Synonyms "CaCO3(Fisher C 64)" confirm this correction.
+
+        '
+  id: MediaIngredientMech:000021
+- identifier: FOODON:03301773
   preferred_term: Tryptone
   synonyms:
   - synonym_text: Tryptone (Sigma T 9410)
@@ -432,7 +1063,7 @@ ingredients:
   - synonym_text: Tryptone(Sigma T 9410))
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 6
     media_count: 6
@@ -443,7 +1074,45 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.694381+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:03301773 (tryptone)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Tryptone = pancreatic digest of casein (biological
+      protein hydrolysate).
+
+      FOODON:03301773 represents tryptone (food product).
+
+      Commonly used as nitrogen source in microbial media.
+
+      Biological material → maps to FOODON, not CHEBI.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
+  ontology_mapping:
+    ontology_id: FOODON:03301773
+    ontology_label: tryptone
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.98
+      notes: 'Claude Code reasoning: Tryptone = pancreatic digest of casein (biological
+        protein hydrolysate).
+
+        FOODON:03301773 represents tryptone (food product).
+
+        Commonly used as nitrogen source in microbial media.
+
+        Biological material → maps to FOODON, not CHEBI.
+
+        '
+  id: MediaIngredientMech:000022
 - identifier: UNMAPPED_0023
   preferred_term: Bristol Medium
   synonyms:
@@ -462,6 +1131,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
+  id: MediaIngredientMech:000023
 - identifier: UNMAPPED_0024
   preferred_term: Erdschreiber's Medium
   synonyms:
@@ -480,7 +1150,8 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0025
+  id: MediaIngredientMech:000024
+- identifier: FOODON:03411448
   preferred_term: Yeast extract
   synonyms:
   - synonym_text: Yeast extract(Bacto, Difco)
@@ -489,7 +1160,7 @@ ingredients:
   - synonym_text: 'Yeast extract(CAS: 8013-01-2)'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 5
     media_count: 5
@@ -500,14 +1171,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695440+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:03411448 (yeast extract)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Yeast extract = autolyzed yeast cell extract (biological
+      mixture).
+
+      FOODON:03411448 represents yeast extract.
+
+      Complex biological material with vitamins, amino acids, nucleotides.
+
+      Direct exact match to FOODON term.
+
+      '
   notes: 'CultureMech placeholder_id: 3'
-- identifier: UNMAPPED_0026
+  ontology_mapping:
+    ontology_id: FOODON:03411448
+    ontology_label: yeast extract
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.99
+      notes: 'Claude Code reasoning: Yeast extract = autolyzed yeast cell extract
+        (biological mixture).
+
+        FOODON:03411448 represents yeast extract.
+
+        Complex biological material with vitamins, amino acids, nucleotides.
+
+        Direct exact match to FOODON term.
+
+        '
+  id: MediaIngredientMech:000025
+- identifier: CHEBI:63043
   preferred_term: KNO
   synonyms:
   - synonym_text: KNO3(Baker 3190)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 5
     media_count: 5
@@ -518,8 +1227,38 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397260+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:63043 (potassium nitrate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula inferred: KNO → KNO3 → potassium
+      nitrate.
+
+      Synonym "KNO3(Baker 3190)" confirms this correction.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0027
+  ontology_mapping:
+    ontology_id: CHEBI:63043
+    ontology_label: potassium nitrate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula inferred: KNO → KNO3 → potassium
+        nitrate.
+
+        Synonym "KNO3(Baker 3190)" confirms this correction.
+
+        '
+  id: MediaIngredientMech:000026
+- identifier: ENVO:00002149
   preferred_term: Seawater
   synonyms:
   - synonym_text: Seawater (30 ppt)
@@ -528,7 +1267,7 @@ ingredients:
   - synonym_text: Seawater(non-sterilized)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
     media_count: 4
@@ -539,14 +1278,54 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:00:33.818495+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to ENVO:00002149 (seawater)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Direct exact match: Seawater → seawater.
+
+      ENVO:00002149 represents seawater (marine environment water).
+
+      Synonyms mention "30 ppt" (salinity) and "non-sterilized" (preparation),
+
+      but these are qualifiers, not identity changes.
+
+      High confidence exact match.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0028
+  ontology_mapping:
+    ontology_id: ENVO:00002149
+    ontology_label: seawater
+    ontology_source: ENVO
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.98
+      notes: 'Claude Code reasoning: Direct exact match: Seawater → seawater.
+
+        ENVO:00002149 represents seawater (marine environment water).
+
+        Synonyms mention "30 ppt" (salinity) and "non-sterilized" (preparation),
+
+        but these are qualifiers, not identity changes.
+
+        High confidence exact match.
+
+        '
+  id: MediaIngredientMech:000027
+- identifier: CHEBI:37586
   preferred_term: NaH2PO4•H2O
   synonyms:
   - synonym_text: NaH2PO4•H2O(MCIB 742)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
     media_count: 4
@@ -557,7 +1336,41 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397275+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:37586 (sodium dihydrogen phosphate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: NaH2PO4•H2O → NaH2PO4
+      → sodium dihydrogen phosphate.
+
+      CHEBI:37586 represents anhydrous form.
+
+      Original monohydrate form will be preserved as HYDRATE_FORM synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
+  ontology_mapping:
+    ontology_id: CHEBI:37586
+    ontology_label: sodium dihydrogen phosphate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.96
+      notes: 'Claude Code reasoning: Hydrate notation stripped: NaH2PO4•H2O → NaH2PO4
+        → sodium dihydrogen phosphate.
+
+        CHEBI:37586 represents anhydrous form.
+
+        Original monohydrate form will be preserved as HYDRATE_FORM synonym.
+
+        '
+  id: MediaIngredientMech:000028
 - identifier: UNMAPPED_0029
   preferred_term: Trace Metals Solution
   synonyms:
@@ -576,7 +1389,8 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 4'
-- identifier: UNMAPPED_0030
+  id: MediaIngredientMech:000029
+- identifier: CHEBI:39179
   preferred_term: Na2glycerophosphate•5H2O
   synonyms:
   - synonym_text: 'Na2glycerophosphate•5H2O(CAS: 13408-09-8)'
@@ -585,7 +1399,11 @@ ingredients:
   - synonym_text: 'Na2glycerophosphate•5H2O(CAS:  13408-09-8)'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: Na2glycerophosphate•5H2O
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
     media_count: 4
@@ -596,7 +1414,41 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397293+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:39179 (disodium glycerol 2-phosphate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: Na2glycerophosphate•5H2O
+      → Na2glycerophosphate.
+
+      Maps to disodium glycerol 2-phosphate (CHEBI:39179).
+
+      Original pentahydrate form will be preserved as HYDRATE_FORM synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 3'
+  ontology_mapping:
+    ontology_id: CHEBI:39179
+    ontology_label: disodium glycerol 2-phosphate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.9
+      notes: 'Claude Code reasoning: Hydrate notation stripped: Na2glycerophosphate•5H2O
+        → Na2glycerophosphate.
+
+        Maps to disodium glycerol 2-phosphate (CHEBI:39179).
+
+        Original pentahydrate form will be preserved as HYDRATE_FORM synonym.
+
+        '
+  id: MediaIngredientMech:000030
 - identifier: UNMAPPED_0031
   preferred_term: Enrichment Solution for Seawater Medium
   synonyms:
@@ -615,13 +1467,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0032
+  id: MediaIngredientMech:000031
+- identifier: CHEBI:15377
   preferred_term: sterile dH2O
   synonyms:
   - synonym_text: sterile dH2O
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
     media_count: 4
@@ -632,7 +1485,41 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397315+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:15377 (water)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: "sterile" is a preparation qualifier, not chemical
+      identity.
+
+      dH2O abbreviation expanded: dH2O → distilled water → water.
+
+      Maps to same CHEBI term as regular water (CHEBI:15377).
+
+      '
   notes: 'CultureMech placeholder_id: 2'
+  ontology_mapping:
+    ontology_id: CHEBI:15377
+    ontology_label: water
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.99
+      notes: 'Claude Code reasoning: "sterile" is a preparation qualifier, not chemical
+        identity.
+
+        dH2O abbreviation expanded: dH2O → distilled water → water.
+
+        Maps to same CHEBI term as regular water (CHEBI:15377).
+
+        '
+  id: MediaIngredientMech:000032
 - identifier: UNMAPPED_0033
   preferred_term: F/2 Medium
   synonyms:
@@ -651,7 +1538,8 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 4'
-- identifier: UNMAPPED_0034
+  id: MediaIngredientMech:000033
+- identifier: CHEBI:31206
   preferred_term: NH4Cl
   synonyms:
   - synonym_text: 'NH4Cl(CAS: 12125-02-9)'
@@ -660,7 +1548,7 @@ ingredients:
   - synonym_text: NH4Cl(Fisher A 649-500)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
     media_count: 4
@@ -671,14 +1559,42 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397373+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:31206 (ammonium chloride)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Simple chemical formula: NH4Cl → ammonium chloride.
+
+      Direct exact match, no normalization needed.
+
+      '
   notes: 'CultureMech placeholder_id: 7'
-- identifier: UNMAPPED_0035
+  ontology_mapping:
+    ontology_id: CHEBI:31206
+    ontology_label: ammonium chloride
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.99
+      notes: 'Claude Code reasoning: Simple chemical formula: NH4Cl → ammonium chloride.
+
+        Direct exact match, no normalization needed.
+
+        '
+  id: MediaIngredientMech:000034
+- identifier: CHEBI:32139
   preferred_term: NaHCO
   synonyms:
   - synonym_text: NaHCO3(Fisher S 233)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
     media_count: 4
@@ -689,14 +1605,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397397+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:32139 (sodium hydrogencarbonate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula inferred: NaHCO → NaHCO3 → sodium
+      hydrogencarbonate.
+
+      Synonym "NaHCO3(Fisher S 233)" confirms this correction.
+
+      Also known as sodium bicarbonate.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0036
+  ontology_mapping:
+    ontology_id: CHEBI:32139
+    ontology_label: sodium hydrogencarbonate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula inferred: NaHCO → NaHCO3 →
+        sodium hydrogencarbonate.
+
+        Synonym "NaHCO3(Fisher S 233)" confirms this correction.
+
+        Also known as sodium bicarbonate.
+
+        '
+  id: MediaIngredientMech:000035
+- identifier: CHEBI:63039
   preferred_term: 'Original amount: (NH4)2HPO4(Fisher A686)'
   synonyms:
   - synonym_text: (NH4)2HPO4(Fisher A686)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: 'Original amount: (NH4)2HPO4(Fisher A686)'
+    synonym_type: CATALOG_VARIANT
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_catalog'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
     media_count: 4
@@ -707,14 +1661,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397414+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:63039 (diammonium hydrogen phosphate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Catalog stripped and "Original amount:" prefix
+      removed.
+
+      Formula: (NH4)2HPO4 → diammonium hydrogen phosphate.
+
+      Also known as diammonium phosphate or DAP.
+
+      Catalog variant will be preserved as CATALOG_VARIANT synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0037
+  ontology_mapping:
+    ontology_id: CHEBI:63039
+    ontology_label: diammonium hydrogen phosphate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.9
+      notes: 'Claude Code reasoning: Catalog stripped and "Original amount:" prefix
+        removed.
+
+        Formula: (NH4)2HPO4 → diammonium hydrogen phosphate.
+
+        Also known as diammonium phosphate or DAP.
+
+        Catalog variant will be preserved as CATALOG_VARIANT synonym.
+
+        '
+  id: MediaIngredientMech:000036
+- identifier: CHEBI:63046
   preferred_term: NH4NO
   synonyms:
   - synonym_text: 'NH4NO3(CAS: 6484-52-2)'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -725,14 +1717,44 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T17:39:51.397441+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:63046 (ammonium nitrate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula inferred: NH4NO → NH4NO3 → ammonium
+      nitrate.
+
+      Synonym "NH4NO3(CAS: 6484-52-2)" confirms this correction.
+
+      '
   notes: 'CultureMech placeholder_id: 8'
-- identifier: UNMAPPED_0038
+  ontology_mapping:
+    ontology_id: CHEBI:63046
+    ontology_label: ammonium nitrate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula inferred: NH4NO → NH4NO3 →
+        ammonium nitrate.
+
+        Synonym "NH4NO3(CAS: 6484-52-2)" confirms this correction.
+
+        '
+  id: MediaIngredientMech:000037
+- identifier: CHEBI:17234
   preferred_term: Glucose
   synonyms:
   - synonym_text: Glucose(BACTO-dextrose or Sigma D 9634)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -743,14 +1765,50 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695470+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:17234 (D-glucose)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Glucose (dextrose) = D-glucose (simple sugar).
+
+      CHEBI:17234 represents D-glucose (specific stereoisomer).
+
+      Pure chemical compound → CHEBI, not FOODON.
+
+      Note: Synonym mentions "BACTO-dextrose" but refers to pure chemical.
+
+      '
   notes: 'CultureMech placeholder_id: 4'
-- identifier: UNMAPPED_0039
+  ontology_mapping:
+    ontology_id: CHEBI:17234
+    ontology_label: D-glucose
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Glucose (dextrose) = D-glucose (simple sugar).
+
+        CHEBI:17234 represents D-glucose (specific stereoisomer).
+
+        Pure chemical compound → CHEBI, not FOODON.
+
+        Note: Synonym mentions "BACTO-dextrose" but refers to pure chemical.
+
+        '
+  id: MediaIngredientMech:000038
+- identifier: CHEBI:30769
   preferred_term: Citric Acid•H2O
   synonyms:
   - synonym_text: Citric Acid•H2O(Fisher A 104)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -761,14 +1819,56 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.891292+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:30769 (citric acid)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: Citric Acid•H2O → Citric
+      Acid.
+
+      CHEBI:30769 represents citric acid (anhydrous or generic).
+
+      Monohydrate form exists but typically citric acid is used generically.
+
+      Original hydrate form will be preserved as HYDRATE_FORM synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 9'
-- identifier: UNMAPPED_0040
+  ontology_mapping:
+    ontology_id: CHEBI:30769
+    ontology_label: citric acid
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.92
+      notes: 'Claude Code reasoning: Hydrate notation stripped: Citric Acid•H2O →
+        Citric Acid.
+
+        CHEBI:30769 represents citric acid (anhydrous or generic).
+
+        Monohydrate form exists but typically citric acid is used generically.
+
+        Original hydrate form will be preserved as HYDRATE_FORM synonym.
+
+        '
+  id: MediaIngredientMech:000039
+- identifier: CHEBI:64734
   preferred_term: Na2EDTA•2H2O
   synonyms:
   - synonym_text: Na2EDTA•2H2O(Sigma ED255)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: Na2EDTA•2H2O
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -779,14 +1879,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892222+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:64734 (EDTA disodium salt)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: Na2EDTA•2H2O → Na2EDTA.
+
+      CHEBI:64734 represents disodium EDTA (ethylenediaminetetraacetic acid disodium
+      salt).
+
+      Commonly used chelating agent in microbial media.
+
+      Original dihydrate form will be preserved as HYDRATE_FORM synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 3'
-- identifier: UNMAPPED_0041
+  ontology_mapping:
+    ontology_id: CHEBI:64734
+    ontology_label: EDTA disodium salt
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.94
+      notes: 'Claude Code reasoning: Hydrate notation stripped: Na2EDTA•2H2O → Na2EDTA.
+
+        CHEBI:64734 represents disodium EDTA (ethylenediaminetetraacetic acid disodium
+        salt).
+
+        Commonly used chelating agent in microbial media.
+
+        Original dihydrate form will be preserved as HYDRATE_FORM synonym.
+
+        '
+  id: MediaIngredientMech:000040
+- identifier: CHEBI:29377
   preferred_term: Na2CO
   synonyms:
   - synonym_text: Na2CO3(Baker 3604)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -797,15 +1935,53 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892254+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:29377 (sodium carbonate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula fixed: Na2CO → Na2CO3 → sodium
+      carbonate.
+
+      Synonym "Na2CO3(Baker 3604)" confirms this correction.
+
+      Commonly used to adjust pH in media.
+
+      '
   notes: 'CultureMech placeholder_id: 6'
-- identifier: UNMAPPED_0042
+  ontology_mapping:
+    ontology_id: CHEBI:29377
+    ontology_label: sodium carbonate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula fixed: Na2CO → Na2CO3 → sodium
+        carbonate.
+
+        Synonym "Na2CO3(Baker 3604)" confirms this correction.
+
+        Commonly used to adjust pH in media.
+
+        '
+  id: MediaIngredientMech:000041
+- identifier: CHEBI:132112
   preferred_term: Sodium Thiosulfate Pentahydrate
   synonyms:
   - synonym_text: Sodium Thiosulfate Pentahydrate (agar media only,sterile)(Baker
       3946)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: Sodium Thiosulfate Pentahydrate
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -816,14 +1992,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695491+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:132112 (sodium thiosulfate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation: Sodium Thiosulfate Pentahydrate
+      → Sodium Thiosulfate.
+
+      CHEBI:132112 represents sodium thiosulfate (Na2S2O3).
+
+      Pentahydrate is common hydration state (5H2O).
+
+      Original hydrate form will be preserved as HYDRATE_FORM synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 10'
-- identifier: UNMAPPED_0043
+  ontology_mapping:
+    ontology_id: CHEBI:132112
+    ontology_label: sodium thiosulfate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.94
+      notes: 'Claude Code reasoning: Hydrate notation: Sodium Thiosulfate Pentahydrate
+        → Sodium Thiosulfate.
+
+        CHEBI:132112 represents sodium thiosulfate (Na2S2O3).
+
+        Pentahydrate is common hydration state (5H2O).
+
+        Original hydrate form will be preserved as HYDRATE_FORM synonym.
+
+        '
+  id: MediaIngredientMech:000042
+- identifier: CHEBI:34845
   preferred_term: NH4MgPO
   synonyms:
   - synonym_text: NH4MgPO4(Sigma 529354)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -834,14 +2048,48 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892273+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:34845 (magnesium ammonium phosphate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula inferred: NH4MgPO → NH4MgPO4
+      → magnesium ammonium phosphate.
+
+      Synonym "NH4MgPO4(Sigma 529354)" confirms this correction.
+
+      Also known as struvite in crystalline form.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0044
+  ontology_mapping:
+    ontology_id: CHEBI:34845
+    ontology_label: magnesium ammonium phosphate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.9
+      notes: 'Claude Code reasoning: Incomplete formula inferred: NH4MgPO → NH4MgPO4
+        → magnesium ammonium phosphate.
+
+        Synonym "NH4MgPO4(Sigma 529354)" confirms this correction.
+
+        Also known as struvite in crystalline form.
+
+        '
+  id: MediaIngredientMech:000043
+- identifier: CHEBI:32954
   preferred_term: Sodium acetate
   synonyms:
   - synonym_text: Sodium acetate(Fisher BP 333)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -852,8 +2100,40 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695519+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:32954 (sodium acetate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Direct match: Sodium acetate → sodium acetate.
+
+      CHEBI:32954 represents sodium acetate (CH3COONa).
+
+      Commonly used as carbon source or pH buffer in media.
+
+      '
   notes: 'CultureMech placeholder_id: 3'
-- identifier: UNMAPPED_0045
+  ontology_mapping:
+    ontology_id: CHEBI:32954
+    ontology_label: sodium acetate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.98
+      notes: 'Claude Code reasoning: Direct match: Sodium acetate → sodium acetate.
+
+        CHEBI:32954 represents sodium acetate (CH3COONa).
+
+        Commonly used as carbon source or pH buffer in media.
+
+        '
+  id: MediaIngredientMech:000044
+- identifier: CHEBI:77108
   preferred_term: MES
   synonyms:
   - synonym_text: 'MES(CAS: 1266615-59-1)'
@@ -862,7 +2142,7 @@ ingredients:
   - synonym_text: 'MES(CAS: 7365-45-9)'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -873,14 +2153,46 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892291+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:77108 (MES)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: MES = 2-(N-morpholino)ethanesulfonic acid.
+
+      Common Good''s buffer for biological pH control (pH 5.5-6.7).
+
+      Direct exact match - MES is the standard abbreviation.
+
+      '
   notes: 'CultureMech placeholder_id: 5'
+  ontology_mapping:
+    ontology_id: CHEBI:77108
+    ontology_label: MES
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.98
+      notes: 'Claude Code reasoning: MES = 2-(N-morpholino)ethanesulfonic acid.
+
+        Common Good''s buffer for biological pH control (pH 5.5-6.7).
+
+        Direct exact match - MES is the standard abbreviation.
+
+        '
+  id: MediaIngredientMech:000045
 - identifier: UNMAPPED_0046
   preferred_term: MWC Metal Solution
   synonyms:
   - synonym_text: MWC Metal Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -891,14 +2203,25 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 7'
-- identifier: UNMAPPED_0047
+  - timestamp: '2026-03-11T00:55:50.606157+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 7
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000046
+- identifier: CHEBI:33118
   preferred_term: H3BO
   synonyms:
   - synonym_text: H3BO3(Baker 0084)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -909,14 +2232,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892309+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:33118 (boric acid)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Incomplete formula fixed: H3BO → H3BO3 → boric
+      acid.
+
+      Synonym "H3BO3(Baker 0084)" confirms this correction.
+
+      Commonly used as boron source in trace element solutions.
+
+      '
   notes: 'CultureMech placeholder_id: 7'
-- identifier: UNMAPPED_0048
+  ontology_mapping:
+    ontology_id: CHEBI:33118
+    ontology_label: boric acid
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.95
+      notes: 'Claude Code reasoning: Incomplete formula fixed: H3BO → H3BO3 → boric
+        acid.
+
+        Synonym "H3BO3(Baker 0084)" confirms this correction.
+
+        Commonly used as boron source in trace element solutions.
+
+        '
+  id: MediaIngredientMech:000047
+- identifier: CHEBI:31346
   preferred_term: CaSO4•2H2O
   synonyms:
   - synonym_text: CaSO4•2H2O(Mallinckroft 4300)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: CaSO4•2H2O
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -927,14 +2288,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892325+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:31346 (calcium sulfate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: CaSO4•2H2O → CaSO4 →
+      calcium sulfate.
+
+      CHEBI:31346 represents calcium sulfate (generic).
+
+      Dihydrate form is gypsum, but maps to parent term.
+
+      Original dihydrate form will be preserved as HYDRATE_FORM synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 4'
-- identifier: UNMAPPED_0049
+  ontology_mapping:
+    ontology_id: CHEBI:31346
+    ontology_label: calcium sulfate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.96
+      notes: 'Claude Code reasoning: Hydrate notation stripped: CaSO4•2H2O → CaSO4
+        → calcium sulfate.
+
+        CHEBI:31346 represents calcium sulfate (generic).
+
+        Dihydrate form is gypsum, but maps to parent term.
+
+        Original dihydrate form will be preserved as HYDRATE_FORM synonym.
+
+        '
+  id: MediaIngredientMech:000048
+- identifier: CHEBI:64628
   preferred_term: Ca
   synonyms:
   - synonym_text: 'Ca(NO3)2•4H2O(CAS: 13477-34-4)'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
     media_count: 3
@@ -945,14 +2344,51 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695537+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:64628 (calcium nitrate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Name is ambiguous "Ca", but synonym reveals: Ca(NO3)2•4H2O.
+
+      Formula: calcium nitrate tetrahydrate.
+
+      CHEBI:64628 represents calcium nitrate.
+
+      Medium confidence due to ambiguous preferred name, but synonym is clear.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0050
+  ontology_mapping:
+    ontology_id: CHEBI:64628
+    ontology_label: calcium nitrate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.9
+      notes: 'Claude Code reasoning: Name is ambiguous "Ca", but synonym reveals:
+        Ca(NO3)2•4H2O.
+
+        Formula: calcium nitrate tetrahydrate.
+
+        CHEBI:64628 represents calcium nitrate.
+
+        Medium confidence due to ambiguous preferred name, but synonym is clear.
+
+        '
+  id: MediaIngredientMech:000049
+- identifier: CHEBI:26710
   preferred_term: Natural sea-salt
   synonyms:
   - synonym_text: Natural sea-salt
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -963,7 +2399,49 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-10T04:42:32.476082+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:26710 (sodium chloride)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Natural sea-salt = evaporated seawater containing
+      primarily NaCl.
+
+      CHEBI:26710 represents sodium chloride (primary component, ~97-99%).
+
+      Sea salt also contains trace minerals (Mg, Ca, K), but NaCl is dominant.
+
+      Lower confidence due to impurity - not pure NaCl.
+
+      Alternative: Could leave unmappable due to trace mineral content.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
+  ontology_mapping:
+    ontology_id: CHEBI:26710
+    ontology_label: sodium chloride
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.75
+      notes: 'Claude Code reasoning: Natural sea-salt = evaporated seawater containing
+        primarily NaCl.
+
+        CHEBI:26710 represents sodium chloride (primary component, ~97-99%).
+
+        Sea salt also contains trace minerals (Mg, Ca, K), but NaCl is dominant.
+
+        Lower confidence due to impurity - not pure NaCl.
+
+        Alternative: Could leave unmappable due to trace mineral content.
+
+        '
+  id: MediaIngredientMech:000050
 - identifier: UNMAPPED_0051
   preferred_term: Bold 1NV Medium
   synonyms:
@@ -982,13 +2460,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0052
+  id: MediaIngredientMech:000051
+- identifier: CHEBI:16963
   preferred_term: Glycylglycine
   synonyms:
   - synonym_text: 'Glycylglycine(CAS: 556-50-3)'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -999,14 +2478,50 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695553+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:16963 (glycylglycine)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Glycylglycine = dipeptide (Gly-Gly).
+
+      CHEBI:16963 represents glycylglycine (simplest dipeptide).
+
+      Used as buffer in biological systems.
+
+      Direct exact match.
+
+      '
   notes: 'CultureMech placeholder_id: 5'
-- identifier: UNMAPPED_0053
+  ontology_mapping:
+    ontology_id: CHEBI:16963
+    ontology_label: glycylglycine
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.99
+      notes: 'Claude Code reasoning: Glycylglycine = dipeptide (Gly-Gly).
+
+        CHEBI:16963 represents glycylglycine (simplest dipeptide).
+
+        Used as buffer in biological systems.
+
+        Direct exact match.
+
+        '
+  id: MediaIngredientMech:000052
+- identifier: CHEBI:75832
   preferred_term: Ferric Ammonium Citrate
   synonyms:
   - synonym_text: Ferric Ammonium Citrate
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -1017,7 +2532,45 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695570+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:75832 (ferric ammonium citrate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Ferric Ammonium Citrate = iron(III) ammonium citrate
+      complex.
+
+      CHEBI:75832 represents ferric ammonium citrate.
+
+      Commonly used as iron source in microbial media.
+
+      Direct exact match.
+
+      '
   notes: 'CultureMech placeholder_id: 6'
+  ontology_mapping:
+    ontology_id: CHEBI:75832
+    ontology_label: ferric ammonium citrate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.96
+      notes: 'Claude Code reasoning: Ferric Ammonium Citrate = iron(III) ammonium
+        citrate complex.
+
+        CHEBI:75832 represents ferric ammonium citrate.
+
+        Commonly used as iron source in microbial media.
+
+        Direct exact match.
+
+        '
+  id: MediaIngredientMech:000053
 - identifier: UNMAPPED_0054
   preferred_term: BG-11 Trace Metals Solution
   synonyms:
@@ -1036,6 +2589,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 9'
+  id: MediaIngredientMech:000054
 - identifier: UNMAPPED_0055
   preferred_term: Soil+Seawater Medium
   synonyms:
@@ -1054,6 +2608,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 2'
+  id: MediaIngredientMech:000055
 - identifier: UNMAPPED_0056
   preferred_term: Spir solution
   synonyms:
@@ -1075,7 +2630,8 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0057
+  id: MediaIngredientMech:000056
+- identifier: CHEBI:42334
   preferred_term: HEPES buffer
   synonyms:
   - synonym_text: 'HEPES buffer(CAS: 7365-45-9)'
@@ -1084,7 +2640,7 @@ ingredients:
   - synonym_text: HEPES buffer(Sigma H-3375)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -1095,8 +2651,42 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892347+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:42334 (HEPES)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: HEPES = 4-(2-hydroxyethyl)-1-piperazineethanesulfonic
+      acid.
+
+      Common Good''s buffer for biological pH control (pH 6.8-8.2).
+
+      Direct exact match - HEPES is standard chemical abbreviation.
+
+      '
   notes: 'CultureMech placeholder_id: 5'
-- identifier: UNMAPPED_0058
+  ontology_mapping:
+    ontology_id: CHEBI:42334
+    ontology_label: HEPES
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.98
+      notes: 'Claude Code reasoning: HEPES = 4-(2-hydroxyethyl)-1-piperazineethanesulfonic
+        acid.
+
+        Common Good''s buffer for biological pH control (pH 6.8-8.2).
+
+        Direct exact match - HEPES is standard chemical abbreviation.
+
+        '
+  id: MediaIngredientMech:000057
+- identifier: FOODON:00002685
   preferred_term: Pea
   synonyms:
   - synonym_text: Pea
@@ -1105,7 +2695,7 @@ ingredients:
   - synonym_text: Pea(add after dH2O)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -1116,7 +2706,49 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695591+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:00002685 (pea (whole, raw))
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: "Pea" likely refers to pea infusion or pea extract
+      for media.
+
+      FOODON:00002685 represents whole raw pea.
+
+      Biological material → FOODON.
+
+      Lower confidence: unclear if whole pea, extract, or infusion.
+
+      May need more specific FOODON term for pea extract.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
+  ontology_mapping:
+    ontology_id: FOODON:00002685
+    ontology_label: pea (whole, raw)
+    ontology_source: FOODON
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.75
+      notes: 'Claude Code reasoning: "Pea" likely refers to pea infusion or pea extract
+        for media.
+
+        FOODON:00002685 represents whole raw pea.
+
+        Biological material → FOODON.
+
+        Lower confidence: unclear if whole pea, extract, or infusion.
+
+        May need more specific FOODON term for pea extract.
+
+        '
+  id: MediaIngredientMech:000058
 - identifier: UNMAPPED_0059
   preferred_term: DAS Vitamin Cocktail
   synonyms:
@@ -1135,7 +2767,8 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 5'
-- identifier: UNMAPPED_0060
+  id: MediaIngredientMech:000059
+- identifier: CHEBI:131458
   preferred_term: Na2HPO4•7H2O
   synonyms:
   - synonym_text: Na2HPO4•7H2O(Sigma S-9390)
@@ -1144,7 +2777,11 @@ ingredients:
   - synonym_text: Na2HPO4•7H2O(autoclave before adding) (Sigma S-9390)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: Na2HPO4•7H2O
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -1155,7 +2792,43 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892366+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:131458 (disodium hydrogen phosphate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: Na2HPO4•7H2O → Na2HPO4.
+
+      CHEBI:131458 represents disodium hydrogen phosphate (generic).
+
+      Heptahydrate is a common hydration state.
+
+      Original heptahydrate form will be preserved as HYDRATE_FORM synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 4'
+  ontology_mapping:
+    ontology_id: CHEBI:131458
+    ontology_label: disodium hydrogen phosphate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.96
+      notes: 'Claude Code reasoning: Hydrate notation stripped: Na2HPO4•7H2O → Na2HPO4.
+
+        CHEBI:131458 represents disodium hydrogen phosphate (generic).
+
+        Heptahydrate is a common hydration state.
+
+        Original heptahydrate form will be preserved as HYDRATE_FORM synonym.
+
+        '
+  id: MediaIngredientMech:000060
 - identifier: UNMAPPED_0061
   preferred_term: BG-11 Medium
   synonyms:
@@ -1174,6 +2847,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
+  id: MediaIngredientMech:000061
 - identifier: UNMAPPED_0062
   preferred_term: Enriched Seawater Medium
   synonyms:
@@ -1192,6 +2866,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
+  id: MediaIngredientMech:000062
 - identifier: UNMAPPED_0063
   preferred_term: Waris Medium
   synonyms:
@@ -1210,6 +2885,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
+  id: MediaIngredientMech:000063
 - identifier: UNMAPPED_0064
   preferred_term: Euglena Medium
   synonyms:
@@ -1228,7 +2904,8 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 6'
-- identifier: UNMAPPED_0065
+  id: MediaIngredientMech:000064
+- identifier: CHEBI:9750
   preferred_term: Tricine
   synonyms:
   - synonym_text: Tricine (adjust to pH 8)(Sigma T-5816-256)
@@ -1237,7 +2914,7 @@ ingredients:
   - synonym_text: Tricine(Sigma T-5816-256)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -1248,14 +2925,50 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695607+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:9750 (tricine)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Tricine = N-[Tris(hydroxymethyl)methyl]glycine.
+
+      CHEBI:9750 represents tricine.
+
+      Good''s buffer for biological pH control (pH 7.4-8.8).
+
+      Direct exact match.
+
+      '
   notes: 'CultureMech placeholder_id: 7'
+  ontology_mapping:
+    ontology_id: CHEBI:9750
+    ontology_label: tricine
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.99
+      notes: 'Claude Code reasoning: Tricine = N-[Tris(hydroxymethyl)methyl]glycine.
+
+        CHEBI:9750 represents tricine.
+
+        Good''s buffer for biological pH control (pH 7.4-8.8).
+
+        Direct exact match.
+
+        '
+  id: MediaIngredientMech:000065
 - identifier: UNMAPPED_0066
   preferred_term: WC Trace Elements Solution
   synonyms:
   - synonym_text: WC Trace Elements Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -1266,7 +2979,18 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 8'
+  - timestamp: '2026-03-11T00:55:50.606167+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 8
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000066
 - identifier: UNMAPPED_0067
   preferred_term: Supplemented Seawater
   synonyms:
@@ -1285,13 +3009,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 3'
+  id: MediaIngredientMech:000067
 - identifier: UNMAPPED_0068
   preferred_term: DYV Metal Solution
   synonyms:
   - synonym_text: DYV Metal Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -1302,14 +3027,25 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 10'
-- identifier: UNMAPPED_0069
+  - timestamp: '2026-03-11T00:55:50.606171+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 10
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000068
+- identifier: FOODON:03316428
   preferred_term: Proteose Peptone
   synonyms:
   - synonym_text: Proteose Peptone(BD 211684)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -1320,7 +3056,45 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695623+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:03316428 (peptone)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Proteose Peptone = specific type of peptone (protein
+      hydrolysate).
+
+      FOODON:03316428 represents peptone (generic).
+
+      Proteose peptone is enzymatic digest with specific properties.
+
+      Maps to generic peptone term - proteose-specific term may not exist.
+
+      '
   notes: 'CultureMech placeholder_id: 3'
+  ontology_mapping:
+    ontology_id: FOODON:03316428
+    ontology_label: peptone
+    ontology_source: FOODON
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.92
+      notes: 'Claude Code reasoning: Proteose Peptone = specific type of peptone (protein
+        hydrolysate).
+
+        FOODON:03316428 represents peptone (generic).
+
+        Proteose peptone is enzymatic digest with specific properties.
+
+        Maps to generic peptone term - proteose-specific term may not exist.
+
+        '
+  id: MediaIngredientMech:000069
 - identifier: UNMAPPED_0070
   preferred_term: Allen Medium
   synonyms:
@@ -1339,13 +3113,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0071
+  id: MediaIngredientMech:000070
+- identifier: ENVO:00001998
   preferred_term: Vermont Soil
   synonyms:
   - synonym_text: Vermont Soil
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1356,7 +3131,45 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:00:33.818513+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to ENVO:00001998 (soil)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: "Vermont" is geographic location qualifier (U.S.
+      state).
+
+      Core material: soil.
+
+      ENVO:00001998 represents soil (generic).
+
+      Geographic origin preserved for traceability but maps to generic soil.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
+  ontology_mapping:
+    ontology_id: ENVO:00001998
+    ontology_label: soil
+    ontology_source: ENVO
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.85
+      notes: 'Claude Code reasoning: "Vermont" is geographic location qualifier (U.S.
+        state).
+
+        Core material: soil.
+
+        ENVO:00001998 represents soil (generic).
+
+        Geographic origin preserved for traceability but maps to generic soil.
+
+        '
+  id: MediaIngredientMech:000071
 - identifier: UNMAPPED_0072
   preferred_term: Volvox Medium
   synonyms:
@@ -1375,13 +3188,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0073
+  id: MediaIngredientMech:000072
+- identifier: CHEBI:42191
   preferred_term: EDTA Stock
   synonyms:
   - synonym_text: EDTA Stock
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1392,7 +3206,45 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892387+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:42191 (EDTA(4-))
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Generic EDTA stock solution (ethylenediaminetetraacetic
+      acid).
+
+      CHEBI:42191 represents EDTA anion (fully deprotonated form).
+
+      Stock solutions typically use disodium or tetrasodium salts.
+
+      Maps to generic EDTA term - specific salt form unknown.
+
+      '
   notes: 'CultureMech placeholder_id: 7'
+  ontology_mapping:
+    ontology_id: CHEBI:42191
+    ontology_label: EDTA(4-)
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.85
+      notes: 'Claude Code reasoning: Generic EDTA stock solution (ethylenediaminetetraacetic
+        acid).
+
+        CHEBI:42191 represents EDTA anion (fully deprotonated form).
+
+        Stock solutions typically use disodium or tetrasodium salts.
+
+        Maps to generic EDTA term - specific salt form unknown.
+
+        '
+  id: MediaIngredientMech:000073
 - identifier: UNMAPPED_0074
   preferred_term: Iron Stock
   synonyms:
@@ -1411,6 +3263,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 8'
+  id: MediaIngredientMech:000074
 - identifier: UNMAPPED_0075
   preferred_term: Boron Stock
   synonyms:
@@ -1429,6 +3282,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 9'
+  id: MediaIngredientMech:000075
 - identifier: UNMAPPED_0076
   preferred_term: Bold Trace Stock
   synonyms:
@@ -1447,13 +3301,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 10'
-- identifier: UNMAPPED_0077
+  id: MediaIngredientMech:000076
+- identifier: CHEBI:88434
   preferred_term: Sodium Metasilicate
   synonyms:
   - synonym_text: Sodium Metasilicate
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1464,7 +3319,43 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:01:54.695648+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:88434 (sodium metasilicate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Sodium Metasilicate = Na2SiO3.
+
+      CHEBI:88434 represents sodium metasilicate.
+
+      Note: Similar to UNMAPPED_0016 (Na2SiO3•9H2O) already mapped.
+
+      This is anhydrous form, same base compound.
+
+      '
   notes: 'CultureMech placeholder_id: 3'
+  ontology_mapping:
+    ontology_id: CHEBI:88434
+    ontology_label: sodium metasilicate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.96
+      notes: 'Claude Code reasoning: Sodium Metasilicate = Na2SiO3.
+
+        CHEBI:88434 represents sodium metasilicate.
+
+        Note: Similar to UNMAPPED_0016 (Na2SiO3•9H2O) already mapped.
+
+        This is anhydrous form, same base compound.
+
+        '
+  id: MediaIngredientMech:000077
 - identifier: UNMAPPED_0078
   preferred_term: 'Soilwater: GR- Medium'
   synonyms:
@@ -1483,13 +3374,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0079
+  id: MediaIngredientMech:000078
+- identifier: FOODON:00002653
   preferred_term: Beef extract
   synonyms:
   - synonym_text: Beef extract(Sigma B-4888)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1500,14 +3392,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:03:06.096590+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:00002653 (beef extract)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Beef extract = aqueous extract of beef tissue (biological
+      product).
+
+      FOODON:00002653 represents beef extract.
+
+      Commonly used as complex nutrient source in microbial media.
+
+      Biological material → FOODON.
+
+      '
   notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0080
+  ontology_mapping:
+    ontology_id: FOODON:00002653
+    ontology_label: beef extract
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.96
+      notes: 'Claude Code reasoning: Beef extract = aqueous extract of beef tissue
+        (biological product).
+
+        FOODON:00002653 represents beef extract.
+
+        Commonly used as complex nutrient source in microbial media.
+
+        Biological material → FOODON.
+
+        '
+  id: MediaIngredientMech:000079
+- identifier: CHEBI:78160
   preferred_term: TES buffer
   synonyms:
   - synonym_text: TES buffer(Sigma T 1375)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1518,14 +3448,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892405+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:78160 (TES)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: TES = N-[Tris(hydroxymethyl)methyl]-2-aminoethanesulfonic
+      acid.
+
+      Common Good''s buffer for biological pH control (pH 6.8-8.2).
+
+      Direct exact match - TES is standard abbreviation.
+
+      '
   notes: 'CultureMech placeholder_id: 9'
-- identifier: UNMAPPED_0081
+  ontology_mapping:
+    ontology_id: CHEBI:78160
+    ontology_label: TES
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.98
+      notes: 'Claude Code reasoning: TES = N-[Tris(hydroxymethyl)methyl]-2-aminoethanesulfonic
+        acid.
+
+        Common Good''s buffer for biological pH control (pH 6.8-8.2).
+
+        Direct exact match - TES is standard abbreviation.
+
+        '
+  id: MediaIngredientMech:000080
+- identifier: CHEBI:39179
   preferred_term: Na2Glycerophosphate.5H2O
   synonyms:
   - synonym_text: 'Na2Glycerophosphate.5H2O(CAS:  13408-09-8)'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: Na2Glycerophosphate.5H2O
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1536,14 +3504,56 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892423+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:39179 (disodium glycerol 2-phosphate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Hydrate notation stripped: Na2Glycerophosphate.5H2O
+      → Na2Glycerophosphate.
+
+      Note: Different hydration state notation (.5H2O vs •5H2O).
+
+      Same as UNMAPPED_0030 already mapped.
+
+      Maps to disodium glycerol 2-phosphate (CHEBI:39179).
+
+      '
   notes: 'CultureMech placeholder_id: 5'
-- identifier: UNMAPPED_0082
+  ontology_mapping:
+    ontology_id: CHEBI:39179
+    ontology_label: disodium glycerol 2-phosphate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.9
+      notes: 'Claude Code reasoning: Hydrate notation stripped: Na2Glycerophosphate.5H2O
+        → Na2Glycerophosphate.
+
+        Note: Different hydration state notation (.5H2O vs •5H2O).
+
+        Same as UNMAPPED_0030 already mapped.
+
+        Maps to disodium glycerol 2-phosphate (CHEBI:39179).
+
+        '
+  id: MediaIngredientMech:000081
+- identifier: CHEBI:62946
   preferred_term: 'Original amount: (NH4)2SO4(Fisher A 702)'
   synonyms:
   - synonym_text: (NH4)2SO4(Fisher A 702)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: 'Original amount: (NH4)2SO4(Fisher A 702)'
+    synonym_type: CATALOG_VARIANT
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_catalog'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1554,7 +3564,45 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892446+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:62946 (ammonium sulfate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Catalog stripped and prefix removed: (NH4)2SO4(Fisher
+      A 702) → (NH4)2SO4.
+
+      Formula: (NH4)2SO4 → ammonium sulfate.
+
+      Common nitrogen source in microbial media.
+
+      Catalog variant will be preserved as CATALOG_VARIANT synonym.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
+  ontology_mapping:
+    ontology_id: CHEBI:62946
+    ontology_label: ammonium sulfate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.92
+      notes: 'Claude Code reasoning: Catalog stripped and prefix removed: (NH4)2SO4(Fisher
+        A 702) → (NH4)2SO4.
+
+        Formula: (NH4)2SO4 → ammonium sulfate.
+
+        Common nitrogen source in microbial media.
+
+        Catalog variant will be preserved as CATALOG_VARIANT synonym.
+
+        '
+  id: MediaIngredientMech:000082
 - identifier: UNMAPPED_0083
   preferred_term: DYIII Medium
   synonyms:
@@ -1573,13 +3621,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0084
+  id: MediaIngredientMech:000083
+- identifier: CHEBI:15377
   preferred_term: Sterile dH2O
   synonyms:
   - synonym_text: Sterile dH2O
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1590,7 +3639,41 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:55:32.892472+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:15377 (water)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: "Sterile" is preparation qualifier, not chemical
+      identity.
+
+      dH2O = distilled water → water.
+
+      Same mapping as regular dH2O (CHEBI:15377).
+
+      '
   notes: 'CultureMech placeholder_id: 3'
+  ontology_mapping:
+    ontology_id: CHEBI:15377
+    ontology_label: water
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.99
+      notes: 'Claude Code reasoning: "Sterile" is preparation qualifier, not chemical
+        identity.
+
+        dH2O = distilled water → water.
+
+        Same mapping as regular dH2O (CHEBI:15377).
+
+        '
+  id: MediaIngredientMech:000084
 - identifier: UNMAPPED_0085
   preferred_term: Beijerinck's Solution
   synonyms:
@@ -1609,13 +3692,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
+  id: MediaIngredientMech:000085
 - identifier: UNMAPPED_0086
   preferred_term: Phosphate Buffer Stock Solution
   synonyms:
   - synonym_text: Phosphate Buffer Stock Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1626,14 +3710,25 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 2'
+  - timestamp: '2026-03-11T00:55:50.606178+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 2
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000086
 - identifier: UNMAPPED_0087
   preferred_term: Hunter's Trace Stock Solution
   synonyms:
   - synonym_text: Hunter's Trace Stock Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1644,14 +3739,25 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 3'
+  - timestamp: '2026-03-11T00:55:50.606183+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 3
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000087
 - identifier: UNMAPPED_0088
   preferred_term: Tris Acetate Stock Solution
   synonyms:
   - synonym_text: Tris Acetate Stock Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1662,7 +3768,18 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 4'
+  - timestamp: '2026-03-11T00:55:50.606186+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 4
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000088
 - identifier: UNMAPPED_0089
   preferred_term: Modified Bold 3N Medium
   synonyms:
@@ -1681,13 +3798,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 3'
-- identifier: UNMAPPED_0090
+  id: MediaIngredientMech:000089
+- identifier: CHEBI:9754
   preferred_term: Trizma Base pH
   synonyms:
   - synonym_text: Trizma Base pH 8.2
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1698,7 +3816,43 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:03:06.097580+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:9754 (tris)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Trizma Base = Tris = tris(hydroxymethyl)aminomethane.
+
+      CHEBI:9754 represents tris (Tris buffer base).
+
+      "pH" qualifier (pH 8.2 from synonym) indicates buffered form.
+
+      Maps to base compound tris.
+
+      '
   notes: 'CultureMech placeholder_id: 8'
+  ontology_mapping:
+    ontology_id: CHEBI:9754
+    ontology_label: tris
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.92
+      notes: 'Claude Code reasoning: Trizma Base = Tris = tris(hydroxymethyl)aminomethane.
+
+        CHEBI:9754 represents tris (Tris buffer base).
+
+        "pH" qualifier (pH 8.2 from synonym) indicates buffered form.
+
+        Maps to base compound tris.
+
+        '
+  id: MediaIngredientMech:000090
 - identifier: UNMAPPED_0091
   preferred_term: A+ Trace Components
   synonyms:
@@ -1717,13 +3871,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 9'
+  id: MediaIngredientMech:000091
 - identifier: UNMAPPED_0092
   preferred_term: DAS Macro Solution
   synonyms:
   - synonym_text: DAS Macro Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1734,14 +3889,25 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 3'
+  - timestamp: '2026-03-11T00:55:50.606189+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 3
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000092
 - identifier: UNMAPPED_0093
   preferred_term: Modified P-IV chelated Micronutrient Solution
   synonyms:
   - synonym_text: Modified P-IV chelated Micronutrient Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1752,14 +3918,25 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 4'
+  - timestamp: '2026-03-11T00:55:50.606192+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 4
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000093
 - identifier: UNMAPPED_0094
   preferred_term: P-II Metal Solution
   synonyms:
   - synonym_text: P-II Metal Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1770,14 +3947,25 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 8'
+  - timestamp: '2026-03-11T00:55:50.606194+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 8
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000094
 - identifier: UNMAPPED_0095
   preferred_term: Chelated Iron Solution
   synonyms:
   - synonym_text: Chelated Iron Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1788,14 +3976,25 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 9'
-- identifier: UNMAPPED_0096
+  - timestamp: '2026-03-11T00:55:50.606196+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 9
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000095
+- identifier: FOODON:00002617
   preferred_term: Barley grains
   synonyms:
   - synonym_text: Barley grains(add after dH2O)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1806,14 +4005,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:03:06.097625+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:00002617 (barley grain)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Barley grains = whole barley seeds used in media
+      preparation.
+
+      FOODON:00002617 represents barley grain.
+
+      Biological food material → FOODON.
+
+      Used as complex nutrient source (starches, proteins).
+
+      '
   notes: 'CultureMech placeholder_id: 2'
+  ontology_mapping:
+    ontology_id: FOODON:00002617
+    ontology_label: barley grain
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.94
+      notes: 'Claude Code reasoning: Barley grains = whole barley seeds used in media
+        preparation.
+
+        FOODON:00002617 represents barley grain.
+
+        Biological food material → FOODON.
+
+        Used as complex nutrient source (starches, proteins).
+
+        '
+  id: MediaIngredientMech:000096
 - identifier: UNMAPPED_0097
   preferred_term: Algal Trace Elements Solution
   synonyms:
   - synonym_text: Algal Trace Elements Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1824,14 +4061,25 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 9'
-- identifier: UNMAPPED_0098
+  - timestamp: '2026-03-11T00:55:50.606199+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 9
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000097
+- identifier: FOODON:03316037
   preferred_term: Sphagnum extract
   synonyms:
   - synonym_text: Sphagnum extract
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1842,14 +4090,50 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:03:06.097652+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:03316037 (plant extract)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Sphagnum extract = extract from Sphagnum moss.
+
+      FOODON:03316037 represents generic plant extract.
+
+      Sphagnum-specific term may not exist - maps to broader plant extract.
+
+      Medium confidence due to generic mapping.
+
+      '
   notes: 'CultureMech placeholder_id: 3'
-- identifier: UNMAPPED_0099
+  ontology_mapping:
+    ontology_id: FOODON:03316037
+    ontology_label: plant extract
+    ontology_source: FOODON
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.8
+      notes: 'Claude Code reasoning: Sphagnum extract = extract from Sphagnum moss.
+
+        FOODON:03316037 represents generic plant extract.
+
+        Sphagnum-specific term may not exist - maps to broader plant extract.
+
+        Medium confidence due to generic mapping.
+
+        '
+  id: MediaIngredientMech:000098
+- identifier: ENVO:00005774
   preferred_term: Organic Peat
   synonyms:
   - synonym_text: Organic Peat
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1860,14 +4144,52 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:03:06.097676+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to ENVO:00005774 (peat)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Organic Peat = decomposed organic matter (environmental
+      material).
+
+      ENVO:00005774 represents peat.
+
+      Environmental sample → ENVO, not FOODON.
+
+      "Organic" is qualifier (vs inorganic additives), core material is peat.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0100
+  ontology_mapping:
+    ontology_id: ENVO:00005774
+    ontology_label: peat
+    ontology_source: ENVO
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.94
+      notes: 'Claude Code reasoning: Organic Peat = decomposed organic matter (environmental
+        material).
+
+        ENVO:00005774 represents peat.
+
+        Environmental sample → ENVO, not FOODON.
+
+        "Organic" is qualifier (vs inorganic additives), core material is peat.
+
+        '
+  id: MediaIngredientMech:000099
+- identifier: FOODON:00002420
   preferred_term: Malt extract
   synonyms:
   - synonym_text: Malt extract(Sigma M-0383)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1878,14 +4200,56 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:03:06.097699+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:00002420 (malt extract)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Malt extract = extract from malted barley (biological
+      product).
+
+      FOODON:00002420 represents malt extract.
+
+      Commonly used as complex nutrient and carbon source in microbial media.
+
+      Direct exact match to FOODON term.
+
+      '
   notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0101
+  ontology_mapping:
+    ontology_id: FOODON:00002420
+    ontology_label: malt extract
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.98
+      notes: 'Claude Code reasoning: Malt extract = extract from malted barley (biological
+        product).
+
+        FOODON:00002420 represents malt extract.
+
+        Commonly used as complex nutrient and carbon source in microbial media.
+
+        Direct exact match to FOODON term.
+
+        '
+  id: MediaIngredientMech:000100
+- identifier: CHEBI:39179
   preferred_term: Na2Glycerophosphate•5H2O
   synonyms:
   - synonym_text: 'Na2Glycerophosphate•5H2O(CAS: 13408-09-8)'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: Na2Glycerophosphate•5H2O
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1896,14 +4260,56 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:59:36.373228+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:39179 (disodium glycerol 2-phosphate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Duplicate of UNMAPPED_0030 (already mapped in batch
+      1).
+
+      Same compound, different notation (• vs . for hydrate).
+
+      Hydrate notation stripped: Na2Glycerophosphate•5H2O → Na2Glycerophosphate.
+
+      Maps to disodium glycerol 2-phosphate (CHEBI:39179).
+
+      '
   notes: 'CultureMech placeholder_id: 5'
-- identifier: UNMAPPED_0102
+  ontology_mapping:
+    ontology_id: CHEBI:39179
+    ontology_label: disodium glycerol 2-phosphate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.9
+      notes: 'Claude Code reasoning: Duplicate of UNMAPPED_0030 (already mapped in
+        batch 1).
+
+        Same compound, different notation (• vs . for hydrate).
+
+        Hydrate notation stripped: Na2Glycerophosphate•5H2O → Na2Glycerophosphate.
+
+        Maps to disodium glycerol 2-phosphate (CHEBI:39179).
+
+        '
+  id: MediaIngredientMech:000101
+- identifier: CHEBI:31346
   preferred_term: CaSO4•2H2Osaturated solution
   synonyms:
   - synonym_text: CaSO4•2H2Osaturated solution (Mallinckroft 4300)
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  - synonym_text: CaSO4•2H2Osaturated solution
+    synonym_type: HYDRATE_FORM
+    source: claude_code_curation
+    notes: 'Original form before normalization: stripped_hydrate'
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1914,7 +4320,49 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:59:36.374229+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:31346 (calcium sulfate)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Typo in original: missing space "2H2Osaturated"
+      should be "2H2O saturated".
+
+      Core compound: CaSO4•2H2O → CaSO4 → calcium sulfate.
+
+      "saturated solution" is concentration qualifier, not chemical identity.
+
+      Maps to calcium sulfate (CHEBI:31346).
+
+      Note: Similar to UNMAPPED_0048 (CaSO4•2H2O) already mapped.
+
+      '
   notes: 'CultureMech placeholder_id: 4'
+  ontology_mapping:
+    ontology_id: CHEBI:31346
+    ontology_label: calcium sulfate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.88
+      notes: 'Claude Code reasoning: Typo in original: missing space "2H2Osaturated"
+        should be "2H2O saturated".
+
+        Core compound: CaSO4•2H2O → CaSO4 → calcium sulfate.
+
+        "saturated solution" is concentration qualifier, not chemical identity.
+
+        Maps to calcium sulfate (CHEBI:31346).
+
+        Note: Similar to UNMAPPED_0048 (CaSO4•2H2O) already mapped.
+
+        '
+  id: MediaIngredientMech:000102
 - identifier: UNMAPPED_0103
   preferred_term: 'Soilwater: Peat Medium'
   synonyms:
@@ -1933,13 +4381,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 6'
-- identifier: UNMAPPED_0104
+  id: MediaIngredientMech:000103
+- identifier: FOODON:00002617
   preferred_term: Barley grains autoclaved
   synonyms:
   - synonym_text: Barley grains autoclaved
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1950,14 +4399,50 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:03:06.097722+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:00002617 (barley grain)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Same as UNMAPPED_0096 (Barley grains).
+
+      "autoclaved" is preparation method, not identity change.
+
+      FOODON:00002617 represents barley grain.
+
+      Autoclaving sterilizes but doesn''t change chemical identity.
+
+      '
   notes: 'CultureMech placeholder_id: 8'
-- identifier: UNMAPPED_0105
+  ontology_mapping:
+    ontology_id: FOODON:00002617
+    ontology_label: barley grain
+    ontology_source: FOODON
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.92
+      notes: 'Claude Code reasoning: Same as UNMAPPED_0096 (Barley grains).
+
+        "autoclaved" is preparation method, not identity change.
+
+        FOODON:00002617 represents barley grain.
+
+        Autoclaving sterilizes but doesn''t change chemical identity.
+
+        '
+  id: MediaIngredientMech:000104
+- identifier: FOODON:03302159
   preferred_term: Liver extract infusion
   synonyms:
   - synonym_text: Liver extract infusion
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -1968,7 +4453,45 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T20:03:06.097749+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to FOODON:03302159 (liver extract)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Liver extract infusion = aqueous extract of liver
+      tissue.
+
+      FOODON:03302159 represents liver extract.
+
+      "infusion" indicates preparation method (water extraction).
+
+      Biological material → FOODON.
+
+      '
   notes: 'CultureMech placeholder_id: 4'
+  ontology_mapping:
+    ontology_id: FOODON:03302159
+    ontology_label: liver extract
+    ontology_source: FOODON
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.9
+      notes: 'Claude Code reasoning: Liver extract infusion = aqueous extract of liver
+        tissue.
+
+        FOODON:03302159 represents liver extract.
+
+        "infusion" indicates preparation method (water extraction).
+
+        Biological material → FOODON.
+
+        '
+  id: MediaIngredientMech:000105
 - identifier: UNMAPPED_0106
   preferred_term: Macro Component 1 for J Medium
   synonyms:
@@ -1987,6 +4510,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 1'
+  id: MediaIngredientMech:000106
 - identifier: UNMAPPED_0107
   preferred_term: Macro Component 2 for J medium
   synonyms:
@@ -2005,6 +4529,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 2'
+  id: MediaIngredientMech:000107
 - identifier: UNMAPPED_0108
   preferred_term: G9 Trace Metals for J medium
   synonyms:
@@ -2023,13 +4548,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 4'
-- identifier: UNMAPPED_0109
+  id: MediaIngredientMech:000108
+- identifier: CHEBI:38448
   preferred_term: FE EDTA
   synonyms:
   - synonym_text: FE EDTA
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -2040,7 +4566,47 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-03-09T19:59:36.374264+00:00'
+    curator: Claude Code (map-media-ingredients skill)
+    action: MAPPED
+    changes: Mapped to CHEBI:38448 (Fe(3+)-EDTA)
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-code-interactive
+    notes: 'Claude Code reasoning: Iron-EDTA chelate complex.
+
+      Assumes Fe(III) form (most common in media).
+
+      CHEBI:38448 represents ferric EDTA complex.
+
+      Alternative: Fe(II)-EDTA exists but Fe(III) more stable in aerobic media.
+
+      Medium confidence due to oxidation state ambiguity.
+
+      '
   notes: 'CultureMech placeholder_id: 7'
+  ontology_mapping:
+    ontology_id: CHEBI:38448
+    ontology_label: Fe(3+)-EDTA
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: LLM_SUGGESTION
+      source: Claude Code (map-media-ingredients skill)
+      confidence_score: 0.85
+      notes: 'Claude Code reasoning: Iron-EDTA chelate complex.
+
+        Assumes Fe(III) form (most common in media).
+
+        CHEBI:38448 represents ferric EDTA complex.
+
+        Alternative: Fe(II)-EDTA exists but Fe(III) more stable in aerobic media.
+
+        Medium confidence due to oxidation state ambiguity.
+
+        '
+  id: MediaIngredientMech:000109
 - identifier: UNMAPPED_0110
   preferred_term: Minor Nutrients
   synonyms:
@@ -2059,6 +4625,7 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 8'
+  id: MediaIngredientMech:000110
 - identifier: UNMAPPED_0111
   preferred_term: Modified COMBO Medium
   synonyms:
@@ -2077,13 +4644,14 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: 'CultureMech placeholder_id: 3'
+  id: MediaIngredientMech:000111
 - identifier: UNMAPPED_0112
   preferred_term: Chu Stock Solution
   synonyms:
   - synonym_text: Chu Stock Solution
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -2094,4 +4662,15 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 1'
+  - timestamp: '2026-03-11T00:55:50.606205+00:00'
+    curator: claude_code
+    action: STATUS_CHANGED
+    changes: Status changed from UNMAPPED to NEEDS_EXPERT
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    notes: Complex mixture/trace metal solution - cannot map to single ontology term
+      without composition details
+  notes: 'CultureMech placeholder_id: 1
+
+    Complex mixture - requires expert review or composition details for proper mapping'
+  id: MediaIngredientMech:000112

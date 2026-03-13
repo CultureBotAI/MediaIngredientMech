@@ -34,6 +34,15 @@ VALID_QUALITY = {
     "PROVISIONAL",
 }
 
+VALID_MATCH_LEVEL = {
+    "EXACT",
+    "NORMALIZED",
+    "FUZZY",
+    "MANUAL",
+    "UNMAPPABLE",
+    "UNKNOWN",
+}
+
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
@@ -124,6 +133,7 @@ class IngredientCurator:
         record: dict[str, Any],
         candidate: OntologyCandidate,
         quality: str = "MANUAL_CURATION",
+        match_level: str = "MANUAL",
         llm_assisted: bool = False,
         llm_model: Optional[str] = None,
         notes: Optional[str] = None,
@@ -134,6 +144,7 @@ class IngredientCurator:
             record: The ingredient record dict to update.
             candidate: The selected OntologyCandidate.
             quality: MappingQualityEnum value.
+            match_level: MatchLevelEnum value indicating how mapping was found.
             llm_assisted: Whether LLM helped with this mapping.
             llm_model: LLM model identifier if applicable.
             notes: Optional notes about the mapping.
@@ -144,6 +155,9 @@ class IngredientCurator:
         if quality not in VALID_QUALITY:
             raise ValueError(f"Invalid quality: {quality}. Must be one of {VALID_QUALITY}")
 
+        if match_level not in VALID_MATCH_LEVEL:
+            raise ValueError(f"Invalid match_level: {match_level}. Must be one of {VALID_MATCH_LEVEL}")
+
         previous_status = record.get("mapping_status", "UNMAPPED")
 
         # Set ontology mapping
@@ -152,6 +166,7 @@ class IngredientCurator:
             "ontology_label": candidate.label,
             "ontology_source": candidate.source,
             "mapping_quality": quality,
+            "match_level": match_level,
             "evidence": [
                 {
                     "evidence_type": "LLM_SUGGESTION" if llm_assisted else "CURATOR_JUDGMENT",

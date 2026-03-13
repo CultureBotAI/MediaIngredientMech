@@ -106,6 +106,9 @@ classes:
         range: MappingQualityEnum
         required: true
         description: Quality assessment of this mapping
+      match_level:
+        range: MatchLevelEnum
+        description: Technical method used to find this mapping
       evidence:
         range: MappingEvidence
         multivalued: true
@@ -222,6 +225,21 @@ enums:
       PROVISIONAL:
         description: Tentative mapping needing verification
 
+  MatchLevelEnum:
+    permissible_values:
+      EXACT:
+        description: Direct string match with no normalization
+      NORMALIZED:
+        description: Chemical normalization applied (hydrate strip, formula fix, catalog removal)
+      FUZZY:
+        description: Synonym matching or semantic similarity
+      MANUAL:
+        description: Expert or LLM-assisted curation
+      UNMAPPABLE:
+        description: Cannot reliably map to ontology
+      UNKNOWN:
+        description: Match method not recorded or imported from external source
+
   OntologySourceEnum:
     permissible_values:
       CHEBI:
@@ -272,6 +290,14 @@ enums:
         description: Common or colloquial name
       SYSTEMATIC_NAME:
         description: Systematic chemical name
+      HYDRATE_FORM:
+        description: Chemical with hydrate notation (e.g., MgSO4•7H2O)
+      CATALOG_VARIANT:
+        description: Name with catalog/supplier code (e.g., NaCl Fisher S271-500)
+      INCOMPLETE_FORMULA:
+        description: Incomplete chemical formula (e.g., K2HPO instead of K2HPO4)
+      ALTERNATE_FORM:
+        description: Alternative chemical form (salt, ester, etc.)
 
   EvidenceTypeEnum:
     permissible_values:

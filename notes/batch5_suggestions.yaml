@@ -1,0 +1,256 @@
+suggestions:
+- identifier: UNMAPPED_0022
+  name: Tryptone
+  ontology_id: FOODON:03301773
+  ontology_label: tryptone
+  ontology_source: FOODON
+  confidence: 0.98
+  quality: EXACT_MATCH
+  reasoning: 'Tryptone = pancreatic digest of casein (biological protein hydrolysate).
+
+    FOODON:03301773 represents tryptone (food product).
+
+    Commonly used as nitrogen source in microbial media.
+
+    Biological material → maps to FOODON, not CHEBI.
+
+    '
+  match_level: MANUAL
+- identifier: UNMAPPED_0025
+  name: Yeast extract
+  ontology_id: FOODON:03411448
+  ontology_label: yeast extract
+  ontology_source: FOODON
+  confidence: 0.99
+  quality: EXACT_MATCH
+  reasoning: 'Yeast extract = autolyzed yeast cell extract (biological mixture).
+
+    FOODON:03411448 represents yeast extract.
+
+    Complex biological material with vitamins, amino acids, nucleotides.
+
+    Direct exact match to FOODON term.
+
+    '
+  match_level: EXACT
+- identifier: UNMAPPED_0038
+  name: Glucose
+  ontology_id: CHEBI:17234
+  ontology_label: D-glucose
+  ontology_source: CHEBI
+  confidence: 0.95
+  quality: CLOSE_MATCH
+  reasoning: 'Glucose (dextrose) = D-glucose (simple sugar).
+
+    CHEBI:17234 represents D-glucose (specific stereoisomer).
+
+    Pure chemical compound → CHEBI, not FOODON.
+
+    Note: Synonym mentions "BACTO-dextrose" but refers to pure chemical.
+
+    '
+  match_level: MANUAL
+- identifier: UNMAPPED_0042
+  name: Sodium Thiosulfate Pentahydrate
+  ontology_id: CHEBI:132112
+  ontology_label: sodium thiosulfate
+  ontology_source: CHEBI
+  confidence: 0.94
+  quality: CLOSE_MATCH
+  reasoning: 'Hydrate notation: Sodium Thiosulfate Pentahydrate → Sodium Thiosulfate.
+
+    CHEBI:132112 represents sodium thiosulfate (Na2S2O3).
+
+    Pentahydrate is common hydration state (5H2O).
+
+    Original hydrate form will be preserved as HYDRATE_FORM synonym.
+
+    '
+  match_level: MANUAL
+- identifier: UNMAPPED_0044
+  name: Sodium acetate
+  ontology_id: CHEBI:32954
+  ontology_label: sodium acetate
+  ontology_source: CHEBI
+  confidence: 0.98
+  quality: EXACT_MATCH
+  reasoning: 'Direct match: Sodium acetate → sodium acetate.
+
+    CHEBI:32954 represents sodium acetate (CH3COONa).
+
+    Commonly used as carbon source or pH buffer in media.
+
+    '
+  match_level: MANUAL
+- identifier: UNMAPPED_0049
+  name: Ca
+  ontology_id: CHEBI:64628
+  ontology_label: calcium nitrate
+  ontology_source: CHEBI
+  confidence: 0.9
+  quality: SYNONYM_MATCH
+  reasoning: 'Name is ambiguous "Ca", but synonym reveals: Ca(NO3)2•4H2O.
+
+    Formula: calcium nitrate tetrahydrate.
+
+    CHEBI:64628 represents calcium nitrate.
+
+    Medium confidence due to ambiguous preferred name, but synonym is clear.
+
+    '
+  match_level: MANUAL
+- identifier: UNMAPPED_0052
+  name: Glycylglycine
+  ontology_id: CHEBI:16963
+  ontology_label: glycylglycine
+  ontology_source: CHEBI
+  confidence: 0.99
+  quality: EXACT_MATCH
+  reasoning: 'Glycylglycine = dipeptide (Gly-Gly).
+
+    CHEBI:16963 represents glycylglycine (simplest dipeptide).
+
+    Used as buffer in biological systems.
+
+    Direct exact match.
+
+    '
+  match_level: EXACT
+- identifier: UNMAPPED_0053
+  name: Ferric Ammonium Citrate
+  ontology_id: CHEBI:75832
+  ontology_label: ferric ammonium citrate
+  ontology_source: CHEBI
+  confidence: 0.96
+  quality: EXACT_MATCH
+  reasoning: 'Ferric Ammonium Citrate = iron(III) ammonium citrate complex.
+
+    CHEBI:75832 represents ferric ammonium citrate.
+
+    Commonly used as iron source in microbial media.
+
+    Direct exact match.
+
+    '
+  match_level: EXACT
+- identifier: UNMAPPED_0058
+  name: Pea
+  ontology_id: FOODON:00002685
+  ontology_label: pea (whole, raw)
+  ontology_source: FOODON
+  confidence: 0.75
+  quality: CLOSE_MATCH
+  reasoning: '"Pea" likely refers to pea infusion or pea extract for media.
+
+    FOODON:00002685 represents whole raw pea.
+
+    Biological material → FOODON.
+
+    Lower confidence: unclear if whole pea, extract, or infusion.
+
+    May need more specific FOODON term for pea extract.
+
+    '
+  match_level: MANUAL
+- identifier: UNMAPPED_0065
+  name: Tricine
+  ontology_id: CHEBI:9750
+  ontology_label: tricine
+  ontology_source: CHEBI
+  confidence: 0.99
+  quality: EXACT_MATCH
+  reasoning: 'Tricine = N-[Tris(hydroxymethyl)methyl]glycine.
+
+    CHEBI:9750 represents tricine.
+
+    Good''s buffer for biological pH control (pH 7.4-8.8).
+
+    Direct exact match.
+
+    '
+  match_level: EXACT
+- identifier: UNMAPPED_0069
+  name: Proteose Peptone
+  ontology_id: FOODON:03316428
+  ontology_label: peptone
+  ontology_source: FOODON
+  confidence: 0.92
+  quality: CLOSE_MATCH
+  reasoning: 'Proteose Peptone = specific type of peptone (protein hydrolysate).
+
+    FOODON:03316428 represents peptone (generic).
+
+    Proteose peptone is enzymatic digest with specific properties.
+
+    Maps to generic peptone term - proteose-specific term may not exist.
+
+    '
+  match_level: MANUAL
+- identifier: UNMAPPED_0074
+  name: Iron Stock
+  ontology_id: null
+  ontology_label: null
+  ontology_source: null
+  confidence: 0.0
+  quality: UNMAPPABLE
+  reasoning: 'Generic "Iron Stock" without specified compound or concentration.
+
+    Could be FeCl3, FeSO4, Fe-EDTA, ferric citrate, etc.
+
+    Cannot map without knowing specific iron compound.
+
+    Recommend: Mark as NEEDS_EXPERT or reference protocol.
+
+    '
+  match_level: UNMAPPABLE
+- identifier: UNMAPPED_0075
+  name: Boron Stock
+  ontology_id: null
+  ontology_label: null
+  ontology_source: null
+  confidence: 0.0
+  quality: UNMAPPABLE
+  reasoning: 'Generic "Boron Stock" without specified compound.
+
+    Could be H3BO3 (boric acid), Na2B4O7 (borax), etc.
+
+    Cannot map without knowing specific boron compound.
+
+    Recommend: Mark as NEEDS_EXPERT or reference protocol.
+
+    '
+  match_level: UNMAPPABLE
+- identifier: UNMAPPED_0076
+  name: Bold Trace Stock
+  ontology_id: null
+  ontology_label: null
+  ontology_source: null
+  confidence: 0.0
+  quality: UNMAPPABLE
+  reasoning: '"Bold Trace Stock" refers to Bold''s basal medium trace element solution.
+
+    Mixture of multiple trace metals (Zn, Mn, Mo, Co, Cu, etc.).
+
+    Cannot map mixture to single ontology term.
+
+    Recommend: Mark as NEEDS_EXPERT or reference Bold''s formulation.
+
+    '
+  match_level: UNMAPPABLE
+- identifier: UNMAPPED_0077
+  name: Sodium Metasilicate
+  ontology_id: CHEBI:88434
+  ontology_label: sodium metasilicate
+  ontology_source: CHEBI
+  confidence: 0.96
+  quality: EXACT_MATCH
+  reasoning: 'Sodium Metasilicate = Na2SiO3.
+
+    CHEBI:88434 represents sodium metasilicate.
+
+    Note: Similar to UNMAPPED_0016 (Na2SiO3•9H2O) already mapped.
+
+    This is anhydrous form, same base compound.
+
+    '
+  match_level: MANUAL

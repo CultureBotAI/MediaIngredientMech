@@ -41,6 +41,17 @@ URI: [mediaingredientmech:OntologyMapping](https://w3id.org/mediaingredientmech/
     
 
         
+      OntologyMapping : match_level
+        
+          
+    
+        
+        
+        OntologyMapping --> "0..1" MatchLevelEnum : match_level
+        click MatchLevelEnum href "../MatchLevelEnum/"
+    
+
+        
       OntologyMapping : ontology_id
         
       OntologyMapping : ontology_label
@@ -73,6 +84,7 @@ URI: [mediaingredientmech:OntologyMapping](https://w3id.org/mediaingredientmech/
 | [ontology_label](ontology_label.md) | 1 <br/> [String](String.md) | Human-readable label for the term | direct |
 | [ontology_source](ontology_source.md) | 1 <br/> [OntologySourceEnum](OntologySourceEnum.md) | Source ontology | direct |
 | [mapping_quality](mapping_quality.md) | 1 <br/> [MappingQualityEnum](MappingQualityEnum.md) | Quality assessment of this mapping | direct |
+| [match_level](match_level.md) | 0..1 <br/> [MatchLevelEnum](MatchLevelEnum.md) | Technical method used to find this mapping | direct |
 | [evidence](evidence.md) | * <br/> [MappingEvidence](MappingEvidence.md) | Evidence supporting this mapping | direct |
 
 
@@ -165,6 +177,14 @@ attributes:
     - OntologyMapping
     range: MappingQualityEnum
     required: true
+  match_level:
+    name: match_level
+    description: Technical method used to find this mapping
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - OntologyMapping
+    range: MatchLevelEnum
   evidence:
     name: evidence
     description: Evidence supporting this mapping
@@ -233,6 +253,16 @@ attributes:
     - OntologyMapping
     range: MappingQualityEnum
     required: true
+  match_level:
+    name: match_level
+    description: Technical method used to find this mapping
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: match_level
+    owner: OntologyMapping
+    domain_of:
+    - OntologyMapping
+    range: MatchLevelEnum
   evidence:
     name: evidence
     description: Evidence supporting this mapping

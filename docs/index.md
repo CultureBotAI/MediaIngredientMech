@@ -6,71 +6,6 @@ URI: https://w3id.org/mediaingredientmech
 
 Name: mediaingredientmech-schema
 
-## About LinkML
-
-This schema is defined using [LinkML](https://linkml.io/) (Linked Data Modeling Language), a modeling language for linked data and semantic web applications. LinkML provides:
-
-- **Schema validation** with `linkml-validate`
-- **Data transformation** to RDF, JSON-LD, and other formats
-- **Code generation** for Python dataclasses
-- **Documentation generation** (this page)
-- **Integration** with ontologies and controlled vocabularies
-
-### Schema Source
-
-The authoritative schema is defined in YAML:
-- **File:** `src/mediaingredientmech/schema/mediaingredientmech.yaml`
-- **Source:** [GitHub Repository](https://github.com/CultureBotAI/MediaIngredientMech)
-
-### Validation Commands
-
-Validate data against the schema using LinkML tools:
-
-```bash
-# Validate schema syntax
-linkml-validate --schema src/mediaingredientmech/schema/mediaingredientmech.yaml
-
-# Validate data files
-linkml-validate --schema src/mediaingredientmech/schema/mediaingredientmech.yaml \
-                data/curated/mapped_ingredients.yaml
-
-# Validate individual ingredient records
-linkml-validate --schema src/mediaingredientmech/schema/mediaingredientmech.yaml \
-                data/ingredients/mapped/Glucose.yaml
-```
-
-### Code Generation
-
-Generate Python dataclasses from the schema:
-
-```bash
-# Generate dataclasses
-gen-linkml --dir src/mediaingredientmech/datamodel \
-           src/mediaingredientmech/schema/mediaingredientmech.yaml
-```
-
-### Documentation Generation
-
-Regenerate this documentation:
-
-```bash
-# Generate schema documentation
-gen-doc --directory docs \
-        src/mediaingredientmech/schema/mediaingredientmech.yaml
-```
-
-### Justfile Commands
-
-Common LinkML tasks are available via `just`:
-
-```bash
-just validate-schema      # Validate schema syntax
-just validate-all         # Validate all data
-just validate-individual  # Validate individual YAML files
-just gen-schema          # Regenerate dataclasses
-just gen-docs            # Regenerate documentation
-```
-
 
 
 ## Classes
@@ -107,6 +42,7 @@ just gen-docs            # Regenerate documentation
 | [mapped_count](mapped_count.md) | Number of mapped ingredients |
 | [mapping_quality](mapping_quality.md) | Quality assessment of this mapping |
 | [mapping_status](mapping_status.md) | Current mapping status |
+| [match_level](match_level.md) | Technical method used to find this mapping |
 | [media_count](media_count.md) | Number of unique media containing this ingredient |
 | [new_status](new_status.md) | Status after this action |
 | [notes](notes.md) | Free-text curation notes |
@@ -137,6 +73,7 @@ just gen-docs            # Regenerate documentation
 | [EvidenceTypeEnum](EvidenceTypeEnum.md) |  |
 | [MappingQualityEnum](MappingQualityEnum.md) |  |
 | [MappingStatusEnum](MappingStatusEnum.md) |  |
+| [MatchLevelEnum](MatchLevelEnum.md) |  |
 | [OntologySourceEnum](OntologySourceEnum.md) |  |
 | [SynonymTypeEnum](SynonymTypeEnum.md) |  |
 

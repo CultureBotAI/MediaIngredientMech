@@ -108,6 +108,41 @@ class OntologyClient:
         candidates.sort(key=lambda c: c.score, reverse=True)
         return candidates
 
+    def search_with_variants(
+        self,
+        queries: list[str],
+        sources: Optional[list[str]] = None,
+        max_results: int = 10,
+    ) -> list[OntologyCandidate]:
+        """Search ontologies with multiple query variants.
+
+        Searches each variant and deduplicates results, keeping the
+        best score for each unique ontology ID.
+
+        Args:
+            queries: List of query variants to try.
+            sources: Ontology sources to search (defaults to instance sources).
+            max_results: Maximum candidates to return per source per query.
+
+        Returns:
+            Deduplicated list of OntologyCandidate sorted by score (descending).
+        """
+        all_candidates: dict[str, OntologyCandidate] = {}
+
+        for query in queries:
+            candidates = self.search(query, sources, max_results)
+            for candidate in candidates:
+                # Keep highest scoring match for each ID
+                if candidate.ontology_id not in all_candidates:
+                    all_candidates[candidate.ontology_id] = candidate
+                elif candidate.score > all_candidates[candidate.ontology_id].score:
+                    all_candidates[candidate.ontology_id] = candidate
+
+        # Sort by score
+        result = list(all_candidates.values())
+        result.sort(key=lambda c: c.score, reverse=True)
+        return result
+
 
 def _similarity_score(query: str, label: str) -> float:
     """Simple normalized similarity between query and label."""

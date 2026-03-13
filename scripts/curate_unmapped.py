@@ -23,6 +23,10 @@ sys.path.insert(0, str(_project_root / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.curation.synonym_manager import SynonymManager
+from mediaingredientmech.utils.chemical_normalizer import (
+    categorize_unmapped_name,
+    normalize_chemical_name,
+)
 from mediaingredientmech.utils.ontology_client import OntologyClient
 
 console = Console()
@@ -50,11 +54,27 @@ def display_ingredient(record: dict, index: int, total: int) -> None:
         for s in synonyms
     ]
 
+    # Add normalization info
+    name = record.get('preferred_term', 'N/A')
+    category = categorize_unmapped_name(name)
+    norm_result = normalize_chemical_name(name)
+
     panel_text = (
-        f"[bold]Preferred term:[/bold] {record.get('preferred_term', 'N/A')}\n"
+        f"[bold]Preferred term:[/bold] {name}\n"
+        f"[bold]Category:[/bold] {category}\n"
         f"[bold]Status:[/bold] {record.get('mapping_status', 'UNMAPPED')}\n"
         f"[bold]Occurrences:[/bold] {total_occ} across {media_count} media\n"
     )
+
+    # Show normalization if applied
+    if norm_result.applied_rules:
+        panel_text += (
+            f"[bold]Normalized:[/bold] {norm_result.normalized} "
+            f"({', '.join(norm_result.applied_rules)})\n"
+        )
+    if len(norm_result.variants) > 1:
+        panel_text += f"[bold]Search variants:[/bold] {', '.join(norm_result.variants[:3])}\n"
+
     if syn_texts:
         panel_text += f"[bold]Synonyms:[/bold] {', '.join(syn_texts[:5])}\n"
     if samples:
