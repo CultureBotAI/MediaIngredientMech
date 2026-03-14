@@ -187,7 +187,7 @@ def _validate_ingredient_record(rec: Any, path: str, msgs: list[ValidationMessag
     if not isinstance(rec, dict):
         msgs.append(ValidationMessage("error", path, "Ingredient record must be a mapping"))
         return
-    _check_required(rec, "identifier", path, msgs)
+    _check_required(rec, "ontology_id", path, msgs)
     _check_required(rec, "preferred_term", path, msgs)
     _check_required(rec, "mapping_status", path, msgs)
     _check_enum(rec, "mapping_status", _MAPPING_STATUSES, path, msgs)

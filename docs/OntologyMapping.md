@@ -54,7 +54,25 @@ URI: [mediaingredientmech:OntologyMapping](https://w3id.org/mediaingredientmech/
         
       OntologyMapping : ontology_id
         
+          
+    
+        
+        
+        OntologyMapping --> "1" String : ontology_id
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
+        
       OntologyMapping : ontology_label
+        
+          
+    
+        
+        
+        OntologyMapping --> "1" String : ontology_label
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
         
       OntologyMapping : ontology_source
         
@@ -80,8 +98,8 @@ URI: [mediaingredientmech:OntologyMapping](https://w3id.org/mediaingredientmech/
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [ontology_id](ontology_id.md) | 1 <br/> [String](String.md) | Ontology term ID in CURIE format (e | direct |
-| [ontology_label](ontology_label.md) | 1 <br/> [String](String.md) | Human-readable label for the term | direct |
+| [ontology_id](ontology_id.md) | 1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Ontology term ID in CURIE format (e | direct |
+| [ontology_label](ontology_label.md) | 1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Human-readable label for the term | direct |
 | [ontology_source](ontology_source.md) | 1 <br/> [OntologySourceEnum](OntologySourceEnum.md) | Source ontology | direct |
 | [mapping_quality](mapping_quality.md) | 1 <br/> [MappingQualityEnum](MappingQualityEnum.md) | Quality assessment of this mapping | direct |
 | [match_level](match_level.md) | 0..1 <br/> [MatchLevelEnum](MatchLevelEnum.md) | Technical method used to find this mapping | direct |
@@ -146,8 +164,8 @@ attributes:
     name: ontology_id
     description: Ontology term ID in CURIE format (e.g., CHEBI:26710)
     from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
     domain_of:
+    - IngredientRecord
     - OntologyMapping
     required: true
     pattern: ^[A-Z]+:[0-9]+$
@@ -192,6 +210,8 @@ attributes:
     rank: 1000
     domain_of:
     - OntologyMapping
+    - RoleAssignment
+    - CellularRoleAssignment
     range: MappingEvidence
     multivalued: true
     inlined: true
@@ -212,10 +232,10 @@ attributes:
     name: ontology_id
     description: Ontology term ID in CURIE format (e.g., CHEBI:26710)
     from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
     alias: ontology_id
     owner: OntologyMapping
     domain_of:
+    - IngredientRecord
     - OntologyMapping
     range: string
     required: true
@@ -272,6 +292,8 @@ attributes:
     owner: OntologyMapping
     domain_of:
     - OntologyMapping
+    - RoleAssignment
+    - CellularRoleAssignment
     range: MappingEvidence
     multivalued: true
     inlined: true

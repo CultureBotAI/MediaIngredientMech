@@ -32,11 +32,47 @@ URI: [mediaingredientmech:CurationEvent](https://w3id.org/mediaingredientmech/Cu
         
       CurationEvent : changes
         
+          
+    
+        
+        
+        CurationEvent --> "0..1" String : changes
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
+        
       CurationEvent : curator
+        
+          
+    
+        
+        
+        CurationEvent --> "1" String : curator
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
         
       CurationEvent : llm_assisted
         
+          
+    
+        
+        
+        CurationEvent --> "0..1" Boolean : llm_assisted
+        click Boolean href "../http://www.w3.org/2001/XMLSchema#boolean/"
+    
+
+        
       CurationEvent : llm_model
+        
+          
+    
+        
+        
+        CurationEvent --> "0..1" String : llm_model
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
         
       CurationEvent : new_status
         
@@ -51,6 +87,15 @@ URI: [mediaingredientmech:CurationEvent](https://w3id.org/mediaingredientmech/Cu
         
       CurationEvent : notes
         
+          
+    
+        
+        
+        CurationEvent --> "0..1" String : notes
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
+        
       CurationEvent : previous_status
         
           
@@ -63,6 +108,15 @@ URI: [mediaingredientmech:CurationEvent](https://w3id.org/mediaingredientmech/Cu
 
         
       CurationEvent : timestamp
+        
+          
+    
+        
+        
+        CurationEvent --> "1" Datetime : timestamp
+        click Datetime href "../http://www.w3.org/2001/XMLSchema#dateTime/"
+    
+
         
       
 ```
@@ -77,15 +131,15 @@ URI: [mediaingredientmech:CurationEvent](https://w3id.org/mediaingredientmech/Cu
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [timestamp](timestamp.md) | 1 <br/> [Datetime](Datetime.md) | When this action occurred | direct |
-| [curator](curator.md) | 1 <br/> [String](String.md) | Who performed this action (username or system) | direct |
+| [timestamp](timestamp.md) | 1 <br/> [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) | When this action occurred | direct |
+| [curator](curator.md) | 1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Who performed this action (username or system) | direct |
 | [action](action.md) | 1 <br/> [CurationActionEnum](CurationActionEnum.md) | Type of curation action | direct |
-| [changes](changes.md) | 0..1 <br/> [String](String.md) | Description of what changed | direct |
+| [changes](changes.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Description of what changed | direct |
 | [previous_status](previous_status.md) | 0..1 <br/> [MappingStatusEnum](MappingStatusEnum.md) | Status before this action | direct |
 | [new_status](new_status.md) | 0..1 <br/> [MappingStatusEnum](MappingStatusEnum.md) | Status after this action | direct |
-| [llm_assisted](llm_assisted.md) | 0..1 <br/> [Boolean](Boolean.md) | Whether LLM assistance was used | direct |
-| [llm_model](llm_model.md) | 0..1 <br/> [String](String.md) | LLM model identifier (if llm_assisted=true) | direct |
-| [notes](notes.md) | 0..1 <br/> [String](String.md) | Additional context for this action | direct |
+| [llm_assisted](llm_assisted.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | Whether LLM assistance was used | direct |
+| [llm_model](llm_model.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | LLM model identifier (if llm_assisted=true) | direct |
+| [notes](notes.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Additional context for this action | direct |
 
 
 
@@ -214,6 +268,8 @@ attributes:
     - IngredientRecord
     - MappingEvidence
     - CurationEvent
+    - RoleAssignment
+    - CellularRoleAssignment
 
 ```
 </details>
@@ -319,6 +375,8 @@ attributes:
     - IngredientRecord
     - MappingEvidence
     - CurationEvent
+    - RoleAssignment
+    - CellularRoleAssignment
     range: string
 
 ```

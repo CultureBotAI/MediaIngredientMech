@@ -21,9 +21,36 @@ URI: [mediaingredientmech:IngredientSynonym](https://w3id.org/mediaingredientmec
     click IngredientSynonym href "../IngredientSynonym/"
       IngredientSynonym : occurrence_count
         
+          
+    
+        
+        
+        IngredientSynonym --> "0..1" Integer : occurrence_count
+        click Integer href "../http://www.w3.org/2001/XMLSchema#integer/"
+    
+
+        
       IngredientSynonym : source
         
+          
+    
+        
+        
+        IngredientSynonym --> "0..1" String : source
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
+        
       IngredientSynonym : synonym_text
+        
+          
+    
+        
+        
+        IngredientSynonym --> "1" String : synonym_text
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
         
       IngredientSynonym : synonym_type
         
@@ -49,10 +76,10 @@ URI: [mediaingredientmech:IngredientSynonym](https://w3id.org/mediaingredientmec
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [synonym_text](synonym_text.md) | 1 <br/> [String](String.md) | The synonym text | direct |
+| [synonym_text](synonym_text.md) | 1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | The synonym text | direct |
 | [synonym_type](synonym_type.md) | 0..1 <br/> [SynonymTypeEnum](SynonymTypeEnum.md) | Type of synonym | direct |
-| [source](source.md) | 0..1 <br/> [String](String.md) | Where this synonym came from (e | direct |
-| [occurrence_count](occurrence_count.md) | 0..1 <br/> [Integer](Integer.md) | Number of times this variant appears | direct |
+| [source](source.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Where this synonym came from (e | direct |
+| [occurrence_count](occurrence_count.md) | 0..1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | Number of times this variant appears | direct |
 
 
 

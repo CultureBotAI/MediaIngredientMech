@@ -31,7 +31,7 @@ Alias: llm_assisted
 
 ## Properties
 
-* Range: [Boolean](Boolean.md)
+* Range: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 
 
 

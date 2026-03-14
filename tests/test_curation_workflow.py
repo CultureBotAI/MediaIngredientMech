@@ -50,7 +50,7 @@ class TestImportTransformation:
         has_mapping = bool(term_id)
 
         record = {
-            "identifier": term_id if has_mapping else f"UNMAPPED_{id(cm_ingredient) % 10000:04d}",
+            "ontology_id": term_id if has_mapping else f"UNMAPPED_{id(cm_ingredient) % 10000:04d}",
             "preferred_term": cm_ingredient["preferred_term"],
             "mapping_status": "MAPPED" if has_mapping else "UNMAPPED",
         }
@@ -87,14 +87,14 @@ class TestImportTransformation:
     def test_mapped_ingredient_transforms(self):
         cm = self._create_culturemech_ingredient()
         record = self._transform_to_ingredient_record(cm)
-        assert record["identifier"] == "CHEBI:26710"
+        assert record["ontology_id"] == "CHEBI:26710"
         assert record["mapping_status"] == "MAPPED"
         assert record["ontology_mapping"]["ontology_id"] == "CHEBI:26710"
 
     def test_unmapped_ingredient_transforms(self):
         cm = self._create_culturemech_ingredient(term={})
         record = self._transform_to_ingredient_record(cm)
-        assert record["identifier"].startswith("UNMAPPED_")
+        assert record["ontology_id"].startswith("UNMAPPED_")
         assert record["mapping_status"] == "UNMAPPED"
         assert "ontology_mapping" not in record
 
@@ -175,7 +175,7 @@ class TestCurationStateTransitions:
 
     def _make_record(self, status="UNMAPPED"):
         return {
-            "identifier": "TEST:001",
+            "ontology_id": "TEST:001",
             "preferred_term": "test ingredient",
             "mapping_status": status,
         }
@@ -246,7 +246,7 @@ class TestSynonymManagement:
 
     def _make_record_with_synonyms(self):
         return {
-            "identifier": "CHEBI:26710",
+            "ontology_id": "CHEBI:26710",
             "preferred_term": "sodium chloride",
             "mapping_status": "MAPPED",
             "synonyms": [
@@ -301,7 +301,7 @@ class TestSynonymManagement:
 
     def test_empty_synonyms_list(self):
         record = {
-            "identifier": "CHEBI:17996",
+            "ontology_id": "CHEBI:17996",
             "preferred_term": "chloride",
             "mapping_status": "MAPPED",
             "synonyms": [],
@@ -314,7 +314,7 @@ class TestHistoryTracking:
 
     def _make_record(self):
         return {
-            "identifier": "CHEBI:26710",
+            "ontology_id": "CHEBI:26710",
             "preferred_term": "sodium chloride",
             "mapping_status": "UNMAPPED",
             "curation_history": [
@@ -394,7 +394,7 @@ class TestHistoryTracking:
         """Verify curation history in the unmapped fixture has proper structure."""
         data = load_fixture("sample_unmapped.yaml")
         # Find record with rich history (casamino acids)
-        casamino = next(r for r in data["ingredients"] if r["identifier"] == "UNMAPPED_005")
+        casamino = next(r for r in data["ingredients"] if r["ontology_id"] == "UNMAPPED_005")
         assert len(casamino["curation_history"]) == 2
         assert casamino["curation_history"][0]["action"] == "IMPORTED"
         assert casamino["curation_history"][1]["action"] == "MAPPED"
@@ -403,7 +403,7 @@ class TestHistoryTracking:
     def test_mapped_fixture_beef_extract_history(self):
         """Beef extract in mapped fixture should show full workflow."""
         data = load_fixture("sample_mapped.yaml")
-        beef = next(r for r in data["ingredients"] if r["identifier"] == "FOODON:3311109")
+        beef = next(r for r in data["ingredients"] if r["ontology_id"] == "FOODON:3311109")
         assert len(beef["curation_history"]) == 3
         actions = [e["action"] for e in beef["curation_history"]]
         assert actions == ["IMPORTED", "MAPPED", "VALIDATED"]
@@ -452,6 +452,6 @@ class TestCollectionAggregation:
         """All identifiers in fixtures should be unique."""
         mapped_data = load_fixture("sample_mapped.yaml")
         unmapped_data = load_fixture("sample_unmapped.yaml")
-        all_ids = [r["identifier"] for r in mapped_data["ingredients"]] + \
-                  [r["identifier"] for r in unmapped_data["ingredients"]]
+        all_ids = [r["ontology_id"] for r in mapped_data["ingredients"]] + \
+                  [r["ontology_id"] for r in unmapped_data["ingredients"]]
         assert len(all_ids) == len(set(all_ids)), "Duplicate identifiers found"

@@ -21,11 +21,47 @@ URI: [mediaingredientmech:OccurrenceStats](https://w3id.org/mediaingredientmech/
     click OccurrenceStats href "../OccurrenceStats/"
       OccurrenceStats : concentration_range
         
+          
+    
+        
+        
+        OccurrenceStats --> "0..1" String : concentration_range
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
+        
       OccurrenceStats : media_count
+        
+          
+    
+        
+        
+        OccurrenceStats --> "1" Integer : media_count
+        click Integer href "../http://www.w3.org/2001/XMLSchema#integer/"
+    
+
         
       OccurrenceStats : sample_media
         
+          
+    
+        
+        
+        OccurrenceStats --> "*" String : sample_media
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
+        
       OccurrenceStats : total_occurrences
+        
+          
+    
+        
+        
+        OccurrenceStats --> "1" Integer : total_occurrences
+        click Integer href "../http://www.w3.org/2001/XMLSchema#integer/"
+    
+
         
       
 ```
@@ -40,10 +76,10 @@ URI: [mediaingredientmech:OccurrenceStats](https://w3id.org/mediaingredientmech/
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [total_occurrences](total_occurrences.md) | 1 <br/> [Integer](Integer.md) | Total number of occurrences across all media | direct |
-| [media_count](media_count.md) | 1 <br/> [Integer](Integer.md) | Number of unique media containing this ingredient | direct |
-| [sample_media](sample_media.md) | * <br/> [String](String.md) | Sample media names (for reference) | direct |
-| [concentration_range](concentration_range.md) | 0..1 <br/> [String](String.md) | Observed concentration range (if available) | direct |
+| [total_occurrences](total_occurrences.md) | 1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | Total number of occurrences across all media | direct |
+| [media_count](media_count.md) | 1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | Number of unique media containing this ingredient | direct |
+| [sample_media](sample_media.md) | * <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Sample media names (for reference) | direct |
+| [concentration_range](concentration_range.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Observed concentration range (if available) | direct |
 
 
 

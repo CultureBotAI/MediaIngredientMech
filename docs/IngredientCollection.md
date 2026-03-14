@@ -21,6 +21,15 @@ URI: [mediaingredientmech:IngredientCollection](https://w3id.org/mediaingredient
     click IngredientCollection href "../IngredientCollection/"
       IngredientCollection : generation_date
         
+          
+    
+        
+        
+        IngredientCollection --> "0..1" Datetime : generation_date
+        click Datetime href "../http://www.w3.org/2001/XMLSchema#dateTime/"
+    
+
+        
       IngredientCollection : ingredients
         
           
@@ -34,9 +43,36 @@ URI: [mediaingredientmech:IngredientCollection](https://w3id.org/mediaingredient
         
       IngredientCollection : mapped_count
         
+          
+    
+        
+        
+        IngredientCollection --> "0..1" Integer : mapped_count
+        click Integer href "../http://www.w3.org/2001/XMLSchema#integer/"
+    
+
+        
       IngredientCollection : total_count
         
+          
+    
+        
+        
+        IngredientCollection --> "0..1" Integer : total_count
+        click Integer href "../http://www.w3.org/2001/XMLSchema#integer/"
+    
+
+        
       IngredientCollection : unmapped_count
+        
+          
+    
+        
+        
+        IngredientCollection --> "0..1" Integer : unmapped_count
+        click Integer href "../http://www.w3.org/2001/XMLSchema#integer/"
+    
+
         
       
 ```
@@ -51,10 +87,10 @@ URI: [mediaingredientmech:IngredientCollection](https://w3id.org/mediaingredient
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [generation_date](generation_date.md) | 0..1 <br/> [Datetime](Datetime.md) | Timestamp when this collection was generated | direct |
-| [total_count](total_count.md) | 0..1 <br/> [Integer](Integer.md) | Total number of ingredient records | direct |
-| [mapped_count](mapped_count.md) | 0..1 <br/> [Integer](Integer.md) | Number of mapped ingredients | direct |
-| [unmapped_count](unmapped_count.md) | 0..1 <br/> [Integer](Integer.md) | Number of unmapped ingredients | direct |
+| [generation_date](generation_date.md) | 0..1 <br/> [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) | Timestamp when this collection was generated | direct |
+| [total_count](total_count.md) | 0..1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | Total number of ingredient records | direct |
+| [mapped_count](mapped_count.md) | 0..1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | Number of mapped ingredients | direct |
+| [unmapped_count](unmapped_count.md) | 0..1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | Number of unmapped ingredients | direct |
 | [ingredients](ingredients.md) | * <br/> [IngredientRecord](IngredientRecord.md) | List of all ingredient records | direct |
 
 

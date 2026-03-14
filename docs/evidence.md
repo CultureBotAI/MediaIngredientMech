@@ -3,11 +3,6 @@
 # Slot: evidence 
 
 
-_Evidence supporting this mapping_
-
-
-
-
 
 URI: [mediaingredientmech:evidence](https://w3id.org/mediaingredientmech/evidence)
 Alias: evidence
@@ -23,6 +18,8 @@ Alias: evidence
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [OntologyMapping](OntologyMapping.md) | Mapping to an ontology term (CHEBI, FOODON, etc |  no  |
+| [CellularRoleAssignment](CellularRoleAssignment.md) | Assignment of a cellular/metabolic role in organism metabolism with supportin... |  no  |
+| [RoleAssignment](RoleAssignment.md) | Assignment of a functional role in growth medium formulation with supporting ... |  no  |
 
 
 
@@ -31,9 +28,7 @@ Alias: evidence
 
 ## Properties
 
-* Range: [MappingEvidence](MappingEvidence.md)
-
-* Multivalued: True
+* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 
@@ -42,13 +37,6 @@ Alias: evidence
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -68,17 +56,12 @@ Alias: evidence
 <details>
 ```yaml
 name: evidence
-description: Evidence supporting this mapping
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: evidence
-owner: OntologyMapping
 domain_of:
 - OntologyMapping
-range: MappingEvidence
-multivalued: true
-inlined: true
-inlined_as_list: true
+- RoleAssignment
+- CellularRoleAssignment
+range: string
 
 ```
 </details>

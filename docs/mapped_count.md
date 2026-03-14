@@ -31,7 +31,7 @@ Alias: mapped_count
 
 ## Properties
 
-* Range: [Integer](Integer.md)
+* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 

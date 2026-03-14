@@ -56,12 +56,12 @@ classes:
       Represents either a mapped ingredient (with ontology_id) or unmapped ingredient (needs curation).
       Can serve as root element for individual YAML files or as elements in IngredientCollection.
     attributes:
-      identifier:
+      ontology_id:
         identifier: true
         required: true
         description: >-
-          Unique identifier - either ontology ID (e.g., CHEBI:26710) for mapped ingredients
-          or generated UUID/placeholder (e.g., UNMAPPED_001) for unmapped ingredients
+          Unique ontology identifier - either ontology ID (e.g., CHEBI:26710) for mapped ingredients
+          or generated placeholder (e.g., UNMAPPED_001) for unmapped ingredients
       preferred_term:
         required: true
         description: Canonical name for this ingredient
@@ -87,6 +87,22 @@ classes:
         description: Audit trail of all curation actions
       notes:
         description: Free-text curation notes
+      media_roles:
+        range: RoleAssignment
+        multivalued: true
+        inlined_as_list: true
+        description: Functional roles in growth medium formulation (e.g., NITROGEN_SOURCE, BUFFER)
+      cellular_roles:
+        range: CellularRoleAssignment
+        multivalued: true
+        inlined_as_list: true
+        description: Cellular/metabolic roles in organism metabolism (e.g., PRIMARY_DEGRADER, ELECTRON_DONOR)
+      solution_type:
+        range: SolutionTypeEnum
+        description: Type of solution if this is a stock/pre-mix rather than individual chemical
+      chemical_properties:
+        range: ChemicalProperties
+        description: Chemical structure and properties (for CHEBI-mapped ingredients only)
 
   OntologyMapping:
     description: Mapping to an ontology term (CHEBI, FOODON, etc.)
@@ -114,6 +130,24 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: Evidence supporting this mapping
+
+  ChemicalProperties:
+    description: Chemical structure and properties for CHEBI-mapped ingredients
+    attributes:
+      molecular_formula:
+        description: Molecular formula (e.g., H2O, C6H12O6)
+      smiles:
+        description: Simplified Molecular Input Line Entry System notation
+      inchi:
+        description: IUPAC International Chemical Identifier
+      molecular_weight:
+        range: float
+        description: Molecular weight in g/mol
+      data_source:
+        description: Source of chemical properties (e.g., ChEBI, PubChem)
+      retrieval_date:
+        range: datetime
+        description: When these properties were retrieved
 
   MappingEvidence:
     description: Evidence for an ontology mapping
@@ -191,6 +225,65 @@ classes:
         description: LLM model identifier (if llm_assisted=true)
       notes:
         description: Additional context for this action
+
+  RoleCitation:
+    description: Citation supporting a role assignment (DOI, publication, database reference)
+    attributes:
+      doi:
+        description: Digital Object Identifier (e.g., 10.1128/jb.00123-15)
+        pattern: "^10\\.\\d{4,}/[-._;()/:A-Za-z0-9]+$"
+      pmid:
+        description: PubMed ID for MEDLINE citations
+      reference_text:
+        description: Human-readable citation text
+      reference_type:
+        range: CitationTypeEnum
+        description: Type of reference (peer-reviewed, database, manual curation, etc.)
+      url:
+        range: uri
+        description: Web URL for the reference
+      excerpt:
+        description: Relevant excerpt or quote from the source
+      curator_note:
+        description: Curator's explanation of why this supports the role assignment
+
+  RoleAssignment:
+    description: Assignment of a functional role in growth medium formulation with supporting evidence
+    attributes:
+      role:
+        range: IngredientRoleEnum
+        required: true
+        description: The functional role (e.g., NITROGEN_SOURCE, BUFFER, MINERAL)
+      confidence:
+        range: float
+        description: Confidence score for this role assignment (0.0-1.0)
+      evidence:
+        range: RoleCitation
+        multivalued: true
+        inlined_as_list: true
+        description: Citations and references supporting this role
+      notes:
+        description: Additional context about this role assignment
+
+  CellularRoleAssignment:
+    description: Assignment of a cellular/metabolic role in organism metabolism with supporting evidence
+    attributes:
+      role:
+        range: CellularRoleEnum
+        required: true
+        description: The cellular/metabolic role (e.g., PRIMARY_DEGRADER, ELECTRON_DONOR)
+      metabolic_context:
+        description: Pathway or metabolic context (e.g., "denitrification", "aromatic degradation")
+      confidence:
+        range: float
+        description: Confidence score for this role assignment (0.0-1.0)
+      evidence:
+        range: RoleCitation
+        multivalued: true
+        inlined_as_list: true
+        description: Citations and references supporting this role
+      notes:
+        description: Additional context about this role assignment
 
 enums:
   MappingStatusEnum:
@@ -313,3 +406,97 @@ enums:
         description: Based on text similarity metrics
       CROSS_REFERENCE:
         description: Cross-reference to other database
+
+  IngredientRoleEnum:
+    description: Functional roles of ingredients in growth medium formulation
+    permissible_values:
+      CARBON_SOURCE:
+        description: Provides organic carbon for biosynthesis and energy
+      NITROGEN_SOURCE:
+        description: Provides nitrogen for amino acids, nucleotides, etc.
+      MINERAL:
+        description: Inorganic mineral nutrient (e.g., phosphate, sulfate, magnesium)
+      TRACE_ELEMENT:
+        description: Micronutrient required in trace amounts (e.g., iron, zinc, cobalt)
+      BUFFER:
+        description: pH buffering agent to maintain stable pH
+      VITAMIN_SOURCE:
+        description: Provides vitamins or vitamin precursors
+      SALT:
+        description: Provides ionic strength and osmotic balance
+      PROTEIN_SOURCE:
+        description: Provides peptides, proteins, or amino acids
+      AMINO_ACID_SOURCE:
+        description: Provides specific amino acids
+      SOLIDIFYING_AGENT:
+        description: Gelling agent for solid media (e.g., agar)
+      ENERGY_SOURCE:
+        description: Primary energy substrate for chemotrophs
+      ELECTRON_ACCEPTOR:
+        description: Terminal electron acceptor for respiration (e.g., nitrate, oxygen)
+      ELECTRON_DONOR:
+        description: Electron donor for chemolithotrophs
+      COFACTOR_PROVIDER:
+        description: Provides enzyme cofactors or prosthetic groups
+
+  CellularRoleEnum:
+    description: Cellular and metabolic roles in microbial communities
+    permissible_values:
+      PRIMARY_DEGRADER:
+        description: Main organism degrading target compound(s)
+      REDUCTIVE_DEGRADER:
+        description: Degrades compounds via reductive pathways (e.g., reductive dechlorination)
+      OXIDATIVE_DEGRADER:
+        description: Degrades compounds via oxidative pathways
+      BIOTRANSFORMER:
+        description: Transforms compound without complete degradation
+      SYNERGIST:
+        description: Enhances degradation by another organism
+      BRIDGE_ORGANISM:
+        description: Converts intermediates between community members
+      ELECTRON_SHUTTLE:
+        description: Mediates electron transfer between organisms or redox species
+      DETOXIFIER:
+        description: Removes or neutralizes toxic compounds
+      COMMENSAL:
+        description: Benefits from community without clear contribution
+      COMPETITOR:
+        description: Competes for nutrients or ecological niche
+
+  CitationTypeEnum:
+    description: Type of reference or citation
+    permissible_values:
+      PEER_REVIEWED_PUBLICATION:
+        description: Peer-reviewed journal article or conference paper
+      PREPRINT:
+        description: Preprint or non-peer-reviewed manuscript
+      DATABASE_ENTRY:
+        description: Reference to database record or entry
+      TECHNICAL_REPORT:
+        description: Technical report, manual, or documentation
+      MANUAL_CURATION:
+        description: Expert manual curation without specific publication
+      COMPUTATIONAL_PREDICTION:
+        description: Computational inference or prediction
+
+  SolutionTypeEnum:
+    description: Type of solution for mixture ingredients (stock solutions, pre-mixes)
+    permissible_values:
+      VITAMIN_MIX:
+        description: Pre-mixed vitamin solution (e.g., vitamin B12 solution, biotin mix)
+      TRACE_METAL_MIX:
+        description: Pre-mixed trace element or metal solution
+      AMINO_ACID_MIX:
+        description: Pre-mixed amino acid solution
+      BUFFER_SOLUTION:
+        description: Pre-prepared buffer solution (e.g., phosphate buffer, HEPES buffer)
+      CARBON_SOURCE_MIX:
+        description: Pre-mixed carbon source solution
+      MINERAL_STOCK:
+        description: Concentrated mineral stock solution
+      COFACTOR_MIX:
+        description: Pre-mixed cofactor or enzyme supplement solution
+      COMPLEX_UNDEFINED:
+        description: Complex undefined mixture (e.g., yeast extract, peptone)
+      OTHER:
+        description: Other type of pre-mixed solution

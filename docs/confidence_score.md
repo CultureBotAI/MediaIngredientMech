@@ -31,7 +31,7 @@ Alias: confidence_score
 
 ## Properties
 
-* Range: [Float](Float.md)
+* Range: [xsd:float](http://www.w3.org/2001/XMLSchema#float)
 
 
 

@@ -31,7 +31,7 @@ Alias: timestamp
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+* Range: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
 
 * Required: True
 

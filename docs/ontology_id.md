@@ -3,11 +3,6 @@
 # Slot: ontology_id 
 
 
-_Ontology term ID in CURIE format (e.g., CHEBI:26710)_
-
-
-
-
 
 URI: [mediaingredientmech:ontology_id](https://w3id.org/mediaingredientmech/ontology_id)
 Alias: ontology_id
@@ -22,6 +17,7 @@ Alias: ontology_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [IngredientRecord](IngredientRecord.md) | Core record for a media ingredient with ontology mapping, synonyms, and curat... |  no  |
 | [OntologyMapping](OntologyMapping.md) | Mapping to an ontology term (CHEBI, FOODON, etc |  no  |
 
 
@@ -31,11 +27,7 @@ Alias: ontology_id
 
 ## Properties
 
-* Range: [String](String.md)
-
-* Required: True
-
-* Regex pattern: `^[A-Z]+:[0-9]+$`
+* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 
@@ -44,13 +36,6 @@ Alias: ontology_id
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -70,16 +55,11 @@ Alias: ontology_id
 <details>
 ```yaml
 name: ontology_id
-description: Ontology term ID in CURIE format (e.g., CHEBI:26710)
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: ontology_id
-owner: OntologyMapping
 domain_of:
+- IngredientRecord
 - OntologyMapping
 range: string
-required: true
-pattern: ^[A-Z]+:[0-9]+$
 
 ```
 </details>

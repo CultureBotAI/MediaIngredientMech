@@ -28,7 +28,7 @@ console = Console()
 
 def format_ingredient_for_claude(record: dict, index: int) -> str:
     """Format an ingredient record for Claude Code analysis."""
-    identifier = record.get("identifier", "")
+    identifier = record.get("ontology_id", "")
     name = record.get("preferred_term", "")
     stats = record.get("occurrence_statistics", {})
     synonyms = record.get("synonyms", []) or []

@@ -120,7 +120,7 @@ def convert_mapped_ingredient(ingredient: dict) -> dict:
     event["new_status"] = "MAPPED"
 
     record: dict[str, Any] = {
-        "identifier": ontology_id,
+        "ontology_id": ontology_id,
         "preferred_term": ingredient["preferred_term"],
         "ontology_mapping": {
             "ontology_id": ontology_id,
@@ -159,7 +159,7 @@ def convert_unmapped_ingredient(ingredient: dict, index: int) -> dict:
     event["new_status"] = "UNMAPPED"
 
     record: dict[str, Any] = {
-        "identifier": identifier,
+        "ontology_id": identifier,
         "preferred_term": preferred_term,
         "synonyms": extract_unmapped_synonyms(ingredient),
         "mapping_status": "UNMAPPED",

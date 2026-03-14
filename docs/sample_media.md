@@ -31,7 +31,7 @@ Alias: sample_media
 
 ## Properties
 
-* Range: [String](String.md)
+* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 * Multivalued: True
 

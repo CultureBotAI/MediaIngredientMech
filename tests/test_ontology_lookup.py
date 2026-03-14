@@ -193,13 +193,13 @@ class TestOakIntegrationMocked:
         adapter = self._mock_oak_adapter()
 
         record = {
-            "identifier": "CHEBI:26710",
+            "ontology_id": "CHEBI:26710",
             "preferred_term": "sodium chloride",
             "mapping_status": "MAPPED",
             "synonyms": [],
         }
 
-        oak_aliases = adapter.entity_aliases(record["identifier"])
+        oak_aliases = adapter.entity_aliases(record["ontology_id"])
         for alias in oak_aliases:
             record["synonyms"].append({
                 "synonym_text": alias,

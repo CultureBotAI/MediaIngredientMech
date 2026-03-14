@@ -103,7 +103,7 @@ def process_batch_file(
         suggestion["match_level"] = match_level
         level_counts[match_level] = level_counts.get(match_level, 0) + 1
 
-        identifier = suggestion.get("identifier", "?")
+        identifier = suggestion.get("ontology_id", "?")
         name = suggestion.get("name", "?")[:30]
         console.print(f"  {identifier:15s} {name:32s} → [bold]{match_level}[/bold]")
 

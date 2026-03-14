@@ -84,13 +84,13 @@ class TestSchemaClasses:
 
     def test_ingredient_record_required_fields(self):
         attrs = self.classes["IngredientRecord"]["attributes"]
-        assert attrs["identifier"].get("required") is True
+        assert attrs["ontology_id"].get("required") is True
         assert attrs["preferred_term"].get("required") is True
         assert attrs["mapping_status"].get("required") is True
 
     def test_ingredient_record_identifier_is_key(self):
         attrs = self.classes["IngredientRecord"]["attributes"]
-        assert attrs["identifier"].get("identifier") is True
+        assert attrs["ontology_id"].get("ontology_id") is True
 
     def test_ingredient_record_has_synonyms(self):
         attrs = self.classes["IngredientRecord"]["attributes"]
@@ -303,7 +303,7 @@ class TestFixtureDataValidation:
     def test_mapped_records_have_required_fields(self):
         data = self._load_fixture("sample_mapped.yaml")
         for rec in data["ingredients"]:
-            assert "identifier" in rec, f"Record missing identifier: {rec}"
+            assert "ontology_id" in rec, f"Record missing identifier: {rec}"
             assert "preferred_term" in rec, f"Record missing preferred_term: {rec}"
             assert "mapping_status" in rec, f"Record missing mapping_status: {rec}"
 

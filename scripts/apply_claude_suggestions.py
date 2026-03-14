@@ -46,7 +46,7 @@ def apply_suggestion(
     Returns:
         Tuple of (success, message)
     """
-    identifier = suggestion.get("identifier")
+    identifier = suggestion.get("ontology_id")
     ontology_id = suggestion.get("ontology_id")
     ontology_label = suggestion.get("ontology_label")
     ontology_source = suggestion.get("ontology_source")
@@ -62,7 +62,7 @@ def apply_suggestion(
     # Find the record
     record = None
     for rec in curator.records:
-        if rec.get("identifier") == identifier:
+        if rec.get("ontology_id") == identifier:
             record = rec
             break
 
@@ -226,7 +226,7 @@ def main(
     fail_count = 0
 
     for suggestion in suggestions_list:
-        identifier = suggestion.get("identifier", "?")
+        identifier = suggestion.get("ontology_id", "?")
         name = suggestion.get("name", "?")
         ontology_id = suggestion.get("ontology_id", "?")
         ontology_label = suggestion.get("ontology_label", "?")

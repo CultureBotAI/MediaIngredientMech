@@ -122,7 +122,7 @@ def display_sample_records(records: list[dict[str, Any]], limit: int = 10) -> No
         preferred_term = record.get("preferred_term", "UNKNOWN")
         mapping_status = record.get("mapping_status", "UNKNOWN")
         ontology_id = record.get("ontology_mapping", {}).get("ontology_id",
-                                 record.get("identifier", "N/A"))
+                                 record.get("ontology_id", "N/A"))
 
         # Truncate long names
         if len(preferred_term) > 40:

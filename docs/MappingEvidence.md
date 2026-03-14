@@ -21,6 +21,15 @@ URI: [mediaingredientmech:MappingEvidence](https://w3id.org/mediaingredientmech/
     click MappingEvidence href "../MappingEvidence/"
       MappingEvidence : confidence_score
         
+          
+    
+        
+        
+        MappingEvidence --> "0..1" Float : confidence_score
+        click Float href "../http://www.w3.org/2001/XMLSchema#float/"
+    
+
+        
       MappingEvidence : evidence_type
         
           
@@ -34,7 +43,25 @@ URI: [mediaingredientmech:MappingEvidence](https://w3id.org/mediaingredientmech/
         
       MappingEvidence : notes
         
+          
+    
+        
+        
+        MappingEvidence --> "0..1" String : notes
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
+        
       MappingEvidence : source
+        
+          
+    
+        
+        
+        MappingEvidence --> "0..1" String : source
+        click String href "../http://www.w3.org/2001/XMLSchema#string/"
+    
+
         
       
 ```
@@ -50,9 +77,9 @@ URI: [mediaingredientmech:MappingEvidence](https://w3id.org/mediaingredientmech/
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [evidence_type](evidence_type.md) | 1 <br/> [EvidenceTypeEnum](EvidenceTypeEnum.md) | Type of evidence | direct |
-| [source](source.md) | 0..1 <br/> [String](String.md) | Source of evidence (e | direct |
-| [confidence_score](confidence_score.md) | 0..1 <br/> [Float](Float.md) | Confidence score (0 | direct |
-| [notes](notes.md) | 0..1 <br/> [String](String.md) | Additional context | direct |
+| [source](source.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Source of evidence (e | direct |
+| [confidence_score](confidence_score.md) | 0..1 <br/> [xsd:float](http://www.w3.org/2001/XMLSchema#float) | Confidence score (0 | direct |
+| [notes](notes.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Additional context | direct |
 
 
 
@@ -142,6 +169,8 @@ attributes:
     - IngredientRecord
     - MappingEvidence
     - CurationEvent
+    - RoleAssignment
+    - CellularRoleAssignment
 
 ```
 </details>
@@ -196,6 +225,8 @@ attributes:
     - IngredientRecord
     - MappingEvidence
     - CurationEvent
+    - RoleAssignment
+    - CellularRoleAssignment
     range: string
 
 ```
