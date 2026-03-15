@@ -127,6 +127,8 @@ class CHEBIDeduplicator:
     def should_auto_merge(self, target_idx: int, source_idx: int) -> tuple[bool, str]:
         """Determine if records should be auto-merged without confirmation.
 
+        Enhanced with safety checks for ingredient_type and complex media detection.
+
         Args:
             target_idx: Merge target record index.
             source_idx: Source record index.
@@ -157,6 +159,44 @@ class CHEBIDeduplicator:
             or source.get("mapping_status") == "NEEDS_EXPERT"
         ):
             return False, "One record is NEEDS_EXPERT"
+
+        # SAFETY CHECK 1: ingredient_type consistency
+        target_type = target.get("ingredient_type")
+        source_type = source.get("ingredient_type")
+
+        if target_type and source_type and target_type != source_type:
+            return False, f"Different ingredient types: {target_type} vs {source_type}"
+
+        # SAFETY CHECK 2: Complex media detection
+        # Import here to avoid circular dependency
+        try:
+            import importlib.util
+            from pathlib import Path
+
+            # Dynamically load identify_complex_media module
+            script_path = Path(__file__).parent.parent.parent.parent / "scripts" / "identify_complex_media.py"
+            if script_path.exists():
+                spec = importlib.util.spec_from_file_location("identify_complex_media", script_path)
+                if spec and spec.loader:
+                    identify_complex_media = importlib.util.module_from_spec(spec)
+                    spec.loader.exec_module(identify_complex_media)
+                    detect_complex_medium = identify_complex_media.detect_complex_medium
+
+                    target_name = target.get("preferred_term", "")
+                    source_name = source.get("preferred_term", "")
+
+                    # Check if target is complex media
+                    is_target_complex, conf_t, reason_t = detect_complex_medium(target_name, target_chebi)
+                    if is_target_complex and conf_t >= 0.75:
+                        return False, f"Target is complex media: {reason_t}"
+
+                    # Check if source is complex media
+                    is_source_complex, conf_s, reason_s = detect_complex_medium(source_name, source_chebi)
+                    if is_source_complex and conf_s >= 0.75:
+                        return False, f"Source is complex media: {reason_s}"
+        except Exception as e:
+            # If detection fails, log warning but don't block merge
+            logger.warning("Complex media detection failed: %s", e)
 
         # Auto-merge if same quality
         if target_quality == source_quality:
@@ -215,15 +255,22 @@ class CHEBIDeduplicator:
                 # Perform merges
                 for source_idx in sorted(source_indices, reverse=True):
                     if not dry_run:
+                        reason_idx = source_indices.index(source_idx)
+                        merge_reason = f"Same CHEBI ID ({chebi_id}) - {reasons[reason_idx]}"
                         logger.info(
                             "Merging %s (idx %d) into %s (idx %d) - %s",
                             self.curator.records[source_idx].get("preferred_term"),
                             source_idx,
                             self.curator.records[target_idx].get("preferred_term"),
                             target_idx,
-                            reasons[source_indices.index(source_idx)],
+                            merge_reason,
                         )
-                        self.synonym_manager.merge_records(target_idx, source_idx)
+                        self.synonym_manager.merge_records(
+                            target_idx,
+                            source_idx,
+                            curator_name=self.curator.curator_name,
+                            merge_reason=merge_reason,
+                        )
 
                 merged.append((target_idx, source_indices, chebi_id))
                 total_removed += len(source_indices)
