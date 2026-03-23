@@ -203,7 +203,41 @@ llm_model: "claude-sonnet-4-5"
 notes: "Verified LLM suggestion against OLS"
 ```
 
+### EnvironmentContext
+
+Environmental context annotation for a mapped ingredient. Links an ingredient to an ENVO environment with a relevance qualifier. Used in the `mapped_ingredients_schema.yaml`.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `environment_term` | string | Yes | ENVO term CURIE. Must match `^ENVO:\d{7,8}$` |
+| `environment_label` | string | No | Human-readable label for the ENVO term |
+| `relevance` | EnvironmentRelevanceEnum | Yes | Why this ingredient is relevant to the environment |
+| `notes` | string | No | Additional context about the relationship |
+
+Example:
+
+```yaml
+environment_term: "ENVO:00000044"
+environment_label: peatland
+relevance: NATURAL_SOURCE
+notes: "Major component of peat organic matter"
+```
+
+See [Environmental Context documentation](schema/environmental_context.md) for detailed examples and usage guide.
+
 ## Enums
+
+### EnvironmentRelevanceEnum
+
+Describes why an ingredient is relevant to a particular environment. Used in the `mapped_ingredients_schema.yaml`.
+
+| Value | Description | Example |
+|-------|-------------|---------|
+| `NATURAL_SOURCE` | Ingredient is naturally found in this environment | Humic acid from peatland |
+| `REQUIRED_FOR_ORGANISM` | Required for cultivating organisms from this environment | Sulfide for vent bacteria |
+| `SELECTIVE_AGENT` | Selectively promotes organisms from this environment | Sulfur for hot spring thermophiles |
+| `ENVIRONMENT_MIMIC` | Replicates chemical conditions of this environment | NaCl mimics sea water |
+| `COMMONLY_USED` | Commonly used for this environment (empirical) | Yeast extract in soil media |
 
 ### MappingStatusEnum
 

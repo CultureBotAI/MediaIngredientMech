@@ -8,11 +8,13 @@ MediaIngredientMech provides a structured workflow for curating media ingredient
 
 **Key Features:**
 - Ingredient-centric data model with LinkML schemas
+- Environmental context linking via ENVO ontology terms
 - Interactive CLI for ontology mapping curation
 - LLM assistance tracking in curation events
 - Comprehensive validation (schema + ontology terms)
 - Full audit trail for all curation actions
 - YAML-based data storage with version control
+- Cross-repository integration with CultureMech and CommunityMech
 
 ## Quick Start
 
@@ -62,6 +64,8 @@ just report
 - `IngredientRecord`: Root class with mapping status, synonyms, curation history
 - `OntologyMapping`: CHEBI/FOODON term mappings with quality ratings
 - `CurationEvent`: Audit trail with LLM assistance tracking
+- `EnvironmentContext`: ENVO-based environmental linking with relevance qualifiers
+- `MappedIngredient`: Aggregated ingredient with environmental context annotations
 
 **Workflow:**
 1. Import data from CultureMech
@@ -91,7 +95,9 @@ MediaIngredientMech/
 ## Documentation
 
 - [Curation Guide](docs/CURATION_GUIDE.md) - Step-by-step curation workflow
+- [Role Curation Workflow](docs/ROLE_CURATION_WORKFLOW.md) - Media ingredient role assignment workflow
 - [Schema Reference](docs/SCHEMA_REFERENCE.md) - Data model documentation
+- [Environmental Context](docs/schema/environmental_context.md) - ENVO-based environmental linking
 - [Workflows](docs/WORKFLOWS.md) - Common operations and integration
 
 ## Development
