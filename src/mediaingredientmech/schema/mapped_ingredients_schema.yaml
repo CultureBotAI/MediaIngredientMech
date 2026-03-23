@@ -14,6 +14,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   culturemech: https://w3id.org/culturemech/
   CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
   FOODON: http://purl.obolibrary.org/obo/FOODON_
 
 default_prefix: culturemech
@@ -87,6 +88,39 @@ classes:
       mapping_quality:
         range: MappingQualityEnum
         description: Quality assessment of the mapping
+      environmental_context:
+        range: EnvironmentContext
+        multivalued: true
+        required: false
+        inlined_as_list: true
+        description: >-
+          Environmental contexts where this ingredient is relevant.
+          Enables environment-based ingredient discovery and cross-repository
+          queries with CultureMech and CommunityMech via shared ENVO terms.
+
+  EnvironmentContext:
+    description: >-
+      Environmental context annotation for a mapped ingredient. Links an
+      ingredient to an ENVO environment with a relevance qualifier explaining
+      why the ingredient is associated with that environment.
+    attributes:
+      environment_term:
+        required: true
+        range: string
+        pattern: "^ENVO:\\d{7,8}$"
+        description: ENVO term CURIE (e.g., ENVO:00000044 for peatland)
+      environment_label:
+        required: false
+        range: string
+        description: Human-readable label for the ENVO term
+      relevance:
+        required: true
+        range: EnvironmentRelevanceEnum
+        description: Why this ingredient is relevant to the specified environment
+      notes:
+        required: false
+        range: string
+        description: Additional context about the ingredient-environment relationship
 
   MappedMediaOccurrence:
     description: Reference to a specific medium containing the mapped ingredient
@@ -195,6 +229,21 @@ enums:
         description: Percentage (w/v or v/v)
       VARIABLE:
         description: Variable or unspecified amount
+
+  EnvironmentRelevanceEnum:
+    description: >-
+      Describes why an ingredient is relevant to a particular environment.
+    permissible_values:
+      NATURAL_SOURCE:
+        description: Ingredient is naturally found in or sourced from this environment
+      REQUIRED_FOR_ORGANISM:
+        description: Required for cultivating organisms from this environment
+      SELECTIVE_AGENT:
+        description: Selectively promotes growth of organisms from this environment
+      ENVIRONMENT_MIMIC:
+        description: Helps replicate the chemical conditions of this environment in vitro
+      COMMONLY_USED:
+        description: Commonly used in media targeting organisms from this environment
 
   OntologySourceEnum:
     permissible_values:
