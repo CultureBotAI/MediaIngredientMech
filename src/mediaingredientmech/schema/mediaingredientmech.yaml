@@ -103,6 +103,62 @@ classes:
       chemical_properties:
         range: ChemicalProperties
         description: Chemical structure and properties (for CHEBI-mapped ingredients only)
+      representative:
+        description: >-
+          ID of the representative record if this record has been merged.
+          Only set when mapping_status is REJECTED due to merge.
+          Points to the canonical record representing this ingredient.
+        pattern: "^MediaIngredientMech:[0-9]{6}$"
+      merged:
+        multivalued: true
+        description: >-
+          List of MediaIngredientMech IDs merged into this representative.
+          Only set on records serving as merge targets.
+          Tracks all records consolidated into this canonical representation.
+        pattern: "^MediaIngredientMech:[0-9]{6}$"
+      ingredient_type:
+        range: IngredientTypeEnum
+        description: >-
+          Classification of entry type: single chemical ingredient vs complex defined medium.
+          SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose).
+          DEFINED_MEDIUM: Complete medium formulation/recipe (R2A agar, LB broth).
+          UNDEFINED_MIXTURE: Complex mixture of unknown composition (yeast extract, peptone).
+          STOCK_SOLUTION: Pre-mixed solution of defined ingredients.
+      culturemech_medium_name:
+        description: >-
+          Cross-reference to CultureMech medium name if this is a defined medium.
+          Used to link complex media entries to their full recipe formulations.
+      parent_ingredient:
+        description: >-
+          Reference to parent ingredient in hierarchy (MediaIngredientMech:XXXXXX).
+          Used for variants: purity levels (tap/distilled/double-distilled water),
+          hydrates (CaCl2·2H2O vs CaCl2), stereoisomers (D-glucose vs L-glucose).
+          Enables queries like "find all media using any form of water".
+        pattern: "^MediaIngredientMech:[0-9]{6}$"
+      child_ingredients:
+        multivalued: true
+        description: >-
+          List of child ingredient IDs in hierarchy.
+          Parent record contains all children (e.g., Water → Tap water, Distilled water).
+          Used to navigate hierarchy and query all variants.
+        pattern: "^MediaIngredientMech:[0-9]{6}$"
+      variant_type:
+        range: VariantTypeEnum
+        description: >-
+          Classification of variant relationship to parent.
+          Indicates why this ingredient is distinct from parent/siblings.
+          Examples: PURIFIED (distilled), ULTRA_PURIFIED (double distilled), TAP (impure).
+      variant_notes:
+        description: >-
+          Human-readable explanation of variant distinction from parent/siblings.
+          Example: "Higher purity (10x, <0.1 µS/cm vs <1 µS/cm) than standard distilled water.
+          Used for trace-metal sensitive work."
+      role_inheritance:
+        range: boolean
+        description: >-
+          If true, inherits media_roles from parent ingredient.
+          Allows child variants to automatically get parent's roles while enabling
+          variant-specific role overrides or restrictions.
 
   OntologyMapping:
     description: Mapping to an ontology term (CHEBI, FOODON, etc.)
@@ -134,6 +190,12 @@ classes:
   ChemicalProperties:
     description: Chemical structure and properties for CHEBI-mapped ingredients
     attributes:
+      cas_rn:
+        description: >-
+          Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X or XXXX-XX-X.
+          Primary chemical identifier used in regulatory and commercial contexts.
+          Retrieved from CultureBotHT/MicroMediaParam mappings or external databases.
+        pattern: "^\\d+-\\d+-\\d+$"
       molecular_formula:
         description: Molecular formula (e.g., H2O, C6H12O6)
       smiles:
@@ -144,7 +206,7 @@ classes:
         range: float
         description: Molecular weight in g/mol
       data_source:
-        description: Source of chemical properties (e.g., ChEBI, PubChem)
+        description: Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)
       retrieval_date:
         range: datetime
         description: When these properties were retrieved
@@ -438,6 +500,14 @@ enums:
         description: Electron donor for chemolithotrophs
       COFACTOR_PROVIDER:
         description: Provides enzyme cofactors or prosthetic groups
+      REDOX_INDICATOR:
+        description: pH-dependent redox indicator for anaerobic conditions (e.g., resazurin)
+      PH_INDICATOR:
+        description: pH indicator dye for monitoring medium acidity/alkalinity
+      SELECTIVE_AGENT:
+        description: Antimicrobial or selective agent for enrichment cultures
+      SURFACTANT:
+        description: Surfactant or detergent for emulsification
 
   CellularRoleEnum:
     description: Cellular and metabolic roles in microbial communities
@@ -500,3 +570,68 @@ enums:
         description: Complex undefined mixture (e.g., yeast extract, peptone)
       OTHER:
         description: Other type of pre-mixed solution
+
+  IngredientTypeEnum:
+    description: Classification of ingredient entry type
+    permissible_values:
+      SINGLE_INGREDIENT:
+        description: >-
+          Pure chemical compound or single ingredient (e.g., NaCl, agar, glucose, water).
+          Can be mapped to chemical ontologies like CHEBI.
+      DEFINED_MEDIUM:
+        description: >-
+          Complete medium formulation or recipe with multiple ingredients
+          (e.g., R2A agar, LB broth, Marine agar 2216, Oatmeal agar).
+          Should cross-reference to CultureMech for full recipe.
+      UNDEFINED_MIXTURE:
+        description: >-
+          Complex mixture of unknown or variable composition
+          (e.g., yeast extract, peptone, soil extract).
+          Components not fully characterized.
+      STOCK_SOLUTION:
+        description: >-
+          Pre-mixed solution of defined ingredients
+          (e.g., vitamin B12 solution, trace metal mix).
+          Components known but premixed for convenience.
+
+  VariantTypeEnum:
+    description: >-
+      Classification of ingredient variant in hierarchy.
+      Indicates the type of relationship to parent ingredient.
+    permissible_values:
+      BASE_CHEMICAL:
+        description: >-
+          Parent/base form of chemical in hierarchy.
+          Example: Water (base) as parent of tap/distilled/double-distilled variants.
+      HYDRATE:
+        description: >-
+          Hydrated crystalline form of compound.
+          Example: CaCl2·2H2O vs CaCl2 (anhydrous).
+      STEREOISOMER:
+        description: >-
+          Different spatial arrangement of atoms (stereochemistry).
+          Example: D-glucose vs L-glucose, D-biotin vs L-biotin.
+      PURIFIED:
+        description: >-
+          Standard purified/distilled form.
+          Example: Distilled water (<1 µS/cm conductivity).
+      ULTRA_PURIFIED:
+        description: >-
+          Higher purity variant than standard purified form.
+          Example: Double distilled water (<0.1 µS/cm, 10x purer than distilled).
+      TAP:
+        description: >-
+          Impure tap water variant containing chlorine and minerals.
+          Example: Tap water (municipal water supply).
+      DEMINERALIZED:
+        description: >-
+          Demineralized/deionized variant (ion exchange process).
+          Example: Demineralized water, DI water.
+      SALT:
+        description: >-
+          Salt form of compound (different counterion).
+          Example: Sodium phosphate vs potassium phosphate.
+      ANHYDROUS:
+        description: >-
+          Water-free (anhydrous) form of compound.
+          Example: CaCl2 (anhydrous) vs CaCl2·2H2O (dihydrate).
