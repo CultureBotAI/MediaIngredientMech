@@ -159,6 +159,15 @@ classes:
           If true, inherits media_roles from parent ingredient.
           Allows child variants to automatically get parent's roles while enabling
           variant-specific role overrides or restrictions.
+      kg_microbe_node_id:
+        description: >-
+          KG-Microbe node ID for this ingredient when found in the KG exactly.
+          Populated when the ingredient's CHEBI identifier is present as a named
+          node in the KG-Microbe mediadive graph (i.e., used as an ingredient
+          in at least one KG-Microbe medium solution).
+          Format: CHEBI:XXXXX
+        required: false
+        pattern: "^CHEBI:[0-9]+$"
 
   OntologyMapping:
     description: Mapping to an ontology term (CHEBI, FOODON, etc.)
