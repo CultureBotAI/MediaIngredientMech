@@ -562,7 +562,7 @@ Unmapped ingredients are categorized to prioritize curation effort:
 ### Related Skills
 
 - `search-ingredients-hierarchical.md` (MicroGrowAgents) - Hierarchical ingredient search patterns
-- `dismech-terms/SKILL.md` (DisMech) - Ontology term curation patterns
+- `ingredient-roles` (MIM) - Functional role assignment for mapped ingredients
 
 ## Implementation References
 
