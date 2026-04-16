@@ -1,0 +1,231 @@
+analysis_date: '2026-03-15'
+total_incomplete: 9
+results:
+- incomplete: NaNO
+  occurrences: 24
+  candidates:
+  - &id001
+    formula: NaNO2
+    name: sodium nitrite
+    chebi: CHEBI:78870
+    likelihood: LOW
+    reason: Nitrite less common in growth media
+    score: 26
+    evidence:
+    - 'Already mapped: NaNO2'
+    - 'Has CAS: 7631-99-4'
+  - formula: NaNO3
+    name: sodium nitrate
+    chebi: CHEBI:34218
+    likelihood: HIGH
+    reason: Nitrate (NO3) more common than nitrite (NO2) in media
+    score: 15
+    evidence:
+    - 'Has CAS: 7631-99-4'
+  context:
+    cas_numbers:
+    - 7631-99-4
+    catalog_codes:
+    - Fisher BP360-500
+    - Fisher BP360-500
+    roles: []
+    properties: []
+  top_recommendation: *id001
+- incomplete: MgCO
+  occurrences: 11
+  candidates:
+  - &id002
+    formula: MgCO3
+    name: magnesium carbonate
+    chebi: CHEBI:6611
+    likelihood: HIGH
+    reason: Standard carbonate form
+    score: 10
+    evidence: []
+  context:
+    cas_numbers: []
+    catalog_codes: []
+    roles: []
+    properties: []
+  top_recommendation: *id002
+- incomplete: CaCO
+  occurrences: 8
+  candidates:
+  - &id003
+    formula: CaCO3
+    name: calcium carbonate
+    chebi: CHEBI:3311
+    likelihood: HIGH
+    reason: Most common calcium carbonate form
+    score: 30
+    evidence:
+    - 'Already mapped: CaCO3'
+  context:
+    cas_numbers: []
+    catalog_codes: []
+    roles: []
+    properties: []
+  top_recommendation: *id003
+- incomplete: KNO
+  occurrences: 5
+  candidates:
+  - &id004
+    formula: KNO3
+    name: potassium nitrate
+    chebi: CHEBI:63043
+    likelihood: HIGH
+    reason: Common nitrogen source in minimal media
+    score: 10
+    evidence: []
+  - formula: KNO2
+    name: potassium nitrite
+    chebi: CHEBI:63044
+    likelihood: LOW
+    reason: Nitrite rarely used
+    score: 1
+    evidence: []
+  context:
+    cas_numbers: []
+    catalog_codes: []
+    roles: []
+    properties: []
+  top_recommendation: *id004
+- incomplete: NH4NO
+  occurrences: 3
+  candidates:
+  - &id005
+    formula: NH4NO3
+    name: ammonium nitrate
+    chebi: CHEBI:63038
+    likelihood: HIGH
+    reason: Common nitrogen source
+    score: 35
+    evidence:
+    - 'Already mapped: NH4NO3'
+    - 'Has CAS: 6484-52-2'
+  context:
+    cas_numbers:
+    - 6484-52-2
+    catalog_codes: []
+    roles: []
+    properties: []
+  top_recommendation: *id005
+- incomplete: Na2CO
+  occurrences: 3
+  candidates:
+  - &id006
+    formula: Na2CO3
+    name: sodium carbonate
+    chebi: CHEBI:29377
+    likelihood: HIGH
+    reason: Common buffer and pH adjuster
+    score: 90
+    evidence:
+    - 'Already mapped:  Na2CO3'
+    - 'Already mapped: Na2CO3'
+    - 'Already mapped: Na2CO3 anhydrous'
+    - 'Already mapped: Na2CO3-CO2 buffer'
+  context:
+    cas_numbers: []
+    catalog_codes: []
+    roles: []
+    properties: []
+  top_recommendation: *id006
+- incomplete: NH4MgPO
+  occurrences: 3
+  candidates:
+  - &id007
+    formula: (NH4)MgPO4
+    name: ammonium magnesium phosphate
+    chebi: CHEBI:90884
+    likelihood: MEDIUM
+    reason: Struvite, common in some media
+    score: 5
+    evidence: []
+  - formula: NH4MgPO4·6H2O
+    name: ammonium magnesium phosphate hexahydrate
+    chebi: '?'
+    likelihood: MEDIUM
+    reason: Hydrated form
+    score: 5
+    evidence: []
+  context:
+    cas_numbers: []
+    catalog_codes:
+    - Sigma 529354
+    roles: []
+    properties: []
+  top_recommendation: *id007
+- incomplete: H3BO
+  occurrences: 3
+  candidates:
+  - &id008
+    formula: H3BO3
+    name: boric acid
+    chebi: CHEBI:33118
+    likelihood: HIGH
+    reason: Common boron source and buffer
+    score: 30
+    evidence:
+    - 'Already mapped: H3BO3'
+  context:
+    cas_numbers: []
+    catalog_codes: []
+    roles: []
+    properties: []
+  top_recommendation: *id008
+- incomplete: Ca
+  occurrences: 3
+  candidates:
+  - &id009
+    formula: CaCl2·2H2O
+    name: calcium chloride dihydrate
+    chebi: CHEBI:86158
+    likelihood: HIGH
+    reason: Common hydrated form
+    score: 135
+    evidence:
+    - 'Already mapped: CaCl2 x 2 H2O'
+    - 'Already mapped: CaCl2 x2H2O'
+    - 'Already mapped: CaCl22H2O'
+    - 'Already mapped: CaCl2x2H2O'
+    - 'Already mapped: CaCl2·2H2O'
+    - 'Already mapped: CaCl2·2H2O'
+    - 'Has CAS: 13477-34-4'
+  - formula: CaCl2
+    name: calcium chloride
+    chebi: CHEBI:3312
+    likelihood: HIGH
+    reason: Most common calcium salt in media
+    score: 75
+    evidence:
+    - 'Already mapped: CaCl2'
+    - 'Already mapped: CaCl2 x 7 H2O'
+    - 'Already mapped: CaCl2 x H2O'
+    - 'Has CAS: 13477-34-4'
+  - formula: CaSO4
+    name: calcium sulfate
+    chebi: CHEBI:31346
+    likelihood: MEDIUM
+    reason: Alternative calcium source
+    score: 50
+    evidence:
+    - 'Already mapped: CaSO4'
+    - 'Already mapped: CaSO4 x 7 H2O'
+    - 'Has CAS: 13477-34-4'
+  - formula: CaCO3
+    name: calcium carbonate
+    chebi: CHEBI:3311
+    likelihood: MEDIUM
+    reason: Buffer and calcium source
+    score: 30
+    evidence:
+    - 'Already mapped: CaCO3'
+    - 'Has CAS: 13477-34-4'
+  context:
+    cas_numbers:
+    - 13477-34-4
+    catalog_codes: []
+    roles: []
+    properties: []
+  top_recommendation: *id009
