@@ -11,9 +11,9 @@ ontology_mapping:
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
   - evidence_type: MANUAL_CURATION
     source: cbclaw_kg_microbe_sweep
-    notes: Corrected from CHEBI:156387 (aspyrone, a 2-pyranone natural product —
-      wrong compound) to CHEBI:18101 (4-hydroxyphenylacetic acid). Caught by
-      P2.5 kg-microbe cross-reference; CAS-RN 156-38-7 confirms CHEBI:18101.
+    notes: Corrected from CHEBI:156387 (aspyrone, a 2-pyranone natural product — wrong
+      compound) to CHEBI:18101 (4-hydroxyphenylacetic acid). Caught by P2.5 kg-microbe
+      cross-reference; CAS-RN 156-38-7 confirms CHEBI:18101.
 synonyms:
 - synonym_text: 4-Hydroxyphenylacetate
   synonym_type: EXACT
@@ -24,6 +24,12 @@ synonyms:
 - synonym_text: (p-hydroxyphenyl)acetic acid
   synonym_type: EXACT
   source: CHEBI
+- synonym_text: (5S,6R)-5-hydroxy-6-methyl-3-[(2S,3S)-3-methyloxiran-2-yl]-5,6-dihydro-2H-pyran-2-one
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: aspyrone
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 3
@@ -45,9 +51,16 @@ curation_history:
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: REMAPPED
-  changes: Remapped CHEBI:156387 (aspyrone) → CHEBI:18101 (4-hydroxyphenylacetic
-    acid). Original CHEBI:156387 is a 2-pyranone natural product unrelated to
-    4-hydroxyphenylacetic acid. CAS-RN 156-38-7 confirms correct CHEBI:18101.
+  changes: Remapped CHEBI:156387 (aspyrone) → CHEBI:18101 (4-hydroxyphenylacetic acid).
+    Original CHEBI:156387 is a 2-pyranone natural product unrelated to 4-hydroxyphenylacetic
+    acid. CAS-RN 156-38-7 confirms correct CHEBI:18101.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: (5S,6R)-5-hydroxy-6-methyl-3-[(2S,3S)-3-methyloxiran-2-yl]-5,6-dihydro-2H-pyran-2-one,
+    aspyrone'
   new_status: MAPPED
   llm_assisted: true
 chemical_properties:

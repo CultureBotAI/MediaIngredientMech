@@ -9,7 +9,28 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: Manganese sulfate anhydrous
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MnSO4 . 7H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MnSO4 x 7 H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MnSO4 x 7H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MnSO4.7H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MnSO4·7H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MnSO4・xH2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 6
@@ -27,6 +48,13 @@ curation_history:
   changes: Added CAS-RN 7785-87-7 from PubChem (via CHEBI:86360)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Manganese sulfate anhydrous,
+    MnSO4 . 7H2O, MnSO4 x 7 H2O, MnSO4 x 7H2O, MnSO4.7H2O, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:86360
 chemical_properties:
   cas_rn: 7785-87-7

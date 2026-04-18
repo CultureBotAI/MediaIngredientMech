@@ -10,7 +10,22 @@ ontology_mapping:
     source: PubChem
     cas_rn: 58-96-8
     notes: ChEBI ID CHEBI:16704 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: 1-beta-D-ribofuranosylpyrimidine-2,4(1H,3H)-dione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 1-beta-D-ribofuranosyluracil
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Urd
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Uridin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: beta-Uridine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 14
@@ -23,6 +38,13 @@ curation_history:
     ID CHEBI:16704
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: 1-beta-D-ribofuranosylpyrimidine-2,4(1H,3H)-dione,
+    1-beta-D-ribofuranosyluracil, Urd, Uridin, beta-Uridine'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 14 FEBA media formulations.
 chemical_properties:
   cas_rn: 58-96-8

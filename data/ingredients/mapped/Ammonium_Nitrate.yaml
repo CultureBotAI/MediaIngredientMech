@@ -9,7 +9,37 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: (NH4)NO3
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Ammonium nitricum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Ammonium saltpeter
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Ammonium(I) nitrate (1:1)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: NH4NO3
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Nitrate d'ammonium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Nitrate of ammonia
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Nitrato amonico
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Nitric acid ammonium salt (1:1)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Nitric acid, ammonium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 15
@@ -27,6 +57,13 @@ curation_history:
   changes: Added CAS-RN:6484-52-2 from PubChem API via name lookup (Ammonium nitrate)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: (NH4)NO3, Ammonium
+    nitricum, Ammonium saltpeter, Ammonium(I) nitrate (1:1), NH4NO3, ... (5 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 6484-52-2
   data_source: PubChem API

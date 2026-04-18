@@ -9,7 +9,37 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: (2R,3R,4R,5R)-Hexane-1,2,3,4,5,6-hexaol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (2R,3R,4R,5R)-hexane-1,2,3,4,5,6-hexol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D-(-)-Mannitol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: E 421
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: E-421
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: E421
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Osmitrol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: dulcite
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: manna sugar
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: mannite
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 8
@@ -27,6 +57,13 @@ curation_history:
   changes: Added CAS-RN:69-65-8 from PubChem API via name lookup (D-Mannitol)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: (2R,3R,4R,5R)-Hexane-1,2,3,4,5,6-hexaol,
+    (2R,3R,4R,5R)-hexane-1,2,3,4,5,6-hexol, D-(-)-Mannitol, E 421, E-421, ... (5 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 69-65-8
   data_source: PubChem API

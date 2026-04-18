@@ -10,7 +10,31 @@ ontology_mapping:
     source: PubChem
     cas_rn: 57-88-5
     notes: ChEBI ID CHEBI:140435 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: (2,2,3,4,4,6-(2)H6)cholest-5-en-3beta-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (2,2,3,4,4,6-(2)H6)cholesterol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (3beta,14beta,17alpha)-cholest-5-en-3-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3beta-hydroxy-5-cholestene-2,2,3,4,4,5-d6
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 5-cholesten-3beta-ol-2,2,3,4,4,5-d6
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cholest-5-en-3beta-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cholesterin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cholesterol-2,2,3,4,4,6-d6
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1
@@ -23,6 +47,14 @@ curation_history:
     ID CHEBI:140435
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: (2,2,3,4,4,6-(2)H6)cholest-5-en-3beta-ol,
+    (2,2,3,4,4,6-(2)H6)cholesterol, (3beta,14beta,17alpha)-cholest-5-en-3-ol, 3beta-hydroxy-5-cholestene-2,2,3,4,4,5-d6,
+    5-cholesten-3beta-ol-2,2,3,4,4,5-d6, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 1 FEBA media formulations.
 chemical_properties:
   cas_rn: 57-88-5

@@ -9,7 +9,49 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: (+)-(R,R)-tartaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (+)-L-tartaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (+)-Tartaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (+)-Weinsaeure
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (2R,3R)-2,3-Dihydroxybernsteinsaeure
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (2R,3R)-2,3-dihydroxybutanedioic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (2R,3R)-2,3-dihydroxysuccinic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (2R,3R)-Tartaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (R,R)-(+)-tartaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (R,R)-Tartaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-Tartaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-threaric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Rechtsweinsaeure
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Weinsteinsaeure
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 3
@@ -27,6 +69,14 @@ curation_history:
   changes: Added CAS-RN:87-69-4 from PubChem API via name lookup (L(+)-Tartaric acid)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 14 synonyms from kg-microbe P4.4 enrichment: (+)-(R,R)-tartaric
+    acid, (+)-L-tartaric acid, (+)-Tartaric acid, (+)-Weinsaeure, (2R,3R)-2,3-Dihydroxybernsteinsaeure,
+    ... (9 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 87-69-4
   data_source: PubChem API

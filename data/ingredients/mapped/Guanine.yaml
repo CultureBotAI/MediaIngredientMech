@@ -10,7 +10,19 @@ ontology_mapping:
     source: PubChem
     cas_rn: 73-40-5
     notes: ChEBI ID CHEBI:16235 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: 2-Amino-6-hydroxypurine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-amino-1,9-dihydro-6H-purin-6-one
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-amino-6-oxopurine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Gua
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 22
@@ -23,6 +35,13 @@ curation_history:
     ID CHEBI:16235
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: 2-Amino-6-hydroxypurine,
+    2-amino-1,9-dihydro-6H-purin-6-one, 2-amino-6-oxopurine, Gua'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 22 FEBA media formulations.
 chemical_properties:
   cas_rn: 73-40-5

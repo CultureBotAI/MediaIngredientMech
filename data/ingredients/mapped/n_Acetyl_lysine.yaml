@@ -10,7 +10,25 @@ ontology_mapping:
     source: PubChem
     cas_rn: 1946-82-3
     notes: ChEBI ID CHEBI:35704 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: (2S)-2-(acetylamino)-6-aminohexanoic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N(2)-acetyl-L-lysine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N(alpha)-acetyl-L-lysine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N(alpha)-acetyllysine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-alpha-acetyl-L-lysine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N2-Acetyl-L-lysine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 10
@@ -23,6 +41,14 @@ curation_history:
     ID CHEBI:35704
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: (2S)-2-(acetylamino)-6-aminohexanoic
+    acid, N(2)-acetyl-L-lysine, N(alpha)-acetyl-L-lysine, N(alpha)-acetyllysine, N-alpha-acetyl-L-lysine,
+    ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 10 FEBA media formulations.
 chemical_properties:
   cas_rn: 1946-82-3

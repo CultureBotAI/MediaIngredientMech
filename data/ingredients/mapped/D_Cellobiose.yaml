@@ -10,7 +10,37 @@ ontology_mapping:
     source: PubChem
     cas_rn: 528-50-7
     notes: ChEBI ID CHEBI:17057 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: 1-beta-D-Glucopyranosyl-4-D-glucopyranose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-(beta-D-glucosido)-D-glucose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-O-beta-D-glucopyranosyl-D-glucopyranose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-beta-D-glucopyranosyl-D-glucopyranose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D-(+)-cellobiose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D-celiobiose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D-cellobiose (cellobiose)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D-glucosyl-beta-(1-4)-D-glucose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: beta-D-glucopyranosyl-(1->4)-D-glucopyranose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cellose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -23,6 +53,14 @@ curation_history:
     ID CHEBI:17057
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: 1-beta-D-Glucopyranosyl-4-D-glucopyranose,
+    4-(beta-D-glucosido)-D-glucose, 4-O-beta-D-glucopyranosyl-D-glucopyranose, 4-beta-D-glucopyranosyl-D-glucopyranose,
+    D-(+)-cellobiose, ... (5 more)'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 2 FEBA media formulations.
 chemical_properties:
   cas_rn: 528-50-7

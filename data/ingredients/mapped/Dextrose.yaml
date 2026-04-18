@@ -30,6 +30,21 @@ synonyms:
     Organic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: (+)-D-glucose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D-Glc
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D-Glcp
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D-glucopyranose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Glc-OH
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 103
@@ -53,6 +68,13 @@ curation_history:
   changes: Added CAS-RN 50-99-7 from PubChem (via CHEBI:4167)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: (+)-D-glucose, D-Glc,
+    D-Glcp, D-glucopyranose, Glc-OH'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 50-99-7
   data_source: PubChem (via CHEBI:4167)

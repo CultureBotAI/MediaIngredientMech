@@ -14,6 +14,21 @@ synonyms:
     Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: CaCl2.6H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: CaCl2x6H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: CaCl2·6H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: CaCl2・6 H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: calcium chloride hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 42
@@ -31,6 +46,13 @@ curation_history:
   changes: Added CAS-RN 10043-52-4 from CultureBotHT/compounds_to_cas.csv
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: CaCl2.6H2O, CaCl2x6H2O,
+    CaCl2·6H2O, CaCl2・6 H2O, calcium chloride hexahydrate'
+  new_status: MAPPED
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:91243
 chemical_properties:
   cas_rn: 10043-52-4

@@ -10,7 +10,16 @@ ontology_mapping:
     source: PubChem
     cas_rn: 10597-89-4
     notes: ChEBI ID CHEBI:47966 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: (R)-2-acetamido-3-O-(1-carboxyethyl)-2-deoxy-D-glucose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-aldehydo-D-glucose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: aldehydo-N-acetylmuramic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 10
@@ -23,6 +32,14 @@ curation_history:
     ID CHEBI:47966
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: (R)-2-acetamido-3-O-(1-carboxyethyl)-2-deoxy-D-glucose,
+    2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-aldehydo-D-glucose, aldehydo-N-acetylmuramic
+    acid'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 10 FEBA media formulations.
 chemical_properties:
   cas_rn: 10597-89-4

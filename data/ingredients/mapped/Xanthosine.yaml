@@ -10,7 +10,19 @@ ontology_mapping:
     source: PubChem
     cas_rn: 146-80-5
     notes: ChEBI ID CHEBI:18107 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: 9-beta-D-Ribofuranosylxanthine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 9-beta-D-ribofuranosyl-3,9-dihydro-1H-purine-2,6-dione
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Xanthine riboside
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: xanthine 9-beta-D-ribofuranoside
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 10
@@ -23,6 +35,14 @@ curation_history:
     ID CHEBI:18107
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: 9-beta-D-Ribofuranosylxanthine,
+    9-beta-D-ribofuranosyl-3,9-dihydro-1H-purine-2,6-dione, Xanthine riboside, xanthine
+    9-beta-D-ribofuranoside'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 10 FEBA media formulations.
 chemical_properties:
   cas_rn: 146-80-5

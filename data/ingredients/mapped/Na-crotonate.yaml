@@ -9,7 +9,43 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: (2E)-2-butenoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (2E)-but-2-enoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (E)-2-butenoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (E)-crotonate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3-methylacrylate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: alpha-butenoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: alpha-crotonate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: beta-methacrylate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: beta-methylacrylate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: crotonate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: trans-2-butenoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: trans-crotonate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 6
@@ -28,6 +64,13 @@ curation_history:
     (Na-crotonate)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 12 synonyms from kg-microbe P4.4 enrichment: (2E)-2-butenoate, (2E)-but-2-enoate,
+    (E)-2-butenoate, (E)-crotonate, 3-methylacrylate, ... (7 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 17342-77-7
   data_source: PubChem API (preprocessed)

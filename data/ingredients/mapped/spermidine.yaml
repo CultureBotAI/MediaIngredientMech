@@ -10,7 +10,25 @@ ontology_mapping:
     source: PubChem
     cas_rn: 124-20-9
     notes: ChEBI ID CHEBI:16610 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: 1,5,10-triazadecane
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-azaoctamethylenediamine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-azaoctane-1,8-diamine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-(3-Aminopropyl)-1,4-butane-diamine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-(3-aminopropyl)butane-1,4-diamine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Spermidin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 14
@@ -23,6 +41,14 @@ curation_history:
     ID CHEBI:16610
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 1,5,10-triazadecane,
+    4-azaoctamethylenediamine, 4-azaoctane-1,8-diamine, N-(3-Aminopropyl)-1,4-butane-diamine,
+    N-(3-aminopropyl)butane-1,4-diamine, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 14 FEBA media formulations.
 chemical_properties:
   cas_rn: 124-20-9

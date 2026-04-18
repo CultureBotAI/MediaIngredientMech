@@ -39,6 +39,15 @@ synonyms:
     Inorganic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: CaCl .6H O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: '[CaCl2]'
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: calcium dichloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 492
@@ -56,6 +65,13 @@ curation_history:
   changes: Added CAS-RN:10043-52-4 from PubChem API via name lookup (CaCl2)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: CaCl .6H O, [CaCl2],
+    calcium dichloride'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 10043-52-4
   data_source: PubChem API

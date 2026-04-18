@@ -9,7 +9,28 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: CaCl2 . 7H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: CaCl2 x 7 H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: CaCl2·H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: CaCl2⋅7H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: CaCl2・H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Calcium chloride anhydrous
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: anhydrous calcium chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 10
@@ -27,6 +48,13 @@ curation_history:
   changes: Added CAS-RN 10043-52-4 from PubChem (via CHEBI:3312)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: CaCl2 . 7H2O, CaCl2
+    x 7 H2O, CaCl2·H2O, CaCl2⋅7H2O, CaCl2・H2O, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:3312
 chemical_properties:
   cas_rn: 10043-52-4

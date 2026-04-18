@@ -9,7 +9,13 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: Calcium folinate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Leucovorin calcium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 5
@@ -28,6 +34,13 @@ curation_history:
     (Ca-folinate)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: Calcium folinate, Leucovorin
+    calcium'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 1492-18-8
   data_source: PubChem API (preprocessed)

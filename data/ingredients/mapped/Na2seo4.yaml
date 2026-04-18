@@ -26,6 +26,12 @@ synonyms:
     Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: triisocyanate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: triisocyanates
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 211
@@ -47,8 +53,14 @@ curation_history:
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: REMAPPED
-  changes: Remapped CHEBI:59160 (triisocyanate) → CHEBI:77775 (sodium selenate).
-    Original CHEBI was an unrelated compound.
+  changes: Remapped CHEBI:59160 (triisocyanate) → CHEBI:77775 (sodium selenate). Original
+    CHEBI was an unrelated compound.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: triisocyanate, triisocyanates'
   new_status: MAPPED
   llm_assisted: true
 chemical_properties:

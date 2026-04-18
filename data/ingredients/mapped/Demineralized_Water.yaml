@@ -9,7 +9,58 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: BOUND WATER
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Distilled Water
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Double distilled water
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: H(2)O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: HOH
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Tap water
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: WATER
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Wasser
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: '[OH2]'
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: acqua
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: agua
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: aqua
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: dH2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: dihydridooxygen
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: dihydrogen oxide
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: eau
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 13
@@ -27,6 +78,13 @@ curation_history:
   changes: Added CAS-RN 7732-18-5 from PubChem (via CHEBI:15377)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 17 synonyms from kg-microbe P4.4 enrichment: BOUND WATER, Distilled
+    Water, Double distilled water, H(2)O, H2O, ... (12 more)'
+  new_status: MAPPED
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:15377
 chemical_properties:
   cas_rn: 7732-18-5

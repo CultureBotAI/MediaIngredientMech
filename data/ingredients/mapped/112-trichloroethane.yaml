@@ -9,7 +9,22 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: 1,1,2-Trichloraethan
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 1,1,2-trichlorethane
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 1,2,2-trichloroethane
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: beta-T
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: beta-trichloroethane
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1
@@ -27,6 +42,13 @@ curation_history:
   changes: Added CAS-RN:79-00-5 from PubChem API via name lookup (1,1,2-Trichloroethane)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: 1,1,2-Trichloraethan,
+    1,1,2-trichlorethane, 1,2,2-trichloroethane, beta-T, beta-trichloroethane'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 79-00-5
   data_source: PubChem API

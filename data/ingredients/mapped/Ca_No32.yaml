@@ -36,6 +36,24 @@ synonyms:
     Inorganic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Cadmium(II) nitrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cd(NO3)2
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Nitric acid, cadmium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Nitric acid, cadmium salt (2:1)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cadmium dinitrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cadmium nitrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 13
@@ -59,6 +77,14 @@ curation_history:
   changes: Remapped CHEBI:77732 (cadmium nitrate) → CHEBI:64205 (calcium nitrate).
     Original CHEBI was part of a CultureMech cadmium-nitrate bulk-import contamination
     pattern also seen in Ferric_Citrate_Monohydrate.yaml.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: Cadmium(II) nitrate,
+    Cd(NO3)2, Nitric acid, cadmium salt, Nitric acid, cadmium salt (2:1), cadmium
+    dinitrate, ... (1 more)'
   new_status: MAPPED
   llm_assisted: true
 chemical_properties:

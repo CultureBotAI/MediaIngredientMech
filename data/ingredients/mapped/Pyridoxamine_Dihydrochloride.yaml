@@ -9,7 +9,32 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: 2-Methyl-3-hydroxy-4-aminomethyl-5-hydroxymethylpyridene dihydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-(Aminomethyl)-5-hydroxy-6-methyl-3-pyridinemethanol dihydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-(aminomethyl)-5-(hydroxymethyl)-2-methylpyridin-3-ol dihydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-(azaniumylmethyl)-3-hydroxy-5-(hydroxymethyl)-2-methylpyridin-1-ium
+    dichloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Pyridoxamine dichlorohydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Pyridoxamine·2HCl
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Pyridoxylamine dihydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: pyridoxamine 2HCl
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 4
@@ -27,6 +52,15 @@ curation_history:
   changes: Added CAS-RN:524-36-7 from PubChem API via name lookup (Pyridoxamine Dihydrochloride)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: 2-Methyl-3-hydroxy-4-aminomethyl-5-hydroxymethylpyridene
+    dihydrochloride, 4-(Aminomethyl)-5-hydroxy-6-methyl-3-pyridinemethanol dihydrochloride,
+    4-(aminomethyl)-5-(hydroxymethyl)-2-methylpyridin-3-ol dihydrochloride, 4-(azaniumylmethyl)-3-hydroxy-5-(hydroxymethyl)-2-methylpyridin-1-ium
+    dichloride, Pyridoxamine dichlorohydrate, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 524-36-7
   data_source: PubChem API

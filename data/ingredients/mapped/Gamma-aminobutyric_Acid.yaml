@@ -9,7 +9,46 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: 2-aminobutyrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-Aminobutanoic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-Aminobutyric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4Abu
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: GABA
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: GAMMA-AMINO-BUTANOIC ACID
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Gamma-Aminobutyric Acid Hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: gamma-Aminobuttersaeure
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: gamma-amino-n-butyric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: gamma-aminobutanoic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: omega-aminobutyric acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: piperidic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: piperidinic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -28,6 +67,13 @@ curation_history:
     acid)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 13 synonyms from kg-microbe P4.4 enrichment: 2-aminobutyrate, 4-Aminobutanoic
+    acid, 4-Aminobutyric acid, 4Abu, GABA, ... (8 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 56-12-2
   data_source: PubChem API

@@ -13,7 +13,13 @@ ontology_mapping:
     source: cbclaw_kg_microbe_sweep
     notes: Corrected from CHEBI:87514 (ethyl 2-hexenoate — unrelated compound) to
       CHEBI:16411 (indole-3-acetic acid). CAS-RN 87-51-4 confirms CHEBI:16411.
-synonyms: []
+synonyms:
+- synonym_text: ethyl 2-hexenoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ethyl hex-2-enoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 3
@@ -37,6 +43,13 @@ curation_history:
   action: REMAPPED
   changes: Remapped CHEBI:87514 (ethyl 2-hexenoate) → CHEBI:16411 (indole-3-acetic
     acid). Original CHEBI was an unrelated compound; CAS-RN 87-51-4 confirms CHEBI:16411.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: ethyl 2-hexenoate, ethyl
+    hex-2-enoate'
   new_status: MAPPED
   llm_assisted: true
 chemical_properties:

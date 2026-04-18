@@ -10,7 +10,28 @@ ontology_mapping:
     source: PubChem
     cas_rn: 13106-76-8
     notes: ChEBI ID CHEBI:91249 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: (NH4)2MoO4
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Ammonium Molybdate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Ammonium molybdate(VI)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Molybdic acid, diammonium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ammonium orthomolybdate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: bisammonium dioxido(dioxo)molybdenum
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: diammonium tetraoxomolybdate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 3
@@ -23,6 +44,14 @@ curation_history:
     ID CHEBI:91249
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: (NH4)2MoO4, Ammonium
+    Molybdate, Ammonium molybdate(VI), Molybdic acid, diammonium salt, ammonium orthomolybdate,
+    ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 3 FEBA media formulations.
 chemical_properties:
   cas_rn: 13106-76-8

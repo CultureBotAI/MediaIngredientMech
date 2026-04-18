@@ -10,7 +10,26 @@ ontology_mapping:
     source: PubChem
     cas_rn: 138-59-0
     notes: ChEBI ID CHEBI:16119 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: (3R,4S,5R)-3,4,5-trihydroxycyclohex-1-ene-1-carboxylic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3,4,5-Trihydroxy-1-cyclohexenecarboxylic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3alpha,4alpha,5beta-trihydroxy-1-cyclohexene-1-carboxylic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-shikimic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Shikimate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: '[3R-(3alpha,4alpha,5beta)]-3,4,5-trihydroxy-1-cyclohexene-1-carboxylic
+    acid'
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 10
@@ -23,6 +42,14 @@ curation_history:
     ID CHEBI:16119
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: (3R,4S,5R)-3,4,5-trihydroxycyclohex-1-ene-1-carboxylic
+    acid, 3,4,5-Trihydroxy-1-cyclohexenecarboxylic acid, 3alpha,4alpha,5beta-trihydroxy-1-cyclohexene-1-carboxylic
+    acid, L-shikimic acid, Shikimate, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 10 FEBA media formulations.
 chemical_properties:
   cas_rn: 138-59-0

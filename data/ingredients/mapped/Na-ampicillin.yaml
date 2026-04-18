@@ -9,7 +9,34 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: Ampicillin sodium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Austrapen
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D(-)-alpha-aminobenzylpenicillin sodium salt
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: ampicillin natrium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: monosodium D-(-)-6-(2-amino-2-phenylacetamido)-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo(3.2.0)heptane-2-carboxylate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium (2S,5R,6R)-6-{[(2R)-2-amino-2-phenylacetyl]amino}-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo[3.2.0]heptane-2-carboxylate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium 6beta-[(2R)-2-amino-2-phenylacetamido]-2,2-dimethylpenam-3alpha-carboxylate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium D-(-)-alpha-aminobenzylpenicillin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium ampicillin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 5
@@ -28,6 +55,14 @@ curation_history:
     (Na-ampicillin)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: Ampicillin sodium, Austrapen,
+    D(-)-alpha-aminobenzylpenicillin sodium salt, ampicillin natrium, monosodium D-(-)-6-(2-amino-2-phenylacetamido)-3,3-dimethyl-7-oxo-4-thia-1-azabicyclo(3.2.0)heptane-2-carboxylate,
+    ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 69-52-3
   data_source: PubChem API (preprocessed)

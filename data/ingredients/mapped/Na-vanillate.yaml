@@ -9,7 +9,13 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: sodium 4-hydroxy-3-methoxybenzoate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: sodium vanillate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -28,6 +34,13 @@ curation_history:
     (Na-vanillate)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: sodium 4-hydroxy-3-methoxybenzoate,
+    sodium vanillate'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 28508-48-7
   data_source: PubChem API (preprocessed)

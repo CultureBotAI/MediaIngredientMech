@@ -26,6 +26,15 @@ synonyms:
     Organic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: glucitol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: gulitol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: rel-(2R,3R,4R,5S)-hexane-1,2,3,4,5,6-hexol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 15
@@ -43,6 +52,12 @@ curation_history:
   changes: Added CAS-RN:50-70-4 from PubChem API via name lookup (Sorbitol)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: glucitol, gulitol, rel-(2R,3R,4R,5S)-hexane-1,2,3,4,5,6-hexol'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 50-70-4
   data_source: PubChem API

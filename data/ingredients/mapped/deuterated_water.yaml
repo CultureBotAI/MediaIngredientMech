@@ -10,7 +10,31 @@ ontology_mapping:
     source: PubChem
     cas_rn: 7789-20-0
     notes: ChEBI ID CHEBI:41981 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: ((2)H2)water
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: D2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Deuteriumoxid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: '[OD2]'
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: deuterium oxide
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: dideuterium oxide
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: heavy water
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: schweres Wasser
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1
@@ -23,6 +47,13 @@ curation_history:
     ID CHEBI:41981
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: ((2)H2)water, D2O, Deuteriumoxid,
+    [OD2], deuterium oxide, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 1 FEBA media formulations.
 chemical_properties:
   cas_rn: 7789-20-0

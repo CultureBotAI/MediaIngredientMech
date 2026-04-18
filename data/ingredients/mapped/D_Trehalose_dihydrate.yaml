@@ -10,7 +10,13 @@ ontology_mapping:
     source: PubChem
     cas_rn: 6138-23-4
     notes: ChEBI ID CHEBI:232797 found via PubChem CAS-RN cross-reference
-synonyms: []
+synonyms:
+- synonym_text: (2R,3S,4S,5R,6R)-2-(hydroxymethyl)-6-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxane-3,4,5-triol;dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: trehalose dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 15
@@ -23,6 +29,13 @@ curation_history:
     ID CHEBI:232797
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: (2R,3S,4S,5R,6R)-2-(hydroxymethyl)-6-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxane-3,4,5-triol;dihydrate,
+    trehalose dihydrate'
+  new_status: MAPPED
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 15 FEBA media formulations.
 chemical_properties:
   cas_rn: 6138-23-4

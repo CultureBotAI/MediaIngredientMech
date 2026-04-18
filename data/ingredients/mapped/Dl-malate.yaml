@@ -14,7 +14,13 @@ ontology_mapping:
     notes: Corrected from CHEBI:65947 (garciniaxanthone F — unrelated natural product)
       to CHEBI:6650 (malic acid, the racemic parent). CAS-RN 149-61-1 (sodium DL-malate)
       confirms DL-malate.
-synonyms: []
+synonyms:
+- synonym_text: 7,10-dihydroxy-2-(2-methoxypropan-2-yl)-8-(2-methylbut-3-en-2-yl)-6H-furo[3,2-c]xanthen-6-one
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: garciniaxanthone F
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 5
@@ -37,6 +43,13 @@ curation_history:
   action: REMAPPED
   changes: Remapped CHEBI:65947 (garciniaxanthone F) → CHEBI:6650 (malic acid). Original
     CHEBI was an unrelated xanthone natural product.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: 7,10-dihydroxy-2-(2-methoxypropan-2-yl)-8-(2-methylbut-3-en-2-yl)-6H-furo[3,2-c]xanthen-6-one,
+    garciniaxanthone F'
   new_status: MAPPED
   llm_assisted: true
 chemical_properties:

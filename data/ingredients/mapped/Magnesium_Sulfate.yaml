@@ -26,6 +26,21 @@ synonyms:
     Defined component'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Magnesium sulfate (1:1)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Magnesiumsulfat
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Mg2SO4
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MgSO .7H O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MgSO4 × 7 H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 380
@@ -43,6 +58,13 @@ curation_history:
   changes: Added CAS-RN:7487-88-9 from PubChem API via name lookup (Magnesium sulfate)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Magnesium sulfate (1:1),
+    Magnesiumsulfat, Mg2SO4, MgSO .7H O, MgSO4 × 7 H2O'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7487-88-9
   data_source: PubChem API

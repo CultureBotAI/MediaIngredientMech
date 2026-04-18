@@ -9,7 +9,31 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: SnCl2 x 2H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: SnCl2.2H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: SnCl2·2H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: lambda(2)-tin(2+) dihydrate dichloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: stannous chloride dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: tin dichloride dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: tin dichloride.2H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: tin(II) chloride dihydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -21,3 +45,11 @@ curation_history:
   changes: Initial import from CultureMech pipeline
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: SnCl2 x 2H2O, SnCl2.2H2O,
+    SnCl2·2H2O, lambda(2)-tin(2+) dihydrate dichloride, stannous chloride dihydrate,
+    ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true

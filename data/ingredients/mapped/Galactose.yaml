@@ -22,6 +22,15 @@ synonyms:
     Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Gal
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Galaktose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: galacto-hexose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 10
@@ -39,6 +48,12 @@ curation_history:
   changes: Added CAS-RN:200-416-4 from PubChem API via name lookup (Galactose)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: Gal, Galaktose, galacto-hexose'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 200-416-4
   data_source: PubChem API

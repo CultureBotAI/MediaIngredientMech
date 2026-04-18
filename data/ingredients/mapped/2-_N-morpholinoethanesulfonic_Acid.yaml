@@ -9,7 +9,43 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: 2-(4-morpholinyl)ethanesulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-(N-Morpholino)aethansulfonsaeure
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-(N-Morpholino)ethansulfonsaeure
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-(morpholin-4-yl)ethanesulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-morpholin-4-ylethanesulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-morpholinoethanesulphonic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-morpholineethanesulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 4-morpholinethanesulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MES (2-Morpholinoethanesulfonic acid)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MES (2-[N-Morpholino]ethane sulfonic acid)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MES [2-(N-morpholino) ethane sulfonic acid]
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MES acids
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -28,6 +64,14 @@ curation_history:
     acid)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 12 synonyms from kg-microbe P4.4 enrichment: 2-(4-morpholinyl)ethanesulfonic
+    acid, 2-(N-Morpholino)aethansulfonsaeure, 2-(N-Morpholino)ethansulfonsaeure, 2-(morpholin-4-yl)ethanesulfonic
+    acid, 2-morpholin-4-ylethanesulfonic acid, ... (7 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 4432-31-9
   data_source: PubChem API

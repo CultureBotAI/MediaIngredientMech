@@ -8,8 +8,8 @@ ontology_mapping:
   evidence:
   - evidence_type: MANUAL_CURATION
     source: cbclaw_new_entry
-    notes: Created to cover unmapped CultureMech surface forms (anhydrous MnCl2;
-      existing Mncl2_X_4_H2o.yaml is the tetrahydrate)
+    notes: Created to cover unmapped CultureMech surface forms (anhydrous MnCl2; existing
+      Mncl2_X_4_H2o.yaml is the tetrahydrate)
 synonyms:
 - synonym_text: MnCl2
   synonym_type: EXACT
@@ -29,11 +29,43 @@ synonyms:
 - synonym_text: anhydrous manganese chloride
   synonym_type: EXACT
   source: manual
+- synonym_text: Mangandichlorid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Manganese bichloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Manganese(II) chloride (1:2)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Manganous chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: dichlorure de manganese
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: manganese(2+) dichloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: manganese(II) dichloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: manganous dichloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 curation_history:
 - timestamp: '2026-04-18T04:44:42+00:00'
   curator: new_entry_cbclaw
   action: CREATED
   changes: New entry for unmapped CultureMech surface forms
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: Mangandichlorid, Manganese
+    bichloride, Manganese(II) chloride (1:2), Manganous chloride, dichlorure de manganese,
+    ... (3 more)'
   new_status: MAPPED
   llm_assisted: true

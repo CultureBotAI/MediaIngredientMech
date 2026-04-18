@@ -9,7 +9,28 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: beta-CD
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: beta-cycloamylose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: beta-cyclodextrin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: betadex
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cycloheptaamylose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cycloheptaglucan
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: cycloheptaglucosan
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -27,6 +48,13 @@ curation_history:
   changes: Added CAS-RN:7585-39-9 from PubChem API via name lookup (Cyclomaltoheptaose)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: beta-CD, beta-cycloamylose,
+    beta-cyclodextrin, betadex, cycloheptaamylose, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7585-39-9
   data_source: PubChem API

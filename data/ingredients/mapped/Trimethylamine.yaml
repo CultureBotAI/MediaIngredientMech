@@ -9,7 +9,28 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+synonyms:
+- synonym_text: (CH3)3N
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N(CH3)3
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N,N,N-trimethylamine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N,N-Dimethylmethanamine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: NMe3
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Trimethylamin
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: tridimethylaminomethane
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -27,6 +48,13 @@ curation_history:
   changes: Added CAS-RN:75-50-3 from PubChem API via name lookup (Trimethylamine)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: (CH3)3N, N(CH3)3, N,N,N-trimethylamine,
+    N,N-Dimethylmethanamine, NMe3, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 75-50-3
   data_source: PubChem API
