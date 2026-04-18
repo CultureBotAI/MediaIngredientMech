@@ -246,6 +246,42 @@ impact: Loss of purity information critical for media design
 fix: Unmerge and create separate records
 ```
 
+**Rule P2.5: KG-Microbe Dictionary Disagreement**
+```yaml
+id: P2.5
+description: MIM ontology_id disagrees with kg-microbe's unified chemical dictionary
+             for the same preferred_term or synonym
+check: |
+  For each MIM record, look up preferred_term (and each synonym_text) in
+  kg-microbe's unified_chemical_mappings.tsv.gz synonym→chebi_id index.
+  Flag if kg-microbe maps the same surface form to a different CHEBI ID.
+impact: Cross-repo semantic drift. MIM and kg-microbe knowledge graphs will
+        disagree on the same chemical, breaking joins on CHEBI ID at KG ingest.
+fix: |
+  Both sides must be verified — kg-microbe's dict has known TSV-parse bugs
+  producing false synonyms (e.g., merged-row pollution attaching "MnCl2"
+  synonym to CHEBI:30200 kaempferol glucoside). Reviewer must:
+    1. Lookup MIM's ontology_id via OAK/OLS → get canonical label
+    2. Lookup kg-microbe's proposed CHEBI via OAK/OLS → get canonical label
+    3. Compare both labels against MIM's preferred_term
+    4. Pick the winner; update MIM or log an issue upstream against kg-microbe
+severity: P2 (possible wrong mapping, needs expert review)
+data_source: |
+  /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/
+    mappings/unified_chemical_mappings.tsv.gz
+  Columns: chebi_id, canonical_name, formula, synonyms (pipe-separated),
+           xrefs, sources
+  Rows: ~164,597
+known_false_positive_patterns:
+  - Merged-row pollution: when a synonym field contains embedded quotes,
+    csv.DictReader may merge the next row, attaching the following row's
+    synonyms to the wrong CHEBI ID.
+  - Common-cation contamination: short synonyms like "Na+", "K+", "Cl-"
+    appear under many CHEBI IDs and never indicate a real equivalence.
+  - Ambiguous ion/salt names: "calcium", "magnesium", "iron" without
+    anion qualifier.
+```
+
 #### P3 - Medium-Priority Warnings
 
 **Rule P3.1: Missing Chemical Properties**
@@ -312,6 +348,214 @@ check: CHEBI has role annotations, pathway links
 impact: Enhanced semantic richness
 fix: Optionally add role/pathway links
 ```
+
+**Rule P4.4: KG-Microbe Synonym Enrichment Candidates**
+```yaml
+id: P4.4
+description: kg-microbe's unified chemical dict has synonyms for this record's
+             CHEBI ID that MIM does not yet carry
+check: |
+  For MIM record with ontology_id=CHEBI:X, fetch the row from
+  unified_chemical_mappings.tsv.gz keyed by chebi_id=X. The "synonyms"
+  column is pipe-separated. Diff against existing MIM synonym_text values
+  (case-insensitive, whitespace-normalized).
+impact: Search/matching recall in CultureMech recipe mapping — every missing
+        synonym is a potential ingredient that won't resolve to this CHEBI.
+fix: |
+  Candidates are NOT auto-applied. Each candidate must be round-trip
+  verified before adding:
+    1. Sanity-check: does the synonym plausibly name this chemical?
+       (A synonym like "MnCl2" on kaempferol glucoside fails this check.)
+    2. Reverse-lookup: in the kg-microbe TSV, does this synonym also map
+       to a DIFFERENT CHEBI? If yes, it's ambiguous — skip or investigate.
+    3. If accepted, add with source="kg-microbe/unified_chemical_mappings"
+       and synonym_type=EXACT or RELATED per kg-microbe's context.
+severity: P4 (enrichment, not correctness)
+safety: |
+  Do NOT treat kg-microbe synonyms as authoritative. The dict was built
+  from multiple upstream sources and has documented parsing bugs.
+  Every proposal needs human-in-the-loop review before commit.
+```
+
+---
+
+## KG-Microbe Dictionary Integration
+
+### Data Source
+
+**File:** `/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/mappings/unified_chemical_mappings.tsv.gz`
+
+**Schema (tab-separated, gzipped):**
+| Column | Description |
+|---|---|
+| `id` (legacy: `chebi_id`) | CURIE, e.g. `CHEBI:17234` |
+| `category` | Biolink category (new column, may be absent in older dumps) |
+| `canonical_name` | Primary label for the term |
+| `formula` | Molecular formula if available |
+| `synonyms` | Pipe-separated (`|`) list of surface forms |
+| `xrefs` | Cross-references to other databases |
+| `sources` | Which upstream dictionaries contributed |
+
+**Row count:** ~119,421 canonical CHEBI entries (as of 2026-04-18);
+the raw TSV has more rows but many are duplicates or non-CHEBI IDs.
+
+**Companion curated data:** `kg-microbe/kg_microbe/transform_utils/metatraits/mappings/*.tsv` — 277 hand-curated rows across 6 TSVs, should be consulted for high-confidence overrides.
+
+### Known Data-Quality Issues (must handle defensively)
+
+1. **CSV row-merge bug**: Using `csv.DictReader` on this file merges rows whose
+   fields contain embedded quotes. **Always parse line-by-line with
+   `split('\t')`** to avoid false synonym→CHEBI associations.
+
+2. **Field size overflow**: Some synonym lists exceed the default csv field
+   limit. Set `csv.field_size_limit(sys.maxsize)` as a safeguard even when
+   bypassing DictReader.
+
+3. **Symmetric-synonym pollution**: Short cation/anion tokens (`Na+`, `Cl-`,
+   `K+`) appear as "synonyms" under hundreds of CHEBI IDs and carry no
+   semantic signal.
+
+4. **Stereochemistry collapse**: Some dict entries treat D- and L- forms,
+   and (+)/(-) enantiomers, as synonyms — verify with OAK before accepting.
+
+### Loader Pattern (correct)
+
+```python
+import csv
+import gzip
+import sys
+from collections import defaultdict
+from pathlib import Path
+
+KG_MICROBE_DICT = Path(
+    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/"
+    "kg-microbe/mappings/unified_chemical_mappings.tsv.gz"
+)
+
+csv.field_size_limit(sys.maxsize)
+
+
+def load_kg_microbe_dict():
+    """
+    Build two indexes:
+      by_chebi:   CHEBI_ID -> {canonical_name, synonyms: set[str], formula}
+      by_synonym: lowercased synonym -> set[CHEBI_ID]  (1:many, intentional)
+
+    Do NOT use csv.DictReader — the file has embedded quotes that cause
+    row merging. Parse line-by-line.
+    """
+    by_chebi = {}
+    by_synonym = defaultdict(set)
+
+    with gzip.open(KG_MICROBE_DICT, "rt", encoding="utf-8") as f:
+        header = f.readline().rstrip("\n").split("\t")
+        col = {name: i for i, name in enumerate(header)}
+
+        for raw in f:
+            parts = raw.rstrip("\n").split("\t")
+            if len(parts) < len(header):
+                continue  # malformed row, skip defensively
+
+            chebi_id = parts[col["chebi_id"]]
+            canonical = parts[col["canonical_name"]]
+            formula = parts[col["formula"]] if "formula" in col else ""
+            syn_field = parts[col["synonyms"]] if "synonyms" in col else ""
+
+            synonyms = {s.strip() for s in syn_field.split("|") if s.strip()}
+
+            by_chebi[chebi_id] = {
+                "canonical_name": canonical,
+                "synonyms": synonyms,
+                "formula": formula,
+            }
+
+            for s in synonyms | {canonical}:
+                by_synonym[s.lower()].add(chebi_id)
+
+    return by_chebi, by_synonym
+```
+
+### Usage in Review Rules
+
+```python
+# P2.5 check: does kg-microbe disagree with MIM's mapping?
+def check_kg_microbe_disagreement(ingredient, by_synonym, oak_client):
+    mim_chebi = ingredient["ontology_mapping"]["ontology_id"]
+    if not mim_chebi.startswith("CHEBI:"):
+        return None  # P2.5 only applies to CHEBI
+
+    candidates_from_kg = by_synonym.get(ingredient["preferred_term"].lower(), set())
+    # Filter ambiguous tokens
+    if len(candidates_from_kg) > 5:
+        return None  # too ambiguous (Na+, Cl-, etc.)
+
+    disagreements = candidates_from_kg - {mim_chebi}
+    if not disagreements:
+        return None
+
+    # Round-trip verify both sides via OAK before calling it a disagreement
+    mim_label = oak_client.get_term_info(mim_chebi).get("label", "")
+    for other in disagreements:
+        other_info = oak_client.get_term_info(other)
+        if other_info is None:
+            continue  # phantom CHEBI, skip
+        yield {
+            "rule_id": "P2.5",
+            "priority": "P2",
+            "category": "kg_microbe_disagreement",
+            "mim_chebi": mim_chebi,
+            "mim_label": mim_label,
+            "kg_microbe_chebi": other,
+            "kg_microbe_label": other_info.get("label", ""),
+            "surface_form": ingredient["preferred_term"],
+        }
+
+
+# P4.4 check: what synonyms does kg-microbe have that MIM lacks?
+def find_synonym_enrichment_candidates(ingredient, by_chebi):
+    mim_chebi = ingredient["ontology_mapping"]["ontology_id"]
+    kg_entry = by_chebi.get(mim_chebi)
+    if not kg_entry:
+        return []
+
+    existing = {
+        s["synonym_text"].lower() if isinstance(s, dict) else str(s).lower()
+        for s in ingredient.get("synonyms", [])
+    }
+    existing.add(ingredient["preferred_term"].lower())
+
+    candidates = [s for s in kg_entry["synonyms"] if s.lower() not in existing]
+
+    # Ambiguity guard: drop any candidate that kg-microbe also maps elsewhere
+    # (caller should supply by_synonym to filter)
+    return candidates
+```
+
+### Reviewing NEW Mappings Sourced From kg-microbe
+
+When a proposal to ADD or REMAP a MIM record originates from a kg-microbe
+dict lookup (not just enrich existing), the reviewer MUST:
+
+1. **Verify the CHEBI exists** via OAK (`P1.1` rule, applied preemptively).
+2. **Verify the label semantically matches** MIM's preferred_term (`P2.1`).
+3. **Check for ambiguity**: if the same surface form maps to ≥2 CHEBI IDs
+   in kg-microbe, escalate to manual review even if OAK verification passes.
+4. **Log provenance**: the ingredient's `curation_history` entry must cite
+   `source: kg-microbe/unified_chemical_mappings` and include the exact
+   surface form that triggered the match.
+5. **Sanity-check with CultureBotHT CAS-RN** if available — a matching CAS
+   number is strong positive evidence that the proposed CHEBI is correct.
+
+Known false-positive incidents to guard against (record these in review
+notes when you see the pattern):
+
+- `CHEBI:78018` (dodecylphosphocholine, a detergent) was historically
+  imported as `Trypticase`/`Bacto-tryptone` via a CAS→CHEBI pipeline bug.
+  Peptones belong in FOODON, not CHEBI.
+- `CHEBI:131531` (pyridoxamine HCl) vs `CHEBI:30961` (pyridoxine HCl) —
+  the two vitamin B6 hydrochlorides are routinely confused.
+- kg-microbe synonym rows polluted by embedded quotes may attach
+  e.g. "MnCl2" as a synonym of `CHEBI:30200` (a flavonoid glycoside).
 
 ---
 

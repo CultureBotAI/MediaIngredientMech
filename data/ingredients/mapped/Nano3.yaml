@@ -1,14 +1,18 @@
-identifier: CHEBI:59148
+identifier: CHEBI:63005
 preferred_term: NaNO3
 ontology_mapping:
-  ontology_id: CHEBI:59148
-  ontology_label: NaNO3
+  ontology_id: CHEBI:63005
+  ontology_label: sodium nitrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_CURATION
+    source: cbclaw_kg_microbe_sweep
+    notes: Corrected from CHEBI:59148 (a phenylsulfonyloxy lactone — unrelated compound)
+      to CHEBI:63005 (sodium nitrate). CAS-RN 7631-99-4 confirms sodium nitrate.
 synonyms:
 - synonym_text: 'Role: Nitrogen source; Properties: Defined component, Inorganic compound,
     Simple component'
@@ -47,6 +51,13 @@ curation_history:
   changes: Added CAS-RN:7631-99-4 from PubChem API via name lookup (NaNO3)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: REMAPPED
+  changes: Remapped CHEBI:59148 (phenylsulfonyloxy lactone) → CHEBI:63005 (sodium
+    nitrate). Original CHEBI was an unrelated compound.
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7631-99-4
   data_source: PubChem API

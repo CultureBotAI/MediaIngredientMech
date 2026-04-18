@@ -1,14 +1,18 @@
-identifier: CHEBI:87514
+identifier: CHEBI:16411
 preferred_term: 3-Indolyl acetic acid
 ontology_mapping:
-  ontology_id: CHEBI:87514
-  ontology_label: 3-Indolyl acetic acid
+  ontology_id: CHEBI:16411
+  ontology_label: indole-3-acetic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_CURATION
+    source: cbclaw_kg_microbe_sweep
+    notes: Corrected from CHEBI:87514 (ethyl 2-hexenoate — unrelated compound) to
+      CHEBI:16411 (indole-3-acetic acid). CAS-RN 87-51-4 confirms CHEBI:16411.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -28,6 +32,13 @@ curation_history:
     acid)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: REMAPPED
+  changes: Remapped CHEBI:87514 (ethyl 2-hexenoate) → CHEBI:16411 (indole-3-acetic
+    acid). Original CHEBI was an unrelated compound; CAS-RN 87-51-4 confirms CHEBI:16411.
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 87-51-4
   data_source: PubChem API
