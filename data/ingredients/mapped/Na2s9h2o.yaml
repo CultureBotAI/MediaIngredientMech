@@ -60,6 +60,9 @@ synonyms:
 - synonym_text: sodium sulfide.9H2O
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na2S ∙ 9 H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_hydration_routing
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 147
@@ -85,6 +88,13 @@ curation_history:
     9 H2O, Na2S x 9 H2O (3% w/v), Na2S x 9 H2O(24% w/v), Na2S x 9H2O, ... (5 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T06:30:07.230267+00:00'
+  curator: audit_p44_hydration_routing
+  action: ADDED_SYNONYMS_VIA_HYDRATION_ROUTING
+  changes: 'Added 1 synonyms re-routed from anhydrous/hydrate sibling records (Na2s_X_9_H2o.yaml):
+    Na2S ∙ 9 H2O'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 1313-82-2
   data_source: CultureBotHT compounds_to_cas.csv

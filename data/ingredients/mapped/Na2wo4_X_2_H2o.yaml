@@ -44,6 +44,12 @@ synonyms:
 - synonym_text: sodium tungstate(VI) dihydrate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na2WO4 × 2H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_hydration_routing
+- synonym_text: Na2WO4*2H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_hydration_routing
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1281
@@ -68,6 +74,13 @@ curation_history:
     x 2 H2O (0.1% w/v), Na2WO4.2H2O, Na2WO4·2H2O, Na2WO4・2H2O, ... (5 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T06:30:07.230267+00:00'
+  curator: audit_p44_hydration_routing
+  action: ADDED_SYNONYMS_VIA_HYDRATION_ROUTING
+  changes: 'Added 2 synonyms re-routed from anhydrous/hydrate sibling records (Na2wo42h2o.yaml):
+    Na2WO4 × 2H2O, Na2WO4*2H2O'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 10213-10-2
   data_source: PubChem (via CHEBI:63939)

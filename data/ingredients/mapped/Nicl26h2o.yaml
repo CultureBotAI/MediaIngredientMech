@@ -70,6 +70,12 @@ synonyms:
 - synonym_text: NiCl2・H2O
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: NiCl2 ∙ 6 H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_hydration_routing
+- synonym_text: NiCl2∙6H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_hydration_routing
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 202
@@ -95,6 +101,13 @@ curation_history:
     x 2 H2O, NiCl2 x 2H2O, NiCl2 x 5 H2O, NiCl2 x 6 H2O, ... (11 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T06:30:07.230267+00:00'
+  curator: audit_p44_hydration_routing
+  action: ADDED_SYNONYMS_VIA_HYDRATION_ROUTING
+  changes: 'Added 2 synonyms re-routed from anhydrous/hydrate sibling records (Nicl2_X_6_H2o.yaml):
+    NiCl2 ∙ 6 H2O, NiCl2∙6H2O'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7791-20-0
   data_source: CultureBotHT compounds_to_cas.csv
