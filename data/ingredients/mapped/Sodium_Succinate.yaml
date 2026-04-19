@@ -42,15 +42,25 @@ synonyms:
 - synonym_text: disodium succinate (anh.)
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Growth factor; Properties: Simple component, Organic compound,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 76
-  media_count: 50
+  total_occurrences: 145
+  media_count: 111
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:53.072238'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:150-90-3 from PubChem API via name lookup (Disodium succinate)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.815550'
@@ -60,6 +70,20 @@ curation_history:
     Sodium succinate)'
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.817748'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6106-21-4 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium Succinate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.819661'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6106-21-4 from CultureBotHT compounds_to_cas.csv (matched:
+    sodium succinate)'
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -67,8 +91,31 @@ curation_history:
     Succinic acid disodium salt, disodium butanedioate, disodium succinate (anh.)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: Sodium Succinate, Succinic
+    acid disodium salt, disodium butanedioate, disodium succinate (anh.)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Disodium_Succinate.yaml,
+    Sodium_Succinate_2.yaml, Sodium_Succinate_3.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (150-90-3|6106-21-4) resolved via
+    OAK canonical xref: 150-90-3 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 6106-21-4
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-05T21:48:45.815548'
+  cas_rn: 150-90-3
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'
 kg_microbe_node_id: CHEBI:63675

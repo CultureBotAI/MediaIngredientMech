@@ -35,10 +35,20 @@ synonyms:
 - synonym_text: calcium D,L-pantothenate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Vitamin; Properties: Defined component, Organic compound, Simple
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Calcium pantothenate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 'Role: Vitamin; Properties: Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 789
-  media_count: 50
+  total_occurrences: 945
+  media_count: 153
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -52,10 +62,50 @@ curation_history:
   changes: Added CAS-RN:137-08-6 from PubChem API via name lookup (Calcium pantothenate)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.814011'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:137-08-6 from CultureBotHT compounds_to_cas.csv (matched:
+    Calcium Pantothenate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.946782'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:137-08-6 from CultureBotHT compounds_to_cas.csv (matched:
+    D-Calcium pantothenate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.948571'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:137-08-6 from CultureBotHT compounds_to_cas.csv (matched:
+    D-calcium pantothenate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.022304'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:137-08-6 from CultureBotHT compounds_to_cas.csv (matched:
+    DL-calcium pantothenate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 137-08-6 from PubChem (via CHEBI:31345)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-17T12:00:00+00:00'
   curator: synonym_expansion_cbclaw
   action: ADDED_SYNONYMS
   changes: Added 2 synonyms for unmapped CultureMech surface forms
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-17T12:00:00+00:00'
+  curator: synonym_expansion_cbclaw
+  action: ADDED_SYNONYMS
+  changes: Added 1 synonym for unmapped CultureMech surface form
   new_status: MAPPED
   llm_assisted: true
 - timestamp: '2026-04-18T00:00:00+00:00'
@@ -66,6 +116,56 @@ curation_history:
     calcium D,L-pantothenate'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate,
+    D Calcium Panthothenate, DL-Calcium pantothenate, Hemicalcium D-(+)- pantothenate,
+    calcium D,L-pantothenate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate,
+    Calcium pantothenate, D Calcium Panthothenate, D-Ca-Pantothenate, D-Calcium pantothenate,
+    ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate,
+    D Calcium Panthothenate, D-Ca-Pantothenate, D-Calcium pantothenate, Hemicalcium
+    D-(+)- pantothenate, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate,
+    D Calcium Panthothenate, D-Ca-Pantothenate, DL-Calcium pantothenate, Hemicalcium
+    D-(+)- pantothenate, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Calcium D-(+)-Pantothenate,
+    D Calcium Panthothenate, D-Ca-Pantothenate, D-Calcium pantothenate, DL-Calcium
+    pantothenate, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 5 duplicate MIM record(s) into this one: D-calcium_Pantothenate.yaml,
+    Dl-calcium_Pantothenate.yaml, Dl-calcium_Pantothenate_2.yaml, D-calcium_Pantothenate_2.yaml,
+    Calcium_Pantothenate_2.yaml. Synonyms, curation_history, and occurrence counts
+    were unioned/summed; winner selected by highest occurrence count with preferred_term
+    readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 137-08-6
   data_source: PubChem API

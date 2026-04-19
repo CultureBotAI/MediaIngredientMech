@@ -83,15 +83,64 @@ synonyms:
 - synonym_text: nitrilotriacetic acid trisodium salt
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Tris
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Tris(hydroxymethyl)methylamine
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Buffer; Properties: Simple component, Organic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Tris-HCl buffer
+  synonym_type: EXACT
+  source: manual
+- synonym_text: Tris HCl
+  synonym_type: EXACT
+  source: manual
+- synonym_text: 'Role: Buffer; Properties: Defined component, Complex component, Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Buffer; Properties: Complex component, Defined component, Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 26
-  media_count: 26
+  total_occurrences: 60
+  media_count: 60
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:54:09.046241'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:77-86-1 from PubChem API via name lookup (Tris)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.909752'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched:
+    TRIS)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.913904'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched:
+    Tris buffer 1M)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.915929'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched:
+    Tris(hydroxymethyl)aminomethane)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -100,6 +149,12 @@ curation_history:
   changes: Added CAS-RN 77-86-1 from PubChem (via CHEBI:9754)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-17T12:00:00+00:00'
+  curator: synonym_expansion_cbclaw
+  action: ADDED_SYNONYMS
+  changes: Added 2 synonyms for unmapped CultureMech surface forms
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -108,6 +163,23 @@ curation_history:
     THAM, Tris (hydroxymethyl aminomethane), ... (14 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 20 synonyms from kg-microbe P4.4 enrichment: 1,1,1-tris(hydroxymethyl)methanamine,
+    2-Amino-2-(hydroxymethyl)-1,3-propanediol, 2-amino-2-(hydroxymethyl)propane-1,3-diol,
+    THAM, Tris (hydroxymethyl aminomethane), ... (15 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 6 duplicate MIM record(s) into this one: Tris.yaml, Tris_Hydroxymethylaminomethane.yaml,
+    Tris_Buffer.yaml, Tris_Hydroxymethylmethylamine.yaml, Tris_Buffer_1m.yaml, Tris_2.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:9754
 chemical_properties:
   cas_rn: 77-86-1

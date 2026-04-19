@@ -42,15 +42,61 @@ synonyms:
 - synonym_text: trisodium 2-hydroxypropane-1,2,3-tricarboxylate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Sodium citrate
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Na3-citrate
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Citric Acid
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Buffer; Properties: Simple component, Organic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Solution, Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Defined component, Organic compound, Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 87
-  media_count: 50
+  total_occurrences: 215
+  media_count: 147
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:28.346319'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:77-92-9 from PubChem API via name lookup (Citric Acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.858618'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:77-92-9 from CultureBotHT compounds_to_cas.csv (matched:
+    citric acid)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.751798'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6132-04-3 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium citrate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.921953'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6132-04-3 from CultureBotHT compounds_to_cas.csv (matched:
+    trisodium citrate)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -66,6 +112,36 @@ curation_history:
     citrate, citric acid trisodium salt, trisodium 2-hydroxypropane-1,2,3-tricarboxylate'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Na2-citrate, Tri-sodium
+    citrate, Trisodium Citrate, citric acid trisodium salt, trisodium 2-hydroxypropane-1,2,3-tricarboxylate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: Tri-sodium citrate,
+    Trisodium Citrate, citric acid trisodium salt, trisodium 2-hydroxypropane-1,2,3-tricarboxylate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 6 duplicate MIM record(s) into this one: Sodium_Citrate.yaml,
+    Na3-citrate.yaml, Na2-citrate.yaml, Trisodium_Citrate_2.yaml, Citric_Acid_2.yaml,
+    Citric_Acid_3.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed;
+    winner selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (6132-04-3|68-04-2|77-92-9) resolved
+    via OAK canonical xref: UNKNOWN (no_oak_cas)'
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:53258
 chemical_properties:
   cas_rn: 68-04-2

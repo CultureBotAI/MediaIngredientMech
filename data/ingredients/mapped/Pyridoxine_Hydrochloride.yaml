@@ -29,10 +29,26 @@ synonyms:
 - synonym_text: pyridoxol hydrochloride
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Pyridoxine-HCl
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Pyridoxine HCl
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Pyridoxine·HCl
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Vitamin; Properties: Simple component, Organic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Pyridoxine・HCl
+  synonym_type: EXACT
+  source: manual
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1627
-  media_count: 50
+  total_occurrences: 1942
+  media_count: 156
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -46,6 +62,48 @@ curation_history:
   changes: Added CAS-RN:58-56-0 from PubChem API via name lookup (Pyridoxine hydrochloride)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.678087'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    Pyridoxine-HCl)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.680067'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    pyridoxine-HCl)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.683366'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    Pyridoxine HCl)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.686389'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    Pyridoxine Hydrochloride)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.688158'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-56-0 from CultureBotHT compounds_to_cas.csv (matched:
+    Pyridoxine·HCl)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-17T12:00:00+00:00'
+  curator: synonym_expansion_cbclaw
+  action: ADDED_SYNONYMS
+  changes: Added 2 synonyms (unicode dot variants) for unmapped CultureMech surface
+    forms
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -55,6 +113,15 @@ curation_history:
     hydrochloride'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 5 duplicate MIM record(s) into this one: Pyridoxine-hcl.yaml,
+    Pyridoxine_Hcl.yaml, Pyridoxinehcl.yaml, Pyridoxine_Hydrochloride_2.yaml, Pyridoxine-hcl_2.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 58-56-0
   data_source: PubChem API

@@ -17,15 +17,42 @@ synonyms:
 - synonym_text: D-Trehalose
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: D(+)-Trehalose
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Carbon source; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 8
-  media_count: 8
+  total_occurrences: 11
+  media_count: 11
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:46.107889'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:99-20-7 from PubChem API via name lookup (D-Trehalose)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.968892'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6138-23-4 from CultureBotHT compounds_to_cas.csv (matched:
+    D-trehalose)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:44:04.273096'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:99-20-7 from PubChem API (preprocessed) via name preprocessing
+    (D(+)-Trehalose)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -40,6 +67,21 @@ curation_history:
   changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: D-Trehalose'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: D_-trehalose.yaml, D-trehalose.yaml,
+    D-trehalose_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed;
+    winner selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (52613-20-4|6138-23-4|99-20-7) resolved
+    via OAK canonical xref: UNKNOWN (no_oak_cas)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 52613-20-4
   data_source: PubChem (via CHEBI:27082)

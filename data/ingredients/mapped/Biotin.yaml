@@ -79,8 +79,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 2141
-  media_count: 50
+  total_occurrences: 2421
+  media_count: 158
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -94,6 +94,47 @@ curation_history:
   changes: Added CAS-RN:58-85-5 from PubChem API via name lookup (Biotin)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.764023'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-85-5 from CultureBotHT compounds_to_cas.csv (matched:
+    biotin)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.941054'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-85-5 from CultureBotHT compounds_to_cas.csv (matched:
+    D-Biotin)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.943050'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-85-5 from CultureBotHT compounds_to_cas.csv (matched:
+    d-Biotin)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.945130'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-85-5 from CultureBotHT compounds_to_cas.csv (matched:
+    D-biotin)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.976000'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:58-85-5 from CultureBotHT compounds_to_cas.csv (matched:
+    D(+)-Biotin)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 58-85-5 from PubChem (via CHEBI:15956)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -103,6 +144,33 @@ curation_history:
     Biotine, ... (11 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 15 synonyms from kg-microbe P4.4 enrichment: (+)-cis-Hexahydro-2-oxo-1H-thieno[3,4]imidazole-4-valeric
+    acid, (3aS,4S,6aR)-Hexahydro-2-oxo-1H-thieno[3,4-d]imidazole-4-valeric acid, 5-(2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl)pentanoic
+    acid, 5-[(3aS,4S,6aR)-2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl]pentanoic acid,
+    Biotine, ... (10 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 15 synonyms from kg-microbe P4.4 enrichment: (+)-cis-Hexahydro-2-oxo-1H-thieno[3,4]imidazole-4-valeric
+    acid, (3aS,4S,6aR)-Hexahydro-2-oxo-1H-thieno[3,4-d]imidazole-4-valeric acid, 5-(2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl)pentanoic
+    acid, 5-[(3aS,4S,6aR)-2-oxohexahydro-1H-thieno[3,4-d]imidazol-4-yl]pentanoic acid,
+    Coenzyme R, ... (10 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 7 duplicate MIM record(s) into this one: D-_-biotin.yaml, Biotine.yaml,
+    D_-biotin.yaml, D-biotin.yaml, Biotin_2.yaml, D-biotin_2.yaml, D-biotin_3.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 58-85-5
   data_source: PubChem API

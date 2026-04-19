@@ -30,10 +30,17 @@ synonyms:
     Defined component'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: D-glucose
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Carbon source; Properties: Simple component, Defined component,
+    Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 29
-  media_count: 29
+  total_occurrences: 34
+  media_count: 34
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -41,11 +48,31 @@ curation_history:
   changes: Initial import from CultureMech pipeline
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T19:51:43.471953'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:200-075-1 from PubChem API via name lookup (D-glucose)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.138289'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
   changes: 'Added CAS-RN:50-99-7 from CultureBotHT compounds_to_cas.csv (matched:
     glucose)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 50-99-7 from CultureBotHT/compounds_to_cas.csv
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: D-glucose_2.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
   new_status: MAPPED
   llm_assisted: false
 chemical_properties:

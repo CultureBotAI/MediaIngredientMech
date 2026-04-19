@@ -84,8 +84,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 10
-  media_count: 10
+  total_occurrences: 13
+  media_count: 13
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -99,6 +99,12 @@ curation_history:
   changes: Added CAS-RN:7722-76-1 from PubChem API via name lookup (NH4H2PO4)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 7722-76-1 from PubChem (via CHEBI:62982)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -107,6 +113,22 @@ curation_history:
     orthophosphate, ... (15 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 20 synonyms from kg-microbe P4.4 enrichment: Ammonium acid phosphate,
+    Ammonium biphosphate, Ammonium diacid phosphate, Ammonium dihydrogen orthophosphate,
+    Ammonium dihydrophosphate, ... (15 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Nh4h2po4_2.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7722-76-1
   data_source: PubChem API

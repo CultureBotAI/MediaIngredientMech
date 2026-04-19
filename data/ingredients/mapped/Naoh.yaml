@@ -48,8 +48,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1183
-  media_count: 50
+  total_occurrences: 1184
+  media_count: 51
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -63,6 +63,13 @@ curation_history:
   changes: Added CAS-RN:1310-73-2 from PubChem API via name lookup (NaOH)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-07T10:19:59.554215'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:32145
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -70,6 +77,21 @@ curation_history:
     Sodium Hydroxide, caustic soda, hydroxyde de sodium, ... (2 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Aetznatron, NaOH, Natriumhydroxid,
+    caustic soda, hydroxyde de sodium, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Sodium_Hydroxide.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 1310-73-2
   data_source: PubChem API

@@ -41,15 +41,26 @@ synonyms:
 - synonym_text: trisodium 2,2',2''-nitrilotriacetate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Mineral source; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1
-  media_count: 1
+  total_occurrences: 2
+  media_count: 2
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.613132'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:5064-31-3 from CultureBotHT compounds_to_cas.csv (matched:
+    Nitrilotriacetic acid, trisodium salt)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T21:52:10.595652'
@@ -67,7 +78,31 @@ curation_history:
     acid, trisodium salt, Trisodium N,N-bis(carboxymethyl)glycinate, ... (4 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: 0.5 M Nitrilotriacetic
+    acid, disodium salt, N,N-Bis(carboxymethyl)glycine, trisodium salt, NTA Trisodium
+    salt, Nitrilotriacetic acid sodium salt, Trisodium N,N-bis(carboxymethyl)glycinate,
+    ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Nitrilotriacetic_Acid_Trisodium_Salt.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (15467-20-6|5064-31-3) resolved via
+    OAK canonical xref: 5064-31-3 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 15467-20-6
-  data_source: NCI CACTUS Chemical Identifier Resolver
-  retrieval_date: '2026-04-05T21:52:10.595623'
+  cas_rn: 5064-31-3
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'

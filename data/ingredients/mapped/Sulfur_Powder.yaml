@@ -30,15 +30,27 @@ synonyms:
     Defined component'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Sulfur powder
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Elemental sulphur
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 81
-  media_count: 50
+  total_occurrences: 95
+  media_count: 64
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:00.149405'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:231-722-6 from PubChem API via name lookup (Elemental sulfur)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T19:53:59.153622'
@@ -47,10 +59,36 @@ curation_history:
   changes: Added CAS-RN:7783-06-4 from PubChem API via name lookup (Sulfur (powder))
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T23:47:03.940469'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:231-722-6 from PubChem API (preprocessed) via name preprocessing
+    (sulfur (powder))
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:47:04.439819'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:10544-50-0 from PubChem API (ontology label) via name preprocessing
+    (sulfur powder)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
   changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: Sulfur powder'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: Sulfur (powder)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: Elemental sulphur'
   new_status: MAPPED
   llm_assisted: true
 - timestamp: '2026-04-19T01:05:11.472981+00:00'
@@ -60,6 +98,49 @@ curation_history:
     label: ''elemental sulfur''). Reason: Previous CHEBI:14258 is obsolete in current
     CHEBI release. Stripped 1 kg_microbe-sourced synonyms that were contaminated by
     the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T01:05:11.476025+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:14258 -> CHEBI:33403 (old label: ''Sulfur
+    powder'', new label: ''elemental sulfur''). Reason: Previous CHEBI:14258 is obsolete
+    in current CHEBI release. Stripped 1 kg_microbe-sourced synonyms that were contaminated
+    by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T01:05:11.478676+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:14258 -> CHEBI:33403 (old label: '''', new
+    label: ''elemental sulfur''). Reason: Previous CHEBI:14258 is obsolete in current
+    CHEBI release. Stripped 1 kg_microbe-sourced synonyms that were contaminated by
+    the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T01:05:11.481455+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:14258 -> CHEBI:33403 (old label: ''Sulfur
+    powder'', new label: ''elemental sulfur''). Reason: Previous CHEBI:14258 is obsolete
+    in current CHEBI release. Stripped 1 kg_microbe-sourced synonyms that were contaminated
+    by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 5 duplicate MIM record(s) into this one: Sulfur_Powder_2.yaml,
+    Elemental_Sulphur.yaml, Elemental_Sulfur.yaml, Sulfur_Powder_3.yaml, Sulfur_Powder_4.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (10544-50-0|231-722-6|7783-06-4) resolved
+    via OAK canonical xref: UNKNOWN (no_oak_cas)'
   new_status: MAPPED
   llm_assisted: false
 chemical_properties:

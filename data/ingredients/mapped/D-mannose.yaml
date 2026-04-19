@@ -16,10 +16,14 @@ synonyms:
 - synonym_text: D-manno-hexose
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Carbon source; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 6
-  media_count: 6
+  total_occurrences: 7
+  media_count: 7
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -33,12 +37,34 @@ curation_history:
   changes: Added CAS-RN:530-26-7 from PubChem API via name lookup (D-Mannose)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.964631'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:3458-28-4 from CultureBotHT compounds_to_cas.csv (matched:
+    D-mannose)'
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
   changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: D-manno-hexose'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: D-mannose_2.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (3458-28-4|530-26-7) resolved via
+    OAK canonical xref: UNKNOWN (no_oak_cas)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 530-26-7
   data_source: PubChem API

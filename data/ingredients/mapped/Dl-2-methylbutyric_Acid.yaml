@@ -50,15 +50,54 @@ synonyms:
 - synonym_text: α-Methylbutyric acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Carbon source; Properties: Organic compound, Simple component,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 43
-  media_count: 43
+  total_occurrences: 77
+  media_count: 77
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:50:52.765705'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:116-53-0 from PubChem API via name lookup (2-Methyl-butyric
+    acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:52:12.662639'
+  curator: fetch_cas_rn_from_cactus
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:116-53-0 from NCI CACTUS via name lookup (2-Methylbutyric
+    acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:52:23.740431'
+  curator: fetch_cas_rn_from_cactus
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:116-53-0 from NCI CACTUS via name lookup (alpha-Methylbutyric
+    acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:44:07.887106'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:116-53-0 from PubChem API (ontology label) via name preprocessing
+    (DL-2-Methyl butyric acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:47:17.609974'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:116-53-0 from PubChem API (ontology label) via name preprocessing
+    (α-Methylbutyric acid)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -75,6 +114,56 @@ curation_history:
     butyric acid, ... (7 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 12 synonyms from kg-microbe P4.4 enrichment: 2-Methyl-butyric acid,
+    2-methybutyric acid, DL-2-Methyl butyric acid, DL-2-Methylbutyric acid, DL-alpha-Methyl
+    butyric acid, ... (7 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 12 synonyms from kg-microbe P4.4 enrichment: 2-Methyl-butyric acid,
+    2-Methylbutyric acid, 2-methybutyric acid, DL-2-Methyl butyric acid, DL-2-Methylbutyric
+    acid, ... (7 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: 2-Methyl-butyric acid,
+    2-methybutyric acid, DL-2-Methylbutyric acid, DL-alpha-Methyl butyric acid, DL-α-Methyl
+    butyric acid, ... (6 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: 2-methybutyric acid,
+    DL-2-Methyl butyric acid, DL-2-Methylbutyric acid, DL-alpha-Methyl butyric acid,
+    DL-α-Methyl butyric acid, ... (6 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: 2-Methyl-butyric acid,
+    2-methybutyric acid, DL-2-Methyl butyric acid, DL-2-Methylbutyric acid, DL-alpha-Methyl
+    butyric acid, ... (6 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 6 duplicate MIM record(s) into this one: 2-methylbutyric_Acid.yaml,
+    Alpha-methylbutyric_Acid.yaml, Dl-alpha-methyl_Butyric_Acid.yaml, Dl-2-methyl_Butyric_Acid.yaml,
+    2-methyl-butyric_Acid.yaml, Α-methylbutyric_Acid.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:37070
 chemical_properties:
   cas_rn: 116-53-0

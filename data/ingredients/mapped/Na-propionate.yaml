@@ -28,15 +28,37 @@ synonyms:
 - synonym_text: sodium propanoate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Carbon source; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Carbon source; Properties: Defined component, Simple component,
+    Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 32
-  media_count: 32
+  total_occurrences: 36
+  media_count: 36
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.798663'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:137-40-6 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium propionate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.800380'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:137-40-6 from CultureBotHT compounds_to_cas.csv (matched:
+    sodium propionate)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T23:45:42.463167'
@@ -54,6 +76,22 @@ curation_history:
     (1 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: E281, Natriumpropionat,
+    Propanoic acid, sodium salt, Propionic acid sodium salt, sodium propanoate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 2 duplicate MIM record(s) into this one: Sodium_Propionate.yaml,
+    Sodium_Propionate_2.yaml. Synonyms, curation_history, and occurrence counts were
+    unioned/summed; winner selected by highest occurrence count with preferred_term
+    readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 137-40-6
   data_source: PubChem API (preprocessed)

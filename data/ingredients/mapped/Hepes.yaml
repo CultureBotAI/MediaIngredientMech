@@ -30,10 +30,16 @@ synonyms:
     compound'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: HEPES buffer
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Buffer; Properties: Defined component, Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 148
-  media_count: 50
+  total_occurrences: 166
+  media_count: 68
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -45,6 +51,30 @@ curation_history:
   curator: fetch_cas_rn_from_pubchem
   action: ADDED_CAS_RN
   changes: Added CAS-RN:7365-45-9 from PubChem API via name lookup (HEPES)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.176855'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7365-45-9 from CultureBotHT compounds_to_cas.csv (matched:
+    Hepes)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T01:05:11.444380+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:19708 -> CHEBI:46756 (old label: ''HEPES buffer'',
+    new label: ''HEPES''). Reason: Previous CHEBI:19708 is obsolete in current CHEBI
+    release. Stripped 0 kg_microbe-sourced synonyms that were contaminated by the
+    wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 2 duplicate MIM record(s) into this one: Hepes_Buffer.yaml, Hepes_2.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
   new_status: MAPPED
   llm_assisted: false
 chemical_properties:

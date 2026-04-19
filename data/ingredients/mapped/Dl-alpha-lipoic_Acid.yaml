@@ -71,15 +71,45 @@ synonyms:
 - synonym_text: liponic acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Lipoic acid
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: alpha-lipoic acid
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Growth factor; Properties: Defined component, Simple component,
+    Organic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Lipoate
+  synonym_type: EXACT
+  source: manual
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 872
-  media_count: 50
+  total_occurrences: 1399
+  media_count: 157
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:03.959053'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:1077-28-7 from PubChem API via name lookup (alpha-lipoic acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.295350'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:1077-28-7 from CultureBotHT compounds_to_cas.csv (matched:
+    Lipoic acid)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -88,6 +118,12 @@ curation_history:
   changes: Added CAS-RN 1077-28-7 from PubChem (via CHEBI:16494)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-17T12:00:00+00:00'
+  curator: synonym_expansion_cbclaw
+  action: ADDED_SYNONYMS
+  changes: Added 1 synonym for unmapped CultureMech surface form
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -96,6 +132,31 @@ curation_history:
     acid, 5-(dithiolan-3-yl)valeric acid, ... (14 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 20 synonyms from kg-microbe P4.4 enrichment: (DL)-alpha-Lipoic acid,
+    1,2-dithiolane-3-pentanoic acid, 1,2-dithiolane-3-valeric acid, 5-(1,2-dithiolan-3-yl)pentanoic
+    acid, 5-(1,2-dithiolan-3-yl)valeric acid, ... (15 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (DL)-alpha-Lipoic acid,
+    1,2-dithiolane-3-pentanoic acid, 1,2-dithiolane-3-valeric acid, 5-(1,2-dithiolan-3-yl)pentanoic
+    acid, 5-(1,2-dithiolan-3-yl)valeric acid, ... (14 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 4 duplicate MIM record(s) into this one: Lipoic_Acid.yaml, Alpha-lipoic_Acid.yaml,
+    Dl-68-thioctic_Acid.yaml, Dl-alpha-lipoic_Acid_2.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:16494
 chemical_properties:
   cas_rn: 1077-28-7

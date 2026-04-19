@@ -35,10 +35,13 @@ synonyms:
 - synonym_text: Traubenzucker
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: D(+)-Glucose
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 483
-  media_count: 50
+  total_occurrences: 710
+  media_count: 100
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -50,6 +53,13 @@ curation_history:
   curator: fetch_cas_rn_from_pubchem
   action: ADDED_CAS_RN
   changes: Added CAS-RN:200-075-1 from PubChem API via name lookup (D-Glucose)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:44:03.918150'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:200-075-1 from PubChem API (preprocessed) via name preprocessing
+    (D(+)-Glucose)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -64,6 +74,14 @@ curation_history:
   changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: D-(+)-glucose, Traubenzucker'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: D_-glucose.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 50-99-7
   data_source: CultureBotHT/compounds_to_cas.csv

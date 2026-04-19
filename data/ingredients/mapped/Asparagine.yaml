@@ -36,10 +36,13 @@ synonyms:
 - synonym_text: asparagina
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: DL-Asparagine x H2O
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 22
-  media_count: 22
+  total_occurrences: 24
+  media_count: 24
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -53,6 +56,13 @@ curation_history:
   changes: Added CAS-RN:70-47-3 from PubChem API via name lookup (Asparagine)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T23:44:09.338227'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:5794-13-8 from PubChem API (preprocessed) via name preprocessing
+    (DL-Asparagine x H2O)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -61,7 +71,22 @@ curation_history:
     more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Dl-asparagine_X_H2o.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (5794-13-8|70-47-3) resolved via OAK
+    canonical xref: 3130-87-8 (override)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 70-47-3
-  data_source: PubChem API
-  retrieval_date: '2026-04-05T19:51:09.926252'
+  cas_rn: 3130-87-8
+  data_source: OAK/CHEBI xref (overrode 5794-13-8|70-47-3)
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'

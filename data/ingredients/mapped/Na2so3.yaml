@@ -34,8 +34,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 15
-  media_count: 15
+  total_occurrences: 16
+  media_count: 16
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -49,6 +49,13 @@ curation_history:
   changes: Added CAS-RN:7757-83-7 from PubChem API via name lookup (Na2SO3)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.822410'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7757-83-7 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium sulfite)'
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -57,6 +64,21 @@ curation_history:
     ... (1 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Dried sodium sulfite,
+    Na2SO3, Natrium sulfurosum, Natriumsulfid, Sodium sulphite, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Sodium_Sulfite.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7757-83-7
   data_source: PubChem API

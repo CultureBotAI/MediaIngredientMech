@@ -52,10 +52,16 @@ synonyms:
 - synonym_text: 'degradation: starch'
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Starch soluble
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Carbon source'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 417
-  media_count: 50
+  total_occurrences: 424
+  media_count: 57
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -63,11 +69,32 @@ curation_history:
   changes: Initial import from CultureMech pipeline
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.884343'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:9005-25-8 from CultureBotHT compounds_to_cas.csv (matched:
+    Corn Starch)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.886194'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:9005-25-8 from CultureBotHT compounds_to_cas.csv (matched:
+    Corn starch)'
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.845303'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
   changes: 'Added CAS-RN:9005-25-8 from CultureBotHT compounds_to_cas.csv (matched:
     Starch)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-07T10:20:12.709393'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:18167
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-17T12:00:00+00:00'
@@ -83,6 +110,36 @@ curation_history:
     Starch, Rice starch, Staerke, amidon, ... (2 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Amidon (starch), Rice starch,
+    Soluble Starch, Staerke, amidon, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.469509+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:18167 -> CHEBI:28017 (old label: '''', new
+    label: ''starch''). Reason: Previous CHEBI:18167 was alpha-maltose, not starch.
+    Stripped 0 kg_microbe-sourced synonyms that were contaminated by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Corn_Starch.yaml, Corn_Starch_2.yaml,
+    Starch_soluble.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed;
+    winner selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (9005-25-8|9005-84-9) resolved via
+    OAK canonical xref: 9005-25-8 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 9005-25-8
   data_source: CultureBotHT compounds_to_cas.csv

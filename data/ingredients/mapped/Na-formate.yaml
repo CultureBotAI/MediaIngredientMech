@@ -37,10 +37,19 @@ synonyms:
 - synonym_text: sodium formiate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Properties: Defined component, Simple component, Inorganic compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Inorganic compound, Simple component, Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Defined component, Organic compound, Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 79
-  media_count: 50
+  total_occurrences: 143
+  media_count: 110
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -48,11 +57,39 @@ curation_history:
   changes: Initial import from CultureMech pipeline
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.763358'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:141-53-7 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium formate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.765330'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:141-53-7 from CultureBotHT compounds_to_cas.csv (matched:
+    sodium formate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.767067'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:141-53-7 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium Formate)'
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-05T23:45:36.513614'
   curator: fetch_cas_rn_with_preprocessing
   action: ADDED_CAS_RN
   changes: Added CAS-RN:141-53-7 from PubChem API (preprocessed) via name preprocessing
     (Na-formate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:36.860258'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:141-53-7 from PubChem API (preprocessed) via name preprocessing
+    (Na-formiate)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
@@ -63,6 +100,31 @@ curation_history:
     ... (2 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: FORMIC ACID, NA SALT,
+    Formic acid, sodium salt (1:1), Na-formate, Na-formiate, Sodium methanoate, ...
+    (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: FORMIC ACID, NA SALT,
+    Formic acid, sodium salt (1:1), Na-formate, Sodium Formate, Sodium methanoate,
+    ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 4 duplicate MIM record(s) into this one: Sodium_Formate.yaml,
+    Na-formiate.yaml, Sodium_Formate_2.yaml, Sodium_Formate_3.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 141-53-7
   data_source: PubChem API (preprocessed)

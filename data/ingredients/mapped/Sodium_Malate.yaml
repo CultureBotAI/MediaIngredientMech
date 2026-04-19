@@ -64,10 +64,19 @@ synonyms:
 - synonym_text: l-Malic acid, sodium salt
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: DL-Sodium malate
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Properties: Organic compound, Simple component, Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Simple component, Organic compound, Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 14
-  media_count: 14
+  total_occurrences: 50
+  media_count: 50
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -82,6 +91,33 @@ curation_history:
     Sodium malate)'
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T23:45:35.260234'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:676-46-0 from PubChem API (preprocessed) via name preprocessing
+    (Na-DL-malate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:39.925211'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:205-313-8 from PubChem API (preprocessed) via name preprocessing
+    (Na-L-malate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:41.055101'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:676-46-0 from PubChem API (preprocessed) via name preprocessing
+    (Na-malate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 138-09-0 from PubChem (via CHEBI:91261)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -89,8 +125,53 @@ curation_history:
     DL-Na-malate, Disodium L-malate, Na malate, Na-DL-malate, ... (11 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 16 synonyms from kg-microbe P4.4 enrichment: (S)-disodium malate,
+    DL-Na-malate, Disodium L-malate, Na malate, Na-L-malate, ... (11 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 16 synonyms from kg-microbe P4.4 enrichment: (S)-disodium malate,
+    DL-Na-malate, Disodium L-malate, Na-DL-malate, Na-L-malate, ... (11 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 16 synonyms from kg-microbe P4.4 enrichment: (S)-disodium malate,
+    Disodium L-malate, Na malate, Na-DL-malate, Na-L-malate, ... (11 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 17 synonyms from kg-microbe P4.4 enrichment: (S)-disodium malate,
+    DL-Na-malate, Disodium L-malate, Na malate, Na-DL-malate, ... (12 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 9 duplicate MIM record(s) into this one: Sodium_Dl-malate.yaml,
+    Na2-dl-malate.yaml, Na-malate.yaml, Na-dl-malate.yaml, Na_Malate.yaml, Dl-na-malate.yaml,
+    Dl-sodium_Malate.yaml, Sodium_L-malate.yaml, Na-l-malate.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (138-09-0|676-46-0) resolved via OAK
+    canonical xref: 138-09-0 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 676-46-0
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-05T21:48:45.789470'
+  cas_rn: 138-09-0
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'
 kg_microbe_node_id: CHEBI:91261

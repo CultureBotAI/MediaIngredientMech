@@ -82,10 +82,13 @@ synonyms:
 - synonym_text: spiritus vini
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Ethanol absolute
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 222
-  media_count: 50
+  total_occurrences: 234
+  media_count: 62
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -99,6 +102,19 @@ curation_history:
   changes: Added CAS-RN:64-17-5 from PubChem API via name lookup (Ethanol)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T19:52:01.699514'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:64-17-5 from PubChem API via name lookup (Ethanol absolute)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.052411'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:64-17-5 from CultureBotHT compounds_to_cas.csv (matched:
+    ethanol)'
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -106,6 +122,33 @@ curation_history:
     Aethylalkohol, Alkohol, C2H5OH, ... (13 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: 6-C-Me-alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-alpha-D-Man,
+    6-C-Me-alpha-D-Manp-(1->2)-alpha-D-Manp-(1->2)-alpha-D-Manp-(1->3)-alpha-D-Manp,
+    6-C-methyl-alpha-D-mannosyl-(1->2)-alpha-D-mannosyl-(1->2)-alpha-D-mannosyl-(1->3)-alpha-D-mannose,
+    7-deoxy-L-glycero-alpha-D-manno-heptopyranosyl-(1->2)-alpha-D-mannopyranosyl-(1->2)-alpha-D-mannopyranosyl-(1->3)-alpha-D-mannopyranose,
+    7-deoxy-L-glycero-alpha-D-manno-heptosyl-(1->2)-alpha-D-mannosyl-(1->2)-alpha-D-mannosyl-(1->3)-alpha-D-mannose'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.434813+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:64175 -> CHEBI:16236 (old label: ''Ethanol
+    absolute'', new label: ''ethanol''). Reason: Previous CHEBI:64175 was a mannose
+    oligosaccharide — unrelated. Stripped 5 kg_microbe-sourced synonyms that were
+    contaminated by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 2 duplicate MIM record(s) into this one: Ethanol_Absolute.yaml,
+    Ethanol_2.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed;
+    winner selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 64-17-5
   data_source: PubChem API

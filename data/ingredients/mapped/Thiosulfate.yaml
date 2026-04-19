@@ -28,10 +28,14 @@ synonyms:
 - synonym_text: thiosulphates
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Growth factor; Properties: Defined component, Inorganic compound,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 3
-  media_count: 3
+  total_occurrences: 4
+  media_count: 4
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -47,3 +51,11 @@ curation_history:
     ... (1 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Thiosulfate_2.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false

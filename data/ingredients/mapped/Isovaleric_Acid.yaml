@@ -58,10 +58,13 @@ synonyms:
 - synonym_text: isovalerianic acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: iso-Valeric acid
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 50
-  media_count: 50
+  total_occurrences: 85
+  media_count: 85
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -69,11 +72,31 @@ curation_history:
   changes: Initial import from CultureMech pipeline
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T19:50:55.416641'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:503-74-2 from PubChem API via name lookup (3-Methyl-butyric
+    acid)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:28.186794'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:503-74-2 from PubChem API via name lookup (iso-Valeric acid)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.203202'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
   changes: 'Added CAS-RN:503-74-2 from CultureBotHT compounds_to_cas.csv (matched:
     Isovaleric acid)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:52:15.043157'
+  curator: fetch_cas_rn_from_cactus
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:92634-50-9 from NCI CACTUS via name lookup (3-Methylbutyric
+    acid)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
@@ -84,6 +107,47 @@ curation_history:
     acid, ... (7 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 12 synonyms from kg-microbe P4.4 enrichment: 3-Methyl-butyric acid,
+    3-Methylbutanoic acid, 3-Methylbuttersaeure, 3-methyl-n-butyric acid, ISOVALERIC
+    ACID, ... (7 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: 3-Methylbutanoic acid,
+    3-Methylbuttersaeure, 3-Methylbutyric acid, 3-methyl-n-butyric acid, Isovaleriansaeure,
+    ... (6 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.450111+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:503742 -> CHEBI:28484 (old label: ''iso-Valeric
+    acid'', new label: ''isovaleric acid''). Reason: Previous CHEBI:503742 no longer
+    resolves in CHEBI. Stripped 0 kg_microbe-sourced synonyms that were contaminated
+    by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Iso-valeric_Acid.yaml,
+    3-methylbutyric_Acid.yaml, 3-methyl-butyric_Acid.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (503-74-2|92634-50-9) resolved via
+    OAK canonical xref: 503-74-2 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 503-74-2
   data_source: CultureBotHT compounds_to_cas.csv

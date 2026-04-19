@@ -29,13 +29,20 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 106
-  media_count: 50
+  total_occurrences: 109
+  media_count: 53
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:58.011755'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:599-54-2 from PubChem API via name lookup (DL-Pantothenic
+    acid)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.632062'
@@ -52,8 +59,30 @@ curation_history:
     acid, DL-Pantothenic acid, N-(2,4-dihydroxy-3,3-dimethylbutanoyl)-beta-alanine'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: 3-(2,4-dihydroxy-3,3-dimethylbutanamido)propanoic
+    acid, N-(2,4-dihydroxy-3,3-dimethylbutanoyl)-beta-alanine'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Dl-pantothenic_Acid.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (137-08-6|599-54-2) resolved via OAK
+    canonical xref: 599-54-2 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 137-08-6
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-05T21:48:45.632058'
+  cas_rn: 599-54-2
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'
 kg_microbe_node_id: CHEBI:7916

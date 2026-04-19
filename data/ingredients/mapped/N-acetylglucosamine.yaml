@@ -17,10 +17,14 @@ synonyms:
 - synonym_text: N-acetylglucosamines
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Carbon source; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 33
-  media_count: 33
+  total_occurrences: 35
+  media_count: 35
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -40,6 +44,14 @@ curation_history:
   changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: N-acetylglucosamines'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: N-acetylglucosamine_2.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7512-17-6
   data_source: PubChem API

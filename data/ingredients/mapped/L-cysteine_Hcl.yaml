@@ -13,15 +13,48 @@ synonyms:
 - synonym_text: (add to make medium anoxic)
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Cysteine-HCl
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: (1R)-1-carboxy-2-sulfanylethan-1-aminium chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: (R)-Cysteine hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Cysteine monohydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-(+)-Cysteine hydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-Cysteine monohydrochloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-Cysteiniumchloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: L-cysteinium chloride
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: N-(9-{2-[(4-{[(2,5-dioxopyrrolidin-1-yl)oxy]carbonyl}piperidin-1-yl)sulfonyl]phenyl}-6-[methyl(4-sulfophenyl)amino]-3H-xanthen-3-ylidene)-N-methyl-4-sulfoanilinium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 132
-  media_count: 50
+  total_occurrences: 154
+  media_count: 72
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:40.250803'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:200-157-7 from PubChem API via name lookup (Cysteine-HCl)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.253625'
@@ -39,6 +72,15 @@ curation_history:
     hydrochloride, L-Cysteine monohydrochloride, ... (3 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: REMAPPED
+  changes: Remapped CHEBI:52891 (QSY9 succinimidyl ester, a fluorescence quencher)
+    → CHEBI:91247 (L-cysteine hydrochloride). Original CHEBI was unrelated compound.
+    Also corrected CAS-RN 200-157-7 (EINECS number, not a CAS) → 52-89-1 (the real
+    CAS-RN for L-cysteine hydrochloride anhydrous, confirmed via PubChem).
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-04-19T01:05:11.454201+00:00'
   curator: cbclaw_sssom_review_fix
   action: CORRECTED_ONTOLOGY_ID
@@ -48,7 +90,22 @@ curation_history:
     that were contaminated by the wrong CHEBI.'
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Cysteine-hcl.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (52-89-1|7048-04-6) resolved via OAK
+    canonical xref: 52-89-1 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 7048-04-6
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-05T21:48:45.253623'
+  cas_rn: 52-89-1
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'

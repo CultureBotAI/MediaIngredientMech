@@ -36,8 +36,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 33
-  media_count: 33
+  total_occurrences: 34
+  media_count: 34
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -51,6 +51,13 @@ curation_history:
   changes: Added CAS-RN:15275-07-7 from PubChem API via name lookup (Fe(III)-EDTA)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-07T10:19:24.369814'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:30729
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -59,6 +66,22 @@ curation_history:
     ... (1 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: (ethane-1,2-diyldinitrilo)tetraacetatoferrate(III),
+    Fe(III)-EDTA, Fe(III)·EDTA, Iron(III)-edta, electron acceptor: ethylenediaminetetraacetatoferrate,
+    ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Ferric_EDTA.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 15275-07-7
   data_source: PubChem API

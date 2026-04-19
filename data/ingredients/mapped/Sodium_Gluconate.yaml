@@ -31,10 +31,16 @@ synonyms:
 - synonym_text: sodium (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanoate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na-gluconate
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Na gluconate
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 6
-  media_count: 6
+  total_occurrences: 15
+  media_count: 15
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -49,6 +55,26 @@ curation_history:
     Sodium gluconate)'
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.774936'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:527-07-1 from CultureBotHT compounds_to_cas.csv (matched:
+    sodium gluconate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:38.253011'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:527-07-1 from PubChem API (preprocessed) via name preprocessing
+    (Na-gluconate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 527-07-1 from PubChem (via CHEBI:84997)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -57,6 +83,23 @@ curation_history:
     sodium (2R,3S,4R,5R)-2,3,4,5,6-pentahydroxyhexanoate'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: D-Gluconic acid, monosodium
+    salt, Gluconic acid sodium salt, Monosodium D-gluconate, Monosodium gluconate,
+    Sodium gluconate, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Na-gluconate.yaml, Na_Gluconate.yaml,
+    Sodium_Gluconate_2.yaml. Synonyms, curation_history, and occurrence counts were
+    unioned/summed; winner selected by highest occurrence count with preferred_term
+    readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 527-07-1
   data_source: CultureBotHT compounds_to_cas.csv

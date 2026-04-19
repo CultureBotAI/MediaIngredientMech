@@ -66,10 +66,28 @@ synonyms:
 - synonym_text: vitamin B1 pyrophosphate chloride
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Co Carboxylase
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: thiamine pyrophosphate chloride
+  synonym_type: EXACT
+  source: CHEBI
+- synonym_text: TPP
+  synonym_type: RELATED
+  source: historical_nomenclature
+- synonym_text: 1-[(4-amino-2-methylpyrimidin-5-yl)methyl]-3-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-2-methylpyridinium
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: pyrithiamine diphosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: pyrithiamine pyrophosphate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 16
-  media_count: 16
+  total_occurrences: 17
+  media_count: 17
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -93,6 +111,29 @@ curation_history:
     chloride, P,P''-dioxide, ... (11 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: REMAPPED
+  changes: Remapped CHEBI:45395 (pyrithiamine pyrophosphate, a thiamine antimetabolite)
+    → CHEBI:18290 (thiamine diphosphate chloride). Cocarboxylase is the historical
+    name for the active coenzyme form of thiamine.
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: 1-[(4-amino-2-methylpyrimidin-5-yl)methyl]-3-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-2-methylpyridinium,
+    pyrithiamine diphosphate, pyrithiamine pyrophosphate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Co_Carboxylase.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 136-09-4
   data_source: PubChem API

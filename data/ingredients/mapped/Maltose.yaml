@@ -77,10 +77,16 @@ synonyms:
 - synonym_text: alpha-D-glucopyranosyl-(1->4)-D-glucose
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Maltose x H2O
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: D-Maltose
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 131
-  media_count: 50
+  total_occurrences: 139
+  media_count: 58
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -102,6 +108,22 @@ curation_history:
     Cextromaltose, ... (11 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 15 synonyms from kg-microbe P4.4 enrichment: 1-alpha-D-Glucopyranosyl-4-alpha-D-glucopyranose,
+    4-(alpha-D-glucosido)-D-glucose, 4-O-alpha-D-glucopyranosyl-D-glucopyranose, 4-O-alpha-D-glucopyranosyl-alpha-D-glucopyranose,
+    Cextromaltose, ... (10 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 2 duplicate MIM record(s) into this one: Maltose_X_H2o.yaml,
+    D-maltose.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed;
+    winner selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 69-79-4
   data_source: PubChem (via CHEBI:17306)

@@ -57,10 +57,17 @@ synonyms:
 - synonym_text: sylvite
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Mineral source; Properties: Simple component, Inorganic compound,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Defined component, Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 2639
-  media_count: 50
+  total_occurrences: 2765
+  media_count: 107
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -74,6 +81,34 @@ curation_history:
   changes: Added CAS-RN:7447-40-7 from PubChem API via name lookup (KCl)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.222367'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7447-40-7 from CultureBotHT compounds_to_cas.csv (matched:
+    KCL)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.652762'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7447-40-7 from CultureBotHT compounds_to_cas.csv (matched:
+    Potassium chloride)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.654599'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7447-40-7 from CultureBotHT compounds_to_cas.csv (matched:
+    Potassium Chloride)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.656460'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7447-40-7 from CultureBotHT compounds_to_cas.csv (matched:
+    potassium chloride)'
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -81,6 +116,29 @@ curation_history:
     10, Klor-con, Klotrix, Monopotassium chloride, ... (4 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: KCL, Kaliumchlorid,
+    Kaon-Cl 10, Klor-con, Klotrix, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: Kaliumchlorid, Kaon-Cl
+    10, Klor-con, Klotrix, Monopotassium chloride, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 4 duplicate MIM record(s) into this one: Potassium_Chloride.yaml,
+    Kcl_2.yaml, Potassium_Chloride_2.yaml, Potassium_Chloride_3.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7447-40-7
   data_source: PubChem API

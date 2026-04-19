@@ -82,10 +82,28 @@ synonyms:
 - synonym_text: Oatmeal agar
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Corn meal agar
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: R2A agar
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: R agar
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Solidifying component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Undefined component, Complex component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: ( modified)
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 3534
-  media_count: 50
+  total_occurrences: 3682
+  media_count: 173
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -99,6 +117,13 @@ curation_history:
   changes: Added CAS-RN:9002-18-0 from PubChem API via name lookup (Agar)
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.699359'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:9002-18-0 from CultureBotHT compounds_to_cas.csv (matched:
+    agar)'
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
@@ -106,6 +131,40 @@ curation_history:
     Agar, Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar,
+    BL Agar, Bacteriological Agar, ... (14 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BL Agar,
+    Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 19 synonyms from kg-microbe P4.4 enrichment: (Agar, Agar, BCYE agar,
+    Bacteriological Agar, Bacto Middlebrook 7H10 agar, ... (14 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 21 duplicate MIM record(s) into this one: Agar_2.yaml, Marine_Agar_2216.yaml,
+    Bacto_Middlebrook_7h10_Agar.yaml, Corn_Meal_Agar.yaml, R2a_Agar.yaml, Inorganic_Salts-starch_Agar.yaml,
+    R_Agar.yaml, Czapek_Dox_Agar.yaml, Fastidious_Anaerobe_Agar.yaml, Middlebrook_7h10_Agar.yaml,
+    Brucella_Agar.yaml, Oatmeal_Agar.yaml, Bcye_Agar.yaml, Legionella_Agar_Enrichment.yaml,
+    Columbia_Blood_Agar_Base.yaml, Glycerol-asparagine_Agar.yaml, Mueller_Hinton_Ii_Agar.yaml,
+    Brewer_Anaerobic_Agar.yaml, Malt_Extract_Agar.yaml, Gam_Agar.yaml, Bl_Agar.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 9002-18-0
   data_source: PubChem API

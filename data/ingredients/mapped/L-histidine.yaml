@@ -39,10 +39,17 @@ synonyms:
 - synonym_text: L-Histidin
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Histidine
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Nitrogen source; Properties: Organic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 71
-  media_count: 50
+  total_occurrences: 103
+  media_count: 82
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -50,11 +57,23 @@ curation_history:
   changes: Initial import from CultureMech pipeline
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T19:52:39.494681'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:71-00-1 from PubChem API via name lookup (L-Histidin)
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.265336'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
   changes: 'Added CAS-RN:71-00-1 from CultureBotHT compounds_to_cas.csv (matched:
     L-Histidine)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 4998-57-6 from PubChem (via CHEBI:27570)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
@@ -65,6 +84,45 @@ curation_history:
     acid, (S)-alpha-amino-1H-Imidazole-4-propanoic acid, L-(-)-histidine, ... (1 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: 2-amino-3-(1H-imidazol-4-yl)propanoic
+    acid, DL-Histidine, Histidin, alpha-Amino-1H-imidazole-4-propionic acid, histidina'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: (2S)-2-amino-3-(1H-imidazol-4-yl)propanoic
+    acid, (S)-4-(2-Amino-2-carboxyethyl)imidazole, (S)-alpha-Amino-1H-imidazole-4-propionic
+    acid, (S)-alpha-amino-1H-Imidazole-4-propanoic acid, L-(-)-histidine'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.447498+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:27570 -> CHEBI:15971 (old label: ''Histidine'',
+    new label: ''L-histidine''). Reason: Previous CHEBI:27676 was L-histidinal (aldehyde),
+    not L-histidine. Stripped 5 kg_microbe-sourced synonyms that were contaminated
+    by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 2 duplicate MIM record(s) into this one: Histidine.yaml, L-histidin.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (4998-57-6|71-00-1) resolved via OAK
+    canonical xref: 71-00-1 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 71-00-1
   data_source: CultureBotHT compounds_to_cas.csv

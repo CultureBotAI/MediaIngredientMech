@@ -69,10 +69,35 @@ synonyms:
 - synonym_text: sodium 2-hydroxypropanoate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na-lactate
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: Sodium DL-lactate
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Carbon source; Properties: Simple component, Organic compound,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: (after autoclaving)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Carbon source; Properties: Defined component, Organic compound,
+    Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Carbon source; Properties: Organic compound, Solution, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Carbon source; Properties: Solution, Organic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 82
-  media_count: 50
+  total_occurrences: 190
+  media_count: 136
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -80,11 +105,66 @@ curation_history:
   changes: Initial import from CultureMech pipeline
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.656050'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:50-21-5 from CultureBotHT compounds_to_cas.csv (matched:
+    1 M Sodium lactate)'
+  new_status: MAPPED
+  llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.783503'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
   changes: 'Added CAS-RN:50-21-5 from CultureBotHT compounds_to_cas.csv (matched:
     Sodium lactate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.785649'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:50-21-5 from CultureBotHT compounds_to_cas.csv (matched:
+    sodium lactate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.787613'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:50-21-5 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium Lactate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:44:10.150646'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:72-17-3 from PubChem API (preprocessed) via name preprocessing
+    (DL-Na-lactate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:29.169142'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:72-17-3 from PubChem API (preprocessed) via name preprocessing
+    (Na-(DL)-lactate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:34.819169'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:72-17-3 from PubChem API (preprocessed) via name preprocessing
+    (Na-DL-lactate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:40.283369'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:72-17-3 from PubChem API (preprocessed) via name preprocessing
+    (Na-lactate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 50-21-5 from CultureBotHT/compounds_to_cas.csv
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-18T00:00:00+00:00'
@@ -95,8 +175,49 @@ curation_history:
     salt, ... (8 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 14 synonyms from kg-microbe P4.4 enrichment: 1 M Sodium lactate,
+    2-Hydroxypropanoic acid, monosodium salt, DL-Na-lactate, E325, Lactic acid sodium
+    salt, ... (9 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 12 synonyms from kg-microbe P4.4 enrichment: 2-Hydroxypropanoic
+    acid, monosodium salt, DL-Na-lactate, E325, Lactic acid sodium salt, Lactic acid,
+    monosodium salt, ... (7 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 13 synonyms from kg-microbe P4.4 enrichment: 1 M Sodium lactate,
+    2-Hydroxypropanoic acid, monosodium salt, E325, Lactic acid sodium salt, Lactic
+    acid, monosodium salt, ... (8 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 8 duplicate MIM record(s) into this one: Na-dl-lactate.yaml,
+    Na-lactate.yaml, 1_M_Sodium_Lactate.yaml, Sodium_Dl-lactate.yaml, Na-_Dl-lactate.yaml,
+    Dl-na-lactate.yaml, Sodium_Lactate_2.yaml, Sodium_Lactate_3.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (50-21-5|72-17-3) resolved via OAK
+    canonical xref: 72-17-3 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 50-21-5
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-05T21:48:45.783500'
+  cas_rn: 72-17-3
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:39:40.088267+00:00'
 kg_microbe_node_id: CHEBI:75228

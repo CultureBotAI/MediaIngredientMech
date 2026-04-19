@@ -34,15 +34,51 @@ synonyms:
 - synonym_text: disodium (2E)-but-2-enedioate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Properties: Defined component, Organic compound, Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Organic compound, Simple component, Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Properties: Defined component, Organic compound, Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 46
-  media_count: 46
+  total_occurrences: 94
+  media_count: 94
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:51:51.478659'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:17013-01-3 from PubChem API via name lookup (Disodium fumarate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.769171'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:17013-01-3 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium fumarate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.771265'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:17013-01-3 from CultureBotHT compounds_to_cas.csv (matched:
+    sodium fumarate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:37.359364'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7704-73-6 from PubChem API (preprocessed) via name preprocessing
+    (Na-fumarate)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -58,6 +94,50 @@ curation_history:
     Fumaric acid, disodium salt, Na-fumarate, Sodium fumarate, ... (1 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: Disodium fumarate, E365,
+    Fumaric acid, disodium salt, Na-fumarate, Na2-fumarate, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: E365, Fumaric acid,
+    disodium salt, Na-fumarate, Na2-fumarate, Sodium fumarate, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: Disodium fumarate, E365,
+    Fumaric acid, disodium salt, Na2-fumarate, Sodium fumarate, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: E365, Fumaric acid,
+    disodium salt, Na-fumarate, Na2-fumarate, disodium (2E)-but-2-enedioate'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:40.088622+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 4 duplicate MIM record(s) into this one: Sodium_Fumarate.yaml,
+    Disodium_Fumarate.yaml, Na-fumarate.yaml, Sodium_Fumarate_2.yaml. Synonyms, curation_history,
+    and occurrence counts were unioned/summed; winner selected by highest occurrence
+    count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:39:40.088267+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (17013-01-3|7704-73-6) resolved via
+    OAK canonical xref: 17013-01-3 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:115156
 chemical_properties:
   cas_rn: 17013-01-3
