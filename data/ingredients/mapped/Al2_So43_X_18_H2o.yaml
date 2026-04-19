@@ -19,6 +19,9 @@ synonyms:
 - synonym_text: aluminum sulfate.18H2O
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: aluminium sulfate octadecahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_chebi_collision_routing
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1
@@ -43,6 +46,14 @@ curation_history:
     sulfate.18H2O, aluminum sulfate.18H2O'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T06:53:30.746148+00:00'
+  curator: audit_chebi_collision_routing
+  action: ADDED_SYNONYMS_VIA_CHEBI_COLLISION_ROUTING
+  changes: 'Added 1 synonyms routed to this record because it already has the proposed
+    CHEBI and its hydration state matches the candidates (sources: Al2_So43_X_18_H2o.yaml):
+    aluminium sulfate octadecahydrate'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7784-31-8
   data_source: PubChem (via CHEBI:74779)

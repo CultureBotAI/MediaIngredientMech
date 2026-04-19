@@ -25,6 +25,18 @@ synonyms:
 - synonym_text: iron(II) sulfate monohydrate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Feromax
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_chebi_collision_routing
+- synonym_text: Feroritard
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_chebi_collision_routing
+- synonym_text: Ferro-Gradumet
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_chebi_collision_routing
+- synonym_text: Fespan
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe_via_chebi_collision_routing
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 6
@@ -49,6 +61,14 @@ curation_history:
     ferrous sulfate monohydrate, iron(2+) sulfate monohydrate, iron(II) sulfate monohydrate'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T06:54:16.804481+00:00'
+  curator: audit_chebi_collision_routing
+  action: ADDED_SYNONYMS_VIA_CHEBI_COLLISION_ROUTING
+  changes: 'Added 4 synonyms routed to this record because it already has the proposed
+    CHEBI and its hydration state matches the candidates (sources: Feso4_X_H2o.yaml):
+    Feromax, Feroritard, Ferro-Gradumet, Fespan'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 17375-41-6
   data_source: PubChem (via CHEBI:75834)
