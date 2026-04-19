@@ -28,69 +28,9 @@ synonyms:
 - synonym_text: (Agar
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-- synonym_text: BCYE agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: BL Agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 - synonym_text: Bacteriological Agar
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-- synonym_text: Bacto Middlebrook 7H10 agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Brewer anaerobic agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Brucella agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Columbia blood agar base
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Czapek Dox agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Fastidious Anaerobe Agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: GAM agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Glycerol-asparagine agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Inorganic salts-starch agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Legionella agar enrichment
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Malt extract agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Marine agar 2216
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Middlebrook 7H10 agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Mueller Hinton II agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Oatmeal agar
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Corn meal agar
-  synonym_type: EXACT_SYNONYM
-  source: merged_from_duplicate_mim_record
-- synonym_text: R2A agar
-  synonym_type: EXACT_SYNONYM
-  source: merged_from_duplicate_mim_record
-- synonym_text: R agar
-  synonym_type: EXACT_SYNONYM
-  source: merged_from_duplicate_mim_record
 - synonym_text: 'Role: Solidifying component'
   synonym_type: RAW_TEXT
   source: CultureMech
@@ -163,6 +103,14 @@ curation_history:
     Brewer_Anaerobic_Agar.yaml, Malt_Extract_Agar.yaml, Gam_Agar.yaml, Bl_Agar.yaml.
     Synonyms, curation_history, and occurrence counts were unioned/summed; winner
     selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:49:33.169103+00:00'
+  curator: audit_extract_complex_media_from_agar
+  action: EXTRACTED_CONTAMINATING_SYNONYMS
+  changes: Extracted 20 complex-medium synonyms that were wrongly absorbed during
+    duplicate-CHEBI consolidation. Each is now its own UNMAPPED MIM record under data/ingredients/unmapped/.
+    Agar.yaml retains only pure chemical-agar synonyms.
   new_status: MAPPED
   llm_assisted: false
 chemical_properties:
