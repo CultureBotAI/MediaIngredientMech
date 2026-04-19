@@ -32,15 +32,6 @@ synonyms:
 - synonym_text: Tripticase peptone
   synonym_type: EXACT_SYNONYM
   source: manual
-- synonym_text: Bacto Tryptic Soy Broth
-  synonym_type: RELATED_SYNONYM
-  source: manual
-- synonym_text: Bacto Tryptic Soy Agar
-  synonym_type: RELATED_SYNONYM
-  source: manual
-- synonym_text: Tryptone soya broth (Oxoid)
-  synonym_type: RELATED_SYNONYM
-  source: manual
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -53,3 +44,10 @@ curation_history:
     (protein hydrolyzates).
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:53:54.781350+00:00'
+  curator: audit_extract_complex_media_synonyms
+  action: EXTRACTED_CONTAMINATING_SYNONYMS
+  changes: Extracted 3 complex-medium synonyms wrongly absorbed during duplicate-CHEBI
+    consolidation. Each is now its own UNMAPPED MIM record.
+  new_status: MAPPED
+  llm_assisted: false

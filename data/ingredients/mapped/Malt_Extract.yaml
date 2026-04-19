@@ -20,19 +20,10 @@ synonyms:
 - synonym_text: Malt extract powder
   synonym_type: EXACT_SYNONYM
   source: manual
-- synonym_text: Malt extract broth
-  synonym_type: RELATED_SYNONYM
-  source: manual
 - synonym_text: Bacto Malt Extract (Difco)
   synonym_type: CATALOG_VARIANT
   source: manual
 - synonym_text: Malt extract (BD--Difco)
-  synonym_type: CATALOG_VARIANT
-  source: manual
-- synonym_text: Malt Extract Agar (Nissui)
-  synonym_type: CATALOG_VARIANT
-  source: manual
-- synonym_text: Malt extract agar (Oxoid)
   synonym_type: CATALOG_VARIANT
   source: manual
 mapping_status: MAPPED
@@ -59,6 +50,13 @@ curation_history:
     extract). Added brand/catalog variants as synonyms.
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:53:54.781350+00:00'
+  curator: audit_extract_complex_media_synonyms
+  action: EXTRACTED_CONTAMINATING_SYNONYMS
+  changes: Extracted 3 complex-medium synonyms wrongly absorbed during duplicate-CHEBI
+    consolidation. Each is now its own UNMAPPED MIM record.
+  new_status: MAPPED
+  llm_assisted: false
 notes: 'CultureMech placeholder_id: 1'
 chemical_properties:
   cas_rn: 8002-48-0
