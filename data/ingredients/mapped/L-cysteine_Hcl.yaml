@@ -1,8 +1,8 @@
-identifier: CHEBI:52891
+identifier: CHEBI:91247
 preferred_term: L-Cysteine HCl
 ontology_mapping:
-  ontology_id: CHEBI:52891
-  ontology_label: L-Cysteine HCl
+  ontology_id: CHEBI:91247
+  ontology_label: L-cysteine hydrochloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -13,30 +13,6 @@ synonyms:
 - synonym_text: (add to make medium anoxic)
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: (1R)-1-carboxy-2-sulfanylethan-1-aminium chloride
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: (R)-Cysteine hydrochloride
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Cysteine monohydrochloride
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: L-(+)-Cysteine hydrochloride
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: L-Cysteine monohydrochloride
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: L-Cysteiniumchloride
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: L-cysteinium chloride
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: N-(9-{2-[(4-{[(2,5-dioxopyrrolidin-1-yl)oxy]carbonyl}piperidin-1-yl)sulfonyl]phenyl}-6-[methyl(4-sulfophenyl)amino]-3H-xanthen-3-ylidene)-N-methyl-4-sulfoanilinium
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 132
@@ -63,6 +39,15 @@ curation_history:
     hydrochloride, L-Cysteine monohydrochloride, ... (3 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.454201+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:52891 -> CHEBI:91247 (old label: ''L-Cysteine
+    HCl'', new label: ''L-cysteine hydrochloride''). Reason: Previous CHEBI:52891
+    was QSY9 succinimidyl ester — unrelated. Stripped 8 kg_microbe-sourced synonyms
+    that were contaminated by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7048-04-6
   data_source: CultureBotHT compounds_to_cas.csv

@@ -2,41 +2,14 @@ identifier: CHEBI:144421
 preferred_term: Ferric citrate
 ontology_mapping:
   ontology_id: CHEBI:144421
-  ontology_label: Ferric citrate
+  ontology_label: iron(III) citrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms:
-- synonym_text: Auryxia
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Fe(3+)-citrate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Fe(NH3)citrate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Ferric iron citrate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Iron(III) citrate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: KRX-0502
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Zerenex
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: '[2-hydroxypropane-1,2,3-tricarboxylato(3-)-kappa(3)O(1),O(2),O(3)]iron'
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: iron(3+) 2-hydroxypropane-1,2,3-tricarboxylate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 64
@@ -62,6 +35,15 @@ curation_history:
     Fe(NH3)citrate, Ferric iron citrate, Iron(III) citrate, ... (4 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.438953+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:144421 -> CHEBI:144421 (old label: ''Ferric
+    citrate'', new label: ''iron(III) citrate''). Reason: Previous CHEBI:61300 was
+    a mannose polymer — unrelated. Stripped 9 kg_microbe-sourced synonyms that were
+    contaminated by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 3522-50-7
   data_source: CultureBotHT compounds_to_cas.csv

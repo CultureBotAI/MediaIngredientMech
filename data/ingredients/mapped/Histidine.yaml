@@ -1,8 +1,8 @@
-identifier: CHEBI:27570
+identifier: CHEBI:15971
 preferred_term: Histidine
 ontology_mapping:
-  ontology_id: CHEBI:27570
-  ontology_label: Histidine
+  ontology_id: CHEBI:15971
+  ontology_label: L-histidine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -14,21 +14,6 @@ synonyms:
     Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 2-amino-3-(1H-imidazol-4-yl)propanoic acid
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: DL-Histidine
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Histidin
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: alpha-Amino-1H-imidazole-4-propionic acid
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: histidina
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 31
@@ -53,6 +38,15 @@ curation_history:
     acid, DL-Histidine, Histidin, alpha-Amino-1H-imidazole-4-propionic acid, histidina'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.447498+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:27570 -> CHEBI:15971 (old label: ''Histidine'',
+    new label: ''L-histidine''). Reason: Previous CHEBI:27676 was L-histidinal (aldehyde),
+    not L-histidine. Stripped 5 kg_microbe-sourced synonyms that were contaminated
+    by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:27570
 chemical_properties:
   cas_rn: 4998-57-6

@@ -1,8 +1,8 @@
-identifier: CHEBI:14258
+identifier: CHEBI:33403
 preferred_term: sulfur (powder)
 ontology_mapping:
-  ontology_id: CHEBI:14258
-  ontology_label: ''
+  ontology_id: CHEBI:33403
+  ontology_label: elemental sulfur
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -14,9 +14,6 @@ synonyms:
     Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: Sulfur powder
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1
@@ -41,6 +38,15 @@ curation_history:
   changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: Sulfur powder'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.478676+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:14258 -> CHEBI:33403 (old label: '''', new
+    label: ''elemental sulfur''). Reason: Previous CHEBI:14258 is obsolete in current
+    CHEBI release. Stripped 1 kg_microbe-sourced synonyms that were contaminated by
+    the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 231-722-6
   data_source: PubChem API (preprocessed)

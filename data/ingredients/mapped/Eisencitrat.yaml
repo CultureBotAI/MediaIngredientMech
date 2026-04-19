@@ -1,24 +1,15 @@
-identifier: CHEBI:55553
+identifier: CHEBI:144421
 preferred_term: Eisencitrat
 ontology_mapping:
-  ontology_id: CHEBI:55553
-  ontology_label: Eisencitrat
+  ontology_id: CHEBI:144421
+  ontology_label: iron(III) citrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms:
-- synonym_text: 2'-Deoxyguanosine 3'-(dihydrogen phosphate)
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 2'-Deoxyguanosine 3'-phosphate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 2'-deoxyguanosine 3'-monophosphate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 4
@@ -43,6 +34,15 @@ curation_history:
     phosphate), 2''-Deoxyguanosine 3''-phosphate, 2''-deoxyguanosine 3''-monophosphate'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.431265+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:55553 -> CHEBI:144421 (old label: ''Eisencitrat'',
+    new label: ''iron(III) citrate''). Reason: Previous CHEBI:55553 was a nucleotide.
+    Eisencitrat = iron(III) citrate. Stripped 3 kg_microbe-sourced synonyms that were
+    contaminated by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 2338-05-8
   data_source: PubChem API

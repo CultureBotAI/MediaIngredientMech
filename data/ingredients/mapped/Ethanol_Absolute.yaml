@@ -1,30 +1,15 @@
-identifier: CHEBI:64175
+identifier: CHEBI:16236
 preferred_term: Ethanol absolute
 ontology_mapping:
-  ontology_id: CHEBI:64175
-  ontology_label: Ethanol absolute
+  ontology_id: CHEBI:16236
+  ontology_label: ethanol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms:
-- synonym_text: 6-C-Me-alpha-D-Man-(1->2)-alpha-D-Man-(1->2)-alpha-D-Man-(1->3)-alpha-D-Man
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 6-C-Me-alpha-D-Manp-(1->2)-alpha-D-Manp-(1->2)-alpha-D-Manp-(1->3)-alpha-D-Manp
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 6-C-methyl-alpha-D-mannosyl-(1->2)-alpha-D-mannosyl-(1->2)-alpha-D-mannosyl-(1->3)-alpha-D-mannose
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 7-deoxy-L-glycero-alpha-D-manno-heptopyranosyl-(1->2)-alpha-D-mannopyranosyl-(1->2)-alpha-D-mannopyranosyl-(1->3)-alpha-D-mannopyranose
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 7-deoxy-L-glycero-alpha-D-manno-heptosyl-(1->2)-alpha-D-mannosyl-(1->2)-alpha-D-mannosyl-(1->3)-alpha-D-mannose
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 8
@@ -52,7 +37,17 @@ curation_history:
     7-deoxy-L-glycero-alpha-D-manno-heptosyl-(1->2)-alpha-D-mannosyl-(1->2)-alpha-D-mannosyl-(1->3)-alpha-D-mannose'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.434813+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:64175 -> CHEBI:16236 (old label: ''Ethanol
+    absolute'', new label: ''ethanol''). Reason: Previous CHEBI:64175 was a mannose
+    oligosaccharide — unrelated. Stripped 5 kg_microbe-sourced synonyms that were
+    contaminated by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 64-17-5
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:52:01.699484'
+kg_microbe_node_id: CHEBI:16236

@@ -1,8 +1,8 @@
-identifier: CHEBI:62476
+identifier: CHEBI:63051
 preferred_term: (NH4)2HPO4
 ontology_mapping:
-  ontology_id: CHEBI:62476
-  ontology_label: (NH4)2HPO4
+  ontology_id: CHEBI:63051
+  ontology_label: diammonium hydrogen phosphate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -18,22 +18,6 @@ synonyms:
     Defined component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 2-O-(4-deoxy-alpha-L-threo-hex-4-enopyranosyluronic acid)-alpha-L-rhamnopyranose
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 2-O-(4-deoxy-beta-L-threo-hex-4-enopyranuronosyl)-alpha-L-rhamnopyranose
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 6-deoxy-2-O-(4-deoxy-alpha-L-threo-hex-4-enopyranosyluronic acid)-alpha-L-mannopyranose
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 6-deoxy-2-O-(4-deoxy-beta-L-threo-hex-4-enopyranuronosyl)-alpha-L-mannopyranose
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 6-deoxy-alpha-L-mannopyranos-2-O-yl 4-deoxy-beta-L-threo-hex-4-enopyranuronic
-    acid
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 23
@@ -62,6 +46,15 @@ curation_history:
     acid'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.460485+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:62476 -> CHEBI:63051 (old label: ''(NH4)2HPO4'',
+    new label: ''diammonium hydrogen phosphate''). Reason: Previous CHEBI:62476 was
+    a sugar — unrelated. Stripped 5 kg_microbe-sourced synonyms that were contaminated
+    by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7783-28-0
   data_source: PubChem API

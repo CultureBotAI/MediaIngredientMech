@@ -1,8 +1,8 @@
-identifier: CHEBI:113246
+identifier: CHEBI:50144
 preferred_term: Pyruvic acid sodium salt
 ontology_mapping:
-  ontology_id: CHEBI:113246
-  ontology_label: Pyruvic acid sodium salt
+  ontology_id: CHEBI:50144
+  ontology_label: sodium pyruvate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -14,9 +14,6 @@ synonyms:
     Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 3-(2,3-dihydro-1,4-benzodioxin-6-ylamino)-6-(phenylmethyl)-2H-1,2,4-triazin-5-one
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 21
@@ -41,7 +38,17 @@ curation_history:
   changes: 'Added 1 synonyms from kg-microbe P4.4 enrichment: 3-(2,3-dihydro-1,4-benzodioxin-6-ylamino)-6-(phenylmethyl)-2H-1,2,4-triazin-5-one'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T01:05:11.466429+00:00'
+  curator: cbclaw_sssom_review_fix
+  action: CORRECTED_ONTOLOGY_ID
+  changes: 'Corrected ontology_id CHEBI:113246 -> CHEBI:50144 (old label: ''Pyruvic
+    acid sodium salt'', new label: ''sodium pyruvate''). Reason: Previous CHEBI:113246
+    was a triazine — unrelated. Stripped 1 kg_microbe-sourced synonyms that were contaminated
+    by the wrong CHEBI.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 113-24-6
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:53:46.578126'
+kg_microbe_node_id: CHEBI:50144
