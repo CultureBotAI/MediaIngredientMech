@@ -1,8 +1,8 @@
-identifier: CHEBI:28645
+identifier: CHEBI:28757
 preferred_term: Fructose
 ontology_mapping:
-  ontology_id: CHEBI:28645
-  ontology_label: beta-D-fructofuranose
+  ontology_id: CHEBI:28757
+  ontology_label: fructose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -87,6 +87,14 @@ curation_history:
     arabino-Hexulose, arabino-hex-2-ulose, ... (4 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:32:32.653265+00:00'
+  curator: audit_fix_mim_wrong
+  action: FIXED_MIM_WRONG_CHEBI
+  changes: Swapped CHEBI:28645 → CHEBI:28757 (fructose) — OLS round-trip confirmed
+    MIM's prior CHEBI was mismatched to preferred_term='Fructose'; kg-microbe proposal
+    adopted.
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 53188-23-1
   data_source: PubChem (via CHEBI:28645)

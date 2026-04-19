@@ -1,8 +1,8 @@
-identifier: CHEBI:17439
+identifier: CHEBI:176843
 preferred_term: Vitamin B12
 ontology_mapping:
-  ontology_id: CHEBI:17439
-  ontology_label: Vitamin B12
+  ontology_id: CHEBI:176843
+  ontology_label: vitamin B12
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -103,6 +103,14 @@ curation_history:
     Cyanocobalamin, ... (11 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-19T07:32:32.653265+00:00'
+  curator: audit_fix_mim_wrong
+  action: FIXED_MIM_WRONG_CHEBI
+  changes: Swapped CHEBI:17439 → CHEBI:176843 (vitamin B12) — OLS round-trip confirmed
+    MIM's prior CHEBI was mismatched to preferred_term='Vitamin B12'; kg-microbe proposal
+    adopted.
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 68-19-9
   data_source: CultureBotHT compounds_to_cas.csv

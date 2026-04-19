@@ -47,15 +47,33 @@ synonyms:
 - synonym_text: Na2HPO4·12H2O
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na2HPO4·2H2O
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Buffer; Properties: Inorganic compound, Simple component, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Buffer; Properties: Simple component, Inorganic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 226
-  media_count: 50
+  total_occurrences: 231
+  media_count: 55
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:52.650821'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7558-79-4 from PubChem API (ontology label) via name preprocessing
+    (Na2HPO4·2H2O)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -71,8 +89,30 @@ curation_history:
     x 12 H2O, Na2HPO4 x 2H2O, Na2HPO4 x 3 H2O, Na2HPO4 x 6 H2O, ... (6 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 11 synonyms from kg-microbe P4.4 enrichment: Na2HPO4 . 12H2O, Na2HPO4
+    x 12 H2O, Na2HPO4 x 2 H2O, Na2HPO4 x 2H2O, Na2HPO4 x 3 H2O, ... (6 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:35:12.782058+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Na2hpo42h2o.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:35:12.781730+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (7558-79-4|7782-85-6) resolved via
+    OAK canonical xref: 7558-79-4 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:34683
 chemical_properties:
-  cas_rn: 7782-85-6
-  data_source: CultureBotHT/compounds_to_cas.csv
-  retrieval_date: '2026-04-09T00:32:50.689620'
+  cas_rn: 7558-79-4
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:35:12.781730+00:00'

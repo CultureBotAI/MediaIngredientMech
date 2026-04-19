@@ -60,15 +60,47 @@ synonyms:
 - synonym_text: sulfuric acid magnesium salt heptahydrate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Magnesium sulfate heptahydrate
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: 'Role: Mineral source; Properties: Simple component, Inorganic compound,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 3556
-  media_count: 50
+  total_occurrences: 3589
+  media_count: 83
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T19:52:50.630871'
+  curator: fetch_cas_rn_from_pubchem
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:10034-99-8 from PubChem API via name lookup (Magnesium sulfate
+    heptahydrate)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.356828'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:10034-99-8 from CultureBotHT compounds_to_cas.csv (matched:
+    MgSO4.7H2O)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.368542'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:10034-99-8 from CultureBotHT compounds_to_cas.csv (matched:
+    MgSO4x7H2O)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -84,7 +116,36 @@ curation_history:
     4 x 7 H2O, MgSO x 7 H2O, MgSO2 x 7 H2O, MgSO4.7H2O, ... (5 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: .MgSO4 x 7 H2O, MgSO
+    4 x 7 H2O, MgSO x 7 H2O, MgSO2 x 7 H2O, MgSO4x7H2O, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: .MgSO4 x 7 H2O, MgSO
+    4 x 7 H2O, MgSO x 7 H2O, MgSO2 x 7 H2O, MgSO4.7H2O, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:35:12.782058+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Mgso47h2o_2.yaml, Magnesium_Sulfate_Heptahydrate.yaml,
+    Mgso4x7h2o.yaml. Synonyms, curation_history, and occurrence counts were unioned/summed;
+    winner selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:35:12.781730+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (10034-99-8|7487-88-9) resolved via
+    OAK canonical xref: 10034-99-8 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 7487-88-9
-  data_source: CultureBotHT/compounds_to_cas.csv
-  retrieval_date: '2026-04-09T00:32:50.689620'
+  cas_rn: 10034-99-8
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:35:12.781730+00:00'

@@ -31,15 +31,26 @@ synonyms:
 - synonym_text: sodium phosphate monobasic anhydrous
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 29
-  media_count: 29
+  total_occurrences: 30
+  media_count: 30
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:46:21.896843'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7558-80-7 from PubChem API (ontology label) via name preprocessing
+    (NaH2PO4 x 2H2O)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -55,8 +66,30 @@ curation_history:
     x H2O, NaH2PO4·2H2O, NaH2PO4·H2O, NaH2PO4・2H2O, ... (2 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: NaH2PO4 x 2 H2O, NaH2PO4
+    x H2O, NaH2PO4·2H2O, NaH2PO4·H2O, NaH2PO4・2H2O, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:35:12.782058+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Nah2po4_X_2h2o.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:35:12.781730+00:00'
+  curator: audit_resolve_risky_cas_rn
+  action: RESOLVED_CAS_RN_CONFLICT
+  changes: 'CAS-RN conflict across merged group (558-80-7|7558-80-7) resolved via
+    OAK canonical xref: 7558-80-7 (match)'
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:37585
 chemical_properties:
-  cas_rn: 558-80-7
-  data_source: CultureBotHT/compounds_to_cas.csv
-  retrieval_date: '2026-04-09T00:32:50.689620'
+  cas_rn: 7558-80-7
+  data_source: OAK/CHEBI xref
+  retrieval_date: '2026-04-19T07:35:12.781730+00:00'
