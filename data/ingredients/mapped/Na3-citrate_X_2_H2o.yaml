@@ -45,15 +45,26 @@ synonyms:
 - synonym_text: Trisodium Citrate Dihydrate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Buffer; Properties: Defined component, Simple component, Organic
+    compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 11
-  media_count: 11
+  total_occurrences: 14
+  media_count: 14
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.757752'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6132-04-3 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium citrate dihydrate)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -70,6 +81,22 @@ curation_history:
     stock solution), Na3Citrate x 2 H2O, Na3‐citrate x 2H2O, ... (4 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: 2-hydroxy-1,2,3-propanetricarboxylic
+    acid trisodium salt dihydrate, Na2citrate x 2 H2O, Na3-Citrate x 2 H2O, Na3-citrate
+    x 2 H2O (0.6 g/l stock solution), Na3Citrate x 2 H2O, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:23:20.785693+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Sodium_Citrate_Dihydrate.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:32142
 chemical_properties:
   cas_rn: 6132-04-3

@@ -41,15 +41,76 @@ synonyms:
 - synonym_text: KAl(SO4)2・12H2O
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Aluminum potassium sulfate dodecahydrate
+  synonym_type: EXACT_SYNONYM
+  source: merged_from_duplicate_mim_record
+- synonym_text: AlK(SO4)2 12H2O
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Aluminum potassium disulfate dodecahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Kalinite
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Potash alum dodecahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Potassium alum dodecahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Potassium aluminum disulfate dodecahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: aluminium potassium sulfate--water (1/12)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: potassium aluminium sulfate dodecahydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 543
-  media_count: 50
+  total_occurrences: 750
+  media_count: 250
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:44.709640'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:7784-24-9 from CultureBotHT compounds_to_cas.csv (matched:
+    AlK(SO4)2·12H2O)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:52:23.140252'
+  curator: fetch_cas_rn_from_cactus
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7784-24-9 from NCI CACTUS via name lookup (AlK(SO4)2 x 12H2O)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:44:56.962966'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:616-521-7 from PubChem API (ontology label) via name preprocessing
+    (KAl(SO4)2·12H2O)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:44:59.808668'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:616-521-7 from PubChem API (ontology label) via name preprocessing
+    (KAl(SO4)2 x 12 H2O)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-07T10:19:02.547204'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:86465
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -65,6 +126,44 @@ curation_history:
     x 12H2O, AlK(SO4)2.12H2O, AlK(SO4)2·12H2O, AlK(SO4)2・12H2O, ... (4 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 synonyms from kg-microbe P4.4 enrichment: AlK(SO4)2 12H2O, Aluminum
+    potassium disulfate dodecahydrate, Kalinite, Potash alum dodecahydrate, Potassium
+    alum dodecahydrate, ... (3 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: AlK(SO4)2 . 12H2O, AlK(SO4)2
+    x 12 H2O, AlK(SO4)2 x 12H2O, AlK(SO4)2.12H2O, AlK(SO4)2·12H2O, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: AlK(SO4)2 . 12H2O, AlK(SO4)2
+    x 12 H2O, AlK(SO4)2.12H2O, AlK(SO4)2·12H2O, AlK(SO4)2・12H2O, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 9 synonyms from kg-microbe P4.4 enrichment: AlK(SO4)2 . 12H2O, AlK(SO4)2
+    x 12 H2O, AlK(SO4)2 x 12H2O, AlK(SO4)2.12H2O, AlK(SO4)2・12H2O, ... (4 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:23:20.785693+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 5 duplicate MIM record(s) into this one: Aluminum_potassium_sulfate_dodecahydrate.yaml,
+    Kal_So4212h2o.yaml, Kal_So42_X_12_H2o.yaml, Alk_So42_X_12h2o.yaml, Alk_So4212h2o.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7784-24-9
   data_source: PubChem (via CHEBI:86465)

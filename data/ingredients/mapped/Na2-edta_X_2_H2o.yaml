@@ -31,15 +31,25 @@ synonyms:
 - synonym_text: Na2-EDTA·2H2O
   synonym_type: EXACT_SYNONYM
   source: kg_microbe_via_hydration_routing
+- synonym_text: 'Properties: Simple component, Organic compound, Defined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 89
-  media_count: 50
+  total_occurrences: 103
+  media_count: 64
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
   action: IMPORTED
   changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:36.103846'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:7487-55-0 from PubChem API (preprocessed) via name preprocessing
+    (Na-EDTA x 2 H2O)
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T23:45:45.687273'
@@ -56,11 +66,26 @@ curation_history:
     EDTA disodium salt (anhydrous), Edetate disodium anhydrous, Na-EDTA x 2 H2O'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: EDTA disodium (anhydrous),
+    EDTA disodium salt (anhydrous), Edetate disodium anhydrous'
+  new_status: MAPPED
+  llm_assisted: true
 - timestamp: '2026-04-19T06:30:07.230267+00:00'
   curator: audit_p44_hydration_routing
   action: ADDED_SYNONYMS_VIA_HYDRATION_ROUTING
   changes: 'Added 1 synonyms re-routed from anhydrous/hydrate sibling records (Na2-edta.yaml):
     Na2-EDTA·2H2O'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-19T07:23:20.785693+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Na-edta_X_2_H2o.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
   new_status: MAPPED
   llm_assisted: false
 chemical_properties:

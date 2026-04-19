@@ -34,10 +34,14 @@ synonyms:
 - synonym_text: tin(II) chloride dihydrate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+    Simple component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 2
-  media_count: 2
+  total_occurrences: 4
+  media_count: 4
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -53,3 +57,19 @@ curation_history:
     ... (3 more)'
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: SnCl2 x 2 H2O, SnCl2
+    x 2H2O, SnCl2.2H2O, lambda(2)-tin(2+) dihydrate dichloride, stannous chloride
+    dihydrate, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:23:20.785693+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Sncl22h2o.yaml. Synonyms,
+    curation_history, and occurrence counts were unioned/summed; winner selected by
+    highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
