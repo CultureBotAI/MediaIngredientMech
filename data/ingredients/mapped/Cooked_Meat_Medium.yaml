@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0364
+identifier: FOODON:03305103
 preferred_term: Cooked meat medium
 synonyms:
 - synonym_text: Cooked meat medium
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -16,5 +16,19 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-01T17:59:59.284679+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_FOODON
+  changes: primary UNMAPPED_0364 → FOODON:03305103 (fuzzy-top)
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: FOODON:03305103
+  ontology_label: meat (cooked)
+  ontology_source: FOODON
+  mapping_quality: LEXICAL_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: FOODON via OLS search
+    notes: Auto-upgraded from 'UNMAPPED_0364'; match=fuzzy-top

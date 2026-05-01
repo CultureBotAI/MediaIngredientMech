@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0522
+identifier: ENVO:00002044
 preferred_term: Sludge
 synonyms:
 - synonym_text: Sludge
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -16,5 +16,19 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-01T18:13:50.944141+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_ENVO
+  changes: primary UNMAPPED_0522 → ENVO:00002044 (label-exact)
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2084); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: ENVO:00002044
+  ontology_label: sludge
+  ontology_source: ENVO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: ENVO via OLS search
+    notes: Auto-upgraded from 'UNMAPPED_0522'; match=label-exact

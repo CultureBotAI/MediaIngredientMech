@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0528
+identifier: ENVO:00001998
 preferred_term: Soil
 synonyms:
 - synonym_text: Soil
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -16,5 +16,19 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-01T18:13:52.822683+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_ENVO
+  changes: primary UNMAPPED_0528 → ENVO:00001998 (label-exact)
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2350); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: ENVO:00001998
+  ontology_label: soil
+  ontology_source: ENVO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: ENVO via OLS search
+    notes: Auto-upgraded from 'UNMAPPED_0528'; match=label-exact

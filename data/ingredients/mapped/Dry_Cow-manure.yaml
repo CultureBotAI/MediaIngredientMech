@@ -1,0 +1,42 @@
+identifier: ENVO:00003031
+preferred_term: Dry cow-manure
+synonyms:
+- synonym_text: Dry cow-manure
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2131); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T18:00:07.230882+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_FOODON
+  changes: primary UNMAPPED_0379 → FOODON:00004411 (fuzzy-top)
+  llm_assisted: false
+- timestamp: '2026-05-01T18:04:21.738677+00:00'
+  curator: manual_review_foodon_pass
+  action: FIX_FALSE_POSITIVE_FOODON_TO_ENVO
+  changes: FOODON:00004411 (dry cow) → ENVO:00003031 (animal manure)
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2131); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: ENVO:00003031
+  ontology_label: animal manure
+  ontology_source: ENVO
+  mapping_quality: BROAD_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: manual fix after foodon_pass false-positive
+    notes: Initial auto-upgrade picked FOODON:00004411 (dry cow / non-lactating cow),
+      which is the WRONG sense. Manure-as-ingredient is properly modeled in ENVO.
+      ENVO:00003031 (animal manure) is the closest broad match available; cow-specific
+      manure is not in ENVO.
