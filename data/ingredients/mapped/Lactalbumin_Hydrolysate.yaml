@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0420
+identifier: MICRO:0001365
 preferred_term: Lactalbumin hydrolysate
 synonyms:
 - synonym_text: Lactalbumin hydrolysate
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -16,5 +16,19 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-01T19:48:53.532791+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0420 → MICRO:0001365 (label-exact)
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2143); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: MICRO:0001365
+  ontology_label: lactalbumin hydrolysate
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS search
+    notes: Auto-upgraded from 'UNMAPPED_0420'; match=label-exact

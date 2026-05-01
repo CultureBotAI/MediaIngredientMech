@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:butyricin_7423
+identifier: mesh:C010427
 preferred_term: Butyricin 7423
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:butyricin_7423
-  ontology_label: Butyricin 7423
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C010427
+  ontology_label: butyricin 7423
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -14,6 +14,9 @@ ontology_mapping:
       acid), CHEBI:126757((6S,7R,8S)-8-(hydroxymethyl)-7-[4-[2-(3-pyridinyl)ethynyl]phenyl]-1,4-diazabicyclo[4.2.0]octan-2-one),
       CHEBI:128063((6S,7S,8R)-8-(hydroxymethyl)-7-[4-[2-(3-pyridinyl)ethynyl]phenyl]-1,4-diazabicyclo[4.2.0]octan-2-one).
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search
+    notes: Auto-upgraded from 'kgmicrobe.compound:butyricin_7423'; match=label-exact
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -32,5 +35,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-01T20:10:52.215200+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary kgmicrobe.compound:butyricin_7423 → mesh:C010427 (label-exact)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

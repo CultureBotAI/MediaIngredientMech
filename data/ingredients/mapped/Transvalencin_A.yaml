@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:transvalencin_a
+identifier: mesh:C498222
 preferred_term: Transvalencin A
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:transvalencin_a
-  ontology_label: Transvalencin A
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C498222
+  ontology_label: transvalencin A
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,9 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:205432(Transvalencin Z), CHEBI:199303(A83094A), CHEBI:199353(A-90289 A).
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search
+    notes: Auto-upgraded from 'kgmicrobe.compound:transvalencin_a'; match=label-exact
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -30,5 +33,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-01T20:16:49.256867+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary kgmicrobe.compound:transvalencin_a → mesh:C498222 (label-exact)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:griseolutein_b
+identifier: mesh:C018307
 preferred_term: Griseolutein B
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:griseolutein_b
-  ontology_label: Griseolutein B
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C018307
+  ontology_label: griseolutein B
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,9 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:216555(B-5354b), CHEBI:201526(Eprinomectin B1b), CHEBI:209530(Maltacine
       B2b). Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search
+    notes: Auto-upgraded from 'kgmicrobe.compound:griseolutein_b'; match=label-exact
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -30,5 +33,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-01T20:14:05.274932+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary kgmicrobe.compound:griseolutein_b → mesh:C018307 (label-exact)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

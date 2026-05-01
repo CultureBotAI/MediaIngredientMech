@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:abyssomicin_d
+identifier: mesh:C512805
 preferred_term: Abyssomicin D
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:abyssomicin_d
-  ontology_label: Abyssomicin D
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C512805
+  ontology_label: abyssomicin D
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,9 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:70593(Abyssomicin I), CHEBI:142441(D-D mixture), CHEBI:36507(D-galactosyl-N-acetyl-D-glucosaminyl-D-galactosyl-D-glucosylceramide).
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search
+    notes: Auto-upgraded from 'kgmicrobe.compound:abyssomicin_d'; match=label-exact
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -30,5 +33,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-01T20:09:01.417916+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary kgmicrobe.compound:abyssomicin_d → mesh:C512805 (label-exact)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

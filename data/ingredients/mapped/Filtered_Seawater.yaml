@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0282
+identifier: MICRO:0001773
 preferred_term: Filtered Seawater
 synonyms:
 - synonym_text: Filtered Seawater
   synonym_type: RAW_TEXT
   source: culturebotht
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
   media_count: 2
@@ -17,6 +17,20 @@ curation_history:
     mapping available; curator review needed.'
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-01T19:48:11.234447+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0282 → MICRO:0001773 (label-exact)
+  llm_assisted: false
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   2 CultureBot media; samples: Pro99 seawater, Pro99_seawater. No CAS-RN or CHEBI
   mapping available; curator review needed.'
+ontology_mapping:
+  ontology_id: MICRO:0001773
+  ontology_label: filtered seawater
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS search
+    notes: Auto-upgraded from 'UNMAPPED_0282'; match=label-exact

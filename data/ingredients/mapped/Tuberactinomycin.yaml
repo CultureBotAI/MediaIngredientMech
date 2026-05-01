@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:tuberactinomycin
+identifier: mesh:C015563
 preferred_term: Tuberactinomycin
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:tuberactinomycin
-  ontology_label: Tuberactinomycin
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C015563
+  ontology_label: tuberactinomycin
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,9 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=2 candidates; top OLS candidates:
       CHEBI:224097(Tuberactinomycin O), CHEBI:135872(enviomycin). Pending curator
       promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search
+    notes: Auto-upgraded from 'kgmicrobe.compound:tuberactinomycin'; match=label-exact
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -30,5 +33,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-01T20:16:56.543905+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary kgmicrobe.compound:tuberactinomycin → mesh:C015563 (label-exact)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

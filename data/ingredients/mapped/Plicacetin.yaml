@@ -1,16 +1,19 @@
-identifier: kgmicrobe.compound:plicacetin
+identifier: mesh:C000633628
 preferred_term: Plicacetin
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:plicacetin
-  ontology_label: Plicacetin
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C000633628
+  ontology_label: plicacetin
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
     notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested into
       MIM''s pipeline; confidence=NONE; rationale=no hits; top OLS candidates: none.
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search
+    notes: Auto-upgraded from 'kgmicrobe.compound:plicacetin'; match=label-exact
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -29,5 +32,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-01T20:15:28.501582+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary kgmicrobe.compound:plicacetin → mesh:C000633628 (label-exact)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

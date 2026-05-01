@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0346
+identifier: MICRO:0000193
 preferred_term: Brain heart infusion
 synonyms:
 - synonym_text: Brain heart infusion
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -16,5 +16,19 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-01T19:47:24.022404+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0346 → MICRO:0000193 (label-exact)
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:186); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: MICRO:0000193
+  ontology_label: brain heart infusion
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS search
+    notes: Auto-upgraded from 'UNMAPPED_0346'; match=label-exact
