@@ -25,6 +25,21 @@ import-data:
 validate-all:
     python scripts/validate_all.py --mode both
 
+# Verify literature snippets in evidence claims appear verbatim in
+# cached PubMed abstracts. Anti-hallucination gate. See
+# ../culturebotai-claw/.claude/skills/evidence-reference-validation/.
+# Exits 2 on SNIPPET_NOT_IN_ABSTRACT (CI blocking).
+qc-evidence:
+    /opt/homebrew/bin/python3.13 ../culturebotai-claw/scripts/validate_evidence_references.py
+
+# Fetch missing PubMed abstracts referenced by MIM evidence claims.
+# Polite (3 req/s, 10 with NCBI_API_KEY env var).
+fetch-pubmed *args:
+    /opt/homebrew/bin/python3.13 ../culturebotai-claw/scripts/fetch_pubmed_abstracts.py {{args}}
+
+# Composite QC: schema validation + evidence reference validation.
+qc: validate-all qc-evidence
+
 # Launch interactive curation CLI
 curate:
     python scripts/curate_unmapped.py

@@ -234,6 +234,30 @@ classes:
         description: Confidence score (0.0-1.0)
       notes:
         description: Additional context
+      pmid:
+        description: PubMed ID for MEDLINE citations (e.g., 12345678)
+        pattern: "^[0-9]+$"
+      doi:
+        description: Digital Object Identifier (e.g., 10.1128/jb.00123-15)
+        pattern: "^10\\.\\d{4,}/[-._;()/:A-Za-z0-9]+$"
+      snippet:
+        description: |
+          Exact substring quoted from the cited abstract that supports
+          this mapping. Used by linkml-reference-validator to detect
+          AI-hallucinated evidence: every snippet must appear verbatim
+          in the cached PubMed abstract for the given pmid/doi.
+      supports:
+        range: EvidenceSupportEnum
+        description: |
+          How the cited reference relates to the mapping claim.
+          SUPPORT = abstract substantiates the mapping; PARTIAL =
+          adjacent context only; REFUTE = contradicts; NO_EVIDENCE =
+          reference cited but no relevant snippet extractable.
+      explanation:
+        description: |
+          Curator (or LLM)'s rationale connecting the snippet to the
+          mapping claim — separate from the verbatim snippet so the
+          snippet stays validatable.
 
   IngredientSynonym:
     description: Alternative name or raw text variant for an ingredient
@@ -477,6 +501,22 @@ enums:
         description: Based on text similarity metrics
       CROSS_REFERENCE:
         description: Cross-reference to other database
+
+  EvidenceSupportEnum:
+    description: How a cited reference relates to the claim it is attached to
+    permissible_values:
+      SUPPORT:
+        description: Reference substantiates the claim
+      PARTIAL:
+        description: Reference touches adjacent context but does not directly substantiate
+      REFUTE:
+        description: Reference contradicts the claim
+      NO_EVIDENCE:
+        description: Reference cited but no extractable supporting snippet
+      WRONG_STATEMENT:
+        description: |
+          Reference is incorrectly cited (placeholder for legacy data;
+          flagged for cleanup)
 
   IngredientRoleEnum:
     description: Functional roles of ingredients in growth medium formulation
