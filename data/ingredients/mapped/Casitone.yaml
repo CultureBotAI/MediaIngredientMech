@@ -8,10 +8,10 @@ ontology_mapping:
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: cbclaw_foodon_promotion
-    notes: Commercial food mixture - FOODON is correct parent ontology. Casitone
-      (BD/Difco) is a pancreatic (enzymatic) digest of casein; equivalent in composition
-      to tryptone. Mapped to FOODON parent 'mammalian milk protein (hydrolyzed)'
-      since no exact FOODON term exists. CLOSE_MATCH.
+    notes: Commercial food mixture - FOODON is correct parent ontology. Casitone (BD/Difco)
+      is a pancreatic (enzymatic) digest of casein; equivalent in composition to tryptone.
+      Mapped to FOODON parent 'mammalian milk protein (hydrolyzed)' since no exact
+      FOODON term exists. CLOSE_MATCH.
 synonyms:
 - synonym_text: Casitone
   synonym_type: EXACT_SYNONYM
@@ -40,3 +40,9 @@ curation_history:
     milk protein, hydrolyzed).
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.644178+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))
+  llm_assisted: false
+ingredient_type: UNDEFINED_MIXTURE

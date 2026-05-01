@@ -104,10 +104,10 @@ synonyms:
 - synonym_text: Liquid yeast extract (Flow)
   synonym_type: CATALOG_VARIANT
   source: manual
-- synonym_text: Yeast Extract #3
+- synonym_text: Yeast Extract
   synonym_type: RELATED_SYNONYM
   source: manual
-- synonym_text: Yeast Extract #3 (ATCC 9678, see below)
+- synonym_text: Yeast Extract
   synonym_type: CATALOG_VARIANT
   source: manual
 - synonym_text: Fresh Baker's Yeast Extract
@@ -137,8 +137,14 @@ curation_history:
     extract). Added brand/catalog variants as synonyms.
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.939492+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Yeast')
+  llm_assisted: false
 notes: 'CultureMech placeholder_id: 3'
 chemical_properties:
   cas_rn: 8013-01-2
   data_source: CultureBotHT/MicroMediaParam
   retrieval_date: '2026-04-05T17:53:47.291843'
+ingredient_type: UNDEFINED_MIXTURE

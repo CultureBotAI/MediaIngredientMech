@@ -3,13 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title>{{ ingredient.preferred_term }} — MIM</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="{{ path_up }}style.css">
 </head>
 <body>
 
 <nav class="breadcrumb">
-  <a href="../index.html">MIM</a> &rsaquo;
-  <a href="index.html">ingredients</a> &rsaquo;
+  <a href="{{ path_up }}index.html">MIM</a> &rsaquo;
   <span>{{ ingredient.identifier }}</span>
 </nav>
 
@@ -17,6 +16,18 @@
   <h1>{{ ingredient.preferred_term }}</h1>
   <div class="meta">
     <span class="curie">{{ ingredient.identifier }}</span>
+    {% if ingredient.ingredient_type %}
+      {% set t = ingredient.ingredient_type %}
+      {% if t == 'SINGLE_INGREDIENT' %}
+        <span class="badge type-defined">chemically defined</span>
+      {% elif t == 'STOCK_SOLUTION' %}
+        <span class="badge type-defined">defined mix</span>
+      {% elif t == 'DEFINED_MEDIUM' %}
+        <span class="badge type-defined">defined medium</span>
+      {% elif t == 'UNDEFINED_MIXTURE' %}
+        <span class="badge type-complex">complex</span>
+      {% endif %}
+    {% endif %}
     {% if ingredient.mapping_status %}
       <span class="badge">{{ ingredient.mapping_status }}</span>
     {% endif %}

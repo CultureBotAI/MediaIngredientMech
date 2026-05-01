@@ -9,9 +9,9 @@ ontology_mapping:
   - evidence_type: CURATOR_JUDGMENT
     source: cbclaw_foodon_promotion
     notes: Commercial food mixture - FOODON is correct parent ontology. Casein peptone
-      is an enzymatic (tryptic/pancreatic) hydrolysate of casein (milk protein);
-      mapped to FOODON parent 'mammalian milk protein (hydrolyzed)'. No exact FOODON
-      term for casein peptone. CLOSE_MATCH.
+      is an enzymatic (tryptic/pancreatic) hydrolysate of casein (milk protein); mapped
+      to FOODON parent 'mammalian milk protein (hydrolyzed)'. No exact FOODON term
+      for casein peptone. CLOSE_MATCH.
 synonyms:
 - synonym_text: Casein peptone
   synonym_type: EXACT_SYNONYM
@@ -71,3 +71,9 @@ curation_history:
     of casein / casein hydrolysate surface forms.
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-01T07:35:32.640818+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Casein')
+  llm_assisted: false
+ingredient_type: UNDEFINED_MIXTURE

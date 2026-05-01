@@ -55,7 +55,14 @@ _SLUG_RE = re.compile(r"[^A-Za-z0-9._-]+")
 
 
 def slug_for(ingredient: dict, source_path: Path) -> str:
-    return _SLUG_RE.sub("_", source_path.stem)
+    """Slug includes the parent directory (mapped / unmapped) so that
+    two YAMLs with the same stem in different subdirs don't collide
+    (e.g. mapped/Glucose.yaml + unmapped/Glucose.yaml both exist)."""
+    parent = source_path.parent.name
+    base = _SLUG_RE.sub("_", source_path.stem)
+    if parent in ("mapped", "unmapped"):
+        return f"{parent}/{base}"
+    return base
 
 
 def make_env() -> Environment:
@@ -80,14 +87,20 @@ def render_one(env: Environment, source_path: Path, out_dir: Path,
         return "error:no-identifier", None, ""
     slug = slug_for(ingredient, source_path)
     out_path = out_dir / f"{slug}.html"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     if not force and out_path.exists():
         if out_path.stat().st_mtime >= source_path.stat().st_mtime:
             return "skipped", ingredient, slug
     template = env.get_template("ingredient.html.j2")
+    # depth = number of path segments from out_dir (e.g. mapped/Glucose
+    # is depth 2; bare Foo is depth 1). Used to compute relative
+    # breadcrumb links.
+    depth = len(slug.split("/"))
     html = template.render(
         ingredient=ingredient,
         source_path=str(source_path.relative_to(REPO_ROOT)),
         generated_at=_dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+        path_up=("../" * depth),  # path back to pages/ root
     )
     out_path.write_text(html)
     return "rendered", ingredient, slug

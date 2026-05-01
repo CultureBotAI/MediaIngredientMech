@@ -10,8 +10,8 @@ ontology_mapping:
     source: cbclaw_review_fix
     notes: Corrected from CHEBI:78018 (dodecylphosphocholine — a detergent, not a
       peptone). Trypticase (BD BBL) is a pancreatic digest of casein. Mapped to the
-      same FOODON parent used by Tryptone/Casein_Peptone; dropped wrong CAS-RN
-      53949-18-1 which belonged to dodecylphosphocholine.
+      same FOODON parent used by Tryptone/Casein_Peptone; dropped wrong CAS-RN 53949-18-1
+      which belonged to dodecylphosphocholine.
 synonyms:
 - synonym_text: 'Properties: Undefined component'
   synonym_type: RAW_TEXT
@@ -37,3 +37,9 @@ curation_history:
     milk protein, hydrolyzed). Removed wrong CAS-RN 53949-18-1.
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-01T07:35:36.756292+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))
+  llm_assisted: false
+ingredient_type: UNDEFINED_MIXTURE
