@@ -1,0 +1,16 @@
+<section id="chemical_properties">
+<h2>Chemical properties</h2>
+<dl class="kv">
+{% set cp = ingredient.chemical_properties %}
+{% for k, v in cp.items() %}
+  <dt>{{ k|replace('_', ' ')|capitalize }}</dt>
+  <dd>
+    {% if k == 'cas_rn' %}
+      <a href="https://commonchemistry.cas.org/detail?cas_rn={{ v }}" rel="nofollow noreferrer">{{ v }}</a>
+    {% else %}
+      {{ v }}
+    {% endif %}
+  </dd>
+{% endfor %}
+</dl>
+</section>

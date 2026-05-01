@@ -1,0 +1,20 @@
+<section id="occurrence">
+<h2>Occurrence statistics</h2>
+<dl class="kv">
+{% set os = ingredient.occurrence_statistics %}
+{% if os.total_occurrences is not none %}
+  <dt>Total occurrences</dt>
+  <dd>{{ "{:,}".format(os.total_occurrences) }}</dd>
+{% endif %}
+{% if os.media_count is not none %}
+  <dt>Distinct media</dt>
+  <dd>{{ "{:,}".format(os.media_count) }}</dd>
+{% endif %}
+{% for k, v in os.items() %}
+  {% if k not in ['total_occurrences', 'media_count'] %}
+    <dt>{{ k|replace('_', ' ')|capitalize }}</dt>
+    <dd>{{ v }}</dd>
+  {% endif %}
+{% endfor %}
+</dl>
+</section>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ ingredient.preferred_term }} — MIM</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <a href="../index.html">MIM</a> &rsaquo;
+  <a href="index.html">ingredients</a> &rsaquo;
+  <span>{{ ingredient.identifier }}</span>
+</nav>
+
+<header>
+  <h1>{{ ingredient.preferred_term }}</h1>
+  <div class="meta">
+    <span class="curie">{{ ingredient.identifier }}</span>
+    {% if ingredient.mapping_status %}
+      <span class="badge">{{ ingredient.mapping_status }}</span>
+    {% endif %}
+    {% set om = ingredient.ontology_mapping or {} %}
+    {% if om.ontology_source %}
+      <span class="badge">{{ om.ontology_source }}</span>
+    {% endif %}
+    {% if om.mapping_quality %}
+      <span class="badge">{{ om.mapping_quality }}</span>
+    {% endif %}
+  </div>
+</header>
+
+{% include "_partials/overview.html.j2" %}
+{% if ingredient.synonyms %}{% include "_partials/synonyms.html.j2" %}{% endif %}
+{% if ingredient.chemical_properties %}{% include "_partials/chemical_properties.html.j2" %}{% endif %}
+{% if om.evidence %}{% include "_partials/evidence.html.j2" %}{% endif %}
+{% if ingredient.occurrence_statistics %}{% include "_partials/occurrence.html.j2" %}{% endif %}
+{% if ingredient.curation_history %}{% include "_partials/curation_history.html.j2" %}{% endif %}
+
+<footer>
+  <small class="muted">
+    Generated {{ generated_at }} from
+    <code>{{ source_path }}</code>
+  </small>
+</footer>
+
+</body>
+</html>

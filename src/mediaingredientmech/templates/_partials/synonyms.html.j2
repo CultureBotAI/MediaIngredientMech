@@ -1,0 +1,18 @@
+<section id="synonyms">
+<h2>Synonyms <small class="muted">({{ ingredient.synonyms|length }})</small></h2>
+<table class="synonyms">
+<thead>
+<tr><th>Synonym</th><th>Type</th><th>Source</th><th class="right">Occurrences</th></tr>
+</thead>
+<tbody>
+{% for s in ingredient.synonyms %}
+<tr>
+  <td>{{ s.synonym_text }}</td>
+  <td><span class="badge small">{{ s.synonym_type or '' }}</span></td>
+  <td class="muted">{{ s.source or '' }}</td>
+  <td class="right">{{ s.occurrence_count or '' }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</section>

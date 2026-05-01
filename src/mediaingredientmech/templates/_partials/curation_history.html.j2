@@ -1,0 +1,28 @@
+<section id="curation_history">
+<h2>Curation history</h2>
+<table class="curation">
+<thead>
+<tr><th>Timestamp</th><th>Curator</th><th>Action</th><th>New status</th><th>Changes</th></tr>
+</thead>
+<tbody>
+{% for ev in ingredient.curation_history %}
+<tr>
+  <td class="muted small">{{ ev.timestamp or '' }}</td>
+  <td>
+    {{ ev.curator or '' }}
+    {% if ev.llm_assisted %}
+      <span class="badge small">LLM</span>
+    {% endif %}
+  </td>
+  <td>{{ ev.action or '' }}</td>
+  <td>
+    {% if ev.new_status %}
+      <span class="badge small">{{ ev.new_status }}</span>
+    {% endif %}
+  </td>
+  <td class="prewrap small">{{ ev.changes or '' }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</section>

@@ -1,0 +1,28 @@
+<section id="evidence">
+<h2>Evidence <small class="muted">({{ (ingredient.ontology_mapping.evidence or [])|length }})</small></h2>
+{% for ev in ingredient.ontology_mapping.evidence %}
+<div class="evidence">
+  <div class="evidence-head">
+    <span class="badge">{{ ev.evidence_type or '' }}</span>
+    {% if ev.supports %}<span class="badge">{{ ev.supports }}</span>{% endif %}
+    {% if ev.source %}<span class="muted small">via {{ ev.source }}</span>{% endif %}
+    {% if ev.pmid %}
+      <a href="https://pubmed.ncbi.nlm.nih.gov/{{ ev.pmid }}/" rel="nofollow noreferrer">
+        PMID:{{ ev.pmid }}</a>
+    {% elif ev.doi %}
+      <a href="https://doi.org/{{ ev.doi }}" rel="nofollow noreferrer">
+        DOI:{{ ev.doi }}</a>
+    {% endif %}
+  </div>
+  {% if ev.snippet %}
+    <blockquote class="snippet">{{ ev.snippet }}</blockquote>
+  {% endif %}
+  {% if ev.explanation %}
+    <p class="explanation small">{{ ev.explanation }}</p>
+  {% endif %}
+  {% if ev.notes %}
+    <p class="muted small prewrap">{{ ev.notes }}</p>
+  {% endif %}
+</div>
+{% endfor %}
+</section>

@@ -1,0 +1,31 @@
+<section id="overview">
+<h2>Ontology mapping</h2>
+{% set om = ingredient.ontology_mapping or {} %}
+<dl class="kv">
+  <dt>Primary identifier</dt>
+  <dd>
+    <a href="{{ curie_to_url(ingredient.identifier) }}" rel="nofollow noreferrer">
+      <code>{{ ingredient.identifier }}</code></a>
+  </dd>
+  {% if om.ontology_id and om.ontology_id != ingredient.identifier %}
+  <dt>Ontology term</dt>
+  <dd>
+    <a href="{{ curie_to_url(om.ontology_id) }}" rel="nofollow noreferrer">
+      <code>{{ om.ontology_id }}</code></a>
+    {% if om.ontology_label %} &mdash; {{ om.ontology_label }}{% endif %}
+  </dd>
+  {% endif %}
+  {% if om.ontology_label and om.ontology_label != ingredient.preferred_term %}
+  <dt>Ontology label</dt>
+  <dd><em>{{ om.ontology_label }}</em></dd>
+  {% endif %}
+  {% if ingredient.notes %}
+  <dt>Notes</dt>
+  <dd class="prewrap">{{ ingredient.notes }}</dd>
+  {% endif %}
+  {% if ingredient.kg_microbe_node_id %}
+  <dt>kg-microbe node</dt>
+  <dd><code>{{ ingredient.kg_microbe_node_id }}</code></dd>
+  {% endif %}
+</dl>
+</section>

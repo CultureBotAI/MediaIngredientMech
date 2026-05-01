@@ -40,6 +40,13 @@ fetch-pubmed *args:
 # Composite QC: schema validation + evidence reference validation.
 qc: validate-all qc-evidence
 
+# Render per-ingredient HTML detail pages from data/ingredients/*.yaml
+# into pages/ingredient/. Idempotent (skips fresh outputs); --force
+# regenerates everything. See
+# ../culturebotai-claw/docs/proposals/phase5_mkdocs_material_and_browser_parity.md
+gen-ingredient-pages *args:
+    /opt/homebrew/bin/python3.13 src/mediaingredientmech/render_ingredient_pages.py {{args}}
+
 # Launch interactive curation CLI
 curate:
     python scripts/curate_unmapped.py
