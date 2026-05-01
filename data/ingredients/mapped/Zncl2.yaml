@@ -9,6 +9,15 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('ZnCl2')
+    pmid: '38922505'
+    supports: SUPPORT
+    snippet: In the present manuscript, novel macrocyclic Schiff base complexes [Zn(N4MacL1)Cl2-Zn(N4MacL3)Cl2]
+      were synthesized by the reaction of ZnCl2 and macrocyclic ligands (N4MacL1-N4MacL3)
+      derived from diketone and diamines under microwave irradiation method and conventional
+      method.
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
     Simple component'
@@ -95,9 +104,22 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:33.046115+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2Cl.Zn; inchi=InChI=1S/2ClH.Zn/h2*1H;/q;;+2/p-2; smiles=[Cl-].[Cl-].[Zn+2]
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:48.156767+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=38922505 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7646-85-7
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620'
+  molecular_formula: 2Cl.Zn
+  inchi: InChI=1S/2ClH.Zn/h2*1H;/q;;+2/p-2
+  smiles: '[Cl-].[Cl-].[Zn+2]'
 kg_microbe_node_id: CHEBI:49976
 ingredient_type: SINGLE_INGREDIENT

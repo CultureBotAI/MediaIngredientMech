@@ -110,8 +110,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.327216+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C3H7NO2S.HCl; inchi=InChI=1S/C3H7NO2S.ClH/c4-2(1-7)3(5)6;/h2,7H,1,4H2,;
+    smiles=Cl.N[C@@H](CS)C(=O)O
+  llm_assisted: false
 chemical_properties:
   cas_rn: 52-89-1
   data_source: OAK/CHEBI xref
   retrieval_date: '2026-04-19T07:39:40.088267+00:00'
+  molecular_formula: C3H7NO2S.HCl
+  inchi: InChI=1S/C3H7NO2S.ClH/c4-2(1-7)3(5)6;/h2,7H,1,4H2,(H,5,6);1H/t2-;/m0./s1
+  smiles: Cl.N[C@@H](CS)C(=O)O
 ingredient_type: SINGLE_INGREDIENT

@@ -9,6 +9,15 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('Lactose')
+    pmid: '15915565'
+    supports: SUPPORT
+    snippet: Investigation of factors that affect stability, growth, and induction
+      of T7 expression strains in shaking vessels led to the recognition that sporadic,
+      unintended induction of expression in complex media, previously reported by
+      others, is almost certainly caused by small amounts of lactose.
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: 'Cross-references: KEGG:lcts'
   synonym_type: RAW_TEXT
@@ -119,8 +128,22 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.494341+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H22O11; inchi=InChI=1S/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3);
+    smiles=OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)C(O)O[C@@H
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:47.931549+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=15915565 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 63-42-3
   data_source: PubChem (via CHEBI:17716)
   retrieval_date: '2026-04-09T00:32:50.689620'
+  molecular_formula: C12H22O11
+  inchi: InChI=1S/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3)23-10-4(2-14)21-11(20)8(18)7(10)17/h3-20H,1-2H2/t3-,4-,5+,6+,7-,8-,9-,10-,11?,12+/m1/s1
+  smiles: OC[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)C(O)O[C@@H]2CO)[C@H](O)[C@@H](O)[C@H]1O
 ingredient_type: SINGLE_INGREDIENT

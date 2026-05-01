@@ -9,6 +9,16 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('Nitrilotriacetic acid')
+    pmid: '34939907'
+    supports: SUPPORT
+    snippet: Here we explore the potential of nitrilotriacetic acid-ditetra-decylamine
+      (NTA3-DTDA)-containing liposomes (NTA-liposomes) engrafted with His-tagged forms
+      of 'self' peptide (pCD47) to prolong circulation time in blood after iv administration,
+      and of iRGD peptide (piRGD) to enhance treatment efficacy of doxorubicin-containing
+      liposomes (Caelyx).
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: ( disodium salt)
   synonym_type: RAW_TEXT
@@ -130,9 +140,23 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.685860+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H9NO6; inchi=InChI=1S/C6H9NO6/c8-4(9)1-7(2-5(10)11)3-6(12)13/h1;
+    smiles=O=C(O)CN(CC(=O)O)CC(=O)O
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:48.085493+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=34939907 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 139-13-9
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:53:35.196893'
+  molecular_formula: C6H9NO6
+  inchi: InChI=1S/C6H9NO6/c8-4(9)1-7(2-5(10)11)3-6(12)13/h1-3H2,(H,8,9)(H,10,11)(H,12,13)
+  smiles: O=C(O)CN(CC(=O)O)CC(=O)O
 kg_microbe_node_id: CHEBI:44557
 ingredient_type: SINGLE_INGREDIENT

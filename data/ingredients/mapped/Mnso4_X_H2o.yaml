@@ -9,6 +9,13 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('MnSO4 x H2O')
+    pmid: '3085078'
+    supports: SUPPORT
+    snippet: The 2 X 2 factorial arrangement of dietary treatments included 0 or 12
+      ppm virginiamycin and 0 or 1000 ppm added manganese as MnSO4 X H2O.
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: 'Role: Mineral source; Properties: Defined component, Simple component,
     Inorganic compound'
@@ -140,9 +147,23 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.923505+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=H2O.Mn.O4S; inchi=InChI=1S/Mn.H2O4S.H2O/c;1-5(2,3)4;/h;(H2,1,2,3,4);;
+    smiles=O.O=S(=O)([O-])[O-].[Mn+2]
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:47.956137+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=3085078 from propose-evidence batch
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:86364
 chemical_properties:
   cas_rn: 10034-96-5
   data_source: PubChem (via CHEBI:86364)
   retrieval_date: '2026-04-09T00:32:50.689620'
+  molecular_formula: H2O.Mn.O4S
+  inchi: InChI=1S/Mn.H2O4S.H2O/c;1-5(2,3)4;/h;(H2,1,2,3,4);1H2/q+2;;/p-2
+  smiles: O.O=S(=O)([O-])[O-].[Mn+2]
 ingredient_type: SINGLE_INGREDIENT

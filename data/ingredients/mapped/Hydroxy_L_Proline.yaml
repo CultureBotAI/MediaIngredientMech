@@ -69,9 +69,18 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.000268+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H9NO3; inchi=InChI=1S/C5H9NO3/c7-3-1-4(5(8)9)6-2-3/h3-4,6-7H,1-;
+    smiles=O=C(O)[C@@H]1C[C@@H](O)CN1
+  llm_assisted: false
 notes: Created from FEBA ontology enrichment workflow. Used in 3 FEBA media formulations.
 chemical_properties:
   cas_rn: 51-35-4
   data_source: FEBA ontology enrichment (via PubChem)
   retrieval_date: '2026-04-07T10:19:29.542960'
+  molecular_formula: C5H9NO3
+  inchi: InChI=1S/C5H9NO3/c7-3-1-4(5(8)9)6-2-3/h3-4,6-7H,1-2H2,(H,8,9)/t3-,4+/m1/s1
+  smiles: O=C(O)[C@@H]1C[C@@H](O)CN1
 ingredient_type: SINGLE_INGREDIENT

@@ -29,8 +29,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.987231+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2(C10H16O8)n.(C15H24O12)n.(C5H8O4)n; smiles=*O[C@@H]1CO[C@@H](*)[C@H](O)[C@H]1O.*O[C@@H]1CO[C@
+  llm_assisted: false
 chemical_properties:
   cas_rn: 9040-27-1
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: 2(C10H16O8)n.(C15H24O12)n.(C5H8O4)n
+  smiles: '*O[C@@H]1CO[C@@H](*)[C@H](O)[C@H]1O.*O[C@@H]1CO[C@@H](*)[C@H](O)[C@H]1O[C@@H]1O[C@@H](CO)[C@H](O)[C@H]1O.*O[C@@H]1CO[C@@H](*)[C@H](O[C@@H]2O[C@@H](CO)[C@H](O)[C@H]2O)[C@H]1O.*O[C@@H]1CO[C@@H](*)[C@H](O[C@@H]2O[C@@H](CO)[C@H](O)[C@H]2O)[C@H]1O[C@@H]1O[C@@H](CO)[C@H](O)[C@H]1O'
 ingredient_type: SINGLE_INGREDIENT

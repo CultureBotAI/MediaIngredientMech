@@ -48,5 +48,16 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.872934+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=(C2H4O)w.(C2H4O)x.(C2H4O)y.(C2H4O)z.C24H46O6; inchi=InChI=1S/C32H62O10/c1-2-3-4-5-6-7-8-9-10-11-12-13-;
+    smiles=[H][C@]1(C(COCCOC(=O)CCCCCCCCCCCCCCCCC)OCCO)OCC(OC
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:53425
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: (C2H4O)w.(C2H4O)x.(C2H4O)y.(C2H4O)z.C24H46O6
+  inchi: InChI=1S/C32H62O10/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-30(36)40-25-24-37-26-28(38-21-18-33)32-31(41-23-20-35)29(27-42-32)39-22-19-34/h28-29,31-35H,2-27H2,1H3/t28?,29?,31-,32-/m1/s1
+  smiles: '[H][C@]1(C(COCCOC(=O)CCCCCCCCCCCCCCCCC)OCCO)OCC(OCCO)[C@H]1OCCO'
+  data_source: CHEBI sqlite (oaklib)

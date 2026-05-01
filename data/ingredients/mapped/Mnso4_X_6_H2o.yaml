@@ -49,4 +49,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.912883+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=6H2O.Mn.O4S; inchi=InChI=1S/Mn.H2O4S.6H2O/c;1-5(2,3)4;;;;;;/h;(H2,1,2;
+    smiles=O.O.O.O.O.O.O=S(=O)([O-])[O-].[Mn+2]
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: 6H2O.Mn.O4S
+  inchi: InChI=1S/Mn.H2O4S.6H2O/c;1-5(2,3)4;;;;;;/h;(H2,1,2,3,4);6*1H2/q+2;;;;;;;/p-2
+  smiles: O.O.O.O.O.O.O=S(=O)([O-])[O-].[Mn+2]
+  data_source: CHEBI sqlite (oaklib)

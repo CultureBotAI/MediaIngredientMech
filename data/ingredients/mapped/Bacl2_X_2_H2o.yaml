@@ -54,8 +54,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.138820+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Ba.2Cl.2H2O; inchi=InChI=1S/Ba.2ClH.2H2O/h;2*1H;2*1H2/q+2;;;;/p-2;
+    smiles=O.O.[Ba+2].[Cl-].[Cl-]
+  llm_assisted: false
 chemical_properties:
   cas_rn: 10326-27-9
   data_source: PubChem (via CHEBI:86153)
   retrieval_date: '2026-04-09T00:32:50.689620'
+  molecular_formula: Ba.2Cl.2H2O
+  inchi: InChI=1S/Ba.2ClH.2H2O/h;2*1H;2*1H2/q+2;;;;/p-2
+  smiles: O.O.[Ba+2].[Cl-].[Cl-]
 ingredient_type: SINGLE_INGREDIENT

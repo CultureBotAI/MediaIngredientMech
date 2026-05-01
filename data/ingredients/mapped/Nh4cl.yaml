@@ -9,6 +9,17 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('NH4Cl')
+    pmid: '39168352'
+    supports: SUPPORT
+    snippet: Additional chemical analysis revealed that the presence of different
+      carbon (the main organic carbon source-acetic acid in TAP or BG-11 + acetic
+      acid medium and inorganic carbon source-Na2CO3 in BG-11 or BG-11 + acetic acid
+      medium) and nitrogen (NH4Cl in TAP medium and NaNO3 in BG-11 or BG-11 + acetic
+      acid medium) species in the growth medium was one of the main factors driving
+      the shift in interaction type.
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: 'Role: Nitrogen source; Properties: Defined component, Inorganic compound,
     Simple component'
@@ -120,9 +131,22 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.569151+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Cl.H4N; inchi=InChI=1S/ClH.H3N/h1H;1H3; smiles=[Cl-].[H][N+]([H])([H])[H]
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:48.060163+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=39168352 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 12125-02-9
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-05T21:48:45.572048'
+  molecular_formula: Cl.H4N
+  inchi: InChI=1S/ClH.H3N/h1H;1H3
+  smiles: '[Cl-].[H][N+]([H])([H])[H]'
 kg_microbe_node_id: CHEBI:31206
 ingredient_type: SINGLE_INGREDIENT

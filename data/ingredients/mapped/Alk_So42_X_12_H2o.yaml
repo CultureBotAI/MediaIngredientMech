@@ -169,8 +169,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.939212+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Al.12H2O.K.2O4S; inchi=InChI=1S/Al.K.2H2O4S.12H2O/c;;2*1-5(2,3)4;;;;;;;;;;
+    smiles=O.O.O.O.O.O.O.O.O.O.O.O.O=S(=O)([O-])[O-].O=S(=O)(
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7784-24-9
   data_source: PubChem (via CHEBI:86465)
   retrieval_date: '2026-04-09T00:32:50.689620'
+  molecular_formula: Al.12H2O.K.2O4S
+  inchi: InChI=1S/Al.K.2H2O4S.12H2O/c;;2*1-5(2,3)4;;;;;;;;;;;;/h;;2*(H2,1,2,3,4);12*1H2/q+3;+1;;;;;;;;;;;;;;/p-4
+  smiles: O.O.O.O.O.O.O.O.O.O.O.O.O=S(=O)([O-])[O-].O=S(=O)([O-])[O-].[Al+3].[K+]
 ingredient_type: SINGLE_INGREDIENT

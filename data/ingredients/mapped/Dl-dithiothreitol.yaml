@@ -104,8 +104,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.320002+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C4H10O2S2; inchi=InChI=1S/C4H10O2S2/c5-3(1-7)4(6)2-8/h3-8H,1-2H2;
+    smiles=OC(CS)C(O)CS
+  llm_assisted: false
 chemical_properties:
   cas_rn: 3483-12-3
   data_source: OAK/CHEBI xref
   retrieval_date: '2026-04-19T07:39:40.088267+00:00'
+  molecular_formula: C4H10O2S2
+  inchi: InChI=1S/C4H10O2S2/c5-3(1-7)4(6)2-8/h3-8H,1-2H2
+  smiles: OC(CS)C(O)CS
 ingredient_type: SINGLE_INGREDIENT

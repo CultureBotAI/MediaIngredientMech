@@ -26,4 +26,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.989323+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=H2S; inchi=InChI=1S/H2S/h1H2; smiles=[H]S[H]
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: H2S
+  inchi: InChI=1S/H2S/h1H2
+  smiles: '[H]S[H]'
+  data_source: CHEBI sqlite (oaklib)

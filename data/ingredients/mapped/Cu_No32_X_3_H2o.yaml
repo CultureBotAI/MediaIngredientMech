@@ -41,8 +41,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.831051+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Cu.2NO3; inchi=InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1;
+    smiles=O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
+  llm_assisted: false
 chemical_properties:
   cas_rn: 10031-43-3
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620'
+  molecular_formula: Cu.2NO3
+  inchi: InChI=1S/Cu.2NO3/c;2*2-1(3)4/q+2;2*-1
+  smiles: O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Cu+2]
 ingredient_type: SINGLE_INGREDIENT

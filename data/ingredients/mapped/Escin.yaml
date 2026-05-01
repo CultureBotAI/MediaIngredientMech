@@ -29,8 +29,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.410135+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C55H86O24; inchi=InChI=1S/C55H86O24/c1-10-23(2)46(71)79-43-44(72-24;
+    smiles=[H][C@]12CC=C3[C@]4([H])CC(C)(C)[C@@H](OC(=O)/C(C)
+  llm_assisted: false
 chemical_properties:
   cas_rn: 6805-41-0
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C55H86O24
+  inchi: InChI=1S/C55H86O24/c1-10-23(2)46(71)79-43-44(72-24(3)60)55(22-59)26(17-50(43,4)5)25-11-12-30-51(6)15-14-32(52(7,21-58)29(51)13-16-53(30,8)54(25,9)18-31(55)61)75-49-41(77-48-38(67)36(65)34(63)28(20-57)74-48)39(68)40(42(78-49)45(69)70)76-47-37(66)35(64)33(62)27(19-56)73-47/h10-11,26-44,47-49,56-59,61-68H,12-22H2,1-9H3,(H,69,70)/b23-10-/t26-,27+,28+,29+,30+,31+,32-,33+,34+,35-,36-,37+,38+,39-,40-,41+,42-,43-,44-,47-,48-,49+,51-,52+,53+,54+,55-/m0/s1
+  smiles: '[H][C@]12CC=C3[C@]4([H])CC(C)(C)[C@@H](OC(=O)/C(C)=CC)[C@H](OC(C)=O)[C@]4(CO)[C@H](O)C[C@@]3(C)[C@]1(C)CC[C@]1([H])[C@]2(C)CC[C@H](O[C@@H]2O[C@H](C(=O)O)[C@@H](O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)[C@H](O)[C@H]2O[C@@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@]1(C)CO'
 ingredient_type: SINGLE_INGREDIENT

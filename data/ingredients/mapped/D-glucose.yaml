@@ -9,6 +9,14 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('D-Glucose')
+    pmid: '33762358'
+    supports: SUPPORT
+    snippet: Clinical localization of primary tumors and sites of metastasis by PET
+      is based on the enhanced cellular uptake of 2-deoxy-2-[18F]-fluoro-D-glucose
+      (FDG).
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: 'Cross-references: KEGG:glc_D'
   synonym_type: RAW_TEXT
@@ -87,8 +95,19 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.056357+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H12O6
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:47.813986+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=33762358 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 50-99-7
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620'
+  molecular_formula: C6H12O6
 ingredient_type: SINGLE_INGREDIENT

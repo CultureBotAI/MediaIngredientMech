@@ -9,6 +9,15 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('Na2HPO4')
+    pmid: '38524547'
+    supports: SUPPORT
+    snippet: VSMCs were then cultured in 2.6 mM Na2HPO4 and 50 μg/mL ascorbic acid
+      for 7 days to obtain a calcification model, and we investigated the effects
+      and mechanisms of Cap on VSMCs calcification by assessing the changes of calcium
+      deposition, calcium content, and subsequent VC biomarkers.
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: 'Role: Buffer; Properties: Defined component, Inorganic compound,
     Simple component'
@@ -169,9 +178,23 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.219638+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=HO4P.2Na; inchi=InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2;
+    smiles=O=P([O-])([O-])O.[Na+].[Na+]
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:47.984239+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=38524547 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7558-79-4
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-05T21:48:45.466006'
+  molecular_formula: HO4P.2Na
+  inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
+  smiles: O=P([O-])([O-])O.[Na+].[Na+]
 kg_microbe_node_id: CHEBI:34683
 ingredient_type: SINGLE_INGREDIENT

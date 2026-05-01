@@ -60,8 +60,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.668072+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H18N4OS.2Cl.2H2O; inchi=InChI=1S/C12H17N4OS.2ClH.2H2O/c1-8-11(3-4-17)18-7-;
+    smiles=Cc1ncc(C[n+]2csc(CCO)c2C)c([NH3+])n1.O.O.[Cl-].[Cl
+  llm_assisted: false
 chemical_properties:
   cas_rn: 13465-05-9
   data_source: PubChem API (preprocessed)
   retrieval_date: '2026-04-05T23:47:06.145091'
+  molecular_formula: C12H18N4OS.2Cl.2H2O
+  inchi: InChI=1S/C12H17N4OS.2ClH.2H2O/c1-8-11(3-4-17)18-7-16(8)6-10-5-14-9(2)15-12(10)13;;;;/h5,7,17H,3-4,6H2,1-2H3,(H2,13,14,15);2*1H;2*1H2/q+1;;;;/p-1
+  smiles: Cc1ncc(C[n+]2csc(CCO)c2C)c([NH3+])n1.O.O.[Cl-].[Cl-]
 ingredient_type: SINGLE_INGREDIENT

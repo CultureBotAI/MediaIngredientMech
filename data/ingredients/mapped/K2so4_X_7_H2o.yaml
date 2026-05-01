@@ -44,9 +44,18 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.165546+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2K.O4S; inchi=InChI=1S/2K.H2O4S/c;;1-5(2,3)4/h;;(H2,1,2,3,4)/q2*;
+    smiles=O=S(=O)([O-])[O-].[K+].[K+]
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:32036
 chemical_properties:
   cas_rn: 7778-80-5
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620'
+  molecular_formula: 2K.O4S
+  inchi: InChI=1S/2K.H2O4S/c;;1-5(2,3)4/h;;(H2,1,2,3,4)/q2*+1;/p-2
+  smiles: O=S(=O)([O-])[O-].[K+].[K+]
 ingredient_type: SINGLE_INGREDIENT

@@ -9,6 +9,14 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('Riboflavin')
+    pmid: '40609532'
+    supports: SUPPORT
+    snippet: We found that the abundance of Bacteroides cellulosilyticus affects tumor
+      heterogeneity by producing riboflavin that inhibits CERS3 activity, thus delaying
+      CRC progression.
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: 'Cross-references: KEGG:ribflv'
   synonym_type: RAW_TEXT
@@ -141,9 +149,23 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.160107+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C17H20N4O6; inchi=InChI=1S/C17H20N4O6/c1-7-3-9-10(4-8(7)2)21(5-11(23;
+    smiles=Cc1cc2nc3c(=O)nc(=O)nc-3n(C[C@H](O)[C@H](O)[C@H](O
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:48.123437+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=40609532 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 83-88-5
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:53:48.746551'
+  molecular_formula: C17H20N4O6
+  inchi: InChI=1S/C17H20N4O6/c1-7-3-9-10(4-8(7)2)21(5-11(23)14(25)12(24)6-22)15-13(18-9)16(26)20-17(27)19-15/h3-4,11-12,14,22-25H,5-6H2,1-2H3,(H,20,26,27)/t11-,12+,14-/m0/s1
+  smiles: Cc1cc2nc3c(=O)nc(=O)nc-3n(C[C@H](O)[C@H](O)[C@H](O)CO)c2cc1C
 kg_microbe_node_id: CHEBI:17015
 ingredient_type: SINGLE_INGREDIENT

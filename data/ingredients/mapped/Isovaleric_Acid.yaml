@@ -153,9 +153,18 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.108503+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H10O2; inchi=InChI=1S/C5H10O2/c1-4(2)3-5(6)7/h4H,3H2,1-2H3,(H,6;
+    smiles=CC(C)CC(=O)O
+  llm_assisted: false
 chemical_properties:
   cas_rn: 503-74-2
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-05T21:48:45.203200'
+  molecular_formula: C5H10O2
+  inchi: InChI=1S/C5H10O2/c1-4(2)3-5(6)7/h4H,3H2,1-2H3,(H,6,7)
+  smiles: CC(C)CC(=O)O
 kg_microbe_node_id: CHEBI:28484
 ingredient_type: SINGLE_INGREDIENT

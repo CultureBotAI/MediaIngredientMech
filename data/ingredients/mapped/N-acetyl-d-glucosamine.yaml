@@ -79,9 +79,18 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.987471+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C34H60N8O18; inchi=InChI=1S/C34H60N8O18/c1-13(28(49)42-19(12-56-36)31;
+    smiles=CC(=O)N[C@@H]1[C@@H](O[C@H](C)C(=O)N[C@@H](C)C(=O)
+  llm_assisted: false
 chemical_properties:
   cas_rn: 72-87-7
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:53:05.967456'
+  molecular_formula: C34H60N8O18
+  inchi: InChI=1S/C34H60N8O18/c1-13(28(49)42-19(12-56-36)31(52)41-18(8-6-7-9-35)30(51)38-14(2)32(53)54)37-29(50)15(3)57-27-23(40-17(5)46)33(55)58-21(11-44)26(27)60-34-22(39-16(4)45)25(48)24(47)20(10-43)59-34/h13-15,18-27,33-34,43-44,47-48,55H,6-12,35-36H2,1-5H3,(H,37,50)(H,38,51)(H,39,45)(H,40,46)(H,41,52)(H,42,49)(H,53,54)/t13-,14+,15+,18-,19+,20+,21+,22+,23+,24+,25+,26+,27+,33+,34-/m0/s1
+  smiles: CC(=O)N[C@@H]1[C@@H](O[C@H](C)C(=O)N[C@@H](C)C(=O)N[C@H](CON)C(=O)N[C@@H](CCCCN)C(=O)N[C@H](C)C(=O)O)[C@H](O[C@@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2NC(C)=O)[C@@H](CO)O[C@H]1O
 kg_microbe_node_id: CHEBI:8006
 ingredient_type: SINGLE_INGREDIENT

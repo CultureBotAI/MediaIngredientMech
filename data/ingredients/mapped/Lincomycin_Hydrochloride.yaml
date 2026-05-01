@@ -27,8 +27,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.557021+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C18H34N2O6S.HCl; inchi=InChI=1S/C18H34N2O6S.ClH/c1-5-6-10-7-11(20(3)8-10);
+    smiles=Cl.[H][C@@]1([C@H](NC(=O)[C@@H]2C[C@@H](CCC)CN2C)[
+  llm_assisted: false
 chemical_properties:
   cas_rn: 859-18-7
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+  molecular_formula: C18H34N2O6S.HCl
+  inchi: InChI=1S/C18H34N2O6S.ClH/c1-5-6-10-7-11(20(3)8-10)17(25)19-12(9(2)21)16-14(23)13(22)15(24)18(26-16)27-4;/h9-16,18,21-24H,5-8H2,1-4H3,(H,19,25);1H/t9-,10-,11+,12-,13+,14+,15-,16+,18-;/m1./s1
+  smiles: Cl.[H][C@@]1([C@H](NC(=O)[C@@H]2C[C@@H](CCC)CN2C)[C@@H](C)O)O[C@H](SC)[C@H](O)[C@@H](O)[C@@H]1O
 ingredient_type: SINGLE_INGREDIENT

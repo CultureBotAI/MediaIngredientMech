@@ -9,6 +9,13 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('Biotin')
+    pmid: '39201737'
+    supports: SUPPORT
+    snippet: Several reports have demonstrated that pharmacological concentrations
+      of biotin have therapeutic effects on MetS.
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: (alternative)
   synonym_type: RAW_TEXT
@@ -176,9 +183,23 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.237351+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H16N2O3S; inchi=InChI=1S/C10H16N2O3S/c13-8(14)4-2-1-3-7-9-6(5-16-7;
+    smiles=[H][C@]12CS[C@@H](CCCCC(=O)O)[C@@]1([H])NC(=O)N2
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:47.766513+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=39201737 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 58-85-5
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:51:13.549860'
+  molecular_formula: C10H16N2O3S
+  inchi: InChI=1S/C10H16N2O3S/c13-8(14)4-2-1-3-7-9-6(5-16-7)11-10(15)12-9/h6-7,9H,1-5H2,(H,13,14)(H2,11,12,15)/t6-,7-,9-/m0/s1
+  smiles: '[H][C@]12CS[C@@H](CCCCC(=O)O)[C@@]1([H])NC(=O)N2'
 kg_microbe_node_id: CHEBI:15956
 ingredient_type: SINGLE_INGREDIENT

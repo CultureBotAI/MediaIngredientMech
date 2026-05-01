@@ -159,8 +159,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.506777+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H5FeO7; inchi=InChI=1S/C6H8O7.Fe/c7-3(8)1-6(13,5(11)12)2-4(9)10;;
+    smiles=O=C1CC2(O)CC(=O)[O][Fe]([O]1)[O]C2=O
+  llm_assisted: false
 chemical_properties:
   cas_rn: 3522-50-7
   data_source: OAK/CHEBI xref
   retrieval_date: '2026-04-19T07:39:40.088267+00:00'
+  molecular_formula: C6H5FeO7
+  inchi: InChI=1S/C6H8O7.Fe/c7-3(8)1-6(13,5(11)12)2-4(9)10;/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12);/q;+3/p-3
+  smiles: O=C1CC2(O)CC(=O)[O][Fe]([O]1)[O]C2=O
 ingredient_type: SINGLE_INGREDIENT

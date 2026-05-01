@@ -51,4 +51,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:30.863235+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Cl2Mn.2H2O; inchi=InChI=1S/2ClH.Mn.2H2O/h2*1H;;2*1H2/q;;+2;;/p-2;
+    smiles=O.O.[Cl][Mn][Cl]
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: Cl2Mn.2H2O
+  inchi: InChI=1S/2ClH.Mn.2H2O/h2*1H;;2*1H2/q;;+2;;/p-2
+  smiles: O.O.[Cl][Mn][Cl]
+  data_source: CHEBI sqlite (oaklib)

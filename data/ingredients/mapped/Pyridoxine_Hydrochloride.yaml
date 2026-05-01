@@ -9,6 +9,14 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('Pyridoxine hydrochloride')
+    pmid: '6257871'
+    supports: SUPPORT
+    snippet: Male rats about 100 days old were fed a B-6 deficient diet supplemented
+      with 4'-deoxypyridoxine (1 g/kg diet) and/or pyridoxine hydrochloride (22 mg/kg
+      diet) for 30 to 35 days.
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
     component'
@@ -127,9 +135,23 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.082376+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C8H11NO3.HCl; inchi=InChI=1S/C8H11NO3.ClH/c1-5-8(12)7(4-11)6(3-10)2-9-;
+    smiles=Cc1ncc(CO)c(CO)c1O.Cl
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:48.106384+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=6257871 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 58-56-0
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:53:45.005975'
+  molecular_formula: C8H11NO3.HCl
+  inchi: InChI=1S/C8H11NO3.ClH/c1-5-8(12)7(4-11)6(3-10)2-9-5;/h2,10-12H,3-4H2,1H3;1H
+  smiles: Cc1ncc(CO)c(CO)c1O.Cl
 kg_microbe_node_id: CHEBI:30961
 ingredient_type: SINGLE_INGREDIENT

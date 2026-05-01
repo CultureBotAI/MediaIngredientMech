@@ -26,4 +26,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.756438+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H15NO8; inchi=InChI=1S/C12H15NO8/c14-5-8-9(15)10(16)11(17)12(21-;
+    smiles=O=[N+]([O-])c1ccc(O[C@@H]2O[C@H](CO)[C@H](O)[C@H](
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C12H15NO8
+  inchi: InChI=1S/C12H15NO8/c14-5-8-9(15)10(16)11(17)12(21-8)20-7-3-1-6(2-4-7)13(18)19/h1-4,8-12,14-17H,5H2/t8-,9+,10+,11-,12-/m1/s1
+  smiles: O=[N+]([O-])c1ccc(O[C@@H]2O[C@H](CO)[C@H](O)[C@H](O)[C@H]2O)cc1
+  data_source: CHEBI sqlite (oaklib)

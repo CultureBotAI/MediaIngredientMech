@@ -142,10 +142,19 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.185426+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=2H4N.MoO4; inchi=InChI=1S/Mo.2H3N.4O/h;2*1H3;;;;/q;;;;;2*-1/p+2;
+    smiles=[NH4+].[NH4+].[O]=[Mo](=[O])([O-])[O-]
+  llm_assisted: false
 notes: Created from FEBA ontology enrichment workflow. Used in 3 FEBA media formulations.
 chemical_properties:
   cas_rn: 13106-76-8
   data_source: FEBA ontology enrichment (via PubChem)
   retrieval_date: '2026-04-07T10:19:20.864770'
+  molecular_formula: 2H4N.MoO4
+  inchi: InChI=1S/Mo.2H3N.4O/h;2*1H3;;;;/q;;;;;2*-1/p+2
+  smiles: '[NH4+].[NH4+].[O]=[Mo](=[O])([O-])[O-]'
 kg_microbe_node_id: CHEBI:91249
 ingredient_type: SINGLE_INGREDIENT

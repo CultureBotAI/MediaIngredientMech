@@ -26,4 +26,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.089774+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Fe.S2; inchi=InChI=1S/Fe.S2/c;1-2/q+2;-2; smiles=[Fe+2].[S-][S-]
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: Fe.S2
+  inchi: InChI=1S/Fe.S2/c;1-2/q+2;-2
+  smiles: '[Fe+2].[S-][S-]'
+  data_source: CHEBI sqlite (oaklib)

@@ -84,9 +84,18 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.355819+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=9H2O.2Na.O3Si; inchi=InChI=1S/2Na.O3Si.9H2O/c;;1-4(2)3;;;;;;;;;/h;;;9*1;
+    smiles=O.O.O.O.O.O.O.O.O.O=[Si]([O-])[O-].[Na+].[Na+]
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:132108
 chemical_properties:
   cas_rn: 13517-24-3
   data_source: PubChem (via CHEBI:132108)
   retrieval_date: '2026-04-09T00:32:50.689620'
+  molecular_formula: 9H2O.2Na.O3Si
+  inchi: InChI=1S/2Na.O3Si.9H2O/c;;1-4(2)3;;;;;;;;;/h;;;9*1H2/q2*+1;-2;;;;;;;;;
+  smiles: O.O.O.O.O.O.O.O.O.O=[Si]([O-])[O-].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT

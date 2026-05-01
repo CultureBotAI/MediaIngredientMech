@@ -9,6 +9,16 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: LITERATURE
+    source: PubMed search ('HCl')
+    pmid: '33892647'
+    supports: SUPPORT
+    snippet: In addition, we show that a buffer based on Tris/HCl is not effective
+      in maintaining any of our media types at neutral pH even at relatively high
+      concentrations. **CONCLUSION:** Here we show that the buffering of yeast batch
+      cultures is not straight-forward and addition of a buffering agent to set a
+      desired starting pH does not guarantee pH-maintenance during growth.
+    explanation: Auto-proposed; curator should rephrase or remove.
 synonyms:
 - synonym_text: (0.05 molar)
   synonym_type: RAW_TEXT
@@ -93,9 +103,22 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.921588+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=HCl; inchi=InChI=1S/ClH/h1H; smiles=[H]Cl
+  llm_assisted: false
+- timestamp: '2026-05-01T08:09:47.882306+00:00'
+  curator: auto_classify_ingredient_type
+  action: APPLY_EVIDENCE_PROPOSAL
+  changes: added pmid=33892647 from propose-evidence batch
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7647-01-0
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:52:21.477065'
+  molecular_formula: HCl
+  inchi: InChI=1S/ClH/h1H
+  smiles: '[H]Cl'
 kg_microbe_node_id: CHEBI:17883
 ingredient_type: SINGLE_INGREDIENT

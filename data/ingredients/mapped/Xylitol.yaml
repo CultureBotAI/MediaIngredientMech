@@ -60,8 +60,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:33.009932+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H12O5; inchi=InChI=1S/C5H12O5/c6-1-3(8)5(10)4(9)2-7/h3-10H,1-2H;
+    smiles=OC[C@@H](O)[C@H](O)[C@@H](O)CO
+  llm_assisted: false
 chemical_properties:
   cas_rn: 488-81-3
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:54:15.789675'
+  molecular_formula: C5H12O5
+  inchi: InChI=1S/C5H12O5/c6-1-3(8)5(10)4(9)2-7/h3-10H,1-2H2/t3-,4+,5+
+  smiles: OC[C@@H](O)[C@H](O)[C@@H](O)CO
 ingredient_type: SINGLE_INGREDIENT

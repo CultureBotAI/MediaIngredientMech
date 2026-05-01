@@ -70,4 +70,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.433568+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=CO2; inchi=InChI=1S/CO2/c2-1-3; smiles=O=C=O
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: CO2
+  inchi: InChI=1S/CO2/c2-1-3
+  smiles: O=C=O
+  data_source: CHEBI sqlite (oaklib)

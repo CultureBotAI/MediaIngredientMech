@@ -29,8 +29,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.721226+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C31H35N2O11.Na; inchi=InChI=1S/C31H36N2O11.Na/c1-14(2)7-8-16-13-17(9-11-;
+    smiles=CO[C@@H]1[C@@H](OC(N)=O)[C@@H](O)[C@H](Oc2ccc3c([O
+  llm_assisted: false
 chemical_properties:
   cas_rn: 1476-53-5
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C31H35N2O11.Na
+  inchi: InChI=1S/C31H36N2O11.Na/c1-14(2)7-8-16-13-17(9-11-19(16)34)27(37)33-21-22(35)18-10-12-20(15(3)24(18)42-28(21)38)41-29-23(36)25(43-30(32)39)26(40-6)31(4,5)44-29;/h7,9-13,23,25-26,29,34-36H,8H2,1-6H3,(H2,32,39)(H,33,37);/q;+1/p-1/t23-,25+,26-,29-;/m1./s1
+  smiles: CO[C@@H]1[C@@H](OC(N)=O)[C@@H](O)[C@H](Oc2ccc3c([O-])c(NC(=O)c4ccc(O)c(CC=C(C)C)c4)c(=O)oc3c2C)OC1(C)C.[Na+]
 ingredient_type: SINGLE_INGREDIENT

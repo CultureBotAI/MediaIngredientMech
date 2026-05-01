@@ -49,9 +49,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:28.568845+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Cu.Fe.2S; inchi=InChI=1S/Cu.Fe.2S/q2*+2;2*-2; smiles=[Cu+2].[Fe+2].[S-2].[S-2]
+  llm_assisted: false
 chemical_properties:
   cas_rn: 12015-76-8
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:51:25.591094'
+  molecular_formula: Cu.Fe.2S
+  inchi: InChI=1S/Cu.Fe.2S/q2*+2;2*-2
+  smiles: '[Cu+2].[Fe+2].[S-2].[S-2]'
 kg_microbe_node_id: CHEBI:86202
 ingredient_type: SINGLE_INGREDIENT

@@ -109,8 +109,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-01T08:08:31.470758+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=HO3S.Na; inchi=InChI=1S/Na.H2O3S/c;1-4(2)3/h;(H2,1,2,3)/q+1;/p-1;
+    smiles=O=S([O-])O.[Na+]
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7631-90-5
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:53:28.102286'
+  molecular_formula: HO3S.Na
+  inchi: InChI=1S/Na.H2O3S/c;1-4(2)3/h;(H2,1,2,3)/q+1;/p-1
+  smiles: O=S([O-])O.[Na+]
 ingredient_type: SINGLE_INGREDIENT
