@@ -1,14 +1,19 @@
-identifier: CHEBI:3448
+identifier: FOODON:03420180
 preferred_term: Casein
 ontology_mapping:
-  ontology_id: CHEBI:3448
-  ontology_label: Casein
-  ontology_source: CHEBI
+  ontology_id: FOODON:03420180
+  ontology_label: casein
+  ontology_source: FOODON
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: CURATOR_CONFIRMED_SYNONYM
+    source: kgm-metatraits special_chemical_mappings.tsv
+    notes: Re-mapped from removed CHEBI:3448 to FOODON:03420180. Casein in media context
+      is the food-grade protein extract; FOODON is the appropriate ontology. CHEBI:3448
+      was removed from CHEBI; CHEBI:3448 had been MIM's placeholder.
 synonyms:
 - synonym_text: 'Role: Nitrogen source; Properties: Undefined component'
   synonym_type: RAW_TEXT
@@ -29,6 +34,13 @@ curation_history:
   action: ADDED_CAS_RN
   changes: 'Added CAS-RN:9000-71-9 from CultureBotHT compounds_to_cas.csv (matched:
     Casein)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T00:12:32.901622+00:00'
+  curator: audit_reconcile_kgm_metatraits
+  action: FIXED_REMOVED_CHEBI
+  changes: Replaced removed CHEBI:3448 with FOODON:03420180 (casein, per kg-microbe
+    metatraits curation). CHEBI:3448 was 404 in CHEBI release 2026-04.
   new_status: MAPPED
   llm_assisted: false
 chemical_properties:
