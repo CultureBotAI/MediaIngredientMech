@@ -1,0 +1,36 @@
+identifier: mesh:C052093
+preferred_term: 7-Hydro-8-methylpteroylglutamylglutamic acid
+synonyms:
+- synonym_text: 7-Hydro-8-methylpteroylglutamylglutamic acid
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=kgmicrobe.compound:hydro_methylpteroylglutamylglutamic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.361884+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary UNMAPPED_0590 → mesh:C052093 via name normalization to '7-Hydro-8-methylpteroylglutamylglutamic
+    acid'
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=kgmicrobe.compound:hydro_methylpteroylglutamylglutamic_acid);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: mesh:C052093
+  ontology_label: 7-hydro-8-methylpteroylglutamylglutamic acid
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0590; matched via '7-Hydro-8-methylpteroylglutamylglutamic
+      acid' (name normalization); label-exact

@@ -1,0 +1,37 @@
+identifier: CHEBI:17126
+preferred_term: L-Carnitine
+synonyms:
+- synonym_text: L-Carnitine
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 2 CultureBot media; samples: Ying_Others16, Ying_all64. No CAS-RN or CHEBI
+    mapping available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.417174+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_CHEBI
+  changes: primary UNMAPPED_0304 → CHEBI:17126 via name normalization to 'Carnitine'
+  llm_assisted: false
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  2 CultureBot media; samples: Ying_Others16, Ying_all64. No CAS-RN or CHEBI mapping
+  available; curator review needed.'
+ontology_mapping:
+  ontology_id: CHEBI:17126
+  ontology_label: carnitine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0304; matched via 'Carnitine' (name normalization);
+      label-exact

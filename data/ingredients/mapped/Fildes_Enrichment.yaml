@@ -1,0 +1,36 @@
+identifier: MICRO:0001597
+preferred_term: Fildes Enrichment
+synonyms:
+- synonym_text: Fildes Enrichment
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:744); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.405278+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0386 → MICRO:0001597 via name normalization to 'Fildes
+    Enrichment'
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:744); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: MICRO:0001597
+  ontology_label: fildes enrichment
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0386; matched via 'Fildes Enrichment' (name
+      normalization); label-exact

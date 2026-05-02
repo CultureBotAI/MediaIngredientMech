@@ -1,0 +1,36 @@
+identifier: mesh:C028805
+preferred_term: 2-Sulfobenzoic acid
+synonyms:
+- synonym_text: 2-Sulfobenzoic acid
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2116); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.356957+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary UNMAPPED_0318 → mesh:C028805 via name normalization to '2-Sulfobenzoic
+    acid'
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2116); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: mesh:C028805
+  ontology_label: 2-sulfobenzoic acid
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0318; matched via '2-Sulfobenzoic acid' (name
+      normalization); label-exact

@@ -1,0 +1,39 @@
+identifier: NCIT:C54713
+preferred_term: NaNO
+synonyms:
+- synonym_text: 'NaNO3(CAS: 7631-99-4)'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: NaNO3(Fisher BP360-500)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: NaNO3(autoclave before adding)(Fisher BP360-500)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 24
+  media_count: 24
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.431803+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_NCIT
+  changes: primary UNMAPPED_0004 → NCIT:C54713 via name normalization to 'NaNO'
+  llm_assisted: false
+notes: 'CultureMech placeholder_id: 1'
+ontology_mapping:
+  ontology_id: NCIT:C54713
+  ontology_label: Nano
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0004; matched via 'NaNO' (name normalization);
+      label-exact

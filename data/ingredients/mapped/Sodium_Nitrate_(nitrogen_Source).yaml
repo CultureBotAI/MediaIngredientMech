@@ -1,0 +1,35 @@
+identifier: CHEBI:63005
+preferred_term: Sodium nitrate (nitrogen source)
+synonyms:
+- synonym_text: Sodium nitrate (nitrogen source)
+  synonym_type: RAW_TEXT
+  source: communitymech-unmapped
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-05-01T02:37:08.074047+00:00'
+  curator: audit_import_ingredients[communitymech-unmapped]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sodium_nitrate_(nitrogen_source));
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.457995+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_CHEBI
+  changes: primary UNMAPPED_0614 → CHEBI:63005 via name normalization to 'Sodium nitrate'
+  llm_assisted: false
+notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sodium_nitrate_(nitrogen_source));
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:63005
+  ontology_label: sodium nitrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0614; matched via 'Sodium nitrate' (name normalization);
+      label-exact

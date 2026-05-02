@@ -1,0 +1,35 @@
+identifier: CHEBI:37054
+preferred_term: (S)-3-hydroxybutyrate
+synonyms:
+- synonym_text: (S)-3-hydroxybutyrate
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.354770+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_CHEBI
+  changes: primary UNMAPPED_0203 → CHEBI:37054 via name normalization to '3-hydroxybutyrate'
+  llm_assisted: false
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:37054
+  ontology_label: 3-hydroxybutyrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0203; matched via '3-hydroxybutyrate' (name
+      normalization); label-exact

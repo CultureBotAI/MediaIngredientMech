@@ -1,0 +1,36 @@
+identifier: mesh:C521980
+preferred_term: Butyl vinyl ether
+synonyms:
+- synonym_text: Butyl vinyl ether
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:391); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.381757+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary UNMAPPED_0349 → mesh:C521980 via name normalization to 'Butyl vinyl
+    ether'
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:391); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: mesh:C521980
+  ontology_label: butyl vinyl ether
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0349; matched via 'Butyl vinyl ether' (name
+      normalization); label-exact

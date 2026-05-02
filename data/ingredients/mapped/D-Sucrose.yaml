@@ -1,0 +1,35 @@
+identifier: CHEBI:17992
+preferred_term: D-Sucrose
+synonyms:
+- synonym_text: D-Sucrose
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1358); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.391837+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_CHEBI
+  changes: primary UNMAPPED_0371 → CHEBI:17992 via name normalization to 'Sucrose'
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1358); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:17992
+  ontology_label: sucrose
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0371; matched via 'Sucrose' (name normalization);
+      label-exact

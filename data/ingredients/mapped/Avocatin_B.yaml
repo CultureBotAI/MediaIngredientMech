@@ -1,0 +1,36 @@
+identifier: mesh:C000709627
+preferred_term: Avocatin B
+synonyms:
+- synonym_text: Avocatin B
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.372821+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary UNMAPPED_0186 → mesh:C000709627 via name normalization to 'Avocatin
+    B'
+  llm_assisted: false
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed.
+ontology_mapping:
+  ontology_id: mesh:C000709627
+  ontology_label: avocatin B
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0186; matched via 'Avocatin B' (name normalization);
+      label-exact

@@ -1,0 +1,38 @@
+identifier: MICRO:0001362
+preferred_term: Digested serum
+synonyms:
+- synonym_text: Digested serum
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in
+    3 CultureBot media; samples: mGAM, mGAM plus, mGAM_plus. No CAS-RN or CHEBI mapping
+    available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.395780+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0244 → MICRO:0001362 via name normalization to 'Digested
+    serum'
+  llm_assisted: false
+notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 3 CultureBot
+  media; samples: mGAM, mGAM plus, mGAM_plus. No CAS-RN or CHEBI mapping available;
+  curator review needed.'
+ontology_mapping:
+  ontology_id: MICRO:0001362
+  ontology_label: digested serum
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0244; matched via 'Digested serum' (name normalization);
+      label-exact

@@ -1,0 +1,36 @@
+identifier: MICRO:0000595
+preferred_term: Brucella agar
+synonyms:
+- synonym_text: Brucella agar
+  synonym_type: RAW_TEXT
+  source: extracted_from_agar_yaml
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T07:49:33.169103+00:00'
+  curator: audit_extract_complex_media_from_agar
+  action: EXTRACTED_COMPLEX_MEDIUM
+  changes: Extracted from Agar.yaml — 'Brucella agar' is a complete media formulation,
+    not a synonym of the chemical CHEBI:2509 (agar). Pending curator re-mapping (likely
+    FOODON complex medium, or split into per-component ingredients).
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.379151+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0117 → MICRO:0000595 via name normalization to 'Brucella
+    agar'
+  llm_assisted: false
+notes: Extracted from over-conflated Agar.yaml synonyms
+ontology_mapping:
+  ontology_id: MICRO:0000595
+  ontology_label: Brucella agar
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0117; matched via 'Brucella agar' (name normalization);
+      label-exact

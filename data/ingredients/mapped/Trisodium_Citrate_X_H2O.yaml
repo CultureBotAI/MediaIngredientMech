@@ -1,0 +1,36 @@
+identifier: mesh:C514290
+preferred_term: Trisodium citrate x H2O
+synonyms:
+- synonym_text: Trisodium citrate x H2O
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1888); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.470728+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_MESH
+  changes: primary UNMAPPED_0556 → mesh:C514290 via name normalization to 'Trisodium
+    citrate'
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1888); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: mesh:C514290
+  ontology_label: trisodium citrate
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0556; matched via 'Trisodium citrate' (name
+      normalization); label-exact

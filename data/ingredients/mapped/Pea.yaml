@@ -1,0 +1,36 @@
+identifier: NCIT:C72056
+preferred_term: Pea
+synonyms:
+- synonym_text: Pea
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Pea(add after dH2O)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.436550+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_NCIT
+  changes: primary UNMAPPED_0058 → NCIT:C72056 via name normalization to 'Pea'
+  llm_assisted: false
+notes: 'CultureMech placeholder_id: 2'
+ontology_mapping:
+  ontology_id: NCIT:C72056
+  ontology_label: Pea
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0058; matched via 'Pea' (name normalization);
+      label-exact

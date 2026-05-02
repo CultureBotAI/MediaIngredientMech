@@ -1,0 +1,40 @@
+identifier: NCIT:C113696
+preferred_term: Fetal bovine serum
+synonyms:
+- synonym_text: Fetal bovine serum
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 8
+  media_count: 8
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in
+    8 CultureBot media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum
+    Conditioned, RPMI with Fetal bovine serum…. No CAS-RN or CHEBI mapping available;
+    curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.403009+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_NCIT
+  changes: primary UNMAPPED_0183 → NCIT:C113696 via name normalization to 'Fetal bovine
+    serum'
+  llm_assisted: false
+notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 8 CultureBot
+  media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum Conditioned,
+  RPMI with Fetal bovine serum…. No CAS-RN or CHEBI mapping available; curator review
+  needed.'
+ontology_mapping:
+  ontology_id: NCIT:C113696
+  ontology_label: Fetal Bovine Serum
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0183; matched via 'Fetal bovine serum' (name
+      normalization); label-exact

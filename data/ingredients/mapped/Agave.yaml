@@ -1,0 +1,35 @@
+identifier: FOODON:00005198
+preferred_term: Agave
+synonyms:
+- synonym_text: Agave
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T00:41:18.366704+00:00'
+  curator: resolve_unmapped
+  action: AUTO_UPGRADE_TO_FOODON
+  changes: primary UNMAPPED_0140 → FOODON:00005198 via name normalization to 'Agave'
+  llm_assisted: false
+notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
+  CHEBI mapping available; curator review needed.
+ontology_mapping:
+  ontology_id: FOODON:00005198
+  ontology_label: agave
+  ontology_source: FOODON
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: FOODON via OLS search (resolve_unmapped)
+    notes: Auto-upgraded from UNMAPPED_0140; matched via 'Agave' (name normalization);
+      label-exact
