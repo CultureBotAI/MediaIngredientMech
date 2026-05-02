@@ -1,10 +1,10 @@
 identifier: cas:3374-05-8
 preferred_term: Nalidixic acid sodium salt
 ontology_mapping:
-  ontology_id: cas:3374-05-8
-  ontology_label: Nalidixic acid sodium salt
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:100147
+  ontology_label: nalidixic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -12,6 +12,10 @@ ontology_mapping:
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
       Hans80Anti, FEBA_stress. Curator can promote to a CHEBI primary if/when CHEBI
       adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Nalidixic acid
+      sodium salt'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -40,6 +44,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:54:05.154819+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:100147 (stem-substring)
   llm_assisted: false
 chemical_properties:
   cas_rn: 3374-05-8

@@ -1,10 +1,10 @@
 identifier: kgmicrobe.compound:hydro_methylpteroylglutamylglutamic_acid
 preferred_term: Hydro Methylpteroylglutamylglutamic Acid
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:hydro_methylpteroylglutamylglutamic_acid
-  ontology_label: Hydro Methylpteroylglutamylglutamic Acid
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: NCIT:C1115
+  ontology_label: Glutamic Acid
+  ontology_source: NCIT
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -13,6 +13,10 @@ ontology_mapping:
       CHEBI:67471(14-hydro-15-hydroxyajugapitin), CHEBI:90170(2-hydro-beta-NADP),
       CHEBI:90171(2-hydro-beta-NAD). Pending curator promotion to a CHEBI/NCIT primary
       identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Hydro Methylpteroylglutamylglutamic
+      Acid'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -36,5 +40,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:16:33.669443+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_NCIT
+  changes: set ontology_mapping parent=NCIT:C1115 (stem-substring)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

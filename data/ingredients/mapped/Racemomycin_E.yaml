@@ -1,10 +1,10 @@
 identifier: kgmicrobe.compound:racemomycin_e
 preferred_term: Racemomycin E
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:racemomycin_e
-  ontology_label: Racemomycin E
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C019594
+  ontology_label: racemomycin
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,9 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:60826(streptothricin acid), CHEBI:175891((E,E,E)-Sylvatine), CHEBI:46762((E,E,E)-geranylgeraniol).
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS (label-exact)
+    notes: Parent class identified via label-exact; matched_via='Racemomycin'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -35,5 +38,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:18:25.591558+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_MESH
+  changes: set ontology_mapping parent=mesh:C019594 (label-exact)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

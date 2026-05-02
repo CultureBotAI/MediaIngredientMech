@@ -16,5 +16,19 @@ curation_history:
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-02T07:20:09.296478+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:176843 (label-exact)
+  llm_assisted: false
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Vitamin_B12_(cyanocobalamin));
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:176843
+  ontology_label: vitamin B12
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (label-exact)
+    notes: Parent class identified via label-exact; matched_via='Vitamin B12'

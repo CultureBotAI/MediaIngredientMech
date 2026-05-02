@@ -1,10 +1,10 @@
 identifier: cas:333-93-7
 preferred_term: Putrescine Dihydrochloride
 ontology_mapping:
-  ontology_id: cas:333-93-7
-  ontology_label: Putrescine Dihydrochloride
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:201718
+  ontology_label: 1,4-Diaminobutane dihydrochloride
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -12,6 +12,9 @@ ontology_mapping:
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
       FEBA_carbon, FEBA_nitrogen. Curator can promote to a CHEBI primary if/when CHEBI
       adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via PubChem (pubchem-xref)
+    notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 9532'
 synonyms:
 - synonym_text: Putrescine
   synonym_type: EXACT_SYNONYM
@@ -42,6 +45,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:58:10.369776+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:201718 (pubchem-xref)
   llm_assisted: false
 chemical_properties:
   cas_rn: 333-93-7

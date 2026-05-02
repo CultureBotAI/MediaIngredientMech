@@ -1,10 +1,10 @@
 identifier: kgmicrobe.compound:ristocetin_b
 preferred_term: Ristocetin B
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:ristocetin_b
-  ontology_label: Ristocetin B
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: CHEBI:85129
+  ontology_label: ristocetin
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,9 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:85129(ristocetin), CHEBI:201477(Ristocetin sulfate), CHEBI:201735(Ristocetin
       A sulfate). Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (label-exact)
+    notes: Parent class identified via label-exact; matched_via='Ristocetin'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -35,5 +38,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:18:52.604642+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:85129 (label-exact)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

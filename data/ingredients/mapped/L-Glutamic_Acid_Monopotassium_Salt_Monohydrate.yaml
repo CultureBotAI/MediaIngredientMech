@@ -1,10 +1,10 @@
 identifier: cas:6382-01-0
 preferred_term: L-Glutamic acid monopotassium salt monohydrate
 ontology_mapping:
-  ontology_id: cas:6382-01-0
-  ontology_label: L-Glutamic acid monopotassium salt monohydrate
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:16015
+  ontology_label: L-glutamic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -13,6 +13,10 @@ ontology_mapping:
       FEBA_carbon, FEBA_nitrogen. Used in 44 CultureBot media; samples: Hans Basal
       Media plus 0.2x 20AA mix, ZMB Gut, SGW Northen Exometabolite mix 5x…. Curator
       can promote to a CHEBI primary if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='L-Glutamic acid
+      monopotassium salt monohydrate'
 synonyms:
 - synonym_text: L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium
     salt
@@ -44,6 +48,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:50:46.720378+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:16015 (stem-substring)
   llm_assisted: false
 chemical_properties:
   cas_rn: 6382-01-0

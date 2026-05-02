@@ -1,16 +1,19 @@
 identifier: cas:37331-28-5
 preferred_term: Pustulan (b-1-6 glucan)
 ontology_mapping:
-  ontology_id: cas:37331-28-5
-  ontology_label: Pustulan (b-1-6 glucan)
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: mesh:C002076
+  ontology_label: pustulan
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 37331-28-5 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: MESH via OLS (label-exact)
+    notes: Parent class identified via label-exact; matched_via='Pustulan'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -39,6 +42,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:58:08.057415+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_MESH
+  changes: set ontology_mapping parent=mesh:C002076 (label-exact)
   llm_assisted: false
 chemical_properties:
   cas_rn: 37331-28-5

@@ -1,16 +1,20 @@
 identifier: cas:323194-76-9
 preferred_term: L-Aspartic acid sodium salt monohydrate
 ontology_mapping:
-  ontology_id: cas:323194-76-9
-  ontology_label: L-Aspartic acid sodium salt monohydrate
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:17053
+  ontology_label: L-aspartic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 323194-76-9 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='L-Aspartic acid
+      sodium salt monohydrate'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -38,6 +42,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:50:42.821029+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:17053 (stem-substring)
   llm_assisted: false
 chemical_properties:
   cas_rn: 323194-76-9

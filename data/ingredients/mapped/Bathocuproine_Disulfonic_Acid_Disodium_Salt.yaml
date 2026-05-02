@@ -1,16 +1,20 @@
 identifier: cas:52698-84-7
 preferred_term: Bathocuproine disulfonic acid disodium salt
 ontology_mapping:
-  ontology_id: cas:52698-84-7
-  ontology_label: Bathocuproine disulfonic acid disodium salt
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:63934
+  ontology_label: bathocuproine disulfonic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 52698-84-7 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Bathocuproine
+      disulfonic acid disodium salt'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -39,6 +43,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:41:23.613433+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:63934 (stem-substring)
   llm_assisted: false
 chemical_properties:
   cas_rn: 52698-84-7

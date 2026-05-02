@@ -1,16 +1,20 @@
 identifier: cas:2013-26-5
 preferred_term: 2-oxobutyric acid sodium salt
 ontology_mapping:
-  ontology_id: cas:2013-26-5
-  ontology_label: 2-oxobutyric acid sodium salt
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:26714
+  ontology_label: sodium salt
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 2013-26-5 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='2-oxobutyric acid
+      sodium salt'
 synonyms:
 - synonym_text: Sodium 2-oxobutyrate
   synonym_type: EXACT_SYNONYM
@@ -36,6 +40,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-05-02T04:37:05.511022+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:26714 (stem-substring)
   llm_assisted: false
 chemical_properties:
   cas_rn: 2013-26-5

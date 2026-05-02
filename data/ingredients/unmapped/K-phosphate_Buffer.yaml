@@ -22,6 +22,20 @@ curation_history:
   changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'phosphate
     buffer')
   llm_assisted: false
+- timestamp: '2026-05-02T06:34:19.519689+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_NCIT
+  changes: set ontology_mapping parent=NCIT:C29321 (stem-substring)
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:283); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: NCIT:C29321
+  ontology_label: Phosphate Buffer
+  ontology_source: NCIT
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='K-phosphate buffer'

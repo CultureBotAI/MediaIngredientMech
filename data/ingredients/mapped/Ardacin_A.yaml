@@ -1,10 +1,10 @@
 identifier: kgmicrobe.compound:ardacin_a
 preferred_term: Ardacin A
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:ardacin_a
-  ontology_label: Ardacin A
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: NCIT:C169786
+  ontology_label: Ardacin
+  ontology_source: NCIT
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,9 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:199303(A83094A), CHEBI:199353(A-90289 A), CHEBI:199611(A32390A). Pending
       curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS (label-exact)
+    notes: Parent class identified via label-exact; matched_via='Ardacin'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -35,5 +38,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-02T05:08:37.233567+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_NCIT
+  changes: set ontology_mapping parent=NCIT:C169786 (label-exact)
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

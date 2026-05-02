@@ -1,16 +1,20 @@
 identifier: cas:29849-82-9
 preferred_term: sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt
 ontology_mapping:
-  ontology_id: cas:29849-82-9
-  ontology_label: sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:15978
+  ontology_label: sn-glycerol 3-phosphate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 29849-82-9 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='sn-Glycerol 3-phosphate
+      bis(cyclohexylammonium) salt'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -39,6 +43,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:59:57.865203+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:15978 (stem-substring)
   llm_assisted: false
 chemical_properties:
   cas_rn: 29849-82-9

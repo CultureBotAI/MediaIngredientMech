@@ -1,16 +1,19 @@
 identifier: cas:2152-98-9
 preferred_term: 1,4-B-D-Galactobiose
 ontology_mapping:
-  ontology_id: cas:2152-98-9
-  ontology_label: 1,4-B-D-Galactobiose
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:36226
+  ontology_label: beta-D-galactopyranosyl-(1->4)-D-galactopyranose
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 2152-98-9 / 6206-28-6 present, but no
       CHEBI entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator
       can promote to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via PubChem (pubchem-xref)
+    notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 9548802'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -39,6 +42,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:36:06.871431+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:36226 (pubchem-xref)
   llm_assisted: false
 chemical_properties:
   cas_rn: 2152-98-9

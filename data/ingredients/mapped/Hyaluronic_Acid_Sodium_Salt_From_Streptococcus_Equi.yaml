@@ -1,16 +1,20 @@
 identifier: cas:9067-32-7
 preferred_term: Hyaluronic acid sodium salt from Streptococcus equi
 ontology_mapping:
-  ontology_id: cas:9067-32-7
-  ontology_label: Hyaluronic acid sodium salt from Streptococcus equi
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:201433
+  ontology_label: Hyaluronic acid sodium
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 9067-32-7 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (stem-substring)
+    notes: Parent class identified via stem-substring; matched_via='Hyaluronic acid
+      sodium salt from Streptococcus equi'
 synonyms:
 - synonym_text: not filter sterilized
   synonym_type: EXACT_SYNONYM
@@ -42,6 +46,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T04:50:09.263771+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:201433 (stem-substring)
   llm_assisted: false
 chemical_properties:
   cas_rn: 9067-32-7
