@@ -21,6 +21,11 @@ curation_history:
   action: AUTO_UPGRADE_TO_ENVO
   changes: primary UNMAPPED_0392 → ENVO:00002263 (label-exact)
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.643642+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'soil')
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2159); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -32,3 +37,4 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: ENVO via OLS search
     notes: Auto-upgraded from 'UNMAPPED_0392'; match=label-exact
+ingredient_type: UNDEFINED_MIXTURE

@@ -22,6 +22,11 @@ curation_history:
   changes: primary UNMAPPED_0482 → MICRO:0000082 via name normalization to 'Nutrient
     broth'
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.524873+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'broth')
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:501); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -34,3 +39,4 @@ ontology_mapping:
     source: MICRO via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0482; matched via 'Nutrient broth' (name normalization);
       label-exact
+ingredient_type: UNDEFINED_MIXTURE

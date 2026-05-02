@@ -22,6 +22,11 @@ curation_history:
   action: AUTO_UPGRADE_TO_CHEBI
   changes: primary UNMAPPED_0304 → CHEBI:17126 via name normalization to 'Carnitine'
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.373417+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   2 CultureBot media; samples: Ying_Others16, Ying_all64. No CAS-RN or CHEBI mapping
   available; curator review needed.'
@@ -35,3 +40,4 @@ ontology_mapping:
     source: CHEBI via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0304; matched via 'Carnitine' (name normalization);
       label-exact
+ingredient_type: SINGLE_INGREDIENT

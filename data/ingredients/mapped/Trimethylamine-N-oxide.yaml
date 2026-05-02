@@ -34,6 +34,11 @@ curation_history:
   action: AUTO_BACKFILL_CHEBI_CHEMISTRY
   changes: molecular_formula=C3H9NO; inchi=InChI=1S/C3H9NO/c1-4(2,3)5/h1-3H3; smiles=C[N+](C)(C)[O-]
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.987286+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
 chemical_properties:
   cas_rn: 1184-78-7
   data_source: CultureBotHT compounds_to_cas.csv

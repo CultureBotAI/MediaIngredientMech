@@ -26,6 +26,11 @@ curation_history:
   action: FIX_FALSE_POSITIVE_FOODON_TO_ENVO
   changes: FOODON:00004411 (dry cow) → ENVO:00003031 (animal manure)
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.186111+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'manure')
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2131); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -40,3 +45,4 @@ ontology_mapping:
       which is the WRONG sense. Manure-as-ingredient is properly modeled in ENVO.
       ENVO:00003031 (animal manure) is the closest broad match available; cow-specific
       manure is not in ENVO.
+ingredient_type: UNDEFINED_MIXTURE

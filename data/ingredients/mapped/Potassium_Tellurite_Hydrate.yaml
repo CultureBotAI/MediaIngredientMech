@@ -35,6 +35,11 @@ curation_history:
   action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
   changes: molecular_formula=K2O3Te; smiles=[O-][Te](=O)[O-].[K+].[K+]; inchi=InChI=1S/2K.H2O3Te/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.879399+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
 chemical_properties:
   cas_rn: 123333-66-4
   data_source: CultureBotHT compounds_to_cas.csv

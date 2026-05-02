@@ -34,6 +34,11 @@ curation_history:
   action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
   changes: molecular_formula=C8H10O5; smiles=C1=CC(=CC=C1C(C(=O)O)O)O.O; inchi=InChI=1S/C8H8O4.H2O/c9-6-3-1-5(2-4-6)7(10)8(11)12;
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.070481+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
 chemical_properties:
   cas_rn: 184901-84-6
   data_source: CultureBotHT compounds_to_cas.csv

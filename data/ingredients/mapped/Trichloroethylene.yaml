@@ -89,6 +89,11 @@ curation_history:
   action: AUTO_BACKFILL_CHEBI_CHEMISTRY
   changes: molecular_formula=C2HCl3; inchi=InChI=1S/C2HCl3/c3-1-2(4)5/h1H; smiles=ClC=C(Cl)Cl
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.966632+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
 chemical_properties:
   cas_rn: 79-01-6
   data_source: PubChem API

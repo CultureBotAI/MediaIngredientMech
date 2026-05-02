@@ -22,6 +22,11 @@ curation_history:
   changes: primary UNMAPPED_0350 → CHEBI:31345 via name normalization to 'Calcium
     Pantothenate'
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.030262+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1585); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -34,3 +39,4 @@ ontology_mapping:
     source: CHEBI via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0350; matched via 'Calcium Pantothenate' (name
       normalization); label-exact
+ingredient_type: SINGLE_INGREDIENT

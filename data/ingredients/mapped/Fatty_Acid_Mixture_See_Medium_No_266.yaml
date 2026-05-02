@@ -68,7 +68,12 @@ curation_history:
   action: CLASSIFY_AS_STOCK_SOLUTION
   changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
   llm_assisted: false
-ingredient_type: STOCK_SOLUTION
+- timestamp: '2026-05-02T03:12:14.341135+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: CHO2R
   smiles: '*C(=O)O'

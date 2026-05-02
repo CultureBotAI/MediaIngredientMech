@@ -32,6 +32,11 @@ curation_history:
   action: AUTO_BACKFILL_CHEBI_CHEMISTRY
   changes: inchi=InChI=1S/C4H9NO/c1-3(2)4(5)6/h3H,1-2H3,(H2,5,6); smiles=CC(C)C(N)=O
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.149642+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (smiles))
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   inchi: InChI=1S/C4H9NO/c1-3(2)4(5)6/h3H,1-2H3,(H2,5,6)

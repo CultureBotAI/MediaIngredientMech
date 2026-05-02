@@ -22,6 +22,11 @@ curation_history:
   action: AUTO_UPGRADE_TO_MICRO
   changes: primary UNMAPPED_0282 → MICRO:0001773 (label-exact)
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:14.508016+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Seawater')
+  llm_assisted: false
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   2 CultureBot media; samples: Pro99 seawater, Pro99_seawater. No CAS-RN or CHEBI
   mapping available; curator review needed.'
@@ -34,3 +39,4 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: MICRO via OLS search
     notes: Auto-upgraded from 'UNMAPPED_0282'; match=label-exact
+ingredient_type: UNDEFINED_MIXTURE

@@ -27,6 +27,11 @@ curation_history:
   changes: primary FOODON:02020911 → kgmicrobe.ingredient:beef_brain_powder; ontology_mapping
     retains FOODON:02020911 as NARROW_MATCH parent
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.731203+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Beef')
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1660); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -43,3 +48,4 @@ ontology_mapping:
     notes: Minted kgmicrobe.ingredient:beef_brain_powder to preserve ingredient-level
       specificity beyond FOODON:02020911 (beef brain). Parent relationship persists
       via skos:narrowMatch in SSSOM emission.
+ingredient_type: UNDEFINED_MIXTURE

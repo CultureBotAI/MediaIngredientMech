@@ -21,6 +21,11 @@ curation_history:
   action: AUTO_UPGRADE_TO_FOODON
   changes: primary UNMAPPED_0368 → FOODON:02020891 (fuzzy-top)
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:13.528381+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'milk')
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1659); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -32,3 +37,4 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: FOODON via OLS search
     notes: Auto-upgraded from 'UNMAPPED_0368'; match=fuzzy-top
+ingredient_type: UNDEFINED_MIXTURE

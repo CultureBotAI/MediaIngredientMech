@@ -1,0 +1,40 @@
+identifier: MICRO:0000460
+preferred_term: Thiamine Vitamin Solution
+synonyms:
+- synonym_text: Thiamine Vitamin Solution
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 14
+  media_count: 14
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.944616+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Vitamin
+    Solution')
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.980596+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0013 → MICRO:0000460 (strategy=stem-match)
+  llm_assisted: false
+notes: 'CultureMech placeholder_id: 7'
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: MICRO:0000460
+  ontology_label: vitamin solution
+  ontology_source: MICRO
+  mapping_quality: LEXICAL_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
+    notes: Auto-upgraded from UNMAPPED_0013; matched via 'Thiamine Vitamin Solution';
+      stem-substring

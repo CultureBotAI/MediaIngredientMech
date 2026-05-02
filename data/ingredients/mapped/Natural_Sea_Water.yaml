@@ -1,0 +1,41 @@
+identifier: ENVO:00002149
+preferred_term: Natural sea water
+synonyms:
+- synonym_text: Natural sea water
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2152); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.809543+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'sea
+    water')
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.951110+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_ENVO
+  changes: primary UNMAPPED_0478 → ENVO:00002149 (strategy=stem-match)
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2152); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: ENVO:00002149
+  ontology_label: sea water
+  ontology_source: ENVO
+  mapping_quality: LEXICAL_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: ENVO via OLS (resolve_unmapped_v2 strategy=stem-match)
+    notes: Auto-upgraded from UNMAPPED_0478; matched via 'Natural sea water'; stem-substring

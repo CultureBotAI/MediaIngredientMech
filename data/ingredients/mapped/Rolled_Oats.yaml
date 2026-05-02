@@ -22,6 +22,11 @@ curation_history:
   changes: primary UNMAPPED_0509 → FOODON:03307110 via name normalization to 'Rolled
     oats'
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.141248+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:188); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -34,3 +39,4 @@ ontology_mapping:
     source: FOODON via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0509; matched via 'Rolled oats' (name normalization);
       label-exact
+ingredient_type: UNDEFINED_MIXTURE

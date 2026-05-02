@@ -58,6 +58,11 @@ curation_history:
   action: AUTO_BACKFILL_CHEBI_CHEMISTRY
   changes: molecular_formula=2Na.O4W; inchi=InChI=1S/2Na.4O.W/q2*+1;;;2*-1;; smiles=[Na+].[Na+].[O]=[W](=[O])([O-])[O-]
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.133109+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
 chemical_properties:
   cas_rn: 13472-45-2
   data_source: PubChem API

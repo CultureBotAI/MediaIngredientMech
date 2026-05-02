@@ -21,6 +21,11 @@ curation_history:
   action: AUTO_UPGRADE_TO_CHEBI
   changes: primary UNMAPPED_0417 → CHEBI:16856 via name normalization to 'Glutathione'
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.393261+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2085); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -33,3 +38,4 @@ ontology_mapping:
     source: CHEBI via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0417; matched via 'Glutathione' (name normalization);
       label-exact
+ingredient_type: SINGLE_INGREDIENT

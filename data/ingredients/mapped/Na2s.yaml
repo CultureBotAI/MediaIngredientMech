@@ -104,6 +104,11 @@ curation_history:
   action: AUTO_BACKFILL_CHEBI_CHEMISTRY
   changes: molecular_formula=2Na.S; inchi=InChI=1S/2Na.S/q2*+1;-2; smiles=[Na+].[Na+].[S-2]
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:17.032567+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
 chemical_properties:
   cas_rn: 1313-82-2
   data_source: CultureBotHT/compounds_to_cas.csv

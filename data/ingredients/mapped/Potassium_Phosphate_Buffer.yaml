@@ -1,0 +1,44 @@
+identifier: NCIT:C29321
+preferred_term: Potassium phosphate buffer
+synonyms:
+- synonym_text: Potassium phosphate buffer
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 2
+  media_count: 2
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 2 CultureBot media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available;
+    curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.854401+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'phosphate
+    buffer')
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.960132+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_NCIT
+  changes: primary UNMAPPED_0274 → NCIT:C29321 (strategy=stem-match)
+  llm_assisted: false
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  2 CultureBot media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available; curator
+  review needed.'
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: NCIT:C29321
+  ontology_label: Phosphate Buffer
+  ontology_source: NCIT
+  mapping_quality: LEXICAL_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via OLS (resolve_unmapped_v2 strategy=stem-match)
+    notes: Auto-upgraded from UNMAPPED_0274; matched via 'Potassium phosphate buffer';
+      stem-substring

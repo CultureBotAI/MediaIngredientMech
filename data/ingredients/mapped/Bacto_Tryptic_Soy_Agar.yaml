@@ -1,0 +1,41 @@
+identifier: MICRO:0000114
+preferred_term: Bacto Tryptic Soy Agar
+synonyms:
+- synonym_text: Bacto Tryptic Soy Agar
+  synonym_type: RAW_TEXT
+  source: extracted_from_trypticase_peptone_yaml
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-19T07:53:54.781350+00:00'
+  curator: audit_extract_complex_media_synonyms
+  action: EXTRACTED_COMPLEX_MEDIUM
+  changes: Extracted from Trypticase_Peptone.yaml — 'Bacto Tryptic Soy Agar' is a
+    complete media formulation, not a synonym of the base ingredient. Pending curator
+    re-mapping.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.471188+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Soy')
+  llm_assisted: false
+- timestamp: '2026-05-02T03:18:21.882864+00:00'
+  curator: resolve_unmapped_v2
+  action: AUTO_UPGRADE_TO_MICRO
+  changes: primary UNMAPPED_0137 → MICRO:0000114 (strategy=stem-match)
+  llm_assisted: false
+notes: Extracted from over-conflated Trypticase_Peptone.yaml synonyms
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0000114
+  ontology_label: tryptic soy agar
+  ontology_source: MICRO
+  mapping_quality: LEXICAL_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
+    notes: Auto-upgraded from UNMAPPED_0137; matched via 'Bacto Tryptic Soy Agar';
+      stem-substring

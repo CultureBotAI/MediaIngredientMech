@@ -21,6 +21,12 @@ curation_history:
   action: AUTO_UPGRADE_TO_ENVO
   changes: primary UNMAPPED_0518 → ENVO:00002149 via name normalization to 'Sea water'
   llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.201290+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Sea
+    water')
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:286); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -33,3 +39,4 @@ ontology_mapping:
     source: ENVO via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0518; matched via 'Sea water' (name normalization);
       label-exact
+ingredient_type: UNDEFINED_MIXTURE
