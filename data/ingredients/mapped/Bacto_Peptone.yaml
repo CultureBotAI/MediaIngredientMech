@@ -1,10 +1,10 @@
-identifier: FOODON:03315718
+identifier: MICRO:0000178
 preferred_term: Bacto peptone
 ontology_mapping:
-  ontology_id: FOODON:03315718
-  ontology_label: animal protein (hydrolyzed)
-  ontology_source: FOODON
-  mapping_quality: CLOSE_MATCH
+  ontology_id: MICRO:0000178
+  ontology_label: peptone
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: cbclaw_foodon_promotion
@@ -12,6 +12,10 @@ ontology_mapping:
       (BD/Difco) is an enzymatic digest of animal protein (per Difco manual, primarily
       meat tissue); mapped to FOODON parent 'animal protein (hydrolyzed)'. No exact
       FOODON term for bacto peptone. CLOSE_MATCH.
+  - evidence_type: CURATOR_JUDGMENT
+    source: manual review of MICRO ontology coverage
+    notes: Bacto Peptone is the brand name for generic peptone. MICRO:0000178 is the
+      precise term; FOODON:03315718 was a less-specific parent.
 synonyms:
 - synonym_text: Bacto peptone
   synonym_type: EXACT_SYNONYM
@@ -120,5 +124,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'peptone')
+  llm_assisted: false
+- timestamp: '2026-05-02T01:19:04.369178+00:00'
+  curator: manual_micro_specificity_pass
+  action: UPGRADE_FOODON_PARENT_TO_MICRO_SPECIFIC
+  changes: FOODON:03315718 → MICRO:0000178 (more specific MICRO term)
   llm_assisted: false
 ingredient_type: UNDEFINED_MIXTURE

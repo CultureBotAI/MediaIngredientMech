@@ -1,10 +1,10 @@
-identifier: FOODON:03315719
+identifier: MICRO:0000606
 preferred_term: Casitone
 ontology_mapping:
-  ontology_id: FOODON:03315719
-  ontology_label: mammalian milk protein (hydrolyzed)
-  ontology_source: FOODON
-  mapping_quality: CLOSE_MATCH
+  ontology_id: MICRO:0000606
+  ontology_label: casitone
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: cbclaw_foodon_promotion
@@ -12,6 +12,10 @@ ontology_mapping:
       is a pancreatic (enzymatic) digest of casein; equivalent in composition to tryptone.
       Mapped to FOODON parent 'mammalian milk protein (hydrolyzed)' since no exact
       FOODON term exists. CLOSE_MATCH.
+  - evidence_type: CURATOR_JUDGMENT
+    source: manual review of MICRO ontology coverage
+    notes: Casitone (BBL) is a pancreatic digest of casein. MICRO has the precise
+      term; FOODON:03315719 was the parent class.
 synonyms:
 - synonym_text: Casitone
   synonym_type: EXACT_SYNONYM
@@ -44,5 +48,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))
+  llm_assisted: false
+- timestamp: '2026-05-02T01:19:04.352049+00:00'
+  curator: manual_micro_specificity_pass
+  action: UPGRADE_FOODON_PARENT_TO_MICRO_SPECIFIC
+  changes: FOODON:03315719 → MICRO:0000606 (more specific MICRO term)
   llm_assisted: false
 ingredient_type: UNDEFINED_MIXTURE

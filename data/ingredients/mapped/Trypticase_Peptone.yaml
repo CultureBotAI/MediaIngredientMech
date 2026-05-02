@@ -1,10 +1,10 @@
-identifier: FOODON:03315306
+identifier: MICRO:0000175
 preferred_term: Trypticase peptone
 ontology_mapping:
-  ontology_id: FOODON:03315306
-  ontology_label: protein hydrolyzates
-  ontology_source: FOODON
-  mapping_quality: CLOSE_MATCH
+  ontology_id: MICRO:0000175
+  ontology_label: Trypticase peptone
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: cbclaw_foodon_promotion
@@ -13,6 +13,9 @@ ontology_mapping:
       in BBL/BD Trypticase Soy Broth formulations which also include soy peptone.
       Mapped to generic FOODON parent 'protein hydrolyzates' since no exact FOODON
       term exists. CLOSE_MATCH.
+  - evidence_type: CURATOR_JUDGMENT
+    source: manual review of MICRO ontology coverage
+    notes: MICRO has the exact label; FOODON:03315306 was a parent.
 synonyms:
 - synonym_text: Trypticase peptone
   synonym_type: EXACT_SYNONYM
@@ -55,5 +58,10 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'peptone')
+  llm_assisted: false
+- timestamp: '2026-05-02T01:19:04.355943+00:00'
+  curator: manual_micro_specificity_pass
+  action: UPGRADE_FOODON_PARENT_TO_MICRO_SPECIFIC
+  changes: FOODON:03315306 → MICRO:0000175 (more specific MICRO term)
   llm_assisted: false
 ingredient_type: UNDEFINED_MIXTURE
