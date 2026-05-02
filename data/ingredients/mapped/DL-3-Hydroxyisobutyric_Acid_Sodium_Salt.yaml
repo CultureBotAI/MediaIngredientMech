@@ -29,8 +29,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
   llm_assisted: false
+- timestamp: '2026-05-02T02:52:47.769470+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C4H7NaO3; smiles=CC(CO)C(=O)[O-].[Na+]; inchi=InChI=1S/C4H8O3.Na/c1-3(2-5)4(6)7;/h3,5H,2H2,1H3,(
+  llm_assisted: false
 chemical_properties:
   cas_rn: 1219589-99-7
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C4H7NaO3
+  smiles: CC(CO)C(=O)[O-].[Na+]
+  inchi: InChI=1S/C4H8O3.Na/c1-3(2-5)4(6)7;/h3,5H,2H2,1H3,(H,6,7);/q;+1/p-1
+  pubchem_cid: 71311737
 ingredient_type: SINGLE_INGREDIENT

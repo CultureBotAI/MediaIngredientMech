@@ -29,8 +29,18 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
   llm_assisted: false
+- timestamp: '2026-05-02T02:53:51.470143+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=C32H55NO25; smiles=CC1C(C(C(C(O1)OC2C(C(OC(C2OC3C(C(C(C(O3)CO)O)O)O)C;
+    inchi=InChI=1S/C32H55NO25/c1-8-16(42)20(46)22(48)30(51-8
+  llm_assisted: false
 chemical_properties:
   cas_rn: 25541-09-7
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C32H55NO25
+  smiles: CC1C(C(C(C(O1)OC2C(C(OC(C2OC3C(C(C(C(O3)CO)O)O)O)CO)OC4C(C(OC(C4O)OC(C(CO)O)C(C(C=O)O)O)CO)O)NC(=O)C)O)O)O
+  inchi: InChI=1S/C32H55NO25/c1-8-16(42)20(46)22(48)30(51-8)57-27-15(33-9(2)39)29(54-14(7-38)26(27)56-31-23(49)21(47)18(44)12(5-36)52-31)58-28-19(45)13(6-37)53-32(24(28)50)55-25(11(41)4-35)17(43)10(40)3-34/h3,8,10-32,35-38,40-50H,4-7H2,1-2H3,(H,33,39)/t8-,10-,11+,12+,13+,14+,15+,16+,17+,18-,19-,20+,21-,22-,23+,24+,25+,26+,27+,28-,29-,30-,31-,32-/m0/s1
+  pubchem_cid: 53477857
 ingredient_type: SINGLE_INGREDIENT

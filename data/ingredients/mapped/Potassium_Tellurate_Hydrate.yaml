@@ -29,8 +29,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
   llm_assisted: false
+- timestamp: '2026-05-02T02:54:43.295574+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+  changes: molecular_formula=H2K2O5Te; smiles=O.[O-][Te](=O)(=O)[O-].[K+].[K+]; inchi=InChI=1S/2K.H2O4Te.H2O/c;;1-5(2,3)4;/h;;(H2,1,2,3,
+  llm_assisted: false
 chemical_properties:
   cas_rn: 314041-10-6
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: H2K2O5Te
+  smiles: O.[O-][Te](=O)(=O)[O-].[K+].[K+]
+  inchi: InChI=1S/2K.H2O4Te.H2O/c;;1-5(2,3)4;/h;;(H2,1,2,3,4);1H2/q2*+1;;/p-2
+  pubchem_cid: 17749147
 ingredient_type: SINGLE_INGREDIENT
