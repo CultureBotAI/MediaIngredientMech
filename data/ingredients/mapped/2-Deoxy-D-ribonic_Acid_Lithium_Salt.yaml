@@ -46,8 +46,17 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:86350 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:49.170796+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C5H10O5; inchi=InChI=1S/C5H10O5/c6-2-4(8)3(7)1-5(9)10/h3-4,6-8H,1;
+    smiles=O=C(O)C[C@H](O)[C@H](O)CO
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7284-15-3
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  molecular_formula: C5H10O5
+  inchi: InChI=1S/C5H10O5/c6-2-4(8)3(7)1-5(9)10/h3-4,6-8H,1-2H2,(H,9,10)/t3-,4+/m0/s1
+  smiles: O=C(O)C[C@H](O)[C@H](O)CO
 ingredient_type: SINGLE_INGREDIENT

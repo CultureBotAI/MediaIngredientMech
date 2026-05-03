@@ -87,13 +87,22 @@ curation_history:
 - timestamp: '2026-05-02T15:00:00+00:00'
   curator: family_mismatch_fix
   action: REMAPPED_ONTOLOGY
-  changes: 'CHEBI:86158 (calcium chloride dihydrate) → CHEBI:3312 (calcium dichloride);
+  changes: CHEBI:86158 (calcium chloride dihydrate) → CHEBI:3312 (calcium dichloride);
     generic ingredient name "Calcium Chloride" should use anhydrous parent. Cleared
     chemical_properties molecular_formula/inchi/smiles (were dihydrate-specific) and
-    kg_microbe_node_id for re-backfill against the new CHEBI.'
+    kg_microbe_node_id for re-backfill against the new CHEBI.
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:49.869643+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Ca.2Cl; inchi=InChI=1S/Ca.2ClH/h;2*1H/q+2;;/p-2; smiles=[Ca+2].[Cl-].[Cl-]
   llm_assisted: false
 chemical_properties:
   cas_rn: 10043-52-4
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-05T21:48:44.807586'
+  molecular_formula: Ca.2Cl
+  inchi: InChI=1S/Ca.2ClH/h;2*1H/q+2;;/p-2
+  smiles: '[Ca+2].[Cl-].[Cl-]'
 ingredient_type: SINGLE_INGREDIENT
+kg_microbe_node_id: CHEBI:3312

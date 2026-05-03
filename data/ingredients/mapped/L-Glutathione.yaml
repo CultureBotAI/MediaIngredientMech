@@ -26,6 +26,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:51.268392+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H17N3O6S; inchi=InChI=1S/C10H17N3O6S/c11-5(10(18)19)1-2-7(14)13-6(;
+    smiles=N[C@@H](CCC(=O)N[C@@H](CS)C(=O)NCC(=O)O)C(=O)O
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2085); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -39,3 +45,9 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0417; matched via 'Glutathione' (name normalization);
       label-exact
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C10H17N3O6S
+  inchi: InChI=1S/C10H17N3O6S/c11-5(10(18)19)1-2-7(14)13-6(4-20)9(17)12-3-8(15)16/h5-6,20H,1-4,11H2,(H,12,17)(H,13,14)(H,15,16)(H,18,19)/t5-,6-/m0/s1
+  smiles: N[C@@H](CCC(=O)N[C@@H](CS)C(=O)NCC(=O)O)C(=O)O
+  data_source: CHEBI sqlite (oaklib)
+kg_microbe_node_id: CHEBI:16856

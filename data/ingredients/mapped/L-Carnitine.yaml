@@ -27,6 +27,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:51.254047+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C7H15NO3; inchi=InChI=1S/C7H15NO3/c1-8(2,3)5-6(9)4-7(10)11/h6,9H,4;
+    smiles=C[N+](C)(C)CC(O)CC(=O)[O-]
+  llm_assisted: false
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   2 CultureBot media; samples: Ying_Others16, Ying_all64. No CAS-RN or CHEBI mapping
   available; curator review needed.'
@@ -41,3 +47,8 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0304; matched via 'Carnitine' (name normalization);
       label-exact
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C7H15NO3
+  inchi: InChI=1S/C7H15NO3/c1-8(2,3)5-6(9)4-7(10)11/h6,9H,4-5H2,1-3H3
+  smiles: C[N+](C)(C)CC(O)CC(=O)[O-]
+  data_source: CHEBI sqlite (oaklib)

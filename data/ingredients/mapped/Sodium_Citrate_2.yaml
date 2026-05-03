@@ -15,8 +15,8 @@ ontology_mapping:
       "Sodium Citrate" name maps to the anhydrous parent CHEBI:53258 (matches sibling
       MIM:Trisodium_Citrate convention). CAS-RN 6132-04-3 is the dihydrate registry
       number — kept for synonymy but the canonical ontology mapping is the parent.
-      Hydrate-specific records (Na3-citrate_X_2_H2o, Trisodium_Citrate_X_2_H2o)
-      retain their own mappings.'
+      Hydrate-specific records (Na3-citrate_X_2_H2o, Trisodium_Citrate_X_2_H2o) retain
+      their own mappings.'
 synonyms:
 - synonym_text: 'Role: Buffer; Properties: Defined component, Simple component, Organic
     compound'
@@ -114,15 +114,25 @@ curation_history:
 - timestamp: '2026-05-02T15:00:00+00:00'
   curator: family_mismatch_fix
   action: REMAPPED_ONTOLOGY
-  changes: 'CHEBI:32142 (sodium citrate dihydrate) → CHEBI:53258 (sodium citrate);
+  changes: CHEBI:32142 (sodium citrate dihydrate) → CHEBI:53258 (sodium citrate);
     generic ingredient name "Sodium Citrate" should use anhydrous parent (matches
     MIM:Trisodium_Citrate convention). Cleared chemical_properties molecular_formula/inchi/smiles
     (were dihydrate-specific) and kg_microbe_node_id for re-backfill against the new
     CHEBI. CAS-RN 6132-04-3 retained as a synonym registry but is technically the
-    dihydrate''s registry number.'
+    dihydrate's registry number.
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:52.838836+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H5O7.3Na; inchi=InChI=1S/C6H8O7.3Na/c7-3(8)1-6(13,5(11)12)2-4(9)10;
+    smiles=O=C([O-])CC(O)(CC(=O)[O-])C(=O)[O-].[Na+].[Na+].[N
   llm_assisted: false
 chemical_properties:
   cas_rn: 6132-04-3
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-05T21:48:45.754074'
+  molecular_formula: C6H5O7.3Na
+  inchi: InChI=1S/C6H8O7.3Na/c7-3(8)1-6(13,5(11)12)2-4(9)10;;;/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12);;;/q;3*+1/p-3
+  smiles: O=C([O-])CC(O)(CC(=O)[O-])C(=O)[O-].[Na+].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
+kg_microbe_node_id: CHEBI:53258

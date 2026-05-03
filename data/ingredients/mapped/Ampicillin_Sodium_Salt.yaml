@@ -21,6 +21,12 @@ curation_history:
   action: AUTO_UPGRADE_TO_CHEBI
   changes: primary UNMAPPED_0326 → CHEBI:34535 (strategy=stem-match)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:49.558544+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C16H18N3O4S.Na; inchi=InChI=1S/C16H19N3O4S.Na/c1-16(2)11(15(22)23)19-13(;
+    smiles=[H][C@]12SC(C)(C)[C@H](C(=O)[O-])N1C(=O)[C@H]2NC(=
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1283); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -33,3 +39,8 @@ ontology_mapping:
     source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0326; matched via 'Ampicillin sodium salt';
       stem-substring
+chemical_properties:
+  molecular_formula: C16H18N3O4S.Na
+  inchi: InChI=1S/C16H19N3O4S.Na/c1-16(2)11(15(22)23)19-13(21)10(14(19)24-16)18-12(20)9(17)8-6-4-3-5-7-8;/h3-7,9-11,14H,17H2,1-2H3,(H,18,20)(H,22,23);/q;+1/p-1/t9-,10-,11+,14-;/m1./s1
+  smiles: '[H][C@]12SC(C)(C)[C@H](C(=O)[O-])N1C(=O)[C@H]2NC(=O)[C@H](N)c1ccccc1.[Na+]'
+  data_source: CHEBI sqlite (oaklib)

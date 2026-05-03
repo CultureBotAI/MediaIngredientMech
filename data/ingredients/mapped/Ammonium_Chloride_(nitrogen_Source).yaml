@@ -27,6 +27,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:49.532677+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=Cl.H4N; inchi=InChI=1S/ClH.H3N/h1H;1H3; smiles=[Cl-].[H][N+]([H])([H])[H]
+  llm_assisted: false
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Ammonium_chloride_(nitrogen_source));
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -40,3 +45,9 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0597; matched via 'Ammonium chloride' (name
       normalization); label-exact
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: Cl.H4N
+  inchi: InChI=1S/ClH.H3N/h1H;1H3
+  smiles: '[Cl-].[H][N+]([H])([H])[H]'
+  data_source: CHEBI sqlite (oaklib)
+kg_microbe_node_id: CHEBI:31206

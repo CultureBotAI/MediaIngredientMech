@@ -21,6 +21,11 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:29214 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:53.747263+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=H2O3S; inchi=InChI=1S/H2O3S/c1-4(2)3/h4H,(H,1,2,3); smiles=[H]S(=O)(=O)O
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:542); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -33,3 +38,8 @@ ontology_mapping:
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='Naphthalene sulfonic
       acid'
+chemical_properties:
+  molecular_formula: H2O3S
+  inchi: InChI=1S/H2O3S/c1-4(2)3/h4H,(H,1,2,3)
+  smiles: '[H]S(=O)(=O)O'
+  data_source: CHEBI sqlite (oaklib)

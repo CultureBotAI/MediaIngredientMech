@@ -26,6 +26,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:49.101881+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C4H7O3; inchi=InChI=1S/C4H8O3/c1-3(5)2-4(6)7/h3,5H,2H2,1H3,(H,6,;
+    smiles=CC(O)CC(=O)[O-]
+  llm_assisted: false
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
@@ -39,3 +45,9 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0202; matched via '3-hydroxybutyrate' (name
       normalization); label-exact
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C4H7O3
+  inchi: InChI=1S/C4H8O3/c1-3(5)2-4(6)7/h3,5H,2H2,1H3,(H,6,7)/p-1
+  smiles: CC(O)CC(=O)[O-]
+  data_source: CHEBI sqlite (oaklib)
+kg_microbe_node_id: CHEBI:37054

@@ -26,6 +26,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:50.338548+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C12H22O11; inchi=InChI=1S/C12H22O11/c13-1-4-6(16)8(18)9(19)11(21-4);
+    smiles=OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H]
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1358); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -39,3 +45,9 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0371; matched via 'Sucrose' (name normalization);
       label-exact
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  molecular_formula: C12H22O11
+  inchi: InChI=1S/C12H22O11/c13-1-4-6(16)8(18)9(19)11(21-4)23-12(3-15)10(20)7(17)5(2-14)22-12/h4-11,13-20H,1-3H2/t4-,5-,6-,7-,8+,9-,10+,11-,12+/m1/s1
+  smiles: OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@@H](O)[C@@H]1O
+  data_source: CHEBI sqlite (oaklib)
+kg_microbe_node_id: CHEBI:17992

@@ -21,6 +21,12 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:185858 (label-exact)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:53.667910+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C32H42O8; inchi=InChI=1S/C32H42O8/c1-8-17(2)29(36)40-28-20-13-19-2;
+    smiles=[H][C@@]12CC3=C4CC(=O)O[C@@H](c5ccoc5)[C@]4(C)CCC3
+  llm_assisted: false
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
@@ -32,3 +38,8 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CHEBI via OLS (label-exact)
     notes: Parent class identified via label-exact; matched_via='Khayasin'
+chemical_properties:
+  molecular_formula: C32H42O8
+  inchi: InChI=1S/C32H42O8/c1-8-17(2)29(36)40-28-20-13-19-21(32(6,26(20)35)23(30(28,3)4)15-24(33)37-7)9-11-31(5)22(19)14-25(34)39-27(31)18-10-12-38-16-18/h10,12,16-17,20-21,23,27-28H,8-9,11,13-15H2,1-7H3/t17?,20-,21?,23+,27+,28?,31-,32-/m1/s1
+  smiles: '[H][C@@]12CC3=C4CC(=O)O[C@@H](c5ccoc5)[C@]4(C)CCC3[C@@](C)(C1=O)[C@@H](CC(=O)OC)C(C)(C)C2OC(=O)C(C)CC'
+  data_source: CHEBI sqlite (oaklib)

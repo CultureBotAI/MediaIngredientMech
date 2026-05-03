@@ -21,6 +21,12 @@ curation_history:
   action: AUTO_UPGRADE_TO_CHEBI
   changes: primary UNMAPPED_0139 → CHEBI:61326 (strategy=stem-match)
   llm_assisted: false
+- timestamp: '2026-05-02T23:59:49.129267+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H11N2; inchi=InChI=1S/C6H11N2/c1-3-8-5-4-7(2)6-8/h4-6H,3H2,1-2H;
+    smiles=CCn1cc[n+](C)c1
+  llm_assisted: false
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
@@ -33,3 +39,8 @@ ontology_mapping:
     source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0139; matched via '1-ethyl-3-methylimidazolium
       lysine'; stem-substring
+chemical_properties:
+  molecular_formula: C6H11N2
+  inchi: InChI=1S/C6H11N2/c1-3-8-5-4-7(2)6-8/h4-6H,3H2,1-2H3/q+1
+  smiles: CCn1cc[n+](C)c1
+  data_source: CHEBI sqlite (oaklib)
