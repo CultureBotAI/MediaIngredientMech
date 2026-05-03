@@ -19,71 +19,19 @@ URI: [mediaingredientmech:ChemicalProperties](https://w3id.org/mediaingredientme
  classDiagram
     class ChemicalProperties
     click ChemicalProperties href "../ChemicalProperties/"
+      ChemicalProperties : cas_rn
+        
       ChemicalProperties : data_source
-        
-          
-    
-        
-        
-        ChemicalProperties --> "0..1" String : data_source
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
         
       ChemicalProperties : inchi
         
-          
-    
-        
-        
-        ChemicalProperties --> "0..1" String : inchi
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
-        
       ChemicalProperties : molecular_formula
-        
-          
-    
-        
-        
-        ChemicalProperties --> "0..1" String : molecular_formula
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
         
       ChemicalProperties : molecular_weight
         
-          
-    
-        
-        
-        ChemicalProperties --> "0..1" Float : molecular_weight
-        click Float href "../http://www.w3.org/2001/XMLSchema#float/"
-    
-
-        
       ChemicalProperties : retrieval_date
         
-          
-    
-        
-        
-        ChemicalProperties --> "0..1" Datetime : retrieval_date
-        click Datetime href "../http://www.w3.org/2001/XMLSchema#dateTime/"
-    
-
-        
       ChemicalProperties : smiles
-        
-          
-    
-        
-        
-        ChemicalProperties --> "0..1" String : smiles
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
         
       
 ```
@@ -98,12 +46,13 @@ URI: [mediaingredientmech:ChemicalProperties](https://w3id.org/mediaingredientme
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [molecular_formula](molecular_formula.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Molecular formula (e | direct |
-| [smiles](smiles.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Simplified Molecular Input Line Entry System notation | direct |
-| [inchi](inchi.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | IUPAC International Chemical Identifier | direct |
-| [molecular_weight](molecular_weight.md) | 0..1 <br/> [xsd:float](http://www.w3.org/2001/XMLSchema#float) | Molecular weight in g/mol | direct |
-| [data_source](data_source.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Source of chemical properties (e | direct |
-| [retrieval_date](retrieval_date.md) | 0..1 <br/> [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) | When these properties were retrieved | direct |
+| [cas_rn](cas_rn.md) | 0..1 <br/> [String](String.md) | Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X or XXX... | direct |
+| [molecular_formula](molecular_formula.md) | 0..1 <br/> [String](String.md) | Molecular formula (e | direct |
+| [smiles](smiles.md) | 0..1 <br/> [String](String.md) | Simplified Molecular Input Line Entry System notation | direct |
+| [inchi](inchi.md) | 0..1 <br/> [String](String.md) | IUPAC International Chemical Identifier | direct |
+| [molecular_weight](molecular_weight.md) | 0..1 <br/> [Float](Float.md) | Molecular weight in g/mol | direct |
+| [data_source](data_source.md) | 0..1 <br/> [String](String.md) | Source of chemical properties (e | direct |
+| [retrieval_date](retrieval_date.md) | 0..1 <br/> [Datetime](Datetime.md) | When these properties were retrieved | direct |
 
 
 
@@ -160,6 +109,16 @@ name: ChemicalProperties
 description: Chemical structure and properties for CHEBI-mapped ingredients
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
+  cas_rn:
+    name: cas_rn
+    description: Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X
+      or XXXX-XX-X. Primary chemical identifier used in regulatory and commercial
+      contexts. Retrieved from CultureBotHT/MicroMediaParam mappings or external databases.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - ChemicalProperties
+    pattern: ^\d+-\d+-\d+$
   molecular_formula:
     name: molecular_formula
     description: Molecular formula (e.g., H2O, C6H12O6)
@@ -191,7 +150,7 @@ attributes:
     range: float
   data_source:
     name: data_source
-    description: Source of chemical properties (e.g., ChEBI, PubChem)
+    description: Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
@@ -216,6 +175,19 @@ name: ChemicalProperties
 description: Chemical structure and properties for CHEBI-mapped ingredients
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
+  cas_rn:
+    name: cas_rn
+    description: Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X
+      or XXXX-XX-X. Primary chemical identifier used in regulatory and commercial
+      contexts. Retrieved from CultureBotHT/MicroMediaParam mappings or external databases.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: cas_rn
+    owner: ChemicalProperties
+    domain_of:
+    - ChemicalProperties
+    range: string
+    pattern: ^\d+-\d+-\d+$
   molecular_formula:
     name: molecular_formula
     description: Molecular formula (e.g., H2O, C6H12O6)
@@ -258,7 +230,7 @@ attributes:
     range: float
   data_source:
     name: data_source
-    description: Source of chemical properties (e.g., ChEBI, PubChem)
+    description: Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: data_source

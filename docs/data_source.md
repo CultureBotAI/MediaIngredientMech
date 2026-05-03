@@ -3,7 +3,7 @@
 # Slot: data_source 
 
 
-_Source of chemical properties (e.g., ChEBI, PubChem)_
+_Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)_
 
 
 
@@ -31,7 +31,7 @@ Alias: data_source
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 
 
 
@@ -66,7 +66,7 @@ Alias: data_source
 <details>
 ```yaml
 name: data_source
-description: Source of chemical properties (e.g., ChEBI, PubChem)
+description: Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 alias: data_source

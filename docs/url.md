@@ -31,7 +31,7 @@ Alias: url
 
 ## Properties
 
-* Range: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
+* Range: [Uri](Uri.md)
 
 
 

@@ -21,15 +21,6 @@ URI: [mediaingredientmech:CellularRoleAssignment](https://w3id.org/mediaingredie
     click CellularRoleAssignment href "../CellularRoleAssignment/"
       CellularRoleAssignment : confidence
         
-          
-    
-        
-        
-        CellularRoleAssignment --> "0..1" Float : confidence
-        click Float href "../http://www.w3.org/2001/XMLSchema#float/"
-    
-
-        
       CellularRoleAssignment : evidence
         
           
@@ -43,25 +34,7 @@ URI: [mediaingredientmech:CellularRoleAssignment](https://w3id.org/mediaingredie
         
       CellularRoleAssignment : metabolic_context
         
-          
-    
-        
-        
-        CellularRoleAssignment --> "0..1" String : metabolic_context
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
-        
       CellularRoleAssignment : notes
-        
-          
-    
-        
-        
-        CellularRoleAssignment --> "0..1" String : notes
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
         
       CellularRoleAssignment : role
         
@@ -88,10 +61,10 @@ URI: [mediaingredientmech:CellularRoleAssignment](https://w3id.org/mediaingredie
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [role](role.md) | 1 <br/> [CellularRoleEnum](CellularRoleEnum.md) | The cellular/metabolic role (e | direct |
-| [metabolic_context](metabolic_context.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Pathway or metabolic context (e | direct |
-| [confidence](confidence.md) | 0..1 <br/> [xsd:float](http://www.w3.org/2001/XMLSchema#float) | Confidence score for this role assignment (0 | direct |
+| [metabolic_context](metabolic_context.md) | 0..1 <br/> [String](String.md) | Pathway or metabolic context (e | direct |
+| [confidence](confidence.md) | 0..1 <br/> [Float](Float.md) | Confidence score for this role assignment (0 | direct |
 | [evidence](evidence.md) | * <br/> [RoleCitation](RoleCitation.md) | Citations and references supporting this role | direct |
-| [notes](notes.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Additional context about this role assignment | direct |
+| [notes](notes.md) | 0..1 <br/> [String](String.md) | Additional context about this role assignment | direct |
 
 
 

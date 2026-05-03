@@ -17,8 +17,8 @@ Alias: source
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [IngredientSynonym](IngredientSynonym.md) | Alternative name or raw text variant for an ingredient |  no  |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 
 
 
@@ -27,7 +27,7 @@ Alias: source
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 
 
 

@@ -31,7 +31,7 @@ Alias: generation_date
 
 ## Properties
 
-* Range: [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
+* Range: [Datetime](Datetime.md)
 
 
 

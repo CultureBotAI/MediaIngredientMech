@@ -21,15 +21,6 @@ URI: [mediaingredientmech:RoleAssignment](https://w3id.org/mediaingredientmech/R
     click RoleAssignment href "../RoleAssignment/"
       RoleAssignment : confidence
         
-          
-    
-        
-        
-        RoleAssignment --> "0..1" Float : confidence
-        click Float href "../http://www.w3.org/2001/XMLSchema#float/"
-    
-
-        
       RoleAssignment : evidence
         
           
@@ -42,15 +33,6 @@ URI: [mediaingredientmech:RoleAssignment](https://w3id.org/mediaingredientmech/R
 
         
       RoleAssignment : notes
-        
-          
-    
-        
-        
-        RoleAssignment --> "0..1" String : notes
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
         
       RoleAssignment : role
         
@@ -77,9 +59,9 @@ URI: [mediaingredientmech:RoleAssignment](https://w3id.org/mediaingredientmech/R
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [role](role.md) | 1 <br/> [IngredientRoleEnum](IngredientRoleEnum.md) | The functional role (e | direct |
-| [confidence](confidence.md) | 0..1 <br/> [xsd:float](http://www.w3.org/2001/XMLSchema#float) | Confidence score for this role assignment (0 | direct |
+| [confidence](confidence.md) | 0..1 <br/> [Float](Float.md) | Confidence score for this role assignment (0 | direct |
 | [evidence](evidence.md) | * <br/> [RoleCitation](RoleCitation.md) | Citations and references supporting this role | direct |
-| [notes](notes.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Additional context about this role assignment | direct |
+| [notes](notes.md) | 0..1 <br/> [String](String.md) | Additional context about this role assignment | direct |
 
 
 

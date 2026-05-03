@@ -27,6 +27,10 @@ URI: [mediaingredientmech:IngredientRoleEnum](https://w3id.org/mediaingredientme
 | ELECTRON_ACCEPTOR | None | Terminal electron acceptor for respiration (e |
 | ELECTRON_DONOR | None | Electron donor for chemolithotrophs |
 | COFACTOR_PROVIDER | None | Provides enzyme cofactors or prosthetic groups |
+| REDOX_INDICATOR | None | pH-dependent redox indicator for anaerobic conditions (e |
+| PH_INDICATOR | None | pH indicator dye for monitoring medium acidity/alkalinity |
+| SELECTIVE_AGENT | None | Antimicrobial or selective agent for enrichment cultures |
+| SURFACTANT | None | Surfactant or detergent for emulsification |
 
 
 
@@ -109,6 +113,18 @@ permissible_values:
   COFACTOR_PROVIDER:
     text: COFACTOR_PROVIDER
     description: Provides enzyme cofactors or prosthetic groups
+  REDOX_INDICATOR:
+    text: REDOX_INDICATOR
+    description: pH-dependent redox indicator for anaerobic conditions (e.g., resazurin)
+  PH_INDICATOR:
+    text: PH_INDICATOR
+    description: pH indicator dye for monitoring medium acidity/alkalinity
+  SELECTIVE_AGENT:
+    text: SELECTIVE_AGENT
+    description: Antimicrobial or selective agent for enrichment cultures
+  SURFACTANT:
+    text: SURFACTANT
+    description: Surfactant or detergent for emulsification
 
 ```
 </details>

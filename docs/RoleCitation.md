@@ -21,58 +21,13 @@ URI: [mediaingredientmech:RoleCitation](https://w3id.org/mediaingredientmech/Rol
     click RoleCitation href "../RoleCitation/"
       RoleCitation : curator_note
         
-          
-    
-        
-        
-        RoleCitation --> "0..1" String : curator_note
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
-        
       RoleCitation : doi
-        
-          
-    
-        
-        
-        RoleCitation --> "0..1" String : doi
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
         
       RoleCitation : excerpt
         
-          
-    
-        
-        
-        RoleCitation --> "0..1" String : excerpt
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
-        
       RoleCitation : pmid
         
-          
-    
-        
-        
-        RoleCitation --> "0..1" String : pmid
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
-        
       RoleCitation : reference_text
-        
-          
-    
-        
-        
-        RoleCitation --> "0..1" String : reference_text
-        click String href "../http://www.w3.org/2001/XMLSchema#string/"
-    
-
         
       RoleCitation : reference_type
         
@@ -87,15 +42,6 @@ URI: [mediaingredientmech:RoleCitation](https://w3id.org/mediaingredientmech/Rol
         
       RoleCitation : url
         
-          
-    
-        
-        
-        RoleCitation --> "0..1" Uri : url
-        click Uri href "../http://www.w3.org/2001/XMLSchema#anyURI/"
-    
-
-        
       
 ```
 
@@ -109,13 +55,13 @@ URI: [mediaingredientmech:RoleCitation](https://w3id.org/mediaingredientmech/Rol
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [doi](doi.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Digital Object Identifier (e | direct |
-| [pmid](pmid.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | PubMed ID for MEDLINE citations | direct |
-| [reference_text](reference_text.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Human-readable citation text | direct |
+| [doi](doi.md) | 0..1 <br/> [String](String.md) | Digital Object Identifier (e | direct |
+| [pmid](pmid.md) | 0..1 <br/> [String](String.md) | PubMed ID for MEDLINE citations | direct |
+| [reference_text](reference_text.md) | 0..1 <br/> [String](String.md) | Human-readable citation text | direct |
 | [reference_type](reference_type.md) | 0..1 <br/> [CitationTypeEnum](CitationTypeEnum.md) | Type of reference (peer-reviewed, database, manual curation, etc | direct |
-| [url](url.md) | 0..1 <br/> [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | Web URL for the reference | direct |
-| [excerpt](excerpt.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Relevant excerpt or quote from the source | direct |
-| [curator_note](curator_note.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Curator's explanation of why this supports the role assignment | direct |
+| [url](url.md) | 0..1 <br/> [Uri](Uri.md) | Web URL for the reference | direct |
+| [excerpt](excerpt.md) | 0..1 <br/> [String](String.md) | Relevant excerpt or quote from the source | direct |
+| [curator_note](curator_note.md) | 0..1 <br/> [String](String.md) | Curator's explanation of why this supports the role assignment | direct |
 
 
 
@@ -177,16 +123,16 @@ attributes:
     name: doi
     description: Digital Object Identifier (e.g., 10.1128/jb.00123-15)
     from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
     domain_of:
+    - MappingEvidence
     - RoleCitation
     pattern: ^10\.\d{4,}/[-._;()/:A-Za-z0-9]+$
   pmid:
     name: pmid
     description: PubMed ID for MEDLINE citations
     from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
     domain_of:
+    - MappingEvidence
     - RoleCitation
   reference_text:
     name: reference_text
@@ -241,10 +187,10 @@ attributes:
     name: doi
     description: Digital Object Identifier (e.g., 10.1128/jb.00123-15)
     from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
     alias: doi
     owner: RoleCitation
     domain_of:
+    - MappingEvidence
     - RoleCitation
     range: string
     pattern: ^10\.\d{4,}/[-._;()/:A-Za-z0-9]+$
@@ -252,10 +198,10 @@ attributes:
     name: pmid
     description: PubMed ID for MEDLINE citations
     from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
     alias: pmid
     owner: RoleCitation
     domain_of:
+    - MappingEvidence
     - RoleCitation
     range: string
   reference_text:

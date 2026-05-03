@@ -3,11 +3,6 @@
 # Slot: pmid 
 
 
-_PubMed ID for MEDLINE citations_
-
-
-
-
 
 URI: [mediaingredientmech:pmid](https://w3id.org/mediaingredientmech/pmid)
 Alias: pmid
@@ -23,6 +18,7 @@ Alias: pmid
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [RoleCitation](RoleCitation.md) | Citation supporting a role assignment (DOI, publication, database reference) |  no  |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 
 
 
@@ -31,7 +27,7 @@ Alias: pmid
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 
 
 
@@ -40,13 +36,6 @@ Alias: pmid
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -66,12 +55,9 @@ Alias: pmid
 <details>
 ```yaml
 name: pmid
-description: PubMed ID for MEDLINE citations
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: pmid
-owner: RoleCitation
 domain_of:
+- MappingEvidence
 - RoleCitation
 range: string
 

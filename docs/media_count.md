@@ -31,7 +31,7 @@ Alias: media_count
 
 ## Properties
 
-* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
+* Range: [Integer](Integer.md)
 
 * Required: True
 

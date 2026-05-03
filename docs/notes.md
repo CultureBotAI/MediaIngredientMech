@@ -17,11 +17,11 @@ Alias: notes
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RoleAssignment](RoleAssignment.md) | Assignment of a functional role in growth medium formulation with supporting ... |  no  |
-| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
-| [CellularRoleAssignment](CellularRoleAssignment.md) | Assignment of a cellular/metabolic role in organism metabolism with supportin... |  no  |
 | [IngredientRecord](IngredientRecord.md) | Core record for a media ingredient with ontology mapping, synonyms, and curat... |  no  |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [CurationEvent](CurationEvent.md) | Audit trail entry for a curation action |  no  |
+| [CellularRoleAssignment](CellularRoleAssignment.md) | Assignment of a cellular/metabolic role in organism metabolism with supportin... |  no  |
+| [RoleAssignment](RoleAssignment.md) | Assignment of a functional role in growth medium formulation with supporting ... |  no  |
 
 
 
@@ -30,7 +30,7 @@ Alias: notes
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 
 
 
