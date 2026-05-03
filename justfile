@@ -37,8 +37,15 @@ qc-evidence:
 fetch-pubmed *args:
     /opt/homebrew/bin/python3.13 ../culturebotai-claw/scripts/fetch_pubmed_abstracts.py {{args}}
 
-# Composite QC: schema validation + evidence reference validation.
-qc: validate-all qc-evidence
+# Validate mappings/ingredient_mappings.sssom.tsv against structural
+# invariants (Rule A: auto-classifier token-overlap gate). Rejects are
+# written to mappings/needs_curator_review.tsv. Exits 2 on violation
+# (CI blocking). See ../culturebotai-claw/.claude/plans/now-focus-on-culturemech-piped-shell.md.
+qc-sssom:
+    python3 scripts/validate_sssom_invariants.py
+
+# Composite QC: schema validation + evidence reference validation + SSSOM invariants.
+qc: validate-all qc-evidence qc-sssom
 
 # Render per-ingredient HTML detail pages from data/ingredients/*.yaml
 # into pages/ingredient/. Idempotent (skips fresh outputs); --force

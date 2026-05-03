@@ -1,0 +1,41 @@
+name: QC — SSSOM invariant validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "mappings/ingredient_mappings.sssom.tsv"
+      - "mappings/needs_curator_review.tsv"
+      - "scripts/validate_sssom_invariants.py"
+  push:
+    branches: [main]
+    paths:
+      - "mappings/ingredient_mappings.sssom.tsv"
+      - "mappings/needs_curator_review.tsv"
+      - "scripts/validate_sssom_invariants.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout MIM
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Validate SSSOM invariants (Rule A)
+        run: python3 scripts/validate_sssom_invariants.py
+
+      - name: Upload triage TSV
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: needs-curator-review-${{ github.run_id }}
+          path: mappings/needs_curator_review.tsv
+          if-no-files-found: warn
