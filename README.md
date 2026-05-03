@@ -92,6 +92,10 @@ MediaIngredientMech/
 └── docs/                    # Documentation
 ```
 
+## Mapping Semantics
+
+See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:exactMatch` / `closeMatch` / `narrowMatch` / `broadMatch`), the registry/identity row pattern pairing `MIM:<slug>` with `kgmicrobe.{ingredient,compound}:<slug>`, common mistakes by Rule id, and the curator workflow when CI rejects a row in `mappings/ingredient_mappings.sssom.tsv`.
+
 ## Documentation
 
 - [Curation Guide](docs/CURATION_GUIDE.md) - Step-by-step curation workflow
@@ -99,6 +103,7 @@ MediaIngredientMech/
 - [Schema Reference](docs/SCHEMA_REFERENCE.md) - Data model documentation
 - [Environmental Context](docs/schema/environmental_context.md) - ENVO-based environmental linking
 - [Workflows](docs/WORKFLOWS.md) - Common operations and integration
+- [Mapping Semantics](MAPPING_SEMANTICS.md) - SSSOM predicate semantics and registry/identity row pattern
 
 ## Development
 
