@@ -1,21 +1,26 @@
 identifier: cas:6363-53-7
 preferred_term: D-Maltose monohydrate
 ontology_mapping:
-  ontology_id: CHEBI:233428
-  ontology_label: 5-(N-ethyl-N-isopropyl) amiloride
+  ontology_id: CHEBI:17306
+  ontology_label: maltose
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN 6363-53-7 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
-      FEBA_carbon. Used in 9 CultureBot media; samples: Mega, ZMB Gut, SGW Northen
-      Exometabolite mix 5x…. Curator can promote to a CHEBI primary if/when CHEBI
-      adds the term.'
-  - evidence_type: DATABASE_MATCH
-    source: CHEBI via PubChem (pubchem-xref)
-    notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 23615261'
+      exists for the monohydrate specifically (checked OAK CHEBI sqlite + PubChem
+      CID synonyms). FEBA/Hans80 panels: FEBA_carbon. Used in 9 CultureBot media;
+      samples: Mega, ZMB Gut, SGW Northen Exometabolite mix 5x…. Curator can promote
+      to a CHEBI primary if/when CHEBI adds D-maltose monohydrate.'
+  - evidence_type: MANUAL_REVIEW
+    source: family_mismatch_fix
+    notes: 'fix(family-mismatch): was CHEBI:233428 (5-(N-ethyl-N-isopropyl) amiloride)
+      from a stale pubchem-xref hit on PubChem CID 23615261; the bogus CHEBI was
+      removed from the published SSSOM in PR #2 / commit 887ee9f and the ontology_mapping
+      is now retargeted at CHEBI:17306 (maltose) as the correct narrowMatch parent.
+      D-Maltose monohydrate is a hydrate of D-maltose, which has no separate CHEBI;
+      maltose (CHEBI:17306) is the closest available parent.'
 synonyms:
 - synonym_text: Maltose monohydrate
   synonym_type: EXACT_SYNONYM
