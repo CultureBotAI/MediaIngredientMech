@@ -11,6 +11,12 @@ is enforced by the SSSOM validator (`scripts/validate_sssom_invariants.py`),
 the rule's identifier (Rule A, B1, B2, B3, B4) is given inline so you can match
 a CI failure to the section that explains it.
 
+> **Status of validator rules**: only **Rule A** is currently implemented in
+> `scripts/validate_sssom_invariants.py` and enforced by CI. **Rules B1–B4**
+> are *planned/deferred* — described here so curators can write conformant
+> mappings and so the next validator PR has a documented contract to satisfy.
+> Sections below mark each B-rule's enforcement status explicitly.
+
 The SSSOM file has the following columns; every example below uses these:
 
 ```
@@ -132,10 +138,13 @@ also asserts a `narrowMatch` to an OBO term:
    first-class kg-microbe CURIE.
 
 The registry row is **mandatory** whenever the same MIM subject also
-asserts any narrowMatch. This is enforced by **Rule B1** of the SSSOM
-validator. The registry row is also the **single channel** by which
-downstream consumers resolve a MIM subject to its kg-microbe primary id
-without conflating it with the OBO parent.
+asserts any narrowMatch. This will be enforced by **Rule B1** of the
+SSSOM validator (planned — the current validator implements Rule A
+only; Rule B1 lands in the Group B follow-up PR). Until Rule B1 is
+in place curators are asked to follow this convention by hand. The
+registry row is also the **single channel** by which downstream
+consumers resolve a MIM subject to its kg-microbe primary id without
+conflating it with the OBO parent.
 
 ### Worked example: `MIM:Vermont_Soil`
 
@@ -197,8 +206,16 @@ materials use `kgmicrobe.ingredient:`.
 Each of the four most common mistakes a curator (or an automated
 pipeline) makes is below, with a worked TSV example, the rule that
 catches it, and the antidote. When CI rejects a row, the reject_reason
-column will name the rule by id; this section explains what each id
-means.
+column names the rule that fired; this section explains each rule by
+id.
+
+Today only **Rule A** rejects produce entries in
+`mappings/needs_curator_review.tsv` — that's the only rule the current
+validator implements. The B-series rule ids referenced below (B1, B2,
+B3, B4) describe planned enforcement that will land with the Group B
+follow-up PR. The TSV examples and antidotes still apply now (they
+describe correct curation regardless of validator coverage); only the
+"CI rejects this" claim is deferred for the B-series.
 
 ### Mistake 1 — Auto-classifier label drift (Rule A)
 
@@ -313,14 +330,16 @@ MIM:Vermont_Soil    Vermont Soil   skos:narrowMatch  ENVO:00001998  soils       
 
 `object_label = "soils"` instead of the canonical ENVO label `"soil"`.
 
-**Rule B4** flags this when the local kg-microbe ontology transforms
+**Rule B4** *will* flag this once it lands in the Group B follow-up
+PR. The planned design: when the local kg-microbe ontology transforms
 are present (`../kg-microbe/data/transformed/ontologies/envo_nodes.tsv`
-in this case). The validator looks up the canonical label and
-exact-synonym set for `ENVO:00001998` and rejects rows where
+in this case), the validator will look up the canonical label and
+exact-synonym set for `ENVO:00001998` and reject rows where
 `object_label` matches neither. In CI environments without those
-transforms (the typical case on PR CI), Rule B4 emits a warning and
-skips, so the rule does not block PRs that don't have access to the
-canonical label source.
+transforms (the typical case on PR CI), Rule B4 will emit a warning
+and skip, so the rule will not block PRs that don't have access to
+the canonical label source. The current validator implements Rule A
+only; Rule B4 is not yet enforced.
 
 This rule prevents the "stale child label leaking onto parent"
 pollution that kg-microbe's `purge_asymmetric_pollution()` exists to
@@ -357,8 +376,12 @@ resolved. You have three options.
 This is the right option when the row reflects genuinely incorrect data.
 
 1. Locate the underlying ingredient YAML in
-   `data/curated/<status>/<ingredient>.yaml`. The MIM subject id maps
-   directly: `MIM:Vermont_Soil` → `data/curated/.../vermont_soil.yaml`.
+   `data/ingredients/mapped/<Slug>.yaml` (or
+   `data/ingredients/unmapped/<Slug>.yaml` for in-progress entries).
+   The MIM subject id maps directly to the file stem:
+   `MIM:Vermont_Soil` → `data/ingredients/mapped/Vermont_Soil.yaml`.
+   Note that filenames preserve the slug case from the subject id
+   (`Vermont_Soil`, not `vermont_soil`).
 2. Fix the field that produced the bad row. Examples by rule:
    - **Rule A**: re-curate the `ontology_mappings` entry for the
      ingredient — remove the wrong CHEBI/ENVO id and set the correct
@@ -373,11 +396,15 @@ This is the right option when the row reflects genuinely incorrect data.
      proper parent, keep the narrowMatch and drop the exactMatch.
    - **Rule B4**: update `object_label` in the YAML's
      `ontology_mappings` entry to the canonical OBO label.
-3. Run `culturebotai-claw && just build-sssom` to regenerate
-   `mappings/ingredient_mappings.sssom.tsv` from the updated YAMLs.
-4. Re-run the validator: `cd MediaIngredientMech && just qc-sssom`.
-   The row should now pass. Commit the regenerated SSSOM along with the
-   YAML change.
+3. Regenerate `mappings/ingredient_mappings.sssom.tsv` from the
+   updated YAMLs. The SSSOM build lives in the sibling
+   `culturebotai-claw` repository — run from that checkout:
+   `cd ../culturebotai-claw && just build-sssom && just publish-sssom`.
+   (MIM does not host the builder; only the published TSV.)
+4. Re-run the validator: `cd MediaIngredientMech && just qc-sssom`
+   (or equivalently, `python3 scripts/validate_sssom_invariants.py`,
+   which is what CI invokes). The row should now pass. Commit the
+   regenerated SSSOM along with the YAML change.
 
 This is the **default option** and the one the audit trail rewards: the
 fix is durable because future regenerations of the SSSOM will produce
@@ -420,28 +447,38 @@ and let the curation issue surface the question.
 
 ### Reading the validator output
 
-`just qc-sssom` prints a per-row report to stderr in the same shape as
-`kg-microbe/mappings/validate_isolation_source_mappings.py`. Each
-rejected row is one block:
+`just qc-sssom` (and the equivalent direct invocation
+`python3 scripts/validate_sssom_invariants.py`) print a per-row
+report to stderr. The current implementation emits a single FAIL
+header followed by one line per rejected row:
 
 ```
-REJECT  Rule A  MIM:KH2PO4  potassium phosphate monobasic  →  CHEBI:31346  calcium sulfate dihydrate
-        reason: zero token overlap, no human curator, no CAS/PubChem corroboration
-        source: MIM:curator=auto_classify_ingredient_type
-        confidence: 0.85
+FAIL: 1 row(s) in ingredient_mappings.sssom.tsv fail Rule A (auto-classifier token-overlap gate).
+  row 47: MIM:KH2PO4 'potassium phosphate monobasic' -> CHEBI:31346 'calcium sulfate dihydrate' — zero token overlap; no human curator; no CAS/PubChem corroboration
 ```
 
-The exit code is 0 (all pass), 1 (warnings only — typically Rule B4
-skipped), or 2 (one or more rejects, CI-blocking). Match each `REJECT`
-block to its rule id (A, B1, B2, B3, B4) above to find the antidote.
+Exit codes:
+- **0** — all rows pass.
+- **1** — input file not found (configuration error).
+- **2** — one or more rows reject; the violating rows are written
+  to `mappings/needs_curator_review.tsv` with a `reject_reason`
+  column and CI fails.
+
+There is currently no exit-code 1 "warnings only" mode; the planned
+Rule B4 warn-and-skip behaviour will introduce it when Group B
+lands. Match each `row N` line to its rule id (currently always
+Rule A) to find the antidote.
 
 ### Where the rules live
 
 - **Validator implementation**: `scripts/validate_sssom_invariants.py`
+  (Rule A only today; Rules B1–B4 deferred to the Group B PR).
 - **Justfile recipe**: `just qc-sssom` runs the validator; `just qc`
   runs it as part of the full quality-check composite.
-- **CI workflow**: `.github/workflows/qc-sssom.yaml` runs `just
-  qc-sssom` on every PR that modifies `mappings/ingredient_mappings.sssom.tsv`,
+- **CI workflow**: `.github/workflows/qc-sssom.yaml` invokes
+  `python3 scripts/validate_sssom_invariants.py` directly (it does
+  not call `just`) on every PR that modifies
+  `mappings/ingredient_mappings.sssom.tsv`,
   `mappings/needs_curator_review.tsv`, or
   `scripts/validate_sssom_invariants.py`, and on every push to `main`.
 

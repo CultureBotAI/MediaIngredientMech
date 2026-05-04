@@ -94,7 +94,7 @@ MediaIngredientMech/
 
 ## Mapping Semantics
 
-See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:exactMatch` / `closeMatch` / `narrowMatch` / `broadMatch`), the registry/identity row pattern pairing `MIM:<slug>` with `kgmicrobe.{ingredient,compound}:<slug>`, common mistakes by Rule id, and the curator workflow when CI rejects a row in `mappings/ingredient_mappings.sssom.tsv`.
+See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:exactMatch` / `skos:closeMatch` / `skos:narrowMatch` / `skos:broadMatch`), the registry/identity row pattern pairing `MIM:<slug>` with `kgmicrobe.{ingredient,compound}:<slug>`, common mistakes by Rule id, and the curator workflow when CI rejects a row in `mappings/ingredient_mappings.sssom.tsv`.
 
 ## Documentation
 
