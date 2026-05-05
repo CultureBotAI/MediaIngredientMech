@@ -11,11 +11,13 @@ is enforced by the SSSOM validator (`scripts/validate_sssom_invariants.py`),
 the rule's identifier (Rule A, B1, B2, B3, B4) is given inline so you can match
 a CI failure to the section that explains it.
 
-> **Status of validator rules**: only **Rule A** is currently implemented in
-> `scripts/validate_sssom_invariants.py` and enforced by CI. **Rules B1–B4**
-> are *planned/deferred* — described here so curators can write conformant
-> mappings and so the next validator PR has a documented contract to satisfy.
-> Sections below mark each B-rule's enforcement status explicitly.
+> **Status of validator rules**: Rules A, B1, B2, B3, and B4 are all
+> implemented in `scripts/validate_sssom_invariants.py` and enforced by
+> CI. Rule B1 is strict-by-default (a missing registry row contributes
+> to exit-2). Rule B4 silently skips per-prefix when the kg-microbe
+> ontology transform file isn't checked out locally — typical in CI —
+> and is therefore best-effort there. Sections below describe each
+> rule's contract.
 
 The SSSOM file has the following columns; every example below uses these:
 
@@ -138,11 +140,14 @@ also asserts a `narrowMatch` to an OBO term:
    first-class kg-microbe CURIE.
 
 The registry row is **mandatory** whenever the same MIM subject also
-asserts any narrowMatch. This will be enforced by **Rule B1** of the
-SSSOM validator (planned — the current validator implements Rule A
-only; Rule B1 lands in the Group B follow-up PR). Until Rule B1 is
-in place curators are asked to follow this convention by hand. The
-registry row is also the **single channel** by which downstream
+asserts any narrowMatch. This is enforced by **Rule B1** of the SSSOM
+validator (strict-by-default — a missing registry row makes CI
+fail). The claw SSSOM builder
+(`culturebotai-claw/scripts/build_mim_ingredient_sssom.py`,
+`_row_from_yaml`) emits the registry row automatically whenever it
+emits a narrow/broad parent row, so a curator who lets the builder
+generate the SSSOM does not need to write the registry row by hand.
+The registry row is also the **single channel** by which downstream
 consumers resolve a MIM subject to its kg-microbe primary id without
 conflating it with the OBO parent.
 
@@ -209,13 +214,10 @@ catches it, and the antidote. When CI rejects a row, the reject_reason
 column names the rule that fired; this section explains each rule by
 id.
 
-Today only **Rule A** rejects produce entries in
-`mappings/needs_curator_review.tsv` — that's the only rule the current
-validator implements. The B-series rule ids referenced below (B1, B2,
-B3, B4) describe planned enforcement that will land with the Group B
-follow-up PR. The TSV examples and antidotes still apply now (they
-describe correct curation regardless of validator coverage); only the
-"CI rejects this" claim is deferred for the B-series.
+Rules A, B1, B2, B3, and B4 are all enforced today; rejects from any
+of them produce entries in `mappings/needs_curator_review.tsv` and
+make CI fail. The TSV examples and antidotes below apply equally to
+each rule.
 
 ### Mistake 1 — Auto-classifier label drift (Rule A)
 
@@ -330,16 +332,15 @@ MIM:Vermont_Soil    Vermont Soil   skos:narrowMatch  ENVO:00001998  soils       
 
 `object_label = "soils"` instead of the canonical ENVO label `"soil"`.
 
-**Rule B4** *will* flag this once it lands in the Group B follow-up
-PR. The planned design: when the local kg-microbe ontology transforms
-are present (`../kg-microbe/data/transformed/ontologies/envo_nodes.tsv`
-in this case), the validator will look up the canonical label and
-exact-synonym set for `ENVO:00001998` and reject rows where
-`object_label` matches neither. In CI environments without those
-transforms (the typical case on PR CI), Rule B4 will emit a warning
-and skip, so the rule will not block PRs that don't have access to
-the canonical label source. The current validator implements Rule A
-only; Rule B4 is not yet enforced.
+**Rule B4** flags this whenever the local kg-microbe ontology
+transforms are present
+(`../kg-microbe/data/transformed/ontologies/envo_nodes.tsv` in this
+case): the validator looks up the canonical label and exact-synonym
+set for `ENVO:00001998` and rejects rows where `object_label`
+matches neither. In CI environments without those transforms (the
+typical case on PR CI), Rule B4 emits a warning and skips per-prefix,
+so the rule does not block PRs that don't have access to the
+canonical label source.
 
 This rule prevents the "stale child label leaking onto parent"
 pollution that kg-microbe's `purge_asymmetric_pollution()` exists to
@@ -389,9 +390,17 @@ This is the right option when the row reflects genuinely incorrect data.
      chemistry, add it under `chemical_properties.cas_rn` /
      `chemical_properties.pubchem` so future reruns of Rule A grant
      benefit-of-the-doubt automatically.
-   - **Rule B1**: ensure the YAML's `kgmicrobe_curie` field is set to
-     `kgmicrobe.ingredient:<slug>` or `kgmicrobe.compound:<slug>`.
-     The claw builder uses that field to emit the registry row.
+   - **Rule B1**: regenerate the SSSOM via the claw builder — its
+     `_row_from_yaml` synthesizes the
+     `kgmicrobe.{ingredient,compound}:<slug_lc>` registry row
+     automatically whenever the subject has a narrow/broad parent
+     row, choosing the namespace from the parent ontology prefix
+     (chemistry registries → `compound`, food / environmental /
+     anatomical / tissue ontologies → `ingredient`). A B1 reject
+     after a fresh build means either the YAML's `ontology_mapping`
+     was hand-edited away from a narrow/broad relationship or the
+     SSSOM was edited directly — re-run `just build-sssom` from
+     claw and the reject should clear.
    - **Rule B2/B3**: pick one predicate. If the ontology term is a
      proper parent, keep the narrowMatch and drop the exactMatch.
    - **Rule B4**: update `object_label` in the YAML's
@@ -449,7 +458,7 @@ and let the curation issue surface the question.
 
 `just qc-sssom` (and the equivalent direct invocation
 `python3 scripts/validate_sssom_invariants.py`) print a per-row
-report to stderr. The current implementation emits a single FAIL
+report to stderr. On a failing run the validator emits a single FAIL
 header followed by one line per rejected row:
 
 ```
@@ -464,15 +473,33 @@ Exit codes:
   to `mappings/needs_curator_review.tsv` with a `reject_reason`
   column and CI fails.
 
-There is currently no exit-code 1 "warnings only" mode; the planned
-Rule B4 warn-and-skip behaviour will introduce it when Group B
-lands. Match each `row N` line to its rule id (currently always
-Rule A) to find the antidote.
+Rule B1 is **strict by default**: every narrow/broadMatch subject
+must carry a sibling
+`MIM:<slug> skos:exactMatch kgmicrobe.{ingredient,compound}:<slug_lc>`
+registry row, and a missing registry row contributes to exit-2 just
+like Rules A, B2, and B3. The original 162-subject backlog (that
+PR #4 shipped warn-only to accommodate) was cleared by the claw
+SSSOM builder change in
+`culturebotai-claw/scripts/build_mim_ingredient_sssom.py`
+(`_row_from_yaml` now synthesizes the registry row whenever a
+narrow/broad parent row is emitted), so every fresh build of
+`mappings/ingredient_mappings.sssom.tsv` is B1-clean by
+construction.
+
+For one-off diagnostic use (e.g. while bisecting which subjects
+regressed after a builder-side schema change) you can pass
+`--lenient-b1` to downgrade B1 back to warn-only. Do **not** use it
+in CI: the strict default is what protects downstream consumers
+from the identity-collapse class of bug Section 2 describes. The
+legacy `--strict-b1` opt-in flag from the warn-only stage is
+accepted as a no-op so any tooling that still passes it keeps
+working.
 
 ### Where the rules live
 
 - **Validator implementation**: `scripts/validate_sssom_invariants.py`
-  (Rule A only today; Rules B1–B4 deferred to the Group B PR).
+  enforces Rules A, B1 (strict-by-default), B2, B3, and B4 (best-effort,
+  silently skips per-prefix when the kg-microbe transforms are absent).
 - **Justfile recipe**: `just qc-sssom` runs the validator; `just qc`
   runs it as part of the full quality-check composite.
 - **CI workflow**: `.github/workflows/qc-sssom.yaml` invokes
