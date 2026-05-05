@@ -49,10 +49,16 @@ synonyms:
 - synonym_text: ethylenediaminetetraacetic acid disodium salt dihydrate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na2EDTA•2H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Na2EDTA•2H2O(Sigma ED255)
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 7
-  media_count: 7
+  total_occurrences: 10
+  media_count: 10
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -70,8 +76,8 @@ curation_history:
 - timestamp: '2026-04-18T00:00:00+00:00'
   curator: cbclaw_kg_microbe_sweep
   action: ADDED_SYNONYMS
-  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: EDTA disodium dihydrate,
-    Na2EDTA . 2H2O, Na2EDTA · 2H2O, Na2EDTA.2H2O, Na2EDTA· 2H2O, ... (5 more)'
+  changes: 'Added 10 synonyms from kg-microbe P4.4 enrichment: EDTA disodium dihydrate, Na2EDTA
+    . 2H2O, Na2EDTA · 2H2O, Na2EDTA.2H2O, Na2EDTA· 2H2O, ... (5 more)'
   new_status: MAPPED
   llm_assisted: true
 - timestamp: '2026-05-01T07:35:35.140953+00:00'
@@ -89,6 +95,15 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-05T00:00:00+00:00'
+  curator: ingredient_mapping_review_2026_05_05
+  action: MERGED
+  changes: Absorbed duplicate record Na2edta2h2o.yaml (UNMAPPED_0040) into Na2edta2h2o.yaml;
+    source occurrence counts and synonyms were merged. Exact local EDTA disodium salt dihydrate
+    mapping CHEBI:64758.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 205-358-3

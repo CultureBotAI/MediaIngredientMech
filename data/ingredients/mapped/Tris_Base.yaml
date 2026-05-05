@@ -10,20 +10,16 @@ ontology_mapping:
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
 synonyms:
-- synonym_text: 'Role: Buffer; Properties: Defined component, Organic compound, Simple
-    component'
+- synonym_text: 'Role: Buffer; Properties: Defined component, Organic compound, Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Defined component, Simple component, Organic
-    compound'
+- synonym_text: 'Role: Buffer; Properties: Defined component, Simple component, Organic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Organic compound, Defined component, Simple
-    component'
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Defined component, Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Organic compound, Simple component, Defined
-    component'
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Simple component, Defined component'
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: 1,1,1-tris(hydroxymethyl)methanamine
@@ -89,8 +85,7 @@ synonyms:
 - synonym_text: Tris(hydroxymethyl)methylamine
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
-- synonym_text: 'Role: Buffer; Properties: Simple component, Organic compound, Defined
-    component'
+- synonym_text: 'Role: Buffer; Properties: Simple component, Organic compound, Defined component'
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: Tris-HCl buffer
@@ -105,10 +100,16 @@ synonyms:
 - synonym_text: 'Role: Buffer; Properties: Complex component, Defined component, Solution'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Trizma Base pH
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Trizma Base pH 8.2
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 60
-  media_count: 60
+  total_occurrences: 61
+  media_count: 61
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -125,22 +126,20 @@ curation_history:
 - timestamp: '2026-04-05T21:48:45.909752'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
-  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched:
-    TRIS)'
+  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched: TRIS)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.913904'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
-  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched:
-    Tris buffer 1M)'
+  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched: Tris buffer
+    1M)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.915929'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
-  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched:
-    Tris(hydroxymethyl)aminomethane)'
+  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched: Tris(hydroxymethyl)aminomethane)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620'
@@ -176,8 +175,8 @@ curation_history:
   action: MERGED_FROM_DUPLICATES
   changes: 'Absorbed 6 duplicate MIM record(s) into this one: Tris.yaml, Tris_Hydroxymethylaminomethane.yaml,
     Tris_Buffer.yaml, Tris_Hydroxymethylmethylamine.yaml, Tris_Buffer_1m.yaml, Tris_2.yaml.
-    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
-    selected by highest occurrence count with preferred_term readability tie-break.'
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected
+    by highest occurrence count with preferred_term readability tie-break.'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-05-01T07:35:36.731808+00:00'
@@ -195,6 +194,15 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-05T00:00:00+00:00'
+  curator: ingredient_mapping_review_2026_05_05
+  action: MERGED
+  changes: Absorbed duplicate record Trizma_Base_Ph.yaml (UNMAPPED_0090) into Tris_Base.yaml;
+    source occurrence counts and synonyms were merged. Trizma Base pH text is preparation
+    context; identity is Tris base CHEBI:9754.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 kg_microbe_node_id: CHEBI:9754
 chemical_properties:

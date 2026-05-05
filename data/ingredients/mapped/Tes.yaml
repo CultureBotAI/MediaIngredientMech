@@ -13,10 +13,16 @@ synonyms:
 - synonym_text: 'Role: Buffer'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: TES buffer
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: TES buffer(Sigma T 1375)
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 10
-  media_count: 10
+  total_occurrences: 11
+  media_count: 11
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -39,6 +45,15 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-05T00:00:00+00:00'
+  curator: ingredient_mapping_review_2026_05_05
+  action: MERGED
+  changes: Absorbed duplicate record Tes_Buffer.yaml (UNMAPPED_0080) into Tes.yaml; source
+    occurrence counts and synonyms were merged. TES buffer text is preparation context; identity
+    is TES CHEBI:39035 with matching CAS 7365-44-8.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 7365-44-8
