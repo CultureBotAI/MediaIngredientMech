@@ -34,16 +34,17 @@ Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
   consumer that walks the SSSOM by ``subject_label`` resolves the MIM
   child to its OBO parent (identity collapse).
 
-  **Staged rollout**: B1 ships warn-only by default (the validator
-  reports per-row stderr warnings but does not exit-2 or write
-  rejects). Pass ``--strict-b1`` to convert it into a hard gate. The
-  current SSSOM has many narrowMatch subjects whose exactMatch row
-  points at a CAS-RN / mesh / NCIT id rather than a kgmicrobe.* CURIE;
-  warn-only mode lets the validator land alongside the rest of Group
-  B while the kg-microbe registry is being minted out. Flip
-  ``--strict-b1`` (and add it to ``just qc-sssom`` / the CI workflow)
-  once every narrow/broad subject carries a kgmicrobe.* registry
-  exactMatch row.
+  **Strict by default**: B1 contributes to exit-2 and the reject TSV
+  on every run. The original warn-only stage shipped with PR #4 to
+  let the validator land alongside the rest of Group B while the
+  kg-microbe registry was being minted. The 162-subject backlog was
+  cleared in the follow-up by extending the claw SSSOM builder
+  (``culturebotai-claw/scripts/build_mim_ingredient_sssom.py``,
+  ``_row_from_yaml``) to synthesize the registry row whenever any
+  narrow/broad parent row is emitted. ``--lenient-b1`` is available
+  as a diagnostic escape valve (downgrades B1 to warn-only) and the
+  legacy ``--strict-b1`` opt-in flag is accepted as a no-op so
+  existing tooling keeps working.
 
 * **Rule B2** — at most one row per ``(subject_id, object_id)`` pair.
   Group all rows by tuple; any pair with > 1 row is a violation.
@@ -77,10 +78,10 @@ claw builder) or leave it in the triage TSV; CI fails as long as a
 violating row sits in ``ingredient_mappings.sssom.tsv``.
 
 Exit codes:
-  0 — every row passes Rules A, B2, B3, and (when its label source is
-      present) B4. B1 contributes to exit-2 only when ``--strict-b1``
-      is passed; without that flag B1 is warn-only.
-  2 — at least one row failed Rule A, B2, B3, B4, or B1-with-strict.
+  0 — every row passes Rules A, B1, B2, B3, and (when its label source
+      is present) B4.
+  2 — at least one row failed Rule A, B1, B2, B3, or B4. (B1 contributes
+      to exit-2 unless ``--lenient-b1`` is passed.)
 """
 from __future__ import annotations
 
@@ -557,27 +558,44 @@ def main(argv: list[str]) -> int:
             f"(default: {DEFAULT_REJECT_TSV.relative_to(REPO_ROOT)})"
         ),
     )
+    # Rule B1 is strict-by-default: every narrow/broadMatch subject must
+    # carry a kgmicrobe.{ingredient,compound}:<slug_lc> registry
+    # exactMatch row, enforced by exit-2. The B1 backlog (162 missing
+    # registry rows that motivated the warn-only stage) was cleared by
+    # the claw builder change in `scripts/build_mim_ingredient_sssom.py`
+    # (`_row_from_yaml` now synthesizes the registry row whenever a
+    # narrow/broad parent row is emitted). Pass `--lenient-b1` to
+    # downgrade B1 back to warn-only; intended only for one-off curator
+    # bisecting (e.g. when triaging which subjects regress after a
+    # claw-side schema change). CI runs without `--lenient-b1` so
+    # regressions block the merge.
+    p.add_argument(
+        "--lenient-b1",
+        action="store_true",
+        help=(
+            "Downgrade Rule B1 (mandatory kgmicrobe.{ingredient,compound}: "
+            "registry row) from a hard reject to warn-only. Default is "
+            "strict: B1 violations contribute to exit-2 and the reject "
+            "TSV. The lenient mode is provided for diagnostic use only "
+            "(e.g. while bisecting which subjects regressed) and should "
+            "never be used in CI. See MAPPING_SEMANTICS.md Section 2 "
+            "for the registry-row contract."
+        ),
+    )
+    # Backwards-compatible alias: --strict-b1 was the opt-in flag during
+    # the warn-only stage. Now that strict is the default it's a no-op,
+    # but accepting it keeps existing tooling/scripts that pass it
+    # working. We don't surface it in --help to discourage new callers.
     p.add_argument(
         "--strict-b1",
         action="store_true",
-        help=(
-            "Treat Rule B1 (mandatory kgmicrobe.{ingredient,compound}: "
-            "registry row) as a hard reject. Default is warn-only: B1 "
-            "violations are reported to stderr but do not contribute to "
-            "exit-2 or the reject TSV. Flip this flag once the SSSOM "
-            "carries kgmicrobe.* registry rows for every narrowMatch / "
-            "broadMatch subject (see MAPPING_SEMANTICS.md Section 2). "
-            "The current SSSOM has many narrowMatch subjects whose "
-            "exactMatch row points at a CAS-RN / mesh / NCIT id rather "
-            "than a kgmicrobe.* registry CURIE — those subjects are B1 "
-            "violations under the strict reading even though the "
-            "non-kg-microbe exactMatch row prevents some forms of "
-            "identity collapse. Strict B1 is the correct long-term "
-            "gate; warn-only is the temporary stage until the "
-            "kg-microbe registry is fully minted."
-        ),
+        help=argparse.SUPPRESS,
     )
     args = p.parse_args(argv[1:])
+    # `--strict-b1` is redundant once strict is the default, but pin
+    # `strict_b1` so the rest of the function doesn't have to reason
+    # about three states.
+    args.strict_b1 = not args.lenient_b1
 
     if not args.sssom_path.is_file():
         print(f"ERROR: SSSOM file not found at {args.sssom_path}", file=sys.stderr)
@@ -601,20 +619,18 @@ def main(argv: list[str]) -> int:
     if args.strict_b1:
         _collect("Rule B1", evaluate_rule_b1(rows))
     else:
-        # Warn-only B1: emit per-row warnings to stderr but do not
-        # contribute to exit-2 or the reject TSV. Once the SSSOM carries
-        # kgmicrobe.* registry rows for every narrowMatch subject, run
-        # the validator with --strict-b1 (and add the flag to CI) to
-        # flip B1 into a hard gate.
+        # Lenient (diagnostic) B1: emit per-row warnings to stderr but
+        # do not contribute to exit-2 or the reject TSV. Triggered only
+        # by --lenient-b1; CI runs strict.
         b1_findings = list(evaluate_rule_b1(rows))
         if b1_findings:
             print(
-                f"WARNING: Rule B1 (warn-only without --strict-b1): "
+                f"WARNING: Rule B1 (lenient mode, --lenient-b1): "
                 f"{len(b1_findings)} narrowMatch/broadMatch row(s) "
                 f"belong to a MIM subject that lacks a "
                 f"kgmicrobe.{{ingredient,compound}}:<slug_lc> registry "
-                f"exactMatch row. Pass --strict-b1 to convert these to "
-                f"hard rejects. First five:",
+                f"exactMatch row. Drop --lenient-b1 (the default) to "
+                f"convert these to hard rejects. First five:",
                 file=sys.stderr,
             )
             for row_num, row, _reason in b1_findings[:5]:
@@ -671,7 +687,7 @@ def main(argv: list[str]) -> int:
         reject_display = args.reject_tsv
 
     if not all_rejects:
-        b1_label = "B1" if args.strict_b1 else "B1(warn-only)"
+        b1_label = "B1" if args.strict_b1 else "B1(lenient)"
         rule_summary = f"Rules A, {b1_label}, B2, B3"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
