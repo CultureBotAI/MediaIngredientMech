@@ -108,8 +108,8 @@ synonyms:
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 4260
-  media_count: 241
+  total_occurrences: 4282
+  media_count: 263
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -236,6 +236,14 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unmapped_ols_exact_audit
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Retired duplicate unmapped record Dh2o.yaml; existing exact synonym "dH2O"
+    already points to this mapped distilled water representative, and occurrence
+    counts were summed.
+  new_status: MAPPED
   llm_assisted: false
 kg_microbe_node_id: CHEBI:15377
 chemical_properties:

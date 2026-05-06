@@ -19,6 +19,9 @@ synonyms:
 - synonym_text: xylans
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Xylan (hemicellulose substrate)
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_ols_exact_audit
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 20
@@ -46,6 +49,14 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unmapped_ols_exact_audit
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Added exact synonym "Xylan (hemicellulose substrate)" and retired duplicate
+    unmapped record Xylan_(hemicellulose_Substrate).yaml after OLS exact match to
+    CHEBI:37166.
+  new_status: MAPPED
   llm_assisted: false
 kg_microbe_node_id: CHEBI:37166
 ingredient_type: SINGLE_INGREDIENT

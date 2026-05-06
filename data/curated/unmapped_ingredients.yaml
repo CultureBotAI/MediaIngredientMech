@@ -1,7 +1,7 @@
-generation_date: '2026-05-05T06:57:53.845594+00:00'
-total_count: 466
+generation_date: '2026-05-06T17:33:39.402280+00:00'
+total_count: 459
 mapped_count: 0
-unmapped_count: 466
+unmapped_count: 459
 ingredients:
 - identifier: UNMAPPED_0588
   preferred_term: (E)-4-Aminostyryl acetate
@@ -1316,51 +1316,6 @@ ingredients:
     llm_assisted: false
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
     or CHEBI mapping available; curator review needed.
-- identifier: UNMAPPED_0600
-  preferred_term: Biotin (Vitamin B7)
-  synonyms:
-  - synonym_text: Biotin (Vitamin B7)
-    synonym_type: RAW_TEXT
-    source: communitymech-unmapped
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-05-01T02:37:08.074047+00:00'
-    curator: audit_import_ingredients[communitymech-unmapped]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Biotin_(Vitamin_B7));
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T05:18:28.308125+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_CHEBI
-    changes: set ontology_mapping parent=CHEBI:15956 (label-exact)
-    llm_assisted: false
-  - timestamp: '2026-05-02T23:59:53.553399+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C10H16N2O3S; inchi=InChI=1S/C10H16N2O3S/c13-8(14)4-2-1-3-7-9-6(5-16-7;
-      smiles=[H][C@]12CS[C@@H](CCCCC(=O)O)[C@@]1([H])NC(=O)N2
-    llm_assisted: false
-  notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Biotin_(Vitamin_B7));
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-  ontology_mapping:
-    ontology_id: CHEBI:15956
-    ontology_label: biotin
-    ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CHEBI via OLS (label-exact)
-      notes: Parent class identified via label-exact; matched_via='Biotin'
-  chemical_properties:
-    molecular_formula: C10H16N2O3S
-    inchi: InChI=1S/C10H16N2O3S/c13-8(14)4-2-1-3-7-9-6(5-16-7)11-10(15)12-9/h6-7,9H,1-5H2,(H,13,14)(H2,11,12,15)/t6-,7-,9-/m0/s1
-    smiles: '[H][C@]12CS[C@@H](CCCCC(=O)O)[C@@]1([H])NC(=O)N2'
-    data_source: CHEBI sqlite (oaklib)
 - identifier: UNMAPPED_0339
   preferred_term: Blood Agar Base
   synonyms:
@@ -2660,24 +2615,6 @@ ingredients:
     llm_assisted: false
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
     or CHEBI mapping available; curator review needed.
-- identifier: UNMAPPED_0006
-  preferred_term: dH2O
-  synonyms:
-  - synonym_text: dH2O
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 22
-    media_count: 22
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 4'
 - identifier: UNMAPPED_0375
   preferred_term: Diced potato
   synonyms:
@@ -4255,24 +4192,6 @@ ingredients:
       source: NCIT via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='K-phosphate
         buffer'
-- identifier: UNMAPPED_0010
-  preferred_term: K2HPO
-  synonyms:
-  - synonym_text: K2HPO4(Sigma P 3786)
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 17
-    media_count: 17
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 4'
 - identifier: UNMAPPED_0411
   preferred_term: KH2PO3
   synonyms:
@@ -4473,26 +4392,6 @@ ingredients:
     new_status: UNMAPPED
     llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0418
-  preferred_term: L-α-Phosphatidylcholine
-  synonyms:
-  - synonym_text: L-α-Phosphatidylcholine
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:2082); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:2082); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0297
   preferred_term: LCFM Carbon mix
@@ -6445,24 +6344,6 @@ ingredients:
   preferred_term: NaH2PO4•H2O
   synonyms:
   - synonym_text: NaH2PO4•H2O(MCIB 742)
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 4
-    media_count: 4
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 2'
-- identifier: UNMAPPED_0035
-  preferred_term: NaHCO
-  synonyms:
-  - synonym_text: NaHCO3(Fisher S 233)
     synonym_type: RAW_TEXT
     source: CultureMech
   mapping_status: UNMAPPED
@@ -9481,40 +9362,6 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: NCIT via OLS (label-exact)
       notes: Parent class identified via label-exact; matched_via='Vitamin'
-- identifier: UNMAPPED_0621
-  preferred_term: Vitamin B12 (cyanocobalamin)
-  synonyms:
-  - synonym_text: Vitamin B12 (cyanocobalamin)
-    synonym_type: RAW_TEXT
-    source: communitymech-unmapped
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-05-01T02:37:08.074047+00:00'
-    curator: audit_import_ingredients[communitymech-unmapped]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Vitamin_B12_(cyanocobalamin));
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T07:20:09.296478+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_CHEBI
-    changes: set ontology_mapping parent=CHEBI:176843 (label-exact)
-    llm_assisted: false
-  notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Vitamin_B12_(cyanocobalamin));
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-  ontology_mapping:
-    ontology_id: CHEBI:176843
-    ontology_label: vitamin B12
-    ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CHEBI via OLS (label-exact)
-      notes: Parent class identified via label-exact; matched_via='Vitamin B12'
 - identifier: UNMAPPED_0567
   preferred_term: Vitamin B12 solution see Medium No. 403
   synonyms:
@@ -9881,40 +9728,6 @@ ingredients:
     llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1826); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0623
-  preferred_term: Xylan (hemicellulose substrate)
-  synonyms:
-  - synonym_text: Xylan (hemicellulose substrate)
-    synonym_type: RAW_TEXT
-    source: communitymech-unmapped
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-05-01T02:37:08.074047+00:00'
-    curator: audit_import_ingredients[communitymech-unmapped]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Xylan_(hemicellulose_substrate));
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T07:23:40.425415+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_CHEBI
-    changes: set ontology_mapping parent=CHEBI:37166 (label-exact)
-    llm_assisted: false
-  notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Xylan_(hemicellulose_substrate));
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-  ontology_mapping:
-    ontology_id: CHEBI:37166
-    ontology_label: xylan
-    ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CHEBI via OLS (label-exact)
-      notes: Parent class identified via label-exact; matched_via='Xylan'
 - identifier: UNMAPPED_0174
   preferred_term: Xyloglucan (hepta+octa+nona saccharides)
   synonyms:
