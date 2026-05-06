@@ -44,6 +44,12 @@ manual promotion review. The OAK/OLS follow-up pass promoted
 was supported. A later all-ontology OLS normalized label/synonym scan over the
 53 remaining placeholders found 0 additional identity candidates.
 
+The LOW/MEDIUM candidate audit in
+`mappings/ingredient_mappings_unknown_term_manual_candidate_review.tsv`
+reviewed 20 rows with prior lexical OLS candidates. No mapping promotion was
+made: candidates were family/member variants, unrelated lexical hits, organism
+terms, or cases requiring external identity evidence not present in OAK/OLS.
+
 ## Next Actions
 
 1. Keep expected `cas:` and `kgmicrobe.*` registry rows unless a row-specific curation issue is found.

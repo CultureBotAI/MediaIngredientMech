@@ -54,6 +54,11 @@ A focused EBI OLS exact label/synonym search was run for the 64 original `kgmicr
   placeholder labels, filtered to CHEBI, NCIT, MeSH, MICRO, BTO, FOODON, and
   ENVO and compared with punctuation-insensitive label/synonym normalization,
   found 0 additional identity candidates.
+- The LOW/MEDIUM candidate pass was manually triaged in
+  `mappings/ingredient_mappings_unknown_term_manual_candidate_review.tsv`.
+  It reviewed 20 rows with prior lexical candidates; all remain queued because
+  candidates were family/member variants, unrelated lexical hits, organism terms,
+  or required external literature evidence beyond OAK/OLS metadata.
 
 ## Outcome
 
