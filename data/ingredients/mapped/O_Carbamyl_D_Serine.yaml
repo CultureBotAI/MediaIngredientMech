@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:o_carbamyl_d_serine
+identifier: mesh:C000366
 preferred_term: O Carbamyl D Serine
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:o_carbamyl_d_serine
-  ontology_label: O Carbamyl D Serine
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C000366
+  ontology_label: O-carbamylserine
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,10 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:192410(Carbamyl chloride), CHEBI:229987(O-Benzyl-D-serine), CHEBI:37713(O-phospho-D-serine).
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via EBI OLS exact synonym search
+    notes: Promoted from kgmicrobe.compound:o_carbamyl_d_serine after OLS returned
+      mesh:C000366 with exact synonym "O Carbamyl D Serine".
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -35,5 +39,12 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: PROMOTED_FROM_KGM_PLACEHOLDER
+  changes: primary kgmicrobe.compound:o_carbamyl_d_serine → mesh:C000366 after EBI
+    OLS exact synonym match to "O Carbamyl D Serine".
+  new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:atrop_abyssomicin_c
+identifier: mesh:C509797
 preferred_term: Atrop Abyssomicin C
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:atrop_abyssomicin_c
-  ontology_label: Atrop Abyssomicin C
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:C509797
+  ontology_label: abyssomicin C
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,10 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:208735(Atrop-Abybetaomicin C), CHEBI:70593(Abyssomicin I), CHEBI:226794(Atrop-Ilyoresorcy
       A). Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via EBI OLS exact synonym search
+    notes: Promoted from kgmicrobe.compound:atrop_abyssomicin_c after OLS returned
+      mesh:C509797 with exact synonym "Atrop Abyssomicin C".
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -35,5 +39,12 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: PROMOTED_FROM_KGM_PLACEHOLDER
+  changes: primary kgmicrobe.compound:atrop_abyssomicin_c → mesh:C509797 after EBI
+    OLS exact synonym match to "Atrop Abyssomicin C".
+  new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
