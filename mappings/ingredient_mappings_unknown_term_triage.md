@@ -50,6 +50,11 @@ reviewed 20 rows with prior lexical OLS candidates. No mapping promotion was
 made: candidates were family/member variants, unrelated lexical hits, organism
 terms, or cases requiring external identity evidence not present in OAK/OLS.
 
+The remaining 33 placeholder rows had no prior OLS candidates in their YAML
+evidence and no normalized local duplicate representative in
+`data/ingredients/mapped`; they are recorded in
+`mappings/ingredient_mappings_unknown_term_nohit_review.tsv`.
+
 ## Next Actions
 
 1. Keep expected `cas:` and `kgmicrobe.*` registry rows unless a row-specific curation issue is found.

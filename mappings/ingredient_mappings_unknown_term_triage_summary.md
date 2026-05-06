@@ -59,6 +59,10 @@ A focused EBI OLS exact label/synonym search was run for the 64 original `kgmicr
   It reviewed 20 rows with prior lexical candidates; all remain queued because
   candidates were family/member variants, unrelated lexical hits, organism terms,
   or required external literature evidence beyond OAK/OLS metadata.
+- The remaining 33 placeholder rows had no prior OLS candidates in their YAML
+  evidence and no normalized local duplicate representative in `data/ingredients/mapped`.
+  They are recorded in
+  `mappings/ingredient_mappings_unknown_term_nohit_review.tsv`.
 
 ## Outcome
 
