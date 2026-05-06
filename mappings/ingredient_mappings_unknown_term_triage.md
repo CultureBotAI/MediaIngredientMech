@@ -41,7 +41,8 @@
 Fifty-three `kgmicrobe.compound:*` placeholder rows remain queued for future
 manual promotion review. The OAK/OLS follow-up pass promoted
 `Poly_L_Lysine_Polymer` to `CHEBI:61490`; no other high-confidence replacement
-was supported.
+was supported. A later all-ontology OLS normalized label/synonym scan over the
+53 remaining placeholders found 0 additional identity candidates.
 
 ## Next Actions
 

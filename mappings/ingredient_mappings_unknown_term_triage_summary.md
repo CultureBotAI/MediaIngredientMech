@@ -50,6 +50,10 @@ A focused EBI OLS exact label/synonym search was run for the 64 original `kgmicr
   punctuation-normalized CHEBI identity: `Poly_L_Lysine_Polymer` was promoted
   from `kgmicrobe.compound:poly_l_lysine_polymer` to `CHEBI:61490`
   (`poly(L-lysine) polymer`) after OAK/OLS validation.
+- A subsequent all-ontology EBI OLS search-response scan over the 53 remaining
+  placeholder labels, filtered to CHEBI, NCIT, MeSH, MICRO, BTO, FOODON, and
+  ENVO and compared with punctuation-insensitive label/synonym normalization,
+  found 0 additional identity candidates.
 
 ## Outcome
 
