@@ -3,14 +3,14 @@
 - Source review: `mappings/ingredient_mappings_oak_ols_review.tsv`
 - Source SSSOM: `mappings/ingredient_mappings.sssom.tsv`
 - External-prefix OLS validation: `mappings/ingredient_mappings_external_prefix_ols_validation.tsv`
-- Rows triaged: 693
+- Rows triaged: 690
 
 ## Classification Counts
 
 | Classification | Count |
 |---|---:|
-| expected_registry_identifier | 508 |
-| missing_prefix_validator_coverage_issue | 185 |
+| expected_registry_identifier | 497 |
+| missing_prefix_validator_coverage_issue | 193 |
 
 ## Prefix x Classification
 
@@ -18,17 +18,17 @@
 |---|---|---:|
 | BTO | missing_prefix_validator_coverage_issue | 1 |
 | MICRO | missing_prefix_validator_coverage_issue | 47 |
-| NCIT | missing_prefix_validator_coverage_issue | 59 |
+| NCIT | missing_prefix_validator_coverage_issue | 61 |
 | cas | expected_registry_identifier | 249 |
-| kgmicrobe.compound | expected_registry_identifier | 230 |
+| kgmicrobe.compound | expected_registry_identifier | 219 |
 | kgmicrobe.ingredient | expected_registry_identifier | 29 |
-| mesh | missing_prefix_validator_coverage_issue | 78 |
+| mesh | missing_prefix_validator_coverage_issue | 84 |
 
 ## External Prefix OLS Status
 
 | OLS status | Row count |
 |---|---:|
-| RESOLVED_EXACT_CURIE | 185 |
+| RESOLVED_EXACT_CURIE | 193 |
 
 ## Interpretation
 
@@ -38,10 +38,14 @@
 
 ## Rows Needing Curator Review
 
-None from local structural checks or prefix-specific EBI OLS validation.
+Fifty-three `kgmicrobe.compound:*` placeholder rows remain queued for future
+manual promotion review. The OAK/OLS follow-up pass promoted
+`Poly_L_Lysine_Polymer` to `CHEBI:61490`; no other high-confidence replacement
+was supported.
 
 ## Next Actions
 
 1. Keep expected `cas:` and `kgmicrobe.*` registry rows unless a row-specific curation issue is found.
 2. Extend the synonym-review OLS dispatch table to include `mesh`, `NCIT`, `MICRO`, and `BTO` if future validation should stop reporting those rows as `UNKNOWN_TERM`.
-3. No high-confidence mapping replacements are supported by this triage pass.
+3. Continue manual review of the 53 remaining placeholder rows; do not promote
+   family/member lexical hits without exact identity evidence.

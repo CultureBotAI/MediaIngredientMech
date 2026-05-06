@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:poly_l_lysine_polymer
+identifier: CHEBI:61490
 preferred_term: Poly L Lysine Polymer
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:poly_l_lysine_polymer
-  ontology_label: Poly L Lysine Polymer
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: CHEBI:61490
+  ontology_label: poly(L-lysine) polymer
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,7 +12,18 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:61490(poly(L-lysine) polymer), CHEBI:61488(poly(lysine) polymer), CHEBI:61489(poly(D-lysine)
       polymer). Pending curator promotion to a CHEBI/NCIT primary identifier.'
-synonyms: []
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via EBI OLS/OAK search
+    notes: Promoted from kgmicrobe.compound:poly_l_lysine_polymer after OAK/OLS
+      returned CHEBI:61490 with label "poly(L-lysine) polymer"; the source label
+      differs only by punctuation/spacing normalization.
+synonyms:
+- synonym_text: poly(L-lysine) polymer
+  synonym_type: EXACT_SYNONYM
+  source: CHEBI
+- synonym_text: poly(L-lysine)
+  synonym_type: EXACT_SYNONYM
+  source: CHEBI
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -35,5 +46,12 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_oak_ols_review
+  action: PROMOTED_FROM_KGM_PLACEHOLDER
+  changes: primary kgmicrobe.compound:poly_l_lysine_polymer → CHEBI:61490 after
+    OAK/OLS match to CHEBI label "poly(L-lysine) polymer".
+  new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
