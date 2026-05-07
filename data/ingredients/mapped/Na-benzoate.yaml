@@ -28,6 +28,9 @@ synonyms:
 - synonym_text: 'Properties: Simple component, Organic compound, Defined component'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Sodiumbenzoate
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_07
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 36
@@ -98,6 +101,15 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Sodiumbenzoate.yaml (UNMAPPED_0527);
+    local OAK CHEBI resolves CHEBI:113455 as sodium benzoate and the source label
+    is a spacing variant.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 532-32-1

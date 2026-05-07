@@ -13,7 +13,10 @@ ontology_mapping:
       CHEBI:27036(trans,trans-muconic acid), CHEBI:38447(tetrachloro-trans,trans-muconic
       acid), CHEBI:15714(trans-sinapic acid). Pending curator promotion to a CHEBI/NCIT
       primary identifier.'
-synonyms: []
+synonyms:
+- synonym_text: trans-styrylacetic acid
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_07
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -36,5 +39,14 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Trans-styrylacetic_Acid.yaml (UNMAPPED_0595);
+    source label matches kgmicrobe.compound:trans_styrylacetic_acid placeholder identity.
+    CHEBI search candidates were not promoted because local evidence does not prove identity.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

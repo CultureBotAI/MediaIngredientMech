@@ -12,7 +12,10 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:48081(bacteriocin), CHEBI:204272(Nukacin ISK-1), CHEBI:196278(Small bacteriocin).
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
-synonyms: []
+synonyms:
+- synonym_text: bacteriocin ISK-1
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_07
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -35,5 +38,15 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Bacteriocin_ISK-1.yaml (UNMAPPED_0592);
+    source label matches kgmicrobe.compound:bacteriocin_isk_1 placeholder identity.
+    CHEBI:204272 resolves as Nukacin ISK-1 but was not promoted because local evidence
+    does not prove identity to the broader source label.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

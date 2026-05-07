@@ -43,10 +43,13 @@ synonyms:
 - synonym_text: Na2HPO4·12H2O
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na2HPO4•7H2O
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_07
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 17
-  media_count: 17
+  total_occurrences: 19
+  media_count: 19
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -82,6 +85,15 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Na2hpo47h2o.yaml (UNMAPPED_0060);
+    added 2 source occurrences and 2 source media counts. Hydrate state matches
+    the mapped Na2HPO4 x 7 H2O representative and local OAK CHEBI resolves CHEBI:34683.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 kg_microbe_node_id: CHEBI:34683
 chemical_properties:

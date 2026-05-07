@@ -16,7 +16,10 @@ ontology_mapping:
     source: MESH via EBI OLS exact synonym search
     notes: Promoted from kgmicrobe.compound:o_carbamyl_d_serine after OLS returned
       mesh:C000366 with exact synonym "O Carbamyl D Serine".
-synonyms: []
+synonyms:
+- synonym_text: O-carbamyl-D-serine
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_07
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -45,6 +48,15 @@ curation_history:
   action: PROMOTED_FROM_KGM_PLACEHOLDER
   changes: primary kgmicrobe.compound:o_carbamyl_d_serine → mesh:C000366 after EBI
     OLS exact synonym match to "O Carbamyl D Serine".
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record O-carbamyl-D-serine.yaml (UNMAPPED_0594);
+    MESH target mesh:C000366 resolves in EBI OLS and the source label is an exact
+    variant of the mapped record.
+  previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
