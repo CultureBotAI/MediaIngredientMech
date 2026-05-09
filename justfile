@@ -1,6 +1,11 @@
 # MediaIngredientMech justfile
 # Run `just` to see all available commands
 
+set dotenv-load := true
+
+research_dir := "research"
+templates_dir := "templates"
+
 # Default recipe - list all commands
 default:
     @just --list
@@ -90,6 +95,24 @@ aggregate-collections:
 # Validate individual ingredient files only
 validate-individual:
     python scripts/validate_all.py --mode individual
+
+# Run FutureHouse Falcon / deep-research-client against an ingredient record
+research-ingredient provider status slug *args="":
+    uv run --extra dev python scripts/research_ingredient.py \
+        --provider {{provider}} \
+        --status {{status}} \
+        --slug {{slug}} \
+        --template {{templates_dir}}/ingredient_mapping_research.md \
+        --research-dir {{research_dir}} \
+        {{args}}
+
+# List available deep-research-client providers
+research-providers:
+    uv run --extra dev python scripts/research_ingredient.py --list-providers
+
+# Check availability for one deep-research-client provider
+research-provider provider:
+    uv run --extra dev python scripts/research_ingredient.py --provider-status {{provider}}
 
 # Full workflow: export, validate, aggregate
 sync-individual:
