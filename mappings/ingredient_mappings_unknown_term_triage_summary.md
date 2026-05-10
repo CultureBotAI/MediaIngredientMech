@@ -88,3 +88,19 @@ A focused EBI OLS exact label/synonym search was run for the 64 original `kgmicr
 - The mapped aggregate collection was regenerated from individual YAML records after
   annotation. The unmapped aggregate was left unchanged except for avoiding timestamp-only
   churn.
+
+## 2026-05-10 SYNONYM_ENRICH Review
+
+- Added `ingredient_mappings_synonym_enrich_review.tsv` as a row-level disposition
+  artifact for all 623 `SYNONYM_ENRICH` rows.
+- 619 rows were `ALREADY_REPRESENTED`: every proposed candidate string was already
+  present as the ingredient preferred term or a synonym.
+- Four rows required mapping repair rather than synonym addition:
+  `Disodium_Phosphate_Heptahydrate_(002_M_Stock)`, `EDTA_(acid_Form)`,
+  `Sodium_Nitrate_(070_M_Stock)`, and `Soyton`.
+- The two stock solution rows now use a `kgmicrobe.ingredient:*` registry identity
+  row plus `skos:narrowMatch` to the corrected CHEBI solute term.
+- `EDTA_(acid_Form)` was corrected from EDTA tetraanion `CHEBI:42191` to EDTA acid
+  `CHEBI:4735`.
+- `Soyton` was corrected from unrelated `FOODON:03302071` to a local
+  `kgmicrobe.ingredient:soyton` identity pending exact external ontology support.

@@ -1,15 +1,24 @@
-identifier: CHEBI:131825
+identifier: kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29
 preferred_term: Disodium phosphate heptahydrate (0.02 M stock)
 ontology_mapping:
-  ontology_id: CHEBI:131825
-  ontology_label: disodium hydrogen phosphate heptahydrate
+  ontology_id: CHEBI:34683
+  ontology_label: disodium hydrogenphosphate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: LEXICAL_MATCH
     source: culturemech-pending
     notes: 'Imported from culturemech-pending via source-preset. source_id=culturemech.solution_ingredient:Disodium_phosphate_heptahydrate_(0.02_M_stock); '
-synonyms: []
+  - evidence_type: CURATOR_JUDGMENT
+    source: sssom_synonym_enrich_review_2026_05_10
+    notes: Previous CHEBI:131825 mapping resolved to an unrelated deoxyadenosine term.
+      OLS/OAK finds disodium hydrogenphosphate but no exact heptahydrate stock solution
+      term, so the stock solution retains a kgmicrobe.ingredient identity with CHEBI:34683
+      as a broader solute parent.
+synonyms:
+- synonym_text: disodium hydrogen phosphate heptahydrate
+  synonym_type: RELATED_SYNONYM
+  source: sssom_synonym_enrich_review_2026_05_10
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -37,9 +46,18 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
-ingredient_type: SINGLE_INGREDIENT
-chemical_properties:
-  molecular_formula: C10H11N5O3
-  inchi: InChI=1S/C10H11N5O3/c11-8-5-9(13-2-12-8)15-4-1-3(16)7(18-4)6(17)10(15)14-5/h2-4,6-7,16-17H,1H2,(H2,11,12,13)/t3-,4+,6-,7-/m0/s1
-  smiles: '[H][C@]12O[C@H](C[C@@H]1O)n1c(nc3c(N)ncnc31)[C@H]2O'
-  data_source: CHEBI sqlite (oaklib)
+- timestamp: '2026-05-10T04:47:45+00:00'
+  curator: sssom_synonym_enrich_review_2026_05_10
+  action: CORRECTED
+  changes: Changed primary identifier from unrelated CHEBI:131825 to kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29;
+    retained CHEBI:34683 only as a NARROW_MATCH parent and removed unrelated deoxyadenosine
+    chemical properties.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+ingredient_type: STOCK_SOLUTION
+notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:131825
+  exact mapping. Disodium phosphate heptahydrate (0.02 M stock) is a stock solution
+  ingredient; retain a kgmicrobe.ingredient identity and use CHEBI:34683 as a broader
+  disodium hydrogenphosphate solute parent.'
+kg_microbe_node_id: kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29
