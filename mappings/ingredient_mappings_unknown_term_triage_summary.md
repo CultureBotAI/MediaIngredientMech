@@ -70,3 +70,21 @@ A focused EBI OLS exact label/synonym search was run for the 64 original `kgmicr
 - Aggregate collections were regenerated from individual YAML records.
 - SSSOM was rebuilt, OAK/OLS-reviewed, and published because mapping rows changed.
 - Remaining UNKNOWN_TERM rows are either expected non-OBO registry rows, external-prefix false positives already resolved by explicit OLS validation, or kg-microbe placeholders that need future manual curation.
+
+## 2026-05-10 Follow-up Row Review
+
+- All 53 current `kgmicrobe.compound:*` placeholder rows from
+  `ingredient_mappings_unknown_term_placeholder_ols_candidates.tsv` are now reflected
+  in individual ingredient YAML curation history/notes.
+- The 33 no-hit rows in `ingredient_mappings_unknown_term_nohit_review.tsv` were
+  annotated as retained placeholders: no exact OLS candidate and no normalized local
+  mapped duplicate supported promotion.
+- The 20 rows in `ingredient_mappings_unknown_term_manual_candidate_review.tsv` were
+  annotated as manually triaged. Eighteen remain `NO_IDENTITY_PROMOTION`, `Bacteriocin
+  Isk 1` is `FALCON_REVIEWED_AMBIGUOUS`, and `Destomycin` is
+  `OLS_REVIEWED_NO_IDENTITY_PROMOTION`.
+- No SSSOM predicate or object changes were made in this follow-up because no reviewed
+  row met the evidence threshold for exact identity promotion.
+- The mapped aggregate collection was regenerated from individual YAML records after
+  annotation. The unmapped aggregate was left unchanged except for avoiding timestamp-only
+  churn.
