@@ -91,6 +91,8 @@ A focused EBI OLS exact label/synonym search was run for the 64 original `kgmicr
 
 ## 2026-05-10 SYNONYM_ENRICH Review
 
+- Added `ingredient_mappings_row_review_manifest.tsv` as the top-level disposition
+  manifest for all 2,194 rows in `ingredient_mappings_oak_ols_review.tsv`.
 - Added `ingredient_mappings_synonym_enrich_review.tsv` as a row-level disposition
   artifact for all 623 `SYNONYM_ENRICH` rows.
 - 619 rows were `ALREADY_REPRESENTED`: every proposed candidate string was already
