@@ -9,12 +9,6 @@ synonyms:
 - synonym_text: N-[tris(hydroxymethyl)methyl]-3-amino-2-hydroxypropanesulfonic acid
   synonym_type: EXACT
   source: IUPAC
-- synonym_text: (1R,2R)-diclocymet
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: (2R)-2-cyano-N-[(1R)-1-(2,4-dichlorophenyl)ethyl]-3,3-dimethylbutanamide
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 10
@@ -45,6 +39,14 @@ curation_history:
   action: ADDED_SYNONYMS
   changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: (1R,2R)-diclocymet,
     (2R)-2-cyano-N-[(1R)-1-(2,4-dichlorophenyl)ethyl]-3,3-dimethylbutanamide'
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-05-11T06:02:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLEANED_INCORRECT_SYNONYMS
+  changes: Removed kg-microbe diclocymet synonyms that were already documented as
+    unrelated to TAPSO in the 2026-04-18 demotion event.
+  previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
 chemical_properties:

@@ -21,8 +21,18 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C598 (label-exact)
   llm_assisted: false
+- timestamp: '2026-05-11T06:10:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_NON_IDENTITY_PARENT
+  changes: Left unmapped because the source term is iron supplied as FeCl3 in EDTA,
+    not elemental iron identity; broad iron parent mapping is retained only as
+    contextual curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Iron_(as_FeCl3_in_EDTA));
-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 and not identity-mapped
+  to elemental iron because the source form specifies FeCl3 in EDTA.
 ontology_mapping:
   ontology_id: NCIT:C598
   ontology_label: Iron

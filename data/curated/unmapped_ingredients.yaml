@@ -1,7 +1,7 @@
-generation_date: '2026-05-11T04:25:49.237966+00:00'
-total_count: 430
+generation_date: '2026-05-11T05:00:56.862944+00:00'
+total_count: 421
 mapped_count: 0
-unmapped_count: 430
+unmapped_count: 421
 ingredients:
 - identifier: UNMAPPED_0316
   preferred_term: 1-Naphtylacetic Acid
@@ -377,26 +377,6 @@ ingredients:
   preferred_term: Acetyl-Dihydro-7-Epikhivorin
   synonyms:
   - synonym_text: Acetyl-Dihydro-7-Epikhivorin
-    synonym_type: RAW_TEXT
-    source: culturebotht
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-      or CHEBI mapping available; curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
-- identifier: UNMAPPED_0226
-  preferred_term: Acetylated xylan
-  synonyms:
-  - synonym_text: Acetylated xylan
     synonym_type: RAW_TEXT
     source: culturebotht
   mapping_status: UNMAPPED
@@ -1373,11 +1353,18 @@ ingredients:
     changes: Added CAS-RN:7440-70-2 from PubChem API via name lookup (Ca)
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 1'
-  chemical_properties:
-    cas_rn: 7440-70-2
-    data_source: PubChem API
-    retrieval_date: '2026-04-05T19:54:23.788641'
+  - timestamp: '2026-05-11T06:02:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_AMBIGUOUS_FORMULA
+    changes: Left unmapped because the preferred term is a truncated calcium token
+      while the raw source label is calcium nitrate tetrahydrate. Removed elemental
+      calcium CAS-RN 7440-70-2 because it does not represent the raw salt hydrate.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 and left unmapped
+    because Ca(NO3)2•4H2O salt-hydrate identity should not be collapsed to elemental
+    calcium.'
 - identifier: UNMAPPED_0156
   preferred_term: Cadmium-NTA
   synonyms:
@@ -2433,26 +2420,6 @@ ingredients:
   notes: Imported from mim-queue (source_id=mediadive.ingredient:530); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
-- identifier: UNMAPPED_0201
-  preferred_term: Dihydrocelastrol
-  synonyms:
-  - synonym_text: Dihydrocelastrol
-    synonym_type: RAW_TEXT
-    source: culturebotht
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-      or CHEBI mapping available; curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
 - identifier: UNMAPPED_0192
   preferred_term: Dihydrodehydroerosone
   synonyms:
@@ -3271,24 +3238,6 @@ ingredients:
     llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1382); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0047
-  preferred_term: H3BO
-  synonyms:
-  - synonym_text: H3BO3(Baker 0084)
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 3
-    media_count: 3
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 7'
 - identifier: UNMAPPED_0398
   preferred_term: HBO3
   synonyms:
@@ -3733,8 +3682,18 @@ ingredients:
     action: BACKFILL_PARENT_NCIT
     changes: set ontology_mapping parent=NCIT:C598 (label-exact)
     llm_assisted: false
+  - timestamp: '2026-05-11T06:10:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_NON_IDENTITY_PARENT
+    changes: Left unmapped because the source term is iron supplied as FeCl3 in EDTA,
+      not elemental iron identity; broad iron parent mapping is retained only as contextual
+      curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Iron_(as_FeCl3_in_EDTA));
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 and not identity-mapped
+    to elemental iron because the source form specifies FeCl3 in EDTA.
   ontology_mapping:
     ontology_id: NCIT:C598
     ontology_label: Iron
@@ -4811,24 +4770,6 @@ ingredients:
     llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1763); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0017
-  preferred_term: MgCO
-  synonyms:
-  - synonym_text: MgCO3(MCIB CB486)
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 11
-    media_count: 11
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 2'
 - identifier: UNMAPPED_0445
   preferred_term: micronutrient solution
   synonyms:
@@ -5788,24 +5729,6 @@ ingredients:
     llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2358); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0041
-  preferred_term: Na2CO
-  synonyms:
-  - synonym_text: Na2CO3(Baker 3604)
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 3
-    media_count: 3
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 6'
 - identifier: UNMAPPED_0030
   preferred_term: Na2glycerophosphate•5H2O
   synonyms:
@@ -5920,7 +5843,18 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 2'
+  - timestamp: '2026-05-11T05:36:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_AMBIGUITY
+    changes: Reviewed against local CHEBI:37585 mapped records; not merged because
+      the source term is explicit NaH2PO4 monohydrate while the local mapped representatives
+      carry anhydrous sodium dihydrogenphosphate chemistry.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 and left unmapped
+    for hydrate-state curation rather than merging to CHEBI:37585 anhydrous sodium
+    dihydrogenphosphate.'
 - identifier: UNMAPPED_0050
   preferred_term: Natural sea-salt
   synonyms:
@@ -7074,46 +7008,6 @@ ingredients:
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: Soil Defined Media (SDM). No CAS-RN or CHEBI mapping
     available; curator review needed.'
-- identifier: UNMAPPED_0585
-  preferred_term: ß-NAD
-  synonyms:
-  - synonym_text: ß-NAD
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:782); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:782); no CAS-RN or
-    CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0586
-  preferred_term: ß-nicotinamide adenine dinucleotide
-  synonyms:
-  - synonym_text: ß-nicotinamide adenine dinucleotide
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:1340); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:1340); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0514
   preferred_term: Salt Solution II
   synonyms:
@@ -7861,12 +7755,6 @@ ingredients:
   - synonym_text: N-[tris(hydroxymethyl)methyl]-3-amino-2-hydroxypropanesulfonic acid
     synonym_type: EXACT
     source: IUPAC
-  - synonym_text: (1R,2R)-diclocymet
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: (2R)-2-cyano-N-[(1R)-1-(2,4-dichlorophenyl)ethyl]-3,3-dimethylbutanamide
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 10
@@ -7897,6 +7785,14 @@ ingredients:
     action: ADDED_SYNONYMS
     changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: (1R,2R)-diclocymet,
       (2R)-2-cyano-N-[(1R)-1-(2,4-dichlorophenyl)ethyl]-3,3-dimethylbutanamide'
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-11T06:02:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLEANED_INCORRECT_SYNONYMS
+    changes: Removed kg-microbe diclocymet synonyms that were already documented as
+      unrelated to TAPSO in the 2026-04-18 demotion event.
+    previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
   chemical_properties:
@@ -7947,26 +7843,6 @@ ingredients:
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: M9_Thauers_noBiotin. No CAS-RN or CHEBI mapping
     available; curator review needed.'
-- identifier: UNMAPPED_0617
-  preferred_term: Thiamine HCl (Vitamin B1)
-  synonyms:
-  - synonym_text: Thiamine HCl (Vitamin B1)
-    synonym_type: RAW_TEXT
-    source: communitymech-unmapped
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-05-01T02:37:08.074047+00:00'
-    curator: audit_import_ingredients[communitymech-unmapped]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Thiamine_HCl_(Vitamin_B1));
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Thiamine_HCl_(Vitamin_B1));
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0538
   preferred_term: Thiamine solution see Medium No. 403
   synonyms:
@@ -8339,26 +8215,6 @@ ingredients:
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1982); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
-- identifier: UNMAPPED_0620
-  preferred_term: Tris base (buffer)
-  synonyms:
-  - synonym_text: Tris base (buffer)
-    synonym_type: RAW_TEXT
-    source: communitymech-unmapped
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-05-01T02:37:08.074047+00:00'
-    curator: audit_import_ingredients[communitymech-unmapped]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Tris_base_(buffer));
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Tris_base_(buffer));
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0557
   preferred_term: Trypticase soy agar
   synonyms:
@@ -8729,11 +8585,19 @@ ingredients:
     action: BACKFILL_PARENT_NCIT
     changes: set ontology_mapping parent=NCIT:C944 (label-exact)
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 8'
-  chemical_properties:
-    cas_rn: 98-92-0
-    data_source: PubChem API
-    retrieval_date: '2026-04-05T19:54:56.149387'
+  - timestamp: '2026-05-11T05:44:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_AMBIGUOUS_VITAMIN_TERM
+    changes: Left unmapped because the record combines a broad "Vitamin B" label with
+      a Vitamin B12 raw source synonym. Removed CAS-RN 98-92-0 from the ambiguous
+      record because that CAS is locally represented by mapped nicotinamide, not by
+      the whole B-vitamin group.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 8; reviewed on 2026-05-11 and left unmapped
+    because "Vitamin B" is ambiguous and the raw Vitamin B12 surface form should not
+    force identity mapping to either B vitamin or cobalamin.'
   ontology_mapping:
     ontology_id: NCIT:C944
     ontology_label: Vitamin
@@ -9132,8 +8996,18 @@ ingredients:
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:18233 (label-exact)
     llm_assisted: false
+  - timestamp: '2026-05-11T06:02:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_NON_IDENTITY_PARENT
+    changes: Left unmapped with CHEBI:18233 as a parent/narrow mapping because the
+      source term specifies hepta, octa, and nona saccharide xyloglucan fractions
+      rather than generic xyloglucan identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 and
+    not identity-mapped to generic xyloglucan because the source label is fraction-specific.
   ontology_mapping:
     ontology_id: CHEBI:18233
     ontology_label: xyloglucan

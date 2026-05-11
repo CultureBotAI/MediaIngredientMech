@@ -2,14 +2,33 @@ identifier: CHEBI:15846
 preferred_term: beta-NAD
 ontology_mapping:
   ontology_id: CHEBI:15846
-  ontology_label: beta-NAD
+  ontology_label: NAD(+)
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-synonyms: []
+  - evidence_type: DATABASE_MATCH
+    source: local kg-microbe CHEBI transform
+    notes: Local CHEBI labels CHEBI:15846 as NAD(+) and lists beta-NAD, NAD,
+      NAD+, and nicotinamide adenine dinucleotide as exact synonyms.
+synonyms:
+- synonym_text: ß-NAD
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
+- synonym_text: ß-nicotinamide adenine dinucleotide
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
+- synonym_text: NAD(+)
+  synonym_type: EXACT_SYNONYM
+  source: local_chebi_exact_alias_review_2026_05_11
+- synonym_text: NAD+
+  synonym_type: EXACT_SYNONYM
+  source: local_chebi_exact_alias_review_2026_05_11
+- synonym_text: Nicotinamide adenine dinucleotide
+  synonym_type: EXACT_SYNONYM
+  source: local_chebi_exact_alias_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 3
@@ -43,6 +62,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T05:18:30Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATES
+  changes: Absorbed duplicate unmapped records SS-NAD.yaml (UNMAPPED_0585) and
+    SS-nicotinamide_Adenine_Dinucleotide.yaml (UNMAPPED_0586); local CHEBI exact
+    synonyms support retaining CHEBI:15846 NAD(+) as the identity mapping.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 53-84-9
   data_source: PubChem API

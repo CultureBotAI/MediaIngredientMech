@@ -15,10 +15,7 @@ ontology_mapping:
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='Chondroitin sulfate
       A sodium salt from bovine trachea'
-synonyms:
-- synonym_text: filtered
-  synonym_type: EXACT_SYNONYM
-  source: culturebotht
+synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -46,6 +43,14 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:37397 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-05-11T05:36:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLEANED_PROCESS_SYNONYMS
+  changes: Removed process-only exact synonym "filtered"; preparation method text
+    is not an identity synonym for chondroitin sulfate A sodium salt.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 39455-18-0
   data_source: CultureBotHT compounds_to_cas.csv

@@ -55,10 +55,16 @@ synonyms:
 - synonym_text: Boric acid
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
+- synonym_text: H3BO
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
+- synonym_text: H3BO3(Baker 0084)
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 3726
-  media_count: 102
+  total_occurrences: 3729
+  media_count: 105
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -128,6 +134,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T06:02:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record H3bo.yaml (UNMAPPED_0047); raw source
+    synonym H3BO3(Baker 0084) resolves the truncated preferred term to boric acid
+    CHEBI:33118.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 10043-35-3
   data_source: CultureBotHT compounds_to_cas.csv

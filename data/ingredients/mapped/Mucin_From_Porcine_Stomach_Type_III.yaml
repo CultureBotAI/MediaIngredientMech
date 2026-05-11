@@ -18,7 +18,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: culturebotht
 - synonym_text: autoclaved
-  synonym_type: EXACT_SYNONYM
+  synonym_type: RAW_TEXT
   source: culturebotht
 mapping_status: MAPPED
 occurrence_statistics:
@@ -42,6 +42,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
   llm_assisted: false
+- timestamp: '2026-05-11T05:36:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLEANED_PROCESS_SYNONYMS
+  changes: Reclassified process-only synonym "autoclaved" as raw source text rather
+    than an exact identity synonym.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 84082-64-4
   data_source: CultureBotHT compounds_to_cas.csv
