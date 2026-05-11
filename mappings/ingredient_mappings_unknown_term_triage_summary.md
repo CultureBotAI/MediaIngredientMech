@@ -92,7 +92,9 @@ A focused EBI OLS exact label/synonym search was run for the 64 original `kgmicr
 ## 2026-05-10 SYNONYM_ENRICH Review
 
 - Added `ingredient_mappings_row_review_manifest.tsv` as the top-level disposition
-  manifest for all 2,194 rows in `ingredient_mappings_oak_ols_review.tsv`.
+  manifest. A follow-up audit refreshed it against the current
+  `ingredient_mappings.sssom.tsv`, covering all 2,195 current SSSOM rows with
+  no stale pre-repair subject/object pairs.
 - Added `ingredient_mappings_synonym_enrich_review.tsv` as a row-level disposition
   artifact for all 623 `SYNONYM_ENRICH` rows.
 - 619 rows were `ALREADY_REPRESENTED`: every proposed candidate string was already
@@ -106,3 +108,7 @@ A focused EBI OLS exact label/synonym search was run for the 64 original `kgmicr
   `CHEBI:4735`.
 - `Soyton` was corrected from unrelated `FOODON:03302071` to a local
   `kgmicrobe.ingredient:soyton` identity pending exact external ontology support.
+- The refreshed manifest also carries the current rows for prior placeholder
+  promotions/repairs, including the external MeSH/NCIT replacements, the
+  `Poly_L_Lysine_Polymer` promotion to `CHEBI:61490`, and the
+  `L-alpha-Phosphatidylcholine` OLS exact-audit promotion.
