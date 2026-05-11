@@ -44,6 +44,12 @@ synonyms:
 - synonym_text: Nitric acid, ammonium salt
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: NH4NO
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
+- synonym_text: 'NH4NO3(CAS: 6484-52-2)'
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
 - synonym_text: 'Role: Nitrogen source; Properties: Defined component, Inorganic compound,
     Simple component'
   synonym_type: RAW_TEXT
@@ -62,8 +68,8 @@ synonyms:
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 254
-  media_count: 117
+  total_occurrences: 257
+  media_count: 120
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -151,6 +157,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T10:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Nh4no.yaml (UNMAPPED_0037); raw source
+    synonym NH4NO3(CAS 6484-52-2) matches local ammonium nitrate CHEBI:63038.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 6484-52-2
   data_source: OAK/CHEBI xref
