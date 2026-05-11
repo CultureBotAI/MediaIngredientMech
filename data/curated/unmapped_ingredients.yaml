@@ -1,4 +1,4 @@
-generation_date: '2026-05-11T08:18:40.313938+00:00'
+generation_date: '2026-05-11T09:29:09.647358+00:00'
 total_count: 398
 mapped_count: 0
 unmapped_count: 398
@@ -723,6 +723,7 @@ ingredients:
     or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because the lexical
     candidate does not resolve whether the intended ingredient is alpha-ketoglutarate
     or alpha-ketoglutaric acid.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0157
   preferred_term: Aluminum-NTA
   synonyms:
@@ -816,6 +817,7 @@ ingredients:
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1140); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending source evidence
     that the intended ingredient is Amphotericin B.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0327
   preferred_term: Anaerobe Basal Broth CM0957
   synonyms:
@@ -1886,6 +1888,7 @@ ingredients:
   notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 and left unmapped
     because Ca(NO3)2•4H2O salt-hydrate identity should not be collapsed to elemental
     calcium.'
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0156
   preferred_term: Cadmium-NTA
   synonyms:
@@ -3863,8 +3866,19 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T09:28:19Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_FORMULA_AMBIGUITY
+    changes: Classified as a single iron sulfate hydrate-like formula and left unmapped
+      because FeSO43 x n H2O is not exact enough to resolve oxidation state, sulfate
+      count, or hydrate state.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1742); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as an ambiguous hydrated iron sulfate
+    formula; not identity-mapped without exact formula/hydrate evidence.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0149
   preferred_term: Ferric-NTA
   synonyms:
@@ -4545,8 +4559,18 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T09:28:19Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_BUFFER_REAGENT
+    changes: Classified as a single buffer reagent and left unmapped because the local
+      exact audit found no exact ontology identity for Homo-PIPES.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1141); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a specific buffer reagent; retained
+    as unmapped pending exact ontology evidence.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0402
   preferred_term: Horikoshi-I medium
   synonyms:
@@ -5018,6 +5042,7 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: NCIT via OLS (label-exact)
       notes: Parent class identified via label-exact; matched_via='Iron'
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0074
   preferred_term: Iron Stock
   synonyms:
@@ -5829,8 +5854,18 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T09:28:19Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_AMBIGUITY
+    changes: Classified as a single MES hydrate-like buffer ingredient and left unmapped
+      because no exact local ontology identity for the hydrate form was verified.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2394); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as MES hydrate shorthand; not merged
+    to anhydrous MES or MES sodium salt.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0309
   preferred_term: MME Trace Minerals
   synonyms:
@@ -7849,6 +7884,7 @@ ingredients:
   notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 and left unmapped
     for hydrate-state curation rather than merging to CHEBI:37585 anhydrous sodium
     dihydrogenphosphate.'
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0050
   preferred_term: Natural sea-salt
   synonyms:
@@ -9607,8 +9643,18 @@ ingredients:
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:37586 (stem-substring)
     llm_assisted: false
+  - timestamp: '2026-05-11T09:28:19Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_NON_IDENTITY_PARENT
+    changes: Classified as a single phosphate salt source term and left unmapped because
+      the source phrase includes role text and lacks exact hydrate/protonation evidence;
+      retained sodium phosphate only as a broader related parent.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sodium_phosphate_monobasic_(phosphorus_source));
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending
+    exact sodium phosphate monobasic form evidence.
   ontology_mapping:
     ontology_id: CHEBI:37586
     ontology_label: sodium phosphate
@@ -9619,6 +9665,7 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Sodium phosphate
         monobasic (phosphorus source)'
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0303
   preferred_term: Soil Defined Carbon Mix
   synonyms:
@@ -10274,6 +10321,7 @@ ingredients:
     cas_rn: 68399-81-5
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:53:59.993659'
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0270
   preferred_term: Thauer's vitamin mix
   synonyms:
@@ -10390,8 +10438,19 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T09:28:19Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_ACID_SALT_AMBIGUITY
+    changes: Classified as a single acid ingredient and left unmapped because local
+      mapped thioglycolate records are salt/anion forms and no exact acid ontology
+      identity was verified in the local audit.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1814); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as thioglycollic acid; not merged
+    to thioglycolate or sodium thioglycolate without exact acid evidence.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0618
   preferred_term: Titanium(III) citrate
   synonyms:
@@ -10423,6 +10482,7 @@ ingredients:
     no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because
     the available titanium citrate candidate does not locally verify titanium(III)
     identity.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0541
   preferred_term: TitaniumIII chloride
   synonyms:
