@@ -5,6 +5,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: culturebotht
 mapping_status: UNMAPPED
+ingredient_type: SINGLE_INGREDIENT
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -16,5 +17,14 @@ curation_history:
     or CHEBI mapping available; curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-11T10:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_NAMED_ENTITY
+  changes: Set ingredient_type=SINGLE_INGREDIENT and left unmapped because the local
+    OAK/OLS audit found no exact ontology hit for the named LL17-29 entity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
-  CHEBI mapping available; curator review needed.
+  CHEBI mapping available. Reviewed on 2026-05-11 and retained unmapped pending
+  exact ontology identity evidence for LL17-29.

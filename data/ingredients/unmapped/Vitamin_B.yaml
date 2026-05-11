@@ -5,6 +5,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 mapping_status: UNMAPPED
+ingredient_type: UNDEFINED_MIXTURE
 occurrence_statistics:
   total_occurrences: 23
   media_count: 23
@@ -36,9 +37,18 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-05-11T10:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_AMBIGUOUS_VITAMIN_TERM
+  changes: Set ingredient_type=UNDEFINED_MIXTURE because the label is a broad B-vitamin
+    category and the raw source synonym conflicts with a specific Vitamin B12 identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 8; reviewed on 2026-05-11 and left unmapped
   because "Vitamin B" is ambiguous and the raw Vitamin B12 surface form should not
-  force identity mapping to either B vitamin or cobalamin.'
+  force identity mapping to either B vitamin or cobalamin; classified as an undefined
+  mixture/category term rather than a specific ingredient.'
 ontology_mapping:
   ontology_id: NCIT:C944
   ontology_label: Vitamin

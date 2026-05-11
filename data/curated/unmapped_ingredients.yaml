@@ -1,4 +1,4 @@
-generation_date: '2026-05-11T09:34:37.059353+00:00'
+generation_date: '2026-05-11T09:38:36.827923+00:00'
 total_count: 398
 mapped_count: 0
 unmapped_count: 398
@@ -1871,6 +1871,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: mim-queue
   mapping_status: UNMAPPED
+  ingredient_type: DEFINED_MEDIUM
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -1882,8 +1883,17 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_DEFINED_MEDIUM
+    changes: Set ingredient_type=DEFINED_MEDIUM because CMRL 1066 names a medium formulation,
+      not a single chemical ingredient.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1680); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped as a named medium
+    formulation.
 - identifier: UNMAPPED_0049
   preferred_term: Ca
   synonyms:
@@ -4072,6 +4082,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   mapping_status: UNMAPPED
+  ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
     total_occurrences: 196
     media_count: 196
@@ -4090,7 +4101,18 @@ ingredients:
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
-  notes: 'CultureMech placeholder_id: See source for composition'
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_PLACEHOLDER_TERM
+    changes: Set ingredient_type=UNDEFINED_MIXTURE as a non-identity placeholder category
+      because the term points to external composition details rather than naming a
+      specific ingredient identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: See source for composition; reviewed on 2026-05-11
+    and retained unmapped because this is a source-composition placeholder rather
+    than a standalone ingredient identity.'
 - identifier: UNMAPPED_0108
   preferred_term: G9 Trace Metals for J medium
   synonyms:
@@ -5252,6 +5274,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: mim-queue
   mapping_status: UNMAPPED
+  ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -5271,9 +5294,19 @@ ingredients:
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_PLACEHOLDER_TERM
+    changes: Set ingredient_type=UNDEFINED_MIXTURE as a non-identity placeholder category
+      because the term is a unit false positive and the schema has no non-ingredient
+      enum.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1042); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because the exact
-    lexical hit is a unit false positive.
+    lexical hit is a unit false positive; ingredient_type uses the non-substitutable
+    placeholder bucket because no exact ingredient identity exists.
 - identifier: UNMAPPED_0413
   preferred_term: KNO2
   synonyms:
@@ -5490,6 +5523,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: culturebotht
   mapping_status: UNMAPPED
+  ingredient_type: SINGLE_INGREDIENT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -5501,8 +5535,17 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_NAMED_ENTITY
+    changes: Set ingredient_type=SINGLE_INGREDIENT and left unmapped because the local
+      OAK/OLS audit found no exact ontology hit for the named LL17-29 entity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available. Reviewed on 2026-05-11 and retained unmapped pending
+    exact ontology identity evidence for LL17-29.
 - identifier: UNMAPPED_0423
   preferred_term: LaNO33 x 6 H2O
   synonyms:
@@ -6464,6 +6507,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: mim-queue
   mapping_status: UNMAPPED
+  ingredient_type: DEFINED_MEDIUM
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -6475,8 +6519,17 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_DEFINED_MEDIUM
+    changes: Set ingredient_type=DEFINED_MEDIUM because the label names a medium formulation,
+      not a single chemical ingredient.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1633); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped as a named medium
+    formulation.
 - identifier: UNMAPPED_0233
   preferred_term: methyl 3-keto-a-D-glucopyranoside
   synonyms:
@@ -7813,6 +7866,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: mim-queue
   mapping_status: UNMAPPED
+  ingredient_type: SINGLE_INGREDIENT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -7824,8 +7878,18 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_FORM
+    changes: Set ingredient_type=SINGLE_INGREDIENT and left unmapped because the x
+      5 H2O hydrate surface form is not locally verified as the same exact identity
+      as mapped sodium beta-glycerophosphate.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2358); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and retained as an unmapped single
+    ingredient pending exact hydrate/CAS reconciliation.
 - identifier: UNMAPPED_0030
   preferred_term: Na2glycerophosphate•5H2O
   synonyms:
@@ -7836,6 +7900,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   mapping_status: UNMAPPED
+  ingredient_type: SINGLE_INGREDIENT
   occurrence_statistics:
     total_occurrences: 4
     media_count: 4
@@ -7846,7 +7911,19 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 3'
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_FORM
+    changes: Set ingredient_type=SINGLE_INGREDIENT and left unmapped because the source
+      term is a sodium glycerophosphate pentahydrate with CAS 13408-09-8, while local
+      mapped sodium beta-glycerophosphate records do not verify this exact hydrate/CAS
+      identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 3; reviewed on 2026-05-11 and retained as an
+    unmapped single ingredient pending exact sodium glycerophosphate pentahydrate/CAS
+    reconciliation.'
 - identifier: UNMAPPED_0081
   preferred_term: Na2Glycerophosphate.5H2O
   synonyms:
@@ -7854,6 +7931,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   mapping_status: UNMAPPED
+  ingredient_type: SINGLE_INGREDIENT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -7864,7 +7942,19 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 5'
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_FORM
+    changes: Set ingredient_type=SINGLE_INGREDIENT and left unmapped because the source
+      term is a sodium glycerophosphate pentahydrate with CAS 13408-09-8, while local
+      mapped sodium beta-glycerophosphate records do not verify this exact hydrate/CAS
+      identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 5; reviewed on 2026-05-11 and retained as an
+    unmapped single ingredient pending exact sodium glycerophosphate pentahydrate/CAS
+    reconciliation.'
 - identifier: UNMAPPED_0101
   preferred_term: Na2Glycerophosphate•5H2O
   synonyms:
@@ -7872,6 +7962,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   mapping_status: UNMAPPED
+  ingredient_type: SINGLE_INGREDIENT
   occurrence_statistics:
     total_occurrences: 1
     media_count: 1
@@ -7882,7 +7973,19 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 5'
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_FORM
+    changes: Set ingredient_type=SINGLE_INGREDIENT and left unmapped because the source
+      term is a sodium glycerophosphate pentahydrate with CAS 13408-09-8, while local
+      mapped sodium beta-glycerophosphate records do not verify this exact hydrate/CAS
+      identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 5; reviewed on 2026-05-11 and retained as an
+    unmapped single ingredient pending exact sodium glycerophosphate pentahydrate/CAS
+    reconciliation.'
 - identifier: UNMAPPED_0475
   preferred_term: Na3-NTA x H2O
   synonyms:
@@ -9600,6 +9703,7 @@ ingredients:
   preferred_term: See source for composition
   synonyms: []
   mapping_status: UNMAPPED
+  ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
     total_occurrences: 143
     media_count: 143
@@ -9618,7 +9722,18 @@ ingredients:
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
-  notes: 'CultureMech placeholder_id: See source for composition'
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_PLACEHOLDER_TERM
+    changes: Set ingredient_type=UNDEFINED_MIXTURE as a non-identity placeholder category
+      because the term points to external composition details rather than naming a
+      specific ingredient identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: See source for composition; reviewed on 2026-05-11
+    and retained unmapped because this is a source-composition placeholder rather
+    than a standalone ingredient identity.'
 - identifier: UNMAPPED_0519
   preferred_term: Selenite-tungstate solution see Medium No. 431
   synonyms:
@@ -11322,6 +11437,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   mapping_status: UNMAPPED
+  ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
     total_occurrences: 23
     media_count: 23
@@ -11353,9 +11469,18 @@ ingredients:
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_AMBIGUOUS_VITAMIN_TERM
+    changes: Set ingredient_type=UNDEFINED_MIXTURE because the label is a broad B-vitamin
+      category and the raw source synonym conflicts with a specific Vitamin B12 identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'CultureMech placeholder_id: 8; reviewed on 2026-05-11 and left unmapped
     because "Vitamin B" is ambiguous and the raw Vitamin B12 surface form should not
-    force identity mapping to either B vitamin or cobalamin.'
+    force identity mapping to either B vitamin or cobalamin; classified as an undefined
+    mixture/category term rather than a specific ingredient.'
   ontology_mapping:
     ontology_id: NCIT:C944
     ontology_label: Vitamin
@@ -11583,6 +11708,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: mim-queue
   mapping_status: UNMAPPED
+  ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -11594,8 +11720,19 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_AMBIGUOUS_WATER_TERM
+    changes: Set ingredient_type=UNDEFINED_MIXTURE and left unmapped because the label
+      conflates distilled water with tapwater, which is not an exact substitute for
+      the local distilled water identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2389); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because "distilled
+    or tapwater" is a source-choice expression, not an exact identity with distilled
+    water or generic water.
 - identifier: UNMAPPED_0576
   preferred_term: Wheat Grains
   synonyms:

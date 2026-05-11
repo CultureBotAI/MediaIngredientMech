@@ -5,6 +5,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: mim-queue
 mapping_status: UNMAPPED
+ingredient_type: UNDEFINED_MIXTURE
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -16,5 +17,16 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-11T10:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_AMBIGUOUS_WATER_TERM
+  changes: Set ingredient_type=UNDEFINED_MIXTURE and left unmapped because the label
+    conflates distilled water with tapwater, which is not an exact substitute for
+    the local distilled water identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2389); no CAS-RN or
-  CHEBI/NCIT match. Curator review needed.
+  CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because "distilled or
+  tapwater" is a source-choice expression, not an exact identity with distilled
+  water or generic water.
