@@ -1,4 +1,4 @@
-generation_date: '2026-05-11T06:44:28.676470+00:00'
+generation_date: '2026-05-11T06:47:16.395971+00:00'
 total_count: 409
 mapped_count: 0
 unmapped_count: 409
@@ -308,9 +308,20 @@ ingredients:
       No CAS-RN or CHEBI mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as an ATCC-branded Wolfe mineral stock/pre-mix and left unmapped
+      pending recipe/component curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 46 CultureBot media; samples: NLDM_defined_nocarbon_novitamin, Mega, NLDM_defined_no_iron….
-    No CAS-RN or CHEBI mapping available; curator review needed.'
+    No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as an ATCC-branded
+    Wolfe mineral stock/pre-mix pending component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: MINERAL_STOCK
 - identifier: UNMAPPED_0313
   preferred_term: ATCC Wolfe's mineral mix minus iron
   synonyms:
@@ -352,9 +363,20 @@ ingredients:
       No CAS-RN or CHEBI mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as an ATCC-branded Wolfe vitamin stock/pre-mix and left unmapped
+      pending recipe/component curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 43 CultureBot media; samples: Mega, NLDM_defined, M9 minimal media plus…. No
-    CAS-RN or CHEBI mapping available; curator review needed.'
+    CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as an ATCC-branded Wolfe
+    vitamin stock/pre-mix pending component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: VITAMIN_MIX
 - identifier: UNMAPPED_0091
   preferred_term: A+ Trace Components
   synonyms:
@@ -2878,6 +2900,14 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_PLACEHOLDER_TERM
+    changes: Left unmapped because the term is a source-composition placeholder, not
+      a media ingredient or mixture identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'CultureMech placeholder_id: See source for composition'
 - identifier: UNMAPPED_0108
   preferred_term: G9 Trace Metals for J medium
@@ -4313,9 +4343,20 @@ ingredients:
       No CAS-RN or CHEBI mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_BUFFER_STOCK
+    changes: Classified as a MOPS buffer stock solution and left unmapped because
+      the 2 M pH 7 stock is not identity-equivalent to the mapped MOPS compound record.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 24 CultureBot media; samples: McCas_MOPS, McCas_formate_SO4, McCas_formate_SO4Free_BicarbFree….
-    No CAS-RN or CHEBI mapping available; curator review needed.'
+    No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a MOPS buffer
+    stock solution, not an exact match to the base MOPS compound.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: BUFFER_SOLUTION
 - identifier: UNMAPPED_0453
   preferred_term: MRS broth
   synonyms:
@@ -7009,10 +7050,20 @@ ingredients:
     action: BACKFILL_PARENT_NCIT
     changes: set ontology_mapping parent=NCIT:C75874 (stem-substring)
     llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_COMMERCIAL_MIXTURE
+    changes: Kept unmapped with contextual NCIT:C75874 Sea Salt parent because the
+      source synonym is supplier-formulated sea salts (Sigma), not a verified exact
+      ontology identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 22
     CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen,
     DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping available;
-    curator review needed.'
+    reviewed on 2026-05-11 as a commercial sea-salts mixture, retaining NCIT:C75874
+    only as contextual parent evidence.'
   ontology_mapping:
     ontology_id: NCIT:C75874
     ontology_label: Sea Salt
@@ -7022,6 +7073,7 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: NCIT via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Sea salts'
+  ingredient_type: UNDEFINED_MIXTURE
 - identifier: UNMAPPED_0002
   preferred_term: See source for composition
   synonyms: []
@@ -7036,6 +7088,14 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_PLACEHOLDER_TERM
+    changes: Left unmapped because the term is a source-composition placeholder, not
+      a media ingredient or mixture identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'CultureMech placeholder_id: See source for composition'
 - identifier: UNMAPPED_0519
   preferred_term: Selenite-tungstate solution see Medium No. 431
@@ -8752,9 +8812,21 @@ ingredients:
       or CHEBI mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a mineral stock/pre-mix and left unmapped because this
+      named formulation should not be identity-mapped to generic mineral or trace
+      element parent terms.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 60 CultureBot media; samples: ShewMM, ALP_defined, ALP_defined_noC…. No CAS-RN
-    or CHEBI mapping available; curator review needed.'
+    or CHEBI mapping available; reviewed on 2026-05-11 as a named mineral stock/pre-mix
+    pending component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: MINERAL_STOCK
 - identifier: UNMAPPED_0267
   preferred_term: Wolfe's mineral mix_minus_Nitrilotriacetic_acid
   synonyms:
@@ -8796,9 +8868,20 @@ ingredients:
       or CHEBI mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a vitamin stock/pre-mix and left unmapped because this
+      named formulation should not be identity-mapped to generic vitamin parent terms.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 61 CultureBot media; samples: ShewMM, YCFA, MG minimal media…. No CAS-RN or
-    CHEBI mapping available; curator review needed.'
+    CHEBI mapping available; reviewed on 2026-05-11 as a named vitamin stock/pre-mix
+    pending component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: VITAMIN_MIX
 - identifier: UNMAPPED_0580
   preferred_term: X10 Jamarin S
   synonyms:
@@ -8985,9 +9068,20 @@ ingredients:
       No CAS-RN or CHEBI mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_DEFINED_MEDIUM
+    changes: Classified as a named defined-medium/base formulation and left unmapped
+      pending recipe-level curation rather than mapping the acronym to unrelated lexical
+      hits.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 33 CultureBot media; samples: ZMB_ALS_noAlanine, ZMB_ALS_noArginine, ZMB_ALS_noGlycine….
-    No CAS-RN or CHEBI mapping available; curator review needed.'
+    No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a named defined-medium/base
+    formulation.'
+  ingredient_type: DEFINED_MEDIUM
 - identifier: UNMAPPED_0150
   preferred_term: Zinc-NTA
   synonyms:
