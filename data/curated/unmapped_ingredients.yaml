@@ -1,7 +1,7 @@
-generation_date: '2026-05-11T07:59:49.715055+00:00'
-total_count: 400
+generation_date: '2026-05-11T08:02:16.930875+00:00'
+total_count: 399
 mapped_count: 0
-unmapped_count: 400
+unmapped_count: 399
 ingredients:
 - identifier: UNMAPPED_0316
   preferred_term: 1-Naphtylacetic Acid
@@ -2136,26 +2136,6 @@ ingredients:
     preparation pending component-level recipe curation.
   ingredient_type: STOCK_SOLUTION
   solution_type: OTHER
-- identifier: UNMAPPED_0142
-  preferred_term: Choline Lysine
-  synonyms:
-  - synonym_text: Choline Lysine
-    synonym_type: RAW_TEXT
-    source: culturebotht
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-      or CHEBI mapping available; curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
 - identifier: UNMAPPED_0164
   preferred_term: Cholinium alpha ketoglutarate
   synonyms:
@@ -2174,8 +2154,20 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:01:28Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_CHOLINIUM_SALT
+    changes: Classified as a single cholinium organic-acid salt and left unmapped
+      because no exact local ontology term for cholinium alpha-ketoglutarate was verified;
+      component mappings to choline or alpha-ketoglutarate would not preserve salt
+      identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a
+    cholinium alpha-ketoglutarate salt; not identity-mapped to component parents.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0163
   preferred_term: Cholinium aspartate
   synonyms:
@@ -2194,8 +2186,19 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:01:28Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_CHOLINIUM_SALT
+    changes: Classified as a single cholinium amino-acid salt and left unmapped because
+      no exact local ontology term for cholinium aspartate was verified; component
+      mappings to choline or aspartate would not preserve salt identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a
+    cholinium aspartate salt; not identity-mapped to component parents.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0161
   preferred_term: Cholinium glutamate
   synonyms:
@@ -2214,8 +2217,19 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:01:28Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_CHOLINIUM_SALT
+    changes: Classified as a single cholinium amino-acid salt and left unmapped because
+      no exact local ontology term for cholinium glutamate was verified; component
+      mappings to choline or glutamate would not preserve salt identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a
+    cholinium glutamate salt; not identity-mapped to component parents.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0162
   preferred_term: Cholinium hydrogen phosphate
   synonyms:
@@ -2234,8 +2248,19 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:01:28Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_CHOLINIUM_PHOSPHATE_AMBIGUITY
+    changes: Classified as a single cholinium phosphate salt and left unmapped because
+      the source label specifies hydrogen phosphate, while the local CAS-backed mapped
+      representative is cholinium dihydrogen phosphate.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 and
+    not merged into cholinium dihydrogen phosphate because phosphate protonation differs.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0160
   preferred_term: Cholinium phosphate
   synonyms:
@@ -2254,8 +2279,19 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:01:28Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_CHOLINIUM_PHOSPHATE_AMBIGUITY
+    changes: Classified as a single cholinium phosphate salt and left unmapped because
+      the source label does not specify phosphate protonation or stoichiometry; generic
+      phosphate or choline mappings would not preserve salt identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as an
+    unresolved cholinium phosphate salt; not identity-mapped to component parents.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0153
   preferred_term: Chromium-NTA
   synonyms:
@@ -3454,8 +3490,19 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:01:28Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_ORGANIC_SALT
+    changes: Classified as a single ethanolamine acetate salt and left unmapped because
+      no exact local ontology term was verified; component mappings to ethanolamine
+      or acetate would not preserve salt identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as an
+    ethanolamine acetate salt; not identity-mapped to component parents.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0064
   preferred_term: Euglena Medium
   synonyms:
