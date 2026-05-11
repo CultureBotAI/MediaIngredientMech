@@ -90,6 +90,9 @@ synonyms:
 - synonym_text: Vitamin B12 (cyanocobalamin)
   synonym_type: EXACT_SYNONYM
   source: unmapped_ols_exact_audit
+- synonym_text: Vitamine B12
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2331
@@ -168,6 +171,15 @@ curation_history:
     CHEBI:176843; aligned kg_microbe_node_id with the corrected ontology mapping.
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-05-11T08:27:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Vitamine_B12.yaml (UNMAPPED_0570);
+    "Vitamine B12" is a spelling variant of the existing mapped vitamin B12 identity
+    CHEBI:176843.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 68-19-9
   data_source: CultureBotHT compounds_to_cas.csv
