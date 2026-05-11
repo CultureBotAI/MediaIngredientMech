@@ -1,7 +1,7 @@
-generation_date: '2026-05-11T06:39:01.718763+00:00'
-total_count: 410
+generation_date: '2026-05-11T06:44:28.676470+00:00'
+total_count: 409
 mapped_count: 0
-unmapped_count: 410
+unmapped_count: 409
 ingredients:
 - identifier: UNMAPPED_0316
   preferred_term: 1-Naphtylacetic Acid
@@ -489,8 +489,20 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_LEXICAL_AMBIGUITY
+    changes: Reviewed OAK/OLS audit candidate MESH:C088956 alpha-ketoglutamic acid
+      and local alpha-ketoglutarate/alpha-ketoglutaric acid records; left unmapped
+      because alpha-ketoglutamate appears to be a source spelling ambiguity and is
+      not safely identical to the existing local identities.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2384); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because the lexical
+    candidate does not resolve whether the intended ingredient is alpha-ketoglutarate
+    or alpha-ketoglutaric acid.
 - identifier: UNMAPPED_0157
   preferred_term: Aluminum-NTA
   synonyms:
@@ -549,8 +561,19 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_FAMILY_TERM_AMBIGUITY
+    changes: Reviewed OAK/OLS audit candidate MESH:D000666 Amphotericin B and local
+      CHEBI:2682 Amphotericin_B record; left unmapped because the source label is
+      the unqualified family/common name Amphotericin and does not locally prove the
+      B variant identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1140); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending source evidence
+    that the intended ingredient is Amphotericin B.
 - identifier: UNMAPPED_0327
   preferred_term: Anaerobe Basal Broth CM0957
   synonyms:
@@ -1204,8 +1227,18 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_SERUM_SPECIFICITY
+    changes: Reviewed OAK/OLS audit candidate MICRO:0001709 calf serum; left unmapped
+      because bovine serum does not locally specify calf, fetal, or adult source and
+      should not be collapsed into a more specific serum record.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2098); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending source evidence
+    for the specific bovine serum type.
 - identifier: UNMAPPED_0116
   preferred_term: Brewer anaerobic agar
   synonyms:
@@ -3761,8 +3794,17 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_UNIT_FALSE_POSITIVE
+    changes: Reviewed OAK/OLS audit candidate NCIT:C68547 Kilojoule; left unmapped
+      because kilojoule is a unit, not a media ingredient identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1042); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because the exact
+    lexical hit is a unit false positive.
 - identifier: UNMAPPED_0413
   preferred_term: KNO2
   synonyms:
@@ -4710,26 +4752,6 @@ ingredients:
     llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1571); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0127
-  preferred_term: Middlebrook 7H10 agar
-  synonyms:
-  - synonym_text: Middlebrook 7H10 agar
-    synonym_type: RAW_TEXT
-    source: extracted_from_agar_yaml
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-19T07:49:33.169103+00:00'
-    curator: audit_extract_complex_media_from_agar
-    action: EXTRACTED_COMPLEX_MEDIUM
-    changes: Extracted from Agar.yaml — 'Middlebrook 7H10 agar' is a complete media
-      formulation, not a synonym of the chemical CHEBI:2509 (agar). Pending curator
-      re-mapping (likely FOODON complex medium, or split into per-component ingredients).
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Extracted from over-conflated Agar.yaml synonyms
 - identifier: UNMAPPED_0262
   preferred_term: Mineral 3B solution
   synonyms:
@@ -6141,8 +6163,20 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_ACRONYM_AMBIGUITY
+    changes: Reviewed OAK/OLS audit candidates for PBS; rejected non-ingredient acronym
+      hits and left unmapped because the plausible NCIT:C178908 candidate is Dulbecco's
+      Phosphate-Buffered Saline, which is more specific than the source label Phosphate-buffered
+      saline.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; reviewed on 2026-05-11 and left unmapped pending a
+    generic phosphate-buffered saline identity term or source evidence for Dulbecco's
+    PBS.
 - identifier: UNMAPPED_0489
   preferred_term: PIPES buffer
   synonyms:
@@ -6802,8 +6836,18 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_TAXON_PARENT
+    changes: Reviewed OAK/OLS audit candidate MESH:D008129 Lolium; left unmapped because
+      the ontology candidate is a plant genus/taxon parent and does not identify the
+      rye grass ingredient material.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2362); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because the exact
+    lexical hit is a broader taxon parent, not the ingredient material identity.
 - identifier: UNMAPPED_0512
   preferred_term: S6 medium
   synonyms:
@@ -7604,6 +7648,15 @@ ingredients:
     action: CLEANED_INCORRECT_SYNONYMS
     changes: Removed kg-microbe diclocymet synonyms that were already documented as
       unrelated to TAPSO in the 2026-04-18 demotion event.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_FALSE_OLS_CANDIDATES
+    changes: Re-reviewed OAK/OLS exact-audit hits CHEBI:84015 diclocymet and MESH:C047133
+      dermorphin fragment; kept unmapped because both are unrelated lexical/acronym
+      false positives for TAPSO buffer.
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
@@ -8901,9 +8954,18 @@ ingredients:
       available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_ACRONYM_FALSE_POSITIVE
+    changes: Reviewed OAK/OLS audit candidate NCIT:C17267 Zambia; left unmapped because
+      the exact hit is a country acronym false positive and not a media ingredient.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: ZMB_noFolicAcid. No CAS-RN or CHEBI mapping available;
-    curator review needed.'
+    reviewed on 2026-05-11 and left unmapped because the exact NCIT hit is a country
+    acronym false positive.'
 - identifier: UNMAPPED_0272
   preferred_term: ZMB_ALS
   synonyms:

@@ -16,5 +16,17 @@ curation_history:
     or CHEBI mapping available; curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-11T08:15:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_ACRONYM_AMBIGUITY
+  changes: Reviewed OAK/OLS audit candidates for PBS; rejected non-ingredient acronym
+    hits and left unmapped because the plausible NCIT:C178908 candidate is Dulbecco's
+    Phosphate-Buffered Saline, which is more specific than the source label
+    Phosphate-buffered saline.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
-  CHEBI mapping available; curator review needed.
+  CHEBI mapping available; reviewed on 2026-05-11 and left unmapped pending a
+  generic phosphate-buffered saline identity term or source evidence for Dulbecco's
+  PBS.

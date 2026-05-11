@@ -16,5 +16,14 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-11T08:15:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_UNIT_FALSE_POSITIVE
+  changes: Reviewed OAK/OLS audit candidate NCIT:C68547 Kilojoule; left unmapped
+    because kilojoule is a unit, not a media ingredient identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1042); no CAS-RN or
-  CHEBI/NCIT match. Curator review needed.
+  CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because the exact
+  lexical hit is a unit false positive.
