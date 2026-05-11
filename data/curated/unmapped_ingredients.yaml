@@ -1,4 +1,4 @@
-generation_date: '2026-05-11T08:13:27.898425+00:00'
+generation_date: '2026-05-11T08:15:47.076835+00:00'
 total_count: 398
 mapped_count: 0
 unmapped_count: 398
@@ -3123,8 +3123,19 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:14:56Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_POLYMER_FRACTION
+    changes: Classified as a single polymer ingredient and left unmapped because the
+      source specifies a molecular-weight dextran fraction while local exact mapping
+      evidence exists only for broader dextran.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a
+    Mw-specific dextran fraction; not identity-mapped to generic Dextran.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0168
   preferred_term: dextran, Mw ~200,000
   synonyms:
@@ -3146,8 +3157,19 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:14:56Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_POLYMER_FRACTION
+    changes: Classified as a single polymer ingredient and left unmapped because the
+      source specifies a filtered/autoclaved molecular-weight dextran fraction while
+      local exact mapping evidence exists only for broader dextran.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a
+    Mw-specific dextran fraction; not identity-mapped to generic Dextran.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0375
   preferred_term: Diced potato
   synonyms:
@@ -7906,8 +7928,18 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:14:56Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_POLYSACCHARIDE
+    changes: Classified as a single polysaccharide ingredient and left unmapped because
+      no exact local ontology identity for O-methyl-D-glucuronoxylan was verified.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a
+    specific substituted xylan polysaccharide; not identity-mapped to generic xylan.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0483
   preferred_term: OADC Enrichment
   synonyms:
@@ -8510,8 +8542,19 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:14:56Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_POLYMER
+    changes: Classified as a single polymer ingredient and left unmapped because the
+      surface form lacks CAS/stereochemistry support for safe merge to the existing
+      poly(3-hydroxybutyric acid) mapped record.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2121); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a PHB-like
+    polymer surface form; not merged without exact CAS/stereochemistry evidence.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0494
   preferred_term: Poly[R-3-hydroxybutyric acid]
   synonyms:
@@ -8530,8 +8573,19 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:14:56Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_POLYMER
+    changes: Classified as a single polymer ingredient and left unmapped because the
+      R-specific surface form lacks CAS/stereochemistry support for safe merge to
+      the existing poly(3-hydroxybutyric acid) mapped record.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:300); no CAS-RN or
-    CHEBI/NCIT match. Curator review needed.
+    CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a stereospecific
+    PHB-like polymer surface form; not merged without exact CAS/stereochemistry evidence.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0492
   preferred_term: Poly hexamethylene carbonate
   synonyms:
@@ -8550,8 +8604,18 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T08:14:56Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_POLYMER
+    changes: Classified as a single polymer ingredient and left unmapped because no
+      exact local ontology identity for poly hexamethylene carbonate was verified.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:812); no CAS-RN or
-    CHEBI/NCIT match. Curator review needed.
+    CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a specific
+    polymer; no generic parent identity asserted.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0498
   preferred_term: PrCl3 x H2O
   synonyms:
@@ -11491,6 +11555,15 @@ ingredients:
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
+  - timestamp: '2026-05-11T08:14:56Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_FRACTION_MIXTURE
+    changes: Classified as an undefined mixture because the source label combines
+      hepta-, octa-, and nona-saccharide xyloglucan fractions rather than a single
+      exact xyloglucan identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
     or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 and
     not identity-mapped to generic xyloglucan because the source label is fraction-specific.
@@ -11503,6 +11576,7 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via OLS (label-exact)
       notes: Parent class identified via label-exact; matched_via='Xyloglucan'
+  ingredient_type: UNDEFINED_MIXTURE
 - identifier: UNMAPPED_0583
   preferred_term: YM broth
   synonyms:
