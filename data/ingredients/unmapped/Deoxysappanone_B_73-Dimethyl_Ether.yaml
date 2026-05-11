@@ -21,15 +21,16 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C1645 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-05-11T08:17:20Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_SPECIALTY_SMALL_MOLECULE
+  changes: Classified as a single natural-product-like small molecule and removed
+    the weak NCIT dimethyl ether parent because it was a substring/substituent match,
+    not an identity or useful parent for this source term.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
-  CHEBI mapping available; curator review needed.
-ontology_mapping:
-  ontology_id: NCIT:C1645
-  ontology_label: Dimethyl Ether
-  ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
-  evidence:
-  - evidence_type: DATABASE_MATCH
-    source: NCIT via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via="Deoxysappanone
-      B 7,3'-Dimethyl Ether"
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11; retained
+  as unmapped pending exact source-backed identity.
+ingredient_type: SINGLE_INGREDIENT
