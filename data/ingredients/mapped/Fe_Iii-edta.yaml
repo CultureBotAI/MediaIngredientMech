@@ -2,7 +2,7 @@ identifier: CHEBI:30729
 preferred_term: Fe(III)-EDTA
 ontology_mapping:
   ontology_id: CHEBI:30729
-  ontology_label: Fe(III)-EDTA
+  ontology_label: ethylenediaminetetraacetatoferrate(1-)
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -25,6 +25,9 @@ synonyms:
 - synonym_text: Ferric EDTA
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: FE EDTA
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
 - synonym_text: Iron(III)-edta
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
@@ -36,8 +39,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 34
-  media_count: 34
+  total_occurrences: 35
+  media_count: 35
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -98,6 +101,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T04:22:30Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Fe_Edta.yaml (UNMAPPED_0109);
+    local CHEBI:30729 and mapped representative already cover ferric/Fe(III)
+    EDTA identity.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 15275-07-7
   data_source: PubChem API

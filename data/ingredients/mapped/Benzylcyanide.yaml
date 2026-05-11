@@ -1,0 +1,45 @@
+identifier: CHEBI:25979
+preferred_term: Benzylcyanide
+ontology_mapping:
+  ontology_id: CHEBI:25979
+  ontology_label: phenylacetonitrile
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: local kg-microbe CHEBI transform
+    notes: Local CHEBI labels CHEBI:25979 phenylacetonitrile with benzyl cyanide as an exact synonym.
+synonyms:
+- synonym_text: Benzylcyanide
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: Benzyl cyanide
+  synonym_type: EXACT_SYNONYM
+  source: local_chebi_exact_alias_review_2026_05_11
+- synonym_text: phenylacetonitrile
+  synonym_type: EXACT_SYNONYM
+  source: local_chebi_exact_alias_review_2026_05_11
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2166); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T04:22:30Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CURATED_CHEBI_EXACT_MATCH
+  changes: Mapped to CHEBI:25979 phenylacetonitrile using local CHEBI exact synonym
+    evidence for benzyl cyanide/Benzylcyanide.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2166); curated to
+  CHEBI:25979 phenylacetonitrile by local CHEBI exact synonym review on 2026-05-11.
+kg_microbe_node_id: CHEBI:25979
+ingredient_type: SINGLE_INGREDIENT

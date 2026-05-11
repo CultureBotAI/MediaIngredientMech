@@ -2,7 +2,7 @@ identifier: CHEBI:86254
 preferred_term: FeCl3 x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:86254
-  ontology_label: FeCl3 x 6 H2O
+  ontology_label: iron trichloride hexahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -20,6 +20,12 @@ synonyms:
 - synonym_text: FeCl3.6H2O
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
+- synonym_text: Ferric chloride hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
+- synonym_text: Iron (III) chloride hexahydrate
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
 - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
     Simple component'
   synonym_type: RAW_TEXT
@@ -38,8 +44,8 @@ synonyms:
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 411
-  media_count: 101
+  total_occurrences: 413
+  media_count: 103
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -91,9 +97,20 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T04:22:30Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed Ferric_Chloride_Hexahydrate.yaml, which was incorrectly mapped
+    to CHEBI:82824 calpain inhibitor, and unmapped Iron_(III)_Chloride_Hexahydrate.yaml
+    (UNMAPPED_0293); local CHEBI confirms CHEBI:86254 as iron trichloride
+    hexahydrate with ferric/iron(III) chloride hexahydrate synonyms, and current
+    CAS-RN was corrected to the local CHEBI xref.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:86254
 chemical_properties:
-  cas_rn: 10225-77-1
+  cas_rn: 10025-77-1
   data_source: PubChem (via CHEBI:86254)
   retrieval_date: '2026-04-09T00:32:50.689620'
   molecular_formula: Cl3Fe.6H2O
