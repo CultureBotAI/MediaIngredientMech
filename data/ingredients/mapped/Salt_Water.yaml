@@ -1,0 +1,40 @@
+identifier: ENVO:00002010
+preferred_term: Salt water
+ontology_mapping:
+  ontology_id: ENVO:00002010
+  ontology_label: saline water
+  ontology_source: ENVO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: OAK/OLS exact audit
+    notes: OLS audit matched Salt water to ENVO:00002010 saline water through exact
+      synonym salt water.
+synonyms:
+- synonym_text: Salt water
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1508); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:04:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CURATED_ENVO_EXACT_MATCH
+  changes: Mapped to ENVO:00002010 saline water using OAK/OLS exact synonym evidence
+    for salt water.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1508); no CAS-RN or
+  CHEBI/NCIT match. Curated to ENVO:00002010 saline water on 2026-05-11.
+kg_microbe_node_id: ENVO:00002010
+ingredient_type: UNDEFINED_MIXTURE

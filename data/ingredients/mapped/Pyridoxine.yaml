@@ -71,6 +71,9 @@ synonyms:
 - synonym_text: vitamin B6
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Pyridoxin
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 45
@@ -113,6 +116,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T07:04:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Pyridoxin.yaml (UNMAPPED_0503);
+    OAK/OLS audit and local CHEBI representative support pyridoxine CHEBI:16709.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 65-23-6
   data_source: PubChem API

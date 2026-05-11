@@ -1,0 +1,42 @@
+identifier: mesh:D011136
+preferred_term: Tween
+ontology_mapping:
+  ontology_id: mesh:D011136
+  ontology_label: Polysorbates
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: OAK/OLS exact audit
+    notes: OLS audit matched the imported surface form Tween to MESH:D011136
+      Polysorbates through exact synonym Tween.
+synonyms:
+- synonym_text: Tween
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:318); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CURATED_MESH_EXACT_MATCH
+  changes: Mapped to MESH:D011136 Polysorbates using OAK/OLS exact synonym evidence
+    for the generic Tween surface form. Specific Tween variants remain separately
+    mapped.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:318); no CAS-RN or
+  CHEBI/NCIT match. Curated to MESH:D011136 Polysorbates on 2026-05-11; specific
+  Tween variants remain separate mapped records.
+kg_microbe_node_id: mesh:D011136
+ingredient_type: UNDEFINED_MIXTURE
