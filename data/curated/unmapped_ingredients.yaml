@@ -1,7 +1,7 @@
-generation_date: '2026-05-11T07:01:28.082787+00:00'
-total_count: 406
+generation_date: '2026-05-11T07:05:21.361349+00:00'
+total_count: 405
 mapped_count: 0
-unmapped_count: 406
+unmapped_count: 405
 ingredients:
 - identifier: UNMAPPED_0316
   preferred_term: 1-Naphtylacetic Acid
@@ -6363,25 +6363,17 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 1'
-- identifier: UNMAPPED_0082
-  preferred_term: 'Original amount: (NH4)2SO4(Fisher A 702)'
-  synonyms:
-  - synonym_text: (NH4)2SO4(Fisher A 702)
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 1
-    media_count: 1
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_UNDEFINED_MIXTURE
+    changes: Classified as peat-derived organic material and left unmapped pending
+      source/composition curation rather than identity mapping to a generic parent.
+    previous_status: UNMAPPED
     new_status: UNMAPPED
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 1'
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 as peat-derived organic
+    material pending source/composition curation.'
+  ingredient_type: UNDEFINED_MIXTURE
 - identifier: UNMAPPED_0485
   preferred_term: Ox-bile
   synonyms:
@@ -6439,7 +6431,18 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 8'
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a named P-II metal stock/pre-mix and left unmapped pending
+      component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 8; reviewed on 2026-05-11 as a named P-II metal
+    stock/pre-mix pending component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: TRACE_METAL_MIX
 - identifier: UNMAPPED_0011
   preferred_term: P-IV Metal Solution
   synonyms:
@@ -6576,9 +6579,19 @@ ingredients:
       available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_UNDEFINED_MIXTURE
+    changes: Classified as a potato-derived pectic galactan substrate/fraction and
+      left unmapped pending source and polymer-fraction curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 1
     CultureBot media; samples: Surya_sugar_mix. No CAS-RN or CHEBI mapping available;
-    curator review needed.'
+    curator review needed. Reviewed on 2026-05-11 as a potato-derived pectic galactan
+    substrate/fraction pending source and polymer-fraction curation.'
+  ingredient_type: UNDEFINED_MIXTURE
 - identifier: UNMAPPED_0488
   preferred_term: Phytone
   synonyms:
@@ -6666,9 +6679,20 @@ ingredients:
       mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a Planctomyces mineral-salts stock/pre-mix and left unmapped
+      pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: Planctomyces_medium_DSMZ1560. No CAS-RN or CHEBI
-    mapping available; curator review needed.'
+    mapping available; reviewed on 2026-05-11 as a Planctomyces mineral-salts stock/pre-mix
+    pending component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: MINERAL_STOCK
 - identifier: UNMAPPED_0310
   preferred_term: Planctomyces_trace_element_solution
   synonyms:
@@ -6688,9 +6712,20 @@ ingredients:
       mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a Planctomyces trace-element stock/pre-mix and left unmapped
+      pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: Planctomyces_medium_DSMZ1560. No CAS-RN or CHEBI
-    mapping available; curator review needed.'
+    mapping available; reviewed on 2026-05-11 as a Planctomyces trace-element stock/pre-mix
+    pending component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: TRACE_METAL_MIX
 - identifier: UNMAPPED_0265
   preferred_term: Planctomyces_vitamin_mix
   synonyms:
@@ -6710,9 +6745,20 @@ ingredients:
       mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a Planctomyces vitamin stock/pre-mix and left unmapped
+      pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: Planctomyces_medium_DSMZ1560. No CAS-RN or CHEBI
-    mapping available; curator review needed.'
+    mapping available; reviewed on 2026-05-11 as a Planctomyces vitamin stock/pre-mix
+    pending component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: VITAMIN_MIX
 - identifier: UNMAPPED_0491
   preferred_term: Polar lipid fraction
   synonyms:
@@ -7012,9 +7058,19 @@ ingredients:
       available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_UNDEFINED_MIXTURE
+    changes: Classified as a plant-derived polysaccharide substrate/fraction and left
+      unmapped pending source and polymer-fraction curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 1
     CultureBot media; samples: Surya_sugar_mix. No CAS-RN or CHEBI mapping available;
-    curator review needed.'
+    curator review needed. Reviewed on 2026-05-11 as a plant-derived polysaccharide
+    substrate/fraction pending source and polymer-fraction curation.'
+  ingredient_type: UNDEFINED_MIXTURE
 - identifier: UNMAPPED_0507
   preferred_term: Reinforced clostridial medium
   synonyms:
@@ -7231,9 +7287,19 @@ ingredients:
       mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_DEFINED_MEDIUM
+    changes: Classified as a Soil Defined Media variant with carbon omitted and left
+      unmapped pending recipe-level curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: Soil Defined Media (SDM). No CAS-RN or CHEBI mapping
-    available; curator review needed.'
+    available; reviewed on 2026-05-11 as a Soil Defined Media variant pending recipe-level
+    curation.'
+  ingredient_type: DEFINED_MEDIUM
 - identifier: UNMAPPED_0514
   preferred_term: Salt Solution II
   synonyms:
@@ -7576,7 +7642,17 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 1'
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_DEFINED_MEDIUM
+    changes: Classified as a named soilwater GR- medium formulation and left unmapped
+      pending recipe-level curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 as a named soilwater
+    GR- medium formulation pending recipe-level curation.'
+  ingredient_type: DEFINED_MEDIUM
 - identifier: UNMAPPED_0012
   preferred_term: 'Soilwater: GR+ Medium'
   synonyms:
@@ -7622,7 +7698,17 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 6'
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_DEFINED_MEDIUM
+    changes: Classified as a named soilwater peat medium formulation and left unmapped
+      pending recipe-level curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 6; reviewed on 2026-05-11 as a named soilwater
+    peat medium formulation pending recipe-level curation.'
+  ingredient_type: DEFINED_MEDIUM
 - identifier: UNMAPPED_0531
   preferred_term: Soya pepton
   synonyms:
@@ -7871,9 +7957,20 @@ ingredients:
       curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a sulfur-free mineral stock/pre-mix and left unmapped pending
+      component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: M63_no_sulfur. No CAS-RN or CHEBI mapping available;
-    curator review needed.'
+    reviewed on 2026-05-11 as a sulfur-free mineral stock/pre-mix pending component-level
+    recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: MINERAL_STOCK
 - identifier: UNMAPPED_0217
   preferred_term: Sunfiber
   synonyms:
@@ -8112,9 +8209,20 @@ ingredients:
       available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a Thauer vitamin stock/pre-mix variant with biotin omitted
+      and left unmapped pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: M9_Thauers_noBiotin. No CAS-RN or CHEBI mapping
-    available; curator review needed.'
+    available; reviewed on 2026-05-11 as a Thauer vitamin stock/pre-mix variant pending
+    component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: VITAMIN_MIX
 - identifier: UNMAPPED_0538
   preferred_term: Thiamine solution see Medium No. 403
   synonyms:
@@ -8734,9 +8842,20 @@ ingredients:
       review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a variant concentrated base stock with sulfur omitted and
+      left unmapped pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: NoS. No CAS-RN or CHEBI mapping available; curator
-    review needed.'
+    reviewed on 2026-05-11 as a variant concentrated base stock pending component-level
+    recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: OTHER
 - identifier: UNMAPPED_0564
   preferred_term: V8 canned vegetable juice
   synonyms:
@@ -9022,7 +9141,17 @@ ingredients:
     changes: Initial import from CultureMech pipeline
     new_status: UNMAPPED
     llm_assisted: false
-  notes: 'CultureMech placeholder_id: 1'
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_DEFINED_MEDIUM
+    changes: Classified as a named Volvox medium formulation and left unmapped pending
+      recipe-level curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 as a named Volvox
+    medium formulation pending recipe-level curation.'
+  ingredient_type: DEFINED_MEDIUM
 - identifier: UNMAPPED_0222
   preferred_term: Wako Isomaltooligosaccharides
   synonyms:
@@ -9236,9 +9365,20 @@ ingredients:
       No CAS-RN or CHEBI mapping available; curator review needed.'
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a Wolfe mineral stock/pre-mix variant with nitrilotriacetic
+      acid omitted and left unmapped pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: RCH2_defined_noCarbon_noNitrogen_noNitrilotriacetic_acid.
-    No CAS-RN or CHEBI mapping available; curator review needed.'
+    No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a Wolfe mineral
+    stock/pre-mix variant pending component-level recipe curation.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: MINERAL_STOCK
 - identifier: UNMAPPED_0306
   preferred_term: Wolfe's vitamin mix
   synonyms:
@@ -9435,10 +9575,20 @@ ingredients:
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
+  - timestamp: '2026-05-11T18:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_DEFINED_MEDIUM
+    changes: Classified as a named ZMB medium/formulation variant and left unmapped
+      pending recipe-level curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: ZMB_noFolicAcid. No CAS-RN or CHEBI mapping available;
     reviewed on 2026-05-11 and left unmapped because the exact NCIT hit is a country
-    acronym false positive.'
+    acronym false positive. Classified on 2026-05-11 as a named medium/formulation
+    variant pending recipe-level curation.'
+  ingredient_type: DEFINED_MEDIUM
 - identifier: UNMAPPED_0272
   preferred_term: ZMB_ALS
   synonyms:
