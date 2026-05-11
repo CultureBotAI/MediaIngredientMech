@@ -1,7 +1,7 @@
-generation_date: '2026-05-11T07:57:05.471961+00:00'
-total_count: 401
+generation_date: '2026-05-11T07:59:49.715055+00:00'
+total_count: 400
 mapped_count: 0
-unmapped_count: 401
+unmapped_count: 400
 ingredients:
 - identifier: UNMAPPED_0316
   preferred_term: 1-Naphtylacetic Acid
@@ -2391,8 +2391,19 @@ ingredients:
       or CHEBI mapping available; curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T07:59:07Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_EDTA_COMPLEX
+    changes: Classified as a single cobalt(III)-EDTA complex and left unmapped because
+      no exact local ontology term for cobalt(III)-EDTA was verified; generic EDTA
+      or cobalt mappings would not preserve complex identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
+    or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a
+    cobalt(III)-EDTA complex; not identity-mapped to generic EDTA or cobalt.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0361
   preferred_term: Colloidal chitin
   synonyms:
@@ -3556,26 +3567,6 @@ ingredients:
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1079); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
-- identifier: UNMAPPED_0383
-  preferred_term: FeNa-EDTA
-  synonyms:
-  - synonym_text: FeNa-EDTA
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:1230); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:1230); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0385
   preferred_term: FeSO43 x n H2O
   synonyms:
@@ -4682,8 +4673,19 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T07:59:07Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_EDTA_COMPLEX_AMBIGUITY
+    changes: Classified as a single iron-EDTA complex and left unmapped because the
+      source term does not specify oxidation or sodium state; exact local Fe(III)-EDTA
+      and sodium ferric EDTA representatives are too specific to absorb this label.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Iron-EDTA);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    no CAS-RN or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as
+    an iron-EDTA complex; left unmapped pending oxidation and salt-state evidence.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0604
   preferred_term: Iron (as FeCl3 in EDTA)
   synonyms:
@@ -6409,8 +6411,19 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T07:59:07Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_EDTA_COMPLEX
+    changes: Classified as a single manganese(II)-EDTA complex and left unmapped because
+      no exact local ontology term for Mn(II)-EDTA was verified; generic EDTA or manganese
+      mappings would not preserve complex identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2051); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a Mn(II)-EDTA
+    complex; not identity-mapped to generic EDTA or manganese.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0292
   preferred_term: MoLS4
   synonyms:
@@ -6926,8 +6939,20 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T07:59:07Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_SALT_STOICHIOMETRY_AMBIGUITY
+    changes: Classified as a single sodium nitrilotriacetate salt and left unmapped
+      because the source label does not specify disodium versus trisodium state; local
+      mapped NTA acid, nitrilotriacetate, and sodium nitrilotriacetate records are
+      not all interchangeable.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1417); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a sodium
+    nitrilotriacetate salt with unresolved stoichiometry.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0462
   preferred_term: Na-Phosphate-Buffer
   synonyms:
@@ -9930,8 +9955,19 @@ ingredients:
       or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-05-11T07:59:07Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_TRADE_NAME_AMBIGUITY
+    changes: Classified as a single chelator-like ingredient label and left unmapped
+      because the compact trade-name form Titriplex1 was not locally verified as an
+      exact synonym for a specific NTA or EDTA chemical form.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1590); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 and left unmapped
+    pending source-backed resolution of the Titriplex trade-name identity.
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0544
   preferred_term: Todd Hewitt Broth
   synonyms:
