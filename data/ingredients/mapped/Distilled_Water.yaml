@@ -106,10 +106,16 @@ synonyms:
 - synonym_text: 'Role: Solvating media'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: sterile dH2O
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
+- synonym_text: Sterile dH2O
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 4282
-  media_count: 263
+  total_occurrences: 4287
+  media_count: 268
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -245,6 +251,16 @@ curation_history:
     counts were summed.
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-05-11T04:17:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped records Sterile_Dh2o.yaml (UNMAPPED_0032)
+    and Sterile_Dh2o_2.yaml (UNMAPPED_0084); both are CultureMech sterile dH2O
+    surface forms, and this mapped CHEBI:15377 representative already carries
+    dH2O/H2O water synonyms.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:15377
 chemical_properties:
   cas_rn: 7732-18-5

@@ -2,7 +2,7 @@ identifier: CHEBI:17045
 preferred_term: nitrous oxide
 ontology_mapping:
   ontology_id: CHEBI:17045
-  ontology_label: ''
+  ontology_label: dinitrogen oxide
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -10,11 +10,17 @@ ontology_mapping:
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). '
-synonyms: []
+synonyms:
+- synonym_text: N2O
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
+- synonym_text: '#N2O'
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 4
+  media_count: 4
 curation_history:
 - timestamp: '2026-04-29T06:34:31.158938+00:00'
   curator: audit_cas_chebi_followup
@@ -39,6 +45,16 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T04:17:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record N2O.yaml (UNMAPPED_0296);
+    CultureBotHT surface form '#N2O' denotes nitrous oxide in N2O/argon media
+    names, and local CHEBI plus SSSOM review confirms CHEBI:17045 as dinitrogen
+    oxide.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 10024-97-2
   data_source: CultureBotHT compounds_to_cas.csv
