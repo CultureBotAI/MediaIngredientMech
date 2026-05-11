@@ -22,10 +22,13 @@ synonyms:
 - synonym_text: Oxoglutaric acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: a-Ketoglutaric acid
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 2
-  media_count: 2
+  total_occurrences: 4
+  media_count: 4
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -63,6 +66,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T04:08:29Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record A-Ketoglutaric_Acid.yaml (UNMAPPED_0266);
+    local mapped CHEBI:30915 record represents alpha-ketoglutaric acid and the
+    unmapped surface form is the alpha/a notation variant used in CultureBotHT.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 328-50-7
   data_source: PubChem API
