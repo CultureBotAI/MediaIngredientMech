@@ -170,7 +170,11 @@ def _validate_ontology_mapping(mapping: Any, path: str, msgs: list[ValidationMes
     oid = mapping.get("ontology_id")
     if oid and not _CURIE_PATTERN.match(str(oid)):
         msgs.append(
-            ValidationMessage("error", path, f"ontology_id '{oid}' does not match CURIE pattern ^[A-Z]+:[0-9]+$")
+            ValidationMessage(
+                "error",
+                path,
+                f"ontology_id '{oid}' does not match CURIE pattern {_CURIE_PATTERN.pattern}",
+            )
         )
 
     _check_open_enum(mapping, "ontology_source", _ONTOLOGY_SOURCES, path, msgs)

@@ -7,12 +7,15 @@ from dataclasses import dataclass, field
 from typing import Any
 
 # CURIE pattern broadened to match prefixes actually present in mapped
-# records: case-insensitive prefix with optional dot, and local IDs that may be
-# alphanumeric (`NCIT:C80654`) or contain hyphens (`cas:247167-54-0`).
+# records: prefix may include letters of either case and an optional dot, and
+# local IDs may be alphanumeric (`NCIT:C80654`) or contain hyphens
+# (`cas:247167-54-0`). Prefix case is preserved (not normalised) — KNOWN_PREFIXES
+# is checked case-sensitively against the SSSOM curie_map below.
 _CURIE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9.]*):([A-Za-z0-9][A-Za-z0-9._-]*)$")
 
-# Recognised ontology prefixes. Case-sensitive; keep in sync with the
-# SSSOM curie_map that the claw builder emits for ingredient mappings.
+# Recognised ontology prefixes. Case-sensitive (e.g. `mesh:` and `MESH:` are
+# both accepted, but only the exact spellings listed here); keep in sync with
+# the SSSOM curie_map that the claw builder emits for ingredient mappings.
 KNOWN_PREFIXES = {
     "CHEBI",
     "FOODON",
@@ -152,9 +155,16 @@ def validate_records(
 
     # Accept both the collection shape (`ingredients: [...]`) and the
     # individual-record shape (the document itself is an IngredientRecord).
+    # Match schema_validator: a record has either `identifier` (canonical) or
+    # `ontology_id` (legacy) as its primary key. Also accept any document with
+    # an `ontology_mapping` block.
     ingredients = data.get("ingredients")
     if not isinstance(ingredients, list):
-        if isinstance(data.get("ontology_mapping"), dict) or "identifier" in data:
+        if (
+            isinstance(data.get("ontology_mapping"), dict)
+            or "identifier" in data
+            or "ontology_id" in data
+        ):
             ingredients = [data]
             path_prefix = "$"
         else:
