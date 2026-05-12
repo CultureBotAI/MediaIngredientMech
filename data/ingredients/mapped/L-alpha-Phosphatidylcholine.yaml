@@ -1,0 +1,40 @@
+identifier: CHEBI:86658
+preferred_term: L-alpha-Phosphatidylcholine
+ontology_mapping:
+  ontology_id: CHEBI:86658
+  ontology_label: L-alpha-Phosphatidylcholine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: EBI OLS exact search
+    notes: OLS exact label match after transliterating the Greek-letter source label
+      to "L-alpha-Phosphatidylcholine".
+synonyms:
+- synonym_text: L-α-Phosphatidylcholine
+  synonym_type: EXACT_SYNONYM
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2082); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unmapped_ols_exact_audit
+  action: MAPPED_FROM_UNMAPPED
+  changes: Mapped from the Greek-letter unmapped record to CHEBI:86658 after OLS exact
+    label match on the standard label L-alpha-Phosphatidylcholine; preserved original
+    source label as exact synonym.
+  new_status: MAPPED
+  llm_assisted: false
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2082); mapped by OLS
+  exact audit after Greek-letter transliteration.
+kg_microbe_node_id: CHEBI:86658
+ingredient_type: SINGLE_INGREDIENT

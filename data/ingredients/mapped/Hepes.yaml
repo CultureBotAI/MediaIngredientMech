@@ -10,24 +10,19 @@ ontology_mapping:
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
 synonyms:
-- synonym_text: 'Role: Buffer; Properties: Defined component, Organic compound, Simple
-    component'
+- synonym_text: 'Role: Buffer; Properties: Defined component, Organic compound, Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Defined component, Simple component, Organic
-    compound'
+- synonym_text: 'Role: Buffer; Properties: Defined component, Simple component, Organic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Organic compound, Defined component, Simple
-    component'
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Defined component, Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Organic compound, Simple component, Defined
-    component'
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Simple component, Defined component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Simple component, Defined component, Organic
-    compound'
+- synonym_text: 'Role: Buffer; Properties: Simple component, Defined component, Organic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: HEPES buffer
@@ -36,10 +31,25 @@ synonyms:
 - synonym_text: 'Role: Buffer; Properties: Defined component, Solution'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: HEPES buffer
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'HEPES buffer(CAS: 7365-45-9)'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: HEPES buffer(Sigma H-3375)
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 4-2-hydroxyethyl-1-piperazineethanesulfonic acid
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
+- synonym_text: 4-(2-Hydroxyethyl)-1-piperazineethane sulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: local_chebi_exact_alias_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 166
-  media_count: 68
+  total_occurrences: 168
+  media_count: 70
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -56,25 +66,23 @@ curation_history:
 - timestamp: '2026-04-05T21:48:45.176855'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
-  changes: 'Added CAS-RN:7365-45-9 from CultureBotHT compounds_to_cas.csv (matched:
-    Hepes)'
+  changes: 'Added CAS-RN:7365-45-9 from CultureBotHT compounds_to_cas.csv (matched: Hepes)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-19T01:05:11.444380+00:00'
   curator: cbclaw_sssom_review_fix
   action: CORRECTED_ONTOLOGY_ID
   changes: 'Corrected ontology_id CHEBI:19708 -> CHEBI:46756 (old label: ''HEPES buffer'',
-    new label: ''HEPES''). Reason: Previous CHEBI:19708 is obsolete in current CHEBI
-    release. Stripped 0 kg_microbe-sourced synonyms that were contaminated by the
-    wrong CHEBI.'
+    new label: ''HEPES''). Reason: Previous CHEBI:19708 is obsolete in current CHEBI release.
+    Stripped 0 kg_microbe-sourced synonyms that were contaminated by the wrong CHEBI.'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-19T07:39:23.955331+00:00'
   curator: audit_mim_merge
   action: MERGED_FROM_DUPLICATES
   changes: 'Absorbed 2 duplicate MIM record(s) into this one: Hepes_Buffer.yaml, Hepes_2.yaml.
-    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
-    selected by highest occurrence count with preferred_term readability tie-break.'
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected
+    by highest occurrence count with preferred_term readability tie-break.'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-05-01T07:35:33.960640+00:00'
@@ -87,6 +95,24 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-05T00:00:00+00:00'
+  curator: ingredient_mapping_review_2026_05_05
+  action: MERGED
+  changes: Absorbed duplicate record Hepes_Buffer.yaml (UNMAPPED_0057) into Hepes.yaml; source
+    occurrence counts and synonyms were merged. HEPES buffer text is preparation context;
+    identity is HEPES CHEBI:46756.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T04:22:30Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record 4-2-hydroxyethyl-1-piperazineethanesulfonic_Acid.yaml
+    (UNMAPPED_0319); local CHEBI aliases support the long-form HEPES surface text,
+    and this mapped representative is already the project HEPES identity.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7365-45-9
   data_source: PubChem API

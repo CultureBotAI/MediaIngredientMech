@@ -21,15 +21,18 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C65145 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-05-11T08:03:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REMOVED_NON_IDENTITY_PARENT
+  changes: Removed NCIT:C65145 Apple Juice parent annotation because the source term
+    is a rhamnogalacturonan-II fraction derived from apple juice concentrate, not
+    apple juice identity or subclass. Classified as a source-specific polymer fraction
+    and left unmapped.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
-  CHEBI mapping available; curator review needed.
-ontology_mapping:
-  ontology_id: NCIT:C65145
-  ontology_label: Apple Juice
-  ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
-  evidence:
-  - evidence_type: DATABASE_MATCH
-    source: NCIT via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via='Rhamnogalacturonan-II
-      from apple juice concentrate'
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as an apple-juice-concentrate-derived
+  rhamnogalacturonan-II fraction pending source-backed polymer-fraction curation;
+  the broad Apple Juice parent annotation was removed as non-identity source context.
+ingredient_type: UNDEFINED_MIXTURE

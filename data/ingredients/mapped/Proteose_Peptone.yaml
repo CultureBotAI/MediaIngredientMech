@@ -69,10 +69,13 @@ synonyms:
 - synonym_text: Proteose peptone (BD--Difco)
   synonym_type: CATALOG_VARIANT
   source: manual
+- synonym_text: Peptic digest of animal tissue
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 2
-  media_count: 2
+  total_occurrences: 5
+  media_count: 5
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -109,7 +112,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Peptone')
   llm_assisted: false
-notes: 'CultureMech placeholder_id: 3'
+- timestamp: '2026-05-11T07:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed unmapped record Peptic_Digest_Of_Animal_Tissue.yaml (UNMAPPED_0242);
+    OAK/OLS audit supports MICRO:0000180 proteose peptone as the exact term for
+    peptic digest of animal tissue.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: 'CultureMech placeholder_id: 3; absorbed Peptic digest of animal tissue source
+  surface on 2026-05-11.'
 chemical_properties:
   cas_rn: 91079-38-8
   data_source: CultureBotHT compounds_to_cas.csv

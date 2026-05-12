@@ -15,7 +15,10 @@ ontology_mapping:
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='Bathocuproine
       disulfonic acid disodium salt'
-synonyms: []
+synonyms:
+- synonym_text: Bathocuproinedisulfonic acid disodium salt
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_07
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -48,6 +51,15 @@ curation_history:
   curator: backfill_parent_terms
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:63934 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Bathocuproinedisulfonic_Acid_Disodium_Salt.yaml
+    (UNMAPPED_0250); mapped representative preserves CAS fallback identity while
+    retaining CHEBI:63934 only as a parent/narrow mapping.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 52698-84-7

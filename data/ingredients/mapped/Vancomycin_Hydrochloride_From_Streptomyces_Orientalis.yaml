@@ -10,7 +10,10 @@ ontology_mapping:
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). FEBA/Hans80 panels: Hans80Anti.'
-synonyms: []
+synonyms:
+- synonym_text: Vancomycin x HCl
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -39,6 +42,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T08:27:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Vancomycin_X_HCl.yaml (UNMAPPED_0565);
+    local mapped vancomycin hydrochloride CHEBI:9932 has matching hydrochloride
+    formula and represents the source spelling "Vancomycin x HCl".
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 1404-93-9
   data_source: CultureBotHT compounds_to_cas.csv

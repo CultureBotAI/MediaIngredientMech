@@ -27,8 +27,18 @@ curation_history:
   changes: molecular_formula=C32H42O8; inchi=InChI=1S/C32H42O8/c1-8-17(2)29(36)40-28-20-13-19-2;
     smiles=[H][C@@]12CC3=C4CC(=O)O[C@@H](c5ccoc5)[C@]4(C)CCC3
   llm_assisted: false
+- timestamp: '2026-05-11T08:17:20Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_SPECIALTY_SMALL_MOLECULE
+  changes: Classified as a single natural-product-like small molecule and left unmapped
+    because the exact audit found no Khayasin C ontology identity; the existing CHEBI
+    KHAYASIN row is retained only as a broader related parent.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
-  CHEBI mapping available; curator review needed.
+  CHEBI mapping available; curator review needed. Reviewed on 2026-05-11; retained
+  as unmapped pending exact Khayasin C identity.
 ontology_mapping:
   ontology_id: CHEBI:185858
   ontology_label: KHAYASIN
@@ -43,3 +53,4 @@ chemical_properties:
   inchi: InChI=1S/C32H42O8/c1-8-17(2)29(36)40-28-20-13-19-21(32(6,26(20)35)23(30(28,3)4)15-24(33)37-7)9-11-31(5)22(19)14-25(34)39-27(31)18-10-12-38-16-18/h10,12,16-17,20-21,23,27-28H,8-9,11,13-15H2,1-7H3/t17?,20-,21?,23+,27+,28?,31-,32-/m1/s1
   smiles: '[H][C@@]12CC3=C4CC(=O)O[C@@H](c5ccoc5)[C@]4(C)CCC3[C@@](C)(C1=O)[C@@H](CC(=O)OC)C(C)(C)C2OC(=O)C(C)CC'
   data_source: CHEBI sqlite (oaklib)
+ingredient_type: SINGLE_INGREDIENT

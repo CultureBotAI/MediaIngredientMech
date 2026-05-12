@@ -16,5 +16,25 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-11T08:15:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_SERUM_SPECIFICITY
+  changes: Reviewed OAK/OLS audit candidate MICRO:0001709 calf serum; left unmapped
+    because bovine serum does not locally specify calf, fetal, or adult source and
+    should not be collapsed into a more specific serum record.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-05-11T07:34:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as an animal serum material while preserving the prior decision
+    not to identity-map to calf, fetal, adult, or generic serum without source specificity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2098); no CAS-RN or
-  CHEBI/NCIT match. Curator review needed.
+  CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending source evidence
+  for the specific bovine serum type. Classified as an animal serum material while
+  preserving unmapped identity status.
+ingredient_type: UNDEFINED_MIXTURE

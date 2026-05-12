@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: beta-Lipomycin
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Beta Lipomycin
+  synonym_type: EXACT_SYNONYM
+  source: unknown_term_placeholder_ols_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -20,6 +23,14 @@ curation_history:
   curator: resolve_unmapped
   action: AUTO_UPGRADE_TO_MESH
   changes: primary UNMAPPED_0593 → mesh:C000601869 via name normalization to 'beta-Lipomycin'
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: MERGED_FROM_KGM_PLACEHOLDER_DUPLICATE
+  changes: Retired duplicate placeholder record Beta_Lipomycin.yaml after EBI OLS
+    exact label match to existing mesh:C000601869 representative; added "Beta Lipomycin"
+    as exact synonym.
+  new_status: MAPPED
   llm_assisted: false
 notes: Imported from mim-queue (source_id=kgmicrobe.compound:beta_lipomycin); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.

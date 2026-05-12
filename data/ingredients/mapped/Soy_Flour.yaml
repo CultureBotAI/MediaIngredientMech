@@ -1,0 +1,45 @@
+identifier: FOODON:03302142
+preferred_term: Soy flour
+ontology_mapping:
+  ontology_id: FOODON:03302142
+  ontology_label: soybean flour
+  ontology_source: FOODON
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: OAK/OLS exact audit
+    notes: OLS audit matched the imported surface form Soy flour to FOODON:03302142
+      soybean flour through exact synonym soy flour.
+synonyms:
+- synonym_text: Soy flour
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1405); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.912920+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Soy')
+  llm_assisted: false
+- timestamp: '2026-05-11T07:04:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CURATED_FOODON_EXACT_MATCH
+  changes: Mapped to FOODON:03302142 soybean flour using OAK/OLS exact synonym
+    evidence for soy flour; retained mixture classification.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1405); no CAS-RN or
+  CHEBI/NCIT match. Curated to FOODON:03302142 soybean flour on 2026-05-11.
+kg_microbe_node_id: FOODON:03302142
+ingredient_type: UNDEFINED_MIXTURE

@@ -19,6 +19,9 @@ synonyms:
 - synonym_text: Putrescine
   synonym_type: EXACT_SYNONYM
   source: culturebotht
+- synonym_text: Putrescine 2 HCl
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -51,6 +54,15 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:201718 (pubchem-xref)
   llm_assisted: false
+- timestamp: '2026-05-11T08:16:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Putrescine_2_HCl.yaml (UNMAPPED_0502);
+    "Putrescine 2 HCl" is the local source spelling for putrescine dihydrochloride
+    with matching mapped CAS 333-93-7.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 333-93-7
   data_source: CultureBotHT compounds_to_cas.csv

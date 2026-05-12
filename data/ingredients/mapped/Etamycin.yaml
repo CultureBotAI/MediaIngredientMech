@@ -15,7 +15,10 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: MESH via OLS search
     notes: Auto-upgraded from 'kgmicrobe.compound:etamycin'; match=label-exact
-synonyms: []
+synonyms:
+- synonym_text: Viridogrisein
+  synonym_type: EXACT_SYNONYM
+  source: unknown_term_placeholder_ols_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -38,5 +41,13 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_UPGRADE_TO_MESH
   changes: primary kgmicrobe.compound:etamycin → mesh:C004910 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: MERGED_FROM_KGM_PLACEHOLDER_DUPLICATE
+  changes: Retired duplicate placeholder record Viridogrisein.yaml after EBI OLS
+    exact synonym match to existing mesh:C004910 representative; added "Viridogrisein"
+    as exact synonym.
+  new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

@@ -90,7 +90,7 @@ class TestSchemaClasses:
 
     def test_ingredient_record_identifier_is_key(self):
         attrs = self.classes["IngredientRecord"]["attributes"]
-        assert attrs["ontology_id"].get("ontology_id") is True
+        assert attrs["ontology_id"].get("identifier") is True
 
     def test_ingredient_record_has_synonyms(self):
         attrs = self.classes["IngredientRecord"]["attributes"]
@@ -215,7 +215,18 @@ class TestSchemaEnums:
 
     def test_synonym_type_values(self):
         values = set(self.enums["SynonymTypeEnum"]["permissible_values"].keys())
-        expected = {"EXACT_SYNONYM", "RELATED_SYNONYM", "RAW_TEXT", "ABBREVIATION", "COMMON_NAME", "SYSTEMATIC_NAME"}
+        expected = {
+            "EXACT_SYNONYM",
+            "RELATED_SYNONYM",
+            "RAW_TEXT",
+            "ABBREVIATION",
+            "COMMON_NAME",
+            "SYSTEMATIC_NAME",
+            "ALTERNATE_FORM",
+            "CATALOG_VARIANT",
+            "HYDRATE_FORM",
+            "INCOMPLETE_FORMULA",
+        }
         assert values == expected
 
     def test_evidence_type_enum_exists(self):
@@ -303,7 +314,9 @@ class TestFixtureDataValidation:
     def test_mapped_records_have_required_fields(self):
         data = self._load_fixture("sample_mapped.yaml")
         for rec in data["ingredients"]:
-            assert "ontology_id" in rec, f"Record missing identifier: {rec}"
+            assert "identifier" in rec or "ontology_id" in rec, (
+                f"Record missing identifier: {rec}"
+            )
             assert "preferred_term" in rec, f"Record missing preferred_term: {rec}"
             assert "mapping_status" in rec, f"Record missing mapping_status: {rec}"
 

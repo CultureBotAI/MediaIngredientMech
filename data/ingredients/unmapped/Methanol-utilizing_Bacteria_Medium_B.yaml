@@ -5,6 +5,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: mim-queue
 mapping_status: UNMAPPED
+ingredient_type: DEFINED_MEDIUM
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -16,5 +17,13 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-05-11T10:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Set ingredient_type=DEFINED_MEDIUM because the label names a medium formulation,
+    not a single chemical ingredient.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1633); no CAS-RN or
-  CHEBI/NCIT match. Curator review needed.
+  CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped as a named medium formulation.

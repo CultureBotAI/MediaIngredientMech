@@ -84,6 +84,9 @@ synonyms:
 - synonym_text: vitamin B7
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Biotin (Vitamin B7)
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_ols_exact_audit
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2421
@@ -198,6 +201,13 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unmapped_ols_exact_audit
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Added exact synonym "Biotin (Vitamin B7)" and retired duplicate unmapped
+    record Biotin_(Vitamin_B7).yaml after OLS exact match to CHEBI:15956.
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 58-85-5

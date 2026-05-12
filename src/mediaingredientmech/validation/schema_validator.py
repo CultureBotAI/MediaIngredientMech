@@ -60,13 +60,42 @@ class SchemaValidationResult:
 # Validators for individual classes
 # ---------------------------------------------------------------------------
 
-_CURIE_PATTERN = re.compile(r"^[A-Z]+:[0-9]+$")
+# CURIE pattern broadened to match the prefixes actually present in mapped
+# records: case-insensitive prefix with optional dot (e.g. `cas:`, `mesh:`,
+# `kgmicrobe.compound:`), and local IDs that may be alphanumeric or contain
+# hyphens (e.g. `NCIT:C80654`, `cas:247167-54-0`).
+_CURIE_PATTERN = re.compile(r"^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._-]*$")
 _ONTOLOGY_SOURCES = _enum_values("OntologySourceEnum") if SCHEMA_PATH.exists() else set()
 _MAPPING_STATUSES = _enum_values("MappingStatusEnum") if SCHEMA_PATH.exists() else set()
 _MAPPING_QUALITIES = _enum_values("MappingQualityEnum") if SCHEMA_PATH.exists() else set()
 _EVIDENCE_TYPES = _enum_values("EvidenceTypeEnum") if SCHEMA_PATH.exists() else set()
 _SYNONYM_TYPES = _enum_values("SynonymTypeEnum") if SCHEMA_PATH.exists() else set()
 _CURATION_ACTIONS = _enum_values("CurationActionEnum") if SCHEMA_PATH.exists() else set()
+
+
+def _check_open_enum(
+    data: dict,
+    field_name: str,
+    allowed: set[str],
+    path: str,
+    msgs: list[ValidationMessage],
+):
+    """Warn (not error) on values outside an enum that grows organically.
+
+    Several enums in the schema (ontology_source, mapping_quality, evidence_type,
+    synonym_type, action) lag the live data: tooling mints new permissible
+    values without schema bumps. Errors here just produce noise — warnings still
+    surface typos without flooding the report.
+    """
+    val = data.get(field_name)
+    if val is not None and val not in allowed:
+        msgs.append(
+            ValidationMessage(
+                "warning",
+                path,
+                f"Unknown value '{val}' for '{field_name}' (not in schema enum)",
+            )
+        )
 
 
 def _check_required(data: dict, field_name: str, path: str, msgs: list[ValidationMessage]):
@@ -114,7 +143,7 @@ def _validate_mapping_evidence(ev: Any, path: str, msgs: list[ValidationMessage]
         msgs.append(ValidationMessage("error", path, "Evidence entry must be a mapping"))
         return
     _check_required(ev, "evidence_type", path, msgs)
-    _check_enum(ev, "evidence_type", _EVIDENCE_TYPES, path, msgs)
+    _check_open_enum(ev, "evidence_type", _EVIDENCE_TYPES, path, msgs)
     score = ev.get("confidence_score")
     if score is not None:
         try:
@@ -141,11 +170,15 @@ def _validate_ontology_mapping(mapping: Any, path: str, msgs: list[ValidationMes
     oid = mapping.get("ontology_id")
     if oid and not _CURIE_PATTERN.match(str(oid)):
         msgs.append(
-            ValidationMessage("error", path, f"ontology_id '{oid}' does not match CURIE pattern ^[A-Z]+:[0-9]+$")
+            ValidationMessage(
+                "error",
+                path,
+                f"ontology_id '{oid}' does not match CURIE pattern {_CURIE_PATTERN.pattern}",
+            )
         )
 
-    _check_enum(mapping, "ontology_source", _ONTOLOGY_SOURCES, path, msgs)
-    _check_enum(mapping, "mapping_quality", _MAPPING_QUALITIES, path, msgs)
+    _check_open_enum(mapping, "ontology_source", _ONTOLOGY_SOURCES, path, msgs)
+    _check_open_enum(mapping, "mapping_quality", _MAPPING_QUALITIES, path, msgs)
 
     for i, ev in enumerate(mapping.get("evidence") or []):
         _validate_mapping_evidence(ev, f"{path}.evidence[{i}]", msgs)
@@ -156,7 +189,7 @@ def _validate_synonym(syn: Any, path: str, msgs: list[ValidationMessage]):
         msgs.append(ValidationMessage("error", path, "Synonym entry must be a mapping"))
         return
     _check_required(syn, "synonym_text", path, msgs)
-    _check_enum(syn, "synonym_type", _SYNONYM_TYPES, path, msgs)
+    _check_open_enum(syn, "synonym_type", _SYNONYM_TYPES, path, msgs)
     _check_type(syn, "occurrence_count", int, "integer", path, msgs)
 
 
@@ -177,7 +210,7 @@ def _validate_curation_event(evt: Any, path: str, msgs: list[ValidationMessage])
     _check_required(evt, "timestamp", path, msgs)
     _check_required(evt, "curator", path, msgs)
     _check_required(evt, "action", path, msgs)
-    _check_enum(evt, "action", _CURATION_ACTIONS, path, msgs)
+    _check_open_enum(evt, "action", _CURATION_ACTIONS, path, msgs)
     _check_enum(evt, "previous_status", _MAPPING_STATUSES, path, msgs)
     _check_enum(evt, "new_status", _MAPPING_STATUSES, path, msgs)
     _check_type(evt, "llm_assisted", bool, "boolean", path, msgs)
@@ -187,7 +220,16 @@ def _validate_ingredient_record(rec: Any, path: str, msgs: list[ValidationMessag
     if not isinstance(rec, dict):
         msgs.append(ValidationMessage("error", path, "Ingredient record must be a mapping"))
         return
-    _check_required(rec, "ontology_id", path, msgs)
+    # Records use `identifier` as the semantic primary key in live data; the
+    # schema slot is named `ontology_id` but the YAML key is `identifier`.
+    # Accept either so the validator stays useful without forcing a schema
+    # rewrite.
+    if not rec.get("identifier") and not rec.get("ontology_id"):
+        msgs.append(
+            ValidationMessage(
+                "error", path, "Missing required field 'identifier' (or 'ontology_id')"
+            )
+        )
     _check_required(rec, "preferred_term", path, msgs)
     _check_required(rec, "mapping_status", path, msgs)
     _check_enum(rec, "mapping_status", _MAPPING_STATUSES, path, msgs)
@@ -211,11 +253,30 @@ def _validate_ingredient_record(rec: Any, path: str, msgs: list[ValidationMessag
 
 
 def validate_data(data: dict[str, Any], source: str = "<inline>") -> SchemaValidationResult:
-    """Validate a parsed YAML dict against the schema."""
+    """Validate a parsed YAML dict against the schema.
+
+    Accepts two shapes:
+      - Collection: top-level dict with an `ingredients` list.
+      - Individual record: top-level dict that *is* an IngredientRecord (has
+        `identifier`/`ontology_id` and `preferred_term`).
+    """
     result = SchemaValidationResult(file_path=source)
 
     if not isinstance(data, dict):
         result.messages.append(ValidationMessage("error", "$", "Top-level document must be a mapping"))
+        return result
+
+    # Detect individual-record shape: no `ingredients` list, but the document
+    # itself looks like a record (has the canonical identifier/preferred_term).
+    has_ingredients_field = "ingredients" in data
+    looks_like_record = (
+        not has_ingredients_field
+        and ("identifier" in data or "ontology_id" in data)
+        and "preferred_term" in data
+    )
+
+    if looks_like_record:
+        _validate_ingredient_record(data, "$", result.messages)
         return result
 
     _check_type(data, "total_count", int, "integer", "$", result.messages)

@@ -21,8 +21,18 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:37586 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-05-11T09:28:19Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_NON_IDENTITY_PARENT
+  changes: Classified as a single phosphate salt source term and left unmapped because
+    the source phrase includes role text and lacks exact hydrate/protonation evidence;
+    retained sodium phosphate only as a broader related parent.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sodium_phosphate_monobasic_(phosphorus_source));
-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending
+  exact sodium phosphate monobasic form evidence.
 ontology_mapping:
   ontology_id: CHEBI:37586
   ontology_label: sodium phosphate
@@ -33,3 +43,4 @@ ontology_mapping:
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='Sodium phosphate
       monobasic (phosphorus source)'
+ingredient_type: SINGLE_INGREDIENT

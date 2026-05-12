@@ -93,6 +93,9 @@ synonyms:
 - synonym_text: 'Role: Growth factor'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Thiamine HCl (Vitamin B1)
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1647
@@ -228,6 +231,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T06:02:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Thiamine_HCl_(Vitamin_B1).yaml
+    (UNMAPPED_0617); the parenthetical vitamin label is source context and the
+    identity is thiamine hydrochloride CHEBI:49105.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 67-03-8
   data_source: CultureBotHT compounds_to_cas.csv

@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:staphylomycin_m1
+identifier: NCIT:C1295
 preferred_term: Staphylomycin M1
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:staphylomycin_m1
-  ontology_label: Staphylomycin M1
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: NCIT:C1295
+  ontology_label: Streptogramin A
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,11 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
       CHEBI:34826(M1), CHEBI:181755(Soyasapogenol M1), CHEBI:198029(Leptosin M1).
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: NCIT via EBI OLS exact synonym search
+    notes: Promoted from kgmicrobe.compound:staphylomycin_m1 after OLS returned
+      NCIT:C1295 with exact synonym "Staphylomycin M1". OLS also returned mesh:D025364
+      for the same label; NCIT was preferred as the external primary.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -35,5 +40,13 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: PROMOTED_FROM_KGM_PLACEHOLDER
+  changes: primary kgmicrobe.compound:staphylomycin_m1 → NCIT:C1295 after EBI OLS
+    exact synonym match to "Staphylomycin M1"; NCIT selected over duplicate MeSH
+    candidate.
+  new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

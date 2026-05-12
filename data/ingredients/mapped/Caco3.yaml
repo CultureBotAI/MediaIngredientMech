@@ -31,6 +31,15 @@ synonyms:
 - synonym_text: Calcium Carbonate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: CaCO3(Fisher C 64)
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
+- synonym_text: CaCO3(optional) (Fisher C 64)
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
+- synonym_text: CaCO3(optional)(Fisher C 64)
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
 - synonym_text: Calciumcarbonat
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
@@ -67,8 +76,8 @@ synonyms:
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 236
-  media_count: 53
+  total_occurrences: 245
+  media_count: 62
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -136,6 +145,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T04:08:29Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Caco.yaml (UNMAPPED_0021); raw
+    synonyms explicitly name CaCO3 and the local mapped CHEBI:3311 record is
+    calcium carbonate.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 471-34-1
   data_source: PubChem API

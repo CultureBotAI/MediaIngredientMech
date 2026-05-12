@@ -45,6 +45,9 @@ synonyms:
 - synonym_text: Monopotassium phosphate
   synonym_type: EXACT
   source: manual
+- synonym_text: KH2PO4(Sigma P 0662)
+  synonym_type: RAW_TEXT
+  source: unmapped_duplicate_review_2026_05_11
 - synonym_text: KH PO
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
@@ -89,8 +92,8 @@ synonyms:
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 3851
-  media_count: 70
+  total_occurrences: 3862
+  media_count: 81
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -176,6 +179,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T04:08:29Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Kh2po.yaml (UNMAPPED_0018); raw
+    synonym explicitly names KH2PO4 and the local mapped CHEBI:63036 record is
+    the potassium dihydrogen phosphate identity.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7778-77-0
   data_source: PubChem API

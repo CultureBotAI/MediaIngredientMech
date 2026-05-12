@@ -53,14 +53,20 @@ synonyms:
 - synonym_text: Sodium carbonate
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
+- synonym_text: Na2CO
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
+- synonym_text: Na2CO3(Baker 3604)
+  synonym_type: RAW_TEXT
+  source: merged_from_unmapped_duplicate_review_2026_05_11
 - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Simple component, Defined
     component'
   synonym_type: RAW_TEXT
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1248
-  media_count: 123
+  total_occurrences: 1251
+  media_count: 126
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -154,6 +160,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T06:02:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: ABSORBED_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Na2co.yaml (UNMAPPED_0041); raw source
+    synonym Na2CO3(Baker 3604) resolves the truncated preferred term to sodium
+    carbonate CHEBI:29377.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 497-19-8
   data_source: CultureBotHT compounds_to_cas.csv

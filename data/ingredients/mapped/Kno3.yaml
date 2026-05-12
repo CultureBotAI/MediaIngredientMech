@@ -62,8 +62,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 408
-  media_count: 56
+  total_occurrences: 413
+  media_count: 61
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -127,6 +127,16 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Kno.yaml (UNMAPPED_0026); added 5
+    source occurrences and 5 source media counts to the mapped KNO3 representative.
+    Local OAK CHEBI resolves CHEBI:63043 as potassium nitrate and existing synonyms
+    include KNO.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 7757-79-1

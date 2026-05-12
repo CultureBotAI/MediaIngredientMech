@@ -22,7 +22,18 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:24839 (stem-substring)
   llm_assisted: false
-notes: Extracted from over-conflated Agar.yaml synonyms
+- timestamp: '2026-05-11T19:20:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_DEFINED_MEDIUM
+  changes: Classified as a named inorganic salts-starch agar medium/formulation and
+    left unmapped; retained CHEBI inorganic salt parent mapping only as contextual
+    curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11 as
+  a named medium/formulation, not agar or inorganic salt identity.
+ingredient_type: DEFINED_MEDIUM
 ontology_mapping:
   ontology_id: CHEBI:24839
   ontology_label: inorganic salt

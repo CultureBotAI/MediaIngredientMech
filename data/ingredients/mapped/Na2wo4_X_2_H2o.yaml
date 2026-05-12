@@ -32,6 +32,9 @@ synonyms:
 - synonym_text: NaWO4·2H2O
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na-tungstate x 2 H2O
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_11
 - synonym_text: Sodium tungstate dihydrate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
@@ -144,6 +147,15 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-11T08:04:31Z'
+  curator: mediaingredientmech-agentic-curation
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record Na-tungstate_X_2_H2O.yaml (UNMAPPED_0464);
+    local CHEBI:63939 sodium tungstate dihydrate representative already includes
+    sodium tungstate dihydrate synonyms and chemistry.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 10213-10-2
   data_source: PubChem (via CHEBI:63939)

@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:geomycin
+identifier: mesh:D010118
 preferred_term: Geomycin
 ontology_mapping:
-  ontology_id: kgmicrobe.compound:geomycin
-  ontology_label: Geomycin
-  ontology_source: kgmicrobe.compound
-  mapping_quality: PLACEHOLDER
+  ontology_id: mesh:D010118
+  ontology_label: Oxytetracycline
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kg-microbe metatraits unmapped_compounds.tsv
@@ -12,6 +12,10 @@ ontology_mapping:
       MIM''s pipeline; confidence=LOW; rationale=3 candidates; top OLS candidates:
       CHEBI:214854(Geomycin B), CHEBI:214876(Geomycin A), CHEBI:218077(Geomycin C).
       Pending curator promotion to a CHEBI/NCIT primary identifier.'
+  - evidence_type: DATABASE_MATCH
+    source: MESH via EBI OLS exact synonym search
+    notes: Promoted from kgmicrobe.compound:geomycin after OLS returned mesh:D010118
+      with exact synonym "Geomycin".
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -35,5 +39,12 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder (defined))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unknown_term_placeholder_ols_review
+  action: PROMOTED_FROM_KGM_PLACEHOLDER
+  changes: primary kgmicrobe.compound:geomycin → mesh:D010118 after EBI OLS exact
+    synonym match to "Geomycin".
+  new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

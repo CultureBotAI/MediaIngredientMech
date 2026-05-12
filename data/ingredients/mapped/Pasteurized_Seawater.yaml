@@ -1,4 +1,4 @@
-identifier: ENVO:00002149
+identifier: kgmicrobe.ingredient:pasteurized_seawater
 preferred_term: Pasteurized Seawater
 synonyms:
 - synonym_text: Pasteurized Seawater
@@ -18,10 +18,9 @@ curation_history:
 - timestamp: '2026-04-19T02:22:27.539213+00:00'
   curator: cbclaw_envo_promotion
   action: PROMOTED
-  changes: 'Promoted from UNMAPPED → MAPPED. Assigned ENVO:00002149 (sea water) from
-    ENVO with mapping_quality=CLOSE_MATCH. Rationale: Pasteurization is a preparation
-    variant of the parent ENVO:00002149 sea water; ENVO has no ''pasteurized'' subtype,
-    so closeMatch.'
+  changes: 'Promoted from UNMAPPED → MAPPED. Assigned ENVO:00002149 (sea water) from ENVO
+    with mapping_quality=CLOSE_MATCH. Rationale: Pasteurization is a preparation variant of
+    the parent ENVO:00002149 sea water; ENVO has no ''pasteurized'' subtype, so closeMatch.'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-05-01T07:35:35.717573+00:00'
@@ -34,7 +33,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Seawater')
   llm_assisted: false
-notes: 'CultureMech placeholder_id: 3'
+- timestamp: '2026-05-05T00:00:00+00:00'
+  curator: ingredient_mapping_review_2026_05_05
+  action: CORRECTED
+  changes: Changed identifier from ENVO:00002149 to kgmicrobe.ingredient:pasteurized_seawater
+    and retained ENVO:00002149 only as CLOSE_MATCH. Pasteurized seawater is a preparation
+    variant, not asserted as identity-equivalent to generic sea water.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+notes: 'CultureMech placeholder_id: 3 Pasteurized seawater is a preparation variant, not asserted
+  as identity-equivalent to generic sea water.'
 ontology_mapping:
   ontology_id: ENVO:00002149
   ontology_label: sea water
@@ -42,7 +51,8 @@ ontology_mapping:
   mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: CURATOR_JUDGMENT
-    source: cbclaw_envo_promotion
-    notes: Pasteurization is a preparation variant of the parent ENVO:00002149 sea
-      water; ENVO has no 'pasteurized' subtype, so closeMatch.
+    source: ingredient_mapping_review_2026-05-05
+    notes: Pasteurized seawater is a preparation variant, not asserted as identity-equivalent
+      to generic sea water.
 ingredient_type: UNDEFINED_MIXTURE
+kg_microbe_node_id: kgmicrobe.ingredient:pasteurized_seawater

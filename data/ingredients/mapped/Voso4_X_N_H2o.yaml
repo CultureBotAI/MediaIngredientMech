@@ -33,6 +33,9 @@ synonyms:
 - synonym_text: VOSO4.xH2O
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: VOSO4 x H2O
+  synonym_type: EXACT_SYNONYM
+  source: unmapped_duplicate_review_2026_05_07
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 32
@@ -93,6 +96,15 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-07T00:00:00+00:00'
+  curator: unmapped_duplicate_review_2026_05_07
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate unmapped record VOSO4_X_H2O.yaml (UNMAPPED_0574);
+    source hydrate notation is covered by the mapped variable hydrate representative
+    and local OAK CHEBI resolves CHEBI:87020.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 123334-20-3

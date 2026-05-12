@@ -1,0 +1,54 @@
+identifier: CHEBI:36336
+preferred_term: Naphthalene sulfonic acid
+ontology_mapping:
+  ontology_id: CHEBI:36336
+  ontology_label: naphthalenesulfonic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: local kg-microbe CHEBI transform
+    notes: Local CHEBI label naphthalenesulfonic acid matches the imported surface form after spacing normalization.
+synonyms:
+- synonym_text: Naphthalene sulfonic acid
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: naphthalenesulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: local_chebi_exact_alias_review_2026_05_11
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:542); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T06:54:54.426824+00:00'
+  curator: backfill_parent_terms
+  action: BACKFILL_PARENT_CHEBI
+  changes: set ontology_mapping parent=CHEBI:29214 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:53.747263+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=H2O3S; inchi=InChI=1S/H2O3S/c1-4(2)3/h4H,(H,1,2,3); smiles=[H]S(=O)(=O)O
+  llm_assisted: false
+- timestamp: '2026-05-11T04:22:30Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CURATED_CHEBI_EXACT_MATCH
+  changes: Replaced broad parent CHEBI:29214 sulfonic acid and inherited sulfonic-acid
+    chemistry with exact CHEBI:36336 naphthalenesulfonic acid based on local CHEBI
+    label evidence.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:542); broad
+  sulfonic-acid parent curation was replaced with exact CHEBI:36336
+  naphthalenesulfonic acid on 2026-05-11.
+kg_microbe_node_id: CHEBI:36336
+ingredient_type: SINGLE_INGREDIENT

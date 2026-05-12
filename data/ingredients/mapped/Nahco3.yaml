@@ -81,10 +81,13 @@ synonyms:
     compound'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: NaHCO3(Fisher S 233)
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 2209
-  media_count: 105
+  total_occurrences: 2213
+  media_count: 109
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -162,6 +165,13 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-06T00:00:00+00:00'
+  curator: unmapped_ols_exact_audit
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Added source variant "NaHCO3(Fisher S 233)" and retired duplicate unmapped
+    record Nahco.yaml after normalization to NaHCO3; occurrence counts were summed.
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 144-55-8
