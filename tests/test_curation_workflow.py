@@ -394,7 +394,10 @@ class TestHistoryTracking:
         """Verify curation history in the unmapped fixture has proper structure."""
         data = load_fixture("sample_unmapped.yaml")
         # Find record with rich history (casamino acids)
-        casamino = next(r for r in data["ingredients"] if r["ontology_id"] == "UNMAPPED_005")
+        casamino = next(
+            r for r in data["ingredients"]
+            if r.get("identifier", r.get("ontology_id")) == "UNMAPPED_005"
+        )
         assert len(casamino["curation_history"]) == 2
         assert casamino["curation_history"][0]["action"] == "IMPORTED"
         assert casamino["curation_history"][1]["action"] == "MAPPED"
@@ -403,7 +406,10 @@ class TestHistoryTracking:
     def test_mapped_fixture_beef_extract_history(self):
         """Beef extract in mapped fixture should show full workflow."""
         data = load_fixture("sample_mapped.yaml")
-        beef = next(r for r in data["ingredients"] if r["ontology_id"] == "FOODON:3311109")
+        beef = next(
+            r for r in data["ingredients"]
+            if r.get("identifier", r.get("ontology_id")) == "FOODON:3311109"
+        )
         assert len(beef["curation_history"]) == 3
         actions = [e["action"] for e in beef["curation_history"]]
         assert actions == ["IMPORTED", "MAPPED", "VALIDATED"]
@@ -452,6 +458,8 @@ class TestCollectionAggregation:
         """All identifiers in fixtures should be unique."""
         mapped_data = load_fixture("sample_mapped.yaml")
         unmapped_data = load_fixture("sample_unmapped.yaml")
-        all_ids = [r["ontology_id"] for r in mapped_data["ingredients"]] + \
-                  [r["ontology_id"] for r in unmapped_data["ingredients"]]
+        all_ids = [
+            r.get("identifier", r.get("ontology_id"))
+            for r in mapped_data["ingredients"] + unmapped_data["ingredients"]
+        ]
         assert len(all_ids) == len(set(all_ids)), "Duplicate identifiers found"

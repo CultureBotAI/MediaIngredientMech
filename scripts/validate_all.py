@@ -83,12 +83,26 @@ def main(
     else:
         ingredients_dir_path = Path(ingredients_dir)
 
+    def _is_excluded(p: Path) -> bool:
+        # Skip backup snapshots that intentionally lag the current schema.
+        parts = set(p.parts)
+        if "backups" in parts:
+            return True
+        name = p.name
+        if ".backup" in name or name.endswith(".bak"):
+            return True
+        return False
+
     # Collect files to validate based on mode
     yaml_files = []
 
     if mode in ("collection", "both"):
         if data_dir_path.exists():
-            collection_files = sorted(data_dir_path.glob("**/*.yaml")) + sorted(data_dir_path.glob("**/*.yml"))
+            collection_files = [
+                p
+                for p in sorted(data_dir_path.glob("**/*.yaml")) + sorted(data_dir_path.glob("**/*.yml"))
+                if not _is_excluded(p)
+            ]
             yaml_files.extend(collection_files)
             if collection_files:
                 console.print(f"[bold]Collection files:[/bold] {len(collection_files)} from {data_dir_path}")
@@ -98,7 +112,11 @@ def main(
 
     if mode in ("individual", "both"):
         if ingredients_dir_path.exists():
-            individual_files = sorted(ingredients_dir_path.glob("**/*.yaml")) + sorted(ingredients_dir_path.glob("**/*.yml"))
+            individual_files = [
+                p
+                for p in sorted(ingredients_dir_path.glob("**/*.yaml")) + sorted(ingredients_dir_path.glob("**/*.yml"))
+                if not _is_excluded(p)
+            ]
             yaml_files.extend(individual_files)
             if individual_files:
                 console.print(f"[bold]Individual files:[/bold] {len(individual_files)} from {ingredients_dir_path}")
