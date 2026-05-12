@@ -188,7 +188,20 @@ class TestSchemaEnums:
 
     def test_mapping_quality_values(self):
         values = set(self.enums["MappingQualityEnum"]["permissible_values"].keys())
-        expected = {"EXACT_MATCH", "SYNONYM_MATCH", "CLOSE_MATCH", "MANUAL_CURATION", "LLM_ASSISTED", "PROVISIONAL"}
+        expected = {
+            "EXACT_MATCH",
+            "SYNONYM_MATCH",
+            "CLOSE_MATCH",
+            "MANUAL_CURATION",
+            "LLM_ASSISTED",
+            "PROVISIONAL",
+            "NARROW_MATCH",
+            "BROAD_MATCH",
+            "LEXICAL_MATCH",
+            "CAS_RN_LOOKUP",
+            "FALLBACK_REGISTRY",
+            "PLACEHOLDER",
+        }
         assert values == expected
 
     def test_ontology_source_enum_exists(self):
@@ -196,7 +209,20 @@ class TestSchemaEnums:
 
     def test_ontology_source_values(self):
         values = set(self.enums["OntologySourceEnum"]["permissible_values"].keys())
-        expected = {"CHEBI", "FOODON", "NCIT", "MESH", "UBERON", "ENVO"}
+        expected = {
+            "CHEBI",
+            "FOODON",
+            "NCIT",
+            "MESH",
+            "UBERON",
+            "ENVO",
+            "MICRO",
+            "BTO",
+            "CAS",
+            "registry",
+            "kgmicrobe.compound",
+            "kgmicrobe.ingredient",
+        }
         assert values == expected
 
     def test_curation_action_enum_exists(self):
@@ -218,6 +244,8 @@ class TestSchemaEnums:
         expected = {
             "EXACT_SYNONYM",
             "RELATED_SYNONYM",
+            "EXACT",
+            "RELATED",
             "RAW_TEXT",
             "ABBREVIATION",
             "COMMON_NAME",
@@ -234,7 +262,19 @@ class TestSchemaEnums:
 
     def test_evidence_type_values(self):
         values = set(self.enums["EvidenceTypeEnum"]["permissible_values"].keys())
-        expected = {"DATABASE_MATCH", "CURATOR_JUDGMENT", "LLM_SUGGESTION", "LITERATURE", "TEXT_SIMILARITY", "CROSS_REFERENCE"}
+        expected = {
+            "DATABASE_MATCH",
+            "CURATOR_JUDGMENT",
+            "LLM_SUGGESTION",
+            "LITERATURE",
+            "TEXT_SIMILARITY",
+            "CROSS_REFERENCE",
+            "LEXICAL_MATCH",
+            "CAS_RN_CROSS_REFERENCE",
+            "MANUAL_CURATION",
+            "MANUAL_REVIEW",
+            "CURATOR_CONFIRMED_SYNONYM",
+        }
         assert values == expected
 
     def test_all_enum_values_have_descriptions(self):
@@ -383,10 +423,18 @@ class TestFixtureDataValidation:
                     )
 
     def test_all_curation_actions_valid(self):
+        # CurationEvent.action is range: string with a SCREAMING_SNAKE_CASE
+        # pattern (CurationActionEnum is documentation-only). Validate against
+        # the schema's declared pattern, not enum membership.
+        action_pattern_str = (
+            self.schema["classes"]["CurationEvent"]["attributes"]["action"]["pattern"]
+        )
+        action_pattern = re.compile(action_pattern_str)
         for fixture_file in ["sample_mapped.yaml", "sample_unmapped.yaml"]:
             data = self._load_fixture(fixture_file)
             for rec in data["ingredients"]:
                 for event in rec.get("curation_history", []):
-                    assert event["action"] in self.enum_values["CurationActionEnum"], (
-                        f"Invalid action: {event['action']} in {rec['identifier']}"
+                    assert action_pattern.match(event["action"]), (
+                        f"Invalid action: {event['action']} in {rec['identifier']} "
+                        f"(does not match {action_pattern_str})"
                     )

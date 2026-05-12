@@ -31,6 +31,14 @@ def _enum_values(enum_name: str) -> set[str]:
     return set(enum_def.get("permissible_values", {}).keys())
 
 
+def _slot_pattern(class_name: str, slot_name: str) -> str | None:
+    """Return the `pattern:` declared on a class attribute in the schema, or None."""
+    schema = _load_schema()
+    cls = schema.get("classes", {}).get(class_name, {})
+    attr = cls.get("attributes", {}).get(slot_name, {})
+    return attr.get("pattern")
+
+
 @dataclass
 class ValidationMessage:
     level: str  # "error" or "warning"
@@ -70,32 +78,28 @@ _MAPPING_STATUSES = _enum_values("MappingStatusEnum") if SCHEMA_PATH.exists() el
 _MAPPING_QUALITIES = _enum_values("MappingQualityEnum") if SCHEMA_PATH.exists() else set()
 _EVIDENCE_TYPES = _enum_values("EvidenceTypeEnum") if SCHEMA_PATH.exists() else set()
 _SYNONYM_TYPES = _enum_values("SynonymTypeEnum") if SCHEMA_PATH.exists() else set()
-_CURATION_ACTIONS = _enum_values("CurationActionEnum") if SCHEMA_PATH.exists() else set()
+# Curation `action` is `range: string` in the schema (curation tooling mints
+# new labels freely). The pattern that constrains it lives in the schema —
+# read it from there so the validator can't drift. Fall back to a hard-coded
+# default if the schema file is missing entirely; surface schema-level regex
+# errors with a clear message so module import fails fast.
+_DEFAULT_ACTION_PATTERN = r"^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"
 
 
-def _check_open_enum(
-    data: dict,
-    field_name: str,
-    allowed: set[str],
-    path: str,
-    msgs: list[ValidationMessage],
-):
-    """Warn (not error) on values outside an enum that grows organically.
+def _compile_action_pattern() -> re.Pattern[str]:
+    if not SCHEMA_PATH.exists():
+        return re.compile(_DEFAULT_ACTION_PATTERN)
+    declared = _slot_pattern("CurationEvent", "action") or _DEFAULT_ACTION_PATTERN
+    try:
+        return re.compile(declared)
+    except re.error as exc:
+        raise RuntimeError(
+            f"Invalid CurationEvent.action pattern in {SCHEMA_PATH}: "
+            f"{declared!r} ({exc})"
+        ) from exc
 
-    Several enums in the schema (ontology_source, mapping_quality, evidence_type,
-    synonym_type, action) lag the live data: tooling mints new permissible
-    values without schema bumps. Errors here just produce noise — warnings still
-    surface typos without flooding the report.
-    """
-    val = data.get(field_name)
-    if val is not None and val not in allowed:
-        msgs.append(
-            ValidationMessage(
-                "warning",
-                path,
-                f"Unknown value '{val}' for '{field_name}' (not in schema enum)",
-            )
-        )
+
+_ACTION_PATTERN = _compile_action_pattern()
 
 
 def _check_required(data: dict, field_name: str, path: str, msgs: list[ValidationMessage]):
@@ -143,7 +147,7 @@ def _validate_mapping_evidence(ev: Any, path: str, msgs: list[ValidationMessage]
         msgs.append(ValidationMessage("error", path, "Evidence entry must be a mapping"))
         return
     _check_required(ev, "evidence_type", path, msgs)
-    _check_open_enum(ev, "evidence_type", _EVIDENCE_TYPES, path, msgs)
+    _check_enum(ev, "evidence_type", _EVIDENCE_TYPES, path, msgs)
     score = ev.get("confidence_score")
     if score is not None:
         try:
@@ -177,8 +181,8 @@ def _validate_ontology_mapping(mapping: Any, path: str, msgs: list[ValidationMes
             )
         )
 
-    _check_open_enum(mapping, "ontology_source", _ONTOLOGY_SOURCES, path, msgs)
-    _check_open_enum(mapping, "mapping_quality", _MAPPING_QUALITIES, path, msgs)
+    _check_enum(mapping, "ontology_source", _ONTOLOGY_SOURCES, path, msgs)
+    _check_enum(mapping, "mapping_quality", _MAPPING_QUALITIES, path, msgs)
 
     for i, ev in enumerate(mapping.get("evidence") or []):
         _validate_mapping_evidence(ev, f"{path}.evidence[{i}]", msgs)
@@ -189,7 +193,7 @@ def _validate_synonym(syn: Any, path: str, msgs: list[ValidationMessage]):
         msgs.append(ValidationMessage("error", path, "Synonym entry must be a mapping"))
         return
     _check_required(syn, "synonym_text", path, msgs)
-    _check_open_enum(syn, "synonym_type", _SYNONYM_TYPES, path, msgs)
+    _check_enum(syn, "synonym_type", _SYNONYM_TYPES, path, msgs)
     _check_type(syn, "occurrence_count", int, "integer", path, msgs)
 
 
@@ -210,7 +214,15 @@ def _validate_curation_event(evt: Any, path: str, msgs: list[ValidationMessage])
     _check_required(evt, "timestamp", path, msgs)
     _check_required(evt, "curator", path, msgs)
     _check_required(evt, "action", path, msgs)
-    _check_open_enum(evt, "action", _CURATION_ACTIONS, path, msgs)
+    action = evt.get("action")
+    if action is not None and not _ACTION_PATTERN.match(str(action)):
+        msgs.append(
+            ValidationMessage(
+                "error",
+                path,
+                f"action '{action}' does not match pattern {_ACTION_PATTERN.pattern}",
+            )
+        )
     _check_enum(evt, "previous_status", _MAPPING_STATUSES, path, msgs)
     _check_enum(evt, "new_status", _MAPPING_STATUSES, path, msgs)
     _check_type(evt, "llm_assisted", bool, "boolean", path, msgs)
