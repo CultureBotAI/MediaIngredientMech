@@ -302,9 +302,14 @@ classes:
         required: true
         description: Who performed this action (username or system)
       action:
-        range: CurationActionEnum
+        range: string
         required: true
-        description: Type of curation action
+        pattern: "^[A-Z][A-Z0-9_]*$"
+        description: >-
+          Type of curation action. Free-form SCREAMING_SNAKE_CASE label minted
+          by the curation tool that produced this event. CurationActionEnum
+          below documents well-known actions; new tools are free to introduce
+          new labels (live data has 110+ distinct values).
       changes:
         description: Description of what changed
       previous_status:
@@ -412,6 +417,30 @@ enums:
         description: Mapping suggested by LLM, human-verified
       PROVISIONAL:
         description: Tentative mapping needing verification
+      NARROW_MATCH:
+        description: >-
+          Ontology term is narrower than the ingredient (more specific). Used
+          when the ingredient name covers a class and the chosen term covers
+          one instance/subtype of that class.
+      BROAD_MATCH:
+        description: Ontology term is broader than the ingredient (less specific).
+      LEXICAL_MATCH:
+        description: >-
+          Lexical (string-level) match without semantic verification —
+          typically a token-overlap or normalized-name match.
+      CAS_RN_LOOKUP:
+        description: >-
+          Mapping resolved via CAS Registry Number lookup rather than ontology
+          label/synonym match.
+      FALLBACK_REGISTRY:
+        description: >-
+          Identity assigned via a registry-row fallback (`registry:` or
+          `kgmicrobe.compound:` / `kgmicrobe.ingredient:`) when no direct
+          ontology term is available.
+      PLACEHOLDER:
+        description: >-
+          Mapping is a placeholder pending real curation (e.g. minted
+          kg-microbe ingredient row, awaiting upgrade to CHEBI/FOODON/etc.).
 
   MatchLevelEnum:
     permissible_values:
@@ -442,8 +471,35 @@ enums:
         description: Uber Anatomy Ontology
       ENVO:
         description: Environment Ontology
+      MICRO:
+        description: Microbiology vocabulary
+      BTO:
+        description: BRENDA Tissue Ontology
+      CAS:
+        description: >-
+          CAS Registry — fallback identity when the ingredient has a CAS number
+          but no resolved ontology term (paired with `cas:` prefix CURIEs).
+      registry:
+        description: >-
+          Generic registry-row fallback used when an identity exists in a
+          non-ontology registry tracked by the SSSOM pipeline.
+      kgmicrobe.compound:
+        description: >-
+          kg-microbe compound registry row (placeholder identity awaiting
+          upgrade to a CHEBI/MESH/etc. term).
+      kgmicrobe.ingredient:
+        description: >-
+          kg-microbe ingredient registry row (placeholder identity awaiting
+          upgrade to an ontology term).
 
   CurationActionEnum:
+    description: >-
+      Documentation-only reference list of well-known curation action labels.
+      The `action` slot on CurationEvent has range `string` (not this enum) —
+      curation tools mint new labels freely (live data has 110+ distinct
+      values). New labels should follow SCREAMING_SNAKE_CASE and convey both
+      the operation and its source (e.g. AUTO_BACKFILL_CHEBI_CHEMISTRY,
+      REVIEWED_HYDRATE_AMBIGUITY).
     permissible_values:
       CREATED:
         description: Record created
@@ -470,6 +526,14 @@ enums:
         description: Exact alternative name
       RELATED_SYNONYM:
         description: Related but not identical
+      EXACT:
+        description: >-
+          Shorthand alias for EXACT_SYNONYM emitted by some import tooling;
+          retained for backward compatibility with existing records.
+      RELATED:
+        description: >-
+          Shorthand alias for RELATED_SYNONYM emitted by some import tooling;
+          retained for backward compatibility with existing records.
       RAW_TEXT:
         description: Raw text from original data
       ABBREVIATION:
@@ -501,6 +565,23 @@ enums:
         description: Based on text similarity metrics
       CROSS_REFERENCE:
         description: Cross-reference to other database
+      LEXICAL_MATCH:
+        description: >-
+          Lexical (token-overlap / normalized-name) match against an ontology
+          label or synonym.
+      CAS_RN_CROSS_REFERENCE:
+        description: >-
+          Identity established via CAS Registry Number cross-reference rather
+          than ontology label match.
+      MANUAL_CURATION:
+        description: >-
+          Manually curated evidence supplied by a human reviewer (distinct
+          from CURATOR_JUDGMENT, which records the decision rather than the
+          source of evidence).
+      MANUAL_REVIEW:
+        description: Identity confirmed during a manual review pass.
+      CURATOR_CONFIRMED_SYNONYM:
+        description: Curator confirmed a synonym match found by tooling.
 
   EvidenceSupportEnum:
     description: How a cited reference relates to the claim it is attached to

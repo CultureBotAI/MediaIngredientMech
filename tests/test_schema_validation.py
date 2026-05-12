@@ -188,7 +188,20 @@ class TestSchemaEnums:
 
     def test_mapping_quality_values(self):
         values = set(self.enums["MappingQualityEnum"]["permissible_values"].keys())
-        expected = {"EXACT_MATCH", "SYNONYM_MATCH", "CLOSE_MATCH", "MANUAL_CURATION", "LLM_ASSISTED", "PROVISIONAL"}
+        expected = {
+            "EXACT_MATCH",
+            "SYNONYM_MATCH",
+            "CLOSE_MATCH",
+            "MANUAL_CURATION",
+            "LLM_ASSISTED",
+            "PROVISIONAL",
+            "NARROW_MATCH",
+            "BROAD_MATCH",
+            "LEXICAL_MATCH",
+            "CAS_RN_LOOKUP",
+            "FALLBACK_REGISTRY",
+            "PLACEHOLDER",
+        }
         assert values == expected
 
     def test_ontology_source_enum_exists(self):
@@ -196,7 +209,20 @@ class TestSchemaEnums:
 
     def test_ontology_source_values(self):
         values = set(self.enums["OntologySourceEnum"]["permissible_values"].keys())
-        expected = {"CHEBI", "FOODON", "NCIT", "MESH", "UBERON", "ENVO"}
+        expected = {
+            "CHEBI",
+            "FOODON",
+            "NCIT",
+            "MESH",
+            "UBERON",
+            "ENVO",
+            "MICRO",
+            "BTO",
+            "CAS",
+            "registry",
+            "kgmicrobe.compound",
+            "kgmicrobe.ingredient",
+        }
         assert values == expected
 
     def test_curation_action_enum_exists(self):
@@ -218,6 +244,8 @@ class TestSchemaEnums:
         expected = {
             "EXACT_SYNONYM",
             "RELATED_SYNONYM",
+            "EXACT",
+            "RELATED",
             "RAW_TEXT",
             "ABBREVIATION",
             "COMMON_NAME",
@@ -234,7 +262,19 @@ class TestSchemaEnums:
 
     def test_evidence_type_values(self):
         values = set(self.enums["EvidenceTypeEnum"]["permissible_values"].keys())
-        expected = {"DATABASE_MATCH", "CURATOR_JUDGMENT", "LLM_SUGGESTION", "LITERATURE", "TEXT_SIMILARITY", "CROSS_REFERENCE"}
+        expected = {
+            "DATABASE_MATCH",
+            "CURATOR_JUDGMENT",
+            "LLM_SUGGESTION",
+            "LITERATURE",
+            "TEXT_SIMILARITY",
+            "CROSS_REFERENCE",
+            "LEXICAL_MATCH",
+            "CAS_RN_CROSS_REFERENCE",
+            "MANUAL_CURATION",
+            "MANUAL_REVIEW",
+            "CURATOR_CONFIRMED_SYNONYM",
+        }
         assert values == expected
 
     def test_all_enum_values_have_descriptions(self):
