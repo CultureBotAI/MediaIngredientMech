@@ -423,10 +423,18 @@ class TestFixtureDataValidation:
                     )
 
     def test_all_curation_actions_valid(self):
+        # CurationEvent.action is range: string with a SCREAMING_SNAKE_CASE
+        # pattern (CurationActionEnum is documentation-only). Validate against
+        # the schema's declared pattern, not enum membership.
+        action_pattern_str = (
+            self.schema["classes"]["CurationEvent"]["attributes"]["action"]["pattern"]
+        )
+        action_pattern = re.compile(action_pattern_str)
         for fixture_file in ["sample_mapped.yaml", "sample_unmapped.yaml"]:
             data = self._load_fixture(fixture_file)
             for rec in data["ingredients"]:
                 for event in rec.get("curation_history", []):
-                    assert event["action"] in self.enum_values["CurationActionEnum"], (
-                        f"Invalid action: {event['action']} in {rec['identifier']}"
+                    assert action_pattern.match(event["action"]), (
+                        f"Invalid action: {event['action']} in {rec['identifier']} "
+                        f"(does not match {action_pattern_str})"
                     )

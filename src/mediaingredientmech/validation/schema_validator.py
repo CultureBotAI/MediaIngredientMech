@@ -80,12 +80,26 @@ _EVIDENCE_TYPES = _enum_values("EvidenceTypeEnum") if SCHEMA_PATH.exists() else 
 _SYNONYM_TYPES = _enum_values("SynonymTypeEnum") if SCHEMA_PATH.exists() else set()
 # Curation `action` is `range: string` in the schema (curation tooling mints
 # new labels freely). The pattern that constrains it lives in the schema —
-# read it from there so the validator can't drift.
-_ACTION_PATTERN = (
-    re.compile(_slot_pattern("CurationEvent", "action") or r"^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$")
-    if SCHEMA_PATH.exists()
-    else re.compile(r"^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$")
-)
+# read it from there so the validator can't drift. Fall back to a hard-coded
+# default if the schema file is missing entirely; surface schema-level regex
+# errors with a clear message so module import fails fast.
+_DEFAULT_ACTION_PATTERN = r"^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"
+
+
+def _compile_action_pattern() -> re.Pattern[str]:
+    if not SCHEMA_PATH.exists():
+        return re.compile(_DEFAULT_ACTION_PATTERN)
+    declared = _slot_pattern("CurationEvent", "action") or _DEFAULT_ACTION_PATTERN
+    try:
+        return re.compile(declared)
+    except re.error as exc:
+        raise RuntimeError(
+            f"Invalid CurationEvent.action pattern in {SCHEMA_PATH}: "
+            f"{declared!r} ({exc})"
+        ) from exc
+
+
+_ACTION_PATTERN = _compile_action_pattern()
 
 
 def _check_required(data: dict, field_name: str, path: str, msgs: list[ValidationMessage]):
