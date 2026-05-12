@@ -31,6 +31,14 @@ def _enum_values(enum_name: str) -> set[str]:
     return set(enum_def.get("permissible_values", {}).keys())
 
 
+def _slot_pattern(class_name: str, slot_name: str) -> str | None:
+    """Return the `pattern:` declared on a class attribute in the schema, or None."""
+    schema = _load_schema()
+    cls = schema.get("classes", {}).get(class_name, {})
+    attr = cls.get("attributes", {}).get(slot_name, {})
+    return attr.get("pattern")
+
+
 @dataclass
 class ValidationMessage:
     level: str  # "error" or "warning"
@@ -71,8 +79,13 @@ _MAPPING_QUALITIES = _enum_values("MappingQualityEnum") if SCHEMA_PATH.exists() 
 _EVIDENCE_TYPES = _enum_values("EvidenceTypeEnum") if SCHEMA_PATH.exists() else set()
 _SYNONYM_TYPES = _enum_values("SynonymTypeEnum") if SCHEMA_PATH.exists() else set()
 # Curation `action` is `range: string` in the schema (curation tooling mints
-# new labels freely). The action label must still follow SCREAMING_SNAKE_CASE.
-_ACTION_PATTERN = re.compile(r"^[A-Z][A-Z0-9_]*$")
+# new labels freely). The pattern that constrains it lives in the schema —
+# read it from there so the validator can't drift.
+_ACTION_PATTERN = (
+    re.compile(_slot_pattern("CurationEvent", "action") or r"^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$")
+    if SCHEMA_PATH.exists()
+    else re.compile(r"^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$")
+)
 
 
 def _check_required(data: dict, field_name: str, path: str, msgs: list[ValidationMessage]):
