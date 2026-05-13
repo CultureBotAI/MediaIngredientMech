@@ -125,7 +125,7 @@ def link_child_to_parent(
     child_record['curation_history'].append({
         'timestamp': '2026-03-14T12:00:00Z',
         'curator': 'build_water_hierarchy.py',
-        'action': 'hierarchy_linked',
+        'action': 'HIERARCHY_LINKED',
         'changes': f'Linked to parent Water (base) as variant_type={variant_type}',
         'notes': variant_notes,
         'llm_assisted': False,

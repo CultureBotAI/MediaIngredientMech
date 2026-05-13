@@ -32,20 +32,25 @@ CHECKPOINT_FILE = Path("enrichment_checkpoint.json")
 FAILURES_FILE = Path("enrichment_failures.json")
 
 
+MAPPED_FILE = Path("data/curated/mapped_ingredients.yaml")
+
+
 def load_mapped_ingredients():
-    """Load mapped ingredients from YAML file."""
-    mapped_file = Path("data/curated/mapped_ingredients.yaml")
-    with open(mapped_file) as f:
-        data = yaml.safe_load(f)
-    return data.get("ingredients", [])
+    """Load the full mapped_ingredients collection (including metadata)."""
+    with open(MAPPED_FILE) as f:
+        data = yaml.safe_load(f) or {}
+    return data
 
 
-def save_mapped_ingredients(ingredients):
-    """Save mapped ingredients back to YAML file."""
-    mapped_file = Path("data/curated/mapped_ingredients.yaml")
-    data = {"ingredients": ingredients}
-    with open(mapped_file, "w") as f:
-        yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+def save_mapped_ingredients(collection):
+    """Save mapped ingredients back to YAML, preserving the collection
+    metadata (`generation_date`, `total_count`, `mapped_count`,
+    `unmapped_count`) instead of writing only `{"ingredients": ...}`.
+    """
+    with open(MAPPED_FILE, "w") as f:
+        yaml.dump(
+            collection, f, default_flow_style=False, sort_keys=False, allow_unicode=True
+        )
 
 
 def load_checkpoint() -> dict:
@@ -103,15 +108,17 @@ def main():
     # Initialize
     reviewer = IngredientReviewer()
 
-    # Load all mapped ingredients
+    # Load full collection (with metadata) and operate on its ingredients
+    # list in place so saves preserve generation_date / total_count / etc.
     console.print("[cyan]Loading CHEBI-mapped ingredients...[/cyan]")
-    all_ingredients = load_mapped_ingredients()
+    collection = load_mapped_ingredients()
+    all_ingredients = collection.get("ingredients", []) or []
 
     # Filter for CHEBI terms
     chebi_ingredients = [
         ing
         for ing in all_ingredients
-        if ing.get("ontology_mapping", {}).get("ontology_id", "").startswith("CHEBI:")
+        if (ing.get("ontology_mapping") or {}).get("ontology_id", "").startswith("CHEBI:")
     ]
 
     console.print(f"Found {len(chebi_ingredients)} CHEBI-mapped ingredients")
@@ -171,11 +178,13 @@ def main():
 
                         ingredient["curation_history"].append({
                             "timestamp": datetime.now().isoformat(),
-                            "event": "chemical_properties_enriched",
-                            "details": {
-                                "source": "EBI OLS v4",
-                                "properties_added": list(properties.keys()),
-                            },
+                            "curator": "enrich_from_ols.py",
+                            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+                            "changes": (
+                                "Enriched chemical_properties from EBI OLS v4: "
+                                + ", ".join(sorted(properties.keys()))
+                            ),
+                            "llm_assisted": False,
                         })
 
                         enriched_count += 1
@@ -185,7 +194,7 @@ def main():
                             checkpoint["completed"].append(ontology_id)
                             checkpoint["last_index"] = start_index + i + 1
                             save_checkpoint(checkpoint)
-                            save_mapped_ingredients(all_ingredients)
+                            save_mapped_ingredients(collection)
 
                     else:
                         console.print(
@@ -216,9 +225,9 @@ def main():
 
             progress.update(task, advance=1)
 
-    # Final save
+    # Final save (collection retains generation_date/total_count/etc.)
     if not args.dry_run and enriched_count > 0:
-        save_mapped_ingredients(all_ingredients)
+        save_mapped_ingredients(collection)
 
     # Clean up checkpoint
     if CHECKPOINT_FILE.exists() and not args.dry_run:

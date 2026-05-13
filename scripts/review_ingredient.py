@@ -32,13 +32,20 @@ def display_ingredient_info(ingredient: dict):
     info_text = Text()
     info_text.append(f"Status: {ingredient.get('mapping_status', 'N/A')}\n")
 
-    ontology_mapping = ingredient.get("ontology_mapping", {})
+    ontology_mapping = ingredient.get("ontology_mapping") or {}
     if ontology_mapping:
         info_text.append(f"Ontology ID: {ontology_mapping.get('ontology_id', 'N/A')}\n")
-        info_text.append(
-            f"Quality: {ontology_mapping.get('quality', 'N/A')} "
-            f"(confidence: {ontology_mapping.get('confidence', 'N/A')})\n"
-        )
+        # Schema names: `mapping_quality`. Confidence lives per-evidence-row,
+        # so we surface the best confidence_score across evidence entries.
+        quality = ontology_mapping.get("mapping_quality", "N/A")
+        evidence = ontology_mapping.get("evidence") or []
+        confidence_scores = [
+            ev.get("confidence_score")
+            for ev in evidence
+            if isinstance(ev, dict) and ev.get("confidence_score") is not None
+        ]
+        confidence = max(confidence_scores) if confidence_scores else "N/A"
+        info_text.append(f"Quality: {quality} (confidence: {confidence})\n")
         info_text.append(f"Match Level: {ontology_mapping.get('match_level', 'N/A')}\n")
 
     panel = Panel(
@@ -144,8 +151,13 @@ def apply_corrections_interactive(
     reviewer = IngredientReviewer()
     corrected = reviewer.auto_correct(ingredient)
 
-    # Update in curator
-    curator.update_ingredient(corrected)
+    # IngredientCurator has no `update_ingredient`. Replace the matching
+    # record in-place inside `curator.records` and rely on `curator.save()`
+    # to persist.
+    for idx, existing in enumerate(curator.records):
+        if existing is ingredient:
+            curator.records[idx] = corrected
+            break
     curator.save()
 
     console.print("[green]✓ Corrections applied and saved[/green]")

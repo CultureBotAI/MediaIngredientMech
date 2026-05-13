@@ -141,8 +141,9 @@ def detect_purity_concerns(record: dict) -> tuple[bool, float, str]:
     synonym_parts = []
     for syn in synonyms:
         if isinstance(syn, dict):
-            # Add synonym text
-            synonym_parts.append(syn.get('text', ''))
+            # The schema key is `synonym_text`; fall back to `text` only for
+            # backward compatibility with older fixture-style records.
+            synonym_parts.append(syn.get('synonym_text') or syn.get('text', ''))
             # Add metadata.properties if present
             metadata = syn.get('metadata', {})
             if isinstance(metadata, dict) and 'properties' in metadata:

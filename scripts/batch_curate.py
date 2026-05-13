@@ -21,6 +21,7 @@ from typing import List, Dict, Any, Optional
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.utils.llm_curator import LLMCurator, LLMSuggestion, validate_llm_suggestion
+from mediaingredientmech.utils.ontology_client import OntologyCandidate
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
 # Try to import OntologyClient (may not be available)
@@ -222,22 +223,30 @@ def batch_curate(
                 click.echo(f"  ✓ AUTO-ACCEPTED: {ontology_id} ({confidence:.2f} >= {auto_accept_threshold:.2f})")
 
                 if not dry_run:
-                    # Create mapping candidate
-                    candidate = {
-                        "ontology_id": ontology_id,
-                        "label": label,
-                        "source": suggestion.source,
-                        "confidence": confidence,
-                        "reasoning": reasoning,
-                    }
+                    # Create mapping candidate (OntologyCandidate dataclass —
+                    # this is what accept_mapping expects, not a dict).
+                    candidate = OntologyCandidate(
+                        ontology_id=ontology_id,
+                        label=label,
+                        source=suggestion.source,
+                        score=confidence,
+                    )
 
-                    # Accept the mapping
+                    # Accept the mapping. accept_mapping's signature has no
+                    # `curator_id` parameter; the curator identity is set on
+                    # the IngredientCurator instance itself. Reasoning is
+                    # captured via `notes`.
                     ingredient_curator.accept_mapping(
                         record,
                         candidate,
+                        quality="LLM_ASSISTED",
+                        match_level="MANUAL",
                         llm_assisted=True,
-                        curator_id=curator,
-                        notes=f"Auto-accepted: confidence {confidence:.2f} >= threshold {auto_accept_threshold:.2f}"
+                        notes=(
+                            f"Auto-accepted by {curator}: confidence "
+                            f"{confidence:.2f} >= threshold {auto_accept_threshold:.2f}"
+                            + (f". Reasoning: {reasoning}" if reasoning else "")
+                        ),
                     )
 
                 results["auto_accepted"] += 1

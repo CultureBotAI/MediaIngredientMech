@@ -200,10 +200,13 @@ def map_repaired_formula(record, repair):
         "match_level": repair["match_level"],
         "evidence": [
             {
-                "evidence_type": "FORMULA_REPAIR",
+                # `FORMULA_REPAIR` is not in EvidenceTypeEnum; use the closest
+                # permissible value and put the formula-repair specifics in
+                # `notes`.
+                "evidence_type": "MANUAL_CURATION",
                 "curator": "map_incomplete_formulas",
                 "confidence_score": repair["confidence"],
-                "notes": repair["evidence"],
+                "notes": f"FORMULA_REPAIR: {repair['evidence']}",
                 "timestamp": TIMESTAMP,
             }
         ],

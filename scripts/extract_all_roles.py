@@ -138,7 +138,12 @@ def extract_roles_from_synonyms(record: dict) -> Optional[tuple[str, float, list
     properties = []
 
     for syn in synonyms:
-        text = syn.get("synonym_text", "")
+        # Some legacy records (and import tooling) emit synonyms as plain
+        # strings rather than dicts. Accept both shapes.
+        if isinstance(syn, dict):
+            text = syn.get("synonym_text", "")
+        else:
+            text = str(syn) if syn is not None else ""
 
         # Parse role annotation
         role_data = parse_role_annotation(text)
@@ -204,15 +209,16 @@ def add_role_to_ingredient(
     if ingredient_has_role(record, role_enum):
         return False
 
-    # Create role assignment
+    # Create role assignment with a schema-conformant RoleCitation. The
+    # RoleAssignment.evidence slot is a list of RoleCitation (reference_text,
+    # reference_type, ...), not evidence_type/source/database_id.
     role_assignment = {
         "role": role_enum,
         "confidence": round(confidence, 3),
         "evidence": [
             {
-                "evidence_type": "DATABASE_ENTRY",
-                "source": "CultureMech",
-                "database_id": ontology_id,
+                "reference_type": "DATABASE_ENTRY",
+                "reference_text": f"CultureMech database (cross-reference {ontology_id})",
             }
         ],
     }

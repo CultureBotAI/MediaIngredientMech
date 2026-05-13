@@ -52,7 +52,7 @@ def validate_parent_exists(
 def validate_no_circular_refs(
     record: dict,
     all_records: list[dict],
-    visited: Optional[set] = None
+    path: Optional[list] = None,
 ) -> tuple[bool, str]:
     """
     Prevent circular references (A→B→A loops).
@@ -62,7 +62,9 @@ def validate_no_circular_refs(
     Args:
         record: Record to validate
         all_records: List of all ingredient records
-        visited: Set of already visited IDs (used in recursion)
+        path: Ordered list of already-visited IDs along the current traversal
+              (used in recursion). Tracking insertion order yields a
+              deterministic cycle path in the error message.
 
     Returns:
         (is_valid, error_message)
@@ -74,10 +76,10 @@ def validate_no_circular_refs(
 
         >>> # A→B→A is invalid
         >>> validate_no_circular_refs(record_a_loop, all_records)
-        (False, "Circular reference detected: ... → A → B → A")
+        (False, "Circular reference detected: A → B → A")
     """
-    if visited is None:
-        visited = set()
+    if path is None:
+        path = []
 
     record_id = record.get('id')
     parent_id = record.get('parent_ingredient')
@@ -89,12 +91,13 @@ def validate_no_circular_refs(
         return False, "Record missing 'id' field"
 
     # Check if we've seen this record before (cycle detected)
-    if record_id in visited:
-        chain = " → ".join(visited) + f" → {record_id}"
+    if record_id in path:
+        chain = " → ".join(path) + f" → {record_id}"
         return False, f"Circular reference detected: {chain}"
 
-    # Add current record to visited set
-    visited.add(record_id)
+    # Append current record to the traversal path (ordered, not a set, so the
+    # reported cycle chain is deterministic).
+    path = path + [record_id]
 
     # Find parent record
     parent_record = None
@@ -107,7 +110,7 @@ def validate_no_circular_refs(
         return False, f"Parent '{parent_id}' not found"
 
     # Recursively check parent's parent
-    return validate_no_circular_refs(parent_record, all_records, visited)
+    return validate_no_circular_refs(parent_record, all_records, path)
 
 
 def validate_children_reference_parent(

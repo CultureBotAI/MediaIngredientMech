@@ -12,6 +12,7 @@ Usage:
 """
 
 import argparse
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -20,13 +21,17 @@ from typing import Any
 import yaml
 
 
-# Paths
+# Default paths are relative to the repo root. Override the sibling
+# CultureMech location with the CULTUREMECH_DIR env var when running outside
+# the standard sibling-checkout layout.
+_REPO_ROOT = Path(__file__).resolve().parents[1]
 CULTUREMECH_DIR = Path(
-    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureMech/output"
+    os.environ.get(
+        "CULTUREMECH_DIR",
+        str((_REPO_ROOT.parent / "CultureMech" / "output").resolve()),
+    )
 )
-MI_DATA_DIR = Path(
-    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/MediaIngredientMech/data/curated"
-)
+MI_DATA_DIR = _REPO_ROOT / "data" / "curated"
 
 TIMESTAMP = datetime.now(timezone.utc).isoformat()
 
@@ -246,7 +251,11 @@ def perform_enrichment(dry_run: bool = False) -> dict:
     print()
     print(f"Role annotations before: {role_count_before}")
     print(f"Role annotations after:  {role_count_after}")
-    print(f"Increase: +{role_count_after - role_count_before} ({((role_count_after - role_count_before) / role_count_before * 100):.1f}%)")
+    delta = role_count_after - role_count_before
+    if role_count_before:
+        print(f"Increase: +{delta} ({delta / role_count_before * 100:.1f}%)")
+    else:
+        print(f"Increase: +{delta} (no prior annotations to compare against)")
     print()
 
     if not dry_run:

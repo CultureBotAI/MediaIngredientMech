@@ -73,14 +73,14 @@ def apply_correction(correction: dict, ingredient: dict) -> dict:
             existing_texts = set()
             for syn in corrected["synonyms"]:
                 if isinstance(syn, dict):
-                    existing_texts.add(syn.get("text", ""))
+                    existing_texts.add(syn.get("synonym_text") or syn.get("text", ""))
                 else:
                     existing_texts.add(syn)
 
             if new_synonym not in existing_texts:
                 corrected["synonyms"].append({
-                    "text": new_synonym,
-                    "type": "ontology_derived",
+                    "synonym_text": new_synonym,
+                    "synonym_type": "EXACT_SYNONYM",
                     "source": "auto_correction",
                 })
 
@@ -209,7 +209,14 @@ def main():
         # Apply correction
         if not args.dry_run:
             corrected = apply_correction(correction, ingredient)
-            curator.update_ingredient(corrected)
+            # `ingredient` is already an element of `curator.records`;
+            # apply_correction mutates a copy, so write the result back in
+            # place. IngredientCurator has no `update_ingredient` — `save()`
+            # later persists everything.
+            for idx, existing in enumerate(curator.records):
+                if existing is ingredient:
+                    curator.records[idx] = corrected
+                    break
             applied_count += 1
         else:
             console.print(f"Would apply: {correction['action']} to {preferred_term}")

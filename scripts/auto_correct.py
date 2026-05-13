@@ -130,21 +130,28 @@ def main():
                 corrected_count += 1
 
                 if args.apply:
-                    # Add curation history event
+                    # Add curation history event in the canonical shape
+                    # (CurationEvent: timestamp / curator / action / changes).
                     if "curation_history" not in corrected:
                         corrected["curation_history"] = []
 
                     corrected["curation_history"].append({
                         "timestamp": datetime.now().isoformat(),
-                        "event": "auto_correction",
-                        "details": {
-                            "correction_types": change_types,
-                            "source": "auto_correct.py",
-                        },
+                        "curator": "auto_correct.py",
+                        "action": "AUTO_CORRECTION_APPLIED",
+                        "changes": (
+                            "Applied auto-corrections: "
+                            + ", ".join(sorted(change_types))
+                        ),
+                        "llm_assisted": False,
                     })
 
-                    # Update ingredient
-                    curator.update_ingredient(corrected)
+                    # IngredientCurator has no `update_ingredient`; replace
+                    # in-place inside `curator.records` and rely on save().
+                    for idx, existing in enumerate(curator.records):
+                        if existing is ingredient:
+                            curator.records[idx] = corrected
+                            break
 
             progress.update(task, advance=1)
 

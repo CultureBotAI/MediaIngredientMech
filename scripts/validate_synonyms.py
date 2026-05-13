@@ -142,32 +142,41 @@ def add_missing_synonyms(
         if response.lower() != "y":
             return False
 
-    # Add synonyms
+    # Add synonyms (schema keys: synonym_text / synonym_type)
     if "synonyms" not in ingredient:
         ingredient["synonyms"] = []
 
+    added = 0
     for syn in missing_synonyms:
+        if not syn:
+            continue
         ingredient["synonyms"].append({
-            "text": syn,
-            "type": "ontology_derived",
+            "synonym_text": syn,
+            "synonym_type": "EXACT_SYNONYM",
             "source": "validate_synonyms.py",
         })
+        added += 1
 
-    # Add curation history event
+    # Add curation history event using the canonical event shape
+    # (timestamp / curator / action / changes); `event`/`details` is not
+    # part of the CurationEvent schema.
     if "curation_history" not in ingredient:
         ingredient["curation_history"] = []
 
     ingredient["curation_history"].append({
         "timestamp": datetime.now().isoformat(),
-        "event": "synonyms_added",
-        "details": {
-            "count": len(missing_synonyms),
-            "source": "ontology_validation",
-        },
+        "curator": "validate_synonyms.py",
+        "action": "ADDED_SYNONYMS",
+        "changes": (
+            f"Added {added} ontology-derived synonym(s); source=ontology_validation"
+        ),
+        "llm_assisted": False,
     })
 
-    curator.update_ingredient(ingredient)
-    console.print(f"[green]✓ Added {len(missing_synonyms)} synonyms[/green]")
+    # Curator has no `update_ingredient`; the in-memory record we just mutated
+    # already lives in `curator.records`, so `save()` is enough to persist.
+    curator.save()
+    console.print(f"[green]✓ Added {added} synonyms[/green]")
 
     return True
 

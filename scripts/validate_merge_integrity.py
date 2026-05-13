@@ -4,6 +4,12 @@
 import sys
 from pathlib import Path
 
+# Make the package importable when running this script directly without
+# installing the wheel or exporting PYTHONPATH.
+_SRC = Path(__file__).resolve().parents[1] / "src"
+if str(_SRC) not in sys.path:
+    sys.path.insert(0, str(_SRC))
+
 from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table

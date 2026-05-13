@@ -5,6 +5,7 @@ This script compares ingredient data between MediaIngredientMech and CultureMech
 to determine if an update/re-import is needed.
 """
 
+import os
 import sys
 from pathlib import Path
 from collections import defaultdict
@@ -12,14 +13,22 @@ from datetime import datetime
 
 import yaml
 
-# CultureMech paths
-CULTUREMECH_DIR = Path("/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureMech")
+# Default paths assume the standard sibling-checkout layout. Override the
+# CultureMech location with the CULTUREMECH_DIR env var when running
+# elsewhere.
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+CULTUREMECH_DIR = Path(
+    os.environ.get(
+        "CULTUREMECH_DIR",
+        str((_REPO_ROOT.parent / "CultureMech").resolve()),
+    )
+)
 CULTUREMECH_MAPPED = CULTUREMECH_DIR / "output" / "mapped_ingredients.yaml"
 CULTUREMECH_UNMAPPED = CULTUREMECH_DIR / "output" / "unmapped_ingredients.yaml"
 
-# MediaIngredientMech paths
-MEDIAINGREDIENT_MAPPED = Path("data/curated/mapped_ingredients.yaml")
-MEDIAINGREDIENT_UNMAPPED = Path("data/curated/unmapped_ingredients.yaml")
+# MediaIngredientMech paths (relative to repo root)
+MEDIAINGREDIENT_MAPPED = _REPO_ROOT / "data" / "curated" / "mapped_ingredients.yaml"
+MEDIAINGREDIENT_UNMAPPED = _REPO_ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 
 
 def load_culturemech_data():

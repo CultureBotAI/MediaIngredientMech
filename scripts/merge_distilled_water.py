@@ -8,6 +8,21 @@ Actions:
 3. Map "Tap water" with CLOSE_MATCH
 
 Run with: PYTHONPATH=src python scripts/merge_distilled_water.py
+
+WARNING (historical):
+    This script was a one-off curation operation run before the
+    2026-03-14 dual-identifier rollback. It targets the abandoned
+    schema/API:
+      * references hard-coded `MediaIngredientMech:NNNNNN` IDs that
+        no longer exist on any record
+      * uses lowercase curation action labels
+        (the schema now requires SCREAMING_SNAKE_CASE)
+      * calls `accept_mapping(index=..., ontology_id=...)` — the
+        current signature is `accept_mapping(record, candidate, ...)`
+        with an `OntologyCandidate` dataclass
+    It is preserved here as a record of the operation, not as
+    runnable code. Re-running it as-is will fail. Treat it as
+    documentation only.
 """
 
 import sys

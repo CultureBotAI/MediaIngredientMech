@@ -12,6 +12,7 @@ Usage:
     python scripts/prepare_unmapped_for_curation.py
 """
 
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -20,13 +21,18 @@ from typing import Any
 import yaml
 
 
-# Paths
+# Default paths are relative to the repo root (this script lives in
+# `<repo>/scripts/`). Override the sibling CultureMech location with the
+# CULTUREMECH_DIR env var when running outside the standard sibling-checkout
+# layout.
+_REPO_ROOT = Path(__file__).resolve().parents[1]
 CULTUREMECH_DIR = Path(
-    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureMech/output"
+    os.environ.get(
+        "CULTUREMECH_DIR",
+        str((_REPO_ROOT.parent / "CultureMech" / "output").resolve()),
+    )
 )
-MI_DATA_DIR = Path(
-    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/MediaIngredientMech/data/curated"
-)
+MI_DATA_DIR = _REPO_ROOT / "data" / "curated"
 
 TIMESTAMP = datetime.now(timezone.utc).isoformat()
 
