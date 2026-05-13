@@ -228,13 +228,29 @@ class TestSchemaEnums:
     def test_curation_action_enum_exists(self):
         assert "CurationActionEnum" in self.enums
 
-    def test_curation_action_values(self):
+    def test_curation_action_values_include_baseline_and_frequent(self):
+        # CurationActionEnum is documentation-only (range of CurationEvent.action
+        # is string + pattern). The enum should still document the original
+        # baseline verbs and the most frequent labels observed in live data
+        # — assert a subset rather than equality so new reference values can
+        # be added without breaking the test.
         values = set(self.enums["CurationActionEnum"]["permissible_values"].keys())
-        expected = {
+        baseline = {
             "CREATED", "IMPORTED", "MAPPED", "SYNONYM_ADDED",
             "VALIDATED", "CORRECTED", "MERGED", "STATUS_CHANGED", "ANNOTATED",
         }
-        assert values == expected
+        frequent = {
+            "AUTO_CLASSIFY_INGREDIENT_TYPE",
+            "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "ADDED_SYNONYMS",
+            "ADDED_CAS_RN",
+            "CREATED_AS_UNMAPPED",
+            "MERGED_FROM_DUPLICATES",
+        }
+        missing = (baseline | frequent) - values
+        assert not missing, (
+            f"CurationActionEnum is missing reference labels: {sorted(missing)}"
+        )
 
     def test_synonym_type_enum_exists(self):
         assert "SynonymTypeEnum" in self.enums
