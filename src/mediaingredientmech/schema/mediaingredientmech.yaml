@@ -498,10 +498,11 @@ enums:
       The `action` slot on CurationEvent has range `string` constrained by a
       SCREAMING_SNAKE_CASE pattern, not membership in this enum — curation
       tools mint new labels freely (live data has 117 distinct values as of
-      2026-05-12). The labels below cover the top ~20 most frequent actions
-      (>93% of all curation events) and the original baseline operations;
-      new tools should reuse one of these names when applicable rather than
-      inventing a near-duplicate.
+      2026-05-12). The 25 labels below cover the 9 baseline operation verbs
+      plus the most frequent automated/classification/merge labels observed
+      in live data (together >93% of all curation events). New tools should
+      reuse one of these names when applicable rather than inventing a
+      near-duplicate.
     permissible_values:
       # --- Baseline curation operations (semantic verbs) ---
       CREATED:

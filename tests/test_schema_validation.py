@@ -233,19 +233,34 @@ class TestSchemaEnums:
         # is string + pattern). The enum should still document the original
         # baseline verbs and the most frequent labels observed in live data
         # — assert a subset rather than equality so new reference values can
-        # be added without breaking the test.
+        # be added without breaking the test. The required `frequent` set
+        # mirrors every non-baseline label introduced by the reference-set
+        # expansion so the test guards what the PR is actually documenting.
         values = set(self.enums["CurationActionEnum"]["permissible_values"].keys())
         baseline = {
             "CREATED", "IMPORTED", "MAPPED", "SYNONYM_ADDED",
             "VALIDATED", "CORRECTED", "MERGED", "STATUS_CHANGED", "ANNOTATED",
         }
         frequent = {
+            # Most frequent automated actions
             "AUTO_CLASSIFY_INGREDIENT_TYPE",
             "AUTO_BACKFILL_CHEBI_CHEMISTRY",
+            "AUTO_BACKFILL_PUBCHEM_CHEMISTRY",
             "ADDED_SYNONYMS",
             "ADDED_CAS_RN",
+            "CAS_RN_ADDED",
+            # Provenance of unmapped / placeholder records
             "CREATED_AS_UNMAPPED",
+            "CREATED_FROM_CULTUREBOTHT",
+            "CREATED_FROM_CAS_LOOKUP",
+            "CREATED_FROM_CAS_FALLBACK",
+            "CREATED_FROM_KGM_PLACEHOLDER",
+            # Classification & merge
+            "CLASSIFIED_UNDEFINED_MIXTURE",
+            "CLASSIFIED_STOCK_SOLUTION",
+            "CLASSIFIED_DEFINED_MEDIUM",
             "MERGED_FROM_DUPLICATES",
+            "BACKFILL_PARENT_CHEBI",
         }
         missing = (baseline | frequent) - values
         assert not missing, (
