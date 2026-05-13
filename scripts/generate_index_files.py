@@ -21,16 +21,15 @@ def generate_json_index(records: list[dict], output_path: Path) -> None:
 
     for record in records:
         entry = {
-            'id': record.get('id'),
-            'preferred_term': record.get('preferred_term'),
             'identifier': record.get('identifier'),
+            'preferred_term': record.get('preferred_term'),
             'mapping_status': record.get('mapping_status'),
             'occurrences': record.get('occurrence_statistics', {}).get('total_occurrences', 0),
         }
 
         # Add ontology mapping if exists
-        if 'ontology_mapping' in record:
-            om = record['ontology_mapping']
+        om = record.get('ontology_mapping')
+        if isinstance(om, dict):
             entry['ontology_id'] = om.get('ontology_id')
             entry['ontology_source'] = om.get('ontology_source')
             entry['mapping_quality'] = om.get('mapping_quality')
@@ -56,9 +55,8 @@ def generate_csv_index(records: list[dict], output_path: Path) -> None:
 
         # Header
         writer.writerow([
-            'id',
-            'preferred_term',
             'identifier',
+            'preferred_term',
             'mapping_status',
             'ontology_id',
             'ontology_source',
@@ -70,11 +68,10 @@ def generate_csv_index(records: list[dict], output_path: Path) -> None:
 
         # Rows
         for record in records:
-            om = record.get('ontology_mapping', {})
+            om = record.get('ontology_mapping') or {}
             writer.writerow([
-                record.get('id', ''),
-                record.get('preferred_term', ''),
                 record.get('identifier', ''),
+                record.get('preferred_term', ''),
                 record.get('mapping_status', ''),
                 om.get('ontology_id', ''),
                 om.get('ontology_source', ''),
@@ -106,16 +103,16 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
     # Mapped ingredients table
     if mapped > 0:
         lines.append("## Mapped Ingredients\n\n")
-        lines.append("| ID | Preferred Term | Ontology ID | Source | Quality | Occurrences |\n")
+        lines.append("| Identifier | Preferred Term | Ontology ID | Source | Quality | Occurrences |\n")
         lines.append("|---|---|---|---|---|---|\n")
 
         for record in records:
             if record.get('mapping_status') != 'MAPPED':
                 continue
 
-            om = record.get('ontology_mapping', {})
+            om = record.get('ontology_mapping') or {}
             lines.append(
-                f"| {record.get('id', '')} "
+                f"| {record.get('identifier', '')} "
                 f"| {record.get('preferred_term', '')} "
                 f"| {om.get('ontology_id', '')} "
                 f"| {om.get('ontology_source', '')} "
@@ -128,17 +125,16 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
     # Unmapped ingredients table
     if unmapped > 0:
         lines.append("## Unmapped Ingredients\n\n")
-        lines.append("| ID | Preferred Term | Identifier | Status | Occurrences |\n")
-        lines.append("|---|---|---|---|---|\n")
+        lines.append("| Identifier | Preferred Term | Status | Occurrences |\n")
+        lines.append("|---|---|---|---|\n")
 
         for record in records:
             if record.get('mapping_status') != 'UNMAPPED':
                 continue
 
             lines.append(
-                f"| {record.get('id', '')} "
-                f"| {record.get('preferred_term', '')} "
                 f"| {record.get('identifier', '')} "
+                f"| {record.get('preferred_term', '')} "
                 f"| {record.get('mapping_status', '')} "
                 f"| {record.get('occurrence_statistics', {}).get('total_occurrences', 0)} |\n"
             )
@@ -148,15 +144,20 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
     # Hierarchy parents
     hierarchy_parents = [r for r in records if r.get('child_ingredients')]
     if hierarchy_parents:
+        # Build an O(1) identifier -> record lookup once instead of doing a
+        # linear scan per child (was O(num_children × num_records)).
+        records_by_identifier = {
+            r.get('identifier'): r for r in records if r.get('identifier')
+        }
         lines.append("## Hierarchy Parents\n\n")
         for parent in hierarchy_parents:
-            lines.append(f"### {parent.get('preferred_term')} ({parent.get('id')})\n\n")
+            lines.append(f"### {parent.get('preferred_term')} ({parent.get('identifier')})\n\n")
             lines.append(f"**Variant Type**: {parent.get('variant_type', 'N/A')}\n\n")
             lines.append(f"**Children**: {len(parent.get('child_ingredients', []))}\n\n")
 
             children_ids = parent.get('child_ingredients', [])
             for child_id in children_ids:
-                child = next((r for r in records if r.get('id') == child_id), None)
+                child = records_by_identifier.get(child_id)
                 if child:
                     lines.append(f"- {child.get('preferred_term')} ({child_id}) - {child.get('variant_type', 'N/A')}\n")
             lines.append("\n")
