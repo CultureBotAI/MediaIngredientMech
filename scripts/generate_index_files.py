@@ -144,6 +144,11 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
     # Hierarchy parents
     hierarchy_parents = [r for r in records if r.get('child_ingredients')]
     if hierarchy_parents:
+        # Build an O(1) identifier -> record lookup once instead of doing a
+        # linear scan per child (was O(num_children × num_records)).
+        records_by_identifier = {
+            r.get('identifier'): r for r in records if r.get('identifier')
+        }
         lines.append("## Hierarchy Parents\n\n")
         for parent in hierarchy_parents:
             lines.append(f"### {parent.get('preferred_term')} ({parent.get('identifier')})\n\n")
@@ -152,7 +157,7 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
 
             children_ids = parent.get('child_ingredients', [])
             for child_id in children_ids:
-                child = next((r for r in records if r.get('identifier') == child_id), None)
+                child = records_by_identifier.get(child_id)
                 if child:
                     lines.append(f"- {child.get('preferred_term')} ({child_id}) - {child.get('variant_type', 'N/A')}\n")
             lines.append("\n")
