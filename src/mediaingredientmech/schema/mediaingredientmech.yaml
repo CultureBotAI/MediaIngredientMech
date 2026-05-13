@@ -105,17 +105,19 @@ classes:
         description: Chemical structure and properties (for CHEBI-mapped ingredients only)
       representative:
         description: >-
-          ID of the representative record if this record has been merged.
-          Only set when mapping_status is REJECTED due to merge.
+          `identifier` of the representative record if this record has been
+          merged. Only set when mapping_status is REJECTED due to merge.
           Points to the canonical record representing this ingredient.
-        pattern: "^MediaIngredientMech:[0-9]{6}$"
+          (No pattern constraint: the merge-tracking feature is currently
+          unused — when revived, point at the schema's canonical identifier
+          format.)
       merged:
         multivalued: true
         description: >-
-          List of MediaIngredientMech IDs merged into this representative.
-          Only set on records serving as merge targets.
-          Tracks all records consolidated into this canonical representation.
-        pattern: "^MediaIngredientMech:[0-9]{6}$"
+          List of record `identifier`s merged into this representative.
+          Only set on records serving as merge targets. Tracks all records
+          consolidated into this canonical representation.
+          (No pattern constraint: see `representative` above.)
       ingredient_type:
         range: IngredientTypeEnum
         description: >-
@@ -130,18 +132,20 @@ classes:
           Used to link complex media entries to their full recipe formulations.
       parent_ingredient:
         description: >-
-          Reference to parent ingredient in hierarchy (MediaIngredientMech:XXXXXX).
-          Used for variants: purity levels (tap/distilled/double-distilled water),
-          hydrates (CaCl2·2H2O vs CaCl2), stereoisomers (D-glucose vs L-glucose).
-          Enables queries like "find all media using any form of water".
-        pattern: "^MediaIngredientMech:[0-9]{6}$"
+          Reference to parent ingredient's `identifier` in the variant
+          hierarchy. Used for variants: purity levels
+          (tap/distilled/double-distilled water), hydrates (CaCl2·2H2O vs
+          CaCl2), stereoisomers (D-glucose vs L-glucose). Enables queries
+          like "find all media using any form of water".
+          (No pattern constraint: the hierarchy feature is currently unused —
+          when populated, expect the schema's canonical `identifier` format.)
       child_ingredients:
         multivalued: true
         description: >-
-          List of child ingredient IDs in hierarchy.
-          Parent record contains all children (e.g., Water → Tap water, Distilled water).
-          Used to navigate hierarchy and query all variants.
-        pattern: "^MediaIngredientMech:[0-9]{6}$"
+          List of child ingredient `identifier`s in the variant hierarchy.
+          Parent record contains all children (e.g. Water → Tap water,
+          Distilled water). Used to navigate hierarchy and query all variants.
+          (No pattern constraint: see `parent_ingredient` above.)
       variant_type:
         range: VariantTypeEnum
         description: >-
