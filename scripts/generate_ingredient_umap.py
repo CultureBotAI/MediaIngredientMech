@@ -2,7 +2,9 @@
 """Generate interactive UMAP visualization of media ingredient embedding space."""
 
 import gzip
+import hashlib
 import json
+import os
 import pickle
 import sys
 from pathlib import Path
@@ -26,20 +28,39 @@ from mediaingredientmech.utils.yaml_handler import load_yaml
 console = Console()
 
 # Latest canonical kg-microbe deepwalk artifact, shared across all Mech repos.
-# Prefer a local copy in data/embeddings/; fall back to CommunityMech's
-# canonical on-disk location (the file is 5.7 GB so we don't vendor it in
-# every repo).
+# Resolution order:
+#   1. ``KG_MICROBE_EMBEDDINGS`` env var (absolute path or repo-rooted)
+#   2. ``data/embeddings/<filename>`` next to this script's repo
+#   3. ``../CommunityMech/CommunityMech/data/embeddings/<filename>`` —
+#      the 5.7 GB artifact is only vendored once per developer machine.
+# All three locations are resolved relative to the script so the file works
+# on any machine that has the Mech repos checked out as siblings.
 _EMBEDDINGS_FILENAME = "DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_v2_2026-04-25_20_44_08.tsv.gz"
-_LOCAL_EMBEDDINGS = (
-    Path(__file__).resolve().parents[1] / "data" / "embeddings" / _EMBEDDINGS_FILENAME
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+_LOCAL_EMBEDDINGS = _REPO_ROOT / "data" / "embeddings" / _EMBEDDINGS_FILENAME
+_COMMUNITYMECH_EMBEDDINGS = (
+    _REPO_ROOT.parent / "CommunityMech" / "CommunityMech"
+    / "data" / "embeddings" / _EMBEDDINGS_FILENAME
 )
-_COMMUNITYMECH_EMBEDDINGS = Path(
-    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CommunityMech"
-    "/CommunityMech/data/embeddings/" + _EMBEDDINGS_FILENAME
-)
-KG_MICROBE_EMBEDDINGS = (
-    str(_LOCAL_EMBEDDINGS) if _LOCAL_EMBEDDINGS.exists() else str(_COMMUNITYMECH_EMBEDDINGS)
-)
+
+
+def _resolve_default_embeddings() -> str:
+    """Return the first existing default embeddings path. Env override wins.
+
+    Falls back to whichever candidate is reachable. If none exist on disk,
+    returns the local path so an obvious ENOENT surfaces at load time
+    (better than silently using a stale cache from a different artifact).
+    """
+    env_override = os.environ.get("KG_MICROBE_EMBEDDINGS")
+    if env_override:
+        return env_override
+    for candidate in (_LOCAL_EMBEDDINGS, _COMMUNITYMECH_EMBEDDINGS):
+        if candidate.exists():
+            return str(candidate)
+    return str(_LOCAL_EMBEDDINGS)
+
+
+KG_MICROBE_EMBEDDINGS = _resolve_default_embeddings()
 
 
 class IngredientEmbeddingLoader:
@@ -50,6 +71,22 @@ class IngredientEmbeddingLoader:
         self.cache_dir = cache_dir
         self.cache_dir.mkdir(exist_ok=True)
 
+    def _cache_key(self, prefixes: List[str]) -> str:
+        """Cache filename keyed on (embedding source identity, prefix set).
+        Embedding identity is the basename plus an mtime+size fingerprint, so
+        bumping the embedding file (e.g. 2026-02-01 → 2026-04-25) automatically
+        invalidates the pickle without manual `rm -rf .umap_cache/`."""
+        try:
+            stat = self.embeddings_path.stat()
+            fp = f"{stat.st_size}-{int(stat.st_mtime)}"
+        except FileNotFoundError:
+            fp = "missing"
+        prefix_tag = "_".join(sorted(prefixes))
+        digest = hashlib.sha1(
+            f"{self.embeddings_path.name}|{fp}|{prefix_tag}".encode()
+        ).hexdigest()[:12]
+        return f"ingredient_embeddings__{prefix_tag}__{digest}.pkl"
+
     def load_embeddings(
         self,
         prefixes: List[str] = None,
@@ -59,7 +96,7 @@ class IngredientEmbeddingLoader:
         if prefixes is None:
             prefixes = ["CHEBI", "FOODON", "NCIT", "MESH", "UBERON", "ENVO"]
 
-        cache_file = self.cache_dir / "ingredient_embeddings.pkl"
+        cache_file = self.cache_dir / self._cache_key(prefixes)
 
         if cache_file.exists() and not force_reload:
             console.print(f"[green]Loading cached embeddings from {cache_file}[/green]")
