@@ -25,6 +25,22 @@ from mediaingredientmech.utils.yaml_handler import load_yaml
 
 console = Console()
 
+# Latest canonical kg-microbe deepwalk artifact, shared across all Mech repos.
+# Prefer a local copy in data/embeddings/; fall back to CommunityMech's
+# canonical on-disk location (the file is 5.7 GB so we don't vendor it in
+# every repo).
+_EMBEDDINGS_FILENAME = "DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_v2_2026-04-25_20_44_08.tsv.gz"
+_LOCAL_EMBEDDINGS = (
+    Path(__file__).resolve().parents[1] / "data" / "embeddings" / _EMBEDDINGS_FILENAME
+)
+_COMMUNITYMECH_EMBEDDINGS = Path(
+    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CommunityMech"
+    "/CommunityMech/data/embeddings/" + _EMBEDDINGS_FILENAME
+)
+KG_MICROBE_EMBEDDINGS = (
+    str(_LOCAL_EMBEDDINGS) if _LOCAL_EMBEDDINGS.exists() else str(_COMMUNITYMECH_EMBEDDINGS)
+)
+
 
 class IngredientEmbeddingLoader:
     """Load and filter embeddings for ingredients."""
@@ -305,8 +321,9 @@ def build_visualization_data(
 @click.option(
     '--embeddings-path',
     type=click.Path(exists=True),
-    default='data/embeddings/DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_2026-02-01_05_54_01.tsv.gz',
-    help='Path to embeddings TSV.gz file'
+    default=KG_MICROBE_EMBEDDINGS,
+    help='Path to embeddings TSV.gz file (default: 2026-04-25 v2 512-D, '
+         'shared across Mech repos via CommunityMech location)'
 )
 @click.option(
     '--ingredients-dir',
