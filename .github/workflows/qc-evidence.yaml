@@ -31,6 +31,11 @@ jobs:
         with:
           repository: CultureBotAI/culturebotai-claw
           path: culturebotai-claw
+          # CLAW_READ_TOKEN is a fine-grained PAT with Contents:Read on
+          # CultureBotAI/culturebotai-claw, set as an Actions secret on
+          # this repo. The default GITHUB_TOKEN can't read the private
+          # sibling.
+          token: ${{ secrets.CLAW_READ_TOKEN }}
 
       - uses: actions/setup-python@v5
         with:
