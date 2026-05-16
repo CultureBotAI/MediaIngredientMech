@@ -50,7 +50,10 @@ class TestImportTransformation:
         has_mapping = bool(term_id)
 
         record = {
-            "ontology_id": term_id if has_mapping else f"UNMAPPED_{id(cm_ingredient) % 10000:04d}",
+            # `identifier` is the record's primary-key slot (schema rename
+            # 2026-05-16). For mapped imports it carries the ontology CURIE;
+            # for unmapped it gets an UNMAPPED_NNNN placeholder.
+            "identifier": term_id if has_mapping else f"UNMAPPED_{id(cm_ingredient) % 10000:04d}",
             "preferred_term": cm_ingredient["preferred_term"],
             "mapping_status": "MAPPED" if has_mapping else "UNMAPPED",
         }
@@ -87,14 +90,14 @@ class TestImportTransformation:
     def test_mapped_ingredient_transforms(self):
         cm = self._create_culturemech_ingredient()
         record = self._transform_to_ingredient_record(cm)
-        assert record["ontology_id"] == "CHEBI:26710"
+        assert record["identifier"] == "CHEBI:26710"
         assert record["mapping_status"] == "MAPPED"
         assert record["ontology_mapping"]["ontology_id"] == "CHEBI:26710"
 
     def test_unmapped_ingredient_transforms(self):
         cm = self._create_culturemech_ingredient(term={})
         record = self._transform_to_ingredient_record(cm)
-        assert record["ontology_id"].startswith("UNMAPPED_")
+        assert record["identifier"].startswith("UNMAPPED_")
         assert record["mapping_status"] == "UNMAPPED"
         assert "ontology_mapping" not in record
 

@@ -104,7 +104,7 @@ def process_ingredient_with_llm(
     Returns:
         Action taken: 'mapped', 'skipped', 'failed', 'quit'
     """
-    identifier = record.get("ontology_id", "")
+    identifier = (record.get("identifier") or record.get("ontology_id", ""))
     name = record.get("preferred_term", "")
     stats = record.get("occurrence_statistics", {})
 

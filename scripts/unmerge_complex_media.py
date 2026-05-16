@@ -122,8 +122,12 @@ def unmerge_record(
             "UNMAPPED",
             notes=f"Unmerged from {representative_name}. Complex media should not be mapped to pure chemical CHEBI terms."
         )
+        # Clear ontology mapping and reassign as unmapped. Drop any stale
+        # legacy top-level `ontology_id` so the record doesn't keep its
+        # previous mapped ID at root after unmerging.
         merged_record["ontology_mapping"] = None
-        merged_record["ontology_id"] = f"UNMAPPED_{merged_id.split(':')[-1]}"
+        merged_record["identifier"] = f"UNMAPPED_{merged_id.split(':')[-1]}"
+        merged_record.pop("ontology_id", None)
     else:
         curator.change_status(
             merged_record,

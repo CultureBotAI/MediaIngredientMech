@@ -168,8 +168,8 @@ def save_yaml(data, path):
 def map_repaired_formula(record, repair):
     """Apply formula repair mapping to ingredient record."""
     # Update core fields
-    record["ontology_id"] = repair["ontology_id"]
     record["identifier"] = repair["ontology_id"]
+    record.pop("ontology_id", None)  # drop any stale legacy root key
     record["mapping_status"] = "MAPPED"
 
     # Preserve incomplete formula as synonym

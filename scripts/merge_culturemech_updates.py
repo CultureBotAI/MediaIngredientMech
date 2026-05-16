@@ -131,14 +131,16 @@ def merge_ingredient(mi_record: dict, cm_ingredient: dict, verbose: bool = False
 
     # Check for ontology ID changes
     cm_ontology = cm_ingredient.get("ontology_id")
-    mi_ontology = mi_record.get("ontology_id")
+    mi_ontology = (mi_record.get("identifier") or mi_record.get("ontology_id"))
 
     if cm_ontology and mi_ontology and cm_ontology != mi_ontology:
         changes["ontology_update"] = {
             "old": mi_ontology,
             "new": cm_ontology,
         }
-        merged["ontology_id"] = cm_ontology
+        # Write the canonical primary key; drop any stale legacy root key.
+        merged["identifier"] = cm_ontology
+        merged.pop("ontology_id", None)
 
         # Update ontology_mapping
         if "ontology_mapping" in merged:

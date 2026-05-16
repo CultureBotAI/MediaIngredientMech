@@ -294,7 +294,7 @@ def main():
             continue
 
         # Add role
-        ontology_id = record.get("ontology_id", "")
+        ontology_id = (record.get("identifier") or record.get("ontology_id", ""))
         success = add_role_to_ingredient(
             curator, record, primary_role, confidence, ontology_id
         )

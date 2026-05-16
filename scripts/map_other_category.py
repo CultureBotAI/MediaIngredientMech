@@ -77,8 +77,8 @@ def save_yaml(data, path):
 def map_ingredient(record, mapping):
     """Apply mapping to ingredient record."""
     # Update core fields
-    record["ontology_id"] = mapping["ontology_id"]
     record["identifier"] = mapping["ontology_id"]
+    record.pop("ontology_id", None)  # drop any stale legacy root key
     record["mapping_status"] = "MAPPED"
 
     # Add ontology mapping

@@ -84,13 +84,13 @@ class TestSchemaClasses:
 
     def test_ingredient_record_required_fields(self):
         attrs = self.classes["IngredientRecord"]["attributes"]
-        assert attrs["ontology_id"].get("required") is True
+        assert attrs["identifier"].get("required") is True
         assert attrs["preferred_term"].get("required") is True
         assert attrs["mapping_status"].get("required") is True
 
     def test_ingredient_record_identifier_is_key(self):
         attrs = self.classes["IngredientRecord"]["attributes"]
-        assert attrs["ontology_id"].get("identifier") is True
+        assert attrs["identifier"].get("identifier") is True
 
     def test_ingredient_record_has_synonyms(self):
         attrs = self.classes["IngredientRecord"]["attributes"]

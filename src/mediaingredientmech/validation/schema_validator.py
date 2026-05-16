@@ -232,15 +232,23 @@ def _validate_ingredient_record(rec: Any, path: str, msgs: list[ValidationMessag
     if not isinstance(rec, dict):
         msgs.append(ValidationMessage("error", path, "Ingredient record must be a mapping"))
         return
-    # Records use `identifier` as the semantic primary key in live data; the
-    # schema slot is named `ontology_id` but the YAML key is `identifier`.
-    # Accept either so the validator stays useful without forcing a schema
-    # rewrite.
-    if not rec.get("identifier") and not rec.get("ontology_id"):
+    # `identifier` is the canonical primary key on every record. Flag any
+    # presence of legacy top-level `ontology_id` independently of
+    # `identifier` so mid-migration records that carry BOTH keys (the most
+    # common shape during a rename) still trigger the warning.
+    if rec.get("ontology_id"):
         msgs.append(
             ValidationMessage(
-                "error", path, "Missing required field 'identifier' (or 'ontology_id')"
+                "warning",
+                path,
+                "Record has legacy top-level `ontology_id`; drop it — the "
+                "canonical primary key is `identifier` (schema slot renamed "
+                "2026-05-16).",
             )
+        )
+    if not rec.get("identifier") and not rec.get("ontology_id"):
+        msgs.append(
+            ValidationMessage("error", path, "Missing required field 'identifier'")
         )
     _check_required(rec, "preferred_term", path, msgs)
     _check_required(rec, "mapping_status", path, msgs)
