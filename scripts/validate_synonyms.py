@@ -12,7 +12,7 @@ Usage:
 import argparse
 import sys
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 from rich.console import Console
 from rich.table import Table
@@ -164,7 +164,7 @@ def add_missing_synonyms(
         ingredient["curation_history"] = []
 
     ingredient["curation_history"].append({
-        "timestamp": datetime.now().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "curator": "validate_synonyms.py",
         "action": "ADDED_SYNONYMS",
         "changes": (

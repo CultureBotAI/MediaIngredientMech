@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import csv
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -86,7 +86,7 @@ class BatchCurationSession:
             data = {
                 'processed_ids': list(self.processed_ids),
                 'decisions': self.decisions,
-                'last_updated': datetime.now().isoformat(),
+                'last_updated': datetime.now(timezone.utc).isoformat(),
             }
             self.resume_file.parent.mkdir(parents=True, exist_ok=True)
             with open(self.resume_file, 'w') as f:
@@ -422,7 +422,7 @@ class BatchCurationSession:
             'ontology_label': ontology_label,
             'quality': quality,
             'normalization_rules': ', '.join(norm_result.get('applied_rules', [])),
-            'timestamp': datetime.now().isoformat(),
+            'timestamp': datetime.now(timezone.utc).isoformat(),
         })
         self.processed_ids.add(identifier)
 

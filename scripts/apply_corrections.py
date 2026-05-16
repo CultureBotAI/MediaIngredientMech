@@ -12,7 +12,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 from rich.console import Console
 
@@ -109,7 +109,7 @@ def apply_correction(correction: dict, ingredient: dict) -> dict:
         corrected["curation_history"] = []
 
     corrected["curation_history"].append({
-        "timestamp": datetime.now().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "event": "correction_applied",
         "details": {
             "action": action,

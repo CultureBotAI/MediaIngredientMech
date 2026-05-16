@@ -2,7 +2,7 @@
 
 import json
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -145,7 +145,7 @@ def generate_report(data_dir: Path | None = None) -> dict[str, Any]:
     curator_progress = compute_curator_progress(mapped_data)
 
     return {
-        "generated_at": datetime.now().isoformat(),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "statistics": stats,
         "curation_history": curation_history,
         "curator_progress": curator_progress,

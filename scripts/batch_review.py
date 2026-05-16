@@ -13,7 +13,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Dict, List
 
 import yaml
@@ -130,7 +130,7 @@ def generate_json_report(result, output_path: Path):
     """Generate JSON validation report."""
     report_data = {
         "metadata": {
-            "generated": datetime.now().isoformat(),
+            "generated": datetime.now(timezone.utc).isoformat(),
             "total_reviewed": sum(result.summary.values()),
             "summary": result.summary,
         },

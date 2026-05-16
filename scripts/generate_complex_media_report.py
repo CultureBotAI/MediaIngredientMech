@@ -14,7 +14,7 @@ Usage:
 import argparse
 import sys
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -194,7 +194,7 @@ def generate_yaml_report(
         output_path: Path to output file.
     """
     report = {
-        "generation_date": datetime.now().isoformat(),
+        "generation_date": datetime.now(timezone.utc).isoformat(),
         "data_source": str(curator.data_path),
         "total_records": len(curator.records),
         "summary": {

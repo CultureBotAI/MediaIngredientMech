@@ -14,7 +14,7 @@ import json
 import sys
 import time
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 import yaml
 from rich.console import Console
@@ -177,7 +177,7 @@ def main():
                             ingredient["curation_history"] = []
 
                         ingredient["curation_history"].append({
-                            "timestamp": datetime.now().isoformat(),
+                            "timestamp": datetime.now(timezone.utc).isoformat(),
                             "curator": "enrich_from_ols.py",
                             "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
                             "changes": (
