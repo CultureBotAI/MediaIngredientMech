@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 import click
 import yaml
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import List, Dict, Any, Optional
 
 # Add src to path
@@ -309,7 +309,7 @@ def batch_curate(
     report_file = report_dir / f"batch_curation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.yaml"
 
     report = {
-        "timestamp": datetime.now().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "batch_size": batch_size,
             "auto_accept_threshold": auto_accept_threshold,

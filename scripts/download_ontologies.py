@@ -15,7 +15,7 @@ import hashlib
 import json
 import sys
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 import requests
 from rich.console import Console
@@ -112,7 +112,7 @@ def download_ontology(source: str, url: str, force: bool = False) -> bool:
         manifest = load_manifest()
         manifest[source.lower()] = {
             "url": url,
-            "downloaded": datetime.now().isoformat(),
+            "downloaded": datetime.now(timezone.utc).isoformat(),
             "md5": md5,
             "size_mb": round(size_mb, 1),
             "status": "valid",

@@ -12,7 +12,7 @@ Usage:
 import argparse
 import sys
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TimeElapsedColumn
@@ -136,7 +136,7 @@ def main():
                         corrected["curation_history"] = []
 
                     corrected["curation_history"].append({
-                        "timestamp": datetime.now().isoformat(),
+                        "timestamp": datetime.now(timezone.utc).isoformat(),
                         "curator": "auto_correct.py",
                         "action": "AUTO_CORRECTION_APPLIED",
                         "changes": (

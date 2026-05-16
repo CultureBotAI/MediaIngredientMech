@@ -14,7 +14,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import datetime, timezone
 
 import requests
 
@@ -191,7 +191,7 @@ class IngredientReviewer:
             return ReviewResult(
                 status="PASS",
                 metadata={
-                    "timestamp": datetime.now().isoformat(),
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
                     "duration_ms": int((time.time() - start_time) * 1000),
                     "skipped": "Not mapped",
                 },
@@ -212,7 +212,7 @@ class IngredientReviewer:
                 issues=issues,
                 suggestions=suggestions,
                 metadata={
-                    "timestamp": datetime.now().isoformat(),
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
                     "duration_ms": int((time.time() - start_time) * 1000),
                     "rules_checked": ["P1"],
                 },
@@ -254,7 +254,7 @@ class IngredientReviewer:
             issues=issues,
             suggestions=suggestions,
             metadata={
-                "timestamp": datetime.now().isoformat(),
+                "timestamp": datetime.now(timezone.utc).isoformat(),
                 "duration_ms": duration_ms,
                 "rules_checked": ["P1", "P2", "P3", "P4"],
             },

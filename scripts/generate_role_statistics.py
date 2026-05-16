@@ -14,7 +14,7 @@ Output: data/analysis/role_statistics_report.yaml
 import sys
 from pathlib import Path
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 
 import yaml
 
@@ -137,7 +137,7 @@ def generate_report(stats: dict, output_path: Path):
 
     # Build report structure
     report = {
-        "generation_date": datetime.now().isoformat(),
+        "generation_date": datetime.now(timezone.utc).isoformat(),
         "summary": {
             "total_ingredients": total_ingredients,
             "with_roles": with_roles,
