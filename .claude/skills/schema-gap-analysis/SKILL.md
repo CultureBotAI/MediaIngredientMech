@@ -50,7 +50,9 @@ runtime back to 1.9.x:
 ```
 
 (Upgrading `linkml` to a release that ships with 1.10-runtime is the
-permanent fix; until then, pinning the runtime is the simplest path.)
+permanent fix; until then, pinning the runtime is the simplest path.
+Setup is one-time: once the pin is in `.venv/`, every subsequent
+invocation of the skill works without reinstalling.)
 
 ## The three-axis perspective
 
@@ -152,20 +154,40 @@ Signs:
    above. Capture findings; don't change anything yet.
 
 6. **Cross-check the process axis.** The biggest blind spots come from
-   generator code that has slowly drifted. Two `grep`s usually catch most
-   of it:
+   generator code that has slowly drifted. Three targeted greps catch the
+   most common patterns without producing noise:
 
    ```bash
-   # Naive datetimes (no timezone) — anywhere there's a `datetime.now()`
-   # without `timezone.utc`:
+   # Naive datetimes (no timezone) — every place a `datetime.now()`
+   # appears without `timezone.utc`. High-signal: today's run finds 18+
+   # call sites and every one is real.
    grep -rn "datetime.now()" src/ scripts/ --include='*.py' \
      | grep -v "timezone"
 
-   # Direct YAML writes that skip IngredientCurator and may drop required
-   # collection metadata:
-   grep -rn 'yaml.dump' scripts/ --include='*.py' \
-     | grep -v "default_flow_style"
+   # Saves that drop collection metadata: yaml.dump receives a literal
+   # one-key {"ingredients": ...} dict, which throws away
+   # generation_date / total_count / mapped_count / unmapped_count.
+   # Should be empty in current code.
+   grep -rnE 'yaml\.dump\(\s*\{\s*["\047]ingredients["\047]\s*:' \
+     src/ scripts/ --include='*.py'
+
+   # Direct writes to a canonical curated collection file that skip
+   # IngredientCurator. Should also be empty in current code — every
+   # collection-touching script must round-trip through the curator so
+   # the top-level metadata is recomputed.
+   grep -rln 'mapped_ingredients\.yaml\|unmapped_ingredients\.yaml' \
+     scripts/ --include='*.py' \
+     | while read f; do
+         grep -q 'IngredientCurator' "$f" || echo "$f"
+       done
    ```
+
+   The earlier version of this step used a single noisy
+   `grep yaml.dump | grep -v default_flow_style` that surfaced six
+   call sites of which only one had ever been the real bug. The three
+   greps above are calibrated against the actual fix history: the
+   datetime grep is high-recall on a known real pattern, and the latter
+   two are precision filters that should stay empty.
 
 7. **Decide and apply fixes.** Usually a mix: rename/alias the canonical
    slot on the schema, broaden patterns, add missing slots, fix the
