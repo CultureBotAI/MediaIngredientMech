@@ -46,7 +46,11 @@ def apply_suggestion(
     Returns:
         Tuple of (success, message)
     """
-    identifier = suggestion.get("ontology_id")
+    # `identifier` here is the EXISTING unmapped record's primary key
+    # (e.g. `UNMAPPED_0001`), used to find the record below. `ontology_id`
+    # is the PROPOSED mapping target (e.g. `CHEBI:26710`). These are two
+    # different fields on the suggestion document.
+    identifier = suggestion.get("identifier")
     ontology_id = suggestion.get("ontology_id")
     ontology_label = suggestion.get("ontology_label")
     ontology_source = suggestion.get("ontology_source")

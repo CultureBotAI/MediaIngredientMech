@@ -264,9 +264,12 @@ def reclassify_record(
             notes=f"Reclassified as DEFINED_MEDIUM: {reason}. "
                   f"Previous CHEBI mapping inappropriate for complex medium."
         )
-        # Clear ontology mapping
+        # Clear ontology mapping and reassign as unmapped. Drop any stale
+        # legacy top-level `ontology_id` so the record doesn't keep its
+        # mapped CHEBI ID at root after reclassification.
         record["ontology_mapping"] = None
         record["identifier"] = f"UNMAPPED_{record.get('id', 'UNKNOWN').split(':')[-1]}"
+        record.pop("ontology_id", None)
     else:
         # Just add note
         curator.add_note(
