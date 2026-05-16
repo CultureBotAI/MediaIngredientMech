@@ -46,7 +46,10 @@ class TestChebiTermValidation:
             assert self.pattern.match(f"{prefix}:12345")
 
     def test_invalid_formats_rejected(self):
-        assert not self.pattern.match("chebi:15377")
+        # The schema pattern is intentionally lenient on case and accepts
+        # lowercase prefixes (e.g. `cas:`, `mesh:`), so `chebi:15377` is
+        # now a legitimate match. Only structurally malformed CURIEs
+        # should still be rejected here.
         assert not self.pattern.match("CHEBI_15377")
         assert not self.pattern.match("15377")
         assert not self.pattern.match("")

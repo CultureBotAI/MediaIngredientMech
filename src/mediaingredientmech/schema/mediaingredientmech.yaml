@@ -166,20 +166,30 @@ classes:
       kg_microbe_node_id:
         description: >-
           KG-Microbe node ID for this ingredient when found in the KG exactly.
-          Populated when the ingredient's CHEBI identifier is present as a named
-          node in the KG-Microbe mediadive graph (i.e., used as an ingredient
-          in at least one KG-Microbe medium solution).
-          Format: CHEBI:XXXXX
+          Populated when the ingredient is present as a named node in the
+          KG-Microbe mediadive graph (i.e. used as an ingredient in at
+          least one KG-Microbe medium solution). The node ID is a CURIE
+          using whichever scheme the KG-Microbe graph stores the entity
+          under — most often `CHEBI:`, but also `mesh:`, `NCIT:`,
+          `FOODON:`, `ENVO:`, or one of the kg-microbe registry prefixes
+          (`kgmicrobe.compound:`, `kgmicrobe.ingredient:`).
         required: false
-        pattern: "^CHEBI:[0-9]+$"
+        pattern: "^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$"
 
   OntologyMapping:
     description: Mapping to an ontology term (CHEBI, FOODON, etc.)
     attributes:
       ontology_id:
         required: true
-        description: Ontology term ID in CURIE format (e.g., CHEBI:26710)
-        pattern: "^[A-Z]+:[0-9]+$"
+        description: >-
+          Ontology term ID in CURIE format. Most rows use a standard
+          uppercase-prefix / numeric-local form (e.g. `CHEBI:26710`), but
+          the schema also accepts the lowercase / alphanumeric / dotted
+          prefixes used elsewhere in this project for non-ontology
+          identifiers and kg-microbe registry rows (`cas:247167-54-0`,
+          `mesh:C028805`, `NCIT:C76253`, `kgmicrobe.compound:aburamycin_a`).
+          Local IDs may contain letters, digits, `.`, `_`, `-`, and `~`.
+        pattern: "^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$"
       ontology_label:
         required: true
         description: Human-readable label for the term

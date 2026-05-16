@@ -11,7 +11,7 @@ from typing import Any
 # local IDs may be alphanumeric (`NCIT:C80654`) or contain hyphens
 # (`cas:247167-54-0`). Prefix case is preserved (not normalised) — KNOWN_PREFIXES
 # is checked case-sensitively against the SSSOM curie_map below.
-_CURIE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9.]*):([A-Za-z0-9][A-Za-z0-9._-]*)$")
+_CURIE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9.]*):([A-Za-z0-9][A-Za-z0-9._~-]*)$")
 
 # Recognised ontology prefixes. Case-sensitive (e.g. `mesh:` and `MESH:` are
 # both accepted, but only the exact spellings listed here); keep in sync with

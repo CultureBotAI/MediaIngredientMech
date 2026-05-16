@@ -72,7 +72,7 @@ class SchemaValidationResult:
 # records: case-insensitive prefix with optional dot (e.g. `cas:`, `mesh:`,
 # `kgmicrobe.compound:`), and local IDs that may be alphanumeric or contain
 # hyphens (e.g. `NCIT:C80654`, `cas:247167-54-0`).
-_CURIE_PATTERN = re.compile(r"^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._-]*$")
+_CURIE_PATTERN = re.compile(r"^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$")
 _ONTOLOGY_SOURCES = _enum_values("OntologySourceEnum") if SCHEMA_PATH.exists() else set()
 _MAPPING_STATUSES = _enum_values("MappingStatusEnum") if SCHEMA_PATH.exists() else set()
 _MAPPING_QUALITIES = _enum_values("MappingQualityEnum") if SCHEMA_PATH.exists() else set()

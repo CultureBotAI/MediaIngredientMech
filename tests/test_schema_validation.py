@@ -325,6 +325,7 @@ class TestOntologyIdPattern:
         self.pattern = re.compile(attrs["ontology_id"]["pattern"])
 
     @pytest.mark.parametrize("valid_id", [
+        # Standard uppercase-prefix / numeric-local form.
         "CHEBI:26710",
         "CHEBI:15377",
         "FOODON:3311109",
@@ -332,21 +333,69 @@ class TestOntologyIdPattern:
         "MESH:67890",
         "UBERON:0001234",
         "ENVO:00002001",
+        # Forms the broadened pattern explicitly accepts: lowercase
+        # prefixes, alphanumeric local IDs, dotted prefixes, hyphens /
+        # underscores / tildes in local IDs. All values below are
+        # taken from live data; `CHEBI:abc` etc. are deliberately not
+        # included because no record carries them.
+        "chebi:26710",
+        "cas:247167-54-0",
+        "mesh:C028805",
+        "NCIT:C76253",
+        "kgmicrobe.compound:aburamycin_a",
+        "kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29",
     ])
     def test_valid_ontology_ids(self, valid_id):
         assert self.pattern.match(valid_id), f"{valid_id} should match pattern"
 
     @pytest.mark.parametrize("invalid_id", [
-        "chebi:26710",
+        # Truly malformed inputs the pattern must still reject.
         "CHEBI-26710",
         "CHEBI26710",
         "CHEBI:",
         ":26710",
-        "CHEBI:abc",
         "",
         "http://purl.obolibrary.org/obo/CHEBI_26710",
     ])
     def test_invalid_ontology_ids(self, invalid_id):
+        assert not self.pattern.match(invalid_id), f"{invalid_id} should NOT match pattern"
+
+
+class TestKgMicrobeNodeIdPattern:
+    """Test the `kg_microbe_node_id` pattern constraint.
+
+    Same broadened CURIE shape as `OntologyMapping.ontology_id` — accepts
+    every prefix kg-microbe stores entities under (CHEBI, mesh, NCIT,
+    FOODON, ENVO, kgmicrobe.compound, kgmicrobe.ingredient). Tests live
+    here so future regex drift on either slot is caught locally.
+    """
+
+    def setup_method(self):
+        schema = load_schema()
+        attrs = schema["classes"]["IngredientRecord"]["attributes"]
+        self.pattern = re.compile(attrs["kg_microbe_node_id"]["pattern"])
+
+    @pytest.mark.parametrize("valid_id", [
+        "CHEBI:26710",
+        "mesh:C061361",
+        "NCIT:C187267",
+        "FOODON:03310257",
+        "ENVO:00002001",
+        "kgmicrobe.ingredient:biotin_vitamin_solution",
+        "kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29",
+        "kgmicrobe.compound:aburamycin_a",
+    ])
+    def test_valid_node_ids(self, valid_id):
+        assert self.pattern.match(valid_id), f"{valid_id} should match pattern"
+
+    @pytest.mark.parametrize("invalid_id", [
+        "CHEBI-26710",
+        "CHEBI26710",
+        ":26710",
+        "",
+        "http://purl.obolibrary.org/obo/CHEBI_26710",
+    ])
+    def test_invalid_node_ids(self, invalid_id):
         assert not self.pattern.match(invalid_id), f"{invalid_id} should NOT match pattern"
 
 
