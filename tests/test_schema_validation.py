@@ -325,6 +325,7 @@ class TestOntologyIdPattern:
         self.pattern = re.compile(attrs["ontology_id"]["pattern"])
 
     @pytest.mark.parametrize("valid_id", [
+        # Standard uppercase-prefix / numeric-local form.
         "CHEBI:26710",
         "CHEBI:15377",
         "FOODON:3311109",
@@ -332,17 +333,26 @@ class TestOntologyIdPattern:
         "MESH:67890",
         "UBERON:0001234",
         "ENVO:00002001",
+        # Forms the broadened pattern explicitly accepts: lowercase
+        # prefixes, alphanumeric local IDs, dotted prefixes, hyphens /
+        # underscores / tildes in local IDs.
+        "chebi:26710",
+        "CHEBI:abc",
+        "cas:247167-54-0",
+        "mesh:C028805",
+        "NCIT:C76253",
+        "kgmicrobe.compound:aburamycin_a",
+        "kgmicrobe.ingredient:disodium_phosphate_heptahydrate_~28002_m_stock~29",
     ])
     def test_valid_ontology_ids(self, valid_id):
         assert self.pattern.match(valid_id), f"{valid_id} should match pattern"
 
     @pytest.mark.parametrize("invalid_id", [
-        "chebi:26710",
+        # Truly malformed inputs the pattern must still reject.
         "CHEBI-26710",
         "CHEBI26710",
         "CHEBI:",
         ":26710",
-        "CHEBI:abc",
         "",
         "http://purl.obolibrary.org/obo/CHEBI_26710",
     ])
