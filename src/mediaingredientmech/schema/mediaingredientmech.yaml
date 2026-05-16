@@ -220,11 +220,12 @@ classes:
         description: Molecular weight in g/mol
       pubchem_cid:
         range: integer
+        minimum_value: 1
         description: >-
-          PubChem Compound IDentifier (CID), stored as a positive integer.
+          PubChem Compound Identifier (CID), stored as a positive integer.
           Populated by the PubChem enrichment path in
-          `enrich_chemical_properties.py` when chemical properties are
-          sourced from PubChem rather than ChEBI.
+          `scripts/enrich_chemical_properties.py` when chemical properties
+          are sourced from PubChem rather than ChEBI.
       data_source:
         description: Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)
       retrieval_date:
