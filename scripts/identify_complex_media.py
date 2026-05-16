@@ -266,7 +266,7 @@ def reclassify_record(
         )
         # Clear ontology mapping
         record["ontology_mapping"] = None
-        record["ontology_id"] = f"UNMAPPED_{record.get('id', 'UNKNOWN').split(':')[-1]}"
+        record["identifier"] = f"UNMAPPED_{record.get('id', 'UNKNOWN').split(':')[-1]}"
     else:
         # Just add note
         curator.add_note(

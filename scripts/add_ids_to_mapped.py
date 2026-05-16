@@ -126,7 +126,7 @@ def main(
         print("\nFirst 10 assignments:")
         for i, record in enumerate(without_ids[:10]):
             new_id = generate_xmech_id("MediaIngredientMech", next_id + i)
-            identifier = record.get("ontology_id", "N/A")
+            identifier = (record.get("identifier") or record.get("ontology_id", "N/A"))
             preferred_term = record.get("preferred_term", "N/A")
             print(f"  {new_id} → {identifier} ({preferred_term[:50]})")
 

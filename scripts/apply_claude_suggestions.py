@@ -62,7 +62,7 @@ def apply_suggestion(
     # Find the record
     record = None
     for rec in curator.records:
-        if rec.get("ontology_id") == identifier:
+        if (rec.get("identifier") or rec.get("ontology_id")) == identifier:
             record = rec
             break
 

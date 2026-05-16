@@ -233,8 +233,10 @@ class IngredientCurator:
             ],
         }
 
-        # Update ontology_id field
-        record["ontology_id"] = candidate.ontology_id
+        # Update record's primary key. The schema slot is named `identifier`
+        # (as of 2026-05-16) and carries the same value the nested
+        # `ontology_mapping.ontology_id` now has.
+        record["identifier"] = candidate.ontology_id
         record["mapping_status"] = "MAPPED"
 
         # Record curation event

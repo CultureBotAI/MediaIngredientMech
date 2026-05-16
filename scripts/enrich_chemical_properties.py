@@ -148,7 +148,7 @@ def main(
         for record in candidates[:10]:  # Show first 10
             ontology_mapping = record.get("ontology_mapping", {})
             table.add_row(
-                record.get("ontology_id", "N/A"),
+                (record.get("identifier") or record.get("ontology_id", "N/A")),
                 record.get("preferred_term", "N/A"),
                 ontology_mapping.get("ontology_id", "N/A"),
             )

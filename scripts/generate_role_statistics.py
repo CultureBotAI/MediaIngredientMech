@@ -65,7 +65,7 @@ def analyze_ingredients(curator: IngredientCurator) -> dict:
         # Collect ingredient info for top list
         ingredient_info = {
             "id": record.get("id"),
-            "ontology_id": record.get("ontology_id"),
+            "ontology_id": (record.get("identifier") or record.get("ontology_id")),
             "preferred_term": record.get("preferred_term"),
             "occurrence_count": record.get("occurrence_statistics", {}).get(
                 "total_occurrences", 0

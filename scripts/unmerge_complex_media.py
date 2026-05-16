@@ -123,7 +123,7 @@ def unmerge_record(
             notes=f"Unmerged from {representative_name}. Complex media should not be mapped to pure chemical CHEBI terms."
         )
         merged_record["ontology_mapping"] = None
-        merged_record["ontology_id"] = f"UNMAPPED_{merged_id.split(':')[-1]}"
+        merged_record["identifier"] = f"UNMAPPED_{merged_id.split(':')[-1]}"
     else:
         curator.change_status(
             merged_record,
