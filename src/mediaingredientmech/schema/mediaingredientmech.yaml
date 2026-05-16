@@ -218,6 +218,13 @@ classes:
       molecular_weight:
         range: float
         description: Molecular weight in g/mol
+      pubchem_cid:
+        range: integer
+        description: >-
+          PubChem Compound IDentifier (CID), stored as a positive integer.
+          Populated by the PubChem enrichment path in
+          `enrich_chemical_properties.py` when chemical properties are
+          sourced from PubChem rather than ChEBI.
       data_source:
         description: Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)
       retrieval_date:
@@ -238,6 +245,13 @@ classes:
         description: Confidence score (0.0-1.0)
       notes:
         description: Additional context
+      cas_rn:
+        description: >-
+          CAS Registry Number that supports this evidence row. Set by the
+          CAS-RN cross-reference resolver (`evidence_type: CAS_RN_CROSS_REFERENCE`)
+          when an ontology term was matched via its CAS-RN rather than label
+          or synonym. Same format as `ChemicalProperties.cas_rn`.
+        pattern: "^\\d+-\\d+-\\d+$"
       pmid:
         description: PubMed ID for MEDLINE citations (e.g., 12345678)
         pattern: "^[0-9]+$"
