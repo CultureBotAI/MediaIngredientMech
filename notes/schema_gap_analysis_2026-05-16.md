@@ -59,3 +59,23 @@ affected.
   separate `grep "ontology_label: null"` pass before fixing #1, because
   those will become visible once the slot-name issue stops dominating the
   error output.
+
+## Resolution (2026-05-16, same day)
+
+Every numbered class above was remediated immediately, one PR per gap:
+
+| # | PR  | Class                                            | Errors |
+|---|-----|--------------------------------------------------|-------:|
+|   | —   | *baseline*                                       |  6653  |
+| 4,6 | #17 | Add `pubchem_cid` + `cas_rn` slots             |  6424  |
+| 2,5 | #18 | Broaden CURIE patterns (`OntologyMapping.ontology_id` + `kg_microbe_node_id`) | 6077 |
+| 1   | #19 | Rename `IngredientRecord.ontology_id` → `identifier` + 17 broken readers | 1541 |
+| 3a  | #20 | Generators emit timezone-aware timestamps (code) |  1541  |
+| 3b  | #21 | Retrofit 3082 existing naive timestamps (data)   | **0**  |
+
+`linkml-validate` against both curated collections is now clean. The
+`ontology_label: null` follow-up flagged in "Not addressed yet" above did
+not surface in the post-#19 histogram — either the count is zero or those
+errors fall under a different class than this analysis split out. Worth
+re-running the `/schema-gap-analysis` skill periodically (e.g. before
+SSSOM republishes) to catch new drift.
