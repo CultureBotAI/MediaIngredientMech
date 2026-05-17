@@ -9,13 +9,13 @@ version: 2.0.0
 
 # schema-gap-analysis — MIM
 
-The canonical, cross-Mech version of this skill now lives at:
+The canonical, cross-Mech version of this skill now lives in the claw repo:
 
-```
-../culturebotai-claw/.claude/skills/schema-gap-analysis/skill.md
-```
+- **GitHub**: https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/skill.md
+- **Local path** (when the Mech repos are checked out as siblings):
+  `../culturebotai-claw/.claude/skills/schema-gap-analysis/skill.md`
 
-It generalises the methodology (linkml-validate as ground truth, three-axis classification, error histograms, process-drift greps) so it can run against any Mech repo. Use that version when invoking the skill.
+It generalises the methodology (linkml-validate as ground truth, three-axis classification, error histograms, process-drift greps) so it can run against any Mech repo. Use that version when invoking the skill — the Claude Code skill registry resolves to it automatically.
 
 ## MIM-specific config (substitute into the cross-Mech procedure)
 
