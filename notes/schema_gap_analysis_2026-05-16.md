@@ -14,14 +14,14 @@ turned up this session so we don't rediscover the same gaps next time.
 
 | # | Error | Axis | Records affected | Fix sketch |
 |---|---|---|---:|---|
-| 1 | `'ontology_id' is a required property` and `Additional properties are not allowed ('identifier')` | Schema | 2268 (all) | Alias or rename: data uses `identifier`; schema slot is `ontology_id`. Either add `aliases: [identifier]` on the schema slot OR rename it. See [[identifier_system_dual]] memory for context. |
-| 2 | `does not match '^[A-Z]+:[0-9]+$'` on `ontology_mapping.ontology_id` | Schema | 311 | The custom validator was broadened to `^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._-]*$`. Apply the same broadening to the schema `pattern:` on `OntologyMapping.ontology_id`. |
-| 3 | `is not a 'date-time'` (naive timestamps without offset) | Process | 1537 | `accept_mapping()`, `ingredient_reviewer.py`, several `scripts/*` use `datetime.now()` instead of `datetime.now(timezone.utc)`. Fix the generators; one-shot rewrite of affected records is optional. |
-| 4 | `Additional properties are not allowed ('pubchem_cid')` on `chemical_properties` | Schema | 185 | Add `pubchem_cid` to `ChemicalProperties` (range: string, pattern `^[0-9]+$`). |
+| 1 | `'ontology_id' is a required property` and `Additional properties are not allowed ('identifier')` | Schema | 4536 (2268 of each) | Rename the schema slot: data uses `identifier`; schema slot is `ontology_id`. (Note: LinkML `aliases:` is descriptive metadata only — it does NOT make `linkml-validate` accept an alternate YAML key. Slot rename is the actual fix.) |
+| 2 | `does not match '^[A-Z]+:[0-9]+$'` on `ontology_mapping.ontology_id` | Schema | 316 | The custom validator was broadened to `^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$` (note the `~` — kg-microbe locals like `disodium_phosphate_heptahydrate_~28002_m_stock~29` use it). Apply the same broadening to the schema `pattern:` on `OntologyMapping.ontology_id`. |
+| 3 | `is not a 'date-time'` (naive timestamps without offset) | Process | 1541 | `accept_mapping()`, `ingredient_reviewer.py`, several `scripts/*` use `datetime.now()` instead of `datetime.now(timezone.utc)`. Fix the generators; one-shot rewrite of affected records is optional. |
+| 4 | `Additional properties are not allowed ('pubchem_cid')` on `chemical_properties` | Schema | 185 | Add `pubchem_cid` to `ChemicalProperties` as `range: integer` + `minimum_value: 1` — PubChem CIDs are positive ints in the data; a string + pattern would fail every value because LinkML patterns apply only to strings. |
 | 5 | `does not match '^CHEBI:[0-9]+$'` on `kg_microbe_node_id` | Schema | 31 | Pattern too narrow; current data has non-CHEBI prefixes here too. Broaden similarly to (2). |
-| 6 | `Additional properties are not allowed ('cas_rn')` on `ontology_mapping.evidence[]` | Schema | 44 | Add `cas_rn` to `MappingEvidence` (range: string, pattern `^\d+-\d+-\d+$`) — already defined on `ChemicalProperties`; promote to a reusable slot. |
+| 6 | `Additional properties are not allowed ('cas_rn')` on `ontology_mapping.evidence[]` | Schema | 44 | Add `cas_rn` to `MappingEvidence` (range: string, pattern `^\d+-\d+-\d+$`) — already defined on `ChemicalProperties`. |
 
-Total error count: ~5848 across 2275 files (every issue above is systematic — none are isolated record bugs).
+Total error count: 6653 across 2275 files (every issue above is systematic — none are isolated record bugs). Item 1 contributes two errors per record (missing required slot + unexpected key) which is why its row total is 4536, and the grand total is the sum of all six rows.
 
 ## Process-axis hot spots
 
@@ -39,14 +39,21 @@ The collection-level `generation_date` written by `scripts/aggregate_records.py`
 is already timezone-aware; only record-level / event-level timestamps are
 affected.
 
-## Suggested remediation order
+## Suggested remediation order (historical — superseded by Resolution below)
+
+> **Note (2026-05-16):** an earlier version of step 2 below recommended
+> `aliases: [identifier]` on the slot rather than a rename. That is wrong:
+> LinkML aliases are descriptive metadata and do not change which YAML
+> keys validate. The Resolution section that follows used a slot rename
+> instead. The original text is left in place for traceability.
 
 1. **Schema first (no migration risk)**: items 2, 4, 5, 6 — broaden patterns
    and add missing slots. After this, the only remaining errors are #1 and #3.
-2. **Identifier slot alias (item 1)**: add `aliases: [identifier]` to the
-   `IngredientRecord.ontology_id` slot rather than renaming, so old callers
-   keep working. Re-run validation: residual errors should be zero except
-   the timestamps.
+2. **Identifier slot alias (item 1)**: ~~add `aliases: [identifier]` to the
+   `IngredientRecord.ontology_id` slot rather than renaming~~ — superseded.
+   The actual fix is to rename the schema slot from `ontology_id` to
+   `identifier` (and update every reader / writer in the codebase). See
+   PR #19.
 3. **Generator fixes (item 3)**: switch `datetime.now()` → `datetime.now(timezone.utc)`
    in every site grep finds. Optional follow-up: a one-shot pass over
    `data/curated/` + `data/ingredients/` to retrofit the existing naive

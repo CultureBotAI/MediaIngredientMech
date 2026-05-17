@@ -127,26 +127,27 @@ Signs:
    ```
 
 4. **Histogram the errors** so you see the distinct issue classes, not the
-   thousands of per-record repetitions:
+   thousands of per-record repetitions. Run against **both** canonical
+   collections — a gap that lives only in `unmapped_ingredients.yaml` is
+   silently dropped if only `mapped_ingredients.yaml` is histogrammed:
 
    ```bash
-   .venv/bin/linkml-validate -s <schema> -C IngredientCollection \
-       data/curated/mapped_ingredients.yaml 2>&1 \
+   SCHEMA=src/mediaingredientmech/schema/mediaingredientmech.yaml
+   COLS="data/curated/mapped_ingredients.yaml data/curated/unmapped_ingredients.yaml"
+
+   .venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
      | grep -oE "Additional properties are not allowed \('[^']+'" \
      | sort | uniq -c | sort -rn
 
-   .venv/bin/linkml-validate -s <schema> -C IngredientCollection \
-       data/curated/mapped_ingredients.yaml 2>&1 \
+   .venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
      | grep -oE "does not match '[^']+'" \
      | sort | uniq -c | sort -rn
 
-   .venv/bin/linkml-validate -s <schema> -C IngredientCollection \
-       data/curated/mapped_ingredients.yaml 2>&1 \
+   .venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
      | grep -oE "is not a '[^']+'" \
      | sort | uniq -c | sort -rn
 
-   .venv/bin/linkml-validate -s <schema> -C IngredientCollection \
-       data/curated/mapped_ingredients.yaml 2>&1 \
+   .venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
      | grep -c "is a required property"
    ```
 
@@ -158,10 +159,13 @@ Signs:
    most common patterns without producing noise:
 
    ```bash
-   # Naive datetimes (no timezone) — every place a `datetime.now()`
-   # appears without `timezone.utc`. High-signal: today's run finds 18+
-   # call sites and every one is real.
-   grep -rn "datetime.now()" src/ scripts/ --include='*.py' \
+   # Naive datetimes (no timezone) — every `datetime.now()` that's
+   # NOT for a `.strftime(...)` filename/display call (which doesn't
+   # end up in validated YAML). The `\.isoformat\b` filter restricts
+   # to writes that produce ISO-8601 strings (the schema's `date-time`
+   # format).
+   grep -rnE 'datetime\.now\(\)\.isoformat\b' \
+     src/ scripts/ --include='*.py' \
      | grep -v "timezone"
 
    # Saves that drop collection metadata: yaml.dump receives a literal
@@ -171,23 +175,25 @@ Signs:
    grep -rnE 'yaml\.dump\(\s*\{\s*["\047]ingredients["\047]\s*:' \
      src/ scripts/ --include='*.py'
 
-   # Direct writes to a canonical curated collection file that skip
-   # IngredientCurator. Should also be empty in current code — every
-   # collection-touching script must round-trip through the curator so
-   # the top-level metadata is recomputed.
-   grep -rln 'mapped_ingredients\.yaml\|unmapped_ingredients\.yaml' \
-     scripts/ --include='*.py' \
-     | while read f; do
-         grep -q 'IngredientCurator' "$f" || echo "$f"
-       done
+   # Direct WRITES to a canonical curated collection file that skip
+   # IngredientCurator. Match `open(..., "w"/"a")` literally so we
+   # don't false-positive on scripts that merely *mention* the
+   # filename (which the earlier "any mention" version of this grep
+   # did — analyze/categorize/prepare-style scripts that read the
+   # file or print its name kept showing up).
+   grep -rnE 'open\([^)]*(mapped|unmapped)_ingredients\.yaml[^)]*["\047][wa][bt]?["\047]' \
+     scripts/ src/ --include='*.py'
    ```
 
    The earlier version of this step used a single noisy
    `grep yaml.dump | grep -v default_flow_style` that surfaced six
    call sites of which only one had ever been the real bug. The three
-   greps above are calibrated against the actual fix history: the
-   datetime grep is high-recall on a known real pattern, and the latter
-   two are precision filters that should stay empty.
+   greps above are calibrated against the actual fix history of this
+   repo. Even so, the first one (naive `datetime.now()`) can
+   occasionally surface a filename/display call site that doesn't go
+   to validated YAML (e.g. `report_generator.py` writing
+   `"generated_at"` into a top-level JSON report) — read the line
+   before classifying it as a process-axis bug.
 
 7. **Decide and apply fixes.** Usually a mix: rename/alias the canonical
    slot on the schema, broaden patterns, add missing slots, fix the
@@ -202,7 +208,7 @@ Signs:
 
 | Error fragment | Likely class | Typical fix |
 |---|---|---|
-| `'X' is a required property` for thousands of records | Schema axis: slot is named wrong | Add `aliases:` to the canonical slot, or rename it to match data |
+| `'X' is a required property` for thousands of records | Schema axis: slot is named wrong | Rename the slot in the schema to match what the data carries (note: LinkML `aliases:` is descriptive metadata only — it does NOT make `linkml-validate` accept an alternate YAML key; rename is the actual fix). See PR #19 for an example. |
 | `Additional properties are not allowed ('X' was unexpected)` for thousands | Schema axis: slot missing from the schema entirely | Add the slot to the appropriate class |
 | `Additional properties are not allowed ('X' was unexpected)` for a handful | Instance axis (typo) or process axis (one tool emits a wrong key) | Migrate records / fix generator |
 | `does not match '<regex>'` | Schema axis if the regex hasn't caught up to legitimate values; instance axis if a single record is malformed | Broaden the schema pattern or correct the record |
@@ -232,5 +238,5 @@ Signs:
 - Custom validator (intentionally tolerant): `src/mediaingredientmech/validation/schema_validator.py`.
 - Schema: `src/mediaingredientmech/schema/mediaingredientmech.yaml`.
 - Generators that affect curated YAML shape: `src/mediaingredientmech/curation/ingredient_curator.py`, `scripts/aggregate_records.py`, every `scripts/enrich_*`, `scripts/apply_*`, `scripts/auto_correct.py`.
-- Memory of past validator alignment work: `~/.claude/projects/.../memory/validator_behavior.md`.
-- Memory of the primary-key history: `~/.claude/projects/.../memory/identifier_correction.md`.
+- Most recent end-to-end remediation pass: `notes/schema_gap_analysis_2026-05-16.md` (the six gap classes the skill turned up, plus the PR that closed each).
+- Primary-key history is described inline in the schema (`IngredientRecord.identifier`'s `description:` block) — the `ontology_id` → `identifier` rename happened in PR #19.
