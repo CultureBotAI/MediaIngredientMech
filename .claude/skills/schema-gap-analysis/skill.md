@@ -1,35 +1,144 @@
 ---
 name: schema-gap-analysis
-description: Find gaps between MIM's LinkML schema, its YAML instances, and the code that generates them. Canonical version now lives in the claw repo and applies cross-Mech; this MIM-side stub records the MIM-specific config row + history.
+description: Find gaps between MIM's LinkML schema, its YAML instances, and the code that generates them. Uses linkml-validate as ground truth and reports along three axes (schema / instances / process). Copy-paste runnable.
 category: quality
 requires_database: false
 requires_internet: false
-version: 2.0.0
+version: 2.1.0
 ---
 
-# schema-gap-analysis — MIM
+# Schema gap analysis (MIM)
 
-The canonical, cross-Mech version of this skill now lives in the claw repo:
+The conceptual framework — why three axes (schema / instances / process), what each error class signals, common anti-patterns — lives once at the cross-Mech version in claw:
+https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/skill.md
 
-- **GitHub**: https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/skill.md
-- **Local path** (when the Mech repos are checked out as siblings):
-  `../culturebotai-claw/.claude/skills/schema-gap-analysis/skill.md`
+This file is the MIM-specific operational version: every command below is ready to run as-is, with MIM paths baked in.
 
-It generalises the methodology (linkml-validate as ground truth, three-axis classification, error histograms, process-drift greps) so it can run against any Mech repo. Use that version when invoking the skill — the Claude Code skill registry resolves to it automatically.
+## Setup
 
-## MIM-specific config (substitute into the cross-Mech procedure)
+LinkML lives in `.venv/`. Two known bumps:
 
-| Field | Value |
-|---|---|
-| `SCHEMA` | `src/mediaingredientmech/schema/mediaingredientmech.yaml` |
-| Tree-root class | `IngredientCollection` (curated/ files) / `IngredientRecord` (per-file) |
-| Canonical collections | `data/curated/mapped_ingredients.yaml`, `data/curated/unmapped_ingredients.yaml` |
-| Per-record YAMLs | `data/ingredients/mapped/*.yaml`, `data/ingredients/unmapped/*.yaml` |
-| Custom (tolerant) validator | `src/mediaingredientmech/validation/schema_validator.py` |
-| Curator/save module | `src/mediaingredientmech/curation/ingredient_curator.py` |
+```bash
+# (1) pip missing in .venv — bootstrap if needed
+.venv/bin/python -m ensurepip
 
-## MIM-specific reference
+# (2) linkml-validate aborts with `AttributeError: Format has no attribute 'JSON'`
+# — pin linkml-runtime to a 1.9.x release (linkml 1.9.x imports Format.JSON
+# at module load and runtime 1.10 dropped it).
+.venv/bin/python -m pip install "linkml-runtime>=1.9,<1.10"
+.venv/bin/linkml-validate --help  # smoke test
+```
 
-- **Last end-to-end pass**: `notes/schema_gap_analysis_2026-05-16.md` — six gap classes the skill surfaced on its first MIM run, plus the PR that closed each.
-- **Primary-key history**: described inline in the schema (`IngredientRecord.identifier`'s `description:` block). The `ontology_id` → `identifier` rename happened in PR #19.
-- **Process-drift sites worth grepping for changes**: `src/mediaingredientmech/curation/ingredient_curator.py`, `scripts/aggregate_records.py`, every `scripts/enrich_*`, `scripts/apply_*`, `scripts/auto_correct.py`.
+## Procedure
+
+### 1. Validate canonical collection files
+
+```bash
+.venv/bin/linkml-validate \
+  -s src/mediaingredientmech/schema/mediaingredientmech.yaml \
+  -C IngredientCollection \
+  data/curated/mapped_ingredients.yaml \
+  data/curated/unmapped_ingredients.yaml
+```
+
+### 2. Validate one individual per-record YAML
+
+```bash
+SAMPLE=$(ls data/ingredients/mapped/*.yaml | head -1)
+.venv/bin/linkml-validate \
+  -s src/mediaingredientmech/schema/mediaingredientmech.yaml \
+  -C IngredientRecord "$SAMPLE"
+```
+
+### 3. Validate the per-record corpus
+
+```bash
+find data/ingredients -name "*.yaml" -print0 \
+  | xargs -0 .venv/bin/linkml-validate \
+      -s src/mediaingredientmech/schema/mediaingredientmech.yaml \
+      -C IngredientRecord 2>&1 | tee /tmp/mim_validate.out > /dev/null
+grep -c "^\[ERROR\]" /tmp/mim_validate.out  # target: 0
+```
+
+### 4. Histogram the errors
+
+Run against both collections **and** per-record output combined — a gap that lives only in `unmapped_ingredients.yaml` is silently dropped if only mapped is histogrammed.
+
+```bash
+SCHEMA=src/mediaingredientmech/schema/mediaingredientmech.yaml
+COLS="data/curated/mapped_ingredients.yaml data/curated/unmapped_ingredients.yaml"
+
+.venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
+  | grep -oE "Additional properties are not allowed \('[^']+'" \
+  | sort | uniq -c | sort -rn
+
+.venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
+  | grep -oE "'[^']+' is a required property" \
+  | sort | uniq -c | sort -rn
+
+.venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
+  | grep -oE "does not match '[^']+'" \
+  | sort | uniq -c | sort -rn
+
+.venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
+  | grep -oE "is not a '[^']+'" \
+  | sort | uniq -c | sort -rn
+```
+
+### 5. Cross-check generator drift (Axis 3)
+
+Three calibrated greps for MIM:
+
+```bash
+# Naive datetimes — every `datetime.now()` that produces ISO-8601 output.
+grep -rnE 'datetime\.now\(\)\.isoformat\b' \
+  src/ scripts/ --include='*.py' \
+  | grep -v "timezone"
+
+# Saves that drop collection metadata: yaml.dump receives a literal
+# one-key {"ingredients": ...} dict, which throws away
+# generation_date / total_count / mapped_count / unmapped_count.
+# Should be empty in current code.
+grep -rnE 'yaml\.dump\(\s*\{\s*["\047]ingredients["\047]\s*:' \
+  src/ scripts/ --include='*.py'
+
+# Direct WRITES to a canonical curated collection file that skip
+# IngredientCurator. Match `open(..., "w"/"a")` literally so we
+# don't false-positive on scripts that merely *mention* the filename.
+grep -rnE 'open\([^)]*(mapped|unmapped)_ingredients\.yaml[^)]*["\047][wa][bt]?["\047]' \
+  scripts/ src/ --include='*.py'
+```
+
+### 6. Decide and apply fixes
+
+For each distinct error class, pick the axis and fix accordingly:
+
+- **Schema axis** (hundreds-to-thousands of records fail same way): edit `src/mediaingredientmech/schema/mediaingredientmech.yaml`.
+- **Instance axis** (small number, looks like typos): round-trip through `src/mediaingredientmech/curation/ingredient_curator.py` (`load → save`) so canonical YAML formatting + `generation_date`/`total_count` metadata are recomputed correctly. **Don't `sed`-fix.**
+- **Process axis** (clustered by source tool, same wrong shape): patch the offender in `src/mediaingredientmech/` or `scripts/aggregate_*.py`, `scripts/enrich_*.py`, `scripts/apply_*.py`, `scripts/auto_correct.py`. Then optionally rewrite affected records.
+
+### 7. Re-validate
+
+```bash
+.venv/bin/linkml-validate \
+  -s src/mediaingredientmech/schema/mediaingredientmech.yaml \
+  -C IngredientCollection \
+  data/curated/mapped_ingredients.yaml \
+  data/curated/unmapped_ingredients.yaml
+# target: "No issues found"
+```
+
+## MIM-specific gap classes (history)
+
+| Error | Class | Resolution | Reference |
+|---|---|---|---|
+| `'ontology_id' is a required property` (×thousands) | Schema axis: slot renamed | Renamed `ontology_id` → `identifier`; LinkML `aliases:` is descriptive only, doesn't actually accept alternate YAML keys | PR #19 |
+| Six other classes from the first end-to-end pass | mixed | See `notes/schema_gap_analysis_2026-05-16.md` for the per-class breakdown + closing PRs | 2026-05-16 audit |
+
+## Pointers
+
+- Custom (tolerant) validator the skill is calibrated against: `src/mediaingredientmech/validation/schema_validator.py`
+- Schema: `src/mediaingredientmech/schema/mediaingredientmech.yaml`
+- Curator (use for instance-axis fixes): `src/mediaingredientmech/curation/ingredient_curator.py`
+- Last full audit notes: `notes/schema_gap_analysis_2026-05-16.md`
+- Cross-Mech framework + new-Mech bootstrap template: [claw/.claude/skills/schema-gap-analysis](https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/skill.md)
