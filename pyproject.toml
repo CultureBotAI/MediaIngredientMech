@@ -27,8 +27,12 @@ classifiers = [
 ]
 
 dependencies = [
-    "linkml>=1.7.0",
-    "linkml-runtime>=1.7.0",
+    "linkml>=1.7.0,<1.10",
+    # Pinned <1.10: linkml 1.9.x imports `Format.JSON` at module load,
+    # and linkml-runtime 1.10 dropped that enum value, breaking
+    # `linkml-validate` startup with `AttributeError: Format has no attribute 'JSON'`.
+    # Lift this cap when bumping linkml past 1.9.x.
+    "linkml-runtime>=1.7.0,<1.10",
     "oaklib>=0.5.0",
     "pyyaml>=6.0",
     "click>=8.1.0",

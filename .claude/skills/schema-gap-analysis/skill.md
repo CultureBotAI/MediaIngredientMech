@@ -16,25 +16,20 @@ This file is the MIM-specific operational version: every command below is ready 
 
 ## Setup
 
-LinkML lives in `.venv/`. Two known bumps:
+MIM's `justfile` (`just validate-schema` / `just validate-all`) calls `linkml-validate` directly from `PATH`, so the commands below use the same bare invocation. If your local install is in `.venv/`, substitute `.venv/bin/linkml-validate` everywhere (or run `uv run linkml-validate ...`).
 
 ```bash
-# (1) pip missing in .venv — bootstrap if needed
-.venv/bin/python -m ensurepip
-
-# (2) linkml-validate aborts with `AttributeError: Format has no attribute 'JSON'`
-# — pin linkml-runtime to a 1.9.x release (linkml 1.9.x imports Format.JSON
-# at module load and runtime 1.10 dropped it).
-.venv/bin/python -m pip install "linkml-runtime>=1.9,<1.10"
-.venv/bin/linkml-validate --help  # smoke test
+linkml-validate --help    # smoke test
 ```
+
+If this fails with `command not found`, run `uv sync` (or activate the venv) — MIM's `pyproject.toml` pins `linkml-runtime>=1.7.0,<1.10` so a fresh `uv sync` produces a working `linkml-validate` (the `<1.10` cap exists because linkml-runtime 1.10 removed `Format.JSON`, which linkml 1.9.x imports at module load; bump the cap when bumping `linkml` past 1.9.x).
 
 ## Procedure
 
 ### 1. Validate canonical collection files
 
 ```bash
-.venv/bin/linkml-validate \
+linkml-validate \
   -s src/mediaingredientmech/schema/mediaingredientmech.yaml \
   -C IngredientCollection \
   data/curated/mapped_ingredients.yaml \
@@ -45,7 +40,7 @@ LinkML lives in `.venv/`. Two known bumps:
 
 ```bash
 SAMPLE=$(ls data/ingredients/mapped/*.yaml | head -1)
-.venv/bin/linkml-validate \
+linkml-validate \
   -s src/mediaingredientmech/schema/mediaingredientmech.yaml \
   -C IngredientRecord "$SAMPLE"
 ```
@@ -54,7 +49,7 @@ SAMPLE=$(ls data/ingredients/mapped/*.yaml | head -1)
 
 ```bash
 find data/ingredients -name "*.yaml" -print0 \
-  | xargs -0 .venv/bin/linkml-validate \
+  | xargs -0 linkml-validate \
       -s src/mediaingredientmech/schema/mediaingredientmech.yaml \
       -C IngredientRecord 2>&1 | tee /tmp/mim_validate.out > /dev/null
 grep -c "^\[ERROR\]" /tmp/mim_validate.out  # target: 0
@@ -62,26 +57,30 @@ grep -c "^\[ERROR\]" /tmp/mim_validate.out  # target: 0
 
 ### 4. Histogram the errors
 
-Run against both collections **and** per-record output combined — a gap that lives only in `unmapped_ingredients.yaml` is silently dropped if only mapped is histogrammed.
+Histogram both the collection run **and** the per-record run from step 3 (`/tmp/mim_validate.out`). A gap that lives only in `unmapped_ingredients.yaml`, or only in the per-record corpus, is silently dropped if only one of the two is histogrammed.
 
 ```bash
 SCHEMA=src/mediaingredientmech/schema/mediaingredientmech.yaml
 COLS="data/curated/mapped_ingredients.yaml data/curated/unmapped_ingredients.yaml"
 
-.venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
-  | grep -oE "Additional properties are not allowed \('[^']+'" \
+# Re-run the collection validation, capturing to /tmp/mim_collections.out
+linkml-validate -s $SCHEMA -C IngredientCollection $COLS \
+  > /tmp/mim_collections.out 2>&1
+
+# Combine collection + per-record output (per-record already captured in step 3
+# at /tmp/mim_validate.out; re-run step 3 first if it's missing/stale).
+cat /tmp/mim_collections.out /tmp/mim_validate.out > /tmp/mim_all.out
+
+grep -oE "Additional properties are not allowed \('[^']+'" /tmp/mim_all.out \
   | sort | uniq -c | sort -rn
 
-.venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
-  | grep -oE "'[^']+' is a required property" \
+grep -oE "'[^']+' is a required property" /tmp/mim_all.out \
   | sort | uniq -c | sort -rn
 
-.venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
-  | grep -oE "does not match '[^']+'" \
+grep -oE "does not match '[^']+'" /tmp/mim_all.out \
   | sort | uniq -c | sort -rn
 
-.venv/bin/linkml-validate -s $SCHEMA -C IngredientCollection $COLS 2>&1 \
-  | grep -oE "is not a '[^']+'" \
+grep -oE "is not a '[^']+'" /tmp/mim_all.out \
   | sort | uniq -c | sort -rn
 ```
 
@@ -120,7 +119,7 @@ For each distinct error class, pick the axis and fix accordingly:
 ### 7. Re-validate
 
 ```bash
-.venv/bin/linkml-validate \
+linkml-validate \
   -s src/mediaingredientmech/schema/mediaingredientmech.yaml \
   -C IngredientCollection \
   data/curated/mapped_ingredients.yaml \
