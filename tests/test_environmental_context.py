@@ -22,12 +22,25 @@ MAPPED_SCHEMA_PATH = (
     / "schema"
     / "mapped_ingredients_schema.yaml"
 )
+CANONICAL_SCHEMA_PATH = (
+    Path(__file__).parent.parent
+    / "src"
+    / "mediaingredientmech"
+    / "schema"
+    / "mediaingredientmech.yaml"
+)
 TEST_DATA_DIR = Path(__file__).parent / "data" / "test_environmental_context"
 
 
 def load_mapped_schema():
     """Load the mapped_ingredients schema YAML."""
     with open(MAPPED_SCHEMA_PATH, encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def load_canonical_schema():
+    """Load the canonical mediaingredientmech schema YAML."""
+    with open(CANONICAL_SCHEMA_PATH, encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
@@ -338,3 +351,66 @@ class TestYamlDataFiles:
                     assert pattern.match(term), (
                         f"Invalid ENVO term '{term}' in {yaml_file.name}"
                     )
+
+
+class TestCanonicalSchemaEnvironmentalContext:
+    """Test that the canonical mediaingredientmech.yaml schema (IngredientRecord)
+    carries an equivalent environmental_context definition to the legacy
+    mapped_ingredients_schema.yaml (MappedIngredient).
+
+    The two schemas must stay in sync so cross-repo tooling can treat both
+    instance shapes interchangeably.
+    """
+
+    def setup_method(self):
+        self.schema = load_canonical_schema()
+        self.classes = self.schema["classes"]
+        self.enums = self.schema["enums"]
+
+    def test_envo_prefix_defined(self):
+        assert self.schema["prefixes"]["ENVO"] == "http://purl.obolibrary.org/obo/ENVO_"
+
+    def test_ingredient_record_has_environmental_context(self):
+        attrs = self.classes["IngredientRecord"]["attributes"]
+        assert "environmental_context" in attrs
+        assert attrs["environmental_context"]["required"] is False
+        assert attrs["environmental_context"]["multivalued"] is True
+        assert attrs["environmental_context"]["range"] == "EnvironmentContext"
+        assert attrs["environmental_context"]["inlined_as_list"] is True
+
+    def test_environment_context_class_exists(self):
+        assert "EnvironmentContext" in self.classes
+        attrs = self.classes["EnvironmentContext"]["attributes"]
+        assert attrs["environment_term"]["required"] is True
+        assert attrs["environment_term"]["pattern"] == "^ENVO:\\d{7,8}$"
+        assert attrs["relevance"]["required"] is True
+        assert attrs["relevance"]["range"] == "EnvironmentRelevanceEnum"
+        assert attrs["environment_label"]["required"] is False
+        assert attrs["notes"]["required"] is False
+
+    def test_environment_relevance_enum_matches_legacy(self):
+        canonical_values = set(
+            self.enums["EnvironmentRelevanceEnum"]["permissible_values"].keys()
+        )
+        legacy_values = set(
+            load_mapped_schema()["enums"]["EnvironmentRelevanceEnum"][
+                "permissible_values"
+            ].keys()
+        )
+        assert canonical_values == legacy_values, (
+            "Canonical and legacy EnvironmentRelevanceEnum must stay in sync"
+        )
+
+    def test_environment_context_class_matches_legacy_shape(self):
+        legacy_attrs = load_mapped_schema()["classes"]["EnvironmentContext"][
+            "attributes"
+        ]
+        canonical_attrs = self.classes["EnvironmentContext"]["attributes"]
+        # Same attribute names with same required/range/pattern semantics.
+        assert set(legacy_attrs.keys()) == set(canonical_attrs.keys())
+        for name in legacy_attrs:
+            for key in ("required", "range", "pattern"):
+                if key in legacy_attrs[name]:
+                    assert legacy_attrs[name].get(key) == canonical_attrs[name].get(
+                        key
+                    ), f"EnvironmentContext.{name}.{key} differs between schemas"

@@ -35,7 +35,11 @@ def load_ingredients(yaml_path: Path) -> dict:
 
 
 def save_ingredients(yaml_path: Path, data: dict):
-    """Save ingredients to YAML file."""
+    """Save ingredients to YAML file.
+
+    Matches IngredientCurator.save() yaml.dump settings (default width=80)
+    so enrichment runs don't reformat unrelated lines.
+    """
     with open(yaml_path, "w") as f:
         yaml.dump(
             data,
@@ -43,7 +47,6 @@ def save_ingredients(yaml_path: Path, data: dict):
             default_flow_style=False,
             sort_keys=False,
             allow_unicode=True,
-            width=120,
         )
 
 

@@ -135,10 +135,11 @@ class ChemicalPropertiesClient:
             ChemicalProperties with formula and molecular weight if available.
         """
         try:
-            # Construct OLS v4 API URL
-            encoded_iri = quote(
-                f"http://purl.obolibrary.org/obo/CHEBI_{chebi_id}", safe=""
-            )
+            # OLS4 requires the IRI to be double-URL-encoded so that the
+            # server's path-decoding step leaves a still-encoded IRI for the
+            # downstream lookup. Single-encoding yields 400 from the API.
+            iri = f"http://purl.obolibrary.org/obo/CHEBI_{chebi_id}"
+            encoded_iri = quote(quote(iri, safe=""), safe="")
             url = f"{CHEBI_OLS_API}/{encoded_iri}"
 
             # Rate limiting
