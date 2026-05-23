@@ -107,7 +107,7 @@ def enrich_role_citation(
     new_evidence = {
         "reference_text": f"CultureMech database ({occurrence_count} occurrences as '{role_text}')",
         "reference_type": "DATABASE_ENTRY",
-        "url": "https://github.com/KG-Hub/CultureMech",
+        "url": "https://github.com/CultureBotAI/CultureMech",
         "excerpt": excerpt,
         "curator_note": curator_note,
     }

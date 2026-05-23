@@ -4,7 +4,7 @@ LLM-assisted curation system for media ingredient ontology mappings.
 
 ## Overview
 
-MediaIngredientMech provides a structured workflow for curating media ingredient ontology mappings with full audit trails. It manages 995 mapped and 136 unmapped ingredients aggregated from 10,657 media recipes in [CultureMech](https://github.com/KG-Hub/CultureMech).
+MediaIngredientMech provides a structured workflow for curating media ingredient ontology mappings with full audit trails. It manages 995 mapped and 136 unmapped ingredients aggregated from 10,657 media recipes in [CultureMech](https://github.com/CultureBotAI/CultureMech).
 
 **Key Features:**
 - Ingredient-centric data model with LinkML schemas

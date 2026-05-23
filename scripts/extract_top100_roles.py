@@ -146,7 +146,7 @@ def extract_roles_for_top100(
                     confidence=confidence,
                     reference_text=f"CultureMech database ({occurrence_count} occurrences in media formulations)",
                     reference_type="DATABASE_ENTRY",
-                    url="https://github.com/KG-Hub/CultureMech",
+                    url="https://github.com/CultureBotAI/CultureMech",
                     excerpt=excerpt,
                     curator_note=curator_note,
                 )

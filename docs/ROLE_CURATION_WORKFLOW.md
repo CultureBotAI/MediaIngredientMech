@@ -102,7 +102,7 @@ media_roles:
     evidence:
       - reference_type: DATABASE_ENTRY
         reference_text: "CultureMech database (6041 occurrences as 'Mineral source')"
-        url: "https://github.com/KG-Hub/CultureMech"
+        url: "https://github.com/CultureBotAI/CultureMech"
         excerpt: "Role: Mineral source; Properties: Defined component, Inorganic compound, Simple component"
         curator_note: "Widespread use in media formulations (6041 occurrences). High confidence based on 'Defined component' property."
 ```
@@ -217,7 +217,7 @@ evidence:
 evidence:
   - reference_text: "CultureMech database (1307 occurrences as 'pH dependent redox indicator')"
     reference_type: DATABASE_ENTRY
-    url: "https://github.com/KG-Hub/CultureMech"
+    url: "https://github.com/CultureBotAI/CultureMech"
     excerpt: "Role: pH dependent redox indicator; Properties: Defined component, Organic compound, Simple component"
     curator_note: "Widespread use in anaerobic media formulations (1307 occurrences). High confidence based on 'Defined component' property."
 ```
@@ -401,7 +401,7 @@ cat data/analysis/role_statistics_report.yaml
 
 ## References
 
-1. **CultureMech Repository**: https://github.com/KG-Hub/CultureMech
+1. **CultureMech Repository**: https://github.com/CultureBotAI/CultureMech
 2. **MediaIngredientMech Schema**: `src/mediaingredientmech/schema/mediaingredientmech.yaml`
 3. **Role Enum Documentation**: Lines 466-502 in schema
 4. **Crossref API**: https://api.crossref.org/ (for DOI resolution)
