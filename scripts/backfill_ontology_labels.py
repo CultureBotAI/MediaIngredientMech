@@ -17,7 +17,6 @@ Usage::
 
 from __future__ import annotations
 
-import sys
 import time
 import urllib.parse
 from pathlib import Path
@@ -50,15 +49,33 @@ ONTOLOGY_TO_OLS = {
 }
 
 
+REGISTRY_PREFIXES = {"kgmicrobe.compound", "kgmicrobe.ingredient", "cas", "registry"}
+
+
 def fetch_label(curie: str, source: str) -> str | None:
     """Fetch the canonical label for an ontology term from OLS4.
 
-    Rejects "junk" labels: obsolete CHEBI terms return the IRI fragment
-    (e.g. "CHEBI_1", "CHEBI_8150") as the label, which is not a real
-    canonical label and would silently overwrite an empty string with
-    garbage. We also skip obsolete terms entirely.
+    Returns ``None`` (and prints a warning) when ``source`` disagrees
+    with the CURIE prefix — these records are the
+    ontology_id/ontology_source mismatch class documented in
+    ``notes/schema_gap_analysis_2026-05-23.md`` and need a per-record
+    fix before any label can be confidently looked up. Routing such a
+    record through OLS4 by either the prefix or the declared source
+    would silently paper over a real data-quality bug.
+
+    Also rejects "junk" labels: obsolete CHEBI terms return the IRI
+    fragment (e.g. "CHEBI_1", "CHEBI_8150") as the label, which is not a
+    real canonical label and would silently overwrite an empty string
+    with garbage. Obsolete terms are skipped outright.
     """
     prefix, _, local = curie.partition(":")
+    if source and prefix.lower() not in REGISTRY_PREFIXES:
+        if prefix.upper() != source.upper():
+            console.print(
+                f"[yellow]skip {curie}: ontology_source={source!r} disagrees with "
+                f"CURIE prefix {prefix!r}; fix the record before backfilling its label[/yellow]"
+            )
+            return None
     iri_base = ONTOLOGY_TO_IRI_BASE.get(prefix.upper())
     ols_ontology = ONTOLOGY_TO_OLS.get(prefix.upper())
     if not iri_base or not ols_ontology:

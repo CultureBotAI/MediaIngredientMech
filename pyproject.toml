@@ -37,6 +37,11 @@ dependencies = [
     "pyyaml>=6.0",
     "click>=8.1.0",
     "rich>=13.0.0",
+    # Used directly by chemical_properties_client, doi_resolver,
+    # ingredient_reviewer, and the OLS4 backfill/download scripts.
+    # Was previously pulled in transitively (e.g. via oaklib); make the
+    # dependency explicit so a fresh `pip install .` doesn't break.
+    "requests>=2.28.0",
 ]
 
 [project.optional-dependencies]
