@@ -158,7 +158,7 @@ class DOIResolver:
 evidence:
   - reference_text: "CultureMech database (1307 occurrences in media formulations)"
     reference_type: DATABASE_ENTRY
-    url: "https://github.com/KG-Hub/CultureMech"
+    url: "https://github.com/CultureBotAI/CultureMech"
     excerpt: "Role: pH dependent redox indicator; Properties: Defined component, Organic compound, Simple component"
     curator_note: "High-confidence assignment. Appears in 1307 media occurrences as 'Redox Indicator'."
 ```
@@ -179,7 +179,7 @@ evidence:
       evidence:
         - reference_type: DATABASE_ENTRY
           reference_text: "CultureMech database (1307 occurrences in media formulations)"
-          url: "https://github.com/KG-Hub/CultureMech"
+          url: "https://github.com/CultureBotAI/CultureMech"
           excerpt: "Role: pH dependent redox indicator; Properties: Defined component, Organic compound, Simple component"
           curator_note: "High-confidence assignment. Appears in 1307 media occurrences as 'Redox Indicator'."
 ```
@@ -212,7 +212,7 @@ evidence:
 evidence:
   - reference_text: "CultureMech database (6041 occurrences as 'Mineral source')"
     reference_type: DATABASE_ENTRY
-    url: "https://github.com/KG-Hub/CultureMech"
+    url: "https://github.com/CultureBotAI/CultureMech"
     excerpt: "Role: Mineral source; Properties: Defined component, Inorganic compound, Simple component"
     curator_note: "Widespread use in media formulations (6041 occurrences). High confidence based on 'Defined component' property."
 ```
