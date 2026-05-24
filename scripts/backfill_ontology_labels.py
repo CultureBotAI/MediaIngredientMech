@@ -28,7 +28,6 @@ import yaml
 from rich.console import Console
 from rich.progress import Progress
 
-from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from mediaingredientmech.validation.write_validated import ValidationFailedError
 

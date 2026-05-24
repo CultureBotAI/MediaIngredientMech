@@ -32,20 +32,21 @@ import csv
 import os
 import re
 import sys
+from collections.abc import Iterable
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
-from typing import Iterable
 
 import yaml
 from linkml.validator import Validator
 from linkml.validator.plugins import JsonschemaValidationPlugin
 from linkml.validator.report import Severity
 
-SCHEMA_PATH = Path("src/mediaingredientmech/schema/mediaingredientmech.yaml")
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+SCHEMA_PATH = _REPO_ROOT / "src" / "mediaingredientmech" / "schema" / "mediaingredientmech.yaml"
 DEFAULT_ROOTS = [
-    Path("data/ingredients/mapped"),
-    Path("data/ingredients/unmapped"),
-    Path("data/curated"),
+    _REPO_ROOT / "data" / "ingredients" / "mapped",
+    _REPO_ROOT / "data" / "ingredients" / "unmapped",
+    _REPO_ROOT / "data" / "curated",
 ]
 
 
@@ -257,13 +258,13 @@ def main() -> int:
         files_with_errors.add(row["file"])
 
     print("", file=sys.stderr)
-    print(f"=== validate-strict summary ===", file=sys.stderr)
+    print("=== validate-strict summary ===", file=sys.stderr)
     print(f"  files scanned:      {len(files)}", file=sys.stderr)
     print(f"  files with ERROR:   {len(files_with_errors)}", file=sys.stderr)
     print(f"  total ERROR rows:   {len(all_rows)}", file=sys.stderr)
     print(f"  TSV:                {args.out}", file=sys.stderr)
     if by_cat:
-        print(f"  by layer/category:", file=sys.stderr)
+        print("  by layer/category:", file=sys.stderr)
         for (layer, cat), count in sorted(by_cat.items(), key=lambda kv: -kv[1]):
             print(f"    {layer:>10s} {cat:24s} {count:>8d}", file=sys.stderr)
 

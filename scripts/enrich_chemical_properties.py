@@ -21,7 +21,6 @@ from rich.table import Table
 _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
-from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.utils.chemical_properties_client import (
     ChemicalPropertiesClient,
 )

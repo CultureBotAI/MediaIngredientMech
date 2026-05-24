@@ -30,7 +30,6 @@ from rich.table import Table
 _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
-from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.utils.chemical_normalizer import (
     categorize_unmapped_name,
@@ -38,7 +37,6 @@ from mediaingredientmech.utils.chemical_normalizer import (
 )
 from mediaingredientmech.utils.ontology_client import OntologyClient
 from mediaingredientmech.utils.yaml_handler import save_yaml
-from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 console = Console()
 

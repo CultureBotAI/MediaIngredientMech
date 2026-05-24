@@ -127,12 +127,16 @@ def write_validated_ingredient(
     )
     if errors:
         raise ValidationFailedError(path, errors)
+    # Match the existing repo convention (yaml_handler.save_yaml +
+    # IngredientCurator) so re-running this helper over an existing file
+    # produces a byte-identical diff instead of churning block / flow style.
     opts = {
+        "default_flow_style": False,
         "sort_keys": False,
         "allow_unicode": True,
         "width": 80,
         **(yaml_kwargs or {}),
     }
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w") as f:
+    with path.open("w", encoding="utf-8") as f:
         yaml.safe_dump(record, f, **opts)

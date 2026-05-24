@@ -71,18 +71,29 @@ def save_yaml(
     """
     path = Path(path)
 
-    if backup and path.exists():
-        _create_backup(path)
-
     if validate:
         # Local import to avoid a circular dependency at module import time.
         from mediaingredientmech.validation.write_validated import (
+            validate_ingredient,
             write_validated_ingredient,
         )
 
+        # Validate before snapshotting so a failing validation neither
+        # touches the destination nor creates a backup of the existing
+        # good copy (which would spam backups/ on repeated bad runs).
+        errors = validate_ingredient(data, target_class=target_class)
+        if errors:
+            from mediaingredientmech.validation.write_validated import (
+                ValidationFailedError,
+            )
+            raise ValidationFailedError(path, errors)
+        if backup and path.exists():
+            _create_backup(path)
         write_validated_ingredient(data, path, target_class=target_class)
         return path
 
+    if backup and path.exists():
+        _create_backup(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
