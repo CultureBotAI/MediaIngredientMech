@@ -3,7 +3,7 @@
 
 Assigns stable, unique identifiers in the format MediaIngredientMech:000001
 to each ingredient record. These IDs are independent of mapping status and
-provide persistent references for KG-Hub integration.
+provide persistent references for knowledge-graph integration.
 
 Usage:
     python scripts/add_mediaingredientmech_ids.py --dry-run
