@@ -14,11 +14,16 @@ Usage:
 import argparse
 import os
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import yaml
+
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 
 # Default paths are relative to the repo root. Override the sibling
@@ -40,13 +45,6 @@ def load_yaml(path: Path) -> dict:
     """Load a YAML file."""
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
-
-
-def save_yaml(data: dict, path: Path):
-    """Save data to YAML file."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
 
 def normalize_term(term: str) -> str:
@@ -131,14 +129,13 @@ def enrich_ingredient(mi_record: dict, cm_ingredient: dict) -> int:
 
     # Add curation event if synonyms were added
     if new_count > 0:
-        event = {
-            "timestamp": TIMESTAMP,
-            "curator": "enrich_with_concentration_notes",
-            "action": "SYNONYMS_ENRICHED",
-            "changes": f"Added {new_count} role annotations from CultureMech concentration_info",
-            "llm_assisted": False,
-        }
-        mi_record.setdefault("curation_history", []).append(event)
+        record_curation_event(
+            mi_record,
+            curator="enrich_with_concentration_notes",
+            action="SYNONYMS_ENRICHED",
+            changes=f"Added {new_count} role annotations from CultureMech concentration_info",
+            timestamp=TIMESTAMP,
+        )
 
     return new_count
 
@@ -235,7 +232,12 @@ def perform_enrichment(dry_run: bool = False) -> dict:
     # Save if not dry-run
     if not dry_run:
         print("\nSaving enriched data...")
-        save_yaml(mi_data, mi_path)
+        try:
+            save_yaml(mi_data, mi_path, validate=True, target_class="IngredientCollection")
+        except ValidationFailedError as exc:
+            print("validation failed: refusing to write", file=sys.stderr)
+            print(exc.summary(), file=sys.stderr)
+            raise
         print(f"✅ Saved to {mi_path}")
     else:
         print("\n[DRY RUN] No files written.")

@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Map the final 2 ingredients from OTHER category."""
 
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 import yaml
+
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 # Paths
 DATA_DIR = Path(__file__).parent.parent / "data" / "curated"
@@ -43,12 +48,6 @@ def load_yaml(path):
         return yaml.safe_load(f)
 
 
-def save_yaml(data, path):
-    """Save YAML file."""
-    with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
-
-
 def map_ingredient(record, mapping):
     """Apply mapping to ingredient record."""
     # Update core fields
@@ -75,13 +74,12 @@ def map_ingredient(record, mapping):
     }
 
     # Add curation event
-    record.setdefault("curation_history", []).append({
-        "timestamp": TIMESTAMP,
-        "curator": "map_final_two",
-        "action": "MAPPED",
-        "changes": f"Mapped to {mapping['ontology_id']} ({mapping['ontology_label']})",
-        "llm_assisted": False,
-    })
+    record_curation_event(
+        record,
+        curator="map_final_two",
+        action="MAPPED",
+        changes=f"Mapped to {mapping['ontology_id']} ({mapping['ontology_label']})",
+    )
 
     return record
 
@@ -143,8 +141,13 @@ def main():
 
     # Save files
     print("Saving updated files...")
-    save_yaml(unmapped_data, UNMAPPED_PATH)
-    save_yaml(mapped_data, MAPPED_PATH)
+    try:
+        save_yaml(unmapped_data, UNMAPPED_PATH, validate=True, target_class="IngredientCollection")
+        save_yaml(mapped_data, MAPPED_PATH, validate=True, target_class="IngredientCollection")
+    except ValidationFailedError as exc:
+        print(f"  ✗ validation failed: refusing to write", file=sys.stderr)
+        print(exc.summary(), file=sys.stderr)
+        raise
     print(f"  ✓ Saved {UNMAPPED_PATH}")
     print(f"  ✓ Saved {MAPPED_PATH}")
     print()

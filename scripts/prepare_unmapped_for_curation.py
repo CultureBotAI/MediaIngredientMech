@@ -14,11 +14,16 @@ Usage:
 
 import os
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import yaml
+
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 
 # Default paths are relative to the repo root (this script lives in
@@ -41,13 +46,6 @@ def load_yaml(path: Path) -> dict:
     """Load a YAML file."""
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
-
-
-def save_yaml(data: dict, path: Path):
-    """Save data to YAML file."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
 
 def normalize_term(term: str) -> str:
@@ -147,17 +145,16 @@ def convert_unmapped_ingredient(cm_unmapped: dict, index: int, category: str) ->
             "total_occurrences": cm_unmapped.get("occurrence_count", 0),
             "media_count": len(cm_unmapped.get("media_occurrences", [])),
         },
-        "curation_history": [
-            {
-                "timestamp": TIMESTAMP,
-                "curator": "prepare_unmapped_for_curation",
-                "action": "IMPORTED",
-                "changes": f"Imported from CultureMech as {category}",
-                "new_status": "UNMAPPED",
-                "llm_assisted": False,
-            }
-        ],
     }
+
+    record_curation_event(
+        record,
+        curator="prepare_unmapped_for_curation",
+        action="IMPORTED",
+        changes=f"Imported from CultureMech as {category}",
+        new_status="UNMAPPED",
+        timestamp=TIMESTAMP,
+    )
 
     # Add category note
     if category == "PLACEHOLDER":
@@ -260,7 +257,11 @@ def prepare_unmapped():
 
     # Save
     output_path = MI_DATA_DIR / "unmapped_ingredients.yaml"
-    save_yaml(collection, output_path)
+    try:
+        save_yaml(collection, output_path, validate=True, target_class="IngredientCollection")
+    except ValidationFailedError as exc:
+        print(exc.summary(), file=sys.stderr)
+        raise
 
     # Report
     print("\n" + "="*80)

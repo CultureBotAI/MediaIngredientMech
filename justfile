@@ -30,6 +30,22 @@ import-data:
 validate-all:
     python scripts/validate_all.py --mode both
 
+# Strict closed-schema validation: in-process LinkML validator with
+# JsonschemaValidationPlugin(closed=True) so unknown fields are flagged.
+# Walks data/ingredients/{mapped,unmapped} and data/curated by default.
+# Emits a categorized TSV (reports/instance_validation_failures.tsv) and
+# exits non-zero if any ERROR rows were produced.
+validate-strict *args:
+    uv run python scripts/validate_strict.py {{args}}
+
+# Inventory YAML-writing scripts under scripts/ and the central curation /
+# utils packages. Records whether each writer validates before writing
+# and whether it appends a curation_history event. Output:
+# reports/pipeline_writers_audit.tsv. Useful for tracking adoption of
+# write_validated_ingredient + record_curation_event over time.
+audit-writers:
+    uv run python scripts/audit_writers.py --out reports/pipeline_writers_audit.tsv
+
 # Verify literature snippets in evidence claims appear verbatim in
 # cached PubMed abstracts. Anti-hallucination gate. See
 # ../culturebotai-claw/.claude/skills/evidence-reference-validation/.
@@ -49,8 +65,9 @@ fetch-pubmed *args:
 qc-sssom:
     python3 scripts/validate_sssom_invariants.py
 
-# Composite QC: schema validation + evidence reference validation + SSSOM invariants.
-qc: validate-all qc-evidence qc-sssom
+# Composite QC: schema validation + strict closed-schema check +
+# evidence reference validation + SSSOM invariants.
+qc: validate-all validate-strict qc-evidence qc-sssom
 
 # Render per-ingredient HTML detail pages from data/ingredients/*.yaml
 # into pages/ingredient/. Idempotent (skips fresh outputs); --force

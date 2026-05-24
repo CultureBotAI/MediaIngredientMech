@@ -17,6 +17,7 @@ Usage::
 
 from __future__ import annotations
 
+import sys
 import time
 import urllib.parse
 from pathlib import Path
@@ -26,6 +27,9 @@ import requests
 import yaml
 from rich.console import Console
 from rich.progress import Progress
+
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 console = Console()
 
@@ -180,13 +184,12 @@ def main(input_path: Path, dry_run: bool, sleep: float):
         console.print(f"Unresolved sample: {', '.join(miss_list[:10])}")
 
     if filled:
-        # Match IngredientCurator.save() yaml.dump settings (default width=80)
-        # so this script's writes don't reformat unrelated lines.
-        with open(input_path, "w") as f:
-            yaml.dump(
-                data, f, default_flow_style=False, sort_keys=False,
-                allow_unicode=True,
-            )
+        try:
+            save_yaml(data, input_path, validate=True, target_class="IngredientCollection")
+        except ValidationFailedError as exc:
+            console.print("[red]validation failed: refusing to write[/red]")
+            print(exc.summary(), file=sys.stderr)
+            raise
         console.print(f"[bold green]Saved to {input_path}[/bold green]")
 
 

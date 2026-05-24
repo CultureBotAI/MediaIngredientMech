@@ -4,13 +4,14 @@ from __future__ import annotations
 
 import logging
 import re
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
 
 import yaml
 
+from mediaingredientmech.curate.curation_event import now_iso, record_curation_event
 from mediaingredientmech.utils.ontology_client import OntologyCandidate, OntologyClient
+from mediaingredientmech.utils.yaml_handler import save_yaml
 
 logger = logging.getLogger(__name__)
 
@@ -98,8 +99,8 @@ VALID_CITATION_TYPES = {
 DOI_PATTERN = re.compile(r"^10\.\d{4,}/[-._;()/:A-Za-z0-9]+$")
 
 
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
+# Backwards-compatible alias: prefer ``now_iso`` from the curate package.
+_now_iso = now_iso
 
 
 class IngredientCurator:
@@ -141,9 +142,15 @@ class IngredientCurator:
         return self._records
 
     def save(self) -> None:
-        """Save current state back to YAML file."""
+        """Save current state back to YAML file.
+
+        Routes through ``save_yaml(..., validate=True)`` so the collection
+        is checked against the LinkML schema in closed mode before disk
+        is touched. A ``ValidationFailedError`` here means a record was
+        mutated into an invalid state in memory and the change is being
+        refused at the write boundary rather than silently persisted.
+        """
         path = Path(self.data_path)
-        path.parent.mkdir(parents=True, exist_ok=True)
 
         # Update counts
         mapped = sum(1 for r in self._records if r.get("mapping_status") == "MAPPED")
@@ -153,8 +160,7 @@ class IngredientCurator:
         self._collection["unmapped_count"] = unmapped
         self._collection["ingredients"] = self._records
 
-        with open(path, "w") as f:
-            yaml.dump(self._collection, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        save_yaml(self._collection, path, validate=True, target_class="IngredientCollection")
 
         self._dirty = False
         logger.info("Saved %d records to %s", len(self._records), path)
@@ -388,30 +394,27 @@ class IngredientCurator:
         llm_model: Optional[str] = None,
         notes: Optional[str] = None,
     ) -> dict[str, Any]:
-        """Append a curation event to a record's history."""
-        event: dict[str, Any] = {
-            "timestamp": _now_iso(),
-            "curator": self.curator_name,
-            "action": action,
-        }
-        if changes:
-            event["changes"] = changes
-        if previous_status:
-            event["previous_status"] = previous_status
-        if new_status:
-            event["new_status"] = new_status
-        if llm_assisted:
-            event["llm_assisted"] = True
-            if llm_model:
-                event["llm_model"] = llm_model
+        """Append a curation event to a record's history.
+
+        Thin wrapper over :func:`record_curation_event` that injects
+        ``self.curator_name`` as the curator. ``notes`` is folded into
+        ``changes`` (the MIM ``CurationEvent`` schema has no ``notes``
+        field) — pass narrative detail in ``changes`` directly to avoid
+        the fold.
+        """
+        merged_changes = changes
         if notes:
-            event["notes"] = notes
-
-        if "curation_history" not in record or record["curation_history"] is None:
-            record["curation_history"] = []
-        record["curation_history"].append(event)
-
-        return event
+            merged_changes = f"{changes}\n{notes}" if changes else notes
+        return record_curation_event(
+            record,
+            curator=self.curator_name,
+            action=action,
+            changes=merged_changes,
+            previous_status=previous_status,
+            new_status=new_status,
+            llm_assisted=llm_assisted,
+            llm_model=llm_model,
+        )
 
     def get_progress_report(self) -> dict[str, Any]:
         """Generate a summary of curation progress."""

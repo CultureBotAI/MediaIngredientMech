@@ -36,6 +36,7 @@ from mediaingredientmech.utils.chemical_normalizer import (
     normalize_chemical_name,
 )
 from mediaingredientmech.utils.ontology_client import OntologyClient
+from mediaingredientmech.utils.yaml_handler import save_yaml
 
 console = Console()
 
@@ -88,9 +89,8 @@ class BatchCurationSession:
                 'decisions': self.decisions,
                 'last_updated': datetime.now(timezone.utc).isoformat(),
             }
-            self.resume_file.parent.mkdir(parents=True, exist_ok=True)
-            with open(self.resume_file, 'w') as f:
-                yaml.dump(data, f, sort_keys=False)
+            # Session resume file is not an IngredientCollection; skip validation.
+            save_yaml(data, self.resume_file)
 
     def export_decisions(self, output_path: Path) -> None:
         """Export curation decisions to CSV."""

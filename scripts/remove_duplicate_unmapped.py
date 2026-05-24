@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Remove encoding duplicates from unmapped ingredients."""
 
+import sys
 from pathlib import Path
 import yaml
+
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 # Paths
 DATA_DIR = Path(__file__).parent.parent / "data" / "curated"
@@ -20,12 +24,6 @@ def load_yaml(path):
     """Load YAML file."""
     with open(path, encoding="utf-8") as f:
         return yaml.safe_load(f)
-
-
-def save_yaml(data, path):
-    """Save YAML file."""
-    with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
 
 def main():
@@ -64,7 +62,11 @@ def main():
 
     # Save
     print("Saving updated file...")
-    save_yaml(data, UNMAPPED_PATH)
+    try:
+        save_yaml(data, UNMAPPED_PATH, validate=True, target_class="IngredientCollection")
+    except ValidationFailedError as exc:
+        print(exc.summary(), file=sys.stderr)
+        raise
     print(f"  ✓ Saved {UNMAPPED_PATH}")
     print()
 

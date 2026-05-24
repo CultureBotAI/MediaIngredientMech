@@ -18,6 +18,8 @@ import yaml
 from rich.console import Console
 from rich.table import Table
 
+from mediaingredientmech.utils.yaml_handler import save_yaml
+
 console = Console()
 
 # Pattern matching rules for inferring match_level
@@ -109,8 +111,8 @@ def process_batch_file(
 
     # Save if not dry run
     if not dry_run and suggestions:
-        with open(file_path, "w") as f:
-            yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        # Batch suggestion files are not IngredientCollections; skip validate=True.
+        save_yaml(data, file_path)
         console.print(f"  [green]✓ Saved {len(suggestions)} suggestions[/green]")
     elif dry_run:
         console.print(f"  [dim](Dry run - not saved)[/dim]")
