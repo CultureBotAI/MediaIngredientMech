@@ -28,7 +28,7 @@ from mediaingredientmech.validation.ingredient_reviewer import IngredientReviewe
 
 console = Console()
 
-CHECKPOINT_FILE = Path("enrichment_checkpoint.json")
+CHECKPOINT_FILE = Path("reports/enrichment_checkpoint.json")
 FAILURES_FILE = Path("reports/enrichment_failures.json")
 
 
@@ -63,12 +63,14 @@ def load_checkpoint() -> dict:
 
 def save_checkpoint(checkpoint: dict):
     """Save checkpoint."""
+    CHECKPOINT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(CHECKPOINT_FILE, "w") as f:
         json.dump(checkpoint, f, indent=2)
 
 
 def save_failures(failures: list):
     """Save failed enrichments to file."""
+    FAILURES_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(FAILURES_FILE, "w") as f:
         json.dump(failures, f, indent=2)
 
