@@ -22,6 +22,10 @@ from typing import Any
 
 import yaml
 
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
+
 
 # Default paths
 CULTUREMECH_DIR = Path(
@@ -43,13 +47,6 @@ def load_yaml(path: Path) -> dict:
         return yaml.safe_load(f)
 
 
-def save_yaml(data: dict, path: Path):
-    """Save data to YAML file."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
-
-
 def normalize_term(term: str) -> str:
     """Normalize an ingredient term for matching."""
     # Remove whitespace, lowercase, remove special chars
@@ -60,17 +57,6 @@ def normalize_term(term: str) -> str:
     # Remove extra whitespace
     normalized = re.sub(r"\s+", " ", normalized)
     return normalized
-
-
-def make_curation_event(action: str, changes: str, curator: str = "merge_culturemech_updates") -> dict:
-    """Create a curation history event."""
-    return {
-        "timestamp": TIMESTAMP,
-        "curator": curator,
-        "action": action,
-        "changes": changes,
-        "llm_assisted": False,
-    }
 
 
 def merge_synonyms(mi_record: dict, cm_ingredient: dict) -> list[dict]:
@@ -149,12 +135,13 @@ def merge_ingredient(mi_record: dict, cm_ingredient: dict, verbose: bool = False
                 "ontology_label", cm_ingredient["preferred_term"]
             )
 
-        # Add curation event
-        event = make_curation_event(
+        record_curation_event(
+            merged,
+            curator="merge_culturemech_updates",
             action="ONTOLOGY_UPDATE",
-            changes=f"Ontology changed from {mi_ontology} to {cm_ontology} (CultureMech update)"
+            changes=f"Ontology changed from {mi_ontology} to {cm_ontology} (CultureMech update)",
+            timestamp=TIMESTAMP,
         )
-        merged.setdefault("curation_history", []).append(event)
 
     # Merge synonyms
     merged_synonyms = merge_synonyms(mi_record, cm_ingredient)
@@ -164,11 +151,13 @@ def merge_ingredient(mi_record: dict, cm_ingredient: dict, verbose: bool = False
 
     # Add merge event if any changes
     if changes:
-        event = make_curation_event(
+        record_curation_event(
+            merged,
+            curator="merge_culturemech_updates",
             action="MERGED_UPDATE",
-            changes=f"Merged CultureMech update: {', '.join(changes.keys())}"
+            changes=f"Merged CultureMech update: {', '.join(changes.keys())}",
+            timestamp=TIMESTAMP,
         )
-        merged.setdefault("curation_history", []).append(event)
 
     if verbose and changes:
         print(f"  Updated {mi_record['preferred_term']}: {list(changes.keys())}")
@@ -218,12 +207,6 @@ def import_new_ingredient(cm_ingredient: dict) -> dict:
     }
     quality = quality_map.get(cm_ingredient.get("mapping_quality", "DIRECT_MATCH"), "PROVISIONAL")
 
-    event = make_curation_event(
-        action="IMPORTED",
-        changes="Imported from CultureMech update 2026-03-15"
-    )
-    event["new_status"] = "MAPPED"
-
     record = {
         "ontology_id": ontology_id,
         "preferred_term": cm_ingredient["preferred_term"],
@@ -246,8 +229,16 @@ def import_new_ingredient(cm_ingredient: dict) -> dict:
             "total_occurrences": cm_ingredient.get("occurrence_count", 0),
             "media_count": len(cm_ingredient.get("media_occurrences", [])),
         },
-        "curation_history": [event],
     }
+
+    record_curation_event(
+        record,
+        curator="merge_culturemech_updates",
+        action="IMPORTED",
+        changes="Imported from CultureMech update 2026-03-15",
+        new_status="MAPPED",
+        timestamp=TIMESTAMP,
+    )
 
     return record
 
@@ -258,11 +249,13 @@ def archive_ingredient(mi_record: dict, reason: str) -> dict:
     archived["mapping_status"] = "ARCHIVED"
     archived["archive_reason"] = reason
 
-    event = make_curation_event(
+    record_curation_event(
+        archived,
+        curator="merge_culturemech_updates",
         action="ARCHIVED",
-        changes=reason
+        changes=reason,
+        timestamp=TIMESTAMP,
     )
-    archived.setdefault("curation_history", []).append(event)
 
     return archived
 
@@ -424,7 +417,11 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
     # Save outputs
     if not dry_run:
         print("\nSaving merged data...")
-        save_yaml(output_data, mi_mapped_path)
+        try:
+            save_yaml(output_data, mi_mapped_path, validate=True, target_class="IngredientCollection")
+        except ValidationFailedError as exc:
+            print(exc.summary(), file=sys.stderr)
+            raise
         print(f"Saved {len(all_ingredients)} ingredients to {mi_mapped_path}")
 
         # Save merge plan
@@ -437,6 +434,7 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
             "archived_ingredients": [ing["preferred_term"] for ing in archived_ingredients],
         }
         plan_path = ANALYSIS_DIR / "merge_plan.yaml"
+        # Merge plan is not an IngredientCollection; skip validation.
         save_yaml(plan, plan_path)
         print(f"Saved merge plan to {plan_path}")
     else:
@@ -453,6 +451,7 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
             "archived_ingredients": [ing["preferred_term"] for ing in archived_ingredients],
         }
         plan_path = ANALYSIS_DIR / "merge_plan_dryrun.yaml"
+        # Dry-run plan is not an IngredientCollection; skip validation.
         save_yaml(plan, plan_path)
         print(f"Saved dry-run plan to {plan_path}")
 

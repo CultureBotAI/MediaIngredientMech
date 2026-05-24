@@ -1,10 +1,10 @@
 ---
 name: schema-gap-analysis
-description: Find gaps between MIM's LinkML schema, its YAML instances, and the code that generates them. Uses linkml-validate as ground truth and reports along three axes (schema / instances / process). Copy-paste runnable.
+description: Find gaps between MIM's LinkML schema, its YAML instances, and the code that generates them. Uses linkml-validate (or the strict closed-schema harness ported from CultureMech) as ground truth and reports along three axes (schema / instances / process). Copy-paste runnable.
 category: quality
 requires_database: false
 requires_internet: false
-version: 2.1.0
+version: 2.2.0
 ---
 
 # Schema gap analysis (MIM)
@@ -13,6 +13,42 @@ The conceptual framework — why three axes (schema / instances / process), what
 https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/skill.md
 
 This file is the MIM-specific operational version: every command below is ready to run as-is, with MIM paths baked in.
+
+## Fast path (preferred)
+
+The CultureMech audit machinery is ported (see PR opening this section).
+Two recipes replace most of the bash boilerplate below:
+
+```bash
+just validate-strict   # closed-schema parallel walk of data/ingredients/** + data/curated/**;
+                       # writes reports/instance_validation_failures.tsv with one row per ERROR
+                       # categorized (unexpected_field / missing_required / enum_mismatch /
+                       # format_mismatch / pattern_mismatch / type_mismatch / range_violation /
+                       # other / yaml_parse_error / empty_file / validator_crash).
+                       # Excludes data/curated/backups/ and data/snapshots/.
+
+just audit-writers     # inventory every YAML-writing script and check for
+                       # write_validated_ingredient + record_curation_event
+                       # adoption. Writes reports/pipeline_writers_audit.tsv.
+```
+
+Both recipes also live in the `qc` composite (`just qc`). Histogram the
+strict-validator TSV with:
+
+```bash
+awk -F'\t' 'NR>1 {print $3}' reports/instance_validation_failures.tsv | sort | uniq -c | sort -rn
+```
+
+For deeper drill-down (e.g. distinct fields in `unexpected_field` rows):
+
+```bash
+awk -F'\t' 'NR>1 && $3=="unexpected_field" {print $4}' \
+  reports/instance_validation_failures.tsv | sort | uniq -c | sort -rn
+```
+
+The legacy `linkml-validate` invocations below remain useful when you
+need to validate a single ad-hoc file outside the standard roots or
+inspect raw validator messages with full context.
 
 ## Setup
 
@@ -136,6 +172,10 @@ linkml-validate \
 
 ## Pointers
 
+- Strict closed-schema harness (preferred entrypoint): `scripts/validate_strict.py` (`just validate-strict`)
+- Writer audit (process-axis inventory): `scripts/audit_writers.py` (`just audit-writers`)
+- Write-time validation gate (use in any new writer script): `src/mediaingredientmech/validation/write_validated.py` (`write_validated_ingredient`)
+- Curation-event helper (use to leave an audit trail): `src/mediaingredientmech/curate/curation_event.py` (`record_curation_event`)
 - Custom (tolerant) validator the skill is calibrated against: `src/mediaingredientmech/validation/schema_validator.py`
 - Schema: `src/mediaingredientmech/schema/mediaingredientmech.yaml`
 - Curator (use for instance-axis fixes): `src/mediaingredientmech/curation/ingredient_curator.py`

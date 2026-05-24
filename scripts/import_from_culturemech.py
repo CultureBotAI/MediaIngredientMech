@@ -9,11 +9,16 @@ Usage:
 """
 
 import argparse
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import yaml
+
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 
 # Default paths
@@ -31,18 +36,6 @@ def load_source(path: Path) -> dict:
     """Load a CultureMech YAML file."""
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
-
-
-def make_curation_event() -> dict:
-    """Create an initial IMPORTED curation event."""
-    return {
-        "timestamp": TIMESTAMP,
-        "curator": "import_from_culturemech",
-        "action": "IMPORTED",
-        "changes": "Initial import from CultureMech pipeline",
-        "new_status": None,  # set per-record
-        "llm_assisted": False,
-    }
 
 
 def extract_synonyms(ingredient: dict) -> list[dict]:
@@ -116,9 +109,6 @@ def convert_mapped_ingredient(ingredient: dict) -> dict:
     ontology_id = ingredient["ontology_id"]
     ontology_source = ingredient.get("ontology_source", "CHEBI")
 
-    event = make_curation_event()
-    event["new_status"] = "MAPPED"
-
     record: dict[str, Any] = {
         "ontology_id": ontology_id,
         "preferred_term": ingredient["preferred_term"],
@@ -141,8 +131,16 @@ def convert_mapped_ingredient(ingredient: dict) -> dict:
             "total_occurrences": ingredient.get("occurrence_count", 0),
             "media_count": len(ingredient.get("media_occurrences", [])),
         },
-        "curation_history": [event],
     }
+
+    record_curation_event(
+        record,
+        curator="import_from_culturemech",
+        action="IMPORTED",
+        changes="Initial import from CultureMech pipeline",
+        new_status="MAPPED",
+        timestamp=TIMESTAMP,
+    )
 
     return record
 
@@ -155,9 +153,6 @@ def convert_unmapped_ingredient(ingredient: dict, index: int) -> dict:
     # Use parsed_chemical_name as preferred_term if available, else placeholder_id
     preferred_term = ingredient.get("parsed_chemical_name", placeholder) or placeholder or f"Unmapped ingredient {index}"
 
-    event = make_curation_event()
-    event["new_status"] = "UNMAPPED"
-
     record: dict[str, Any] = {
         "ontology_id": identifier,
         "preferred_term": preferred_term,
@@ -167,9 +162,17 @@ def convert_unmapped_ingredient(ingredient: dict, index: int) -> dict:
             "total_occurrences": ingredient.get("occurrence_count", 0),
             "media_count": len(ingredient.get("media_occurrences", [])),
         },
-        "curation_history": [event],
         "notes": f"CultureMech placeholder_id: {placeholder}",
     }
+
+    record_curation_event(
+        record,
+        curator="import_from_culturemech",
+        action="IMPORTED",
+        changes="Initial import from CultureMech pipeline",
+        new_status="UNMAPPED",
+        timestamp=TIMESTAMP,
+    )
 
     return record
 
@@ -196,9 +199,11 @@ def import_mapped(source_dir: Path, output_dir: Path) -> int:
     collection = build_collection(records, mapped_count=len(records), unmapped_count=0)
 
     output_path = output_dir / "mapped_ingredients.yaml"
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
-        yaml.dump(collection, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    try:
+        save_yaml(collection, output_path, validate=True, target_class="IngredientCollection")
+    except ValidationFailedError as exc:
+        print(exc.summary(), file=sys.stderr)
+        raise
 
     print(f"Wrote {len(records)} mapped ingredients to {output_path}")
     return len(records)
@@ -217,9 +222,11 @@ def import_unmapped(source_dir: Path, output_dir: Path) -> int:
     collection = build_collection(records, mapped_count=0, unmapped_count=len(records))
 
     output_path = output_dir / "unmapped_ingredients.yaml"
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
-        yaml.dump(collection, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    try:
+        save_yaml(collection, output_path, validate=True, target_class="IngredientCollection")
+    except ValidationFailedError as exc:
+        print(exc.summary(), file=sys.stderr)
+        raise
 
     print(f"Wrote {len(records)} unmapped ingredients to {output_path}")
     return len(records)

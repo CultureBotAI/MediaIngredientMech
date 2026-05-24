@@ -21,9 +21,12 @@ from rich.table import Table
 _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
+from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.utils.chemical_properties_client import (
     ChemicalPropertiesClient,
 )
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 console = Console()
 
@@ -32,22 +35,6 @@ def load_ingredients(yaml_path: Path) -> dict:
     """Load ingredients from YAML file."""
     with open(yaml_path) as f:
         return yaml.safe_load(f)
-
-
-def save_ingredients(yaml_path: Path, data: dict):
-    """Save ingredients to YAML file.
-
-    Matches IngredientCurator.save() yaml.dump settings (default width=80)
-    so enrichment runs don't reformat unrelated lines.
-    """
-    with open(yaml_path, "w") as f:
-        yaml.dump(
-            data,
-            f,
-            default_flow_style=False,
-            sort_keys=False,
-            allow_unicode=True,
-        )
 
 
 def filter_chebi_without_properties(data: dict) -> list[dict]:
@@ -253,7 +240,12 @@ def main(
     if enriched_count > 0:
         # Save output
         output_path = output_path or input_path
-        save_ingredients(output_path, data)
+        try:
+            save_yaml(data, output_path, validate=True, target_class="IngredientCollection")
+        except ValidationFailedError as exc:
+            console.print("\n[red]validation failed: refusing to write[/red]")
+            print(exc.summary(), file=sys.stderr)
+            raise
         console.print(f"\n[bold green]Saved to {output_path}[/bold green]")
     else:
         console.print("\n[yellow]No enrichment performed - nothing to save[/yellow]")

@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Update mapping quality for dH2O variants to CLOSE_MATCH."""
 
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 import yaml
+
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 # Paths
 DATA_DIR = Path(__file__).parent.parent / "data" / "curated"
@@ -16,12 +21,6 @@ def load_yaml(path):
     """Load YAML file."""
     with open(path, encoding="utf-8") as f:
         return yaml.safe_load(f)
-
-
-def save_yaml(data, path):
-    """Save YAML file."""
-    with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
 
 def update_water_quality():
@@ -63,13 +62,12 @@ def update_water_quality():
                     evidence["confidence_score"] = 0.85  # Slightly lower due to purity distinction
 
                 # Add curation event
-                record.setdefault("curation_history", []).append({
-                    "timestamp": TIMESTAMP,
-                    "curator": "update_water_quality",
-                    "action": "QUALITY_UPDATE",
-                    "changes": f"Updated mapping quality from {old_quality} to CLOSE_MATCH to reflect purity distinction",
-                    "llm_assisted": False,
-                })
+                record_curation_event(
+                    record,
+                    curator="update_water_quality",
+                    action="QUALITY_UPDATE",
+                    changes=f"Updated mapping quality from {old_quality} to CLOSE_MATCH to reflect purity distinction",
+                )
 
                 print(f"  ✓ Updated quality: {old_quality} → CLOSE_MATCH")
                 updated_count += 1
@@ -79,7 +77,12 @@ def update_water_quality():
 
     # Save
     print("Saving updated file...")
-    save_yaml(data, MAPPED_PATH)
+    try:
+        save_yaml(data, MAPPED_PATH, validate=True, target_class="IngredientCollection")
+    except ValidationFailedError as exc:
+        print(f"  ✗ validation failed: refusing to write", file=sys.stderr)
+        print(exc.summary(), file=sys.stderr)
+        raise
     print(f"  ✓ Saved {MAPPED_PATH}")
     print()
 

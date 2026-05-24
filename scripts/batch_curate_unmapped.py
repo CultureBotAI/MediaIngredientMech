@@ -30,12 +30,15 @@ from rich.table import Table
 _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
+from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.utils.chemical_normalizer import (
     categorize_unmapped_name,
     normalize_chemical_name,
 )
 from mediaingredientmech.utils.ontology_client import OntologyClient
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 console = Console()
 
@@ -88,9 +91,8 @@ class BatchCurationSession:
                 'decisions': self.decisions,
                 'last_updated': datetime.now(timezone.utc).isoformat(),
             }
-            self.resume_file.parent.mkdir(parents=True, exist_ok=True)
-            with open(self.resume_file, 'w') as f:
-                yaml.dump(data, f, sort_keys=False)
+            # Session resume file is not an IngredientCollection; skip validation.
+            save_yaml(data, self.resume_file)
 
     def export_decisions(self, output_path: Path) -> None:
         """Export curation decisions to CSV."""

@@ -14,7 +14,6 @@ import json
 import sys
 import time
 from pathlib import Path
-from datetime import datetime, timezone
 
 import yaml
 from rich.console import Console
@@ -23,8 +22,11 @@ from rich.progress import Progress, SpinnerColumn, TimeElapsedColumn, TimeRemain
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.yaml_handler import save_yaml
 from mediaingredientmech.validation.ingredient_reviewer import IngredientReviewer
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 console = Console()
 
@@ -47,10 +49,17 @@ def save_mapped_ingredients(collection):
     metadata (`generation_date`, `total_count`, `mapped_count`,
     `unmapped_count`) instead of writing only `{"ingredients": ...}`.
     """
-    with open(MAPPED_FILE, "w") as f:
-        yaml.dump(
-            collection, f, default_flow_style=False, sort_keys=False, allow_unicode=True
+    try:
+        save_yaml(
+            collection,
+            MAPPED_FILE,
+            validate=True,
+            target_class="IngredientCollection",
         )
+    except ValidationFailedError as exc:
+        console.print("[red]validation failed: refusing to write[/red]")
+        print(exc.summary(), file=sys.stderr)
+        raise
 
 
 def load_checkpoint() -> dict:
@@ -174,20 +183,15 @@ def main():
                         # Add chemical properties
                         ingredient["chemical_properties"] = properties
 
-                        # Add curation history event
-                        if "curation_history" not in ingredient:
-                            ingredient["curation_history"] = []
-
-                        ingredient["curation_history"].append({
-                            "timestamp": datetime.now(timezone.utc).isoformat(),
-                            "curator": "enrich_from_ols.py",
-                            "action": "AUTO_BACKFILL_CHEBI_CHEMISTRY",
-                            "changes": (
+                        record_curation_event(
+                            ingredient,
+                            curator="enrich_from_ols.py",
+                            action="AUTO_BACKFILL_CHEBI_CHEMISTRY",
+                            changes=(
                                 "Enriched chemical_properties from EBI OLS v4: "
                                 + ", ".join(sorted(properties.keys()))
                             ),
-                            "llm_assisted": False,
-                        })
+                        )
 
                         enriched_count += 1
 

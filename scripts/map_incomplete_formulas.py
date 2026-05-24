@@ -5,9 +5,14 @@ Based on formula repair analysis with CAS verification and existing mapping
 cross-reference.
 """
 
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 import yaml
+
+from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.utils.yaml_handler import save_yaml
+from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 # Paths
 DATA_DIR = Path(__file__).parent.parent / "data" / "curated"
@@ -159,12 +164,6 @@ def load_yaml(path):
         return yaml.safe_load(f)
 
 
-def save_yaml(data, path):
-    """Save YAML file."""
-    with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
-
-
 def map_repaired_formula(record, repair):
     """Apply formula repair mapping to ingredient record."""
     # Update core fields
@@ -213,13 +212,12 @@ def map_repaired_formula(record, repair):
     }
 
     # Add curation event
-    record.setdefault("curation_history", []).append({
-        "timestamp": TIMESTAMP,
-        "curator": "map_incomplete_formulas",
-        "action": "FORMULA_REPAIRED",
-        "changes": f"Repaired incomplete formula '{repair['incomplete']}' → '{repair['complete_formula']}' and mapped to {repair['ontology_id']} ({repair['ontology_label']})",
-        "llm_assisted": False,
-    })
+    record_curation_event(
+        record,
+        curator="map_incomplete_formulas",
+        action="FORMULA_REPAIRED",
+        changes=f"Repaired incomplete formula '{repair['incomplete']}' → '{repair['complete_formula']}' and mapped to {repair['ontology_id']} ({repair['ontology_label']})",
+    )
 
     # Update preferred term to corrected formula
     record["preferred_term"] = repair["complete_formula"]
@@ -289,8 +287,13 @@ def main():
 
     # Save files
     print("Saving updated files...")
-    save_yaml(unmapped_data, UNMAPPED_PATH)
-    save_yaml(mapped_data, MAPPED_PATH)
+    try:
+        save_yaml(unmapped_data, UNMAPPED_PATH, validate=True, target_class="IngredientCollection")
+        save_yaml(mapped_data, MAPPED_PATH, validate=True, target_class="IngredientCollection")
+    except ValidationFailedError as exc:
+        print(f"  ✗ validation failed: refusing to write", file=sys.stderr)
+        print(exc.summary(), file=sys.stderr)
+        raise
     print(f"  ✓ Saved {UNMAPPED_PATH}")
     print(f"  ✓ Saved {MAPPED_PATH}")
     print()
