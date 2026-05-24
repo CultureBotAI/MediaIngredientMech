@@ -408,7 +408,7 @@ def analyze_incomplete_formulas():
         print()
 
     # Save detailed report
-    output_path = Path(__file__).parent.parent / "FORMULA_REPAIR_ANALYSIS.yaml"
+    output_path = Path(__file__).parent.parent / "reports" / "FORMULA_REPAIR_ANALYSIS.yaml"
     with open(output_path, "w") as f:
         yaml.dump({
             "analysis_date": "2026-03-15",

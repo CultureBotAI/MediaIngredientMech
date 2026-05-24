@@ -29,7 +29,7 @@ from mediaingredientmech.validation.ingredient_reviewer import IngredientReviewe
 console = Console()
 
 CHECKPOINT_FILE = Path("enrichment_checkpoint.json")
-FAILURES_FILE = Path("enrichment_failures.json")
+FAILURES_FILE = Path("reports/enrichment_failures.json")
 
 
 MAPPED_FILE = Path("data/curated/mapped_ingredients.yaml")
