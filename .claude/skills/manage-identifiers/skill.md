@@ -9,23 +9,6 @@ version: 1.0.0
 
 # Identifier Management for X-Mech Repositories
 
-> **Status note — MediaIngredientMech (2026-05-24)**
->
-> MIM rolled back the parallel `MediaIngredientMech:NNNNNN` sequential-ID
-> scheme described below before 2026-05-12 (see `MEMORY.md` and
-> `notes/identifier_correction.md`). MIM records now carry only the
-> single CURIE-based `identifier` slot (`CHEBI:...`, `FOODON:...`,
-> `kgmicrobe.compound:...`, `UNMAPPED_NNNN`, etc.); the schema has no
-> sequential `id` field.
->
-> Consequently, the MIM-specific helper scripts cited in the examples
-> below — `scripts/add_mediaingredientmech_ids.py` and
-> `scripts/add_ids_to_mapped.py` — were removed from MIM in this same
-> cleanup pass. The skill text is retained as a conceptual reference
-> for sister X-Mech repositories (CultureMech, CommunityMech) that
-> still use the `RepoName:NNNNNN` scheme; do not try to run the
-> MIM-named scripts in this repo.
-
 ## Overview
 
 **Purpose**: Maintain stable, sequential identifiers across X-Mech repositories (MediaIngredientMech, CultureMech, CommunityMech, and future projects) to ensure data integrity, enable cross-references, and support knowledge graph integration.

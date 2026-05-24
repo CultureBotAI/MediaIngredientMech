@@ -1,8 +1,7 @@
 # Mapped Ingredients Index
 **Total Records**: 1870
-**Mapped**: 1868 (99.9%)
+**Mapped**: 1870 (100.0%)
 **Unmapped**: 0 (0.0%)
-**Other statuses**: 2 (0.1%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 126,961
 
 ---
@@ -199,7 +198,7 @@
 | NCIT:C77524 | Activated charcoal | NCIT:C77524 | NCIT | EXACT_MATCH | 0 |
 | CHEBI:16708 | Adenine | CHEBI:16708 | CHEBI | EXACT_MATCH | 2 |
 | cas:2922-28-3 | Adenine hydrochloride hydrate | cas:2922-28-3 | CAS | FALLBACK_REGISTRY | 31 |
-| NCIT:C221830 | Adenomycin | NCIT:C221830 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C221830 | Adenomycin | NCIT:C221830 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16335 | Adenosine | CHEBI:16335 | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:17489 | Adenosine 3,5-Cyclic Monophosphate | CHEBI:17489 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30832 | Adipic acid | CHEBI:30832 | CHEBI | EXACT_MATCH | 0 |
@@ -289,7 +288,7 @@
 | CHEBI:172520 | Avocadene | CHEBI:172520 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:168507 | Avocadyne | CHEBI:168507 | CHEBI | EXACT_MATCH | 0 |
 | mesh:C000709627 | Avocatin B | mesh:C000709627 | MESH | EXACT_MATCH | 0 |
-| NCIT:C169798 | Avoparcin | NCIT:C169798 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C169798 | Avoparcin | NCIT:C169798 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:azacolutin | Azacolutin | kgmicrobe.compound:azacolutin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:38473 | Azadirachtin | CHEBI:38473 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:48131 | Azelaic acid | CHEBI:48131 | CHEBI | EXACT_MATCH | 0 |
@@ -305,6 +304,7 @@
 | MICRO:0000182 | Bacto-tryptone | MICRO:0000182 | MICRO | EXACT_MATCH | 1 |
 | MICRO:0000193 | Bacto brain heart infusion | MICRO:0000193 | MICRO | LEXICAL_MATCH | 0 |
 | MICRO:0000178 | Bacto peptone | MICRO:0000178 | MICRO | EXACT_MATCH | 0 |
+| CHEBI:8150 | Bacto Soytone | CHEBI:8150 | CHEBI | EXACT_MATCH | 47 |
 | MICRO:0000114 | Bacto Tryptic Soy Agar | MICRO:0000114 | MICRO | LEXICAL_MATCH | 0 |
 | MICRO:0000114 | Bacto Tryptic Soy Agar (Difco) | MICRO:0000114 | MICRO | LEXICAL_MATCH | 0 |
 | MICRO:0000113 | Bacto Tryptic Soy Broth | MICRO:0000113 | MICRO | LEXICAL_MATCH | 0 |
@@ -461,7 +461,7 @@
 | CHEBI:3547 | Cephradine | CHEBI:3547 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:171741 | Cerulenin | CHEBI:171741 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63039 | Cesium chloride | CHEBI:63039 | CHEBI | EXACT_MATCH | 0 |
-| NCIT:C98044 | Cetocycline | NCIT:C98044 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C98044 | Cetocycline | NCIT:C98044 | CHEBI | EXACT_MATCH | 0 |
 | cas:9004-95-9 | Cetomacrogol 1000 | mesh:D002592 | MESH | NARROW_MATCH | 0 |
 | CHEBI:3567 | Cetrimonium bromide | CHEBI:3567 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:86202 | Chalcopyrite | CHEBI:86202 | CHEBI | EXACT_MATCH | 2 |
@@ -469,6 +469,7 @@
 | kgmicrobe.compound:chaninin | Chaninin | kgmicrobe.compound:chaninin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:91090 | Charcoal | CHEBI:91090 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:27939 | Chaulmoogric acid | CHEBI:27939 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:1 | CHEBI:1 | CHEBI:1 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:16755 | Chenodeoxycholic acid | CHEBI:16755 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17029 | Chitin | CHEBI:17029 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16261 | Chitosan | CHEBI:16261 | CHEBI | EXACT_MATCH | 2 |
@@ -699,7 +700,7 @@
 | ENVO:00003031 | Dry cow-manure | ENVO:00003031 | ENVO | BROAD_MATCH | 0 |
 | cas:52305-04-1 | Duartin (-) | mesh:C087989 | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.compound:durhamycin | Durhamycin | kgmicrobe.compound:durhamycin | kgmicrobe.compound | PLACEHOLDER | 0 |
-| NCIT:C1928 | Dynemicin | NCIT:C1928 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C1928 | Dynemicin | NCIT:C1928 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16586 | e-Amino-N-Caproic Acid | CHEBI:16586 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4735 | EDTA (acid form) | CHEBI:4735 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C360 | EDTA (chelating agent) | NCIT:C360 | NCIT | LEXICAL_MATCH | 0 |
@@ -709,7 +710,7 @@
 | CHEBI:4755 | Econazole nitrate salt | CHEBI:4755 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27592 | Ectoine | CHEBI:27592 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:64755 | EDTA | CHEBI:64755 | CHEBI | EXACT_MATCH | 446 |
-| FOODON:03315772 | Egg yolk | FOODON:03315772 | FOODON | EXACT_MATCH | 0 |
+| FOODON:03315772 | Egg yolk | FOODON:03315772 | registry | EXACT_MATCH | 0 |
 | CHEBI:4767 | Elastin | CHEBI:4767 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:42223 | Emodin | CHEBI:42223 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28855 | Enterobactin | CHEBI:28855 | CHEBI | EXACT_MATCH | 0 |
@@ -1092,7 +1093,7 @@
 | CHEBI:16489 | Lumazine | CHEBI:16489 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17781 | Lumichrome | CHEBI:17781 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:6570 | Lupeol | CHEBI:6570 | CHEBI | EXACT_MATCH | 0 |
-| NCIT:C90684 | Lydimycin | NCIT:C90684 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C90684 | Lydimycin | NCIT:C90684 | CHEBI | EXACT_MATCH | 0 |
 | cas:2650-88-3 | Lysozyme | FOODON:03413135 | FOODON | NARROW_MATCH | 0 |
 | CHEBI:28488 | m-Xylene | CHEBI:28488 | CHEBI | EXACT_MATCH | 8 |
 | CHEBI:62955 | MES sodium salt | CHEBI:62955 | CHEBI | CAS_RN_LOOKUP | 4 |
@@ -1441,7 +1442,7 @@
 | CHEBI:28821 | Piperine | CHEBI:28821 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:39033 | PIPES | CHEBI:39033 | CHEBI | EXACT_MATCH | 69 |
 | CHEBI:8241 | Piplartine | CHEBI:8241 | CHEBI | EXACT_MATCH | 0 |
-| ENVO:06105101 | Plastic | ENVO:06105101 | ENVO | EXACT_MATCH | 0 |
+| ENVO:06105101 | Plastic | ENVO:06105101 | registry | EXACT_MATCH | 0 |
 | cas:13454-96-1 | platinum (IV) chloride | cas:13454-96-1 | CAS | FALLBACK_REGISTRY | 0 |
 | mesh:C000633628 | Plicacetin | mesh:C000633628 | MESH | EXACT_MATCH | 0 |
 | CHEBI:8273 | Plumbagin | CHEBI:8273 | CHEBI | EXACT_MATCH | 0 |
@@ -1565,7 +1566,7 @@
 | CHEBI:41865 | Sebacic acid | CHEBI:41865 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:75494 | Serine hydroxamate | CHEBI:75494 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28790 | Serotonin | CHEBI:28790 | CHEBI | EXACT_MATCH | 0 |
-| UBERON:0001977 | Serum | UBERON:0001977 | UBERON | EXACT_MATCH | 0 |
+| UBERON:0001977 | Serum | UBERON:0001977 | registry | EXACT_MATCH | 0 |
 | mesh:C032953 | Setamycin | mesh:C032953 | MESH | EXACT_MATCH | 0 |
 | CHEBI:16119 | Shikimic Acid | CHEBI:16119 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:89919 | Sialyllacto-N-tetraose a | CHEBI:89919 | CHEBI | EXACT_MATCH | 0 |
@@ -1582,7 +1583,7 @@
 | CHEBI:9163 | Sinomenine | CHEBI:9163 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30563 | SiO2 | CHEBI:30563 | CHEBI | EXACT_MATCH | 4 |
 | cas:53179-09-2 | Sisomicin sulfate salt | CHEBI:35175 | CHEBI | NARROW_MATCH | 0 |
-| FOODON:03301484 | Skimmed milk | FOODON:03301484 | FOODON | EXACT_MATCH | 0 |
+| FOODON:03301484 | Skimmed milk | FOODON:03301484 | registry | EXACT_MATCH | 0 |
 | ENVO:00002044 | Sludge | ENVO:00002044 | ENVO | EXACT_MATCH | 0 |
 | cas:29849-82-9 | sn-Glycerol 3-phosphate bis(cyclohexylammonium) salt | CHEBI:15978 | CHEBI | NARROW_MATCH | 0 |
 | cas:17989-41-2 | sn-Glycerol 3-phosphate lithium salt | CHEBI:15978 | CHEBI | NARROW_MATCH | 0 |
@@ -1661,7 +1662,7 @@
 | CHEBI:30911 | Sorbitol | CHEBI:30911 | CHEBI | EXACT_MATCH | 15 |
 | CHEBI:61117 | Sorgoleone | CHEBI:61117 | CHEBI | EXACT_MATCH | 0 |
 | FOODON:03302142 | Soy flour | FOODON:03302142 | FOODON | EXACT_MATCH | 0 |
-| FOODON:03315720 | Soy peptone | FOODON:03315720 | FOODON | CLOSE_MATCH | 47 |
+| FOODON:03315720 | Soy peptone | FOODON:03315720 | FOODON | CLOSE_MATCH | 0 |
 | cas:91079-46-8 | Soya peptone | cas:91079-46-8 | CAS | FALLBACK_REGISTRY | 4 |
 | kgmicrobe.ingredient:soyton | Soyton | kgmicrobe.ingredient:soyton | kgmicrobe.ingredient | PLACEHOLDER | 0 |
 | cas:520-43-4 | Sparassol | cas:520-43-4 | CAS | FALLBACK_REGISTRY | 0 |
@@ -1678,7 +1679,7 @@
 | NCIT:C1295 | Staphylomycin M1 | NCIT:C1295 | NCIT | EXACT_MATCH | 0 |
 | CHEBI:28017 | Starch | CHEBI:28017 | CHEBI | EXACT_MATCH | 424 |
 | CHEBI:28842 | Stearic acid | CHEBI:28842 | CHEBI | EXACT_MATCH | 4 |
-| NCIT:C152426 | Steffimycin | NCIT:C152426 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C152426 | Steffimycin | NCIT:C152426 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32158 | Streptomycin sulfate salt | CHEBI:32158 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:9287 | Streptonigrin | CHEBI:9287 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:233239 | Strychnine Sulfate | CHEBI:233239 | CHEBI | EXACT_MATCH | 0 |
@@ -1879,11 +1880,4 @@
 | CHEBI:16610 | spermidine | CHEBI:16610 | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:43796 | α-lipoic acid | CHEBI:43796 | CHEBI | EXACT_MATCH | 4 |
 | cas:66455-27-4 | α1-Acid Glycoprotein from bovine plasma | cas:66455-27-4 | CAS | FALLBACK_REGISTRY | 0 |
-
-## Other Statuses
-
-| Identifier | Preferred Term | Status | Ontology ID | Representative | Occurrences |
-|---|---|---|---|---|---|
-| CHEBI:8150 | Bacto Soytone | REJECTED | CHEBI:8150 | FOODON:03315720 | 0 |
-| CHEBI:1 | CHEBI:1 | NEEDS_EXPERT | CHEBI:1 |  | 3 |
 
