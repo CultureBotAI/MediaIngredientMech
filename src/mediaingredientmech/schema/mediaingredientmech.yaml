@@ -43,6 +43,17 @@ classes:
       unmapped_count:
         range: integer
         description: Number of unmapped ingredients
+      category:
+        description: >-
+          Categorization label for partitioned unmapped collections (e.g.
+          PLACEHOLDER, COMPLEX_MEDIA, INCOMPLETE_FORMULA, OTHER,
+          ALREADY_MAPPED). Set by scripts/categorize_unmapped.py; absent
+          on the canonical mapped_ingredients.yaml / unmapped_ingredients.yaml.
+      count:
+        range: integer
+        description: >-
+          Record count for this categorized partition. Mirrors len(ingredients)
+          when present.
       ingredients:
         range: IngredientRecord
         multivalued: true
