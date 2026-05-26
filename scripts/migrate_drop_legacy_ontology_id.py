@@ -103,6 +103,9 @@ def main() -> int:
     mode = "APPLY" if args.apply else "DRY-RUN"
     print(f"=== migrate_drop_legacy_ontology_id ({mode}) ===")
 
+    # Define once so the final-total print is safe even when the
+    # categorized-files list happens to be empty / all-missing.
+    verb = "dropped" if args.apply else "would drop"
     total_seen = 0
     total_dropped = 0
     for path in CATEGORIZED_FILES:
@@ -112,7 +115,6 @@ def main() -> int:
         seen, dropped = migrate_file(path, apply=args.apply)
         total_seen += seen
         total_dropped += dropped
-        verb = "would drop" if not args.apply else "dropped"
         print(f"  {path.name}: {verb} {dropped}/{seen} legacy ontology_id key(s)")
 
     print(f"--- total: {verb} {total_dropped}/{total_seen} legacy ontology_id key(s) ---")
