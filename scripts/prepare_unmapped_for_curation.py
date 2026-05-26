@@ -136,7 +136,6 @@ def convert_unmapped_ingredient(cm_unmapped: dict, index: int, category: str) ->
 
     # Build record
     record = {
-        "ontology_id": ontology_id,
         "identifier": ontology_id,
         "preferred_term": preferred_term,
         "synonyms": synonyms,
