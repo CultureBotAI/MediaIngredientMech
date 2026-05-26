@@ -92,11 +92,14 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
     total = len(records)
     mapped = sum(1 for r in records if r.get('mapping_status') == 'MAPPED')
     unmapped = sum(1 for r in records if r.get('mapping_status') == 'UNMAPPED')
+    other = total - mapped - unmapped
     total_occurrences = sum(r.get('occurrence_statistics', {}).get('total_occurrences', 0) for r in records)
 
     lines.append(f"**Total Records**: {total}\n")
     lines.append(f"**Mapped**: {mapped} ({mapped/total*100:.1f}%)\n")
     lines.append(f"**Unmapped**: {unmapped} ({unmapped/total*100:.1f}%)\n")
+    if other:
+        lines.append(f"**Other statuses**: {other} ({other/total*100:.1f}%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS\n")
     lines.append(f"**Total Occurrences**: {total_occurrences:,}\n")
     lines.append("\n---\n\n")
 
@@ -136,6 +139,31 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
                 f"| {record.get('identifier', '')} "
                 f"| {record.get('preferred_term', '')} "
                 f"| {record.get('mapping_status', '')} "
+                f"| {record.get('occurrence_statistics', {}).get('total_occurrences', 0)} |\n"
+            )
+
+        lines.append("\n")
+
+    # Other-status ingredients table (REJECTED, NEEDS_EXPERT, PENDING_REVIEW,
+    # IN_PROGRESS, AMBIGUOUS — anything that isn't MAPPED or UNMAPPED).
+    # Keeps the digest self-consistent: every record in `records` appears in
+    # exactly one of the three sections so the summary counts add up.
+    if other > 0:
+        lines.append("## Other Statuses\n\n")
+        lines.append("| Identifier | Preferred Term | Status | Ontology ID | Representative | Occurrences |\n")
+        lines.append("|---|---|---|---|---|---|\n")
+
+        for record in records:
+            status = record.get('mapping_status')
+            if status in ('MAPPED', 'UNMAPPED'):
+                continue
+            om = record.get('ontology_mapping') or {}
+            lines.append(
+                f"| {record.get('identifier', '')} "
+                f"| {record.get('preferred_term', '')} "
+                f"| {status or ''} "
+                f"| {om.get('ontology_id', '')} "
+                f"| {record.get('representative', '')} "
                 f"| {record.get('occurrence_statistics', {}).get('total_occurrences', 0)} |\n"
             )
 
