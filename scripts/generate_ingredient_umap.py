@@ -35,7 +35,7 @@ console = Console()
 #      the 5.7 GB artifact is only vendored once per developer machine.
 # All three locations are resolved relative to the script so the file works
 # on any machine that has the Mech repos checked out as siblings.
-_EMBEDDINGS_FILENAME = "DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_v2_2026-04-25_20_44_08.tsv.gz"
+_EMBEDDINGS_FILENAME = "DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_v2_2026-05-26_00_56_15.tsv.gz"
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 _LOCAL_EMBEDDINGS = _REPO_ROOT / "data" / "embeddings" / _EMBEDDINGS_FILENAME
 _COMMUNITYMECH_EMBEDDINGS = (
@@ -94,7 +94,18 @@ class IngredientEmbeddingLoader:
     ) -> Dict[str, np.ndarray]:
         """Load embeddings from TSV.gz, filter by prefixes, and cache."""
         if prefixes is None:
-            prefixes = ["CHEBI", "FOODON", "NCIT", "MESH", "UBERON", "ENVO"]
+            # Ontology prefixes used by mapped records, plus the non-ontology
+            # ingredient node families that KG-Microbe carries — these let
+            # UNMAPPED_* records anchor to their mediadive.ingredient source ID
+            # (or kgmicrobe.compound / mediadive.solution) instead of falling
+            # back to a synthetic centroid. bacdive.isolation_source is
+            # excluded — it describes where an organism was sampled from, not
+            # a growth-medium component.
+            prefixes = [
+                "CHEBI", "FOODON", "NCIT", "MESH", "UBERON", "ENVO",
+                "mediadive.ingredient", "mediadive.solution",
+                "kgmicrobe.compound",
+            ]
 
         cache_file = self.cache_dir / self._cache_key(prefixes)
 
@@ -191,7 +202,7 @@ class IngredientUMAPGenerator:
 
                     # Strategy 2: Try ontology_mapping ID
                     if not found_embedding:
-                        ontology_mapping = ingredient.get('ontology_mapping', {})
+                        ontology_mapping = ingredient.get('ontology_mapping') or {}
                         ontology_id = ontology_mapping.get('ontology_id', '')
                         if ontology_id and ontology_id in self.embeddings:
                             ingredient_vectors.append(self.embeddings[ontology_id])
@@ -213,6 +224,30 @@ class IngredientUMAPGenerator:
                                     found_embedding = True
                                     break
                             if found_embedding:
+                                break
+
+                    # Strategy 3b: For unmapped ingredients, pull the mim-queue
+                    # source ID out of curation_history / notes and try it as a
+                    # KG-Microbe node. ~186 UNMAPPED_* records carry a
+                    # `source_id=mediadive.ingredient:NNNN` (or kgmicrobe.compound /
+                    # mediadive.solution / bacdive.isolation_source) reference
+                    # written by the mim-queue importer.
+                    if not found_embedding and ingredient_id.startswith('UNMAPPED'):
+                        import re
+                        haystack_parts = [ingredient.get('notes', '') or '']
+                        for event in ingredient.get('curation_history', []) or []:
+                            haystack_parts.append(event.get('changes', '') or '')
+                        haystack = '\n'.join(haystack_parts)
+                        source_id_re = re.compile(
+                            r'(mediadive\.ingredient|mediadive\.solution|'
+                            r'kgmicrobe\.compound):([A-Za-z0-9_.\-]+)'
+                        )
+                        for prefix, local in source_id_re.findall(haystack):
+                            potential_id = f"{prefix}:{local}"
+                            if potential_id in self.embeddings:
+                                ingredient_vectors.append(self.embeddings[potential_id])
+                                ingredient_ids.append(ingredient_id)
+                                found_embedding = True
                                 break
 
                     # Strategy 4: If still not found and it's unmapped, add to unmapped list
@@ -317,7 +352,7 @@ def build_visualization_data(
             mapping_status = ingredient.get('mapping_status', 'UNKNOWN')
 
             # Ontology info
-            ontology_mapping = ingredient.get('ontology_mapping', {})
+            ontology_mapping = ingredient.get('ontology_mapping') or {}
             ontology_id = ontology_mapping.get('ontology_id', '')
             ontology_label = ontology_mapping.get('ontology_label', '')
             ontology_source = ontology_mapping.get('ontology_source', '')
@@ -332,6 +367,12 @@ def build_visualization_data(
             synonyms = ingredient.get('synonyms', [])
             num_synonyms = len(synonyms)
 
+            # Chemical properties (populated for CHEBI-enriched records and
+            # any record that carries a CAS-RN — see chemical_properties_enrichment.md).
+            chem_props = ingredient.get('chemical_properties') or {}
+            molecular_formula = chem_props.get('molecular_formula') or ''
+            cas_rn = chem_props.get('cas_rn') or ''
+
             visualization_data.append({
                 'id': ingredient_id,
                 'name': preferred_term,
@@ -345,6 +386,8 @@ def build_visualization_data(
                 'total_occurrences': total_occurrences,
                 'media_count': media_count,
                 'num_synonyms': num_synonyms,
+                'molecular_formula': molecular_formula,
+                'cas_rn': cas_rn,
                 'category': category if yaml_file else 'unknown'
             })
 

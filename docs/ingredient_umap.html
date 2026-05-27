@@ -443,6 +443,8 @@
                             }
                             <div class="tooltip-row">Source: ${d.ontology_source || 'None (complex mixture)'}</div>
                             <div class="tooltip-row">Status: ${d.mapping_status}</div>
+                            ${d.molecular_formula ? `<div class="tooltip-row">Formula: ${d.molecular_formula}</div>` : ''}
+                            ${d.cas_rn ? `<div class="tooltip-row">CAS-RN: ${d.cas_rn}</div>` : ''}
                             <div class="tooltip-row">Occurrences: ${d.total_occurrences}</div>
                             <div class="tooltip-row">Media count: ${d.media_count}</div>
                             <div class="tooltip-row">Synonyms: ${d.num_synonyms}</div>
