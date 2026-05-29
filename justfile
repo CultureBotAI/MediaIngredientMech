@@ -131,6 +131,31 @@ research-providers:
 research-provider provider:
     uv run --extra dev python scripts/research_ingredient.py --provider-status {{provider}}
 
+# Edison Scientific deep research (PaperQA3) for one ingredient record.
+# target = slug (searched across mapped/ + unmapped/) or YAML path.
+# Examples:
+#   just research-ingredient-edison yeast_extract
+#   just research-ingredient-edison soil --job literature-high
+#   just research-ingredient-edison peptone --dry-run
+research-ingredient-edison target *args="":
+    uv run --extra dev python scripts/research_ingredient_edison.py \
+        --target {{target}} \
+        --template {{templates_dir}}/ingredient_mapping_research.md \
+        --out-dir {{research_dir}}/ingredients \
+        {{args}}
+
+# Edison deep research for a batch of ingredients (JSON list of slugs/paths).
+research-ingredient-edison-batch batch *args="":
+    uv run --extra dev python scripts/research_ingredient_edison.py \
+        --batch {{batch}} \
+        --template {{templates_dir}}/ingredient_mapping_research.md \
+        --out-dir {{research_dir}}/ingredients \
+        {{args}}
+
+# Retroactively backfill Edison provenance sidecars (no re-billing).
+enrich-edison-response *args="":
+    uv run --extra dev python scripts/enrich_edison_response.py {{args}}
+
 # Full workflow: export, validate, aggregate
 sync-individual:
     just export-individual && just validate-individual && just aggregate-collections
