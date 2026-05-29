@@ -132,13 +132,18 @@ def resolve_target(target: str) -> Path:
     raise SystemExit(f"Ingredient target not found: {target}")
 
 
-def render_query(ingredient_path: Path, template_path: Path) -> tuple[str, dict[str, str]]:
+def render_query(
+    ingredient_path: Path, template_path: Path, doc: dict[str, Any] | None = None
+) -> tuple[str, dict[str, str]]:
     """Render the deep-research template for a single ingredient.
 
     Returns ``(query_text, template_vars)`` so callers can stamp the
-    variables into the meta file alongside the rendered query.
+    variables into the meta file alongside the rendered query. ``doc``
+    may be passed in to reuse an already-parsed YAML and avoid a second
+    read.
     """
-    doc = ri.load_ingredient(ingredient_path)
+    if doc is None:
+        doc = ri.load_ingredient(ingredient_path)
     status, slug = ri.infer_status_slug(ingredient_path)
     variables = ri.template_vars(doc, status, slug)
     template = template_path.read_text()
@@ -187,16 +192,19 @@ def run_one(
     """
     from edison_client import TaskRequest
 
-    query, variables = render_query(ingredient_path, template_path)
+    doc = ri.load_ingredient(ingredient_path)
+    query, variables = render_query(ingredient_path, template_path, doc)
     slug = slug_for(ingredient_path)
     job_short = _short_job(job)
     stem = f"{slug}-edison-{job_short}"
     meta_path = out_dir / f"{stem}-meta.yaml"
 
     def _safe_rel(p: Path) -> str:
-        return str(p.relative_to(REPO_ROOT)) if str(p).startswith(str(REPO_ROOT)) else str(p)
+        try:
+            return str(p.resolve().relative_to(REPO_ROOT))
+        except ValueError:
+            return str(p)
 
-    doc = ri.load_ingredient(ingredient_path)
     base_meta: dict[str, Any] = {
         "slug": slug,
         "ingredient_path": _safe_rel(ingredient_path),
