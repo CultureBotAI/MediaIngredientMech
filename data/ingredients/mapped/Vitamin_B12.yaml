@@ -167,22 +167,32 @@ curation_history:
   curator: unmapped_ols_exact_audit
   action: MERGED_FROM_UNMAPPED_DUPLICATE
   changes: Added exact synonym "Vitamin B12 (cyanocobalamin)" and retired duplicate
-    unmapped record Vitamin_B12_(cyanocobalamin).yaml after OLS exact match to
-    CHEBI:176843; aligned kg_microbe_node_id with the corrected ontology mapping.
+    unmapped record Vitamin_B12_(cyanocobalamin).yaml after OLS exact match to CHEBI:176843;
+    aligned kg_microbe_node_id with the corrected ontology mapping.
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-05-11T08:27:00Z'
   curator: mediaingredientmech-agentic-curation
   action: ABSORBED_UNMAPPED_DUPLICATE
-  changes: Absorbed duplicate unmapped record Vitamine_B12.yaml (UNMAPPED_0570);
-    "Vitamine B12" is a spelling variant of the existing mapped vitamin B12 identity
-    CHEBI:176843.
+  changes: Absorbed duplicate unmapped record Vitamine_B12.yaml (UNMAPPED_0570); "Vitamine
+    B12" is a spelling variant of the existing mapped vitamin B12 identity CHEBI:176843.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.113331+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 68-19-9
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-05T21:48:45.943272+00:00'
 kg_microbe_node_id: CHEBI:176843
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Vitamin Source'

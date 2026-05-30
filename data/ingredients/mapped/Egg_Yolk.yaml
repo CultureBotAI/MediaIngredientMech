@@ -3,7 +3,7 @@ preferred_term: Egg yolk
 ontology_mapping:
   ontology_id: FOODON:03315772
   ontology_label: chicken egg yolk food product
-  ontology_source: registry
+  ontology_source: FOODON
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: LEXICAL_MATCH
@@ -31,4 +31,8 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (FOODON primary (food/biological))
   llm_assisted: false
+- timestamp: '2026-05-23T19:10:35.228249+00:00'
+  curator: fix_ontology_source_mismatch
+  action: CORRECTED
+  changes: 'ontology_source: registry -> FOODON (aligned with FOODON:03315772 prefix)'
 ingredient_type: UNDEFINED_MIXTURE

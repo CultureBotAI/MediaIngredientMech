@@ -173,6 +173,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110999+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
 kg_microbe_node_id: CHEBI:16494
 chemical_properties:
   cas_rn: 1077-28-7
@@ -182,3 +186,14 @@ chemical_properties:
   inchi: InChI=1S/C8H14O2S2/c9-8(10)4-2-1-3-7-5-6-11-12-7/h7H,1-6H2,(H,9,10)
   smiles: O=C(O)CCCCC1CCSS1
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (1399 occurrences as 'Growth factor')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Growth factor; Properties: Defined component, Simple component,
+      Organic compound'
+    curator_note: Widespread use in media formulations (1399 occurrences). High confidence
+      based on 'Defined component' property.

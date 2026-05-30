@@ -32,6 +32,10 @@ curation_history:
   changes: molecular_formula=C12H22O11; inchi=InChI=1S/C12H22O11/c13-1-4-6(16)8(18)9(19)11(21-4);
     smiles=OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H]
   llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.363452+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1358); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -51,3 +55,12 @@ chemical_properties:
   smiles: OC[C@H]1O[C@@](CO)(O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)[C@@H](O)[C@@H]1O
   data_source: CHEBI sqlite (oaklib)
 kg_microbe_node_id: CHEBI:17992
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

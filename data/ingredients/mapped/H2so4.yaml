@@ -105,6 +105,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111342+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 chemical_properties:
   cas_rn: 7664-93-9
   data_source: PubChem API
@@ -114,3 +118,14 @@ chemical_properties:
   smiles: '[H]OS(=O)(=O)O[H]'
 kg_microbe_node_id: CHEBI:26836
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (262 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+      Solution'
+    curator_note: Widespread use in media formulations (262 occurrences). High confidence
+      based on 'Defined component' property.

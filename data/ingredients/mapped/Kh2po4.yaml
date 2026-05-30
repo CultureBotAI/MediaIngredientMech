@@ -182,12 +182,16 @@ curation_history:
 - timestamp: '2026-05-11T04:08:29Z'
   curator: mediaingredientmech-agentic-curation
   action: MERGED_FROM_UNMAPPED_DUPLICATE
-  changes: Absorbed duplicate unmapped record Kh2po.yaml (UNMAPPED_0018); raw
-    synonym explicitly names KH2PO4 and the local mapped CHEBI:63036 record is
-    the potassium dihydrogen phosphate identity.
+  changes: Absorbed duplicate unmapped record Kh2po.yaml (UNMAPPED_0018); raw synonym
+    explicitly names KH2PO4 and the local mapped CHEBI:63036 record is the potassium
+    dihydrogen phosphate identity.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.111530+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
 chemical_properties:
   cas_rn: 7778-77-0
   data_source: PubChem API
@@ -197,3 +201,14 @@ chemical_properties:
   smiles: O=P([O-])(O)O.[K+]
 kg_microbe_node_id: CHEBI:63036
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (3862 occurrences as 'Buffer')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Buffer; Properties: Defined component, Inorganic compound, Simple
+      component'
+    curator_note: Widespread use in media formulations (3862 occurrences). High confidence
+      based on 'Defined component' property.

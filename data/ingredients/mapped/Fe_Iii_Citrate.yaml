@@ -170,6 +170,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111079+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 chemical_properties:
   cas_rn: 3522-50-7
   data_source: OAK/CHEBI xref
@@ -178,3 +182,14 @@ chemical_properties:
   inchi: InChI=1S/C6H8O7.Fe/c7-3(8)1-6(13,5(11)12)2-4(9)10;/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12);/q;+3/p-3
   smiles: O=C1CC2(O)CC(=O)[O][Fe]([O]1)[O]C2=O
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (319 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Organic compound, Defined component,
+      Simple component'
+    curator_note: Widespread use in media formulations (319 occurrences). High confidence
+      based on 'Defined component' property.

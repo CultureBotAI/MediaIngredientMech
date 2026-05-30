@@ -150,9 +150,24 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.113001+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 9005-25-8
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-05T21:48:45.845297+00:00'
 kg_microbe_node_id: CHEBI:28017
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (424 occurrences as 'Carbon source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Carbon source; Properties: Defined component, Complex component,
+      Organic compound'
+    curator_note: Widespread use in media formulations (424 occurrences). High confidence
+      based on 'Defined component' property.

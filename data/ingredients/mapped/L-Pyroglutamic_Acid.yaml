@@ -2,7 +2,7 @@ identifier: CHEBI:18183
 preferred_term: L-Pyroglutamic acid
 ontology_mapping:
   ontology_id: CHEBI:18183
-  ontology_label: ''
+  ontology_label: 5-oxo-L-proline
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -40,6 +40,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.487735+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 98-79-3
   data_source: CultureBotHT compounds_to_cas.csv
@@ -48,3 +52,12 @@ chemical_properties:
   inchi: InChI=1S/C5H7NO3/c7-4-2-1-3(6-4)5(8)9/h3H,1-2H2,(H,6,7)(H,8,9)/t3-/m0/s1
   smiles: O=C1CC[C@@H](C(=O)O)N1
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: AMINO_ACID_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709
+      (amino acid)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

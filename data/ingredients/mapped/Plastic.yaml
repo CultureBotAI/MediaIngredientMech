@@ -3,7 +3,7 @@ preferred_term: Plastic
 ontology_mapping:
   ontology_id: ENVO:06105101
   ontology_label: plastic
-  ontology_source: registry
+  ontology_source: ENVO
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: LEXICAL_MATCH
@@ -31,4 +31,8 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (ENVO primary (environmental))
   llm_assisted: false
+- timestamp: '2026-05-23T19:10:35.228608+00:00'
+  curator: fix_ontology_source_mismatch
+  action: CORRECTED
+  changes: 'ontology_source: registry -> ENVO (aligned with ENVO:06105101 prefix)'
 ingredient_type: UNDEFINED_MIXTURE

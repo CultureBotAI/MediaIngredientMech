@@ -112,6 +112,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-24T04:03:54.899342+00:00'
+  curator: env_context_phase3_initial
+  action: ANNOTATED
+  changes: 'Added 2 environmental_context entries (issue #1, Phase 3 initial pass).'
+- timestamp: '2026-05-29T23:35:36.113099+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 chemical_properties:
   cas_rn: 7783-06-4
   data_source: PubChem (via CHEBI:26833)
@@ -121,3 +129,24 @@ chemical_properties:
   smiles: '[S]'
 kg_microbe_node_id: CHEBI:26833
 ingredient_type: SINGLE_INGREDIENT
+environmental_context:
+- environment_term: ENVO:01000030
+  environment_label: marine hydrothermal vent biome
+  relevance: NATURAL_SOURCE
+  notes: Elemental sulfur deposits are a hallmark of hydrothermal vent environments.
+- environment_term: ENVO:00000051
+  environment_label: hot spring
+  relevance: NATURAL_SOURCE
+  notes: Elemental sulfur accumulates at terrestrial hot springs; substrate for sulfur-oxidizing
+    thermophiles.
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (225 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+      Simple component'
+    curator_note: Widespread use in media formulations (225 occurrences). High confidence
+      based on 'Defined component' property.

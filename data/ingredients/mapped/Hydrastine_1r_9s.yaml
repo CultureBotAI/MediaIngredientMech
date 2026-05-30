@@ -1,0 +1,50 @@
+identifier: CHEBI:69919
+preferred_term: Hydrastine (1R, 9S)
+ontology_mapping:
+  ontology_id: CHEBI:69919
+  ontology_label: Hydrastine
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureBotHT
+    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
+      sqlite (cas xref). '
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-29T06:34:31.158938+00:00'
+  curator: audit_cas_chebi_followup
+  action: CREATED_FROM_CAS_LOOKUP
+  changes: 'Created from CultureBotHT CAS-RN=118-08-1; CHEBI resolved via OAK CHEBI
+    sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via
+    OAK CHEBI sqlite (cas xref). '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:34.001928+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:29.981170+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C21H21NO6; inchi=InChI=1S/C21H21NO6/c1-22-7-6-11-8-15-16(27-10-26-1;
+    smiles=[H][C@]1([C@@]2([H])c3cc4c(cc3CCN2C)OCO4)OC(=O)c2c
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:15.020591+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+chemical_properties:
+  cas_rn: 118-08-1
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  molecular_formula: C21H21NO6
+  inchi: InChI=1S/C21H21NO6/c1-22-7-6-11-8-15-16(27-10-26-15)9-13(11)18(22)19-12-4-5-14(24-2)20(25-3)17(12)21(23)28-19/h4-5,8-9,18-19H,6-7,10H2,1-3H3/t18-,19+/m1/s1
+  smiles: '[H][C@]1([C@@]2([H])c3cc4c(cc3CCN2C)OCO4)OC(=O)c2c1ccc(OC)c2OC'
+ingredient_type: SINGLE_INGREDIENT

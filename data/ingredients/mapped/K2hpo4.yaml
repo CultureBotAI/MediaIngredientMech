@@ -206,11 +206,15 @@ curation_history:
 - timestamp: '2026-05-06T00:00:00+00:00'
   curator: unmapped_ols_exact_audit
   action: MERGED_FROM_UNMAPPED_DUPLICATE
-  changes: Added source variants "K2HPO" and "K2HPO4(Sigma P 3786)" and retired
-    duplicate unmapped record K2hpo.yaml after normalization to K2HPO4; occurrence
-    counts were summed.
+  changes: Added source variants "K2HPO" and "K2HPO4(Sigma P 3786)" and retired duplicate
+    unmapped record K2hpo.yaml after normalization to K2HPO4; occurrence counts were
+    summed.
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111476+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
 chemical_properties:
   cas_rn: 7758-11-4
   data_source: CultureBotHT compounds_to_cas.csv
@@ -220,3 +224,14 @@ chemical_properties:
   smiles: O=P([O-])([O-])O.[K+].[K+]
 kg_microbe_node_id: CHEBI:131527
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (2862 occurrences as 'Buffer')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Buffer; Properties: Defined component, Inorganic compound, Simple
+      component'
+    curator_note: Widespread use in media formulations (2862 occurrences). High confidence
+      based on 'Defined component' property.

@@ -1,0 +1,135 @@
+identifier: CHEBI:44115
+preferred_term: 3-(N-morpholino)propanesulfonic acid
+ontology_mapping:
+  ontology_id: CHEBI:44115
+  ontology_label: 3-(N-morpholino)propanesulfonic acid
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 1132-61-2
+    notes: ChEBI ID CHEBI:44115 found via PubChem CAS-RN cross-reference
+synonyms:
+- synonym_text: 3-morpholin-4-ylpropane-1-sulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3-morpholinopropanesulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 3[N-MORPHOLINO]PROPANE SULFONIC ACID
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MOPS (3-(N-morpholino) propane-sulfonic acid)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: MOPS buffer
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Morpholinopropane sulfonic acid
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 'Role: Buffer; Properties: Defined component, Organic compound, Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Defined component, Solution'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Buffer; Properties: Simple component, Organic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 52
+  media_count: 52
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T23:45:28.289701+00:00'
+  curator: fetch_cas_rn_with_preprocessing
+  action: ADDED_CAS_RN
+  changes: Added CAS-RN:1132-61-2 from PubChem API (preprocessed) via name preprocessing
+    (Morpholinopropane sulfonic acid )
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-07T10:18:57.422039+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:44115
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-09T00:32:50.689620+00:00'
+  curator: enrich_mim_cas_rn_batch
+  action: CAS_RN_ADDED
+  changes: Added CAS-RN 1132-61-2 from PubChem (via CHEBI:44115)
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 3-morpholin-4-ylpropane-1-sulfonic
+    acid, 3-morpholinopropanesulfonic acid, 3[N-MORPHOLINO]PROPANE SULFONIC ACID,
+    MOPS (3-(N-morpholino) propane-sulfonic acid), MOPS buffer, ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 3-(N-morpholino)propanesulfonic
+    acid, 3-morpholin-4-ylpropane-1-sulfonic acid, 3-morpholinopropanesulfonic acid,
+    3[N-MORPHOLINO]PROPANE SULFONIC ACID, MOPS (3-(N-morpholino) propane-sulfonic
+    acid), ... (1 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 3 duplicate MIM record(s) into this one: Mops_Buffer.yaml, Morpholinopropane_Sulfonic_Acid.yaml,
+    Morpholinopropane_Sulfonic_Acid_2.yaml. Synonyms, curation_history, and occurrence
+    counts were unioned/summed; winner selected by highest occurrence count with preferred_term
+    readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:31.874102+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.690422+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C7H15NO4S; inchi=InChI=1S/C7H15NO4S/c9-13(10,11)7-1-2-8-3-5-12-6-4-;
+    smiles=O=S(=O)(O)CCCN1CCOCC1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:12.049696+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110021+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
+notes: Created from FEBA ontology enrichment workflow. Used in 32 FEBA media formulations.
+chemical_properties:
+  cas_rn: 1132-61-2
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:18:57.422050+00:00'
+  molecular_formula: C7H15NO4S
+  inchi: InChI=1S/C7H15NO4S/c9-13(10,11)7-1-2-8-3-5-12-6-4-8/h1-7H2,(H,9,10,11)
+  smiles: O=S(=O)(O)CCCN1CCOCC1
+kg_microbe_node_id: CHEBI:44115
+ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Buffer'

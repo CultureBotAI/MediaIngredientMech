@@ -27,6 +27,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Seawater')
   llm_assisted: false
+- timestamp: '2026-05-24T04:03:54.899342+00:00'
+  curator: env_context_phase3_initial
+  action: ANNOTATED
+  changes: 'Added 1 environmental_context entries (issue #1, Phase 3 initial pass).'
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   2 CultureBot media; samples: Pro99 seawater, Pro99_seawater. No CAS-RN or CHEBI
   mapping available; curator review needed.'
@@ -40,3 +44,8 @@ ontology_mapping:
     source: MICRO via OLS search
     notes: Auto-upgraded from 'UNMAPPED_0282'; match=label-exact
 ingredient_type: UNDEFINED_MIXTURE
+environmental_context:
+- environment_term: ENVO:00002149
+  environment_label: sea water
+  relevance: NATURAL_SOURCE
+  notes: Filtered marine water; sourced directly from sea water.

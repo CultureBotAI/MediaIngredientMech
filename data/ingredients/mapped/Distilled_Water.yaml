@@ -247,20 +247,28 @@ curation_history:
   curator: unmapped_ols_exact_audit
   action: MERGED_FROM_UNMAPPED_DUPLICATE
   changes: Retired duplicate unmapped record Dh2o.yaml; existing exact synonym "dH2O"
-    already points to this mapped distilled water representative, and occurrence
-    counts were summed.
+    already points to this mapped distilled water representative, and occurrence counts
+    were summed.
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-05-11T04:17:00Z'
   curator: mediaingredientmech-agentic-curation
   action: MERGED_FROM_UNMAPPED_DUPLICATE
-  changes: Absorbed duplicate unmapped records Sterile_Dh2o.yaml (UNMAPPED_0032)
-    and Sterile_Dh2o_2.yaml (UNMAPPED_0084); both are CultureMech sterile dH2O
-    surface forms, and this mapped CHEBI:15377 representative already carries
-    dH2O/H2O water synonyms.
+  changes: Absorbed duplicate unmapped records Sterile_Dh2o.yaml (UNMAPPED_0032) and
+    Sterile_Dh2o_2.yaml (UNMAPPED_0084); both are CultureMech sterile dH2O surface
+    forms, and this mapped CHEBI:15377 representative already carries dH2O/H2O water
+    synonyms.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.110969+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-05-29T23:35:36.110973+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SALT (confidence: 1.00)'
 kg_microbe_node_id: CHEBI:15377
 chemical_properties:
   cas_rn: 7732-18-5
@@ -270,3 +278,24 @@ chemical_properties:
   inchi: InChI=1S/H2O/h1H2
   smiles: '[H]O[H]'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (4287 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+      Simple component'
+    curator_note: Widespread use in media formulations (4287 occurrences). High confidence
+      based on 'Defined component' property.
+- role: SALT
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (4287 occurrences as 'Solvating media')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Solvating media; Properties: Defined component, Inorganic compound,
+      Simple component'
+    curator_note: Widespread use in media formulations (4287 occurrences). High confidence
+      based on 'Defined component' property.

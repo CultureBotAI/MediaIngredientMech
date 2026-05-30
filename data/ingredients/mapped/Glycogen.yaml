@@ -37,9 +37,22 @@ curation_history:
 - timestamp: '2026-05-11T05:36:00Z'
   curator: mediaingredientmech-agentic-curation
   action: CLEANED_PROCESS_SYNONYMS
-  changes: Reclassified "autoclaved, Glycogen" as raw source text and removed
-    process-only exact synonym "filtered".
+  changes: Reclassified "autoclaved, Glycogen" as raw source text and removed process-only
+    exact synonym "filtered".
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-30T00:34:39.439990+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

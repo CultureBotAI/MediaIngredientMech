@@ -118,6 +118,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.109950+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 chemical_properties:
   cas_rn: 5064-31-3
   data_source: OAK/CHEBI xref
@@ -126,3 +130,10 @@ chemical_properties:
   inchi: InChI=1S/C6H9NO6.3Na/c8-4(9)1-7(2-5(10)11)3-6(12)13;;;/h1-3H2,(H,8,9)(H,10,11)(H,12,13);;;/q;3*+1/p-3
   smiles: O=C([O-])CN(CC(=O)[O-])CC(=O)[O-].[Na+].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'

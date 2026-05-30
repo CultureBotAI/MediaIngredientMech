@@ -119,11 +119,15 @@ curation_history:
 - timestamp: '2026-05-11T07:04:00Z'
   curator: mediaingredientmech-agentic-curation
   action: ABSORBED_UNMAPPED_DUPLICATE
-  changes: Absorbed duplicate unmapped record Pyridoxin.yaml (UNMAPPED_0503);
-    OAK/OLS audit and local CHEBI representative support pyridoxine CHEBI:16709.
+  changes: Absorbed duplicate unmapped record Pyridoxin.yaml (UNMAPPED_0503); OAK/OLS
+    audit and local CHEBI representative support pyridoxine CHEBI:16709.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.112693+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 65-23-6
   data_source: PubChem API
@@ -133,3 +137,10 @@ chemical_properties:
   smiles: Cc1ncc(CO)c(CO)c1O
 kg_microbe_node_id: CHEBI:16709
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Vitamin Source'

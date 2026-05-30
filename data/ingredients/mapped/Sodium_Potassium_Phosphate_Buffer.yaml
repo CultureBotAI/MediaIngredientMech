@@ -12,14 +12,15 @@ curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
   action: CREATED_AS_UNMAPPED
-  changes: Imported from mim-queue (source_id=mediadive.ingredient:631); no CAS-RN or CHEBI/NCIT
-    match. Curator review needed.
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:631); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
 - timestamp: '2026-05-02T03:12:19.903006+00:00'
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
-  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'phosphate buffer')
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'phosphate
+    buffer')
   llm_assisted: false
 - timestamp: '2026-05-02T03:18:21.973401+00:00'
   curator: resolve_unmapped_v2
@@ -30,14 +31,14 @@ curation_history:
   curator: ingredient_mapping_review_2026_05_05
   action: CORRECTED
   changes: Changed identifier from NCIT:C29321 to kgmicrobe.ingredient:sodium_potassium_phosphate_buffer
-    and retained NCIT:C29321 only as CLOSE_MATCH. Sodium potassium phosphate buffer is a formulation
-    variant, not identical to the generic phosphate buffer class.
+    and retained NCIT:C29321 only as CLOSE_MATCH. Sodium potassium phosphate buffer
+    is a formulation variant, not identical to the generic phosphate buffer class.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
-notes: Imported from mim-queue (source_id=mediadive.ingredient:631); no CAS-RN or CHEBI/NCIT
-  match. Curator review needed. Sodium potassium phosphate buffer is a formulation variant,
-  not identical to the generic phosphate buffer class.
+notes: Imported from mim-queue (source_id=mediadive.ingredient:631); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Sodium potassium phosphate buffer is a
+  formulation variant, not identical to the generic phosphate buffer class.
 ingredient_type: STOCK_SOLUTION
 ontology_mapping:
   ontology_id: NCIT:C29321
@@ -47,6 +48,6 @@ ontology_mapping:
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: ingredient_mapping_review_2026-05-05
-    notes: Sodium potassium phosphate buffer is a formulation variant, not identical to the
-      generic phosphate buffer class.
+    notes: Sodium potassium phosphate buffer is a formulation variant, not identical
+      to the generic phosphate buffer class.
 kg_microbe_node_id: kgmicrobe.ingredient:sodium_potassium_phosphate_buffer

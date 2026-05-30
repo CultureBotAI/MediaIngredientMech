@@ -12,14 +12,15 @@ curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
   action: CREATED_AS_UNMAPPED
-  changes: Imported from mim-queue (source_id=mediadive.ingredient:2152); no CAS-RN or CHEBI/NCIT
-    match. Curator review needed.
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:2152); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
 - timestamp: '2026-05-02T03:12:19.809543+00:00'
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
-  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'sea water')
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'sea
+    water')
   llm_assisted: false
 - timestamp: '2026-05-02T03:18:21.951110+00:00'
   curator: resolve_unmapped_v2
@@ -35,9 +36,13 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
-notes: Imported from mim-queue (source_id=mediadive.ingredient:2152); no CAS-RN or CHEBI/NCIT
-  match. Curator review needed. Natural sea water is a preparation/source variant, not asserted
-  as identity-equivalent to generic sea water.
+- timestamp: '2026-05-24T04:03:54.899342+00:00'
+  curator: env_context_phase3_initial
+  action: ANNOTATED
+  changes: 'Added 1 environmental_context entries (issue #1, Phase 3 initial pass).'
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2152); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Natural sea water is a preparation/source
+  variant, not asserted as identity-equivalent to generic sea water.
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
   ontology_id: ENVO:00002149
@@ -50,3 +55,8 @@ ontology_mapping:
     notes: Natural sea water is a preparation/source variant, not asserted as identity-equivalent
       to generic sea water.
 kg_microbe_node_id: kgmicrobe.ingredient:natural_sea_water
+environmental_context:
+- environment_term: ENVO:00002149
+  environment_label: sea water
+  relevance: NATURAL_SOURCE
+  notes: Untreated marine water; sourced directly from sea water.

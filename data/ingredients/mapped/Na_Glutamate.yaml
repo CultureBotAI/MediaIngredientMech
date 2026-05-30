@@ -133,6 +133,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112279+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
 kg_microbe_node_id: CHEBI:64220
 chemical_properties:
   cas_rn: 142-47-2
@@ -142,3 +146,10 @@ chemical_properties:
   inchi: InChI=1S/C5H9NO4.Na/c6-3(5(9)10)1-2-4(7)8;/h3H,1-2,6H2,(H,7,8)(H,9,10);/q;+1/p-1
   smiles: '[NH3+]C(CCC(=O)[O-])C(=O)[O-].[Na+]'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: NITROGEN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Nitrogen Source'

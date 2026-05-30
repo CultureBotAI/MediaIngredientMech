@@ -100,12 +100,16 @@ curation_history:
 - timestamp: '2026-05-07T00:00:00+00:00'
   curator: unmapped_duplicate_review_2026_05_07
   action: MERGED_FROM_UNMAPPED_DUPLICATE
-  changes: Absorbed duplicate unmapped record VOSO4_X_H2O.yaml (UNMAPPED_0574);
-    source hydrate notation is covered by the mapped variable hydrate representative
-    and local OAK CHEBI resolves CHEBI:87020.
+  changes: Absorbed duplicate unmapped record VOSO4_X_H2O.yaml (UNMAPPED_0574); source
+    hydrate notation is covered by the mapped variable hydrate representative and
+    local OAK CHEBI resolves CHEBI:87020.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.113365+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 chemical_properties:
   cas_rn: 123334-20-3
   data_source: PubChem (via CHEBI:87020)
@@ -114,3 +118,10 @@ chemical_properties:
   inchi: InChI=1S/H2O4S.H2O.O.V/c1-5(2,3)4;;;/h(H2,1,2,3,4);1H2;;/q;;;+2/p-2
   smiles: O=S(=O)([O-])[O-].[H]O[H].[O]=[V+2]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'

@@ -173,11 +173,15 @@ curation_history:
   curator: mediaingredientmech-agentic-curation
   action: ABSORBED_UNMAPPED_DUPLICATE
   changes: Absorbed duplicate unmapped record Original_Amount_Nh42so4_Fisher_A_702.yaml
-    (UNMAPPED_0082); local mapped representative is ammonium sulfate CHEBI:62946
-    and the source synonym gives the same formula with a vendor catalog suffix.
+    (UNMAPPED_0082); local mapped representative is ammonium sulfate CHEBI:62946 and
+    the source synonym gives the same formula with a vendor catalog suffix.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.112402+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
 kg_microbe_node_id: CHEBI:62946
 chemical_properties:
   cas_rn: 7783-20-2
@@ -187,3 +191,14 @@ chemical_properties:
   inchi: InChI=1S/2H3N.H2O4S/c;;1-5(2,3)4/h2*1H3;(H2,1,2,3,4)
   smiles: O=S(=O)([O-])[O-].[NH4+].[NH4+]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: NITROGEN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (1383 occurrences as 'Nitrogen source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Nitrogen source; Properties: Defined component, Inorganic compound,
+      Simple component'
+    curator_note: Widespread use in media formulations (1383 occurrences). High confidence
+      based on 'Defined component' property.

@@ -12,14 +12,16 @@ curation_history:
 - timestamp: '2026-04-29T06:51:33.117170+00:00'
   curator: audit_add_remaining_culturebotht
   action: CREATED_AS_UNMAPPED
-  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in 2 CultureBot
-    media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available; curator review needed.'
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 2 CultureBot media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available;
+    curator review needed.'
   new_status: UNMAPPED
   llm_assisted: false
 - timestamp: '2026-05-02T03:12:19.854401+00:00'
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
-  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'phosphate buffer')
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'phosphate
+    buffer')
   llm_assisted: false
 - timestamp: '2026-05-02T03:18:21.960132+00:00'
   curator: resolve_unmapped_v2
@@ -30,15 +32,15 @@ curation_history:
   curator: ingredient_mapping_review_2026_05_05
   action: CORRECTED
   changes: Changed identifier from NCIT:C29321 to kgmicrobe.ingredient:potassium_phosphate_buffer
-    and retained NCIT:C29321 only as CLOSE_MATCH. Potassium phosphate buffer is a formulation
-    variant, not identical to the generic phosphate buffer class.
+    and retained NCIT:C29321 only as CLOSE_MATCH. Potassium phosphate buffer is a
+    formulation variant, not identical to the generic phosphate buffer class.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
-notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in 2 CultureBot
-  media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available; curator review needed.
-  Potassium phosphate buffer is a formulation variant, not identical to the generic phosphate
-  buffer class.'
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  2 CultureBot media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available; curator
+  review needed. Potassium phosphate buffer is a formulation variant, not identical
+  to the generic phosphate buffer class.'
 ingredient_type: STOCK_SOLUTION
 ontology_mapping:
   ontology_id: NCIT:C29321
@@ -48,6 +50,6 @@ ontology_mapping:
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: ingredient_mapping_review_2026-05-05
-    notes: Potassium phosphate buffer is a formulation variant, not identical to the generic
-      phosphate buffer class.
+    notes: Potassium phosphate buffer is a formulation variant, not identical to the
+      generic phosphate buffer class.
 kg_microbe_node_id: kgmicrobe.ingredient:potassium_phosphate_buffer

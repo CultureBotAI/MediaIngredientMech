@@ -2,7 +2,7 @@ identifier: CHEBI:76181
 preferred_term: Fe(NH4)2(SO4)2 x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:76181
-  ontology_label: ''
+  ontology_label: ferrous ammonium sulfate hexahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -119,9 +119,24 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111089+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: Fe.6H2O.2H4N.2O4S
   inchi: InChI=1S/Fe.2H3N.2H2O4S.6H2O/c;;;2*1-5(2,3)4;;;;;;/h;2*1H3;2*(H2,1,2,3,4);6*1H2/q+2;;;;;;;;;;/p-2
   smiles: O.O.O.O.O.O.O=S(=O)([O-])[O-].O=S(=O)([O-])[O-].[Fe+2].[NH4+].[NH4+]
   data_source: CHEBI sqlite (oaklib)
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (169 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
+      Simple component'
+    curator_note: Widespread use in media formulations (169 occurrences). High confidence
+      based on 'Defined component' property.

@@ -209,6 +209,10 @@ curation_history:
     record Biotin_(Vitamin_B7).yaml after OLS exact match to CHEBI:15956.
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110268+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 58-85-5
   data_source: PubChem API
@@ -218,3 +222,14 @@ chemical_properties:
   smiles: '[H][C@]12CS[C@@H](CCCCC(=O)O)[C@@]1([H])NC(=O)N2'
 kg_microbe_node_id: CHEBI:15956
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (2421 occurrences as 'Vitamin')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Vitamin; Properties: Defined component, Organic compound, Simple
+      component'
+    curator_note: Widespread use in media formulations (2421 occurrences). High confidence
+      based on 'Defined component' property.

@@ -1,0 +1,69 @@
+identifier: CHEBI:16450
+preferred_term: 2'-Deoxyuridine
+ontology_mapping:
+  ontology_id: CHEBI:16450
+  ontology_label: 2'-deoxyuridine
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 951-78-0
+    notes: ChEBI ID CHEBI:16450 found via PubChem CAS-RN cross-reference
+synonyms:
+- synonym_text: 1-(2-deoxy-beta-D-erythro-pentofuranosyl)uracil
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 2-Deoxyuridine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Deoxyuridine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: dU
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-04-07T10:18:54.880108+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:16450
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: 1-(2-deoxy-beta-D-erythro-pentofuranosyl)uracil,
+    2-Deoxyuridine, Deoxyuridine, dU'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:31.804650+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.609378+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C9H12N2O5; inchi=InChI=1S/C9H12N2O5/c12-4-6-5(13)3-8(16-6)11-2-1-7(;
+    smiles=O=c1ccn([C@H]2C[C@H](O)[C@@H](CO)O2)c(=O)n1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.948184+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+notes: Created from FEBA ontology enrichment workflow. Used in 4 FEBA media formulations.
+chemical_properties:
+  cas_rn: 951-78-0
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:18:54.880118+00:00'
+  molecular_formula: C9H12N2O5
+  inchi: InChI=1S/C9H12N2O5/c12-4-6-5(13)3-8(16-6)11-2-1-7(14)10-9(11)15/h1-2,5-6,8,12-13H,3-4H2,(H,10,14,15)/t5-,6+,8+/m0/s1
+  smiles: O=c1ccn([C@H]2C[C@H](O)[C@@H](CO)O2)c(=O)n1
+ingredient_type: SINGLE_INGREDIENT
