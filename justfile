@@ -16,7 +16,7 @@ install:
 
 # Generate LinkML dataclasses from schema
 gen-schema:
-    gen-linkml --dir src/mediaingredientmech/datamodel src/mediaingredientmech/schema/mediaingredientmech.yaml
+    gen-python src/mediaingredientmech/schema/mediaingredientmech.yaml > src/mediaingredientmech/datamodel/mediaingredientmech.py
 
 # Validate schema syntax
 validate-schema:
