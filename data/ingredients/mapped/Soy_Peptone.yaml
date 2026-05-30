@@ -30,10 +30,19 @@ synonyms:
 - synonym_text: Soytone (BD-Difco) or Phytone peptone (BD-BBL)
   synonym_type: CATALOG_VARIANT
   source: manual
+- synonym_text: 'Properties: Undefined component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Soytone
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Bacto Soytone
+  synonym_type: CATALOG_VARIANT
+  source: merge_from_CHEBI:8150
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 47
+  media_count: 47
 curation_history:
 - timestamp: '2026-04-18T04:19:36+00:00'
   curator: foodon_promotion_cbclaw
@@ -52,4 +61,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Soy')
   llm_assisted: false
+- timestamp: '2026-05-24T04:06:03.574164+00:00'
+  curator: fix_obsolete_chebi_mappings
+  action: MERGED_FROM_DUPLICATES
+  changes: Absorbed CHEBI:8150 (Bacto Soytone) — obsolete CHEBI term, Difco soy-peptone
+    product. Synonyms unioned, occurrences summed (+47/+47).
 ingredient_type: UNDEFINED_MIXTURE
+merged:
+- CHEBI:8150

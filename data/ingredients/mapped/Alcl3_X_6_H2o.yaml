@@ -96,6 +96,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110103+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 kg_microbe_node_id: CHEBI:30115
 chemical_properties:
   cas_rn: 7784-13-6
@@ -105,3 +109,10 @@ chemical_properties:
   inchi: InChI=1S/Al.3ClH.6H2O/h;3*1H;6*1H2/q+3;;;;;;;;;/p-3
   smiles: '[Cl][Al]([Cl])[Cl].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H]'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'

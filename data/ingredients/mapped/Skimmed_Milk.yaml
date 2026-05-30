@@ -3,7 +3,7 @@ preferred_term: Skimmed milk
 ontology_mapping:
   ontology_id: FOODON:03301484
   ontology_label: skim milk food product
-  ontology_source: registry
+  ontology_source: FOODON
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: LEXICAL_MATCH
@@ -31,4 +31,8 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'milk')
   llm_assisted: false
+- timestamp: '2026-05-23T19:10:35.228680+00:00'
+  curator: fix_ontology_source_mismatch
+  action: CORRECTED
+  changes: 'ontology_source: registry -> FOODON (aligned with FOODON:03301484 prefix)'
 ingredient_type: UNDEFINED_MIXTURE

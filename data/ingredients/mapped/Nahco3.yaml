@@ -173,6 +173,10 @@ curation_history:
     record Nahco.yaml after normalization to NaHCO3; occurrence counts were summed.
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112331+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
 chemical_properties:
   cas_rn: 144-55-8
   data_source: PubChem API
@@ -182,3 +186,14 @@ chemical_properties:
   smiles: O=C([O-])O.[Na+]
 kg_microbe_node_id: CHEBI:32139
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (2213 occurrences as 'Buffer')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Buffer; Properties: Defined component, Inorganic compound, Simple
+      component'
+    curator_note: Widespread use in media formulations (2213 occurrences). High confidence
+      based on 'Defined component' property.

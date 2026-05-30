@@ -12,14 +12,15 @@ curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
   action: CREATED_AS_UNMAPPED
-  changes: Imported from mim-queue (source_id=mediadive.ingredient:1988); no CAS-RN or CHEBI/NCIT
-    match. Curator review needed.
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1988); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
 - timestamp: '2026-05-02T03:12:19.668646+00:00'
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
-  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'vitamin solution')
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'vitamin
+    solution')
   llm_assisted: false
 - timestamp: '2026-05-02T03:18:21.925167+00:00'
   curator: resolve_unmapped_v2
@@ -30,14 +31,14 @@ curation_history:
   curator: ingredient_mapping_review_2026_05_05
   action: CORRECTED
   changes: Changed identifier from MICRO:0000460 to kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution
-    and retained MICRO:0000460 only as CLOSE_MATCH. Kao and Michayluk vitamin solution is
-    a named formulation, not identical to the generic vitamin solution class.
+    and retained MICRO:0000460 only as CLOSE_MATCH. Kao and Michayluk vitamin solution
+    is a named formulation, not identical to the generic vitamin solution class.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
-notes: Imported from mim-queue (source_id=mediadive.ingredient:1988); no CAS-RN or CHEBI/NCIT
-  match. Curator review needed. Kao and Michayluk vitamin solution is a named formulation,
-  not identical to the generic vitamin solution class.
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1988); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Kao and Michayluk vitamin solution is a
+  named formulation, not identical to the generic vitamin solution class.
 ingredient_type: STOCK_SOLUTION
 ontology_mapping:
   ontology_id: MICRO:0000460
@@ -47,6 +48,6 @@ ontology_mapping:
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: ingredient_mapping_review_2026-05-05
-    notes: Kao and Michayluk vitamin solution is a named formulation, not identical to the
-      generic vitamin solution class.
+    notes: Kao and Michayluk vitamin solution is a named formulation, not identical
+      to the generic vitamin solution class.
 kg_microbe_node_id: kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution

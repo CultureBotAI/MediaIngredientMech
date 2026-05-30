@@ -88,6 +88,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111640+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 56-85-9
   data_source: PubChem API
@@ -97,3 +101,14 @@ chemical_properties:
   smiles: NC(=O)CC[C@H](N)C(=O)O
 kg_microbe_node_id: CHEBI:18050
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: NITROGEN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (137 occurrences as 'Nitrogen source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Nitrogen source; Properties: Organic compound, Defined component,
+      Simple component'
+    curator_note: Widespread use in media formulations (137 occurrences). High confidence
+      based on 'Defined component' property.

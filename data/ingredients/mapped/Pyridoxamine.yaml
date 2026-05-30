@@ -73,6 +73,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112676+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 85-87-0
   data_source: PubChem API
@@ -82,3 +86,10 @@ chemical_properties:
   smiles: Cc1ncc(CO)c(CN)c1O
 kg_microbe_node_id: CHEBI:16410
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Vitamin Source'

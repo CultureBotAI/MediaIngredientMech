@@ -130,13 +130,17 @@ curation_history:
 - timestamp: '2026-05-07T00:00:00+00:00'
   curator: unmapped_duplicate_review_2026_05_07
   action: MERGED_FROM_UNMAPPED_DUPLICATE
-  changes: Absorbed duplicate unmapped record Sodium_Dihydrogen_Phosphate.yaml
-    (UNMAPPED_0612); local OAK CHEBI resolves CHEBI:37585 as sodium dihydrogenphosphate
-    and lists sodium dihydrogen phosphate as a synonym. The separate NaH2PO4 monohydrate
-    source record was left unmapped for hydrate-state review.
+  changes: Absorbed duplicate unmapped record Sodium_Dihydrogen_Phosphate.yaml (UNMAPPED_0612);
+    local OAK CHEBI resolves CHEBI:37585 as sodium dihydrogenphosphate and lists sodium
+    dihydrogen phosphate as a synonym. The separate NaH2PO4 monohydrate source record
+    was left unmapped for hydrate-state review.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112317+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
 chemical_properties:
   cas_rn: 7558-80-7
   data_source: PubChem API
@@ -146,3 +150,10 @@ chemical_properties:
   smiles: O=P([O-])(O)O.[Na+]
 kg_microbe_node_id: CHEBI:37585
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Buffer'

@@ -148,12 +148,15 @@ curation_history:
 - timestamp: '2026-05-11T04:08:29Z'
   curator: mediaingredientmech-agentic-curation
   action: MERGED_FROM_UNMAPPED_DUPLICATE
-  changes: Absorbed duplicate unmapped record Caco.yaml (UNMAPPED_0021); raw
-    synonyms explicitly name CaCO3 and the local mapped CHEBI:3311 record is
-    calcium carbonate.
+  changes: Absorbed duplicate unmapped record Caco.yaml (UNMAPPED_0021); raw synonyms
+    explicitly name CaCO3 and the local mapped CHEBI:3311 record is calcium carbonate.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-30T00:22:50.427558+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 chemical_properties:
   cas_rn: 471-34-1
   data_source: PubChem API
@@ -163,3 +166,15 @@ chemical_properties:
   smiles: O=C([O-])[O-].[Ca+2]
 kg_microbe_node_id: CHEBI:3311
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (245 occurrences as 'Mineral source, Protective
+      agent')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source, Protective agent; Properties: Defined component,
+      Inorganic compound, Simple co'
+    curator_note: Widespread use in media formulations (245 occurrences). High confidence
+      based on 'Defined component' property.

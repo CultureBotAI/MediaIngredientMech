@@ -12,8 +12,8 @@ curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
   action: CREATED_AS_UNMAPPED
-  changes: Imported from mim-queue (source_id=mediadive.ingredient:720); no CAS-RN or CHEBI/NCIT
-    match. Curator review needed.
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:720); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
 - timestamp: '2026-05-02T03:18:21.977757+00:00'
@@ -30,16 +30,16 @@ curation_history:
   curator: ingredient_mapping_review_2026_05_05
   action: CORRECTED
   changes: Changed identifier from CHEBI:31206 to kgmicrobe.compound:tetramethyl_ammonium_chloride
-    and retained CHEBI:46020 only as CLOSE_MATCH. No exact local ontology term for tetramethylammonium
-    chloride was verified; retained as a kg-microbe compound with a non-identity link to the
-    tetramethylammonium cation.
+    and retained CHEBI:46020 only as CLOSE_MATCH. No exact local ontology term for
+    tetramethylammonium chloride was verified; retained as a kg-microbe compound with
+    a non-identity link to the tetramethylammonium cation.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
-notes: Imported from mim-queue (source_id=mediadive.ingredient:720); no CAS-RN or CHEBI/NCIT
-  match. Curator review needed. No exact local ontology term for tetramethylammonium chloride
-  was verified; retained as a kg-microbe compound with a non-identity link to the tetramethylammonium
-  cation.
+notes: Imported from mim-queue (source_id=mediadive.ingredient:720); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. No exact local ontology term for tetramethylammonium
+  chloride was verified; retained as a kg-microbe compound with a non-identity link
+  to the tetramethylammonium cation.
 ontology_mapping:
   ontology_id: CHEBI:46020
   ontology_label: tetramethylammonium
@@ -48,7 +48,13 @@ ontology_mapping:
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: ingredient_mapping_review_2026-05-05
-    notes: No exact local ontology term for tetramethylammonium chloride was verified; retained
-      as a kg-microbe compound with a non-identity link to the tetramethylammonium cation.
+    notes: No exact local ontology term for tetramethylammonium chloride was verified;
+      retained as a kg-microbe compound with a non-identity link to the tetramethylammonium
+      cation.
 kg_microbe_node_id: kgmicrobe.compound:tetramethyl_ammonium_chloride
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  inchi: InChI=1S/C4H12N/c1-5(2,3)4/h1-4H3/q+1
+  molecular_weight: 74.147
+  data_source: ChEBI+PubChem
+  retrieval_date: '2026-05-23T08:31:13.209820+00:00'

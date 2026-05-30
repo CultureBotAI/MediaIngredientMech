@@ -3,7 +3,7 @@ preferred_term: Avoparcin
 ontology_mapping:
   ontology_id: NCIT:C169798
   ontology_label: Avoparcin
-  ontology_source: CHEBI
+  ontology_source: NCIT
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: LEXICAL_MATCH
@@ -32,4 +32,8 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
   llm_assisted: false
+- timestamp: '2026-05-23T19:10:35.228035+00:00'
+  curator: fix_ontology_source_mismatch
+  action: CORRECTED
+  changes: 'ontology_source: CHEBI -> NCIT (aligned with NCIT:C169798 prefix)'
 ingredient_type: SINGLE_INGREDIENT

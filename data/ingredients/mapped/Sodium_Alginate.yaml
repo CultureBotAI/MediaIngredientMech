@@ -74,6 +74,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112801+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SOLIDIFYING_AGENT (confidence: 1.00)'
 chemical_properties:
   cas_rn: 9005-38-3
   data_source: CultureBotHT compounds_to_cas.csv
@@ -82,3 +86,10 @@ chemical_properties:
   inchi: InChI=1S/C6H10O7.Na/c7-1-2(8)4(5(10)11)13-6(12)3(1)9;/h1-4,6-9,12H,(H,10,11);/q;+1/p-1/t1-,2-,3-,4?,6+;/m0./s1
   smiles: '[H]O[C@@H]1C(C(=O)[O-])O[C@@H](O)[C@@H](O)[C@H]1O.[Na+]'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SOLIDIFYING_AGENT
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Solidifying Agent'

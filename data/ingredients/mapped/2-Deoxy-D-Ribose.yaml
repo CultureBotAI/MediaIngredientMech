@@ -38,6 +38,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.175691+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 533-67-5
   data_source: CultureBotHT compounds_to_cas.csv
@@ -46,3 +50,12 @@ chemical_properties:
   inchi: InChI=1S/C5H10O4/c6-2-1-4(8)5(9)3-7/h2,4-5,7-9H,1,3H2/t4-,5+/m0/s1
   smiles: O=CC[C@H](O)[C@H](O)CO
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

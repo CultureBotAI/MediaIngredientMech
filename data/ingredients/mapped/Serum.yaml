@@ -3,7 +3,7 @@ preferred_term: Serum
 ontology_mapping:
   ontology_id: UBERON:0001977
   ontology_label: blood serum
-  ontology_source: registry
+  ontology_source: UBERON
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: LEXICAL_MATCH
@@ -31,4 +31,8 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (UBERON primary (anatomical))
   llm_assisted: false
+- timestamp: '2026-05-23T19:10:35.228669+00:00'
+  curator: fix_ontology_source_mismatch
+  action: CORRECTED
+  changes: 'ontology_source: registry -> UBERON (aligned with UBERON:0001977 prefix)'
 ingredient_type: UNDEFINED_MIXTURE

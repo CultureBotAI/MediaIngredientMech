@@ -73,5 +73,16 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111238+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SOLIDIFYING_AGENT (confidence: 0.90)'
 kg_microbe_node_id: CHEBI:85248
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SOLIDIFYING_AGENT
+  confidence: 0.9
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Solidifying Agent'

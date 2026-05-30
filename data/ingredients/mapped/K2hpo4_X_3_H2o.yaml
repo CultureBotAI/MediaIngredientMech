@@ -76,6 +76,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111489+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
 kg_microbe_node_id: CHEBI:131527
 chemical_properties:
   cas_rn: 7758-11-4
@@ -85,3 +89,14 @@ chemical_properties:
   inchi: InChI=1S/2K.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
   smiles: O=P([O-])([O-])O.[K+].[K+]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (118 occurrences as 'Buffer')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Buffer; Properties: Defined component, Inorganic compound, Simple
+      component'
+    curator_note: Widespread use in media formulations (118 occurrences). High confidence
+      based on 'Defined component' property.

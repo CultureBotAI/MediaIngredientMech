@@ -108,6 +108,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112728+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: REDOX_INDICATOR (confidence: 1.00)'
 chemical_properties:
   cas_rn: 550-82-3
   data_source: PubChem API
@@ -117,3 +121,15 @@ chemical_properties:
   smiles: O=c1ccc2[n+]([O-])c3ccc(O)cc3oc-2c1
 kg_microbe_node_id: CHEBI:8806
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: REDOX_INDICATOR
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (1309 occurrences as 'pH dependent redox
+      indicator')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: pH dependent redox indicator; Properties: Defined component, Organic
+      compound, Simple componen'
+    curator_note: Widespread use in media formulations (1309 occurrences). High confidence
+      based on 'Defined component' property.

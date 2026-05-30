@@ -50,11 +50,15 @@ curation_history:
 - timestamp: '2026-05-11T05:36:00Z'
   curator: mediaingredientmech-agentic-curation
   action: CLEANED_PROCESS_SYNONYMS
-  changes: Reclassified source labels containing "filtered" or "autoclaved" as
-    raw text and removed process-only exact synonym "autoclaved".
+  changes: Reclassified source labels containing "filtered" or "autoclaved" as raw
+    text and removed process-only exact synonym "autoclaved".
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-30T00:34:39.620803+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 25990-10-7
   data_source: CultureBotHT compounds_to_cas.csv
@@ -63,3 +67,12 @@ chemical_properties:
   inchi: InChI=1S/C18H26O19/c19-1-2(20)10(13(26)27)36-17(6(1)24)35-9-4(22)7(25)18(37-12(9)15(30)31)34-8-3(21)5(23)16(32)33-11(8)14(28)29/h1-12,16-25,32H,(H,26,27)(H,28,29)(H,30,31)/t1-,2+,3+,4+,5+,6+,7+,8+,9+,10-,11-,12-,16-,17-,18-/m0/s1
   smiles: O=C(O)[C@H]1O[C@H](O[C@@H]2[C@H](O)[C@@H](O)[C@@H](O[C@@H]3[C@H](O)[C@@H](O)[C@@H](O)O[C@@H]3C(=O)O)O[C@@H]2C(=O)O)[C@H](O)[C@@H](O)[C@H]1O
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

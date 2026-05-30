@@ -10,16 +10,20 @@ ontology_mapping:
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
 synonyms:
-- synonym_text: 'Role: Buffer; Properties: Defined component, Organic compound, Simple component'
+- synonym_text: 'Role: Buffer; Properties: Defined component, Organic compound, Simple
+    component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Defined component, Simple component, Organic compound'
+- synonym_text: 'Role: Buffer; Properties: Defined component, Simple component, Organic
+    compound'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Organic compound, Defined component, Simple component'
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Defined component, Simple
+    component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: 'Role: Buffer; Properties: Organic compound, Simple component, Defined component'
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Simple component, Defined
+    component'
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: 1,1,1-tris(hydroxymethyl)methanamine
@@ -85,7 +89,8 @@ synonyms:
 - synonym_text: Tris(hydroxymethyl)methylamine
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
-- synonym_text: 'Role: Buffer; Properties: Simple component, Organic compound, Defined component'
+- synonym_text: 'Role: Buffer; Properties: Simple component, Organic compound, Defined
+    component'
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: Tris-HCl buffer
@@ -129,20 +134,22 @@ curation_history:
 - timestamp: '2026-04-05T21:48:45.909752+00:00'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
-  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched: TRIS)'
+  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched:
+    TRIS)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.913904+00:00'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
-  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched: Tris buffer
-    1M)'
+  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched:
+    Tris buffer 1M)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-05T21:48:45.915929+00:00'
   curator: fetch_cas_rn_from_culturebot_csv
   action: ADDED_CAS_RN
-  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched: Tris(hydroxymethyl)aminomethane)'
+  changes: 'Added CAS-RN:77-86-1 from CultureBotHT compounds_to_cas.csv (matched:
+    Tris(hydroxymethyl)aminomethane)'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-04-09T00:32:50.689620+00:00'
@@ -178,8 +185,8 @@ curation_history:
   action: MERGED_FROM_DUPLICATES
   changes: 'Absorbed 6 duplicate MIM record(s) into this one: Tris.yaml, Tris_Hydroxymethylaminomethane.yaml,
     Tris_Buffer.yaml, Tris_Hydroxymethylmethylamine.yaml, Tris_Buffer_1m.yaml, Tris_2.yaml.
-    Synonyms, curation_history, and occurrence counts were unioned/summed; winner selected
-    by highest occurrence count with preferred_term readability tie-break.'
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
   new_status: MAPPED
   llm_assisted: false
 - timestamp: '2026-05-01T07:35:36.731808+00:00'
@@ -215,6 +222,10 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.113237+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
 kg_microbe_node_id: CHEBI:9754
 chemical_properties:
   cas_rn: 77-86-1
@@ -224,3 +235,10 @@ chemical_properties:
   inchi: InChI=1S/C4H11NO3/c5-4(1-6,2-7)3-8/h6-8H,1-3,5H2
   smiles: NC(CO)(CO)CO
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Buffer'

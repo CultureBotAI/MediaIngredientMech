@@ -47,6 +47,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112862+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 143-19-1
   data_source: PubChem API
@@ -55,3 +59,10 @@ chemical_properties:
   inchi: InChI=1S/C18H34O2.Na/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18(19)20;/h9-10H,2-8,11-17H2,1H3,(H,19,20);/q;+1/p-1/b10-9-;
   smiles: CCCCCCCC/C=CCCCCCCCC(=O)[O-].[Na+]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Carbon Source'

@@ -114,6 +114,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111205+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.90)'
 chemical_properties:
   cas_rn: 110-17-8
   data_source: PubChem API
@@ -123,3 +127,10 @@ chemical_properties:
   smiles: O=C(O)/C=C/C(=O)O
 kg_microbe_node_id: CHEBI:18012
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.9
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Carbon Source'

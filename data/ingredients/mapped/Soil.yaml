@@ -26,6 +26,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Soil')
   llm_assisted: false
+- timestamp: '2026-05-24T04:03:54.899342+00:00'
+  curator: env_context_phase3_initial
+  action: ANNOTATED
+  changes: 'Added 1 environmental_context entries (issue #1, Phase 3 initial pass).'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2350); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -38,3 +42,8 @@ ontology_mapping:
     source: ENVO via OLS search
     notes: Auto-upgraded from 'UNMAPPED_0528'; match=label-exact
 ingredient_type: UNDEFINED_MIXTURE
+environmental_context:
+- environment_term: ENVO:00001998
+  environment_label: soil
+  relevance: NATURAL_SOURCE
+  notes: Ingredient is soil itself; sourced directly from this environment.

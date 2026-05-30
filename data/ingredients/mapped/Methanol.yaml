@@ -109,6 +109,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.111833+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: SALT (confidence: 1.00)'
 chemical_properties:
   cas_rn: 67-56-1
   data_source: PubChem API
@@ -118,3 +122,14 @@ chemical_properties:
   smiles: CO
 kg_microbe_node_id: CHEBI:17790
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SALT
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (178 occurrences as 'Solvating media')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Solvating media; Properties: Defined component, Organic compound,
+      Simple component'
+    curator_note: Widespread use in media formulations (178 occurrences). High confidence
+      based on 'Defined component' property.

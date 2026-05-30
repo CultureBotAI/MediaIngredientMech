@@ -2,7 +2,7 @@ identifier: CHEBI:38892
 preferred_term: Na2B4O7
 ontology_mapping:
   ontology_id: CHEBI:38892
-  ontology_label: ''
+  ontology_label: disodium tetraborate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -64,6 +64,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112111+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 chemical_properties:
   cas_rn: 1330-43-4
   data_source: PubChem API
@@ -73,3 +77,10 @@ chemical_properties:
   smiles: '[H]OB1O[B-]2(O[H])OB(O[H])O[B-](O[H])(O1)O2.[Na+].[Na+]'
 kg_microbe_node_id: CHEBI:38892
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'

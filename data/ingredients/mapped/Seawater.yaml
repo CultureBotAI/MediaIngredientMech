@@ -36,6 +36,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Seawater')
   llm_assisted: false
+- timestamp: '2026-05-24T04:03:54.899342+00:00'
+  curator: env_context_phase3_initial
+  action: ANNOTATED
+  changes: 'Added 2 environmental_context entries (issue #1, Phase 3 initial pass).'
 notes: 'CultureMech placeholder_id: 1'
 ontology_mapping:
   ontology_id: ENVO:00002149
@@ -47,3 +51,12 @@ ontology_mapping:
     source: cbclaw_envo_promotion
     notes: Direct ENVO match for unprocessed sea water as a culture medium ingredient.
 ingredient_type: UNDEFINED_MIXTURE
+environmental_context:
+- environment_term: ENVO:00002149
+  environment_label: sea water
+  relevance: NATURAL_SOURCE
+  notes: Ingredient is sea water itself; sourced directly from this environment.
+- environment_term: ENVO:00000447
+  environment_label: marine biome
+  relevance: NATURAL_SOURCE
+  notes: Used to cultivate organisms from the broader marine biome.

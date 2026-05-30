@@ -87,6 +87,10 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.112390+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 7783-28-0
   data_source: PubChem API
@@ -95,3 +99,10 @@ chemical_properties:
   inchi: InChI=1S/2H3N.H3O4P/c;;1-5(2,3)4/h2*1H3;(H3,1,2,3,4)
   smiles: O=P([O-])([O-])O.[NH4+].[NH4+]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: NITROGEN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Nitrogen Source'

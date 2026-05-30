@@ -164,11 +164,15 @@ curation_history:
   curator: mediaingredientmech-agentic-curation
   action: ABSORBED_UNMAPPED_DUPLICATE
   changes: Absorbed duplicate unmapped record Na2co.yaml (UNMAPPED_0041); raw source
-    synonym Na2CO3(Baker 3604) resolves the truncated preferred term to sodium
-    carbonate CHEBI:29377.
+    synonym Na2CO3(Baker 3604) resolves the truncated preferred term to sodium carbonate
+    CHEBI:29377.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.112120+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
 chemical_properties:
   cas_rn: 497-19-8
   data_source: CultureBotHT compounds_to_cas.csv
@@ -178,3 +182,14 @@ chemical_properties:
   smiles: O=C([O-])[O-].[Na+].[Na+]
 kg_microbe_node_id: CHEBI:29377
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (1251 occurrences as 'Buffer')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Buffer; Properties: Defined component, Inorganic compound, Simple
+      component'
+    curator_note: Widespread use in media formulations (1251 occurrences). High confidence
+      based on 'Defined component' property.

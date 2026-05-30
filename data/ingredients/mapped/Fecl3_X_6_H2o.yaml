@@ -102,12 +102,16 @@ curation_history:
   action: MERGED_FROM_UNMAPPED_DUPLICATE
   changes: Absorbed Ferric_Chloride_Hexahydrate.yaml, which was incorrectly mapped
     to CHEBI:82824 calpain inhibitor, and unmapped Iron_(III)_Chloride_Hexahydrate.yaml
-    (UNMAPPED_0293); local CHEBI confirms CHEBI:86254 as iron trichloride
-    hexahydrate with ferric/iron(III) chloride hexahydrate synonyms, and current
-    CAS-RN was corrected to the local CHEBI xref.
+    (UNMAPPED_0293); local CHEBI confirms CHEBI:86254 as iron trichloride hexahydrate
+    with ferric/iron(III) chloride hexahydrate synonyms, and current CAS-RN was corrected
+    to the local CHEBI xref.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.111120+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 kg_microbe_node_id: CHEBI:86254
 chemical_properties:
   cas_rn: 10025-77-1
@@ -117,3 +121,14 @@ chemical_properties:
   inchi: InChI=1S/3ClH.Fe.6H2O/h3*1H;;6*1H2/q;;;+3;;;;;;/p-3
   smiles: O.O.O.O.O.O.[Cl][Fe]([Cl])[Cl]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (413 occurrences as 'Mineral source')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
+      Simple component'
+    curator_note: Widespread use in media formulations (413 occurrences). High confidence
+      based on 'Defined component' property.

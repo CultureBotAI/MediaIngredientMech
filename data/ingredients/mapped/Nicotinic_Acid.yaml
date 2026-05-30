@@ -183,6 +183,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112478+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 59-67-6
   data_source: CultureBotHT compounds_to_cas.csv
@@ -192,3 +196,14 @@ chemical_properties:
   smiles: O=C(O)c1cccnc1
 kg_microbe_node_id: CHEBI:15940
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (1998 occurrences as 'Vitamin')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Vitamin; Properties: Defined component, Organic compound, Simple
+      component'
+    curator_note: Widespread use in media formulations (1998 occurrences). High confidence
+      based on 'Defined component' property.

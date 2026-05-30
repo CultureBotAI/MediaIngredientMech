@@ -1,0 +1,149 @@
+identifier: CHEBI:53258
+preferred_term: Sodium Citrate
+ontology_mapping:
+  ontology_id: CHEBI:53258
+  ontology_label: sodium citrate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: CultureMech
+    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_REVIEW
+    source: family_mismatch_fix
+    notes: 'fix(family-mismatch): was CHEBI:32142 (sodium citrate dihydrate); generic
+      "Sodium Citrate" name maps to the anhydrous parent CHEBI:53258 (matches sibling
+      MIM:Trisodium_Citrate convention). CAS-RN 6132-04-3 is the dihydrate registry
+      number — kept for synonymy but the canonical ontology mapping is the parent.
+      Hydrate-specific records (Na3-citrate_X_2_H2o, Trisodium_Citrate_X_2_H2o) retain
+      their own mappings.'
+synonyms:
+- synonym_text: 'Role: Buffer; Properties: Defined component, Simple component, Organic
+    compound'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Defined component, Simple
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Buffer; Properties: Organic compound, Simple component, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Role: Buffer; Properties: Simple component, Organic compound, Defined
+    component'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Citronensaeure,Trinatrium-Salz-Dihydrat
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Na2citrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Na3Citrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Na3‐citrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Sodiumcitrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Trisodium citrate dehydrate
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: trisodium 2-hydroxypropane-1,2,3-tricarboxylate--water (1/2)
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 11
+  media_count: 11
+curation_history:
+- timestamp: '2026-03-09T06:54:18.022301+00:00'
+  curator: import_from_culturemech
+  action: IMPORTED
+  changes: Initial import from CultureMech pipeline
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.754075+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6132-04-3 from CultureBotHT compounds_to_cas.csv (matched:
+    Sodium Citrate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-05T21:48:45.756070+00:00'
+  curator: fetch_cas_rn_from_culturebot_csv
+  action: ADDED_CAS_RN
+  changes: 'Added CAS-RN:6132-04-3 from CultureBotHT compounds_to_cas.csv (matched:
+    sodium citrate)'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 7 synonyms from kg-microbe P4.4 enrichment: Citronensaeure,Trinatrium-Salz-Dihydrat,
+    Na2citrate, Na3Citrate, Na3‐citrate, Sodiumcitrate, ... (2 more)'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-04-19T07:39:23.955331+00:00'
+  curator: audit_mim_merge
+  action: MERGED_FROM_DUPLICATES
+  changes: 'Absorbed 1 duplicate MIM record(s) into this one: Sodium_Citrate_3.yaml.
+    Synonyms, curation_history, and occurrence counts were unioned/summed; winner
+    selected by highest occurrence count with preferred_term readability tie-break.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-05-01T07:35:36.235927+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:32.324568+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H5O7.2H2O.3Na; inchi=InChI=1S/C6H8O7.3Na.2H2O/c7-3(8)1-6(13,5(11)12)2-4;
+    smiles=O.O.O=C([O-])CC(O)(CC(=O)[O-])C(=O)[O-].[Na+].[Na+
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:18.346349+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-05-02T15:00:00+00:00'
+  curator: family_mismatch_fix
+  action: REMAPPED_ONTOLOGY
+  changes: CHEBI:32142 (sodium citrate dihydrate) → CHEBI:53258 (sodium citrate);
+    generic ingredient name "Sodium Citrate" should use anhydrous parent (matches
+    MIM:Trisodium_Citrate convention). Cleared chemical_properties molecular_formula/inchi/smiles
+    (were dihydrate-specific) and kg_microbe_node_id for re-backfill against the new
+    CHEBI. CAS-RN 6132-04-3 retained as a synonym registry but is technically the
+    dihydrate's registry number.
+  llm_assisted: false
+- timestamp: '2026-05-02T23:59:52.838836+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C6H5O7.3Na; inchi=InChI=1S/C6H8O7.3Na/c7-3(8)1-6(13,5(11)12)2-4(9)10;
+    smiles=O=C([O-])CC(O)(CC(=O)[O-])C(=O)[O-].[Na+].[Na+].[N
+  llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112812+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
+chemical_properties:
+  cas_rn: 6132-04-3
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-04-05T21:48:45.754074+00:00'
+  molecular_formula: C6H5O7.3Na
+  inchi: InChI=1S/C6H8O7.3Na/c7-3(8)1-6(13,5(11)12)2-4(9)10;;;/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12);;;/q;3*+1/p-3
+  smiles: O=C([O-])CC(O)(CC(=O)[O-])C(=O)[O-].[Na+].[Na+].[Na+]
+ingredient_type: SINGLE_INGREDIENT
+kg_microbe_node_id: CHEBI:53258
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Buffer'

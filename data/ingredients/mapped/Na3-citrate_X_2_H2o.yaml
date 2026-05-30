@@ -2,7 +2,7 @@ identifier: CHEBI:32142
 preferred_term: Na3-citrate x 2 H2O
 ontology_mapping:
   ontology_id: CHEBI:32142
-  ontology_label: ''
+  ontology_label: sodium citrate dihydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -113,6 +113,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112267+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 1.00)'
 kg_microbe_node_id: CHEBI:32142
 chemical_properties:
   cas_rn: 6132-04-3
@@ -122,3 +126,10 @@ chemical_properties:
   inchi: InChI=1S/C6H8O7.3Na.2H2O/c7-3(8)1-6(13,5(11)12)2-4(9)10;;;;;/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12);;;;2*1H2/q;3*+1;;/p-3
   smiles: O.O.O=C([O-])CC(O)(CC(=O)[O-])C(=O)[O-].[Na+].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Buffer'

@@ -38,6 +38,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.651564+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 107-97-1
   data_source: CultureBotHT compounds_to_cas.csv
@@ -46,3 +50,12 @@ chemical_properties:
   inchi: InChI=1S/C3H7NO2/c1-4-2-3(5)6/h4H,2H2,1H3,(H,5,6)
   smiles: CNCC(=O)O
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: AMINO_ACID_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709
+      (amino acid)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

@@ -2,7 +2,7 @@ identifier: CHEBI:31770
 preferred_term: Lentilan from mushroom
 ontology_mapping:
   ontology_id: CHEBI:31770
-  ontology_label: ''
+  ontology_label: lentinan
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -39,6 +39,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.508390+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 37339-90-5
   data_source: CultureBotHT compounds_to_cas.csv
@@ -46,3 +50,12 @@ chemical_properties:
   molecular_formula: (C42H70O35)n
   smiles: '*O[C@@H]1[C@@H](O)[C@H](O[C@@H]2[C@@H](O)[C@H](O[C@@H]3[C@@H](O)[C@H](O[C@@H]4[C@@H](O)[C@H](O[C@H]5[C@H](O)[C@@H](CO)OC(*)[C@@H]5O)O[C@H](CO[C@@H]5O[C@H](CO)[C@@H](O)[C@H](O)[C@H]5O)[C@H]4O)O[C@H](CO)[C@H]3O)O[C@H](CO[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)[C@H]2O)O[C@H](CO)[C@H]1O'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

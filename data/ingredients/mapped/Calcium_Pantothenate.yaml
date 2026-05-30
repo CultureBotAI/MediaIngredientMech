@@ -204,8 +204,8 @@ curation_history:
   curator: unmapped_duplicate_review_2026_05_07
   action: MERGED_FROM_UNMAPPED_DUPLICATE
   changes: Absorbed duplicate unmapped record Hemicalcium_D--pantothenate.yaml (UNMAPPED_0400);
-    local mapped record already carries hemicalcium D-(+)-pantothenate synonym
-    evidence for CHEBI:31345.
+    local mapped record already carries hemicalcium D-(+)-pantothenate synonym evidence
+    for CHEBI:31345.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
@@ -213,11 +213,15 @@ curation_history:
   curator: mediaingredientmech-agentic-curation
   action: MERGED_FROM_UNMAPPED_DUPLICATE
   changes: Absorbed duplicate unmapped record Calcium_Panthothenate.yaml (UNMAPPED_0351);
-    local mapped CHEBI:31345 record already represents calcium pantothenate and
-    carries panthothenate spelling variants.
+    local mapped CHEBI:31345 record already represents calcium pantothenate and carries
+    panthothenate spelling variants.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-05-29T23:35:36.110378+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
 chemical_properties:
   cas_rn: 137-08-6
   data_source: PubChem API
@@ -227,3 +231,14 @@ chemical_properties:
   smiles: CC(C)(CO)[C@@H](O)C(=O)NCCC(=O)[O-].CC(C)(CO)[C@@H](O)C(=O)NCCC(=O)[O-].[Ca+2]
 kg_microbe_node_id: CHEBI:31345
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureMech database (945 occurrences as 'Vitamin')
+    reference_type: DATABASE_ENTRY
+    url: https://github.com/CultureBotAI/CultureMech
+    excerpt: 'Role: Vitamin; Properties: Organic compound, Defined component, Simple
+      component'
+    curator_note: Widespread use in media formulations (945 occurrences). High confidence
+      based on 'Defined component' property.

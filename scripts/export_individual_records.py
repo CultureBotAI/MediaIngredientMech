@@ -40,6 +40,8 @@ def sanitize_filename(preferred_term: str) -> str:
         "sodium chloride" -> "Sodium_chloride"
         "D-glucose" -> "D-glucose"
         "NaCl (99%)" -> "NaCl_99"
+        "(-)-Epinephrine" -> "Epinephrine"
+        "(R)-3-hydroxybutyrate" -> "R-3-hydroxybutyrate"
         "H₂O" -> "H2O"
 
     Args:
@@ -57,11 +59,13 @@ def sanitize_filename(preferred_term: str) -> str:
     # Remove special characters but keep hyphens and underscores
     name = re.sub(r'[^\w\-]', '', name)
 
-    # Remove multiple underscores
+    # Collapse repeated underscores/hyphens left by stripped punctuation
     name = re.sub(r'_+', '_', name)
+    name = re.sub(r'-+', '-', name)
 
-    # Remove leading/trailing underscores
-    name = name.strip('_')
+    # Remove leading/trailing underscores and hyphens (e.g. from a leading
+    # "(-)-"/"(R)-" stereodescriptor) so filenames don't start with a dash
+    name = name.strip('_-')
 
     # Title case the first letter of each word
     parts = name.split('_')
@@ -105,9 +109,14 @@ def export_collection_to_individual_files(
 
     stats['total'] = len(ingredients)
 
-    # Create output directory
+    # Create output directory and clear any stale per-record files. The
+    # per-record corpus is a pure projection of the collection, so removing
+    # existing *.yaml first lets deletions/renames in the source propagate
+    # (otherwise a removed record's file lingers forever).
     if not dry_run:
         output_dir.mkdir(parents=True, exist_ok=True)
+        for stale in output_dir.glob("*.yaml"):
+            stale.unlink()
 
     # Track filename collisions
     filename_counter = Counter()

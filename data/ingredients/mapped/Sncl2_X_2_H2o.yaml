@@ -89,9 +89,20 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.112783+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: 2Cl.2H2O.Sn
   inchi: InChI=1S/2ClH.2H2O.Sn/h2*1H;2*1H2;/q;;;;+2/p-2
   smiles: O.O.[Cl-].[Cl-].[Sn+2]
   data_source: CHEBI sqlite (oaklib)
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'

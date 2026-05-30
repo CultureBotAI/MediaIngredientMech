@@ -2,7 +2,7 @@ identifier: CHEBI:15447
 preferred_term: Xylan from Beechwood
 ontology_mapping:
   ontology_id: CHEBI:15447
-  ontology_label: ''
+  ontology_label: (1->4)-beta-D-xylan
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -40,6 +40,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-30T00:34:39.727756+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 9014-63-5
   data_source: CultureBotHT compounds_to_cas.csv
@@ -48,3 +52,12 @@ chemical_properties:
   inchi: InChI=1S/C5H10O5/c6-2-1-10-5(9)4(8)3(2)7/h2-9H,1H2/t2-,3+,4-,5-/m1/s1
   smiles: '[H]O[C@@H]1OC[C@@H](O)[C@H](O)[C@H]1O'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+      (carbohydrate)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

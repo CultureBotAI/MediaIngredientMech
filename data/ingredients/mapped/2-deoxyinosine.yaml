@@ -1,0 +1,67 @@
+identifier: CHEBI:28997
+preferred_term: 2'-Deoxyinosine
+ontology_mapping:
+  ontology_id: CHEBI:28997
+  ontology_label: 2'-deoxyinosine
+  ontology_source: CHEBI
+  mapping_quality: CAS_RN_LOOKUP
+  evidence:
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: PubChem
+    cas_rn: 890-38-0
+    notes: ChEBI ID CHEBI:28997 found via PubChem CAS-RN cross-reference
+synonyms:
+- synonym_text: 9-(2-deoxy-beta-D-erythro-pentofuranosyl)-9H-purin-6-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: 9-[(2R,4S,5R)-4-hydroxy-5-(hydroxymethyl)tetrahydrofuran-2-yl]-9H-purin-6-ol
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+- synonym_text: Deoxyinosine
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 4
+  media_count: 4
+curation_history:
+- timestamp: '2026-04-07T10:18:53.618105+00:00'
+  curator: feba_ontology_enrichment_batch
+  action: CREATED
+  changes: Created ingredient file from FEBA ontology enrichment batch with ChEBI
+    ID CHEBI:28997
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-04-18T00:00:00+00:00'
+  curator: cbclaw_kg_microbe_sweep
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: 9-(2-deoxy-beta-D-erythro-pentofuranosyl)-9H-purin-6-ol,
+    9-[(2R,4S,5R)-4-hydroxy-5-(hydroxymethyl)tetrahydrofuran-2-yl]-9H-purin-6-ol,
+    Deoxyinosine'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-05-01T07:35:31.801092+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-05-01T08:08:27.605172+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+  changes: molecular_formula=C10H12N4O4; inchi=InChI=1S/C10H12N4O4/c15-2-6-5(16)1-7(18-6)14-4-13-;
+    smiles=O=c1ncnc2c1ncn2[C@H]1C[C@H](O)[C@@H](CO)O1
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:11.943930+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+notes: Created from FEBA ontology enrichment workflow. Used in 4 FEBA media formulations.
+chemical_properties:
+  cas_rn: 890-38-0
+  data_source: FEBA ontology enrichment (via PubChem)
+  retrieval_date: '2026-04-07T10:18:53.618125+00:00'
+  molecular_formula: C10H12N4O4
+  inchi: InChI=1S/C10H12N4O4/c15-2-6-5(16)1-7(18-6)14-4-13-8-9(14)11-3-12-10(8)17/h3-7,15-16H,1-2H2,(H,11,12,17)/t5-,6+,7+/m0/s1
+  smiles: O=c1ncnc2c1ncn2[C@H]1C[C@H](O)[C@@H](CO)O1
+ingredient_type: SINGLE_INGREDIENT

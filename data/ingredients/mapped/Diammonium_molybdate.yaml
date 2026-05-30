@@ -2,7 +2,7 @@ identifier: CHEBI:91249
 preferred_term: Diammonium molybdate
 ontology_mapping:
   ontology_id: CHEBI:91249
-  ontology_label: ''
+  ontology_label: ammonium molybdate
   ontology_source: CHEBI
   mapping_quality: CAS_RN_LOOKUP
   evidence:
@@ -153,6 +153,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-29T23:35:36.110943+00:00'
+  curator: extract_roles_from_synonyms
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 1.00)'
 notes: Created from FEBA ontology enrichment workflow. Used in 3 FEBA media formulations.
 chemical_properties:
   cas_rn: 13106-76-8
@@ -163,3 +167,10 @@ chemical_properties:
   smiles: '[NH4+].[NH4+].[O]=[Mo](=[O])([O-])[O-]'
 kg_microbe_node_id: CHEBI:91249
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: MINERAL
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Mineral'

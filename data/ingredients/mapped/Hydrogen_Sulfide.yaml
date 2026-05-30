@@ -36,9 +36,19 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-05-24T04:03:54.899342+00:00'
+  curator: env_context_phase3_initial
+  action: ANNOTATED
+  changes: 'Added 1 environmental_context entries (issue #1, Phase 3 initial pass).'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: H2S
   inchi: InChI=1S/H2S/h1H2
   smiles: '[H]S[H]'
   data_source: CHEBI sqlite (oaklib)
+environmental_context:
+- environment_term: ENVO:01000030
+  environment_label: marine hydrothermal vent biome
+  relevance: ENVIRONMENT_MIMIC
+  notes: Vent fluids are sulfide-rich; H2S supplementation reproduces vent chemistry
+    for chemolithotrophic vent organisms.
