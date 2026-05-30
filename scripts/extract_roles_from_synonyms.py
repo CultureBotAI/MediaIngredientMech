@@ -35,7 +35,7 @@ ROLE_MAPPING = {
     "Amino acid source": "AMINO_ACID_SOURCE",
     # Additional unambiguous CultureMech role texts with valid IngredientRoleEnum targets.
     # (Heterogeneous texts like "Growth factor" / "Nutrient source" are intentionally
-    # omitted; "Reducing agent" and "Chelating agent" have no enum value yet.)
+    # omitted because they map to no single role.)
     "Vitamin": "VITAMIN_SOURCE",
     "pH indicator": "PH_INDICATOR",
     "pH dependent redox indicator": "REDOX_INDICATOR",

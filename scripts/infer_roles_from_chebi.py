@@ -30,12 +30,20 @@ COMPUTATIONAL_PREDICTION under curator ``infer_roles_from_chebi_ancestry`` so
 they are easy to review and reverse, and clearly distinct from the higher-
 confidence synonym-derived roles.
 
+The CHEBI adapter URI defaults to the standard OAK semsql cache
+(``~/.data/oaklib/chebi.db``), resolved portably via ``Path.home()`` so it
+works for any user who has that cache. Override with ``--chebi-db`` or the
+``CHEBI_DB`` environment variable; pass ``--chebi-db sqlite:obo:chebi`` to let
+OAK download CHEBI if you do not already have the local copy.
+
 Usage:
     python scripts/infer_roles_from_chebi.py --dry-run
     python scripts/infer_roles_from_chebi.py
+    python scripts/infer_roles_from_chebi.py --chebi-db sqlite:obo:chebi
 """
 
 import argparse
+import os
 import sys
 from collections import Counter
 from pathlib import Path
@@ -44,7 +52,12 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
-CHEBI_DB = "sqlite:///Users/marcin/.data/oaklib/chebi.db"
+# Default to the standard OAK semsql cache location, resolved portably from the
+# user's home dir (reuses an existing local copy without re-downloading).
+# Overridable via --chebi-db or $CHEBI_DB; use sqlite:obo:chebi to download.
+DEFAULT_CHEBI_DB = os.environ.get(
+    "CHEBI_DB", f"sqlite:///{Path.home() / '.data' / 'oaklib' / 'chebi.db'}"
+)
 HAS_ROLE = "RO:0000087"
 
 # (role, ancestor CHEBI class) in precedence order — first match wins.
@@ -76,13 +89,19 @@ def infer_role(ancestors: set[str], name: str) -> tuple[str | None, str | None]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true", help="Preview without saving")
+    parser.add_argument(
+        "--chebi-db",
+        default=DEFAULT_CHEBI_DB,
+        help=f"OAK adapter URI for CHEBI (default: {DEFAULT_CHEBI_DB!r}; "
+        "or set $CHEBI_DB). Use e.g. sqlite:///path/to/chebi.db for a local copy.",
+    )
     args = parser.parse_args()
 
     from oaklib import get_adapter
     from oaklib.datamodels.vocabulary import IS_A
 
-    print("Loading CHEBI adapter...")
-    adapter = get_adapter(CHEBI_DB)
+    print(f"Loading CHEBI adapter ({args.chebi_db})...")
+    adapter = get_adapter(args.chebi_db)
 
     curator = IngredientCurator(
         data_path=Path("data/curated/mapped_ingredients.yaml"),
