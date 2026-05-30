@@ -20,20 +20,27 @@ from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
 
 def load_crossref_lookup(crossref_path: Path) -> dict[str, dict]:
-    """Load top 100 cross-reference as a lookup by ingredient ID.
+    """Load top 100 cross-reference as a lookup keyed by ontology identifier.
+
+    The crossref still stores the rolled-back ``id: MediaIngredientMech:NNNNNN``
+    key, which no longer exists on records. Records are keyed by their ontology
+    CURIE ``identifier`` instead, so we key the lookup on the crossref's
+    ``ontology_id`` (== the record ``identifier`` for mapped records).
 
     Args:
         crossref_path: Path to top100_role_crossref.yaml
 
     Returns:
-        Dictionary mapping ingredient_id → ingredient_data
+        Dictionary mapping ontology identifier → ingredient_data
     """
     with open(crossref_path) as f:
         data = yaml.safe_load(f)
 
     lookup = {}
     for ingredient in data["ingredients"]:
-        lookup[ingredient["id"]] = ingredient
+        key = ingredient.get("ontology_id") or ingredient.get("id")
+        if key:
+            lookup[key] = ingredient
 
     return lookup
 
@@ -149,7 +156,7 @@ def enrich_existing_roles(
 
         ingredients_checked += 1
 
-        ingredient_id = record.get("id")
+        ingredient_id = record.get("identifier")
         preferred_term = record.get("preferred_term", "Unknown")
         occurrence_count = record.get("occurrence_statistics", {}).get(
             "total_occurrences", 0

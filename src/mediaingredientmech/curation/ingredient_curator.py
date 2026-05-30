@@ -60,6 +60,14 @@ VALID_MEDIA_ROLES = {
     "ELECTRON_ACCEPTOR",
     "ELECTRON_DONOR",
     "COFACTOR_PROVIDER",
+    # Kept in sync with IngredientRoleEnum in the LinkML schema
+    # (src/mediaingredientmech/schema/mediaingredientmech.yaml).
+    "REDOX_INDICATOR",
+    "PH_INDICATOR",
+    "SELECTIVE_AGENT",
+    "SURFACTANT",
+    "REDUCING_AGENT",
+    "CHELATOR",
 }
 
 VALID_CELLULAR_ROLES = {

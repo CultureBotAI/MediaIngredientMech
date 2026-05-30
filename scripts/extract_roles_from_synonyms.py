@@ -33,43 +33,67 @@ ROLE_MAPPING = {
     "Electron donor": "ELECTRON_DONOR",
     "Cofactor": "COFACTOR_PROVIDER",
     "Amino acid source": "AMINO_ACID_SOURCE",
+    # Additional unambiguous CultureMech role texts with valid IngredientRoleEnum targets.
+    # (Heterogeneous texts like "Growth factor" / "Nutrient source" are intentionally
+    # omitted; "Reducing agent" and "Chelating agent" have no enum value yet.)
+    "Vitamin": "VITAMIN_SOURCE",
+    "pH indicator": "PH_INDICATOR",
+    "pH dependent redox indicator": "REDOX_INDICATOR",
+    "Redox indicator": "REDOX_INDICATOR",
+    "Solidifying component": "SOLIDIFYING_AGENT",
+    "Surfactant": "SURFACTANT",
+    "Antimicrobial agent": "SELECTIVE_AGENT",
+    "Selective agent": "SELECTIVE_AGENT",
+    "Reducing agent": "REDUCING_AGENT",
+    "Chelating agent": "CHELATOR",
+    "Chelator": "CHELATOR",
 }
 
 # Pattern to match role text in synonyms
 ROLE_PATTERN = re.compile(r"Role:\s*([^;]+);?\s*Properties:\s*(.+)")
 
 
-def extract_role_from_synonym(synonym_text: str) -> tuple[str | None, list[str]]:
-    """Extract role and properties from a synonym text.
+def extract_role_from_synonym(synonym_text: str) -> tuple[list[str], list[str]]:
+    """Extract role(s) and properties from a synonym text.
+
+    Handles compound role texts (comma-separated), e.g.
+    "Role: Buffer, Mineral source; Properties: ..." maps to both BUFFER and MINERAL.
 
     Args:
         synonym_text: Text like "Role: Mineral source; Properties: Defined component, ..."
 
     Returns:
-        Tuple of (role_enum_value, properties_list) or (None, []) if no match
+        Tuple of (role_enum_values, properties_list). role_enum_values is empty
+        if there is no match or no component maps to a known enum value.
     """
     match = ROLE_PATTERN.match(synonym_text)
     if not match:
-        return None, []
+        return [], []
 
     role_text = match.group(1).strip()
     properties_text = match.group(2).strip()
 
-    # Map to enum value
-    role_enum = ROLE_MAPPING.get(role_text)
+    # A single "Role:" field may list several comma-separated roles; map each.
+    role_enums = []
+    for part in role_text.split(","):
+        role_enum = ROLE_MAPPING.get(part.strip())
+        if role_enum and role_enum not in role_enums:
+            role_enums.append(role_enum)
 
     # Parse properties
     properties = [p.strip() for p in properties_text.split(",")]
 
-    return role_enum, properties
+    return role_enums, properties
 
 
 def should_skip_ingredient(record: dict) -> bool:
-    """Check if ingredient already has media_roles or should be skipped."""
-    # Skip if already has roles
-    if record.get("media_roles"):
-        return True
+    """Check if ingredient should be skipped.
 
+    Only unmapped ingredients are skipped. Records that already have
+    media_roles are still processed: extraction is additive and idempotent
+    (existing roles are deduped against in extract_roles_for_ingredient), so
+    re-running picks up newly-mappable roles without duplicating prior ones.
+    """
     # Skip unmapped ingredients (we'll handle them separately)
     if record.get("mapping_status") != "MAPPED":
         return True
@@ -90,7 +114,12 @@ def extract_roles_for_ingredient(curator: IngredientCurator, record: dict) -> in
     if should_skip_ingredient(record):
         return 0
 
-    roles_added = set()  # Track unique roles to avoid duplicates
+    # Seed with roles already on the record so re-runs stay idempotent and
+    # never add a duplicate of an existing assignment.
+    roles_added = {
+        ra.get("role") for ra in record.get("media_roles", []) if ra.get("role")
+    }
+    preexisting = len(roles_added)
 
     # Process all RAW_TEXT synonyms
     for synonym in record.get("synonyms", []):
@@ -98,9 +127,12 @@ def extract_roles_for_ingredient(curator: IngredientCurator, record: dict) -> in
             continue
 
         synonym_text = synonym.get("synonym_text", "")
-        role_enum, properties = extract_role_from_synonym(synonym_text)
+        role_enums, properties = extract_role_from_synonym(synonym_text)
 
-        if role_enum and role_enum not in roles_added:
+        for role_enum in role_enums:
+            if role_enum in roles_added:
+                continue
+
             # Determine confidence based on properties
             confidence = 1.0 if "Defined component" in properties else 0.9
 
@@ -116,7 +148,7 @@ def extract_roles_for_ingredient(curator: IngredientCurator, record: dict) -> in
 
             roles_added.add(role_enum)
 
-    return len(roles_added)
+    return len(roles_added) - preexisting
 
 
 def main():

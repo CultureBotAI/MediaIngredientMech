@@ -1,9 +1,9 @@
 # Complete Ingredients Index
-**Total Records**: 2268
+**Total Records**: 2267
 **Mapped**: 1868 (82.4%)
-**Unmapped**: 398 (17.5%)
-**Other statuses**: 2 (0.1%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 127,965
+**Unmapped**: 398 (17.6%)
+**Other statuses**: 1 (0.0%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Total Occurrences**: 127,962
 
 ---
 
@@ -2287,6 +2287,5 @@
 
 | Identifier | Preferred Term | Status | Ontology ID | Representative | Occurrences |
 |---|---|---|---|---|---|
-| CHEBI:8150 | Bacto Soytone | REJECTED | CHEBI:8150 | FOODON:03315720 | 0 |
-| CHEBI:1 | CHEBI:1 | NEEDS_EXPERT | CHEBI:1 |  | 3 |
+| CHEBI:8150 | Bacto Soytone | REJECTED | FOODON:03315720 | FOODON:03315720 | 0 |
 
