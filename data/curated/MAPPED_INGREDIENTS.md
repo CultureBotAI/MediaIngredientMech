@@ -18,8 +18,8 @@
 | CHEBI:53188 | (+/-)-Verapamil hydrochloride | CHEBI:53188 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:125 | (-)-alpha-bisabolol | CHEBI:125 | CHEBI | EXACT_MATCH | 0 |
 | cas:247167-54-0 | (5z)-4-bromo-5-(bromomethylene)-2(5h)-furanone | cas:247167-54-0 | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:37054 | (R)-3-hydroxybutyrate | CHEBI:37054 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:37054 | (S)-3-hydroxybutyrate | CHEBI:37054 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:10983 | (R)-3-hydroxybutyrate | CHEBI:10983 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:11047 | (S)-3-hydroxybutyrate | CHEBI:11047 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:9532 | 0.2% Thiamine pyrophosphate | CHEBI:9532 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:132766 | 0.5 M Nitrilotriacetic acid, disodium salt | CHEBI:132766 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:16885 | 1-Kestose | CHEBI:16885 | CHEBI | EXACT_MATCH | 0 |
@@ -988,7 +988,7 @@
 | cas:5794-13-8 | L-Asparagine monohydrate | NCIT:C87433 | NCIT | NARROW_MATCH | 0 |
 | cas:1115-63-5 | L-Aspartic acid potassium salt | CHEBI:17053 | CHEBI | NARROW_MATCH | 2 |
 | cas:323194-76-9 | L-Aspartic acid sodium salt monohydrate | CHEBI:17053 | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:17126 | L-Carnitine | CHEBI:17126 | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:16347 | L-Carnitine | CHEBI:16347 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:233463 | L-Carnitine hydrochloride | CHEBI:233463 | CHEBI | EXACT_MATCH | 0 |
 | cas:23537-25-9 | L-Cysteic acid monohydrate | CHEBI:17285 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:74077 | L-Deoxyalliin | CHEBI:74077 | CHEBI | EXACT_MATCH | 0 |
