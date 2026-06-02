@@ -51,9 +51,20 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-06-02T07:05:13.395245+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
 chemical_properties:
   cas_rn: 1404-93-9
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
   molecular_formula: C66H75Cl2N9O24.HCl
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

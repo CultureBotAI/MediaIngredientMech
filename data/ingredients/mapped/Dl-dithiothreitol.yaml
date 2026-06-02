@@ -115,6 +115,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.388708+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: REDUCING_AGENT (confidence: 0.80)'
 chemical_properties:
   cas_rn: 3483-12-3
   data_source: OAK/CHEBI xref
@@ -123,3 +127,10 @@ chemical_properties:
   inchi: InChI=1S/C4H10O2S2/c5-3(1-7)4(6)2-8/h3-8H,1-2H2
   smiles: OC(CS)C(O)CS
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: REDUCING_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

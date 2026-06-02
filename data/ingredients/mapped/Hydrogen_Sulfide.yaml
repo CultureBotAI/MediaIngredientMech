@@ -40,6 +40,10 @@ curation_history:
   curator: env_context_phase3_initial
   action: ANNOTATED
   changes: 'Added 1 environmental_context entries (issue #1, Phase 3 initial pass).'
+- timestamp: '2026-06-02T07:05:13.390016+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: REDUCING_AGENT (confidence: 0.80)'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: H2S
@@ -52,3 +56,10 @@ environmental_context:
   relevance: ENVIRONMENT_MIMIC
   notes: Vent fluids are sulfide-rich; H2S supplementation reproduces vent chemistry
     for chemolithotrophic vent organisms.
+media_roles:
+- role: REDUCING_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

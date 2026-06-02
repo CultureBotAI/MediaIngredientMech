@@ -60,6 +60,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.387898+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: MINERAL (confidence: 0.80)'
 kg_microbe_node_id: CHEBI:91245
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
@@ -67,3 +71,10 @@ chemical_properties:
   inchi: InChI=1S/2ClH.Cu.5H2O/h2*1H;;5*1H2/q;;+2;;;;;/p-2
   smiles: O.O.O.O.O.[Cl][Cu][Cl]
   data_source: CHEBI sqlite (oaklib)
+media_roles:
+- role: MINERAL
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
