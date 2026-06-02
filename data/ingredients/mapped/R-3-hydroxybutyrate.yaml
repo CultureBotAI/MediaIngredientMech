@@ -1,4 +1,4 @@
-identifier: CHEBI:37054
+identifier: CHEBI:10983
 preferred_term: (R)-3-hydroxybutyrate
 synonyms:
 - synonym_text: (R)-3-hydroxybutyrate
@@ -32,11 +32,17 @@ curation_history:
   changes: molecular_formula=C4H7O3; inchi=InChI=1S/C4H8O3/c1-3(5)2-4(6)7/h3,5H,2H2,1H3,(H,6,;
     smiles=CC(O)CC(=O)[O-]
   llm_assisted: false
+- timestamp: '2026-06-02T07:01:19.251685+00:00'
+  curator: fix_stereoisomer_remaps
+  action: CORRECTED
+  changes: 'identifier CHEBI:37054 -> CHEBI:10983: enantiomer was sharing an achiral
+    CHEBI parent with its mirror image.'
+  llm_assisted: false
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
-  ontology_id: CHEBI:37054
-  ontology_label: 3-hydroxybutyrate
+  ontology_id: CHEBI:10983
+  ontology_label: (R)-3-hydroxybutyrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -44,10 +50,14 @@ ontology_mapping:
     source: CHEBI via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0202; matched via '3-hydroxybutyrate' (name
       normalization); label-exact
+  - evidence_type: CURATOR_JUDGMENT
+    source: fix_stereoisomer_remaps
+    notes: Re-mapped from achiral CHEBI:37054 to stereospecific CHEBI:10983 ((R)-3-hydroxybutyrate);
+      the prior auto-upgrade collapsed the stereo prefix to the generic parent.
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C4H7O3
   inchi: InChI=1S/C4H8O3/c1-3(5)2-4(6)7/h3,5H,2H2,1H3,(H,6,7)/p-1
   smiles: CC(O)CC(=O)[O-]
   data_source: CHEBI sqlite (oaklib)
-kg_microbe_node_id: CHEBI:37054
+kg_microbe_node_id: CHEBI:10983

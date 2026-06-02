@@ -48,6 +48,10 @@ curation_history:
   action: BACKFILL_PARENT_MESH
   changes: set ontology_mapping parent=mesh:C027711 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.386153+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: REDUCING_AGENT (confidence: 0.80)'
 chemical_properties:
   cas_rn: 12135-76-1
   data_source: CultureBotHT compounds_to_cas.csv
@@ -57,3 +61,10 @@ chemical_properties:
   inchi: InChI=1S/2H3N.H2S/h2*1H3;1H2
   pubchem_cid: 21842493
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: REDUCING_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

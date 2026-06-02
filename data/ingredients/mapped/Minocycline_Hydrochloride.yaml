@@ -38,6 +38,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.391333+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
 chemical_properties:
   cas_rn: 13614-98-7
   data_source: CultureBotHT compounds_to_cas.csv
@@ -46,3 +50,10 @@ chemical_properties:
   inchi: InChI=1S/C23H27N3O7.ClH/c1-25(2)12-5-6-13(27)15-10(12)7-9-8-11-17(26(3)4)19(29)16(22(24)32)21(31)23(11,33)20(30)14(9)18(15)28;/h5-6,9,11,17,27,29-30,33H,7-8H2,1-4H3,(H2,24,32);1H/t9-,11-,17-,23-;/m0./s1
   smiles: '[Cl-].[H+].[H][C@@]12Cc3c(N(C)C)ccc(O)c3C(=O)C1=C(O)[C@]1(O)C(=O)C(C(N)=O)=C(O)[C@@H](N(C)C)[C@]1([H])C2'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

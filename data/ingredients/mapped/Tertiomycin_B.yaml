@@ -44,6 +44,17 @@ curation_history:
     without ontology promotion.
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-06-02T07:05:13.394551+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
 ingredient_type: SINGLE_INGREDIENT
 notes: '2026-05-10 manual candidate review: retained kgmicrobe.compound primary identifier;
   reviewed OLS candidates were not exact identity matches for the source label.'
+media_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

@@ -32,6 +32,10 @@ curation_history:
     as exact synonym.
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.386815+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
 notes: Imported from mim-queue (source_id=kgmicrobe.compound:beta_lipomycin); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -44,3 +48,10 @@ ontology_mapping:
     source: MESH via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0593; matched via 'beta-Lipomycin' (name normalization);
       label-exact
+media_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

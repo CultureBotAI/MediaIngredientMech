@@ -48,6 +48,10 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C839 (label-exact)
   llm_assisted: false
+- timestamp: '2026-06-02T07:05:13.394258+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
 chemical_properties:
   cas_rn: 8025-81-8
   data_source: CultureBotHT compounds_to_cas.csv
@@ -57,3 +61,10 @@ chemical_properties:
   inchi: InChI=1S/C43H74N2O14/c1-24-21-29(19-20-46)39(59-42-37(49)36(45(9)10)38(27(4)56-42)58-35-23-43(6,51)41(50)28(5)55-35)40(52-11)31(47)22-33(48)53-25(2)15-13-12-14-16-32(24)57-34-18-17-30(44(7)8)26(3)54-34/h12-14,16,20,24-32,34-42,47,49-51H,15,17-19,21-23H2,1-11H3/b13-12+,16-14+/t24-,25-,26-,27-,28+,29+,30+,31-,32+,34+,35+,36-,37-,38-,39+,40+,41+,42+,43-/m1/s1
   pubchem_cid: 5289394
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
