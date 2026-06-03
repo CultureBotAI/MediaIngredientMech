@@ -154,6 +154,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-03T03:22:14.591976+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
 kg_microbe_node_id: CHEBI:115156
 chemical_properties:
   cas_rn: 17013-01-3
@@ -163,3 +167,10 @@ chemical_properties:
   inchi: InChI=1S/C4H4O4.2Na/c5-3(6)1-2-4(7)8;;/h1-2H,(H,5,6)(H,7,8);;/q;2*+1/p-2/b2-1+;;
   smiles: O=C([O-])/C=C/C(=O)[O-].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

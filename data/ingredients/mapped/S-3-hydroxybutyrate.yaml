@@ -38,6 +38,10 @@ curation_history:
   changes: 'identifier CHEBI:37054 -> CHEBI:11047: enantiomer was sharing an achiral
     CHEBI parent with its mirror image.'
   llm_assisted: false
+- timestamp: '2026-06-03T03:22:14.577019+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
@@ -61,3 +65,10 @@ chemical_properties:
   smiles: CC(O)CC(=O)[O-]
   data_source: CHEBI sqlite (oaklib)
 kg_microbe_node_id: CHEBI:11047
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

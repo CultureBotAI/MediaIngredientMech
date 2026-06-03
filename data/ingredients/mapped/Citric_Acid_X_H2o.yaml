@@ -59,6 +59,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-03T03:22:14.584223+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
 chemical_properties:
   cas_rn: 5949-29-1
   data_source: PubChem (via CHEBI:31404)
@@ -67,3 +71,10 @@ chemical_properties:
   inchi: InChI=1S/C6H8O7.H2O/c7-3(8)1-6(13,5(11)12)2-4(9)10;/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12);1H2
   smiles: O.O=C(O)CC(O)(CC(=O)O)C(=O)O
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
