@@ -71,6 +71,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.743541+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.80)'
 notes: Created from FEBA ontology enrichment workflow. Used in 13 FEBA media formulations.
 chemical_properties:
   cas_rn: 7048-04-6
@@ -80,3 +84,10 @@ chemical_properties:
   inchi: InChI=1S/C3H7NO2S.ClH.H2O/c4-2(1-7)3(5)6;;/h2,7H,1,4H2,(H,5,6);1H;1H2/t2-;;/m0../s1
   smiles: Cl.N[C@@H](CS)C(=O)O.O
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: AMINO_ACID_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

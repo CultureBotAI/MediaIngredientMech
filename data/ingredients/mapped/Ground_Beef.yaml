@@ -26,6 +26,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'beef')
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.741754+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:128); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -38,3 +42,10 @@ ontology_mapping:
     source: FOODON via OLS search
     notes: Auto-upgraded from 'UNMAPPED_0396'; match=fuzzy-top
 ingredient_type: UNDEFINED_MIXTURE
+media_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

@@ -37,6 +37,10 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.748066+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 0.80)'
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   2 CultureBot media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available; curator
   review needed. Potassium phosphate buffer is a formulation variant, not identical
@@ -53,3 +57,10 @@ ontology_mapping:
     notes: Potassium phosphate buffer is a formulation variant, not identical to the
       generic phosphate buffer class.
 kg_microbe_node_id: kgmicrobe.ingredient:potassium_phosphate_buffer
+media_roles:
+- role: BUFFER
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

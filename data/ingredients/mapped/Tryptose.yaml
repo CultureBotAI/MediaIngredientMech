@@ -21,6 +21,10 @@ curation_history:
   action: AUTO_UPGRADE_TO_MICRO
   changes: primary UNMAPPED_0559 → MICRO:0000183 via name normalization to 'Tryptose'
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.753204+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:819); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -33,3 +37,10 @@ ontology_mapping:
     source: MICRO via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0559; matched via 'Tryptose' (name normalization);
       label-exact
+media_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

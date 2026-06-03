@@ -119,6 +119,22 @@ def test_chebi_precedence_vitamin_over_nothing():
     ("DL-Dithiothreitol", "REDUCING_AGENT"),
     ("MgSO4 x 7 H2O", "MINERAL"),
     ("CuSO4 x 4 H2O", "MINERAL"),
+    # extended categories
+    ("HEPES", "BUFFER"),
+    ("Phosphate buffer", "BUFFER"),
+    ("Tris Acetate Stock Solution", "BUFFER"),
+    ("Agar", "SOLIDIFYING_AGENT"),
+    ("Peptone", "PROTEIN_SOURCE"),
+    ("Yeast extract", "PROTEIN_SOURCE"),
+    ("Tryptose", "PROTEIN_SOURCE"),        # peptone, not a sugar despite -ose
+    ("Liver extract", "PROTEIN_SOURCE"),
+    ("L-Asparagine monohydrate", "AMINO_ACID_SOURCE"),
+    ("myo-Inositol", "VITAMIN_SOURCE"),
+    ("Calcium D-Pantothenate", "VITAMIN_SOURCE"),
+    ("D-Trehalose dihydrate", "CARBON_SOURCE"),
+    ("Carboxymethyl cellulose", "CARBON_SOURCE"),
+    ("Glycogen from bovine liver", "CARBON_SOURCE"),  # source organ != liver ingredient
+    ("Malt extract", "CARBON_SOURCE"),
 ])
 def test_namelist_positive(name, expected):
     assert namelist.infer_role(name) == expected
@@ -129,9 +145,16 @@ def test_namelist_positive(name, expected):
     "Sodium ferric EDTA",
     "Ferric citrate monohydrate",
     "Citrate",                 # ambiguous -> excluded
-    "L-Cysteine HCl",          # amino acid, not tagged reducing agent
     "Dimethyl sulfide",        # volatile organosulfide, not a reductant additive
-    "D-glucose",               # not in any list
+    # extended-category exclusions (matched a token but guarded out)
+    "Brucella agar",           # agar-containing complete medium, not pure gelling agent
+    "Malt Extract Agar",       # complete medium
+    "Bacto Tryptic Soy Broth", # complete medium
+    "Serine hydroxamate",      # serine analog/inhibitor, not an amino-acid source
+    "L-alpha-Phosphatidylinositol from soybean",  # phospholipid, not a vitamin
+    "4-Deoxypyridoxine",       # antivitamin
+    "Lipopolysaccharide",      # endotoxin, not a carbon source
+    "Glycerol monostearate",   # emulsifier ester, not a carbon source
 ])
 def test_namelist_excluded(name):
     assert namelist.infer_role(name) is None

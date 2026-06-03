@@ -48,6 +48,10 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C87334 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.738974+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.80)'
 chemical_properties:
   cas_rn: 123333-71-1
   data_source: CultureBotHT compounds_to_cas.csv
@@ -57,3 +61,10 @@ chemical_properties:
   inchi: InChI=1S/C6H9N3O2.ClH.H2O/c7-5(6(10)11)1-4-2-8-3-9-4;;/h2-3,5H,1,7H2,(H,8,9)(H,10,11);1H;1H2
   pubchem_cid: 517335
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: AMINO_ACID_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
