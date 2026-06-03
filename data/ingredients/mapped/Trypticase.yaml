@@ -1,9 +1,9 @@
-identifier: FOODON:03315719
+identifier: MICRO:0000175
 preferred_term: Trypticase
 ontology_mapping:
-  ontology_id: FOODON:03315719
-  ontology_label: mammalian milk protein (hydrolyzed)
-  ontology_source: FOODON
+  ontology_id: MICRO:0000175
+  ontology_label: Trypticase peptone
+  ontology_source: MICRO
   mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: MANUAL_CURATION
@@ -12,6 +12,10 @@ ontology_mapping:
       peptone). Trypticase (BD BBL) is a pancreatic digest of casein. Mapped to the
       same FOODON parent used by Tryptone/Casein_Peptone; dropped wrong CAS-RN 53949-18-1
       which belonged to dodecylphosphocholine.
+  - evidence_type: CURATOR_JUDGMENT
+    source: remap_peptones_to_micro
+    notes: Re-mapped from the coarse FOODON:03315719 (mammalian milk protein, hydrolyzed)
+      to the precise MICRO term MICRO:0000175 (Trypticase peptone).
 synonyms:
 - synonym_text: 'Properties: Undefined component'
   synonym_type: RAW_TEXT
@@ -51,6 +55,12 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-03T07:11:13.659941+00:00'
+  curator: remap_peptones_to_micro
+  action: CORRECTED
+  changes: 'identifier FOODON:03315719 -> MICRO:0000175: disambiguated casein-peptone
+    product from the shared coarse FOODON term to its precise MICRO term.'
+  llm_assisted: false
 ingredient_type: UNDEFINED_MIXTURE
 media_roles:
 - role: PROTEIN_SOURCE
