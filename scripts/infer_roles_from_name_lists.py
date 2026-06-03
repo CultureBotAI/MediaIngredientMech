@@ -12,9 +12,10 @@ Precision choices:
     cef-/-floxacin/-penem/... + explicit names). Antibiotics in a medium are
     selective agents.
   * CHELATOR: only FREE chelators (EDTA / NTA / EGTA / DTPA / desferrioxamine).
-    Metal-chelate complexes (Fe-EDTA, ferric citrate) are excluded — their media
-    role is an iron/trace source, not chelation. Citrate is excluded (ambiguous:
-    carbon source / buffer / chelator).
+    Metal-chelate complexes (Fe-EDTA, ferric citrate) are excluded from CHELATOR —
+    their media role is an iron/trace source, not chelation. Free citrate is not a
+    chelator here; it is inferred as CARBON_SOURCE by the organic-acid rule below
+    (metal-citrate complexes stay excluded via that rule's blocklist).
   * REDUCING_AGENT: specific anaerobic reductants (dithionite, dithiothreitol,
     2-mercaptoethanol, thioglycolate, sodium/hydrogen/ammonium sulfide, TCEP).
     Cysteine and volatile organosulfides are excluded (ambiguous / not reductant

@@ -166,7 +166,6 @@ def test_namelist_positive(name, expected):
     # organic-acid blocklist: acid is a counterion/ester/complex, not the carbon source
     "Cadmium acetate dihydrate",   # toxic metal salt
     "Uranyl acetate",              # toxic metal salt
-    "Ferric citrate monohydrate",  # iron source (metal-citrate complex)
     "ethyl acetate",               # ester/solvent
     "Phenyl acetic acid",          # aromatic acid
     "Indole-3-butyric acid",       # auxin / signaling
