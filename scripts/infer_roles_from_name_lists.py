@@ -147,7 +147,7 @@ def infer_role(name: str) -> str | None:
         if not include_rx.search(name):
             continue
         if exclude_rx is not None and exclude_rx.search(name):
-            return None  # matched the category but hit its exclusion guard
+            continue  # matched the category but hit its exclusion guard; try later rules
         return role
     return None
 
