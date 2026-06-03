@@ -127,6 +127,30 @@ _CARBON = (
 # and complete media ("malt extract agar/broth").
 _CARBON_EXCL = r"(lipopolysaccharide|oleate|stearate|palmitate|broth|\bagar\b)"
 
+# Canonical microbial organic-acid carbon sources (TCA / glycolysis / short-chain),
+# as -ate or -ic acid. CHEBI ancestry can't be used here: it classifies the common
+# salt forms (sodium acetate, pyruvate) under "salt", not under carboxylic acid.
+_ORGANIC_ACID = (
+    r"\b(acet(ate|ic)|lact(ate|ic)|pyruv(ate|ic)|succin(ate|ic)|fumar(ate|ic)|"
+    r"mal(ate|ic)|citr(ate|ic)|propion(ate|ic)|butyr(ate|ic)|form(ate|ic)|"
+    r"glucon(ate|ic)|oxoglutar(ate|ic)|ketoglutar(ate|ic)|glutar(ate|ic)|"
+    r"glycol(ate|ic)|glyoxyl(ate|ic)|malon(ate|ic)|oxaloacet(ate|ic)|"
+    r"isocitr(ate|ic)|aconit(ate|ic)|hydroxybutyr(ate|ic)|hydroxypropion(ate|ic)|"
+    r"capro(ate|ic)|octano(ate|ic)|valer(ate|ic)|levulin(ate|ic)|mevalon(ate|ic)|"
+    r"quin(ate|ic)|shikim(ate|ic))\b"
+)
+# Exclude where the acid is a counterion/ester/complex rather than the carbon
+# source: toxic/transition-metal & iron/Mg salts (metal sources), aromatics /
+# polyphenols / indole auxins, esters & ionic liquids, ammonium salts (N source).
+_ORGANIC_ACID_EXCL = (
+    r"(cadmium|thalli|uranyl|\blead\b|mercur|silver|ferric|ferrous|\biron\b|"
+    r"mangan|nickel|cobalt|copper|zinc|alumin|chromium|barium|strontium|gallium|"
+    r"magnesium|\bMg-|"
+    r"indol|phenyl|gallate|epigallo|catechin|imidazolium|rhodinyl|synephrine|"
+    r"cholin|styryl|ursolo|aminopropionitrile|thienyl|\bethyl\b|"
+    r"ammonium|\(NH4\)|NH4-)"
+)
+
 # (role, include_rx, exclude_rx | None) in precedence order.
 RULES = [
     ("SELECTIVE_AGENT", re.compile(_ANTIBIOTIC, re.I), None),
@@ -139,6 +163,7 @@ RULES = [
     ("VITAMIN_SOURCE", re.compile(_VITAMIN, re.I), re.compile(_VITAMIN_EXCL, re.I)),
     ("MINERAL", re.compile(_MINERAL, re.I), None),
     ("CARBON_SOURCE", re.compile(_CARBON, re.I), re.compile(_CARBON_EXCL, re.I)),
+    ("CARBON_SOURCE", re.compile(_ORGANIC_ACID, re.I), re.compile(_ORGANIC_ACID_EXCL, re.I)),
 ]
 
 
