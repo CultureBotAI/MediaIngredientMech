@@ -26,6 +26,10 @@ curation_history:
   changes: molecular_formula=C6H8O7; inchi=InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13;
     smiles=O=C(O)CC(O)(CC(=O)O)C(=O)O
   llm_assisted: false
+- timestamp: '2026-06-03T03:22:14.584268+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
 notes: 'CultureMech placeholder_id: 9'
 ontology_mapping:
   ontology_id: CHEBI:30769
@@ -41,3 +45,10 @@ chemical_properties:
   inchi: InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12)
   smiles: O=C(O)CC(O)(CC(=O)O)C(=O)O
   data_source: CHEBI sqlite (oaklib)
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

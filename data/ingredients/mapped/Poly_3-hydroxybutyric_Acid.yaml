@@ -48,6 +48,10 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:20067 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-06-03T03:22:14.593670+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
 chemical_properties:
   cas_rn: 29435-48-1
   data_source: CultureBotHT compounds_to_cas.csv
@@ -57,3 +61,10 @@ chemical_properties:
   inchi: InChI=1S/C12H20O6/c1-8(14)6-11(15)18-10(3)7-12(16)17-9(2)4-5-13/h5,8-10,14H,4,6-7H2,1-3H3
   pubchem_cid: 71311208
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

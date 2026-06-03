@@ -135,6 +135,15 @@ def test_chebi_precedence_vitamin_over_nothing():
     ("Carboxymethyl cellulose", "CARBON_SOURCE"),
     ("Glycogen from bovine liver", "CARBON_SOURCE"),  # source organ != liver ingredient
     ("Malt extract", "CARBON_SOURCE"),
+    # organic-acid carbon sources (curated list + metal/ester/aromatic blocklist)
+    ("Sodium acetate", "CARBON_SOURCE"),
+    ("Pyruvate", "CARBON_SOURCE"),
+    ("Sodium succinate", "CARBON_SOURCE"),
+    ("Citric acid", "CARBON_SOURCE"),
+    ("alpha-ketoglutaric acid", "CARBON_SOURCE"),
+    ("Sodium gluconate", "CARBON_SOURCE"),
+    ("Calcium gluconate", "CARBON_SOURCE"),  # benign counterion kept
+    ("Citrate", "CARBON_SOURCE"),            # carbon source (free citrate, no metal)
 ])
 def test_namelist_positive(name, expected):
     assert namelist.infer_role(name) == expected
@@ -144,7 +153,6 @@ def test_namelist_positive(name, expected):
     "Fe(III)-EDTA",            # metal-chelate complex -> iron source, not chelator
     "Sodium ferric EDTA",
     "Ferric citrate monohydrate",
-    "Citrate",                 # ambiguous -> excluded
     "Dimethyl sulfide",        # volatile organosulfide, not a reductant additive
     # extended-category exclusions (matched a token but guarded out)
     "Brucella agar",           # agar-containing complete medium, not pure gelling agent
@@ -155,6 +163,13 @@ def test_namelist_positive(name, expected):
     "4-Deoxypyridoxine",       # antivitamin
     "Lipopolysaccharide",      # endotoxin, not a carbon source
     "Glycerol monostearate",   # emulsifier ester, not a carbon source
+    # organic-acid blocklist: acid is a counterion/ester/complex, not the carbon source
+    "Cadmium acetate dihydrate",   # toxic metal salt
+    "Uranyl acetate",              # toxic metal salt
+    "ethyl acetate",               # ester/solvent
+    "Phenyl acetic acid",          # aromatic acid
+    "Indole-3-butyric acid",       # auxin / signaling
+    "(NH4)2 citrate",              # ammonium salt (nitrogen)
 ])
 def test_namelist_excluded(name):
     assert namelist.infer_role(name) is None
