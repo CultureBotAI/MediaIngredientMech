@@ -46,44 +46,68 @@ def main() -> None:
     )
     curator.load()
     ts = datetime.now(timezone.utc).isoformat()
-    by_pt = {(r.get("preferred_term"), r.get("identifier")): r for r in curator.records}
+    # Match by preferred_term and EITHER the old or the already-remapped id, so the
+    # script is idempotent / re-runnable (re-running only tops up missing pieces).
+    by_pt = {}
+    for r in curator.records:
+        by_pt.setdefault(r.get("preferred_term"), []).append(r)
 
     n = 0
     for pt, old_id, new_id, new_label, quality in REMAPS:
-        record = by_pt.get((pt, old_id))
+        record = next(
+            (r for r in by_pt.get(pt, []) if r.get("identifier") in (old_id, new_id)),
+            None,
+        )
         if record is None:
-            print(f"  SKIP: no record {pt!r} with identifier {old_id}")
+            print(f"  SKIP: no record {pt!r} with identifier {old_id} or {new_id}")
             continue
         om = record.get("ontology_mapping") or {}
+
+        # Mark prior (pre-remap) evidence whose rationale was the FOODON mapping as
+        # historical so it does not read as the current rationale; the notes retain
+        # their original provenance value. Never touch this script's own entry.
+        for e in om.get("evidence", []):
+            note = e.get("notes", "")
+            is_legacy = e.get("source") != "remap_peptones_to_micro" and "FOODON" in note
+            if is_legacy and not note.startswith("[HISTORICAL"):
+                e["notes"] = f"[HISTORICAL — superseded by the {new_id} remap below] {note}"
+
         record["identifier"] = new_id
         om["ontology_id"] = new_id
         om["ontology_label"] = new_label
         om["ontology_source"] = "MICRO"
         om["mapping_quality"] = quality
-        om.setdefault("evidence", []).append(
-            {
-                "evidence_type": "CURATOR_JUDGMENT",
-                "source": "remap_peptones_to_micro",
-                "notes": (
-                    f"Re-mapped from the coarse {old_id} (mammalian milk protein, "
-                    f"hydrolyzed) to the precise MICRO term {new_id} ({new_label})."
-                ),
-            }
-        )
+        # Add the remap evidence entry only once (idempotent).
+        if not any(e.get("source") == "remap_peptones_to_micro" for e in om.get("evidence", [])):
+            om.setdefault("evidence", []).append(
+                {
+                    "evidence_type": "CURATOR_JUDGMENT",
+                    "source": "remap_peptones_to_micro",
+                    "notes": (
+                        f"Re-mapped from the coarse {old_id} (mammalian milk protein, "
+                        f"hydrolyzed) to the precise MICRO term {new_id} ({new_label})."
+                    ),
+                }
+            )
         record["ontology_mapping"] = om
-        record.setdefault("curation_history", []).append(
-            {
-                "timestamp": ts,
-                "curator": "remap_peptones_to_micro",
-                "action": "CORRECTED",
-                "changes": (
-                    f"identifier {old_id} -> {new_id}: disambiguated casein-peptone "
-                    f"product from the shared coarse FOODON term to its precise MICRO term."
-                ),
-                "llm_assisted": False,
-            }
-        )
-        print(f"  {pt}: {old_id} -> {new_id} ({new_label}) [{quality}]")
+        # Add the curation-history event only once (idempotent).
+        if not any(
+            h.get("curator") == "remap_peptones_to_micro"
+            for h in record.get("curation_history", [])
+        ):
+            record.setdefault("curation_history", []).append(
+                {
+                    "timestamp": ts,
+                    "curator": "remap_peptones_to_micro",
+                    "action": "CORRECTED",
+                    "changes": (
+                        f"identifier {old_id} -> {new_id}: disambiguated casein-peptone "
+                        f"product from the shared coarse FOODON term to its precise MICRO term."
+                    ),
+                    "llm_assisted": False,
+                }
+            )
+        print(f"  {pt}: -> {new_id} ({new_label}) [{quality}]")
         n += 1
 
     if not args.dry_run:
