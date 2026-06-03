@@ -37,8 +37,19 @@ curation_history:
   previous_status: UNMAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-06-03T02:06:01.734116+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curated to CHEBI:134431 acetyl xylan by local CHEBI exact
   synonym review on 2026-05-11.
 kg_microbe_node_id: CHEBI:134431
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

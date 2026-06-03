@@ -64,6 +64,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.754037+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.80)'
 notes: Created from FEBA ontology enrichment workflow. Used in 21 FEBA media formulations.
 chemical_properties:
   cas_rn: 87-89-8
@@ -73,3 +77,10 @@ chemical_properties:
   inchi: InChI=1S/C6H12O6/c7-1-2(8)4(10)6(12)5(11)3(1)9/h1-12H/t1-,2-,3+,4+,5-,6-
   smiles: O[C@H]1[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@@H]1O
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

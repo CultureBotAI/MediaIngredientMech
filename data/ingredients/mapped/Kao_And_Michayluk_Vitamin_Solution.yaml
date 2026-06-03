@@ -36,6 +36,10 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.742953+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.80)'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1988); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Kao and Michayluk vitamin solution is a
   named formulation, not identical to the generic vitamin solution class.
@@ -51,3 +55,10 @@ ontology_mapping:
     notes: Kao and Michayluk vitamin solution is a named formulation, not identical
       to the generic vitamin solution class.
 kg_microbe_node_id: kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

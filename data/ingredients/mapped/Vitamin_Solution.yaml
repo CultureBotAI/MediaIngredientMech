@@ -28,6 +28,10 @@ curation_history:
   changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Vitamin
     solution')
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.753637+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.80)'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:154); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -41,3 +45,10 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0568; matched via 'Vitamin solution' (name
       normalization); label-exact
 ingredient_type: STOCK_SOLUTION
+media_roles:
+- role: VITAMIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

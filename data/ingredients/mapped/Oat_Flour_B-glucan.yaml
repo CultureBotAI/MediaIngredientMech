@@ -21,6 +21,10 @@ curation_history:
   action: AUTO_UPGRADE_TO_FOODON
   changes: primary UNMAPPED_0241 → FOODON:03301312 (strategy=stem-match)
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.746657+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
@@ -32,3 +36,10 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: FOODON via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0241; matched via 'Oat flour B-glucan'; stem-substring
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

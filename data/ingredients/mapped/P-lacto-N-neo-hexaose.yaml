@@ -40,6 +40,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-03T02:06:01.746837+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
 chemical_properties:
   cas_rn: 64309-00-8
   data_source: CultureBotHT compounds_to_cas.csv
@@ -49,3 +53,10 @@ chemical_properties:
   inchi: InChI=1S/C40H68N2O31/c1-9(49)41-17-22(54)30(69-38-27(59)24(56)19(51)11(3-43)64-38)15(7-47)67-36(17)72-33-20(52)12(4-44)65-39(28(33)60)70-31-16(8-48)68-37(18(23(31)55)42-10(2)50)73-34-21(53)13(5-45)66-40(29(34)61)71-32-14(6-46)63-35(62)26(58)25(32)57/h11-40,43-48,51-62H,3-8H2,1-2H3,(H,41,49)(H,42,50)
   pubchem_cid: 72765192
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
