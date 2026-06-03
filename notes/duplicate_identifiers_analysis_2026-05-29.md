@@ -1,5 +1,23 @@
 # Duplicate `identifier` analysis — 2026-05-29
 
+## Resolution status (updated 2026-06-02)
+- **Stereoisomer mis-maps — RESOLVED (PR #37)** via `scripts/fix_stereoisomer_remaps.py`:
+  `(R)-3-hydroxybutyrate`→CHEBI:10983, `(S)-3-hydroxybutyrate`→CHEBI:11047 (off achiral
+  CHEBI:37054), `L-Carnitine`→CHEBI:16347 (off racemate CHEBI:17126).
+- **Remaining category-3 candidates — reviewed, left as-is (no clean fix):**
+  - *Shared-CAS source variants* — `cas:84082-64-4` (porcine mucin Type II vs III) is the
+    **same chemical substance** at different purity grades → sharing the CAS is correct.
+    `cas:9036-88-8` (carob vs yeast mannan) and `cas:39280-21-2` (soy vs potato
+    rhamnogalacturonan) are genuinely different source materials, but assigning distinct
+    registry IDs needs per-source CAS research (these natural-polymer CAS numbers are
+    themselves ambiguous) — deferred to manual curation.
+  - *Coarse FOODON/MICRO solution terms* — `FOODON:03315719` (Casein peptone / Trypticase
+    / Tryptone), `NCIT:C896` (3 trace-element solutions), `MICRO:0000455`/`MICRO:0001363`
+    (trace-element / liver-extract recipes), `ENVO:00001998` (CR1 Soil vs Soil): these are
+    distinct products/recipes sharing a deliberately-coarse parent term. No distinct
+    ontology term exists for most (e.g. "Zeikus trace element solution"), so the coarse
+    mapping is the best available — they remain documented variant collisions, not errors.
+
 ## TL;DR
 `data/curated/mapped_ingredients.yaml` contains **60 ontology identifiers shared by 2+
 records (143 records total)**. These are **not data corruption** — they are surface-form
