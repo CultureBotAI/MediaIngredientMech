@@ -1,17 +1,22 @@
-identifier: FOODON:03315719
+identifier: MICRO:0000182
 preferred_term: Tryptone
 ontology_mapping:
-  ontology_id: FOODON:03315719
-  ontology_label: mammalian milk protein (hydrolyzed)
-  ontology_source: FOODON
-  mapping_quality: CLOSE_MATCH
+  ontology_id: MICRO:0000182
+  ontology_label: tryptone
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: cbclaw_foodon_promotion
-    notes: Commercial food mixture - FOODON is correct parent ontology. Tryptone is
-      a pancreatic (tryptic) digest of casein; mapped to the nearest FOODON parent
-      'mammalian milk protein (hydrolyzed)' since no exact FOODON term exists for
-      tryptone. CLOSE_MATCH downgrade from EXACT_MATCH.
+    notes: '[HISTORICAL — superseded by the MICRO:0000182 remap below] Commercial
+      food mixture - FOODON is correct parent ontology. Tryptone is a pancreatic (tryptic)
+      digest of casein; mapped to the nearest FOODON parent ''mammalian milk protein
+      (hydrolyzed)'' since no exact FOODON term exists for tryptone. CLOSE_MATCH downgrade
+      from EXACT_MATCH.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: remap_peptones_to_micro
+    notes: Re-mapped from the coarse FOODON:03315719 (mammalian milk protein, hydrolyzed)
+      to the precise MICRO term MICRO:0000182 (tryptone).
 synonyms:
 - synonym_text: Tryptone (Sigma T 9410)
   synonym_type: RAW_TEXT
@@ -126,6 +131,12 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-03T07:11:13.659941+00:00'
+  curator: remap_peptones_to_micro
+  action: CORRECTED
+  changes: 'identifier FOODON:03315719 -> MICRO:0000182: disambiguated casein-peptone
+    product from the shared coarse FOODON term to its precise MICRO term.'
+  llm_assisted: false
 notes: 'CultureMech placeholder_id: 2'
 chemical_properties:
   cas_rn: 84843-69-6
