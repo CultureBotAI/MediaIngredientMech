@@ -11,12 +11,20 @@
     rhamnogalacturonan) are genuinely different source materials, but assigning distinct
     registry IDs needs per-source CAS research (these natural-polymer CAS numbers are
     themselves ambiguous) — deferred to manual curation.
-  - *Coarse FOODON/MICRO solution terms* — `FOODON:03315719` (Casein peptone / Trypticase
-    / Tryptone), `NCIT:C896` (3 trace-element solutions), `MICRO:0000455`/`MICRO:0001363`
-    (trace-element / liver-extract recipes), `ENVO:00001998` (CR1 Soil vs Soil): these are
-    distinct products/recipes sharing a deliberately-coarse parent term. No distinct
-    ontology term exists for most (e.g. "Zeikus trace element solution"), so the coarse
-    mapping is the best available — they remain documented variant collisions, not errors.
+  - *Coarse FOODON/MICRO solution terms* — `NCIT:C896` (3 trace-element solutions),
+    `MICRO:0000455`/`MICRO:0001363` (trace-element / liver-extract recipes),
+    `ENVO:00001998` (CR1 Soil vs Soil): distinct products/recipes sharing a deliberately-
+    coarse parent term. No distinct ontology term exists for most (e.g. "Zeikus trace
+    element solution"), so the coarse mapping is the best available — documented variant
+    collisions, not errors.
+  - *Casein-peptone trio* — PARTIALLY RESOLVED (PR for 2026-06-03) via
+    `scripts/remap_peptones_to_micro.py`: `FOODON:03315719` (mammalian milk protein,
+    hydrolyzed) was shared by Casein peptone / Trypticase / Tryptone. Tryptone →
+    `MICRO:0000182` (tryptone) and Trypticase → `MICRO:0000175` (Trypticase peptone) were
+    re-pointed to their precise MICRO terms (each now legitimately co-located with its
+    same-substance trade variant — Bacto-tryptone / "Trypticase peptone"). Generic "Casein
+    peptone" (occ=0) has no exact MICRO term and remains on FOODON:03315719 (now its sole
+    holder — the triple collision is resolved).
 
 ## TL;DR
 `data/curated/mapped_ingredients.yaml` contains **60 ontology identifiers shared by 2+
