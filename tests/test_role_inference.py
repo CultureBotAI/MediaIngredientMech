@@ -27,6 +27,7 @@ def _load(module_name: str):
 syn = _load("extract_roles_from_synonyms")
 chebi = _load("infer_roles_from_chebi")
 namelist = _load("infer_roles_from_name_lists")
+energy = _load("infer_energy_source")
 
 
 # --- extract_roles_from_synonyms.extract_role_from_synonym -------------------
@@ -147,6 +148,25 @@ def test_chebi_precedence_vitamin_over_nothing():
 ])
 def test_namelist_positive(name, expected):
     assert namelist.infer_role(name) == expected
+
+
+@pytest.mark.parametrize("name", [
+    "D-Glucose", "Sodium acetate", "Sodium L-lactate", "D-Sucrose", "Glycerol",
+    "Pyruvate", "Citric acid", "Fumaric acid",
+])
+def test_energy_substrate_positive(name):
+    assert energy.is_energy_substrate(name) is True
+
+
+@pytest.mark.parametrize("name", [
+    "3-O-methyl-glucose",      # non-metabolizable transport tracer
+    "2-Deoxy-D-glucose",       # non-metabolizable analog
+    "Glucose-6-phosphate",     # phosphorylated, not the plain energy substrate
+    "Sodium oleate",           # fatty-acid, excluded
+    "NaCl",                    # not an energy substrate at all
+])
+def test_energy_substrate_excluded(name):
+    assert energy.is_energy_substrate(name) is False
 
 
 @pytest.mark.parametrize("name", [
