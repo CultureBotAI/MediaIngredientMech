@@ -56,6 +56,17 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-04T05:36:05.608816+00:00'
+  curator: drop_implausible_roles
+  action: CORRECTED
+  changes: 'Removed implausible media_role AMINO_ACID_SOURCE: EDTA is a polyamino-polycarboxylic
+    chelator, not an amino-acid nutrient source; the CHEBI ''amino acid'' ancestry
+    rule over-matched it. After this drop the name-list pass re-tags it CHELATOR.'
+  llm_assisted: false
+- timestamp: '2026-06-04T05:36:15.544101+00:00'
+  curator: infer_roles_from_name_lists
+  action: ANNOTATED
+  changes: 'Added media role: CHELATOR (confidence: 0.80)'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C10H16N2O8
@@ -63,11 +74,9 @@ chemical_properties:
 notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: EDTA (acid form) was corrected from
   CHEBI:42191 EDTA(4-) to CHEBI:4735 ethylenediaminetetraacetic acid.'
 media_roles:
-- role: AMINO_ACID_SOURCE
-  confidence: 0.7
+- role: CHELATOR
+  confidence: 0.8
   evidence:
   - reference_type: COMPUTATIONAL_PREDICTION
-    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709
-      (amino acid)'
-    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
-      recommended.
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

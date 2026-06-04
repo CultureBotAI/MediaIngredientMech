@@ -51,6 +51,10 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-04T05:38:59.200698+00:00'
+  curator: infer_energy_source
+  action: ANNOTATED
+  changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 201417-01-8
   data_source: CultureBotHT compounds_to_cas.csv
@@ -67,3 +71,10 @@ media_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- role: ENERGY_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Canonical energy substrate (catabolised for energy)
+    curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
+      recommended.
