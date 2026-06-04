@@ -178,6 +178,10 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-04T05:38:59.201093+00:00'
+  curator: infer_energy_source
+  action: ANNOTATED
+  changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 113-24-6
   data_source: PubChem API (preprocessed)
@@ -198,3 +202,10 @@ media_roles:
       Simple component'
     curator_note: Widespread use in media formulations (570 occurrences). High confidence
       based on 'Defined component' property.
+- role: ENERGY_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Canonical energy substrate (catabolised for energy)
+    curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
+      recommended.

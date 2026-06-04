@@ -41,6 +41,10 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-04T05:38:59.200901+00:00'
+  curator: infer_energy_source
+  action: ANNOTATED
+  changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 15572-79-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -55,4 +59,11 @@ media_roles:
     reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
       (carbohydrate)'
     curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.
+- role: ENERGY_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Canonical energy substrate (catabolised for energy)
+    curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
       recommended.

@@ -143,6 +143,13 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-04T05:34:41.261481+00:00'
+  curator: drop_implausible_roles
+  action: CORRECTED
+  changes: 'Removed implausible media_role BUFFER: MgSO4 is a magnesium-sulfate mineral
+    salt, not a pH buffer; the BUFFER role came from an erroneous CultureMech source
+    synonym. MINERAL role retained.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7487-88-9
   data_source: OAK/CHEBI xref
@@ -153,12 +160,6 @@ chemical_properties:
 kg_microbe_node_id: CHEBI:32599
 ingredient_type: SINGLE_INGREDIENT
 media_roles:
-- role: BUFFER
-  confidence: 1.0
-  evidence:
-  - reference_type: DATABASE_ENTRY
-    reference_text: Imported from CultureMech pipeline
-    curator_note: 'Original role text: Buffer'
 - role: MINERAL
   confidence: 1.0
   evidence:
