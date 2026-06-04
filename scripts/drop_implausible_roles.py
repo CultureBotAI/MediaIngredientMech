@@ -12,11 +12,11 @@ Usage:
 
 import argparse
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
 # (preferred_term, identifier, role, reason)
@@ -49,7 +49,6 @@ def main() -> None:
         curator_name="drop_implausible_roles",
     )
     curator.load()
-    ts = datetime.now(timezone.utc).isoformat()
     by_key = {(r.get("preferred_term"), r.get("identifier")): r for r in curator.records}
 
     n = 0
@@ -64,14 +63,11 @@ def main() -> None:
             print(f"  SKIP: {pt!r} has no {role} role")
             continue
         record["media_roles"] = kept
-        record.setdefault("curation_history", []).append(
-            {
-                "timestamp": ts,
-                "curator": "drop_implausible_roles",
-                "action": "CORRECTED",
-                "changes": f"Removed implausible media_role {role}: {reason}",
-                "llm_assisted": False,
-            }
+        record_curation_event(
+            record,
+            curator="drop_implausible_roles",
+            action="CORRECTED",
+            changes=f"Removed implausible media_role {role}: {reason}",
         )
         print(f"  {pt}: dropped {role}")
         n += 1
