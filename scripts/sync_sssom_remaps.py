@@ -8,18 +8,20 @@ byte intact (a full from-scratch regeneration would risk a large, subtly-wrong
 diff against the bespoke pipeline-provenance columns).
 
 For each listed subject (matched by subject_label = preferred_term):
-  * record removed from the curated data  -> drop its SSSOM row(s)
-  * record now REJECTED (merged)          -> drop its SSSOM row(s)
-  * otherwise -> update the ontology row (object_source startswith "obo:") to the
-    current ontology_id / ontology_label / source / predicate, set
-    mapping_justification=ManualMappingCuration and mapping_date to RUN_DATE.
+  * record removed from the curated data -> drop ALL of its SSSOM rows
+  * record now REJECTED (merged)         -> drop ALL of its SSSOM rows
+  * otherwise -> on its ontology row (object_source startswith "obo:") set
+    object_id / object_label / object_source / predicate_id from the current
+    curated ontology_mapping; set mapping_justification=semapv:ManualMappingCuration,
+    mapping_date=RUN_DATE, and reset validation_method to a remap marker (the prior
+    OLS validation no longer applies to the new target). Registry/identity rows
+    (cas / kg-microbe) for a non-removed subject are left untouched.
 
 Usage:
     python scripts/sync_sssom_remaps.py --date 2026-06-04 [--dry-run]
 """
 
 import argparse
-import sys
 from pathlib import Path
 
 import yaml
@@ -71,19 +73,25 @@ def main() -> None:
     sync = set(SYNC_SUBJECTS)
     out, removed, updated = [], [], []
     for ln in data_lines:
+        # Preserve blank / whitespace-only lines verbatim (don't index them).
+        if not ln.strip():
+            out.append(ln)
+            continue
         f = ln.rstrip("\n").split("\t")
         label = f[idx["subject_label"]]
         if label not in sync:
             out.append(ln)
             continue
         rec = by_term.get(label)
-        # Removed or REJECTED record, or a non-ontology (registry) row: drop the
-        # ontology row; (these subjects have a single obo: row).
+        # Subject removed from the curated data, or now REJECTED (merged): drop
+        # ALL of its SSSOM rows (ontology + any registry/identity rows).
         if rec is None or rec.get("mapping_status") == "REJECTED":
             removed.append((label, f[idx["object_id"]]))
             continue
+        # For a still-mapped subject, only the ontology row is rewritten; any
+        # registry/identity (cas / kg-microbe) rows are preserved untouched.
         if not f[idx["object_source"]].startswith("obo:"):
-            out.append(ln)  # keep any registry/identity row untouched
+            out.append(ln)
             continue
         om = rec.get("ontology_mapping") or {}
         f[idx["object_id"]] = om["ontology_id"]
@@ -94,6 +102,11 @@ def main() -> None:
         f[idx["mapping_date"]] = args.date
         if "comment" in idx:
             f[idx["comment"]] = f"Synced to curated remap ({args.date})."
+        # The prior OLS validation_method referenced the superseded target/ontology
+        # (e.g. "OLS:foodon|..." after a FOODON->MICRO remap); reset it to a remap
+        # marker so it no longer misrepresents how the current mapping was derived.
+        if "validation_method" in idx:
+            f[idx["validation_method"]] = f"manual:sync_sssom_remaps|REMAPPED|{args.date}"
         updated.append((label, f[idx["object_id"]]))
         out.append("\t".join(f) + "\n")
 
