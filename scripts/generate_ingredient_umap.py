@@ -316,31 +316,31 @@ def build_visualization_data(
     """
     visualization_data = []
 
+    # Index every per-record YAML once by identifier. Previously this function
+    # re-globbed and re-parsed the entire corpus for every UMAP row (O(rows x
+    # files) ~= millions of YAML loads), which made "Step 3" take far longer than
+    # the UMAP fit itself. One pass + dict lookup makes it near-instant.
+    records_by_id: Dict[str, Any] = {}
+    for category in ['mapped', 'unmapped']:
+        category_dir = ingredients_dir / category
+        for candidate in category_dir.glob('*.yaml'):
+            try:
+                ing = load_yaml(candidate)
+            except Exception:
+                continue
+            ident = ing.get('identifier')
+            if ident and ident not in records_by_id:
+                records_by_id[ident] = (ing, category)
+
     for _, row in umap_df.iterrows():
         ingredient_id = row['ingredient_id']
-
-        # Find the YAML file
-        yaml_file = None
-        for category in ['mapped', 'unmapped']:
-            category_dir = ingredients_dir / category
-            for candidate in category_dir.glob('*.yaml'):
-                try:
-                    ing = load_yaml(candidate)
-                    if ing.get('identifier') == ingredient_id:
-                        yaml_file = candidate
-                        break
-                except:
-                    continue
-            if yaml_file:
-                break
-
-        if not yaml_file:
+        entry = records_by_id.get(ingredient_id)
+        if entry is None:
             continue
+        ingredient, category = entry
 
-        # Load ingredient data
+        # Build the visualization record from the indexed ingredient.
         try:
-            ingredient = load_yaml(yaml_file)
-
             # Extract metadata
             preferred_term = ingredient.get('preferred_term', 'Unknown')
 
@@ -388,11 +388,11 @@ def build_visualization_data(
                 'num_synonyms': num_synonyms,
                 'molecular_formula': molecular_formula,
                 'cas_rn': cas_rn,
-                'category': category if yaml_file else 'unknown'
+                'category': category
             })
 
         except Exception as e:
-            console.print(f"[red]Error processing {yaml_file}: {e}[/red]")
+            console.print(f"[red]Error processing {ingredient_id}: {e}[/red]")
 
     return visualization_data
 
