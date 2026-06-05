@@ -21,6 +21,7 @@ def _load_reconciler():
     spec = importlib.util.spec_from_file_location(
         "reconcile_sssom", ROOT / "scripts" / "reconcile_sssom.py"
     )
+    assert spec is not None and spec.loader is not None, "could not load reconcile_sssom.py"
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod

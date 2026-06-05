@@ -34,8 +34,11 @@ from pathlib import Path
 
 import yaml
 
-SSSOM = Path("mappings/ingredient_mappings.sssom.tsv")
-CURATED = Path("data/curated/mapped_ingredients.yaml")
+# Resolve paths relative to the repo root (this file lives in scripts/), so the
+# tool and its tests work regardless of the current working directory.
+_REPO = Path(__file__).resolve().parent.parent
+SSSOM = _REPO / "mappings" / "ingredient_mappings.sssom.tsv"
+CURATED = _REPO / "data" / "curated" / "mapped_ingredients.yaml"
 
 OBJECT_SOURCE = {
     "CHEBI": "obo:chebi.owl", "FOODON": "obo:foodon.owl", "ENVO": "obo:envo.owl",
@@ -99,20 +102,42 @@ def _canonical_label_resolver():
         prefix = oid.split(":", 1)[0]
         if prefix != "CHEBI":
             return None
-        if "CHEBI" not in adapters:
-            adapters["CHEBI"] = get_adapter(chebi_db)
-        return adapters["CHEBI"].label(oid)
+        try:
+            if "CHEBI" not in adapters:
+                adapters["CHEBI"] = get_adapter(chebi_db)
+            return adapters["CHEBI"].label(oid)
+        except Exception as e:  # missing sqlite cache, adapter failure, etc.
+            print(f"  warning: could not resolve label for {oid} ({e}); "
+                  "keeping curated ontology_label", file=sys.stderr)
+            return None
 
     return resolve
 
 
+def _append_comment(existing: str, note: str) -> str:
+    """Append a reconciliation note without dropping any existing curator comment."""
+    existing = (existing or "").strip()
+    return f"{existing} {note}".strip() if existing else note
+
+
 def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
-    header, col_line, data_lines, _ = _read_sssom()
+    header, col_line, data_lines, rows = _read_sssom()
     cols = col_line.rstrip("\n").split("\t")
     idx = {c: i for i, c in enumerate(cols)}
     expected = expected_mappings(curated)
     canonical_label = _canonical_label_resolver()
 
+    # Pass 1: per stale subject, record (old parent ontology_id -> new id) so we can
+    # also fix registry/identity rows whose comments embed the old parent id.
+    remap: dict[str, tuple[str, str]] = {}
+    for r in rows:
+        term = r["subject_label"]
+        if term in expected and r["object_source"].startswith("obo:"):
+            new_id = expected[term]["ontology_id"]
+            if r["object_id"] != new_id:
+                remap[term] = (r["object_id"], new_id)
+
+    # Pass 2: rewrite.
     out, n_stale, n_orphan = [], 0, 0
     for ln in data_lines:
         if not ln.strip():
@@ -123,21 +148,26 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
         if term not in expected:
             n_orphan += 1  # orphan subject: drop all of its rows
             continue
-        om = expected[term]
-        # Rewrite only the ontology row when stale; registry/identity rows and
-        # already-correct rows are left untouched.
-        if f[idx["object_source"]].startswith("obo:") and f[idx["object_id"]] != om["ontology_id"]:
-            f[idx["object_id"]] = om["ontology_id"]
-            # Use the OBO-canonical label (Rule B4), not the curated ontology_label.
-            f[idx["object_label"]] = canonical_label(om["ontology_id"]) or om.get("ontology_label") or ""
-            f[idx["object_source"]] = OBJECT_SOURCE.get(om.get("ontology_source"), f[idx["object_source"]])
-            f[idx["predicate_id"]] = PREDICATE.get(om.get("mapping_quality"), f[idx["predicate_id"]])
-            f[idx["mapping_date"]] = date
-            if "comment" in idx:
-                f[idx["comment"]] = f"Synced to curated mapping ({date})."
-            if "validation_method" in idx:
-                f[idx["validation_method"]] = f"manual:reconcile_sssom|REMAPPED|{date}"
-            n_stale += 1
+        if term in remap:
+            old_id, new_id = remap[term]
+            if f[idx["object_source"]].startswith("obo:") and f[idx["object_id"]] == old_id:
+                # The stale ontology row: sync to the current curated mapping.
+                om = expected[term]
+                f[idx["object_id"]] = new_id
+                # Use the OBO-canonical label (Rule B4), not the curated ontology_label.
+                f[idx["object_label"]] = canonical_label(new_id) or om.get("ontology_label") or ""
+                f[idx["object_source"]] = OBJECT_SOURCE.get(om.get("ontology_source"), f[idx["object_source"]])
+                f[idx["predicate_id"]] = PREDICATE.get(om.get("mapping_quality"), f[idx["predicate_id"]])
+                f[idx["mapping_date"]] = date
+                if "comment" in idx:
+                    f[idx["comment"]] = _append_comment(f[idx["comment"]], f"[reconciled to curated mapping {date}]")
+                if "validation_method" in idx:
+                    f[idx["validation_method"]] = f"manual:reconcile_sssom|REMAPPED|{date}"
+                n_stale += 1
+            elif "comment" in idx and old_id in f[idx["comment"]]:
+                # A registry/identity row whose comment still names the old parent:
+                # point it at the new parent so the file stays internally consistent.
+                f[idx["comment"]] = f[idx["comment"]].replace(old_id, new_id)
         out.append("\t".join(f) + "\n")
 
     new_header = []
