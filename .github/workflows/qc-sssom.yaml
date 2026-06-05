@@ -7,12 +7,16 @@ on:
       - "mappings/ingredient_mappings.sssom.tsv"
       - "mappings/needs_curator_review.tsv"
       - "scripts/validate_sssom_invariants.py"
+      - "scripts/reconcile_sssom.py"
+      - "data/curated/mapped_ingredients.yaml"
   push:
     branches: [main]
     paths:
       - "mappings/ingredient_mappings.sssom.tsv"
       - "mappings/needs_curator_review.tsv"
       - "scripts/validate_sssom_invariants.py"
+      - "scripts/reconcile_sssom.py"
+      - "data/curated/mapped_ingredients.yaml"
   workflow_dispatch:
 
 permissions:
@@ -29,8 +33,14 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Install deps
+        run: python3 -m pip install pyyaml
+
       - name: Validate SSSOM invariants (Rule A)
         run: python3 scripts/validate_sssom_invariants.py
+
+      - name: Check SSSOM currency vs curated data
+        run: python3 scripts/reconcile_sssom.py
 
       - name: Upload triage TSV
         if: always()
