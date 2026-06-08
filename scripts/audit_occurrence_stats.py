@@ -35,16 +35,21 @@ def find_issues(records: list[dict]) -> dict[str, list]:
     for r in records:
         ident = r.get("identifier")
         st = r.get("occurrence_statistics")
-        occ = (st or {}).get("total_occurrences")
-        mc = (st or {}).get("media_count")
-        if st is None or occ is None:
+        # Treat absent, non-mapping, or partially-populated stats as MISSING; the
+        # later numeric checks then only run when both counts are present.
+        if not isinstance(st, dict):
+            issues["missing"].append(ident)
+            continue
+        occ = st.get("total_occurrences")
+        mc = st.get("media_count")
+        if occ is None or mc is None:
             issues["missing"].append(ident)
             continue
         if r.get("mapping_status") == "REJECTED" and occ > 0:
             issues["rejected_nonzero"].append((ident, occ))
-        if occ < 0 or (mc or 0) < 0:
+        if occ < 0 or mc < 0:
             issues["negative"].append((ident, occ, mc))
-        if mc is not None and mc > occ:
+        if mc > occ:
             issues["media_gt_occ"].append((ident, occ, mc))
     return issues
 
@@ -74,7 +79,13 @@ def main() -> int:
     n = 0
     for ident in issues["missing"]:
         rec = by_ident[ident]
-        rec["occurrence_statistics"] = {"total_occurrences": 0, "media_count": 0}
+        st = rec.get("occurrence_statistics")
+        st = st if isinstance(st, dict) else {}
+        # Preserve any value that is present; only fill the missing count(s).
+        rec["occurrence_statistics"] = {
+            "total_occurrences": st.get("total_occurrences") or 0,
+            "media_count": st.get("media_count") or 0,
+        }
         record_curation_event(
             rec,
             curator="audit_occurrence_stats",
