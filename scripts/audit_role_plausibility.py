@@ -38,11 +38,11 @@ PLAUSIBLE = {
                          r"alginate|gelatin)",
     "REDUCING_AGENT": r"(sulfide|sulphide|dithionite|dithiothreitol|\bDTT\b|mercapto|"
                       r"thioglycol|\bTCEP\b|cysteine|sulfite|sulphite|ascorb|"
-                      r"titanium|thiosulf|\bNa2S\b|SO3|S2O3)",
+                      r"titanium|thiosulf|\bNa2S\b|SO3|S2O3|S2O4|S2O5)",
     "CHELATOR": r"(EDTA|EGTA|DTPA|nitrilotriacetic|\bNTA\b|desferri|deferox|chelat)",
     "VITAMIN_SOURCE": r"(vitamin|biotin|thiamin|riboflavin|niacin|nicotin|pyridox|"
                       r"cobalamin|folic|folate|folin|pantothen|lipoic|thioctic|"
-                      r"menaquinone|menadione|aminobenzoic|\bPABA\b|inositol|ascorb|"
+                      r"menaquinone|menadione|aminobenzo|\bPABA\b|inositol|ascorb|"
                       r"tocopherol|retinol|calciferol|hemin|haemin|protoporphyrin|"
                       r"\bFAD\b|\bNAD\b|coenzyme|cobamide|pteroyl)",
     # standard 20 + common non-proteinogenic amino acids (CHEBI's "amino acid"
@@ -57,7 +57,7 @@ PLAUSIBLE = {
                          r"canavanine|ergothioneine|aminocyclopropane|carboxylate)",
     "PROTEIN_SOURCE": r"(peptone|tryptone|tryptose|trypticase|casitone|casamino|"
                       r"casein|hydrolysate|digest|extract|infusion|\bbeef\b|yeast|"
-                      r"liver|gelatin|proteose|lysate|albumin|mucin|collagen|"
+                      r"liver|gelatin|proteose|lysate|albumin|mucin|collagen|serum|"
                       r"protein|brain heart|\bBHI\b)",
 }
 
