@@ -142,6 +142,16 @@ classes:
           DEFINED_MEDIUM: Complete medium formulation/recipe (R2A agar, LB broth).
           UNDEFINED_MIXTURE: Complex mixture of unknown composition (yeast extract, peptone).
           STOCK_SOLUTION: Pre-mixed solution of defined ingredients.
+      components:
+        range: StockComponent
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM: the
+          list of component ingredients (with concentration where known). Lets a
+          named mixture (e.g. a trace-element or vitamin solution) be resolved to
+          its constituents. Populate only from a verifiable recipe source; leave
+          empty when the composition is unknown.
       culturemech_medium_name:
         description: >-
           Cross-reference to CultureMech medium name if this is a defined medium.
@@ -469,6 +479,33 @@ classes:
         description: Citations and references supporting this role
       notes:
         description: Additional context about this role assignment
+
+  StockComponent:
+    description: >-
+      One constituent of a stock solution or defined medium recipe — a component
+      ingredient with its concentration. Used in IngredientRecord.components to
+      decompose a named mixture (e.g. a trace-element or vitamin solution) into
+      its parts. Populate only from a verifiable recipe source.
+    attributes:
+      component_name:
+        required: true
+        description: Component ingredient name as listed in the recipe (e.g. "FeCl3 x 6 H2O").
+      component_id:
+        description: >-
+          Identifier of the component when mapped to an ontology/registry term
+          (e.g. CHEBI:..., or a registry CURIE). Omit when the component is
+          unmapped. (No pattern constraint: components may be unmapped.)
+      concentration_value:
+        description: >-
+          Amount/concentration of the component, kept as a string to preserve the
+          source's formatting (e.g. "1.5", "0.1-0.5").
+      concentration_unit:
+        description: Unit for concentration_value (e.g. G_PER_L, MG_PER_L, M, MM, PERCENT).
+      source:
+        description: >-
+          Provenance of this component entry (e.g. a CultureMech medium ID, a
+          MediaDive solution ID, or a publication / DOI). Recording it keeps the
+          recipe verifiable rather than fabricated.
 
 enums:
   MappingStatusEnum:
