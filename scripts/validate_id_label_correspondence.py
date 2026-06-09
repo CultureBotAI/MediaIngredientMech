@@ -106,28 +106,44 @@ class AdapterPool:
 
     def __init__(self, adapters: dict[str, str]):
         self._selectors = adapters
+        # Case-insensitive prefix lookup: data carries lowercase `mesh:` while
+        # the allowlist (and OAK's OBO CURIEs) use uppercase `MESH:`. Map any
+        # casing of a data prefix back to its canonical allowlist key.
+        self._canonical: dict[str, str] = {key.casefold(): key for key in adapters}
         self._cache: dict[str, Any] = {}
 
-    def get(self, prefix: str | None):
-        if not prefix or prefix not in self._selectors:
+    def canonical_prefix(self, prefix: str | None) -> str | None:
+        """Return the allowlist key matching ``prefix`` case-insensitively."""
+        if not prefix:
             return None
-        if prefix not in self._cache:
+        return self._canonical.get(prefix.casefold())
+
+    def get(self, prefix: str | None):
+        key = self.canonical_prefix(prefix)
+        if key is None:
+            return None
+        if key not in self._cache:
             try:
                 from oaklib import get_adapter
 
-                self._cache[prefix] = get_adapter(self._selectors[prefix])
+                self._cache[key] = get_adapter(self._selectors[key])
             except Exception as exc:  # pragma: no cover - environment dependent
-                print(f"  ! failed to load adapter for {prefix}: {exc}", file=sys.stderr)
-                self._cache[prefix] = None
-        return self._cache[prefix]
+                print(f"  ! failed to load adapter for {key}: {exc}", file=sys.stderr)
+                self._cache[key] = None
+        return self._cache[key]
 
 
-def accepted_labels(adapter: Any, curie: str, scope: str) -> tuple[str | None, set[str], bool]:
+def accepted_labels(
+    adapter: Any, curie: str, scope: str, include_synonyms: bool = True
+) -> tuple[str | None, set[str], bool]:
     """Return (canonical_label, accepted_normalized_set, id_found).
 
-    ``accepted_normalized_set`` always contains the canonical label; with a
-    non-``canonical`` policy the caller widens it via ``scope`` synonyms.
-    ``id_found`` is False when the id is absent from the ontology.
+    ``accepted_normalized_set`` always contains the canonical label; when
+    ``include_synonyms`` is set it is widened via ``scope`` synonyms. Callers
+    using a ``canonical`` policy never consult synonyms, so they pass
+    ``include_synonyms=False`` to skip the (potentially expensive)
+    ``entity_alias_map`` lookup entirely. ``id_found`` is False when the id is
+    absent from the ontology.
     """
     try:
         canonical = adapter.label(curie)
@@ -136,14 +152,15 @@ def accepted_labels(adapter: Any, curie: str, scope: str) -> tuple[str | None, s
     if canonical is None:
         return None, set(), False
     accepted = {normalize(canonical)}
-    alias_map: dict[str, list[str]] = {}
-    try:
-        alias_map = adapter.entity_alias_map(curie) or {}
-    except Exception:
-        alias_map = {}
-    for pred in _SYNONYM_PREDICATES.get(scope, _SYNONYM_PREDICATES["exact"]):
-        for alias in alias_map.get(pred, []) or []:
-            accepted.add(normalize(alias))
+    if include_synonyms:
+        alias_map: dict[str, list[str]] = {}
+        try:
+            alias_map = adapter.entity_alias_map(curie) or {}
+        except Exception:
+            alias_map = {}
+        for pred in _SYNONYM_PREDICATES.get(scope, _SYNONYM_PREDICATES["exact"]):
+            for alias in alias_map.get(pred, []) or []:
+                accepted.add(normalize(alias))
     return canonical, accepted, True
 
 
@@ -154,9 +171,18 @@ def classify(
     adapter: Any,
     policy: str,
     scope: str,
+    lookup_curie: str | None = None,
 ) -> dict[str, Any]:
-    """Classify one (id, label) pair into a verdict dict."""
-    canonical, accepted, found = accepted_labels(adapter, curie, scope)
+    """Classify one (id, label) pair into a verdict dict.
+
+    ``curie`` is reported verbatim; ``lookup_curie`` (when given) is the
+    case-normalized CURIE actually passed to the adapter so that, e.g., a
+    lowercase ``mesh:`` row resolves against OAK's uppercase ``MESH:`` ids.
+    """
+    include_synonyms = policy == "canonical_or_synonym"
+    canonical, accepted, found = accepted_labels(
+        adapter, lookup_curie or curie, scope, include_synonyms
+    )
     base = {"id": curie, "label": label, "canonical": canonical or ""}
     if not found:
         return {**base, "verdict": "ID_NOT_FOUND"}
@@ -172,35 +198,55 @@ def classify(
 
 # -- target readers -------------------------------------------------------
 
-def _read_tabular_rows(path: Path, fmt: str) -> tuple[list[str], list[dict[str, str]]]:
-    """Read a TSV/CSV, skipping SSSOM ``#`` comment-prelude lines."""
+def _read_tabular_rows(
+    path: Path, fmt: str
+) -> tuple[list[str], list[dict[str, str]], list[int]]:
+    """Read a TSV/CSV, skipping SSSOM ``#`` comment-prelude lines.
+
+    Also returns the *physical* (1-based) file line number of each data row so
+    the report can point at the real line, not a post-strip ordinal.
+    """
     delim = "," if fmt == "csv" else "\t"
+    kept: list[tuple[int, str]] = []
     with path.open(newline="", encoding="utf-8") as fh:
-        lines = [ln for ln in fh if not ln.lstrip().startswith("#")]
-    if not lines:
-        return [], []
+        for phys, ln in enumerate(fh, start=1):
+            if ln.lstrip().startswith("#"):
+                continue
+            kept.append((phys, ln))
+    if not kept:
+        return [], [], []
+    lines = [ln for _, ln in kept]
+    data_line_numbers = [phys for phys, _ in kept[1:]]  # row 1 of `kept` is header
     reader = csv.DictReader(lines, delimiter=delim)
-    return list(reader.fieldnames or []), list(reader)
+    return list(reader.fieldnames or []), list(reader), data_line_numbers
 
 
 def iter_tabular(path: Path, fmt: str, pairs: list[list[str]]) -> Iterator[tuple[str, str, str]]:
     """Yield (locator, id, label) for each configured id/label column pair."""
-    fields, rows = _read_tabular_rows(path, fmt)
+    fields, rows, line_numbers = _read_tabular_rows(path, fmt)
     field_set = set(fields)
-    usable = [(i, l) for (i, l) in pairs if i in field_set and l in field_set]
-    for n, row in enumerate(rows, start=2):  # row 1 is the header
+    # Keep any pair whose id column exists; a missing label column is allowed
+    # so an id present without its label still gets an EMPTY_LABEL verdict
+    # rather than being silently dropped.
+    usable = [(i, l) for (i, l) in pairs if i in field_set]
+    for idx, row in enumerate(rows):
+        # Physical line number when available (a quoted multiline field could
+        # desync the count); else fall back to the post-header ordinal.
+        line_no = line_numbers[idx] if idx < len(line_numbers) else idx + 2
         for id_col, label_col in usable:
             curie = (row.get(id_col) or "").strip()
             if not curie:
                 continue
             label = (row.get(label_col) or "").strip()
-            yield f"row {n} [{id_col}/{label_col}]", curie, label
+            yield f"line {line_no} [{id_col}/{label_col}]", curie, label
 
 
 def _walk_yaml(node: Any, pairs: list[tuple[str, str]], path: str) -> Iterator[tuple[str, str, str]]:
     if isinstance(node, dict):
         for id_key, label_key in pairs:
-            if id_key in node and label_key in node:
+            # An id present without its sibling label must still be checked
+            # (yields EMPTY_LABEL), so we do NOT require label_key to exist.
+            if id_key in node:
                 curie = node.get(id_key)
                 if isinstance(curie, str) and curie.strip():
                     label = node.get(label_key)
@@ -270,8 +316,16 @@ def run(config_path: Path, report_path: Path | None) -> int:
                     verdict = "SKIPPED_NO_ADAPTER"
                     rec = {"id": curie, "label": label, "canonical": "", "verdict": verdict}
                 else:
+                    # Rewrite the CURIE prefix to the canonical allowlist case
+                    # (e.g. mesh: -> MESH:) so OAK, which keys on uppercase OBO
+                    # prefixes, resolves the label instead of returning None.
+                    canonical_prefix = pool.canonical_prefix(prefix)
+                    lookup_curie = curie
+                    if canonical_prefix and prefix != canonical_prefix:
+                        lookup_curie = f"{canonical_prefix}:{curie.split(':', 1)[1]}"
                     rec = classify(
-                        curie=curie, label=label, adapter=adapter, policy=policy, scope=scope
+                        curie=curie, label=label, adapter=adapter, policy=policy,
+                        scope=scope, lookup_curie=lookup_curie,
                     )
                 counts[rec["verdict"]] = counts.get(rec["verdict"], 0) + 1
                 if rec["verdict"] not in ("OK_CANONICAL", "OK_SYNONYM", "SKIPPED_NO_ADAPTER"):

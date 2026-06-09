@@ -73,12 +73,16 @@ schema_path := "src/mediaingredientmech/schema/mediaingredientmech.yaml"
 validate-terms FILE:
     uv run linkml-term-validator validate-data {{FILE}} -s {{schema_path}} -t IngredientRecord --labels
 
-# Same, across every ingredient + curated collection file.
+# Same, across every per-ingredient record file. NOTE: data/curated/*.yaml is
+# intentionally excluded — those are collection/container docs
+# (generation_date/total_count/ingredients:[...] or category/count/ingredients)
+# not single IngredientRecords, so `-t IngredientRecord` would fail
+# structurally. Engine B (validate-products, recursive walk) covers them.
 validate-terms-all:
     #!/usr/bin/env bash
     set -uo pipefail
     rc=0
-    for file in data/ingredients/mapped/*.yaml data/ingredients/unmapped/*.yaml data/curated/*.yaml; do
+    for file in data/ingredients/mapped/*.yaml data/ingredients/unmapped/*.yaml; do
         [ -e "$file" ] || continue
         uv run linkml-term-validator validate-data "$file" -s {{schema_path}} -t IngredientRecord --labels || rc=1
     done
