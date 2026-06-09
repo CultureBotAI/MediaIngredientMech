@@ -2022,6 +2022,23 @@ wheels = [
 ]
 
 [[package]]
+name = "linkml-term-validator"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "linkml" },
+    { name = "linkml-runtime" },
+    { name = "oaklib" },
+    { name = "pydantic" },
+    { name = "ruamel-yaml" },
+    { name = "typer" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4b/84/e25d7cf7155087747ceb9bcdbdc55f8c12f6c21b3769ff57549f31578107/linkml_term_validator-0.3.0.tar.gz", hash = "sha256:08b405adedddf75613a926c29648127604b8c82c3e033e4ab7c057b6eb7de9a6", size = 389004 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/65/c7/3703848cb5339a1046f29001a622228994a942346cc815dcfe517c47cf6c/linkml_term_validator-0.3.0-py3-none-any.whl", hash = "sha256:59eda4ba64c1bda24a6e76f497fb52632c4d62efc36e6277f17a6b9fef04a19d", size = 41208 },
+]
+
+[[package]]
 name = "litellm"
 version = "1.83.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2314,6 +2331,7 @@ dependencies = [
     { name = "click" },
     { name = "linkml" },
     { name = "linkml-runtime" },
+    { name = "linkml-term-validator" },
     { name = "oaklib" },
     { name = "pyyaml" },
     { name = "requests" },
@@ -2325,9 +2343,11 @@ dependencies = [
 dev = [
     { name = "black" },
     { name = "deep-research-client", extra = ["cyberian"], marker = "python_full_version >= '3.12'" },
+    { name = "edison-client", marker = "python_full_version >= '3.12'" },
     { name = "mypy" },
     { name = "pytest" },
     { name = "pytest-cov" },
+    { name = "python-dotenv" },
     { name = "ruff" },
 ]
 
@@ -2336,12 +2356,15 @@ requires-dist = [
     { name = "black", marker = "extra == 'dev'", specifier = ">=23.0.0" },
     { name = "click", specifier = ">=8.1.0" },
     { name = "deep-research-client", extras = ["cyberian"], marker = "python_full_version >= '3.12' and extra == 'dev'", specifier = ">=0.2.4" },
+    { name = "edison-client", marker = "python_full_version >= '3.12' and extra == 'dev'", specifier = ">=0.11.0" },
     { name = "linkml", specifier = ">=1.7.0,<1.10" },
     { name = "linkml-runtime", specifier = ">=1.7.0,<1.10" },
+    { name = "linkml-term-validator", specifier = ">=0.1.0" },
     { name = "mypy", marker = "extra == 'dev'", specifier = ">=1.5.0" },
     { name = "oaklib", specifier = ">=0.5.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.4.0" },
     { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.1.0" },
+    { name = "python-dotenv", marker = "extra == 'dev'", specifier = ">=1.0.0" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "requests", specifier = ">=2.28.0" },
     { name = "rich", specifier = ">=13.0.0" },
@@ -4121,6 +4144,15 @@ wheels = [
 ]
 
 [[package]]
+name = "ruamel-yaml"
+version = "0.19.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz", hash = "sha256:53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993", size = 142709 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b8/0c/51f6841f1d84f404f92463fc2b1ba0da357ca1e3db6b7fbda26956c3b82a/ruamel_yaml-0.19.1-py3-none-any.whl", hash = "sha256:27592957fedf6e0b62f281e96effd28043345e0e66001f97683aa9a40c667c93", size = 118102 },
+]
+
+[[package]]
 name = "ruff"
 version = "0.15.6"
 source = { registry = "https://pypi.org/simple" }
@@ -4946,10 +4978,10 @@ name = "typer"
 version = "0.25.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "annotated-doc", marker = "python_full_version >= '3.12'" },
-    { name = "click", marker = "python_full_version >= '3.12'" },
-    { name = "rich", marker = "python_full_version >= '3.12'" },
-    { name = "shellingham", marker = "python_full_version >= '3.12'" },
+    { name = "annotated-doc" },
+    { name = "click" },
+    { name = "rich" },
+    { name = "shellingham" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e4/51/9aed62104cea109b820bbd6c14245af756112017d309da813ef107d42e7e/typer-0.25.1.tar.gz", hash = "sha256:9616eb8853a09ffeabab1698952f33c6f29ffdbceb4eaeecf571880e8d7664cc", size = 122276 }
 wheels = [

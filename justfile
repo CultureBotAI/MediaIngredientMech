@@ -65,8 +65,42 @@ fetch-pubmed *args:
 qc-sssom:
     python3 scripts/validate_sssom_invariants.py
 
+schema_path := "src/mediaingredientmech/schema/mediaingredientmech.yaml"
+
+# id↔label gate (Engine A): verify ontology_label is the CANONICAL OBO label
+# for ontology_id in one ingredient file. Fails (exit 1) on any label mismatch.
+# The schema binds ontology_mapping/environmental_context so --labels fires.
+validate-terms FILE:
+    uv run linkml-term-validator validate-data {{FILE}} -s {{schema_path}} -t IngredientRecord --labels
+
+# Same, across every ingredient + curated collection file.
+validate-terms-all:
+    #!/usr/bin/env bash
+    set -uo pipefail
+    rc=0
+    for file in data/ingredients/mapped/*.yaml data/ingredients/unmapped/*.yaml data/curated/*.yaml; do
+        [ -e "$file" ] || continue
+        uv run linkml-term-validator validate-data "$file" -s {{schema_path}} -t IngredientRecord --labels || rc=1
+    done
+    exit $rc
+
+# id↔label gate (Engine B): verify (id,label) pairs in DATA PRODUCTS
+# (SSSOM/CSV/review TSVs) correspond to the ontology. canonical_or_synonym
+# for product surface labels. Exits 2 on any mismatch / unknown id.
+validate-products:
+    uv run python scripts/validate_id_label_correspondence.py -c conf/id_label_targets.yaml
+
+# Baseline (non-failing): write a unified id↔label drift report across YAML
+# data + products to reports/label_drift.tsv. Use before enforcing.
+report-label-drift:
+    uv run python scripts/validate_id_label_correspondence.py -c conf/id_label_targets.yaml --report reports/label_drift.tsv
+
 # Composite QC: schema validation + strict closed-schema check +
 # evidence reference validation + SSSOM invariants.
+# NOTE: validate-terms-all + validate-products are intentionally NOT in `qc`
+# yet — they enforce id↔label correspondence and will fail on existing label
+# drift. Run `just report-label-drift`, triage reports/label_drift.tsv, then
+# add them here (Phase 2 of the rollout).
 qc: validate-all validate-strict qc-evidence qc-sssom
 
 # Render per-ingredient HTML detail pages from data/ingredients/*.yaml

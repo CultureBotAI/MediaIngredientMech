@@ -1,0 +1,67 @@
+# Targets for scripts/validate_id_label_correspondence.py (Engine B).
+#
+# Declares which surfaces carry ontology (id, label) pairs and how strictly
+# the label must correspond to the id's ontology label. Prefixes NOT in the
+# `adapters` allowlist (cas:, MIM:, kgmicrobe.compound:, registry:, …) are
+# reported as SKIPPED_NO_ADAPTER and never looked up.
+#
+# Policy:
+#   canonical            label must equal the canonical OBO label (mirrors the
+#                        linkml-term-validator schema gate; used for YAML data).
+#   canonical_or_synonym label may be the canonical label OR a synonym within
+#                        `synonym_scope` (used for product/surface labels).
+# synonym_scope: exact | exact_related | all   (exact_related = +hasRelatedSynonym)
+
+adapters:
+  CHEBI: sqlite:obo:chebi
+  FOODON: sqlite:obo:foodon
+  NCIT: sqlite:obo:ncit
+  MESH: sqlite:obo:mesh
+  UBERON: sqlite:obo:uberon
+  ENVO: sqlite:obo:envo
+  BTO: sqlite:obo:bto
+  MICRO: sqlite:obo:micro
+  PATO: sqlite:obo:pato
+
+synonym_scope: exact_related
+
+targets:
+  # --- data inputs / intermediates (YAML) — strict canonical, mirrors Engine A
+  - name: curated_yaml
+    kind: yaml
+    glob:
+      - "data/curated/mapped_ingredients.yaml"
+      - "data/ingredients/mapped/*.yaml"
+      - "data/ingredients/unmapped/*.yaml"
+    policy: canonical
+    pairs:
+      - [ontology_id, ontology_label]
+      - [environment_term, environment_label]
+      - [term_id, term_label]
+
+  # --- data products (TSV/CSV) — canonical OR synonym surface form
+  - name: sssom
+    kind: tabular
+    format: tsv
+    glob: "mappings/ingredient_mappings.sssom.tsv"
+    policy: canonical_or_synonym
+    pairs:
+      - [subject_id, subject_label]
+      - [object_id, object_label]
+
+  - name: mapped_csv
+    kind: tabular
+    format: csv
+    glob: "docs/data/mapped_ingredients.csv"
+    policy: canonical_or_synonym
+    pairs:
+      - [ontology_id, ontology_label]
+
+  - name: review_tsvs
+    kind: tabular
+    format: tsv
+    glob: "mappings/*review*.tsv"
+    policy: canonical_or_synonym
+    pairs:
+      - [subject_id, subject_label]
+      - [object_id, object_label]
