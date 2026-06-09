@@ -2,7 +2,7 @@ identifier: CHEBI:59640
 preferred_term: N-Acetylglucosamine
 ontology_mapping:
   ontology_id: CHEBI:59640
-  ontology_label: N-Acetylglucosamine
+  ontology_label: N-acetylglucosamine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -66,6 +66,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.802250+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''N-Acetylglucosamine'' -> ''N-acetylglucosamine'': synced
+    to canonical CHEBI label (preferred_term ''N-Acetylglucosamine'' unchanged).'
 chemical_properties:
   cas_rn: 7512-17-6
   data_source: PubChem API

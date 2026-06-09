@@ -2,7 +2,7 @@ identifier: CHEBI:16899
 preferred_term: D-Mannitol
 ontology_mapping:
   ontology_id: CHEBI:16899
-  ontology_label: D-Mannitol
+  ontology_label: D-mannitol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -84,6 +84,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.752171+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''D-Mannitol'' -> ''D-mannitol'': synced to canonical CHEBI
+    label (preferred_term ''D-Mannitol'' unchanged).'
 chemical_properties:
   cas_rn: 69-65-8
   data_source: PubChem API

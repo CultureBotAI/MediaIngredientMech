@@ -2,7 +2,7 @@ identifier: CHEBI:50144
 preferred_term: Na-pyruvate
 ontology_mapping:
   ontology_id: CHEBI:50144
-  ontology_label: Na-pyruvate
+  ontology_label: sodium pyruvate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -182,6 +182,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.804621+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-pyruvate'' -> ''sodium pyruvate'': synced to canonical
+    CHEBI label (preferred_term ''Na-pyruvate'' unchanged).'
 chemical_properties:
   cas_rn: 113-24-6
   data_source: PubChem API (preprocessed)

@@ -2,7 +2,7 @@ identifier: CHEBI:86318
 preferred_term: CuCl2 x 2 H2O
 ontology_mapping:
   ontology_id: CHEBI:86318
-  ontology_label: CuCl2 x 2 H2O
+  ontology_label: copper(II) chloride dihydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -170,6 +170,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.746810+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CuCl2 x 2 H2O'' -> ''copper(II) chloride dihydrate'':
+    synced to canonical CHEBI label (preferred_term ''CuCl2 x 2 H2O'' unchanged).'
 kg_microbe_node_id: CHEBI:86318
 chemical_properties:
   cas_rn: 10125-13-0

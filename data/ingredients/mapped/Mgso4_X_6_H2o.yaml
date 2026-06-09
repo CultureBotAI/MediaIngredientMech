@@ -2,7 +2,7 @@ identifier: CHEBI:32599
 preferred_term: MgSO4 x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:32599
-  ontology_label: MgSO4 x 6 H2O
+  ontology_label: magnesium sulfate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -121,6 +121,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.797331+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''MgSO4 x 6 H2O'' -> ''magnesium sulfate'': synced to canonical
+    CHEBI label (preferred_term ''MgSO4 x 6 H2O'' unchanged).'
 kg_microbe_node_id: CHEBI:32599
 chemical_properties:
   cas_rn: 7487-88-9

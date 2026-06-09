@@ -2,7 +2,7 @@ identifier: CHEBI:86481
 preferred_term: Na-thioglycolate
 ontology_mapping:
   ontology_id: CHEBI:86481
-  ontology_label: Na-thioglycolate
+  ontology_label: sodium thioglycolate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -133,6 +133,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: REDUCING_AGENT (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.805009+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-thioglycolate'' -> ''sodium thioglycolate'': synced
+    to canonical CHEBI label (preferred_term ''Na-thioglycolate'' unchanged).'
 chemical_properties:
   cas_rn: 367-51-1
   data_source: PubChem API (preprocessed)

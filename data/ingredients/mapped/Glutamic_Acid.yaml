@@ -2,7 +2,7 @@ identifier: CHEBI:18237
 preferred_term: Glutamic acid
 ontology_mapping:
   ontology_id: CHEBI:18237
-  ontology_label: Glutamic acid
+  ontology_label: glutamic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -93,6 +93,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.769242+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Glutamic acid'' -> ''glutamic acid'': synced to canonical
+    CHEBI label (preferred_term ''Glutamic acid'' unchanged).'
 chemical_properties:
   cas_rn: 56-86-0
   data_source: PubChem API

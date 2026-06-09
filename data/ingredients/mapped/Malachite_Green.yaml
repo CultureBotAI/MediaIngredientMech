@@ -2,7 +2,7 @@ identifier: CHEBI:72449
 preferred_term: Malachite green
 ontology_mapping:
   ontology_id: CHEBI:72449
-  ontology_label: Malachite green
+  ontology_label: malachite green
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -122,6 +122,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: PH_INDICATOR (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.791440+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Malachite green'' -> ''malachite green'': synced to canonical
+    CHEBI label (preferred_term ''Malachite green'' unchanged).'
 chemical_properties:
   cas_rn: 569-64-2
   data_source: PubChem API

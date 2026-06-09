@@ -2,7 +2,7 @@ identifier: CHEBI:18246
 preferred_term: Cellulose
 ontology_mapping:
   ontology_id: CHEBI:18246
-  ontology_label: Cellulose
+  ontology_label: (1->4)-beta-D-glucan
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -92,6 +92,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.739941+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Cellulose'' -> ''(1->4)-beta-D-glucan'': synced to canonical
+    CHEBI label (preferred_term ''Cellulose'' unchanged).'
 chemical_properties:
   cas_rn: 9004-34-6
   data_source: CultureBotHT compounds_to_cas.csv

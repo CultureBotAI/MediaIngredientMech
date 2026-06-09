@@ -2,7 +2,7 @@ identifier: CHEBI:2511
 preferred_term: Agarose
 ontology_mapping:
   ontology_id: CHEBI:2511
-  ontology_label: Agarose
+  ontology_label: agarose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -83,6 +83,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.719018+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Agarose'' -> ''agarose'': synced to canonical CHEBI label
+    (preferred_term ''Agarose'' unchanged).'
 chemical_properties:
   cas_rn: 9012-36-6
   data_source: NCI CACTUS Chemical Identifier Resolver

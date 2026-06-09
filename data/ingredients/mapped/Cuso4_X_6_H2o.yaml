@@ -2,7 +2,7 @@ identifier: CHEBI:91246
 preferred_term: CuSO4 x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:91246
-  ontology_label: CuSO4 x 6 H2O
+  ontology_label: copper(II) sulfate hexahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -60,6 +60,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.747665+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CuSO4 x 6 H2O'' -> ''copper(II) sulfate hexahydrate'':
+    synced to canonical CHEBI label (preferred_term ''CuSO4 x 6 H2O'' unchanged).'
 kg_microbe_node_id: CHEBI:91246
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:

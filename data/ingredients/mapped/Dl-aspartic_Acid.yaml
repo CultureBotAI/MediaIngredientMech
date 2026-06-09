@@ -2,7 +2,7 @@ identifier: CHEBI:22660
 preferred_term: DL-aspartic acid
 ontology_mapping:
   ontology_id: CHEBI:22660
-  ontology_label: DL-aspartic acid
+  ontology_label: aspartic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -70,6 +70,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.757887+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''DL-aspartic acid'' -> ''aspartic acid'': synced to canonical
+    CHEBI label (preferred_term ''DL-aspartic acid'' unchanged).'
 chemical_properties:
   cas_rn: 617-45-8
   data_source: PubChem API

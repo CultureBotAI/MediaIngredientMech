@@ -2,7 +2,7 @@ identifier: CHEBI:63125
 preferred_term: Na3-EDTA
 ontology_mapping:
   ontology_id: CHEBI:63125
-  ontology_label: Na3-EDTA
+  ontology_label: EDTA trisodium salt
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -103,6 +103,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: CHELATOR (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.808783+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na3-EDTA'' -> ''EDTA trisodium salt'': synced to canonical
+    CHEBI label (preferred_term ''Na3-EDTA'' unchanged).'
 chemical_properties:
   cas_rn: 150-38-9
   data_source: PubChem (via CHEBI:63125)

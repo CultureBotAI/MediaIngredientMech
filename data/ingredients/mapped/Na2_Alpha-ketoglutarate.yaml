@@ -2,7 +2,7 @@ identifier: CHEBI:16810
 preferred_term: Na2 alpha-ketoglutarate
 ontology_mapping:
   ontology_id: CHEBI:16810
-  ontology_label: Na2 alpha-ketoglutarate
+  ontology_label: 2-oxoglutarate(2-)
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -101,6 +101,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.805587+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na2 alpha-ketoglutarate'' -> ''2-oxoglutarate(2-)'':
+    synced to canonical CHEBI label (preferred_term ''Na2 alpha-ketoglutarate'' unchanged).'
 kg_microbe_node_id: CHEBI:16810
 chemical_properties:
   cas_rn: 64-15-3

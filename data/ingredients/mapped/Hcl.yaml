@@ -2,7 +2,7 @@ identifier: CHEBI:17883
 preferred_term: HCl
 ontology_mapping:
   ontology_id: CHEBI:17883
-  ontology_label: HCl
+  ontology_label: hydrogen chloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -122,6 +122,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: SALT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.773229+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''HCl'' -> ''hydrogen chloride'': synced to canonical CHEBI
+    label (preferred_term ''HCl'' unchanged).'
 chemical_properties:
   cas_rn: 7647-01-0
   data_source: PubChem API

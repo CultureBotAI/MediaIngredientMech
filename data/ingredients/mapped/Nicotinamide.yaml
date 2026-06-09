@@ -2,7 +2,7 @@ identifier: CHEBI:17154
 preferred_term: Nicotinamide
 ontology_mapping:
   ontology_id: CHEBI:17154
-  ontology_label: Nicotinamide
+  ontology_label: nicotinamide
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -184,6 +184,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.812921+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Nicotinamide'' -> ''nicotinamide'': synced to canonical
+    CHEBI label (preferred_term ''Nicotinamide'' unchanged).'
 chemical_properties:
   cas_rn: 98-92-0
   data_source: CultureBotHT compounds_to_cas.csv

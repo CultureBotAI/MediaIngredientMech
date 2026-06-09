@@ -2,7 +2,7 @@ identifier: CHEBI:49553
 preferred_term: CuCl2
 ontology_mapping:
   ontology_id: CHEBI:49553
-  ontology_label: CuCl2
+  ontology_label: copper(II) chloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -132,6 +132,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.746714+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CuCl2'' -> ''copper(II) chloride'': synced to canonical
+    CHEBI label (preferred_term ''CuCl2'' unchanged).'
 chemical_properties:
   cas_rn: 7447-39-4
   data_source: PubChem (via CHEBI:49553)

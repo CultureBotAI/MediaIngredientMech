@@ -2,7 +2,7 @@ identifier: CHEBI:63038
 preferred_term: (NH4)NO3
 ontology_mapping:
   ontology_id: CHEBI:63038
-  ontology_label: (NH4)NO3
+  ontology_label: ammonium nitrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -169,6 +169,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.812264+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''(NH4)NO3'' -> ''ammonium nitrate'': synced to canonical
+    CHEBI label (preferred_term ''(NH4)NO3'' unchanged).'
 chemical_properties:
   cas_rn: 6484-52-2
   data_source: OAK/CHEBI xref

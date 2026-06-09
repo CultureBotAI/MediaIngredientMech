@@ -2,7 +2,7 @@ identifier: CHEBI:18287
 preferred_term: L-Fucose
 ontology_mapping:
   ontology_id: CHEBI:18287
-  ontology_label: L-Fucose
+  ontology_label: L-fucose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -71,6 +71,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.784896+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''L-Fucose'' -> ''L-fucose'': synced to canonical CHEBI
+    label (preferred_term ''L-Fucose'' unchanged).'
 chemical_properties:
   cas_rn: 2438-80-4
   data_source: CultureBotHT/compounds_to_cas.csv

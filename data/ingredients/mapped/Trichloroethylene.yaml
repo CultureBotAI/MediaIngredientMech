@@ -2,7 +2,7 @@ identifier: CHEBI:16602
 preferred_term: Trichloroethylene
 ontology_mapping:
   ontology_id: CHEBI:16602
-  ontology_label: Trichloroethylene
+  ontology_label: trichloroethene
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -94,6 +94,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.845688+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Trichloroethylene'' -> ''trichloroethene'': synced to
+    canonical CHEBI label (preferred_term ''Trichloroethylene'' unchanged).'
 chemical_properties:
   cas_rn: 79-01-6
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:7916
 preferred_term: Pantothenic acid
 ontology_mapping:
   ontology_id: CHEBI:7916
-  ontology_label: Pantothenic acid
+  ontology_label: pantothenic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -101,6 +101,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.817180+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Pantothenic acid'' -> ''pantothenic acid'': synced to
+    canonical CHEBI label (preferred_term ''Pantothenic acid'' unchanged).'
 chemical_properties:
   cas_rn: 599-54-2
   data_source: OAK/CHEBI xref

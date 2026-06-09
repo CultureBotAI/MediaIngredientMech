@@ -2,7 +2,7 @@ identifier: CHEBI:30115
 preferred_term: AlCl3 x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:30115
-  ontology_label: AlCl3 x 6 H2O
+  ontology_label: aluminium trichloride hexahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -100,6 +100,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.721969+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''AlCl3 x 6 H2O'' -> ''aluminium trichloride hexahydrate'':
+    synced to canonical CHEBI label (preferred_term ''AlCl3 x 6 H2O'' unchanged).'
 kg_microbe_node_id: CHEBI:30115
 chemical_properties:
   cas_rn: 7784-13-6

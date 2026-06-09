@@ -2,7 +2,7 @@ identifier: CHEBI:32139
 preferred_term: NaHCO3
 ontology_mapping:
   ontology_id: CHEBI:32139
-  ontology_label: NaHCO3
+  ontology_label: sodium hydrogencarbonate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -177,6 +177,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.809724+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''NaHCO3'' -> ''sodium hydrogencarbonate'': synced to canonical
+    CHEBI label (preferred_term ''NaHCO3'' unchanged).'
 chemical_properties:
   cas_rn: 144-55-8
   data_source: PubChem API

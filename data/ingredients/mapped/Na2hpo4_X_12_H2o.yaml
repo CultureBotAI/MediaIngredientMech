@@ -2,7 +2,7 @@ identifier: CHEBI:34683
 preferred_term: Na2HPO4 x 12 H2O
 ontology_mapping:
   ontology_id: CHEBI:34683
-  ontology_label: Na2HPO4 x 12 H2O
+  ontology_label: disodium hydrogenphosphate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -101,6 +101,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.806237+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na2HPO4 x 12 H2O'' -> ''disodium hydrogenphosphate'':
+    synced to canonical CHEBI label (preferred_term ''Na2HPO4 x 12 H2O'' unchanged).'
 kg_microbe_node_id: CHEBI:34683
 chemical_properties:
   cas_rn: 7782-85-6

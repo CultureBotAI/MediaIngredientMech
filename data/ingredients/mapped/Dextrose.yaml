@@ -2,7 +2,7 @@ identifier: CHEBI:4167
 preferred_term: Dextrose
 ontology_mapping:
   ontology_id: CHEBI:4167
-  ontology_label: Dextrose
+  ontology_label: D-glucopyranose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -95,6 +95,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.755191+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Dextrose'' -> ''D-glucopyranose'': synced to canonical
+    CHEBI label (preferred_term ''Dextrose'' unchanged).'
 chemical_properties:
   cas_rn: 50-99-7
   data_source: PubChem (via CHEBI:4167)

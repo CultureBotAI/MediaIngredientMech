@@ -2,7 +2,7 @@ identifier: CHEBI:24040
 preferred_term: Flavin adenine dinucleotide
 ontology_mapping:
   ontology_id: CHEBI:24040
-  ontology_label: Flavin adenine dinucleotide
+  ontology_label: flavin adenine dinucleotide
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -38,6 +38,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.765485+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Flavin adenine dinucleotide'' -> ''flavin adenine dinucleotide'':
+    synced to canonical CHEBI label (preferred_term ''Flavin adenine dinucleotide''
+    unchanged).'
 chemical_properties:
   cas_rn: 146-14-5
   data_source: PubChem API

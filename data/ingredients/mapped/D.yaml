@@ -2,7 +2,7 @@ identifier: CHEBI:29958
 preferred_term: D
 ontology_mapping:
   ontology_id: CHEBI:29958
-  ontology_label: D
+  ontology_label: L-aspartic acid residue
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -65,6 +65,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.752755+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''D'' -> ''L-aspartic acid residue'': synced to canonical
+    CHEBI label (preferred_term ''D'' unchanged).'
 chemical_properties:
   cas_rn: 138-86-3
   data_source: CultureBotHT compounds_to_cas.csv

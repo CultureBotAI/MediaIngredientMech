@@ -2,7 +2,7 @@ identifier: CHEBI:64103
 preferred_term: Na-butyrate
 ontology_mapping:
   ontology_id: CHEBI:64103
-  ontology_label: Na-butyrate
+  ontology_label: sodium butyrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -157,6 +157,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.803682+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-butyrate'' -> ''sodium butyrate'': synced to canonical
+    CHEBI label (preferred_term ''Na-butyrate'' unchanged).'
 chemical_properties:
   cas_rn: 156-54-7
   data_source: PubChem API (preprocessed)

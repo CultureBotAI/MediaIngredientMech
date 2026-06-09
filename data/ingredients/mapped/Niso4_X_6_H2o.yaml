@@ -2,7 +2,7 @@ identifier: CHEBI:53001
 preferred_term: NiSO4 x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:53001
-  ontology_label: NiSO4 x 6 H2O
+  ontology_label: nickel sulfate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -69,6 +69,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.813391+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''NiSO4 x 6 H2O'' -> ''nickel sulfate'': synced to canonical
+    CHEBI label (preferred_term ''NiSO4 x 6 H2O'' unchanged).'
 chemical_properties:
   cas_rn: 10101-97-0
   data_source: CultureBotHT/compounds_to_cas.csv

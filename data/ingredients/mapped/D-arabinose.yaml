@@ -2,7 +2,7 @@ identifier: CHEBI:17108
 preferred_term: D-Arabinose
 ontology_mapping:
   ontology_id: CHEBI:17108
-  ontology_label: D-Arabinose
+  ontology_label: D-arabinose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -62,6 +62,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.751412+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''D-Arabinose'' -> ''D-arabinose'': synced to canonical
+    CHEBI label (preferred_term ''D-Arabinose'' unchanged).'
 chemical_properties:
   cas_rn: 10323-20-3
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:16261
 preferred_term: Chitosan
 ontology_mapping:
   ontology_id: CHEBI:16261
-  ontology_label: Chitosan
+  ontology_label: chitosan
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -78,6 +78,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.741133+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Chitosan'' -> ''chitosan'': synced to canonical CHEBI
+    label (preferred_term ''Chitosan'' unchanged).'
 chemical_properties:
   cas_rn: 9012-76-4
   data_source: CultureBotHT compounds_to_cas.csv

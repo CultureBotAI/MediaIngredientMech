@@ -2,7 +2,7 @@ identifier: CHEBI:26806
 preferred_term: Succinate
 ontology_mapping:
   ontology_id: CHEBI:26806
-  ontology_label: Succinate
+  ontology_label: succinate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -74,6 +74,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.839177+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Succinate'' -> ''succinate'': synced to canonical CHEBI
+    label (preferred_term ''Succinate'' unchanged).'
 chemical_properties:
   cas_rn: 56-14-4
   data_source: PubChem API

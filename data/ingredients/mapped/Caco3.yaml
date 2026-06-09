@@ -2,7 +2,7 @@ identifier: CHEBI:3311
 preferred_term: CaCO3
 ontology_mapping:
   ontology_id: CHEBI:3311
-  ontology_label: CaCO3
+  ontology_label: calcium carbonate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -157,6 +157,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.733439+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CaCO3'' -> ''calcium carbonate'': synced to canonical
+    CHEBI label (preferred_term ''CaCO3'' unchanged).'
 chemical_properties:
   cas_rn: 471-34-1
   data_source: PubChem API

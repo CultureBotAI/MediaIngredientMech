@@ -2,7 +2,7 @@ identifier: CHEBI:113455
 preferred_term: Na-benzoate
 ontology_mapping:
   ontology_id: CHEBI:113455
-  ontology_label: Na-benzoate
+  ontology_label: sodium benzoate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -115,6 +115,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.803587+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-benzoate'' -> ''sodium benzoate'': synced to canonical
+    CHEBI label (preferred_term ''Na-benzoate'' unchanged).'
 chemical_properties:
   cas_rn: 532-32-1
   data_source: PubChem API (preprocessed)

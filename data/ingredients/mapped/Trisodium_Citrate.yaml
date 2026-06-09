@@ -2,7 +2,7 @@ identifier: CHEBI:53258
 preferred_term: Trisodium citrate
 ontology_mapping:
   ontology_id: CHEBI:53258
-  ontology_label: Trisodium citrate
+  ontology_label: sodium citrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -162,6 +162,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.846827+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Trisodium citrate'' -> ''sodium citrate'': synced to
+    canonical CHEBI label (preferred_term ''Trisodium citrate'' unchanged).'
 kg_microbe_node_id: CHEBI:53258
 chemical_properties:
   cas_rn: 68-04-2

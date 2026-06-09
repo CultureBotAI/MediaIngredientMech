@@ -2,7 +2,7 @@ identifier: CHEBI:16199
 preferred_term: Urea
 ontology_mapping:
   ontology_id: CHEBI:16199
-  ontology_label: Urea
+  ontology_label: urea
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -98,6 +98,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.848166+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Urea'' -> ''urea'': synced to canonical CHEBI label (preferred_term
+    ''Urea'' unchanged).'
 chemical_properties:
   cas_rn: 57-13-6
   data_source: PubChem API

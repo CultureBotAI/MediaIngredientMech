@@ -2,7 +2,7 @@ identifier: CHEBI:131361
 preferred_term: Na2SeO3 x 5 H2O
 ontology_mapping:
   ontology_id: CHEBI:131361
-  ontology_label: Na2SeO3 x 5 H2O
+  ontology_label: disodium selenite pentahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -101,6 +101,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.807840+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na2SeO3 x 5 H2O'' -> ''disodium selenite pentahydrate'':
+    synced to canonical CHEBI label (preferred_term ''Na2SeO3 x 5 H2O'' unchanged).'
 chemical_properties:
   cas_rn: 26970-82-1
   data_source: CultureBotHT/compounds_to_cas.csv

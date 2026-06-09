@@ -2,7 +2,7 @@ identifier: CHEBI:78074
 preferred_term: SnCl2 x 2 H2O
 ontology_mapping:
   ontology_id: CHEBI:78074
-  ontology_label: SnCl2 x 2 H2O
+  ontology_label: tin(II) chloride dihydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -93,6 +93,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.832035+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''SnCl2 x 2 H2O'' -> ''tin(II) chloride dihydrate'': synced
+    to canonical CHEBI label (preferred_term ''SnCl2 x 2 H2O'' unchanged).'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: 2Cl.2H2O.Sn

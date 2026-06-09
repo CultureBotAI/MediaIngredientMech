@@ -2,7 +2,7 @@ identifier: CHEBI:30089
 preferred_term: Acetate
 ontology_mapping:
   ontology_id: CHEBI:30089
-  ontology_label: Acetate
+  ontology_label: acetate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -114,6 +114,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.717506+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Acetate'' -> ''acetate'': synced to canonical CHEBI label
+    (preferred_term ''Acetate'' unchanged).'
 chemical_properties:
   cas_rn: 71-50-1
   data_source: PubChem API

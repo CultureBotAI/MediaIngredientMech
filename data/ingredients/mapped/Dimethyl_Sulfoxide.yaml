@@ -2,7 +2,7 @@ identifier: CHEBI:28262
 preferred_term: Dimethyl sulfoxide
 ontology_mapping:
   ontology_id: CHEBI:28262
-  ontology_label: Dimethyl sulfoxide
+  ontology_label: dimethyl sulfoxide
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -93,6 +93,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: SALT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.756679+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Dimethyl sulfoxide'' -> ''dimethyl sulfoxide'': synced
+    to canonical CHEBI label (preferred_term ''Dimethyl sulfoxide'' unchanged).'
 chemical_properties:
   cas_rn: 67-68-5
   data_source: PubChem API

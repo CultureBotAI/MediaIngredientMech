@@ -2,7 +2,7 @@ identifier: CHEBI:30114
 preferred_term: AlCl3
 ontology_mapping:
   ontology_id: CHEBI:30114
-  ontology_label: AlCl3
+  ontology_label: aluminium trichloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -85,6 +85,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.721866+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''AlCl3'' -> ''aluminium trichloride'': synced to canonical
+    CHEBI label (preferred_term ''AlCl3'' unchanged).'
 chemical_properties:
   cas_rn: 7446-70-0
   data_source: PubChem (via CHEBI:30114)

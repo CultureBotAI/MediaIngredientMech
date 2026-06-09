@@ -2,7 +2,7 @@ identifier: CHEBI:16454
 preferred_term: Pantothenate
 ontology_mapping:
   ontology_id: CHEBI:16454
-  ontology_label: Pantothenate
+  ontology_label: pantothenate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -71,6 +71,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.817080+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Pantothenate'' -> ''pantothenate'': synced to canonical
+    CHEBI label (preferred_term ''Pantothenate'' unchanged).'
 chemical_properties:
   cas_rn: 20938-62-9
   data_source: PubChem API

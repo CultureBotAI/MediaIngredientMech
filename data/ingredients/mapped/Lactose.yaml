@@ -2,7 +2,7 @@ identifier: CHEBI:17716
 preferred_term: Lactose
 ontology_mapping:
   ontology_id: CHEBI:17716
-  ontology_label: Lactose
+  ontology_label: lactose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -152,6 +152,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.787743+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Lactose'' -> ''lactose'': synced to canonical CHEBI label
+    (preferred_term ''Lactose'' unchanged).'
 chemical_properties:
   cas_rn: 63-42-3
   data_source: PubChem (via CHEBI:17716)

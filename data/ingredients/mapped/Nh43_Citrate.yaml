@@ -2,7 +2,7 @@ identifier: CHEBI:63037
 preferred_term: (NH4)3 citrate
 ontology_mapping:
   ontology_id: CHEBI:63037
-  ontology_label: (NH4)3 citrate
+  ontology_label: triammonium citrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -116,6 +116,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.811889+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''(NH4)3 citrate'' -> ''triammonium citrate'': synced to
+    canonical CHEBI label (preferred_term ''(NH4)3 citrate'' unchanged).'
 chemical_properties:
   cas_rn: 3458-72-8
   data_source: PubChem (via CHEBI:63037)

@@ -2,7 +2,7 @@ identifier: CHEBI:63317
 preferred_term: BaCl2
 ontology_mapping:
   ontology_id: CHEBI:63317
-  ontology_label: BaCl2
+  ontology_label: barium chloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -63,6 +63,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.727739+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''BaCl2'' -> ''barium chloride'': synced to canonical CHEBI
+    label (preferred_term ''BaCl2'' unchanged).'
 chemical_properties:
   cas_rn: 233-788-1
   data_source: PubChem API

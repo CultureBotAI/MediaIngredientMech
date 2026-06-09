@@ -2,7 +2,7 @@ identifier: CHEBI:17578
 preferred_term: Toluene
 ontology_mapping:
   ontology_id: CHEBI:17578
-  ontology_label: Toluene
+  ontology_label: toluene
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -73,6 +73,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.844552+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Toluene'' -> ''toluene'': synced to canonical CHEBI label
+    (preferred_term ''Toluene'' unchanged).'
 chemical_properties:
   cas_rn: 108-88-3
   data_source: PubChem API

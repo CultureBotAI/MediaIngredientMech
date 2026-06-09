@@ -2,7 +2,7 @@ identifier: CHEBI:132106
 preferred_term: Na-propionate
 ontology_mapping:
   ontology_id: CHEBI:132106
-  ontology_label: Na-propionate
+  ontology_label: sodium propionate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -132,6 +132,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.804528+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-propionate'' -> ''sodium propionate'': synced to canonical
+    CHEBI label (preferred_term ''Na-propionate'' unchanged).'
 chemical_properties:
   cas_rn: 137-40-6
   data_source: PubChem API (preprocessed)

@@ -2,7 +2,7 @@ identifier: CHEBI:32954
 preferred_term: Na-acetate
 ontology_mapping:
   ontology_id: CHEBI:32954
-  ontology_label: Na-acetate
+  ontology_label: sodium acetate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -188,6 +188,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.803304+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-acetate'' -> ''sodium acetate'': synced to canonical
+    CHEBI label (preferred_term ''Na-acetate'' unchanged).'
 chemical_properties:
   cas_rn: 127-09-3
   data_source: PubChem API (preprocessed)

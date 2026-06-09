@@ -2,7 +2,7 @@ identifier: CHEBI:76209
 preferred_term: Na2S x 9 H2O
 ontology_mapping:
   ontology_id: CHEBI:76209
-  ontology_label: Na2S x 9 H2O
+  ontology_label: sodium sulfide nonahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -143,6 +143,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: REDUCING_AGENT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.807551+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na2S x 9 H2O'' -> ''sodium sulfide nonahydrate'': synced
+    to canonical CHEBI label (preferred_term ''Na2S x 9 H2O'' unchanged).'
 kg_microbe_node_id: CHEBI:76209
 chemical_properties:
   cas_rn: 1313-82-2

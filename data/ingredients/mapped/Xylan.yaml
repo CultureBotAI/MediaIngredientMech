@@ -2,7 +2,7 @@ identifier: CHEBI:37166
 preferred_term: Xylan
 ontology_mapping:
   ontology_id: CHEBI:37166
-  ontology_label: Xylan
+  ontology_label: xylan
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -62,6 +62,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.90)'
+- timestamp: '2026-06-09T05:23:46.850749+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Xylan'' -> ''xylan'': synced to canonical CHEBI label
+    (preferred_term ''Xylan'' unchanged).'
 kg_microbe_node_id: CHEBI:37166
 ingredient_type: SINGLE_INGREDIENT
 media_roles:

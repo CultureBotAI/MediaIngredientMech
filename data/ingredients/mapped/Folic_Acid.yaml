@@ -2,7 +2,7 @@ identifier: CHEBI:27470
 preferred_term: Folic acid
 ontology_mapping:
   ontology_id: CHEBI:27470
-  ontology_label: Folic acid
+  ontology_label: folic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -169,6 +169,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.765867+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Folic acid'' -> ''folic acid'': synced to canonical CHEBI
+    label (preferred_term ''Folic acid'' unchanged).'
 chemical_properties:
   cas_rn: 59-30-3
   data_source: PubChem API

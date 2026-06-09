@@ -2,7 +2,7 @@ identifier: CHEBI:62947
 preferred_term: Ammonium acetate
 ontology_mapping:
   ontology_id: CHEBI:62947
-  ontology_label: Ammonium acetate
+  ontology_label: ammonium acetate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -109,6 +109,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.723228+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Ammonium acetate'' -> ''ammonium acetate'': synced to
+    canonical CHEBI label (preferred_term ''Ammonium acetate'' unchanged).'
 chemical_properties:
   cas_rn: 631-61-8
   data_source: PubChem API

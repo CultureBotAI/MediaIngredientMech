@@ -2,7 +2,7 @@ identifier: CHEBI:34535
 preferred_term: Na-ampicillin
 ontology_mapping:
   ontology_id: CHEBI:34535
-  ontology_label: Na-ampicillin
+  ontology_label: ampicillin sodium
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -83,6 +83,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.803401+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-ampicillin'' -> ''ampicillin sodium'': synced to canonical
+    CHEBI label (preferred_term ''Na-ampicillin'' unchanged).'
 chemical_properties:
   cas_rn: 69-52-3
   data_source: PubChem API (preprocessed)

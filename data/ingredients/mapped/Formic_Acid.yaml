@@ -2,7 +2,7 @@ identifier: CHEBI:30751
 preferred_term: Formic acid
 ontology_mapping:
   ontology_id: CHEBI:30751
-  ontology_label: Formic acid
+  ontology_label: formic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -93,6 +93,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.766242+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Formic acid'' -> ''formic acid'': synced to canonical
+    CHEBI label (preferred_term ''Formic acid'' unchanged).'
 chemical_properties:
   cas_rn: 64-18-6
   data_source: PubChem API

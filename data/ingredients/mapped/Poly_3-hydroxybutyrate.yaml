@@ -2,7 +2,7 @@ identifier: CHEBI:53389
 preferred_term: Poly(3-hydroxybutyrate)
 ontology_mapping:
   ontology_id: CHEBI:53389
-  ontology_label: Poly(3-hydroxybutyrate)
+  ontology_label: poly(3-hydroxybutyrate)
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -72,6 +72,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.821850+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Poly(3-hydroxybutyrate)'' -> ''poly(3-hydroxybutyrate)'':
+    synced to canonical CHEBI label (preferred_term ''Poly(3-hydroxybutyrate)'' unchanged).'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: (C4H6O2)n

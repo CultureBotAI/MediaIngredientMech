@@ -2,7 +2,7 @@ identifier: CHEBI:30915
 preferred_term: alpha-ketoglutaric acid
 ontology_mapping:
   ontology_id: CHEBI:30915
-  ontology_label: alpha-ketoglutaric acid
+  ontology_label: 2-oxoglutaric acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -83,6 +83,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.722952+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''alpha-ketoglutaric acid'' -> ''2-oxoglutaric acid'':
+    synced to canonical CHEBI label (preferred_term ''alpha-ketoglutaric acid'' unchanged).'
 chemical_properties:
   cas_rn: 328-50-7
   data_source: PubChem API

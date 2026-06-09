@@ -2,7 +2,7 @@ identifier: CHEBI:17924
 preferred_term: D-Sorbitol
 ontology_mapping:
   ontology_id: CHEBI:17924
-  ontology_label: D-Sorbitol
+  ontology_label: D-glucitol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -93,6 +93,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.752372+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''D-Sorbitol'' -> ''D-glucitol'': synced to canonical CHEBI
+    label (preferred_term ''D-Sorbitol'' unchanged).'
 chemical_properties:
   cas_rn: 50-70-4
   data_source: PubChem API

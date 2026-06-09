@@ -2,7 +2,7 @@ identifier: CHEBI:84997
 preferred_term: Sodium gluconate
 ontology_mapping:
   ontology_id: CHEBI:84997
-  ontology_label: Sodium gluconate
+  ontology_label: sodium gluconate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -124,6 +124,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.834575+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Sodium gluconate'' -> ''sodium gluconate'': synced to
+    canonical CHEBI label (preferred_term ''Sodium gluconate'' unchanged).'
 chemical_properties:
   cas_rn: 527-07-1
   data_source: CultureBotHT compounds_to_cas.csv

@@ -2,7 +2,7 @@ identifier: CHEBI:17992
 preferred_term: Sucrose
 ontology_mapping:
   ontology_id: CHEBI:17992
-  ontology_label: Sucrose
+  ontology_label: sucrose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -125,6 +125,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.839401+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Sucrose'' -> ''sucrose'': synced to canonical CHEBI label
+    (preferred_term ''Sucrose'' unchanged).'
 chemical_properties:
   cas_rn: 57-50-1
   data_source: PubChem API

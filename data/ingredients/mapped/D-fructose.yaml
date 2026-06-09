@@ -2,7 +2,7 @@ identifier: CHEBI:15824
 preferred_term: D-Fructose
 ontology_mapping:
   ontology_id: CHEBI:15824
-  ontology_label: D-Fructose
+  ontology_label: D-fructose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -91,6 +91,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.751601+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''D-Fructose'' -> ''D-fructose'': synced to canonical CHEBI
+    label (preferred_term ''D-Fructose'' unchanged).'
 chemical_properties:
   cas_rn: 57-48-7
   data_source: CultureBotHT/compounds_to_cas.csv

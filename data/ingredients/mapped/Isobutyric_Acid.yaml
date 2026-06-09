@@ -2,7 +2,7 @@ identifier: CHEBI:16135
 preferred_term: Isobutyric acid
 ontology_mapping:
   ontology_id: CHEBI:16135
-  ontology_label: Isobutyric acid
+  ontology_label: isobutyric acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -121,6 +121,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.778550+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Isobutyric acid'' -> ''isobutyric acid'': synced to canonical
+    CHEBI label (preferred_term ''Isobutyric acid'' unchanged).'
 chemical_properties:
   cas_rn: 79-31-2
   data_source: CultureBotHT compounds_to_cas.csv

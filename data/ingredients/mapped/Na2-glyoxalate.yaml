@@ -2,7 +2,7 @@ identifier: CHEBI:91251
 preferred_term: Na2-glyoxalate
 ontology_mapping:
   ontology_id: CHEBI:91251
-  ontology_label: Na2-glyoxalate
+  ontology_label: sodium glyoxylate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -70,6 +70,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.805491+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na2-glyoxalate'' -> ''sodium glyoxylate'': synced to
+    canonical CHEBI label (preferred_term ''Na2-glyoxalate'' unchanged).'
 chemical_properties:
   cas_rn: 2706-75-4
   data_source: PubChem (via CHEBI:91251)

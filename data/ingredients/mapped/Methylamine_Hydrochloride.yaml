@@ -2,7 +2,7 @@ identifier: CHEBI:59337
 preferred_term: Methylamine hydrochloride
 ontology_mapping:
   ontology_id: CHEBI:59337
-  ontology_label: Methylamine hydrochloride
+  ontology_label: methylamine hydrochloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -76,6 +76,12 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.795851+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Methylamine hydrochloride'' -> ''methylamine hydrochloride'':
+    synced to canonical CHEBI label (preferred_term ''Methylamine hydrochloride''
+    unchanged).'
 chemical_properties:
   cas_rn: 593-51-1
   data_source: PubChem API

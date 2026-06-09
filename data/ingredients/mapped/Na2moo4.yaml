@@ -2,7 +2,7 @@ identifier: CHEBI:75215
 preferred_term: Na2MoO4
 ontology_mapping:
   ontology_id: CHEBI:75215
-  ontology_label: Na2MoO4
+  ontology_label: sodium molybdate (anhydrous)
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -173,6 +173,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.806699+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na2MoO4'' -> ''sodium molybdate (anhydrous)'': synced
+    to canonical CHEBI label (preferred_term ''Na2MoO4'' unchanged).'
 chemical_properties:
   cas_rn: 7631-95-0
   data_source: OAK/CHEBI xref

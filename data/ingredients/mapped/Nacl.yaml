@@ -2,7 +2,7 @@ identifier: CHEBI:26710
 preferred_term: NaCl
 ontology_mapping:
   ontology_id: CHEBI:26710
-  ontology_label: NaCl
+  ontology_label: sodium chloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -194,6 +194,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.809165+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''NaCl'' -> ''sodium chloride'': synced to canonical CHEBI
+    label (preferred_term ''NaCl'' unchanged).'
 chemical_properties:
   cas_rn: 7647-14-5
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:2682
 preferred_term: Amphotericin B
 ontology_mapping:
   ontology_id: CHEBI:2682
-  ontology_label: Amphotericin B
+  ontology_label: amphotericin B
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -99,6 +99,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.723794+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Amphotericin B'' -> ''amphotericin B'': synced to canonical
+    CHEBI label (preferred_term ''Amphotericin B'' unchanged).'
 chemical_properties:
   cas_rn: 1397-89-3
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:33942
 preferred_term: Ribose
 ontology_mapping:
   ontology_id: CHEBI:33942
-  ontology_label: Ribose
+  ontology_label: ribose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -62,6 +62,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.827326+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Ribose'' -> ''ribose'': synced to canonical CHEBI label
+    (preferred_term ''Ribose'' unchanged).'
 chemical_properties:
   cas_rn: 200-059-4
   data_source: PubChem API

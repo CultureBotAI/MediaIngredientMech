@@ -2,7 +2,7 @@ identifier: CHEBI:75937
 preferred_term: Glycerol mono-oleate
 ontology_mapping:
   ontology_id: CHEBI:75937
-  ontology_label: Glycerol mono-oleate
+  ontology_label: monooleoylglycerol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -68,6 +68,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: SURFACTANT (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.770200+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Glycerol mono-oleate'' -> ''monooleoylglycerol'': synced
+    to canonical CHEBI label (preferred_term ''Glycerol mono-oleate'' unchanged).'
 chemical_properties:
   cas_rn: 129784-87-8
   data_source: PubChem API

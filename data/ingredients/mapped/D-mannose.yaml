@@ -2,7 +2,7 @@ identifier: CHEBI:16024
 preferred_term: D-Mannose
 ontology_mapping:
   ontology_id: CHEBI:16024
-  ontology_label: D-Mannose
+  ontology_label: D-mannose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -88,6 +88,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.752273+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''D-Mannose'' -> ''D-mannose'': synced to canonical CHEBI
+    label (preferred_term ''D-Mannose'' unchanged).'
 chemical_properties:
   cas_rn: 530-26-7
   data_source: PubChem API

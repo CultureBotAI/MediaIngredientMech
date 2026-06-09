@@ -2,7 +2,7 @@ identifier: CHEBI:17824
 preferred_term: Isopropyl alcohol
 ontology_mapping:
   ontology_id: CHEBI:17824
-  ontology_label: Isopropyl alcohol
+  ontology_label: propan-2-ol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -83,6 +83,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.778955+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Isopropyl alcohol'' -> ''propan-2-ol'': synced to canonical
+    CHEBI label (preferred_term ''Isopropyl alcohol'' unchanged).'
 chemical_properties:
   cas_rn: 67-63-0
   data_source: PubChem API

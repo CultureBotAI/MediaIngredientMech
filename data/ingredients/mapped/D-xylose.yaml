@@ -2,7 +2,7 @@ identifier: CHEBI:65327
 preferred_term: D-Xylose
 ontology_mapping:
   ontology_id: CHEBI:65327
-  ontology_label: D-Xylose
+  ontology_label: D-xylose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -78,6 +78,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.752564+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''D-Xylose'' -> ''D-xylose'': synced to canonical CHEBI
+    label (preferred_term ''D-Xylose'' unchanged).'
 chemical_properties:
   cas_rn: 58-86-6
   data_source: CultureBotHT/compounds_to_cas.csv
