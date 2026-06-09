@@ -1,0 +1,40 @@
+name: Tests (pytest)
+
+# Runs the pytest suite (310 tests, fully hermetic — OAK and HTTP are mocked, no
+# network or large ontology DBs needed) so the guard tests added across the role /
+# SSSOM / occurrence-stats work actually fail PRs on regression, instead of only
+# running locally. Complements the data/schema QC workflows (validate-strict,
+# qc-sssom, qc-evidence) which don't run pytest.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install runtime dependencies
+        # --frozen fails if uv.lock is stale (no silent re-resolve in CI). Runtime
+        # deps only; pytest/pytest-cov are layered via `uv run --with` below so the
+        # heavy py>=3.12 dev extras (edison-client / deep-research-client) aren't
+        # pulled for a hermetic unit-test run.
+        run: uv sync --frozen
+
+      - name: Run pytest
+        run: uv run --with pytest --with pytest-cov pytest
