@@ -2,7 +2,7 @@ identifier: CHEBI:31991
 preferred_term: Phenol red
 ontology_mapping:
   ontology_id: CHEBI:31991
-  ontology_label: Phenol red
+  ontology_label: phenol red
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -115,6 +115,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: PH_INDICATOR (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.819619+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Phenol red'' -> ''phenol red'': synced to canonical CHEBI
+    label (preferred_term ''Phenol red'' unchanged).'
 chemical_properties:
   cas_rn: 143-74-8
   data_source: PubChem API

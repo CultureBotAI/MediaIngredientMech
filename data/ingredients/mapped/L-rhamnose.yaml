@@ -2,7 +2,7 @@ identifier: CHEBI:62345
 preferred_term: L-Rhamnose
 ontology_mapping:
   ontology_id: CHEBI:62345
-  ontology_label: L-Rhamnose
+  ontology_label: L-rhamnose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -72,6 +72,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.785939+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''L-Rhamnose'' -> ''L-rhamnose'': synced to canonical CHEBI
+    label (preferred_term ''L-Rhamnose'' unchanged).'
 chemical_properties:
   cas_rn: 222-793-4
   data_source: PubChem API

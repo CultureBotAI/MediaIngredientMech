@@ -2,7 +2,7 @@ identifier: CHEBI:91248
 preferred_term: L-Cysteine HCl x H2O
 ontology_mapping:
   ontology_id: CHEBI:91248
-  ontology_label: L-Cysteine HCl x H2O
+  ontology_label: L-cysteine hydrochloride hydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -195,6 +195,12 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.784615+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''L-Cysteine HCl x H2O'' -> ''L-cysteine hydrochloride
+    hydrate'': synced to canonical CHEBI label (preferred_term ''L-Cysteine HCl x
+    H2O'' unchanged).'
 chemical_properties:
   cas_rn: 7048-04-6
   data_source: PubChem (via CHEBI:91248)

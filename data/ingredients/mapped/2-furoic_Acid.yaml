@@ -2,7 +2,7 @@ identifier: CHEBI:30845
 preferred_term: 2-Furoic acid
 ontology_mapping:
   ontology_id: CHEBI:30845
-  ontology_label: 2-Furoic acid
+  ontology_label: 2-furoic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -81,6 +81,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.707727+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''2-Furoic acid'' -> ''2-furoic acid'': synced to canonical
+    CHEBI label (preferred_term ''2-Furoic acid'' unchanged).'
 chemical_properties:
   cas_rn: 88-14-2
   data_source: PubChem API

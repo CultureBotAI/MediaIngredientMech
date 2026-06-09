@@ -2,7 +2,7 @@ identifier: CHEBI:36018
 preferred_term: 1,1,2-Trichloroethane
 ontology_mapping:
   ontology_id: CHEBI:36018
-  ontology_label: 1,1,2-Trichloroethane
+  ontology_label: 1,1,2-trichloroethane
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -64,6 +64,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.704902+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''1,1,2-Trichloroethane'' -> ''1,1,2-trichloroethane'':
+    synced to canonical CHEBI label (preferred_term ''1,1,2-Trichloroethane'' unchanged).'
 chemical_properties:
   cas_rn: 79-00-5
   data_source: PubChem API

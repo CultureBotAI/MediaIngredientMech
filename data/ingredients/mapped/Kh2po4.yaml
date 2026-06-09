@@ -2,7 +2,7 @@ identifier: CHEBI:63036
 preferred_term: KH2PO4
 ontology_mapping:
   ontology_id: CHEBI:63036
-  ontology_label: KH2PO4
+  ontology_label: potassium dihydrogen phosphate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -192,6 +192,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.781166+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''KH2PO4'' -> ''potassium dihydrogen phosphate'': synced
+    to canonical CHEBI label (preferred_term ''KH2PO4'' unchanged).'
 chemical_properties:
   cas_rn: 7778-77-0
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:18290
 preferred_term: Thiamine pyrophosphate
 ontology_mapping:
   ontology_id: CHEBI:18290
-  ontology_label: Thiamine pyrophosphate
+  ontology_label: thiamine(1+) diphosphate chloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -165,6 +165,12 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.843417+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Thiamine pyrophosphate'' -> ''thiamine(1+) diphosphate
+    chloride'': synced to canonical CHEBI label (preferred_term ''Thiamine pyrophosphate''
+    unchanged).'
 chemical_properties:
   cas_rn: 136-09-4
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:30951
 preferred_term: KSCN
 ontology_mapping:
   ontology_id: CHEBI:30951
-  ontology_label: KSCN
+  ontology_label: potassium thiocyanate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -67,6 +67,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.781740+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''KSCN'' -> ''potassium thiocyanate'': synced to canonical
+    CHEBI label (preferred_term ''KSCN'' unchanged).'
 chemical_properties:
   cas_rn: 333-20-0
   data_source: PubChem API

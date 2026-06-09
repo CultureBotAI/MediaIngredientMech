@@ -2,7 +2,7 @@ identifier: CHEBI:17201
 preferred_term: Glycyl-glycine
 ontology_mapping:
   ontology_id: CHEBI:17201
-  ontology_label: Glycyl-glycine
+  ontology_label: glycylglycine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -77,6 +77,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.770954+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Glycyl-glycine'' -> ''glycylglycine'': synced to canonical
+    CHEBI label (preferred_term ''Glycyl-glycine'' unchanged).'
 chemical_properties:
   cas_rn: 556-50-3
   data_source: PubChem API

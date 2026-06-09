@@ -2,7 +2,7 @@ identifier: CHEBI:27082
 preferred_term: Trehalose
 ontology_mapping:
   ontology_id: CHEBI:27082
-  ontology_label: Trehalose
+  ontology_label: trehalose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -106,6 +106,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.845407+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Trehalose'' -> ''trehalose'': synced to canonical CHEBI
+    label (preferred_term ''Trehalose'' unchanged).'
 chemical_properties:
   cas_rn: 52613-20-4
   data_source: PubChem (via CHEBI:27082)

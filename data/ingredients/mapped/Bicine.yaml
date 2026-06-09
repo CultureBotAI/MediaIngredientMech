@@ -2,7 +2,7 @@ identifier: CHEBI:39065
 preferred_term: Bicine
 ontology_mapping:
   ontology_id: CHEBI:39065
-  ontology_label: Bicine
+  ontology_label: bicine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -45,6 +45,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.730632+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Bicine'' -> ''bicine'': synced to canonical CHEBI label
+    (preferred_term ''Bicine'' unchanged).'
 chemical_properties:
   cas_rn: 150-25-4
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:53470
 preferred_term: CoSO4
 ontology_mapping:
   ontology_id: CHEBI:53470
-  ontology_label: CoSO4
+  ontology_label: cobalt(2+) sulfate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -89,6 +89,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.745274+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CoSO4'' -> ''cobalt(2+) sulfate'': synced to canonical
+    CHEBI label (preferred_term ''CoSO4'' unchanged).'
 chemical_properties:
   cas_rn: 10124-43-3
   data_source: PubChem API

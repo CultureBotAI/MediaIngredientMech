@@ -2,7 +2,7 @@ identifier: CHEBI:78036
 preferred_term: Cu(NO3)2 x 3 H2O
 ontology_mapping:
   ontology_id: CHEBI:78036
-  ontology_label: Cu(NO3)2 x 3 H2O
+  ontology_label: copper(II) nitrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -52,6 +52,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.746528+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Cu(NO3)2 x 3 H2O'' -> ''copper(II) nitrate'': synced
+    to canonical CHEBI label (preferred_term ''Cu(NO3)2 x 3 H2O'' unchanged).'
 chemical_properties:
   cas_rn: 10031-43-3
   data_source: CultureBotHT/compounds_to_cas.csv

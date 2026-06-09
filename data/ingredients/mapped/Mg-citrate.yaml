@@ -2,7 +2,7 @@ identifier: CHEBI:131389
 preferred_term: Mg-citrate
 ontology_mapping:
   ontology_id: CHEBI:131389
-  ontology_label: Mg-citrate
+  ontology_label: magnesium citrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -63,6 +63,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.796407+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Mg-citrate'' -> ''magnesium citrate'': synced to canonical
+    CHEBI label (preferred_term ''Mg-citrate'' unchanged).'
 chemical_properties:
   cas_rn: 3344-18-1
   data_source: PubChem API (preprocessed)

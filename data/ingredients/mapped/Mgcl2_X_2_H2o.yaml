@@ -2,7 +2,7 @@ identifier: CHEBI:131394
 preferred_term: MgCl2 x 2 H2O
 ontology_mapping:
   ontology_id: CHEBI:131394
-  ontology_label: MgCl2 x 2 H2O
+  ontology_label: magnesium dichloride dihydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -63,6 +63,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.796599+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''MgCl2 x 2 H2O'' -> ''magnesium dichloride dihydrate'':
+    synced to canonical CHEBI label (preferred_term ''MgCl2 x 2 H2O'' unchanged).'
 chemical_properties:
   cas_rn: 19098-17-0
   data_source: PubChem (via CHEBI:131394)

@@ -2,7 +2,7 @@ identifier: CHEBI:26833
 preferred_term: Sulfur
 ontology_mapping:
   ontology_id: CHEBI:26833
-  ontology_label: Sulfur
+  ontology_label: sulfur atom
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -120,6 +120,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.840485+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Sulfur'' -> ''sulfur atom'': synced to canonical CHEBI
+    label (preferred_term ''Sulfur'' unchanged).'
 chemical_properties:
   cas_rn: 7783-06-4
   data_source: PubChem (via CHEBI:26833)

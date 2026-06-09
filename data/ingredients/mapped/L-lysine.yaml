@@ -2,7 +2,7 @@ identifier: CHEBI:18019
 preferred_term: L-Lysine
 ontology_mapping:
   ontology_id: CHEBI:18019
-  ontology_label: L-Lysine
+  ontology_label: L-lysine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -88,6 +88,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.785463+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''L-Lysine'' -> ''L-lysine'': synced to canonical CHEBI
+    label (preferred_term ''L-Lysine'' unchanged).'
 chemical_properties:
   cas_rn: 56-87-1
   data_source: PubChem API

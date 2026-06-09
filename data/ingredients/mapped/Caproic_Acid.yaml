@@ -2,7 +2,7 @@ identifier: CHEBI:30776
 preferred_term: Caproic acid
 ontology_mapping:
   ontology_id: CHEBI:30776
-  ontology_label: Caproic acid
+  ontology_label: hexanoic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -128,6 +128,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.734799+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Caproic acid'' -> ''hexanoic acid'': synced to canonical
+    CHEBI label (preferred_term ''Caproic acid'' unchanged).'
 chemical_properties:
   cas_rn: 142-62-1
   data_source: PubChem API

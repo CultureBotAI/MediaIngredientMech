@@ -2,7 +2,7 @@ identifier: CHEBI:17189
 preferred_term: Gentisic acid
 ontology_mapping:
   ontology_id: CHEBI:17189
-  ontology_label: Gentisic acid
+  ontology_label: 2,5-dihydroxybenzoic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -66,6 +66,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.768404+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Gentisic acid'' -> ''2,5-dihydroxybenzoic acid'': synced
+    to canonical CHEBI label (preferred_term ''Gentisic acid'' unchanged).'
 chemical_properties:
   cas_rn: 490-79-9
   data_source: PubChem API

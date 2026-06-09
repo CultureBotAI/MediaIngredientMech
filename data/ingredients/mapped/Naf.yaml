@@ -2,7 +2,7 @@ identifier: CHEBI:28741
 preferred_term: NaF
 ontology_mapping:
   ontology_id: CHEBI:28741
-  ontology_label: NaF
+  ontology_label: sodium fluoride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -63,6 +63,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.809354+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''NaF'' -> ''sodium fluoride'': synced to canonical CHEBI
+    label (preferred_term ''NaF'' unchanged).'
 chemical_properties:
   cas_rn: 7681-49-4
   data_source: PubChem API

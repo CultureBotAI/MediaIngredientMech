@@ -2,7 +2,7 @@ identifier: CHEBI:30763
 preferred_term: 4-Hydroxybenzoic acid
 ontology_mapping:
   ontology_id: CHEBI:30763
-  ontology_label: 4-Hydroxybenzoic acid
+  ontology_label: 4-hydroxybenzoic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -83,6 +83,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.714157+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''4-Hydroxybenzoic acid'' -> ''4-hydroxybenzoic acid'':
+    synced to canonical CHEBI label (preferred_term ''4-Hydroxybenzoic acid'' unchanged).'
 chemical_properties:
   cas_rn: 99-96-7
   data_source: PubChem API

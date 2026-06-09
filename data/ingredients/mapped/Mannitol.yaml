@@ -2,7 +2,7 @@ identifier: CHEBI:29864
 preferred_term: Mannitol
 ontology_mapping:
   ontology_id: CHEBI:29864
-  ontology_label: Mannitol
+  ontology_label: mannitol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -86,6 +86,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.793090+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Mannitol'' -> ''mannitol'': synced to canonical CHEBI
+    label (preferred_term ''Mannitol'' unchanged).'
 chemical_properties:
   cas_rn: 69-65-8
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:91257
 preferred_term: Na2HAsO4 x 7 H2O
 ontology_mapping:
   ontology_id: CHEBI:91257
-  ontology_label: Na2HAsO4 x 7 H2O
+  ontology_label: disodium hydrogenarsenate heptahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -81,6 +81,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.806051+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na2HAsO4 x 7 H2O'' -> ''disodium hydrogenarsenate heptahydrate'':
+    synced to canonical CHEBI label (preferred_term ''Na2HAsO4 x 7 H2O'' unchanged).'
 kg_microbe_node_id: CHEBI:91257
 chemical_properties:
   cas_rn: 10048-95-0

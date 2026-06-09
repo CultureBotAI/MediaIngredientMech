@@ -2,7 +2,7 @@ identifier: CHEBI:131383
 preferred_term: 2,2,4,4,6,8,8-Heptamethylnonane
 ontology_mapping:
   ontology_id: CHEBI:131383
-  ontology_label: 2,2,4,4,6,8,8-Heptamethylnonane
+  ontology_label: 2,2,4,4,6,8,8-heptamethylnonane
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -62,6 +62,12 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.708720+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''2,2,4,4,6,8,8-Heptamethylnonane'' -> ''2,2,4,4,6,8,8-heptamethylnonane'':
+    synced to canonical CHEBI label (preferred_term ''2,2,4,4,6,8,8-Heptamethylnonane''
+    unchanged).'
 chemical_properties:
   cas_rn: 4390-04-9
   data_source: PubChem API

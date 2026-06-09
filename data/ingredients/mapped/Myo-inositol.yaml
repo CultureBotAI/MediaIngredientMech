@@ -2,7 +2,7 @@ identifier: CHEBI:17268
 preferred_term: myo-Inositol
 ontology_mapping:
   ontology_id: CHEBI:17268
-  ontology_label: Myo-inositol
+  ontology_label: myo-inositol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -130,6 +130,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.801140+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Myo-inositol'' -> ''myo-inositol'': synced to canonical
+    CHEBI label (preferred_term ''myo-Inositol'' unchanged).'
 chemical_properties:
   cas_rn: 87-89-8
   data_source: PubChem API

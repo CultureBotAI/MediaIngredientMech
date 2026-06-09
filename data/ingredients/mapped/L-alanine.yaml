@@ -2,7 +2,7 @@ identifier: CHEBI:16977
 preferred_term: L-Alanine
 ontology_mapping:
   ontology_id: CHEBI:16977
-  ontology_label: L-Alanine
+  ontology_label: L-alanine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -89,6 +89,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.783667+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''L-Alanine'' -> ''L-alanine'': synced to canonical CHEBI
+    label (preferred_term ''L-Alanine'' unchanged).'
 chemical_properties:
   cas_rn: 56-41-7
   data_source: PubChem API

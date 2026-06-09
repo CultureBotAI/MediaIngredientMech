@@ -2,7 +2,7 @@ identifier: CHEBI:41250
 preferred_term: Bis-Tris
 ontology_mapping:
   ontology_id: CHEBI:41250
-  ontology_label: Bis-Tris
+  ontology_label: bis-tris
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -77,6 +77,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.731205+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Bis-Tris'' -> ''bis-tris'': synced to canonical CHEBI
+    label (preferred_term ''Bis-Tris'' unchanged).'
 chemical_properties:
   cas_rn: 6976-37-0
   data_source: PubChem API

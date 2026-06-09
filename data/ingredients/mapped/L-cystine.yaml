@@ -2,7 +2,7 @@ identifier: CHEBI:16283
 preferred_term: L-Cystine
 ontology_mapping:
   ontology_id: CHEBI:16283
-  ontology_label: L-Cystine
+  ontology_label: L-cystine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -110,6 +110,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.784800+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''L-Cystine'' -> ''L-cystine'': synced to canonical CHEBI
+    label (preferred_term ''L-Cystine'' unchanged).'
 chemical_properties:
   cas_rn: 56-89-3
   data_source: PubChem API

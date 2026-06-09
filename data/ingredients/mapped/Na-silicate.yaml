@@ -2,7 +2,7 @@ identifier: CHEBI:60720
 preferred_term: Na-silicate
 ontology_mapping:
   ontology_id: CHEBI:60720
-  ontology_label: Na-silicate
+  ontology_label: sodium silicate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -142,6 +142,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.804715+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-silicate'' -> ''sodium silicate'': synced to canonical
+    CHEBI label (preferred_term ''Na-silicate'' unchanged).'
 chemical_properties:
   cas_rn: 1344-09-8
   data_source: PubChem (via CHEBI:60720)

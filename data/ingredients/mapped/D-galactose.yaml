@@ -2,7 +2,7 @@ identifier: CHEBI:12936
 preferred_term: D-Galactose
 ontology_mapping:
   ontology_id: CHEBI:12936
-  ontology_label: D-Galactose
+  ontology_label: D-galactose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -90,6 +90,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.751701+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''D-Galactose'' -> ''D-galactose'': synced to canonical
+    CHEBI label (preferred_term ''D-Galactose'' unchanged).'
 chemical_properties:
   cas_rn: 59-23-4
   data_source: CultureBotHT/compounds_to_cas.csv

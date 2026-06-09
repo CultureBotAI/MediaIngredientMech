@@ -2,7 +2,7 @@ identifier: CHEBI:16881
 preferred_term: Indole
 ontology_mapping:
   ontology_id: CHEBI:16881
-  ontology_label: indole
+  ontology_label: 1H-indole
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -37,6 +37,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.777058+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''indole'' -> ''1H-indole'': synced to canonical CHEBI
+    label (preferred_term ''Indole'' unchanged).'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C8H7N

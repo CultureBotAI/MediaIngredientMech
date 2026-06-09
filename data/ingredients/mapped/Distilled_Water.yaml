@@ -2,7 +2,7 @@ identifier: CHEBI:15377
 preferred_term: Distilled water
 ontology_mapping:
   ontology_id: CHEBI:15377
-  ontology_label: Distilled water
+  ontology_label: water
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -269,6 +269,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: SALT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.757483+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Distilled water'' -> ''water'': synced to canonical CHEBI
+    label (preferred_term ''Distilled water'' unchanged).'
 kg_microbe_node_id: CHEBI:15377
 chemical_properties:
   cas_rn: 7732-18-5

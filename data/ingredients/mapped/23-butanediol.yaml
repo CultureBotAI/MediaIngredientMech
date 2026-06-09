@@ -2,7 +2,7 @@ identifier: CHEBI:62064
 preferred_term: 2,3-butanediol
 ontology_mapping:
   ontology_id: CHEBI:62064
-  ontology_label: 2,3-butanediol
+  ontology_label: butane-2,3-diol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -95,6 +95,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.708820+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''2,3-butanediol'' -> ''butane-2,3-diol'': synced to canonical
+    CHEBI label (preferred_term ''2,3-butanediol'' unchanged).'
 chemical_properties:
   cas_rn: 513-85-9
   data_source: PubChem API

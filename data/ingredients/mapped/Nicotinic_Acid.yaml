@@ -2,7 +2,7 @@ identifier: CHEBI:15940
 preferred_term: Nicotinic acid
 ontology_mapping:
   ontology_id: CHEBI:15940
-  ontology_label: Nicotinic acid
+  ontology_label: nicotinic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -187,6 +187,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.813111+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Nicotinic acid'' -> ''nicotinic acid'': synced to canonical
+    CHEBI label (preferred_term ''Nicotinic acid'' unchanged).'
 chemical_properties:
   cas_rn: 59-67-6
   data_source: CultureBotHT compounds_to_cas.csv

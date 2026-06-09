@@ -2,7 +2,7 @@ identifier: CHEBI:17634
 preferred_term: D-Glucose
 ontology_mapping:
   ontology_id: CHEBI:17634
-  ontology_label: D-Glucose
+  ontology_label: D-glucose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -118,6 +118,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.751890+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''D-Glucose'' -> ''D-glucose'': synced to canonical CHEBI
+    label (preferred_term ''D-Glucose'' unchanged).'
 chemical_properties:
   cas_rn: 50-99-7
   data_source: CultureBotHT/compounds_to_cas.csv

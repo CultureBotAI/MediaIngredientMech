@@ -2,7 +2,7 @@ identifier: CHEBI:26642
 preferred_term: H2SeO3
 ontology_mapping:
   ontology_id: CHEBI:26642
-  ontology_label: H2SeO3
+  ontology_label: selenous acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -72,6 +72,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.772181+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''H2SeO3'' -> ''selenous acid'': synced to canonical CHEBI
+    label (preferred_term ''H2SeO3'' unchanged).'
 chemical_properties:
   cas_rn: 7783-00-8
   data_source: PubChem (via CHEBI:26642)

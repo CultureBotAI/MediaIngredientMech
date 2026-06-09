@@ -2,7 +2,7 @@ identifier: CHEBI:31340
 preferred_term: Ca-folinate
 ontology_mapping:
   ontology_id: CHEBI:31340
-  ontology_label: Ca-folinate
+  ontology_label: Calcium folinate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -61,6 +61,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.732596+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Ca-folinate'' -> ''Calcium folinate'': synced to canonical
+    CHEBI label (preferred_term ''Ca-folinate'' unchanged).'
 chemical_properties:
   cas_rn: 1492-18-8
   data_source: PubChem API (preprocessed)

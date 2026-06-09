@@ -2,7 +2,7 @@ identifier: CHEBI:16467
 preferred_term: L-Arginine
 ontology_mapping:
   ontology_id: CHEBI:16467
-  ontology_label: L-Arginine
+  ontology_label: L-arginine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -91,6 +91,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.783949+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''L-Arginine'' -> ''L-arginine'': synced to canonical CHEBI
+    label (preferred_term ''L-Arginine'' unchanged).'
 chemical_properties:
   cas_rn: 74-79-3
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:27570
 preferred_term: DL-Histidine
 ontology_mapping:
   ontology_id: CHEBI:27570
-  ontology_label: DL-Histidine
+  ontology_label: histidine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -66,6 +66,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.758202+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''DL-Histidine'' -> ''histidine'': synced to canonical
+    CHEBI label (preferred_term ''DL-Histidine'' unchanged).'
 chemical_properties:
   cas_rn: 4998-57-6
   data_source: PubChem API

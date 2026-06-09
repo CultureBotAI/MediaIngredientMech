@@ -2,7 +2,7 @@ identifier: CHEBI:18248
 preferred_term: Iron
 ontology_mapping:
   ontology_id: CHEBI:18248
-  ontology_label: Iron
+  ontology_label: iron atom
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -67,6 +67,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.778142+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Iron'' -> ''iron atom'': synced to canonical CHEBI label
+    (preferred_term ''Iron'' unchanged).'
 chemical_properties:
   cas_rn: 7439-89-6
   data_source: PubChem API

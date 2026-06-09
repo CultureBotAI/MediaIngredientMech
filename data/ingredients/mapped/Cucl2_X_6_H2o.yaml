@@ -2,7 +2,7 @@ identifier: CHEBI:49553
 preferred_term: CuCl2 x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:49553
-  ontology_label: CuCl2 x 6 H2O
+  ontology_label: copper(II) chloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -72,6 +72,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.747013+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CuCl2 x 6 H2O'' -> ''copper(II) chloride'': synced to
+    canonical CHEBI label (preferred_term ''CuCl2 x 6 H2O'' unchanged).'
 kg_microbe_node_id: CHEBI:49553
 chemical_properties:
   cas_rn: 7447-39-4

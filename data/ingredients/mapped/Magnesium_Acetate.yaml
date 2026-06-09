@@ -2,7 +2,7 @@ identifier: CHEBI:62964
 preferred_term: Magnesium acetate
 ontology_mapping:
   ontology_id: CHEBI:62964
-  ontology_label: Magnesium acetate
+  ontology_label: magnesium acetate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -77,6 +77,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.791158+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Magnesium acetate'' -> ''magnesium acetate'': synced
+    to canonical CHEBI label (preferred_term ''Magnesium acetate'' unchanged).'
 chemical_properties:
   cas_rn: 142-72-3
   data_source: PubChem API

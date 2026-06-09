@@ -2,7 +2,7 @@ identifier: CHEBI:142468
 preferred_term: 1,2-Dichloropropane
 ontology_mapping:
   ontology_id: CHEBI:142468
-  ontology_label: 1,2-Dichloropropane
+  ontology_label: 1,2-dichloropropane
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -43,6 +43,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.705123+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''1,2-Dichloropropane'' -> ''1,2-dichloropropane'': synced
+    to canonical CHEBI label (preferred_term ''1,2-Dichloropropane'' unchanged).'
 chemical_properties:
   cas_rn: 78-87-5
   data_source: PubChem API

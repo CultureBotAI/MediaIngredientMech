@@ -2,7 +2,7 @@ identifier: CHEBI:53471
 preferred_term: Cr2(SO4)3 x n H2O
 ontology_mapping:
   ontology_id: CHEBI:53471
-  ontology_label: Cr2(SO4)3 x n H2O
+  ontology_label: chromium(III) sulfate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -81,6 +81,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.745680+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Cr2(SO4)3 x n H2O'' -> ''chromium(III) sulfate'': synced
+    to canonical CHEBI label (preferred_term ''Cr2(SO4)3 x n H2O'' unchanged).'
 chemical_properties:
   cas_rn: 10101-53-8
   data_source: PubChem (via CHEBI:53471)

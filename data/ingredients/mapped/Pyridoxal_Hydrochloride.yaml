@@ -2,7 +2,7 @@ identifier: CHEBI:131529
 preferred_term: Pyridoxal hydrochloride
 ontology_mapping:
   ontology_id: CHEBI:131529
-  ontology_label: Pyridoxal hydrochloride
+  ontology_label: pyridoxal hydrochloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -78,6 +78,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.824639+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Pyridoxal hydrochloride'' -> ''pyridoxal hydrochloride'':
+    synced to canonical CHEBI label (preferred_term ''Pyridoxal hydrochloride'' unchanged).'
 chemical_properties:
   cas_rn: 65-22-5
   data_source: PubChem API

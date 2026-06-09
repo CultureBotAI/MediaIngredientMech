@@ -2,7 +2,7 @@ identifier: CHEBI:73605
 preferred_term: KF
 ontology_mapping:
   ontology_id: CHEBI:73605
-  ontology_label: KF
+  ontology_label: Lys-Phe
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -68,6 +68,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.781067+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''KF'' -> ''Lys-Phe'': synced to canonical CHEBI label
+    (preferred_term ''KF'' unchanged).'
 kg_microbe_node_id: CHEBI:73605
 chemical_properties:
   cas_rn: 6235-35-4

@@ -2,7 +2,7 @@ identifier: CHEBI:31404
 preferred_term: Citric acid x H2O
 ontology_mapping:
   ontology_id: CHEBI:31404
-  ontology_label: Citric acid x H2O
+  ontology_label: Citric acid monohydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -67,6 +67,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.743078+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Citric acid x H2O'' -> ''Citric acid monohydrate'': synced
+    to canonical CHEBI label (preferred_term ''Citric acid x H2O'' unchanged).'
 chemical_properties:
   cas_rn: 5949-29-1
   data_source: PubChem (via CHEBI:31404)

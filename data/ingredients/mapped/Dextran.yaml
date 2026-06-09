@@ -2,7 +2,7 @@ identifier: CHEBI:52071
 preferred_term: Dextran
 ontology_mapping:
   ontology_id: CHEBI:52071
-  ontology_label: Dextran
+  ontology_label: dextran
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -80,6 +80,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.754999+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Dextran'' -> ''dextran'': synced to canonical CHEBI label
+    (preferred_term ''Dextran'' unchanged).'
 chemical_properties:
   cas_rn: 9004-54-0
   data_source: CultureBotHT compounds_to_cas.csv

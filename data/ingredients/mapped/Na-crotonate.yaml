@@ -2,7 +2,7 @@ identifier: CHEBI:35899
 preferred_term: Na-crotonate
 ontology_mapping:
   ontology_id: CHEBI:35899
-  ontology_label: Na-crotonate
+  ontology_label: crotonate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -91,6 +91,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.803869+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-crotonate'' -> ''crotonate'': synced to canonical
+    CHEBI label (preferred_term ''Na-crotonate'' unchanged).'
 chemical_properties:
   cas_rn: 17342-77-7
   data_source: PubChem API (preprocessed)

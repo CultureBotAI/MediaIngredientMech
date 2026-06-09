@@ -2,7 +2,7 @@ identifier: CHEBI:17306
 preferred_term: Maltose
 ontology_mapping:
   ontology_id: CHEBI:17306
-  ontology_label: Maltose
+  ontology_label: maltose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -148,6 +148,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.792627+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Maltose'' -> ''maltose'': synced to canonical CHEBI label
+    (preferred_term ''Maltose'' unchanged).'
 chemical_properties:
   cas_rn: 69-79-4
   data_source: PubChem (via CHEBI:17306)

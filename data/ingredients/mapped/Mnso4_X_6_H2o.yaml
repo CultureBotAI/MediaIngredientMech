@@ -2,7 +2,7 @@ identifier: CHEBI:131523
 preferred_term: MnSO4 x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:131523
-  ontology_label: MnSO4 x 6 H2O
+  ontology_label: manganese(II) sulfate hexahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -64,6 +64,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.800214+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''MnSO4 x 6 H2O'' -> ''manganese(II) sulfate hexahydrate'':
+    synced to canonical CHEBI label (preferred_term ''MnSO4 x 6 H2O'' unchanged).'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: 6H2O.Mn.O4S

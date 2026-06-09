@@ -2,7 +2,7 @@ identifier: CHEBI:18320
 preferred_term: DL-Dithiothreitol
 ontology_mapping:
   ontology_id: CHEBI:18320
-  ontology_label: DL-Dithiothreitol
+  ontology_label: 1,4-dithiothreitol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -119,6 +119,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: REDUCING_AGENT (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.758100+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''DL-Dithiothreitol'' -> ''1,4-dithiothreitol'': synced
+    to canonical CHEBI label (preferred_term ''DL-Dithiothreitol'' unchanged).'
 chemical_properties:
   cas_rn: 3483-12-3
   data_source: OAK/CHEBI xref

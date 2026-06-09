@@ -2,7 +2,7 @@ identifier: CHEBI:2509
 preferred_term: Agar
 ontology_mapping:
   ontology_id: CHEBI:2509
-  ontology_label: Agar
+  ontology_label: agar
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -140,6 +140,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: SOLIDIFYING_AGENT (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.718919+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Agar'' -> ''agar'': synced to canonical CHEBI label (preferred_term
+    ''Agar'' unchanged).'
 chemical_properties:
   cas_rn: 9002-18-0
   data_source: PubChem API

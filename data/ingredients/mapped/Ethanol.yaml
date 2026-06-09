@@ -2,7 +2,7 @@ identifier: CHEBI:16236
 preferred_term: Ethanol
 ontology_mapping:
   ontology_id: CHEBI:16236
-  ontology_label: Ethanol
+  ontology_label: ethanol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -168,6 +168,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: SALT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.761295+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Ethanol'' -> ''ethanol'': synced to canonical CHEBI label
+    (preferred_term ''Ethanol'' unchanged).'
 chemical_properties:
   cas_rn: 64-17-5
   data_source: PubChem API

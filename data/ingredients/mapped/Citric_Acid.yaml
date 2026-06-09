@@ -2,7 +2,7 @@ identifier: CHEBI:30769
 preferred_term: Citric acid
 ontology_mapping:
   ontology_id: CHEBI:30769
-  ontology_label: Citric acid
+  ontology_label: citric acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -104,6 +104,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.742976+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Citric acid'' -> ''citric acid'': synced to canonical
+    CHEBI label (preferred_term ''Citric acid'' unchanged).'
 chemical_properties:
   cas_rn: 77-92-9
   data_source: PubChem API

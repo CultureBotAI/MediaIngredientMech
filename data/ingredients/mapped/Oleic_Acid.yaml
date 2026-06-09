@@ -2,7 +2,7 @@ identifier: CHEBI:16196
 preferred_term: Oleic acid
 ontology_mapping:
   ontology_id: CHEBI:16196
-  ontology_label: Oleic acid
+  ontology_label: oleic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -111,6 +111,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.815515+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Oleic acid'' -> ''oleic acid'': synced to canonical CHEBI
+    label (preferred_term ''Oleic acid'' unchanged).'
 chemical_properties:
   cas_rn: 112-80-1
   data_source: PubChem API

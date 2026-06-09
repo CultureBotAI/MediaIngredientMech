@@ -2,7 +2,7 @@ identifier: CHEBI:50385
 preferred_term: Haemin
 ontology_mapping:
   ontology_id: CHEBI:50385
-  ontology_label: Haemin
+  ontology_label: hemin
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -168,6 +168,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: COFACTOR_PROVIDER (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.772666+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Haemin'' -> ''hemin'': synced to canonical CHEBI label
+    (preferred_term ''Haemin'' unchanged).'
 chemical_properties:
   cas_rn: 16009-13-5
   data_source: PubChem API

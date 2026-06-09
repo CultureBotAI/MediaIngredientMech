@@ -2,7 +2,7 @@ identifier: CHEBI:86364
 preferred_term: MnSO4 x H2O
 ontology_mapping:
   ontology_id: CHEBI:86364
-  ontology_label: MnSO4 x H2O
+  ontology_label: manganese(II) sulfate monohydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -167,6 +167,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.800399+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''MnSO4 x H2O'' -> ''manganese(II) sulfate monohydrate'':
+    synced to canonical CHEBI label (preferred_term ''MnSO4 x H2O'' unchanged).'
 kg_microbe_node_id: CHEBI:86364
 chemical_properties:
   cas_rn: 10034-96-5

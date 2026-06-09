@@ -2,7 +2,7 @@ identifier: CHEBI:29125
 preferred_term: Arsenate
 ontology_mapping:
   ontology_id: CHEBI:29125
-  ontology_label: Arsenate
+  ontology_label: arsenate(3-)
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -68,6 +68,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.726440+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Arsenate'' -> ''arsenate(3-)'': synced to canonical CHEBI
+    label (preferred_term ''Arsenate'' unchanged).'
 chemical_properties:
   cas_rn: 15584-04-0
   data_source: PubChem API

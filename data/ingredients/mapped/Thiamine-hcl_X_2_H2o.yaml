@@ -2,7 +2,7 @@ identifier: CHEBI:132751
 preferred_term: Thiamine-HCl x 2 H2O
 ontology_mapping:
   ontology_id: CHEBI:132751
-  ontology_label: Thiamine-HCl x 2 H2O
+  ontology_label: thiamine hydrochloride dihydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -75,6 +75,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.843119+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Thiamine-HCl x 2 H2O'' -> ''thiamine hydrochloride dihydrate'':
+    synced to canonical CHEBI label (preferred_term ''Thiamine-HCl x 2 H2O'' unchanged).'
 chemical_properties:
   cas_rn: 13465-05-9
   data_source: PubChem API (preprocessed)

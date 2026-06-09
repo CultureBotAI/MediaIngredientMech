@@ -2,7 +2,7 @@ identifier: CHEBI:17925
 preferred_term: alpha-D-Glucose
 ontology_mapping:
   ontology_id: CHEBI:17925
-  ontology_label: alpha-D-Glucose
+  ontology_label: alpha-D-glucose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -70,6 +70,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.722854+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''alpha-D-Glucose'' -> ''alpha-D-glucose'': synced to canonical
+    CHEBI label (preferred_term ''alpha-D-Glucose'' unchanged).'
 chemical_properties:
   cas_rn: 492-62-6
   data_source: PubChem API

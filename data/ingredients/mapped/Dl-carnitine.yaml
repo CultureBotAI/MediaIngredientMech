@@ -2,7 +2,7 @@ identifier: CHEBI:17126
 preferred_term: DL-carnitine
 ontology_mapping:
   ontology_id: CHEBI:17126
-  ontology_label: DL-carnitine
+  ontology_label: carnitine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -62,6 +62,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.757987+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''DL-carnitine'' -> ''carnitine'': synced to canonical
+    CHEBI label (preferred_term ''DL-carnitine'' unchanged).'
 chemical_properties:
   cas_rn: 406-76-8
   data_source: PubChem (via CHEBI:17126)

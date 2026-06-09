@@ -2,7 +2,7 @@ identifier: CHEBI:37070
 preferred_term: DL-2-Methylbutyric acid
 ontology_mapping:
   ontology_id: CHEBI:37070
-  ontology_label: DL-2-Methylbutyric acid
+  ontology_label: 2-methylbutyric acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -184,6 +184,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.757679+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''DL-2-Methylbutyric acid'' -> ''2-methylbutyric acid'':
+    synced to canonical CHEBI label (preferred_term ''DL-2-Methylbutyric acid'' unchanged).'
 kg_microbe_node_id: CHEBI:37070
 chemical_properties:
   cas_rn: 116-53-0

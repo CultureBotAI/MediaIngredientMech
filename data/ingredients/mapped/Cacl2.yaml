@@ -2,7 +2,7 @@ identifier: CHEBI:3312
 preferred_term: CaCl2
 ontology_mapping:
   ontology_id: CHEBI:3312
-  ontology_label: CaCl2
+  ontology_label: calcium dichloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -130,6 +130,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.732971+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CaCl2'' -> ''calcium dichloride'': synced to canonical
+    CHEBI label (preferred_term ''CaCl2'' unchanged).'
 chemical_properties:
   cas_rn: 10043-52-4
   data_source: PubChem API

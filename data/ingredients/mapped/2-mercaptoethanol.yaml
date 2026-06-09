@@ -2,7 +2,7 @@ identifier: CHEBI:41218
 preferred_term: 2-Mercaptoethanol
 ontology_mapping:
   ontology_id: CHEBI:41218
-  ontology_label: 2-Mercaptoethanol
+  ontology_label: mercaptoethanol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -65,6 +65,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: REDUCING_AGENT (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.707933+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''2-Mercaptoethanol'' -> ''mercaptoethanol'': synced to
+    canonical CHEBI label (preferred_term ''2-Mercaptoethanol'' unchanged).'
 chemical_properties:
   cas_rn: 60-24-2
   data_source: PubChem API

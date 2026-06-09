@@ -2,7 +2,7 @@ identifier: CHEBI:30812
 preferred_term: FeCl2
 ontology_mapping:
   ontology_id: CHEBI:30812
-  ontology_label: FeCl2
+  ontology_label: iron dichloride
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -84,6 +84,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.763609+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''FeCl2'' -> ''iron dichloride'': synced to canonical CHEBI
+    label (preferred_term ''FeCl2'' unchanged).'
 chemical_properties:
   cas_rn: 7758-94-3
   data_source: PubChem (via CHEBI:30812)

@@ -2,7 +2,7 @@ identifier: CHEBI:17334
 preferred_term: Penicillin
 ontology_mapping:
   ontology_id: CHEBI:17334
-  ontology_label: Penicillin
+  ontology_label: penicillin
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -74,6 +74,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: SELECTIVE_AGENT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.818532+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Penicillin'' -> ''penicillin'': synced to canonical CHEBI
+    label (preferred_term ''Penicillin'' unchanged).'
 chemical_properties:
   cas_rn: 215-794-6
   data_source: PubChem API

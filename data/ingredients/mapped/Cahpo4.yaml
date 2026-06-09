@@ -2,7 +2,7 @@ identifier: CHEBI:32596
 preferred_term: CaHPO4
 ontology_mapping:
   ontology_id: CHEBI:32596
-  ontology_label: CaHPO4
+  ontology_label: calcium hydrogenphosphate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -66,6 +66,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.734086+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CaHPO4'' -> ''calcium hydrogenphosphate'': synced to
+    canonical CHEBI label (preferred_term ''CaHPO4'' unchanged).'
 chemical_properties:
   cas_rn: 7757-93-9
   data_source: PubChem API

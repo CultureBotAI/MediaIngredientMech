@@ -2,7 +2,7 @@ identifier: CHEBI:28842
 preferred_term: Stearic acid
 ontology_mapping:
   ontology_id: CHEBI:28842
-  ontology_label: Stearic acid
+  ontology_label: octadecanoic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -83,6 +83,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.838696+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Stearic acid'' -> ''octadecanoic acid'': synced to canonical
+    CHEBI label (preferred_term ''Stearic acid'' unchanged).'
 chemical_properties:
   cas_rn: 57-11-4
   data_source: PubChem API

@@ -2,7 +2,7 @@ identifier: CHEBI:31346
 preferred_term: CaSO4
 ontology_mapping:
   ontology_id: CHEBI:31346
-  ontology_label: CaSO4
+  ontology_label: calcium sulfate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -67,6 +67,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.736381+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''CaSO4'' -> ''calcium sulfate'': synced to canonical CHEBI
+    label (preferred_term ''CaSO4'' unchanged).'
 chemical_properties:
   cas_rn: 7778-18-9
   data_source: PubChem API

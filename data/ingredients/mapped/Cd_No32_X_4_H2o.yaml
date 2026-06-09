@@ -2,7 +2,7 @@ identifier: CHEBI:86156
 preferred_term: Cd(NO3)2 x 4 H2O
 ontology_mapping:
   ontology_id: CHEBI:86156
-  ontology_label: Cd(NO3)2 x 4 H2O
+  ontology_label: cadmium nitrate tetrahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -62,6 +62,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.736757+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Cd(NO3)2 x 4 H2O'' -> ''cadmium nitrate tetrahydrate'':
+    synced to canonical CHEBI label (preferred_term ''Cd(NO3)2 x 4 H2O'' unchanged).'
 chemical_properties:
   cas_rn: 10022-68-1
   data_source: PubChem (via CHEBI:86156)

@@ -2,7 +2,7 @@ identifier: CHEBI:17879
 preferred_term: p-Hydroxybenzoate
 ontology_mapping:
   ontology_id: CHEBI:17879
-  ontology_label: p-Hydroxybenzoate
+  ontology_label: 4-hydroxybenzoate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -56,6 +56,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.60)'
+- timestamp: '2026-06-09T05:23:46.816511+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''p-Hydroxybenzoate'' -> ''4-hydroxybenzoate'': synced
+    to canonical CHEBI label (preferred_term ''p-Hydroxybenzoate'' unchanged).'
 chemical_properties:
   cas_rn: 456-23-5
   data_source: PubChem API

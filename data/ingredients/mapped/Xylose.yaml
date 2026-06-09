@@ -2,7 +2,7 @@ identifier: CHEBI:18222
 preferred_term: Xylose
 ontology_mapping:
   ontology_id: CHEBI:18222
-  ontology_label: Xylose
+  ontology_label: xylose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -96,6 +96,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.851257+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Xylose'' -> ''xylose'': synced to canonical CHEBI label
+    (preferred_term ''Xylose'' unchanged).'
 chemical_properties:
   cas_rn: 200-400-7
   data_source: PubChem API

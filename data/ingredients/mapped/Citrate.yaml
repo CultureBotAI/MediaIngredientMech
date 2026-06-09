@@ -2,7 +2,7 @@ identifier: CHEBI:16947
 preferred_term: Citrate
 ontology_mapping:
   ontology_id: CHEBI:16947
-  ontology_label: citrate
+  ontology_label: citrate(3-)
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -47,6 +47,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.742872+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''citrate'' -> ''citrate(3-)'': synced to canonical CHEBI
+    label (preferred_term ''Citrate'' unchanged).'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C6H5O7

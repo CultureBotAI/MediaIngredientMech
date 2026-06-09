@@ -2,7 +2,7 @@ identifier: CHEBI:16857
 preferred_term: L-Threonine
 ontology_mapping:
   ontology_id: CHEBI:16857
-  ontology_label: L-Threonine
+  ontology_label: L-threonine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -82,6 +82,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.786126+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''L-Threonine'' -> ''L-threonine'': synced to canonical
+    CHEBI label (preferred_term ''L-Threonine'' unchanged).'
 chemical_properties:
   cas_rn: 72-19-5
   data_source: PubChem API

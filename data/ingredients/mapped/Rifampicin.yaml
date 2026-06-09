@@ -2,7 +2,7 @@ identifier: CHEBI:28077
 preferred_term: Rifampicin
 ontology_mapping:
   ontology_id: CHEBI:28077
-  ontology_label: Rifampicin
+  ontology_label: rifampicin
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -81,6 +81,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: SELECTIVE_AGENT (confidence: 1.00)'
+- timestamp: '2026-06-09T05:23:46.827641+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Rifampicin'' -> ''rifampicin'': synced to canonical CHEBI
+    label (preferred_term ''Rifampicin'' unchanged).'
 chemical_properties:
   cas_rn: 13292-46-1
   data_source: PubChem API

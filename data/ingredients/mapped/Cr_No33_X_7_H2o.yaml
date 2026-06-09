@@ -2,7 +2,7 @@ identifier: CHEBI:86206
 preferred_term: Cr(NO3)3 x 7 H2O
 ontology_mapping:
   ontology_id: CHEBI:86206
-  ontology_label: Cr(NO3)3 x 7 H2O
+  ontology_label: chromium trinitrate heptahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -63,6 +63,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T05:23:46.745777+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Cr(NO3)3 x 7 H2O'' -> ''chromium trinitrate heptahydrate'':
+    synced to canonical CHEBI label (preferred_term ''Cr(NO3)3 x 7 H2O'' unchanged).'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: Cr.7H2O.3NO3

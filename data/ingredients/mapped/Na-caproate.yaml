@@ -2,7 +2,7 @@ identifier: CHEBI:114126
 preferred_term: Na-caproate
 ontology_mapping:
   ontology_id: CHEBI:114126
-  ontology_label: Na-caproate
+  ontology_label: sodium hexanoate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -95,6 +95,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-06-09T05:23:46.803775+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Na-caproate'' -> ''sodium hexanoate'': synced to canonical
+    CHEBI label (preferred_term ''Na-caproate'' unchanged).'
 chemical_properties:
   cas_rn: 10051-44-2
   data_source: PubChem API (preprocessed)

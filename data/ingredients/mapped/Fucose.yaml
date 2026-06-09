@@ -2,7 +2,7 @@ identifier: CHEBI:33984
 preferred_term: Fucose
 ontology_mapping:
   ontology_id: CHEBI:33984
-  ontology_label: Fucose
+  ontology_label: fucose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -53,6 +53,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-09T05:23:46.766808+00:00'
+  curator: correct_stale_ontology_labels.py
+  action: CORRECTED
+  changes: 'ontology_label ''Fucose'' -> ''fucose'': synced to canonical CHEBI label
+    (preferred_term ''Fucose'' unchanged).'
 chemical_properties:
   cas_rn: 219-452-7
   data_source: PubChem API
