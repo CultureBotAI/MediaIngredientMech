@@ -54,6 +54,10 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-06-09T04:56:30.248125+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: ELECTRON_ACCEPTOR (confidence: 0.60)'
 chemical_properties:
   cas_rn: 10024-97-2
   data_source: CultureBotHT compounds_to_cas.csv
@@ -62,3 +66,10 @@ chemical_properties:
   inchi: InChI=1S/N2O/c1-2-3
   smiles: N#[N+][O-]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: ELECTRON_ACCEPTOR
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

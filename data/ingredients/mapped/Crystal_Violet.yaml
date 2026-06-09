@@ -40,6 +40,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.247843+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.60)'
 chemical_properties:
   cas_rn: 548-62-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -48,3 +52,10 @@ chemical_properties:
   inchi: InChI=1S/C25H30N3.ClH/c1-26(2)22-13-7-19(8-14-22)25(20-9-15-23(16-10-20)27(3)4)21-11-17-24(18-12-21)28(5)6;/h7-18H,1-6H3;1H/q+1;/p-1
   smiles: CN(C)c1ccc(C(=C2C=CC(=[N+](C)C)C=C2)c2ccc(N(C)C)cc2)cc1.[Cl-]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

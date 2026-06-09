@@ -49,6 +49,10 @@ curation_history:
   action: BACKFILL_PARENT_MESH
   changes: set ontology_mapping parent=mesh:C013216 (stem-substring)
   llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248167+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 0.60)'
 chemical_properties:
   cas_rn: 16788-57-1
   data_source: CultureBotHT compounds_to_cas.csv
@@ -58,3 +62,10 @@ chemical_properties:
   inchi: InChI=1S/2K.H3O4P.3H2O/c;;1-5(2,3)4;;;/h;;(H3,1,2,3,4);3*1H2/q2*+1;;;;/p-2
   pubchem_cid: 16217523
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

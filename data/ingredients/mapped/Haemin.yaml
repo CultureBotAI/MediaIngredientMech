@@ -164,6 +164,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.247954+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: COFACTOR_PROVIDER (confidence: 0.60)'
 chemical_properties:
   cas_rn: 16009-13-5
   data_source: PubChem API
@@ -173,3 +177,10 @@ chemical_properties:
   smiles: C=CC1=C(C)C2=Cc3c(C=C)c(C)c4[n]3[Fe]35([Cl])[N]2=C1C=c1c(C)c(CCC(=O)O)c([n]13)=CC1=[N]5C(=C4)C(C)=C1CCC(=O)O
 kg_microbe_node_id: CHEBI:50385
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: COFACTOR_PROVIDER
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

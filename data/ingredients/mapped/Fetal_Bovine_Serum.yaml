@@ -40,6 +40,10 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-06-09T04:56:30.247910+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.60)'
 notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 8 CultureBot
   media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum Conditioned,
   RPMI with Fetal bovine serum…. No CAS-RN or CHEBI mapping available; curator review
@@ -55,3 +59,10 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0183; matched via 'Fetal bovine serum' (name
       normalization); label-exact
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: PROTEIN_SOURCE
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

@@ -40,6 +40,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248290+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: SURFACTANT (confidence: 0.60)'
 chemical_properties:
   cas_rn: 25301-02-4
   data_source: CultureBotHT compounds_to_cas.csv
@@ -48,3 +52,10 @@ chemical_properties:
   inchi: InChI=1S/C50H78O6/c1-45(2,3)48(10,11)32-35-16-18-42(54-23-20-51)38(26-35)30-40-28-37(34-50(14,15)47(7,8)9)29-41(44(40)56-25-22-53)31-39-27-36(17-19-43(39)55-24-21-52)33-49(12,13)46(4,5)6/h16-19,26-29,51-53H,20-25,30-34H2,1-15H3
   smiles: '[H]OCCOc1ccc(CC(C)(C)C(C)(C)C)cc1Cc1cc(CC(C)(C)C(C)(C)C)cc(Cc2cc(CC(C)(C)C(C)(C)C)ccc2OCCO[H])c1OCCO[H]'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SURFACTANT
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

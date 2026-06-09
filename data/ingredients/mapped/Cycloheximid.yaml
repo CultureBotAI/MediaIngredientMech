@@ -104,6 +104,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.247850+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.60)'
 chemical_properties:
   cas_rn: 66-81-9
   data_source: PubChem API
@@ -112,3 +116,10 @@ chemical_properties:
   inchi: InChI=1S/C15H23NO4/c1-8-3-9(2)15(20)11(4-8)12(17)5-10-6-13(18)16-14(19)7-10/h8-12,17H,3-7H2,1-2H3,(H,16,18,19)/t8-,9-,11-,12+/m0/s1
   smiles: '[H][C@@]1([C@H](O)CC2CC(=O)NC(=O)C2)C[C@@H](C)C[C@H](C)C1=O'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

@@ -29,6 +29,10 @@ curation_history:
   changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Trace
     metal')
   llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248262+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   7 CultureBot media; samples: BG11C, BG11, BG11R…. No CAS-RN or CHEBI mapping available;
   curator review needed.'
@@ -43,3 +47,10 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0258; matched via 'Trace metal mix A5' (name
       normalization); label-exact
 ingredient_type: STOCK_SOLUTION
+media_roles:
+- role: TRACE_ELEMENT
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
