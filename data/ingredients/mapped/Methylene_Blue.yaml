@@ -90,6 +90,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248030+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: REDOX_INDICATOR (confidence: 0.60)'
 chemical_properties:
   cas_rn: 61-73-4
   data_source: PubChem API
@@ -99,3 +103,10 @@ chemical_properties:
   smiles: CN(C)c1ccc2nc3ccc(N(C)C)cc3[s+]c2c1.[Cl-]
 kg_microbe_node_id: CHEBI:6872
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: REDOX_INDICATOR
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

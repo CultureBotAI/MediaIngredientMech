@@ -143,6 +143,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248079+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: ELECTRON_DONOR (confidence: 0.60)'
 kg_microbe_node_id: CHEBI:32150
 chemical_properties:
   cas_rn: 10102-17-7
@@ -152,3 +156,10 @@ chemical_properties:
   inchi: InChI=1S/2Na.H2O3S2.5H2O/c;;1-5(2,3)4;;;;;/h;;(H2,1,2,3,4);5*1H2/q2*+1;;;;;;/p-2
   smiles: O=S(=O)([O-])[S-].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: ELECTRON_DONOR
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.

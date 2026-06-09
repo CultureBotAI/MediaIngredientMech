@@ -111,6 +111,10 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-06-09T04:56:30.248051+00:00'
+  curator: claude_in_session_curation
+  action: ANNOTATED
+  changes: 'Added media role: CARBON_SOURCE (confidence: 0.60)'
 chemical_properties:
   cas_rn: 532-32-1
   data_source: PubChem API (preprocessed)
@@ -120,3 +124,10 @@ chemical_properties:
   smiles: O=C([O-])c1ccccc1.[Na+]
 kg_microbe_node_id: CHEBI:113455
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CARBON_SOURCE
+  confidence: 0.6
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Assigned by in-session Claude reasoning (no external API)
+    curator_note: Provisional in-session LLM role assignment; review recommended.
