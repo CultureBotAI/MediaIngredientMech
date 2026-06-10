@@ -34,13 +34,18 @@ def load_ingredients(yaml_path: Path) -> list[dict]:
     return []
 
 
+def _ontology_id(ing: dict) -> str:
+    """ontology_id lives under ontology_mapping (not at the record top level)."""
+    return (ing.get("ontology_mapping") or {}).get("ontology_id", "") or ""
+
+
 def export_to_json(ingredients: list[dict], output_path: Path):
     """Export ingredients to JSON format."""
     records = []
     for ing in ingredients:
         record = {
-            "id": ing.get("id", ""),
-            "ontology_id": ing.get("ontology_id", ""),
+            "identifier": ing.get("identifier", ""),
+            "ontology_id": _ontology_id(ing),
             "preferred_term": ing.get("preferred_term", ""),
             "mapping_status": ing.get("mapping_status", ""),
         }
@@ -73,7 +78,7 @@ def export_to_json(ingredients: list[dict], output_path: Path):
 def export_to_csv(ingredients: list[dict], output_path: Path):
     """Export ingredients to CSV format."""
     fieldnames = [
-        "id",
+        "identifier",
         "ontology_id",
         "preferred_term",
         "mapping_status",
@@ -90,8 +95,8 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
 
         for ing in ingredients:
             row = {
-                "id": ing.get("id", ""),
-                "ontology_id": ing.get("ontology_id", ""),
+                "identifier": ing.get("identifier", ""),
+                "ontology_id": _ontology_id(ing),
                 "preferred_term": ing.get("preferred_term", ""),
                 "mapping_status": ing.get("mapping_status", ""),
             }
@@ -126,13 +131,13 @@ def export_to_markdown(ingredients: list[dict], output_path: Path, title: str):
         f"Generated: {datetime.now(timezone.utc).isoformat()}",
         f"Total: {len(ingredients)} ingredients",
         "",
-        "| ID | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |",
+        "| Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |",
         "|---|---|---|---|---|---|---|",
     ]
 
     for ing in ingredients:
-        id_val = ing.get("id", "")
-        ont_id = ing.get("ontology_id", "")
+        id_val = ing.get("identifier", "")
+        ont_id = _ontology_id(ing)
         term = ing.get("preferred_term", "")
         status = ing.get("mapping_status", "")
 
@@ -265,15 +270,15 @@ def main(
     # Show sample
     console.print("\n[bold]Sample Records:[/bold]")
     table = Table(show_header=True, header_style="bold cyan")
-    table.add_column("ID", style="yellow")
+    table.add_column("Identifier", style="yellow")
     table.add_column("Ontology ID", style="green")
     table.add_column("Preferred Term", style="white")
     table.add_column("Status", style="magenta")
 
     for ing in all_ingredients[:5]:
         table.add_row(
-            ing.get("id", "")[:25],
-            ing.get("ontology_id", "")[:25],
+            ing.get("identifier", "")[:25],
+            _ontology_id(ing)[:25],
             ing.get("preferred_term", "")[:40],
             ing.get("mapping_status", ""),
         )
