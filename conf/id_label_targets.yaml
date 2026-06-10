@@ -1,9 +1,17 @@
 # Targets for scripts/validate_id_label_correspondence.py (Engine B).
 #
 # Declares which surfaces carry ontology (id, label) pairs and how strictly
-# the label must correspond to the id's ontology label. Prefixes NOT in the
-# `adapters` allowlist (cas:, MIM:, kgmicrobe.compound:, registry:, …) are
-# reported as SKIPPED_NO_ADAPTER and never looked up.
+# the label must correspond to the id's ontology label.
+#
+# A CURIE prefix is handled three ways:
+#   * in `adapters`          → looked up against that OAK ontology.
+#   * in `ignored_prefixes`  → legitimate non-ontology id (cas:, MIM:, …);
+#                              SKIPPED_NO_ADAPTER, never looked up.
+#   * neither                → UNKNOWN_PREFIX (ERROR) — a typo (CHBEI:) or an
+#                              unexpected new prefix that must be triaged (added
+#                              to `adapters` or `ignored_prefixes`) rather than
+#                              silently passing the gate. Ids with NO prefix at
+#                              all (UNMAPPED_0001) are a benign skip.
 #
 # Policy:
 #   canonical            label must equal the canonical OBO label (mirrors the
@@ -22,6 +30,20 @@ adapters:
   BTO: sqlite:obo:bto
   MICRO: sqlite:obo:micro
   PATO: sqlite:obo:pato
+
+# Legitimate NON-ontology id prefixes — skipped without a lookup, but
+# acknowledged so a typoed ontology prefix (CHBEI:, CHEB:) is NOT mistaken for
+# one of these and instead fails as UNKNOWN_PREFIX. Keep in sync with the
+# prefixes actually emitted by the curation/import pipelines.
+ignored_prefixes:
+  - MIM                    # MediaIngredientMech-local record ids
+  - cas                    # CAS registry numbers
+  - registry               # generic registry fallback
+  - kgmicrobe.compound     # KG-Microbe compound nodes
+  - kgmicrobe.ingredient   # KG-Microbe ingredient nodes
+  - mediadive.ingredient   # MediaDive ingredient nodes
+  - mediadive.solution     # MediaDive solution nodes
+  - mediadive.compound     # MediaDive compound nodes
 
 synonym_scope: exact_related
 
