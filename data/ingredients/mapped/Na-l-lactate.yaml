@@ -30,10 +30,13 @@ synonyms:
     Organic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Sodium L-lactate
+  synonym_type: EXACT_SYNONYM
+  source: merge
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 49
-  media_count: 49
+  total_occurrences: 57
+  media_count: 57
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -123,6 +126,10 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-06-10T06:49:42.119355+00:00'
+  curator: fix_dead_chebi_ids.py
+  action: MERGED
+  changes: Merged dead-id duplicate CHEBI:867561 ('Sodium L-lactate') into this record.
 chemical_properties:
   cas_rn: 867-56-1
   data_source: PubChem API (preprocessed)
