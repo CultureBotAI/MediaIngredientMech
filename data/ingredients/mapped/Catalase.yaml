@@ -1,9 +1,9 @@
-identifier: CHEBI:3463
+identifier: NCIT:C61062
 preferred_term: Catalase
 ontology_mapping:
-  ontology_id: CHEBI:3463
+  ontology_id: NCIT:C61062
   ontology_label: Catalase
-  ontology_source: CHEBI
+  ontology_source: NCIT
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
@@ -37,4 +37,9 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-06-10T06:49:42.119337+00:00'
+  curator: fix_dead_chebi_ids.py
+  action: CORRECTED
+  changes: 'identifier CHEBI:3463 -> NCIT:C61062 (Catalase, source NCIT): CHEBI:3463
+    is absent from current ChEBI (OLS4 404).'
 ingredient_type: SINGLE_INGREDIENT

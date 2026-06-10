@@ -1,8 +1,8 @@
-identifier: CHEBI:23674
+identifier: CHEBI:23673
 preferred_term: Diaminopimelic acid
 ontology_mapping:
-  ontology_id: CHEBI:23674
-  ontology_label: Diaminopimelic acid
+  ontology_id: CHEBI:23673
+  ontology_label: 2,6-diaminopimelic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -38,6 +38,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-06-10T06:49:42.119070+00:00'
+  curator: fix_dead_chebi_ids.py
+  action: CORRECTED
+  changes: 'identifier CHEBI:23674 -> CHEBI:23673 (2,6-diaminopimelic acid, source
+    CHEBI): CHEBI:23674 is absent from current ChEBI (OLS4 404).'
 chemical_properties:
   cas_rn: 583-93-7
   data_source: PubChem API
