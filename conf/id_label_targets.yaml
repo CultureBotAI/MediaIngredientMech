@@ -39,20 +39,36 @@ targets:
       - [environment_term, environment_label]
 
   # --- data products (TSV/CSV) — canonical OR synonym surface form
+  # required:true — ingredient_mappings.sssom.tsv is THE canonical MIM mapping
+  # artifact; if the build didn't produce it, enforce must FAIL rather than
+  # silently green on a missing product (Engine-B zero-match false-green fix).
   - name: sssom
     kind: tabular
     format: tsv
     glob: "mappings/ingredient_mappings.sssom.tsv"
+    required: true
     policy: canonical_or_synonym
     pairs:
       - [subject_id, subject_label]
       - [object_id, object_label]
 
+  # PRODUCT DECISION (item 3c): docs/data/mapped_ingredients.csv surfaces the
+  # CURATOR-INTENDED ingredient label in ontology_label (e.g. CHEBI:15377
+  # "Distilled water", CHEBI:86158 "CaCl2 x 2 H2O", CHEBI:63036 "KH2PO4"),
+  # mirroring the human-facing recipe names rather than the OBO canonical
+  # label. We KEEP those labels and EXEMPT the ontology_id column from
+  # canonical-label matching (label_waived_keys names the id column for a
+  # tabular target). The id is STILL existence-checked — a bogus CHEBI id here
+  # still surfaces as ID_NOT_FOUND; only the label match is waived. (The
+  # ingredient YAMLs' ontology_label IS the OBO canonical form and stays under
+  # strict `canonical` policy above, so genuinely-wrong ids still surface there.)
   - name: mapped_csv
     kind: tabular
     format: csv
     glob: "docs/data/mapped_ingredients.csv"
     policy: canonical_or_synonym
+    label_waived_keys:
+      - ontology_id
     pairs:
       - [ontology_id, ontology_label]
 

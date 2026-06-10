@@ -67,25 +67,55 @@ qc-sssom:
 
 schema_path := "src/mediaingredientmech/schema/mediaingredientmech.yaml"
 
+# OBO-resolvable prefixes that linkml-term-validator's `sqlite:obo:` adapter
+# can actually download/open. Engine A's --labels passes EVERY ontology_id to
+# OAK, so a NON-OBO prefix (cas:, kgmicrobe.compound:, kgmicrobe.ingredient:,
+# MICRO: — whose bbop-sqlite .db.gz does not exist / is a 0-byte stub) makes
+# OAK attempt a futile S3 download and exit 1, crashing the whole recipe and
+# blocking the Phase-2 `qc` promotion regardless of label correctness
+# (PR #50 RISK). We pre-filter to these prefixes; everything else is left to
+# Engine B (validate-products), which reports it SKIPPED_NO_ADAPTER /
+# SKIPPED_EMPTY_ADAPTER instead of downloading. Keep in sync with the OBO
+# entries of conf/id_label_targets.yaml `adapters` (MICRO is intentionally
+# OMITTED here: sqlite:obo:micro is a 0-byte stub with no remote db).
+obo_prefixes := "CHEBI FOODON NCIT MESH UBERON ENVO BTO PATO"
+
 # id↔label gate (Engine A): verify ontology_label is the CANONICAL OBO label
 # for ontology_id in one ingredient file. Fails (exit 1) on any label mismatch.
 # The schema binds ontology_mapping/environmental_context so --labels fires.
+# Skips (exit 0) a file whose ontology ids use a non-OBO prefix — Engine B
+# (validate-products) covers those without triggering an OAK download/crash.
 validate-terms FILE:
-    uv run linkml-term-validator validate-data {{FILE}} -s {{schema_path}} -t IngredientRecord --labels
+    #!/usr/bin/env bash
+    set -uo pipefail
+    if scripts/_engine_a_obo_safe.sh "{{FILE}}" "{{obo_prefixes}}"; then
+        uv run linkml-term-validator validate-data "{{FILE}}" -s {{schema_path}} -t IngredientRecord --labels
+    else
+        echo "  - skipping Engine A (non-OBO prefix; covered by validate-products): {{FILE}}"
+    fi
 
 # Same, across every per-ingredient record file. NOTE: data/curated/*.yaml is
 # intentionally excluded — those are collection/container docs
 # (generation_date/total_count/ingredients:[...] or category/count/ingredients)
 # not single IngredientRecords, so `-t IngredientRecord` would fail
 # structurally. Engine B (validate-products, recursive walk) covers them.
+# Records whose ontology_id uses a non-OBO prefix (cas:/kgmicrobe.compound:/
+# MICRO:/…) are SKIPPED here to avoid OAK download crashes — Engine B handles
+# them as SKIPPED_NO_ADAPTER/SKIPPED_EMPTY_ADAPTER.
 validate-terms-all:
     #!/usr/bin/env bash
     set -uo pipefail
     rc=0
+    skipped=0
     for file in data/ingredients/mapped/*.yaml data/ingredients/unmapped/*.yaml; do
         [ -e "$file" ] || continue
-        uv run linkml-term-validator validate-data "$file" -s {{schema_path}} -t IngredientRecord --labels || rc=1
+        if scripts/_engine_a_obo_safe.sh "$file" "{{obo_prefixes}}"; then
+            uv run linkml-term-validator validate-data "$file" -s {{schema_path}} -t IngredientRecord --labels || rc=1
+        else
+            skipped=$((skipped+1))
+        fi
     done
+    echo "  - Engine A skipped $skipped file(s) with non-OBO ontology prefixes (covered by validate-products)"
     exit $rc
 
 # id↔label gate (Engine B): verify (id,label) pairs in DATA PRODUCTS
@@ -98,6 +128,29 @@ validate-products:
 # data + products to reports/label_drift.tsv. Use before enforcing.
 report-label-drift:
     uv run python scripts/validate_id_label_correspondence.py -c conf/id_label_targets.yaml --report reports/label_drift.tsv
+
+# Durability guard: fail if scripts/validate_id_label_correspondence.py drifts
+# from the pinned sha256 (it is vendored byte-identical across the Mech repos —
+# see the file's own docstring). CI runs this so an accidental edit to one copy
+# can't silently diverge. Uses sha256sum on CI (ubuntu), shasum -a 256 on macOS.
+verify-validator-pin:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if command -v sha256sum >/dev/null 2>&1; then
+        sha256sum -c scripts/.validate_id_label_correspondence.sha256
+    else
+        shasum -a 256 -c scripts/.validate_id_label_correspondence.sha256
+    fi
+
+# Intentional sync only: re-pin the sha256 to the CURRENT script contents after
+# a deliberate, all-repos byte-identical update. Run this in every Mech copy.
+refresh-validator-pin:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    f=scripts/validate_id_label_correspondence.py
+    if command -v sha256sum >/dev/null 2>&1; then h=$(sha256sum "$f" | cut -d' ' -f1); else h=$(shasum -a 256 "$f" | cut -d' ' -f1); fi
+    printf '%s  %s\n' "$h" "$f" > scripts/.validate_id_label_correspondence.sha256
+    echo "re-pinned $f to $h"
 
 # Composite QC: schema validation + strict closed-schema check +
 # evidence reference validation + SSSOM invariants.
