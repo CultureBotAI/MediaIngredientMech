@@ -28,8 +28,14 @@ adapters:
   UBERON: sqlite:obo:uberon
   ENVO: sqlite:obo:envo
   BTO: sqlite:obo:bto
-  MICRO: sqlite:obo:micro
   PATO: sqlite:obo:pato
+  # MICRO is intentionally NOT an adapter here: sqlite:obo:micro is a 0-byte
+  # stub with no remote db, so handing OAK a MICRO: id triggers a futile S3
+  # download that errors (ADAPTER_ERROR, fatal under enforce) on a cold CI
+  # cache. This mirrors Engine A, which omits MICRO from `obo_prefixes` in the
+  # justfile. MICRO ids are therefore an explicit `ignored_prefixes` skip
+  # (SKIPPED_NO_ADAPTER, no download) — move MICRO back here once a real
+  # micro.db exists so its labels can actually be validated.
 
 # Legitimate NON-ontology id prefixes — skipped without a lookup, but
 # acknowledged so a typoed ontology prefix (CHBEI:, CHEB:) is NOT mistaken for
@@ -37,6 +43,7 @@ adapters:
 # prefixes actually emitted by the curation/import pipelines.
 ignored_prefixes:
   - MIM                    # MediaIngredientMech-local record ids
+  - MICRO                  # sqlite:obo:micro is a 0-byte stub w/ no remote db (see adapters note)
   - cas                    # CAS registry numbers
   - registry               # generic registry fallback
   - kgmicrobe.compound     # KG-Microbe compound nodes
@@ -94,10 +101,21 @@ targets:
     pairs:
       - [ontology_id, ontology_label]
 
+  # Only the review TSVs that use the SSSOM subject/object schema are listed
+  # explicitly. A bare `mappings/*review*.tsv` glob over-matches review
+  # artifacts with bespoke schemas (`*_row_review_manifest.tsv` →
+  # predicate_context_object_id, `*_unknown_term_*_review.tsv` →
+  # subject_label/current_object_id only). Those lack the configured
+  # subject_id/object_id columns, so the MISSING_COLUMN-is-ERROR rule would
+  # fail enforce on populated files that aren't SSSOM products at all. Add a
+  # file here only once it carries subject_id/subject_label/object_id/object_label.
   - name: review_tsvs
     kind: tabular
     format: tsv
-    glob: "mappings/*review*.tsv"
+    glob:
+      - "mappings/ingredient_mappings_oak_ols_review.tsv"
+      - "mappings/ingredient_mappings_synonym_enrich_review.tsv"
+      - "mappings/needs_curator_review.tsv"
     policy: canonical_or_synonym
     pairs:
       - [subject_id, subject_label]
