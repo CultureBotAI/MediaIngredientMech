@@ -1,0 +1,122 @@
+# Targets for scripts/validate_id_label_correspondence.py (Engine B).
+#
+# Declares which surfaces carry ontology (id, label) pairs and how strictly
+# the label must correspond to the id's ontology label.
+#
+# A CURIE prefix is handled three ways:
+#   * in `adapters`          → looked up against that OAK ontology.
+#   * in `ignored_prefixes`  → legitimate non-ontology id (cas:, MIM:, …);
+#                              SKIPPED_NO_ADAPTER, never looked up.
+#   * neither                → UNKNOWN_PREFIX (ERROR) — a typo (CHBEI:) or an
+#                              unexpected new prefix that must be triaged (added
+#                              to `adapters` or `ignored_prefixes`) rather than
+#                              silently passing the gate. Ids with NO prefix at
+#                              all (UNMAPPED_0001) are a benign skip.
+#
+# Policy:
+#   canonical            label must equal the canonical OBO label (mirrors the
+#                        linkml-term-validator schema gate; used for YAML data).
+#   canonical_or_synonym label may be the canonical label OR a synonym within
+#                        `synonym_scope` (used for product/surface labels).
+# synonym_scope: exact | exact_related | all   (exact_related = +hasRelatedSynonym)
+
+adapters:
+  CHEBI: sqlite:obo:chebi
+  FOODON: sqlite:obo:foodon
+  NCIT: sqlite:obo:ncit
+  MESH: sqlite:obo:mesh
+  UBERON: sqlite:obo:uberon
+  ENVO: sqlite:obo:envo
+  BTO: sqlite:obo:bto
+  PATO: sqlite:obo:pato
+  # MICRO is intentionally NOT an adapter here: sqlite:obo:micro is a 0-byte
+  # stub with no remote db, so handing OAK a MICRO: id triggers a futile S3
+  # download that errors (ADAPTER_ERROR, fatal under enforce) on a cold CI
+  # cache. This mirrors Engine A, which omits MICRO from `obo_prefixes` in the
+  # justfile. MICRO ids are therefore an explicit `ignored_prefixes` skip
+  # (SKIPPED_NO_ADAPTER, no download) — move MICRO back here once a real
+  # micro.db exists so its labels can actually be validated.
+
+# Legitimate NON-ontology id prefixes — skipped without a lookup, but
+# acknowledged so a typoed ontology prefix (CHBEI:, CHEB:) is NOT mistaken for
+# one of these and instead fails as UNKNOWN_PREFIX. Keep in sync with the
+# prefixes actually emitted by the curation/import pipelines.
+ignored_prefixes:
+  - MIM                    # MediaIngredientMech-local record ids
+  - MICRO                  # sqlite:obo:micro is a 0-byte stub w/ no remote db (see adapters note)
+  - cas                    # CAS registry numbers
+  - registry               # generic registry fallback
+  - kgmicrobe.compound     # KG-Microbe compound nodes
+  - kgmicrobe.ingredient   # KG-Microbe ingredient nodes
+  - mediadive.ingredient   # MediaDive ingredient nodes
+  - mediadive.solution     # MediaDive solution nodes
+  - mediadive.compound     # MediaDive compound nodes
+
+synonym_scope: exact_related
+
+targets:
+  # --- data inputs / intermediates (YAML) — strict canonical, mirrors Engine A
+  - name: curated_yaml
+    kind: yaml
+    glob:
+      - "data/curated/mapped_ingredients.yaml"
+      - "data/ingredients/mapped/*.yaml"
+      - "data/ingredients/unmapped/*.yaml"
+    policy: canonical
+    pairs:
+      - [ontology_id, ontology_label]
+      - [environment_term, environment_label]
+
+  # --- data products (TSV/CSV) — canonical OR synonym surface form
+  # required:true — ingredient_mappings.sssom.tsv is THE canonical MIM mapping
+  # artifact; if the build didn't produce it, enforce must FAIL rather than
+  # silently green on a missing product (Engine-B zero-match false-green fix).
+  - name: sssom
+    kind: tabular
+    format: tsv
+    glob: "mappings/ingredient_mappings.sssom.tsv"
+    required: true
+    policy: canonical_or_synonym
+    pairs:
+      - [subject_id, subject_label]
+      - [object_id, object_label]
+
+  # PRODUCT DECISION (item 3c): docs/data/mapped_ingredients.csv surfaces the
+  # CURATOR-INTENDED ingredient label in ontology_label (e.g. CHEBI:15377
+  # "Distilled water", CHEBI:86158 "CaCl2 x 2 H2O", CHEBI:63036 "KH2PO4"),
+  # mirroring the human-facing recipe names rather than the OBO canonical
+  # label. We KEEP those labels and EXEMPT the ontology_id column from
+  # canonical-label matching (label_waived_keys names the id column for a
+  # tabular target). The id is STILL existence-checked — a bogus CHEBI id here
+  # still surfaces as ID_NOT_FOUND; only the label match is waived. (The
+  # ingredient YAMLs' ontology_label IS the OBO canonical form and stays under
+  # strict `canonical` policy above, so genuinely-wrong ids still surface there.)
+  - name: mapped_csv
+    kind: tabular
+    format: csv
+    glob: "docs/data/mapped_ingredients.csv"
+    policy: canonical_or_synonym
+    label_waived_keys:
+      - ontology_id
+    pairs:
+      - [ontology_id, ontology_label]
+
+  # Only the review TSVs that use the SSSOM subject/object schema are listed
+  # explicitly. A bare `mappings/*review*.tsv` glob over-matches review
+  # artifacts with bespoke schemas (`*_row_review_manifest.tsv` →
+  # predicate_context_object_id, `*_unknown_term_*_review.tsv` →
+  # subject_label/current_object_id only). Those lack the configured
+  # subject_id/object_id columns, so the MISSING_COLUMN-is-ERROR rule would
+  # fail enforce on populated files that aren't SSSOM products at all. Add a
+  # file here only once it carries subject_id/subject_label/object_id/object_label.
+  - name: review_tsvs
+    kind: tabular
+    format: tsv
+    glob:
+      - "mappings/ingredient_mappings_oak_ols_review.tsv"
+      - "mappings/ingredient_mappings_synonym_enrich_review.tsv"
+      - "mappings/needs_curator_review.tsv"
+    policy: canonical_or_synonym
+    pairs:
+      - [subject_id, subject_label]
+      - [object_id, object_label]

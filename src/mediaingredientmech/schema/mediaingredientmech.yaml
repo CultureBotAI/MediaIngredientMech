@@ -19,6 +19,7 @@ prefixes:
   MESH: http://id.nlm.nih.gov/mesh/
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   ENVO: http://purl.obolibrary.org/obo/ENVO_
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
 
 default_prefix: mediaingredientmech
 default_range: string
@@ -84,6 +85,14 @@ classes:
       ontology_mapping:
         range: OntologyMapping
         description: Ontology term mapping (CHEBI/FOODON)
+        # id↔label gate: makes `linkml-term-validator validate-data --labels`
+        # verify ontology_label is the canonical OBO label for ontology_id.
+        # No `range:` on purpose — a range-less binding triggers the label
+        # check without an enum-membership check (which would need per-ontology
+        # tree expansion). Id existence is covered by Engine B / OAK lookup.
+        bindings:
+          - binds_value_of: ontology_id
+            obligation_level: REQUIRED
       synonyms:
         range: IngredientSynonym
         multivalued: true
@@ -214,6 +223,9 @@ classes:
           CommunityMech (`environment_term`) and CultureMech
           (`source_environment`). Optional; ubiquitous ingredients
           (water, glucose) typically have no entries.
+        bindings:
+          - binds_value_of: environment_term
+            obligation_level: REQUIRED
 
   EnvironmentContext:
     description: >-
@@ -232,7 +244,10 @@ classes:
       environment_label:
         required: false
         range: string
-        description: Human-readable label for the ENVO term
+        slot_uri: rdfs:label
+        description: >-
+          Canonical ENVO label for environment_term. Verified against the
+          ontology by the id↔label gate; the free/relevance name lives in notes.
       relevance:
         required: true
         range: EnvironmentRelevanceEnum
@@ -258,7 +273,12 @@ classes:
         pattern: "^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$"
       ontology_label:
         required: true
-        description: Human-readable label for the term
+        slot_uri: rdfs:label
+        description: >-
+          Canonical OBO label for ontology_id (e.g. "sodium chloride" for
+          CHEBI:26710). The id↔label gate verifies this equals the ontology's
+          canonical label; abbreviations/formulas/free names (e.g. "NaCl")
+          belong in preferred_term / synonyms, not here.
       ontology_source:
         range: OntologySourceEnum
         required: true
