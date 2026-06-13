@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-06-13T19:31:22.466969+00:00
+Generated: 2026-06-13T21:00:15.218507+00:00
 Total: 1869 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1029,7 +1029,7 @@ Total: 1869 ingredients
 | CHEBI:16828 | CHEBI:16828 | L-Tryptophan | MAPPED | CHEBI | EXACT_MATCH | 54 |
 | CHEBI:17895 | CHEBI:17895 | L-Tyrosine | MAPPED | CHEBI | EXACT_MATCH | 45 |
 | CHEBI:16414 | CHEBI:16414 | L-Valine | MAPPED | CHEBI | EXACT_MATCH | 50 |
-| cas:97281-52-2 | mesh:D013025 | L-α-Phosphatidylinositol from Glycine max (soybean) | MAPPED | MESH | NARROW_MATCH | 0 |
+| cas:97281-52-2 | CHEBI:28874 | L-α-Phosphatidylinositol from Glycine max (soybean) | MAPPED | CHEBI | BROAD_MATCH | 0 |
 | CHEBI:81664 | CHEBI:81664 | LL-37 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15671 | CHEBI:15671 | L(+)-Tartaric acid | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:16349 | CHEBI:16349 | L-Citrulline | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
