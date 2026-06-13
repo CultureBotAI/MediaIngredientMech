@@ -2,7 +2,7 @@ identifier: cas:97281-52-2
 preferred_term: L-α-Phosphatidylinositol from Glycine max (soybean)
 ontology_mapping:
   ontology_id: mesh:D013025
-  ontology_label: Glycine max
+  ontology_label: Soybeans
   ontology_source: MESH
   mapping_quality: NARROW_MATCH
   evidence:
@@ -48,6 +48,13 @@ curation_history:
   curator: backfill_parent_terms
   action: BACKFILL_PARENT_MESH
   changes: set ontology_mapping parent=mesh:D013025 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-06-13T00:00:00+00:00'
+  curator: fix_id_label_correspondence
+  action: CORRECTED
+  changes: ontology_label 'Glycine max' → canonical MeSH label 'Soybeans' for mesh:D013025
+    (the NARROW_MATCH source-organism parent; 'Glycine max' is a MeSH entry term/synonym,
+    not the canonical label).
   llm_assisted: false
 chemical_properties:
   cas_rn: 97281-52-2

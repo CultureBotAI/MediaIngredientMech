@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-06-10T06:52:23.478981+00:00
+Generated: 2026-06-13T19:31:22.469366+00:00
 Total: 2267 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1619,7 +1619,7 @@ Total: 2267 ingredients
 | CHEBI:33167 | CHEBI:33167 | sodium iodide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:234594 | CHEBI:234594 | Sodium iodoacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1562-00-1 | cas:1562-00-1 | sodium isethionate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:867561 | CHEBI:867561 | Sodium L-lactate | REJECTED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:867561 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:75228 | CHEBI:75228 | Sodium lactate | MAPPED | CHEBI | EXACT_MATCH | 190 |
 | CHEBI:29678 | CHEBI:29678 | Sodium m-arsenite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:91261 | CHEBI:91261 | Sodium malate | MAPPED | CHEBI | EXACT_MATCH | 50 |
