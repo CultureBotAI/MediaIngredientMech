@@ -24,11 +24,11 @@ validate-schema:
 
 # Import data from CultureMech
 import-data:
-    python scripts/import_from_culturemech.py
+    uv run python scripts/import_from_culturemech.py
 
 # Validate all data against schema (both collection and individual files)
 validate-all:
-    python scripts/validate_all.py --mode both
+    uv run python scripts/validate_all.py --mode both
 
 # Strict closed-schema validation: in-process LinkML validator with
 # JsonschemaValidationPlugin(closed=True) so unknown fields are flagged.
@@ -169,11 +169,11 @@ gen-ingredient-pages *args:
 
 # Launch interactive curation CLI
 curate:
-    python scripts/curate_unmapped.py
+    uv run python scripts/curate_unmapped.py
 
 # Generate curation progress report
 report:
-    python scripts/generate_report.py
+    uv run python scripts/generate_report.py
 
 # Generate HTML documentation from schema
 gen-docs:
@@ -181,11 +181,11 @@ gen-docs:
 
 # Export ingredients to browser JSON
 export-browser:
-    python scripts/browser_export.py
+    uv run python scripts/browser_export.py
 
 # Generate UMAP visualization
 generate-umap:
-    python scripts/generate_ingredient_umap.py
+    uv run python scripts/generate_ingredient_umap.py
 
 # Build complete documentation site
 build-docs: gen-docs export-browser
@@ -194,15 +194,15 @@ build-docs: gen-docs export-browser
 
 # Export collection files to individual YAML records
 export-individual:
-    python scripts/export_individual_records.py
+    uv run python scripts/export_individual_records.py
 
 # Aggregate individual files back to collections
 aggregate-collections:
-    python scripts/aggregate_records.py
+    uv run python scripts/aggregate_records.py
 
 # Validate individual ingredient files only
 validate-individual:
-    python scripts/validate_all.py --mode individual
+    uv run python scripts/validate_all.py --mode individual
 
 # Run FutureHouse Falcon / deep-research-client against an ingredient record
 research-ingredient provider status slug *args="":
