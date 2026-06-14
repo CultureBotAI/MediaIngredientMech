@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-06-10T06:52:23.476019+00:00
+Generated: 2026-06-13T21:00:15.218507+00:00
 Total: 1869 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1029,7 +1029,7 @@ Total: 1869 ingredients
 | CHEBI:16828 | CHEBI:16828 | L-Tryptophan | MAPPED | CHEBI | EXACT_MATCH | 54 |
 | CHEBI:17895 | CHEBI:17895 | L-Tyrosine | MAPPED | CHEBI | EXACT_MATCH | 45 |
 | CHEBI:16414 | CHEBI:16414 | L-Valine | MAPPED | CHEBI | EXACT_MATCH | 50 |
-| cas:97281-52-2 | mesh:D013025 | L-α-Phosphatidylinositol from Glycine max (soybean) | MAPPED | MESH | NARROW_MATCH | 0 |
+| cas:97281-52-2 | CHEBI:28874 | L-α-Phosphatidylinositol from Glycine max (soybean) | MAPPED | CHEBI | BROAD_MATCH | 0 |
 | CHEBI:81664 | CHEBI:81664 | LL-37 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15671 | CHEBI:15671 | L(+)-Tartaric acid | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:16349 | CHEBI:16349 | L-Citrulline | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
@@ -1619,7 +1619,7 @@ Total: 1869 ingredients
 | CHEBI:33167 | CHEBI:33167 | sodium iodide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:234594 | CHEBI:234594 | Sodium iodoacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1562-00-1 | cas:1562-00-1 | sodium isethionate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:867561 | CHEBI:867561 | Sodium L-lactate | REJECTED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:867561 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:75228 | CHEBI:75228 | Sodium lactate | MAPPED | CHEBI | EXACT_MATCH | 190 |
 | CHEBI:29678 | CHEBI:29678 | Sodium m-arsenite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:91261 | CHEBI:91261 | Sodium malate | MAPPED | CHEBI | EXACT_MATCH | 50 |

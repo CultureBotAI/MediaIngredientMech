@@ -1,20 +1,25 @@
 identifier: cas:97281-52-2
 preferred_term: L-α-Phosphatidylinositol from Glycine max (soybean)
 ontology_mapping:
-  ontology_id: mesh:D013025
-  ontology_label: Glycine max
-  ontology_source: MESH
-  mapping_quality: NARROW_MATCH
+  ontology_id: CHEBI:28874
+  ontology_label: phosphatidylinositol
+  ontology_source: CHEBI
+  mapping_quality: BROAD_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 97281-52-2 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
-  - evidence_type: DATABASE_MATCH
-    source: MESH via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via='L-α-Phosphatidylinositol
-      from Glycine max (soybean)'
+    notes: Imported from CultureBotHT with CAS-RN 97281-52-2; no single-structure
+      CHEBI term exists for the soybean phosphatidylinositol mixture.
+  - evidence_type: CURATOR_JUDGMENT
+    source: fix_id_label_correspondence (chemical-class remap)
+    notes: Remapped from mesh:D013025 "Soybeans" (a source-organism stand-in) to the
+      chemical class CHEBI:28874 "phosphatidylinositol" (any glycerophosphoinositol
+      with one phosphatidyl group esterified to inositol). The commercial product
+      is a natural soybean PI mixture, so the generic class is the correct grounding
+      rather than a single PI species (e.g. CHEBI:136245 "phosphatidylinositol 36:1");
+      the term is broader than the ingredient → BROAD_MATCH. Mirrors the sibling L-alpha-Phosphatidylcholine
+      → CHEBI:86658 mapping. identifier kept as cas:97281-52-2 (class match is not
+      exact, so not promoted to a CHEBI primary).
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -48,6 +53,14 @@ curation_history:
   curator: backfill_parent_terms
   action: BACKFILL_PARENT_MESH
   changes: set ontology_mapping parent=mesh:D013025 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-06-13T00:00:00+00:00'
+  curator: fix_id_label_correspondence
+  action: CORRECTED
+  changes: Remapped ontology_mapping from mesh:D013025 "Soybeans" (NARROW_MATCH source
+    organism) to CHEBI:28874 "phosphatidylinositol" (BROAD_MATCH chemical class) —
+    the chemically correct grounding for a soybean phosphatidylinositol mixture. ontology_source
+    MESH → CHEBI; identifier kept as cas:97281-52-2.
   llm_assisted: false
 chemical_properties:
   cas_rn: 97281-52-2

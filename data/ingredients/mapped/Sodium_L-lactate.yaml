@@ -1,8 +1,8 @@
 identifier: CHEBI:867561
 preferred_term: Sodium L-lactate
 ontology_mapping:
-  ontology_id: CHEBI:867561
-  ontology_label: Sodium L-lactate
+  ontology_id: CHEBI:232798
+  ontology_label: sodium L-lactate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -60,6 +60,15 @@ curation_history:
   action: REJECTED
   changes: Dead id CHEBI:867561 (OLS4 404); same substance as CHEBI:232798; merged
     there.
+- timestamp: '2026-06-13T00:00:00+00:00'
+  curator: fix_id_label_correspondence
+  action: CORRECTED
+  changes: Repointed ontology_mapping from the dead CHEBI:867561 (absent from CHEBI)
+    to the representative CHEBI:232798 "sodium L-lactate" this REJECTED tombstone
+    was merged into; set canonical ontology_label. identifier kept as the dead-id
+    tombstone key (mirrors the Bacto_Soytone / CHEBI:8150 convention).
+  llm_assisted: false
+representative: CHEBI:232798
 chemical_properties:
   cas_rn: 867-56-1
   data_source: CultureBotHT compounds_to_cas.csv

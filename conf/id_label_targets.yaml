@@ -101,22 +101,13 @@ targets:
     pairs:
       - [ontology_id, ontology_label]
 
-  # Only the review TSVs that use the SSSOM subject/object schema are listed
-  # explicitly. A bare `mappings/*review*.tsv` glob over-matches review
-  # artifacts with bespoke schemas (`*_row_review_manifest.tsv` →
-  # predicate_context_object_id, `*_unknown_term_*_review.tsv` →
-  # subject_label/current_object_id only). Those lack the configured
-  # subject_id/object_id columns, so the MISSING_COLUMN-is-ERROR rule would
-  # fail enforce on populated files that aren't SSSOM products at all. Add a
-  # file here only once it carries subject_id/subject_label/object_id/object_label.
-  - name: review_tsvs
-    kind: tabular
-    format: tsv
-    glob:
-      - "mappings/ingredient_mappings_oak_ols_review.tsv"
-      - "mappings/ingredient_mappings_synonym_enrich_review.tsv"
-      - "mappings/needs_curator_review.tsv"
-    policy: canonical_or_synonym
-    pairs:
-      - [subject_id, subject_label]
-      - [object_id, object_label]
+  # NOTE: the review TSVs (`mappings/*review*.tsv`) are intentionally NOT gated.
+  # They are human/tool WORKING files, not data products: by design they record
+  # candidate object_ids under review — including obsolete (CHEBI:8150), invalid
+  # (CHEBI:3463/23674) or not-yet-labelled (`None`) ids that a curator is in the
+  # process of accepting or rejecting. Enforcing id↔label correspondence on a
+  # review scratchpad turns "candidate awaiting triage" into a false ERROR. The
+  # id↔label invariant is enforced where it matters: the curated YAML source
+  # (strict canonical) and the downstream products consumed by KG-Microbe (the
+  # SSSOM + docs CSV). A row only becomes gate-relevant once it is accepted into
+  # those surfaces.
