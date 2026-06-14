@@ -1,9 +1,17 @@
 name: label-correspondence
 
-# Phase 1 (report-only): generate the id↔label drift report and upload it as
-# an artifact. This job does NOT fail the build — it surfaces existing label
-# drift so it can be triaged. Phase 2 will switch to the blocking gates
-# (`just validate-terms-all` + `just validate-products`).
+# Phase 2 (BLOCKING): enforce id↔label correspondence. `just validate-products`
+# (Engine B) is a single-pass gate over the curated YAML source (strict
+# canonical) and the data products consumed by KG-Microbe (the SSSOM + docs CSV,
+# canonical-or-synonym). It fails the build (exit 2) on any MISMATCH /
+# ID_NOT_FOUND / structural error. Curator-accepted residuals (e.g. valid MeSH
+# supplementary-concept records absent from the cached mesh.db) are declared in
+# conf/id_label_targets.yaml `exceptions` and pass as OK_EXCEPTION.
+#
+# Engine A (`just validate-terms-all`, linkml-term-validator --labels) is NOT a
+# CI gate: it spawns one validator process per record (~2k+), which is too slow
+# for CI, and Engine B already covers the same YAML ontology_label checks (and
+# more — ID_NOT_FOUND, products). It remains a local LinkML-native cross-check.
 
 on:
   pull_request:
@@ -26,7 +34,7 @@ permissions:
   contents: read
 
 jobs:
-  label-drift-report:
+  id-label-gate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -53,8 +61,14 @@ jobs:
       - name: Verify id↔label validator pin
         run: just verify-validator-pin
 
-      - name: Generate id↔label drift report (non-blocking)
+      # Always generate the drift report first so the artifact is uploaded even
+      # when the blocking gate below fails (report mode never exits non-zero).
+      - name: Generate id↔label drift report
         run: just report-label-drift
+
+      # BLOCKING: enforce id↔label correspondence (exit 2 on any error).
+      - name: Enforce id↔label correspondence
+        run: just validate-products
 
       - name: Upload drift report
         if: always()

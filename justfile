@@ -154,10 +154,13 @@ refresh-validator-pin:
 
 # Composite QC: schema validation + strict closed-schema check +
 # evidence reference validation + SSSOM invariants.
-# NOTE: validate-terms-all + validate-products are intentionally NOT in `qc`
-# yet — they enforce id↔label correspondence and will fail on existing label
-# drift. Run `just report-label-drift`, triage reports/label_drift.tsv, then
-# add them here (Phase 2 of the rollout).
+# NOTE: id↔label enforcement (Phase 2) is now BLOCKING, but lives in the
+# dedicated `label-correspondence` CI workflow (`just validate-products`), not
+# here: it loads the OAK sqlite ontologies (CHEBI ~3.7GB etc.) and that workflow
+# already caches them, whereas `qc` is meant to stay fast and OAK-free. Run
+# `just validate-products` locally to reproduce the gate; `just report-label-drift`
+# writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
+# LinkML cross-check (one validator process per record → too slow for CI).
 qc: validate-all validate-strict qc-evidence qc-sssom
 
 # Render per-ingredient HTML detail pages from data/ingredients/*.yaml
