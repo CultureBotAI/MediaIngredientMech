@@ -53,7 +53,23 @@ flavonoids, natural products, element placeholders, and mixtures.
   `mapped_ingredients.yaml`, regenerate both per-record dirs, **hand-add the SSSOM
   row(s)** (`reconcile_sssom` reports the GAP but won't synthesize new-row
   provenance), and regenerate docs. Budget for per-record curation, not a sweep.
-- A first batch is being run in `feat/deep-research-unmapped-batch`.
+- **Batch 1 done (2026-06-14, `feat/deep-research-unmapped-batch`)** — 3 records
+  deep-researched (Edison/PaperQA3) and **enriched in place** (synonyms / CAS-RN /
+  provenance; left UNMAPPED — no risky migration yet):
+  - `1-Naphtylacetic Acid` (UNMAPPED_0316) → identity resolved to **1-naphthaleneacetic
+    acid (NAA), CAS 86-87-3, CHEBI:32918** (a "naphtyl" misspelling string-matching
+    missed). **Ready to map** — CAS-RN added enables the CAS→CHEBI pipeline.
+  - `alpha-ketoglutamate` (UNMAPPED_0323) → resolved to alpha-ketoglutarate /
+    2-oxoglutarate; free acid **CHEBI:30915**, anion CHEBI:16810. Ready to map once
+    the acid-vs-anion form is chosen.
+  - `2-methyladeninyl cobamide` (UNMAPPED_0182) → **stays UNMAPPED, confirmed**: a
+    specific corrinoid ("Factor A") with no source-backed CHEBI/CAS; do NOT map to
+    cobalamin/B12. Validates the prior curator call; enriched with synonyms.
+  - Takeaway: deep research resolves identities that string-matching can't, but most
+    of the residual is genuinely hard. The 2 "ready to map" records still await the
+    multi-surface migration above. Edison reports live under `research/` (gitignored).
+  - Next batch candidates: the cobamide cluster (5-methoxy/5-methyl/adeninyl/
+    benzimidazolyl cobamide), `6-methylnicotinate`, `Amphotericin`, flavonoids.
 
 ## 4. mesh.db refresh → drop the 4 SCR exceptions (low priority)
 

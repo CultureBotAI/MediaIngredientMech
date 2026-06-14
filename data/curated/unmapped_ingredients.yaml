@@ -9,6 +9,15 @@ ingredients:
   - synonym_text: 1-Naphtylacetic Acid
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: 1-naphthaleneacetic acid
+    synonym_type: SYSTEMATIC_NAME
+    source: edison_deep_research
+  - synonym_text: 1-naphthylacetic acid
+    synonym_type: EXACT_SYNONYM
+    source: edison_deep_research
+  - synonym_text: NAA
+    synonym_type: ABBREVIATION
+    source: edison_deep_research
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -30,9 +39,23 @@ ingredients:
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:2436); no CAS-RN
-    or CHEBI/NCIT match. Reviewed on 2026-05-11; retained as unmapped pending exact
-    spelling and identity evidence.
+  - timestamp: '2026-06-14T00:00:00+00:00'
+    curator: deep-research-ingredient-edison
+    action: RESEARCHED_IDENTITY
+    changes: 'Edison/PaperQA3 deep research resolved the source spelling: "1-Naphtylacetic
+      Acid" is 1-naphthaleneacetic acid (NAA), CAS-RN 86-87-3 (CHEBI:32918) — the
+      blocker flagged in the 2026-05-11 review (unverified spelling) is cleared.
+      Identity-resolved; ontology mapping deferred pending unmapped→mapped migration.'
+    new_status: UNMAPPED
+    llm_assisted: true
+  chemical_properties:
+    cas_rn: 86-87-3
+    data_source: Edison/PaperQA3 deep research (janikova2020; henneberger; donnelly1990)
+    retrieval_date: '2026-06-14T00:00:00+00:00'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:2436). Identity
+    resolved 2026-06-14 to 1-naphthaleneacetic acid (NAA, CAS 86-87-3, CHEBI:32918)
+    via Edison deep research; a misspelling of "naphthyl". Ready to map pending the
+    unmapped→mapped migration.
   ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0196
   preferred_term: 2-Carene-3-One
@@ -70,6 +93,18 @@ ingredients:
   - synonym_text: 2-methyladeninyl cobamide
     synonym_type: RAW_TEXT
     source: culturebotht
+  - synonym_text: 2-methyladeninylcobamide
+    synonym_type: EXACT_SYNONYM
+    source: edison_deep_research
+  - synonym_text: '[2-MeAde]Cba'
+    synonym_type: ABBREVIATION
+    source: edison_deep_research
+  - synonym_text: Factor A
+    synonym_type: COMMON_NAME
+    source: edison_deep_research
+  - synonym_text: Co-cyano-(2-methyladenin-7-yl)cobamide
+    synonym_type: SYSTEMATIC_NAME
+    source: edison_deep_research
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -89,6 +124,17 @@ ingredients:
       no exact local ontology identity for the 2-methyladeninyl lower-ligand variant
       was verified.
     previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-06-14T00:00:00+00:00'
+    curator: deep-research-ingredient-edison
+    action: RESEARCHED_IDENTITY
+    changes: 'Edison/PaperQA3 deep research (8 citations) confirms this is a specific
+      cobamide corrinoid with lower ligand = 2-methyladenine (legacy name "Factor A",
+      cyano form Co-cyano-(2-methyladenin-7-yl)cobamide, CCDC:217275). No source-backed
+      CHEBI/CAS identifier exists, and the generic label is upper-ligand-ambiguous —
+      KEEP UNMAPPED (do NOT map to cobalamin/B12: different lower ligand). Enriched
+      with source-backed synonyms.'
     new_status: UNMAPPED
     llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
@@ -718,6 +764,18 @@ ingredients:
   - synonym_text: alpha-ketoglutamate
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: alpha-ketoglutarate
+    synonym_type: EXACT_SYNONYM
+    source: edison_deep_research
+  - synonym_text: 2-oxoglutarate
+    synonym_type: SYSTEMATIC_NAME
+    source: edison_deep_research
+  - synonym_text: 2-oxoglutaric acid
+    synonym_type: SYSTEMATIC_NAME
+    source: edison_deep_research
+  - synonym_text: 2-oxopentanedioic acid
+    synonym_type: SYSTEMATIC_NAME
+    source: edison_deep_research
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -738,6 +796,18 @@ ingredients:
       because alpha-ketoglutamate appears to be a source spelling ambiguity and is
       not safely identical to the existing local identities.
     previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-06-14T00:00:00+00:00'
+    curator: deep-research-ingredient-edison
+    action: RESEARCHED_IDENTITY
+    changes: 'Edison/PaperQA3 deep research (9 citations) resolves the lexical
+      ambiguity: "alpha-ketoglutamate" is a nonstandard spelling of alpha-ketoglutarate
+      = 2-oxoglutarate (2-oxopentanedioic acid), NOT alpha-ketoglutamic acid
+      (MESH:C088956). Free-acid form is CHEBI:30915 "2-oxoglutaric acid"; the
+      conjugate base 2-oxoglutarate(2-) is CHEBI:16810. Identity resolved to the
+      2-oxoglutarate species; ontology mapping deferred pending the acid-vs-anion
+      form decision + unmapped→mapped migration.'
     new_status: UNMAPPED
     llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2384); no CAS-RN
