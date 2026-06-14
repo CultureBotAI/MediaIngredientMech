@@ -34,12 +34,17 @@ prefixes=$(
 # No ontology ids -> nothing for OAK to download -> safe to run Engine A.
 [ -z "$prefixes" ] && exit 0
 
-# Build a lookup of allowed prefixes (whitespace-separated).
+# Compare prefixes case-insensitively: the data carries lowercase `mesh:` while
+# the allowlist (and OAK's OBO CURIEs) use uppercase `MESH`, so a case-sensitive
+# `=` test silently classed every mesh record as UNSAFE and skipped Engine A for
+# it — Engine A never validated a single MeSH record despite MESH being in the
+# allowlist. nocasematch fixes `[[ ==  ]]` and works on bash 3.2 (macOS) too.
+shopt -s nocasematch
 while IFS= read -r p; do
     [ -z "$p" ] && continue
     found=1
     for a in $allowed; do
-        if [ "$p" = "$a" ]; then found=0; break; fi
+        if [[ "$p" == "$a" ]]; then found=0; break; fi
     done
     # An id whose prefix is NOT in the OBO allowlist would crash OAK -> unsafe.
     [ "$found" -ne 0 ] && exit 1

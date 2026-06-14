@@ -145,15 +145,21 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
     expected = expected_mappings(curated)
     canonical_label = _canonical_label_resolver()
 
-    # Pass 1: per stale subject, record (old parent ontology_id -> new id) so we can
-    # also fix registry/identity rows whose comments embed the old parent id.
-    remap: dict[str, tuple[str, str]] = {}
+    # Pass 1: per stale subject, record (old id, new id, old predicate-local,
+    # new predicate-local) so we can also fix registry/identity rows whose
+    # comments embed the old parent id and/or its old predicate word (e.g.
+    # "...for narrowMatch subject ... parent mesh:Dxxx").
+    remap: dict[str, tuple[str, str, str, str]] = {}
     for r in rows:
         term = r["subject_label"]
         if term in expected and _is_ontology_row(r["object_id"]):
             new_id = expected[term]["ontology_id"]
             if r["object_id"] != new_id:
-                remap[term] = (r["object_id"], new_id)
+                old_pred = r["predicate_id"].split(":", 1)[-1]
+                new_pred = PREDICATE.get(
+                    expected[term].get("mapping_quality"), r["predicate_id"]
+                ).split(":", 1)[-1]
+                remap[term] = (r["object_id"], new_id, old_pred, new_pred)
 
     # Pass 2: rewrite.
     out, n_stale, n_orphan = [], 0, 0
@@ -167,7 +173,7 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
             n_orphan += 1  # orphan subject: drop all of its rows
             continue
         if term in remap:
-            old_id, new_id = remap[term]
+            old_id, new_id, old_pred, new_pred = remap[term]
             if _is_ontology_row(f[idx["object_id"]]) and f[idx["object_id"]] == old_id:
                 # The stale ontology row: sync to the current curated mapping.
                 om = expected[term]
@@ -182,10 +188,18 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
                 if "validation_method" in idx:
                     f[idx["validation_method"]] = f"manual:reconcile_sssom|REMAPPED|{date}"
                 n_stale += 1
-            elif "comment" in idx and old_id in f[idx["comment"]]:
-                # A registry/identity row whose comment still names the old parent:
-                # point it at the new parent so the file stays internally consistent.
-                f[idx["comment"]] = f[idx["comment"]].replace(old_id, new_id)
+            elif "comment" in idx and (
+                old_id in f[idx["comment"]]
+                or (old_pred != new_pred and old_pred in f[idx["comment"]])
+            ):
+                # A registry/identity row whose comment still names the old parent
+                # id and/or its old predicate word: update both so the file stays
+                # internally consistent (predicate names like narrowMatch/broadMatch
+                # are distinctive enough that a plain replace is safe).
+                c = f[idx["comment"]].replace(old_id, new_id)
+                if old_pred != new_pred:
+                    c = c.replace(old_pred, new_pred)
+                f[idx["comment"]] = c
         out.append("\t".join(f) + "\n")
 
     new_header = []
