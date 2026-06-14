@@ -52,6 +52,24 @@ PREDICATE = {
     "BROAD_MATCH": "skos:broadMatch",
 }
 
+# Object-id prefixes that denote an ONTOLOGY mapping row (vs a registry/identity
+# row such as cas: / kgmicrobe.*). The stale ontology row must be recognised by
+# its object_id PREFIX, not by an `obo:` object_source: MeSH is an ontology
+# source here but its object_source is `registry:mesh`, so a MeSH→OBO parent
+# remap (e.g. mesh:D013025 → CHEBI:28874) was previously invisible to --apply —
+# Pass 1 only captured `obo:`-sourced rows, so the stale mesh row was never
+# rewritten (`synced 0`). Matched case-insensitively: data carries lowercase
+# `mesh:` while the OBJECT_SOURCE keys (and OBO CURIEs) are uppercase.
+ONTOLOGY_PREFIXES = frozenset(
+    p.casefold()
+    for p in ([k for k, v in OBJECT_SOURCE.items() if v.startswith("obo:")] + ["MESH"])
+)
+
+
+def _is_ontology_row(object_id: str) -> bool:
+    """True if ``object_id``'s CURIE prefix is an ontology (not a registry id)."""
+    return object_id.split(":", 1)[0].casefold() in ONTOLOGY_PREFIXES
+
 
 def expected_mappings(curated: dict) -> dict[str, dict]:
     """preferred_term -> ontology_mapping for MAPPED records carrying an ontology_id."""
@@ -132,7 +150,7 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
     remap: dict[str, tuple[str, str]] = {}
     for r in rows:
         term = r["subject_label"]
-        if term in expected and r["object_source"].startswith("obo:"):
+        if term in expected and _is_ontology_row(r["object_id"]):
             new_id = expected[term]["ontology_id"]
             if r["object_id"] != new_id:
                 remap[term] = (r["object_id"], new_id)
@@ -150,7 +168,7 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
             continue
         if term in remap:
             old_id, new_id = remap[term]
-            if f[idx["object_source"]].startswith("obo:") and f[idx["object_id"]] == old_id:
+            if _is_ontology_row(f[idx["object_id"]]) and f[idx["object_id"]] == old_id:
                 # The stale ontology row: sync to the current curated mapping.
                 om = expected[term]
                 f[idx["object_id"]] = new_id
