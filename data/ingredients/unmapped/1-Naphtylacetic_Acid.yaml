@@ -4,6 +4,15 @@ synonyms:
 - synonym_text: 1-Naphtylacetic Acid
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: 1-naphthaleneacetic acid
+  synonym_type: SYSTEMATIC_NAME
+  source: edison_deep_research
+- synonym_text: 1-naphthylacetic acid
+  synonym_type: EXACT_SYNONYM
+  source: edison_deep_research
+- synonym_text: NAA
+  synonym_type: ABBREVIATION
+  source: edison_deep_research
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -25,7 +34,21 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
-notes: Imported from mim-queue (source_id=mediadive.ingredient:2436); no CAS-RN or
-  CHEBI/NCIT match. Reviewed on 2026-05-11; retained as unmapped pending exact spelling
-  and identity evidence.
+- timestamp: '2026-06-14T00:00:00+00:00'
+  curator: deep-research-ingredient-edison
+  action: RESEARCHED_IDENTITY
+  changes: 'Edison/PaperQA3 deep research resolved the source spelling: "1-Naphtylacetic
+    Acid" is 1-naphthaleneacetic acid (NAA), CAS-RN 86-87-3 (CHEBI:32918) — the blocker
+    flagged in the 2026-05-11 review (unverified spelling) is cleared. Identity-resolved;
+    ontology mapping deferred pending unmapped→mapped migration.'
+  new_status: UNMAPPED
+  llm_assisted: true
+chemical_properties:
+  cas_rn: 86-87-3
+  data_source: Edison/PaperQA3 deep research (janikova2020; henneberger; donnelly1990)
+  retrieval_date: '2026-06-14T00:00:00+00:00'
+notes: Imported from mim-queue (source_id=mediadive.ingredient:2436). Identity resolved
+  2026-06-14 to 1-naphthaleneacetic acid (NAA, CAS 86-87-3, CHEBI:32918) via Edison
+  deep research; a misspelling of "naphthyl". Ready to map pending the unmapped→mapped
+  migration.
 ingredient_type: SINGLE_INGREDIENT
