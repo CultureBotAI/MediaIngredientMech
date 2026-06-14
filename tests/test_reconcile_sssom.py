@@ -111,9 +111,11 @@ def test_apply_remaps_mesh_parent_to_chebi(tmp_path, monkeypatch):
     assert onto["mapping_date"] == "2026-06-13"
     assert "REMAPPED" in onto["validation_method"]
     assert "reconciled to curated mapping" in onto["comment"]
-    # the registry/identity row's comment is repointed to the new parent
+    # the registry/identity row's comment is repointed to the new parent id AND
+    # its now-stale predicate word (narrowMatch -> broadMatch) is updated too
     ident = [r for r in parsed if r["object_id"] == "cas:1-1-1"][0]
     assert "CHEBI:28874" in ident["comment"] and "mesh:D013025" not in ident["comment"]
+    assert "broadMatch" in ident["comment"] and "narrowMatch" not in ident["comment"]
 
 
 # -- regression: obo→obo remap still works ----------------------------------
