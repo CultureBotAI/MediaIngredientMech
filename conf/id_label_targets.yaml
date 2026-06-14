@@ -54,6 +54,20 @@ ignored_prefixes:
 
 synonym_scope: exact_related
 
+# Curator-accepted residuals shared across every surface that carries them.
+# These four are VALID MeSH supplementary-concept records (verified live in MeSH:
+# avocatin B introduced 2020, sodium glutarate 2024) with no CHEBI equivalent. The
+# cached sqlite:obo:mesh adapter predates these SCRs, so they resolve as
+# ID_NOT_FOUND even though the data is correct. Listing the exact (id, label) pair
+# accepts it as OK_EXCEPTION (non-error) so the gate can be enforced/blocking. The
+# match is exact: a *different* label on the same id still fails. Remove an entry
+# once mesh.db includes that SCR.
+mesh_scr_exceptions: &mesh_scr_exceptions
+  - {id: mesh:C000709627, label: avocatin B, reason: "valid MeSH SCR (2020); absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
+  - {id: mesh:C000655964, label: cholinium lysinate, reason: "valid MeSH SCR; absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
+  - {id: mesh:C000730144, label: sodium glutarate, reason: "valid MeSH SCR (2024); absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
+  - {id: mesh:C000633628, label: plicacetin, reason: "valid MeSH SCR; absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
+
 targets:
   # --- data inputs / intermediates (YAML) — strict canonical, mirrors Engine A
   - name: curated_yaml
@@ -63,6 +77,7 @@ targets:
       - "data/ingredients/mapped/*.yaml"
       - "data/ingredients/unmapped/*.yaml"
     policy: canonical
+    exceptions: *mesh_scr_exceptions
     pairs:
       - [ontology_id, ontology_label]
       - [environment_term, environment_label]
@@ -77,6 +92,7 @@ targets:
     glob: "mappings/ingredient_mappings.sssom.tsv"
     required: true
     policy: canonical_or_synonym
+    exceptions: *mesh_scr_exceptions
     pairs:
       - [subject_id, subject_label]
       - [object_id, object_label]
@@ -98,6 +114,7 @@ targets:
     policy: canonical_or_synonym
     label_waived_keys:
       - ontology_id
+    exceptions: *mesh_scr_exceptions
     pairs:
       - [ontology_id, ontology_label]
 
