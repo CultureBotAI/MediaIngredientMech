@@ -79,6 +79,10 @@ curation_history:
   action: CORRECTED
   changes: 'Backfilled missing occurrence_statistics (0/0): ontology-derived record
     with no tracked media occurrences.'
+- timestamp: '2026-06-14T06:54:43.189771+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 0.70)'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: 10H2O.H4B4O9.2Na
@@ -88,3 +92,12 @@ chemical_properties:
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
+media_roles:
+- role: BUFFER
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35225
+      (buffer (role))'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

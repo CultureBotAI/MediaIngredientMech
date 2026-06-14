@@ -33,18 +33,20 @@ PLAUSIBLE = {
               r"\bTris\b|morpholino|piperazine|buffer|bicarbonate|carbonate|"
               r"phosphate|HCO3|CO3|PO4|citrate|acet(ate|ic)|succin|glycine|"
               r"glycylglycine|borate|barbital|cacodylate|imidazole|maleate|"
-              r"\bMOPSO\b)",
+              r"aminoethanesulfonic|tetraborate|B4O7|\bMOPSO\b)",
     "SOLIDIFYING_AGENT": r"(agar|agarose|gellan|gelrite|gelzan|phytagel|carrageenan|"
                          r"alginate|gelatin)",
     "REDUCING_AGENT": r"(sulfide|sulphide|dithionite|dithiothreitol|\bDTT\b|mercapto|"
                       r"thioglycol|\bTCEP\b|cysteine|sulfite|sulphite|ascorb|"
                       r"titanium|thiosulf|\bNa2S\b|SO3|S2O3|S2O4|S2O5)",
-    "CHELATOR": r"(EDTA|EGTA|DTPA|nitrilotriacetic|\bNTA\b|desferri|deferox|chelat)",
+    "CHELATOR": r"(EDTA|EGTA|DTPA|nitrilotriacetic|\bNTA\b|desferri|deferox|chelat|"
+                r"dipyrid|bipyrid|phenanthroline|enterobactin|siderophore|"
+                r"pyrophosphate|tetrakis|pyridylmethyl)",
     "VITAMIN_SOURCE": r"(vitamin|biotin|thiamin|riboflavin|niacin|nicotin|pyridox|"
                       r"cobalamin|folic|folate|folin|pantothen|lipoic|thioctic|"
                       r"menaquinone|menadione|aminobenzo|\bPABA\b|inositol|ascorb|"
                       r"tocopherol|retinol|calciferol|hemin|haemin|protoporphyrin|"
-                      r"\bFAD\b|\bNAD\b|coenzyme|cobamide|pteroyl)",
+                      r"carnitin|\bFAD\b|\bNAD\b|coenzyme|cobamide|pteroyl)",
     # standard 20 + common non-proteinogenic amino acids (CHEBI's "amino acid"
     # class, which the ancestry rule uses, is broader than the proteinogenic set).
     "AMINO_ACID_SOURCE": r"(alanine|arginine|asparagin|aspart|cysteine|cystine|"

@@ -38,6 +38,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-14T06:54:43.098531+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CHELATOR (confidence: 0.70)'
 chemical_properties:
   cas_rn: 28384-96-5
   data_source: CultureBotHT compounds_to_cas.csv
@@ -46,3 +50,12 @@ chemical_properties:
   inchi: InChI=1S/C30H27N3O15/c34-19-7-1-4-13(22(19)37)25(40)31-16-10-46-29(44)18(33-27(42)15-6-3-9-21(36)24(15)39)12-48-30(45)17(11-47-28(16)43)32-26(41)14-5-2-8-20(35)23(14)38/h1-9,16-18,34-39H,10-12H2,(H,31,40)(H,32,41)(H,33,42)/t16-,17-,18-/m0/s1
   smiles: O=C(N[C@H]1COC(=O)[C@@H](NC(=O)c2cccc(O)c2O)COC(=O)[C@@H](NC(=O)c2cccc(O)c2O)COC1=O)c1cccc(O)c1O
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CHELATOR
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:38161
+      (chelator (role))'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

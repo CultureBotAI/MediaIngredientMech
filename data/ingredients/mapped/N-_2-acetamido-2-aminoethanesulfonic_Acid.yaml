@@ -57,6 +57,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-14T06:54:43.184139+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: BUFFER (confidence: 0.70)'
 chemical_properties:
   cas_rn: 7365-82-4
   data_source: PubChem API
@@ -65,3 +69,12 @@ chemical_properties:
   inchi: InChI=1S/C4H10N2O4S/c5-4(7)3-6-1-2-11(8,9)10/h6H,1-3H2,(H2,5,7)(H,8,9,10)
   smiles: NC(=O)CNCCS(=O)(=O)O
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: BUFFER
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35225
+      (buffer (role))'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

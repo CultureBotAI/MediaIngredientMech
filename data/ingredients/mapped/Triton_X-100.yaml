@@ -38,6 +38,10 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-06-14T06:54:43.277402+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: SURFACTANT (confidence: 0.70)'
 chemical_properties:
   cas_rn: 9002-93-1
   data_source: CultureBotHT compounds_to_cas.csv
@@ -46,3 +50,12 @@ chemical_properties:
   inchi: InChI=1S/C16H26O2/c1-15(2,3)12-16(4,5)13-6-8-14(9-7-13)18-11-10-17/h6-9,17H,10-12H2,1-5H3
   smiles: '[H]OCCOc1ccc(C(C)(C)CC(C)(C)C)cc1'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: SURFACTANT
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195
+      (surfactant (role))'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.
