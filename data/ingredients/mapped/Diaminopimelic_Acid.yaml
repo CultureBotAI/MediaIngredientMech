@@ -43,8 +43,21 @@ curation_history:
   action: CORRECTED
   changes: 'identifier CHEBI:23674 -> CHEBI:23673 (2,6-diaminopimelic acid, source
     CHEBI): CHEBI:23674 is absent from current ChEBI (OLS4 404).'
+- timestamp: '2026-06-14T06:54:43.083520+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
 chemical_properties:
   cas_rn: 583-93-7
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:51:49.581961+00:00'
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: AMINO_ACID_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:33709
+      (amino acid)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

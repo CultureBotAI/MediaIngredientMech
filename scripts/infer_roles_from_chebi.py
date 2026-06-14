@@ -61,18 +61,41 @@ DEFAULT_CHEBI_DB = os.environ.get(
 HAS_ROLE = "RO:0000087"
 
 # (role, ancestor CHEBI class) in precedence order — first match wins.
+# The first three are STRUCTURAL is_a classes (what the molecule is); the last
+# three are CHEBI has_role functional annotations (what it does). has_role buffer/
+# chelator/surfactant are precise, curator-meaningful media roles — unlike the
+# broad has_role classes that stay EXCLUDED (antimicrobial agent CHEBI:33281
+# captures short-chain alcohols; antioxidant CHEBI:22586 captures non-reductant
+# polyphenols; food additive is not a media role). Structural rules take
+# precedence so a carbohydrate that also chelates stays CARBON_SOURCE.
 RULES = [
     ("VITAMIN_SOURCE", "CHEBI:33229"),     # vitamin (role)
     ("AMINO_ACID_SOURCE", "CHEBI:33709"),  # amino acid
     ("CARBON_SOURCE", "CHEBI:16646"),      # carbohydrate
+    ("BUFFER", "CHEBI:35225"),             # buffer (has_role)
+    ("CHELATOR", "CHEBI:38161"),           # chelator (has_role)
+    ("SURFACTANT", "CHEBI:35195"),         # surfactant (has_role)
 ]
 ANCESTOR_LABELS = {
     "CHEBI:33229": "vitamin (role)",
     "CHEBI:33709": "amino acid",
     "CHEBI:16646": "carbohydrate",
+    "CHEBI:35225": "buffer (role)",
+    "CHEBI:38161": "chelator (role)",
+    "CHEBI:35195": "surfactant (role)",
 }
 # Inorganic salt class used only for the unambiguous ammonium -> NITROGEN_SOURCE case.
 INORGANIC_SALT = "CHEBI:24839"
+
+# CHEBI has_role chelator is authoritative for in-vitro metal binding but is not a
+# reliable MEDIA role for these: flavonoid/polyphenol antioxidants (curcumin,
+# quercetin, theaflavin) chelate in vitro yet are used as substrates/antimicrobials,
+# and TEMED is a polymerisation catalyst. Excluded so CHELATOR stays media-precise
+# (mirrors the script's existing exclusion of the broad antimicrobial/inorganic
+# classes). Keyed by role -> CHEBI ids to drop even when the has_role rule matches.
+HAS_ROLE_EXCLUDE = {
+    "CHELATOR": {"CHEBI:3962", "CHEBI:16243", "CHEBI:136609", "CHEBI:32850"},
+}
 
 
 def infer_role(ancestors: set[str], name: str) -> tuple[str | None, str | None]:
@@ -134,6 +157,8 @@ def main() -> None:
         role, justification = infer_role(ancestors, record.get("preferred_term", ""))
         if not role:
             continue
+        if cid in HAS_ROLE_EXCLUDE.get(role, ()):
+            continue  # has_role matches but this id is a curated media false-positive
         assigned += 1
         dist[role] += 1
         if not args.dry_run:

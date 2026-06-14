@@ -74,6 +74,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Sodium pyrophosphate'' -> ''sodium diphosphate'': synced
     to canonical CHEBI label (preferred_term ''Sodium pyrophosphate'' unchanged).'
+- timestamp: '2026-06-14T06:54:43.256057+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: CHELATOR (confidence: 0.70)'
 chemical_properties:
   cas_rn: 7722-88-5
   data_source: PubChem API
@@ -83,3 +87,12 @@ chemical_properties:
   smiles: O=P([O-])([O-])OP(=O)([O-])[O-].[Na+].[Na+].[Na+].[Na+]
 kg_microbe_node_id: CHEBI:71240
 ingredient_type: SINGLE_INGREDIENT
+media_roles:
+- role: CHELATOR
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:38161
+      (chelator (role))'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

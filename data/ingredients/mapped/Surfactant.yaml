@@ -32,5 +32,18 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-06-14T06:54:43.263712+00:00'
+  curator: infer_roles_from_chebi_ancestry
+  action: ANNOTATED
+  changes: 'Added media role: SURFACTANT (confidence: 0.70)'
 ingredient_type: SINGLE_INGREDIENT
 kg_microbe_node_id: CHEBI:35195
+media_roles:
+- role: SURFACTANT
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:35195
+      (surfactant (role))'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.
