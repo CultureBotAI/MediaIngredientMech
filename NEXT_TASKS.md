@@ -7,23 +7,28 @@ deferrals here. Keep the cross-Mech items in sync with the sibling repos'
 
 Last reconciled: 2026-06-14.
 
-## 1. Chemical-properties enrichment (89 CHEBI records missing `molecular_formula`)
+## 1. Chemical-properties enrichment — enricher repaired, residual is the ceiling
 
-89 CHEBI-mapped records have no `molecular_formula` (and likely no SMILES/InChI).
-Run the existing enricher to backfill from ChEBI OLS4 + PubChem:
+**Done (2026-06-15, `feat/enrich-chemical-properties`)** — the enricher had silently
+broken: OLS4 renamed its annotation keys (`formula` → `generalized_empirical_formula`;
+SMILES/InChI → `*_string`), so every fetch returned None. Fixed
+`chemical_properties_client.py` to read the current keys (legacy fallback kept),
+broadened the enricher to target records *missing `molecular_formula`* (not just
+those with no `chemical_properties` block) with a gap-filling **merge** (never
+clobbers `cas_rn`), and made the `Enriched` counter report net changes. Re-ran:
+**3 records gained formula/SMILES** (diaminopimelic acid, sodium L-lactate,
+isobutyramide+mass).
 
-```bash
-python scripts/enrich_chemical_properties.py        # auto-fetches formula/SMILES/InChI
-```
+The remaining ~83 missing-formula records are the **genuine ceiling** — abstract
+CHEBI classes (aromatic compound, bile salt, hydrocarbon), polymers (glycogen,
+carboxymethylcellulose, chondroitin sulfate, DNA), proteins (elastin, LL-37),
+complexes (kanamycin), and minerals (ferrihydrite) — which legitimately have no
+single empirical formula in ChEBI. Not failures; leave them.
 
-- Source of truth is `data/curated/mapped_ingredients.yaml`; regenerate per-record
-  files with `just export-individual` after.
-- Watch the known ceiling: abstract CHEBI classes (e.g. "phosphatidylinositol",
-  added in #55), polymers, proteins, and obsolete terms legitimately have no
-  formula — don't treat those as failures.
-- Gotcha (fixed before, keep an eye out): OLS4 needs **double** URL-encoding of
-  ChEBI IRIs; obsolete terms return the IRI fragment as `label`.
-- Find them: `grep -rL molecular_formula data/ingredients/mapped/*.yaml | xargs grep -l 'ontology_source: CHEBI'`
+- Run again any time with `python scripts/enrich_chemical_properties.py` (idempotent);
+  regenerate per-record files with `just export-individual` after.
+- Gotcha still live: OLS4 needs **double** URL-encoding of ChEBI IRIs (handled).
+- Find remaining: `grep -rL molecular_formula data/ingredients/mapped/*.yaml | xargs grep -l 'ontology_source: CHEBI'`
 
 ## 2. Cross-Mech validator pin guard covers only the .py (cross-repo)
 
