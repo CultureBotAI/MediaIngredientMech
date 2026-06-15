@@ -55,8 +55,10 @@ def filter_chebi_without_properties(data: dict) -> list[dict]:
 
     candidates = []
     for record in records:
-        # Check if already has chemical_properties
-        if record.get("chemical_properties"):
+        # Target records still missing a molecular_formula — including those that
+        # already carry a partial chemical_properties block (e.g. a cas_rn but no
+        # formula). The apply step MERGES (fills gaps), so existing fields are kept.
+        if (record.get("chemical_properties") or {}).get("molecular_formula"):
             continue
 
         # Check if mapped to CHEBI
@@ -179,9 +181,21 @@ def main(
             # Get properties
             props = client.get_properties(ontology_id, label, source)
 
+            # MERGE into any existing chemical_properties: fill gaps only, so a
+            # record's existing cas_rn / data_source is never clobbered when we
+            # add the freshly-fetched molecular_formula / SMILES / InChI / mass.
+            # `enriched` counts only records that GAINED a field (props can come
+            # back with only fields the record already has — that is a no-op, not
+            # an enrichment, so it must not inflate the count).
+            added = []
             if props:
-                # Add to record
-                record["chemical_properties"] = props.to_dict()
+                existing = record.get("chemical_properties") or {}
+                for key, value in props.to_dict().items():
+                    if value and not existing.get(key):
+                        existing[key] = value
+                        added.append(key)
+                record["chemical_properties"] = existing
+            if added:
                 enriched_count += 1
                 results.append(
                     {

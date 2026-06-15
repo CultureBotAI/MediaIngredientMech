@@ -150,29 +150,38 @@ class ChemicalPropertiesClient:
 
             data = response.json()
 
-            # Extract annotation fields
+            # Extract annotation fields. OLS4 renamed the chemical-property keys —
+            # formula -> generalized_empirical_formula, and SMILES/InChI are now
+            # *_string (smiles_string / inchi_string) — and dropped the legacy
+            # `formula` key entirely, which silently broke formula/SMILES/InChI
+            # enrichment. Read the current names first, falling back to the legacy
+            # ones for resilience. (Abstract classes / polymers carry none of these,
+            # which is the expected "no formula" ceiling, not a failure.)
             annotation = data.get("annotation", {})
-            formula = None
+
+            def _first(*keys):
+                for k in keys:
+                    vals = annotation.get(k)
+                    if vals:
+                        return vals[0]
+                return None
+
+            formula = _first("generalized_empirical_formula", "formula", "has_molecular_formula")
+            smiles = _first("smiles_string", "smiles", "SMILES")
+            inchi = _first("inchi_string", "inchi", "InChI")
             molecular_weight = None
+            mass = _first("mass")
+            if mass is not None:
+                try:
+                    molecular_weight = float(mass)
+                except (ValueError, TypeError):
+                    pass
 
-            # Look for formula in annotation
-            if "formula" in annotation:
-                formula_list = annotation["formula"]
-                if formula_list and len(formula_list) > 0:
-                    formula = formula_list[0]
-
-            # Look for mass/molecular weight
-            if "mass" in annotation:
-                mass_list = annotation["mass"]
-                if mass_list and len(mass_list) > 0:
-                    try:
-                        molecular_weight = float(mass_list[0])
-                    except (ValueError, TypeError):
-                        pass
-
-            if formula or molecular_weight:
+            if formula or smiles or inchi or molecular_weight:
                 return ChemicalProperties(
                     molecular_formula=formula,
+                    smiles=smiles,
+                    inchi=inchi,
                     molecular_weight=molecular_weight,
                     data_source="ChEBI",
                     retrieval_date=datetime.now(timezone.utc).isoformat(),
