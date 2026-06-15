@@ -26,15 +26,16 @@ def test_resolve_ingredient_file_finds_status_slug_record():
 
 
 def test_resolve_ingredient_file_accepts_direct_target():
-    path = resolve_ingredient_file(
-        target=Path("data/ingredients/unmapped/1-Naphtylacetic_Acid.yaml")
-    )
-    assert path == REPO_ROOT / "data" / "ingredients" / "unmapped" / "1-Naphtylacetic_Acid.yaml"
+    # Resolve against whatever unmapped record actually exists (don't hard-code a
+    # specific slug — records get promoted out of unmapped/ over time).
+    some = next((REPO_ROOT / "data" / "ingredients" / "unmapped").glob("*.yaml"))
+    rel = some.relative_to(REPO_ROOT)
+    assert resolve_ingredient_file(target=rel) == some
 
 
 def test_infer_status_slug_for_ingredient_tree_record():
-    path = REPO_ROOT / "data" / "ingredients" / "unmapped" / "1-Naphtylacetic_Acid.yaml"
-    assert infer_status_slug(path) == ("unmapped", "1-Naphtylacetic_Acid")
+    path = REPO_ROOT / "data" / "ingredients" / "unmapped" / "Some_Unmapped_Record.yaml"
+    assert infer_status_slug(path) == ("unmapped", "Some_Unmapped_Record")
 
 
 def test_template_vars_include_ingredient_context():

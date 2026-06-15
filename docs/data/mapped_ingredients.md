@@ -1,10 +1,11 @@
 # Mapped Ingredients
 
-Generated: 2026-06-13T21:00:15.218507+00:00
-Total: 1869 ingredients
+Generated: 2026-06-15T07:06:25.450184+00:00
+Total: 1870 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:32918 | CHEBI:32918 | 1-Naphtylacetic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27569 | CHEBI:27569 | (+)-Arabinogalactan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4806 | CHEBI:4806 | (-)-Epigallocatechin gallate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28918 | CHEBI:28918 | (-)-Epinephrine | MAPPED | CHEBI | EXACT_MATCH | 0 |

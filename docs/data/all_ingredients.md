@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-06-13T21:00:15.221187+00:00
+Generated: 2026-06-15T07:06:25.461907+00:00
 Total: 2267 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:32918 | CHEBI:32918 | 1-Naphtylacetic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27569 | CHEBI:27569 | (+)-Arabinogalactan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4806 | CHEBI:4806 | (-)-Epigallocatechin gallate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28918 | CHEBI:28918 | (-)-Epinephrine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1874,7 +1875,6 @@ Total: 2267 ingredients
 | CHEBI:16610 | CHEBI:16610 | spermidine | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:43796 | CHEBI:43796 | α-lipoic acid | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | cas:66455-27-4 | cas:66455-27-4 | α1-Acid Glycoprotein from bovine plasma | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| UNMAPPED_0316 |  | 1-Naphtylacetic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0261 |  | 20AA_mix | UNMAPPED |  |  | 1 |
