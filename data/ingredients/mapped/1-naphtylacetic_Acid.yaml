@@ -1,19 +1,27 @@
-identifier: UNMAPPED_0316
+identifier: CHEBI:32918
 preferred_term: 1-Naphtylacetic Acid
+ontology_mapping:
+  ontology_id: CHEBI:32918
+  ontology_label: 1-naphthaleneacetic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison/PaperQA3 deep research + local CHEBI verification
+    notes: Source label "1-Naphtylacetic Acid" resolved to 1-naphthaleneacetic acid
+      (NAA), CAS-RN 86-87-3; exact match to CHEBI:32918 verified in local chebi.db.
+      Misspelling of "naphthyl".
 synonyms:
 - synonym_text: 1-Naphtylacetic Acid
   synonym_type: RAW_TEXT
   source: mim-queue
-- synonym_text: 1-naphthaleneacetic acid
-  synonym_type: SYSTEMATIC_NAME
-  source: edison_deep_research
 - synonym_text: 1-naphthylacetic acid
   synonym_type: EXACT_SYNONYM
   source: edison_deep_research
 - synonym_text: NAA
   synonym_type: ABBREVIATION
   source: edison_deep_research
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -25,30 +33,27 @@ curation_history:
     or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
-- timestamp: '2026-05-11T09:31:08Z'
-  curator: mediaingredientmech-agentic-curation
-  action: REVIEWED_LEXICAL_AMBIGUITY
-  changes: Classified as a single aromatic acid-like ingredient and left unmapped
-    because the source spelling "Naphtylacetic" was not locally verified as exact
-    1-naphthylacetic acid identity.
-  previous_status: UNMAPPED
-  new_status: UNMAPPED
-  llm_assisted: true
 - timestamp: '2026-06-14T00:00:00+00:00'
   curator: deep-research-ingredient-edison
   action: RESEARCHED_IDENTITY
   changes: 'Edison/PaperQA3 deep research resolved the source spelling: "1-Naphtylacetic
-    Acid" is 1-naphthaleneacetic acid (NAA), CAS-RN 86-87-3 (CHEBI:32918) — the blocker
-    flagged in the 2026-05-11 review (unverified spelling) is cleared. Identity-resolved;
-    ontology mapping deferred pending unmapped→mapped migration.'
+    Acid" is 1-naphthaleneacetic acid (NAA), CAS-RN 86-87-3 (CHEBI:32918).'
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-06-15T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  changes: Promoted UNMAPPED_0316 → CHEBI:32918 "1-naphthaleneacetic acid" (EXACT_MATCH)
+    after deep-research identity resolution; primary identifier updated, mapping_status
+    UNMAPPED → MAPPED, SSSOM row added.
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 86-87-3
   data_source: Edison/PaperQA3 deep research (janikova2020; henneberger; donnelly1990)
   retrieval_date: '2026-06-14T00:00:00+00:00'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2436). Identity resolved
   2026-06-14 to 1-naphthaleneacetic acid (NAA, CAS 86-87-3, CHEBI:32918) via Edison
-  deep research; a misspelling of "naphthyl". Ready to map pending the unmapped→mapped
-  migration.
+  deep research; promoted to MAPPED 2026-06-15.
 ingredient_type: SINGLE_INGREDIENT

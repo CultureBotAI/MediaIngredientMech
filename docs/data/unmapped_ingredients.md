@@ -1,11 +1,10 @@
 # Unmapped Ingredients
 
-Generated: 2026-06-13T21:00:15.220456+00:00
-Total: 398 ingredients
+Generated: 2026-06-15T07:06:25.461043+00:00
+Total: 397 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
-| UNMAPPED_0316 |  | 1-Naphtylacetic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0261 |  | 20AA_mix | UNMAPPED |  |  | 1 |

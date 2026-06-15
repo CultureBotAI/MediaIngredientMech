@@ -53,17 +53,29 @@ flavonoids, natural products, element placeholders, and mixtures.
 - Use `deep-research-ingredient` (Edison/PaperQA3; `EDISON_PLATFORM_API_KEY` is
   configured) or `mediaingredientmech-agentic-curation` (FutureHouse Falcon) for
   source-backed identity + CHEBI/FOODON grounding, per record.
-- **Migration caveat:** mapping an unmapped record is multi-surface and only
-  partly automated — move the record from `unmapped_ingredients.yaml` to
-  `mapped_ingredients.yaml`, regenerate both per-record dirs, **hand-add the SSSOM
-  row(s)** (`reconcile_sssom` reports the GAP but won't synthesize new-row
-  provenance), and regenerate docs. Budget for per-record curation, not a sweep.
+- **Migration recipe (proven 2026-06-15, NAA promotion):** mapping an unmapped
+  record is multi-surface and only partly automated. The working sequence:
+  1. In the source collections, move + transform the record:
+     `unmapped_ingredients.yaml` (delete record, decrement header counts) →
+     `mapped_ingredients.yaml` (add with `ontology_mapping`, `mapping_status: MAPPED`,
+     a `PROMOTED_TO_MAPPED` history entry; increment header counts).
+  2. `just export-individual` (record file moves unmapped/ → mapped/).
+  3. **Hand-add the SSSOM row** — `reconcile_sssom` reports the GAP but won't
+     synthesize new-row provenance. One `skos:exactMatch` row to the CHEBI id
+     (`obo:chebi.owl`, canonical object_label) suffices for a CHEBI-primary record;
+     Rule B1 needs no registry sibling. Insert in the file's sort order (by the
+     *decoded* subject label, e.g. between `MIM:1-Kestose` and `MIM:1-Pentanol`).
+  4. `just export-lists` (docs). Verify: `reconcile_sssom` GAP 0, SSSOM invariants
+     Rules A/B1/B2/B3, `validate-products` (the blocking id↔label gate), validate-strict.
+  - Worth scripting into a `promote_resolved_unmapped.py` helper if doing many.
+  - Note: the per-record filename sanitiser drifted over time, so a freshly-promoted
+    file may get a slightly different slug casing than the old unmapped file — cosmetic.
 - **Batch 1 done (2026-06-14, `feat/deep-research-unmapped-batch`)** — 3 records
   deep-researched (Edison/PaperQA3) and **enriched in place** (synonyms / CAS-RN /
   provenance; left UNMAPPED — no risky migration yet):
-  - `1-Naphtylacetic Acid` (UNMAPPED_0316) → identity resolved to **1-naphthaleneacetic
-    acid (NAA), CAS 86-87-3, CHEBI:32918** (a "naphtyl" misspelling string-matching
-    missed). **Ready to map** — CAS-RN added enables the CAS→CHEBI pipeline.
+  - `1-Naphtylacetic Acid` → **MAPPED 2026-06-15** (UNMAPPED_0316 → CHEBI:32918
+    "1-naphthaleneacetic acid", EXACT_MATCH) via the migration recipe above. NAA,
+    CAS 86-87-3 — a "naphtyl" misspelling string-matching missed. (unmapped 398 → 397)
   - `alpha-ketoglutamate` (UNMAPPED_0323) → resolved to alpha-ketoglutarate /
     2-oxoglutarate; free acid **CHEBI:30915**, anion CHEBI:16810. Ready to map once
     the acid-vs-anion form is chosen.
