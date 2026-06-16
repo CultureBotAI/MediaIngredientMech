@@ -5,7 +5,7 @@ update this file as work is started/finished — move done items out, add new
 deferrals here. Keep the cross-Mech items in sync with the sibling repos'
 `NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech).
 
-Last reconciled: 2026-06-14.
+Last reconciled: 2026-06-15.
 
 ## 1. Chemical-properties enrichment — enricher repaired, residual is the ceiling
 
@@ -30,19 +30,21 @@ single empirical formula in ChEBI. Not failures; leave them.
 - Gotcha still live: OLS4 needs **double** URL-encoding of ChEBI IRIs (handled).
 - Find remaining: `grep -rL molecular_formula data/ingredients/mapped/*.yaml | xargs grep -l 'ontology_source: CHEBI'`
 
-## 2. Cross-Mech validator pin guard covers only the .py (cross-repo)
+## 2. Cross-Mech validator pin guard — DONE (4-repo invariant)
 
 ~~Vendor the id↔label validator into CommunityMech~~ — **DONE** (2026-06-12,
-CommunityMech PR #132). All three Mechs now carry the byte-identical
-`scripts/validate_id_label_correspondence.py`, in sync at sha `142bbe1…`;
-CommunityMech's `just verify-validator-pin` passes.
+CommunityMech PR #132).
 
-Remaining cross-repo follow-up: the pin guard pins the **script** byte-for-byte
-but NOT the vendored test files or the conf structure, so those can silently
-drift. Tracked in culturebotai-claw#6. Also open: whether **TraitMech** should
-join the byte-identical trio (it has ontology `(id, label)` pairs but no
-validator copy — see TraitMech `NEXT_TASKS.md` item 2). Coordinate any change
-across all copies at once.
+**Done** (2026-06-15): the byte-identical invariant now spans **all four** Mech
+repos (CultureMech, MIM, CommunityMech, TraitMech). culturebotai-claw#6 Option 1
+extended the pin from the script alone to the full vendored set — the validator
+`.py` **plus** the two shared tests — across every repo (CommunityMech's drifted
+test copies were resynced + pinned in PR #151); editing a vendored test now fails
+CI everywhere. TraitMech joined and enforces too (TraitMech PR #110 Phase 1,
+PR #111 Phase 2 blocking gate — 14 wrong CURIEs fixed, gate green). All four pin
+the same 3-line manifest (`142bbe1…` / `55a432…` / `f01d22…`).
+`conf/id_label_targets.yaml` stays **unpinned by design** — it is intentionally
+per-repo (different adapters/targets/exceptions), not a drift risk to fix.
 
 ## 3. Hard unmapped residual — dedicated semantic curation (~395 records)
 
