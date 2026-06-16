@@ -4,6 +4,12 @@ synonyms:
 - synonym_text: Amphotericin
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: amphotericin B
+  synonym_type: RELATED_SYNONYM
+  source: edison_deep_research
+- synonym_text: AmB
+  synonym_type: ABBREVIATION
+  source: edison_deep_research
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -26,6 +32,16 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: deep-research-ingredient-edison
+  action: RESEARCHED_IDENTITY
+  new_status: UNMAPPED
+  llm_assisted: true
+  changes: 'Edison/PaperQA3 deep research: "amphotericin" spans amphotericin A and
+    B and is frequently used at the formulation level (deoxycholate/lipid). Commonly
+    means amphotericin B (CHEBI:2682, CAS 1397-89-3), but the label is not locally
+    evidenced as B specifically — do NOT exact-map to amphotericin B. Kept UNMAPPED
+    pending source evidence the label means amphotericin B.'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1140); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped pending source evidence
   that the intended ingredient is Amphotericin B.
