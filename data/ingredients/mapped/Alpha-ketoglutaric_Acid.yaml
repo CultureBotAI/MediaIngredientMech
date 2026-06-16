@@ -25,6 +25,9 @@ synonyms:
 - synonym_text: a-Ketoglutaric acid
   synonym_type: EXACT_SYNONYM
   source: unmapped_duplicate_review_2026_05_11
+- synonym_text: alpha-ketoglutamate
+  synonym_type: RAW_TEXT
+  source: merge_from_UNMAPPED_0323
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 4
@@ -72,6 +75,17 @@ curation_history:
   changes: Absorbed duplicate unmapped record A-Ketoglutaric_Acid.yaml (UNMAPPED_0266);
     local mapped CHEBI:30915 record represents alpha-ketoglutaric acid and the unmapped
     surface form is the alpha/a notation variant used in CultureBotHT.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: merge_duplicate_unmapped
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed duplicate UNMAPPED_0323 "alpha-ketoglutamate". Edison deep research
+    (9 citations) resolved it as a misspelling of alpha-ketoglutarate = 2-oxoglutarate
+    — the SAME compound as this CHEBI:30915 record, not a distinct ingredient. Promotion
+    was refused by promote_resolved_unmapped.py (PK collision on CHEBI:30915), so
+    merged the surface form here as a synonym instead.
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
