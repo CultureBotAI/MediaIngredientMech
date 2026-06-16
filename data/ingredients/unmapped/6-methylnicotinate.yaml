@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: 6-methylnicotinate
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: 6-methylnicotinic acid
+  synonym_type: RELATED_SYNONYM
+  source: edison_deep_research
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -24,6 +27,15 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: deep-research-ingredient-edison
+  action: RESEARCHED_IDENTITY
+  new_status: UNMAPPED
+  llm_assisted: true
+  changes: 'Edison/PaperQA3 deep research: "6-methylnicotinate" is not uniquely grounded
+    — it can denote the carboxylate/anion OR the methyl ester (no source-backed CAS/CHEBI).
+    6-methylnicotinic acid is the likely intended free acid but not exact-equivalent.
+    Kept UNMAPPED pending the intended chemical form.'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2119); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11; retained as unmapped pending exact ontology
   evidence.

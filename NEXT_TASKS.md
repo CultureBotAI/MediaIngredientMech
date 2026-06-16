@@ -95,8 +95,23 @@ flavonoids, natural products, element placeholders, and mixtures.
   - Takeaway: deep research resolves identities that string-matching can't, but most
     of the residual is genuinely hard. The 2 "ready to map" records still await the
     multi-surface migration above. Edison reports live under `research/` (gitignored).
-  - Next batch candidates: the cobamide cluster (5-methoxy/5-methyl/adeninyl/
-    benzimidazolyl cobamide), `6-methylnicotinate`, `Amphotericin`, flavonoids.
+- **Batch 2 done (2026-06-16, `feat/deep-research-batch2-enrich`)** — 5 records
+  deep-researched (Edison/PaperQA3); **all confirmed UNMAPPED** (0 mappings, 0
+  merges) and enriched in place with the findings + provenance:
+  - `6-methylnicotinate` — ambiguous (carboxylate/anion vs methyl ester); +synonym
+    `6-methylnicotinic acid` (related).
+  - `Amphotericin` — spans A/B + formulations; do NOT exact-map to amphotericin B
+    (CHEBI:2682); +related synonyms `amphotericin B`/`AmB`.
+  - `7,2'-Dimethoxyflavone`, `7,4'-Dimethoxyisoflavone` — specific positional
+    isomers, no source-backed CAS/CHEBI; closeMatch to a flavone parent would lose
+    isomer specificity.
+  - `2',2'-Bisepigallocatechin Digallate` — polyphenol; no CAS/formula/CHEBI;
+    naming-variant instability prevents grounding.
+  - Confirms the residual is genuinely hard: like the cobamide in batch 1, these
+    specialized natural products / ambiguous-form compounds lack clean ontology
+    grounding. "Confirmed unmapped + enriched" is the correct, defensible outcome.
+  - Remaining candidates for future batches: the cobamide cluster (5-methoxy/
+    5-methyl/adeninyl/benzimidazolyl cobamide — likely all confirmed-unmapped).
 
 ## 4. mesh.db refresh → drop the 4 SCR exceptions (low priority)
 
