@@ -69,7 +69,13 @@ flavonoids, natural products, element placeholders, and mixtures.
      *decoded* subject label, e.g. between `MIM:1-Kestose` and `MIM:1-Pentanol`).
   4. `just export-lists` (docs). Verify: `reconcile_sssom` GAP 0, SSSOM invariants
      Rules A/B1/B2/B3, `validate-products` (the blocking id↔label gate), validate-strict.
-  - Worth scripting into a `promote_resolved_unmapped.py` helper if doing many.
+  - **Helper built (2026-06-16): `scripts/promote_resolved_unmapped.py`** automates
+    the whole recipe (collection move + canonical-label lookup + SSSOM row inserted in
+    sort order + regen + verify), with a **PK-collision guard** that refuses to create
+    a duplicate CHEBI primary (redirect those to a merge). `--dry-run` by default.
+    Usage: `python scripts/promote_resolved_unmapped.py --identifier UNMAPPED_NNNN
+    --to CHEBI:NNN --quality EXACT_MATCH --evidence-source "…" --note "…" --apply`.
+    Only handles exact/close (narrow/broad need registry SSSOM rows — hand-curate).
   - Note: the per-record filename sanitiser drifted over time, so a freshly-promoted
     file may get a slightly different slug casing than the old unmapped file — cosmetic.
 - **Batch 1 done (2026-06-14, `feat/deep-research-unmapped-batch`)** — 3 records
@@ -78,9 +84,11 @@ flavonoids, natural products, element placeholders, and mixtures.
   - `1-Naphtylacetic Acid` → **MAPPED 2026-06-15** (UNMAPPED_0316 → CHEBI:32918
     "1-naphthaleneacetic acid", EXACT_MATCH) via the migration recipe above. NAA,
     CAS 86-87-3 — a "naphtyl" misspelling string-matching missed. (unmapped 398 → 397)
-  - `alpha-ketoglutamate` (UNMAPPED_0323) → resolved to alpha-ketoglutarate /
-    2-oxoglutarate; free acid **CHEBI:30915**, anion CHEBI:16810. Ready to map once
-    the acid-vs-anion form is chosen.
+  - `alpha-ketoglutamate` → **MERGED 2026-06-16** into the existing `CHEBI:30915`
+    "alpha-ketoglutaric acid" record (added as a synonym; UNMAPPED_0323 removed).
+    `promote_resolved_unmapped.py`'s PK-collision guard caught that CHEBI:30915 (and
+    the anion CHEBI:16810) are already mapped — it's a duplicate, not a new mapping.
+    (unmapped 397 → 396)
   - `2-methyladeninyl cobamide` (UNMAPPED_0182) → **stays UNMAPPED, confirmed**: a
     specific corrinoid ("Factor A") with no source-backed CHEBI/CAS; do NOT map to
     cobalamin/B12. Validates the prior curator call; enriched with synonyms.

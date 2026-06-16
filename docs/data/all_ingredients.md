@@ -1,7 +1,7 @@
 # All Ingredients
 
-Generated: 2026-06-15T07:06:25.461907+00:00
-Total: 2267 ingredients
+Generated: 2026-06-16T07:39:38.178061+00:00
+Total: 2266 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -1897,7 +1897,6 @@ Total: 2267 ingredients
 | UNMAPPED_0181 |  | adeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0198 |  | Agelasine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0070 |  | Allen Medium | UNMAPPED |  |  | 1 |
-| UNMAPPED_0323 |  | alpha-ketoglutamate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0157 |  | Aluminum-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0324 |  | Aminoacids | UNMAPPED |  |  | 0 |
 | UNMAPPED_0325 |  | Amphotericin | UNMAPPED |  |  | 0 |
