@@ -112,6 +112,25 @@ flavonoids, natural products, element placeholders, and mixtures.
     grounding. "Confirmed unmapped + enriched" is the correct, defensible outcome.
   - Remaining candidates for future batches: the cobamide cluster (5-methoxy/
     5-methyl/adeninyl/benzimidazolyl cobamide — likely all confirmed-unmapped).
+- **Batch 3 done (2026-06-16, `feat/mim-map-inorganic-batch3`)** — a different angle:
+  not deep research but a **mappability triage** of the 396 residual. Most is
+  genuinely unmappable (commercial media/broths/agars, trace-element & vitamin
+  solutions, sera, extracts, grains, buffers, metal-NTA chelates). The high-yield
+  sliver is single compounds automated matching missed via formula/spelling
+  variants. **3 mapped** (EXACT_MATCH) via `promote_resolved_unmapped.py`, each
+  CHEBI id↔label verified against local OAK before mapping (so the blocking gate
+  stays green):
+  - `KNO2` (UNMAPPED_0413) → **CHEBI:232610** "potassium nitrite" (formula).
+  - `Thioglycollic acid` (UNMAPPED_0539) → **CHEBI:30065** "thioglycolic acid" (spelling).
+  - `Pyromelitic acid` (UNMAPPED_0504) → **CHEBI:45165** "pyromellitic acid" (misspelling).
+  (unmapped 396 → 393.)
+  - **Deferred — `KJ` (UNMAPPED_0412) = potassium iodide (Kaliumjodid):** the
+    helper's PK-collision guard caught CHEBI:8346 is **already mapped**, so KJ is a
+    duplicate needing a *merge* (add as synonym to the existing KI record + drop
+    UNMAPPED_0412), not a promotion — same shape as the alpha-ketoglutamate merge.
+  - Left alone (ambiguous, no source CAS to disambiguate): garbled salt-hydrate
+    formulae (`MnCl4 x n H2O`, `Na2MoO7 x 2 H2O`, `Na2Se2O3`, …), `Na-tetrathionate`,
+    `Sodium crotonate`, `α-D-Glucose monohydrate`. Map only with source confirmation.
 
 ## 4. mesh.db refresh → drop the 4 SCR exceptions (low priority)
 

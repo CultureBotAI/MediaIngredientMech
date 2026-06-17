@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0504
+identifier: CHEBI:45165
 preferred_term: Pyromelitic acid
 synonyms:
 - synonym_text: Pyromelitic acid
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -25,7 +25,24 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0504 -> CHEBI:45165 "pyromellitic acid" (EXACT_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1148); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11; retained as unmapped pending exact spelling
   and identity evidence.
 ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:45165
+  ontology_label: pyromellitic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MediaDive ingredient name + local OAK CHEBI exact-label verification
+    notes: '''Pyromelitic acid'' = pyromellitic acid (misspelling); OAK CHEBI:45165.'
