@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-06-16T07:39:38.177426+00:00
-Total: 396 ingredients
+Generated: 2026-06-17T07:03:23.291034+00:00
+Total: 393 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -178,7 +178,6 @@ Total: 396 ingredients
 | UNMAPPED_0409 | NCIT:C29321 | K-phosphate buffer | UNMAPPED | NCIT | NARROW_MATCH | 0 |
 | UNMAPPED_0411 |  | KH2PO3 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0412 |  | KJ | UNMAPPED |  |  | 0 |
-| UNMAPPED_0413 |  | KNO2 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0191 | CHEBI:185858 | Khayasin C | UNMAPPED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0414 |  | L-15 medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0415 |  | L-15 powder | UNMAPPED |  |  | 0 |
@@ -304,7 +303,6 @@ Total: 396 ingredients
 | UNMAPPED_0212 |  | Promitor | UNMAPPED |  |  | 0 |
 | UNMAPPED_0500 |  | Proteose yeastolate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0501 |  | Pulp of sour stone cherries | UNMAPPED |  |  | 0 |
-| UNMAPPED_0504 |  | Pyromelitic acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0132 |  | R agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0166 |  | Red Arabinan from sugar-beet | UNMAPPED |  |  | 1 |
 | UNMAPPED_0507 |  | Reinforced clostridial medium | UNMAPPED |  |  | 0 |
@@ -350,7 +348,6 @@ Total: 396 ingredients
 | UNMAPPED_0270 |  | Thauer's vitamin mix | UNMAPPED |  |  | 8 |
 | UNMAPPED_0257 |  | Thauer's vitamin mix no Biotin | UNMAPPED |  |  | 1 |
 | UNMAPPED_0538 |  | Thiamine solution see Medium No. 403 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0539 |  | Thioglycollic acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0618 |  | Titanium(III) citrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0541 |  | TitaniumIII chloride | UNMAPPED |  |  | 0 |
 | UNMAPPED_0542 |  | Titriplex1 | UNMAPPED |  |  | 0 |

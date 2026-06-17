@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0413
+identifier: CHEBI:232610
 preferred_term: KNO2
 synonyms:
 - synonym_text: KNO2
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -24,7 +24,25 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0413 -> CHEBI:232610 "potassium nitrite" (EXACT_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1235); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as KNO2 formula
   shorthand; left unmapped pending exact ontology evidence.
 ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:232610
+  ontology_label: potassium nitrite
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MediaDive ingredient name + local OAK CHEBI exact-label verification
+    notes: KNO2 = potassium nitrite (formula); OAK CHEBI:232610 canonical label 'potassium
+      nitrite'.

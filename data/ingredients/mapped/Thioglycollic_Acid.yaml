@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0539
+identifier: CHEBI:30065
 preferred_term: Thioglycollic acid
 synonyms:
 - synonym_text: Thioglycollic acid
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -25,7 +25,24 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0539 -> CHEBI:30065 "thioglycolic acid" (EXACT_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1814); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as thioglycollic acid; not merged to thioglycolate
   or sodium thioglycolate without exact acid evidence.
 ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:30065
+  ontology_label: thioglycolic acid
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MediaDive ingredient name + local OAK CHEBI exact-label verification
+    notes: '''Thioglycollic acid'' = thioglycolic acid (spelling variant); OAK CHEBI:30065.'
