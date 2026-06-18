@@ -221,6 +221,12 @@ export-browser:
 generate-umap:
     uv run python scripts/generate_ingredient_umap.py
 
+# QC coverage dashboard (shared kg_microbe_qc generator in culturebotai-claw).
+# Reads conf/qc_config.yaml; writes dashboard/index.html + coverage.png.
+gen-qc-dashboard:
+    PYTHONPATH=../culturebotai-claw/src /opt/homebrew/bin/python3.13 \
+      -m kg_microbe_qc --config conf/qc_config.yaml --output dashboard
+
 # Build complete documentation site
 build-docs: gen-docs export-browser
     @echo "Documentation built in docs/"

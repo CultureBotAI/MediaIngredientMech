@@ -1,0 +1,63 @@
+# MIM QC config — drives the kg_microbe_qc dashboard generator
+# (lives in culturebotai-claw/src/kg_microbe_qc/; invoked via `just gen-qc-dashboard`).
+#
+# Each slot is checked against every IngredientRecord YAML in yaml_dir (mapped +
+# unmapped). threshold = coverage required to pass (0.0-1.0); required=true means
+# missing the threshold reports FAIL, false reports WARN.
+
+repo_name: MediaIngredientMech
+yaml_dir: ../data/ingredients
+pattern: "*.yaml"
+
+slots:
+  # core identity (must be 100%)
+  - path: identifier
+    threshold: 1.0
+    required: true
+  - path: preferred_term
+    threshold: 1.0
+    required: true
+  - path: mapping_status
+    threshold: 1.0
+    required: true
+
+  # ontology grounding (unmapped records legitimately lack these → WARN, not FAIL)
+  - path: ontology_mapping.ontology_id
+    threshold: 0.80
+    required: false
+  - path: ontology_mapping.ontology_label
+    threshold: 0.80
+    required: false
+
+  # curation & typing (high coverage expected)
+  - path: curation_history
+    threshold: 0.90
+    required: false
+  - path: ingredient_type
+    threshold: 0.80
+    required: false
+  - path: occurrence_statistics
+    threshold: 0.50
+    required: false
+
+  # enrichment (partial coverage acceptable)
+  - path: synonyms
+    threshold: 0.50
+    required: false
+  - path: chemical_properties
+    threshold: 0.30
+    required: false
+  - path: media_roles
+    threshold: 0.20
+    required: false
+  - path: cellular_roles
+    threshold: 0.10
+    required: false
+
+  # new shared sections (no data yet → low bar, never blocking)
+  - path: datasets
+    threshold: 0.0
+    required: false
+  - path: discussions
+    threshold: 0.0
+    required: false
