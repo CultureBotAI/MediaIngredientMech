@@ -161,6 +161,28 @@ refresh-validator-pin:
         echo "re-pinned $f to $h"
     done
 
+# Durability guard for the shared LinkML module (Discussion + Dataset), vendored
+# byte-identical across the Mech repos — see culturebotai-claw#7. The pinned
+# sha256 is identical in every Mech; fail if this copy drifts.
+SHARED_SCHEMA_MODULE := "src/mediaingredientmech/schema/mech_shared.yaml"
+verify-schema-pin:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if command -v sha256sum >/dev/null 2>&1; then
+        sha256sum -c src/mediaingredientmech/schema/.mech_shared.sha256
+    else
+        shasum -a 256 -c src/mediaingredientmech/schema/.mech_shared.sha256
+    fi
+
+# Intentional sync only: re-pin after a deliberate, all-repos byte-identical update.
+refresh-schema-pin:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    f={{SHARED_SCHEMA_MODULE}}
+    if command -v sha256sum >/dev/null 2>&1; then h=$(sha256sum "$f" | cut -d' ' -f1); else h=$(shasum -a 256 "$f" | cut -d' ' -f1); fi
+    printf '%s  %s\n' "$h" "$f" > src/mediaingredientmech/schema/.mech_shared.sha256
+    echo "re-pinned $f to $h"
+
 # Composite QC: schema validation + strict closed-schema check +
 # evidence reference validation + SSSOM invariants.
 # NOTE: id↔label enforcement (Phase 2) is now BLOCKING, but lives in the

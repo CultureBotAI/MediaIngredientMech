@@ -26,6 +26,9 @@ default_range: string
 
 imports:
   - linkml:types
+  # Shared, byte-identical Mech module: Discussion (knowledge gaps) + Dataset.
+  # Vendored + sha-pinned across the Mech repos — see culturebotai-claw#7.
+  - mech_shared
 
 classes:
   IngredientCollection:
@@ -226,6 +229,19 @@ classes:
         bindings:
           - binds_value_of: environment_term
             obligation_level: REQUIRED
+      discussions:
+        range: Discussion
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          Open questions, knowledge gaps, controversies, and curation todos
+          attached to this ingredient (shared Discussion supertype; anchor
+          `attaches_to` into e.g. `ontology_mapping#<term>`).
+      datasets:
+        range: Dataset
+        multivalued: true
+        inlined_as_list: true
+        description: Public datasets (omics/sequence/phenotype) relevant to this ingredient.
 
   EnvironmentContext:
     description: >-
