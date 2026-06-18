@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: MnCl4 x 6 H2O
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: manganese(II) chloride
+  synonym_type: RAW_TEXT
+  source: edison_deep_research_2026_06
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -25,6 +28,17 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: edison_deep_research
+  action: REVIEWED_DEEP_RESEARCH
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  changes: 'Edison deep research (literature) + MediaDive recipe context (medium J1323
+    trace metals, alongside ZnCl2/Al2(SO4)3/FeSO4) identify this as manganese(II)
+    chloride. Left UNMAPPED: ''x 6 H2O'' is a non-standard hydrate (MnCl2 forms mono/di/tetrahydrate;
+    CHEBI has no hexahydrate term) and ''MnCl4'' is malformed — unsafe to assert an
+    exact hydrate identity. (Contrast MnCl4 x 4 H2O, merged to the tetrahydrate CHEBI:86368.)'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2071); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as an ambiguous
   manganese chloride hydrate formula; left unmapped.

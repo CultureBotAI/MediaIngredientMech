@@ -1,7 +1,7 @@
 generation_date: '2026-05-24T08:02:38.378922+00:00'
-total_count: 390
+total_count: 383
 mapped_count: 0
-unmapped_count: 390
+unmapped_count: 383
 ingredients:
 - identifier: UNMAPPED_0196
   preferred_term: 2-Carene-3-One
@@ -3941,6 +3941,12 @@ ingredients:
   - synonym_text: FeSO43 x n H2O
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: iron(III) sulfate hydrate
+    synonym_type: RAW_TEXT
+    source: edison_deep_research_2026_06
+  - synonym_text: Fe2(SO4)3 x n H2O
+    synonym_type: RAW_TEXT
+    source: edison_deep_research_2026_06
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -3962,6 +3968,19 @@ ingredients:
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
+  - timestamp: '2026-06-16T00:00:00+00:00'
+    curator: edison_deep_research
+    action: REVIEWED_DEEP_RESEARCH
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+    changes: 'Edison deep research (literature) + MediaDive recipe context (medium
+      J360, a mineral medium where it is the iron source alongside NiCl2/CoSO4/MnSO4/ZnSO4)
+      identify this as iron(III) sulfate hydrate; candidate CHEBI:131387 ''iron(3+)
+      sulfate hydrate'' (closeMatch at most). Left UNMAPPED: the label ''Fe(SO4)3
+      x n H2O'' is malformed (Fe2(SO4)3) and the hydrate (n) is unspecified, and iron(III)/iron(II)
+      sulfate hydrates are distinct CAS substances — unsafe to assert an exact identity
+      without the explicit hydrate.'
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1742); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as an ambiguous hydrated iron sulfate
     formula; not identity-mapped without exact formula/hydrate evidence.
@@ -6789,43 +6808,15 @@ ingredients:
     stock/pre-mix pending component-level recipe curation.'
   ingredient_type: STOCK_SOLUTION
   solution_type: OTHER
-- identifier: UNMAPPED_0449
-  preferred_term: MnCl4 x 4 H2O
-  synonyms:
-  - synonym_text: MnCl4 x 4 H2O
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:1828); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T08:04:31Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_FORMULA_AMBIGUITY
-    changes: Classified as a single inorganic salt hydrate surface form and left unmapped
-      because MnCl4 x 4 H2O is not locally verified as a valid manganese chloride
-      hydrate identity; mapping to manganese(II) chloride would alter stoichiometry.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:1828); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as an ambiguous
-    manganese chloride hydrate formula; left unmapped.
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0450
   preferred_term: MnCl4 x 6 H2O
   synonyms:
   - synonym_text: MnCl4 x 6 H2O
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: manganese(II) chloride
+    synonym_type: RAW_TEXT
+    source: edison_deep_research_2026_06
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -6847,6 +6838,18 @@ ingredients:
     previous_status: UNMAPPED
     new_status: UNMAPPED
     llm_assisted: true
+  - timestamp: '2026-06-16T00:00:00+00:00'
+    curator: edison_deep_research
+    action: REVIEWED_DEEP_RESEARCH
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+    changes: 'Edison deep research (literature) + MediaDive recipe context (medium
+      J1323 trace metals, alongside ZnCl2/Al2(SO4)3/FeSO4) identify this as manganese(II)
+      chloride. Left UNMAPPED: ''x 6 H2O'' is a non-standard hydrate (MnCl2 forms
+      mono/di/tetrahydrate; CHEBI has no hexahydrate term) and ''MnCl4'' is malformed
+      — unsafe to assert an exact hydrate identity. (Contrast MnCl4 x 4 H2O, merged
+      to the tetrahydrate CHEBI:86368.)'
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2071); no CAS-RN
     or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as an ambiguous
     manganese chloride hydrate formula; left unmapped.
@@ -7587,191 +7590,6 @@ ingredients:
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1725); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: STOCK_SOLUTION
-- identifier: UNMAPPED_0469
-  preferred_term: Na2Mo4 x 2 H2O
-  synonyms:
-  - synonym_text: Na2Mo4 x 2 H2O
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:736); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T08:04:31Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_FORMULA_AMBIGUITY
-    changes: Classified as a single inorganic molybdate-like salt hydrate and left
-      unmapped because the source formula is missing oxygen stoichiometry relative
-      to sodium molybdate dihydrate.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:736); no CAS-RN or
-    CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a malformed
-    molybdate hydrate shorthand; not merged to sodium molybdate dihydrate.
-  ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0471
-  preferred_term: Na2MoO7O4 x 2 H2O
-  synonyms:
-  - synonym_text: Na2MoO7O4 x 2 H2O
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:1416); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T08:04:31Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_FORMULA_AMBIGUITY
-    changes: Classified as a single inorganic molybdate-like salt hydrate and left
-      unmapped because the source formula is internally inconsistent and does not
-      match local sodium molybdate hydrate records.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:1416); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a malformed
-    molybdate hydrate shorthand; left unmapped.
-  ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0470
-  preferred_term: Na2MoO7 x 2 H2O
-  synonyms:
-  - synonym_text: Na2MoO7 x 2 H2O
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:1678); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T08:04:31Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_FORMULA_AMBIGUITY
-    changes: Classified as a single inorganic molybdate-like salt hydrate and left
-      unmapped because the source formula does not match local sodium molybdate hydrate
-      stoichiometry.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:1678); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a malformed
-    molybdate hydrate shorthand; not merged to sodium molybdate dihydrate.
-  ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0472
-  preferred_term: Na2S2SO3
-  synonyms:
-  - synonym_text: Na2S2SO3
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:1492); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T08:07:24Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_FORMULA_AMBIGUITY
-    changes: Classified as a single inorganic sulfur oxyanion salt surface form and
-      left unmapped because Na2S2SO3 does not match local sodium thiosulfate stoichiometry.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:1492); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as an ambiguous
-    sulfur oxyanion salt formula; not merged to sodium thiosulfate.
-  ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0473
-  preferred_term: Na2Se2O3
-  synonyms:
-  - synonym_text: Na2Se2O3
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:804); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T08:07:24Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_FORMULA_AMBIGUITY
-    changes: Classified as a single inorganic selenium oxyanion salt surface form
-      and left unmapped because Na2Se2O3 does not match local disodium selenite or
-      selenite hydrate stoichiometry.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:804); no CAS-RN or
-    CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as an ambiguous
-    selenium oxyanion salt formula; not merged to disodium selenite.
-  ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0474
-  preferred_term: Na2WO2 x 2 H2O
-  synonyms:
-  - synonym_text: Na2WO2 x 2 H2O
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:1743); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T08:04:31Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_FORMULA_AMBIGUITY
-    changes: Classified as a single inorganic tungstate-like salt hydrate and left
-      unmapped because the source formula does not match local sodium tungstate dihydrate
-      stoichiometry.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:1743); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a malformed
-    tungstate hydrate shorthand; not merged to sodium tungstate dihydrate.
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0465
   preferred_term: Na2 beta-glycerol PO4 x 5 H2O
   synonyms:

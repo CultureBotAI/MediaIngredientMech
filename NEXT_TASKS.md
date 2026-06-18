@@ -161,12 +161,26 @@ flavonoids, natural products, element placeholders, and mixtures.
     (`cas:13446-18-9`, `kgmicrobe.compound:magnesium_nitrate_hexahydrate`). Source: MediaDive
     ingredient 1763 CAS 13446-18-9. Gates green (reconcile GAP 0, invariants A/B1/B2/B3,
     validate-products, validate-strict).
-  - **Deferred — no source confirmation** (MediaDive `CAS-RN`+`formula`+`ChEBI` all
-    null; only the garbled name, so unverifiable per this pass's bar even though
-    chemically guessable): `Na2Mo4`/`Na2MoO7`/`Na2MoO7O4 x 2 H2O` (sodium molybdate?),
-    `Na2WO2 x 2 H2O` (sodium tungstate?), `Na2Se2O3` (sodium selenite?), `Na2S2SO3`
-    (sodium thiosulfate?), `MnCl4 x 4/6 H2O` (manganese(II) chloride hydrate?),
-    `Fe(SO4)3 x n H2O` (iron(III) sulfate?).
+  - **~~Deferred — no source confirmation~~ → RESOLVED 2026-06-16** (Batch 5,
+    `feat/mim-salt-dedup-merges`): Edison deep research + MediaDive **recipe context**
+    (the decisive new evidence — each appears among trace metals, and the correctly-spelled
+    salt appears in sibling recipes) + a **PK-collision check** showed these garbled,
+    0-occurrence orphans are **typo-duplicates of compounds already mapped in MIM**, so
+    they were **merged** (absorbed as RAW_TEXT synonyms + `MERGED_FROM_UNMAPPED_DUPLICATE`
+    history), not freshly mapped (which honors Edison's "don't exactMatch a malformed
+    label" caution — a merge asserts no new SSSOM row):
+    - `Na2Mo4` / `Na2MoO7` / `Na2MoO7O4 x 2 H2O` → `Na2MoO4 x 2 H2O` (CHEBI:75213 sodium molybdate dihydrate)
+    - `Na2WO2 x 2 H2O` → `Na2WO4 x 2 H2O` (CHEBI:63939 sodium tungstate dihydrate)
+    - `Na2Se2O3` → `Na2SeO3` (CHEBI:48843 disodium selenite)
+    - `Na2S2SO3` → `Na2S2O3` (CHEBI:132112 sodium thiosulfate)
+    - `MnCl4 x 4 H2O` → `MnCl2 x 4 H2O` (CHEBI:86368 manganese(II) chloride tetrahydrate)
+    (unmapped 390 → 383.)
+  - **Still deferred (enriched in place with Edison findings, left UNMAPPED):**
+    - `Fe(SO4)3 x n H2O` (UNMAPPED_0385) — iron(III) sulfate hydrate (candidate CHEBI:131387,
+      closeMatch); label malformed (Fe2(SO4)3) + hydrate `n` unspecified, and Fe sulfate
+      hydrates are distinct CAS substances — unsafe to assert exact identity.
+    - `MnCl4 x 6 H2O` (UNMAPPED_0450) — manganese(II) chloride, but `x 6 H2O` is a
+      non-standard hydrate with no CHEBI term; left unmapped (cf. the tetrahydrate, merged).
   - **Deferred — ambiguous source:** `Se-acid` (UNMAPPED_0517) — MediaDive CAS
     7783-08-6 = selen**ous** acid (CHEBI:26642) but its `formula` field `H2O4Se` =
     selen**ic** acid; the conflict blocks a confident call.
