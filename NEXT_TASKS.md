@@ -177,3 +177,18 @@ MeSH build excludes these recent (2020/2024) supplementary-concept records.
 **Keep the exceptions.** Only revisit if the semsql/obo MeSH build starts shipping
 C-prefix SCRs from 2020+; then drop the matching entries and re-run
 `just validate-products` to confirm OK_CANONICAL.
+
+## Adopt DisMech knowledge-gaps + datasets + QC dashboard (claw#7)
+
+Coordinated cross-Mech adoption of DisMech's domain-general features. Full plan,
+locked decisions, and DisMech schema references live in culturebotai-claw#7 (the
+shared, pinned LinkML module is authored once and vendored across all four Mechs).
+This repo's slice:
+- Knowledge gaps — add a `discussions` slot (broad `Discussion` supertype; `kind`
+  incl. KNOWLEDGE_GAP / OPEN_QUESTION / CONTROVERSY / CURATION_TODO) to
+  `IngredientRecord`, imported from the shared module; bind `attaches_to` anchors
+  to `ontology_mapping#…`. Wire a `knowledge-gap-scan` recipe over the existing
+  Edison harness.
+- Datasets — add the canonical shared `Dataset` slot (MIM models none today).
+- QC dashboard — adopt the generalized dashboard from Phase 3 (MIM currently has
+  only TSV/CI gates, no rendered dashboard).
