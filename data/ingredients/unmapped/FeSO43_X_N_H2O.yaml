@@ -4,6 +4,12 @@ synonyms:
 - synonym_text: FeSO43 x n H2O
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: iron(III) sulfate hydrate
+  synonym_type: RAW_TEXT
+  source: edison_deep_research_2026_06
+- synonym_text: Fe2(SO4)3 x n H2O
+  synonym_type: RAW_TEXT
+  source: edison_deep_research_2026_06
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -25,6 +31,19 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: edison_deep_research
+  action: REVIEWED_DEEP_RESEARCH
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+  changes: 'Edison deep research (literature) + MediaDive recipe context (medium J360,
+    a mineral medium where it is the iron source alongside NiCl2/CoSO4/MnSO4/ZnSO4)
+    identify this as iron(III) sulfate hydrate; candidate CHEBI:131387 ''iron(3+)
+    sulfate hydrate'' (closeMatch at most). Left UNMAPPED: the label ''Fe(SO4)3 x
+    n H2O'' is malformed (Fe2(SO4)3) and the hydrate (n) is unspecified, and iron(III)/iron(II)
+    sulfate hydrates are distinct CAS substances — unsafe to assert an exact identity
+    without the explicit hydrate.'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1742); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as an ambiguous hydrated iron sulfate formula;
   not identity-mapped without exact formula/hydrate evidence.

@@ -60,6 +60,9 @@ synonyms:
 - synonym_text: sodium dioxido(dioxo)tungsten--water (1/2)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Na2WO2 x 2 H2O
+  synonym_type: RAW_TEXT
+  source: merge_from_UNMAPPED_0474
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1398
@@ -168,6 +171,16 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na2WO4 x 2 H2O'' -> ''sodium tungstate dihydrate'': synced
     to canonical CHEBI label (preferred_term ''Na2WO4 x 2 H2O'' unchanged).'
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: merge_duplicate_unmapped
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: Absorbed duplicate UNMAPPED_0474 "Na2WO2 x 2 H2O". Edison deep research
+    (literature) + MediaDive recipe context + local OAK CHEBI confirm this is a garbled
+    spelling of 'Na2WO4 x 2 H2O' (already mapped to CHEBI:63939); promotion would
+    PK-collide, so absorbed here as a synonym.
 chemical_properties:
   cas_rn: 10213-10-2
   data_source: PubChem (via CHEBI:63939)

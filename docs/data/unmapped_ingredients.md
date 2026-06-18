@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-06-18T02:52:24.410291+00:00
-Total: 390 ingredients
+Generated: 2026-06-18T22:09:50.926233+00:00
+Total: 383 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -225,7 +225,6 @@ Total: 390 ingredients
 | UNMAPPED_0609 |  | Mineral salts medium base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0447 |  | Mineral solution see Medium No. 976 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0110 |  | Minor Nutrients | UNMAPPED |  |  | 1 |
-| UNMAPPED_0449 |  | MnCl4 x 4 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0450 |  | MnCl4 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0451 |  | MnII x EDTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0292 |  | MoLS4 | UNMAPPED |  |  | 17 |
@@ -251,12 +250,6 @@ Total: 390 ingredients
 | UNMAPPED_0466 |  | Na2-9,10-anthraquinone-2,6-disulfonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0467 |  | Na2HPO4-KH2PO4 buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0468 |  | Na2HPO4-NaH2PO4 buffer | UNMAPPED |  |  | 0 |
-| UNMAPPED_0469 |  | Na2Mo4 x 2 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0471 |  | Na2MoO7O4 x 2 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0470 |  | Na2MoO7 x 2 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0472 |  | Na2S2SO3 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0473 |  | Na2Se2O3 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0474 |  | Na2WO2 x 2 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0465 |  | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0030 |  | Na2glycerophosphate•5H2O | UNMAPPED |  |  | 4 |
 | UNMAPPED_0081 |  | Na2Glycerophosphate.5H2O | UNMAPPED |  |  | 1 |
