@@ -25,6 +25,12 @@ synonyms:
 - synonym_text: Kaliumiodid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: KJ
+  synonym_type: RAW_TEXT
+  source: merge_from_UNMAPPED_0412
+- synonym_text: Kaliumjodid
+  synonym_type: EXACT_SYNONYM
+  source: merge_from_UNMAPPED_0412
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 128
@@ -83,6 +89,20 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: merge_duplicate_unmapped
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Absorbed duplicate UNMAPPED_0412 "KJ" = Kaliumjodid (German for potassium
+    iodide). Recipe-context confirmed: in MediaDive media 1155 and 1727, ''KJ'' appears
+    among trace halide salts directly alongside KBr/NaBr (the classic bromide/iodide
+    pair). MediaDive''s ingredient record for ''KJ'' (id 1042) carries CAS 77-10-1
+    / ''Phencyclidine'' which is a source data error, and an earlier unit-false-positive
+    review (kilojoule, NCIT:C68547) lacked recipe context. Promotion to CHEBI:8346
+    would PK-collide with this record, so merged the surface form here as a synonym
+    instead.'
 chemical_properties:
   cas_rn: 7681-11-0
   data_source: CultureBotHT compounds_to_cas.csv

@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-06-18T02:29:00.595647+00:00
-Total: 2266 ingredients
+Generated: 2026-06-18T02:52:24.410982+00:00
+Total: 2265 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| cas:13446-18-9 | CHEBI:64736 | magnesium nitrate hexahydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:229630 | CHEBI:229630 | NH42CO3 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45165 | CHEBI:45165 | Pyromelitic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30065 | CHEBI:30065 | Thioglycollic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2051,7 +2052,6 @@ Total: 2266 ingredients
 | UNMAPPED_0407 |  | Isovitalex | UNMAPPED |  |  | 0 |
 | UNMAPPED_0409 | NCIT:C29321 | K-phosphate buffer | UNMAPPED | NCIT | NARROW_MATCH | 0 |
 | UNMAPPED_0411 |  | KH2PO3 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0412 |  | KJ | UNMAPPED |  |  | 0 |
 | UNMAPPED_0191 | CHEBI:185858 | Khayasin C | UNMAPPED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0414 |  | L-15 medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0415 |  | L-15 powder | UNMAPPED |  |  | 0 |
@@ -2092,7 +2092,6 @@ Total: 2266 ingredients
 | UNMAPPED_0442 |  | Metall salt sol. 44 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0443 |  | Methanol-utilizing bacteria medium B | UNMAPPED |  |  | 0 |
 | UNMAPPED_0233 |  | methyl 3-keto-a-D-glucopyranoside | UNMAPPED |  |  | 0 |
-| UNMAPPED_0444 |  | MgNO32 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0445 |  | micronutrient solution | UNMAPPED |  |  | 0 |
 | UNMAPPED_0262 |  | Mineral 3B solution | UNMAPPED |  |  | 9 |
 | UNMAPPED_0254 |  | Mineral 3B solution minus Nitrogen | UNMAPPED |  |  | 5 |
