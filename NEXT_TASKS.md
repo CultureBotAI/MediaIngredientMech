@@ -110,8 +110,10 @@ flavonoids, natural products, element placeholders, and mixtures.
   - Confirms the residual is genuinely hard: like the cobamide in batch 1, these
     specialized natural products / ambiguous-form compounds lack clean ontology
     grounding. "Confirmed unmapped + enriched" is the correct, defensible outcome.
-  - Remaining candidates for future batches: the cobamide cluster (5-methoxy/
-    5-methyl/adeninyl/benzimidazolyl cobamide — likely all confirmed-unmapped).
+  - **Cobamide cluster closed (2026-06-17)** — the remaining 4 (5-methoxy-/
+    5-methyl-benzimidazolyl, adeninyl, benzimidazolyl cobamide) deep-researched;
+    **all confirmed UNMAPPED** + enriched (Factor IIIm; 5-MeBza-Cba; pseudocobalamin;
+    underspecified — no stable CHEBI/CAS, upper-ligand ambiguity, must not map to B12).
 - **Batch 3 done (2026-06-16, `feat/mim-map-inorganic-batch3`)** — a different angle:
   not deep research but a **mappability triage** of the 396 residual. Most is
   genuinely unmappable (commercial media/broths/agars, trace-element & vitamin
@@ -162,10 +164,16 @@ flavonoids, natural products, element placeholders, and mixtures.
     7783-08-6 = selen**ous** acid (CHEBI:26642) but its `formula` field `H2O4Se` =
     selen**ic** acid; the conflict blocks a confident call.
 
-## 4. mesh.db refresh → drop the 4 SCR exceptions (low priority)
+## 4. mesh.db refresh → keep the 4 SCR exceptions (verified 2026-06-17)
 
 `conf/id_label_targets.yaml` carries 4 `exceptions` for valid MeSH supplementary-
 concept records (avocatin B, cholinium lysinate, sodium glutarate, plicacetin)
-absent from the cached `sqlite:obo:mesh`. If a newer mesh.db that includes these
-SCRs becomes available, drop the matching `exceptions` entries and re-run
-`just validate-products` to confirm they resolve as OK_CANONICAL.
+absent from the cached `sqlite:obo:mesh`.
+
+**Refresh tested 2026-06-17 — does NOT help.** Forced a clean re-download of
+`sqlite:obo:mesh` (394 MB, byte-identical to the prior cache): the 4 SCRs are
+**still absent** while older SCRs (e.g. C016600) are present — the upstream semsql
+MeSH build excludes these recent (2020/2024) supplementary-concept records.
+**Keep the exceptions.** Only revisit if the semsql/obo MeSH build starts shipping
+C-prefix SCRs from 2020+; then drop the matching entries and re-run
+`just validate-products` to confirm OK_CANONICAL.
