@@ -126,10 +126,13 @@ flavonoids, natural products, element placeholders, and mixtures.
   - `Thioglycollic acid` (UNMAPPED_0539) → **CHEBI:30065** "thioglycolic acid" (spelling).
   - `Pyromelitic acid` (UNMAPPED_0504) → **CHEBI:45165** "pyromellitic acid" (misspelling).
   (unmapped 396 → 393.)
-  - **Deferred — `KJ` (UNMAPPED_0412) = potassium iodide (Kaliumjodid):** the
-    helper's PK-collision guard caught CHEBI:8346 is **already mapped**, so KJ is a
-    duplicate needing a *merge* (add as synonym to the existing KI record + drop
-    UNMAPPED_0412), not a promotion — same shape as the alpha-ketoglutamate merge.
+  - **`KJ` (UNMAPPED_0412) — do NOT merge (2026-06-17 review):** the ledger guess
+    "Kaliumjodid = potassium iodide" is *plausible by German-naming domain knowledge*
+    but is **not source-confirmed** — MediaDive ingredient 1042 ("KJ") returns garbage
+    (auto-matched to **phencyclidine**, C17H25N / CAS 77-10-1), and a prior reviewer
+    flagged the **kilojoule** (unit) reading and classified it UNDEFINED_MIXTURE.
+    With the only source garbage and a genuine homonym, leave it UNMAPPED — merging
+    KI's synonyms onto an unconfirmed "KJ" isn't justified for a gate-enforced dataset.
   - Left alone (ambiguous, no source CAS to disambiguate): garbled salt-hydrate
     formulae (`MnCl4 x n H2O`, `Na2MoO7 x 2 H2O`, `Na2Se2O3`, …), `Na-tetrathionate`,
     `Sodium crotonate`, `α-D-Glucose monohydrate`. Map only with source confirmation.
@@ -149,11 +152,13 @@ flavonoids, natural products, element placeholders, and mixtures.
     not phosphate), lanthanum nitrate hexahydrate (10277-43-7), sodium β-glycerophosphate
     pentahydrate (13408-09-8), sodium metasilicate nonahydrate (13517-24-3), neodymium
     chloride hexahydrate (13477-89-9), praseodymium chloride hydrate (19423-77-9).
-  - **Deferred — narrowMatch needed** (source-confirmed, but CHEBI has only the
-    anhydrous parent so the hydrate is a `skos:narrowMatch`, which `promote_resolved_unmapped.py`
-    refuses; hand-curate per the corpus convention — cf. Ammonium_Molybdate_Tetrahydrate):
-    `Mg(NO3)2 x 6 H2O` (UNMAPPED_0444, CAS 13446-18-9) → narrowMatch **CHEBI:64736**
-    "magnesium nitrate" + `cas:13446-18-9` exactMatch.
+  - **`Mg(NO3)2 x 6 H2O` (UNMAPPED_0444) — DONE 2026-06-17** (`feat/resolve-deferred-salt-ledger`):
+    hand-curated the narrowMatch per the corpus convention. Re-confirmed via MediaDive
+    REST (1763: magnesium nitrate hexahydrate, CAS 13446-18-9). Now `cas:13446-18-9`
+    primary, `skos:narrowMatch` **CHEBI:64736** "magnesium nitrate" (anhydrous parent)
+    + 3 SSSOM rows (CHEBI narrowMatch + cas/kgmicrobe exactMatch registry rows for
+    Rule B1). reconcile in sync; SSSOM invariants A/B1/B2/B3 pass. (The last actionable
+    narrowMatch in the salt-hydrate ledger.)
   - **Deferred — no source confirmation** (MediaDive `CAS-RN`+`formula`+`ChEBI` all
     null; only the garbled name, so unverifiable per this pass's bar even though
     chemically guessable): `Na2Mo4`/`Na2MoO7`/`Na2MoO7O4 x 2 H2O` (sodium molybdate?),

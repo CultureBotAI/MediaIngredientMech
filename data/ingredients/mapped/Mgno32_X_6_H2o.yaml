@@ -1,0 +1,60 @@
+identifier: cas:13446-18-9
+preferred_term: MgNO32 x 6 H2O
+synonyms:
+- synonym_text: MgNO32 x 6 H2O
+  synonym_type: RAW_TEXT
+  source: mim-queue
+- synonym_text: magnesium nitrate hexahydrate
+  synonym_type: SYSTEMATIC_NAME
+  source: mediadive_rest
+- synonym_text: Mg(NO3)2 x 6 H2O
+  synonym_type: ALTERNATE_FORM
+  source: mediadive_rest
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1763); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:04:31Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FORMULA_SHORTHAND
+  changes: Classified as a single inorganic salt hydrate and left unmapped because
+    the source formula appears to abbreviate magnesium nitrate hexahydrate but is
+    not locally verified as an exact ontology identity.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-06-17T00:00:00+00:00'
+  curator: resolve_deferred_salt_ledger
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0444 -> cas:13446-18-9 (magnesium nitrate hexahydrate),
+    narrowMatch CHEBI:64736 'magnesium nitrate' (anhydrous parent). Source-confirmed
+    via MediaDive REST (CAS 13446-18-9). +3 SSSOM rows (Rule B1).
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1763); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a formula shorthand
+  for a magnesium nitrate hydrate; left unmapped pending exact formula/CAS evidence.
+ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:64736
+  ontology_label: magnesium nitrate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MediaDive REST (mediadive.ingredient:1763)
+    notes: MediaDive confirms name 'Mg(NO3)2 x 6 H2O' = magnesium nitrate hexahydrate,
+      CAS-RN 13446-18-9. The hexahydrate; CHEBI has only the anhydrous parent CHEBI:64736
+      'magnesium nitrate' -> NARROW_MATCH. Primary identifier kept as cas:13446-18-9.
+  - evidence_type: DATABASE_MATCH
+    source: CHEBI via OLS (parent)
+    notes: Anhydrous parent CHEBI:64736 matched; hexahydrate narrower.

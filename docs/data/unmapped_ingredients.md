@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-06-18T02:29:00.594997+00:00
-Total: 392 ingredients
+Generated: 2026-06-18T03:28:18.094108+00:00
+Total: 391 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -218,7 +218,6 @@ Total: 392 ingredients
 | UNMAPPED_0442 |  | Metall salt sol. 44 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0443 |  | Methanol-utilizing bacteria medium B | UNMAPPED |  |  | 0 |
 | UNMAPPED_0233 |  | methyl 3-keto-a-D-glucopyranoside | UNMAPPED |  |  | 0 |
-| UNMAPPED_0444 |  | MgNO32 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0445 |  | micronutrient solution | UNMAPPED |  |  | 0 |
 | UNMAPPED_0262 |  | Mineral 3B solution | UNMAPPED |  |  | 9 |
 | UNMAPPED_0254 |  | Mineral 3B solution minus Nitrogen | UNMAPPED |  |  | 5 |
