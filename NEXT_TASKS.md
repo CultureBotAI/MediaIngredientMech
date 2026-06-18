@@ -131,6 +131,36 @@ flavonoids, natural products, element placeholders, and mixtures.
   - Left alone (ambiguous, no source CAS to disambiguate): garbled salt-hydrate
     formulae (`MnCl4 x n H2O`, `Na2MoO7 x 2 H2O`, `Na2Se2O3`, …), `Na-tetrathionate`,
     `Sodium crotonate`, `α-D-Glucose monohydrate`. Map only with source confirmation.
+- **Batch 4 done (2026-06-16, `feat/mim-map-salt-hydrates`)** — the careful
+  source-confirmed pass over the ~25 garbled inorganic salt-hydrate formulae. Method:
+  each carries `source_id=mediadive.ingredient:NNNN`, so the **MediaDive REST API**
+  (`/rest/ingredient/{id}`) is the authoritative source — its `name` / `formula` /
+  `CAS-RN` fields confirm (or refuse) the intended compound even though MediaDive's
+  own `ChEBI` is null for all of them. Outcome: **1 mapped**, the rest deferred with
+  reasons (a fully-resolved ledger — do not re-investigate without new evidence):
+  - **Mapped:** `NH42CO3` (UNMAPPED_0480) → **CHEBI:229630** "ammonium carbonate"
+    (MediaDive CAS 10361-29-2; anhydrous = EXACT_MATCH). (unmapped 393 → 392.)
+  - **Deferred — no clean CHEBI term** (genuinely unmappable, like CommunityMech's
+    minting-exceptions; all source-CAS-confirmed but CHEBI lacks the salt): cerium(III)
+    nitrate hexahydrate (10294-41-4), chromium potassium sulfate dodecahydrate /
+    chrome alum (7788-99-0), potassium phosphite `KH2PO3` (13977-65-6 — NB: phosph**ite**,
+    not phosphate), lanthanum nitrate hexahydrate (10277-43-7), sodium β-glycerophosphate
+    pentahydrate (13408-09-8), sodium metasilicate nonahydrate (13517-24-3), neodymium
+    chloride hexahydrate (13477-89-9), praseodymium chloride hydrate (19423-77-9).
+  - **Deferred — narrowMatch needed** (source-confirmed, but CHEBI has only the
+    anhydrous parent so the hydrate is a `skos:narrowMatch`, which `promote_resolved_unmapped.py`
+    refuses; hand-curate per the corpus convention — cf. Ammonium_Molybdate_Tetrahydrate):
+    `Mg(NO3)2 x 6 H2O` (UNMAPPED_0444, CAS 13446-18-9) → narrowMatch **CHEBI:64736**
+    "magnesium nitrate" + `cas:13446-18-9` exactMatch.
+  - **Deferred — no source confirmation** (MediaDive `CAS-RN`+`formula`+`ChEBI` all
+    null; only the garbled name, so unverifiable per this pass's bar even though
+    chemically guessable): `Na2Mo4`/`Na2MoO7`/`Na2MoO7O4 x 2 H2O` (sodium molybdate?),
+    `Na2WO2 x 2 H2O` (sodium tungstate?), `Na2Se2O3` (sodium selenite?), `Na2S2SO3`
+    (sodium thiosulfate?), `MnCl4 x 4/6 H2O` (manganese(II) chloride hydrate?),
+    `Fe(SO4)3 x n H2O` (iron(III) sulfate?).
+  - **Deferred — ambiguous source:** `Se-acid` (UNMAPPED_0517) — MediaDive CAS
+    7783-08-6 = selen**ous** acid (CHEBI:26642) but its `formula` field `H2O4Se` =
+    selen**ic** acid; the conflict blocks a confident call.
 
 ## 4. mesh.db refresh → drop the 4 SCR exceptions (low priority)
 

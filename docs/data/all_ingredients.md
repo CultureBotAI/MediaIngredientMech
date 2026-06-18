@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-06-17T07:03:23.291728+00:00
+Generated: 2026-06-18T02:29:00.595647+00:00
 Total: 2266 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:229630 | CHEBI:229630 | NH42CO3 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45165 | CHEBI:45165 | Pyromelitic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30065 | CHEBI:30065 | Thioglycollic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:232610 | CHEBI:232610 | KNO2 | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2118,7 +2119,6 @@ Total: 2266 ingredients
 | UNMAPPED_0458 |  | N-Z-Amine® A | UNMAPPED |  |  | 0 |
 | UNMAPPED_0459 |  | N-Z-Case | UNMAPPED |  |  | 0 |
 | UNMAPPED_0457 |  | N-Z amine | UNMAPPED |  |  | 0 |
-| UNMAPPED_0480 |  | NH42CO3 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0299 |  | NLDM_metabolites | UNMAPPED |  |  | 10 |
 | UNMAPPED_0460 |  | Na-Nitrilotriacetat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0462 |  | Na-Phosphate-Buffer | UNMAPPED |  |  | 0 |
