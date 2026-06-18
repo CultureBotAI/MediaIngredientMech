@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0480
+identifier: CHEBI:229630
 preferred_term: NH42CO3
 synonyms:
 - synonym_text: NH42CO3
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -25,7 +25,26 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0480 -> CHEBI:229630 "ammonium carbonate" (EXACT_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2076); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as NH42CO3 shorthand;
   left unmapped pending exact formula/CAS evidence.
 ingredient_type: SINGLE_INGREDIENT
+ontology_mapping:
+  ontology_id: CHEBI:229630
+  ontology_label: ammonium carbonate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MediaDive ingredient 2076 (CAS 10361-29-2 ammonium carbonate) + local
+      OAK CHEBI exact-label verification
+    notes: '''NH42CO3'' = (NH4)2CO3 ammonium carbonate; MediaDive CAS 10361-29-2;
+      OAK CHEBI:229630 ''ammonium carbonate''.'

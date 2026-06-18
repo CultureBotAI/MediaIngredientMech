@@ -1,10 +1,11 @@
 # Mapped Ingredients
 
-Generated: 2026-06-17T07:03:23.288657+00:00
-Total: 1873 ingredients
+Generated: 2026-06-18T02:29:00.592345+00:00
+Total: 1874 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:229630 | CHEBI:229630 | NH42CO3 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45165 | CHEBI:45165 | Pyromelitic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30065 | CHEBI:30065 | Thioglycollic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:232610 | CHEBI:232610 | KNO2 | MAPPED | CHEBI | EXACT_MATCH | 0 |

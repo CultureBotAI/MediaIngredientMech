@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-06-17T07:03:23.291034+00:00
-Total: 393 ingredients
+Generated: 2026-06-18T02:29:00.594997+00:00
+Total: 392 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -245,7 +245,6 @@ Total: 393 ingredients
 | UNMAPPED_0458 |  | N-Z-Amine® A | UNMAPPED |  |  | 0 |
 | UNMAPPED_0459 |  | N-Z-Case | UNMAPPED |  |  | 0 |
 | UNMAPPED_0457 |  | N-Z amine | UNMAPPED |  |  | 0 |
-| UNMAPPED_0480 |  | NH42CO3 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0299 |  | NLDM_metabolites | UNMAPPED |  |  | 10 |
 | UNMAPPED_0460 |  | Na-Nitrilotriacetat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0462 |  | Na-Phosphate-Buffer | UNMAPPED |  |  | 0 |
