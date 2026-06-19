@@ -1,3 +1,8 @@
+---
+name: merge-ingredients
+description: Use this skill to deduplicate and merge MediaIngredientMech ingredient records — when two or more records describe the same ingredient (duplicate CHEBI mappings, name variants, or a placeholder plus its resolved record) and must be consolidated into one, preserving synonyms, occurrence statistics, curation_history, and SSSOM rows. Covers detection strategies, the merge procedure, and post-merge validation.
+---
+
 # Merge Ingredients Skill
 
 **Purpose**: Comprehensive guide for deduplicating and merging ingredient records in MediaIngredientMech
