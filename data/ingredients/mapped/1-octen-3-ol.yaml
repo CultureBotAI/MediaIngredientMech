@@ -48,3 +48,32 @@ chemical_properties:
   inchi: InChI=1S/C8H16O/c1-3-5-6-7-8(9)4-2/h4,8-9H,2-3,5-7H2,1H3
   smiles: C=CC(O)CCCCC
 ingredient_type: SINGLE_INGREDIENT
+discussions:
+- discussion_id: kgscan-ca9d598a165f
+  prompt: 'Knowledge gap for 1-octen-3-ol: The use of plant-based proteins is a promising route, but it also comes with challenges: Plant-based proteins often contain antinutritional factors and off-flavors, which can negatively impact consumer acceptance.'
+  kind: KNOWLEDGE_GAP
+  status: OPEN
+  rationale: 'Surfaced by the Europe PMC literature gap-signal scan (categories: explicit_gap, future_work, limitations_barriers, unclear_unknown). Curator review required: set attaches_to, refine the prompt, and weigh the cited evidence.'
+  attaches_to: []
+  evidence:
+  - reference: PMID:41918190
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: 'The use of plant-based proteins is a promising route, but it also comes with challenges: Plant-based proteins often contain antinutritional factors and off-flavors, which can negatively impact consumer acceptance.'
+    explanation: Gap-signal sentence (limitations_barriers) from the cited abstract.
+  - reference: PMID:41098762
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: The correlation between flavor profiles and microbial communities in Jiang-shui, a traditional fermented vegetable product from Northwest China, remains incompletely understood.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  - reference: PMID:41745288
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: It also identifies existing research gaps and prospects for future research directions.
+    explanation: Gap-signal sentence (explicit_gap, future_work) from the cited abstract.
+  - reference: PMID:41815431
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: However, the information regarding the molecular mechanisms involved in mycorrhizal VOCs signaling and their effect on plants remains still elusive.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  posed_by: kg-microbe-kgscan

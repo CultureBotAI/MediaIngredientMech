@@ -62,3 +62,32 @@ media_roles:
       (carbohydrate)'
     curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
       recommended.
+discussions:
+- discussion_id: kgscan-f77a72b7ddb7
+  prompt: 'Knowledge gap for 1-Kestose: Background Lignocellulose represents a primary input of organic carbon (C) into soils, yet the identity of specific microorganisms and genes which drive lignocellulose turnover in soils remains poorly understood.'
+  kind: KNOWLEDGE_GAP
+  status: OPEN
+  rationale: 'Surfaced by the Europe PMC literature gap-signal scan (categories: explicit_gap, future_work, limitations_barriers, unclear_unknown). Curator review required: set attaches_to, refine the prompt, and weigh the cited evidence.'
+  attaches_to: []
+  evidence:
+  - reference: PMID:41373036
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Background Lignocellulose represents a primary input of organic carbon (C) into soils, yet the identity of specific microorganisms and genes which drive lignocellulose turnover in soils remains poorly understood.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  - reference: DOI:10.21203/rs.3.rs-6822283/v1
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: 'Abstract Background: Lignocellulose represents a primary input of organic carbon (C) into soils, yet the identity of specific microorganisms and genes which drive lignocellulose turnover in soils remain poorly understood.'
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  - reference: PMID:41367416
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Key research gaps include limited long-term safety data, heterogeneous human cohorts and the need for large multicenter trials and machine-learning-guided responder prediction.
+    explanation: Gap-signal sentence (explicit_gap) from the cited abstract.
+  - reference: PMID:40284226
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: It has been reported that 1-Kestose, a fructooligosaccharide, can reduce blood cholesterol and triglyceride levels in rats; however, the underlying mechanisms remain unclear.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  posed_by: kg-microbe-kgscan
