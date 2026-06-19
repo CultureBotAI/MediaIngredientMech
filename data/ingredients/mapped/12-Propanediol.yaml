@@ -48,3 +48,32 @@ chemical_properties:
   inchi: InChI=1S/C3H8O2/c1-3(5)2-4/h3-5H,2H2,1H3
   smiles: CC(O)CO
 ingredient_type: SINGLE_INGREDIENT
+discussions:
+- discussion_id: kgscan-2db2ffbbe7ca
+  prompt: 'Knowledge gap for 1,2-Propanediol: By integrating data from experimental models, clinical studies, and translational research, the review identifies areas of consensus, ongoing controversy, and major knowledge gaps in IBD pathophysiology and clinical practice.'
+  kind: KNOWLEDGE_GAP
+  status: OPEN
+  rationale: 'Surfaced by the Europe PMC literature gap-signal scan (categories: controversy_conflict, explicit_gap, future_work, limitations_barriers, unclear_unknown). Curator review required: set attaches_to, refine the prompt, and weigh the cited evidence.'
+  attaches_to: []
+  evidence:
+  - reference: PMID:42198674
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: By integrating data from experimental models, clinical studies, and translational research, the review identifies areas of consensus, ongoing controversy, and major knowledge gaps in IBD pathophysiology and clinical practice.
+    explanation: Gap-signal sentence (explicit_gap, controversy_conflict) from the cited abstract.
+  - reference: PMID:41191190
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Despite the remarkable progress in biopropanol production technology, it still faces numerous challenges, including the low production efficiency of natural microorganisms, the strong inhibitory effect of the product, and poor substrate conversion rates.
+    explanation: Gap-signal sentence (limitations_barriers) from the cited abstract.
+  - reference: PMID:41715897
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Despite their recognized importance, the molecular strategies through which HMOs govern microbial competition and niche establishment remain poorly understood.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  - reference: PMID:42149637
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: However, the fitness costs imposed by multidrug-resistant (MDR) IncHI2 plasmids across different serovars and the underlying mechanisms remain poorly understood.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  posed_by: kg-microbe-kgscan
