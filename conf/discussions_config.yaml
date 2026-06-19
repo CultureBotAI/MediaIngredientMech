@@ -1,0 +1,7 @@
+# MIM discussions browser config — drives kg_microbe_discussions (in culturebotai-claw).
+repo_name: MediaIngredientMech
+record_glob: ../data/ingredients/**/*.yaml
+name_fields: [preferred_term, name]
+id_field: identifier
+discussions_field: discussions
+page_url_template: "../pages/ingredient/{category}/{stem}.html#{discussion_id}"
