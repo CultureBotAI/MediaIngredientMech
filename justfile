@@ -333,3 +333,8 @@ clean:
     rm -rf build/ dist/ *.egg-info htmlcov/ .pytest_cache/ .coverage
     find . -type d -name __pycache__ -exec rm -rf {} +
     find . -type f -name "*.pyc" -delete
+
+# Discussions / knowledge-gap browser (shared kg_microbe_discussions in claw).
+gen-discussions-data:
+    PYTHONPATH=../culturebotai-claw/src /opt/homebrew/bin/python3.13 \
+      -m kg_microbe_discussions --config conf/discussions_config.yaml --output app/discussions
