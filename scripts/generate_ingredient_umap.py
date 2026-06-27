@@ -35,7 +35,7 @@ console = Console()
 #      the 5.7 GB artifact is only vendored once per developer machine.
 # All three locations are resolved relative to the script so the file works
 # on any machine that has the Mech repos checked out as siblings.
-_EMBEDDINGS_FILENAME = "DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_v2_2026-05-26_00_56_15.tsv.gz"
+_EMBEDDINGS_FILENAME = "DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_v3_2026-06-26_12_55_27.tsv.gz"
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 _LOCAL_EMBEDDINGS = _REPO_ROOT / "data" / "embeddings" / _EMBEDDINGS_FILENAME
 _COMMUNITYMECH_EMBEDDINGS = (
