@@ -1,251 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediaIngredientMech - Curated Media Ingredient Ontology Mappings</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-        }
-
-        .card h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .card p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-
-        .btn:hover {
-            background: #5568d3;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .stat-label {
-            color: #666;
-            margin-top: 0.5rem;
-        }
-
-        .features {
-            background: white;
-            padding: 3rem 2rem;
-            margin-top: 3rem;
-            border-radius: 8px;
-        }
-
-        .features h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-
-        .feature-list {
-            list-style: none;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .feature-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-
-        .feature-list li::before {
-            content: "✓";
-            color: #667eea;
-            font-weight: bold;
-            margin-right: 1rem;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            margin-top: 3rem;
-        }
-
-        footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MediaIngredientMech — ingredient mappings</title>
+<style>
+  :root{
+    --pastel-a:#BCEBE4;      /* pastel aqua */
+    --pastel-b:#DCD0F3;      /* pastel purple */
+    --accent:#7E5BC4;
+    --ink:#1a1a1a;
+    --muted:#555;
+    --card:#ffffff;
+    --line:rgba(0,0,0,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink);background:var(--pastel-b);line-height:1.55}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .hero{background:linear-gradient(135deg,var(--pastel-a),var(--pastel-b));
+        padding:64px 24px 52px;text-align:center;border-bottom:1px solid var(--line)}
+  .hero h1{margin:0 0 .2em;font-size:2.7rem;letter-spacing:-.02em}
+  .hero .tagline{margin:0 auto;max-width:660px;font-size:1.15rem}
+  .stats{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:30px}
+  .stat{background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:12px;
+        padding:12px 22px;min-width:120px}
+  .stat b{display:block;font-size:1.7rem;line-height:1.1}
+  .stat span{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .wrap{max-width:980px;margin:0 auto;padding:48px 24px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;
+        box-shadow:0 1px 3px rgba(0,0,0,.05);transition:transform .15s ease,box-shadow .15s ease}
+  .card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.10)}
+  .card .ic{font-size:2.1rem}
+  .card h2{margin:.45em 0 .35em;font-size:1.25rem}
+  .card p{margin:0 0 1.2em;color:var(--muted);font-size:.95rem}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:.5em 1.15em;
+       border-radius:999px;font-size:.9rem;font-weight:600}
+  .btn:hover{filter:brightness(.93);text-decoration:none}
+  footer{border-top:1px solid var(--line);background:rgba(255,255,255,.45);
+         padding:30px 24px;text-align:center;font-size:.9rem;color:var(--muted)}
+  footer .fam{margin:.2em 0}
+  footer .fam a{margin:0 .45em;white-space:nowrap}
+  footer strong{color:var(--ink)}
+</style>
 </head>
 <body>
-    <div class="hero">
-        <h1>🧪 MediaIngredientMech</h1>
-        <p>Curated Media Ingredient Ontology Mappings with LLM-Assisted Workflows</p>
+  <header class="hero">
+    <h1>MediaIngredientMech</h1>
+    <p class="tagline">Curated media-ingredient ontology mappings — CHEBI &middot; FOODON &middot; NCIT &middot; CAS.</p>
+    <div class="stats">
+      <div class="stat"><b>1,107</b><span>ingredients</span></div>
+      <div class="stat"><b>995</b><span>mapped</span></div>
+      <div class="stat"><b>89.9%</b><span>coverage</span></div>
     </div>
-
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-value">1,107</div>
-                <div class="stat-label">Total Ingredients</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">995</div>
-                <div class="stat-label">Mapped to CHEBI</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">112</div>
-                <div class="stat-label">Unmapped</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">89.9%</div>
-                <div class="stat-label">Coverage</div>
-            </div>
-        </div>
-
-        <div class="cards">
-            <div class="card">
-                <h2>🔍 Browse Ingredients</h2>
-                <p>Explore the complete catalog of curated media ingredients with interactive search and filtering.</p>
-                <a href="browser.html" class="btn">Open Browser</a>
-            </div>
-
-            <div class="card">
-                <h2>🎨 UMAP Visualization</h2>
-                <p>Interactive 2D projection of ingredient embeddings showing semantic relationships in knowledge graph space.</p>
-                <a href="ingredient_umap.html" class="btn">Explore UMAP</a>
-            </div>
-
-            <div class="card">
-                <h2>📚 Schema Documentation</h2>
-                <p>View the complete LinkML schema documentation with all classes, slots, and enumerations.</p>
-                <a href="index.md" class="btn">View Schema</a>
-            </div>
-
-            <div class="card">
-                <h2>💾 GitHub Repository</h2>
-                <p>Access the source code, scripts, and contribute to the curation workflow.</p>
-                <a href="https://github.com/CultureBotAI/MediaIngredientMech" class="btn">View on GitHub</a>
-            </div>
-        </div>
-
-        <div class="features">
-            <h2>Features</h2>
-            <ul class="feature-list">
-                <li><strong>LinkML Schema:</strong> Standardized schema for ingredient records with ontology mappings</li>
-                <li><strong>Ontology Integration:</strong> Mappings to CHEBI, FOODON, NCIT, MESH, UBERON, and ENVO</li>
-                <li><strong>Individual YAML Records:</strong> One file per ingredient following DisMech methodology</li>
-                <li><strong>Curation History:</strong> Full audit trail of all curation actions</li>
-                <li><strong>LLM-Assisted:</strong> Track LLM assistance in mapping suggestions</li>
-                <li><strong>Synonym Management:</strong> Multiple name variants and raw text forms</li>
-                <li><strong>Usage Statistics:</strong> Track ingredient occurrences across media recipes</li>
-                <li><strong>Quality Metrics:</strong> Mapping quality assessment (exact match, synonym match, etc.)</li>
-                <li><strong>Validation:</strong> Comprehensive schema and ontology validation</li>
-                <li><strong>Browser Interface:</strong> Interactive web-based exploration and search</li>
-            </ul>
-        </div>
+  </header>
+  <main class="wrap">
+    <div class="cards">
+      <div class="card">
+        <div class="ic">&#128270;</div>
+        <h2>Record browser</h2>
+        <p>Search ingredients by name, synonym, or ontology ID; filter by source, mapping status, and mapping quality.</p>
+        <a class="btn" href="browser.html">Browse records &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="ic">&#128506;&#65039;</div>
+        <h2>Embedding browser</h2>
+        <p>Interactive UMAP of ingredient embeddings in KG-Microbe space.</p>
+        <a class="btn" href="ingredient_umap.html">Explore UMAP &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="ic">&#128187;</div>
+        <h2>GitHub</h2>
+        <p>Source code, data, schema, and the curation workflow.</p>
+        <a class="btn" href="https://github.com/CultureBotAI/MediaIngredientMech">View on GitHub &rarr;</a>
+      </div>
     </div>
-
-    <footer>
-        <p>
-            <strong>MediaIngredientMech</strong> |
-            Part of the <a href="https://github.com/CultureBotAI/CultureMech">CultureMech</a> Knowledge Graph Hub |
-            <a href="https://github.com/CultureBotAI/MediaIngredientMech">GitHub</a>
-        </p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">
-            Generated: 2026-03-06 | Schema Version: 1.0.0
-        </p>
-    </footer>
+  </main>
+  <footer>
+    <div class="fam"><strong>KG-Microbe Mechs:</strong>
+      <a href="https://culturebotai.github.io/CultureMech/">CultureMech</a>&middot;<a href="https://culturebotai.github.io/MediaIngredientMech/">MediaIngredientMech</a>&middot;<a href="https://culturebotai.github.io/CommunityMech/">CommunityMech</a>&middot;<a href="https://culturebotai.github.io/TraitMech/">TraitMech</a>
+    </div>
+    <div class="fam">
+      <a href="https://github.com/Knowledge-Graph-Hub/kg-microbe">kg-microbe</a>&middot;<a href="https://w3id.org/metpo">METPO</a>
+    </div>
+  </footer>
 </body>
 </html>
