@@ -1,53 +1,51 @@
-name: Generate per-ingredient pages
+name: Deploy GitHub Pages
 
-# This workflow renders MIM's Phase 5 per-ingredient HTML detail pages
-# (one HTML file per ingredient YAML) and uploads them as a workflow
-# artifact. It does NOT deploy to GitHub Pages — MIM currently serves
-# a Jekyll site at the same Pages endpoint, and replacing that needs
-# the deferred mkdocs Material migration first.
-#
-# To inspect the generated pages: GitHub Actions → this workflow run →
-# Artifacts panel → download `ingredient-pages-<run_id>.zip`.
-#
-# Phase 2/5 of the dismech-pattern port; see
-# ../../culturebotai-claw/docs/proposals/phase5_mkdocs_material_and_browser_parity.md
+# Publishes MIM's static site (the committed `docs/` web root: landing page,
+# ingredient browser, ingredient UMAP, and their JSON data) to GitHub Pages
+# via the Actions deploy path. `docs/` is authored/committed in-repo (the
+# landing + browser + umap are static; per-ingredient detail pages are a
+# separate artifact build). The site is served verbatim (no Jekyll).
 
 on:
   push:
     branches: [main]
     paths:
-      - "data/ingredients/**.yaml"
-      - "src/mediaingredientmech/templates/**"
-      - "src/mediaingredientmech/render_ingredient_pages.py"
+      - "docs/**"
       - ".github/workflows/generate-pages.yaml"
   workflow_dispatch:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout MIM
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Disable Jekyll (serve docs/ as static)
+        run: touch docs/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
         with:
-          python-version: "3.13"
+          enablement: true
 
-      - name: Install deps
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install pyyaml jinja2 markupsafe
-
-      - name: Render per-ingredient pages
-        run: |
-          python src/mediaingredientmech/render_ingredient_pages.py
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload docs/ artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: ingredient-pages-${{ github.run_id }}
-          path: pages/
-          retention-days: 30
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
