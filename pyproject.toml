@@ -48,6 +48,12 @@ dependencies = [
     # Used by scripts/generate_ingredient_umap.py to project KG-Microbe
     # ingredient embeddings into 2D for the docs/ingredient_umap.html viewer.
     "umap-learn>=0.5.0",
+    # Default 2D reducer for the ingredient projection (PCA-init, fixed seed);
+    # UMAP remains selectable via --method umap. scikit-learn (normalize/PCA)
+    # is a transitive dep of umap-learn but pinned here explicitly so the
+    # pacmap branch's `from sklearn.preprocessing import normalize` never breaks.
+    "pacmap>=0.7",
+    "scikit-learn>=1.0",
 ]
 
 [project.optional-dependencies]
