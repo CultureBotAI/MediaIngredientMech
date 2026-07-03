@@ -161,21 +161,25 @@ class IngredientUMAPGenerator:
         self,
         ingredients_dir: Path,
         min_coverage: float = 0.5,
+        method: str = "pacmap",
         n_neighbors: int = 15,
         min_dist: float = 0.1,
         random_state: int = 42
     ) -> pd.DataFrame:
-        """Generate UMAP projection for ingredients.
+        """Generate a 2D projection for ingredients.
 
         Args:
             ingredients_dir: Directory with individual ingredient YAML files
             min_coverage: Minimum coverage to include ingredient
-            n_neighbors: UMAP n_neighbors parameter
-            min_dist: UMAP min_dist parameter
+            method: 2D reducer to use — "pacmap" (default; PCA-init, fixed seed,
+                L2-normalized rows to mirror cosine) or "umap".
+            n_neighbors: UMAP n_neighbors parameter (UMAP branch only)
+            min_dist: UMAP min_dist parameter (UMAP branch only)
             random_state: Random seed
 
         Returns:
-            DataFrame with ingredient_id, umap_x, umap_y
+            DataFrame with ingredient_id, umap_x, umap_y (coordinate field names
+            are kept as umap_x/umap_y regardless of method for HTML/JS compatibility)
         """
         # Collect ingredient data
         ingredient_vectors = []
@@ -279,24 +283,45 @@ class IngredientUMAPGenerator:
         # Convert to numpy array
         X = np.array(ingredient_vectors)
 
-        # Run UMAP
-        console.print(f"[yellow]Running UMAP (n_neighbors={n_neighbors}, min_dist={min_dist})...[/yellow]")
-        reducer = umap.UMAP(
-            n_neighbors=n_neighbors,
-            min_dist=min_dist,
-            random_state=random_state,
-            n_components=2
-        )
-        embedding_2d = reducer.fit_transform(X)
+        # Run the selected 2D reducer.
+        method = (method or "pacmap").lower()
+        if method == "pacmap":
+            # L2-normalize rows first (mirrors cosine on the original vectors),
+            # then PCA-init + fixed seed for a reproducible embedding.
+            from sklearn.preprocessing import normalize
+            import pacmap
 
-        # Create DataFrame
+            console.print(
+                f"[yellow]Running PaCMAP (PCA-init, random_state={random_state})...[/yellow]"
+            )
+            X_norm = normalize(X.astype("float32"))
+            reducer = pacmap.PaCMAP(n_components=2, random_state=random_state)
+            embedding_2d = reducer.fit_transform(X_norm, init="pca")
+        elif method == "umap":
+            console.print(
+                f"[yellow]Running UMAP (n_neighbors={n_neighbors}, min_dist={min_dist})...[/yellow]"
+            )
+            reducer = umap.UMAP(
+                n_neighbors=n_neighbors,
+                min_dist=min_dist,
+                random_state=random_state,
+                n_components=2
+            )
+            embedding_2d = reducer.fit_transform(X)
+        else:
+            raise ValueError(f"Unknown method {method!r}; expected 'pacmap' or 'umap'")
+
+        # Create DataFrame. Coordinate columns stay umap_x/umap_y for every
+        # method so the static docs/ingredient_umap.html + JS keep working.
         df = pd.DataFrame({
             'ingredient_id': ingredient_ids,
             'umap_x': embedding_2d[:, 0],
             'umap_y': embedding_2d[:, 1]
         })
 
-        console.print(f"[green]UMAP completed: {len(df)} ingredients projected to 2D[/green]")
+        console.print(
+            f"[green]{method.upper()} completed: {len(df)} ingredients projected to 2D[/green]"
+        )
 
         return df
 
@@ -430,16 +455,22 @@ def build_visualization_data(
     help='Force reload embeddings from TSV.gz'
 )
 @click.option(
+    '--method',
+    type=click.Choice(['pacmap', 'umap'], case_sensitive=False),
+    default='pacmap',
+    help='2D reducer: pacmap (default; PCA-init, fixed seed) or umap'
+)
+@click.option(
     '--n-neighbors',
     type=int,
     default=15,
-    help='UMAP n_neighbors parameter'
+    help='UMAP n_neighbors parameter (umap method only)'
 )
 @click.option(
     '--min-dist',
     type=float,
     default=0.1,
-    help='UMAP min_dist parameter'
+    help='UMAP min_dist parameter (umap method only)'
 )
 def main(
     embeddings_path: str,
@@ -447,10 +478,11 @@ def main(
     output: str,
     cache_dir: str,
     force_reload: bool,
+    method: str,
     n_neighbors: int,
     min_dist: float
 ):
-    """Generate interactive UMAP visualization of ingredient embeddings."""
+    """Generate interactive 2D visualization of ingredient embeddings."""
     console.print("\n[bold]🔬 MediaIngredientMech UMAP Visualization Generator[/bold]\n")
 
     embeddings_path = Path(embeddings_path)
@@ -463,11 +495,12 @@ def main(
     loader = IngredientEmbeddingLoader(embeddings_path, cache_dir_path)
     embeddings = loader.load_embeddings(force_reload=force_reload)
 
-    # Step 2: Generate UMAP
-    console.print("\n[bold]Step 2:[/bold] Generating UMAP projection...")
+    # Step 2: Generate 2D projection
+    console.print(f"\n[bold]Step 2:[/bold] Generating {method.upper()} projection...")
     generator = IngredientUMAPGenerator(embeddings)
     umap_df = generator.generate_umap(
         ingredients_dir,
+        method=method,
         n_neighbors=n_neighbors,
         min_dist=min_dist
     )
