@@ -202,7 +202,7 @@
     <div class="container">
         <header>
             <h1>🧪 Ingredient Embedding Space</h1>
-            <p class="subtitle">PaCMAP projection of 1,098 ingredients from KG-Microbe knowledge graph (986 with real embeddings, 112 with synthetic embeddings)</p>
+            <p class="subtitle" id="subtitle">PaCMAP projection of ingredients from the KG-Microbe knowledge graph</p>
             <a href="index.html" class="nav-link">← Back to Home</a>
         </header>
 
@@ -296,6 +296,15 @@
             document.getElementById('mapped-ingredients').textContent = mapped;
             document.getElementById('unmapped-ingredients').textContent = unmapped;
             document.getElementById('median-occurrences').textContent = median;
+
+            // Keep the subtitle count in sync with the loaded data (never stale).
+            const subtitle = document.getElementById('subtitle');
+            if (subtitle) {
+                subtitle.textContent =
+                    `PaCMAP projection of ${ingredientData.length.toLocaleString()} ingredients from the `
+                    + `KG-Microbe knowledge graph (${mapped.toLocaleString()} mapped, `
+                    + `${unmapped.toLocaleString()} unmapped)`;
+            }
         }
 
         function renderUMAP() {
