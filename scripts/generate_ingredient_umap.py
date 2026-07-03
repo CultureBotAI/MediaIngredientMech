@@ -23,6 +23,12 @@ _src = _project_root / "src"
 if str(_src) not in sys.path:
     sys.path.insert(0, str(_src))
 
+# Ensure sibling script modules (e.g. sfdp_layout) are importable regardless of
+# how this file is invoked (as a script, via uv run, or imported).
+_scripts_dir = Path(__file__).resolve().parent
+if str(_scripts_dir) not in sys.path:
+    sys.path.insert(0, str(_scripts_dir))
+
 from mediaingredientmech.utils.yaml_handler import load_yaml
 
 console = Console()
@@ -308,8 +314,20 @@ class IngredientUMAPGenerator:
                 n_components=2
             )
             embedding_2d = reducer.fit_transform(X)
+        elif method == "sfdp":
+            # Graphviz sfdp force-directed layout of a mutual-kNN graph over the
+            # (L2-normalized) embedding rows. Coords keep the umap_x/umap_y field
+            # names so the shared HTML/JS viewer works unchanged.
+            from sfdp_layout import sfdp_layout
+
+            console.print(
+                f"[yellow]Running sfdp graph layout (k=15, seed={random_state})...[/yellow]"
+            )
+            embedding_2d = sfdp_layout(X, k=15, seed=random_state)
         else:
-            raise ValueError(f"Unknown method {method!r}; expected 'pacmap' or 'umap'")
+            raise ValueError(
+                f"Unknown method {method!r}; expected 'pacmap', 'umap', or 'sfdp'"
+            )
 
         # Create DataFrame. Coordinate columns stay umap_x/umap_y for every
         # method so the static docs/ingredient_umap.html + JS keep working.
@@ -441,7 +459,10 @@ def build_visualization_data(
     '--output',
     type=click.Path(),
     default='docs/ingredient_umap.html',
-    help='Output HTML file'
+    help='Output path. If it ends in .json the visualization JSON is written '
+         'directly there (e.g. docs/data/ingredient_graph.json); otherwise it '
+         'is treated as an HTML path and JSON is written to '
+         '<parent>/data/ingredient_umap.json'
 )
 @click.option(
     '--cache-dir',
@@ -456,9 +477,10 @@ def build_visualization_data(
 )
 @click.option(
     '--method',
-    type=click.Choice(['pacmap', 'umap'], case_sensitive=False),
+    type=click.Choice(['pacmap', 'umap', 'sfdp'], case_sensitive=False),
     default='pacmap',
-    help='2D reducer: pacmap (default; PCA-init, fixed seed) or umap'
+    help='2D reducer: pacmap (default; PCA-init, fixed seed), umap, or sfdp '
+         '(Graphviz force-directed graph layout of a mutual-kNN embedding graph)'
 )
 @click.option(
     '--n-neighbors',
@@ -510,8 +532,14 @@ def main(
     viz_data = build_visualization_data(umap_df, ingredients_dir)
     console.print(f"[green]Generated data for {len(viz_data)} ingredients[/green]")
 
-    # Step 4: Save intermediate JSON for inspection
-    json_output = output_path.parent / 'data' / 'ingredient_umap.json'
+    # Step 4: Save intermediate JSON for inspection. When --output is itself a
+    # .json path, honor it verbatim so alternate layouts (e.g. the sfdp graph
+    # layout at docs/data/ingredient_graph.json) can be written to a second
+    # output without clobbering the default pacmap JSON.
+    if output_path.suffix.lower() == '.json':
+        json_output = output_path
+    else:
+        json_output = output_path.parent / 'data' / 'ingredient_umap.json'
     json_output.parent.mkdir(parents=True, exist_ok=True)
     with open(json_output, 'w') as f:
         json.dump(viz_data, f, indent=2)
