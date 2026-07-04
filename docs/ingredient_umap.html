@@ -206,25 +206,6 @@
             <a href="index.html" class="nav-link">← Back to Home</a>
         </header>
 
-        <div class="stats" id="stats">
-            <div class="stat-item">
-                <div class="stat-value" id="total-ingredients">-</div>
-                <div class="stat-label">Total Ingredients</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="mapped-ingredients">-</div>
-                <div class="stat-label">Mapped to Ontologies</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="unmapped-ingredients">-</div>
-                <div class="stat-label">Unmapped (Synthetic)</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value" id="median-occurrences">-</div>
-                <div class="stat-label">Median Occurrences</div>
-            </div>
-        </div>
-
         <div class="controls">
             <label>
                 Color by:
@@ -287,16 +268,6 @@
             });
 
         function updateStats() {
-            const mapped = ingredientData.filter(d => d.mapping_status === 'MAPPED').length;
-            const unmapped = ingredientData.filter(d => d.mapping_status === 'UNMAPPED').length;
-            const occurrences = ingredientData.map(d => d.total_occurrences).sort((a, b) => a - b);
-            const median = occurrences[Math.floor(occurrences.length / 2)] || 0;
-
-            document.getElementById('total-ingredients').textContent = ingredientData.length;
-            document.getElementById('mapped-ingredients').textContent = mapped;
-            document.getElementById('unmapped-ingredients').textContent = unmapped;
-            document.getElementById('median-occurrences').textContent = median;
-
             // Keep the subtitle count in sync with the loaded data (never stale).
             const subtitle = document.getElementById('subtitle');
             if (subtitle) {
