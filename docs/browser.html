@@ -282,6 +282,70 @@
             color: #666;
             margin-top: 3rem;
         }
+
+        /* ---- Reduced-motion guard ---- */
+        @media (prefers-reduced-motion: reduce){
+          *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+            transition-duration:.01ms!important;scroll-behavior:auto!important;}
+        }
+
+        /* ---- Dark theme (OS default; superseded by the toggle) ---- */
+        @media (prefers-color-scheme: dark){
+          :root:not([data-theme="light"]) body{color:#ece9f4;background:#14121c;}
+          :root:not([data-theme="light"]) .header{background:linear-gradient(135deg,#241d33,#14121c);color:#ece9f4;}
+          :root:not([data-theme="light"]) .nav-link{background:rgba(255,255,255,.08);color:#b499f0;}
+          :root:not([data-theme="light"]) .nav-link:hover{background:rgba(255,255,255,.14);}
+          :root:not([data-theme="light"]) .stats,
+          :root:not([data-theme="light"]) .controls,
+          :root:not([data-theme="light"]) .ingredient-card{background:#1e1b29;}
+          :root:not([data-theme="light"]) .stat{border-right-color:#302b40;}
+          :root:not([data-theme="light"]) .stat-value{color:#b499f0;}
+          :root:not([data-theme="light"]) .stat-label,
+          :root:not([data-theme="light"]) .meta-item,
+          :root:not([data-theme="light"]) .filter-group label,
+          :root:not([data-theme="light"]) .synonyms-label,
+          :root:not([data-theme="light"]) .no-results,
+          :root:not([data-theme="light"]) footer{color:#a39db8;}
+          :root:not([data-theme="light"]) .search-box,
+          :root:not([data-theme="light"]) .filter-group select{background:#14121c;color:#ece9f4;border-color:#302b40;}
+          :root:not([data-theme="light"]) .search-box:focus{border-color:#b499f0;}
+          :root:not([data-theme="light"]) .ingredient-title,
+          :root:not([data-theme="light"]) .meta-label{color:#ece9f4;}
+          :root:not([data-theme="light"]) .ingredient-ontology,
+          :root:not([data-theme="light"]) .loading{color:#b499f0;}
+          :root:not([data-theme="light"]) .ingredient-meta{border-top-color:#302b40;}
+          :root:not([data-theme="light"]) .synonyms{background:#14121c;}
+          :root:not([data-theme="light"]) .synonym-tag{background:#1e1b29;border-color:#302b40;}
+          :root:not([data-theme="light"]) .badge-mapped{background:rgba(52,211,153,.15);color:#34d399;}
+          :root:not([data-theme="light"]) .badge-unmapped{background:rgba(251,191,36,.15);color:#fbbf24;}
+        }
+        :root[data-theme="dark"] body{color:#ece9f4;background:#14121c;}
+        :root[data-theme="dark"] .header{background:linear-gradient(135deg,#241d33,#14121c);color:#ece9f4;}
+        :root[data-theme="dark"] .nav-link{background:rgba(255,255,255,.08);color:#b499f0;}
+        :root[data-theme="dark"] .nav-link:hover{background:rgba(255,255,255,.14);}
+        :root[data-theme="dark"] .stats,
+        :root[data-theme="dark"] .controls,
+        :root[data-theme="dark"] .ingredient-card{background:#1e1b29;}
+        :root[data-theme="dark"] .stat{border-right-color:#302b40;}
+        :root[data-theme="dark"] .stat-value{color:#b499f0;}
+        :root[data-theme="dark"] .stat-label,
+        :root[data-theme="dark"] .meta-item,
+        :root[data-theme="dark"] .filter-group label,
+        :root[data-theme="dark"] .synonyms-label,
+        :root[data-theme="dark"] .no-results,
+        :root[data-theme="dark"] footer{color:#a39db8;}
+        :root[data-theme="dark"] .search-box,
+        :root[data-theme="dark"] .filter-group select{background:#14121c;color:#ece9f4;border-color:#302b40;}
+        :root[data-theme="dark"] .search-box:focus{border-color:#b499f0;}
+        :root[data-theme="dark"] .ingredient-title,
+        :root[data-theme="dark"] .meta-label{color:#ece9f4;}
+        :root[data-theme="dark"] .ingredient-ontology,
+        :root[data-theme="dark"] .loading{color:#b499f0;}
+        :root[data-theme="dark"] .ingredient-meta{border-top-color:#302b40;}
+        :root[data-theme="dark"] .synonyms{background:#14121c;}
+        :root[data-theme="dark"] .synonym-tag{background:#1e1b29;border-color:#302b40;}
+        :root[data-theme="dark"] .badge-mapped{background:rgba(52,211,153,.15);color:#34d399;}
+        :root[data-theme="dark"] .badge-unmapped{background:rgba(251,191,36,.15);color:#fbbf24;}
     </style>
 </head>
 <body>
@@ -480,5 +544,6 @@
         document.getElementById('filter-source').addEventListener('change', applyFilters);
         document.getElementById('filter-quality').addEventListener('change', applyFilters);
     </script>
+    <script src="theme-toggle.js"></script>
 </body>
 </html>
