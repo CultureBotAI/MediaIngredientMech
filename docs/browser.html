@@ -51,21 +51,40 @@
             background: rgba(255, 255, 255, 0.75);
         }
 
+        .layout {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 1rem;
+            align-self: start;
+        }
+
+        .results-main {
+            min-width: 0;
+        }
+
         .stats {
             background: white;
-            padding: 1.5rem;
-            margin: 2rem auto;
-            max-width: 1200px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 0.5rem;
         }
 
         .stat {
             text-align: center;
-            padding: 1rem;
+            padding: 0.5rem;
             border-right: 1px solid #eee;
         }
 
@@ -74,22 +93,20 @@
         }
 
         .stat-value {
-            font-size: 2rem;
+            font-size: 1.4rem;
             font-weight: bold;
             color: #7E5BC4;
         }
 
         .stat-label {
             color: #666;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
         }
 
         .controls {
             background: white;
             padding: 1.5rem;
-            margin: 0 auto 2rem;
-            max-width: 1200px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -110,13 +127,22 @@
 
         .filters {
             display: flex;
+            flex-direction: column;
             gap: 1rem;
-            flex-wrap: wrap;
         }
 
         .filter-group {
-            flex: 1;
-            min-width: 200px;
+            min-width: 0;
+        }
+
+        @media (max-width: 720px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
         }
 
         .filter-group label {
@@ -135,9 +161,8 @@
         }
 
         .ingredient-list {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            margin: 0;
+            padding: 0;
         }
 
         .ingredient-card {
@@ -262,73 +287,79 @@
 <body>
     <header class="header">
         <h1>🧪 MediaIngredientMech Browser</h1>
-        <p>Explore 1,131 curated media ingredients with ontology mappings</p>
+        <p id="subtitle">Explore curated media ingredients with ontology mappings</p>
         <a href="index.html" class="nav-link">← Back to Home</a>
     </header>
 
-    <div class="stats" id="stats">
-        <div class="stat">
-            <div class="stat-value" id="total-count">-</div>
-            <div class="stat-label">Total Ingredients</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" id="mapped-count">-</div>
-            <div class="stat-label">Mapped to Ontologies</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" id="unmapped-count">-</div>
-            <div class="stat-label">Unmapped</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value" id="filtered-count">-</div>
-            <div class="stat-label">Currently Showing</div>
-        </div>
-    </div>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="controls">
+                <input type="text"
+                       id="search"
+                       class="search-box"
+                       placeholder="🔍 Search ingredients by name, synonym, or ontology ID...">
 
-    <div class="controls">
-        <input type="text"
-               id="search"
-               class="search-box"
-               placeholder="🔍 Search ingredients by name, synonym, or ontology ID...">
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="filter-status">Mapping Status</label>
+                        <select id="filter-status">
+                            <option value="">All Statuses</option>
+                            <option value="MAPPED">Mapped</option>
+                            <option value="UNMAPPED">Unmapped</option>
+                        </select>
+                    </div>
 
-        <div class="filters">
-            <div class="filter-group">
-                <label for="filter-status">Mapping Status</label>
-                <select id="filter-status">
-                    <option value="">All Statuses</option>
-                    <option value="MAPPED">Mapped</option>
-                    <option value="UNMAPPED">Unmapped</option>
-                </select>
+                    <div class="filter-group">
+                        <label for="filter-source">Ontology Source</label>
+                        <select id="filter-source">
+                            <option value="">All Sources</option>
+                            <option value="CHEBI">CHEBI</option>
+                            <option value="FOODON">FOODON</option>
+                            <option value="NCIT">NCIT</option>
+                            <option value="MESH">MESH</option>
+                            <option value="UBERON">UBERON</option>
+                            <option value="ENVO">ENVO</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-quality">Mapping Quality</label>
+                        <select id="filter-quality">
+                            <option value="">All Qualities</option>
+                            <option value="EXACT_MATCH">Exact Match</option>
+                            <option value="SYNONYM_MATCH">Synonym Match</option>
+                            <option value="CLOSE_MATCH">Close Match</option>
+                            <option value="MANUAL_CURATION">Manual Curation</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="results-main">
+            <div class="stats" id="stats">
+                <div class="stat">
+                    <div class="stat-value" id="total-count">-</div>
+                    <div class="stat-label">Total Ingredients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="mapped-count">-</div>
+                    <div class="stat-label">Mapped to Ontologies</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="unmapped-count">-</div>
+                    <div class="stat-label">Unmapped</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="filtered-count">-</div>
+                    <div class="stat-label">Currently Showing</div>
+                </div>
             </div>
 
-            <div class="filter-group">
-                <label for="filter-source">Ontology Source</label>
-                <select id="filter-source">
-                    <option value="">All Sources</option>
-                    <option value="CHEBI">CHEBI</option>
-                    <option value="FOODON">FOODON</option>
-                    <option value="NCIT">NCIT</option>
-                    <option value="MESH">MESH</option>
-                    <option value="UBERON">UBERON</option>
-                    <option value="ENVO">ENVO</option>
-                </select>
+            <div class="ingredient-list" id="ingredient-list">
+                <div class="loading">Loading ingredients...</div>
             </div>
-
-            <div class="filter-group">
-                <label for="filter-quality">Mapping Quality</label>
-                <select id="filter-quality">
-                    <option value="">All Qualities</option>
-                    <option value="EXACT_MATCH">Exact Match</option>
-                    <option value="SYNONYM_MATCH">Synonym Match</option>
-                    <option value="CLOSE_MATCH">Close Match</option>
-                    <option value="MANUAL_CURATION">Manual Curation</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <div class="ingredient-list" id="ingredient-list">
-        <div class="loading">Loading ingredients...</div>
+        </main>
     </div>
 
     <footer>
@@ -344,6 +375,8 @@
             .then(response => response.json())
             .then(data => {
                 allIngredients = data.ingredients;
+                document.getElementById('subtitle').textContent =
+                    `Explore ${allIngredients.length.toLocaleString()} curated media ingredients with ontology mappings`;
                 updateStats(data.metadata);
                 applyFilters();
             })
