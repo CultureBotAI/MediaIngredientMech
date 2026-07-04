@@ -34,7 +34,6 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;
         box-shadow:0 1px 3px rgba(0,0,0,.05);transition:transform .15s ease,box-shadow .15s ease}
   .card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.10)}
-  .card .ic{font-size:2.1rem}
   .card .actions{margin:.55em 0 .9em;display:flex;flex-wrap:wrap;gap:.5em}
   .card h2{margin:.1em 0 .35em;font-size:1.25rem}
   .card p{margin:0;color:var(--muted);font-size:.95rem}
@@ -83,19 +82,16 @@
   <main class="wrap">
     <div class="cards">
       <div class="card">
-        <div class="ic">&#128270;</div>
         <div class="actions"><a class="btn" href="browser.html">Browse records &rarr;</a></div>
         <h2>Record browser</h2>
         <p>Search ingredients by name, synonym, or ontology ID; filter by source, mapping status, and mapping quality.</p>
       </div>
       <div class="card">
-        <div class="ic">&#128506;&#65039;</div>
         <div class="actions"><a class="btn" href="ingredient_umap.html">Explore embedding (PaCMAP) &rarr;</a><a class="btn" href="ingredient_graph.html">Graph layout &rarr;</a></div>
         <h2>Embedding browser</h2>
-        <p>Interactive UMAP of ingredient embeddings in KG-Microbe space.</p>
+        <p>Interactive PaCMAP projection of ingredient embeddings in KG-Microbe space.</p>
       </div>
       <div class="card">
-        <div class="ic">&#128187;</div>
         <div class="actions"><a class="btn" href="https://github.com/CultureBotAI/MediaIngredientMech">View on GitHub &rarr;</a></div>
         <h2>GitHub</h2>
         <p>Source code, data, schema, and the curation workflow.</p>
@@ -104,7 +100,7 @@
   </main>
   <footer>
     <div class="fam"><strong>KG-Microbe Mechs:</strong>
-      <a href="https://culturebotai.github.io/CultureMech/">CultureMech</a>&middot;<a href="https://culturebotai.github.io/MediaIngredientMech/">MediaIngredientMech</a>&middot;<a href="https://culturebotai.github.io/CommunityMech/">CommunityMech</a>&middot;<a href="https://culturebotai.github.io/TraitMech/">TraitMech</a>&middot;<a href="https://culturebotai.github.io/proteintraitsmech/">ProteinTraitsMech</a>
+      <a href="https://culturebotai.github.io/CultureMech/">CultureMech</a>&middot;<strong>MediaIngredientMech</strong>&middot;<a href="https://culturebotai.github.io/CommunityMech/">CommunityMech</a>&middot;<a href="https://culturebotai.github.io/TraitMech/">TraitMech</a>&middot;<a href="https://culturebotai.github.io/proteintraitsmech/">ProteinTraitsMech</a>
     </div>
     <div class="fam">
       <a href="https://github.com/Knowledge-Graph-Hub/kg-microbe">kg-microbe</a>&middot;<a href="https://bioportal.bioontology.org/ontologies/METPO">METPO</a>

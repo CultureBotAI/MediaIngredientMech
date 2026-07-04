@@ -244,6 +244,48 @@
             color: var(--text-light);
         }
 
+        /* ---- Data-table fallback (keyboard-reachable, theme-tokenized) ---- */
+        .data-table-details {
+            margin: 0 0 1.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        .data-table-details summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            padding: 0.25rem 0;
+        }
+        .data-table-wrap {
+            overflow-x: auto;
+            max-height: 420px;
+            overflow-y: auto;
+            margin-top: 0.75rem;
+        }
+        .data-table-wrap table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 0.82rem;
+        }
+        .data-table-wrap th,
+        .data-table-wrap td {
+            text-align: left;
+            padding: 0.35rem 0.6rem;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+        .data-table-wrap th {
+            position: sticky;
+            top: 0;
+            background: var(--surface);
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.03em;
+        }
+
         /* ---- Reduced-motion guard ---- */
         @media (prefers-reduced-motion: reduce){
           *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
@@ -278,7 +320,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🧪 Ingredient Embedding Space</h1>
+            <h1>Ingredient Embedding Space</h1>
             <p class="subtitle" id="subtitle">PaCMAP projection of ingredients from the KG-Microbe knowledge graph</p>
             <a href="index.html" class="nav-link">← Back to Home</a>
         </header>
@@ -302,10 +344,15 @@
                 </select>
             </label>
 
-            <input type="search" id="search" placeholder="🔍 Search ingredients by name or ID...">
+            <input type="search" id="search" placeholder="Search ingredients by name or ID...">
         </div>
 
         <div id="umap-plot"></div>
+
+        <details class="data-table-details" id="data-table">
+            <summary>View data as table</summary>
+            <div class="data-table-wrap"><table id="data-table-el"></table></div>
+        </details>
 
         <div class="legend" id="legend"></div>
 
@@ -315,7 +362,7 @@
             <h2>How to Interpret This Visualization</h2>
             <ul>
                 <li><strong>Proximity:</strong> Ingredients close together have similar semantic relationships in the knowledge graph embedding space</li>
-                <li><strong>Color:</strong> Categorical grouping (default: mapping status - <span style="color: #10b981;">green = mapped</span>, <span style="color: #ef4444;">red = unmapped</span>)</li>
+                <li><strong>Color &amp; shape:</strong> Categorical grouping (default: mapping status - <span style="color: #2a78d6;">blue filled circle = mapped</span>, <span style="color: #eb6834;">orange hollow ring = unmapped</span>)</li>
                 <li><strong>Unmapped Ingredients:</strong> Complex mixtures (e.g., "Allen Medium", "Biotin Vitamin Solution") without single chemical entity embeddings - shown with synthetic embeddings near cluster center</li>
                 <li><strong>Size:</strong> Metric of interest (default: total occurrences across media recipes)</li>
                 <li><strong>Hover:</strong> View detailed metadata tooltip</li>
@@ -328,11 +375,21 @@
 
     <div class="tooltip" id="tooltip"></div>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="d3.v7.min.js"></script>
     <script>
         // Load data
         let ingredientData = [];
         let circles = null;
+        let currentColorBy = 'mapping_status';  // Start with mapping_status to show unmapped
+
+        // Validated CVD-safe categorical palette (assign in order; 9th+ -> Other grey).
+        const CAT8 = ['#2a78d6', '#1baf7a', '#eda100', '#008300',
+                      '#4a3aa7', '#e34948', '#e87ba4', '#eb6834'];
+        const CAT_OTHER = '#898781';
+        // Mapping status uses colour + SHAPE: MAPPED = blue filled circle,
+        // UNMAPPED = orange hollow ring (fill:none, coloured stroke).
+        const STATUS_COLORS = { 'MAPPED': '#2a78d6', 'UNMAPPED': '#eb6834', 'PENDING_REVIEW': '#eda100' };
+        function isHollow(d, attr) { return attr === 'mapping_status' && d.mapping_status === 'UNMAPPED'; }
 
         // --- Facets: live-filter the plotted points (panel sits below the plot) ---
         const FACET_FIELDS = [
@@ -386,7 +443,10 @@
             circles
                 .style('display', d => facetPass(d) ? null : 'none')
                 .attr('fill-opacity', d => !q ? 0.7 : (match(d) ? 0.9 : 0.2))
-                .attr('stroke-width', d => !q ? 1 : (match(d) ? 2 : 1));
+                .attr('stroke-width', d => {
+                    const base = isHollow(d, currentColorBy) ? 1.6 : 1;
+                    return !q ? base : (match(d) ? base + 1 : base);
+                });
             const cnt = document.getElementById('facet-count');
             if (cnt) cnt.textContent = ingredientData.filter(facetPass).length.toLocaleString();
         }
@@ -398,6 +458,7 @@
                 updateStats();
                 renderUMAP();
                 buildFacets();
+                buildTable();
                 applyFilters();
             })
             .catch(error => {
@@ -460,42 +521,34 @@
             let currentSizeBy = 'total_occurrences';
             const sizeScale = d3.scaleSqrt()
                 .domain([0, d3.max(ingredientData, d => d[currentSizeBy])])
-                .range([3, 15]);
+                .range([5, 15]);
 
             // Color scale - special handling for mapping_status to highlight unmapped
-            let currentColorBy = 'mapping_status';  // Start with mapping_status to show unmapped
+            currentColorBy = 'mapping_status';  // Start with mapping_status to show unmapped
 
             function getColorScale(attribute) {
                 const categories = [...new Set(ingredientData.map(d => d[attribute]))].filter(c => c).sort();
 
-                // Special color scheme for mapping_status to highlight unmapped
+                // Mapping status: colour + shape (blue MAPPED, orange UNMAPPED ring).
                 if (attribute === 'mapping_status') {
-                    const colors = {
-                        'MAPPED': '#10b981',      // Green for mapped
-                        'UNMAPPED': '#ef4444',    // Red for unmapped
-                        'PENDING_REVIEW': '#f59e0b'  // Orange if any
-                    };
                     return d3.scaleOrdinal()
                         .domain(categories)
-                        .range(categories.map(c => colors[c] || '#64748b'));
+                        .range(categories.map(c => STATUS_COLORS[c] || CAT_OTHER));
                 } else if (attribute === 'ontology_source') {
-                    // For ontology source, use distinct colors
-                    const sourceColors = {
-                        'CHEBI': '#2563eb',
-                        'FOODON': '#059669',
-                        'NCIT': '#dc2626',
-                        'MESH': '#7c3aed',
-                        'UBERON': '#ea580c',
-                        'ENVO': '#0891b2',
-                        '': '#94a3b8'  // Grey for unmapped (no source)
-                    };
+                    // Assign the validated Categorical 8 in descending-frequency order;
+                    // 9th+ source -> Other grey. Order is the colourblind-safety mechanism.
+                    const freq = {};
+                    ingredientData.forEach(d => { const v = d[attribute]; if (v) freq[v] = (freq[v] || 0) + 1; });
+                    const ordered = Object.keys(freq).sort((a, b) => freq[b] - freq[a]);
+                    const map = {};
+                    ordered.forEach((c, i) => { map[c] = i < CAT8.length ? CAT8[i] : CAT_OTHER; });
                     return d3.scaleOrdinal()
                         .domain(categories)
-                        .range(categories.map(c => sourceColors[c] || '#64748b'));
+                        .range(categories.map(c => map[c] || CAT_OTHER));
                 } else {
                     return d3.scaleOrdinal()
                         .domain(categories)
-                        .range(d3.schemeTableau10);
+                        .range(categories.map((c, i) => i < CAT8.length ? CAT8[i] : CAT_OTHER));
                 }
             }
 
@@ -546,10 +599,10 @@
                 .attr('cx', d => xScale(d.umap_x))
                 .attr('cy', d => yScale(d.umap_y))
                 .attr('r', d => sizeScale(d[currentSizeBy] || 1))
-                .attr('fill', d => colorScale(d[currentColorBy] || 'Unknown'))
+                .attr('fill', d => isHollow(d, currentColorBy) ? 'none' : colorScale(d[currentColorBy] || 'Unknown'))
                 .attr('fill-opacity', 0.7)
-                .attr('stroke', HALO)
-                .attr('stroke-width', 1)
+                .attr('stroke', d => isHollow(d, currentColorBy) ? STATUS_COLORS.UNMAPPED : HALO)
+                .attr('stroke-width', d => isHollow(d, currentColorBy) ? 1.6 : 1)
                 .style('cursor', 'pointer')
                 .on('mouseover', function(event, d) {
                     d3.select(this)
@@ -576,10 +629,10 @@
                             <div class="tooltip-row">Synonyms: ${d.num_synonyms}</div>
                         `);
                 })
-                .on('mouseout', function() {
+                .on('mouseout', function(event, d) {
                     d3.select(this)
-                        .attr('stroke', HALO)
-                        .attr('stroke-width', 1);
+                        .attr('stroke', isHollow(d, currentColorBy) ? STATUS_COLORS.UNMAPPED : HALO)
+                        .attr('stroke-width', isHollow(d, currentColorBy) ? 1.6 : 1);
                     tooltip.style('opacity', 0);
                 })
                 .on('click', (event, d) => {
@@ -594,8 +647,12 @@
                 currentColorBy = e.target.value;
                 const newColorScale = getColorScale(currentColorBy);
 
-                circles.attr('fill', d => newColorScale(d[currentColorBy] || 'Unknown'));
+                circles
+                    .attr('fill', d => isHollow(d, currentColorBy) ? 'none' : newColorScale(d[currentColorBy] || 'Unknown'))
+                    .attr('stroke', d => isHollow(d, currentColorBy) ? STATUS_COLORS.UNMAPPED : HALO)
+                    .attr('stroke-width', d => isHollow(d, currentColorBy) ? 1.6 : 1);
                 updateLegend(newColorScale, currentColorBy);
+                applyFilters();
             });
 
             document.getElementById('size-by').addEventListener('change', (e) => {
@@ -619,12 +676,34 @@
             colorScale.domain().forEach(value => {
                 const item = document.createElement('div');
                 item.className = 'legend-item';
+                // Mapping-status UNMAPPED is drawn as a hollow ring — mirror that in the swatch.
+                const hollow = attribute === 'mapping_status' && value === 'UNMAPPED';
+                const swatch = hollow
+                    ? `<div class="legend-color" style="background:transparent;border:2px solid ${colorScale(value)};border-radius:50%"></div>`
+                    : `<div class="legend-color" style="background-color: ${colorScale(value)}"></div>`;
                 item.innerHTML = `
-                    <div class="legend-color" style="background-color: ${colorScale(value)}"></div>
+                    ${swatch}
                     <span>${value || 'Unknown'}</span>
                 `;
                 legend.appendChild(item);
             });
+        }
+
+        function buildTable() {
+            const el = document.getElementById('data-table-el');
+            if (!el) return;
+            const cols = [
+                ['name', 'Ingredient'], ['id', 'ID'], ['ontology_source', 'Source'],
+                ['ontology_id', 'Ontology ID'], ['ontology_label', 'Ontology label'],
+                ['mapping_status', 'Status'], ['total_occurrences', 'Occurrences'],
+                ['media_count', 'Media count']
+            ];
+            const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            const head = '<thead><tr>' + cols.map(c => `<th>${c[1]}</th>`).join('') + '</tr></thead>';
+            const rows = ingredientData.map(d =>
+                '<tr>' + cols.map(c => `<td>${esc(d[c[0]])}</td>`).join('') + '</tr>'
+            ).join('');
+            el.innerHTML = head + '<tbody>' + rows + '</tbody>';
         }
 
         // Handle window resize
