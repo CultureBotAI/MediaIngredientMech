@@ -1,38 +1,25 @@
-identifier: CHEBI:140435
+identifier: CHEBI:16113
 preferred_term: cholesterol
 ontology_mapping:
-  ontology_id: CHEBI:140435
-  ontology_label: cholesterol-2,2,3,4,4,6-d6
+  ontology_id: CHEBI:16113
+  ontology_label: cholesterol
   ontology_source: CHEBI
-  mapping_quality: CAS_RN_LOOKUP
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: CAS_RN_CROSS_REFERENCE
     source: PubChem
     cas_rn: 57-88-5
-    notes: ChEBI ID CHEBI:140435 found via PubChem CAS-RN cross-reference
+    notes: 'Corrected mis-mapping: CAS-RN 57-88-5 (cholesterol) had resolved to the
+      deuterated isotopologue CHEBI:140435 (cholesterol-2,2,3,4,4,6-d6); remapped to
+      CHEBI:16113 (cholesterol). EXACT_MATCH.'
 synonyms:
-- synonym_text: (2,2,3,4,4,6-(2)H6)cholest-5-en-3beta-ol
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: (2,2,3,4,4,6-(2)H6)cholesterol
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 - synonym_text: (3beta,14beta,17alpha)-cholest-5-en-3-ol
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 3beta-hydroxy-5-cholestene-2,2,3,4,4,5-d6
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 5-cholesten-3beta-ol-2,2,3,4,4,5-d6
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Cholest-5-en-3beta-ol
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Cholesterin
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: cholesterol-2,2,3,4,4,6-d6
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 mapping_status: MAPPED
@@ -71,12 +58,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: CORRECTED
+  changes: 'ontology_id CHEBI:140435 (cholesterol-2,2,3,4,4,6-d6, deuterated isotopologue)
+    -> CHEBI:16113 (cholesterol); mapping_quality CAS_RN_LOOKUP -> EXACT_MATCH; molecular_formula
+    C33H58O -> C27H46O; cleared deuterated inchi/smiles for backfill. CAS 57-88-5 retained.'
+  llm_assisted: true
 notes: Created from FEBA ontology enrichment workflow. Used in 1 FEBA media formulations.
 chemical_properties:
   cas_rn: 57-88-5
   data_source: FEBA ontology enrichment (via PubChem)
   retrieval_date: '2026-04-07T10:20:24.168399+00:00'
-  molecular_formula: C33H58O
-  inchi: InChI=1S/C27H46O/c1-18(2)7-6-8-19(3)23-11-12-24-22-10-9-20-17-21(28)13-15-26(20,4)25(22)14-16-27(23,24)5/h9,18-19,21-25,28H,6-8,10-17H2,1-5H3/t19-,21+,22+,23-,24+,25+,26+,27-/m1/s1/i9D,13D2,17D2,21D
-  smiles: '[H][C@@]12CC(C)=C3C(C)(C)[C@@](C)(O)C(C)(C)C[C@]3(C)[C@@]1([H])CC[C@@]1(C)[C@@]2([H])CC[C@]1([H])[C@H](C)CCCC(C)C'
+  molecular_formula: C27H46O
 ingredient_type: SINGLE_INGREDIENT

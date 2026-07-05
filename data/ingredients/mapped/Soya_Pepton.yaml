@@ -1,0 +1,50 @@
+identifier: FOODON:03315720
+preferred_term: Soya pepton
+ontology_mapping:
+  ontology_id: FOODON:03315720
+  ontology_label: vegetable protein, hydrolyzed
+  ontology_source: FOODON
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_followups_114
+    notes: '''Soya pepton'' is a misspelling of soy peptone (an enzymatic hydrolysate
+      of soybean protein); mapped to FOODON:03315720 (vegetable protein, hydrolyzed),
+      mirroring sibling Soy_Peptone.'
+synonyms:
+- synonym_text: Soya pepton
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1466); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:03:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_UNDEFINED_MIXTURE
+  changes: Classified as a plant-derived peptone/nutrient digest and left unmapped
+    pending product composition and source-specific ontology curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: MAPPED
+  changes: 'Mapped residual peptone variant: identifier UNMAPPED_0531 -> FOODON:03315720
+    (vegetable protein, hydrolyzed), EXACT_MATCH, mirroring sibling Soy_Peptone (''Soya
+    pepton'' = misspelled soy peptone). mapping_status UNMAPPED -> MAPPED.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1466); mapped 2026-07-05
+  to FOODON:03315720 (vegetable protein, hydrolyzed) as a soy-peptone variant (misspelled
+  'Soya pepton').
+ingredient_type: UNDEFINED_MIXTURE

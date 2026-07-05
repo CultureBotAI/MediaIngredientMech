@@ -1,15 +1,19 @@
-identifier: CHEBI:48601
+identifier: kgmicrobe.compound:carnitine_hydrochloride
 preferred_term: Carnitine Hydrochloride
 ontology_mapping:
-  ontology_id: CHEBI:48601
-  ontology_label: carnitinamide chloride
+  ontology_id: CHEBI:17126
+  ontology_label: carnitine
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-      sqlite (cas xref). FEBA/Hans80 panels: Hans80metals, FEBA_carbon, FEBA_nitrogen.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_followups_114
+    notes: 'Corrected mis-mapping: auto-created from CultureBotHT CAS-RN 461-05-2, which
+      in ChEBI genuinely resolves to CHEBI:48601 (carnitinamide chloride — the amide,
+      C7H17N2O2·Cl), not carnitine. Remapped to the carnitine parent CHEBI:17126 as a
+      NARROW_MATCH (salt/hydrochloride -> parent), mirroring sibling
+      Carnitine_Dl_Hydrochloride. Erroneous cas_rn 461-05-2 and amide chemistry backfill
+      removed.'
 synonyms:
 - synonym_text: 4-amino-2-hydroxy-N,N,N-trimethyl-4-oxobutan-1-aminium chloride
   synonym_type: EXACT_SYNONYM
@@ -43,11 +47,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
-chemical_properties:
-  cas_rn: 461-05-2
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-  molecular_formula: C7H17N2O2.Cl
-  inchi: InChI=1S/C7H16N2O2.ClH/c1-9(2,3)5-6(10)4-7(8)11;/h6,10H,4-5H2,1-3H3,(H-,8,11);1H
-  smiles: C[N+](C)(C)CC(O)CC(N)=O.[Cl-]
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: CORRECTED
+  changes: 'ontology_id CHEBI:48601 (carnitinamide chloride, the amide) -> CHEBI:17126
+    (carnitine), NARROW_MATCH (salt -> parent), mirroring Carnitine_Dl_Hydrochloride;
+    identifier CHEBI:48601 -> kgmicrobe.compound:carnitine_hydrochloride; removed erroneous
+    cas_rn 461-05-2 and amide chemistry backfill (molecular_formula/inchi/smiles).'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
