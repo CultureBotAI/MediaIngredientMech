@@ -54,6 +54,15 @@
     :root:not([data-theme="light"]) .stat{background:rgba(255,255,255,.05)}
     :root:not([data-theme="light"]) footer{background:rgba(255,255,255,.05)}
     :root:not([data-theme="light"]) .btn{color:#14121c}
+    /* brand pastel pair, dark-only: darkened fill + vivid top edge */
+    :root:not([data-theme="light"]) .hero{position:relative;
+      background:linear-gradient(135deg,#465358,#504b5c)}
+    :root:not([data-theme="light"]) .hero::before{content:"";position:absolute;
+      top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#BCEBE4,#DCD0F3)}
+    :root:not([data-theme="light"]) .card{position:relative}
+    :root:not([data-theme="light"]) .card::before{content:"";position:absolute;
+      top:0;left:0;right:0;height:2px;border-radius:16px 16px 0 0;
+      background:linear-gradient(90deg,#BCEBE4,#DCD0F3)}
   }
   :root[data-theme="dark"]{
     --pastel-a:#241d33; --pastel-b:#14121c; --accent:#b499f0;
@@ -62,6 +71,15 @@
   :root[data-theme="dark"] .stat{background:rgba(255,255,255,.05)}
   :root[data-theme="dark"] footer{background:rgba(255,255,255,.05)}
   :root[data-theme="dark"] .btn{color:#14121c}
+  /* brand pastel pair, dark-only: darkened fill + vivid top edge */
+  :root[data-theme="dark"] .hero{position:relative;
+    background:linear-gradient(135deg,#465358,#504b5c)}
+  :root[data-theme="dark"] .hero::before{content:"";position:absolute;
+    top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#BCEBE4,#DCD0F3)}
+  :root[data-theme="dark"] .card{position:relative}
+  :root[data-theme="dark"] .card::before{content:"";position:absolute;
+    top:0;left:0;right:0;height:2px;border-radius:16px 16px 0 0;
+    background:linear-gradient(90deg,#BCEBE4,#DCD0F3)}
   /* ---- Reduced-motion guard ---- */
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
