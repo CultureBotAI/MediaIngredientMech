@@ -243,6 +243,36 @@
             font-size: 0.8rem;
             color: var(--text-light);
         }
+
+        /* ---- Reduced-motion guard ---- */
+        @media (prefers-reduced-motion: reduce){
+          *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+            transition-duration:.01ms!important;scroll-behavior:auto!important;}
+        }
+
+        /* ---- Dark theme (OS default; superseded by the toggle) ---- */
+        @media (prefers-color-scheme: dark){
+          :root:not([data-theme="light"]){
+            --primary:#b499f0; --primary-dark:#b499f0; --secondary:#a39db8;
+            --background:#14121c; --surface:#1e1b29; --border:#302b40;
+            --text:#ece9f4; --text-light:#a39db8; --success:#34d399; --warning:#fbbf24;
+          }
+          :root:not([data-theme="light"]) header{background:linear-gradient(135deg,#241d33,#14121c);}
+          :root:not([data-theme="light"]) h1,
+          :root:not([data-theme="light"]) .subtitle{color:#ece9f4;}
+          :root:not([data-theme="light"]) #umap-plot{background:var(--surface);color:#a39db8;}
+          :root:not([data-theme="light"]) #umap-plot text{fill:#ece9f4;}
+        }
+        :root[data-theme="dark"]{
+          --primary:#b499f0; --primary-dark:#b499f0; --secondary:#a39db8;
+          --background:#14121c; --surface:#1e1b29; --border:#302b40;
+          --text:#ece9f4; --text-light:#a39db8; --success:#34d399; --warning:#fbbf24;
+        }
+        :root[data-theme="dark"] header{background:linear-gradient(135deg,#241d33,#14121c);}
+        :root[data-theme="dark"] h1,
+        :root[data-theme="dark"] .subtitle{color:#ece9f4;}
+        :root[data-theme="dark"] #umap-plot{background:var(--surface);color:#a39db8;}
+        :root[data-theme="dark"] #umap-plot text{fill:#ece9f4;}
     </style>
 </head>
 <body>
@@ -389,6 +419,13 @@
             // Clear existing
             container.innerHTML = '';
 
+            // Theme-aware colors read from the page tokens (light values are
+            // identical to the former hard-coded ones, so the light look is unchanged).
+            const _cs = getComputedStyle(document.documentElement);
+            const axisTextColor = _cs.getPropertyValue('--text').trim() || '#1e293b';
+            const HALO = getComputedStyle(container).backgroundColor || '#fff';   // point-stroke halo = plot bg
+            const HILITE = axisTextColor;                                          // hover emphasis stroke
+
             // Create SVG
             const svg = d3.select('#umap-plot')
                 .append('svg')
@@ -469,7 +506,7 @@
                 .append('text')
                 .attr('x', plotWidth / 2)
                 .attr('y', 35)
-                .attr('fill', '#1e293b')
+                .attr('fill', axisTextColor)
                 .attr('font-weight', 500)
                 .text('Dimension 1');
 
@@ -480,7 +517,7 @@
                 .attr('transform', 'rotate(-90)')
                 .attr('x', -plotHeight / 2)
                 .attr('y', -45)
-                .attr('fill', '#1e293b')
+                .attr('fill', axisTextColor)
                 .attr('font-weight', 500)
                 .text('Dimension 2');
 
@@ -505,12 +542,12 @@
                 .attr('r', d => sizeScale(d[currentSizeBy] || 1))
                 .attr('fill', d => colorScale(d[currentColorBy] || 'Unknown'))
                 .attr('fill-opacity', 0.7)
-                .attr('stroke', '#fff')
+                .attr('stroke', HALO)
                 .attr('stroke-width', 1)
                 .style('cursor', 'pointer')
                 .on('mouseover', function(event, d) {
                     d3.select(this)
-                        .attr('stroke', '#000')
+                        .attr('stroke', HILITE)
                         .attr('stroke-width', 2);
 
                     tooltip
@@ -535,7 +572,7 @@
                 })
                 .on('mouseout', function() {
                     d3.select(this)
-                        .attr('stroke', '#fff')
+                        .attr('stroke', HALO)
                         .attr('stroke-width', 1);
                     tooltip.style('opacity', 0);
                 })
@@ -591,5 +628,6 @@
             }
         });
     </script>
+    <script src="theme-toggle.js"></script>
 </body>
 </html>
