@@ -73,11 +73,15 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_chebi_grounding_curation
+  action: REMOVE_INVALID_CAS_RN
+  changes: 'Removed erroneous cas_rn 103-47-9 — that CAS is CHES (N-cyclohexyl-2-aminoethanesulfonic
+    acid, CHEBI:44302), a laboratory buffer, not beef extract (a PubChem name-lookup
+    false positive). Beef extract is a multi-component food mixture with no valid single
+    CAS; it stays correctly mapped to FOODON:03302088.'
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 2'
-chemical_properties:
-  cas_rn: 103-47-9
-  data_source: PubChem API
-  retrieval_date: '2026-04-05T19:54:20.671500+00:00'
 ingredient_type: UNDEFINED_MIXTURE
 media_roles:
 - role: PROTEIN_SOURCE
