@@ -20,9 +20,9 @@
 #   cbclaw: "https://github.com/culturebotai/culturebotai-claw/blob/main/"
 # license: "https://creativecommons.org/publicdomain/zero/1.0/"
 # mapping_set_id: "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient"
-# mapping_set_version: "2026-06-13"
+# mapping_set_version: "2026-07-05"
 # mapping_set_description: "Canonical MediaIngredientMech → ingredient-ontology mappings (CHEBI + FOODON; UBERON/ENVO when populated). One row per mapped MIM ingredient record. Per-row object_source distinguishes ontologies. Predicate is skos:exactMatch by default; narrowMatch/broadMatch/closeMatch where residual-P2.5 triage found a specificity or symmetry difference, or where mapping_quality != EXACT_MATCH. The `source` extension column records the upstream origin (MIM evidence + kg-microbe source pipeline, CHEBI only)."
-# mapping_date: "2026-06-13"
+# mapping_date: "2026-07-05"
 # creator_id:
 #   - "orcid:0000-0001-8175-045X"
 # subject_source: "MIM:ingredients"
@@ -992,9 +992,7 @@ MIM:Gentamicin_Sulfate_Salt	Gentamicin sulfate salt	skos:exactMatch	CHEBI:5312	g
 MIM:Gentibiose	Gentibiose	skos:exactMatch	CHEBI:28066	gentiobiose	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99			OAK+OLS:chebi|SYNONYM_ENRICH|2026-05-07
 MIM:Gentisic_Acid	Gentisic acid	skos:exactMatch	CHEBI:17189	2,5-dihydroxybenzoic acid	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureMech|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99		(sodium salt)|5-hydroxysalicylic acid|Hydroquinonecarboxylic acid	OAK+OLS:chebi|SYNONYM_ENRICH|2026-05-07
 MIM:Geomycin	Geomycin	skos:exactMatch	mesh:D010118	Oxytetracycline	registry:mesh	semapv:LexicalMatching	MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via EBI OLS exact synonym search|MIM:curator=unknown_term_placeholder_ols_review	2026-05-06	0.99			none|UNKNOWN_TERM|2026-05-07
-MIM:Gepotidacin	Gepotidacin	skos:narrowMatch	NCIT:C170025	Gepotidacin	obo:ncit.owl	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms	2026-05-02	0.9			none|UNKNOWN_TERM|2026-05-07
-MIM:Gepotidacin	Gepotidacin	skos:exactMatch	cas:1075236-89-3	Gepotidacin	registry:cas	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms	2026-05-02	0.99	Registry/identity row preserving cas:1075236-89-3 alongside parent NCIT:C170025.		none|UNKNOWN_TERM|2026-05-07
-MIM:Gepotidacin	Gepotidacin	skos:exactMatch	kgmicrobe.compound:gepotidacin	Gepotidacin	kgm:compound	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:NCIT via OLS (label-exact)|MIM:curator=backfill_parent_terms	2026-05-02	0.99	Registry/identity row (Rule B1) for narrowMatch subject; kg-microbe primary id kgmicrobe.compound:gepotidacin alongside parent NCIT:C170025.		none|UNKNOWN_TERM|2026-05-07
+MIM:Gepotidacin	Gepotidacin	skos:exactMatch	CHEBI:747127	gepotidacin	obo:chebi.owl	semapv:LexicalMatching	MIM:CHEBI dbxref (OAK CHEBI sqlite)|MIM:NCIT via OLS (label-exact)|MIM:curator=cbclaw_chebi_grounding_tier2	2026-07-05	0.99	CAS-RN→CHEBI grounding: unique oio:hasDbXref cas:1075236-89-3; CHEBI label 'gepotidacin' label-exact.		
 MIM:Geraniol	Geraniol	skos:exactMatch	CHEBI:17447	geraniol	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99			OAK+OLS:chebi|CONFIRMED|2026-05-07
 MIM:Ginger	Ginger	skos:exactMatch	NCIT:C66725	Ginger	obo:ncit.owl	semapv:LexicalMatching	MIM:mim-queue|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99			none|UNKNOWN_TERM|2026-05-07
 MIM:Ginkgolide_A	Ginkgolide A	skos:exactMatch	CHEBI:5355	Ginkgolide A	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99			OAK+OLS:chebi|CONFIRMED|2026-05-07
@@ -1032,7 +1030,7 @@ MIM:Glycine	Glycine	skos:exactMatch	CHEBI:15428	glycine	obo:chebi.owl	semapv:Lex
 MIM:Glycocholic_Acid_Hydrate	Glycocholic acid hydrate	skos:exactMatch	CHEBI:182320	Glycocholic acid hydrate	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99			OAK+OLS:chebi|CONFIRMED|2026-05-07
 MIM:Glycocyamine	Glycocyamine	skos:exactMatch	CHEBI:16344	guanidinoacetic acid	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99			OAK+OLS:chebi|CONFIRMED|2026-05-07
 MIM:Glycogen	Glycogen	skos:exactMatch	CHEBI:28087	glycogen	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=mediaingredientmech-agentic-curation	2026-05-11	0.99		autoclaved, Glycogen	process-synonym-cleanup|2026-05-11
-MIM:Glycogen_From_Bovine_Liver	Glycogen from bovine liver	skos:closeMatch	cas:9005-79-2	Glycogen from bovine liver	registry:cas	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.9			none|UNKNOWN_TERM|2026-05-07
+MIM:Glycogen_From_Bovine_Liver	Glycogen from bovine liver	skos:exactMatch	CHEBI:28087	glycogen	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:CHEBI via CAS-RN dbxref (glycogen, source-qualified)|MIM:curator=cbclaw_chebi_grounding_curation	2026-07-05	0.99			OAK:chebi|CAS_XREF_GROUNDING|2026-07-05
 MIM:Glycolaldehyde	glycolaldehyde	skos:exactMatch	CHEBI:17071	glycolaldehyde	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99			OAK+OLS:chebi|CONFIRMED|2026-05-07
 MIM:Glycolic_Acid	Glycolic Acid	skos:exactMatch	CHEBI:17497	glycolic acid	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99			OAK+OLS:chebi|CONFIRMED|2026-05-07
 MIM:Glycyl-glycine	Glycyl-glycine	skos:exactMatch	CHEBI:17201	glycylglycine	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureMech|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.99		2-(aminoacetamido)acetic acid|Gly-Gly|Gly2|N-glycylglycine|[(aminoacetyl)amino]acetic acid|glycine dipeptide	OAK+OLS:chebi|SYNONYM_ENRICH|2026-05-07

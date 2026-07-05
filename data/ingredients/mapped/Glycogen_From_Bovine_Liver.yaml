@@ -1,16 +1,21 @@
 identifier: cas:9005-79-2
 preferred_term: Glycogen from bovine liver
 ontology_mapping:
-  ontology_id: cas:9005-79-2
-  ontology_label: Glycogen from bovine liver
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:28087
+  ontology_label: glycogen
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
   evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_chebi_grounding_curation
+    notes: 'Grounded to CHEBI:28087 (glycogen), EXACT_MATCH: "from bovine liver" is
+      a provenance qualifier, not a distinct chemical, and glycogen is source-independent
+      in CHEBI — the same treatment as the plain "Glycogen" record (CHEBI:28087,
+      EXACT_MATCH). Supersedes the prior cas:9005-79-2 registry fallback; the CAS-RN
+      is retained in chemical_properties.'
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 9005-79-2 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: Imported from CultureBotHT with CAS-RN 9005-79-2 (retained as chemical_properties.cas_rn).
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -44,6 +49,14 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_chebi_grounding_curation
+  action: GROUND_TO_CHEBI_PARENT
+  changes: 'ontology_mapping cas:9005-79-2 (FALLBACK_REGISTRY) -> CHEBI:28087 (glycogen),
+    EXACT_MATCH. "from bovine liver" is a source qualifier; glycogen is source-independent
+    in CHEBI. Consistent with the plain Glycogen record (CHEBI:28087).'
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 9005-79-2
   data_source: CultureBotHT compounds_to_cas.csv

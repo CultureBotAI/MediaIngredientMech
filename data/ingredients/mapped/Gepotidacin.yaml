@@ -1,19 +1,20 @@
-identifier: cas:1075236-89-3
+identifier: CHEBI:747127
 preferred_term: Gepotidacin
 ontology_mapping:
-  ontology_id: NCIT:C170025
-  ontology_label: Gepotidacin
-  ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  ontology_id: CHEBI:747127
+  ontology_label: gepotidacin
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 1075236-89-3 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: CAS_RN_CROSS_REFERENCE
+    source: CHEBI dbxref (OAK CHEBI sqlite)
+    cas_rn: 1075236-89-3
+    notes: ChEBI ID CHEBI:747127 found via unique CAS-RN→CHEBI dbxref (oio:hasDbXref
+      cas:1075236-89-3); CHEBI label 'gepotidacin' is label-exact with the ingredient.
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Gepotidacin'
+    notes: Prior narrow parent NCIT:C170025 (superseded by exact CHEBI primary);
+      matched_via='Gepotidacin'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -47,6 +48,13 @@ curation_history:
   curator: backfill_parent_terms
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C170025 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-07-05T10:06:57.852475+00:00'
+  curator: cbclaw_chebi_grounding_tier2
+  action: AUTO_GROUND_TO_CHEBI
+  changes: 'primary cas:1075236-89-3 → CHEBI:747127 (gepotidacin) via unique CAS-RN→CHEBI
+    dbxref match (skos:exactMatch); prior NCIT:C170025 narrow parent superseded.'
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 1075236-89-3
