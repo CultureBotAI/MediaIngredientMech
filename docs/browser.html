@@ -350,7 +350,7 @@
 </head>
 <body>
     <header class="header">
-        <h1>🧪 MediaIngredientMech Browser</h1>
+        <h1>MediaIngredientMech Browser</h1>
         <p id="subtitle">Explore curated media ingredients with ontology mappings</p>
         <a href="index.html" class="nav-link">← Back to Home</a>
     </header>
@@ -361,7 +361,7 @@
                 <input type="text"
                        id="search"
                        class="search-box"
-                       placeholder="🔍 Search ingredients by name, synonym, or ontology ID...">
+                       placeholder="Search ingredients by name, synonym, or ontology ID...">
 
                 <div class="filters">
                     <div class="filter-group">
@@ -494,7 +494,7 @@
 
                     ${ing.ontology_id ? `
                         <div class="ingredient-ontology">
-                            🔗 ${ing.ontology_source}:${ing.ontology_id.split(':')[1]} — ${escapeHtml(ing.ontology_label)}
+                            ${ing.ontology_source}:${ing.ontology_id.split(':')[1]} — ${escapeHtml(ing.ontology_label)}
                             ${ing.mapping_quality ? `<span style="color: #666; font-size: 0.85rem;">(${ing.mapping_quality})</span>` : ''}
                         </div>
                     ` : ''}

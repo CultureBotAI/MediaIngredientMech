@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Knowledge gaps & discussions</title>
 <style>
-  :root { --fg:#1a1a1a; --muted:#666; --line:#e2e2e2; --accent:#2a6; --bg:#fff; }
+  :root { --fg:#1a1a1a; --muted:#666; --line:#e2e2e2; --accent:#2a6; --bg:#fff; --card:#fff; }
   * { box-sizing: border-box; }
   body { font-family: -apple-system, system-ui, sans-serif; color: var(--fg); margin: 0; background: var(--bg); }
   header { padding: 1rem 1.25rem; border-bottom: 1px solid var(--line); }
@@ -27,6 +27,34 @@
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   .empty { color: var(--muted); padding: 2rem; text-align: center; }
+
+  /* ---- Dark theme (OS default; superseded by the toggle) ---- */
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --fg:#ece9f4; --muted:#a39db8; --line:#302b40; --accent:#4ade80;
+      --bg:#14121c; --card:#1e1b29;
+    }
+    :root:not([data-theme="light"]) body { background: var(--bg); }
+    :root:not([data-theme="light"]) .card { background: var(--card); }
+    :root:not([data-theme="light"]) .badge { background:#233047; color:#bcd3f5; }
+    :root:not([data-theme="light"]) .badge.gap { background:#3a2323; color:#f2b8b8; }
+    :root:not([data-theme="light"]) .rationale { color: var(--fg); }
+  }
+  :root[data-theme="dark"]{
+    --fg:#ece9f4; --muted:#a39db8; --line:#302b40; --accent:#4ade80;
+    --bg:#14121c; --card:#1e1b29;
+  }
+  :root[data-theme="dark"] body { background: var(--bg); }
+  :root[data-theme="dark"] .card { background: var(--card); }
+  :root[data-theme="dark"] .badge { background:#233047; color:#bcd3f5; }
+  :root[data-theme="dark"] .badge.gap { background:#3a2323; color:#f2b8b8; }
+  :root[data-theme="dark"] .rationale { color: var(--fg); }
+
+  /* ---- Reduced-motion guard ---- */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+      transition-duration:.01ms!important;scroll-behavior:auto!important;}
+  }
 </style>
 </head>
 <body>
@@ -123,5 +151,6 @@
   renderFacets(); render();
 })();
 </script>
+<script src="theme-toggle.js"></script>
 </body>
 </html>
