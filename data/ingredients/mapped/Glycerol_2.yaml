@@ -1,14 +1,19 @@
-identifier: CHEBI:15978
+identifier: CHEBI:17754
 preferred_term: glycerol
 ontology_mapping:
-  ontology_id: CHEBI:15978
-  ontology_label: sn-glycerol 3-phosphate
+  ontology_id: CHEBI:17754
+  ontology_label: glycerol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_followups_114
+    notes: 'Corrected mis-mapping: ontology_id CHEBI:15978 (sn-glycerol 3-phosphate,
+      C3H9O6P) was wrong; this record is glycerol (CAS 56-81-5). Remapped to CHEBI:17754
+      (glycerol). EXACT_MATCH.'
 synonyms:
 - synonym_text: 'Role: Carbon source; Properties: Defined component, Organic compound,
     Simple component'
@@ -30,22 +35,10 @@ synonyms:
     Organic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: (2R)-2,3-dihydroxypropyl dihydrogen phosphate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: (R)-glycerol 1-phosphate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 - synonym_text: 1,2,3-Propanetriol
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: 1,2,3-Trihydroxypropane
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: D-(glycerol 1-phosphate)
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: D-Glycerol 1-phosphate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: G Glycerol
@@ -54,25 +47,13 @@ synonyms:
 - synonym_text: Glyceritol
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-- synonym_text: Glycerol-3-phosphate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 - synonym_text: Glyzerin
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: L-(glycerol 3-phosphate)
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Oelsuess
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-- synonym_text: Phosphorsaeure-mono-((R)-2,3-dihydroxy-propylester)
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
 - synonym_text: Propanetriol
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: SN-GLYCEROL-3-PHOSPHATE
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Trihydroxypropane
@@ -81,12 +62,6 @@ synonyms:
 - synonym_text: glycerine
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-- synonym_text: glycerol 3-phosphate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: sn-glycerol 3-(dihydrogen phosphate)
-  synonym_type: EXACT_SYNONYM
-  source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 6
@@ -136,14 +111,19 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: CORRECTED
+  changes: 'ontology_id CHEBI:15978 (sn-glycerol 3-phosphate) -> CHEBI:17754 (glycerol);
+    molecular_formula C3H9O6P -> C3H8O3; cleared phosphate inchi/smiles for backfill;
+    kg_microbe_node_id CHEBI:15978 -> CHEBI:17754. CAS 56-81-5 retained.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 56-81-5
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:52:17.243616+00:00'
-  molecular_formula: C3H9O6P
-  inchi: InChI=1S/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2,(H2,6,7,8)/t3-/m1/s1
-  smiles: O=P(O)(O)OC[C@H](O)CO
-kg_microbe_node_id: CHEBI:15978
+  molecular_formula: C3H8O3
+kg_microbe_node_id: CHEBI:17754
 ingredient_type: SINGLE_INGREDIENT
 media_roles:
 - role: CARBON_SOURCE

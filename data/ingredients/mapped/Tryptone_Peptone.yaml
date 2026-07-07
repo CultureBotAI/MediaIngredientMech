@@ -1,0 +1,46 @@
+identifier: MICRO:0000182
+preferred_term: Tryptone peptone
+ontology_mapping:
+  ontology_id: MICRO:0000182
+  ontology_label: tryptone
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_followups_114
+    notes: Tryptone peptone is a pancreatic (tryptic) digest of casein; mapped to the
+      precise MICRO term MICRO:0000182 (tryptone), mirroring sibling records Tryptone
+      and Bacto-tryptone.
+synonyms:
+- synonym_text: Tryptone peptone
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:164); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.985362+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Tryptone')
+  llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: MAPPED
+  changes: 'Mapped residual peptone variant: identifier UNMAPPED_0558 -> MICRO:0000182
+    (tryptone), EXACT_MATCH, mirroring sibling Tryptone/Bacto-tryptone. mapping_status
+    UNMAPPED -> MAPPED.'
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+notes: Imported from mim-queue (source_id=mediadive.ingredient:164); mapped 2026-07-05
+  to MICRO:0000182 (tryptone) as a residual tryptone-peptone variant.
+ingredient_type: UNDEFINED_MIXTURE

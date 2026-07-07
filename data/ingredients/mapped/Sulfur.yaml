@@ -128,10 +128,14 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Sulfur'' -> ''sulfur atom'': synced to canonical CHEBI
     label (preferred_term ''Sulfur'' unchanged).'
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: CORRECTED
+  changes: 'Removed erroneous chemical_properties.cas_rn 7783-06-4 (that CAS is hydrogen
+    sulfide, H2S / CHEBI:16136 — a PubChem false positive, not elemental sulfur), plus
+    its data_source/retrieval_date. CHEBI:26833 (sulfur atom) mapping unchanged.'
+  llm_assisted: true
 chemical_properties:
-  cas_rn: 7783-06-4
-  data_source: PubChem (via CHEBI:26833)
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: S
   inchi: InChI=1S/S
   smiles: '[S]'

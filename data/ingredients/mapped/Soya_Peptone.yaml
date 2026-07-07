@@ -1,17 +1,17 @@
-identifier: cas:91079-46-8
+identifier: FOODON:03315720
 preferred_term: Soya peptone
 ontology_mapping:
-  ontology_id: cas:91079-46-8
-  ontology_label: Soya peptone
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: FOODON:03315720
+  ontology_label: vegetable protein, hydrolyzed
+  ontology_source: FOODON
+  mapping_quality: CLOSE_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN 91079-46-8 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 4 CultureBot
-      media; samples: mGAM, TSB_K3, mGAM plus…. Curator can promote to a CHEBI primary
-      if/when CHEBI adds the term.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: cbclaw_followups_114
+    notes: 'Registry->ontology upgrade: soya peptone is an enzymatic hydrolysate of
+      soybean protein. Promoted from the cas:91079-46-8 fallback to FOODON:03315720
+      (vegetable protein, hydrolyzed), mirroring sibling Soy_Peptone. CAS 91079-46-8
+      retained in chemical_properties as a registry cross-reference.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -45,15 +45,20 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_followups_114
+  action: MAPPED
+  changes: 'Registry->ontology upgrade: identifier cas:91079-46-8 (FALLBACK_REGISTRY)
+    -> FOODON:03315720 (vegetable protein, hydrolyzed), CLOSE_MATCH, mirroring sibling
+    Soy_Peptone. Removed bogus PubChem structure backfill (molecular_formula
+    C290H252N8O72 / smiles / inchi / pubchem_cid 167312541 resolved from a wrong CID);
+    ingredient_type SINGLE_INGREDIENT -> UNDEFINED_MIXTURE. CAS 91079-46-8 retained.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 91079-46-8
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C290H252N8O72
-  smiles: CCC1(OC(=C(C(=O)O1)C=CC=CC=C2C(=O)OC3(CCC4(CC3)OC(=O)C(=CC=CC=CC5=C(OC(OC5=O)(C)CC)[O-])C(=O)O4)OC2=O)[O-])C.CC1CCC(C2(C1)OC(=C(C(=O)O2)C=CC=CC=C3C(=O)OC4(CCC5(CC4)OC(=O)C(=CC=CC=CC6=C(OC7(CC(CCC7C)C)OC6=O)[O-])C(=O)O5)OC3=O)[O-])C.CC1(OC(=O)C(=CC=CC=CC2=C(OC3(CCC4(CC3)OC(=C(C(=O)O4)C=CC=CC=C5C(=O)OC(OC5=O)(C)C)[O-])OC2=O)[O-])C(=O)O1)C.C1CCC2(CC1)OC(=O)C(=CC=CC=CC3=C(OC4(CCC5(CC4)OC(=C(C(=O)O5)C=CC=CC=C6C(=O)OC7(CCCCC7)OC6=O)[O-])OC3=O)[O-])C(=O)O2.C1=CC=C(C=C1)C2=C(C=CC(=C2)[N+]3=CC=C(C=C3)C4=CC=[N+](C=C4)C5=CC(=C(C=C5)O)C6=CC=CC=C6)O.C1=CC=C(C=C1)C2=C(C=CC(=C2)[N+]3=CC=C(C=C3)C4=CC=[N+](C=C4)C5=CC(=C(C=C5)O)C6=CC=CC=C6)O.C1=CC=C(C=C1)C2=C(C=CC(=C2)[N+]3=CC=C(C=C3)C4=CC=[N+](C=C4)C5=CC(=C(C=C5)O)C6=CC=CC=C6)O.C1=CC=C(C=C1)C2=C(C=CC(=C2)[N+]3=CC=C(C=C3)C4=CC=[N+](C=C4)C5=CC(=C(C=C5)O)C6=CC=CC=C6)O
-  inchi: InChI=1S/C44H48O16.C40H40O16.C36H36O16.4C34H24N2O2.C34H32O16/c1-25-15-17-27(3)43(23-25)57-37(49)31(38(50)58-43)13-9-5-7-11-29-33(45)53-41(54-34(29)46)19-21-42(22-20-41)55-35(47)30(36(48)56-42)12-8-6-10-14-32-39(51)59-44(60-40(32)52)24-26(2)16-18-28(44)4;41-29-25(30(42)50-37(49-29)17-9-3-10-18-37)13-5-1-7-15-27-33(45)53-39(54-34(27)46)21-23-40(24-22-39)55-35(47)28(36(48)56-40)16-8-2-6-14-26-31(43)51-38(52-32(26)44)19-11-4-12-20-38;1-5-33(3)45-25(37)21(26(38)46-33)13-9-7-11-15-23-29(41)49-35(50-30(23)42)17-19-36(20-18-35)51-31(43)24(32(44)52-36)16-12-8-10-14-22-27(39)47-34(4,6-2)48-28(22)40;4*37-33-13-11-29(23-31(33)27-7-3-1-4-8-27)35-19-15-25(16-20-35)26-17-21-36(22-18-26)30-12-14-34(38)32(24-30)28-9-5-2-6-10-28;1-31(2)43-23(35)19(24(36)44-31)11-7-5-9-13-21-27(39)47-33(48-28(21)40)15-17-34(18-16-33)49-29(41)22(30(42)50-34)14-10-6-8-12-20-25(37)45-32(3,4)46-26(20)38/h5-14,25-28,49,51H,15-24H2,1-4H3;1-2,5-8,13-16,45,47H,3-4,9-12,17-24H2;7-16,37,39H,5-6,17-20H2,1-4H3;4*1-24H;5-14,39,41H,15-18H2,1-4H3
-  pubchem_cid: 167312541
-ingredient_type: SINGLE_INGREDIENT
+ingredient_type: UNDEFINED_MIXTURE
 media_roles:
 - role: PROTEIN_SOURCE
   confidence: 0.8

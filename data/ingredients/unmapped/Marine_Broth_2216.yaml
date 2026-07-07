@@ -21,6 +21,12 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'broth')
   llm_assisted: false
+- timestamp: '2026-07-05T00:00:00+00:00'
+  curator: cbclaw_media_modeling_114
+  action: RECLASSIFY_INGREDIENT_TYPE
+  changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+    culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
-ingredient_type: UNDEFINED_MIXTURE
+ingredient_type: DEFINED_MEDIUM
