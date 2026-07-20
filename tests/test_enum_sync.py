@@ -2,12 +2,13 @@
 the LinkML schema enums.
 
 `IngredientCurator` validates roles / citation types against module-level sets
-(`VALID_MEDIA_ROLES`, `VALID_CELLULAR_ROLES`, `VALID_CITATION_TYPES`). These are
-hand-maintained copies of the schema's permissible values; if a value is added
-to the schema enum but not to the set, `add_media_role` / `add_cellular_role`
-raise ValueError on a perfectly valid value (this exact drift bug shipped once —
-REDOX_INDICATOR / PH_INDICATOR / SELECTIVE_AGENT / SURFACTANT were in the schema
-but not the curator set). These tests fail loudly when the two diverge.
+(`VALID_MEDIA_ROLES`, `VALID_COMMUNITY_ORGANISM_ROLES`, `VALID_CITATION_TYPES`).
+These are hand-maintained copies of the schema's permissible values; if a value
+is added to the schema enum but not to the set, `add_media_role` /
+`add_community_organism_role` raise ValueError on a perfectly valid value (this
+exact drift bug shipped once — REDOX_INDICATOR / PH_INDICATOR / SELECTIVE_AGENT
+/ SURFACTANT were in the schema but not the curator set). These tests fail
+loudly when the two diverge.
 """
 
 import sys
@@ -18,8 +19,8 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import (
-    VALID_CELLULAR_ROLES,
     VALID_CITATION_TYPES,
+    VALID_COMMUNITY_ORGANISM_ROLES,
     VALID_MEDIA_ROLES,
 )
 
@@ -44,9 +45,9 @@ def test_media_roles_match_schema():
     )
 
 
-def test_cellular_roles_match_schema():
-    assert VALID_CELLULAR_ROLES == _schema_enum("CellularRoleEnum"), (
-        "VALID_CELLULAR_ROLES is out of sync with CellularRoleEnum. "
+def test_community_organism_roles_match_schema():
+    assert VALID_COMMUNITY_ORGANISM_ROLES == _schema_enum("CommunityOrganismRoleEnum"), (
+        "VALID_COMMUNITY_ORGANISM_ROLES is out of sync with CommunityOrganismRoleEnum. "
         "Update the set in curation/ingredient_curator.py to match the schema."
     )
 
