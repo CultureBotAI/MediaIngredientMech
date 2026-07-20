@@ -1019,7 +1019,9 @@ enums:
         description: Suppresses foaming in aerated or vigorously mixed cultures (e.g., silicone antifoam, polypropylene glycol).
         meaning: CHEBI:77973
       OSMOTIC_AGENT:
-        description: Contributes primarily to the osmotic strength of the medium (e.g., NaCl at high concentration, sucrose, glycerol as osmolyte).
+        description: >-
+          Contributes primarily to the osmotic strength of the medium (e.g., NaCl at high concentration, sucrose, glycerol as osmolyte).
+          NOTE: shares `mappings: CHEBI:25728 (osmolyte)` with CellularMetabolicRoleEnum.OSMOPROTECTANT. Auto-classifiers driven by the SSSOM must NOT fan a single CHEBI:25728 annotation out to both facets — this is a medium-side role, whereas OSMOPROTECTANT is an intracellular, organism-conditional role. Assign OSMOPROTECTANT only when there is organism-context evidence.
         mappings:
           - CHEBI:25728
       PRECIPITATION_INHIBITOR:
@@ -1053,7 +1055,9 @@ enums:
       MEMBRANE_COMPONENT:
         description: Incorporated into cell membranes (e.g., fatty acids, sterols, isoprenoid lipids).
       OSMOPROTECTANT:
-        description: Accumulated intracellularly to balance external osmotic stress (e.g., glycine betaine, ectoine, trehalose).
+        description: >-
+          Accumulated intracellularly to balance external osmotic stress (e.g., glycine betaine, ectoine, trehalose). Organism-conditional — assign only with organism-context evidence (e.g., "glycine betaine is imported and accumulated as an osmoprotectant by <organism>").
+          NOTE: shares `mappings: CHEBI:25728 (osmolyte)` with PhysicochemicalRoleEnum.OSMOTIC_AGENT. See that value's description for cross-facet guidance.
         mappings:
           - CHEBI:25728
       INDUCER:
@@ -1063,8 +1067,6 @@ enums:
         meaning: CHEBI:35222
       QUENCHER:
         description: Absorbs or dissipates a signal (e.g., quenches fluorescence, radicals, or light).
-      NONE:
-        description: Ingredient has no known cellular metabolic role (e.g., agar is chemically inert; resazurin is a bystander indicator).
 
   CommunityOrganismRoleEnum:
     description: Role an organism plays in a microbial community (formerly `CellularRoleEnum`; renamed 2026-07-19 to disambiguate from cell-level metabolic roles of ingredients — these values describe organisms, not ingredients).
