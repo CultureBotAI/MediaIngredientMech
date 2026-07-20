@@ -71,6 +71,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Sodium maleate'' -> ''disodium maleate'': synced to canonical
     CHEBI label (preferred_term ''Sodium maleate'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
 chemical_properties:
   cas_rn: 371-47-1
   data_source: PubChem API
@@ -80,7 +84,7 @@ chemical_properties:
   smiles: O=C([O-])/C=CC(=O)[O-].[Na+].[Na+]
 kg_microbe_node_id: CHEBI:91263
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: BUFFER
   confidence: 0.6
   evidence:

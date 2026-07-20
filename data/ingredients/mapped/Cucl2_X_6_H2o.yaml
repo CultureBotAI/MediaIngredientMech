@@ -83,6 +83,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''CuCl2 x 6 H2O'' -> ''copper(II) chloride'': synced to
     canonical CHEBI label (preferred_term ''CuCl2 x 6 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 kg_microbe_node_id: CHEBI:49553
 chemical_properties:
   cas_rn: 7447-39-4
@@ -92,8 +96,8 @@ chemical_properties:
   inchi: InChI=1S/2ClH.Cu/h2*1H;/q;;+2/p-2
   smiles: '[Cl][Cu][Cl]'
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 0.8
   evidence:
   - reference_type: COMPUTATIONAL_PREDICTION

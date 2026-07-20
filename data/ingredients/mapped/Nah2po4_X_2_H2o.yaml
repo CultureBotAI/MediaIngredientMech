@@ -113,6 +113,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''NaH2PO4 x 2 H2O'' -> ''sodium dihydrogenphosphate'':
     synced to canonical CHEBI label (preferred_term ''NaH2PO4 x 2 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
 kg_microbe_node_id: CHEBI:37585
 chemical_properties:
   cas_rn: 7558-80-7
@@ -122,7 +126,7 @@ chemical_properties:
   inchi: InChI=1S/Na.H3O4P/c;1-5(2,3)4/h;(H3,1,2,3,4)/q+1;/p-1
   smiles: O=P([O-])(O)O.[Na+]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: BUFFER
   confidence: 1.0
   evidence:

@@ -68,6 +68,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na2MoO4 x 7 H2O'' -> ''sodium molybdate heptahydrate'':
     synced to canonical CHEBI label (preferred_term ''Na2MoO4 x 7 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 kg_microbe_node_id: CHEBI:86473
 chemical_properties:
   cas_rn: 10102-40-6
@@ -77,8 +81,8 @@ chemical_properties:
   inchi: InChI=1S/Mo.2Na.7H2O.4O/h;;;7*1H2;;;;/q;2*+1;;;;;;;;;;2*-1
   smiles: O.O.O.O.O.O.O.[Na+].[Na+].[O]=[Mo](=[O])([O-])[O-]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 0.8
   evidence:
   - reference_type: COMPUTATIONAL_PREDICTION

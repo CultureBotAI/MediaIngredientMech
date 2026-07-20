@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Add an ENERGY_SOURCE dimension to canonical energy substrates.
 
-media_roles currently carry a single functional axis; most catabolic substrates
-are tagged only CARBON_SOURCE. This adds ENERGY_SOURCE as a SECOND role to the
-textbook fermentable/respirable energy substrates that already hold CARBON_SOURCE
+Most catabolic substrates carry a single nutritional role, CARBON_SOURCE. This
+adds ENERGY_SOURCE as a SECOND role to the textbook fermentable/respirable
+energy substrates that already hold CARBON_SOURCE
 — glycolytic/TCA organic acids, common fermentable sugars, and ethanol/glycerol.
 
 Deliberately conservative: only substrates microbiologists routinely describe as
@@ -24,6 +24,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_facets import add_role
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 # Canonical energy substrates (word-boundaried). Acids match -ate/-ic forms.
 ENERGY = re.compile(
@@ -65,16 +67,20 @@ def main() -> None:
 
     added = []
     for record in curator.records:
-        roles = {m.get("role") for m in record.get("media_roles", [])}
+        roles = {
+            ra.get("role")
+            for _slot, ra in iter_role_assignments(record, slots=FACET_ROLE_SLOTS)
+        }
         if "CARBON_SOURCE" not in roles or "ENERGY_SOURCE" in roles:
             continue
         if not is_energy_substrate(record.get("preferred_term", "")):
             continue
         added.append(record["preferred_term"])
         if not args.dry_run:
-            curator.add_media_role(
+            add_role(
+                curator,
                 record,
-                role="ENERGY_SOURCE",
+                "ENERGY_SOURCE",
                 confidence=0.7,
                 reference_text="Canonical energy substrate (catabolised for energy)",
                 reference_type="COMPUTATIONAL_PREDICTION",

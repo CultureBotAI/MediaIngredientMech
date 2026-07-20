@@ -68,6 +68,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''CuSO4 x 6 H2O'' -> ''copper(II) sulfate hexahydrate'':
     synced to canonical CHEBI label (preferred_term ''CuSO4 x 6 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 kg_microbe_node_id: CHEBI:91246
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
@@ -75,8 +79,8 @@ chemical_properties:
   inchi: InChI=1S/Cu.H2O4S.6H2O/c;1-5(2,3)4;;;;;;/h;(H2,1,2,3,4);6*1H2/q+2;;;;;;;/p-2
   smiles: O.O.O.O.O.O.O=S(=O)([O-])[O-].[Cu+2]
   data_source: CHEBI sqlite (oaklib)
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 0.8
   evidence:
   - reference_type: COMPUTATIONAL_PREDICTION

@@ -82,6 +82,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na2S2O4'' -> ''scutellarin'': synced to canonical CHEBI
     label (preferred_term ''Na2S2O4'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT -> physicochemical_roles.REDUCING_AGENT'
 chemical_properties:
   cas_rn: 7775-14-6
   data_source: PubChem API
@@ -90,7 +94,7 @@ chemical_properties:
   inchi: InChI=1S/C21H18O12/c22-8-3-1-7(2-4-8)10-5-9(23)13-11(31-10)6-12(14(24)15(13)25)32-21-18(28)16(26)17(27)19(33-21)20(29)30/h1-6,16-19,21-22,24-28H,(H,29,30)/t16-,17-,18+,19-,21+/m0/s1
   smiles: O=C(O)[C@H]1O[C@@H](Oc2cc3oc(-c4ccc(O)cc4)cc(=O)c3c(O)c2O)[C@H](O)[C@@H](O)[C@@H]1O
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: REDUCING_AGENT
   confidence: 0.6
   evidence:

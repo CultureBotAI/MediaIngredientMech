@@ -24,6 +24,10 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
 notes: 'CultureMech placeholder_id: 9'
 ontology_mapping:
   ontology_id: MICRO:0000455
@@ -35,7 +39,7 @@ ontology_mapping:
     source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0097; matched via 'Algal Trace Elements Solution';
       stem-substring
-media_roles:
+nutritional_roles:
 - role: TRACE_ELEMENT
   confidence: 0.6
   evidence:

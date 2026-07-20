@@ -53,6 +53,10 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: REDUCING_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT -> physicochemical_roles.REDUCING_AGENT'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: H2S
@@ -65,7 +69,7 @@ environmental_context:
   relevance: ENVIRONMENT_MIMIC
   notes: Vent fluids are sulfide-rich; H2S supplementation reproduces vent chemistry
     for chemolithotrophic vent organisms.
-media_roles:
+physicochemical_roles:
 - role: REDUCING_AGENT
   confidence: 0.8
   evidence:

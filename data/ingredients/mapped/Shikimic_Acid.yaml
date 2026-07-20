@@ -70,6 +70,10 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 notes: Created from FEBA ontology enrichment workflow. Used in 10 FEBA media formulations.
 chemical_properties:
   cas_rn: 138-59-0
@@ -79,7 +83,7 @@ chemical_properties:
   inchi: InChI=1S/C7H10O5/c8-4-1-3(7(11)12)2-5(9)6(4)10/h1,4-6,8-10H,2H2,(H,11,12)/t4-,5-,6-/m1/s1
   smiles: O=C(O)C1=C[C@@H](O)[C@@H](O)[C@H](O)C1
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.8
   evidence:

@@ -116,11 +116,6 @@ classes:
         description: Audit trail of all curation actions
       notes:
         description: Free-text curation notes
-      media_roles:
-        range: RoleAssignment
-        multivalued: true
-        inlined_as_list: true
-        description: Functional roles in growth medium formulation (e.g., NITROGEN_SOURCE, BUFFER)
       community_organism_roles:
         range: CommunityOrganismRoleAssignment
         multivalued: true
@@ -214,7 +209,8 @@ classes:
       role_inheritance:
         range: boolean
         description: >-
-          If true, inherits media_roles from parent ingredient.
+          If true, inherits the three role facets (nutritional_roles,
+          physicochemical_roles, cellular_metabolic_roles) from the parent ingredient.
           Allows child variants to automatically get parent's roles while enabling
           variant-specific role overrides or restrictions.
       kg_microbe_node_id:
@@ -493,24 +489,6 @@ classes:
         description: Relevant excerpt or quote from the source
       curator_note:
         description: Curator's explanation of why this supports the role assignment
-
-  RoleAssignment:
-    description: Assignment of a functional role in growth medium formulation with supporting evidence
-    attributes:
-      role:
-        range: IngredientRoleEnum
-        required: true
-        description: The functional role (e.g., NITROGEN_SOURCE, BUFFER, MINERAL)
-      confidence:
-        range: float
-        description: Confidence score for this role assignment (0.0-1.0)
-      evidence:
-        range: RoleCitation
-        multivalued: true
-        inlined_as_list: true
-        description: Citations and references supporting this role
-      notes:
-        description: Additional context about this role assignment
 
   CommunityOrganismRoleAssignment:
     description: Assignment of an organism-in-community role with supporting evidence (e.g., which member of a consortium plays the PRIMARY_DEGRADER or SYNERGIST role).
@@ -886,50 +864,6 @@ enums:
           Reference is incorrectly cited (placeholder for legacy data;
           flagged for cleanup)
 
-  IngredientRoleEnum:
-    description: Functional roles of ingredients in growth medium formulation
-    permissible_values:
-      CARBON_SOURCE:
-        description: Provides organic carbon for biosynthesis and energy
-      NITROGEN_SOURCE:
-        description: Provides nitrogen for amino acids, nucleotides, etc.
-      MINERAL:
-        description: Inorganic mineral nutrient (e.g., phosphate, sulfate, magnesium)
-      TRACE_ELEMENT:
-        description: Micronutrient required in trace amounts (e.g., iron, zinc, cobalt)
-      BUFFER:
-        description: pH buffering agent to maintain stable pH
-      VITAMIN_SOURCE:
-        description: Provides vitamins or vitamin precursors
-      SALT:
-        description: Provides ionic strength and osmotic balance
-      PROTEIN_SOURCE:
-        description: Provides peptides, proteins, or amino acids
-      AMINO_ACID_SOURCE:
-        description: Provides specific amino acids
-      SOLIDIFYING_AGENT:
-        description: Gelling agent for solid media (e.g., agar)
-      ENERGY_SOURCE:
-        description: Primary energy substrate for chemotrophs
-      ELECTRON_ACCEPTOR:
-        description: Terminal electron acceptor for respiration (e.g., nitrate, oxygen)
-      ELECTRON_DONOR:
-        description: Electron donor for chemolithotrophs
-      COFACTOR_PROVIDER:
-        description: Provides enzyme cofactors or prosthetic groups
-      REDOX_INDICATOR:
-        description: pH-dependent redox indicator for anaerobic conditions (e.g., resazurin)
-      PH_INDICATOR:
-        description: pH indicator dye for monitoring medium acidity/alkalinity
-      SELECTIVE_AGENT:
-        description: Antimicrobial or selective agent for enrichment cultures
-      SURFACTANT:
-        description: Surfactant or detergent for emulsification
-      REDUCING_AGENT:
-        description: Lowers redox potential / poises anaerobic media (e.g., sodium sulfide, cysteine, thioglycolate, dithiothreitol)
-      CHELATOR:
-        description: Sequesters/chelates metal ions to control availability or toxicity (e.g., EDTA, NTA, citrate)
-
   NutritionalRoleEnum:
     description: >-
       What element or macronutrient an ingredient supplies to the medium.
@@ -955,6 +889,15 @@ enums:
         description: Provides iron (typically for cytochromes, Fe-S clusters, and other metalloproteins).
       TRACE_ELEMENT:
         description: Provides a micronutrient required in trace amounts (e.g., zinc, cobalt, manganese, molybdenum).
+      MINERAL_SOURCE:
+        description: >-
+          Provides a bulk inorganic mineral nutrient not covered by a more
+          specific element-source value — in practice the macronutrient cations
+          magnesium, calcium, potassium, and sodium (e.g., MgCl2, CaCl2, KCl,
+          NaCl). Prefer the specific value (PHOSPHATE_SOURCE, IRON_SOURCE,
+          SULFUR_SOURCE, TRACE_ELEMENT) whenever the salient nutrient is one of
+          those; MINERAL_SOURCE is the residual bucket, mirroring how
+          TRACE_ELEMENT buckets the micronutrient metals.
       VITAMIN_SOURCE:
         description: Provides vitamins or vitamin precursors.
         meaning: CHEBI:33229

@@ -79,6 +79,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Trimethylamine'' -> ''trimethylamine'': synced to canonical
     CHEBI label (preferred_term ''Trimethylamine'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 chemical_properties:
   cas_rn: 75-50-3
   data_source: PubChem API
@@ -87,7 +91,7 @@ chemical_properties:
   inchi: InChI=1S/C3H9N/c1-4(2)3/h1-3H3
   smiles: CN(C)C
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.6
   evidence:

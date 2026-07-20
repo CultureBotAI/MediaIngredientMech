@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Infer media_roles for CHEBI-mapped ingredients from CHEBI ancestry.
+"""Infer ingredient role facets for CHEBI-mapped ingredients from CHEBI ancestry.
 
 Synonym-based extraction (``extract_roles_from_synonyms.py``) only covers
 ingredients carrying a CultureMech ``Role:`` annotation (~15%). This script
@@ -17,7 +17,7 @@ Design choices for precision (the goal is zero mis-tags, not max coverage):
     structural/role class does not determine the media role:
       - SELECTIVE_AGENT (CHEBI:33281 antimicrobial agent): captures non-selective
         compounds like short-chain alcohols. Use a curated antibiotic name list.
-      - MINERAL (CHEBI:24839 inorganic salt): captures functional non-minerals —
+      - MINERAL_SOURCE (CHEBI:24839 inorganic salt): captures functional non-minerals —
         sodium azide (selective agent), dithionite/sulfite/thiosulfate (reducing
         agents / electron donors), hypochlorite/arsenite/chromate (toxic inhibitors).
       - COFACTOR_PROVIDER (CHEBI:23357 cofactor): captures hydrogen peroxide,
@@ -51,6 +51,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_facets import add_role
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 # Default to the standard OAK semsql cache location, resolved portably from the
 # user's home dir (reuses an existing local copy without re-downloading).
@@ -136,7 +138,7 @@ def main() -> None:
         r
         for r in curator.records
         if r.get("mapping_status") == "MAPPED"
-        and not r.get("media_roles")
+        and not any(iter_role_assignments(r, slots=FACET_ROLE_SLOTS))
         and (r.get("ontology_mapping") or {}).get("ontology_source") == "CHEBI"
         and str(r["identifier"]).startswith("CHEBI:")
     ]
@@ -162,9 +164,10 @@ def main() -> None:
         assigned += 1
         dist[role] += 1
         if not args.dry_run:
-            curator.add_media_role(
+            add_role(
+                curator,
                 record,
-                role=role,
+                role,
                 confidence=0.7,
                 reference_text=f"Inferred from CHEBI ancestry: subclass/has_role of {justification}",
                 reference_type="COMPUTATIONAL_PREDICTION",

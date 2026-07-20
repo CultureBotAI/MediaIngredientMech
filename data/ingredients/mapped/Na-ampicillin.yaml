@@ -88,6 +88,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na-ampicillin'' -> ''ampicillin sodium'': synced to canonical
     CHEBI label (preferred_term ''Na-ampicillin'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
 chemical_properties:
   cas_rn: 69-52-3
   data_source: PubChem API (preprocessed)
@@ -96,7 +101,7 @@ chemical_properties:
   inchi: InChI=1S/C16H19N3O4S.Na/c1-16(2)11(15(22)23)19-13(21)10(14(19)24-16)18-12(20)9(17)8-6-4-3-5-7-8;/h3-7,9-11,14H,17H2,1-2H3,(H,18,20)(H,22,23);/q;+1/p-1/t9-,10-,11+,14-;/m1./s1
   smiles: '[H][C@]12SC(C)(C)[C@H](C(=O)[O-])N1C(=O)[C@H]2NC(=O)[C@H](N)c1ccccc1.[Na+]'
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 0.8
   evidence:

@@ -48,13 +48,18 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
 chemical_properties:
   cas_rn: 5328-37-0
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
   molecular_formula: C5H10O5
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.7
   evidence:

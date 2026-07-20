@@ -127,8 +127,8 @@ attributes:
     description: The community/ecological role of the organism (e.g., PRIMARY_DEGRADER,
       SYNERGIST, COMMENSAL, COMPETITOR).
     from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -148,8 +148,8 @@ attributes:
     name: confidence
     description: Confidence score for this role assignment (0.0-1.0)
     from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -161,7 +161,6 @@ attributes:
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
     - OntologyMapping
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -181,7 +180,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -207,10 +205,10 @@ attributes:
     description: The community/ecological role of the organism (e.g., PRIMARY_DEGRADER,
       SYNERGIST, COMMENSAL, COMPETITOR).
     from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
     alias: role
     owner: CommunityOrganismRoleAssignment
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -233,10 +231,10 @@ attributes:
     name: confidence
     description: Confidence score for this role assignment (0.0-1.0)
     from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
     alias: confidence
     owner: CommunityOrganismRoleAssignment
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -250,7 +248,6 @@ attributes:
     owner: CommunityOrganismRoleAssignment
     domain_of:
     - OntologyMapping
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -272,7 +269,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment

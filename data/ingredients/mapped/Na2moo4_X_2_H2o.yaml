@@ -239,6 +239,10 @@ curation_history:
     (literature) + MediaDive recipe context + local OAK CHEBI confirm this is a garbled
     spelling of 'Na2MoO4 x 2 H2O' (already mapped to CHEBI:75213); promotion would
     PK-collide, so absorbed here as a synonym.
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 kg_microbe_node_id: CHEBI:75213
 chemical_properties:
   cas_rn: 10102-40-6
@@ -248,8 +252,8 @@ chemical_properties:
   inchi: InChI=1S/Mo.2Na.2H2O.4O/h;;;2*1H2;;;;/q;2*+1;;;;;2*-1
   smiles: O.O.[Na+].[Na+].[O]=[Mo](=[O])([O-])[O-]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 1.0
   evidence:
   - reference_text: CultureMech database (3137 occurrences as 'Mineral source')

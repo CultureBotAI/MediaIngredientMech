@@ -45,13 +45,18 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C67H100N2O24
   inchi: InChI=1S/C67H100N2O24/c1-29-15-18-45(88-52-27-65(11,69(79)80)60(38(10)87-52)68-64(78)82-14)30(2)20-40-21-39(28-70)33(5)26-67(40)62(76)53(63(77)93-67)61(75)66(12)42(29)17-16-41-54(66)31(3)19-32(4)57(41)91-51-24-46(56(74)35(7)84-51)89-50-25-47(90-48-22-43(71)55(73)34(6)83-48)59(37(9)86-50)92-49-23-44(72)58(81-13)36(8)85-49/h15-17,20-21,31-38,40-52,54-60,70-75H,18-19,22-28H2,1-14H3,(H,68,78)/b29-15+,30-20+,61-53-/t31-,32-,33+,34-,35-,36-,37-,38+,40+,41-,42-,43-,44+,45-,46+,47?,48-,49+,50-,51-,52-,54+,55-,56-,57-,58-,59?,60-,65-,66+,67-/m0/s1
   smiles: COC(=O)N[C@H]1[C@@H](C)O[C@@H](O[C@H]2C/C=C(C)[C@@H]3C=C[C@@H]4[C@@H](O[C@H]5C[C@@H](O[C@H]6CC(O[C@H]7C[C@H](O)[C@@H](O)[C@H](C)O7)C(O[C@@H]7C[C@@H](O)[C@@H](OC)[C@H](C)O7)[C@H](C)O6)[C@@H](O)[C@H](C)O5)[C@@H](C)C[C@H](C)[C@H]4[C@]3(C)/C(O)=C3/C(=O)O[C@]4(C[C@@H](C)C(CO)=C[C@H]4/C=C/2C)C3=O)C[C@]1(C)[N+](=O)[O-]
   data_source: CHEBI sqlite (oaklib)
-media_roles:
+physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 0.8
   evidence:

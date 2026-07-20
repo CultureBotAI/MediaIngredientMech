@@ -47,6 +47,10 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CHELATOR (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
 chemical_properties:
   cas_rn: 16858-02-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -55,7 +59,7 @@ chemical_properties:
   inchi: InChI=1S/C26H28N6/c1-5-13-27-23(9-1)19-31(20-24-10-2-6-14-28-24)17-18-32(21-25-11-3-7-15-29-25)22-26-12-4-8-16-30-26/h1-16H,17-22H2
   smiles: c1ccc(CN(CCN(Cc2ccccn2)Cc2ccccn2)Cc2ccccn2)nc1
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: CHELATOR
   confidence: 0.7
   evidence:

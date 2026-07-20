@@ -171,7 +171,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -311,7 +310,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment

@@ -88,6 +88,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Isopropyl alcohol'' -> ''propan-2-ol'': synced to canonical
     CHEBI label (preferred_term ''Isopropyl alcohol'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 chemical_properties:
   cas_rn: 67-63-0
   data_source: PubChem API
@@ -96,7 +100,7 @@ chemical_properties:
   inchi: InChI=1S/C3H8O/c1-3(2)4/h3-4H,1-2H3
   smiles: CC(C)O
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.6
   evidence:

@@ -5,7 +5,8 @@ This script imports role assignments from a PFAS database TSV file that maps
 CHEBI IDs to functional roles. This is a placeholder - adjust based on actual
 PFAS data format when available.
 
-Expected TSV format:
+Expected TSV format (ROLE is a value of one of the three role facet enums,
+which determines the facet the assignment is written to):
     CHEBI_ID    ROLE    CONFIDENCE    SOURCE_DOI    NOTES
     CHEBI:12345 NITROGEN_SOURCE    0.95    10.1234/example    ...
 """
@@ -18,6 +19,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_facets import add_role
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 # Path to PFAS data file (adjust as needed)
 PFAS_DATA_FILE = Path("data/external/pfas_role_assignments.tsv")
@@ -122,16 +125,20 @@ def main():
                 continue
 
             # Check if role already exists
-            existing_roles = {r.get("role") for r in record.get("media_roles", [])}
+            existing_roles = {
+                r.get("role")
+                for _slot, r in iter_role_assignments(record, slots=FACET_ROLE_SLOTS)
+            }
             if parsed["role"] in existing_roles:
                 skipped += 1
                 continue
 
             # Add role
             try:
-                curator.add_media_role(
+                add_role(
+                    curator,
                     record,
-                    role=parsed["role"],
+                    parsed["role"],
                     confidence=parsed["confidence"],
                     doi=parsed["doi"],
                     reference_type="DATABASE_ENTRY",
@@ -139,7 +146,7 @@ def main():
                     notes=parsed["notes"],
                 )
                 roles_added += 1
-                if len(record.get("media_roles", [])) == 1:
+                if len(list(iter_role_assignments(record, slots=FACET_ROLE_SLOTS))) == 1:
                     ingredients_updated += 1
 
             except ValueError as e:

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Infer media_roles for role-less MAPPED ingredients from curated name patterns.
+"""Infer role facets for role-less MAPPED ingredients from curated name patterns.
 
 Complements the structural CHEBI-ancestry pass (``infer_roles_from_chebi.py``),
-which deliberately skips SELECTIVE_AGENT / MINERAL / REDUCING_AGENT / CHELATOR
+which deliberately skips SELECTIVE_AGENT / mineral roles / REDUCING_AGENT / CHELATOR
 because CHEBI's structural class does not determine the media role. Here we use
 hand-curated, high-precision name patterns instead — each chosen so a match is
 overwhelmingly likely to play that exact role in a growth medium.
@@ -20,13 +20,15 @@ Precision choices:
     2-mercaptoethanol, thioglycolate, sodium/hydrogen/ammonium sulfide, TCEP).
     Cysteine and volatile organosulfides are excluded (ambiguous / not reductant
     additives).
-  * MINERAL: inorganic salts of nutrient metals, matched by formula prefix
-    (MgSO4, MnCl2, CuSO4, FeSO4, CoCl2, NiSO4, ZnSO4, CaCl2, K2SO4, Na2MoO4, ...).
-    Anchoring on the metal-salt formula avoids the azide/dithionite/oxidizer
-    false positives that the broad "inorganic salt" CHEBI class would catch.
+  * Element sources: inorganic salts of nutrient metals, matched by formula
+    prefix and split by the element they supply — IRON_SOURCE (FeSO4, FeCl2),
+    TRACE_ELEMENT (MnCl2, CuSO4, CoCl2, NiSO4, ZnSO4, Na2MoO4, Na2WO4, H3BO3),
+    MINERAL_SOURCE for bulk cations (MgSO4, CaCl2, KCl, Na2SO4). Anchoring on
+    the metal-salt formula avoids the azide/dithionite/oxidizer false positives
+    that the broad "inorganic salt" CHEBI class would catch.
 
 One role per record (first match by the precedence below). Idempotent: records
-that already carry any media_role are skipped. Assignments are provisional —
+that already carry any facet role are skipped. Assignments are provisional —
 confidence 0.8, reference_type COMPUTATIONAL_PREDICTION, curator
 ``infer_roles_from_name_lists``.
 
@@ -43,6 +45,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_facets import add_role
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 # Ordered (role, include pattern, exclude pattern). First include-match whose
 # exclude pattern does NOT also match wins. Order encodes precedence.
@@ -112,11 +116,14 @@ _VITAMIN = (
 _VITAMIN_EXCL = r"(deoxy|N-oxide|\banti|phosphatidyl)"
 # Inorganic salts of nutrient metals, matched by formula prefix (avoids the
 # azide/dithionite/oxidizer false positives of a broad "inorganic salt" rule).
-_MINERAL = (
-    r"^(MgSO4|MgCl2|MnSO4|MnCl2|CuSO4|CuCl|FeSO4|FeCl2|FeCl3|CoCl2|CoSO4|"
-    r"NiCl2|NiSO4|ZnSO4|ZnCl2|CaCl2|CaSO4|K2SO4|KCl\b|Na2SO4|Na2MoO4|Na2WO4|"
-    r"H3BO3|boric acid)"
+# Split by the element supplied, since there is no generic mineral role: iron,
+# micronutrient metals, then bulk cations as the residual bucket.
+_IRON = r"^(FeSO4|FeCl2|FeCl3)"
+_TRACE_METAL = (
+    r"^(MnSO4|MnCl2|CuSO4|CuCl|CoCl2|CoSO4|NiCl2|NiSO4|ZnSO4|ZnCl2|"
+    r"Na2MoO4|Na2WO4|H3BO3|boric acid)"
 )
+_BULK_MINERAL = r"^(MgSO4|MgCl2|CaCl2|CaSO4|K2SO4|KCl\b|Na2SO4)"
 # Carbohydrate carbon sources (sugars + polysaccharides).
 _CARBON = (
     r"(ose\b|oligosaccharide|polysaccharide|dextrin|dextran|starch|glycogen|"
@@ -162,7 +169,9 @@ RULES = [
     ("PROTEIN_SOURCE", re.compile(_PROTEIN, re.I), re.compile(_PROTEIN_EXCL, re.I)),
     ("AMINO_ACID_SOURCE", re.compile(_AMINO_ACID, re.I), re.compile(_AMINO_ACID_EXCL, re.I)),
     ("VITAMIN_SOURCE", re.compile(_VITAMIN, re.I), re.compile(_VITAMIN_EXCL, re.I)),
-    ("MINERAL", re.compile(_MINERAL, re.I), None),
+    ("IRON_SOURCE", re.compile(_IRON, re.I), None),
+    ("TRACE_ELEMENT", re.compile(_TRACE_METAL, re.I), None),
+    ("MINERAL_SOURCE", re.compile(_BULK_MINERAL, re.I), None),
     ("CARBON_SOURCE", re.compile(_CARBON, re.I), re.compile(_CARBON_EXCL, re.I)),
     ("CARBON_SOURCE", re.compile(_ORGANIC_ACID, re.I), re.compile(_ORGANIC_ACID_EXCL, re.I)),
 ]
@@ -192,7 +201,9 @@ def main() -> None:
     dist = Counter()
     examples: dict[str, list[str]] = {}
     for record in curator.records:
-        if record.get("mapping_status") != "MAPPED" or record.get("media_roles"):
+        if record.get("mapping_status") != "MAPPED" or any(
+            iter_role_assignments(record, slots=FACET_ROLE_SLOTS)
+        ):
             continue
         role = infer_role(record.get("preferred_term", ""))
         if not role:
@@ -200,9 +211,10 @@ def main() -> None:
         dist[role] += 1
         examples.setdefault(role, []).append(record["preferred_term"])
         if not args.dry_run:
-            curator.add_media_role(
+            add_role(
+                curator,
                 record,
-                role=role,
+                role,
                 confidence=0.8,
                 reference_text="Inferred from curated media-role name pattern",
                 reference_type="COMPUTATIONAL_PREDICTION",

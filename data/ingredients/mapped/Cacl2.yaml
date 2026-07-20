@@ -135,6 +135,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''CaCl2'' -> ''calcium dichloride'': synced to canonical
     CHEBI label (preferred_term ''CaCl2'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
 chemical_properties:
   cas_rn: 10043-52-4
   data_source: PubChem API
@@ -144,8 +148,8 @@ chemical_properties:
   smiles: '[Ca+2].[Cl-].[Cl-]'
 kg_microbe_node_id: CHEBI:3312
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: MINERAL_SOURCE
   confidence: 1.0
   evidence:
   - reference_text: CultureMech database (502 occurrences as 'Mineral source')

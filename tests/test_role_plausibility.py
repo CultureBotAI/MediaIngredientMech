@@ -1,4 +1,4 @@
-"""Guard test: no chemically-implausible media_role assignments in the curated data.
+"""Guard test: no chemically-implausible role assignments in the curated data.
 
 Runs the narrow-definition role plausibility audit (scripts/audit_role_plausibility.py)
 over the curated collection and asserts it finds nothing. Catches regressions like a
@@ -29,6 +29,9 @@ def test_no_implausible_role_assignments():
     data = yaml.safe_load((ROOT / "data" / "curated" / "mapped_ingredients.yaml").read_text())
     flagged = audit.find_implausible(data)
     assert flagged == [], (
-        "Chemically-implausible media_role assignments found:\n"
-        + "\n".join(f"  [{role}] {name} ({ident}) <- {srcs}" for role, name, ident, srcs in flagged)
+        "Chemically-implausible role assignments found:\n"
+        + "\n".join(
+            f"  [{slot}.{role}] {name} ({ident}) <- {srcs}"
+            for role, slot, name, ident, srcs in flagged
+        )
     )

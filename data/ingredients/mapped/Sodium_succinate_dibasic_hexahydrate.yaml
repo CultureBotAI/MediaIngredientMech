@@ -79,6 +79,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
 notes: Created from FEBA ontology enrichment workflow. Used in 11 FEBA media formulations.
 chemical_properties:
   cas_rn: 6106-21-4
@@ -88,7 +93,7 @@ chemical_properties:
   inchi: InChI=1S/C4H6O4.2Na.6H2O/c5-3(6)1-2-4(7)8;;;;;;;;/h1-2H2,(H,5,6)(H,7,8);;;6*1H2/q;2*+1;;;;;;/p-2
   smiles: O.O.O.O.O.O.O=C([O-])CCC(=O)[O-].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.8
   evidence:

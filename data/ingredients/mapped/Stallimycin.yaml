@@ -55,13 +55,18 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''distamycin A'' -> ''DISTAMYCIN A'': synced to canonical
     CHEBI label (preferred_term ''Stallimycin'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C22H27N9O4
   inchi: InChI=1S/C22H27N9O4/c1-29-9-13(26-12-32)6-17(29)21(34)28-15-8-18(31(3)11-15)22(35)27-14-7-16(30(2)10-14)20(33)25-5-4-19(23)24/h6-12H,4-5H2,1-3H3,(H3,23,24)(H,25,33)(H,26,32)(H,27,35)(H,28,34)
   smiles: Cn1cc(NC(=O)c2cc(NC(=O)c3cc(NC=O)cn3C)cn2C)cc1C(=O)NCCC(=N)N
   data_source: CHEBI sqlite (oaklib)
-media_roles:
+physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 0.8
   evidence:

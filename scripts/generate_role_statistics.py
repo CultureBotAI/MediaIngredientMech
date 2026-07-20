@@ -3,7 +3,7 @@
 
 This script generates a detailed YAML report of role statistics including:
 - Summary metrics (coverage, average confidence, citation types)
-- Role distribution by type
+- Role distribution by type, and by role facet
 - Confidence score distribution
 - Citation quality metrics
 - Top ingredients by occurrence
@@ -22,6 +22,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 
 def analyze_ingredients(curator: IngredientCurator) -> dict:
@@ -39,6 +40,7 @@ def analyze_ingredients(curator: IngredientCurator) -> dict:
         "total_roles": 0,
         "unique_role_types": set(),
         "role_counts": defaultdict(int),
+        "facet_counts": defaultdict(int),
         "confidence_distribution": defaultdict(int),
         "citation_types": defaultdict(int),
         "multi_role_ingredients": 0,
@@ -52,14 +54,14 @@ def analyze_ingredients(curator: IngredientCurator) -> dict:
         if i % 200 == 0:
             print(f"  Processed {i}/{len(curator.records)} ingredients...")
 
-        media_roles = record.get("media_roles", [])
-        if not media_roles:
+        facet_roles = list(iter_role_assignments(record, slots=FACET_ROLE_SLOTS))
+        if not facet_roles:
             continue
 
         stats["with_roles"] += 1
-        stats["total_roles"] += len(media_roles)
+        stats["total_roles"] += len(facet_roles)
 
-        if len(media_roles) > 1:
+        if len(facet_roles) > 1:
             stats["multi_role_ingredients"] += 1
 
         # Collect ingredient info for top list
@@ -70,14 +72,16 @@ def analyze_ingredients(curator: IngredientCurator) -> dict:
             "occurrence_count": record.get("occurrence_statistics", {}).get(
                 "total_occurrences", 0
             ),
-            "role_count": len(media_roles),
+            "role_count": len(facet_roles),
             "roles": [],
         }
 
-        for role_assignment in media_roles:
+        for slot, role_assignment in facet_roles:
             role = role_assignment.get("role")
             confidence = role_assignment.get("confidence", 0.0)
             evidence = role_assignment.get("evidence", [])
+
+            stats["facet_counts"][slot] += 1
 
             # Count role types
             if role:
@@ -153,6 +157,9 @@ def generate_report(stats: dict, output_path: Path):
         "role_distribution": dict(
             sorted(stats["role_counts"].items(), key=lambda x: x[1], reverse=True)
         ),
+        "facet_distribution": {
+            slot: stats["facet_counts"][slot] for slot in FACET_ROLE_SLOTS
+        },
         "confidence_distribution": dict(
             sorted(
                 stats["confidence_distribution"].items(),
@@ -205,6 +212,10 @@ def print_summary(report: dict):
 
     print(f"\nQUALITY METRICS:")
     print(f"  Average confidence: {summary['average_confidence']}")
+
+    print(f"\nROLES BY FACET:")
+    for slot, count in report["facet_distribution"].items():
+        print(f"  {slot:25s}: {count:4d}")
 
     print(f"\nTOP 5 ROLE TYPES:")
     for i, (role, count) in enumerate(

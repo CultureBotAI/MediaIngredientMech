@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply in-session (Claude) media_role curation for high-impact role-less records.
+"""Apply in-session (Claude) role curation for high-impact role-less records.
 
 These roles were assigned by in-session Claude reasoning (NOT an external API call)
 over the role-less MAPPED records with occurrence >= 2 — the cases the deterministic
@@ -9,7 +9,7 @@ biologically unambiguous assignments are included; nucleosides, osmolytes, pH-ad
 
 Each is written PROVISIONAL: confidence 0.6, reference_type COMPUTATIONAL_PREDICTION,
 curator "claude_in_session_curation" — easy to find, review, and revert. Idempotent:
-records that already carry a media_role are skipped. Every assignment is gated by
+records that already carry a facet role are skipped. Every assignment is gated by
 scripts/audit_role_plausibility.py (run after applying).
 
 Usage:
@@ -23,6 +23,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_facets import add_role
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 # role -> identifiers (applied to every role-less MAPPED record with that identifier;
 # the listed ids are same-substance, so the role holds for all their surface forms).
@@ -81,14 +83,17 @@ def main() -> None:
         ident = record.get("identifier")
         if ident not in id_role:
             continue
-        if record.get("mapping_status") != "MAPPED" or record.get("media_roles"):
+        if record.get("mapping_status") != "MAPPED" or any(
+            iter_role_assignments(record, slots=FACET_ROLE_SLOTS)
+        ):
             continue
         role = id_role[ident]
         seen_ids.add(ident)
         if not args.dry_run:
-            curator.add_media_role(
+            add_role(
+                curator,
                 record,
-                role=role,
+                role,
                 confidence=0.6,
                 reference_text="Assigned by in-session Claude reasoning (no external API)",
                 reference_type="COMPUTATIONAL_PREDICTION",

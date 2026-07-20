@@ -121,6 +121,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''L-Ascorbic acid'' -> ''L-ascorbic acid'': synced to canonical
     CHEBI label (preferred_term ''L-Ascorbic acid'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 50-81-7
   data_source: PubChem API
@@ -130,7 +134,7 @@ chemical_properties:
   smiles: '[H][C@]1([C@@H](O)CO)OC(=O)C(O)=C1O'
 kg_microbe_node_id: CHEBI:29073
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 1.0
   evidence:

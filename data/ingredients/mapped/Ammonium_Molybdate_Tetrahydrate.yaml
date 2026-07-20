@@ -57,6 +57,10 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
 chemical_properties:
   cas_rn: 12054-85-2
   data_source: CultureBotHT compounds_to_cas.csv
@@ -66,7 +70,7 @@ chemical_properties:
   inchi: InChI=1S/7Mo.6H3N.10H2O.18O/h;;;;;;;6*1H3;10*1H2;;;;;;;;;;;;;;;;;;/q;;;;3*+2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;/p-6
   pubchem_cid: 16211167
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: TRACE_ELEMENT
   confidence: 0.6
   evidence:

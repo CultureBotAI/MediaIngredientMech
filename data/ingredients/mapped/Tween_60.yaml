@@ -63,6 +63,10 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: SURFACTANT (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SURFACTANT -> physicochemical_roles.SURFACTANT'
 kg_microbe_node_id: CHEBI:53425
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
@@ -70,7 +74,7 @@ chemical_properties:
   inchi: InChI=1S/C32H62O10/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-30(36)40-25-24-37-26-28(38-21-18-33)32-31(41-23-20-35)29(27-42-32)39-22-19-34/h28-29,31-35H,2-27H2,1H3/t28?,29?,31-,32-/m1/s1
   smiles: '[H][C@]1(C(COCCOC(=O)CCCCCCCCCCCCCCCCC)OCCO)OCC(OCCO)[C@H]1OCCO'
   data_source: CHEBI sqlite (oaklib)
-media_roles:
+physicochemical_roles:
 - role: SURFACTANT
   confidence: 0.6
   evidence:

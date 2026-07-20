@@ -79,6 +79,10 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
 notes: Created from FEBA ontology enrichment workflow. Used in 4 FEBA media formulations.
 chemical_properties:
   cas_rn: 71119-23-8
@@ -88,7 +92,7 @@ chemical_properties:
   inchi: InChI=1S/C6H13NO4S.Na/c8-12(9,10)6-3-7-1-4-11-5-2-7;/h1-6H2,(H,8,9,10);/q;+1/p-1
   smiles: O=S(=O)([O-])CCN1CCOCC1.[Na+]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: BUFFER
   confidence: 0.8
   evidence:

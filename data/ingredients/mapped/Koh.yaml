@@ -112,6 +112,13 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Dropped media_roles role MINERAL: legacy media_roles MINERAL assignment
+    dropped during the #128 facet migration: this ingredient supplies no mineral nutrient
+    (it is a solvent or a pH adjuster), so no NutritionalRoleEnum value applies. Flagged
+    for curator re-review.'
 chemical_properties:
   cas_rn: 1310-58-3
   data_source: PubChem API
@@ -121,14 +128,3 @@ chemical_properties:
   smiles: '[K+].[OH-]'
 kg_microbe_node_id: CHEBI:32035
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
-  confidence: 1.0
-  evidence:
-  - reference_text: CultureMech database (150 occurrences as 'Mineral source')
-    reference_type: DATABASE_ENTRY
-    url: https://github.com/CultureBotAI/CultureMech
-    excerpt: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
-      Simple component'
-    curator_note: Widespread use in media formulations (150 occurrences). High confidence
-      based on 'Defined component' property.

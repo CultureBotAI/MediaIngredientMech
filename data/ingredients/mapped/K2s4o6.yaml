@@ -84,6 +84,10 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: ELECTRON_DONOR (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR -> cellular_metabolic_roles.ELECTRON_DONOR'
 kg_microbe_node_id: CHEBI:86466
 chemical_properties:
   cas_rn: 13932-13-3
@@ -93,7 +97,7 @@ chemical_properties:
   inchi: InChI=1S/2K.H2O6S4/c;;1-9(2,3)7-8-10(4,5)6/h;;(H,1,2,3)(H,4,5,6)/q2*+1;/p-2
   smiles: O=S(=O)([O-])SSS(=O)(=O)[O-].[K+].[K+]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+cellular_metabolic_roles:
 - role: ELECTRON_DONOR
   confidence: 0.6
   evidence:

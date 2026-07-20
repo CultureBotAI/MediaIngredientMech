@@ -159,6 +159,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na-butyrate'' -> ''sodium butyrate'': synced to canonical
     CHEBI label (preferred_term ''Na-butyrate'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
 chemical_properties:
   cas_rn: 156-54-7
   data_source: PubChem API (preprocessed)
@@ -168,7 +173,7 @@ chemical_properties:
   smiles: CCCC(=O)[O-].[Na+]
 kg_microbe_node_id: CHEBI:64103
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.8
   evidence:

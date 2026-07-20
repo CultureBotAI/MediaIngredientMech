@@ -85,6 +85,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Naphthalene'' -> ''naphthalene'': synced to canonical
     CHEBI label (preferred_term ''Naphthalene'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 chemical_properties:
   cas_rn: 91-20-3
   data_source: PubChem API
@@ -93,7 +97,7 @@ chemical_properties:
   inchi: InChI=1S/C10H8/c1-2-6-10-8-4-3-7-9(10)5-1/h1-8H
   smiles: c1ccc2ccccc2c1
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 1.0
   evidence:

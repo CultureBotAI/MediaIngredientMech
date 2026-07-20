@@ -13,6 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 
 def validate_file(file_path: Path, label: str) -> dict:
@@ -34,15 +35,16 @@ def validate_file(file_path: Path, label: str) -> dict:
 
     stats = {
         "total_ingredients": len(curator.records),
-        "with_media_roles": 0,
+        "with_roles": 0,
         "with_community_organism_roles": 0,
         "with_solution_type": 0,
-        "total_media_roles": 0,
+        "total_roles": 0,
         "total_community_organism_roles": 0,
         "roles_with_citations": 0,
         "roles_with_doi": 0,
         "validation_errors": 0,
-        "media_role_counts": defaultdict(int),
+        "role_counts": defaultdict(int),
+        "facet_counts": defaultdict(int),
         "community_organism_role_counts": defaultdict(int),
         "solution_type_counts": defaultdict(int),
         "citation_type_counts": defaultdict(int),
@@ -61,16 +63,18 @@ def validate_file(file_path: Path, label: str) -> dict:
                     f"{record.get('preferred_term', 'UNKNOWN')} (#{i}): {error}"
                 )
 
-        # Count media roles
-        media_roles = record.get("media_roles", [])
-        if media_roles:
-            stats["with_media_roles"] += 1
-            stats["total_media_roles"] += len(media_roles)
+        # Count ingredient roles across the three role facets
+        facet_roles = list(iter_role_assignments(record, slots=FACET_ROLE_SLOTS))
+        if facet_roles:
+            stats["with_roles"] += 1
+            stats["total_roles"] += len(facet_roles)
 
-            for role_assignment in media_roles:
+            for slot, role_assignment in facet_roles:
+                stats["facet_counts"][slot] += 1
+
                 role = role_assignment.get("role")
                 if role:
-                    stats["media_role_counts"][role] += 1
+                    stats["role_counts"][role] += 1
 
                 # Confidence tracking
                 confidence = role_assignment.get("confidence")
@@ -136,7 +140,7 @@ def print_stats(stats: dict, label: str):
     print(f"\nCOVERAGE:")
     print(f"  Total ingredients: {total}")
     print(
-        f"  With media roles: {stats['with_media_roles']} ({stats['with_media_roles']/total*100:.1f}%)"
+        f"  With ingredient roles: {stats['with_roles']} ({stats['with_roles']/total*100:.1f}%)"
     )
     print(
         f"  With community-organism roles: {stats['with_community_organism_roles']} ({stats['with_community_organism_roles']/total*100:.1f}%)"
@@ -146,13 +150,17 @@ def print_stats(stats: dict, label: str):
     )
 
     print(f"\nROLE COUNTS:")
-    print(f"  Total media roles: {stats['total_media_roles']}")
+    print(f"  Total ingredient roles: {stats['total_roles']}")
     print(f"  Total community-organism roles: {stats['total_community_organism_roles']}")
 
-    if stats["total_media_roles"] > 0:
-        print(f"\nMEDIA ROLE DISTRIBUTION:")
+    if stats["total_roles"] > 0:
+        print(f"\nROLES BY FACET:")
+        for slot in FACET_ROLE_SLOTS:
+            print(f"  {slot:25s}: {stats['facet_counts'][slot]:4d}")
+
+        print(f"\nINGREDIENT ROLE DISTRIBUTION:")
         for role, count in sorted(
-            stats["media_role_counts"].items(), key=lambda x: x[1], reverse=True
+            stats["role_counts"].items(), key=lambda x: x[1], reverse=True
         ):
             print(f"  {role:25s}: {count:4d}")
 
@@ -170,7 +178,7 @@ def print_stats(stats: dict, label: str):
         ):
             print(f"  {sol_type:25s}: {count:4d}")
 
-    total_roles = stats["total_media_roles"] + stats["total_community_organism_roles"]
+    total_roles = stats["total_roles"] + stats["total_community_organism_roles"]
     if total_roles > 0:
         print(f"\nCITATION STATISTICS:")
         print(
@@ -227,14 +235,14 @@ def main():
     print("=" * 80)
 
     total_ingredients = mapped_stats["total_ingredients"] + unmapped_stats["total_ingredients"]
-    total_with_media = mapped_stats["with_media_roles"] + unmapped_stats["with_media_roles"]
+    total_with_roles = mapped_stats["with_roles"] + unmapped_stats["with_roles"]
     total_with_community_organism = (
         mapped_stats["with_community_organism_roles"] + unmapped_stats["with_community_organism_roles"]
     )
     total_with_solution = (
         mapped_stats["with_solution_type"] + unmapped_stats["with_solution_type"]
     )
-    total_media_roles = mapped_stats["total_media_roles"] + unmapped_stats["total_media_roles"]
+    total_ingredient_roles = mapped_stats["total_roles"] + unmapped_stats["total_roles"]
     total_community_organism_roles_all = (
         mapped_stats["total_community_organism_roles"] + unmapped_stats["total_community_organism_roles"]
     )
@@ -245,17 +253,19 @@ def main():
     total_errors = mapped_stats["validation_errors"] + unmapped_stats["validation_errors"]
 
     print(f"\nTotal ingredients: {total_ingredients}")
-    print(f"With media roles: {total_with_media} ({total_with_media/total_ingredients*100:.1f}%)")
+    print(
+        f"With ingredient roles: {total_with_roles} ({total_with_roles/total_ingredients*100:.1f}%)"
+    )
     print(
         f"With community-organism roles: {total_with_community_organism} ({total_with_community_organism/total_ingredients*100:.1f}%)"
     )
     print(
         f"With solution type: {total_with_solution} ({total_with_solution/total_ingredients*100:.1f}%)"
     )
-    print(f"\nTotal media roles assigned: {total_media_roles}")
+    print(f"\nTotal ingredient roles assigned: {total_ingredient_roles}")
     print(f"Total community-organism roles assigned: {total_community_organism_roles_all}")
 
-    total_roles = total_media_roles + total_community_organism_roles_all
+    total_roles = total_ingredient_roles + total_community_organism_roles_all
     if total_roles > 0:
         print(
             f"\nRoles with citations: {total_roles_with_citations}/{total_roles} ({total_roles_with_citations/total_roles*100:.1f}%)"

@@ -42,6 +42,11 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
+    nutritional_roles.AMINO_ACID_SOURCE'
 chemical_properties:
   cas_rn: 7423-93-0
   data_source: CultureBotHT compounds_to_cas.csv
@@ -50,7 +55,7 @@ chemical_properties:
   inchi: InChI=1S/C9H10ClNO3/c10-6-3-5(1-2-8(6)12)4-7(11)9(13)14/h1-3,7,12H,4,11H2,(H,13,14)/t7-/m0/s1
   smiles: N[C@@H](Cc1ccc(O)c(Cl)c1)C(=O)O
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: AMINO_ACID_SOURCE
   confidence: 0.7
   evidence:

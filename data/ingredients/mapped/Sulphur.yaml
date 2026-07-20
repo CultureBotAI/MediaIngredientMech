@@ -80,6 +80,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Sulphur'' -> ''polysulfur'': synced to canonical CHEBI
     label (preferred_term ''Sulphur'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.SULFUR_SOURCE'
 chemical_properties:
   cas_rn: 12597-03-4
   data_source: PubChem (via CHEBI:17909)
@@ -88,8 +92,8 @@ chemical_properties:
   inchi: InChI=1S/S3/c1-3-2
   smiles: S=S=S
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: SULFUR_SOURCE
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY

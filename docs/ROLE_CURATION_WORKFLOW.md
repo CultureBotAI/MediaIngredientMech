@@ -2,13 +2,17 @@
 
 ## Overview
 
-This document describes the workflow for curating media ingredient role assignments in MediaIngredientMech. Role curation assigns functional roles (e.g., CARBON_SOURCE, BUFFER, MINERAL) to ingredients based on evidence from CultureMech database annotations and scientific literature.
+This document describes the workflow for curating media ingredient role assignments in MediaIngredientMech. Role curation assigns functional roles (e.g., CARBON_SOURCE, BUFFER, ELECTRON_ACCEPTOR) to ingredients based on evidence from CultureMech database annotations and scientific literature.
 
-**Current Status** (as of 2026-03-15):
+Roles are recorded on **three orthogonal facets** — `nutritional_roles`, `physicochemical_roles`, and `cellular_metabolic_roles` — each with its own enum and its own curator writer method. The single flat `media_roles` slot and its `IngredientRoleEnum` were retired in issue #128; see [Role Assignment Schema](#role-assignment-schema).
+
+**Status snapshot** (as of 2026-03-15, before the #128 facet migration):
 - **446 ingredients with roles** (44.8% coverage of 996 mapped ingredients)
 - **448 total role assignments** (1.0 average per ingredient)
 - **Average confidence: 0.998** (extremely high quality)
 - **99.8% citation coverage** (447/448 roles have structured evidence)
+
+For current numbers run `scripts/validate_roles.py`, which reports counts broken down by facet.
 
 ## Philosophy
 
@@ -25,7 +29,7 @@ Role curation in MediaIngredientMech follows an **evidence-first** approach:
 
 Rather than auto-assigning roles to all 996 ingredients, we prioritize:
 - **High-occurrence ingredients first** (top 100 by media usage)
-- **Clear, unambiguous roles** (MINERAL, BUFFER) over complex metabolic functions
+- **Clear, unambiguous roles** (MINERAL_SOURCE, BUFFER) over complex metabolic functions
 - **Structured evidence** with occurrence counts and property metadata
 - **Manual review** for edge cases and conflicting roles
 
@@ -43,8 +47,9 @@ Role: Mineral source; Properties: Defined component, Inorganic compound, Simple 
 ```
 
 **Mapping**:
-- CultureMech role text (e.g., "Mineral source") → IngredientRoleEnum value (e.g., `MINERAL`)
+- CultureMech role text (e.g., "Mineral source") → facet enum value (e.g., `MINERAL_SOURCE` on `nutritional_roles`)
 - See `scripts/analyze_culturemech_roles.py::CULTUREMECH_ROLE_MAPPING` for full mapping table
+- Two CultureMech role texts, "Salt" and "Solvating media", are deliberately **left unmapped**: they only ever produced the retired `SALT` value, and every such assignment in the corpus turned out to be a mis-assignment. Do not route them to `OSMOTIC_AGENT` — that value should be assigned on its own merits, not as a `SALT` substitute.
 
 **Confidence Scoring Rules**:
 - "Defined component" + occurrence >500 → **1.0**
@@ -65,39 +70,68 @@ Role: Mineral source; Properties: Defined component, Inorganic compound, Simple 
 
 ## Role Assignment Schema
 
-### IngredientRoleEnum (18 values)
+### Three role facets
 
-**Core Nutritional Roles**:
+Roles are split across three independent slots on `IngredientRecord`. The facets answer different questions, so an ingredient may legitimately carry values on more than one of them.
+
+**1. `nutritional_roles` (NutritionalRoleEnum)** — *what element or macronutrient does this ingredient SUPPLY?*
+
 - `CARBON_SOURCE` - Organic carbon for biosynthesis/energy
 - `NITROGEN_SOURCE` - Nitrogen for amino acids/nucleotides
-- `MINERAL` - Inorganic minerals (phosphate, sulfate, magnesium)
-- `TRACE_ELEMENT` - Micronutrients (iron, zinc, cobalt)
+- `SULFUR_SOURCE` - Sulfur for cysteine/methionine/Fe-S clusters
+- `PHOSPHATE_SOURCE` - Phosphate for nucleotides/phospholipids
+- `IRON_SOURCE` - Iron specifically
+- `TRACE_ELEMENT` - Micronutrient metals (zinc, cobalt, molybdenum)
+- `MINERAL_SOURCE` - Residual bucket for bulk cations (Mg, Ca, K, Na) not covered by a more specific value
 - `VITAMIN_SOURCE` - Vitamins or vitamin precursors
-- `PROTEIN_SOURCE` - Peptides, proteins, amino acids
 - `AMINO_ACID_SOURCE` - Specific amino acids
-
-**Physicochemical Roles**:
-- `BUFFER` - pH buffering agents
-- `SALT` - Ionic strength and osmotic balance
-- `SOLIDIFYING_AGENT` - Gelling agents (agar)
-
-**Metabolic Roles**:
+- `PROTEIN_SOURCE` - Peptides and proteins
+- `COFACTOR_PROVIDER` - Supplies enzyme cofactors/prosthetic groups
 - `ENERGY_SOURCE` - Primary energy substrate
-- `ELECTRON_ACCEPTOR` - Terminal electron acceptor (nitrate, oxygen)
-- `ELECTRON_DONOR` - Electron donor for chemolithotrophs
-- `COFACTOR_PROVIDER` - Enzyme cofactors/prosthetic groups
+- `LIGHT_SOURCE` - Light as energy input (phototrophs)
 
-**Indicator Roles** (added 2026-03-15):
-- `REDOX_INDICATOR` - pH-dependent redox indicators (resazurin)
-- `PH_INDICATOR` - pH indicator dyes
-- `SELECTIVE_AGENT` - Antimicrobial/selective agents
+**2. `physicochemical_roles` (PhysicochemicalRoleEnum)** — *what chemical or physical function does it perform IN THE MEDIUM?*
+
+- `BUFFER` - pH buffering agents
+- `SOLIDIFYING_AGENT` - Gelling agents (agar)
+- `CHELATOR` - Metal chelation (EDTA, NTA)
 - `SURFACTANT` - Surfactants/detergents
+- `REDUCING_AGENT` - Lowers redox potential (cysteine, sulfide, DTT)
+- `OXIDIZING_AGENT` - Raises redox potential
+- `PH_INDICATOR` - pH indicator dyes
+- `REDOX_INDICATOR` - Redox indicators (resazurin)
+- `SELECTIVE_AGENT` - Antimicrobial/selective agents
+- `ANTIFOAM` - Foam suppression
+- `OSMOTIC_AGENT` - Sets medium osmolarity/water activity
+- `PRECIPITATION_INHIBITOR` - Keeps components in solution
 
-### RoleAssignment Structure
+**3. `cellular_metabolic_roles` (CellularMetabolicRoleEnum)** — *what does it do inside or on the cultured microbe?* These are frequently **organism-conditional**, so assign them only with organism context in the evidence.
+
+- `SUBSTRATE` - Metabolized substrate
+- `ELECTRON_DONOR` - Electron donor for chemolithotrophs
+- `ELECTRON_ACCEPTOR` - Terminal electron acceptor (nitrate, fumarate)
+- `COFACTOR` - Acts as an enzyme cofactor
+- `PROSTHETIC_GROUP_PRECURSOR` - Precursor of a prosthetic group (heme, cobalamin)
+- `MEMBRANE_COMPONENT` - Incorporated into membranes
+- `OSMOPROTECTANT` - Accumulated intracellularly against osmotic stress
+- `INDUCER` - Induces expression of a pathway
+- `INHIBITOR` - Inhibits growth or a specific process
+- `QUENCHER` - Quenches a reactive species
+
+**Retired values — do not assign**:
+- `MINERAL` was a curator catch-all. Replace it with the specific element source: `TRACE_ELEMENT`, `IRON_SOURCE`, `SULFUR_SOURCE`, `PHOSPHATE_SOURCE`, or `MINERAL_SOURCE` as the residual bucket for bulk cations.
+- `SALT` is gone with no replacement. Every `SALT` assignment in the corpus was a mis-assignment (solvents and acids, not ionic-strength contributors) and they were dropped rather than remapped. `OSMOTIC_AGENT` is **not** a drop-in substitute.
+- `SOLVENT` was never a valid enum value in any facet.
+
+Note the deliberate `OSMOTIC_AGENT` / `OSMOPROTECTANT` split: the first is a medium-side property, the second an intracellular, organism-conditional one. They share a CHEBI mapping, so an automated classifier must not fan one annotation out to both facets.
+
+### Role assignment structure
+
+Each facet holds a list of assignments with the same shape:
 
 ```yaml
-media_roles:
-  - role: MINERAL
+nutritional_roles:
+  - role: MINERAL_SOURCE
     confidence: 1.0
     evidence:
       - reference_type: DATABASE_ENTRY
@@ -108,7 +142,7 @@ media_roles:
 ```
 
 **Fields**:
-- `role`: IngredientRoleEnum value (required)
+- `role`: value from the facet's own enum (required)
 - `confidence`: Float 0.0-1.0 (required)
 - `evidence`: List of RoleCitation objects (required for quality)
   - `reference_type`: PUBLICATION, DATABASE_ENTRY, EXPERT_ANNOTATION
@@ -117,28 +151,81 @@ media_roles:
   - `excerpt`: Direct quote from source (role + properties)
   - `curator_note`: Contextual notes about assignment
 
-## Multi-Role Handling
+### Writing roles
 
-### Independent Confidence Scores
+There is one writer per facet. They all take the same keyword arguments the retired `add_media_role()` took (`role`, `confidence`, `doi`, `pmid`, `reference_text`, `reference_type`, `url`, `excerpt`, `curator_note`, `notes`) and raise `ValueError` if the role is not a member of that facet's enum:
 
-Each role is assigned **independently** with its own confidence score:
-
-**Example: Distilled Water**
-```yaml
-media_roles:
-  - role: MINERAL
-    confidence: 1.0
-    evidence: [...CultureMech 4105 occurrences as "Mineral source"...]
-  - role: SALT  # Solvating media
-    confidence: 1.0
-    evidence: [...CultureMech 4105 occurrences as "Solvating media"...]
+```python
+curator.add_nutritional_role(record, "SULFUR_SOURCE", confidence=0.9, ...)
+curator.add_physicochemical_role(record, "REDUCING_AGENT", confidence=0.95, ...)
+curator.add_cellular_metabolic_role(record, "ELECTRON_ACCEPTOR", confidence=0.9, ...)
 ```
 
-### Potentially Conflicting Roles
+If a script infers a role name without knowing its facet, route it with the helper — every value is unique across the three enums, so the name determines the facet:
+
+```python
+from mediaingredientmech.utils.role_facets import add_role, facet_slot_for
+
+facet_slot_for("BUFFER")            # -> 'physicochemical_roles'
+add_role(curator, record, "BUFFER", confidence=0.95)
+```
+
+### Reading roles
+
+Do not read the facet lists individually; iterate them:
+
+```python
+from mediaingredientmech.utils.role_iteration import (
+    ALL_ROLE_SLOTS,
+    FACET_ROLE_SLOTS,
+    iter_role_assignments,
+)
+
+for slot, assignment in iter_role_assignments(record, slots=FACET_ROLE_SLOTS):
+    print(slot, assignment["role"], assignment["confidence"])
+```
+
+`FACET_ROLE_SLOTS` is the three ingredient facets. `ALL_ROLE_SLOTS` (the default) additionally includes `community_organism_roles`, which describes organisms rather than ingredients — pass `FACET_ROLE_SLOTS` explicitly when you mean ingredient roles only.
+
+## Multi-Role Handling
+
+### Independent confidence scores
+
+Each role is assigned **independently** with its own confidence score, whether it sits on the same facet as another role or a different one.
+
+**Example: L-cysteine** — supplies two elements nutritionally, and separately lowers the redox potential of the medium:
+```yaml
+nutritional_roles:
+  - role: AMINO_ACID_SOURCE
+    confidence: 0.95
+    evidence: [...]
+  - role: SULFUR_SOURCE
+    confidence: 0.9
+    evidence: [...]
+physicochemical_roles:
+  - role: REDUCING_AGENT
+    confidence: 1.0
+    evidence: [...CultureMech, "Role: Reducing agent" in anaerobic media...]
+```
+
+### Choosing the right facet
+
+The facets are orthogonal, so ask the three questions separately rather than picking a single "best" role:
+
+| Question | Facet |
+|----------|-------|
+| What element/nutrient does it supply? | `nutritional_roles` |
+| What does it do to the medium itself? | `physicochemical_roles` |
+| What does it do inside/on the organism? | `cellular_metabolic_roles` |
+
+An ingredient answering only one question gets only one facet populated — an empty facet is the normal case, not a gap to be filled.
+
+### Potentially conflicting roles
 
 Some role combinations require additional context:
-- **CARBON_SOURCE + ELECTRON_ACCEPTOR**: Rare, but valid for compounds like fumarate
-- **BUFFER + SELECTIVE_AGENT**: Requires pH context (e.g., acidic pH inhibits some organisms)
+- **CARBON_SOURCE + ELECTRON_ACCEPTOR** (nutritional + cellular-metabolic): rare, but valid for compounds like fumarate
+- **BUFFER + SELECTIVE_AGENT** (both physicochemical): requires pH context (e.g., acidic pH inhibits some organisms)
+- **OSMOTIC_AGENT + OSMOPROTECTANT**: assign the cellular-metabolic side only with organism-specific evidence of intracellular accumulation
 
 **Validation**: `scripts/validate_roles.py` flags these for manual review
 
@@ -233,10 +320,12 @@ evidence:
    ```
 
    **Checks**:
-   - Enum validity (all roles in `VALID_MEDIA_ROLES`)
+   - Enum validity (each role belongs to the enum of the facet it sits on)
    - Citation coverage (all roles have evidence)
    - Confidence consistency (aligns with properties)
    - Multi-role coherence (no unexpected conflicts)
+
+   Counts are reported per facet as well as in aggregate, and `community_organism_roles` is tallied separately from the three ingredient facets.
 
 2. Generate statistics:
    ```bash
@@ -250,8 +339,8 @@ evidence:
    - Confidence score distribution
 
 3. Review validation errors:
-   - Example: "Water (base)" has invalid role `SOLVENT` (not in enum)
-   - Action: Add to enum or change to `SALT`
+   - Example: "Water (base)" has invalid role `SOLVENT` (not a value in any facet enum)
+   - Action: drop the assignment, or replace it with a value that genuinely applies — `SOLVENT` has no facet equivalent, and neither does the retired `SALT`
 
 ## Quality Assurance
 
@@ -344,20 +433,20 @@ cat data/analysis/role_statistics_report.yaml
 **Goal**: Import biochemical roles from ChEBI ontology
 
 **Example**: CHEBI:15377 (water) has role "solvent" in ChEBI
-**Action**: Map ChEBI roles to IngredientRoleEnum, auto-populate where confident
+**Action**: Map ChEBI roles onto the facet enums via their `mappings:` annotations, auto-populate where confident. Not every ChEBI role has a facet equivalent — "solvent" does not, and such roles should be dropped rather than forced onto the nearest-looking value. Where one CHEBI term maps into two facets (CHEBI:25728 osmolyte → `OSMOTIC_AGENT` and `OSMOPROTECTANT`), emit only the medium-side value unless organism context is available.
 
 ## Troubleshooting
 
 ### Issue: Validation Error - Invalid Role Enum
 
-**Symptom**: `Invalid media role at index 0: SOLVENT`
+**Symptom**: `Invalid nutritional role at index 0: SOLVENT` (or `Invalid physicochemical role ...` / `Invalid cellular-metabolic role ...`)
 
-**Cause**: Role value not in `VALID_MEDIA_ROLES` set
+**Cause**: The role value is not a member of the enum owning the facet it was written to — either it is not a valid value at all, or it is valid but belongs to a different facet.
 
 **Fix**:
-1. Check if role should be added to enum (`src/mediaingredientmech/schema/mediaingredientmech.yaml`)
-2. Update `VALID_MEDIA_ROLES` in `src/mediaingredientmech/curation/ingredient_curator.py`
-3. Or change role value to existing enum (e.g., SOLVENT → SALT)
+1. Check whether the value belongs to another facet: `facet_slot_for(role)` in `src/mediaingredientmech/utils/role_facets.py` names the correct slot. If so, move the assignment there (or write it via `add_role()`, which routes automatically).
+2. If the value is retired (`MINERAL`, `SALT`) or never existed (`SOLVENT`), do not resurrect it. Replace `MINERAL` with the specific element source (`TRACE_ELEMENT`, `IRON_SOURCE`, `SULFUR_SOURCE`, `PHOSPHATE_SOURCE`, or `MINERAL_SOURCE`); drop `SALT` and `SOLVENT` assignments outright.
+3. Only if the role is genuinely new and unrepresented, add it to the appropriate enum in `src/mediaingredientmech/schema/mediaingredientmech.yaml` and to the matching `VALID_*_ROLES` set in `src/mediaingredientmech/curation/ingredient_curator.py`. Names must stay unique across the three enums or facet routing breaks.
 
 ### Issue: Low Citation Coverage
 
@@ -367,7 +456,7 @@ cat data/analysis/role_statistics_report.yaml
 
 **Fix**:
 1. Run `scripts/enrich_existing_roles.py` to upgrade generic citations
-2. For remaining gaps, add manual citations using `curator.add_media_role()`
+2. For remaining gaps, add manual citations using the facet writer for the role (`curator.add_nutritional_role()`, `curator.add_physicochemical_role()`, or `curator.add_cellular_metabolic_role()`)
 
 ### Issue: Confidence Inconsistency
 
@@ -397,18 +486,26 @@ cat data/analysis/role_statistics_report.yaml
 
 **Utilities**:
 - `src/mediaingredientmech/utils/doi_resolver.py` - DOI resolution client
+- `src/mediaingredientmech/utils/role_facets.py` - Route a role name to its facet writer
+- `src/mediaingredientmech/utils/role_iteration.py` - Iterate role assignments across facets
 - `src/mediaingredientmech/curation/ingredient_curator.py` - Core curation logic
 
 ## References
 
 1. **CultureMech Repository**: https://github.com/CultureBotAI/CultureMech
 2. **MediaIngredientMech Schema**: `src/mediaingredientmech/schema/mediaingredientmech.yaml`
-3. **Role Enum Documentation**: Lines 466-502 in schema
+3. **Role Enum Documentation**: `NutritionalRoleEnum`, `PhysicochemicalRoleEnum`, and `CellularMetabolicRoleEnum` in the schema
 4. **Crossref API**: https://api.crossref.org/ (for DOI resolution)
 
 ## Change Log
 
 ### 2026-03-15: Initial Role Curation Implementation
+
+> **Superseded by the issue #128 facet migration.** The entries below describe the
+> original single-axis `IngredientRoleEnum` / `media_roles` design as it was at the
+> time. That enum, the `RoleAssignment` class, and the `media_roles` slot no longer
+> exist; roles now live on the three facets described in
+> [Role Assignment Schema](#role-assignment-schema). Kept as history.
 
 **Phase 1: Schema Extensions**
 - Added 4 new IngredientRoleEnum values: REDOX_INDICATOR, PH_INDICATOR, SELECTIVE_AGENT, SURFACTANT

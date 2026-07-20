@@ -23,7 +23,6 @@ URI: [mediaingredientmech:CellularMetabolicRoleEnum](https://w3id.org/mediaingre
 | INDUCER | None | Triggers expression of specific genes or pathways when present (e |
 | INHIBITOR | CHEBI:35222 | Suppresses growth or a specific pathway (e |
 | QUENCHER | None | Absorbs or dissipates a signal (e |
-| NONE | None | Ingredient has no known cellular metabolic role (e |
 
 
 
@@ -96,8 +95,12 @@ permissible_values:
       lipids).
   OSMOPROTECTANT:
     text: OSMOPROTECTANT
-    description: Accumulated intracellularly to balance external osmotic stress (e.g.,
-      glycine betaine, ectoine, trehalose).
+    description: 'Accumulated intracellularly to balance external osmotic stress (e.g.,
+      glycine betaine, ectoine, trehalose). Organism-conditional — assign only with
+      organism-context evidence (e.g., "glycine betaine is imported and accumulated
+      as an osmoprotectant by <organism>"). NOTE: shares `mappings: CHEBI:25728 (osmolyte)`
+      with PhysicochemicalRoleEnum.OSMOTIC_AGENT. See that value''s description for
+      cross-facet guidance.'
     mappings:
     - CHEBI:25728
   INDUCER:
@@ -113,10 +116,6 @@ permissible_values:
     text: QUENCHER
     description: Absorbs or dissipates a signal (e.g., quenches fluorescence, radicals,
       or light).
-  NONE:
-    text: NONE
-    description: Ingredient has no known cellular metabolic role (e.g., agar is chemically
-      inert; resazurin is a bystander indicator).
 
 ```
 </details>
