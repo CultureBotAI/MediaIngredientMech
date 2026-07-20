@@ -88,6 +88,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''4-Hydroxybenzoic acid'' -> ''4-hydroxybenzoic acid'':
     synced to canonical CHEBI label (preferred_term ''4-Hydroxybenzoic acid'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 chemical_properties:
   cas_rn: 99-96-7
   data_source: PubChem API
@@ -96,7 +100,7 @@ chemical_properties:
   inchi: InChI=1S/C7H6O3/c8-6-3-1-5(2-4-6)7(9)10/h1-4,8H,(H,9,10)
   smiles: O=C(O)c1ccc(O)cc1
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 1.0
   evidence:

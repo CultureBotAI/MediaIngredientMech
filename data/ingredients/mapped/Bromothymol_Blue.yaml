@@ -91,6 +91,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Bromothymol blue'' -> ''bromothymol blue'': synced to
     canonical CHEBI label (preferred_term ''Bromothymol blue'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PH_INDICATOR -> physicochemical_roles.PH_INDICATOR'
 chemical_properties:
   cas_rn: 76-59-5
   data_source: PubChem API
@@ -99,7 +103,7 @@ chemical_properties:
   inchi: InChI=1S/C27H28Br2O5S/c1-13(2)17-11-20(15(5)23(28)25(17)30)27(19-9-7-8-10-22(19)35(32,33)34-27)21-12-18(14(3)4)26(31)24(29)16(21)6/h7-14,30-31H,1-6H3
   smiles: Cc1c(C2(c3cc(C(C)C)c(O)c(Br)c3C)OS(=O)(=O)c3ccccc32)cc(C(C)C)c(O)c1Br
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: PH_INDICATOR
   confidence: 0.6
   evidence:

@@ -178,6 +178,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''FeCl2 x 4 H2O'' -> ''iron dichloride tetrahydrate'':
     synced to canonical CHEBI label (preferred_term ''FeCl2 x 4 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
 kg_microbe_node_id: CHEBI:86249
 chemical_properties:
   cas_rn: 13478-10-9
@@ -187,8 +191,8 @@ chemical_properties:
   inchi: InChI=1S/2ClH.Fe.4H2O/h2*1H;;4*1H2/q;;+2;;;;/p-2
   smiles: O.O.O.O.[Cl][Fe][Cl]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: IRON_SOURCE
   confidence: 1.0
   evidence:
   - reference_text: CultureMech database (1305 occurrences as 'Mineral source')

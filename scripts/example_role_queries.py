@@ -12,14 +12,24 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_iteration import (
+    ALL_ROLE_SLOTS,
+    FACET_ROLE_SLOTS,
+    iter_role_assignments,
+)
+
+
+def ingredient_roles(ingredient: dict) -> list[dict]:
+    """Return the ingredient's role assignments across the three role facets."""
+    return [r for _, r in iter_role_assignments(ingredient, slots=FACET_ROLE_SLOTS)]
 
 
 def query_by_role(ingredients: list[dict], role: str) -> list[dict]:
-    """Find all ingredients with a specific media role."""
+    """Find all ingredients with a specific ingredient role, in any facet."""
     return [
         ing
         for ing in ingredients
-        if any(r.get("role") == role for r in ing.get("media_roles", []))
+        if any(r.get("role") == role for r in ingredient_roles(ing))
     ]
 
 
@@ -35,20 +45,21 @@ def query_with_doi(ingredients: list[dict]) -> list[dict]:
         for ing in ingredients
         if any(
             any(e.get("doi") for e in r.get("evidence", []))
-            for r in ing.get("media_roles", []) + ing.get("community_organism_roles", [])
+            for _, r in iter_role_assignments(ing, slots=ALL_ROLE_SLOTS)
         )
     ]
 
 
 def query_high_confidence(ingredients: list[dict], threshold: float = 0.95) -> list[dict]:
     """Find ingredients with high-confidence role assignments."""
-    result = []
-    for ing in ingredients:
-        for role_list in [ing.get("media_roles", []), ing.get("community_organism_roles", [])]:
-            if any(r.get("confidence", 0) >= threshold for r in role_list):
-                result.append(ing)
-                break
-    return result
+    return [
+        ing
+        for ing in ingredients
+        if any(
+            r.get("confidence", 0) >= threshold
+            for _, r in iter_role_assignments(ing, slots=ALL_ROLE_SLOTS)
+        )
+    ]
 
 
 def query_multiple_roles(ingredients: list[dict]) -> list[dict]:
@@ -56,7 +67,7 @@ def query_multiple_roles(ingredients: list[dict]) -> list[dict]:
     return [
         ing
         for ing in ingredients
-        if len(ing.get("media_roles", [])) + len(ing.get("community_organism_roles", [])) > 1
+        if len(list(iter_role_assignments(ing, slots=ALL_ROLE_SLOTS))) > 1
     ]
 
 
@@ -83,7 +94,8 @@ def main():
     print(f"Found {len(nitrogen_sources)} nitrogen sources:")
     for ing in nitrogen_sources[:10]:  # Show first 10
         name = ing.get("preferred_term")
-        conf = ing.get("media_roles", [{}])[0].get("confidence", "N/A")
+        roles = ingredient_roles(ing)
+        conf = roles[0].get("confidence", "N/A") if roles else "N/A"
         print(f"  • {name} (confidence: {conf})")
     if len(nitrogen_sources) > 10:
         print(f"  ... and {len(nitrogen_sources) - 10} more")
@@ -135,7 +147,7 @@ def main():
         for ing in with_doi[:5]:
             name = ing.get("preferred_term")
             # Extract DOI
-            for role in ing.get("media_roles", []) + ing.get("community_organism_roles", []):
+            for _, role in iter_role_assignments(ing, slots=ALL_ROLE_SLOTS):
                 for evidence in role.get("evidence", []):
                     doi = evidence.get("doi")
                     if doi:
@@ -151,7 +163,7 @@ def main():
     # Count by role
     role_counts = {}
     for ing in high_conf:
-        for role_assignment in ing.get("media_roles", []):
+        for role_assignment in ingredient_roles(ing):
             if role_assignment.get("confidence", 0) >= 0.95:
                 role = role_assignment.get("role")
                 role_counts[role] = role_counts.get(role, 0) + 1
@@ -167,16 +179,16 @@ def main():
     print(f"Found {len(multi_role)} ingredients with multiple roles:")
     for ing in multi_role[:10]:
         name = ing.get("preferred_term")
-        roles = [r.get("role") for r in ing.get("media_roles", [])]
+        roles = [r.get("role") for r in ingredient_roles(ing)]
         print(f"  • {name}: {', '.join(roles)}")
     if len(multi_role) > 10:
         print(f"  ... and {len(multi_role) - 10} more")
 
     # Query 8: Find minerals by occurrence
     print("\n" + "=" * 80)
-    print("Query 8: Top 10 MINERAL ingredients by occurrence")
+    print("Query 8: Top 10 MINERAL_SOURCE ingredients by occurrence")
     print("=" * 80)
-    minerals = query_by_role(ingredients, "MINERAL")
+    minerals = query_by_role(ingredients, "MINERAL_SOURCE")
     minerals_sorted = sorted(
         minerals,
         key=lambda x: x.get("occurrence_statistics", {}).get("total_occurrences", 0),

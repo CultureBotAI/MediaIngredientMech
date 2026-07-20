@@ -63,6 +63,10 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 58-05-9
   data_source: PubChem API
@@ -71,7 +75,7 @@ chemical_properties:
   inchi: InChI=1S/C20H23N7O7/c21-20-25-16-15(18(32)26-20)27(9-28)12(8-23-16)7-22-11-3-1-10(2-4-11)17(31)24-13(19(33)34)5-6-14(29)30/h1-4,9,12-13,22H,5-8H2,(H,24,31)(H,29,30)(H,33,34)(H4,21,23,25,26,32)/t12?,13-/m0/s1
   smiles: '[H]C(=O)N1c2c(nc(N)nc2=O)NCC1CNc1ccc(C(=O)N[C@@H](CCC(=O)O)C(=O)O)cc1'
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 0.7
   evidence:

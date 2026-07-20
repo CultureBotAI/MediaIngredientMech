@@ -88,7 +88,6 @@ VALID_MATCH_LEVEL = {
     "UNKNOWN",
 }
 
-VALID_MEDIA_ROLES = _enum_permissible_values("IngredientRoleEnum")
 VALID_NUTRITIONAL_ROLES = _enum_permissible_values("NutritionalRoleEnum")
 VALID_PHYSICOCHEMICAL_ROLES = _enum_permissible_values("PhysicochemicalRoleEnum")
 VALID_CELLULAR_METABOLIC_ROLES = _enum_permissible_values("CellularMetabolicRoleEnum")
@@ -435,96 +434,6 @@ class IngredientCurator:
             "ambiguous": status_counts.get("AMBIGUOUS", 0),
             "pending_review": status_counts.get("PENDING_REVIEW", 0),
         }
-
-    def add_media_role(
-        self,
-        record: dict[str, Any],
-        role: str,
-        confidence: float = 0.9,
-        doi: Optional[str] = None,
-        pmid: Optional[str] = None,
-        reference_text: Optional[str] = None,
-        reference_type: str = "MANUAL_CURATION",
-        url: Optional[str] = None,
-        excerpt: Optional[str] = None,
-        curator_note: Optional[str] = None,
-        notes: Optional[str] = None,
-    ) -> dict[str, Any]:
-        """Add a media role to an ingredient with optional DOI citation.
-
-        Args:
-            record: The ingredient record dict to update.
-            role: IngredientRoleEnum value (e.g., "NITROGEN_SOURCE", "BUFFER").
-            confidence: Confidence score (0.0-1.0). Defaults to 0.9.
-            doi: Digital Object Identifier (e.g., "10.1128/jb.00123-15").
-            pmid: PubMed ID for MEDLINE citations.
-            reference_text: Human-readable citation text.
-            reference_type: CitationTypeEnum value. Defaults to "MANUAL_CURATION".
-            url: Web URL for the reference.
-            excerpt: Relevant excerpt from the source.
-            curator_note: Explanation of why this supports the role.
-            notes: Additional context about the role assignment.
-
-        Returns:
-            The updated record.
-
-        Raises:
-            ValueError: If role, confidence, DOI format, or reference_type is invalid.
-        """
-        # Validation
-        if role not in VALID_MEDIA_ROLES:
-            raise ValueError(f"Invalid media role: {role}. Must be one of {VALID_MEDIA_ROLES}")
-        if not (0.0 <= confidence <= 1.0):
-            raise ValueError(f"Confidence out of range: {confidence}. Must be between 0.0 and 1.0")
-        if doi and not DOI_PATTERN.match(doi):
-            raise ValueError(f"Invalid DOI format: {doi}. Must match pattern: 10.XXXX/...")
-        if reference_type not in VALID_CITATION_TYPES:
-            raise ValueError(
-                f"Invalid reference_type: {reference_type}. Must be one of {VALID_CITATION_TYPES}"
-            )
-
-        # Create role assignment
-        role_assignment: dict[str, Any] = {
-            "role": role,
-            "confidence": confidence,
-            "evidence": [],
-        }
-        if notes:
-            role_assignment["notes"] = notes
-
-        # Add citation if any citation info provided
-        if doi or pmid or reference_text or url:
-            citation: dict[str, Any] = {"reference_type": reference_type}
-            if doi:
-                citation["doi"] = doi
-            if pmid:
-                citation["pmid"] = pmid
-            if reference_text:
-                citation["reference_text"] = reference_text
-            elif doi:
-                citation["reference_text"] = f"DOI: {doi}"
-            if url:
-                citation["url"] = url
-            if excerpt:
-                citation["excerpt"] = excerpt
-            if curator_note:
-                citation["curator_note"] = curator_note
-
-            role_assignment["evidence"].append(citation)
-
-        # Add to record
-        if "media_roles" not in record or record["media_roles"] is None:
-            record["media_roles"] = []
-        record["media_roles"].append(role_assignment)
-
-        # Log curation event
-        changes_msg = f"Added media role: {role} (confidence: {confidence:.2f})"
-        if doi:
-            changes_msg += f" with DOI: {doi}"
-        self._add_event(record, action="ANNOTATED", changes=changes_msg)
-
-        self._dirty = True
-        return record
 
     def add_community_organism_role(
         self,
@@ -929,28 +838,6 @@ class IngredientCurator:
             List of validation error messages (empty if valid).
         """
         errors = []
-
-        # Validate media roles
-        for i, role_assignment in enumerate(record.get("media_roles", [])):
-            role = role_assignment.get("role")
-            if role and role not in VALID_MEDIA_ROLES:
-                errors.append(f"Invalid media role at index {i}: {role}")
-
-            confidence = role_assignment.get("confidence")
-            if confidence is not None and not (0.0 <= confidence <= 1.0):
-                errors.append(f"Confidence out of range at media role {i}: {confidence}")
-
-            # Validate DOIs in evidence
-            for j, evidence in enumerate(role_assignment.get("evidence", [])):
-                doi = evidence.get("doi")
-                if doi and not DOI_PATTERN.match(doi):
-                    errors.append(f"Invalid DOI format at media role {i}, evidence {j}: {doi}")
-
-                ref_type = evidence.get("reference_type")
-                if ref_type and ref_type not in VALID_CITATION_TYPES:
-                    errors.append(
-                        f"Invalid reference_type at media role {i}, evidence {j}: {ref_type}"
-                    )
 
         for i, role_assignment in enumerate(record.get("community_organism_roles", [])):
             role = role_assignment.get("role")

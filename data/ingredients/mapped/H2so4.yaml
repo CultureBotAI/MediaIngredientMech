@@ -117,6 +117,13 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''H2SO4'' -> ''sulfuric acid'': synced to canonical CHEBI
     label (preferred_term ''H2SO4'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Dropped media_roles role MINERAL: legacy media_roles MINERAL assignment
+    dropped during the #128 facet migration: this ingredient supplies no mineral nutrient
+    (it is a solvent or a pH adjuster), so no NutritionalRoleEnum value applies. Flagged
+    for curator re-review.'
 chemical_properties:
   cas_rn: 7664-93-9
   data_source: PubChem API
@@ -126,14 +133,3 @@ chemical_properties:
   smiles: '[H]OS(=O)(=O)O[H]'
 kg_microbe_node_id: CHEBI:26836
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
-  confidence: 1.0
-  evidence:
-  - reference_text: CultureMech database (262 occurrences as 'Mineral source')
-    reference_type: DATABASE_ENTRY
-    url: https://github.com/CultureBotAI/CultureMech
-    excerpt: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
-      Solution'
-    curator_note: Widespread use in media formulations (262 occurrences). High confidence
-      based on 'Defined component' property.

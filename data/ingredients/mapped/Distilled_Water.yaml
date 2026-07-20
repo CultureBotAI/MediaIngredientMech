@@ -277,6 +277,21 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Distilled water'' -> ''water'': synced to canonical CHEBI
     label (preferred_term ''Distilled water'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Dropped media_roles role MINERAL: legacy media_roles MINERAL assignment
+    dropped during the #128 facet migration: this ingredient supplies no mineral nutrient
+    (it is a solvent or a pH adjuster), so no NutritionalRoleEnum value applies. Flagged
+    for curator re-review.'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Dropped media_roles role SALT: legacy media_roles SALT assignment dropped
+    during the #128 facet migration: this ingredient is not a salt contributing ionic
+    strength or osmotic balance, so the assignment was a mis-curation rather than
+    a role to rehome. Re-curate onto PhysicochemicalRoleEnum.OSMOTIC_AGENT only if
+    warranted.'
 kg_microbe_node_id: CHEBI:15377
 chemical_properties:
   cas_rn: 7732-18-5
@@ -286,24 +301,3 @@ chemical_properties:
   inchi: InChI=1S/H2O/h1H2
   smiles: '[H]O[H]'
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
-  confidence: 1.0
-  evidence:
-  - reference_text: CultureMech database (4287 occurrences as 'Mineral source')
-    reference_type: DATABASE_ENTRY
-    url: https://github.com/CultureBotAI/CultureMech
-    excerpt: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
-      Simple component'
-    curator_note: Widespread use in media formulations (4287 occurrences). High confidence
-      based on 'Defined component' property.
-- role: SALT
-  confidence: 1.0
-  evidence:
-  - reference_text: CultureMech database (4287 occurrences as 'Solvating media')
-    reference_type: DATABASE_ENTRY
-    url: https://github.com/CultureBotAI/CultureMech
-    excerpt: 'Role: Solvating media; Properties: Defined component, Inorganic compound,
-      Simple component'
-    curator_note: Widespread use in media formulations (4287 occurrences). High confidence
-      based on 'Defined component' property.

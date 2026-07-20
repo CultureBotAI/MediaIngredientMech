@@ -94,6 +94,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''CoSO4'' -> ''cobalt(2+) sulfate'': synced to canonical
     CHEBI label (preferred_term ''CoSO4'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 chemical_properties:
   cas_rn: 10124-43-3
   data_source: PubChem API
@@ -103,8 +107,8 @@ chemical_properties:
   smiles: O=S(=O)([O-])[O-].[Co+2]
 kg_microbe_node_id: CHEBI:53470
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 1.0
   evidence:
   - reference_text: CultureMech database (23 occurrences as 'Mineral source')

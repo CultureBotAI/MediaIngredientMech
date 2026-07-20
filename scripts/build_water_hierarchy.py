@@ -9,6 +9,18 @@ Creates parent "Water (base)" record and links all water purity variants:
 - Double distilled water (variant_type: ULTRA_PURIFIED)
 
 Run with: PYTHONPATH=src python scripts/build_water_hierarchy.py
+
+NOT CURRENTLY RUNNABLE. This one-shot predates two schema changes and would fail
+validation as written:
+
+* it mints `id: MediaIngredientMech:NNNNNN` values, but that dual-identifier
+  scheme was rolled back — records are keyed by `identifier` alone;
+* it writes `media_roles` with `role: SOLVENT`. The `media_roles` slot was
+  retired in #128, and SOLVENT was never a permissible value of any role enum.
+
+Left in place for its hierarchy-linking logic. Before running it again, rewrite
+the record scaffolding against the current schema and pick a real role value
+from one of the three facet enums (see utils/role_facets.py).
 """
 
 import sys

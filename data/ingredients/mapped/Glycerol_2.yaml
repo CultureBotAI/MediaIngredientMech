@@ -114,10 +114,15 @@ curation_history:
 - timestamp: '2026-07-05T00:00:00+00:00'
   curator: cbclaw_followups_114
   action: CORRECTED
-  changes: 'ontology_id CHEBI:15978 (sn-glycerol 3-phosphate) -> CHEBI:17754 (glycerol);
+  changes: ontology_id CHEBI:15978 (sn-glycerol 3-phosphate) -> CHEBI:17754 (glycerol);
     molecular_formula C3H9O6P -> C3H8O3; cleared phosphate inchi/smiles for backfill;
-    kg_microbe_node_id CHEBI:15978 -> CHEBI:17754. CAS 56-81-5 retained.'
+    kg_microbe_node_id CHEBI:15978 -> CHEBI:17754. CAS 56-81-5 retained.
   llm_assisted: true
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
 chemical_properties:
   cas_rn: 56-81-5
   data_source: PubChem API
@@ -125,7 +130,7 @@ chemical_properties:
   molecular_formula: C3H8O3
 kg_microbe_node_id: CHEBI:17754
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 1.0
   evidence:

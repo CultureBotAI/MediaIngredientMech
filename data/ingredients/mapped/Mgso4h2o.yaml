@@ -88,6 +88,17 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: MINERAL (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.SULFUR_SOURCE'
+- timestamp: '2026-07-20T20:01:42.981644+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Added nutritional role(s) MINERAL_SOURCE missed by the initial #128 migration:
+    the residual MINERAL_SOURCE bucket was suppressed whenever any other target existed,
+    which dropped the bulk cation from salts whose other role describes the anion
+    (e.g. MgSO4).'
 chemical_properties:
   cas_rn: 10034-99-8
   data_source: PubChem (via CHEBI:31795)
@@ -96,8 +107,8 @@ chemical_properties:
   inchi: InChI=1S/Mg.H2O4S.7H2O/c;1-5(2,3)4;;;;;;;/h;(H2,1,2,3,4);7*1H2/q+2;;;;;;;;/p-2
   smiles: O=S(=O)([O-])[O-].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[Mg+2]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: SULFUR_SOURCE
   confidence: 1.0
   evidence:
   - reference_text: CultureMech database (2 occurrences as 'Mineral source')
@@ -107,3 +118,6 @@ media_roles:
       Simple component'
     curator_note: Widespread use in media formulations (2 occurrences). High confidence
       based on 'Defined component' property.
+- role: MINERAL_SOURCE
+  confidence: 0.8
+  evidence: []

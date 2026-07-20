@@ -140,6 +140,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Ca(NO3)2 x 4 H2O'' -> ''calcium nitrate tetrahydrate'':
     synced to canonical CHEBI label (preferred_term ''Ca(NO3)2 x 4 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
 chemical_properties:
   cas_rn: 13477-34-4
   data_source: PubChem (via CHEBI:86159)
@@ -148,8 +152,8 @@ chemical_properties:
   inchi: InChI=1S/Ca.2NO3.4H2O/c;2*2-1(3)4;;;;/h;;;4*1H2/q+2;2*-1;;;;
   smiles: O.O.O.O.O=[N+]([O-])[O-].O=[N+]([O-])[O-].[Ca+2]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: MINERAL_SOURCE
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY

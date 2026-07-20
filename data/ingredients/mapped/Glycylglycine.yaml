@@ -41,6 +41,10 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
 notes: 'CultureMech placeholder_id: 5'
 chemical_properties:
   cas_rn: 556-50-3
@@ -60,7 +64,7 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0052; matched via 'Glycylglycine' (name normalization);
       label-exact
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: BUFFER
   confidence: 0.6
   evidence:

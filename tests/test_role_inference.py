@@ -44,7 +44,7 @@ def test_synonym_compound_roles_split_on_comma():
     roles, _ = syn.extract_role_from_synonym(
         "Role: Buffer, Mineral source; Properties: Defined component"
     )
-    assert roles == ["BUFFER", "MINERAL"]
+    assert roles == ["BUFFER", "MINERAL_SOURCE"]
 
 
 def test_synonym_added_enum_values_map():
@@ -77,7 +77,7 @@ def test_synonym_extraction_is_idempotent():
     second = syn.extract_roles_for_ingredient(curator, record)
     assert first == 1
     assert second == 0  # re-run adds nothing
-    assert [r["role"] for r in record["media_roles"]] == ["MINERAL"]
+    assert [r["role"] for r in record["nutritional_roles"]] == ["MINERAL_SOURCE"]
 
 
 # --- infer_roles_from_chebi.infer_role ---------------------------------------
@@ -94,7 +94,7 @@ def test_chebi_ammonium_salt_is_nitrogen_not_mineral():
 
 
 def test_chebi_skips_ambiguous_classes():
-    # plain inorganic salt without ammonium -> not assigned (MINERAL deliberately dropped)
+    # plain inorganic salt without ammonium -> not assigned (no element-source inference)
     assert chebi.infer_role({"CHEBI:24839"}, "sodium azide") == (None, None)
     # antimicrobial-agent role class is NOT used here
     assert chebi.infer_role({"CHEBI:33281"}, "1-octen-3-ol") == (None, None)
@@ -118,8 +118,9 @@ def test_chebi_precedence_vitamin_over_nothing():
     ("Nitrilotriacetic acid disodium salt", "CHELATOR"),
     ("Sodium dithionite", "REDUCING_AGENT"),
     ("DL-Dithiothreitol", "REDUCING_AGENT"),
-    ("MgSO4 x 7 H2O", "MINERAL"),
-    ("CuSO4 x 4 H2O", "MINERAL"),
+    # Mg is a bulk cation -> residual bucket; Cu is a micronutrient metal.
+    ("MgSO4 x 7 H2O", "MINERAL_SOURCE"),
+    ("CuSO4 x 4 H2O", "TRACE_ELEMENT"),
     # extended categories
     ("HEPES", "BUFFER"),
     ("Phosphate buffer", "BUFFER"),

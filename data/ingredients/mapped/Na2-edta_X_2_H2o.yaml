@@ -116,6 +116,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na2-EDTA x 2 H2O'' -> ''EDTA disodium salt (anhydrous)'':
     synced to canonical CHEBI label (preferred_term ''Na2-EDTA x 2 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
 chemical_properties:
   cas_rn: 7487-55-0
   data_source: PubChem API (preprocessed)
@@ -125,7 +129,7 @@ chemical_properties:
   smiles: O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=O)[O-].[Na+].[Na+]
 kg_microbe_node_id: CHEBI:64734
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: CHELATOR
   confidence: 0.8
   evidence:

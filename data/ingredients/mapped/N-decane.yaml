@@ -96,6 +96,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''n-Decane'' -> ''decane'': synced to canonical CHEBI label
     (preferred_term ''n-Decane'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 kg_microbe_node_id: CHEBI:41808
 chemical_properties:
   cas_rn: 124-18-5
@@ -105,7 +109,7 @@ chemical_properties:
   inchi: InChI=1S/C10H22/c1-3-5-7-9-10-8-6-4-2/h3-10H2,1-2H3
   smiles: CCCCCCCCCC
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 1.0
   evidence:

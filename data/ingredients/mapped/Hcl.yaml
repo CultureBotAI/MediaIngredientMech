@@ -127,6 +127,14 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''HCl'' -> ''hydrogen chloride'': synced to canonical CHEBI
     label (preferred_term ''HCl'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Dropped media_roles role SALT: legacy media_roles SALT assignment dropped
+    during the #128 facet migration: this ingredient is not a salt contributing ionic
+    strength or osmotic balance, so the assignment was a mis-curation rather than
+    a role to rehome. Re-curate onto PhysicochemicalRoleEnum.OSMOTIC_AGENT only if
+    warranted.'
 chemical_properties:
   cas_rn: 7647-01-0
   data_source: PubChem API
@@ -136,14 +144,3 @@ chemical_properties:
   smiles: '[H]Cl'
 kg_microbe_node_id: CHEBI:17883
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: SALT
-  confidence: 1.0
-  evidence:
-  - reference_text: CultureMech database (1105 occurrences as 'Solvating media')
-    reference_type: DATABASE_ENTRY
-    url: https://github.com/CultureBotAI/CultureMech
-    excerpt: 'Role: Solvating media; Properties: Defined component, Inorganic compound,
-      Solution'
-    curator_note: Widespread use in media formulations (1105 occurrences). High confidence
-      based on 'Defined component' property.

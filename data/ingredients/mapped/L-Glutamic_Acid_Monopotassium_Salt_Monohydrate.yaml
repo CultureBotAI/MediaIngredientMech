@@ -64,6 +64,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: AMINO_ACID_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
+    nutritional_roles.AMINO_ACID_SOURCE'
 chemical_properties:
   cas_rn: 6382-01-0
   data_source: CultureBotHT compounds_to_cas.csv
@@ -73,7 +78,7 @@ chemical_properties:
   inchi: InChI=1S/C5H9NO4.K.H2O/c6-3(5(9)10)1-2-4(7)8;;/h3H,1-2,6H2,(H,7,8)(H,9,10);;1H2/q;+1;/p-1/t3-;;/m0../s1
   pubchem_cid: 23695977
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: AMINO_ACID_SOURCE
   confidence: 0.8
   evidence:

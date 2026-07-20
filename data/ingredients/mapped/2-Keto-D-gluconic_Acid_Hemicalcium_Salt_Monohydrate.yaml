@@ -48,6 +48,11 @@ curation_history:
   curator: infer_energy_source
   action: ANNOTATED
   changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
 chemical_properties:
   cas_rn: 3470-37-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -57,7 +62,7 @@ chemical_properties:
   inchi: InChI=1S/2C6H10O7.Ca/c2*7-1-2(8)3(9)4(10)5(11)6(12)13;/h2*2-4,7-10H,1H2,(H,12,13);/q;;+2/p-2/t2*2-,3-,4+;/m11./s1
   pubchem_cid: 25113463
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.8
   evidence:

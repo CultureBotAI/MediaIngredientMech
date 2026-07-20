@@ -45,13 +45,18 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C72H133NO22
   inchi: InChI=1S/C72H133NO22/c1-39-22-19-20-25-55(79)46(8)54(78)24-17-15-18-26-62(84)95-71(42(4)23-16-13-14-21-31-73)50(12)59(83)37-53(77)36-58(82)48(10)66(88)47(9)56(80)34-51(75)29-27-40(2)63(85)41(3)28-30-52(76)35-57(81)49(11)67(89)60(33-45(7)65(87)44(6)32-43(5)64(39)86)93-72-70(92)69(91)68(90)61(38-74)94-72/h19,22,28,30,32-33,39-42,44,46-61,63-72,74-83,85-92H,13-18,20-21,23-27,29,31,34-38,73H2,1-12H3
   smiles: CC1=CC(C)C(O)C(C)=CC(OC2OC(CO)C(O)C(O)C2O)C(O)C(C)C(O)CC(O)C=CC(C)C(O)C(C)CCC(O)CC(O)C(C)C(O)C(C)C(O)CC(O)CC(O)C(C)C(C(C)CCCCCCN)OC(=O)CCCCCC(O)C(C)C(O)CCC=CC(C)C1O
   data_source: CHEBI sqlite (oaklib)
-media_roles:
+physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 0.8
   evidence:

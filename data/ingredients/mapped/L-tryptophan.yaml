@@ -103,6 +103,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''L-Tryptophan'' -> ''L-tryptophan'': synced to canonical
     CHEBI label (preferred_term ''L-Tryptophan'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
+    nutritional_roles.NITROGEN_SOURCE'
 chemical_properties:
   cas_rn: 73-22-3
   data_source: PubChem API
@@ -112,7 +117,7 @@ chemical_properties:
   smiles: N[C@@H](Cc1cnc2ccccc12)C(=O)O
 kg_microbe_node_id: CHEBI:16828
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: NITROGEN_SOURCE
   confidence: 1.0
   evidence:

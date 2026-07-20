@@ -28,7 +28,6 @@ Name: mediaingredientmech-schema
 | [OntologyMapping](OntologyMapping.md) | Mapping to an ontology term (CHEBI, FOODON, etc |
 | [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) | Assignment of a physicochemical facet role (the chemical or physical function... |
 | [ProposedExperiment](ProposedExperiment.md) | A lightweight, domain-neutral sketch of an experiment or analysis that could ... |
-| [RoleAssignment](RoleAssignment.md) | Assignment of a functional role in growth medium formulation with supporting ... |
 | [RoleCitation](RoleCitation.md) | Citation supporting a role assignment (DOI, publication, database reference) |
 | [StockComponent](StockComponent.md) | One constituent of a stock solution or defined medium recipe — a component in... |
 | [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |
@@ -96,7 +95,6 @@ Name: mediaingredientmech-schema
 | [mapping_status](mapping_status.md) | Current mapping status |
 | [match_level](match_level.md) | Technical method used to find this mapping |
 | [media_count](media_count.md) | Number of unique media containing this ingredient |
-| [media_roles](media_roles.md) | Functional roles in growth medium formulation (e |
 | [merged](merged.md) | List of record `identifier`s merged into this representative |
 | [metabolic_context](metabolic_context.md) | Pathway or metabolic context (e |
 | [model_systems](model_systems.md) | Systems to use (e |
@@ -138,8 +136,8 @@ Name: mediaingredientmech-schema
 | [resolution_note](resolution_note.md) | How it was resolved (when status is RESOLVED) |
 | [resolved_date](resolved_date.md) |  |
 | [retrieval_date](retrieval_date.md) | When these properties were retrieved |
-| [role](role.md) | The functional role (e |
-| [role_inheritance](role_inheritance.md) | If true, inherits media_roles from parent ingredient |
+| [role](role.md) | The community/ecological role of the organism (e |
+| [role_inheritance](role_inheritance.md) | If true, inherits the three role facets (nutritional_roles, physicochemical_r... |
 | [sample_count](sample_count.md) |  |
 | [sample_media](sample_media.md) | Sample media names (for reference) |
 | [sample_types](sample_types.md) | Sample/material types represented (free text or term labels) |
@@ -179,7 +177,6 @@ Name: mediaingredientmech-schema
 | [EnvironmentRelevanceEnum](EnvironmentRelevanceEnum.md) | Describes why an ingredient is relevant to a particular environment |
 | [EvidenceSupportEnum](EvidenceSupportEnum.md) | How a cited reference relates to the claim it is attached to |
 | [EvidenceTypeEnum](EvidenceTypeEnum.md) |  |
-| [IngredientRoleEnum](IngredientRoleEnum.md) | Functional roles of ingredients in growth medium formulation |
 | [IngredientTypeEnum](IngredientTypeEnum.md) | Classification of ingredient entry type |
 | [MappingQualityEnum](MappingQualityEnum.md) |  |
 | [MappingStatusEnum](MappingStatusEnum.md) |  |

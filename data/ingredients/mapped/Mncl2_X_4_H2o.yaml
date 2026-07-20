@@ -154,6 +154,10 @@ curation_history:
     (literature) + MediaDive recipe context + local OAK CHEBI confirm this is a garbled
     spelling of 'MnCl2 x 4 H2O' (already mapped to CHEBI:86368); promotion would PK-collide,
     so absorbed here as a synonym.
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 chemical_properties:
   cas_rn: 13446-34-9
   data_source: PubChem (via CHEBI:86368)
@@ -162,8 +166,8 @@ chemical_properties:
   inchi: InChI=1S/2ClH.Mn.4H2O/h2*1H;;4*1H2/q;;+2;;;;/p-2
   smiles: O.O.O.O.[Cl][Mn][Cl]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 0.8
   evidence:
   - reference_type: COMPUTATIONAL_PREDICTION

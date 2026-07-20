@@ -179,6 +179,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Fe(III) citrate'' -> ''iron(III) citrate'': synced to
     canonical CHEBI label (preferred_term ''Fe(III) citrate'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
 chemical_properties:
   cas_rn: 3522-50-7
   data_source: OAK/CHEBI xref
@@ -187,8 +191,8 @@ chemical_properties:
   inchi: InChI=1S/C6H8O7.Fe/c7-3(8)1-6(13,5(11)12)2-4(9)10;/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12);/q;+3/p-3
   smiles: O=C1CC2(O)CC(=O)[O][Fe]([O]1)[O]C2=O
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: IRON_SOURCE
   confidence: 1.0
   evidence:
   - reference_text: CultureMech database (319 occurrences as 'Mineral source')

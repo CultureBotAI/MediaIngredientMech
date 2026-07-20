@@ -71,7 +71,6 @@ URI: [mediaingredientmech:RoleCitation](https://w3id.org/mediaingredientmech/Rol
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [RoleAssignment](RoleAssignment.md) | [evidence](evidence.md) | range | [RoleCitation](RoleCitation.md) |
 | [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | [evidence](evidence.md) | range | [RoleCitation](RoleCitation.md) |
 | [NutritionalRoleAssignment](NutritionalRoleAssignment.md) | [evidence](evidence.md) | range | [RoleCitation](RoleCitation.md) |
 | [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) | [evidence](evidence.md) | range | [RoleCitation](RoleCitation.md) |

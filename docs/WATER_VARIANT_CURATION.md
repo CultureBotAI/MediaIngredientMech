@@ -673,9 +673,9 @@ The water hierarchy system is now **fully implemented and active**:
     - MediaIngredientMech:DEMIN_WATER
     - MediaIngredientMech:000114  # Distilled water
     - MediaIngredientMech:DOUBLE_DIST_WATER
-  media_roles:
-    - role: SOLVENT
-      confidence: 1.0
+  # No role facets. Water's function in a medium is as solvent, and there is no
+  # equivalent value in NutritionalRoleEnum, PhysicochemicalRoleEnum, or
+  # CellularMetabolicRoleEnum — so the parent carries no roles to inherit.
 
 # CHILD: Tap water (impure)
 - id: MediaIngredientMech:TAP_WATER
@@ -685,6 +685,11 @@ The water hierarchy system is now **fully implemented and active**:
   variant_type: TAP
   variant_notes: "Municipal water supply, contains chlorine and minerals"
   role_inheritance: true
+  # Variant-specific role: unlike the pure variants, tap water actually supplies
+  # bulk cations (Ca, Mg) from the municipal supply.
+  nutritional_roles:
+    - role: MINERAL_SOURCE
+      confidence: 0.5
 
 # CHILD: Demineralized water
 - id: MediaIngredientMech:DEMIN_WATER
@@ -761,8 +766,10 @@ print(tree)
    - "Find media using tap water specifically" → query child directly
 
 2. **Role inheritance:**
-   - All water variants inherit SOLVENT role from parent
-   - Can override with variant-specific roles
+   - `role_inheritance: true` propagates the parent's assignments across all three
+     role facets — though for water the parent has none, so nothing propagates
+   - Variants can still carry roles of their own: tap water gets
+     `nutritional_roles: MINERAL_SOURCE` because it alone supplies bulk cations
 
 3. **Purity relationships:**
    - Explicit parent-child links preserve distinctions

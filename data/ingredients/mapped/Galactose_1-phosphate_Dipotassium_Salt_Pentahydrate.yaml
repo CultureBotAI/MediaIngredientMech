@@ -44,6 +44,10 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 chemical_properties:
   cas_rn: 19046-60-7
   data_source: CultureBotHT compounds_to_cas.csv
@@ -53,7 +57,7 @@ chemical_properties:
   inchi: InChI=1S/C6H13O9P.2K/c7-1-2-3(8)4(9)5(10)6(14-2)15-16(11,12)13;;/h2-10H,1H2,(H2,11,12,13);;/q;2*+1/p-2/t2-,3+,4+,5-,6-;;/m1../s1
   pubchem_cid: 87916
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.8
   evidence:

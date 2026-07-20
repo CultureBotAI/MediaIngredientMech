@@ -78,6 +78,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''NaVO3'' -> ''sodium metavanadate'': synced to canonical
     CHEBI label (preferred_term ''NaVO3'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 chemical_properties:
   cas_rn: 13718-26-8
   data_source: PubChem API
@@ -87,8 +91,8 @@ chemical_properties:
   smiles: '[Na+].[O]=[V](=[O])[O-]'
 kg_microbe_node_id: CHEBI:75221
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY

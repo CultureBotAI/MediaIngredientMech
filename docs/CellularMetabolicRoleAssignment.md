@@ -129,7 +129,6 @@ attributes:
     description: The cellular-metabolic role (e.g., SUBSTRATE, ELECTRON_DONOR, COFACTOR).
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -151,7 +150,6 @@ attributes:
     description: Confidence score for this role assignment (0.0-1.0)
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -163,7 +161,6 @@ attributes:
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
     - OntologyMapping
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -183,7 +180,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -213,7 +209,6 @@ attributes:
     alias: role
     owner: CellularMetabolicRoleAssignment
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -240,7 +235,6 @@ attributes:
     alias: confidence
     owner: CellularMetabolicRoleAssignment
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -254,7 +248,6 @@ attributes:
     owner: CellularMetabolicRoleAssignment
     domain_of:
     - OntologyMapping
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -276,7 +269,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment

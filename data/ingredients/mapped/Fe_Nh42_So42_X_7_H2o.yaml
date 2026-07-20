@@ -73,13 +73,17 @@ curation_history:
   changes: 'ontology_label ''Fe(NH4)2(SO4)2 x 7 H2O'' -> ''ferrous ammonium sulfate
     heptahydrate'': synced to canonical CHEBI label (preferred_term ''Fe(NH4)2(SO4)2
     x 7 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: Fe.7H2O.2H4N.2O4S
   inchi: InChI=1S/Fe.2H3N.2H2O4S.7H2O/c;;;2*1-5(2,3)4;;;;;;;/h;2*1H3;2*(H2,1,2,3,4);7*1H2/q+2;;;;;;;;;;;/p-2
   smiles: O.O.O.O.O.O.O.O=S(=O)([O-])[O-].O=S(=O)([O-])[O-].[Fe+2].[NH4+].[NH4+]
   data_source: CHEBI sqlite (oaklib)
-media_roles:
+nutritional_roles:
 - role: TRACE_ELEMENT
   confidence: 0.6
   evidence:

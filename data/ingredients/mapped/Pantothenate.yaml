@@ -76,6 +76,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Pantothenate'' -> ''pantothenate'': synced to canonical
     CHEBI label (preferred_term ''Pantothenate'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 20938-62-9
   data_source: PubChem API
@@ -84,7 +88,7 @@ chemical_properties:
   inchi: InChI=1S/C9H17NO5/c1-9(2,5-11)7(14)8(15)10-4-3-6(12)13/h7,11,14H,3-5H2,1-2H3,(H,10,15)(H,12,13)/p-1
   smiles: CC(C)(CO)C(O)C(=O)NCCC(=O)[O-]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 1.0
   evidence:

@@ -54,12 +54,17 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
 ingredient_type: SINGLE_INGREDIENT
 notes: '2026-05-10 OAK/OLS review: CHEBI search returns CHEBI:224010 Destomycin C
   and CHEBI:4454 Destomysin, but does not establish an exact identity for the unqualified
   source label Destomycin. Retain kgmicrobe.compound:destomycin as the primary placeholder
   mapping pending stronger identity evidence.'
-media_roles:
+physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 0.8
   evidence:

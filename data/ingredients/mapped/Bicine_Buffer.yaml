@@ -62,6 +62,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''BICINE buffer'' -> ''N,N-bis(2-hydroxyethyl)glycine'':
     synced to canonical CHEBI label (preferred_term ''BICINE buffer'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
 chemical_properties:
   cas_rn: 150-25-4
   data_source: PubChem API
@@ -70,7 +74,7 @@ chemical_properties:
   inchi: InChI=1S/C6H13NO4/c8-3-1-7(2-4-9)5-6(10)11/h8-9H,1-5H2,(H,10,11)
   smiles: O=C(O)CN(CCO)CCO
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: BUFFER
   confidence: 0.8
   evidence:

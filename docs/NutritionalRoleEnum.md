@@ -19,6 +19,7 @@ URI: [mediaingredientmech:NutritionalRoleEnum](https://w3id.org/mediaingredientm
 | PHOSPHATE_SOURCE | None | Provides phosphate for nucleotides, phospholipids, and energy carriers |
 | IRON_SOURCE | None | Provides iron (typically for cytochromes, Fe-S clusters, and other metallopro... |
 | TRACE_ELEMENT | None | Provides a micronutrient required in trace amounts (e |
+| MINERAL_SOURCE | None | Provides a bulk inorganic mineral nutrient not covered by a more specific ele... |
 | VITAMIN_SOURCE | CHEBI:33229 | Provides vitamins or vitamin precursors |
 | AMINO_ACID_SOURCE | None | Provides one or more specific amino acids as building blocks |
 | PROTEIN_SOURCE | None | Provides peptides, proteins, or complex amino-acid mixtures (e |
@@ -89,6 +90,14 @@ permissible_values:
     text: TRACE_ELEMENT
     description: Provides a micronutrient required in trace amounts (e.g., zinc, cobalt,
       manganese, molybdenum).
+  MINERAL_SOURCE:
+    text: MINERAL_SOURCE
+    description: Provides a bulk inorganic mineral nutrient not covered by a more
+      specific element-source value — in practice the macronutrient cations magnesium,
+      calcium, potassium, and sodium (e.g., MgCl2, CaCl2, KCl, NaCl). Prefer the specific
+      value (PHOSPHATE_SOURCE, IRON_SOURCE, SULFUR_SOURCE, TRACE_ELEMENT) whenever
+      the salient nutrient is one of those; MINERAL_SOURCE is the residual bucket,
+      mirroring how TRACE_ELEMENT buckets the micronutrient metals.
   VITAMIN_SOURCE:
     text: VITAMIN_SOURCE
     description: Provides vitamins or vitamin precursors.

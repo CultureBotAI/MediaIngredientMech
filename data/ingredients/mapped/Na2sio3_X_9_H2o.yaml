@@ -125,6 +125,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na2SiO3 x 9 H2O'' -> ''sodium silicate nonahydrate'':
     synced to canonical CHEBI label (preferred_term ''Na2SiO3 x 9 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
 kg_microbe_node_id: CHEBI:132108
 chemical_properties:
   cas_rn: 13517-24-3
@@ -134,8 +138,8 @@ chemical_properties:
   inchi: InChI=1S/2Na.O3Si.9H2O/c;;1-4(2)3;;;;;;;;;/h;;;9*1H2/q2*+1;-2;;;;;;;;;
   smiles: O.O.O.O.O.O.O.O.O.O=[Si]([O-])[O-].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: MINERAL_SOURCE
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY

@@ -81,6 +81,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''CaCl2 x 6 H2O'' -> ''calcium chloride hexahydrate'':
     synced to canonical CHEBI label (preferred_term ''CaCl2 x 6 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
 kg_microbe_node_id: CHEBI:91243
 chemical_properties:
   cas_rn: 10043-52-4
@@ -90,8 +94,8 @@ chemical_properties:
   inchi: InChI=1S/Ca.2ClH.6H2O/h;2*1H;6*1H2/q+2;;;;;;;;/p-2
   smiles: O.O.O.O.O.O.[Ca+2].[Cl-].[Cl-]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: MINERAL_SOURCE
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY

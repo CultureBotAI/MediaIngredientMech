@@ -24,7 +24,6 @@ from mediaingredientmech.curation.ingredient_curator import (
     VALID_CELLULAR_METABOLIC_ROLES,
     VALID_CITATION_TYPES,
     VALID_COMMUNITY_ORGANISM_ROLES,
-    VALID_MEDIA_ROLES,
     VALID_NUTRITIONAL_ROLES,
     VALID_PHYSICOCHEMICAL_ROLES,
 )
@@ -43,11 +42,16 @@ def _schema_enum(enum_name: str) -> set[str]:
     return set(schema["enums"][enum_name]["permissible_values"].keys())
 
 
-def test_media_roles_match_schema():
-    assert VALID_MEDIA_ROLES == _schema_enum("IngredientRoleEnum"), (
-        "VALID_MEDIA_ROLES is out of sync with IngredientRoleEnum. "
-        "Update the set in curation/ingredient_curator.py to match the schema."
-    )
+def test_flat_ingredient_role_enum_is_retired():
+    """The flat enum, its assignment class, and its slot were removed in #128.
+
+    Guards against a re-introduction that would revive the divergence window the
+    facet migration closed: the same concept representable in two places at once.
+    """
+    schema = yaml.safe_load(SCHEMA_PATH.read_text())
+    assert "IngredientRoleEnum" not in schema["enums"]
+    assert "RoleAssignment" not in schema["classes"]
+    assert "media_roles" not in schema["classes"]["IngredientRecord"]["attributes"]
 
 
 def test_community_organism_roles_match_schema():

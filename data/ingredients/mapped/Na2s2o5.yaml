@@ -99,6 +99,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na2S2O5'' -> ''sodium disulfite'': synced to canonical
     CHEBI label (preferred_term ''Na2S2O5'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT -> physicochemical_roles.REDUCING_AGENT'
 chemical_properties:
   cas_rn: 7681-57-4
   data_source: PubChem API
@@ -108,7 +112,7 @@ chemical_properties:
   smiles: O=S([O-])S(=O)(=O)[O-].[Na+].[Na+]
 kg_microbe_node_id: CHEBI:114786
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: REDUCING_AGENT
   confidence: 0.6
   evidence:

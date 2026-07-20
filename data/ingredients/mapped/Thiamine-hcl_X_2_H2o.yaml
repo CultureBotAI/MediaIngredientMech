@@ -88,6 +88,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Thiamine-HCl x 2 H2O'' -> ''thiamine hydrochloride dihydrate'':
     synced to canonical CHEBI label (preferred_term ''Thiamine-HCl x 2 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 13465-05-9
   data_source: PubChem API (preprocessed)
@@ -96,7 +100,7 @@ chemical_properties:
   inchi: InChI=1S/C12H17N4OS.2ClH.2H2O/c1-8-11(3-4-17)18-7-16(8)6-10-5-14-9(2)15-12(10)13;;;;/h5,7,17H,3-4,6H2,1-2H3,(H2,13,14,15);2*1H;2*1H2/q+1;;;;/p-1
   smiles: Cc1ncc(C[n+]2csc(CCO)c2C)c([NH3+])n1.O.O.[Cl-].[Cl-]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 1.0
   evidence:

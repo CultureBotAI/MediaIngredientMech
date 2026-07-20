@@ -99,6 +99,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''gamma-Aminobutyric acid'' -> ''gamma-aminobutyric acid'':
     synced to canonical CHEBI label (preferred_term ''gamma-Aminobutyric acid'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
+    nutritional_roles.AMINO_ACID_SOURCE'
 chemical_properties:
   cas_rn: 56-12-2
   data_source: PubChem API
@@ -107,7 +112,7 @@ chemical_properties:
   inchi: InChI=1S/C4H9NO2/c5-3-1-2-4(6)7/h1-3,5H2,(H,6,7)
   smiles: NCCCC(=O)O
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: AMINO_ACID_SOURCE
   confidence: 0.7
   evidence:

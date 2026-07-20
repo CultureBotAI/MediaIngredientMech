@@ -135,6 +135,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Myo-inositol'' -> ''myo-inositol'': synced to canonical
     CHEBI label (preferred_term ''myo-Inositol'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 87-89-8
   data_source: PubChem API
@@ -144,7 +148,7 @@ chemical_properties:
   smiles: O[C@H]1[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@H]1O
 kg_microbe_node_id: CHEBI:17268
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 0.8
   evidence:

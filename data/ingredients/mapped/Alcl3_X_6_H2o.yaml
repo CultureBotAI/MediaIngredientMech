@@ -108,6 +108,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''AlCl3 x 6 H2O'' -> ''aluminium trichloride hexahydrate'':
     synced to canonical CHEBI label (preferred_term ''AlCl3 x 6 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 kg_microbe_node_id: CHEBI:30115
 chemical_properties:
   cas_rn: 7784-13-6
@@ -117,8 +121,8 @@ chemical_properties:
   inchi: InChI=1S/Al.3ClH.6H2O/h;3*1H;6*1H2/q+3;;;;;;;;;/p-3
   smiles: '[Cl][Al]([Cl])[Cl].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H]'
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY

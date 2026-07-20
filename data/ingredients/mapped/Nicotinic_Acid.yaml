@@ -192,6 +192,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Nicotinic acid'' -> ''nicotinic acid'': synced to canonical
     CHEBI label (preferred_term ''Nicotinic acid'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 59-67-6
   data_source: CultureBotHT compounds_to_cas.csv
@@ -201,7 +205,7 @@ chemical_properties:
   smiles: O=C(O)c1cccnc1
 kg_microbe_node_id: CHEBI:15940
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 1.0
   evidence:

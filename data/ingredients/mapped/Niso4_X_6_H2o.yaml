@@ -77,6 +77,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''NiSO4 x 6 H2O'' -> ''nickel sulfate'': synced to canonical
     CHEBI label (preferred_term ''NiSO4 x 6 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 chemical_properties:
   cas_rn: 10101-97-0
   data_source: CultureBotHT/compounds_to_cas.csv
@@ -85,8 +89,8 @@ chemical_properties:
   inchi: InChI=1S/Ni.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
   smiles: O=S(=O)([O-])[O-].[Ni+2]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 0.8
   evidence:
   - reference_type: COMPUTATIONAL_PREDICTION

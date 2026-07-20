@@ -9,78 +9,6 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
 
-def test_add_media_role():
-    """Test adding a media role with DOI citation."""
-    curator = IngredientCurator(curator_name="test_curator")
-
-    # Create a test record
-    record = {
-        "ontology_id": "TEST:001",
-        "preferred_term": "potassium nitrate",
-        "mapping_status": "UNMAPPED",
-    }
-
-    # Test valid role addition with DOI
-    result = curator.add_media_role(
-        record,
-        role="NITROGEN_SOURCE",
-        confidence=0.95,
-        doi="10.1128/jb.00123-15",
-        reference_text="Smith et al. (2015) J. Bacteriol.",
-        reference_type="PEER_REVIEWED_PUBLICATION",
-        curator_note="Primary nitrogen source in defined medium",
-        notes="Well-documented role",
-    )
-
-    assert "media_roles" in result
-    assert len(result["media_roles"]) == 1
-    role_assignment = result["media_roles"][0]
-    assert role_assignment["role"] == "NITROGEN_SOURCE"
-    assert role_assignment["confidence"] == 0.95
-    assert role_assignment["notes"] == "Well-documented role"
-    assert len(role_assignment["evidence"]) == 1
-
-    evidence = role_assignment["evidence"][0]
-    assert evidence["doi"] == "10.1128/jb.00123-15"
-    assert evidence["reference_text"] == "Smith et al. (2015) J. Bacteriol."
-    assert evidence["reference_type"] == "PEER_REVIEWED_PUBLICATION"
-    assert evidence["curator_note"] == "Primary nitrogen source in defined medium"
-
-    # Check curation history
-    assert "curation_history" in result
-    assert len(result["curation_history"]) == 1
-    assert "NITROGEN_SOURCE" in result["curation_history"][0]["changes"]
-    assert "10.1128/jb.00123-15" in result["curation_history"][0]["changes"]
-
-    print("✓ test_add_media_role passed")
-
-
-def test_add_media_role_without_citation():
-    """Test adding a media role without citation."""
-    curator = IngredientCurator(curator_name="test_curator")
-
-    record = {
-        "ontology_id": "TEST:002",
-        "preferred_term": "sodium chloride",
-        "mapping_status": "UNMAPPED",
-    }
-
-    result = curator.add_media_role(
-        record,
-        role="SALT",
-        confidence=1.0,
-        notes="Standard salt component",
-    )
-
-    assert len(result["media_roles"]) == 1
-    role_assignment = result["media_roles"][0]
-    assert role_assignment["role"] == "SALT"
-    assert role_assignment["confidence"] == 1.0
-    assert role_assignment["evidence"] == []  # No citation provided
-
-    print("✓ test_add_media_role_without_citation passed")
-
-
 def test_add_community_organism_role():
     """Test adding a community-organism role with metabolic context."""
     curator = IngredientCurator(curator_name="test_curator")
@@ -133,25 +61,6 @@ def test_set_solution_type():
     print("✓ test_set_solution_type passed")
 
 
-def test_validation_invalid_role():
-    """Test validation rejects invalid role."""
-    curator = IngredientCurator(curator_name="test_curator")
-
-    record = {
-        "ontology_id": "TEST:005",
-        "preferred_term": "test",
-        "mapping_status": "UNMAPPED",
-    }
-
-    try:
-        curator.add_media_role(record, role="INVALID_ROLE")
-        assert False, "Should have raised ValueError"
-    except ValueError as e:
-        assert "Invalid media role" in str(e)
-
-    print("✓ test_validation_invalid_role passed")
-
-
 def test_validation_invalid_doi():
     """Test validation rejects invalid DOI format."""
     curator = IngredientCurator(curator_name="test_curator")
@@ -163,7 +72,7 @@ def test_validation_invalid_doi():
     }
 
     try:
-        curator.add_media_role(record, role="BUFFER", doi="not-a-valid-doi")
+        curator.add_physicochemical_role(record, role="BUFFER", doi="not-a-valid-doi")
         assert False, "Should have raised ValueError"
     except ValueError as e:
         assert "Invalid DOI" in str(e)
@@ -182,7 +91,7 @@ def test_validation_invalid_confidence():
     }
 
     try:
-        curator.add_media_role(record, role="BUFFER", confidence=1.5)
+        curator.add_physicochemical_role(record, role="BUFFER", confidence=1.5)
         assert False, "Should have raised ValueError"
     except ValueError as e:
         assert "Confidence out of range" in str(e)
@@ -198,7 +107,7 @@ def test_validate_role_assignments():
     valid_record = {
         "ontology_id": "TEST:008",
         "preferred_term": "test",
-        "media_roles": [
+        "nutritional_roles": [
             {
                 "role": "NITROGEN_SOURCE",
                 "confidence": 0.9,
@@ -220,7 +129,7 @@ def test_validate_role_assignments():
     invalid_record = {
         "ontology_id": "TEST:009",
         "preferred_term": "test",
-        "media_roles": [
+        "nutritional_roles": [
             {
                 "role": "INVALID_ROLE",
                 "confidence": 0.9,
@@ -230,13 +139,13 @@ def test_validate_role_assignments():
 
     errors = curator.validate_role_assignments(invalid_record)
     assert len(errors) == 1
-    assert "Invalid media role" in errors[0]
+    assert "Invalid nutritional role" in errors[0]
 
     # Invalid record - bad DOI
     invalid_doi_record = {
         "ontology_id": "TEST:010",
         "preferred_term": "test",
-        "media_roles": [
+        "physicochemical_roles": [
             {
                 "role": "BUFFER",
                 "evidence": [{"doi": "not-a-doi"}],
@@ -262,28 +171,33 @@ def test_validate_role_assignments():
     print("✓ test_validate_role_assignments passed")
 
 
-def test_multiple_roles():
-    """Test adding multiple roles to the same ingredient."""
+def test_multiple_roles_across_facets():
+    """One ingredient can hold roles on several facets at once.
+
+    KNO3 supplies nitrogen (nutritional) and serves as a terminal electron
+    acceptor for denitrifiers (cellular-metabolic). The two must land in
+    separate slots rather than compete for a single flat list.
+    """
     curator = IngredientCurator(curator_name="test_curator")
 
     record = {
-        "ontology_id": "TEST:012",
+        "ontology_id": "CHEBI:63043",
         "preferred_term": "potassium nitrate",
         "mapping_status": "MAPPED",
     }
 
-    # Add nitrogen source role
-    curator.add_media_role(record, role="NITROGEN_SOURCE", confidence=0.95)
+    curator.add_nutritional_role(record, role="NITROGEN_SOURCE", confidence=0.95)
+    curator.add_cellular_metabolic_role(
+        record,
+        role="ELECTRON_ACCEPTOR",
+        metabolic_context="denitrification",
+        confidence=0.9,
+    )
 
-    # Add electron acceptor role
-    curator.add_media_role(record, role="ELECTRON_ACCEPTOR", confidence=0.9)
+    assert [r["role"] for r in record["nutritional_roles"]] == ["NITROGEN_SOURCE"]
+    assert [r["role"] for r in record["cellular_metabolic_roles"]] == ["ELECTRON_ACCEPTOR"]
 
-    assert len(record["media_roles"]) == 2
-    roles = [r["role"] for r in record["media_roles"]]
-    assert "NITROGEN_SOURCE" in roles
-    assert "ELECTRON_ACCEPTOR" in roles
-
-    print("✓ test_multiple_roles passed")
+    print("✓ test_multiple_roles_across_facets passed")
 
 
 def test_add_nutritional_role():
@@ -328,7 +242,7 @@ def test_add_physicochemical_role():
 
     Includes the no-citation branch (no doi/pmid/reference_text/url provided) —
     `evidence` must be an empty list. Note: passing `curator_note`/`excerpt`
-    alone does not trigger citation creation (inherited from add_media_role);
+    alone does not trigger citation creation;
     a real citation needs at least one of doi/pmid/reference_text/url.
     """
     curator = IngredientCurator(curator_name="test_curator")
@@ -454,8 +368,6 @@ def test_validate_role_assignments_walks_new_facet_slots():
 
 
 if __name__ == "__main__":
-    test_add_media_role()
-    test_add_media_role_without_citation()
     test_add_community_organism_role()
     test_add_nutritional_role()
     test_add_physicochemical_role()
@@ -463,10 +375,9 @@ if __name__ == "__main__":
     test_facet_role_validation_rejects_wrong_facet_value()
     test_validate_role_assignments_walks_new_facet_slots()
     test_set_solution_type()
-    test_validation_invalid_role()
     test_validation_invalid_doi()
     test_validation_invalid_confidence()
     test_validate_role_assignments()
-    test_multiple_roles()
+    test_multiple_roles_across_facets()
 
     print("\n✅ All tests passed!")
