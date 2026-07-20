@@ -46,6 +46,10 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: ELECTRON_DONOR (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR -> cellular_metabolic_roles.ELECTRON_DONOR'
 notes: 'CultureMech placeholder_id: 10'
 chemical_properties:
   cas_rn: 10102-17-7
@@ -66,7 +70,7 @@ ontology_mapping:
       (name normalization); label-exact
 ingredient_type: SINGLE_INGREDIENT
 kg_microbe_node_id: CHEBI:32150
-media_roles:
+cellular_metabolic_roles:
 - role: ELECTRON_DONOR
   confidence: 0.6
   evidence:

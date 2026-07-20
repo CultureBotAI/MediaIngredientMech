@@ -151,6 +151,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na2S x 9 H2O'' -> ''sodium sulfide nonahydrate'': synced
     to canonical CHEBI label (preferred_term ''Na2S x 9 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT -> physicochemical_roles.REDUCING_AGENT'
 kg_microbe_node_id: CHEBI:76209
 chemical_properties:
   cas_rn: 1313-82-2
@@ -160,7 +164,7 @@ chemical_properties:
   inchi: InChI=1S/2Na.9H2O.S/h;;9*1H2;/q2*+1;;;;;;;;;;-2
   smiles: O.O.O.O.O.O.O.O.O.[Na+].[Na+].[S-2]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: REDUCING_AGENT
   confidence: 1.0
   evidence:

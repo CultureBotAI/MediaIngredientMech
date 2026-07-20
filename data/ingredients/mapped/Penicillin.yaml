@@ -79,6 +79,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Penicillin'' -> ''penicillin'': synced to canonical CHEBI
     label (preferred_term ''Penicillin'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
 chemical_properties:
   cas_rn: 215-794-6
   data_source: PubChem API
@@ -86,7 +91,7 @@ chemical_properties:
   molecular_formula: C9H11N2O4SR
   smiles: '*C(=O)N[C@@H]1C(=O)N2[C@@H](C(=O)O)C(C)(C)S[C@]12[H]'
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 1.0
   evidence:

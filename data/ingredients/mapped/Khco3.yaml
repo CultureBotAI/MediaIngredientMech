@@ -86,6 +86,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''KHCO3'' -> ''potassium hydrogencarbonate'': synced to
     canonical CHEBI label (preferred_term ''KHCO3'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER;
+    MINERAL -> nutritional_roles.MINERAL_SOURCE'
 chemical_properties:
   cas_rn: 298-14-6
   data_source: PubChem API
@@ -95,14 +100,15 @@ chemical_properties:
   smiles: O=C([O-])O.[K+]
 kg_microbe_node_id: CHEBI:81862
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: BUFFER
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Buffer'
-- role: MINERAL
+nutritional_roles:
+- role: MINERAL_SOURCE
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY

@@ -116,8 +116,13 @@ permissible_values:
     meaning: CHEBI:77973
   OSMOTIC_AGENT:
     text: OSMOTIC_AGENT
-    description: Contributes primarily to the osmotic strength of the medium (e.g.,
-      NaCl at high concentration, sucrose, glycerol as osmolyte).
+    description: 'Contributes primarily to the osmotic strength of the medium (e.g.,
+      NaCl at high concentration, sucrose, glycerol as osmolyte). NOTE: shares `mappings:
+      CHEBI:25728 (osmolyte)` with CellularMetabolicRoleEnum.OSMOPROTECTANT. Auto-classifiers
+      driven by the SSSOM must NOT fan a single CHEBI:25728 annotation out to both
+      facets — this is a medium-side role, whereas OSMOPROTECTANT is an intracellular,
+      organism-conditional role. Assign OSMOPROTECTANT only when there is organism-context
+      evidence.'
     mappings:
     - CHEBI:25728
   PRECIPITATION_INHIBITOR:

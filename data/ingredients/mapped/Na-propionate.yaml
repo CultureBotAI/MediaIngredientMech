@@ -134,6 +134,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na-propionate'' -> ''sodium propionate'': synced to canonical
     CHEBI label (preferred_term ''Na-propionate'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
 chemical_properties:
   cas_rn: 137-40-6
   data_source: PubChem API (preprocessed)
@@ -142,7 +147,7 @@ chemical_properties:
   inchi: InChI=1S/C3H6O2.Na/c1-2-3(4)5;/h2H2,1H3,(H,4,5);/q;+1/p-1
   smiles: CCC(=O)[O-].[Na+]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 1.0
   evidence:

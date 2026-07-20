@@ -1,36 +1,31 @@
 """Shared iteration over all role-assignment slots on an IngredientRecord.
 
-Scripts under `scripts/` have historically walked `media_roles` and
-`community_organism_roles` directly with hard-coded `record.get("media_roles",
-[])`. Now that the three facet slots (nutritional_roles / physicochemical_roles /
-cellular_metabolic_roles) exist too, consumers need to walk all five or they
-silently miss facet data.
+Scripts under `scripts/` historically walked the flat `media_roles` slot
+directly with a hard-coded `record.get("media_roles", [])`. That slot, along
+with `IngredientRoleEnum` and `RoleAssignment`, was retired in #128 once its
+assignments were rehomed onto the three role facets, so consumers must walk the
+facet slots or they silently miss every role in the corpus.
 
 `iter_role_assignments(record)` yields `(slot_name, role_assignment)` tuples
 across every role slot on `IngredientRecord`. Consumers pick which slots they
 care about via the `slots` filter, or take everything by default.
-
-Slot list is derived from the LinkML schema at first use — new facet slots
-added later show up automatically without touching this file.
 """
 
 from __future__ import annotations
 
 from typing import Any, Iterable, Iterator, Optional
 
-# Ordered so consumers can rely on media_roles / community_organism_roles being
-# yielded first (legacy scripts hit those in that order); the three facet slots
-# follow. Also matches the schema's declaration order on IngredientRecord.
+# Matches the schema's declaration order on IngredientRecord: the
+# organism-level slot first, then the three ingredient-role facets.
 ALL_ROLE_SLOTS: tuple[str, ...] = (
-    "media_roles",
     "community_organism_roles",
     "nutritional_roles",
     "physicochemical_roles",
     "cellular_metabolic_roles",
 )
 
-# The three facet slots added by the facet migration; convenient shorthand for
-# callers that only care about the new surface.
+# The three ingredient-role facets; convenient shorthand for callers that want
+# ingredient roles only, without the organism-in-community slot.
 FACET_ROLE_SLOTS: tuple[str, ...] = (
     "nutritional_roles",
     "physicochemical_roles",

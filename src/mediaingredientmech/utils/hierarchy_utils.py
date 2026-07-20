@@ -9,6 +9,11 @@ Provides functions to navigate and query ingredient hierarchies:
 
 from typing import Optional
 
+from mediaingredientmech.utils.role_iteration import (
+    FACET_ROLE_SLOTS,
+    iter_role_assignments,
+)
+
 
 def get_parent(ingredient_id: str, all_records: list[dict]) -> Optional[dict]:
     """
@@ -194,8 +199,9 @@ def get_inherited_roles(
     """
     Resolve role inheritance from parent.
 
-    If role_inheritance=true, includes parent's media_roles.
-    Always includes record's own roles if include_own_roles=True.
+    If role_inheritance=true, includes the parent's roles across all three
+    ingredient-role facets. Always includes record's own roles if
+    include_own_roles=True.
 
     Args:
         ingredient_id: ID of ingredient
@@ -203,12 +209,15 @@ def get_inherited_roles(
         include_own_roles: If True, include record's own roles (default: True)
 
     Returns:
-        List of role assignment dicts (may contain duplicates if overridden)
+        Flat list of role assignment dicts drawn from nutritional_roles,
+        physicochemical_roles, and cellular_metabolic_roles (may contain
+        duplicates if overridden). The facet each assignment came from is not
+        preserved — callers needing it should use ``iter_role_assignments``.
 
     Examples:
-        >>> roles = get_inherited_roles('MediaIngredientMech:000114', all_records)
+        >>> roles = get_inherited_roles('CHEBI:15377', all_records)
         >>> print([r['role'] for r in roles])
-        ['SOLVENT']  # Inherited from Water (base)
+        ['MINERAL_SOURCE']  # Inherited from Water (base)
     """
     # Find the record
     record = None
@@ -229,13 +238,11 @@ def get_inherited_roles(
     if role_inheritance and parent_id:
         parent = get_parent(ingredient_id, all_records)
         if parent:
-            parent_roles = parent.get('media_roles', [])
-            roles.extend(parent_roles)
+            roles.extend(a for _, a in iter_role_assignments(parent, slots=FACET_ROLE_SLOTS))
 
     # Add own roles
     if include_own_roles:
-        own_roles = record.get('media_roles', [])
-        roles.extend(own_roles)
+        roles.extend(a for _, a in iter_role_assignments(record, slots=FACET_ROLE_SLOTS))
 
     return roles
 

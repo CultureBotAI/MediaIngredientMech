@@ -74,6 +74,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Proline'' -> ''proline'': synced to canonical CHEBI label
     (preferred_term ''Proline'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
+    nutritional_roles.AMINO_ACID_SOURCE'
 chemical_properties:
   cas_rn: 147-85-3
   data_source: PubChem API
@@ -82,7 +87,7 @@ chemical_properties:
   inchi: InChI=1S/C5H9NO2/c7-5(8)4-2-1-3-6-4/h4,6H,1-3H2,(H,7,8)
   smiles: O=C(O)C1CCCN1
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: AMINO_ACID_SOURCE
   confidence: 0.7
   evidence:

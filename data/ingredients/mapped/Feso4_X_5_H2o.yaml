@@ -89,6 +89,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''FeSO4 x 5 H2O'' -> ''iron(2+) sulfate (anhydrous)'':
     synced to canonical CHEBI label (preferred_term ''FeSO4 x 5 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
 kg_microbe_node_id: CHEBI:75832
 chemical_properties:
   cas_rn: 7720-78-7
@@ -98,8 +102,8 @@ chemical_properties:
   inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
   smiles: O=S(=O)([O-])[O-].[Fe+2]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: IRON_SOURCE
   confidence: 0.8
   evidence:
   - reference_type: COMPUTATIONAL_PREDICTION

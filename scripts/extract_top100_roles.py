@@ -8,6 +8,7 @@ Input: data/analysis/top100_role_crossref.yaml
 Output: Updated data/curated/mapped_ingredients.yaml
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -17,6 +18,48 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_facets import add_role
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
+
+# The crossref input was generated against the retired flat IngredientRoleEnum,
+# so two of its values need resolving before they can be written to a facet:
+#   * SALT is dropped — upstream it tags water, HCl, ethanol and DMSO, so it
+#     carries no usable meaning.
+#   * MINERAL is resolved to the element source the ingredient actually supplies,
+#     matched on the ingredient name (the facets have no generic mineral role).
+_IRON = re.compile(r"(^Fe|ferric|ferrous|iron)", re.I)
+_TRACE_METAL = re.compile(
+    r"(MoO4|molybd|WO4|tungst|SeO3|SeO4|selen|^CoCl|^CoSO|cobalt|^Cu|copper|"
+    r"^NiCl|^NiSO|nickel|^Zn|zinc|^Mn|mangan|H3BO3|boric|borate|vanad)",
+    re.I,
+)
+_SULFUR = re.compile(r"(^sulfur$|^S8$|H2SO4|sulfuric|^Na2S\b|sodium sulfide)", re.I)
+_PHOSPHATE = re.compile(r"(phosphat|PO4)", re.I)
+
+
+def resolve_role(role_enum: str, preferred_term: str) -> str | None:
+    """Map a crossref role value onto a facet role, or None to drop it.
+
+    Args:
+        role_enum: Role value from the crossref file
+        preferred_term: Ingredient name, used to pick the element source for MINERAL
+
+    Returns:
+        Facet role name, or None if the value should not be written
+    """
+    if role_enum == "SALT":
+        return None
+    if role_enum != "MINERAL":
+        return role_enum
+    if _IRON.search(preferred_term):
+        return "IRON_SOURCE"
+    if _TRACE_METAL.search(preferred_term):
+        return "TRACE_ELEMENT"
+    if _SULFUR.search(preferred_term):
+        return "SULFUR_SOURCE"
+    if _PHOSPHATE.search(preferred_term):
+        return "PHOSPHATE_SOURCE"
+    return "MINERAL_SOURCE"
 
 
 def load_top100_crossref(crossref_path: Path) -> dict:
@@ -37,12 +80,12 @@ def ingredient_has_role(record: dict, role_enum: str) -> bool:
 
     Args:
         record: Ingredient record
-        role_enum: Role enum value (e.g., "MINERAL")
+        role_enum: Facet role value (e.g., "TRACE_ELEMENT")
 
     Returns:
         True if role already assigned
     """
-    for role_assignment in record.get("media_roles", []):
+    for _slot, role_assignment in iter_role_assignments(record, slots=FACET_ROLE_SLOTS):
         if role_assignment.get("role") == role_enum:
             return True
     return False
@@ -109,7 +152,12 @@ def extract_roles_for_top100(
         ingredient_updated = False
 
         # Add each unique role
-        for role_enum in unique_roles:
+        for crossref_role in unique_roles:
+            role_enum = resolve_role(crossref_role, preferred_term)
+            if role_enum is None:
+                roles_skipped += 1
+                continue
+
             # Skip if role already exists
             if ingredient_has_role(record, role_enum):
                 roles_skipped += 1
@@ -119,7 +167,7 @@ def extract_roles_for_top100(
             role_annotations = [
                 ann
                 for ann in ingredient_data["raw_annotations"]
-                if ann["role_enum"] == role_enum
+                if ann["role_enum"] == crossref_role
             ]
 
             # Build excerpt from first annotation
@@ -140,9 +188,10 @@ def extract_roles_for_top100(
                 )
             else:
                 # Add role using curator
-                curator.add_media_role(
+                add_role(
+                    curator,
                     record,
-                    role=role_enum,
+                    role_enum,
                     confidence=confidence,
                     reference_text=f"CultureMech database ({occurrence_count} occurrences in media formulations)",
                     reference_type="DATABASE_ENTRY",
@@ -223,7 +272,7 @@ def main():
     print(f"Ingredients processed: {len(crossref_data['ingredients'])}")
     print(f"Ingredients updated: {ingredients_updated}")
     print(f"Roles added: {roles_added}")
-    print(f"Roles skipped (already exist): {roles_skipped}")
+    print(f"Roles skipped (already exist or dropped): {roles_skipped}")
 
     if roles_added > 0:
         avg_roles = roles_added / ingredients_updated if ingredients_updated > 0 else 0

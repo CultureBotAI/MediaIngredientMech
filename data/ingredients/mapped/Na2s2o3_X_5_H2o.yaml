@@ -155,6 +155,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Na2S2O3 x 5 H2O'' -> ''sodium thiosulfate pentahydrate'':
     synced to canonical CHEBI label (preferred_term ''Na2S2O3 x 5 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR -> cellular_metabolic_roles.ELECTRON_DONOR'
 kg_microbe_node_id: CHEBI:32150
 chemical_properties:
   cas_rn: 10102-17-7
@@ -164,7 +168,7 @@ chemical_properties:
   inchi: InChI=1S/2Na.H2O3S2.5H2O/c;;1-5(2,3)4;;;;;/h;;(H2,1,2,3,4);5*1H2/q2*+1;;;;;;/p-2
   smiles: O=S(=O)([O-])[S-].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[H]O[H].[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+cellular_metabolic_roles:
 - role: ELECTRON_DONOR
   confidence: 0.6
   evidence:

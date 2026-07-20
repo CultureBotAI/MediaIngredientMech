@@ -87,6 +87,11 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: NITROGEN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
+    nutritional_roles.NITROGEN_SOURCE'
 chemical_properties:
   cas_rn: 70-18-8
   data_source: PubChem API
@@ -96,7 +101,7 @@ chemical_properties:
   smiles: N[C@@H](CCC(=O)N[C@@H](CS)C(=O)NCC(=O)O)C(=O)O
 kg_microbe_node_id: CHEBI:16856
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: NITROGEN_SOURCE
   confidence: 1.0
   evidence:

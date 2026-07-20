@@ -45,6 +45,10 @@ curation_history:
   curator: infer_roles_from_chebi_ancestry
   action: ANNOTATED
   changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 chemical_properties:
   cas_rn: 470-69-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -53,7 +57,48 @@ chemical_properties:
   inchi: InChI=1S/C18H32O16/c19-1-6-9(23)12(26)13(27)16(31-6)34-18(15(29)11(25)8(3-21)33-18)5-30-17(4-22)14(28)10(24)7(2-20)32-17/h6-16,19-29H,1-5H2/t6-,7-,8-,9-,10-,11-,12+,13-,14+,15+,16-,17-,18+/m1/s1
   smiles: OC[C@H]1O[C@@](CO)(OC[C@@]2(O[C@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)O[C@H](CO)[C@@H](O)[C@@H]2O)[C@@H](O)[C@@H]1O
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+discussions:
+- discussion_id: kgscan-f77a72b7ddb7
+  prompt: 'Knowledge gap for 1-Kestose: Background Lignocellulose represents a primary
+    input of organic carbon (C) into soils, yet the identity of specific microorganisms
+    and genes which drive lignocellulose turnover in soils remains poorly understood.'
+  kind: KNOWLEDGE_GAP
+  status: OPEN
+  rationale: 'Surfaced by the Europe PMC literature gap-signal scan (categories: explicit_gap,
+    future_work, limitations_barriers, unclear_unknown). Curator review required:
+    set attaches_to, refine the prompt, and weigh the cited evidence.'
+  attaches_to: []
+  evidence:
+  - reference: PMID:41373036
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Background Lignocellulose represents a primary input of organic carbon
+      (C) into soils, yet the identity of specific microorganisms and genes which
+      drive lignocellulose turnover in soils remains poorly understood.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  - reference: DOI:10.21203/rs.3.rs-6822283/v1
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: 'Abstract Background: Lignocellulose represents a primary input of organic
+      carbon (C) into soils, yet the identity of specific microorganisms and genes
+      which drive lignocellulose turnover in soils remain poorly understood.'
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  - reference: PMID:41367416
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: Key research gaps include limited long-term safety data, heterogeneous
+      human cohorts and the need for large multicenter trials and machine-learning-guided
+      responder prediction.
+    explanation: Gap-signal sentence (explicit_gap) from the cited abstract.
+  - reference: PMID:40284226
+    supports: NO_EVIDENCE
+    evidence_source: abstract
+    snippet: It has been reported that 1-Kestose, a fructooligosaccharide, can reduce
+      blood cholesterol and triglyceride levels in rats; however, the underlying mechanisms
+      remain unclear.
+    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
+  posed_by: kg-microbe-kgscan
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.7
   evidence:
@@ -62,32 +107,3 @@ media_roles:
       (carbohydrate)'
     curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
       recommended.
-discussions:
-- discussion_id: kgscan-f77a72b7ddb7
-  prompt: 'Knowledge gap for 1-Kestose: Background Lignocellulose represents a primary input of organic carbon (C) into soils, yet the identity of specific microorganisms and genes which drive lignocellulose turnover in soils remains poorly understood.'
-  kind: KNOWLEDGE_GAP
-  status: OPEN
-  rationale: 'Surfaced by the Europe PMC literature gap-signal scan (categories: explicit_gap, future_work, limitations_barriers, unclear_unknown). Curator review required: set attaches_to, refine the prompt, and weigh the cited evidence.'
-  attaches_to: []
-  evidence:
-  - reference: PMID:41373036
-    supports: NO_EVIDENCE
-    evidence_source: abstract
-    snippet: Background Lignocellulose represents a primary input of organic carbon (C) into soils, yet the identity of specific microorganisms and genes which drive lignocellulose turnover in soils remains poorly understood.
-    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
-  - reference: DOI:10.21203/rs.3.rs-6822283/v1
-    supports: NO_EVIDENCE
-    evidence_source: abstract
-    snippet: 'Abstract Background: Lignocellulose represents a primary input of organic carbon (C) into soils, yet the identity of specific microorganisms and genes which drive lignocellulose turnover in soils remain poorly understood.'
-    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
-  - reference: PMID:41367416
-    supports: NO_EVIDENCE
-    evidence_source: abstract
-    snippet: Key research gaps include limited long-term safety data, heterogeneous human cohorts and the need for large multicenter trials and machine-learning-guided responder prediction.
-    explanation: Gap-signal sentence (explicit_gap) from the cited abstract.
-  - reference: PMID:40284226
-    supports: NO_EVIDENCE
-    evidence_source: abstract
-    snippet: It has been reported that 1-Kestose, a fructooligosaccharide, can reduce blood cholesterol and triglyceride levels in rats; however, the underlying mechanisms remain unclear.
-    explanation: Gap-signal sentence (unclear_unknown) from the cited abstract.
-  posed_by: kg-microbe-kgscan

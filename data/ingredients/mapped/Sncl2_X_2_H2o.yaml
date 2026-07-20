@@ -98,14 +98,18 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''SnCl2 x 2 H2O'' -> ''tin(II) chloride dihydrate'': synced
     to canonical CHEBI label (preferred_term ''SnCl2 x 2 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: 2Cl.2H2O.Sn
   inchi: InChI=1S/2ClH.2H2O.Sn/h2*1H;2*1H2;/q;;;;+2/p-2
   smiles: O.O.[Cl-].[Cl-].[Sn+2]
   data_source: CHEBI sqlite (oaklib)
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY

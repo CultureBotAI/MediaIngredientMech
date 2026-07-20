@@ -61,6 +61,10 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: SURFACTANT (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SURFACTANT -> physicochemical_roles.SURFACTANT'
 chemical_properties:
   cas_rn: 9005-64-5
   data_source: CultureBotHT compounds_to_cas.csv
@@ -70,7 +74,7 @@ chemical_properties:
   smiles: '[H][C@]1(C(COCCOC(=O)CCCCCCCCCCC)OCCO)OCC(OCCO)[C@H]1OCCO'
 kg_microbe_node_id: CHEBI:9784
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: SURFACTANT
   confidence: 1.0
   evidence:

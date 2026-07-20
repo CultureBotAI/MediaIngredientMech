@@ -131,10 +131,14 @@ curation_history:
 - timestamp: '2026-07-05T00:00:00+00:00'
   curator: cbclaw_followups_114
   action: CORRECTED
-  changes: 'Removed erroneous chemical_properties.cas_rn 7783-06-4 (that CAS is hydrogen
-    sulfide, H2S / CHEBI:16136 — a PubChem false positive, not elemental sulfur), plus
-    its data_source/retrieval_date. CHEBI:26833 (sulfur atom) mapping unchanged.'
+  changes: Removed erroneous chemical_properties.cas_rn 7783-06-4 (that CAS is hydrogen
+    sulfide, H2S / CHEBI:16136 — a PubChem false positive, not elemental sulfur),
+    plus its data_source/retrieval_date. CHEBI:26833 (sulfur atom) mapping unchanged.
   llm_assisted: true
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.SULFUR_SOURCE'
 chemical_properties:
   molecular_formula: S
   inchi: InChI=1S/S
@@ -151,8 +155,8 @@ environmental_context:
   relevance: NATURAL_SOURCE
   notes: Elemental sulfur accumulates at terrestrial hot springs; substrate for sulfur-oxidizing
     thermophiles.
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: SULFUR_SOURCE
   confidence: 1.0
   evidence:
   - reference_text: CultureMech database (225 occurrences as 'Mineral source')

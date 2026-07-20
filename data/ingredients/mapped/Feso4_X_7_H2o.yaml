@@ -182,6 +182,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''FeSO4 x 7 H2O'' -> ''iron(2+) sulfate heptahydrate'':
     synced to canonical CHEBI label (preferred_term ''FeSO4 x 7 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
 chemical_properties:
   cas_rn: 7782-63-0
   data_source: PubChem (via CHEBI:75836)
@@ -190,8 +194,8 @@ chemical_properties:
   inchi: InChI=1S/Fe.H2O4S.7H2O/c;1-5(2,3)4;;;;;;;/h;(H2,1,2,3,4);7*1H2/q+2;;;;;;;;/p-2
   smiles: O.O.O.O.O.O.O.O=S(=O)([O-])[O-].[Fe+2]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: IRON_SOURCE
   confidence: 1.0
   evidence:
   - reference_text: CultureMech database (2295 occurrences as 'Mineral source')

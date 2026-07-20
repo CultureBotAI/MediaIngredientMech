@@ -2,7 +2,7 @@
 """Intelligently merge CultureMech updates into MediaIngredientMech while preserving role curation.
 
 This script performs a smart merge of the latest CultureMech data into MediaIngredientMech:
-- Preserves all media_roles and curation_history (CRITICAL)
+- Preserves all ingredient role facets and curation_history (CRITICAL)
 - Updates occurrence counts to match CultureMech
 - Adds new ingredients from CultureMech
 - Archives removed ingredients that have role curation
@@ -23,6 +23,10 @@ from typing import Any
 import yaml
 
 from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.utils.role_iteration import (
+    FACET_ROLE_SLOTS,
+    iter_role_assignments,
+)
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from mediaingredientmech.validation.write_validated import ValidationFailedError
 
@@ -84,7 +88,7 @@ def merge_synonyms(mi_record: dict, cm_ingredient: dict) -> list[dict]:
 
 def has_role_curation(record: dict) -> bool:
     """Check if an ingredient has role curation work."""
-    return bool(record.get("media_roles"))
+    return any(iter_role_assignments(record, slots=FACET_ROLE_SLOTS))
 
 
 def merge_ingredient(mi_record: dict, cm_ingredient: dict, verbose: bool = False) -> tuple[dict, dict]:
@@ -97,7 +101,7 @@ def merge_ingredient(mi_record: dict, cm_ingredient: dict, verbose: bool = False
     merged = dict(mi_record)  # Copy MI record
 
     # PRESERVE these critical fields from MediaIngredientMech
-    preserved_fields = ["media_roles", "curation_history", "id", "identifier"]
+    preserved_fields = [*FACET_ROLE_SLOTS, "curation_history", "id", "identifier"]
 
     # Update occurrence counts
     cm_count = cm_ingredient.get("occurrence_count", 0)
@@ -338,7 +342,10 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
                 archived_ingredients.append(archived)
 
                 if verbose:
-                    print(f"  Archived {mi_record['preferred_term']} (has {len(mi_record.get('media_roles', []))} roles)")
+                    role_count = sum(
+                        1 for _ in iter_role_assignments(mi_record, slots=FACET_ROLE_SLOTS)
+                    )
+                    print(f"  Archived {mi_record['preferred_term']} (has {role_count} roles)")
             else:
                 # No roles, just drop it
                 if verbose:

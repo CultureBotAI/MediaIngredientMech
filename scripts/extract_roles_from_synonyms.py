@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Extract role information from RAW_TEXT synonyms and populate media_roles field.
+"""Extract role information from RAW_TEXT synonyms and populate the role facets.
 
 This script parses synonym text like:
   "Role: Mineral source; Properties: Defined component, Inorganic compound"
 
-And converts them to structured RoleAssignment objects with appropriate enum values.
+And converts them to structured role assignments on the nutritional /
+physicochemical / cellular-metabolic facet that owns each role.
 """
 
 import re
@@ -15,25 +16,29 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_facets import add_role
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
-# Mapping from CultureMech role text to IngredientRoleEnum values
+# Mapping from CultureMech role text to facet role values.
+# "Salt" and "Solvating media" are deliberately absent: upstream they tag water,
+# acids and solvents indiscriminately, so they carry no usable role.
 ROLE_MAPPING = {
-    "Mineral source": "MINERAL",
+    # No facet has a generic mineral role; "Mineral source" is a catch-all whose
+    # element is not recoverable from the text, so it lands in the residual bucket.
+    "Mineral source": "MINERAL_SOURCE",
     "Buffer": "BUFFER",
     "Nitrogen source": "NITROGEN_SOURCE",
     "Carbon source": "CARBON_SOURCE",
     "Vitamin source": "VITAMIN_SOURCE",
     "Protein source": "PROTEIN_SOURCE",
     "Trace element": "TRACE_ELEMENT",
-    "Solvating media": "SALT",  # Contextual mapping - water and salts
-    "Salt": "SALT",
     "Solidifying agent": "SOLIDIFYING_AGENT",
     "Energy source": "ENERGY_SOURCE",
     "Electron acceptor": "ELECTRON_ACCEPTOR",
     "Electron donor": "ELECTRON_DONOR",
     "Cofactor": "COFACTOR_PROVIDER",
     "Amino acid source": "AMINO_ACID_SOURCE",
-    # Additional unambiguous CultureMech role texts with valid IngredientRoleEnum targets.
+    # Additional unambiguous CultureMech role texts with valid facet role targets.
     # (Heterogeneous texts like "Growth factor" / "Nutrient source" are intentionally
     # omitted because they map to no single role.)
     "Vitamin": "VITAMIN_SOURCE",
@@ -57,7 +62,8 @@ def extract_role_from_synonym(synonym_text: str) -> tuple[list[str], list[str]]:
     """Extract role(s) and properties from a synonym text.
 
     Handles compound role texts (comma-separated), e.g.
-    "Role: Buffer, Mineral source; Properties: ..." maps to both BUFFER and MINERAL.
+    "Role: Buffer, Mineral source; Properties: ..." maps to both BUFFER and
+    MINERAL_SOURCE.
 
     Args:
         synonym_text: Text like "Role: Mineral source; Properties: Defined component, ..."
@@ -90,7 +96,7 @@ def should_skip_ingredient(record: dict) -> bool:
     """Check if ingredient should be skipped.
 
     Only unmapped ingredients are skipped. Records that already have
-    media_roles are still processed: extraction is additive and idempotent
+    facet roles are still processed: extraction is additive and idempotent
     (existing roles are deduped against in extract_roles_for_ingredient), so
     re-running picks up newly-mappable roles without duplicating prior ones.
     """
@@ -117,7 +123,9 @@ def extract_roles_for_ingredient(curator: IngredientCurator, record: dict) -> in
     # Seed with roles already on the record so re-runs stay idempotent and
     # never add a duplicate of an existing assignment.
     roles_added = {
-        ra.get("role") for ra in record.get("media_roles", []) if ra.get("role")
+        ra.get("role")
+        for _slot, ra in iter_role_assignments(record, slots=FACET_ROLE_SLOTS)
+        if ra.get("role")
     }
     preexisting = len(roles_added)
 
@@ -137,9 +145,10 @@ def extract_roles_for_ingredient(curator: IngredientCurator, record: dict) -> in
             confidence = 1.0 if "Defined component" in properties else 0.9
 
             # Add the role with DATABASE_ENTRY citation (from CultureMech)
-            curator.add_media_role(
+            add_role(
+                curator,
                 record,
-                role=role_enum,
+                role_enum,
                 confidence=confidence,
                 reference_text="Imported from CultureMech pipeline",
                 reference_type="DATABASE_ENTRY",
@@ -184,7 +193,9 @@ def main():
             total_roles_added += roles_added
 
             # Count role types
-            for role_assignment in record.get("media_roles", []):
+            for _slot, role_assignment in iter_role_assignments(
+                record, slots=FACET_ROLE_SLOTS
+            ):
                 role = role_assignment.get("role")
                 role_counts[role] = role_counts.get(role, 0) + 1
 

@@ -59,13 +59,17 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Tween 40'' -> ''polysorbate 40'': synced to canonical
     CHEBI label (preferred_term ''Tween 40'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SURFACTANT -> physicochemical_roles.SURFACTANT'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: (C2H4O)w.(C2H4O)x.(C2H4O)y.(C2H4O)z.C22H42O6
   inchi: InChI=1S/C30H58O10/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-28(34)38-23-22-35-24-26(36-19-16-31)30-29(39-21-18-33)27(25-40-30)37-20-17-32/h26-27,29-33H,2-25H2,1H3/t26?,27?,29-,30-/m1/s1
   smiles: '[H][C@]1(C(COCCOC(=O)CCCCCCCCCCCCCCC)OCCO)OCC(OCCO)[C@H]1OCCO'
   data_source: CHEBI sqlite (oaklib)
-media_roles:
+physicochemical_roles:
 - role: SURFACTANT
   confidence: 0.6
   evidence:

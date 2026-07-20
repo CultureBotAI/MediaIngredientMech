@@ -124,7 +124,6 @@ attributes:
     description: The physicochemical role (e.g., BUFFER, CHELATOR, REDUCING_AGENT).
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -136,7 +135,6 @@ attributes:
     description: Confidence score for this role assignment (0.0-1.0)
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -148,7 +146,6 @@ attributes:
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
     - OntologyMapping
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -168,7 +165,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -196,7 +192,6 @@ attributes:
     alias: role
     owner: PhysicochemicalRoleAssignment
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -210,7 +205,6 @@ attributes:
     alias: confidence
     owner: PhysicochemicalRoleAssignment
     domain_of:
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -224,7 +218,6 @@ attributes:
     owner: PhysicochemicalRoleAssignment
     domain_of:
     - OntologyMapping
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -246,7 +239,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment

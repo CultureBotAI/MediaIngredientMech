@@ -82,6 +82,10 @@ curation_history:
   curator: extract_roles_from_synonyms
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 1.00)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 18534-66-2
   data_source: PubChem API
@@ -91,7 +95,7 @@ chemical_properties:
   smiles: '[H][C@]12[C@H](CC(N)=O)[C@@]3(C)CCC(=O)NC[C@@H](C)OP(=O)([O-])O[C@H]4[C@@H](O)[C@H](O[C@@H]4CO)n4c[n+](c5cc(C)c(C)cc54)[Co-2]456[N]1C3=C(C)C1=[N+]4C(=CC3=[N+]5C(=C(C)C4=[N+]6[C@]2(C)[C@@](C)(CC(N)=O)[C@@H]4CCC(N)=O)[C@@](C)(CC(N)=O)[C@@H]3CCC(N)=O)C(C)(C)[C@@H]1CCC(N)=O'
 kg_microbe_node_id: CHEBI:28911
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 1.0
   evidence:

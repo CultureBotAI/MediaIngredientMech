@@ -26,11 +26,22 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_facets import facet_slot_for
+from mediaingredientmech.utils.role_iteration import (
+    FACET_ROLE_SLOTS,
+    iter_role_assignments,
+)
 
 
-# Role mapping from CultureMech role text to IngredientRoleEnum
+# Role mapping from CultureMech role text to a facet enum value. Each target is
+# a value of NutritionalRoleEnum, PhysicochemicalRoleEnum, or
+# CellularMetabolicRoleEnum; `add_role` picks the owning facet by name.
 CULTUREMECH_ROLE_MAPPING = {
-    "Mineral source": "MINERAL",
+    # "Mineral source" is a catch-all on the CultureMech side with no element
+    # attached, so it lands in the residual bucket. Records where the specific
+    # element is known are better served by SULFUR_SOURCE / PHOSPHATE_SOURCE /
+    # IRON_SOURCE / TRACE_ELEMENT.
+    "Mineral source": "MINERAL_SOURCE",
     "Buffer": "BUFFER",
     "Nitrogen source": "NITROGEN_SOURCE",
     "Carbon source": "CARBON_SOURCE",
@@ -39,8 +50,10 @@ CULTUREMECH_ROLE_MAPPING = {
     "Protein source": "PROTEIN_SOURCE",
     "Trace element": "TRACE_ELEMENT",
     "Trace metal": "TRACE_ELEMENT",
-    "Solvating media": "SALT",
-    "Salt": "SALT",
+    # "Solvating media" / "Salt" previously mapped to the retired SALT value.
+    # Every SALT assignment in the corpus turned out to be a mis-assignment
+    # (solvents and acids, not ionic-strength contributors), so these role texts
+    # are deliberately left unmapped rather than routed to OSMOTIC_AGENT.
     "Solidifying agent": "SOLIDIFYING_AGENT",
     "Solidifying component": "SOLIDIFYING_AGENT",
     "Energy source": "ENERGY_SOURCE",
@@ -175,12 +188,12 @@ def ingredient_has_role(record: dict, role_enum: str) -> bool:
 
     Args:
         record: Ingredient record
-        role_enum: Role enum value (e.g., "MINERAL")
+        role_enum: Role enum value (e.g., "MINERAL_SOURCE")
 
     Returns:
         True if role already assigned
     """
-    for role_assignment in record.get("media_roles", []):
+    for _slot, role_assignment in iter_role_assignments(record, slots=FACET_ROLE_SLOTS):
         if role_assignment.get("role") == role_enum:
             return True
     return False
@@ -209,9 +222,9 @@ def add_role_to_ingredient(
     if ingredient_has_role(record, role_enum):
         return False
 
-    # Create role assignment with a schema-conformant RoleCitation. The
-    # RoleAssignment.evidence slot is a list of RoleCitation (reference_text,
-    # reference_type, ...), not evidence_type/source/database_id.
+    # Create role assignment with a schema-conformant RoleCitation. The facet
+    # assignment classes' `evidence` slot is a list of RoleCitation
+    # (reference_text, reference_type, ...), not evidence_type/source/database_id.
     role_assignment = {
         "role": role_enum,
         "confidence": round(confidence, 3),
@@ -223,11 +236,9 @@ def add_role_to_ingredient(
         ],
     }
 
-    # Add to media_roles
-    if "media_roles" not in record:
-        record["media_roles"] = []
-
-    record["media_roles"].append(role_assignment)
+    # Append to whichever facet slot owns this role.
+    slot = facet_slot_for(role_enum)
+    record.setdefault(slot, []).append(role_assignment)
 
     # Add curation event
     event = {

@@ -3,7 +3,7 @@
 # Slot: role_inheritance 
 
 
-_If true, inherits media_roles from parent ingredient. Allows child variants to automatically get parent's roles while enabling variant-specific role overrides or restrictions._
+_If true, inherits the three role facets (nutritional_roles, physicochemical_roles, cellular_metabolic_roles) from the parent ingredient. Allows child variants to automatically get parent's roles while enabling variant-specific role overrides or restrictions._
 
 
 
@@ -66,9 +66,9 @@ Alias: role_inheritance
 <details>
 ```yaml
 name: role_inheritance
-description: If true, inherits media_roles from parent ingredient. Allows child variants
-  to automatically get parent's roles while enabling variant-specific role overrides
-  or restrictions.
+description: If true, inherits the three role facets (nutritional_roles, physicochemical_roles,
+  cellular_metabolic_roles) from the parent ingredient. Allows child variants to automatically
+  get parent's roles while enabling variant-specific role overrides or restrictions.
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 alias: role_inheritance

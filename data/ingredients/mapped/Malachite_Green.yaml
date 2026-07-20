@@ -127,6 +127,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Malachite green'' -> ''malachite green'': synced to canonical
     CHEBI label (preferred_term ''Malachite green'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT; PH_INDICATOR -> physicochemical_roles.PH_INDICATOR'
 chemical_properties:
   cas_rn: 569-64-2
   data_source: PubChem API
@@ -135,7 +140,7 @@ chemical_properties:
   inchi: InChI=1S/C23H25N2.ClH/c1-24(2)21-14-10-19(11-15-21)23(18-8-6-5-7-9-18)20-12-16-22(17-13-20)25(3)4;/h5-17H,1-4H3;1H/q+1;/p-1
   smiles: CN(C)c1ccc(C(=C2C=CC(=[N+](C)C)C=C2)c2ccccc2)cc1.[Cl-]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 1.0
   evidence:

@@ -93,6 +93,10 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: VITAMIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 1077-27-6
   data_source: PubChem API (ontology label)
@@ -101,7 +105,7 @@ chemical_properties:
   inchi: InChI=1S/C8H14O2S2/c9-8(10)4-2-1-3-7-5-6-11-12-7/h7H,1-6H2,(H,9,10)/t7-/m0/s1
   smiles: O=C(O)CCCC[C@H]1CCSS1
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 0.8
   evidence:

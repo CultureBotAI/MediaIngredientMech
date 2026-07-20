@@ -50,16 +50,20 @@ curation_history:
   action: MAPPED
   changes: 'Registry->ontology upgrade: identifier cas:91079-46-8 (FALLBACK_REGISTRY)
     -> FOODON:03315720 (vegetable protein, hydrolyzed), CLOSE_MATCH, mirroring sibling
-    Soy_Peptone. Removed bogus PubChem structure backfill (molecular_formula
-    C290H252N8O72 / smiles / inchi / pubchem_cid 167312541 resolved from a wrong CID);
-    ingredient_type SINGLE_INGREDIENT -> UNDEFINED_MIXTURE. CAS 91079-46-8 retained.'
+    Soy_Peptone. Removed bogus PubChem structure backfill (molecular_formula C290H252N8O72
+    / smiles / inchi / pubchem_cid 167312541 resolved from a wrong CID); ingredient_type
+    SINGLE_INGREDIENT -> UNDEFINED_MIXTURE. CAS 91079-46-8 retained.'
   llm_assisted: true
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
 chemical_properties:
   cas_rn: 91079-46-8
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
 ingredient_type: UNDEFINED_MIXTURE
-media_roles:
+nutritional_roles:
 - role: PROTEIN_SOURCE
   confidence: 0.8
   evidence:

@@ -27,6 +27,12 @@ URI: [mediaingredientmech:CommunityOrganismRoleEnum](https://w3id.org/mediaingre
 
 
 
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [role](role.md) | The community/ecological role of the organism (e |
+
 
 
 

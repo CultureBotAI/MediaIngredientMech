@@ -27,6 +27,10 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   4 CultureBot media; samples: FilteredGW Cell lysate 1/2500, FilteredGW Cell lysate
   1/250, FilteredGW_Cell lysate_1/250…. No CAS-RN or CHEBI mapping available; curator
@@ -41,7 +45,7 @@ ontology_mapping:
     source: BTO via OLS (resolve_unmapped_v2 any-ontology cascade)
     notes: BTO has the precise term cell lysate (BRENDA Tissue Ontology); v1 missed
       because cascade did not include BTO.
-media_roles:
+nutritional_roles:
 - role: PROTEIN_SOURCE
   confidence: 0.8
   evidence:

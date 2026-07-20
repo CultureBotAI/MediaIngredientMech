@@ -171,6 +171,10 @@ curation_history:
   changes: 'ontology_label ''Thiamine pyrophosphate'' -> ''thiamine(1+) diphosphate
     chloride'': synced to canonical CHEBI label (preferred_term ''Thiamine pyrophosphate''
     unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 136-09-4
   data_source: PubChem API
@@ -180,7 +184,7 @@ chemical_properties:
   smiles: Cc1ncc(C[n+]2csc(CCOP(=O)(O)OP(=O)(O)O)c2C)c(N)n1.[Cl-]
 kg_microbe_node_id: CHEBI:18290
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 1.0
   evidence:

@@ -182,6 +182,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''NaHCO3'' -> ''sodium hydrogencarbonate'': synced to canonical
     CHEBI label (preferred_term ''NaHCO3'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
 chemical_properties:
   cas_rn: 144-55-8
   data_source: PubChem API
@@ -191,7 +195,7 @@ chemical_properties:
   smiles: O=C([O-])O.[Na+]
 kg_microbe_node_id: CHEBI:32139
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: BUFFER
   confidence: 1.0
   evidence:

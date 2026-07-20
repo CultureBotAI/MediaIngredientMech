@@ -137,17 +137,6 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
     
 
         
-      IngredientRecord : media_roles
-        
-          
-    
-        
-        
-        IngredientRecord --> "*" RoleAssignment : media_roles
-        click RoleAssignment href "../RoleAssignment/"
-    
-
-        
       IngredientRecord : merged
         
       IngredientRecord : notes
@@ -260,7 +249,6 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | [occurrence_statistics](occurrence_statistics.md) | 0..1 <br/> [OccurrenceStats](OccurrenceStats.md) | Usage statistics across media recipes | direct |
 | [curation_history](curation_history.md) | * <br/> [CurationEvent](CurationEvent.md) | Audit trail of all curation actions | direct |
 | [notes](notes.md) | 0..1 <br/> [String](String.md) | Free-text curation notes | direct |
-| [media_roles](media_roles.md) | * <br/> [RoleAssignment](RoleAssignment.md) | Functional roles in growth medium formulation (e | direct |
 | [community_organism_roles](community_organism_roles.md) | * <br/> [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Role(s) this organism plays in a microbial community (e | direct |
 | [nutritional_roles](nutritional_roles.md) | * <br/> [NutritionalRoleAssignment](NutritionalRoleAssignment.md) | What element or macronutrient this ingredient supplies to the medium (e | direct |
 | [physicochemical_roles](physicochemical_roles.md) | * <br/> [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) | Chemical or physical function this ingredient performs in the medium (e | direct |
@@ -276,7 +264,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | [child_ingredients](child_ingredients.md) | * <br/> [String](String.md) | List of child ingredient `identifier`s in the variant hierarchy | direct |
 | [variant_type](variant_type.md) | 0..1 <br/> [VariantTypeEnum](VariantTypeEnum.md) | Classification of variant relationship to parent | direct |
 | [variant_notes](variant_notes.md) | 0..1 <br/> [String](String.md) | Human-readable explanation of variant distinction from parent/siblings | direct |
-| [role_inheritance](role_inheritance.md) | 0..1 <br/> [Boolean](Boolean.md) | If true, inherits media_roles from parent ingredient | direct |
+| [role_inheritance](role_inheritance.md) | 0..1 <br/> [Boolean](Boolean.md) | If true, inherits the three role facets (nutritional_roles, physicochemical_r... | direct |
 | [kg_microbe_node_id](kg_microbe_node_id.md) | 0..1 <br/> [String](String.md) | KG-Microbe node ID for this ingredient when found in the KG exactly | direct |
 | [environmental_context](environmental_context.md) | * <br/> [EnvironmentContext](EnvironmentContext.md) | Environmental contexts where this ingredient is relevant | direct |
 | [discussions](discussions.md) | * <br/> [Discussion](Discussion.md) | Open questions, knowledge gaps, controversies, and curation todos attached to... | direct |
@@ -421,7 +409,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -429,18 +416,6 @@ attributes:
     - SupportingReference
     - Discussion
     - Dataset
-  media_roles:
-    name: media_roles
-    description: Functional roles in growth medium formulation (e.g., NITROGEN_SOURCE,
-      BUFFER)
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    domain_of:
-    - IngredientRecord
-    range: RoleAssignment
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   community_organism_roles:
     name: community_organism_roles
     description: Role(s) this organism plays in a microbial community (e.g., PRIMARY_DEGRADER,
@@ -613,9 +588,10 @@ attributes:
     - IngredientRecord
   role_inheritance:
     name: role_inheritance
-    description: If true, inherits media_roles from parent ingredient. Allows child
-      variants to automatically get parent's roles while enabling variant-specific
-      role overrides or restrictions.
+    description: If true, inherits the three role facets (nutritional_roles, physicochemical_roles,
+      cellular_metabolic_roles) from the parent ingredient. Allows child variants
+      to automatically get parent's roles while enabling variant-specific role overrides
+      or restrictions.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
@@ -794,7 +770,6 @@ attributes:
     - EnvironmentContext
     - MappingEvidence
     - CurationEvent
-    - RoleAssignment
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -803,20 +778,6 @@ attributes:
     - Discussion
     - Dataset
     range: string
-  media_roles:
-    name: media_roles
-    description: Functional roles in growth medium formulation (e.g., NITROGEN_SOURCE,
-      BUFFER)
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    alias: media_roles
-    owner: IngredientRecord
-    domain_of:
-    - IngredientRecord
-    range: RoleAssignment
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
   community_organism_roles:
     name: community_organism_roles
     description: Role(s) this organism plays in a microbial community (e.g., PRIMARY_DEGRADER,
@@ -1025,9 +986,10 @@ attributes:
     range: string
   role_inheritance:
     name: role_inheritance
-    description: If true, inherits media_roles from parent ingredient. Allows child
-      variants to automatically get parent's roles while enabling variant-specific
-      role overrides or restrictions.
+    description: If true, inherits the three role facets (nutritional_roles, physicochemical_roles,
+      cellular_metabolic_roles) from the parent ingredient. Allows child variants
+      to automatically get parent's roles while enabling variant-specific role overrides
+      or restrictions.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: role_inheritance

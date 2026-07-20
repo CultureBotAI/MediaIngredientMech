@@ -54,6 +54,11 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: ELECTRON_ACCEPTOR (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR ->
+    cellular_metabolic_roles.ELECTRON_ACCEPTOR'
 chemical_properties:
   cas_rn: 7791-07-3
   data_source: CultureBotHT compounds_to_cas.csv
@@ -63,7 +68,7 @@ chemical_properties:
   inchi: InChI=1S/ClHO4.Na.H2O/c2-1(3,4)5;;/h(H,2,3,4,5);;1H2/q;+1;/p-1
   pubchem_cid: 516899
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+cellular_metabolic_roles:
 - role: ELECTRON_ACCEPTOR
   confidence: 0.6
   evidence:

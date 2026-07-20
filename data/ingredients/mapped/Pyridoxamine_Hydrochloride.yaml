@@ -122,6 +122,10 @@ curation_history:
   changes: 'ontology_label ''Pyridoxamine hydrochloride'' -> ''pyridoxamine hydrochloride'':
     synced to canonical CHEBI label (preferred_term ''Pyridoxamine hydrochloride''
     unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
 chemical_properties:
   cas_rn: 5103-96-8
   data_source: PubChem (via CHEBI:131531)
@@ -130,7 +134,7 @@ chemical_properties:
   inchi: InChI=1S/C8H12N2O2.ClH/c1-5-8(12)7(2-9)6(4-11)3-10-5;/h3,11-12H,2,4,9H2,1H3;1H
   smiles: Cc1ncc(CO)c(CN)c1O.Cl
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: VITAMIN_SOURCE
   confidence: 1.0
   evidence:

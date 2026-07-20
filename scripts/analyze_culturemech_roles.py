@@ -27,9 +27,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
-# Extended mapping from CultureMech role text to IngredientRoleEnum
+# Extended mapping from CultureMech role text to a facet enum value
+# (NutritionalRoleEnum / PhysicochemicalRoleEnum / CellularMetabolicRoleEnum).
 CULTUREMECH_ROLE_MAPPING = {
-    "Mineral source": "MINERAL",
+    # Catch-all on the CultureMech side, so it lands in the residual bucket.
+    "Mineral source": "MINERAL_SOURCE",
     "Buffer": "BUFFER",
     "Nitrogen source": "NITROGEN_SOURCE",
     "Carbon source": "CARBON_SOURCE",
@@ -38,8 +40,9 @@ CULTUREMECH_ROLE_MAPPING = {
     "Protein source": "PROTEIN_SOURCE",
     "Trace element": "TRACE_ELEMENT",
     "Trace metal": "TRACE_ELEMENT",
-    "Solvating media": "SALT",
-    "Salt": "SALT",
+    # "Solvating media" / "Salt" mapped to the retired SALT value. Every SALT
+    # assignment in the corpus proved to be a mis-assignment, so both role texts
+    # are left unmapped rather than routed to OSMOTIC_AGENT.
     "Solidifying agent": "SOLIDIFYING_AGENT",
     "Solidifying component": "SOLIDIFYING_AGENT",
     "Energy source": "ENERGY_SOURCE",
@@ -61,8 +64,8 @@ CULTUREMECH_ROLE_MAPPING = {
     "Growth factor": "VITAMIN_SOURCE",
     "Nutrient source": "CARBON_SOURCE",
     # Multi-role mappings (take first role for primary)
-    "Mineral source, Protective agent": "MINERAL",
-    "Protective agent, Mineral source": "MINERAL",
+    "Mineral source, Protective agent": "MINERAL_SOURCE",
+    "Protective agent, Mineral source": "MINERAL_SOURCE",
     "pH indicator, Selective agent": "PH_INDICATOR",
     "Selective agent, pH indicator": "SELECTIVE_AGENT",
     "Buffer, Mineral source": "BUFFER",
@@ -77,7 +80,7 @@ class RoleAnnotation:
     """Parsed role annotation from CultureMech synonym."""
 
     role_text: str  # Original text (e.g., "Mineral source")
-    role_enum: Optional[str]  # Mapped enum value (e.g., "MINERAL")
+    role_enum: Optional[str]  # Mapped facet enum value (e.g., "MINERAL_SOURCE")
     properties: list[str] = field(default_factory=list)
     is_defined: bool = False
     is_simple: bool = False

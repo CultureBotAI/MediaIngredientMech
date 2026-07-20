@@ -197,6 +197,10 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''KCl'' -> ''potassium chloride'': synced to canonical
     CHEBI label (preferred_term ''KCl'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
 chemical_properties:
   cas_rn: 7447-40-7
   data_source: PubChem API
@@ -206,8 +210,8 @@ chemical_properties:
   smiles: '[Cl-].[K+]'
 kg_microbe_node_id: CHEBI:32588
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: MINERAL_SOURCE
   confidence: 1.0
   evidence:
   - reference_text: CultureMech database (2775 occurrences as 'Mineral source')

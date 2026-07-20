@@ -37,8 +37,12 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: BUFFER (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
 ingredient_type: STOCK_SOLUTION
-media_roles:
+physicochemical_roles:
 - role: BUFFER
   confidence: 0.8
   evidence:

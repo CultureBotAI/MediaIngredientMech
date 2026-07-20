@@ -47,6 +47,11 @@ curation_history:
   curator: infer_roles_from_name_lists
   action: ANNOTATED
   changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+    physicochemical_roles.SELECTIVE_AGENT'
 chemical_properties:
   cas_rn: 4800-94-6
   data_source: CultureBotHT compounds_to_cas.csv
@@ -55,7 +60,7 @@ chemical_properties:
   inchi: InChI=1S/C17H18N2O6S.2Na/c1-17(2)11(16(24)25)19-13(21)10(14(19)26-17)18-12(20)9(15(22)23)8-6-4-3-5-7-8;;/h3-7,9-11,14H,1-2H3,(H,18,20)(H,22,23)(H,24,25);;/q;2*+1/p-2/t9?,10-,11+,14-;;/m1../s1
   smiles: '[H][C@]12SC(C)(C)[C@H](C(=O)[O-])N1C(=O)[C@H]2NC(=O)C(C(=O)[O-])c1ccccc1.[Na+].[Na+]'
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+physicochemical_roles:
 - role: SELECTIVE_AGENT
   confidence: 0.8
   evidence:

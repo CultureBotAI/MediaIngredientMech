@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Drop specific chemically-implausible media_role assignments (with audit trail).
+"""Drop specific chemically-implausible ingredient role assignments (with audit trail).
 
 Some roles were imported from CultureMech `Role:` synonym annotations that carry
 source errors (surfaced by scripts/audit_role_plausibility.py). This removes the
-listed (preferred_term, identifier, role) assignments and records a CORRECTED
-curation_history event. Idempotent: a role already absent is skipped.
+listed (preferred_term, identifier, role) assignments from whichever role facet
+holds them and records a CORRECTED curation_history event. Idempotent: a role
+already absent is skipped.
 
 Usage:
     python scripts/drop_implausible_roles.py [--dry-run]
@@ -18,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS
 
 # (preferred_term, identifier, role, reason)
 DROPS = [
@@ -26,7 +28,7 @@ DROPS = [
         "CHEBI:32599",
         "BUFFER",
         "MgSO4 is a magnesium-sulfate mineral salt, not a pH buffer; the BUFFER role "
-        "came from an erroneous CultureMech source synonym. MINERAL role retained.",
+        "came from an erroneous CultureMech source synonym. MINERAL_SOURCE role retained.",
     ),
     (
         "EDTA (acid form)",
@@ -57,19 +59,26 @@ def main() -> None:
         if record is None:
             print(f"  SKIP: no record {pt!r} ({ident})")
             continue
-        roles = record.get("media_roles", [])
-        kept = [m for m in roles if m.get("role") != role]
-        if len(kept) == len(roles):
+        # A role name lives in exactly one facet, but filter every facet so the
+        # drop list stays correct if a role is ever rehomed.
+        dropped_from = []
+        for slot in FACET_ROLE_SLOTS:
+            roles = record.get(slot) or []
+            kept = [m for m in roles if m.get("role") != role]
+            if len(kept) != len(roles):
+                record[slot] = kept
+                dropped_from.append(slot)
+        if not dropped_from:
             print(f"  SKIP: {pt!r} has no {role} role")
             continue
-        record["media_roles"] = kept
+        slots_text = "/".join(dropped_from)
         record_curation_event(
             record,
             curator="drop_implausible_roles",
             action="CORRECTED",
-            changes=f"Removed implausible media_role {role}: {reason}",
+            changes=f"Removed implausible {slots_text} role {role}: {reason}",
         )
-        print(f"  {pt}: dropped {role}")
+        print(f"  {pt}: dropped {role} from {slots_text}")
         n += 1
 
     if not args.dry_run:

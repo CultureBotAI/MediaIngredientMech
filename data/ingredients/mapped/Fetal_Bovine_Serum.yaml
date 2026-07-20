@@ -44,6 +44,10 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
 notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 8 CultureBot
   media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum Conditioned,
   RPMI with Fetal bovine serum…. No CAS-RN or CHEBI mapping available; curator review
@@ -59,7 +63,7 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0183; matched via 'Fetal bovine serum' (name
       normalization); label-exact
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: PROTEIN_SOURCE
   confidence: 0.6
   evidence:

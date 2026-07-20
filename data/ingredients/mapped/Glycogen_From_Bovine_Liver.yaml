@@ -10,9 +10,9 @@ ontology_mapping:
     source: cbclaw_chebi_grounding_curation
     notes: 'Grounded to CHEBI:28087 (glycogen), EXACT_MATCH: "from bovine liver" is
       a provenance qualifier, not a distinct chemical, and glycogen is source-independent
-      in CHEBI — the same treatment as the plain "Glycogen" record (CHEBI:28087,
-      EXACT_MATCH). Supersedes the prior cas:9005-79-2 registry fallback; the CAS-RN
-      is retained in chemical_properties.'
+      in CHEBI — the same treatment as the plain "Glycogen" record (CHEBI:28087, EXACT_MATCH).
+      Supersedes the prior cas:9005-79-2 registry fallback; the CAS-RN is retained
+      in chemical_properties.'
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT with CAS-RN 9005-79-2 (retained as chemical_properties.cas_rn).
@@ -52,11 +52,15 @@ curation_history:
 - timestamp: '2026-07-05T00:00:00+00:00'
   curator: cbclaw_chebi_grounding_curation
   action: GROUND_TO_CHEBI_PARENT
-  changes: 'ontology_mapping cas:9005-79-2 (FALLBACK_REGISTRY) -> CHEBI:28087 (glycogen),
+  changes: ontology_mapping cas:9005-79-2 (FALLBACK_REGISTRY) -> CHEBI:28087 (glycogen),
     EXACT_MATCH. "from bovine liver" is a source qualifier; glycogen is source-independent
-    in CHEBI. Consistent with the plain Glycogen record (CHEBI:28087).'
+    in CHEBI. Consistent with the plain Glycogen record (CHEBI:28087).
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 chemical_properties:
   cas_rn: 9005-79-2
   data_source: CultureBotHT compounds_to_cas.csv
@@ -66,7 +70,7 @@ chemical_properties:
   inchi: InChI=1S/C24H42O21/c25-1-5-9(28)11(30)16(35)22(41-5)39-4-8-20(45-23-17(36)12(31)10(29)6(2-26)42-23)14(33)18(37)24(43-8)44-19-7(3-27)40-21(38)15(34)13(19)32/h5-38H,1-4H2/t5-,6-,7-,8-,9-,10-,11+,12+,13-,14-,15-,16-,17-,18-,19-,20-,21+,22+,23-,24-/m1/s1
   pubchem_cid: 439177
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.8
   evidence:

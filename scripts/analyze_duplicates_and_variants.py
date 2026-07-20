@@ -29,6 +29,14 @@ _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
 from mediaingredientmech.utils.chemical_normalizer import normalize_chemical_name
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
+
+
+def ingredient_role_names(ing: dict) -> list[str]:
+    """Role names assigned to an ingredient across the three role facets."""
+    return [
+        r.get("role") for _, r in iter_role_assignments(ing, slots=FACET_ROLE_SLOTS)
+    ]
 
 
 def load_ingredients(yaml_path: Path) -> list[dict]:
@@ -191,11 +199,10 @@ def analyze_roles_in_variants(variant_group: list[dict]) -> dict:
 
     all_roles = []
     for ing in variant_group:
-        media_roles = ing.get("media_roles", [])
-        if media_roles:
+        role_names = ingredient_role_names(ing)
+        if role_names:
             role_analysis["has_roles"] = True
-            ing_roles = {r.get("role") for r in media_roles}
-            all_roles.append((ing.get("preferred_term"), ing_roles))
+            all_roles.append((ing.get("preferred_term"), set(role_names)))
 
     if all_roles:
         # Find common roles
@@ -289,8 +296,8 @@ def main(mapped: Path, output: Path):
                 id_str = ing.get("id", "")
 
                 node_text = f"[cyan]{label}[/cyan] ({variant_type})"
-                if ing.get("media_roles"):
-                    roles = [r.get("role") for r in ing["media_roles"]]
+                roles = ingredient_role_names(ing)
+                if roles:
                     node_text += f" [dim]Roles: {', '.join(roles[:2])}[/dim]"
 
                 tree.add(f"{node_text} - {id_str[:30]}")
@@ -371,7 +378,7 @@ def main(mapped: Path, output: Path):
                         "ontology_id": ing.get("ontology_id"),
                         "preferred_term": ing.get("preferred_term"),
                         "variant_type": detect_variant_type(ing.get("preferred_term", ""))[0],
-                        "media_roles": [r.get("role") for r in ing.get("media_roles", [])],
+                        "roles": ingredient_role_names(ing),
                     }
                     for ing in variant_group
                 ],

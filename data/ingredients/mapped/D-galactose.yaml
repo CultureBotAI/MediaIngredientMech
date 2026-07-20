@@ -95,6 +95,11 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''D-Galactose'' -> ''D-galactose'': synced to canonical
     CHEBI label (preferred_term ''D-Galactose'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
+    ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
 chemical_properties:
   cas_rn: 59-23-4
   data_source: CultureBotHT/compounds_to_cas.csv
@@ -102,7 +107,7 @@ chemical_properties:
   molecular_formula: C6H12O6
 kg_microbe_node_id: CHEBI:12936
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 1.0
   evidence:

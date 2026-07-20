@@ -82,6 +82,10 @@ curation_history:
   changes: 'ontology_label ''Methylamine hydrochloride'' -> ''methylamine hydrochloride'':
     synced to canonical CHEBI label (preferred_term ''Methylamine hydrochloride''
     unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
 chemical_properties:
   cas_rn: 593-51-1
   data_source: PubChem API
@@ -91,7 +95,7 @@ chemical_properties:
   smiles: C[NH3+].[Cl-]
 kg_microbe_node_id: CHEBI:59337
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 1.0
   evidence:

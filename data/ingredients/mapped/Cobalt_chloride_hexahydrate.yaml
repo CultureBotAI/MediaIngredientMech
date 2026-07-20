@@ -69,6 +69,10 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
 notes: Created from FEBA ontology enrichment workflow. Used in 123 FEBA media formulations.
 chemical_properties:
   cas_rn: 7791-13-1
@@ -78,7 +82,7 @@ chemical_properties:
   inchi: InChI=1S/2ClH.Co.6H2O/h2*1H;;6*1H2/q;;+2;;;;;;/p-2
   smiles: O.O.O.O.O.O.[Cl-].[Cl-].[Co+2]
 ingredient_type: SINGLE_INGREDIENT
-media_roles:
+nutritional_roles:
 - role: TRACE_ELEMENT
   confidence: 0.6
   evidence:

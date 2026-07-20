@@ -94,14 +94,18 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''VOSO4 x 2 H2O'' -> ''vanadyl sulfate dihydrate'': synced
     to canonical CHEBI label (preferred_term ''VOSO4 x 2 H2O'' unchanged).'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: 2H2O.O4S.OV
   inchi: InChI=1S/H2O4S.2H2O.O.V/c1-5(2,3)4;;;;/h(H2,1,2,3,4);2*1H2;;/q;;;;+2/p-2
   smiles: O.O.O=S(=O)([O-])[O-].[O]=[V+2]
   data_source: CHEBI sqlite (oaklib)
-media_roles:
-- role: MINERAL
+nutritional_roles:
+- role: TRACE_ELEMENT
   confidence: 1.0
   evidence:
   - reference_type: DATABASE_ENTRY

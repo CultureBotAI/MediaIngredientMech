@@ -62,7 +62,8 @@ All hierarchy fields are **optional** (backward compatible):
 - Example: "Higher purity (10x) than standard distilled water"
 
 **5. `role_inheritance`** (boolean)
-- If true, inherits `media_roles` from parent
+- If true, inherits the parent's role assignments across all three role facets
+  (`nutritional_roles`, `physicochemical_roles`, `cellular_metabolic_roles`)
 - Allows variant-specific role overrides
 
 ### VariantTypeEnum Values
@@ -94,9 +95,8 @@ child_ingredients:
   - MediaIngredientMech:000472  # Demineralized water
   - MediaIngredientMech:000114  # Distilled water
   - MediaIngredientMech:000268  # Double distilled water
-media_roles:
-  - role: SOLVENT
-    confidence: 1.0
+# No role facets: water's function in a medium is as solvent, which has no
+# equivalent value in any of the three role enums. Nothing to inherit.
 
 # CHILD: Distilled water
 id: MediaIngredientMech:000114
@@ -107,8 +107,13 @@ variant_notes: |
   Single thermal distillation process.
   Standard laboratory water (<1 µS/cm conductivity).
   Baseline pure water for media preparation.
-role_inheritance: true  # Inherits SOLVENT role from parent
+role_inheritance: true  # No-op here; parent carries no facet roles
 ```
+
+> **Note:** water is a structurally rich but role-poor hierarchy — it demonstrates
+> the parent/child mechanics well, but not role inheritance. For a worked
+> inheritance example see [Creating Hierarchies](#creating-hierarchies), where the
+> glucose parent carries `nutritional_roles: CARBON_SOURCE`.
 
 **Hierarchy tree:**
 ```
@@ -172,8 +177,14 @@ siblings = get_siblings('MediaIngredientMech:000114', all_records)
 from mediaingredientmech.utils.hierarchy_utils import get_inherited_roles
 
 roles = get_inherited_roles('MediaIngredientMech:000114', all_records)
-# Returns: [{'role': 'SOLVENT', 'confidence': 1.0}] (from parent)
+# Returns: [] — the water parent carries no facet roles, so there is nothing
+# to inherit. For a parent that does (e.g. glucose), the return is a flat list
+# of assignment dicts: [{'role': 'CARBON_SOURCE', 'confidence': 1.0}]
 ```
+
+The returned list is flat across all three facets and does not record which facet
+each assignment came from. If you need the facet, iterate the record directly with
+`iter_role_assignments` from `mediaingredientmech.utils.role_iteration`.
 
 ### 6. Get Hierarchy Summary
 
@@ -202,7 +213,7 @@ summary = get_hierarchy_summary('MediaIngredientMech:000114', all_records)
         {'id': '...', 'preferred_term': 'Tap water', 'variant_type': 'TAP'},
         ...
     ],
-    'inherited_roles': ['SOLVENT']
+    'inherited_roles': []
 }
 ```
 
@@ -238,7 +249,7 @@ variant_type: BASE_CHEMICAL
 child_ingredients:
   - MediaIngredientMech:CHILD1_ID
   - MediaIngredientMech:CHILD2_ID
-media_roles:
+nutritional_roles:
   - role: CARBON_SOURCE
     confidence: 1.0
 ```
@@ -357,17 +368,34 @@ variant_notes: |
 
 ### 3. Role Inheritance
 
-**Always set `role_inheritance: true` on children** if they share parent's basic function:
+**Always set `role_inheritance: true` on children** if they share parent's basic function.
+
+Inheritance applies to all three role facets at once. A child may add variant-specific
+roles on whichever facet applies, without repeating the parent's:
 
 ```yaml
-# Parent: Water (base)
-media_roles:
-  - role: SOLVENT  # All water is a solvent
+# Parent: Glucose (base)
+nutritional_roles:
+  - role: CARBON_SOURCE  # All glucose forms are a carbon source
+    confidence: 1.0
 
+# Child: D-glucose
+role_inheritance: true  # Inherits CARBON_SOURCE
+nutritional_roles:  # Can add variant-specific roles
+  - role: ENERGY_SOURCE
+    confidence: 0.9
+    notes: "Preferred energy substrate for most heterotrophs"
+```
+
+A variant-specific role can also land on a *different* facet from the parent's. Tap
+water is the case in point: its parent carries no roles at all, but tap water supplies
+bulk cations from the municipal supply and so earns a nutritional role of its own:
+
+```yaml
 # Child: Tap water
-role_inheritance: true  # Inherits SOLVENT
-media_roles:  # Can add variant-specific roles
-  - role: MINERAL_SOURCE  # Tap water provides trace minerals
+role_inheritance: true  # Nothing to inherit; parent has no facet roles
+nutritional_roles:
+  - role: MINERAL_SOURCE  # Bulk cations, not a specific trace element
     confidence: 0.5
     notes: "Contains Ca, Mg from municipal supply"
 ```
@@ -431,18 +459,22 @@ for s in siblings:
 
 ### Use Case 3: Role Resolution
 
-**Problem:** What roles does double distilled water have?
+**Problem:** What roles does tap water have, and which of them are its own?
 
 **Solution:**
 ```python
-roles = get_inherited_roles('MediaIngredientMech:000268', all_records)
-# Returns: [{'role': 'SOLVENT', ...}] from parent
+# Own roles plus anything inherited (default)
+roles = get_inherited_roles('MediaIngredientMech:000260', all_records)
+# Returns: [{'role': 'MINERAL_SOURCE', ...}] — tap water's own nutritional role
 
-# Plus any variant-specific roles
-summary = get_hierarchy_summary('MediaIngredientMech:000268', all_records)
+# Inherited only: the water parent carries no facet roles
+summary = get_hierarchy_summary('MediaIngredientMech:000260', all_records)
 print(f"Inherited: {summary['inherited_roles']}")
-# Inherited: ['SOLVENT']
+# Inherited: []
 ```
+
+The difference between the two calls (`include_own_roles=True` vs the summary's
+inherited-only view) is how you tell a variant-specific role from a parent's.
 
 ### Use Case 4: Document Variant Relationships
 

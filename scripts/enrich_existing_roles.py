@@ -17,6 +17,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 
 def load_crossref_lookup(crossref_path: Path) -> dict[str, dict]:
@@ -49,7 +50,7 @@ def has_generic_citation(role_assignment: dict) -> bool:
     """Check if role has generic CultureMech citation.
 
     Args:
-        role_assignment: Role assignment dict from media_roles
+        role_assignment: Role assignment dict from one of the role facets
 
     Returns:
         True if citation is generic and needs enrichment
@@ -150,8 +151,11 @@ def enrich_existing_roles(
         if i % 100 == 0:
             print(f"  Processed {i}/{len(curator.records)} ingredients...")
 
-        # Skip if no roles
-        if not record.get("media_roles"):
+        # Skip if no roles on any facet
+        facet_roles = [
+            r for _, r in iter_role_assignments(record, slots=FACET_ROLE_SLOTS)
+        ]
+        if not facet_roles:
             continue
 
         ingredients_checked += 1
@@ -165,8 +169,8 @@ def enrich_existing_roles(
         # Get cross-reference data if available
         crossref_data = crossref_lookup.get(ingredient_id)
 
-        # Process each role assignment
-        for role_assignment in record["media_roles"]:
+        # Process each role assignment (enriched in place on its facet slot)
+        for role_assignment in facet_roles:
             role_enum = role_assignment.get("role")
 
             # Check if needs enrichment
@@ -245,7 +249,8 @@ def main():
 
     # Count existing roles
     total_existing_roles = sum(
-        len(r.get("media_roles", [])) for r in curator.records
+        len(list(iter_role_assignments(r, slots=FACET_ROLE_SLOTS)))
+        for r in curator.records
     )
     print(f"Found {total_existing_roles} existing role assignments")
 

@@ -33,6 +33,10 @@ curation_history:
   curator: claude_in_session_curation
   action: ANNOTATED
   changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+- timestamp: '2026-07-20T00:00:00+00:00'
+  curator: migrate_media_roles_to_facets
+  action: ANNOTATED
+  changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   7 CultureBot media; samples: BG11C, BG11, BG11R…. No CAS-RN or CHEBI mapping available;
   curator review needed.'
@@ -47,7 +51,7 @@ ontology_mapping:
     notes: Auto-upgraded from UNMAPPED_0258; matched via 'Trace metal mix A5' (name
       normalization); label-exact
 ingredient_type: STOCK_SOLUTION
-media_roles:
+nutritional_roles:
 - role: TRACE_ELEMENT
   confidence: 0.6
   evidence:
