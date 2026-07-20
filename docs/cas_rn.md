@@ -3,11 +3,6 @@
 # Slot: cas_rn 
 
 
-_Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X or XXXX-XX-X. Primary chemical identifier used in regulatory and commercial contexts. Retrieved from CultureBotHT/MicroMediaParam mappings or external databases._
-
-
-
-
 
 URI: [mediaingredientmech:cas_rn](https://w3id.org/mediaingredientmech/cas_rn)
 Alias: cas_rn
@@ -22,6 +17,7 @@ Alias: cas_rn
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [ChemicalProperties](ChemicalProperties.md) | Chemical structure and properties for CHEBI-mapped ingredients |  no  |
 
 
@@ -33,8 +29,6 @@ Alias: cas_rn
 
 * Range: [String](String.md)
 
-* Regex pattern: `^\d+-\d+-\d+$`
-
 
 
 
@@ -42,13 +36,6 @@ Alias: cas_rn
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -68,17 +55,11 @@ Alias: cas_rn
 <details>
 ```yaml
 name: cas_rn
-description: Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X
-  or XXXX-XX-X. Primary chemical identifier used in regulatory and commercial contexts.
-  Retrieved from CultureBotHT/MicroMediaParam mappings or external databases.
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: cas_rn
-owner: ChemicalProperties
 domain_of:
 - ChemicalProperties
+- MappingEvidence
 range: string
-pattern: ^\d+-\d+-\d+$
 
 ```
 </details>

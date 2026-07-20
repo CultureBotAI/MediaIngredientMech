@@ -132,6 +132,7 @@ attributes:
     domain_of:
     - MappingEvidence
     - IngredientSynonym
+    - StockComponent
   occurrence_count:
     name: occurrence_count
     description: Number of times this variant appears
@@ -182,6 +183,7 @@ attributes:
     domain_of:
     - MappingEvidence
     - IngredientSynonym
+    - StockComponent
     range: string
   occurrence_count:
     name: occurrence_count

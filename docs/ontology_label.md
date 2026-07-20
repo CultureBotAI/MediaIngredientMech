@@ -3,13 +3,13 @@
 # Slot: ontology_label 
 
 
-_Human-readable label for the term_
+_Canonical OBO label for ontology_id (e.g. "sodium chloride" for CHEBI:26710). The id↔label gate verifies this equals the ontology's canonical label; abbreviations/formulas/free names (e.g. "NaCl") belong in preferred_term / synonyms, not here._
 
 
 
 
 
-URI: [mediaingredientmech:ontology_label](https://w3id.org/mediaingredientmech/ontology_label)
+URI: [rdfs:label](http://www.w3.org/2000/01/rdf-schema#label)
 Alias: ontology_label
 
 <!-- no inheritance hierarchy -->
@@ -57,7 +57,7 @@ Alias: ontology_label
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | mediaingredientmech:ontology_label |
+| self | rdfs:label |
 | native | mediaingredientmech:ontology_label |
 
 
@@ -68,9 +68,12 @@ Alias: ontology_label
 <details>
 ```yaml
 name: ontology_label
-description: Human-readable label for the term
+description: Canonical OBO label for ontology_id (e.g. "sodium chloride" for CHEBI:26710).
+  The id↔label gate verifies this equals the ontology's canonical label; abbreviations/formulas/free
+  names (e.g. "NaCl") belong in preferred_term / synonyms, not here.
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
+slot_uri: rdfs:label
 alias: ontology_label
 owner: OntologyMapping
 domain_of:

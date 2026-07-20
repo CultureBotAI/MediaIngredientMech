@@ -19,6 +19,10 @@ URI: [mediaingredientmech:IngredientCollection](https://w3id.org/mediaingredient
  classDiagram
     class IngredientCollection
     click IngredientCollection href "../IngredientCollection/"
+      IngredientCollection : category
+        
+      IngredientCollection : count
+        
       IngredientCollection : generation_date
         
       IngredientCollection : ingredients
@@ -55,6 +59,8 @@ URI: [mediaingredientmech:IngredientCollection](https://w3id.org/mediaingredient
 | [total_count](total_count.md) | 0..1 <br/> [Integer](Integer.md) | Total number of ingredient records | direct |
 | [mapped_count](mapped_count.md) | 0..1 <br/> [Integer](Integer.md) | Number of mapped ingredients | direct |
 | [unmapped_count](unmapped_count.md) | 0..1 <br/> [Integer](Integer.md) | Number of unmapped ingredients | direct |
+| [category](category.md) | 0..1 <br/> [String](String.md) | Categorization label for partitioned unmapped collections (e | direct |
+| [count](count.md) | 0..1 <br/> [Integer](Integer.md) | Record count for this categorized partition | direct |
 | [ingredients](ingredients.md) | * <br/> [IngredientRecord](IngredientRecord.md) | List of all ingredient records | direct |
 
 
@@ -137,6 +143,24 @@ attributes:
     domain_of:
     - IngredientCollection
     range: integer
+  category:
+    name: category
+    description: Categorization label for partitioned unmapped collections (e.g. PLACEHOLDER,
+      COMPLEX_MEDIA, INCOMPLETE_FORMULA, OTHER, ALREADY_MAPPED). Set by scripts/categorize_unmapped.py;
+      absent on the canonical mapped_ingredients.yaml / unmapped_ingredients.yaml.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientCollection
+  count:
+    name: count
+    description: Record count for this categorized partition. Mirrors len(ingredients)
+      when present.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientCollection
+    range: integer
   ingredients:
     name: ingredients
     description: List of all ingredient records
@@ -197,6 +221,29 @@ attributes:
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: unmapped_count
+    owner: IngredientCollection
+    domain_of:
+    - IngredientCollection
+    range: integer
+  category:
+    name: category
+    description: Categorization label for partitioned unmapped collections (e.g. PLACEHOLDER,
+      COMPLEX_MEDIA, INCOMPLETE_FORMULA, OTHER, ALREADY_MAPPED). Set by scripts/categorize_unmapped.py;
+      absent on the canonical mapped_ingredients.yaml / unmapped_ingredients.yaml.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: category
+    owner: IngredientCollection
+    domain_of:
+    - IngredientCollection
+    range: string
+  count:
+    name: count
+    description: Record count for this categorized partition. Mirrors len(ingredients)
+      when present.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: count
     owner: IngredientCollection
     domain_of:
     - IngredientCollection

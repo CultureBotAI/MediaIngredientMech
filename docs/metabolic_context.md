@@ -3,11 +3,6 @@
 # Slot: metabolic_context 
 
 
-_Pathway or metabolic context (e.g., "denitrification", "aromatic degradation")_
-
-
-
-
 
 URI: [mediaingredientmech:metabolic_context](https://w3id.org/mediaingredientmech/metabolic_context)
 Alias: metabolic_context
@@ -22,7 +17,8 @@ Alias: metabolic_context
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CellularRoleAssignment](CellularRoleAssignment.md) | Assignment of a cellular/metabolic role in organism metabolism with supportin... |  no  |
+| [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Assignment of a cellular-metabolic facet role (what the ingredient does insid... |  no  |
+| [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |  no  |
 
 
 
@@ -43,13 +39,6 @@ Alias: metabolic_context
 
 
 
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
-
-
-
 
 ## Mappings
 
@@ -66,13 +55,10 @@ Alias: metabolic_context
 <details>
 ```yaml
 name: metabolic_context
-description: Pathway or metabolic context (e.g., "denitrification", "aromatic degradation")
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: metabolic_context
-owner: CellularRoleAssignment
 domain_of:
-- CellularRoleAssignment
+- CommunityOrganismRoleAssignment
+- CellularMetabolicRoleAssignment
 range: string
 
 ```

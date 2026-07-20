@@ -74,6 +74,9 @@ owner: IngredientRecord
 domain_of:
 - IngredientRecord
 range: OntologyMapping
+bindings:
+- obligation_level: REQUIRED
+  binds_value_of: ontology_id
 
 ```
 </details>

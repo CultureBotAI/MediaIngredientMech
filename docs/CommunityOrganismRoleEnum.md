@@ -1,13 +1,13 @@
-# Enum: CellularRoleEnum 
+# Enum: CommunityOrganismRoleEnum 
 
 
 
 
-_Cellular and metabolic roles in microbial communities_
+_Role an organism plays in a microbial community (formerly `CellularRoleEnum`; renamed 2026-07-19 to disambiguate from cell-level metabolic roles of ingredients — these values describe organisms, not ingredients)._
 
 
 
-URI: [mediaingredientmech:CellularRoleEnum](https://w3id.org/mediaingredientmech/CellularRoleEnum)
+URI: [mediaingredientmech:CommunityOrganismRoleEnum](https://w3id.org/mediaingredientmech/CommunityOrganismRoleEnum)
 
 ## Permissible Values
 
@@ -52,8 +52,10 @@ URI: [mediaingredientmech:CellularRoleEnum](https://w3id.org/mediaingredientmech
 
 <details>
 ```yaml
-name: CellularRoleEnum
-description: Cellular and metabolic roles in microbial communities
+name: CommunityOrganismRoleEnum
+description: Role an organism plays in a microbial community (formerly `CellularRoleEnum`;
+  renamed 2026-07-19 to disambiguate from cell-level metabolic roles of ingredients
+  — these values describe organisms, not ingredients).
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 permissible_values:

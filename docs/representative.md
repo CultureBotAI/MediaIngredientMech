@@ -3,7 +3,7 @@
 # Slot: representative 
 
 
-_ID of the representative record if this record has been merged. Only set when mapping_status is REJECTED due to merge. Points to the canonical record representing this ingredient._
+_`identifier` of the representative record if this record has been merged. Only set when mapping_status is REJECTED due to merge. Points to the canonical record representing this ingredient. (No pattern constraint: the merge-tracking feature is currently unused — when revived, point at the schema's canonical identifier format.)_
 
 
 
@@ -32,8 +32,6 @@ Alias: representative
 ## Properties
 
 * Range: [String](String.md)
-
-* Regex pattern: `^MediaIngredientMech:[0-9]{6}$`
 
 
 
@@ -68,9 +66,11 @@ Alias: representative
 <details>
 ```yaml
 name: representative
-description: ID of the representative record if this record has been merged. Only
-  set when mapping_status is REJECTED due to merge. Points to the canonical record
-  representing this ingredient.
+description: '`identifier` of the representative record if this record has been merged.
+  Only set when mapping_status is REJECTED due to merge. Points to the canonical record
+  representing this ingredient. (No pattern constraint: the merge-tracking feature
+  is currently unused — when revived, point at the schema''s canonical identifier
+  format.)'
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 alias: representative
@@ -78,7 +78,6 @@ owner: IngredientRecord
 domain_of:
 - IngredientRecord
 range: string
-pattern: ^MediaIngredientMech:[0-9]{6}$
 
 ```
 </details>

@@ -1,16 +1,16 @@
 
 
-# Slot: cellular_roles 
+# Slot: discussions 
 
 
-_Cellular/metabolic roles in organism metabolism (e.g., PRIMARY_DEGRADER, ELECTRON_DONOR)_
+_Open questions, knowledge gaps, controversies, and curation todos attached to this ingredient (shared Discussion supertype; anchor `attaches_to` into e.g. `ontology_mapping#<term>`)._
 
 
 
 
 
-URI: [mediaingredientmech:cellular_roles](https://w3id.org/mediaingredientmech/cellular_roles)
-Alias: cellular_roles
+URI: [mediaingredientmech:discussions](https://w3id.org/mediaingredientmech/discussions)
+Alias: discussions
 
 <!-- no inheritance hierarchy -->
 
@@ -31,7 +31,7 @@ Alias: cellular_roles
 
 ## Properties
 
-* Range: [CellularRoleAssignment](CellularRoleAssignment.md)
+* Range: [Discussion](Discussion.md)
 
 * Multivalued: True
 
@@ -57,8 +57,8 @@ Alias: cellular_roles
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | mediaingredientmech:cellular_roles |
-| native | mediaingredientmech:cellular_roles |
+| self | mediaingredientmech:discussions |
+| native | mediaingredientmech:discussions |
 
 
 
@@ -67,16 +67,17 @@ Alias: cellular_roles
 
 <details>
 ```yaml
-name: cellular_roles
-description: Cellular/metabolic roles in organism metabolism (e.g., PRIMARY_DEGRADER,
-  ELECTRON_DONOR)
+name: discussions
+description: Open questions, knowledge gaps, controversies, and curation todos attached
+  to this ingredient (shared Discussion supertype; anchor `attaches_to` into e.g.
+  `ontology_mapping#<term>`).
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
-alias: cellular_roles
+alias: discussions
 owner: IngredientRecord
 domain_of:
 - IngredientRecord
-range: CellularRoleAssignment
+range: Discussion
 multivalued: true
 inlined: true
 inlined_as_list: true

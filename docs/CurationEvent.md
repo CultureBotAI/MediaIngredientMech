@@ -21,15 +21,6 @@ URI: [mediaingredientmech:CurationEvent](https://w3id.org/mediaingredientmech/Cu
     click CurationEvent href "../CurationEvent/"
       CurationEvent : action
         
-          
-    
-        
-        
-        CurationEvent --> "1" CurationActionEnum : action
-        click CurationActionEnum href "../CurationActionEnum/"
-    
-
-        
       CurationEvent : changes
         
       CurationEvent : curator
@@ -79,7 +70,7 @@ URI: [mediaingredientmech:CurationEvent](https://w3id.org/mediaingredientmech/Cu
 | ---  | --- | --- | --- |
 | [timestamp](timestamp.md) | 1 <br/> [Datetime](Datetime.md) | When this action occurred | direct |
 | [curator](curator.md) | 1 <br/> [String](String.md) | Who performed this action (username or system) | direct |
-| [action](action.md) | 1 <br/> [CurationActionEnum](CurationActionEnum.md) | Type of curation action | direct |
+| [action](action.md) | 1 <br/> [String](String.md) | Type of curation action | direct |
 | [changes](changes.md) | 0..1 <br/> [String](String.md) | Description of what changed | direct |
 | [previous_status](previous_status.md) | 0..1 <br/> [MappingStatusEnum](MappingStatusEnum.md) | Status before this action | direct |
 | [new_status](new_status.md) | 0..1 <br/> [MappingStatusEnum](MappingStatusEnum.md) | Status after this action | direct |
@@ -161,13 +152,17 @@ attributes:
     required: true
   action:
     name: action
-    description: Type of curation action
+    description: Type of curation action. Free-form SCREAMING_SNAKE_CASE label minted
+      by the curation tool that produced this event. CurationActionEnum below documents
+      well-known actions; new tools are free to introduce new labels (live data has
+      110+ distinct values).
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
     - CurationEvent
-    range: CurationActionEnum
+    range: string
     required: true
+    pattern: ^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$
   changes:
     name: changes
     description: Description of what changed
@@ -212,10 +207,17 @@ attributes:
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
     - IngredientRecord
+    - EnvironmentContext
     - MappingEvidence
     - CurationEvent
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - SupportingReference
+    - Discussion
+    - Dataset
 
 ```
 </details>
@@ -252,15 +254,19 @@ attributes:
     required: true
   action:
     name: action
-    description: Type of curation action
+    description: Type of curation action. Free-form SCREAMING_SNAKE_CASE label minted
+      by the curation tool that produced this event. CurationActionEnum below documents
+      well-known actions; new tools are free to introduce new labels (live data has
+      110+ distinct values).
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: action
     owner: CurationEvent
     domain_of:
     - CurationEvent
-    range: CurationActionEnum
+    range: string
     required: true
+    pattern: ^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$
   changes:
     name: changes
     description: Description of what changed
@@ -319,10 +325,17 @@ attributes:
     owner: CurationEvent
     domain_of:
     - IngredientRecord
+    - EnvironmentContext
     - MappingEvidence
     - CurationEvent
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - SupportingReference
+    - Discussion
+    - Dataset
     range: string
 
 ```

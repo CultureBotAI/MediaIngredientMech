@@ -3,7 +3,7 @@
 # Class: IngredientRecord 
 
 
-_Core record for a media ingredient with ontology mapping, synonyms, and curation history. Represents either a mapped ingredient (with ontology_id) or unmapped ingredient (needs curation). Can serve as root element for individual YAML files or as elements in IngredientCollection._
+_Core record for a media ingredient with ontology mapping, synonyms, and curation history. Represents either a mapped ingredient (with an ontology CURIE identifier) or an unmapped ingredient (placeholder identifier, awaits curation). Can serve as root element for individual YAML files or as elements in IngredientCollection._
 
 
 
@@ -19,14 +19,14 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
  classDiagram
     class IngredientRecord
     click IngredientRecord href "../IngredientRecord/"
-      IngredientRecord : cellular_roles
+      IngredientRecord : cellular_metabolic_roles
         
           
     
         
         
-        IngredientRecord --> "*" CellularRoleAssignment : cellular_roles
-        click CellularRoleAssignment href "../CellularRoleAssignment/"
+        IngredientRecord --> "*" CellularMetabolicRoleAssignment : cellular_metabolic_roles
+        click CellularMetabolicRoleAssignment href "../CellularMetabolicRoleAssignment/"
     
 
         
@@ -43,6 +43,28 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
         
       IngredientRecord : child_ingredients
         
+      IngredientRecord : community_organism_roles
+        
+          
+    
+        
+        
+        IngredientRecord --> "*" CommunityOrganismRoleAssignment : community_organism_roles
+        click CommunityOrganismRoleAssignment href "../CommunityOrganismRoleAssignment/"
+    
+
+        
+      IngredientRecord : components
+        
+          
+    
+        
+        
+        IngredientRecord --> "*" StockComponent : components
+        click StockComponent href "../StockComponent/"
+    
+
+        
       IngredientRecord : culturemech_medium_name
         
       IngredientRecord : curation_history
@@ -55,6 +77,41 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
         click CurationEvent href "../CurationEvent/"
     
 
+        
+      IngredientRecord : datasets
+        
+          
+    
+        
+        
+        IngredientRecord --> "*" Dataset : datasets
+        click Dataset href "../Dataset/"
+    
+
+        
+      IngredientRecord : discussions
+        
+          
+    
+        
+        
+        IngredientRecord --> "*" Discussion : discussions
+        click Discussion href "../Discussion/"
+    
+
+        
+      IngredientRecord : environmental_context
+        
+          
+    
+        
+        
+        IngredientRecord --> "*" EnvironmentContext : environmental_context
+        click EnvironmentContext href "../EnvironmentContext/"
+    
+
+        
+      IngredientRecord : identifier
         
       IngredientRecord : ingredient_type
         
@@ -95,6 +152,17 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
         
       IngredientRecord : notes
         
+      IngredientRecord : nutritional_roles
+        
+          
+    
+        
+        
+        IngredientRecord --> "*" NutritionalRoleAssignment : nutritional_roles
+        click NutritionalRoleAssignment href "../NutritionalRoleAssignment/"
+    
+
+        
       IngredientRecord : occurrence_statistics
         
           
@@ -105,8 +173,6 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
         click OccurrenceStats href "../OccurrenceStats/"
     
 
-        
-      IngredientRecord : ontology_id
         
       IngredientRecord : ontology_mapping
         
@@ -120,6 +186,17 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
         
       IngredientRecord : parent_ingredient
+        
+      IngredientRecord : physicochemical_roles
+        
+          
+    
+        
+        
+        IngredientRecord --> "*" PhysicochemicalRoleAssignment : physicochemical_roles
+        click PhysicochemicalRoleAssignment href "../PhysicochemicalRoleAssignment/"
+    
+
         
       IngredientRecord : preferred_term
         
@@ -175,7 +252,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [ontology_id](ontology_id.md) | 1 <br/> [String](String.md) | Unique ontology identifier - either ontology ID (e | direct |
+| [identifier](identifier.md) | 1 <br/> [String](String.md) | Primary key for the record | direct |
 | [preferred_term](preferred_term.md) | 1 <br/> [String](String.md) | Canonical name for this ingredient | direct |
 | [ontology_mapping](ontology_mapping.md) | 0..1 <br/> [OntologyMapping](OntologyMapping.md) | Ontology term mapping (CHEBI/FOODON) | direct |
 | [synonyms](synonyms.md) | * <br/> [IngredientSynonym](IngredientSynonym.md) | Alternative names and raw text variants | direct |
@@ -184,19 +261,26 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | [curation_history](curation_history.md) | * <br/> [CurationEvent](CurationEvent.md) | Audit trail of all curation actions | direct |
 | [notes](notes.md) | 0..1 <br/> [String](String.md) | Free-text curation notes | direct |
 | [media_roles](media_roles.md) | * <br/> [RoleAssignment](RoleAssignment.md) | Functional roles in growth medium formulation (e | direct |
-| [cellular_roles](cellular_roles.md) | * <br/> [CellularRoleAssignment](CellularRoleAssignment.md) | Cellular/metabolic roles in organism metabolism (e | direct |
+| [community_organism_roles](community_organism_roles.md) | * <br/> [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Role(s) this organism plays in a microbial community (e | direct |
+| [nutritional_roles](nutritional_roles.md) | * <br/> [NutritionalRoleAssignment](NutritionalRoleAssignment.md) | What element or macronutrient this ingredient supplies to the medium (e | direct |
+| [physicochemical_roles](physicochemical_roles.md) | * <br/> [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) | Chemical or physical function this ingredient performs in the medium (e | direct |
+| [cellular_metabolic_roles](cellular_metabolic_roles.md) | * <br/> [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Role of this ingredient inside/on the cultured microbe (e | direct |
 | [solution_type](solution_type.md) | 0..1 <br/> [SolutionTypeEnum](SolutionTypeEnum.md) | Type of solution if this is a stock/pre-mix rather than individual chemical | direct |
 | [chemical_properties](chemical_properties.md) | 0..1 <br/> [ChemicalProperties](ChemicalProperties.md) | Chemical structure and properties (for CHEBI-mapped ingredients only) | direct |
-| [representative](representative.md) | 0..1 <br/> [String](String.md) | ID of the representative record if this record has been merged | direct |
-| [merged](merged.md) | * <br/> [String](String.md) | List of MediaIngredientMech IDs merged into this representative | direct |
+| [representative](representative.md) | 0..1 <br/> [String](String.md) | `identifier` of the representative record if this record has been merged | direct |
+| [merged](merged.md) | * <br/> [String](String.md) | List of record `identifier`s merged into this representative | direct |
 | [ingredient_type](ingredient_type.md) | 0..1 <br/> [IngredientTypeEnum](IngredientTypeEnum.md) | Classification of entry type: single chemical ingredient vs complex defined m... | direct |
+| [components](components.md) | * <br/> [StockComponent](StockComponent.md) | Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM: the list o... | direct |
 | [culturemech_medium_name](culturemech_medium_name.md) | 0..1 <br/> [String](String.md) | Cross-reference to CultureMech medium name if this is a defined medium | direct |
-| [parent_ingredient](parent_ingredient.md) | 0..1 <br/> [String](String.md) | Reference to parent ingredient in hierarchy (MediaIngredientMech:XXXXXX) | direct |
-| [child_ingredients](child_ingredients.md) | * <br/> [String](String.md) | List of child ingredient IDs in hierarchy | direct |
+| [parent_ingredient](parent_ingredient.md) | 0..1 <br/> [String](String.md) | Reference to parent ingredient's `identifier` in the variant hierarchy | direct |
+| [child_ingredients](child_ingredients.md) | * <br/> [String](String.md) | List of child ingredient `identifier`s in the variant hierarchy | direct |
 | [variant_type](variant_type.md) | 0..1 <br/> [VariantTypeEnum](VariantTypeEnum.md) | Classification of variant relationship to parent | direct |
 | [variant_notes](variant_notes.md) | 0..1 <br/> [String](String.md) | Human-readable explanation of variant distinction from parent/siblings | direct |
 | [role_inheritance](role_inheritance.md) | 0..1 <br/> [Boolean](Boolean.md) | If true, inherits media_roles from parent ingredient | direct |
 | [kg_microbe_node_id](kg_microbe_node_id.md) | 0..1 <br/> [String](String.md) | KG-Microbe node ID for this ingredient when found in the KG exactly | direct |
+| [environmental_context](environmental_context.md) | * <br/> [EnvironmentContext](EnvironmentContext.md) | Environmental contexts where this ingredient is relevant | direct |
+| [discussions](discussions.md) | * <br/> [Discussion](Discussion.md) | Open questions, knowledge gaps, controversies, and curation todos attached to... | direct |
+| [datasets](datasets.md) | * <br/> [Dataset](Dataset.md) | Public datasets (omics/sequence/phenotype) relevant to this ingredient | direct |
 
 
 
@@ -251,22 +335,23 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 ```yaml
 name: IngredientRecord
 description: Core record for a media ingredient with ontology mapping, synonyms, and
-  curation history. Represents either a mapped ingredient (with ontology_id) or unmapped
-  ingredient (needs curation). Can serve as root element for individual YAML files
-  or as elements in IngredientCollection.
+  curation history. Represents either a mapped ingredient (with an ontology CURIE
+  identifier) or an unmapped ingredient (placeholder identifier, awaits curation).
+  Can serve as root element for individual YAML files or as elements in IngredientCollection.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
-  ontology_id:
-    name: ontology_id
-    description: Unique ontology identifier - either ontology ID (e.g., CHEBI:26710)
-      for mapped ingredients or generated placeholder (e.g., UNMAPPED_001) for unmapped
-      ingredients
+  identifier:
+    name: identifier
+    description: Primary key for the record. For mapped ingredients this is the ontology
+      CURIE (e.g. `CHEBI:26710`, `FOODON:3311109`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
+      for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The
+      nested `ontology_mapping.ontology_id` carries the same value for mapped records
+      (and is absent for unmapped records).
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     identifier: true
     domain_of:
     - IngredientRecord
-    - OntologyMapping
     required: true
   preferred_term:
     name: preferred_term
@@ -284,6 +369,9 @@ attributes:
     domain_of:
     - IngredientRecord
     range: OntologyMapping
+    bindings:
+    - obligation_level: REQUIRED
+      binds_value_of: ontology_id
   synonyms:
     name: synonyms
     description: Alternative names and raw text variants
@@ -330,10 +418,17 @@ attributes:
     rank: 1000
     domain_of:
     - IngredientRecord
+    - EnvironmentContext
     - MappingEvidence
     - CurationEvent
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - SupportingReference
+    - Discussion
+    - Dataset
   media_roles:
     name: media_roles
     description: Functional roles in growth medium formulation (e.g., NITROGEN_SOURCE,
@@ -346,15 +441,57 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  cellular_roles:
-    name: cellular_roles
-    description: Cellular/metabolic roles in organism metabolism (e.g., PRIMARY_DEGRADER,
-      ELECTRON_DONOR)
+  community_organism_roles:
+    name: community_organism_roles
+    description: Role(s) this organism plays in a microbial community (e.g., PRIMARY_DEGRADER,
+      SYNERGIST, COMPETITOR). Formerly `cellular_roles`; renamed to disambiguate from
+      ingredient-level cellular metabolic roles.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
     - IngredientRecord
-    range: CellularRoleAssignment
+    range: CommunityOrganismRoleAssignment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  nutritional_roles:
+    name: nutritional_roles
+    description: What element or macronutrient this ingredient supplies to the medium
+      (e.g., CARBON_SOURCE, SULFUR_SOURCE, VITAMIN_SOURCE). Facet 1 of 3 orthogonal
+      ingredient-role facets — a single ingredient may carry multiple values (e.g.,
+      L-cysteine → AMINO_ACID_SOURCE + SULFUR_SOURCE).
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: NutritionalRoleAssignment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  physicochemical_roles:
+    name: physicochemical_roles
+    description: Chemical or physical function this ingredient performs in the medium
+      (e.g., BUFFER, CHELATOR, REDUCING_AGENT). Facet 2 of 3 orthogonal ingredient-role
+      facets — independent of what element the ingredient supplies.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: PhysicochemicalRoleAssignment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  cellular_metabolic_roles:
+    name: cellular_metabolic_roles
+    description: Role of this ingredient inside/on the cultured microbe (e.g., SUBSTRATE,
+      ELECTRON_DONOR, COFACTOR). Facet 3 of 3 orthogonal ingredient-role facets —
+      often organism-conditional (e.g., ELECTRON_DONOR applies only for organisms
+      that oxidize the compound for energy).
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: CellularMetabolicRoleAssignment
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -377,25 +514,26 @@ attributes:
     range: ChemicalProperties
   representative:
     name: representative
-    description: ID of the representative record if this record has been merged. Only
-      set when mapping_status is REJECTED due to merge. Points to the canonical record
-      representing this ingredient.
+    description: '`identifier` of the representative record if this record has been
+      merged. Only set when mapping_status is REJECTED due to merge. Points to the
+      canonical record representing this ingredient. (No pattern constraint: the merge-tracking
+      feature is currently unused — when revived, point at the schema''s canonical
+      identifier format.)'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
     - IngredientRecord
-    pattern: ^MediaIngredientMech:[0-9]{6}$
   merged:
     name: merged
-    description: List of MediaIngredientMech IDs merged into this representative.
-      Only set on records serving as merge targets. Tracks all records consolidated
-      into this canonical representation.
+    description: 'List of record `identifier`s merged into this representative. Only
+      set on records serving as merge targets. Tracks all records consolidated into
+      this canonical representation. (No pattern constraint: see `representative`
+      above.)'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
     - IngredientRecord
     multivalued: true
-    pattern: ^MediaIngredientMech:[0-9]{6}$
   ingredient_type:
     name: ingredient_type
     description: 'Classification of entry type: single chemical ingredient vs complex
@@ -408,6 +546,21 @@ attributes:
     domain_of:
     - IngredientRecord
     range: IngredientTypeEnum
+  components:
+    name: components
+    description: 'Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM:
+      the list of component ingredients (with concentration where known). Lets a named
+      mixture (e.g. a trace-element or vitamin solution) be resolved to its constituents.
+      Populate only from a verifiable recipe source; leave empty when the composition
+      is unknown.'
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: StockComponent
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   culturemech_medium_name:
     name: culturemech_medium_name
     description: Cross-reference to CultureMech medium name if this is a defined medium.
@@ -418,26 +571,27 @@ attributes:
     - IngredientRecord
   parent_ingredient:
     name: parent_ingredient
-    description: 'Reference to parent ingredient in hierarchy (MediaIngredientMech:XXXXXX).
+    description: 'Reference to parent ingredient''s `identifier` in the variant hierarchy.
       Used for variants: purity levels (tap/distilled/double-distilled water), hydrates
       (CaCl2·2H2O vs CaCl2), stereoisomers (D-glucose vs L-glucose). Enables queries
-      like "find all media using any form of water".'
+      like "find all media using any form of water". (No pattern constraint: the hierarchy
+      feature is currently unused — when populated, expect the schema''s canonical
+      `identifier` format.)'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
     - IngredientRecord
-    pattern: ^MediaIngredientMech:[0-9]{6}$
   child_ingredients:
     name: child_ingredients
-    description: List of child ingredient IDs in hierarchy. Parent record contains
-      all children (e.g., Water → Tap water, Distilled water). Used to navigate hierarchy
-      and query all variants.
+    description: 'List of child ingredient `identifier`s in the variant hierarchy.
+      Parent record contains all children (e.g. Water → Tap water, Distilled water).
+      Used to navigate hierarchy and query all variants. (No pattern constraint: see
+      `parent_ingredient` above.)'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
     - IngredientRecord
     multivalued: true
-    pattern: ^MediaIngredientMech:[0-9]{6}$
   variant_type:
     name: variant_type
     description: 'Classification of variant relationship to parent. Indicates why
@@ -469,16 +623,62 @@ attributes:
     range: boolean
   kg_microbe_node_id:
     name: kg_microbe_node_id
-    description: 'KG-Microbe node ID for this ingredient when found in the KG exactly.
-      Populated when the ingredient''s CHEBI identifier is present as a named node
-      in the KG-Microbe mediadive graph (i.e., used as an ingredient in at least one
-      KG-Microbe medium solution). Format: CHEBI:XXXXX'
+    description: KG-Microbe node ID for this ingredient when found in the KG exactly.
+      Populated when the ingredient is present as a named node in the KG-Microbe mediadive
+      graph (i.e. used as an ingredient in at least one KG-Microbe medium solution).
+      The node ID is a CURIE using whichever scheme the KG-Microbe graph stores the
+      entity under — most often `CHEBI:`, but also `mesh:`, `NCIT:`, `FOODON:`, `ENVO:`,
+      or one of the kg-microbe registry prefixes (`kgmicrobe.compound:`, `kgmicrobe.ingredient:`).
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
     - IngredientRecord
     required: false
-    pattern: ^CHEBI:[0-9]+$
+    pattern: ^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$
+  environmental_context:
+    name: environmental_context
+    description: Environmental contexts where this ingredient is relevant. Each entry
+      pairs an ENVO term with a relevance qualifier explaining the association (natural
+      source, selective agent, environment mimic, etc.). Enables cross-repository
+      environment-driven queries with CommunityMech (`environment_term`) and CultureMech
+      (`source_environment`). Optional; ubiquitous ingredients (water, glucose) typically
+      have no entries.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: EnvironmentContext
+    bindings:
+    - obligation_level: REQUIRED
+      binds_value_of: environment_term
+    required: false
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  discussions:
+    name: discussions
+    description: Open questions, knowledge gaps, controversies, and curation todos
+      attached to this ingredient (shared Discussion supertype; anchor `attaches_to`
+      into e.g. `ontology_mapping#<term>`).
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: Discussion
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  datasets:
+    name: datasets
+    description: Public datasets (omics/sequence/phenotype) relevant to this ingredient.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: Dataset
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 tree_root: true
 
 ```
@@ -490,24 +690,25 @@ tree_root: true
 ```yaml
 name: IngredientRecord
 description: Core record for a media ingredient with ontology mapping, synonyms, and
-  curation history. Represents either a mapped ingredient (with ontology_id) or unmapped
-  ingredient (needs curation). Can serve as root element for individual YAML files
-  or as elements in IngredientCollection.
+  curation history. Represents either a mapped ingredient (with an ontology CURIE
+  identifier) or an unmapped ingredient (placeholder identifier, awaits curation).
+  Can serve as root element for individual YAML files or as elements in IngredientCollection.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
-  ontology_id:
-    name: ontology_id
-    description: Unique ontology identifier - either ontology ID (e.g., CHEBI:26710)
-      for mapped ingredients or generated placeholder (e.g., UNMAPPED_001) for unmapped
-      ingredients
+  identifier:
+    name: identifier
+    description: Primary key for the record. For mapped ingredients this is the ontology
+      CURIE (e.g. `CHEBI:26710`, `FOODON:3311109`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
+      for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The
+      nested `ontology_mapping.ontology_id` carries the same value for mapped records
+      (and is absent for unmapped records).
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     identifier: true
-    alias: ontology_id
+    alias: identifier
     owner: IngredientRecord
     domain_of:
     - IngredientRecord
-    - OntologyMapping
     range: string
     required: true
   preferred_term:
@@ -531,6 +732,9 @@ attributes:
     domain_of:
     - IngredientRecord
     range: OntologyMapping
+    bindings:
+    - obligation_level: REQUIRED
+      binds_value_of: ontology_id
   synonyms:
     name: synonyms
     description: Alternative names and raw text variants
@@ -587,10 +791,17 @@ attributes:
     owner: IngredientRecord
     domain_of:
     - IngredientRecord
+    - EnvironmentContext
     - MappingEvidence
     - CurationEvent
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - SupportingReference
+    - Discussion
+    - Dataset
     range: string
   media_roles:
     name: media_roles
@@ -606,17 +817,65 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  cellular_roles:
-    name: cellular_roles
-    description: Cellular/metabolic roles in organism metabolism (e.g., PRIMARY_DEGRADER,
-      ELECTRON_DONOR)
+  community_organism_roles:
+    name: community_organism_roles
+    description: Role(s) this organism plays in a microbial community (e.g., PRIMARY_DEGRADER,
+      SYNERGIST, COMPETITOR). Formerly `cellular_roles`; renamed to disambiguate from
+      ingredient-level cellular metabolic roles.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
-    alias: cellular_roles
+    alias: community_organism_roles
     owner: IngredientRecord
     domain_of:
     - IngredientRecord
-    range: CellularRoleAssignment
+    range: CommunityOrganismRoleAssignment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  nutritional_roles:
+    name: nutritional_roles
+    description: What element or macronutrient this ingredient supplies to the medium
+      (e.g., CARBON_SOURCE, SULFUR_SOURCE, VITAMIN_SOURCE). Facet 1 of 3 orthogonal
+      ingredient-role facets — a single ingredient may carry multiple values (e.g.,
+      L-cysteine → AMINO_ACID_SOURCE + SULFUR_SOURCE).
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: nutritional_roles
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: NutritionalRoleAssignment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  physicochemical_roles:
+    name: physicochemical_roles
+    description: Chemical or physical function this ingredient performs in the medium
+      (e.g., BUFFER, CHELATOR, REDUCING_AGENT). Facet 2 of 3 orthogonal ingredient-role
+      facets — independent of what element the ingredient supplies.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: physicochemical_roles
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: PhysicochemicalRoleAssignment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  cellular_metabolic_roles:
+    name: cellular_metabolic_roles
+    description: Role of this ingredient inside/on the cultured microbe (e.g., SUBSTRATE,
+      ELECTRON_DONOR, COFACTOR). Facet 3 of 3 orthogonal ingredient-role facets —
+      often organism-conditional (e.g., ELECTRON_DONOR applies only for organisms
+      that oxidize the compound for energy).
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: cellular_metabolic_roles
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: CellularMetabolicRoleAssignment
     multivalued: true
     inlined: true
     inlined_as_list: true
@@ -643,9 +902,11 @@ attributes:
     range: ChemicalProperties
   representative:
     name: representative
-    description: ID of the representative record if this record has been merged. Only
-      set when mapping_status is REJECTED due to merge. Points to the canonical record
-      representing this ingredient.
+    description: '`identifier` of the representative record if this record has been
+      merged. Only set when mapping_status is REJECTED due to merge. Points to the
+      canonical record representing this ingredient. (No pattern constraint: the merge-tracking
+      feature is currently unused — when revived, point at the schema''s canonical
+      identifier format.)'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: representative
@@ -653,12 +914,12 @@ attributes:
     domain_of:
     - IngredientRecord
     range: string
-    pattern: ^MediaIngredientMech:[0-9]{6}$
   merged:
     name: merged
-    description: List of MediaIngredientMech IDs merged into this representative.
-      Only set on records serving as merge targets. Tracks all records consolidated
-      into this canonical representation.
+    description: 'List of record `identifier`s merged into this representative. Only
+      set on records serving as merge targets. Tracks all records consolidated into
+      this canonical representation. (No pattern constraint: see `representative`
+      above.)'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: merged
@@ -667,7 +928,6 @@ attributes:
     - IngredientRecord
     range: string
     multivalued: true
-    pattern: ^MediaIngredientMech:[0-9]{6}$
   ingredient_type:
     name: ingredient_type
     description: 'Classification of entry type: single chemical ingredient vs complex
@@ -682,6 +942,23 @@ attributes:
     domain_of:
     - IngredientRecord
     range: IngredientTypeEnum
+  components:
+    name: components
+    description: 'Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM:
+      the list of component ingredients (with concentration where known). Lets a named
+      mixture (e.g. a trace-element or vitamin solution) be resolved to its constituents.
+      Populate only from a verifiable recipe source; leave empty when the composition
+      is unknown.'
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: components
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: StockComponent
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   culturemech_medium_name:
     name: culturemech_medium_name
     description: Cross-reference to CultureMech medium name if this is a defined medium.
@@ -695,10 +972,12 @@ attributes:
     range: string
   parent_ingredient:
     name: parent_ingredient
-    description: 'Reference to parent ingredient in hierarchy (MediaIngredientMech:XXXXXX).
+    description: 'Reference to parent ingredient''s `identifier` in the variant hierarchy.
       Used for variants: purity levels (tap/distilled/double-distilled water), hydrates
       (CaCl2·2H2O vs CaCl2), stereoisomers (D-glucose vs L-glucose). Enables queries
-      like "find all media using any form of water".'
+      like "find all media using any form of water". (No pattern constraint: the hierarchy
+      feature is currently unused — when populated, expect the schema''s canonical
+      `identifier` format.)'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: parent_ingredient
@@ -706,12 +985,12 @@ attributes:
     domain_of:
     - IngredientRecord
     range: string
-    pattern: ^MediaIngredientMech:[0-9]{6}$
   child_ingredients:
     name: child_ingredients
-    description: List of child ingredient IDs in hierarchy. Parent record contains
-      all children (e.g., Water → Tap water, Distilled water). Used to navigate hierarchy
-      and query all variants.
+    description: 'List of child ingredient `identifier`s in the variant hierarchy.
+      Parent record contains all children (e.g. Water → Tap water, Distilled water).
+      Used to navigate hierarchy and query all variants. (No pattern constraint: see
+      `parent_ingredient` above.)'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: child_ingredients
@@ -720,7 +999,6 @@ attributes:
     - IngredientRecord
     range: string
     multivalued: true
-    pattern: ^MediaIngredientMech:[0-9]{6}$
   variant_type:
     name: variant_type
     description: 'Classification of variant relationship to parent. Indicates why
@@ -759,10 +1037,12 @@ attributes:
     range: boolean
   kg_microbe_node_id:
     name: kg_microbe_node_id
-    description: 'KG-Microbe node ID for this ingredient when found in the KG exactly.
-      Populated when the ingredient''s CHEBI identifier is present as a named node
-      in the KG-Microbe mediadive graph (i.e., used as an ingredient in at least one
-      KG-Microbe medium solution). Format: CHEBI:XXXXX'
+    description: KG-Microbe node ID for this ingredient when found in the KG exactly.
+      Populated when the ingredient is present as a named node in the KG-Microbe mediadive
+      graph (i.e. used as an ingredient in at least one KG-Microbe medium solution).
+      The node ID is a CURIE using whichever scheme the KG-Microbe graph stores the
+      entity under — most often `CHEBI:`, but also `mesh:`, `NCIT:`, `FOODON:`, `ENVO:`,
+      or one of the kg-microbe registry prefixes (`kgmicrobe.compound:`, `kgmicrobe.ingredient:`).
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: kg_microbe_node_id
@@ -771,7 +1051,57 @@ attributes:
     - IngredientRecord
     range: string
     required: false
-    pattern: ^CHEBI:[0-9]+$
+    pattern: ^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$
+  environmental_context:
+    name: environmental_context
+    description: Environmental contexts where this ingredient is relevant. Each entry
+      pairs an ENVO term with a relevance qualifier explaining the association (natural
+      source, selective agent, environment mimic, etc.). Enables cross-repository
+      environment-driven queries with CommunityMech (`environment_term`) and CultureMech
+      (`source_environment`). Optional; ubiquitous ingredients (water, glucose) typically
+      have no entries.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: environmental_context
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: EnvironmentContext
+    bindings:
+    - obligation_level: REQUIRED
+      binds_value_of: environment_term
+    required: false
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  discussions:
+    name: discussions
+    description: Open questions, knowledge gaps, controversies, and curation todos
+      attached to this ingredient (shared Discussion supertype; anchor `attaches_to`
+      into e.g. `ontology_mapping#<term>`).
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: discussions
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: Discussion
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  datasets:
+    name: datasets
+    description: Public datasets (omics/sequence/phenotype) relevant to this ingredient.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: datasets
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: Dataset
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 tree_root: true
 
 ```

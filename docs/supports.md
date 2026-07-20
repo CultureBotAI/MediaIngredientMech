@@ -3,19 +3,6 @@
 # Slot: supports 
 
 
-_How the cited reference relates to the mapping claim._
-
-_SUPPORT = abstract substantiates the mapping; PARTIAL =_
-
-_adjacent context only; REFUTE = contradicts; NO_EVIDENCE =_
-
-_reference cited but no relevant snippet extractable._
-
-__
-
-
-
-
 
 URI: [mediaingredientmech:supports](https://w3id.org/mediaingredientmech/supports)
 Alias: supports
@@ -31,6 +18,7 @@ Alias: supports
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
 
 
 
@@ -39,7 +27,7 @@ Alias: supports
 
 ## Properties
 
-* Range: [EvidenceSupportEnum](EvidenceSupportEnum.md)
+* Range: [String](String.md)
 
 
 
@@ -48,13 +36,6 @@ Alias: supports
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -74,22 +55,11 @@ Alias: supports
 <details>
 ```yaml
 name: supports
-description: 'How the cited reference relates to the mapping claim.
-
-  SUPPORT = abstract substantiates the mapping; PARTIAL =
-
-  adjacent context only; REFUTE = contradicts; NO_EVIDENCE =
-
-  reference cited but no relevant snippet extractable.
-
-  '
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: supports
-owner: MappingEvidence
 domain_of:
 - MappingEvidence
-range: EvidenceSupportEnum
+- SupportingReference
+range: string
 
 ```
 </details>

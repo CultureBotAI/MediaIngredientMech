@@ -3,7 +3,7 @@
 # Slot: identifier 
 
 
-_Unique identifier - either ontology ID (e.g., CHEBI:26710) for mapped ingredients or generated UUID/placeholder (e.g., UNMAPPED_001) for unmapped ingredients_
+_Primary key for the record. For mapped ingredients this is the ontology CURIE (e.g. `CHEBI:26710`, `FOODON:3311109`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`); for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested `ontology_mapping.ontology_id` carries the same value for mapped records (and is absent for unmapped records)._
 
 
 
@@ -68,8 +68,11 @@ Alias: identifier
 <details>
 ```yaml
 name: identifier
-description: Unique identifier - either ontology ID (e.g., CHEBI:26710) for mapped
-  ingredients or generated UUID/placeholder (e.g., UNMAPPED_001) for unmapped ingredients
+description: Primary key for the record. For mapped ingredients this is the ontology
+  CURIE (e.g. `CHEBI:26710`, `FOODON:3311109`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
+  for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested
+  `ontology_mapping.ontology_id` carries the same value for mapped records (and is
+  absent for unmapped records).
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 identifier: true

@@ -3,17 +3,6 @@
 # Slot: explanation 
 
 
-_Curator (or LLM)'s rationale connecting the snippet to the_
-
-_mapping claim — separate from the verbatim snippet so the_
-
-_snippet stays validatable._
-
-__
-
-
-
-
 
 URI: [mediaingredientmech:explanation](https://w3id.org/mediaingredientmech/explanation)
 Alias: explanation
@@ -29,6 +18,7 @@ Alias: explanation
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
 
 
 
@@ -49,13 +39,6 @@ Alias: explanation
 
 
 
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
-
-
-
 
 ## Mappings
 
@@ -72,19 +55,10 @@ Alias: explanation
 <details>
 ```yaml
 name: explanation
-description: 'Curator (or LLM)''s rationale connecting the snippet to the
-
-  mapping claim — separate from the verbatim snippet so the
-
-  snippet stays validatable.
-
-  '
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: explanation
-owner: MappingEvidence
 domain_of:
 - MappingEvidence
+- SupportingReference
 range: string
 
 ```

@@ -19,6 +19,8 @@ URI: [mediaingredientmech:MappingEvidence](https://w3id.org/mediaingredientmech/
  classDiagram
     class MappingEvidence
     click MappingEvidence href "../MappingEvidence/"
+      MappingEvidence : cas_rn
+        
       MappingEvidence : confidence_score
         
       MappingEvidence : doi
@@ -72,6 +74,7 @@ URI: [mediaingredientmech:MappingEvidence](https://w3id.org/mediaingredientmech/
 | [source](source.md) | 0..1 <br/> [String](String.md) | Source of evidence (e | direct |
 | [confidence_score](confidence_score.md) | 0..1 <br/> [Float](Float.md) | Confidence score (0 | direct |
 | [notes](notes.md) | 0..1 <br/> [String](String.md) | Additional context | direct |
+| [cas_rn](cas_rn.md) | 0..1 <br/> [String](String.md) | CAS Registry Number that supports this evidence row | direct |
 | [pmid](pmid.md) | 0..1 <br/> [String](String.md) | PubMed ID for MEDLINE citations (e | direct |
 | [doi](doi.md) | 0..1 <br/> [String](String.md) | Digital Object Identifier (e | direct |
 | [snippet](snippet.md) | 0..1 <br/> [String](String.md) | Exact substring quoted from the cited abstract that supports | direct |
@@ -150,6 +153,7 @@ attributes:
     domain_of:
     - MappingEvidence
     - IngredientSynonym
+    - StockComponent
   confidence_score:
     name: confidence_score
     description: Confidence score (0.0-1.0)
@@ -164,10 +168,28 @@ attributes:
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
     - IngredientRecord
+    - EnvironmentContext
     - MappingEvidence
     - CurationEvent
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - SupportingReference
+    - Discussion
+    - Dataset
+  cas_rn:
+    name: cas_rn
+    description: 'CAS Registry Number that supports this evidence row. Set by the
+      CAS-RN cross-reference resolver (`evidence_type: CAS_RN_CROSS_REFERENCE`) when
+      an ontology term was matched via its CAS-RN rather than label or synonym. Same
+      format as `ChemicalProperties.cas_rn`.'
+    from_schema: https://w3id.org/mediaingredientmech
+    domain_of:
+    - ChemicalProperties
+    - MappingEvidence
+    pattern: ^\d+-\d+-\d+$
   pmid:
     name: pmid
     description: PubMed ID for MEDLINE citations (e.g., 12345678)
@@ -201,6 +223,7 @@ attributes:
     rank: 1000
     domain_of:
     - MappingEvidence
+    - SupportingReference
   supports:
     name: supports
     description: 'How the cited reference relates to the mapping claim.
@@ -216,6 +239,7 @@ attributes:
     rank: 1000
     domain_of:
     - MappingEvidence
+    - SupportingReference
     range: EvidenceSupportEnum
   explanation:
     name: explanation
@@ -230,6 +254,7 @@ attributes:
     rank: 1000
     domain_of:
     - MappingEvidence
+    - SupportingReference
 
 ```
 </details>
@@ -263,6 +288,7 @@ attributes:
     domain_of:
     - MappingEvidence
     - IngredientSynonym
+    - StockComponent
     range: string
   confidence_score:
     name: confidence_score
@@ -282,11 +308,32 @@ attributes:
     owner: MappingEvidence
     domain_of:
     - IngredientRecord
+    - EnvironmentContext
     - MappingEvidence
     - CurationEvent
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - SupportingReference
+    - Discussion
+    - Dataset
     range: string
+  cas_rn:
+    name: cas_rn
+    description: 'CAS Registry Number that supports this evidence row. Set by the
+      CAS-RN cross-reference resolver (`evidence_type: CAS_RN_CROSS_REFERENCE`) when
+      an ontology term was matched via its CAS-RN rather than label or synonym. Same
+      format as `ChemicalProperties.cas_rn`.'
+    from_schema: https://w3id.org/mediaingredientmech
+    alias: cas_rn
+    owner: MappingEvidence
+    domain_of:
+    - ChemicalProperties
+    - MappingEvidence
+    range: string
+    pattern: ^\d+-\d+-\d+$
   pmid:
     name: pmid
     description: PubMed ID for MEDLINE citations (e.g., 12345678)
@@ -328,6 +375,7 @@ attributes:
     owner: MappingEvidence
     domain_of:
     - MappingEvidence
+    - SupportingReference
     range: string
   supports:
     name: supports
@@ -346,6 +394,7 @@ attributes:
     owner: MappingEvidence
     domain_of:
     - MappingEvidence
+    - SupportingReference
     range: EvidenceSupportEnum
   explanation:
     name: explanation
@@ -362,6 +411,7 @@ attributes:
     owner: MappingEvidence
     domain_of:
     - MappingEvidence
+    - SupportingReference
     range: string
 
 ```

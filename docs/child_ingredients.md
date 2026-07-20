@@ -3,7 +3,7 @@
 # Slot: child_ingredients 
 
 
-_List of child ingredient IDs in hierarchy. Parent record contains all children (e.g., Water → Tap water, Distilled water). Used to navigate hierarchy and query all variants._
+_List of child ingredient `identifier`s in the variant hierarchy. Parent record contains all children (e.g. Water → Tap water, Distilled water). Used to navigate hierarchy and query all variants. (No pattern constraint: see `parent_ingredient` above.)_
 
 
 
@@ -34,8 +34,6 @@ Alias: child_ingredients
 * Range: [String](String.md)
 
 * Multivalued: True
-
-* Regex pattern: `^MediaIngredientMech:[0-9]{6}$`
 
 
 
@@ -70,9 +68,10 @@ Alias: child_ingredients
 <details>
 ```yaml
 name: child_ingredients
-description: List of child ingredient IDs in hierarchy. Parent record contains all
-  children (e.g., Water → Tap water, Distilled water). Used to navigate hierarchy
-  and query all variants.
+description: 'List of child ingredient `identifier`s in the variant hierarchy. Parent
+  record contains all children (e.g. Water → Tap water, Distilled water). Used to
+  navigate hierarchy and query all variants. (No pattern constraint: see `parent_ingredient`
+  above.)'
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 alias: child_ingredients
@@ -81,7 +80,6 @@ domain_of:
 - IngredientRecord
 range: string
 multivalued: true
-pattern: ^MediaIngredientMech:[0-9]{6}$
 
 ```
 </details>
