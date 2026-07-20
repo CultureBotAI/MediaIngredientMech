@@ -132,7 +132,7 @@ report-label-drift:
 # Vendored-file manifest: the id-label files byte-identical across the Mech repos
 # that must not silently diverge. conf/id_label_targets.yaml is deliberately
 # per-repo (different adapters/targets/exceptions) so it is NOT here.
-VENDORED_IDLABEL_FILES := "scripts/validate_id_label_correspondence.py tests/test_id_label_empty_adapter.py tests/test_id_label_unknown_prefix.py"
+VENDORED_IDLABEL_FILES := "scripts/validate_id_label_correspondence.py scripts/chem_formula.py tests/test_id_label_empty_adapter.py tests/test_id_label_unknown_prefix.py tests/test_id_label_plausibility.py"
 
 # Durability guard: fail if any vendored id-label file (the validator + its two
 # shared tests) drifts from its pinned sha256 (vendored byte-identical across the
@@ -338,3 +338,28 @@ clean:
 gen-discussions-data:
     PYTHONPATH=../culturebotai-claw/src /opt/homebrew/bin/python3.13 \
       -m kg_microbe_discussions --config conf/discussions_config.yaml --output app/discussions
+
+# =============================================================================
+# CURIE standard (docs/CURIE_STANDARD.md, issue #119)
+# =============================================================================
+
+# Regenerate the rename alias map from git history. Run after any record rename.
+[group('QC')]
+curie-aliases:
+    uv run python scripts/build_curie_alias_map.py
+
+# Normalise / resolve CURIEs on the command line.
+#   just curie-check MIM:Tryptone CHEBI:15377
+curie-check *CURIES:
+    uv run python -m mediaingredientmech.curie --equivalent {{CURIES}}
+
+# Re-verify every MICRO id used by the SSSOM against OLS4 (catches MicrO's
+# malformed-IRI classes, which cannot be detected offline).
+[group('QC')]
+curie-verify-micro:
+    uv run python scripts/verify_micro_ids.py
+
+# Assert the published SSSOM satisfies the CURIE standard.
+[group('QC')]
+curie-validate:
+    uv run python -m pytest tests/test_curie_normalizer.py -q --no-cov

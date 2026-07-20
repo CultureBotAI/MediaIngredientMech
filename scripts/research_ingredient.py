@@ -214,11 +214,36 @@ def provider_args(provider: str) -> list[str]:
     return ["--provider", provider]
 
 
+# Providers that are NOT Edison, and so must never receive an Edison credential.
+# ``deep-research-client`` reads whatever is in ``EDISON_API_KEY`` and forwards it
+# to whichever provider was selected, so the credential lookup has to be
+# provider-aware.
+_NON_EDISON_PROVIDER_KEYS = {"falcon": "FUTUREHOUSE_API_KEY"}
+
+
 def research_env(provider: str) -> dict[str, str]:
-    """Build subprocess environment without logging secrets."""
+    """Build the subprocess environment, resolving the credential for ``provider``.
+
+    For a non-Edison provider (Falcon → FutureHouse) the credential comes *only*
+    from that provider's own variable. Any Edison-named key in the environment is
+    dropped, and if the provider has no key of its own ``EDISON_API_KEY`` is left
+    unset so the client fails cleanly.
+
+    This matters because this repo's ``.env`` sets ``EDISON_API_KEY`` and ``just``
+    injects it via ``dotenv-load``. The previous version honoured that ambient
+    value for Falcon too, so a ``--provider falcon`` run transmitted an Edison
+    credential to FutureHouse: wrong vendor, and it could not authenticate anyway.
+    An Edison-named variable is repo configuration, not the caller asking for that
+    key to be used with FutureHouse. To pin a credential for Falcon, set
+    ``FUTUREHOUSE_API_KEY``.
+    """
     env = os.environ.copy()
-    if provider == "falcon" and not env.get("EDISON_API_KEY") and env.get("FUTUREHOUSE_API_KEY"):
-        env["EDISON_API_KEY"] = env["FUTUREHOUSE_API_KEY"]
+    provider_key = _NON_EDISON_PROVIDER_KEYS.get(provider)
+    if provider_key:
+        env.pop("EDISON_API_KEY", None)
+        env.pop("EDISON_PLATFORM_API_KEY", None)
+        if env.get(provider_key):
+            env["EDISON_API_KEY"] = env[provider_key]
     return env
 
 

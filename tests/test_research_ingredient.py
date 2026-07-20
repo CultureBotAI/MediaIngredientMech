@@ -95,7 +95,30 @@ def test_research_env_maps_futurehouse_key_to_edison(monkeypatch):
 
 
 def test_research_env_keeps_existing_edison_key(monkeypatch):
+    """CONTRACT CHANGE: an ambient EDISON_API_KEY is no longer forwarded to Falcon.
+
+    This previously asserted the opposite — that an existing EDISON_API_KEY wins
+    for every provider. That is unsafe in practice: this repo's `.env` sets
+    EDISON_API_KEY and `just` injects it via dotenv-load, so the "existing" key is
+    ambient repo configuration rather than a caller instruction, and forwarding it
+    to `--provider falcon` transmitted an Edison credential to FutureHouse.
+
+    Edison-named variables are now dropped for non-Edison providers. To pin a
+    credential for Falcon, set FUTUREHOUSE_API_KEY.
+    """
     monkeypatch.setenv("EDISON_API_KEY", "edison-key")
     monkeypatch.setenv("FUTUREHOUSE_API_KEY", "futurehouse-key")
     env = research_env("falcon")
-    assert env["EDISON_API_KEY"] == "edison-key"
+    assert env["EDISON_API_KEY"] == "futurehouse-key"
+
+
+def test_research_env_withholds_edison_key_from_falcon(monkeypatch):
+    """With no FutureHouse key, leave it unset rather than substitute Edison's."""
+    monkeypatch.setenv("EDISON_API_KEY", "edison-key")
+    env = research_env("falcon")
+    assert "EDISON_API_KEY" not in env
+
+
+def test_research_env_leaves_edison_providers_untouched(monkeypatch):
+    monkeypatch.setenv("EDISON_API_KEY", "edison-key")
+    assert research_env("edison")["EDISON_API_KEY"] == "edison-key"
