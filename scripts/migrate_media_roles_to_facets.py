@@ -172,9 +172,14 @@ def mineral_targets(record: dict[str, Any]) -> Optional[list[tuple[str, str]]]:
     if "S" in elements and not (has_trace or has_iron):
         targets.append((NUTRITIONAL, "SULFUR_SOURCE"))
 
-    # Bulk cations fill the residual bucket, but only when nothing more specific
-    # already described what the ingredient supplies.
-    if not targets and (elements & set(BULK_CATIONS)):
+    # Bulk cations fill the residual bucket. The guard is on the *cation* roles,
+    # not on `targets` being empty: TRACE_ELEMENT and IRON_SOURCE already name
+    # the cation (Na2MoO4 is a molybdenum source, its sodium is a counter-ion),
+    # but SULFUR_SOURCE and PHOSPHATE_SOURCE name the anion, so a bulk cation
+    # alongside them is a second, distinct nutrient. MgSO4 supplies magnesium
+    # *and* sulfur; suppressing the cation there would lose the single most
+    # common magnesium source in defined media.
+    if (elements & set(BULK_CATIONS)) and not (has_trace or has_iron):
         targets.append((NUTRITIONAL, "MINERAL_SOURCE"))
 
     # Formula-free records (e.g. elemental sulfur has no formula on the record)

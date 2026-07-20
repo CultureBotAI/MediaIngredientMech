@@ -117,6 +117,13 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.SULFUR_SOURCE'
+- timestamp: '2026-07-20T20:01:42.981644+00:00'
+  curator: migrate_media_roles_to_facets
+  action: CORRECTED
+  changes: 'Added nutritional role(s) MINERAL_SOURCE missed by the initial #128 migration:
+    the residual MINERAL_SOURCE bucket was suppressed whenever any other target existed,
+    which dropped the bulk cation from salts whose other role describes the anion
+    (e.g. MgSO4).'
 chemical_properties:
   cas_rn: 7778-80-5
   data_source: PubChem API
@@ -133,3 +140,6 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Mineral'
+- role: MINERAL_SOURCE
+  confidence: 0.8
+  evidence: []
