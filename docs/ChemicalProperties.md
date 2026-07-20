@@ -29,6 +29,8 @@ URI: [mediaingredientmech:ChemicalProperties](https://w3id.org/mediaingredientme
         
       ChemicalProperties : molecular_weight
         
+      ChemicalProperties : pubchem_cid
+        
       ChemicalProperties : retrieval_date
         
       ChemicalProperties : smiles
@@ -51,6 +53,7 @@ URI: [mediaingredientmech:ChemicalProperties](https://w3id.org/mediaingredientme
 | [smiles](smiles.md) | 0..1 <br/> [String](String.md) | Simplified Molecular Input Line Entry System notation | direct |
 | [inchi](inchi.md) | 0..1 <br/> [String](String.md) | IUPAC International Chemical Identifier | direct |
 | [molecular_weight](molecular_weight.md) | 0..1 <br/> [Float](Float.md) | Molecular weight in g/mol | direct |
+| [pubchem_cid](pubchem_cid.md) | 0..1 <br/> [Integer](Integer.md) | PubChem Compound Identifier (CID), stored as a positive integer | direct |
 | [data_source](data_source.md) | 0..1 <br/> [String](String.md) | Source of chemical properties (e | direct |
 | [retrieval_date](retrieval_date.md) | 0..1 <br/> [Datetime](Datetime.md) | When these properties were retrieved | direct |
 
@@ -118,6 +121,7 @@ attributes:
     rank: 1000
     domain_of:
     - ChemicalProperties
+    - MappingEvidence
     pattern: ^\d+-\d+-\d+$
   molecular_formula:
     name: molecular_formula
@@ -148,6 +152,17 @@ attributes:
     domain_of:
     - ChemicalProperties
     range: float
+  pubchem_cid:
+    name: pubchem_cid
+    description: PubChem Compound Identifier (CID), stored as a positive integer.
+      Populated by the PubChem enrichment path in `scripts/enrich_chemical_properties.py`
+      when chemical properties are sourced from PubChem rather than ChEBI.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - ChemicalProperties
+    range: integer
+    minimum_value: 1
   data_source:
     name: data_source
     description: Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)
@@ -186,6 +201,7 @@ attributes:
     owner: ChemicalProperties
     domain_of:
     - ChemicalProperties
+    - MappingEvidence
     range: string
     pattern: ^\d+-\d+-\d+$
   molecular_formula:
@@ -228,6 +244,19 @@ attributes:
     domain_of:
     - ChemicalProperties
     range: float
+  pubchem_cid:
+    name: pubchem_cid
+    description: PubChem Compound Identifier (CID), stored as a positive integer.
+      Populated by the PubChem enrichment path in `scripts/enrich_chemical_properties.py`
+      when chemical properties are sourced from PubChem rather than ChEBI.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: pubchem_cid
+    owner: ChemicalProperties
+    domain_of:
+    - ChemicalProperties
+    range: integer
+    minimum_value: 1
   data_source:
     name: data_source
     description: Source of chemical properties (e.g., ChEBI, PubChem, CultureBotHT/MicroMediaParam)

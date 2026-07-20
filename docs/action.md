@@ -3,7 +3,7 @@
 # Slot: action 
 
 
-_Type of curation action_
+_Type of curation action. Free-form SCREAMING_SNAKE_CASE label minted by the curation tool that produced this event. CurationActionEnum below documents well-known actions; new tools are free to introduce new labels (live data has 110+ distinct values)._
 
 
 
@@ -31,9 +31,11 @@ Alias: action
 
 ## Properties
 
-* Range: [CurationActionEnum](CurationActionEnum.md)
+* Range: [String](String.md)
 
 * Required: True
+
+* Regex pattern: `^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$`
 
 
 
@@ -68,15 +70,19 @@ Alias: action
 <details>
 ```yaml
 name: action
-description: Type of curation action
+description: Type of curation action. Free-form SCREAMING_SNAKE_CASE label minted
+  by the curation tool that produced this event. CurationActionEnum below documents
+  well-known actions; new tools are free to introduce new labels (live data has 110+
+  distinct values).
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 alias: action
 owner: CurationEvent
 domain_of:
 - CurationEvent
-range: CurationActionEnum
+range: string
 required: true
+pattern: ^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$
 
 ```
 </details>

@@ -126,7 +126,10 @@ attributes:
     rank: 1000
     domain_of:
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
     range: IngredientRoleEnum
     required: true
   confidence:
@@ -136,7 +139,10 @@ attributes:
     rank: 1000
     domain_of:
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
     range: float
   evidence:
     name: evidence
@@ -145,7 +151,12 @@ attributes:
     domain_of:
     - OntologyMapping
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - Discussion
+    - Dataset
     range: RoleCitation
     multivalued: true
     inlined: true
@@ -156,10 +167,17 @@ attributes:
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
     - IngredientRecord
+    - EnvironmentContext
     - MappingEvidence
     - CurationEvent
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - SupportingReference
+    - Discussion
+    - Dataset
 
 ```
 </details>
@@ -182,7 +200,10 @@ attributes:
     owner: RoleAssignment
     domain_of:
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
     range: IngredientRoleEnum
     required: true
   confidence:
@@ -194,7 +215,10 @@ attributes:
     owner: RoleAssignment
     domain_of:
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
     range: float
   evidence:
     name: evidence
@@ -205,7 +229,12 @@ attributes:
     domain_of:
     - OntologyMapping
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - Discussion
+    - Dataset
     range: RoleCitation
     multivalued: true
     inlined: true
@@ -218,10 +247,17 @@ attributes:
     owner: RoleAssignment
     domain_of:
     - IngredientRecord
+    - EnvironmentContext
     - MappingEvidence
     - CurationEvent
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - SupportingReference
+    - Discussion
+    - Dataset
     range: string
 
 ```

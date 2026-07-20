@@ -31,6 +31,8 @@ URI: [mediaingredientmech:IngredientRoleEnum](https://w3id.org/mediaingredientme
 | PH_INDICATOR | None | pH indicator dye for monitoring medium acidity/alkalinity |
 | SELECTIVE_AGENT | None | Antimicrobial or selective agent for enrichment cultures |
 | SURFACTANT | None | Surfactant or detergent for emulsification |
+| REDUCING_AGENT | None | Lowers redox potential / poises anaerobic media (e |
+| CHELATOR | None | Sequesters/chelates metal ions to control availability or toxicity (e |
 
 
 
@@ -125,6 +127,14 @@ permissible_values:
   SURFACTANT:
     text: SURFACTANT
     description: Surfactant or detergent for emulsification
+  REDUCING_AGENT:
+    text: REDUCING_AGENT
+    description: Lowers redox potential / poises anaerobic media (e.g., sodium sulfide,
+      cysteine, thioglycolate, dithiothreitol)
+  CHELATOR:
+    text: CHELATOR
+    description: Sequesters/chelates metal ions to control availability or toxicity
+      (e.g., EDTA, NTA, citrate)
 
 ```
 </details>

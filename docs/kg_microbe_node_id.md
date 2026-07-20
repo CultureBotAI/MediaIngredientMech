@@ -3,7 +3,7 @@
 # Slot: kg_microbe_node_id 
 
 
-_KG-Microbe node ID for this ingredient when found in the KG exactly. Populated when the ingredient's CHEBI identifier is present as a named node in the KG-Microbe mediadive graph (i.e., used as an ingredient in at least one KG-Microbe medium solution). Format: CHEBI:XXXXX_
+_KG-Microbe node ID for this ingredient when found in the KG exactly. Populated when the ingredient is present as a named node in the KG-Microbe mediadive graph (i.e. used as an ingredient in at least one KG-Microbe medium solution). The node ID is a CURIE using whichever scheme the KG-Microbe graph stores the entity under — most often `CHEBI:`, but also `mesh:`, `NCIT:`, `FOODON:`, `ENVO:`, or one of the kg-microbe registry prefixes (`kgmicrobe.compound:`, `kgmicrobe.ingredient:`)._
 
 
 
@@ -33,7 +33,7 @@ Alias: kg_microbe_node_id
 
 * Range: [String](String.md)
 
-* Regex pattern: `^CHEBI:[0-9]+$`
+* Regex pattern: `^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$`
 
 
 
@@ -68,10 +68,12 @@ Alias: kg_microbe_node_id
 <details>
 ```yaml
 name: kg_microbe_node_id
-description: 'KG-Microbe node ID for this ingredient when found in the KG exactly.
-  Populated when the ingredient''s CHEBI identifier is present as a named node in
-  the KG-Microbe mediadive graph (i.e., used as an ingredient in at least one KG-Microbe
-  medium solution). Format: CHEBI:XXXXX'
+description: KG-Microbe node ID for this ingredient when found in the KG exactly.
+  Populated when the ingredient is present as a named node in the KG-Microbe mediadive
+  graph (i.e. used as an ingredient in at least one KG-Microbe medium solution). The
+  node ID is a CURIE using whichever scheme the KG-Microbe graph stores the entity
+  under — most often `CHEBI:`, but also `mesh:`, `NCIT:`, `FOODON:`, `ENVO:`, or one
+  of the kg-microbe registry prefixes (`kgmicrobe.compound:`, `kgmicrobe.ingredient:`).
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 alias: kg_microbe_node_id
@@ -80,7 +82,7 @@ domain_of:
 - IngredientRecord
 range: string
 required: false
-pattern: ^CHEBI:[0-9]+$
+pattern: ^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$
 
 ```
 </details>

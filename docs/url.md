@@ -3,11 +3,6 @@
 # Slot: url 
 
 
-_Web URL for the reference_
-
-
-
-
 
 URI: [mediaingredientmech:url](https://w3id.org/mediaingredientmech/url)
 Alias: url
@@ -22,6 +17,7 @@ Alias: url
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |  no  |
 | [RoleCitation](RoleCitation.md) | Citation supporting a role assignment (DOI, publication, database reference) |  no  |
 
 
@@ -31,7 +27,7 @@ Alias: url
 
 ## Properties
 
-* Range: [Uri](Uri.md)
+* Range: [String](String.md)
 
 
 
@@ -40,13 +36,6 @@ Alias: url
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -66,14 +55,11 @@ Alias: url
 <details>
 ```yaml
 name: url
-description: Web URL for the reference
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: url
-owner: RoleCitation
 domain_of:
 - RoleCitation
-range: uri
+- Dataset
+range: string
 
 ```
 </details>

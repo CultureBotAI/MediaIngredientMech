@@ -10,6 +10,8 @@ URI: [mediaingredientmech:SynonymTypeEnum](https://w3id.org/mediaingredientmech/
 | --- | --- | --- |
 | EXACT_SYNONYM | None | Exact alternative name |
 | RELATED_SYNONYM | None | Related but not identical |
+| EXACT | None | Shorthand alias for EXACT_SYNONYM emitted by some import tooling; retained fo... |
+| RELATED | None | Shorthand alias for RELATED_SYNONYM emitted by some import tooling; retained ... |
 | RAW_TEXT | None | Raw text from original data |
 | ABBREVIATION | None | Abbreviated form |
 | COMMON_NAME | None | Common or colloquial name |
@@ -63,6 +65,14 @@ permissible_values:
   RELATED_SYNONYM:
     text: RELATED_SYNONYM
     description: Related but not identical
+  EXACT:
+    text: EXACT
+    description: Shorthand alias for EXACT_SYNONYM emitted by some import tooling;
+      retained for backward compatibility with existing records.
+  RELATED:
+    text: RELATED
+    description: Shorthand alias for RELATED_SYNONYM emitted by some import tooling;
+      retained for backward compatibility with existing records.
   RAW_TEXT:
     text: RAW_TEXT
     description: Raw text from original data

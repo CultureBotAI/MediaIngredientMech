@@ -80,8 +80,8 @@ URI: [mediaingredientmech:OntologyMapping](https://w3id.org/mediaingredientmech/
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [ontology_id](ontology_id.md) | 1 <br/> [String](String.md) | Ontology term ID in CURIE format (e | direct |
-| [ontology_label](ontology_label.md) | 1 <br/> [String](String.md) | Human-readable label for the term | direct |
+| [ontology_id](ontology_id.md) | 1 <br/> [String](String.md) | Ontology term ID in CURIE format | direct |
+| [ontology_label](ontology_label.md) | 1 <br/> [String](String.md) | Canonical OBO label for ontology_id (e | direct |
 | [ontology_source](ontology_source.md) | 1 <br/> [OntologySourceEnum](OntologySourceEnum.md) | Source ontology | direct |
 | [mapping_quality](mapping_quality.md) | 1 <br/> [MappingQualityEnum](MappingQualityEnum.md) | Quality assessment of this mapping | direct |
 | [match_level](match_level.md) | 0..1 <br/> [MatchLevelEnum](MatchLevelEnum.md) | Technical method used to find this mapping | direct |
@@ -144,18 +144,26 @@ from_schema: https://w3id.org/mediaingredientmech
 attributes:
   ontology_id:
     name: ontology_id
-    description: Ontology term ID in CURIE format (e.g., CHEBI:26710)
-    from_schema: https://w3id.org/mediaingredientmech
-    domain_of:
-    - IngredientRecord
-    - OntologyMapping
-    required: true
-    pattern: ^[A-Z]+:[0-9]+$
-  ontology_label:
-    name: ontology_label
-    description: Human-readable label for the term
+    description: Ontology term ID in CURIE format. Most rows use a standard uppercase-prefix
+      / numeric-local form (e.g. `CHEBI:26710`), but the schema also accepts the lowercase
+      / alphanumeric / dotted prefixes used elsewhere in this project for non-ontology
+      identifiers and kg-microbe registry rows (`cas:247167-54-0`, `mesh:C028805`,
+      `NCIT:C76253`, `kgmicrobe.compound:aburamycin_a`). Local IDs may contain letters,
+      digits, `.`, `_`, `-`, and `~`.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
+    domain_of:
+    - OntologyMapping
+    required: true
+    pattern: ^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$
+  ontology_label:
+    name: ontology_label
+    description: Canonical OBO label for ontology_id (e.g. "sodium chloride" for CHEBI:26710).
+      The id↔label gate verifies this equals the ontology's canonical label; abbreviations/formulas/free
+      names (e.g. "NaCl") belong in preferred_term / synonyms, not here.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    slot_uri: rdfs:label
     domain_of:
     - OntologyMapping
     required: true
@@ -193,7 +201,12 @@ attributes:
     domain_of:
     - OntologyMapping
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - Discussion
+    - Dataset
     range: MappingEvidence
     multivalued: true
     inlined: true
@@ -212,21 +225,29 @@ from_schema: https://w3id.org/mediaingredientmech
 attributes:
   ontology_id:
     name: ontology_id
-    description: Ontology term ID in CURIE format (e.g., CHEBI:26710)
+    description: Ontology term ID in CURIE format. Most rows use a standard uppercase-prefix
+      / numeric-local form (e.g. `CHEBI:26710`), but the schema also accepts the lowercase
+      / alphanumeric / dotted prefixes used elsewhere in this project for non-ontology
+      identifiers and kg-microbe registry rows (`cas:247167-54-0`, `mesh:C028805`,
+      `NCIT:C76253`, `kgmicrobe.compound:aburamycin_a`). Local IDs may contain letters,
+      digits, `.`, `_`, `-`, and `~`.
     from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
     alias: ontology_id
     owner: OntologyMapping
     domain_of:
-    - IngredientRecord
     - OntologyMapping
     range: string
     required: true
-    pattern: ^[A-Z]+:[0-9]+$
+    pattern: ^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$
   ontology_label:
     name: ontology_label
-    description: Human-readable label for the term
+    description: Canonical OBO label for ontology_id (e.g. "sodium chloride" for CHEBI:26710).
+      The id↔label gate verifies this equals the ontology's canonical label; abbreviations/formulas/free
+      names (e.g. "NaCl") belong in preferred_term / synonyms, not here.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
+    slot_uri: rdfs:label
     alias: ontology_label
     owner: OntologyMapping
     domain_of:
@@ -275,7 +296,12 @@ attributes:
     domain_of:
     - OntologyMapping
     - RoleAssignment
-    - CellularRoleAssignment
+    - CommunityOrganismRoleAssignment
+    - NutritionalRoleAssignment
+    - PhysicochemicalRoleAssignment
+    - CellularMetabolicRoleAssignment
+    - Discussion
+    - Dataset
     range: MappingEvidence
     multivalued: true
     inlined: true

@@ -17,8 +17,8 @@ Alias: doi
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RoleCitation](RoleCitation.md) | Citation supporting a role assignment (DOI, publication, database reference) |  no  |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [RoleCitation](RoleCitation.md) | Citation supporting a role assignment (DOI, publication, database reference) |  no  |
 
 
 

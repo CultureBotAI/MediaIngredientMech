@@ -3,19 +3,6 @@
 # Slot: snippet 
 
 
-_Exact substring quoted from the cited abstract that supports_
-
-_this mapping. Used by linkml-reference-validator to detect_
-
-_AI-hallucinated evidence: every snippet must appear verbatim_
-
-_in the cached PubMed abstract for the given pmid/doi._
-
-__
-
-
-
-
 
 URI: [mediaingredientmech:snippet](https://w3id.org/mediaingredientmech/snippet)
 Alias: snippet
@@ -31,6 +18,7 @@ Alias: snippet
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
 
 
 
@@ -51,13 +39,6 @@ Alias: snippet
 
 
 
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
-
-
-
 
 ## Mappings
 
@@ -74,21 +55,10 @@ Alias: snippet
 <details>
 ```yaml
 name: snippet
-description: 'Exact substring quoted from the cited abstract that supports
-
-  this mapping. Used by linkml-reference-validator to detect
-
-  AI-hallucinated evidence: every snippet must appear verbatim
-
-  in the cached PubMed abstract for the given pmid/doi.
-
-  '
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: snippet
-owner: MappingEvidence
 domain_of:
 - MappingEvidence
+- SupportingReference
 range: string
 
 ```
