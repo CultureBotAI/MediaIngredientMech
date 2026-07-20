@@ -83,12 +83,21 @@ DIRECT_ROUTING: dict[str, tuple[str, str]] = {
     "ELECTRON_ACCEPTOR": (CELLULAR, "ELECTRON_ACCEPTOR"),
 }
 
-#: Micronutrient metals/halogens supplied in trace amounts. Presence of any of
-#: these in the formula makes TRACE_ELEMENT the salient nutritional role.
+#: Micronutrient metals supplied in trace amounts. Presence of any of these in
+#: the formula makes TRACE_ELEMENT the salient nutritional role.
 TRACE_ELEMENTS = (
     "Co", "Cu", "Mn", "Zn", "Ni", "Mo", "W", "V", "Se", "B",
-    "Al", "Ba", "Sr", "Sn", "Li", "Cr", "I", "F", "Br",
+    "Al", "Ba", "Sr", "Sn", "Cr",
 )
+
+#: Elements that are minerals but not microbial micronutrients, so TRACE_ELEMENT
+#: would over-claim. Bromide and iodide appear in some trace-element recipes
+#: without an established requirement; fluoride and lithium are not nutrients at
+#: all (NaF and LiCl act as inhibitors / selective agents). These route to the
+#: generic MINERAL_SOURCE, which preserves the curator's original "this is a
+#: mineral" claim without asserting micronutrient status. Reclassifying LiCl or
+#: NaF as SELECTIVE_AGENT needs a curator, not a migration.
+NON_NUTRIENT_MINERALS = ("Br", "F", "I", "Li")
 
 #: Bulk mineral cations -> the residual MINERAL_SOURCE bucket.
 BULK_CATIONS = ("Mg", "Ca", "K", "Na")
@@ -172,14 +181,19 @@ def mineral_targets(record: dict[str, Any]) -> Optional[list[tuple[str, str]]]:
     if "S" in elements and not (has_trace or has_iron):
         targets.append((NUTRITIONAL, "SULFUR_SOURCE"))
 
-    # Bulk cations fill the residual bucket. The guard is on the *cation* roles,
-    # not on `targets` being empty: TRACE_ELEMENT and IRON_SOURCE already name
-    # the cation (Na2MoO4 is a molybdenum source, its sodium is a counter-ion),
-    # but SULFUR_SOURCE and PHOSPHATE_SOURCE name the anion, so a bulk cation
-    # alongside them is a second, distinct nutrient. MgSO4 supplies magnesium
-    # *and* sulfur; suppressing the cation there would lose the single most
-    # common magnesium source in defined media.
-    if (elements & set(BULK_CATIONS)) and not (has_trace or has_iron):
+    # The residual MINERAL_SOURCE bucket, earned two ways: a bulk cation, or a
+    # mineral that is not a micronutrient. KBr qualifies on both counts (K and
+    # Br), so this is one condition rather than two appends.
+    #
+    # The guard is on the *cation* roles, not on `targets` being empty:
+    # TRACE_ELEMENT and IRON_SOURCE already name the cation (Na2MoO4 is a
+    # molybdenum source, its sodium is a counter-ion), but SULFUR_SOURCE and
+    # PHOSPHATE_SOURCE name the anion, so a bulk cation alongside them is a
+    # second, distinct nutrient. MgSO4 supplies magnesium *and* sulfur;
+    # suppressing the cation there would lose the single most common magnesium
+    # source in defined media.
+    residual = set(BULK_CATIONS) | set(NON_NUTRIENT_MINERALS)
+    if (elements & residual) and not (has_trace or has_iron):
         targets.append((NUTRITIONAL, "MINERAL_SOURCE"))
 
     # Formula-free records (e.g. elemental sulfur has no formula on the record)
