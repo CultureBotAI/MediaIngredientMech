@@ -226,7 +226,19 @@ def test_add_nutritional_role():
     assert assignment["confidence"] == 0.98
     assert assignment["notes"] == "Round-trip check for notes preservation."
     assert len(assignment["evidence"]) == 1
-    assert assignment["evidence"][0]["doi"] == "10.1128/jb.00456-20"
+    # Every citation field must survive the round trip, not just the DOI: a
+    # writer that silently stopped recording curator_note or reference_type
+    # would otherwise pass.
+    citation = assignment["evidence"][0]
+    assert citation["doi"] == "10.1128/jb.00456-20"
+    assert citation["reference_type"] == "PEER_REVIEWED_PUBLICATION"
+    assert citation["reference_text"] == "DOI: 10.1128/jb.00456-20"
+    assert citation["curator_note"].startswith("L-cysteine supplies")
+
+    # The history entry must name both the role and the DOI.
+    changes = result["curation_history"][0]["changes"]
+    assert "AMINO_ACID_SOURCE" in changes
+    assert "10.1128/jb.00456-20" in changes
 
     curator.add_nutritional_role(record, role="SULFUR_SOURCE", confidence=0.9)
     assert len(result["nutritional_roles"]) == 2
@@ -278,7 +290,12 @@ def test_add_physicochemical_role():
     )
     assert len(result["physicochemical_roles"]) == 2
     assert len(result["physicochemical_roles"][1]["evidence"]) == 1
-    assert result["physicochemical_roles"][1]["evidence"][0]["doi"] == "10.1128/aem.02345-19"
+    citation = result["physicochemical_roles"][1]["evidence"][0]
+    assert citation["doi"] == "10.1128/aem.02345-19"
+    assert citation["reference_type"] == "PEER_REVIEWED_PUBLICATION"
+    # With a DOI but no explicit reference_text, the writer synthesises one.
+    assert citation["reference_text"] == "DOI: 10.1128/aem.02345-19"
+    assert "SURFACTANT" in result["curation_history"][-1]["changes"]
 
     print("✓ test_add_physicochemical_role passed")
 
