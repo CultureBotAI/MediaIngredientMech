@@ -904,9 +904,7 @@ enums:
         mappings:
           - METPO:2000010
       LIGHT_SOURCE:
-        description: Radiant-energy source for phototrophic growth.
-        mappings:
-          - METPO:1000656
+        description: Radiant-energy source for phototrophic growth. No CHEBI or METPO term yet describes a radiant-energy *supply* role (METPO:1000656 is the organism metabolic-mode `photoautotrophic`, not a supply-side role); METPO submission pending.
 
   PhysicochemicalRoleEnum:
     description: >-
@@ -978,7 +976,7 @@ enums:
         description: Acts as an intracellular enzyme cofactor (contrast with NutritionalRoleEnum.COFACTOR_PROVIDER, the supply-side role).
         meaning: CHEBI:23357
       PROSTHETIC_GROUP_PRECURSOR:
-        description: Precursor for a covalently-bound cofactor / prosthetic group (e.g., δ-aminolevulinate for heme).
+        description: Precursor for a covalently-bound cofactor / prosthetic group (e.g., δ-aminolevulinate for heme). Note the mapping below points at the parent role `prosthetic group` — CHEBI has no dedicated `prosthetic group precursor` role class, so the mapping is a hierarchy pointer, not identity.
         mappings:
           - CHEBI:26348
       MEMBRANE_COMPONENT:
