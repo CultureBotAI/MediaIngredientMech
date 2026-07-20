@@ -97,28 +97,31 @@ def test_research_env_maps_futurehouse_key_to_edison(monkeypatch):
 
 
 def test_research_env_keeps_existing_edison_key(monkeypatch):
-    """CONTRACT CHANGE: an ambient EDISON_API_KEY is no longer forwarded to Falcon.
+    """The canonical EDISON_API_KEY wins over the deprecated alias.
 
-    This previously asserted the opposite — that an existing EDISON_API_KEY wins
-    for every provider. That is unsafe in practice: this repo's `.env` sets
-    EDISON_API_KEY and `just` injects it via dotenv-load, so the "existing" key is
-    ambient repo configuration rather than a caller instruction, and forwarding it
-    to `--provider falcon` transmitted an Edison credential to FutureHouse.
-
-    Edison-named variables are now dropped for non-Edison providers. To pin a
-    credential for Falcon, set FUTUREHOUSE_API_KEY.
+    `--provider falcon` IS the Edison provider (deep_research_client/client.py
+    registers it as "Edison provider (formerly Falcon/FutureHouse)" and resolves
+    `EDISON_API_KEY or FUTUREHOUSE_API_KEY` into an EdisonClient), so an Edison
+    key is exactly the right credential for it. FUTUREHOUSE_API_KEY is a
+    deprecated alias for that same key and must not override it.
     """
     monkeypatch.setenv("EDISON_API_KEY", "edison-key")
     monkeypatch.setenv("FUTUREHOUSE_API_KEY", "futurehouse-key")
-    env = research_env("falcon")
-    assert env["EDISON_API_KEY"] == "futurehouse-key"
+    assert research_env("falcon")["EDISON_API_KEY"] == "edison-key"
 
 
-def test_research_env_withholds_edison_key_from_falcon(monkeypatch):
-    """With no FutureHouse key, leave it unset rather than substitute Edison's."""
+def test_research_env_passes_edison_key_to_falcon(monkeypatch):
+    """Regression guard: falcon must not be starved of the Edison credential.
+
+    A previous change stripped EDISON_API_KEY for `--provider falcon` on the
+    false premise that falcon was a third-party FutureHouse endpoint. It is not,
+    and the effect was that the falcon provider stopped registering at all
+    (client.py only registers it when a key resolves), so every Falcon run
+    failed.
+    """
     monkeypatch.setenv("EDISON_API_KEY", "edison-key")
-    env = research_env("falcon")
-    assert "EDISON_API_KEY" not in env
+    monkeypatch.delenv("FUTUREHOUSE_API_KEY", raising=False)
+    assert research_env("falcon")["EDISON_API_KEY"] == "edison-key"
 
 
 def test_research_env_leaves_edison_providers_untouched(monkeypatch):
@@ -127,16 +130,8 @@ def test_research_env_leaves_edison_providers_untouched(monkeypatch):
 
 
 @pytest.mark.parametrize("spelling", ["Falcon", "FALCON", " falcon ", "FaLcOn"])
-def test_research_env_withholds_edison_key_regardless_of_provider_spelling(
-    monkeypatch, spelling
-):
-    """The guard must not be defeated by capitalisation.
-
-    `--provider` takes free text (no argparse `choices`), and the value is passed
-    to deep-research-client verbatim. So `--provider Falcon` still routes to
-    FutureHouse; if the credential lookup were case-sensitive it would miss and
-    forward the Edison key — the exact leak this guard exists to prevent.
-    """
-    monkeypatch.setenv("EDISON_API_KEY", "edison-key")
-    monkeypatch.delenv("FUTUREHOUSE_API_KEY", raising=False)
-    assert "EDISON_API_KEY" not in research_env(spelling)
+def test_research_env_alias_applies_regardless_of_provider_spelling(monkeypatch, spelling):
+    """`--provider` is free text, so the alias must not hinge on capitalisation."""
+    monkeypatch.delenv("EDISON_API_KEY", raising=False)
+    monkeypatch.setenv("FUTUREHOUSE_API_KEY", "futurehouse-key")
+    assert research_env(spelling)["EDISON_API_KEY"] == "futurehouse-key"
