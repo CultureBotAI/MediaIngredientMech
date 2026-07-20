@@ -81,8 +81,8 @@ def test_add_media_role_without_citation():
     print("✓ test_add_media_role_without_citation passed")
 
 
-def test_add_cellular_role():
-    """Test adding a cellular role with metabolic context."""
+def test_add_community_organism_role():
+    """Test adding a community-organism role with metabolic context."""
     curator = IngredientCurator(curator_name="test_curator")
 
     record = {
@@ -91,7 +91,7 @@ def test_add_cellular_role():
         "mapping_status": "MAPPED",
     }
 
-    result = curator.add_cellular_role(
+    result = curator.add_community_organism_role(
         record,
         role="PRIMARY_DEGRADER",
         metabolic_context="aromatic hydrocarbon degradation",
@@ -101,19 +101,18 @@ def test_add_cellular_role():
         curator_note="Primary organism degrading toluene in consortium",
     )
 
-    assert "cellular_roles" in result
-    assert len(result["cellular_roles"]) == 1
-    role_assignment = result["cellular_roles"][0]
+    assert "community_organism_roles" in result
+    assert len(result["community_organism_roles"]) == 1
+    role_assignment = result["community_organism_roles"][0]
     assert role_assignment["role"] == "PRIMARY_DEGRADER"
     assert role_assignment["metabolic_context"] == "aromatic hydrocarbon degradation"
     assert role_assignment["confidence"] == 0.9
     assert len(role_assignment["evidence"]) == 1
     assert role_assignment["evidence"][0]["doi"] == "10.1038/nature12345"
 
-    # Check curation history mentions metabolic context
     assert "aromatic hydrocarbon degradation" in result["curation_history"][0]["changes"]
 
-    print("✓ test_add_cellular_role passed")
+    print("✓ test_add_community_organism_role passed")
 
 
 def test_set_solution_type():
@@ -290,7 +289,7 @@ def test_multiple_roles():
 if __name__ == "__main__":
     test_add_media_role()
     test_add_media_role_without_citation()
-    test_add_cellular_role()
+    test_add_community_organism_role()
     test_set_solution_type()
     test_validation_invalid_role()
     test_validation_invalid_doi()

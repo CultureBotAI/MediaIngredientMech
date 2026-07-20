@@ -35,7 +35,7 @@ def query_with_doi(ingredients: list[dict]) -> list[dict]:
         for ing in ingredients
         if any(
             any(e.get("doi") for e in r.get("evidence", []))
-            for r in ing.get("media_roles", []) + ing.get("cellular_roles", [])
+            for r in ing.get("media_roles", []) + ing.get("community_organism_roles", [])
         )
     ]
 
@@ -44,7 +44,7 @@ def query_high_confidence(ingredients: list[dict], threshold: float = 0.95) -> l
     """Find ingredients with high-confidence role assignments."""
     result = []
     for ing in ingredients:
-        for role_list in [ing.get("media_roles", []), ing.get("cellular_roles", [])]:
+        for role_list in [ing.get("media_roles", []), ing.get("community_organism_roles", [])]:
             if any(r.get("confidence", 0) >= threshold for r in role_list):
                 result.append(ing)
                 break
@@ -56,7 +56,7 @@ def query_multiple_roles(ingredients: list[dict]) -> list[dict]:
     return [
         ing
         for ing in ingredients
-        if len(ing.get("media_roles", [])) + len(ing.get("cellular_roles", [])) > 1
+        if len(ing.get("media_roles", [])) + len(ing.get("community_organism_roles", [])) > 1
     ]
 
 
@@ -135,7 +135,7 @@ def main():
         for ing in with_doi[:5]:
             name = ing.get("preferred_term")
             # Extract DOI
-            for role in ing.get("media_roles", []) + ing.get("cellular_roles", []):
+            for role in ing.get("media_roles", []) + ing.get("community_organism_roles", []):
                 for evidence in role.get("evidence", []):
                     doi = evidence.get("doi")
                     if doi:

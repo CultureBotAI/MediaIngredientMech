@@ -35,15 +35,15 @@ def validate_file(file_path: Path, label: str) -> dict:
     stats = {
         "total_ingredients": len(curator.records),
         "with_media_roles": 0,
-        "with_cellular_roles": 0,
+        "with_community_organism_roles": 0,
         "with_solution_type": 0,
         "total_media_roles": 0,
-        "total_cellular_roles": 0,
+        "total_community_organism_roles": 0,
         "roles_with_citations": 0,
         "roles_with_doi": 0,
         "validation_errors": 0,
         "media_role_counts": defaultdict(int),
-        "cellular_role_counts": defaultdict(int),
+        "community_organism_role_counts": defaultdict(int),
         "solution_type_counts": defaultdict(int),
         "citation_type_counts": defaultdict(int),
         "confidence_scores": [],
@@ -90,16 +90,15 @@ def validate_file(file_path: Path, label: str) -> dict:
                         if cite.get("doi"):
                             stats["roles_with_doi"] += 1
 
-        # Count cellular roles
-        cellular_roles = record.get("cellular_roles", [])
-        if cellular_roles:
-            stats["with_cellular_roles"] += 1
-            stats["total_cellular_roles"] += len(cellular_roles)
+        community_organism_roles = record.get("community_organism_roles", [])
+        if community_organism_roles:
+            stats["with_community_organism_roles"] += 1
+            stats["total_community_organism_roles"] += len(community_organism_roles)
 
-            for role_assignment in cellular_roles:
+            for role_assignment in community_organism_roles:
                 role = role_assignment.get("role")
                 if role:
-                    stats["cellular_role_counts"][role] += 1
+                    stats["community_organism_role_counts"][role] += 1
 
                 # Confidence tracking
                 confidence = role_assignment.get("confidence")
@@ -140,7 +139,7 @@ def print_stats(stats: dict, label: str):
         f"  With media roles: {stats['with_media_roles']} ({stats['with_media_roles']/total*100:.1f}%)"
     )
     print(
-        f"  With cellular roles: {stats['with_cellular_roles']} ({stats['with_cellular_roles']/total*100:.1f}%)"
+        f"  With community-organism roles: {stats['with_community_organism_roles']} ({stats['with_community_organism_roles']/total*100:.1f}%)"
     )
     print(
         f"  With solution type: {stats['with_solution_type']} ({stats['with_solution_type']/total*100:.1f}%)"
@@ -148,7 +147,7 @@ def print_stats(stats: dict, label: str):
 
     print(f"\nROLE COUNTS:")
     print(f"  Total media roles: {stats['total_media_roles']}")
-    print(f"  Total cellular roles: {stats['total_cellular_roles']}")
+    print(f"  Total community-organism roles: {stats['total_community_organism_roles']}")
 
     if stats["total_media_roles"] > 0:
         print(f"\nMEDIA ROLE DISTRIBUTION:")
@@ -157,10 +156,10 @@ def print_stats(stats: dict, label: str):
         ):
             print(f"  {role:25s}: {count:4d}")
 
-    if stats["total_cellular_roles"] > 0:
-        print(f"\nCELLULAR ROLE DISTRIBUTION:")
+    if stats["total_community_organism_roles"] > 0:
+        print(f"\nCOMMUNITY-ORGANISM ROLE DISTRIBUTION:")
         for role, count in sorted(
-            stats["cellular_role_counts"].items(), key=lambda x: x[1], reverse=True
+            stats["community_organism_role_counts"].items(), key=lambda x: x[1], reverse=True
         ):
             print(f"  {role:25s}: {count:4d}")
 
@@ -171,7 +170,7 @@ def print_stats(stats: dict, label: str):
         ):
             print(f"  {sol_type:25s}: {count:4d}")
 
-    total_roles = stats["total_media_roles"] + stats["total_cellular_roles"]
+    total_roles = stats["total_media_roles"] + stats["total_community_organism_roles"]
     if total_roles > 0:
         print(f"\nCITATION STATISTICS:")
         print(
@@ -229,15 +228,15 @@ def main():
 
     total_ingredients = mapped_stats["total_ingredients"] + unmapped_stats["total_ingredients"]
     total_with_media = mapped_stats["with_media_roles"] + unmapped_stats["with_media_roles"]
-    total_with_cellular = (
-        mapped_stats["with_cellular_roles"] + unmapped_stats["with_cellular_roles"]
+    total_with_community_organism = (
+        mapped_stats["with_community_organism_roles"] + unmapped_stats["with_community_organism_roles"]
     )
     total_with_solution = (
         mapped_stats["with_solution_type"] + unmapped_stats["with_solution_type"]
     )
     total_media_roles = mapped_stats["total_media_roles"] + unmapped_stats["total_media_roles"]
-    total_cellular_roles = (
-        mapped_stats["total_cellular_roles"] + unmapped_stats["total_cellular_roles"]
+    total_community_organism_roles_all = (
+        mapped_stats["total_community_organism_roles"] + unmapped_stats["total_community_organism_roles"]
     )
     total_roles_with_citations = (
         mapped_stats["roles_with_citations"] + unmapped_stats["roles_with_citations"]
@@ -248,15 +247,15 @@ def main():
     print(f"\nTotal ingredients: {total_ingredients}")
     print(f"With media roles: {total_with_media} ({total_with_media/total_ingredients*100:.1f}%)")
     print(
-        f"With cellular roles: {total_with_cellular} ({total_with_cellular/total_ingredients*100:.1f}%)"
+        f"With community-organism roles: {total_with_community_organism} ({total_with_community_organism/total_ingredients*100:.1f}%)"
     )
     print(
         f"With solution type: {total_with_solution} ({total_with_solution/total_ingredients*100:.1f}%)"
     )
     print(f"\nTotal media roles assigned: {total_media_roles}")
-    print(f"Total cellular roles assigned: {total_cellular_roles}")
+    print(f"Total community-organism roles assigned: {total_community_organism_roles_all}")
 
-    total_roles = total_media_roles + total_cellular_roles
+    total_roles = total_media_roles + total_community_organism_roles_all
     if total_roles > 0:
         print(
             f"\nRoles with citations: {total_roles_with_citations}/{total_roles} ({total_roles_with_citations/total_roles*100:.1f}%)"

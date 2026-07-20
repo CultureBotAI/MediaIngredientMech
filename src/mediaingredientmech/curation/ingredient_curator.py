@@ -70,7 +70,7 @@ VALID_MEDIA_ROLES = {
     "CHELATOR",
 }
 
-VALID_CELLULAR_ROLES = {
+VALID_COMMUNITY_ORGANISM_ROLES = {
     "PRIMARY_DEGRADER",
     "REDUCTIVE_DEGRADER",
     "OXIDATIVE_DEGRADER",
@@ -534,7 +534,7 @@ class IngredientCurator:
         self._dirty = True
         return record
 
-    def add_cellular_role(
+    def add_community_organism_role(
         self,
         record: dict[str, Any],
         role: str,
@@ -549,11 +549,11 @@ class IngredientCurator:
         curator_note: Optional[str] = None,
         notes: Optional[str] = None,
     ) -> dict[str, Any]:
-        """Add a cellular/metabolic role to an ingredient.
+        """Add an organism-in-community role to an ingredient/organism record.
 
         Args:
-            record: The ingredient record dict to update.
-            role: CellularRoleEnum value (e.g., "PRIMARY_DEGRADER", "ELECTRON_DONOR").
+            record: The record dict to update.
+            role: CommunityOrganismRoleEnum value (e.g., "PRIMARY_DEGRADER", "SYNERGIST").
             metabolic_context: Pathway or metabolic context (e.g., "denitrification").
             confidence: Confidence score (0.0-1.0). Defaults to 0.9.
             doi: Digital Object Identifier.
@@ -571,10 +571,10 @@ class IngredientCurator:
         Raises:
             ValueError: If role, confidence, DOI format, or reference_type is invalid.
         """
-        # Validation
-        if role not in VALID_CELLULAR_ROLES:
+        if role not in VALID_COMMUNITY_ORGANISM_ROLES:
             raise ValueError(
-                f"Invalid cellular role: {role}. Must be one of {VALID_CELLULAR_ROLES}"
+                f"Invalid community-organism role: {role}. "
+                f"Must be one of {VALID_COMMUNITY_ORGANISM_ROLES}"
             )
         if not (0.0 <= confidence <= 1.0):
             raise ValueError(f"Confidence out of range: {confidence}. Must be between 0.0 and 1.0")
@@ -616,13 +616,11 @@ class IngredientCurator:
 
             role_assignment["evidence"].append(citation)
 
-        # Add to record
-        if "cellular_roles" not in record or record["cellular_roles"] is None:
-            record["cellular_roles"] = []
-        record["cellular_roles"].append(role_assignment)
+        if "community_organism_roles" not in record or record["community_organism_roles"] is None:
+            record["community_organism_roles"] = []
+        record["community_organism_roles"].append(role_assignment)
 
-        # Log curation event
-        changes_msg = f"Added cellular role: {role} (confidence: {confidence:.2f})"
+        changes_msg = f"Added community-organism role: {role} (confidence: {confidence:.2f})"
         if metabolic_context:
             changes_msg += f" in context: {metabolic_context}"
         if doi:
@@ -690,21 +688,23 @@ class IngredientCurator:
                         f"Invalid reference_type at media role {i}, evidence {j}: {ref_type}"
                     )
 
-        # Validate cellular roles
-        for i, role_assignment in enumerate(record.get("cellular_roles", [])):
+        for i, role_assignment in enumerate(record.get("community_organism_roles", [])):
             role = role_assignment.get("role")
-            if role and role not in VALID_CELLULAR_ROLES:
-                errors.append(f"Invalid cellular role at index {i}: {role}")
+            if role and role not in VALID_COMMUNITY_ORGANISM_ROLES:
+                errors.append(f"Invalid community-organism role at index {i}: {role}")
 
             confidence = role_assignment.get("confidence")
             if confidence is not None and not (0.0 <= confidence <= 1.0):
-                errors.append(f"Confidence out of range at cellular role {i}: {confidence}")
+                errors.append(
+                    f"Confidence out of range at community-organism role {i}: {confidence}"
+                )
 
-            # Validate DOIs in evidence
             for j, evidence in enumerate(role_assignment.get("evidence", [])):
                 doi = evidence.get("doi")
                 if doi and not DOI_PATTERN.match(doi):
-                    errors.append(f"Invalid DOI format at cellular role {i}, evidence {j}: {doi}")
+                    errors.append(
+                        f"Invalid DOI format at community-organism role {i}, evidence {j}: {doi}"
+                    )
 
                 ref_type = evidence.get("reference_type")
                 if ref_type and ref_type not in VALID_CITATION_TYPES:

@@ -120,11 +120,11 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: Functional roles in growth medium formulation (e.g., NITROGEN_SOURCE, BUFFER)
-      cellular_roles:
-        range: CellularRoleAssignment
+      community_organism_roles:
+        range: CommunityOrganismRoleAssignment
         multivalued: true
         inlined_as_list: true
-        description: Cellular/metabolic roles in organism metabolism (e.g., PRIMARY_DEGRADER, ELECTRON_DONOR)
+        description: Role(s) this organism plays in a microbial community (e.g., PRIMARY_DEGRADER, SYNERGIST, COMPETITOR). Formerly `cellular_roles`; renamed to disambiguate from ingredient-level cellular metabolic roles.
       solution_type:
         range: SolutionTypeEnum
         description: Type of solution if this is a stock/pre-mix rather than individual chemical
@@ -496,13 +496,13 @@ classes:
       notes:
         description: Additional context about this role assignment
 
-  CellularRoleAssignment:
-    description: Assignment of a cellular/metabolic role in organism metabolism with supporting evidence
+  CommunityOrganismRoleAssignment:
+    description: Assignment of an organism-in-community role with supporting evidence (e.g., which member of a consortium plays the PRIMARY_DEGRADER or SYNERGIST role).
     attributes:
       role:
-        range: CellularRoleEnum
+        range: CommunityOrganismRoleEnum
         required: true
-        description: The cellular/metabolic role (e.g., PRIMARY_DEGRADER, ELECTRON_DONOR)
+        description: The community/ecological role of the organism (e.g., PRIMARY_DEGRADER, SYNERGIST, COMMENSAL, COMPETITOR).
       metabolic_context:
         description: Pathway or metabolic context (e.g., "denitrification", "aromatic degradation")
       confidence:
@@ -858,8 +858,8 @@ enums:
       CHELATOR:
         description: Sequesters/chelates metal ions to control availability or toxicity (e.g., EDTA, NTA, citrate)
 
-  CellularRoleEnum:
-    description: Cellular and metabolic roles in microbial communities
+  CommunityOrganismRoleEnum:
+    description: Role an organism plays in a microbial community (formerly `CellularRoleEnum`; renamed 2026-07-19 to disambiguate from cell-level metabolic roles of ingredients — these values describe organisms, not ingredients).
     permissible_values:
       PRIMARY_DEGRADER:
         description: Main organism degrading target compound(s)
