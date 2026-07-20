@@ -23,10 +23,28 @@ _SCHEMA_VIEW: Optional[SchemaView] = None
 
 
 def _schema_view() -> SchemaView:
-    """Lazy SchemaView over the LinkML source. Cached at module scope."""
+    """Lazy SchemaView over the LinkML source. Cached at module scope.
+
+    Any load failure (missing file, corrupt YAML, unresolvable `imports:`) is re-raised
+    with the schema path attached so downstream import errors don't surface as opaque
+    LinkML tracebacks.
+    """
     global _SCHEMA_VIEW
     if _SCHEMA_VIEW is None:
-        _SCHEMA_VIEW = SchemaView(str(_SCHEMA_PATH))
+        if not _SCHEMA_PATH.exists():
+            raise RuntimeError(
+                f"MediaIngredientMech schema not found at {_SCHEMA_PATH}. "
+                "The curator module needs it to derive its role/citation validation sets. "
+                "If you are running from a wheel install, verify the `mediaingredientmech = ['schema/*.yaml']` "
+                "package-data entry in pyproject.toml survived the build."
+            )
+        try:
+            _SCHEMA_VIEW = SchemaView(str(_SCHEMA_PATH))
+        except Exception as exc:  # LinkML raises heterogeneous errors here.
+            raise RuntimeError(
+                f"Failed to load MediaIngredientMech schema at {_SCHEMA_PATH}: {exc!r}. "
+                "The curator module cannot derive its validation sets without a loadable schema."
+            ) from exc
     return _SCHEMA_VIEW
 
 
@@ -36,7 +54,8 @@ def _enum_permissible_values(enum_name: str) -> frozenset[str]:
     if enum_def is None:
         raise RuntimeError(
             f"Enum '{enum_name}' not found in {_SCHEMA_PATH}. "
-            "Schema and curator have drifted — investigate before proceeding."
+            "Schema and curator have drifted — the curator expects this enum to exist. "
+            "Either restore the enum in the schema or remove the VALID_* set that references it here."
         )
     return frozenset(enum_def.permissible_values.keys())
 
