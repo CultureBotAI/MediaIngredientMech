@@ -302,6 +302,7 @@ def test_add_nutritional_role():
         doi="10.1128/jb.00456-20",
         reference_type="PEER_REVIEWED_PUBLICATION",
         curator_note="L-cysteine supplies cysteine + sulfur simultaneously in defined media.",
+        notes="Round-trip check for notes preservation.",
     )
 
     assert "nutritional_roles" in result
@@ -309,18 +310,27 @@ def test_add_nutritional_role():
     assignment = result["nutritional_roles"][0]
     assert assignment["role"] == "AMINO_ACID_SOURCE"
     assert assignment["confidence"] == 0.98
+    assert assignment["notes"] == "Round-trip check for notes preservation."
     assert len(assignment["evidence"]) == 1
     assert assignment["evidence"][0]["doi"] == "10.1128/jb.00456-20"
 
     curator.add_nutritional_role(record, role="SULFUR_SOURCE", confidence=0.9)
     assert len(result["nutritional_roles"]) == 2
     assert result["nutritional_roles"][1]["role"] == "SULFUR_SOURCE"
+    # No-citation branch must NOT leak a phantom empty citation.
+    assert result["nutritional_roles"][1]["evidence"] == []
 
     print("✓ test_add_nutritional_role passed")
 
 
 def test_add_physicochemical_role():
-    """Test adding a physicochemical-facet role."""
+    """Test adding a physicochemical-facet role.
+
+    Includes the no-citation branch (no doi/pmid/reference_text/url provided) —
+    `evidence` must be an empty list. Note: passing `curator_note`/`excerpt`
+    alone does not trigger citation creation (inherited from add_media_role);
+    a real citation needs at least one of doi/pmid/reference_text/url.
+    """
     curator = IngredientCurator(curator_name="test_curator")
     record = {
         "ontology_id": "CHEBI:64755",
@@ -332,7 +342,7 @@ def test_add_physicochemical_role():
         record,
         role="CHELATOR",
         confidence=0.99,
-        curator_note="EDTA is the canonical divalent-cation chelator in media.",
+        notes="Round-trip check for notes preservation.",
     )
 
     assert "physicochemical_roles" in result
@@ -340,6 +350,21 @@ def test_add_physicochemical_role():
     assignment = result["physicochemical_roles"][0]
     assert assignment["role"] == "CHELATOR"
     assert assignment["confidence"] == 0.99
+    assert assignment["notes"] == "Round-trip check for notes preservation."
+    # No-citation branch must NOT leak a phantom empty citation.
+    assert assignment["evidence"] == []
+
+    # Second call WITH a DOI must attach a citation.
+    curator.add_physicochemical_role(
+        record,
+        role="SURFACTANT",
+        confidence=0.9,
+        doi="10.1128/aem.02345-19",
+        reference_type="PEER_REVIEWED_PUBLICATION",
+    )
+    assert len(result["physicochemical_roles"]) == 2
+    assert len(result["physicochemical_roles"][1]["evidence"]) == 1
+    assert result["physicochemical_roles"][1]["evidence"][0]["doi"] == "10.1128/aem.02345-19"
 
     print("✓ test_add_physicochemical_role passed")
 
@@ -361,6 +386,7 @@ def test_add_cellular_metabolic_role():
         doi="10.1128/mmbr.00012-16",
         reference_type="PEER_REVIEWED_PUBLICATION",
         curator_note="Methanol is the electron donor for MDH in methylotrophic C1 metabolism.",
+        notes="Round-trip check for notes preservation.",
     )
 
     assert "cellular_metabolic_roles" in result
@@ -369,10 +395,18 @@ def test_add_cellular_metabolic_role():
     assert assignment["role"] == "ELECTRON_DONOR"
     assert assignment["metabolic_context"] == "methylotrophs only"
     assert assignment["confidence"] == 0.95
+    assert assignment["notes"] == "Round-trip check for notes preservation."
     assert len(assignment["evidence"]) == 1
     assert assignment["evidence"][0]["doi"] == "10.1128/mmbr.00012-16"
 
     assert "methylotrophs only" in result["curation_history"][0]["changes"]
+
+    # No-citation, no-metabolic_context branch: evidence == [] and no metabolic_context key.
+    curator.add_cellular_metabolic_role(record, role="SUBSTRATE", confidence=0.9)
+    assert len(result["cellular_metabolic_roles"]) == 2
+    second = result["cellular_metabolic_roles"][1]
+    assert second["evidence"] == []
+    assert "metabolic_context" not in second
 
     print("✓ test_add_cellular_metabolic_role passed")
 

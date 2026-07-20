@@ -954,7 +954,7 @@ class IngredientCurator:
                 ref_type = evidence.get("reference_type")
                 if ref_type and ref_type not in VALID_CITATION_TYPES:
                     errors.append(
-                        f"Invalid reference_type at cellular role {i}, evidence {j}: {ref_type}"
+                        f"Invalid reference_type at community-organism role {i}, evidence {j}: {ref_type}"
                     )
 
         for slot, valid_set, label in (
