@@ -126,6 +126,21 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: Role(s) this organism plays in a microbial community (e.g., PRIMARY_DEGRADER, SYNERGIST, COMPETITOR). Formerly `cellular_roles`; renamed to disambiguate from ingredient-level cellular metabolic roles.
+      nutritional_roles:
+        range: NutritionalRoleAssignment
+        multivalued: true
+        inlined_as_list: true
+        description: What element or macronutrient this ingredient supplies to the medium (e.g., CARBON_SOURCE, SULFUR_SOURCE, VITAMIN_SOURCE). Facet 1 of 3 orthogonal ingredient-role facets — a single ingredient may carry multiple values (e.g., L-cysteine → AMINO_ACID_SOURCE + SULFUR_SOURCE).
+      physicochemical_roles:
+        range: PhysicochemicalRoleAssignment
+        multivalued: true
+        inlined_as_list: true
+        description: Chemical or physical function this ingredient performs in the medium (e.g., BUFFER, CHELATOR, REDUCING_AGENT). Facet 2 of 3 orthogonal ingredient-role facets — independent of what element the ingredient supplies.
+      cellular_metabolic_roles:
+        range: CellularMetabolicRoleAssignment
+        multivalued: true
+        inlined_as_list: true
+        description: Role of this ingredient inside/on the cultured microbe (e.g., SUBSTRATE, ELECTRON_DONOR, COFACTOR). Facet 3 of 3 orthogonal ingredient-role facets — often organism-conditional (e.g., ELECTRON_DONOR applies only for organisms that oxidize the compound for energy).
       solution_type:
         range: SolutionTypeEnum
         description: Type of solution if this is a stock/pre-mix rather than individual chemical
@@ -506,6 +521,62 @@ classes:
         description: The community/ecological role of the organism (e.g., PRIMARY_DEGRADER, SYNERGIST, COMMENSAL, COMPETITOR).
       metabolic_context:
         description: Pathway or metabolic context (e.g., "denitrification", "aromatic degradation")
+      confidence:
+        range: float
+        description: Confidence score for this role assignment (0.0-1.0)
+      evidence:
+        range: RoleCitation
+        multivalued: true
+        inlined_as_list: true
+        description: Citations and references supporting this role
+      notes:
+        description: Additional context about this role assignment
+
+  NutritionalRoleAssignment:
+    description: Assignment of a nutritional facet role (what element or macronutrient the ingredient supplies) with supporting evidence.
+    attributes:
+      role:
+        range: NutritionalRoleEnum
+        required: true
+        description: The nutritional role (e.g., CARBON_SOURCE, SULFUR_SOURCE, VITAMIN_SOURCE).
+      confidence:
+        range: float
+        description: Confidence score for this role assignment (0.0-1.0)
+      evidence:
+        range: RoleCitation
+        multivalued: true
+        inlined_as_list: true
+        description: Citations and references supporting this role
+      notes:
+        description: Additional context about this role assignment
+
+  PhysicochemicalRoleAssignment:
+    description: Assignment of a physicochemical facet role (the chemical or physical function the ingredient performs in the medium) with supporting evidence.
+    attributes:
+      role:
+        range: PhysicochemicalRoleEnum
+        required: true
+        description: The physicochemical role (e.g., BUFFER, CHELATOR, REDUCING_AGENT).
+      confidence:
+        range: float
+        description: Confidence score for this role assignment (0.0-1.0)
+      evidence:
+        range: RoleCitation
+        multivalued: true
+        inlined_as_list: true
+        description: Citations and references supporting this role
+      notes:
+        description: Additional context about this role assignment
+
+  CellularMetabolicRoleAssignment:
+    description: Assignment of a cellular-metabolic facet role (what the ingredient does inside or to the cultured microbe) with supporting evidence. Assignments in this facet are often organism-conditional (e.g., ELECTRON_DONOR applies only for organisms that oxidize the compound for energy); capture that in `metabolic_context`.
+    attributes:
+      role:
+        range: CellularMetabolicRoleEnum
+        required: true
+        description: The cellular-metabolic role (e.g., SUBSTRATE, ELECTRON_DONOR, COFACTOR).
+      metabolic_context:
+        description: Pathway or organism context that scopes this assignment (e.g., "methanol → ELECTRON_DONOR in methylotrophs only", "sulfate → ELECTRON_ACCEPTOR under anaerobic sulfate reduction"). Important when a role only holds for a subset of organisms or conditions.
       confidence:
         range: float
         description: Confidence score for this role assignment (0.0-1.0)

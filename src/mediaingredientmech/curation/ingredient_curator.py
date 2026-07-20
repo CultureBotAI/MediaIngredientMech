@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 import yaml
+from linkml_runtime.utils.schemaview import SchemaView
 
 from mediaingredientmech.curate.curation_event import now_iso, record_curation_event
 from mediaingredientmech.utils.ontology_client import OntologyCandidate, OntologyClient
@@ -16,6 +17,29 @@ from mediaingredientmech.utils.yaml_handler import save_yaml
 logger = logging.getLogger(__name__)
 
 DEFAULT_UNMAPPED_PATH = Path("data/curated/unmapped_ingredients.yaml")
+
+_SCHEMA_PATH = Path(__file__).resolve().parent.parent / "schema" / "mediaingredientmech.yaml"
+_SCHEMA_VIEW: Optional[SchemaView] = None
+
+
+def _schema_view() -> SchemaView:
+    """Lazy SchemaView over the LinkML source. Cached at module scope."""
+    global _SCHEMA_VIEW
+    if _SCHEMA_VIEW is None:
+        _SCHEMA_VIEW = SchemaView(str(_SCHEMA_PATH))
+    return _SCHEMA_VIEW
+
+
+def _enum_permissible_values(enum_name: str) -> frozenset[str]:
+    """Return the permissible-value name set for a schema enum. Source of truth for validation sets below."""
+    enum_def = _schema_view().get_enum(enum_name)
+    if enum_def is None:
+        raise RuntimeError(
+            f"Enum '{enum_name}' not found in {_SCHEMA_PATH}. "
+            "Schema and curator have drifted — investigate before proceeding."
+        )
+    return frozenset(enum_def.permissible_values.keys())
+
 
 VALID_STATUSES = {
     "MAPPED",
@@ -45,64 +69,13 @@ VALID_MATCH_LEVEL = {
     "UNKNOWN",
 }
 
-VALID_MEDIA_ROLES = {
-    "CARBON_SOURCE",
-    "NITROGEN_SOURCE",
-    "MINERAL",
-    "TRACE_ELEMENT",
-    "BUFFER",
-    "VITAMIN_SOURCE",
-    "SALT",
-    "PROTEIN_SOURCE",
-    "AMINO_ACID_SOURCE",
-    "SOLIDIFYING_AGENT",
-    "ENERGY_SOURCE",
-    "ELECTRON_ACCEPTOR",
-    "ELECTRON_DONOR",
-    "COFACTOR_PROVIDER",
-    # Kept in sync with IngredientRoleEnum in the LinkML schema
-    # (src/mediaingredientmech/schema/mediaingredientmech.yaml).
-    "REDOX_INDICATOR",
-    "PH_INDICATOR",
-    "SELECTIVE_AGENT",
-    "SURFACTANT",
-    "REDUCING_AGENT",
-    "CHELATOR",
-}
-
-VALID_COMMUNITY_ORGANISM_ROLES = {
-    "PRIMARY_DEGRADER",
-    "REDUCTIVE_DEGRADER",
-    "OXIDATIVE_DEGRADER",
-    "BIOTRANSFORMER",
-    "SYNERGIST",
-    "BRIDGE_ORGANISM",
-    "ELECTRON_SHUTTLE",
-    "DETOXIFIER",
-    "COMMENSAL",
-    "COMPETITOR",
-}
-
-VALID_SOLUTION_TYPES = {
-    "VITAMIN_MIX",
-    "TRACE_METAL_MIX",
-    "AMINO_ACID_MIX",
-    "BUFFER_SOLUTION",
-    "CARBON_SOURCE_MIX",
-    "MINERAL_STOCK",
-    "COFACTOR_MIX",
-    "COMPLEX_UNDEFINED",
-    "OTHER",
-}
-
-VALID_CITATION_TYPES = {
-    "PEER_REVIEWED_PUBLICATION",
-    "PREPRINT",
-    "DATABASE_ENTRY",
-    "TECHNICAL_REPORT",
-    "MANUAL_CURATION",
-    "COMPUTATIONAL_PREDICTION",
-}
+VALID_MEDIA_ROLES = _enum_permissible_values("IngredientRoleEnum")
+VALID_NUTRITIONAL_ROLES = _enum_permissible_values("NutritionalRoleEnum")
+VALID_PHYSICOCHEMICAL_ROLES = _enum_permissible_values("PhysicochemicalRoleEnum")
+VALID_CELLULAR_METABOLIC_ROLES = _enum_permissible_values("CellularMetabolicRoleEnum")
+VALID_COMMUNITY_ORGANISM_ROLES = _enum_permissible_values("CommunityOrganismRoleEnum")
+VALID_SOLUTION_TYPES = _enum_permissible_values("SolutionTypeEnum")
+VALID_CITATION_TYPES = _enum_permissible_values("CitationTypeEnum")
 
 DOI_PATTERN = re.compile(r"^10\.\d{4,}/[-._;()/:A-Za-z0-9]+$")
 
@@ -630,6 +603,278 @@ class IngredientCurator:
         self._dirty = True
         return record
 
+    def add_nutritional_role(
+        self,
+        record: dict[str, Any],
+        role: str,
+        confidence: float = 0.9,
+        doi: Optional[str] = None,
+        pmid: Optional[str] = None,
+        reference_text: Optional[str] = None,
+        reference_type: str = "MANUAL_CURATION",
+        url: Optional[str] = None,
+        excerpt: Optional[str] = None,
+        curator_note: Optional[str] = None,
+        notes: Optional[str] = None,
+    ) -> dict[str, Any]:
+        """Add a nutritional-facet role assignment (what element/macronutrient the ingredient supplies).
+
+        Args:
+            record: The ingredient record dict to update.
+            role: NutritionalRoleEnum value (e.g., "CARBON_SOURCE", "SULFUR_SOURCE", "VITAMIN_SOURCE").
+            confidence: Confidence score (0.0-1.0). Defaults to 0.9.
+            doi: Digital Object Identifier.
+            pmid: PubMed ID.
+            reference_text: Human-readable citation text.
+            reference_type: CitationTypeEnum value. Defaults to "MANUAL_CURATION".
+            url: Web URL for the reference.
+            excerpt: Relevant excerpt from the source.
+            curator_note: Explanation of why this supports the role.
+            notes: Additional context about the role assignment.
+
+        Returns:
+            The updated record.
+
+        Raises:
+            ValueError: If role, confidence, DOI format, or reference_type is invalid.
+        """
+        if role not in VALID_NUTRITIONAL_ROLES:
+            raise ValueError(
+                f"Invalid nutritional role: {role}. Must be one of {VALID_NUTRITIONAL_ROLES}"
+            )
+        if not (0.0 <= confidence <= 1.0):
+            raise ValueError(f"Confidence out of range: {confidence}. Must be between 0.0 and 1.0")
+        if doi and not DOI_PATTERN.match(doi):
+            raise ValueError(f"Invalid DOI format: {doi}. Must match pattern: 10.XXXX/...")
+        if reference_type not in VALID_CITATION_TYPES:
+            raise ValueError(
+                f"Invalid reference_type: {reference_type}. Must be one of {VALID_CITATION_TYPES}"
+            )
+
+        role_assignment: dict[str, Any] = {
+            "role": role,
+            "confidence": confidence,
+            "evidence": [],
+        }
+        if notes:
+            role_assignment["notes"] = notes
+
+        if doi or pmid or reference_text or url:
+            citation: dict[str, Any] = {"reference_type": reference_type}
+            if doi:
+                citation["doi"] = doi
+            if pmid:
+                citation["pmid"] = pmid
+            if reference_text:
+                citation["reference_text"] = reference_text
+            elif doi:
+                citation["reference_text"] = f"DOI: {doi}"
+            if url:
+                citation["url"] = url
+            if excerpt:
+                citation["excerpt"] = excerpt
+            if curator_note:
+                citation["curator_note"] = curator_note
+
+            role_assignment["evidence"].append(citation)
+
+        if "nutritional_roles" not in record or record["nutritional_roles"] is None:
+            record["nutritional_roles"] = []
+        record["nutritional_roles"].append(role_assignment)
+
+        changes_msg = f"Added nutritional role: {role} (confidence: {confidence:.2f})"
+        if doi:
+            changes_msg += f" with DOI: {doi}"
+        self._add_event(record, action="ANNOTATED", changes=changes_msg)
+
+        self._dirty = True
+        return record
+
+    def add_physicochemical_role(
+        self,
+        record: dict[str, Any],
+        role: str,
+        confidence: float = 0.9,
+        doi: Optional[str] = None,
+        pmid: Optional[str] = None,
+        reference_text: Optional[str] = None,
+        reference_type: str = "MANUAL_CURATION",
+        url: Optional[str] = None,
+        excerpt: Optional[str] = None,
+        curator_note: Optional[str] = None,
+        notes: Optional[str] = None,
+    ) -> dict[str, Any]:
+        """Add a physicochemical-facet role assignment (chemical/physical job the ingredient does in the medium).
+
+        Args:
+            record: The ingredient record dict to update.
+            role: PhysicochemicalRoleEnum value (e.g., "BUFFER", "CHELATOR", "REDUCING_AGENT").
+            confidence: Confidence score (0.0-1.0). Defaults to 0.9.
+            doi: Digital Object Identifier.
+            pmid: PubMed ID.
+            reference_text: Human-readable citation text.
+            reference_type: CitationTypeEnum value. Defaults to "MANUAL_CURATION".
+            url: Web URL for the reference.
+            excerpt: Relevant excerpt from the source.
+            curator_note: Explanation of why this supports the role.
+            notes: Additional context about the role assignment.
+
+        Returns:
+            The updated record.
+
+        Raises:
+            ValueError: If role, confidence, DOI format, or reference_type is invalid.
+        """
+        if role not in VALID_PHYSICOCHEMICAL_ROLES:
+            raise ValueError(
+                f"Invalid physicochemical role: {role}. Must be one of {VALID_PHYSICOCHEMICAL_ROLES}"
+            )
+        if not (0.0 <= confidence <= 1.0):
+            raise ValueError(f"Confidence out of range: {confidence}. Must be between 0.0 and 1.0")
+        if doi and not DOI_PATTERN.match(doi):
+            raise ValueError(f"Invalid DOI format: {doi}. Must match pattern: 10.XXXX/...")
+        if reference_type not in VALID_CITATION_TYPES:
+            raise ValueError(
+                f"Invalid reference_type: {reference_type}. Must be one of {VALID_CITATION_TYPES}"
+            )
+
+        role_assignment: dict[str, Any] = {
+            "role": role,
+            "confidence": confidence,
+            "evidence": [],
+        }
+        if notes:
+            role_assignment["notes"] = notes
+
+        if doi or pmid or reference_text or url:
+            citation: dict[str, Any] = {"reference_type": reference_type}
+            if doi:
+                citation["doi"] = doi
+            if pmid:
+                citation["pmid"] = pmid
+            if reference_text:
+                citation["reference_text"] = reference_text
+            elif doi:
+                citation["reference_text"] = f"DOI: {doi}"
+            if url:
+                citation["url"] = url
+            if excerpt:
+                citation["excerpt"] = excerpt
+            if curator_note:
+                citation["curator_note"] = curator_note
+
+            role_assignment["evidence"].append(citation)
+
+        if "physicochemical_roles" not in record or record["physicochemical_roles"] is None:
+            record["physicochemical_roles"] = []
+        record["physicochemical_roles"].append(role_assignment)
+
+        changes_msg = f"Added physicochemical role: {role} (confidence: {confidence:.2f})"
+        if doi:
+            changes_msg += f" with DOI: {doi}"
+        self._add_event(record, action="ANNOTATED", changes=changes_msg)
+
+        self._dirty = True
+        return record
+
+    def add_cellular_metabolic_role(
+        self,
+        record: dict[str, Any],
+        role: str,
+        metabolic_context: Optional[str] = None,
+        confidence: float = 0.9,
+        doi: Optional[str] = None,
+        pmid: Optional[str] = None,
+        reference_text: Optional[str] = None,
+        reference_type: str = "MANUAL_CURATION",
+        url: Optional[str] = None,
+        excerpt: Optional[str] = None,
+        curator_note: Optional[str] = None,
+        notes: Optional[str] = None,
+    ) -> dict[str, Any]:
+        """Add a cellular-metabolic-facet role assignment (what the ingredient does inside/on the cultured microbe).
+
+        Assignments in this facet are often organism-conditional (e.g., methanol is an
+        ELECTRON_DONOR only for methylotrophs); capture that context in `metabolic_context`.
+
+        Args:
+            record: The ingredient record dict to update.
+            role: CellularMetabolicRoleEnum value (e.g., "SUBSTRATE", "ELECTRON_DONOR", "COFACTOR").
+            metabolic_context: Organism/pathway scope for this assignment (e.g., "methylotrophs only",
+                "anaerobic sulfate reduction"). Recommended when the role does not hold universally.
+            confidence: Confidence score (0.0-1.0). Defaults to 0.9.
+            doi: Digital Object Identifier.
+            pmid: PubMed ID.
+            reference_text: Human-readable citation text.
+            reference_type: CitationTypeEnum value. Defaults to "MANUAL_CURATION".
+            url: Web URL for the reference.
+            excerpt: Relevant excerpt from the source.
+            curator_note: Explanation of why this supports the role.
+            notes: Additional context about the role assignment.
+
+        Returns:
+            The updated record.
+
+        Raises:
+            ValueError: If role, confidence, DOI format, or reference_type is invalid.
+        """
+        if role not in VALID_CELLULAR_METABOLIC_ROLES:
+            raise ValueError(
+                f"Invalid cellular-metabolic role: {role}. "
+                f"Must be one of {VALID_CELLULAR_METABOLIC_ROLES}"
+            )
+        if not (0.0 <= confidence <= 1.0):
+            raise ValueError(f"Confidence out of range: {confidence}. Must be between 0.0 and 1.0")
+        if doi and not DOI_PATTERN.match(doi):
+            raise ValueError(f"Invalid DOI format: {doi}. Must match pattern: 10.XXXX/...")
+        if reference_type not in VALID_CITATION_TYPES:
+            raise ValueError(
+                f"Invalid reference_type: {reference_type}. Must be one of {VALID_CITATION_TYPES}"
+            )
+
+        role_assignment: dict[str, Any] = {
+            "role": role,
+            "confidence": confidence,
+            "evidence": [],
+        }
+        if metabolic_context:
+            role_assignment["metabolic_context"] = metabolic_context
+        if notes:
+            role_assignment["notes"] = notes
+
+        if doi or pmid or reference_text or url:
+            citation: dict[str, Any] = {"reference_type": reference_type}
+            if doi:
+                citation["doi"] = doi
+            if pmid:
+                citation["pmid"] = pmid
+            if reference_text:
+                citation["reference_text"] = reference_text
+            elif doi:
+                citation["reference_text"] = f"DOI: {doi}"
+            if url:
+                citation["url"] = url
+            if excerpt:
+                citation["excerpt"] = excerpt
+            if curator_note:
+                citation["curator_note"] = curator_note
+
+            role_assignment["evidence"].append(citation)
+
+        if "cellular_metabolic_roles" not in record or record["cellular_metabolic_roles"] is None:
+            record["cellular_metabolic_roles"] = []
+        record["cellular_metabolic_roles"].append(role_assignment)
+
+        changes_msg = f"Added cellular-metabolic role: {role} (confidence: {confidence:.2f})"
+        if metabolic_context:
+            changes_msg += f" in context: {metabolic_context}"
+        if doi:
+            changes_msg += f" with DOI: {doi}"
+        self._add_event(record, action="ANNOTATED", changes=changes_msg)
+
+        self._dirty = True
+        return record
+
     def set_solution_type(self, record: dict[str, Any], solution_type: str) -> dict[str, Any]:
         """Set the solution type for mixture ingredients.
 
@@ -712,7 +957,35 @@ class IngredientCurator:
                         f"Invalid reference_type at cellular role {i}, evidence {j}: {ref_type}"
                     )
 
-        # Validate solution_type
+        for slot, valid_set, label in (
+            ("nutritional_roles", VALID_NUTRITIONAL_ROLES, "nutritional"),
+            ("physicochemical_roles", VALID_PHYSICOCHEMICAL_ROLES, "physicochemical"),
+            ("cellular_metabolic_roles", VALID_CELLULAR_METABOLIC_ROLES, "cellular-metabolic"),
+        ):
+            for i, role_assignment in enumerate(record.get(slot, [])):
+                role = role_assignment.get("role")
+                if role and role not in valid_set:
+                    errors.append(f"Invalid {label} role at index {i}: {role}")
+
+                confidence = role_assignment.get("confidence")
+                if confidence is not None and not (0.0 <= confidence <= 1.0):
+                    errors.append(
+                        f"Confidence out of range at {label} role {i}: {confidence}"
+                    )
+
+                for j, evidence in enumerate(role_assignment.get("evidence", [])):
+                    doi = evidence.get("doi")
+                    if doi and not DOI_PATTERN.match(doi):
+                        errors.append(
+                            f"Invalid DOI format at {label} role {i}, evidence {j}: {doi}"
+                        )
+
+                    ref_type = evidence.get("reference_type")
+                    if ref_type and ref_type not in VALID_CITATION_TYPES:
+                        errors.append(
+                            f"Invalid reference_type at {label} role {i}, evidence {j}: {ref_type}"
+                        )
+
         solution_type = record.get("solution_type")
         if solution_type and solution_type not in VALID_SOLUTION_TYPES:
             errors.append(f"Invalid solution type: {solution_type}")
