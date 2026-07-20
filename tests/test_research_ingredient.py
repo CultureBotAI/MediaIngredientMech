@@ -5,6 +5,8 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import pytest
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
@@ -122,3 +124,19 @@ def test_research_env_withholds_edison_key_from_falcon(monkeypatch):
 def test_research_env_leaves_edison_providers_untouched(monkeypatch):
     monkeypatch.setenv("EDISON_API_KEY", "edison-key")
     assert research_env("edison")["EDISON_API_KEY"] == "edison-key"
+
+
+@pytest.mark.parametrize("spelling", ["Falcon", "FALCON", " falcon ", "FaLcOn"])
+def test_research_env_withholds_edison_key_regardless_of_provider_spelling(
+    monkeypatch, spelling
+):
+    """The guard must not be defeated by capitalisation.
+
+    `--provider` takes free text (no argparse `choices`), and the value is passed
+    to deep-research-client verbatim. So `--provider Falcon` still routes to
+    FutureHouse; if the credential lookup were case-sensitive it would miss and
+    forward the Edison key — the exact leak this guard exists to prevent.
+    """
+    monkeypatch.setenv("EDISON_API_KEY", "edison-key")
+    monkeypatch.delenv("FUTUREHOUSE_API_KEY", raising=False)
+    assert "EDISON_API_KEY" not in research_env(spelling)

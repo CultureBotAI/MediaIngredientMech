@@ -207,9 +207,20 @@ def template_vars(
     }
 
 
+def normalize_provider(provider: str) -> str:
+    """Canonical form of a ``--provider`` value.
+
+    ``--provider`` is free-text (no argparse ``choices``), so the value reaching
+    the credential guard below is whatever the caller typed. Case- and
+    whitespace-fold it before any provider comparison, otherwise ``--provider
+    Falcon`` misses the lookup while still routing to FutureHouse.
+    """
+    return (provider or "").strip().lower()
+
+
 def provider_args(provider: str) -> list[str]:
     """Mirror deep-research-client provider flags used by sibling Mech repos."""
-    if provider == "cborg":
+    if normalize_provider(provider) == "cborg":
         return ["--use-cborg"]
     return ["--provider", provider]
 
@@ -238,7 +249,7 @@ def research_env(provider: str) -> dict[str, str]:
     ``FUTUREHOUSE_API_KEY``.
     """
     env = os.environ.copy()
-    provider_key = _NON_EDISON_PROVIDER_KEYS.get(provider)
+    provider_key = _NON_EDISON_PROVIDER_KEYS.get(normalize_provider(provider))
     if provider_key:
         env.pop("EDISON_API_KEY", None)
         env.pop("EDISON_PLATFORM_API_KEY", None)
