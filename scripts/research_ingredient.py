@@ -211,9 +211,8 @@ def normalize_provider(provider: str) -> str:
     """Canonical form of a ``--provider`` value.
 
     ``--provider`` is free-text (no argparse ``choices``), so the value reaching
-    the credential guard below is whatever the caller typed. Case- and
-    whitespace-fold it before any provider comparison, otherwise ``--provider
-    Falcon`` misses the lookup while still routing to FutureHouse.
+    the comparisons below is whatever the caller typed. Case- and whitespace-fold
+    it so ``--provider Falcon`` behaves like ``falcon``.
     """
     return (provider or "").strip().lower()
 
@@ -225,36 +224,29 @@ def provider_args(provider: str) -> list[str]:
     return ["--provider", provider]
 
 
-# Providers that are NOT Edison, and so must never receive an Edison credential.
-# ``deep-research-client`` reads whatever is in ``EDISON_API_KEY`` and forwards it
-# to whichever provider was selected, so the credential lookup has to be
-# provider-aware.
-_NON_EDISON_PROVIDER_KEYS = {"falcon": "FUTUREHOUSE_API_KEY"}
-
-
 def research_env(provider: str) -> dict[str, str]:
-    """Build the subprocess environment, resolving the credential for ``provider``.
+    """Build the subprocess environment, honouring the deprecated FutureHouse alias.
 
-    For a non-Edison provider (Falcon → FutureHouse) the credential comes *only*
-    from that provider's own variable. Any Edison-named key in the environment is
-    dropped, and if the provider has no key of its own ``EDISON_API_KEY`` is left
-    unset so the client fails cleanly.
+    ``--provider falcon`` IS the Edison provider. "Falcon"/"FutureHouse" is the
+    former brand: ``deep_research_client/client.py`` registers it as
+    ``# Edison provider (formerly Falcon/FutureHouse)`` and resolves its
+    credential as ``os.getenv("EDISON_API_KEY") or os.getenv("FUTUREHOUSE_API_KEY")``,
+    then hands it to ``EdisonClient``. One Edison credential covers both names,
+    and ``FUTUREHOUSE_API_KEY`` is a deprecated alias for that same key — the
+    client emits a DeprecationWarning when it falls back to it.
 
-    This matters because this repo's ``.env`` sets ``EDISON_API_KEY`` and ``just``
-    injects it via ``dotenv-load``. The previous version honoured that ambient
-    value for Falcon too, so a ``--provider falcon`` run transmitted an Edison
-    credential to FutureHouse: wrong vendor, and it could not authenticate anyway.
-    An Edison-named variable is repo configuration, not the caller asking for that
-    key to be used with FutureHouse. To pin a credential for Falcon, set
-    ``FUTUREHOUSE_API_KEY``.
+    So there is no cross-vendor credential question here, and nothing to
+    withhold: passing ``EDISON_API_KEY`` to ``--provider falcon`` sends an Edison
+    key to Edison. The only thing worth doing is honouring the deprecated alias
+    when the canonical variable is unset, for client versions that don't.
     """
     env = os.environ.copy()
-    provider_key = _NON_EDISON_PROVIDER_KEYS.get(normalize_provider(provider))
-    if provider_key:
-        env.pop("EDISON_API_KEY", None)
-        env.pop("EDISON_PLATFORM_API_KEY", None)
-        if env.get(provider_key):
-            env["EDISON_API_KEY"] = env[provider_key]
+    if (
+        normalize_provider(provider) == "falcon"
+        and not env.get("EDISON_API_KEY")
+        and env.get("FUTUREHOUSE_API_KEY")
+    ):
+        env["EDISON_API_KEY"] = env["FUTUREHOUSE_API_KEY"]
     return env
 
 
