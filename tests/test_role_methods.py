@@ -286,10 +286,182 @@ def test_multiple_roles():
     print("✓ test_multiple_roles passed")
 
 
+def test_add_nutritional_role():
+    """Test adding a nutritional-facet role."""
+    curator = IngredientCurator(curator_name="test_curator")
+    record = {
+        "ontology_id": "CHEBI:17561",
+        "preferred_term": "L-cysteine",
+        "mapping_status": "MAPPED",
+    }
+
+    result = curator.add_nutritional_role(
+        record,
+        role="AMINO_ACID_SOURCE",
+        confidence=0.98,
+        doi="10.1128/jb.00456-20",
+        reference_type="PEER_REVIEWED_PUBLICATION",
+        curator_note="L-cysteine supplies cysteine + sulfur simultaneously in defined media.",
+        notes="Round-trip check for notes preservation.",
+    )
+
+    assert "nutritional_roles" in result
+    assert len(result["nutritional_roles"]) == 1
+    assignment = result["nutritional_roles"][0]
+    assert assignment["role"] == "AMINO_ACID_SOURCE"
+    assert assignment["confidence"] == 0.98
+    assert assignment["notes"] == "Round-trip check for notes preservation."
+    assert len(assignment["evidence"]) == 1
+    assert assignment["evidence"][0]["doi"] == "10.1128/jb.00456-20"
+
+    curator.add_nutritional_role(record, role="SULFUR_SOURCE", confidence=0.9)
+    assert len(result["nutritional_roles"]) == 2
+    assert result["nutritional_roles"][1]["role"] == "SULFUR_SOURCE"
+    # No-citation branch must NOT leak a phantom empty citation.
+    assert result["nutritional_roles"][1]["evidence"] == []
+
+    print("✓ test_add_nutritional_role passed")
+
+
+def test_add_physicochemical_role():
+    """Test adding a physicochemical-facet role.
+
+    Includes the no-citation branch (no doi/pmid/reference_text/url provided) —
+    `evidence` must be an empty list. Note: passing `curator_note`/`excerpt`
+    alone does not trigger citation creation (inherited from add_media_role);
+    a real citation needs at least one of doi/pmid/reference_text/url.
+    """
+    curator = IngredientCurator(curator_name="test_curator")
+    record = {
+        "ontology_id": "CHEBI:64755",
+        "preferred_term": "EDTA(2-)",
+        "mapping_status": "MAPPED",
+    }
+
+    result = curator.add_physicochemical_role(
+        record,
+        role="CHELATOR",
+        confidence=0.99,
+        notes="Round-trip check for notes preservation.",
+    )
+
+    assert "physicochemical_roles" in result
+    assert len(result["physicochemical_roles"]) == 1
+    assignment = result["physicochemical_roles"][0]
+    assert assignment["role"] == "CHELATOR"
+    assert assignment["confidence"] == 0.99
+    assert assignment["notes"] == "Round-trip check for notes preservation."
+    # No-citation branch must NOT leak a phantom empty citation.
+    assert assignment["evidence"] == []
+
+    # Second call WITH a DOI must attach a citation.
+    curator.add_physicochemical_role(
+        record,
+        role="SURFACTANT",
+        confidence=0.9,
+        doi="10.1128/aem.02345-19",
+        reference_type="PEER_REVIEWED_PUBLICATION",
+    )
+    assert len(result["physicochemical_roles"]) == 2
+    assert len(result["physicochemical_roles"][1]["evidence"]) == 1
+    assert result["physicochemical_roles"][1]["evidence"][0]["doi"] == "10.1128/aem.02345-19"
+
+    print("✓ test_add_physicochemical_role passed")
+
+
+def test_add_cellular_metabolic_role():
+    """Test adding a cellular-metabolic-facet role with metabolic_context."""
+    curator = IngredientCurator(curator_name="test_curator")
+    record = {
+        "ontology_id": "CHEBI:17790",
+        "preferred_term": "methanol",
+        "mapping_status": "MAPPED",
+    }
+
+    result = curator.add_cellular_metabolic_role(
+        record,
+        role="ELECTRON_DONOR",
+        metabolic_context="methylotrophs only",
+        confidence=0.95,
+        doi="10.1128/mmbr.00012-16",
+        reference_type="PEER_REVIEWED_PUBLICATION",
+        curator_note="Methanol is the electron donor for MDH in methylotrophic C1 metabolism.",
+        notes="Round-trip check for notes preservation.",
+    )
+
+    assert "cellular_metabolic_roles" in result
+    assert len(result["cellular_metabolic_roles"]) == 1
+    assignment = result["cellular_metabolic_roles"][0]
+    assert assignment["role"] == "ELECTRON_DONOR"
+    assert assignment["metabolic_context"] == "methylotrophs only"
+    assert assignment["confidence"] == 0.95
+    assert assignment["notes"] == "Round-trip check for notes preservation."
+    assert len(assignment["evidence"]) == 1
+    assert assignment["evidence"][0]["doi"] == "10.1128/mmbr.00012-16"
+
+    assert "methylotrophs only" in result["curation_history"][0]["changes"]
+
+    # No-citation, no-metabolic_context branch: evidence == [] and no metabolic_context key.
+    curator.add_cellular_metabolic_role(record, role="SUBSTRATE", confidence=0.9)
+    assert len(result["cellular_metabolic_roles"]) == 2
+    second = result["cellular_metabolic_roles"][1]
+    assert second["evidence"] == []
+    assert "metabolic_context" not in second
+
+    print("✓ test_add_cellular_metabolic_role passed")
+
+
+def test_facet_role_validation_rejects_wrong_facet_value():
+    """A physicochemical role token must not be accepted as a nutritional role."""
+    import pytest
+
+    curator = IngredientCurator(curator_name="test_curator")
+    record = {"ontology_id": "TEST:900", "preferred_term": "x", "mapping_status": "MAPPED"}
+
+    with pytest.raises(ValueError, match="Invalid nutritional role"):
+        curator.add_nutritional_role(record, role="BUFFER")  # BUFFER is physicochemical, not nutritional
+
+    with pytest.raises(ValueError, match="Invalid physicochemical role"):
+        curator.add_physicochemical_role(record, role="CARBON_SOURCE")  # nutritional, not physicochemical
+
+    with pytest.raises(ValueError, match="Invalid cellular-metabolic role"):
+        curator.add_cellular_metabolic_role(record, role="BUFFER")  # not cellular-metabolic
+
+    print("✓ test_facet_role_validation_rejects_wrong_facet_value passed")
+
+
+def test_validate_role_assignments_walks_new_facet_slots():
+    """validate_role_assignments should detect invalid values in the three new facet slots."""
+    curator = IngredientCurator(curator_name="test_curator")
+    record = {
+        "ontology_id": "TEST:901",
+        "preferred_term": "y",
+        "mapping_status": "MAPPED",
+        "nutritional_roles": [{"role": "NOT_A_REAL_ROLE", "confidence": 0.5}],
+        "physicochemical_roles": [{"role": "BUFFER", "confidence": 2.5}],  # out-of-range confidence
+        "cellular_metabolic_roles": [
+            {"role": "SUBSTRATE", "evidence": [{"doi": "not-a-doi"}]}
+        ],
+    }
+
+    errors = curator.validate_role_assignments(record)
+    joined = " | ".join(errors)
+    assert "Invalid nutritional role at index 0: NOT_A_REAL_ROLE" in joined
+    assert "Confidence out of range at physicochemical role 0" in joined
+    assert "Invalid DOI format at cellular-metabolic role 0" in joined
+
+    print("✓ test_validate_role_assignments_walks_new_facet_slots passed")
+
+
 if __name__ == "__main__":
     test_add_media_role()
     test_add_media_role_without_citation()
     test_add_community_organism_role()
+    test_add_nutritional_role()
+    test_add_physicochemical_role()
+    test_add_cellular_metabolic_role()
+    test_facet_role_validation_rejects_wrong_facet_value()
+    test_validate_role_assignments_walks_new_facet_slots()
     test_set_solution_type()
     test_validation_invalid_role()
     test_validation_invalid_doi()
