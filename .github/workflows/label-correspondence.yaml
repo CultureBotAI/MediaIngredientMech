@@ -34,6 +34,17 @@ permissions:
   contents: read
 
 jobs:
+  vendored-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Shared-reference drift check against the canonical hub (CultureMech) at
+      # the pinned commit in scripts/.vendored_canon_ref — the reference lives in
+      # another repo, so a local edit to a vendored copy fails CI. Fast and
+      # dependency-free (bash + curl), blocks before any uv/OAK setup.
+      - name: Verify vendored files match canonical hub
+        run: bash scripts/check_vendored_sync.sh
+
   id-label-gate:
     runs-on: ubuntu-latest
     steps:
@@ -58,9 +69,6 @@ jobs:
       # Durability guard: fail the build if the vendored validator script has
       # drifted from its pinned sha256 (the .py is byte-identical across the
       # Mech repos; an accidental one-copy edit must not silently diverge).
-      - name: Verify id↔label validator pin
-        run: just verify-validator-pin
-
       # Always generate the drift report first so the artifact is uploaded even
       # when the blocking gate below fails (report mode never exits non-zero).
       - name: Generate id↔label drift report
