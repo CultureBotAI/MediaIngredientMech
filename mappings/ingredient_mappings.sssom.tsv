@@ -20,9 +20,9 @@
 #   cbclaw: "https://github.com/culturebotai/culturebotai-claw/blob/main/"
 # license: "https://creativecommons.org/publicdomain/zero/1.0/"
 # mapping_set_id: "https://w3id.org/sssom/mappings/culturebotai_mim_ingredient"
-# mapping_set_version: "2026-07-20"
+# mapping_set_version: "2026-07-21"
 # mapping_set_description: "Canonical MediaIngredientMech → ingredient-ontology mappings (CHEBI + FOODON; UBERON/ENVO when populated). One row per mapped MIM ingredient record. Per-row object_source distinguishes ontologies. Predicate is skos:exactMatch by default; narrowMatch/broadMatch/closeMatch where residual-P2.5 triage found a specificity or symmetry difference, or where mapping_quality != EXACT_MATCH. The `source` extension column records the upstream origin (MIM evidence + kg-microbe source pipeline, CHEBI only)."
-# mapping_date: "2026-07-20"
+# mapping_date: "2026-07-21"
 # creator_id:
 #   - "orcid:0000-0001-8175-045X"
 # subject_source: "MIM:ingredients"
@@ -218,7 +218,6 @@ MIM:72-Dihydroxyflavone	7,2'-Dihydroxyflavone	skos:exactMatch	cas:77298-66-9	7,2
 MIM:72-Dihydroxyflavone	7,2'-Dihydroxyflavone	skos:exactMatch	kgmicrobe.compound:72-dihydroxyflavone	7,2'-Dihydroxyflavone	kgm:compound	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:curator=backfill_parent_terms|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]	2026-05-02	0.99	Registry/identity row (Rule B1) for narrowMatch subject; kg-microbe primary id kgmicrobe.compound:72-dihydroxyflavone alongside parent CHEBI:94071.		none|UNKNOWN_TERM|2026-07-07
 MIM:8-hydroxy-nitroquinoline	8-hydroxy-nitroquinoline	skos:exactMatch	CHEBI:67121	nitroxoline	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]	2026-05-02	0.99		5-NOK|5-Nitro-8-hydroxyquinoline|5-Nitro-8-oxyquinoline|5-Nitro-8-quinolinol|5-Nitrox|5-nitroquinolin-8-ol|5NOK|8-Hydroxy-5-nitroquinoline|nitroxolina|nitroxolinum	OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07
 MIM:Nh4mgpo	NH4MgPO	skos:exactMatch	CHEBI:149425	ammonium magnesium phosphate	obo:chebi.owl	semapv:ManualMappingCuration	MIM:OLS4 CHEBI lookup + formula interpretation|MIM:curator=promote_resolved_unmapped	2026-06-16	0.95			manual:promote_resolved_unmapped|PROMOTED|2026-06-16
-MIM:Na2-910-anthraquinone-26-disulfonate	Na2-9,10-anthraquinone-2,6-disulfonate	skos:closeMatch	CHEBI:85112	anthraquinone-2,6-disulfonate	obo:chebi.owl	semapv:ManualMappingCuration	MIM:OLS4 CHEBI lookup|MIM:curator=promote_resolved_unmapped	2026-06-16	0.9			manual:promote_resolved_unmapped|PROMOTED|2026-06-16
 MIM:A-Cyclodextrin	a-Cyclodextrin	skos:exactMatch	CHEBI:40585	alpha-cyclodextrin	obo:chebi.owl	semapv:LexicalMatching	MIM:CultureBotHT|MIM:curator=infer_roles_from_chebi_ancestry|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_cas_chebi_followup]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:primary_mappings[bacdive_api]|kgm:primary_mappings[chemicals_sssom]	2026-05-30	0.99		alpha-CD|cyclohexaamylose|cyclomaltohexaose	OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07
 MIM:A-Ketoglutaric_Acid_Disodium_Salt_Hydrate	a-Ketoglutaric acid disodium salt hydrate	skos:closeMatch	cas:305-72-6	a-Ketoglutaric acid disodium salt hydrate	registry:cas	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:curator=infer_energy_source	2026-06-04	0.9		a-Ketoglutaric acid	none|UNKNOWN_TERM|2026-07-07
 MIM:AQDS	AQDS	skos:closeMatch	cas:853-68-9	AQDS	registry:cas	semapv:ManualMappingCuration	MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type	2026-05-02	0.9		anthraquinone-2,6-disulfonate	none|UNKNOWN_TERM|2026-07-07
