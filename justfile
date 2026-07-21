@@ -290,6 +290,25 @@ research-ingredient-edison-batch batch *args="":
         --out-dir {{research_dir}}/ingredients \
         {{args}}
 
+# Step 7b — Edison deep research for the ROLE facets of one ingredient. Same
+# runner as research-ingredient-edison but pinned to the role-research template
+# and a separate output directory (research/ingredients/roles/) so identity-
+# mapping and role-research runs never clobber each other.
+# Examples:
+#   just research-ingredient-roles-edison L-cysteine --dry-run
+#   just research-ingredient-roles-edison Glucose --job literature-high
+research-ingredient-roles-edison target *args="":
+    uv run --extra dev python scripts/research_ingredient_roles_edison.py \
+        --target {{target}} \
+        {{args}}
+
+# Step 7b — Edison role research for a batch of ingredients. Typically driven
+# by the CultureMech prioritizer output (`prioritize_role_research_candidates.py`).
+research-ingredient-roles-edison-batch batch *args="":
+    uv run --extra dev python scripts/research_ingredient_roles_edison.py \
+        --batch {{batch}} \
+        {{args}}
+
 # Retroactively backfill Edison provenance sidecars (no re-billing).
 enrich-edison-response *args="":
     uv run --extra dev python scripts/enrich_edison_response.py {{args}}
