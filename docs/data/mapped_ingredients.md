@@ -1,11 +1,10 @@
 # Mapped Ingredients
 
-Generated: 2026-07-21T03:58:23.874461+00:00
-Total: 1880 ingredients
+Generated: 2026-07-21T18:52:48.721007+00:00
+Total: 1879 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
-| CHEBI:85112 | CHEBI:85112 | Na2-9,10-anthraquinone-2,6-disulfonate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:149425 | CHEBI:149425 | NH4MgPO | MAPPED | CHEBI | SYNONYM_MATCH | 3 |
 | cas:13446-18-9 | CHEBI:64736 | magnesium nitrate hexahydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:229630 | CHEBI:229630 | NH42CO3 | MAPPED | CHEBI | EXACT_MATCH | 0 |
