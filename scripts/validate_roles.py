@@ -94,7 +94,12 @@ def validate_file(file_path: Path, label: str) -> dict:
                         if cite.get("doi"):
                             stats["roles_with_doi"] += 1
 
-        community_organism_roles = record.get("community_organism_roles", [])
+        # community_organism_roles is organism-level, not an ingredient facet, so
+        # it is counted as its own category — but still walked via the shared
+        # iterator (explicit single-slot filter) rather than a hard-coded get().
+        community_organism_roles = [
+            a for _slot, a in iter_role_assignments(record, slots=("community_organism_roles",))
+        ]
         if community_organism_roles:
             stats["with_community_organism_roles"] += 1
             stats["total_community_organism_roles"] += len(community_organism_roles)
