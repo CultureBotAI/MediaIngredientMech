@@ -313,6 +313,16 @@ research-ingredient-roles-edison-batch batch *args="":
 enrich-edison-response *args="":
     uv run --extra dev python scripts/enrich_edison_response.py {{args}}
 
+# Step 7b — Apply role research results extracted from Edison output.
+# Input: JSON batch emitted by CultureMech's `extract_roles_from_edison.py`.
+# Writes rich RoleAssignments (with per-role confidence + evidence citations)
+# to `data/ingredients/**/*.yaml`. Per-facet never-overwrite guard.
+# Examples:
+#   just apply-role-research-results reports/edison_role_extraction.json --dry-run
+#   just apply-role-research-results reports/edison_role_extraction.json
+apply-role-research-results batch *args="":
+    uv run python scripts/apply_role_research_results.py {{batch}} {{args}}
+
 # Full workflow: export, validate, aggregate
 sync-individual:
     just export-individual && just validate-individual && just aggregate-collections
