@@ -1,7 +1,7 @@
 generation_date: '2026-05-24T08:02:38.378922+00:00'
-total_count: 383
+total_count: 381
 mapped_count: 0
-unmapped_count: 383
+unmapped_count: 381
 ingredients:
 - identifier: UNMAPPED_0196
   preferred_term: 2-Carene-3-One
@@ -7505,37 +7505,6 @@ ingredients:
   notes: Imported from mim-queue (source_id=mediadive.ingredient:868); no CAS-RN or
     CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to potassium tetrathionate.
   ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0466
-  preferred_term: Na2-9,10-anthraquinone-2,6-disulfonate
-  synonyms:
-  - synonym_text: Na2-9,10-anthraquinone-2,6-disulfonate
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:521); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T09:31:08Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_SALT_AMBIGUITY
-    changes: Classified as a single anthraquinone disulfonate salt surface form and
-      left unmapped because the local AQDS record is related but not verified as the
-      exact disodium salt identity.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:521); no CAS-RN or
-    CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to AQDS without exact salt
-    evidence.
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0467
   preferred_term: Na2HPO4-KH2PO4 buffer
   synonyms:
@@ -7867,35 +7836,6 @@ ingredients:
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1462); no CAS-RN
     or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a neodymium
     chloride hydrate formula shorthand; left unmapped pending exact ontology evidence.
-  ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0043
-  preferred_term: NH4MgPO
-  synonyms:
-  - synonym_text: NH4MgPO4(Sigma 529354)
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 3
-    media_count: 3
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T08:07:24Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_FORMULA_SHORTHAND
-    changes: Classified as a single inorganic magnesium ammonium phosphate-like salt
-      and left unmapped because the preferred term is truncated while the raw source
-      synonym gives NH4MgPO4 without hydrate/CAS resolution.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 as NH4MgPO4 formula
-    shorthand and left unmapped pending exact hydrate/CAS evidence.'
   ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0152
   preferred_term: Nickel-NTA

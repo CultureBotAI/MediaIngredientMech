@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-06-18T22:09:50.926233+00:00
-Total: 383 ingredients
+Generated: 2026-07-21T03:58:23.876355+00:00
+Total: 381 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -247,7 +247,6 @@ Total: 383 ingredients
 | UNMAPPED_0462 |  | Na-Phosphate-Buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0461 | NCIT:C29321 | Na-phosphate buffer | UNMAPPED | NCIT | NARROW_MATCH | 0 |
 | UNMAPPED_0463 |  | Na-tetrathionate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0466 |  | Na2-9,10-anthraquinone-2,6-disulfonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0467 |  | Na2HPO4-KH2PO4 buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0468 |  | Na2HPO4-NaH2PO4 buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0465 |  | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED |  |  | 0 |
@@ -259,7 +258,6 @@ Total: 383 ingredients
 | UNMAPPED_0028 |  | NaH2PO4•H2O | UNMAPPED |  |  | 4 |
 | UNMAPPED_0050 |  | Natural sea-salt | UNMAPPED |  |  | 2 |
 | UNMAPPED_0479 |  | NdCl3 x 6 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0043 |  | NH4MgPO | UNMAPPED |  |  | 3 |
 | UNMAPPED_0152 |  | Nickel-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0268 |  | Northen_Exometabolite_mix_1 | UNMAPPED |  |  | 3 |
 | UNMAPPED_0481 |  | Nutrient agar | UNMAPPED |  |  | 0 |
