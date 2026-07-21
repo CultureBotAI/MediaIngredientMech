@@ -16,6 +16,7 @@ from __future__ import annotations
 import re
 import sys
 from collections import Counter
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import click
@@ -41,21 +42,51 @@ console = Console()
 PER_RECORD_AUTHORED_FIELDS: tuple[str, ...] = ("discussions",)
 
 
-def collect_preserved_fields(ingredients_root: Path) -> dict[str, dict]:
-    """Index per-record-authored fields by `identifier`, before files are cleared.
+@dataclass
+class PreservedFields:
+    """Per-record-authored fields recovered from disk, looked up by a move-stable key.
+
+    Two indexes, because neither key is stable across every move:
+    * `by_identifier` — survives a display-name normalisation (identifier stable,
+      filename/preferred_term change).
+    * `by_preferred_term` — survives an identifier change (promotion
+      UNMAPPED_NNNN->CHEBI:x, demotion, or a CHEBI remap), where the primary key
+      is exactly what moves. Only unambiguous terms are indexed; a preferred_term
+      shared by more than one authored record is dropped rather than risk
+      attributing a discussion to the wrong record.
+    """
+
+    by_identifier: dict[str, dict] = field(default_factory=dict)
+    by_preferred_term: dict[str, dict] = field(default_factory=dict)
+
+    def for_record(self, record: dict) -> dict:
+        """Authored fields to merge into `record`, or {} if none. Identifier first."""
+        ident = record.get("identifier")
+        if ident and ident in self.by_identifier:
+            return self.by_identifier[ident]
+        term = record.get("preferred_term")
+        if term and term in self.by_preferred_term:
+            return self.by_preferred_term[term]
+        return {}
+
+
+def collect_preserved_fields(ingredients_root: Path) -> PreservedFields:
+    """Index per-record-authored fields before files are cleared.
 
     Scans the whole `data/ingredients/` tree (both mapped/ and unmapped/) so a
-    record that moves between them on promotion still keeps its authored fields.
-    Keyed on `identifier` — the stable primary key — not filename, which changes
-    on rename/normalisation.
+    record that moves between them still keeps its authored fields. Indexed by
+    both `identifier` and `preferred_term` — see `PreservedFields`, because in
+    MIM the identifier IS the mapping CURIE and changes on promotion/remap, so
+    identifier alone would miss exactly the moves this preservation exists for.
 
     Rebuilt from current disk state each run, so an edit that removes a
     discussion survives (it is simply absent from the index), while an export
     that would otherwise drop it does not.
     """
-    preserved: dict[str, dict] = {}
+    result = PreservedFields()
     if not ingredients_root.exists():
-        return preserved
+        return result
+    term_collisions: set[str] = set()
     for path in ingredients_root.rglob("*.yaml"):
         try:
             record = load_yaml(path)
@@ -63,17 +94,26 @@ def collect_preserved_fields(ingredients_root: Path) -> dict[str, dict]:
             continue
         if not isinstance(record, dict):
             continue
-        ident = record.get("identifier")
-        if not ident:
-            continue
         authored = {
-            field: record[field]
-            for field in PER_RECORD_AUTHORED_FIELDS
-            if record.get(field)
+            fname: record[fname]
+            for fname in PER_RECORD_AUTHORED_FIELDS
+            if record.get(fname)
         }
-        if authored:
-            preserved[ident] = authored
-    return preserved
+        if not authored:
+            continue
+        ident = record.get("identifier")
+        if ident:
+            result.by_identifier[ident] = authored
+        term = record.get("preferred_term")
+        if term:
+            # Two authored records sharing a term make term-based lookup
+            # ambiguous; drop it entirely rather than guess.
+            if term in result.by_preferred_term or term in term_collisions:
+                result.by_preferred_term.pop(term, None)
+                term_collisions.add(term)
+            else:
+                result.by_preferred_term[term] = authored
+    return result
 
 
 def sanitize_filename(preferred_term: str) -> str:
@@ -125,7 +165,7 @@ def export_collection_to_individual_files(
     collection_path: Path,
     output_dir: Path,
     dry_run: bool = False,
-    preserved: dict[str, dict] | None = None,
+    preserved: PreservedFields | None = None,
 ) -> dict[str, int]:
     """Export a collection YAML file to individual ingredient files.
 
@@ -133,14 +173,14 @@ def export_collection_to_individual_files(
         collection_path: Path to the collection YAML file.
         output_dir: Directory to write individual files.
         dry_run: If True, only show what would be done.
-        preserved: Per-record-authored fields keyed by identifier (from
-            ``collect_preserved_fields``), merged into records whose collection
-            copy lacks them. Pass None to skip preservation.
+        preserved: Per-record-authored fields (from ``collect_preserved_fields``),
+            merged into records whose collection copy lacks them. Pass None to
+            skip preservation.
 
     Returns:
         Dictionary with statistics: 'total', 'created', 'collisions'.
     """
-    preserved = preserved or {}
+    preserved = preserved or PreservedFields()
     stats = {'total': 0, 'created': 0, 'collisions': 0}
 
     # Load collection
@@ -192,11 +232,10 @@ def export_collection_to_individual_files(
         # Re-attach per-record-authored fields (e.g. discussions) that the
         # collection does not carry, so export does not wipe them. Only fill
         # gaps — a value present in the collection wins.
-        authored = preserved.get(identifier)
-        if authored:
-            for field, value in authored.items():
-                if not ingredient.get(field):
-                    ingredient[field] = value
+        authored = preserved.for_record(ingredient)
+        for fname, value in authored.items():
+            if not ingredient.get(fname):
+                ingredient[fname] = value
 
         if dry_run:
             console.print(f"[dim]Would create: {output_path}[/dim]")
@@ -267,10 +306,11 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
     # Index per-record-authored fields BEFORE the per-category clear loop wipes
     # any files (a record may move mapped<->unmapped, so scan the whole tree).
     preserved = collect_preserved_fields(output_dir_path)
-    if preserved:
+    n_preserved = len(preserved.by_identifier)
+    if n_preserved:
         console.print(
             f"[dim]Preserving per-record fields "
-            f"({', '.join(PER_RECORD_AUTHORED_FIELDS)}) for {len(preserved)} record(s)[/dim]"
+            f"({', '.join(PER_RECORD_AUTHORED_FIELDS)}) for {n_preserved} record(s)[/dim]"
         )
 
     # Process each collection
