@@ -54,6 +54,21 @@ ignored_prefixes:
 
 synonym_scope: exact_related
 
+# Severity of IMPLAUSIBLE_LABEL (from `label_waiver_mode: plausible`). Ships as
+# `warn`: findings land in the report, build stays green. Flip to `error` once
+# the backlog clears -- the same report-then-enforce rollout the base gate used.
+plausibility_severity: warn
+
+# Numeric accession ceiling per ontology. An id that does NOT resolve AND sits
+# above the ceiling is a foreign identifier wearing an OBO prefix (a PubChem CID
+# under a CHEBI: prefix) rather than a retired accession -- its own verdict.
+max_accession:
+  CHEBI: 300000
+  FOODON: 4000000
+  UBERON: 9000000
+  ENVO: 9000000
+  NCIT: 900000
+
 # Curator-accepted residuals shared across every surface that carries them.
 # These four are VALID MeSH supplementary-concept records (verified live in MeSH:
 # avocatin B introduced 2020, sodium glutarate 2024) with no CHEBI equivalent. The
@@ -114,6 +129,11 @@ targets:
     policy: canonical_or_synonym
     label_waived_keys:
       - ontology_id
+    # Upgrade the waiver from accept-anything to plausibility-checked: a formula
+    # label (KH2PO4, CaCl2 x 2 H2O) is accepted only if its element multiset is
+    # consistent with the CHEBI term's own formula; a conflicting one surfaces
+    # as IMPLAUSIBLE_LABEL. The id is still existence-checked as before.
+    label_waiver_mode: plausible
     exceptions: *mesh_scr_exceptions
     pairs:
       - [ontology_id, ontology_label]
