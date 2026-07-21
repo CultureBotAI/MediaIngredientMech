@@ -184,12 +184,149 @@ def summarize_curation_history(doc: dict[str, Any], limit: int = 8) -> str:
     return _join_values(values)
 
 
+# --- Step 7b role-facet helpers (used by templates/ingredient_role_research.md). ------
+
+def _facet_enum_values(enum_name: str) -> list[str]:
+    """Return the permissible-value token list for a facet enum in the LinkML schema.
+
+    Uses `mediaingredientmech.curation.ingredient_curator` which already exposes
+    SchemaView-derived VALID_* frozensets (added in #135). Kept as a helper so
+    template rendering can compose a candidate menu Edison can pick from.
+    """
+    import sys
+    sys.path.insert(0, str(REPO_ROOT / "src"))
+    from mediaingredientmech.curation.ingredient_curator import (
+        VALID_CELLULAR_METABOLIC_ROLES,
+        VALID_NUTRITIONAL_ROLES,
+        VALID_PHYSICOCHEMICAL_ROLES,
+    )
+    return sorted({
+        "NutritionalRoleEnum":       VALID_NUTRITIONAL_ROLES,
+        "PhysicochemicalRoleEnum":   VALID_PHYSICOCHEMICAL_ROLES,
+        "CellularMetabolicRoleEnum": VALID_CELLULAR_METABOLIC_ROLES,
+    }[enum_name])
+
+
+def summarize_existing_role_assignments(doc: dict[str, Any]) -> str:
+    """Render the three facet slots currently on the IngredientRecord for context.
+
+    Edison sees this so it doesn't propose values that already exist AND so it
+    knows which facets are the actual gaps to fill.
+    """
+    facets = [
+        ("nutritional_roles",       "Nutritional"),
+        ("physicochemical_roles",   "Physicochemical"),
+        ("cellular_metabolic_roles", "Cellular-metabolic"),
+    ]
+    parts: list[str] = []
+    for slot, label in facets:
+        assignments = doc.get(slot) or []
+        if not isinstance(assignments, list) or not assignments:
+            parts.append(f"{label}: (none — GAP)")
+            continue
+        roles = []
+        for a in assignments:
+            if isinstance(a, dict):
+                role = a.get("role", "?")
+                conf = a.get("confidence")
+                roles.append(f"{role}" + (f"@{conf:.2f}" if isinstance(conf, (int, float)) else ""))
+            elif isinstance(a, str):
+                roles.append(a)
+        parts.append(f"{label}: [{', '.join(roles)}]")
+    return "; ".join(parts)
+
+
+def summarize_chebi_role_axioms(doc: dict[str, Any], limit: int = 15) -> str:
+    """Live OAK lookup of CHEBI `has_role` axioms on the ingredient's CHEBI id.
+
+    Returns a human-readable summary of each `has_role` target (id + label)
+    so Edison can confirm or contradict what CHEBI's own hierarchy asserts.
+    Falls back to "None recorded" if no CHEBI id, no OAK adapter, or no axioms.
+
+    Slow — ~2-5s cold-start on the first call in a process. Adapter is cached
+    at module level so subsequent calls are ~ms.
+    """
+    chebi_id = _ingredient_chebi_id(doc)
+    if not chebi_id:
+        return "None recorded (no CHEBI grounding)"
+    adapter = _oak_chebi_adapter()
+    if adapter is None:
+        return "None recorded (OAK adapter unavailable)"
+    try:
+        triples = list(adapter.relationships(subjects=[chebi_id]))
+    except Exception as exc:  # pragma: no cover — OAK failure modes are noisy.
+        return f"None recorded (OAK query failed: {exc!r})"
+
+    axioms = []
+    for triple in triples:
+        if not isinstance(triple, tuple) or len(triple) < 3:
+            continue
+        _s, pred, obj = triple[0], triple[1], triple[2]
+        if pred != "RO:0000087":  # has_role
+            continue
+        if not isinstance(obj, str) or not obj.startswith("CHEBI:"):
+            continue
+        try:
+            lbl = adapter.label(obj) or obj
+        except Exception:
+            lbl = obj
+        axioms.append(f"{obj} ({lbl})")
+    if not axioms:
+        return "None recorded (CHEBI has no has_role axioms on this compound)"
+    if len(axioms) > limit:
+        axioms = axioms[:limit] + [f"... ({len(axioms) - limit} more)"]
+    return "; ".join(axioms)
+
+
+_CHEBI_ID_PATHS = (
+    ("identifier",),           # IngredientRecord's own identifier when it starts with CHEBI:
+    ("ontology_mapping", "ontology_id"),
+)
+
+
+def _ingredient_chebi_id(doc: dict[str, Any]) -> str | None:
+    """Extract CHEBI id from a MIM IngredientRecord."""
+    for path in _CHEBI_ID_PATHS:
+        cur: Any = doc
+        for key in path:
+            if not isinstance(cur, dict):
+                cur = None
+                break
+            cur = cur.get(key)
+        if isinstance(cur, str) and cur.startswith("CHEBI:"):
+            return cur
+    return None
+
+
+_OAK_CACHE: dict[str, Any] = {}
+
+
+def _oak_chebi_adapter():
+    """Return a cached `sqlite:obo:chebi` adapter, or None if oaklib isn't available."""
+    if "chebi" in _OAK_CACHE:
+        return _OAK_CACHE["chebi"]
+    try:
+        from oaklib import get_adapter  # type: ignore
+        adapter = get_adapter("sqlite:obo:chebi")
+    except Exception:  # pragma: no cover — oaklib install / sqlite fetch failures
+        adapter = None
+    _OAK_CACHE["chebi"] = adapter
+    return adapter
+
+
 def template_vars(
     doc: dict[str, Any],
     ingredient_status: str,
     ingredient_slug: str,
 ) -> dict[str, str]:
-    """Build template variables for deep-research-client."""
+    """Build template variables for deep-research-client.
+
+    The five `candidate_*_roles` / `existing_role_assignments` /
+    `chebi_role_axioms` entries below feed the Step 7b role-research
+    template. Existing consumers of `template_vars` (identity/mapping
+    research) ignore the extra keys — `_DefaultEmpty` swallows any
+    placeholder the template doesn't reference.
+    """
     return {
         "ingredient_label": _scalar_text(doc.get("preferred_term")) or ingredient_slug,
         "ingredient_identifier": _scalar_text(doc.get("identifier")) or "None recorded",
@@ -204,6 +341,12 @@ def template_vars(
         "evidence_summary": summarize_evidence(doc),
         "curation_summary": summarize_curation_history(doc),
         "notes": _scalar_text(doc.get("notes")) or "None recorded",
+        # Step 7b (ingredient_role_research.md) additions:
+        "candidate_nutritional_roles":       ", ".join(_facet_enum_values("NutritionalRoleEnum")),
+        "candidate_physicochemical_roles":   ", ".join(_facet_enum_values("PhysicochemicalRoleEnum")),
+        "candidate_cellular_metabolic_roles": ", ".join(_facet_enum_values("CellularMetabolicRoleEnum")),
+        "existing_role_assignments": summarize_existing_role_assignments(doc),
+        "chebi_role_axioms": summarize_chebi_role_axioms(doc),
     }
 
 
