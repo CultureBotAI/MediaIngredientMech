@@ -32,6 +32,49 @@ from mediaingredientmech.utils.yaml_handler import load_yaml, save_yaml
 
 console = Console()
 
+# Fields authored directly on the per-record files and never carried in the
+# curated collection. The collection is the export source, so a naive
+# collection->per-record projection silently wipes these. `discussions` is
+# written into per-record files by culturebotai-claw's kgscan tool (see
+# `just gen-discussions-data`), not by the MIM curator, and has never been
+# aggregated back into data/curated/. Preserve it across a round-trip.
+PER_RECORD_AUTHORED_FIELDS: tuple[str, ...] = ("discussions",)
+
+
+def collect_preserved_fields(ingredients_root: Path) -> dict[str, dict]:
+    """Index per-record-authored fields by `identifier`, before files are cleared.
+
+    Scans the whole `data/ingredients/` tree (both mapped/ and unmapped/) so a
+    record that moves between them on promotion still keeps its authored fields.
+    Keyed on `identifier` — the stable primary key — not filename, which changes
+    on rename/normalisation.
+
+    Rebuilt from current disk state each run, so an edit that removes a
+    discussion survives (it is simply absent from the index), while an export
+    that would otherwise drop it does not.
+    """
+    preserved: dict[str, dict] = {}
+    if not ingredients_root.exists():
+        return preserved
+    for path in ingredients_root.rglob("*.yaml"):
+        try:
+            record = load_yaml(path)
+        except Exception:
+            continue
+        if not isinstance(record, dict):
+            continue
+        ident = record.get("identifier")
+        if not ident:
+            continue
+        authored = {
+            field: record[field]
+            for field in PER_RECORD_AUTHORED_FIELDS
+            if record.get(field)
+        }
+        if authored:
+            preserved[ident] = authored
+    return preserved
+
 
 def sanitize_filename(preferred_term: str) -> str:
     """Convert preferred term to a safe filename.
@@ -81,7 +124,8 @@ def sanitize_filename(preferred_term: str) -> str:
 def export_collection_to_individual_files(
     collection_path: Path,
     output_dir: Path,
-    dry_run: bool = False
+    dry_run: bool = False,
+    preserved: dict[str, dict] | None = None,
 ) -> dict[str, int]:
     """Export a collection YAML file to individual ingredient files.
 
@@ -89,10 +133,14 @@ def export_collection_to_individual_files(
         collection_path: Path to the collection YAML file.
         output_dir: Directory to write individual files.
         dry_run: If True, only show what would be done.
+        preserved: Per-record-authored fields keyed by identifier (from
+            ``collect_preserved_fields``), merged into records whose collection
+            copy lacks them. Pass None to skip preservation.
 
     Returns:
         Dictionary with statistics: 'total', 'created', 'collisions'.
     """
+    preserved = preserved or {}
     stats = {'total': 0, 'created': 0, 'collisions': 0}
 
     # Load collection
@@ -109,10 +157,11 @@ def export_collection_to_individual_files(
 
     stats['total'] = len(ingredients)
 
-    # Create output directory and clear any stale per-record files. The
-    # per-record corpus is a pure projection of the collection, so removing
-    # existing *.yaml first lets deletions/renames in the source propagate
-    # (otherwise a removed record's file lingers forever).
+    # Create output directory and clear any stale per-record files, so
+    # deletions/renames in the source propagate (otherwise a removed record's
+    # file lingers forever). The corpus is *almost* a pure projection of the
+    # collection — the exception is the per-record-authored fields captured in
+    # `preserved` above, which are merged back after this clear.
     if not dry_run:
         output_dir.mkdir(parents=True, exist_ok=True)
         for stale in output_dir.glob("*.yaml"):
@@ -139,6 +188,15 @@ def export_collection_to_individual_files(
             )
 
         output_path = output_dir / f"{filename}.yaml"
+
+        # Re-attach per-record-authored fields (e.g. discussions) that the
+        # collection does not carry, so export does not wipe them. Only fill
+        # gaps — a value present in the collection wins.
+        authored = preserved.get(identifier)
+        if authored:
+            for field, value in authored.items():
+                if not ingredient.get(field):
+                    ingredient[field] = value
 
         if dry_run:
             console.print(f"[dim]Would create: {output_path}[/dim]")
@@ -206,6 +264,15 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
     console.print(f"Input:  {input_dir_path}")
     console.print(f"Output: {output_dir_path}\n")
 
+    # Index per-record-authored fields BEFORE the per-category clear loop wipes
+    # any files (a record may move mapped<->unmapped, so scan the whole tree).
+    preserved = collect_preserved_fields(output_dir_path)
+    if preserved:
+        console.print(
+            f"[dim]Preserving per-record fields "
+            f"({', '.join(PER_RECORD_AUTHORED_FIELDS)}) for {len(preserved)} record(s)[/dim]"
+        )
+
     # Process each collection
     total_stats = {'total': 0, 'created': 0, 'collisions': 0}
 
@@ -221,7 +288,8 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
             stats = export_collection_to_individual_files(
                 collection_file,
                 output_subdir,
-                dry_run=dry_run
+                dry_run=dry_run,
+                preserved=preserved,
             )
 
             total_stats['total'] += stats['total']
