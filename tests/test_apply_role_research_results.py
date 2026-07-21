@@ -182,6 +182,37 @@ def test_apply_proposal_rejects_wrong_facet_role_name():
     assert any("belongs to physicochemical_roles" in r for r in reasons)
 
 
+def test_apply_proposal_rejects_role_that_is_no_facet_value():
+    """A token that is not a value of ANY facet enum must be skipped, not written.
+
+    facet_slot_for raises for a typo / hallucinated name / retired value
+    (MINERAL, SALT). Writing it would produce a schema-invalid record that only
+    the downstream validator would catch.
+    """
+    record = {"identifier": "CHEBI:1", "preferred_term": "x"}
+    proposal = {
+        "role_assignments": {
+            "nutritional_roles": [{"role": "BOGUS_ROLE", "confidence": 0.9}],
+        },
+    }
+    applied, reasons, dirty = _apply._apply_proposal(record, proposal, "edison-deep-research", dry_run=False)
+    assert applied == 0
+    assert dirty is False
+    assert "nutritional_roles" not in record
+    assert any("not a permissible value" in r for r in reasons)
+
+
+def test_apply_proposal_rejects_retired_mineral_role():
+    """MINERAL was retired in #128 and is not a facet value; it must not be written."""
+    record = {"identifier": "CHEBI:1", "preferred_term": "x"}
+    proposal = {
+        "role_assignments": {"nutritional_roles": [{"role": "MINERAL", "confidence": 0.9}]},
+    }
+    applied, reasons, dirty = _apply._apply_proposal(record, proposal, "edison-deep-research", dry_run=False)
+    assert applied == 0 and dirty is False
+    assert "nutritional_roles" not in record
+
+
 def test_apply_proposal_never_overwrites_populated_facet():
     """Facet slots that already carry any entries are skipped for that facet only."""
     record = {

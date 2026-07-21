@@ -206,12 +206,20 @@ def _apply_proposal(
             if not role:
                 continue
 
-            # Cross-check: role name must belong to this facet.
+            # Cross-check: role name must be a permissible value of THIS facet.
+            # facet_slot_for raises for a token that is not a value of any facet
+            # enum (a typo, a hallucinated name, or a retired value like MINERAL/
+            # SALT); those must be skipped, not written — otherwise the tool
+            # emits a schema-invalid record that only the downstream validator
+            # catches. An unknown role and a wrong-facet role are both rejected.
             try:
                 expected_slot = facet_slot_for(role)
             except Exception:
-                expected_slot = None
-            if expected_slot is not None and expected_slot != slot:
+                reasons.append(
+                    f"skipped {slot}[{role}]: not a permissible value of any role facet"
+                )
+                continue
+            if expected_slot != slot:
                 reasons.append(
                     f"skipped {slot}[{role}]: role belongs to {expected_slot}, not {slot}"
                 )
