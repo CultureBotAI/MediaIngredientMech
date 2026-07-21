@@ -1,10 +1,12 @@
 # Mapped Ingredients
 
-Generated: 2026-06-18T22:09:50.923692+00:00
-Total: 1875 ingredients
+Generated: 2026-07-21T03:58:23.874461+00:00
+Total: 1880 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:85112 | CHEBI:85112 | Na2-9,10-anthraquinone-2,6-disulfonate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:149425 | CHEBI:149425 | NH4MgPO | MAPPED | CHEBI | SYNONYM_MATCH | 3 |
 | cas:13446-18-9 | CHEBI:64736 | magnesium nitrate hexahydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:229630 | CHEBI:229630 | NH42CO3 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45165 | CHEBI:45165 | Pyromelitic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -419,7 +421,7 @@ Total: 1875 ingredients
 | FOODON:03460374 | FOODON:03460374 | Carboxymethyl cellulose (sodium salt) | MAPPED | FOODON | LEXICAL_MATCH | 0 |
 | kgmicrobe.compound:carcinomycin | kgmicrobe.compound:carcinomycin | Carcinomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | cas:461-06-3 | CHEBI:17126 | Carnitine (Dl) Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:48601 | CHEBI:48601 | Carnitine Hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.compound:carnitine_hydrochloride | CHEBI:17126 | Carnitine Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:65585 | CHEBI:65585 | Carnosic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C72000 | NCIT:C72000 | Carrot | MAPPED | NCIT | EXACT_MATCH | 0 |
 | kgmicrobe.compound:caryomycin | kgmicrobe.compound:caryomycin | Caryomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -821,7 +823,7 @@ Total: 1875 ingredients
 | CHEBI:28066 | CHEBI:28066 | Gentibiose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17189 | CHEBI:17189 | Gentisic acid | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | mesh:D010118 | mesh:D010118 | Geomycin | MAPPED | MESH | EXACT_MATCH | 0 |
-| cas:1075236-89-3 | NCIT:C170025 | Gepotidacin | MAPPED | NCIT | NARROW_MATCH | 0 |
+| CHEBI:747127 | CHEBI:747127 | Gepotidacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17447 | CHEBI:17447 | Geraniol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C66725 | NCIT:C66725 | Ginger | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:5355 | CHEBI:5355 | Ginkgolide A | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -841,7 +843,7 @@ Total: 1875 ingredients
 | cas:172669-64-6 | CHEBI:73898 | Gly-Gln monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:73801 | CHEBI:73801 | Gly-Glu | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17754 | CHEBI:17754 | Glycerol | MAPPED | CHEBI | EXACT_MATCH | 208 |
-| CHEBI:15978 | CHEBI:15978 | glycerol | MAPPED | CHEBI | EXACT_MATCH | 6 |
+| CHEBI:17754 | CHEBI:17754 | glycerol | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:75937 | CHEBI:75937 | Glycerol mono-oleate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:75456 | CHEBI:75456 | Glycerol monostearate | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | cas:55073-41-1 | cas:55073-41-1 | Glycerol phosphate disodium salt hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -849,7 +851,7 @@ Total: 1875 ingredients
 | CHEBI:182320 | CHEBI:182320 | Glycocholic acid hydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16344 | CHEBI:16344 | Glycocyamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28087 | CHEBI:28087 | Glycogen | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:9005-79-2 | cas:9005-79-2 | Glycogen from bovine liver | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:9005-79-2 | CHEBI:28087 | Glycogen from bovine liver | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17071 | CHEBI:17071 | glycolaldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17497 | CHEBI:17497 | Glycolic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17201 | CHEBI:17201 | Glycyl-glycine | MAPPED | CHEBI | EXACT_MATCH | 9 |
@@ -1663,7 +1665,7 @@ Total: 1875 ingredients
 | CHEBI:61117 | CHEBI:61117 | Sorgoleone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | FOODON:03302142 | FOODON:03302142 | Soy flour | MAPPED | FOODON | EXACT_MATCH | 0 |
 | FOODON:03315720 | FOODON:03315720 | Soy peptone | MAPPED | FOODON | CLOSE_MATCH | 47 |
-| cas:91079-46-8 | cas:91079-46-8 | Soya peptone | MAPPED | CAS | FALLBACK_REGISTRY | 4 |
+| FOODON:03315720 | FOODON:03315720 | Soya peptone | MAPPED | FOODON | CLOSE_MATCH | 4 |
 | kgmicrobe.ingredient:soyton | kgmicrobe.ingredient:soyton | Soyton | MAPPED | kgmicrobe.ingredient | PLACEHOLDER | 0 |
 | cas:520-43-4 | cas:520-43-4 | Sparassol | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:9217 | CHEBI:9217 | Spectinomycin dihydrochloride pentahydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1870,7 +1872,7 @@ Total: 1875 ingredients
 | CHEBI:132762 | CHEBI:132762 | ZnSO4 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:32312 | CHEBI:32312 | ZnSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 2150 |
 | cas:9010-72-4 | NCIT:C183132 | Zymosan | MAPPED | NCIT | NARROW_MATCH | 0 |
-| CHEBI:140435 | CHEBI:140435 | cholesterol | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
+| CHEBI:16113 | CHEBI:16113 | cholesterol | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:41981 | CHEBI:41981 | deuterated water | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
 | CHEBI:10642 | CHEBI:10642 | m-Inositol | MAPPED | CHEBI | CAS_RN_LOOKUP | 21 |
 | CHEBI:73685 | CHEBI:73685 | n-Acetyl-glutamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
@@ -1880,3 +1882,6 @@ Total: 1875 ingredients
 | CHEBI:16610 | CHEBI:16610 | spermidine | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:43796 | CHEBI:43796 | α-lipoic acid | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | cas:66455-27-4 | cas:66455-27-4 | α1-Acid Glycoprotein from bovine plasma | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| MICRO:0000182 | MICRO:0000182 | Tryptone peptone | MAPPED | MICRO | EXACT_MATCH | 0 |
+| FOODON:03315720 | FOODON:03315720 | Phytone | MAPPED | FOODON | CLOSE_MATCH | 0 |
+| FOODON:03315720 | FOODON:03315720 | Soya pepton | MAPPED | FOODON | CLOSE_MATCH | 0 |
