@@ -211,7 +211,7 @@ after every run. Re-running the export also recreates
 putting those three records in two states at once — delete those artifacts or fix
 the collection.
 
-## 4. Flip `plausibility_severity: warn` → `error` — DONE (2026-07-30, PR #160)
+## 4. Flip `plausibility_severity: warn` → `error` — DONE (2026-07-30, PR #159)
 
 `conf/id_label_targets.yaml:60` ships `plausibility_severity: warn` with the
 comment "Flip to `error` once the backlog clears -- the same report-then-enforce
