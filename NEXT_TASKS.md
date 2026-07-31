@@ -22,7 +22,7 @@ Last reconciled: 2026-07-30.
 
 # Pending & actionable
 
-## 1. `sanitize_filename` casing corruption (#147) — highest leverage
+## 1. `sanitize_filename` casing corruption (#147) — DONE (2026-07-30, PR #159)
 
 `scripts/export_individual_records.py:155` ends with
 `name = "_".join(part.capitalize() … )`. Python's `str.capitalize()` **lowercases
@@ -40,25 +40,77 @@ would rename 389 files and desync their SSSOM `MIM:` subjects.
 **Why it is first:** it blocks #2 and #3 below (any corpus-wide re-export today
 would bake in the 389 renames) and it closes #149 outright.
 
-Fix options, from the issue: (1) drop the `.capitalize()` lowercasing so the
-function matches the committed corpus and the `MIM:` subject rule, then reconcile
-the corpus once; or (2) centralize the casing rule so MIM's `sanitize_filename`
-and culturebotai-claw's `build_mim_ingredient_sssom._mim_curie` share one
-implementation. **Option 2 touches claw** — `src/mediaingredientmech/curie.py::mim_curie_for_stem`
-carries a stated "must stay identical" contract with it, so coordinate rather
-than changing the rule unilaterally. Verify after with `just curie-validate` and
-`tests/test_curie_normalizer.py`.
+**⚠ The issue's proposed fix does not work — measured 2026-07-30.** Option 1
+("drop the `.capitalize()` lowercasing so the function matches the committed
+corpus") rests on the assumption that the corpus follows one case-preserving
+rule. It does not: **the corpus is a historical mix of two rules**, so no single
+naming function reproduces it. Simulated over all 2,252 tracked per-record files,
+comparing each candidate against the filename **git tracks** (not the drifted
+on-disk name):
 
-**#149 (non-ASCII α escaping) is a duplicate of this, with a wrong diagnosis.**
+| rule | exact | + `_N` collision suffix | mismatch |
+|---|---|---|---|
+| current — `part.capitalize()` per part | 1859 | 6 | **387** |
+| uppercase first char of each part, preserve rest | 1854 | 3 | **395** |
+| uppercase first char only (the docstring's rule) | 1124 | 3 | 1125 |
+| no case transformation at all | 1079 | 0 | 1173 |
+
+The two leading rules fail on **disjoint** sets. Today's rule mismatches files
+that preserve inner capitals (`1-Kestose`, `14-B-D-Galactobiose`); the
+case-preserving rule mismatches files that were *created by* today's rule and
+carry a lowercased tail (`112-trichloroethane`, `2-mercaptoethanol`). Switching
+to case-preserving would rename **more** files (395) than leaving the bug in
+place (387). Note the function's own docstring is already inconsistent with its
+code — it promises `"NaCl (99%)" -> "NaCl_99"` and `"sodium chloride" ->
+"Sodium_chloride"`, neither of which `capitalize()` produces.
+
+**The fix that actually works: make the exporter filename-stable.**
+`export_collection_to_individual_files` deletes every `*.yaml` in the output
+directory and rewrites from the collection, so the filename is re-derived from
+`preferred_term` on every run — that re-derivation is the whole bug. The file
+already solves this exact class of problem for `discussions` via
+`PreservedFields`, which indexes by identifier *and* by preferred_term because
+neither key survives every move. Apply the same pattern to filenames: capture
+each record's existing filename before the clear, reuse it on rewrite, and fall
+back to `sanitize_filename` only for genuinely new records. That renames nothing,
+keeps every published `MIM:` subject valid, and removes the silent-corruption
+mode outright.
+
+Second, smaller change: `capitalize()` also corrupts chemical casing on *new*
+records — `TAPSO` → `Tapso`, `KI` → `Ki`, `MnCl2` → `Mncl2`, and the corpus
+carries the scars (`Feso43_X_N_H2o`, `Na2moo7_X_2_H2o`, `K2hpo4`). With stability
+in place this only affects newly-added records, so the rule can safely be
+corrected to the documented first-character-only behaviour without touching
+anything already committed.
+
+`src/mediaingredientmech/curie.py::mim_curie_for_stem` carries a stated "must
+stay identical" contract with culturebotai-claw's
+`build_mim_ingredient_sssom._mim_curie`. **The stability fix does not touch it** —
+stems stop changing, so the contract is honoured rather than renegotiated.
+
+**Shipped 2026-07-30 (PR #159).** `FilenameIndex` + `collect_existing_filenames`
+mirror the `PreservedFields` pattern the same file already uses for
+`discussions`, indexing by identifier *and* preferred_term and dropping ambiguous
+keys rather than guessing. `sanitize_filename` was corrected to the documented
+first-character-only rule for new records. The two already-drifted working-tree
+filenames were restored, which is what made `tests/test_curie_normalizer.py` fail
+locally while passing in CI. Verified: `just export-individual` rewrites all
+2,260 records with **zero renames**; 490 tests pass; `just curie-validate` green.
+9 new tests in `tests/test_export_filename_stability.py` pin the behaviour,
+including idempotency across repeated runs.
+
+**#149 (non-ASCII α escaping) was a duplicate of this, with a wrong diagnosis —
+closed 2026-07-30.** The diagnosis is kept here because the two Greek-alpha
+records are a *symptom* of #147 and stay broken until the casing is restored.
 Verified 2026-07-30: `mim_curie_for_stem("Α1-Acid_Glycoprotein_From_Bovine_Plasma")`
 returns `MIM:~3911-Acid_Glycoprotein_From_Bovine_Plasma`, exactly the published
 SSSOM subject — the escaping round-trips fine. The character is U+0391 *capital*
 Greek Alpha (`CE 91` → `~391`), not the lowercase α the issue body claims, and
 `format(945, '02X')` = `'3B1'` (the `02` is a minimum width, nothing truncates).
 The single unresolvable subject is just the working-tree file having been
-lowercased by #147, and it disappears when the casing is restored. **Close #149
-as a duplicate**, or retitle it to cover the two Greek-alpha records (it never
-mentions the second one).
+lowercased by #147, and it disappears when the casing is restored. Note that
+#149 only ever mentioned one of the two Greek-alpha records; fixing #147 covers
+both.
 
 ## 2. Duplicate identifier primary keys — 61 collisions across 86 records (NEW)
 
@@ -133,12 +185,33 @@ Also in scope, found during this reconcile:
   Only `data/curated/` is gated by `conf/id_label_targets.yaml`. Decide: delete,
   or move to `ATTIC/`.
 
-The issue's item 1 (~59 per-record files lagging the collection in *content*)
-is **unverified** — confirming it means actually running `just export-individual`,
-which is exactly what #1 makes unsafe today. The exact 1,879/1,879 mapped match
-means it is at worst content drift, not membership drift.
+**The issue's item 1 is now CONFIRMED and is worse than "stale files" — it is a
+data-destroying landmine. Measured 2026-07-30, once PR #159 made a full export
+safe to run.** A `just export-individual` on current `main` reverts **67 files**
+(197 insertions, 472 deletions). The losses are not cosmetic:
 
-## 4. Flip `plausibility_severity: warn` → `error` — ready, zero-cost
+| curation action silently reverted | count | curator |
+|---|---|---|
+| `RECLASSIFY_INGREDIENT_TYPE` (`UNDEFINED_MIXTURE` → `DEFINED_MEDIUM`) | 53 | `cbclaw_media_modeling_114` |
+| `FLAGGED_NON_INGREDIENT` | 2 | `cbclaw_followups_114` |
+
+These are exactly PR #116's 53 media reclassifications. They were written to the
+per-record files and **never aggregated back into `data/curated/`**, so the
+collection still says `UNDEFINED_MIXTURE` and the export — which treats the
+collection as the source — undoes all 55 curation events and drops their history
+entries. `promote_resolved_unmapped.py` calls `just export-individual`, so **any
+routine promotion would have silently reverted them.**
+
+Fix direction: aggregate per-record → collection (`just aggregate-collections`)
+*before* the next export, and verify the resulting collection diff contains only
+those 55 events and the 3 orphan deletions above. Until that lands, treat
+`just export-individual` as unsafe on this corpus and check `git diff --stat`
+after every run. Re-running the export also recreates
+`unmapped/{Phytone,Soya_Pepton,Tryptone_Peptone}.yaml` from the stale entries,
+putting those three records in two states at once — delete those artifacts or fix
+the collection.
+
+## 4. Flip `plausibility_severity: warn` → `error` — DONE (2026-07-30, PR #159)
 
 `conf/id_label_targets.yaml:60` ships `plausibility_severity: warn` with the
 comment "Flip to `error` once the backlog clears -- the same report-then-enforce
@@ -147,10 +220,13 @@ via `label_waiver_mode: plausible`) is currently report-only: the validator
 discards `IMPLAUSIBLE_LABEL` from `error_verdicts` when severity is `warn`
 (`scripts/validate_id_label_correspondence.py:745-748`).
 
-**The backlog it was waiting on is already empty.** `just validate-products` on
-2026-07-30 reports **IMPLAUSIBLE_LABEL: 0**. Flipping the value is a one-line
-change that converts a dormant check into a blocking one at zero curation cost —
-do it before the count can drift back up.
+**The backlog it was waiting on was already empty**, so the flip cost nothing.
+`conf/id_label_targets.yaml` now carries `plausibility_severity: error`, and
+`just validate-products` still exits 0 (OK_CANONICAL 5034 / OK_ID_ONLY 1667 /
+OK_EXCEPTION 16 / SKIPPED_NO_ADAPTER 3357, no implausible pairs). An implausible
+id↔label pair is now build-breaking rather than merely reported. Only the
+per-repo config changed — `scripts/validate_id_label_correspondence.py` is
+vendored and drift-checked, so its `severity != "error"` logic was left alone.
 
 ## 5. Run the ingredient-role research pipeline — all tooling merged, never run
 
@@ -179,6 +255,15 @@ assignments are `COMPUTATIONAL_PREDICTION` (698) or `DATABASE_ENTRY` (283):
 was built to supply, and `cellular_metabolic_roles` is the facet it should fill.
 
 Order of operations (per the CultureMech skill's documented merge order):
+
+**Both lanes are driven from CultureMech, not from here** (confirmed 2026-07-30:
+`scripts/backfill_ingredient_roles.py` and `scripts/audit_missing_roles.py` are
+CultureMech files, added by its #95 and present on its `origin/main`; MIM only
+supplies the Edison shim, the research template, and the applier). Schedule the
+run there. Note the local CultureMech checkout is on `validate-media-recipes`,
+61 commits ahead of its origin, and those two scripts are missing from its
+working tree despite being at `HEAD` — sort that checkout out before running
+anything.
 
 1. **Mechanistic lane first** — CultureMech's `backfill_ingredient_roles.py`
    (#95) derives facets from CHEBI `has_role` via OAK. It is dry-run-only and its
@@ -296,10 +381,6 @@ Nine items shipped in #108/#109/#111; three remain, all confirmed present:
   Re-run any time with `python scripts/enrich_chemical_properties.py`
   (idempotent), then `just export-individual`. Gotcha still live: OLS4 needs
   **double** URL-encoding of ChEBI IRIs.
-- **Prune 3 stale git worktrees** — `git worktree list` shows `mim-step7b-pr1`,
-  `…-pr2`, `…-pr6` under a CultureMech scratchpad path, all marked prunable, all
-  with their `.git` links gone. Checked 2026-07-30: no uncommitted work in any of
-  them (`research/` and `reports/role_research_batches/` are empty). `git worktree prune`.
 - **`dashboard/` was last generated 2026-07-19**, before the role-facet work
   landed. Re-run `just gen-qc-dashboard` after item 5.
 
@@ -452,8 +533,8 @@ Drift is now caught by `scripts/check_vendored_sync.sh` (dependency-free: bash +
 curl + diff, byte-exact `cmp`), run by the **`vendored-sync`** job in
 `.github/workflows/label-correspondence.yaml`. It covers **6 files** against
 `CultureBotAI/CultureMech@<scripts/.vendored_canon_ref>` — currently
-`6be694f3` — with CultureMech as the hub because culturebotai-claw is private and
-public CI cannot fetch raw from it:
+`6be694f3` — with the public `CultureMech` as the hub because the Mechs' CI is
+itself public and cannot fetch raw content from private culturebotai-claw:
 
 `scripts/validate_id_label_correspondence.py` · `scripts/chem_formula.py` ·
 `tests/test_id_label_empty_adapter.py` · `tests/test_id_label_unknown_prefix.py` ·
@@ -465,6 +546,18 @@ byte-exact into this repo → bump `scripts/.vendored_canon_ref` to the new hub
 commit **in the same PR**. The ref bump is the deliberate propagation act. The
 hub's nightly `vendored-fleet-audit.yml` is the backstop.
 
+**Settled topology — do not re-propose moving the canon into claw.** CultureMech
+is the hub by design, not as a fallback for a private claw: claw's
+`shared/idlabel/` is a passive *mirror* of it (claw #19). Making claw canonical
+was tried and abandoned — claw #21 enforced it (merged 2026-07-22) and claw #22
+reverted it (2026-07-25) as off-model for claw-as-mirror. claw is still private,
+but that is **not** a live blocker on anything, since the plan it blocked no
+longer exists. Two directions are covered: spokes == hub by CultureMech's
+`scripts/audit_vendored_fleet.sh` (nightly `vendored-fleet-audit.yml`), and
+mirror == hub by claw's `matches-hub` job in `id-label-canon.yaml`, which claw
+#24 (merged 2026-07-25, closes claw #23) put on a nightly schedule — it
+previously fired only on claw-side changes, so it could never see the hub move.
+
 **Known gap worth a follow-up:** `scripts/chem_formula.py`,
 `scripts/check_vendored_sync.sh`, `scripts/.vendored_canon_ref` and the
 `tests/test_id_label_*.py` files are **not** in the workflow's `trigger_paths`,
@@ -473,7 +566,11 @@ stays unpinned **by design** — it is intentionally per-repo (different adapter
 targets, exceptions), not a drift risk.
 
 Cross-repo companion status for #157 (CultureMech #112 plus the CommunityMech and
-TraitMech spokes) is not verifiable from this repo — confirm from the hub.
+TraitMech spokes), confirmed from the hub on 2026-07-30: all three spokes — MIM,
+CommunityMech, TraitMech — pin the same `scripts/.vendored_canon_ref`
+(`6be694f3d6308ac0f4c2e0dcf196e2ff73f6468f`) against `CultureBotAI/CultureMech`;
+CultureMech itself carries no ref because it *is* the hub. CultureMech's
+`vendored-fleet-audit` has run green nightly through 2026-07-30.
 
 ## Adopt DisMech knowledge-gaps + datasets + QC dashboard (claw#7) — LANDED
 
