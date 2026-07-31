@@ -29,16 +29,16 @@ Last reconciled: 2026-07-30.
 everything after the first character**, so `just export-individual` rewrites
 per-record filenames to a casing the committed corpus does not use
 (`14-B-D-Galactobiose` → `14-b-d-galactobiose`). Simulated over the tracked
-corpus on 2026-07-30: **389 of 2,257 records would get a different filename**
+corpus on 2026-07-30: **387 of 2,252 tracked records would get a different filename**
 (the issue estimated 359). On macOS's case-insensitive filesystem `git status`
 stays empty, so it is invisible — two files have *already* drifted on disk
 (`data/ingredients/mapped/Α1-acid_Glycoprotein_From_Bovine_Plasma.yaml`,
 `data/ingredients/unmapped/Α-d-glucose_Monohydrate.yaml`; git tracks
 `…Α1-Acid_…` / `…Α-D-Glucose_…`). Committed from a case-sensitive filesystem it
-would rename 389 files and desync their SSSOM `MIM:` subjects.
+would rename 387 files and desync their SSSOM `MIM:` subjects.
 
 **Why it is first:** it blocks #2 and #3 below (any corpus-wide re-export today
-would bake in the 389 renames) and it closes #149 outright.
+would bake in the 387 renames) and it closes #149 outright.
 
 **⚠ The issue's proposed fix does not work — measured 2026-07-30.** Option 1
 ("drop the `.capitalize()` lowercasing so the function matches the committed
