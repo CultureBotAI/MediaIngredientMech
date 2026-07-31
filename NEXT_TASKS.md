@@ -22,7 +22,7 @@ Last reconciled: 2026-07-30.
 
 # Pending & actionable
 
-## 1. `sanitize_filename` casing corruption (#147) — IN PROGRESS (2026-07-30)
+## 1. `sanitize_filename` casing corruption (#147) — DONE (2026-07-30, PR #159)
 
 `scripts/export_individual_records.py:155` ends with
 `name = "_".join(part.capitalize() … )`. Python's `str.capitalize()` **lowercases
@@ -87,7 +87,17 @@ anything already committed.
 stay identical" contract with culturebotai-claw's
 `build_mim_ingredient_sssom._mim_curie`. **The stability fix does not touch it** —
 stems stop changing, so the contract is honoured rather than renegotiated.
-Verify with `just curie-validate` and `tests/test_curie_normalizer.py`.
+
+**Shipped 2026-07-30 (PR #159).** `FilenameIndex` + `collect_existing_filenames`
+mirror the `PreservedFields` pattern the same file already uses for
+`discussions`, indexing by identifier *and* preferred_term and dropping ambiguous
+keys rather than guessing. `sanitize_filename` was corrected to the documented
+first-character-only rule for new records. The two already-drifted working-tree
+filenames were restored, which is what made `tests/test_curie_normalizer.py` fail
+locally while passing in CI. Verified: `just export-individual` rewrites all
+2,260 records with **zero renames**; 490 tests pass; `just curie-validate` green.
+9 new tests in `tests/test_export_filename_stability.py` pin the behaviour,
+including idempotency across repeated runs.
 
 **#149 (non-ASCII α escaping) was a duplicate of this, with a wrong diagnosis —
 closed 2026-07-30.** The diagnosis is kept here because the two Greek-alpha
@@ -175,12 +185,33 @@ Also in scope, found during this reconcile:
   Only `data/curated/` is gated by `conf/id_label_targets.yaml`. Decide: delete,
   or move to `ATTIC/`.
 
-The issue's item 1 (~59 per-record files lagging the collection in *content*)
-is **unverified** — confirming it means actually running `just export-individual`,
-which is exactly what #1 makes unsafe today. The exact 1,879/1,879 mapped match
-means it is at worst content drift, not membership drift.
+**The issue's item 1 is now CONFIRMED and is worse than "stale files" — it is a
+data-destroying landmine. Measured 2026-07-30, once PR #159 made a full export
+safe to run.** A `just export-individual` on current `main` reverts **67 files**
+(197 insertions, 472 deletions). The losses are not cosmetic:
 
-## 4. Flip `plausibility_severity: warn` → `error` — IN PROGRESS (2026-07-30)
+| curation action silently reverted | count | curator |
+|---|---|---|
+| `RECLASSIFY_INGREDIENT_TYPE` (`UNDEFINED_MIXTURE` → `DEFINED_MEDIUM`) | 53 | `cbclaw_media_modeling_114` |
+| `FLAGGED_NON_INGREDIENT` | 2 | `cbclaw_followups_114` |
+
+These are exactly PR #116's 53 media reclassifications. They were written to the
+per-record files and **never aggregated back into `data/curated/`**, so the
+collection still says `UNDEFINED_MIXTURE` and the export — which treats the
+collection as the source — undoes all 55 curation events and drops their history
+entries. `promote_resolved_unmapped.py` calls `just export-individual`, so **any
+routine promotion would have silently reverted them.**
+
+Fix direction: aggregate per-record → collection (`just aggregate-collections`)
+*before* the next export, and verify the resulting collection diff contains only
+those 55 events and the 3 orphan deletions above. Until that lands, treat
+`just export-individual` as unsafe on this corpus and check `git diff --stat`
+after every run. Re-running the export also recreates
+`unmapped/{Phytone,Soya_Pepton,Tryptone_Peptone}.yaml` from the stale entries,
+putting those three records in two states at once — delete those artifacts or fix
+the collection.
+
+## 4. Flip `plausibility_severity: warn` → `error` — DONE (2026-07-30, PR #160)
 
 `conf/id_label_targets.yaml:60` ships `plausibility_severity: warn` with the
 comment "Flip to `error` once the backlog clears -- the same report-then-enforce
@@ -189,10 +220,13 @@ via `label_waiver_mode: plausible`) is currently report-only: the validator
 discards `IMPLAUSIBLE_LABEL` from `error_verdicts` when severity is `warn`
 (`scripts/validate_id_label_correspondence.py:745-748`).
 
-**The backlog it was waiting on is already empty.** `just validate-products` on
-2026-07-30 reports **IMPLAUSIBLE_LABEL: 0**. Flipping the value is a one-line
-change that converts a dormant check into a blocking one at zero curation cost —
-do it before the count can drift back up.
+**The backlog it was waiting on was already empty**, so the flip cost nothing.
+`conf/id_label_targets.yaml` now carries `plausibility_severity: error`, and
+`just validate-products` still exits 0 (OK_CANONICAL 5034 / OK_ID_ONLY 1667 /
+OK_EXCEPTION 16 / SKIPPED_NO_ADAPTER 3357, no implausible pairs). An implausible
+id↔label pair is now build-breaking rather than merely reported. Only the
+per-repo config changed — `scripts/validate_id_label_correspondence.py` is
+vendored and drift-checked, so its `severity != "error"` logic was left alone.
 
 ## 5. Run the ingredient-role research pipeline — all tooling merged, never run
 
