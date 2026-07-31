@@ -3,213 +3,530 @@
 Deferred work, each entry with enough context to pick up cold. **Maintenance:**
 update this file as work is started/finished — move done items out, add new
 deferrals here. Keep the cross-Mech items in sync with the sibling repos'
-`NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech).
+`NEXT_TASKS.md` (CultureMech / TraitMech; CommunityMech has none).
 
-Last reconciled: 2026-06-15.
+Last reconciled: 2026-07-30.
 
-## 1. Chemical-properties enrichment — enricher repaired, residual is the ceiling
+> **Reconcile note (2026-07-30).** The previous reconcile was 2026-06-15 and the
+> file had drifted badly: PRs #114–#157 shipped in the interim, including two
+> entire threads it never mentioned (the **role-facet migration + role-research
+> pipeline**, and the **vendored-sync drift check that retired the sha256 pins**),
+> and **none of the 7 open GitHub issues** appeared anywhere in it. Section 2's
+> description of a 3-line sha256 pin manifest was actively wrong — that mechanism
+> was retired in #156/#157. Everything below is verified against the tree at
+> `675d771f`. Gates on `main` are green: `qc-sssom` Rules A/B1/B2/B3 pass,
+> `validate-products` reports OK_CANONICAL 5034 / OK_ID_ONLY 1667 /
+> OK_EXCEPTION 16 / **IMPLAUSIBLE_LABEL 0**.
 
-**Done (2026-06-15, `feat/enrich-chemical-properties`)** — the enricher had silently
-broken: OLS4 renamed its annotation keys (`formula` → `generalized_empirical_formula`;
-SMILES/InChI → `*_string`), so every fetch returned None. Fixed
-`chemical_properties_client.py` to read the current keys (legacy fallback kept),
-broadened the enricher to target records *missing `molecular_formula`* (not just
-those with no `chemical_properties` block) with a gap-filling **merge** (never
-clobbers `cas_rn`), and made the `Enriched` counter report net changes. Re-ran:
-**3 records gained formula/SMILES** (diaminopimelic acid, sodium L-lactate,
-isobutyramide+mass).
+---
 
-The remaining ~83 missing-formula records are the **genuine ceiling** — abstract
-CHEBI classes (aromatic compound, bile salt, hydrocarbon), polymers (glycogen,
-carboxymethylcellulose, chondroitin sulfate, DNA), proteins (elastin, LL-37),
-complexes (kanamycin), and minerals (ferrihydrite) — which legitimately have no
-single empirical formula in ChEBI. Not failures; leave them.
+# Pending & actionable
 
-- Run again any time with `python scripts/enrich_chemical_properties.py` (idempotent);
-  regenerate per-record files with `just export-individual` after.
-- Gotcha still live: OLS4 needs **double** URL-encoding of ChEBI IRIs (handled).
-- Find remaining: `grep -rL molecular_formula data/ingredients/mapped/*.yaml | xargs grep -l 'ontology_source: CHEBI'`
+## 1. `sanitize_filename` casing corruption (#147) — highest leverage
 
-## 2. Cross-Mech validator pin guard — DONE (4-repo invariant)
+`scripts/export_individual_records.py:155` ends with
+`name = "_".join(part.capitalize() … )`. Python's `str.capitalize()` **lowercases
+everything after the first character**, so `just export-individual` rewrites
+per-record filenames to a casing the committed corpus does not use
+(`14-B-D-Galactobiose` → `14-b-d-galactobiose`). Simulated over the tracked
+corpus on 2026-07-30: **389 of 2,257 records would get a different filename**
+(the issue estimated 359). On macOS's case-insensitive filesystem `git status`
+stays empty, so it is invisible — two files have *already* drifted on disk
+(`data/ingredients/mapped/Α1-acid_Glycoprotein_From_Bovine_Plasma.yaml`,
+`data/ingredients/unmapped/Α-d-glucose_Monohydrate.yaml`; git tracks
+`…Α1-Acid_…` / `…Α-D-Glucose_…`). Committed from a case-sensitive filesystem it
+would rename 389 files and desync their SSSOM `MIM:` subjects.
 
-~~Vendor the id↔label validator into CommunityMech~~ — **DONE** (2026-06-12,
-CommunityMech PR #132).
+**Why it is first:** it blocks #2 and #3 below (any corpus-wide re-export today
+would bake in the 389 renames) and it closes #149 outright.
 
-**Done** (2026-06-15): the byte-identical invariant now spans **all four** Mech
-repos (CultureMech, MIM, CommunityMech, TraitMech). culturebotai-claw#6 Option 1
-extended the pin from the script alone to the full vendored set — the validator
-`.py` **plus** the two shared tests — across every repo (CommunityMech's drifted
-test copies were resynced + pinned in PR #151); editing a vendored test now fails
-CI everywhere. TraitMech joined and enforces too (TraitMech PR #110 Phase 1,
-PR #111 Phase 2 blocking gate — 14 wrong CURIEs fixed, gate green). All four pin
-the same 3-line manifest (`142bbe1…` / `55a432…` / `f01d22…`).
-`conf/id_label_targets.yaml` stays **unpinned by design** — it is intentionally
-per-repo (different adapters/targets/exceptions), not a drift risk to fix.
+Fix options, from the issue: (1) drop the `.capitalize()` lowercasing so the
+function matches the committed corpus and the `MIM:` subject rule, then reconcile
+the corpus once; or (2) centralize the casing rule so MIM's `sanitize_filename`
+and culturebotai-claw's `build_mim_ingredient_sssom._mim_curie` share one
+implementation. **Option 2 touches claw** — `src/mediaingredientmech/curie.py::mim_curie_for_stem`
+carries a stated "must stay identical" contract with it, so coordinate rather
+than changing the rule unilaterally. Verify after with `just curie-validate` and
+`tests/test_curie_normalizer.py`.
 
-## 3. Hard unmapped residual — dedicated semantic curation (~395 records)
+**#149 (non-ASCII α escaping) is a duplicate of this, with a wrong diagnosis.**
+Verified 2026-07-30: `mim_curie_for_stem("Α1-Acid_Glycoprotein_From_Bovine_Plasma")`
+returns `MIM:~3911-Acid_Glycoprotein_From_Bovine_Plasma`, exactly the published
+SSSOM subject — the escaping round-trips fine. The character is U+0391 *capital*
+Greek Alpha (`CE 91` → `~391`), not the lowercase α the issue body claims, and
+`format(945, '02X')` = `'3B1'` (the `02` is a minimum width, nothing truncates).
+The single unresolvable subject is just the working-tree file having been
+lowercased by #147, and it disappears when the casing is restored. **Close #149
+as a duplicate**, or retitle it to cover the two Greek-alpha records (it never
+mentions the second one).
 
-Automated exact/normalized/fuzzy matching is **exhausted** (verified 2026-06-14:
-only ~1 clean exact match across all 398). The residual is specialized cobamides,
-flavonoids, natural products, element placeholders, and mixtures.
+## 2. Duplicate identifier primary keys — 61 collisions across 86 records (NEW)
 
-- Use `deep-research-ingredient` (Edison/PaperQA3; `EDISON_PLATFORM_API_KEY` is
-  configured) or `mediaingredientmech-agentic-curation` (FutureHouse Falcon) for
-  source-backed identity + CHEBI/FOODON grounding, per record.
-- **Migration recipe (proven 2026-06-15, NAA promotion):** mapping an unmapped
-  record is multi-surface and only partly automated. The working sequence:
-  1. In the source collections, move + transform the record:
-     `unmapped_ingredients.yaml` (delete record, decrement header counts) →
-     `mapped_ingredients.yaml` (add with `ontology_mapping`, `mapping_status: MAPPED`,
-     a `PROMOTED_TO_MAPPED` history entry; increment header counts).
-  2. `just export-individual` (record file moves unmapped/ → mapped/).
-  3. **Hand-add the SSSOM row** — `reconcile_sssom` reports the GAP but won't
-     synthesize new-row provenance. One `skos:exactMatch` row to the CHEBI id
-     (`obo:chebi.owl`, canonical object_label) suffices for a CHEBI-primary record;
-     Rule B1 needs no registry sibling. Insert in the file's sort order (by the
-     *decoded* subject label, e.g. between `MIM:1-Kestose` and `MIM:1-Pentanol`).
-  4. `just export-lists` (docs). Verify: `reconcile_sssom` GAP 0, SSSOM invariants
-     Rules A/B1/B2/B3, `validate-products` (the blocking id↔label gate), validate-strict.
-  - **Helper built (2026-06-16): `scripts/promote_resolved_unmapped.py`** automates
-    the whole recipe (collection move + canonical-label lookup + SSSOM row inserted in
-    sort order + regen + verify), with a **PK-collision guard** that refuses to create
-    a duplicate CHEBI primary (redirect those to a merge). `--dry-run` by default.
-    Usage: `python scripts/promote_resolved_unmapped.py --identifier UNMAPPED_NNNN
-    --to CHEBI:NNN --quality EXACT_MATCH --evidence-source "…" --note "…" --apply`.
-    Only handles exact/close (narrow/broad need registry SSSOM rows — hand-curate).
-  - Note: the per-record filename sanitiser drifted over time, so a freshly-promoted
-    file may get a slightly different slug casing than the old unmapped file — cosmetic.
-- **Batch 1 done (2026-06-14, `feat/deep-research-unmapped-batch`)** — 3 records
-  deep-researched (Edison/PaperQA3) and **enriched in place** (synonyms / CAS-RN /
-  provenance; left UNMAPPED — no risky migration yet):
-  - `1-Naphtylacetic Acid` → **MAPPED 2026-06-15** (UNMAPPED_0316 → CHEBI:32918
-    "1-naphthaleneacetic acid", EXACT_MATCH) via the migration recipe above. NAA,
-    CAS 86-87-3 — a "naphtyl" misspelling string-matching missed. (unmapped 398 → 397)
-  - `alpha-ketoglutamate` → **MERGED 2026-06-16** into the existing `CHEBI:30915`
-    "alpha-ketoglutaric acid" record (added as a synonym; UNMAPPED_0323 removed).
-    `promote_resolved_unmapped.py`'s PK-collision guard caught that CHEBI:30915 (and
-    the anion CHEBI:16810) are already mapped — it's a duplicate, not a new mapping.
-    (unmapped 397 → 396)
-  - `2-methyladeninyl cobamide` (UNMAPPED_0182) → **stays UNMAPPED, confirmed**: a
-    specific corrinoid ("Factor A") with no source-backed CHEBI/CAS; do NOT map to
-    cobalamin/B12. Validates the prior curator call; enriched with synonyms.
-  - Takeaway: deep research resolves identities that string-matching can't, but most
-    of the residual is genuinely hard. The 2 "ready to map" records still await the
-    multi-surface migration above. Edison reports live under `research/` (gitignored).
-- **Batch 2 done (2026-06-16, `feat/deep-research-batch2-enrich`)** — 5 records
-  deep-researched (Edison/PaperQA3); **all confirmed UNMAPPED** (0 mappings, 0
-  merges) and enriched in place with the findings + provenance:
-  - `6-methylnicotinate` — ambiguous (carboxylate/anion vs methyl ester); +synonym
-    `6-methylnicotinic acid` (related).
-  - `Amphotericin` — spans A/B + formulations; do NOT exact-map to amphotericin B
-    (CHEBI:2682); +related synonyms `amphotericin B`/`AmB`.
-  - `7,2'-Dimethoxyflavone`, `7,4'-Dimethoxyisoflavone` — specific positional
-    isomers, no source-backed CAS/CHEBI; closeMatch to a flavone parent would lose
-    isomer specificity.
-  - `2',2'-Bisepigallocatechin Digallate` — polyphenol; no CAS/formula/CHEBI;
-    naming-variant instability prevents grounding.
-  - Confirms the residual is genuinely hard: like the cobamide in batch 1, these
-    specialized natural products / ambiguous-form compounds lack clean ontology
-    grounding. "Confirmed unmapped + enriched" is the correct, defensible outcome.
-  - **Cobamide cluster closed (2026-06-17)** — the remaining 4 (5-methoxy-/
-    5-methyl-benzimidazolyl, adeninyl, benzimidazolyl cobamide) deep-researched;
-    **all confirmed UNMAPPED** + enriched (Factor IIIm; 5-MeBza-Cba; pseudocobalamin;
-    underspecified — no stable CHEBI/CAS, upper-ligand ambiguity, must not map to B12).
-- **Batch 3 done (2026-06-16, `feat/mim-map-inorganic-batch3`)** — a different angle:
-  not deep research but a **mappability triage** of the 396 residual. Most is
-  genuinely unmappable (commercial media/broths/agars, trace-element & vitamin
-  solutions, sera, extracts, grains, buffers, metal-NTA chelates). The high-yield
-  sliver is single compounds automated matching missed via formula/spelling
-  variants. **3 mapped** (EXACT_MATCH) via `promote_resolved_unmapped.py`, each
-  CHEBI id↔label verified against local OAK before mapping (so the blocking gate
-  stays green):
-  - `KNO2` (UNMAPPED_0413) → **CHEBI:232610** "potassium nitrite" (formula).
-  - `Thioglycollic acid` (UNMAPPED_0539) → **CHEBI:30065** "thioglycolic acid" (spelling).
-  - `Pyromelitic acid` (UNMAPPED_0504) → **CHEBI:45165** "pyromellitic acid" (misspelling).
-  (unmapped 396 → 393.)
-  - **`KJ` (UNMAPPED_0412) — MERGED 2026-06-16** into the existing CHEBI:8346
-    "potassium iodide" record (`Ki.yaml`): KJ = Kaliumjodid. Recipe-context
-    confirmed via MediaDive media 1155 & 1727, where 'KJ' sits among trace halide
-    salts next to KBr/NaBr (the bromide/iodide pair). NB the MediaDive *ingredient*
-    record (id 1042) is corrupt — CAS 77-10-1 / "Phencyclidine" — and an earlier
-    review wrongly flagged 'KJ' as a kilojoule unit; recipe context overrides both.
-    Added KJ/Kaliumjodid as synonyms + MERGED_FROM_UNMAPPED_DUPLICATE history; no
-    SSSOM change (absorbed into the existing MIM:Ki row).
-  - Left alone (ambiguous, no source CAS to disambiguate): garbled salt-hydrate
-    formulae (`MnCl4 x n H2O`, `Na2MoO7 x 2 H2O`, `Na2Se2O3`, …), `Na-tetrathionate`,
-    `Sodium crotonate`, `α-D-Glucose monohydrate`. Map only with source confirmation.
-- **Batch 4 done (2026-06-16, `feat/mim-map-salt-hydrates`)** — the careful
-  source-confirmed pass over the ~25 garbled inorganic salt-hydrate formulae. Method:
-  each carries `source_id=mediadive.ingredient:NNNN`, so the **MediaDive REST API**
-  (`/rest/ingredient/{id}`) is the authoritative source — its `name` / `formula` /
-  `CAS-RN` fields confirm (or refuse) the intended compound even though MediaDive's
-  own `ChEBI` is null for all of them. Outcome: **1 mapped**, the rest deferred with
-  reasons (a fully-resolved ledger — do not re-investigate without new evidence):
-  - **Mapped:** `NH42CO3` (UNMAPPED_0480) → **CHEBI:229630** "ammonium carbonate"
-    (MediaDive CAS 10361-29-2; anhydrous = EXACT_MATCH). (unmapped 393 → 392.)
-  - **Deferred — no clean CHEBI term** (genuinely unmappable, like CommunityMech's
-    minting-exceptions; all source-CAS-confirmed but CHEBI lacks the salt): cerium(III)
-    nitrate hexahydrate (10294-41-4), chromium potassium sulfate dodecahydrate /
-    chrome alum (7788-99-0), potassium phosphite `KH2PO3` (13977-65-6 — NB: phosph**ite**,
-    not phosphate), lanthanum nitrate hexahydrate (10277-43-7), sodium β-glycerophosphate
-    pentahydrate (13408-09-8), sodium metasilicate nonahydrate (13517-24-3), neodymium
-    chloride hexahydrate (13477-89-9), praseodymium chloride hydrate (19423-77-9).
-  - **narrowMatch — DONE 2026-06-16** (`feat/mim-kj-merge-mgnitrate-narrow`):
-    `Mg(NO3)2 x 6 H2O` (UNMAPPED_0444) hand-curated as a **cas-primary narrowMatch**
-    (cf. Ammonium_Molybdate_Tetrahydrate, since the helper refuses narrow). Primary
-    `cas:13446-18-9` "magnesium nitrate hexahydrate"; `skos:narrowMatch` → **CHEBI:64736**
-    "magnesium nitrate" (anhydrous parent) + the two Rule-B1 registry rows
-    (`cas:13446-18-9`, `kgmicrobe.compound:magnesium_nitrate_hexahydrate`). Source: MediaDive
-    ingredient 1763 CAS 13446-18-9. Gates green (reconcile GAP 0, invariants A/B1/B2/B3,
-    validate-products, validate-strict).
-  - **~~Deferred — no source confirmation~~ → RESOLVED 2026-06-16** (Batch 5,
-    `feat/mim-salt-dedup-merges`): Edison deep research + MediaDive **recipe context**
-    (the decisive new evidence — each appears among trace metals, and the correctly-spelled
-    salt appears in sibling recipes) + a **PK-collision check** showed these garbled,
-    0-occurrence orphans are **typo-duplicates of compounds already mapped in MIM**, so
-    they were **merged** (absorbed as RAW_TEXT synonyms + `MERGED_FROM_UNMAPPED_DUPLICATE`
-    history), not freshly mapped (which honors Edison's "don't exactMatch a malformed
-    label" caution — a merge asserts no new SSSOM row):
-    - `Na2Mo4` / `Na2MoO7` / `Na2MoO7O4 x 2 H2O` → `Na2MoO4 x 2 H2O` (CHEBI:75213 sodium molybdate dihydrate)
-    - `Na2WO2 x 2 H2O` → `Na2WO4 x 2 H2O` (CHEBI:63939 sodium tungstate dihydrate)
-    - `Na2Se2O3` → `Na2SeO3` (CHEBI:48843 disodium selenite)
-    - `Na2S2SO3` → `Na2S2O3` (CHEBI:132112 sodium thiosulfate)
-    - `MnCl4 x 4 H2O` → `MnCl2 x 4 H2O` (CHEBI:86368 manganese(II) chloride tetrahydrate)
-    (unmapped 390 → 383.)
-  - **Still deferred (enriched in place with Edison findings, left UNMAPPED):**
-    - `Fe(SO4)3 x n H2O` (UNMAPPED_0385) — iron(III) sulfate hydrate (candidate CHEBI:131387,
-      closeMatch); label malformed (Fe2(SO4)3) + hydrate `n` unspecified, and Fe sulfate
-      hydrates are distinct CAS substances — unsafe to assert exact identity.
-    - `MnCl4 x 6 H2O` (UNMAPPED_0450) — manganese(II) chloride, but `x 6 H2O` is a
-      non-standard hydrate with no CHEBI term; left unmapped (cf. the tetrahydrate, merged).
-  - **Deferred — ambiguous source:** `Se-acid` (UNMAPPED_0517) — MediaDive CAS
-    7783-08-6 = selen**ous** acid (CHEBI:26642) but its `formula` field `H2O4Se` =
-    selen**ic** acid; the conflict blocks a confident call.
+Not previously tracked. In MIM the record `identifier` **is** the primary key
+(`docs/CURIE_STANDARD.md`), yet `data/ingredients/mapped/` holds 1,879 files
+carrying only **1,793 distinct identifiers** — 61 identifier values are used by
+two or more records. The same 61 collisions are present in
+`data/curated/mapped_ingredients.yaml`. Reproduce:
 
-## 4. mesh.db refresh → keep the 4 SCR exceptions (verified 2026-06-17)
+```
+grep -h '^identifier:' data/ingredients/mapped/*.yaml | sort | uniq -d
+```
 
-`conf/id_label_targets.yaml` carries 4 `exceptions` for valid MeSH supplementary-
-concept records (avocatin B, cholinium lysinate, sodium glutarate, plicacetin)
-absent from the cached `sqlite:obo:mesh`.
+The collisions split into two dispositions, and telling them apart is the work:
 
-**Refresh tested 2026-06-17 — does NOT help.** Forced a clean re-download of
-`sqlite:obo:mesh` (394 MB, byte-identical to the prior cache): the 4 SCRs are
-**still absent** while older SCRs (e.g. C016600) are present — the upstream semsql
-MeSH build excludes these recent (2020/2024) supplementary-concept records.
-**Keep the exceptions.** Only revisit if the semsql/obo MeSH build starts shipping
-C-prefix SCRs from 2020+; then drop the matching entries and re-run
-`just validate-products` to confirm OK_CANONICAL.
+- **True duplicates → merge** (`merge-ingredients`): `Glycyl-glycine` /
+  `Glycylglycine` (CHEBI:17201), `Glycerol_2` / `Glycerol` (CHEBI:17754),
+  `Glutathione` / `L-Glutathione` (CHEBI:16856),
+  `Deoxyribonucleic_Acid_From_Herring_Sperm` / `Fish-sperm_Dna` (CHEBI:16991).
+- **Distinct compounds sharing an imprecise identifier → re-identify**
+  (`manage-identifiers`), *not* merge:
+  `Rhamnogalacturonan_From_Soy_Bean_Pectic_Fibre` / `Rhamnogalacturonan_I_From_Potato_Pectic_Fiber`
+  (both `cas:39280-21-2`), `Mucin_From_Porcine_Stomach_Type_III` /
+  `Mucin_From_Porcine_StomachType_II` (both `cas:84082-64-4`),
+  `B-Mannan_Borohydrate_Reduced_Carob_Seed` / `Mannan_From_Saccharomyces_Cerevisiae`
+  (both `cas:9036-88-8`).
+- **Judgement call:** `K2hpo4_X_3_H2o` / `K2hpo4` both on `CHEBI:131527` — the
+  trihydrate is arguably a `skos:narrowMatch` on a `cas:`-primary record (the
+  pattern used for `Mg(NO3)2 x 6 H2O`, see the ledger below), not a merge.
 
-## Adopt DisMech knowledge-gaps + datasets + QC dashboard (claw#7)
+`promote_resolved_unmapped.py` already refuses to *create* a duplicate CHEBI
+primary; these 61 predate that guard. Consider adding the same check as a
+repo-wide test so the count can only go down.
 
-Coordinated cross-Mech adoption of DisMech's domain-general features. Full plan,
-locked decisions, and DisMech schema references live in culturebotai-claw#7 (the
-shared, pinned LinkML module is authored once and vendored across all four Mechs).
-This repo's slice:
-- Knowledge gaps — add a `discussions` slot (broad `Discussion` supertype; `kind`
-  incl. KNOWLEDGE_GAP / OPEN_QUESTION / CONTROVERSY / CURATION_TODO) to
-  `IngredientRecord`, imported from the shared module; bind `attaches_to` anchors
-  to `ontology_mapping#…`. Wire a `knowledge-gap-scan` recipe over the existing
-  Edison harness.
-- Datasets — add the canonical shared `Dataset` slot (MIM models none today).
-- QC dashboard — adopt the generalized dashboard from Phase 3 (MIM currently has
-  only TSV/CI gates, no rendered dashboard).
+## 3. Collection ↔ per-record drift (#148) — blocked by #1
+
+Counts on 2026-07-30: mapped 1,879 per-record files vs 1,879 collection entries;
+unmapped **378 per-record files vs 381 collection entries**.
+
+**The drift runs collection-stale / per-record-current — the opposite direction
+from the issue's "Suggested fix", which would re-demote three correct groundings.
+Rewrite that section of #148 before anyone acts on it.** The 3-entry surplus is
+exactly:
+
+| collection entry (stale) | per-record file (current) |
+|---|---|
+| `UNMAPPED_0488` Phytone | `mapped/Phytone.yaml` → `FOODON:03315720` |
+| `UNMAPPED_0531` Soya pepton | `mapped/Soya_Pepton.yaml` → `FOODON:03315720` |
+| `UNMAPPED_0558` Tryptone peptone | `mapped/Tryptone_Peptone.yaml` → `MICRO:0000182` |
+
+All three are already in `data/curated/mapped_ingredients.yaml`; only their
+pre-promotion `UNMAPPED_*` entries were never deleted from
+`data/curated/unmapped_ingredients.yaml` (lines 8330, 9677, 10713). Note Phytone
+and Soya pepton share `FOODON:03315720` — they are also one of the 61 collisions
+in item 2.
+
+Also in scope, found during this reconcile:
+
+- **A bare, non-conforming identifier:** `identifier: TAPSO` in
+  `data/curated/unmapped_ingredients.yaml` and `data/ingredients/unmapped/Tapso.yaml`.
+  Every other unmapped record uses an `UNMAPPED_NNNN` placeholder. Mint one
+  (`manage-identifiers`) — TAPSO is a real buffer and a mapping candidate.
+- **Self-inconsistent collection headers:** `data/curated/mapped_ingredients.yaml`
+  declares `total_count: 1879` but `mapped_count: 1877` against 1,879 records;
+  `data/curated/unmapped_ingredients.yaml` declares 381 against 378 files.
+- **Stale derived indexes:** `data/curated/mapped_ingredients_index.csv` (line 410)
+  and `…_index.json` still carry `CHEBI:48601` for Carnitine Hydrochloride, whose
+  identifier was corrected to `kgmicrobe.compound:carnitine_hydrochloride` (the
+  collection YAML is right; only the indexes lag). Regenerate them.
+- **`data/collections/` is a dead March-2026 pair** (995 mapped / 136 unmapped,
+  generated 2026-03-06) alongside the live `data/curated/` pair (1879 / 381).
+  Only `data/curated/` is gated by `conf/id_label_targets.yaml`. Decide: delete,
+  or move to `ATTIC/`.
+
+The issue's item 1 (~59 per-record files lagging the collection in *content*)
+is **unverified** — confirming it means actually running `just export-individual`,
+which is exactly what #1 makes unsafe today. The exact 1,879/1,879 mapped match
+means it is at worst content drift, not membership drift.
+
+## 4. Flip `plausibility_severity: warn` → `error` — ready, zero-cost
+
+`conf/id_label_targets.yaml:60` ships `plausibility_severity: warn` with the
+comment "Flip to `error` once the backlog clears -- the same report-then-enforce
+rollout the base gate used." The gate (enabled in #155 on the `mapped_csv` target
+via `label_waiver_mode: plausible`) is currently report-only: the validator
+discards `IMPLAUSIBLE_LABEL` from `error_verdicts` when severity is `warn`
+(`scripts/validate_id_label_correspondence.py:745-748`).
+
+**The backlog it was waiting on is already empty.** `just validate-products` on
+2026-07-30 reports **IMPLAUSIBLE_LABEL: 0**. Flipping the value is a one-line
+change that converts a dormant check into a blocking one at zero curation cost —
+do it before the count can drift back up.
+
+## 5. Run the ingredient-role research pipeline — all tooling merged, never run
+
+The role thread was absent from this file entirely. The schema migration is
+**complete** (#120 rename → #129 three facet enums → #130 assignment classes,
+slots, writers → #133/#134/#135/#143 polish → #139/#141 retirement of the flat
+`IngredientRoleEnum`/`RoleAssignment`/`media_roles`, migrating 987 assignments
+across 906 records). The research lane is **built but has never been executed**:
+
+- MIM #146 — role research template + Edison shim + `template_vars()`.
+- MIM #153 — `scripts/apply_role_research_results.py`.
+- CultureMech #105/#106/#107 — cross-repo prioritizer, Edison extractor,
+  `apply_ingredient_roles.py` + the `research-ingredient-roles` skill.
+
+Evidence it has not run: `research/ingredients/roles/` (the shim's fixed output
+dir) does not exist; there is no `reports/edison_role_extraction.json` and no
+prioritizer output in CultureMech; no role assignment anywhere carries
+`edison-deep-research` provenance or a `PEER_REVIEWED_PUBLICATION` reference.
+
+Current coverage over 2,257 records: **898 (39.8%) carry ≥1 ingredient-facet
+role**, all of them mapped records (47.8% of the 1,879); **0 of 378 unmapped**.
+Per slot — `nutritional_roles` 622 records / 716 assignments,
+`physicochemical_roles` 268 / 269, **`cellular_metabolic_roles` 9 / 9**. All 994
+assignments are `COMPUTATIONAL_PREDICTION` (698) or `DATABASE_ENTRY` (283):
+**no literature-cited evidence exists yet**, which is precisely what this lane
+was built to supply, and `cellular_metabolic_roles` is the facet it should fill.
+
+Order of operations (per the CultureMech skill's documented merge order):
+
+1. **Mechanistic lane first** — CultureMech's `backfill_ingredient_roles.py`
+   (#95) derives facets from CHEBI `has_role` via OAK. It is dry-run-only and its
+   output was never applied. Cheap, deterministic, no Edison spend. Its
+   2026-07-20 audit baseline: 143,651 ingredient descriptors MIM-mapped but
+   missing all three facets.
+2. **Then the literature lane** — CultureMech prioritizer → MIM
+   `just research-ingredient-roles-edison-batch` → CultureMech
+   `extract_roles_from_edison.py` → MIM `just apply-role-research-results` +
+   CultureMech `apply_ingredient_roles`. Needs an Edison budget decision.
+
+**Carry CultureMech's #107 lesson across before the first live run:** its applier
+wrote a `fields_changed` key that is not a slot on `CurationEvent`, and because
+`validate-strict` runs linkml-validate with `closed=True` the first live apply
+would have failed CI on every record it touched — latent because the PR shipped
+no data. MIM's `apply_role_research_results.py` should get the same treatment:
+at least one test that validates its emitted YAML against the schema. Also
+inherited: enum validation of role tokens lives only in the *extractor*, so a
+batch produced with `--no-validate` or hand-edited can carry invalid tokens all
+the way to `validate-strict`.
+
+`community_organism_roles` being 0 is **not** a gap — it is an organism-level
+slot, explicitly handled as such in `scripts/validate_roles.py:97`. No action.
+
+## 6. Stale precedence columns in `UNIFIED_INGREDIENT_MAPPING.tsv` (#138)
+
+kg-microbe's loader picks the primary CURIE with
+`best_primary([chebi_id, culturemech_term_id, mim_id, kg_microbe_node_id, cas_rn])`,
+and within one prefix the *first* candidate wins. Three rows had a correction
+written to `kg_microbe_node_id`/`mim_id` while the superseded id stayed in the
+higher-precedence columns, so the consumer re-asserts the stale grounding on
+every run. Verified unchanged on 2026-07-30:
+
+| ingredient | `chebi_id` | intended (`kg_microbe_node_id`/`mim_id`) | `culturemech_term_id` |
+|---|---|---|---|
+| 4-Aminobenzoic acid (line 167) | `CHEBI:194474` stale | `CHEBI:30753` | `CHEBI:194474` stale |
+| Cobalamine | `CHEBI:30411` stale | `CHEBI:28911` | `CHEBI:30411` stale |
+| Infusion from Potatoes (line 3908) | — | `UNMAPPED_0251` | `FOODON:03316428` "Peptone" — a mis-annotation |
+
+The PABA variant rows (`p-Amino Benzoic Acid` line 1040, `p-amino benzoic acid`
+line 3346) have partly moved on since the issue was filed — they now carry
+`CHEBI:30753` and status `MAPPED` — but still hold `CHEBI:194474` in both stale
+columns.
+
+**Do not hand-edit the TSV.** It is a generated artifact; `build-unified-mapping`
+copies `workspace/unified_ingredient_mapping.tsv` over it, so an edit regresses
+on the next refresh. The fix has to land in the CultureMech source record or in
+the builder's column precedence. Worth saying so in the issue. Not blocking —
+kg-microbe already runs a retraction pass, so the published graph is clean.
+
+## 7. PubChem-derived `cas_rn` false-positive audit — the real residue of #114
+
+#114 is a 75%-done tracker that still reads as fully open. Three of its four
+follow-ups have landed (peptone→MICRO grounding, the Carnitine Hydrochloride
+`CHEBI:48601` → `CHEBI:17126` correction, and the non-chemical disposition,
+re-scoped and half-shipped in #116 as 53 `UNDEFINED_MIXTURE` → `DEFINED_MEDIUM`
+reclassifications). **The one genuinely open item has no PR and no tooling:**
+
+`fetch_cas_rn_from_pubchem` mis-assigned CAS `103-47-9` to Beef extract — that
+CAS is CHES (`CHEBI:44302`), a name-lookup false positive. Cross-check
+`chemical_properties.cas_rn` corpus-wide against CHEBI / expected formula, most
+valuable on `UNDEFINED_MIXTURE` and other complex records. Medium size; needs
+PubChem/CHEBI network lookups, no upstream dependency.
+
+Recommend closing #114 and opening a narrow issue for just this audit. Note that
+residual `CHEBI:48601` strings survive in three review scratch files
+(`mappings/ingredient_mappings_oak_ols_review.tsv:485`,
+`…_synonym_enrich_review.tsv:116`, `…_row_review_manifest.tsv:484`) — harmless,
+but they will trip a naive grep audit.
+
+## 8. Web design review residue (#110) — cosmetic, 2 of 3 actionable here
+
+Nine items shipped in #108/#109/#111; three remain, all confirmed present:
+
+1. **Meaningless axes on the force-directed graph** —
+   `docs/ingredient_graph.html:552-575` draws `d3.axisBottom`/`axisLeft` labelled
+   "Dimension 1"/"Dimension 2". Force-simulation coordinates have no scale, so the
+   axes are decorative and actively misleading. Small: delete the two axis groups,
+   keep zoom/pan.
+2. **Theme-toggle repaint lag** — `docs/theme-toggle.js` flips `data-theme` and
+   persists it but emits no repaint signal. The viz pages only re-read CSS custom
+   properties inside their `resize` handler (`ingredient_graph.html:486`, :704),
+   with no `MutationObserver` on `data-theme`, so JS-drawn colors stay stale until
+   the window is resized. Small: observe the attribute, call the existing redraw.
+3. **Token-system divergence** — `docs/index.html:8-15` uses a pastel token set
+   (`--pastel-a`, `--accent`, `--ink`, …); `docs/ingredient_umap.html:8-19` and
+   `ingredient_graph.html:8` use a disjoint slate set (`--primary`, `--surface`,
+   `--text`, …). Only `#7E5BC4` is shared, under two different names. Every dark
+   rule is also duplicated per page (`:root:not([data-theme="light"])` +
+   `:root[data-theme="dark"]`, ~55 lines each, e.g. `browser.html:294-348`).
+   **Cross-Mech** — `theme-toggle.js` is vendored byte-identical across all Mech
+   sites, so unifying tokens unilaterally would desync MIM. Coordinate in claw.
+
+## 9. Small cleanups
+
+- **`enrich_edison_response.py` non-recursive glob** (deferred in #146): the
+  default `DEFAULT_RESEARCH_DIR` pattern `*-edison-*-meta.yaml` is non-recursive,
+  so it will not see `research/ingredients/roles/` unless `--research-dir` is
+  passed. Fix before the role lane runs (item 5).
+- **`.claude/skills/ingredient-roles/skill.md` is pre-facet** — it documents the
+  retired flat lowercase role names (`carbon_source`, `buffer`) with no mention of
+  the three facets or the Step 7b lane. The facet-aware skill exists only in
+  CultureMech (`.claude/skills/research-ingredient-roles/SKILL.md`). Modernize or
+  point at it.
+- **`docs/ROLE_CURATION_WORKFLOW.md`** carries a 2026-03-15 stats snapshot
+  (446 ingredients / 996 mapped). It is honestly labelled "before the #128 facet
+  migration" and points at `scripts/validate_roles.py` for current numbers, so
+  this is cosmetic; the "Future Enhancements (Phase 5)" section (lines 399-420)
+  describes a manual DOI-review workflow that Step 7b supersedes.
+- **`chemical_properties` residual is the ceiling, not a task.** The enricher was
+  repaired in 2026-06 (OLS4 renamed its annotation keys: `formula` →
+  `generalized_empirical_formula`, SMILES/InChI → `*_string`). The remaining ~83
+  missing-formula records are abstract CHEBI classes, polymers, proteins,
+  complexes and minerals that legitimately have no single empirical formula.
+  Re-run any time with `python scripts/enrich_chemical_properties.py`
+  (idempotent), then `just export-individual`. Gotcha still live: OLS4 needs
+  **double** URL-encoding of ChEBI IRIs.
+- **Prune 3 stale git worktrees** — `git worktree list` shows `mim-step7b-pr1`,
+  `…-pr2`, `…-pr6` under a CultureMech scratchpad path, all marked prunable, all
+  with their `.git` links gone. Checked 2026-07-30: no uncommitted work in any of
+  them (`research/` and `reports/role_research_batches/` are empty). `git worktree prune`.
+- **`dashboard/` was last generated 2026-07-19**, before the role-facet work
+  landed. Re-run `just gen-qc-dashboard` after item 5.
+
+---
+
+# Upstream-blocked — do not schedule
+
+## MICRO ids with malformed upstream IRIs (#137)
+
+MicrO mints ~1,472 of its 3,450 classes under
+`http://purl.obolibrary.org/obo/MicrO.owl/MICRO_nnnnnnn` instead of
+`.../obo/MICRO_nnnnnnn`, so the CURIE does not round-trip and OLS4 reports
+`is_defining_ontology: false`. Three are published in
+`mappings/ingredient_mappings.sssom.tsv` (verified live on 2026-07-30, all
+`skos:exactMatch`): `MICRO:0002250` V-8 juice (line 2168), `MICRO:0002392`
+rabbit serum (1799), `MICRO:0002393` Proteose Peptone No. 2 (1760). The other 53
+of 56 MICRO rows verify clean.
+
+The quarantine is in place and self-policing: `KNOWN_BAD_MICRO` in
+`tests/test_curie_normalizer.py:147`, applied at :160, with a companion assertion
+at :171-172 that **fails once the ids start passing** — so the workaround cannot
+silently outlive the defect. Detector: `just curie-verify-micro`
+(`scripts/verify_micro_ids.py`).
+
+Blocked on the MicrO build. The actionable-here alternative is re-grounding the 3
+subjects to well-formed terms or dropping them to UNMAPPED — not obviously
+better than waiting. **Triage warning: do not use PURL status to judge these.**
+Term-level PURLs 404 for *all* of MicrO, well-formed or not; use
+`is_defining_ontology` and the IRI shape.
+
+## mesh.db — keep the 4 SCR exceptions (verified 2026-06-17)
+
+`conf/id_label_targets.yaml` carries 4 `exceptions` for valid MeSH
+supplementary-concept records absent from the cached `sqlite:obo:mesh`:
+`mesh:C000709627` avocatin B, `mesh:C000655964` cholinium lysinate,
+`mesh:C000730144` sodium glutarate, `mesh:C000633628` plicacetin.
+
+A forced clean re-download (394 MB, byte-identical to the prior cache) confirmed
+the 4 are **still absent** while older SCRs (e.g. C016600) are present — the
+upstream semsql MeSH build excludes these recent (2020/2024) records. **Keep the
+exceptions.** Revisit only if that build starts shipping C-prefix SCRs from 2020+;
+then drop the matching entries and re-run `just validate-products` to confirm
+OK_CANONICAL.
+
+Related structural exception with no removal condition: `MICRO` sits in
+`ignored_prefixes` rather than `adapters` because `sqlite:obo:micro` is a 0-byte
+stub. Move it back once a real `micro.db` exists.
+
+## DRC provider shim for role research (deferred in #146)
+
+`scripts/research_ingredient_roles.py` (the deep-research-client counterpart to
+the Edison shim) was deferred, blocked on an upstream refactor of the DRC runner's
+hardcoded output path. The file does not exist. Edison covers the lane meanwhile.
+
+---
+
+# Reference ledgers — resolved, do not re-investigate
+
+## Hard unmapped residual (378 records) — automated matching is exhausted
+
+Verified 2026-06-14: only ~1 clean exact match across the whole residual.
+It is specialized cobamides, flavonoids, natural products, element placeholders,
+commercial media/broths/agars, trace-element and vitamin solutions, sera,
+extracts, grains, buffers, and metal-NTA chelates. **Current count is 378
+per-record files / 381 collection entries** (this file previously said 383 —
+wrong in both directions; see item 3 for the 3-entry discrepancy).
+
+Use `deep-research-ingredient` (Edison/PaperQA3; `EDISON_PLATFORM_API_KEY` is
+configured) or `mediaingredientmech-agentic-curation` (FutureHouse Falcon) for
+source-backed identity and grounding, per record. 23 ingredients have been
+Edison-researched so far; bundles live under `research/ingredients/` (gitignored).
+
+**Migration recipe.** `scripts/promote_resolved_unmapped.py` automates the whole
+multi-surface move (collection move + canonical-label lookup + SSSOM row inserted
+in sort order + regen + verify), with a **PK-collision guard** that refuses to
+create a duplicate CHEBI primary — redirect those to a merge. `--dry-run` by
+default:
+
+```
+python scripts/promote_resolved_unmapped.py --identifier UNMAPPED_NNNN \
+  --to CHEBI:NNN --quality EXACT_MATCH --evidence-source "…" --note "…" --apply
+```
+
+It handles exact/close only; narrow and broad matches need registry SSSOM rows
+and must be hand-curated (see `Mg(NO3)2 x 6 H2O` below for the worked pattern).
+The manual sequence it replaces, for reference: move + transform the record in
+the collections → `just export-individual` → **hand-add the SSSOM row**
+(`reconcile_sssom` reports the GAP but will not synthesize new-row provenance;
+insert in the file's sort order by *decoded* subject label) → `just export-lists`.
+
+**Outcome of five research batches.** Confirmed-unmapped-and-enriched is the
+correct, defensible outcome for most of this residual — the compounds genuinely
+lack clean ontology grounding.
+
+- **Mapped:** `1-Naphtylacetic Acid` → CHEBI:32918 (a "naphtyl" misspelling
+  string-matching missed) · `KNO2` → CHEBI:232610 · `Thioglycollic acid` →
+  CHEBI:30065 · `Pyromelitic acid` → CHEBI:45165 · `NH42CO3` → CHEBI:229630
+  (MediaDive CAS 10361-29-2, anhydrous).
+- **Merged as typo-duplicates** (absorbed as RAW_TEXT synonyms +
+  `MERGED_FROM_UNMAPPED_DUPLICATE`; a merge asserts no new SSSOM row, which
+  honours Edison's "don't exactMatch a malformed label" caution):
+  `alpha-ketoglutamate` → CHEBI:30915 · `KJ` (= Kaliumjodid) → CHEBI:8346
+  potassium iodide · `Na2Mo4`/`Na2MoO7`/`Na2MoO7O4 x 2 H2O` → CHEBI:75213 ·
+  `Na2WO2 x 2 H2O` → CHEBI:63939 · `Na2Se2O3` → CHEBI:48843 · `Na2S2SO3` →
+  CHEBI:132112 · `MnCl4 x 4 H2O` → CHEBI:86368.
+- **narrowMatch, hand-curated:** `Mg(NO3)2 x 6 H2O` as a **cas-primary**
+  `cas:13446-18-9` "magnesium nitrate hexahydrate" with `skos:narrowMatch` →
+  CHEBI:64736 (anhydrous parent) plus the two Rule-B1 registry rows. This is the
+  pattern to copy when the helper refuses a narrow match.
+- **Confirmed UNMAPPED, enriched in place — do not re-map:** the whole cobamide
+  cluster (2-methyladeninyl / adeninyl / benzimidazolyl / 5-methyl- and
+  5-methoxy-benzimidazolyl — Factor A, Factor IIIm, pseudocobalamin; upper-ligand
+  ambiguity, **must not** map to cobalamin/B12) · `6-methylnicotinate` (carboxylate
+  vs methyl ester ambiguity) · `Amphotericin` (spans A/B + formulations; do not
+  exact-map to amphotericin B CHEBI:2682) · `7,2'-Dimethoxyflavone` and
+  `7,4'-Dimethoxyisoflavone` (positional isomers; a closeMatch to a flavone parent
+  would lose isomer specificity) · `2',2'-Bisepigallocatechin Digallate` ·
+  `Fe(SO4)3 x n H2O` (candidate CHEBI:131387, but the label is malformed and `n`
+  is unspecified; Fe sulfate hydrates are distinct CAS substances) ·
+  `MnCl4 x 6 H2O` (non-standard hydrate, no CHEBI term) · `Se-acid` (MediaDive
+  CAS 7783-08-6 = selen**ous** acid CHEBI:26642 but its `formula` field `H2O4Se`
+  = selen**ic** acid — the conflict blocks a confident call).
+- **Deferred, source-CAS-confirmed but CHEBI lacks the salt** (genuinely
+  unmappable): cerium(III) nitrate hexahydrate (10294-41-4), chromium potassium
+  sulfate dodecahydrate (7788-99-0), potassium phosphite `KH2PO3`
+  (13977-65-6 — phosph**ite**, not phosphate), lanthanum nitrate hexahydrate
+  (10277-43-7), sodium β-glycerophosphate pentahydrate (13408-09-8), sodium
+  metasilicate nonahydrate (13517-24-3), neodymium chloride hexahydrate
+  (13477-89-9), praseodymium chloride hydrate (19423-77-9).
+
+**Method note that made batches 4–5 work:** these records carry
+`source_id=mediadive.ingredient:NNNN`, so the **MediaDive REST API**
+(`/rest/ingredient/{id}`) is authoritative — its `name`/`formula`/`CAS-RN` confirm
+or refuse the intended compound even though MediaDive's own `ChEBI` field is null
+for all of them. **Recipe context beats the ingredient record** when they
+disagree: `KJ` was resolved because it sits among trace halide salts next to
+KBr/NaBr in MediaDive media 1155 and 1727, while MediaDive *ingredient* 1042 is
+corrupt (CAS 77-10-1 / "Phencyclidine") and an earlier review had wrongly flagged
+it as a kilojoule unit.
+
+## Cross-repo vendored-file sync — the sha256 pins are retired
+
+**This replaces the old "validator pin guard" section, which described a
+mechanism that no longer exists.** The self-generated sha256 pin compared a copy
+against a hash from the *same* repo, so all four Mechs could pass while diverged.
+It was retired in #156 (validator) and #157 (schema), and no `*.sha256` or
+manifest files remain — only explanatory comments in the justfile and workflow.
+
+Drift is now caught by `scripts/check_vendored_sync.sh` (dependency-free: bash +
+curl + diff, byte-exact `cmp`), run by the **`vendored-sync`** job in
+`.github/workflows/label-correspondence.yaml`. It covers **6 files** against
+`CultureBotAI/CultureMech@<scripts/.vendored_canon_ref>` — currently
+`6be694f3` — with CultureMech as the hub because culturebotai-claw is private and
+public CI cannot fetch raw from it:
+
+`scripts/validate_id_label_correspondence.py` · `scripts/chem_formula.py` ·
+`tests/test_id_label_empty_adapter.py` · `tests/test_id_label_unknown_prefix.py` ·
+`tests/test_id_label_plausibility.py` · `src/*/schema/mech_shared.yaml`
+(path-mapped to the hub's `src/culturemech/schema/mech_shared.yaml`).
+
+**To propagate a change:** PR into the hub → merge → copy the changed files
+byte-exact into this repo → bump `scripts/.vendored_canon_ref` to the new hub
+commit **in the same PR**. The ref bump is the deliberate propagation act. The
+hub's nightly `vendored-fleet-audit.yml` is the backstop.
+
+**Known gap worth a follow-up:** `scripts/chem_formula.py`,
+`scripts/check_vendored_sync.sh`, `scripts/.vendored_canon_ref` and the
+`tests/test_id_label_*.py` files are **not** in the workflow's `trigger_paths`,
+so a PR touching only those does not fire the drift job. `conf/id_label_targets.yaml`
+stays unpinned **by design** — it is intentionally per-repo (different adapters,
+targets, exceptions), not a drift risk.
+
+Cross-repo companion status for #157 (CultureMech #112 plus the CommunityMech and
+TraitMech spokes) is not verifiable from this repo — confirm from the hub.
+
+## Adopt DisMech knowledge-gaps + datasets + QC dashboard (claw#7) — LANDED
+
+Previously listed as pending; it has shipped. `src/mediaingredientmech/schema/mech_shared.yaml`
+is vendored and drift-checked (see above) and defines `Discussion`,
+`DiscussionKindEnum`, `DiscussionStatusEnum`, `Dataset`, `DatasetTypeEnum`,
+`DatasetRepositoryEnum`. `mediaingredientmech.yaml` imports it (line 30) and
+attaches `discussions` (line 244) and `datasets` (line 253) to `IngredientRecord`.
+Recipes exist for all three slices: `just knowledge-gap-scan` (justfile:196, over
+the shared `kg_microbe_kgscan`), `just gen-discussions-data` (:330), and
+`just gen-qc-dashboard` (:189, rendering `dashboard/index.html` + `coverage.png`).
+Supporting surface: `tests/test_export_preserves_discussions.py`,
+`conf/discussions_config.yaml`, `conf/kgscan_config.yaml`, `app/discussions/`,
+and generated docs.
+
+**8 mapped records carry `discussions`** — these are exactly the population #144
+and #151 were protecting (#144 fixed `export_individual_records.py` silently
+wiping them on every export; #151 fixed the follow-on where indexing by
+`identifier` dropped them on promotion/demotion/remap, since in MIM the identifier
+*is* the CURIE). **0 records carry `datasets`**, which matches the original
+assessment that MIM models none today. TraitMech marked its equivalent adoption
+done by 2026-07-22; CultureMech's section is still open.
+
+---
+
+# Recently shipped (2026-07-05 → 2026-07-22) — recorded here for the first time
+
+- **Role-facet migration** — #120 (rename `CellularRoleEnum` →
+  `CommunityOrganismRoleEnum`), #129 (three facet enums), #130 (assignment
+  classes, slots, writer methods), #133/#134/#135/#143 (docs regen, schema polish,
+  SchemaView guard, `iter_role_assignments`), #139 (+#141) retired the flat
+  `IngredientRoleEnum`/`RoleAssignment`/`media_roles`, migrating 987 assignments
+  across 906 records.
+- **Role research tooling** — #146 (template + Edison shim + `template_vars()`),
+  #153 (`apply_role_research_results.py`). Never executed; see item 5.
+- **Vendored-sync + pin retirement** — #150 (sync `chem_formula.py` from
+  TraitMech), #154 (shared-reference drift check replaces the self-referential
+  sha256 pin; resynced `test_id_label_plausibility.py`), #155 (enable the
+  plausibility gate report-only, sync a hub validator fix, bump the canon ref),
+  #156 (retire the id-label pin), #157 (fold in `mech_shared.yaml`, retire the
+  schema pin).
+- **CURIE standard** — #140, `docs/CURIE_STANDARD.md`, with
+  `mappings/mim_curie_aliases.tsv` resolving the 205 renames that have retired
+  `MIM:<name>` CURIEs. `MIM:<name>` is **not** rename-stable; always resolve
+  through the alias map before concluding a CURIE is missing.
+- **Curation** — #117 (SSSOM rebuilt to current filenames + CHEBI revalidated via
+  OAK and OLS), #118 (`UNIFIED_INGREDIENT_MAPPING.tsv` refresh), #145 (2
+  SIMPLE_CHEMICAL residual records grounded), #152 (duplicate
+  anthraquinone-2,6-disulfonate merged into AQDS), #144 (id-label cache fix,
+  discussions export fix, `next-tasks` skill), #151 (preserve discussions across
+  identifier-changing moves).
+- **Published artifacts** — `mappings/ingredient_mappings.sssom.tsv` 2,201 data
+  rows, last rebuilt 2026-07-21 (#152); `UNIFIED_INGREDIENT_MAPPING.tsv` 3,915
+  data rows, last rebuilt 2026-07-20 (#140). kg-microbe re-syncs both on every
+  consolidation run, so an item is only done once these are rebuilt *and*
+  published.
