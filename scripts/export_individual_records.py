@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import re
 import sys
-from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -116,6 +115,73 @@ def collect_preserved_fields(ingredients_root: Path) -> PreservedFields:
     return result
 
 
+@dataclass
+class FilenameIndex:
+    """Existing per-record filename stems, so an export never renames a record.
+
+    The filename is otherwise re-derived from `preferred_term` on every run, which
+    makes the naming rule retroactive: any change to `sanitize_filename` silently
+    renames the whole corpus, and every `MIM:<stem>` SSSOM subject derived from a
+    filename goes with it. The committed corpus was in fact written by more than
+    one historical rule, so no single rule reproduces it — reusing the name a
+    record already has is the only stable answer.
+
+    Indexed by both keys for the same reason as `PreservedFields`: `identifier`
+    survives a display-name change, `preferred_term` survives an identifier change
+    (promotion UNMAPPED_NNNN->CHEBI:x, demotion, remap).
+    """
+
+    by_identifier: dict[str, str] = field(default_factory=dict)
+    by_preferred_term: dict[str, str] = field(default_factory=dict)
+
+    def for_record(self, record: dict) -> str | None:
+        """The stem this record already uses, or None if it is new."""
+        ident = record.get("identifier")
+        if ident and ident in self.by_identifier:
+            return self.by_identifier[ident]
+        term = record.get("preferred_term")
+        if term and term in self.by_preferred_term:
+            return self.by_preferred_term[term]
+        return None
+
+
+def collect_existing_filenames(ingredients_root: Path) -> FilenameIndex:
+    """Index current filename stems before files are cleared.
+
+    Scans the whole tree (mapped/ and unmapped/) so a record that moves between
+    them keeps its name — a promotion should not also re-slug the file.
+    """
+    result = FilenameIndex()
+    if not ingredients_root.exists():
+        return result
+    term_collisions: set[str] = set()
+    for path in ingredients_root.rglob("*.yaml"):
+        try:
+            record = load_yaml(path)
+        except Exception:
+            continue
+        if not isinstance(record, dict):
+            continue
+        stem = path.stem
+        ident = record.get("identifier")
+        if ident:
+            # A duplicate identifier cannot pick a single name; leave those
+            # records to the term index or to sanitize_filename.
+            if ident in result.by_identifier:
+                result.by_identifier.pop(ident, None)
+                term_collisions.add(f"\0ident\0{ident}")
+            elif f"\0ident\0{ident}" not in term_collisions:
+                result.by_identifier[ident] = stem
+        term = record.get("preferred_term")
+        if term:
+            if term in result.by_preferred_term or term in term_collisions:
+                result.by_preferred_term.pop(term, None)
+                term_collisions.add(term)
+            else:
+                result.by_preferred_term[term] = stem
+    return result
+
+
 def sanitize_filename(preferred_term: str) -> str:
     """Convert preferred term to a safe filename.
 
@@ -150,9 +216,11 @@ def sanitize_filename(preferred_term: str) -> str:
     # "(-)-"/"(R)-" stereodescriptor) so filenames don't start with a dash
     name = name.strip('_-')
 
-    # Title case the first letter of each word
-    parts = name.split('_')
-    name = '_'.join(part.capitalize() if part else '' for part in parts)
+    # Uppercase the leading character only. str.capitalize() would lowercase
+    # everything after it, which destroys chemical casing that carries meaning
+    # here (NaCl, KI, TAPSO, MnCl2 -> Nacl, Ki, Tapso, Mncl2).
+    if name:
+        name = name[0].upper() + name[1:]
 
     # Ensure we have a valid name
     if not name:
@@ -166,6 +234,7 @@ def export_collection_to_individual_files(
     output_dir: Path,
     dry_run: bool = False,
     preserved: PreservedFields | None = None,
+    existing_names: FilenameIndex | None = None,
 ) -> dict[str, int]:
     """Export a collection YAML file to individual ingredient files.
 
@@ -176,12 +245,16 @@ def export_collection_to_individual_files(
         preserved: Per-record-authored fields (from ``collect_preserved_fields``),
             merged into records whose collection copy lacks them. Pass None to
             skip preservation.
+        existing_names: Filename stems already in use (from
+            ``collect_existing_filenames``), so records keep the names they have.
+            Pass None to name every record from scratch.
 
     Returns:
-        Dictionary with statistics: 'total', 'created', 'collisions'.
+        Dictionary with statistics: 'total', 'created', 'collisions', 'renamed'.
     """
     preserved = preserved or PreservedFields()
-    stats = {'total': 0, 'created': 0, 'collisions': 0}
+    existing_names = existing_names or FilenameIndex()
+    stats = {'total': 0, 'created': 0, 'collisions': 0, 'renamed': 0}
 
     # Load collection
     try:
@@ -207,26 +280,40 @@ def export_collection_to_individual_files(
         for stale in output_dir.glob("*.yaml"):
             stale.unlink()
 
-    # Track filename collisions
-    filename_counter = Counter()
+    # Names already claimed in this directory, so a reused name and a freshly
+    # derived one cannot land on the same file.
+    taken: set[str] = set()
 
     for ingredient in ingredients:
         preferred_term = ingredient.get('preferred_term', 'Unknown')
-        identifier = ingredient.get('identifier', 'UNKNOWN')
 
-        # Generate base filename
-        base_filename = sanitize_filename(preferred_term)
-        filename = base_filename
+        # Keep the name this record already has. Re-deriving it from
+        # preferred_term on every run is what makes the naming rule retroactive
+        # and renames the corpus behind git's back on a case-insensitive
+        # filesystem. Only genuinely new records get a name from scratch.
+        stable = existing_names.for_record(ingredient)
+        if stable is not None and stable not in taken:
+            filename = stable
+        else:
+            base_filename = sanitize_filename(preferred_term)
+            filename = base_filename
+            suffix = 1
+            while filename in taken:
+                suffix += 1
+                filename = f"{base_filename}_{suffix}"
+            if suffix > 1:
+                stats['collisions'] += 1
+                console.print(
+                    f"[yellow]Collision detected: {preferred_term} -> {filename}.yaml[/yellow]"
+                )
+            if stable is not None and stable != filename:
+                stats['renamed'] += 1
+                console.print(
+                    f"[yellow]Renamed: {stable}.yaml -> {filename}.yaml "
+                    f"({preferred_term})[/yellow]"
+                )
 
-        # Handle duplicates
-        filename_counter[base_filename] += 1
-        if filename_counter[base_filename] > 1:
-            filename = f"{base_filename}_{filename_counter[base_filename]}"
-            stats['collisions'] += 1
-            console.print(
-                f"[yellow]Collision detected: {preferred_term} -> {filename}.yaml[/yellow]"
-            )
-
+        taken.add(filename)
         output_path = output_dir / f"{filename}.yaml"
 
         # Re-attach per-record-authored fields (e.g. discussions) that the
@@ -313,8 +400,12 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
             f"({', '.join(PER_RECORD_AUTHORED_FIELDS)}) for {n_preserved} record(s)[/dim]"
         )
 
+    # Index current filenames BEFORE the clear loop, for the same reason and
+    # over the same whole tree.
+    existing_names = collect_existing_filenames(output_dir_path)
+
     # Process each collection
-    total_stats = {'total': 0, 'created': 0, 'collisions': 0}
+    total_stats = {'total': 0, 'created': 0, 'collisions': 0, 'renamed': 0}
 
     with Progress(
         SpinnerColumn(),
@@ -330,11 +421,13 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
                 output_subdir,
                 dry_run=dry_run,
                 preserved=preserved,
+                existing_names=existing_names,
             )
 
             total_stats['total'] += stats['total']
             total_stats['created'] += stats['created']
             total_stats['collisions'] += stats['collisions']
+            total_stats['renamed'] += stats['renamed']
 
             progress.update(
                 task,
@@ -351,6 +444,9 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
 
     if total_stats['collisions'] > 0:
         console.print(f"  [yellow]Filename collisions: {total_stats['collisions']}[/yellow]")
+
+    if total_stats['renamed'] > 0:
+        console.print(f"  [yellow]Renamed: {total_stats['renamed']}[/yellow]")
 
     if not dry_run:
         console.print(f"\n[green]Individual files written to: {output_dir_path}[/green]")
