@@ -18,7 +18,7 @@ Known data-quality issues the loader defends against:
     hundreds of CHEBI IDs. The by_synonym index is kept 1:many so callers
     can filter by ambiguity count.
 
-See .claude/skills/review-ingredients/skill.md ("KG-Microbe Dictionary
+See .claude/skills/review-ingredients/SKILL.md ("KG-Microbe Dictionary
 Integration") for the P2.5 / P4.4 rules that consume this data.
 """
 

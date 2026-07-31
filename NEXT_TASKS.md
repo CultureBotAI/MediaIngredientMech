@@ -3,9 +3,11 @@
 Deferred work, each entry with enough context to pick up cold. **Maintenance:**
 update this file as work is started/finished — move done items out, add new
 deferrals here. Keep the cross-Mech items in sync with the sibling repos'
-`NEXT_TASKS.md` (CultureMech / TraitMech; CommunityMech has none).
+`NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech). The hub,
+culturebotai-claw, now keeps one too, for items no single Mech owns.
 
-Last reconciled: 2026-07-30.
+Last reconciled: 2026-07-31. **#160** was filed on 2026-07-30 for the
+`trigger_paths` gap described in the vendored-sync section below.
 
 > **Reconcile note (2026-07-30).** The previous reconcile was 2026-06-15 and the
 > file had drifted badly: PRs #114–#157 shipped in the interim, including two
@@ -363,7 +365,7 @@ Nine items shipped in #108/#109/#111; three remain, all confirmed present:
   default `DEFAULT_RESEARCH_DIR` pattern `*-edison-*-meta.yaml` is non-recursive,
   so it will not see `research/ingredients/roles/` unless `--research-dir` is
   passed. Fix before the role lane runs (item 5).
-- **`.claude/skills/ingredient-roles/skill.md` is pre-facet** — it documents the
+- **`.claude/skills/ingredient-roles/SKILL.md` is pre-facet** — it documents the
   retired flat lowercase role names (`carbon_source`, `buffer`) with no mention of
   the three facets or the Step 7b lane. The facet-aware skill exists only in
   CultureMech (`.claude/skills/research-ingredient-roles/SKILL.md`). Modernize or
@@ -558,12 +560,26 @@ mirror == hub by claw's `matches-hub` job in `id-label-canon.yaml`, which claw
 #24 (merged 2026-07-25, closes claw #23) put on a nightly schedule — it
 previously fired only on claw-side changes, so it could never see the hub move.
 
-**Known gap worth a follow-up:** `scripts/chem_formula.py`,
+**Known gap, now tracked as #160** (filed 2026-07-30): `scripts/chem_formula.py`,
 `scripts/check_vendored_sync.sh`, `scripts/.vendored_canon_ref` and the
 `tests/test_id_label_*.py` files are **not** in the workflow's `trigger_paths`,
 so a PR touching only those does not fire the drift job. `conf/id_label_targets.yaml`
 stays unpinned **by design** — it is intentionally per-repo (different adapters,
 targets, exceptions), not a drift risk.
+
+MIM is in better shape here than TraitMech: the `src/mediaingredientmech/schema/**`
+glob does cover `mech_shared.yaml`, where TraitMech has no `src/**` path at all
+(TraitMech#184). The four unlisted files are common to all three spokes —
+CommunityMech#280 is the same defect — so fix it as one cross-Mech sweep
+(`cross-mech-sync`), not three PRs. The suggested shape is to derive
+`trigger_paths` from the same list `check_vendored_sync.sh` reads, so the filter
+and the check cannot drift apart, which is exactly the failure this is an instance
+of.
+
+Severity is bounded: CultureMech's nightly `vendored-fleet-audit.yml` still catches
+divergence within a day, so this is a PR-time hole rather than an unguarded one.
+Do not confuse it with CommunityMech#278, which is about *what* is compared (the
+checker has no canonical copy in the hub) rather than *when* the comparison runs.
 
 Cross-repo companion status for #157 (CultureMech #112 plus the CommunityMech and
 TraitMech spokes), confirmed from the hub on 2026-07-30: all three spokes — MIM,

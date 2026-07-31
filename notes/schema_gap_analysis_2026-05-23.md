@@ -89,5 +89,5 @@ Same end-state as 2026-05-16; nothing regressed.
 ## Re-running the skill
 
 The /schema-gap-analysis skill commands in
-`.claude/skills/schema-gap-analysis/skill.md` are still accurate
+`.claude/skills/schema-gap-analysis/SKILL.md` are still accurate
 and copy-paste runnable. No skill edits needed.

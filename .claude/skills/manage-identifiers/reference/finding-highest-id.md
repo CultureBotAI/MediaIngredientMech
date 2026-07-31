@@ -1,6 +1,6 @@
 # Finding the Highest ID (all collection types)
 
-*Reference for the **manage-identifiers** skill — see [`../skill.md`](../skill.md) for the MediaIngredientMech overview and core workflow.*
+*Reference for the **manage-identifiers** skill — see [`../SKILL.md`](../SKILL.md) for the MediaIngredientMech overview and core workflow.*
 
 ---
 

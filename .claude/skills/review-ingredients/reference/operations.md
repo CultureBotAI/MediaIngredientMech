@@ -1,6 +1,6 @@
 # Operations: Error Handling · Troubleshooting · Examples · Workflow Integration · Metrics · Roadmap
 
-*Reference for the **review-ingredients** skill — see [`../skill.md`](../skill.md) for the overview, workflows, and rule summary.*
+*Reference for the **review-ingredients** skill — see [`../SKILL.md`](../SKILL.md) for the overview, workflows, and rule summary.*
 
 ---
 
