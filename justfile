@@ -6,6 +6,24 @@ set dotenv-load := true
 research_dir := "research"
 templates_dir := "templates"
 
+# Shared tooling lives in the culturebotai-claw checkout. Override CLAW_SRC when
+# claw is not the default sibling directory — CI checks it out elsewhere.
+claw_src := env_var_or_default("CLAW_SRC", "../culturebotai-claw/src")
+claw_root := parent_directory(claw_src)
+
+# Fail loudly when a shared claw module is missing, rather than running on and
+# producing an empty or wrong result. A skip-when-missing variant of this check
+# is exactly what let a vendored-sync job pass while verifying nothing
+# (CultureMech#112 lane).
+_require-claw module:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if [ ! -d "{{claw_src}}/{{module}}" ]; then
+      echo "error: shared module '{{module}}' not found under '{{claw_src}}'." >&2
+      echo "Set CLAW_SRC to the src/ directory of a culturebotai-claw checkout." >&2
+      exit 1
+    fi
+
 # Default recipe - list all commands
 default:
     @just --list
@@ -51,12 +69,12 @@ audit-writers:
 # ../culturebotai-claw/.claude/skills/evidence-reference-validation/.
 # Exits 2 on SNIPPET_NOT_IN_ABSTRACT (CI blocking).
 qc-evidence:
-    /opt/homebrew/bin/python3.13 ../culturebotai-claw/scripts/validate_evidence_references.py
+    uv run python {{claw_root}}/scripts/validate_evidence_references.py
 
 # Fetch missing PubMed abstracts referenced by MIM evidence claims.
 # Polite (3 req/s, 10 with NCBI_API_KEY env var).
 fetch-pubmed *args:
-    /opt/homebrew/bin/python3.13 ../culturebotai-claw/scripts/fetch_pubmed_abstracts.py {{args}}
+    uv run python {{claw_root}}/scripts/fetch_pubmed_abstracts.py {{args}}
 
 # Validate mappings/ingredient_mappings.sssom.tsv against structural
 # invariants (Rule A: auto-classifier token-overlap gate). Rejects are
@@ -162,7 +180,7 @@ qc: validate-all validate-strict qc-evidence qc-sssom
 # regenerates everything. See
 # ../culturebotai-claw/docs/proposals/phase5_mkdocs_material_and_browser_parity.md
 gen-ingredient-pages *args:
-    /opt/homebrew/bin/python3.13 src/mediaingredientmech/render_ingredient_pages.py {{args}}
+    uv run python src/mediaingredientmech/render_ingredient_pages.py {{args}}
 
 # Launch interactive curation CLI
 curate:
@@ -186,16 +204,16 @@ generate-umap:
 
 # QC coverage dashboard (shared kg_microbe_qc generator in culturebotai-claw).
 # Reads conf/qc_config.yaml; writes dashboard/index.html + coverage.png.
-gen-qc-dashboard:
-    PYTHONPATH=../culturebotai-claw/src /opt/homebrew/bin/python3.13 \
+gen-qc-dashboard: (_require-claw "kg_microbe_qc")
+    PYTHONPATH={{claw_src}} uv run python \
       -m kg_microbe_qc --config conf/qc_config.yaml --output dashboard
 
 # Knowledge-gap scan (Europe PMC, free) via shared kg_microbe_kgscan in claw.
 # Dry-run by default → reports/knowledge_gap_scan.{json,md}. Pass `--apply`
 # (and e.g. --limit/--min-score) to seed Discussion(kind=KNOWLEDGE_GAP).
-knowledge-gap-scan *args:
-    PYTHONPATH=../culturebotai-claw/src /opt/homebrew/bin/python3.13 \
-      -m kg_microbe_kgscan --config conf/kgscan_config.yaml {{args}}
+knowledge-gap-scan *args: (_require-claw "kg_microbe_kgscan")
+    PYTHONPATH={{claw_src}} uv run python -m kg_microbe_kgscan \
+      --config conf/kgscan_config.yaml {{args}}
 
 # Build complete documentation site
 build-docs: gen-docs export-browser
@@ -327,8 +345,8 @@ clean:
     find . -type f -name "*.pyc" -delete
 
 # Discussions / knowledge-gap browser (shared kg_microbe_discussions in claw).
-gen-discussions-data:
-    PYTHONPATH=../culturebotai-claw/src /opt/homebrew/bin/python3.13 \
+gen-discussions-data: (_require-claw "kg_microbe_discussions")
+    PYTHONPATH={{claw_src}} uv run python \
       -m kg_microbe_discussions --config conf/discussions_config.yaml --output app/discussions
 
 # =============================================================================

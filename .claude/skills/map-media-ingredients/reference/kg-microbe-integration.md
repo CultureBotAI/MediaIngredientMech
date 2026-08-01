@@ -1,6 +1,6 @@
 # KG-Microbe / CultureMech Integration
 
-*Reference for the **map-media-ingredients** skill — see [`../skill.md`](../skill.md) for the overview, normalization rules, strategy levels, and workflows.*
+*Reference for the **map-media-ingredients** skill — see [`../SKILL.md`](../SKILL.md) for the overview, normalization rules, strategy levels, and workflows.*
 
 ---
 

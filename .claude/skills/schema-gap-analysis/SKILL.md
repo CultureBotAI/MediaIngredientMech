@@ -10,7 +10,7 @@ version: 2.2.0
 # Schema gap analysis (MIM)
 
 The conceptual framework — why three axes (schema / instances / process), what each error class signals, common anti-patterns — lives once at the cross-Mech version in claw:
-https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/skill.md
+https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/SKILL.md
 
 This file is the MIM-specific operational version: every command below is ready to run as-is, with MIM paths baked in.
 
@@ -180,4 +180,4 @@ linkml-validate \
 - Schema: `src/mediaingredientmech/schema/mediaingredientmech.yaml`
 - Curator (use for instance-axis fixes): `src/mediaingredientmech/curation/ingredient_curator.py`
 - Last full audit notes: `notes/schema_gap_analysis_2026-05-16.md`
-- Cross-Mech framework + new-Mech bootstrap template: [claw/.claude/skills/schema-gap-analysis](https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/skill.md)
+- Cross-Mech framework + new-Mech bootstrap template: [claw/.claude/skills/schema-gap-analysis](https://github.com/CultureBotAI/culturebotai-claw/blob/main/.claude/skills/schema-gap-analysis/SKILL.md)

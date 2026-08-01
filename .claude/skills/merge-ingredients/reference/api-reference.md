@@ -1,6 +1,6 @@
 # API Reference & Advanced Usage
 
-*Reference for the **merge-ingredients** skill — see [`../skill.md`](../skill.md) for the overview, strategies, decision summary, and best practices.*
+*Reference for the **merge-ingredients** skill — see [`../SKILL.md`](../SKILL.md) for the overview, strategies, decision summary, and best practices.*
 
 ---
 
