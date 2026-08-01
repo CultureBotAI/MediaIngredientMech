@@ -1,0 +1,44 @@
+history_version: 1
+target:
+  kind: infrastructure
+  path: history/README.md
+  slug: curation-history
+session:
+  id: 2026-08-01T041536Z-claude-code-1d1c58
+  timestamp: '2026-08-01T04:15:36Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5
+    agent_tool: claude-code
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - justfile
+  - schema
+  - ci
+  - docs
+  summary: Port the append-only curation-history layer from TraitMech into MIM
+  details: 'Ported TraitMech''s history surface into MIM as four artifacts: (1) the history
+    LinkML schema vendored byte-identical from culturebotai-claw/shared/history/history.yaml
+    to src/mediaingredientmech/schema/history.yaml (md5 3742bc2068b637868c48aba406f6569d,
+    verified equal to both the claw canonical copy and TraitMech''s vendored copy); (2) justfile
+    recipes new-history (scaffolder, resolved through CLAW_SRC, exits 1 with a pointer when
+    kg_microbe_history is absent) and validate-history (vendored schema, no claw dependency,
+    exits 2 on empty or nonexistent target); (3) this history/README.md; (4) .github/workflows/curation-history.yaml,
+    where record validity is blocking and record presence is advisory. Also enabled ''set
+    positional-arguments := true'' in the justfile, which new-history needs so multi-word
+    --summary/--details prose survives interpolation as "$@" — verified beforehand that no
+    existing MIM recipe references $1 or $@, so no other recipe changes behaviour. Verified:
+    ''just --list'' parses and goes from 52 to 54 recipes (exactly the two additions, no other
+    diff); scaffolding without --details produces the TODO placeholder and ''just validate-history''
+    fails on it with the schema''s ''^(?!TODO: replace this placeholder)'' pattern; this record
+    validates clean; CLAW_SRC=/nonexistent fails loudly. Not carried over from TraitMech:
+    its README cites issue #191 for the vendored-drift gap, which does not apply here — MIM''s
+    scripts/check_vendored_sync.sh diffs against CultureBotAI/CultureMech@scripts/.vendored_canon_ref
+    over tokenless raw.githubusercontent, and history.yaml''s canonical copy is in claw (private),
+    so the README states that constraint instead of citing a MIM issue number. The advisory
+    presence check also counts mappings/** as a curation target, which TraitMech has no analogue
+    for: much of MIM''s curation lands in mappings/ingredient_mappings.sssom.tsv rather than
+    in a single ingredient YAML.'
