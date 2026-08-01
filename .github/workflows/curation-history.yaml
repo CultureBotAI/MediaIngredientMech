@@ -80,8 +80,8 @@ jobs:
           # Counts mapping artifacts too, not just ingredient YAMLs: a large share
           # of MIM curation lands in mappings/ rather than in any single record.
           changed_targets=$(git diff --name-only "$base"...HEAD \
-            -- 'data/ingredients/**/*.yaml' 'data/curated/**/*.yaml' \
-               'data/custom/**/*.yaml' 'mappings/**' | wc -l | tr -d ' ')
+            -- 'data/ingredients/**/*.yaml' 'data/curated/*.yaml' \
+               'data/custom/*.yaml' 'mappings/**' | wc -l | tr -d ' ')
           new_history=$(git diff --name-only --diff-filter=A "$base"...HEAD -- 'history/**/*.yaml' | wc -l | tr -d ' ')
 
           {
