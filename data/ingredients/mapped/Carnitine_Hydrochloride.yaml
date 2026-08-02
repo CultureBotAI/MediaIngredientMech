@@ -8,12 +8,11 @@ ontology_mapping:
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: cbclaw_followups_114
-    notes: 'Corrected mis-mapping: auto-created from CultureBotHT CAS-RN 461-05-2, which
-      in ChEBI genuinely resolves to CHEBI:48601 (carnitinamide chloride — the amide,
-      C7H17N2O2·Cl), not carnitine. Remapped to the carnitine parent CHEBI:17126 as a
-      NARROW_MATCH (salt/hydrochloride -> parent), mirroring sibling
-      Carnitine_Dl_Hydrochloride. Erroneous cas_rn 461-05-2 and amide chemistry backfill
-      removed.'
+    notes: 'Corrected mis-mapping: auto-created from CultureBotHT CAS-RN 461-05-2,
+      which in ChEBI genuinely resolves to CHEBI:48601 (carnitinamide chloride — the
+      amide, C7H17N2O2·Cl), not carnitine. Remapped to the carnitine parent CHEBI:17126
+      as a NARROW_MATCH (salt/hydrochloride -> parent), mirroring sibling Carnitine_Dl_Hydrochloride.
+      Erroneous cas_rn 461-05-2 and amide chemistry backfill removed.'
 synonyms:
 - synonym_text: 4-amino-2-hydroxy-N,N,N-trimethyl-4-oxobutan-1-aminium chloride
   synonym_type: EXACT_SYNONYM
@@ -50,17 +49,17 @@ curation_history:
 - timestamp: '2026-07-05T00:00:00+00:00'
   curator: cbclaw_followups_114
   action: CORRECTED
-  changes: 'ontology_id CHEBI:48601 (carnitinamide chloride, the amide) -> CHEBI:17126
+  changes: ontology_id CHEBI:48601 (carnitinamide chloride, the amide) -> CHEBI:17126
     (carnitine), NARROW_MATCH (salt -> parent), mirroring Carnitine_Dl_Hydrochloride;
-    identifier CHEBI:48601 -> kgmicrobe.compound:carnitine_hydrochloride; removed erroneous
-    cas_rn 461-05-2 and amide chemistry backfill (molecular_formula/inchi/smiles).'
+    identifier CHEBI:48601 -> kgmicrobe.compound:carnitine_hydrochloride; removed
+    erroneous cas_rn 461-05-2 and amide chemistry backfill (molecular_formula/inchi/smiles).
   llm_assisted: true
 - timestamp: '2026-07-05T00:00:00+00:00'
   curator: cbclaw_dedup_review_114
   action: DEDUP_REVIEWED
-  changes: 'Reviewed for duplication vs Carnitine (Dl) Hydrochloride (cas:461-06-3). Decision:
-    NOT merged - distinct name surface-forms (stereo-unspecified "Carnitine Hydrochloride"
-    from CultureBotHT vs racemic "DL"); both correctly map to the stereo-unspecified parent
-    CHEBI:17126 (carnitine). MIM keeps one record per surface-form.'
+  changes: 'Reviewed for duplication vs Carnitine (Dl) Hydrochloride (cas:461-06-3).
+    Decision: NOT merged - distinct name surface-forms (stereo-unspecified "Carnitine
+    Hydrochloride" from CultureBotHT vs racemic "DL"); both correctly map to the stereo-unspecified
+    parent CHEBI:17126 (carnitine). MIM keeps one record per surface-form.'
   llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
