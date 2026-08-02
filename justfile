@@ -192,10 +192,42 @@ qc-roundtrip:
     set -euo pipefail
     tmp="$(mktemp -d)"
     trap 'rm -rf "$tmp"' EXIT
+    # Aggregate diagnostics are NOT discarded: aggregate_records.py skips a
+    # per-record file it cannot load and still exits 0, so silencing it turns a
+    # corrupt YAML into a bare "ingredient count mismatch" with no cause.
     uv run python scripts/aggregate_records.py \
-        --ingredients-dir data/ingredients --output-dir "$tmp" >/dev/null
+        --ingredients-dir data/ingredients --output-dir "$tmp"
     uv run python scripts/verify_roundtrip.py \
         --original-dir data/curated --aggregated-dir "$tmp"
+    # Same byte-level assertion CI makes, so `just qc` green means CI green.
+    # Without this the recipe misses serialization drift (key order, quoting,
+    # line wrapping) that fails the workflow.
+    uv run python scripts/export_individual_records.py \
+        --input-dir data/curated --output-dir data/ingredients
+    if [ -n "$(git status --porcelain -- data/ingredients)" ]; then
+      echo "error: export-individual changed data/ingredients — the per-record tree" >&2
+      echo "is not a clean projection of data/curated/. Run 'just sync-curated' if the" >&2
+      echo "per-record files are the ones you meant to keep." >&2
+      git status --porcelain -- data/ingredients >&2
+      exit 1
+    fi
+
+# Write the per-record tree BACK into data/curated/ — the missing half of the
+# round trip, and the remediation when `qc-roundtrip` goes red because a script
+# edited data/ingredients/ directly (apply-role-research-results does exactly
+# this). Note `aggregate-collections` is NOT this: it writes data/collections/,
+# which nothing reads, and `sync-individual` runs export FIRST, destroying the
+# per-record edits before aggregating.
+#
+# Expect a LARGE diff even when content is unchanged: the aggregator emits
+# records in filename order, which is not the collection's historical order.
+# Nothing depends on that order (the verifier sorts, the exporter iterates), but
+# review `git diff data/curated` semantically rather than by line count.
+# `discussions` is dropped on the way in -- see PER_RECORD_ONLY_FIELDS in
+# scripts/aggregate_records.py.
+sync-curated:
+    uv run python scripts/aggregate_records.py \
+        --ingredients-dir data/ingredients --output-dir data/curated
 
 # Render per-ingredient HTML detail pages from data/ingredients/*.yaml
 # into pages/ingredient/. Idempotent (skips fresh outputs); --force

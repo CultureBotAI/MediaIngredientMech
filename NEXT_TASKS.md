@@ -211,9 +211,11 @@ routine promotion would have silently reverted them.**
 
 **Root cause (found 2026-08-02): the reverse half of the round trip never fed
 back.** `aggregate_records.py` defaults `--output-dir` to `data/collections/`,
-but *every* consumer in the repo reads `data/curated/` — the only references to
-`data/collections/` anywhere are the aggregator's own default and
-`verify_roundtrip.py`'s. So a per-record edit had no path back into the export
+but *every* one of the ~20 consumers in the repo reads `data/curated/`. Nothing
+reads `data/collections/`: the only references are the aggregator's own default,
+`verify_roundtrip.py`'s, and two `notes/` docs that documented the stale
+comparison as the way to do it (fixed in PR #167).
+So a per-record edit had no path back into the export
 source, and `verify_roundtrip.py` — which would have caught this and already
 exits 1 on mismatch — was comparing against an artifact last regenerated in
 March 2026. It was never wired into CI. `just aggregate-collections` was
@@ -240,8 +242,10 @@ therefore *not* the fix: on its own it writes to the dead end.
    unchanged is caught and pinpointed.
 
 **The 53 reclassifications were validated before being made canonical.** All are
-named standard culture media — `Marine broth 2216` and `Oatmeal agar` appear
-verbatim in the schema's own `DEFINED_MEDIUM` examples. MediaDive REST confirms
+named standard culture media. `Oatmeal agar` appears **verbatim** in the schema's
+own `DEFINED_MEDIUM` examples, and `Marine broth 2216` is the broth counterpart
+of its `Marine agar 2216` example (same DSMZ 2216 formulation, solidified or
+not) — a near-match, not a verbatim one. MediaDive REST confirms
 the 8 contested "Base" products carry no formula/CAS/ChEBI (formulations, not
 chemicals). Three independent Edison/PaperQA3 runs on the hardest cases — Blood
 Agar Base (incomplete base), Soil+Seawater Medium (natural-substrate, genuinely
@@ -398,6 +402,33 @@ Nine items shipped in #108/#109/#111; three remain, all confirmed present:
    **Cross-Mech** — `theme-toggle.js` is vendored byte-identical across all Mech
    sites, so unifying tokens unilaterally would desync MIM. Coordinate in claw.
 
+## 9. Small cleanups
+
+- **`enrich_edison_response.py` non-recursive glob** (deferred in #146): the
+  default `DEFAULT_RESEARCH_DIR` pattern `*-edison-*-meta.yaml` is non-recursive,
+  so it will not see `research/ingredients/roles/` unless `--research-dir` is
+  passed. Fix before the role lane runs (item 5).
+- **`.claude/skills/ingredient-roles/SKILL.md` is pre-facet** — it documents the
+  retired flat lowercase role names (`carbon_source`, `buffer`) with no mention of
+  the three facets or the Step 7b lane. The facet-aware skill exists only in
+  CultureMech (`.claude/skills/research-ingredient-roles/SKILL.md`). Modernize or
+  point at it.
+- **`docs/ROLE_CURATION_WORKFLOW.md`** carries a 2026-03-15 stats snapshot
+  (446 ingredients / 996 mapped). It is honestly labelled "before the #128 facet
+  migration" and points at `scripts/validate_roles.py` for current numbers, so
+  this is cosmetic; the "Future Enhancements (Phase 5)" section (lines 399-420)
+  describes a manual DOI-review workflow that Step 7b supersedes.
+- **`chemical_properties` residual is the ceiling, not a task.** The enricher was
+  repaired in 2026-06 (OLS4 renamed its annotation keys: `formula` →
+  `generalized_empirical_formula`, SMILES/InChI → `*_string`). The remaining ~83
+  missing-formula records are abstract CHEBI classes, polymers, proteins,
+  complexes and minerals that legitimately have no single empirical formula.
+  Re-run any time with `python scripts/enrich_chemical_properties.py`
+  (idempotent), then `just export-individual`. Gotcha still live: OLS4 needs
+  **double** URL-encoding of ChEBI IRIs.
+- **`dashboard/` was last generated 2026-07-19**, before the role-facet work
+  landed. Re-run `just gen-qc-dashboard` after item 5.
+
 ## 10. `DEFINED_MEDIUM` reads as "chemically defined" — schema hazard (NEW)
 
 Surfaced independently by **all three** Edison/PaperQA3 runs during the #148
@@ -426,33 +457,6 @@ but is cross-repo (CultureMech imports MIM's enums) and would need coordination 
 weigh against the description-only change. Note `UNDEFINED_MIXTURE` sits in the
 same enum and *does* carry the compositional meaning, which is what makes the
 pair misleading.
-
-## 9. Small cleanups
-
-- **`enrich_edison_response.py` non-recursive glob** (deferred in #146): the
-  default `DEFAULT_RESEARCH_DIR` pattern `*-edison-*-meta.yaml` is non-recursive,
-  so it will not see `research/ingredients/roles/` unless `--research-dir` is
-  passed. Fix before the role lane runs (item 5).
-- **`.claude/skills/ingredient-roles/SKILL.md` is pre-facet** — it documents the
-  retired flat lowercase role names (`carbon_source`, `buffer`) with no mention of
-  the three facets or the Step 7b lane. The facet-aware skill exists only in
-  CultureMech (`.claude/skills/research-ingredient-roles/SKILL.md`). Modernize or
-  point at it.
-- **`docs/ROLE_CURATION_WORKFLOW.md`** carries a 2026-03-15 stats snapshot
-  (446 ingredients / 996 mapped). It is honestly labelled "before the #128 facet
-  migration" and points at `scripts/validate_roles.py` for current numbers, so
-  this is cosmetic; the "Future Enhancements (Phase 5)" section (lines 399-420)
-  describes a manual DOI-review workflow that Step 7b supersedes.
-- **`chemical_properties` residual is the ceiling, not a task.** The enricher was
-  repaired in 2026-06 (OLS4 renamed its annotation keys: `formula` →
-  `generalized_empirical_formula`, SMILES/InChI → `*_string`). The remaining ~83
-  missing-formula records are abstract CHEBI classes, polymers, proteins,
-  complexes and minerals that legitimately have no single empirical formula.
-  Re-run any time with `python scripts/enrich_chemical_properties.py`
-  (idempotent), then `just export-individual`. Gotcha still live: OLS4 needs
-  **double** URL-encoding of ChEBI IRIs.
-- **`dashboard/` was last generated 2026-07-19**, before the role-facet work
-  landed. Re-run `just gen-qc-dashboard` after item 5.
 
 ---
 

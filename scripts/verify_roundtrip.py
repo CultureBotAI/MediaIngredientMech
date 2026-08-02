@@ -29,9 +29,25 @@ console = Console()
 
 # Fields authored directly on the per-record files and deliberately absent from
 # the curated collection (culturebotai-claw's kgscan writes `discussions`; the
-# exporter re-attaches them). Kept in sync with PER_RECORD_AUTHORED_FIELDS in
-# scripts/export_individual_records.py.
-PER_RECORD_ONLY_FIELDS: tuple[str, ...] = ("discussions",)
+# exporter re-attaches them).
+#
+# IMPORTED, not re-declared. Drift between the two lists is silent in the unsafe
+# direction: a field added here but not to the exporter's list would be wiped on
+# every export while this gate stayed green — precisely the data loss the gate
+# exists to catch.
+def _load_exporter_authored_fields() -> tuple[str, ...]:
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "_mim_export_individual_records", Path(__file__).with_name("export_individual_records.py")
+    )
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = mod
+    spec.loader.exec_module(mod)
+    return tuple(mod.PER_RECORD_AUTHORED_FIELDS)
+
+
+PER_RECORD_ONLY_FIELDS: tuple[str, ...] = _load_exporter_authored_fields()
 
 
 def compare_ingredient_records(orig: dict, agg: dict, ignore_fields: set[str] = None) -> list[str]:

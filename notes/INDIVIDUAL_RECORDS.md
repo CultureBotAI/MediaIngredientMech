@@ -48,13 +48,19 @@ python scripts/export_individual_records.py --input-dir data/curated --output-di
 - Reverse operation of export script
 - Adds metadata: generation_date, total_count, mapped_count, unmapped_count
 - Optional validation during aggregation
-- Output: `data/collections/mapped_ingredients.yaml` and `unmapped_ingredients.yaml`
+- Output: whatever `--output-dir` names. **The default, `data/collections/`, is a
+  dead end** — nothing in the repo reads it (see issue #169). Writing there was
+  the root cause of #148: per-record edits had no path back into `data/curated/`,
+  which is what `export_individual_records.py` actually reads.
 
 **Usage:**
 ```bash
-python scripts/aggregate_records.py
+# Write the per-record tree back into the live collection. This is the one you
+# almost always want, and what `just sync-curated` runs.
+python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir data/curated
+
+# Bare invocation writes data/collections/, which nothing consumes.
 python scripts/aggregate_records.py --validate
-python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir data/collections
 ```
 
 ### 4. Updated Validation Script
@@ -84,11 +90,17 @@ python scripts/validate_all.py --mode collection    # Only collection files
 - Handles duplicate identifiers correctly (sorts by identifier + preferred_term)
 - Reports differences and metadata changes
 
-**Usage:**
+**Usage:** prefer `just qc-roundtrip`, which aggregates into a temp directory and
+then makes the same byte-level assertion CI does.
+
 ```bash
-python scripts/verify_roundtrip.py
-python scripts/verify_roundtrip.py --original-dir data/curated --aggregated-dir data/collections
+just qc-roundtrip
 ```
+
+> **Do not compare against `data/collections/`.** That committed artifact was
+> last regenerated 2026-03-06, so the comparison passed for months while 55
+> curation events sat unreconciled (#148). Comparing against *any* committed copy
+> is the trap; aggregate into a temp directory instead.
 
 ### 6. Updated Justfile Commands
 
