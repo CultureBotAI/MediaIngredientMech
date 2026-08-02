@@ -6,7 +6,7 @@ deferrals here. Keep the cross-Mech items in sync with the sibling repos'
 `NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech). The hub,
 culturebotai-claw, now keeps one too, for items no single Mech owns.
 
-Last reconciled: 2026-07-31. **#160** was filed on 2026-07-30 for the
+Last reconciled: 2026-08-02. **#160** was filed on 2026-07-30 for the
 `trigger_paths` gap described in the vendored-sync section below.
 
 > **Reconcile note (2026-07-30).** The previous reconcile was 2026-06-15 and the
@@ -147,7 +147,7 @@ The collisions split into two dispositions, and telling them apart is the work:
 primary; these 61 predate that guard. Consider adding the same check as a
 repo-wide test so the count can only go down.
 
-## 3. Collection ↔ per-record drift (#148) — DONE (2026-08-02, PR #162)
+## 3. Collection ↔ per-record drift (#148) — DONE (2026-08-02, PR #167)
 
 Counts on 2026-07-30: mapped 1,879 per-record files vs 1,879 collection entries;
 unmapped **378 per-record files vs 381 collection entries**.
@@ -175,7 +175,7 @@ Also in scope, found during this reconcile:
   `data/curated/unmapped_ingredients.yaml` and `data/ingredients/unmapped/Tapso.yaml`.
   Every other unmapped record uses an `UNMAPPED_NNNN` placeholder. Mint one
   (`manage-identifiers`) — TAPSO is a real buffer and a mapping candidate.
-- ~~**Self-inconsistent collection headers**~~ — **DONE (PR #162)**, recomputed
+- ~~**Self-inconsistent collection headers**~~ — **DONE (PR #167)**, recomputed
   during the reconcile. Mapped now reports 1877 MAPPED + 2 non-MAPPED against
   total 1879. Those 2 are `Bacto_Soytone.yaml` and `Sodium_L-lactate.yaml`, which
   sit in `data/ingredients/mapped/` without `mapping_status: MAPPED` — filed
@@ -189,7 +189,7 @@ Also in scope, found during this reconcile:
   and the new gate deliberately does not, but it is an active trap: it is the
   aggregator's *default* output, so a bare `just aggregate-collections` still
   writes there and looks like it did something. Retire it — delete or move to
-  `ATTIC/`, and repoint `aggregate_records.py`'s default. Left out of PR #162 to
+  `ATTIC/`, and repoint `aggregate_records.py`'s default. Left out of PR #167 to
   keep that diff to the fix.
 
 **The issue's item 1 is now CONFIRMED and is worse than "stale files" — it is a
@@ -219,7 +219,7 @@ exits 1 on mismatch — was comparing against an artifact last regenerated in
 March 2026. It was never wired into CI. `just aggregate-collections` was
 therefore *not* the fix: on its own it writes to the dead end.
 
-**FIXED 2026-08-02 (PR #162).** Two halves:
+**FIXED 2026-08-02 (PR #167).** Two halves:
 
 1. **Data reconciled.** Applied surgically (record and key order preserved, only
    drifted fields touched) so the diff stayed reviewable: 55 unmapped records
