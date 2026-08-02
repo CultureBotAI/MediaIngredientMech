@@ -179,7 +179,23 @@ report-label-drift:
 # `just validate-products` locally to reproduce the gate; `just report-label-drift`
 # writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
 # LinkML cross-check (one validator process per record → too slow for CI).
-qc: validate-all validate-strict qc-evidence qc-sssom
+qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip
+
+# Assert data/curated/ and data/ingredients/ still agree, so a per-record edit
+# cannot be silently reverted by the next `just export-individual` (which
+# projects the collection over the per-record tree). Aggregates into a temp dir
+# rather than data/collections/ -- comparing against that committed artifact is
+# what let this drift for months: it was last regenerated in March 2026, so the
+# check passed while 55 curation events sat unreconciled. (CI blocking.)
+qc-roundtrip:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    tmp="$(mktemp -d)"
+    trap 'rm -rf "$tmp"' EXIT
+    uv run python scripts/aggregate_records.py \
+        --ingredients-dir data/ingredients --output-dir "$tmp" >/dev/null
+    uv run python scripts/verify_roundtrip.py \
+        --original-dir data/curated --aggregated-dir "$tmp"
 
 # Render per-ingredient HTML detail pages from data/ingredients/*.yaml
 # into pages/ingredient/. Idempotent (skips fresh outputs); --force

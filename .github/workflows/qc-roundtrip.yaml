@@ -1,0 +1,78 @@
+name: QC — collection/per-record round-trip
+
+# Asserts that data/curated/ and data/ingredients/ still describe the same
+# records, so an edit made directly to a per-record file cannot be silently
+# reverted by the next `just export-individual` (which projects the collection
+# over the per-record tree, and which promote_resolved_unmapped.py calls).
+#
+# This is the guard that was missing: scripts/verify_roundtrip.py already
+# existed, but it compared against the committed data/collections/ artifact,
+# last regenerated in March 2026 — so it kept passing while 55 curation events
+# from PR #116 sat unreconciled in the per-record files. This job aggregates
+# into a temp directory instead, so it can never compare against a stale copy.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/curated/**"
+      - "data/ingredients/**"
+      - "scripts/aggregate_records.py"
+      - "scripts/verify_roundtrip.py"
+      - "scripts/export_individual_records.py"
+      - ".github/workflows/qc-roundtrip.yaml"
+  push:
+    branches: [main]
+    paths:
+      - "data/curated/**"
+      - "data/ingredients/**"
+      - "scripts/aggregate_records.py"
+      - "scripts/verify_roundtrip.py"
+      - "scripts/export_individual_records.py"
+      - ".github/workflows/qc-roundtrip.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  roundtrip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout MIM
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install deps
+        run: python3 -m pip install pyyaml click rich
+
+      - name: Aggregate per-record files to a temp collection
+        run: |
+          python3 scripts/aggregate_records.py \
+            --ingredients-dir data/ingredients \
+            --output-dir "${RUNNER_TEMP}/agg"
+
+      - name: Verify curated <-> per-record round trip
+        run: |
+          python3 scripts/verify_roundtrip.py \
+            --original-dir data/curated \
+            --aggregated-dir "${RUNNER_TEMP}/agg"
+
+      - name: Assert export is a no-op (per-record tree matches the collection)
+        run: |
+          python3 scripts/export_individual_records.py \
+            --input-dir data/curated --output-dir data/ingredients
+          if ! git diff --quiet -- data/ingredients; then
+            echo "::error::export-individual changed data/ingredients — the per-record tree is not a clean projection of data/curated/."
+            git diff --stat -- data/ingredients
+            exit 1
+          fi
+          if [ -n "$(git status --porcelain -- data/ingredients)" ]; then
+            echo "::error::export-individual added or removed per-record files."
+            git status --porcelain -- data/ingredients
+            exit 1
+          fi
+          echo "export-individual is a no-op — round trip is closed."
