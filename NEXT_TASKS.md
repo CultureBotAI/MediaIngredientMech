@@ -147,7 +147,7 @@ The collisions split into two dispositions, and telling them apart is the work:
 primary; these 61 predate that guard. Consider adding the same check as a
 repo-wide test so the count can only go down.
 
-## 3. Collection ↔ per-record drift (#148) — blocked by #1
+## 3. Collection ↔ per-record drift (#148) — DONE (2026-08-02, PR #162)
 
 Counts on 2026-07-30: mapped 1,879 per-record files vs 1,879 collection entries;
 unmapped **378 per-record files vs 381 collection entries**.
@@ -175,17 +175,22 @@ Also in scope, found during this reconcile:
   `data/curated/unmapped_ingredients.yaml` and `data/ingredients/unmapped/Tapso.yaml`.
   Every other unmapped record uses an `UNMAPPED_NNNN` placeholder. Mint one
   (`manage-identifiers`) — TAPSO is a real buffer and a mapping candidate.
-- **Self-inconsistent collection headers:** `data/curated/mapped_ingredients.yaml`
-  declares `total_count: 1879` but `mapped_count: 1877` against 1,879 records;
-  `data/curated/unmapped_ingredients.yaml` declares 381 against 378 files.
+- ~~**Self-inconsistent collection headers**~~ — **DONE (PR #162)**, recomputed
+  during the reconcile. Mapped now reports 1877 MAPPED + 2 non-MAPPED against
+  total 1879. Those 2 are `Bacto_Soytone.yaml` and `Sodium_L-lactate.yaml`, which
+  sit in `data/ingredients/mapped/` without `mapping_status: MAPPED` — filed
+  separately, since the honest header now surfaces them.
 - **Stale derived indexes:** `data/curated/mapped_ingredients_index.csv` (line 410)
   and `…_index.json` still carry `CHEBI:48601` for Carnitine Hydrochloride, whose
   identifier was corrected to `kgmicrobe.compound:carnitine_hydrochloride` (the
   collection YAML is right; only the indexes lag). Regenerate them.
 - **`data/collections/` is a dead March-2026 pair** (995 mapped / 136 unmapped,
-  generated 2026-03-06) alongside the live `data/curated/` pair (1879 / 381).
-  Only `data/curated/` is gated by `conf/id_label_targets.yaml`. Decide: delete,
-  or move to `ATTIC/`.
+  generated 2026-03-06) alongside the live `data/curated/` pair. Nothing reads it
+  and the new gate deliberately does not, but it is an active trap: it is the
+  aggregator's *default* output, so a bare `just aggregate-collections` still
+  writes there and looks like it did something. Retire it — delete or move to
+  `ATTIC/`, and repoint `aggregate_records.py`'s default. Left out of PR #162 to
+  keep that diff to the fix.
 
 **The issue's item 1 is now CONFIRMED and is worse than "stale files" — it is a
 data-destroying landmine. Measured 2026-07-30, once PR #159 made a full export
@@ -204,14 +209,48 @@ collection as the source — undoes all 55 curation events and drops their histo
 entries. `promote_resolved_unmapped.py` calls `just export-individual`, so **any
 routine promotion would have silently reverted them.**
 
-Fix direction: aggregate per-record → collection (`just aggregate-collections`)
-*before* the next export, and verify the resulting collection diff contains only
-those 55 events and the 3 orphan deletions above. Until that lands, treat
-`just export-individual` as unsafe on this corpus and check `git diff --stat`
-after every run. Re-running the export also recreates
-`unmapped/{Phytone,Soya_Pepton,Tryptone_Peptone}.yaml` from the stale entries,
-putting those three records in two states at once — delete those artifacts or fix
-the collection.
+**Root cause (found 2026-08-02): the reverse half of the round trip never fed
+back.** `aggregate_records.py` defaults `--output-dir` to `data/collections/`,
+but *every* consumer in the repo reads `data/curated/` — the only references to
+`data/collections/` anywhere are the aggregator's own default and
+`verify_roundtrip.py`'s. So a per-record edit had no path back into the export
+source, and `verify_roundtrip.py` — which would have caught this and already
+exits 1 on mismatch — was comparing against an artifact last regenerated in
+March 2026. It was never wired into CI. `just aggregate-collections` was
+therefore *not* the fix: on its own it writes to the dead end.
+
+**FIXED 2026-08-02 (PR #162).** Two halves:
+
+1. **Data reconciled.** Applied surgically (record and key order preserved, only
+   drifted fields touched) so the diff stayed reviewable: 55 unmapped records
+   gained `ingredient_type`/`curation_history`/`notes`; the 3 orphans were
+   dropped; headers recomputed (mapped now honestly reports 1877 MAPPED + 2
+   non-MAPPED against total 1879). `discussions` deliberately stays out of the
+   collection. 12 per-record files were also normalised — line wrapping and
+   scalar quoting only, verified semantically identical by parsing both sides and
+   stable across three consecutive exports. **`just export-individual` is now a
+   true no-op.**
+2. **Guard added so it cannot recur.** `just qc-roundtrip` (now part of `just
+   qc`) and `.github/workflows/qc-roundtrip.yaml` aggregate into a *temp* dir —
+   never a committed artifact — and verify against `data/curated`; CI also
+   asserts that `export-individual` produces no diff. `verify_roundtrip.py`
+   gained `--ignore-fields` (default `discussions`) and no longer stops after the
+   first mismatch per file. Verified the gate **fails** as well as passes:
+   reverting `data/curated` exits 1, and a single-field change with counts left
+   unchanged is caught and pinpointed.
+
+**The 53 reclassifications were validated before being made canonical.** All are
+named standard culture media — `Marine broth 2216` and `Oatmeal agar` appear
+verbatim in the schema's own `DEFINED_MEDIUM` examples. MediaDive REST confirms
+the 8 contested "Base" products carry no formula/CAS/ChEBI (formulations, not
+chemicals). Three independent Edison/PaperQA3 runs on the hardest cases — Blood
+Agar Base (incomplete base), Soil+Seawater Medium (natural-substrate, genuinely
+variable components), Leptospira Medium Base EMJH (supplement-dependent base) —
+**each independently confirmed `DEFINED_MEDIUM`**. Reports under
+`research/ingredients/` (gitignored).
+
+⚠ **All three runs independently flagged the same schema hazard** — see the new
+item 10 below.
 
 ## 4. Flip `plausibility_severity: warn` → `error` — DONE (2026-07-30, PR #159)
 
@@ -358,6 +397,35 @@ Nine items shipped in #108/#109/#111; three remain, all confirmed present:
    `:root[data-theme="dark"]`, ~55 lines each, e.g. `browser.html:294-348`).
    **Cross-Mech** — `theme-toggle.js` is vendored byte-identical across all Mech
    sites, so unifying tokens unilaterally would desync MIM. Coordinate in claw.
+
+## 10. `DEFINED_MEDIUM` reads as "chemically defined" — schema hazard (NEW)
+
+Surfaced independently by **all three** Edison/PaperQA3 runs during the #148
+validation (2026-08-02), each unprompted and each phrasing it as a warning:
+
+- Blood Agar Base — "`DEFINED_MEDIUM` should be understood as the project's
+  named-medium record type, **not a claim that every molecular constituent and
+  concentration is chemically specified**."
+- Soil+Seawater Medium — "may be retained if it means 'complete named medium,'
+  but **it must not be interpreted as 'chemically defined medium'**."
+- Leptospira Medium Base EMJH — "'defined' **should not be interpreted as
+  chemically defined**."
+
+In microbiology "defined medium" is a term of art meaning *chemically* defined
+(every constituent known and quantified) — the opposite of the complex digests
+and extracts these records contain. MIM's enum means "complete named medium
+formulation", which the schema *description* supports ("Complete medium
+formulation or recipe with multiple ingredients … Should cross-reference to
+CultureMech for full recipe") but the enum *name* actively contradicts. 53
+records now carry this value, and kg-microbe consumes it.
+
+Low-risk fix: sharpen the `DEFINED_MEDIUM` description to say explicitly that it
+denotes record granularity (a complete named medium), not chemical definedness,
+and that complex undefined components are expected. A rename is the honest fix
+but is cross-repo (CultureMech imports MIM's enums) and would need coordination —
+weigh against the description-only change. Note `UNDEFINED_MIXTURE` sits in the
+same enum and *does* carry the compositional meaning, which is what makes the
+pair misleading.
 
 ## 9. Small cleanups
 
