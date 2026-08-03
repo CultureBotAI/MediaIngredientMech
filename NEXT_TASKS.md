@@ -175,11 +175,15 @@ Also in scope, found during this reconcile:
   `data/curated/unmapped_ingredients.yaml` and `data/ingredients/unmapped/Tapso.yaml`.
   Every other unmapped record uses an `UNMAPPED_NNNN` placeholder. Mint one
   (`manage-identifiers`) — TAPSO is a real buffer and a mapping candidate.
-- ~~**Self-inconsistent collection headers**~~ — **DONE (PR #167)**, recomputed
-  during the reconcile. Mapped now reports 1877 MAPPED + 2 non-MAPPED against
-  total 1879. Those 2 are `Bacto_Soytone.yaml` and `Sodium_L-lactate.yaml`, which
-  sit in `data/ingredients/mapped/` without `mapping_status: MAPPED` — filed
-  separately, since the honest header now surfaces them.
+- ~~**"Self-inconsistent" collection headers**~~ — **the original header was
+  right; the reconcile briefly made it wrong.** `total_count: 1879` against
+  `mapped_count: 1877` + `unmapped_count: 0` does not sum, but that is accurate,
+  not inconsistent: 2 records are `mapping_status: REJECTED`, and
+  `IngredientCollection` is closed with no slot for other statuses. PR #167
+  recomputed `unmapped_count` as `total − mapped`, which relabelled those 2 as
+  UNMAPPED — asserting something false. Corrected in the #172 fix, which counts
+  each status explicitly and prints a note when they legitimately do not sum. The
+  2 records (`Bacto_Soytone.yaml`, `Sodium_L-lactate.yaml`) are filed as #170.
 - **Stale derived indexes:** `data/curated/mapped_ingredients_index.csv` (line 410)
   and `…_index.json` still carry `CHEBI:48601` for Carnitine Hydrochloride, whose
   identifier was corrected to `kgmicrobe.compound:carnitine_hydrochloride` (the
@@ -226,8 +230,10 @@ therefore *not* the fix: on its own it writes to the dead end.
 1. **Data reconciled.** Applied surgically (record and key order preserved, only
    drifted fields touched) so the diff stayed reviewable: 55 unmapped records
    gained `ingredient_type`/`curation_history`/`notes`; the 3 orphans were
-   dropped; headers recomputed (mapped now honestly reports 1877 MAPPED + 2
-   non-MAPPED against total 1879). `discussions` deliberately stays out of the
+   dropped. Headers were also recomputed, and **that part was a mistake** — see
+   the header bullet above; `unmapped_count` was set to 2 when the 2 records are
+   `REJECTED`, not UNMAPPED. Reverted to 0 in the #172 fix, which counts each
+   status explicitly. `discussions` deliberately stays out of the
    collection. 12 per-record files were also normalised — line wrapping and
    scalar quoting only, verified semantically identical by parsing both sides and
    stable across three consecutive exports. **`just export-individual` is now a

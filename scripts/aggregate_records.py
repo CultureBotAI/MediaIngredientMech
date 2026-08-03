@@ -58,7 +58,7 @@ def aggregate_individual_files(
     category: str,
     validate: bool = False,
     exclude_fields: tuple[str, ...] = PER_RECORD_ONLY_FIELDS,
-) -> dict | None:
+) -> tuple[dict | None, list[str]]:
     """Aggregate individual YAML files into a collection.
 
     Args:
@@ -72,18 +72,21 @@ def aggregate_individual_files(
             does not carry it.
 
     Returns:
-        Collection dictionary with metadata and ingredients list, or None if error.
+        ``(collection, errors)``. ``collection`` is None only when the category
+        directory is absent or empty. ``errors`` lists per-file failures; a record
+        that fails to load is SKIPPED, so a non-empty list means the collection is
+        missing records and the caller MUST NOT treat it as complete.
     """
     category_dir = ingredients_dir / category
     if not category_dir.exists():
         console.print(f"[yellow]Category directory not found: {category_dir}[/yellow]")
-        return None
+        return None, []
 
     # Find all YAML files
     yaml_files = sorted(category_dir.glob("*.yaml")) + sorted(category_dir.glob("*.yml"))
     if not yaml_files:
         console.print(f"[yellow]No YAML files found in {category_dir}[/yellow]")
-        return None
+        return None, []
 
     ingredients = []
     errors = []
@@ -92,20 +95,32 @@ def aggregate_individual_files(
         try:
             ingredient = load_yaml(yaml_file)
 
+            # Structural checks that run ALWAYS, not just under --validate,
+            # because they are the ones that cause silent record loss. load_yaml
+            # returns {} for an empty or comment-only document, which would
+            # otherwise be appended as a `- {}` record: the file's real content is
+            # gone, the collection still "has" a record, and nothing errors.
+            if not isinstance(ingredient, dict):
+                errors.append(f"{yaml_file.name}: Invalid format (not a mapping)")
+                continue
+            if not ingredient:
+                errors.append(f"{yaml_file.name}: Empty document (truncated or comment-only?)")
+                continue
+            if 'mapping_status' not in ingredient:
+                # Required by the schema, and the aggregator counts on it; without
+                # it the header's status counts silently under-report.
+                errors.append(f"{yaml_file.name}: Missing 'mapping_status' field")
+                continue
+
             # Validate basic structure
             if validate:
-                if not isinstance(ingredient, dict):
-                    errors.append(f"{yaml_file.name}: Invalid format (not a dict)")
-                    continue
                 if 'identifier' not in ingredient:
                     errors.append(f"{yaml_file.name}: Missing 'identifier' field")
                     continue
                 if 'preferred_term' not in ingredient:
                     errors.append(f"{yaml_file.name}: Missing 'preferred_term' field")
                     continue
-                if 'mapping_status' not in ingredient:
-                    errors.append(f"{yaml_file.name}: Missing 'mapping_status' field")
-                    continue
+                # `mapping_status` is checked unconditionally above.
 
             for field_name in exclude_fields:
                 ingredient.pop(field_name, None)
@@ -116,18 +131,40 @@ def aggregate_individual_files(
             errors.append(f"{yaml_file.name}: {e}")
 
     if errors:
-        console.print(f"\n[yellow]Errors in {category}:[/yellow]")
+        # Loud, and fatal in main(): each of these is a record MISSING from the
+        # collection. Silently dropping one and exiting 0 meant `sync-curated`
+        # could delete a record from data/curated/, after which the next export
+        # deletes its per-record file too and the round-trip gate — comparing two
+        # sources that now agree it does not exist — passes.
+        console.print(f"\n[red]Errors in {category} — {len(errors)} record(s) NOT aggregated:[/red]")
         for error in errors[:10]:  # Show first 10 errors
             console.print(f"  [red]✗[/red] {error}")
         if len(errors) > 10:
             console.print(f"  [dim]... and {len(errors) - 10} more errors[/dim]")
 
-    # Count mapped vs unmapped
-    mapped_count = sum(
-        1 for ing in ingredients
-        if ing.get('mapping_status') == 'MAPPED'
-    )
-    unmapped_count = len(ingredients) - mapped_count
+    # Count by status explicitly. `unmapped_count` used to be `total - mapped`,
+    # which silently relabelled every other status as UNMAPPED — REJECTED records
+    # were reported as unmapped in the header consumers read.
+    mapped_count = sum(1 for ing in ingredients if ing.get('mapping_status') == 'MAPPED')
+    unmapped_count = sum(1 for ing in ingredients if ing.get('mapping_status') == 'UNMAPPED')
+    other_count = len(ingredients) - mapped_count - unmapped_count
+    if other_count:
+        # The counts legitimately do not sum: IngredientCollection is closed and
+        # has no slot for other statuses, so say so here rather than folding them
+        # into unmapped_count and asserting something false in the file.
+        other_statuses = sorted(
+            {
+                str(ing.get('mapping_status'))
+                for ing in ingredients
+                if ing.get('mapping_status') not in ('MAPPED', 'UNMAPPED')
+            }
+        )
+        console.print(
+            f"[yellow]note:[/yellow] {category}: {other_count} record(s) are neither "
+            f"MAPPED nor UNMAPPED ({', '.join(other_statuses)}), so "
+            f"mapped_count + unmapped_count < total_count. This is accurate, not a "
+            f"miscount — the schema has no slot for these."
+        )
 
     # Create collection with metadata
     collection = {
@@ -138,7 +175,7 @@ def aggregate_individual_files(
         'ingredients': ingredients
     }
 
-    return collection
+    return collection, errors
 
 
 @click.command()
@@ -192,6 +229,7 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
     categories = ['mapped', 'unmapped']
     total_ingredients = 0
     total_errors = 0
+    pending: list[tuple[str, dict]] = []
 
     with Progress(
         SpinnerColumn(),
@@ -201,11 +239,12 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
         for category in categories:
             task = progress.add_task(f"Aggregating {category}...", total=None)
 
-            collection = aggregate_individual_files(
+            collection, errors = aggregate_individual_files(
                 ingredients_dir_path,
                 category,
                 validate=validate
             )
+            total_errors += len(errors)
 
             if collection is None:
                 progress.update(
@@ -214,17 +253,34 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
                 )
                 continue
 
-            # Write collection file
-            output_file = output_dir_path / f"{category}_ingredients.yaml"
-            save_yaml(collection, output_file, backup=True)
-
-            ingredient_count = collection['total_count']
-            total_ingredients += ingredient_count
+            # Buffer, do not write yet. `sync-curated` points --output-dir at
+            # data/curated/, so writing a category before knowing whether a later
+            # one failed would overwrite the live collection with a short one and
+            # then exit 1 — destroying the record in the working tree and leaving
+            # the caller to notice and `git checkout`. Nothing is written unless
+            # every record aggregated.
+            pending.append((category, collection))
+            total_ingredients += collection['total_count']
 
             progress.update(
                 task,
-                description=f"[green]{category}: {ingredient_count} ingredients → {output_file.name}[/green]"
+                description=f"[green]{category}: {collection['total_count']} ingredients[/green]"
             )
+
+    if total_errors:
+        # Fail BEFORE writing anything.
+        console.print(
+            f"\n[bold red]✗ {total_errors} record(s) could not be aggregated.[/bold red]"
+        )
+        console.print(
+            "[red]No collections were written — the existing files are untouched.[/red]"
+        )
+        console.print("[red]Fix the offending file(s) and re-run.[/red]")
+        sys.exit(1)
+
+    for category, collection in pending:
+        output_file = output_dir_path / f"{category}_ingredients.yaml"
+        save_yaml(collection, output_file, backup=True)
 
     # Summary
     console.print("\n[bold]Summary:[/bold]")

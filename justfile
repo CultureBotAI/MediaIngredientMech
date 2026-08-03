@@ -192,9 +192,10 @@ qc-roundtrip:
     set -euo pipefail
     tmp="$(mktemp -d)"
     trap 'rm -rf "$tmp"' EXIT
-    # Aggregate diagnostics are NOT discarded: aggregate_records.py skips a
-    # per-record file it cannot load and still exits 0, so silencing it turns a
-    # corrupt YAML into a bare "ingredient count mismatch" with no cause.
+    # Aggregate diagnostics are NOT discarded: a per-record file it cannot load
+    # names itself here. (It now also exits 1 and writes nothing rather than
+    # dropping the record silently -- see #172 -- but the diagnostic is still
+    # what tells you WHICH file.)
     uv run python scripts/aggregate_records.py \
         --ingredients-dir data/ingredients --output-dir "$tmp"
     uv run python scripts/verify_roundtrip.py \
