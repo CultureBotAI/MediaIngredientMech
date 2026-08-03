@@ -27,6 +27,28 @@ from mediaingredientmech.utils.yaml_handler import load_yaml
 
 console = Console()
 
+# Fields authored directly on the per-record files and deliberately absent from
+# the curated collection (culturebotai-claw's kgscan writes `discussions`; the
+# exporter re-attaches them).
+#
+# IMPORTED, not re-declared. Drift between the two lists is silent in the unsafe
+# direction: a field added here but not to the exporter's list would be wiped on
+# every export while this gate stayed green — precisely the data loss the gate
+# exists to catch.
+def _load_exporter_authored_fields() -> tuple[str, ...]:
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "_mim_export_individual_records", Path(__file__).with_name("export_individual_records.py")
+    )
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = mod
+    spec.loader.exec_module(mod)
+    return tuple(mod.PER_RECORD_AUTHORED_FIELDS)
+
+
+PER_RECORD_ONLY_FIELDS: tuple[str, ...] = _load_exporter_authored_fields()
+
 
 def compare_ingredient_records(orig: dict, agg: dict, ignore_fields: set[str] = None) -> list[str]:
     """Compare two ingredient records and return differences.
@@ -63,16 +85,27 @@ def compare_ingredient_records(orig: dict, agg: dict, ignore_fields: set[str] = 
     return diffs
 
 
-def verify_round_trip(original_dir: Path, aggregated_dir: Path) -> dict:
+def verify_round_trip(
+    original_dir: Path,
+    aggregated_dir: Path,
+    ignore_fields: set[str] | None = None,
+) -> dict:
     """Verify round-trip integrity between original and aggregated collections.
 
     Args:
         original_dir: Directory with original collection files.
         aggregated_dir: Directory with aggregated collection files.
+        ignore_fields: Record fields excluded from the comparison. Defaults to
+            the per-record-authored fields that the collection deliberately does
+            not carry (see PER_RECORD_AUTHORED_FIELDS in
+            scripts/export_individual_records.py) — comparing them would report
+            a permanent, expected difference and make the gate useless.
 
     Returns:
         Dictionary with verification results.
     """
+    if ignore_fields is None:
+        ignore_fields = set(PER_RECORD_ONLY_FIELDS)
     results = {
         'files_compared': 0,
         'identical': 0,
@@ -134,14 +167,17 @@ def verify_round_trip(original_dir: Path, aggregated_dir: Path) -> dict:
 
         data_identical = True
         for i, (orig_ing, agg_ing) in enumerate(zip(orig_sorted, agg_sorted)):
-            diffs = compare_ingredient_records(orig_ing, agg_ing)
+            diffs = compare_ingredient_records(orig_ing, agg_ing, ignore_fields)
             if diffs:
                 data_identical = False
                 results['errors'].append(
                     f"{category_file}, ingredient {i} ({orig_ing.get('identifier')}): "
                     f"{', '.join(diffs[:3])}"  # Show first 3 diffs
                 )
-                break  # Only report first mismatch per file
+                # Report several per file, not just the first: as a gate, a
+                # one-at-a-time drip turns a single fix into many CI rounds.
+                if len(results['errors']) >= 25:
+                    break
 
         if data_identical and metadata_diff:
             results['metadata_only_diff'] += 1
@@ -166,7 +202,15 @@ def verify_round_trip(original_dir: Path, aggregated_dir: Path) -> dict:
     default=None,
     help="Directory with aggregated collection files (default: data/collections/)",
 )
-def main(original_dir: str | None, aggregated_dir: str | None):
+@click.option(
+    "--ignore-fields",
+    default=",".join(PER_RECORD_ONLY_FIELDS),
+    help=(
+        "Comma-separated record fields to exclude from comparison "
+        f"(default: {','.join(PER_RECORD_ONLY_FIELDS)}). Pass an empty string to compare everything."
+    ),
+)
+def main(original_dir: str | None, aggregated_dir: str | None, ignore_fields: str):
     """Verify round-trip integrity between original and aggregated collections."""
     # Set default paths
     if original_dir is None:
@@ -183,7 +227,11 @@ def main(original_dir: str | None, aggregated_dir: str | None):
     console.print(f"Original:   {original_dir_path}")
     console.print(f"Aggregated: {aggregated_dir_path}\n")
 
-    results = verify_round_trip(original_dir_path, aggregated_dir_path)
+    ignored = {f.strip() for f in ignore_fields.split(",") if f.strip()}
+    if ignored:
+        console.print(f"[dim]Ignoring per-record-only field(s): {', '.join(sorted(ignored))}[/dim]")
+
+    results = verify_round_trip(original_dir_path, aggregated_dir_path, ignored)
 
     # Summary table
     table = Table(title="Verification Results")

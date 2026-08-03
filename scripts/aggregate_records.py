@@ -32,10 +32,32 @@ from mediaingredientmech.utils.yaml_handler import load_yaml, save_yaml
 console = Console()
 
 
+def _exporter_authored_fields() -> tuple[str, ...]:
+    """Fields authored only on per-record files, which the collection never carries.
+
+    Imported from the exporter rather than re-declared: if the two lists drift,
+    aggregating would inject a field the collection format does not have, and the
+    next export would either wipe it or fight over it.
+    """
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "_mim_export_individual_records", Path(__file__).with_name("export_individual_records.py")
+    )
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = mod
+    spec.loader.exec_module(mod)
+    return tuple(mod.PER_RECORD_AUTHORED_FIELDS)
+
+
+PER_RECORD_ONLY_FIELDS: tuple[str, ...] = _exporter_authored_fields()
+
+
 def aggregate_individual_files(
     ingredients_dir: Path,
     category: str,
-    validate: bool = False
+    validate: bool = False,
+    exclude_fields: tuple[str, ...] = PER_RECORD_ONLY_FIELDS,
 ) -> dict | None:
     """Aggregate individual YAML files into a collection.
 
@@ -43,6 +65,11 @@ def aggregate_individual_files(
         ingredients_dir: Directory containing individual ingredient files.
         category: Category name ('mapped' or 'unmapped').
         validate: If True, validate each record before aggregating.
+        exclude_fields: Per-record-authored fields to drop, so the output is in
+            the collection's shape. Defaults to the exporter's
+            PER_RECORD_AUTHORED_FIELDS -- without this, aggregating back into
+            data/curated/ injects `discussions` into a document that by design
+            does not carry it.
 
     Returns:
         Collection dictionary with metadata and ingredients list, or None if error.
@@ -79,6 +106,9 @@ def aggregate_individual_files(
                 if 'mapping_status' not in ingredient:
                     errors.append(f"{yaml_file.name}: Missing 'mapping_status' field")
                     continue
+
+            for field_name in exclude_fields:
+                ingredient.pop(field_name, None)
 
             ingredients.append(ingredient)
 

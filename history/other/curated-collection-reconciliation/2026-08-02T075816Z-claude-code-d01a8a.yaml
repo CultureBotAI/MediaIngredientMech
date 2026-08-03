@@ -1,0 +1,35 @@
+history_version: 1
+target:
+  kind: other
+  path: data/curated/unmapped_ingredients.yaml
+  slug: curated-collection-reconciliation
+session:
+  id: 2026-08-02T075816Z-claude-code-d01a8a
+  timestamp: '2026-08-02T07:58:16Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/148
+events:
+- type: REVIEW
+  outcome: changed
+  sections:
+  - evidence
+  summary: 'Correction to record 2026-08-02T073645Z-claude-code-81e34c: Marine broth 2216
+    is not a verbatim schema example'
+  details: 'Corrects an overstatement in history/other/curated-collection-reconciliation/2026-08-02T073645Z-claude-code-81e34c.yaml,
+    which is append-only and therefore left unedited. That record stated that ''Marine broth
+    2216 and Oatmeal agar appear verbatim in the schema''s own DEFINED_MEDIUM examples''.
+    Only ''Oatmeal agar'' is verbatim. The schema (src/mediaingredientmech/schema/mediaingredientmech.yaml,
+    IngredientTypeEnum.DEFINED_MEDIUM) reads ''(e.g., R2A agar, LB broth, Marine agar 2216,
+    Oatmeal agar)'' — Marine *agar* 2216. The MIM record is UNMAPPED_0434 ''Marine broth 2216'',
+    the broth counterpart of the same DSMZ 2216 formulation (solidified or not), so it is
+    a near-match supporting the same conclusion, but it is not a verbatim example and should
+    not have been offered as one. Caught by an adversarial review of PR #167. The conclusion
+    it supported is unaffected: the 53 reclassifications remain validated by the schema description,
+    by MediaDive REST for the 8 contested Base products, and by three independent Edison/PaperQA3
+    runs. Corrected in NEXT_TASKS.md and the PR body in the same session.'

@@ -1,0 +1,52 @@
+history_version: 1
+target:
+  kind: other
+  path: data/curated/unmapped_ingredients.yaml
+  slug: curated-collection-reconciliation
+session:
+  id: 2026-08-02T073645Z-claude-code-81e34c
+  timestamp: '2026-08-02T07:36:45Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/148
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - ingredient_type
+  - curation_history
+  - notes
+  - headers
+  summary: Reconcile data/curated with the per-record corpus; validate the 53 media reclassifications
+  details: 'PR #116''s media reclassification was written directly into per-record files and
+    never reached data/curated/. Because export_individual_records.py projects the collection
+    over the per-record tree, every ''just export-individual'' reverted it: 53 RECLASSIFY_INGREDIENT_TYPE
+    (UNDEFINED_MIXTURE -> DEFINED_MEDIUM) and 2 FLAGGED_NON_INGREDIENT events plus their curation_history
+    entries. promote_resolved_unmapped.py calls export-individual, so any promotion reverted
+    all 55 silently. Root cause: aggregate_records.py defaults --output-dir to data/collections/,
+    which no consumer reads (grep shows the only references anywhere are the aggregator''s
+    own default and verify_roundtrip.py''s), so per-record edits had no path back to the export
+    source. Applied surgically, preserving record and key order and touching only drifted
+    fields, rather than by wholesale re-aggregation: 55 unmapped records gained ingredient_type/curation_history/notes;
+    3 orphan entries dropped (UNMAPPED_0488 Phytone, UNMAPPED_0531 Soya pepton, UNMAPPED_0558
+    Tryptone peptone, all already promoted into data/ingredients/mapped as FOODON:03315720
+    / FOODON:03315720 / MICRO:0000182); headers recomputed, mapped now honestly reporting
+    1877 MAPPED + 2 non-MAPPED against total 1879. discussions deliberately NOT copied into
+    the collection (per-record-authored by claw kgscan). Also normalised 12 per-record files
+    that re-export rewrites (line wrapping and scalar quoting only) - verified semantically
+    identical by parsing both sides and stable across three consecutive exports, making the
+    corpus a fixed point; export-individual is now a true no-op. VALIDATION of the 53 reclassifications
+    before making them canonical: all are named standard culture media, and Marine broth 2216
+    and Oatmeal agar appear verbatim in the schema''s own DEFINED_MEDIUM examples. MediaDive
+    REST (/rest/ingredient/{id}) confirms the 8 contested ''Base'' products carry no formula,
+    CAS-RN or ChEBI, i.e. formulations not chemicals. Three independent Edison/PaperQA3 literature
+    runs on the hardest cases - Blood Agar Base (incomplete base), Soil+Seawater Medium (natural-substrate,
+    genuinely variable components), Leptospira Medium Base EMJH (supplement-dependent base)
+    - each independently confirmed retaining DEFINED_MEDIUM. All three also independently
+    warned that DEFINED_MEDIUM reads as ''chemically defined'', a term of art meaning the
+    opposite of these complex-digest media; filed as a separate schema-clarity finding.'

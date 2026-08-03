@@ -1,0 +1,41 @@
+history_version: 1
+target:
+  kind: infrastructure
+  path: .github/workflows/qc-roundtrip.yaml
+  slug: roundtrip-gate
+session:
+  id: 2026-08-02T073659Z-claude-code-eb4051
+  timestamp: '2026-08-02T07:36:59Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/148
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - justfile
+  - ci
+  - scripts
+  summary: Add a blocking curated<->per-record round-trip gate so the drift cannot recur
+  details: 'scripts/verify_roundtrip.py already existed and already exited 1 on mismatch;
+    it was never wired into CI, and its default --aggregated-dir points at the committed data/collections/
+    artifact, last regenerated 2026-03-06. So the check kept passing while 55 curation events
+    sat unreconciled. Comparing against a committed copy is the trap. Added: ''just qc-roundtrip''
+    (now part of the qc composite) and .github/workflows/qc-roundtrip.yaml, both of which
+    aggregate into a mktemp/RUNNER_TEMP directory so there is nothing stale to compare against;
+    the workflow additionally asserts that export-individual produces no diff, which catches
+    added or removed files as well as content drift. verify_roundtrip.py gained --ignore-fields
+    defaulting to ''discussions'' (authored per-record by claw kgscan and deliberately absent
+    from the collection, so comparing it would report a permanent expected difference and
+    make the gate useless), and its comparison loop no longer breaks after the first mismatch
+    per file, collecting up to 25 - as a gate, a one-at-a-time drip turns one fix into many
+    CI rounds. VERIFIED THE GATE FAILS, not just passes: stashing data/curated back to its
+    pre-fix state exits 1; and injecting a single-field change with record counts left unchanged
+    (BCYE agar -> UNDEFINED_MIXTURE) is caught and pinpointed to UNMAPPED_0113, confirming
+    the subtle field-level path works and not only the count check. Full ''just qc'' passes
+    on the reconciled tree.'

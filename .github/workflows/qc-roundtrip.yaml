@@ -1,0 +1,91 @@
+name: QC — collection/per-record round-trip
+
+# Asserts that data/curated/ and data/ingredients/ still describe the same
+# records, so an edit made directly to a per-record file cannot be silently
+# reverted by the next `just export-individual` (which projects the collection
+# over the per-record tree, and which promote_resolved_unmapped.py calls).
+#
+# This is the guard that was missing: scripts/verify_roundtrip.py already
+# existed, but it compared against the committed data/collections/ artifact,
+# last regenerated in March 2026 — so it kept passing while 55 curation events
+# from PR #116 sat unreconciled in the per-record files. This job aggregates
+# into a temp directory instead, so it can never compare against a stale copy.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/curated/**"
+      - "data/ingredients/**"
+      - "scripts/aggregate_records.py"
+      - "scripts/verify_roundtrip.py"
+      - "scripts/export_individual_records.py"
+      # The no-op assertion below compares emitted bytes, and save_yaml decides
+      # those bytes. A PR changing only its dump kwargs would otherwise skip
+      # this gate and land, after which every export diffs the whole corpus.
+      - "src/mediaingredientmech/utils/yaml_handler.py"
+      - "uv.lock"
+      - ".github/workflows/qc-roundtrip.yaml"
+  push:
+    branches: [main]
+    paths:
+      - "data/curated/**"
+      - "data/ingredients/**"
+      - "scripts/aggregate_records.py"
+      - "scripts/verify_roundtrip.py"
+      - "scripts/export_individual_records.py"
+      # The no-op assertion below compares emitted bytes, and save_yaml decides
+      # those bytes. A PR changing only its dump kwargs would otherwise skip
+      # this gate and land, after which every export diffs the whole corpus.
+      - "src/mediaingredientmech/utils/yaml_handler.py"
+      - "uv.lock"
+      - ".github/workflows/qc-roundtrip.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  roundtrip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout MIM
+        uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        # `uv sync --frozen`, not `pip install pyyaml`, because the final step
+        # asserts BYTE-EXACT YAML emission across 2,257 files. An unpinned
+        # PyYAML that changes Emitter line-wrapping would turn the whole corpus
+        # red with zero data change. uv.lock pins the emitter.
+        run: uv sync --frozen
+
+      - name: Aggregate per-record files to a temp collection
+        run: |
+          uv run python scripts/aggregate_records.py \
+            --ingredients-dir data/ingredients \
+            --output-dir "${RUNNER_TEMP}/agg"
+
+      - name: Verify curated <-> per-record round trip
+        run: |
+          uv run python scripts/verify_roundtrip.py \
+            --original-dir data/curated \
+            --aggregated-dir "${RUNNER_TEMP}/agg"
+
+      - name: Assert export is a no-op (per-record tree matches the collection)
+        run: |
+          uv run python scripts/export_individual_records.py \
+            --input-dir data/curated --output-dir data/ingredients
+          if [ -n "$(git status --porcelain -- data/ingredients)" ]; then
+            echo "::error::export-individual changed data/ingredients — the per-record tree is not a clean projection of data/curated/. If a script edited data/ingredients/ directly (apply-role-research-results does), run 'just sync-curated' to write those edits back into data/curated/ and commit the result. Do NOT run 'just aggregate-collections' (writes data/collections/, which nothing reads) or 'just sync-individual' (exports first, destroying the per-record edits)."
+            git status --porcelain -- data/ingredients
+            git diff --stat -- data/ingredients
+            exit 1
+          fi
+          echo "export-individual is a no-op — round trip is closed."
