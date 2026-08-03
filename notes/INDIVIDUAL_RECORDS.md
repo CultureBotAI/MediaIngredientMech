@@ -50,10 +50,12 @@ python scripts/export_individual_records.py --input-dir data/curated --output-di
 - Structural checks (non-mapping / empty document / missing `mapping_status`) are
   ALWAYS fatal: a record it cannot load is dropped, so exiting 0 would lose it
   silently (#172). `--validate` adds identifier / preferred_term checks on top.
-- Output: whatever `--output-dir` names. **The default, `data/collections/`, is a
-  dead end** — nothing in the repo reads it (see issue #169). Writing there was
-  the root cause of #148: per-record edits had no path back into `data/curated/`,
-  which is what `export_individual_records.py` actually reads.
+- Output: whatever `--output-dir` names. **There is no default — the option is
+  required** (#169). It used to default to `data/collections/`, which nothing in
+  the repo reads, so a bare invocation looked successful while changing nothing
+  that mattered. That is how per-record edits ended up with no path back into
+  `data/curated/`, which is what `export_individual_records.py` actually reads
+  (#148).
 
 **Usage:**
 ```bash
@@ -61,8 +63,8 @@ python scripts/export_individual_records.py --input-dir data/curated --output-di
 # almost always want, and what `just sync-curated` runs.
 python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir data/curated
 
-# Bare invocation writes data/collections/, which nothing consumes.
-python scripts/aggregate_records.py --validate
+# Verify a round trip without touching the tree (what `just qc-roundtrip` does).
+python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir "$(mktemp -d)"
 ```
 
 ### 4. Updated Validation Script
@@ -99,10 +101,10 @@ then makes the same byte-level assertion CI does.
 just qc-roundtrip
 ```
 
-> **Do not compare against `data/collections/`.** That committed artifact was
-> last regenerated 2026-03-06, so the comparison passed for months while 55
-> curation events sat unreconciled (#148). Comparing against *any* committed copy
-> is the trap; aggregate into a temp directory instead.
+> **Never compare against a committed copy.** `--aggregated-dir` is required for
+> this reason (#169). It used to default to `data/collections/`, an artifact last
+> regenerated 2026-03-06, so the check passed for months while 55 curation events
+> sat unreconciled (#148). Aggregate into a temp directory instead.
 
 ### 6. Updated Justfile Commands
 
@@ -115,10 +117,10 @@ just sync-curated               # Write the per-record tree BACK into data/curat
                                 #   data/ingredients/ directly.
 just qc-roundtrip               # Assert the two surfaces agree (blocking in CI)
 just validate-individual        # Validate individual files only
-just aggregate-collections      # Writes data/collections/ — a dead end (#169)
-just sync-individual            # export → validate → aggregate-collections.
-                                #   NB exports FIRST, so it reverts per-record
-                                #   edits before aggregating; prefer sync-curated.
+just sync-individual            # export → validate → qc-roundtrip. Treats the
+                                #   COLLECTION as truth, so it overwrites direct
+                                #   per-record edits; sync-curated is the
+                                #   opposite direction.
 ```
 
 **Updated commands:**
@@ -144,9 +146,8 @@ MediaIngredientMech/
 │   │       ├── A_Trace_Components.yaml
 │   │       ├── Empty.yaml
 │   │       └── ... (134 more)
-│   └── collections/                      # NEW: Aggregated collections
-│       ├── mapped_ingredients.yaml       # Aggregated from individual files
-│       └── unmapped_ingredients.yaml     # Aggregated from individual files
+│                                          # (data/collections/ was removed in #169 —
+│                                          #  nothing read it; aggregate to a temp dir)
 ├── scripts/
 │   ├── export_individual_records.py      # NEW
 │   ├── aggregate_records.py              # NEW
@@ -272,10 +273,10 @@ ls -1 data/ingredients/unmapped/*.yaml | wc -l  # Should be 136
 ### Aggregate and Verify
 ```bash
 # Aggregate individual files to collections
-just aggregate-collections
+just sync-curated
 
 # Verify round-trip integrity
-python scripts/verify_roundtrip.py
+just qc-roundtrip
 
 # Validate aggregated collections
 just validate-all
@@ -289,7 +290,7 @@ just sync-individual
 # This runs:
 # 1. Export collections → individual files
 # 2. Validate individual files
-# 3. Aggregate individual files → collections
+# 3. Verify the two surfaces agree (`just qc-roundtrip`)
 ```
 
 ## Future Enhancements (Optional)

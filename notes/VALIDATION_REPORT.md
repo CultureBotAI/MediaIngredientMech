@@ -245,7 +245,7 @@ python scripts/validate_all.py --mode both --verbose
 
 ### Verify Round-Trip Integrity
 ```bash
-python scripts/verify_roundtrip.py
+just qc-roundtrip   # (was: python scripts/verify_roundtrip.py — now needs --aggregated-dir, #169)
 ```
 
 ---

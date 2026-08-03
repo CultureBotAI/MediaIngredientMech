@@ -4,13 +4,24 @@
 This script compares the original collection files with aggregated collections
 (after export → individual files → aggregate) to ensure data integrity.
 
+--aggregated-dir is REQUIRED. It used to default to data/collections/, a
+COMMITTED artifact last regenerated 2026-03-06, so this check kept passing for
+months while 55 curation events sat unreconciled (#148). Comparing against any
+committed copy is the trap — aggregate into a temp dir first.
+
 Usage:
-    python scripts/verify_roundtrip.py
+    just qc-roundtrip          # does the aggregate-into-a-temp-dir dance for you
+
+    python scripts/aggregate_records.py --ingredients-dir data/ingredients \
+        --output-dir "$tmp"
+    python scripts/verify_roundtrip.py --original-dir data/curated \
+        --aggregated-dir "$tmp"
 """
 
 from __future__ import annotations
 
 import sys
+from collections import Counter
 from pathlib import Path
 
 import click
@@ -156,14 +167,34 @@ def verify_round_trip(
             continue
 
         # Sort by identifier AND preferred_term to handle duplicate identifiers
-        orig_sorted = sorted(
-            orig_ingredients,
-            key=lambda x: (x.get('identifier', ''), x.get('preferred_term', ''))
+        def _pair_key(record: dict) -> tuple[str, str]:
+            return (record.get('identifier', ''), record.get('preferred_term', ''))
+
+        orig_sorted = sorted(orig_ingredients, key=_pair_key)
+        agg_sorted = sorted(agg_ingredients, key=_pair_key)
+
+        # The two sides arrive in genuinely different orders — data/curated/ is in
+        # historical order, a fresh aggregation is in filename order — so records
+        # are paired by sorting both and zipping. That is only sound while the
+        # sort key is UNIQUE. If two records ever share both identifier and
+        # preferred_term, Python's stable sort falls back to each side's input
+        # order, which differs, so the zip would pair record A with record B:
+        # either a phantom diff or, worse, a real diff masked by two records that
+        # happen to match. Masking is precisely what this gate exists to prevent,
+        # so refuse to compare rather than report a result we cannot trust.
+        # (Today: 0 duplicate pairs, though 61 identifiers are duplicated.)
+        duplicate_keys = sorted(
+            {k for k, n in Counter(map(_pair_key, orig_sorted)).items() if n > 1}
+            | {k for k, n in Counter(map(_pair_key, agg_sorted)).items() if n > 1}
         )
-        agg_sorted = sorted(
-            agg_ingredients,
-            key=lambda x: (x.get('identifier', ''), x.get('preferred_term', ''))
-        )
+        if duplicate_keys:
+            results['errors'].append(
+                f"{category_file}: {len(duplicate_keys)} duplicate (identifier, preferred_term) "
+                f"key(s) — records cannot be paired reliably, comparison skipped: "
+                + ", ".join(f"{i}/{t!r}" for i, t in duplicate_keys[:3])
+            )
+            results['data_diffs'] += 1
+            continue
 
         data_identical = True
         for i, (orig_ing, agg_ing) in enumerate(zip(orig_sorted, agg_sorted)):
@@ -199,8 +230,15 @@ def verify_round_trip(
 @click.option(
     "--aggregated-dir",
     type=click.Path(exists=False),
-    default=None,
-    help="Directory with aggregated collection files (default: data/collections/)",
+    required=True,
+    help=(
+        "Directory with freshly aggregated collection files. REQUIRED — there is "
+        "deliberately no default. It used to default to data/collections/, a COMMITTED "
+        "artifact last regenerated 2026-03-06, so this check kept passing for months "
+        "while 55 curation events sat unreconciled (#148). Comparing against any "
+        "committed copy is the trap; aggregate into a temp dir first "
+        "(`just qc-roundtrip` does)."
+    ),
 )
 @click.option(
     "--ignore-fields",
@@ -218,10 +256,7 @@ def main(original_dir: str | None, aggregated_dir: str | None, ignore_fields: st
     else:
         original_dir_path = Path(original_dir)
 
-    if aggregated_dir is None:
-        aggregated_dir_path = _project_root / "data" / "collections"
-    else:
-        aggregated_dir_path = Path(aggregated_dir)
+    aggregated_dir_path = Path(aggregated_dir)
 
     console.print("\n[bold]Round-Trip Integrity Verification[/bold]")
     console.print(f"Original:   {original_dir_path}")

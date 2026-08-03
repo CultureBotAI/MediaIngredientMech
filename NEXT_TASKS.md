@@ -188,13 +188,11 @@ Also in scope, found during this reconcile:
   and `…_index.json` still carry `CHEBI:48601` for Carnitine Hydrochloride, whose
   identifier was corrected to `kgmicrobe.compound:carnitine_hydrochloride` (the
   collection YAML is right; only the indexes lag). Regenerate them.
-- **`data/collections/` is a dead March-2026 pair** (995 mapped / 136 unmapped,
-  generated 2026-03-06) alongside the live `data/curated/` pair. Nothing reads it
-  and the new gate deliberately does not, but it is an active trap: it is the
-  aggregator's *default* output, so a bare `just aggregate-collections` still
-  writes there and looks like it did something. Retire it — delete or move to
-  `ATTIC/`, and repoint `aggregate_records.py`'s default. Left out of PR #167 to
-  keep that diff to the fix.
+- ~~**`data/collections/` is a dead March-2026 pair**~~ — **DONE (#169, PR #179).**
+  Retired: the directory is deleted, `just aggregate-collections` is removed, and
+  `--output-dir` / `--aggregated-dir` are now **required** rather than defaulted.
+  Defaulting them to `data/curated/` instead was rejected — that turns a stray
+  command into a data change.
 
 **The issue's item 1 is now CONFIRMED and is worse than "stale files" — it is a
 data-destroying landmine. Measured 2026-07-30, once PR #159 made a full export
@@ -218,7 +216,9 @@ back.** `aggregate_records.py` defaults `--output-dir` to `data/collections/`,
 but *every* one of the ~20 consumers in the repo reads `data/curated/`. Nothing
 reads `data/collections/`: the only references are the aggregator's own default,
 `verify_roundtrip.py`'s, and two `notes/` docs that documented the stale
-comparison as the way to do it (fixed in PR #167).
+comparison as the way to do it (docs fixed in PR #167; the defaults themselves
+retired in PR #179 — both options are required now, so no code path silently
+writes to or reads from a directory nothing consumes).
 So a per-record edit had no path back into the export
 source, and `verify_roundtrip.py` — which would have caught this and already
 exits 1 on mismatch — was comparing against an artifact last regenerated in

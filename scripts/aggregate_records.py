@@ -5,13 +5,16 @@ This script performs the reverse operation of export_individual_records.py,
 combining individual ingredient YAML files back into collection format for
 reporting and backward compatibility.
 
+--output-dir is REQUIRED. It used to default to data/collections/, which nothing
+in the repo reads, so a bare invocation looked successful while changing nothing
+that mattered (#169).
+
 Usage:
     # Write the per-record tree back into the LIVE collection (`just sync-curated`).
     python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir data/curated
 
-    # NB the bare invocation defaults --output-dir to data/collections/, which
-    # nothing in the repo reads (issue #169).
-    python scripts/aggregate_records.py --validate
+    # Verify a round trip without touching the tree (`just qc-roundtrip`).
+    python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir "$(mktemp -d)"
 """
 
 from __future__ import annotations
@@ -56,11 +59,62 @@ def _exporter_authored_fields() -> tuple[str, ...]:
 PER_RECORD_ONLY_FIELDS: tuple[str, ...] = _exporter_authored_fields()
 
 
+def _order_like(records: list[dict], reference: Path | None) -> list[dict]:
+    """Reorder `records` to match an existing collection, new records last.
+
+    The aggregator reads files in filename order; `data/curated/` is in
+    historical order. Without this, aggregating an unchanged tree rewrites ~9,500
+    lines of pure reordering, so a one-record change arrives as an unreviewable
+    diff — the exact condition under which 55 curation events went unnoticed in
+    #148. Matching the existing order makes the diff proportional to the change.
+
+    Pairs on (identifier, preferred_term), the same key verify_roundtrip uses.
+    Records absent from the reference keep their relative (filename) order at the
+    end, because `sorted` is stable and they all share the same rank.
+
+    Consequence worth knowing: re-identifying a record (the UNMAPPED_NNNN ->
+    CHEBI:x promotion the manage-identifiers skill performs) changes the pairing
+    key, so that record is treated as new and moves to the end. The diff stays
+    proportional and the result still converges; collection order just drifts
+    toward "most recently re-identified last" over time.
+    """
+    if reference is None or not reference.exists():
+        return records
+    try:
+        existing = (load_yaml(reference) or {}).get("ingredients") or []
+    except Exception:
+        # An unreadable/absent reference is not fatal: fall back to filename
+        # order rather than refusing to aggregate.
+        return records
+
+    def _key(rec: dict):
+        # A record whose identifier is a list/dict would make an unhashable key
+        # and take down `just sync-curated` with a bare TypeError, losing this
+        # file's per-record diagnostics. Ordering is a presentation concern, so
+        # degrade to "treat as new" rather than fail the whole aggregation.
+        try:
+            hash((rec.get("identifier"), rec.get("preferred_term")))
+        except TypeError:
+            return None
+        return (rec.get("identifier"), rec.get("preferred_term"))
+
+    rank: dict[tuple, int] = {}
+    for position, rec in enumerate(existing):
+        if isinstance(rec, dict):
+            key = _key(rec)
+            if key is not None:
+                rank.setdefault(key, position)
+
+    tail = len(existing)
+    return sorted(records, key=lambda r: rank.get(_key(r), tail))
+
+
 def aggregate_individual_files(
     ingredients_dir: Path,
     category: str,
     validate: bool = False,
     exclude_fields: tuple[str, ...] = PER_RECORD_ONLY_FIELDS,
+    order_reference: Path | None = None,
 ) -> tuple[dict | None, list[str]]:
     """Aggregate individual YAML files into a collection.
 
@@ -169,6 +223,10 @@ def aggregate_individual_files(
             f"miscount — the schema has no slot for these."
         )
 
+    # Emit in the existing collection's order so the diff is proportional to the
+    # change rather than a full reorder (see _order_like).
+    ingredients = _order_like(ingredients, order_reference)
+
     # Create collection with metadata
     collection = {
         'generation_date': datetime.now(timezone.utc).isoformat(),
@@ -191,8 +249,15 @@ def aggregate_individual_files(
 @click.option(
     "--output-dir",
     type=click.Path(exists=False),
-    default=None,
-    help="Directory to write collection files (default: data/collections/)",
+    required=True,
+    help=(
+        "Directory to write collection files. REQUIRED — there is deliberately no "
+        "default. It used to default to data/collections/, which nothing in the repo "
+        "reads, so a bare invocation looked like it worked while changing nothing that "
+        "mattered (#169); that is how 55 curation events sat unreconciled (#148). "
+        "Use data/curated/ to write back into the live collection (`just sync-curated`), "
+        "or a temp dir to verify a round trip without touching the tree."
+    ),
 )
 @click.option(
     "--validate",
@@ -207,10 +272,7 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
     else:
         ingredients_dir_path = Path(ingredients_dir)
 
-    if output_dir is None:
-        output_dir_path = _project_root / "data" / "collections"
-    else:
-        output_dir_path = Path(output_dir)
+    output_dir_path = Path(output_dir)
 
     if not ingredients_dir_path.exists():
         console.print(f"[red]Ingredients directory not found: {ingredients_dir_path}[/red]")
@@ -245,7 +307,8 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
             collection, errors = aggregate_individual_files(
                 ingredients_dir_path,
                 category,
-                validate=validate
+                validate=validate,
+                order_reference=output_dir_path / f"{category}_ingredients.yaml",
             )
             total_errors += len(errors)
 

@@ -110,10 +110,10 @@ Never assert a CHEBI primary that isn't the same compound just to raise coverage
   regenerates the SSSOM from the collections.
 - **Reconcile + round-trip:** `python scripts/reconcile_sssom.py --apply --date YYYY-MM-DD`,
   then **`just sync-curated`** to keep per-record files and collections in sync.
-  Do NOT use `just export-individual` / `just aggregate-collections` for this:
-  export projects the collection OVER the per-record tree (reverting edits made
-  there), and aggregate-collections writes `data/collections/`, which nothing
-  reads. That pairing is what silently reverted 55 curation events (#148).
+  Do NOT use `just export-individual` for this: it projects the collection OVER
+  the per-record tree, reverting edits made there. (`just aggregate-collections`
+  was removed in #169 — it wrote `data/collections/`, which nothing reads. That
+  pairing is what silently reverted 55 curation events, #148.)
 
 ### 6. Verify + report
 `just qc` (schema + evidence + SSSOM) · `python scripts/validate_sssom_invariants.py`
