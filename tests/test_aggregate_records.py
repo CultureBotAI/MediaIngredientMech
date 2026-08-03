@@ -1,0 +1,169 @@
+"""Guards for the aggregator's failure and counting behaviour (issue #172).
+
+Aggregation is load-bearing in two places that can destroy data: `just
+sync-curated` writes its output over `data/curated/`, and `just qc-roundtrip`
+compares against it. A record it silently drops therefore disappears from the
+collection, the next `just export-individual` deletes the per-record file too,
+and the round-trip gate — now comparing two sources that agree the record does
+not exist — passes. These tests pin the loud-failure behaviour that prevents it.
+"""
+
+import importlib.util
+import subprocess
+import sys
+from pathlib import Path
+
+import yaml
+
+ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(ROOT / "src"))
+
+
+def _load():
+    spec = importlib.util.spec_from_file_location(
+        "aggregate_records", ROOT / "scripts" / "aggregate_records.py"
+    )
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = mod
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def _tree(tmp_path: Path, mapped: dict[str, str], unmapped: dict[str, str] | None = None) -> Path:
+    root = tmp_path / "ingredients"
+    for category, files in (("mapped", mapped), ("unmapped", unmapped or {})):
+        d = root / category
+        d.mkdir(parents=True)
+        for name, text in files.items():
+            (d / f"{name}.yaml").write_text(text)
+    return root
+
+
+def _record(identifier: str, term: str, status: str = "MAPPED") -> str:
+    return yaml.safe_dump(
+        {"identifier": identifier, "preferred_term": term, "mapping_status": status}
+    )
+
+
+# --- a dropped record must never be silent ----------------------------------
+
+
+def test_unparseable_record_is_reported_as_an_error(tmp_path):
+    agg = _load()
+    root = _tree(
+        tmp_path,
+        {"Good": _record("CHEBI:1", "Good"), "Corrupt": "identifier: CHEBI:2\nsynonyms: [unclosed\n"},
+    )
+
+    collection, errors = agg.aggregate_individual_files(root, "mapped")
+
+    assert len(errors) == 1
+    assert "Corrupt.yaml" in errors[0]
+    # The dropped record really is absent — that is why it must not be silent.
+    assert collection["total_count"] == 1
+
+
+def test_cli_exits_nonzero_when_a_record_is_dropped(tmp_path):
+    """The whole point: `sync-curated` writes over data/curated/, so a run that
+    lost a record must not report success."""
+    root = _tree(
+        tmp_path,
+        {"Good": _record("CHEBI:1", "Good"), "Corrupt": "identifier: CHEBI:2\nsynonyms: [unclosed\n"},
+    )
+    out = tmp_path / "out"
+
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "aggregate_records.py"),
+         "--ingredients-dir", str(root), "--output-dir", str(out)],
+        capture_output=True, text=True, cwd=ROOT,
+    )
+
+    assert proc.returncode == 1, proc.stdout
+    assert "MISSING" in proc.stdout
+
+
+def test_cli_exits_zero_on_a_clean_tree(tmp_path):
+    root = _tree(tmp_path, {"Good": _record("CHEBI:1", "Good")})
+    out = tmp_path / "out"
+
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "aggregate_records.py"),
+         "--ingredients-dir", str(root), "--output-dir", str(out)],
+        capture_output=True, text=True, cwd=ROOT,
+    )
+
+    assert proc.returncode == 0, proc.stdout
+
+
+# --- status counting must not relabel ---------------------------------------
+
+
+def test_rejected_records_are_not_counted_as_unmapped(tmp_path):
+    """`unmapped_count` used to be `total - mapped`, silently relabelling every
+    other status as UNMAPPED in a header consumers read."""
+    agg = _load()
+    root = _tree(
+        tmp_path,
+        {
+            "A": _record("CHEBI:1", "A", "MAPPED"),
+            "B": _record("CHEBI:2", "B", "REJECTED"),
+            "C": _record("CHEBI:3", "C", "REJECTED"),
+        },
+    )
+
+    collection, _ = agg.aggregate_individual_files(root, "mapped")
+
+    assert collection["total_count"] == 3
+    assert collection["mapped_count"] == 1
+    assert collection["unmapped_count"] == 0  # not 2
+
+
+def test_unmapped_records_are_counted(tmp_path):
+    agg = _load()
+    root = _tree(tmp_path, {}, {"U": _record("UNMAPPED_0001", "U", "UNMAPPED")})
+
+    collection, _ = agg.aggregate_individual_files(root, "unmapped")
+
+    assert collection["unmapped_count"] == 1
+    assert collection["mapped_count"] == 0
+
+
+# --- collection shape --------------------------------------------------------
+
+
+def test_per_record_only_fields_are_dropped(tmp_path):
+    """The collection does not carry `discussions`; aggregating must not inject it."""
+    agg = _load()
+    rec = yaml.safe_dump(
+        {
+            "identifier": "CHEBI:1",
+            "preferred_term": "A",
+            "mapping_status": "MAPPED",
+            "discussions": [{"discussion_id": "kgscan-1"}],
+        }
+    )
+    root = _tree(tmp_path, {"A": rec})
+
+    collection, _ = agg.aggregate_individual_files(root, "mapped")
+
+    assert "discussions" not in collection["ingredients"][0]
+
+
+def test_exclude_fields_tracks_the_exporter():
+    agg = _load()
+    spec = importlib.util.spec_from_file_location(
+        "export_individual_records", ROOT / "scripts" / "export_individual_records.py"
+    )
+    exp = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = exp
+    spec.loader.exec_module(exp)
+
+    assert agg.PER_RECORD_ONLY_FIELDS == tuple(exp.PER_RECORD_AUTHORED_FIELDS)
+
+
+def test_missing_category_directory_returns_no_collection(tmp_path):
+    agg = _load()
+    collection, errors = agg.aggregate_individual_files(tmp_path / "nope", "mapped")
+
+    assert collection is None
+    assert errors == []
