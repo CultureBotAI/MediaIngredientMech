@@ -6,8 +6,11 @@ combining individual ingredient YAML files back into collection format for
 reporting and backward compatibility.
 
 Usage:
-    python scripts/aggregate_records.py
-    python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir data/collections
+    # Write the per-record tree back into the LIVE collection (`just sync-curated`).
+    python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir data/curated
+
+    # NB the bare invocation defaults --output-dir to data/collections/, which
+    # nothing in the repo reads (issue #169).
     python scripts/aggregate_records.py --validate
 """
 
