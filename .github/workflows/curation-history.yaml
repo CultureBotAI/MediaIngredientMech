@@ -77,9 +77,19 @@ jobs:
 
           # Counts mapping artifacts too, not just ingredient YAMLs: a large share
           # of MIM curation lands in mappings/ rather than in any single record.
+          #
+          # Mind the flat-vs-nested distinction: in a git pathspec `**/` requires
+          # an intervening directory level, so `data/curated/**/*.yaml` matches
+          # NOTHING (that tree is flat) while `data/curated/*.yaml` matches both
+          # collections. data/ingredients/ and history/ ARE nested, so they take
+          # the `**/` form. Getting this wrong makes the check silently count
+          # zero rather than fail (issue #164).
+          #
+          # data/custom/ is matched as a directory: its curation artifact is a
+          # .tsv, so a `*.yaml` pattern there matched nothing at all.
           changed_targets=$(git diff --name-only "$base"...HEAD \
             -- 'data/ingredients/**/*.yaml' 'data/curated/*.yaml' \
-               'data/custom/*.yaml' 'mappings/**' | wc -l | tr -d ' ')
+               'data/custom' 'mappings/**' | wc -l | tr -d ' ')
           new_history=$(git diff --name-only --diff-filter=A "$base"...HEAD -- 'history/**/*.yaml' | wc -l | tr -d ' ')
 
           {
