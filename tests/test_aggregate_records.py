@@ -221,3 +221,34 @@ def test_missing_category_directory_returns_no_collection(tmp_path):
 
     assert collection is None
     assert errors == []
+
+
+# --- no silent default output directory (#169) -------------------------------
+
+
+def test_output_dir_is_required(tmp_path):
+    """It used to default to data/collections/, which nothing reads, so a bare
+    invocation looked successful while changing nothing that mattered (#169)."""
+    root = _tree(tmp_path, {"Good": _record("CHEBI:1", "Good")})
+
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "aggregate_records.py"),
+         "--ingredients-dir", str(root)],
+        capture_output=True, text=True, cwd=ROOT,
+    )
+
+    assert proc.returncode != 0
+    assert "--output-dir" in (proc.stderr + proc.stdout)
+
+
+def test_verify_roundtrip_aggregated_dir_is_required():
+    """Same reasoning: its default was a COMMITTED artifact, so the check
+    compared against a March-2026 copy and passed for months (#148/#169)."""
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "verify_roundtrip.py"),
+         "--original-dir", str(ROOT / "data" / "curated")],
+        capture_output=True, text=True, cwd=ROOT,
+    )
+
+    assert proc.returncode != 0
+    assert "--aggregated-dir" in (proc.stderr + proc.stdout)

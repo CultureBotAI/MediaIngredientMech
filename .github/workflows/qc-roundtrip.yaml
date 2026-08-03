@@ -86,7 +86,7 @@ jobs:
           uv run python scripts/export_individual_records.py \
             --input-dir data/curated --output-dir data/ingredients
           if [ -n "$(git status --porcelain -- data/ingredients)" ]; then
-            echo "::error::export-individual changed data/ingredients — the per-record tree is not a clean projection of data/curated/. If a script edited data/ingredients/ directly (apply-role-research-results does), run 'just sync-curated' to write those edits back into data/curated/ and commit the result. Do NOT run 'just aggregate-collections' (writes data/collections/, which nothing reads) or 'just sync-individual' (exports first, destroying the per-record edits)."
+            echo "::error::export-individual changed data/ingredients — the per-record tree is not a clean projection of data/curated/. If a script edited data/ingredients/ directly (apply-role-research-results does), run 'just sync-curated' to write those edits back into data/curated/ and commit the result. Do NOT run 'just sync-individual' — it exports first, overwriting the per-record edits."
             git status --porcelain -- data/ingredients
             git diff --stat -- data/ingredients
             exit 1

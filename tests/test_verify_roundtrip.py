@@ -149,3 +149,33 @@ def test_more_than_one_mismatch_is_reported_per_file(tmp_path):
     o, a = _pair(tmp_path, orig, agg)
 
     assert len(vr.verify_round_trip(o, a)["errors"]) > 1
+
+
+# --- duplicate sort keys must refuse to compare, not mispair (#176) ----------
+
+
+def test_duplicate_sort_key_refuses_to_compare(tmp_path):
+    """Records are paired by sorting both sides and zipping, which is only sound
+    while (identifier, preferred_term) is unique. Two records sharing both would
+    be paired by each side's differing input order — masking a real diff."""
+    vr = _load("verify_roundtrip")
+    dup = [_record("CHEBI:1", "Same"), _record("CHEBI:1", "Same")]
+    o, a = _pair(tmp_path, dup, [dict(r) for r in dup])
+
+    results = vr.verify_round_trip(o, a)
+
+    assert results["data_diffs"] == 1
+    assert any("duplicate (identifier, preferred_term)" in e for e in results["errors"])
+
+
+def test_duplicate_identifier_with_distinct_terms_still_compares(tmp_path):
+    """61 identifiers are duplicated today, but each has a distinct
+    preferred_term — so the composite key is unique and the gate must still run."""
+    vr = _load("verify_roundtrip")
+    recs = [_record("CHEBI:1", "Alpha"), _record("CHEBI:1", "Beta")]
+    o, a = _pair(tmp_path, recs, [dict(r) for r in recs])
+
+    results = vr.verify_round_trip(o, a)
+
+    assert results["errors"] == []
+    assert results["data_diffs"] == 0

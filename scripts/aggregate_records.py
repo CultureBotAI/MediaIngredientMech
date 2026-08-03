@@ -5,13 +5,16 @@ This script performs the reverse operation of export_individual_records.py,
 combining individual ingredient YAML files back into collection format for
 reporting and backward compatibility.
 
+--output-dir is REQUIRED. It used to default to data/collections/, which nothing
+in the repo reads, so a bare invocation looked successful while changing nothing
+that mattered (#169).
+
 Usage:
     # Write the per-record tree back into the LIVE collection (`just sync-curated`).
     python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir data/curated
 
-    # NB the bare invocation defaults --output-dir to data/collections/, which
-    # nothing in the repo reads (issue #169).
-    python scripts/aggregate_records.py --validate
+    # Verify a round trip without touching the tree (`just qc-roundtrip`).
+    python scripts/aggregate_records.py --ingredients-dir data/ingredients --output-dir "$(mktemp -d)"
 """
 
 from __future__ import annotations
@@ -191,8 +194,15 @@ def aggregate_individual_files(
 @click.option(
     "--output-dir",
     type=click.Path(exists=False),
-    default=None,
-    help="Directory to write collection files (default: data/collections/)",
+    required=True,
+    help=(
+        "Directory to write collection files. REQUIRED — there is deliberately no "
+        "default. It used to default to data/collections/, which nothing in the repo "
+        "reads, so a bare invocation looked like it worked while changing nothing that "
+        "mattered (#169); that is how 55 curation events sat unreconciled (#148). "
+        "Use data/curated/ to write back into the live collection (`just sync-curated`), "
+        "or a temp dir to verify a round trip without touching the tree."
+    ),
 )
 @click.option(
     "--validate",
@@ -207,10 +217,7 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
     else:
         ingredients_dir_path = Path(ingredients_dir)
 
-    if output_dir is None:
-        output_dir_path = _project_root / "data" / "collections"
-    else:
-        output_dir_path = Path(output_dir)
+    output_dir_path = Path(output_dir)
 
     if not ingredients_dir_path.exists():
         console.print(f"[red]Ingredients directory not found: {ingredients_dir_path}[/red]")

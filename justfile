@@ -235,9 +235,9 @@ sync-curated:
     # goes red because a script edited data/ingredients/ directly
     # (apply-role-research-results does exactly this -- issue #171).
     #
-    # `aggregate-collections` is NOT this: it writes data/collections/, which
-    # nothing reads. `sync-individual` is not either: it runs export FIRST,
-    # destroying the per-record edits before aggregating.
+    # `sync-individual` is NOT this: it runs export FIRST, overwriting the
+    # per-record edits with the collection. (`aggregate-collections` was removed
+    # in #169 — it wrote data/collections/, which nothing reads.)
     #
     # The re-export is not redundant. The collection does not carry
     # `discussions`, so the exporter re-attaches it at the END of the record,
@@ -304,9 +304,12 @@ build-docs: gen-docs export-browser
 export-individual:
     uv run python scripts/export_individual_records.py
 
-# Aggregate individual files back to collections
-aggregate-collections:
-    uv run python scripts/aggregate_records.py
+# `aggregate-collections` was REMOVED (#169). It ran the aggregator with no
+# --output-dir, which defaulted to data/collections/ — a directory nothing in
+# this repo reads. So it looked like it kept the collections in sync and did
+# not, which is how 55 curation events sat unreconciled (#148). Use
+# `just sync-curated` to write per-record edits back into data/curated/, or
+# `just qc-roundtrip` to verify the two surfaces agree.
 
 # Validate individual ingredient files only
 validate-individual:
@@ -384,9 +387,13 @@ enrich-edison-response *args="":
 apply-role-research-results batch *args="":
     uv run python scripts/apply_role_research_results.py {{batch}} {{args}}
 
-# Full workflow: export, validate, aggregate
+# Project data/curated/ onto the per-record tree, validate, and verify they agree
 sync-individual:
-    just export-individual && just validate-individual && just aggregate-collections
+    # Treats the COLLECTION as the source of truth, so it OVERWRITES anything
+    # edited directly under data/ingredients/. `just sync-curated` is the
+    # opposite direction and is what you want after a script edited per-record
+    # files.
+    just export-individual && just validate-individual && just qc-roundtrip
 
 # Create snapshot of current data
 snapshot:
