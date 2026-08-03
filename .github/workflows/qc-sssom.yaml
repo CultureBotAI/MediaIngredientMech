@@ -2,7 +2,10 @@ name: QC — SSSOM invariant validation
 
 on:
   pull_request:
-    branches: [main]
+    # NO branches filter. A PR whose base is not `main` — every stacked PR —
+    # would otherwise skip this gate entirely, so the more carefully work is
+    # split into reviewable PRs the less CI it gets (#174). `push` below stays
+    # pinned to main, so this does not double-run on feature-branch pushes.
     paths:
       - "mappings/ingredient_mappings.sssom.tsv"
       - "mappings/needs_curator_review.tsv"

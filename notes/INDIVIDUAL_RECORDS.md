@@ -47,7 +47,9 @@ python scripts/export_individual_records.py --input-dir data/curated --output-di
 - Aggregates individual files back to collection format
 - Reverse operation of export script
 - Adds metadata: generation_date, total_count, mapped_count, unmapped_count
-- Optional validation during aggregation
+- Structural checks (non-mapping / empty document / missing `mapping_status`) are
+  ALWAYS fatal: a record it cannot load is dropped, so exiting 0 would lose it
+  silently (#172). `--validate` adds identifier / preferred_term checks on top.
 - Output: whatever `--output-dir` names. **The default, `data/collections/`, is a
   dead end** — nothing in the repo reads it (see issue #169). Writing there was
   the root cause of #148: per-record edits had no path back into `data/curated/`,
@@ -106,10 +108,17 @@ just qc-roundtrip
 
 **New commands:**
 ```makefile
-just export-individual          # Export collections to individual files
-just aggregate-collections      # Aggregate individual files to collections
+just export-individual          # Project data/curated/ ONTO the per-record tree
+just sync-curated               # Write the per-record tree BACK into data/curated/,
+                                #   then re-export so the tree is a fixed point.
+                                #   This is the one you want after editing
+                                #   data/ingredients/ directly.
+just qc-roundtrip               # Assert the two surfaces agree (blocking in CI)
 just validate-individual        # Validate individual files only
-just sync-individual            # Full workflow: export → validate → aggregate
+just aggregate-collections      # Writes data/collections/ — a dead end (#169)
+just sync-individual            # export → validate → aggregate-collections.
+                                #   NB exports FIRST, so it reverts per-record
+                                #   edits before aggregating; prefer sync-curated.
 ```
 
 **Updated commands:**

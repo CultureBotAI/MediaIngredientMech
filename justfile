@@ -181,15 +181,16 @@ report-label-drift:
 # LinkML cross-check (one validator process per record → too slow for CI).
 qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip
 
-# Assert data/curated/ and data/ingredients/ still agree, so a per-record edit
-# cannot be silently reverted by the next `just export-individual` (which
-# projects the collection over the per-record tree). Aggregates into a temp dir
-# rather than data/collections/ -- comparing against that committed artifact is
-# what let this drift for months: it was last regenerated in March 2026, so the
-# check passed while 55 curation events sat unreconciled. (CI blocking.)
+# Assert data/curated/ and data/ingredients/ still describe the same records (CI blocking)
 qc-roundtrip:
     #!/usr/bin/env bash
     set -euo pipefail
+    # A per-record edit must not be silently reverted by the next
+    # `just export-individual`, which projects the collection OVER the per-record
+    # tree. Aggregates into a temp dir rather than data/collections/: comparing
+    # against that committed artifact is what let this drift for months -- it was
+    # last regenerated in March 2026, so the check kept passing while 55 curation
+    # events sat unreconciled (#148).
     tmp="$(mktemp -d)"
     trap 'rm -rf "$tmp"' EXIT
     # Aggregate diagnostics are NOT discarded: a per-record file it cannot load
@@ -200,35 +201,59 @@ qc-roundtrip:
         --ingredients-dir data/ingredients --output-dir "$tmp"
     uv run python scripts/verify_roundtrip.py \
         --original-dir data/curated --aggregated-dir "$tmp"
-    # Same byte-level assertion CI makes, so `just qc` green means CI green.
-    # Without this the recipe misses serialization drift (key order, quoting,
-    # line wrapping) that fails the workflow.
+    # The same byte-level assertion the qc-roundtrip workflow makes, so this
+    # recipe also catches serialization drift (key order, quoting, line
+    # wrapping) that verify_roundtrip cannot see.
+    #
+    # Exported into a COPY, for two reasons. (1) This is a check; it must not
+    # rewrite 2,257 working-tree files as a side effect, or a failure would
+    # already have clobbered the very per-record edits the error tells you to
+    # save. (2) CI can compare with `git status` because actions/checkout gives
+    # it a pristine tree; locally that measures divergence from HEAD, not
+    # "did export change anything" — so uncommitted per-record work would fail
+    # this check even right after `just sync-curated` made everything agree.
+    tree="$(mktemp -d)"
+    trap 'rm -rf "$tmp" "$tree"' EXIT
+    cp -R data/ingredients/. "$tree/"
     uv run python scripts/export_individual_records.py \
-        --input-dir data/curated --output-dir data/ingredients
-    if [ -n "$(git status --porcelain -- data/ingredients)" ]; then
-      echo "error: export-individual changed data/ingredients — the per-record tree" >&2
-      echo "is not a clean projection of data/curated/. Run 'just sync-curated' if the" >&2
-      echo "per-record files are the ones you meant to keep." >&2
-      git status --porcelain -- data/ingredients >&2
+        --input-dir data/curated --output-dir "$tree" >/dev/null
+    if ! diff -r -q data/ingredients "$tree"; then
+      echo "" >&2
+      echo "error: exporting data/curated does not reproduce data/ingredients." >&2
+      echo "The per-record tree is not a clean projection of the collection." >&2
+      echo "If the per-record files are the ones you meant to keep, run" >&2
+      echo "'just sync-curated' to write them back into data/curated/." >&2
+      echo "(Nothing was modified — the export above went to a scratch copy.)" >&2
       exit 1
     fi
 
-# Write the per-record tree BACK into data/curated/ — the missing half of the
-# round trip, and the remediation when `qc-roundtrip` goes red because a script
-# edited data/ingredients/ directly (apply-role-research-results does exactly
-# this). Note `aggregate-collections` is NOT this: it writes data/collections/,
-# which nothing reads, and `sync-individual` runs export FIRST, destroying the
-# per-record edits before aggregating.
-#
-# Expect a LARGE diff even when content is unchanged: the aggregator emits
-# records in filename order, which is not the collection's historical order.
-# Nothing depends on that order (the verifier sorts, the exporter iterates), but
-# review `git diff data/curated` semantically rather than by line count.
-# `discussions` is dropped on the way in -- see PER_RECORD_ONLY_FIELDS in
-# scripts/aggregate_records.py.
+# Write per-record edits BACK into data/curated/, then re-export to a fixed point
 sync-curated:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    # The missing half of the round trip, and the remediation when qc-roundtrip
+    # goes red because a script edited data/ingredients/ directly
+    # (apply-role-research-results does exactly this -- issue #171).
+    #
+    # `aggregate-collections` is NOT this: it writes data/collections/, which
+    # nothing reads. `sync-individual` is not either: it runs export FIRST,
+    # destroying the per-record edits before aggregating.
+    #
+    # The re-export is not redundant. The collection does not carry
+    # `discussions`, so the exporter re-attaches it at the END of the record,
+    # swapping its position with any field edited after kgscan wrote it. Content
+    # is identical either way, but the gate compares bytes -- without the
+    # re-export a curator who edited one of the discussions-bearing records would
+    # run sync-curated, see qc-roundtrip still fail, and have nothing left to try.
+    #
+    # Expect a LARGE diff even when content is unchanged: the aggregator emits
+    # records in filename order, not the collection's historical order. Nothing
+    # depends on that order (the verifier sorts, the exporter iterates), so review
+    # `git diff data/curated` semantically rather than by line count.
     uv run python scripts/aggregate_records.py \
         --ingredients-dir data/ingredients --output-dir data/curated
+    uv run python scripts/export_individual_records.py \
+        --input-dir data/curated --output-dir data/ingredients
 
 # Render per-ingredient HTML detail pages from data/ingredients/*.yaml
 # into pages/ingredient/. Idempotent (skips fresh outputs); --force
