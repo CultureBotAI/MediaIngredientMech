@@ -95,20 +95,32 @@ def aggregate_individual_files(
         try:
             ingredient = load_yaml(yaml_file)
 
+            # Structural checks that run ALWAYS, not just under --validate,
+            # because they are the ones that cause silent record loss. load_yaml
+            # returns {} for an empty or comment-only document, which would
+            # otherwise be appended as a `- {}` record: the file's real content is
+            # gone, the collection still "has" a record, and nothing errors.
+            if not isinstance(ingredient, dict):
+                errors.append(f"{yaml_file.name}: Invalid format (not a mapping)")
+                continue
+            if not ingredient:
+                errors.append(f"{yaml_file.name}: Empty document (truncated or comment-only?)")
+                continue
+            if 'mapping_status' not in ingredient:
+                # Required by the schema, and the aggregator counts on it; without
+                # it the header's status counts silently under-report.
+                errors.append(f"{yaml_file.name}: Missing 'mapping_status' field")
+                continue
+
             # Validate basic structure
             if validate:
-                if not isinstance(ingredient, dict):
-                    errors.append(f"{yaml_file.name}: Invalid format (not a dict)")
-                    continue
                 if 'identifier' not in ingredient:
                     errors.append(f"{yaml_file.name}: Missing 'identifier' field")
                     continue
                 if 'preferred_term' not in ingredient:
                     errors.append(f"{yaml_file.name}: Missing 'preferred_term' field")
                     continue
-                if 'mapping_status' not in ingredient:
-                    errors.append(f"{yaml_file.name}: Missing 'mapping_status' field")
-                    continue
+                # `mapping_status` is checked unconditionally above.
 
             for field_name in exclude_fields:
                 ingredient.pop(field_name, None)
@@ -217,6 +229,7 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
     categories = ['mapped', 'unmapped']
     total_ingredients = 0
     total_errors = 0
+    pending: list[tuple[str, dict]] = []
 
     with Progress(
         SpinnerColumn(),
@@ -240,17 +253,34 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
                 )
                 continue
 
-            # Write collection file
-            output_file = output_dir_path / f"{category}_ingredients.yaml"
-            save_yaml(collection, output_file, backup=True)
-
-            ingredient_count = collection['total_count']
-            total_ingredients += ingredient_count
+            # Buffer, do not write yet. `sync-curated` points --output-dir at
+            # data/curated/, so writing a category before knowing whether a later
+            # one failed would overwrite the live collection with a short one and
+            # then exit 1 — destroying the record in the working tree and leaving
+            # the caller to notice and `git checkout`. Nothing is written unless
+            # every record aggregated.
+            pending.append((category, collection))
+            total_ingredients += collection['total_count']
 
             progress.update(
                 task,
-                description=f"[green]{category}: {ingredient_count} ingredients → {output_file.name}[/green]"
+                description=f"[green]{category}: {collection['total_count']} ingredients[/green]"
             )
+
+    if total_errors:
+        # Fail BEFORE writing anything.
+        console.print(
+            f"\n[bold red]✗ {total_errors} record(s) could not be aggregated.[/bold red]"
+        )
+        console.print(
+            "[red]No collections were written — the existing files are untouched.[/red]"
+        )
+        console.print("[red]Fix the offending file(s) and re-run.[/red]")
+        sys.exit(1)
+
+    for category, collection in pending:
+        output_file = output_dir_path / f"{category}_ingredients.yaml"
+        save_yaml(collection, output_file, backup=True)
 
     # Summary
     console.print("\n[bold]Summary:[/bold]")
@@ -261,22 +291,6 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
         output_file = output_dir_path / f"{category}_ingredients.yaml"
         if output_file.exists():
             console.print(f"    [green]✓[/green] {output_file.name}")
-
-    if total_errors:
-        # Exit non-zero: every error above is a record that was DROPPED from the
-        # collection. Exiting 0 here made the loss silent, and because
-        # `sync-curated` writes the result over data/curated/, a single
-        # unparseable per-record file could delete a curation record outright —
-        # the next export removes its file too, and the round-trip gate then sees
-        # two sources that agree it does not exist and passes.
-        console.print(
-            f"\n[bold red]✗ {total_errors} record(s) could not be aggregated and are "
-            f"MISSING from the written collection(s).[/bold red]"
-        )
-        console.print(
-            "[red]Do not commit this output. Fix the offending file(s) and re-run.[/red]"
-        )
-        sys.exit(1)
 
     if validate:
         console.print("\n[green]Validation passed for all files[/green]")

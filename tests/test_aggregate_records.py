@@ -79,7 +79,61 @@ def test_cli_exits_nonzero_when_a_record_is_dropped(tmp_path):
     )
 
     assert proc.returncode == 1, proc.stdout
-    assert "MISSING" in proc.stdout
+    assert "could not be aggregated" in proc.stdout
+    assert "Corrupt.yaml" in proc.stdout  # names the offending file
+
+
+def test_empty_or_comment_only_file_is_an_error_not_an_empty_record(tmp_path):
+    """load_yaml returns {} for an empty document. Appending that as a record
+    loses the file's content while the collection still 'has' a record — the same
+    silent loss, wearing a different hat. Must be an error even without
+    --validate, which is how every caller runs it."""
+    agg = _load()
+    root = _tree(
+        tmp_path,
+        {"Good": _record("CHEBI:1", "Good"), "Truncated": "", "CommentOnly": "# nothing here\n"},
+    )
+
+    collection, errors = agg.aggregate_individual_files(root, "mapped")
+
+    assert len(errors) == 2
+    assert collection["total_count"] == 1
+    assert {} not in collection["ingredients"]
+
+
+def test_record_without_mapping_status_is_an_error(tmp_path):
+    """Without it the status counts silently under-report."""
+    agg = _load()
+    root = _tree(tmp_path, {"NoStatus": yaml.safe_dump({"identifier": "CHEBI:1", "preferred_term": "A"})})
+
+    _, errors = agg.aggregate_individual_files(root, "mapped")
+
+    assert len(errors) == 1
+    assert "mapping_status" in errors[0]
+
+
+def test_nothing_is_written_when_any_record_fails(tmp_path):
+    """Fail BEFORE writing: `sync-curated` points --output-dir at data/curated/,
+    so writing a short collection and then exiting 1 would still destroy the
+    record in the working tree."""
+    root = _tree(
+        tmp_path,
+        {"Good": _record("CHEBI:1", "Good"), "Corrupt": "identifier: CHEBI:2\nsynonyms: [unclosed\n"},
+    )
+    out = tmp_path / "out"
+    out.mkdir()
+    sentinel = out / "mapped_ingredients.yaml"
+    sentinel.write_text("total_count: 999\ningredients: []\n")
+
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "aggregate_records.py"),
+         "--ingredients-dir", str(root), "--output-dir", str(out)],
+        capture_output=True, text=True, cwd=ROOT,
+    )
+
+    assert proc.returncode == 1
+    # The pre-existing collection must be untouched.
+    assert sentinel.read_text() == "total_count: 999\ningredients: []\n"
 
 
 def test_cli_exits_zero_on_a_clean_tree(tmp_path):

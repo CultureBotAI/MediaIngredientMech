@@ -230,8 +230,10 @@ therefore *not* the fix: on its own it writes to the dead end.
 1. **Data reconciled.** Applied surgically (record and key order preserved, only
    drifted fields touched) so the diff stayed reviewable: 55 unmapped records
    gained `ingredient_type`/`curation_history`/`notes`; the 3 orphans were
-   dropped; headers recomputed (mapped now honestly reports 1877 MAPPED + 2
-   non-MAPPED against total 1879). `discussions` deliberately stays out of the
+   dropped. Headers were also recomputed, and **that part was a mistake** — see
+   the header bullet above; `unmapped_count` was set to 2 when the 2 records are
+   `REJECTED`, not UNMAPPED. Reverted to 0 in the #172 fix, which counts each
+   status explicitly. `discussions` deliberately stays out of the
    collection. 12 per-record files were also normalised — line wrapping and
    scalar quoting only, verified semantically identical by parsing both sides and
    stable across three consecutive exports. **`just export-individual` is now a
