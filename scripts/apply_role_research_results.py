@@ -291,6 +291,14 @@ def sync_curated() -> int:
     applied. That is exactly how 55 curation events were lost in issue #148, and
     the `qc-roundtrip` gate now fails on it (issue #171).
 
+    SCOPE: this aggregates ALL of data/ingredients/, not just the records this
+    run touched — the collection is written as a whole. Any unrelated uncommitted
+    per-record edit in the working tree is therefore promoted into data/curated/
+    under whatever commit follows. Review `git diff data/curated` rather than
+    assuming it contains only this batch. (Since #169 the aggregator preserves the
+    collection's record order, so that diff is proportional to the change and this
+    is actually reviewable.)
+
     Deliberately the same two steps, in the same order, as `just sync-curated`.
     The re-export is not redundant: the collection does not carry `discussions`,
     so the exporter re-attaches it at the end of a record, and without the second
@@ -321,6 +329,9 @@ def sync_curated() -> int:
     )
     for description, cmd in steps:
         print(f"  syncing: {description}")
+        # Children write to the fd directly; without this our own buffered output
+        # lands AFTER theirs whenever stdout is a pipe (CI, tee, a log file).
+        sys.stdout.flush()
         proc = subprocess.run(cmd, cwd=REPO_ROOT)
         if proc.returncode != 0:
             print(

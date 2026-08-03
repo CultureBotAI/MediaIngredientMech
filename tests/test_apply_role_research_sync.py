@@ -78,15 +78,63 @@ def test_sync_propagates_failure_and_stops_early(monkeypatch):
     assert len(rec.calls) == 1  # stopped after the failing step
 
 
-def test_no_sync_flag_exists_and_is_off_by_default():
-    """Syncing is the default; skipping it must be an explicit, named choice."""
-    mod = _load()
-    import argparse
+def _batch_with_one_applicable_role(tmp_path: Path) -> tuple[Path, Path]:
+    """A record with an empty facet plus a batch that fills it, so main() writes."""
+    import json
 
-    parser = argparse.ArgumentParser()
-    # Mirror the flag under test rather than re-running main().
-    parser.add_argument("--no-sync", action="store_true")
-    assert parser.parse_args([]).no_sync is False
-    assert parser.parse_args(["--no-sync"]).no_sync is True
-    # And the real script must expose it.
-    assert "--no-sync" in (mod.main.__doc__ or "") or "no_sync" in mod.main.__code__.co_names
+    import yaml
+
+    rec_dir = tmp_path / "data" / "ingredients" / "mapped"
+    rec_dir.mkdir(parents=True)
+    rec = rec_dir / "Thing.yaml"
+    rec.write_text(yaml.safe_dump({
+        "identifier": "CHEBI:1", "preferred_term": "Thing", "mapping_status": "MAPPED",
+    }))
+    batch = tmp_path / "batch.json"
+    batch.write_text(json.dumps({"proposals": [{
+        "ingredient_identifier": "CHEBI:1",
+        "ingredient_path": str(rec.relative_to(tmp_path)),
+        "source_run": "research/ingredients/roles/x-edison-literature.md",
+        "role_assignments": {"nutritional_roles": [{"role": "CARBON_SOURCE", "confidence": 0.9}]},
+    }]}))
+    return batch, rec
+
+
+def test_real_run_syncs_by_default(tmp_path, monkeypatch):
+    """Drives the REAL parser through main(), not a mirrored one: a test that
+    rebuilt the flag itself would still pass if --no-sync were renamed or
+    defaulted to True."""
+    mod = _load()
+    batch, _ = _batch_with_one_applicable_role(tmp_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+    monkeypatch.setattr(mod, "INGREDIENTS_DIR", tmp_path / "data" / "ingredients")
+    calls: list[int] = []
+    monkeypatch.setattr(mod, "sync_curated", lambda: calls.append(1) or 0)
+
+    assert mod.main([str(batch)]) == 0
+    assert calls == [1]
+
+
+def test_no_sync_flag_suppresses_the_write_back(tmp_path, monkeypatch, capsys):
+    mod = _load()
+    batch, _ = _batch_with_one_applicable_role(tmp_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+    monkeypatch.setattr(mod, "INGREDIENTS_DIR", tmp_path / "data" / "ingredients")
+    calls: list[int] = []
+    monkeypatch.setattr(mod, "sync_curated", lambda: calls.append(1) or 0)
+
+    assert mod.main([str(batch), "--no-sync"]) == 0
+    assert calls == []
+    # And it must say so loudly — a silent desync is the whole bug.
+    assert "out of sync" in capsys.readouterr().out
+
+
+def test_sync_failure_propagates_out_of_main(tmp_path, monkeypatch):
+    """A failed write-back must not report success: the tree is left inconsistent."""
+    mod = _load()
+    batch, _ = _batch_with_one_applicable_role(tmp_path)
+    monkeypatch.setattr(mod, "REPO_ROOT", tmp_path)
+    monkeypatch.setattr(mod, "INGREDIENTS_DIR", tmp_path / "data" / "ingredients")
+    monkeypatch.setattr(mod, "sync_curated", lambda: 7)
+
+    assert mod.main([str(batch)]) == 7
