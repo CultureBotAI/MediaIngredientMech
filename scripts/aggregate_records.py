@@ -59,11 +59,46 @@ def _exporter_authored_fields() -> tuple[str, ...]:
 PER_RECORD_ONLY_FIELDS: tuple[str, ...] = _exporter_authored_fields()
 
 
+def _order_like(records: list[dict], reference: Path | None) -> list[dict]:
+    """Reorder `records` to match an existing collection, new records last.
+
+    The aggregator reads files in filename order; `data/curated/` is in
+    historical order. Without this, aggregating an unchanged tree rewrites ~9,500
+    lines of pure reordering, so a one-record change arrives as an unreviewable
+    diff — the exact condition under which 55 curation events went unnoticed in
+    #148. Matching the existing order makes the diff proportional to the change.
+
+    Pairs on (identifier, preferred_term), the same key verify_roundtrip uses.
+    Records absent from the reference keep their relative (filename) order at the
+    end, because `sorted` is stable and they all share the same rank.
+    """
+    if reference is None or not reference.exists():
+        return records
+    try:
+        existing = (load_yaml(reference) or {}).get("ingredients") or []
+    except Exception:
+        # An unreadable/absent reference is not fatal: fall back to filename
+        # order rather than refusing to aggregate.
+        return records
+
+    rank: dict[tuple, int] = {}
+    for position, rec in enumerate(existing):
+        if isinstance(rec, dict):
+            rank.setdefault((rec.get("identifier"), rec.get("preferred_term")), position)
+
+    tail = len(existing)
+    return sorted(
+        records,
+        key=lambda r: rank.get((r.get("identifier"), r.get("preferred_term")), tail),
+    )
+
+
 def aggregate_individual_files(
     ingredients_dir: Path,
     category: str,
     validate: bool = False,
     exclude_fields: tuple[str, ...] = PER_RECORD_ONLY_FIELDS,
+    order_reference: Path | None = None,
 ) -> tuple[dict | None, list[str]]:
     """Aggregate individual YAML files into a collection.
 
@@ -172,6 +207,10 @@ def aggregate_individual_files(
             f"miscount — the schema has no slot for these."
         )
 
+    # Emit in the existing collection's order so the diff is proportional to the
+    # change rather than a full reorder (see _order_like).
+    ingredients = _order_like(ingredients, order_reference)
+
     # Create collection with metadata
     collection = {
         'generation_date': datetime.now(timezone.utc).isoformat(),
@@ -252,7 +291,8 @@ def main(ingredients_dir: str | None, output_dir: str | None, validate: bool):
             collection, errors = aggregate_individual_files(
                 ingredients_dir_path,
                 category,
-                validate=validate
+                validate=validate,
+                order_reference=output_dir_path / f"{category}_ingredients.yaml",
             )
             total_errors += len(errors)
 

@@ -276,7 +276,7 @@ ls -1 data/ingredients/unmapped/*.yaml | wc -l  # Should be 136
 just sync-curated
 
 # Verify round-trip integrity
-python scripts/verify_roundtrip.py
+just qc-roundtrip
 
 # Validate aggregated collections
 just validate-all
@@ -290,7 +290,7 @@ just sync-individual
 # This runs:
 # 1. Export collections → individual files
 # 2. Validate individual files
-# 3. Aggregate individual files → collections
+# 3. Verify the two surfaces agree (`just qc-roundtrip`)
 ```
 
 ## Future Enhancements (Optional)

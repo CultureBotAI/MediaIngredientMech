@@ -4,8 +4,18 @@
 This script compares the original collection files with aggregated collections
 (after export → individual files → aggregate) to ensure data integrity.
 
+--aggregated-dir is REQUIRED. It used to default to data/collections/, a
+COMMITTED artifact last regenerated 2026-03-06, so this check kept passing for
+months while 55 curation events sat unreconciled (#148). Comparing against any
+committed copy is the trap — aggregate into a temp dir first.
+
 Usage:
-    python scripts/verify_roundtrip.py
+    just qc-roundtrip          # does the aggregate-into-a-temp-dir dance for you
+
+    python scripts/aggregate_records.py --ingredients-dir data/ingredients \
+        --output-dir "$tmp"
+    python scripts/verify_roundtrip.py --original-dir data/curated \
+        --aggregated-dir "$tmp"
 """
 
 from __future__ import annotations
@@ -173,9 +183,10 @@ def verify_round_trip(
         # happen to match. Masking is precisely what this gate exists to prevent,
         # so refuse to compare rather than report a result we cannot trust.
         # (Today: 0 duplicate pairs, though 61 identifiers are duplicated.)
-        key_counts = Counter(_pair_key(r) for r in orig_sorted)
-        key_counts.update(_pair_key(r) for r in agg_sorted)
-        duplicate_keys = sorted(k for k, n in key_counts.items() if n > 2)
+        duplicate_keys = sorted(
+            {k for k, n in Counter(map(_pair_key, orig_sorted)).items() if n > 1}
+            | {k for k, n in Counter(map(_pair_key, agg_sorted)).items() if n > 1}
+        )
         if duplicate_keys:
             results['errors'].append(
                 f"{category_file}: {len(duplicate_keys)} duplicate (identifier, preferred_term) "
