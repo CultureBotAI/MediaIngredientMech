@@ -71,6 +71,12 @@ def _order_like(records: list[dict], reference: Path | None) -> list[dict]:
     Pairs on (identifier, preferred_term), the same key verify_roundtrip uses.
     Records absent from the reference keep their relative (filename) order at the
     end, because `sorted` is stable and they all share the same rank.
+
+    Consequence worth knowing: re-identifying a record (the UNMAPPED_NNNN ->
+    CHEBI:x promotion the manage-identifiers skill performs) changes the pairing
+    key, so that record is treated as new and moves to the end. The diff stays
+    proportional and the result still converges; collection order just drifts
+    toward "most recently re-identified last" over time.
     """
     if reference is None or not reference.exists():
         return records
@@ -81,16 +87,26 @@ def _order_like(records: list[dict], reference: Path | None) -> list[dict]:
         # order rather than refusing to aggregate.
         return records
 
+    def _key(rec: dict):
+        # A record whose identifier is a list/dict would make an unhashable key
+        # and take down `just sync-curated` with a bare TypeError, losing this
+        # file's per-record diagnostics. Ordering is a presentation concern, so
+        # degrade to "treat as new" rather than fail the whole aggregation.
+        try:
+            hash((rec.get("identifier"), rec.get("preferred_term")))
+        except TypeError:
+            return None
+        return (rec.get("identifier"), rec.get("preferred_term"))
+
     rank: dict[tuple, int] = {}
     for position, rec in enumerate(existing):
         if isinstance(rec, dict):
-            rank.setdefault((rec.get("identifier"), rec.get("preferred_term")), position)
+            key = _key(rec)
+            if key is not None:
+                rank.setdefault(key, position)
 
     tail = len(existing)
-    return sorted(
-        records,
-        key=lambda r: rank.get((r.get("identifier"), r.get("preferred_term")), tail),
-    )
+    return sorted(records, key=lambda r: rank.get(_key(r), tail))
 
 
 def aggregate_individual_files(

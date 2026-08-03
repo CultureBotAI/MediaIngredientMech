@@ -320,3 +320,53 @@ def test_missing_order_reference_falls_back_to_filename_order(tmp_path):
     )
 
     assert [r["preferred_term"] for r in collection["ingredients"]] == ["Alpha", "Bravo"]
+
+
+def test_main_passes_the_output_collection_as_the_order_reference(tmp_path):
+    """Covers the WIRING, not just the function.
+
+    All the other ordering tests call aggregate_individual_files with an explicit
+    order_reference. A review mutated the sole real call site to
+    `order_reference=None` and every test still passed — the feature could be
+    silently disabled and the ~9,500-line reorder would return with CI green.
+    This drives main() end to end against a seeded output directory.
+    """
+    root = _tree(tmp_path, {
+        "Zulu": _record("CHEBI:3", "Zulu"),
+        "Alpha": _record("CHEBI:1", "Alpha"),
+        "Mike": _record("CHEBI:2", "Mike"),
+    })
+    out = tmp_path / "out"
+    out.mkdir()
+    # Seed the destination in a deliberately non-alphabetical order.
+    _reference_collection(out / "mapped_ingredients.yaml", [
+        ("CHEBI:2", "Mike"), ("CHEBI:3", "Zulu"), ("CHEBI:1", "Alpha"),
+    ])
+
+    proc = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "aggregate_records.py"),
+         "--ingredients-dir", str(root), "--output-dir", str(out)],
+        capture_output=True, text=True, cwd=ROOT,
+    )
+    assert proc.returncode == 0, proc.stdout + proc.stderr
+
+    written = yaml.safe_load((out / "mapped_ingredients.yaml").read_text())
+    assert [r["preferred_term"] for r in written["ingredients"]] == ["Mike", "Zulu", "Alpha"]
+
+
+def test_unhashable_identifier_does_not_crash_ordering(tmp_path):
+    """A list-valued identifier would make an unhashable pair key. Ordering is a
+    presentation concern; it must not take down the whole aggregation with a
+    bare TypeError and lose the per-record diagnostics."""
+    agg = _load()
+    root = _tree(tmp_path, {
+        "Weird": yaml.safe_dump({"identifier": ["a", "b"], "preferred_term": "W",
+                                 "mapping_status": "MAPPED"}),
+        "Fine": _record("CHEBI:1", "Fine"),
+    })
+    reference = _reference_collection(tmp_path / "ref.yaml", [("CHEBI:1", "Fine")])
+
+    collection, errors = agg.aggregate_individual_files(root, "mapped", order_reference=reference)
+
+    assert errors == []
+    assert len(collection["ingredients"]) == 2

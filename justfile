@@ -246,10 +246,12 @@ sync-curated:
     # re-export a curator who edited one of the discussions-bearing records would
     # run sync-curated, see qc-roundtrip still fail, and have nothing left to try.
     #
-    # Expect a LARGE diff even when content is unchanged: the aggregator emits
-    # records in filename order, not the collection's historical order. Nothing
-    # depends on that order (the verifier sorts, the exporter iterates), so review
-    # `git diff data/curated` semantically rather than by line count.
+    # The diff is proportional to the change: the aggregator emits records in
+    # the existing collection's order (see _order_like in
+    # scripts/aggregate_records.py). It did NOT always — it used filename order,
+    # so an unchanged tree rewrote ~9,500 lines and a one-record change arrived
+    # unreviewable. If you ever see a diff that size again, that ordering has
+    # regressed; do not wave it through.
     uv run python scripts/aggregate_records.py \
         --ingredients-dir data/ingredients --output-dir data/curated
     uv run python scripts/export_individual_records.py \
