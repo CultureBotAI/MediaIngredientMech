@@ -1,0 +1,47 @@
+history_version: 1
+target:
+  kind: infrastructure
+  path: scripts/aggregate_records.py
+  slug: aggregate-records
+session:
+  id: 2026-08-03T030057Z-claude-code-1ae0ca
+  timestamp: '2026-08-03T03:00:57Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/172
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - scripts
+  - tests
+  - data
+  summary: Make a dropped record fatal in the aggregator; count statuses explicitly
+  details: 'aggregate_individual_files caught a per-file load error, printed it, SKIPPED the
+    record, and main() exited 0 unconditionally; total_errors was declared and never incremented,
+    so the plumbing was intended and never wired up. Latent until PR #167 made aggregation
+    load-bearing in two new places: ''just sync-curated'' writes the aggregation over data/curated/,
+    so one unparseable per-record file meant the record was dropped from the collection, the
+    next ''just export-individual'' deleted its per-record file too (export clears the tree
+    and rewrites from the collection), and ''just qc-roundtrip'' then compared two sources
+    that agreed the record did not exist and PASSED - silent, unrecoverable loss of a curation
+    record. Reproduced before fixing with a corrupt file beside a good one: output read ''Total
+    ingredients aggregated: 1'' with a green checkmark and exit 0, the second record absent.
+    Now returns (collection, errors); main sums and exits 1 naming the missing records. Second
+    half: unmapped_count was computed as total-mapped, relabelling every other status as UNMAPPED
+    in a header consumers read; now each status is counted explicitly. This corrected my own
+    error in #167, where I called the original header (total 1879 / mapped 1877 / unmapped
+    0) ''self-inconsistent'' and recomputed unmapped_count to 2 - the original was right,
+    the counts do not sum because 2 records are REJECTED and IngredientCollection is closed
+    with no slot for other statuses, so #167 asserted something false. Restored to 0 and the
+    aggregator now prints a note naming the statuses when counts legitimately do not sum.
+    Verified: 506 tests pass including 8 new in tests/test_aggregate_records.py; ''just qc''
+    exits 0; export remains a no-op. NOTE on CI coverage: PR #173 is stacked on #167''s branch,
+    and the roundtrip/qc/pytest workflows trigger only on pull_request against main, so they
+    did not run for this PR - verified locally instead, and they will run once the base is
+    retargeted to main.'
