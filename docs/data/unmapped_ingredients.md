@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-04T04:42:47.156220+00:00
-Total: 626 ingredients
+Generated: 2026-08-04T21:42:17.186877+00:00
+Total: 612 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -476,7 +476,6 @@ Total: 626 ingredients
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0682 |  | DL-lactate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0729 |  | Dactimicin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0810 |  | Diacetyl | UNMAPPED |  |  | 0 |
 | UNMAPPED_0666 |  | Dimethylsulfide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |
 | UNMAPPED_0626 |  | Esculin Ferric Citrate | UNMAPPED |  |  | 0 |
@@ -484,7 +483,6 @@ Total: 626 ingredients
 | UNMAPPED_0812 |  | Ethylenediamine-N | UNMAPPED |  |  | 0 |
 | UNMAPPED_0742 |  | Fastidious Anaerobe Broth With Meat Granules | UNMAPPED |  |  | 0 |
 | UNMAPPED_0711 |  | Fermented Rumen Extract | UNMAPPED |  |  | 0 |
-| UNMAPPED_0667 |  | Ferric Iron | UNMAPPED |  |  | 0 |
 | UNMAPPED_0813 |  | Ferrous Ion | UNMAPPED |  |  | 0 |
 | UNMAPPED_0730 |  | Ferulate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0814 |  | Filipin | UNMAPPED |  |  | 0 |
@@ -588,7 +586,6 @@ Total: 626 ingredients
 | UNMAPPED_0841 |  | Ristocetin A | UNMAPPED |  |  | 0 |
 | UNMAPPED_0842 |  | Rna | UNMAPPED |  |  | 0 |
 | UNMAPPED_0732 |  | Selenite | UNMAPPED |  |  | 0 |
-| UNMAPPED_0843 |  | Sodium(+) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0733 |  | Sodium L-glutamate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0705 |  | Sucrose + Yeast Extract | UNMAPPED |  |  | 0 |
 | UNMAPPED_0663 |  | Sugars | UNMAPPED |  |  | 0 |
@@ -614,20 +611,9 @@ Total: 626 ingredients
 | UNMAPPED_0779 |  | Yeast Extract + Peptone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0780 |  | Yeast Extract + Sulfur | UNMAPPED |  |  | 0 |
 | UNMAPPED_0781 |  | Yeast + Meat Extract + H2 | UNMAPPED |  |  | 0 |
-| CHEBI:338412 |  | (-)-anisomycin | UNMAPPED |  |  | 0 |
-| CHEBI:747005 |  | 1-chlorobutane | UNMAPPED |  |  | 0 |
-| CHEBI:747004 |  | 1-chloropropane | UNMAPPED |  |  | 0 |
-| CHEBI:546840 |  | 4-nitrophenyl Alpha-D-galactoside | UNMAPPED |  |  | 0 |
 | CHEBI:756054 |  | Carbomycin | UNMAPPED |  |  | 0 |
-| CHEBI:474053 |  | Cefazolin | UNMAPPED |  |  | 0 |
-| CHEBI:478164 |  | Cefepime | UNMAPPED |  |  | 0 |
-| CHEBI:472657 |  | Cefixime | UNMAPPED |  |  | 0 |
-| CHEBI:355510 |  | Cefotiam | UNMAPPED |  |  | 0 |
 | CHEBI:759883 |  | Colistin Sulfate | UNMAPPED |  |  | 0 |
-| CHEBI:404903 |  | Ertapenem | UNMAPPED |  |  | 0 |
-| CHEBI:495056 |  | Gamma-cyclodextrin | UNMAPPED |  |  | 0 |
 | CHEBI:759884 |  | Gentamicin | UNMAPPED |  |  | 0 |
-| CHEBI:471744 |  | Imipenem | UNMAPPED |  |  | 0 |
 | CHEBI:753395 |  | Lysostaphin | UNMAPPED |  |  | 0 |
 | CHEBI:748901 |  | Netilmicin | UNMAPPED |  |  | 0 |
 | CHEBI:759086 |  | Polymyxin B | UNMAPPED |  |  | 0 |
