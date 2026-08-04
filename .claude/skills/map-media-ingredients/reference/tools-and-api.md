@@ -14,13 +14,13 @@
 - `scripts/prepare_for_claude_curation.py` - Prepare batches for Claude Code
 - `scripts/apply_claude_suggestions.py` - Apply Claude Code suggestions
 - `scripts/import_from_culturemech.py` - Import from CultureMech
-- `scripts/export_to_culturemech.py` - Export to CultureMech
+- `scripts/merge_culturemech_updates.py` - Merge CultureMech updates back in
 
 ### Core Utilities
 
 - `src/mediaingredientmech/utils/chemical_normalizer.py` - Normalization logic
 - `src/mediaingredientmech/utils/ontology_client.py` - OAK integration
-- `src/mediaingredientmech/utils/curator.py` - Curation state management
+- `src/mediaingredientmech/curation/ingredient_curator.py` - Curation state management
 
 ### Documentation
 

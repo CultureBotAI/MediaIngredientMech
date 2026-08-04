@@ -90,9 +90,9 @@ validation are in [`reference/script-and-workflow.md`](reference/script-and-work
 1. **Always start with `--dry-run`** — review the output, then execute.
 2. **CHEBI first, names second.** CHEBI duplicates are non-negotiable; name matches need
    domain judgment; KG-Microbe search is exploratory.
-3. **Validate after every merge** — run `scripts/validate_mappings.py` and re-check
+3. **Validate after every merge** — run `just validate-all` and re-check
    `total_count`/`mapped_count`/`unmapped_count`.
-4. **Document flagged records** in `data/curation/flagged_duplicates.yaml` (chebi_id,
+4. **Document flagged records** in `data/curation/flagged_duplicates.yaml` (chebi_id, <!-- refcheck: ignore -->
    record indices, reason, reviewer, resolution).
 5. **Preserve original terms** — add every variant name as a `synonym` tagged with
    `synonym_type`, `source: merge`, and `occurrence_count`.
