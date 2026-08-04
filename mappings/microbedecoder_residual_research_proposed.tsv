@@ -1,0 +1,23 @@
+identifier	source_label	mapping_type	recommended_curie	recommended_label	mapping_predicate	confidence	alt_curie	note
+UNMAPPED_0645	alpha-hydroxybutyrate	single_term	CHEBI:64552	2-hydroxybutyrate	skos:exactMatch	high	CHEBI:1148	Racemic stereo-unspecified anion; 'alpha-hydroxybutyrate'/'2-hydroxybutanoate' are exact CHEBI synonyms. '-ate' matches conjugate base. Rejects NCIT:C120002. alt = neutral acid.
+UNMAPPED_0629	beta-hydroxybutyrate	single_term	CHEBI:37054	3-hydroxybutyrate	skos:exactMatch	high	CHEBI:20067	Racemic (DL) anion; synonyms 'beta-hydroxybutanoate','DL-3-hydroxybutyrate'. 3-position = beta. Rejects NCIT:C96568 'Beta-Hydroxybutyrate Measurement'. alt = neutral acid.
+UNMAPPED_0667	ferric iron	single_term	CHEBI:29034	iron(3+)	skos:exactMatch	high		Fe(III) cation; synonyms 'ferric iron','ferric ion','iron(III) cation'. Rejects NCIT 'Ferric' adjective.
+UNMAPPED_0810	diacetyl	single_term	CHEBI:16583	butane-2,3-dione	skos:exactMatch	high		Diacetyl = butane-2,3-dione (alpha-diketone); 'diacetyl'/'biacetyl' are CHEBI synonyms. Rejects NCIT:C210295 'Diacetyl Measurement'.
+UNMAPPED_0842	RNA	single_term	CHEBI:33697	ribonucleic acid	skos:exactMatch	high		'RNA' is an explicit CHEBI synonym of the ribonucleic acid macromolecule class. Rejects NCIT 'Ribonucleic Acid Measurement'.
+UNMAPPED_0821	keratin	no_grounding	NO_GROUNDING			high	PR	CHEBI has no keratin term (ChEBI excludes genome-encoded proteins). Route to Protein Ontology / UniProt. Rejects NCIT 'Cytokeratin'.
+UNMAPPED_0794	Achromycin	single_term	CHEBI:27902	tetracycline	skos:exactMatch	high	CHEBI:35006	Achromycin = trade name for tetracycline. CHEBI:27902 is neutral free base (preferred over HCl salt CHEBI:35006 / zwitterion CHEBI:77932).
+UNMAPPED_0814	Filipin	single_term	CHEBI:83267	filipin III	skos:relatedMatch	medium		CHEBI has no 'filipin complex' term. Label denotes the 4-isomer complex; filipin III is major component (~76%). relatedMatch, not exact.
+UNMAPPED_0830	neomycin E	single_term	CHEBI:7934	paromomycin	skos:exactMatch	high		Neomycin E is a documented synonym of paromomycin (aminosidine/catenulin). CHEBI:7934 free-base aminoglycoside.
+	carbomycin	single_term	CHEBI:756054	carbomycin	skos:exactMatch	high		Re-validated current/non-obsolete PRIMARY term; exact label. Was blocked only by stale local chebi.db accession ceiling (#200).
+	colistin sulfate	single_term	CHEBI:759883	colistin sulfate	skos:exactMatch	high	CHEBI:37943	Salt term matches the salt label; parent neutral colistin CHEBI:37943 if salt not wanted. Data-quality caveat: ChEMBL entry lacks formula, synonym set contaminated with kanamycin brand names.
+	gentamicin	single_term	CHEBI:759884	gentamicin	skos:exactMatch	high	CHEBI:17833	Exact-label ChEMBL entry; alt = stable curated class term CHEBI:17833 'gentamycin' (synonym 'Gentamicin').
+	lysostaphin	single_term	CHEBI:753395	lysostaphin	skos:exactMatch	medium	PR	Valid current CHEBI term, exact label. Caveat: lysostaphin is a ~27 kDa glycylglycine endopeptidase (EC 3.4.24.75) — PR/protein ontology is ontologically more precise.
+	netilmicin	single_term	CHEBI:748901	netilmicin	skos:exactMatch	high	CHEBI:7528	Current/non-obsolete, correct formula C21H41N5O7, better exact-label match than variant-spelling CHEBI:7528 'netilmycin'.
+	polymyxin B	single_term	CHEBI:759086	polymyxin B	skos:exactMatch	high		Clinical-mixture drug-level term; correct over too-specific components B1 (CHEBI:8309) / B2 (CHEBI:59063).
+UNMAPPED_0843	Sodium(+)	parse_artifact	CHEBI:29101	sodium(1+)	skos:exactMatch	high		Parse artifact: '(1+)' charge mangled to '(+)'. Monoatomic cation.
+UNMAPPED_0809	(+)-D-glycogen	parse_artifact	CHEBI:28087	glycogen	skos:exactMatch	high		Parse artifact: stray '(+)-D-' optical-rotation prefix on glycogen.
+UNMAPPED_0824	(+)-L-lyxitol	parse_artifact	CHEBI:18403	L-arabinitol	skos:exactMatch	medium		'L-lyxitol' is a documented synonym of L-arabinitol (CAS 7643-75-6). Curator should confirm enantiomer.
+UNMAPPED_0718	Peptones	single_term	MICRO:0000178	peptone	skos:exactMatch	high		Plural variant; matches repo Peptone record (MICRO:0000178).
+UNMAPPED_0835	Peptone (0.01 %	parse_artifact	MICRO:0000178	peptone	skos:exactMatch	high		CSV parse artifact: concentration annotation truncated. Underlying ingredient peptone.
+UNMAPPED_0700	Yeast Extract (0.01 %	parse_artifact	FOODON:03315426	yeast extract	skos:exactMatch	high		CSV parse artifact: concentration annotation truncated. Underlying ingredient yeast extract (repo record).
+UNMAPPED_0764	Mono- And Disaccharides	no_grounding	NO_GROUNDING			high		Grouping/category term (unspecified sugar mixture), not a single defined entity. Split only if source lists specific sugars.
