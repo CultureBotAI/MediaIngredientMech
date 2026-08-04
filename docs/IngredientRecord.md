@@ -257,7 +257,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | [chemical_properties](chemical_properties.md) | 0..1 <br/> [ChemicalProperties](ChemicalProperties.md) | Chemical structure and properties (for CHEBI-mapped ingredients only) | direct |
 | [representative](representative.md) | 0..1 <br/> [String](String.md) | `identifier` of the representative record if this record has been merged | direct |
 | [merged](merged.md) | * <br/> [String](String.md) | List of record `identifier`s merged into this representative | direct |
-| [ingredient_type](ingredient_type.md) | 0..1 <br/> [IngredientTypeEnum](IngredientTypeEnum.md) | Classification of entry type: single chemical ingredient vs complex defined m... | direct |
+| [ingredient_type](ingredient_type.md) | 0..1 <br/> [IngredientTypeEnum](IngredientTypeEnum.md) | Classification of entry type: single chemical ingredient vs whole named mediu... | direct |
 | [components](components.md) | * <br/> [StockComponent](StockComponent.md) | Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM: the list o... | direct |
 | [culturemech_medium_name](culturemech_medium_name.md) | 0..1 <br/> [String](String.md) | Cross-reference to CultureMech medium name if this is a defined medium | direct |
 | [parent_ingredient](parent_ingredient.md) | 0..1 <br/> [String](String.md) | Reference to parent ingredient's `identifier` in the variant hierarchy | direct |
@@ -511,11 +511,12 @@ attributes:
     multivalued: true
   ingredient_type:
     name: ingredient_type
-    description: 'Classification of entry type: single chemical ingredient vs complex
-      defined medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). DEFINED_MEDIUM:
-      Complete medium formulation/recipe (R2A agar, LB broth). UNDEFINED_MIXTURE:
-      Complex mixture of unknown composition (yeast extract, peptone). STOCK_SOLUTION:
-      Pre-mixed solution of defined ingredients.'
+    description: 'Classification of entry type: single chemical ingredient vs whole
+      named medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). DEFINED_MEDIUM:
+      A complete, named medium formulation/recipe (R2A agar, LB broth) -- "defined"
+      = record granularity (a whole named medium), NOT "chemically defined"; undefined
+      components are expected. UNDEFINED_MIXTURE: Complex mixture of unknown composition
+      (yeast extract, peptone). STOCK_SOLUTION: Pre-mixed solution of defined ingredients.'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
@@ -891,11 +892,12 @@ attributes:
     multivalued: true
   ingredient_type:
     name: ingredient_type
-    description: 'Classification of entry type: single chemical ingredient vs complex
-      defined medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). DEFINED_MEDIUM:
-      Complete medium formulation/recipe (R2A agar, LB broth). UNDEFINED_MIXTURE:
-      Complex mixture of unknown composition (yeast extract, peptone). STOCK_SOLUTION:
-      Pre-mixed solution of defined ingredients.'
+    description: 'Classification of entry type: single chemical ingredient vs whole
+      named medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). DEFINED_MEDIUM:
+      A complete, named medium formulation/recipe (R2A agar, LB broth) -- "defined"
+      = record granularity (a whole named medium), NOT "chemically defined"; undefined
+      components are expected. UNDEFINED_MIXTURE: Complex mixture of unknown composition
+      (yeast extract, peptone). STOCK_SOLUTION: Pre-mixed solution of defined ingredients.'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: ingredient_type

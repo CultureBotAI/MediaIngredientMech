@@ -14,7 +14,7 @@ URI: [mediaingredientmech:IngredientTypeEnum](https://w3id.org/mediaingredientme
 | Value | Meaning | Description |
 | --- | --- | --- |
 | SINGLE_INGREDIENT | None | Pure chemical compound or single ingredient (e |
-| DEFINED_MEDIUM | None | Complete medium formulation or recipe with multiple ingredients (e |
+| DEFINED_MEDIUM | None | A complete, named medium formulation or recipe with multiple ingredients (e |
 | UNDEFINED_MIXTURE | None | Complex mixture of unknown or variable composition (e |
 | STOCK_SOLUTION | None | Pre-mixed solution of defined ingredients (e |
 
@@ -25,7 +25,7 @@ URI: [mediaingredientmech:IngredientTypeEnum](https://w3id.org/mediaingredientme
 
 | Name | Description |
 | ---  | --- |
-| [ingredient_type](ingredient_type.md) | Classification of entry type: single chemical ingredient vs complex defined m... |
+| [ingredient_type](ingredient_type.md) | Classification of entry type: single chemical ingredient vs whole named mediu... |
 
 
 
@@ -63,9 +63,14 @@ permissible_values:
       water). Can be mapped to chemical ontologies like CHEBI.
   DEFINED_MEDIUM:
     text: DEFINED_MEDIUM
-    description: Complete medium formulation or recipe with multiple ingredients (e.g.,
-      R2A agar, LB broth, Marine agar 2216, Oatmeal agar). Should cross-reference
-      to CultureMech for full recipe.
+    description: 'A complete, named medium formulation or recipe with multiple ingredients
+      (e.g., R2A agar, LB broth, Marine agar 2216, Oatmeal agar). NOTE: "DEFINED"
+      here denotes RECORD GRANULARITY -- this record is a whole named medium rather
+      than a single ingredient -- and is NOT the microbiology term of art "chemically
+      defined medium". Complex, undefined components (digests, infusions, extracts,
+      sera) are expected and normal in these records; the compositional distinction
+      is carried by UNDEFINED_MIXTURE, not by this value. Should cross-reference to
+      CultureMech for the full recipe.'
   UNDEFINED_MIXTURE:
     text: UNDEFINED_MIXTURE
     description: Complex mixture of unknown or variable composition (e.g., yeast extract,
