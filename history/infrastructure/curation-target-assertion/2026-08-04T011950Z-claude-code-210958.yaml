@@ -1,0 +1,51 @@
+history_version: 1
+target:
+  kind: infrastructure
+  path: scripts/check_curation_targets.py
+  slug: curation-target-assertion
+session:
+  id: 2026-08-04T011950Z-claude-code-210958
+  timestamp: '2026-08-04T01:19:50Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/181
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - scripts
+  - justfile
+  - ci
+  - conf
+  summary: Assert curation-target pathspecs still match, and share the list with the workflow
+  details: 'The curation-history advisory COUNTS how many curation targets a PR changed and
+    never asserts, so a pathspec matching nothing yields 0 and the job reports ''no curation
+    records changed'' - indistinguishable from a PR that genuinely changed none. The check
+    reads healthiest exactly when it has stopped working. Not hypothetical: data/custom/*.yaml
+    matched zero tracked files for its entire life because that directory holds a single .tsv
+    (fixed in #180). Added scripts/check_curation_targets.py asserting every spec matches
+    >=1 tracked file, and moved the specs into conf/curation_targets.txt which BOTH the gate
+    and the workflow read, so the counted list and the asserted list cannot drift - previously
+    the workflow inlined its own copy, which is the drift this issue is about. Verified the
+    refactor is behaviour-preserving: the workflow''s new eval-based command matches 14 files
+    on commit 8e0a857c, identical to the inline version. Verified the gate fails as well as
+    passes by re-injecting the historical bug (appending data/custom/*.yaml yields ''!! 0
+    tracked file(s)'' and exit 1). history/**/*.yaml is deliberately NOT in the shared list
+    and stays inline, with a comment saying why: if it stopped matching, new_history would
+    be 0 forever and the advisory would warn on every PR - a loud failure, the opposite of
+    the silent one the shared list guards against. Documented plainly in the script''s own
+    docstring what it does NOT catch: a partial miss, where data/curated/ gains a subdirectory
+    and the flat spec still matches the 7 flat files so a >=1 assertion stays green. Also
+    recorded why the obvious ''make the specs consistent'' fix is wrong - the directory form
+    would pull in 24 generated .md summaries and fire the advisory on every regeneration.
+    Writing the tests found a real bug in my own failure path: the message used args.specs.relative_to(REPO_ROOT),
+    which raised ValueError for a --specs path outside the repo, so the failure path itself
+    failed. Fixed. Wired into just qc and as a BLOCKING step in the curation-history workflow,
+    ahead of the advisory it protects. Stacked on PR #188 because both add a justfile recipe
+    next to qc: and would otherwise conflict - verified rather than assumed, per the prompt''s
+    dependency rule. 544 tests pass; just qc exits 0.'

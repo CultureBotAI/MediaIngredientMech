@@ -68,6 +68,12 @@ jobs:
                 --schema src/mediaingredientmech/schema/history.yaml \
                 --target-class HistoryRecord
 
+      # Blocking, unlike the advisory below: a pathspec that matches nothing makes
+      # that advisory silently useless, and the whole point of #181 is that
+      # nothing was asserting this.
+      - name: Assert curation-target pathspecs still match something
+        run: python3 scripts/check_curation_targets.py
+
       - name: Check for missing history records (advisory)
         if: github.event_name == 'pull_request'
         run: |
@@ -75,21 +81,20 @@ jobs:
           git fetch --no-tags origin "${{ github.base_ref }}"
           base="origin/${{ github.base_ref }}"
 
-          # Counts mapping artifacts too, not just ingredient YAMLs: a large share
-          # of MIM curation lands in mappings/ rather than in any single record.
-          #
-          # Mind the flat-vs-nested distinction: in a git pathspec `**/` requires
-          # an intervening directory level, so `data/curated/**/*.yaml` matches
-          # NOTHING (that tree is flat) while `data/curated/*.yaml` matches both
-          # collections. data/ingredients/ and history/ ARE nested, so they take
-          # the `**/` form. Getting this wrong makes the check silently count
-          # zero rather than fail (issue #164).
-          #
-          # data/custom/ is matched as a directory: its curation artifact is a
-          # .tsv, so a `*.yaml` pattern there matched nothing at all.
-          changed_targets=$(git diff --name-only "$base"...HEAD \
-            -- 'data/ingredients/**/*.yaml' 'data/curated/*.yaml' \
-               'data/custom' 'mappings/**' | wc -l | tr -d ' ')
+          # The pathspecs come from conf/curation_targets.txt, which the
+          # check-curation-targets gate also reads — so the list this counts and
+          # the list something asserts cannot drift apart. That mattered:
+          # `data/custom/*.yaml` matched zero tracked files for its whole life
+          # because that directory holds a .tsv, and because this step COUNTS
+          # rather than asserts, it contributed 0 and read exactly like "no
+          # records changed" (#180, #181).
+          specs=$(python3 scripts/check_curation_targets.py --print-specs)
+          changed_targets=$(eval "git diff --name-only \"$base\"...HEAD -- $specs" | wc -l | tr -d ' ')
+
+          # NOT in the shared list, deliberately: if this spec ever stopped
+          # matching, new_history would be 0 forever and the advisory would warn
+          # on every PR. That fails LOUDLY, which is the opposite of the silent
+          # failure the shared list exists to prevent.
           new_history=$(git diff --name-only --diff-filter=A "$base"...HEAD -- 'history/**/*.yaml' | wc -l | tr -d ' ')
 
           {

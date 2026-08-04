@@ -1,0 +1,39 @@
+# Git pathspecs naming the surfaces that count as "curation" for the
+# curation-history advisory (.github/workflows/curation-history.yaml).
+#
+# SINGLE SOURCE OF TRUTH: both the workflow and scripts/check_curation_targets.py
+# read this file. They used to be one hand-maintained list inlined in the
+# workflow, which meant nothing could tell whether a spec still matched anything
+# — the job COUNTS matches and never asserts, so a spec matching zero files
+# produces `0` and reads exactly like "this PR changed no records" (issue #181).
+#
+# That was not hypothetical: `data/custom/*.yaml` matched zero tracked files for
+# its whole life, because that directory holds a single .tsv (fixed in #180).
+#
+# MIND THE FLAT-vs-NESTED DISTINCTION. In a git pathspec `**/` requires an
+# intervening directory level:
+#
+#   data/curated/**/*.yaml   -> 0 files   (that tree is flat)
+#   data/curated/*.yaml      -> 7 files
+#
+# So do NOT "tidy" these into a uniform `**/` form. The asymmetry below is
+# deliberate — it tracks the shape of each directory, not inconsistent care.
+# `just check-curation-targets` fails if any line stops matching.
+#
+# One line per pathspec. Blank lines and `#` comments ignored.
+
+# Per-ingredient records — nested (mapped/, unmapped/).
+data/ingredients/**/*.yaml
+
+# Curated collections — FLAT, hence the single star. Note the directory form
+# would also pull in 24 generated .md summaries, so a routine regeneration would
+# inflate the count and fire the advisory spuriously.
+data/curated/*.yaml
+
+# Custom curation artifacts — matched as a directory because the file here is a
+# .tsv, not a YAML.
+data/custom
+
+# Mapping products (SSSOM and review TSVs) — a large share of MIM curation lands
+# here rather than in any single ingredient record.
+mappings/**

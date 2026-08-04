@@ -179,7 +179,16 @@ report-label-drift:
 # `just validate-products` locally to reproduce the gate; `just report-label-drift`
 # writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
 # LinkML cross-check (one validator process per record → too slow for CI).
-qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip check-instruction-refs
+qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip check-instruction-refs check-curation-targets
+
+# Assert every curation-target pathspec still matches at least one tracked file
+check-curation-targets *args:
+    # The curation-history advisory COUNTS matches and never asserts, so a spec
+    # matching nothing yields 0 and reads exactly like "this PR changed no
+    # records" — the check looks healthiest when it has stopped working.
+    # `data/custom/*.yaml` matched zero tracked files for its whole life (#180).
+    # Issue #181.
+    uv run python scripts/check_curation_targets.py {{args}}
 
 # Flag skills/commands/prompts naming recipes or paths that no longer exist
 check-instruction-refs *args:
