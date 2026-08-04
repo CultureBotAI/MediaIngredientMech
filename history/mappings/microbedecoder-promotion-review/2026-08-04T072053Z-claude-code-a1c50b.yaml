@@ -1,0 +1,54 @@
+history_version: 1
+target:
+  kind: mapping
+  path: mappings/ingredient_mappings.sssom.tsv
+  slug: microbedecoder-promotion-review
+session:
+  id: 2026-08-04T072053Z-claude-code-a1c50b
+  timestamp: '2026-08-04T07:20:53Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/203
+events:
+- type: REVIEW
+  outcome: changed
+  sections:
+  - sssom
+  - ingredients
+  - scripts
+  summary: 'Review of PR #195 before merge: corrected a false provenance claim and held one
+    wrong-sense grounding'
+  details: 'Adversarial review of another session''s PR #195, which promoted 386 microbedecoder
+    auto-groundings from PENDING_REVIEW to MAPPED and published their SSSOM rows. Mechanically
+    the PR was sound - SSSOM/record cross-check clean across all 386, no duplicates, invariants
+    A/B1/B2/B3 pass, reconcile in sync, validate-strict 0 errors, id-label 0 errors, docs
+    regenerate exactly. Three things needed fixing before merge. FIRST, the promotion script''s
+    approval criterion is tautological: it checks that the id resolves and that its canonical
+    label equals the label the import already stored for that id, which came from the same
+    OLS lookup that produced the grounding. Measured 386/386 subject_label == object_label,
+    and a dry-run re-run gives 386 verified 0 skipped. A gate that passes 100% of the population
+    it was written for re-derives the identity that created the mapping. Filed as #203. SECOND,
+    the script wrote a NOTE claiming ''no synonym-only, homonym, or out-of-range issue'' into
+    curation_history on all 386 records and into the manifest - a durable machine-readable
+    assertion that a homonym check ran, when no such check exists anywhere in the script.
+    Corrected in the script and in 389 data files to state only what is actually verified,
+    with a pointer to #203. THIRD, one concrete wrong-sense grounding got through: MIM:Sulfonamide
+    -> CHEBI:35358, which is the structural functional-group class with 2976 direct subclasses
+    spanning diuretics and herbicides. The record''s provenance is kgmicrobe.trait:sulfonamide,
+    an antibiotic-resistance trait, so the intended target is almost certainly CHEBI:87228
+    ''sulfonamide antibiotic'' (24 subclasses). Because skos:exactMatch licenses node substitution,
+    publishing it would let kg-microbe collapse sulfonamide-resistance edges onto the functional
+    group. Held at PENDING_REVIEW with its SSSOM row withdrawn rather than substituting my
+    own grounding, since choosing the target is a curation call. Also fixed the manifest''s
+    mapping_status column, which the promotion script never updated and which therefore stated
+    PENDING_REVIEW for 386 records that were MAPPED. Rebase note: #195 was NOT stacked on
+    #194''s second commit as assumed - it branched after #194''s first - so the two conflicted
+    on the manifest and the resolution deliberately keeps both sides, #194''s 17 DEMOTED_IN_ERROR_RESTORE
+    rows and #195''s 386 approvals. Net: 385 SSSOM rows published (386 minus the held one),
+    corpus 2262 MAPPED / 1 PENDING_REVIEW / 626 UNMAPPED / 2 REJECTED. just qc exits 0, 550
+    tests pass, SSSOM in sync.'
