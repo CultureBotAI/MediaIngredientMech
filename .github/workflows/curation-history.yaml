@@ -25,6 +25,12 @@ on:
       - "history/**"
       - "src/mediaingredientmech/schema/history.yaml"
       - ".github/workflows/curation-history.yaml"
+      # The blocking gate below reads these. Without them a PR editing only the
+      # spec list would not fire this workflow at all: it would merge green, and
+      # the next unrelated curation PR would fail the gate and blame the wrong
+      # author — a hole shaped exactly like the bug the gate exists to prevent.
+      - "conf/curation_targets.txt"
+      - "scripts/check_curation_targets.py"
   push:
     branches: [main]
     paths: *trigger_paths
@@ -46,6 +52,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0   # need the merge base to diff against
+
+      # Before `Install uv`: this gate needs only the stdlib and git, so a
+      # dependency-install failure must not mask it.
+      - name: Assert curation-target pathspecs still match something (blocking)
+        run: python3 scripts/check_curation_targets.py
 
       - name: Install uv
         uses: astral-sh/setup-uv@v3
@@ -75,22 +86,28 @@ jobs:
           git fetch --no-tags origin "${{ github.base_ref }}"
           base="origin/${{ github.base_ref }}"
 
-          # Counts mapping artifacts too, not just ingredient YAMLs: a large share
-          # of MIM curation lands in mappings/ rather than in any single record.
-          #
-          # Mind the flat-vs-nested distinction: in a git pathspec `**/` requires
-          # an intervening directory level, so `data/curated/**/*.yaml` matches
-          # NOTHING (that tree is flat) while `data/curated/*.yaml` matches both
-          # collections. data/ingredients/ and history/ ARE nested, so they take
-          # the `**/` form. Getting this wrong makes the check silently count
-          # zero rather than fail (issue #164).
-          #
-          # data/custom/ is matched as a directory: its curation artifact is a
-          # .tsv, so a `*.yaml` pattern there matched nothing at all.
-          changed_targets=$(git diff --name-only "$base"...HEAD \
-            -- 'data/ingredients/**/*.yaml' 'data/curated/*.yaml' \
-               'data/custom' 'mappings/**' | wc -l | tr -d ' ')
-          new_history=$(git diff --name-only --diff-filter=A "$base"...HEAD -- 'history/**/*.yaml' | wc -l | tr -d ' ')
+          # The pathspecs come from conf/curation_targets.txt, which the
+          # check-curation-targets gate also reads — so the list this counts and
+          # the list something asserts cannot drift apart. That mattered:
+          # `data/custom/*.yaml` matched zero tracked files for its whole life
+          # because that directory holds a .tsv, and because this step COUNTS
+          # rather than asserts, it contributed 0 and read exactly like "no
+          # records changed" (#180, #181).
+          # `eval set --` expands the quoted spec list into "$@" and nothing else.
+          # Interpolating $base into an eval string would re-expand it: git allows
+          # `$`, backticks and `(` in refnames, so a branch named `rel/$v2` would
+          # be re-parsed on that second pass (under `set -u`, a hard failure).
+          specs=$(python3 scripts/check_curation_targets.py --print-specs --role targets)
+          eval "set -- $specs"
+          changed_targets=$(git diff --name-only "$base"...HEAD -- "$@" | wc -l | tr -d ' ')
+
+          # Also from the shared list, under the `history` role. An earlier draft
+          # kept this inline, arguing a dead spec here would warn on every PR and
+          # so fail loudly. That was weak: a permanently-warning advisory is noise
+          # that gets tuned out, which this workflow's own header calls out as
+          # training people to route around the check.
+          eval "set -- $(python3 scripts/check_curation_targets.py --print-specs --role history)"
+          new_history=$(git diff --name-only --diff-filter=A "$base"...HEAD -- "$@" | wc -l | tr -d ' ')
 
           {
             echo "## Curation history"

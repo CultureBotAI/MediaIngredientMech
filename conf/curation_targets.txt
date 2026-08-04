@@ -1,0 +1,55 @@
+# Git pathspecs used by the curation-history advisory
+# (.github/workflows/curation-history.yaml).
+#
+# SINGLE SOURCE OF TRUTH: both the workflow and scripts/check_curation_targets.py
+# read this file. They used to be a hand-maintained list inlined in the workflow,
+# which meant nothing could tell whether a spec still matched anything — the job
+# COUNTS matches and never asserts, so a spec matching zero files produces `0`
+# and reads exactly like "this PR changed no records" (issue #181).
+#
+# That was not hypothetical: `data/custom/*.yaml` matched zero tracked files for
+# its whole life, because that directory holds a single .tsv (fixed in #180).
+#
+# FORMAT: `<role>: <pathspec>`, one per line. Blank lines and `#` ignored.
+#   targets — surfaces whose change means "this PR curated something".
+#   history — where provenance records live; counted separately, as ADDED files.
+# `just check-curation-targets` asserts EVERY line still matches, whatever role.
+#
+# MIND THE FLAT-vs-NESTED DISTINCTION. In a git pathspec `**/` requires an
+# intervening directory level, so it does NOT match files sitting directly in the
+# named directory:
+#
+#   data/curated/**/*.yaml   -> 0 files   (that tree is flat)
+#   data/curated/*.yaml      -> 7 files
+#
+# Note the converse is NOT true: a plain `*` DOES cross `/` here, because git
+# pathspecs without `:(glob)` magic use wildmatch without WM_PATHNAME. So
+# `data/ingredients/*.yaml` and `data/ingredients/**/*.yaml` both match all
+# 2,257 records. The flat form is the safe one; `**/` is the form that silently
+# matches nothing. Do NOT "tidy" these into a uniform `**/`.
+#
+# Avoid `:(exclude)` magic here: `git ls-files -- ':(exclude)x'` returns
+# everything-but-x, so such a spec would satisfy the >=1 assertion while
+# contributing nothing meaningful.
+
+# Per-ingredient records.
+targets: data/ingredients/**/*.yaml
+
+# Curated collections — FLAT tree, hence the single star. The directory form
+# would match all 31 tracked files here rather than the 7 YAMLs (10 .md
+# summaries, 3 .csv, 3 .json, and 8 backup files), so a routine regeneration
+# would inflate the count and fire the advisory spuriously.
+targets: data/curated/*.yaml
+
+# Custom curation artifacts — matched as a directory because the file here is a
+# .tsv, not a YAML.
+targets: data/custom
+
+# Mapping products (SSSOM and review TSVs) — a large share of MIM curation lands
+# here rather than in any single ingredient record.
+targets: mappings/**
+
+# Provenance records. Counted as ADDED files, not as changed targets, so this
+# must not join the `targets` role — every history-adding PR would otherwise
+# register as a curation change and inflate the count it is meant to answer.
+history: history/**/*.yaml
