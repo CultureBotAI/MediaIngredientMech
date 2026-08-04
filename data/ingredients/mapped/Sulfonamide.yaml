@@ -10,7 +10,7 @@ ontology_mapping:
     source: microbedecoder
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:sulfonamide; '
 synonyms: []
-mapping_status: MAPPED
+mapping_status: PENDING_REVIEW
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -36,6 +36,20 @@ curation_history:
   previous_status: PENDING_REVIEW
   new_status: MAPPED
   notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
-    canonical label exact-matches the record ontology_label (case-insensitive); no
-    synonym-only, homonym, or out-of-range issue. Promoted PENDING_REVIEW -> MAPPED.'
+    canonical label exact-matches the record ontology_label (case-insensitive). This
+    does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
+    PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-04T07:11:49.634299+00:00'
+  curator: microbedecoder-import-review
+  action: HELD_FOR_REVIEW
+  changes: mapping_status MAPPED -> PENDING_REVIEW; SSSOM row withdrawn
+  notes: 'Wrong-sense grounding. CHEBI:35358 ''sulfonamide'' is the structural functional-group
+    class (2976 direct subclasses, spanning diuretics and herbicides). This record''s
+    provenance is kgmicrobe.trait:sulfonamide, an antibiotic-resistance trait, so
+    the intended target is almost certainly CHEBI:87228 ''sulfonamide antibiotic''
+    (24 subclasses). Publishing skos:exactMatch to the functional group would license
+    kg-microbe to collapse sulfonamide-resistance edges onto it, making furosemide
+    a sibling of sulfamethoxazole under an asserted identity. Held for a curator;
+    see #203.'
   llm_assisted: true

@@ -50,8 +50,9 @@ MANIFEST = ROOT / "mappings" / "microbedecoder_auto_mapped_review.tsv"
 
 OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl"}
 NOTE = ("Reviewed by review-ingredients: id resolves in local OAK adapter and its canonical "
-        "label exact-matches the record ontology_label (case-insensitive); no synonym-only, "
-        "homonym, or out-of-range issue. Promoted PENDING_REVIEW -> MAPPED.")
+        "label exact-matches the record ontology_label (case-insensitive). This does NOT "
+        "check for homonyms or wrong-sense class-level matches (see #203). "
+        "Promoted PENDING_REVIEW -> MAPPED.")
 
 
 def _adapters():
