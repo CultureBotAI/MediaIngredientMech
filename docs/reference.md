@@ -31,36 +31,15 @@ Alias: reference
 
 ## Properties
 
-### Type and Range
+* Range: [String](String.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [SupportingReference](SupportingReference.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [SupportingReference](SupportingReference.md) |
-
-
-
-
-
-
-
-
+* Required: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

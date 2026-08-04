@@ -31,36 +31,15 @@ Alias: physicochemical_roles
 
 ## Properties
 
-### Type and Range
+* Range: [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Multivalued: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

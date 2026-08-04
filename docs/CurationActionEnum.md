@@ -10,6 +10,7 @@ _Documentation-only reference list of well-known curation action labels. The `ac
 URI: [mediaingredientmech:CurationActionEnum](https://w3id.org/mediaingredientmech/CurationActionEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | CREATED | None | Record minted by a curator or import tool |
@@ -45,12 +46,8 @@ URI: [mediaingredientmech:CurationActionEnum](https://w3id.org/mediaingredientme
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

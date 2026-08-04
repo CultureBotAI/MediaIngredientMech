@@ -17,8 +17,8 @@ Alias: cas_rn
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ChemicalProperties](ChemicalProperties.md) | Chemical structure and properties for CHEBI-mapped ingredients |  no  |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [ChemicalProperties](ChemicalProperties.md) | Chemical structure and properties for CHEBI-mapped ingredients |  no  |
 
 
 
@@ -27,28 +27,13 @@ Alias: cas_rn
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [ChemicalProperties](ChemicalProperties.md), [MappingEvidence](MappingEvidence.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-
-
-
-
-
-
+* Range: [String](String.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

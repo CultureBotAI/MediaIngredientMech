@@ -43,6 +43,7 @@ URI: [mediaingredientmech:ChemicalProperties](https://w3id.org/mediaingredientme
 
 <!-- no inheritance hierarchy -->
 
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -72,12 +73,8 @@ URI: [mediaingredientmech:ChemicalProperties](https://w3id.org/mediaingredientme
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

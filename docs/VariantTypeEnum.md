@@ -10,6 +10,7 @@ _Classification of ingredient variant in hierarchy. Indicates the type of relati
 URI: [mediaingredientmech:VariantTypeEnum](https://w3id.org/mediaingredientmech/VariantTypeEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | BASE_CHEMICAL | None | Parent/base form of chemical in hierarchy |
@@ -35,12 +36,8 @@ URI: [mediaingredientmech:VariantTypeEnum](https://w3id.org/mediaingredientmech/
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

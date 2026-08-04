@@ -31,35 +31,13 @@ Alias: match_level
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [MatchLevelEnum](MatchLevelEnum.md) |
-| Domain Of | [OntologyMapping](OntologyMapping.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [OntologyMapping](OntologyMapping.md) |
-
-
-
-
-
-
-
-
+* Range: [MatchLevelEnum](MatchLevelEnum.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

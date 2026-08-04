@@ -31,36 +31,15 @@ Alias: curation_history
 
 ## Properties
 
-### Type and Range
+* Range: [CurationEvent](CurationEvent.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [CurationEvent](CurationEvent.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Multivalued: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

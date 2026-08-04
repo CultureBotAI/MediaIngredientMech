@@ -31,36 +31,15 @@ Alias: synonyms
 
 ## Properties
 
-### Type and Range
+* Range: [IngredientSynonym](IngredientSynonym.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [IngredientSynonym](IngredientSynonym.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Multivalued: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

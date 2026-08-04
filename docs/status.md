@@ -26,35 +26,13 @@ Alias: status
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [DiscussionStatusEnum](DiscussionStatusEnum.md) |
-| Domain Of | [Discussion](Discussion.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Discussion](Discussion.md) |
-
-
-
-
-
-
-
-
+* Range: [DiscussionStatusEnum](DiscussionStatusEnum.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

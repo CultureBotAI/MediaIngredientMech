@@ -31,35 +31,13 @@ Alias: generation_date
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Datetime](Datetime.md) |
-| Domain Of | [IngredientCollection](IngredientCollection.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientCollection](IngredientCollection.md) |
-
-
-
-
-
-
-
-
+* Range: [Datetime](Datetime.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

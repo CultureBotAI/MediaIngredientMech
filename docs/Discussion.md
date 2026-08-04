@@ -89,6 +89,7 @@ URI: [mediaingredientmech:Discussion](https://w3id.org/mediaingredientmech/Discu
 
 <!-- no inheritance hierarchy -->
 
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -123,12 +124,8 @@ URI: [mediaingredientmech:Discussion](https://w3id.org/mediaingredientmech/Discu
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

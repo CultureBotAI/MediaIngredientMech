@@ -10,6 +10,7 @@ _Classification of ingredient entry type_
 URI: [mediaingredientmech:IngredientTypeEnum](https://w3id.org/mediaingredientmech/IngredientTypeEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | SINGLE_INGREDIENT | None | Pure chemical compound or single ingredient (e |
@@ -30,12 +31,8 @@ URI: [mediaingredientmech:IngredientTypeEnum](https://w3id.org/mediaingredientme
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

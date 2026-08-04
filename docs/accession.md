@@ -31,36 +31,15 @@ Alias: accession
 
 ## Properties
 
-### Type and Range
+* Range: [String](String.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [Dataset](Dataset.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Recommended | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Dataset](Dataset.md) |
-
-
-
-
-
-
-
-
+* Recommended: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

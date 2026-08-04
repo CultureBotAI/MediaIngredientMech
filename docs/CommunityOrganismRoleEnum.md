@@ -10,6 +10,7 @@ _Role an organism plays in a microbial community (formerly `CellularRoleEnum`; r
 URI: [mediaingredientmech:CommunityOrganismRoleEnum](https://w3id.org/mediaingredientmech/CommunityOrganismRoleEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | PRIMARY_DEGRADER | None | Main organism degrading target compound(s) |
@@ -36,12 +37,8 @@ URI: [mediaingredientmech:CommunityOrganismRoleEnum](https://w3id.org/mediaingre
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

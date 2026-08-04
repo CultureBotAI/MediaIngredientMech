@@ -47,6 +47,7 @@ URI: [mediaingredientmech:ProposedExperiment](https://w3id.org/mediaingredientme
 
 <!-- no inheritance hierarchy -->
 
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -78,12 +79,8 @@ URI: [mediaingredientmech:ProposedExperiment](https://w3id.org/mediaingredientme
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

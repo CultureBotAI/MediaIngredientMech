@@ -31,35 +31,13 @@ Alias: culturemech_medium_name
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Range: [String](String.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

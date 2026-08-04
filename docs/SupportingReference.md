@@ -50,6 +50,7 @@ URI: [mediaingredientmech:SupportingReference](https://w3id.org/mediaingredientm
 
 <!-- no inheritance hierarchy -->
 
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -79,12 +80,8 @@ URI: [mediaingredientmech:SupportingReference](https://w3id.org/mediaingredientm
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

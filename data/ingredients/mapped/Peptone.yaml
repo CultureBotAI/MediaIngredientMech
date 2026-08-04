@@ -34,6 +34,18 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-04T23:27:25.090680+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed UNMAPPED_0718 'Peptones' as a RAW_TEXT synonym -- plural of the
+    already-mapped peptone record. No new SSSOM row; MICRO:0000178 is already mapped.
+  llm_assisted: true
+- timestamp: '2026-08-04T23:27:25.090680+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed UNMAPPED_0835 'Peptone (0.01 %' as a RAW_TEXT synonym -- concentration-truncated
+    duplicate of peptone. No new SSSOM row; MICRO:0000178 is already mapped.
+  llm_assisted: true
 ingredient_type: UNDEFINED_MIXTURE
 occurrence_statistics:
   total_occurrences: 0
@@ -45,3 +57,10 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+synonyms:
+- synonym_text: Peptones
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+- synonym_text: Peptone (0.01 %
+  synonym_type: RAW_TEXT
+  source: microbedecoder

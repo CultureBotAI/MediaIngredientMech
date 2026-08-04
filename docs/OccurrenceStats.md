@@ -35,6 +35,7 @@ URI: [mediaingredientmech:OccurrenceStats](https://w3id.org/mediaingredientmech/
 
 <!-- no inheritance hierarchy -->
 
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -60,12 +61,8 @@ URI: [mediaingredientmech:OccurrenceStats](https://w3id.org/mediaingredientmech/
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

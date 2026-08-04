@@ -9,27 +9,20 @@ _A time object represents a (local) time of day, independent of any particular d
 
 URI: [xsd:time](http://www.w3.org/2001/XMLSchema#time)
 
-## Type Properties
+* [base](https://w3id.org/linkml/base): XSDTime
 
-| Property | Value |
-| --- | --- |
-| Base | `XSDTime` |
-| Type URI | [xsd:time](http://www.w3.org/2001/XMLSchema#time) |
-| Representation | `str` |
+* [uri](https://w3id.org/linkml/uri): xsd:time
+
+* [repr](https://w3id.org/linkml/repr): str
 
 
 
 
-
-
-## Notes
-
-* URI is dateTime because OWL reasoners do not work with straight date or time
-* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "time".
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

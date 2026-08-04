@@ -31,36 +31,15 @@ Alias: merged
 
 ## Properties
 
-### Type and Range
+* Range: [String](String.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Multivalued: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

@@ -17,8 +17,8 @@ Alias: metabolic_context
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |  no  |
 | [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Assignment of a cellular-metabolic facet role (what the ingredient does insid... |  no  |
+| [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |  no  |
 
 
 
@@ -27,28 +27,13 @@ Alias: metabolic_context
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md), [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-
-
-
-
-
-
+* Range: [String](String.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

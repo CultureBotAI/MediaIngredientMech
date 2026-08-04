@@ -10,6 +10,7 @@ _Type of reference or citation_
 URI: [mediaingredientmech:CitationTypeEnum](https://w3id.org/mediaingredientmech/CitationTypeEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | PEER_REVIEWED_PUBLICATION | None | Peer-reviewed journal article or conference paper |
@@ -32,12 +33,8 @@ URI: [mediaingredientmech:CitationTypeEnum](https://w3id.org/mediaingredientmech
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

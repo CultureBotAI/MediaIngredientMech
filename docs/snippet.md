@@ -17,8 +17,8 @@ Alias: snippet
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
 
 
 
@@ -27,28 +27,13 @@ Alias: snippet
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [MappingEvidence](MappingEvidence.md), [SupportingReference](SupportingReference.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-
-
-
-
-
-
+* Range: [String](String.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

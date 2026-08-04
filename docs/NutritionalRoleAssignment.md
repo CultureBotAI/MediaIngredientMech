@@ -53,6 +53,7 @@ URI: [mediaingredientmech:NutritionalRoleAssignment](https://w3id.org/mediaingre
 
 <!-- no inheritance hierarchy -->
 
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -78,12 +79,8 @@ URI: [mediaingredientmech:NutritionalRoleAssignment](https://w3id.org/mediaingre
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

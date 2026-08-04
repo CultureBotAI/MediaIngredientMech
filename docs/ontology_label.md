@@ -31,37 +31,15 @@ Alias: ontology_label
 
 ## Properties
 
-### Type and Range
+* Range: [String](String.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [OntologyMapping](OntologyMapping.md) |
-| Slot URI | [rdfs:label](http://www.w3.org/2000/01/rdf-schema#label) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [OntologyMapping](OntologyMapping.md) |
-
-
-
-
-
-
-
-
+* Required: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

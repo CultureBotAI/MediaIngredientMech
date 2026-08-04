@@ -31,43 +31,17 @@ Alias: environment_term
 
 ## Properties
 
-### Type and Range
+* Range: [String](String.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [EnvironmentContext](EnvironmentContext.md) |
+* Required: True
 
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [EnvironmentContext](EnvironmentContext.md) |
-
-
-### Value Constraints
-
-| Property | Value |
-| --- | --- |
-| Regex Pattern | `^ENVO:\d{7,8}$` |
-
-
-
-
-
-
-
-
+* Regex pattern: `^ENVO:\d{7,8}$`
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

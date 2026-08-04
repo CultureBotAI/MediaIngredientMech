@@ -31,35 +31,13 @@ Alias: excerpt
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [RoleCitation](RoleCitation.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [RoleCitation](RoleCitation.md) |
-
-
-
-
-
-
-
-
+* Range: [String](String.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

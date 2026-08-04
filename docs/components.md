@@ -31,36 +31,15 @@ Alias: components
 
 ## Properties
 
-### Type and Range
+* Range: [StockComponent](StockComponent.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [StockComponent](StockComponent.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Multivalued: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

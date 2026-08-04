@@ -31,35 +31,13 @@ Alias: solution_type
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [SolutionTypeEnum](SolutionTypeEnum.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Range: [SolutionTypeEnum](SolutionTypeEnum.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

@@ -10,6 +10,7 @@ _Chemical or physical function an ingredient performs in the medium, independent
 URI: [mediaingredientmech:PhysicochemicalRoleEnum](https://w3id.org/mediaingredientmech/PhysicochemicalRoleEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | BUFFER | CHEBI:35225 | Maintains stable pH via a conjugate acid–base system |
@@ -32,12 +33,8 @@ URI: [mediaingredientmech:PhysicochemicalRoleEnum](https://w3id.org/mediaingredi
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

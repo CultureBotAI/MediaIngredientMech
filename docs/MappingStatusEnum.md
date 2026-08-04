@@ -5,6 +5,7 @@
 URI: [mediaingredientmech:MappingStatusEnum](https://w3id.org/mediaingredientmech/MappingStatusEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | MAPPED | None | Has valid ontology mapping |
@@ -30,12 +31,8 @@ URI: [mediaingredientmech:MappingStatusEnum](https://w3id.org/mediaingredientmec
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

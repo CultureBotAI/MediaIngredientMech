@@ -31,45 +31,13 @@ Alias: ontology_mapping
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [OntologyMapping](OntologyMapping.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-<details>
-<summary>Advanced Properties</summary>
-**Term Bindings:**
-- EnumBinding({
-  'obligation_level': ObligationLevelEnum(text='REQUIRED', description='The metadata element is required to be present in the model'),
-  'binds_value_of': 'ontology_id'
-})
-
-</details>
-
-
-
-
-
-
-
+* Range: [OntologyMapping](OntologyMapping.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

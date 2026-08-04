@@ -31,36 +31,15 @@ Alias: ontology_source
 
 ## Properties
 
-### Type and Range
+* Range: [OntologySourceEnum](OntologySourceEnum.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [OntologySourceEnum](OntologySourceEnum.md) |
-| Domain Of | [OntologyMapping](OntologyMapping.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [OntologyMapping](OntologyMapping.md) |
-
-
-
-
-
-
-
-
+* Required: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

@@ -236,12 +236,6 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 <!-- no inheritance hierarchy -->
 
-## Class Properties
-
-| Property | Value |
-| --- | --- |
-| Tree Root | Yes |
-
 
 ## Slots
 
@@ -292,12 +286,8 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

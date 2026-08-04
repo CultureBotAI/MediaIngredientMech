@@ -84,6 +84,7 @@ URI: [mediaingredientmech:Dataset](https://w3id.org/mediaingredientmech/Dataset)
 
 <!-- no inheritance hierarchy -->
 
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -120,12 +121,8 @@ URI: [mediaingredientmech:Dataset](https://w3id.org/mediaingredientmech/Dataset)
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

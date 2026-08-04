@@ -31,36 +31,15 @@ Alias: discussions
 
 ## Properties
 
-### Type and Range
+* Range: [Discussion](Discussion.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [Discussion](Discussion.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Multivalued: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

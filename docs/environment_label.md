@@ -31,36 +31,13 @@ Alias: environment_label
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [String](String.md) |
-| Domain Of | [EnvironmentContext](EnvironmentContext.md) |
-| Slot URI | [rdfs:label](http://www.w3.org/2000/01/rdf-schema#label) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [EnvironmentContext](EnvironmentContext.md) |
-
-
-
-
-
-
-
-
+* Range: [String](String.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

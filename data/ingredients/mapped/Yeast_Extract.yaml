@@ -113,6 +113,9 @@ synonyms:
 - synonym_text: Fresh Baker's Yeast Extract
   synonym_type: RELATED_SYNONYM
   source: manual
+- synonym_text: Yeast Extract (0.01 %
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 5
@@ -155,6 +158,13 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-04T23:27:25.090680+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed UNMAPPED_0700 'Yeast Extract (0.01 %' as a RAW_TEXT synonym --
+    concentration-truncated duplicate of yeast extract. No new SSSOM row; FOODON:03315426
+    is already mapped.
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 3'
 chemical_properties:
   cas_rn: 8013-01-2

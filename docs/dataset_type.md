@@ -26,35 +26,13 @@ Alias: dataset_type
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [DatasetTypeEnum](DatasetTypeEnum.md) |
-| Domain Of | [Dataset](Dataset.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Dataset](Dataset.md) |
-
-
-
-
-
-
-
-
+* Range: [DatasetTypeEnum](DatasetTypeEnum.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

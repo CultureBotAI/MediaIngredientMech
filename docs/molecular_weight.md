@@ -31,35 +31,13 @@ Alias: molecular_weight
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Float](Float.md) |
-| Domain Of | [ChemicalProperties](ChemicalProperties.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [ChemicalProperties](ChemicalProperties.md) |
-
-
-
-
-
-
-
-
+* Range: [Float](Float.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

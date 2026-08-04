@@ -31,46 +31,15 @@ Alias: environmental_context
 
 ## Properties
 
-### Type and Range
+* Range: [EnvironmentContext](EnvironmentContext.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [EnvironmentContext](EnvironmentContext.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-<details>
-<summary>Advanced Properties</summary>
-**Term Bindings:**
-- EnumBinding({
-  'obligation_level': ObligationLevelEnum(text='REQUIRED', description='The metadata element is required to be present in the model'),
-  'binds_value_of': 'environment_term'
-})
-
-</details>
-
-
-
-
-
-
-
+* Multivalued: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

@@ -31,36 +31,15 @@ Alias: evidence_type
 
 ## Properties
 
-### Type and Range
+* Range: [EvidenceTypeEnum](EvidenceTypeEnum.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [EvidenceTypeEnum](EvidenceTypeEnum.md) |
-| Domain Of | [MappingEvidence](MappingEvidence.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [MappingEvidence](MappingEvidence.md) |
-
-
-
-
-
-
-
-
+* Required: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

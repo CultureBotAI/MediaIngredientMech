@@ -31,35 +31,13 @@ Alias: ingredient_type
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [IngredientTypeEnum](IngredientTypeEnum.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Range: [IngredientTypeEnum](IngredientTypeEnum.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

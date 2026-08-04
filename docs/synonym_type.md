@@ -31,35 +31,13 @@ Alias: synonym_type
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [SynonymTypeEnum](SynonymTypeEnum.md) |
-| Domain Of | [IngredientSynonym](IngredientSynonym.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientSynonym](IngredientSynonym.md) |
-
-
-
-
-
-
-
-
+* Range: [SynonymTypeEnum](SynonymTypeEnum.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

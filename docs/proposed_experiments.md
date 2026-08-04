@@ -31,36 +31,15 @@ Alias: proposed_experiments
 
 ## Properties
 
-### Type and Range
+* Range: [ProposedExperiment](ProposedExperiment.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [ProposedExperiment](ProposedExperiment.md) |
-| Domain Of | [Discussion](Discussion.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Discussion](Discussion.md) |
-
-
-
-
-
-
-
-
+* Multivalued: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

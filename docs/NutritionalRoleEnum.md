@@ -10,6 +10,7 @@ _What element or macronutrient an ingredient supplies to the medium. One of thre
 URI: [mediaingredientmech:NutritionalRoleEnum](https://w3id.org/mediaingredientmech/NutritionalRoleEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | CARBON_SOURCE | None | Provides organic carbon for biosynthesis and energy |
@@ -33,12 +34,8 @@ URI: [mediaingredientmech:NutritionalRoleEnum](https://w3id.org/mediaingredientm
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

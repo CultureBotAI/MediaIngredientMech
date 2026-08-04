@@ -50,6 +50,7 @@ URI: [mediaingredientmech:RoleCitation](https://w3id.org/mediaingredientmech/Rol
 
 <!-- no inheritance hierarchy -->
 
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -81,12 +82,8 @@ URI: [mediaingredientmech:RoleCitation](https://w3id.org/mediaingredientmech/Rol
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

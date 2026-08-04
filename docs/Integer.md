@@ -9,25 +9,19 @@ _An integer_
 
 URI: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
-## Type Properties
+* [base](https://w3id.org/linkml/base): int
 
-| Property | Value |
-| --- | --- |
-| Base | `int` |
-| Type URI | [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) |
+* [uri](https://w3id.org/linkml/uri): xsd:integer
 
 
 
 
 
-
-## Notes
-
-* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "integer".
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

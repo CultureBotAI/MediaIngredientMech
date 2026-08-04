@@ -9,13 +9,12 @@ _A URI or CURIE that represents an object in the model._
 
 URI: [shex:iri](http://www.w3.org/ns/shex#iri)
 
-## Type Properties
+* [base](https://w3id.org/linkml/base): ElementIdentifier
 
-| Property | Value |
-| --- | --- |
-| Base | `ElementIdentifier` |
-| Type URI | [shex:iri](http://www.w3.org/ns/shex#iri) |
-| Representation | `str` |
+* [uri](https://w3id.org/linkml/uri): shex:iri
+
+* [repr](https://w3id.org/linkml/repr): str
+
 
 
 
@@ -26,13 +25,8 @@ URI: [shex:iri](http://www.w3.org/ns/shex#iri)
 
 * Used for inheritance and type checking
 
-## Notes
-
-* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "objectidentifier".
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

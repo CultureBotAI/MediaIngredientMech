@@ -10,6 +10,7 @@ _How a SupportingReference bears on the claim it is attached to (mirrors the sup
 URI: [mediaingredientmech:SupportLevelEnum](https://w3id.org/mediaingredientmech/SupportLevelEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | SUPPORT | None | The source supports the claim |
@@ -25,12 +26,8 @@ URI: [mediaingredientmech:SupportLevelEnum](https://w3id.org/mediaingredientmech
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

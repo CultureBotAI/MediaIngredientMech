@@ -9,26 +9,20 @@ _A URI, CURIE or BNODE that represents a node in a model._
 
 URI: [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral)
 
-## Type Properties
+* [base](https://w3id.org/linkml/base): NodeIdentifier
 
-| Property | Value |
-| --- | --- |
-| Base | `NodeIdentifier` |
-| Type URI | [shex:nonLiteral](http://www.w3.org/ns/shex#nonLiteral) |
-| Representation | `str` |
+* [uri](https://w3id.org/linkml/uri): shex:nonLiteral
+
+* [repr](https://w3id.org/linkml/repr): str
 
 
 
 
-
-
-## Notes
-
-* If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "nodeidentifier".
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

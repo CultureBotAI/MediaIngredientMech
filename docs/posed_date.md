@@ -26,35 +26,13 @@ Alias: posed_date
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Date](Date.md) |
-| Domain Of | [Discussion](Discussion.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [Discussion](Discussion.md) |
-
-
-
-
-
-
-
-
+* Range: [Date](Date.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

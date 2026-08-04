@@ -10,6 +10,7 @@ _Type of solution for mixture ingredients (stock solutions, pre-mixes)_
 URI: [mediaingredientmech:SolutionTypeEnum](https://w3id.org/mediaingredientmech/SolutionTypeEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | VITAMIN_MIX | None | Pre-mixed vitamin solution (e |
@@ -35,12 +36,8 @@ URI: [mediaingredientmech:SolutionTypeEnum](https://w3id.org/mediaingredientmech
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

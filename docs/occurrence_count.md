@@ -31,35 +31,13 @@ Alias: occurrence_count
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [Integer](Integer.md) |
-| Domain Of | [IngredientSynonym](IngredientSynonym.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientSynonym](IngredientSynonym.md) |
-
-
-
-
-
-
-
-
+* Range: [Integer](Integer.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

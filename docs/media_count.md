@@ -31,36 +31,15 @@ Alias: media_count
 
 ## Properties
 
-### Type and Range
+* Range: [Integer](Integer.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [Integer](Integer.md) |
-| Domain Of | [OccurrenceStats](OccurrenceStats.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [OccurrenceStats](OccurrenceStats.md) |
-
-
-
-
-
-
-
-
+* Required: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

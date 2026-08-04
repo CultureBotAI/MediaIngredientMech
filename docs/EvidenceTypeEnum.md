@@ -5,6 +5,7 @@
 URI: [mediaingredientmech:EvidenceTypeEnum](https://w3id.org/mediaingredientmech/EvidenceTypeEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | DATABASE_MATCH | None | Direct match in ontology database |
@@ -32,12 +33,8 @@ URI: [mediaingredientmech:EvidenceTypeEnum](https://w3id.org/mediaingredientmech
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

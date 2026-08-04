@@ -55,6 +55,7 @@ URI: [mediaingredientmech:CellularMetabolicRoleAssignment](https://w3id.org/medi
 
 <!-- no inheritance hierarchy -->
 
+
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -81,12 +82,8 @@ URI: [mediaingredientmech:CellularMetabolicRoleAssignment](https://w3id.org/medi
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

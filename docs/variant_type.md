@@ -31,35 +31,13 @@ Alias: variant_type
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [VariantTypeEnum](VariantTypeEnum.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Range: [VariantTypeEnum](VariantTypeEnum.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

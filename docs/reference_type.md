@@ -31,35 +31,13 @@ Alias: reference_type
 
 ## Properties
 
-### Type and Range
-
-| Property | Value |
-| --- | --- |
-| Range | [CitationTypeEnum](CitationTypeEnum.md) |
-| Domain Of | [RoleCitation](RoleCitation.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [RoleCitation](RoleCitation.md) |
-
-
-
-
-
-
-
-
+* Range: [CitationTypeEnum](CitationTypeEnum.md)
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

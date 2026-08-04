@@ -31,36 +31,15 @@ Alias: timestamp
 
 ## Properties
 
-### Type and Range
+* Range: [Datetime](Datetime.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [Datetime](Datetime.md) |
-| Domain Of | [CurationEvent](CurationEvent.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Required | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [CurationEvent](CurationEvent.md) |
-
-
-
-
-
-
-
-
+* Required: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

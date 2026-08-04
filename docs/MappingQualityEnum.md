@@ -5,6 +5,7 @@
 URI: [mediaingredientmech:MappingQualityEnum](https://w3id.org/mediaingredientmech/MappingQualityEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | EXACT_MATCH | None | Direct exact match to ontology term |
@@ -33,12 +34,8 @@ URI: [mediaingredientmech:MappingQualityEnum](https://w3id.org/mediaingredientme
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

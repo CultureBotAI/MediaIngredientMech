@@ -5,6 +5,7 @@
 URI: [mediaingredientmech:MatchLevelEnum](https://w3id.org/mediaingredientmech/MatchLevelEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | EXACT | None | Direct string match with no normalization |
@@ -27,12 +28,8 @@ URI: [mediaingredientmech:MatchLevelEnum](https://w3id.org/mediaingredientmech/M
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 

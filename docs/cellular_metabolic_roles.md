@@ -31,36 +31,15 @@ Alias: cellular_metabolic_roles
 
 ## Properties
 
-### Type and Range
+* Range: [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md)
 
-| Property | Value |
-| --- | --- |
-| Range | [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) |
-| Domain Of | [IngredientRecord](IngredientRecord.md) |
-
-### Cardinality and Requirements
-
-| Property | Value |
-| --- | --- |
-| Multivalued | Yes |
-### Slot Characteristics
-
-| Property | Value |
-| --- | --- |
-| Owner | [IngredientRecord](IngredientRecord.md) |
-
-
-
-
-
-
-
-
+* Multivalued: True
 
 
 
 
 ## Identifier and Mapping Information
+
 
 
 

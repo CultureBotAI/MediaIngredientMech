@@ -5,6 +5,7 @@
 URI: [mediaingredientmech:OntologySourceEnum](https://w3id.org/mediaingredientmech/OntologySourceEnum)
 
 ## Permissible Values
+
 | Value | Meaning | Description |
 | --- | --- | --- |
 | CHEBI | None | Chemical Entities of Biological Interest |
@@ -33,12 +34,8 @@ URI: [mediaingredientmech:OntologySourceEnum](https://w3id.org/mediaingredientme
 
 
 
-
-
-
-
-
 ## Identifier and Mapping Information
+
 
 
 
