@@ -1,0 +1,53 @@
+history_version: 1
+target:
+  kind: infrastructure
+  path: scripts/check_chebi_currency.py
+  slug: chebi-currency
+session:
+  id: 2026-08-04T055436Z-claude-code-32d61a
+  timestamp: '2026-08-04T05:54:36Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/197
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - scripts
+  - justfile
+  - skills
+  summary: Detect when the local ChEBI build falls behind kg-microbe's release
+  details: 'Root-caused #197. MIM grounds against a local semsql ChEBI (~/.data/oaklib/chebi.db)
+    and publishes to kg-microbe. Measured: local build is ChEBI release 252, kg-microbe''s
+    data/raw/chebi.owl.gz is 253. Terms minted in 253 do not resolve locally, so validate-products
+    reports them ID_OUT_OF_RANGE - wording that says ''a foreign identifier wearing an OBO
+    prefix'' and invites deleting a valid mapping, which is exactly what happened to six real
+    terms in #193. The investigation corrected two earlier conclusions of mine. First, the
+    accession ceiling is NOT the discriminator: PR #195 promotes 15 ids above CHEBI:300000
+    and validate-products passes on that branch, because those ids resolve locally. The rule
+    fires only when an id is BOTH above the ceiling AND unresolvable. Second, of the 17 records
+    I demoted in #193, only SIX are genuinely absent from the local build (CHEBI:748901 netilmicin,
+    753395 lysostaphin, 756054 carbomycin, 759086 polymyxin B, 759883 colistin sulfate, 759884
+    gentamicin - all above the local build''s max accession of 747618). The other ELEVEN resolve
+    locally with correct labels (cefazolin, cefepime, cefixime, cefotiam, ertapenem, imipenem,
+    anisomycin, 1-chlorobutane, 1-chloropropane, 4-nitrophenyl alpha-D-galactoside, gamma-cyclodextrin)
+    and would have passed the gate; I demoted them on ''above the ceiling'' when the real
+    criterion is ''above the ceiling and unresolvable''. That over-demotion is recorded in
+    #198. Implemented scripts/check_chebi_currency.py comparing owl:versionInfo on obo:chebi.owl
+    in the local sqlite against the versionIRI in kg-microbe''s chebi.owl.gz, plus ''just
+    check-chebi-currency'' and ''just refresh-chebi''. Deliberately advisory and local-only
+    rather than a CI gate: the OAK cache is a 3.7 GB developer artifact CI does not have,
+    and a gate that cannot run is a gate people learn to skip. Wired into the next-tasks Step
+    1 reconcile - the periodic surface requested - with an explicit instruction to run it
+    BEFORE acting on any ID_OUT_OF_RANGE finding, since the fix may be ''just refresh-chebi''
+    rather than a curation decision. A regex bug found during testing is pinned by its own
+    test: the ChEBI header carries bare ''obo/chebi/2'', ''/3'' and ''/1'' in namespace declarations
+    before the real versionIRI, so a loose pattern silently reported release 2; it is now
+    anchored on versionIRI and the full NNN/chebi.owl form. Verified: 561 tests pass including
+    11 new, just qc exits 0 (with CLAW_SRC set, since a scratchpad worktree cannot resolve
+    the default ../culturebotai-claw).'
