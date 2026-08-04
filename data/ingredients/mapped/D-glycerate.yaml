@@ -1,0 +1,38 @@
+identifier: CHEBI:16659
+preferred_term: D-glycerate
+synonyms:
+- synonym_text: D-glycerate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glycerate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: microbedecoder-residual-grounding
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: Promoted UNMAPPED_0728 -> CHEBI:16659 "D-glycerate" (EXACT_MATCH) via normalize+exact-CI
+    (matched 'D-glycerate'); the exact-only import missed it. SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glycerate); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:16659
+  ontology_label: D-glycerate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder-residual-grounding
+    notes: microbedecoder residual; exact match to CHEBI:16659 via 'D-glycerate'.
+      Import did exact-label-only and missed this.

@@ -4,7 +4,7 @@ synonyms:
 - synonym_text: H2+tetramethylammonium
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: UNMAPPED
+mapping_status: NEEDS_EXPERT
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -16,5 +16,13 @@ curation_history:
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: microbedecoder-residual-grounding
+  action: FLAGGED_NEEDS_EXPERT
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+  changes: Multi-component blend / named complex medium — cannot ground to a single
+    ontology term; excluded from single-term deep-research grounding.
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_tetramethylammonium);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.

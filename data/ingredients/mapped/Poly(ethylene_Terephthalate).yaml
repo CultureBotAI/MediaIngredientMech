@@ -1,0 +1,39 @@
+identifier: CHEBI:53259
+preferred_term: Poly(ethylene Terephthalate)
+synonyms:
+- synonym_text: Poly(ethylene Terephthalate)
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:poly_ethylene_terephthalate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: microbedecoder-residual-grounding
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: Promoted UNMAPPED_0837 -> CHEBI:53259 "poly(ethylene terephthalate) macromolecule"
+    (SYNONYM_MATCH) via normalize+exact-CI (matched 'Poly(ethylene Terephthalate)');
+    the exact-only import missed it. SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:poly_ethylene_terephthalate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:53259
+  ontology_label: poly(ethylene terephthalate) macromolecule
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder-residual-grounding
+    notes: microbedecoder residual; exact match to CHEBI:53259 via 'Poly(ethylene
+      Terephthalate)'. Import did exact-label-only and missed this.

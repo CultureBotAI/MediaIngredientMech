@@ -1,0 +1,39 @@
+identifier: CHEBI:30295
+preferred_term: Antimonate
+synonyms:
+- synonym_text: Antimonate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:antimonate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: microbedecoder-residual-grounding
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: Promoted UNMAPPED_0797 -> CHEBI:30295 "antimonate(3-)" (SYNONYM_MATCH)
+    via normalize+exact-CI (matched 'Antimonate'); the exact-only import missed it.
+    SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:antimonate); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:30295
+  ontology_label: antimonate(3-)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder-residual-grounding
+    notes: microbedecoder residual; exact match to CHEBI:30295 via 'Antimonate'. Import
+      did exact-label-only and missed this.

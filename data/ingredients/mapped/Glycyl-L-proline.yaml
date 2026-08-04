@@ -1,0 +1,38 @@
+identifier: CHEBI:70744
+preferred_term: Glycyl-L-proline
+synonyms:
+- synonym_text: Glycyl-L-proline
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_proline);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: microbedecoder-residual-grounding
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: Promoted UNMAPPED_0684 -> CHEBI:70744 "Gly-Pro" (SYNONYM_MATCH) via normalize+exact-CI
+    (matched 'Glycyl-L-proline'); the exact-only import missed it. SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_proline);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:70744
+  ontology_label: Gly-Pro
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: microbedecoder-residual-grounding
+    notes: microbedecoder residual; exact match to CHEBI:70744 via 'Glycyl-L-proline'.
+      Import did exact-label-only and missed this.

@@ -1,10 +1,41 @@
 # Mapped Ingredients
 
-Generated: 2026-08-04T04:42:47.153532+00:00
-Total: 2265 ingredients
+Generated: 2026-08-04T06:07:25.277954+00:00
+Total: 2296 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:471744 | CHEBI:471744 | Imipenem | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:495056 | CHEBI:495056 | Gamma-cyclodextrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:404903 | CHEBI:404903 | Ertapenem | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:355510 | CHEBI:355510 | Cefotiam | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:472657 | CHEBI:472657 | Cefixime | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:478164 | CHEBI:478164 | Cefepime | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:474053 | CHEBI:474053 | Cefazolin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:546840 | CHEBI:546840 | 4-nitrophenyl Alpha-D-galactoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:747004 | CHEBI:747004 | 1-chloropropane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:747005 | CHEBI:747005 | 1-chlorobutane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:338412 | CHEBI:338412 | (-)-anisomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15987 | CHEBI:15987 | Trithionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:18212 | CHEBI:18212 | Selenite | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:18154 | CHEBI:18154 | Polysaccharides | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:53259 | CHEBI:53259 | Poly(ethylene Terephthalate) | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29991 | CHEBI:29991 | L-aspartate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:73757 | CHEBI:73757 | L-alanylglycine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:63961 | CHEBI:63961 | Glycylglycylglycine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:70744 | CHEBI:70744 | Glycyl-L-proline | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29987 | CHEBI:29987 | Glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:16659 | CHEBI:16659 | D-glycerate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:30612 | CHEBI:30612 | D-glucarate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29994 | CHEBI:29994 | D-aspartate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:3122 | CHEBI:3122 | Bis-4-nitrophenyl Phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:30295 | CHEBI:30295 | Antimonate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90148 | CHEBI:90148 | 4-nitrophenyl Beta-D-xylopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90259 | CHEBI:90259 | 4-nitrophenyl Beta-D-glucopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:91122 | CHEBI:91122 | 4-nitrophenyl Alpha-D-glucopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:17256 | CHEBI:17256 | 2-deoxyadenosine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16567 | CHEBI:16567 | 2-aminobenzoate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:62318 | CHEBI:62318 | (2)-D-lyxose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:149425 | CHEBI:149425 | NH4MgPO | MAPPED | CHEBI | SYNONYM_MATCH | 3 |
 | cas:13446-18-9 | CHEBI:64736 | magnesium nitrate hexahydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:229630 | CHEBI:229630 | NH42CO3 | MAPPED | CHEBI | EXACT_MATCH | 0 |
