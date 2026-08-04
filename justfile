@@ -195,15 +195,34 @@ check-chebi-currency *args:
 refresh-chebi:
     #!/usr/bin/env bash
     set -euo pipefail
-    # OAK caches sqlite:obo:chebi under ~/.data/oaklib/. Removing it forces a
-    # fresh download on next use. ~760 MB compressed, ~3.7 GB on disk, so this is
-    # deliberately a separate opt-in recipe rather than part of any gate.
-    db="${OAK_CHEBI_DB:-$HOME/.data/oaklib/chebi.db}"
-    echo "Removing $db and its .gz so OAK re-downloads the current release."
+    # Check FIRST. The semsql build MIM consumes lags ChEBI itself, so being
+    # behind often cannot be fixed by downloading — at the time of writing the
+    # local and published builds are both 252 while kg-microbe is on 253. This
+    # recipe used to delete 4.7 GB to discover that.
+    if ! uv run python scripts/check_chebi_currency.py --strict; then
+      echo ""
+      echo "Refresh anyway? Only worth it if the message above says a refresh WOULD help."
+      echo "Re-run with FORCE=1 to proceed: FORCE=1 just refresh-chebi"
+      [ "${FORCE:-}" = "1" ] || exit 1
+    fi
+    # Resolve the cache through pystow, as oaklib does — deriving it from $HOME
+    # deletes the wrong path for anyone with PYSTOW_HOME set, while reporting
+    # success.
+    db="$(uv run python -c 'import pystow,pathlib;print(pathlib.Path(pystow.module("oaklib").base)/"chebi.db")')"
+    before="$(uv run python -c 'import sys;sys.path.insert(0,"scripts");from check_chebi_currency import local_release;from pathlib import Path;print(local_release(Path("'"$db"'"))[0])')"
+    echo "Local build is release ${before}. Removing ${db} and its .gz to force a re-download."
     rm -f "$db" "$db.gz"
-    echo "Priming the cache (this downloads ~760 MB)..."
+    echo "Priming the cache (~760 MB)..."
     uv run python -c "from oaklib import get_adapter; a=get_adapter('sqlite:obo:chebi'); print(' primed:', a.label('CHEBI:15377'))"
-    just check-chebi-currency
+    after="$(uv run python -c 'import sys;sys.path.insert(0,"scripts");from check_chebi_currency import local_release;from pathlib import Path;print(local_release(Path("'"$db"'"))[0])')"
+    echo "Local build is now release ${after}."
+    if [ "$before" = "$after" ]; then
+      echo "" >&2
+      echo "The re-download produced the SAME release (${after}). The lag is upstream of MIM;" >&2
+      echo "no further downloading will change it. See #197." >&2
+      exit 1
+    fi
+    uv run python scripts/check_chebi_currency.py
 
 # Assert every curation-target pathspec still matches at least one tracked file
 check-curation-targets *args:

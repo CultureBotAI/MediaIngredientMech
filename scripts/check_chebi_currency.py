@@ -1,30 +1,30 @@
 #!/usr/bin/env python3
-"""Warn when the local ChEBI build is older than kg-microbe's.
+"""Report whether the local ChEBI build is behind, and whether refreshing helps.
 
-MIM grounds ingredients against a local semsql ChEBI (`sqlite:obo:chebi`, cached
-at ~/.data/oaklib/chebi.db) and publishes those groundings to kg-microbe. When
-the local copy is older than the ChEBI release kg-microbe itself uses, a term
-that exists upstream simply does not resolve here — and the id↔label gate then
-reports it as ID_OUT_OF_RANGE, whose wording ("a foreign identifier wearing an
-OBO prefix") invites deleting a perfectly good mapping.
+MIM grounds ingredients against a local semsql ChEBI and publishes those
+groundings to kg-microbe. When the local copy is older than the ChEBI release
+kg-microbe uses, a term that exists upstream simply does not resolve here — and
+the id↔label gate then reports it as ID_OUT_OF_RANGE, whose wording ("a foreign
+identifier wearing an OBO prefix") invites deleting a perfectly good mapping.
 
-That is not hypothetical. In #193 six real ChEBI terms — polymyxin B, colistin
-sulfate, gentamicin, netilmicin, carbomycin, lysostaphin — were demoted to
-UNMAPPED on exactly this reasoning. They were minted in ChEBI 253; the local
-build was 252. Issue #197.
+Six real terms — polymyxin B, colistin sulfate, gentamicin, netilmicin,
+carbomycin, lysostaphin — were demoted exactly that way in #193 (see #197, #198).
 
-The check is a comparison of two release numbers:
+THE SECOND QUESTION MATTERS AS MUCH AS THE FIRST. Being behind is only actionable
+if a refresh would fix it, and often it would not: the semsql build MIM consumes
+is produced downstream of ChEBI, so it lags. At the time of writing the local
+build and the published one are both release 252 while kg-microbe is on 253 —
+so `just refresh-chebi` would delete ~4.7 GB, re-download ~760 MB, and land back
+on 252. Telling someone to refresh in that state wastes an hour and fixes
+nothing. This script therefore also asks whether the published artifact actually
+differs from the local one, and says so.
 
-    local        owl:versionInfo on obo:chebi.owl in ~/.data/oaklib/chebi.db
-    kg-microbe   versionIRI in its data/raw/chebi.owl.gz
+Advisory and local-only by design: the OAK cache is a multi-gigabyte developer
+artifact CI does not have, so failing a build on it would only teach people to
+skip the check. `--strict` exits non-zero for anyone who wants it enforced.
 
-It is DELIBERATELY LOCAL-ONLY and advisory. The OAK cache is a multi-gigabyte
-developer artifact that CI does not have, so failing a build on it would only
-teach people to skip the check. It belongs in the `next-tasks` reconcile, where
-"is the backlog current?" already means "is anything quietly out of date?".
-
-Exit codes: 0 = current, or cannot be determined (nothing to compare);
-1 = local is behind kg-microbe (with --strict); 2 = usage error.
+Exit codes: 0 = current, or cannot be determined; 1 = behind (with --strict);
+2 = usage error.
 """
 
 from __future__ import annotations
@@ -35,27 +35,62 @@ import os
 import re
 import sqlite3
 import sys
+import urllib.error
+import urllib.request
+import zlib
 from pathlib import Path
 
-DEFAULT_LOCAL_DB = Path(os.environ.get("OAK_CHEBI_DB", Path.home() / ".data/oaklib/chebi.db"))
-DEFAULT_KGM_CHEBI = Path(
-    os.environ.get(
-        "KGM_CHEBI_OWL",
-        "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/data/raw/chebi.owl.gz",
-    )
-)
+REPO_ROOT = Path(__file__).resolve().parent.parent
 
-# Anchored on versionIRI and the full `obo/chebi/NNN/chebi.owl` form. A looser
-# `obo/chebi/(\d+)` matches decoy strings that appear EARLIER in the header —
-# the file contains bare `obo/chebi/2`, `/3` and `/1` before the real versionIRI,
-# so a loose pattern silently reports release 2.
-VERSION_IRI = re.compile(rb"versionIRI[^>]*?obo/chebi/(\d+)/")
+# The semsql artifact oaklib downloads for `sqlite:obo:chebi`.
+SEMSQL_URL = "https://s3.amazonaws.com/bbop-sqlite/chebi.db.gz"
+
+# Anchored on versionIRI AND the full `obo/chebi/NNN/chebi.owl` form. A looser
+# `obo/chebi/(\d+)` matches decoy strings earlier in the header — the real file
+# carries bare `obo/chebi/2`, `/3` and `/1` in namespace declarations at bytes
+# 650-768, before the versionIRI at 982 — so a loose pattern reports release 2.
+VERSION_IRI = re.compile(rb"versionIRI[^>]*?obo/chebi/(\d+)/chebi\.owl")
+
+# A semsql versionInfo is a bare release integer. Anything else (a date, a
+# dotted version) must NOT be coerced: stripping non-digits turns "2026-08-01"
+# into 20260801, which compares as hugely NEWER and yields a confident false OK
+# from the one tool whose job is preventing false reassurance.
+BARE_INTEGER = re.compile(r"^\s*(\d+)\s*$")
 
 
-def local_release(db: Path) -> int | None:
-    """ChEBI release number recorded in the local semsql build."""
+def oaklib_cache_dir() -> Path:
+    """Where oaklib actually caches its sqlite builds.
+
+    Resolved through pystow, which oaklib itself uses (oaklib/constants.py), so
+    this honours PYSTOW_HOME. Deriving it from $HOME instead means a developer
+    with PYSTOW_HOME set gets a check that reads — and a refresh that deletes —
+    the wrong path, while reporting success.
+    """
+    try:
+        import pystow
+
+        return Path(pystow.module("oaklib").base)
+    except Exception:
+        return Path.home() / ".data" / "oaklib"
+
+
+def default_local_db() -> Path:
+    override = os.environ.get("OAK_CHEBI_DB")
+    return Path(override) if override else oaklib_cache_dir() / "chebi.db"
+
+
+def default_kgm_chebi() -> Path:
+    override = os.environ.get("KGM_CHEBI_OWL")
+    if override:
+        return Path(override)
+    # Sibling checkout, like scripts/validate_sssom_invariants.py resolves it.
+    return REPO_ROOT.parent / "kg-microbe" / "data" / "raw" / "chebi.owl.gz"
+
+
+def local_release(db: Path) -> tuple[int | None, str]:
+    """(release, reason). reason explains a None so the caller can say which."""
     if not db.is_file():
-        return None
+        return None, f"no local build at {db}"
     try:
         con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
         row = con.execute(
@@ -63,52 +98,77 @@ def local_release(db: Path) -> int | None:
             "where subject='obo:chebi.owl' and predicate='owl:versionInfo' limit 1"
         ).fetchone()
         con.close()
-    except sqlite3.Error:
-        return None
+    except sqlite3.Error as exc:
+        return None, f"local build unreadable ({exc})"
     if not row or not row[0]:
-        return None
-    digits = re.sub(r"\D", "", str(row[0]))
-    return int(digits) if digits else None
+        return None, f"local build at {db} records no owl:versionInfo"
+    match = BARE_INTEGER.match(str(row[0]))
+    if not match:
+        return None, f"local versionInfo {row[0]!r} is not a release integer"
+    return int(match.group(1)), ""
 
 
-def kgmicrobe_release(owl_gz: Path) -> int | None:
-    """ChEBI release number kg-microbe downloaded.
-
-    Reads only the head of the file: the versionIRI sits in the ontology header,
-    and this is a ~63 MB gzip of an 826 MB document.
-    """
+def kgmicrobe_release(owl_gz: Path) -> tuple[int | None, str]:
     if not owl_gz.is_file():
-        return None
+        return None, f"kg-microbe's ChEBI not found at {owl_gz}"
     opener = gzip.open if owl_gz.suffix == ".gz" else open
     try:
         with opener(owl_gz, "rb") as fh:
             head = fh.read(200_000)
-    except OSError:
-        return None
+    except (OSError, EOFError, zlib.error) as exc:
+        # A partially-downloaded chebi.owl.gz is an ordinary state; it must not
+        # traceback out of an advisory check.
+        return None, f"kg-microbe's ChEBI unreadable ({type(exc).__name__}: {exc})"
     match = VERSION_IRI.search(head)
-    return int(match.group(1)) if match else None
+    if not match:
+        return None, f"no versionIRI in the first 200 kB of {owl_gz}"
+    return int(match.group(1)), ""
+
+
+def refresh_would_help(local_db: Path, timeout: float = 15.0) -> tuple[bool | None, str]:
+    """Would re-downloading the semsql build actually change anything?
+
+    Compares the published artifact's size against the local .gz. Equal size
+    means oaklib would fetch the identical build, so a refresh is a no-op — the
+    lag is upstream of us and no amount of downloading fixes it.
+    """
+    local_gz = local_db.with_suffix(db_suffix := local_db.suffix + ".gz")
+    if not local_gz.is_file():
+        local_gz = Path(str(local_db) + ".gz")
+    if not local_gz.is_file():
+        return None, "no local .gz to compare against"
+    try:
+        req = urllib.request.Request(SEMSQL_URL, method="HEAD")
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            published = int(resp.headers.get("Content-Length") or 0)
+    except (urllib.error.URLError, OSError, ValueError) as exc:
+        return None, f"could not query {SEMSQL_URL} ({exc})"
+    if not published:
+        return None, "published artifact reported no Content-Length"
+    return published != local_gz.stat().st_size, ""
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--local-db", type=Path, default=DEFAULT_LOCAL_DB)
-    parser.add_argument("--kgm-chebi", type=Path, default=DEFAULT_KGM_CHEBI)
-    parser.add_argument(
-        "--strict", action="store_true",
-        help="Exit 1 when the local build is behind. Default is advisory (exit 0).",
-    )
+    parser.add_argument("--local-db", type=Path, default=None)
+    parser.add_argument("--kgm-chebi", type=Path, default=None)
+    parser.add_argument("--strict", action="store_true",
+                        help="Exit 1 when behind. Default is advisory (exit 0).")
+    parser.add_argument("--no-network", action="store_true",
+                        help="Skip the published-artifact comparison.")
     args = parser.parse_args(argv)
 
-    local = local_release(args.local_db)
-    upstream = kgmicrobe_release(args.kgm_chebi)
+    local_db = args.local_db or default_local_db()
+    kgm_chebi = args.kgm_chebi or default_kgm_chebi()
 
-    if local is None:
-        print(f"ChEBI currency: local build not readable at {args.local_db} — nothing to compare.")
-        print("  (OAK downloads it on first use; this check is a developer aid, not a gate.)")
-        return 0
-    if upstream is None:
-        print(f"ChEBI currency: kg-microbe's ChEBI not readable at {args.kgm_chebi}.")
-        print(f"  Local build is release {local}; cannot tell whether that is current.")
+    local, local_why = local_release(local_db)
+    upstream, up_why = kgmicrobe_release(kgm_chebi)
+
+    if local is None or upstream is None:
+        print("ChEBI currency: cannot determine.")
+        for why in (local_why, up_why):
+            if why:
+                print(f"  - {why}")
         return 0
 
     print(f"ChEBI currency: local build = {local}, kg-microbe = {upstream}")
@@ -116,14 +176,28 @@ def main(argv: list[str] | None = None) -> int:
         print("  OK: the local build is at least as current as kg-microbe's.")
         return 0
 
-    print(
-        f"\n  BEHIND by {upstream - local} release(s). Terms minted after ChEBI {local} do not\n"
-        "  resolve locally, so `just validate-products` reports them ID_OUT_OF_RANGE — whose\n"
-        "  wording suggests a bogus identifier and invites demoting a valid mapping. That is\n"
-        "  what happened to six real terms in #193 (see #197, #198).\n\n"
-        "  Refresh:  just refresh-chebi\n"
-        "  Then re-run `just validate-products` before acting on any ID_OUT_OF_RANGE finding."
-    )
+    print(f"\n  BEHIND by {upstream - local} release(s). Terms minted after ChEBI {local} do not")
+    print("  resolve locally, so `just validate-products` reports them ID_OUT_OF_RANGE — wording")
+    print("  that suggests a bogus identifier and invites demoting a valid mapping (#193, #198).")
+
+    if args.no_network:
+        print("\n  Whether a refresh helps: not checked (--no-network).")
+        return 1 if args.strict else 0
+
+    helps, why = refresh_would_help(local_db)
+    if helps is None:
+        print(f"\n  Whether a refresh helps: unknown — {why}.")
+    elif helps:
+        print("\n  A refresh WOULD change the build: run `just refresh-chebi`.")
+    else:
+        print(
+            "\n  A refresh would NOT help. The published semsql build is byte-identical to the\n"
+            "  local one, so oaklib would re-download the same release. This lag is UPSTREAM of\n"
+            f"  MIM — the semsql build simply has not caught up to ChEBI {upstream} yet.\n"
+            "  Do not spend ~760 MB discovering that. Until it does, treat an ID_OUT_OF_RANGE\n"
+            "  on a high accession as unproven rather than as a bogus id: check the id against\n"
+            "  OLS4 before demoting anything."
+        )
     return 1 if args.strict else 0
 
 

@@ -63,7 +63,11 @@ resolve and `just validate-products` reports them `ID_OUT_OF_RANGE` — wording
 that says "foreign identifier" and invites deleting a valid mapping. Six real
 terms were demoted exactly that way in #193 while the local build sat one release
 behind (#197, #198). **Before acting on any `ID_OUT_OF_RANGE` finding, run this
-check** — the fix may be `just refresh-chebi`, not a curation decision. Advisory
+check.** It also reports whether a refresh would help: the semsql build MIM
+consumes lags ChEBI itself, so being behind is often *upstream* lag that no
+download fixes. In that state, treat a high-accession `ID_OUT_OF_RANGE` as
+unproven and check the id against OLS4 before demoting anything — that is
+exactly what was skipped in #193. Advisory
 and local-only; the OAK cache is a multi-GB developer artifact CI does not have.
 
 For each pending item: *is its deliverable already in a merged PR or in the
