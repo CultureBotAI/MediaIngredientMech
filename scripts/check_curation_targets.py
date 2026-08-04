@@ -13,21 +13,27 @@ life, because that directory holds a single `.tsv` (fixed in #180). Issue #181.
 This is the assertion the counting never made. It reads the same
 `conf/curation_targets.txt` the workflow does, so the two cannot drift.
 
-WHAT THIS DOES NOT CATCH, stated plainly rather than implied by a green tick: a
-PARTIAL miss. If `data/curated/` ever gains a subdirectory, `data/curated/*.yaml`
-still matches the seven flat files, so a >=1 assertion stays green while silently
-skipping the nested ones. Catching that needs per-directory reasoning, not a
-count. The obvious "make it consistent" fix is also wrong here — switching to the
-directory form would pull in 24 generated `.md` summaries and fire the advisory
-on every regeneration.
+WHAT THIS DOES NOT CATCH, stated plainly rather than implied by a green tick:
+this is a LIVENESS check, not a coverage one. A spec that matches some files but
+not the ones intended still passes — `mappings/**` matching 20 files says nothing
+about whether those are the 20 that matter. Only "matches literally nothing" is
+detectable this way, because that is the failure mode with no other symptom.
+
+(An earlier draft of this warned instead about a "partial miss" if
+`data/curated/` gained a subdirectory. That was wrong, and is corrected here
+rather than quietly dropped: git pathspecs without `:(glob)` magic use wildmatch
+WITHOUT WM_PATHNAME, so a plain `*` DOES cross `/`. `data/ingredients/*.yaml`
+and `data/ingredients/**/*.yaml` both match all 2,257 records. It is `**/` that
+silently matches nothing against a flat tree, not `*` against a nested one.)
 
 Exit codes: 0 = every pathspec matches, 1 = at least one matches nothing,
-2 = usage/configuration error.
+2 = usage/configuration error (missing or empty list).
 """
 
 from __future__ import annotations
 
 import argparse
+import shlex
 import subprocess
 import sys
 from pathlib import Path
@@ -36,17 +42,34 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SPECS = REPO_ROOT / "conf" / "curation_targets.txt"
 
 
-def load_specs(path: Path) -> list[str]:
-    """Pathspecs from the shared list, ignoring blank lines and comments."""
+def _config_error(message: str) -> None:
+    """Exit 2, so a broken config is distinguishable from a real finding."""
+    print(message, file=sys.stderr)
+    raise SystemExit(2)
+
+
+def load_specs(path: Path, role: str | None = None) -> list[str]:
+    """Pathspecs from the shared list, optionally filtered to one role.
+
+    Lines are `<role>: <pathspec>`; blank lines and `#` comments are ignored.
+    """
     if not path.is_file():
-        raise SystemExit(f"Curation-target list not found: {path}")
-    specs = [
-        line.strip()
-        for line in path.read_text(encoding="utf-8").splitlines()
-        if line.strip() and not line.lstrip().startswith("#")
-    ]
+        _config_error(f"Curation-target list not found: {path}")
+    specs: list[str] = []
+    for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        if ":" not in stripped:
+            _config_error(f"{path}:{lineno}: expected `<role>: <pathspec>`, got {stripped!r}")
+        line_role, _, spec = stripped.partition(":")
+        line_role, spec = line_role.strip(), spec.strip()
+        if not spec:
+            _config_error(f"{path}:{lineno}: no pathspec after the role")
+        if role is None or line_role == role:
+            specs.append(spec)
     if not specs:
-        raise SystemExit(f"{path} lists no pathspecs.")
+        _config_error(f"{path} lists no pathspecs" + (f" for role {role!r}." if role else "."))
     return specs
 
 
@@ -69,24 +92,35 @@ def match_count(spec: str, root: Path) -> int:
             f"`git ls-files -- {spec}` failed (exit {proc.returncode}).\n"
             f"{proc.stderr.strip()}"
         )
-    return len(proc.stdout.split())
+    # splitlines, not split: a tracked path containing a space would otherwise
+    # count as two files.
+    return len(proc.stdout.splitlines())
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--specs", type=Path, default=DEFAULT_SPECS)
     parser.add_argument(
+        "--role",
+        default=None,
+        help="Only pathspecs with this role (`targets` or `history`). Default: all.",
+    )
+    parser.add_argument(
         "--print-specs",
         action="store_true",
-        help="Print the pathspecs, space-separated and shell-quoted, for the workflow to consume.",
+        help="Print the pathspecs, shell-quoted, for the workflow to consume.",
     )
     args = parser.parse_args(argv)
 
-    specs = load_specs(args.specs)
-
     if args.print_specs:
-        print(" ".join(f"'{spec}'" for spec in specs))
+        # shlex.quote, not a bare f"'{spec}'": a spec containing a single quote
+        # would otherwise produce a string the consuming shell cannot parse.
+        print(" ".join(shlex.quote(spec) for spec in load_specs(args.specs, args.role)))
         return 0
+
+    # The assertion covers EVERY role — a `history` spec that stops matching is
+    # just as dead as a `targets` one.
+    specs = load_specs(args.specs)
 
     empty: list[str] = []
     print(f"Checking {len(specs)} curation-target pathspec(s) from {args.specs.name}:")

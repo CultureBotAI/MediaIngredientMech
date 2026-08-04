@@ -25,6 +25,12 @@ on:
       - "history/**"
       - "src/mediaingredientmech/schema/history.yaml"
       - ".github/workflows/curation-history.yaml"
+      # The blocking gate below reads these. Without them a PR editing only the
+      # spec list would not fire this workflow at all: it would merge green, and
+      # the next unrelated curation PR would fail the gate and blame the wrong
+      # author — a hole shaped exactly like the bug the gate exists to prevent.
+      - "conf/curation_targets.txt"
+      - "scripts/check_curation_targets.py"
   push:
     branches: [main]
     paths: *trigger_paths
@@ -47,6 +53,11 @@ jobs:
         with:
           fetch-depth: 0   # need the merge base to diff against
 
+      # Before `Install uv`: this gate needs only the stdlib and git, so a
+      # dependency-install failure must not mask it.
+      - name: Assert curation-target pathspecs still match something (blocking)
+        run: python3 scripts/check_curation_targets.py
+
       - name: Install uv
         uses: astral-sh/setup-uv@v3
         with:
@@ -68,12 +79,6 @@ jobs:
                 --schema src/mediaingredientmech/schema/history.yaml \
                 --target-class HistoryRecord
 
-      # Blocking, unlike the advisory below: a pathspec that matches nothing makes
-      # that advisory silently useless, and the whole point of #181 is that
-      # nothing was asserting this.
-      - name: Assert curation-target pathspecs still match something
-        run: python3 scripts/check_curation_targets.py
-
       - name: Check for missing history records (advisory)
         if: github.event_name == 'pull_request'
         run: |
@@ -88,14 +93,21 @@ jobs:
           # because that directory holds a .tsv, and because this step COUNTS
           # rather than asserts, it contributed 0 and read exactly like "no
           # records changed" (#180, #181).
-          specs=$(python3 scripts/check_curation_targets.py --print-specs)
-          changed_targets=$(eval "git diff --name-only \"$base\"...HEAD -- $specs" | wc -l | tr -d ' ')
+          # `eval set --` expands the quoted spec list into "$@" and nothing else.
+          # Interpolating $base into an eval string would re-expand it: git allows
+          # `$`, backticks and `(` in refnames, so a branch named `rel/$v2` would
+          # be re-parsed on that second pass (under `set -u`, a hard failure).
+          specs=$(python3 scripts/check_curation_targets.py --print-specs --role targets)
+          eval "set -- $specs"
+          changed_targets=$(git diff --name-only "$base"...HEAD -- "$@" | wc -l | tr -d ' ')
 
-          # NOT in the shared list, deliberately: if this spec ever stopped
-          # matching, new_history would be 0 forever and the advisory would warn
-          # on every PR. That fails LOUDLY, which is the opposite of the silent
-          # failure the shared list exists to prevent.
-          new_history=$(git diff --name-only --diff-filter=A "$base"...HEAD -- 'history/**/*.yaml' | wc -l | tr -d ' ')
+          # Also from the shared list, under the `history` role. An earlier draft
+          # kept this inline, arguing a dead spec here would warn on every PR and
+          # so fail loudly. That was weak: a permanently-warning advisory is noise
+          # that gets tuned out, which this workflow's own header calls out as
+          # training people to route around the check.
+          eval "set -- $(python3 scripts/check_curation_targets.py --print-specs --role history)"
+          new_history=$(git diff --name-only --diff-filter=A "$base"...HEAD -- "$@" | wc -l | tr -d ' ')
 
           {
             echo "## Curation history"
