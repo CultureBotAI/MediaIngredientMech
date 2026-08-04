@@ -47,15 +47,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: extractions/setup-just@v3
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
-      # pyyaml only: the checker reads its config and shells out to `just --list`.
-      # No uv sync — this must stay cheap enough that nobody is tempted to filter
-      # it down until it stops firing, which is how the last guard rotted.
+      # pyyaml only. The checker parses the justfile itself rather than shelling
+      # out to `just`, so it needs no toolchain — and stays cheap enough that
+      # nobody is tempted to filter it down until it stops firing, which is how
+      # the last guard rotted.
       - name: Install deps
         run: python3 -m pip install pyyaml
 

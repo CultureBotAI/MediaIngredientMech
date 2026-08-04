@@ -98,22 +98,27 @@ def tracked_paths(root: Path) -> set[str]:
     return set(proc.stdout.split())
 
 
+# A recipe definition: a name at column 0, optional parameters (which may carry
+# `=` defaults), then `:` — but not `:=`, which is a variable assignment.
+RECIPE_DEF = re.compile(r"^([a-z0-9][a-z0-9-]*)[^:\n]*:(?!=)")
+
+
 def known_recipes(root: Path) -> set[str]:
-    """Recipe names the justfile defines, via `just --list`."""
-    proc = subprocess.run(
-        ["just", "--list"], cwd=root, capture_output=True, text=True, check=False
-    )
-    if proc.returncode != 0:
-        raise SystemExit(
-            f"`just --list` failed (exit {proc.returncode}); cannot verify recipe "
-            f"references.\n{proc.stderr.strip()}"
-        )
-    found = set()
-    for line in proc.stdout.splitlines():
-        match = re.match(r"\s{4}([a-z0-9][a-z0-9-]*)", line)
-        if match:
-            found.add(match.group(1))
-    return found
+    """Recipe names the justfile defines, parsed from the file itself.
+
+    Deliberately not `just --list`: that would make the check unrunnable wherever
+    `just` is not installed — including this repo's own pytest workflow, where it
+    failed for exactly that reason. Verified to produce the identical 55-recipe
+    set as `just --list` on the current justfile.
+    """
+    justfile = root / "justfile"
+    if not justfile.is_file():
+        raise SystemExit(f"No justfile at {justfile}; cannot verify recipe references.")
+    return {
+        match.group(1)
+        for line in justfile.read_text(encoding="utf-8").splitlines()
+        if (match := RECIPE_DEF.match(line))
+    }
 
 
 def _references(text: str):

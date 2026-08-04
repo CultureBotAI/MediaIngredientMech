@@ -167,3 +167,21 @@ def test_the_real_corpus_is_clean():
     mod = _load()
     cfg_path = ROOT / "conf" / "instruction_refs.yaml"
     assert mod.main(["--config", str(cfg_path)]) == 0
+
+
+def test_recipe_parsing_needs_no_just_binary_and_finds_parameterised_recipes(tmp_path):
+    """Shelling out to `just --list` made the check unrunnable wherever `just`
+    is absent — including this repo's own pytest workflow, where it failed for
+    exactly that reason. Parsing must also handle recipes with parameters and
+    ignore `:=` variable assignments."""
+    mod = _load()
+    (tmp_path / "justfile").write_text(
+        'research_dir := "research"\n'
+        "qc: validate-all validate-strict\n"
+        '  echo hi\n'
+        'apply-role-research-results batch *args="":\n'
+        "  echo apply\n"
+        "# a comment: not a recipe\n"
+    )
+
+    assert mod.known_recipes(tmp_path) == {"qc", "apply-role-research-results"}
