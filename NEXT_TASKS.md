@@ -553,7 +553,7 @@ names, and metabolic pathways — **out of ingredient scope by design**. Assessm
 | #193 | Onboard the labels; hold 386 auto-groundings at PENDING_REVIEW |
 | #194 | Track the review manifest (`reports/` gitignored) |
 | #195 | Promote the 386 reviewed auto-groundings to MAPPED |
-| #205 | Restore 11 antibiotic records demoted on the accession-ceiling false positive (was PR #198) |
+| #205 | Restore 11 antibiotic records demoted on the accession-ceiling false positive (closes issue #198; the other 6 stay upstream-blocked) |
 | #202 | Deep-research the deferred residual: **3 net-new applied** (Diacetyl→CHEBI:16583, Ferric Iron→CHEBI:29034, Sodium(+)→CHEBI:29101); 7 reclassified as already-mapped synonym-merges; blends + antibiotics deferred. Report + ledger + 43-label decomposition table under `mappings/microbedecoder_residual_research_*` |
 | #211 | Recover **22 free** exact/synonym groundings orphaned when PR #201 was closed unmerged (sugars, amino-acid/peptide substrates, nitrophenyl enzyme substrates, acids/ions/polymers, 2 dropped-locant chloroalkanes) |
 
