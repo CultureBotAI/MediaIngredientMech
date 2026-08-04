@@ -20,7 +20,8 @@ events:
   sections:
   - ingredients
   - mappings
-  summary: Restore the 11 records demoted on a false positive; hold 6 pending a ChEBI refresh
+  summary: Restore the 11 records demoted on a false positive; hold 6 blocked on an upstream
+    ChEBI build
   details: 'In #193 I demoted 17 microbedecoder auto-groundings to UNMAPPED, asserting their
     CHEBI ids were ''the signature of a foreign identifier wearing an OBO prefix''. That was
     wrong: all 17 are real, non-obsolete ChEBI terms (verified against live OLS4), and the
@@ -40,6 +41,9 @@ events:
     that says the earlier one is wrong and why. The remaining six (CHEBI:756054 carbomycin,
     759883 colistin sulfate, 759884 gentamicin, 753395 lysostaphin, 748901 netilmicin, 759086
     polymyxin B) are real per OLS4 but genuinely absent from the local build, whose max accession
-    is 747618 at ChEBI release 252 against kg-microbe''s 253. They stay demoted until ''just
-    refresh-chebi'' (#197, PR #199) and the manifest now says so per row. Verified: validate-products
+    is 747618 at ChEBI release 252 against kg-microbe''s 253. Those six are BLOCKED UPSTREAM
+    rather than pending a task here: ''just refresh-chebi'' cannot clear it, because the published
+    semsql artifact is byte-identical to the local one and is also release 252 (#199). Re-check
+    with ''just check-chebi-currency'' and restore them the same way once it reports that the
+    published artifact differs (#207). The manifest says this per row. Verified: validate-products
     exits 0, just qc exits 0, 550 tests pass.'
