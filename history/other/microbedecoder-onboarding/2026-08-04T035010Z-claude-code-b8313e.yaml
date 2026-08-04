@@ -1,0 +1,54 @@
+history_version: 1
+target:
+  kind: other
+  path: data/curated/unmapped_ingredients.yaml
+  slug: microbedecoder-onboarding
+session:
+  id: 2026-08-04T035010Z-claude-code-b8313e
+  timestamp: '2026-08-04T03:50:10Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/192
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - curated
+  - reports
+  summary: Onboard kg-microbe microbedecoder unmapped labels; hold 386 auto-groundings at
+    PENDING_REVIEW
+  details: 'Imported kg-microbe data/transformed/microbedecoder/unmapped_labels.tsv (5,224
+    rows) via a new ''microbedecoder'' source in culturebotai-claw''s scripts/import_ingredients.py
+    (claw PR #61). The source filters by provenance column rather than the file''s own category
+    tag, which is unusable: only 73 of 5,224 rows are tagged biolink:ChemicalEntity while
+    ~1,023 chemicals sit in rows tagged biolink:PhenotypicQuality because they came from metabolite-utilization
+    and antibiotic assays. Yields exactly 1,023 candidates, independently matching a prior
+    manual assessment. Outcome: 347 already in MIM, 403 auto-grounded via ols-label-exact
+    (395 CHEBI + 8 NCIT), 231 new unmapped, 40 CHEBI collisions, 2 slug collisions. The 403
+    auto-groundings were NOT published. On the user''s instruction they are held at mapping_status
+    PENDING_REVIEW - the schema''s own ''Suggested mapping awaiting review'' - which is structurally
+    load-bearing rather than cosmetic, because reconcile_sssom.py only publishes MAPPED records,
+    so they cannot reach the published SSSOM until a reviewer flips the status. Manifest at
+    reports/microbedecoder_auto_mapped_review.tsv with a review_verdict column. That caution
+    was warranted: the blocking id-label gate rejected 17 of the 403 outright with ID_OUT_OF_RANGE
+    - CHEBI accessions above the 300000 ceiling in conf/id_label_targets.yaml that do not
+    resolve in the local ChEBI adapter (CHEBI:759086 polymyxin B, CHEBI:756054 carbomycin,
+    CHEBI:759883 colistin sulfate, CHEBI:759884 gentamicin, CHEBI:753395 lysostaphin, CHEBI:748901
+    netilmicin and 11 more). ALL 17 are antibiotics, which points at a systematic resolver
+    failure on that class rather than scattered noise - the remaining antibiotic rows among
+    the 386 are where the next bad grounding most likely sits (#192). Those 17 were demoted
+    to UNMAPPED with a per-record DEMOTED_TO_UNMAPPED event, since an unresolvable id exceeding
+    the accession ceiling is not a defensible mapping under this repo''s own rules. Process
+    note: the importer writes only data/ingredients/ and never data/curated/, so qc-roundtrip
+    failed immediately after --apply exactly as predicted, and a subsequent export-individual
+    would have reverted all 634 records; ''just sync-curated'' closed it. That is the #171
+    defect sitting in the primary intake path, filed as #191 and worth fixing before the next
+    import. Final corpus: 1877 MAPPED (unchanged - no auto-grounding entered the published
+    corpus), 386 PENDING_REVIEW, 626 UNMAPPED, 2 REJECTED. Verified: just qc exits 0, validate-products
+    exits 0, reconcile_sssom reports in-sync, 523 tests pass.'
