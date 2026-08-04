@@ -476,7 +476,20 @@ Nine items shipped in #108/#109/#111; three remain, all confirmed present:
   regenerated 2026-07-31. Still worth a `just gen-qc-dashboard` after item 5,
   since role coverage is what it charts.
 
-## 10. `DEFINED_MEDIUM` reads as "chemically defined" — schema hazard (NEW)
+## 10. `DEFINED_MEDIUM` reads as "chemically defined" — schema hazard — DONE (2026-08-04, PR #216, closes #168)
+
+**Shipped 2026-08-04 (PR #216).** Took Option 1 (description-only): the
+`IngredientTypeEnum.DEFINED_MEDIUM` description now states explicitly that
+"DEFINED" denotes RECORD GRANULARITY (a complete *named* medium, not a single
+ingredient), is NOT the microbiology term of art "chemically defined medium", and
+that complex undefined components are expected; the compositional distinction is
+carried by `UNDEFINED_MIXTURE`. The compact inline restatement and the 3 affected
+LinkML docs were updated too. Enum **values unchanged** → no data migration, no
+effect on the 53 records or kg-microbe. `validate-schema` clean. **The rename (the
+honest fix) is deferred cross-Mech as #222** — CultureMech imports these enums, so
+it needs coordination + a migration.
+
+Original finding, kept for context:
 
 Surfaced independently by **all three** Edison/PaperQA3 runs during the #148
 validation (2026-08-02), each unprompted and each phrasing it as a warning:
