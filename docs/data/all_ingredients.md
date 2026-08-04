@@ -1,7 +1,7 @@
 # All Ingredients
 
-Generated: 2026-07-21T18:52:48.723732+00:00
-Total: 2260 ingredients
+Generated: 2026-08-04T04:42:47.157087+00:00
+Total: 2891 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -1884,6 +1884,392 @@ Total: 2260 ingredients
 | MICRO:0000182 | MICRO:0000182 | Tryptone peptone | MAPPED | MICRO | EXACT_MATCH | 0 |
 | FOODON:03315720 | FOODON:03315720 | Phytone | MAPPED | FOODON | CLOSE_MATCH | 0 |
 | FOODON:03315720 | FOODON:03315720 | Soya pepton | MAPPED | FOODON | CLOSE_MATCH | 0 |
+| CHEBI:17521 | CHEBI:17521 | (-)-quinic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17019 | CHEBI:17019 | (R)-amygdalin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16004 | CHEBI:16004 | (R)-lactate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:30796 | CHEBI:30796 | (R)-malic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:6198 | CHEBI:6198 | (S)-azetidine-2-carboxylic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:32800 | CHEBI:32800 | (S)-mandelic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:35860 | CHEBI:35860 | 1-methylphenanthrene | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:19475 | CHEBI:19475 | 2-aminopentanoic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16808 | CHEBI:16808 | 2-dehydro-D-gluconate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:64552 | CHEBI:64552 | 2-hydroxybutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:91043 | CHEBI:91043 | 2-naphthyl Dihydrogen Phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:90249 | CHEBI:90249 | 2-naphthyl Tetradecanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16763 | CHEBI:16763 | 2-oxobutanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28644 | CHEBI:28644 | 2-oxopentanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:87997 | CHEBI:87997 | 3-aminobutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:85256 | CHEBI:85256 | 3-dehydro-D-gluconate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16193 | CHEBI:16193 | 3-hydroxybenzoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:37054 | CHEBI:37054 | 3-hydroxybutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:59899 | CHEBI:59899 | 3-nitropropanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:51057 | CHEBI:51057 | 3-phenylpropionate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:223561 | CHEBI:223561 | 3-trehalosamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:32373 | CHEBI:32373 | 4-coumarate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18240 | CHEBI:18240 | 4-hydroxy-L-proline | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16724 | CHEBI:16724 | 4-hydroxybutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:1904 | CHEBI:1904 | 4-methylumbelliferone Beta-d-glucuronide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:90128 | CHEBI:90128 | 4-nitrophenyl 6-O-phosphono-beta-D-galactoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:90146 | CHEBI:90146 | 4-nitrophenyl Beta-D-glucuronide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:90343 | CHEBI:90343 | 4-nitrophenyl N-acetyl-beta-D-glucosaminide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17440 | CHEBI:17440 | 4-nitrophenyl Phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:39150 | CHEBI:39150 | 4-oxopentanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:37966 | CHEBI:37966 | 4h-pyran-4-one | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:58143 | CHEBI:58143 | 5-dehydro-D-gluconate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16010 | CHEBI:16010 | 5-oxoproline | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:63486 | CHEBI:63486 | 8-azaguanine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:210557 | CHEBI:210557 | Abikoviromycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27856 | CHEBI:27856 | Acetamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:13705 | CHEBI:13705 | Acetoacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15688 | CHEBI:15688 | Acetoin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:209246 | CHEBI:209246 | Acetomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27518 | CHEBI:27518 | Acetylene | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16027 | CHEBI:16027 | Adenosine 5'-monophosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:222816 | CHEBI:222816 | Alazopeptin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:58187 | CHEBI:58187 | Alginate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17665 | CHEBI:17665 | Alpha-D-glucose 6-phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:86508 | CHEBI:86508 | Alpha-aminobutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:157683 | CHEBI:157683 | Althiomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:216618 | CHEBI:216618 | Amicoumacin B | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:2637 | CHEBI:2637 | Amikacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:33709 | CHEBI:33709 | Amino Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:22507 | CHEBI:22507 | Aminoglycoside Antibiotic | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:160246 | CHEBI:160246 | Aminophenazone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16134 | CHEBI:16134 | Ammonia | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28938 | CHEBI:28938 | Ammonium | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:201652 | CHEBI:201652 | Amphomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27613 | CHEBI:27613 | Amygdalin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:35298 | CHEBI:35298 | Anthracene | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:49322 | CHEBI:49322 | Anthracycline Antibiotic | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:197950 | CHEBI:197950 | Antimycin A3 | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:2766 | CHEBI:2766 | Aphidicolin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:2790 | CHEBI:2790 | Apramycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:22605 | CHEBI:22605 | Arabinitol | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| NCIT:C87429 | NCIT:C87429 | Arbutin | MAPPED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:29582 | CHEBI:29582 | Ascomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:22651 | CHEBI:22651 | Ascorbate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:132943 | CHEBI:132943 | Aspartate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:40968 | CHEBI:40968 | Astaxanthin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:37923 | CHEBI:37923 | Astromicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:156452 | CHEBI:156452 | Aureothricin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:50344 | CHEBI:50344 | Avermectin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:74846 | CHEBI:74846 | Azaserine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:132955 | CHEBI:132955 | Azelaate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:2955 | CHEBI:2955 | Azithromycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:30033 | CHEBI:30033 | Bacteriochlorophyll A | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:47250 | CHEBI:47250 | Balhimycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16716 | CHEBI:16716 | Benzene | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16150 | CHEBI:16150 | Benzoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17682 | CHEBI:17682 | Benzoin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17987 | CHEBI:17987 | Benzyl Alcohol | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27442 | CHEBI:27442 | Beta-D-fucose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28034 | CHEBI:28034 | Beta-D-galactoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28860 | CHEBI:28860 | Beta-D-glucuronic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28161 | CHEBI:28161 | Beta-D-xylose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15903 | CHEBI:15903 | Beta-d-glucose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3098 | CHEBI:3098 | Bile Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17097 | CHEBI:17097 | Biphenyl | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:218571 | CHEBI:218571 | Blasticidin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15353 | CHEBI:15353 | Blasticidin S | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:22907 | CHEBI:22907 | Bleomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:81193 | CHEBI:81193 | Bluensomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:78661 | CHEBI:78661 | Borrelidin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:73706 | CHEBI:73706 | Bromosuccinate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:43799 | CHEBI:43799 | Butan-1-amine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17968 | CHEBI:17968 | Butyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29108 | CHEBI:29108 | Calcium(2+) | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3371 | CHEBI:3371 | Capreomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17245 | CHEBI:17245 | Carbon Monoxide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31359 | CHEBI:31359 | Carminomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:23044 | CHEBI:23044 | Carotenoid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3435 | CHEBI:3435 | Carrageenan | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3479 | CHEBI:3479 | Cefadroxil | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3537 | CHEBI:3537 | Cefaloridine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:124991 | CHEBI:124991 | Cefalotin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3480 | CHEBI:3480 | Cefamandole | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:135817 | CHEBI:135817 | Cefminox | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3493 | CHEBI:3493 | Cefoperazone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:204928 | CHEBI:204928 | Cefotaxime | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3499 | CHEBI:3499 | Cefotetan | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:209807 | CHEBI:209807 | Cefoxitin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3504 | CHEBI:3504 | Cefpodoxime | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3506 | CHEBI:3506 | Cefprozil | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3508 | CHEBI:3508 | Ceftazidime | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29007 | CHEBI:29007 | Ceftriaxone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3515 | CHEBI:3515 | Cefuroxime | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3517 | CHEBI:3517 | Cefuroxime Sodium | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:156421 | CHEBI:156421 | Celesticetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:23066 | CHEBI:23066 | Cephalosporin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| NCIT:C62021 | NCIT:C62021 | Cephalothin | MAPPED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:3580 | CHEBI:3580 | Chartreusin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:81838 | CHEBI:81838 | Chloridazon | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27644 | CHEBI:27644 | Chlortetracycline | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:214436 | CHEBI:214436 | Cinerubin R | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:141991 | CHEBI:141991 | Cinnamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3716 | CHEBI:3716 | Cinoxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:100241 | CHEBI:100241 | Ciprofloxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:48947 | CHEBI:48947 | Clavulanic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3745 | CHEBI:3745 | Clindamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:49566 | CHEBI:49566 | Cloxacillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3770 | CHEBI:3770 | Co-trimoxazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:3815 | CHEBI:3815 | Collagen | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:195250 | CHEBI:195250 | Corn Oil | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:23399 | CHEBI:23399 | Coumarate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:62968 | CHEBI:62968 | Crystalline Cellulose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:71987 | CHEBI:71987 | Curamycin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:23456 | CHEBI:23456 | Cyclodextrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:200226 | CHEBI:200226 | Cycloviracin B1 | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:202116 | CHEBI:202116 | Cycloviracin B2 | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17376 | CHEBI:17376 | Cystine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:4056 | CHEBI:4056 | Cytochrome | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28847 | CHEBI:28847 | D-fucose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:12931 | CHEBI:12931 | D-galactonate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18391 | CHEBI:18391 | D-gluconate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17315 | CHEBI:17315 | D-glucosamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:14314 | CHEBI:14314 | D-glucose 6-phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15748 | CHEBI:15748 | D-glucuronate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27947 | CHEBI:27947 | D-histidine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16176 | CHEBI:16176 | D-ornithine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27605 | CHEBI:27605 | D-psicose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:63150 | CHEBI:63150 | D-rhamnose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17317 | CHEBI:17317 | D-sorbose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16443 | CHEBI:16443 | D-tagatose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16398 | CHEBI:16398 | D-threonine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27477 | CHEBI:27477 | D-valine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:41977 | CHEBI:41977 | Daunorubicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27689 | CHEBI:27689 | Decanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:191094 | CHEBI:191094 | Decoyinine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:50453 | CHEBI:50453 | Desferrioxamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27729 | CHEBI:27729 | Digitonin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:38291 | CHEBI:38291 | Dihydrostreptomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:4608 | CHEBI:4608 | Dimethyl Disulfide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17170 | CHEBI:17170 | Dimethylamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15379 | CHEBI:15379 | Dioxygen | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:91260 | CHEBI:91260 | Disodium Malate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| NCIT:C61731 | NCIT:C61731 | Dl-alanine | MAPPED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:46050 | CHEBI:46050 | Docosane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18262 | CHEBI:18262 | Dodecanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:135928 | CHEBI:135928 | Doripenem | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:36020 | CHEBI:36020 | Dotriacontane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28748 | CHEBI:28748 | Doxorubicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:50845 | CHEBI:50845 | Doxycycline | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:157175 | CHEBI:157175 | Enoxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:35720 | CHEBI:35720 | Enrofloxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:42355 | CHEBI:42355 | Erythromycin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28196 | CHEBI:28196 | Erythromycin B | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:33946 | CHEBI:33946 | Erythrose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:72813 | CHEBI:72813 | Exopolysaccharide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:5054 | CHEBI:5054 | Fibrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:68590 | CHEBI:68590 | Fidaxomicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31810 | CHEBI:31810 | Fleroxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28266 | CHEBI:28266 | Fluorene | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| NCIT:C61766 | NCIT:C61766 | Fluorescein | MAPPED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:203275 | CHEBI:203275 | Formamicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15740 | CHEBI:15740 | Formate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:81284 | CHEBI:81284 | Fortimicin B | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28915 | CHEBI:28915 | Fosfomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:7508 | CHEBI:7508 | Framycetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:5181 | CHEBI:5181 | Fucoidan | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31639 | CHEBI:31639 | Fungichromin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:5195 | CHEBI:5195 | Furazolidone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:71321 | CHEBI:71321 | Fusidate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16813 | CHEBI:16813 | Galactitol | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:24148 | CHEBI:24148 | Galactonate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:24175 | CHEBI:24175 | Galacturonate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:81283 | CHEBI:81283 | Gentamicin C2b | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:24265 | CHEBI:24265 | Gluconate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:5417 | CHEBI:5417 | Glucosamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:24297 | CHEBI:24297 | Glucuronate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:24329 | CHEBI:24329 | Glutarate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:33871 | CHEBI:33871 | Glycerate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29805 | CHEBI:29805 | Glycolate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:36655 | CHEBI:36655 | Glyoxylate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:5530 | CHEBI:5530 | Gramicidin S | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:5533 | CHEBI:5533 | Granaticin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:32735 | CHEBI:32735 | Guanidinium Chloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:32931 | CHEBI:32931 | Henicosane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:7896 | CHEBI:7896 | Hexadecanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29021 | CHEBI:29021 | Hexane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17120 | CHEBI:17120 | Hexanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:51963 | CHEBI:51963 | Hopanoid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:24668 | CHEBI:24668 | Hydroxyacetophenone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:85249 | CHEBI:85249 | Hydroxyethylcellulose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:24753 | CHEBI:24753 | Hygromycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:69414 | CHEBI:69414 | Hygromycin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:43619 | CHEBI:43619 | Icosane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:30854 | CHEBI:30854 | Indole-3-acetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:79394 | CHEBI:79394 | Indolmycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:169991 | CHEBI:169991 | Indoxyl Acetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16382 | CHEBI:16382 | Iodide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:37951 | CHEBI:37951 | Isepamicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:48944 | CHEBI:48944 | Isobutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:74904 | CHEBI:74904 | Isocaproate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17965 | CHEBI:17965 | Isoorientin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:48942 | CHEBI:48942 | Isovalerate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18330 | CHEBI:18330 | Isovitexin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:81419 | CHEBI:81419 | Kasugamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:21217 | CHEBI:21217 | L-alaninamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28120 | CHEBI:28120 | L-fructose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:53071 | CHEBI:53071 | L-galactonate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:90447 | CHEBI:90447 | L-histidine 2-naphthylamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:90741 | CHEBI:90741 | L-leucylglycine 2-naphthylamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:62320 | CHEBI:62320 | L-lyxose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18347 | CHEBI:18347 | L-norleucine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:90600 | CHEBI:90600 | L-proline 2-naphthylamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:90603 | CHEBI:90603 | L-serine 2-naphthylamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:90607 | CHEBI:90607 | L-tyrosine 2-naphthylamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:25000 | CHEBI:25000 | Lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:61995 | CHEBI:61995 | Lecithin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:6426 | CHEBI:6426 | Leupeptin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:6457 | CHEBI:6457 | Lignin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:6472 | CHEBI:6472 | Lincomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:116278 | CHEBI:116278 | Lomefloxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:224243 | CHEBI:224243 | Lomofungin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:135874 | CHEBI:135874 | Lucimycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:25094 | CHEBI:25094 | Lysine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:212437 | CHEBI:212437 | Lysocellin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:25105 | CHEBI:25105 | Macrolide Antibiotic | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18420 | CHEBI:18420 | Magnesium(2+) | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:48537 | CHEBI:48537 | Malonamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:61993 | CHEBI:61993 | Maltotriose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| NCIT:C624 | NCIT:C624 | Manganese | MAPPED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:37684 | CHEBI:37684 | Mannose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:221095 | CHEBI:221095 | Marinostatin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:89634 | CHEBI:89634 | Melanin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:6731 | CHEBI:6731 | Melezitose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16374 | CHEBI:16374 | Menaquinone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:6805 | CHEBI:6805 | Methacycline | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:6827 | CHEBI:6827 | Methicillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:74611 | CHEBI:74611 | Methyl (R)-lactate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:43943 | CHEBI:43943 | Methyl Alpha-D-mannoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:74863 | CHEBI:74863 | Methyl Beta-D-xylopyranoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:37657 | CHEBI:37657 | Methyl D-glucoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:51850 | CHEBI:51850 | Methyl Pyruvate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:6919 | CHEBI:6919 | Mezlocillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31845 | CHEBI:31845 | Midecamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:50694 | CHEBI:50694 | Minocycline | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:75146 | CHEBI:75146 | Monomethyl Succinate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| NCIT:C16883 | NCIT:C16883 | Mucin | MAPPED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:63154 | CHEBI:63154 | N-acetyl-beta-D-mannosamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28800 | CHEBI:28800 | N-acetylgalactosamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:35418 | CHEBI:35418 | N-acetylneuraminate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:125610 | CHEBI:125610 | N-acetyltyramine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29649 | CHEBI:29649 | Narbomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:7488 | CHEBI:7488 | Natamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:215310 | CHEBI:215310 | Neoantimycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:7528 | CHEBI:7528 | Netilmycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31908 | CHEBI:31908 | Niddamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17632 | CHEBI:17632 | Nitrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16301 | CHEBI:16301 | Nitrite | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:202593 | CHEBI:202593 | Nocardimicin G | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:213460 | CHEBI:213460 | Nocardimicin H | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:203663 | CHEBI:203663 | Nocardimicin I | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:44504 | CHEBI:44504 | Nogalamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28945 | CHEBI:28945 | Nojirimycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28368 | CHEBI:28368 | Novobiocin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:166872 | CHEBI:166872 | Nucleocidin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:7660 | CHEBI:7660 | Nystatin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16869 | CHEBI:16869 | Oleandomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:86455 | CHEBI:86455 | Optochin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18257 | CHEBI:18257 | Ornithine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:77735 | CHEBI:77735 | Ossamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:7809 | CHEBI:7809 | Oxacillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:132952 | CHEBI:132952 | Oxalate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:220394 | CHEBI:220394 | Oxamicetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:59066 | CHEBI:59066 | Oxolinate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27701 | CHEBI:27701 | Oxytetracycline | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:7934 | CHEBI:7934 | Paromomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:50199 | CHEBI:50199 | Pefloxacin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28851 | CHEBI:28851 | Phenanthrene | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27446 | CHEBI:27446 | Phenoxymethylpenicillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18401 | CHEBI:18401 | Phenylacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:50048 | CHEBI:50048 | Phenylethylamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18132 | CHEBI:18132 | Phosphocholine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:8232 | CHEBI:8232 | Piperacillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:53156 | CHEBI:53156 | Polychlorobiphenyl | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:59062 | CHEBI:59062 | Polymyxin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:208611 | CHEBI:208611 | Porfiromycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:8337 | CHEBI:8337 | Porphyrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| NCIT:C765 | NCIT:C765 | Potassium | MAPPED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:32032 | CHEBI:32032 | Potassium Gluconate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:83230 | CHEBI:83230 | Pradimicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:63618 | CHEBI:63618 | Pravastatin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:85274 | CHEBI:85274 | Pristinamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:45422 | CHEBI:45422 | Propionamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17272 | CHEBI:17272 | Propionate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:26401 | CHEBI:26401 | Purines | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17939 | CHEBI:17939 | Puromycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:39106 | CHEBI:39106 | Pyrene | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:221765 | CHEBI:221765 | Pyridomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:156550 | CHEBI:156550 | Pyrrolomycin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:220052 | CHEBI:220052 | Pyrrolomycin B | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:26490 | CHEBI:26490 | Quinate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29671 | CHEBI:29671 | Resistomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:26546 | CHEBI:26546 | Rhamnose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15963 | CHEBI:15963 | Ribitol | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:45367 | CHEBI:45367 | Rifabutin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| NCIT:C29406 | NCIT:C29406 | Rifamycin | MAPPED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:17876 | CHEBI:17876 | Rifamycin B | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16324 | CHEBI:16324 | Rifamycin O | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:34948 | CHEBI:34948 | Rifamycin S | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29673 | CHEBI:29673 | Rifamycin Sv | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:87084 | CHEBI:87084 | Rosaramicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:48844 | CHEBI:48844 | Roxithromycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:140148 | CHEBI:140148 | Rubrolone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17814 | CHEBI:17814 | Salicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:80025 | CHEBI:80025 | Salinomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:221703 | CHEBI:221703 | Sandramycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15075 | CHEBI:15075 | Selenate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17822 | CHEBI:17822 | Serine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:226519 | CHEBI:226519 | Showdomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:62983 | CHEBI:62983 | Sodium Malonate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27922 | CHEBI:27922 | Sorbose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:9215 | CHEBI:9215 | Spectinomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:39207 | CHEBI:39207 | Spinosyn | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31168 | CHEBI:31168 | Spiramycin II | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15738 | CHEBI:15738 | Staurosporine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15889 | CHEBI:15889 | Sterol | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:45773 | CHEBI:45773 | Streptolydigin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17076 | CHEBI:17076 | Streptomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:26790 | CHEBI:26790 | Streptovaricin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:143136 | CHEBI:143136 | Succinamate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:9321 | CHEBI:9321 | Sulbactam | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:32161 | CHEBI:32161 | Sulfadimethoxine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:102130 | CHEBI:102130 | Sulfamerazine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:53727 | CHEBI:53727 | Sulfamethoxydiazine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16189 | CHEBI:16189 | Sulfate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:26822 | CHEBI:26822 | Sulfide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:102484 | CHEBI:102484 | Sulfisoxazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17359 | CHEBI:17359 | Sulfite | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:35358 | CHEBI:35358 | Sulfonamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:33954 | CHEBI:33954 | Tagatose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:132950 | CHEBI:132950 | Tartrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:36257 | CHEBI:36257 | Taurocholate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:9421 | CHEBI:9421 | Tazobactam | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29687 | CHEBI:29687 | Teicoplanin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:30477 | CHEBI:30477 | Tellurite | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:51348 | CHEBI:51348 | Tetraphene | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:75198 | CHEBI:75198 | Tetrazolium Blue | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:9506 | CHEBI:9506 | Tetrodotoxin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:197442 | CHEBI:197442 | Texazone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:156450 | CHEBI:156450 | Thiolutin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29693 | CHEBI:29693 | Thiostrepton | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:26986 | CHEBI:26986 | Threonine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:9587 | CHEBI:9587 | Ticarcillin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:149836 | CHEBI:149836 | Tigecycline | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28864 | CHEBI:28864 | Tobramycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:134606 | CHEBI:134606 | Toyocamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:35020 | CHEBI:35020 | Tributyrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:45735 | CHEBI:45735 | Troleandomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:66279 | CHEBI:66279 | Tubelactomicin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:48267 | CHEBI:48267 | Tubercidin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27248 | CHEBI:27248 | Urocanic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31011 | CHEBI:31011 | Valerate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:28001 | CHEBI:28001 | Vancomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:213208 | CHEBI:213208 | Vancoresmycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15782 | CHEBI:15782 | Viomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:87209 | CHEBI:87209 | Virginiamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:189560 | CHEBI:189560 | Xanthan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0261 |  | 20AA_mix | UNMAPPED |  |  | 1 |
@@ -2153,7 +2539,6 @@ Total: 2260 ingredients
 | UNMAPPED_0489 |  | PIPES buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0497 |  | PPLO broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0231 |  | Pectic galactan from potato | UNMAPPED |  |  | 1 |
-| UNMAPPED_0488 |  | Phytone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0490 |  | Plain flour | UNMAPPED |  |  | 0 |
 | UNMAPPED_0291 |  | Planctomyces_artificial_seawater | UNMAPPED |  |  | 1 |
 | UNMAPPED_0279 |  | Planctomyces_mineral_salts | UNMAPPED |  |  | 1 |
@@ -2196,7 +2581,6 @@ Total: 2260 ingredients
 | UNMAPPED_0078 |  | Soilwater: GR- Medium | UNMAPPED |  |  | 1 |
 | UNMAPPED_0012 |  | Soilwater: GR+ Medium | UNMAPPED |  |  | 15 |
 | UNMAPPED_0103 |  | Soilwater: Peat Medium | UNMAPPED |  |  | 1 |
-| UNMAPPED_0531 |  | Soya pepton | UNMAPPED |  |  | 0 |
 | UNMAPPED_0098 |  | Sphagnum extract | UNMAPPED |  |  | 1 |
 | UNMAPPED_0056 |  | Spir solution | UNMAPPED |  |  | 2 |
 | UNMAPPED_0275 |  | Spring sampling GW821 filtered with 0.2uM filter | UNMAPPED |  |  | 6 |
@@ -2229,7 +2613,6 @@ Total: 2260 ingredients
 | UNMAPPED_0555 |  | Trace vitamins solution see Medium No. 284 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0557 |  | Trypticase soy agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0252 |  | Trypticase soy broth | UNMAPPED |  |  | 0 |
-| UNMAPPED_0558 |  | Tryptone peptone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0138 |  | Tryptone soya broth (Oxoid) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0560 |  | Tryptose-phosphate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0561 |  | Tryptose-phosphate broth | UNMAPPED |  |  | 0 |
@@ -2265,3 +2648,251 @@ Total: 2260 ingredients
 | UNMAPPED_0272 |  | ZMB_ALS | UNMAPPED |  |  | 33 |
 | UNMAPPED_0150 |  | Zinc-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0587 |  | α-D-Glucose monohydrate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0809 |  | (+)-D-glycogen | UNMAPPED |  |  | 0 |
+| UNMAPPED_0824 |  | (+)-L-lyxitol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0694 |  | (2)-D-lactose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0783 |  | (2)-D-lyxose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0619 |  | 0129 (2 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0735 |  | 1-butanol+CO2 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0720 |  | 1-o-methyl Alpha-galactopyranoside | UNMAPPED |  |  | 0 |
+| UNMAPPED_0715 |  | 1-propanol+CO2 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0721 |  | 1% Sodium Chloride | UNMAPPED |  |  | 0 |
+| UNMAPPED_0634 |  | 1 % Sodium Lactate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0782 |  | 2-aminobenzoate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0679 |  | 2-butanol+CO2 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0660 |  | 2-deoxyadenosine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0695 |  | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0722 |  | 2-dichloroethane | UNMAPPED |  |  | 0 |
+| UNMAPPED_0784 |  | 2-dichloropropane | UNMAPPED |  |  | 0 |
+| UNMAPPED_0696 |  | 2-dimethylsuccinic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0661 |  | 2-oxogluconate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0723 |  | 2-propandiol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0674 |  | 2-propanol+CO2 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0785 |  | 2-tetrachloroethane | UNMAPPED |  |  | 0 |
+| UNMAPPED_0786 |  | 2-trichloroethane | UNMAPPED |  |  | 0 |
+| UNMAPPED_0671 |  | 3-O-methyl Alpha-D-glucopyranoside | UNMAPPED |  |  | 0 |
+| UNMAPPED_0787 |  | 3-beta-d-glucan | UNMAPPED |  |  | 0 |
+| UNMAPPED_0632 |  | 3-butanediol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0788 |  | 3-hydroxy 2-butanone | UNMAPPED |  |  | 0 |
+| UNMAPPED_0736 |  | 3-methylacetate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0687 |  | 3-methylglucose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0789 |  | 3-trichloropropane | UNMAPPED |  |  | 0 |
+| UNMAPPED_0620 |  | 4-Diamino-6 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0680 |  | 4-aminobutyrate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0790 |  | 4-dihydroxy-biphenyl | UNMAPPED |  |  | 0 |
+| UNMAPPED_0791 |  | 4-diol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0669 |  | 4-nitrophenyl Alpha-D-glucopyranoside | UNMAPPED |  |  | 0 |
+| UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0652 |  | 4-nitrophenyl Beta-D-glucopyranoside | UNMAPPED |  |  | 0 |
+| UNMAPPED_0681 |  | 4-nitrophenyl Beta-D-xylopyranoside | UNMAPPED |  |  | 0 |
+| UNMAPPED_0724 |  | 5-didehydro-D-gluconate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0792 |  | 5-didehydro-D-gluconic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0737 |  | 5-trimethoxybenzoate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0793 |  | 6-deoxy-d-galactose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0621 |  | 7-di-iso-propylpteridine Phosphate) | UNMAPPED |  |  | 0 |
+| UNMAPPED_0642 |  | Acetylspiramycin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0794 |  | Achromycin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0725 |  | Aconitate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0726 |  | Actinomycin X | UNMAPPED |  |  | 0 |
+| UNMAPPED_0623 |  | Adipate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0796 |  | Alpha-L-rhamnose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0645 |  | Alpha-hydroxybutyrate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0795 |  | Alpha-hydroxyglutarate-gamma-lactone | UNMAPPED |  |  | 0 |
+| UNMAPPED_0738 |  | Aminovalerate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0706 |  | Amp | UNMAPPED |  |  | 0 |
+| UNMAPPED_0797 |  | Antimonate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0798 |  | Azomycin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0716 |  | BHI | UNMAPPED |  |  | 0 |
+| UNMAPPED_0799 |  | Bacillomycin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0650 |  | Bacteriochlorophyll Alpha | UNMAPPED |  |  | 0 |
+| UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0672 |  | Beta-gentiobiose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0629 |  | Beta-hydroxybutyrate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0707 |  | Beta-phenylethylamine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0801 |  | Bis(2-ethylhexyl)phthalate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0697 |  | Bis-4-nitrophenyl-phenyl Phosphonate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0691 |  | Bis-4-nitrophenyl-phosphorylcholine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0653 |  | Bis-4-nitrophenyl Phosphate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0802 |  | Bottromycin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0803 |  | Bryamycin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0804 |  | Butamine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0805 |  | Butane-1 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0740 |  | CMC + PY + Horse Serum | UNMAPPED |  |  | 0 |
+| UNMAPPED_0806 |  | Carminate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0708 |  | Casamino Acids (0.01 % | UNMAPPED |  |  | 0 |
+| UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0664 |  | Chlortetracyclin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0635 |  | Cis-aconitate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0727 |  | Citraconate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0807 |  | Citramalate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
+| UNMAPPED_0701 |  | Cyclopentanol+CO2 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0625 |  | D-arabitol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0641 |  | D-aspartate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0649 |  | D-galactonic Acid Lactone | UNMAPPED |  |  | 0 |
+| UNMAPPED_0644 |  | D-glucarate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0656 |  | D-glucosaminic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0728 |  | D-glycerate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0654 |  | D-lactate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0709 |  | D-lactic Acid Methyl Ester | UNMAPPED |  |  | 0 |
+| UNMAPPED_0640 |  | D-malate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0657 |  | D-saccharate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0682 |  | DL-lactate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0729 |  | Dactimicin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0810 |  | Diacetyl | UNMAPPED |  |  | 0 |
+| UNMAPPED_0666 |  | Dimethylsulfide | UNMAPPED |  |  | 0 |
+| UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |
+| UNMAPPED_0626 |  | Esculin Ferric Citrate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0688 |  | Esculin Hydrolysate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0812 |  | Ethylenediamine-N | UNMAPPED |  |  | 0 |
+| UNMAPPED_0742 |  | Fastidious Anaerobe Broth With Meat Granules | UNMAPPED |  |  | 0 |
+| UNMAPPED_0711 |  | Fermented Rumen Extract | UNMAPPED |  |  | 0 |
+| UNMAPPED_0667 |  | Ferric Iron | UNMAPPED |  |  | 0 |
+| UNMAPPED_0813 |  | Ferrous Ion | UNMAPPED |  |  | 0 |
+| UNMAPPED_0730 |  | Ferulate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0814 |  | Filipin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0743 |  | Formate+3-methyl Mercaptopropionate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0744 |  | Formate+dimethylsulfide | UNMAPPED |  |  | 0 |
+| UNMAPPED_0745 |  | Formate+methanol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0746 |  | Formate+tetramethylammonium | UNMAPPED |  |  | 0 |
+| UNMAPPED_0747 |  | Formate+trimethylamine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0630 |  | Fumarate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0815 |  | Furaxone | UNMAPPED |  |  | 0 |
+| UNMAPPED_0755 |  | GYPS | UNMAPPED |  |  | 0 |
+| UNMAPPED_0662 |  | Galactarate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0748 |  | Gallate + Formate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0731 |  | Gelatin Hydrolyzed | UNMAPPED |  |  | 0 |
+| UNMAPPED_0692 |  | Gentisate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0683 |  | Glucose 1-phosphate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0702 |  | Glucose + Acetate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0749 |  | Glucose + Cellobiose + Starch + Trypticase + Yeast Extract | UNMAPPED |  |  | 0 |
+| UNMAPPED_0750 |  | Glucose + Formate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0751 |  | Glucose + Lactate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0752 |  | Glucose + Maltose + Cellobiose + Starch + Glycerol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0753 |  | Glucose Peptone-yeast Extract | UNMAPPED |  |  | 0 |
+| UNMAPPED_0754 |  | Glucose + Xylose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0675 |  | Glucose + Yeast Extract | UNMAPPED |  |  | 0 |
+| UNMAPPED_0624 |  | Glutamate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0712 |  | Glutamyl-glutamic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0693 |  | Glycerol 3-phosphate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0665 |  | Glycine-proline | UNMAPPED |  |  | 0 |
+| UNMAPPED_0816 |  | Glycine 1% | UNMAPPED |  |  | 0 |
+| UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0684 |  | Glycyl-L-proline | UNMAPPED |  |  | 0 |
+| UNMAPPED_0643 |  | Glycyl-l-glutamate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0655 |  | Glycyl L-aspartic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0818 |  | Glycylglycylglycine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0756 |  | H2+3-methyl Mercaptopropionate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0631 |  | H2 + CO2 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0757 |  | H2+dimethylsulfide | UNMAPPED |  |  | 0 |
+| UNMAPPED_0703 |  | H2+methanol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0758 |  | H2+tetramethylammonium | UNMAPPED |  |  | 0 |
+| UNMAPPED_0759 |  | H2+trimethylamine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0622 |  | Hippurate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0819 |  | Hydroxystreptomycin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0760 |  | Iso-butanol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0685 |  | Isocitrate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0820 |  | Isophthalate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0638 |  | Itaconate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0648 |  | L-alanine 4-nitroanilide | UNMAPPED |  |  | 0 |
+| UNMAPPED_0689 |  | L-alanylglycine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0633 |  | L-aspartate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0713 |  | L-galactonic Acid Gamma-lactone | UNMAPPED |  |  | 0 |
+| UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
+| UNMAPPED_0823 |  | L-inositol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0636 |  | L-malate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
+| UNMAPPED_0825 |  | L-pyroglutamic Acid 2-naphthylamide | UNMAPPED |  |  | 0 |
+| UNMAPPED_0627 |  | Malonate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0676 |  | Maltose Hydrate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0826 |  | Matamycin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0763 |  | Modified Cooked Meat Medium | UNMAPPED |  |  | 0 |
+| UNMAPPED_0764 |  | Mono- And Disaccharides | UNMAPPED |  |  | 0 |
+| UNMAPPED_0828 |  | N-acetyl-neuraminic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
+| UNMAPPED_0830 |  | Neomycin E | UNMAPPED |  |  | 0 |
+| UNMAPPED_0831 |  | Neomycin F | UNMAPPED |  |  | 0 |
+| UNMAPPED_0832 |  | Netropsin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0646 |  | Niaproof | UNMAPPED |  |  | 0 |
+| UNMAPPED_0833 |  | Nutriacholic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0677 |  | O-nitrophenyl-beta-D-galactopyranosid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0719 |  | PY-cellobiose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0767 |  | PY-fructose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0768 |  | PY-glucose-rumen Fluid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0769 |  | PY-maltose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0770 |  | PY-pectin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0771 |  | PYEG | UNMAPPED |  |  | 0 |
+| UNMAPPED_0772 |  | PYG-0.02% Tween 80 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0628 |  | PYG | UNMAPPED |  |  | 0 |
+| UNMAPPED_0704 |  | PYGS | UNMAPPED |  |  | 0 |
+| UNMAPPED_0773 |  | PYG + Rumen Fluid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0834 |  | Palatinose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0766 |  | Peptone-yeast Extract-glucose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0835 |  | Peptone (0.01 % | UNMAPPED |  |  | 0 |
+| UNMAPPED_0765 |  | Peptone + Beef Extract + Yeast Extract | UNMAPPED |  |  | 0 |
+| UNMAPPED_0717 |  | Peptone + Yeast Extract | UNMAPPED |  |  | 0 |
+| UNMAPPED_0718 |  | Peptones | UNMAPPED |  |  | 0 |
+| UNMAPPED_0837 |  | Poly(ethylene Terephthalate) | UNMAPPED |  |  | 0 |
+| UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0658 |  | Polysaccharides | UNMAPPED |  |  | 0 |
+| UNMAPPED_0678 |  | Potassium 2-dehydro-D-gluconate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0698 |  | Potassium 2-ketogluconate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0639 |  | Potassium 5-dehydro-D-gluconate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0637 |  | Potassium 5-ketogluconate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0670 |  | Propanol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0838 |  | Proteose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0699 |  | Protocatechuate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0839 |  | Psicofuranine | UNMAPPED |  |  | 0 |
+| UNMAPPED_0840 |  | Rhodomycin B | UNMAPPED |  |  | 0 |
+| UNMAPPED_0841 |  | Ristocetin A | UNMAPPED |  |  | 0 |
+| UNMAPPED_0842 |  | Rna | UNMAPPED |  |  | 0 |
+| UNMAPPED_0732 |  | Selenite | UNMAPPED |  |  | 0 |
+| UNMAPPED_0843 |  | Sodium(+) | UNMAPPED |  |  | 0 |
+| UNMAPPED_0733 |  | Sodium L-glutamate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0705 |  | Sucrose + Yeast Extract | UNMAPPED |  |  | 0 |
+| UNMAPPED_0663 |  | Sugars | UNMAPPED |  |  | 0 |
+| UNMAPPED_0844 |  | Synanthrin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0845 |  | Synthetic Sea Salts (sss) | UNMAPPED |  |  | 0 |
+| UNMAPPED_0776 |  | TYGVS + Glucose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0774 |  | Tartate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0846 |  | Terephthalate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0847 |  | Tetrabromopyrrole | UNMAPPED |  |  | 0 |
+| UNMAPPED_0647 |  | Tetrathionate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0734 |  | Tetrazolium | UNMAPPED |  |  | 0 |
+| UNMAPPED_0848 |  | Trimethoxybenzoate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0775 |  | Trimethyleneglycol | UNMAPPED |  |  | 0 |
+| UNMAPPED_0673 |  | Triphenyltetrazolium Chloride | UNMAPPED |  |  | 0 |
+| UNMAPPED_0686 |  | Trithionate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | UNMAPPED |  |  | 0 |
+| UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | UNMAPPED |  |  | 0 |
+| UNMAPPED_0659 |  | Vibriostat | UNMAPPED |  |  | 0 |
+| UNMAPPED_0714 |  | Vibriostatic Agent O/129 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0700 |  | Yeast Extract (0.01 % | UNMAPPED |  |  | 0 |
+| UNMAPPED_0777 |  | Yeast Extract + Gluconate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0778 |  | Yeast Extract + Glucose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0779 |  | Yeast Extract + Peptone | UNMAPPED |  |  | 0 |
+| UNMAPPED_0780 |  | Yeast Extract + Sulfur | UNMAPPED |  |  | 0 |
+| UNMAPPED_0781 |  | Yeast + Meat Extract + H2 | UNMAPPED |  |  | 0 |
+| CHEBI:338412 |  | (-)-anisomycin | UNMAPPED |  |  | 0 |
+| CHEBI:747005 |  | 1-chlorobutane | UNMAPPED |  |  | 0 |
+| CHEBI:747004 |  | 1-chloropropane | UNMAPPED |  |  | 0 |
+| CHEBI:546840 |  | 4-nitrophenyl Alpha-D-galactoside | UNMAPPED |  |  | 0 |
+| CHEBI:756054 |  | Carbomycin | UNMAPPED |  |  | 0 |
+| CHEBI:474053 |  | Cefazolin | UNMAPPED |  |  | 0 |
+| CHEBI:478164 |  | Cefepime | UNMAPPED |  |  | 0 |
+| CHEBI:472657 |  | Cefixime | UNMAPPED |  |  | 0 |
+| CHEBI:355510 |  | Cefotiam | UNMAPPED |  |  | 0 |
+| CHEBI:759883 |  | Colistin Sulfate | UNMAPPED |  |  | 0 |
+| CHEBI:404903 |  | Ertapenem | UNMAPPED |  |  | 0 |
+| CHEBI:495056 |  | Gamma-cyclodextrin | UNMAPPED |  |  | 0 |
+| CHEBI:759884 |  | Gentamicin | UNMAPPED |  |  | 0 |
+| CHEBI:471744 |  | Imipenem | UNMAPPED |  |  | 0 |
+| CHEBI:753395 |  | Lysostaphin | UNMAPPED |  |  | 0 |
+| CHEBI:748901 |  | Netilmicin | UNMAPPED |  |  | 0 |
+| CHEBI:759086 |  | Polymyxin B | UNMAPPED |  |  | 0 |
