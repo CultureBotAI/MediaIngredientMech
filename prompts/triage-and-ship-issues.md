@@ -1,35 +1,60 @@
 # `/goal` prompt — triage the open issues and ship them
 
-Paste the block below after `/goal`. Invoking it **is** the explicit merge
-authorization the global git rules require; without it, stop at "PR open, green".
+Paste everything below the rule after `/goal`.
 
-Optionally scope it by appending e.g. `Limit to issues #182 and #183.` or
-`Do not merge — stop at PR open and green.`
+**Merging.** By default the loop stops at "PR open and green" and asks. To
+authorize merges, name them in the invocation — e.g. append
+`You may merge and delete the branch for #182 and #183.` The global rule
+(`~/.claude-work/CLAUDE.md`) is that merging is the user's call and prior
+approval of one PR is not approval of the next, so a blanket standing
+authorization is not something this file can grant itself.
+
+Other useful scopings: `Limit to issues #182 and #183.` ·
+`Triage only — rank and report, change nothing.`
+
+> The incident citations below are illustrative and were true when written
+> (2026-08-04). Re-verify any you rely on; this repo has already had a command
+> file rot into recommending the exact workflow that caused #148.
 
 ---
 
 Review and prioritize this repo's open GitHub issues, then work the top items
 end to end: branch, commit, push, open a PR, review it adversarially, file issues
-from the review, address them, merge, and delete the branch. Respect dependencies
-between PRs. Pause and ask me when a decision is genuinely mine.
+from the review, address them. Merge and delete the branch **only for PRs this
+invocation explicitly authorized** — otherwise stop at PR open and green and ask.
+Respect dependencies between PRs. Pause and ask when a decision is genuinely
+mine.
 
 ## 1. Triage before touching anything
 
-List open issues and PRs. For each issue, verify the claim against the current
-tree before ranking it — issues go stale, and at least one in this repo did not
-reproduce at all (#164: its glob reasoning was right but aimed at a file that
-already used the correct form). Say explicitly which issues you re-verified.
+Start from `NEXT_TASKS.md` and the `next-tasks` skill, which owns backlog
+reconciliation — do not build a parallel backlog in your head. Then list open
+issues and PRs.
+
+Verify each claim against the current tree before ranking it. Issues go stale,
+and #164 did not reproduce as filed. But note how that ended: the adjacent
+surface *was* broken (`data/custom/*.yaml` matched zero files because that
+directory holds a `.tsv`), so the right move was to fix what was actually wrong,
+record the reasoning in the file so a later "tidy" cannot reintroduce it, and
+close the issue with evidence. **"Does not reproduce" is the start of the
+investigation, not the end of it.** Say which issues you re-verified.
 
 Rank by **silence, not severity**. Anything loud is recoverable; a wrong thing
 that reports success is not. In order:
 
-1. Silent, irreversible data loss — especially in a code path something else now
+1. Silent, irreversible data loss — especially in a path something else now
    depends on.
-2. Checks that report OK while checking nothing (a filter that narrowed a guard
-   until it stopped guarding; a comparison against a stale committed artifact).
+2. Checks that report OK while checking nothing: a filter that narrowed a guard
+   until it stopped guarding (`paths:` in #160/#166, `branches:` in #174/#175);
+   a guard that verifies nothing when a dependency is missing (`justfile`'s
+   `_require-claw` exists because a skip-when-missing vendored-sync job passed
+   while checking nothing); a self-referential pin that compared a copy to a hash
+   from the same repo, so all four Mech repos could pass while diverged
+   (retired in #156/#157).
 3. High-likelihood correctness bugs that are at least noisy.
-4. Correctness of published artifacts (`mappings/*.sssom.tsv`,
-   `UNIFIED_INGREDIENT_MAPPING.tsv`) that downstream consumers re-sync.
+4. Correctness of the published artifacts — `mappings/ingredient_mappings.sssom.tsv`
+   and `UNIFIED_INGREDIENT_MAPPING.tsv` — which kg-microbe re-syncs on every
+   consolidation run.
 5. Footguns and hygiene.
 6. Upstream-blocked or cosmetic — name them so gaps are explained, don't work them.
 
@@ -38,79 +63,112 @@ item. Don't ask permission to begin.
 
 ## 2. Reproduce before fixing
 
-Do not fix from the issue text. Reproduce the failure and show the output, or
-state plainly that it does not reproduce and close the issue with that evidence.
-A fix whose failure you never saw is a guess.
+Do not fix from the issue text. Reproduce the failure and show the output.
 
-When the fix is a gate or guard, **verify it fails, not just that it passes.**
-Revert the data or inject the exact defect and confirm a non-zero exit. A gate
-that cannot fail is worthless, and this repo has shipped one before.
+When the fix is a gate or guard, ask two questions, in this order:
+
+1. **Is it wired to anything?** `scripts/verify_roundtrip.py` existed and was
+   correct from 2026-03-07, but nothing executable referenced it until #167 — no
+   justfile recipe, no workflow. It was not a gate that could not fail; it was a
+   gate nobody ran. Grep the justfile and `.github/workflows/` for it.
+2. **Can it fail?** Revert the data or inject the exact defect and confirm a
+   non-zero exit. A gate that only ever passes is worthless.
 
 ## 3. PR discipline
 
 Branch before the first edit; never commit to `main`. One coherent change per PR.
-After pushing, review the diff **adversarially as a separate pass** — delegate it
-to a fresh agent with no context of your reasoning, since reviewing your own work
-from memory reproduces your own blind spots. Every review finding becomes a
-GitHub issue, then triage: fix what belongs in this PR, leave the rest filed, and
-say which is which and why.
+After pushing, review the diff **adversarially as a separate pass**, delegated to
+a fresh agent with no context of your reasoning — reviewing your own work from
+memory reproduces your own blind spots. Per the global rules that review is
+**read-only**: it must not edit, push, or overwrite anything. Every finding
+becomes a GitHub issue; then triage — fix what belongs in this PR, leave the rest
+filed, and say which is which and why.
 
-Check that your own claims are true. In this session a commit message asserted
-data had been committed when it had not, a PR body cited a schema example
-verbatim that differed by one word, and a test asserted `argparse`'s documented
+Check that your own claims are true. In one session a commit message asserted
+data had been committed when it had not, a PR body quoted a schema example
+"verbatim" that differed by a word, and a test asserted `argparse`'s documented
 behaviour rather than the code's. Re-read what you wrote against what you did.
 
-## 4. Dependencies between PRs — the expensive lessons
+## 4. Dependencies between PRs
 
-- **Prefer independent branches off `main`.** Check for file overlap before
-  claiming independence; two PRs editing the same comment block are not
-  independent, however different their subjects.
+- **Prefer independent branches off `main`.** Verify independence, don't assume
+  it: `git merge-tree $(git merge-base A B) A B` is what caught #178 and #179
+  editing the same justfile comment block while both PR bodies claimed no
+  overlap.
 - **If PRs must stack, retarget the child to `main` BEFORE merging or deleting
   the parent's branch.** Deleting a base branch *closes* the child PR rather than
-  retargeting it, and a closed PR cannot be reopened while its base is gone —
-  recovering means restoring the branch from its SHA. This cost a full recovery
-  cycle here.
+  retargeting it, and GitHub will not reopen it while its base is gone — you must
+  restore the branch from its SHA first. Doing it in the right order costs
+  nothing; #178 was retargeted first and merged without incident.
 - **Merge bottom-up, rebasing each child onto the new `main`** after the parent
   lands. Parents are squash-merged, so the child still carries the pre-squash
   commits and will look conflicted until rebased.
 - **Put a shared fix in the PR that owns the file**, then rebase the dependent PR
   on top, rather than duplicating it.
 
-## 5. Verification gates
+## 5. Repo-specific constraints that will bite you
 
-Before requesting merge: `just qc` exits 0, the full test suite passes (report
-the count), and CI is green. State what you ran.
+- **`just qc` is not the whole local gate.** It is
+  `validate-all validate-strict qc-evidence qc-sssom qc-roundtrip`. The
+  **blocking** id↔label gate deliberately sits *outside* it because it needs a
+  multi-GB OAK download — run `just validate-products` too, or CI will find what
+  you didn't.
+- **Vendored files are a procedure, not a judgment call.**
+  `scripts/validate_id_label_correspondence.py`, `scripts/chem_formula.py`,
+  `tests/test_id_label_*.py`, and `src/*/schema/mech_shared.yaml` are
+  byte-identical across four Mech repos. Editing one locally fails
+  `vendored-sync`. The path is: PR into `CultureBotAI/CultureMech` → merge → copy
+  byte-exact → bump `scripts/.vendored_canon_ref` in the same PR.
+- **Data changes need a provenance record.** Anything touching
+  `data/ingredients/**`, `data/curated/**`, `data/custom/**`, or `mappings/**`
+  gets a `just new-history` record. CI treats its *presence* as advisory by
+  design, so nothing will stop you forgetting — that is exactly why it belongs
+  in your checklist.
+- **A published artifact is done when it is rebuilt, not when the YAMLs change.**
+
+## 6. Verification
+
+Report what you ran and its result: `just qc`, `just validate-products`, the full
+test suite with its count, and CI.
 
 Never trust a status label over content. "PR merged" does not prove the content
-landed — squash-merges make commit-level checks lie. Diff the branch's own
-changes against `main` before deleting anything.
+landed — squash-merges make commit-level checks lie. Diff a branch's own changes
+against `main` before deleting it.
 
-Watch for changes that are large but content-neutral. If a diff is thousands of
-lines, characterise it (records added/removed/modified, field-level) before
-accepting or dismissing it. An unreviewable diff is how 55 curation events were
-silently reverted here for months.
+Characterise large diffs before accepting **or** dismissing them: records added,
+removed, modified, and field-level changes. A one-role apply once produced a
+9,513-line diff of which ~9,500 was pure reordering (#178/#179). Nothing was
+wrong with the data — the hazard is that a real change hides in that volume, and
+the tooling had a comment telling reviewers not to read such diffs by line count.
 
-## 6. When to pause and ask
+## 7. When to pause and ask
 
-Use `AskUserQuestion` — do not guess, and do not stall silently — when:
+Use `AskUserQuestion` — don't guess, don't stall silently — when:
 
-- the choice is a **judgment call with cross-repo blast radius** (renaming a
-  shared enum, changing something CultureMech imports, altering a vendored file);
+- the choice has **cross-repo blast radius** (renaming an enum CultureMech
+  imports, changing a shared schema);
 - fixing it means **deciding what the data should say** rather than what the code
-  should do (which of two ontology groundings is right, whether two records are
-  duplicates or genuinely distinct);
+  should do (which of two ontology groundings is right; whether two records are
+  duplicates or genuinely distinct compounds);
 - an issue's premise is wrong and the right action is to **close or re-scope
   someone else's issue**;
-- the work needs **credentials, budget, or an external service** (Edison runs, a
-  billed sweep) — and when you do spend, canary exactly one unit first and verify
-  the artifact is on disk before fanning out;
-- proceeding would **delete or overwrite** something you did not create.
+- the work needs **credentials, budget, or an external service** — and see the
+  canary rule in `~/.claude-work/CLAUDE.md` before any billed fan-out: free
+  dry-runs first, then exactly one real unit **by the same path the batch will
+  take**, verify the artifact is on disk and non-empty, re-canary rather than
+  fix-and-fan-out, and say what the canary proved;
+- proceeding would **delete or overwrite** something you did not create;
+- a PR is ready to merge and **this invocation did not authorize merging it**.
 
 Otherwise decide and proceed, saying what you chose and why.
 
-## 7. Done
+## 8. Done
 
-Every item you took on is either merged with its branch deleted, or closed with
-evidence, or filed as a follow-up with a reason. `main` is green, the working
-tree is clean, and no branch you created is left on the remote. Report what
-shipped, what you deliberately did not do, and what you would pick up next.
+Every item is merged (where authorized), or left as a green PR awaiting my call,
+or closed with evidence, or filed as a follow-up with a reason. `NEXT_TASKS.md`
+is updated per the `next-tasks` skill — shipped items marked
+`DONE (YYYY-MM-DD, PR #NNN)`, reconcile date bumped — because a loop that merges
+and never touches the backlog leaves it stale by exactly what it shipped.
+`main` is green, the working tree is clean, and every branch you created is
+deleted **both remote and local**. Report what shipped, what you deliberately did
+not do, and what you would pick up next.
