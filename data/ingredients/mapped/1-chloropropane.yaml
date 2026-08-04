@@ -1,0 +1,41 @@
+identifier: CHEBI:747004
+preferred_term: 1-chloropropane
+synonyms: []
+mapping_status: PENDING_REVIEW
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:1_chloropropane; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:02:12.084870+00:00'
+  curator: microbedecoder-import-review
+  action: DEMOTED_TO_UNMAPPED
+  changes: removed ontology_mapping CHEBI:747004
+  notes: CHEBI:747004 exceeds the CHEBI accession ceiling and does not resolve; validate-products
+    reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+  llm_assisted: true
+- timestamp: '2026-08-04T17:55:33.979619+00:00'
+  curator: microbedecoder-import-review
+  action: RESTORED_AFTER_FALSE_POSITIVE
+  changes: restored ontology_mapping CHEBI:747004; UNMAPPED -> PENDING_REVIEW
+  notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+    curation history is append-only. CHEBI:747004 is a real ChEBI term that resolves
+    locally as ''1-chloropropane''; it was demoted for exceeding the CHEBI:300000
+    ceiling while the local build was stale (#197). Restored to PENDING_REVIEW rather
+    than MAPPED: it has never had a substantive review, and the batch review that
+    promoted its cohort was itself tautological (#203). See #198.'
+  llm_assisted: true
+ontology_mapping:
+  ontology_id: CHEBI:747004
+  ontology_label: 1-chloropropane
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: microbedecoder import via ols-label-exact
+    notes: Restored after a false-positive demotion; CHEBI:747004 resolves to '1-chloropropane'.

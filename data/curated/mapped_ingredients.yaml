@@ -1,5 +1,5 @@
-generation_date: '2026-08-04T07:16:38.234312+00:00'
-total_count: 2265
+generation_date: '2026-08-04T17:56:14.905875+00:00'
+total_count: 2276
 mapped_count: 2262
 unmapped_count: 0
 ingredients:
@@ -161057,3 +161057,456 @@ ingredients:
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
     llm_assisted: true
+- identifier: CHEBI:338412
+  preferred_term: (-)-anisomycin
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:anisomycin; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:338412
+    notes: CHEBI:338412 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:338412; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:338412 is a real ChEBI term that resolves
+      locally as ''(-)-anisomycin''; it was demoted for exceeding the CHEBI:300000
+      ceiling while the local build was stale (#197). Restored to PENDING_REVIEW rather
+      than MAPPED: it has never had a substantive review, and the batch review that
+      promoted its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:338412
+    ontology_label: (-)-anisomycin
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:338412 resolves to '(-)-anisomycin'.
+- identifier: CHEBI:747005
+  preferred_term: 1-chlorobutane
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:1_chlorobutane; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:747005
+    notes: CHEBI:747005 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:747005; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:747005 is a real ChEBI term that resolves
+      locally as ''1-chlorobutane''; it was demoted for exceeding the CHEBI:300000
+      ceiling while the local build was stale (#197). Restored to PENDING_REVIEW rather
+      than MAPPED: it has never had a substantive review, and the batch review that
+      promoted its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:747005
+    ontology_label: 1-chlorobutane
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:747005 resolves to '1-chlorobutane'.
+- identifier: CHEBI:747004
+  preferred_term: 1-chloropropane
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:1_chloropropane; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:747004
+    notes: CHEBI:747004 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:747004; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:747004 is a real ChEBI term that resolves
+      locally as ''1-chloropropane''; it was demoted for exceeding the CHEBI:300000
+      ceiling while the local build was stale (#197). Restored to PENDING_REVIEW rather
+      than MAPPED: it has never had a substantive review, and the batch review that
+      promoted its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:747004
+    ontology_label: 1-chloropropane
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:747004 resolves to '1-chloropropane'.
+- identifier: CHEBI:546840
+  preferred_term: 4-nitrophenyl Alpha-D-galactoside
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:4_nitrophenyl_alpha_d_galactoside; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:546840
+    notes: CHEBI:546840 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:546840; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:546840 is a real ChEBI term that resolves
+      locally as ''4-nitrophenyl alpha-D-galactoside''; it was demoted for exceeding
+      the CHEBI:300000 ceiling while the local build was stale (#197). Restored to
+      PENDING_REVIEW rather than MAPPED: it has never had a substantive review, and
+      the batch review that promoted its cohort was itself tautological (#203). See
+      #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:546840
+    ontology_label: 4-nitrophenyl alpha-D-galactoside
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:546840 resolves to '4-nitrophenyl
+        alpha-D-galactoside'.
+- identifier: CHEBI:474053
+  preferred_term: Cefazolin
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:cefazolin; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:474053
+    notes: CHEBI:474053 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:474053; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:474053 is a real ChEBI term that resolves
+      locally as ''cefazolin''; it was demoted for exceeding the CHEBI:300000 ceiling
+      while the local build was stale (#197). Restored to PENDING_REVIEW rather than
+      MAPPED: it has never had a substantive review, and the batch review that promoted
+      its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:474053
+    ontology_label: cefazolin
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:474053 resolves to 'cefazolin'.
+- identifier: CHEBI:478164
+  preferred_term: Cefepime
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:cefepime; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:478164
+    notes: CHEBI:478164 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:478164; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:478164 is a real ChEBI term that resolves
+      locally as ''cefepime''; it was demoted for exceeding the CHEBI:300000 ceiling
+      while the local build was stale (#197). Restored to PENDING_REVIEW rather than
+      MAPPED: it has never had a substantive review, and the batch review that promoted
+      its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:478164
+    ontology_label: cefepime
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:478164 resolves to 'cefepime'.
+- identifier: CHEBI:472657
+  preferred_term: Cefixime
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:cefixime; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:472657
+    notes: CHEBI:472657 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:472657; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:472657 is a real ChEBI term that resolves
+      locally as ''cefixime''; it was demoted for exceeding the CHEBI:300000 ceiling
+      while the local build was stale (#197). Restored to PENDING_REVIEW rather than
+      MAPPED: it has never had a substantive review, and the batch review that promoted
+      its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:472657
+    ontology_label: cefixime
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:472657 resolves to 'cefixime'.
+- identifier: CHEBI:355510
+  preferred_term: Cefotiam
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:cefotiam; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:355510
+    notes: CHEBI:355510 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:355510; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:355510 is a real ChEBI term that resolves
+      locally as ''cefotiam''; it was demoted for exceeding the CHEBI:300000 ceiling
+      while the local build was stale (#197). Restored to PENDING_REVIEW rather than
+      MAPPED: it has never had a substantive review, and the batch review that promoted
+      its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:355510
+    ontology_label: cefotiam
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:355510 resolves to 'cefotiam'.
+- identifier: CHEBI:404903
+  preferred_term: Ertapenem
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:ertapenem; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:404903
+    notes: CHEBI:404903 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:404903; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:404903 is a real ChEBI term that resolves
+      locally as ''ertapenem''; it was demoted for exceeding the CHEBI:300000 ceiling
+      while the local build was stale (#197). Restored to PENDING_REVIEW rather than
+      MAPPED: it has never had a substantive review, and the batch review that promoted
+      its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:404903
+    ontology_label: ertapenem
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:404903 resolves to 'ertapenem'.
+- identifier: CHEBI:495056
+  preferred_term: Gamma-cyclodextrin
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:gamma_cyclodextrin; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:495056
+    notes: CHEBI:495056 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:495056; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:495056 is a real ChEBI term that resolves
+      locally as ''gamma-cyclodextrin''; it was demoted for exceeding the CHEBI:300000
+      ceiling while the local build was stale (#197). Restored to PENDING_REVIEW rather
+      than MAPPED: it has never had a substantive review, and the batch review that
+      promoted its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:495056
+    ontology_label: gamma-cyclodextrin
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:495056 resolves to 'gamma-cyclodextrin'.
+- identifier: CHEBI:471744
+  preferred_term: Imipenem
+  synonyms: []
+  mapping_status: PENDING_REVIEW
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:imipenem; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:471744
+    notes: CHEBI:471744 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-04T17:55:33.979619+00:00'
+    curator: microbedecoder-import-review
+    action: RESTORED_AFTER_FALSE_POSITIVE
+    changes: restored ontology_mapping CHEBI:471744; UNMAPPED -> PENDING_REVIEW
+    notes: 'The DEMOTED_TO_UNMAPPED event above is WRONG and is left in place because
+      curation history is append-only. CHEBI:471744 is a real ChEBI term that resolves
+      locally as ''imipenem''; it was demoted for exceeding the CHEBI:300000 ceiling
+      while the local build was stale (#197). Restored to PENDING_REVIEW rather than
+      MAPPED: it has never had a substantive review, and the batch review that promoted
+      its cohort was itself tautological (#203). See #198.'
+    llm_assisted: true
+  ontology_mapping:
+    ontology_id: CHEBI:471744
+    ontology_label: imipenem
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder import via ols-label-exact
+      notes: Restored after a false-positive demotion; CHEBI:471744 resolves to 'imipenem'.

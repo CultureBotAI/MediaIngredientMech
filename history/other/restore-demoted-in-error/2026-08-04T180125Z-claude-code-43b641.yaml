@@ -1,0 +1,49 @@
+history_version: 1
+target:
+  kind: other
+  path: data/ingredients/mapped/Cefazolin.yaml
+  slug: restore-demoted-in-error
+session:
+  id: 2026-08-04T180125Z-claude-code-43b641
+  timestamp: '2026-08-04T18:01:25Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/198
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - ingredients
+  - mappings
+  summary: Restore the 11 records demoted on a false positive; hold 6 blocked on an upstream
+    ChEBI build
+  details: 'In #193 I demoted 17 microbedecoder auto-groundings to UNMAPPED, asserting their
+    CHEBI ids were ''the signature of a foreign identifier wearing an OBO prefix''. That was
+    wrong: all 17 are real, non-obsolete ChEBI terms (verified against live OLS4), and the
+    demotion criterion I applied - ''above the CHEBI:300000 ceiling'' - is not the validator''s,
+    which is ''above the ceiling AND unresolvable''. Eleven of the seventeen resolve in the
+    local build right now and would have passed the gate: CHEBI:338412 (-)-anisomycin, 747005
+    1-chlorobutane, 747004 1-chloropropane, 546840 4-nitrophenyl alpha-D-galactoside, 474053
+    cefazolin, 478164 cefepime, 472657 cefixime, 355510 cefotiam, 404903 ertapenem, 495056
+    gamma-cyclodextrin, 471744 imipenem. Those are restored here with their ontology_mapping
+    rebuilt from the id preserved in the DEMOTED_TO_UNMAPPED event and the label read from
+    the local adapter, and validate-products exits 0 with them in place - direct proof they
+    were false positives. Restored to PENDING_REVIEW rather than MAPPED on purpose: these
+    have never had a substantive review, and the batch review that promoted their 386-record
+    cohort was itself tautological (#203), so promoting them to MAPPED would inherit a check
+    that verifies nothing. The erroneous DEMOTED_TO_UNMAPPED events are deliberately left
+    in place - curation history is append-only - with a RESTORED_AFTER_FALSE_POSITIVE event
+    that says the earlier one is wrong and why. The remaining six (CHEBI:756054 carbomycin,
+    759883 colistin sulfate, 759884 gentamicin, 753395 lysostaphin, 748901 netilmicin, 759086
+    polymyxin B) are real per OLS4 but genuinely absent from the local build, whose max accession
+    is 747618 at ChEBI release 252 against kg-microbe''s 253. Those six are BLOCKED UPSTREAM
+    rather than pending a task here: ''just refresh-chebi'' cannot clear it, because the published
+    semsql artifact is byte-identical to the local one and is also release 252 (#199). Re-check
+    with ''just check-chebi-currency'' and restore them the same way once it reports that the
+    published artifact differs (#207). The manifest says this per row. Verified: validate-products
+    exits 0, just qc exits 0, 550 tests pass.'
