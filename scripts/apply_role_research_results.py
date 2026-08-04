@@ -66,6 +66,7 @@ from __future__ import annotations
 import argparse
 import datetime
 import json
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -83,6 +84,7 @@ from mediaingredientmech.utils.role_facets import (
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 INGREDIENTS_DIR = REPO_ROOT / "data" / "ingredients"
+CURATED_DIR = REPO_ROOT / "data" / "curated"
 
 DEFAULT_CURATOR = "edison-deep-research"
 DEFAULT_REFERENCE_TYPE = "PEER_REVIEWED_PUBLICATION"
@@ -279,6 +281,70 @@ def _summary(applied: int, files_written: int, skipped: list[str], errors: list[
     return "\n".join(lines)
 
 
+def sync_curated() -> int:
+    """Write the per-record edits back into data/curated/, then re-export.
+
+    This script writes role slots straight into data/ingredients/. Those slots
+    DO exist in the curated collection, so leaving them there desynchronises the
+    two surfaces: `just export-individual` projects the collection over the
+    per-record tree, and would silently revert every role this script just
+    applied. That is exactly how 55 curation events were lost in issue #148, and
+    the `qc-roundtrip` gate now fails on it (issue #171).
+
+    SCOPE: this aggregates ALL of data/ingredients/, not just the records this
+    run touched — the collection is written as a whole. Any unrelated uncommitted
+    per-record edit in the working tree is therefore promoted into data/curated/
+    under whatever commit follows. Review `git diff data/curated` rather than
+    assuming it contains only this batch. (Since #169 the aggregator preserves the
+    collection's record order, so that diff is proportional to the change and this
+    is actually reviewable.)
+
+    Deliberately the same two steps, in the same order, as `just sync-curated`.
+    The re-export is not redundant: the collection does not carry `discussions`,
+    so the exporter re-attaches it at the end of a record, and without the second
+    step the tree would be content-correct but byte-different from what the gate
+    expects.
+
+    Returns a process exit code (0 on success).
+    """
+    steps = (
+        (
+            "aggregate per-record edits into data/curated/",
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts" / "aggregate_records.py"),
+                "--ingredients-dir", str(INGREDIENTS_DIR),
+                "--output-dir", str(CURATED_DIR),
+            ],
+        ),
+        (
+            "re-export data/curated/ to a fixed point",
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts" / "export_individual_records.py"),
+                "--input-dir", str(CURATED_DIR),
+                "--output-dir", str(INGREDIENTS_DIR),
+            ],
+        ),
+    )
+    for description, cmd in steps:
+        print(f"  syncing: {description}")
+        # Children write to the fd directly; without this our own buffered output
+        # lands AFTER theirs whenever stdout is a pipe (CI, tee, a log file).
+        sys.stdout.flush()
+        proc = subprocess.run(cmd, cwd=REPO_ROOT)
+        if proc.returncode != 0:
+            print(
+                f"ERROR: failed to {description} (exit {proc.returncode}).\n"
+                "data/ingredients/ and data/curated/ are now out of sync; the next\n"
+                "`just export-individual` would revert the roles just applied.\n"
+                "Fix the cause and run `just sync-curated` before committing.",
+                file=sys.stderr,
+            )
+            return proc.returncode
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("batch", type=Path, help="JSON batch from extract_roles_from_edison.py")
@@ -289,6 +355,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--limit", type=int, default=None,
                         help="Cap number of proposals processed (for smoke tests).")
     parser.add_argument("--verbose", "-v", action="store_true")
+    parser.add_argument(
+        "--no-sync", action="store_true",
+        help="Do NOT write the edits back into data/curated/ afterwards. Leaves the "
+             "two surfaces out of sync, so the next `just export-individual` reverts "
+             "the roles just applied and `just qc-roundtrip` fails. For debugging only.",
+    )
     args = parser.parse_args(argv)
 
     if not args.batch.is_file():
@@ -350,6 +422,19 @@ def main(argv: list[str] | None = None) -> int:
     print(_summary(total_applied, files_written, total_skipped, total_errors))
     if args.dry_run:
         print("\n[dry-run] no files were written.")
+
+    if files_written and not args.dry_run:
+        if args.no_sync:
+            print(
+                "\nWARNING: --no-sync given. data/ingredients/ and data/curated/ are now\n"
+                "out of sync; the next `just export-individual` will revert these roles.\n"
+                "Run `just sync-curated` before committing."
+            )
+        else:
+            rc = sync_curated()
+            if rc != 0:
+                return rc
+
     return 0 if not total_errors else 1
 
 

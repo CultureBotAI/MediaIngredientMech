@@ -336,8 +336,13 @@ def test_main_dry_run_produces_summary(tmp_path, monkeypatch, capsys):
     }])
     monkeypatch.setattr(_apply, "INGREDIENTS_DIR", tmp_path / "data" / "ingredients")
     monkeypatch.setattr(_apply, "REPO_ROOT", tmp_path)
+    # A dry run must not sync either — it writes nothing, so there is nothing to
+    # reconcile, and shelling out would be a surprising side effect of --dry-run.
+    sync_calls: list[int] = []
+    monkeypatch.setattr(_apply, "sync_curated", lambda: sync_calls.append(1) or 0)
     rc = _apply.main([str(batch), "--dry-run"])
     assert rc == 0
+    assert sync_calls == [], "--dry-run must not sync"
     out = capsys.readouterr().out
     assert "Loaded 1 proposals" in out
     assert "Role assignments applied: 1" in out
@@ -367,8 +372,16 @@ def test_main_real_write(tmp_path, monkeypatch, capsys):
     }])
     monkeypatch.setattr(_apply, "INGREDIENTS_DIR", tmp_path / "data" / "ingredients")
     monkeypatch.setattr(_apply, "REPO_ROOT", tmp_path)
+    # A real write now also syncs data/curated/ (#171), which shells out to the
+    # aggregator and exporter. Stub it here: this test covers the apply path, and
+    # tmp_path has no scripts/ for the real sync to run. Asserting it was called
+    # is the point — without it the roles written above would be reverted by the
+    # next `just export-individual`.
+    sync_calls: list[int] = []
+    monkeypatch.setattr(_apply, "sync_curated", lambda: sync_calls.append(1) or 0)
     rc = _apply.main([str(batch)])
     assert rc == 0
+    assert sync_calls == [1], "a real write must sync data/curated/ afterwards (#171)"
 
     round_tripped = yaml.safe_load(yml.read_text())
     assert round_tripped["nutritional_roles"][0]["role"] == "AMINO_ACID_SOURCE"

@@ -232,8 +232,9 @@ sync-curated:
     #!/usr/bin/env bash
     set -euo pipefail
     # The missing half of the round trip, and the remediation when qc-roundtrip
-    # goes red because a script edited data/ingredients/ directly
-    # (apply-role-research-results does exactly this -- issue #171).
+    # goes red because a script edited data/ingredients/ directly.
+    # apply-role-research-results now runs this itself (#171), so this recipe is
+    # for hand edits and for any future writer that forgets to.
     #
     # `sync-individual` is NOT this: it runs export FIRST, overwriting the
     # per-record edits with the collection. (`aggregate-collections` was removed
@@ -380,6 +381,8 @@ enrich-edison-response *args="":
     uv run --extra dev python scripts/enrich_edison_response.py {{args}}
 
 # Step 7b — Apply role research results extracted from Edison output.
+# Writes the per-record files AND syncs them back into data/curated/, so the two
+# surfaces stay consistent and the next export cannot revert the roles (#171).
 # Input: JSON batch emitted by CultureMech's `extract_roles_from_edison.py`.
 # Writes rich RoleAssignments (with per-role confidence + evidence citations)
 # to `data/ingredients/**/*.yaml`. Per-facet never-overwrite guard.
