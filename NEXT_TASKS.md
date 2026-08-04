@@ -6,8 +6,29 @@ deferrals here. Keep the cross-Mech items in sync with the sibling repos'
 `NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech). The hub,
 culturebotai-claw, now keeps one too, for items no single Mech owns.
 
-Last reconciled: 2026-08-02. **#160** was filed on 2026-07-30 for the
+Last reconciled: 2026-08-04. **#160** was filed on 2026-07-30 for the
 `trigger_paths` gap described in the vendored-sync section below.
+
+**Shipped since the last reconcile — the "guards that were not guarding" thread.**
+Five PRs, all closing the same class of defect: a check that reports OK while
+checking nothing.
+
+| PR | closes | what was wrong |
+|---|---|---|
+| #178 | #171 | The role applier wrote role slots per-record only, so the next `just export-individual` reverted them — the #148 mechanism, in the tool the role-research lane runs. |
+| #179 | #169, #176 | `aggregate_records.py` and `verify_roundtrip.py` defaulted to `data/collections/`, which nothing reads; the round-trip verifier paired records on a key that was not asserted unique. |
+| #180 | #164 | The curation-history advisory's `data/custom/*.yaml` matched zero tracked files (that directory holds a `.tsv`). #164 as filed did not reproduce; the adjacent surface was genuinely broken. |
+| #188 | #185 | Skills/commands/prompts naming recipes and paths that no longer exist — including `merge-ingredients` telling agents to validate every merge with a script that was never there. |
+| #189 | #181 | The curation-history advisory **counts** matches and never asserts, so a dead pathspec reads exactly like "no records changed". |
+
+New local gates, both in `just qc` and blocking in CI:
+`just check-instruction-refs` · `just check-curation-targets`.
+
+Two follow-ups filed rather than guessed, because both need judgment rather than
+a path fix: **#186** (`just enrich-with-hierarchy` is cited as CultureMech's but
+exists in no repo — and it is the documented hand-off for the role-research lane
+in item 5) and **#187** (`data/curation/flagged_duplicates.yaml` never existed,
+and the 61 duplicate identifier PKs in item 2 will produce exactly those flags).
 
 > **Reconcile note (2026-07-30).** The previous reconcile was 2026-06-15 and the
 > file had drifted badly: PRs #114–#157 shipped in the interim, including two
