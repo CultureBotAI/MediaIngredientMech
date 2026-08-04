@@ -37,7 +37,6 @@ URI: [mediaingredientmech:StockComponent](https://w3id.org/mediaingredientmech/S
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -64,8 +63,12 @@ URI: [mediaingredientmech:StockComponent](https://w3id.org/mediaingredientmech/S
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

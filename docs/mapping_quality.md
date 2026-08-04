@@ -31,15 +31,36 @@ Alias: mapping_quality
 
 ## Properties
 
-* Range: [MappingQualityEnum](MappingQualityEnum.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [MappingQualityEnum](MappingQualityEnum.md) |
+| Domain Of | [OntologyMapping](OntologyMapping.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Required | Yes |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [OntologyMapping](OntologyMapping.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

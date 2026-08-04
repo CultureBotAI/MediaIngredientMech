@@ -31,13 +31,35 @@ Alias: retrieval_date
 
 ## Properties
 
-* Range: [Datetime](Datetime.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [Datetime](Datetime.md) |
+| Domain Of | [ChemicalProperties](ChemicalProperties.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [ChemicalProperties](ChemicalProperties.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

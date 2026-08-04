@@ -31,15 +31,36 @@ Alias: datasets
 
 ## Properties
 
-* Range: [Dataset](Dataset.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [Dataset](Dataset.md) |
+| Domain Of | [IngredientRecord](IngredientRecord.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [IngredientRecord](IngredientRecord.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

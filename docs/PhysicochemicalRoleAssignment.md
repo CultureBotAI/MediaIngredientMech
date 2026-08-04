@@ -53,7 +53,6 @@ URI: [mediaingredientmech:PhysicochemicalRoleAssignment](https://w3id.org/mediai
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -79,8 +78,12 @@ URI: [mediaingredientmech:PhysicochemicalRoleAssignment](https://w3id.org/mediai
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

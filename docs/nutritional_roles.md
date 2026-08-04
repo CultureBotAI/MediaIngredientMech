@@ -31,15 +31,36 @@ Alias: nutritional_roles
 
 ## Properties
 
-* Range: [NutritionalRoleAssignment](NutritionalRoleAssignment.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [NutritionalRoleAssignment](NutritionalRoleAssignment.md) |
+| Domain Of | [IngredientRecord](IngredientRecord.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [IngredientRecord](IngredientRecord.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

@@ -17,8 +17,8 @@ Alias: explanation
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 
 
 
@@ -27,13 +27,28 @@ Alias: explanation
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [MappingEvidence](MappingEvidence.md), [SupportingReference](SupportingReference.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

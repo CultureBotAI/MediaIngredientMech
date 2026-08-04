@@ -10,7 +10,6 @@ _Public repository hosting the dataset. Superset of CommunityMech's enum (all va
 URI: [mediaingredientmech:DatasetRepositoryEnum](https://w3id.org/mediaingredientmech/DatasetRepositoryEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | NCBI_SRA | None | NCBI Sequence Read Archive |
@@ -49,8 +48,12 @@ URI: [mediaingredientmech:DatasetRepositoryEnum](https://w3id.org/mediaingredien
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

@@ -31,17 +31,43 @@ Alias: action
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [CurationEvent](CurationEvent.md) |
 
-* Regex pattern: `^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$`
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Required | Yes |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [CurationEvent](CurationEvent.md) |
+
+
+### Value Constraints
+
+| Property | Value |
+| --- | --- |
+| Regex Pattern | `^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$` |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

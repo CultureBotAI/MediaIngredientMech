@@ -10,7 +10,6 @@ _Kind of unresolved / in-progress item captured by a Discussion. Knowledge gaps 
 URI: [mediaingredientmech:DiscussionKindEnum](https://w3id.org/mediaingredientmech/DiscussionKindEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | OPEN_QUESTION | None | An unresolved scientific question posed by curators or experts |
@@ -34,8 +33,12 @@ URI: [mediaingredientmech:DiscussionKindEnum](https://w3id.org/mediaingredientme
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

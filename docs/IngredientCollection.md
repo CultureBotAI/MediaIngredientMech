@@ -50,6 +50,12 @@ URI: [mediaingredientmech:IngredientCollection](https://w3id.org/mediaingredient
 
 <!-- no inheritance hierarchy -->
 
+## Class Properties
+
+| Property | Value |
+| --- | --- |
+| Tree Root | Yes |
+
 
 ## Slots
 
@@ -72,8 +78,12 @@ URI: [mediaingredientmech:IngredientCollection](https://w3id.org/mediaingredient
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

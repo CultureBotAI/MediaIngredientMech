@@ -26,13 +26,35 @@ Alias: repository
 
 ## Properties
 
-* Range: [DatasetRepositoryEnum](DatasetRepositoryEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [DatasetRepositoryEnum](DatasetRepositoryEnum.md) |
+| Domain Of | [Dataset](Dataset.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [Dataset](Dataset.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

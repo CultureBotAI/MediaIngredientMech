@@ -63,7 +63,6 @@ URI: [mediaingredientmech:CurationEvent](https://w3id.org/mediaingredientmech/Cu
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -94,8 +93,12 @@ URI: [mediaingredientmech:CurationEvent](https://w3id.org/mediaingredientmech/Cu
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

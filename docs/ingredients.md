@@ -31,15 +31,36 @@ Alias: ingredients
 
 ## Properties
 
-* Range: [IngredientRecord](IngredientRecord.md)
+### Type and Range
 
-* Multivalued: True
+| Property | Value |
+| --- | --- |
+| Range | [IngredientRecord](IngredientRecord.md) |
+| Domain Of | [IngredientCollection](IngredientCollection.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Multivalued | Yes |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [IngredientCollection](IngredientCollection.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

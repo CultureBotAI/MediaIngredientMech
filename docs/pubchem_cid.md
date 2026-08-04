@@ -31,15 +31,42 @@ Alias: pubchem_cid
 
 ## Properties
 
-* Range: [Integer](Integer.md)
+### Type and Range
 
-* Minimum Value: 1
+| Property | Value |
+| --- | --- |
+| Range | [Integer](Integer.md) |
+| Domain Of | [ChemicalProperties](ChemicalProperties.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [ChemicalProperties](ChemicalProperties.md) |
+
+
+### Value Constraints
+
+| Property | Value |
+| --- | --- |
+| Minimum Value | 1 |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

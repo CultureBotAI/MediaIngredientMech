@@ -31,13 +31,35 @@ Alias: chemical_properties
 
 ## Properties
 
-* Range: [ChemicalProperties](ChemicalProperties.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [ChemicalProperties](ChemicalProperties.md) |
+| Domain Of | [IngredientRecord](IngredientRecord.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [IngredientRecord](IngredientRecord.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

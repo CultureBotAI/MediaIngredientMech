@@ -26,13 +26,35 @@ Alias: kind
 
 ## Properties
 
-* Range: [DiscussionKindEnum](DiscussionKindEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [DiscussionKindEnum](DiscussionKindEnum.md) |
+| Domain Of | [Discussion](Discussion.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [Discussion](Discussion.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

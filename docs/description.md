@@ -17,8 +17,8 @@ Alias: description
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProposedExperiment](ProposedExperiment.md) | A lightweight, domain-neutral sketch of an experiment or analysis that could ... |  no  |
 | [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |  no  |
+| [ProposedExperiment](ProposedExperiment.md) | A lightweight, domain-neutral sketch of an experiment or analysis that could ... |  no  |
 
 
 
@@ -27,13 +27,28 @@ Alias: description
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [ProposedExperiment](ProposedExperiment.md), [Dataset](Dataset.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

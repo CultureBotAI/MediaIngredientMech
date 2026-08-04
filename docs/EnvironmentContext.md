@@ -44,7 +44,6 @@ URI: [mediaingredientmech:EnvironmentContext](https://w3id.org/mediaingredientme
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -70,8 +69,12 @@ URI: [mediaingredientmech:EnvironmentContext](https://w3id.org/mediaingredientme
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

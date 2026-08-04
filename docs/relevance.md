@@ -31,15 +31,36 @@ Alias: relevance
 
 ## Properties
 
-* Range: [EnvironmentRelevanceEnum](EnvironmentRelevanceEnum.md)
+### Type and Range
 
-* Required: True
+| Property | Value |
+| --- | --- |
+| Range | [EnvironmentRelevanceEnum](EnvironmentRelevanceEnum.md) |
+| Domain Of | [EnvironmentContext](EnvironmentContext.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+| Required | Yes |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [EnvironmentContext](EnvironmentContext.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

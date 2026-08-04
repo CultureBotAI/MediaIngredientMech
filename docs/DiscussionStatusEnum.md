@@ -10,7 +10,6 @@ _Lifecycle status for a Discussion._
 URI: [mediaingredientmech:DiscussionStatusEnum](https://w3id.org/mediaingredientmech/DiscussionStatusEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | OPEN | None | Posed but not yet under active discussion |
@@ -31,8 +30,12 @@ URI: [mediaingredientmech:DiscussionStatusEnum](https://w3id.org/mediaingredient
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

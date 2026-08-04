@@ -10,7 +10,6 @@ _Describes why an ingredient is relevant to a particular environment. Mirrors th
 URI: [mediaingredientmech:EnvironmentRelevanceEnum](https://w3id.org/mediaingredientmech/EnvironmentRelevanceEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | NATURAL_SOURCE | None | Ingredient is naturally found in or sourced from this environment |
@@ -32,8 +31,12 @@ URI: [mediaingredientmech:EnvironmentRelevanceEnum](https://w3id.org/mediaingred
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

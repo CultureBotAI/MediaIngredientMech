@@ -17,9 +17,9 @@ Alias: source
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [IngredientSynonym](IngredientSynonym.md) | Alternative name or raw text variant for an ingredient |  no  |
 | [StockComponent](StockComponent.md) | One constituent of a stock solution or defined medium recipe — a component in... |  no  |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 
 
 
@@ -28,13 +28,28 @@ Alias: source
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [MappingEvidence](MappingEvidence.md), [IngredientSynonym](IngredientSynonym.md), [StockComponent](StockComponent.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

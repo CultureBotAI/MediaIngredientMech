@@ -44,7 +44,6 @@ URI: [mediaingredientmech:IngredientSynonym](https://w3id.org/mediaingredientmec
 
 <!-- no inheritance hierarchy -->
 
-
 ## Slots
 
 | Name | Cardinality and Range | Description | Inheritance |
@@ -70,8 +69,12 @@ URI: [mediaingredientmech:IngredientSynonym](https://w3id.org/mediaingredientmec
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

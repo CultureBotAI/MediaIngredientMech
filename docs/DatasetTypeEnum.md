@@ -10,7 +10,6 @@ _Type of dataset or data resource. Canonical UNION of CultureMech's and Communit
 URI: [mediaingredientmech:DatasetTypeEnum](https://w3id.org/mediaingredientmech/DatasetTypeEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | GENOMICS | None | Isolate / single-organism genome data |
@@ -42,8 +41,12 @@ URI: [mediaingredientmech:DatasetTypeEnum](https://w3id.org/mediaingredientmech/
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

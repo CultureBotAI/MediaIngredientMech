@@ -10,7 +10,6 @@ _Role of the ingredient inside or on the cultured microbe(s) — the compound's 
 URI: [mediaingredientmech:CellularMetabolicRoleEnum](https://w3id.org/mediaingredientmech/CellularMetabolicRoleEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | SUBSTRATE | None | Consumed by the organism for biosynthesis, energy, or both (general-purpose s... |
@@ -31,8 +30,12 @@ URI: [mediaingredientmech:CellularMetabolicRoleEnum](https://w3id.org/mediaingre
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

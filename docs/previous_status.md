@@ -31,13 +31,35 @@ Alias: previous_status
 
 ## Properties
 
-* Range: [MappingStatusEnum](MappingStatusEnum.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [MappingStatusEnum](MappingStatusEnum.md) |
+| Domain Of | [CurationEvent](CurationEvent.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+### Slot Characteristics
+
+| Property | Value |
+| --- | --- |
+| Owner | [CurationEvent](CurationEvent.md) |
+
+
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 

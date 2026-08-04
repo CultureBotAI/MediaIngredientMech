@@ -10,7 +10,6 @@ _How a cited reference relates to the claim it is attached to_
 URI: [mediaingredientmech:EvidenceSupportEnum](https://w3id.org/mediaingredientmech/EvidenceSupportEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | SUPPORT | None | Reference substantiates the claim |
@@ -32,8 +31,12 @@ URI: [mediaingredientmech:EvidenceSupportEnum](https://w3id.org/mediaingredientm
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

@@ -5,7 +5,6 @@
 URI: [mediaingredientmech:SynonymTypeEnum](https://w3id.org/mediaingredientmech/SynonymTypeEnum)
 
 ## Permissible Values
-
 | Value | Meaning | Description |
 | --- | --- | --- |
 | EXACT_SYNONYM | None | Exact alternative name |
@@ -34,8 +33,12 @@ URI: [mediaingredientmech:SynonymTypeEnum](https://w3id.org/mediaingredientmech/
 
 
 
-## Identifier and Mapping Information
 
+
+
+
+
+## Identifier and Mapping Information
 
 
 

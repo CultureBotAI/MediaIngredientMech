@@ -17,8 +17,8 @@ Alias: url
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [RoleCitation](RoleCitation.md) | Citation supporting a role assignment (DOI, publication, database reference) |  no  |
 | [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |  no  |
+| [RoleCitation](RoleCitation.md) | Citation supporting a role assignment (DOI, publication, database reference) |  no  |
 
 
 
@@ -27,13 +27,28 @@ Alias: url
 
 ## Properties
 
-* Range: [String](String.md)
+### Type and Range
+
+| Property | Value |
+| --- | --- |
+| Range | [String](String.md) |
+| Domain Of | [RoleCitation](RoleCitation.md), [Dataset](Dataset.md) |
+
+### Cardinality and Requirements
+
+| Property | Value |
+| --- | --- |
+
+
+
+
+
+
 
 
 
 
 ## Identifier and Mapping Information
-
 
 
 
