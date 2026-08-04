@@ -1,0 +1,62 @@
+name: QC — agent-instruction references
+
+# Skills, commands and /goal prompts are executable in practice: an agent reads
+# them and does what they say. When they drift they do not fail loudly like code
+# — they quietly send the next agent at something that is gone, or worse, at
+# something that is now wrong. `.claude/commands/ground-or-propose-ingredient.md`
+# kept recommending `just export-individual` / `just aggregate-collections` "to
+# keep per-record files and collections in sync" long after that pairing was
+# identified as the mechanism which silently reverted 55 curation events (#148).
+# It was corrected twice, both times because a human happened to notice.
+#
+# This job is that noticing, made mechanical. Issue #185.
+#
+# It fires on changes to the instruction files AND to the things they reference
+# (the justfile, scripts/, src/, conf/, data/, mappings/), because the common way
+# these rot is not editing the doc — it is deleting the recipe the doc names.
+
+on:
+  pull_request:
+    # No branches filter — a stacked PR must not skip this (#174).
+    paths:
+      - ".claude/**"
+      - "prompts/**"
+      - "justfile"
+      - "scripts/**"
+      - "src/**"
+      - "conf/instruction_refs.yaml"
+      - ".github/workflows/instruction-refs.yaml"
+  push:
+    branches: [main]
+    paths:
+      - ".claude/**"
+      - "prompts/**"
+      - "justfile"
+      - "scripts/**"
+      - "src/**"
+      - "conf/instruction_refs.yaml"
+      - ".github/workflows/instruction-refs.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  instruction-refs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # pyyaml only. The checker parses the justfile itself rather than shelling
+      # out to `just`, so it needs no toolchain — and stays cheap enough that
+      # nobody is tempted to filter it down until it stops firing, which is how
+      # the last guard rotted.
+      - name: Install deps
+        run: python3 -m pip install pyyaml
+
+      - name: Check agent-instruction references
+        run: python3 scripts/check_instruction_refs.py

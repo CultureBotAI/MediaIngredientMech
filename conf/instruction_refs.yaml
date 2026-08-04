@@ -1,0 +1,71 @@
+# Config for scripts/check_instruction_refs.py — agent-instruction rot check.
+#
+# Skills, commands and /goal prompts are executable in practice: an agent reads
+# them and does what they say. When they drift they fail silently, sending the
+# next agent at something that is gone. See issue #185.
+
+# Files treated as agent instructions. Globs are repo-relative.
+targets:
+  - "prompts/*.md"
+  - ".claude/commands/*.md"
+  - ".claude/skills/**/*.md"
+
+# `warn`  — report findings, exit 0.
+# `error` — exit 1 on any finding.
+#
+# Shipped straight at `error`: the pre-existing backlog was cleared in the same
+# change that added this check (6 stale references fixed, the rest declared
+# below with reasons), so there was no report-then-enforce period to serve. A
+# gate introduced at `warn` over a clean corpus is just a gate nobody notices.
+severity: error
+
+# Recipes that are real, but not in THIS repo's justfile. Every entry needs a
+# reason — an unexplained entry is indistinguishable from rot.
+ignore_recipes:
+  - name: import-ingredients
+    reason: >-
+      culturebotai-claw's recipe. MIM has no ingredient-discovery pipeline of its
+      own; new ingredients arrive from upstream. Cited by the next-tasks skill
+      precisely to say this is NOT run here.
+  - name: feba-enrich-ontology
+    reason: culturebotai-claw recipe, part of the FEBA enrichment lane.
+  - name: feba-create-mim-ingredients
+    reason: culturebotai-claw recipe, produces the MIM ingredient candidates.
+  - name: build-unified-mapping
+    reason: >-
+      culturebotai-claw's recipe, not this repo's. The skill documents the claw
+      lane that produces UNIFIED_INGREDIENT_MAPPING.tsv.
+  - name: enrich-with-hierarchy
+    reason: >-
+      Cited as a CultureMech recipe, but it does not exist there either
+      (closest is `enrich-with-chebi`). Marked STALE inline pending issue #186 —
+      remove this entry once the real recipe is identified.
+  - name: aggregate-collections
+    reason: >-
+      Removed from this repo in #169 — it wrote data/collections/, which nothing
+      reads. The remaining mention is a deliberate "do NOT run this" warning, so
+      it must stay readable.
+
+# Paths that are real, but not tracked in THIS repo — a sibling repo's file, or
+# one the reader generates. Same rule: state why. Note `../` references are
+# skipped automatically (unverifiable from here) and reported as a count.
+ignore_paths:
+  - path: reports/label_drift.tsv
+    reason: >-
+      Generated on demand by `just report-label-drift`; gitignored, so it exists
+      after you run that and not before. The skill correctly tells the reader to
+      produce it.
+  - path: scripts/add_mediaingredientmech_ids.py
+    reason: CultureMech script; cited by the manage-identifiers cross-repo reference.
+  - path: scripts/assign_culturemech_ids.py
+    reason: CultureMech script; cited by the manage-identifiers cross-repo reference.
+  - path: scripts/add_community_ids.py
+    reason: CommunityMech script; cited by the manage-identifiers cross-repo reference.
+  - path: data/culturemech_id_registry.tsv
+    reason: CultureMech data file; the sequential-id registry MIM does not use.
+  - path: workspace/unified_ingredient_mapping.tsv
+    reason: >-
+      culturebotai-claw workspace output that build-unified-mapping copies into
+      UNIFIED_INGREDIENT_MAPPING.tsv here.
+  - path: workspace/unified_ingredient_mapping.yaml
+    reason: culturebotai-claw workspace output, as above.

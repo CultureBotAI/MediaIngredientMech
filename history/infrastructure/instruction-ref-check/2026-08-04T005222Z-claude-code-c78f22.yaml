@@ -1,0 +1,58 @@
+history_version: 1
+target:
+  kind: infrastructure
+  path: scripts/check_instruction_refs.py
+  slug: instruction-ref-check
+session:
+  id: 2026-08-04T005222Z-claude-code-c78f22
+  timestamp: '2026-08-04T00:52:22Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-fable-5
+    agent_tool: claude-code
+links:
+  issues:
+  - https://github.com/CultureBotAI/MediaIngredientMech/issues/185
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - scripts
+  - justfile
+  - ci
+  - skills
+  summary: Detect agent-instruction files naming recipes or paths that no longer exist
+  details: 'Issue #185 asked how to stop skills/commands/prompts rotting, given .claude/commands/ground-or-propose-ingredient.md
+    kept recommending the export/aggregate pairing that silently reverted 55 curation events
+    (#148) and needed correcting twice, both times because a human noticed. Of the four options
+    filed, implemented the only one that catches rot mechanically: scripts/check_instruction_refs.py
+    reports ''just <recipe>'' naming a recipe the justfile does not define, and repo-relative
+    paths that do not exist, across prompts/, .claude/commands/ and .claude/skills/. Deliberately
+    narrow to avoid the false positives that get a docs check switched off: only references
+    inside a code span or fenced block count (so prose like ''just the collection'' is not
+    a recipe reference), a path must contain a slash (so a bare filename in prose is not a
+    path claim), and paths resolve against both the repo root and the containing file''s directory
+    (skills reference their own reference/*.md relatively). Escape hatches: conf/instruction_refs.yaml
+    declares cross-repo recipes and paths, each REQUIRING a reason (a test enforces that every
+    entry has one, since an unexplained entry is indistinguishable from rot), plus an inline
+    ''<!-- refcheck: ignore -->'' marker. Found 20 findings initially; 13 were legitimate
+    cross-repo references now declared with reasons, and 7 were genuine rot, all fixed in
+    this change: scripts/export_to_culturemech.py (git history shows it NEVER existed) removed
+    from the tools reference; src/mediaingredientmech/utils/curator.py repointed to src/mediaingredientmech/curation/ingredient_curator.py;
+    scripts/validate_mappings.py in the merge-ingredients skill repointed to ''just validate-all'';
+    ''just build-unified-mapping'' labelled as culturebotai-claw''s recipe rather than this
+    repo''s. Two findings needed judgment rather than a path fix and were filed instead: #186
+    (''just enrich-with-hierarchy'', cited as CultureMech''s but absent there too, and the
+    documented hand-off for the role-research lane that is next up) and #187 (data/curation/flagged_duplicates.yaml,
+    which never existed, and which matters now because the 61 duplicate identifier PKs will
+    produce exactly those flags). Shipped at severity=error rather than the repo''s usual
+    report-then-enforce warm-up, because the backlog was cleared in the same change - a gate
+    introduced at warn over a clean corpus is decoration. Verified the gate FAILS as well
+    as passes: injecting a fake recipe and a fake path into a skill produces both findings
+    and exit 1; reverting returns exit 0. Wired into ''just qc'', a new .github/workflows/instruction-refs.yaml
+    (no branches filter, per #174, and firing on changes to the referenced things - justfile,
+    scripts/, src/ - not just to the docs, because the common rot is deleting the recipe rather
+    than editing the doc), and the next-tasks skill''s Step 1 reconcile, which is where the
+    issue suggested it belongs. 533 tests pass including 10 new ones covering both firing
+    and not-crying-wolf.'

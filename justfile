@@ -179,7 +179,17 @@ report-label-drift:
 # `just validate-products` locally to reproduce the gate; `just report-label-drift`
 # writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
 # LinkML cross-check (one validator process per record → too slow for CI).
-qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip
+qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip check-instruction-refs
+
+# Flag skills/commands/prompts naming recipes or paths that no longer exist
+check-instruction-refs *args:
+    # Agent-instruction files are executable in practice: an agent reads them and
+    # does what they say, so when they drift they fail silently rather than
+    # loudly. .claude/commands/ground-or-propose-ingredient.md kept recommending
+    # the export/aggregate pairing that silently reverted 55 curation events long
+    # after it was identified (#148), and needed correcting twice because a human
+    # happened to notice. This is the mechanical version. Issue #185.
+    uv run python scripts/check_instruction_refs.py {{args}}
 
 # Assert data/curated/ and data/ingredients/ still describe the same records (CI blocking)
 qc-roundtrip:

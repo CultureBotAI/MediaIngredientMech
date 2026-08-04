@@ -55,7 +55,7 @@ python scripts/build_unified_ingredient_mapping.py --output workspace/my_mapping
 # TSV only
 python scripts/build_unified_ingredient_mapping.py --format tsv
 
-# Or via justfile
+# Or via culturebotai-claw's justfile (NOT a recipe in this repo)
 just build-unified-mapping
 ```
 

@@ -121,7 +121,7 @@ functional_role: buffer
 CultureMech imports roles via the ingredient hierarchy:
 ```bash
 # In CultureMech — after updating roles in MIM:
-just enrich-with-hierarchy
+just enrich-with-hierarchy   # STALE: no such recipe in CultureMech either
 ```
 
 The `manage-ingredient-hierarchy` skill in CultureMech reads `functional_role` from

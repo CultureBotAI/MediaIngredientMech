@@ -41,6 +41,21 @@ gh pr list  --state open  --limit 20 2>/dev/null | head
 gh issue list --state open --limit 30 2>/dev/null | head -30
 ```
 
+Also reconcile the *instructions*, not just the backlog:
+
+```bash
+just check-instruction-refs
+```
+
+Skills, commands and `/goal` prompts are executable in practice — an agent reads
+them and does what they say — so when they drift they fail silently rather than
+loudly. `.claude/commands/ground-or-propose-ingredient.md` kept recommending the
+export/aggregate pairing that silently reverted 55 curation events long after it
+was identified (#148), and needed correcting twice because a human happened to
+notice. This is that noticing, made mechanical (#185). A finding here is backlog
+material like any other: fix the reference, or declare it in
+`conf/instruction_refs.yaml` with a reason.
+
 For each pending item: *is its deliverable already in a merged PR or in the
 code?* If yes → DONE. Spot-check any slot/recipe/file the item names
 (`grep -rl <slot> src/mediaingredientmech/schema/`) — backlog notes cite things
