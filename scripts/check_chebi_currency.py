@@ -128,15 +128,19 @@ def kgmicrobe_release(owl_gz: Path) -> tuple[int | None, str]:
 def refresh_would_help(local_db: Path, timeout: float = 15.0) -> tuple[bool | None, str]:
     """Would re-downloading the semsql build actually change anything?
 
-    Compares the published artifact's size against the local .gz. Equal size
-    means oaklib would fetch the identical build, so a refresh is a no-op — the
-    lag is upstream of us and no amount of downloading fixes it.
+    Compares the published artifact's size against the local .gz oaklib keeps
+    beside the decompressed build. Equal size means oaklib would fetch the
+    identical artifact, so a refresh is a no-op — the lag is upstream of us and
+    no amount of downloading fixes it.
+
+    Size equality is a proxy, not a proof: it cannot distinguish two same-sized
+    builds. It is the strongest signal available without downloading 760 MB, and
+    it errs the safe way — a rebuilt artifact of a different size reports "a
+    refresh WOULD change the build", which merely costs a download. See #206.
     """
-    local_gz = local_db.with_suffix(db_suffix := local_db.suffix + ".gz")
+    local_gz = Path(str(local_db) + ".gz")
     if not local_gz.is_file():
-        local_gz = Path(str(local_db) + ".gz")
-    if not local_gz.is_file():
-        return None, "no local .gz to compare against"
+        return None, f"no local .gz beside {local_db} to compare against"
     try:
         req = urllib.request.Request(SEMSQL_URL, method="HEAD")
         with urllib.request.urlopen(req, timeout=timeout) as resp:
