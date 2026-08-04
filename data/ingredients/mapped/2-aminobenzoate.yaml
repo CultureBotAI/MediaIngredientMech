@@ -1,0 +1,38 @@
+identifier: CHEBI:16567
+preferred_term: 2-aminobenzoate
+synonyms:
+- synonym_text: 2-aminobenzoate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_aminobenzoate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0782 -> CHEBI:16567 "anthranilate" (SYNONYM_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_aminobenzoate); no
+  CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:16567
+  ontology_label: anthranilate
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: 'microbedecoder residual free normalized/fuzzy pass (recovered from closed
+      PR #201) + local CHEBI verification'
+    notes: 2-aminobenzoate = anthranilate; synonym match to CHEBI:16567.
