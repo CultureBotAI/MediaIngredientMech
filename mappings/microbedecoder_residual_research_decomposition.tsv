@@ -1,0 +1,43 @@
+identifier	source_label	mapping_type	strategy	component_curies	confidence	note
+UNMAPPED_0716	BHI	complex_medium	map_to_medium	MICRO:0000193:brain heart infusion	high	Brain Heart Infusion. Map whole name to existing repo BHI concept MICRO:0000193 rather than decompose. Undefined parts: calf-brain + beef-heart infusion, proteose peptone, glucose, NaCl.
+UNMAPPED_0628	PYG	decompose	split	MICRO:0000178:peptone|FOODON:03315426:yeast extract|CHEBI:17234:glucose	high	Peptone-Yeast extract-Glucose (VPI/DSMZ Medium 104 family). Undefined biologicals carry own terms.
+UNMAPPED_0704	PYGS	decompose	split	MICRO:0000178:peptone|FOODON:03315426:yeast extract|CHEBI:17234:glucose|CHEBI:28017:starch	medium	PYG + mineral Salts (usually); 'S' occasionally soluble Starch (CHEBI:28017). Ambiguity flagged.
+UNMAPPED_0755	GYPS	decompose	split	CHEBI:17234:glucose|FOODON:03315426:yeast extract|MICRO:0000178:peptone|CHEBI:28017:starch	medium	Glucose-Yeast-Peptone (DSMZ Medium 852) + Salts (or Starch). Same set as PYG family, reordered.
+UNMAPPED_0771	PYEG	decompose	split	MICRO:0000178:peptone|FOODON:03315426:yeast extract|CHEBI:17234:glucose	high	Peptone-Yeast Extract-Glucose; same composition as PYG.
+UNMAPPED_0776	TYGVS + Glucose	decompose	split	MICRO:0000175:Trypticase peptone|FOODON:03315426:yeast extract|CHEBI:17234:glucose|VFA_mix:volatile fatty acid mixture (undefined)	medium	Trypticase-Yeast-Glucose-VFA-Salts rumen medium (Caldwell & Bryant 1966) + extra glucose. VFA mix = acetate/propionate/butyrate/isobutyrate/valerate/isovalerate; no single CURIE.
+UNMAPPED_0668	Trypticase-glucose-yeast Extract	decompose	split	MICRO:0000175:Trypticase peptone|CHEBI:17234:glucose|FOODON:03315426:yeast extract	high	TGY/TYG-type medium (ATCC 603, DSMZ 1618).
+UNMAPPED_0753	Glucose Peptone-yeast Extract	decompose	split	CHEBI:17234:glucose|MICRO:0000178:peptone|FOODON:03315426:yeast extract	high	PYG-family reordering.
+UNMAPPED_0766	Peptone-yeast Extract-glucose	decompose	split	MICRO:0000178:peptone|FOODON:03315426:yeast extract|CHEBI:17234:glucose	high	Full spelling of PYG.
+UNMAPPED_0763	Modified Cooked Meat Medium	complex_medium	map_to_medium	FOODON:03305103:meat (cooked)	high	Robertson's cooked-meat anaerobe medium; repo 'Cooked meat medium' already grounds to FOODON:03305103. Undefined parts: beef-heart granules, peptone, glucose.
+UNMAPPED_0742	Fastidious Anaerobe Broth With Meat Granules	complex_medium	map_to_medium	FOODON:03305103:meat (cooked)|MICRO:0000178:peptone|CHEBI:28017:starch|CHEBI:17234:glucose	medium	FAB (LabM/Neogen) commercial rich medium + cooked-meat granules. Best as complex medium; no single component captures it.
+UNMAPPED_0749	Glucose + Cellobiose + Starch + Trypticase + Yeast Extract	decompose	split	CHEBI:17234:glucose|CHEBI:17057:cellobiose|CHEBI:28017:starch|MICRO:0000175:Trypticase peptone|FOODON:03315426:yeast extract	high	GSC/M2GSC-type rumen/cellulolytic carbohydrate blend.
+UNMAPPED_0768	PY-glucose-rumen Fluid	decompose	split	MICRO:0000178:peptone|FOODON:03315426:yeast extract|CHEBI:17234:glucose|MICRO:0000520:clarified rumen fluid	high	PY base + glucose + clarified rumen fluid. Rumen fluid: MICRO:0000520 (broadMatch) / UBERON:0010228 ruminal fluid; no exact term.
+UNMAPPED_0773	PYG + Rumen Fluid	decompose	split	MICRO:0000178:peptone|FOODON:03315426:yeast extract|CHEBI:17234:glucose|MICRO:0000520:clarified rumen fluid	high	PYG + rumen fluid supplement.
+UNMAPPED_0739	Casitone + Yeast Extract + Rumen Fluid	decompose	split	MICRO:0000606:casitone|FOODON:03315426:yeast extract|MICRO:0000520:clarified rumen fluid	high	Undefined rumen-anaerobe base.
+UNMAPPED_0711	Fermented Rumen Extract	complex_medium	map_to_ingredient	MICRO:0000520:clarified rumen fluid	medium	Single undefined rumen-derived ingredient (fermented/autoclaved clarified rumen fluid); not a blend. broadMatch to MICRO:0000520 / UBERON:0010228.
+UNMAPPED_0740	CMC + PY + Horse Serum	decompose	split	CHEBI:85146:carboxymethylcellulose|MICRO:0000178:peptone|FOODON:03315426:yeast extract|MICRO:0001235:horse serum	high	Cellulolytic-anaerobe medium; CMC carbon source in PY base + horse serum.
+UNMAPPED_0741	Corn Steep Liquor + Glucose + Fumarate	decompose	split	cas:66071-94-1:corn steep liquor|CHEBI:17234:glucose|CHEBI:18012:fumaric acid	high	Corn steep liquor has no FOODON/CHEBI term (use CAS or mint kgmicrobe.compound). Fumarate: CHEBI:18012 acid (or CHEBI:115156 disodium fumarate if Na2 salt).
+UNMAPPED_0631	H2 + CO2	decompose	split	CHEBI:18276:dihydrogen|CHEBI:16526:carbon dioxide	high	Hydrogenotrophic-methanogen donor/acceptor pair.
+UNMAPPED_0703	H2 + methanol	decompose	split	CHEBI:18276:dihydrogen|CHEBI:17790:methanol	high	H2 donor + methanol methylotrophic substrate.
+UNMAPPED_0757	H2 + dimethylsulfide	decompose	split	CHEBI:18276:dihydrogen|CHEBI:17437:dimethyl sulfide	high	H2 donor + DMS methylated substrate.
+UNMAPPED_0756	H2 + 3-methyl mercaptopropionate	decompose	split	CHEBI:18276:dihydrogen|CHEBI:1438:3-(methylthio)propionic acid	medium	MMPA (DMSP demethylation product). CHEBI:1438 is acid form; label is anion (no distinct anion entry located).
+UNMAPPED_0758	H2 + tetramethylammonium	decompose	split	CHEBI:18276:dihydrogen|CHEBI:46020:tetramethylammonium	high	H2 donor + quaternary-amine methylotrophic substrate.
+UNMAPPED_0759	H2 + trimethylamine	decompose	split	CHEBI:18276:dihydrogen|CHEBI:18139:trimethylamine	high	H2 donor + TMA methylated substrate.
+UNMAPPED_0745	Formate + methanol	decompose	split	CHEBI:15740:formate|CHEBI:17790:methanol	high	Formate donor + methanol.
+UNMAPPED_0744	Formate + dimethylsulfide	decompose	split	CHEBI:15740:formate|CHEBI:17437:dimethyl sulfide	high	Formate donor + DMS.
+UNMAPPED_0747	Formate + trimethylamine	decompose	split	CHEBI:15740:formate|CHEBI:18139:trimethylamine	high	Formate donor + TMA.
+UNMAPPED_0746	Formate + tetramethylammonium	decompose	split	CHEBI:15740:formate|CHEBI:46020:tetramethylammonium	high	Formate donor + tetramethylammonium.
+UNMAPPED_0743	Formate + 3-methyl mercaptopropionate	decompose	split	CHEBI:15740:formate|CHEBI:1438:3-(methylthio)propionic acid	medium	Same anion-vs-acid caveat as H2 pair.
+UNMAPPED_0735	1-butanol+CO2	decompose	split	CHEBI:28885:butan-1-ol|CHEBI:16526:carbon dioxide	high	Alcohol donor + CO2 acceptor.
+UNMAPPED_0715	1-propanol+CO2	decompose	split	CHEBI:28831:propan-1-ol|CHEBI:16526:carbon dioxide	high	Alcohol donor + CO2 acceptor.
+UNMAPPED_0679	2-butanol+CO2	decompose	split	CHEBI:35687:butan-2-ol|CHEBI:16526:carbon dioxide	high	Secondary-alcohol donor + CO2 acceptor.
+UNMAPPED_0674	2-propanol+CO2	decompose	split	CHEBI:17824:propan-2-ol|CHEBI:16526:carbon dioxide	high	Isopropanol donor + CO2 acceptor.
+UNMAPPED_0701	cyclopentanol+CO2	decompose	split	CHEBI:16133:cyclopentanol|CHEBI:16526:carbon dioxide	high	Alcohol donor + CO2 acceptor. Single-compound cyclopentanol CHEBI:16133 (not class CHEBI:23495).
+UNMAPPED_0702	Glucose + Acetate	decompose	split	CHEBI:17234:glucose|CHEBI:30089:acetate	high	Two carbon substrates.
+UNMAPPED_0750	Glucose + Formate	decompose	split	CHEBI:17234:glucose|CHEBI:15740:formate	high	Two substrates.
+UNMAPPED_0751	Glucose + Lactate	decompose	split	CHEBI:17234:glucose|CHEBI:24996:lactate	high	Two substrates.
+UNMAPPED_0754	Glucose + Xylose	decompose	split	CHEBI:17234:glucose|CHEBI:18222:xylose	high	Two sugars.
+UNMAPPED_0748	Gallate + Formate	decompose	split	CHEBI:16918:gallate|CHEBI:15740:formate	high	Gallate = conjugate base of gallic acid.
+UNMAPPED_0777	Yeast Extract + Gluconate	decompose	split	FOODON:03315426:yeast extract|CHEBI:18391:D-gluconate	medium	Gluconate in media is D-form (sodium D-gluconate); label stereo-unspecified.
+UNMAPPED_0780	Yeast Extract + Sulfur	decompose	split	FOODON:03315426:yeast extract|CHEBI:26833:sulfur	high	Yeast extract + elemental sulfur.
+UNMAPPED_0705	Sucrose + Yeast Extract	decompose	split	CHEBI:17992:sucrose|FOODON:03315426:yeast extract	high	Sucrose + yeast extract.

@@ -1,0 +1,56 @@
+# curie_map:
+#   CHEBI: "http://purl.obolibrary.org/obo/CHEBI_"
+#   FOODON: "http://purl.obolibrary.org/obo/FOODON_"
+#   UBERON: "http://purl.obolibrary.org/obo/UBERON_"
+#   ENVO: "http://purl.obolibrary.org/obo/ENVO_"
+#   NCIT: "http://purl.obolibrary.org/obo/NCIT_"
+#   MICRO: "http://purl.obolibrary.org/obo/MICRO_"
+#   mesh: "http://id.nlm.nih.gov/mesh/"
+#   BTO: "http://purl.obolibrary.org/obo/BTO_"
+#   kgmicrobe.compound: "https://w3id.org/kg-microbe/compound/"
+#   kgmicrobe.ingredient: "https://w3id.org/kg-microbe/ingredient/"
+#   cas: "https://commonchemistry.cas.org/detail?cas_rn="
+#   registry: "https://w3id.org/kg-microbe/registry/"
+#   MIM: "https://github.com/CultureBotAI/MediaIngredientMech/blob/main/data/ingredients/mapped/"
+#   obo: "http://purl.obolibrary.org/obo/"
+#   kgm: "https://w3id.org/kg-microbe/"
+#   semapv: "https://w3id.org/semapv/vocab/"
+#   skos: "http://www.w3.org/2004/02/skos/core#"
+#   orcid: "https://orcid.org/"
+#   cbclaw: "https://github.com/culturebotai/culturebotai-claw/blob/main/"
+# license: "https://creativecommons.org/publicdomain/zero/1.0/"
+# mapping_set_id: "https://w3id.org/sssom/mappings/culturebotai_mim_microbedecoder_residual_research"
+# mapping_set_version: "2026-08-04"
+# mapping_set_description: "LEDGER of the microbedecoder residual deep-research single-term outcomes (branch research/microbedecoder-residual-chemicals). This file is NOT the canonical mapping set; it records disposition. THREE net-new groundings were APPLIED to the canonical ingredient_mappings.sssom.tsv + data/ingredients/mapped/ via scripts/promote_resolved_unmapped.py (validation_method APPLIED). SEVEN turned out to be ALREADY_MAPPED in MIM under a canonical label and are recorded as synonym-merge recommendations (NOT applied — the residual label should be added as a synonym to the existing record, with the RNA case needing a curator split). SIX antibiotics + filipin + three parse/variant items are DEFERRED. keratin and Mono-and-Disaccharides omitted (NO_GROUNDING)."
+# mapping_date: "2026-08-04"
+# creator_id:
+#   - "orcid:0000-0001-8175-045X"
+# subject_source: "MIM:ingredients"
+# extension_definitions:
+#   - slot_name: source
+#     property: "cbclaw:provenance-source"
+#     type_hint: "xsd:string"
+#   - slot_name: validation_method
+#     property: "cbclaw:validation-method"
+#     type_hint: "xsd:string"
+subject_id	subject_label	predicate_id	object_id	object_label	object_source	mapping_justification	source	mapping_date	confidence	comment	other	validation_method
+MIM:Diacetyl	Diacetyl	skos:exactMatch	CHEBI:16583	butane-2,3-dione	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.95	residual UNMAPPED_0810; net-new; promoted unmapped->mapped. 'diacetyl'/'biacetyl' CHEBI synonyms; rejects NCIT:C210295 measurement.		deep-research:microbedecoder-residual-research|APPLIED|2026-08-04
+MIM:Ferric_Iron	Ferric Iron	skos:exactMatch	CHEBI:29034	iron(3+)	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.95	residual UNMAPPED_0667; net-new; promoted unmapped->mapped. Fe(III) cation; rejects NCIT 'Ferric' adjective.		deep-research:microbedecoder-residual-research|APPLIED|2026-08-04
+MIM:Sodium(+)	Sodium(+)	skos:exactMatch	CHEBI:29101	sodium(1+)	obo:chebi.owl	semapv:ManualMappingCuration	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.90	residual UNMAPPED_0843; net-new; promoted unmapped->mapped. Parse artifact ('(1+)'->'(+)'); monoatomic sodium cation. Cosmetic: record file is Sodium().yaml / label 'Sodium(+)' — curator may relabel to 'sodium(1+)'.		deep-research:microbedecoder-residual-research|APPLIED|2026-08-04
+MIM:Alpha-hydroxybutyrate	Alpha-hydroxybutyrate	skos:exactMatch	CHEBI:64552	2-hydroxybutyrate	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.95	residual UNMAPPED_0645; ALREADY MAPPED in MIM as record '2-hydroxybutyrate' (CHEBI:64552). Add 'alpha-hydroxybutyrate' as a synonym to that record; do NOT create a second record.		deep-research:microbedecoder-residual-research|ALREADY_MAPPED_SYNONYM_MERGE|2026-08-04
+MIM:Beta-hydroxybutyrate	Beta-hydroxybutyrate	skos:exactMatch	CHEBI:37054	3-hydroxybutyrate	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.95	residual UNMAPPED_0629; ALREADY MAPPED in MIM as record '3-hydroxybutyrate' (CHEBI:37054). Add 'beta-hydroxybutyrate' as a synonym.		deep-research:microbedecoder-residual-research|ALREADY_MAPPED_SYNONYM_MERGE|2026-08-04
+MIM:Rna	Rna	skos:exactMatch	CHEBI:33697	ribonucleic acid	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.85	residual UNMAPPED_0842; CHEBI:33697 is ALREADY used by record 'Ribonucleic acid from torula yeast type VI' (a specific product). CAUTION: do NOT merge generic 'RNA' onto that product record — curator should split (generic RNA vs the Torula-yeast product) or create a distinct generic-RNA record.		deep-research:microbedecoder-residual-research|ALREADY_MAPPED_NEEDS_SPLIT|2026-08-04
+MIM:Achromycin	Achromycin	skos:exactMatch	CHEBI:27902	tetracycline	obo:chebi.owl	semapv:ManualMappingCuration	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.90	residual UNMAPPED_0794; ALREADY MAPPED in MIM as record 'Tetracycline' (CHEBI:27902). Add trade name 'Achromycin' as a synonym.		deep-research:microbedecoder-residual-research|ALREADY_MAPPED_SYNONYM_MERGE|2026-08-04
+MIM:Neomycin_E	Neomycin E	skos:exactMatch	CHEBI:7934	paromomycin	obo:chebi.owl	semapv:ManualMappingCuration	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.90	residual UNMAPPED_0830; ALREADY MAPPED in MIM as record 'Paromomycin' (CHEBI:7934). Add 'neomycin E' as a synonym.		deep-research:microbedecoder-residual-research|ALREADY_MAPPED_SYNONYM_MERGE|2026-08-04
+MIM:(+)-D-glycogen	(+)-D-glycogen	skos:exactMatch	CHEBI:28087	glycogen	obo:chebi.owl	semapv:ManualMappingCuration	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.90	residual UNMAPPED_0809; ALREADY MAPPED in MIM as record 'Glycogen' (CHEBI:28087). Parse artifact '(+)-D-'; add as synonym if desired.		deep-research:microbedecoder-residual-research|ALREADY_MAPPED_SYNONYM_MERGE|2026-08-04
+MIM:(+)-L-lyxitol	(+)-L-lyxitol	skos:exactMatch	CHEBI:18403	L-arabinitol	obo:chebi.owl	semapv:ManualMappingCuration	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.85	residual UNMAPPED_0824; CHEBI:18403 (L-arabinitol) is ALREADY MAPPED in MIM as record 'Arabitol'. 'L-lyxitol' is a synonym of L-arabinitol; confirm enantiomer, then add as synonym.		deep-research:microbedecoder-residual-research|ALREADY_MAPPED_SYNONYM_MERGE|2026-08-04
+MIM:Filipin	Filipin	skos:broadMatch	CHEBI:83267	filipin III	obo:chebi.owl	semapv:ManualMappingCuration	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.80	residual UNMAPPED_0814; DEFERRED. Label denotes the 4-isomer filipin complex; filipin III is the major (~76%) component. broadMatch needs a registry sibling row the promote helper won't synthesise — hand-curate.		deep-research:microbedecoder-residual-research|DEFERRED_BROADMATCH|2026-08-04
+MIM:Carbomycin	Carbomycin	skos:exactMatch	CHEBI:756054	carbomycin	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.95	DEFERRED; absent from local chebi.db (>747618); OLS4-validated current exact-label term; unblocks on chebi.db refresh (#200).		deep-research:microbedecoder-residual-research|DEFERRED_CHEBI_DB_REFRESH|2026-08-04
+MIM:Colistin_Sulfate	Colistin Sulfate	skos:exactMatch	CHEBI:759883	colistin sulfate	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.90	DEFERRED; absent from local chebi.db. Salt term; parent colistin CHEBI:37943. Caveat: ChEMBL entry lacks formula, synonyms contaminated with kanamycin brand names. Unblocks on #200.		deep-research:microbedecoder-residual-research|DEFERRED_CHEBI_DB_REFRESH|2026-08-04
+MIM:Gentamicin	Gentamicin	skos:exactMatch	CHEBI:759884	gentamicin	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.95	DEFERRED; absent from local chebi.db. Alt stable curated class term CHEBI:17833 'gentamycin'. Unblocks on #200.		deep-research:microbedecoder-residual-research|DEFERRED_CHEBI_DB_REFRESH|2026-08-04
+MIM:Lysostaphin	Lysostaphin	skos:exactMatch	CHEBI:753395	lysostaphin	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.85	DEFERRED; absent from local chebi.db. Caveat: lysostaphin is a ~27 kDa endopeptidase (EC 3.4.24.75) — PR is ontologically more precise. Unblocks on #200.		deep-research:microbedecoder-residual-research|DEFERRED_CHEBI_DB_REFRESH|2026-08-04
+MIM:Netilmicin	Netilmicin	skos:exactMatch	CHEBI:748901	netilmicin	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.95	DEFERRED; absent from local chebi.db. Better than variant-spelling CHEBI:7528 'netilmycin'. Unblocks on #200.		deep-research:microbedecoder-residual-research|DEFERRED_CHEBI_DB_REFRESH|2026-08-04
+MIM:Polymyxin_B	Polymyxin B	skos:exactMatch	CHEBI:759086	polymyxin B	obo:chebi.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.90	DEFERRED; absent from local chebi.db. Clinical-mixture term; better than components B1 (CHEBI:8309)/B2 (CHEBI:59063). Unblocks on #200.		deep-research:microbedecoder-residual-research|DEFERRED_CHEBI_DB_REFRESH|2026-08-04
+MIM:Peptones	Peptones	skos:exactMatch	MICRO:0000178	peptone	obo:micro.owl	semapv:LexicalMatching	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.95	DEFERRED (non-CHEBI); plural variant of 'peptone'; merge into existing MIM:Peptone (MICRO:0000178) as a synonym.		deep-research:microbedecoder-residual-research|DEFERRED_MERGE_EXISTING|2026-08-04
+MIM:Peptone_(0.01pct)	Peptone (0.01 %	skos:exactMatch	MICRO:0000178	peptone	obo:micro.owl	semapv:ManualMappingCuration	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.90	DEFERRED (non-CHEBI); CSV parse artifact (truncated concentration); merge into existing MIM:Peptone.		deep-research:microbedecoder-residual-research|DEFERRED_MERGE_EXISTING|2026-08-04
+MIM:Yeast_Extract_(0.01pct)	Yeast Extract (0.01 %	skos:exactMatch	FOODON:03315426	yeast extract	obo:foodon.owl	semapv:ManualMappingCuration	MIM:microbedecoder|MIM:curator=microbedecoder-residual-research	2026-08-04	0.90	DEFERRED (non-CHEBI); CSV parse artifact (truncated concentration); merge into existing MIM:Yeast_Extract.		deep-research:microbedecoder-residual-research|DEFERRED_MERGE_EXISTING|2026-08-04

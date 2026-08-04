@@ -1,10 +1,13 @@
 # All Ingredients
 
-Generated: 2026-08-04T04:42:47.157087+00:00
+Generated: 2026-08-04T21:42:17.187803+00:00
 Total: 2891 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:29101 | CHEBI:29101 | Sodium(+) | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29034 | CHEBI:29034 | Ferric Iron | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:16583 | CHEBI:16583 | Diacetyl | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:149425 | CHEBI:149425 | NH4MgPO | MAPPED | CHEBI | SYNONYM_MATCH | 3 |
 | cas:13446-18-9 | CHEBI:64736 | magnesium nitrate hexahydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:229630 | CHEBI:229630 | NH42CO3 | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2241,7 +2244,7 @@ Total: 2891 ingredients
 | CHEBI:26822 | CHEBI:26822 | Sulfide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:102484 | CHEBI:102484 | Sulfisoxazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17359 | CHEBI:17359 | Sulfite | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:35358 | CHEBI:35358 | Sulfonamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:35358 | CHEBI:35358 | Sulfonamide | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33954 | CHEBI:33954 | Tagatose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:132950 | CHEBI:132950 | Tartrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:36257 | CHEBI:36257 | Taurocholate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2270,6 +2273,17 @@ Total: 2891 ingredients
 | CHEBI:15782 | CHEBI:15782 | Viomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:87209 | CHEBI:87209 | Virginiamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:189560 | CHEBI:189560 | Xanthan | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:338412 | CHEBI:338412 | (-)-anisomycin | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:747005 | CHEBI:747005 | 1-chlorobutane | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:747004 | CHEBI:747004 | 1-chloropropane | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:546840 | CHEBI:546840 | 4-nitrophenyl Alpha-D-galactoside | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:474053 | CHEBI:474053 | Cefazolin | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:478164 | CHEBI:478164 | Cefepime | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:472657 | CHEBI:472657 | Cefixime | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:355510 | CHEBI:355510 | Cefotiam | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:404903 | CHEBI:404903 | Ertapenem | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:495056 | CHEBI:495056 | Gamma-cyclodextrin | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:471744 | CHEBI:471744 | Imipenem | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0261 |  | 20AA_mix | UNMAPPED |  |  | 1 |
@@ -2741,7 +2755,6 @@ Total: 2891 ingredients
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0682 |  | DL-lactate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0729 |  | Dactimicin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0810 |  | Diacetyl | UNMAPPED |  |  | 0 |
 | UNMAPPED_0666 |  | Dimethylsulfide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |
 | UNMAPPED_0626 |  | Esculin Ferric Citrate | UNMAPPED |  |  | 0 |
@@ -2749,7 +2762,6 @@ Total: 2891 ingredients
 | UNMAPPED_0812 |  | Ethylenediamine-N | UNMAPPED |  |  | 0 |
 | UNMAPPED_0742 |  | Fastidious Anaerobe Broth With Meat Granules | UNMAPPED |  |  | 0 |
 | UNMAPPED_0711 |  | Fermented Rumen Extract | UNMAPPED |  |  | 0 |
-| UNMAPPED_0667 |  | Ferric Iron | UNMAPPED |  |  | 0 |
 | UNMAPPED_0813 |  | Ferrous Ion | UNMAPPED |  |  | 0 |
 | UNMAPPED_0730 |  | Ferulate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0814 |  | Filipin | UNMAPPED |  |  | 0 |
@@ -2853,7 +2865,6 @@ Total: 2891 ingredients
 | UNMAPPED_0841 |  | Ristocetin A | UNMAPPED |  |  | 0 |
 | UNMAPPED_0842 |  | Rna | UNMAPPED |  |  | 0 |
 | UNMAPPED_0732 |  | Selenite | UNMAPPED |  |  | 0 |
-| UNMAPPED_0843 |  | Sodium(+) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0733 |  | Sodium L-glutamate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0705 |  | Sucrose + Yeast Extract | UNMAPPED |  |  | 0 |
 | UNMAPPED_0663 |  | Sugars | UNMAPPED |  |  | 0 |
@@ -2879,20 +2890,9 @@ Total: 2891 ingredients
 | UNMAPPED_0779 |  | Yeast Extract + Peptone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0780 |  | Yeast Extract + Sulfur | UNMAPPED |  |  | 0 |
 | UNMAPPED_0781 |  | Yeast + Meat Extract + H2 | UNMAPPED |  |  | 0 |
-| CHEBI:338412 |  | (-)-anisomycin | UNMAPPED |  |  | 0 |
-| CHEBI:747005 |  | 1-chlorobutane | UNMAPPED |  |  | 0 |
-| CHEBI:747004 |  | 1-chloropropane | UNMAPPED |  |  | 0 |
-| CHEBI:546840 |  | 4-nitrophenyl Alpha-D-galactoside | UNMAPPED |  |  | 0 |
 | CHEBI:756054 |  | Carbomycin | UNMAPPED |  |  | 0 |
-| CHEBI:474053 |  | Cefazolin | UNMAPPED |  |  | 0 |
-| CHEBI:478164 |  | Cefepime | UNMAPPED |  |  | 0 |
-| CHEBI:472657 |  | Cefixime | UNMAPPED |  |  | 0 |
-| CHEBI:355510 |  | Cefotiam | UNMAPPED |  |  | 0 |
 | CHEBI:759883 |  | Colistin Sulfate | UNMAPPED |  |  | 0 |
-| CHEBI:404903 |  | Ertapenem | UNMAPPED |  |  | 0 |
-| CHEBI:495056 |  | Gamma-cyclodextrin | UNMAPPED |  |  | 0 |
 | CHEBI:759884 |  | Gentamicin | UNMAPPED |  |  | 0 |
-| CHEBI:471744 |  | Imipenem | UNMAPPED |  |  | 0 |
 | CHEBI:753395 |  | Lysostaphin | UNMAPPED |  |  | 0 |
 | CHEBI:748901 |  | Netilmicin | UNMAPPED |  |  | 0 |
 | CHEBI:759086 |  | Polymyxin B | UNMAPPED |  |  | 0 |

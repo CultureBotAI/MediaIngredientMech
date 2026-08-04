@@ -1,8 +1,125 @@
 generation_date: '2026-08-04T17:56:14.905875+00:00'
-total_count: 2276
-mapped_count: 2262
+total_count: 2279
+mapped_count: 2265
 unmapped_count: 0
 ingredients:
+- identifier: CHEBI:29101
+  preferred_term: Sodium(+)
+  synonyms:
+  - synonym_text: Sodium(+)
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:sodium); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0843 -> CHEBI:29101 "sodium(1+)" (SYNONYM_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:sodium); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:29101
+    ontology_label: sodium(1+)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder residual deep-research + local CHEBI verification (OLS4
+        2026-08-04)
+      notes: 'parse artifact: raw label ''sodium(+)'' charge notation; monoatomic
+        sodium cation.'
+- identifier: CHEBI:29034
+  preferred_term: Ferric Iron
+  synonyms:
+  - synonym_text: Ferric Iron
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferric_iron);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0667 -> CHEBI:29034 "iron(3+)" (SYNONYM_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferric_iron); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:29034
+    ontology_label: iron(3+)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder residual deep-research + local CHEBI verification (OLS4
+        2026-08-04)
+      notes: ferric iron = Fe(III) cation; synonyms 'ferric iron','iron(III) cation';
+        rejects NCIT 'Ferric' adjective.
+- identifier: CHEBI:16583
+  preferred_term: Diacetyl
+  synonyms:
+  - synonym_text: Diacetyl
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:diacetyl); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0810 -> CHEBI:16583 "butane-2,3-dione" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:diacetyl); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:16583
+    ontology_label: butane-2,3-dione
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: microbedecoder residual deep-research + local CHEBI verification (OLS4
+        2026-08-04)
+      notes: diacetyl = butane-2,3-dione (alpha-diketone); 'diacetyl'/'biacetyl' are
+        CHEBI synonyms; rejects NCIT:C210295 measurement.
 - identifier: CHEBI:149425
   preferred_term: NH4MgPO
   synonyms:
