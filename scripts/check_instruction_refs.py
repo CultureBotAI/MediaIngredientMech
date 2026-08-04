@@ -23,7 +23,16 @@ gets ignored:
 * a path must contain a `/`, so a bare "mapped_ingredients.yaml" in prose is not
   treated as a path claim;
 * paths resolve against the repo root AND the containing file's directory, since
-  skills reference their own `reference/*.md` relatively.
+  skills reference their own `reference/*.md` relatively;
+* existence means TRACKED IN GIT, not present on disk. Checking the filesystem
+  makes the result depend on the developer's local layout — a sibling
+  `../culturebotai-claw` checkout and generated artifacts like
+  `reports/label_drift.tsv` both exist locally and not in CI, so the check
+  reported clean on one machine and failed on another. A guard whose answer
+  depends on who runs it is the failure mode this whole check exists to catch;
+* a `../` reference points outside the repo and cannot be verified here. Those
+  are counted and reported, never failed — silently dropping them would hide how
+  much is unchecked.
 
 Legitimate references that this cannot verify — a sibling repo's recipe, a file
 the reader is told to create, a deliberate mention of something removed — are
@@ -71,6 +80,24 @@ class Finding:
         return f"{self.path}:{self.line}  {what}"
 
 
+def tracked_paths(root: Path) -> set[str]:
+    """Repo-relative paths git tracks.
+
+    Deliberately not `Path.exists()`: the filesystem includes untracked build
+    artifacts and whatever sibling repos happen to be checked out, so a
+    filesystem check answers differently on a developer machine than in CI.
+    """
+    proc = subprocess.run(
+        ["git", "ls-files"], cwd=root, capture_output=True, text=True, check=False
+    )
+    if proc.returncode != 0:
+        raise SystemExit(
+            f"`git ls-files` failed (exit {proc.returncode}); cannot verify path "
+            f"references.\n{proc.stderr.strip()}"
+        )
+    return set(proc.stdout.split())
+
+
 def known_recipes(root: Path) -> set[str]:
     """Recipe names the justfile defines, via `just --list`."""
     proc = subprocess.run(
@@ -105,8 +132,12 @@ def _references(text: str):
                 yield line_no, match.group(1).strip()
 
 
-def scan_file(path: Path, root: Path, recipes: set[str]) -> list[Finding]:
+def scan_file(
+    path: Path, root: Path, recipes: set[str], tracked: set[str]
+) -> tuple[list[Finding], int]:
+    """Return (findings, out_of_repo_references_not_verified)."""
     findings: list[Finding] = []
+    unverifiable = 0
     rel = path.relative_to(root).as_posix()
     for line_no, span in _references(path.read_text(encoding="utf-8")):
         recipe = JUST_CALL.match(span)
@@ -115,11 +146,21 @@ def scan_file(path: Path, root: Path, recipes: set[str]) -> list[Finding]:
         claim = PATH_CLAIM.match(span)
         if claim:
             target = claim.group(1)
+            if target.startswith("../"):
+                # Outside the repo — unverifiable from here, so never a finding.
+                unverifiable += 1
+                continue
             # Repo-relative, or relative to the file itself (skills reference
             # their own reference/*.md that way).
-            if not (root / target).exists() and not (path.parent / target).exists():
+            here = (path.parent / target).resolve()
+            as_local = (
+                here.relative_to(root).as_posix()
+                if here.is_relative_to(root)
+                else None
+            )
+            if target not in tracked and (as_local is None or as_local not in tracked):
                 findings.append(Finding("path", rel, line_no, target))
-    return findings
+    return findings, unverifiable
 
 
 def load_config(config_path: Path) -> dict:
@@ -162,13 +203,17 @@ def main(argv: list[str] | None = None) -> int:
     }
 
     recipes = known_recipes(REPO_ROOT)
+    tracked = tracked_paths(REPO_ROOT)
     targets = collect_targets(REPO_ROOT, cfg["targets"])
     if not targets:
         raise SystemExit(f"No instruction files matched: {cfg['targets']}")
 
     findings: list[Finding] = []
+    unverifiable = 0
     for path in targets:
-        for finding in scan_file(path, REPO_ROOT, recipes):
+        file_findings, out_of_repo = scan_file(path, REPO_ROOT, recipes, tracked)
+        unverifiable += out_of_repo
+        for finding in file_findings:
             if finding.kind == "recipe" and finding.ref in ignored_recipes:
                 continue
             if finding.kind == "path" and finding.ref in ignored_paths:
@@ -176,6 +221,9 @@ def main(argv: list[str] | None = None) -> int:
             findings.append(finding)
 
     print(f"Scanned {len(targets)} agent-instruction file(s) against {len(recipes)} recipes.")
+    if unverifiable:
+        # Say what was not checked, rather than let a green result imply it was.
+        print(f"  ({unverifiable} `../` reference(s) point outside the repo and were not verified.)")
     if not findings:
         print("OK: every referenced recipe and path exists.")
         return 0

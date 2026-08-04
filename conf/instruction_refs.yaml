@@ -46,8 +46,15 @@ ignore_recipes:
       reads. The remaining mention is a deliberate "do NOT run this" warning, so
       it must stay readable.
 
-# Paths that are real, but not in THIS repo. Same rule: state why.
+# Paths that are real, but not tracked in THIS repo — a sibling repo's file, or
+# one the reader generates. Same rule: state why. Note `../` references are
+# skipped automatically (unverifiable from here) and reported as a count.
 ignore_paths:
+  - path: reports/label_drift.tsv
+    reason: >-
+      Generated on demand by `just report-label-drift`; gitignored, so it exists
+      after you run that and not before. The skill correctly tells the reader to
+      produce it.
   - path: scripts/add_mediaingredientmech_ids.py
     reason: CultureMech script; cited by the manage-identifiers cross-repo reference.
   - path: scripts/assign_culturemech_ids.py

@@ -34,6 +34,12 @@ def _doc(tmp_path: Path, body: str, name: str = "SKILL.md") -> Path:
 RECIPES = {"qc", "sync-curated", "export-individual"}
 
 
+def _scan(mod, doc, root, tracked=frozenset()):
+    """scan_file returns (findings, unverifiable); tests mostly want the findings."""
+    findings, _ = mod.scan_file(doc, root, RECIPES, set(tracked))
+    return findings
+
+
 # --- it must fire on real rot ------------------------------------------------
 
 
@@ -41,7 +47,7 @@ def test_flags_a_recipe_that_does_not_exist(tmp_path):
     mod = _load()
     doc = _doc(tmp_path, "Run `just no-such-recipe` afterwards.\n")
 
-    findings = mod.scan_file(doc, tmp_path, RECIPES)
+    findings = _scan(mod, doc, tmp_path)
 
     assert [(f.kind, f.ref) for f in findings] == [("recipe", "no-such-recipe")]
 
@@ -50,7 +56,7 @@ def test_flags_a_path_that_does_not_exist(tmp_path):
     mod = _load()
     doc = _doc(tmp_path, "Then read `scripts/imaginary_helper.py` for details.\n")
 
-    findings = mod.scan_file(doc, tmp_path, RECIPES)
+    findings = _scan(mod, doc, tmp_path)
 
     assert [(f.kind, f.ref) for f in findings] == [("path", "scripts/imaginary_helper.py")]
 
@@ -60,7 +66,7 @@ def test_flags_references_inside_fenced_blocks(tmp_path):
     mod = _load()
     doc = _doc(tmp_path, "```bash\njust no-such-recipe\n```\n")
 
-    findings = mod.scan_file(doc, tmp_path, RECIPES)
+    findings = _scan(mod, doc, tmp_path)
 
     assert [f.ref for f in findings] == ["no-such-recipe"]
 
@@ -74,34 +80,60 @@ def test_prose_saying_just_is_not_a_recipe_reference(tmp_path):
     mod = _load()
     doc = _doc(tmp_path, "This rewrites just the collection, not the records.\n")
 
-    assert mod.scan_file(doc, tmp_path, RECIPES) == []
+    assert _scan(mod, doc, tmp_path) == []
 
 
 def test_bare_filename_in_prose_is_not_a_path_claim(tmp_path):
     mod = _load()
     doc = _doc(tmp_path, "Check `mapped_ingredients.yaml` for the header counts.\n")
 
-    assert mod.scan_file(doc, tmp_path, RECIPES) == []
+    assert _scan(mod, doc, tmp_path) == []
 
 
-def test_existing_recipe_and_path_are_clean(tmp_path):
+def test_existing_recipe_and_tracked_path_are_clean(tmp_path):
     mod = _load()
-    (tmp_path / "scripts").mkdir()
-    (tmp_path / "scripts" / "real.py").write_text("")
     doc = _doc(tmp_path, "Run `just qc`, then read `scripts/real.py`.\n")
 
-    assert mod.scan_file(doc, tmp_path, RECIPES) == []
+    assert _scan(mod, doc, tmp_path, tracked={"scripts/real.py"}) == []
+
+
+def test_a_file_on_disk_but_untracked_does_not_count_as_existing(tmp_path):
+    """The property CI taught us. Resolving against the filesystem made the
+    result depend on local layout: a sibling ../culturebotai-claw checkout and
+    generated artifacts like reports/label_drift.tsv exist on a dev machine and
+    not in CI, so the check passed locally and failed in CI. Existence must mean
+    tracked in git, or the guard answers differently depending on who runs it."""
+    mod = _load()
+    (tmp_path / "scripts").mkdir()
+    (tmp_path / "scripts" / "untracked.py").write_text("")
+    doc = _doc(tmp_path, "Read `scripts/untracked.py`.\n")
+
+    findings = _scan(mod, doc, tmp_path, tracked=set())
+
+    assert [f.ref for f in findings] == ["scripts/untracked.py"]
+
+
+def test_out_of_repo_reference_is_counted_not_failed(tmp_path):
+    """A ../ path cannot be verified from here. Failing on it would be wrong;
+    dropping it silently would hide how much is unchecked, so it is counted."""
+    mod = _load()
+    doc = _doc(tmp_path, "See `../culturebotai-claw/scripts/build_x.py`.\n")
+
+    findings, unverifiable = mod.scan_file(doc, tmp_path, RECIPES, set())
+
+    assert findings == []
+    assert unverifiable == 1
 
 
 def test_path_relative_to_the_document_resolves(tmp_path):
     """Skills reference their own reference/*.md relatively, not from repo root."""
     mod = _load()
     skill_dir = tmp_path / ".claude" / "skills" / "demo"
-    (skill_dir / "reference").mkdir(parents=True)
-    (skill_dir / "reference" / "detail.md").write_text("")
+    skill_dir.mkdir(parents=True)
     doc = _doc(skill_dir, "See `reference/detail.md`.\n")
+    tracked = {".claude/skills/demo/reference/detail.md"}
 
-    assert mod.scan_file(doc, tmp_path, RECIPES) == []
+    assert _scan(mod, doc, tmp_path, tracked=tracked) == []
 
 
 def test_inline_suppression_silences_a_line(tmp_path):
@@ -111,7 +143,7 @@ def test_inline_suppression_silences_a_line(tmp_path):
         f"Write it to `data/curation/todo.yaml` {mod.INLINE_SUPPRESS}\n",
     )
 
-    assert mod.scan_file(doc, tmp_path, RECIPES) == []
+    assert _scan(mod, doc, tmp_path) == []
 
 
 # --- the shipped configuration must actually be enforcing --------------------
