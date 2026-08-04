@@ -6,8 +6,29 @@ deferrals here. Keep the cross-Mech items in sync with the sibling repos'
 `NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech). The hub,
 culturebotai-claw, now keeps one too, for items no single Mech owns.
 
-Last reconciled: 2026-08-02. **#160** was filed on 2026-07-30 for the
+Last reconciled: 2026-08-04. **#160** was filed on 2026-07-30 for the
 `trigger_paths` gap described in the vendored-sync section below.
+
+**Shipped since the last reconcile — the "guards that were not guarding" thread.**
+Five PRs, all closing the same class of defect: a check that reports OK while
+checking nothing.
+
+| PR | closes | what was wrong |
+|---|---|---|
+| #178 | #171 | The role applier wrote role slots per-record only, so the next `just export-individual` reverted them — the #148 mechanism, in the tool the role-research lane runs. |
+| #179 | #169, #176 | `aggregate_records.py` and `verify_roundtrip.py` defaulted to `data/collections/`, which nothing reads; the round-trip verifier paired records on a key that was not asserted unique. |
+| #180 | #164 | The curation-history advisory's `data/custom/*.yaml` matched zero tracked files (that directory holds a `.tsv`). #164 as filed did not reproduce; the adjacent surface was genuinely broken. |
+| #188 | #185 | Skills/commands/prompts naming recipes and paths that no longer exist — including `merge-ingredients` telling agents to validate every merge with a script that was never there. |
+| #189 | #181 | The curation-history advisory **counts** matches and never asserts, so a dead pathspec reads exactly like "no records changed". |
+
+New local gates, both in `just qc` and blocking in CI:
+`just check-instruction-refs` · `just check-curation-targets`.
+
+Two follow-ups filed rather than guessed, because both need judgment rather than
+a path fix: **#186** (`just enrich-with-hierarchy` is cited as CultureMech's but
+exists in no repo — and it is the documented hand-off for the role-research lane
+in item 5) and **#187** (`data/curation/flagged_duplicates.yaml` never existed,
+and the 61 duplicate identifier PKs in item 2 will produce exactly those flags).
 
 > **Reconcile note (2026-07-30).** The previous reconcile was 2026-06-15 and the
 > file had drifted badly: PRs #114–#157 shipped in the interim, including two
@@ -289,13 +310,17 @@ across 906 records). The research lane is **built but has never been executed**:
 
 - MIM #146 — role research template + Edison shim + `template_vars()`.
 - MIM #153 — `scripts/apply_role_research_results.py`.
+- MIM #178 (2026-08-04) — the applier now writes its edits back into
+  `data/curated/` and re-exports, so a run leaves the two surfaces consistent.
+  Before this, every applied role would have been reverted by the next
+  `just export-individual` (#171) — the lane was not safely runnable.
 - CultureMech #105/#106/#107 — cross-repo prioritizer, Edison extractor,
   `apply_ingredient_roles.py` + the `research-ingredient-roles` skill.
 
-Evidence it has not run: `research/ingredients/roles/` (the shim's fixed output
-dir) does not exist; there is no `reports/edison_role_extraction.json` and no
-prioritizer output in CultureMech; no role assignment anywhere carries
-`edison-deep-research` provenance or a `PEER_REVIEWED_PUBLICATION` reference.
+Evidence it has not run, re-verified 2026-08-04: `research/ingredients/roles/`
+(the shim's fixed output dir) does not exist; there is no
+`reports/edison_role_extraction.json`; and **0** records carry
+`edison-deep-research` provenance.
 
 Current coverage over 2,257 records: **898 (39.8%) carry ≥1 ingredient-facet
 role**, all of them mapped records (47.8% of the 1,879); **0 of 378 unmapped**.
@@ -413,7 +438,10 @@ Nine items shipped in #108/#109/#111; three remain, all confirmed present:
 - **`enrich_edison_response.py` non-recursive glob** (deferred in #146): the
   default `DEFAULT_RESEARCH_DIR` pattern `*-edison-*-meta.yaml` is non-recursive,
   so it will not see `research/ingredients/roles/` unless `--research-dir` is
-  passed. Fix before the role lane runs (item 5).
+  passed. Verified still non-recursive on 2026-08-04
+  (`scripts/enrich_edison_response.py:270` uses `.glob()`, not `.rglob()`).
+  More urgent since #178: the applier now syncs correctly, so the lane is
+  genuinely runnable and this is the next thing in its path.
 - **`.claude/skills/ingredient-roles/SKILL.md` is pre-facet** — it documents the
   retired flat lowercase role names (`carbon_source`, `buffer`) with no mention of
   the three facets or the Step 7b lane. The facet-aware skill exists only in
@@ -432,8 +460,9 @@ Nine items shipped in #108/#109/#111; three remain, all confirmed present:
   Re-run any time with `python scripts/enrich_chemical_properties.py`
   (idempotent), then `just export-individual`. Gotcha still live: OLS4 needs
   **double** URL-encoding of ChEBI IRIs.
-- **`dashboard/` was last generated 2026-07-19**, before the role-facet work
-  landed. Re-run `just gen-qc-dashboard` after item 5.
+- ~~**`dashboard/` was last generated 2026-07-19**~~ — stale claim; it was
+  regenerated 2026-07-31. Still worth a `just gen-qc-dashboard` after item 5,
+  since role coverage is what it charts.
 
 ## 10. `DEFINED_MEDIUM` reads as "chemically defined" — schema hazard (NEW)
 
@@ -463,6 +492,37 @@ but is cross-repo (CultureMech imports MIM's enums) and would need coordination 
 weigh against the description-only change. Note `UNDEFINED_MIXTURE` sits in the
 same enum and *does* carry the compositional meaning, which is what makes the
 pair misleading.
+
+## 11. Follow-ups filed during the guard work (2026-08-03/04)
+
+Five issues opened while closing #148/#164/#169/#171/#176/#181/#185. Each was
+filed rather than guessed because the fix needs a decision, not a keystroke.
+
+- **#186 — `just enrich-with-hierarchy` exists in no repo.**
+  `.claude/skills/ingredient-roles/SKILL.md` names it as the CultureMech hand-off
+  for propagating MIM role changes into the ingredient hierarchy. It is not in
+  CultureMech's `justfile` or `project.justfile` (closest: `enrich-with-chebi`).
+  **Blocks item 5's tail** — this is the step that follows a role-research batch.
+  Suppressed in `conf/instruction_refs.yaml` with a pointer; remove that entry as
+  part of the fix.
+- **#187 — `data/curation/flagged_duplicates.yaml` never existed.**
+  The merge-ingredients skill tells curators to record flagged duplicates there.
+  **Blocks item 2** — the 61 duplicate PKs will produce exactly those
+  flagged-not-merged cases. Candidate homes now exist that did not when the skill
+  was written: a `Discussion(kind=OPEN_QUESTION)` on the surviving record, or a
+  `history/` record. That is a curation-workflow call.
+- **#177 — "CI blocking" is aspirational.** `main` has no branch protection, so
+  no check is actually required; several gates describe themselves as blocking.
+  Needs a policy decision *and* repo-admin action, and note that several
+  workflows carry `paths:` filters, so a required check that never runs blocks a
+  PR forever.
+- **#182 — `just export-individual` relies on implicit default directories.** Not
+  a bug (the defaults are correct) but the same shape as the pattern #169
+  retired. Either pass them explicitly or comment that they are load-bearing.
+- **#183 — `just sync-individual` has no caller**, and its trailing
+  `qc-roundtrip` can only ever pass, because the first step makes the two
+  surfaces agree by discarding one of them. Delete it, or rename it to say the
+  collection wins.
 
 ---
 
