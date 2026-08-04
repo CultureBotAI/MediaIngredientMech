@@ -1,10 +1,32 @@
 # Mapped Ingredients
 
-Generated: 2026-08-04T21:42:17.183850+00:00
-Total: 2279 ingredients
+Generated: 2026-08-04T22:41:57.447058+00:00
+Total: 2301 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:34036 | CHEBI:34036 | 3-trichloropropane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27789 | CHEBI:27789 | 2-dichloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:15987 | CHEBI:15987 | Trithionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:18212 | CHEBI:18212 | Selenite | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:18154 | CHEBI:18154 | Polysaccharides | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:53259 | CHEBI:53259 | Poly(ethylene Terephthalate) | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29991 | CHEBI:29991 | L-aspartate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:73757 | CHEBI:73757 | L-alanylglycine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:63961 | CHEBI:63961 | Glycylglycylglycine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:70744 | CHEBI:70744 | Glycyl-L-proline | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29987 | CHEBI:29987 | Glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:30612 | CHEBI:30612 | D-glucarate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29994 | CHEBI:29994 | D-aspartate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:3122 | CHEBI:3122 | Bis-4-nitrophenyl Phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:30295 | CHEBI:30295 | Antimonate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90148 | CHEBI:90148 | 4-nitrophenyl Beta-D-xylopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90259 | CHEBI:90259 | 4-nitrophenyl Beta-D-glucopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:91122 | CHEBI:91122 | 4-nitrophenyl Alpha-D-glucopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:17256 | CHEBI:17256 | 2-deoxyadenosine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16567 | CHEBI:16567 | 2-aminobenzoate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:62318 | CHEBI:62318 | (2)-D-lyxose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16659 | CHEBI:16659 | D-glycerate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:29101 | CHEBI:29101 | Sodium(+) | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:29034 | CHEBI:29034 | Ferric Iron | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16583 | CHEBI:16583 | Diacetyl | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
