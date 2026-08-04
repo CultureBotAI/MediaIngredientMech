@@ -181,6 +181,49 @@ report-label-drift:
 # LinkML cross-check (one validator process per record → too slow for CI).
 qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip check-instruction-refs check-curation-targets
 
+# Report whether the local ChEBI build is older than kg-microbe's
+check-chebi-currency *args:
+    # MIM grounds against a local semsql ChEBI and publishes to kg-microbe, so a
+    # local copy older than kg-microbe's makes real upstream terms fail to
+    # resolve — and validate-products then calls them ID_OUT_OF_RANGE, wording
+    # that invites deleting a valid mapping. Six real terms were demoted that way
+    # in #193. Advisory and local-only: the OAK cache is a multi-GB developer
+    # artifact CI does not have. Issue #197.
+    uv run python scripts/check_chebi_currency.py {{args}}
+
+# Re-download the local ChEBI build that validate-products grounds against
+refresh-chebi:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    # Check FIRST. The semsql build MIM consumes lags ChEBI itself, so being
+    # behind often cannot be fixed by downloading — at the time of writing the
+    # local and published builds are both 252 while kg-microbe is on 253. This
+    # recipe used to delete 4.7 GB to discover that.
+    if ! uv run python scripts/check_chebi_currency.py --strict; then
+      echo ""
+      echo "Refresh anyway? Only worth it if the message above says a refresh WOULD help."
+      echo "Re-run with FORCE=1 to proceed: FORCE=1 just refresh-chebi"
+      [ "${FORCE:-}" = "1" ] || exit 1
+    fi
+    # Resolve the cache through pystow, as oaklib does — deriving it from $HOME
+    # deletes the wrong path for anyone with PYSTOW_HOME set, while reporting
+    # success.
+    db="$(uv run python -c 'import pystow,pathlib;print(pathlib.Path(pystow.module("oaklib").base)/"chebi.db")')"
+    before="$(uv run python -c 'import sys;sys.path.insert(0,"scripts");from check_chebi_currency import local_release;from pathlib import Path;print(local_release(Path("'"$db"'"))[0])')"
+    echo "Local build is release ${before}. Removing ${db} and its .gz to force a re-download."
+    rm -f "$db" "$db.gz"
+    echo "Priming the cache (~760 MB)..."
+    uv run python -c "from oaklib import get_adapter; a=get_adapter('sqlite:obo:chebi'); print(' primed:', a.label('CHEBI:15377'))"
+    after="$(uv run python -c 'import sys;sys.path.insert(0,"scripts");from check_chebi_currency import local_release;from pathlib import Path;print(local_release(Path("'"$db"'"))[0])')"
+    echo "Local build is now release ${after}."
+    if [ "$before" = "$after" ]; then
+      echo "" >&2
+      echo "The re-download produced the SAME release (${after}). The lag is upstream of MIM;" >&2
+      echo "no further downloading will change it. See #197." >&2
+      exit 1
+    fi
+    uv run python scripts/check_chebi_currency.py
+
 # Assert every curation-target pathspec still matches at least one tracked file
 check-curation-targets *args:
     # The curation-history advisory COUNTS matches and never asserts, so a spec

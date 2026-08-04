@@ -41,10 +41,11 @@ gh pr list  --state open  --limit 20 2>/dev/null | head
 gh issue list --state open --limit 30 2>/dev/null | head -30
 ```
 
-Also reconcile the *instructions*, not just the backlog:
+Also reconcile the *instructions* and the *ontology build*, not just the backlog:
 
 ```bash
 just check-instruction-refs
+just check-chebi-currency
 ```
 
 Skills, commands and `/goal` prompts are executable in practice — an agent reads
@@ -55,6 +56,19 @@ was identified (#148), and needed correcting twice because a human happened to
 notice. This is that noticing, made mechanical (#185). A finding here is backlog
 material like any other: fix the reference, or declare it in
 `conf/instruction_refs.yaml` with a reason.
+
+`check-chebi-currency` compares the local semsql ChEBI against the release
+kg-microbe uses. When the local copy is behind, real upstream terms fail to
+resolve and `just validate-products` reports them `ID_OUT_OF_RANGE` — wording
+that says "foreign identifier" and invites deleting a valid mapping. Six real
+terms were demoted exactly that way in #193 while the local build sat one release
+behind (#197, #198). **Before acting on any `ID_OUT_OF_RANGE` finding, run this
+check.** It also reports whether a refresh would help: the semsql build MIM
+consumes lags ChEBI itself, so being behind is often *upstream* lag that no
+download fixes. In that state, treat a high-accession `ID_OUT_OF_RANGE` as
+unproven and check the id against OLS4 before demoting anything — that is
+exactly what was skipped in #193. Advisory
+and local-only; the OAK cache is a multi-GB developer artifact CI does not have.
 
 For each pending item: *is its deliverable already in a merged PR or in the
 code?* If yes → DONE. Spot-check any slot/recipe/file the item names
