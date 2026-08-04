@@ -181,6 +181,30 @@ report-label-drift:
 # LinkML cross-check (one validator process per record → too slow for CI).
 qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip check-instruction-refs check-curation-targets
 
+# Report whether the local ChEBI build is older than kg-microbe's
+check-chebi-currency *args:
+    # MIM grounds against a local semsql ChEBI and publishes to kg-microbe, so a
+    # local copy older than kg-microbe's makes real upstream terms fail to
+    # resolve — and validate-products then calls them ID_OUT_OF_RANGE, wording
+    # that invites deleting a valid mapping. Six real terms were demoted that way
+    # in #193. Advisory and local-only: the OAK cache is a multi-GB developer
+    # artifact CI does not have. Issue #197.
+    uv run python scripts/check_chebi_currency.py {{args}}
+
+# Re-download the local ChEBI build that validate-products grounds against
+refresh-chebi:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    # OAK caches sqlite:obo:chebi under ~/.data/oaklib/. Removing it forces a
+    # fresh download on next use. ~760 MB compressed, ~3.7 GB on disk, so this is
+    # deliberately a separate opt-in recipe rather than part of any gate.
+    db="${OAK_CHEBI_DB:-$HOME/.data/oaklib/chebi.db}"
+    echo "Removing $db and its .gz so OAK re-downloads the current release."
+    rm -f "$db" "$db.gz"
+    echo "Priming the cache (this downloads ~760 MB)..."
+    uv run python -c "from oaklib import get_adapter; a=get_adapter('sqlite:obo:chebi'); print(' primed:', a.label('CHEBI:15377'))"
+    just check-chebi-currency
+
 # Assert every curation-target pathspec still matches at least one tracked file
 check-curation-targets *args:
     # The curation-history advisory COUNTS matches and never asserts, so a spec
