@@ -6,8 +6,20 @@ deferrals here. Keep the cross-Mech items in sync with the sibling repos'
 `NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech). The hub,
 culturebotai-claw, now keeps one too, for items no single Mech owns.
 
-Last reconciled: 2026-08-04. **#160** was filed on 2026-07-30 for the
-`trigger_paths` gap described in the vendored-sync section below.
+Last reconciled: 2026-08-04 (second pass — added the microbedecoder thread).
+**#160** was filed on 2026-07-30 for the `trigger_paths` gap described in the
+vendored-sync section below.
+
+> **Reconcile note (2026-08-04, second pass).** After PR #190's reconcile earlier
+> today, an entire thread shipped and went unlogged: the **microbedecoder
+> unmapped-labels onboarding + residual grounding** (#193/#194/#195/#202/#205/#211,
+> and closed #201) — now captured as **item 12** below. Eleven open issues belong
+> to it (#196, #197, #203, #204, #206, #207, #208, #209, #210, #212, #213), none of
+> which appeared here before. Gate/currency status at this pass: `check-instruction-refs`
+> OK (32 files, 58 recipes); `check-chebi-currency` local build **252** vs ChEBI
+> **253** — behind by 1, **upstream lag a refresh cannot fix** (bears on the 6
+> deferred antibiotics). A second session is concurrently working
+> `fix/microbedecoder-residual-merges-blends`; this pass did not touch it.
 
 **Shipped since the last reconcile — the "guards that were not guarding" thread.**
 Five PRs, all closing the same class of defect: a check that reports OK while
@@ -524,6 +536,79 @@ filed rather than guessed because the fix needs a decision, not a keystroke.
   surfaces agree by discarding one of them. Delete it, or rename it to say the
   collection wins.
 
+## 12. microbedecoder unmapped-labels onboarding + residual grounding (NEW — 2026-08-04)
+
+An entire thread that was absent from this file. kg-microbe's `microbedecoder`
+transform emits `unmapped_labels.tsv` — 5,224 free-text labels it could not
+ontology-map. Staged into MIM at `data/custom/microbedecoder/` and onboarded.
+Only ~1,023 rows are chemical/ingredient candidates; the other ~4,200 are numeric
+phenotype measurements, isolation-category environment/host/food context, enzyme
+names, and metabolic pathways — **out of ingredient scope by design**. Assessment:
+`notes/microbedecoder_source_assessment_2026-08-03.md`.
+
+**Shipped (all 2026-08-04):**
+
+| PR | what |
+|---|---|
+| #193 | Onboard the labels; hold 386 auto-groundings at PENDING_REVIEW |
+| #194 | Track the review manifest (`reports/` gitignored) |
+| #195 | Promote the 386 reviewed auto-groundings to MAPPED |
+| #205 | Restore 11 antibiotic records demoted on the accession-ceiling false positive (closes issue #198; the other 6 stay upstream-blocked) |
+| #202 | Deep-research the deferred residual: **3 net-new applied** (Diacetyl→CHEBI:16583, Ferric Iron→CHEBI:29034, Sodium(+)→CHEBI:29101); 7 reclassified as already-mapped synonym-merges; blends + antibiotics deferred. Report + ledger + 43-label decomposition table under `mappings/microbedecoder_residual_research_*` |
+| #211 | Recover **22 free** exact/synonym groundings orphaned when PR #201 was closed unmerged (sugars, amino-acid/peptide substrates, nitrophenyl enzyme substrates, acids/ions/polymers, 2 dropped-locant chloroalkanes) |
+
+**PR #201 was CLOSED unmerged** (it was stacked on `review/microbedecoder-pending-groundings`,
+not `main`). Its content reached `main` piecemeal — 386→#195, antibiotics→#205,
+20+2 free groundings→#211, deferred-NCIT→#202 — but the source branch
+`feat/microbedecoder-residual-grounding` (worktree `MediaIngredientMech-residual`,
+tip `80d9b010`) still holds a few unmerged bits:
+`scripts/promote_microbedecoder_residual.py`, the blends/deferred-NCIT triage
+TSVs, and 4 duplicate-synonym merges + NEEDS_EXPERT flags. **Do not delete that
+branch** — it feeds the active work below.
+
+**Active parallel work (a second session, 2026-08-04):** branch
+`fix/microbedecoder-residual-merges-blends` (worktree `MediaIngredientMech-merges`),
+running Edison literature searches on the blends. **Stay off that branch/worktree.**
+
+**Remaining — tracked, ~583 `UNMAPPED_*` placeholder records still unmapped;
+consolidated in #213:**
+
+- **#212 — follow-up on #211 (verified accurate).** 4 records need a synonym-**merge**
+  (`merge-ingredients`), not a promote, because their CHEBI targets are already
+  mapped via *other* records so `promote_resolved_unmapped.py` correctly skipped
+  them: `2-dichloropropane`→CHEBI:142468, `2-trichloroethane`→CHEBI:36018,
+  `1% Sodium Chloride`→CHEBI:26710, `1% Sodium Lactate`→CHEBI:75228. #211's body
+  called them "already present" — the *targets* are; the source placeholders are
+  not. These are exactly the merges #201's `80d9b010` had staged.
+- **#208** — 7 already-mapped labels need synonym-merges onto the canonical record
+  (alpha-/beta-hydroxybutyrate=2-/3-hydroxybutyrate, Achromycin=Tetracycline,
+  neomycin E=Paromomycin, (+)-D-glycogen=Glycogen, (+)-L-lyxitol=Arabitol); the
+  **RNA→CHEBI:33697 case needs a split** (generic RNA vs the Torula-yeast product
+  record already on that id).
+- **~43 multi-component blends / co-substrate pairs** — decomposition strategy
+  researched in #202 (`mappings/microbedecoder_residual_research_decomposition.tsv`);
+  the active second session is working these. Gaps flagged: rumen fluid (#204,
+  verify `MICRO:0000520`), corn steep liquor (no FOODON/CHEBI term), the TYGVS VFA
+  mixture.
+- **6 out-of-coverage antibiotics** (carbomycin, colistin sulfate, gentamicin,
+  lysostaphin, netilmicin, polymyxin B) — OLS4-valid CHEBI terms absent from the
+  local `chebi.db` (build **252** vs ChEBI **253**). **UPSTREAM-BLOCKED (#207)** —
+  a refresh will not help (the semsql build is byte-identical); the lag is upstream
+  of MIM. `check-chebi-currency` confirms.
+- **#209** — is `sodium(+)` a media ingredient (vs a phenotype), and relabel
+  `mapped/Sodium().yaml` → `sodium(1+)`.
+- **#196** — microbedecoder records carry `total_occurrences: 0`; the source
+  occurrence signal (present in `unmapped_labels.tsv`) is dropped on import.
+- The bulk remainder plus the ~347 **isolation-category** environment/host/food
+  rows should route to **ENVO/FOODON**, not the ingredient pipeline; keratin →
+  Protein Ontology (no CHEBI term).
+
+**Related infra issues (accession ceiling / currency), all open:** #197 & #210
+(CHEBI accession ceiling is 300000 while ChEBI reaches 747618 — valid recent terms
+mis-rejected as foreign ids), #206 (`check-chebi-currency` infers "a refresh would
+help" from byte size, not release), #203 (`promote_microbedecoder_reviewed.py`
+approval check is tautological — re-runs the lookup that created the mapping).
+
 ---
 
 # Upstream-blocked — do not schedule
@@ -587,6 +672,12 @@ commercial media/broths/agars, trace-element and vitamin solutions, sera,
 extracts, grains, buffers, and metal-NTA chelates. **Current count is 378
 per-record files / 381 collection entries** (this file previously said 383 —
 wrong in both directions; see item 3 for the 3-entry discrepancy).
+
+> **Superseded as a total-unmapped count (2026-08-04).** This 378 ledger predates
+> the microbedecoder onboarding (item 12), which added hundreds of `UNMAPPED_*`
+> placeholder records. Total unmapped is now ~612 (~605 placeholders). This ledger
+> still stands as the analysis of the *original, pre-microbedecoder* hard residual;
+> for the current unmapped picture use item 12 and #213.
 
 Use `deep-research-ingredient` (Edison/PaperQA3; `EDISON_PLATFORM_API_KEY` is
 configured) or `mediaingredientmech-agentic-curation` (FutureHouse Falcon) for
