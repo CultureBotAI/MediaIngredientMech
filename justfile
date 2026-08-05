@@ -200,6 +200,15 @@ report-label-drift:
 # LinkML cross-check (one validator process per record → too slow for CI).
 qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids qc-flat-coverage check-instruction-refs check-curation-targets
 
+# Section 3 makes a hydration state a distinct substance, but the id-label gate
+# cannot see violations: its plausible waiver compares ontology_id against the
+# TERM's own label, and hydrate names live in preferred_term. Measurement, not a
+# gate — report-then-enforce. Issue #238.
+#
+# Report records whose label is a hydrate but whose term is not
+report-hydrate-grounding *args:
+    uv run python scripts/report_hydrate_grounding.py {{args}}
+
 # Report whether the local ChEBI build is older than kg-microbe's
 check-chebi-currency *args:
     # MIM grounds against a local semsql ChEBI and publishes to kg-microbe, so a

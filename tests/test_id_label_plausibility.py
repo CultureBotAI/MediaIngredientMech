@@ -79,7 +79,6 @@ def _classify(label: str, curie: str, **kw):
     ("Distilled water", "CHEBI:15377"),   # shares the word "water"
     ("KH2PO4", "CHEBI:63036"),            # formula matches exactly
     ("MnCl2 x 4 H2O", "CHEBI:86368"),     # formula matches exactly
-    ("NiCl2 x 6 H2O", "CHEBI:34887"),     # hydrate → anhydrous parent, tolerated
     ("H2O", "CHEBI:15377"),               # matches a synonym
 ])
 def test_curator_labels_still_pass(label, curie):
@@ -141,6 +140,14 @@ def test_default_waiver_mode_is_unchanged():
 ])
 def test_formula_comparison(label, formula, expected):
     assert chem.compare_formulas(label, formula) == expected
+
+
+def test_hydrate_on_anhydrous_term_now_warns(): 
+    """Was tolerated as a pass, which is how the 32 hydrate families of #218
+    accumulated. MAPPING_SEMANTICS.md Section 3 makes a hydrate a distinct
+    substance, so this is a finding — WARN, not fail, per report-then-enforce."""
+    verdict = _classify("NiCl2 x 6 H2O", "CHEBI:34887")
+    assert verdict == "HYDRATE_ON_ANHYDROUS_TERM"
 
 
 def test_roman_oxidation_state_parses():
