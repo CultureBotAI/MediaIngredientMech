@@ -58,7 +58,8 @@ COVERAGE = {
 # so they can never compare equal and are excluded from the freshness check.
 DETERMINISTIC = sorted(
     {f"{stem}_ingredients.{ext}"
-     for stem in ("all", "mapped", "unmapped") for ext in ("csv", "json")})
+     for stem in ("all", "mapped", "unmapped") for ext in ("csv", "json")}
+    | {"label_index.csv"})   # per-label resolution with precedence (#232)
 
 
 def fail(msg: str) -> int:
@@ -156,6 +157,37 @@ def published_labels(path: Path) -> tuple[set[str], dict[str, set[str]]]:
     return labels, by_label
 
 
+def check_label_index(limit: int) -> int:
+    """Every curated label must appear in label_index.csv.
+
+    Freshness compares the artifact against the SAME producer, so it structurally
+    cannot catch a producer that consistently drops labels — the reason this
+    module carries a coverage half at all. The index is a different shape from
+    the record CSVs (one row per label, no `synonyms` column), so it needs its
+    own check rather than a COVERAGE entry. Issue #232.
+    """
+    path = DOCS / "label_index.csv"
+    if not path.exists():
+        return fail(f"{path.relative_to(ROOT)} does not exist — run `just export-lists`.")
+    with path.open(newline="") as fh:
+        reader = csv.DictReader(fh)
+        missing_cols = {"label", "match_type", "identifier"} - set(reader.fieldnames or [])
+        if missing_cols:
+            return fail(f"{path.relative_to(ROOT)} is missing column(s): "
+                        f"{', '.join(sorted(missing_cols))}")
+        indexed = {r["label"] for r in reader if r.get("label")}
+    curated = curated_labels(("mapped_ingredients.yaml", "unmapped_ingredients.yaml"))
+    missing = sorted(lab for lab in curated if lab not in indexed)
+    print(f"coverage: {'label_index.csv':26} {len(curated) - len(missing)}/{len(curated)} "
+          "curated label(s) indexed")
+    if missing:
+        rc = fail(f"{len(missing)} curated label(s) absent from label_index.csv")
+        for lab in missing[:limit]:
+            print(f"  {lab!r}")
+        return rc
+    return 0
+
+
 def check_coverage(limit: int) -> int:
     rc = 0
     for name, sources in COVERAGE.items():
@@ -194,6 +226,7 @@ def main() -> int:
 
     rc = 0 if args.skip_freshness else check_freshness()
     rc = check_coverage(args.limit) or rc
+    rc = check_label_index(args.limit) or rc
     if rc == 0:
         print("\nOK: docs/data/ is fresh and every curated label is published.")
     return rc
