@@ -101,15 +101,25 @@ def build(tmp_path, records, csv_rows, header=None):
     (tmp_path / "docs" / "data").mkdir(parents=True)
     cols = header or ["identifier", "preferred_term", "synonyms"]
     lines = [",".join(cols)] + [",".join(r) for r in csv_rows]
-    (tmp_path / "docs" / "data" / "all_ingredients.csv").write_text("\n".join(lines) + "\n")
+    body = "\n".join(lines) + "\n"
+    # the gate covers all three flat CSVs; mapped/ mirror `records`, unmapped is
+    # empty here so its header alone satisfies it
+    (tmp_path / "docs" / "data" / "all_ingredients.csv").write_text(body)
+    (tmp_path / "docs" / "data" / "mapped_ingredients.csv").write_text(body)
+    (tmp_path / "docs" / "data" / "unmapped_ingredients.csv").write_text(",".join(cols) + "\n")
     (tmp_path / "scripts").mkdir(exist_ok=True)
     (tmp_path / "scripts" / CHECK.name).write_text(CHECK.read_text())
+    # the gate imports the exporter's _synonyms() on purpose, so the rule for
+    # what is publishable cannot drift between producing and checking
+    (tmp_path / "scripts" / EXPORT.name).write_text(EXPORT.read_text())
     return tmp_path
 
 
-def run(tmp_path):
-    return subprocess.run([sys.executable, str(tmp_path / "scripts" / CHECK.name)],
-                          capture_output=True, text=True)
+def run(tmp_path, *args):
+    """Coverage only: the synthetic repo has no exporter for the freshness half."""
+    return subprocess.run(
+        [sys.executable, str(tmp_path / "scripts" / CHECK.name), "--skip-freshness", *args],
+        capture_output=True, text=True)
 
 
 def test_gate_passes_when_every_label_is_published(tmp_path):
@@ -141,3 +151,43 @@ def test_gate_fails_when_the_flat_artifact_is_absent(tmp_path):
     repo = build(tmp_path, [rec("CHEBI:1", "X")], [])
     (repo / "docs" / "data" / "all_ingredients.csv").unlink()
     assert run(repo).returncode == 2
+
+
+# --- detritus filtering and separator safety (#231 review) ------------------
+
+@pytest.mark.parametrize("text", [
+    "Role: Carbon source; Properties: Organic compound, Defined component",
+    "Role: Mineral source; Properties: Solution",
+    "(sodium salt)",
+    "(for solid medium, alternative)",
+    "( Noble)",
+])
+def test_curation_annotations_are_not_published_as_labels(export_lists, text):
+    """No record answers to `(sodium salt)`; publishing it made it 'resolve' to
+    eight different CHEBI ids."""
+    assert export_lists._synonyms(rec("CHEBI:1", "X", [text])) == []
+
+
+@pytest.mark.parametrize("text", [
+    "Role reversal buffer",      # 'Role' without the annotation shape
+    "Sodium acetate (anhydrous)", # parenthetical inside a real name
+    "(R)-lactate",                # a real name that starts with a parenthesis
+])
+def test_real_labels_survive_the_detritus_filter(export_lists, text):
+    assert export_lists._synonyms(rec("CHEBI:1", "X", [text])) == [text]
+
+
+def test_a_pipe_in_a_synonym_is_refused_not_silently_split(export_lists, tmp_path):
+    """Joining it would read back as two bogus labels, and the coverage gate
+    would then advise re-running the export forever."""
+    with pytest.raises(ValueError, match="separator"):
+        export_lists._join_synonyms(rec("CHEBI:9", "X", ["Glucose|Fructose mix"]))
+
+
+def test_coverage_counter_is_a_ratio_not_the_published_set_size(tmp_path):
+    """It printed '8116/8116 resolvable' directly above a failure."""
+    repo = build(tmp_path, [rec("CHEBI:1", "A", ["missing-one"])],
+                 [["CHEBI:1", "A", ""], ["CHEBI:2", "extra-published", ""]])
+    out = run(repo)
+    assert out.returncode == 2
+    assert "1/2 curated label(s) resolvable" in out.stdout
