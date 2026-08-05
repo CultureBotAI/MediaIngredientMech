@@ -1,0 +1,38 @@
+identifier: CHEBI:17747
+preferred_term: Bis(2-ethylhexyl)phthalate
+synonyms:
+- synonym_text: Bis(2-ethylhexyl)phthalate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_2_ethylhexyl_phthalate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0801 -> CHEBI:17747 "bis(2-ethylhexyl) phthalate" (EXACT_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_2_ethylhexyl_phthalate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:17747
+  ontology_label: bis(2-ethylhexyl) phthalate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI verification
+    notes: Edison identity research recommends CHEBI:17747; label matches exactly.
+      Target held by no other mapped record.

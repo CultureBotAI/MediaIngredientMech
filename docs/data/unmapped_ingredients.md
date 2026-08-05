@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-05T00:02:44.949282+00:00
-Total: 581 ingredients
+Generated: 2026-08-05T02:08:47.111893+00:00
+Total: 570 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -398,7 +398,6 @@ Total: 581 ingredients
 | UNMAPPED_0671 |  | 3-O-methyl Alpha-D-glucopyranoside | UNMAPPED |  |  | 0 |
 | UNMAPPED_0787 |  | 3-beta-d-glucan | UNMAPPED |  |  | 0 |
 | UNMAPPED_0632 |  | 3-butanediol | UNMAPPED |  |  | 0 |
-| UNMAPPED_0788 |  | 3-hydroxy 2-butanone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0736 |  | 3-methylacetate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0687 |  | 3-methylglucose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
@@ -429,7 +428,6 @@ Total: 581 ingredients
 | UNMAPPED_0672 |  | Beta-gentiobiose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0629 |  | Beta-hydroxybutyrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0707 |  | Beta-phenylethylamine | UNMAPPED |  |  | 0 |
-| UNMAPPED_0801 |  | Bis(2-ethylhexyl)phthalate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0697 |  | Bis-4-nitrophenyl-phenyl Phosphonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0691 |  | Bis-4-nitrophenyl-phosphorylcholine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0802 |  | Bottromycin | UNMAPPED |  |  | 0 |
@@ -441,16 +439,13 @@ Total: 581 ingredients
 | UNMAPPED_0708 |  | Casamino Acids (0.01 % | UNMAPPED |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0664 |  | Chlortetracyclin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0635 |  | Cis-aconitate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0727 |  | Citraconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0807 |  | Citramalate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0625 |  | D-arabitol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0649 |  | D-galactonic Acid Lactone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0656 |  | D-glucosaminic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0654 |  | D-lactate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0709 |  | D-lactic Acid Methyl Ester | UNMAPPED |  |  | 0 |
 | UNMAPPED_0640 |  | D-malate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0657 |  | D-saccharate | UNMAPPED |  |  | 0 |
@@ -464,7 +459,6 @@ Total: 581 ingredients
 | UNMAPPED_0812 |  | Ethylenediamine-N | UNMAPPED |  |  | 0 |
 | UNMAPPED_0742 |  | Fastidious Anaerobe Broth With Meat Granules | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0711 |  | Fermented Rumen Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0813 |  | Ferrous Ion | UNMAPPED |  |  | 0 |
 | UNMAPPED_0730 |  | Ferulate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0814 |  | Filipin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0743 |  | Formate+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
@@ -503,7 +497,6 @@ Total: 581 ingredients
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0622 |  | Hippurate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0819 |  | Hydroxystreptomycin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0760 |  | Iso-butanol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0685 |  | Isocitrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0820 |  | Isophthalate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
@@ -513,7 +506,6 @@ Total: 581 ingredients
 | UNMAPPED_0713 |  | L-galactonic Acid Gamma-lactone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0823 |  | L-inositol | UNMAPPED |  |  | 0 |
-| UNMAPPED_0636 |  | L-malate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0825 |  | L-pyroglutamic Acid 2-naphthylamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0627 |  | Malonate | UNMAPPED |  |  | 0 |
@@ -523,7 +515,6 @@ Total: 581 ingredients
 | UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0828 |  | N-acetyl-neuraminic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0830 |  | Neomycin E | UNMAPPED |  |  | 0 |
 | UNMAPPED_0831 |  | Neomycin F | UNMAPPED |  |  | 0 |
@@ -566,10 +557,8 @@ Total: 581 ingredients
 | UNMAPPED_0774 |  | Tartate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0846 |  | Terephthalate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0847 |  | Tetrabromopyrrole | UNMAPPED |  |  | 0 |
-| UNMAPPED_0647 |  | Tetrathionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0734 |  | Tetrazolium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0848 |  | Trimethoxybenzoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0775 |  | Trimethyleneglycol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0673 |  | Triphenyltetrazolium Chloride | UNMAPPED |  |  | 0 |
 | UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | NEEDS_EXPERT |  |  | 0 |

@@ -14,6 +14,9 @@ synonyms:
 - synonym_text: 2-methylpropan-1-ol
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Iso-butanol
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -43,6 +46,13 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-05T02:07:44.788792+00:00'
+  curator: edison-residual-research
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0760 ''Iso-butanol'' as a RAW_TEXT synonym -- isobutanol
+    and isobutyl alcohol are the same compound. No new SSSOM row; CHEBI:46645 is already
+    mapped. Source: kgmicrobe.compound:iso_butanol.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 78-83-1
   data_source: CultureBotHT compounds_to_cas.csv
