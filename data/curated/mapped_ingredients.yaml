@@ -1,4 +1,4 @@
-generation_date: '2026-08-05T18:02:35.008352+00:00'
+generation_date: '2026-08-05T19:01:25.425507+00:00'
 total_count: 2308
 mapped_count: 2279
 unmapped_count: 0
@@ -20878,7 +20878,7 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:8150
+- identifier: FOODON:03315720
   preferred_term: Bacto Soytone
   ontology_mapping:
     ontology_id: FOODON:03315720
@@ -20966,6 +20966,16 @@ ingredients:
       into. Clears the dangling obsolete reference and empty ontology_label on this
       REJECTED tombstone.
     llm_assisted: false
+  - timestamp: '2026-08-05T19:01:25.425507+00:00'
+    curator: tombstone-dead-identifier-fix
+    action: CORRECTED
+    changes: identifier CHEBI:8150 -> FOODON:03315720. CHEBI:8150 is deprecated in
+      ChEBI (empty label; OLS4 redirects to CHEBI:16247 'phospholipid', semantically
+      wrong), so this REJECTED tombstone's primary key did not resolve while its ontology_mapping
+      already pointed at FOODON:03315720. Aligning them matches the tombstone shape
+      the merge tooling produces (identifier == ontology_id) and removes the record's
+      self-contradiction (#170).
+    llm_assisted: true
   kg_microbe_node_id: CHEBI:8150
   ingredient_type: SINGLE_INGREDIENT
   representative: FOODON:03315720
@@ -126788,7 +126798,7 @@ ingredients:
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:867561
+- identifier: CHEBI:232798
   preferred_term: Sodium L-lactate
   ontology_mapping:
     ontology_id: CHEBI:232798
@@ -126863,6 +126873,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T19:01:25.425507+00:00'
+    curator: tombstone-dead-identifier-fix
+    action: CORRECTED
+    changes: identifier CHEBI:867561 -> CHEBI:232798. CHEBI:867561 is absent from
+      ChEBI entirely, so this REJECTED tombstone's primary key did not resolve while
+      its ontology_mapping already pointed at CHEBI:232798. Aligning them matches
+      the tombstone shape the merge tooling produces (identifier == ontology_id) and
+      removes the record's self-contradiction (#170).
+    llm_assisted: true
   representative: CHEBI:232798
   chemical_properties:
     cas_rn: 867-56-1

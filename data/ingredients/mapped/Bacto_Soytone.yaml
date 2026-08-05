@@ -1,4 +1,4 @@
-identifier: CHEBI:8150
+identifier: FOODON:03315720
 preferred_term: Bacto Soytone
 ontology_mapping:
   ontology_id: FOODON:03315720
@@ -85,6 +85,16 @@ curation_history:
     into. Clears the dangling obsolete reference and empty ontology_label on this
     REJECTED tombstone.
   llm_assisted: false
+- timestamp: '2026-08-05T19:01:25.425507+00:00'
+  curator: tombstone-dead-identifier-fix
+  action: CORRECTED
+  changes: identifier CHEBI:8150 -> FOODON:03315720. CHEBI:8150 is deprecated in ChEBI
+    (empty label; OLS4 redirects to CHEBI:16247 'phospholipid', semantically wrong),
+    so this REJECTED tombstone's primary key did not resolve while its ontology_mapping
+    already pointed at FOODON:03315720. Aligning them matches the tombstone shape
+    the merge tooling produces (identifier == ontology_id) and removes the record's
+    self-contradiction (#170).
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:8150
 ingredient_type: SINGLE_INGREDIENT
 representative: FOODON:03315720

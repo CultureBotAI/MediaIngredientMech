@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-05T18:03:37.762791+00:00
+Generated: 2026-08-05T19:02:17.917214+00:00
 Total: 2308 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -338,7 +338,7 @@ Total: 2308 ingredients
 | MICRO:0000182 | MICRO:0000182 | Bacto-tryptone | MAPPED | MICRO | EXACT_MATCH | 1 |
 | MICRO:0000193 | MICRO:0000193 | Bacto brain heart infusion | MAPPED | MICRO | LEXICAL_MATCH | 0 |
 | MICRO:0000178 | MICRO:0000178 | Bacto peptone | MAPPED | MICRO | EXACT_MATCH | 0 |
-| CHEBI:8150 | FOODON:03315720 | Bacto Soytone | REJECTED | FOODON | CLOSE_MATCH | 0 |
+| FOODON:03315720 | FOODON:03315720 | Bacto Soytone | REJECTED | FOODON | CLOSE_MATCH | 0 |
 | MICRO:0000114 | MICRO:0000114 | Bacto Tryptic Soy Agar | MAPPED | MICRO | LEXICAL_MATCH | 0 |
 | MICRO:0000114 | MICRO:0000114 | Bacto Tryptic Soy Agar (Difco) | REJECTED | MICRO | LEXICAL_MATCH | 0 |
 | MICRO:0000113 | MICRO:0000113 | Bacto Tryptic Soy Broth | MAPPED | MICRO | LEXICAL_MATCH | 0 |
@@ -1658,7 +1658,7 @@ Total: 2308 ingredients
 | CHEBI:33167 | CHEBI:33167 | sodium iodide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:234594 | CHEBI:234594 | Sodium iodoacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1562-00-1 | cas:1562-00-1 | sodium isethionate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:867561 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:232798 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:75228 | CHEBI:75228 | Sodium lactate | MAPPED | CHEBI | EXACT_MATCH | 190 |
 | CHEBI:29678 | CHEBI:29678 | Sodium m-arsenite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:91261 | CHEBI:91261 | Sodium malate | MAPPED | CHEBI | EXACT_MATCH | 50 |

@@ -1,4 +1,4 @@
-identifier: CHEBI:867561
+identifier: CHEBI:232798
 preferred_term: Sodium L-lactate
 ontology_mapping:
   ontology_id: CHEBI:232798
@@ -73,6 +73,15 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-05T19:01:25.425507+00:00'
+  curator: tombstone-dead-identifier-fix
+  action: CORRECTED
+  changes: identifier CHEBI:867561 -> CHEBI:232798. CHEBI:867561 is absent from ChEBI
+    entirely, so this REJECTED tombstone's primary key did not resolve while its ontology_mapping
+    already pointed at CHEBI:232798. Aligning them matches the tombstone shape the
+    merge tooling produces (identifier == ontology_id) and removes the record's self-contradiction
+    (#170).
+  llm_assisted: true
 representative: CHEBI:232798
 chemical_properties:
   cas_rn: 867-56-1
