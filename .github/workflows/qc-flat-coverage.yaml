@@ -1,0 +1,45 @@
+name: QC — flat export coverage
+
+on:
+  pull_request:
+    # NO branches filter, same reason as qc-sssom.yaml (#174): a stacked PR whose
+    # base is not `main` would otherwise skip the gate entirely.
+    paths:
+      - "data/curated/mapped_ingredients.yaml"
+      - "data/curated/unmapped_ingredients.yaml"
+      - "docs/data/all_ingredients.csv"
+      - "scripts/export_lists.py"
+      - "scripts/check_flat_export_coverage.py"
+  push:
+    branches: [main]
+    paths:
+      - "data/curated/mapped_ingredients.yaml"
+      - "data/curated/unmapped_ingredients.yaml"
+      - "docs/data/all_ingredients.csv"
+      - "scripts/export_lists.py"
+      - "scripts/check_flat_export_coverage.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout MIM
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # The freshness half runs export_lists.py, so this needs the exporter's
+      # own deps — click and rich as well as PyYAML. Still no OAK, no ontology
+      # build and no claw checkout, so it runs standalone rather than behind
+      # `just qc`, which needs all three.
+      - name: Install deps
+        run: python3 -m pip install pyyaml click rich
+
+      - name: Check every curated label is published
+        run: python3 scripts/check_flat_export_coverage.py

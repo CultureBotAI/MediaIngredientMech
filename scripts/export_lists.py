@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -39,6 +40,59 @@ def _ontology_id(ing: dict) -> str:
     return (ing.get("ontology_mapping") or {}).get("ontology_id", "") or ""
 
 
+# Separator for the CSV synonyms column. `|` is the multi-value separator this
+# repo's SSSOM already uses (the `source`, `validation_method` and `other`
+# columns), so consumers split on it today.
+SYNONYM_SEP = "|"
+
+# Curation strings that live in `synonyms` but are not names anything answers
+# to: role/property annotations carried over from the CultureMech import, and
+# bare parentheticals like `(sodium salt)` or `(for solid medium, alternative)`
+# that are fragments of a name, not a name. 214 distinct strings. Publishing
+# them as resolvable labels would make `Role: Carbon source; Properties: ...`
+# "resolve" to 44 different CHEBI ids.
+_NOT_A_LABEL = re.compile(r"^\s*Role:.*;\s*Properties:|^\s*\([^)]*\)\s*$", re.IGNORECASE)
+
+
+def _synonyms(ing: dict) -> list[str]:
+    """Every raw label this record answers to, minus the preferred_term itself.
+
+    Merging a duplicate folds its raw label in here and deletes its record, and
+    merges add no SSSOM row (SSSOM subjects are preferred_terms, never
+    synonyms). `docs/data/ingredients.json` has always carried synonyms, but the
+    backlog exports here did not -- so after a merge the label stopped resolving
+    from the CSV/JSON that consumers join against. Issue #229.
+    """
+    preferred = ing.get("preferred_term", "")
+    seen, out = {preferred}, []
+    for s in ing.get("synonyms") or []:
+        text = (s or {}).get("synonym_text")
+        if not text or text in seen or _NOT_A_LABEL.match(text):
+            continue
+        seen.add(text)
+        out.append(text)
+    return out
+
+
+def _join_synonyms(ing: dict) -> str:
+    """Pack synonyms into the CSV cell, refusing rather than corrupting.
+
+    Nothing in the schema forbids `|` in a synonym_text, and no synonym contains
+    one today. If one ever does, joining silently would split it into two bogus
+    labels on read, so fail here with the record named -- the coverage gate would
+    otherwise report it as an unresolvable label and advise re-running the export,
+    which loops forever.
+    """
+    syns = _synonyms(ing)
+    bad = [s for s in syns if SYNONYM_SEP in s]
+    if bad:
+        raise ValueError(
+            f"{ing.get('identifier', '?')}: synonym(s) contain the {SYNONYM_SEP!r} "
+            f"separator and cannot be packed into the CSV column: {bad}. "
+            "Change the separator or escape it before exporting.")
+    return SYNONYM_SEP.join(syns)
+
+
 def export_to_json(ingredients: list[dict], output_path: Path):
     """Export ingredients to JSON format."""
     records = []
@@ -48,6 +102,7 @@ def export_to_json(ingredients: list[dict], output_path: Path):
             "ontology_id": _ontology_id(ing),
             "preferred_term": ing.get("preferred_term", ""),
             "mapping_status": ing.get("mapping_status", ""),
+            "synonyms": _synonyms(ing),
         }
 
         # Add ontology mapping details if mapped
@@ -87,6 +142,9 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
         "mapping_quality",
         "total_occurrences",
         "media_count",
+        # appended, not inserted: a consumer indexing columns positionally keeps
+        # working, and one reading by header name picks it up. Issue #229.
+        "synonyms",
     ]
 
     with open(output_path, "w", newline="") as f:
@@ -99,6 +157,7 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
                 "ontology_id": _ontology_id(ing),
                 "preferred_term": ing.get("preferred_term", ""),
                 "mapping_status": ing.get("mapping_status", ""),
+                "synonyms": _join_synonyms(ing),
             }
 
             # Add ontology mapping details
@@ -124,7 +183,13 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
 
 
 def export_to_markdown(ingredients: list[dict], output_path: Path, title: str):
-    """Export ingredients to Markdown table format."""
+    """Export ingredients to Markdown table format.
+
+    Deliberately carries NO synonyms column, unlike the CSV and JSON exports
+    (#229): the pipe-joined list would collide with the table's own cell
+    separator, and this artifact is for reading rather than for resolving raw
+    strings. Consumers doing lookups should use the CSV or JSON.
+    """
     lines = [
         f"# {title}",
         "",
