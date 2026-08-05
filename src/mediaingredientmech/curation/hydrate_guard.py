@@ -53,6 +53,56 @@ HYDRATE_NOTATION = re.compile(
 FORMULA_WATER = re.compile(r"(?:^|\.)\(?[\dn]*H2O\)?n?(?:\.|$)")
 
 
+# Greek multipliers ChEBI and catalogues use, as numbers. `hexahydrate` and
+# `6 H2O` are the same state; comparing raw tokens reports respellings as
+# mismatches.
+_MULTIPLIER = {"hemi": "0.5", "sesqui": "1.5", "mono": "1", "di": "2", "tri": "3",
+               "tetra": "4", "penta": "5", "hexa": "6", "hepta": "7", "octa": "8",
+               "nona": "9", "deca": "10", "undeca": "11", "dodeca": "12"}
+
+# A digit multiplier must be preceded by a separator, whitespace or the string
+# start. Without that guard `AlCl3.6H2O` reads as "3.6" -- the aluminium
+# subscript captured as part of the multiplier.
+_DIGIT_WATER = re.compile(r"(?:^|[x\u00d7\u00b7\u2022\u30fb\u22c5\u2219.\s])(\d+)\s*H2\s*O(?![0-9])",
+                          re.IGNORECASE)
+# `hemipentahydrate` is hemi x penta = 2.5 waters, so the fraction prefix is
+# matched separately from the count rather than as one alternative.
+_FRACTION = {"hemi": 0.5, "sesqui": 1.5}
+_COUNT = {k: v for k, v in _MULTIPLIER.items() if k not in _FRACTION}
+_WORD_WATER = re.compile(
+    r"(?<![a-z])(hemi|sesqui)?("
+    + "|".join(sorted(_COUNT, key=len, reverse=True)) + r")?hydrate\b",
+    re.IGNORECASE)
+
+
+def water_multiplicity(text: str) -> str | None:
+    """How many waters the label states, or None when it does not state one (#254).
+
+    None means "unspecified", NOT monohydrate -- a bare `hydrate` or `x n H2O`
+    says nothing, and treating it as 1 invents mismatches against records that
+    genuinely say 6. It is also returned for genuinely ambiguous strings like
+    `CaCl22H2O`, where nothing distinguishes the subscript from the multiplier.
+
+    Word forms win over digits: `dihydrochloride pentahydrate` is a
+    pentahydrate, and its digits belong to neither.
+
+    Returns a decimal string so `hemi` (0.5) and `sesqui` (1.5) round-trip.
+    """
+    text = str(text or "")
+    for m in _WORD_WATER.finditer(text):
+        frac, count = m.group(1), m.group(2)
+        if not frac and not count:
+            continue                      # a bare `hydrate` states nothing
+        value = float(_COUNT[count.lower()]) if count else 1.0
+        if frac:
+            value *= _FRACTION[frac.lower()]
+        return f"{value:g}"
+    m = _DIGIT_WATER.search(text)
+    if m:
+        return m.group(1)
+    return None
+
+
 class _Candidate(Protocol):
     ontology_id: str
     label: str
