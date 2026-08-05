@@ -92,10 +92,23 @@ Source: "Iron(II) sulfate heptahydrate"
 CHEBI ID: CHEBI:75832 (both)
 ```
 
-**Resolution**:
-1. Keep target preferred_term (higher quality/occurrence)
-2. Add source preferred_term as EXACT_SYNONYM
-3. Note hydrate form in synonym metadata
+**Resolution**: ⚠️ **This is not a merge.** `FeSO4` and `Iron(II) sulfate
+heptahydrate` are *different substances* — 151.91 vs 278.01 g/mol — that share a
+CHEBI ID only because the hydrate was grounded onto its anhydrous parent. Merging
+them destroys the distinction a recipe depends on. (CHEBI:75832 is one of the
+records `just report-hydrate-grounding` currently flags.)
+
+Per MAPPING_SEMANTICS.md **Section 3**, split them instead:
+
+1. Keep the anhydrous record on the anhydrous term.
+2. Give the hydrate its own identifier — a hydrate-specific ontology term if one
+   exists, else `cas:<hydrate CAS>` with a `skos:narrowMatch` to the anhydrous
+   parent plus the Rule B1 registry row.
+3. `scripts/reground_mapped_record.py` performs the move.
+
+Two records **do** merge when they are the same substance under different names
+(`Glycerol`/`glycerol`, `Bacto X`/`Bacto X (Difco)`). A different hydration state
+is not that case.
 
 ### Scenario 4: NEEDS_EXPERT Status
 
