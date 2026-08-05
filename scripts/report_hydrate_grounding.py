@@ -48,10 +48,10 @@ def _load_hydrate_notation():
     spec = importlib.util.spec_from_file_location("_hydrate_guard", path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    return mod.HYDRATE_NOTATION, mod.FORMULA_WATER
+    return mod.HYDRATE_NOTATION, mod.FORMULA_WATER, mod.water_multiplicity
 
 
-HYDRATE, FORMULA_WATER = _load_hydrate_notation()
+HYDRATE, FORMULA_WATER, water_multiplicity = _load_hydrate_notation()
 
 
 def formulas() -> dict[str, str]:
@@ -203,14 +203,23 @@ def main() -> int:
         if not hyd:
             continue
         if HYDRATE.search(term):
-            # A record whose own label is a hydrate may still carry synonyms
-            # naming a DIFFERENT hydration state (`MgSO4·7H2O` with
-            # `MgSO4 x 6 H2O`), which is the same Section 3 collapse. Detecting
-            # it needs the water multiplicity, and parsing that reliably is
-            # harder than it looks: `AlCl3.6H2O` has formula digits adjacent to
-            # the separator, and `CaCl22H2O` is genuinely ambiguous. A first
-            # attempt reported 96 records, almost all of them just respellings.
-            # Left to #254 rather than shipped wrong.
+            # The record's own label is a hydrate, but a synonym may name a
+            # DIFFERENT state (`MgSO4·7H2O` with `MgSO4 x 6 H2O`) — the same
+            # Section 3 collapse, and one the mapped bucket calls clean.
+            # water_multiplicity returns None for "unspecified", which must not
+            # count as a mismatch (#254).
+            here = water_multiplicity(term)
+            if here is None:
+                continue
+            other = sorted({w for w in (water_multiplicity(h) for h in hyd)
+                            if w is not None and w != here}, key=float)
+            if not other:
+                continue                  # same state, just respelled
+            syn_rows.append({"identifier": str(rec.get("identifier") or ""),
+                             "preferred_term": term, "ontology_id": target,
+                             "detail": f"record states {here} H2O; synonyms state "
+                                       + ", ".join(other),
+                             "hydrate_synonyms": " | ".join(hyd)})
             continue
         if _term_is_hydrate(target, om.get("ontology_label")):
             continue                      # the term itself is the hydrate
@@ -221,8 +230,10 @@ def main() -> int:
                          "detail": "term formula has no water",
                          "hydrate_synonyms": " | ".join(hyd)})
 
-    print(f"\n{len(syn_rows)} mapped record(s) whose term is anhydrous but which carry a "
-          "hydrate SYNONYM.")
+    mismatched = [r for r in syn_rows if "states" in r["detail"]]
+    print(f"\n{len(syn_rows)} mapped record(s) carry a hydrate SYNONYM their own term does "
+          f"not account for\n  {len(syn_rows) - len(mismatched)} on an anhydrous term, "
+          f"{len(mismatched)} naming a different hydration state.")
     if syn_rows:
         known = {r["identifier"] for r in syn_rows} & baseline_ids
         print(f"\n{len(known)} of these identifiers are already tracked in "

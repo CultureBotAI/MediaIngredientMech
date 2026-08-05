@@ -171,3 +171,60 @@ def test_formula_lookup_is_reachable_from_the_curator():
     cand.source, cand.score = "CHEBI", 0.99
     cur.accept_mapping(rec, cand, quality="EXACT_MATCH", auto_enrich=False)
     assert rec["mapping_status"] == "MAPPED", "formula water must allow the mapping"
+
+
+# --- water_multiplicity (#254) ----------------------------------------------
+# Two earlier attempts at this shipped wrong, so each trap is pinned.
+
+from mediaingredientmech.curation.hydrate_guard import water_multiplicity  # noqa: E402
+
+
+@pytest.mark.parametrize("label,expected", [
+    # the trap that made `AlCl3.6H2O` read as "3.6": a formula subscript sits
+    # immediately before the separator
+    ("AlCl3.6H2O", "6"),
+    ("(NH4)2Ni(SO4)2.6H2O", "6"),
+    ("Ca(NO3)2.4H2O", "4"),
+    ("Al2(SO4)3 x 18 H2O", "18"),
+    # every separator this corpus uses
+    ("(NH4)2Ni(SO4)2・6H2O", "6"),
+    ("CoCl2 ∙ 6 H2O", "6"),
+    ("MgSO4 × 7 H2O", "7"),
+    ("MgSO4 x 6 H2O", "6"),
+    # hyphen-separated forms present in the corpus (#256)
+    ("ZnSO4-7H2O", "7"),
+    ("CuCl2-2H2O", "2"),
+    ("Na2MoO4-2H2O", "2"),
+    # word forms must equal their digit equivalents
+    ("magnesium sulfate hexahydrate", "6"),
+    ("sodium citrate dihydrate", "2"),
+    ("...;dihydrate", "2"),
+    # compound prefix: hemi x penta
+    ("Cadmium chloride hemipentahydrate", "2.5"),
+    ("something sesquihydrate", "1.5"),
+    # a word multiplier wins over unrelated digits in the name
+    ("dihydrochloride pentahydrate", "5"),
+])
+def test_water_multiplicity_reads_the_stated_count(label, expected):
+    assert water_multiplicity(label) == expected
+
+
+@pytest.mark.parametrize("label", [
+    "CaCl22H2O",                 # ambiguous: subscript or multiplier?
+    "MgSO4 x n H2O",             # explicitly variable
+    "VOSO4(H2O)n",
+    "Potassium tellurite hydrate",   # unspecified
+    "L-Cysteine HCl x H2O",
+    "b-Mannan borohydrate reduced carob seed",   # not a hydrate at all
+    "Glucose",
+])
+def test_unstated_or_ambiguous_returns_none_not_one(label):
+    """None means 'the label does not say'. Treating it as monohydrate invents
+    mismatches against records that genuinely say 6."""
+    assert water_multiplicity(label) is None
+
+
+def test_hexahydrate_and_6H2O_are_the_same_state():
+    """Comparing raw tokens reported 96 records as mismatched when almost all
+    were respellings (#254)."""
+    assert water_multiplicity("CoCl2 x 6 H2O") == water_multiplicity("cobalt chloride hexahydrate")
