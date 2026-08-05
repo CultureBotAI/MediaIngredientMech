@@ -225,3 +225,39 @@ def test_stale_ingredients_json_names_export_browser_not_export_lists():
     src = (ROOT / "scripts" / "check_flat_export_coverage.py").read_text()
     assert "just export-browser" in src
     assert "browser_export.py, reads data/ingredients/" in src
+
+
+# --- label_index.csv: per-label resolution with precedence (#232) -----------
+
+def test_label_index_puts_preferred_term_before_synonym(export_lists, tmp_path):
+    """`Vitamin B12` is the preferred_term of one record and a synonym of two.
+    A consumer joining a raw string had no way to choose."""
+    out = tmp_path / "label_index.csv"
+    export_lists.export_label_index([
+        rec("CHEBI:17439", "Cyanocobalamin", ["Vitamin B12"]),
+        rec("CHEBI:176843", "Vitamin B12"),
+    ], out)
+    rows = [r for r in csv.DictReader(out.open()) if r["label"] == "Vitamin B12"]
+    assert rows[0]["match_type"] == "preferred_term"
+    assert rows[0]["identifier"] == "CHEBI:176843"
+    assert rows[1]["match_type"] == "synonym"
+
+
+def test_label_index_has_a_row_per_label_not_per_record(export_lists, tmp_path):
+    out = tmp_path / "label_index.csv"
+    n = export_lists.export_label_index([rec("CHEBI:1", "A", ["b", "c"])], out)
+    assert n == 3, "one preferred_term row plus one per synonym"
+
+
+def test_label_index_excludes_curation_detritus(export_lists, tmp_path):
+    """It reuses _synonyms(), so `Role: …; Properties: …` must not become a label."""
+    out = tmp_path / "label_index.csv"
+    export_lists.export_label_index(
+        [rec("CHEBI:1", "A", ["Role: Carbon source; Properties: Organic compound"])], out)
+    labels = {r["label"] for r in csv.DictReader(out.open())}
+    assert labels == {"A"}
+
+
+def test_label_index_is_covered_by_the_freshness_gate():
+    src = (ROOT / "scripts" / "check_flat_export_coverage.py").read_text()
+    assert "label_index.csv" in src, "a new published artifact must be gated"

@@ -293,7 +293,7 @@ Work down the list and stop at the first that applies.
 | Two records share one identifier | Same substance, or one is more specific | Same → merge. More specific → give it its own id per 1–3. |
 | One substance under two identifiers | One of them is wrong | Pick by the precedence in 1–3; re-ground the other. |
 | A hydrate/salt sits on the anhydrous/free term | Specificity collapsed into the parent | Step 1 if a specific term exists, else step 2. |
-| One label resolves to several identifiers | Legitimate shared synonym, or a real duplicate | If the records are the same substance it is a duplicate — merge. If they are genuinely different, a consumer should prefer the record whose `preferred_term` is the label over one carrying it as a synonym. **The published exports carry no signal for that yet** — #232 tracks adding one, and the 87 current cases are untriaged. |
+| One label resolves to several identifiers | Legitimate shared synonym, or a real duplicate | If the records are the same substance it is a duplicate — merge. If not, resolve via `docs/data/label_index.csv`: take the row whose `match_type` is `preferred_term`, and fall back to `synonym` only when no preferred_term matches. That settles 18 of the 87; the rest are synonym-vs-synonym and need a curation decision (#232). |
 
 ### What *not* to do
 

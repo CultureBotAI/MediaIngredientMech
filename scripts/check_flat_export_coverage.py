@@ -58,7 +58,8 @@ COVERAGE = {
 # so they can never compare equal and are excluded from the freshness check.
 DETERMINISTIC = sorted(
     {f"{stem}_ingredients.{ext}"
-     for stem in ("all", "mapped", "unmapped") for ext in ("csv", "json")})
+     for stem in ("all", "mapped", "unmapped") for ext in ("csv", "json")}
+    | {"label_index.csv"})   # per-label resolution with precedence (#232)
 
 
 def fail(msg: str) -> int:
