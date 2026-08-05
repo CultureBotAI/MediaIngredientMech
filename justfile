@@ -363,10 +363,10 @@ knowledge-gap-scan *args: (_require-claw "kg_microbe_kgscan")
     PYTHONPATH={{claw_src}} uv run python -m kg_microbe_kgscan \
       --config conf/kgscan_config.yaml {{args}}
 
-# Regenerate the published backlog lists under docs/data/ (all/mapped/unmapped
-# as csv+json+md). Was reachable from no recipe, so it only ran when a curator
-# remembered — and #214 shipped six artifacts naming records it had just
-# deleted. Issue #217.
+# Was reachable from no recipe, so it only ran when a curator remembered — and
+# #214 shipped six artifacts naming records it had just deleted. Issue #217.
+#
+# Regenerate the published backlog lists under docs/data/
 export-lists:
     uv run python scripts/export_lists.py
 
