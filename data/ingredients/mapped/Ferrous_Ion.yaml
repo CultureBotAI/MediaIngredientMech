@@ -1,0 +1,38 @@
+identifier: CHEBI:29033
+preferred_term: Ferrous Ion
+synonyms:
+- synonym_text: Ferrous Ion
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferrous_ion); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0813 -> CHEBI:29033 "iron(2+)" (SYNONYM_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferrous_ion); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:29033
+  ontology_label: iron(2+)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI verification
+    notes: Edison identity research recommends CHEBI:29033; 'ferrous ion' is a ChEBI
+      synonym of iron(2+). Companion to Ferric Iron -> CHEBI:29034 (#202).

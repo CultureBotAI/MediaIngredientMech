@@ -1,10 +1,16 @@
 # Mapped Ingredients
 
-Generated: 2026-08-05T00:02:44.945795+00:00
-Total: 2301 ingredients
+Generated: 2026-08-05T02:40:14.282767+00:00
+Total: 2307 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:15226 | CHEBI:15226 | Tetrathionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15589 | CHEBI:15589 | L-malate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29033 | CHEBI:29033 | Ferrous Ion | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:18333 | CHEBI:18333 | D-arabitol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:16383 | CHEBI:16383 | Cis-aconitate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:17747 | CHEBI:17747 | Bis(2-ethylhexyl)phthalate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:34036 | CHEBI:34036 | 3-trichloropropane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27789 | CHEBI:27789 | 2-dichloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15987 | CHEBI:15987 | Trithionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
