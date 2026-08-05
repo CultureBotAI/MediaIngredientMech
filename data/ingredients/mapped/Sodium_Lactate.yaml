@@ -97,6 +97,9 @@ synonyms:
 - synonym_text: Lactate (sodium salt)
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: 1 % Sodium Lactate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 190
@@ -263,6 +266,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0634 ''1 % Sodium Lactate'' as a RAW_TEXT synonym --
+    concentration-prefixed duplicate of sodium lactate. No new SSSOM row; CHEBI:75228
+    is already mapped. Source: kgmicrobe.trait:1_sodium_lactate.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 72-17-3
   data_source: OAK/CHEBI xref

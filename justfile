@@ -335,9 +335,13 @@ curate:
 report:
     uv run python scripts/generate_report.py
 
+# `uv run` is load-bearing: invoked bare, gen-doc resolves to whatever is on
+# PATH, which rewrites ~200 schema pages with pure template churn whenever that
+# differs from the pinned linkml. Issue #219.
+#
 # Generate HTML documentation from schema
 gen-docs:
-    gen-doc --directory docs src/mediaingredientmech/schema/mediaingredientmech.yaml
+    uv run --extra dev gen-doc --directory docs src/mediaingredientmech/schema/mediaingredientmech.yaml
 
 # Export ingredients to browser JSON
 export-browser:
@@ -360,8 +364,15 @@ knowledge-gap-scan *args: (_require-claw "kg_microbe_kgscan")
     PYTHONPATH={{claw_src}} uv run python -m kg_microbe_kgscan \
       --config conf/kgscan_config.yaml {{args}}
 
+# Was reachable from no recipe, so it only ran when a curator remembered — and
+# #214 shipped six artifacts naming records it had just deleted. Issue #217.
+#
+# Regenerate the published backlog lists under docs/data/
+export-lists:
+    uv run python scripts/export_lists.py
+
 # Build complete documentation site
-build-docs: gen-docs export-browser
+build-docs: gen-docs export-lists export-browser
     @echo "Documentation built in docs/"
     @echo "Open docs/index.html to view locally"
 

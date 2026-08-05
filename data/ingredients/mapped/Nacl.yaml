@@ -82,6 +82,9 @@ synonyms:
 - synonym_text: NaCl(Fisher S271-500)
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: 1% Sodium Chloride
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 6316
@@ -203,6 +206,13 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0721 ''1% Sodium Chloride'' as a RAW_TEXT synonym --
+    concentration-prefixed duplicate of sodium chloride. No new SSSOM row; CHEBI:26710
+    is already mapped. Source: kgmicrobe.trait:1_sodium_chloride.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7647-14-5
   data_source: PubChem API

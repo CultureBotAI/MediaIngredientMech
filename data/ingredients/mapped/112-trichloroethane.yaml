@@ -25,6 +25,9 @@ synonyms:
 - synonym_text: beta-trichloroethane
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: 2-trichloroethane
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1
@@ -69,6 +72,13 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''1,1,2-Trichloroethane'' -> ''1,1,2-trichloroethane'':
     synced to canonical CHEBI label (preferred_term ''1,1,2-Trichloroethane'' unchanged).'
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0786 ''2-trichloroethane'' as a RAW_TEXT synonym --
+    dropped-locant duplicate of 1,1,2-trichloroethane. No new SSSOM row; CHEBI:36018
+    is already mapped. Source: kgmicrobe.trait:2_trichloroethane.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 79-00-5
   data_source: PubChem API
