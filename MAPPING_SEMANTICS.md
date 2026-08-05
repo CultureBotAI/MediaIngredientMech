@@ -206,7 +206,88 @@ materials use `kgmicrobe.ingredient:`.
 
 ---
 
-## 3. Common mistakes
+## 3. Identity granularity — one record per substance
+
+Section 2 says how to express "MIM's thing is more specific than the ontology's
+thing". This section says **when** that applies, and settles a cluster of
+questions that were being answered case by case: hydrates, salts, stereoisomers,
+two records sharing an id, and one substance under two ids.
+
+### The rule
+
+> **One MIM record per distinct substance. A record's `identifier` is the most
+> specific stable id that denotes *that* substance. Never express a more
+> specific thing by sharing a broader term's identifier.**
+
+Sharing the parent's id is the identity-collapse bug of Section 2, arriving by a
+different route. `MgSO4 x 7 H2O` mapped to `CHEBI:32599 magnesium sulfate` does
+not say "a hydrate of magnesium sulfate"; it says "this **is** magnesium
+sulfate", and every downstream join then treats 246.47 g/mol and 120.37 g/mol as
+one node. Formula weight is exactly what a medium recipe depends on.
+
+### Decision procedure
+
+Work down the list and stop at the first that applies.
+
+1. **An ontology term denotes exactly this substance** — including its
+   hydration, salt and stereochemical state. Use it: `identifier` = that term,
+   `skos:exactMatch`, one row.
+   `Sodium glutamate monohydrate` → `CHEBI:232425 monosodium L-glutamate hydrate`.
+
+2. **No exact term, but the substance has its own CAS.** `identifier` =
+   `cas:<its own CAS>`, `skos:narrowMatch` to the nearest ontology parent, plus
+   the mandatory registry row (Section 2, Rule B1).
+   `Sodium hypophosphite monohydrate` → `cas:10039-56-2`, narrowMatch
+   `sodium hypophosphite`. **This is already the established pattern** — about 18
+   hydrate records use it.
+
+3. **No exact term and no CAS.** Mint `kgmicrobe.compound:<slug>` (pure
+   compounds) or `kgmicrobe.ingredient:<slug>` (complex/biological materials),
+   `narrowMatch` to the nearest parent, plus the registry row.
+
+4. **The label is genuinely under-specified and an unspecified-sense parent term
+   exists.** Then the label really does denote the unspecified sense — use that
+   term with `exactMatch`, and do *not* reach for a specific child.
+   A bare `arabitol` with no locant is `CHEBI:22605 arabinitol`, not the L- or
+   D- term.
+
+5. **The label is under-specified and only specific terms exist.** Do not guess.
+   `skos:closeMatch` to the most likely term with the reasoning recorded in
+   `evidence`, or `mapping_status: AMBIGUOUS` if even that is not defensible.
+   `2-tetrachloroethane` reaches both `CHEBI:34024` and `CHEBI:36026` and gets
+   neither.
+
+### What this decides
+
+| Symptom | What it means | Action |
+|---|---|---|
+| Two records share one identifier | Same substance, or one is more specific | Same → merge. More specific → give it its own id per 1–3. |
+| One substance under two identifiers | One of them is wrong | Pick by the precedence in 1–3; re-ground the other. |
+| A hydrate/salt sits on the anhydrous/free term | Specificity collapsed into the parent | Step 1 if a specific term exists, else step 2. |
+| One label resolves to several identifiers | Legitimate shared synonym, or a real duplicate | Resolution precedence is `preferred_term` before synonyms; the registry row is the single channel (Section 2). If the two records are the same substance, it is a duplicate — merge. |
+
+### What *not* to do
+
+**Do not rename a record so its name matches a term it does not denote.** If
+`Sodium glutamate monohydrate` is grounded to the anhydrous term, the fix is to
+re-ground the record (step 1 or 2), not to rename it "monosodium L-glutamate".
+Renaming destroys the raw label a medium actually used, removes it as an SSSOM
+`subject_label` — which is how downstream consumers resolve raw strings — and
+converts a visible mapping error into an invisible one.
+
+**Do not treat a record's auto-derived chemistry as evidence of its identity.**
+`AUTO_BACKFILL_CHEBI_CHEMISTRY` copies formula, InChI and SMILES *from the
+current mapping*, so they agree with it by construction. Only independently
+sourced fields — a CAS from a name lookup, synonyms from an external sweep —
+are evidence about which term is right.
+
+**Do not conclude a term does not exist without quoting the full search.** The
+32 hydrate families exist partly because specific terms were not found; at least
+one (`CHEBI:232425`) was in the local build the whole time.
+
+---
+
+## 4. Common mistakes
 
 Each of the four most common mistakes a curator (or an automated
 pipeline) makes is below, with a worked TSV example, the rule that
@@ -365,7 +446,7 @@ catch those.
 
 ---
 
-## 4. Curator workflow
+## 5. Curator workflow
 
 When CI rejects a row, the validator writes the row plus a
 `reject_reason` column to `mappings/needs_curator_review.tsv` and exits
