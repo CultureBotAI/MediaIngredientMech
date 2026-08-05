@@ -73,9 +73,13 @@ def main() -> int:
         by_term.setdefault(r["preferred_term"], []).append(r)
 
     lines, start, rows, fields = sssom_parts()
-    have_parent = {r["subject_label"] for r in rows
+    subject_ids: dict[str, set[str]] = {}
+    for r in rows:
+        subject_ids.setdefault(r["subject_label"], set()).add(r["subject_id"])
+    # keyed on subject_id, because that is what Rule B1 and the emitted rows use
+    have_parent = {r["subject_id"] for r in rows
                    if r["predicate_id"] in ("skos:narrowMatch", "skos:broadMatch")}
-    have_registry = {r["subject_label"] for r in rows
+    have_registry = {r["subject_id"] for r in rows
                      if r["predicate_id"] == "skos:exactMatch"
                      and r["object_id"].startswith("kgmicrobe.")}
 
@@ -98,8 +102,17 @@ def main() -> int:
             problems.append(f"{term!r}: status {rec.get('mapping_status')}, not MAPPED")
             continue
         label = chebi_label(parent)
-        slug = sanitize_filename(term)
+        sids = subject_ids.get(term, set())
+        if len(sids) != 1:
+            problems.append(f"{term!r}: {len(sids)} subject_id(s) in the SSSOM "
+                            f"({sorted(sids)}), expected exactly 1 to anchor to")
+            continue
+        subject_id = next(iter(sids))
+        slug = subject_id.split(":", 1)[1]
         registry = f"kgmicrobe.compound:{slug.lower()}"
+        if subject_id in have_parent and subject_id in have_registry:
+            problems.append(f"{term!r}: {subject_id} already has both anchor rows")
+            continue
 
         om = rec.setdefault("ontology_mapping", {})
         om.update({"ontology_id": parent, "ontology_label": label,
@@ -117,24 +130,24 @@ def main() -> int:
             "llm_assisted": True})
 
         base = {f: "" for f in fields}
-        base.update({"subject_id": f"MIM:{slug}", "subject_label": term,
+        base.update({"subject_id": subject_id, "subject_label": term,
                      "mapping_justification": "semapv:ManualMappingCuration",
                      "source": f"MIM:{args.curator}|MIM:curator={args.curator}",
                      "mapping_date": args.date})
-        if term not in have_parent:
+        if subject_id not in have_parent:
             r = dict(base, predicate_id="skos:narrowMatch", object_id=parent,
                      object_label=label, object_source="obo:chebi.owl", confidence="0.9")
             new_rows.append("\t".join(r[f] for f in fields) + "\n")
-        if term not in have_registry:
+        if subject_id not in have_registry:
             r = dict(base, predicate_id="skos:exactMatch", object_id=registry,
                      object_label=term, object_source="kgm:compound", confidence="0.99",
                      comment=f"Registry/identity row preserving {registry} alongside parent {parent}.")
             new_rows.append("\t".join(r[f] for f in fields) + "\n")
-        done.append((rec["identifier"], term, parent, label))
+        done.append((rec["identifier"], term, parent, label, subject_id))
 
     print(f"anchored {len(done)}/{len(plan)}; {len(new_rows)} SSSOM row(s) to add\n")
-    for ident, term, parent, label in done:
-        print(f"  {ident:20} {term[:38]:38} --narrowMatch--> {parent} '{label}'")
+    for ident, term, parent, label, sid in done:
+        print(f"  {sid[:38]:38} --narrowMatch--> {parent} '{label}'")
     if problems:
         print(f"\n{len(problems)} problem(s):")
         for x in problems:
@@ -148,21 +161,21 @@ def main() -> int:
         return 0
 
     save_yaml(doc, MAPPED, validate=True, target_class="IngredientCollection")
-    # insert each row at its sorted position rather than re-sorting the file: the
-    # SSSOM is only *de facto* sorted (it has ~113 case-insensitive ordering
-    # resets), so a global sort would reorder ~2600 unrelated rows.
+    # Group each new row with its subject's existing rows, the way the
+    # Vermont_Soil precedent looks. A sorted insert is wrong here: the file is
+    # only *de facto* sorted (117 case-insensitive ordering resets), so a
+    # case-sensitive scan drops every new row in the first sorted block, up to
+    # 1869 lines away from the record's own cas: row.
     out = list(lines)
+    if out and not out[-1].endswith("\n"):
+        out[-1] += "\n"          # before inserting, or a row could concatenate
     for row in new_rows:
-        label = row.split("\t")[1]
-        i = start + 1
-        while i < len(out):
-            cols = out[i].split("\t")
-            if len(cols) > 1 and cols[1].strip() and cols[1] > label:
-                break
-            i += 1
-        out.insert(i, row)
-    if not out[-1].endswith("\n"):
-        out[-1] += "\n"
+        sid = row.split("\t")[0]
+        last = max((i for i, ln in enumerate(out)
+                    if i > start and ln.split("\t")[0] == sid), default=None)
+        if last is None:
+            raise SystemExit(f"no existing row for {sid}; refusing to scatter it")
+        out.insert(last + 1, row)
     SSSOM.write_text("".join(out))
     print("\nwrote data/curated/mapped_ingredients.yaml + SSSOM")
     return 0

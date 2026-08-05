@@ -1,8 +1,8 @@
 identifier: cas:314041-10-6
 preferred_term: potassium tellurate hydrate
 ontology_mapping:
-  ontology_id: CHEBI:30464
-  ontology_label: tellurate
+  ontology_id: CHEBI:30463
+  ontology_label: telluric acid
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -13,9 +13,11 @@ ontology_mapping:
       to a CHEBI primary if/when CHEBI adds the term.
   - evidence_type: DATABASE_MATCH
     source: anchor_cas_hydrate_records
-    notes: potassium tellurate hydrate is a hydrate/salt with its own CAS and no exact
-      ChEBI term; anchored to the parent CHEBI:30464 'tellurate' by narrowMatch per
-      MAPPING_SEMANTICS.md Section 3 step 2. potassium salt hydrate of tellurate
+    notes: 'potassium tellurate hydrate is a hydrate/salt with its own CAS and no
+      exact ChEBI term; anchored to the parent CHEBI:30463 ''telluric acid'' by narrowMatch
+      per MAPPING_SEMANTICS.md Section 3 step 2. potassium salt hydrate of telluric
+      acid (H2O4Te, neutral, 3-STAR). NOT CHEBI:30464 tellurate, which is the (2-)
+      anion: a neutral salt is not a kind of a dianion'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -44,13 +46,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
-- timestamp: '2026-08-05T07:27:21.323140+00:00'
+- timestamp: '2026-08-05T07:57:29.737767+00:00'
   curator: anchor_cas_hydrate_records
   action: CORRECTED
-  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:30464 ''tellurate'' and
-    registry kgmicrobe.compound:potassium_tellurate_hydrate. identifier cas:314041-10-6
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:30463 ''telluric acid''
+    and registry kgmicrobe.compound:potassium_tellurate_hydrate. identifier cas:314041-10-6
     unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. potassium salt hydrate
-    of tellurate'
+    of telluric acid (H2O4Te, neutral, 3-STAR). NOT CHEBI:30464 tellurate, which is
+    the (2-) anion: a neutral salt is not a kind of a dianion'
   llm_assisted: true
 chemical_properties:
   cas_rn: 314041-10-6

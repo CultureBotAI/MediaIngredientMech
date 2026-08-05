@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-05T07:28:10.280773+00:00
+Generated: 2026-08-05T07:58:17.192737+00:00
 Total: 2308 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1504,7 +1504,7 @@ Total: 2308 ingredients
 | kgmicrobe.ingredient:potassium_phosphate_buffer | NCIT:C29321 | Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 2 |
 | cas:16788-57-1 | mesh:C013216 | Potassium phosphate dibasic trihydrate | MAPPED | MESH | NARROW_MATCH | 6 |
 | CHEBI:75248 | CHEBI:75248 | potassium tellurate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:314041-10-6 | CHEBI:30464 | potassium tellurate hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:314041-10-6 | CHEBI:30463 | potassium tellurate hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:123333-66-4 | CHEBI:75248 | Potassium tellurite hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | FOODON:03302378 | FOODON:03302378 | Potato flour | MAPPED | FOODON | EXACT_MATCH | 0 |
 | CHEBI:145933 | CHEBI:145933 | Pravastatin lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1685,7 +1685,7 @@ Total: 2308 ingredients
 | CHEBI:63675 | CHEBI:63675 | Sodium succinate | MAPPED | CHEBI | EXACT_MATCH | 145 |
 | CHEBI:150903 | CHEBI:150903 | Sodium succinate dibasic | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:63017 | CHEBI:63017 | Sodium tartrate | MAPPED | CHEBI | EXACT_MATCH | 15 |
-| cas:10489-48-2 | CHEBI:37511 | Sodium thiophosphate tribasic hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:10489-48-2 | CHEBI:46612 | Sodium thiophosphate tribasic hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:32150 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:114249 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 46 |
 | CHEBI:63686 | CHEBI:63686 | Sodium succinate dibasic hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 11 |
