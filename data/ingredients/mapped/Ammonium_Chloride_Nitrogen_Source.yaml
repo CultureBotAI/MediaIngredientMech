@@ -4,7 +4,7 @@ synonyms:
 - synonym_text: Ammonium chloride (nitrogen source)
   synonym_type: RAW_TEXT
   source: communitymech-unmapped
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -41,6 +41,15 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
     nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-05T06:56:44.912150+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_INTO
+  changes: Merged into CHEBI:31206 'NH4Cl'; occurrences transferred. Tombstoned REJECTED,
+    SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+    (#226).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Ammonium_chloride_(nitrogen_source));
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

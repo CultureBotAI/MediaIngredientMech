@@ -7,6 +7,9 @@ synonyms:
 - synonym_text: Seawater(non-sterilized)
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Sea water
+  synonym_type: RAW_TEXT
+  source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 4
@@ -40,6 +43,13 @@ curation_history:
   curator: env_context_phase3_initial
   action: ANNOTATED
   changes: 'Added 2 environmental_context entries (issue #1, Phase 3 initial pass).'
+- timestamp: '2026-08-05T06:58:07.759804+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: 'Absorbed ENVO:00002149 ''Sea water'': 1 synonym(s), occurrences +0/0.
+    Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+    (#226). Source: mediadive.ingredient:286.'
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 1'
 ontology_mapping:
   ontology_id: ENVO:00002149

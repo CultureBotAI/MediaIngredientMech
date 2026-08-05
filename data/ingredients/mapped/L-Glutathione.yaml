@@ -7,7 +7,7 @@ synonyms:
 - synonym_text: L-gamma-glutamyl-L-cysteinylglycine
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -35,6 +35,15 @@ curation_history:
   changes: molecular_formula=C10H17N3O6S; inchi=InChI=1S/C10H17N3O6S/c11-5(10(18)19)1-2-7(14)13-6(;
     smiles=N[C@@H](CCC(=O)N[C@@H](CS)C(=O)NCC(=O)O)C(=O)O
   llm_assisted: false
+- timestamp: '2026-08-05T06:55:18.095607+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_INTO
+  changes: Merged into CHEBI:16856 'Glutathione'; occurrences transferred. Tombstoned
+    REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+    in duplicate_identifier_baseline.tsv (#226).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2085); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

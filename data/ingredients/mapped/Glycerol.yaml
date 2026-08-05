@@ -38,10 +38,44 @@ synonyms:
 - synonym_text: propane-1,2,3-triol
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: glycerol
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: 'Role: Carbon source; Properties: Simple component, Defined component,
+    Organic compound'
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: 1,2,3-Propanetriol
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: 1,2,3-Trihydroxypropane
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: G Glycerol
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Glyceritol
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Glyzerin
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Oelsuess
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Propanetriol
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Trihydroxypropane
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: glycerine
+  synonym_type: RAW_TEXT
+  source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 208
-  media_count: 54
+  total_occurrences: 214
+  media_count: 60
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -112,6 +146,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-05T06:50:52.816735+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: 'Absorbed CHEBI:17754 ''glycerol'': 11 synonym(s), occurrences +6/6, role
+    facets from nutritional_roles. Case variant of one compound; MERGE_SAME_SUBSTANCE
+    in duplicate_identifier_baseline.tsv (#226).'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 56-81-5
   data_source: CultureBotHT compounds_to_cas.csv
@@ -138,3 +179,9 @@ nutritional_roles:
     reference_text: Canonical energy substrate (catabolised for energy)
     curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
       recommended.
+- role: CARBON_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_type: DATABASE_ENTRY
+    reference_text: Imported from CultureMech pipeline
+    curator_note: 'Original role text: Carbon Source'

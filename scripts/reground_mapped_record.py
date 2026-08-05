@@ -17,8 +17,11 @@ subject (preferred_term) does NOT change, so the row keeps its position.
 The freed CURIE becomes available, which is usually the point: another record
 that is genuinely that term can then be promoted onto it.
 
-Refuses if the destination is already held, if the record is not MAPPED, or if
-the destination is absent/obsolete in the local chebi.db. Dry-run by default.
+Refuses if the destination is already held (by a non-tombstoned record), if the
+record is not MAPPED, or if the destination is absent/obsolete in the local
+chebi.db. A held destination usually means the two records are the same
+substance — scripts/merge_mapped_records.py handles that case, and the refusal
+message says so. Dry-run by default.
 """
 
 from __future__ import annotations
@@ -95,8 +98,16 @@ def main() -> int:
     rec = hits[0]
     if rec.get("mapping_status") != "MAPPED":
         raise SystemExit(f"{args.identifier} is {rec.get('mapping_status')}, not MAPPED")
-    if any(r["identifier"] == args.to for r in doc["ingredients"]):
-        raise SystemExit(f"{args.to} is already held by another record — merge instead")
+    held = [r for r in doc["ingredients"] if r["identifier"] == args.to
+            and r.get("mapping_status") != "REJECTED"]
+    if held:
+        raise SystemExit(
+            f"{args.to} is already held by {', '.join(repr(r['preferred_term']) for r in held)}.\n"
+            "If this record and that one are the same substance, merge instead:\n"
+            f"  uv run python scripts/merge_mapped_records.py \\\n"
+            f"      --from {args.identifier} --into {args.to} --reason '...'\n"
+            "If they are different substances, the destination is not free — pick the term "
+            "that denotes THIS one (MAPPING_SEMANTICS.md Section 3).")
 
     new_label = chebi_label(args.to)
     stamp = dt.datetime.now(dt.timezone.utc).isoformat()

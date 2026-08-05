@@ -32,10 +32,16 @@ synonyms:
 - synonym_text: glycine dipeptide
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Glycylglycine
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: 'Glycylglycine(CAS: 556-50-3)'
+  synonym_type: RAW_TEXT
+  source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 9
-  media_count: 9
+  total_occurrences: 11
+  media_count: 11
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -87,6 +93,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
     nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-05T06:55:52.346614+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: 'Absorbed CHEBI:17201 ''Glycylglycine'': 2 synonym(s), occurrences +2/2.
+    Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+    (#226).'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 556-50-3
   data_source: PubChem API

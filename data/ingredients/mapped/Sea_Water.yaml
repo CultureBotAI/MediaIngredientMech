@@ -4,7 +4,7 @@ synonyms:
 - synonym_text: Sea water
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -27,6 +27,15 @@ curation_history:
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Sea
     water')
   llm_assisted: false
+- timestamp: '2026-08-05T06:58:07.759804+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_INTO
+  changes: Merged into ENVO:00002149 'Seawater'; occurrences transferred. Tombstoned
+    REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+    in duplicate_identifier_baseline.tsv (#226).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:286); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
