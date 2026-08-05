@@ -62,8 +62,9 @@ _MULTIPLIER = {"hemi": "0.5", "sesqui": "1.5", "mono": "1", "di": "2", "tri": "3
 
 # A digit multiplier must be preceded by a separator, whitespace or the string
 # start. Without that guard `AlCl3.6H2O` reads as "3.6" -- the aluminium
-# subscript captured as part of the multiplier.
-_DIGIT_WATER = re.compile(r"(?:^|[x\u00d7\u00b7\u2022\u30fb\u22c5\u2219.\s])(\d+)\s*H2\s*O(?![0-9])",
+# subscript captured as part of the multiplier. The hyphen forms (`ZnSO4-7H2O`)
+# occur in the corpus too, so `-` and the Unicode minus are separators (#256).
+_DIGIT_WATER = re.compile(r"(?:^|[x\u00d7\u00b7\u2022\u30fb\u22c5\u2219.\-\u2212\s])(\d+)\s*H2\s*O(?![0-9])",
                           re.IGNORECASE)
 # `hemipentahydrate` is hemi x penta = 2.5 waters, so the fraction prefix is
 # matched separately from the count rather than as one alternative.

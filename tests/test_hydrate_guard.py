@@ -191,6 +191,10 @@ from mediaingredientmech.curation.hydrate_guard import water_multiplicity  # noq
     ("CoCl2 ∙ 6 H2O", "6"),
     ("MgSO4 × 7 H2O", "7"),
     ("MgSO4 x 6 H2O", "6"),
+    # hyphen-separated forms present in the corpus (#256)
+    ("ZnSO4-7H2O", "7"),
+    ("CuCl2-2H2O", "2"),
+    ("Na2MoO4-2H2O", "2"),
     # word forms must equal their digit equivalents
     ("magnesium sulfate hexahydrate", "6"),
     ("sodium citrate dihydrate", "2"),

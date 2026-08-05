@@ -212,7 +212,7 @@ def main() -> int:
             if here is None:
                 continue
             other = sorted({w for w in (water_multiplicity(h) for h in hyd)
-                            if w is not None and w != here})
+                            if w is not None and w != here}, key=float)
             if not other:
                 continue                  # same state, just respelled
             syn_rows.append({"identifier": str(rec.get("identifier") or ""),
