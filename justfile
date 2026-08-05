@@ -335,10 +335,11 @@ curate:
 report:
     uv run python scripts/generate_report.py
 
-# Generate HTML documentation from schema.
 # `uv run` is load-bearing: invoked bare, gen-doc resolves to whatever is on
 # PATH, which rewrites ~200 schema pages with pure template churn whenever that
 # differs from the pinned linkml. Issue #219.
+#
+# Generate HTML documentation from schema
 gen-docs:
     uv run --extra dev gen-doc --directory docs src/mediaingredientmech/schema/mediaingredientmech.yaml
 
