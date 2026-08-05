@@ -258,6 +258,12 @@ flagged_duplicates:
 - Tag with source and type
 - Include occurrence_count if available
 
+> ⚠️ A synonym records a *different name for the same substance*. A different
+> **hydration state is a different substance** — the `HYDRATE_FORM` synonym in
+> the example below is only correct when the record's identifier is the
+> heptahydrate's own term (or its own `cas:` id), not the anhydrous parent's.
+> See MAPPING_SEMANTICS.md Section 3, and `just report-hydrate-grounding`.
+
 **Example**:
 ```yaml
 synonyms:

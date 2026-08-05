@@ -40,12 +40,37 @@ HYDRATE = re.compile(
 
 def formulas() -> dict[str, str]:
     if not CHEBI_DB.exists():
-        print(f"no chebi.db at {CHEBI_DB}; cannot compare formulas")
-        raise SystemExit(0)
+        # exit 2, not 0: "cannot measure" must not be indistinguishable from
+        # "measured, nothing found" to anyone reading exit codes.
+        print(f"ERROR: no chebi.db at {CHEBI_DB}; cannot compare formulas")
+        raise SystemExit(2)
     con = sqlite3.connect(CHEBI_DB)
     q = ("select subject, value from statements "
          "where predicate like '%formula%' and subject like 'CHEBI:%'")
     return {s: v for s, v in con.execute(q)}
+
+
+def anchored_subjects() -> set[str]:
+    """subject_labels that carry BOTH a parent narrow/broadMatch and the Rule B1
+    kgmicrobe registry row — Section 3 step 2 requires both, not just a cas: id."""
+    sssom = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
+    parents: set[str] = set()
+    registry: set[str] = set()
+    # the file opens with a commented YAML curie_map preamble; DictReader would
+    # otherwise take the first comment line as the header and match nothing
+    lines = sssom.read_text().splitlines(keepends=True)
+    start = next(i for i, ln in enumerate(lines) if ln.startswith("subject_id"))
+    with __import__("io").StringIO("".join(lines[start:])) as fh:
+        r = csv.DictReader(fh, delimiter="\t")
+        for row in r:
+            lab, pred, obj = row.get("subject_label"), row.get("predicate_id",""), row.get("object_id","")
+            if not lab:
+                continue
+            if pred in ("skos:narrowMatch", "skos:broadMatch"):
+                parents.add(lab)
+            elif pred == "skos:exactMatch" and obj.startswith("kgmicrobe."):
+                registry.add(lab)
+    return parents & registry
 
 
 def main() -> int:
@@ -54,6 +79,7 @@ def main() -> int:
     args = ap.parse_args()
 
     form = formulas()
+    anchored = anchored_subjects()
     rows = []
     for rec in yaml.safe_load(MAPPED.read_text())["ingredients"]:
         term = str(rec.get("preferred_term") or "")
@@ -63,10 +89,17 @@ def main() -> int:
         om = rec.get("ontology_mapping") or {}
         target = str(om.get("ontology_id") or "")
         f = form.get(target, "")
-        # the term itself is a hydrate if its formula carries water of crystallisation
-        term_is_hydrate = bool(re.search(r"H2O", f, re.IGNORECASE))
+        # A bare "H2O" substring is wrong both ways: it matches `H2O4P`
+        # (dihydrogenphosphate, no water at all) and misses ChEBI hydrate terms
+        # written without explicit water (`Glycocholic acid hydrate` C26H43NO6).
+        # Require water as its own dot-separated component, or the term's own
+        # label to say hydrate.
+        term_is_hydrate = bool(
+            re.search(r"(?:^|\.)\(?[\dn]*H2O\)?[\dn]*(?:\.|$)", f)
+            or re.search(r"hydrate\b", str(om.get("ontology_label") or ""), re.IGNORECASE))
         if ident.startswith("cas:"):
-            status = "OK_OWN_CAS_ID"
+            status = ("OK_OWN_CAS_ID" if term in anchored
+                      else "CAS_MISSING_ANCHOR_ROWS")
         elif term_is_hydrate:
             status = "OK_HYDRATE_TERM"
         elif target.startswith("CHEBI:") and f:
@@ -77,16 +110,22 @@ def main() -> int:
                      "ontology_id": target, "ontology_label": om.get("ontology_label") or "",
                      "term_formula": f, "status": status})
 
+    FIELDS = ["identifier", "preferred_term", "ontology_id", "ontology_label",
+              "term_formula", "status"]
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     with REPORT.open("w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0]), delimiter="\t")
+        w = csv.DictWriter(fh, fieldnames=FIELDS, delimiter="\t")
         w.writeheader(); w.writerows(rows)
+    if not rows:
+        print("no record carries hydrate notation")
+        print(f"\nreport: {REPORT.relative_to(ROOT)}")
+        return 0
 
     import collections
     c = collections.Counter(r["status"] for r in rows)
     print(f"{len(rows)} record(s) whose preferred_term carries hydrate notation\n")
-    for k in ("HYDRATE_ON_ANHYDROUS_TERM", "OK_HYDRATE_TERM", "OK_OWN_CAS_ID",
-              "UNKNOWN_NO_FORMULA"):
+    for k in ("HYDRATE_ON_ANHYDROUS_TERM", "CAS_MISSING_ANCHOR_ROWS",
+              "OK_HYDRATE_TERM", "OK_OWN_CAS_ID", "UNKNOWN_NO_FORMULA"):
         if c.get(k):
             print(f"  {k:28} {c[k]}")
     bad = [r for r in rows if r["status"] == "HYDRATE_ON_ANHYDROUS_TERM"]

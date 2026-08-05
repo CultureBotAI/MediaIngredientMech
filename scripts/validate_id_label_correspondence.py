@@ -146,7 +146,7 @@ _ERROR_VERDICTS = {
 # Reported, actionable, but NOT fatal: the grounding is correct and only the
 # label lost its subscript glyphs upstream ("NaCO3" for Na2CO3). Repairing the
 # name is a data-cleanup task, not a mapping error, so it must not fail enforce.
-_WARN_VERDICTS = {"LABEL_SUBSCRIPTS_LOST", "HYDRATE_ON_ANHYDROUS_TERM"}
+_WARN_VERDICTS = {"LABEL_SUBSCRIPTS_LOST"}
 
 # Path segments under which a `term`/`chebi_term` label-waiver does NOT apply:
 # organism (NCBITaxon) and environment (ENVO) groundings must carry the canonical
@@ -406,17 +406,8 @@ def _plausibility_verdict(
 
     if formula and chem_formula.looks_like_formula(label):
         cmp = chem_formula.compare_formulas(label, formula)
-        if cmp == "MATCH":
-            return "OK_ID_ONLY", "formula match"
-        if cmp == "HYDRATE_RELAXED":
-            # The label carries waters of hydration the term's formula does not.
-            # That used to pass, which is how the 32 hydrate families of #218
-            # accumulated: a hydrate filed against its anhydrous term. Under
-            # MAPPING_SEMANTICS.md Section 3 a hydrate is a distinct substance
-            # and takes its own identifier. WARN, not fail — report-then-enforce.
-            return ("HYDRATE_ON_ANHYDROUS_TERM",
-                    f"label has waters of hydration that {formula} lacks; "
-                    "Section 3 wants a hydrate-specific term or its own cas: id")
+        if cmp in ("MATCH", "HYDRATE_RELAXED"):
+            return "OK_ID_ONLY", f"formula {cmp.lower()}"
         if cmp == "SUBSCRIPTS_LOST":
             # Correct grounding, damaged label — flag for name repair, not as a
             # mapping error.
