@@ -98,6 +98,18 @@ def main() -> int:
 
     form = formulas()
     anchored = anchored_subjects()
+
+    def _term_is_hydrate(ontology_id: str, ontology_label: str) -> bool:
+        """Water as its own formula component, or the term's own label saying so.
+
+        A bare "H2O" substring is wrong both ways: it matches `H2O4P`
+        (dihydrogenphosphate, no water at all) and misses ChEBI hydrate terms
+        written without explicit water (`Glycocholic acid hydrate`, C26H43NO6).
+        """
+        return bool(
+            re.search(r"(?:^|\.)\(?[\dn]*H2O\)?n?(?:\.|$)", form.get(ontology_id, ""))
+            or re.search(r"hydrate\b", str(ontology_label or ""), re.IGNORECASE))
+
     rows = []
     for rec in yaml.safe_load(MAPPED.read_text())["ingredients"]:
         term = str(rec.get("preferred_term") or "")
@@ -107,14 +119,7 @@ def main() -> int:
         om = rec.get("ontology_mapping") or {}
         target = str(om.get("ontology_id") or "")
         f = form.get(target, "")
-        # A bare "H2O" substring is wrong both ways: it matches `H2O4P`
-        # (dihydrogenphosphate, no water at all) and misses ChEBI hydrate terms
-        # written without explicit water (`Glycocholic acid hydrate` C26H43NO6).
-        # Require water as its own dot-separated component, or the term's own
-        # label to say hydrate.
-        term_is_hydrate = bool(
-            re.search(r"(?:^|\.)\(?[\dn]*H2O\)?[\dn]*(?:\.|$)", f)
-            or re.search(r"hydrate\b", str(om.get("ontology_label") or ""), re.IGNORECASE))
+        term_is_hydrate = _term_is_hydrate(target, om.get("ontology_label"))
         if ident.startswith("cas:"):
             status = ("OK_OWN_CAS_ID" if term in anchored
                       else "CAS_MISSING_ANCHOR_ROWS")
@@ -155,6 +160,35 @@ def main() -> int:
     # The guard added in #246 refuses these rather than mis-filing them, so they
     # stay UNMAPPED. Without a worklist the hydrate residual grows invisibly
     # instead of visibly, which is only an improvement if someone can see it (#247).
+    # A merge folds the hydrate in as a synonym rather than giving it its own
+    # identifier, so the collapse survives where neither the mapped bucket (which
+    # scans preferred_term) nor any gate can see it: one identifier, one record,
+    # and since #229 the label even resolves — to the anhydrous parent. Issue #251.
+    syn_rows = []
+    for rec in yaml.safe_load(MAPPED.read_text())["ingredients"]:
+        term = str(rec.get("preferred_term") or "")
+        if HYDRATE.search(term):
+            continue                      # already counted in the mapped bucket
+        om = rec.get("ontology_mapping") or {}
+        target = str(om.get("ontology_id") or "")
+        if _term_is_hydrate(target, om.get("ontology_label")):
+            continue
+        hyd = [str(sy.get("synonym_text") or "") for sy in (rec.get("synonyms") or [])
+               if HYDRATE.search(str(sy.get("synonym_text") or ""))]
+        if hyd:
+            syn_rows.append((str(rec.get("identifier") or ""), term, target, hyd))
+    print(f"\n{len(syn_rows)} mapped record(s) carry a hydrate SYNONYM on a non-hydrate "
+          "term.")
+    if syn_rows:
+        print("The hydrate was folded in as a synonym instead of taking its own identifier, "
+              "so\nthe #218 collapse survives post-merge and no gate sees it — one "
+              "identifier, one\nrecord, and since #229 the label resolves to the anhydrous "
+              "parent.")
+        for ident, term, target, hyd in syn_rows[:args.queue_limit]:
+            print(f"  {ident:16} {term[:24]:24} <- {', '.join(hyd[:2])}")
+        if len(syn_rows) > args.queue_limit:
+            print(f"  ... and {len(syn_rows) - args.queue_limit} more")
+
     if not UNMAPPED.exists():
         print(f"\nERROR: {UNMAPPED.relative_to(ROOT)} is missing; cannot report the "
               "pending queue")
