@@ -1,10 +1,10 @@
 identifier: cas:10489-48-2
 preferred_term: Sodium thiophosphate tribasic hydrate
 ontology_mapping:
-  ontology_id: cas:10489-48-2
-  ontology_label: Sodium thiophosphate tribasic hydrate
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:46612
+  ontology_label: phosphorothioic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -12,6 +12,14 @@ ontology_mapping:
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
       Hans80metals. Curator can promote to a CHEBI primary if/when CHEBI adds the
       term.'
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: Sodium thiophosphate tribasic hydrate is a hydrate/salt with its own CAS
+      and no exact ChEBI term; anchored to the parent CHEBI:46612 'phosphorothioic
+      acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. trisodium hydrate
+      salt of phosphorothioic acid (H3O3PS, neutral, 3-STAR). NOT CHEBI:37511 thiophosphate,
+      a 1-STAR grouping term whose only child is organic thiophosphate; this record
+      is inorganic Na3PO3S
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -41,6 +49,16 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:46612 ''phosphorothioic
+    acid'' and registry kgmicrobe.compound:sodium_thiophosphate_tribasic_hydrate.
+    identifier cas:10489-48-2 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+    trisodium hydrate salt of phosphorothioic acid (H3O3PS, neutral, 3-STAR). NOT
+    CHEBI:37511 thiophosphate, a 1-STAR grouping term whose only child is organic
+    thiophosphate; this record is inorganic Na3PO3S'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 10489-48-2
   data_source: CultureBotHT compounds_to_cas.csv

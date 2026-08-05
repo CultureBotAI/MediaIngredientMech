@@ -1,10 +1,10 @@
 identifier: cas:13517-23-2
 preferred_term: Sodium phosphite dibasic pentahydrate
 ontology_mapping:
-  ontology_id: cas:13517-23-2
-  ontology_label: Sodium phosphite dibasic pentahydrate
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:36361
+  ontology_label: phosphorous acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -12,6 +12,12 @@ ontology_mapping:
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
       Hans80metals. Curator can promote to a CHEBI primary if/when CHEBI adds the
       term.'
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: Sodium phosphite dibasic pentahydrate is a hydrate/salt with its own CAS
+      and no exact ChEBI term; anchored to the parent CHEBI:36361 'phosphorous acid'
+      by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium pentahydrate
+      salt of phosphorous acid
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -35,6 +41,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
   llm_assisted: false
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:36361 ''phosphorous acid''
+    and registry kgmicrobe.compound:sodium_phosphite_dibasic_pentahydrate. identifier
+    cas:13517-23-2 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. disodium
+    pentahydrate salt of phosphorous acid'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 13517-23-2
   data_source: CultureBotHT compounds_to_cas.csv

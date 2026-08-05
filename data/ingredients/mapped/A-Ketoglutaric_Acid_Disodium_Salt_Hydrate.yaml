@@ -1,10 +1,10 @@
 identifier: cas:305-72-6
 preferred_term: a-Ketoglutaric acid disodium salt hydrate
 ontology_mapping:
-  ontology_id: cas:305-72-6
-  ontology_label: a-Ketoglutaric acid disodium salt hydrate
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:30915
+  ontology_label: 2-oxoglutaric acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -13,6 +13,12 @@ ontology_mapping:
       FEBA_carbon. Used in 13 CultureBot media; samples: NLDM_defined_no_iron, NLDM_defined,
       DinoMM alphaKetoGlutAcid NoNitrogen…. Curator can promote to a CHEBI primary
       if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: a-Ketoglutaric acid disodium salt hydrate is a hydrate/salt with its own
+      CAS and no exact ChEBI term; anchored to the parent CHEBI:30915 '2-oxoglutaric
+      acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium salt
+      hydrate of 2-oxoglutaric acid
 synonyms:
 - synonym_text: a-Ketoglutaric acid
   synonym_type: EXACT_SYNONYM
@@ -58,6 +64,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:30915 ''2-oxoglutaric acid''
+    and registry kgmicrobe.compound:a-ketoglutaric_acid_disodium_salt_hydrate. identifier
+    cas:305-72-6 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. disodium
+    salt hydrate of 2-oxoglutaric acid'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 305-72-6
   data_source: CultureBotHT compounds_to_cas.csv

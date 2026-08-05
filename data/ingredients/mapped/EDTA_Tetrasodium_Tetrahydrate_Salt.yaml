@@ -1,10 +1,10 @@
 identifier: cas:13235-36-4
 preferred_term: EDTA tetrasodium tetrahydrate salt
 ontology_mapping:
-  ontology_id: cas:13235-36-4
-  ontology_label: EDTA tetrasodium tetrahydrate salt
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:4735
+  ontology_label: ethylenediaminetetraacetic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -12,6 +12,12 @@ ontology_mapping:
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 4 CultureBot
       media; samples: MME noCarbon, MTM noNitrogen noCarbon, MME noNitrogen noCarbon….
       Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: EDTA tetrasodium tetrahydrate salt is a hydrate/salt with its own CAS and
+      no exact ChEBI term; anchored to the parent CHEBI:4735 'ethylenediaminetetraacetic
+      acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. tetrasodium
+      tetrahydrate salt of EDTA
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -49,6 +55,14 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:4735 ''ethylenediaminetetraacetic
+    acid'' and registry kgmicrobe.compound:edta_tetrasodium_tetrahydrate_salt. identifier
+    cas:13235-36-4 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. tetrasodium
+    tetrahydrate salt of EDTA'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 13235-36-4
   data_source: CultureBotHT compounds_to_cas.csv

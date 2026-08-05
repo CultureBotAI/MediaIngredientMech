@@ -1,4 +1,4 @@
-generation_date: '2026-08-05T06:58:57.191152+00:00'
+generation_date: '2026-08-05T18:02:35.008352+00:00'
 total_count: 2308
 mapped_count: 2279
 unmapped_count: 0
@@ -4007,16 +4007,21 @@ ingredients:
 - identifier: cas:16373-93-6
   preferred_term: 2-Deoxyadenosine monohydrate
   ontology_mapping:
-    ontology_id: cas:16373-93-6
-    ontology_label: 2-Deoxyadenosine monohydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:17256
+    ontology_label: 2'-deoxyadenosine
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 16373-93-6 present, but no CHEBI entry
         exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
         to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: 2-Deoxyadenosine monohydrate is a hydrate/salt with its own CAS and no
+        exact ChEBI term; anchored to the parent CHEBI:17256 '2'-deoxyadenosine' by
+        narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of 2'-deoxyadenosine
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -4046,6 +4051,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:17256 ''2''-deoxyadenosine''
+      and registry kgmicrobe.compound:2-deoxyadenosine_monohydrate. identifier cas:16373-93-6
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of
+      2''-deoxyadenosine'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 16373-93-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -4438,16 +4451,22 @@ ingredients:
 - identifier: cas:1040352-40-6
   preferred_term: 2-Keto-D-gluconic acid hemicalcium salt hydrate
   ontology_mapping:
-    ontology_id: cas:1040352-40-6
-    ontology_label: 2-Keto-D-gluconic acid hemicalcium salt hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:27469
+    ontology_label: 2-dehydro-D-gluconic acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 1040352-40-6 present, but no CHEBI
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can
         promote to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: 2-Keto-D-gluconic acid hemicalcium salt hydrate is a hydrate/salt with
+        its own CAS and no exact ChEBI term; anchored to the parent CHEBI:27469 '2-dehydro-D-gluconic
+        acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hemicalcium
+        salt hydrate of 2-dehydro-D-gluconic acid
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -4484,6 +4503,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:27469 ''2-dehydro-D-gluconic
+      acid'' and registry kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_hydrate.
+      identifier cas:1040352-40-6 unchanged; mapping_quality FALLBACK_REGISTRY ->
+      NARROW_MATCH. hemicalcium salt hydrate of 2-dehydro-D-gluconic acid'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 1040352-40-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -4506,16 +4533,22 @@ ingredients:
 - identifier: cas:3470-37-9
   preferred_term: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
   ontology_mapping:
-    ontology_id: cas:3470-37-9
-    ontology_label: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:27469
+    ontology_label: 2-dehydro-D-gluconic acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 3470-37-9 present, but no CHEBI entry
         exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
         to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: 2-Keto-D-gluconic acid hemicalcium salt monohydrate is a hydrate/salt
+        with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:27469
+        '2-dehydro-D-gluconic acid' by narrowMatch per MAPPING_SEMANTICS.md Section
+        3 step 2. hemicalcium salt monohydrate of 2-dehydro-D-gluconic acid
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -4558,6 +4591,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:27469 ''2-dehydro-D-gluconic
+      acid'' and registry kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate.
+      identifier cas:3470-37-9 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+      hemicalcium salt monohydrate of 2-dehydro-D-gluconic acid'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 3470-37-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -11300,10 +11341,10 @@ ingredients:
 - identifier: cas:305-72-6
   preferred_term: a-Ketoglutaric acid disodium salt hydrate
   ontology_mapping:
-    ontology_id: cas:305-72-6
-    ontology_label: a-Ketoglutaric acid disodium salt hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:30915
+    ontology_label: 2-oxoglutaric acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -11312,6 +11353,12 @@ ingredients:
         FEBA_carbon. Used in 13 CultureBot media; samples: NLDM_defined_no_iron, NLDM_defined,
         DinoMM alphaKetoGlutAcid NoNitrogen…. Curator can promote to a CHEBI primary
         if/when CHEBI adds the term.'
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: a-Ketoglutaric acid disodium salt hydrate is a hydrate/salt with its
+        own CAS and no exact ChEBI term; anchored to the parent CHEBI:30915 '2-oxoglutaric
+        acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium salt
+        hydrate of 2-oxoglutaric acid
   synonyms:
   - synonym_text: a-Ketoglutaric acid
     synonym_type: EXACT_SYNONYM
@@ -11357,6 +11404,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:30915 ''2-oxoglutaric
+      acid'' and registry kgmicrobe.compound:a-ketoglutaric_acid_disodium_salt_hydrate.
+      identifier cas:305-72-6 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+      disodium salt hydrate of 2-oxoglutaric acid'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 305-72-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -13253,10 +13308,10 @@ ingredients:
 - identifier: cas:2922-28-3
   preferred_term: Adenine hydrochloride hydrate
   ontology_mapping:
-    ontology_id: cas:2922-28-3
-    ontology_label: Adenine hydrochloride hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:16708
+    ontology_label: adenine
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -13265,6 +13320,11 @@ ingredients:
         FEBA_carbon, FEBA_nitrogen. Used in 31 CultureBot media; samples: ZMB ALS
         GHP, ZMB ALS GLCMD, NLDM_defined_no_iron…. Curator can promote to a CHEBI
         primary if/when CHEBI adds the term.'
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Adenine hydrochloride hydrate is a hydrate/salt with its own CAS and
+        no exact ChEBI term; anchored to the parent CHEBI:16708 'adenine' by narrowMatch
+        per MAPPING_SEMANTICS.md Section 3 step 2. hydrochloride hydrate of adenine
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -13293,6 +13353,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:16708 ''adenine'' and
+      registry kgmicrobe.compound:adenine_hydrochloride_hydrate. identifier cas:2922-28-3
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. hydrochloride
+      hydrate of adenine'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 2922-28-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -22575,16 +22643,22 @@ ingredients:
 - identifier: cas:154804-51-0
   preferred_term: Beta-Glycerophosphate disodium salt hydrate
   ontology_mapping:
-    ontology_id: cas:154804-51-0
-    ontology_label: Beta-Glycerophosphate disodium salt hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:17270
+    ontology_label: glycerol 2-phosphate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 154804-51-0 present, but no CHEBI
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can
         promote to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Beta-Glycerophosphate disodium salt hydrate is a hydrate/salt with its
+        own CAS and no exact ChEBI term; anchored to the parent CHEBI:17270 'glycerol
+        2-phosphate' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium
+        salt hydrate of glycerol 2-phosphate
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -22614,6 +22688,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:17270 ''glycerol 2-phosphate''
+      and registry kgmicrobe.compound:beta-glycerophosphate_disodium_salt_hydrate.
+      identifier cas:154804-51-0 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+      disodium salt hydrate of glycerol 2-phosphate'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 154804-51-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -31196,10 +31278,10 @@ ingredients:
 - identifier: cas:120618-65-7
   preferred_term: Ceftazidime hydrate
   ontology_mapping:
-    ontology_id: cas:120618-65-7
-    ontology_label: Ceftazidime hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:3508
+    ontology_label: ceftazidime
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -31207,6 +31289,12 @@ ingredients:
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80
         panels: Hans80metals, FEBA_stress. Curator can promote to a CHEBI primary
         if/when CHEBI adds the term.'
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Ceftazidime hydrate is a hydrate/salt with its own CAS and no exact ChEBI
+        term; anchored to the parent CHEBI:3508 'ceftazidime' by narrowMatch per MAPPING_SEMANTICS.md
+        Section 3 step 2. unspecified hydrate of ceftazidime; CHEBI:3509 is specifically
+        the pentahydrate, which the label does not claim
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -31239,6 +31327,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:3508 ''ceftazidime''
+      and registry kgmicrobe.compound:ceftazidime_hydrate. identifier cas:120618-65-7
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. unspecified hydrate
+      of ceftazidime; CHEBI:3509 is specifically the pentahydrate, which the label
+      does not claim'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 120618-65-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -40775,16 +40872,21 @@ ingredients:
 - identifier: cas:207511-10-2
   preferred_term: D-(+)-Melezitose hydrate
   ontology_mapping:
-    ontology_id: cas:207511-10-2
-    ontology_label: D-(+)-Melezitose hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:6731
+    ontology_label: melezitose
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 207511-10-2 present, but no CHEBI
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can
         promote to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: D-(+)-Melezitose hydrate is a hydrate/salt with its own CAS and no exact
+        ChEBI term; anchored to the parent CHEBI:6731 'melezitose' by narrowMatch
+        per MAPPING_SEMANTICS.md Section 3 step 2. unspecified hydrate of melezitose
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -40823,6 +40925,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:6731 ''melezitose'' and
+      registry kgmicrobe.compound:d-_-melezitose_hydrate. identifier cas:207511-10-2
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. unspecified hydrate
+      of melezitose'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 207511-10-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -40913,16 +41023,21 @@ ingredients:
 - identifier: cas:10030-67-8
   preferred_term: D-(+)-melezitose monohydrate
   ontology_mapping:
-    ontology_id: cas:10030-67-8
-    ontology_label: D-(+)-melezitose monohydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:6731
+    ontology_label: melezitose
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 10030-67-8 present, but no CHEBI entry
         exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
         to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: D-(+)-melezitose monohydrate is a hydrate/salt with its own CAS and no
+        exact ChEBI term; anchored to the parent CHEBI:6731 'melezitose' by narrowMatch
+        per MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of melezitose
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -40961,6 +41076,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:6731 ''melezitose'' and
+      registry kgmicrobe.compound:d-_-melezitose_monohydrate. identifier cas:10030-67-8
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of
+      melezitose'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 10030-67-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -51089,10 +51212,10 @@ ingredients:
 - identifier: cas:13235-36-4
   preferred_term: EDTA tetrasodium tetrahydrate salt
   ontology_mapping:
-    ontology_id: cas:13235-36-4
-    ontology_label: EDTA tetrasodium tetrahydrate salt
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:4735
+    ontology_label: ethylenediaminetetraacetic acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -51100,6 +51223,12 @@ ingredients:
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 4
         CultureBot media; samples: MME noCarbon, MTM noNitrogen noCarbon, MME noNitrogen
         noCarbon…. Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: EDTA tetrasodium tetrahydrate salt is a hydrate/salt with its own CAS
+        and no exact ChEBI term; anchored to the parent CHEBI:4735 'ethylenediaminetetraacetic
+        acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. tetrasodium
+        tetrahydrate salt of EDTA
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -51137,6 +51266,14 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:4735 ''ethylenediaminetetraacetic
+      acid'' and registry kgmicrobe.compound:edta_tetrasodium_tetrahydrate_salt. identifier
+      cas:13235-36-4 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+      tetrasodium tetrahydrate salt of EDTA'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 13235-36-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -59264,16 +59401,22 @@ ingredients:
 - identifier: cas:19046-60-7
   preferred_term: Galactose 1-phosphate dipotassium salt pentahydrate
   ontology_mapping:
-    ontology_id: cas:19046-60-7
-    ontology_label: Galactose 1-phosphate dipotassium salt pentahydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:17973
+    ontology_label: alpha-D-galactose 1-phosphate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 19046-60-7 present, but no CHEBI entry
         exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
         to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Galactose 1-phosphate dipotassium salt pentahydrate is a hydrate/salt
+        with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:17973
+        'alpha-D-galactose 1-phosphate' by narrowMatch per MAPPING_SEMANTICS.md Section
+        3 step 2. dipotassium pentahydrate salt of alpha-D-galactose 1-phosphate
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -59312,6 +59455,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:17973 ''alpha-D-galactose
+      1-phosphate'' and registry kgmicrobe.compound:galactose_1-phosphate_dipotassium_salt_pentahydrate.
+      identifier cas:19046-60-7 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+      dipotassium pentahydrate salt of alpha-D-galactose 1-phosphate'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 19046-60-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -62251,16 +62402,22 @@ ingredients:
 - identifier: cas:55073-41-1
   preferred_term: Glycerol phosphate disodium salt hydrate
   ontology_mapping:
-    ontology_id: cas:55073-41-1
-    ontology_label: Glycerol phosphate disodium salt hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:26707
+    ontology_label: glycerol phosphate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 55073-41-1 present, but no CHEBI entry
         exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
         to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Glycerol phosphate disodium salt hydrate is a hydrate/salt with its own
+        CAS and no exact ChEBI term; anchored to the parent CHEBI:26707 'glycerol
+        phosphate' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium
+        salt hydrate of glycerol phosphate
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -62299,6 +62456,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:26707 ''glycerol phosphate''
+      and registry kgmicrobe.compound:glycerol_phosphate_disodium_salt_hydrate. identifier
+      cas:55073-41-1 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+      disodium salt hydrate of glycerol phosphate'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 55073-41-1
     data_source: CultureBotHT compounds_to_cas.csv
@@ -63076,16 +63241,21 @@ ingredients:
 - identifier: cas:27988-77-8
   preferred_term: gold (III) chloride hydrate
   ontology_mapping:
-    ontology_id: cas:27988-77-8
-    ontology_label: gold (III) chloride hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:30076
+    ontology_label: gold trichloride
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 27988-77-8 present, but no CHEBI entry
         exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
         to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: gold (III) chloride hydrate is a hydrate/salt with its own CAS and no
+        exact ChEBI term; anchored to the parent CHEBI:30076 'gold trichloride' by
+        narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hydrate of gold trichloride
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -63114,6 +63284,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:30076 ''gold trichloride''
+      and registry kgmicrobe.compound:gold_iii_chloride_hydrate. identifier cas:27988-77-8
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. hydrate of gold
+      trichloride'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 27988-77-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -74327,10 +74505,10 @@ ingredients:
 - identifier: cas:10030-85-0
   preferred_term: L-Rhamnose monohydrate
   ontology_mapping:
-    ontology_id: cas:10030-85-0
-    ontology_label: L-Rhamnose monohydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:62345
+    ontology_label: L-rhamnose
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -74338,6 +74516,11 @@ ingredients:
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80
         panels: FEBA_carbon. Curator can promote to a CHEBI primary if/when CHEBI
         adds the term.'
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: L-Rhamnose monohydrate is a hydrate/salt with its own CAS and no exact
+        ChEBI term; anchored to the parent CHEBI:62345 'L-rhamnose' by narrowMatch
+        per MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of L-rhamnose
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -74375,6 +74558,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:62345 ''L-rhamnose''
+      and registry kgmicrobe.compound:l-rhamnose_monohydrate. identifier cas:10030-85-0
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of
+      L-rhamnose'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 10030-85-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -84037,16 +84228,21 @@ ingredients:
 - identifier: cas:312693-63-3
   preferred_term: Maltotriose hydrate
   ontology_mapping:
-    ontology_id: cas:312693-63-3
-    ontology_label: Maltotriose hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:61993
+    ontology_label: maltotriose
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 312693-63-3 present, but no CHEBI
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can
         promote to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Maltotriose hydrate is a hydrate/salt with its own CAS and no exact ChEBI
+        term; anchored to the parent CHEBI:61993 'maltotriose' by narrowMatch per
+        MAPPING_SEMANTICS.md Section 3 step 2. unspecified hydrate of maltotriose
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -84079,6 +84275,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:61993 ''maltotriose''
+      and registry kgmicrobe.compound:maltotriose_hydrate. identifier cas:312693-63-3
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. unspecified hydrate
+      of maltotriose'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 312693-63-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -110796,16 +111000,22 @@ ingredients:
 - identifier: cas:343336-76-5
   preferred_term: palatinose hydrate
   ontology_mapping:
-    ontology_id: cas:343336-76-5
-    ontology_label: palatinose hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:18394
+    ontology_label: 6-O-alpha-D-glucopyranosyl-D-fructofuranose
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 343336-76-5 present, but no CHEBI
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can
         promote to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: palatinose hydrate is a hydrate/salt with its own CAS and no exact ChEBI
+        term; anchored to the parent CHEBI:18394 '6-O-alpha-D-glucopyranosyl-D-fructofuranose'
+        by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hydrate of palatinose
+        (isomaltulose)
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -110844,6 +111054,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:18394 ''6-O-alpha-D-glucopyranosyl-D-fructofuranose''
+      and registry kgmicrobe.compound:palatinose_hydrate. identifier cas:343336-76-5
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. hydrate of palatinose
+      (isomaltulose)'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 343336-76-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -115745,16 +115963,22 @@ ingredients:
 - identifier: cas:1030365-02-6
   preferred_term: potassium citramalate monohydrate
   ontology_mapping:
-    ontology_id: cas:1030365-02-6
-    ontology_label: potassium citramalate monohydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:15584
+    ontology_label: citramalic acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 1030365-02-6 present, but no CHEBI
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can
         promote to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: potassium citramalate monohydrate is a hydrate/salt with its own CAS
+        and no exact ChEBI term; anchored to the parent CHEBI:15584 'citramalic acid'
+        by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. potassium salt monohydrate
+        of citramalic acid
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -115784,6 +116008,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:15584 ''citramalic acid''
+      and registry kgmicrobe.compound:potassium_citramalate_monohydrate. identifier
+      cas:1030365-02-6 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+      potassium salt monohydrate of citramalic acid'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 1030365-02-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -116210,16 +116442,23 @@ ingredients:
 - identifier: cas:314041-10-6
   preferred_term: potassium tellurate hydrate
   ontology_mapping:
-    ontology_id: cas:314041-10-6
-    ontology_label: potassium tellurate hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:30463
+    ontology_label: telluric acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 314041-10-6 present, but no CHEBI
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can
         promote to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: 'potassium tellurate hydrate is a hydrate/salt with its own CAS and no
+        exact ChEBI term; anchored to the parent CHEBI:30463 ''telluric acid'' by
+        narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. potassium salt hydrate
+        of telluric acid (H2O4Te, neutral, 3-STAR). NOT CHEBI:30464 tellurate, which
+        is the (2-) anion: a neutral salt is not a kind of a dianion'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -116249,6 +116488,15 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:30463 ''telluric acid''
+      and registry kgmicrobe.compound:potassium_tellurate_hydrate. identifier cas:314041-10-6
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. potassium salt
+      hydrate of telluric acid (H2O4Te, neutral, 3-STAR). NOT CHEBI:30464 tellurate,
+      which is the (2-) anion: a neutral salt is not a kind of a dianion'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 314041-10-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -128256,10 +128504,10 @@ ingredients:
 - identifier: cas:13517-23-2
   preferred_term: Sodium phosphite dibasic pentahydrate
   ontology_mapping:
-    ontology_id: cas:13517-23-2
-    ontology_label: Sodium phosphite dibasic pentahydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:36361
+    ontology_label: phosphorous acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -128267,6 +128515,12 @@ ingredients:
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80
         panels: Hans80metals. Curator can promote to a CHEBI primary if/when CHEBI
         adds the term.'
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Sodium phosphite dibasic pentahydrate is a hydrate/salt with its own
+        CAS and no exact ChEBI term; anchored to the parent CHEBI:36361 'phosphorous
+        acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium pentahydrate
+        salt of phosphorous acid
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -128290,6 +128544,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
     llm_assisted: false
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:36361 ''phosphorous acid''
+      and registry kgmicrobe.compound:sodium_phosphite_dibasic_pentahydrate. identifier
+      cas:13517-23-2 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+      disodium pentahydrate salt of phosphorous acid'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 13517-23-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -128984,10 +129246,10 @@ ingredients:
 - identifier: cas:10489-48-2
   preferred_term: Sodium thiophosphate tribasic hydrate
   ontology_mapping:
-    ontology_id: cas:10489-48-2
-    ontology_label: Sodium thiophosphate tribasic hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:46612
+    ontology_label: phosphorothioic acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -128995,6 +129257,14 @@ ingredients:
         entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80
         panels: Hans80metals. Curator can promote to a CHEBI primary if/when CHEBI
         adds the term.'
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Sodium thiophosphate tribasic hydrate is a hydrate/salt with its own
+        CAS and no exact ChEBI term; anchored to the parent CHEBI:46612 'phosphorothioic
+        acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. trisodium
+        hydrate salt of phosphorothioic acid (H3O3PS, neutral, 3-STAR). NOT CHEBI:37511
+        thiophosphate, a 1-STAR grouping term whose only child is organic thiophosphate;
+        this record is inorganic Na3PO3S
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -129024,6 +129294,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:46612 ''phosphorothioic
+      acid'' and registry kgmicrobe.compound:sodium_thiophosphate_tribasic_hydrate.
+      identifier cas:10489-48-2 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+      trisodium hydrate salt of phosphorothioic acid (H3O3PS, neutral, 3-STAR). NOT
+      CHEBI:37511 thiophosphate, a 1-STAR grouping term whose only child is organic
+      thiophosphate; this record is inorganic Na3PO3S'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 10489-48-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -130576,16 +130856,21 @@ ingredients:
 - identifier: cas:54261-98-2
   preferred_term: Stachyose hydrate
   ontology_mapping:
-    ontology_id: cas:54261-98-2
-    ontology_label: Stachyose hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:17164
+    ontology_label: stachyose
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 54261-98-2 present, but no CHEBI entry
         exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
         to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Stachyose hydrate is a hydrate/salt with its own CAS and no exact ChEBI
+        term; anchored to the parent CHEBI:17164 'stachyose' by narrowMatch per MAPPING_SEMANTICS.md
+        Section 3 step 2. unspecified hydrate of stachyose
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -130624,6 +130909,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:17164 ''stachyose'' and
+      registry kgmicrobe.compound:stachyose_hydrate. identifier cas:54261-98-2 unchanged;
+      mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. unspecified hydrate of stachyose'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 54261-98-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -133698,16 +133990,22 @@ ingredients:
 - identifier: cas:2451-01-6
   preferred_term: Terpene hydrate
   ontology_mapping:
-    ontology_id: cas:2451-01-6
-    ontology_label: Terpene hydrate
-    ontology_source: CAS
-    mapping_quality: FALLBACK_REGISTRY
+    ontology_id: CHEBI:134806
+    ontology_label: terpin
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT. CAS-RN 2451-01-6 present, but no CHEBI entry
         exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
         to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: anchor_cas_hydrate_records
+      notes: Terpene hydrate is a hydrate/salt with its own CAS and no exact ChEBI
+        term; anchored to the parent CHEBI:134806 'terpin' by narrowMatch per MAPPING_SEMANTICS.md
+        Section 3 step 2. CAS 2451-01-6 is terpin hydrate; the label 'Terpene' is
+        a misspelling of terpin
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -133731,6 +134029,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
     llm_assisted: false
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
+    curator: anchor_cas_hydrate_records
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:134806 ''terpin'' and
+      registry kgmicrobe.compound:terpene_hydrate. identifier cas:2451-01-6 unchanged;
+      mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. CAS 2451-01-6 is terpin hydrate;
+      the label ''Terpene'' is a misspelling of terpin'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 2451-01-6
     data_source: CultureBotHT compounds_to_cas.csv

@@ -1,16 +1,21 @@
 identifier: cas:10030-67-8
 preferred_term: D-(+)-melezitose monohydrate
 ontology_mapping:
-  ontology_id: cas:10030-67-8
-  ontology_label: D-(+)-melezitose monohydrate
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:6731
+  ontology_label: melezitose
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 10030-67-8 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: D-(+)-melezitose monohydrate is a hydrate/salt with its own CAS and no
+      exact ChEBI term; anchored to the parent CHEBI:6731 'melezitose' by narrowMatch
+      per MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of melezitose
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -48,6 +53,13 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:6731 ''melezitose'' and
+    registry kgmicrobe.compound:d-_-melezitose_monohydrate. identifier cas:10030-67-8
+    unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of melezitose'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 10030-67-8
   data_source: CultureBotHT compounds_to_cas.csv

@@ -1,16 +1,22 @@
 identifier: cas:3470-37-9
 preferred_term: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
 ontology_mapping:
-  ontology_id: cas:3470-37-9
-  ontology_label: 2-Keto-D-gluconic acid hemicalcium salt monohydrate
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:27469
+  ontology_label: 2-dehydro-D-gluconic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 3470-37-9 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: 2-Keto-D-gluconic acid hemicalcium salt monohydrate is a hydrate/salt with
+      its own CAS and no exact ChEBI term; anchored to the parent CHEBI:27469 '2-dehydro-D-gluconic
+      acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hemicalcium
+      salt monohydrate of 2-dehydro-D-gluconic acid
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -53,6 +59,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-05T18:02:35.008352+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:27469 ''2-dehydro-D-gluconic
+    acid'' and registry kgmicrobe.compound:2-keto-d-gluconic_acid_hemicalcium_salt_monohydrate.
+    identifier cas:3470-37-9 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+    hemicalcium salt monohydrate of 2-dehydro-D-gluconic acid'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 3470-37-9
   data_source: CultureBotHT compounds_to_cas.csv
