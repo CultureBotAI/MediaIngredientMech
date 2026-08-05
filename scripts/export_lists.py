@@ -48,7 +48,7 @@ SYNONYM_SEP = "|"
 # Curation strings that live in `synonyms` but are not names anything answers
 # to: role/property annotations carried over from the CultureMech import, and
 # bare parentheticals like `(sodium salt)` or `(for solid medium, alternative)`
-# that are fragments of a name, not a name. 214 distinct strings. Publishing
+# that are fragments of a name, not a name. 189 distinct strings. Publishing
 # them as resolvable labels would make `Role: Carbon source; Properties: ...`
 # "resolve" to 44 different CHEBI ids.
 _NOT_A_LABEL = re.compile(r"^\s*Role:.*;\s*Properties:|^\s*\([^)]*\)\s*$", re.IGNORECASE)
@@ -185,16 +185,16 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
 def export_label_index(ingredients: list[dict], output_path: Path):
     """One row per (label, record) with how the label matched — #232.
 
-    Publishing synonyms (#229) made 83 labels resolve to more than one
+    Publishing synonyms (#229) made 87 labels resolve to more than one
     identifier, and a consumer joining a raw ingredient string had no way to
     choose: `Vitamin B12` is the preferred_term of CHEBI:176843 and a synonym of
     two other records. The record-shaped exports cannot express this, because a
     row has one preferred_term and many synonyms — the ambiguity is per LABEL.
 
     So the precedence is made machine-readable instead of documented in prose:
-    resolve to the row with match_type `preferred_term`; fall back to `synonym`
-    only when no preferred_term matches. Rows are sorted so a label's
-    preferred_term row sorts before its synonym rows.
+    **take the first row for the label**. Resolve to its `identifier`, which is
+    the record's primary key; `ontology_id` is included for context and is empty
+    for 594 unmapped rows.
     """
     rows = []
     for ing in ingredients:
@@ -210,9 +210,23 @@ def export_label_index(ingredients: list[dict], output_path: Path):
             rows.append({"label": syn, "match_type": "synonym",
                          "identifier": ident, "preferred_term": preferred,
                          "ontology_id": ont, "mapping_status": status})
-    # preferred_term before synonym for the same label, then stable by identifier
-    rows.sort(key=lambda r: (r["label"].lower(), r["match_type"] != "preferred_term",
-                             r["identifier"]))
+    # Order within a label, most significant first:
+    #   1. MAPPED before anything else. Without this a REJECTED record's
+    #      preferred_term outranks a MAPPED record's synonym, so `Bacto Soytone`
+    #      resolved to the rejected CHEBI:8150 tombstone instead of the live
+    #      FOODON:03315720 — 21 labels did that.
+    #   2. preferred_term before synonym.
+    #   3. identifier, then preferred_term: `identifier` is NOT a unique record
+    #      key (46 identifiers are held by 117 records), so without the final
+    #      term 188 labels tie completely and the winner is decided by record
+    #      order in the YAML.
+    # `label` follows `label.lower()` so rows for one exact string stay
+    # contiguous — 2 labels (`Peptone`, `Bacto Tryptone`) have a case variant
+    # interleaved otherwise.
+    rows.sort(key=lambda r: (r["label"].lower(), r["label"],
+                             r["mapping_status"] != "MAPPED",
+                             r["match_type"] != "preferred_term",
+                             r["identifier"], r["preferred_term"]))
     fieldnames = ["label", "match_type", "identifier", "preferred_term",
                   "ontology_id", "mapping_status"]
     with open(output_path, "w", newline="") as f:

@@ -107,6 +107,15 @@ def build(tmp_path, records, csv_rows, header=None):
     (tmp_path / "docs" / "data" / "all_ingredients.csv").write_text(body)
     (tmp_path / "docs" / "data" / "mapped_ingredients.csv").write_text(body)
     (tmp_path / "docs" / "data" / "unmapped_ingredients.csv").write_text(",".join(cols) + "\n")
+    # the label index is a different shape (one row per label) and has its own check
+    idx = ["label,match_type,identifier,preferred_term,ontology_id,mapping_status"]
+    for r in records:
+        idx.append(f'"{r["preferred_term"]}",preferred_term,{r["identifier"]},'
+                   f'"{r["preferred_term"]}",{r["identifier"]},{r.get("mapping_status","")}')
+        for syn in (r.get("synonyms") or []):
+            idx.append(f'"{syn["synonym_text"]}",synonym,{r["identifier"]},'
+                       f'"{r["preferred_term"]}",{r["identifier"]},{r.get("mapping_status","")}')
+    (tmp_path / "docs" / "data" / "label_index.csv").write_text("\n".join(idx) + "\n")
     (tmp_path / "scripts").mkdir(exist_ok=True)
     (tmp_path / "scripts" / CHECK.name).write_text(CHECK.read_text())
     # the gate imports the exporter's _synonyms() on purpose, so the rule for
@@ -258,6 +267,42 @@ def test_label_index_excludes_curation_detritus(export_lists, tmp_path):
     assert labels == {"A"}
 
 
-def test_label_index_is_covered_by_the_freshness_gate():
-    src = (ROOT / "scripts" / "check_flat_export_coverage.py").read_text()
-    assert "label_index.csv" in src, "a new published artifact must be gated"
+def test_label_index_is_in_the_freshness_set():
+    """Asserting the string appears *somewhere* in the checker would pass on a
+    comment; assert the actual set membership."""
+    mod = _load(ROOT / "scripts" / "check_flat_export_coverage.py")
+    assert "label_index.csv" in mod.DETERMINISTIC
+
+
+def test_mapped_record_outranks_a_rejected_one(export_lists, tmp_path):
+    """A REJECTED record's preferred_term must not outrank a MAPPED record's
+    synonym — `Bacto Soytone` resolved to a rejected tombstone."""
+    out = tmp_path / "label_index.csv"
+    export_lists.export_label_index([
+        rec("CHEBI:8150", "Bacto Soytone", status="REJECTED"),
+        rec("FOODON:03315720", "Soy peptone", ["Bacto Soytone"]),
+    ], out)
+    rows = [r for r in csv.DictReader(out.open()) if r["label"] == "Bacto Soytone"]
+    assert rows[0]["mapping_status"] == "MAPPED"
+    assert rows[0]["identifier"] == "FOODON:03315720"
+
+
+def test_rows_for_one_exact_label_are_contiguous(export_lists, tmp_path):
+    """`Peptone` and `peptone` are different strings; grouping on lower() alone
+    interleaved them, so a consumer reading the contiguous run over-read."""
+    out = tmp_path / "label_index.csv"
+    export_lists.export_label_index([
+        rec("CHEBI:1", "Peptone", ["shared"]),
+        rec("CHEBI:2", "peptone"),
+        rec("CHEBI:3", "Other", ["Peptone"]),
+    ], out)
+    labels = [r["label"] for r in csv.DictReader(out.open())]
+    idx = [i for i, l in enumerate(labels) if l == "Peptone"]
+    assert idx == list(range(idx[0], idx[0] + len(idx))), "must be contiguous"
+
+
+def test_label_with_comma_and_quote_round_trips(export_lists, tmp_path):
+    out = tmp_path / "label_index.csv"
+    tricky = 'bromocresol purple", 0.04%'
+    export_lists.export_label_index([rec("CHEBI:1", "X", [tricky])], out)
+    assert tricky in {r["label"] for r in csv.DictReader(out.open())}
