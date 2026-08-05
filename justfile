@@ -89,6 +89,16 @@ fetch-pubmed *args:
 qc-sssom:
     python3 scripts/validate_sssom_invariants.py
 
+# The record `identifier` IS the ontology CURIE, so two mapped records sharing
+# one both claim to BE that term — and an `{identifier: record}` lookup silently
+# keeps whichever came last. #214 nearly attached merged synonyms to the wrong
+# peptone record that way. 61 such groups already exist, so this gates against
+# NEW ones rather than asserting a clean slate that isn't. Issue #218.
+#
+# Fail if a mapped identifier is duplicated beyond the tracked baseline
+qc-duplicate-ids:
+    python3 scripts/audit_duplicate_identifiers.py --check
+
 schema_path := "src/mediaingredientmech/schema/mediaingredientmech.yaml"
 
 # OBO-resolvable prefixes that linkml-term-validator's `sqlite:obo:` adapter
@@ -179,7 +189,7 @@ report-label-drift:
 # `just validate-products` locally to reproduce the gate; `just report-label-drift`
 # writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
 # LinkML cross-check (one validator process per record → too slow for CI).
-qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip check-instruction-refs check-curation-targets
+qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids check-instruction-refs check-curation-targets
 
 # Report whether the local ChEBI build is older than kg-microbe's
 check-chebi-currency *args:
