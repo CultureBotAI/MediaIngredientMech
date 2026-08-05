@@ -31,10 +31,11 @@ ROOT = Path(__file__).resolve().parents[1]
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 REPORT = ROOT / "reports" / "hydrate_grounding.tsv"
+SYN_REPORT = ROOT / "reports" / "hydrate_synonyms.tsv"
 CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
 
 def _load_hydrate_notation():
-    """Load the shared regex WITHOUT importing the package.
+    """Load the shared regexes WITHOUT importing the package.
 
     `mediaingredientmech.curation.__init__` imports ingredient_curator, which
     imports linkml_runtime — so a plain package import would turn this
@@ -47,10 +48,10 @@ def _load_hydrate_notation():
     spec = importlib.util.spec_from_file_location("_hydrate_guard", path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    return mod.HYDRATE_NOTATION
+    return mod.HYDRATE_NOTATION, mod.FORMULA_WATER
 
 
-HYDRATE = _load_hydrate_notation()
+HYDRATE, FORMULA_WATER = _load_hydrate_notation()
 
 
 def formulas() -> dict[str, str]:
@@ -88,12 +89,25 @@ def anchored_subjects() -> set[str]:
     return parents & registry
 
 
+def baseline_identifiers() -> set[str]:
+    """Identifiers already tracked in the duplicate-identifier baseline, so the
+    report can say which findings are genuinely new to tooling rather than
+    claiming no gate sees any of them."""
+    path = ROOT / "mappings" / "duplicate_identifier_baseline.tsv"
+    if not path.exists():
+        return set()
+    with path.open() as fh:
+        return {r["identifier"] for r in csv.DictReader(fh, delimiter="\t")}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--limit", type=int, default=25,
                     help="cap the violations list")
     ap.add_argument("--queue-limit", type=int, default=25,
-                    help="cap the pending-queue list, independently of --limit")
+                    help="cap the UNMAPPED pending-queue list")
+    ap.add_argument("--synonym-limit", type=int, default=15,
+                    help="cap the hydrate-synonym list")
     args = ap.parse_args()
 
     form = formulas()
@@ -102,16 +116,24 @@ def main() -> int:
     def _term_is_hydrate(ontology_id: str, ontology_label: str) -> bool:
         """Water as its own formula component, or the term's own label saying so.
 
-        A bare "H2O" substring is wrong both ways: it matches `H2O4P`
-        (dihydrogenphosphate, no water at all) and misses ChEBI hydrate terms
-        written without explicit water (`Glycocholic acid hydrate`, C26H43NO6).
+        Both tests come from hydrate_guard so they cannot drift: a bare "H2O"
+        substring matches `H2O4P` (dihydrogenphosphate, no water), and a bare
+        /hydrate/ matches `borohydrate` and `carbohydrate` — two live MIM targets
+        (`CHEBI:195690` monochlorohydrate, `cas:9036-88-8` b-Mannan borohydrate)
+        would otherwise be called hydrate terms.
         """
-        return bool(
-            re.search(r"(?:^|\.)\(?[\dn]*H2O\)?n?(?:\.|$)", form.get(ontology_id, ""))
-            or re.search(r"hydrate\b", str(ontology_label or ""), re.IGNORECASE))
+        return bool(FORMULA_WATER.search(form.get(ontology_id, ""))
+                    or HYDRATE.search(str(ontology_label or "")))
 
+    def _formula_known(ontology_id: str) -> bool:
+        return bool(form.get(ontology_id))
+
+    # parsed once: re-reading this 6.7 MB / 2308-record file for the second scan
+    # cost +55% wall clock
+    mapped_records = yaml.safe_load(MAPPED.read_text())["ingredients"]
+    baseline_ids = baseline_identifiers()
     rows = []
-    for rec in yaml.safe_load(MAPPED.read_text())["ingredients"]:
+    for rec in mapped_records:
         term = str(rec.get("preferred_term") or "")
         if not HYDRATE.search(term):
             continue
@@ -161,33 +183,64 @@ def main() -> int:
     # stay UNMAPPED. Without a worklist the hydrate residual grows invisibly
     # instead of visibly, which is only an improvement if someone can see it (#247).
     # A merge folds the hydrate in as a synonym rather than giving it its own
-    # identifier, so the collapse survives where neither the mapped bucket (which
-    # scans preferred_term) nor any gate can see it: one identifier, one record,
-    # and since #229 the label even resolves — to the anhydrous parent. Issue #251.
+    # identifier, so the #218 collapse survives post-merge where the mapped
+    # bucket cannot see it -- that bucket keys on preferred_term. Two shapes:
+    #   ANHYDROUS_TERM   preferred_term is not a hydrate at all
+    #   HYDRATION_STATE  preferred_term IS a hydrate, but a synonym names a
+    #                    DIFFERENT one (MgSO4·7H2O carrying MgSO4 x 6 H2O).
+    #                    These land in OK_HYDRATE_TERM above, i.e. reported clean.
+    # Issue #251.
+    def _hydrate_synonyms(rec):
+        return [str(sy.get("synonym_text") or "") for sy in (rec.get("synonyms") or [])
+                if HYDRATE.search(str(sy.get("synonym_text") or ""))]
+
     syn_rows = []
-    for rec in yaml.safe_load(MAPPED.read_text())["ingredients"]:
+    for rec in mapped_records:
         term = str(rec.get("preferred_term") or "")
-        if HYDRATE.search(term):
-            continue                      # already counted in the mapped bucket
         om = rec.get("ontology_mapping") or {}
         target = str(om.get("ontology_id") or "")
-        if _term_is_hydrate(target, om.get("ontology_label")):
+        hyd = _hydrate_synonyms(rec)
+        if not hyd:
             continue
-        hyd = [str(sy.get("synonym_text") or "") for sy in (rec.get("synonyms") or [])
-               if HYDRATE.search(str(sy.get("synonym_text") or ""))]
-        if hyd:
-            syn_rows.append((str(rec.get("identifier") or ""), term, target, hyd))
-    print(f"\n{len(syn_rows)} mapped record(s) carry a hydrate SYNONYM on a non-hydrate "
-          "term.")
+        if HYDRATE.search(term):
+            # A record whose own label is a hydrate may still carry synonyms
+            # naming a DIFFERENT hydration state (`MgSO4·7H2O` with
+            # `MgSO4 x 6 H2O`), which is the same Section 3 collapse. Detecting
+            # it needs the water multiplicity, and parsing that reliably is
+            # harder than it looks: `AlCl3.6H2O` has formula digits adjacent to
+            # the separator, and `CaCl22H2O` is genuinely ambiguous. A first
+            # attempt reported 96 records, almost all of them just respellings.
+            # Left to #254 rather than shipped wrong.
+            continue
+        if _term_is_hydrate(target, om.get("ontology_label")):
+            continue                      # the term itself is the hydrate
+        if not _formula_known(target):
+            continue                      # cannot tell; do not assert either way
+        syn_rows.append({"identifier": str(rec.get("identifier") or ""),
+                         "preferred_term": term, "ontology_id": target,
+                         "detail": "term formula has no water",
+                         "hydrate_synonyms": " | ".join(hyd)})
+
+    print(f"\n{len(syn_rows)} mapped record(s) whose term is anhydrous but which carry a "
+          "hydrate SYNONYM.")
     if syn_rows:
-        print("The hydrate was folded in as a synonym instead of taking its own identifier, "
-              "so\nthe #218 collapse survives post-merge and no gate sees it — one "
-              "identifier, one\nrecord, and since #229 the label resolves to the anhydrous "
-              "parent.")
-        for ident, term, target, hyd in syn_rows[:args.queue_limit]:
-            print(f"  {ident:16} {term[:24]:24} <- {', '.join(hyd[:2])}")
-        if len(syn_rows) > args.queue_limit:
-            print(f"  ... and {len(syn_rows) - args.queue_limit} more")
+        known = {r["identifier"] for r in syn_rows} & baseline_ids
+        print(f"\n{len(known)} of these identifiers are already tracked in "
+              "mappings/duplicate_identifier_baseline.tsv\n(as HYDRATE_FAMILY_UNREVIEWED); "
+              f"the other {len({r['identifier'] for r in syn_rows}) - len(known)} are not "
+              "tracked by any existing check.")
+        for r in syn_rows[:args.synonym_limit]:
+            print(f"  {r['identifier']:16} {r['preferred_term'][:22]:22} "
+                  f"<- {r['hydrate_synonyms'][:44]}")
+        if len(syn_rows) > args.synonym_limit:
+            print(f"  ... and {len(syn_rows) - args.synonym_limit} more "
+                  f"(full list in {SYN_REPORT.relative_to(ROOT)})")
+    SYN_REPORT.parent.mkdir(parents=True, exist_ok=True)
+    with SYN_REPORT.open("w", newline="") as fh:
+        w = csv.DictWriter(fh, delimiter="\t", fieldnames=[
+            "identifier", "preferred_term", "ontology_id", "detail",
+            "hydrate_synonyms"])
+        w.writeheader(); w.writerows(syn_rows)
 
     if not UNMAPPED.exists():
         print(f"\nERROR: {UNMAPPED.relative_to(ROOT)} is missing; cannot report the "
