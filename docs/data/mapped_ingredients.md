@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-05T04:27:02.596624+00:00
+Generated: 2026-08-05T07:00:27.684671+00:00
 Total: 2308 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -214,7 +214,7 @@ Total: 2308 ingredients
 | CHEBI:39061 | CHEBI:39061 | ACES | MAPPED | CHEBI | EXACT_MATCH | 8 |
 | CHEBI:15343 | CHEBI:15343 | acetaldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30089 | CHEBI:30089 | Acetate | MAPPED | CHEBI | EXACT_MATCH | 44 |
-| CHEBI:30089 | CHEBI:30089 | Acetate (carbon source) | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:30089 | CHEBI:30089 | Acetate (carbon source) | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15366 | CHEBI:15366 | Acetic acid | MAPPED | CHEBI | EXACT_MATCH | 36 |
 | CHEBI:15347 | CHEBI:15347 | acetone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2404 | CHEBI:2404 | Acetosyringone | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -261,7 +261,7 @@ Total: 2308 ingredients
 | cas:10124-27-3 | NCIT:C83530 | Aluminum chloride hydrate | MAPPED | NCIT | NARROW_MATCH | 11 |
 | CHEBI:2638 | CHEBI:2638 | Amikacin disulfate salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:62947 | CHEBI:62947 | Ammonium acetate | MAPPED | CHEBI | EXACT_MATCH | 59 |
-| CHEBI:31206 | CHEBI:31206 | Ammonium chloride (nitrogen source) | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31206 | CHEBI:31206 | Ammonium chloride (nitrogen source) | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:12054-85-2 | CHEBI:91249 | ammonium molybdate tetrahydrate | MAPPED | CHEBI | NARROW_MATCH | 11 |
 | CHEBI:156543 | CHEBI:156543 | ammonium persulfate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:81950 | CHEBI:81950 | Ammonium Sulfamate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -271,7 +271,7 @@ Total: 2308 ingredients
 | mesh:C041989 | mesh:C041989 | Amphotericin A | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:2682 | CHEBI:2682 | Amphotericin B | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:28971 | CHEBI:28971 | Ampicillin | MAPPED | CHEBI | EXACT_MATCH | 18 |
-| CHEBI:34535 | CHEBI:34535 | Ampicillin sodium salt | MAPPED | CHEBI | LEXICAL_MATCH | 0 |
+| CHEBI:34535 | CHEBI:34535 | Ampicillin sodium salt | REJECTED | CHEBI | LEXICAL_MATCH | 0 |
 | CHEBI:28057 | CHEBI:28057 | amylopectin from maize | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28102 | CHEBI:28102 | Amylose from potato | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:53912-89-3 | NCIT:C216370 | Anabasine Hydrochloride | MAPPED | NCIT | NARROW_MATCH | 0 |
@@ -340,9 +340,9 @@ Total: 2308 ingredients
 | MICRO:0000178 | MICRO:0000178 | Bacto peptone | MAPPED | MICRO | EXACT_MATCH | 0 |
 | CHEBI:8150 | FOODON:03315720 | Bacto Soytone | REJECTED | FOODON | CLOSE_MATCH | 0 |
 | MICRO:0000114 | MICRO:0000114 | Bacto Tryptic Soy Agar | MAPPED | MICRO | LEXICAL_MATCH | 0 |
-| MICRO:0000114 | MICRO:0000114 | Bacto Tryptic Soy Agar (Difco) | MAPPED | MICRO | LEXICAL_MATCH | 0 |
+| MICRO:0000114 | MICRO:0000114 | Bacto Tryptic Soy Agar (Difco) | REJECTED | MICRO | LEXICAL_MATCH | 0 |
 | MICRO:0000113 | MICRO:0000113 | Bacto Tryptic Soy Broth | MAPPED | MICRO | LEXICAL_MATCH | 0 |
-| MICRO:0000113 | MICRO:0000113 | Bacto Tryptic Soy Broth (Difco) | MAPPED | MICRO | LEXICAL_MATCH | 0 |
+| MICRO:0000113 | MICRO:0000113 | Bacto Tryptic Soy Broth (Difco) | REJECTED | MICRO | LEXICAL_MATCH | 0 |
 | kgmicrobe.compound:bafilomycin | kgmicrobe.compound:bafilomycin | Bafilomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:199416 | CHEBI:199416 | Bafilomycin B1 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2979 | CHEBI:2979 | Baicalein | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -429,7 +429,7 @@ Total: 2308 ingredients
 | cas:5743-18-0 | cas:5743-18-0 | Caffeine Hydrobromide | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:32596 | CHEBI:32596 | CaHPO4 | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:3312 | CHEBI:3312 | Calcium Chloride | MAPPED | CHEBI | EXACT_MATCH | 15 |
-| CHEBI:31345 | CHEBI:31345 | Calcium D-Pantothenate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31345 | CHEBI:31345 | Calcium D-Pantothenate | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31345 | CHEBI:31345 | Calcium pantothenate | MAPPED | CHEBI | EXACT_MATCH | 945 |
 | NCIT:C105971 | NCIT:C105971 | Calprotectin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | kgmicrobe.compound:camphomycin | kgmicrobe.compound:camphomycin | Camphomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -630,7 +630,7 @@ Total: 2308 ingredients
 | CHEBI:16988 | CHEBI:16988 | D-Ribose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:576-42-1 | CHEBI:26218 | D-Saccharic acid potassium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16523 | CHEBI:16523 | D-Serine | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17992 | CHEBI:17992 | D-Sucrose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17992 | CHEBI:17992 | D-Sucrose | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16689 | CHEBI:16689 | D-apiose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17108 | CHEBI:17108 | D-Arabinose | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:27904 | CHEBI:27904 | D-erythrose | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -676,7 +676,7 @@ Total: 2308 ingredients
 | CHEBI:171747 | CHEBI:171747 | Delta-Nonalactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:171846 | CHEBI:171846 | Delta-Undecalactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28834 | CHEBI:28834 | Deoxycholic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:16991 | CHEBI:16991 | Deoxyribonucleic acid from herring sperm | MAPPED | CHEBI | LEXICAL_MATCH | 0 |
+| CHEBI:16991 | CHEBI:16991 | Deoxyribonucleic acid from herring sperm | REJECTED | CHEBI | LEXICAL_MATCH | 0 |
 | mesh:C442243 | mesh:C442243 | Dermcidin | MAPPED | MESH | EXACT_MATCH | 0 |
 | kgmicrobe.compound:destomycin | kgmicrobe.compound:destomycin | Destomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | mesh:D014131 | mesh:D014131 | Desulfovibrio trace elements | MAPPED | MESH | LEXICAL_MATCH | 3 |
@@ -873,8 +873,8 @@ Total: 2308 ingredients
 | cas:79731-35-4 | CHEBI:193741 | Gly-DL-Asp | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:172669-64-6 | CHEBI:73898 | Gly-Gln monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:73801 | CHEBI:73801 | Gly-Glu | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17754 | CHEBI:17754 | Glycerol | MAPPED | CHEBI | EXACT_MATCH | 208 |
-| CHEBI:17754 | CHEBI:17754 | glycerol | MAPPED | CHEBI | EXACT_MATCH | 6 |
+| CHEBI:17754 | CHEBI:17754 | Glycerol | MAPPED | CHEBI | EXACT_MATCH | 214 |
+| CHEBI:17754 | CHEBI:17754 | glycerol | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:75937 | CHEBI:75937 | Glycerol mono-oleate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:75456 | CHEBI:75456 | Glycerol monostearate | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | cas:55073-41-1 | cas:55073-41-1 | Glycerol phosphate disodium salt hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -885,8 +885,8 @@ Total: 2308 ingredients
 | cas:9005-79-2 | CHEBI:28087 | Glycogen from bovine liver | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17071 | CHEBI:17071 | glycolaldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17497 | CHEBI:17497 | Glycolic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17201 | CHEBI:17201 | Glycyl-glycine | MAPPED | CHEBI | EXACT_MATCH | 9 |
-| CHEBI:17201 | CHEBI:17201 | Glycylglycine | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:17201 | CHEBI:17201 | Glycyl-glycine | MAPPED | CHEBI | EXACT_MATCH | 11 |
+| CHEBI:17201 | CHEBI:17201 | Glycylglycine | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15939 | CHEBI:15939 | Glycyrrhizic Acid, Ammonium Salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:27988-77-8 | cas:27988-77-8 | gold (III) chloride hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:16400 | CHEBI:16400 | Gossypetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1028,7 +1028,7 @@ Total: 2308 ingredients
 | CHEBI:74077 | CHEBI:74077 | L-Deoxyalliin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:37618 | CHEBI:37618 | L-Galactose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:6382-01-0 | CHEBI:16015 | L-Glutamic acid monopotassium salt monohydrate | MAPPED | CHEBI | NARROW_MATCH | 44 |
-| CHEBI:16856 | CHEBI:16856 | L-Glutathione | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16856 | CHEBI:16856 | L-Glutathione | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:5934-29-2 | NCIT:C87334 | L-Histidine monohydrochloride monohydrate | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:15699 | CHEBI:15699 | L-Homoserine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30797 | CHEBI:30797 | L-Malic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1485,7 +1485,7 @@ Total: 2308 ingredients
 | cas:29435-48-1 | CHEBI:20067 | Poly(3-hydroxybutyric acid) | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:61490 | CHEBI:61490 | poly(L-lysine) polymer | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:53389 | CHEBI:53389 | Poly(3-hydroxybutyrate) | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:61490 | CHEBI:61490 | Poly L Lysine Polymer | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:61490 | CHEBI:61490 | Poly L Lysine Polymer | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:46793 | CHEBI:46793 | Polyethylene glycol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:62969 | CHEBI:62969 | polygalacturonic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:9049-37-0 | CHEBI:62969 | Polygalacturonic acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1594,7 +1594,7 @@ Total: 2308 ingredients
 | CHEBI:15611 | CHEBI:15611 | sarcosine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:564-20-5 | mesh:C109395 | Sclareolide | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:17488 | CHEBI:17488 | Scopoletin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| ENVO:00002149 | ENVO:00002149 | Sea water | MAPPED | ENVO | EXACT_MATCH | 0 |
+| ENVO:00002149 | ENVO:00002149 | Sea water | REJECTED | ENVO | EXACT_MATCH | 0 |
 | ENVO:00002149 | ENVO:00002149 | Seawater | MAPPED | ENVO | EXACT_MATCH | 4 |
 | CHEBI:41865 | CHEBI:41865 | Sebacic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:75494 | CHEBI:75494 | Serine hydroxamate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1664,10 +1664,10 @@ Total: 2308 ingredients
 | CHEBI:91261 | CHEBI:91261 | Sodium malate | MAPPED | CHEBI | EXACT_MATCH | 50 |
 | CHEBI:91263 | CHEBI:91263 | Sodium maleate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | mesh:C025349 | mesh:C025349 | Sodium Metasilicate | MAPPED | MESH | EXACT_MATCH | 1 |
-| mesh:C025349 | mesh:C025349 | Sodium metasilicate (silicate for diatom frustules) | MAPPED | MESH | LEXICAL_MATCH | 0 |
+| mesh:C025349 | mesh:C025349 | Sodium metasilicate (silicate for diatom frustules) | REJECTED | MESH | LEXICAL_MATCH | 0 |
 | cas:2386-57-4 | cas:2386-57-4 | Sodium methanesulfonate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:sodium_nitrate_~28070_m_stock~29 | CHEBI:63005 | Sodium nitrate (0.70 M stock) | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:63005 | CHEBI:63005 | Sodium nitrate (nitrogen source) | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:63005 | CHEBI:63005 | Sodium nitrate (nitrogen source) | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:132100 | CHEBI:132100 | Sodium octanoate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:81860 | CHEBI:81860 | Sodium oleate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:234557 | CHEBI:234557 | Sodium palmitate | MAPPED | CHEBI | EXACT_MATCH | 2 |

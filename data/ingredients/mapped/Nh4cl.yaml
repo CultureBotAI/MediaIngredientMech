@@ -65,6 +65,9 @@ synonyms:
 - synonym_text: NH4Cl(Fisher A 649-500)
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Ammonium chloride (nitrogen source)
+  synonym_type: RAW_TEXT
+  source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 3240
@@ -175,6 +178,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
     nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-05T06:56:44.912150+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: 'Absorbed CHEBI:31206 ''Ammonium chloride (nitrogen source)'': 1 synonym(s),
+    occurrences +0/0, role facets from nutritional_roles. Same substance under two
+    names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv (#226). Source:
+    communitymech.ingredient:Ammonium_chloride_(nitrogen_source.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 12125-02-9
   data_source: CultureBotHT compounds_to_cas.csv
@@ -195,3 +206,11 @@ nutritional_roles:
       Simple component'
     curator_note: Widespread use in media formulations (3240 occurrences). High confidence
       based on 'Defined component' property.
+- role: NITROGEN_SOURCE
+  confidence: 0.7
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:24839
+      (inorganic ammonium salt)'
+    curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+      recommended.

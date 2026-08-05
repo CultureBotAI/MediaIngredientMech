@@ -7,7 +7,7 @@ synonyms:
 - synonym_text: beta-D-fructofuranosyl alpha-D-glucopyranoside
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -48,6 +48,15 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-05T06:56:09.917309+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_INTO
+  changes: Merged into CHEBI:17992 'Sucrose'; occurrences transferred. Tombstoned
+    REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+    in duplicate_identifier_baseline.tsv (#226).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1358); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
