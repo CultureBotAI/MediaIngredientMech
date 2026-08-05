@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-05T04:27:02.600627+00:00
+Generated: 2026-08-05T07:28:10.284494+00:00
 Total: 2876 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -83,7 +83,7 @@ Total: 2876 ingredients
 | CHEBI:15866 | CHEBI:15866 | 2-Deoxy-D-glucose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:7284-15-3 | CHEBI:86350 | 2-Deoxy-D-ribonic acid lithium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:17713 | CHEBI:17713 | 2-Deoxyadenosine 5-monophosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:16373-93-6 | cas:16373-93-6 | 2-Deoxyadenosine monohydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:16373-93-6 | CHEBI:17256 | 2-Deoxyadenosine monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:15698 | CHEBI:15698 | 2'-Deoxycytidine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15918 | CHEBI:15918 | 2-Deoxycytidine 5-monophosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16011 | CHEBI:16011 | 2-Ethylhexanol | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -91,8 +91,8 @@ Total: 2876 ingredients
 | CHEBI:184501 | CHEBI:184501 | 2-Hydroxy-3,4-Dimethoxybenzoic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:5094-24-6 | CHEBI:1148 | 2-Hydroxybutyric acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16540 | CHEBI:16540 | 2-Hydroxypyridine | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:1040352-40-6 | cas:1040352-40-6 | 2-Keto-D-gluconic acid hemicalcium salt hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| cas:3470-37-9 | cas:3470-37-9 | 2-Keto-D-gluconic acid hemicalcium salt monohydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:1040352-40-6 | CHEBI:27469 | 2-Keto-D-gluconic acid hemicalcium salt hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:3470-37-9 | CHEBI:27469 | 2-Keto-D-gluconic acid hemicalcium salt monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:201738 | CHEBI:201738 | 2-Mercaptopyridine N-oxide sodium salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:77761 | CHEBI:77761 | 2-Piperidinone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | mesh:C028805 | mesh:C028805 | 2-Sulfobenzoic acid | MAPPED | MESH | EXACT_MATCH | 0 |
@@ -201,7 +201,7 @@ Total: 2876 ingredients
 | cas:77298-66-9 | CHEBI:94071 | 7,2'-Dihydroxyflavone | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:67121 | CHEBI:67121 | 8-hydroxy-nitroquinoline | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:40585 | CHEBI:40585 | a-Cyclodextrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:305-72-6 | cas:305-72-6 | a-Ketoglutaric acid disodium salt hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 13 |
+| cas:305-72-6 | CHEBI:30915 | a-Ketoglutaric acid disodium salt hydrate | MAPPED | CHEBI | NARROW_MATCH | 13 |
 | cas:853-68-9 | cas:853-68-9 | AQDS | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:28987 | CHEBI:28987 | Abietic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2365 | CHEBI:2365 | Abscisic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -231,7 +231,7 @@ Total: 2876 ingredients
 | mesh:C006403 | mesh:C006403 | Actinotiocin | MAPPED | MESH | EXACT_MATCH | 0 |
 | NCIT:C77524 | NCIT:C77524 | Activated charcoal | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:16708 | CHEBI:16708 | Adenine | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| cas:2922-28-3 | cas:2922-28-3 | Adenine hydrochloride hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 31 |
+| cas:2922-28-3 | CHEBI:16708 | Adenine hydrochloride hydrate | MAPPED | CHEBI | NARROW_MATCH | 31 |
 | NCIT:C221830 | NCIT:C221830 | Adenomycin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:16335 | CHEBI:16335 | Adenosine | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:17489 | CHEBI:17489 | Adenosine 3,5-Cyclic Monophosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -368,7 +368,7 @@ Total: 2876 ingredients
 | CHEBI:69499 | CHEBI:69499 | Bergenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:53502 | CHEBI:53502 | beryllium sulfate tetrahydrate | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:10352 | CHEBI:10352 | Beta-Amyrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:154804-51-0 | cas:154804-51-0 | Beta-Glycerophosphate disodium salt hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:154804-51-0 | CHEBI:17270 | Beta-Glycerophosphate disodium salt hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:10429 | CHEBI:10429 | Beta-Lapachone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | mesh:C000601869 | mesh:C000601869 | beta-Lipomycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:16958 | CHEBI:16958 | Beta-alanine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -479,7 +479,7 @@ Total: 2876 ingredients
 | CHEBI:3498 | CHEBI:3498 | Cefotaxime sodium salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3501 | CHEBI:3501 | Cefoxitin sodium salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31380 | CHEBI:31380 | Cefsulodin sodium salt hydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:120618-65-7 | cas:120618-65-7 | Ceftazidime hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:120618-65-7 | CHEBI:3508 | Ceftazidime hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:3514 | CHEBI:3514 | Ceftriaxone disodium salt hemi(heptahydrate) | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | BTO:0004304 | BTO:0004304 | Cell lysate | MAPPED | BTO | EXACT_MATCH | 4 |
 | CHEBI:17057 | CHEBI:17057 | Cellobiose | MAPPED | CHEBI | EXACT_MATCH | 208 |
@@ -600,9 +600,9 @@ Total: 2876 ingredients
 | CHEBI:15399 | CHEBI:15399 | D(+)-Carvone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:181432 | CHEBI:181432 | D-(+)-Galactosamine hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16217 | CHEBI:16217 | D-(+)-Gluconic acid gamma-lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:207511-10-2 | cas:207511-10-2 | D-(+)-Melezitose hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:207511-10-2 | CHEBI:6731 | D-(+)-Melezitose hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:32528 | CHEBI:32528 | D-(+)-Turanose | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:10030-67-8 | cas:10030-67-8 | D-(+)-melezitose monohydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:10030-67-8 | CHEBI:6731 | D-(+)-melezitose monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16719 | CHEBI:16719 | D-(-)-Pantolactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16789 | CHEBI:16789 | D-(-)-lyxose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4249 | CHEBI:4249 | D-(-)-tagatose | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -737,7 +737,7 @@ Total: 2876 ingredients
 | CHEBI:16586 | CHEBI:16586 | e-Amino-N-Caproic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4735 | CHEBI:4735 | EDTA (acid form) | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C360 | NCIT:C360 | EDTA (chelating agent) | MAPPED | NCIT | LEXICAL_MATCH | 0 |
-| cas:13235-36-4 | cas:13235-36-4 | EDTA tetrasodium tetrahydrate salt | MAPPED | CAS | FALLBACK_REGISTRY | 4 |
+| cas:13235-36-4 | CHEBI:4735 | EDTA tetrasodium tetrahydrate salt | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.compound:e_4_aminostyryl_acetate | kgmicrobe.compound:e_4_aminostyryl_acetate | E 4 Aminostyryl Acetate | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:77543 | CHEBI:77543 | Ebselen | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4755 | CHEBI:4755 | Econazole nitrate salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -840,7 +840,7 @@ Total: 2876 ingredients
 | cas:108321-42-2 | cas:108321-42-2 | G418 disulfate salt solution | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:11078-30-1 | CHEBI:27680 | Galactomannan from guar | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:28260 | CHEBI:28260 | Galactose | MAPPED | CHEBI | EXACT_MATCH | 10 |
-| cas:19046-60-7 | cas:19046-60-7 | Galactose 1-phosphate dipotassium salt pentahydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:19046-60-7 | CHEBI:17973 | Galactose 1-phosphate dipotassium salt pentahydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:30778 | CHEBI:30778 | Gallic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:13450-90-3 | cas:13450-90-3 | Gallium(III)chloride | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:67521 | CHEBI:67521 | Gambogic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -877,7 +877,7 @@ Total: 2876 ingredients
 | CHEBI:17754 | CHEBI:17754 | glycerol | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:75937 | CHEBI:75937 | Glycerol mono-oleate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:75456 | CHEBI:75456 | Glycerol monostearate | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| cas:55073-41-1 | cas:55073-41-1 | Glycerol phosphate disodium salt hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:55073-41-1 | CHEBI:26707 | Glycerol phosphate disodium salt hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:15428 | CHEBI:15428 | Glycine | MAPPED | CHEBI | EXACT_MATCH | 99 |
 | CHEBI:182320 | CHEBI:182320 | Glycocholic acid hydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16344 | CHEBI:16344 | Glycocyamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -888,7 +888,7 @@ Total: 2876 ingredients
 | CHEBI:17201 | CHEBI:17201 | Glycyl-glycine | MAPPED | CHEBI | EXACT_MATCH | 9 |
 | CHEBI:17201 | CHEBI:17201 | Glycylglycine | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:15939 | CHEBI:15939 | Glycyrrhizic Acid, Ammonium Salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:27988-77-8 | cas:27988-77-8 | gold (III) chloride hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:27988-77-8 | CHEBI:30076 | gold (III) chloride hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16400 | CHEBI:16400 | Gossypetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28584 | CHEBI:28584 | Gossypol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1405-97-6 | NCIT:C65816 | Gramicidin | MAPPED | NCIT | NARROW_MATCH | 0 |
@@ -1036,7 +1036,7 @@ Total: 2876 ingredients
 | cas:587-33-7 | CHEBI:44303 | L-Meta-tyrosine | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:30913 | CHEBI:30913 | L-Pipecolic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:18183 | CHEBI:18183 | L-Pyroglutamic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:10030-85-0 | cas:10030-85-0 | L-Rhamnose monohydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:10030-85-0 | CHEBI:62345 | L-Rhamnose monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:65328 | CHEBI:65328 | L-Xylose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16977 | CHEBI:16977 | L-Alanine | MAPPED | CHEBI | EXACT_MATCH | 20 |
 | CHEBI:2596 | CHEBI:2596 | L-alliin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1150,7 +1150,7 @@ Total: 2876 ingredients
 | CHEBI:17306 | CHEBI:17306 | Maltose | MAPPED | CHEBI | EXACT_MATCH | 139 |
 | CHEBI:18167 | CHEBI:18167 | maltose | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:28460 | CHEBI:28460 | Maltotetraose | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:312693-63-3 | cas:312693-63-3 | Maltotriose hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:312693-63-3 | CHEBI:61993 | Maltotriose hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:35825 | CHEBI:35825 | Mandelic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:6682 | CHEBI:6682 | Mangiferin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:9036-88-8 | NCIT:C14271 | Mannan from Saccharomyces cerevisiae | MAPPED | NCIT | NARROW_MATCH | 0 |
@@ -1416,7 +1416,7 @@ Total: 2876 ingredients
 | CHEBI:45863 | CHEBI:45863 | Paclitaxel | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | mesh:D010142 | mesh:D010142 | Pactamycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:69581 | CHEBI:69581 | Paeonol | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:343336-76-5 | cas:343336-76-5 | palatinose hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:343336-76-5 | CHEBI:18394 | palatinose hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:53434 | CHEBI:53434 | Palladium(II) chloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16096 | CHEBI:16096 | Palmatine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:10605-02-4 | cas:10605-02-4 | Palmatine chloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -1496,7 +1496,7 @@ Total: 2876 ingredients
 | cas:37199-66-9 | cas:37199-66-9 | potassium (poly)sulfide | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:138-84-1 | cas:138-84-1 | Potassium 4-aminobenzoate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:74978-20-4 | NCIT:C83530 | Potassium aluminum chloride | MAPPED | NCIT | NARROW_MATCH | 2 |
-| cas:1030365-02-6 | cas:1030365-02-6 | potassium citramalate monohydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:1030365-02-6 | CHEBI:15584 | potassium citramalate monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:53444 | CHEBI:53444 | Potassium dichromate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:66872 | CHEBI:66872 | potassium fluoride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:12208-13-8 | cas:12208-13-8 | potassium hexahydroxoantimonate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -1504,7 +1504,7 @@ Total: 2876 ingredients
 | kgmicrobe.ingredient:potassium_phosphate_buffer | NCIT:C29321 | Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 2 |
 | cas:16788-57-1 | mesh:C013216 | Potassium phosphate dibasic trihydrate | MAPPED | MESH | NARROW_MATCH | 6 |
 | CHEBI:75248 | CHEBI:75248 | potassium tellurate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:314041-10-6 | cas:314041-10-6 | potassium tellurate hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:314041-10-6 | CHEBI:30464 | potassium tellurate hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:123333-66-4 | CHEBI:75248 | Potassium tellurite hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | FOODON:03302378 | FOODON:03302378 | Potato flour | MAPPED | FOODON | EXACT_MATCH | 0 |
 | CHEBI:145933 | CHEBI:145933 | Pravastatin lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1677,7 +1677,7 @@ Total: 2876 ingredients
 | cas:7775-27-1 | mesh:C024625 | Sodium Persulfate | MAPPED | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:sodium_phosphate_buffer | NCIT:C29321 | Sodium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 0 |
 | CHEBI:37583 | CHEBI:37583 | Sodium phosphate dibasic | MAPPED | CHEBI | EXACT_MATCH | 10 |
-| cas:13517-23-2 | cas:13517-23-2 | Sodium phosphite dibasic pentahydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:13517-23-2 | CHEBI:36361 | Sodium phosphite dibasic pentahydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:sodium_potassium_phosphate_buffer | NCIT:C29321 | Sodium Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 0 |
 | CHEBI:71240 | CHEBI:71240 | Sodium pyrophosphate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | cas:7758-16-9 | NCIT:C77500 | Sodium pyrophosphate dibasic | MAPPED | NCIT | NARROW_MATCH | 0 |
@@ -1685,7 +1685,7 @@ Total: 2876 ingredients
 | CHEBI:63675 | CHEBI:63675 | Sodium succinate | MAPPED | CHEBI | EXACT_MATCH | 145 |
 | CHEBI:150903 | CHEBI:150903 | Sodium succinate dibasic | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:63017 | CHEBI:63017 | Sodium tartrate | MAPPED | CHEBI | EXACT_MATCH | 15 |
-| cas:10489-48-2 | cas:10489-48-2 | Sodium thiophosphate tribasic hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:10489-48-2 | CHEBI:37511 | Sodium thiophosphate tribasic hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:32150 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:114249 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 46 |
 | CHEBI:63686 | CHEBI:63686 | Sodium succinate dibasic hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 11 |
@@ -1707,7 +1707,7 @@ Total: 2876 ingredients
 | CHEBI:36383 | CHEBI:36383 | SrCl2 | MAPPED | CHEBI | EXACT_MATCH | 214 |
 | CHEBI:36385 | CHEBI:36385 | SrCl2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 143 |
 | CHEBI:17164 | CHEBI:17164 | Stachyose - 70% | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:54261-98-2 | cas:54261-98-2 | Stachyose hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:54261-98-2 | CHEBI:17164 | Stachyose hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:41958 | CHEBI:41958 | Stallimycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C1295 | NCIT:C1295 | Staphylomycin M1 | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:28017 | CHEBI:28017 | Starch | MAPPED | CHEBI | EXACT_MATCH | 424 |
@@ -1751,7 +1751,7 @@ Total: 2876 ingredients
 | cas:39300-88-4 | FOODON:03413299 | Tara gum | MAPPED | FOODON | NARROW_MATCH | 0 |
 | CHEBI:15891 | CHEBI:15891 | Taurine | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:181226 | CHEBI:181226 | Taurocholic acid sodium salt hydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:2451-01-6 | cas:2451-01-6 | Terpene hydrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:2451-01-6 | CHEBI:134806 | Terpene hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:tertiomycin_a | kgmicrobe.compound:tertiomycin_a | Tertiomycin A | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | kgmicrobe.compound:tertiomycin_b | kgmicrobe.compound:tertiomycin_b | Tertiomycin B | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:39035 | CHEBI:39035 | TES | MAPPED | CHEBI | EXACT_MATCH | 11 |

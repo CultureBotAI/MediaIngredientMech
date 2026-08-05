@@ -1,16 +1,22 @@
 identifier: cas:154804-51-0
 preferred_term: Beta-Glycerophosphate disodium salt hydrate
 ontology_mapping:
-  ontology_id: cas:154804-51-0
-  ontology_label: Beta-Glycerophosphate disodium salt hydrate
-  ontology_source: CAS
-  mapping_quality: FALLBACK_REGISTRY
+  ontology_id: CHEBI:17270
+  ontology_label: glycerol 2-phosphate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT. CAS-RN 154804-51-0 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
+  - evidence_type: DATABASE_MATCH
+    source: anchor_cas_hydrate_records
+    notes: Beta-Glycerophosphate disodium salt hydrate is a hydrate/salt with its
+      own CAS and no exact ChEBI term; anchored to the parent CHEBI:17270 'glycerol
+      2-phosphate' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium
+      salt hydrate of glycerol 2-phosphate
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -40,6 +46,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-05T07:27:21.323140+00:00'
+  curator: anchor_cas_hydrate_records
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:17270 ''glycerol 2-phosphate''
+    and registry kgmicrobe.compound:beta-glycerophosphate_disodium_salt_hydrate. identifier
+    cas:154804-51-0 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
+    disodium salt hydrate of glycerol 2-phosphate'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 154804-51-0
   data_source: CultureBotHT compounds_to_cas.csv
