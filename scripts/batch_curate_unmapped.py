@@ -30,6 +30,7 @@ from rich.table import Table
 _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
+from mediaingredientmech.curation.hydrate_guard import HydrateMismatch
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.utils.chemical_normalizer import (
     categorize_unmapped_name,
@@ -67,6 +68,7 @@ class BatchCurationSession:
 
         self.curated_count = 0
         self.skipped_count = 0
+        self.hydrate_refused = 0
         self.decisions: list[dict] = []
         self.processed_ids: set[str] = set()
 
@@ -197,8 +199,9 @@ class BatchCurationSession:
         if auto_accept and candidates and candidates[0].score >= self.min_confidence:
             top = candidates[0]
             if self._confirm_auto_accept(name, norm_result['normalized'], top):
-                self._accept_mapping(record, top, norm_result, auto=True)
-                return 'mapped'
+                if self._accept_mapping(record, top, norm_result, auto=True):
+                    return 'mapped'
+                return 'skipped'
 
         # Interactive decision
         action = self._prompt_action()
@@ -334,13 +337,30 @@ class BatchCurationSession:
         applied_rules = norm_result.get('applied_rules', [])
 
         # Accept the mapping
-        self.curator.accept_mapping(
-            record,
-            candidate,
-            quality=quality,
-            llm_assisted=False,
-            notes=f"Batch curated with normalization: {', '.join(applied_rules)}" if applied_rules else "Batch curated",
-        )
+        try:
+            self.curator.accept_mapping(
+                record,
+                candidate,
+                quality=quality,
+                llm_assisted=False,
+                notes=f"Batch curated with normalization: {', '.join(applied_rules)}" if applied_rules else "Batch curated",
+            )
+        except HydrateMismatch as exc:
+            # #243: a hydrate label must not be filed onto its anhydrous parent.
+            # Skip rather than abort the batch, and say why.
+            console.print(f"[yellow]REFUSED[/yellow] {record.get('preferred_term')!r}: {exc}")
+            self.hydrate_refused += 1
+            self.skipped_count += 1
+            # without a decision row the refusal is invisible in the export too
+            self._record_decision(
+                record.get('identifier', ''),
+                record.get('preferred_term', ''),
+                norm_result,
+                'refused_hydrate_on_non_hydrate_term',
+                ontology_id=candidate.ontology_id,
+                ontology_label=candidate.label,
+            )
+            return False
 
         # Add original form as synonym if normalization was applied
         if applied_rules and original_name != normalized_name:
@@ -364,6 +384,7 @@ class BatchCurationSession:
                 f"[dim]Added '{original_name}' as synonym (normalization: {', '.join(applied_rules)})[/dim]"
             )
         self.curated_count += 1
+        return True
 
     def _add_original_as_synonym(
         self,
@@ -559,7 +580,10 @@ def main(
     console.print(
         f"\n[bold]Session complete:[/bold]\n"
         f"  Curated: {session.curated_count}\n"
-        f"  Skipped: {session.skipped_count}\n"
+        f"  Skipped: {session.skipped_count}"
+        + (f" (of which {session.hydrate_refused} refused: hydrate label onto a "
+           "non-hydrate term — see MAPPING_SEMANTICS.md Section 3)"
+           if session.hydrate_refused else "") + "\n"
         f"  Total processed: {len(session.processed_ids)}"
     )
 

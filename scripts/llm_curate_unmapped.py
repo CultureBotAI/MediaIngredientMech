@@ -25,6 +25,7 @@ from rich.table import Table
 _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
+from mediaingredientmech.curation.hydrate_guard import HydrateMismatch
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.utils.chemical_normalizer import (
     categorize_unmapped_name,
@@ -196,14 +197,13 @@ def process_ingredient_with_llm(
             return "mapped"
 
         if Confirm.ask("Auto-accept this mapping?", default=True):
-            accept_llm_mapping(
+            return accept_llm_mapping(
                 record,
                 suggestion,
                 ingredient_curator,
                 llm_curator.model,
                 norm_result,
             )
-            return "mapped"
 
     # Present options
     console.print("\n[bold]Actions:[/bold]")
@@ -226,7 +226,7 @@ def process_ingredient_with_llm(
                 default="4",
             )
         )
-        accept_llm_mapping(
+        return accept_llm_mapping(
             record,
             suggestion,
             ingredient_curator,
@@ -234,7 +234,6 @@ def process_ingredient_with_llm(
             norm_result,
             quality=quality,
         )
-        return "mapped"
 
     elif action == "m":
         return handle_manual_search(
@@ -257,7 +256,7 @@ def accept_llm_mapping(
     llm_model: str,
     norm_result: dict,
     quality: str = "LLM_ASSISTED",
-) -> None:
+) -> str:
     """Accept an LLM-suggested mapping."""
     # Convert LLMSuggestion to OntologyCandidate
     candidate = OntologyCandidate(
@@ -270,14 +269,20 @@ def accept_llm_mapping(
     )
 
     # Accept mapping with LLM tracking
-    curator.accept_mapping(
-        record,
-        candidate,
-        quality=quality,
-        llm_assisted=True,
-        llm_model=llm_model,
-        notes=f"LLM reasoning: {suggestion.reasoning}",
-    )
+    try:
+        curator.accept_mapping(
+            record,
+            candidate,
+            quality=quality,
+            llm_assisted=True,
+            llm_model=llm_model,
+            notes=f"LLM reasoning: {suggestion.reasoning}",
+        )
+    except HydrateMismatch as exc:
+        # #243: a hydrate label must not be filed onto its anhydrous parent.
+        # Leave the record UNMAPPED for a curator rather than abort the run.
+        console.print(f"[yellow]REFUSED[/yellow] {record.get('preferred_term')!r}: {exc}")
+        return "skipped"
 
     # Add original form as synonym if normalized
     original_name = norm_result.get("original", "")
@@ -316,6 +321,8 @@ def accept_llm_mapping(
         console.print(
             f"[dim]Added '{original_name}' as synonym[/dim]"
         )
+
+    return "mapped"
 
 
 def handle_manual_search(
@@ -376,12 +383,16 @@ def handle_manual_search(
             return "skipped"
 
         candidate = candidates[idx]
-        curator.accept_mapping(
-            record,
-            candidate,
-            quality="MANUAL_CURATION",
-            llm_assisted=False,
-        )
+        try:
+            curator.accept_mapping(
+                record,
+                candidate,
+                quality="MANUAL_CURATION",
+                llm_assisted=False,
+            )
+        except HydrateMismatch as exc:
+            console.print(f"[yellow]REFUSED[/yellow] {exc}")
+            return "skipped"
 
         console.print(
             f"[green]Mapped to {candidate.ontology_id} ({candidate.label})[/green]"

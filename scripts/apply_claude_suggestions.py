@@ -20,6 +20,7 @@ from rich.table import Table
 _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
+from mediaingredientmech.curation.hydrate_guard import HydrateMismatch
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.utils.chemical_normalizer import normalize_chemical_name
 from mediaingredientmech.utils.ontology_client import OntologyCandidate, OntologyClient
@@ -155,6 +156,9 @@ def apply_suggestion(
 
         return True, f"Mapped to {ontology_id} ({ontology_label})"
 
+    except HydrateMismatch as exc:
+        # #243: a refusal is a decision, not an error — say so distinctly.
+        return False, f"REFUSED (hydrate label onto a non-hydrate term): {exc}"
     except Exception as e:
         return False, f"Error applying mapping: {e}"
 

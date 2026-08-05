@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 import re
 from pathlib import Path
-from typing import Any, Optional
+from typing import Callable, Any, Optional
 
 import yaml
 from linkml_runtime.utils.schemaview import SchemaView
@@ -70,6 +70,8 @@ VALID_STATUSES = {
     "REJECTED",
 }
 
+from .hydrate_guard import HydrateMismatch, hydrate_mismatch
+
 VALID_QUALITY = {
     "EXACT_MATCH",
     "SYNONYM_MATCH",
@@ -110,10 +112,17 @@ class IngredientCurator:
         data_path: Optional[Path] = None,
         curator_name: str = "anonymous",
         ontology_client: Optional[OntologyClient] = None,
+        formula_lookup: Optional[Callable[[str], Optional[str]]] = None,
     ):
         self.data_path = data_path or DEFAULT_UNMAPPED_PATH
         self.curator_name = curator_name
         self.ontology_client = ontology_client or OntologyClient()
+        # Optional CURIE -> chemical formula lookup, used only by the hydrate
+        # guard to recognise a term whose LABEL is silent about being a hydrate
+        # (CHEBI:185255 'Ammonium alum' is Al.12H2O.H4N.2O4S; 181 ChEBI terms are
+        # like it). Left None by default so the curator never requires a ChEBI
+        # build; callers that have one should pass it. Issue #243.
+        self.formula_lookup = formula_lookup
         self._collection: dict[str, Any] = {}
         self._records: list[dict[str, Any]] = []
         self._dirty = False
@@ -197,6 +206,7 @@ class IngredientCurator:
         llm_model: Optional[str] = None,
         notes: Optional[str] = None,
         auto_enrich: bool = True,
+        allow_hydrate_mismatch: bool = False,
     ) -> dict[str, Any]:
         """Accept an ontology mapping for a record.
 
@@ -209,9 +219,15 @@ class IngredientCurator:
             llm_model: LLM model identifier if applicable.
             notes: Optional notes about the mapping.
             auto_enrich: Whether to automatically enrich CHEBI mappings with chemical properties.
+            allow_hydrate_mismatch: Accept even when the record names a hydrate and
+                the candidate term does not. Off by default — see hydrate_guard.
 
         Returns:
             The updated record.
+
+        Raises:
+            HydrateMismatch: the record names a hydrate and the term does not, and
+                allow_hydrate_mismatch was not set (#243).
         """
         if quality not in VALID_QUALITY:
             raise ValueError(f"Invalid quality: {quality}. Must be one of {VALID_QUALITY}")
@@ -220,6 +236,17 @@ class IngredientCurator:
             raise ValueError(f"Invalid match_level: {match_level}. Must be one of {VALID_MATCH_LEVEL}")
 
         previous_status = record.get("mapping_status", "UNMAPPED")
+
+        # The normalise-then-search path strips `x 7 H2O` to find the family and
+        # would otherwise accept the family's anhydrous parent as if it were the
+        # hydrate — the identity collapse of #218/#243. This is the choke point
+        # every caller goes through, so the guard lives here rather than in each
+        # curation script.
+        if not allow_hydrate_mismatch:
+            reason = hydrate_mismatch(record.get("preferred_term", ""), candidate,
+                                      self.formula_lookup)
+            if reason:
+                raise HydrateMismatch(reason)
 
         # Set ontology mapping
         record["ontology_mapping"] = {

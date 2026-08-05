@@ -22,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.utils.llm_curator import LLMCurator, LLMSuggestion, validate_llm_suggestion
 from mediaingredientmech.utils.ontology_client import OntologyCandidate
+from mediaingredientmech.curation.hydrate_guard import HydrateMismatch
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 
 # Try to import OntologyClient (may not be available)
@@ -273,6 +274,12 @@ def batch_curate(
                     "action": "skipped_low_confidence",
                 })
 
+            results["processed"] += 1
+
+        except HydrateMismatch as exc:
+            # #243: a deliberate refusal, not a failure — do not bury it in `failed`.
+            click.echo(f"  ⊘ REFUSED (hydrate on a non-hydrate term): {exc}")
+            results["refused_hydrate"] = results.get("refused_hydrate", 0) + 1
             results["processed"] += 1
 
         except Exception as e:
