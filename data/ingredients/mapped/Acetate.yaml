@@ -36,6 +36,9 @@ synonyms:
     Organic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Acetate (carbon source)
+  synonym_type: RAW_TEXT
+  source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 44
@@ -115,6 +118,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-05T06:56:28.374779+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: 'Absorbed CHEBI:30089 ''Acetate (carbon source)'': 1 synonym(s), occurrences
+    +0/0, role facets from nutritional_roles. Same substance under two names; MERGE_SAME_SUBSTANCE
+    in duplicate_identifier_baseline.tsv (#226). Source: communitymech.ingredient:Acetate_(carbon_source.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 71-50-1
   data_source: PubChem API
@@ -137,3 +147,9 @@ nutritional_roles:
     reference_text: Canonical energy substrate (catabolised for energy)
     curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
       recommended.
+- role: CARBON_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

@@ -49,11 +49,18 @@ term anywhere, or (d) leave it UNMAPPED when its composition is genuinely variab
 ## Procedure
 
 ### 1. Build + cluster the worklist
-Run `analyze_unmapped.py`, apply the `$ARGUMENTS` filter, and **deduplicate by chemical
-identity** after normalization — `MgSO4•7H2O` / `MgSO4·7H₂O` / `Magnesium sulfate
-heptahydrate` are one compound; ground the anhydrous parent once and carry the hydrate as a
-`HYDRATE_FORM` synonym. Cluster spelling variants and catalog-tagged forms so one decision
-covers all surface forms.
+Run `analyze_unmapped.py`, apply the `$ARGUMENTS` filter, and **cluster by chemical
+identity** after normalization. `MgSO4•7H2O` / `MgSO4·7H₂O` / `Magnesium sulfate
+heptahydrate` are three spellings of **one** compound — collapse those into one record.
+Cluster spelling variants and catalog-tagged forms so one decision covers all surface forms.
+
+**But a different hydration state is a different compound.** `MgSO4` and `MgSO4•7H2O` are
+120.37 and 246.47 g/mol, which is exactly what a recipe depends on, so they are separate
+records and must not share an identifier. Per **MAPPING_SEMANTICS.md Section 3**: give each
+hydration state a hydrate-specific ontology term if one exists, else its own
+`cas:<hydrate CAS>` with a `narrowMatch` to the anhydrous parent and the Rule B1 registry
+row. Grounding the anhydrous parent once and hanging the hydrate off it as a `HYDRATE_FORM`
+synonym is what produced the 32 families tracked in #218.
 
 ### 2. Tier-0 bulk grounding — no research needed (do this first)
 Most of the SIMPLE_CHEMICAL head is mechanical. Use the `map-media-ingredients` cascade

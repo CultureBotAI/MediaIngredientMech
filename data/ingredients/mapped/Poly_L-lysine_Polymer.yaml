@@ -9,7 +9,13 @@ ontology_mapping:
   - evidence_type: LEXICAL_MATCH
     source: kgmicrobe.compound:poly_l_lysine_polymer
     notes: Auto-curated from UNMAPPED_PENDING_CURATION queue; OLS exact-label match
-synonyms: []
+synonyms:
+- synonym_text: Poly L Lysine Polymer
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: poly(L-lysine)
+  synonym_type: RAW_TEXT
+  source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -32,4 +38,11 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
   llm_assisted: false
+- timestamp: '2026-08-05T06:57:34.464174+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: 'Absorbed CHEBI:61490 ''Poly L Lysine Polymer'': 2 synonym(s), occurrences
+    +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+    (#226).'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT

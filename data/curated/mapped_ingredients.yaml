@@ -1,6 +1,6 @@
-generation_date: '2026-08-05T07:57:29.737767+00:00'
+generation_date: '2026-08-05T18:02:35.008352+00:00'
 total_count: 2308
-mapped_count: 2294
+mapped_count: 2279
 unmapped_count: 0
 ingredients:
 - identifier: CHEBI:64243
@@ -4051,7 +4051,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:17256 ''2''-deoxyadenosine''
@@ -4503,7 +4503,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:27469 ''2-dehydro-D-gluconic
@@ -4591,7 +4591,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:27469 ''2-dehydro-D-gluconic
@@ -11404,7 +11404,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:30915 ''2-oxoglutaric
@@ -12154,6 +12154,9 @@ ingredients:
       Organic compound'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Acetate (carbon source)
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 44
@@ -12233,6 +12236,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T06:56:28.374779+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:30089 ''Acetate (carbon source)'': 1 synonym(s), occurrences
+      +0/0, role facets from nutritional_roles. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226). Source: communitymech.ingredient:Acetate_(carbon_source.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 71-50-1
     data_source: PubChem API
@@ -12255,13 +12265,20 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
+  - &id001
+    role: CARBON_SOURCE
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: CHEBI:30089
   preferred_term: Acetate (carbon source)
   synonyms:
   - synonym_text: Acetate (carbon source)
     synonym_type: RAW_TEXT
     source: communitymech-unmapped
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12302,6 +12319,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T06:56:28.374779+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:30089 'Acetate'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Acetate_(carbon_source));
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -12321,12 +12347,7 @@ ingredients:
     smiles: CC(=O)[O-]
     data_source: CHEBI sqlite (oaklib)
   nutritional_roles:
-  - role: CARBON_SOURCE
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  - *id001
   - role: ENERGY_SOURCE
     confidence: 0.7
     evidence:
@@ -13332,7 +13353,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:16708 ''adenine'' and
@@ -15801,7 +15822,7 @@ ingredients:
   - synonym_text: Ammonium chloride (nitrogen source)
     synonym_type: RAW_TEXT
     source: communitymech-unmapped
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15838,6 +15859,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
       nutritional_roles.NITROGEN_SOURCE'
+  - timestamp: '2026-08-05T06:56:44.912150+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:31206 'NH4Cl'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Ammonium_chloride_(nitrogen_source));
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -15858,7 +15888,8 @@ ingredients:
     data_source: CHEBI sqlite (oaklib)
   kg_microbe_node_id: CHEBI:31206
   nutritional_roles:
-  - role: NITROGEN_SOURCE
+  - &id007
+    role: NITROGEN_SOURCE
     confidence: 0.7
     evidence:
     - reference_type: COMPUTATIONAL_PREDICTION
@@ -16629,7 +16660,7 @@ ingredients:
   - synonym_text: sodium 6beta-[(2R)-2-amino-2-phenylacetamido]-2,2-dimethylpenam-3alpha-carboxylate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -16661,6 +16692,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-05T06:57:17.869208+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:34535 'Na-ampicillin'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1283); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -20935,6 +20975,9 @@ ingredients:
   - synonym_text: Bacto Tryptic Soy Agar
     synonym_type: RAW_TEXT
     source: extracted_from_trypticase_peptone_yaml
+  - synonym_text: Bacto Tryptic Soy Agar (Difco)
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -20958,6 +21001,13 @@ ingredients:
     action: AUTO_UPGRADE_TO_MICRO
     changes: primary UNMAPPED_0137 → MICRO:0000114 (strategy=stem-match)
     llm_assisted: false
+  - timestamp: '2026-08-05T06:58:40.984201+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed MICRO:0000114 ''Bacto Tryptic Soy Agar (Difco)'': 1 synonym(s),
+      occurrences +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+      (#226). Source: communitymech.ingredient:Bacto_Tryptic_Soy_Agar_(Difco.'
+    llm_assisted: true
   notes: Extracted from over-conflated Trypticase_Peptone.yaml synonyms
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
@@ -20976,7 +21026,7 @@ ingredients:
   - synonym_text: Bacto Tryptic Soy Agar (Difco)
     synonym_type: RAW_TEXT
     source: communitymech-unmapped
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -20998,6 +21048,15 @@ ingredients:
     action: AUTO_UPGRADE_TO_MICRO
     changes: primary UNMAPPED_0598 → MICRO:0000114 (strategy=stem-match)
     llm_assisted: false
+  - timestamp: '2026-08-05T06:58:40.984201+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into MICRO:0000114 'Bacto Tryptic Soy Agar'; occurrences transferred.
+      Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Bacto_Tryptic_Soy_Agar_(Difco));
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -21017,6 +21076,9 @@ ingredients:
   - synonym_text: Bacto Tryptic Soy Broth
     synonym_type: RAW_TEXT
     source: extracted_from_trypticase_peptone_yaml
+  - synonym_text: Bacto Tryptic Soy Broth (Difco)
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -21040,6 +21102,13 @@ ingredients:
     action: AUTO_UPGRADE_TO_MICRO
     changes: primary UNMAPPED_0136 → MICRO:0000113 (strategy=stem-match)
     llm_assisted: false
+  - timestamp: '2026-08-05T06:58:24.792758+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed MICRO:0000113 ''Bacto Tryptic Soy Broth (Difco)'': 1 synonym(s),
+      occurrences +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+      (#226). Source: communitymech.ingredient:Bacto_Tryptic_Soy_Broth_(Difco.'
+    llm_assisted: true
   notes: Extracted from over-conflated Trypticase_Peptone.yaml synonyms
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
@@ -21058,7 +21127,7 @@ ingredients:
   - synonym_text: Bacto Tryptic Soy Broth (Difco)
     synonym_type: RAW_TEXT
     source: communitymech-unmapped
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -21080,6 +21149,15 @@ ingredients:
     action: AUTO_UPGRADE_TO_MICRO
     changes: primary UNMAPPED_0599 → MICRO:0000113 (strategy=stem-match)
     llm_assisted: false
+  - timestamp: '2026-08-05T06:58:24.792758+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into MICRO:0000113 'Bacto Tryptic Soy Broth'; occurrences transferred.
+      Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Bacto_Tryptic_Soy_Broth_(Difco));
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -22610,7 +22688,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:17270 ''glycerol 2-phosphate''
@@ -27345,7 +27423,7 @@ ingredients:
   - synonym_text: Calcium D-Pantothenate
     synonym_type: RAW_TEXT
     source: mim-queue
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -27383,6 +27461,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-05T06:57:01.219805+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:31345 'Calcium pantothenate'; occurrences transferred.
+      Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1585); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -27403,7 +27490,8 @@ ingredients:
     data_source: CHEBI sqlite (oaklib)
   kg_microbe_node_id: CHEBI:31345
   nutritional_roles:
-  - role: VITAMIN_SOURCE
+  - &id002
+    role: VITAMIN_SOURCE
     confidence: 0.8
     evidence:
     - reference_type: COMPUTATIONAL_PREDICTION
@@ -27469,6 +27557,9 @@ ingredients:
   - synonym_text: Calcium panthothenate
     synonym_type: EXACT_SYNONYM
     source: unmapped_duplicate_review_2026_05_11
+  - synonym_text: Calcium D-Pantothenate
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 945
@@ -27638,6 +27729,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-05T06:57:01.219805+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:31345 ''Calcium D-Pantothenate'': 1 synonym(s), occurrences
+      +0/0, role facets from nutritional_roles. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226). Source: mediadive.ingredient:1585.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 137-08-6
     data_source: PubChem API
@@ -27658,6 +27756,7 @@ ingredients:
         component'
       curator_note: Widespread use in media formulations (945 occurrences). High confidence
         based on 'Defined component' property.
+  - *id002
 - identifier: NCIT:C105971
   preferred_term: Calprotectin
   synonyms:
@@ -31228,7 +31327,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:3508 ''ceftazidime''
@@ -32659,13 +32758,13 @@ ingredients:
   nutritional_roles:
   - role: TRACE_ELEMENT
     confidence: 1.0
-    evidence: &id001
+    evidence: &id003
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: IRON_SOURCE
     confidence: 1.0
-    evidence: *id001
+    evidence: *id003
 - identifier: kgmicrobe.compound:champamycin_b
   preferred_term: Champamycin B
   ontology_mapping:
@@ -40826,7 +40925,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:6731 ''melezitose'' and
@@ -40977,7 +41076,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:6731 ''melezitose'' and
@@ -42830,7 +42929,7 @@ ingredients:
   - synonym_text: beta-D-fructofuranosyl alpha-D-glucopyranoside
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -42871,6 +42970,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T06:56:09.917309+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:17992 'Sucrose'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1358); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -42891,7 +42999,8 @@ ingredients:
     data_source: CHEBI sqlite (oaklib)
   kg_microbe_node_id: CHEBI:17992
   nutritional_roles:
-  - role: CARBON_SOURCE
+  - &id008
+    role: CARBON_SOURCE
     confidence: 0.7
     evidence:
     - reference_type: COMPUTATIONAL_PREDICTION
@@ -46201,7 +46310,7 @@ ingredients:
   - synonym_text: deoxyribonucleic acids
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -46218,6 +46327,15 @@ ingredients:
     action: AUTO_UPGRADE_TO_CHEBI
     changes: primary UNMAPPED_0144 → CHEBI:16991 (strategy=stem-match)
     llm_assisted: false
+  - timestamp: '2026-08-05T06:55:35.063725+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:16991 'Fish-Sperm DNA'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
     or CHEBI mapping available; curator review needed.
   ontology_mapping:
@@ -51148,7 +51266,7 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:4735 ''ethylenediaminetetraacetic
@@ -55513,13 +55631,13 @@ ingredients:
   nutritional_roles:
   - role: IRON_SOURCE
     confidence: 1.0
-    evidence: &id002
+    evidence: &id004
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: PHOSPHATE_SOURCE
     confidence: 1.0
-    evidence: *id002
+    evidence: *id004
 - identifier: CHEBI:31604
   preferred_term: Ferric ammonium citrate
   ontology_mapping:
@@ -57009,6 +57127,9 @@ ingredients:
   - synonym_text: thymus nucleic acid
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Deoxyribonucleic acid from herring sperm
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
@@ -57059,6 +57180,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Fish')
     llm_assisted: false
+  - timestamp: '2026-08-05T06:55:35.063725+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:16991 ''Deoxyribonucleic acid from herring sperm'': 1
+      synonym(s), occurrences +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 9007-49-2
     data_source: PubChem API (ontology label)
@@ -59327,7 +59455,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:17973 ''alpha-D-galactose
@@ -61439,6 +61567,9 @@ ingredients:
   - synonym_text: gamma-L-Glutamyl-L-cysteinyl-glycine
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: L-Glutathione
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 13
@@ -61489,6 +61620,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
       nutritional_roles.NITROGEN_SOURCE'
+  - timestamp: '2026-08-05T06:55:18.095607+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:16856 ''L-Glutathione'': 1 synonym(s), occurrences +0/0.
+      Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+      (#226). Source: mediadive.ingredient:2085.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 70-18-8
     data_source: PubChem API
@@ -61768,10 +61906,44 @@ ingredients:
   - synonym_text: propane-1,2,3-triol
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: glycerol
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: 'Role: Carbon source; Properties: Simple component, Defined component,
+      Organic compound'
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: 1,2,3-Propanetriol
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: 1,2,3-Trihydroxypropane
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: G Glycerol
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: Glyceritol
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: Glyzerin
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: Oelsuess
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: Propanetriol
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: Trihydroxypropane
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: glycerine
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 208
-    media_count: 54
+    total_occurrences: 214
+    media_count: 60
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -61843,6 +62015,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T06:50:52.816735+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:17754 ''glycerol'': 11 synonym(s), occurrences +6/6,
+      role facets from nutritional_roles. Case variant of one compound; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 56-81-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -61869,6 +62048,13 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
+  - &id005
+    role: CARBON_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_type: DATABASE_ENTRY
+      reference_text: Imported from CultureMech pipeline
+      curator_note: 'Original role text: Carbon Source'
 - identifier: CHEBI:17754
   preferred_term: glycerol
   ontology_mapping:
@@ -61933,10 +62119,10 @@ ingredients:
   - synonym_text: glycerine
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 6
-    media_count: 6
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -61994,6 +62180,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T06:50:52.816735+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:17754 'Glycerol'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Case variant of one compound; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   chemical_properties:
     cas_rn: 56-81-5
     data_source: PubChem API
@@ -62002,12 +62197,7 @@ ingredients:
   kg_microbe_node_id: CHEBI:17754
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
-  - role: CARBON_SOURCE
-    confidence: 1.0
-    evidence:
-    - reference_type: DATABASE_ENTRY
-      reference_text: Imported from CultureMech pipeline
-      curator_note: 'Original role text: Carbon Source'
+  - *id005
   - role: ENERGY_SOURCE
     confidence: 0.7
     evidence:
@@ -62266,7 +62456,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:26707 ''glycerol phosphate''
@@ -62829,10 +63019,16 @@ ingredients:
   - synonym_text: glycine dipeptide
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Glycylglycine
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: 'Glycylglycine(CAS: 556-50-3)'
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 9
-    media_count: 9
+    total_occurrences: 11
+    media_count: 11
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -62884,6 +63080,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
       nutritional_roles.NITROGEN_SOURCE'
+  - timestamp: '2026-08-05T06:55:52.346614+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:17201 ''Glycylglycine'': 2 synonym(s), occurrences +2/2.
+      Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+      (#226).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 556-50-3
     data_source: PubChem API
@@ -62905,10 +63108,10 @@ ingredients:
   - synonym_text: 'Glycylglycine(CAS: 556-50-3)'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -62946,6 +63149,15 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-05T06:55:52.346614+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:17201 'Glycyl-glycine'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: 'CultureMech placeholder_id: 5'
   chemical_properties:
     cas_rn: 556-50-3
@@ -63072,7 +63284,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:30076 ''gold trichloride''
@@ -73736,7 +73948,7 @@ ingredients:
   - synonym_text: L-gamma-glutamyl-L-cysteinylglycine
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -73764,6 +73976,15 @@ ingredients:
     changes: molecular_formula=C10H17N3O6S; inchi=InChI=1S/C10H17N3O6S/c11-5(10(18)19)1-2-7(14)13-6(;
       smiles=N[C@@H](CCC(=O)N[C@@H](CS)C(=O)NCC(=O)O)C(=O)O
     llm_assisted: false
+  - timestamp: '2026-08-05T06:55:18.095607+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:16856 'Glutathione'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2085); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -74337,7 +74558,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:62345 ''L-rhamnose''
@@ -82391,13 +82612,13 @@ ingredients:
   nutritional_roles:
   - role: CARBON_SOURCE
     confidence: 1.0
-    evidence: &id003
+    evidence: &id006
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: MINERAL_SOURCE
     confidence: 1.0
-    evidence: *id003
+    evidence: *id006
 - identifier: CHEBI:86345
   preferred_term: Magnesium chloride
   ontology_mapping:
@@ -84054,7 +84275,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:61993 ''maltotriose''
@@ -93453,6 +93674,9 @@ ingredients:
   - synonym_text: sodium ampicillin
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Ampicillin sodium salt
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 5
@@ -93510,6 +93734,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-05T06:57:17.869208+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:34535 ''Ampicillin sodium salt'': 1 synonym(s), occurrences
+      +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+      (#226). Source: mediadive.ingredient:1283.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 69-52-3
     data_source: PubChem API (preprocessed)
@@ -103471,6 +103702,9 @@ ingredients:
   - synonym_text: sodium trioxidonitrate(1-)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Sodium nitrate (nitrogen source)
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 419
@@ -103556,6 +103790,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
       nutritional_roles.NITROGEN_SOURCE'
+  - timestamp: '2026-08-05T06:57:51.098548+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:63005 ''Sodium nitrate (nitrogen source)'': 1 synonym(s),
+      occurrences +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+      (#226). Source: communitymech.ingredient:Sodium_nitrate_(nitrogen_source.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 7631-99-4
     data_source: PubChem API
@@ -105540,6 +105781,9 @@ ingredients:
   - synonym_text: NH4Cl(Fisher A 649-500)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Ammonium chloride (nitrogen source)
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3240
@@ -105651,6 +105895,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
       nutritional_roles.NITROGEN_SOURCE'
+  - timestamp: '2026-08-05T06:56:44.912150+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:31206 ''Ammonium chloride (nitrogen source)'': 1 synonym(s),
+      occurrences +0/0, role facets from nutritional_roles. Same substance under two
+      names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv (#226). Source:
+      communitymech.ingredient:Ammonium_chloride_(nitrogen_source.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 12125-02-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -105671,6 +105923,7 @@ ingredients:
         Simple component'
       curator_note: Widespread use in media formulations (3240 occurrences). High
         confidence based on 'Defined component' property.
+  - *id007
 - identifier: CHEBI:62982
   preferred_term: NH4H2PO4
   ontology_mapping:
@@ -110801,7 +111054,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:18394 ''6-O-alpha-D-glucopyranosyl-D-fructofuranose''
@@ -114947,7 +115200,13 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: kgmicrobe.compound:poly_l_lysine_polymer
       notes: Auto-curated from UNMAPPED_PENDING_CURATION queue; OLS exact-label match
-  synonyms: []
+  synonyms:
+  - synonym_text: Poly L Lysine Polymer
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: poly(L-lysine)
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -114970,6 +115229,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
     llm_assisted: false
+  - timestamp: '2026-08-05T06:57:34.464174+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:61490 ''Poly L Lysine Polymer'': 2 synonym(s), occurrences
+      +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+      (#226).'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:53389
   preferred_term: Poly(3-hydroxybutyrate)
@@ -115094,7 +115360,7 @@ ingredients:
   - synonym_text: poly(L-lysine)
     synonym_type: EXACT_SYNONYM
     source: CHEBI
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -115126,6 +115392,15 @@ ingredients:
       OAK/OLS match to CHEBI label "poly(L-lysine) polymer".
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-08-05T06:57:34.464174+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:61490 'poly(L-lysine) polymer'; occurrences transferred.
+      Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:46793
   preferred_term: Polyethylene glycol
@@ -115733,7 +116008,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:15584 ''citramalic acid''
@@ -116213,7 +116488,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:30463 ''telluric acid''
@@ -122329,7 +122604,7 @@ ingredients:
   - synonym_text: Sea water
     synonym_type: RAW_TEXT
     source: mim-queue
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -122353,6 +122628,15 @@ ingredients:
     changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Sea
       water')
     llm_assisted: false
+  - timestamp: '2026-08-05T06:58:07.759804+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into ENVO:00002149 'Seawater'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:286); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -122375,6 +122659,9 @@ ingredients:
   - synonym_text: Seawater(non-sterilized)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Sea water
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
@@ -122408,6 +122695,13 @@ ingredients:
     curator: env_context_phase3_initial
     action: ANNOTATED
     changes: 'Added 2 environmental_context entries (issue #1, Phase 3 initial pass).'
+  - timestamp: '2026-08-05T06:58:07.759804+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed ENVO:00002149 ''Sea water'': 1 synonym(s), occurrences +0/0.
+      Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
+      (#226). Source: mediadive.ingredient:286.'
+    llm_assisted: true
   notes: 'CultureMech placeholder_id: 1'
   ontology_mapping:
     ontology_id: ENVO:00002149
@@ -127273,6 +127567,9 @@ ingredients:
   - synonym_text: Sodium Metasilicate
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Sodium metasilicate (silicate for diatom frustules)
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
@@ -127302,6 +127599,13 @@ ingredients:
     changes: primary UNMAPPED_0077 → mesh:C025349 via name normalization to 'Sodium
       Metasilicate'
     llm_assisted: false
+  - timestamp: '2026-08-05T06:58:57.191152+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed mesh:C025349 ''Sodium metasilicate (silicate for diatom frustules)'':
+      1 synonym(s), occurrences +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226). Source: communitymech.ingredient:Sodium_metasilicate_(silicate_for_diatom_frustules.'
+    llm_assisted: true
   notes: 'CultureMech placeholder_id: 3'
   chemical_properties:
     cas_rn: 6834-92-0
@@ -127323,7 +127627,7 @@ ingredients:
   - synonym_text: Sodium metasilicate (silicate for diatom frustules)
     synonym_type: RAW_TEXT
     source: communitymech-unmapped
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -127340,6 +127644,15 @@ ingredients:
     action: AUTO_UPGRADE_TO_MESH
     changes: primary UNMAPPED_0613 → mesh:C025349 (strategy=stem-match)
     llm_assisted: false
+  - timestamp: '2026-08-05T06:58:57.191152+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into mesh:C025349 'Sodium Metasilicate'; occurrences transferred.
+      Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sodium_metasilicate_(silicate_for_diatom_frustules));
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -127482,7 +127795,7 @@ ingredients:
   - synonym_text: sodium trioxidonitrate(1-)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -127510,6 +127823,15 @@ ingredients:
     action: AUTO_BACKFILL_CHEBI_CHEMISTRY
     changes: molecular_formula=NO3.Na; inchi=InChI=1S/NO3.Na/c2-1(3)4;/q-1;+1; smiles=O=[N+]([O-])[O-].[Na+]
     llm_assisted: false
+  - timestamp: '2026-08-05T06:57:51.098548+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_INTO
+    changes: Merged into CHEBI:63005 'NaNO3'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Sodium_nitrate_(nitrogen_source));
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -128222,7 +128544,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
     llm_assisted: false
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:36361 ''phosphorous acid''
@@ -128972,7 +129294,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:46612 ''phosphorothioic
@@ -130587,7 +130909,7 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:17164 ''stachyose'' and
@@ -131732,6 +132054,9 @@ ingredients:
   - synonym_text: table sugar
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: D-Sucrose
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 152
@@ -131805,6 +132130,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-05T06:56:09.917309+00:00'
+    curator: merge-same-substance-batch
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:17992 ''D-Sucrose'': 1 synonym(s), occurrences +0/0,
+      role facets from nutritional_roles. Same substance under two names; MERGE_SAME_SUBSTANCE
+      in duplicate_identifier_baseline.tsv (#226). Source: mediadive.ingredient:1358.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 57-50-1
     data_source: PubChem API
@@ -131832,6 +132164,7 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
+  - *id008
 - identifier: NCIT:C71939
   preferred_term: Sugar
   ontology_mapping:
@@ -133696,7 +134029,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
     llm_assisted: false
-  - timestamp: '2026-08-05T07:57:29.737767+00:00'
+  - timestamp: '2026-08-05T18:02:35.008352+00:00'
     curator: anchor_cas_hydrate_records
     action: CORRECTED
     changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:134806 ''terpin'' and

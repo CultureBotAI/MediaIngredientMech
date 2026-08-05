@@ -11,23 +11,33 @@
 **Input**: `MgSO4•7H2O`
 
 **Process**:
-1. Normalize: Strip hydrate → `MgSO4`
+1. Normalize: Strip hydrate → `MgSO4` — **to find the family, not to decide the mapping**
 2. Map formula to name: `MgSO4` → `magnesium sulfate`
-3. Generate variants: `['MgSO4', 'magnesium sulfate', 'magnesium sulphate']`
-4. Search CHEBI: Find `CHEBI:32599` (magnesium sulfate)
-5. Accept with quality `EXACT_MATCH`
-6. Save original `MgSO4•7H2O` as synonym type `HYDRATE_FORM`
+3. Search CHEBI for the family, then **look for the hydration state you actually have**:
+   `magnesium sulfate heptahydrate` → `CHEBI:31795`
+4. Accept `CHEBI:31795` with quality `EXACT_MATCH`
+5. Save original `MgSO4•7H2O` as synonym type `HYDRATE_FORM`
 
 **Result**:
 ```yaml
-ontology_id: CHEBI:32599
-ontology_label: magnesium sulfate
+ontology_id: CHEBI:31795
+ontology_label: magnesium sulfate heptahydrate
 ontology_source: CHEBI
 quality: EXACT_MATCH
 synonyms:
   - name: MgSO4•7H2O
     type: HYDRATE_FORM
 ```
+
+> ⚠️ **Do not stop at `CHEBI:32599 magnesium sulfate`.** That is the *anhydrous*
+> term, 120.37 g/mol against the heptahydrate's 246.47 — the number a recipe
+> depends on. Grounding a hydrate onto its anhydrous parent is the identity
+> collapse that produced the families tracked in #218/#225.
+>
+> **If no hydrate-specific term exists**, the record takes its own
+> `cas:<hydrate CAS>` identifier with a `skos:narrowMatch` to the anhydrous
+> parent plus the Rule B1 registry row — see MAPPING_SEMANTICS.md Section 3.
+> `just report-hydrate-grounding` lists the records still in violation.
 
 ### Example 2: Incomplete Formula
 

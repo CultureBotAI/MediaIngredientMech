@@ -47,6 +47,16 @@ Many names need normalization before matching — `chemical_normalizer.py` handl
 patterns, and **preserves the original form as a typed synonym**:
 
 1. **Hydrate stripping** (synonym `HYDRATE_FORM`): `MgSO4•7H2O` → `MgSO4` → "magnesium sulfate"; `CaCl2·2H2O` → "calcium chloride".
+
+   ⚠️ **Stripping finds the family, it does not decide the mapping.** A hydrate is a
+   distinct substance — `MgSO4·7H2O` is 246.47 g/mol against 120.37 — so it must not be
+   filed as an `EXACT_MATCH` to the anhydrous term. Once stripping tells you which family
+   you are in, follow **MAPPING_SEMANTICS.md Section 3**: prefer a hydrate-specific
+   ontology term if one exists (`CHEBI:31795 magnesium sulfate heptahydrate`,
+   `CHEBI:232425 monosodium L-glutamate hydrate`), else give the record its own
+   `cas:<hydrate CAS>` identifier with a `narrowMatch` to the anhydrous parent plus the
+   Rule B1 registry row. Sharing the anhydrous term's identifier is the identity-collapse
+   bug (#218, #225).
 2. **Incomplete-formula correction** (synonym `INCOMPLETE_FORMULA`): `K2HPO` → `K2HPO4` → "dipotassium phosphate".
 3. **Catalog-number removal** (synonym `CATALOG_VARIANT`): `NaCl (Fisher S271-500)` → `NaCl`.
 4. **Abbreviation expansion**: `dH2O` → "distilled water"; `NaOAc` → "sodium acetate".

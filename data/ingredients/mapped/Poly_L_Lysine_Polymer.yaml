@@ -24,7 +24,7 @@ synonyms:
 - synonym_text: poly(L-lysine)
   synonym_type: EXACT_SYNONYM
   source: CHEBI
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -54,4 +54,13 @@ curation_history:
     match to CHEBI label "poly(L-lysine) polymer".
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-08-05T06:57:34.464174+00:00'
+  curator: merge-same-substance-batch
+  action: MERGED_INTO
+  changes: Merged into CHEBI:61490 'poly(L-lysine) polymer'; occurrences transferred.
+    Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names; MERGE_SAME_SUBSTANCE
+    in duplicate_identifier_baseline.tsv (#226).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
