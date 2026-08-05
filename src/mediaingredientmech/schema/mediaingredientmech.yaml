@@ -160,9 +160,11 @@ classes:
       ingredient_type:
         range: IngredientTypeEnum
         description: >-
-          Classification of entry type: single chemical ingredient vs complex defined medium.
+          Classification of entry type: single chemical ingredient vs whole named medium.
           SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose).
-          DEFINED_MEDIUM: Complete medium formulation/recipe (R2A agar, LB broth).
+          DEFINED_MEDIUM: A complete, named medium formulation/recipe (R2A agar, LB
+          broth) -- "defined" = record granularity (a whole named medium), NOT
+          "chemically defined"; undefined components are expected.
           UNDEFINED_MIXTURE: Complex mixture of unknown composition (yeast extract, peptone).
           STOCK_SOLUTION: Pre-mixed solution of defined ingredients.
       components:
@@ -1082,9 +1084,14 @@ enums:
           Can be mapped to chemical ontologies like CHEBI.
       DEFINED_MEDIUM:
         description: >-
-          Complete medium formulation or recipe with multiple ingredients
+          A complete, named medium formulation or recipe with multiple ingredients
           (e.g., R2A agar, LB broth, Marine agar 2216, Oatmeal agar).
-          Should cross-reference to CultureMech for full recipe.
+          NOTE: "DEFINED" here denotes RECORD GRANULARITY -- this record is a whole
+          named medium rather than a single ingredient -- and is NOT the microbiology
+          term of art "chemically defined medium". Complex, undefined components
+          (digests, infusions, extracts, sera) are expected and normal in these
+          records; the compositional distinction is carried by UNDEFINED_MIXTURE, not
+          by this value. Should cross-reference to CultureMech for the full recipe.
       UNDEFINED_MIXTURE:
         description: >-
           Complex mixture of unknown or variable composition
