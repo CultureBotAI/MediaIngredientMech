@@ -39,6 +39,30 @@ def _ontology_id(ing: dict) -> str:
     return (ing.get("ontology_mapping") or {}).get("ontology_id", "") or ""
 
 
+# Separator for the CSV synonyms column. `|` matches SSSOM's multi-value
+# convention (mapping_justification, creator_id) so consumers already split on it.
+SYNONYM_SEP = "|"
+
+
+def _synonyms(ing: dict) -> list[str]:
+    """Every raw label this record answers to, minus the preferred_term itself.
+
+    Merging a duplicate folds its raw label in here and deletes its record, and
+    merges add no SSSOM row (SSSOM subjects are preferred_terms, never
+    synonyms). So without this column a merged label is published nowhere and
+    stops resolving entirely -- coverage goes up per-record and down on the
+    flat surfaces consumers actually join against. Issue #229.
+    """
+    preferred = ing.get("preferred_term", "")
+    seen, out = {preferred}, []
+    for s in ing.get("synonyms") or []:
+        text = (s or {}).get("synonym_text")
+        if text and text not in seen:
+            seen.add(text)
+            out.append(text)
+    return out
+
+
 def export_to_json(ingredients: list[dict], output_path: Path):
     """Export ingredients to JSON format."""
     records = []
@@ -48,6 +72,7 @@ def export_to_json(ingredients: list[dict], output_path: Path):
             "ontology_id": _ontology_id(ing),
             "preferred_term": ing.get("preferred_term", ""),
             "mapping_status": ing.get("mapping_status", ""),
+            "synonyms": _synonyms(ing),
         }
 
         # Add ontology mapping details if mapped
@@ -87,6 +112,9 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
         "mapping_quality",
         "total_occurrences",
         "media_count",
+        # appended, not inserted: a consumer indexing columns positionally keeps
+        # working, and one reading by header name picks it up. Issue #229.
+        "synonyms",
     ]
 
     with open(output_path, "w", newline="") as f:
@@ -99,6 +127,7 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
                 "ontology_id": _ontology_id(ing),
                 "preferred_term": ing.get("preferred_term", ""),
                 "mapping_status": ing.get("mapping_status", ""),
+                "synonyms": SYNONYM_SEP.join(_synonyms(ing)),
             }
 
             # Add ontology mapping details
@@ -124,7 +153,13 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
 
 
 def export_to_markdown(ingredients: list[dict], output_path: Path, title: str):
-    """Export ingredients to Markdown table format."""
+    """Export ingredients to Markdown table format.
+
+    Deliberately carries NO synonyms column, unlike the CSV and JSON exports
+    (#229): the pipe-joined list would collide with the table's own cell
+    separator, and this artifact is for reading rather than for resolving raw
+    strings. Consumers doing lookups should use the CSV or JSON.
+    """
     lines = [
         f"# {title}",
         "",

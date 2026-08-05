@@ -89,6 +89,15 @@ fetch-pubmed *args:
 qc-sssom:
     python3 scripts/validate_sssom_invariants.py
 
+# A merged raw label survives only as a synonym on its target, and merges add no
+# SSSOM row — so before #229 `D-lactate` resolved to UNMAPPED_0654 and, after the
+# merge, to nothing. reconcile/roundtrip/duplicate-ids were all green throughout:
+# they cannot see the published surface. Exits 2. Issue #229.
+#
+# Fail if a raw label MIM knows is unresolvable from docs/data/
+qc-flat-coverage:
+    python3 scripts/check_flat_export_coverage.py
+
 # The record `identifier` IS the ontology CURIE, so two mapped records sharing
 # one both claim to BE that term — and an `{identifier: record}` lookup silently
 # keeps whichever came last. #214 nearly attached merged synonyms to the wrong
@@ -189,7 +198,7 @@ report-label-drift:
 # `just validate-products` locally to reproduce the gate; `just report-label-drift`
 # writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
 # LinkML cross-check (one validator process per record → too slow for CI).
-qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids check-instruction-refs check-curation-targets
+qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids qc-flat-coverage check-instruction-refs check-curation-targets
 
 # Report whether the local ChEBI build is older than kg-microbe's
 check-chebi-currency *args:
