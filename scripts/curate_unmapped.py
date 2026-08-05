@@ -21,6 +21,7 @@ from rich.table import Table
 _project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_project_root / "src"))
 
+from mediaingredientmech.curation.hydrate_guard import HydrateMismatch
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.curation.synonym_manager import SynonymManager
 from mediaingredientmech.utils.chemical_normalizer import (
@@ -211,14 +212,19 @@ def handle_accept(curator: IngredientCurator, record: dict, candidates: list) ->
 
     notes = Prompt.ask("Notes (optional, press Enter to skip)", default="")
 
-    curator.accept_mapping(
-        record,
-        candidate,
-        quality=quality,
-        llm_assisted=llm_assisted,
-        llm_model=llm_model,
-        notes=notes or None,
-    )
+    try:
+        curator.accept_mapping(
+            record,
+            candidate,
+            quality=quality,
+            llm_assisted=llm_assisted,
+            llm_model=llm_model,
+            notes=notes or None,
+        )
+    except HydrateMismatch as exc:
+        # #243: refuse rather than end the interactive session with a traceback.
+        console.print(f"[yellow]REFUSED[/yellow] {record.get('preferred_term')!r}: {exc}")
+        return
     console.print(f"[bold green]Mapped to {candidate.ontology_id} ({candidate.label})[/bold green]")
 
 

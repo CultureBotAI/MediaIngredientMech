@@ -68,6 +68,7 @@ class BatchCurationSession:
 
         self.curated_count = 0
         self.skipped_count = 0
+        self.hydrate_refused = 0
         self.decisions: list[dict] = []
         self.processed_ids: set[str] = set()
 
@@ -348,7 +349,17 @@ class BatchCurationSession:
             # #243: a hydrate label must not be filed onto its anhydrous parent.
             # Skip rather than abort the batch, and say why.
             console.print(f"[yellow]REFUSED[/yellow] {record.get('preferred_term')!r}: {exc}")
-            self.stats['hydrate_refused'] = self.stats.get('hydrate_refused', 0) + 1
+            self.hydrate_refused += 1
+            self.skipped_count += 1
+            # without a decision row the refusal is invisible in the export too
+            self._record_decision(
+                record.get('identifier', ''),
+                record.get('preferred_term', ''),
+                norm_result,
+                'refused_hydrate_on_non_hydrate_term',
+                ontology_id=candidate.ontology_id,
+                ontology_label=candidate.label,
+            )
             return False
 
         # Add original form as synonym if normalization was applied
@@ -569,7 +580,10 @@ def main(
     console.print(
         f"\n[bold]Session complete:[/bold]\n"
         f"  Curated: {session.curated_count}\n"
-        f"  Skipped: {session.skipped_count}\n"
+        f"  Skipped: {session.skipped_count}"
+        + (f" (of which {session.hydrate_refused} refused: hydrate label onto a "
+           "non-hydrate term — see MAPPING_SEMANTICS.md Section 3)"
+           if session.hydrate_refused else "") + "\n"
         f"  Total processed: {len(session.processed_ids)}"
     )
 

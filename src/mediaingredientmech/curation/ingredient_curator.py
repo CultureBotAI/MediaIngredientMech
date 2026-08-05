@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 import re
 from pathlib import Path
-from typing import Any, Optional
+from typing import Callable, Any, Optional
 
 import yaml
 from linkml_runtime.utils.schemaview import SchemaView
@@ -112,10 +112,17 @@ class IngredientCurator:
         data_path: Optional[Path] = None,
         curator_name: str = "anonymous",
         ontology_client: Optional[OntologyClient] = None,
+        formula_lookup: Optional[Callable[[str], Optional[str]]] = None,
     ):
         self.data_path = data_path or DEFAULT_UNMAPPED_PATH
         self.curator_name = curator_name
         self.ontology_client = ontology_client or OntologyClient()
+        # Optional CURIE -> chemical formula lookup, used only by the hydrate
+        # guard to recognise a term whose LABEL is silent about being a hydrate
+        # (CHEBI:185255 'Ammonium alum' is Al.12H2O.H4N.2O4S; 181 ChEBI terms are
+        # like it). Left None by default so the curator never requires a ChEBI
+        # build; callers that have one should pass it. Issue #243.
+        self.formula_lookup = formula_lookup
         self._collection: dict[str, Any] = {}
         self._records: list[dict[str, Any]] = []
         self._dirty = False
@@ -237,7 +244,7 @@ class IngredientCurator:
         # curation script.
         if not allow_hydrate_mismatch:
             reason = hydrate_mismatch(record.get("preferred_term", ""), candidate,
-                                      getattr(self, "formula_lookup", None))
+                                      self.formula_lookup)
             if reason:
                 raise HydrateMismatch(reason)
 

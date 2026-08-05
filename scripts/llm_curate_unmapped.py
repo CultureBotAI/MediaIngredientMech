@@ -197,14 +197,13 @@ def process_ingredient_with_llm(
             return "mapped"
 
         if Confirm.ask("Auto-accept this mapping?", default=True):
-            accept_llm_mapping(
+            return accept_llm_mapping(
                 record,
                 suggestion,
                 ingredient_curator,
                 llm_curator.model,
                 norm_result,
             )
-            return "mapped"
 
     # Present options
     console.print("\n[bold]Actions:[/bold]")
@@ -227,7 +226,7 @@ def process_ingredient_with_llm(
                 default="4",
             )
         )
-        accept_llm_mapping(
+        return accept_llm_mapping(
             record,
             suggestion,
             ingredient_curator,
@@ -235,7 +234,6 @@ def process_ingredient_with_llm(
             norm_result,
             quality=quality,
         )
-        return "mapped"
 
     elif action == "m":
         return handle_manual_search(
@@ -258,7 +256,7 @@ def accept_llm_mapping(
     llm_model: str,
     norm_result: dict,
     quality: str = "LLM_ASSISTED",
-) -> None:
+) -> str:
     """Accept an LLM-suggested mapping."""
     # Convert LLMSuggestion to OntologyCandidate
     candidate = OntologyCandidate(
@@ -323,6 +321,8 @@ def accept_llm_mapping(
         console.print(
             f"[dim]Added '{original_name}' as synonym[/dim]"
         )
+
+    return "mapped"
 
 
 def handle_manual_search(

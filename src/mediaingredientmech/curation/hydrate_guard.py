@@ -13,9 +13,17 @@ is accepting the family's parent as if it were the hydrate.
 
 The check needs no ontology database: a candidate's own label and synonyms
 almost always say whether it is a hydrate ("magnesium sulfate heptahydrate",
-"ceftazidime pentahydrate"). Pass `formula_lookup` to sharpen it where ChEBI
-writes a hydrate without saying so in the label (`CHEBI:182320 Glycocholic acid
-hydrate` is C26H43NO6, but plenty go the other way).
+"ceftazidime pentahydrate").
+
+Pass `formula_lookup` to catch terms whose LABEL is silent but whose formula
+carries water -- `CHEBI:185255 Ammonium alum` is `Al.12H2O.H4N.2O4S`, and 181
+ChEBI terms are like it. Without it those are refused wrongly. It is optional
+because the guard must work where no ChEBI build exists.
+
+The converse -- label says hydrate, formula does not (`CHEBI:182320 Glycocholic
+acid hydrate`, C26H43NO6) -- is handled by the label check, and is usually a
+COVALENT hydrate (chloral hydrate, sabinene hydrate), a different concept from
+water of crystallisation that this guard does not try to distinguish.
 """
 
 from __future__ import annotations
@@ -27,9 +35,14 @@ from typing import Callable, Optional, Protocol
 # '·7H2O', '7H2O', and hydrate words with or without a multiplier prefix.
 # Deliberately NOT a bare /hydrate/ substring -- that matches 'borohydrate' in
 # 'b-Mannan borohydrate reduced carob seed', which is not a hydrate.
+# Separators seen in this corpus: x · • ・(U+30FB) ⋅(U+22C5) ∙(U+2219) ×(U+00D7)
+# and a plain '.'. A separator is REQUIRED before H2O -- without one, 'H2O4P'
+# (dihydrogenphosphate) and 'H2O2' would match.
+_SEP = r"[x×·•・⋅∙.]"
 HYDRATE_NOTATION = re.compile(
-    r"[x·•]\s*(?:\d+|n)?\s*H2\s*O"
-    r"|\d\s*H2\s*O"
+    rf"{_SEP}\s*(?:\d+|n)?\s*H2\s*O(?![0-9])"        # MgSO4·7H2O, NiCl2・H2O, FeSO4.H2O
+    rf"|{_SEP}?\s*\(\s*H2\s*O\s*\)\s*[n\d]"         # VOSO4(H2O)n
+    r"|\d\s*H2\s*O(?![0-9])"                          # 7H2O with no separator
     r"|(?<![a-z])(?:hemi|sesqui|mono|di|tri|tetra|penta|hexa|hepta|octa|nona|deca|dodeca)*"
     r"hydrate\b",
     re.IGNORECASE,
@@ -37,7 +50,7 @@ HYDRATE_NOTATION = re.compile(
 
 # Water as its own component of a formula: 'Mg.O4S.7H2O', '(H2O)n.O5SV'.
 # A bare 'H2O' substring would match 'H2O4P' -- dihydrogenphosphate, no water.
-FORMULA_WATER = re.compile(r"(?:^|\.)\(?[\dn]*H2O\)?[\dn]*(?:\.|$)")
+FORMULA_WATER = re.compile(r"(?:^|\.)\(?[\dn]*H2O\)?n?(?:\.|$)")
 
 
 class _Candidate(Protocol):
