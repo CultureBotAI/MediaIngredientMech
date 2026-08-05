@@ -29,13 +29,14 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
+UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 REPORT = ROOT / "reports" / "hydrate_grounding.tsv"
 CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
 
-HYDRATE = re.compile(
-    r"[x·•]\s*(?:\d+|n)?\s*H2\s*O|\d\s*H2\s*O"
-    r"|(?<![a-z])(?:hemi|sesqui|mono|di|tri|tetra|penta|hexa|hepta|octa|nona|deca|dodeca)*"
-    r"hydrate\b", re.IGNORECASE)
+sys.path.insert(0, str(ROOT / "src"))
+from mediaingredientmech.curation.hydrate_guard import (  # noqa: E402
+    HYDRATE_NOTATION as HYDRATE,
+)
 
 
 def formulas() -> dict[str, str]:
@@ -136,6 +137,22 @@ def main() -> int:
                   f"{r['ontology_label'][:26]:26} [{r['term_formula']}]")
         if len(bad) > args.limit:
             print(f"  ... and {len(bad) - args.limit} more")
+    # The guard added in #246 refuses these rather than mis-filing them, so they
+    # stay UNMAPPED. Without a worklist the hydrate residual grows invisibly
+    # instead of visibly, which is only an improvement if someone can see it (#247).
+    pending = [r for r in yaml.safe_load(UNMAPPED.read_text())["ingredients"]
+               if r.get("mapping_status") == "UNMAPPED"
+               and HYDRATE.search(str(r.get("preferred_term") or ""))]
+    print(f"\n{len(pending)} UNMAPPED record(s) whose label is a hydrate — the queue the "
+          "#246 guard refuses into.")
+    print("Each needs MAPPING_SEMANTICS.md Section 3: a hydrate-specific ontology term "
+          "if one exists,\nelse its own cas:<hydrate CAS> with a narrowMatch to the parent "
+          "plus the Rule B1 registry row.")
+    for r in pending[:args.limit]:
+        print(f"  {str(r.get('identifier')):16} {str(r.get('preferred_term'))[:52]}")
+    if len(pending) > args.limit:
+        print(f"  ... and {len(pending) - args.limit} more")
+
     print(f"\nreport: {REPORT.relative_to(ROOT)}")
     return 0
 
