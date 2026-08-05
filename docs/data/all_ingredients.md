@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-05T02:08:47.112765+00:00
+Generated: 2026-08-05T02:40:14.286456+00:00
 Total: 2877 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -10,7 +10,7 @@ Total: 2877 ingredients
 | CHEBI:29033 | CHEBI:29033 | Ferrous Ion | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18333 | CHEBI:18333 | D-arabitol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16383 | CHEBI:16383 | Cis-aconitate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:17747 | CHEBI:17747 | Bis(2-ethylhexyl)phthalate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:17747 | CHEBI:17747 | Bis(2-ethylhexyl)phthalate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:34036 | CHEBI:34036 | 3-trichloropropane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27789 | CHEBI:27789 | 2-dichloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15987 | CHEBI:15987 | Trithionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |

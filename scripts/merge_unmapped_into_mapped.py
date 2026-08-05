@@ -8,8 +8,9 @@ a CHEBI term that is already mapped, the answer is a merge, not a promotion.
 
 What a merge does:
   * add the raw label to the target as a RAW_TEXT synonym
-  * carry the source's upstream `source_id` into the target's curation_history,
-    since it lives only in free-text `notes` and the source record goes away (#220)
+  * carry the source's upstream source_id (kgmicrobe.trait: or
+    kgmicrobe.compound:) into the target's curation_history, since it lives only
+    in free-text `notes` and the source record goes away (#220)
   * delete the source record and fix the collection counts
   * add NO SSSOM row -- the target already has one, and SSSOM subjects are
     preferred_terms of mapped records, never synonyms
@@ -61,6 +62,36 @@ def resolve_target(mapped: dict, curie: str, term: str) -> dict:
     return hits[0]
 
 
+def resolve_source(unmapped: dict, term: str) -> dict:
+    """Strict, for the same reason as the target: a `{preferred_term: record}`
+    dict keeps the last match, which would attach the synonym and the audit entry
+    to the wrong source identifier and orphan the other record."""
+    hits = [r for r in unmapped["ingredients"] if r["preferred_term"] == term]
+    if len(hits) != 1:
+        raise LookupError(
+            f"{term!r} matches {len(hits)} records in the unmapped collection, expected exactly 1")
+    return hits[0]
+
+
+# Everything a source record can carry that a synonym on the target cannot
+# represent. The merge would silently drop these, so refuse instead: this batch
+# happened to have none, but the script is meant to be reused.
+UNMERGEABLE = ("chemical_properties", "nutritional_roles", "functional_roles",
+               "ontology_mapping", "evidence", "ingredient_type")
+
+
+def unmergeable_fields(rec: dict) -> list[str]:
+    lost = [f for f in UNMERGEABLE if rec.get(f)]
+    occ = rec.get("occurrence_statistics") or {}
+    if occ.get("total_occurrences") or occ.get("media_count"):
+        lost.append(f"occurrence_statistics({occ.get('total_occurrences')}/{occ.get('media_count')})")
+    extra = [s.get("synonym_text") for s in (rec.get("synonyms") or [])
+             if s.get("synonym_text") != rec.get("preferred_term")]
+    if extra:
+        lost.append(f"synonyms({len(extra)} beyond the self-reference)")
+    return lost
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--merges", required=True, type=Path, help="TSV of merge decisions")
@@ -71,25 +102,43 @@ def main() -> int:
     stamp = dt.datetime.now(dt.timezone.utc).isoformat()
     mapped = yaml.safe_load(MAPPED.read_text())
     unmapped = yaml.safe_load(UNMAPPED.read_text())
-    by_term = {r["preferred_term"]: r for r in unmapped["ingredients"]}
 
+    REQUIRED = ("source_term", "target_curie", "rationale")
     with args.merges.open() as fh:
-        decisions = list(csv.DictReader(fh, delimiter="\t"))
+        reader = csv.DictReader(fh, delimiter="\t")
+        missing = [c for c in REQUIRED if c not in (reader.fieldnames or [])]
+        if missing:
+            print(f"ERROR: {args.merges} is missing column(s): {', '.join(missing)}")
+            return 1
+        decisions = list(reader)
 
     merged, problems = [], []
-    for d in decisions:
-        term, curie = d["source_term"], d["target_curie"]
-        src = by_term.get(term)
-        if src is None:
-            problems.append(f"{term!r}: no UNMAPPED record with that preferred_term")
+    for i, d in enumerate(decisions, start=2):  # 2 = first data row, for error messages
+        # csv.DictReader pads a short row with None, which would otherwise be
+        # interpolated into the audit trail as the literal string "None".
+        blank = [c for c in REQUIRED if not (d.get(c) or "").strip()]
+        if blank:
+            problems.append(f"row {i}: empty or missing {', '.join(blank)}")
+            continue
+        term, curie = d["source_term"].strip(), d["target_curie"].strip()
+        try:
+            src = resolve_source(unmapped, term)
+        except LookupError as exc:
+            problems.append(f"row {i}: {exc}")
             continue
         if src.get("mapping_status") != "UNMAPPED":
             problems.append(f"{term!r}: status is {src.get('mapping_status')}, not UNMAPPED")
             continue
+        lost = unmergeable_fields(src)
+        if lost:
+            problems.append(
+                f"{term!r}: source carries data a synonym cannot represent "
+                f"({', '.join(lost)}); merge it by hand or extend this script")
+            continue
         try:
-            tgt = resolve_target(mapped, curie, d.get("target_preferred_term", "").strip())
+            tgt = resolve_target(mapped, curie, (d.get("target_preferred_term") or "").strip())
         except LookupError as exc:
-            problems.append(str(exc))
+            problems.append(f"row {i}: {exc}")
             continue
 
         existing = {s.get("synonym_text") for s in tgt.setdefault("synonyms", [])}

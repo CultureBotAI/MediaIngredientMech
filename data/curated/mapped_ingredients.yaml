@@ -1,4 +1,4 @@
-generation_date: '2026-08-05T02:07:44.788792+00:00'
+generation_date: '2026-08-05T02:38:57.872251+00:00'
 total_count: 2307
 mapped_count: 2293
 unmapped_count: 0
@@ -41,7 +41,7 @@ ingredients:
       source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI
         verification
       notes: Edison identity research recommends CHEBI:15226; 'tetrathionate' is a
-        CHEBI synonym of tetrathionate(2-). Target unheld.
+        ChEBI synonym of tetrathionate(2-).
 - identifier: CHEBI:15589
   preferred_term: L-malate
   synonyms:
@@ -79,8 +79,8 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI
         verification
-      notes: Edison identity research recommends CHEBI:15589; 'L-malate' is a CHEBI
-        synonym of (S)-malate(2-). Target unheld.
+      notes: Edison identity research recommends CHEBI:15589; 'L-malate' is a ChEBI
+        synonym of (S)-malate(2-).
 - identifier: CHEBI:29033
   preferred_term: Ferrous Ion
   synonyms:
@@ -118,7 +118,7 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI
         verification
-      notes: Edison identity research recommends CHEBI:29033; 'ferrous ion' is a CHEBI
+      notes: Edison identity research recommends CHEBI:29033; 'ferrous ion' is a ChEBI
         synonym of iron(2+). Companion to Ferric Iron -> CHEBI:29034 (#202).
 - identifier: CHEBI:18333
   preferred_term: D-arabitol
@@ -157,8 +157,8 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI
         verification
-      notes: Edison identity research recommends CHEBI:18333; 'D-arabitol' is a CHEBI
-        synonym of D-arabinitol. Target unheld.
+      notes: Edison identity research recommends CHEBI:18333; 'D-arabitol' is a ChEBI
+        synonym of D-arabinitol.
 - identifier: CHEBI:16383
   preferred_term: Cis-aconitate
   synonyms:
@@ -197,7 +197,7 @@ ingredients:
       source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI
         verification
       notes: Edison identity research recommends CHEBI:16383; 'cis-aconitate' is a
-        CHEBI synonym of cis-aconitate(3-). Target unheld.
+        ChEBI synonym of cis-aconitate(3-).
 - identifier: CHEBI:17747
   preferred_term: Bis(2-ethylhexyl)phthalate
   synonyms:
@@ -222,7 +222,7 @@ ingredients:
     previous_status: UNMAPPED
     new_status: MAPPED
     llm_assisted: false
-    changes: Promoted UNMAPPED_0801 -> CHEBI:17747 "bis(2-ethylhexyl) phthalate" (EXACT_MATCH);
+    changes: Promoted UNMAPPED_0801 -> CHEBI:17747 "bis(2-ethylhexyl) phthalate" (SYNONYM_MATCH);
       mapping_status UNMAPPED -> MAPPED, SSSOM row added.
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_2_ethylhexyl_phthalate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
@@ -230,13 +230,14 @@ ingredients:
     ontology_id: CHEBI:17747
     ontology_label: bis(2-ethylhexyl) phthalate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI
         verification
-      notes: Edison identity research recommends CHEBI:17747; label matches exactly.
-        Target held by no other mapped record.
+      notes: 'Edison identity research recommends CHEBI:17747; raw label matches the
+        ChEBI related synonym ''Bis(2-ethylhexyl)phthalate'' (canonical label spaces
+        it: ''bis(2-ethylhexyl) phthalate'').'
 - identifier: CHEBI:34036
   preferred_term: 3-trichloropropane
   synonyms:
@@ -3142,7 +3143,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T02:07:44.788792+00:00'
+  - timestamp: '2026-08-05T02:38:57.872251+00:00'
     curator: edison-residual-research
     action: MERGED_FROM_UNMAPPED_DUPLICATE
     changes: 'Absorbed UNMAPPED_0775 ''Trimethyleneglycol'' as a RAW_TEXT synonym
@@ -68710,7 +68711,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T02:07:44.788792+00:00'
+  - timestamp: '2026-08-05T02:38:57.872251+00:00'
     curator: edison-residual-research
     action: MERGED_FROM_UNMAPPED_DUPLICATE
     changes: 'Absorbed UNMAPPED_0760 ''Iso-butanol'' as a RAW_TEXT synonym -- isobutanol
@@ -92356,7 +92357,7 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
-  - timestamp: '2026-08-05T02:07:44.788792+00:00'
+  - timestamp: '2026-08-05T02:38:57.872251+00:00'
     curator: edison-residual-research
     action: MERGED_FROM_UNMAPPED_DUPLICATE
     changes: 'Absorbed UNMAPPED_0828 ''N-acetyl-neuraminic Acid'' as a RAW_TEXT synonym
@@ -146271,7 +146272,7 @@ ingredients:
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
     llm_assisted: true
-  - timestamp: '2026-08-05T02:07:44.788792+00:00'
+  - timestamp: '2026-08-05T02:38:57.872251+00:00'
     curator: edison-residual-research
     action: MERGED_FROM_UNMAPPED_DUPLICATE
     changes: 'Absorbed UNMAPPED_0654 ''D-lactate'' as a RAW_TEXT synonym -- D-lactate
@@ -147751,7 +147752,7 @@ ingredients:
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
     llm_assisted: true
-  - timestamp: '2026-08-05T02:07:44.788792+00:00'
+  - timestamp: '2026-08-05T02:38:57.872251+00:00'
     curator: edison-residual-research
     action: MERGED_FROM_UNMAPPED_DUPLICATE
     changes: 'Absorbed UNMAPPED_0788 ''3-hydroxy 2-butanone'' as a RAW_TEXT synonym
