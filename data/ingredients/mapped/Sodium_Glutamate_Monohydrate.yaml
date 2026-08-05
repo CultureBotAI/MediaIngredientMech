@@ -1,8 +1,8 @@
-identifier: CHEBI:64243
+identifier: CHEBI:232425
 preferred_term: Sodium glutamate monohydrate
 ontology_mapping:
-  ontology_id: CHEBI:64243
-  ontology_label: monosodium L-glutamate
+  ontology_id: CHEBI:232425
+  ontology_label: monosodium L-glutamate hydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -70,6 +70,19 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
     nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-05T04:24:08.299781+00:00'
+  curator: salt-hydrate-identity-fix
+  action: CORRECTED
+  changes: 'Re-grounded CHEBI:64243 ''monosodium L-glutamate'' -> CHEBI:232425 ''monosodium
+    L-glutamate hydrate'' (EXACT_MATCH). The record is the monohydrate: its cas_rn
+    6106-04-3 was set by an independent PubChem name lookup on ''Sodium glutamate
+    monohydrate'', and CHEBI:232425 ''monosodium L-glutamate hydrate'' (formula C5H8NO4.H2O.Na)
+    is the matching term. It was on CHEBI:64243 (anhydrous, ChEBI CAS xref 142-47-2)
+    only because the specific term was never found. Monohydrate 187.13 vs anhydrous
+    169.11 g/mol is a 10.6% weigh-out difference across the 11 media using it.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 6106-04-3
   data_source: PubChem API

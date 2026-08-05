@@ -1,5 +1,5 @@
 identifier: CHEBI:18397
-preferred_term: Phenethylamine Hydrochloride
+preferred_term: 2-phenylethylamine
 ontology_mapping:
   ontology_id: CHEBI:18397
   ontology_label: 2-phenylethylamine
@@ -14,6 +14,12 @@ synonyms:
 - synonym_text: 2-phenylethanamine
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Phenethylamine Hydrochloride
+  synonym_type: RAW_TEXT
+  source: relabelled
+- synonym_text: Beta-phenylethylamine
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -43,6 +49,25 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-05T04:22:55.108064+00:00'
+  curator: salt-hydrate-identity-fix
+  action: RELABELLED
+  changes: 'preferred_term ''Phenethylamine Hydrochloride'' -> ''2-phenylethylamine'';
+    old name kept as a RAW_TEXT synonym. ChEBI has no phenethylamine hydrochloride
+    term (the only C8H11N.HCl is CHEBI:191064, N-methylbenzylamine HCl). The record
+    carries cas 64-04-0 from CultureBotHT, which is the free base and is ChEBI''s
+    own xref for CHEBI:18397. Renaming keeps the exactMatch honest; the salt name
+    survives as a synonym. Note the CultureBotHT pairing could equally be a CAS-lookup
+    error on a salt catalogue name — recorded in #235.'
+  llm_assisted: true
+- timestamp: '2026-08-05T04:25:55.473460+00:00'
+  curator: salt-hydrate-identity-fix
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0707 ''Beta-phenylethylamine'' as a RAW_TEXT synonym
+    -- ''beta-Phenylethylamine'' and ''beta-phenethylamine'' are ChEBI synonyms of
+    CHEBI:18397; held back from #227 until the record stopped claiming to be the hydrochloride.
+    No new SSSOM row; CHEBI:18397 is already mapped. Source: kgmicrobe.trait:beta_phenylethylamine.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 64-04-0
   data_source: CultureBotHT compounds_to_cas.csv
