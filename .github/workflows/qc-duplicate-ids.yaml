@@ -1,0 +1,50 @@
+name: QC — duplicate mapped identifiers
+
+on:
+  pull_request:
+    # NO branches filter, for the same reason as qc-sssom.yaml (#174): a stacked
+    # PR whose base is not `main` would otherwise skip the gate entirely.
+    paths:
+      - "data/curated/mapped_ingredients.yaml"
+      - "data/curated/unmapped_ingredients.yaml"
+      - "mappings/duplicate_identifier_baseline.tsv"
+      - "scripts/audit_duplicate_identifiers.py"
+  push:
+    branches: [main]
+    paths:
+      - "data/curated/mapped_ingredients.yaml"
+      - "data/curated/unmapped_ingredients.yaml"
+      - "mappings/duplicate_identifier_baseline.tsv"
+      - "scripts/audit_duplicate_identifiers.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout MIM
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # The script is stdlib + PyYAML. No OAK, no local ontology build, no claw
+      # checkout — so this gate runs standalone rather than behind `just qc`,
+      # which needs all three.
+      - name: Install deps
+        run: python3 -m pip install pyyaml
+
+      - name: Check duplicate identifiers against the baseline
+        run: python3 scripts/audit_duplicate_identifiers.py --check
+
+      - name: Upload duplicate report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: duplicate-identifiers-${{ github.run_id }}
+          path: reports/duplicate_identifiers.tsv
+          if-no-files-found: warn

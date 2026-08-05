@@ -97,7 +97,7 @@ qc-sssom:
 #
 # Fail if a mapped identifier is duplicated beyond the tracked baseline
 qc-duplicate-ids:
-    uv run python scripts/audit_duplicate_identifiers.py --check
+    python3 scripts/audit_duplicate_identifiers.py --check
 
 schema_path := "src/mediaingredientmech/schema/mediaingredientmech.yaml"
 
@@ -189,7 +189,7 @@ report-label-drift:
 # `just validate-products` locally to reproduce the gate; `just report-label-drift`
 # writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
 # LinkML cross-check (one validator process per record → too slow for CI).
-qc: validate-all validate-strict qc-evidence qc-sssom qc-duplicate-ids qc-roundtrip check-instruction-refs check-curation-targets
+qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids check-instruction-refs check-curation-targets
 
 # Report whether the local ChEBI build is older than kg-microbe's
 check-chebi-currency *args:
