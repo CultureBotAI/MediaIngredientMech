@@ -92,7 +92,14 @@ def curated_labels(collections_: tuple[str, ...]) -> dict[str, list[str]]:
     import importlib.util
     spec = importlib.util.spec_from_file_location("export_lists", EXPORTER)
     mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
+    try:
+        spec.loader.exec_module(mod)
+    except ImportError as exc:
+        # the exporter needs click/rich; a caller without them should get the
+        # documented exit 2 and the remedy, not a traceback
+        raise SystemExit(fail(
+            f"cannot import {EXPORTER.name} ({exc}). Install its dependencies: "
+            "pip install pyyaml click rich")) from exc
 
     out: dict[str, list[str]] = {}
     for name in collections_:

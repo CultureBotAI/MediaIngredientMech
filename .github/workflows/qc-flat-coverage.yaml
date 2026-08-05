@@ -34,10 +34,12 @@ jobs:
         with:
           python-version: "3.13"
 
-      # stdlib + PyYAML only — no OAK, no ontology build, no claw checkout, so
-      # this runs standalone rather than behind `just qc`, which needs all three.
+      # The freshness half runs export_lists.py, so this needs the exporter's
+      # own deps — click and rich as well as PyYAML. Still no OAK, no ontology
+      # build and no claw checkout, so it runs standalone rather than behind
+      # `just qc`, which needs all three.
       - name: Install deps
-        run: python3 -m pip install pyyaml
+        run: python3 -m pip install pyyaml click rich
 
       - name: Check every curated label is published
         run: python3 scripts/check_flat_export_coverage.py
