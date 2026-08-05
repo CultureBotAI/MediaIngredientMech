@@ -33,10 +33,24 @@ UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 REPORT = ROOT / "reports" / "hydrate_grounding.tsv"
 CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
 
-sys.path.insert(0, str(ROOT / "src"))
-from mediaingredientmech.curation.hydrate_guard import (  # noqa: E402
-    HYDRATE_NOTATION as HYDRATE,
-)
+def _load_hydrate_notation():
+    """Load the shared regex WITHOUT importing the package.
+
+    `mediaingredientmech.curation.__init__` imports ingredient_curator, which
+    imports linkml_runtime — so a plain package import would turn this
+    stdlib+PyYAML script into one that needs the full dependency set, and this
+    repo has four CI jobs that deliberately run scripts with only pyyaml (and
+    click/rich). hydrate_guard itself imports nothing but `re` and `typing`.
+    """
+    import importlib.util
+    path = ROOT / "src" / "mediaingredientmech" / "curation" / "hydrate_guard.py"
+    spec = importlib.util.spec_from_file_location("_hydrate_guard", path)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.HYDRATE_NOTATION
+
+
+HYDRATE = _load_hydrate_notation()
 
 
 def formulas() -> dict[str, str]:
@@ -76,7 +90,10 @@ def anchored_subjects() -> set[str]:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--limit", type=int, default=25)
+    ap.add_argument("--limit", type=int, default=25,
+                    help="cap the violations list")
+    ap.add_argument("--queue-limit", type=int, default=25,
+                    help="cap the pending-queue list, independently of --limit")
     args = ap.parse_args()
 
     form = formulas()
@@ -118,9 +135,7 @@ def main() -> int:
         w = csv.DictWriter(fh, fieldnames=FIELDS, delimiter="\t")
         w.writeheader(); w.writerows(rows)
     if not rows:
-        print("no record carries hydrate notation")
-        print(f"\nreport: {REPORT.relative_to(ROOT)}")
-        return 0
+        print("no mapped record carries hydrate notation")
 
     import collections
     c = collections.Counter(r["status"] for r in rows)
@@ -140,18 +155,35 @@ def main() -> int:
     # The guard added in #246 refuses these rather than mis-filing them, so they
     # stay UNMAPPED. Without a worklist the hydrate residual grows invisibly
     # instead of visibly, which is only an improvement if someone can see it (#247).
-    pending = [r for r in yaml.safe_load(UNMAPPED.read_text())["ingredients"]
+    if not UNMAPPED.exists():
+        print(f"\nERROR: {UNMAPPED.relative_to(ROOT)} is missing; cannot report the "
+              "pending queue")
+        return 2
+    doc = yaml.safe_load(UNMAPPED.read_text()) or {}
+    if not isinstance(doc.get("ingredients"), list):
+        print(f"\nERROR: {UNMAPPED.relative_to(ROOT)} has no 'ingredients' list")
+        return 2
+    # 'MES Hydrat' is the German spelling and its own history action is
+    # REVIEWED_HYDRATE_AMBIGUITY -- the one record whose audit trail says "this is
+    # the hydrate problem" was the one the \bhydrate\b anchor dropped.
+    pending = [r for r in doc["ingredients"]
                if r.get("mapping_status") == "UNMAPPED"
-               and HYDRATE.search(str(r.get("preferred_term") or ""))]
-    print(f"\n{len(pending)} UNMAPPED record(s) whose label is a hydrate — the queue the "
-          "#246 guard refuses into.")
-    print("Each needs MAPPING_SEMANTICS.md Section 3: a hydrate-specific ontology term "
-          "if one exists,\nelse its own cas:<hydrate CAS> with a narrowMatch to the parent "
-          "plus the Rule B1 registry row.")
-    for r in pending[:args.limit]:
-        print(f"  {str(r.get('identifier')):16} {str(r.get('preferred_term'))[:52]}")
-    if len(pending) > args.limit:
-        print(f"  ... and {len(pending) - args.limit} more")
+               and (HYDRATE.search(str(r.get("preferred_term") or ""))
+                    or re.search(r"(?<![a-z])hydrat\b", str(r.get("preferred_term") or ""),
+                                 re.IGNORECASE))]
+    occ = lambda r: (r.get("occurrence_statistics") or {}).get("total_occurrences") or 0
+    pending.sort(key=occ, reverse=True)   # a 4-medium record is not a 0-medium one
+    print(f"\n{len(pending)} UNMAPPED record(s) whose label carries hydrate notation.")
+    if pending:
+        print("This is the queue the #246 guard refuses into; it also holds records that "
+              "predate\nthe guard. Each needs MAPPING_SEMANTICS.md Section 3: a "
+              "hydrate-specific ontology term\nif one exists, else its own cas:<hydrate CAS> "
+              "with a narrowMatch to the parent plus\nthe Rule B1 registry row.")
+        for r in pending[:args.queue_limit]:
+            print(f"  {str(r.get('identifier')):16} occ={occ(r):<4} "
+                  f"{str(r.get('preferred_term'))[:48]}")
+        if len(pending) > args.queue_limit:
+            print(f"  ... and {len(pending) - args.queue_limit} more")
 
     print(f"\nreport: {REPORT.relative_to(ROOT)}")
     return 0
