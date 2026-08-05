@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import csv
 import datetime as dt
+import re
 import sys
 from pathlib import Path
 
@@ -94,6 +95,17 @@ def blend_terms() -> dict[str, str]:
         }
 
 
+def source_id(rec: dict) -> str | None:
+    """The upstream kg-microbe trait id, e.g. 'kgmicrobe.trait:2_dichloropropane'.
+
+    It lives only in the record's free-text `notes`, and merging drops the record,
+    so carry it into the target's audit trail -- it is the join key back to the
+    source and MIM publishes to kg-microbe (#220).
+    """
+    m = re.search(r"source_id=([^\s;)]+)", str(rec.get("notes") or ""))
+    return m.group(1) if m else None
+
+
 def resolve_target(mapped: dict, curie: str, term: str | None) -> dict:
     """The one mapped record for `curie`. Ambiguity is an error, not a guess."""
     hits = [r for r in mapped["ingredients"] if r["identifier"] == curie]
@@ -150,7 +162,8 @@ def main() -> int:
         tgt.setdefault("curation_history", []).append(
             event("MERGED_FROM_UNMAPPED_DUPLICATE",
                   f"Absorbed {src['identifier']} {term!r} as a RAW_TEXT synonym -- {why}. "
-                  f"No new SSSOM row; {curie} is already mapped.", stamp=stamp)
+                  f"No new SSSOM row; {curie} is already mapped."
+                  + (f" Source: {source_id(src)}." if source_id(src) else ""), stamp=stamp)
         )
         unmapped["ingredients"].remove(src)
         merged.append((src["identifier"], term, curie))
