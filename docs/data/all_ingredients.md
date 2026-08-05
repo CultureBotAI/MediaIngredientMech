@@ -1,7 +1,7 @@
 # All Ingredients
 
-Generated: 2026-08-05T03:22:03.162035+00:00
-Total: 2877 ingredients
+Generated: 2026-08-05T03:56:48.784533+00:00
+Total: 2875 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -1445,7 +1445,7 @@ Total: 2877 ingredients
 | CHEBI:62412 | CHEBI:62412 | Phenazine-1-carboxylic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:10510-77-7 | cas:10510-77-7 | Phenazine ethosulfate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:8055 | CHEBI:8055 | Phenazine methosulfate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:18397 | CHEBI:18397 | Phenethylamine Hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18397 | CHEBI:18397 | 2-phenylethylamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15882 | CHEBI:15882 | Phenol | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:31991 | CHEBI:31991 | Phenol red | MAPPED | CHEBI | EXACT_MATCH | 96 |
 | CHEBI:8075 | CHEBI:8075 | Phenoxyacetic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1650,7 +1650,7 @@ Total: 2877 ingredients
 | CHEBI:38699 | CHEBI:38699 | Sodium Fluoroacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:86431 | CHEBI:86431 | Sodium Fluorophosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:84997 | CHEBI:84997 | Sodium gluconate | MAPPED | CHEBI | EXACT_MATCH | 15 |
-| CHEBI:64243 | CHEBI:64243 | Sodium glutamate monohydrate | MAPPED | CHEBI | EXACT_MATCH | 11 |
+| CHEBI:64243 | CHEBI:64243 | monosodium L-glutamate | MAPPED | CHEBI | EXACT_MATCH | 11 |
 | CHEBI:32146 | CHEBI:32146 | Sodium hypochlorite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:10039-56-2 | CHEBI:234148 | Sodium hypophosphite monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:81708 | CHEBI:81708 | sodium iodate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2734,7 +2734,6 @@ Total: 2877 ingredients
 | UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0672 |  | Beta-gentiobiose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0629 |  | Beta-hydroxybutyrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0707 |  | Beta-phenylethylamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0697 |  | Bis-4-nitrophenyl-phenyl Phosphonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0691 |  | Bis-4-nitrophenyl-phosphorylcholine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0802 |  | Bottromycin | UNMAPPED |  |  | 0 |
@@ -2855,7 +2854,6 @@ Total: 2877 ingredients
 | UNMAPPED_0840 |  | Rhodomycin B | UNMAPPED |  |  | 0 |
 | UNMAPPED_0841 |  | Ristocetin A | UNMAPPED |  |  | 0 |
 | UNMAPPED_0842 |  | Rna | UNMAPPED |  |  | 0 |
-| UNMAPPED_0733 |  | Sodium L-glutamate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0705 |  | Sucrose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0663 |  | Sugars | UNMAPPED |  |  | 0 |
 | UNMAPPED_0844 |  | Synanthrin | UNMAPPED |  |  | 0 |

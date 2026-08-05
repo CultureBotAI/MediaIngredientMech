@@ -1,5 +1,5 @@
 identifier: CHEBI:64243
-preferred_term: Sodium glutamate monohydrate
+preferred_term: monosodium L-glutamate
 ontology_mapping:
   ontology_id: CHEBI:64243
   ontology_label: monosodium L-glutamate
@@ -21,6 +21,12 @@ synonyms:
 - synonym_text: sodium (2S)-2-azaniumylpentanedioate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Sodium glutamate monohydrate
+  synonym_type: RAW_TEXT
+  source: relabelled
+- synonym_text: Sodium L-glutamate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 11
@@ -70,8 +76,32 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
     nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-05T03:54:37.587205+00:00'
+  curator: salt-hydrate-identity-fix
+  action: RELABELLED
+  changes: preferred_term 'Sodium glutamate monohydrate' -> 'monosodium L-glutamate';
+    old name kept as a RAW_TEXT synonym. The record carried the anhydrous formula
+    C5H8NO4.Na and SMILES while its name claimed the monohydrate; ChEBI has no monohydrate
+    term. EXACT_MATCH is now true rather than asserted of a hydrate.
+  llm_assisted: true
+- timestamp: '2026-08-05T03:55:06.812318+00:00'
+  curator: salt-hydrate-identity-fix
+  action: CORRECTED
+  changes: cas_rn 6106-04-3 -> 142-47-2. 6106-04-3 is monosodium L-glutamate MONOhydrate;
+    this record is CHEBI:64243 (anhydrous), whose own ChEBI CAS xref is 142-47-2 and
+    whose formula C5H8NO4.Na the record already carried. The monohydrate CAS was the
+    last remnant of the mislabelling.
+  llm_assisted: true
+- timestamp: '2026-08-05T03:55:47.112217+00:00'
+  curator: salt-hydrate-identity-fix
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0733 ''Sodium L-glutamate'' as a RAW_TEXT synonym --
+    ''Sodium L-glutamate'' and ''Sodium glutamate'' are ChEBI synonyms of CHEBI:64243;
+    held back from #227 until the record stopped claiming to be the monohydrate. No
+    new SSSOM row; CHEBI:64243 is already mapped. Source: kgmicrobe.trait:sodium_l_glutamate.'
+  llm_assisted: true
 chemical_properties:
-  cas_rn: 6106-04-3
+  cas_rn: 142-47-2
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:53:51.816519+00:00'
   molecular_formula: C5H8NO4.Na

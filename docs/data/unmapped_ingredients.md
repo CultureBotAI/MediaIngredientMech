@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-05T03:22:03.161299+00:00
-Total: 570 ingredients
+Generated: 2026-08-05T03:56:48.783769+00:00
+Total: 568 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -427,7 +427,6 @@ Total: 570 ingredients
 | UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0672 |  | Beta-gentiobiose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0629 |  | Beta-hydroxybutyrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0707 |  | Beta-phenylethylamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0697 |  | Bis-4-nitrophenyl-phenyl Phosphonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0691 |  | Bis-4-nitrophenyl-phosphorylcholine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0802 |  | Bottromycin | UNMAPPED |  |  | 0 |
@@ -548,7 +547,6 @@ Total: 570 ingredients
 | UNMAPPED_0840 |  | Rhodomycin B | UNMAPPED |  |  | 0 |
 | UNMAPPED_0841 |  | Ristocetin A | UNMAPPED |  |  | 0 |
 | UNMAPPED_0842 |  | Rna | UNMAPPED |  |  | 0 |
-| UNMAPPED_0733 |  | Sodium L-glutamate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0705 |  | Sucrose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0663 |  | Sugars | UNMAPPED |  |  | 0 |
 | UNMAPPED_0844 |  | Synanthrin | UNMAPPED |  |  | 0 |
