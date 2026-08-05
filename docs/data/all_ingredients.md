@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-08-05T03:56:48.784533+00:00
-Total: 2875 ingredients
+Generated: 2026-08-05T04:27:02.600627+00:00
+Total: 2876 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:64243 | CHEBI:64243 | Sodium L-glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15226 | CHEBI:15226 | Tetrathionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15589 | CHEBI:15589 | L-malate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:29033 | CHEBI:29033 | Ferrous Ion | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -1650,7 +1651,7 @@ Total: 2875 ingredients
 | CHEBI:38699 | CHEBI:38699 | Sodium Fluoroacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:86431 | CHEBI:86431 | Sodium Fluorophosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:84997 | CHEBI:84997 | Sodium gluconate | MAPPED | CHEBI | EXACT_MATCH | 15 |
-| CHEBI:64243 | CHEBI:64243 | monosodium L-glutamate | MAPPED | CHEBI | EXACT_MATCH | 11 |
+| CHEBI:232425 | CHEBI:232425 | Sodium glutamate monohydrate | MAPPED | CHEBI | EXACT_MATCH | 11 |
 | CHEBI:32146 | CHEBI:32146 | Sodium hypochlorite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:10039-56-2 | CHEBI:234148 | Sodium hypophosphite monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:81708 | CHEBI:81708 | sodium iodate | MAPPED | CHEBI | EXACT_MATCH | 0 |

@@ -37,29 +37,44 @@ MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 
 
-def move_sssom_row(old_term: str, new_term: str, apply: bool) -> str:
-    lines = SSSOM.read_text().split("\n")
+def plan_sssom_move(old_term: str, new_term: str) -> tuple[str, str]:
+    """Return (new file text, description). Writes nothing — the caller writes it
+    only after save_yaml() has validated, so a validation failure cannot leave the
+    SSSOM renamed and the YAML untouched."""
+    # keepends, like promote_resolved_unmapped.py._sorted_insert: split("\n")
+    # leaves a trailing "" that the sort loop never breaks on, so a term sorting
+    # last is appended AFTER it — injecting a blank line and dropping the final
+    # newline.
+    lines = SSSOM.read_text().splitlines(keepends=True)
     header_i = next(i for i, ln in enumerate(lines) if ln.startswith("subject_id"))
     hits = [i for i, ln in enumerate(lines)
             if i > header_i and ln.split("\t")[1:2] == [old_term]]
     if len(hits) != 1:
-        raise SystemExit(f"expected exactly 1 SSSOM row with subject_label {old_term!r}, "
-                         f"found {len(hits)}")
+        raise SystemExit(
+            f"expected exactly 1 SSSOM row with subject_label {old_term!r}, found {len(hits)}. "
+            "Records with a Rule-B1 registry set (narrowMatch + kgmicrobe.compound: + cas:) "
+            "carry 2-3 rows and are not supported here — relabel those by hand.")
+    clash = [i for i, ln in enumerate(lines)
+             if i > header_i and ln.split("\t")[1:2] == [new_term]]
+    if clash:
+        raise SystemExit(f"an SSSOM row already has subject_label {new_term!r} "
+                         f"(line {clash[0] + 1}); relabelling would duplicate the subject")
     row = lines.pop(hits[0])
-    cols = row.split("\t")
+    eol = "\n" if row.endswith("\n") else ""
+    cols = row.rstrip("\n").split("\t")
     cols[0] = f"MIM:{sanitize_filename(new_term)}"
     cols[1] = new_term
-    new_row = "\t".join(cols)
+    new_row = "\t".join(cols) + eol
     i = header_i + 1
     while i < len(lines):
         c = lines[i].split("\t")
-        if len(c) > 1 and c[1] > new_term:
+        if len(c) > 1 and c[1].strip() and c[1] > new_term:
             break
         i += 1
     lines.insert(i, new_row)
-    if apply:
-        SSSOM.write_text("\n".join(lines))
-    return f"{cols[0]}\t{new_term}  (row moved to line {i + 1})"
+    if not lines[-1].endswith("\n"):
+        lines[-1] += "\n"
+    return "".join(lines), f"{cols[0]}\t{new_term}  (row moved to line {i + 1})"
 
 
 def main() -> int:
@@ -67,7 +82,6 @@ def main() -> int:
     ap.add_argument("--identifier", required=True, help="the record's CURIE")
     ap.add_argument("--to", required=True, help="new preferred_term")
     ap.add_argument("--reason", required=True, help="why the old name was wrong")
-    ap.add_argument("--quality", help="revise mapping_quality at the same time")
     ap.add_argument("--curator", default="relabel_mapped_record")
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
@@ -87,30 +101,32 @@ def main() -> int:
     if old not in existing:
         rec["synonyms"].append(
             {"synonym_text": old, "synonym_type": "RAW_TEXT", "source": "relabelled"})
-    changed_quality = ""
-    if args.quality:
-        om = rec.setdefault("ontology_mapping", {})
-        changed_quality = f" mapping_quality {om.get('mapping_quality')} -> {args.quality};"
-        om["mapping_quality"] = args.quality
+    # deliberately no --quality: mapping_quality drives the SSSOM predicate_id
+    # and confidence, and rewriting it here without also rewriting those (and any
+    # Rule-B1 registry row) would publish e.g. NARROW_MATCH as skos:exactMatch.
     rec.setdefault("curation_history", []).append({
         "timestamp": stamp, "curator": args.curator, "action": "RELABELLED",
         "changes": (f"preferred_term {old!r} -> {args.to!r}; old name kept as a RAW_TEXT "
-                    f"synonym.{changed_quality} {args.reason}"),
+                    f"synonym. {args.reason}"),
         "llm_assisted": True,
     })
     doc["generation_date"] = stamp
 
-    moved = move_sssom_row(old, args.to, args.apply)
+    if any(r is not rec and r.get("preferred_term") == args.to for r in doc["ingredients"]):
+        raise SystemExit(f"another mapped record already has preferred_term {args.to!r}; "
+                         "renaming would collide in the per-record export index")
+    sssom_text, moved = plan_sssom_move(old, args.to)
     print(f"{args.identifier}: {old!r} -> {args.to!r}")
     print(f"  SSSOM: {moved}")
     print(f"  old name kept as RAW_TEXT synonym")
-    if changed_quality:
-        print(f" {changed_quality.strip()}")
 
     if not args.apply:
         print("\nDRY RUN -- nothing written. Pass --apply to write.")
         return 0
+    # YAML first: it validates, and a failure here must not leave the SSSOM
+    # renamed against an unchanged collection (ORPHAN + GAP, manual recovery).
     save_yaml(doc, MAPPED, validate=True, target_class="IngredientCollection")
+    SSSOM.write_text(sssom_text)
     print("\nwrote data/curated/mapped_ingredients.yaml + SSSOM")
     print("next: just export-individual && just export-lists && just export-browser && just qc")
     return 0
