@@ -73,9 +73,12 @@ re-route edges, or treat them as the same identity.
 
 Use `skos:closeMatch` when:
 
-- Two ingredients are related but not at parent/child level — different
-  hydration states, different stereoisomers where stereochemistry matters
-  for downstream use, near-synonyms whose biological roles diverge.
+- Two ingredients are related but not at parent/child level — near-synonyms
+  whose biological roles diverge, or a record retaining a related term for
+  human reference.
+  **Not** for hydration states or stereoisomers where a specific term exists:
+  Section 3 requires those to take their own identifier rather than a weakened
+  predicate against the parent.
 - You want to record a related ontology term for human reference without
   asserting any formal subsumption.
 
@@ -220,10 +223,14 @@ two records sharing an id, and one substance under two ids.
 > specific thing by sharing a broader term's identifier.**
 
 Sharing the parent's id is the identity-collapse bug of Section 2, arriving by a
-different route. `MgSO4 x 7 H2O` mapped to `CHEBI:32599 magnesium sulfate` does
-not say "a hydrate of magnesium sulfate"; it says "this **is** magnesium
-sulfate", and every downstream join then treats 246.47 g/mol and 120.37 g/mol as
-one node. Formula weight is exactly what a medium recipe depends on.
+different route. `MgSO4·7H2O` mapped to `CHEBI:32599 magnesium sulfate` does not
+say "a hydrate of magnesium sulfate"; it says "this **is** magnesium sulfate",
+and every downstream join then treats 246.47 g/mol and 120.37 g/mol as one node.
+Formula weight is exactly what a medium recipe depends on.
+
+The contrast is in the data: `MgSO4 x 7 H2O` sits on `CHEBI:31795 magnesium
+sulfate heptahydrate` and is **correct** — a specific term existed and was used.
+`MgSO4·7H2O` is the same substance on the generic term, and is the defect.
 
 ### Decision procedure
 
@@ -238,22 +245,44 @@ Work down the list and stop at the first that applies.
    `cas:<its own CAS>`, `skos:narrowMatch` to the nearest ontology parent, plus
    the mandatory registry row (Section 2, Rule B1).
    `Sodium hypophosphite monohydrate` → `cas:10039-56-2`, narrowMatch
-   `sodium hypophosphite`. **This is already the established pattern** — about 18
-   hydrate records use it.
+   `sodium hypophosphite`.
+
+   The registry row's `kgmicrobe.*` CURIE is **not a competing identifier** — it
+   is the kg-microbe-namespace handle for the same MIM subject, required by
+   Rule B1 and emitted by the claw builder. "One substance under two
+   identifiers" in the table below means two *ontology/registry-of-record* ids,
+   not the subject's own registry handle.
+
+   **This is already the established pattern**: 34 hydrate-labelled subjects
+   carry `cas:` exactMatch plus a parent narrowMatch plus the Rule B1 registry
+   row. Note that a further **22** `cas:`-identified hydrate records have no
+   parent row and no registry row, and become non-compliant with this step the
+   moment it lands — they are a backlog, not counter-examples.
 
 3. **No exact term and no CAS.** Mint `kgmicrobe.compound:<slug>` (pure
    compounds) or `kgmicrobe.ingredient:<slug>` (complex/biological materials),
    `narrowMatch` to the nearest parent, plus the registry row.
 
 4. **The label is genuinely under-specified and an unspecified-sense parent term
-   exists.** Then the label really does denote the unspecified sense — use that
-   term with `exactMatch`, and do *not* reach for a specific child.
-   A bare `arabitol` with no locant is `CHEBI:22605 arabinitol`, not the L- or
-   D- term.
+   exists** — *and the record carries no independent evidence of which specific
+   sense it is*. Then the label denotes the unspecified sense: use that term
+   with `exactMatch`, and do not reach for a specific child. A bare `arabitol`
+   with no locant is `CHEBI:22605 arabinitol`.
 
-5. **The label is under-specified and only specific terms exist.** Do not guess.
-   `skos:closeMatch` to the most likely term with the reasoning recorded in
-   `evidence`, or `mapping_status: AMBIGUOUS` if even that is not defensible.
+   **The evidence escape hatch is the point, not an exception.** MIM's existing
+   `Arabitol` record is grounded to `CHEBI:18403 L-arabinitol` and that is
+   correct: it carries `cas 7643-75-6` (ChEBI's own xref for the L-term, present
+   from the record's `CREATED` event, so not derived from the mapping) plus five
+   independently-swept L-form synonyms. It uses `closeMatch`, which asserts no
+   identity. A short label does not override record-level evidence — that is why
+   #230 closed as premise-disproven. Apply this rule to a label with *nothing
+   else attached*.
+
+5. **The label is under-specified and only specific terms exist.** Emit **no
+   mapping row** and set `mapping_status: AMBIGUOUS`. Section 1 is explicit that
+   `closeMatch` is not a soft `exactMatch` for when you are unsure — if you
+   cannot tell which term is meant, the row must be left out and the record
+   flagged, not weakened.
    `2-tetrachloroethane` reaches both `CHEBI:34024` and `CHEBI:36026` and gets
    neither.
 
@@ -264,7 +293,7 @@ Work down the list and stop at the first that applies.
 | Two records share one identifier | Same substance, or one is more specific | Same → merge. More specific → give it its own id per 1–3. |
 | One substance under two identifiers | One of them is wrong | Pick by the precedence in 1–3; re-ground the other. |
 | A hydrate/salt sits on the anhydrous/free term | Specificity collapsed into the parent | Step 1 if a specific term exists, else step 2. |
-| One label resolves to several identifiers | Legitimate shared synonym, or a real duplicate | Resolution precedence is `preferred_term` before synonyms; the registry row is the single channel (Section 2). If the two records are the same substance, it is a duplicate — merge. |
+| One label resolves to several identifiers | Legitimate shared synonym, or a real duplicate | If the records are the same substance it is a duplicate — merge. If they are genuinely different, a consumer should prefer the record whose `preferred_term` is the label over one carrying it as a synonym. **The published exports carry no signal for that yet** — #232 tracks adding one, and the 87 current cases are untriaged. |
 
 ### What *not* to do
 
@@ -277,9 +306,16 @@ converts a visible mapping error into an invisible one.
 
 **Do not treat a record's auto-derived chemistry as evidence of its identity.**
 `AUTO_BACKFILL_CHEBI_CHEMISTRY` copies formula, InChI and SMILES *from the
-current mapping*, so they agree with it by construction. Only independently
-sourced fields — a CAS from a name lookup, synonyms from an external sweep —
-are evidence about which term is right.
+current mapping*, so they agree with it by construction.
+
+Check `chemical_properties.data_source` before trusting a CAS, too — a
+`data_source` of the form `PubChem (via CHEBI:…)` was also derived from the
+mapping under test. `MgSO4·H2O` carries `cas_rn 10034-99-8` sourced
+`PubChem (via CHEBI:31795)` **and** external-sweep synonyms that are all
+*heptahydrate* spellings, so a curator reading both as corroboration would
+confirm the wrong term twice. Evidence counts only when its provenance is
+independent of the mapping being tested — e.g. a CAS present from the record's
+`CREATED` event, or a name lookup on the record's own label.
 
 **Do not conclude a term does not exist without quoting the full search.** The
 32 hydrate families exist partly because specific terms were not found; at least

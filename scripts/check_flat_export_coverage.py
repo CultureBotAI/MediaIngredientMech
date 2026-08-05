@@ -95,13 +95,19 @@ def check_freshness() -> int:
         if not live.exists() or _browser_payload(live) != _browser_payload(Path(tmp) / "ingredients.json"):
             stale.append("ingredients.json")
     if stale:
+        # the two artifacts come from different producers reading different
+        # sources, so name the right remedy for each rather than one blanket
+        # "run export-lists" that does nothing for ingredients.json
+        remedy = {n: ("`just export-browser`  (browser_export.py, reads data/ingredients/)"
+                      if n == "ingredients.json"
+                      else "`just export-lists`    (export_lists.py, reads data/curated/)")
+                  for n in stale}
         return fail(
-            "docs/data/ does not match what export_lists.py produces from "
-            "data/curated/ — it is stale:\n"
-            + "".join(f"  {n}\n" for n in stale)
-            + "\nRun `just export-lists` and commit the result. A stale export keeps\n"
-              "publishing records that curation has already deleted or merged.")
-    print(f"freshness: {len(DETERMINISTIC) + 1} regenerated artifact(s) match data/curated/")
+            "docs/data/ does not match what its producer generates — it is stale:\n"
+            + "".join(f"  {n:26} regenerate with {remedy[n]}\n" for n in stale)
+            + "\nCommit the result. A stale export keeps publishing records that "
+              "curation has already deleted or merged.")
+    print(f"freshness: {len(DETERMINISTIC) + 1} regenerated artifact(s) match their producers")
     return 0
 
 

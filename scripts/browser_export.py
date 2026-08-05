@@ -43,7 +43,7 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
     mapping_status = ingredient.get('mapping_status', 'UNKNOWN')
 
     # Ontology mapping
-    ontology_mapping = ingredient.get('ontology_mapping', {})
+    ontology_mapping = ingredient.get('ontology_mapping') or {}
     ontology_id = ontology_mapping.get('ontology_id', '')
     ontology_label = ontology_mapping.get('ontology_label', '')
     ontology_source = ontology_mapping.get('ontology_source', '')
@@ -51,13 +51,13 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
 
     # Synonyms
     synonyms = []
-    for syn in ingredient.get('synonyms', []):
+    for syn in ingredient.get('synonyms') or []:
         synonym_text = syn.get('synonym_text', '')
         if synonym_text and synonym_text not in synonyms:
             synonyms.append(synonym_text)
 
     # Statistics
-    stats = ingredient.get('occurrence_statistics', {})
+    stats = ingredient.get('occurrence_statistics') or {}
     total_occurrences = stats.get('total_occurrences', 0)
     media_count = stats.get('media_count', 0)
 
@@ -107,6 +107,7 @@ def export_ingredients_to_json(
     stats = {'total': 0, 'mapped': 0, 'unmapped': 0}
 
     all_ingredients = []
+    failures: list[str] = []
 
     # Process mapped ingredients
     mapped_dir = ingredients_dir / 'mapped'
@@ -122,7 +123,7 @@ def export_ingredients_to_json(
                 stats['total'] += 1
                 stats['mapped'] += 1
             except Exception as e:
-                console.print(f"[red]Error processing {yaml_file.name}: {e}[/red]")
+                failures.append(f"{yaml_file.name}: {e}")
 
     # Process unmapped ingredients
     unmapped_dir = ingredients_dir / 'unmapped'
@@ -138,7 +139,15 @@ def export_ingredients_to_json(
                 stats['total'] += 1
                 stats['unmapped'] += 1
             except Exception as e:
-                console.print(f"[red]Error processing {yaml_file.name}: {e}[/red]")
+                failures.append(f"{yaml_file.name}: {e}")
+
+    if failures:
+        console.print(f"[red]{len(failures)} record(s) could not be exported:[/red]")
+        for f in failures:
+            console.print(f"  [red]{f}[/red]")
+        console.print("[red]Refusing to write a short catalog — it deploys to Pages "
+                      "and nothing downstream would notice the gap.[/red]")
+        sys.exit(1)
 
     # Create export data
     export_data = {
