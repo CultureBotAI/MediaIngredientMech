@@ -157,7 +157,7 @@ def test_check_and_write_baseline_are_mutually_exclusive(repo):
 def test_refresh_resets_a_disposition_whose_members_changed(repo):
     run(repo, "--write-baseline")
     b = repo / "mappings" / "duplicate_identifier_baseline.tsv"
-    b.write_text(b.read_text().replace("UNREVIEWED", "SAFE_MERGE"))
+    b.write_text(b.read_text().replace("UNREVIEWED", "MERGE_SAME_SUBSTANCE"))
 
     path = repo / "data" / "curated" / "mapped_ingredients.yaml"
     path.write_text(yaml.safe_dump({"ingredients": [

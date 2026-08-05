@@ -191,3 +191,37 @@ def test_coverage_counter_is_a_ratio_not_the_published_set_size(tmp_path):
     out = run(repo)
     assert out.returncode == 2
     assert "1/2 curated label(s) resolvable" in out.stdout
+
+
+# --- browser_export: the #233 silent-drop (PR #237 review) ------------------
+
+@pytest.fixture(scope="module")
+def browser_export():
+    return _load(ROOT / "scripts" / "browser_export.py")
+
+
+def test_null_ontology_mapping_does_not_drop_the_record(browser_export):
+    """`ontology_mapping: null` is valid on an unmapped record. `.get(k, {})`
+    returned None, `None.get()` raised, the per-file except swallowed it and the
+    run still exited 0 — so TAPSO vanished from the deployed catalog (#233)."""
+    rec = {"identifier": "UNMAPPED_1", "preferred_term": "TAPSO",
+           "mapping_status": "UNMAPPED", "ontology_mapping": None,
+           "synonyms": None, "occurrence_statistics": None}
+    out = browser_export.extract_ingredient_for_browser(rec, "Tapso.yaml")
+    assert out["preferred_term"] == "TAPSO"
+
+
+def test_browser_export_exits_nonzero_when_a_record_fails(tmp_path):
+    """A short catalog deploys to Pages; nothing downstream notices the gap."""
+    src = (ROOT / "scripts" / "browser_export.py").read_text()
+    assert "sys.exit(1)" in src, "per-record failures must fail the run"
+    assert "failures.append" in src
+
+
+def test_stale_ingredients_json_names_export_browser_not_export_lists():
+    """browser_export.py reads data/ingredients/, not data/curated/, and
+    `just export-lists` does not regenerate it — the first message sent the
+    curator to a command that produces no diff."""
+    src = (ROOT / "scripts" / "check_flat_export_coverage.py").read_text()
+    assert "just export-browser" in src
+    assert "browser_export.py, reads data/ingredients/" in src

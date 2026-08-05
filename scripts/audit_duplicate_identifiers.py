@@ -15,6 +15,34 @@ judgement; a heuristic that gets it wrong launders a guess into a
 machine-readable verdict. It emits the signals a curator needs and carries a
 `disposition` column humans own.
 
+`disposition` values come from MAPPING_SEMANTICS.md Section 3, which settles the
+whole class in one rule -- one record per distinct substance, and a record's
+identifier is the most specific stable id denoting THAT substance:
+
+  MERGE_SAME_SUBSTANCE           the records describe one substance; fold one
+                                 into the other. NOTE every baseline row is
+                                 collection=mapped, so all 15 need MAPPED-to-
+                                 MAPPED merge tooling, which does not exist yet
+                                 (#226). merge_unmapped_into_mapped.py does not
+                                 apply to any of them.
+  NEEDS_OWN_ID                   one record is more specific than the shared
+                                 term. It takes its own id -- exact ontology
+                                 term if one exists, else cas:, else a minted
+                                 kgmicrobe.compound: -- and narrowMatches the
+                                 parent. reground_mapped_record.py does the
+                                 move, BUT refuses when the destination is
+                                 already held, which is true for the headline
+                                 cases; those need reground + merge together.
+  NEEDS_OWN_ID_MEMBER_UNDECIDED  as above, but which member surrenders the id
+                                 has not been decided (e.g. MICRO:0000455
+                                 'Algal' vs 'WC' trace elements).
+  HYDRATE_FAMILY_UNREVIEWED      an anhydrous/hydrate family. NOT yet decided:
+                                 some are merges because the shared term IS the
+                                 hydrate (CHEBI:32150 is sodium thiosulfate
+                                 pentahydrate), others need their own id. Each
+                                 needs reading; do not bulk-convert.
+  UNREVIEWED                     not yet decided
+
 What it enforces (`--check`, exit 2):
   * an identifier duplicated that is not in the baseline
   * a baseline group that GREW
