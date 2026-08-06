@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-08-06T06:52:44.960501+00:00
-Total: 2849 ingredients
+Generated: 2026-08-06T07:02:57.589896+00:00
+Total: 2848 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:75273 | CHEBI:75273 | Niaproof | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:37671 | CHEBI:37671 | 3-beta-d-glucan | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | CHEBI:73908 | 2,4-diamino-6,7-di-iso-propylpteridine phosphate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:maltose_hydrate | CHEBI:17306 | Maltose Hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -2749,7 +2750,6 @@ Total: 2849 ingredients
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0792 |  | 5-didehydro-D-gluconic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0737 |  | 5-trimethoxybenzoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0642 |  | Acetylspiramycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0726 |  | Actinomycin X | UNMAPPED |  |  | 0 |
 | UNMAPPED_0795 |  | Alpha-hydroxyglutarate-gamma-lactone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0738 |  | Aminovalerate | UNMAPPED |  |  | 0 |
@@ -2811,7 +2811,6 @@ Total: 2849 ingredients
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0832 |  | Netropsin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0646 |  | Niaproof | UNMAPPED |  |  | 0 |
 | UNMAPPED_0833 |  | Nutriacholic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0719 |  | PY-cellobiose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0767 |  | PY-fructose | UNMAPPED |  |  | 0 |

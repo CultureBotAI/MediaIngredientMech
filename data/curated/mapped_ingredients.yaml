@@ -1,8 +1,52 @@
-generation_date: '2026-08-06T06:38:51.222544+00:00'
-total_count: 2351
-mapped_count: 2332
+generation_date: '2026-08-06T07:01:56.130484+00:00'
+total_count: 2352
+mapped_count: 2333
 unmapped_count: 0
 ingredients:
+- identifier: CHEBI:75273
+  preferred_term: Niaproof
+  synonyms:
+  - synonym_text: Niaproof
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 24
+      source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:niaproof); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0646 -> CHEBI:75273 "sodium tetradecyl sulfate" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:niaproof); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:75273
+    ontology_label: sodium tetradecyl sulfate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Niaproof is Niaproof 4, a trade name for sodium tetradecyl sulfate; 'niaproof
+        4' is a registered synonym of CHEBI:75273 in the local ChEBI build. Used as
+        a surfactant in Biolog phenotype plates, which matches this record's BacDive
+        provenance (#213).
 - identifier: CHEBI:37671
   preferred_term: 3-beta-d-glucan
   synonyms:
@@ -164641,7 +164685,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:spiramycin_ii; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Acetylspiramycin
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -164675,6 +164722,15 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T07:01:56.130484+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0642 ''Acetylspiramycin'' as a RAW_TEXT synonym --
+      ChEBI registers "Acetylspiramycin" as an explicit synonym of CHEBI:31168 spiramycin
+      II (alongside Foromacidin B and Spiramycin B), so this is the ontology own position
+      rather than an inference (#213). No new SSSOM row; CHEBI:31168 is already mapped.
+      Source: kgmicrobe.trait:acetylspiramycin.'
     llm_assisted: true
 - identifier: CHEBI:15738
   preferred_term: Staurosporine
