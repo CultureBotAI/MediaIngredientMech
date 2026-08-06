@@ -1,10 +1,11 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T06:08:12.788303+00:00
-Total: 2349 ingredients
+Generated: 2026-08-06T06:21:28.876210+00:00
+Total: 2350 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | CHEBI:73908 | 2,4-diamino-6,7-di-iso-propylpteridine phosphate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:maltose_hydrate | CHEBI:17306 | Maltose Hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_2-ketogluconate | CHEBI:16808 | Potassium 2-ketogluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_2-dehydro-d-gluconate | CHEBI:16808 | Potassium 2-dehydro-D-gluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |

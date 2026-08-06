@@ -1,0 +1,56 @@
+identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+preferred_term: 2,4-diamino-6,7-di-iso-propylpteridine phosphate
+synonyms:
+- synonym_text: 7-di-iso-propylpteridine Phosphate)
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1212
+    source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:7_di_iso_propylpteridine_phosphate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_213_label_repair
+  action: CORRECTED
+  changes: 'preferred_term ''7-di-iso-propylpteridine Phosphate)'' -> ''2,4-diamino-6,7-di-iso-propylpteridine
+    phosphate'': the source label is a truncated fragment with an unbalanced paren.
+    Provenance is BacDive_Antibiotic_resistance/sensitivity, and the full name is
+    the phosphate salt of the vibriostatic agent O/129 (2,4-diamino-6,7-diisopropylpteridine,
+    CHEBI:73908). Original label retained as a RAW_TEXT synonym (#213).'
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0621 -> kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+    "2,4-diamino-6,7-diisopropylpteridine" (NARROW_MATCH); mapping_status UNMAPPED
+    -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:7_di_iso_propylpteridine_phosphate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:73908
+  ontology_label: 2,4-diamino-6,7-diisopropylpteridine
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Phosphate salt of the vibriostatic agent O/129. CHEBI:73908 2,4-diamino-6,7-diisopropylpteridine
+      is the free base; CHEBI has no term for the phosphate salt, so Section 3 applies:
+      registry identifier plus narrowMatch to the parent rather than asserting the
+      salt IS the free base. The Vibriostat and Vibriostatic Agent O/129 residual
+      labels are the free base and were mapped to CHEBI:73908 separately (#213).'
