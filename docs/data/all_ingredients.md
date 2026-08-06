@@ -1,10 +1,21 @@
 # All Ingredients
 
-Generated: 2026-08-06T02:51:12.407929+00:00
+Generated: 2026-08-06T03:15:57.127030+00:00
 Total: 2872 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:22210 | CHEBI:22210 | Aconitate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:16087 | CHEBI:16087 | Isocitrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:17128 | CHEBI:17128 | Adipate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:30043 | CHEBI:30043 | Terephthalate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:30803 | CHEBI:30803 | Isophthalate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:13997 | CHEBI:13997 | Citramalate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:30719 | CHEBI:30719 | Citraconate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:16537 | CHEBI:16537 | Galactarate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:17240 | CHEBI:17240 | Itaconate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29806 | CHEBI:29806 | Fumarate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15792 | CHEBI:15792 | Malonate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:64243 | CHEBI:64243 | Sodium L-glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15226 | CHEBI:15226 | Tetrathionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15589 | CHEBI:15589 | L-malate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -2719,9 +2730,7 @@ Total: 2872 ingredients
 | UNMAPPED_0793 |  | 6-deoxy-d-galactose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0621 |  | 7-di-iso-propylpteridine Phosphate) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0642 |  | Acetylspiramycin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0725 |  | Aconitate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0726 |  | Actinomycin X | UNMAPPED |  |  | 0 |
-| UNMAPPED_0623 |  | Adipate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0796 |  | Alpha-L-rhamnose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0795 |  | Alpha-hydroxyglutarate-gamma-lactone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0738 |  | Aminovalerate | UNMAPPED |  |  | 0 |
@@ -2743,8 +2752,6 @@ Total: 2872 ingredients
 | UNMAPPED_0708 |  | Casamino Acids (0.01 % | UNMAPPED |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0664 |  | Chlortetracyclin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0727 |  | Citraconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0807 |  | Citramalate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
@@ -2770,10 +2777,8 @@ Total: 2872 ingredients
 | UNMAPPED_0745 |  | Formate+methanol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0746 |  | Formate+tetramethylammonium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0747 |  | Formate+trimethylamine | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0630 |  | Fumarate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0815 |  | Furaxone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0755 |  | GYPS | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0662 |  | Galactarate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0748 |  | Gallate + Formate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0731 |  | Gelatin Hydrolyzed | UNMAPPED |  |  | 0 |
 | UNMAPPED_0692 |  | Gentisate | UNMAPPED |  |  | 0 |
@@ -2801,10 +2806,7 @@ Total: 2872 ingredients
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0622 |  | Hippurate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0819 |  | Hydroxystreptomycin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0685 |  | Isocitrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0820 |  | Isophthalate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0638 |  | Itaconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0648 |  | L-alanine 4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0713 |  | L-galactonic Acid Gamma-lactone | UNMAPPED |  |  | 0 |
@@ -2812,7 +2814,6 @@ Total: 2872 ingredients
 | UNMAPPED_0823 |  | L-inositol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0825 |  | L-pyroglutamic Acid 2-naphthylamide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0627 |  | Malonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0676 |  | Maltose Hydrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0826 |  | Matamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
@@ -2857,7 +2858,6 @@ Total: 2872 ingredients
 | UNMAPPED_0845 |  | Synthetic Sea Salts (sss) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0776 |  | TYGVS + Glucose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0774 |  | Tartate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0846 |  | Terephthalate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0847 |  | Tetrabromopyrrole | UNMAPPED |  |  | 0 |
 | UNMAPPED_0734 |  | Tetrazolium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0848 |  | Trimethoxybenzoate | UNMAPPED |  |  | 0 |

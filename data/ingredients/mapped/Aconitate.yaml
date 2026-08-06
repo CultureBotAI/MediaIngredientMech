@@ -1,0 +1,44 @@
+identifier: CHEBI:22210
+preferred_term: Aconitate
+synonyms:
+- synonym_text: Aconitate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 2
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:aconitate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0725 -> CHEBI:22210 "aconitate(3-)" (CLOSE_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:aconitate); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:22210
+  ontology_label: aconitate(3-)
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Bare anion label 'Aconitate' grounded to the fully-deprotonated aconitate(3-),
+      the species present at growth-medium pH. The bare name is NOT a registered CHEBI
+      synonym of this term, hence CLOSE_MATCH rather than SYNONYM_MATCH. Naive first-match
+      enumeration would have picked the mono-anion (#213).

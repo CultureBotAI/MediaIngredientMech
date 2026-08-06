@@ -1,10 +1,21 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T02:51:12.404435+00:00
-Total: 2308 ingredients
+Generated: 2026-08-06T03:15:57.123120+00:00
+Total: 2319 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:22210 | CHEBI:22210 | Aconitate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:16087 | CHEBI:16087 | Isocitrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:17128 | CHEBI:17128 | Adipate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:30043 | CHEBI:30043 | Terephthalate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:30803 | CHEBI:30803 | Isophthalate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:13997 | CHEBI:13997 | Citramalate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:30719 | CHEBI:30719 | Citraconate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:16537 | CHEBI:16537 | Galactarate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:17240 | CHEBI:17240 | Itaconate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:29806 | CHEBI:29806 | Fumarate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15792 | CHEBI:15792 | Malonate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:64243 | CHEBI:64243 | Sodium L-glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15226 | CHEBI:15226 | Tetrathionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15589 | CHEBI:15589 | L-malate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
