@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T06:21:28.878912+00:00
-Total: 500 ingredients
+Generated: 2026-08-06T06:39:39.593551+00:00
+Total: 499 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -405,7 +405,6 @@ Total: 500 ingredients
 | UNMAPPED_0738 |  | Aminovalerate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0716 |  | BHI | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0799 |  | Bacillomycin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0650 |  | Bacteriochlorophyll Alpha | UNMAPPED |  |  | 0 |
 | UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0697 |  | Bis-4-nitrophenyl-phenyl Phosphonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0691 |  | Bis-4-nitrophenyl-phosphorylcholine | UNMAPPED |  |  | 0 |

@@ -1,4 +1,4 @@
-generation_date: '2026-08-06T05:30:11.378447+00:00'
+generation_date: '2026-08-06T06:38:51.222544+00:00'
 total_count: 2350
 mapped_count: 2331
 unmapped_count: 0
@@ -1107,6 +1107,18 @@ ingredients:
     llm_assisted: false
     changes: Promoted CHEBI:759884 -> CHEBI:17833 "gentamycin" (SYNONYM_MATCH); mapping_status
       UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_premise_correction
+    action: CORRECTED
+    changes: 'Correction to the preceding entry: it stated CHEBI:759884 "does not
+      resolve in CHEBI at all". That is FALSE -- CHEBI:759884 is live and labelled
+      "gentamicin", verified against OLS4. It is absent from the local semsql build
+      only (#197/#207/#210). The CHEBI:17833 gentamycin grounding stands as the term
+      this repo can validate, and is the same aminoglycoside, but CHEBI:759884 is
+      the exact term and this record should move back to it once the build carries
+      it (#249, #213).'
+    new_status: MAPPED
+    llm_assisted: true
   ontology_mapping:
     ontology_id: CHEBI:17833
     ontology_label: gentamycin
@@ -1119,6 +1131,11 @@ ingredients:
         CHEBI:17833''s canonical label is ''gentamycin''. The record previously carried
         CHEBI:759884, which does not resolve in CHEBI at all (one of the #249 non-existent
         identifiers) while its status was UNMAPPED (#213).'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#249)
+      notes: CHEBI:759884 "gentamicin" is live in ChEBI but absent from the local
+        semsql build; this record holds the validatable variant CHEBI:17833 "gentamycin"
+        in the meantime.
 - identifier: CHEBI:71422
   preferred_term: Beta-gentiobiose
   synonyms:
@@ -152119,7 +152136,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:bacteriochlorophyll_a; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Bacteriochlorophyll Alpha
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -152153,6 +152173,14 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T06:38:51.222544+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0650 ''Bacteriochlorophyll Alpha'' as a RAW_TEXT synonym
+      -- Same pigment; "Alpha" and "A" are the spelled-out and letter forms of the
+      same designation (#213). No new SSSOM row; CHEBI:30033 is already mapped. Source:
+      kgmicrobe.trait:bacteriochlorophyll_alpha.'
     llm_assisted: true
 - identifier: CHEBI:47250
   preferred_term: Balhimycin

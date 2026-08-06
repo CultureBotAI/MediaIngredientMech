@@ -31,6 +31,17 @@ curation_history:
   llm_assisted: false
   changes: Promoted CHEBI:759884 -> CHEBI:17833 "gentamycin" (SYNONYM_MATCH); mapping_status
     UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_213_premise_correction
+  action: CORRECTED
+  changes: 'Correction to the preceding entry: it stated CHEBI:759884 "does not resolve
+    in CHEBI at all". That is FALSE -- CHEBI:759884 is live and labelled "gentamicin",
+    verified against OLS4. It is absent from the local semsql build only (#197/#207/#210).
+    The CHEBI:17833 gentamycin grounding stands as the term this repo can validate,
+    and is the same aminoglycoside, but CHEBI:759884 is the exact term and this record
+    should move back to it once the build carries it (#249, #213).'
+  new_status: MAPPED
+  llm_assisted: true
 ontology_mapping:
   ontology_id: CHEBI:17833
   ontology_label: gentamycin
@@ -43,3 +54,8 @@ ontology_mapping:
       CHEBI:17833''s canonical label is ''gentamycin''. The record previously carried
       CHEBI:759884, which does not resolve in CHEBI at all (one of the #249 non-existent
       identifiers) while its status was UNMAPPED (#213).'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#249)
+    notes: CHEBI:759884 "gentamicin" is live in ChEBI but absent from the local semsql
+      build; this record holds the validatable variant CHEBI:17833 "gentamycin" in
+      the meantime.
