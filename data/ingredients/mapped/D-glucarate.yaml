@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: D-glucarate
   synonym_type: RAW_TEXT
   source: microbedecoder
+- synonym_text: D-saccharate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -28,6 +31,14 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0644 -> CHEBI:30612 "D-glucarate(2-)" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-06T04:51:35.608637+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0657 ''D-saccharate'' as a RAW_TEXT synonym -- D-saccharate
+    is D-glucarate; the existing record holds CHEBI:30612 D-glucarate(2-), the fully
+    deprotonated species per this issue''s anion convention (#213). No new SSSOM row;
+    CHEBI:30612 is already mapped. Source: kgmicrobe.trait:d_saccharate.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glucarate); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

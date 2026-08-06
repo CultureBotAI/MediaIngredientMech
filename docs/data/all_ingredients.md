@@ -1,10 +1,13 @@
 # All Ingredients
 
-Generated: 2026-08-06T04:29:17.679531+00:00
-Total: 2863 ingredients
+Generated: 2026-08-06T04:55:45.243532+00:00
+Total: 2858 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:73804 | CHEBI:73804 | Glycyl L-aspartic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15895 | CHEBI:15895 | D-galactonic Acid Lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90144 | CHEBI:90144 | O-nitrophenyl-beta-D-galactopyranosid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15978 | CHEBI:15978 | Glycerol 3-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:24750 | CHEBI:24750 | Hydroxystreptomycin | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:81287 | CHEBI:81287 | Neomycin F | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -2756,15 +2759,11 @@ Total: 2863 ingredients
 | UNMAPPED_0806 |  | Carminate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0708 |  | Casamino Acids (0.01 % | UNMAPPED |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0664 |  | Chlortetracyclin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0649 |  | D-galactonic Acid Lactone | UNMAPPED |  |  | 0 |
-| UNMAPPED_0657 |  | D-saccharate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0682 |  | DL-lactate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0666 |  | Dimethylsulfide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |
 | UNMAPPED_0626 |  | Esculin Ferric Citrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0688 |  | Esculin Hydrolysate | UNMAPPED |  |  | 0 |
@@ -2792,11 +2791,9 @@ Total: 2863 ingredients
 | UNMAPPED_0754 |  | Glucose + Xylose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0675 |  | Glucose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0712 |  | Glutamyl-glutamic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0665 |  | Glycine-proline | UNMAPPED |  |  | 0 |
 | UNMAPPED_0816 |  | Glycine 1% | UNMAPPED |  |  | 0 |
 | UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0643 |  | Glycyl-l-glutamate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0655 |  | Glycyl L-aspartic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0756 |  | H2+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0631 |  | H2 + CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0757 |  | H2+dimethylsulfide | NEEDS_EXPERT |  |  | 0 |
@@ -2820,7 +2817,6 @@ Total: 2863 ingredients
 | UNMAPPED_0832 |  | Netropsin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0646 |  | Niaproof | UNMAPPED |  |  | 0 |
 | UNMAPPED_0833 |  | Nutriacholic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0677 |  | O-nitrophenyl-beta-D-galactopyranosid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0719 |  | PY-cellobiose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0767 |  | PY-fructose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0768 |  | PY-glucose-rumen Fluid | NEEDS_EXPERT |  |  | 0 |
@@ -2840,7 +2836,6 @@ Total: 2863 ingredients
 | UNMAPPED_0698 |  | Potassium 2-ketogluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0639 |  | Potassium 5-dehydro-D-gluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0637 |  | Potassium 5-ketogluconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0670 |  | Propanol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0838 |  | Proteose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0699 |  | Protocatechuate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0839 |  | Psicofuranine | UNMAPPED |  |  | 0 |

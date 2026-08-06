@@ -1,10 +1,13 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T04:29:17.676256+00:00
-Total: 2332 ingredients
+Generated: 2026-08-06T04:55:45.239940+00:00
+Total: 2335 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:73804 | CHEBI:73804 | Glycyl L-aspartic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15895 | CHEBI:15895 | D-galactonic Acid Lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90144 | CHEBI:90144 | O-nitrophenyl-beta-D-galactopyranosid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15978 | CHEBI:15978 | Glycerol 3-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:24750 | CHEBI:24750 | Hydroxystreptomycin | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:81287 | CHEBI:81287 | Neomycin F | MAPPED | CHEBI | SYNONYM_MATCH | 0 |

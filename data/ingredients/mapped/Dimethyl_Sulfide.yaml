@@ -13,6 +13,9 @@ synonyms:
 - synonym_text: (METHYLSULFANYL)METHANE
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Dimethylsulfide
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -40,6 +43,13 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-06T04:51:35.608637+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0666 ''Dimethylsulfide'' as a RAW_TEXT synonym -- Same
+    compound; the residual label omits the space (#213). No new SSSOM row; CHEBI:17437
+    is already mapped. Source: kgmicrobe.compound:dimethylsulfide.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 75-18-3
   data_source: CultureBotHT compounds_to_cas.csv

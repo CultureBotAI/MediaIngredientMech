@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0677
+identifier: CHEBI:90144
 preferred_term: O-nitrophenyl-beta-D-galactopyranosid
 synonyms:
 - synonym_text: O-nitrophenyl-beta-D-galactopyranosid
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -20,5 +20,24 @@ curation_history:
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0677 -> CHEBI:90144 "2-nitrophenyl beta-D-galactoside"
+    (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:o_nitrophenyl_beta_d_galactopyranosid);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:90144
+  ontology_label: 2-nitrophenyl beta-D-galactoside
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'ONPG: o-nitrophenyl beta-D-galactopyranoside is 2-nitrophenyl beta-D-galactoside
+      under ortho/2- naming; the residual label is also missing its trailing ''e''
+      (#213).'
