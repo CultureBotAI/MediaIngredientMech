@@ -67,6 +67,36 @@ def one(recs: list[dict], curie: str, term: str | None, what: str) -> dict:
     return hits[0]
 
 
+def transfer_occurrences(src: dict, dst: dict) -> tuple[int, int]:
+    """Move ``src``'s occurrence statistics onto ``dst``. Returns what was moved.
+
+    The two totals are summed — each mention is a real mention. ``source_occurrences``
+    is summed PER SOURCE (#196): it is not covered by the totals, and the caller
+    replaces the source's whole stats block with zeros afterwards, so a source-scoped
+    count that is not moved here is destroyed rather than merely double-counted.
+    """
+    so = src.get("occurrence_statistics") or {}
+    do = dst.setdefault("occurrence_statistics", {})
+    moved = (so.get("total_occurrences") or 0, so.get("media_count") or 0)
+    do["total_occurrences"] = (do.get("total_occurrences") or 0) + moved[0]
+    do["media_count"] = (do.get("media_count") or 0) + moved[1]
+
+    by_source = {e.get("source"): dict(e)
+                 for e in (do.get("source_occurrences") or []) if e.get("source")}
+    for entry in (so.get("source_occurrences") or []):
+        name = entry.get("source")
+        if not name:
+            continue
+        existing = by_source.get(name)
+        if existing is None:
+            by_source[name] = dict(entry)
+        else:
+            existing["count"] = (existing.get("count") or 0) + (entry.get("count") or 0)
+    if by_source:
+        do["source_occurrences"] = [by_source[k] for k in sorted(by_source)]
+    return moved
+
+
 def drop_sssom_rows(subject_label: str, apply: bool) -> tuple[str, int]:
     lines = SSSOM.read_text().splitlines(keepends=True)
     header = next(i for i, ln in enumerate(lines) if ln.startswith("subject_id"))
@@ -116,11 +146,7 @@ def main() -> int:
             carried.append(text)
 
     # occurrence statistics transfer to the representative
-    so = src.get("occurrence_statistics") or {}
-    do = dst.setdefault("occurrence_statistics", {})
-    moved = (so.get("total_occurrences") or 0, so.get("media_count") or 0)
-    do["total_occurrences"] = (do.get("total_occurrences") or 0) + moved[0]
-    do["media_count"] = (do.get("media_count") or 0) + moved[1]
+    moved = transfer_occurrences(src, dst)
 
     # role facets union
     roles_added = []
