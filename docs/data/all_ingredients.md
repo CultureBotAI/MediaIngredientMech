@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-05T20:25:23.315819+00:00
+Generated: 2026-08-06T01:28:52.286685+00:00
 Total: 2876 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -457,7 +457,6 @@ Total: 2876 ingredients
 | NCIT:C72000 | NCIT:C72000 | Carrot | MAPPED | NCIT | EXACT_MATCH | 0 |
 | kgmicrobe.compound:caryomycin | kgmicrobe.compound:caryomycin | Caryomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:10357 | CHEBI:10357 | Caryophyllene [T(-)] | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:78020 | CHEBI:78020 | Casamino acids | MAPPED | CHEBI | EXACT_MATCH | 395 |
 | mesh:C017721 | mesh:C017721 | Casamino acids (vitamin assay) | MAPPED | MESH | LEXICAL_MATCH | 0 |
 | FOODON:03420180 | FOODON:03420180 | Casein | MAPPED | FOODON | EXACT_MATCH | 13 |
 | FOODON:03315719 | FOODON:03315719 | Casein peptone | MAPPED | FOODON | CLOSE_MATCH | 0 |
@@ -1307,7 +1306,6 @@ Total: 2876 ingredients
 | CHEBI:76208 | CHEBI:76208 | Na2S | MAPPED | CHEBI | EXACT_MATCH | 32 |
 | CHEBI:132112 | CHEBI:132112 | Na2S2O3 | MAPPED | CHEBI | EXACT_MATCH | 70 |
 | CHEBI:32150 | CHEBI:32150 | Na2S2O3 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 455 |
-| CHEBI:61278 | CHEBI:61278 | Na2S2O4 | MAPPED | CHEBI | EXACT_MATCH | 25 |
 | CHEBI:114786 | CHEBI:114786 | Na2S2O5 | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:76209 | CHEBI:76209 | Na2S x 9 H2O | MAPPED | CHEBI | EXACT_MATCH | 1747 |
 | CHEBI:48843 | CHEBI:48843 | Na2SeO3 | MAPPED | CHEBI | EXACT_MATCH | 109 |
@@ -1683,7 +1681,6 @@ Total: 2876 ingredients
 | cas:7758-16-9 | NCIT:C77500 | Sodium pyrophosphate dibasic | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:9180 | CHEBI:9180 | Sodium salicylate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63675 | CHEBI:63675 | Sodium succinate | MAPPED | CHEBI | EXACT_MATCH | 145 |
-| CHEBI:150903 | CHEBI:150903 | Sodium succinate dibasic | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:63017 | CHEBI:63017 | Sodium tartrate | MAPPED | CHEBI | EXACT_MATCH | 15 |
 | cas:10489-48-2 | CHEBI:46612 | Sodium thiophosphate tribasic hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:32150 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | MAPPED | CHEBI | EXACT_MATCH | 3 |
@@ -1788,7 +1785,7 @@ Total: 2876 ingredients
 | cas:86482-18-0 | cas:86482-18-0 | Timentin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:79645-27-5 | CHEBI:35175 | Tobramycin sulfate salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:17578 | CHEBI:17578 | Toluene | MAPPED | CHEBI | EXACT_MATCH | 10 |
-| cas:69004-03-1 | CHEBI:93130 | Tomatidine Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:69004-03-1 | CHEBI:9629 | Tomatidine Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | FOODON:03301454 | FOODON:03301454 | Tomato juice | MAPPED | FOODON | EXACT_MATCH | 0 |
 | mesh:C069668 | mesh:C069668 | Toray silicone SH 5535 | MAPPED | MESH | LEXICAL_MATCH | 0 |
 | CHEBI:69241 | CHEBI:69241 | Totarol | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2313,6 +2310,9 @@ Total: 2876 ingredients
 | CHEBI:404903 | CHEBI:404903 | Ertapenem | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:495056 | CHEBI:495056 | Gamma-cyclodextrin | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:471744 | CHEBI:471744 | Imipenem | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| FOODON:03315719 | FOODON:03315719 | Casamino acids | MAPPED | FOODON | CLOSE_MATCH | 395 |
+| CHEBI:66870 | CHEBI:66870 | Na2S2O4 | MAPPED | CHEBI | EXACT_MATCH | 25 |
+| cas:150-90-3 | CHEBI:15741 | Sodium succinate dibasic | MAPPED | CHEBI | NARROW_MATCH | 3 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0261 |  | 20AA_mix | UNMAPPED |  |  | 1 |

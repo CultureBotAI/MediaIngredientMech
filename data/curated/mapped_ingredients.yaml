@@ -1,4 +1,4 @@
-generation_date: '2026-08-05T18:02:35.008352+00:00'
+generation_date: '2026-08-06T01:28:17.419013+00:00'
 total_count: 2308
 mapped_count: 2279
 unmapped_count: 0
@@ -12265,8 +12265,7 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
-  - &id001
-    role: CARBON_SOURCE
+  - role: CARBON_SOURCE
     confidence: 0.8
     evidence:
     - reference_type: COMPUTATIONAL_PREDICTION
@@ -12347,7 +12346,12 @@ ingredients:
     smiles: CC(=O)[O-]
     data_source: CHEBI sqlite (oaklib)
   nutritional_roles:
-  - *id001
+  - role: CARBON_SOURCE
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
   - role: ENERGY_SOURCE
     confidence: 0.7
     evidence:
@@ -15888,8 +15892,7 @@ ingredients:
     data_source: CHEBI sqlite (oaklib)
   kg_microbe_node_id: CHEBI:31206
   nutritional_roles:
-  - &id007
-    role: NITROGEN_SOURCE
+  - role: NITROGEN_SOURCE
     confidence: 0.7
     evidence:
     - reference_type: COMPUTATIONAL_PREDICTION
@@ -27490,8 +27493,7 @@ ingredients:
     data_source: CHEBI sqlite (oaklib)
   kg_microbe_node_id: CHEBI:31345
   nutritional_roles:
-  - &id002
-    role: VITAMIN_SOURCE
+  - role: VITAMIN_SOURCE
     confidence: 0.8
     evidence:
     - reference_type: COMPUTATIONAL_PREDICTION
@@ -27756,7 +27758,12 @@ ingredients:
         component'
       curator_note: Widespread use in media formulations (945 occurrences). High confidence
         based on 'Defined component' property.
-  - *id002
+  - role: VITAMIN_SOURCE
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: NCIT:C105971
   preferred_term: Calprotectin
   synonyms:
@@ -29516,135 +29523,6 @@ ingredients:
     inchi: InChI=1S/C15H24/c1-11-6-5-7-12(2)13-10-15(3,4)14(13)9-8-11/h6,13-14H,2,5,7-10H2,1,3-4H3/b11-6+/t13-,14-/m1/s1
     smiles: '[H][C@@]12CC/C(C)=C/CCC(=C)[C@@]1([H])CC2(C)C'
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:78020
-  preferred_term: Casamino acids
-  ontology_mapping:
-    ontology_id: CHEBI:78020
-    ontology_label: heptacosanoate
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-  synonyms:
-  - synonym_text: ( vitamin assay)
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  - synonym_text: 'Properties: Undefined component'
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  - synonym_text: Casamino Acid
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: Casaminoacids
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: Casmino Acid
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: Casmino acids
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: carbocerate
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 395
-    media_count: 57
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-05T21:48:44.825815+00:00'
-    curator: fetch_cas_rn_from_culturebot_csv
-    action: ADDED_CAS_RN
-    changes: 'Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched:
-      Casamino acids)'
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-05T21:48:44.827802+00:00'
-    curator: fetch_cas_rn_from_culturebot_csv
-    action: ADDED_CAS_RN
-    changes: 'Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched:
-      Casamino Acids)'
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-05T21:48:44.829735+00:00'
-    curator: fetch_cas_rn_from_culturebot_csv
-    action: ADDED_CAS_RN
-    changes: 'Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched:
-      casamino acids)'
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Casamino Acid, Casaminoacids,
-      Casmino Acid, Casmino acids, carbocerate'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: CASamino acids, Casaminoacids,
-      Casmino Acid, Casmino acids, carbocerate'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-04-19T07:39:23.955331+00:00'
-    curator: audit_mim_merge
-    action: MERGED_FROM_DUPLICATES
-    changes: 'Absorbed 4 duplicate MIM record(s) into this one: Casamino_Acid.yaml,
-      Casamino_Acids_2.yaml, Casamino_Acids_3.yaml, Casamino_Acid_2.yaml. Synonyms,
-      curation_history, and occurrence counts were unioned/summed; winner selected
-      by highest occurrence count with preferred_term readability tie-break.'
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.632459+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Casamino')
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.456070+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C27H53O2; inchi=InChI=1S/C27H54O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-1;
-      smiles=CCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)[O-]
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.136156+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-06-03T02:06:01.736872+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE ->
-      nutritional_roles.PROTEIN_SOURCE'
-  chemical_properties:
-    cas_rn: 65072-00-6
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-05T21:48:44.825809+00:00'
-    molecular_formula: C27H53O2
-    inchi: InChI=1S/C27H54O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27(28)29/h2-26H2,1H3,(H,28,29)/p-1
-    smiles: CCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)[O-]
-  kg_microbe_node_id: CHEBI:78020
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: PROTEIN_SOURCE
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: mesh:C017721
   preferred_term: Casamino acids (vitamin assay)
   synonyms:
@@ -32758,13 +32636,13 @@ ingredients:
   nutritional_roles:
   - role: TRACE_ELEMENT
     confidence: 1.0
-    evidence: &id003
+    evidence: &id001
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: IRON_SOURCE
     confidence: 1.0
-    evidence: *id003
+    evidence: *id001
 - identifier: kgmicrobe.compound:champamycin_b
   preferred_term: Champamycin B
   ontology_mapping:
@@ -42999,8 +42877,7 @@ ingredients:
     data_source: CHEBI sqlite (oaklib)
   kg_microbe_node_id: CHEBI:17992
   nutritional_roles:
-  - &id008
-    role: CARBON_SOURCE
+  - role: CARBON_SOURCE
     confidence: 0.7
     evidence:
     - reference_type: COMPUTATIONAL_PREDICTION
@@ -55631,13 +55508,13 @@ ingredients:
   nutritional_roles:
   - role: IRON_SOURCE
     confidence: 1.0
-    evidence: &id004
+    evidence: &id002
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: PHOSPHATE_SOURCE
     confidence: 1.0
-    evidence: *id004
+    evidence: *id002
 - identifier: CHEBI:31604
   preferred_term: Ferric ammonium citrate
   ontology_mapping:
@@ -62048,8 +61925,7 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
-  - &id005
-    role: CARBON_SOURCE
+  - role: CARBON_SOURCE
     confidence: 1.0
     evidence:
     - reference_type: DATABASE_ENTRY
@@ -62197,7 +62073,12 @@ ingredients:
   kg_microbe_node_id: CHEBI:17754
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
-  - *id005
+  - role: CARBON_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_type: DATABASE_ENTRY
+      reference_text: Imported from CultureMech pipeline
+      curator_note: 'Original role text: Carbon Source'
   - role: ENERGY_SOURCE
     confidence: 0.7
     evidence:
@@ -82612,13 +82493,13 @@ ingredients:
   nutritional_roles:
   - role: CARBON_SOURCE
     confidence: 1.0
-    evidence: &id006
+    evidence: &id003
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: MINERAL_SOURCE
     confidence: 1.0
-    evidence: *id006
+    evidence: *id003
 - identifier: CHEBI:86345
   preferred_term: Magnesium chloride
   ontology_mapping:
@@ -99744,110 +99625,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
-- identifier: CHEBI:61278
-  preferred_term: Na2S2O4
-  ontology_mapping:
-    ontology_id: CHEBI:61278
-    ontology_label: scutellarin
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-  synonyms:
-  - synonym_text: 'Properties: Defined component, Simple component, Inorganic compound'
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  - synonym_text: 5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl beta-D-glucopyranosiduronic
-      acid
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: Scutellarein 7-O-beta-D-glucuronide
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: Scutellarein-7-O-beta-D-glucuronide
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: Scutellarein-7-glucuronide
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: Scutellarein-7beta-D-glucuronide
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: Scutellarein-7beta-D-glucuronoside
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 25
-    media_count: 25
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-05T19:53:19.989390+00:00'
-    curator: fetch_cas_rn_from_pubchem
-    action: ADDED_CAS_RN
-    changes: Added CAS-RN:7775-14-6 from PubChem API via name lookup (Na2S2O4)
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl
-      beta-D-glucopyranosiduronic acid, Scutellarein 7-O-beta-D-glucuronide, Scutellarein-7-O-beta-D-glucuronide,
-      Scutellarein-7-glucuronide, Scutellarein-7beta-D-glucuronide, ... (1 more)'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-05-01T07:35:35.245329+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:31.314515+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C21H18O12; inchi=InChI=1S/C21H18O12/c22-8-3-1-7(2-4-8)10-5-9(23)13-;
-      smiles=O=C(O)[C@H]1O[C@@H](Oc2cc3oc(-c4ccc(O)cc4)cc(=O)c3
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:17.059193+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-06-09T04:56:30.248082+00:00'
-    curator: claude_in_session_curation
-    action: ANNOTATED
-    changes: 'Added media role: REDUCING_AGENT (confidence: 0.60)'
-  - timestamp: '2026-06-09T05:23:46.807363+00:00'
-    curator: correct_stale_ontology_labels.py
-    action: CORRECTED
-    changes: 'ontology_label ''Na2S2O4'' -> ''scutellarin'': synced to canonical CHEBI
-      label (preferred_term ''Na2S2O4'' unchanged).'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT ->
-      physicochemical_roles.REDUCING_AGENT'
-  chemical_properties:
-    cas_rn: 7775-14-6
-    data_source: PubChem API
-    retrieval_date: '2026-04-05T19:53:19.989382+00:00'
-    molecular_formula: C21H18O12
-    inchi: InChI=1S/C21H18O12/c22-8-3-1-7(2-4-8)10-5-9(23)13-11(31-10)6-12(14(24)15(13)25)32-21-18(28)16(26)17(27)19(33-21)20(29)30/h1-6,16-19,21-22,24-28H,(H,29,30)/t16-,17-,18+,19-,21+/m0/s1
-    smiles: O=C(O)[C@H]1O[C@@H](Oc2cc3oc(-c4ccc(O)cc4)cc(=O)c3c(O)c2O)[C@H](O)[C@@H](O)[C@@H]1O
-  ingredient_type: SINGLE_INGREDIENT
-  physicochemical_roles:
-  - role: REDUCING_AGENT
-    confidence: 0.6
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Assigned by in-session Claude reasoning (no external API)
-      curator_note: Provisional in-session LLM role assignment; review recommended.
 - identifier: CHEBI:114786
   preferred_term: Na2S2O5
   ontology_mapping:
@@ -105923,7 +105700,14 @@ ingredients:
         Simple component'
       curator_note: Widespread use in media formulations (3240 occurrences). High
         confidence based on 'Defined component' property.
-  - *id007
+  - role: NITROGEN_SOURCE
+    confidence: 0.7
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:24839
+        (inorganic ammonium salt)'
+      curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+        recommended.
 - identifier: CHEBI:62982
   preferred_term: NH4H2PO4
   ontology_mapping:
@@ -129009,112 +128793,6 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
-- identifier: CHEBI:150903
-  preferred_term: Sodium succinate dibasic
-  ontology_mapping:
-    ontology_id: CHEBI:150903
-    ontology_label: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-  synonyms:
-  - synonym_text: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: 6-deoxy-alpha-L-galacto-hexopyranosyl-(1->3)-[alpha-D-gluco-hexopyranosyl-(1->4)]-D-galacto-hexopyranose
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: Fuc(a1-3)[Glc(a1-4)]Gal
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 3
-    media_count: 3
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-05T19:53:55.242742+00:00'
-    curator: fetch_cas_rn_from_pubchem
-    action: ADDED_CAS_RN
-    changes: Added CAS-RN:150-90-3 from PubChem API via name lookup (Sodium succinate
-      dibasic)
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol,
-      6-deoxy-alpha-L-galacto-hexopyranosyl-(1->3)-[alpha-D-gluco-hexopyranosyl-(1->4)]-D-galacto-hexopyranose,
-      Fuc(a1-3)[Glc(a1-4)]Gal'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-05-01T07:35:36.359234+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:32.452796+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C18H32O15; inchi=InChI=1S/C18H32O15/c1-4-7(21)9(23)11(25)17(29-4)33;
-      smiles=C[C@@H]1O[C@@H](O[C@H]2[C@@H](O[C@H]3O[C@H](CO)[C@
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:18.516377+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-05-30T00:34:39.676755+00:00'
-    curator: infer_roles_from_chebi_ancestry
-    action: ANNOTATED
-    changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
-  - timestamp: '2026-06-04T05:38:59.201324+00:00'
-    curator: infer_energy_source
-    action: ANNOTATED
-    changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
-  - timestamp: '2026-06-09T05:23:46.836846+00:00'
-    curator: correct_stale_ontology_labels.py
-    action: CORRECTED
-    changes: 'ontology_label ''Sodium succinate dibasic'' -> ''(2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol'':
-      synced to canonical CHEBI label (preferred_term ''Sodium succinate dibasic''
-      unchanged).'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
-      nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
-  chemical_properties:
-    cas_rn: 150-90-3
-    data_source: PubChem API
-    retrieval_date: '2026-04-05T19:53:55.242699+00:00'
-    molecular_formula: C18H32O15
-    inchi: InChI=1S/C18H32O15/c1-4-7(21)9(23)11(25)17(29-4)33-15-13(27)16(28)30-6(3-20)14(15)32-18-12(26)10(24)8(22)5(2-19)31-18/h4-28H,2-3H2,1H3/t4-,5+,6+,7+,8+,9+,10-,11-,12+,13+,14-,15+,16?,17-,18+/m0/s1
-    smiles: C[C@@H]1O[C@@H](O[C@H]2[C@@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)[C@@H](CO)OC(O)[C@@H]2O)[C@@H](O)[C@H](O)[C@@H]1O
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: CARBON_SOURCE
-    confidence: 0.7
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
-        (carbohydrate)'
-      curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
-        recommended.
-  - role: ENERGY_SOURCE
-    confidence: 0.7
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Canonical energy substrate (catabolised for energy)
-      curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
-        recommended.
 - identifier: CHEBI:63017
   preferred_term: Sodium tartrate
   ontology_mapping:
@@ -132164,7 +131842,14 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
-  - *id008
+  - role: CARBON_SOURCE
+    confidence: 0.7
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+        (carbohydrate)'
+      curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+        recommended.
 - identifier: NCIT:C71939
   preferred_term: Sugar
   ontology_mapping:
@@ -137021,8 +136706,8 @@ ingredients:
 - identifier: cas:69004-03-1
   preferred_term: Tomatidine Hydrochloride
   ontology_mapping:
-    ontology_id: CHEBI:93130
-    ontology_label: 1-methyl-3-[3-methyl-4-[4-(trifluoromethylthio)phenoxy]phenyl]-1,3,5-triazinane-2,4,6-trione
+    ontology_id: CHEBI:9629
+    ontology_label: tomatidine
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -137034,6 +136719,11 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 68591'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#263)
+      notes: Re-pointed the narrowMatch parent from CHEBI:93130 (a triazinane-trione
+        pesticide) to CHEBI:9629 'tomatidine', the actual free base of this hydrochloride
+        salt (#263). The cas:69004-03-1 identifier was already correct and is unchanged.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -137068,14 +136758,21 @@ ingredients:
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:93130 (pubchem-xref)
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: reground_263
+    action: CORRECTED
+    changes: identifier cas:69004-03-1 -> cas:69004-03-1; ontology term CHEBI:93130
+      -> CHEBI:9629 (tomatidine). Re-pointed the narrowMatch parent from CHEBI:93130
+      (a triazinane-trione pesticide) to CHEBI:9629 'tomatidine', the actual free
+      base of this hydrochloride salt (#263). The cas:69004-03-1 identifier was already
+      correct and is unchanged. Dropped molecular_formula, inchi, smiles, pubchem_cid
+      backfilled from the wrong term.
+    new_status: MAPPED
+    llm_assisted: true
   chemical_properties:
     cas_rn: 69004-03-1
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C18H14F3N3O4S
-    smiles: CC1=C(C=CC(=C1)N2C(=O)NC(=O)N(C2=O)C)OC3=CC=C(C=C3)SC(F)(F)F
-    inchi: InChI=1S/C18H14F3N3O4S/c1-10-9-11(24-16(26)22-15(25)23(2)17(24)27)3-8-14(10)28-12-4-6-13(7-5-12)29-18(19,20)21/h3-9H,1-2H3,(H,22,25,26)
-    pubchem_cid: 68591
   ingredient_type: SINGLE_INGREDIENT
 - identifier: FOODON:03301454
   preferred_term: Tomato juice
@@ -163560,3 +163257,395 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: microbedecoder import via ols-label-exact
       notes: Restored after a false-positive demotion; CHEBI:471744 resolves to 'imipenem'.
+- identifier: FOODON:03315719
+  preferred_term: Casamino acids
+  ontology_mapping:
+    ontology_id: FOODON:03315719
+    ontology_label: mammalian milk protein (hydrolyzed)
+    ontology_source: FOODON
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#263)
+      notes: Re-grounded from CHEBI:78020 'heptacosanoate' (#263). Casamino acids
+        is an acid hydrolysate of casein -- an undefined peptide/amino-acid mixture,
+        not a C27 fatty acid. Mapped to the same FOODON term as the sibling Casein_Peptone
+        record, which is the same class of hydrolysate. CAS-RN 65072-00-6 was already
+        correct and is retained.
+  synonyms:
+  - synonym_text: ( vitamin assay)
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  - synonym_text: 'Properties: Undefined component'
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  - synonym_text: Casamino Acid
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: Casaminoacids
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: Casmino Acid
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: Casmino acids
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: carbocerate
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 395
+    media_count: 57
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-05T21:48:44.825815+00:00'
+    curator: fetch_cas_rn_from_culturebot_csv
+    action: ADDED_CAS_RN
+    changes: 'Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched:
+      Casamino acids)'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-05T21:48:44.827802+00:00'
+    curator: fetch_cas_rn_from_culturebot_csv
+    action: ADDED_CAS_RN
+    changes: 'Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched:
+      Casamino Acids)'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-05T21:48:44.829735+00:00'
+    curator: fetch_cas_rn_from_culturebot_csv
+    action: ADDED_CAS_RN
+    changes: 'Added CAS-RN:65072-00-6 from CultureBotHT compounds_to_cas.csv (matched:
+      casamino acids)'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: Casamino Acid, Casaminoacids,
+      Casmino Acid, Casmino acids, carbocerate'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 5 synonyms from kg-microbe P4.4 enrichment: CASamino acids, Casaminoacids,
+      Casmino Acid, Casmino acids, carbocerate'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-04-19T07:39:23.955331+00:00'
+    curator: audit_mim_merge
+    action: MERGED_FROM_DUPLICATES
+    changes: 'Absorbed 4 duplicate MIM record(s) into this one: Casamino_Acid.yaml,
+      Casamino_Acids_2.yaml, Casamino_Acids_3.yaml, Casamino_Acid_2.yaml. Synonyms,
+      curation_history, and occurrence counts were unioned/summed; winner selected
+      by highest occurrence count with preferred_term readability tie-break.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.632459+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Casamino')
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.456070+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C27H53O2; inchi=InChI=1S/C27H54O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-1;
+      smiles=CCCCCCCCCCCCCCCCCCCCCCCCCCC(=O)[O-]
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.136156+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-06-03T02:06:01.736872+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE ->
+      nutritional_roles.PROTEIN_SOURCE'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: reground_263
+    action: CORRECTED
+    changes: identifier CHEBI:78020 -> FOODON:03315719; ontology term CHEBI:78020
+      -> FOODON:03315719 (mammalian milk protein (hydrolyzed)). Re-grounded from CHEBI:78020
+      'heptacosanoate' (#263). Casamino acids is an acid hydrolysate of casein --
+      an undefined peptide/amino-acid mixture, not a C27 fatty acid. Mapped to the
+      same FOODON term as the sibling Casein_Peptone record, which is the same class
+      of hydrolysate. CAS-RN 65072-00-6 was already correct and is retained. Dropped
+      molecular_formula, inchi, smiles backfilled from the wrong term.
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: reground_263
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'restored ingredient_type=UNDEFINED_MIXTURE: it was flipped to SINGLE_INGREDIENT
+      only because heptacosanoate''s structure had been backfilled onto the record
+      (#263)'
+    llm_assisted: true
+  chemical_properties:
+    cas_rn: 65072-00-6
+    data_source: CultureBotHT compounds_to_cas.csv
+    retrieval_date: '2026-04-05T21:48:44.825809+00:00'
+  kg_microbe_node_id: CHEBI:78020
+  ingredient_type: UNDEFINED_MIXTURE
+  nutritional_roles:
+  - role: PROTEIN_SOURCE
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- identifier: CHEBI:66870
+  preferred_term: Na2S2O4
+  ontology_mapping:
+    ontology_id: CHEBI:66870
+    ontology_label: sodium dithionite
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#263)
+      notes: Re-grounded from CHEBI:61278 'scutellarin' (#263). Na2S2O4 is sodium
+        dithionite; scutellarin is a flavone glucuronide. The label's element multiset
+        (Na2 S2 O4) matches CHEBI:66870's formula 2Na.O4S2 exactly. CAS-RN 7775-14-6
+        was already correct and is retained.
+  synonyms:
+  - synonym_text: 'Properties: Defined component, Simple component, Inorganic compound'
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  - synonym_text: 5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl beta-D-glucopyranosiduronic
+      acid
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: Scutellarein 7-O-beta-D-glucuronide
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: Scutellarein-7-O-beta-D-glucuronide
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: Scutellarein-7-glucuronide
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: Scutellarein-7beta-D-glucuronide
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: Scutellarein-7beta-D-glucuronoside
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 25
+    media_count: 25
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-05T19:53:19.989390+00:00'
+    curator: fetch_cas_rn_from_pubchem
+    action: ADDED_CAS_RN
+    changes: Added CAS-RN:7775-14-6 from PubChem API via name lookup (Na2S2O4)
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 6 synonyms from kg-microbe P4.4 enrichment: 5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl
+      beta-D-glucopyranosiduronic acid, Scutellarein 7-O-beta-D-glucuronide, Scutellarein-7-O-beta-D-glucuronide,
+      Scutellarein-7-glucuronide, Scutellarein-7beta-D-glucuronide, ... (1 more)'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-01T07:35:35.245329+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:31.314515+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C21H18O12; inchi=InChI=1S/C21H18O12/c22-8-3-1-7(2-4-8)10-5-9(23)13-;
+      smiles=O=C(O)[C@H]1O[C@@H](Oc2cc3oc(-c4ccc(O)cc4)cc(=O)c3
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:17.059193+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-06-09T04:56:30.248082+00:00'
+    curator: claude_in_session_curation
+    action: ANNOTATED
+    changes: 'Added media role: REDUCING_AGENT (confidence: 0.60)'
+  - timestamp: '2026-06-09T05:23:46.807363+00:00'
+    curator: correct_stale_ontology_labels.py
+    action: CORRECTED
+    changes: 'ontology_label ''Na2S2O4'' -> ''scutellarin'': synced to canonical CHEBI
+      label (preferred_term ''Na2S2O4'' unchanged).'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT ->
+      physicochemical_roles.REDUCING_AGENT'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: reground_263
+    action: CORRECTED
+    changes: identifier CHEBI:61278 -> CHEBI:66870; ontology term CHEBI:61278 -> CHEBI:66870
+      (sodium dithionite). Re-grounded from CHEBI:61278 'scutellarin' (#263). Na2S2O4
+      is sodium dithionite; scutellarin is a flavone glucuronide. The label's element
+      multiset (Na2 S2 O4) matches CHEBI:66870's formula 2Na.O4S2 exactly. CAS-RN
+      7775-14-6 was already correct and is retained. Dropped molecular_formula, inchi,
+      smiles backfilled from the wrong term.
+    new_status: MAPPED
+    llm_assisted: true
+  chemical_properties:
+    cas_rn: 7775-14-6
+    data_source: PubChem API
+    retrieval_date: '2026-04-05T19:53:19.989382+00:00'
+  ingredient_type: SINGLE_INGREDIENT
+  physicochemical_roles:
+  - role: REDUCING_AGENT
+    confidence: 0.6
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Assigned by in-session Claude reasoning (no external API)
+      curator_note: Provisional in-session LLM role assignment; review recommended.
+- identifier: cas:150-90-3
+  preferred_term: Sodium succinate dibasic
+  ontology_mapping:
+    ontology_id: CHEBI:15741
+    ontology_label: succinic acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#263)
+      notes: 'Re-grounded from CHEBI:150903 (an unrelated trisaccharide glycoside)
+        (#263). Disodium succinate has no CHEBI entry (checked OAK CHEBI sqlite),
+        so the record takes its CAS-RN as identifier with a narrowMatch to the parent
+        acid, following the established cas: pattern (MAPPING_SEMANTICS.md Section
+        3). CAS-RN 150-90-3 was already correct.'
+  synonyms:
+  - synonym_text: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: 6-deoxy-alpha-L-galacto-hexopyranosyl-(1->3)-[alpha-D-gluco-hexopyranosyl-(1->4)]-D-galacto-hexopyranose
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  - synonym_text: Fuc(a1-3)[Glc(a1-4)]Gal
+    synonym_type: EXACT_SYNONYM
+    source: kg_microbe
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-05T19:53:55.242742+00:00'
+    curator: fetch_cas_rn_from_pubchem
+    action: ADDED_CAS_RN
+    changes: Added CAS-RN:150-90-3 from PubChem API via name lookup (Sodium succinate
+      dibasic)
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 3 synonyms from kg-microbe P4.4 enrichment: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol,
+      6-deoxy-alpha-L-galacto-hexopyranosyl-(1->3)-[alpha-D-gluco-hexopyranosyl-(1->4)]-D-galacto-hexopyranose,
+      Fuc(a1-3)[Glc(a1-4)]Gal'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-01T07:35:36.359234+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:32.452796+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C18H32O15; inchi=InChI=1S/C18H32O15/c1-4-7(21)9(23)11(25)17(29-4)33;
+      smiles=C[C@@H]1O[C@@H](O[C@H]2[C@@H](O[C@H]3O[C@H](CO)[C@
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:18.516377+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-05-30T00:34:39.676755+00:00'
+    curator: infer_roles_from_chebi_ancestry
+    action: ANNOTATED
+    changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+  - timestamp: '2026-06-04T05:38:59.201324+00:00'
+    curator: infer_energy_source
+    action: ANNOTATED
+    changes: 'Added media role: ENERGY_SOURCE (confidence: 0.70)'
+  - timestamp: '2026-06-09T05:23:46.836846+00:00'
+    curator: correct_stale_ontology_labels.py
+    action: CORRECTED
+    changes: 'ontology_label ''Sodium succinate dibasic'' -> ''(2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol'':
+      synced to canonical CHEBI label (preferred_term ''Sodium succinate dibasic''
+      unchanged).'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
+      nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: reground_263
+    action: CORRECTED
+    changes: 'identifier CHEBI:150903 -> cas:150-90-3; ontology term CHEBI:150903
+      -> CHEBI:15741 (succinic acid). Re-grounded from CHEBI:150903 (an unrelated
+      trisaccharide glycoside) (#263). Disodium succinate has no CHEBI entry (checked
+      OAK CHEBI sqlite), so the record takes its CAS-RN as identifier with a narrowMatch
+      to the parent acid, following the established cas: pattern (MAPPING_SEMANTICS.md
+      Section 3). CAS-RN 150-90-3 was already correct. Dropped molecular_formula,
+      inchi, smiles backfilled from the wrong term.'
+    new_status: MAPPED
+    llm_assisted: true
+  chemical_properties:
+    cas_rn: 150-90-3
+    data_source: PubChem API
+    retrieval_date: '2026-04-05T19:53:55.242699+00:00'
+  ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: CARBON_SOURCE
+    confidence: 0.7
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+        (carbohydrate)'
+      curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+        recommended.
+  - role: ENERGY_SOURCE
+    confidence: 0.7
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Canonical energy substrate (catabolised for energy)
+      curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
+        recommended.
