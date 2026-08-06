@@ -1,10 +1,71 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T20:56:07.017455+00:00
-Total: 2395 ingredients
+Generated: 2026-08-06T22:20:19.881753+00:00
+Total: 2456 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid | kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid | Wolfe's mineral mix_minus_Nitrilotriacetic_acid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:uw_concentrated_base_no_sulfur | kgmicrobe.ingredient:uw_concentrated_base_no_sulfur | UW concentrated base no sulfur | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:thauers_vitamin_mix_no_biotin | kgmicrobe.ingredient:thauers_vitamin_mix_no_biotin | Thauer's vitamin mix no Biotin | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:sulfur_free_mineral_mix | kgmicrobe.ingredient:sulfur_free_mineral_mix | Sulfur free mineral mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:planctomyces_vitamin_mix | kgmicrobe.ingredient:planctomyces_vitamin_mix | Planctomyces_vitamin_mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:planctomyces_trace_element_solution | kgmicrobe.ingredient:planctomyces_trace_element_solution | Planctomyces_trace_element_solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:planctomyces_mineral_salts | kgmicrobe.ingredient:planctomyces_mineral_salts | Planctomyces_mineral_salts | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:p-ii_metal_solution | kgmicrobe.ingredient:p-ii_metal_solution | P-II Metal Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:modified_p-iv_chelated_micronutrient_solution | kgmicrobe.ingredient:modified_p-iv_chelated_micronutrient_solution | Modified P-IV chelated Micronutrient Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:minor_nutrients | kgmicrobe.ingredient:minor_nutrients | Minor Nutrients | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:mineral_3b_solution_minus_phosphorus | kgmicrobe.ingredient:mineral_3b_solution_minus_phosphorus | Mineral 3B solution minus phosphorus | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:macro_component_2_for_j_medium | kgmicrobe.ingredient:macro_component_2_for_j_medium | Macro Component 2 for J medium | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:macro_component_1_for_j_medium | kgmicrobe.ingredient:macro_component_1_for_j_medium | Macro Component 1 for J Medium | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:iron_stock | kgmicrobe.ingredient:iron_stock | Iron Stock | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:hunters_trace_stock_solution | kgmicrobe.ingredient:hunters_trace_stock_solution | Hunter's Trace Stock Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:g9_trace_metals_for_j_medium | kgmicrobe.ingredient:g9_trace_metals_for_j_medium | G9 Trace Metals for J medium | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:edta_stock | kgmicrobe.ingredient:edta_stock | EDTA Stock | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:das_macro_solution | kgmicrobe.ingredient:das_macro_solution | DAS Macro Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:chu_stock_solution | kgmicrobe.ingredient:chu_stock_solution | Chu Stock Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:chelated_iron_solution | kgmicrobe.ingredient:chelated_iron_solution | Chelated Iron Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:caso42h2osaturated_solution | kgmicrobe.ingredient:caso42h2osaturated_solution | CaSO4•2H2Osaturated solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:boron_stock | kgmicrobe.ingredient:boron_stock | Boron Stock | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:bold_trace_stock | kgmicrobe.ingredient:bold_trace_stock | Bold Trace Stock | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:beijerincks_solution | kgmicrobe.ingredient:beijerincks_solution | Beijerinck's Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:a_trace_components | kgmicrobe.ingredient:a_trace_components | A+ Trace Components | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:atcc_wolfes_mineral_mix_minus_iron | kgmicrobe.ingredient:atcc_wolfes_mineral_mix_minus_iron | ATCC Wolfe's mineral mix minus iron | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:20aa_mix | kgmicrobe.ingredient:20aa_mix | 20AA_mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:uw_concentrated_base_no_mo | kgmicrobe.ingredient:uw_concentrated_base_no_mo | UW concentrated base no Mo | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| kgmicrobe.ingredient:tyg_salts_solution | kgmicrobe.ingredient:tyg_salts_solution | TYG salts solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| kgmicrobe.ingredient:spir_solution | kgmicrobe.ingredient:spir_solution | Spir solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| kgmicrobe.ingredient:lcfm_carbon_mix | kgmicrobe.ingredient:lcfm_carbon_mix | LCFM Carbon mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| kgmicrobe.ingredient:ferric_malate_solution | kgmicrobe.ingredient:ferric_malate_solution | ferric malate solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| kgmicrobe.ingredient:dyv_metal_solution | kgmicrobe.ingredient:dyv_metal_solution | DYV Metal Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| kgmicrobe.ingredient:das_vitamin_cocktail | kgmicrobe.ingredient:das_vitamin_cocktail | DAS Vitamin Cocktail | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| kgmicrobe.ingredient:bg-11_trace_metals_solution | kgmicrobe.ingredient:bg-11_trace_metals_solution | BG-11 Trace Metals Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| kgmicrobe.ingredient:northen_exometabolite_mix_1 | kgmicrobe.ingredient:northen_exometabolite_mix_1 | Northen_Exometabolite_mix_1 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 3 |
+| kgmicrobe.ingredient:mwc_metal_solution | kgmicrobe.ingredient:mwc_metal_solution | MWC Metal Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 3 |
+| kgmicrobe.ingredient:modified_wolfes_minerals | kgmicrobe.ingredient:modified_wolfes_minerals | Modified Wolfe's Minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 3 |
+| kgmicrobe.ingredient:mc_trace_minerals | kgmicrobe.ingredient:mc_trace_minerals | Mc_trace_minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 3 |
+| kgmicrobe.ingredient:mc_general_salts | kgmicrobe.ingredient:mc_general_salts | Mc_general_salts | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 3 |
+| kgmicrobe.ingredient:mme_trace_minerals | kgmicrobe.ingredient:mme_trace_minerals | MME Trace Minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 3 |
+| kgmicrobe.ingredient:trace_metals_solution | kgmicrobe.ingredient:trace_metals_solution | Trace Metals Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 4 |
+| kgmicrobe.ingredient:takara_do_supp_minushisleutrp | kgmicrobe.ingredient:takara_do_supp_minushisleutrp | Takara_DO_Supp_MinusHisLeuTrp | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 4 |
+| kgmicrobe.ingredient:enrichment_solution_for_seawater_medium | kgmicrobe.ingredient:enrichment_solution_for_seawater_medium | Enrichment Solution for Seawater Medium | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 4 |
+| kgmicrobe.ingredient:mineral_3b_solution_minus_nitrogen | kgmicrobe.ingredient:mineral_3b_solution_minus_nitrogen | Mineral 3B solution minus Nitrogen | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 5 |
+| kgmicrobe.ingredient:sulfur-free_dl_minerals | kgmicrobe.ingredient:sulfur-free_dl_minerals | Sulfur-free DL minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 6 |
+| kgmicrobe.ingredient:dl_vitamins | kgmicrobe.ingredient:dl_vitamins | DL vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 6 |
+| kgmicrobe.ingredient:thauers_vitamin_mix | kgmicrobe.ingredient:thauers_vitamin_mix | Thauer's vitamin mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 8 |
+| kgmicrobe.ingredient:4_carbon_mix | kgmicrobe.ingredient:4_carbon_mix | 4 Carbon Mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 8 |
+| kgmicrobe.ingredient:uw_concentrated_base | kgmicrobe.ingredient:uw_concentrated_base | UW concentrated base | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 9 |
+| kgmicrobe.ingredient:mineral_3b_solution | kgmicrobe.ingredient:mineral_3b_solution | Mineral 3B solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 9 |
+| kgmicrobe.ingredient:nldm_metabolites | kgmicrobe.ingredient:nldm_metabolites | NLDM_metabolites | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 10 |
+| kgmicrobe.ingredient:day_aminoacid20 | kgmicrobe.ingredient:day_aminoacid20 | Day_AminoAcid20 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 11 |
+| kgmicrobe.ingredient:p-iv_metal_solution | kgmicrobe.ingredient:p-iv_metal_solution | P-IV Metal Solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 16 |
+| kgmicrobe.ingredient:mc_vitamins | kgmicrobe.ingredient:mc_vitamins | Mc_vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 22 |
+| kgmicrobe.ingredient:mc_trace_minerals_so4free | kgmicrobe.ingredient:mc_trace_minerals_so4free | Mc_trace_minerals_SO4free | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 22 |
+| kgmicrobe.ingredient:mc_general_salts_so4free | kgmicrobe.ingredient:mc_general_salts_so4free | Mc_general_salts_SO4free | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 22 |
+| kgmicrobe.ingredient:atcc_wolfes_vitamin_mix | kgmicrobe.ingredient:atcc_wolfes_vitamin_mix | ATCC Wolfe's vitamin mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 43 |
+| kgmicrobe.ingredient:atcc_wolfes_mineral_mix | kgmicrobe.ingredient:atcc_wolfes_mineral_mix | ATCC Wolfe's mineral mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 46 |
+| kgmicrobe.ingredient:wolfes_mineral_mix | kgmicrobe.ingredient:wolfes_mineral_mix | Wolfe's mineral mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 60 |
+| kgmicrobe.ingredient:wolfes_vitamin_mix | kgmicrobe.ingredient:wolfes_vitamin_mix | Wolfe's vitamin mix | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 61 |
 | UBERON:0010228 | UBERON:0010228 | Rumen fluid | MAPPED | UBERON | EXACT_MATCH | 0 |
 | NCIT:C75874 | NCIT:C75874 | Sea salts | MAPPED | NCIT | CLOSE_MATCH | 22 |
 | kgmicrobe.ingredient:mops_2m_ph7 | CHEBI:39074 | MOPS_2M_pH7 | MAPPED | CHEBI | NARROW_MATCH | 24 |

@@ -1,0 +1,56 @@
+identifier: kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid
+preferred_term: Wolfe's mineral mix_minus_Nitrilotriacetic_acid
+synonyms:
+- synonym_text: Wolfe's mineral mix_minus_Nitrilotriacetic_acid
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 1
+  media_count: 1
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 1 CultureBot media; samples: RCH2_defined_noCarbon_noNitrogen_noNitrilotriacetic_acid.
+    No CAS-RN or CHEBI mapping available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T18:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as a Wolfe mineral stock/pre-mix variant with nitrilotriacetic
+    acid omitted and left unmapped pending component-level recipe curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0267 -> kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid
+    "Wolfe's mineral mix_minus_Nitrilotriacetic_acid" (FALLBACK_REGISTRY); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  1 CultureBot media; samples: RCH2_defined_noCarbon_noNitrogen_noNitrilotriacetic_acid.
+  No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a Wolfe mineral
+  stock/pre-mix variant pending component-level recipe curation.'
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid
+  ontology_label: Wolfe's mineral mix_minus_Nitrilotriacetic_acid
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#114)
+    notes: 'Wolfe''s mineral mix_minus_Nitrilotriacetic_acid is a named, recurring
+      multi-component preparation (1 media). Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- it is a lab
+      preparation rather than a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint, no parent because a multi-component mix does not
+      narrow to a single compound (#114).'
