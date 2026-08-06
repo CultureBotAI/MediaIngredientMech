@@ -9,7 +9,10 @@ ontology_mapping:
   - evidence_type: LEXICAL_MATCH
     source: microbedecoder
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:paromomycin; '
-synonyms: []
+synonyms:
+- synonym_text: Neomycin E
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -43,4 +46,11 @@ curation_history:
     canonical label exact-matches the record ontology_label (case-insensitive). This
     does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
     PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-06T02:48:13.816290+00:00'
+  curator: issue_208_synonym_pass
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0830 ''Neomycin E'' as a RAW_TEXT synonym -- Neomycin
+    E is a synonym for paromomycin (#208). No new SSSOM row; CHEBI:7934 is already
+    mapped. Source: kgmicrobe.trait:neomycin_e.'
   llm_assisted: true
