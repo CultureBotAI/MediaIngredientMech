@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-06T09:17:03.424353+00:00
+Generated: 2026-08-06T09:25:56.397157+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2779,20 +2779,20 @@ Total: 2841 ingredients
 | UNMAPPED_0679 |  | 2-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0674 |  | 2-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0785 |  | 2-tetrachloroethane | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0736 |  | 3-methylacetate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0736 |  | 3-methylacetate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0791 |  | 4-diol | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0716 |  | BHI | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0805 |  | Butane-1 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0805 |  | Butane-1 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0626 |  | Esculin Ferric Citrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0688 |  | Esculin Hydrolysate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0812 |  | Ethylenediamine-N | UNMAPPED |  |  | 0 |
+| UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0626 |  | Esculin Ferric Citrate | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0688 |  | Esculin Hydrolysate | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0812 |  | Ethylenediamine-N | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0742 |  | Fastidious Anaerobe Broth With Meat Granules | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0711 |  | Fermented Rumen Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0743 |  | Formate+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
@@ -2802,7 +2802,7 @@ Total: 2841 ingredients
 | UNMAPPED_0747 |  | Formate+trimethylamine | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0755 |  | GYPS | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0748 |  | Gallate + Formate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0731 |  | Gelatin Hydrolyzed | UNMAPPED |  |  | 0 |
+| UNMAPPED_0731 |  | Gelatin Hydrolyzed | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0702 |  | Glucose + Acetate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0749 |  | Glucose + Cellobiose + Starch + Trypticase + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0750 |  | Glucose + Formate | NEEDS_EXPERT |  |  | 0 |
@@ -2811,7 +2811,7 @@ Total: 2841 ingredients
 | UNMAPPED_0753 |  | Glucose Peptone-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0754 |  | Glucose + Xylose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0675 |  | Glucose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0756 |  | H2+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0631 |  | H2 + CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0757 |  | H2+dimethylsulfide | NEEDS_EXPERT |  |  | 0 |
@@ -2820,25 +2820,25 @@ Total: 2841 ingredients
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
-| UNMAPPED_0719 |  | PY-cellobiose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0767 |  | PY-fructose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0719 |  | PY-cellobiose | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0767 |  | PY-fructose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0768 |  | PY-glucose-rumen Fluid | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0769 |  | PY-maltose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0770 |  | PY-pectin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0769 |  | PY-maltose | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0770 |  | PY-pectin | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0771 |  | PYEG | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0772 |  | PYG-0.02% Tween 80 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0772 |  | PYG-0.02% Tween 80 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0628 |  | PYG | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0704 |  | PYGS | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0773 |  | PYG + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0766 |  | Peptone-yeast Extract-glucose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0765 |  | Peptone + Beef Extract + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0717 |  | Peptone + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0705 |  | Sucrose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0663 |  | Sugars | UNMAPPED |  |  | 0 |
+| UNMAPPED_0663 |  | Sugars | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0776 |  | TYGVS + Glucose | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0734 |  | Tetrazolium | UNMAPPED |  |  | 0 |
+| UNMAPPED_0734 |  | Tetrazolium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0777 |  | Yeast Extract + Gluconate | NEEDS_EXPERT |  |  | 0 |

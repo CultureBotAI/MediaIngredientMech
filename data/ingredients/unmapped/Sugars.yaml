@@ -4,7 +4,7 @@ synonyms:
 - synonym_text: Sugars
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: UNMAPPED
+mapping_status: NEEDS_EXPERT
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -20,5 +20,16 @@ curation_history:
     CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_213_residual_triage
+  action: FLAGGED_NEEDS_EXPERT
+  changes: Class-level label, not a substance. No ontology carries a bare 'sugars'
+    term, and grounding to a specific sugar or to MeSH 'Carbohydrates' would over-
+    or under-specify. Needs a granularity decision. Searched CHEBI, NCIT, FOODON,
+    ENVO, MeSH, BTO and UBERON by label and synonym with normalisation, plus exact
+    queries across all of live OLS4.
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:sugars); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
