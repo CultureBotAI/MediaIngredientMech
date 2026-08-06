@@ -13,6 +13,9 @@ synonyms:
 - synonym_text: (4S,4aS,5aS,6S,12aS)-4-(dimethylamino)-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-1,4,4a,5,5a,6,11,12a-octahydrotetracene-2-carboxamide
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Achromycin
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1
@@ -50,6 +53,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-06T02:48:13.816290+00:00'
+  curator: issue_208_synonym_pass
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0794 ''Achromycin'' as a RAW_TEXT synonym -- Achromycin
+    is a trade name for tetracycline (#208). No new SSSOM row; CHEBI:27902 is already
+    mapped. Source: kgmicrobe.trait:achromycin.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C22H24N2O8

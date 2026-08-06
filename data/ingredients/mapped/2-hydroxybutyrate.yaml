@@ -9,7 +9,10 @@ ontology_mapping:
   - evidence_type: LEXICAL_MATCH
     source: microbedecoder
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:2_hydroxybutyrate; '
-synonyms: []
+synonyms:
+- synonym_text: Alpha-hydroxybutyrate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -43,4 +46,12 @@ curation_history:
     canonical label exact-matches the record ontology_label (case-insensitive). This
     does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
     PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-06T02:47:23.590604+00:00'
+  curator: issue_208_synonym_pass
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0645 ''Alpha-hydroxybutyrate'' as a RAW_TEXT synonym
+    -- alpha-hydroxybutyrate is the same compound as 2-hydroxybutyrate under the alpha/2-
+    positional naming conventions (#208). No new SSSOM row; CHEBI:64552 is already
+    mapped. Source: kgmicrobe.trait:alpha_hydroxybutyrate.'
   llm_assisted: true
