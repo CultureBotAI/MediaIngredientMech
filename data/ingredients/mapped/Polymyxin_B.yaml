@@ -1,7 +1,7 @@
-identifier: CHEBI:759086
+identifier: NCIT:C61894
 preferred_term: Polymyxin B
 synonyms: []
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -23,3 +23,23 @@ curation_history:
   notes: CHEBI:759086 exceeds the CHEBI accession ceiling and does not resolve; validate-products
     reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted CHEBI:759086 -> NCIT:C61894 "Polymyxin B" (EXACT_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+ontology_mapping:
+  ontology_id: NCIT:C61894
+  ontology_label: Polymyxin B
+  ontology_source: NCIT
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Exact NCIT label match. The record held CHEBI:759086, which is a valid
+      live ChEBI accession absent from the local semsql build (#249) -- NCIT carries
+      the same substance and IS resolvable here, so the record is grounded rather
+      than left unmapped waiting on a build refresh (#213).

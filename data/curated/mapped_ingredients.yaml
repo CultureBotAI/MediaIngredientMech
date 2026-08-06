@@ -1,8 +1,182 @@
 generation_date: '2026-08-06T07:14:29.509994+00:00'
-total_count: 2356
-mapped_count: 2337
+total_count: 2360
+mapped_count: 2341
 unmapped_count: 0
 ingredients:
+- identifier: NCIT:C166659
+  preferred_term: Carbomycin
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:carbomycin; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:756054
+    notes: CHEBI:756054 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted CHEBI:756054 -> NCIT:C166659 "Carbomycin" (EXACT_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  ontology_mapping:
+    ontology_id: NCIT:C166659
+    ontology_label: Carbomycin
+    ontology_source: NCIT
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 'Exact NCIT label match; CHEBI:756054 is live upstream but absent from
+        the local build (#249, #213).'
+- identifier: NCIT:C386
+  preferred_term: Colistin Sulfate
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Antibiotic_resistance
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:colistin_sulfate; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:759883
+    notes: CHEBI:759883 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted CHEBI:759883 -> NCIT:C386 "Colistin Sulfate" (EXACT_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  ontology_mapping:
+    ontology_id: NCIT:C386
+    ontology_label: Colistin Sulfate
+    ontology_source: NCIT
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 'Exact NCIT label match; CHEBI:759883 is live upstream but absent from
+        the local build (#249, #213).'
+- identifier: NCIT:C166895
+  preferred_term: Lysostaphin
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 4
+      source_columns: BacDive_Antibiotic_sensitivity
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:lysostaphin; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:753395
+    notes: CHEBI:753395 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted CHEBI:753395 -> NCIT:C166895 "Lysostaphin" (EXACT_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  ontology_mapping:
+    ontology_id: NCIT:C166895
+    ontology_label: Lysostaphin
+    ontology_source: NCIT
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 'Exact NCIT label match; CHEBI:753395 is live upstream but absent from
+        the local build (#249, #213).'
+- identifier: NCIT:C61894
+  preferred_term: Polymyxin B
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 272
+      source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:polymyxin_b; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:759086
+    notes: CHEBI:759086 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted CHEBI:759086 -> NCIT:C61894 "Polymyxin B" (EXACT_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  ontology_mapping:
+    ontology_id: NCIT:C61894
+    ontology_label: Polymyxin B
+    ontology_source: NCIT
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Exact NCIT label match. The record held CHEBI:759086, which is a valid
+        live ChEBI accession absent from the local semsql build (#249) -- NCIT carries
+        the same substance and IS resolvable here, so the record is grounded rather
+        than left unmapped waiting on a build refresh (#213).
 - identifier: CHEBI:27374
   preferred_term: L-inositol
   synonyms:

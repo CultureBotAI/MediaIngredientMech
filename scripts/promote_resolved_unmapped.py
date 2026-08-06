@@ -41,6 +41,13 @@ MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
+# Ontologies this helper can resolve a target in. NCIT matters because it carries
+# drugs and reagents ChEBI's semsql build lags on -- Polymyxin B, Lysostaphin,
+# Colistin Sulfate and Carbomycin all have exact NCIT labels while their CHEBI
+# accessions are absent locally, so a CHEBI-only helper called them unresolvable.
+ONTOLOGY_DB = {"CHEBI": CHEBI_DB,
+               "NCIT": Path.home() / ".data" / "oaklib" / "ncit.db"}
+OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl"}
 
 PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch",
              "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch"}
@@ -55,7 +62,14 @@ from reground_mapped_record import (  # noqa: E402
 
 
 def canonical_label(cid: str) -> str:
-    con = sqlite3.connect(f"file:{CHEBI_DB}?mode=ro", uri=True)
+    prefix = cid.split(":", 1)[0]
+    db = ONTOLOGY_DB.get(prefix)
+    if db is None:
+        raise SystemExit(f"{cid}: no local build configured for prefix {prefix!r} "
+                         f"(have {', '.join(sorted(ONTOLOGY_DB))})")
+    if not db.exists():
+        raise SystemExit(f"{cid}: {db} is missing — the {prefix} build is not downloaded")
+    con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
     row = con.execute("SELECT value FROM statements WHERE subject=? AND predicate='rdfs:label'", (cid,)).fetchone()
     dep = con.execute("SELECT 1 FROM statements WHERE subject=? AND predicate='owl:deprecated'", (cid,)).fetchone()
     con.close()
@@ -105,15 +119,16 @@ def main():
                 "MAPPING_SEMANTICS.md Section 3: a substance with no exact ontology "
                 "term takes its registry CURIE as identifier AND asserts a narrowMatch "
                 "to the nearest parent. Rule B1 then requires both SSSOM rows.")
-        if not a.parent.startswith("CHEBI:"):
-            raise SystemExit("--parent must be a CHEBI id; this helper resolves CHEBI only")
+        if a.parent.split(":", 1)[0] not in ONTOLOGY_DB:
+            raise SystemExit(f"--parent must be one of {', '.join(sorted(ONTOLOGY_DB))}")
         a.quality = "NARROW_MATCH"
         term_curie = a.parent
     else:
         if a.parent:
             raise SystemExit("--parent applies only when --to is a registry mint")
-        if not a.to.startswith("CHEBI:"):
-            raise SystemExit("this helper only promotes to CHEBI ids or a registry mint")
+        if a.to.split(":", 1)[0] not in ONTOLOGY_DB:
+            raise SystemExit(f"this helper promotes to {', '.join(sorted(ONTOLOGY_DB))} ids "
+                             "or a registry mint")
         if a.quality == "NARROW_MATCH":
             raise SystemExit(
                 "NARROW_MATCH on an ontology destination needs a registry identifier "
@@ -149,7 +164,8 @@ def main():
     # transform the record
     rec["identifier"] = a.to
     rec["ontology_mapping"] = {
-        "ontology_id": term_curie, "ontology_label": label, "ontology_source": "CHEBI",
+        "ontology_id": term_curie, "ontology_label": label,
+        "ontology_source": term_curie.split(":", 1)[0],
         "mapping_quality": a.quality,
         "evidence": [{"evidence_type": "DATABASE_MATCH", "source": a.evidence_source,
                       "notes": a.note or f"Resolved to {a.to} ({label})."}],
@@ -175,7 +191,8 @@ def main():
     src = f"MIM:{a.evidence_source}|MIM:curator=promote_resolved_unmapped"
     review = f"manual:promote_resolved_unmapped|PROMOTED|{a.date}"
     row = "\t".join([f"MIM:{slug}", pref, PREDICATE[a.quality], term_curie, label,
-                     "obo:chebi.owl", "semapv:ManualMappingCuration", src, a.date,
+                     OBJECT_SOURCE.get(term_curie.split(":", 1)[0], ""),
+                     "semapv:ManualMappingCuration", src, a.date,
                      CONFIDENCE[a.quality], "", "", review]) + "\n"
     if minted:
         # Rule B1: a narrowMatch from a MIM subject must carry a sibling registry

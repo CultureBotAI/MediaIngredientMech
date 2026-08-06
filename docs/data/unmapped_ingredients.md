@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T07:15:48.784810+00:00
-Total: 490 ingredients
+Generated: 2026-08-06T07:39:35.613886+00:00
+Total: 486 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -491,7 +491,3 @@ Total: 490 ingredients
 | UNMAPPED_0779 |  | Yeast Extract + Peptone | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0780 |  | Yeast Extract + Sulfur | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0781 |  | Yeast + Meat Extract + H2 | NEEDS_EXPERT |  |  | 0 |
-| CHEBI:756054 |  | Carbomycin | UNMAPPED |  |  | 0 |
-| CHEBI:759883 |  | Colistin Sulfate | UNMAPPED |  |  | 0 |
-| CHEBI:753395 |  | Lysostaphin | UNMAPPED |  |  | 0 |
-| CHEBI:759086 |  | Polymyxin B | UNMAPPED |  |  | 0 |

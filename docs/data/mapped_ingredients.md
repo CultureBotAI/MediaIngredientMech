@@ -1,10 +1,14 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T07:15:48.780616+00:00
-Total: 2356 ingredients
+Generated: 2026-08-06T07:39:35.611281+00:00
+Total: 2360 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| NCIT:C166659 | NCIT:C166659 | Carbomycin | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C386 | NCIT:C386 | Colistin Sulfate | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C166895 | NCIT:C166895 | Lysostaphin | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C61894 | NCIT:C61894 | Polymyxin B | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:27374 | CHEBI:27374 | L-inositol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:82679 | CHEBI:82679 | Nutriacholic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81879 | CHEBI:81879 | Rhodomycin B | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
