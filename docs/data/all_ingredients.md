@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-08-06T06:08:12.791797+00:00
+Generated: 2026-08-06T06:21:28.879697+00:00
 Total: 2850 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | CHEBI:73908 | 2,4-diamino-6,7-di-iso-propylpteridine phosphate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:maltose_hydrate | CHEBI:17306 | Maltose Hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_2-ketogluconate | CHEBI:16808 | Potassium 2-ketogluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_2-dehydro-d-gluconate | CHEBI:16808 | Potassium 2-dehydro-D-gluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -2748,7 +2749,6 @@ Total: 2850 ingredients
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0792 |  | 5-didehydro-D-gluconic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0737 |  | 5-trimethoxybenzoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0621 |  | 7-di-iso-propylpteridine Phosphate) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0642 |  | Acetylspiramycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0726 |  | Actinomycin X | UNMAPPED |  |  | 0 |
 | UNMAPPED_0795 |  | Alpha-hydroxyglutarate-gamma-lactone | UNMAPPED |  |  | 0 |
