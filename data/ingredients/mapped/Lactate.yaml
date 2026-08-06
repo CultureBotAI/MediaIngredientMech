@@ -46,6 +46,9 @@ synonyms:
 - synonym_text: 'produces: DL-lactate'
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: DL-lactate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 7
@@ -104,6 +107,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-06T05:30:11.378447+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0682 ''DL-lactate'' as a RAW_TEXT synonym -- DL-lactate
+    is racemic lactate; CHEBI:24996 ''lactate'' is the stereochemically unspecified
+    parent, which is what the label states (#213). No new SSSOM row; CHEBI:24996 is
+    already mapped. Source: kgmicrobe.trait:dl_lactate.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 113-21-3
   data_source: PubChem API

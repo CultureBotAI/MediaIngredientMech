@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T05:19:56.128379+00:00
-Total: 512 ingredients
+Generated: 2026-08-06T05:34:28.528881+00:00
+Total: 506 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -385,7 +385,6 @@ Total: 512 ingredients
 | UNMAPPED_0587 |  | α-D-Glucose monohydrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0619 |  | 0129 (2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0735 |  | 1-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0720 |  | 1-o-methyl Alpha-galactopyranoside | UNMAPPED |  |  | 0 |
 | UNMAPPED_0715 |  | 1-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0679 |  | 2-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0695 |  | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | UNMAPPED |  |  | 0 |
@@ -398,7 +397,6 @@ Total: 512 ingredients
 | UNMAPPED_0790 |  | 4-dihydroxy-biphenyl | UNMAPPED |  |  | 0 |
 | UNMAPPED_0791 |  | 4-diol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0724 |  | 5-didehydro-D-gluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0792 |  | 5-didehydro-D-gluconic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0737 |  | 5-trimethoxybenzoate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0621 |  | 7-di-iso-propylpteridine Phosphate) | UNMAPPED |  |  | 0 |
@@ -416,20 +414,17 @@ Total: 512 ingredients
 | UNMAPPED_0804 |  | Butamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0805 |  | Butane-1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0708 |  | Casamino Acids (0.01 % | UNMAPPED |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0682 |  | DL-lactate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |
 | UNMAPPED_0626 |  | Esculin Ferric Citrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0688 |  | Esculin Hydrolysate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0812 |  | Ethylenediamine-N | UNMAPPED |  |  | 0 |
 | UNMAPPED_0742 |  | Fastidious Anaerobe Broth With Meat Granules | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0711 |  | Fermented Rumen Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0730 |  | Ferulate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0814 |  | Filipin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0743 |  | Formate+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0744 |  | Formate+dimethylsulfide | NEEDS_EXPERT |  |  | 0 |
@@ -491,7 +486,6 @@ Total: 512 ingredients
 | UNMAPPED_0639 |  | Potassium 5-dehydro-D-gluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0637 |  | Potassium 5-ketogluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0838 |  | Proteose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0699 |  | Protocatechuate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0839 |  | Psicofuranine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0840 |  | Rhodomycin B | UNMAPPED |  |  | 0 |
 | UNMAPPED_0841 |  | Ristocetin A | UNMAPPED |  |  | 0 |

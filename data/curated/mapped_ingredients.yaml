@@ -1,8 +1,135 @@
-generation_date: '2026-08-06T05:15:48.923652+00:00'
-total_count: 2341
-mapped_count: 2322
+generation_date: '2026-08-06T05:30:11.378447+00:00'
+total_count: 2344
+mapped_count: 2325
 unmapped_count: 0
 ingredients:
+- identifier: CHEBI:17620
+  preferred_term: Ferulate
+  synonyms:
+  - synonym_text: Ferulate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferulate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0730 -> CHEBI:17620 "trans-ferulic acid" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferulate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:17620
+    ontology_label: trans-ferulic acid
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Ferulate grounded to trans-ferulic acid, the naturally occurring isomer.
+        CHEBI has no ferulate anion term; CLOSE_MATCH because the label is the anion
+        and states no isomer (#213).
+- identifier: CHEBI:55507
+  preferred_term: 1-o-methyl Alpha-galactopyranoside
+  synonyms:
+  - synonym_text: 1-o-methyl Alpha-galactopyranoside
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:1_o_methyl_alpha_galactopyranoside);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0720 -> CHEBI:55507 "methyl alpha-D-galactoside" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:1_o_methyl_alpha_galactopyranoside);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:55507
+    ontology_label: methyl alpha-D-galactoside
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 1-O-methyl alpha-galactopyranoside is methyl alpha-D-galactoside (the
+        1-O-methyl glycoside) (#213).
+- identifier: CHEBI:36241
+  preferred_term: Protocatechuate
+  synonyms:
+  - synonym_text: Protocatechuate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 4
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:protocatechuate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0699 -> CHEBI:36241 "3,4-dihydroxybenzoate" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:protocatechuate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:36241
+    ontology_label: 3,4-dihydroxybenzoate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 'Protocatechuate is 3,4-dihydroxybenzoate; the anion form matches the
+        label, consistent with the anion convention in PR #275 (#213).'
 - identifier: CHEBI:167506
   preferred_term: 2-dimethylsuccinic Acid
   synonyms:
@@ -80698,6 +80825,9 @@ ingredients:
   - synonym_text: 'produces: DL-lactate'
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: DL-lactate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 7
@@ -80756,6 +80886,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-06T05:30:11.378447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0682 ''DL-lactate'' as a RAW_TEXT synonym -- DL-lactate
+      is racemic lactate; CHEBI:24996 ''lactate'' is the stereochemically unspecified
+      parent, which is what the label states (#213). No new SSSOM row; CHEBI:24996
+      is already mapped. Source: kgmicrobe.trait:dl_lactate.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 113-21-3
     data_source: PubChem API
@@ -149781,7 +149919,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:5_dehydro_d_gluconate; '
-  synonyms: []
+  synonyms:
+  - synonym_text: 5-didehydro-D-gluconate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -149815,6 +149956,13 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T05:30:11.378447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0724 ''5-didehydro-D-gluconate'' as a RAW_TEXT synonym
+      -- ''didehydro'' is a typo for ''dehydro''; same compound (#213). No new SSSOM
+      row; CHEBI:58143 is already mapped. Source: kgmicrobe.trait:5_didehydro_d_gluconate.'
     llm_assisted: true
 - identifier: CHEBI:16010
   preferred_term: 5-oxoproline
@@ -166841,6 +166989,9 @@ ingredients:
   - synonym_text: carbocerate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Casamino Acids (0.01 %
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 395
@@ -166939,6 +167090,14 @@ ingredients:
     changes: 'restored ingredient_type=UNDEFINED_MIXTURE: it was flipped to SINGLE_INGREDIENT
       only because heptacosanoate''s structure had been backfilled onto the record
       (#263)'
+    llm_assisted: true
+  - timestamp: '2026-08-06T05:30:11.378447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0708 ''Casamino Acids (0.01 %'' as a RAW_TEXT synonym
+      -- Parse artifact: a truncated concentration annotation ''(0.01 %'' left on
+      the label. Same ingredient as the Casamino acids record (#213). No new SSSOM
+      row; FOODON:03315719 is already mapped. Source: kgmicrobe.trait:casamino_acids_0_01.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 65072-00-6

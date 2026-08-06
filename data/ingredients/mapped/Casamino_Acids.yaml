@@ -38,6 +38,9 @@ synonyms:
 - synonym_text: carbocerate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Casamino Acids (0.01 %
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 395
@@ -134,6 +137,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'restored ingredient_type=UNDEFINED_MIXTURE: it was flipped to SINGLE_INGREDIENT
     only because heptacosanoate''s structure had been backfilled onto the record (#263)'
+  llm_assisted: true
+- timestamp: '2026-08-06T05:30:11.378447+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0708 ''Casamino Acids (0.01 %'' as a RAW_TEXT synonym
+    -- Parse artifact: a truncated concentration annotation ''(0.01 %'' left on the
+    label. Same ingredient as the Casamino acids record (#213). No new SSSOM row;
+    FOODON:03315719 is already mapped. Source: kgmicrobe.trait:casamino_acids_0_01.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 65072-00-6

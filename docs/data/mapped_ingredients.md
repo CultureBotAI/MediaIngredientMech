@@ -1,10 +1,13 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T05:19:56.126224+00:00
-Total: 2341 ingredients
+Generated: 2026-08-06T05:34:28.526054+00:00
+Total: 2344 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:17620 | CHEBI:17620 | Ferulate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:55507 | CHEBI:55507 | 1-o-methyl Alpha-galactopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:36241 | CHEBI:36241 | Protocatechuate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:167506 | CHEBI:167506 | 2-dimethylsuccinic Acid | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:17464 | CHEBI:17464 | L-galactonic Acid Gamma-lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:5390 | CHEBI:5390 | Glutamyl-glutamic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
