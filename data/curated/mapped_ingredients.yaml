@@ -1,8 +1,263 @@
-generation_date: '2026-08-06T06:38:51.222544+00:00'
-total_count: 2350
-mapped_count: 2331
+generation_date: '2026-08-06T07:14:29.509994+00:00'
+total_count: 2356
+mapped_count: 2337
 unmapped_count: 0
 ingredients:
+- identifier: CHEBI:27374
+  preferred_term: L-inositol
+  synonyms:
+  - synonym_text: L-inositol
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_inositol);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0823 -> CHEBI:27374 "1L-chiro-inositol" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_inositol); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:27374
+    ontology_label: 1L-chiro-inositol
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: L-inositol is a registered synonym of CHEBI:27374 1L-chiro-inositol (#213).
+- identifier: CHEBI:82679
+  preferred_term: Nutriacholic Acid
+  synonyms:
+  - synonym_text: Nutriacholic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:nutriacholic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0833 -> CHEBI:82679 "7-oxolithocholic acid" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:nutriacholic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:82679
+    ontology_label: 7-oxolithocholic acid
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Nutriacholic acid is a registered synonym of CHEBI:82679 7-oxolithocholic
+        acid (#213).
+- identifier: CHEBI:81879
+  preferred_term: Rhodomycin B
+  synonyms:
+  - synonym_text: Rhodomycin B
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:rhodomycin_b);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0840 -> CHEBI:81879 "beta-Rhodomycin" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:rhodomycin_b); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:81879
+    ontology_label: beta-Rhodomycin
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Rhodomycin B is a registered synonym of CHEBI:81879 beta-Rhodomycin;
+        B and beta are the same designation (#213).
+- identifier: CHEBI:18394
+  preferred_term: Palatinose
+  synonyms:
+  - synonym_text: Palatinose
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:palatinose);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0834 -> CHEBI:18394 "6-O-alpha-D-glucopyranosyl-D-fructofuranose"
+      (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:palatinose); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:18394
+    ontology_label: 6-O-alpha-D-glucopyranosyl-D-fructofuranose
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Palatinose (isomaltulose) is a registered synonym of CHEBI:18394 6-O-alpha-D-glucopyranosyl-D-fructofuranose
+        (#213).
+- identifier: CHEBI:75273
+  preferred_term: Niaproof
+  synonyms:
+  - synonym_text: Niaproof
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 24
+      source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:niaproof); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0646 -> CHEBI:75273 "sodium tetradecyl sulfate" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:niaproof); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:75273
+    ontology_label: sodium tetradecyl sulfate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Niaproof is Niaproof 4, a trade name for sodium tetradecyl sulfate; 'niaproof
+        4' is a registered synonym of CHEBI:75273 in the local ChEBI build. Used as
+        a surfactant in Biolog phenotype plates, which matches this record's BacDive
+        provenance (#213).
+- identifier: CHEBI:37671
+  preferred_term: 3-beta-d-glucan
+  synonyms:
+  - synonym_text: 3-beta-d-glucan
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:3_beta_d_glucan);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0787 -> CHEBI:37671 "(1->3)-beta-D-glucan" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:3_beta_d_glucan);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:37671
+    ontology_label: (1->3)-beta-D-glucan
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: '''3-beta-d-glucan'' is a truncation of (1->3)-beta-D-glucan; the leading
+        ''(1->'' was lost. CHEBI:37671 is the precise term, and is preferred over
+        the generic CHEBI:28793 beta-D-glucan (held by ''b-Glucan from Oat'') because
+        the label states the 1,3 linkage (#213).'
 - identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
   preferred_term: 2,4-diamino-6,7-di-iso-propylpteridine phosphate
   synonyms:
@@ -19151,7 +19406,10 @@ ingredients:
       source: kgmicrobe.compound:angustmycin
       notes: angustmycin A is a historical/trade name for the antibiotic psicofuranin
         — same molecule (curator-confirmed synonym).
-  synonyms: []
+  synonyms:
+  - synonym_text: Psicofuranine
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -19196,6 +19454,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-06T07:14:29.509994+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0839 ''Psicofuranine'' as a RAW_TEXT synonym -- Psicofuranine
+      is a registered synonym of CHEBI:8612 psicofuranin, held by the Angustmycin
+      record; angustmycin C and psicofuranine are the same nucleoside antibiotic (#213).
+      No new SSSOM row; CHEBI:8612 is already mapped. Source: kgmicrobe.trait:psicofuranine.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C11H15N5O5
@@ -161413,7 +161679,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:netilmycin; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Netilmicin
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -161447,6 +161716,15 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T07:14:29.509994+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed CHEBI:748901 ''Netilmicin'' as a RAW_TEXT synonym -- One drug
+      under two spellings held by two records — the exact oddity #203 flagged, where
+      Netilmycin was promoted to CHEBI:7528 while Netilmicin was demoted. ''Netilmicin''
+      is a registered synonym of CHEBI:7528, so the two records are merged (#213,
+      #203). No new SSSOM row; CHEBI:7528 is already mapped.'
     llm_assisted: true
 - identifier: CHEBI:31908
   preferred_term: Niddamycin
@@ -164597,7 +164875,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:spiramycin_ii; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Acetylspiramycin
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -164631,6 +164912,15 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T07:01:56.130484+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0642 ''Acetylspiramycin'' as a RAW_TEXT synonym --
+      ChEBI registers "Acetylspiramycin" as an explicit synonym of CHEBI:31168 spiramycin
+      II (alongside Foromacidin B and Spiramycin B), so this is the ontology own position
+      rather than an inference (#213). No new SSSOM row; CHEBI:31168 is already mapped.
+      Source: kgmicrobe.trait:acetylspiramycin.'
     llm_assisted: true
 - identifier: CHEBI:15738
   preferred_term: Staurosporine

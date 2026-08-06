@@ -1,10 +1,16 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T06:39:39.590518+00:00
-Total: 2350 ingredients
+Generated: 2026-08-06T07:15:48.780616+00:00
+Total: 2356 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:27374 | CHEBI:27374 | L-inositol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:82679 | CHEBI:82679 | Nutriacholic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:81879 | CHEBI:81879 | Rhodomycin B | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:18394 | CHEBI:18394 | Palatinose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:75273 | CHEBI:75273 | Niaproof | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:37671 | CHEBI:37671 | 3-beta-d-glucan | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | CHEBI:73908 | 2,4-diamino-6,7-di-iso-propylpteridine phosphate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:maltose_hydrate | CHEBI:17306 | Maltose Hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_2-ketogluconate | CHEBI:16808 | Potassium 2-ketogluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
