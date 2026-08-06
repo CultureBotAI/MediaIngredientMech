@@ -50,10 +50,10 @@ ONTOLOGY_DB = {"CHEBI": CHEBI_DB, "NCIT": _OAK / "ncit.db",
                "FOODON": _OAK / "foodon.db", "ENVO": _OAK / "envo.db",
                # MeSH is written lowercase in MIM records (mesh:C017721) but
                # uppercase inside the build, so lookups upper-case the prefix.
-               "MESH": _OAK / "mesh.db"}
+               "MESH": _OAK / "mesh.db", "UBERON": _OAK / "uberon.db"}
 OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl",
                  "FOODON": "obo:foodon.owl", "ENVO": "obo:envo.owl",
-                 "MESH": "registry:mesh"}
+                 "MESH": "registry:mesh", "UBERON": "obo:uberon.owl"}
 
 PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch",
              "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch",

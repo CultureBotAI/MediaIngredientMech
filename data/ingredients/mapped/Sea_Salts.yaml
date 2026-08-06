@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0148
+identifier: NCIT:C75874
 preferred_term: Sea salts
 synonyms:
 - synonym_text: sea salts (Sigma)
   synonym_type: RAW_TEXT
   source: culturebotht
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 22
   media_count: 22
@@ -32,6 +32,14 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0148 -> NCIT:C75874 "Sea Salt" (CLOSE_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
 notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 22
   CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen,
   DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping available;
@@ -41,9 +49,11 @@ ontology_mapping:
   ontology_id: NCIT:C75874
   ontology_label: Sea Salt
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
-    source: NCIT via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via='Sea salts'
+    source: MIM curation (#114)
+    notes: '''Sea salts'' is the commercial sea-salt preparation; NCIT:C75874 ''Sea
+      Salt'' is the closest term. CLOSE_MATCH because the label is plural and the
+      record is a defined product rather than the generic substance (#114).'
 ingredient_type: UNDEFINED_MIXTURE

@@ -44,9 +44,20 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_114_cas_audit
+  action: CORRECTED
+  changes: 'cas_rn 203-742-5 -> 110-16-7. 203-742-5 is an EC/EINECS registry number
+    (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+    mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement is
+    this record''s own CHEBI term CHEBI:18300''s CAS dbxref, and that term''s label
+    matches the substance, so it is evidence rather than inference. The EC number
+    is recorded here rather than discarded: it was correct information in the wrong
+    field.'
+  llm_assisted: true
 chemical_properties:
-  cas_rn: 203-742-5
-  data_source: CultureBotHT compounds_to_cas.csv
+  cas_rn: 110-16-7
+  data_source: 'CHEBI dbxref on CHEBI:18300 (corrected from an EC number, #114)'
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
   molecular_formula: C4H4O4
   inchi: InChI=1S/C4H4O4/c5-3(6)1-2-4(7)8/h1-2H,(H,5,6)(H,7,8)/b2-1-

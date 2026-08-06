@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0281
+identifier: kgmicrobe.ingredient:mops_2m_ph7
 preferred_term: MOPS_2M_pH7
 synonyms:
 - synonym_text: MOPS_2M_pH7
   synonym_type: RAW_TEXT
   source: culturebotht
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 24
   media_count: 24
@@ -25,9 +25,27 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0281 -> kgmicrobe.ingredient:mops_2m_ph7 "MOPS" (NARROW_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   24 CultureBot media; samples: McCas_MOPS, McCas_formate_SO4, McCas_formate_SO4Free_BicarbFree….
   No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a MOPS buffer stock
   solution, not an exact match to the base MOPS compound.'
 ingredient_type: STOCK_SOLUTION
 solution_type: BUFFER_SOLUTION
+ontology_mapping:
+  ontology_id: CHEBI:39074
+  ontology_label: MOPS
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#114)
+    notes: MOPS_2M_pH7 is a 2 M pH 7 stock of MOPS, not the MOPS compound. Follows
+      the stock-solution convention (#114).

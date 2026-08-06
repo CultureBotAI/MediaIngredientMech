@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0489
+identifier: kgmicrobe.ingredient:pipes_buffer
 preferred_term: PIPES buffer
 synonyms:
 - synonym_text: PIPES buffer
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -22,6 +22,25 @@ curation_history:
   changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'PIPES
     buffer')
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0489 -> kgmicrobe.ingredient:pipes_buffer "PIPES" (NARROW_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:867); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: CHEBI:39033
+  ontology_label: PIPES
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#114)
+    notes: 'A PIPES buffer is a prepared solution of PIPES, not the compound (STOCK_SOLUTION
+      vs SINGLE_INGREDIENT). Follows the stock-solution convention: kgmicrobe.ingredient:
+      mint with a narrowMatch to the compound (#114).'

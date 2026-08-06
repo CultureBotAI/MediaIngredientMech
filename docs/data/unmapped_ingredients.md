@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T20:39:35.426849+00:00
-Total: 451 ingredients
+Generated: 2026-08-06T20:56:07.020162+00:00
+Total: 446 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -195,10 +195,8 @@ Total: 451 ingredients
 | UNMAPPED_0429 |  | Liver Concentrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0438 |  | MEM-Medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0437 |  | MEM alpha Modification | UNMAPPED |  |  | 0 |
-| UNMAPPED_0440 |  | MES buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0441 |  | MES Hydrat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0309 |  | MME Trace Minerals | UNMAPPED |  |  | 3 |
-| UNMAPPED_0281 |  | MOPS_2M_pH7 | UNMAPPED |  |  | 24 |
 | UNMAPPED_0453 |  | MRS broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0454 |  | MRS medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0106 |  | Macro Component 1 for J Medium | UNMAPPED |  |  | 1 |
@@ -271,7 +269,6 @@ Total: 451 ingredients
 | UNMAPPED_0094 |  | P-II Metal Solution | UNMAPPED |  |  | 1 |
 | UNMAPPED_0011 |  | P-IV Metal Solution | UNMAPPED |  |  | 16 |
 | UNMAPPED_0184 |  | PBS | UNMAPPED |  |  | 0 |
-| UNMAPPED_0489 |  | PIPES buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0497 |  | PPLO broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0231 |  | Pectic galactan from potato | UNMAPPED |  |  | 1 |
 | UNMAPPED_0490 |  | Plain flour | UNMAPPED |  |  | 0 |
@@ -296,7 +293,6 @@ Total: 451 ingredients
 | UNMAPPED_0240 |  | Rhamnogalacturonan-II from apple juice concentrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0175 |  | Rhamnogalacturonan - from potato | UNMAPPED |  |  | 0 |
 | UNMAPPED_0508 |  | Riboflavin solution see Medium No. 462 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0510 |  | Rumen fluid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0511 |  | Rye grass | UNMAPPED |  |  | 0 |
 | UNMAPPED_0512 |  | S6 medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0513 |  | SABOURAUD- Glucose-Bouillon | UNMAPPED |  |  | 0 |
@@ -304,7 +300,6 @@ Total: 451 ingredients
 | UNMAPPED_0514 |  | Salt Solution II | UNMAPPED |  |  | 0 |
 | UNMAPPED_0516 |  | Salts solution | UNMAPPED |  |  | 0 |
 | UNMAPPED_0517 |  | Se-acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0148 | NCIT:C75874 | Sea salts | UNMAPPED | NCIT | NARROW_MATCH | 22 |
 | UNMAPPED_0002 |  | See source for composition | UNMAPPED |  |  | 143 |
 | UNMAPPED_0519 |  | Selenite-tungstate solution see Medium No. 431 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0520 |  | Sigmacell alpha Type 50 | UNMAPPED |  |  | 0 |

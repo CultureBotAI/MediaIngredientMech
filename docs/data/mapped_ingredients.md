@@ -1,10 +1,15 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T20:39:35.424004+00:00
-Total: 2390 ingredients
+Generated: 2026-08-06T20:56:07.017455+00:00
+Total: 2395 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| UBERON:0010228 | UBERON:0010228 | Rumen fluid | MAPPED | UBERON | EXACT_MATCH | 0 |
+| NCIT:C75874 | NCIT:C75874 | Sea salts | MAPPED | NCIT | CLOSE_MATCH | 22 |
+| kgmicrobe.ingredient:mops_2m_ph7 | CHEBI:39074 | MOPS_2M_pH7 | MAPPED | CHEBI | NARROW_MATCH | 24 |
+| kgmicrobe.ingredient:pipes_buffer | CHEBI:39033 | PIPES buffer | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:mes_buffer | CHEBI:39010 | MES buffer | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | Alpha-hydroxyglutarate-gamma-lactone | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | L-glutamate-gamma-3-carboxy-4-nitroanilide | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | Beta-D-galacto-pyranosyl-D-arabinose | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |

@@ -1,0 +1,49 @@
+identifier: kgmicrobe.ingredient:mes_buffer
+preferred_term: MES buffer
+synonyms:
+- synonym_text: MES buffer
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:835); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.701686+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'MES
+    buffer')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0440 -> kgmicrobe.ingredient:mes_buffer "MES" (NARROW_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from mim-queue (source_id=mediadive.ingredient:835); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: CHEBI:39010
+  ontology_label: MES
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#114)
+    notes: 'A MES buffer is a prepared solution of MES, not the MES compound: the
+      record''s ingredient_type is STOCK_SOLUTION while the CHEBI:39010 MES record
+      is SINGLE_INGREDIENT. merge_unmapped_into_mapped correctly refused to fold one
+      into the other. Follows the established stock-solution convention here — 12
+      of 19 mapped STOCK_SOLUTION records hold a kgmicrobe.ingredient: mint with a
+      match to the compound (#114).'

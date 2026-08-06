@@ -1,8 +1,263 @@
-generation_date: '2026-08-06T09:09:54.525460+00:00'
-total_count: 2390
-mapped_count: 2371
+generation_date: '2026-08-06T20:55:27.393416+00:00'
+total_count: 2395
+mapped_count: 2376
 unmapped_count: 0
 ingredients:
+- identifier: UBERON:0010228
+  preferred_term: Rumen fluid
+  synonyms:
+  - synonym_text: Rumen fluid
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:145); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_UNDEFINED_MIXTURE
+    changes: Classified as animal rumen fluid biological material and left unmapped
+      pending material-level curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0510 -> UBERON:0010228 "ruminal fluid" (EXACT_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:145); no CAS-RN or
+    CHEBI/NCIT match. Reviewed on 2026-05-11 as biological material pending material-level
+    curation.
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: UBERON:0010228
+    ontology_label: ruminal fluid
+    ontology_source: UBERON
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: 'MIM curation (#114, #204)'
+      notes: '''Rumen fluid'' is ruminal fluid. UBERON:0010228 is the generic term,
+        which is what an unqualified ''rumen fluid'' label means — #204 established
+        that MICRO:0000520 ''clarified rumen fluid'' names a PROCESSED form and should
+        be reserved for labels that say ''clarified'' (#114, #204).'
+- identifier: NCIT:C75874
+  preferred_term: Sea salts
+  synonyms:
+  - synonym_text: sea salts (Sigma)
+    synonym_type: RAW_TEXT
+    source: culturebotht
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 22
+    media_count: 22
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_AS_UNMAPPED
+    changes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used
+      in 22 CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM
+      noNitrogen, DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping
+      available; curator review needed.'
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T07:06:02.289319+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_NCIT
+    changes: set ontology_mapping parent=NCIT:C75874 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_COMMERCIAL_MIXTURE
+    changes: Kept unmapped with contextual NCIT:C75874 Sea Salt parent because the
+      source synonym is supplier-formulated sea salts (Sigma), not a verified exact
+      ontology identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0148 -> NCIT:C75874 "Sea Salt" (CLOSE_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 22
+    CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen,
+    DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping available;
+    reviewed on 2026-05-11 as a commercial sea-salts mixture, retaining NCIT:C75874
+    only as contextual parent evidence.'
+  ontology_mapping:
+    ontology_id: NCIT:C75874
+    ontology_label: Sea Salt
+    ontology_source: NCIT
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#114)
+      notes: '''Sea salts'' is the commercial sea-salt preparation; NCIT:C75874 ''Sea
+        Salt'' is the closest term. CLOSE_MATCH because the label is plural and the
+        record is a defined product rather than the generic substance (#114).'
+  ingredient_type: UNDEFINED_MIXTURE
+- identifier: kgmicrobe.ingredient:mops_2m_ph7
+  preferred_term: MOPS_2M_pH7
+  synonyms:
+  - synonym_text: MOPS_2M_pH7
+    synonym_type: RAW_TEXT
+    source: culturebotht
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 24
+    media_count: 24
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_AS_UNMAPPED
+    changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+      in 24 CultureBot media; samples: McCas_MOPS, McCas_formate_SO4, McCas_formate_SO4Free_BicarbFree….
+      No CAS-RN or CHEBI mapping available; curator review needed.'
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_BUFFER_STOCK
+    changes: Classified as a MOPS buffer stock solution and left unmapped because
+      the 2 M pH 7 stock is not identity-equivalent to the mapped MOPS compound record.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0281 -> kgmicrobe.ingredient:mops_2m_ph7 "MOPS" (NARROW_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 24 CultureBot media; samples: McCas_MOPS, McCas_formate_SO4, McCas_formate_SO4Free_BicarbFree….
+    No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a MOPS buffer
+    stock solution, not an exact match to the base MOPS compound.'
+  ingredient_type: STOCK_SOLUTION
+  solution_type: BUFFER_SOLUTION
+  ontology_mapping:
+    ontology_id: CHEBI:39074
+    ontology_label: MOPS
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#114)
+      notes: MOPS_2M_pH7 is a 2 M pH 7 stock of MOPS, not the MOPS compound. Follows
+        the stock-solution convention (#114).
+- identifier: kgmicrobe.ingredient:pipes_buffer
+  preferred_term: PIPES buffer
+  synonyms:
+  - synonym_text: PIPES buffer
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:867); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.834920+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'PIPES
+      buffer')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0489 -> kgmicrobe.ingredient:pipes_buffer "PIPES" (NARROW_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:867); no CAS-RN or
+    CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: CHEBI:39033
+    ontology_label: PIPES
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#114)
+      notes: 'A PIPES buffer is a prepared solution of PIPES, not the compound (STOCK_SOLUTION
+        vs SINGLE_INGREDIENT). Follows the stock-solution convention: kgmicrobe.ingredient:
+        mint with a narrowMatch to the compound (#114).'
+- identifier: kgmicrobe.ingredient:mes_buffer
+  preferred_term: MES buffer
+  synonyms:
+  - synonym_text: MES buffer
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:835); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.701686+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'MES
+      buffer')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0440 -> kgmicrobe.ingredient:mes_buffer "MES" (NARROW_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:835); no CAS-RN or
+    CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: CHEBI:39010
+    ontology_label: MES
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#114)
+      notes: 'A MES buffer is a prepared solution of MES, not the MES compound: the
+        record''s ingredient_type is STOCK_SOLUTION while the CHEBI:39010 MES record
+        is SINGLE_INGREDIENT. merge_unmapped_into_mapped correctly refused to fold
+        one into the other. Follows the established stock-solution convention here
+        — 12 of 19 mapped STOCK_SOLUTION records hold a kgmicrobe.ingredient: mint
+        with a match to the compound (#114).'
 - identifier: kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone
   preferred_term: Alpha-hydroxyglutarate-gamma-lactone
   synonyms:

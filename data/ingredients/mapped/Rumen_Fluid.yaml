@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0510
+identifier: UBERON:0010228
 preferred_term: Rumen fluid
 synonyms:
 - synonym_text: Rumen fluid
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -24,7 +24,27 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0510 -> UBERON:0010228 "ruminal fluid" (EXACT_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:145); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as biological material pending material-level
   curation.
 ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: UBERON:0010228
+  ontology_label: ruminal fluid
+  ontology_source: UBERON
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: 'MIM curation (#114, #204)'
+    notes: '''Rumen fluid'' is ruminal fluid. UBERON:0010228 is the generic term,
+      which is what an unqualified ''rumen fluid'' label means — #204 established
+      that MICRO:0000520 ''clarified rumen fluid'' names a PROCESSED form and should
+      be reserved for labels that say ''clarified'' (#114, #204).'

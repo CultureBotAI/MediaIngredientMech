@@ -1,10 +1,15 @@
 # All Ingredients
 
-Generated: 2026-08-06T20:39:35.428001+00:00
+Generated: 2026-08-06T20:56:07.020827+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| UBERON:0010228 | UBERON:0010228 | Rumen fluid | MAPPED | UBERON | EXACT_MATCH | 0 |
+| NCIT:C75874 | NCIT:C75874 | Sea salts | MAPPED | NCIT | CLOSE_MATCH | 22 |
+| kgmicrobe.ingredient:mops_2m_ph7 | CHEBI:39074 | MOPS_2M_pH7 | MAPPED | CHEBI | NARROW_MATCH | 24 |
+| kgmicrobe.ingredient:pipes_buffer | CHEBI:39033 | PIPES buffer | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:mes_buffer | CHEBI:39010 | MES buffer | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | Alpha-hydroxyglutarate-gamma-lactone | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | L-glutamate-gamma-3-carboxy-4-nitroanilide | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | Beta-D-galacto-pyranosyl-D-arabinose | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
@@ -2585,10 +2590,8 @@ Total: 2841 ingredients
 | UNMAPPED_0429 |  | Liver Concentrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0438 |  | MEM-Medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0437 |  | MEM alpha Modification | UNMAPPED |  |  | 0 |
-| UNMAPPED_0440 |  | MES buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0441 |  | MES Hydrat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0309 |  | MME Trace Minerals | UNMAPPED |  |  | 3 |
-| UNMAPPED_0281 |  | MOPS_2M_pH7 | UNMAPPED |  |  | 24 |
 | UNMAPPED_0453 |  | MRS broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0454 |  | MRS medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0106 |  | Macro Component 1 for J Medium | UNMAPPED |  |  | 1 |
@@ -2661,7 +2664,6 @@ Total: 2841 ingredients
 | UNMAPPED_0094 |  | P-II Metal Solution | UNMAPPED |  |  | 1 |
 | UNMAPPED_0011 |  | P-IV Metal Solution | UNMAPPED |  |  | 16 |
 | UNMAPPED_0184 |  | PBS | UNMAPPED |  |  | 0 |
-| UNMAPPED_0489 |  | PIPES buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0497 |  | PPLO broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0231 |  | Pectic galactan from potato | UNMAPPED |  |  | 1 |
 | UNMAPPED_0490 |  | Plain flour | UNMAPPED |  |  | 0 |
@@ -2686,7 +2688,6 @@ Total: 2841 ingredients
 | UNMAPPED_0240 |  | Rhamnogalacturonan-II from apple juice concentrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0175 |  | Rhamnogalacturonan - from potato | UNMAPPED |  |  | 0 |
 | UNMAPPED_0508 |  | Riboflavin solution see Medium No. 462 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0510 |  | Rumen fluid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0511 |  | Rye grass | UNMAPPED |  |  | 0 |
 | UNMAPPED_0512 |  | S6 medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0513 |  | SABOURAUD- Glucose-Bouillon | UNMAPPED |  |  | 0 |
@@ -2694,7 +2695,6 @@ Total: 2841 ingredients
 | UNMAPPED_0514 |  | Salt Solution II | UNMAPPED |  |  | 0 |
 | UNMAPPED_0516 |  | Salts solution | UNMAPPED |  |  | 0 |
 | UNMAPPED_0517 |  | Se-acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0148 | NCIT:C75874 | Sea salts | UNMAPPED | NCIT | NARROW_MATCH | 22 |
 | UNMAPPED_0002 |  | See source for composition | UNMAPPED |  |  | 143 |
 | UNMAPPED_0519 |  | Selenite-tungstate solution see Medium No. 431 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0520 |  | Sigmacell alpha Type 50 | UNMAPPED |  |  | 0 |
