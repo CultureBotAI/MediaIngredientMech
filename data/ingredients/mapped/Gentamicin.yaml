@@ -1,0 +1,45 @@
+identifier: CHEBI:17833
+preferred_term: Gentamicin
+synonyms: []
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 638
+    source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity|BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_FROM_INGREDIENT_IMPORT
+  changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:gentamicin; '
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-04T03:02:12.084870+00:00'
+  curator: microbedecoder-import-review
+  action: DEMOTED_TO_UNMAPPED
+  changes: removed ontology_mapping CHEBI:759884
+  notes: CHEBI:759884 exceeds the CHEBI accession ceiling and does not resolve; validate-products
+    reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted CHEBI:759884 -> CHEBI:17833 "gentamycin" (SYNONYM_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+ontology_mapping:
+  ontology_id: CHEBI:17833
+  ontology_label: gentamycin
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Gentamicin/gentamycin is a spelling variant of the same aminoglycoside;
+      CHEBI:17833''s canonical label is ''gentamycin''. The record previously carried
+      CHEBI:759884, which does not resolve in CHEBI at all (one of the #249 non-existent
+      identifiers) while its status was UNMAPPED (#213).'

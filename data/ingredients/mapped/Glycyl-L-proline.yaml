@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: Glycyl-L-proline
   synonym_type: RAW_TEXT
   source: microbedecoder
+- synonym_text: Glycine-proline
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -28,6 +31,13 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0684 -> CHEBI:70744 "Gly-Pro" (SYNONYM_MATCH); mapping_status
     UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-06T04:51:35.608637+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0665 ''Glycine-proline'' as a RAW_TEXT synonym -- Same
+    dipeptide (Gly-Pro) under a hyphenated residue naming (#213). No new SSSOM row;
+    CHEBI:70744 is already mapped. Source: kgmicrobe.trait:glycine_proline.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_proline);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

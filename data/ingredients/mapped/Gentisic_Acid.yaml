@@ -25,6 +25,9 @@ synonyms:
 - synonym_text: 2,5-Dihydroxybenzoate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Gentisate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -78,6 +81,14 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-06T04:28:16.724447+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0692 ''Gentisate'' as a RAW_TEXT synonym -- Gentisate
+    is the conjugate base of gentisic acid (2,5-dihydroxybenzoic acid); CHEBI has
+    no separate gentisate anion term, so the acid record is the home (#213). No new
+    SSSOM row; CHEBI:17189 is already mapped. Source: kgmicrobe.trait:gentisate.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 490-79-9
   data_source: PubChem API

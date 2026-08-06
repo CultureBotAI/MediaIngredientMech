@@ -1,10 +1,35 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T03:15:57.123120+00:00
-Total: 2319 ingredients
+Generated: 2026-08-06T05:34:28.526054+00:00
+Total: 2344 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:17620 | CHEBI:17620 | Ferulate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:55507 | CHEBI:55507 | 1-o-methyl Alpha-galactopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:36241 | CHEBI:36241 | Protocatechuate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:167506 | CHEBI:167506 | 2-dimethylsuccinic Acid | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:17464 | CHEBI:17464 | L-galactonic Acid Gamma-lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:5390 | CHEBI:5390 | Glutamyl-glutamic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:149531 | CHEBI:149531 | Carminate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90601 | CHEBI:90601 | L-pyroglutamic Acid 2-naphthylamide | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:16077 | CHEBI:16077 | Glucose 1-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:73804 | CHEBI:73804 | Glycyl L-aspartic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15895 | CHEBI:15895 | D-galactonic Acid Lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90144 | CHEBI:90144 | O-nitrophenyl-beta-D-galactopyranosid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15978 | CHEBI:15978 | Glycerol 3-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:24750 | CHEBI:24750 | Hydroxystreptomycin | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:81287 | CHEBI:81287 | Neomycin F | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:81430 | CHEBI:81430 | Dactimicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:27907 | CHEBI:27907 | Alpha-L-rhamnose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:2179 | CHEBI:2179 | 6-deoxy-d-galactose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:67135 | CHEBI:67135 | Azomycin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:17833 | CHEBI:17833 | Gentamicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:71422 | CHEBI:71422 | Beta-gentiobiose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:17784 | CHEBI:17784 | D-glucosaminic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:30566 | CHEBI:30566 | 4-aminobutyrate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15588 | CHEBI:15588 | D-malate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:73908 | CHEBI:73908 | Vibriostat | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:22210 | CHEBI:22210 | Aconitate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:16087 | CHEBI:16087 | Isocitrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:17128 | CHEBI:17128 | Adipate | MAPPED | CHEBI | CLOSE_MATCH | 0 |

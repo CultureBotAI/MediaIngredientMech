@@ -9,7 +9,10 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT.
-synonyms: []
+synonyms:
+- synonym_text: Propanol
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -37,6 +40,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-06T04:51:35.608637+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0670 ''Propanol'' as a RAW_TEXT synonym -- Bare ''Propanol''
+    conventionally denotes 1-propanol; folded into the existing propan-1-ol record
+    rather than asserting a new mapping (#213). No new SSSOM row; CHEBI:28831 is already
+    mapped. Source: kgmicrobe.trait:propanol.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 71-23-8
   data_source: CultureBotHT compounds_to_cas.csv

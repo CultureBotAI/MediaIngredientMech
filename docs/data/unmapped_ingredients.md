@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T03:15:57.126227+00:00
-Total: 553 ingredients
+Generated: 2026-08-06T05:34:28.528881+00:00
+Total: 506 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -383,75 +383,48 @@ Total: 553 ingredients
 | UNMAPPED_0272 |  | ZMB_ALS | UNMAPPED |  |  | 33 |
 | UNMAPPED_0150 |  | Zinc-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0587 |  | α-D-Glucose monohydrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0694 |  | (2)-D-lactose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0619 |  | 0129 (2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0735 |  | 1-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0720 |  | 1-o-methyl Alpha-galactopyranoside | UNMAPPED |  |  | 0 |
 | UNMAPPED_0715 |  | 1-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0679 |  | 2-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0695 |  | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0696 |  | 2-dimethylsuccinic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0661 |  | 2-oxogluconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0723 |  | 2-propandiol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0674 |  | 2-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0785 |  | 2-tetrachloroethane | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0671 |  | 3-O-methyl Alpha-D-glucopyranoside | UNMAPPED |  |  | 0 |
 | UNMAPPED_0787 |  | 3-beta-d-glucan | UNMAPPED |  |  | 0 |
-| UNMAPPED_0632 |  | 3-butanediol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0736 |  | 3-methylacetate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0687 |  | 3-methylglucose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0680 |  | 4-aminobutyrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0790 |  | 4-dihydroxy-biphenyl | UNMAPPED |  |  | 0 |
 | UNMAPPED_0791 |  | 4-diol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0724 |  | 5-didehydro-D-gluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0792 |  | 5-didehydro-D-gluconic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0737 |  | 5-trimethoxybenzoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0793 |  | 6-deoxy-d-galactose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0621 |  | 7-di-iso-propylpteridine Phosphate) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0642 |  | Acetylspiramycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0726 |  | Actinomycin X | UNMAPPED |  |  | 0 |
-| UNMAPPED_0796 |  | Alpha-L-rhamnose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0795 |  | Alpha-hydroxyglutarate-gamma-lactone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0738 |  | Aminovalerate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0706 |  | Amp | UNMAPPED |  |  | 0 |
-| UNMAPPED_0798 |  | Azomycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0716 |  | BHI | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0799 |  | Bacillomycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0650 |  | Bacteriochlorophyll Alpha | UNMAPPED |  |  | 0 |
 | UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0672 |  | Beta-gentiobiose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0697 |  | Bis-4-nitrophenyl-phenyl Phosphonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0691 |  | Bis-4-nitrophenyl-phosphorylcholine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0802 |  | Bottromycin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0803 |  | Bryamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0804 |  | Butamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0805 |  | Butane-1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0806 |  | Carminate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0708 |  | Casamino Acids (0.01 % | UNMAPPED |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0664 |  | Chlortetracyclin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0649 |  | D-galactonic Acid Lactone | UNMAPPED |  |  | 0 |
-| UNMAPPED_0656 |  | D-glucosaminic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0709 |  | D-lactic Acid Methyl Ester | UNMAPPED |  |  | 0 |
-| UNMAPPED_0640 |  | D-malate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0657 |  | D-saccharate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0682 |  | DL-lactate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0729 |  | Dactimicin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0666 |  | Dimethylsulfide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |
 | UNMAPPED_0626 |  | Esculin Ferric Citrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0688 |  | Esculin Hydrolysate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0812 |  | Ethylenediamine-N | UNMAPPED |  |  | 0 |
 | UNMAPPED_0742 |  | Fastidious Anaerobe Broth With Meat Granules | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0711 |  | Fermented Rumen Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0730 |  | Ferulate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0814 |  | Filipin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0743 |  | Formate+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0744 |  | Formate+dimethylsulfide | NEEDS_EXPERT |  |  | 0 |
@@ -462,8 +435,6 @@ Total: 553 ingredients
 | UNMAPPED_0755 |  | GYPS | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0748 |  | Gallate + Formate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0731 |  | Gelatin Hydrolyzed | UNMAPPED |  |  | 0 |
-| UNMAPPED_0692 |  | Gentisate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0683 |  | Glucose 1-phosphate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0702 |  | Glucose + Acetate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0749 |  | Glucose + Cellobiose + Starch + Trypticase + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0750 |  | Glucose + Formate | NEEDS_EXPERT |  |  | 0 |
@@ -472,41 +443,29 @@ Total: 553 ingredients
 | UNMAPPED_0753 |  | Glucose Peptone-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0754 |  | Glucose + Xylose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0675 |  | Glucose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0712 |  | Glutamyl-glutamic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0693 |  | Glycerol 3-phosphate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0665 |  | Glycine-proline | UNMAPPED |  |  | 0 |
 | UNMAPPED_0816 |  | Glycine 1% | UNMAPPED |  |  | 0 |
 | UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0643 |  | Glycyl-l-glutamate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0655 |  | Glycyl L-aspartic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0756 |  | H2+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0631 |  | H2 + CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0757 |  | H2+dimethylsulfide | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0703 |  | H2+methanol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0758 |  | H2+tetramethylammonium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0622 |  | Hippurate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0819 |  | Hydroxystreptomycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0648 |  | L-alanine 4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0713 |  | L-galactonic Acid Gamma-lactone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0823 |  | L-inositol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0825 |  | L-pyroglutamic Acid 2-naphthylamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0676 |  | Maltose Hydrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0826 |  | Matamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
-| UNMAPPED_0831 |  | Neomycin F | UNMAPPED |  |  | 0 |
 | UNMAPPED_0832 |  | Netropsin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0646 |  | Niaproof | UNMAPPED |  |  | 0 |
 | UNMAPPED_0833 |  | Nutriacholic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0677 |  | O-nitrophenyl-beta-D-galactopyranosid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0719 |  | PY-cellobiose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0767 |  | PY-fructose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0768 |  | PY-glucose-rumen Fluid | NEEDS_EXPERT |  |  | 0 |
@@ -526,9 +485,7 @@ Total: 553 ingredients
 | UNMAPPED_0698 |  | Potassium 2-ketogluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0639 |  | Potassium 5-dehydro-D-gluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0637 |  | Potassium 5-ketogluconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0670 |  | Propanol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0838 |  | Proteose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0699 |  | Protocatechuate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0839 |  | Psicofuranine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0840 |  | Rhodomycin B | UNMAPPED |  |  | 0 |
 | UNMAPPED_0841 |  | Ristocetin A | UNMAPPED |  |  | 0 |
@@ -542,11 +499,8 @@ Total: 553 ingredients
 | UNMAPPED_0847 |  | Tetrabromopyrrole | UNMAPPED |  |  | 0 |
 | UNMAPPED_0734 |  | Tetrazolium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0848 |  | Trimethoxybenzoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0673 |  | Triphenyltetrazolium Chloride | UNMAPPED |  |  | 0 |
 | UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0659 |  | Vibriostat | UNMAPPED |  |  | 0 |
-| UNMAPPED_0714 |  | Vibriostatic Agent O/129 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0777 |  | Yeast Extract + Gluconate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0778 |  | Yeast Extract + Glucose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0779 |  | Yeast Extract + Peptone | NEEDS_EXPERT |  |  | 0 |
@@ -554,7 +508,6 @@ Total: 553 ingredients
 | UNMAPPED_0781 |  | Yeast + Meat Extract + H2 | NEEDS_EXPERT |  |  | 0 |
 | CHEBI:756054 |  | Carbomycin | UNMAPPED |  |  | 0 |
 | CHEBI:759883 |  | Colistin Sulfate | UNMAPPED |  |  | 0 |
-| CHEBI:759884 |  | Gentamicin | UNMAPPED |  |  | 0 |
 | CHEBI:753395 |  | Lysostaphin | UNMAPPED |  |  | 0 |
 | CHEBI:748901 |  | Netilmicin | UNMAPPED |  |  | 0 |
 | CHEBI:759086 |  | Polymyxin B | UNMAPPED |  |  | 0 |

@@ -1,8 +1,1072 @@
-generation_date: '2026-08-06T02:48:13.816290+00:00'
-total_count: 2319
-mapped_count: 2300
+generation_date: '2026-08-06T05:30:11.378447+00:00'
+total_count: 2344
+mapped_count: 2325
 unmapped_count: 0
 ingredients:
+- identifier: CHEBI:17620
+  preferred_term: Ferulate
+  synonyms:
+  - synonym_text: Ferulate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferulate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0730 -> CHEBI:17620 "trans-ferulic acid" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferulate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:17620
+    ontology_label: trans-ferulic acid
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Ferulate grounded to trans-ferulic acid, the naturally occurring isomer.
+        CHEBI has no ferulate anion term; CLOSE_MATCH because the label is the anion
+        and states no isomer (#213).
+- identifier: CHEBI:55507
+  preferred_term: 1-o-methyl Alpha-galactopyranoside
+  synonyms:
+  - synonym_text: 1-o-methyl Alpha-galactopyranoside
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:1_o_methyl_alpha_galactopyranoside);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0720 -> CHEBI:55507 "methyl alpha-D-galactoside" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:1_o_methyl_alpha_galactopyranoside);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:55507
+    ontology_label: methyl alpha-D-galactoside
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 1-O-methyl alpha-galactopyranoside is methyl alpha-D-galactoside (the
+        1-O-methyl glycoside) (#213).
+- identifier: CHEBI:36241
+  preferred_term: Protocatechuate
+  synonyms:
+  - synonym_text: Protocatechuate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 4
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:protocatechuate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0699 -> CHEBI:36241 "3,4-dihydroxybenzoate" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:protocatechuate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:36241
+    ontology_label: 3,4-dihydroxybenzoate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 'Protocatechuate is 3,4-dihydroxybenzoate; the anion form matches the
+        label, consistent with the anion convention in PR #275 (#213).'
+- identifier: CHEBI:167506
+  preferred_term: 2-dimethylsuccinic Acid
+  synonyms:
+  - synonym_text: 2-dimethylsuccinic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 4
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_dimethylsuccinic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0696 -> CHEBI:167506 "2,3-dimethylsuccinic acid" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_dimethylsuccinic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:167506
+    ontology_label: 2,3-dimethylsuccinic acid
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: '''2-dimethylsuccinic acid'' is a truncation of 2,3-dimethylsuccinic
+        acid -- a single locant cannot carry two methyl groups. CLOSE_MATCH because
+        the label lost the second locant rather than stating it (#213).'
+- identifier: CHEBI:17464
+  preferred_term: L-galactonic Acid Gamma-lactone
+  synonyms:
+  - synonym_text: L-galactonic Acid Gamma-lactone
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 3
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_galactonic_acid_gamma_lactone);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0713 -> CHEBI:17464 "L-galactono-1,4-lactone" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_galactonic_acid_gamma_lactone);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:17464
+    ontology_label: L-galactono-1,4-lactone
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: L-galactonic acid gamma-lactone is L-galactono-1,4-lactone; the gamma-lactone
+        is the 1,4-lactone (#213).
+- identifier: CHEBI:5390
+  preferred_term: Glutamyl-glutamic Acid
+  synonyms:
+  - synonym_text: Glutamyl-glutamic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 3
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glutamyl_glutamic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0712 -> CHEBI:5390 "Glu-Glu" (SYNONYM_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glutamyl_glutamic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:5390
+    ontology_label: Glu-Glu
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Glutamyl-glutamic acid is the dipeptide Glu-Glu (#213).
+- identifier: CHEBI:149531
+  preferred_term: Carminate
+  synonyms:
+  - synonym_text: Carminate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:carminate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0806 -> CHEBI:149531 "carminate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:carminate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:149531
+    ontology_label: carminate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 'Carminate grounded to carminate(2-), the fully deprotonated species,
+        per the anion convention derived in PR #275 (#213).'
+- identifier: CHEBI:90601
+  preferred_term: L-pyroglutamic Acid 2-naphthylamide
+  synonyms:
+  - synonym_text: L-pyroglutamic Acid 2-naphthylamide
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_pyroglutamic_acid_2_naphthylamide);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0825 -> CHEBI:90601 "5-oxo-L-proline 2-naphthylamide"
+      (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_pyroglutamic_acid_2_naphthylamide);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:90601
+    ontology_label: 5-oxo-L-proline 2-naphthylamide
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: L-pyroglutamic acid 2-naphthylamide is 5-oxo-L-proline 2-naphthylamide
+        (pyroglutamate = 5-oxoproline) (#213).
+- identifier: CHEBI:16077
+  preferred_term: Glucose 1-phosphate
+  synonyms:
+  - synonym_text: Glucose 1-phosphate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 7
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glucose_1_phosphate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0683 -> CHEBI:16077 "D-glucopyranose 1-phosphate" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glucose_1_phosphate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:16077
+    ontology_label: D-glucopyranose 1-phosphate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Glucose 1-phosphate grounded to D-glucopyranose 1-phosphate; CLOSE_MATCH
+        because the label states neither the anomeric configuration nor the D series
+        (#213).
+- identifier: CHEBI:73804
+  preferred_term: Glycyl L-aspartic Acid
+  synonyms:
+  - synonym_text: Glycyl L-aspartic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 17
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_aspartic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0655 -> CHEBI:73804 "Gly-Asp" (SYNONYM_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_aspartic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:73804
+    ontology_label: Gly-Asp
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Glycyl-L-aspartic acid is the dipeptide Gly-Asp (#213).
+- identifier: CHEBI:15895
+  preferred_term: D-galactonic Acid Lactone
+  synonyms:
+  - synonym_text: D-galactonic Acid Lactone
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 21
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_galactonic_acid_lactone);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0649 -> CHEBI:15895 "D-galactono-1,4-lactone" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_galactonic_acid_lactone);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:15895
+    ontology_label: D-galactono-1,4-lactone
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: D-galactonic acid lactone is D-galactono-1,4-lactone (#213).
+- identifier: CHEBI:90144
+  preferred_term: O-nitrophenyl-beta-D-galactopyranosid
+  synonyms:
+  - synonym_text: O-nitrophenyl-beta-D-galactopyranosid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 8
+      source_columns: BacDive_Metabolite_production|BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:o_nitrophenyl_beta_d_galactopyranosid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0677 -> CHEBI:90144 "2-nitrophenyl beta-D-galactoside"
+      (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:o_nitrophenyl_beta_d_galactopyranosid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:90144
+    ontology_label: 2-nitrophenyl beta-D-galactoside
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 'ONPG: o-nitrophenyl beta-D-galactopyranoside is 2-nitrophenyl beta-D-galactoside
+        under ortho/2- naming; the residual label is also missing its trailing ''e''
+        (#213).'
+- identifier: CHEBI:15978
+  preferred_term: Glycerol 3-phosphate
+  synonyms:
+  - synonym_text: Glycerol 3-phosphate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 5
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycerol_3_phosphate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0693 -> CHEBI:15978 "sn-glycerol 3-phosphate" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycerol_3_phosphate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:15978
+    ontology_label: sn-glycerol 3-phosphate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Glycerol 3-phosphate grounded to sn-glycerol 3-phosphate, the biological
+        stereoisomer; CLOSE_MATCH because the term is stereospecific and the label
+        is not (#213).
+- identifier: CHEBI:24750
+  preferred_term: Hydroxystreptomycin
+  synonyms:
+  - synonym_text: Hydroxystreptomycin
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:hydroxystreptomycin);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0819 -> CHEBI:24750 "5'-hydroxystreptomycin" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:hydroxystreptomycin);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:24750
+    ontology_label: 5'-hydroxystreptomycin
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Hydroxystreptomycin conventionally denotes 5'-hydroxystreptomycin; CLOSE_MATCH
+        because the term names the position and the label does not (#213).
+- identifier: CHEBI:81287
+  preferred_term: Neomycin F
+  synonyms:
+  - synonym_text: Neomycin F
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:neomycin_f);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0831 -> CHEBI:81287 "Paromomycin II" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:neomycin_f); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:81287
+    ontology_label: Paromomycin II
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Neomycin F and Paromomycin II are the same aminoglycoside under two naming
+        schemes (#213).
+- identifier: CHEBI:81430
+  preferred_term: Dactimicin
+  synonyms:
+  - synonym_text: Dactimicin
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:dactimicin);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0729 -> CHEBI:81430 "Formimidoyl-fortimicin A" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:dactimicin); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:81430
+    ontology_label: Formimidoyl-fortimicin A
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Dactimicin is the trivial name for formimidoyl-fortimicin A (#213).
+- identifier: CHEBI:27907
+  preferred_term: Alpha-L-rhamnose
+  synonyms:
+  - synonym_text: Alpha-L-rhamnose
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:alpha_l_rhamnose);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0796 -> CHEBI:27907 "alpha-L-rhamnopyranose" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:alpha_l_rhamnose);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:27907
+    ontology_label: alpha-L-rhamnopyranose
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: alpha-L-rhamnose is the alpha-L-rhamnopyranose ring form of the same
+        sugar (#213).
+- identifier: CHEBI:2179
+  preferred_term: 6-deoxy-d-galactose
+  synonyms:
+  - synonym_text: 6-deoxy-d-galactose
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:6_deoxy_d_galactose);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0793 -> CHEBI:2179 "D-fucopyranose" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:6_deoxy_d_galactose);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:2179
+    ontology_label: D-fucopyranose
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 6-deoxy-D-galactose is D-fucose; CHEBI:2179 is its pyranose form (#213).
+- identifier: CHEBI:67135
+  preferred_term: Azomycin
+  synonyms:
+  - synonym_text: Azomycin
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:azomycin); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0798 -> CHEBI:67135 "2-nitroimidazole" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:azomycin); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:67135
+    ontology_label: 2-nitroimidazole
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Azomycin is the trivial name for 2-nitroimidazole (#213).
+- identifier: CHEBI:17833
+  preferred_term: Gentamicin
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 638
+      source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity|BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:gentamicin; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:02:12.084870+00:00'
+    curator: microbedecoder-import-review
+    action: DEMOTED_TO_UNMAPPED
+    changes: removed ontology_mapping CHEBI:759884
+    notes: CHEBI:759884 exceeds the CHEBI accession ceiling and does not resolve;
+      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted CHEBI:759884 -> CHEBI:17833 "gentamycin" (SYNONYM_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  ontology_mapping:
+    ontology_id: CHEBI:17833
+    ontology_label: gentamycin
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 'Gentamicin/gentamycin is a spelling variant of the same aminoglycoside;
+        CHEBI:17833''s canonical label is ''gentamycin''. The record previously carried
+        CHEBI:759884, which does not resolve in CHEBI at all (one of the #249 non-existent
+        identifiers) while its status was UNMAPPED (#213).'
+- identifier: CHEBI:71422
+  preferred_term: Beta-gentiobiose
+  synonyms:
+  - synonym_text: Beta-gentiobiose
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 9
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:beta_gentiobiose);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0672 -> CHEBI:71422 "beta-D-Glcp-(1->6)-beta-D-Glcp"
+      (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:beta_gentiobiose);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:71422
+    ontology_label: beta-D-Glcp-(1->6)-beta-D-Glcp
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: beta-gentiobiose is the trivial name for beta-D-Glcp-(1->6)-beta-D-Glcp
+        (#213).
+- identifier: CHEBI:17784
+  preferred_term: D-glucosaminic Acid
+  synonyms:
+  - synonym_text: D-glucosaminic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 16
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glucosaminic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0656 -> CHEBI:17784 "2-amino-2-deoxy-D-gluconic acid"
+      (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glucosaminic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:17784
+    ontology_label: 2-amino-2-deoxy-D-gluconic acid
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: D-glucosaminic acid is the trivial name for 2-amino-2-deoxy-D-gluconic
+        acid (#213).
+- identifier: CHEBI:30566
+  preferred_term: 4-aminobutyrate
+  synonyms:
+  - synonym_text: 4-aminobutyrate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 7
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_aminobutyrate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0680 -> CHEBI:30566 "gamma-aminobutyrate" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_aminobutyrate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:30566
+    ontology_label: gamma-aminobutyrate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 4-aminobutyrate and gamma-aminobutyrate (GABA) are the same compound
+        under positional vs Greek locant naming (#213).
+- identifier: CHEBI:15588
+  preferred_term: D-malate
+  synonyms:
+  - synonym_text: D-malate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 33
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_malate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0640 -> CHEBI:15588 "(R)-malate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_malate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:15588
+    ontology_label: (R)-malate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: D-malate is (R)-malate; CHEBI:15588 '(R)-malate(2-)' is the fully-deprotonated
+        species at medium pH, per the anion convention in this issue (#213).
+- identifier: CHEBI:73908
+  preferred_term: Vibriostat
+  synonyms:
+  - synonym_text: Vibriostat
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  - synonym_text: Vibriostatic Agent O/129
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 16
+      source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:vibriostat);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0659 -> CHEBI:73908 "2,4-diamino-6,7-diisopropylpteridine"
+      (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-06T03:54:47.333125+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0714 ''Vibriostatic Agent O/129'' as a RAW_TEXT synonym
+      -- Same substance: CHEBI:73908 2,4-diamino-6,7-diisopropylpteridine carries
+      both "vibriostat" and "vibriostatic agent O/129" in its synonym set, so the
+      two residual labels name one compound (#213). No new SSSOM row; CHEBI:73908
+      is already mapped. Source: kgmicrobe.trait:vibriostatic_agent_o_129.'
+    llm_assisted: true
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:vibriostat); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:73908
+    ontology_label: 2,4-diamino-6,7-diisopropylpteridine
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: '''Vibriostat'' is a registered synonym of CHEBI:73908 2,4-diamino-6,7-diisopropylpteridine,
+        whose synonym set includes O/129 and vibriostatic agent O/129 (#213).'
 - identifier: CHEBI:22210
   preferred_term: Aconitate
   synonyms:
@@ -1184,6 +2248,9 @@ ingredients:
   - synonym_text: Glycyl-L-proline
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: Glycine-proline
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -1208,6 +2275,13 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0684 -> CHEBI:70744 "Gly-Pro" (SYNONYM_MATCH); mapping_status
       UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-06T04:51:35.608637+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0665 ''Glycine-proline'' as a RAW_TEXT synonym --
+      Same dipeptide (Gly-Pro) under a hyphenated residue naming (#213). No new SSSOM
+      row; CHEBI:70744 is already mapped. Source: kgmicrobe.trait:glycine_proline.'
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_proline);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -1268,6 +2342,9 @@ ingredients:
   - synonym_text: D-glucarate
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: D-saccharate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -1292,6 +2369,14 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0644 -> CHEBI:30612 "D-glucarate(2-)" (SYNONYM_MATCH);
       mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-06T04:51:35.608637+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0657 ''D-saccharate'' as a RAW_TEXT synonym -- D-saccharate
+      is D-glucarate; the existing record holds CHEBI:30612 D-glucarate(2-), the fully
+      deprotonated species per this issue''s anion convention (#213). No new SSSOM
+      row; CHEBI:30612 is already mapped. Source: kgmicrobe.trait:d_saccharate.'
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glucarate); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -3553,7 +4638,10 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
-  synonyms: []
+  synonyms:
+  - synonym_text: 2-propandiol
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -3583,6 +4671,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-06T05:15:48.923652+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0723 ''2-propandiol'' as a RAW_TEXT synonym -- Truncation
+      artifact of 1,2-propanediol; a diol cannot carry a single locant (#213). No
+      new SSSOM row; CHEBI:16997 is already mapped. Source: kgmicrobe.trait:2_propandiol.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 57-55-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -6451,6 +7546,9 @@ ingredients:
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: 3-butanediol
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
@@ -6521,6 +7619,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-06T05:06:48.536349+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0632 ''3-butanediol'' as a RAW_TEXT synonym -- ''3-butanediol''
+      is a truncation artifact of 2,3-butanediol (a diol cannot have a single locant);
+      folded into the existing 2,3-butanediol record (#213). No new SSSOM row; CHEBI:62064
+      is already mapped. Source: kgmicrobe.trait:3_butanediol.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 513-85-9
     data_source: PubChem API
@@ -6552,6 +7658,9 @@ ingredients:
   - synonym_text: 2,3,5-triphenyl-2H-tetrazol-3-ium chloride
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Triphenyltetrazolium Chloride
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 10
@@ -6590,6 +7699,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): REDOX_INDICATOR ->
       physicochemical_roles.REDOX_INDICATOR'
+  - timestamp: '2026-08-06T04:28:16.724447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0673 ''Triphenyltetrazolium Chloride'' as a RAW_TEXT
+      synonym -- Same compound (TTC); the target label carries the 2,3,5- locants
+      the residual label omits (#213). No new SSSOM row; CHEBI:78019 is already mapped.
+      Source: kgmicrobe.trait:triphenyltetrazolium_chloride.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 298-96-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -7490,7 +8607,10 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
-  synonyms: []
+  synonyms:
+  - synonym_text: 3-methylglucose
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -7529,6 +8649,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-06T04:28:16.724447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0687 ''3-methylglucose'' as a RAW_TEXT synonym --
+      Same compound; 3-methylglucose is the contracted form of 3-O-methyl-glucose
+      (#213). No new SSSOM row; CHEBI:73918 is already mapped. Source: kgmicrobe.trait:3_methylglucose.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 146-72-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -48434,6 +49561,9 @@ ingredients:
   - synonym_text: (METHYLSULFANYL)METHANE
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Dimethylsulfide
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -48461,6 +49591,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-06T04:51:35.608637+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0666 ''Dimethylsulfide'' as a RAW_TEXT synonym --
+      Same compound; the residual label omits the space (#213). No new SSSOM row;
+      CHEBI:17437 is already mapped. Source: kgmicrobe.compound:dimethylsulfide.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 75-18-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -60792,6 +61929,9 @@ ingredients:
   - synonym_text: 2,5-Dihydroxybenzoate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Gentisate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -60846,6 +61986,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-06T04:28:16.724447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0692 ''Gentisate'' as a RAW_TEXT synonym -- Gentisate
+      is the conjugate base of gentisic acid (2,5-dihydroxybenzoic acid); CHEBI has
+      no separate gentisate anion term, so the acid record is the home (#213). No
+      new SSSOM row; CHEBI:17189 is already mapped. Source: kgmicrobe.trait:gentisate.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 490-79-9
     data_source: PubChem API
@@ -62328,6 +63476,9 @@ ingredients:
   - synonym_text: glycyl-L-glutamic acid
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Glycyl-l-glutamate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -62356,6 +63507,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-06T05:06:48.536349+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0643 ''Glycyl-l-glutamate'' as a RAW_TEXT synonym
+      -- Same dipeptide; CHEBI:73801 Gly-Glu is the neutral form rather than the Gly-Glu(1-)
+      anion an earlier normalisation pass matched (#213). No new SSSOM row; CHEBI:73801
+      is already mapped. Source: kgmicrobe.trait:glycyl_l_glutamate.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 7412-78-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -66883,7 +68042,10 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
-  synonyms: []
+  synonyms:
+  - synonym_text: Hippurate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -66913,6 +68075,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-06T03:56:12.573375+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0622 ''Hippurate'' as a RAW_TEXT synonym -- Hippurate
+      is the conjugate base of hippuric acid; CHEBI has no separate hippurate/hippurate(1-)
+      term (checked local build and live OLS4), and the plural hippurates CHEBI:132966
+      is a compound class rather than this substance. The existing Hippuric acid record
+      already holds CHEBI:18089, so this is a merge rather than a promotion (#213).
+      No new SSSOM row; CHEBI:18089 is already mapped. Source: kgmicrobe.trait:hippurate.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 495-69-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -79653,6 +80825,9 @@ ingredients:
   - synonym_text: 'produces: DL-lactate'
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: DL-lactate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 7
@@ -79711,6 +80886,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-06T05:30:11.378447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0682 ''DL-lactate'' as a RAW_TEXT synonym -- DL-lactate
+      is racemic lactate; CHEBI:24996 ''lactate'' is the stereochemically unspecified
+      parent, which is what the label states (#213). No new SSSOM row; CHEBI:24996
+      is already mapped. Source: kgmicrobe.trait:dl_lactate.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 113-21-3
     data_source: PubChem API
@@ -80266,6 +81449,9 @@ ingredients:
   - synonym_text: beta-D-galactopyranosyl-(1->4)-D-glucopyranose
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: (2)-D-lactose
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 38
@@ -80336,6 +81522,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-06T05:15:48.923652+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0694 ''(2)-D-lactose'' as a RAW_TEXT synonym -- Parse
+      artifact: the leading ''(2)'' is stray text, the substance is D-lactose (#213).
+      No new SSSOM row; CHEBI:17716 is already mapped. Source: kgmicrobe.trait:2_d_lactose.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 63-42-3
     data_source: PubChem (via CHEBI:17716)
@@ -117379,7 +118572,10 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT.
-  synonyms: []
+  synonyms:
+  - synonym_text: Propanol
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -117408,6 +118604,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-06T04:51:35.608637+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0670 ''Propanol'' as a RAW_TEXT synonym -- Bare ''Propanol''
+      conventionally denotes 1-propanol; folded into the existing propan-1-ol record
+      rather than asserting a new mapping (#213). No new SSSOM row; CHEBI:28831 is
+      already mapped. Source: kgmicrobe.trait:propanol.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 71-23-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -147625,7 +148829,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:2_dehydro_d_gluconate; '
-  synonyms: []
+  synonyms:
+  - synonym_text: 2-oxogluconate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -147659,6 +148866,13 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T05:06:48.536349+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0661 ''2-oxogluconate'' as a RAW_TEXT synonym -- 2-oxogluconate
+      is 2-dehydro-D-gluconate under oxo/dehydro naming; the anion form matches the
+      label (#213). No new SSSOM row; CHEBI:16808 is already mapped. Source: kgmicrobe.trait:2_oxogluconate.'
     llm_assisted: true
 - identifier: CHEBI:64552
   preferred_term: 2-hydroxybutyrate
@@ -148705,7 +149919,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:5_dehydro_d_gluconate; '
-  synonyms: []
+  synonyms:
+  - synonym_text: 5-didehydro-D-gluconate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -148739,6 +149956,13 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T05:30:11.378447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0724 ''5-didehydro-D-gluconate'' as a RAW_TEXT synonym
+      -- ''didehydro'' is a typo for ''dehydro''; same compound (#213). No new SSSOM
+      row; CHEBI:58143 is already mapped. Source: kgmicrobe.trait:5_didehydro_d_gluconate.'
     llm_assisted: true
 - identifier: CHEBI:16010
   preferred_term: 5-oxoproline
@@ -149129,7 +150353,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:adenosine_5_monophosphate; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Amp
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -149163,6 +150390,13 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T04:28:16.724447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0706 ''Amp'' as a RAW_TEXT synonym -- AMP is the standard
+      abbreviation for adenosine 5''-monophosphate (#213). No new SSSOM row; CHEBI:16027
+      is already mapped. Source: kgmicrobe.trait:amp.'
     llm_assisted: true
 - identifier: CHEBI:222816
   preferred_term: Alazopeptin
@@ -149359,7 +150593,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:althiomycin; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Matamycin
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -149393,6 +150630,13 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T04:28:16.724447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0826 ''Matamycin'' as a RAW_TEXT synonym -- Matamycin
+      is a synonym for althiomycin (#213). No new SSSOM row; CHEBI:157683 is already
+      mapped. Source: kgmicrobe.trait:matamycin.'
     llm_assisted: true
 - identifier: CHEBI:216618
   preferred_term: Amicoumacin B
@@ -152763,7 +154007,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:chlortetracycline; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Chlortetracyclin
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -152797,6 +154044,13 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T04:51:35.608637+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0664 ''Chlortetracyclin'' as a RAW_TEXT synonym --
+      Same antibiotic; the residual label drops the trailing ''e'' (#213). No new
+      SSSOM row; CHEBI:27644 is already mapped. Source: kgmicrobe.trait:chlortetracyclin.'
     llm_assisted: true
 - identifier: CHEBI:214436
   preferred_term: Cinerubin R
@@ -159065,7 +160319,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:methyl_r_lactate; '
-  synonyms: []
+  synonyms:
+  - synonym_text: D-lactic Acid Methyl Ester
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -159099,6 +160356,13 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T04:28:16.724447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0709 ''D-lactic Acid Methyl Ester'' as a RAW_TEXT
+      synonym -- Same ester; D-lactic = (R)-lactic (#213). No new SSSOM row; CHEBI:74611
+      is already mapped. Source: kgmicrobe.trait:d_lactic_acid_methyl_ester.'
     llm_assisted: true
 - identifier: CHEBI:43943
   preferred_term: Methyl Alpha-D-mannoside
@@ -164286,7 +165550,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:thiostrepton; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Bryamycin
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -164320,6 +165587,13 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T04:28:16.724447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0803 ''Bryamycin'' as a RAW_TEXT synonym -- Bryamycin
+      is a synonym for thiostrepton (#213). No new SSSOM row; CHEBI:29693 is already
+      mapped. Source: kgmicrobe.trait:bryamycin.'
     llm_assisted: true
 - identifier: CHEBI:26986
   preferred_term: Threonine
@@ -165715,6 +166989,9 @@ ingredients:
   - synonym_text: carbocerate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Casamino Acids (0.01 %
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 395
@@ -165813,6 +167090,14 @@ ingredients:
     changes: 'restored ingredient_type=UNDEFINED_MIXTURE: it was flipped to SINGLE_INGREDIENT
       only because heptacosanoate''s structure had been backfilled onto the record
       (#263)'
+    llm_assisted: true
+  - timestamp: '2026-08-06T05:30:11.378447+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0708 ''Casamino Acids (0.01 %'' as a RAW_TEXT synonym
+      -- Parse artifact: a truncated concentration annotation ''(0.01 %'' left on
+      the label. Same ingredient as the Casamino acids record (#213). No new SSSOM
+      row; FOODON:03315719 is already mapped. Source: kgmicrobe.trait:casamino_acids_0_01.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 65072-00-6
