@@ -1,10 +1,11 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T03:47:31.829166+00:00
-Total: 2324 ingredients
+Generated: 2026-08-06T03:59:53.128326+00:00
+Total: 2325 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:17833 | CHEBI:17833 | Gentamicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:71422 | CHEBI:71422 | Beta-gentiobiose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:17784 | CHEBI:17784 | D-glucosaminic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:30566 | CHEBI:30566 | 4-aminobutyrate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |

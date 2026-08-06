@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T03:47:31.834309+00:00
-Total: 548 ingredients
+Generated: 2026-08-06T03:59:53.131023+00:00
+Total: 545 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -481,7 +481,6 @@ Total: 548 ingredients
 | UNMAPPED_0703 |  | H2+methanol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0758 |  | H2+tetramethylammonium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0622 |  | Hippurate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0819 |  | Hydroxystreptomycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
@@ -541,7 +540,6 @@ Total: 548 ingredients
 | UNMAPPED_0673 |  | Triphenyltetrazolium Chloride | UNMAPPED |  |  | 0 |
 | UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0714 |  | Vibriostatic Agent O/129 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0777 |  | Yeast Extract + Gluconate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0778 |  | Yeast Extract + Glucose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0779 |  | Yeast Extract + Peptone | NEEDS_EXPERT |  |  | 0 |
@@ -549,7 +547,6 @@ Total: 548 ingredients
 | UNMAPPED_0781 |  | Yeast + Meat Extract + H2 | NEEDS_EXPERT |  |  | 0 |
 | CHEBI:756054 |  | Carbomycin | UNMAPPED |  |  | 0 |
 | CHEBI:759883 |  | Colistin Sulfate | UNMAPPED |  |  | 0 |
-| CHEBI:759884 |  | Gentamicin | UNMAPPED |  |  | 0 |
 | CHEBI:753395 |  | Lysostaphin | UNMAPPED |  |  | 0 |
 | CHEBI:748901 |  | Netilmicin | UNMAPPED |  |  | 0 |
 | CHEBI:759086 |  | Polymyxin B | UNMAPPED |  |  | 0 |

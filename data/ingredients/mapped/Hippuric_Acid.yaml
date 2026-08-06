@@ -10,7 +10,10 @@ ontology_mapping:
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). '
-synonyms: []
+synonyms:
+- synonym_text: Hippurate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -40,6 +43,16 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-06T03:56:12.573375+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0622 ''Hippurate'' as a RAW_TEXT synonym -- Hippurate
+    is the conjugate base of hippuric acid; CHEBI has no separate hippurate/hippurate(1-)
+    term (checked local build and live OLS4), and the plural hippurates CHEBI:132966
+    is a compound class rather than this substance. The existing Hippuric acid record
+    already holds CHEBI:18089, so this is a merge rather than a promotion (#213).
+    No new SSSOM row; CHEBI:18089 is already mapped. Source: kgmicrobe.trait:hippurate.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 495-69-2
   data_source: CultureBotHT compounds_to_cas.csv

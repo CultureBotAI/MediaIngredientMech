@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-08-06T03:47:31.835910+00:00
-Total: 2872 ingredients
+Generated: 2026-08-06T03:59:53.131711+00:00
+Total: 2870 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:17833 | CHEBI:17833 | Gentamicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:71422 | CHEBI:71422 | Beta-gentiobiose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:17784 | CHEBI:17784 | D-glucosaminic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:30566 | CHEBI:30566 | 4-aminobutyrate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -2805,7 +2806,6 @@ Total: 2872 ingredients
 | UNMAPPED_0703 |  | H2+methanol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0758 |  | H2+tetramethylammonium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0622 |  | Hippurate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0819 |  | Hydroxystreptomycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
@@ -2865,7 +2865,6 @@ Total: 2872 ingredients
 | UNMAPPED_0673 |  | Triphenyltetrazolium Chloride | UNMAPPED |  |  | 0 |
 | UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0714 |  | Vibriostatic Agent O/129 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0777 |  | Yeast Extract + Gluconate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0778 |  | Yeast Extract + Glucose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0779 |  | Yeast Extract + Peptone | NEEDS_EXPERT |  |  | 0 |
@@ -2873,7 +2872,6 @@ Total: 2872 ingredients
 | UNMAPPED_0781 |  | Yeast + Meat Extract + H2 | NEEDS_EXPERT |  |  | 0 |
 | CHEBI:756054 |  | Carbomycin | UNMAPPED |  |  | 0 |
 | CHEBI:759883 |  | Colistin Sulfate | UNMAPPED |  |  | 0 |
-| CHEBI:759884 |  | Gentamicin | UNMAPPED |  |  | 0 |
 | CHEBI:753395 |  | Lysostaphin | UNMAPPED |  |  | 0 |
 | CHEBI:748901 |  | Netilmicin | UNMAPPED |  |  | 0 |
 | CHEBI:759086 |  | Polymyxin B | UNMAPPED |  |  | 0 |

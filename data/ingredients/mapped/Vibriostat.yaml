@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: Vibriostat
   synonym_type: RAW_TEXT
   source: microbedecoder
+- synonym_text: Vibriostatic Agent O/129
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -28,6 +31,15 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0659 -> CHEBI:73908 "2,4-diamino-6,7-diisopropylpteridine"
     (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-06T03:54:47.333125+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0714 ''Vibriostatic Agent O/129'' as a RAW_TEXT synonym
+    -- Same substance: CHEBI:73908 2,4-diamino-6,7-diisopropylpteridine carries both
+    "vibriostat" and "vibriostatic agent O/129" in its synonym set, so the two residual
+    labels name one compound (#213). No new SSSOM row; CHEBI:73908 is already mapped.
+    Source: kgmicrobe.trait:vibriostatic_agent_o_129.'
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:vibriostat); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
