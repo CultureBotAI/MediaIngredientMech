@@ -13,6 +13,9 @@ synonyms:
 - synonym_text: glycyl-L-glutamic acid
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Glycyl-l-glutamate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -41,6 +44,14 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-06T05:06:48.536349+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0643 ''Glycyl-l-glutamate'' as a RAW_TEXT synonym --
+    Same dipeptide; CHEBI:73801 Gly-Glu is the neutral form rather than the Gly-Glu(1-)
+    anion an earlier normalisation pass matched (#213). No new SSSOM row; CHEBI:73801
+    is already mapped. Source: kgmicrobe.trait:glycyl_l_glutamate.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7412-78-4
   data_source: CultureBotHT compounds_to_cas.csv

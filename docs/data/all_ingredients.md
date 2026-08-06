@@ -1,10 +1,13 @@
 # All Ingredients
 
-Generated: 2026-08-06T04:55:45.243532+00:00
-Total: 2858 ingredients
+Generated: 2026-08-06T05:10:56.133090+00:00
+Total: 2855 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:149531 | CHEBI:149531 | Carminate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90601 | CHEBI:90601 | L-pyroglutamic Acid 2-naphthylamide | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:16077 | CHEBI:16077 | Glucose 1-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:73804 | CHEBI:73804 | Glycyl L-aspartic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15895 | CHEBI:15895 | D-galactonic Acid Lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:90144 | CHEBI:90144 | O-nitrophenyl-beta-D-galactopyranosid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -2726,13 +2729,11 @@ Total: 2858 ingredients
 | UNMAPPED_0679 |  | 2-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0695 |  | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0696 |  | 2-dimethylsuccinic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0661 |  | 2-oxogluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0723 |  | 2-propandiol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0674 |  | 2-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0785 |  | 2-tetrachloroethane | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0671 |  | 3-O-methyl Alpha-D-glucopyranoside | UNMAPPED |  |  | 0 |
 | UNMAPPED_0787 |  | 3-beta-d-glucan | UNMAPPED |  |  | 0 |
-| UNMAPPED_0632 |  | 3-butanediol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0736 |  | 3-methylacetate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0790 |  | 4-dihydroxy-biphenyl | UNMAPPED |  |  | 0 |
@@ -2756,7 +2757,6 @@ Total: 2858 ingredients
 | UNMAPPED_0804 |  | Butamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0805 |  | Butane-1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0806 |  | Carminate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0708 |  | Casamino Acids (0.01 % | UNMAPPED |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
@@ -2781,7 +2781,6 @@ Total: 2858 ingredients
 | UNMAPPED_0755 |  | GYPS | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0748 |  | Gallate + Formate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0731 |  | Gelatin Hydrolyzed | UNMAPPED |  |  | 0 |
-| UNMAPPED_0683 |  | Glucose 1-phosphate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0702 |  | Glucose + Acetate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0749 |  | Glucose + Cellobiose + Starch + Trypticase + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0750 |  | Glucose + Formate | NEEDS_EXPERT |  |  | 0 |
@@ -2793,7 +2792,6 @@ Total: 2858 ingredients
 | UNMAPPED_0712 |  | Glutamyl-glutamic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0816 |  | Glycine 1% | UNMAPPED |  |  | 0 |
 | UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0643 |  | Glycyl-l-glutamate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0756 |  | H2+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0631 |  | H2 + CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0757 |  | H2+dimethylsulfide | NEEDS_EXPERT |  |  | 0 |
@@ -2807,7 +2805,6 @@ Total: 2858 ingredients
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0823 |  | L-inositol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0825 |  | L-pyroglutamic Acid 2-naphthylamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0676 |  | Maltose Hydrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |

@@ -1,10 +1,13 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T04:55:45.239940+00:00
-Total: 2335 ingredients
+Generated: 2026-08-06T05:10:56.128910+00:00
+Total: 2338 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:149531 | CHEBI:149531 | Carminate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:90601 | CHEBI:90601 | L-pyroglutamic Acid 2-naphthylamide | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:16077 | CHEBI:16077 | Glucose 1-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:73804 | CHEBI:73804 | Glycyl L-aspartic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15895 | CHEBI:15895 | D-galactonic Acid Lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:90144 | CHEBI:90144 | O-nitrophenyl-beta-D-galactopyranosid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
