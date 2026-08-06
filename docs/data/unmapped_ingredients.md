@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T07:39:35.613886+00:00
-Total: 486 ingredients
+Generated: 2026-08-06T07:49:06.070589+00:00
+Total: 485 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -412,7 +412,6 @@ Total: 486 ingredients
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |

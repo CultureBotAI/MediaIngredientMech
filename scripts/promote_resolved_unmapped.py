@@ -45,9 +45,11 @@ CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
 # drugs and reagents ChEBI's semsql build lags on -- Polymyxin B, Lysostaphin,
 # Colistin Sulfate and Carbomycin all have exact NCIT labels while their CHEBI
 # accessions are absent locally, so a CHEBI-only helper called them unresolvable.
-ONTOLOGY_DB = {"CHEBI": CHEBI_DB,
-               "NCIT": Path.home() / ".data" / "oaklib" / "ncit.db"}
-OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl"}
+_OAK = Path.home() / ".data" / "oaklib"
+ONTOLOGY_DB = {"CHEBI": CHEBI_DB, "NCIT": _OAK / "ncit.db",
+               "FOODON": _OAK / "foodon.db", "ENVO": _OAK / "envo.db"}
+OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl",
+                 "FOODON": "obo:foodon.owl", "ENVO": "obo:envo.owl"}
 
 PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch",
              "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch"}
@@ -74,9 +76,9 @@ def canonical_label(cid: str) -> str:
     dep = con.execute("SELECT 1 FROM statements WHERE subject=? AND predicate='owl:deprecated'", (cid,)).fetchone()
     con.close()
     if not row:
-        raise SystemExit(f"{cid} has no rdfs:label in chebi.db (absent / wrong id)")
+        raise SystemExit(f"{cid} has no rdfs:label in {db.name} (absent / wrong id)")
     if dep:
-        raise SystemExit(f"{cid} is obsolete in CHEBI — pick a current term")
+        raise SystemExit(f"{cid} is obsolete in {prefix} — pick a current term")
     return row[0]
 
 

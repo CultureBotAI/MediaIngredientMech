@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-08-06T07:39:35.614637+00:00
+Generated: 2026-08-06T07:49:06.071241+00:00
 Total: 2846 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| ENVO:00002984 | ENVO:00002984 | Crude Oil | MAPPED | ENVO | SYNONYM_MATCH | 0 |
 | NCIT:C166659 | NCIT:C166659 | Carbomycin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | NCIT:C386 | NCIT:C386 | Colistin Sulfate | MAPPED | NCIT | EXACT_MATCH | 0 |
 | NCIT:C166895 | NCIT:C166895 | Lysostaphin | MAPPED | NCIT | EXACT_MATCH | 0 |
@@ -2772,7 +2773,6 @@ Total: 2846 ingredients
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |

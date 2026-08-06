@@ -1,10 +1,11 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T07:39:35.611281+00:00
-Total: 2360 ingredients
+Generated: 2026-08-06T07:49:06.068109+00:00
+Total: 2361 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| ENVO:00002984 | ENVO:00002984 | Crude Oil | MAPPED | ENVO | SYNONYM_MATCH | 0 |
 | NCIT:C166659 | NCIT:C166659 | Carbomycin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | NCIT:C386 | NCIT:C386 | Colistin Sulfate | MAPPED | NCIT | EXACT_MATCH | 0 |
 | NCIT:C166895 | NCIT:C166895 | Lysostaphin | MAPPED | NCIT | EXACT_MATCH | 0 |
