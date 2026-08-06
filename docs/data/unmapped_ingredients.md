@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T08:07:59.767023+00:00
-Total: 479 ingredients
+Generated: 2026-08-06T08:23:23.612650+00:00
+Total: 472 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -391,11 +391,8 @@ Total: 479 ingredients
 | UNMAPPED_0785 |  | 2-tetrachloroethane | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0736 |  | 3-methylacetate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0790 |  | 4-dihydroxy-biphenyl | UNMAPPED |  |  | 0 |
 | UNMAPPED_0791 |  | 4-diol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0792 |  | 5-didehydro-D-gluconic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0737 |  | 5-trimethoxybenzoate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0726 |  | Actinomycin X | UNMAPPED |  |  | 0 |
 | UNMAPPED_0795 |  | Alpha-hydroxyglutarate-gamma-lactone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0738 |  | Aminovalerate | UNMAPPED |  |  | 0 |
@@ -410,7 +407,6 @@ Total: 479 ingredients
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |
 | UNMAPPED_0626 |  | Esculin Ferric Citrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0688 |  | Esculin Hydrolysate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0812 |  | Ethylenediamine-N | UNMAPPED |  |  | 0 |
@@ -446,7 +442,6 @@ Total: 479 ingredients
 | UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
@@ -473,10 +468,8 @@ Total: 479 ingredients
 | UNMAPPED_0844 |  | Synanthrin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0845 |  | Synthetic Sea Salts (sss) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0776 |  | TYGVS + Glucose | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0774 |  | Tartate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0847 |  | Tetrabromopyrrole | UNMAPPED |  |  | 0 |
 | UNMAPPED_0734 |  | Tetrazolium | UNMAPPED |  |  | 0 |
-| UNMAPPED_0848 |  | Trimethoxybenzoate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0777 |  | Yeast Extract + Gluconate | NEEDS_EXPERT |  |  | 0 |

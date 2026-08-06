@@ -1,10 +1,13 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T08:07:59.758815+00:00
-Total: 2367 ingredients
+Generated: 2026-08-06T08:23:23.610019+00:00
+Total: 2370 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:58989 | CHEBI:58989 | 5-trimethoxybenzoate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:34367 | CHEBI:34367 | 4-dihydroxy-biphenyl | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:17426 | CHEBI:17426 | 5-didehydro-D-gluconic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside | kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside | 3-O-methyl Alpha-D-glucopyranoside | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate | kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate | Bis-4-nitrophenyl-phenyl Phosphonate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:2-deoxythymidine-5-4-nitrophenyl_phosphate | kgmicrobe.compound:2-deoxythymidine-5-4-nitrophenyl_phosphate | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |

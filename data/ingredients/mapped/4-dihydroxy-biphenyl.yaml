@@ -1,0 +1,44 @@
+identifier: CHEBI:34367
+preferred_term: 4-dihydroxy-biphenyl
+synonyms:
+- synonym_text: 4-dihydroxy-biphenyl
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_dihydroxy_biphenyl);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0790 -> CHEBI:34367 "biphenyl-4,4'-diol" (CLOSE_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_dihydroxy_biphenyl);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:34367
+  ontology_label: biphenyl-4,4'-diol
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: '''4-dihydroxy-biphenyl'' is a truncation: a dihydroxy biphenyl needs two
+      locants, and 4,4''-dihydroxybiphenyl is the compound. CLOSE_MATCH because the
+      label lost the second locant, matching the treatment of 3-butanediol and 2-dimethylsuccinic
+      acid earlier in this issue (#213).'

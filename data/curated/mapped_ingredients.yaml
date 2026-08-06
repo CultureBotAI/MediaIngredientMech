@@ -1,8 +1,149 @@
-generation_date: '2026-08-06T07:14:29.509994+00:00'
-total_count: 2367
-mapped_count: 2348
+generation_date: '2026-08-06T08:22:35.126389+00:00'
+total_count: 2370
+mapped_count: 2351
 unmapped_count: 0
 ingredients:
+- identifier: CHEBI:58989
+  preferred_term: 5-trimethoxybenzoate
+  synonyms:
+  - synonym_text: 5-trimethoxybenzoate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  - synonym_text: Trimethoxybenzoate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: bergey:substrates
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.compound:5_trimethoxybenzoate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0737 -> CHEBI:58989 "3,4,5-trimethoxybenzoate" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-06T08:22:35.126389+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0848 ''Trimethoxybenzoate'' as a RAW_TEXT synonym
+      -- Same compound as the 5-trimethoxybenzoate record just promoted to CHEBI:58989;
+      the bare label carries no locants at all (#213). No new SSSOM row; CHEBI:58989
+      is already mapped. Source: kgmicrobe.trait:trimethoxybenzoate.'
+    llm_assisted: true
+  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:5_trimethoxybenzoate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:58989
+    ontology_label: 3,4,5-trimethoxybenzoate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: '''5-trimethoxybenzoate'' is a truncation: a trimethoxy benzoate needs
+        three locants, and 3,4,5-trimethoxybenzoate is the compound. CLOSE_MATCH for
+        the lost locants (#213).'
+- identifier: CHEBI:34367
+  preferred_term: 4-dihydroxy-biphenyl
+  synonyms:
+  - synonym_text: 4-dihydroxy-biphenyl
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_dihydroxy_biphenyl);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0790 -> CHEBI:34367 "biphenyl-4,4'-diol" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_dihydroxy_biphenyl);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:34367
+    ontology_label: biphenyl-4,4'-diol
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: '''4-dihydroxy-biphenyl'' is a truncation: a dihydroxy biphenyl needs
+        two locants, and 4,4''-dihydroxybiphenyl is the compound. CLOSE_MATCH because
+        the label lost the second locant, matching the treatment of 3-butanediol and
+        2-dimethylsuccinic acid earlier in this issue (#213).'
+- identifier: CHEBI:17426
+  preferred_term: 5-didehydro-D-gluconic Acid
+  synonyms:
+  - synonym_text: 5-didehydro-D-gluconic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:5_didehydro_d_gluconic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0792 -> CHEBI:17426 "5-dehydro-D-gluconic acid" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:5_didehydro_d_gluconic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:17426
+    ontology_label: 5-dehydro-D-gluconic acid
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: '''didehydro'' is a typo for ''dehydro''; same compound as 5-dehydro-D-gluconic
+        acid. The anion form of the same typo was corrected earlier in this issue
+        (#213).'
 - identifier: kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside
   preferred_term: 3-O-methyl Alpha-D-glucopyranoside
   synonyms:
@@ -69948,6 +70089,9 @@ ingredients:
   - synonym_text: molecular hydrogen
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Diydrogen
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -69981,6 +70125,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-06T08:18:48.040838+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0811 ''Diydrogen'' as a RAW_TEXT synonym -- Single-character
+      typo for dihydrogen (#213). No new SSSOM row; CHEBI:18276 is already mapped.
+      Source: kgmicrobe.trait:diydrogen.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: H2
@@ -89616,6 +89767,9 @@ ingredients:
   - synonym_text: monomethylamine
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Methyamine
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 8
@@ -89669,6 +89823,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-06T08:18:48.040838+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0762 ''Methyamine'' as a RAW_TEXT synonym -- Single-character
+      typo for methylamine (#213). No new SSSOM row; CHEBI:16830 is already mapped.
+      Source: kgmicrobe.compound:methyamine.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 74-89-5
     data_source: PubChem API
@@ -166181,7 +166342,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:tartrate; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Tartate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -166215,6 +166379,13 @@ ingredients:
       canonical label exact-matches the record ontology_label (case-insensitive).
       This does NOT check for homonyms or wrong-sense class-level matches (see #203).
       Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T08:18:48.040838+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0774 ''Tartate'' as a RAW_TEXT synonym -- Single-character
+      typo for tartrate (#213). No new SSSOM row; CHEBI:132950 is already mapped.
+      Source: kgmicrobe.compound:tartate.'
     llm_assisted: true
 - identifier: CHEBI:36257
   preferred_term: Taurocholate

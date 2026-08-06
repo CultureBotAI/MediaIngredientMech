@@ -1,0 +1,54 @@
+identifier: CHEBI:58989
+preferred_term: 5-trimethoxybenzoate
+synonyms:
+- synonym_text: 5-trimethoxybenzoate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+- synonym_text: Trimethoxybenzoate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: bergey:substrates
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:5_trimethoxybenzoate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0737 -> CHEBI:58989 "3,4,5-trimethoxybenzoate" (CLOSE_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-06T08:22:35.126389+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0848 ''Trimethoxybenzoate'' as a RAW_TEXT synonym --
+    Same compound as the 5-trimethoxybenzoate record just promoted to CHEBI:58989;
+    the bare label carries no locants at all (#213). No new SSSOM row; CHEBI:58989
+    is already mapped. Source: kgmicrobe.trait:trimethoxybenzoate.'
+  llm_assisted: true
+notes: Imported from microbedecoder (source_id=kgmicrobe.compound:5_trimethoxybenzoate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:58989
+  ontology_label: 3,4,5-trimethoxybenzoate
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: '''5-trimethoxybenzoate'' is a truncation: a trimethoxy benzoate needs
+      three locants, and 3,4,5-trimethoxybenzoate is the compound. CLOSE_MATCH for
+      the lost locants (#213).'

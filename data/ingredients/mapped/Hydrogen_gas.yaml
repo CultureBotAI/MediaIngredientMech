@@ -44,6 +44,9 @@ synonyms:
 - synonym_text: molecular hydrogen
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Diydrogen
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -77,6 +80,13 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-06T08:18:48.040838+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0811 ''Diydrogen'' as a RAW_TEXT synonym -- Single-character
+    typo for dihydrogen (#213). No new SSSOM row; CHEBI:18276 is already mapped. Source:
+    kgmicrobe.trait:diydrogen.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: H2
