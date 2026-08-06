@@ -72,9 +72,20 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_114_cas_audit
+  action: CORRECTED
+  changes: 'cas_rn 233-788-1 -> 10361-37-2. 233-788-1 is an EC/EINECS registry number
+    (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+    mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement is
+    this record''s own CHEBI term CHEBI:63317''s CAS dbxref, and that term''s label
+    matches the substance, so it is evidence rather than inference. The EC number
+    is recorded here rather than discarded: it was correct information in the wrong
+    field.'
+  llm_assisted: true
 chemical_properties:
-  cas_rn: 233-788-1
-  data_source: PubChem API
+  cas_rn: 10361-37-2
+  data_source: 'CHEBI dbxref on CHEBI:63317 (corrected from an EC number, #114)'
   retrieval_date: '2026-04-05T19:51:10.295881+00:00'
   molecular_formula: Ba.2Cl
   inchi: InChI=1S/Ba.2ClH/h;2*1H/q+2;;/p-2

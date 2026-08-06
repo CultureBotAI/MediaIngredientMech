@@ -1,0 +1,55 @@
+identifier: kgmicrobe.ingredient:nldm_metabolites
+preferred_term: NLDM_metabolites
+synonyms:
+- synonym_text: NLDM_metabolites
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 10
+  media_count: 10
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 10 CultureBot media; samples: NLDM_defined_no_iron, NLDM_defined, NLDM_defined_pH8….
+    No CAS-RN or CHEBI mapping available; curator review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T09:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as a named metabolite pre-mix and left unmapped pending component-level
+    recipe curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0299 -> kgmicrobe.ingredient:nldm_metabolites "NLDM_metabolites"
+    (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  10 CultureBot media; samples: NLDM_defined_no_iron, NLDM_defined, NLDM_defined_pH8….
+  No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a named metabolite
+  pre-mix pending component-level recipe curation.'
+ingredient_type: STOCK_SOLUTION
+solution_type: OTHER
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:nldm_metabolites
+  ontology_label: NLDM_metabolites
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#114)
+    notes: 'NLDM_metabolites is a named, recurring multi-component preparation (10
+      media). Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym with
+      normalisation: no term denotes it, and none could -- it is a lab preparation
+      rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
+      mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
+      mix does not narrow to any single compound (#114).'

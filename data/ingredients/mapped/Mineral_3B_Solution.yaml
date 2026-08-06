@@ -1,0 +1,57 @@
+identifier: kgmicrobe.ingredient:mineral_3b_solution
+preferred_term: Mineral 3B solution
+synonyms:
+- synonym_text: Mineral 3B solution
+  synonym_type: RAW_TEXT
+  source: culturebotht
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 9
+  media_count: 9
+curation_history:
+- timestamp: '2026-04-29T06:51:33.117170+00:00'
+  curator: audit_add_remaining_culturebotht
+  action: CREATED_AS_UNMAPPED
+  changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 9 CultureBot media; samples: Varel_Bryant_medium, Varel_Bryant_medium_lowCys,
+    Varel_Bryant_medium_lowCys_lowMet…. No CAS-RN or CHEBI mapping available; curator
+    review needed.'
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T09:05:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as a mineral stock solution and left unmapped pending component-level
+    recipe curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0262 -> kgmicrobe.ingredient:mineral_3b_solution "Mineral
+    3B solution" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row
+    added.
+notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
+  9 CultureBot media; samples: Varel_Bryant_medium, Varel_Bryant_medium_lowCys, Varel_Bryant_medium_lowCys_lowMet….
+  No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a mineral stock
+  solution pending component-level recipe curation.'
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mineral_3b_solution
+  ontology_label: Mineral 3B solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#114)
+    notes: 'Mineral 3B solution is a named, recurring multi-component preparation
+      (9 media). Searched CHEBI, NCIT, MeSH, FOODON and ENVO by label and synonym
+      with normalisation: no term denotes it, and none could -- it is a lab preparation
+      rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
+      mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
+      mix does not narrow to any single compound (#114).'
