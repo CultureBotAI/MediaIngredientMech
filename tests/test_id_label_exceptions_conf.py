@@ -27,7 +27,7 @@ EXPECTED = {
     ("mesh:C000730144", "sodium glutarate"),
     ("mesh:C000633628", "plicacetin"),
 }
-GATED_TARGETS = {"curated_yaml", "sssom", "mapped_csv"}
+GATED_TARGETS = {"curated_yaml", "sssom", "mapped_csv", "mapped_csv_curator_label"}
 
 
 def _targets():
@@ -42,6 +42,22 @@ def test_gated_targets_declare_all_mesh_scr_exceptions():
         got = mod.load_exceptions(targets[name])
         missing = EXPECTED - got
         assert not missing, f"{name} is missing exception(s): {sorted(missing)}"
+
+
+def test_the_curator_label_column_is_actually_gated():
+    """The plausibility gate must check the CURATOR label, not the canonical one.
+
+    Gating only `ontology_label` made the check a no-op for months: that column
+    holds the OBO canonical label, so every row short-circuited on "matches the
+    term's own label" before the formula comparison ran, and IMPLAUSIBLE_LABEL: 0
+    was read as clean data (#261). Pin the column so it cannot silently revert.
+    """
+    t = _targets()["mapped_csv_curator_label"]
+    assert t.get("label_waiver_mode") == "plausible"
+    assert ["ontology_id", "preferred_term"] in [list(p) for p in t["pairs"]]
+    # Held non-blocking until the surfaced backlog is triaged (#261, #263).
+    # Flipping this to `error` is a deliberate act, not a drive-by edit.
+    assert t.get("severity") == "warn"
 
 
 def test_exception_label_matching_is_normalized():
