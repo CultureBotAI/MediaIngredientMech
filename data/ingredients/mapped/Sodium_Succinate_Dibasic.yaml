@@ -1,14 +1,28 @@
-identifier: CHEBI:150903
+identifier: cas:150-90-3
 preferred_term: Sodium succinate dibasic
 ontology_mapping:
-  ontology_id: CHEBI:150903
-  ontology_label: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
+  ontology_id: CHEBI:15741
+  ontology_label: succinic acid
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#263)
+    notes: 'Re-grounded from CHEBI:150903 (an unrelated trisaccharide glycoside) (#263).
+      Disodium succinate has no CHEBI entry (checked OAK CHEBI sqlite), so the record
+      takes its CAS-RN as identifier with a narrowMatch to the parent acid, following
+      the established cas: pattern (MAPPING_SEMANTICS.md Section 3). CAS-RN 150-90-3
+      was already correct.'
+  - evidence_type: DATABASE_MATCH
+    source: reground_263
+    notes: 'Sodium succinate dibasic is a hydrate/salt with its own CAS and no exact
+      ChEBI term; anchored to the parent CHEBI:15741 ''succinic acid'' by narrowMatch
+      per MAPPING_SEMANTICS.md Section 3 step 2. Disodium succinate has no CHEBI entry;
+      nearest parent is the free acid. Re-grounded from CHEBI:150903 (an unrelated
+      glycoside) in #263.'
 synonyms:
 - synonym_text: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
   synonym_type: EXACT_SYNONYM
@@ -79,13 +93,31 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: reground_263
+  action: CORRECTED
+  changes: 'identifier CHEBI:150903 -> cas:150-90-3; ontology term CHEBI:150903 ->
+    CHEBI:15741 (succinic acid). Re-grounded from CHEBI:150903 (an unrelated trisaccharide
+    glycoside) (#263). Disodium succinate has no CHEBI entry (checked OAK CHEBI sqlite),
+    so the record takes its CAS-RN as identifier with a narrowMatch to the parent
+    acid, following the established cas: pattern (MAPPING_SEMANTICS.md Section 3).
+    CAS-RN 150-90-3 was already correct. Dropped molecular_formula, inchi, smiles
+    backfilled from the wrong term.'
+  new_status: MAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T01:46:31.068306+00:00'
+  curator: reground_263
+  action: CORRECTED
+  changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:15741 ''succinic acid''
+    and registry kgmicrobe.compound:sodium_succinate_dibasic. identifier cas:150-90-3
+    unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. Disodium succinate
+    has no CHEBI entry; nearest parent is the free acid. Re-grounded from CHEBI:150903
+    (an unrelated glycoside) in #263.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 150-90-3
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:53:55.242699+00:00'
-  molecular_formula: C18H32O15
-  inchi: InChI=1S/C18H32O15/c1-4-7(21)9(23)11(25)17(29-4)33-15-13(27)16(28)30-6(3-20)14(15)32-18-12(26)10(24)8(22)5(2-19)31-18/h4-28H,2-3H2,1H3/t4-,5+,6+,7+,8+,9+,10-,11-,12+,13+,14-,15+,16?,17-,18+/m0/s1
-  smiles: C[C@@H]1O[C@@H](O[C@H]2[C@@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)[C@@H](CO)OC(O)[C@@H]2O)[C@@H](O)[C@H](O)[C@@H]1O
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE
