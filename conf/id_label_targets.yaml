@@ -59,6 +59,13 @@ synonym_scope: exact_related
 # `error` on 2026-07-30 once that backlog reached zero (OK_CANONICAL 5034 /
 # OK_ID_ONLY 1667 / OK_EXCEPTION 16 / IMPLAUSIBLE_LABEL 0). An implausible
 # id<->label pair now fails `just validate-products` instead of only reporting.
+#
+# CAVEAT (#261): that IMPLAUSIBLE_LABEL 0 was measured against a surface where
+# the checked label IS the term's own canonical label, so it recorded the gate
+# short-circuiting rather than the data being clean. The curator-label surface
+# (mapped_csv_curator_label) carries the real backlog and is held at
+# `severity: warn` until it is worked down. This global stays `error` — it is
+# load-bearing for every surface that genuinely passes.
 plausibility_severity: error
 
 # Numeric accession ceiling per ontology. An id that does NOT resolve AND sits
@@ -83,6 +90,11 @@ mesh_scr_exceptions: &mesh_scr_exceptions
   - {id: mesh:C000709627, label: avocatin B, reason: "valid MeSH SCR (2020); absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
   - {id: mesh:C000655964, label: cholinium lysinate, reason: "valid MeSH SCR; absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
   - {id: mesh:C000730144, label: sodium glutarate, reason: "valid MeSH SCR (2024); absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
+  # Same accepted residual, as the CURATOR writes it. The allow-list matches an
+  # EXACT (id, label) pair, so gating preferred_term (#261) needs that surface's
+  # label form too — without it the id reports ID_NOT_FOUND on a record we have
+  # already accepted.
+  - {id: mesh:C000730144, label: Disodium Glutarate, reason: "curator label form of the mesh:C000730144 residual above"}
   - {id: mesh:C000633628, label: plicacetin, reason: "valid MeSH SCR; absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
 
 targets:
@@ -114,16 +126,18 @@ targets:
       - [subject_id, subject_label]
       - [object_id, object_label]
 
-  # PRODUCT DECISION (item 3c): docs/data/mapped_ingredients.csv surfaces the
-  # CURATOR-INTENDED ingredient label in ontology_label (e.g. CHEBI:15377
-  # "Distilled water", CHEBI:86158 "CaCl2 x 2 H2O", CHEBI:63036 "KH2PO4"),
-  # mirroring the human-facing recipe names rather than the OBO canonical
-  # label. We KEEP those labels and EXEMPT the ontology_id column from
-  # canonical-label matching (label_waived_keys names the id column for a
-  # tabular target). The id is STILL existence-checked — a bogus CHEBI id here
-  # still surfaces as ID_NOT_FOUND; only the label match is waived. (The
-  # ingredient YAMLs' ontology_label IS the OBO canonical form and stays under
-  # strict `canonical` policy above, so genuinely-wrong ids still surface there.)
+  # docs/data/mapped_ingredients.csv carries BOTH labels, in two columns:
+  #   ontology_label  — the OBO canonical form ("calcium chloride dihydrate")
+  #   preferred_term  — the CURATOR-INTENDED recipe name ("CaCl2 x 2 H2O")
+  # An earlier PRODUCT DECISION (item 3c) comment here claimed ontology_label
+  # held the curator name and cited CHEBI:86158 "CaCl2 x 2 H2O" as the example.
+  # The export stopped doing that: 792 of 1902 CHEBI rows now differ between the
+  # two columns, and CHEBI:86158's ontology_label is the canonical
+  # "calcium chloride dihydrate". Gating only ontology_id/ontology_label made the
+  # plausibility check a NO-OP — the label being checked IS the term's own label,
+  # so every row short-circuits on "matches the term's own label or a synonym"
+  # before the formula comparison runs, and IMPLAUSIBLE_LABEL: 0 measured the
+  # gate doing nothing rather than the data being clean (#261).
   - name: mapped_csv
     kind: tabular
     format: csv
@@ -131,14 +145,38 @@ targets:
     policy: canonical_or_synonym
     label_waived_keys:
       - ontology_id
-    # Upgrade the waiver from accept-anything to plausibility-checked: a formula
-    # label (KH2PO4, CaCl2 x 2 H2O) is accepted only if its element multiset is
-    # consistent with the CHEBI term's own formula; a conflicting one surfaces
-    # as IMPLAUSIBLE_LABEL. The id is still existence-checked as before.
     label_waiver_mode: plausible
     exceptions: *mesh_scr_exceptions
     pairs:
       - [ontology_id, ontology_label]
+
+  # The curator-label surface, where the plausibility gate actually has work to
+  # do: a formula label (KH2PO4, CaCl2 x 2 H2O) is accepted only if its element
+  # multiset is consistent with the CHEBI term's own formula. This is a SEPARATE
+  # target rather than a second `pairs` entry above because severity is per
+  # target, and this surface has a real backlog to work down first:
+  #
+  #   IMPLAUSIBLE_LABEL 50 · HYDRATE_ON_ANHYDROUS_TERM 39
+  #   LABEL_SUBSCRIPTS_LOST 3 · HYDRATION_STATE_MISMATCH 2
+  #   ANHYDROUS_ON_HYDRATE_TERM 2
+  #
+  # `severity: warn` reports them without failing `just validate-products`,
+  # repeating the report-then-enforce rollout the base gate used. Flip to error
+  # once the backlog is triaged (#261) — genuine residuals go on `exceptions`
+  # with a documented reason, mis-groundings get re-grounded, and the hydrate
+  # findings get MAPPING_SEMANTICS.md Section 3 treatment.
+  - name: mapped_csv_curator_label
+    kind: tabular
+    format: csv
+    glob: "docs/data/mapped_ingredients.csv"
+    policy: canonical_or_synonym
+    severity: warn
+    label_waived_keys:
+      - ontology_id
+    label_waiver_mode: plausible
+    exceptions: *mesh_scr_exceptions
+    pairs:
+      - [ontology_id, preferred_term]
 
   # NOTE: the review TSVs (`mappings/*review*.tsv`) are intentionally NOT gated.
   # They are human/tool WORKING files, not data products: by design they record
