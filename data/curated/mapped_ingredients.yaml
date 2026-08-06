@@ -1,4 +1,4 @@
-generation_date: '2026-08-06T01:37:25.864886+00:00'
+generation_date: '2026-08-06T01:46:31.068306+00:00'
 total_count: 2308
 mapped_count: 2278
 unmapped_count: 0
@@ -163457,6 +163457,13 @@ ingredients:
         so the record takes its CAS-RN as identifier with a narrowMatch to the parent
         acid, following the established cas: pattern (MAPPING_SEMANTICS.md Section
         3). CAS-RN 150-90-3 was already correct.'
+    - evidence_type: DATABASE_MATCH
+      source: reground_263
+      notes: 'Sodium succinate dibasic is a hydrate/salt with its own CAS and no exact
+        ChEBI term; anchored to the parent CHEBI:15741 ''succinic acid'' by narrowMatch
+        per MAPPING_SEMANTICS.md Section 3 step 2. Disodium succinate has no CHEBI
+        entry; nearest parent is the free acid. Re-grounded from CHEBI:150903 (an
+        unrelated glycoside) in #263.'
   synonyms:
   - synonym_text: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
     synonym_type: EXACT_SYNONYM
@@ -163539,6 +163546,15 @@ ingredients:
       Section 3). CAS-RN 150-90-3 was already correct. Dropped molecular_formula,
       inchi, smiles backfilled from the wrong term.'
     new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T01:46:31.068306+00:00'
+    curator: reground_263
+    action: CORRECTED
+    changes: 'Added Section 3 anchor rows: narrowMatch CHEBI:15741 ''succinic acid''
+      and registry kgmicrobe.compound:sodium_succinate_dibasic. identifier cas:150-90-3
+      unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. Disodium succinate
+      has no CHEBI entry; nearest parent is the free acid. Re-grounded from CHEBI:150903
+      (an unrelated glycoside) in #263.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 150-90-3
