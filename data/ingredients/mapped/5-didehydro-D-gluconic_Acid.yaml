@@ -1,0 +1,42 @@
+identifier: CHEBI:17426
+preferred_term: 5-didehydro-D-gluconic Acid
+synonyms:
+- synonym_text: 5-didehydro-D-gluconic Acid
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:5_didehydro_d_gluconic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0792 -> CHEBI:17426 "5-dehydro-D-gluconic acid" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:5_didehydro_d_gluconic_acid);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:17426
+  ontology_label: 5-dehydro-D-gluconic acid
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: '''didehydro'' is a typo for ''dehydro''; same compound as 5-dehydro-D-gluconic
+      acid. The anion form of the same typo was corrected earlier in this issue (#213).'

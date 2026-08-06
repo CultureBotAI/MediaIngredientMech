@@ -1,0 +1,43 @@
+identifier: kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose
+preferred_term: Beta-D-galacto-pyranosyl-D-arabinose
+synonyms:
+- synonym_text: Beta-D-galacto-pyranosyl-D-arabinose
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:beta_d_galacto_pyranosyl_d_arabinose);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0800 -> kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose
+    "Beta-D-galacto-pyranosyl-D-arabinose" (FALLBACK_REGISTRY); mapping_status UNMAPPED
+    -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:beta_d_galacto_pyranosyl_d_arabinose);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose
+  ontology_label: Beta-D-galacto-pyranosyl-D-arabinose
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Beta-D-galactopyranosyl-D-arabinose: no term in any namespace available
+      here (#213).'

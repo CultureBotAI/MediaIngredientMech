@@ -1,0 +1,43 @@
+identifier: ENVO:00002984
+preferred_term: Crude Oil
+synonyms:
+- synonym_text: Crude Oil
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:crude_oil); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0808 -> ENVO:00002984 "petroleum" (SYNONYM_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:crude_oil); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: ENVO:00002984
+  ontology_label: petroleum
+  ontology_source: ENVO
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: '''Crude oil'' is a registered synonym of ENVO:00002984 ''petroleum''.
+      ENVO is a configured adapter for this repo and the right namespace for an environmental
+      substrate rather than a defined chemical (#213).'

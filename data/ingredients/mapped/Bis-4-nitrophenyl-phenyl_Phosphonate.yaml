@@ -1,0 +1,47 @@
+identifier: kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate
+preferred_term: Bis-4-nitrophenyl-phenyl Phosphonate
+synonyms:
+- synonym_text: Bis-4-nitrophenyl-phenyl Phosphonate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 4
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phenyl_phosphonate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0697 -> kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate
+    "Bis-4-nitrophenyl-phenyl Phosphonate" (FALLBACK_REGISTRY); mapping_status UNMAPPED
+    -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phenyl_phosphonate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate
+  ontology_label: Bis-4-nitrophenyl-phenyl Phosphonate
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Searched every ontology available to this repo -- CHEBI, NCIT, FOODON,
+      ENVO, BTO, UBERON by label and synonym with normalisation, plus live OLS4 --
+      and no term denotes this substance. Takes the FALLBACK_REGISTRY shape used by
+      82 existing records: a self-referential kgmicrobe.compound: mint, rather than
+      a narrowMatch to a functional-group class, which would be the class-level over-claim
+      #270 tracks (#213).'

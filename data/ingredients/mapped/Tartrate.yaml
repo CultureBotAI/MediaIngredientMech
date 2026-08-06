@@ -9,7 +9,10 @@ ontology_mapping:
   - evidence_type: LEXICAL_MATCH
     source: microbedecoder
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:tartrate; '
-synonyms: []
+synonyms:
+- synonym_text: Tartate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -43,4 +46,11 @@ curation_history:
     canonical label exact-matches the record ontology_label (case-insensitive). This
     does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
     PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-06T08:18:48.040838+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0774 ''Tartate'' as a RAW_TEXT synonym -- Single-character
+    typo for tartrate (#213). No new SSSOM row; CHEBI:132950 is already mapped. Source:
+    kgmicrobe.compound:tartate.'
   llm_assisted: true

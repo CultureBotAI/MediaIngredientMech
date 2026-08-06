@@ -55,6 +55,9 @@ synonyms:
 - synonym_text: aminoethanoic acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Glycine 1%
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 99
@@ -109,6 +112,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
     nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-06T09:09:54.525460+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0816 ''Glycine 1%'' as a RAW_TEXT synonym -- Concentration
+    annotation left on the label; same ingredient as the Glycine record (#213). No
+    new SSSOM row; CHEBI:15428 is already mapped. Source: kgmicrobe.trait:glycine_1.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 56-40-6
   data_source: PubChem API

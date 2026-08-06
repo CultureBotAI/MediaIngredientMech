@@ -1,0 +1,44 @@
+identifier: mesh:D005372
+preferred_term: Filipin
+synonyms:
+- synonym_text: Filipin
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:filipin); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0814 -> mesh:D005372 "Filipin" (EXACT_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:filipin); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: mesh:D005372
+  ontology_label: Filipin
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Exact MeSH label match. MeSH ''Filipin'' denotes the antibiotic MIXTURE,
+      which is what this label means -- unlike CHEBI:83267 ''filipin III'' and NCIT:C80959
+      ''Filipin III'', which name one component and would have been the granularity
+      over-claim #270 tracks (#213, #208).'

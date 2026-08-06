@@ -4,7 +4,7 @@ synonyms:
 - synonym_text: PY-fructose
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: UNMAPPED
+mapping_status: NEEDS_EXPERT
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -20,5 +20,15 @@ curation_history:
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_213_residual_triage
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not an ingredient: a PY (peptone-yeast) medium name; belongs with the
+    decomposition workstream. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON
+    by label and synonym with normalisation, plus exact queries across all of live
+    OLS4.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_fructose); no
   CAS-RN or CHEBI/NCIT match. Curator review needed.

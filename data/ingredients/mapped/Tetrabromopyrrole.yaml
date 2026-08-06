@@ -1,0 +1,45 @@
+identifier: kgmicrobe.compound:tetrabromopyrrole
+preferred_term: Tetrabromopyrrole
+synonyms:
+- synonym_text: Tetrabromopyrrole
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: BacDive_Metabolite_production
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrabromopyrrole);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0847 -> kgmicrobe.compound:tetrabromopyrrole "Tetrabromopyrrole"
+    (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrabromopyrrole);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: kgmicrobe.compound:tetrabromopyrrole
+  ontology_label: Tetrabromopyrrole
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: 'Tetrabromopyrrole is absent from every local build. NOTE: mesh:C000654730
+      ''tetrabromopyrrole'' DOES exist upstream but is a recent supplementary-concept
+      record the cached MeSH build predates -- the same situation as the mesh_scr_exceptions
+      block in conf/id_label_targets.yaml. Promote this record to that MeSH id once
+      the build carries it (#213).'

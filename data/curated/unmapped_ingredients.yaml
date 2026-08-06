@@ -1,7 +1,7 @@
-generation_date: '2026-08-06T07:14:29.509994+00:00'
-total_count: 490
+generation_date: '2026-08-06T09:09:54.525460+00:00'
+total_count: 451
 mapped_count: 0
-unmapped_count: 435
+unmapped_count: 378
 ingredients:
 - identifier: UNMAPPED_0196
   preferred_term: 2-Carene-3-One
@@ -12231,30 +12231,6 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:2_butanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0695
-  preferred_term: 2-deoxythymidine-5'-4-nitrophenyl Phosphate
-  synonyms:
-  - synonym_text: 2-deoxythymidine-5'-4-nitrophenyl Phosphate
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 4
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_deoxythymidine_5_4_nitrophenyl_phosphate);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_deoxythymidine_5_4_nitrophenyl_phosphate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0674
   preferred_term: 2-propanol+CO2
   synonyms:
@@ -12320,37 +12296,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_tetrachloroethane);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0671
-  preferred_term: 3-O-methyl Alpha-D-glucopyranoside
-  synonyms:
-  - synonym_text: 3-O-methyl Alpha-D-glucopyranoside
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 9
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:3_o_methyl_alpha_d_glucopyranoside);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:3_o_methyl_alpha_d_glucopyranoside);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0736
   preferred_term: 3-methylacetate
   synonyms:
   - synonym_text: 3-methylacetate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12366,6 +12318,15 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Parse fragment: acetate has no position 3, so this is a truncation of
+      a longer name. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label
+      and synonym with normalisation, plus exact queries across all of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:3_methylacetate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0620
@@ -12400,30 +12361,6 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_diamino_6); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0790
-  preferred_term: 4-dihydroxy-biphenyl
-  synonyms:
-  - synonym_text: 4-dihydroxy-biphenyl
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_dihydroxy_biphenyl);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_dihydroxy_biphenyl);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0791
   preferred_term: 4-diol
   synonyms:
@@ -12462,7 +12399,7 @@ ingredients:
   - synonym_text: 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12478,127 +12415,17 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not an ingredient: the PRODUCT of an enzyme assay, not a substance added
+      to a medium. Same scope question as #209. Searched CHEBI, NCIT, FOODON, ENVO,
+      MeSH, BTO and UBERON by label and synonym with normalisation, plus exact queries
+      across all of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_nitrophenyl_beta_d_galactopyranoside_hydrolysate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0792
-  preferred_term: 5-didehydro-D-gluconic Acid
-  synonyms:
-  - synonym_text: 5-didehydro-D-gluconic Acid
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_production
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:5_didehydro_d_gluconic_acid);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:5_didehydro_d_gluconic_acid);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0737
-  preferred_term: 5-trimethoxybenzoate
-  synonyms:
-  - synonym_text: 5-trimethoxybenzoate
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: bergey:substrates
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.compound:5_trimethoxybenzoate);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:5_trimethoxybenzoate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0726
-  preferred_term: Actinomycin X
-  synonyms:
-  - synonym_text: Actinomycin X
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 2
-      source_columns: BacDive_Metabolite_production
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:actinomycin_x);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:actinomycin_x); no
-    CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0795
-  preferred_term: Alpha-hydroxyglutarate-gamma-lactone
-  synonyms:
-  - synonym_text: Alpha-hydroxyglutarate-gamma-lactone
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:alpha_hydroxyglutarate_gamma_lactone);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:alpha_hydroxyglutarate_gamma_lactone);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0738
-  preferred_term: Aminovalerate
-  synonyms:
-  - synonym_text: Aminovalerate
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: bergey:substrates
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.compound:aminovalerate);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:aminovalerate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0716
   preferred_term: BHI
@@ -12632,157 +12459,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0799
-  preferred_term: Bacillomycin
-  synonyms:
-  - synonym_text: Bacillomycin
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Antibiotic_sensitivity
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:bacillomycin);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:bacillomycin); no
-    CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0800
-  preferred_term: Beta-D-galacto-pyranosyl-D-arabinose
-  synonyms:
-  - synonym_text: Beta-D-galacto-pyranosyl-D-arabinose
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:beta_d_galacto_pyranosyl_d_arabinose);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:beta_d_galacto_pyranosyl_d_arabinose);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0697
-  preferred_term: Bis-4-nitrophenyl-phenyl Phosphonate
-  synonyms:
-  - synonym_text: Bis-4-nitrophenyl-phenyl Phosphonate
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 4
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phenyl_phosphonate);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phenyl_phosphonate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0691
-  preferred_term: Bis-4-nitrophenyl-phosphorylcholine
-  synonyms:
-  - synonym_text: Bis-4-nitrophenyl-phosphorylcholine
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 5
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phosphorylcholine);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_4_nitrophenyl_phosphorylcholine);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0802
-  preferred_term: Bottromycin
-  synonyms:
-  - synonym_text: Bottromycin
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_production
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:bottromycin);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:bottromycin); no
-    CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0804
-  preferred_term: Butamine
-  synonyms:
-  - synonym_text: Butamine
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:butamine); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:butamine); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0805
   preferred_term: Butane-1
   synonyms:
   - synonym_text: Butane-1
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12798,6 +12481,16 @@ ingredients:
       CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Parse fragment: a butane derivative needs its substituent and locants,
+      and ''Butane-1'' carries neither. Searched CHEBI, NCIT, FOODON, ENVO, MeSH,
+      BTO and UBERON by label and synonym with normalisation, plus exact queries across
+      all of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:butane_1); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0740
@@ -12896,30 +12589,6 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:corn_steep_liquor_glucose_fumarate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0808
-  preferred_term: Crude Oil
-  synonyms:
-  - synonym_text: Crude Oil
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:crude_oil); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:crude_oil); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0701
   preferred_term: Cyclopentanol+CO2
   synonyms:
@@ -12958,7 +12627,7 @@ ingredients:
   - synonym_text: DL-2-gamma-aminobutyrate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12974,39 +12643,25 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Parse artefact: GABA has no stereocentre, so ''DL-'' is meaningless
+      here, and ''2-gamma'' is not a valid locant pair. Searched CHEBI, NCIT, FOODON,
+      ENVO, MeSH, BTO and UBERON by label and synonym with normalisation, plus exact
+      queries across all of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:dl_2_gamma_aminobutyrate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0811
-  preferred_term: Diydrogen
-  synonyms:
-  - synonym_text: Diydrogen
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:diydrogen); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:diydrogen); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0626
   preferred_term: Esculin Ferric Citrate
   synonyms:
   - synonym_text: Esculin Ferric Citrate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13022,6 +12677,18 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not a single-compound grounding target: a two-component reagent (esculin
+      CHEBI:4853 plus ferric ammonium citrate CHEBI:31604, both of which exist as
+      their own MIM records) used in bile esculin agar. A narrowMatch would be wrong
+      because a mixture is not narrower than one of its components; it needs decomposition.
+      Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label and synonym
+      with normalisation, plus exact queries across all of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_ferric_citrate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0688
@@ -13030,7 +12697,7 @@ ingredients:
   - synonym_text: Esculin Hydrolysate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13046,6 +12713,16 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not an ingredient: an assay reaction product rather than a medium component.
+      Same scope question as #209. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and
+      UBERON by label and synonym with normalisation, plus exact queries across all
+      of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_hydrolysate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0812
@@ -13054,7 +12731,7 @@ ingredients:
   - synonym_text: Ethylenediamine-N
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13070,6 +12747,17 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Parse fragment: truncated at the N-substituent, so the compound is not
+      identifiable. Probably related to the ''N''-disuccinic Acid (EDDS)'' fragment
+      in the same batch -- the two look like halves of one split label. Searched CHEBI,
+      NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation,
+      plus exact queries across all of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ethylenediamine_n);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0742
@@ -13136,30 +12824,6 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:fermented_rumen_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0814
-  preferred_term: Filipin
-  synonyms:
-  - synonym_text: Filipin
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_production
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:filipin); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:filipin); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0743
   preferred_term: Formate+3-methyl Mercaptopropionate
   synonyms:
@@ -13320,30 +12984,6 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_trimethylamine);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0815
-  preferred_term: Furaxone
-  synonyms:
-  - synonym_text: Furaxone
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Antibiotic_resistance
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:furaxone); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:furaxone); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0755
   preferred_term: GYPS
   synonyms:
@@ -13414,7 +13054,7 @@ ingredients:
   - synonym_text: Gelatin Hydrolyzed
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13430,6 +13070,17 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not an ingredient as written: the hydrolysed state of gelatin is an
+      assay READOUT (gelatinase activity), not a distinct substance added to a medium.
+      Same scope question as #209. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and
+      UBERON by label and synonym with normalisation, plus exact queries across all
+      of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:gelatin_hydrolyzed);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0702
@@ -13688,37 +13339,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0816
-  preferred_term: Glycine 1%
-  synonyms:
-  - synonym_text: Glycine 1%
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycine_1); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycine_1); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0817
   preferred_term: Glycyl-L-bromosuccinic Glutamic Acid
   synonyms:
   - synonym_text: Glycyl-L-bromosuccinic Glutamic Acid
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13734,6 +13361,16 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Parse artefact: reads as two run-together dipeptide/reagent names rather
+      than one compound. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON
+      by label and synonym with normalisation, plus exact queries across all of live
+      OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_bromosuccinic_glutamic_acid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0756
@@ -13928,174 +13565,6 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_trimethylamine);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0761
-  preferred_term: Isopropionate
-  synonyms:
-  - synonym_text: Isopropionate
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: bergey:major_end_products
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.compound:isopropionate);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:isopropionate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0821
-  preferred_term: Keratin
-  synonyms:
-  - synonym_text: Keratin
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:keratin); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:keratin); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0648
-  preferred_term: L-alanine 4-nitroanilide
-  synonyms:
-  - synonym_text: L-alanine 4-nitroanilide
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 22
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_alanine_4_nitroanilide);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_alanine_4_nitroanilide);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0822
-  preferred_term: L-glutamate-gamma-3-carboxy-4-nitroanilide
-  synonyms:
-  - synonym_text: L-glutamate-gamma-3-carboxy-4-nitroanilide
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_glutamate_gamma_3_carboxy_4_nitroanilide);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_glutamate_gamma_3_carboxy_4_nitroanilide);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0690
-  preferred_term: L-proline-4-nitroanilide
-  synonyms:
-  - synonym_text: L-proline-4-nitroanilide
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 6
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_proline_4_nitroanilide);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_proline_4_nitroanilide);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0827
-  preferred_term: Medicamycin
-  synonyms:
-  - synonym_text: Medicamycin
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Antibiotic_sensitivity
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:medicamycin);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:medicamycin); no
-    CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0762
-  preferred_term: Methyamine
-  synonyms:
-  - synonym_text: Methyamine
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: bergey:substrates
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.compound:methyamine);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:methyamine); no
-    CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0763
   preferred_term: Modified Cooked Meat Medium
   synonyms:
@@ -14166,7 +13635,7 @@ ingredients:
   - synonym_text: N'-disuccinic Acid (EDDS)
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14182,39 +13651,26 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Parse fragment: the leading portion of ethylenediamine-N,N''-disuccinic
+      acid was lost. Probably the other half of the ''Ethylenediamine-N'' fragment
+      in the same batch; a curator should confirm and rejoin them. Searched CHEBI,
+      NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation,
+      plus exact queries across all of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:n_disuccinic_acid_edds);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0832
-  preferred_term: Netropsin
-  synonyms:
-  - synonym_text: Netropsin
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_production
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:netropsin); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:netropsin); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0719
   preferred_term: PY-cellobiose
   synonyms:
   - synonym_text: PY-cellobiose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14230,6 +13686,17 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not an ingredient: a culture medium name (PY = peptone-yeast base plus
+      a carbohydrate). Belongs with the decomposition workstream, which is the 42
+      NEEDS_EXPERT rows in microbedecoder_residual_research_decomposition.tsv. Searched
+      CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation,
+      plus exact queries across all of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_cellobiose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0767
@@ -14238,7 +13705,7 @@ ingredients:
   - synonym_text: PY-fructose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14254,6 +13721,16 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not an ingredient: a PY (peptone-yeast) medium name; belongs with the
+      decomposition workstream. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and
+      UBERON by label and synonym with normalisation, plus exact queries across all
+      of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_fructose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0768
@@ -14294,7 +13771,7 @@ ingredients:
   - synonym_text: PY-maltose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14310,6 +13787,16 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not an ingredient: a PY (peptone-yeast) medium name; belongs with the
+      decomposition workstream. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and
+      UBERON by label and synonym with normalisation, plus exact queries across all
+      of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_maltose); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0770
@@ -14318,7 +13805,7 @@ ingredients:
   - synonym_text: PY-pectin
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14334,6 +13821,16 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not an ingredient: a PY (peptone-yeast) medium name; belongs with the
+      decomposition workstream. Searched CHEBI, NCIT, FOODON, ENVO, MeSH, BTO and
+      UBERON by label and synonym with normalisation, plus exact queries across all
+      of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_pectin); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0771
@@ -14374,7 +13871,7 @@ ingredients:
   - synonym_text: PYG-0.02% Tween 80
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14390,6 +13887,16 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not an ingredient: a PYG medium name with a Tween 80 supplement and
+      its concentration; belongs with the decomposition workstream. Searched CHEBI,
+      NCIT, FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation,
+      plus exact queries across all of live OLS4.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_0_02_tween_80);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0628
@@ -14590,7 +14097,7 @@ ingredients:
   - synonym_text: Poly-beta-hydroxyalkanoate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14606,80 +14113,19 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: Class-level label. MeSH:D054813 'Polyhydroxyalkanoates' is the closest
+      term but does not carry this label as a synonym, and the 'beta' is a specificity
+      the class term drops. Needs a granularity decision. Searched CHEBI, NCIT, FOODON,
+      ENVO, MeSH, BTO and UBERON by label and synonym with normalisation, plus exact
+      queries across all of live OLS4.
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:poly_beta_hydroxyalkanoate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0838
-  preferred_term: Proteose
-  synonyms:
-  - synonym_text: Proteose
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:proteose); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:proteose); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0841
-  preferred_term: Ristocetin A
-  synonyms:
-  - synonym_text: Ristocetin A
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_production
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:ristocetin_a);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ristocetin_a); no
-    CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0842
-  preferred_term: Rna
-  synonyms:
-  - synonym_text: Rna
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:rna); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:rna); no CAS-RN or
-    CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0705
   preferred_term: Sucrose + Yeast Extract
   synonyms:
@@ -14718,7 +14164,7 @@ ingredients:
   - synonym_text: Sugars
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14734,56 +14180,19 @@ ingredients:
       CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: Class-level label, not a substance. No ontology carries a bare 'sugars'
+      term, and grounding to a specific sugar or to MeSH 'Carbohydrates' would over-
+      or under-specify. Needs a granularity decision. Searched CHEBI, NCIT, FOODON,
+      ENVO, MeSH, BTO and UBERON by label and synonym with normalisation, plus exact
+      queries across all of live OLS4.
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:sugars); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0844
-  preferred_term: Synanthrin
-  synonyms:
-  - synonym_text: Synanthrin
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:synanthrin);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:synanthrin); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0845
-  preferred_term: Synthetic Sea Salts (sss)
-  synonyms:
-  - synonym_text: Synthetic Sea Salts (sss)
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:synthetic_sea_salts_sss);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:synthetic_sea_salts_sss);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0776
   preferred_term: TYGVS + Glucose
   synonyms:
@@ -14816,61 +14225,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:tygvs_glucose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0774
-  preferred_term: Tartate
-  synonyms:
-  - synonym_text: Tartate
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: bergey:substrates
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.compound:tartate);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:tartate); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0847
-  preferred_term: Tetrabromopyrrole
-  synonyms:
-  - synonym_text: Tetrabromopyrrole
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_production
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrabromopyrrole);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrabromopyrrole);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0734
   preferred_term: Tetrazolium
   synonyms:
   - synonym_text: Tetrazolium
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: UNMAPPED
+  mapping_status: NEEDS_EXPERT
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14886,32 +14247,20 @@ ingredients:
       no CAS-RN or CHEBI/NCIT match. Curator review needed.
     new_status: UNMAPPED
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_213_residual_triage
+    action: FLAGGED_NEEDS_EXPERT
+    changes: Class-level label. MeSH:D013778 'Tetrazolium Salts' is the closest term
+      and is plausibly what this means in a medium (TTC and relatives), but 'tetrazolium'
+      is NOT a registered synonym of it, so grounding would be inference rather than
+      evidence. Needs a granularity decision. Searched CHEBI, NCIT, FOODON, ENVO,
+      MeSH, BTO and UBERON by label and synonym with normalisation, plus exact queries
+      across all of live OLS4.
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrazolium); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0848
-  preferred_term: Trimethoxybenzoate
-  synonyms:
-  - synonym_text: Trimethoxybenzoate
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:trimethoxybenzoate);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:trimethoxybenzoate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0668
   preferred_term: Trypticase-glucose-yeast Extract
   synonyms:
@@ -15136,103 +14485,3 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_meat_extract_h2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: CHEBI:756054
-  preferred_term: Carbomycin
-  synonyms: []
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: BacDive_Metabolite_production
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_FROM_INGREDIENT_IMPORT
-    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:carbomycin; '
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-08-04T03:02:12.084870+00:00'
-    curator: microbedecoder-import-review
-    action: DEMOTED_TO_UNMAPPED
-    changes: removed ontology_mapping CHEBI:756054
-    notes: CHEBI:756054 exceeds the CHEBI accession ceiling and does not resolve;
-      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
-    llm_assisted: true
-- identifier: CHEBI:759883
-  preferred_term: Colistin Sulfate
-  synonyms: []
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 2
-      source_columns: BacDive_Antibiotic_resistance
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_FROM_INGREDIENT_IMPORT
-    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:colistin_sulfate; '
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-08-04T03:02:12.084870+00:00'
-    curator: microbedecoder-import-review
-    action: DEMOTED_TO_UNMAPPED
-    changes: removed ontology_mapping CHEBI:759883
-    notes: CHEBI:759883 exceeds the CHEBI accession ceiling and does not resolve;
-      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
-    llm_assisted: true
-- identifier: CHEBI:753395
-  preferred_term: Lysostaphin
-  synonyms: []
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 4
-      source_columns: BacDive_Antibiotic_sensitivity
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_FROM_INGREDIENT_IMPORT
-    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:lysostaphin; '
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-08-04T03:02:12.084870+00:00'
-    curator: microbedecoder-import-review
-    action: DEMOTED_TO_UNMAPPED
-    changes: removed ontology_mapping CHEBI:753395
-    notes: CHEBI:753395 exceeds the CHEBI accession ceiling and does not resolve;
-      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
-    llm_assisted: true
-- identifier: CHEBI:759086
-  preferred_term: Polymyxin B
-  synonyms: []
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 272
-      source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_FROM_INGREDIENT_IMPORT
-    changes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:polymyxin_b; '
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-08-04T03:02:12.084870+00:00'
-    curator: microbedecoder-import-review
-    action: DEMOTED_TO_UNMAPPED
-    changes: removed ontology_mapping CHEBI:759086
-    notes: CHEBI:759086 exceeds the CHEBI accession ceiling and does not resolve;
-      validate-products reported ID_OUT_OF_RANGE. Left UNMAPPED for curation.
-    llm_assisted: true

@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T07:15:48.784810+00:00
-Total: 490 ingredients
+Generated: 2026-08-06T09:25:56.396565+00:00
+Total: 451 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -387,50 +387,32 @@ Total: 490 ingredients
 | UNMAPPED_0735 |  | 1-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0715 |  | 1-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0679 |  | 2-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0695 |  | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0674 |  | 2-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0785 |  | 2-tetrachloroethane | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0671 |  | 3-O-methyl Alpha-D-glucopyranoside | UNMAPPED |  |  | 0 |
-| UNMAPPED_0736 |  | 3-methylacetate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0736 |  | 3-methylacetate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0790 |  | 4-dihydroxy-biphenyl | UNMAPPED |  |  | 0 |
 | UNMAPPED_0791 |  | 4-diol | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0792 |  | 5-didehydro-D-gluconic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0737 |  | 5-trimethoxybenzoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0726 |  | Actinomycin X | UNMAPPED |  |  | 0 |
-| UNMAPPED_0795 |  | Alpha-hydroxyglutarate-gamma-lactone | UNMAPPED |  |  | 0 |
-| UNMAPPED_0738 |  | Aminovalerate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0716 |  | BHI | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0799 |  | Bacillomycin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0697 |  | Bis-4-nitrophenyl-phenyl Phosphonate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0691 |  | Bis-4-nitrophenyl-phosphorylcholine | UNMAPPED |  |  | 0 |
-| UNMAPPED_0802 |  | Bottromycin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0804 |  | Butamine | UNMAPPED |  |  | 0 |
-| UNMAPPED_0805 |  | Butane-1 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0805 |  | Butane-1 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0741 |  | Corn Steep Liquor + Glucose + Fumarate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0811 |  | Diydrogen | UNMAPPED |  |  | 0 |
-| UNMAPPED_0626 |  | Esculin Ferric Citrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0688 |  | Esculin Hydrolysate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0812 |  | Ethylenediamine-N | UNMAPPED |  |  | 0 |
+| UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0626 |  | Esculin Ferric Citrate | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0688 |  | Esculin Hydrolysate | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0812 |  | Ethylenediamine-N | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0742 |  | Fastidious Anaerobe Broth With Meat Granules | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0711 |  | Fermented Rumen Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0814 |  | Filipin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0743 |  | Formate+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0744 |  | Formate+dimethylsulfide | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0745 |  | Formate+methanol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0746 |  | Formate+tetramethylammonium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0747 |  | Formate+trimethylamine | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0815 |  | Furaxone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0755 |  | GYPS | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0748 |  | Gallate + Formate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0731 |  | Gelatin Hydrolyzed | UNMAPPED |  |  | 0 |
+| UNMAPPED_0731 |  | Gelatin Hydrolyzed | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0702 |  | Glucose + Acetate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0749 |  | Glucose + Cellobiose + Starch + Trypticase + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0750 |  | Glucose + Formate | NEEDS_EXPERT |  |  | 0 |
@@ -439,51 +421,34 @@ Total: 490 ingredients
 | UNMAPPED_0753 |  | Glucose Peptone-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0754 |  | Glucose + Xylose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0675 |  | Glucose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0816 |  | Glycine 1% | UNMAPPED |  |  | 0 |
-| UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | UNMAPPED |  |  | 0 |
+| UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0756 |  | H2+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0631 |  | H2 + CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0757 |  | H2+dimethylsulfide | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0703 |  | H2+methanol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0758 |  | H2+tetramethylammonium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0648 |  | L-alanine 4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
-| UNMAPPED_0832 |  | Netropsin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0719 |  | PY-cellobiose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0767 |  | PY-fructose | UNMAPPED |  |  | 0 |
+| UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0719 |  | PY-cellobiose | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0767 |  | PY-fructose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0768 |  | PY-glucose-rumen Fluid | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0769 |  | PY-maltose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0770 |  | PY-pectin | UNMAPPED |  |  | 0 |
+| UNMAPPED_0769 |  | PY-maltose | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0770 |  | PY-pectin | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0771 |  | PYEG | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0772 |  | PYG-0.02% Tween 80 | UNMAPPED |  |  | 0 |
+| UNMAPPED_0772 |  | PYG-0.02% Tween 80 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0628 |  | PYG | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0704 |  | PYGS | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0773 |  | PYG + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0766 |  | Peptone-yeast Extract-glucose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0765 |  | Peptone + Beef Extract + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0717 |  | Peptone + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0838 |  | Proteose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0841 |  | Ristocetin A | UNMAPPED |  |  | 0 |
-| UNMAPPED_0842 |  | Rna | UNMAPPED |  |  | 0 |
+| UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0705 |  | Sucrose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0663 |  | Sugars | UNMAPPED |  |  | 0 |
-| UNMAPPED_0844 |  | Synanthrin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0845 |  | Synthetic Sea Salts (sss) | UNMAPPED |  |  | 0 |
+| UNMAPPED_0663 |  | Sugars | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0776 |  | TYGVS + Glucose | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0774 |  | Tartate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0847 |  | Tetrabromopyrrole | UNMAPPED |  |  | 0 |
-| UNMAPPED_0734 |  | Tetrazolium | UNMAPPED |  |  | 0 |
-| UNMAPPED_0848 |  | Trimethoxybenzoate | UNMAPPED |  |  | 0 |
+| UNMAPPED_0734 |  | Tetrazolium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0777 |  | Yeast Extract + Gluconate | NEEDS_EXPERT |  |  | 0 |
@@ -491,7 +456,3 @@ Total: 490 ingredients
 | UNMAPPED_0779 |  | Yeast Extract + Peptone | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0780 |  | Yeast Extract + Sulfur | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0781 |  | Yeast + Meat Extract + H2 | NEEDS_EXPERT |  |  | 0 |
-| CHEBI:756054 |  | Carbomycin | UNMAPPED |  |  | 0 |
-| CHEBI:759883 |  | Colistin Sulfate | UNMAPPED |  |  | 0 |
-| CHEBI:753395 |  | Lysostaphin | UNMAPPED |  |  | 0 |
-| CHEBI:759086 |  | Polymyxin B | UNMAPPED |  |  | 0 |

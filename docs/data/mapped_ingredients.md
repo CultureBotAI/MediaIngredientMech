@@ -1,10 +1,44 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T07:15:48.780616+00:00
-Total: 2356 ingredients
+Generated: 2026-08-06T09:25:56.393977+00:00
+Total: 2390 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | Alpha-hydroxyglutarate-gamma-lactone | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | L-glutamate-gamma-3-carboxy-4-nitroanilide | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | Beta-D-galacto-pyranosyl-D-arabinose | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:synthetic_sea_salts_sss | kgmicrobe.compound:synthetic_sea_salts_sss | Synthetic Sea Salts (sss) | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:tetrabromopyrrole | kgmicrobe.compound:tetrabromopyrrole | Tetrabromopyrrole | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:aminovalerate | kgmicrobe.compound:aminovalerate | Aminovalerate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:isopropionate | kgmicrobe.compound:isopropionate | Isopropionate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:butamine | kgmicrobe.compound:butamine | Butamine | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:synanthrin | kgmicrobe.compound:synanthrin | Synanthrin | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:proteose | kgmicrobe.compound:proteose | Proteose | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:furaxone | kgmicrobe.compound:furaxone | Furaxone | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:medicamycin | kgmicrobe.compound:medicamycin | Medicamycin | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:bacillomycin | kgmicrobe.compound:bacillomycin | Bacillomycin | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| mesh:D007633 | mesh:D007633 | Keratin | MAPPED | MESH | CLOSE_MATCH | 0 |
+| mesh:C016719 | mesh:C016719 | Ristocetin A | MAPPED | MESH | EXACT_MATCH | 0 |
+| mesh:D009429 | mesh:D009429 | Netropsin | MAPPED | MESH | EXACT_MATCH | 0 |
+| mesh:C024712 | mesh:C024712 | Bottromycin | MAPPED | MESH | EXACT_MATCH | 0 |
+| mesh:C041783 | mesh:C041783 | Actinomycin X | MAPPED | MESH | EXACT_MATCH | 0 |
+| mesh:D005372 | mesh:D005372 | Filipin | MAPPED | MESH | EXACT_MATCH | 0 |
+| mesh:D012313 | mesh:D012313 | Rna | MAPPED | MESH | EXACT_MATCH | 0 |
+| CHEBI:58989 | CHEBI:58989 | 5-trimethoxybenzoate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:34367 | CHEBI:34367 | 4-dihydroxy-biphenyl | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:17426 | CHEBI:17426 | 5-didehydro-D-gluconic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside | kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside | 3-O-methyl Alpha-D-glucopyranoside | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate | kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate | Bis-4-nitrophenyl-phenyl Phosphonate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:2-deoxythymidine-5-4-nitrophenyl_phosphate | kgmicrobe.compound:2-deoxythymidine-5-4-nitrophenyl_phosphate | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:bis-4-nitrophenyl-phosphorylcholine | kgmicrobe.compound:bis-4-nitrophenyl-phosphorylcholine | Bis-4-nitrophenyl-phosphorylcholine | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:l-proline-4-nitroanilide | kgmicrobe.compound:l-proline-4-nitroanilide | L-proline-4-nitroanilide | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:l-alanine_4-nitroanilide | kgmicrobe.compound:l-alanine_4-nitroanilide | L-alanine 4-nitroanilide | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| ENVO:00002984 | ENVO:00002984 | Crude Oil | MAPPED | ENVO | SYNONYM_MATCH | 0 |
+| NCIT:C166659 | NCIT:C166659 | Carbomycin | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C386 | NCIT:C386 | Colistin Sulfate | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C166895 | NCIT:C166895 | Lysostaphin | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C61894 | NCIT:C61894 | Polymyxin B | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:27374 | CHEBI:27374 | L-inositol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:82679 | CHEBI:82679 | Nutriacholic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81879 | CHEBI:81879 | Rhodomycin B | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
