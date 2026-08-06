@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T07:49:06.070589+00:00
-Total: 485 ingredients
+Generated: 2026-08-06T08:07:59.767023+00:00
+Total: 479 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -387,10 +387,8 @@ Total: 485 ingredients
 | UNMAPPED_0735 |  | 1-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0715 |  | 1-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0679 |  | 2-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0695 |  | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0674 |  | 2-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0785 |  | 2-tetrachloroethane | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0671 |  | 3-O-methyl Alpha-D-glucopyranoside | UNMAPPED |  |  | 0 |
 | UNMAPPED_0736 |  | 3-methylacetate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0790 |  | 4-dihydroxy-biphenyl | UNMAPPED |  |  | 0 |
@@ -404,8 +402,6 @@ Total: 485 ingredients
 | UNMAPPED_0716 |  | BHI | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0799 |  | Bacillomycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0697 |  | Bis-4-nitrophenyl-phenyl Phosphonate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0691 |  | Bis-4-nitrophenyl-phosphorylcholine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0802 |  | Bottromycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0804 |  | Butamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0805 |  | Butane-1 | UNMAPPED |  |  | 0 |
@@ -448,9 +444,7 @@ Total: 485 ingredients
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0648 |  | L-alanine 4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |

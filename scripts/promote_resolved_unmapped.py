@@ -52,9 +52,13 @@ OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl",
                  "FOODON": "obo:foodon.owl", "ENVO": "obo:envo.owl"}
 
 PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch",
-             "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch"}
+             "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch",
+             # The record IS its mint; closeMatch is what the 136 existing
+             # self-referential registry records use, and it keeps Rule B1 (which
+             # fires only on narrowMatch) out of the picture.
+             "FALLBACK_REGISTRY": "skos:closeMatch"}
 CONFIDENCE = {"EXACT_MATCH": "0.99", "SYNONYM_MATCH": "0.95", "CLOSE_MATCH": "0.9",
-              "NARROW_MATCH": "0.9"}
+              "NARROW_MATCH": "0.9", "FALLBACK_REGISTRY": "0.9"}
 
 # The Section 3 registry namespaces, imported rather than re-declared so the two
 # scripts that can perform this move cannot drift apart (#279).
@@ -115,16 +119,29 @@ def main():
     if minted:
         # Section 3: the mint denotes the substance, the parent is what the record
         # maps to. Validate and record the parent; the mint is validated by shape.
-        if not a.parent:
+        if a.quality == "FALLBACK_REGISTRY":
+            # The second established registry shape: no ontology term denotes this
+            # substance at all, so the mint IS the mapping. ontology_id is the mint
+            # itself (self-referential), matching the 82 FALLBACK_REGISTRY and 54
+            # PLACEHOLDER records already in the corpus. Requiring a parent here
+            # would force a narrowMatch to whatever class happens to be nearest --
+            # the over-claim #270 tracks.
+            if a.parent:
+                raise SystemExit("--parent does not apply to FALLBACK_REGISTRY: the "
+                                 "point of the shape is that no ontology term denotes it")
+            term_curie = None          # resolved to the mint after slug derivation
+        elif not a.parent:
             raise SystemExit(
-                f"--to {a.to} is a registry mint, so --parent is required.\n"
+                f"--to {a.to} is a registry mint, so --parent is required (or pass "
+                "--quality FALLBACK_REGISTRY if NO ontology term denotes it).\n"
                 "MAPPING_SEMANTICS.md Section 3: a substance with no exact ontology "
                 "term takes its registry CURIE as identifier AND asserts a narrowMatch "
                 "to the nearest parent. Rule B1 then requires both SSSOM rows.")
-        if a.parent.split(":", 1)[0] not in ONTOLOGY_DB:
+        elif a.parent.split(":", 1)[0] not in ONTOLOGY_DB:
             raise SystemExit(f"--parent must be one of {', '.join(sorted(ONTOLOGY_DB))}")
-        a.quality = "NARROW_MATCH"
-        term_curie = a.parent
+        if a.parent:
+            a.quality = "NARROW_MATCH"
+            term_curie = a.parent
     else:
         if a.parent:
             raise SystemExit("--parent applies only when --to is a registry mint")
@@ -138,7 +155,7 @@ def main():
                 f"{a.to} instead.")
         term_curie = a.to
 
-    label = canonical_label(term_curie)
+    label = canonical_label(term_curie) if term_curie else None
     mapped = yaml.safe_load(MAPPED.read_text())
     unmapped = yaml.safe_load(UNMAPPED.read_text())
     idx = next((i for i, r in enumerate(unmapped["ingredients"]) if r["identifier"] == a.identifier), None)
@@ -155,12 +172,18 @@ def main():
         # the mint's local part against it exactly, and a mismatch only surfaces after
         # the write, as a CI failure on an already-published row.
         a.to = check_registry_mint(a.to, slug)
+        if term_curie is None:
+            # FALLBACK_REGISTRY: the mint IS the mapping, and its label is the
+            # record's own preferred_term -- there is no ontology label to borrow.
+            term_curie, label = a.to, pref
     print(f"Promote {a.identifier} ({pref!r}) -> {a.to}"
-          + (f"  [narrowMatch {term_curie} {label!r}]" if minted
+          + (f"  [FALLBACK_REGISTRY — no ontology term denotes this]"
+             if a.quality == "FALLBACK_REGISTRY"
+             else f"  [narrowMatch {term_curie} {label!r}]" if minted
              else f" {label!r}  [{a.quality}]"))
     print(f"  SSSOM: MIM:{slug}  {PREDICATE[a.quality]}  {term_curie}  '{label}'"
           f"  conf={CONFIDENCE[a.quality]}")
-    if minted:
+    if minted and a.quality == "NARROW_MATCH":
         print(f"  SSSOM: MIM:{slug}  skos:exactMatch  {a.to}  (Rule B1 registry row)")
 
     # transform the record
@@ -193,12 +216,16 @@ def main():
     src = f"MIM:{a.evidence_source}|MIM:curator=promote_resolved_unmapped"
     review = f"manual:promote_resolved_unmapped|PROMOTED|{a.date}"
     row = "\t".join([f"MIM:{slug}", pref, PREDICATE[a.quality], term_curie, label,
-                     OBJECT_SOURCE.get(term_curie.split(":", 1)[0], ""),
+                     (REGISTRY_SOURCE.get(term_curie.split(":", 1)[0], "")
+                      if is_registry_mint(term_curie)
+                      else OBJECT_SOURCE.get(term_curie.split(":", 1)[0], "")),
                      "semapv:ManualMappingCuration", src, a.date,
                      CONFIDENCE[a.quality], "", "", review]) + "\n"
-    if minted:
+    if minted and a.quality == "NARROW_MATCH":
         # Rule B1: a narrowMatch from a MIM subject must carry a sibling registry
-        # exactMatch row, or validate_sssom_invariants rejects the file.
+        # exactMatch row, or validate_sssom_invariants rejects the file. A
+        # FALLBACK_REGISTRY record has no narrowMatch, so its single closeMatch row
+        # to the mint IS the registry row -- a second one would just duplicate it.
         registry = REGISTRY_SOURCE.get(a.to.split(":", 1)[0], "")
         row += "\t".join([f"MIM:{slug}", pref, "skos:exactMatch", a.to, pref, registry,
                           "semapv:ManualMappingCuration", src, a.date, "0.99",
