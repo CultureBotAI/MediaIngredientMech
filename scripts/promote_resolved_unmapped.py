@@ -43,8 +43,15 @@ SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
 
 PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch",
-             "CLOSE_MATCH": "skos:closeMatch"}
-CONFIDENCE = {"EXACT_MATCH": "0.99", "SYNONYM_MATCH": "0.95", "CLOSE_MATCH": "0.9"}
+             "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch"}
+CONFIDENCE = {"EXACT_MATCH": "0.99", "SYNONYM_MATCH": "0.95", "CLOSE_MATCH": "0.9",
+              "NARROW_MATCH": "0.9"}
+
+# The Section 3 registry namespaces, imported rather than re-declared so the two
+# scripts that can perform this move cannot drift apart (#279).
+from reground_mapped_record import (  # noqa: E402
+    REGISTRY_PREFIXES, REGISTRY_SOURCE, check_registry_mint, is_registry_mint,
+)
 
 
 def canonical_label(cid: str) -> str:
@@ -74,17 +81,47 @@ def _sorted_insert(lines: list[str], header_i: int, new_subject_label: str, new_
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--identifier", required=True, help="UNMAPPED_* identifier to promote")
-    ap.add_argument("--to", required=True, help="target CHEBI CURIE, e.g. CHEBI:30915")
+    ap.add_argument("--to", required=True,
+                    help=("target CHEBI CURIE, e.g. CHEBI:30915 — or a registry mint "
+                          "(cas: / kgmicrobe.compound: / kgmicrobe.ingredient:) when no "
+                          "ontology term denotes the substance, which then requires "
+                          "--parent"))
+    ap.add_argument("--parent",
+                    help=("REQUIRED when --to is a registry mint: the ontology term to "
+                          "narrowMatch (MAPPING_SEMANTICS.md Section 3)"))
     ap.add_argument("--quality", default="EXACT_MATCH", choices=list(PREDICATE))
     ap.add_argument("--evidence-source", default="promote_resolved_unmapped")
     ap.add_argument("--note", default="")
     ap.add_argument("--date", default="2026-06-16")
     ap.add_argument("--apply", action="store_true")
     a = ap.parse_args()
-    if not a.to.startswith("CHEBI:"):
-        raise SystemExit("this helper only promotes to CHEBI ids")
+    minted = is_registry_mint(a.to)
+    if minted:
+        # Section 3: the mint denotes the substance, the parent is what the record
+        # maps to. Validate and record the parent; the mint is validated by shape.
+        if not a.parent:
+            raise SystemExit(
+                f"--to {a.to} is a registry mint, so --parent is required.\n"
+                "MAPPING_SEMANTICS.md Section 3: a substance with no exact ontology "
+                "term takes its registry CURIE as identifier AND asserts a narrowMatch "
+                "to the nearest parent. Rule B1 then requires both SSSOM rows.")
+        if not a.parent.startswith("CHEBI:"):
+            raise SystemExit("--parent must be a CHEBI id; this helper resolves CHEBI only")
+        a.quality = "NARROW_MATCH"
+        term_curie = a.parent
+    else:
+        if a.parent:
+            raise SystemExit("--parent applies only when --to is a registry mint")
+        if not a.to.startswith("CHEBI:"):
+            raise SystemExit("this helper only promotes to CHEBI ids or a registry mint")
+        if a.quality == "NARROW_MATCH":
+            raise SystemExit(
+                "NARROW_MATCH on an ontology destination needs a registry identifier "
+                "too (Rule B1). Pass --to <cas:/kgmicrobe.compound: mint> --parent "
+                f"{a.to} instead.")
+        term_curie = a.to
 
-    label = canonical_label(a.to)
+    label = canonical_label(term_curie)
     mapped = yaml.safe_load(MAPPED.read_text())
     unmapped = yaml.safe_load(UNMAPPED.read_text())
     idx = next((i for i, r in enumerate(unmapped["ingredients"]) if r["identifier"] == a.identifier), None)
@@ -96,13 +133,23 @@ def main():
     rec = unmapped["ingredients"][idx]
     pref = rec.get("preferred_term", a.identifier)
     slug = sanitize_filename(pref)
-    print(f"Promote {a.identifier} ({pref!r}) -> {a.to} {label!r}  [{a.quality}]")
-    print(f"  SSSOM: MIM:{slug}  {PREDICATE[a.quality]}  {a.to}  '{label}'  conf={CONFIDENCE[a.quality]}")
+    if minted:
+        # Derived from the subject slug, not trusted from the caller: Rule B1 matches
+        # the mint's local part against it exactly, and a mismatch only surfaces after
+        # the write, as a CI failure on an already-published row.
+        a.to = check_registry_mint(a.to, slug)
+    print(f"Promote {a.identifier} ({pref!r}) -> {a.to}"
+          + (f"  [narrowMatch {term_curie} {label!r}]" if minted
+             else f" {label!r}  [{a.quality}]"))
+    print(f"  SSSOM: MIM:{slug}  {PREDICATE[a.quality]}  {term_curie}  '{label}'"
+          f"  conf={CONFIDENCE[a.quality]}")
+    if minted:
+        print(f"  SSSOM: MIM:{slug}  skos:exactMatch  {a.to}  (Rule B1 registry row)")
 
     # transform the record
     rec["identifier"] = a.to
     rec["ontology_mapping"] = {
-        "ontology_id": a.to, "ontology_label": label, "ontology_source": "CHEBI",
+        "ontology_id": term_curie, "ontology_label": label, "ontology_source": "CHEBI",
         "mapping_quality": a.quality,
         "evidence": [{"evidence_type": "DATABASE_MATCH", "source": a.evidence_source,
                       "notes": a.note or f"Resolved to {a.to} ({label})."}],
@@ -126,9 +173,17 @@ def main():
 
     # build SSSOM row (13 cols)
     src = f"MIM:{a.evidence_source}|MIM:curator=promote_resolved_unmapped"
-    row = "\t".join([f"MIM:{slug}", pref, PREDICATE[a.quality], a.to, label, "obo:chebi.owl",
-                     "semapv:ManualMappingCuration", src, a.date, CONFIDENCE[a.quality],
-                     "", "", f"manual:promote_resolved_unmapped|PROMOTED|{a.date}"]) + "\n"
+    review = f"manual:promote_resolved_unmapped|PROMOTED|{a.date}"
+    row = "\t".join([f"MIM:{slug}", pref, PREDICATE[a.quality], term_curie, label,
+                     "obo:chebi.owl", "semapv:ManualMappingCuration", src, a.date,
+                     CONFIDENCE[a.quality], "", "", review]) + "\n"
+    if minted:
+        # Rule B1: a narrowMatch from a MIM subject must carry a sibling registry
+        # exactMatch row, or validate_sssom_invariants rejects the file.
+        registry = REGISTRY_SOURCE.get(a.to.split(":", 1)[0], "")
+        row += "\t".join([f"MIM:{slug}", pref, "skos:exactMatch", a.to, pref, registry,
+                          "semapv:ManualMappingCuration", src, a.date, "0.99",
+                          "", "", review]) + "\n"
 
     if not a.apply:
         print("\n(dry-run — pass --apply to write collections + SSSOM and regenerate)")

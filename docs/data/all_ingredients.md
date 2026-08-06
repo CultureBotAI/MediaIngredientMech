@@ -1,10 +1,15 @@
 # All Ingredients
 
-Generated: 2026-08-06T05:34:28.529700+00:00
+Generated: 2026-08-06T06:08:12.791797+00:00
 Total: 2850 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.compound:maltose_hydrate | CHEBI:17306 | Maltose Hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.compound:potassium_2-ketogluconate | CHEBI:16808 | Potassium 2-ketogluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.compound:potassium_2-dehydro-d-gluconate | CHEBI:16808 | Potassium 2-dehydro-D-gluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.compound:potassium_5-dehydro-d-gluconate | CHEBI:58143 | Potassium 5-dehydro-D-gluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.compound:potassium_5-ketogluconate | CHEBI:58143 | Potassium 5-ketogluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:17620 | CHEBI:17620 | Ferulate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:55507 | CHEBI:55507 | 1-o-methyl Alpha-galactopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:36241 | CHEBI:36241 | Protocatechuate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -2801,7 +2806,6 @@ Total: 2850 ingredients
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0823 |  | L-inositol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0676 |  | Maltose Hydrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |
@@ -2825,10 +2829,6 @@ Total: 2850 ingredients
 | UNMAPPED_0765 |  | Peptone + Beef Extract + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0717 |  | Peptone + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0678 |  | Potassium 2-dehydro-D-gluconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0698 |  | Potassium 2-ketogluconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0639 |  | Potassium 5-dehydro-D-gluconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0637 |  | Potassium 5-ketogluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0838 |  | Proteose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0839 |  | Psicofuranine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0840 |  | Rhodomycin B | UNMAPPED |  |  | 0 |

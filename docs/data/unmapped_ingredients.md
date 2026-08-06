@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T05:34:28.528881+00:00
-Total: 506 ingredients
+Generated: 2026-08-06T06:08:12.790858+00:00
+Total: 501 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -457,7 +457,6 @@ Total: 506 ingredients
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0823 |  | L-inositol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0676 |  | Maltose Hydrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |
@@ -481,10 +480,6 @@ Total: 506 ingredients
 | UNMAPPED_0765 |  | Peptone + Beef Extract + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0717 |  | Peptone + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0678 |  | Potassium 2-dehydro-D-gluconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0698 |  | Potassium 2-ketogluconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0639 |  | Potassium 5-dehydro-D-gluconate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0637 |  | Potassium 5-ketogluconate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0838 |  | Proteose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0839 |  | Psicofuranine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0840 |  | Rhodomycin B | UNMAPPED |  |  | 0 |
