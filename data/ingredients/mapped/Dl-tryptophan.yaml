@@ -73,8 +73,17 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
     nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_287_cas_pattern
+  action: CORRECTED
+  changes: 'Removed cas_rn 200-194-9: an EC/EINECS registry number (NNN-NNN-N), not
+    a CAS-RN (NNNNNNN-NN-N). Caught by tightening the schema pattern from ^\d+-\d+-\d+$,
+    which matched both registries. This record''s CHEBI term publishes no CAS dbxref,
+    so there is no in-repo evidence for the correct value -- removed rather than guessed,
+    following PR #112 for Beef extract 103-47-9 (=CHES). The EC number is recorded
+    here because it was correct information in the wrong field.'
+  llm_assisted: true
 chemical_properties:
-  cas_rn: 200-194-9
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:51:58.519606+00:00'
   molecular_formula: C11H12N2O2
