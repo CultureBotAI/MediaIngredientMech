@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0832
+identifier: mesh:D009429
 preferred_term: Netropsin
 synonyms:
 - synonym_text: Netropsin
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -20,5 +20,22 @@ curation_history:
     CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0832 -> mesh:D009429 "Netropsin" (EXACT_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:netropsin); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: mesh:D009429
+  ontology_label: Netropsin
+  ontology_source: MESH
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Exact MeSH label match; absent from CHEBI and NCIT (#213).

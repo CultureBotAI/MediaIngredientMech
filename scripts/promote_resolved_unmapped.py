@@ -47,9 +47,13 @@ CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
 # accessions are absent locally, so a CHEBI-only helper called them unresolvable.
 _OAK = Path.home() / ".data" / "oaklib"
 ONTOLOGY_DB = {"CHEBI": CHEBI_DB, "NCIT": _OAK / "ncit.db",
-               "FOODON": _OAK / "foodon.db", "ENVO": _OAK / "envo.db"}
+               "FOODON": _OAK / "foodon.db", "ENVO": _OAK / "envo.db",
+               # MeSH is written lowercase in MIM records (mesh:C017721) but
+               # uppercase inside the build, so lookups upper-case the prefix.
+               "MESH": _OAK / "mesh.db"}
 OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl",
-                 "FOODON": "obo:foodon.owl", "ENVO": "obo:envo.owl"}
+                 "FOODON": "obo:foodon.owl", "ENVO": "obo:envo.owl",
+                 "MESH": "registry:mesh"}
 
 PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch",
              "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch",
@@ -68,7 +72,8 @@ from reground_mapped_record import (  # noqa: E402
 
 
 def canonical_label(cid: str) -> str:
-    prefix = cid.split(":", 1)[0]
+    prefix = cid.split(":", 1)[0].upper()
+    cid = f"{prefix}:{cid.split(':', 1)[1]}"      # builds store the prefix uppercase
     db = ONTOLOGY_DB.get(prefix)
     if db is None:
         raise SystemExit(f"{cid}: no local build configured for prefix {prefix!r} "
@@ -137,7 +142,7 @@ def main():
                 "MAPPING_SEMANTICS.md Section 3: a substance with no exact ontology "
                 "term takes its registry CURIE as identifier AND asserts a narrowMatch "
                 "to the nearest parent. Rule B1 then requires both SSSOM rows.")
-        elif a.parent.split(":", 1)[0] not in ONTOLOGY_DB:
+        elif a.parent.split(":", 1)[0].upper() not in ONTOLOGY_DB:
             raise SystemExit(f"--parent must be one of {', '.join(sorted(ONTOLOGY_DB))}")
         if a.parent:
             a.quality = "NARROW_MATCH"
@@ -145,7 +150,7 @@ def main():
     else:
         if a.parent:
             raise SystemExit("--parent applies only when --to is a registry mint")
-        if a.to.split(":", 1)[0] not in ONTOLOGY_DB:
+        if a.to.split(":", 1)[0].upper() not in ONTOLOGY_DB:
             raise SystemExit(f"this helper promotes to {', '.join(sorted(ONTOLOGY_DB))} ids "
                              "or a registry mint")
         if a.quality == "NARROW_MATCH":
@@ -190,7 +195,7 @@ def main():
     rec["identifier"] = a.to
     rec["ontology_mapping"] = {
         "ontology_id": term_curie, "ontology_label": label,
-        "ontology_source": term_curie.split(":", 1)[0],
+        "ontology_source": term_curie.split(":", 1)[0].upper(),
         "mapping_quality": a.quality,
         "evidence": [{"evidence_type": "DATABASE_MATCH", "source": a.evidence_source,
                       "notes": a.note or f"Resolved to {a.to} ({label})."}],
@@ -218,7 +223,7 @@ def main():
     row = "\t".join([f"MIM:{slug}", pref, PREDICATE[a.quality], term_curie, label,
                      (REGISTRY_SOURCE.get(term_curie.split(":", 1)[0], "")
                       if is_registry_mint(term_curie)
-                      else OBJECT_SOURCE.get(term_curie.split(":", 1)[0], "")),
+                      else OBJECT_SOURCE.get(term_curie.split(":", 1)[0].upper(), "")),
                      "semapv:ManualMappingCuration", src, a.date,
                      CONFIDENCE[a.quality], "", "", review]) + "\n"
     if minted and a.quality == "NARROW_MATCH":
