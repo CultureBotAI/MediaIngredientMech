@@ -10,7 +10,10 @@ ontology_mapping:
     source: kgmicrobe.compound:angustmycin
     notes: angustmycin A is a historical/trade name for the antibiotic psicofuranin
       — same molecule (curator-confirmed synonym).
-synonyms: []
+synonyms:
+- synonym_text: Psicofuranine
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -55,6 +58,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-06T07:14:29.509994+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed UNMAPPED_0839 ''Psicofuranine'' as a RAW_TEXT synonym -- Psicofuranine
+    is a registered synonym of CHEBI:8612 psicofuranin, held by the Angustmycin record;
+    angustmycin C and psicofuranine are the same nucleoside antibiotic (#213). No
+    new SSSOM row; CHEBI:8612 is already mapped. Source: kgmicrobe.trait:psicofuranine.'
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C11H15N5O5

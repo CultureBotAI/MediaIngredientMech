@@ -9,7 +9,10 @@ ontology_mapping:
   - evidence_type: LEXICAL_MATCH
     source: microbedecoder
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:netilmycin; '
-synonyms: []
+synonyms:
+- synonym_text: Netilmicin
+  synonym_type: RAW_TEXT
+  source: microbedecoder
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -43,4 +46,13 @@ curation_history:
     canonical label exact-matches the record ontology_label (case-insensitive). This
     does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
     PENDING_REVIEW -> MAPPED.'
+  llm_assisted: true
+- timestamp: '2026-08-06T07:14:29.509994+00:00'
+  curator: issue_213_grounding
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: 'Absorbed CHEBI:748901 ''Netilmicin'' as a RAW_TEXT synonym -- One drug
+    under two spellings held by two records — the exact oddity #203 flagged, where
+    Netilmycin was promoted to CHEBI:7528 while Netilmicin was demoted. ''Netilmicin''
+    is a registered synonym of CHEBI:7528, so the two records are merged (#213, #203).
+    No new SSSOM row; CHEBI:7528 is already mapped.'
   llm_assisted: true

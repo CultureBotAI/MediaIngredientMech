@@ -1,10 +1,14 @@
 # All Ingredients
 
-Generated: 2026-08-06T07:02:57.589896+00:00
-Total: 2848 ingredients
+Generated: 2026-08-06T07:15:48.785562+00:00
+Total: 2846 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:27374 | CHEBI:27374 | L-inositol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:82679 | CHEBI:82679 | Nutriacholic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:81879 | CHEBI:81879 | Rhodomycin B | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:18394 | CHEBI:18394 | Palatinose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:75273 | CHEBI:75273 | Niaproof | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:37671 | CHEBI:37671 | 3-beta-d-glucan | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | CHEBI:73908 | 2,4-diamino-6,7-di-iso-propylpteridine phosphate | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -2803,7 +2807,6 @@ Total: 2848 ingredients
 | UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0648 |  | L-alanine 4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0823 |  | L-inositol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0762 |  | Methyamine | UNMAPPED |  |  | 0 |
@@ -2811,7 +2814,6 @@ Total: 2848 ingredients
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0832 |  | Netropsin | UNMAPPED |  |  | 0 |
-| UNMAPPED_0833 |  | Nutriacholic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0719 |  | PY-cellobiose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0767 |  | PY-fructose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0768 |  | PY-glucose-rumen Fluid | NEEDS_EXPERT |  |  | 0 |
@@ -2822,14 +2824,11 @@ Total: 2848 ingredients
 | UNMAPPED_0628 |  | PYG | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0704 |  | PYGS | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0773 |  | PYG + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0834 |  | Palatinose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0766 |  | Peptone-yeast Extract-glucose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0765 |  | Peptone + Beef Extract + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0717 |  | Peptone + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0838 |  | Proteose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0839 |  | Psicofuranine | UNMAPPED |  |  | 0 |
-| UNMAPPED_0840 |  | Rhodomycin B | UNMAPPED |  |  | 0 |
 | UNMAPPED_0841 |  | Ristocetin A | UNMAPPED |  |  | 0 |
 | UNMAPPED_0842 |  | Rna | UNMAPPED |  |  | 0 |
 | UNMAPPED_0705 |  | Sucrose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
@@ -2851,5 +2850,4 @@ Total: 2848 ingredients
 | CHEBI:756054 |  | Carbomycin | UNMAPPED |  |  | 0 |
 | CHEBI:759883 |  | Colistin Sulfate | UNMAPPED |  |  | 0 |
 | CHEBI:753395 |  | Lysostaphin | UNMAPPED |  |  | 0 |
-| CHEBI:748901 |  | Netilmicin | UNMAPPED |  |  | 0 |
 | CHEBI:759086 |  | Polymyxin B | UNMAPPED |  |  | 0 |
