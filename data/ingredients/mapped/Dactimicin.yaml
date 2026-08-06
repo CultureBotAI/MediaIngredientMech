@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0729
+identifier: CHEBI:81430
 preferred_term: Dactimicin
 synonyms:
 - synonym_text: Dactimicin
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -20,5 +20,22 @@ curation_history:
     CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0729 -> CHEBI:81430 "Formimidoyl-fortimicin A" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:dactimicin); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:81430
+  ontology_label: Formimidoyl-fortimicin A
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Dactimicin is the trivial name for formimidoyl-fortimicin A (#213).

@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0819
+identifier: CHEBI:24750
 preferred_term: Hydroxystreptomycin
 synonyms:
 - synonym_text: Hydroxystreptomycin
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -20,5 +20,23 @@ curation_history:
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0819 -> CHEBI:24750 "5'-hydroxystreptomycin" (CLOSE_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:hydroxystreptomycin);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:24750
+  ontology_label: 5'-hydroxystreptomycin
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Hydroxystreptomycin conventionally denotes 5'-hydroxystreptomycin; CLOSE_MATCH
+      because the term names the position and the label does not (#213).

@@ -1,10 +1,17 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T03:59:53.128326+00:00
-Total: 2325 ingredients
+Generated: 2026-08-06T04:29:17.676256+00:00
+Total: 2332 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:15978 | CHEBI:15978 | Glycerol 3-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:24750 | CHEBI:24750 | Hydroxystreptomycin | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:81287 | CHEBI:81287 | Neomycin F | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:81430 | CHEBI:81430 | Dactimicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:27907 | CHEBI:27907 | Alpha-L-rhamnose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:2179 | CHEBI:2179 | 6-deoxy-d-galactose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:67135 | CHEBI:67135 | Azomycin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:17833 | CHEBI:17833 | Gentamicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:71422 | CHEBI:71422 | Beta-gentiobiose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:17784 | CHEBI:17784 | D-glucosaminic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |

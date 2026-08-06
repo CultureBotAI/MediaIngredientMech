@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0796
+identifier: CHEBI:27907
 preferred_term: Alpha-L-rhamnose
 synonyms:
 - synonym_text: Alpha-L-rhamnose
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -20,5 +20,23 @@ curation_history:
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0796 -> CHEBI:27907 "alpha-L-rhamnopyranose" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:alpha_l_rhamnose);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:27907
+  ontology_label: alpha-L-rhamnopyranose
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: alpha-L-rhamnose is the alpha-L-rhamnopyranose ring form of the same sugar
+      (#213).
