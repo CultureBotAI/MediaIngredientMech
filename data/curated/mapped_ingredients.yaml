@@ -1,8 +1,501 @@
 generation_date: '2026-08-06T02:48:13.816290+00:00'
-total_count: 2308
-mapped_count: 2289
+total_count: 2319
+mapped_count: 2300
 unmapped_count: 0
 ingredients:
+- identifier: CHEBI:22210
+  preferred_term: Aconitate
+  synonyms:
+  - synonym_text: Aconitate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:aconitate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0725 -> CHEBI:22210 "aconitate(3-)" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:aconitate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:22210
+    ontology_label: aconitate(3-)
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Aconitate' grounded to the fully-deprotonated aconitate(3-),
+        the species present at growth-medium pH. The bare name is NOT a registered
+        CHEBI synonym of this term, hence CLOSE_MATCH rather than SYNONYM_MATCH. Naive
+        first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:16087
+  preferred_term: Isocitrate
+  synonyms:
+  - synonym_text: Isocitrate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 7
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:isocitrate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0685 -> CHEBI:16087 "isocitrate(3-)" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:isocitrate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:16087
+    ontology_label: isocitrate(3-)
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Isocitrate' grounded to the fully-deprotonated isocitrate(3-),
+        the species present at growth-medium pH. The bare name is NOT a registered
+        CHEBI synonym of this term, hence CLOSE_MATCH rather than SYNONYM_MATCH. Naive
+        first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:17128
+  preferred_term: Adipate
+  synonyms:
+  - synonym_text: Adipate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 466
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:adipate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0623 -> CHEBI:17128 "adipate(2-)" (CLOSE_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:adipate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:17128
+    ontology_label: adipate(2-)
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Adipate' grounded to the fully-deprotonated adipate(2-),
+        the species present at growth-medium pH. The bare name is NOT a registered
+        CHEBI synonym of this term, hence CLOSE_MATCH rather than SYNONYM_MATCH. Naive
+        first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:30043
+  preferred_term: Terephthalate
+  synonyms:
+  - synonym_text: Terephthalate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:terephthalate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0846 -> CHEBI:30043 "terephthalate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:terephthalate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:30043
+    ontology_label: terephthalate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Terephthalate' grounded to the fully-deprotonated terephthalate(2-),
+        the species present at growth-medium pH. MIM grounds bare anion labels to
+        the bare-name CHEBI class where one exists (succinate, acetate, lactate);
+        this acid has none, so the fully-deprotonated conjugate base is the correct
+        target. Naive first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:30803
+  preferred_term: Isophthalate
+  synonyms:
+  - synonym_text: Isophthalate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:isophthalate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0820 -> CHEBI:30803 "isophthalate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:isophthalate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:30803
+    ontology_label: isophthalate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Isophthalate' grounded to the fully-deprotonated isophthalate(2-),
+        the species present at growth-medium pH. MIM grounds bare anion labels to
+        the bare-name CHEBI class where one exists (succinate, acetate, lactate);
+        this acid has none, so the fully-deprotonated conjugate base is the correct
+        target. Naive first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:13997
+  preferred_term: Citramalate
+  synonyms:
+  - synonym_text: Citramalate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:citramalate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0807 -> CHEBI:13997 "citramalate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:citramalate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:13997
+    ontology_label: citramalate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Citramalate' grounded to the fully-deprotonated citramalate(2-),
+        the species present at growth-medium pH. MIM grounds bare anion labels to
+        the bare-name CHEBI class where one exists (succinate, acetate, lactate);
+        this acid has none, so the fully-deprotonated conjugate base is the correct
+        target. Naive first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:30719
+  preferred_term: Citraconate
+  synonyms:
+  - synonym_text: Citraconate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:citraconate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0727 -> CHEBI:30719 "citraconate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:citraconate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:30719
+    ontology_label: citraconate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Citraconate' grounded to the fully-deprotonated citraconate(2-),
+        the species present at growth-medium pH. MIM grounds bare anion labels to
+        the bare-name CHEBI class where one exists (succinate, acetate, lactate);
+        this acid has none, so the fully-deprotonated conjugate base is the correct
+        target. Naive first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:16537
+  preferred_term: Galactarate
+  synonyms:
+  - synonym_text: Galactarate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 15
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:galactarate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0662 -> CHEBI:16537 "galactarate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:galactarate); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:16537
+    ontology_label: galactarate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Galactarate' grounded to the fully-deprotonated galactarate(2-),
+        the species present at growth-medium pH. MIM grounds bare anion labels to
+        the bare-name CHEBI class where one exists (succinate, acetate, lactate);
+        this acid has none, so the fully-deprotonated conjugate base is the correct
+        target. Naive first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:17240
+  preferred_term: Itaconate
+  synonyms:
+  - synonym_text: Itaconate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 39
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:itaconate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0638 -> CHEBI:17240 "itaconate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:itaconate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:17240
+    ontology_label: itaconate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Itaconate' grounded to the fully-deprotonated itaconate(2-),
+        the species present at growth-medium pH. MIM grounds bare anion labels to
+        the bare-name CHEBI class where one exists (succinate, acetate, lactate);
+        this acid has none, so the fully-deprotonated conjugate base is the correct
+        target. Naive first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:29806
+  preferred_term: Fumarate
+  synonyms:
+  - synonym_text: Fumarate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 103
+      source_columns: BacDive_Metabolite_production|BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:fumarate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0630 -> CHEBI:29806 "fumarate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:fumarate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:29806
+    ontology_label: fumarate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Fumarate' grounded to the fully-deprotonated fumarate(2-),
+        the species present at growth-medium pH. MIM grounds bare anion labels to
+        the bare-name CHEBI class where one exists (succinate, acetate, lactate);
+        this acid has none, so the fully-deprotonated conjugate base is the correct
+        target. Naive first-match enumeration would have picked the mono-anion (#213).
+- identifier: CHEBI:15792
+  preferred_term: Malonate
+  synonyms:
+  - synonym_text: Malonate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 131
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:malonate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0627 -> CHEBI:15792 "malonate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:malonate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:15792
+    ontology_label: malonate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Bare anion label 'Malonate' grounded to the fully-deprotonated malonate(2-),
+        the species present at growth-medium pH. MIM's existing convention grounds
+        bare anion labels to the bare-name CHEBI class where one exists (succinate,
+        acetate, lactate); malonic acid has no bare class, so the fully-deprotonated
+        conjugate base is the correct target. 'malonate' is a registered synonym of
+        CHEBI:15792.
 - identifier: CHEBI:64243
   preferred_term: Sodium L-glutamate
   synonyms:
