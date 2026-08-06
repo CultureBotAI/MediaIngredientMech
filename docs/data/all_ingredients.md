@@ -1,10 +1,13 @@
 # All Ingredients
 
-Generated: 2026-08-06T05:10:56.133090+00:00
-Total: 2855 ingredients
+Generated: 2026-08-06T05:19:56.128944+00:00
+Total: 2853 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:167506 | CHEBI:167506 | 2-dimethylsuccinic Acid | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:17464 | CHEBI:17464 | L-galactonic Acid Gamma-lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:5390 | CHEBI:5390 | Glutamyl-glutamic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:149531 | CHEBI:149531 | Carminate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:90601 | CHEBI:90601 | L-pyroglutamic Acid 2-naphthylamide | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16077 | CHEBI:16077 | Glucose 1-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
@@ -2721,15 +2724,12 @@ Total: 2855 ingredients
 | UNMAPPED_0272 |  | ZMB_ALS | UNMAPPED |  |  | 33 |
 | UNMAPPED_0150 |  | Zinc-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0587 |  | α-D-Glucose monohydrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0694 |  | (2)-D-lactose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0619 |  | 0129 (2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0735 |  | 1-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0720 |  | 1-o-methyl Alpha-galactopyranoside | UNMAPPED |  |  | 0 |
 | UNMAPPED_0715 |  | 1-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0679 |  | 2-butanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0695 |  | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0696 |  | 2-dimethylsuccinic Acid | UNMAPPED |  |  | 0 |
-| UNMAPPED_0723 |  | 2-propandiol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0674 |  | 2-propanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0785 |  | 2-tetrachloroethane | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0671 |  | 3-O-methyl Alpha-D-glucopyranoside | UNMAPPED |  |  | 0 |
@@ -2789,7 +2789,6 @@ Total: 2855 ingredients
 | UNMAPPED_0753 |  | Glucose Peptone-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0754 |  | Glucose + Xylose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0675 |  | Glucose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0712 |  | Glutamyl-glutamic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0816 |  | Glycine 1% | UNMAPPED |  |  | 0 |
 | UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0756 |  | H2+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
@@ -2801,7 +2800,6 @@ Total: 2855 ingredients
 | UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0821 |  | Keratin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0648 |  | L-alanine 4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0713 |  | L-galactonic Acid Gamma-lactone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0823 |  | L-inositol | UNMAPPED |  |  | 0 |
 | UNMAPPED_0690 |  | L-proline-4-nitroanilide | UNMAPPED |  |  | 0 |

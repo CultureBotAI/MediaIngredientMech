@@ -1,8 +1,134 @@
-generation_date: '2026-08-06T05:06:48.536349+00:00'
-total_count: 2338
-mapped_count: 2319
+generation_date: '2026-08-06T05:15:48.923652+00:00'
+total_count: 2341
+mapped_count: 2322
 unmapped_count: 0
 ingredients:
+- identifier: CHEBI:167506
+  preferred_term: 2-dimethylsuccinic Acid
+  synonyms:
+  - synonym_text: 2-dimethylsuccinic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 4
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_dimethylsuccinic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0696 -> CHEBI:167506 "2,3-dimethylsuccinic acid" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_dimethylsuccinic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:167506
+    ontology_label: 2,3-dimethylsuccinic acid
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: '''2-dimethylsuccinic acid'' is a truncation of 2,3-dimethylsuccinic
+        acid -- a single locant cannot carry two methyl groups. CLOSE_MATCH because
+        the label lost the second locant rather than stating it (#213).'
+- identifier: CHEBI:17464
+  preferred_term: L-galactonic Acid Gamma-lactone
+  synonyms:
+  - synonym_text: L-galactonic Acid Gamma-lactone
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 3
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_galactonic_acid_gamma_lactone);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0713 -> CHEBI:17464 "L-galactono-1,4-lactone" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_galactonic_acid_gamma_lactone);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:17464
+    ontology_label: L-galactono-1,4-lactone
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: L-galactonic acid gamma-lactone is L-galactono-1,4-lactone; the gamma-lactone
+        is the 1,4-lactone (#213).
+- identifier: CHEBI:5390
+  preferred_term: Glutamyl-glutamic Acid
+  synonyms:
+  - synonym_text: Glutamyl-glutamic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 3
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:glutamyl_glutamic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0712 -> CHEBI:5390 "Glu-Glu" (SYNONYM_MATCH); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glutamyl_glutamic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:5390
+    ontology_label: Glu-Glu
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Glutamyl-glutamic acid is the dipeptide Glu-Glu (#213).
 - identifier: CHEBI:149531
   preferred_term: Carminate
   synonyms:
@@ -4385,7 +4511,10 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
-  synonyms: []
+  synonyms:
+  - synonym_text: 2-propandiol
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -4415,6 +4544,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-06T05:15:48.923652+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0723 ''2-propandiol'' as a RAW_TEXT synonym -- Truncation
+      artifact of 1,2-propanediol; a diol cannot carry a single locant (#213). No
+      new SSSOM row; CHEBI:16997 is already mapped. Source: kgmicrobe.trait:2_propandiol.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 57-55-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -81175,6 +81311,9 @@ ingredients:
   - synonym_text: beta-D-galactopyranosyl-(1->4)-D-glucopyranose
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: (2)-D-lactose
+    synonym_type: RAW_TEXT
+    source: microbedecoder
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 38
@@ -81245,6 +81384,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-06T05:15:48.923652+00:00'
+    curator: issue_213_grounding
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0694 ''(2)-D-lactose'' as a RAW_TEXT synonym -- Parse
+      artifact: the leading ''(2)'' is stray text, the substance is D-lactose (#213).
+      No new SSSOM row; CHEBI:17716 is already mapped. Source: kgmicrobe.trait:2_d_lactose.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 63-42-3
     data_source: PubChem (via CHEBI:17716)
