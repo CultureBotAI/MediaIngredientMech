@@ -91,6 +91,20 @@ def canonical_label(cid: str) -> str:
     return row[0]
 
 
+def _source_enum(curie: str) -> str:
+    """The `ontology_source` enum value for a target CURIE.
+
+    The schema accepts upper-case ontology prefixes but lower-case registry
+    namespaces (`kgmicrobe.compound`, `kgmicrobe.ingredient`), with `cas` as CAS.
+    Upper-casing everything produced KGMICROBE.COMPOUND, which the write-time
+    validator rejected -- correctly, and before anything reached disk.
+    """
+    prefix = curie.split(":", 1)[0]
+    if prefix.lower().startswith("kgmicrobe."):
+        return prefix.lower()
+    return prefix.upper()
+
+
 def _sorted_insert(lines: list[str], header_i: int, new_subject_label: str, new_row: str) -> int:
     """Insert new_row among data rows in subject_label (col 2) ascending order."""
     i = header_i + 1
@@ -195,7 +209,9 @@ def main():
     rec["identifier"] = a.to
     rec["ontology_mapping"] = {
         "ontology_id": term_curie, "ontology_label": label,
-        "ontology_source": term_curie.split(":", 1)[0].upper(),
+        # Ontology prefixes are upper-case in the schema enum; registry namespaces
+        # keep their own form there (kgmicrobe.compound stays lower-case, cas -> CAS).
+        "ontology_source": _source_enum(term_curie),
         "mapping_quality": a.quality,
         "evidence": [{"evidence_type": "DATABASE_MATCH", "source": a.evidence_source,
                       "notes": a.note or f"Resolved to {a.to} ({label})."}],

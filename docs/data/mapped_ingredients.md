@@ -1,10 +1,18 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T08:40:49.669837+00:00
-Total: 2377 ingredients
+Generated: 2026-08-06T09:03:56.000938+00:00
+Total: 2385 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.compound:aminovalerate | kgmicrobe.compound:aminovalerate | Aminovalerate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:isopropionate | kgmicrobe.compound:isopropionate | Isopropionate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:butamine | kgmicrobe.compound:butamine | Butamine | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:synanthrin | kgmicrobe.compound:synanthrin | Synanthrin | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:proteose | kgmicrobe.compound:proteose | Proteose | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:furaxone | kgmicrobe.compound:furaxone | Furaxone | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:medicamycin | kgmicrobe.compound:medicamycin | Medicamycin | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:bacillomycin | kgmicrobe.compound:bacillomycin | Bacillomycin | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | mesh:D007633 | mesh:D007633 | Keratin | MAPPED | MESH | CLOSE_MATCH | 0 |
 | mesh:C016719 | mesh:C016719 | Ristocetin A | MAPPED | MESH | EXACT_MATCH | 0 |
 | mesh:D009429 | mesh:D009429 | Netropsin | MAPPED | MESH | EXACT_MATCH | 0 |

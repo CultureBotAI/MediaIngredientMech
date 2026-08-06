@@ -1,10 +1,18 @@
 # All Ingredients
 
-Generated: 2026-08-06T08:40:49.672962+00:00
+Generated: 2026-08-06T09:03:56.004154+00:00
 Total: 2842 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.compound:aminovalerate | kgmicrobe.compound:aminovalerate | Aminovalerate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:isopropionate | kgmicrobe.compound:isopropionate | Isopropionate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:butamine | kgmicrobe.compound:butamine | Butamine | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:synanthrin | kgmicrobe.compound:synanthrin | Synanthrin | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:proteose | kgmicrobe.compound:proteose | Proteose | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:furaxone | kgmicrobe.compound:furaxone | Furaxone | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:medicamycin | kgmicrobe.compound:medicamycin | Medicamycin | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:bacillomycin | kgmicrobe.compound:bacillomycin | Bacillomycin | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | mesh:D007633 | mesh:D007633 | Keratin | MAPPED | MESH | CLOSE_MATCH | 0 |
 | mesh:C016719 | mesh:C016719 | Ristocetin A | MAPPED | MESH | EXACT_MATCH | 0 |
 | mesh:D009429 | mesh:D009429 | Netropsin | MAPPED | MESH | EXACT_MATCH | 0 |
@@ -2771,11 +2779,8 @@ Total: 2842 ingredients
 | UNMAPPED_0791 |  | 4-diol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0795 |  | Alpha-hydroxyglutarate-gamma-lactone | UNMAPPED |  |  | 0 |
-| UNMAPPED_0738 |  | Aminovalerate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0716 |  | BHI | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0799 |  | Bacillomycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0804 |  | Butamine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0805 |  | Butane-1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
@@ -2792,7 +2797,6 @@ Total: 2842 ingredients
 | UNMAPPED_0745 |  | Formate+methanol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0746 |  | Formate+tetramethylammonium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0747 |  | Formate+trimethylamine | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0815 |  | Furaxone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0755 |  | GYPS | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0748 |  | Gallate + Formate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0731 |  | Gelatin Hydrolyzed | UNMAPPED |  |  | 0 |
@@ -2812,9 +2816,7 @@ Total: 2842 ingredients
 | UNMAPPED_0703 |  | H2+methanol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0758 |  | H2+tetramethylammonium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0761 |  | Isopropionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0827 |  | Medicamycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
@@ -2832,10 +2834,8 @@ Total: 2842 ingredients
 | UNMAPPED_0765 |  | Peptone + Beef Extract + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0717 |  | Peptone + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0838 |  | Proteose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0705 |  | Sucrose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0663 |  | Sugars | UNMAPPED |  |  | 0 |
-| UNMAPPED_0844 |  | Synanthrin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0845 |  | Synthetic Sea Salts (sss) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0776 |  | TYGVS + Glucose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0847 |  | Tetrabromopyrrole | UNMAPPED |  |  | 0 |
