@@ -111,3 +111,34 @@ def test_a_stale_object_id_is_refused(tmp_path, monkeypatch):
     _write(tmp_path, monkeypatch)
     with pytest.raises(SystemExit):
         mod.plan_sssom("Widget", "CHEBI:999", "CHEBI:222", "p")
+
+
+# --- Rule B1 slug conformance (#279) ------------------------------------------
+# Rule B1 does not just want *a* registry row: _has_registry_row matches
+# kgmicrobe.(ingredient|compound):<subject slug lowercased> exactly. A mint spelled
+# differently produces a row that looks right and satisfies nothing — caught only
+# after the write, as CI failing on an already-published row.
+
+
+def test_mint_local_part_is_derived_from_the_subject_slug():
+    got = mod.check_registry_mint("kgmicrobe.compound:", "Potassium_5-ketogluconate")
+    assert got == "kgmicrobe.compound:potassium_5-ketogluconate"
+
+
+def test_a_mismatched_mint_is_refused_and_the_message_names_the_right_one():
+    """This exact spelling passed the tool and then failed Rule B1 in practice."""
+    with pytest.raises(SystemExit) as e:
+        mod.check_registry_mint("kgmicrobe.compound:potassium_5_ketogluconate",
+                                "Potassium_5-ketogluconate")
+    assert "kgmicrobe.compound:potassium_5-ketogluconate" in str(e.value)
+
+
+def test_a_correctly_spelled_mint_passes_through():
+    curie = "kgmicrobe.compound:maltose_hydrate"
+    assert mod.check_registry_mint(curie, "Maltose_Hydrate") == curie
+
+
+def test_cas_mints_are_exempt_from_slug_conformance():
+    """Rule B1's registry regex covers the kgmicrobe namespaces; a CAS number has
+    no relationship to the subject slug and must not be rewritten into one."""
+    assert mod.check_registry_mint("cas:150-90-3", "Sodium_Succinate_Dibasic") == "cas:150-90-3"

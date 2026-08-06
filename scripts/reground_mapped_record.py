@@ -75,6 +75,32 @@ def is_registry_mint(curie: str) -> bool:
     return curie.startswith(REGISTRY_PREFIXES)
 
 
+def check_registry_mint(curie: str, subject_slug: str) -> str:
+    """Return ``curie`` if Rule B1 will accept it for this subject, else explain.
+
+    Rule B1 does not merely require *a* registry row: ``_has_registry_row`` matches
+    ``kgmicrobe.(ingredient|compound):<subject_slug lowercased>`` exactly. A mint whose
+    local part is spelled differently -- `potassium_5_ketogluconate` for subject
+    `MIM:Potassium_5-ketogluconate` -- produces a row that looks right, satisfies no
+    rule, and fails validate_sssom_invariants only after the write. So the local part
+    is derived from the subject rather than trusted from the caller.
+
+    `cas:` mints are exempt: Rule B1's registry regex covers the kgmicrobe namespaces,
+    and a CAS number has no relationship to the slug.
+    """
+    prefix, _, local = curie.partition(":")
+    if prefix == "cas":
+        return curie
+    want = subject_slug.lower()
+    if local and local != want:
+        raise SystemExit(
+            f"registry mint {curie} will not satisfy Rule B1 for subject "
+            f"MIM:{subject_slug}.\nRule B1 matches "
+            f"kgmicrobe.(ingredient|compound):<subject slug lowercased>, so use:\n"
+            f"  {prefix}:{want}")
+    return f"{prefix}:{want}"
+
+
 def chebi_label(curie: str) -> str:
     con = sqlite3.connect(CHEBI_DB)
     row = con.execute(

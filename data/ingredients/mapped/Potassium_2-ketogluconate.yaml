@@ -1,0 +1,43 @@
+identifier: kgmicrobe.compound:potassium_2-ketogluconate
+preferred_term: Potassium 2-ketogluconate
+synonyms:
+- synonym_text: Potassium 2-ketogluconate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 4
+    source_columns: BacDive_Metabolite_utilization
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.trait:potassium_2_ketogluconate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0698 -> kgmicrobe.compound:potassium_2-ketogluconate
+    "2-dehydro-D-gluconate" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM
+    row added.
+notes: Imported from microbedecoder (source_id=kgmicrobe.trait:potassium_2_ketogluconate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:16808
+  ontology_label: 2-dehydro-D-gluconate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: Potassium 2-ketogluconate is the potassium salt of 2-dehydro-D-gluconate
+      (2-ketogluconate). CHEBI has the anion but not the salt (#213).
