@@ -435,6 +435,37 @@ classes:
         description: Sample media names (for reference)
       concentration_range:
         description: Observed concentration range (if available)
+      source_occurrences:
+        multivalued: true
+        inlined_as_list: true
+        range: SourceOccurrence
+        description: >-
+          Prevalence recorded by a NON-media source, kept separate from
+          total_occurrences/media_count so it never inflates the media counts.
+          total_occurrences answers "in how many CultureMech media recipes does this
+          appear", which is legitimately 0 for an ingredient sourced from BacDive
+          traits or Bergey substrates. Recording that alone discarded the abundance
+          signal those sources carry -- the same signal used to rank the candidates
+          worth onboarding -- leaving 386 zero-weight records for anything
+          downstream that weights ingredients by prevalence (#196).
+
+  SourceOccurrence:
+    description: >-
+      An occurrence count attributed to a specific upstream source, with the
+      source's own provenance detail.
+    attributes:
+      source:
+        required: true
+        description: Upstream dataset the count comes from (e.g. microbedecoder)
+      count:
+        range: integer
+        required: true
+        description: Number of occurrences that source reports
+      source_columns:
+        description: >-
+          The upstream columns the count was aggregated over, verbatim (e.g.
+          `BacDive_Metabolite_utilization|Bergey_substrate`), so the number stays
+          interpretable without the original extract.
 
   CurationEvent:
     description: Audit trail entry for a curation action
