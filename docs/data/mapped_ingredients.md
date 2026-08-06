@@ -1,10 +1,15 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T03:15:57.123120+00:00
-Total: 2319 ingredients
+Generated: 2026-08-06T03:47:31.829166+00:00
+Total: 2324 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| CHEBI:71422 | CHEBI:71422 | Beta-gentiobiose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:17784 | CHEBI:17784 | D-glucosaminic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:30566 | CHEBI:30566 | 4-aminobutyrate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15588 | CHEBI:15588 | D-malate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:73908 | CHEBI:73908 | Vibriostat | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:22210 | CHEBI:22210 | Aconitate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:16087 | CHEBI:16087 | Isocitrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:17128 | CHEBI:17128 | Adipate | MAPPED | CHEBI | CLOSE_MATCH | 0 |

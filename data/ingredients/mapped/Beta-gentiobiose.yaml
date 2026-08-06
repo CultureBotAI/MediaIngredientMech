@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0672
+identifier: CHEBI:71422
 preferred_term: Beta-gentiobiose
 synonyms:
 - synonym_text: Beta-gentiobiose
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -20,5 +20,23 @@ curation_history:
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   new_status: UNMAPPED
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0672 -> CHEBI:71422 "beta-D-Glcp-(1->6)-beta-D-Glcp"
+    (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:beta_gentiobiose);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:71422
+  ontology_label: beta-D-Glcp-(1->6)-beta-D-Glcp
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#213)
+    notes: beta-gentiobiose is the trivial name for beta-D-Glcp-(1->6)-beta-D-Glcp
+      (#213).

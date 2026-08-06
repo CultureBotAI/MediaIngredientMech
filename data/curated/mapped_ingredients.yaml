@@ -1,8 +1,218 @@
 generation_date: '2026-08-06T02:48:13.816290+00:00'
-total_count: 2319
-mapped_count: 2300
+total_count: 2324
+mapped_count: 2305
 unmapped_count: 0
 ingredients:
+- identifier: CHEBI:71422
+  preferred_term: Beta-gentiobiose
+  synonyms:
+  - synonym_text: Beta-gentiobiose
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 9
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:beta_gentiobiose);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0672 -> CHEBI:71422 "beta-D-Glcp-(1->6)-beta-D-Glcp"
+      (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:beta_gentiobiose);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:71422
+    ontology_label: beta-D-Glcp-(1->6)-beta-D-Glcp
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: beta-gentiobiose is the trivial name for beta-D-Glcp-(1->6)-beta-D-Glcp
+        (#213).
+- identifier: CHEBI:17784
+  preferred_term: D-glucosaminic Acid
+  synonyms:
+  - synonym_text: D-glucosaminic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 16
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glucosaminic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0656 -> CHEBI:17784 "2-amino-2-deoxy-D-gluconic acid"
+      (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glucosaminic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:17784
+    ontology_label: 2-amino-2-deoxy-D-gluconic acid
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: D-glucosaminic acid is the trivial name for 2-amino-2-deoxy-D-gluconic
+        acid (#213).
+- identifier: CHEBI:30566
+  preferred_term: 4-aminobutyrate
+  synonyms:
+  - synonym_text: 4-aminobutyrate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 7
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_aminobutyrate);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0680 -> CHEBI:30566 "gamma-aminobutyrate" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_aminobutyrate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:30566
+    ontology_label: gamma-aminobutyrate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: 4-aminobutyrate and gamma-aminobutyrate (GABA) are the same compound
+        under positional vs Greek locant naming (#213).
+- identifier: CHEBI:15588
+  preferred_term: D-malate
+  synonyms:
+  - synonym_text: D-malate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 33
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_malate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0640 -> CHEBI:15588 "(R)-malate(2-)" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_malate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:15588
+    ontology_label: (R)-malate(2-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: D-malate is (R)-malate; CHEBI:15588 '(R)-malate(2-)' is the fully-deprotonated
+        species at medium pH, per the anion convention in this issue (#213).
+- identifier: CHEBI:73908
+  preferred_term: Vibriostat
+  synonyms:
+  - synonym_text: Vibriostat
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 16
+      source_columns: BacDive_Antibiotic_resistance|BacDive_Antibiotic_sensitivity
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:vibriostat);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0659 -> CHEBI:73908 "2,4-diamino-6,7-diisopropylpteridine"
+      (SYNONYM_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:vibriostat); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:73908
+    ontology_label: 2,4-diamino-6,7-diisopropylpteridine
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: '''Vibriostat'' is a registered synonym of CHEBI:73908 2,4-diamino-6,7-diisopropylpteridine,
+        whose synonym set includes O/129 and vibriostatic agent O/129 (#213).'
 - identifier: CHEBI:22210
   preferred_term: Aconitate
   synonyms:

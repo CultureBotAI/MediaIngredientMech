@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T03:15:57.126227+00:00
-Total: 553 ingredients
+Generated: 2026-08-06T03:47:31.834309+00:00
+Total: 548 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -401,7 +401,6 @@ Total: 553 ingredients
 | UNMAPPED_0736 |  | 3-methylacetate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0687 |  | 3-methylglucose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0680 |  | 4-aminobutyrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0790 |  | 4-dihydroxy-biphenyl | UNMAPPED |  |  | 0 |
 | UNMAPPED_0791 |  | 4-diol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
@@ -421,7 +420,6 @@ Total: 553 ingredients
 | UNMAPPED_0799 |  | Bacillomycin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0650 |  | Bacteriochlorophyll Alpha | UNMAPPED |  |  | 0 |
 | UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
-| UNMAPPED_0672 |  | Beta-gentiobiose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0697 |  | Bis-4-nitrophenyl-phenyl Phosphonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0691 |  | Bis-4-nitrophenyl-phosphorylcholine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0802 |  | Bottromycin | UNMAPPED |  |  | 0 |
@@ -437,9 +435,7 @@ Total: 553 ingredients
 | UNMAPPED_0808 |  | Crude Oil | UNMAPPED |  |  | 0 |
 | UNMAPPED_0701 |  | Cyclopentanol+CO2 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0649 |  | D-galactonic Acid Lactone | UNMAPPED |  |  | 0 |
-| UNMAPPED_0656 |  | D-glucosaminic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0709 |  | D-lactic Acid Methyl Ester | UNMAPPED |  |  | 0 |
-| UNMAPPED_0640 |  | D-malate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0657 |  | D-saccharate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0682 |  | DL-lactate | UNMAPPED |  |  | 0 |
@@ -545,7 +541,6 @@ Total: 553 ingredients
 | UNMAPPED_0673 |  | Triphenyltetrazolium Chloride | UNMAPPED |  |  | 0 |
 | UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0659 |  | Vibriostat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0714 |  | Vibriostatic Agent O/129 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0777 |  | Yeast Extract + Gluconate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0778 |  | Yeast Extract + Glucose | NEEDS_EXPERT |  |  | 0 |
