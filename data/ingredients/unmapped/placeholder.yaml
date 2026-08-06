@@ -1,0 +1,96 @@
+category: PLACEHOLDER
+count: 2
+ingredients:
+- identifier: UNMAPPED_0001
+  preferred_term: Full composition available at source database
+  synonyms:
+  - synonym_text: Full composition available at source database
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  mapping_status: UNMAPPED
+  ingredient_type: UNDEFINED_MIXTURE
+  occurrence_statistics:
+    total_occurrences: 196
+    media_count: 196
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_PLACEHOLDER_TERM
+    changes: Left unmapped because the term is a source-composition placeholder, not
+      a media ingredient or mixture identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_PLACEHOLDER_TERM
+    changes: Set ingredient_type=UNDEFINED_MIXTURE as a non-identity placeholder category
+      because the term points to external composition details rather than naming a
+      specific ingredient identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-07-05T00:00:00+00:00'
+    curator: cbclaw_followups_114
+    action: FLAGGED_NON_INGREDIENT
+    changes: Flagged as NON_INGREDIENT / source-composition placeholder (not a chemical
+      or mixture identity). Retained UNMAPPED; no ontology mapping invented and record
+      not deleted.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: See source for composition; reviewed on 2026-05-11
+    and retained unmapped because this is a source-composition placeholder rather
+    than a standalone ingredient identity. NON_INGREDIENT: placeholder term, not a
+    mappable ingredient (flagged 2026-07-05).'
+- identifier: UNMAPPED_0002
+  preferred_term: See source for composition
+  synonyms: []
+  mapping_status: UNMAPPED
+  ingredient_type: UNDEFINED_MIXTURE
+  occurrence_statistics:
+    total_occurrences: 143
+    media_count: 143
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_PLACEHOLDER_TERM
+    changes: Left unmapped because the term is a source-composition placeholder, not
+      a media ingredient or mixture identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_PLACEHOLDER_TERM
+    changes: Set ingredient_type=UNDEFINED_MIXTURE as a non-identity placeholder category
+      because the term points to external composition details rather than naming a
+      specific ingredient identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-07-05T00:00:00+00:00'
+    curator: cbclaw_followups_114
+    action: FLAGGED_NON_INGREDIENT
+    changes: Flagged as NON_INGREDIENT / source-composition placeholder (not a chemical
+      or mixture identity). Retained UNMAPPED; no ontology mapping invented and record
+      not deleted.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  notes: 'CultureMech placeholder_id: See source for composition; reviewed on 2026-05-11
+    and retained unmapped because this is a source-composition placeholder rather
+    than a standalone ingredient identity. NON_INGREDIENT: placeholder term, not a
+    mappable ingredient (flagged 2026-07-05).'

@@ -21879,9 +21879,20 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_114_cas_audit
+    action: CORRECTED
+    changes: 'cas_rn 226-214-6 -> 147-81-9. 226-214-6 is an EC/EINECS registry number
+      (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+      mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement
+      is this record''s own CHEBI term CHEBI:22599''s CAS dbxref, and that term''s
+      label matches the substance, so it is evidence rather than inference. The EC
+      number is recorded here rather than discarded: it was correct information in
+      the wrong field.'
+    llm_assisted: true
   chemical_properties:
-    cas_rn: 226-214-6
-    data_source: PubChem API
+    cas_rn: 147-81-9
+    data_source: 'CHEBI dbxref on CHEBI:22599 (corrected from an EC number, #114)'
     retrieval_date: '2026-04-05T19:51:08.136664+00:00'
     molecular_formula: C5H10O5
   ingredient_type: SINGLE_INGREDIENT
@@ -24219,9 +24230,20 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_114_cas_audit
+    action: CORRECTED
+    changes: 'cas_rn 233-788-1 -> 10361-37-2. 233-788-1 is an EC/EINECS registry number
+      (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+      mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement
+      is this record''s own CHEBI term CHEBI:63317''s CAS dbxref, and that term''s
+      label matches the substance, so it is evidence rather than inference. The EC
+      number is recorded here rather than discarded: it was correct information in
+      the wrong field.'
+    llm_assisted: true
   chemical_properties:
-    cas_rn: 233-788-1
-    data_source: PubChem API
+    cas_rn: 10361-37-2
+    data_source: 'CHEBI dbxref on CHEBI:63317 (corrected from an EC number, #114)'
     retrieval_date: '2026-04-05T19:51:10.295881+00:00'
     molecular_formula: Ba.2Cl
     inchi: InChI=1S/Ba.2ClH/h;2*1H/q+2;;/p-2
@@ -62406,9 +62428,20 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_114_cas_audit
+    action: CORRECTED
+    changes: 'cas_rn 219-452-7 -> 7724-73-4. 219-452-7 is an EC/EINECS registry number
+      (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+      mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement
+      is this record''s own CHEBI term CHEBI:33984''s CAS dbxref, and that term''s
+      label matches the substance, so it is evidence rather than inference. The EC
+      number is recorded here rather than discarded: it was correct information in
+      the wrong field.'
+    llm_assisted: true
   chemical_properties:
-    cas_rn: 219-452-7
-    data_source: PubChem API
+    cas_rn: 7724-73-4
+    data_source: 'CHEBI dbxref on CHEBI:33984 (corrected from an EC number, #114)'
     retrieval_date: '2026-04-05T19:52:11.703439+00:00'
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -63075,9 +63108,20 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_114_cas_audit
+    action: CORRECTED
+    changes: 'cas_rn 200-416-4 -> 26566-61-0. 200-416-4 is an EC/EINECS registry number
+      (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+      mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement
+      is this record''s own CHEBI term CHEBI:28260''s CAS dbxref, and that term''s
+      label matches the substance, so it is evidence rather than inference. The EC
+      number is recorded here rather than discarded: it was correct information in
+      the wrong field.'
+    llm_assisted: true
   chemical_properties:
-    cas_rn: 200-416-4
-    data_source: PubChem API
+    cas_rn: 26566-61-0
+    data_source: 'CHEBI dbxref on CHEBI:28260 (corrected from an EC number, #114)'
     retrieval_date: '2026-04-05T19:52:12.597197+00:00'
     molecular_formula: C6H12O6
   kg_microbe_node_id: CHEBI:28260
@@ -87042,9 +87086,20 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_114_cas_audit
+    action: CORRECTED
+    changes: 'cas_rn 203-742-5 -> 110-16-7. 203-742-5 is an EC/EINECS registry number
+      (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+      mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement
+      is this record''s own CHEBI term CHEBI:18300''s CAS dbxref, and that term''s
+      label matches the substance, so it is evidence rather than inference. The EC
+      number is recorded here rather than discarded: it was correct information in
+      the wrong field.'
+    llm_assisted: true
   chemical_properties:
-    cas_rn: 203-742-5
-    data_source: CultureBotHT compounds_to_cas.csv
+    cas_rn: 110-16-7
+    data_source: 'CHEBI dbxref on CHEBI:18300 (corrected from an EC number, #114)'
     retrieval_date: '2026-04-29T06:04:17.380972+00:00'
     molecular_formula: C4H4O4
     inchi: InChI=1S/C4H4O4/c5-3(6)1-2-4(7)8/h1-2H,(H,5,6)(H,7,8)/b2-1-
@@ -101260,9 +101315,20 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_114_cas_audit
+    action: CORRECTED
+    changes: 'cas_rn 205-358-3 -> 6381-92-6. 205-358-3 is an EC/EINECS registry number
+      (format NNN-NNN-N), not a CAS-RN — the same class of fetch_cas_rn_from_pubchem
+      mis-assignment as Beef extract''s 103-47-9 (=CHES) in #114. The replacement
+      is this record''s own CHEBI term CHEBI:64758''s CAS dbxref, and that term''s
+      label matches the substance, so it is evidence rather than inference. The EC
+      number is recorded here rather than discarded: it was correct information in
+      the wrong field.'
+    llm_assisted: true
   chemical_properties:
-    cas_rn: 205-358-3
-    data_source: PubChem API (ontology label)
+    cas_rn: 6381-92-6
+    data_source: 'CHEBI dbxref on CHEBI:64758 (corrected from an EC number, #114)'
     retrieval_date: '2026-04-05T23:45:49.334710+00:00'
     molecular_formula: C10H14N2O8.2H2O.2Na
     inchi: InChI=1S/C10H16N2O8.2Na.2H2O/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20;;;;/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20);;;2*1H2/q;2*+1;;/p-2
