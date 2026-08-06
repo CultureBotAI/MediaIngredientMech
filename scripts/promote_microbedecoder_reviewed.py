@@ -135,6 +135,10 @@ def _specificity_alarm(index: dict, curie: str, label: str, alarm: int):
     Returns a human-readable string naming the evidence, so the manifest records WHY
     a row was held rather than just that it was.
     """
+    if alarm <= 0:
+        # The documented escape hatch. Guarded explicitly: `n > 0` would otherwise
+        # flag every term with even one subclass, i.e. do the OPPOSITE of disabling.
+        return None
     prefix = curie.split(":")[0]
     counts, labels = index.get(prefix, ({}, set()))
     if not counts and not labels:

@@ -111,10 +111,19 @@ def test_prefix_ambiguity_alone_does_not_hold_a_narrow_term():
         mod.PREFIX_SUBCLASS_FLOOR = saved
 
 
-def test_threshold_zero_disables_the_check_but_not_the_prefix_rule():
-    """`--subclass-alarm 0` is the documented escape hatch."""
-    # Everything with any subclasses trips the class-level branch at 0.
-    assert alarm("CHEBI:87228", "sulfonamide antibiotic", 0) is not None
+@pytest.mark.parametrize("curie,label", [
+    ("CHEBI:35358", "sulfonamide"),               # the broadest term in the corpus
+    ("CHEBI:87228", "sulfonamide antibiotic"),
+    ("CHEBI:59062", "polymyxin"),                 # trips the prefix rule at the default
+])
+def test_threshold_zero_really_disables_the_check(curie, label):
+    """`--subclass-alarm 0` is the documented escape hatch, so it must DISABLE.
+
+    Without an explicit guard, `n > 0` flags every term carrying even one subclass —
+    the exact opposite of the help text. A curator reaching for the escape hatch
+    would have held nearly the whole batch.
+    """
+    assert alarm(curie, label, 0) is None
 
 
 def test_an_unindexed_ontology_cannot_judge_and_says_so():
