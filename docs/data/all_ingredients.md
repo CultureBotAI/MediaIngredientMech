@@ -1,10 +1,15 @@
 # All Ingredients
 
-Generated: 2026-08-06T09:03:56.004154+00:00
-Total: 2842 ingredients
+Generated: 2026-08-06T09:17:03.424353+00:00
+Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | Alpha-hydroxyglutarate-gamma-lactone | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | L-glutamate-gamma-3-carboxy-4-nitroanilide | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | Beta-D-galacto-pyranosyl-D-arabinose | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:synthetic_sea_salts_sss | kgmicrobe.compound:synthetic_sea_salts_sss | Synthetic Sea Salts (sss) | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:tetrabromopyrrole | kgmicrobe.compound:tetrabromopyrrole | Tetrabromopyrrole | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:aminovalerate | kgmicrobe.compound:aminovalerate | Aminovalerate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:isopropionate | kgmicrobe.compound:isopropionate | Isopropionate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:butamine | kgmicrobe.compound:butamine | Butamine | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
@@ -2778,9 +2783,7 @@ Total: 2842 ingredients
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0791 |  | 4-diol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0795 |  | Alpha-hydroxyglutarate-gamma-lactone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0716 |  | BHI | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0800 |  | Beta-D-galacto-pyranosyl-D-arabinose | UNMAPPED |  |  | 0 |
 | UNMAPPED_0805 |  | Butane-1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0740 |  | CMC + PY + Horse Serum | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0739 |  | Casitone + Yeast Extract + Rumen Fluid | NEEDS_EXPERT |  |  | 0 |
@@ -2808,7 +2811,6 @@ Total: 2842 ingredients
 | UNMAPPED_0753 |  | Glucose Peptone-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0754 |  | Glucose + Xylose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0675 |  | Glucose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0816 |  | Glycine 1% | UNMAPPED |  |  | 0 |
 | UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0756 |  | H2+3-methyl Mercaptopropionate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0631 |  | H2 + CO2 | NEEDS_EXPERT |  |  | 0 |
@@ -2816,7 +2818,6 @@ Total: 2842 ingredients
 | UNMAPPED_0703 |  | H2+methanol | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0758 |  | H2+tetramethylammonium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0759 |  | H2+trimethylamine | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0822 |  | L-glutamate-gamma-3-carboxy-4-nitroanilide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0763 |  | Modified Cooked Meat Medium | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | UNMAPPED |  |  | 0 |
@@ -2836,9 +2837,7 @@ Total: 2842 ingredients
 | UNMAPPED_0836 |  | Poly-beta-hydroxyalkanoate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0705 |  | Sucrose + Yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0663 |  | Sugars | UNMAPPED |  |  | 0 |
-| UNMAPPED_0845 |  | Synthetic Sea Salts (sss) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0776 |  | TYGVS + Glucose | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0847 |  | Tetrabromopyrrole | UNMAPPED |  |  | 0 |
 | UNMAPPED_0734 |  | Tetrazolium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0668 |  | Trypticase-glucose-yeast Extract | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0849 |  | Tryptone/yeast/beef (tyb) | NEEDS_EXPERT |  |  | 0 |

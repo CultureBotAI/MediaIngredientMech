@@ -1,10 +1,15 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T09:03:56.000938+00:00
-Total: 2385 ingredients
+Generated: 2026-08-06T09:17:03.421068+00:00
+Total: 2390 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | kgmicrobe.compound:alpha-hydroxyglutarate-gamma-lactone | Alpha-hydroxyglutarate-gamma-lactone | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | kgmicrobe.compound:l-glutamate-gamma-3-carboxy-4-nitroanilide | L-glutamate-gamma-3-carboxy-4-nitroanilide | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | kgmicrobe.compound:beta-d-galacto-pyranosyl-d-arabinose | Beta-D-galacto-pyranosyl-D-arabinose | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:synthetic_sea_salts_sss | kgmicrobe.compound:synthetic_sea_salts_sss | Synthetic Sea Salts (sss) | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.compound:tetrabromopyrrole | kgmicrobe.compound:tetrabromopyrrole | Tetrabromopyrrole | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:aminovalerate | kgmicrobe.compound:aminovalerate | Aminovalerate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:isopropionate | kgmicrobe.compound:isopropionate | Isopropionate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:butamine | kgmicrobe.compound:butamine | Butamine | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
