@@ -22,6 +22,25 @@ record is not MAPPED, or if the destination is absent/obsolete in the local
 chebi.db. A held destination usually means the two records are the same
 substance — scripts/merge_mapped_records.py handles that case, and the refusal
 message says so. Dry-run by default.
+
+REGISTRY MINTS (#273)
+---------------------
+`--to` also accepts a registry CURIE — `cas:`, `kgmicrobe.compound:`,
+`kgmicrobe.ingredient:` — for the MAPPING_SEMANTICS.md Section 3 case: a
+substance with no exact ontology term takes its registry identifier AND asserts
+a narrowMatch to the nearest ontology parent. 248 records already hold `cas:`
+identifiers in that shape; before #273 nothing could move an existing mapped
+record INTO it, because the destination was validated by ontology lookup and a
+mint resolves in no adapter.
+
+With a mint, `--parent` is required and is what gets validated and recorded in
+`ontology_mapping`; quality is forced to NARROW_MATCH (the only honest quality
+for a parent). The SSSOM row's predicate becomes `skos:narrowMatch` and a
+sibling `skos:exactMatch` row to the mint is emitted — Rule B1 requires that
+pairing, and a narrowMatch without it fails validate_sssom_invariants.
+
+    reground_mapped_record.py --identifier CHEBI:15741 \\
+        --to cas:150-90-3 --parent CHEBI:15741 --reason '...' --apply
 """
 
 from __future__ import annotations
@@ -44,6 +63,18 @@ SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
 
 
+# Registry namespaces a record may take as its IDENTIFIER when no ontology term
+# denotes the substance (MAPPING_SEMANTICS.md Section 3). These resolve in no
+# ontology adapter by design, so they are validated by shape, not by lookup.
+REGISTRY_PREFIXES = ("cas:", "kgmicrobe.compound:", "kgmicrobe.ingredient:")
+REGISTRY_SOURCE = {"cas": "registry:cas", "kgmicrobe.compound": "kgm:compound",
+                   "kgmicrobe.ingredient": "kgm:ingredient"}
+
+
+def is_registry_mint(curie: str) -> bool:
+    return curie.startswith(REGISTRY_PREFIXES)
+
+
 def chebi_label(curie: str) -> str:
     con = sqlite3.connect(CHEBI_DB)
     row = con.execute(
@@ -59,8 +90,15 @@ def chebi_label(curie: str) -> str:
     return row[0]
 
 
-def plan_sssom(subject_label: str, old_curie: str, new_curie: str, new_label: str) -> tuple[str, str]:
-    """Rewrite the object columns in place. Subject is unchanged, so no re-sort."""
+def plan_sssom(subject_label: str, old_curie: str, new_curie: str, new_label: str,
+               mint: str | None = None) -> tuple[str, str]:
+    """Rewrite the object columns in place. Subject is unchanged, so no re-sort.
+
+    When ``mint`` is given the record is taking a registry identifier: the existing
+    row becomes a ``skos:narrowMatch`` to the parent, and a sibling ``skos:exactMatch``
+    row to the mint is appended. Rule B1 requires that pairing — a narrowMatch from a
+    MIM subject with no registry exactMatch sibling fails validate_sssom_invariants.
+    """
     lines = SSSOM.read_text().splitlines(keepends=True)
     header = next(i for i, ln in enumerate(lines) if ln.startswith("subject_id"))
     hits = [i for i, ln in enumerate(lines)
@@ -74,17 +112,36 @@ def plan_sssom(subject_label: str, old_curie: str, new_curie: str, new_label: st
     if cols[3] != old_curie:
         raise SystemExit(f"SSSOM row object_id is {cols[3]}, expected {old_curie}")
     cols[3], cols[4] = new_curie, new_label
+    note = f"object {old_curie} -> {new_curie} '{new_label}' (line {hits[0] + 1})"
     eol = "\n" if lines[hits[0]].endswith("\n") else ""
-    lines[hits[0]] = "\t".join(cols) + eol
+    if mint:
+        cols[2] = "skos:narrowMatch"
+        registry = REGISTRY_SOURCE.get(mint.split(":", 1)[0], "")
+        sibling = list(cols)
+        sibling[2], sibling[3], sibling[4] = "skos:exactMatch", mint, subject_label
+        sibling[5] = registry
+        lines[hits[0]] = "\t".join(cols) + eol
+        lines.insert(hits[0] + 1, "\t".join(sibling) + (eol or "\n"))
+        note += (f"; predicate -> skos:narrowMatch, plus a Rule B1 registry "
+                 f"exactMatch row to {mint}")
+    else:
+        lines[hits[0]] = "\t".join(cols) + eol
     if not lines[-1].endswith("\n"):
         lines[-1] += "\n"
-    return "".join(lines), f"object {old_curie} -> {new_curie} '{new_label}' (line {hits[0] + 1})"
+    return "".join(lines), note
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--identifier", required=True, help="the record's current CURIE")
-    ap.add_argument("--to", required=True, help="the CURIE it should hold")
+    ap.add_argument("--to", required=True,
+                    help=("the CURIE it should hold — an ontology term, or a registry "
+                          "mint (cas: / kgmicrobe.compound: / kgmicrobe.ingredient:) "
+                          "when no ontology term denotes the substance"))
+    ap.add_argument("--parent",
+                    help=("REQUIRED when --to is a registry mint: the ontology term to "
+                          "narrowMatch. Section 3 says a minted record asserts a parent; "
+                          "without one the record claims an identity nothing relates to"))
     ap.add_argument("--quality", default="EXACT_MATCH")
     ap.add_argument("--reason", required=True)
     ap.add_argument("--curator", default="reground_mapped_record")
@@ -109,13 +166,32 @@ def main() -> int:
             "If they are different substances, the destination is not free — pick the term "
             "that denotes THIS one (MAPPING_SEMANTICS.md Section 3).")
 
-    new_label = chebi_label(args.to)
+    minted = is_registry_mint(args.to)
+    if minted:
+        # A mint denotes the substance; the ontology_mapping still has to point at a
+        # real term, so the parent is what gets validated and what the record maps to.
+        if not args.parent:
+            raise SystemExit(
+                f"--to {args.to} is a registry mint, so --parent is required.\n"
+                "MAPPING_SEMANTICS.md Section 3: a substance with no exact ontology term "
+                "takes its registry CURIE as identifier AND asserts a narrowMatch to the "
+                "nearest ontology parent. Without a parent the record would assert an "
+                "identity nothing in any ontology relates to.")
+        if is_registry_mint(args.parent):
+            raise SystemExit(f"--parent {args.parent} must be an ontology term, not a mint")
+        args.quality = "NARROW_MATCH"          # the only honest quality for a parent
+        term_curie, new_label = args.parent, chebi_label(args.parent)
+    else:
+        if args.parent:
+            raise SystemExit("--parent applies only when --to is a registry mint")
+        term_curie, new_label = args.to, chebi_label(args.to)
+
     stamp = dt.datetime.now(dt.timezone.utc).isoformat()
     old = args.identifier
     om = rec.setdefault("ontology_mapping", {})
     old_label = om.get("ontology_label")
     rec["identifier"] = args.to
-    om.update({"ontology_id": args.to, "ontology_label": new_label,
+    om.update({"ontology_id": term_curie, "ontology_label": new_label,
                "mapping_quality": args.quality})
     rec.setdefault("curation_history", []).append({
         "timestamp": stamp, "curator": args.curator, "action": "CORRECTED",
@@ -125,8 +201,11 @@ def main() -> int:
     })
     doc["generation_date"] = stamp
 
-    sssom_text, moved = plan_sssom(rec["preferred_term"], old, args.to, new_label)
-    print(f"{rec['preferred_term']!r}: {old} '{old_label}' -> {args.to} '{new_label}'")
+    sssom_text, moved = plan_sssom(rec["preferred_term"], old, term_curie, new_label,
+                                   mint=args.to if minted else None)
+    print(f"{rec['preferred_term']!r}: {old} '{old_label}' -> {args.to} "
+          + (f"(narrowMatch {term_curie} '{new_label}')" if minted
+             else f"'{new_label}'"))
     print(f"  SSSOM: {moved}")
     print(f"  {old} is now free")
 
