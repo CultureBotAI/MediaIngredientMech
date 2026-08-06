@@ -25,10 +25,32 @@ synonyms:
 - synonym_text: sodium sulfoxylate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: Na2S2O4
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: 5,6-dihydroxy-2-(4-hydroxyphenyl)-4-oxo-4H-chromen-7-yl beta-D-glucopyranosiduronic
+    acid
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Scutellarein 7-O-beta-D-glucuronide
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Scutellarein-7-O-beta-D-glucuronide
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Scutellarein-7-glucuronide
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Scutellarein-7beta-D-glucuronide
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: Scutellarein-7beta-D-glucuronoside
+  synonym_type: RAW_TEXT
+  source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 11
-  media_count: 11
+  total_occurrences: 36
+  media_count: 36
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -78,6 +100,13 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT -> physicochemical_roles.REDUCING_AGENT'
+- timestamp: '2026-08-06T01:37:25.864886+00:00'
+  curator: reground_263
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: 'Absorbed CHEBI:61278 ''Na2S2O4'': 7 synonym(s), occurrences +25/25. Na2S2O4
+    and Sodium dithionite are the same substance (CAS 7775-14-6); the Na2S2O4 record''s
+    CHEBI:61278 ''scutellarin'' grounding was wrong (#263) and masked the duplicate'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7775-14-6
   data_source: PubChem API

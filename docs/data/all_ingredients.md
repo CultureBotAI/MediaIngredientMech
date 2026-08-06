@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-06T01:28:52.286685+00:00
+Generated: 2026-08-06T01:38:23.521516+00:00
 Total: 2876 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1641,7 +1641,7 @@ Total: 2876 ingredients
 | cas:920-49-0 | cas:920-49-0 | Sodium D-Lactate | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:9177 | CHEBI:9177 | sodium Deoxycholate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:145224-92-6 | CHEBI:9177 | Sodium deoxycholate monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:66870 | CHEBI:66870 | Sodium dithionite | MAPPED | CHEBI | EXACT_MATCH | 11 |
+| CHEBI:66870 | CHEBI:66870 | Sodium dithionite | MAPPED | CHEBI | EXACT_MATCH | 36 |
 | CHEBI:8984 | CHEBI:8984 | Sodium Dodecyl Sulfate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:546-74-7 | cas:546-74-7 | Sodium ethyl sulfate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:78292 | CHEBI:78292 | Sodium ferric EDTA | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2311,8 +2311,8 @@ Total: 2876 ingredients
 | CHEBI:495056 | CHEBI:495056 | Gamma-cyclodextrin | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:471744 | CHEBI:471744 | Imipenem | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
 | FOODON:03315719 | FOODON:03315719 | Casamino acids | MAPPED | FOODON | CLOSE_MATCH | 395 |
-| CHEBI:66870 | CHEBI:66870 | Na2S2O4 | MAPPED | CHEBI | EXACT_MATCH | 25 |
 | cas:150-90-3 | CHEBI:15741 | Sodium succinate dibasic | MAPPED | CHEBI | NARROW_MATCH | 3 |
+| CHEBI:61278 | CHEBI:61278 | Na2S2O4 | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0261 |  | 20AA_mix | UNMAPPED |  |  | 1 |
