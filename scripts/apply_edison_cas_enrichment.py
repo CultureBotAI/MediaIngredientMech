@@ -107,7 +107,20 @@ COMPONENT_ONLY = {
     "Vitamin B": "98-92-0 is niacinamide, one vitamin of a family label",
     "Amphotericin": "1397-89-3 is amphotericin B, the narrower variant of a "
                     "family name that also covers amphotericin A",
+    "Riboflavin solution see Medium No. 462":
+        "83-88-5 is riboflavin; the record is the SOLUTION, and its own "
+        "ingredient_type is DEFINED_MEDIUM",
+    "DL-2-gamma-aminobutyrate":
+        "56-12-2 is GABA, but the label is parse noise -- 'DL-' and '2-' cannot "
+        "both qualify 4-aminobutyrate, so what the record names is unresolved",
 }
+
+# After the full 478-report sweep, this scan offers 26 CAS numbers across the
+# residual and NONE are new: 12 are forbidden by their own report, 12 are the
+# component/family cases above, and 2 are held pending the duplicate cluster in
+# #296. Combined with an exact-label scan over 1.5M labels from all seven local
+# builds returning zero hits, the mechanical vein is exhausted -- what remains
+# needs a curator or a new ontology term, not another pass.
 
 
 def main() -> int:
