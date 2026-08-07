@@ -603,11 +603,27 @@ consolidated in #213:**
   the active second session is working these. Gaps flagged: rumen fluid (#204,
   verify `MICRO:0000520`), corn steep liquor (no FOODON/CHEBI term), the TYGVS VFA
   mixture.
-- **6 out-of-coverage antibiotics** (carbomycin, colistin sulfate, gentamicin,
-  lysostaphin, netilmicin, polymyxin B) — OLS4-valid CHEBI terms absent from the
-  local `chebi.db` (build **252** vs ChEBI **253**). **UPSTREAM-BLOCKED (#207)** —
-  a refresh will not help (the semsql build is byte-identical); the lag is upstream
-  of MIM. `check-chebi-currency` confirms.
+- **6 out-of-coverage antibiotics** — **5 of 6 RESOLVED** (verified 2026-08-07,
+  re-grounded during the microbedecoder residual work, not by a build refresh).
+  All six are MAPPED with ids that resolve against the local builds, labels
+  canonical, none deprecated: carbomycin → `NCIT:C166659`, colistin sulfate →
+  `NCIT:C386`, lysostaphin → `NCIT:C166895`, polymyxin B → `NCIT:C61894`,
+  netilmicin → `CHEBI:7528` (the duplicate record was merged in; the surviving
+  file is `Netilmycin.yaml`). The published SSSOM and `docs/data/` carry those
+  ids and **zero** occurrences of the six dead accessions — they survive only in
+  `curation_history` prose (correct: that is the audit trail) and in the
+  microbedecoder working manifests under `mappings/`.
+  **Residual, still UPSTREAM-BLOCKED (#207): gentamicin only.** It sits on
+  `CHEBI:17833` *gentamycin* as a deliberate validatable stand-in, and its own
+  `CORRECTED` history entry says it "should move back to [`CHEBI:759884`] once
+  the build carries it". Local build is still **252** vs ChEBI **253**, and a
+  refresh will not help (the published semsql artifact is byte-identical); the
+  lag is upstream of MIM. `check-chebi-currency` confirms.
+  Worth a curator decision rather than a silent default: all six accessions
+  **do** exist in kg-microbe's own ChEBI 253, so for the four NCIT re-groundings
+  MIM publishes an NCIT term while the downstream consumer already carries the
+  exact CHEBI one. That is a sourcing divergence, not an error — but nobody has
+  ruled on whether it should stand once the build catches up.
 - **#209** — is `sodium(+)` a media ingredient (vs a phenotype), and relabel
   `mapped/Sodium().yaml` → `sodium(1+)`.
 - **#196** — microbedecoder records carry `total_occurrences: 0`; the source
@@ -627,6 +643,11 @@ there as CultureMech#247), #304 (the ceiling can now only fire on 8-digit ids, s
 (`check-chebi-currency` infers "a refresh would help" from byte size, not
 release), #203 (`promote_microbedecoder_reviewed.py` approval check is
 tautological — re-runs the lookup that created the mapping).
+**#249 CLOSED** (2026-08-07) — it reported six UNMAPPED records whose primary key
+was a nonexistent CHEBI id. None of the six ids is any record's identifier today;
+all six records are MAPPED to ids that resolve. Re-verified rather than assumed,
+because #249 was itself filed as an off-by-six correction to #248. **#207 remains
+open, re-scoped to gentamicin alone** — see the antibiotics item above.
 
 ---
 
