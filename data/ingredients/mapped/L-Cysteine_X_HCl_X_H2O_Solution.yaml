@@ -1,0 +1,53 @@
+identifier: kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution
+preferred_term: L-Cysteine x HCl x H2O solution
+synonyms:
+- synonym_text: L-Cysteine x HCl x H2O solution
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:52:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as an L-cysteine hydrochloride hydrate solution and left unmapped
+    pending exact hydrate and solution composition curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0416 -> kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution
+    "L-cysteine hydrochloride" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED,
+    SSSOM row added.
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 as an L-cysteine hydrochloride hydrate
+  solution pending exact hydrate and solution composition curation.
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: CHEBI:91247
+  ontology_label: L-cysteine hydrochloride
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#288)
+    notes: 'A prepared solution of a single compound: STOCK_SOLUTION, so it takes
+      a kgmicrobe.ingredient: mint rather than the compound''s own identifier, with
+      a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers in
+      #114. For PBS, note the term is NCIT:C178908 ''phosphate-buffered saline'';
+      searching the bare acronym instead returns NCIT:C122728 ''TSPO wt Allele'',
+      a gene allele (#288).'

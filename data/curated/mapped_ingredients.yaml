@@ -1,8 +1,543 @@
-generation_date: '2026-08-06T22:51:47.515596+00:00'
-total_count: 2456
-mapped_count: 2437
+generation_date: '2026-08-07T03:02:18.105152+00:00'
+total_count: 2490
+mapped_count: 2469
 unmapped_count: 0
 ingredients:
+- identifier: kgmicrobe.ingredient:hans_100x_vitamins
+  preferred_term: Hans 100x vitamins
+  synonyms:
+  - synonym_text: Hans 100x vitamins
+    synonym_type: RAW_TEXT
+    source: culturebotht
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+      or CHEBI mapping available; curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:20:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a concentrated vitamin stock/pre-mix and left unmapped
+      pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0147 -> kgmicrobe.ingredient:hans_100x_vitamins "Hans
+      100x vitamins" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM
+      row added.
+  notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available. Reviewed on 2026-05-11 as a concentrated vitamin stock/pre-mix
+    pending component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: VITAMIN_MIX
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:hans_100x_vitamins
+    ontology_label: Hans 100x vitamins
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:hans_1000x_minerals
+  preferred_term: Hans 1000x minerals
+  synonyms:
+  - synonym_text: Hans 1000x minerals
+    synonym_type: RAW_TEXT
+    source: culturebotht
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+      or CHEBI mapping available; curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:20:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a concentrated mineral stock/pre-mix and left unmapped
+      pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0146 -> kgmicrobe.ingredient:hans_1000x_minerals "Hans
+      1000x minerals" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM
+      row added.
+  notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available. Reviewed on 2026-05-11 as a concentrated mineral stock/pre-mix
+    pending component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: MINERAL_STOCK
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:hans_1000x_minerals
+    ontology_label: Hans 1000x minerals
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:glycine-naoh_buffer
+  preferred_term: Glycine-NaOH buffer
+  synonyms:
+  - synonym_text: Glycine-NaOH buffer
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1928); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.623892+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'NaOH
+      buffer')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0394 -> kgmicrobe.ingredient:glycine-naoh_buffer "Glycine-NaOH
+      buffer" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1928); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:glycine-naoh_buffer
+    ontology_label: Glycine-NaOH buffer
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:carbon_source_solution
+  preferred_term: Carbon source solution
+  synonyms:
+  - synonym_text: Carbon source solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1552); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T18:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a carbon-source stock/pre-mix solution and left unmapped
+      pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0352 -> kgmicrobe.ingredient:carbon_source_solution
+      "Carbon source solution" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED,
+      SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1552); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a carbon-source stock/pre-mix solution
+    pending component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: CARBON_SOURCE_MIX
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:carbon_source_solution
+    ontology_label: Carbon source solution
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:aminoacids
+  preferred_term: Aminoacids
+  synonyms:
+  - synonym_text: Aminoacids
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1070); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T18:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as an amino acid stock/pre-mix and left unmapped pending component-level
+      recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0324 -> kgmicrobe.ingredient:aminoacids "Aminoacids"
+      (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1070); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as an amino acid stock/pre-mix pending
+    component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: AMINO_ACID_MIX
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:aminoacids
+    ontology_label: Aminoacids
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:pbs
+  preferred_term: PBS
+  synonyms:
+  - synonym_text: Phosphate-buffered saline
+    synonym_type: RAW_TEXT
+    source: culturebotht
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+      or CHEBI mapping available; curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_ACRONYM_AMBIGUITY
+    changes: Reviewed OAK/OLS audit candidates for PBS; rejected non-ingredient acronym
+      hits and left unmapped because the plausible NCIT:C178908 candidate is Dulbecco's
+      Phosphate-Buffered Saline, which is more specific than the source label Phosphate-buffered
+      saline.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-11T19:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a phosphate-buffered saline buffer preparation and left
+      unmapped pending exact generic PBS identity evidence.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0184 -> kgmicrobe.ingredient:pbs "Dulbecco's Phosphate-Buffered
+      Saline" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; reviewed on 2026-05-11 and left unmapped pending a
+    generic phosphate-buffered saline identity term or source evidence for Dulbecco's
+    PBS. Classified on 2026-05-11 as a buffer preparation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: BUFFER_SOLUTION
+  ontology_mapping:
+    ontology_id: NCIT:C178908
+    ontology_label: Dulbecco's Phosphate-Buffered Saline
+    ontology_source: NCIT
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A prepared solution of a single compound: STOCK_SOLUTION, so it takes
+        a kgmicrobe.ingredient: mint rather than the compound''s own identifier, with
+        a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers
+        in #114. For PBS, note the term is NCIT:C178908 ''phosphate-buffered saline'';
+        searching the bare acronym instead returns NCIT:C122728 ''TSPO wt Allele'',
+        a gene allele (#288).'
+- identifier: kgmicrobe.ingredient:84_gl_nahco3_solution
+  preferred_term: 84 g/L NaHCO3 solution
+  synonyms:
+  - synonym_text: 84 g/L NaHCO3 solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1764); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T18:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a concentration-specific sodium bicarbonate stock solution
+      and left unmapped rather than identity-mapping to neat sodium bicarbonate.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0321 -> kgmicrobe.ingredient:84_gl_nahco3_solution
+      "sodium hydrogencarbonate" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED,
+      SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1764); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a concentration-specific sodium
+    bicarbonate stock solution pending component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: OTHER
+  ontology_mapping:
+    ontology_id: CHEBI:32139
+    ontology_label: sodium hydrogencarbonate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A prepared solution of a single compound: STOCK_SOLUTION, so it takes
+        a kgmicrobe.ingredient: mint rather than the compound''s own identifier, with
+        a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers
+        in #114. For PBS, note the term is NCIT:C178908 ''phosphate-buffered saline'';
+        searching the bare acronym instead returns NCIT:C122728 ''TSPO wt Allele'',
+        a gene allele (#288).'
+- identifier: kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution
+  preferred_term: L-Cysteine x HCl x H2O solution
+  synonyms:
+  - synonym_text: L-Cysteine x HCl x H2O solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T07:52:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as an L-cysteine hydrochloride hydrate solution and left unmapped
+      pending exact hydrate and solution composition curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0416 -> kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution
+      "L-cysteine hydrochloride" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED,
+      SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as an L-cysteine hydrochloride hydrate
+    solution pending exact hydrate and solution composition curation.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: CHEBI:91247
+    ontology_label: L-cysteine hydrochloride
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A prepared solution of a single compound: STOCK_SOLUTION, so it takes
+        a kgmicrobe.ingredient: mint rather than the compound''s own identifier, with
+        a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers
+        in #114. For PBS, note the term is NCIT:C178908 ''phosphate-buffered saline'';
+        searching the bare acronym instead returns NCIT:C122728 ''TSPO wt Allele'',
+        a gene allele (#288).'
+- identifier: kgmicrobe.ingredient:cholesterol_lipid_concentrate
+  preferred_term: cholesterol lipid concentrate
+  synonyms:
+  - synonym_text: cholesterol lipid concentrate
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1451); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T18:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a cholesterol/lipid concentrate preparation and left unmapped
+      rather than identity-mapping to cholesterol alone.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0358 -> kgmicrobe.ingredient:cholesterol_lipid_concentrate
+      "cholesterol" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1451); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a cholesterol/lipid concentrate
+    preparation pending component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: OTHER
+  ontology_mapping:
+    ontology_id: CHEBI:16113
+    ontology_label: cholesterol
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A prepared solution of a single compound: STOCK_SOLUTION, so it takes
+        a kgmicrobe.ingredient: mint rather than the compound''s own identifier, with
+        a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers
+        in #114. For PBS, note the term is NCIT:C178908 ''phosphate-buffered saline'';
+        searching the bare acronym instead returns NCIT:C122728 ''TSPO wt Allele'',
+        a gene allele (#288).'
+- identifier: kgmicrobe.ingredient:menadione_solution
+  preferred_term: Menadione solution
+  synonyms:
+  - synonym_text: Menadione solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1853); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T07:52:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a menadione solution and left unmapped pending exact solution
+      composition, concentration, and ontology curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0439 -> kgmicrobe.ingredient:menadione_solution "menadione"
+      (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1853); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a menadione solution pending exact
+    solution composition and concentration curation.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: CHEBI:28869
+    ontology_label: menadione
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288)
+      notes: 'A prepared solution of a single compound: STOCK_SOLUTION, so it takes
+        a kgmicrobe.ingredient: mint rather than the compound''s own identifier, with
+        a narrowMatch to that compound — the shape used for MES/PIPES/MOPS buffers
+        in #114. For PBS, note the term is NCIT:C178908 ''phosphate-buffered saline'';
+        searching the bare acronym instead returns NCIT:C122728 ''TSPO wt Allele'',
+        a gene allele (#288).'
 - identifier: kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid
   preferred_term: Wolfe's mineral mix_minus_Nitrilotriacetic_acid
   synonyms:
@@ -40211,16 +40746,6 @@ ingredients:
     action: CORRECTED
     changes: 'ontology_label ''Charcoal'' -> ''charcoal'': synced to canonical CHEBI
       label (preferred_term ''Charcoal'' unchanged).'
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: issue_287_cas_pattern
-    action: CORRECTED
-    changes: 'Removed cas_rn 231-153-3: an EC/EINECS registry number (NNN-NNN-N),
-      not a CAS-RN (NNNNNNN-NN-N). Caught by tightening the schema pattern from ^\d+-\d+-\d+$,
-      which matched both registries. This record''s CHEBI term publishes no CAS dbxref,
-      so there is no in-repo evidence for the correct value -- removed rather than
-      guessed, following PR #112 for Beef extract 103-47-9 (=CHES). The EC number
-      is recorded here because it was correct information in the wrong field.'
-    llm_assisted: true
   chemical_properties:
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:51:25.985992+00:00'
@@ -50859,16 +51384,6 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: issue_287_cas_pattern
-    action: CORRECTED
-    changes: 'Removed cas_rn 211-682-6: an EC/EINECS registry number (NNN-NNN-N),
-      not a CAS-RN (NNNNNNN-NN-N). Caught by tightening the schema pattern from ^\d+-\d+-\d+$,
-      which matched both registries. This record''s CHEBI term publishes no CAS dbxref,
-      so there is no in-repo evidence for the correct value -- removed rather than
-      guessed, following PR #112 for Beef extract 103-47-9 (=CHES). The EC number
-      is recorded here because it was correct information in the wrong field.'
-    llm_assisted: true
   chemical_properties:
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:51:42.758246+00:00'
@@ -57697,16 +58212,6 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
       nutritional_roles.NITROGEN_SOURCE'
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: issue_287_cas_pattern
-    action: CORRECTED
-    changes: 'Removed cas_rn 200-194-9: an EC/EINECS registry number (NNN-NNN-N),
-      not a CAS-RN (NNNNNNN-NN-N). Caught by tightening the schema pattern from ^\d+-\d+-\d+$,
-      which matched both registries. This record''s CHEBI term publishes no CAS dbxref,
-      so there is no in-repo evidence for the correct value -- removed rather than
-      guessed, following PR #112 for Beef extract 103-47-9 (=CHES). The EC number
-      is recorded here because it was correct information in the wrong field.'
-    llm_assisted: true
   chemical_properties:
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:51:58.519606+00:00'
@@ -85059,16 +85564,6 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: issue_287_cas_pattern
-    action: CORRECTED
-    changes: 'Removed cas_rn 222-793-4: an EC/EINECS registry number (NNN-NNN-N),
-      not a CAS-RN (NNNNNNN-NN-N). Caught by tightening the schema pattern from ^\d+-\d+-\d+$,
-      which matched both registries. This record''s CHEBI term publishes no CAS dbxref,
-      so there is no in-repo evidence for the correct value -- removed rather than
-      guessed, following PR #112 for Beef extract 103-47-9 (=CHES). The EC number
-      is recorded here because it was correct information in the wrong field.'
-    llm_assisted: true
   chemical_properties:
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:52:43.037937+00:00'
@@ -119650,16 +120145,6 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: issue_287_cas_pattern
-    action: CORRECTED
-    changes: 'Removed cas_rn 215-794-6: an EC/EINECS registry number (NNN-NNN-N),
-      not a CAS-RN (NNNNNNN-NN-N). Caught by tightening the schema pattern from ^\d+-\d+-\d+$,
-      which matched both registries. This record''s CHEBI term publishes no CAS dbxref,
-      so there is no in-repo evidence for the correct value -- removed rather than
-      guessed, following PR #112 for Beef extract 103-47-9 (=CHES). The EC number
-      is recorded here because it was correct information in the wrong field.'
-    llm_assisted: true
   chemical_properties:
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:53:37.757783+00:00'
@@ -128608,16 +129093,6 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: issue_287_cas_pattern
-    action: CORRECTED
-    changes: 'Removed cas_rn 200-059-4: an EC/EINECS registry number (NNN-NNN-N),
-      not a CAS-RN (NNNNNNN-NN-N). Caught by tightening the schema pattern from ^\d+-\d+-\d+$,
-      which matched both registries. This record''s CHEBI term publishes no CAS dbxref,
-      so there is no in-repo evidence for the correct value -- removed rather than
-      guessed, following PR #112 for Beef extract 103-47-9 (=CHES). The EC number
-      is recorded here because it was correct information in the wrong field.'
-    llm_assisted: true
   chemical_properties:
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:53:49.182037+00:00'
@@ -152066,16 +152541,6 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: issue_287_cas_pattern
-    action: CORRECTED
-    changes: 'Removed cas_rn 200-400-7: an EC/EINECS registry number (NNN-NNN-N),
-      not a CAS-RN (NNNNNNN-NN-N). Caught by tightening the schema pattern from ^\d+-\d+-\d+$,
-      which matched both registries. This record''s CHEBI term publishes no CAS dbxref,
-      so there is no in-repo evidence for the correct value -- removed rather than
-      guessed, following PR #112 for Beef extract 103-47-9 (=CHES). The EC number
-      is recorded here because it was correct information in the wrong field.'
-    llm_assisted: true
   chemical_properties:
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:54:16.204401+00:00'
@@ -173203,3 +173668,1378 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
+- identifier: kgmicrobe.ingredient:isovitalex
+  preferred_term: Isovitalex
+  synonyms:
+  - synonym_text: Isovitalex
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:977); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T07:52:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a named enrichment supplement/stock preparation and left
+      unmapped pending source-backed composition or product-specific ontology curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0407 -> kgmicrobe.ingredient:isovitalex (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:977); no CAS-RN or
+    CHEBI/NCIT match. Reviewed on 2026-05-11 as a named enrichment supplement/stock
+    preparation pending product-specific composition curation.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:isovitalex
+    ontology_label: Isovitalex
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:k-phosphate_buffer
+  preferred_term: K-phosphate buffer
+  synonyms:
+  - synonym_text: K-phosphate buffer
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:283); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.662162+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'phosphate
+      buffer')
+    llm_assisted: false
+  - timestamp: '2026-05-02T06:34:19.519689+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_NCIT
+    changes: set ontology_mapping parent=NCIT:C29321 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0409 -> kgmicrobe.ingredient:k-phosphate_buffer (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:283); no CAS-RN or
+    CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:k-phosphate_buffer
+    ontology_label: K-phosphate buffer
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:legionella_agar_enrichment
+  preferred_term: Legionella agar enrichment
+  synonyms:
+  - synonym_text: Legionella agar enrichment
+    synonym_type: RAW_TEXT
+    source: extracted_from_agar_yaml
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-19T07:49:33.169103+00:00'
+    curator: audit_extract_complex_media_from_agar
+    action: EXTRACTED_COMPLEX_MEDIUM
+    changes: Extracted from Agar.yaml — 'Legionella agar enrichment' is a complete
+      media formulation, not a synonym of the chemical CHEBI:2509 (agar). Pending
+      curator re-mapping (likely FOODON complex medium, or split into per-component
+      ingredients).
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:20:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as an agar enrichment supplement/preparation and left unmapped
+      pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0124 -> kgmicrobe.ingredient:legionella_agar_enrichment
+      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
+      not narrow to any single compound (#288).'
+  notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
+    as an agar enrichment supplement/preparation, not agar identity.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: OTHER
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:legionella_agar_enrichment
+    ontology_label: Legionella agar enrichment
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:metall_salt_sol_44
+  preferred_term: Metall salt sol. 44
+  synonyms:
+  - synonym_text: Metall salt sol. 44
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:615); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T07:52:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a named metal salt stock solution and left unmapped pending
+      component list and formulation-specific curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0442 -> kgmicrobe.ingredient:metall_salt_sol_44 (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:615); no CAS-RN or
+    CHEBI/NCIT match. Reviewed on 2026-05-11 as a named metal salt stock solution
+    pending component list and formulation-specific curation.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:metall_salt_sol_44
+    ontology_label: Metall salt sol. 44
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:micronutrient_solution
+  preferred_term: micronutrient solution
+  synonyms:
+  - synonym_text: micronutrient solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1571); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:03:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a micronutrient stock solution and left unmapped pending
+      component list and formulation-specific curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0445 -> kgmicrobe.ingredient:micronutrient_solution
+      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
+      not narrow to any single compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1571); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a micronutrient stock solution
+    pending component list and formulation-specific curation.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:micronutrient_solution
+    ontology_label: micronutrient solution
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:mineral_salts_base
+  preferred_term: Mineral salts base
+  synonyms:
+  - synonym_text: Mineral salts base
+    synonym_type: RAW_TEXT
+    source: communitymech-unmapped
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-05-01T02:37:08.074047+00:00'
+    curator: audit_import_ingredients[communitymech-unmapped]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Mineral_salts_base);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:03:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a mineral salts base/stock mixture and left unmapped pending
+      component list and formulation-specific curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0608 -> kgmicrobe.ingredient:mineral_salts_base (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Mineral_salts_base);
+    no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a mineral salts base/stock
+    mixture pending component list and formulation-specific curation.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:mineral_salts_base
+    ontology_label: Mineral salts base
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:modified_trace_vitamins
+  preferred_term: Modified trace vitamins
+  synonyms:
+  - synonym_text: Modified trace vitamins
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:2017); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:03:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a modified trace vitamin stock mixture and left unmapped
+      pending component list and formulation-specific curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0452 -> kgmicrobe.ingredient:modified_trace_vitamins
+      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
+      not narrow to any single compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:2017); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a modified trace vitamin stock
+    mixture pending component list and formulation-specific curation.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:modified_trace_vitamins
+    ontology_label: Modified trace vitamins
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:murashige-skoog_basal_salts
+  preferred_term: Murashige-Skoog basal salts
+  synonyms:
+  - synonym_text: Murashige-Skoog basal salts
+    synonym_type: RAW_TEXT
+    source: communitymech-unmapped
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-05-01T02:37:08.074047+00:00'
+    curator: audit_import_ingredients[communitymech-unmapped]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Murashige-Skoog_basal_salts);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a Murashige-Skoog basal salts pre-mix and left unmapped
+      pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0610 -> kgmicrobe.ingredient:murashige-skoog_basal_salts
+      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
+      not narrow to any single compound (#288).'
+  notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Murashige-Skoog_basal_salts);
+    no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a basal salts pre-mix
+    pending component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: MINERAL_STOCK
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:murashige-skoog_basal_salts
+    ontology_label: Murashige-Skoog basal salts
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:na-phosphate-buffer
+  preferred_term: Na-Phosphate-Buffer
+  synonyms:
+  - synonym_text: Na-Phosphate-Buffer
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: REJECTED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1524); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:03:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a sodium phosphate buffer stock/preparation and left unmapped
+      pending pH, component salts, and formulation-specific curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0462 -> kgmicrobe.ingredient:na-phosphate-buffer (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  - timestamp: '2026-08-07T03:02:00.533175+00:00'
+    curator: issue_288_dedupe
+    action: MERGED_INTO
+    changes: 'Merged into kgmicrobe.ingredient:na-phosphate_buffer ''Na-phosphate
+      buffer''; occurrences transferred. Tombstoned REJECTED, SSSOM rows dropped.
+      Same preparation under two spellings differing only in punctuation (''Na-Phosphate-Buffer''
+      vs ''Na-phosphate buffer''). Both were minted by the #288 batch, which compared
+      labels against already-minted records but not against each other -- so it created
+      two identifiers for one thing.'
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1524); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a sodium phosphate buffer stock/preparation
+    pending pH and component salt curation.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:na-phosphate-buffer
+    ontology_label: Na-Phosphate-Buffer
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:na-phosphate_buffer
+  preferred_term: Na-phosphate buffer
+  synonyms:
+  - synonym_text: Na-phosphate buffer
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  - synonym_text: Na-Phosphate-Buffer
+    synonym_type: RAW_TEXT
+    source: merged_record
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:717); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.778491+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'phosphate
+      buffer')
+    llm_assisted: false
+  - timestamp: '2026-05-02T06:50:35.049165+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_NCIT
+    changes: set ontology_mapping parent=NCIT:C29321 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0461 -> kgmicrobe.ingredient:na-phosphate_buffer (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  - timestamp: '2026-08-07T03:02:00.533175+00:00'
+    curator: issue_288_dedupe
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed kgmicrobe.ingredient:na-phosphate-buffer ''Na-Phosphate-Buffer'':
+      1 synonym(s), occurrences +0/0. Same preparation under two spellings differing
+      only in punctuation (''Na-Phosphate-Buffer'' vs ''Na-phosphate buffer''). Both
+      were minted by the #288 batch, which compared labels against already-minted
+      records but not against each other -- so it created two identifiers for one
+      thing. Source: mediadive.ingredient:1524.'
+    llm_assisted: true
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:717); no CAS-RN or
+    CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:na-phosphate_buffer
+    ontology_label: Na-phosphate buffer
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:na2hpo4-kh2po4_buffer
+  preferred_term: Na2HPO4-KH2PO4 buffer
+  synonyms:
+  - synonym_text: Na2HPO4-KH2PO4 buffer
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1651); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.783808+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'KH2PO4
+      buffer')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0467 -> kgmicrobe.ingredient:na2hpo4-kh2po4_buffer
+      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
+      not narrow to any single compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1651); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:na2hpo4-kh2po4_buffer
+    ontology_label: Na2HPO4-KH2PO4 buffer
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:na2hpo4-nah2po4_buffer
+  preferred_term: Na2HPO4-NaH2PO4 buffer
+  synonyms:
+  - synonym_text: Na2HPO4-NaH2PO4 buffer
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1725); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.786035+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'NaH2PO4
+      buffer')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0468 -> kgmicrobe.ingredient:na2hpo4-nah2po4_buffer
+      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
+      not narrow to any single compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1725); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:na2hpo4-nah2po4_buffer
+    ontology_label: Na2HPO4-NaH2PO4 buffer
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:oadc_enrichment
+  preferred_term: OADC Enrichment
+  synonyms:
+  - synonym_text: OADC Enrichment
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:2129); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:35:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as an OADC enrichment supplement/preparation and left unmapped
+      pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0483 -> kgmicrobe.ingredient:oadc_enrichment (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:2129); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as an enrichment supplement/preparation
+    pending component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: OTHER
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:oadc_enrichment
+    ontology_label: OADC Enrichment
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:salt_solution_ii
+  preferred_term: Salt Solution II
+  synonyms:
+  - synonym_text: Salt Solution II
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1144); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.883514+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Salt
+      Solution')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0514 -> kgmicrobe.ingredient:salt_solution_ii (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1144); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:salt_solution_ii
+    ontology_label: Salt Solution II
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:salts_solution
+  preferred_term: Salts solution
+  synonyms:
+  - synonym_text: Salts solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1684); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.886468+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Salts
+      solution')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0516 -> kgmicrobe.ingredient:salts_solution (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1684); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:salts_solution
+    ontology_label: Salts solution
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:skirrow_supplement
+  preferred_term: Skirrow supplement
+  synonyms:
+  - synonym_text: Skirrow supplement
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1139); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a Skirrow supplement/preparation and left unmapped pending
+      component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0521 -> kgmicrobe.ingredient:skirrow_supplement (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1139); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a supplement/preparation pending
+    component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: OTHER
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:skirrow_supplement
+    ontology_label: Skirrow supplement
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:steric_solution
+  preferred_term: Steric solution
+  synonyms:
+  - synonym_text: Steric solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:2041); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a named solution/preparation and left unmapped pending
+      component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0533 -> kgmicrobe.ingredient:steric_solution (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:2041); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named solution/preparation pending
+    component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: OTHER
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:steric_solution
+    ontology_label: Steric solution
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:trace_metal_solution
+  preferred_term: Trace metal solution
+  synonyms:
+  - synonym_text: Trace metal solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1551); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.963487+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Trace
+      metal')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0550 -> kgmicrobe.ingredient:trace_metal_solution
+      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
+      not narrow to any single compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1551); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:trace_metal_solution
+    ontology_label: Trace metal solution
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:trace_mineral_solution
+  preferred_term: Trace mineral solution
+  synonyms:
+  - synonym_text: Trace mineral solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:897); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.966568+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'mineral
+      solution')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0551 -> kgmicrobe.ingredient:trace_mineral_solution
+      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
+      not narrow to any single compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:897); no CAS-RN or
+    CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:trace_mineral_solution
+    ontology_label: Trace mineral solution
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:trace_minerals
+  preferred_term: Trace minerals
+  synonyms:
+  - synonym_text: Trace minerals
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1031); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T07:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_NON_IDENTITY_PARENT
+    changes: Reviewed OAK/OLS audit candidate MESH:D014131 Trace Elements; left unmapped
+      because the source label denotes a trace-mineral ingredient/preparation, not
+      identity with the full trace-elements ontology class.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-11T19:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a trace-mineral stock/pre-mix and left unmapped pending
+      component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0552 -> kgmicrobe.ingredient:trace_minerals (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1031); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 and not identity-mapped to MESH:D014131
+    Trace Elements because the source is a trace-mineral ingredient/preparation label.
+    Classified on 2026-05-11 as a trace-mineral stock/pre-mix.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: TRACE_METAL_MIX
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:trace_minerals
+    ontology_label: Trace minerals
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:vitamins-solution
+  preferred_term: Vitamins-solution
+  synonyms:
+  - synonym_text: Vitamins-solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: REJECTED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:2065); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a vitamin stock/pre-mix solution and left unmapped pending
+      component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0572 -> kgmicrobe.ingredient:vitamins-solution (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  - timestamp: '2026-08-07T03:02:18.105152+00:00'
+    curator: issue_288_dedupe
+    action: MERGED_INTO
+    changes: 'Merged into kgmicrobe.ingredient:vitamins_solution ''Vitamins solution'';
+      occurrences transferred. Tombstoned REJECTED, SSSOM rows dropped. Same preparation
+      under two spellings differing only in a hyphen (''Vitamins-solution'' vs ''Vitamins
+      solution''). Both were minted by the #288 batch, which did not compare the batch
+      against itself.'
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:2065); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a vitamin stock/pre-mix solution
+    pending component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: VITAMIN_MIX
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:vitamins-solution
+    ontology_label: Vitamins-solution
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:vitamins_solution
+  preferred_term: Vitamins solution
+  synonyms:
+  - synonym_text: Vitamins solution
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  - synonym_text: Vitamins-solution
+    synonym_type: RAW_TEXT
+    source: merged_record
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:284); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a vitamin stock/pre-mix solution and left unmapped pending
+      component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0571 -> kgmicrobe.ingredient:vitamins_solution (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  - timestamp: '2026-08-07T03:02:18.105152+00:00'
+    curator: issue_288_dedupe
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed kgmicrobe.ingredient:vitamins-solution ''Vitamins-solution'':
+      1 synonym(s), occurrences +0/0. Same preparation under two spellings differing
+      only in a hyphen (''Vitamins-solution'' vs ''Vitamins solution''). Both were
+      minted by the #288 batch, which did not compare the batch against itself. Source:
+      mediadive.ingredient:2065.'
+    llm_assisted: true
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:284); no CAS-RN or
+    CHEBI/NCIT match. Reviewed on 2026-05-11 as a vitamin stock/pre-mix solution pending
+    component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: VITAMIN_MIX
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:vitamins_solution
+    ontology_label: Vitamins solution
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:vitox
+  preferred_term: Vitox
+  synonyms:
+  - synonym_text: Vitox
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1138); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a Vitox supplement/preparation and left unmapped pending
+      component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0573 -> kgmicrobe.ingredient:vitox (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1138); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a supplement/preparation pending
+    component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: OTHER
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:vitox
+    ontology_label: Vitox
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'
+- identifier: kgmicrobe.ingredient:x10_jamarin_s
+  preferred_term: X10 Jamarin S
+  synonyms:
+  - synonym_text: X10 Jamarin S
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1826); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:50:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_STOCK_SOLUTION
+    changes: Classified as a concentrated Jamarin S medium/salt preparation and left
+      unmapped pending component-level recipe curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0580 -> kgmicrobe.ingredient:x10_jamarin_s (FALLBACK_REGISTRY).
+      A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and
+      ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1826); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as a concentrated medium/salt preparation
+    pending component-level recipe curation.
+  ingredient_type: STOCK_SOLUTION
+  solution_type: OTHER
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:x10_jamarin_s
+    ontology_label: X10 Jamarin S
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#288)
+      notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+        and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+        is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+        mint with no parent, because a multi-component mix does not narrow to any
+        single compound (#288).'

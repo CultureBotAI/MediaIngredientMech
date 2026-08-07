@@ -1,10 +1,20 @@
 # Mapped Ingredients
 
-Generated: 2026-08-06T22:54:17.745364+00:00
-Total: 2456 ingredients
+Generated: 2026-08-07T03:17:27.014237+00:00
+Total: 2490 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.ingredient:hans_100x_vitamins | kgmicrobe.ingredient:hans_100x_vitamins | Hans 100x vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:hans_1000x_minerals | kgmicrobe.ingredient:hans_1000x_minerals | Hans 1000x minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:glycine-naoh_buffer | kgmicrobe.ingredient:glycine-naoh_buffer | Glycine-NaOH buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:carbon_source_solution | kgmicrobe.ingredient:carbon_source_solution | Carbon source solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:aminoacids | kgmicrobe.ingredient:aminoacids | Aminoacids | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:pbs | NCIT:C178908 | PBS | MAPPED | NCIT | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:84_gl_nahco3_solution | CHEBI:32139 | 84 g/L NaHCO3 solution | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution | CHEBI:91247 | L-Cysteine x HCl x H2O solution | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:cholesterol_lipid_concentrate | CHEBI:16113 | cholesterol lipid concentrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:menadione_solution | CHEBI:28869 | Menadione solution | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid | kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid | Wolfe's mineral mix_minus_Nitrilotriacetic_acid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
 | kgmicrobe.ingredient:uw_concentrated_base_no_sulfur | kgmicrobe.ingredient:uw_concentrated_base_no_sulfur | UW concentrated base no sulfur | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
 | kgmicrobe.ingredient:thauers_vitamin_mix_no_biotin | kgmicrobe.ingredient:thauers_vitamin_mix_no_biotin | Thauer's vitamin mix no Biotin | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
@@ -2461,3 +2471,27 @@ Total: 2456 ingredients
 | FOODON:03315719 | FOODON:03315719 | Casamino acids | MAPPED | FOODON | CLOSE_MATCH | 395 |
 | cas:150-90-3 | CHEBI:15741 | Sodium succinate dibasic | MAPPED | CHEBI | NARROW_MATCH | 3 |
 | CHEBI:61278 | CHEBI:61278 | Na2S2O4 | REJECTED | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.ingredient:isovitalex | kgmicrobe.ingredient:isovitalex | Isovitalex | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:k-phosphate_buffer | kgmicrobe.ingredient:k-phosphate_buffer | K-phosphate buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:legionella_agar_enrichment | kgmicrobe.ingredient:legionella_agar_enrichment | Legionella agar enrichment | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:metall_salt_sol_44 | kgmicrobe.ingredient:metall_salt_sol_44 | Metall salt sol. 44 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:micronutrient_solution | kgmicrobe.ingredient:micronutrient_solution | micronutrient solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:mineral_salts_base | kgmicrobe.ingredient:mineral_salts_base | Mineral salts base | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:modified_trace_vitamins | kgmicrobe.ingredient:modified_trace_vitamins | Modified trace vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:murashige-skoog_basal_salts | kgmicrobe.ingredient:murashige-skoog_basal_salts | Murashige-Skoog basal salts | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:na-phosphate-buffer | kgmicrobe.ingredient:na-phosphate-buffer | Na-Phosphate-Buffer | REJECTED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:na-phosphate_buffer | kgmicrobe.ingredient:na-phosphate_buffer | Na-phosphate buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:na2hpo4-kh2po4_buffer | kgmicrobe.ingredient:na2hpo4-kh2po4_buffer | Na2HPO4-KH2PO4 buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:na2hpo4-nah2po4_buffer | kgmicrobe.ingredient:na2hpo4-nah2po4_buffer | Na2HPO4-NaH2PO4 buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:oadc_enrichment | kgmicrobe.ingredient:oadc_enrichment | OADC Enrichment | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:salt_solution_ii | kgmicrobe.ingredient:salt_solution_ii | Salt Solution II | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:salts_solution | kgmicrobe.ingredient:salts_solution | Salts solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:skirrow_supplement | kgmicrobe.ingredient:skirrow_supplement | Skirrow supplement | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:steric_solution | kgmicrobe.ingredient:steric_solution | Steric solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:trace_metal_solution | kgmicrobe.ingredient:trace_metal_solution | Trace metal solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:trace_mineral_solution | kgmicrobe.ingredient:trace_mineral_solution | Trace mineral solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:trace_minerals | kgmicrobe.ingredient:trace_minerals | Trace minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:vitamins-solution | kgmicrobe.ingredient:vitamins-solution | Vitamins-solution | REJECTED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:vitamins_solution | kgmicrobe.ingredient:vitamins_solution | Vitamins solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:vitox | kgmicrobe.ingredient:vitox | Vitox | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:x10_jamarin_s | kgmicrobe.ingredient:x10_jamarin_s | X10 Jamarin S | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
