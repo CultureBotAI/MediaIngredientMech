@@ -60,17 +60,59 @@ def test_other_edison_jobs_are_not_picked_up(research):
     assert mod.report_index() == {}
 
 
-def test_a_collision_keeps_one_entry_deterministically(research):
-    """Two spellings differing only by case must not make the index ambiguous.
+def test_a_collision_keeps_one_entry(research, monkeypatch):
+    """Two stems differing only by case must not make the index ambiguous.
 
-    `setdefault` means first-wins in glob order rather than a crash; what matters
-    is that the caller gets exactly one readable path, not which one.
+    Writing both files and asserting on the result is VACUOUS on this machine:
+    macOS APFS is case-insensitive, so the second write overwrites the first and
+    only one file ever exists. The test would pass without exercising anything.
+    So the directory listing is faked to produce the collision a case-sensitive
+    filesystem would really present.
+
+    `setdefault` is first-in-glob-order, and `Path.glob` does not sort, so which
+    path wins is not guaranteed -- only that exactly one key exists and it maps
+    to a real file. The consequence if this regressed is silent and bad: two
+    ingredients whose slugs differ only in case quoting each other's report into
+    curation history.
     """
-    (research / "Foo_Bar-edison-literature.md").write_text("x")
-    (research / "foo_bar-edison-literature.md").write_text("y")
+    real = research / "Foo_Bar-edison-literature.md"
+    real.write_text("x")
+    both = [real, research / "foo_bar-edison-literature.md"]
+
+    class CaseSensitiveDir:
+        def glob(self, _pattern):
+            return iter(both)
+
+    monkeypatch.setattr(mod, "RESEARCH", CaseSensitiveDir())
     idx = mod.report_index()
-    assert list(idx) == ["foo_bar"]
-    assert idx["foo_bar"].exists()
+    assert list(idx) == ["foo_bar"], "one key, not two"
+    assert idx["foo_bar"] in both
+
+
+def test_a_heading_verdict_carries_the_line_beneath_it(research):
+    """`## Executive recommendation` alone tells a curator nothing."""
+    verdict, _ = mod.summarise(
+        "intro\n## Executive recommendation\n\nRetain as UNMAPPED; the label is "
+        "a family name.\n\nmore prose")
+    assert "Retain as UNMAPPED" in verdict
+
+
+@pytest.mark.parametrize("text,want", [
+    ("| Recommended status | **UNMAPPED** | no row |", "UNMAPPED"),
+    ("### Recommended mapping status\nUNMAPPED, family label", "family label"),
+    ("- **Recommended status:** `UNMAPPED`", "UNMAPPED"),
+])
+def test_non_bolded_verdict_shapes_are_found(text, want):
+    """49 of 240 reports stated a verdict in one of these shapes and were
+    summarised as having none, deferring to a gitignored path instead."""
+    verdict, _ = mod.summarise(text)
+    assert want in verdict
+
+
+def test_curie_prefixes_are_canonicalised():
+    """Reports write `ChEBI:` and `MeSH:`; those fail this repo's CURIE pattern."""
+    _, curies = mod.summarise("see ChEBI:2682 and MeSH:D000666")
+    assert curies == ["CHEBI:2682", "MESH:D000666"]
 
 
 def test_summarise_reports_curies_and_verdict():

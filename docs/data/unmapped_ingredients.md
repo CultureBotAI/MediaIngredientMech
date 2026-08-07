@@ -1,6 +1,6 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-07T05:26:51.870085+00:00
+Generated: 2026-08-07T10:30:03.847366+00:00
 Total: 349 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -56,7 +56,7 @@ Total: 349 ingredients
 | UNMAPPED_0359 |  | CMRL 1066 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0049 |  | Ca | UNMAPPED |  |  | 3 |
 | UNMAPPED_0156 |  | Cadmium-NTA | UNMAPPED |  |  | 0 |
-| UNMAPPED_0170 |  | Calf brains | UNMAPPED |  |  | 7 |
+| UNMAPPED_0170 | UBERON:0000955 | Calf brains | UNMAPPED | UBERON | NARROW_MATCH | 7 |
 | UNMAPPED_0229 |  | Calprotectin S1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0230 |  | Calprotectin S1S2 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
@@ -64,7 +64,7 @@ Total: 349 ingredients
 | UNMAPPED_0354 |  | Cellulose MN 300 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0356 |  | Cereal leaves | UNMAPPED |  |  | 0 |
 | UNMAPPED_0357 |  | Cerophyll | UNMAPPED |  |  | 0 |
-| UNMAPPED_0248 |  | Chitin from shrimp shells | UNMAPPED |  |  | 0 |
+| UNMAPPED_0248 | CHEBI:17029 | Chitin from shrimp shells | UNMAPPED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0164 |  | Cholinium alpha ketoglutarate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0163 |  | Cholinium aspartate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0161 |  | Cholinium glutamate | UNMAPPED |  |  | 0 |
@@ -80,7 +80,7 @@ Total: 349 ingredients
 | UNMAPPED_0151 |  | Copper-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0130 |  | Corn meal agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0366 |  | Corn steep powder | UNMAPPED |  |  | 0 |
-| UNMAPPED_0367 |  | Cow manure | UNMAPPED |  |  | 0 |
+| UNMAPPED_0367 | ENVO:00003031 | Cow manure | UNMAPPED | ENVO | NARROW_MATCH | 0 |
 | UNMAPPED_0369 |  | CrKSO42 x 12 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0213 |  | Cravingzgone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0370 |  | Czapek-Dox liquid medium | UNMAPPED |  |  | 0 |

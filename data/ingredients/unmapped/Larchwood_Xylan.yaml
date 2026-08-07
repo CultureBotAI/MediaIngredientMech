@@ -41,30 +41,16 @@ curation_history:
   llm_assisted: true
 - timestamp: '2026-08-07T00:00:00+00:00'
   curator: edison_contextual_parent
-  action: ADDED_PARENT_CONTEXT
-  changes: 'Recorded CHEBI:37166 (xylan) as the nearest ontology parent with mapping_quality=NARROW_MATCH:
-    xylan from a named wood; the report refuses even the generic xylan CAS because
-    it "would not resolve larchwood specificity", which is the argument for narrower-than,
-    not for silence. Status stays UNMAPPED and NO SSSOM row is published — this follows
-    the existing contextual pattern on Inorganic salts-starch agar (CHEBI:24839, "retained
-    ... only as contextual curation") and five sibling records. exactMatch/closeMatch
-    are withheld deliberately: they license node substitution, and a source- or grade-qualified
-    preparation is not interchangeable with the substance it is prepared from. Whether
-    this pattern should instead publish a skos:narrowMatch row is the open question
-    in #294.'
+  action: REVERTED_PARENT_CONTEXT
+  changes: 'Removed the CHEBI:37166 xylan parent this tool had recorded. The term
+    and its label are correct in the local ChEBI build, but the CURIE appears nowhere
+    in the Edison report the entry cited as evidence — it came from a lookup I ran
+    after reading the report''s prose. Keeping it would have credited that lookup
+    to the literature agent, and left two contradicting events one day apart on this
+    record: one saying no CURIE was proposed, one sourcing a CURIE to the same run.
+    Re-proposing it is fine, with its own evidence; see #294.'
   llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1624); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a larchwood-derived xylan substrate/fraction
   pending polymer source and composition curation.
 ingredient_type: UNDEFINED_MIXTURE
-ontology_mapping:
-  ontology_id: CHEBI:37166
-  ontology_label: xylan
-  ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
-  evidence:
-  - evidence_type: LITERATURE
-    source: Edison LITERATURE (PaperQA3) identity research
-    notes: 'Parent class, not identity: xylan from a named wood; the report refuses
-      even the generic xylan CAS because it "would not resolve larchwood specificity",
-      which is the argument for narrower-than, not for silence.'

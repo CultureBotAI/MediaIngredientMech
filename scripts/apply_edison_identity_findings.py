@@ -39,10 +39,24 @@ UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 RESEARCH = ROOT / "research" / "ingredients"
 STAMP = "2026-08-06T00:00:00+00:00"
 
-# The report's own bolded verdict, in the several shapes the template produces.
+# The report's own verdict. The agent does not use one template, and requiring a
+# bolded `**Recommend...**` run missed 49 of 240 reports that state a verdict
+# plainly in another shape:
+#
+#   | Recommended status | **UNMAPPED** ... |   <- a table cell (BHI)
+#   ## Executive recommendation             <- a heading (Whole egg)
+#   ### Recommended mapping status          <- a heading (Amphotericin)
+#
+# Those notes then read "Report reached no single bolded verdict; see the report"
+# and deferred to a gitignored path -- the one outcome the inline quoting exists
+# to prevent. Ordered most-specific first; `search` takes the earliest match, so
+# each alternative must be self-delimiting.
 VERDICT = re.compile(
-    r"\*\*Recommend(?:ation|ed)?[^*\n]*\*\*[^\n]*|"
-    r"\*\*Recommended interpretation:\*\*[^\n]*", re.I)
+    r"\*\*Recommend(?:ation|ed)?[^*\n]*\*\*[^\n]*"          # **Recommended X:** ...
+    r"|\|\s*Recommend(?:ation|ed)?[^|\n]*\|[^\n]*"          # | Recommended ... | ... |
+    r"|^#{2,4}\s*(?:Executive |Curation )?Recommend[^\n]*"  # ## Executive recommendation
+    r"|^\s*[-*]\s*\*\*Recommend[^\n]*",                     # - **Recommended status:** ...
+    re.I | re.M)
 # A CURIE the report proposes, so the note can say whether one was found at all.
 #
 # The local part is NOT uniformly numeric. MeSH descriptors are a letter then
@@ -72,14 +86,30 @@ def report_index() -> dict[str, Path]:
 
 def summarise(text: str) -> tuple[str, list[str]]:
     m = VERDICT.search(text)
-    verdict = re.sub(r"\s+", " ", m.group(0)).strip() if m else ""
+    verdict = ""
+    if m:
+        verdict = re.sub(r"\s+", " ", m.group(0)).strip()
+        # A heading is only a pointer -- "## Executive recommendation" quoted on
+        # its own tells a curator nothing. Carry the first non-empty line under
+        # it, which is where that shape puts the actual verdict.
+        if verdict.startswith("#"):
+            rest = text[m.end():].lstrip("\n")
+            follow = next((ln for ln in rest.split("\n") if ln.strip()), "")
+            if follow:
+                verdict = f"{verdict} — {re.sub(r'\s+', ' ', follow).strip()}"
+    verdict = verdict[:400]
     # De-duplicate on the case-folded CURIE, keeping the spelling first used.
     # Reports mix `MeSH:D001812` and `MESH:D001812` in one document; matching
     # case-insensitively without folding the key lists the same term twice and
     # reads as two independent candidates.
+    # De-duplicate case-folded, and emit the CANONICAL prefix spelling rather
+    # than whatever the report used. Reports write `ChEBI:2682` and `MeSH:D000666`;
+    # quoting those verbatim puts strings into curation history that a curator
+    # would reasonably copy-paste and that fail this repo's own CURIE pattern.
     seen: dict[str, str] = {}
     for m in CURIE.finditer(text):
-        seen.setdefault(m.group(0).upper(), m.group(0))
+        prefix, local = m.group(0).split(":", 1)
+        seen.setdefault(m.group(0).upper(), f"{prefix.upper()}:{local.upper()}")
     return verdict, list(seen.values())
 
 
@@ -123,10 +153,13 @@ def main() -> int:
         if rec.get("mapping_status") not in ("UNMAPPED", "NEEDS_EXPERT"):
             continue
         slug = sanitize_filename(rec.get("preferred_term") or "")
-        report = RESEARCH / f"{slug}-edison-literature.md"
-        if not report.exists():
-            report = index.get(slug.lower())
-        if report is None or not report.exists():
+        # Resolve ONLY through the index. Trying `RESEARCH / f"{slug}-..."` first
+        # looks equivalent but is not: on macOS's case-insensitive APFS that path
+        # `.exists()` even when the real filename differs in case, so the note
+        # embeds a path that does not exist on Linux, and the two platforms write
+        # different text for the same record. 13 notes were in that state.
+        report = index.get(slug.lower())
+        if report is None:
             continue
         verdict, curies = summarise(report.read_text())
         note = build_note(report, verdict, curies)

@@ -59,14 +59,31 @@ PARENTS = {
         "CHEBI:17029", "chitin", "CHEBI",
         "the report calls it \"a source-qualified polymer preparation, not a "
         "uniquely defined small molecule\"; chitin is that source-free polymer"),
-    "Larchwood xylan": (
-        "CHEBI:37166", "xylan", "CHEBI",
-        "xylan from a named wood; the report refuses even the generic xylan CAS "
-        "because it \"would not resolve larchwood specificity\", which is the "
-        "argument for narrower-than, not for silence"),
-    "dextran, Mw ~1,270": (
-        "CHEBI:52071", "dextran", "CHEBI",
-        "dextran qualified by a molecular weight the parent class does not carry"),
+}
+
+# Dropped in review. Both parents are real terms in the local ChEBI build with
+# the labels claimed -- CHEBI:37166 xylan, CHEBI:52071 dextran -- and both read
+# as obviously correct. But neither CURIE appears anywhere in the report this
+# entry would have cited as its evidence: grepping every ontology prefix out of
+# Larchwood_xylan-edison-literature.md and Dextran_Mw_1270-edison-literature.md
+# returns nothing at all. I found those terms by querying chebi.db myself after
+# reading the reports' prose.
+#
+# Writing them with `source: "Edison LITERATURE (PaperQA3) identity research"`
+# would attribute my lookup to the literature agent, and would have put two
+# contradicting events one day apart on the same record: `edison_literature_identity`
+# saying "No ontology CURIE was proposed", then `edison_contextual_parent`
+# sourcing a CURIE to that same run. That is the precise failure this PR exists
+# to catch elsewhere -- a plausible identifier arriving with borrowed provenance.
+#
+# The Larchwood report also points away from a chemical-entity parent: its verdict
+# is to retain the record as UNDEFINED_MIXTURE "(or a polymer/material class)".
+#
+# Re-proposing either is fine; it needs its own evidence and a curator's call,
+# which is what #294 is for.
+NOT_IN_THEIR_REPORTS = {
+    "Larchwood xylan": "CHEBI:37166 xylan",
+    "dextran, Mw ~1,270": "CHEBI:52071 dextran",
 }
 
 
@@ -77,6 +94,38 @@ def main() -> int:
 
     doc = yaml.safe_load(UNMAPPED.read_text())
     n = 0
+
+    # Undo the two this tool wrote before review caught the misattribution.
+    for rec in doc["ingredients"]:
+        term = (rec.get("preferred_term") or "").strip()
+        if term not in NOT_IN_THEIR_REPORTS:
+            continue
+        hist = rec.get("curation_history") or []
+        mine = [h for h in hist if h.get("curator") == "edison_contextual_parent"]
+        if not mine:
+            continue
+        rec.pop("ontology_mapping", None)
+        rec["curation_history"] = [
+            h for h in hist if h.get("curator") != "edison_contextual_parent"]
+        rec["curation_history"].append({
+            "timestamp": STAMP,
+            "curator": "edison_contextual_parent",
+            "action": "REVERTED_PARENT_CONTEXT",
+            "changes": (
+                f"Removed the {NOT_IN_THEIR_REPORTS[term]} parent this tool had "
+                "recorded. The term and its label are correct in the local ChEBI "
+                "build, but the CURIE appears nowhere in the Edison report the "
+                "entry cited as evidence — it came from a lookup I ran after "
+                "reading the report's prose. Keeping it would have credited that "
+                "lookup to the literature agent, and left two contradicting "
+                "events one day apart on this record: one saying no CURIE was "
+                "proposed, one sourcing a CURIE to the same run. Re-proposing it "
+                "is fine, with its own evidence; see #294."),
+            "llm_assisted": True,
+        })
+        n += 1
+        print(f"  REVERTED {term[:32]:34} was {NOT_IN_THEIR_REPORTS[term]}")
+
     for rec in doc["ingredients"]:
         term = (rec.get("preferred_term") or "").strip()
         if term not in PARENTS:
