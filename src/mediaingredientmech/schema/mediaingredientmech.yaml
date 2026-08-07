@@ -334,7 +334,7 @@ classes:
           Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X or XXXX-XX-X.
           Primary chemical identifier used in regulatory and commercial contexts.
           Retrieved from CultureBotHT/MicroMediaParam mappings or external databases.
-        pattern: "^\\d+-\\d+-\\d+$"
+        pattern: "^\\d{2,7}-\\d{2}-\\d$"
       molecular_formula:
         description: Molecular formula (e.g., H2O, C6H12O6)
       smiles:
@@ -378,7 +378,7 @@ classes:
           CAS-RN cross-reference resolver (`evidence_type: CAS_RN_CROSS_REFERENCE`)
           when an ontology term was matched via its CAS-RN rather than label
           or synonym. Same format as `ChemicalProperties.cas_rn`.
-        pattern: "^\\d+-\\d+-\\d+$"
+        pattern: "^\\d{2,7}-\\d{2}-\\d$"
       pmid:
         description: PubMed ID for MEDLINE citations (e.g., 12345678)
         pattern: "^[0-9]+$"
