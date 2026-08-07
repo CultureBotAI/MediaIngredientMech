@@ -59,15 +59,17 @@ material like any other: fix the reference, or declare it in
 
 `check-chebi-currency` compares the local semsql ChEBI against the release
 kg-microbe uses. When the local copy is behind, real upstream terms fail to
-resolve and `just validate-products` reports them `ID_OUT_OF_RANGE` — wording
-that says "foreign identifier" and invites deleting a valid mapping. Six real
-terms were demoted exactly that way in #193 while the local build sat one release
-behind (#197, #198). **Before acting on any `ID_OUT_OF_RANGE` finding, run this
-check.** It also reports whether a refresh would help: the semsql build MIM
+resolve and `just validate-products` reports them `ID_NOT_FOUND` — a fact about
+the build, not about the identifier. Six real terms were deleted on that
+misreading in #193 while the local build sat one release behind (#197, #198);
+the old `CHEBI: 300000` ceiling made it worse by reporting them
+`ID_OUT_OF_RANGE`, which asserts "foreign identifier" (raised to `1000000` in
+#210). **Before acting on any missing-id finding on a high CHEBI accession, run
+this check.** It also reports whether a refresh would help: the semsql build MIM
 consumes lags ChEBI itself, so being behind is often *upstream* lag that no
-download fixes. In that state, treat a high-accession `ID_OUT_OF_RANGE` as
-unproven and check the id against OLS4 before demoting anything — that is
-exactly what was skipped in #193. Advisory
+download fixes. In that state, treat the verdict as unproven and check the id
+against OLS4 before demoting anything — that is exactly what was skipped in
+#193. Advisory
 and local-only; the OAK cache is a multi-GB developer artifact CI does not have.
 
 For each pending item: *is its deliverable already in a merged PR or in the

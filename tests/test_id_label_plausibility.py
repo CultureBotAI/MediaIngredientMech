@@ -13,9 +13,11 @@ and the unrelated-compound case must fail.
 from __future__ import annotations
 
 import importlib.util
+import sys
 from pathlib import Path
 
 import pytest
+import yaml
 
 _REPO = Path(__file__).resolve().parent.parent
 _spec = importlib.util.spec_from_file_location(
@@ -64,6 +66,9 @@ ADAPTER = FakeAdapter({
     # an ALL-CAPS abbreviation that IS the canonical label but parses as a
     # formula (C,C,C,P) conflicting with the real formula C9H5ClN4.
     "CHEBI:3259": {"label": "CCCP", "formula": "C9H5ClN4"},
+    # a REAL, recent ChEBI term whose accession sits far above the old 300000
+    # ceiling — present in the local semsql build (release 252 reaches 747618).
+    "CHEBI:747127": {"label": "gepotidacin", "formula": "C18H20N6O3"},
 })
 
 
@@ -132,13 +137,75 @@ def test_lost_subscripts_reported_separately():
     assert "LABEL_SUBSCRIPTS_LOST" not in mod._ERROR_VERDICTS
 
 
+def _shipped_chebi_ceiling() -> int:
+    """The CHEBI ceiling as actually configured, not a literal repeated here.
+
+    A test that hard-codes the number passes just as happily after the config
+    drifts, which is how 300000 survived being wrong (#197, #210).
+    """
+    cfg = yaml.safe_load((_REPO / "conf" / "id_label_targets.yaml").read_text())
+    return int(cfg["max_accession"]["CHEBI"])
+
+
 def test_out_of_range_accession_distinguished_from_missing():
     """A PubChem CID wearing a CHEBI prefix gets its own verdict."""
-    assert _classify("Nicotinate", "CHEBI:10716816", max_accession=300000) == \
+    ceiling = _shipped_chebi_ceiling()
+    # 8 digits — beyond anything ChEBI mints, inside PubChem's range.
+    assert _classify("Nicotinate", "CHEBI:10716816", max_accession=ceiling) == \
         "ID_OUT_OF_RANGE"
     # Below the ceiling and simply absent → the ordinary missing-id verdict.
-    assert _classify("Whatever", "CHEBI:99999", max_accession=300000) == \
+    assert _classify("Whatever", "CHEBI:99999", max_accession=ceiling) == \
         "ID_NOT_FOUND"
+
+
+def test_ceiling_clears_chebi_real_accession_range():
+    """#210: the ceiling must sit above ChEBI's own range, not inside it.
+
+    At 300000 every term newer than the local semsql build (which already
+    reaches 747618) was reported as an identifier from another registry, and
+    #193 acted on that wording to demote 17 real terms. The ceiling separates
+    out an 8-digit PubChem CID; it is not a claim about how far ChEBI has minted.
+    """
+    ceiling = _shipped_chebi_ceiling()
+    # Above the highest accession in the local build, and above the six
+    # OLS4-verified antibiotics (748901–759884) that #197/#205 had to restore.
+    assert ceiling > 759884
+    # Still below the 8 digits a PubChem CID reaches, or the verdict it exists
+    # to produce becomes unreachable.
+    assert ceiling < 10_000_000
+
+
+def test_resolvable_above_old_ceiling_id_passes():
+    """The ceiling is a tie-breaker on ids that ALREADY failed to resolve.
+
+    gepotidacin (CHEBI:747127) is real, resolves, and sits above the retired
+    300000 — it must never reach the ceiling check at all.
+    """
+    for ceiling in (300000, _shipped_chebi_ceiling()):
+        assert _classify("gepotidacin", "CHEBI:747127",
+                         max_accession=ceiling) == "OK_ID_ONLY"
+
+
+def test_config_ceiling_matches_curie_module():
+    """The repo carries two ceiling tables; they must not disagree.
+
+    `src/mediaingredientmech/curie.py` was corrected to 1_000_000 while
+    `conf/id_label_targets.yaml` stayed at 300000, so the same id could be
+    called foreign by one gate and fine by the other (#210).
+    """
+    sys.path.insert(0, str(_REPO / "src"))
+    try:
+        from mediaingredientmech.curie import MAX_ACCESSION
+    finally:
+        sys.path.pop(0)
+    cfg = yaml.safe_load((_REPO / "conf" / "id_label_targets.yaml").read_text())
+    shared = set(cfg["max_accession"]) & set(MAX_ACCESSION)
+    assert shared, "the two ceiling tables share no prefix — one has been renamed"
+    for prefix in sorted(shared):
+        assert int(cfg["max_accession"][prefix]) == int(MAX_ACCESSION[prefix]), (
+            f"{prefix} ceiling differs: conf/id_label_targets.yaml says "
+            f"{cfg['max_accession'][prefix]}, curie.py says {MAX_ACCESSION[prefix]}"
+        )
 
 
 def test_default_waiver_mode_is_unchanged():
