@@ -58,6 +58,23 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TAPSO-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommendation: retain `UNMAPPED`.** The chemical
+    identity is sufficiently clear for a `SINGLE_INGREDIENT` record, but no exact
+    ontology entity has been verified. Emit **no SSSOM identity row**. In particular,
+    do not use `skos:exactMatch`, `skos:closeMatch`, or `skos:narrowMatch` for either
+    known false-positive CURIE. A generic buffer-class link, if the schema supports
+    non-identity classification, should be represented separately as a broader/functional
+    category—not as the ingredient’s ontology mapping. CURIEs discussed: CHEBI:84015,
+    MESH:C047133. Recorded as provenance only — no grounding applied from this run.
+    Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist
+    to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 68399-81-5
   data_source: PubChem API

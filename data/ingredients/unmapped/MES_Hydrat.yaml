@@ -24,7 +24,36 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/MES_Hydrat-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended status:** `UNMAPPED` CURIEs discussed:
+    CHEBI:39010. Recorded as provenance only — no grounding applied from this run.
+    Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist
+    to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_cas_enrichment
+  action: ADDED_CAS_RN
+  changes: 'Added cas_rn 145224-94-8 (2-(N-morpholino)ethanesulfonic acid monohydrate)
+    from Edison literature research: the report''s own recommendation is to "Add the
+    source-backed preferred name, exact monohydrate synonyms, CAS RN 145224-94-8,
+    and hydrate-state annotation", citing a peer-reviewed materials section that names
+    the monohydrate and associates it with that number. Enrichment only — the mapping
+    status is unchanged, because a CAS identifies a substance without supplying an
+    ontology term. Applied only because the report AFFIRMS the number for this record''s
+    own substance: the same scan pulled CAS numbers out of five other reports that
+    forbid them outright (HBO3, α-D-Glucose monohydrate, Larchwood xylan, Sigmacell
+    alpha Type 50, dextran Mw ~1,270), because a CAS printed in a rejected-candidate
+    row looks identical to one in a conclusion.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2394); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as MES hydrate shorthand; not merged to
   anhydrous MES or MES sodium salt.
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 145224-94-8
+  data_source: Edison LITERATURE deep research

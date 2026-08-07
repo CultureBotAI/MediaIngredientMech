@@ -24,6 +24,25 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/EBIOS-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended mapping status: `UNMAPPED`.** Retain
+    the local named-mixture record. Do not create an SSSOM row at present. A future
+    verified ontology term for **brewer’s yeast extract** could potentially receive
+    `skos:closeMatch` as a product-class mapping, but not `skos:exactMatch` to EBIOS
+    P2G unless that ontology term explicitly denotes this product. A generic yeast-extract
+    term would be a broader conceptual parent, not an exact identity; if a project
+    records hierarchical non-identity mappings, the local product could be related
+    to that class using an appropriately directed broader/narrower relation after
+    identifier verification. No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1953); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a named commercial preparation pending
   product-specific composition curation.

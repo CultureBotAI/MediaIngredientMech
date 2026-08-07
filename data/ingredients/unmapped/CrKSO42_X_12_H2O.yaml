@@ -25,7 +25,35 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CrKSO42_x_12_H2O-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report reached no single bolded verdict; see the report. No ontology
+    CURIE was proposed. Recorded as provenance only — no grounding applied from this
+    run. Edison''s recommendations are deliberately conservative, and a plausible
+    identifier promoted by a mechanism that never decided anything is what #203 and
+    #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_cas_enrichment
+  action: ADDED_CAS_RN
+  changes: 'Added cas_rn 7788-99-0 (potassium chromium(III) sulfate dodecahydrate)
+    from Edison literature research: the report equates chrome alum with KCr(SO4)2*12H2O
+    from peer-reviewed literature and gives CAS RN 7788-99-0 from a chemical reference,
+    listing it under an unqualified "CAS Registry Number:" heading. Enrichment only
+    — the mapping status is unchanged, because a CAS identifies a substance without
+    supplying an ontology term. Applied only because the report AFFIRMS the number
+    for this record''s own substance: the same scan pulled CAS numbers out of five
+    other reports that forbid them outright (HBO3, α-D-Glucose monohydrate, Larchwood
+    xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in a
+    rejected-candidate row looks identical to one in a conclusion.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a chromium potassium
   sulfate hydrate shorthand; left unmapped pending exact formula/CAS evidence.
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 7788-99-0
+  data_source: Edison LITERATURE deep research

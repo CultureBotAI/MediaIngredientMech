@@ -30,6 +30,22 @@ curation_history:
   changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
     culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Blood_Agar_Base-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** `Blood Agar Base`
+    is a **complex basal culture-medium formulation/family label**, not a single chemical,
+    salt, hydrate, buffer, or chemically defined substance. The current `DEFINED_MEDIUM`
+    type is appropriate in the database sense of a named complete basal medium, although
+    the material is **not chemically defined**: such formulations contain complex
+    digests/extracts whose molecular composition is not fixed. No ontology CURIE was
+    proposed. Recorded as provenance only — no grounding applied from this run. Edison''s
+    recommendations are deliberately conservative, and a plausible identifier promoted
+    by a mechanism that never decided anything is what #203 and #263 exist to undo.
+    Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2130); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a blood agar base preparation pending
   product- or recipe-level curation.

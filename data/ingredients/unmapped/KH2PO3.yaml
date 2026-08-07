@@ -24,7 +24,37 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/KH2PO3-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report reached no single bolded verdict; see the report. No ontology
+    CURIE was proposed. Recorded as provenance only — no grounding applied from this
+    run. Edison''s recommendations are deliberately conservative, and a plausible
+    identifier promoted by a mechanism that never decided anything is what #203 and
+    #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_cas_enrichment
+  action: ADDED_CAS_RN
+  changes: 'Added cas_rn 13977-65-6 (potassium phosphite monobasic) from Edison literature
+    research: the report calls the label "sufficiently resolved chemically as the
+    defined single salt potassium phosphite monobasic, KH2PO3, CAS RN 13977-65-6"
+    on a culture-medium method that names supplier and CAS, and says the number "can
+    be stored as chemical registry grounding but should not be presented as an ontology
+    CURIE" — which is exactly this write. Enrichment only — the mapping status is
+    unchanged, because a CAS identifies a substance without supplying an ontology
+    term. Applied only because the report AFFIRMS the number for this record''s own
+    substance: the same scan pulled CAS numbers out of five other reports that forbid
+    them outright (HBO3, α-D-Glucose monohydrate, Larchwood xylan, Sigmacell alpha
+    Type 50, dextran Mw ~1,270), because a CAS printed in a rejected-candidate row
+    looks identical to one in a conclusion.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1677); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as KH2PO3 formula
   shorthand; left unmapped pending exact salt/protonation evidence.
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 13977-65-6
+  data_source: Edison LITERATURE deep research

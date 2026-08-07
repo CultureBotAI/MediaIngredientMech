@@ -22,6 +22,21 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Soil')
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Soil_Defined_Carbon_Mix-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a locally named,
+    defined multicomponent organic-metabolite mixture, probably corresponding to the
+    23-metabolite amendment used in Jenkins et al.’s Soil Defined Medium 1 (SDM1).
+    It is **not** a single chemical, salt/hydrate, buffer, extract, commercial product,
+    or complete growth medium. No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   1 CultureBot media; samples: Soil Defined Media (SDM). No CAS-RN or CHEBI mapping
   available; curator review needed.'
