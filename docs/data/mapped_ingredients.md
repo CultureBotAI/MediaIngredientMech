@@ -1,10 +1,15 @@
 # Mapped Ingredients
 
-Generated: 2026-08-07T10:30:03.843464+00:00
-Total: 2492 ingredients
+Generated: 2026-08-07T11:01:54.899330+00:00
+Total: 2497 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| cas:68399-81-5 | cas:68399-81-5 | TAPSO | MAPPED | CAS | FALLBACK_REGISTRY | 10 |
+| cas:7705-07-9 | cas:7705-07-9 | TitaniumIII chloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:13977-65-6 | CHEBI:44976 | KH2PO3 | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:7788-99-0 | CHEBI:53471 | CrKSO42 x 12 H2O | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:145224-94-8 | CHEBI:39005 | MES Hydrat | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:13408-09-8 | CHEBI:15978 | Na2glycerophosphate•5H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | cas:10049-21-5 | CHEBI:37585 | NaH2PO4•H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.ingredient:hans_100x_vitamins | kgmicrobe.ingredient:hans_100x_vitamins | Hans 100x vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |

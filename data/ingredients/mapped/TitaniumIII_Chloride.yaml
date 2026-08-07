@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0541
+identifier: cas:7705-07-9
 preferred_term: TitaniumIII chloride
 synonyms:
 - synonym_text: TitaniumIII chloride
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -55,6 +55,14 @@ curation_history:
     xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in a
     rejected-candidate row looks identical to one in a conclusion.'
   llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0541 -> cas:7705-07-9 "TitaniumIII chloride" (FALLBACK_REGISTRY);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:805); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to TiCl3 without exact source
   normalization evidence.
@@ -62,3 +70,16 @@ ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   cas_rn: 7705-07-9
   data_source: Edison LITERATURE deep research
+ontology_mapping:
+  ontology_id: cas:7705-07-9
+  ontology_label: TitaniumIII chloride
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+    notes: 'Titanium(III) chloride. The report quotes a specialist inorganic-chemistry
+      reference assigning titanium trichloride CAS RN 7705-07-9 and describing four
+      solid polymorphs, so this is a defined compound rather than a mixture or formulation.
+      Parentless: the local CHEBI build carries titanium OXIDES and elemental titanium
+      but no titanium chloride at any oxidation state, so there is no term to narrowMatch.'

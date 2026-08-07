@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0411
+identifier: cas:13977-65-6
 preferred_term: KH2PO3
 synonyms:
 - synonym_text: KH2PO3
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -56,6 +56,14 @@ curation_history:
     Type 50, dextran Mw ~1,270), because a CAS printed in a rejected-candidate row
     looks identical to one in a conclusion.'
   llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0411 -> cas:13977-65-6 "phosphonic acid" (NARROW_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1677); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as KH2PO3 formula
   shorthand; left unmapped pending exact salt/protonation evidence.
@@ -63,3 +71,16 @@ ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   cas_rn: 13977-65-6
   data_source: Edison LITERATURE deep research
+ontology_mapping:
+  ontology_id: CHEBI:44976
+  ontology_label: phosphonic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+    notes: Potassium phosphite monobasic, KH2PO3. A culture-medium method quoted in
+      the report names it with supplier and CAS RN 13977-65-6, used to replace dipotassium
+      phosphate in phosphorus-modified BG-11. The report states the number should
+      be stored as registry grounding and not presented as an ontology CURIE. CHEBI:44976
+      phosphonic acid is the parent acid; this record is its monopotassium salt.

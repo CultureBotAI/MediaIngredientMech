@@ -35,7 +35,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
 from mediaingredientmech.utils.yaml_handler import save_yaml
-from export_individual_records import sanitize_filename
+from export_individual_records import collect_existing_filenames, sanitize_filename
 
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
@@ -185,7 +185,19 @@ def main():
 
     rec = unmapped["ingredients"][idx]
     pref = rec.get("preferred_term", a.identifier)
-    slug = sanitize_filename(pref)
+    # Reuse the stem this record's per-record file ALREADY has, exactly as
+    # export_individual_records' FilenameIndex does. Re-deriving it with
+    # sanitize_filename looks equivalent and is not: the committed corpus was
+    # written by more than one historical naming rule, so for a record whose file
+    # predates the current rule the two disagree. The export then keeps the old
+    # filename while the SSSOM row gets the newly-derived subject, and the pair
+    # drifts apart the moment the record is promoted -- `CrKSO42_X_12_H2O.yaml`
+    # against `MIM:CrKSO42_x_12_H2O`. CurieNormalizer.resolve() checks subjects
+    # against the filename-derived record set, so a drifted subject is not merely
+    # untidy: `equivalent_term` returns UNKNOWN_SUBJECT and the mapping cannot be
+    # cited at all. Three promotions landed that way before this was fixed.
+    _index = collect_existing_filenames(ROOT / "data" / "ingredients")
+    slug = _index.for_record(rec) or sanitize_filename(pref)
     if minted:
         # Derived from the subject slug, not trusted from the caller: Rule B1 matches
         # the mint's local part against it exactly, and a mismatch only surfaces after
@@ -203,7 +215,14 @@ def main():
     print(f"  SSSOM: MIM:{slug}  {PREDICATE[a.quality]}  {term_curie}  '{label}'"
           f"  conf={CONFIDENCE[a.quality]}")
     if minted and a.quality == "NARROW_MATCH":
-        print(f"  SSSOM: MIM:{slug}  skos:exactMatch  {a.to}  (Rule B1 registry row)")
+        print(f"  SSSOM: MIM:{slug}  skos:exactMatch  {a.to}  (identity of the mint)")
+        # The dry-run IS the safety check, so it must show every row that will be
+        # written. This third one was emitted but never printed, so a `cas:`
+        # promotion looked like a 2-row change and landed as a 3-row one.
+        if not a.to.lower().startswith("kgmicrobe."):
+            print(f"  SSSOM: MIM:{slug}  skos:exactMatch  "
+                  f"{check_registry_mint('kgmicrobe.compound:', slug)}  "
+                  f"(Rule B1 registry row — a cas: exactMatch does not satisfy it)")
 
     # transform the record
     rec["identifier"] = a.to
@@ -278,6 +297,11 @@ def main():
     print("\nRegenerating per-record files + docs ...")
     subprocess.run([sys.executable, str(ROOT / "scripts" / "export_individual_records.py")], check=True, cwd=ROOT)
     subprocess.run([sys.executable, str(ROOT / "scripts" / "export_lists.py")], check=True, cwd=ROOT)
+    # docs/data/ has TWO producers, and `qc-flat-coverage` byte-compares both.
+    # Running only export_lists leaves ingredients.json stale, so every promotion
+    # through this tool left that gate red and the next person to run it saw a
+    # failure they did not cause.
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "browser_export.py")], check=True, cwd=ROOT)
     print("\nVerifying ...")
     subprocess.run([sys.executable, str(ROOT / "scripts" / "reconcile_sssom.py")], cwd=ROOT)
     subprocess.run([sys.executable, str(ROOT / "scripts" / "validate_sssom_invariants.py")], cwd=ROOT)

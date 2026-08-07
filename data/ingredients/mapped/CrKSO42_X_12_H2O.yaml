@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0369
+identifier: cas:7788-99-0
 preferred_term: CrKSO42 x 12 H2O
 synonyms:
 - synonym_text: CrKSO42 x 12 H2O
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -52,6 +52,14 @@ curation_history:
     xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in a
     rejected-candidate row looks identical to one in a conclusion.'
   llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0369 -> cas:7788-99-0 "chromium(III) sulfate" (NARROW_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a chromium potassium
   sulfate hydrate shorthand; left unmapped pending exact formula/CAS evidence.
@@ -59,3 +67,16 @@ ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   cas_rn: 7788-99-0
   data_source: Edison LITERATURE deep research
+ontology_mapping:
+  ontology_id: CHEBI:53471
+  ontology_label: chromium(III) sulfate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+    notes: Chrome alum, KCr(SO4)2*12H2O. The report equates the label with chrome
+      alum from peer-reviewed literature and gives CAS RN 7788-99-0 from a chemical
+      reference. No ontology term covers the potassium double salt or its dodecahydrate;
+      CHEBI:53471 chromium(III) sulfate is the nearest parent, lacking both the potassium
+      and the twelve waters.

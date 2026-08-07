@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0441
+identifier: cas:145224-94-8
 preferred_term: MES Hydrat
 synonyms:
 - synonym_text: MES Hydrat
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -50,6 +50,14 @@ curation_history:
     alpha Type 50, dextran Mw ~1,270), because a CAS printed in a rejected-candidate
     row looks identical to one in a conclusion.'
   llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0441 -> cas:145224-94-8 "2-(N-morpholino)ethanesulfonic
+    acid" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2394); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as MES hydrate shorthand; not merged to
   anhydrous MES or MES sodium salt.
@@ -57,3 +65,16 @@ ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   cas_rn: 145224-94-8
   data_source: Edison LITERATURE deep research
+ontology_mapping:
+  ontology_id: CHEBI:39005
+  ontology_label: 2-(N-morpholino)ethanesulfonic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+    notes: 'MES monohydrate. The report quotes a peer-reviewed materials section naming
+      2-(N-morpholino)ethanesulfonic acid monohydrate with CAS RN 145224-94-8 and
+      recommends adding exactly that number. No hydrate-specific ontology term exists:
+      CHEBI:39005 is the ANHYDROUS acid, a different substance by formula weight,
+      so it is the narrowMatch parent rather than the identity.'
