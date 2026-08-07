@@ -4,7 +4,7 @@ synonyms:
 - synonym_text: Mineral solution see Medium No. 976
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: NEEDS_EXPERT
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -27,6 +27,30 @@ curation_history:
   changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Mineral
     solution')
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_288_stock_solutions
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Promoted UNMAPPED_0447 -> kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+    (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+    MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+    -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+    mint with no parent, because a multi-component mix does not narrow to any single
+    compound (#288).'
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_288_stock_solutions
+  action: FLAGGED_NEEDS_EXPERT
+  previous_status: MAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+  changes: 'Reverted the mint and flagged NEEDS_EXPERT instead. "Mineral solution
+    see Medium No. 976" is a CROSS-REFERENCE to another medium, not the name of a
+    substance -- minting an identifier for it would give a pointer its own identity.
+    The #288 batch minted it because it filtered on ingredient_type STOCK_SOLUTION
+    without reading the label. The referenced medium should be resolved and this record
+    either replaced by that mineral solution or retired (#288).'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1958); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION

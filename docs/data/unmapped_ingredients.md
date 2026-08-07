@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-06T22:54:17.748379+00:00
-Total: 385 ingredients
+Generated: 2026-08-07T03:17:27.017151+00:00
+Total: 351 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -15,14 +15,12 @@ Total: 385 ingredients
 | UNMAPPED_0320 |  | 6-methylnicotinate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0199 |  | 7,2'-Dimethoxyflavone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0189 |  | 7,4'-Dimethoxyisoflavone | UNMAPPED |  |  | 0 |
-| UNMAPPED_0321 |  | 84 g/L NaHCO3 solution | UNMAPPED |  |  | 0 |
 | UNMAPPED_0197 |  | Acetyl-Dihydro-7-Epikhivorin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0224 |  | Actilight | UNMAPPED |  |  | 0 |
 | UNMAPPED_0181 |  | adeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0198 |  | Agelasine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0070 |  | Allen Medium | UNMAPPED |  |  | 1 |
 | UNMAPPED_0157 |  | Aluminum-NTA | UNMAPPED |  |  | 0 |
-| UNMAPPED_0324 |  | Aminoacids | UNMAPPED |  |  | 0 |
 | UNMAPPED_0325 |  | Amphotericin | UNMAPPED |  |  | 0 |
 | UNMAPPED_0327 |  | Anaerobe Basal Broth CM0957 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0239 |  | apo-yersiniabactin | UNMAPPED |  |  | 0 |
@@ -61,14 +59,12 @@ Total: 385 ingredients
 | UNMAPPED_0170 |  | Calf brains | UNMAPPED |  |  | 7 |
 | UNMAPPED_0229 |  | Calprotectin S1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0230 |  | Calprotectin S1S2 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0352 |  | Carbon source solution | UNMAPPED |  |  | 0 |
 | UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0355 |  | CeNO33 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0354 |  | Cellulose MN 300 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0356 |  | Cereal leaves | UNMAPPED |  |  | 0 |
 | UNMAPPED_0357 |  | Cerophyll | UNMAPPED |  |  | 0 |
 | UNMAPPED_0248 |  | Chitin from shrimp shells | UNMAPPED |  |  | 0 |
-| UNMAPPED_0358 |  | cholesterol lipid concentrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0164 |  | Cholinium alpha ketoglutarate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0163 |  | Cholinium aspartate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0161 |  | Cholinium glutamate | UNMAPPED |  |  | 0 |
@@ -127,12 +123,9 @@ Total: 385 ingredients
 | UNMAPPED_0391 |  | Gamborg B5 Medium incl. Vitamins | UNMAPPED |  |  | 0 |
 | UNMAPPED_0145 |  | Gjerstad humics | UNMAPPED |  |  | 0 |
 | UNMAPPED_0122 |  | Glycerol-asparagine agar | UNMAPPED |  |  | 0 |
-| UNMAPPED_0394 |  | Glycine-NaOH buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0193 |  | Gossypol-Acetic Acid Complex | UNMAPPED |  |  | 0 |
 | UNMAPPED_0395 |  | Grace's Insect Medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0398 |  | HBO3 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0146 |  | Hans 1000x minerals | UNMAPPED |  |  | 0 |
-| UNMAPPED_0147 |  | Hans 100x vitamins | UNMAPPED |  |  | 0 |
 | UNMAPPED_0399 |  | Heart Infusion Broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0401 |  | Homo-PIPES | UNMAPPED |  |  | 0 |
 | UNMAPPED_0402 |  | Horikoshi-I medium | UNMAPPED |  |  | 0 |
@@ -150,20 +143,16 @@ Total: 385 ingredients
 | UNMAPPED_0606 |  | Iron-EDTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0604 | NCIT:C598 | Iron (as FeCl3 in EDTA) | UNMAPPED | NCIT | NARROW_MATCH | 0 |
 | UNMAPPED_0234 |  | isopropyl 3-keto-N-acetyl-a-D-glucosamine | UNMAPPED |  |  | 0 |
-| UNMAPPED_0407 |  | Isovitalex | UNMAPPED |  |  | 0 |
-| UNMAPPED_0409 | NCIT:C29321 | K-phosphate buffer | UNMAPPED | NCIT | NARROW_MATCH | 0 |
 | UNMAPPED_0411 |  | KH2PO3 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0191 | CHEBI:185858 | Khayasin C | UNMAPPED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0414 |  | L-15 medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0415 |  | L-15 powder | UNMAPPED |  |  | 0 |
-| UNMAPPED_0416 |  | L-Cysteine x HCl x H2O solution | UNMAPPED |  |  | 0 |
 | UNMAPPED_0172 |  | LL17-29 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0423 |  | LaNO33 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0419 |  | Lab Lemco powder | UNMAPPED |  |  | 0 |
 | UNMAPPED_0421 |  | Lactobacilli MRS broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0422 |  | Lactobacillus MRS broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0424 |  | Larchwood xylan | UNMAPPED |  |  | 0 |
-| UNMAPPED_0124 |  | Legionella agar enrichment | UNMAPPED |  |  | 0 |
 | UNMAPPED_0426 |  | Leptospira Medium Base EMJH | UNMAPPED |  |  | 0 |
 | UNMAPPED_0427 |  | Linsmaier & Skoog Medium including vitamins | UNMAPPED |  |  | 0 |
 | UNMAPPED_0428 |  | lipoprotein concentrate | UNMAPPED |  |  | 0 |
@@ -178,34 +167,23 @@ Total: 385 ingredients
 | UNMAPPED_0433 |  | Marine Broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0434 |  | Marine broth 2216 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0436 |  | Meat infusion | UNMAPPED |  |  | 0 |
-| UNMAPPED_0439 |  | Menadione solution | UNMAPPED |  |  | 0 |
-| UNMAPPED_0442 |  | Metall salt sol. 44 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0443 |  | Methanol-utilizing bacteria medium B | UNMAPPED |  |  | 0 |
 | UNMAPPED_0233 |  | methyl 3-keto-a-D-glucopyranoside | UNMAPPED |  |  | 0 |
-| UNMAPPED_0445 |  | micronutrient solution | UNMAPPED |  |  | 0 |
-| UNMAPPED_0608 |  | Mineral salts base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0609 |  | Mineral salts medium base | UNMAPPED |  |  | 0 |
-| UNMAPPED_0447 |  | Mineral solution see Medium No. 976 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0450 |  | MnCl4 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0451 |  | MnII x EDTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0292 |  | MoLS4 | UNMAPPED |  |  | 17 |
 | UNMAPPED_0264 |  | MoYLS4 | UNMAPPED |  |  | 1 |
 | UNMAPPED_0089 |  | Modified Bold 3N Medium | UNMAPPED |  |  | 1 |
 | UNMAPPED_0111 |  | Modified COMBO Medium | UNMAPPED |  |  | 1 |
-| UNMAPPED_0452 |  | Modified trace vitamins | UNMAPPED |  |  | 0 |
 | UNMAPPED_0128 |  | Mueller Hinton II agar | UNMAPPED |  |  | 0 |
-| UNMAPPED_0610 |  | Murashige-Skoog basal salts | UNMAPPED |  |  | 0 |
 | UNMAPPED_0455 |  | Murashige & Skoog medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0456 |  | Mycobactine J | UNMAPPED |  |  | 0 |
 | UNMAPPED_0458 |  | N-Z-Amine® A | UNMAPPED |  |  | 0 |
 | UNMAPPED_0459 |  | N-Z-Case | UNMAPPED |  |  | 0 |
 | UNMAPPED_0457 |  | N-Z amine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0460 |  | Na-Nitrilotriacetat | UNMAPPED |  |  | 0 |
-| UNMAPPED_0462 |  | Na-Phosphate-Buffer | UNMAPPED |  |  | 0 |
-| UNMAPPED_0461 | NCIT:C29321 | Na-phosphate buffer | UNMAPPED | NCIT | NARROW_MATCH | 0 |
 | UNMAPPED_0463 |  | Na-tetrathionate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0467 |  | Na2HPO4-KH2PO4 buffer | UNMAPPED |  |  | 0 |
-| UNMAPPED_0468 |  | Na2HPO4-NaH2PO4 buffer | UNMAPPED |  |  | 0 |
 | UNMAPPED_0465 |  | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0030 |  | Na2glycerophosphate•5H2O | UNMAPPED |  |  | 4 |
 | UNMAPPED_0081 |  | Na2Glycerophosphate.5H2O | UNMAPPED |  |  | 1 |
@@ -218,13 +196,11 @@ Total: 385 ingredients
 | UNMAPPED_0152 |  | Nickel-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0481 |  | Nutrient agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0227 |  | O-methyl-D-glucuronoxylan | UNMAPPED |  |  | 0 |
-| UNMAPPED_0483 |  | OADC Enrichment | UNMAPPED |  |  | 0 |
 | UNMAPPED_0487 |  | OXOID Legionella CYE-Agar base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0129 |  | Oatmeal agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0099 |  | Organic Peat | UNMAPPED |  |  | 1 |
 | UNMAPPED_0485 |  | Ox-bile | UNMAPPED |  |  | 0 |
 | UNMAPPED_0486 |  | Oxgall | UNMAPPED |  |  | 0 |
-| UNMAPPED_0184 |  | PBS | UNMAPPED |  |  | 0 |
 | UNMAPPED_0497 |  | PPLO broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0231 |  | Pectic galactan from potato | UNMAPPED |  |  | 1 |
 | UNMAPPED_0490 |  | Plain flour | UNMAPPED |  |  | 0 |
@@ -250,13 +226,10 @@ Total: 385 ingredients
 | UNMAPPED_0512 |  | S6 medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0513 |  | SABOURAUD- Glucose-Bouillon | UNMAPPED |  |  | 0 |
 | UNMAPPED_0286 |  | SDM_noCarbon | UNMAPPED |  |  | 1 |
-| UNMAPPED_0514 |  | Salt Solution II | UNMAPPED |  |  | 0 |
-| UNMAPPED_0516 |  | Salts solution | UNMAPPED |  |  | 0 |
 | UNMAPPED_0517 |  | Se-acid | UNMAPPED |  |  | 0 |
 | UNMAPPED_0002 |  | See source for composition | UNMAPPED |  |  | 143 |
 | UNMAPPED_0519 |  | Selenite-tungstate solution see Medium No. 431 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0520 |  | Sigmacell alpha Type 50 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0521 |  | Skirrow supplement | UNMAPPED |  |  | 0 |
 | UNMAPPED_0524 |  | Sodium crotonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0615 | CHEBI:37586 | Sodium phosphate monobasic (phosphorus source) | UNMAPPED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0303 |  | Soil Defined Carbon Mix | UNMAPPED |  |  | 1 |
@@ -267,7 +240,6 @@ Total: 385 ingredients
 | UNMAPPED_0098 |  | Sphagnum extract | UNMAPPED |  |  | 1 |
 | UNMAPPED_0275 |  | Spring sampling GW821 filtered with 0.2uM filter | UNMAPPED |  |  | 6 |
 | UNMAPPED_0532 |  | Standard I Broth | UNMAPPED |  |  | 0 |
-| UNMAPPED_0533 |  | Steric solution | UNMAPPED |  |  | 0 |
 | UNMAPPED_0534 |  | Sterile serum | UNMAPPED |  |  | 0 |
 | UNMAPPED_0616 |  | Sugarcane straw (lignocellulose substrate) | UNMAPPED |  |  | 0 |
 | UNMAPPED_0217 |  | Sunfiber | UNMAPPED |  |  | 0 |
@@ -280,9 +252,6 @@ Total: 385 ingredients
 | UNMAPPED_0542 |  | Titriplex1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0544 |  | Todd Hewitt Broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0545 |  | Tomato extract | UNMAPPED |  |  | 0 |
-| UNMAPPED_0550 |  | Trace metal solution | UNMAPPED |  |  | 0 |
-| UNMAPPED_0551 |  | Trace mineral solution | UNMAPPED |  |  | 0 |
-| UNMAPPED_0552 |  | Trace minerals | UNMAPPED |  |  | 0 |
 | UNMAPPED_0553 |  | Trace minerals see Medium No. 151 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0554 |  | Trace minerals see Medium No. 197 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0555 |  | Trace vitamins solution see Medium No. 284 | UNMAPPED |  |  | 0 |
@@ -297,9 +266,6 @@ Total: 385 ingredients
 | UNMAPPED_0214 |  | Vitagos 5650 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0005 | NCIT:C944 | Vitamin B | UNMAPPED | NCIT | NARROW_MATCH | 23 |
 | UNMAPPED_0567 |  | Vitamin B12 solution see Medium No. 403 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0572 |  | Vitamins-solution | UNMAPPED |  |  | 0 |
-| UNMAPPED_0571 |  | Vitamins solution | UNMAPPED |  |  | 0 |
-| UNMAPPED_0573 |  | Vitox | UNMAPPED |  |  | 0 |
 | UNMAPPED_0072 |  | Volvox Medium | UNMAPPED |  |  | 1 |
 | UNMAPPED_0222 |  | Wako Isomaltooligosaccharides | UNMAPPED |  |  | 0 |
 | UNMAPPED_0063 |  | Waris Medium | UNMAPPED |  |  | 2 |
@@ -308,7 +274,6 @@ Total: 385 ingredients
 | UNMAPPED_0577 |  | Whole egg | UNMAPPED |  |  | 0 |
 | UNMAPPED_0579 |  | Wilkins-Chalgren-Anaerobe-Broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0578 |  | Wilkins Chalgrene Anaerobe Broth | UNMAPPED |  |  | 0 |
-| UNMAPPED_0580 |  | X10 Jamarin S | UNMAPPED |  |  | 0 |
 | UNMAPPED_0174 | CHEBI:18233 | Xyloglucan (hepta+octa+nona saccharides) | UNMAPPED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0583 |  | YM broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0208 |  | Yacontrol (Yacon root syrup) | UNMAPPED |  |  | 0 |
@@ -390,3 +355,4 @@ Total: 385 ingredients
 | UNMAPPED_0779 |  | Yeast Extract + Peptone | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0780 |  | Yeast Extract + Sulfur | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0781 |  | Yeast + Meat Extract + H2 | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0447 |  | Mineral solution see Medium No. 976 | NEEDS_EXPERT |  |  | 0 |

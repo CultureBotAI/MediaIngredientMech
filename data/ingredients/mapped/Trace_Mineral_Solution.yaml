@@ -1,0 +1,52 @@
+identifier: kgmicrobe.ingredient:trace_mineral_solution
+preferred_term: Trace mineral solution
+synonyms:
+- synonym_text: Trace mineral solution
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:897); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-02T03:12:19.966568+00:00'
+  curator: auto_classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'mineral
+    solution')
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_288_stock_solutions
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Promoted UNMAPPED_0551 -> kgmicrobe.ingredient:trace_mineral_solution
+    (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+    MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+    -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+    mint with no parent, because a multi-component mix does not narrow to any single
+    compound (#288).'
+notes: Imported from mim-queue (source_id=mediadive.ingredient:897); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed.
+ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:trace_mineral_solution
+  ontology_label: Trace mineral solution
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#288)
+    notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+      and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'

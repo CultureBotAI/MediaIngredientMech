@@ -1,0 +1,66 @@
+identifier: kgmicrobe.ingredient:trace_minerals
+preferred_term: Trace minerals
+synonyms:
+- synonym_text: Trace minerals
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1031); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T07:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_NON_IDENTITY_PARENT
+  changes: Reviewed OAK/OLS audit candidate MESH:D014131 Trace Elements; left unmapped
+    because the source label denotes a trace-mineral ingredient/preparation, not identity
+    with the full trace-elements ontology class.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-05-11T19:50:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as a trace-mineral stock/pre-mix and left unmapped pending component-level
+    recipe curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_288_stock_solutions
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Promoted UNMAPPED_0552 -> kgmicrobe.ingredient:trace_minerals (FALLBACK_REGISTRY).
+    A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON and ENVO
+    by label and synonym: no term denotes it, and none could -- a preparation is not
+    a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient: mint
+    with no parent, because a multi-component mix does not narrow to any single compound
+    (#288).'
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1031); no CAS-RN or
+  CHEBI/NCIT match. Reviewed on 2026-05-11 and not identity-mapped to MESH:D014131
+  Trace Elements because the source is a trace-mineral ingredient/preparation label.
+  Classified on 2026-05-11 as a trace-mineral stock/pre-mix.
+ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:trace_minerals
+  ontology_label: Trace minerals
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#288)
+    notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+      and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'

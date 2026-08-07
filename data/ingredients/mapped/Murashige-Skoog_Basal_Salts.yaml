@@ -1,0 +1,56 @@
+identifier: kgmicrobe.ingredient:murashige-skoog_basal_salts
+preferred_term: Murashige-Skoog basal salts
+synonyms:
+- synonym_text: Murashige-Skoog basal salts
+  synonym_type: RAW_TEXT
+  source: communitymech-unmapped
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-05-01T02:37:08.074047+00:00'
+  curator: audit_import_ingredients[communitymech-unmapped]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Murashige-Skoog_basal_salts);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T19:35:00Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CLASSIFIED_STOCK_SOLUTION
+  changes: Classified as a Murashige-Skoog basal salts pre-mix and left unmapped pending
+    component-level recipe curation.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_288_stock_solutions
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  changes: 'Promoted UNMAPPED_0610 -> kgmicrobe.ingredient:murashige-skoog_basal_salts
+    (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+    MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+    -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+    mint with no parent, because a multi-component mix does not narrow to any single
+    compound (#288).'
+notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Murashige-Skoog_basal_salts);
+  no CAS-RN or CHEBI/NCIT match. Reviewed on 2026-05-11 as a basal salts pre-mix pending
+  component-level recipe curation.
+ingredient_type: STOCK_SOLUTION
+solution_type: MINERAL_STOCK
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:murashige-skoog_basal_salts
+  ontology_label: Murashige-Skoog basal salts
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#288)
+    notes: 'A named multi-component preparation. Searched CHEBI, NCIT, MeSH, FOODON
+      and ENVO by label and synonym: no term denotes it, and none could -- a preparation
+      is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
+      mint with no parent, because a multi-component mix does not narrow to any single
+      compound (#288).'
