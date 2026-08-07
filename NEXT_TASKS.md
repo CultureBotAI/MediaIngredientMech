@@ -616,11 +616,17 @@ consolidated in #213:**
   rows should route to **ENVO/FOODON**, not the ingredient pipeline; keratin →
   Protein Ontology (no CHEBI term).
 
-**Related infra issues (accession ceiling / currency), all open:** #197 & #210
-(CHEBI accession ceiling is 300000 while ChEBI reaches 747618 — valid recent terms
-mis-rejected as foreign ids), #206 (`check-chebi-currency` infers "a refresh would
-help" from byte size, not release), #203 (`promote_microbedecoder_reviewed.py`
-approval check is tautological — re-runs the lookup that created the mapping).
+**Related infra issues (accession ceiling / currency):** #210 **CLOSED** — the
+CHEBI ceiling was 300000 while ChEBI reaches 747618, so valid recent terms were
+reported as foreign ids; raised to `1000000` in PR #302, matching
+`curie.py::MAX_ACCESSION`, with the two tables now pinned in sync by test. Still
+open: #303 (the vendored validator still states the conclusion in comments and
+attaches no `detail` to the verdict — needs a CultureMech-first change, tracked
+there as CultureMech#247), #304 (the ceiling can now only fire on 8-digit ids, so
+`ID_OUT_OF_RANGE` is narrower than its name suggests), #206
+(`check-chebi-currency` infers "a refresh would help" from byte size, not
+release), #203 (`promote_microbedecoder_reviewed.py` approval check is
+tautological — re-runs the lookup that created the mapping).
 
 ---
 
