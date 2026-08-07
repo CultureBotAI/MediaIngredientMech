@@ -81,10 +81,12 @@ def test_promoted_records_resolve_through_the_normalizer(term, index):
 
 
 def test_registry_mint_is_invariant_to_subject_case():
-    """Rule B1 lowercases the slug, so realigning subject case cannot break it.
+    """Rule B1 lowercases the slug before matching it against the registry mint.
 
-    Worth pinning: it is the reason the realignment was safe to do directly on
-    the published TSV rather than by re-running every promotion.
+    Worth pinning for the reason #299 found: it means Rule B1 is blind to subject
+    case by construction, so it passed while 64 published subjects were being
+    case-mangled. See `test_published_mim_subject_case.py`, which pins the
+    spellings B1 cannot.
     """
     from reground_mapped_record import check_registry_mint
     assert (check_registry_mint("kgmicrobe.compound:", "CrKSO42_X_12_H2O")
