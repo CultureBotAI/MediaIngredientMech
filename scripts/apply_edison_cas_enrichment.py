@@ -53,6 +53,12 @@ APPLY = {
         "13977-65-6\" on a culture-medium method that names supplier and CAS, and "
         "says the number \"can be stored as chemical registry grounding but should "
         "not be presented as an ontology CURIE\" — which is exactly this write"),
+    "TitaniumIII chloride": (
+        "7705-07-9", "titanium trichloride",
+        "the report says \"a specialist inorganic-chemistry reference assigns "
+        "titanium trichloride CAS RN 7705-07-9\" and describes four solid "
+        "polymorphs rather than a mixture or named formulation, so the number "
+        "denotes the compound this record names"),
     "CrKSO42 x 12 H2O": (
         "7788-99-0", "potassium chromium(III) sulfate dodecahydrate",
         "the report equates chrome alum with KCr(SO4)2*12H2O from peer-reviewed "
@@ -78,6 +84,29 @@ REFUSED = {
             "supplier documentation for S5504\"",
     "dextran, Mw ~1,270": "9004-54-0 — generic dextran; the record is qualified by "
             "a molecular weight the number does not carry",
+    "Na2 beta-glycerol PO4 x 5 H2O": "13408-09-8 — the report hedges: literature "
+            "links the number to β-glycerophosphate but \"does not explicitly "
+            "confirm that this CAS is the exact disodium pentahydrate form rather "
+            "than a less-specific parent/supplier entry\". This record is also one "
+            "of a four-way duplicate cluster (see the tracking issue), which is "
+            "the larger problem and should be settled before either is enriched",
+    "Na2Glycerophosphate•5H2O": "13408-09-8 — same hedge, same duplicate cluster",
+}
+
+# Multi-part labels whose report names a CAS for exactly ONE component. Asserting
+# it would claim the mixture IS its part, which is the over-claim #242 and #263
+# exist to undo.
+COMPONENT_ONLY = {
+    "PY-fructose": "57-48-7 is fructose; the record is a medium",
+    "Formate+methanol": "67-56-1 is methanol, one of two named components",
+    "2-butanol+CO2": "78-92-2 is 2-butanol, one of two",
+    "Cyclopentanol+CO2": "96-41-3 is cyclopentanol, one of two",
+    "Glucose + Acetate": "50-99-7 is glucose, one of two",
+    "PYG-0.02% Tween 80": "9005-65-6 is Tween 80, one component of a medium",
+    "Esculin Ferric Citrate": "531-75-9 is esculin, one half of the reagent",
+    "Vitamin B": "98-92-0 is niacinamide, one vitamin of a family label",
+    "Amphotericin": "1397-89-3 is amphotericin B, the narrower variant of a "
+                    "family name that also covers amphotericin A",
 }
 
 
@@ -121,6 +150,9 @@ def main() -> int:
 
     print(f"\nrefused ({len(REFUSED)}), each on its own report's instruction:")
     for term, why in REFUSED.items():
+        print(f"  {term[:38]:40} {why[:96]}")
+    print(f"\ncomponent-of-mixture, not applied ({len(COMPONENT_ONLY)}):")
+    for term, why in COMPONENT_ONLY.items():
         print(f"  {term[:38]:40} {why[:96]}")
 
     if args.apply and n:

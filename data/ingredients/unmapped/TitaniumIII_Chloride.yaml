@@ -25,7 +25,42 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TitaniumIII_chloride-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **single inorganic
+    chemical**, normalized as **titanium(III) chloride**, formula **TiCl₃**, also
+    called **titanium trichloride**. A specialist inorganic-chemistry reference assigns
+    titanium trichloride **CAS RN 7705-07-9** and describes four solid polymorphs—α,
+    β, γ, and δ—rather than a mixture or named medium formulation. The α, γ, and δ
+    forms are violet; β-TiCl₃ is brown and structurally distinct. These polymorphs
+    remain forms of the same gross-composition chemical for this ingredient-level
+    record. (jones2019titaniumcompoundsinorganic pages 48-50) No ontology CURIE was
+    proposed. Recorded as provenance only — no grounding applied from this run. Edison''s
+    recommendations are deliberately conservative, and a plausible identifier promoted
+    by a mechanism that never decided anything is what #203 and #263 exist to undo.
+    Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_cas_enrichment
+  action: ADDED_CAS_RN
+  changes: 'Added cas_rn 7705-07-9 (titanium trichloride) from Edison literature research:
+    the report says "a specialist inorganic-chemistry reference assigns titanium trichloride
+    CAS RN 7705-07-9" and describes four solid polymorphs rather than a mixture or
+    named formulation, so the number denotes the compound this record names. Enrichment
+    only — the mapping status is unchanged, because a CAS identifies a substance without
+    supplying an ontology term. Applied only because the report AFFIRMS the number
+    for this record''s own substance: the same scan pulled CAS numbers out of five
+    other reports that forbid them outright (HBO3, α-D-Glucose monohydrate, Larchwood
+    xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in a
+    rejected-candidate row looks identical to one in a conclusion.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:805); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to TiCl3 without exact source
   normalization evidence.
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 7705-07-9
+  data_source: Edison LITERATURE deep research
