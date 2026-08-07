@@ -22,6 +22,20 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'seawater')
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Planctomyces_artificial_seawater-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Recommended record updates — **Recommended status:**
+    retain `UNMAPPED` and `UNDEFINED_MIXTURE` pending inspection of the authoritative
+    DSMZ medium 1560 recipe or the CultureBotHT source record. Do **not** mark `MAPPED`
+    merely because a generic artificial-seawater concept is found. No ontology CURIE
+    was proposed. Recorded as provenance only — no grounding applied from this run.
+    Edison''s recommendations are deliberately conservative, and a plausible identifier
+    promoted by a mechanism that never decided anything is what #203 and #263 exist
+    to undo. Any CURIE above is a curator''s to accept or reject.'
+  llm_assisted: true
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   1 CultureBot media; samples: Planctomyces_medium_DSMZ1560. No CAS-RN or CHEBI mapping
   available; curator review needed.'

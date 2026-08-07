@@ -26,8 +26,49 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Calf_brains-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a heterogeneous
+    animal tissue-derived material—brain tissue from a calf, ordinarily understood
+    as juvenile domestic cattle—and **not** a single chemical, salt, hydrate, buffer,
+    or chemically defined formulation. Bovine brain itself contains multiple anatomical
+    regions and tissue components, including telencephalon, diencephalon, mesencephalon,
+    pons, cerebellum, and  CURIEs discussed: UBERON:0000955. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_contextual_parent
+  action: ADDED_PARENT_CONTEXT
+  changes: 'Recorded UBERON:0000955 (brain) as the nearest ontology parent with mapping_quality=NARROW_MATCH:
+    brain tissue from a calf; the report calls UBERON:0000955 a "high-confidence anatomical-source
+    annotation" while explicitly refusing exactMatch and closeMatch, which is exactly
+    this shape. Status stays UNMAPPED and NO SSSOM row is published — this follows
+    the existing contextual pattern on Inorganic salts-starch agar (CHEBI:24839, "retained
+    ... only as contextual curation") and five sibling records. exactMatch/closeMatch
+    are withheld deliberately: they license node substitution, and a source- or grade-qualified
+    preparation is not interchangeable with the substance it is prepared from. Whether
+    this pattern should instead publish a skos:narrowMatch row is the open question
+    in #294.'
+  llm_assisted: true
 notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 7 CultureBot
   media; samples: BHIS_PIPES, BHIS_HOMOPIPES, BHIS_K3…. No CAS-RN or CHEBI mapping
   available; reviewed on 2026-05-11 as animal tissue-derived material pending source/component-level
   curation.'
 ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: UBERON:0000955
+  ontology_label: brain
+  ontology_source: UBERON
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LITERATURE
+    source: Edison LITERATURE (PaperQA3) identity research
+    notes: 'Parent class, not identity: brain tissue from a calf; the report calls
+      UBERON:0000955 a "high-confidence anatomical-source annotation" while explicitly
+      refusing exactMatch and closeMatch, which is exactly this shape.'

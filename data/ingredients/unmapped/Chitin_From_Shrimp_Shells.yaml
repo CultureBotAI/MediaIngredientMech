@@ -21,7 +21,47 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Chitin_from_shrimp_shells-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a source-qualified
+    polymer preparation, not a uniquely defined small molecule and not necessarily
+    a compositionally invariant substance. Chitin is a linear polysaccharide of β-(1→4)-linked
+    N-acetyl-D-glucosamine residues. Chitin from crustaceans normally occurs as **α-chitin**,
+    whose chains are antiparallel, but the label itself does not prove polymorph,
+    purity, mol CURIEs discussed: CHEBI:17029, MESH:D002428. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_contextual_parent
+  action: ADDED_PARENT_CONTEXT
+  changes: 'Recorded CHEBI:17029 (chitin) as the nearest ontology parent with mapping_quality=NARROW_MATCH:
+    the report calls it "a source-qualified polymer preparation, not a uniquely defined
+    small molecule"; chitin is that source-free polymer. Status stays UNMAPPED and
+    NO SSSOM row is published — this follows the existing contextual pattern on Inorganic
+    salts-starch agar (CHEBI:24839, "retained ... only as contextual curation") and
+    five sibling records. exactMatch/closeMatch are withheld deliberately: they license
+    node substitution, and a source- or grade-qualified preparation is not interchangeable
+    with the substance it is prepared from. Whether this pattern should instead publish
+    a skos:narrowMatch row is the open question in #294.'
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a shrimp-shell
   chitin substrate pending polymer source and processing curation.
 ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: CHEBI:17029
+  ontology_label: chitin
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: LITERATURE
+    source: Edison LITERATURE (PaperQA3) identity research
+    notes: 'Parent class, not identity: the report calls it "a source-qualified polymer
+      preparation, not a uniquely defined small molecule"; chitin is that source-free
+      polymer.'

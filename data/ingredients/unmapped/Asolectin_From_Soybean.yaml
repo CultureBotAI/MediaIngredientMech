@@ -21,6 +21,22 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'soybean')
   llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Asolectin_from_soybean-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **soybean-derived
+    commercial phospholipid mixture (soybean lecithin/soy phospholipid preparation)**,
+    not a single chemical, hydrate, salt, buffer, or chemically defined formulation.
+    Commercial lecithin is described as a mixture of phosphatides—principally phosphatidylcholine
+    (PC), phosphatidylethanolamine (PE), and phosphatidylinositol (PI)—together with
+    variable  No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ingredient_type: UNDEFINED_MIXTURE

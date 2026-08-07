@@ -24,6 +24,32 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Larchwood_xylan-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** *Larchwood xylan*
+    is not a single small molecule, salt, hydrate, buffer, or fixed formulation. It
+    is a **source-specific, heterogeneous plant polysaccharide preparation**, most
+    appropriately retained as `UNDEFINED_MIXTURE` (or a polymer/material class, if
+    that type becomes available). No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_contextual_parent
+  action: REVERTED_PARENT_CONTEXT
+  changes: 'Removed the CHEBI:37166 xylan parent this tool had recorded. The term
+    and its label are correct in the local ChEBI build, but the CURIE appears nowhere
+    in the Edison report the entry cited as evidence — it came from a lookup I ran
+    after reading the report''s prose. Keeping it would have credited that lookup
+    to the literature agent, and left two contradicting events one day apart on this
+    record: one saying no CURIE was proposed, one sourcing a CURIE to the same run.
+    Re-proposing it is fine, with its own evidence; see #294.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1624); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a larchwood-derived xylan substrate/fraction
   pending polymer source and composition curation.

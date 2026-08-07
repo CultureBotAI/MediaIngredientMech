@@ -1,10 +1,17 @@
 # All Ingredients
 
-Generated: 2026-08-07T03:17:27.017817+00:00
+Generated: 2026-08-07T13:29:25.805064+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| cas:68399-81-5 | cas:68399-81-5 | TAPSO | MAPPED | CAS | FALLBACK_REGISTRY | 10 |
+| cas:7705-07-9 | cas:7705-07-9 | TitaniumIII chloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:13977-65-6 | CHEBI:44976 | KH2PO3 | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:7788-99-0 | CHEBI:53471 | CrKSO42 x 12 H2O | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:145224-94-8 | CHEBI:39005 | MES Hydrat | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:13408-09-8 | CHEBI:15978 | Na2glycerophosphate•5H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
+| cas:10049-21-5 | CHEBI:37585 | NaH2PO4•H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.ingredient:hans_100x_vitamins | kgmicrobe.ingredient:hans_100x_vitamins | Hans 100x vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:hans_1000x_minerals | kgmicrobe.ingredient:hans_1000x_minerals | Hans 1000x minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:glycine-naoh_buffer | kgmicrobe.ingredient:glycine-naoh_buffer | Glycine-NaOH buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2546,7 +2553,7 @@ Total: 2841 ingredients
 | UNMAPPED_0359 |  | CMRL 1066 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0049 |  | Ca | UNMAPPED |  |  | 3 |
 | UNMAPPED_0156 |  | Cadmium-NTA | UNMAPPED |  |  | 0 |
-| UNMAPPED_0170 |  | Calf brains | UNMAPPED |  |  | 7 |
+| UNMAPPED_0170 | UBERON:0000955 | Calf brains | UNMAPPED | UBERON | NARROW_MATCH | 7 |
 | UNMAPPED_0229 |  | Calprotectin S1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0230 |  | Calprotectin S1S2 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
@@ -2554,7 +2561,7 @@ Total: 2841 ingredients
 | UNMAPPED_0354 |  | Cellulose MN 300 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0356 |  | Cereal leaves | UNMAPPED |  |  | 0 |
 | UNMAPPED_0357 |  | Cerophyll | UNMAPPED |  |  | 0 |
-| UNMAPPED_0248 |  | Chitin from shrimp shells | UNMAPPED |  |  | 0 |
+| UNMAPPED_0248 | CHEBI:17029 | Chitin from shrimp shells | UNMAPPED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0164 |  | Cholinium alpha ketoglutarate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0163 |  | Cholinium aspartate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0161 |  | Cholinium glutamate | UNMAPPED |  |  | 0 |
@@ -2570,8 +2577,7 @@ Total: 2841 ingredients
 | UNMAPPED_0151 |  | Copper-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0130 |  | Corn meal agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0366 |  | Corn steep powder | UNMAPPED |  |  | 0 |
-| UNMAPPED_0367 |  | Cow manure | UNMAPPED |  |  | 0 |
-| UNMAPPED_0369 |  | CrKSO42 x 12 H2O | UNMAPPED |  |  | 0 |
+| UNMAPPED_0367 | ENVO:00003031 | Cow manure | UNMAPPED | ENVO | NARROW_MATCH | 0 |
 | UNMAPPED_0213 |  | Cravingzgone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0370 |  | Czapek-Dox liquid medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0119 |  | Czapek Dox agar | UNMAPPED |  |  | 0 |
@@ -2633,7 +2639,6 @@ Total: 2841 ingredients
 | UNMAPPED_0606 |  | Iron-EDTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0604 | NCIT:C598 | Iron (as FeCl3 in EDTA) | UNMAPPED | NCIT | NARROW_MATCH | 0 |
 | UNMAPPED_0234 |  | isopropyl 3-keto-N-acetyl-a-D-glucosamine | UNMAPPED |  |  | 0 |
-| UNMAPPED_0411 |  | KH2PO3 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0191 | CHEBI:185858 | Khayasin C | UNMAPPED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0414 |  | L-15 medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0415 |  | L-15 powder | UNMAPPED |  |  | 0 |
@@ -2649,7 +2654,6 @@ Total: 2841 ingredients
 | UNMAPPED_0429 |  | Liver Concentrate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0438 |  | MEM-Medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0437 |  | MEM alpha Modification | UNMAPPED |  |  | 0 |
-| UNMAPPED_0441 |  | MES Hydrat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0453 |  | MRS broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0454 |  | MRS medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0432 |  | Man Rogosa Sharp broth | UNMAPPED |  |  | 0 |
@@ -2675,12 +2679,10 @@ Total: 2841 ingredients
 | UNMAPPED_0460 |  | Na-Nitrilotriacetat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0463 |  | Na-tetrathionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0465 |  | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0030 |  | Na2glycerophosphate•5H2O | UNMAPPED |  |  | 4 |
 | UNMAPPED_0081 |  | Na2Glycerophosphate.5H2O | UNMAPPED |  |  | 1 |
 | UNMAPPED_0101 |  | Na2Glycerophosphate•5H2O | UNMAPPED |  |  | 1 |
 | UNMAPPED_0475 |  | Na3-NTA x H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0477 |  | NaSiO3 x 9 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0028 |  | NaH2PO4•H2O | UNMAPPED |  |  | 4 |
 | UNMAPPED_0050 |  | Natural sea-salt | UNMAPPED |  |  | 2 |
 | UNMAPPED_0479 |  | NdCl3 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0152 |  | Nickel-NTA | UNMAPPED |  |  | 0 |
@@ -2735,10 +2737,8 @@ Total: 2841 ingredients
 | UNMAPPED_0217 |  | Sunfiber | UNMAPPED |  |  | 0 |
 | UNMAPPED_0536 |  | Swine serum | UNMAPPED |  |  | 0 |
 | UNMAPPED_0543 |  | TNM-FH Medium | UNMAPPED |  |  | 0 |
-| TAPSO |  | TAPSO | UNMAPPED |  |  | 10 |
 | UNMAPPED_0538 |  | Thiamine solution see Medium No. 403 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0618 |  | Titanium(III) citrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0541 |  | TitaniumIII chloride | UNMAPPED |  |  | 0 |
 | UNMAPPED_0542 |  | Titriplex1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0544 |  | Todd Hewitt Broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0545 |  | Tomato extract | UNMAPPED |  |  | 0 |

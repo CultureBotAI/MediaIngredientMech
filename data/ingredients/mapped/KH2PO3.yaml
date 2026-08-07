@@ -1,0 +1,86 @@
+identifier: cas:13977-65-6
+preferred_term: KH2PO3
+synonyms:
+- synonym_text: KH2PO3
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1677); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:07:24Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FORMULA_SHORTHAND
+  changes: Classified as a single inorganic phosphorus salt and left unmapped because
+    no exact local ontology term for KH2PO3/potassium phosphite form was verified.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/KH2PO3-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Executive recommendation — **Retain `UNMAPPED`.**
+    The label is sufficiently resolved chemically as the defined single salt **potassium
+    phosphite monobasic, KH2PO3, CAS RN 13977-65-6**, but this review did not verify
+    an exact stable ontology CURIE for that salt. Accordingly, add the chemical identity
+    and literature provenance to the YAML, but create **no SSSOM row** until an exact
+    ontology recor No ontology CURIE was proposed. Recorded as provenance only — no
+    grounding applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_cas_enrichment
+  action: ADDED_CAS_RN
+  changes: 'Added cas_rn 13977-65-6 (potassium phosphite monobasic) from Edison literature
+    research: the report calls the label "sufficiently resolved chemically as the
+    defined single salt potassium phosphite monobasic, KH2PO3, CAS RN 13977-65-6"
+    on a culture-medium method that names supplier and CAS, and says the number "can
+    be stored as chemical registry grounding but should not be presented as an ontology
+    CURIE" — which is exactly this write. Enrichment only — the mapping status is
+    unchanged, because a CAS identifies a substance without supplying an ontology
+    term. Applied only because the report AFFIRMS the number for this record''s own
+    substance: the same scan pulled CAS numbers out of five other reports that forbid
+    them outright (HBO3, α-D-Glucose monohydrate, Larchwood xylan, Sigmacell alpha
+    Type 50, dextran Mw ~1,270), because a CAS printed in a rejected-candidate row
+    looks identical to one in a conclusion.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0411 -> cas:13977-65-6 "phosphonic acid" (NARROW_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1677); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as KH2PO3 formula
+  shorthand; left unmapped pending exact salt/protonation evidence.
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 13977-65-6
+  data_source: Edison LITERATURE deep research
+ontology_mapping:
+  ontology_id: CHEBI:44976
+  ontology_label: phosphonic acid
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+    notes: Potassium phosphite monobasic, KH2PO3. A culture-medium method quoted in
+      the report names it with supplier and CAS RN 13977-65-6, used to replace dipotassium
+      phosphate in phosphorus-modified BG-11. The report states the number should
+      be stored as registry grounding and not presented as an ontology CURIE. CHEBI:44976
+      phosphonic acid is the parent acid; this record is its monopotassium salt.

@@ -1,0 +1,82 @@
+identifier: cas:7788-99-0
+preferred_term: CrKSO42 x 12 H2O
+synonyms:
+- synonym_text: CrKSO42 x 12 H2O
+  synonym_type: RAW_TEXT
+  source: mim-queue
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-04-30T18:43:03.698454+00:00'
+  curator: audit_import_ingredients[mim-queue]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-05-11T08:04:31Z'
+  curator: mediaingredientmech-agentic-curation
+  action: REVIEWED_FORMULA_SHORTHAND
+  changes: Classified as a single inorganic double-salt hydrate and left unmapped
+    because the condensed formula resembles chromium potassium sulfate dodecahydrate
+    but lacks locally verified exact ontology evidence.
+  previous_status: UNMAPPED
+  new_status: UNMAPPED
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CrKSO42_x_12_H2O-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommendation | Keep ontology mapping unset unless
+    a stable ontology identifier is independently confirmed; do not mint label-only
+    CURIEs | No ontology CURIE was proposed. Recorded as provenance only — no grounding
+    applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_cas_enrichment
+  action: ADDED_CAS_RN
+  changes: 'Added cas_rn 7788-99-0 (potassium chromium(III) sulfate dodecahydrate)
+    from Edison literature research: the report equates chrome alum with KCr(SO4)2*12H2O
+    from peer-reviewed literature and gives CAS RN 7788-99-0 from a chemical reference,
+    listing it under an unqualified "CAS Registry Number:" heading. Enrichment only
+    — the mapping status is unchanged, because a CAS identifies a substance without
+    supplying an ontology term. Applied only because the report AFFIRMS the number
+    for this record''s own substance: the same scan pulled CAS numbers out of five
+    other reports that forbid them outright (HBO3, α-D-Glucose monohydrate, Larchwood
+    xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in a
+    rejected-candidate row looks identical to one in a conclusion.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0369 -> cas:7788-99-0 "chromium(III) sulfate" (NARROW_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+notes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN or
+  CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a chromium potassium
+  sulfate hydrate shorthand; left unmapped pending exact formula/CAS evidence.
+ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 7788-99-0
+  data_source: Edison LITERATURE deep research
+ontology_mapping:
+  ontology_id: CHEBI:53471
+  ontology_label: chromium(III) sulfate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+    notes: Chrome alum, KCr(SO4)2*12H2O. The report equates the label with chrome
+      alum from peer-reviewed literature and gives CAS RN 7788-99-0 from a chemical
+      reference. No ontology term covers the potassium double salt or its dodecahydrate;
+      CHEBI:53471 chromium(III) sulfate is the nearest parent, lacking both the potassium
+      and the twelve waters.

@@ -27,6 +27,22 @@ curation_history:
   changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
     culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/PPLO_Broth-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommended status | **Keep `UNMAPPED`**. Curate
+    as a **named complex basal medium/material** with scope notes clarifying that
+    it is PPLO broth, not PPLO agar and not a complete enriched mycoplasma medium.
+    | Supported identity is clear enough for scope notes, but insufficient for exact
+    ontology grounding (burgos2023developmentofa pages 1-2, burgos2023developmentofa
+    pages 2-4, burgos2023developme No ontology CURIE was proposed. Recorded as provenance
+    only — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:953); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: DEFINED_MEDIUM

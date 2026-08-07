@@ -1,8 +1,546 @@
-generation_date: '2026-08-07T03:02:18.105152+00:00'
-total_count: 2490
-mapped_count: 2469
+generation_date: '2026-08-07T06:56:58.113846+00:00'
+total_count: 2497
+mapped_count: 2476
 unmapped_count: 0
 ingredients:
+- identifier: cas:68399-81-5
+  preferred_term: TAPSO
+  ontology_mapping:
+    ontology_id: cas:68399-81-5
+    ontology_label: TAPSO
+    ontology_source: CAS
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+      notes: 'TAPSO, a Good''s zwitterionic buffer, CAS 68399-81-5. Parentless: the
+        local CHEBI build has no TAPSO term and no buffer superclass that denotes
+        it. Note the acronym is a known collision trap -- a naive label search resolves
+        TAPSO to a dermorphin peptide, which is why this is minted rather than matched.'
+  synonyms:
+  - synonym_text: 3-[[1,3-dihydroxy-2-(hydroxymethyl)propan-2-yl]amino]-2-hydroxypropane-1-sulfonic
+      acid
+    synonym_type: EXACT
+    source: IUPAC
+  - synonym_text: N-[tris(hydroxymethyl)methyl]-3-amino-2-hydroxypropanesulfonic acid
+    synonym_type: EXACT
+    source: IUPAC
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 10
+    media_count: 10
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-05T19:53:59.993699+00:00'
+    curator: fetch_cas_rn_from_pubchem
+    action: ADDED_CAS_RN
+    changes: Added CAS-RN:68399-81-5 from PubChem API via name lookup (TAPSO)
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: UNMAPPED
+    changes: Removed incorrect CHEBI:84015 ((1R,2R)-diclocymet, a fungicide metabolite
+      — unrelated compound). TAPSO (CAS 68399-77-9) buffer has no dedicated CHEBI
+      entry; demoted to UNMAPPED pending ontology addition or alternate mapping.
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 synonyms from kg-microbe P4.4 enrichment: (1R,2R)-diclocymet,
+      (2R)-2-cyano-N-[(1R)-1-(2,4-dichlorophenyl)ethyl]-3,3-dimethylbutanamide'
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-11T06:02:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLEANED_INCORRECT_SYNONYMS
+    changes: Removed kg-microbe diclocymet synonyms that were already documented as
+      unrelated to TAPSO in the 2026-04-18 demotion event.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-11T08:15:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_FALSE_OLS_CANDIDATES
+    changes: Re-reviewed OAK/OLS exact-audit hits CHEBI:84015 diclocymet and MESH:C047133
+      dermorphin fragment; kept unmapped because both are unrelated lexical/acronym
+      false positives for TAPSO buffer.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TAPSO-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: | Recommended value | Evidence assessment | CURIEs
+      discussed: CHEBI:84015, MESH:C047133. Recorded as provenance only — no grounding
+      applied from this run. Edison''s recommendations are deliberately conservative,
+      and a plausible identifier promoted by a mechanism that never decided anything
+      is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+      or reject.'
+    llm_assisted: true
+  - timestamp: '2026-08-07T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted TAPSO -> cas:68399-81-5 "TAPSO" (FALLBACK_REGISTRY); mapping_status
+      UNMAPPED -> MAPPED, SSSOM row added.
+  chemical_properties:
+    cas_rn: 68399-81-5
+    data_source: PubChem API
+    retrieval_date: '2026-04-05T19:53:59.993659+00:00'
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: cas:7705-07-9
+  preferred_term: TitaniumIII chloride
+  synonyms:
+  - synonym_text: TitaniumIII chloride
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:805); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T09:31:08Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_OXIDATION_STATE_SHORTHAND
+    changes: Classified as a single titanium chloride surface form and left unmapped
+      because the source oxidation-state shorthand was not locally verified as exact
+      TiCl3/titanium trichloride identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TitaniumIII_chloride-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: **Recommended interpretation:** a **single inorganic
+      chemical**, normalized as **titanium(III) chloride**, formula **TiCl₃**, also
+      called **titanium trichloride**. A specialist inorganic-chemistry reference
+      assigns titanium trichloride **CAS RN 7705-07-9** and describes four solid polymorphs—α,
+      β, γ, and δ—rather than a mixture or named medium formulation. The α, γ, and
+      δ forms are violet; β-TiCl₃ No ontology CURIE was proposed. Recorded as provenance
+      only — no grounding applied from this run. Edison''s recommendations are deliberately
+      conservative, and a plausible identifier promoted by a mechanism that never
+      decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+      to accept or reject.'
+    llm_assisted: true
+  - timestamp: '2026-08-07T00:00:00+00:00'
+    curator: edison_cas_enrichment
+    action: ADDED_CAS_RN
+    changes: 'Added cas_rn 7705-07-9 (titanium trichloride) from Edison literature
+      research: the report says "a specialist inorganic-chemistry reference assigns
+      titanium trichloride CAS RN 7705-07-9" and describes four solid polymorphs rather
+      than a mixture or named formulation, so the number denotes the compound this
+      record names. Enrichment only — the mapping status is unchanged, because a CAS
+      identifies a substance without supplying an ontology term. Applied only because
+      the report AFFIRMS the number for this record''s own substance: the same scan
+      pulled CAS numbers out of five other reports that forbid them outright (HBO3,
+      α-D-Glucose monohydrate, Larchwood xylan, Sigmacell alpha Type 50, dextran Mw
+      ~1,270), because a CAS printed in a rejected-candidate row looks identical to
+      one in a conclusion.'
+    llm_assisted: true
+  - timestamp: '2026-08-07T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0541 -> cas:7705-07-9 "TitaniumIII chloride" (FALLBACK_REGISTRY);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:805); no CAS-RN or
+    CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to TiCl3 without exact source
+    normalization evidence.
+  ingredient_type: SINGLE_INGREDIENT
+  chemical_properties:
+    cas_rn: 7705-07-9
+    data_source: Edison LITERATURE deep research
+  ontology_mapping:
+    ontology_id: cas:7705-07-9
+    ontology_label: TitaniumIII chloride
+    ontology_source: CAS
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+      notes: 'Titanium(III) chloride. The report quotes a specialist inorganic-chemistry
+        reference assigning titanium trichloride CAS RN 7705-07-9 and describing four
+        solid polymorphs, so this is a defined compound rather than a mixture or formulation.
+        Parentless: the local CHEBI build carries titanium OXIDES and elemental titanium
+        but no titanium chloride at any oxidation state, so there is no term to narrowMatch.'
+- identifier: cas:13977-65-6
+  preferred_term: KH2PO3
+  synonyms:
+  - synonym_text: KH2PO3
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1677); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:07:24Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_FORMULA_SHORTHAND
+    changes: Classified as a single inorganic phosphorus salt and left unmapped because
+      no exact local ontology term for KH2PO3/potassium phosphite form was verified.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/KH2PO3-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: ## Executive recommendation — **Retain `UNMAPPED`.**
+      The label is sufficiently resolved chemically as the defined single salt **potassium
+      phosphite monobasic, KH2PO3, CAS RN 13977-65-6**, but this review did not verify
+      an exact stable ontology CURIE for that salt. Accordingly, add the chemical
+      identity and literature provenance to the YAML, but create **no SSSOM row**
+      until an exact ontology recor No ontology CURIE was proposed. Recorded as provenance
+      only — no grounding applied from this run. Edison''s recommendations are deliberately
+      conservative, and a plausible identifier promoted by a mechanism that never
+      decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+      to accept or reject.'
+    llm_assisted: true
+  - timestamp: '2026-08-07T00:00:00+00:00'
+    curator: edison_cas_enrichment
+    action: ADDED_CAS_RN
+    changes: 'Added cas_rn 13977-65-6 (potassium phosphite monobasic) from Edison
+      literature research: the report calls the label "sufficiently resolved chemically
+      as the defined single salt potassium phosphite monobasic, KH2PO3, CAS RN 13977-65-6"
+      on a culture-medium method that names supplier and CAS, and says the number
+      "can be stored as chemical registry grounding but should not be presented as
+      an ontology CURIE" — which is exactly this write. Enrichment only — the mapping
+      status is unchanged, because a CAS identifies a substance without supplying
+      an ontology term. Applied only because the report AFFIRMS the number for this
+      record''s own substance: the same scan pulled CAS numbers out of five other
+      reports that forbid them outright (HBO3, α-D-Glucose monohydrate, Larchwood
+      xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in
+      a rejected-candidate row looks identical to one in a conclusion.'
+    llm_assisted: true
+  - timestamp: '2026-08-07T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0411 -> cas:13977-65-6 "phosphonic acid" (NARROW_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1677); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as KH2PO3 formula
+    shorthand; left unmapped pending exact salt/protonation evidence.
+  ingredient_type: SINGLE_INGREDIENT
+  chemical_properties:
+    cas_rn: 13977-65-6
+    data_source: Edison LITERATURE deep research
+  ontology_mapping:
+    ontology_id: CHEBI:44976
+    ontology_label: phosphonic acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+      notes: Potassium phosphite monobasic, KH2PO3. A culture-medium method quoted
+        in the report names it with supplier and CAS RN 13977-65-6, used to replace
+        dipotassium phosphate in phosphorus-modified BG-11. The report states the
+        number should be stored as registry grounding and not presented as an ontology
+        CURIE. CHEBI:44976 phosphonic acid is the parent acid; this record is its
+        monopotassium salt.
+- identifier: cas:7788-99-0
+  preferred_term: CrKSO42 x 12 H2O
+  synonyms:
+  - synonym_text: CrKSO42 x 12 H2O
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T08:04:31Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_FORMULA_SHORTHAND
+    changes: Classified as a single inorganic double-salt hydrate and left unmapped
+      because the condensed formula resembles chromium potassium sulfate dodecahydrate
+      but lacks locally verified exact ontology evidence.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CrKSO42_x_12_H2O-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: | Recommendation | Keep ontology mapping unset
+      unless a stable ontology identifier is independently confirmed; do not mint
+      label-only CURIEs | No ontology CURIE was proposed. Recorded as provenance only
+      — no grounding applied from this run. Edison''s recommendations are deliberately
+      conservative, and a plausible identifier promoted by a mechanism that never
+      decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+      to accept or reject.'
+    llm_assisted: true
+  - timestamp: '2026-08-07T00:00:00+00:00'
+    curator: edison_cas_enrichment
+    action: ADDED_CAS_RN
+    changes: 'Added cas_rn 7788-99-0 (potassium chromium(III) sulfate dodecahydrate)
+      from Edison literature research: the report equates chrome alum with KCr(SO4)2*12H2O
+      from peer-reviewed literature and gives CAS RN 7788-99-0 from a chemical reference,
+      listing it under an unqualified "CAS Registry Number:" heading. Enrichment only
+      — the mapping status is unchanged, because a CAS identifies a substance without
+      supplying an ontology term. Applied only because the report AFFIRMS the number
+      for this record''s own substance: the same scan pulled CAS numbers out of five
+      other reports that forbid them outright (HBO3, α-D-Glucose monohydrate, Larchwood
+      xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in
+      a rejected-candidate row looks identical to one in a conclusion.'
+    llm_assisted: true
+  - timestamp: '2026-08-07T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0369 -> cas:7788-99-0 "chromium(III) sulfate" (NARROW_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a chromium
+    potassium sulfate hydrate shorthand; left unmapped pending exact formula/CAS evidence.
+  ingredient_type: SINGLE_INGREDIENT
+  chemical_properties:
+    cas_rn: 7788-99-0
+    data_source: Edison LITERATURE deep research
+  ontology_mapping:
+    ontology_id: CHEBI:53471
+    ontology_label: chromium(III) sulfate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+      notes: Chrome alum, KCr(SO4)2*12H2O. The report equates the label with chrome
+        alum from peer-reviewed literature and gives CAS RN 7788-99-0 from a chemical
+        reference. No ontology term covers the potassium double salt or its dodecahydrate;
+        CHEBI:53471 chromium(III) sulfate is the nearest parent, lacking both the
+        potassium and the twelve waters.
+- identifier: cas:145224-94-8
+  preferred_term: MES Hydrat
+  synonyms:
+  - synonym_text: MES Hydrat
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:2394); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T09:28:19Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_AMBIGUITY
+    changes: Classified as a single MES hydrate-like buffer ingredient and left unmapped
+      because no exact local ontology identity for the hydrate form was verified.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/MES_Hydrat-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: - **Recommended status:** `UNMAPPED` CURIEs discussed:
+      CHEBI:39010. Recorded as provenance only — no grounding applied from this run.
+      Edison''s recommendations are deliberately conservative, and a plausible identifier
+      promoted by a mechanism that never decided anything is what #203 and #263 exist
+      to undo. Any CURIE above is a curator''s to accept or reject.'
+    llm_assisted: true
+  - timestamp: '2026-08-07T00:00:00+00:00'
+    curator: edison_cas_enrichment
+    action: ADDED_CAS_RN
+    changes: 'Added cas_rn 145224-94-8 (2-(N-morpholino)ethanesulfonic acid monohydrate)
+      from Edison literature research: the report''s own recommendation is to "Add
+      the source-backed preferred name, exact monohydrate synonyms, CAS RN 145224-94-8,
+      and hydrate-state annotation", citing a peer-reviewed materials section that
+      names the monohydrate and associates it with that number. Enrichment only —
+      the mapping status is unchanged, because a CAS identifies a substance without
+      supplying an ontology term. Applied only because the report AFFIRMS the number
+      for this record''s own substance: the same scan pulled CAS numbers out of five
+      other reports that forbid them outright (HBO3, α-D-Glucose monohydrate, Larchwood
+      xylan, Sigmacell alpha Type 50, dextran Mw ~1,270), because a CAS printed in
+      a rejected-candidate row looks identical to one in a conclusion.'
+    llm_assisted: true
+  - timestamp: '2026-08-07T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0441 -> cas:145224-94-8 "2-(N-morpholino)ethanesulfonic
+      acid" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:2394); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as MES hydrate shorthand; not merged
+    to anhydrous MES or MES sodium salt.
+  ingredient_type: SINGLE_INGREDIENT
+  chemical_properties:
+    cas_rn: 145224-94-8
+    data_source: Edison LITERATURE deep research
+  ontology_mapping:
+    ontology_id: CHEBI:39005
+    ontology_label: 2-(N-morpholino)ethanesulfonic acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: Edison LITERATURE (PaperQA3) + local CHEBI verification
+      notes: 'MES monohydrate. The report quotes a peer-reviewed materials section
+        naming 2-(N-morpholino)ethanesulfonic acid monohydrate with CAS RN 145224-94-8
+        and recommends adding exactly that number. No hydrate-specific ontology term
+        exists: CHEBI:39005 is the ANHYDROUS acid, a different substance by formula
+        weight, so it is the narrowMatch parent rather than the identity.'
+- identifier: cas:13408-09-8
+  preferred_term: Na2glycerophosphate•5H2O
+  synonyms:
+  - synonym_text: 'Na2glycerophosphate•5H2O(CAS: 13408-09-8)'
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  - synonym_text: 'Na2glycerophosphate•5H2O(CAS:  13408-09-8)'
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  mapping_status: MAPPED
+  ingredient_type: SINGLE_INGREDIENT
+  occurrence_statistics:
+    total_occurrences: 4
+    media_count: 4
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T10:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_FORM
+    changes: Set ingredient_type=SINGLE_INGREDIENT and left unmapped because the source
+      term is a sodium glycerophosphate pentahydrate with CAS 13408-09-8, while local
+      mapped sodium beta-glycerophosphate records do not verify this exact hydrate/CAS
+      identity.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0030 -> cas:13408-09-8 "sn-glycerol 3-phosphate" (NARROW_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: 'CultureMech placeholder_id: 3; reviewed on 2026-05-11 and retained as an
+    unmapped single ingredient pending exact sodium glycerophosphate pentahydrate/CAS
+    reconciliation.'
+  ontology_mapping:
+    ontology_id: CHEBI:15978
+    ontology_label: sn-glycerol 3-phosphate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: Edison LITERATURE deep research
+      notes: 'Edison literature research (research/ingredients/Na2glycerophosphate5H2O-edison-literature.md)
+        identifies this as a single chemical salt/hydrate -- disodium glycerophosphate
+        pentahydrate, CAS 13408-09-8 -- rather than a mixture. ChEBI has no term for
+        the disodium pentahydrate, so Section 3 applies: the cas: identifier with
+        a narrowMatch to CHEBI:15978 sn-glycerol 3-phosphate, the parent phosphate.'
+- identifier: cas:10049-21-5
+  preferred_term: NaH2PO4•H2O
+  synonyms:
+  - synonym_text: NaH2PO4•H2O(MCIB 742)
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 4
+    media_count: 4
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T05:36:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_AMBIGUITY
+    changes: Reviewed against local CHEBI:37585 mapped records; not merged because
+      the source term is explicit NaH2PO4 monohydrate while the local mapped representatives
+      carry anhydrous sodium dihydrogenphosphate chemistry.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0028 -> cas:10049-21-5 "sodium dihydrogenphosphate"
+      (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 and left unmapped
+    for hydrate-state curation rather than merging to CHEBI:37585 anhydrous sodium
+    dihydrogenphosphate.'
+  ingredient_type: SINGLE_INGREDIENT
+  ontology_mapping:
+    ontology_id: CHEBI:37585
+    ontology_label: sodium dihydrogenphosphate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: Edison LITERATURE deep research
+      notes: 'Edison literature research (research/ingredients/NaH2PO4H2O-edison-literature.md)
+        identifies this as sodium dihydrogen phosphate MONOHYDRATE, CAS 10049-21-5.
+        CHEBI:37585 ''sodium dihydrogenphosphate'' is the ANHYDROUS form (its own
+        dbxref is CAS 7558-80-7), so the two are distinct substances -- MAPPING_SEMANTICS.md
+        Section 3: the hydrate takes its own cas: identifier with a narrowMatch to
+        the anhydrous parent, rather than being folded onto it.'
 - identifier: kgmicrobe.ingredient:hans_100x_vitamins
   preferred_term: Hans 100x vitamins
   synonyms:

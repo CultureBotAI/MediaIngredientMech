@@ -25,6 +25,31 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Dextran_Mw_1270-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **molecular-weight-defined
+    dextran preparation/fraction**, more specifically a low-molar-mass **oligomeric
+    dextran mixture**, rather than a single molecular species, hydrate, salt, buffer,
+    extract, or complete commercial formulation. No ontology CURIE was proposed. Recorded
+    as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: edison_contextual_parent
+  action: REVERTED_PARENT_CONTEXT
+  changes: 'Removed the CHEBI:52071 dextran parent this tool had recorded. The term
+    and its label are correct in the local ChEBI build, but the CURIE appears nowhere
+    in the Edison report the entry cited as evidence — it came from a lookup I ran
+    after reading the report''s prose. Keeping it would have credited that lookup
+    to the literature agent, and left two contradicting events one day apart on this
+    record: one saying no CURIE was proposed, one sourcing a CURIE to the same run.
+    Re-proposing it is fine, with its own evidence; see #294.'
+  llm_assisted: true
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a Mw-specific
   dextran fraction; not identity-mapped to generic Dextran.
