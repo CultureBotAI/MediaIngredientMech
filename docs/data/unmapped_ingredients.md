@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-07T04:29:32.515294+00:00
-Total: 351 ingredients
+Generated: 2026-08-07T05:09:09.163455+00:00
+Total: 349 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -185,12 +185,10 @@ Total: 351 ingredients
 | UNMAPPED_0460 |  | Na-Nitrilotriacetat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0463 |  | Na-tetrathionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0465 |  | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0030 |  | Na2glycerophosphate•5H2O | UNMAPPED |  |  | 4 |
 | UNMAPPED_0081 |  | Na2Glycerophosphate.5H2O | UNMAPPED |  |  | 1 |
 | UNMAPPED_0101 |  | Na2Glycerophosphate•5H2O | UNMAPPED |  |  | 1 |
 | UNMAPPED_0475 |  | Na3-NTA x H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0477 |  | NaSiO3 x 9 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0028 |  | NaH2PO4•H2O | UNMAPPED |  |  | 4 |
 | UNMAPPED_0050 |  | Natural sea-salt | UNMAPPED |  |  | 2 |
 | UNMAPPED_0479 |  | NdCl3 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0152 |  | Nickel-NTA | UNMAPPED |  |  | 0 |

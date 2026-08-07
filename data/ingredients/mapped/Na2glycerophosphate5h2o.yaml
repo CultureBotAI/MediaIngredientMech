@@ -1,4 +1,4 @@
-identifier: UNMAPPED_0030
+identifier: cas:13408-09-8
 preferred_term: Na2glycerophosphate•5H2O
 synonyms:
 - synonym_text: 'Na2glycerophosphate•5H2O(CAS: 13408-09-8)'
@@ -7,7 +7,7 @@ synonyms:
 - synonym_text: 'Na2glycerophosphate•5H2O(CAS:  13408-09-8)'
   synonym_type: RAW_TEXT
   source: CultureMech
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 ingredient_type: SINGLE_INGREDIENT
 occurrence_statistics:
   total_occurrences: 4
@@ -29,5 +29,26 @@ curation_history:
   previous_status: UNMAPPED
   new_status: UNMAPPED
   llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0030 -> cas:13408-09-8 "sn-glycerol 3-phosphate" (NARROW_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: 'CultureMech placeholder_id: 3; reviewed on 2026-05-11 and retained as an unmapped
   single ingredient pending exact sodium glycerophosphate pentahydrate/CAS reconciliation.'
+ontology_mapping:
+  ontology_id: CHEBI:15978
+  ontology_label: sn-glycerol 3-phosphate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: Edison LITERATURE deep research
+    notes: 'Edison literature research (research/ingredients/Na2glycerophosphate5H2O-edison-literature.md)
+      identifies this as a single chemical salt/hydrate -- disodium glycerophosphate
+      pentahydrate, CAS 13408-09-8 -- rather than a mixture. ChEBI has no term for
+      the disodium pentahydrate, so Section 3 applies: the cas: identifier with a
+      narrowMatch to CHEBI:15978 sn-glycerol 3-phosphate, the parent phosphate.'

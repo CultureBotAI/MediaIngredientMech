@@ -1,10 +1,12 @@
 # Mapped Ingredients
 
-Generated: 2026-08-07T04:29:32.512459+00:00
-Total: 2490 ingredients
+Generated: 2026-08-07T05:09:09.160763+00:00
+Total: 2492 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| cas:13408-09-8 | CHEBI:15978 | Na2glycerophosphate•5H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
+| cas:10049-21-5 | CHEBI:37585 | NaH2PO4•H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.ingredient:hans_100x_vitamins | kgmicrobe.ingredient:hans_100x_vitamins | Hans 100x vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:hans_1000x_minerals | kgmicrobe.ingredient:hans_1000x_minerals | Hans 1000x minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:glycine-naoh_buffer | kgmicrobe.ingredient:glycine-naoh_buffer | Glycine-NaOH buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |

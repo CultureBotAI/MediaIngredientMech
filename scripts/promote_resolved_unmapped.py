@@ -251,6 +251,17 @@ def main():
         row += "\t".join([f"MIM:{slug}", pref, "skos:exactMatch", a.to, pref, registry,
                           "semapv:ManualMappingCuration", src, a.date, "0.99",
                           "", "", review]) + "\n"
+        # A `cas:` identifier does NOT satisfy Rule B1: the rule matches
+        # kgmicrobe.(ingredient|compound):<subject slug> specifically, so a cas:
+        # record needs BOTH rows -- its CAS identity AND the kg-microbe registry
+        # CURIE. That is the shape the existing cas: records carry (e.g.
+        # Tomatidine_Hydrochloride has narrowMatch + cas: + kgmicrobe.compound:).
+        if not a.to.lower().startswith("kgmicrobe."):
+            reg_mint = check_registry_mint("kgmicrobe.compound:", slug)
+            row += "\t".join([f"MIM:{slug}", pref, "skos:exactMatch", reg_mint, pref,
+                              REGISTRY_SOURCE.get("kgmicrobe.compound", ""),
+                              "semapv:ManualMappingCuration", src, a.date, "0.99",
+                              "", "", review]) + "\n"
 
     if not a.apply:
         print("\n(dry-run — pass --apply to write collections + SSSOM and regenerate)")

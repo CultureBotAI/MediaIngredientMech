@@ -1,10 +1,12 @@
 # All Ingredients
 
-Generated: 2026-08-07T04:29:32.516027+00:00
+Generated: 2026-08-07T05:09:09.164039+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| cas:13408-09-8 | CHEBI:15978 | Na2glycerophosphate•5H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
+| cas:10049-21-5 | CHEBI:37585 | NaH2PO4•H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.ingredient:hans_100x_vitamins | kgmicrobe.ingredient:hans_100x_vitamins | Hans 100x vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:hans_1000x_minerals | kgmicrobe.ingredient:hans_1000x_minerals | Hans 1000x minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:glycine-naoh_buffer | kgmicrobe.ingredient:glycine-naoh_buffer | Glycine-NaOH buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2675,12 +2677,10 @@ Total: 2841 ingredients
 | UNMAPPED_0460 |  | Na-Nitrilotriacetat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0463 |  | Na-tetrathionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0465 |  | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0030 |  | Na2glycerophosphate•5H2O | UNMAPPED |  |  | 4 |
 | UNMAPPED_0081 |  | Na2Glycerophosphate.5H2O | UNMAPPED |  |  | 1 |
 | UNMAPPED_0101 |  | Na2Glycerophosphate•5H2O | UNMAPPED |  |  | 1 |
 | UNMAPPED_0475 |  | Na3-NTA x H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0477 |  | NaSiO3 x 9 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0028 |  | NaH2PO4•H2O | UNMAPPED |  |  | 4 |
 | UNMAPPED_0050 |  | Natural sea-salt | UNMAPPED |  |  | 2 |
 | UNMAPPED_0479 |  | NdCl3 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0152 |  | Nickel-NTA | UNMAPPED |  |  | 0 |
