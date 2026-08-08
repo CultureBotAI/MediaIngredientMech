@@ -167,6 +167,32 @@ def _short_job(job) -> str:
     return job.name.lower().replace("_", "-")
 
 
+def _has_successful_bundle(ingredient_path: Path, job, out_dir: Path) -> bool:
+    """True when this target already has a bundle worth keeping.
+
+    "Worth keeping" means the meta says ``success`` *and* an answer actually
+    landed. ``status: success`` with a zero-length answer has happened, and
+    skipping on the status alone would permanently strand those records with no
+    evidence. A ``fail`` or still-``in progress`` meta is likewise not a result,
+    so those get retried.
+
+    Only `--skip-existing` consults this; without the flag the runner keeps its
+    original re-run-anything behaviour.
+    """
+    stem = f"{slug_for(ingredient_path)}-edison-{_short_job(job)}"
+    meta_path = out_dir / f"{stem}-meta.yaml"
+    if not meta_path.exists():
+        return False
+    try:
+        meta = yaml.safe_load(meta_path.read_text(encoding="utf-8", errors="replace")) or {}
+    except yaml.YAMLError:
+        return False
+    if str(meta.get("status", "")).strip().lower() != "success":
+        return False
+    md_path = out_dir / f"{stem}.md"
+    return md_path.exists() and md_path.stat().st_size > 0
+
+
 def _display_path(path: Path) -> str:
     """Show ``path`` relative to the repo when possible; else absolute."""
     try:
@@ -301,6 +327,12 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument(
         "--dry-run", action="store_true", help="Render queries + print plan; do NOT call the API."
     )
+    ap.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Skip targets that already have a successful bundle (meta status=success and a "
+        "non-empty answer). Makes a long batch restartable without re-billing what finished.",
+    )
     args = ap.parse_args(argv)
 
     if args.slug and not args.status:
@@ -331,6 +363,12 @@ def main(argv: list[str] | None = None) -> int:
             if len(unresolved) > 5:
                 print(f"  - ... {len(unresolved) - 5} more", file=sys.stderr)
 
+    if args.skip_existing:
+        before = len(targets)
+        targets = [p for p in targets if not _has_successful_bundle(p, job, args.out_dir)]
+        if before != len(targets):
+            print(f"Skipping {before - len(targets)} target(s) with an existing successful bundle.")
+
     if not targets:
         print("No targets to research.", file=sys.stderr)
         return 2
@@ -351,14 +389,34 @@ def main(argv: list[str] | None = None) -> int:
         client = EdisonClient(api_key=api_key)
 
     results: list[dict[str, Any]] = []
+    failures: list[tuple[str, str]] = []
     try:
         for ingredient_path in targets:
-            results.append(
-                run_one(client, ingredient_path, job, args.template, args.out_dir, args.dry_run)
-            )
+            try:
+                results.append(
+                    run_one(client, ingredient_path, job, args.template, args.out_dir, args.dry_run)
+                )
+            except KeyboardInterrupt:
+                raise
+            except Exception as exc:  # noqa: BLE001 -- one bad record must not end the batch
+                # A transient ConnectTimeout used to abort the whole shard, and
+                # with six shards sharing one network blip it ended all six at
+                # once, 97 records into 2,400. Nothing here is lost work: the
+                # record simply has no bundle, so the next --skip-existing run
+                # picks it up again.
+                failures.append((ingredient_path.stem, f"{type(exc).__name__}: {exc}"))
+                print(f"    !! {ingredient_path.stem}: {type(exc).__name__}: {exc}",
+                      file=sys.stderr, flush=True)
     finally:
         if client is not None:
             client.close()
+
+    if failures:
+        print(f"\n{len(failures)} failed and were skipped (re-run to retry):", file=sys.stderr)
+        for slug, err in failures[:10]:
+            print(f"  - {slug}: {err[:120]}", file=sys.stderr)
+        if len(failures) > 10:
+            print(f"  - ... {len(failures) - 10} more", file=sys.stderr)
 
     if not args.dry_run:
         total_cost = sum(r["cost"] or 0.0 for r in results)

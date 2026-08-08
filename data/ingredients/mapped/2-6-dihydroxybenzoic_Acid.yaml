@@ -1,5 +1,5 @@
 identifier: cas:0303-07-1
-preferred_term: 2-6-dihydroxybenzoic acid
+preferred_term: 2,6-dihydroxybenzoic acid
 ontology_mapping:
   ontology_id: cas:0303-07-1
   ontology_label: 2-6-dihydroxybenzoic acid
@@ -11,7 +11,10 @@ ontology_mapping:
     notes: Imported from CultureBotHT. CAS-RN 0303-07-1 present, but no CHEBI entry
       exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
       to a CHEBI primary if/when CHEBI adds the term.
-synonyms: []
+synonyms:
+- synonym_text: 2-6-dihydroxybenzoic acid
+  synonym_type: RAW_TEXT
+  source: microbedecoder (comma-truncated)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -33,6 +36,18 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+  llm_assisted: false
+- timestamp: '2026-08-08T00:00:00+00:00'
+  curator: apply_locant_corrections
+  action: CORRECTED_TRUNCATED_LABEL
+  changes: 'preferred_term ''2-6-dihydroxybenzoic acid'' -> ''2,6-dihydroxybenzoic
+    acid''. The source label lost its locant list to a comma-splitting bug in the
+    microbedecoder ingest (#308); ''2-6-dihydroxybenzoic acid'' is not a possible
+    chemical name. The ontology mapping was already correct and is unchanged. Original
+    surface form retained as a RAW_TEXT synonym. Verified: CAS 303-07-1 is 2,6-dihydroxybenzoic
+    acid; the record is cas-primary (FALLBACK_REGISTRY) and its identifier is unchanged.
+    Here the comma became a hyphen (''2-6-'') rather than being dropped, so this row
+    is the same bug via a different path.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 0303-07-1

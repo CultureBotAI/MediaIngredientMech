@@ -1,5 +1,5 @@
 identifier: CHEBI:58989
-preferred_term: 5-trimethoxybenzoate
+preferred_term: 3,4,5-trimethoxybenzoate
 synonyms:
 - synonym_text: 5-trimethoxybenzoate
   synonym_type: RAW_TEXT
@@ -39,6 +39,17 @@ curation_history:
     the bare label carries no locants at all (#213). No new SSSOM row; CHEBI:58989
     is already mapped. Source: kgmicrobe.trait:trimethoxybenzoate.'
   llm_assisted: true
+- timestamp: '2026-08-08T00:00:00+00:00'
+  curator: apply_locant_corrections
+  action: CORRECTED_TRUNCATED_LABEL
+  changes: 'preferred_term ''5-trimethoxybenzoate'' -> ''3,4,5-trimethoxybenzoate''.
+    The source label lost its locant list to a comma-splitting bug in the microbedecoder
+    ingest (#308); ''5-trimethoxybenzoate'' is not a possible chemical name. The ontology
+    mapping was already correct and is unchanged. Verified: OLS4 CHEBI:58989 label=''3,4,5-trimethoxybenzoate'',
+    not obsolete. The corrected preferred_term now equals the ontology label exactly;
+    mapping_quality is left at CLOSE_MATCH because re-grading is a separate curator
+    call.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:5_trimethoxybenzoate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -49,6 +60,9 @@ ontology_mapping:
   evidence:
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#213)
-    notes: '''5-trimethoxybenzoate'' is a truncation: a trimethoxy benzoate needs
-      three locants, and 3,4,5-trimethoxybenzoate is the compound. CLOSE_MATCH for
-      the lost locants (#213).'
+    notes: 'SUPERSEDED (#308): the recorded CLOSE_MATCH rationale reads ''CLOSE_MATCH
+      for the lost locants''. The locants are no longer lost, so the stated reason
+      no longer holds and the grade is now a curator call. Original note follows.
+      ''5-trimethoxybenzoate'' is a truncation: a trimethoxy benzoate needs three
+      locants, and 3,4,5-trimethoxybenzoate is the compound. CLOSE_MATCH for the lost
+      locants (#213).'

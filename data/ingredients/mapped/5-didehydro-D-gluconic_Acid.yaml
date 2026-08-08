@@ -1,5 +1,5 @@
-identifier: CHEBI:17426
-preferred_term: 5-didehydro-D-gluconic Acid
+identifier: CHEBI:18281
+preferred_term: 2,5-didehydro-D-gluconic acid
 synonyms:
 - synonym_text: 5-didehydro-D-gluconic Acid
   synonym_type: RAW_TEXT
@@ -28,15 +28,36 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0792 -> CHEBI:17426 "5-dehydro-D-gluconic acid" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-08T00:00:00+00:00'
+  curator: apply_locant_corrections
+  action: REGROUNDED_AFTER_TRUNCATED_LABEL
+  changes: 'identifier/ontology_id CHEBI:17426 -> CHEBI:18281; preferred_term ''5-didehydro-D-gluconic
+    Acid'' -> ''2,5-didehydro-D-gluconic acid''. The previous mapping asserted skos:exactMatch
+    to a different compound (5-dehydro- vs 2,5-didehydro-, C6H10O7 vs C6H8O7), which
+    licenses node substitution downstream. Verified: OLS4: CHEBI:17426 label=''5-dehydro-D-gluconic
+    acid'' (C6H10O7); CHEBI:18281 label=''2,5-didehydro-D-gluconic acid'' (C6H8O7),
+    not obsolete, hasExactSynonym ''D-threo-hexo-2,5-diulosonic acid''. Distinct compounds;
+    no existing record claims CHEBI:18281.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:5_didehydro_d_gluconic_acid);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: CHEBI:17426
-  ontology_label: 5-dehydro-D-gluconic acid
+  ontology_id: CHEBI:18281
+  ontology_label: 2,5-didehydro-D-gluconic acid
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#213)
-    notes: '''didehydro'' is a typo for ''dehydro''; same compound as 5-dehydro-D-gluconic
-      acid. The anion form of the same typo was corrected earlier in this issue (#213).'
+    notes: 'SUPERSEDED (#308): this record was re-grounded from CHEBI:17426 to CHEBI:18281;
+      the claim below that ''didehydro'' is a typo for ''dehydro'' denoting the same
+      compound is false -- they are distinct compounds. Original note follows. ''didehydro''
+      is a typo for ''dehydro''; same compound as 5-dehydro-D-gluconic acid. The anion
+      form of the same typo was corrected earlier in this issue (#213).'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#308)
+    notes: 'Re-grounded from CHEBI:17426 after the source label was found to be comma-truncated.
+      OLS4: CHEBI:17426 label=''5-dehydro-D-gluconic acid'' (C6H10O7); CHEBI:18281
+      label=''2,5-didehydro-D-gluconic acid'' (C6H8O7), not obsolete, hasExactSynonym
+      ''D-threo-hexo-2,5-diulosonic acid''. Distinct compounds; no existing record
+      claims CHEBI:18281.'
