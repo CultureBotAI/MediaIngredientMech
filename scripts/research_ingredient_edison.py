@@ -167,6 +167,32 @@ def _short_job(job) -> str:
     return job.name.lower().replace("_", "-")
 
 
+def _has_successful_bundle(ingredient_path: Path, job, out_dir: Path) -> bool:
+    """True when this target already has a bundle worth keeping.
+
+    "Worth keeping" means the meta says ``success`` *and* an answer actually
+    landed. ``status: success`` with a zero-length answer has happened, and
+    skipping on the status alone would permanently strand those records with no
+    evidence. A ``fail`` or still-``in progress`` meta is likewise not a result,
+    so those get retried.
+
+    Only `--skip-existing` consults this; without the flag the runner keeps its
+    original re-run-anything behaviour.
+    """
+    stem = f"{slug_for(ingredient_path)}-edison-{_short_job(job)}"
+    meta_path = out_dir / f"{stem}-meta.yaml"
+    if not meta_path.exists():
+        return False
+    try:
+        meta = yaml.safe_load(meta_path.read_text(encoding="utf-8", errors="replace")) or {}
+    except yaml.YAMLError:
+        return False
+    if str(meta.get("status", "")).strip().lower() != "success":
+        return False
+    md_path = out_dir / f"{stem}.md"
+    return md_path.exists() and md_path.stat().st_size > 0
+
+
 def _display_path(path: Path) -> str:
     """Show ``path`` relative to the repo when possible; else absolute."""
     try:
@@ -301,6 +327,12 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument(
         "--dry-run", action="store_true", help="Render queries + print plan; do NOT call the API."
     )
+    ap.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Skip targets that already have a successful bundle (meta status=success and a "
+        "non-empty answer). Makes a long batch restartable without re-billing what finished.",
+    )
     args = ap.parse_args(argv)
 
     if args.slug and not args.status:
@@ -330,6 +362,12 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"  - {u}", file=sys.stderr)
             if len(unresolved) > 5:
                 print(f"  - ... {len(unresolved) - 5} more", file=sys.stderr)
+
+    if args.skip_existing:
+        before = len(targets)
+        targets = [p for p in targets if not _has_successful_bundle(p, job, args.out_dir)]
+        if before != len(targets):
+            print(f"Skipping {before - len(targets)} target(s) with an existing successful bundle.")
 
     if not targets:
         print("No targets to research.", file=sys.stderr)

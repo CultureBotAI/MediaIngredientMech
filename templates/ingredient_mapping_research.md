@@ -23,6 +23,27 @@ grounding that can be used to update `data/ingredients/{ingredient_status}/{ingr
 
 ## Required Findings
 
+### 0. Verdict On The Existing Record
+
+The fields under **Target Ingredient** above are the *current, possibly wrong*
+contents of the record. Treat them as claims to be tested, not as context to agree
+with. For each field that is populated, state explicitly whether the evidence
+**CONFIRMS**, **REFUTES**, or is **INSUFFICIENT** to judge it, and give the corrected
+value when you refute one:
+
+- The **ontology mapping** — does the cited CURIE denote this exact substance, and is
+  the recorded `mapping_quality` right? Flag a term that is a broader parent, a
+  different hydrate/salt/stereoisomer, an obsolete or merged term, or a label that
+  does not match the CURIE.
+- The **chemical properties** — formula, hydrate state, molecular weight, CAS-RN.
+- The **synonyms** — flag any that denote a *different* substance rather than this one.
+- The **ingredient type** and **mapping status**.
+
+Begin the report with a one-line `Overall verdict:` of `CONFIRMED`, `NEEDS_CORRECTION`,
+or `INSUFFICIENT_EVIDENCE`, followed by a `| field | verdict | recorded | corrected |`
+table covering the populated fields. Saying "confirmed" for a field you did not find a
+source for is worse than saying `INSUFFICIENT` — do not pad the table.
+
 ### 1. Identity And Scope
 - Determine whether the term is a single chemical, hydrate/salt form, mixture, commercial
   formulation, buffer, extract, medium component family, or ambiguous label.
@@ -32,6 +53,11 @@ grounding that can be used to update `data/ingredients/{ingredient_status}/{ingr
 ### 2. Chemical Or Formulation Evidence
 - For single chemicals, report formula, hydrate state, charge/salt form, CAS Registry Number,
   and common synonyms when source-backed.
+- **CAS-RN discipline.** A CAS number lifted from a page that happens to mention this
+  compound is wrong roughly half the time — usually because it belongs to a neighbouring
+  hydrate, the anhydrous parent, or a different salt. Quote the sentence the number came
+  from, state which exact form that sentence assigns it to, and verify the check digit.
+  Report no CAS-RN rather than an unverified one.
 - For mixtures or named formulations, summarize composition and distinguish required from
   variable ingredients.
 - Mark source conflicts, ambiguous stoichiometry, and formulation-specific evidence as warnings.
@@ -53,6 +79,7 @@ grounding that can be used to update `data/ingredients/{ingredient_status}/{ingr
 ## Output Format
 
 Return a curation-focused report with:
+- The `Overall verdict:` line and the per-field verdict table from section 0, first.
 - Scope summary.
 - Candidate ontology mappings with match type and confidence.
 - Source-backed chemical/formulation facts.
