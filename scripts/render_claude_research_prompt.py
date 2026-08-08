@@ -28,8 +28,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
-import yaml  # noqa: E402
 import research_ingredient as ri  # noqa: E402
+import yaml  # noqa: E402
 from research_ingredient_edison import render_query, resolve_target  # noqa: E402
 
 DEFAULT_TEMPLATE = ROOT / "templates" / "ingredient_claude_research.md"

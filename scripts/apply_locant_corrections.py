@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml  # noqa: E402
+
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 # `data/curated/*.yaml` is the source of truth; `data/ingredients/<status>/*.yaml`
@@ -66,6 +67,10 @@ LABEL_FIXES = {
     "4-dihydroxy-biphenyl": {
         "identifier": "CHEBI:34367",
         "preferred_term": "4,4'-dihydroxybiphenyl",
+        "stale_rationale": "the recorded CLOSE_MATCH rationale reads 'the label lost the "
+                           "second locant'. The label no longer lacks it, so that wording is "
+                           "stale; CLOSE_MATCH still stands because 4,4'-dihydroxybiphenyl and "
+                           "biphenyl-4,4'-diol are alternative names, not an exact label match.",
         "verified": "OLS4 CHEBI:34367 label=\"biphenyl-4,4'-diol\", not obsolete; "
                     "4,4'-dihydroxybiphenyl is the same compound under an "
                     "alternative name, so mapping_quality CLOSE_MATCH is left as is",
@@ -73,6 +78,9 @@ LABEL_FIXES = {
     "5-trimethoxybenzoate": {
         "identifier": "CHEBI:58989",
         "preferred_term": "3,4,5-trimethoxybenzoate",
+        "stale_rationale": "the recorded CLOSE_MATCH rationale reads 'CLOSE_MATCH for the lost "
+                           "locants'. The locants are no longer lost, so the stated reason no "
+                           "longer holds and the grade is now a curator call.",
         "verified": "OLS4 CHEBI:58989 label='3,4,5-trimethoxybenzoate', not obsolete. "
                     "The corrected preferred_term now equals the ontology label "
                     "exactly; mapping_quality is left at CLOSE_MATCH because "
@@ -134,6 +142,31 @@ def ensure_raw_synonym(rec: dict, text: str) -> bool:
     return True
 
 
+SUPERSEDED = f"SUPERSEDED ({ISSUE}): "
+
+
+def supersede_evidence(rec: dict, why: str) -> int:
+    """Mark pre-existing evidence notes that the correction has falsified.
+
+    Appending a new note is not enough. The re-grounded record kept a note
+    reading "'didehydro' is a typo for 'dehydro'; same compound as
+    5-dehydro-D-gluconic acid" -- which is exactly the mistake being corrected --
+    sitting above the correction as evidence[0]. Whoever reads the record next
+    reads the false claim first. Idempotent: already-marked notes are skipped.
+    """
+    n = 0
+    for ev in (rec.get("ontology_mapping") or {}).get("evidence") or []:
+        note = str(ev.get("notes", ""))
+        # Skip notes this correction itself wrote. The issue tag lives in
+        # `source` ("MIM curation (#308)"), not in `notes`, so checking only the
+        # note text marked our own correction as superseded by itself.
+        if note.startswith(SUPERSEDED) or ISSUE in note or ISSUE in str(ev.get("source", "")):
+            continue
+        ev["notes"] = f"{SUPERSEDED}{why} Original note follows. {note}"
+        n += 1
+    return n
+
+
 def add_event(rec: dict, action: str, changes: str) -> None:
     rec.setdefault("curation_history", []).append({
         "timestamp": STAMP, "curator": CURATOR, "action": action,
@@ -148,15 +181,25 @@ def fix_label(coll: dict, slug: str, spec: dict) -> str | None:
     old = rec.get("preferred_term")
     new = spec["preferred_term"]
     if old == new:
-        return None
+        # Label already restored by an earlier run. Superseding the stale
+        # rationale was added afterwards, so it still has to run for those.
+        n = supersede_evidence(rec, spec["stale_rationale"]) if spec.get("stale_rationale") else 0
+        return (f"{slug}: already corrected; superseded {n} stale rationale note(s)"
+                if n else None)
     added = ensure_raw_synonym(rec, str(old))
+    # Some records justify their mapping_quality by the very truncation being
+    # repaired ("CLOSE_MATCH for the lost locants"). Restoring the label leaves
+    # that reasoning self-contradictory, so say so on the record rather than
+    # silently leaving a grade whose stated basis no longer exists.
+    if spec.get("stale_rationale"):
+        supersede_evidence(rec, spec["stale_rationale"])
     rec["preferred_term"] = new
     add_event(rec, "CORRECTED_TRUNCATED_LABEL",
               f"preferred_term {old!r} -> {new!r}. The source label lost its locant "
               f"list to a comma-splitting bug in the microbedecoder ingest ({ISSUE}); "
               f"{old!r} is not a possible chemical name. The ontology mapping was "
               f"already correct and is unchanged."
-              + (f" Original surface form retained as a RAW_TEXT synonym." if added else "")
+              + (" Original surface form retained as a RAW_TEXT synonym." if added else "")
               + f" Verified: {spec['verified']}.")
     return f"{slug}: preferred_term {old!r} -> {new!r}"
 
@@ -164,15 +207,31 @@ def fix_label(coll: dict, slug: str, spec: dict) -> str | None:
 def fix_regrounding(coll: dict, apply: bool) -> list[str]:
     spec = REGROUND
     rec = find(coll, spec["from_id"])
+    done = find(coll, spec["to_id"])
     out = []
+    if rec is None and done is not None:
+        # Already re-grounded by an earlier run. The identifier move is
+        # idempotent, but superseding the falsified evidence was added later, so
+        # it still has to be applied to records corrected before that.
+        n = supersede_evidence(done, "this record was re-grounded from CHEBI:17426 to "
+                               "CHEBI:18281; the claim below that 'didehydro' is a typo for "
+                               "'dehydro' denoting the same compound is false -- they are "
+                               "distinct compounds.")
+        return [f"{spec['slug']}: already re-grounded"
+                + (f"; superseded {n} falsified evidence note(s)" if n else "")]
     if rec is None:
         return [f"{spec['slug']}: no record with identifier {spec['from_id']} -- skipped"]
-    if find(coll, spec["to_id"]) is not None:
+    if done is not None:
         return [f"{spec['slug']}: {spec['to_id']} is already a primary identifier -- "
                 f"this is a merge, not a re-grounding; skipped"]
 
     old_label = rec.get("preferred_term")
     ensure_raw_synonym(rec, str(old_label))
+    supersede_evidence(
+        rec,
+        "this record was re-grounded from CHEBI:17426 to CHEBI:18281; the claim "
+        "below that 'didehydro' is a typo for 'dehydro' denoting the same compound "
+        "is false -- they are distinct compounds.")
     rec["identifier"] = spec["to_id"]
     rec["preferred_term"] = spec["preferred_term"]
     om = rec.setdefault("ontology_mapping", {})
@@ -194,28 +253,58 @@ def fix_regrounding(coll: dict, apply: bool) -> list[str]:
               f"node substitution downstream. Verified: {spec['verified']}.")
     out.append(f"{spec['slug']}: {spec['from_id']} -> {spec['to_id']}, "
                f"preferred_term {old_label!r} -> {spec['preferred_term']!r}")
-
-    out += fix_sssom(apply)
     return out
 
 
-def fix_sssom(apply: bool) -> list[str]:
-    """Repoint the published exactMatch row at the correct compound."""
+def sync_sssom(apply: bool) -> list[str]:
+    """Bring the published rows back in step with the corrected records.
+
+    `subject_label` mirrors the record's `preferred_term`, so changing a label
+    without touching SSSOM makes `reconcile_sssom` see the *same* row as both a
+    GAP (record with no row) and an ORPHAN (row with no record) -- and `--apply`
+    resolves an orphan by deleting it, which would drop five published mappings.
+    Caught by tests/test_sssom_currency.py.
+
+    `subject_id` is deliberately NOT touched. The MIM: subject encodes the slug,
+    renaming subjects en masse is what #299 had to revert, and the slug did not
+    change here -- only the human-readable label did.
+    """
     lines = SSSOM.read_text(encoding="utf-8").splitlines(keepends=True)
     out = []
+
+    # subject-id prefix -> (new subject_label, new object_id or None, new object_label or None)
+    edits: dict[str, tuple[str, str | None, str | None]] = {
+        f"MIM:{REGROUND['slug']}": (REGROUND["preferred_term"],
+                                    REGROUND["to_id"], REGROUND["to_label"]),
+    }
+    for slug, spec in LABEL_FIXES.items():
+        # A registry (cas:) row states the record's own label on both sides, so
+        # its object_label tracks the correction too; an ontology row's
+        # object_label belongs to the ontology and must not be rewritten.
+        registry = not spec["identifier"].startswith("CHEBI:")
+        edits[f"MIM:{slug}"] = (spec["preferred_term"], None,
+                                spec["preferred_term"] if registry else None)
+
     for i, line in enumerate(lines):
-        if not line.startswith("MIM:5-didehydro-D-gluconic_Acid\t"):
+        subject = line.split("\t", 1)[0]
+        if subject not in edits:
             continue
+        new_subj_label, new_obj_id, new_obj_label = edits[subject]
         cells = line.rstrip("\n").split("\t")
         before = "\t".join(cells[:5])
-        cells[1] = REGROUND["preferred_term"]      # subject_label
-        cells[3] = REGROUND["to_id"]               # object_id
-        cells[4] = REGROUND["to_label"]            # object_label
+        cells[1] = new_subj_label
+        if new_obj_id:
+            cells[3] = new_obj_id
+        if new_obj_label:
+            cells[4] = new_obj_label
+        after = "\t".join(cells[:5])
+        if after == before:
+            continue
         lines[i] = "\t".join(cells) + "\n"
-        out.append(f"sssom:{i + 1}: {before}  ->  " + "\t".join(cells[:5]))
+        out.append(f"sssom:{i + 1}: {before}  ->  {after}")
     if apply and out:
         SSSOM.write_text("".join(lines), encoding="utf-8")
-    return out or ["sssom: no matching row found -- check the subject id"]
+    return out
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -230,6 +319,9 @@ def main(argv: list[str] | None = None) -> int:
     changes += fix_regrounding(coll, args.apply)
     if args.apply and changes:
         save_yaml(coll, COLLECTION)
+    # Always run: the record edits are idempotent, but a re-run after a partial
+    # apply still needs SSSOM brought into step.
+    changes += sync_sssom(args.apply)
 
     mode = "APPLIED" if args.apply else "DRY RUN (re-run with --apply)"
     print(f"{mode} -- {len(changes)} change(s)\n")
