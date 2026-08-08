@@ -31,6 +31,20 @@ curation_history:
   llm_assisted: false
   changes: Promoted CHEBI:756054 -> NCIT:C166659 "Carbomycin" (EXACT_MATCH); mapping_status
     UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-07T00:00:00+00:00'
+  curator: curator_ruling_2026_08_07
+  action: CURATOR_RULING
+  changes: Ruling recorded; no mapping changed. NCIT:C166659 'Carbomycin' is an exact
+    label match and resolves locally.
+  new_status: MAPPED
+  llm_assisted: false
+  notes: 'Curator ruling (#207): this grounding is FINAL, not a stopgap. CHEBI:756054
+    is a valid live ChEBI accession that is absent from the local semsql build (252
+    vs ChEBI 253), and it does exist in kg-microbe''s own ChEBI — so a future sync
+    against the consumer''s ontology may look like an invitation to restore it. It
+    is not. A term this repo can resolve and label-check is the better published mapping,
+    and that judgement does not expire when the build catches up. Do not re-ground
+    to CHEBI:756054 without a new curator decision.'
 ontology_mapping:
   ontology_id: NCIT:C166659
   ontology_label: Carbomycin

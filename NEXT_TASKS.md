@@ -613,17 +613,26 @@ consolidated in #213:**
   ids and **zero** occurrences of the six dead accessions — they survive only in
   `curation_history` prose (correct: that is the audit trail) and in the
   microbedecoder working manifests under `mappings/`.
-  **Residual, still UPSTREAM-BLOCKED (#207): gentamicin only.** It sits on
-  `CHEBI:17833` *gentamycin* as a deliberate validatable stand-in, and its own
-  `CORRECTED` history entry says it "should move back to [`CHEBI:759884`] once
-  the build carries it". Local build is still **252** vs ChEBI **253**, and a
-  refresh will not help (the published semsql artifact is byte-identical); the
-  lag is upstream of MIM. `check-chebi-currency` confirms.
-  Worth a curator decision rather than a silent default: all six accessions
-  **do** exist in kg-microbe's own ChEBI 253, so for the four NCIT re-groundings
-  MIM publishes an NCIT term while the downstream consumer already carries the
-  exact CHEBI one. That is a sourcing divergence, not an error — but nobody has
-  ruled on whether it should stand once the build catches up.
+  **#207 CLOSED by curator ruling (2026-08-07): NCIT is correct.** These five
+  are FINAL groundings, not stopgaps waiting on a build refresh — a term MIM can
+  resolve and label-check is the better published mapping, and that judgement
+  does not expire when the build catches up. Gentamicin's earlier "should move
+  back to `CHEBI:759884` once the build carries it" intent is **superseded**:
+  `CHEBI:17833` resolves, so the ordinary source preference
+  (`curie.py::PREFIX_RANK`, CHEBI above NCIT) already selects it — the four NCIT
+  groundings are that same rule working, not an exception to it.
+  This mattered because all six displaced accessions **do** exist in kg-microbe's
+  own ChEBI 253, so a future sync against the consumer's ontology would have read
+  as an invitation to "restore" them. Each of the five now carries a
+  `CURATOR_RULING` curation event saying not to, applied by
+  `scripts/apply_ncit_grounding_ruling.py` (idempotent; refuses if a record has
+  moved off the grounding being ruled on). The general rule — *a term you cannot
+  resolve is not a candidate; ground to the next ontology that has one and treat
+  it as final* — is written up under **Ontology Selection Guide** in
+  `.claude/skills/map-media-ingredients/SKILL.md`.
+  The upstream lag itself is unchanged and still true (build **252** vs ChEBI
+  **253**, refresh is a no-op because the published semsql artifact is
+  byte-identical) — it is simply no longer blocking anything here.
 - **#209** — is `sodium(+)` a media ingredient (vs a phenotype), and relabel
   `mapped/Sodium().yaml` → `sodium(1+)`.
 - **#196** — microbedecoder records carry `total_occurrences: 0`; the source
@@ -646,8 +655,9 @@ tautological — re-runs the lookup that created the mapping).
 **#249 CLOSED** (2026-08-07) — it reported six UNMAPPED records whose primary key
 was a nonexistent CHEBI id. None of the six ids is any record's identifier today;
 all six records are MAPPED to ids that resolve. Re-verified rather than assumed,
-because #249 was itself filed as an off-by-six correction to #248. **#207 remains
-open, re-scoped to gentamicin alone** — see the antibiotics item above.
+because #249 was itself filed as an off-by-six correction to #248. **#207 CLOSED**
+(2026-08-07) by curator ruling — NCIT is correct and these groundings are final;
+see the antibiotics item above.
 
 ---
 
