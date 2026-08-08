@@ -86,3 +86,8 @@ cache/
 
 # Per-record export backups (regenerable; mirrors data/curated/backups/).
 data/ingredients/*/backups/
+
+# Full machine-readable findings dump from validate_records_against_research.py.
+# Regenerates on every run and grows with the sweep (11k+ lines at 527/2841
+# records). The curator-facing .tsv and .md next to it stay tracked.
+mappings/record_research_validation.json
