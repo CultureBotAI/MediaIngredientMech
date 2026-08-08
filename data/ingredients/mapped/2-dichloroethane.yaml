@@ -1,5 +1,5 @@
 identifier: CHEBI:27789
-preferred_term: 2-dichloroethane
+preferred_term: 1,2-dichloroethane
 synonyms:
 - synonym_text: 2-dichloroethane
   synonym_type: RAW_TEXT
@@ -28,6 +28,15 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0722 -> CHEBI:27789 "1,2-dichloroethane" (EXACT_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-08T00:00:00+00:00'
+  curator: apply_locant_corrections
+  action: CORRECTED_TRUNCATED_LABEL
+  changes: 'preferred_term ''2-dichloroethane'' -> ''1,2-dichloroethane''. The source
+    label lost its locant list to a comma-splitting bug in the microbedecoder ingest
+    (#308); ''2-dichloroethane'' is not a possible chemical name. The ontology mapping
+    was already correct and is unchanged. Verified: OLS4 CHEBI:27789 label=''1,2-dichloroethane'',
+    not obsolete; ''1,2-dichloroethane'' is a hasExactSynonym.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_dichloroethane);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

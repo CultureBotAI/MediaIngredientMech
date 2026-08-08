@@ -1,5 +1,5 @@
 identifier: CHEBI:34367
-preferred_term: 4-dihydroxy-biphenyl
+preferred_term: 4,4'-dihydroxybiphenyl
 synonyms:
 - synonym_text: 4-dihydroxy-biphenyl
   synonym_type: RAW_TEXT
@@ -28,6 +28,16 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0790 -> CHEBI:34367 "biphenyl-4,4'-diol" (CLOSE_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-08T00:00:00+00:00'
+  curator: apply_locant_corrections
+  action: CORRECTED_TRUNCATED_LABEL
+  changes: 'preferred_term ''4-dihydroxy-biphenyl'' -> "4,4''-dihydroxybiphenyl".
+    The source label lost its locant list to a comma-splitting bug in the microbedecoder
+    ingest (#308); ''4-dihydroxy-biphenyl'' is not a possible chemical name. The ontology
+    mapping was already correct and is unchanged. Verified: OLS4 CHEBI:34367 label="biphenyl-4,4''-diol",
+    not obsolete; 4,4''-dihydroxybiphenyl is the same compound under an alternative
+    name, so mapping_quality CLOSE_MATCH is left as is.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_dihydroxy_biphenyl);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

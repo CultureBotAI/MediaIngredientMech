@@ -1,5 +1,5 @@
 identifier: CHEBI:34036
-preferred_term: 3-trichloropropane
+preferred_term: 1,2,3-trichloropropane
 synonyms:
 - synonym_text: 3-trichloropropane
   synonym_type: RAW_TEXT
@@ -28,6 +28,15 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0789 -> CHEBI:34036 "1,2,3-Trichloropropane" (EXACT_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-08T00:00:00+00:00'
+  curator: apply_locant_corrections
+  action: CORRECTED_TRUNCATED_LABEL
+  changes: 'preferred_term ''3-trichloropropane'' -> ''1,2,3-trichloropropane''. The
+    source label lost its locant list to a comma-splitting bug in the microbedecoder
+    ingest (#308); ''3-trichloropropane'' is not a possible chemical name. The ontology
+    mapping was already correct and is unchanged. Verified: OLS4 CHEBI:34036 label=''1,2,3-Trichloropropane'',
+    not obsolete.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:3_trichloropropane);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
