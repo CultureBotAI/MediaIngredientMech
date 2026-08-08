@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-07T13:29:25.801213+00:00
+Generated: 2026-08-08T06:23:00.764692+00:00
 Total: 2497 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -108,9 +108,9 @@ Total: 2497 ingredients
 | mesh:C041783 | mesh:C041783 | Actinomycin X | MAPPED | MESH | EXACT_MATCH | 0 |
 | mesh:D005372 | mesh:D005372 | Filipin | MAPPED | MESH | EXACT_MATCH | 0 |
 | mesh:D012313 | mesh:D012313 | Rna | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:58989 | CHEBI:58989 | 5-trimethoxybenzoate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:34367 | CHEBI:34367 | 4-dihydroxy-biphenyl | MAPPED | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:17426 | CHEBI:17426 | 5-didehydro-D-gluconic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:58989 | CHEBI:58989 | 3,4,5-trimethoxybenzoate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:34367 | CHEBI:34367 | 4,4'-dihydroxybiphenyl | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:18281 | CHEBI:18281 | 2,5-didehydro-D-gluconic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside | kgmicrobe.compound:3-o-methyl_alpha-d-glucopyranoside | 3-O-methyl Alpha-D-glucopyranoside | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate | kgmicrobe.compound:bis-4-nitrophenyl-phenyl_phosphonate | Bis-4-nitrophenyl-phenyl Phosphonate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:2-deoxythymidine-5-4-nitrophenyl_phosphate | kgmicrobe.compound:2-deoxythymidine-5-4-nitrophenyl_phosphate | 2-deoxythymidine-5'-4-nitrophenyl Phosphate | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
@@ -177,8 +177,8 @@ Total: 2497 ingredients
 | CHEBI:18333 | CHEBI:18333 | D-arabitol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16383 | CHEBI:16383 | Cis-aconitate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:17747 | CHEBI:17747 | Bis(2-ethylhexyl)phthalate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:34036 | CHEBI:34036 | 3-trichloropropane | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:27789 | CHEBI:27789 | 2-dichloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:34036 | CHEBI:34036 | 1,2,3-trichloropropane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:27789 | CHEBI:27789 | 1,2-dichloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15987 | CHEBI:15987 | Trithionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18212 | CHEBI:18212 | Selenite | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18154 | CHEBI:18154 | Polysaccharides | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -241,7 +241,7 @@ Total: 2497 ingredients
 | cas:0124-09-4 | cas:0124-09-4 | 1,6-Hexanediamine | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:32397 | CHEBI:32397 | 18-Crown-6 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63861 | CHEBI:63861 | 2-(Methylthio)ethanol | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:0303-07-1 | cas:0303-07-1 | 2-6-dihydroxybenzoic acid | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:0303-07-1 | cas:0303-07-1 | 2,6-dihydroxybenzoic acid | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:59981 | CHEBI:59981 | 2-Acetylpyrrole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:327119 | CHEBI:327119 | 2-Azetidinone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28816 | CHEBI:28816 | 2-Deoxy-D-Ribose | MAPPED | CHEBI | EXACT_MATCH | 0 |
