@@ -4,11 +4,18 @@
 MIM grounds ingredients against a local semsql ChEBI and publishes those
 groundings to kg-microbe. When the local copy is older than the ChEBI release
 kg-microbe uses, a term that exists upstream simply does not resolve here — and
-the id↔label gate then reports it as ID_OUT_OF_RANGE, whose wording ("a foreign
-identifier wearing an OBO prefix") invites deleting a perfectly good mapping.
+the id↔label gate reports it as missing. That verdict is about THIS BUILD, not
+about the identifier: "not here" is not "not real", and the repair is upstream.
 
 Six real terms — polymyxin B, colistin sulfate, gentamicin, netilmicin,
-carbomycin, lysostaphin — were demoted exactly that way in #193 (see #197, #198).
+carbomycin, lysostaphin — were deleted on that misreading in #193 (see #197,
+#198). What made it easy was the CHEBI accession ceiling, then set at 300000 —
+below ChEBI's own range — so every term newer than the local build was reported
+ID_OUT_OF_RANGE, wording that asserts "a foreign identifier wearing an OBO
+prefix". #210 raised the ceiling to 1000000, so a high-but-real accession now
+reports ID_NOT_FOUND instead: still fatal, but no longer accusing the id of
+coming from another registry. Either verdict on a recent accession still means
+"check OLS4 first", which is what this script is for.
 
 THE SECOND QUESTION MATTERS AS MUCH AS THE FIRST. Being behind is only actionable
 if a refresh would fix it, and often it would not: the semsql build MIM consumes
@@ -181,8 +188,9 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     print(f"\n  BEHIND by {upstream - local} release(s). Terms minted after ChEBI {local} do not")
-    print("  resolve locally, so `just validate-products` reports them ID_OUT_OF_RANGE — wording")
-    print("  that suggests a bogus identifier and invites demoting a valid mapping (#193, #198).")
+    print("  resolve locally, so `just validate-products` reports them ID_NOT_FOUND. That verdict")
+    print("  is a fact about THIS BUILD, not about the identifier — check OLS4 before demoting")
+    print("  anything (#193 deleted six real terms on that misreading; see #197, #198).")
 
     if args.no_network:
         print("\n  Whether a refresh helps: not checked (--no-network).")
@@ -198,7 +206,7 @@ def main(argv: list[str] | None = None) -> int:
             "\n  A refresh would NOT help. The published semsql build is byte-identical to the\n"
             "  local one, so oaklib would re-download the same release. This lag is UPSTREAM of\n"
             f"  MIM — the semsql build simply has not caught up to ChEBI {upstream} yet.\n"
-            "  Do not spend ~760 MB discovering that. Until it does, treat an ID_OUT_OF_RANGE\n"
+            "  Do not spend ~760 MB discovering that. Until it does, treat a missing-id verdict\n"
             "  on a high accession as unproven rather than as a bogus id: check the id against\n"
             "  OLS4 before demoting anything."
         )

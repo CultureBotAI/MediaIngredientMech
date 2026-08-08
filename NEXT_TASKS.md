@@ -603,11 +603,36 @@ consolidated in #213:**
   the active second session is working these. Gaps flagged: rumen fluid (#204,
   verify `MICRO:0000520`), corn steep liquor (no FOODON/CHEBI term), the TYGVS VFA
   mixture.
-- **6 out-of-coverage antibiotics** (carbomycin, colistin sulfate, gentamicin,
-  lysostaphin, netilmicin, polymyxin B) — OLS4-valid CHEBI terms absent from the
-  local `chebi.db` (build **252** vs ChEBI **253**). **UPSTREAM-BLOCKED (#207)** —
-  a refresh will not help (the semsql build is byte-identical); the lag is upstream
-  of MIM. `check-chebi-currency` confirms.
+- **6 out-of-coverage antibiotics** — **5 of 6 RESOLVED** (verified 2026-08-07,
+  re-grounded during the microbedecoder residual work, not by a build refresh).
+  All six are MAPPED with ids that resolve against the local builds, labels
+  canonical, none deprecated: carbomycin → `NCIT:C166659`, colistin sulfate →
+  `NCIT:C386`, lysostaphin → `NCIT:C166895`, polymyxin B → `NCIT:C61894`,
+  netilmicin → `CHEBI:7528` (the duplicate record was merged in; the surviving
+  file is `Netilmycin.yaml`). The published SSSOM and `docs/data/` carry those
+  ids and **zero** occurrences of the six dead accessions — they survive only in
+  `curation_history` prose (correct: that is the audit trail) and in the
+  microbedecoder working manifests under `mappings/`.
+  **#207 CLOSED by curator ruling (2026-08-07): NCIT is correct.** These five
+  are FINAL groundings, not stopgaps waiting on a build refresh — a term MIM can
+  resolve and label-check is the better published mapping, and that judgement
+  does not expire when the build catches up. Gentamicin's earlier "should move
+  back to `CHEBI:759884` once the build carries it" intent is **superseded**:
+  `CHEBI:17833` resolves, so the ordinary source preference
+  (`curie.py::PREFIX_RANK`, CHEBI above NCIT) already selects it — the four NCIT
+  groundings are that same rule working, not an exception to it.
+  This mattered because all six displaced accessions **do** exist in kg-microbe's
+  own ChEBI 253, so a future sync against the consumer's ontology would have read
+  as an invitation to "restore" them. Each of the five now carries a
+  `CURATOR_RULING` curation event saying not to, applied by
+  `scripts/apply_ncit_grounding_ruling.py` (idempotent; refuses if a record has
+  moved off the grounding being ruled on). The general rule — *a term you cannot
+  resolve is not a candidate; ground to the next ontology that has one and treat
+  it as final* — is written up under **Ontology Selection Guide** in
+  `.claude/skills/map-media-ingredients/SKILL.md`.
+  The upstream lag itself is unchanged and still true (build **252** vs ChEBI
+  **253**, refresh is a no-op because the published semsql artifact is
+  byte-identical) — it is simply no longer blocking anything here.
 - **#209** — is `sodium(+)` a media ingredient (vs a phenotype), and relabel
   `mapped/Sodium().yaml` → `sodium(1+)`.
 - **#196** — microbedecoder records carry `total_occurrences: 0`; the source
@@ -616,11 +641,23 @@ consolidated in #213:**
   rows should route to **ENVO/FOODON**, not the ingredient pipeline; keratin →
   Protein Ontology (no CHEBI term).
 
-**Related infra issues (accession ceiling / currency), all open:** #197 & #210
-(CHEBI accession ceiling is 300000 while ChEBI reaches 747618 — valid recent terms
-mis-rejected as foreign ids), #206 (`check-chebi-currency` infers "a refresh would
-help" from byte size, not release), #203 (`promote_microbedecoder_reviewed.py`
-approval check is tautological — re-runs the lookup that created the mapping).
+**Related infra issues (accession ceiling / currency):** #210 **CLOSED** — the
+CHEBI ceiling was 300000 while ChEBI reaches 747618, so valid recent terms were
+reported as foreign ids; raised to `1000000` in PR #302, matching
+`curie.py::MAX_ACCESSION`, with the two tables now pinned in sync by test. Still
+open: #303 (the vendored validator still states the conclusion in comments and
+attaches no `detail` to the verdict — needs a CultureMech-first change, tracked
+there as CultureMech#247), #304 (the ceiling can now only fire on 8-digit ids, so
+`ID_OUT_OF_RANGE` is narrower than its name suggests), #206
+(`check-chebi-currency` infers "a refresh would help" from byte size, not
+release), #203 (`promote_microbedecoder_reviewed.py` approval check is
+tautological — re-runs the lookup that created the mapping).
+**#249 CLOSED** (2026-08-07) — it reported six UNMAPPED records whose primary key
+was a nonexistent CHEBI id. None of the six ids is any record's identifier today;
+all six records are MAPPED to ids that resolve. Re-verified rather than assumed,
+because #249 was itself filed as an off-by-six correction to #248. **#207 CLOSED**
+(2026-08-07) by curator ruling — NCIT is correct and these groundings are final;
+see the antibiotics item above.
 
 ---
 

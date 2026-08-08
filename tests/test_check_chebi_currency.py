@@ -1,9 +1,11 @@
 """Guards for the ChEBI currency check (issue #197).
 
 A local ChEBI build older than kg-microbe's makes real upstream terms fail to
-resolve, and `validate-products` then reports them ID_OUT_OF_RANGE — wording that
-says "foreign identifier" and invites deleting a valid mapping. Six real terms
-were demoted exactly that way in #193.
+resolve, and `validate-products` then reports them missing. "Not in this build"
+is not "not real", and six real terms were deleted on that misreading in #193.
+Until #210 the CHEBI ceiling sat at 300000 — below ChEBI's own range — so those
+terms were reported ID_OUT_OF_RANGE, wording that asserts "foreign identifier";
+at 1000000 they report ID_NOT_FOUND, still fatal but no longer accusatory.
 
 The tests assert STDOUT, not just exit codes. An earlier version checked only
 `== 0`, which is also what the script returns when it cannot parse anything — so

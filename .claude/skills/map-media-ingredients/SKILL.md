@@ -39,6 +39,30 @@ samples (soil, seawater).
 **Priority order: CHEBI → FOODON → ENVO.** Try the most specific ontology first; fall back to
 broader ones.
 
+### A term you cannot resolve is not a candidate
+
+**Ruling, 2026-08-07 (#207).** The priority order ranks ontologies you can *check*. An
+id that does not resolve against the local build does not win on priority just because
+its prefix sorts higher — MIM publishes to kg-microbe, and a mapping it can label-check
+is worth more than one it can only take on trust from OLS4.
+
+So when the exact CHEBI term exists upstream but is absent locally (the semsql build lags
+ChEBI — `just check-chebi-currency`), **ground to a resolvable term in the next ontology
+that has one, and treat that as final.** NCIT is the usual answer for antibiotics and drug
+substances. Record the displaced accession in `curation_history` so the trail survives.
+
+This is not a stopgap and does not expire when the build catches up. Five records settled
+this way (`Carbomycin` `NCIT:C166659`, `Colistin_Sulfate` `NCIT:C386`, `Lysostaphin`
+`NCIT:C166895`, `Polymyxin_B` `NCIT:C61894`, `Gentamicin` `CHEBI:17833`) each carry a
+`CURATOR_RULING` event saying so. **Do not "restore" a displaced CHEBI accession** because
+a later build, or kg-microbe's own ChEBI, turns out to carry it — that needs a new curator
+decision, not a sync.
+
+The reverse also holds, and is why `Gentamicin` is not NCIT: `CHEBI:17833` *gentamycin*
+resolves, so the ordinary priority order picks it over `NCIT:C519`. The four NCIT
+groundings are that same rule working, not an exception to it — CHEBI simply had nothing
+validatable to offer.
+
 ---
 
 ## Chemical Normalization Rules

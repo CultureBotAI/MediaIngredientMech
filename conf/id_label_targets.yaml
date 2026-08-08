@@ -69,10 +69,30 @@ synonym_scope: exact_related
 plausibility_severity: error
 
 # Numeric accession ceiling per ontology. An id that does NOT resolve AND sits
-# above the ceiling is a foreign identifier wearing an OBO prefix (a PubChem CID
-# under a CHEBI: prefix) rather than a retired accession -- its own verdict.
+# above the ceiling is REPORTED SEPARATELY from a plain missing id, because the
+# two need different repairs: an accession beyond anything the ontology has ever
+# minted is most likely an identifier from another registry wearing an OBO
+# prefix (a PubChem CID under a CHEBI: prefix reaches 8 digits), whereas one
+# inside the range is more likely retired, mistyped, or simply newer than the
+# local build. Both verdicts are fatal — the ceiling only picks which diagnosis
+# a curator is shown. It is a WEAK heuristic: it must never be the sole reason
+# to reject an id that an ontology can confirm (see #197).
+#
+# Each ceiling tracks the DIGIT COUNT OF THE FOREIGN NAMESPACE it is meant to
+# separate out, not a guess at how far the ontology has minted. CHEBI's 1000000
+# is "7 digits, because PubChem CIDs run to 8" — so raise it only if PubChem (or
+# whatever registry is leaking in) changes width, NOT when ChEBI mints higher.
+#
+# CHEBI was 300000 until 2026-08-07 (#210). That was below ChEBI's own range —
+# the local semsql build already reaches accession 747618 (release 252), and
+# ChEBI keeps minting above it — so any term newer than the local build was
+# reported as though it came from another registry. #193 acted on that wording
+# and demoted 17 real terms; 11 resolved locally the whole time (#197, #205).
+# 1000000 matches MAX_ACCESSION in src/mediaingredientmech/curie.py, which had
+# already been corrected; tests/test_id_label_plausibility.py pins the two in
+# sync so they cannot drift apart again.
 max_accession:
-  CHEBI: 300000
+  CHEBI: 1000000
   FOODON: 4000000
   UBERON: 9000000
   ENVO: 9000000
