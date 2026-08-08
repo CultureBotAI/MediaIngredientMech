@@ -11,7 +11,17 @@ STATUS: COMPLETED PASS — kept for provenance, not for scheduling.
     through the follow-on PRs while the script did not. The repo keeps its sibling one-shot
     (scripts/apply_microbedecoder_residual_merges.py) for the same reason — a manifest whose
     producer is missing cannot be audited or re-derived.
-    Re-point it at a new manifest with --vetted to reuse the machinery.
+    DO NOT re-point it at a new manifest with --vetted without fixing two known defects
+    first — they are harmless while every row is a no-op and become live on reuse:
+      #307  it recomputes the SSSOM subject as MIM:sanitize_filename(preferred_term)
+            instead of using the existing per-record file stem, so a promotion whose
+            stem predates the current naming rule publishes a subject no file backs
+            (CurieNormalizer -> UNKNOWN_SUBJECT). Same defect as #293, second copy.
+      #306  it hardcodes ~/.data/oaklib/*.db instead of resolving the cache through
+            pystow, so with PYSTOW_HOME set it reports "CHEBI:NNNNN has no rdfs:label
+            (absent / wrong id)" — blaming the identifier for a path problem.
+    It also does not run the post-conditions listed below; they are manual steps, and
+    skipping the browser export leaves docs/data/ingredients.json stale (#276).
 
 The #193 import matched labels EXACTLY only (ols-label-exact) and never tried normalized or
 fuzzy matching, so it left groundable chemicals in the UNMAPPED residual. This promotes the
