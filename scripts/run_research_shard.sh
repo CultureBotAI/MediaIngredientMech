@@ -45,6 +45,14 @@ while :; do
         echo "=== shard ${shard} complete after ${attempt} attempt(s)" >> "$log"
         break
     fi
+    # 3 == account-level refusal (402/401/403). Retrying cannot help and only
+    # generates rate-limit traffic against an API already saying no -- which is
+    # exactly what happened when a 402 was treated as a per-record failure.
+    if [[ $rc -eq 3 ]]; then
+        echo "=== shard ${shard} STOPPED: account-level API error; not retrying." >> "$log"
+        echo "shard ${shard}: stopped on an account-level API error (see ${log})" >&2
+        exit 3
+    fi
     echo "=== shard ${shard} exited rc=${rc}; retrying in 60s" >> "$log"
     sleep 60
 done
