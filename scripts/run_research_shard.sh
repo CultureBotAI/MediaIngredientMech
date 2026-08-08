@@ -22,9 +22,29 @@ log="research/logs/shard-${shard}.log"
 mkdir -p research/logs
 
 echo "shard ${shard}: $(python3 -c "import json;print(len(json.load(open('${queue}'))))") queued -> ${log}"
-exec uv run --extra dev python scripts/research_ingredient_edison.py \
-    --batch "$queue" \
-    --template templates/ingredient_mapping_research.md \
-    --out-dir research/ingredients \
-    --skip-existing \
-    "$@" >> "$log" 2>&1
+
+# Supervisor loop. The runner already survives a single bad record, but a dead
+# client (expired connection pool, laptop asleep, DNS gone) can still end the
+# process. Relaunching with --skip-existing costs nothing and re-bills nothing,
+# so keep going until the queue reports no work left (exit 2).
+attempt=0
+while :; do
+    attempt=$((attempt + 1))
+    echo "=== shard ${shard} attempt ${attempt} $(date -u +%FT%TZ)" >> "$log"
+    set +e
+    uv run --extra dev python scripts/research_ingredient_edison.py \
+        --batch "$queue" \
+        --template templates/ingredient_mapping_research.md \
+        --out-dir research/ingredients \
+        --skip-existing \
+        "$@" >> "$log" 2>&1
+    rc=$?
+    set -e
+    # 2 == "No targets to research", i.e. the shard is genuinely finished.
+    if [[ $rc -eq 2 ]]; then
+        echo "=== shard ${shard} complete after ${attempt} attempt(s)" >> "$log"
+        break
+    fi
+    echo "=== shard ${shard} exited rc=${rc}; retrying in 60s" >> "$log"
+    sleep 60
+done

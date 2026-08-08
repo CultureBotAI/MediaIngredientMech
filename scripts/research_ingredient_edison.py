@@ -389,14 +389,34 @@ def main(argv: list[str] | None = None) -> int:
         client = EdisonClient(api_key=api_key)
 
     results: list[dict[str, Any]] = []
+    failures: list[tuple[str, str]] = []
     try:
         for ingredient_path in targets:
-            results.append(
-                run_one(client, ingredient_path, job, args.template, args.out_dir, args.dry_run)
-            )
+            try:
+                results.append(
+                    run_one(client, ingredient_path, job, args.template, args.out_dir, args.dry_run)
+                )
+            except KeyboardInterrupt:
+                raise
+            except Exception as exc:  # noqa: BLE001 -- one bad record must not end the batch
+                # A transient ConnectTimeout used to abort the whole shard, and
+                # with six shards sharing one network blip it ended all six at
+                # once, 97 records into 2,400. Nothing here is lost work: the
+                # record simply has no bundle, so the next --skip-existing run
+                # picks it up again.
+                failures.append((ingredient_path.stem, f"{type(exc).__name__}: {exc}"))
+                print(f"    !! {ingredient_path.stem}: {type(exc).__name__}: {exc}",
+                      file=sys.stderr, flush=True)
     finally:
         if client is not None:
             client.close()
+
+    if failures:
+        print(f"\n{len(failures)} failed and were skipped (re-run to retry):", file=sys.stderr)
+        for slug, err in failures[:10]:
+            print(f"  - {slug}: {err[:120]}", file=sys.stderr)
+        if len(failures) > 10:
+            print(f"  - ... {len(failures) - 10} more", file=sys.stderr)
 
     if not args.dry_run:
         total_cost = sum(r["cost"] or 0.0 for r in results)
