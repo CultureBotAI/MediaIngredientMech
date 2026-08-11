@@ -1,14 +1,26 @@
-identifier: CHEBI:132943
+identifier: CHEBI:29995
 preferred_term: Aspartate
 ontology_mapping:
-  ontology_id: CHEBI:132943
-  ontology_label: aspartate
+  ontology_id: CHEBI:29995
+  ontology_label: aspartate(2-)
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: LEXICAL_MATCH
     source: microbedecoder
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:aspartate; '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#319)
+    notes: 'Re-grounded CHEBI:132943 -> CHEBI:29995. CHEBI:132943 is the charge-agnostic
+      parent whose children are aspartate(2-) and aspartate(1-), so a bare label sitting
+      on it declines to state a protonation state. The sibling record Glutamate —
+      same amino-acid family, same bare-label form, same import — is on CHEBI:29987
+      glutamate(2-), and 30 other bare -ate labels in this corpus are likewise on
+      charged terms. Both terms are stereo-agnostic, so no stereochemical claim is
+      added; ''aspartate'' is a ChEBI synonym of CHEBI:29995, so the lexical evidence
+      survives. Counter-argument on record: MAPPING_SEMANTICS §3 step 4 would keep
+      an evidence-free under-specified label on the parent, and Malate (same hierarchy
+      shape) does exactly that — §3 does not address protonation, which #319 tracks.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -44,3 +56,9 @@ curation_history:
     does NOT check for homonyms or wrong-sense class-level matches (see #203). Promoted
     PENDING_REVIEW -> MAPPED.'
   llm_assisted: true
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: reground_aspartate
+  action: REGROUNDED_CHARGE_STATE
+  changes: identifier/ontology_id CHEBI:132943 -> CHEBI:29995; ontology_label 'aspartate'
+    -> 'aspartate(2-)'; mapping_quality -> SYNONYM_MATCH (#319).
+  llm_assisted: false

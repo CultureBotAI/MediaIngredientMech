@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-11T08:12:40.216679+00:00
+Generated: 2026-08-11T08:21:08.022483+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2142,7 +2142,7 @@ Total: 2841 ingredients
 | NCIT:C87429 | NCIT:C87429 | Arbutin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:29582 | CHEBI:29582 | Ascomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:22651 | CHEBI:22651 | Ascorbate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:132943 | CHEBI:132943 | Aspartate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29995 | CHEBI:29995 | Aspartate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:40968 | CHEBI:40968 | Astaxanthin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:37923 | CHEBI:37923 | Astromicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:156452 | CHEBI:156452 | Aureothricin | MAPPED | CHEBI | EXACT_MATCH | 0 |
