@@ -58,6 +58,20 @@ MERGES = [
 DERIVED = ("kg_microbe", "chebi", "ols")
 
 
+def zero_occurrences(lose: dict) -> None:
+    """A tombstone must carry zero occurrences once they are transferred.
+
+    Leaving them on both records double-counts the ingredient — the winner now
+    includes them and the loser still claims them. `tests/test_occurrence_stats`
+    enforces this as `rejected_nonzero`, and the existing `Calcium
+    D-Pantothenate` tombstone is 0/0 for the same reason.
+    """
+    occ = lose.setdefault("occurrence_statistics", {})
+    occ["total_occurrences"] = 0
+    occ["media_count"] = 0
+    occ.pop("source_occurrences", None)
+
+
 def find(recs, ident, label=None, status=None):
     for r in recs:
         if r.get("identifier") != ident:
@@ -72,16 +86,16 @@ def find(recs, ident, label=None, status=None):
 
 def merge_occurrences(win: dict, lose: dict) -> str:
     w = win.setdefault("occurrence_statistics", {})
-    l = lose.get("occurrence_statistics") or {}
+    lo = lose.get("occurrence_statistics") or {}
     before = (w.get("total_occurrences", 0), w.get("media_count", 0))
-    w["total_occurrences"] = (w.get("total_occurrences") or 0) + (l.get("total_occurrences") or 0)
+    w["total_occurrences"] = (w.get("total_occurrences") or 0) + (lo.get("total_occurrences") or 0)
     # media_count is summed, which slightly over-counts if a single medium listed
     # BOTH spellings. Unmeasurable from here and the same assumption the previous
     # merge batch made; flagged rather than silently exact.
-    w["media_count"] = (w.get("media_count") or 0) + (l.get("media_count") or 0)
+    w["media_count"] = (w.get("media_count") or 0) + (lo.get("media_count") or 0)
     by = {(s.get("source"), s.get("source_columns")): dict(s)
           for s in (w.get("source_occurrences") or [])}
-    for s in l.get("source_occurrences") or []:
+    for s in lo.get("source_occurrences") or []:
         k = (s.get("source"), s.get("source_columns"))
         if k in by:
             by[k]["count"] = (by[k].get("count") or 0) + (s.get("count") or 0)
@@ -89,8 +103,8 @@ def merge_occurrences(win: dict, lose: dict) -> str:
             by[k] = dict(s)
     if by:
         w["source_occurrences"] = list(by.values())
-    return (f"occurrences {before[0]}/{before[1]} + {l.get('total_occurrences', 0)}/"
-            f"{l.get('media_count', 0)} -> {w['total_occurrences']}/{w['media_count']}")
+    return (f"occurrences {before[0]}/{before[1]} + {lo.get('total_occurrences', 0)}/"
+            f"{lo.get('media_count', 0)} -> {w['total_occurrences']}/{w['media_count']}")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -108,7 +122,15 @@ def main(argv: list[str] | None = None) -> int:
         lose = find(recs, lose_id, label=lose_label)
         win = find(recs, win_id, label=win_label, status="MAPPED")
         if lose is None:
-            out.append(f"{lose_label}: no record on {lose_id} — already merged?")
+            # Already merged. Zeroing the tombstone was added after the first
+            # run, so repair any tombstone still carrying transferred counts.
+            done = find(recs, win_id, label=lose_label, status="REJECTED")
+            if done and (done.get("occurrence_statistics") or {}).get("total_occurrences"):
+                n = done["occurrence_statistics"]["total_occurrences"]
+                zero_occurrences(done)
+                out.append(f"{lose_label}: already merged; zeroed tombstone occurrences ({n} -> 0)")
+            else:
+                out.append(f"{lose_label}: no record on {lose_id} — already merged")
             continue
         if win is None:
             out.append(f"{lose_label}: winner {win_id} {win_label!r} not found — SKIPPED")
@@ -141,6 +163,7 @@ def main(argv: list[str] | None = None) -> int:
 
         lose["identifier"] = win_id
         lose["mapping_status"] = "REJECTED"
+        zero_occurrences(lose)
         lose.setdefault("curation_history", []).append({
             "timestamp": STAMP, "curator": CURATOR, "action": "MERGED_INTO",
             "changes": (f"Merged into {win_id} {win_label!r}; occurrences transferred. "

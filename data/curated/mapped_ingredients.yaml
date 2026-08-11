@@ -16833,22 +16833,35 @@ ingredients:
     inchi: InChI=1S/C7H4N2O7/c10-6-4(7(11)12)1-3(8(13)14)2-5(6)9(15)16/h1-2,10H,(H,11,12)
     smiles: O=C(O)c1cc([N+](=O)[O-])cc([N+](=O)[O-])c1O
   ingredient_type: SINGLE_INGREDIENT
-- identifier: cas:71592-46-6
+- identifier: kgmicrobe.compound:36-dihydroxyflavone
   preferred_term: 3',6-Dihydroxyflavone
   ontology_mapping:
-    ontology_id: CHEBI:107657
-    ontology_label: 6-methoxy-2-(3-methoxyphenyl)-1-benzopyran-4-one
+    ontology_id: CHEBI:24698
+    ontology_label: hydroxyflavone
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: Imported from CultureBotHT. CAS-RN 71592-46-6 present, but no CHEBI entry
-        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-        to a CHEBI primary if/when CHEBI adds the term.
+      notes: 'SUPERSEDED (#324): this evidence describes CID 676293, 6,3''-dimethoxyflavone,
+        which is NOT this ingredient. Original note follows. Imported from CultureBotHT.
+        CAS-RN 71592-46-6 present, but no CHEBI entry exists (checked OAK CHEBI sqlite
+        + PubChem CID synonyms). Curator can promote to a CHEBI primary if/when CHEBI
+        adds the term.'
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
-      notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 676293'
+      notes: 'SUPERSEDED (#324): this evidence describes CID 676293, 6,3''-dimethoxyflavone,
+        which is NOT this ingredient. Original note follows. Parent class identified
+        via pubchem-xref; matched_via=''pubchem CID 676293'''
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#324)
+      notes: Re-grounded per MAPPING_SEMANTICS §3 step 3. The label names PubChem
+        CID 688662 6,3'-dihydroxyflavone (C15H10O4, InChIKey YHLLABKHTFWHSZ-UHFFFAOYSA-N),
+        whose synonyms include the literal string "3',6-DIHYDROXYFLAVONE". ChEBI has
+        no term for it — 13 dihydroxyflavone terms exist, none the 6,3'- isomer, and
+        an InChIKey lookup returns nothing — and PubChem lists no CAS for it, so steps
+        1 and 2 are both unavailable. Previous identifier cas:71592-46-6 belongs to
+        CID 676293 6,3'-dimethoxyflavone (C17H14O4), two methyls heavier.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -16883,14 +16896,18 @@ ingredients:
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:107657 (pubchem-xref)
     llm_assisted: false
-  chemical_properties:
-    cas_rn: 71592-46-6
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C17H14O4
-    smiles: COC1=CC2=C(C=C1)OC(=CC2=O)C3=CC(=CC=C3)OC
-    inchi: InChI=1S/C17H14O4/c1-19-12-5-3-4-11(8-12)17-10-15(18)14-9-13(20-2)6-7-16(14)21-17/h3-10H,1-2H3
-    pubchem_cid: 676293
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: fix_dihydroxyflavone_wrong_compound
+    action: CORRECTED_WRONG_COMPOUND
+    changes: 'identifier cas:71592-46-6 -> kgmicrobe.compound:36-dihydroxyflavone;
+      ontology_mapping CHEBI:107657 (a dimethoxy compound) -> CHEBI:24698 hydroxyflavone
+      NARROW_MATCH; chemical_properties cleared (they described CID 676293, not this
+      ingredient: C17H14O4, CID 676293, sourced CultureBotHT compounds_to_cas.csv).
+      Root cause is the CAS in compounds_to_cas.csv, which belongs to 6,3''-dimethoxyflavone;
+      the chemistry and parent backfills then followed it and agreed with each other,
+      so no internal check could see the conflict (#324).'
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:44115
   preferred_term: 3-(N-morpholino)propanesulfonic acid
@@ -34623,8 +34640,8 @@ ingredients:
     source: kg_microbe
   mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 137
-    media_count: 50
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -104648,8 +104665,8 @@ ingredients:
     source: chebi_synonym_review
   mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -105759,8 +105776,8 @@ ingredients:
     source: kg_microbe
   mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 5
-    media_count: 5
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
