@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:64758
   ontology_label: EDTA disodium salt dihydrate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -128,6 +128,16 @@ curation_history:
     is recorded here rather than discarded: it was correct information in the wrong
     field.'
   llm_assisted: true
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'EDTA disodium salt dihydrate'; it matches
+    the ChEBI synonym 'Na2H2EDTA.2H2O' on CHEBI:64758. The schema defines EXACT_MATCH
+    as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+    so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+    The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
 chemical_properties:
   cas_rn: 6381-92-6
   data_source: 'CHEBI dbxref on CHEBI:64758 (corrected from an EC number, #114)'

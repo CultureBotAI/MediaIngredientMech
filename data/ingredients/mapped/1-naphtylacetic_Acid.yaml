@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:32918
   ontology_label: 1-naphthaleneacetic acid
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: Edison/PaperQA3 deep research + local CHEBI verification
@@ -51,6 +51,16 @@ curation_history:
     UNMAPPED → MAPPED, SSSOM row added.
   previous_status: UNMAPPED
   new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label '1-naphthaleneacetic acid'; it matches
+    the ChEBI synonym 'NAA' on CHEBI:32918. The schema defines EXACT_MATCH as a direct
+    match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+    grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
   llm_assisted: false
 chemical_properties:
   cas_rn: 86-87-3

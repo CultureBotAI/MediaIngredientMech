@@ -10082,7 +10082,7 @@ ingredients:
     ontology_id: CHEBI:32918
     ontology_label: 1-naphthaleneacetic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: Edison/PaperQA3 deep research + local CHEBI verification
@@ -10129,6 +10129,16 @@ ingredients:
       UNMAPPED → MAPPED, SSSOM row added.
     previous_status: UNMAPPED
     new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '1-naphthaleneacetic acid'; it matches
+      the ChEBI synonym 'NAA' on CHEBI:32918. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 86-87-3
@@ -10203,7 +10213,7 @@ ingredients:
     ontology_id: CHEBI:4806
     ontology_label: (-)-epigallocatechin 3-gallate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -10242,6 +10252,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '(-)-epigallocatechin 3-gallate'; it
+      matches the ChEBI synonym 'epigallocatechin gallate' on CHEBI:4806. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 989-51-5
@@ -10310,7 +10330,7 @@ ingredients:
     ontology_id: CHEBI:18357
     ontology_label: (R)-noradrenaline
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -10348,6 +10368,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '(R)-noradrenaline'; it matches the
+      ChEBI synonym 'norepinephrine' on CHEBI:18357. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 51-41-2
@@ -10997,7 +11027,7 @@ ingredients:
     ontology_id: CHEBI:44884
     ontology_label: pentan-1-ol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -11032,6 +11062,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'pentan-1-ol'; it matches the ChEBI
+      synonym '1-pentanol' on CHEBI:44884. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 71-41-0
@@ -11281,7 +11321,7 @@ ingredients:
     ontology_id: CHEBI:34118
     ontology_label: oct-1-en-3-ol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -11317,6 +11357,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'oct-1-en-3-ol'; it matches the ChEBI
+      synonym '1-octen-3-ol' on CHEBI:34118. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 3391-86-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -11331,7 +11381,7 @@ ingredients:
     ontology_id: CHEBI:62240
     ontology_label: phenazine-1-carboxamide
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -11366,6 +11416,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'phenazine-1-carboxamide'; it matches
+      the ChEBI synonym '1-Phenazinecarboxamide' on CHEBI:62240. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 550-89-0
@@ -11471,7 +11531,7 @@ ingredients:
     ontology_id: CHEBI:16997
     ontology_label: propane-1,2-diol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -11517,6 +11577,16 @@ ingredients:
       artifact of 1,2-propanediol; a diol cannot carry a single locant (#213). No
       new SSSOM row; CHEBI:16997 is already mapped. Source: kgmicrobe.trait:2_propandiol.'
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'propane-1,2-diol'; it matches the ChEBI
+      synonym '1,2-Propanediol' on CHEBI:16997. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 57-55-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -11599,7 +11669,7 @@ ingredients:
     ontology_id: CHEBI:52683
     ontology_label: butane-1,3-diol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -11634,6 +11704,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'butane-1,3-diol'; it matches the ChEBI
+      synonym '1,3-Butandiol' on CHEBI:52683. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 107-88-0
@@ -11699,7 +11779,7 @@ ingredients:
     ontology_id: CHEBI:16109
     ontology_label: propane-1,3-diol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -11745,6 +11825,16 @@ ingredients:
       -- trimethylene glycol is the traditional name for propane-1,3-diol. No new
       SSSOM row; CHEBI:16109 is already mapped. Source: kgmicrobe.compound:trimethyleneglycol.'
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'propane-1,3-diol'; it matches the ChEBI
+      synonym '1,3-Propanediol' on CHEBI:16109. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 504-63-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -11834,7 +11924,7 @@ ingredients:
     ontology_id: CHEBI:41189
     ontology_label: butane-1,4-diol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -11869,6 +11959,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'butane-1,4-diol'; it matches the ChEBI
+      synonym '1,4-BUTANEDIOL' on CHEBI:41189. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 110-63-4
@@ -12277,7 +12377,7 @@ ingredients:
     ontology_id: CHEBI:327119
     ontology_label: azetidin-2-one
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -12312,6 +12412,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'azetidin-2-one'; it matches the ChEBI
+      synonym '2-Azetidinone' on CHEBI:327119. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 930-21-2
@@ -12692,7 +12802,7 @@ ingredients:
     ontology_id: CHEBI:15918
     ontology_label: 2'-deoxycytosine 5'-monophosphate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -12730,6 +12840,17 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label "2'-deoxycytosine 5'-monophosphate";
+      it matches the ChEBI synonym "2'-Deoxycytidine 5'-monophosphate" on CHEBI:15918.
+      The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+      as a match to a known synonym, so the recorded grade overstated. ontology_id
+      is unchanged — the term is correct. The SSSOM predicate is unaffected (both
+      grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 1032-65-1
@@ -12974,7 +13095,7 @@ ingredients:
     ontology_id: CHEBI:16540
     ontology_label: pyridin-2-ol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -13009,6 +13130,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'pyridin-2-ol'; it matches the ChEBI
+      synonym '2-hydroxypyridine' on CHEBI:16540. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 142-08-5
@@ -13851,7 +13982,7 @@ ingredients:
     ontology_id: CHEBI:48945
     ontology_label: 2-methylbutan-1-ol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -13886,6 +14017,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '2-methylbutan-1-ol'; it matches the
+      ChEBI synonym '2-methyl-1-butanol' on CHEBI:48945. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 137-32-6
@@ -14110,7 +14251,7 @@ ingredients:
     ontology_id: CHEBI:77930
     ontology_label: undecan-2-ol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -14146,6 +14287,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'undecan-2-ol'; it matches the ChEBI
+      synonym '2-undecanol' on CHEBI:77930. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1653-30-1
     data_source: CultureBotHT compounds_to_cas.csv
@@ -14160,7 +14311,7 @@ ingredients:
     ontology_id: CHEBI:30351
     ontology_label: 2,2'-bipyridine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -14204,6 +14355,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label "2,2'-bipyridine"; it matches the ChEBI
+      synonym "2,2'-dipyridyl" on CHEBI:30351. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 366-18-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -15455,7 +15616,7 @@ ingredients:
     ontology_id: CHEBI:73918
     ontology_label: 3-O-methyl-D-glucose
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -15510,6 +15671,16 @@ ingredients:
       Same compound; 3-methylglucose is the contracted form of 3-O-methyl-glucose
       (#213). No new SSSOM row; CHEBI:73918 is already mapped. Source: kgmicrobe.trait:3_methylglucose.'
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '3-O-methyl-D-glucose'; it matches the
+      ChEBI synonym '3-methylglucose' on CHEBI:73918. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 146-72-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -15728,7 +15899,7 @@ ingredients:
     ontology_id: CHEBI:37081
     ontology_label: 3-aminobutanoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -15773,6 +15944,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '3-aminobutanoic acid'; it matches the
+      ChEBI synonym '3-Aminobutyric acid' on CHEBI:37081. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 541-48-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -16116,7 +16297,7 @@ ingredients:
     ontology_id: CHEBI:15837
     ontology_label: isoamylol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -16154,6 +16335,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'isoamylol'; it matches the ChEBI synonym
+      '3-methyl-1-butanol' on CHEBI:15837. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 123-51-3
@@ -16222,7 +16413,7 @@ ingredients:
     ontology_id: CHEBI:35932
     ontology_label: 3-methyl-2-oxovaleric acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -16261,6 +16452,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '3-methyl-2-oxovaleric acid'; it matches
+      the ChEBI synonym '3-methyl-2-oxopentanoic acid' on CHEBI:35932. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1460-34-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -16275,7 +16476,7 @@ ingredients:
     ontology_id: CHEBI:62898
     ontology_label: isopentenyl alcohol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -16313,6 +16514,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'isopentenyl alcohol'; it matches the
+      ChEBI synonym '3-methyl-3-butenol' on CHEBI:62898. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 763-32-6
@@ -16815,7 +17026,7 @@ ingredients:
     ontology_id: CHEBI:86582
     ontology_label: O-acetylferulic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -16853,6 +17064,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'O-acetylferulic acid'; it matches the
+      ChEBI synonym '4-Acetoxy-3-methoxycinnamic acid' on CHEBI:86582. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 2596-47-6
@@ -17135,7 +17356,7 @@ ingredients:
     ontology_id: CHEBI:165411
     ontology_label: 4-Hydroxypelargonic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -17173,6 +17394,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '4-Hydroxypelargonic acid'; it matches
+      the ChEBI synonym '4-hydroxynonanoic acid' on CHEBI:165411. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 7779-53-5
@@ -17234,7 +17465,7 @@ ingredients:
     ontology_id: CHEBI:32980
     ontology_label: phloretic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -17272,6 +17503,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'phloretic acid'; it matches the ChEBI
+      synonym '4-Hydroxyphenylpropionic acid' on CHEBI:32980. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 501-97-3
@@ -17584,7 +17825,7 @@ ingredients:
     ontology_id: CHEBI:31128
     ontology_label: 4-hydroxyphenyl acetate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -17619,6 +17860,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '4-hydroxyphenyl acetate'; it matches
+      the ChEBI synonym '4-acetoxyphenol' on CHEBI:31128. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 3233-32-7
@@ -18190,7 +18441,7 @@ ingredients:
     ontology_id: CHEBI:355715
     ontology_label: 4-nitrophenyl-beta-D-galactoside
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: LEXICAL_MATCH
       source: kgm-metatraits
@@ -18226,6 +18477,17 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '4-nitrophenyl-beta-D-galactoside';
+      it matches the ChEBI synonym '4-nitrophenyl-beta-D-galactopyranoside' on CHEBI:355715.
+      The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+      as a match to a known synonym, so the recorded grade overstated. ontology_id
+      is unchanged — the term is correct. The SSSOM predicate is unaffected (both
+      grades emit skos:exactMatch).
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C12H15NO8
@@ -18238,7 +18500,7 @@ ingredients:
     ontology_id: CHEBI:1883
     ontology_label: 4-hydroxystyrene
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -18276,6 +18538,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '4-hydroxystyrene'; it matches the ChEBI
+      synonym '4-vinylphenol' on CHEBI:1883. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 2628-17-3
@@ -19570,7 +19842,7 @@ ingredients:
     ontology_id: CHEBI:16168
     ontology_label: 6-hydroxynicotinic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -19608,6 +19880,17 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '6-hydroxynicotinic acid'; it matches
+      the ChEBI synonym '6-hydroxypyridine-3-carboxylic acid' on CHEBI:16168. The
+      schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as
+      a match to a known synonym, so the recorded grade overstated. ontology_id is
+      unchanged — the term is correct. The SSSOM predicate is unaffected (both grades
+      emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 5006-66-6
@@ -21217,7 +21500,7 @@ ingredients:
     ontology_id: CHEBI:2781
     ontology_label: apocynin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -21255,6 +21538,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'apocynin'; it matches the ChEBI synonym
+      'Acetovanillone' on CHEBI:2781. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 498-02-2
@@ -22131,7 +22424,7 @@ ingredients:
     ontology_id: CHEBI:17489
     ontology_label: 3',5'-cyclic AMP
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -22172,6 +22465,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label "3',5'-cyclic AMP"; it matches the ChEBI
+      synonym "adenosine 3',5'-cyclic monophosphate" on CHEBI:17489. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 60-92-4
@@ -25708,7 +26011,7 @@ ingredients:
     ontology_id: CHEBI:8612
     ontology_label: psicofuranin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: CURATOR_CONFIRMED_SYNONYM
       source: kgmicrobe.compound:angustmycin
@@ -25770,6 +26073,16 @@ ingredients:
       record; angustmycin C and psicofuranine are the same nucleoside antibiotic (#213).
       No new SSSOM row; CHEBI:8612 is already mapped. Source: kgmicrobe.trait:psicofuranine.'
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'psicofuranin'; it matches the ChEBI
+      synonym 'psicofuranine' on CHEBI:8612. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C11H15N5O5
@@ -27255,7 +27568,7 @@ ingredients:
     ontology_id: CHEBI:49474
     ontology_label: argon(0)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -27305,6 +27618,16 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'argon(0)'; it matches the ChEBI synonym
+      '[Ar]' on CHEBI:49474. The schema defines EXACT_MATCH as a direct match to the
+      term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+      overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+      is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7440-37-1
     data_source: CultureBotHT compounds_to_cas.csv
@@ -27447,7 +27770,7 @@ ingredients:
     ontology_id: CHEBI:29125
     ontology_label: arsenate(3-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -27525,6 +27848,16 @@ ingredients:
     action: CORRECTED
     changes: 'ontology_label ''Arsenate'' -> ''arsenate(3-)'': synced to canonical
       CHEBI label (preferred_term ''Arsenate'' unchanged).'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'arsenate(3-)'; it matches the ChEBI
+      synonym 'Arsenate ion' on CHEBI:29125. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 15584-04-0
     data_source: PubChem API
@@ -28514,7 +28847,7 @@ ingredients:
     ontology_id: CHEBI:48131
     ontology_label: nonanedioic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -28550,6 +28883,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'nonanedioic acid'; it matches the ChEBI
+      synonym 'azelaic acid' on CHEBI:48131. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 123-99-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -28564,7 +28907,7 @@ ingredients:
     ontology_id: CHEBI:51864
     ontology_label: azlocillin sodium
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -28612,6 +28955,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'azlocillin sodium'; it matches the
+      ChEBI synonym 'azlocillin sodium salt' on CHEBI:51864. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 37091-65-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -31081,7 +31434,7 @@ ingredients:
     ontology_id: CHEBI:18293
     ontology_label: 5-methoxypsoralen
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -31119,6 +31472,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '5-methoxypsoralen'; it matches the
+      ChEBI synonym 'bergapten' on CHEBI:18293. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 484-20-8
@@ -32152,7 +32515,7 @@ ingredients:
     ontology_id: CHEBI:60584
     ontology_label: bicozamycin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -32197,6 +32560,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'bicozamycin'; it matches the ChEBI
+      synonym 'Bicyclomycin' on CHEBI:60584. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 38129-37-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -33663,7 +34036,7 @@ ingredients:
     ontology_id: CHEBI:85983
     ontology_label: butyl octadecanoate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -33698,6 +34071,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'butyl octadecanoate'; it matches the
+      ChEBI synonym 'Butyl stearate' on CHEBI:85983. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 123-95-5
@@ -33953,7 +34336,7 @@ ingredients:
     ontology_id: CHEBI:36592
     ontology_label: pyrrolidin-2-one
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -33988,6 +34371,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'pyrrolidin-2-one'; it matches the ChEBI
+      synonym 'Butyrolactam' on CHEBI:36592. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 616-45-5
@@ -34195,7 +34588,7 @@ ingredients:
     ontology_id: CHEBI:29032
     ontology_label: (R)-pantothenate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -34265,6 +34658,17 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '(R)-pantothenate'; it matches the ChEBI
+      synonym '3-[(2R)-2,4-dihydroxy-3,3-dimethylbutanamido]propanoate' on CHEBI:29032.
+      The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+      as a match to a known synonym, so the recorded grade overstated. ontology_id
+      is unchanged — the term is correct. The SSSOM predicate is unaffected (both
+      grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 137-08-6
     data_source: PubChem API (preprocessed)
@@ -34744,7 +35148,7 @@ ingredients:
     ontology_id: CHEBI:86158
     ontology_label: calcium chloride dihydrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -34815,6 +35219,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'calcium chloride dihydrate'; it matches
+      the ChEBI synonym 'CaCl2.2H2O' on CHEBI:86158. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10035-04-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -35930,7 +36344,7 @@ ingredients:
     ontology_id: CHEBI:3312
     ontology_label: calcium dichloride
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -36035,6 +36449,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'calcium dichloride'; it matches the
+      ChEBI synonym 'calcium chloride' on CHEBI:3312. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10043-52-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -38812,7 +39236,7 @@ ingredients:
     ontology_id: CHEBI:31346
     ontology_label: calcium sulfate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -38887,6 +39311,16 @@ ingredients:
       migration: the residual MINERAL_SOURCE bucket was suppressed whenever any other
       target existed, which dropped the bulk cation from salts whose other role describes
       the anion (e.g. MgSO4).'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'calcium sulfate'; it matches the ChEBI
+      synonym 'anhydrous gypsum' on CHEBI:31346. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7778-18-9
     data_source: PubChem (via CHEBI:31346)
@@ -39593,7 +40027,7 @@ ingredients:
     ontology_id: CHEBI:3498
     ontology_label: cefotaxime sodium
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -39641,6 +40075,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'cefotaxime sodium'; it matches the
+      ChEBI synonym '(+)-Cefotaxime sodium salt' on CHEBI:3498. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 64485-93-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -40172,7 +40616,7 @@ ingredients:
     ontology_id: CHEBI:49533
     ontology_label: beta-D-cellohexaose
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -40223,6 +40667,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'beta-D-cellohexaose'; it matches the
+      ChEBI synonym 'Cellohexaose' on CHEBI:49533. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 2478-35-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -40959,7 +41413,7 @@ ingredients:
     ontology_id: CHEBI:63039
     ontology_label: caesium chloride
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -40993,6 +41447,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'caesium chloride'; it matches the ChEBI
+      synonym 'cesium chloride' on CHEBI:63039. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 7647-17-8
@@ -42582,7 +43046,7 @@ ingredients:
     ontology_id: CHEBI:3686
     ontology_label: chrysophanol-9-anthrone
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -42620,6 +43084,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'chrysophanol-9-anthrone'; it matches
+      the ChEBI synonym 'Chrysarobin' on CHEBI:3686. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 491-58-7
@@ -43070,7 +43544,7 @@ ingredients:
     ontology_id: CHEBI:16947
     ontology_label: citrate(3-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: kgm-metatraits
@@ -43126,6 +43600,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'citrate(3-)'; it matches the ChEBI
+      synonym 'citrate' on CHEBI:16947. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C6H5O7
@@ -47283,7 +47767,7 @@ ingredients:
     ontology_id: CHEBI:49553
     ontology_label: copper(II) chloride
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -47366,6 +47850,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'copper(II) chloride'; it matches the
+      ChEBI synonym 'Cupric chloride anhydrous' on CHEBI:49553. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:49553
   chemical_properties:
     cas_rn: 7447-39-4
@@ -47686,7 +48180,7 @@ ingredients:
     ontology_id: CHEBI:23414
     ontology_label: copper(II) sulfate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -47760,6 +48254,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'copper(II) sulfate'; it matches the
+      ChEBI synonym 'cupric sulfate anhydrous' on CHEBI:23414. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:23414
   chemical_properties:
     cas_rn: 7758-98-7
@@ -49671,7 +50175,7 @@ ingredients:
     ontology_id: CHEBI:16789
     ontology_label: aldehydo-D-lyxose
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -49722,6 +50226,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'aldehydo-D-lyxose'; it matches the
+      ChEBI synonym 'D-lyxose' on CHEBI:16789. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1114-34-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -49745,7 +50259,7 @@ ingredients:
     ontology_id: CHEBI:4249
     ontology_label: D-tagatopyranose
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -49790,6 +50304,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'D-tagatopyranose'; it matches the ChEBI
+      synonym 'D-Tagatose' on CHEBI:4249. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 87-81-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -53198,7 +53722,7 @@ ingredients:
     ontology_id: CHEBI:116509
     ontology_label: diuron
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -53236,6 +53760,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'diuron'; it matches the ChEBI synonym
+      'DCMU' on CHEBI:116509. The schema defines EXACT_MATCH as a direct match to
+      the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+      overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+      is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 330-54-1
@@ -53915,7 +54449,7 @@ ingredients:
     ontology_id: CHEBI:5445
     ontology_label: glyceraldehyde
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -53963,6 +54497,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'glyceraldehyde'; it matches the ChEBI
+      synonym 'DL-glyceraldehyde' on CHEBI:5445. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 56-82-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -54459,7 +55003,7 @@ ingredients:
     ontology_id: CHEBI:28903
     ontology_label: decan-1-ol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -54494,6 +55038,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'decan-1-ol'; it matches the ChEBI synonym
+      'Decyl alcohol' on CHEBI:28903. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 112-30-1
@@ -54557,7 +55111,7 @@ ingredients:
     ontology_id: CHEBI:87327
     ontology_label: 6-pentyloxan-2-one
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -54593,6 +55147,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '6-pentyloxan-2-one'; it matches the
+      ChEBI synonym 'delta-decalactone' on CHEBI:87327. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 705-86-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -54607,7 +55171,7 @@ ingredients:
     ontology_id: CHEBI:171817
     ontology_label: xi-5-Dodecanolide
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -54645,6 +55209,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'xi-5-Dodecanolide'; it matches the
+      ChEBI synonym 'delta-dodecalactone' on CHEBI:171817. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 713-95-1
@@ -54713,7 +55287,7 @@ ingredients:
     ontology_id: CHEBI:171846
     ontology_label: 6-Hexyltetrahydro-2H-pyran-2-one
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -54751,6 +55325,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '6-Hexyltetrahydro-2H-pyran-2-one';
+      it matches the ChEBI synonym 'delta-Undecalactone' on CHEBI:171846. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 710-04-3
@@ -55485,7 +56069,7 @@ ingredients:
     ontology_id: CHEBI:23673
     ontology_label: 2,6-diaminopimelic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -55536,6 +56120,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '2,6-diaminopimelic acid'; it matches
+      the ChEBI synonym 'Diaminopimelic acid' on CHEBI:23673. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 583-93-7
     data_source: PubChem API
@@ -55862,7 +56456,7 @@ ingredients:
     ontology_id: CHEBI:247956
     ontology_label: cinchocaine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -55900,6 +56494,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'cinchocaine'; it matches the ChEBI
+      synonym 'dibucaine' on CHEBI:247956. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 85-79-0
@@ -56318,7 +56922,7 @@ ingredients:
     ontology_id: CHEBI:89741
     ontology_label: Methyl dihydrojasmonate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -56353,6 +56957,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'Methyl dihydrojasmonate'; it matches
+      the ChEBI synonym 'Dihydrojasmonic acid methyl ester' on CHEBI:89741. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 24851-98-7
@@ -56497,7 +57111,7 @@ ingredients:
     ontology_id: CHEBI:9349
     ontology_label: sulfonyldimethane
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -56532,6 +57146,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sulfonyldimethane'; it matches the
+      ChEBI synonym 'dimethyl sulfone' on CHEBI:9349. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 67-71-0
@@ -57007,7 +57631,7 @@ ingredients:
     ontology_id: CHEBI:132764
     ontology_label: sodium oxalate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -57091,6 +57715,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium oxalate'; it matches the ChEBI
+      synonym 'Disodium oxalate' on CHEBI:132764. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 62-76-0
@@ -57478,7 +58112,7 @@ ingredients:
     ontology_id: CHEBI:42160
     ontology_label: dithionite(2-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -57549,6 +58183,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT ->
       physicochemical_roles.REDUCING_AGENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'dithionite(2-)'; it matches the ChEBI
+      synonym 'dithionite' on CHEBI:42160. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 14844-07-6
     data_source: PubChem API
@@ -58095,7 +58739,7 @@ ingredients:
     ontology_id: CHEBI:17126
     ontology_label: carnitine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -58158,6 +58802,16 @@ ingredients:
     action: CORRECTED
     changes: 'ontology_label ''DL-carnitine'' -> ''carnitine'': synced to canonical
       CHEBI label (preferred_term ''DL-carnitine'' unchanged).'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'carnitine'; it matches the ChEBI synonym
+      'D,L-carnitine' on CHEBI:17126. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 406-76-8
     data_source: PubChem (via CHEBI:17126)
@@ -58172,7 +58826,7 @@ ingredients:
     ontology_id: CHEBI:18320
     ontology_label: 1,4-dithiothreitol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -58298,6 +58952,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT ->
       physicochemical_roles.REDUCING_AGENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '1,4-dithiothreitol'; it matches the
+      ChEBI synonym "Cleland's reagent" on CHEBI:18320. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 3483-12-3
     data_source: OAK/CHEBI xref
@@ -58319,7 +58983,7 @@ ingredients:
     ontology_id: CHEBI:27570
     ontology_label: histidine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -58391,6 +59055,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'histidine'; it matches the ChEBI synonym
+      'histidina' on CHEBI:27570. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 4998-57-6
     data_source: PubChem API
@@ -58619,7 +59293,7 @@ ingredients:
     ontology_id: CHEBI:16811
     ontology_label: methionine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -58722,6 +59396,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
       nutritional_roles.NITROGEN_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'methionine'; it matches the ChEBI synonym
+      'DL-Methionine' on CHEBI:16811. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 59-51-8
     data_source: PubChem API
@@ -58838,7 +59522,7 @@ ingredients:
     ontology_id: CHEBI:57912
     ontology_label: L-tryptophan zwitterion
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -58907,6 +59591,17 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
       nutritional_roles.NITROGEN_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'L-tryptophan zwitterion'; it matches
+      the ChEBI synonym '(2S)-2-azaniumyl-3-(1H-indol-3-yl)propanoate' on CHEBI:57912.
+      The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+      as a match to a known synonym, so the recorded grade overstated. ontology_id
+      is unchanged — the term is correct. The SSSOM predicate is unaffected (both
+      grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:51:58.519606+00:00'
@@ -60044,7 +60739,7 @@ ingredients:
     ontology_id: CHEBI:64755
     ontology_label: EDTA(2-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -60124,6 +60819,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'EDTA(2-)'; it matches the ChEBI synonym
+      "2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate" on CHEBI:64755. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 60-00-4
     data_source: PubChem API
@@ -60533,7 +61238,7 @@ ingredients:
     ontology_id: CHEBI:2500
     ontology_label: Aescin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -60568,6 +61273,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'Aescin'; it matches the ChEBI synonym
+      'Escin' on CHEBI:2500. The schema defines EXACT_MATCH as a direct match to the
+      term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+      overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+      is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 6805-41-0
@@ -61710,7 +62425,7 @@ ingredients:
     ontology_id: CHEBI:454991
     ontology_label: 3,4,5-trimethoxybenzoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -61745,6 +62460,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '3,4,5-trimethoxybenzoic acid'; it matches
+      the ChEBI synonym 'Eudesmic acid' on CHEBI:454991. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 118-41-2
@@ -62016,7 +62741,7 @@ ingredients:
     ontology_id: CHEBI:75458
     ontology_label: carbonyl cyanide p-trifluoromethoxyphenylhydrazone
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -62054,6 +62779,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'carbonyl cyanide p-trifluoromethoxyphenylhydrazone';
+      it matches the ChEBI synonym 'FCCP' on CHEBI:75458. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 370-86-5
@@ -62548,7 +63283,7 @@ ingredients:
     ontology_id: CHEBI:30729
     ontology_label: ethylenediaminetetraacetatoferrate(1-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -62665,6 +63400,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
       nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'ethylenediaminetetraacetatoferrate(1-)';
+      it matches the ChEBI synonym 'Fe(III)-Edta' on CHEBI:30729. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 15275-07-7
     data_source: PubChem API
@@ -63923,7 +64668,7 @@ ingredients:
     ontology_id: CHEBI:86254
     ontology_label: iron trichloride hexahydrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -64038,6 +64783,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'iron trichloride hexahydrate'; it matches
+      the ChEBI synonym 'Iron (III) chloride hexahydrate' on CHEBI:86254. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86254
   chemical_properties:
     cas_rn: 10025-77-1
@@ -64064,7 +64819,7 @@ ingredients:
     ontology_id: CHEBI:131371
     ontology_label: iron(3+) phosphate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -64138,6 +64893,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE;
       MINERAL -> nutritional_roles.PHOSPHATE_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'iron(3+) phosphate'; it matches the
+      ChEBI synonym 'Ferric orthophosphate' on CHEBI:131371. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10045-86-0
     data_source: PubChem API
@@ -64603,7 +65368,7 @@ ingredients:
     ontology_id: CHEBI:75832
     ontology_label: iron(2+) sulfate (anhydrous)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -64737,6 +65502,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'iron(2+) sulfate (anhydrous)'; it matches
+      the ChEBI synonym 'iron(II) sulfate' on CHEBI:75832. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7720-78-7
     data_source: PubChem API
@@ -64981,7 +65756,7 @@ ingredients:
     ontology_id: CHEBI:75836
     ontology_label: iron(2+) sulfate heptahydrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -65163,6 +65938,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'iron(2+) sulfate heptahydrate'; it
+      matches the ChEBI synonym 'FeSO4.7H2O' on CHEBI:75836. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7782-63-0
     data_source: PubChem (via CHEBI:75836)
@@ -65188,7 +65973,7 @@ ingredients:
     ontology_id: CHEBI:75832
     ontology_label: iron(2+) sulfate (anhydrous)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -65274,6 +66059,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'iron(2+) sulfate (anhydrous)'; it matches
+      the ChEBI synonym 'ferrous sulfate anhydrous' on CHEBI:75832. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7720-78-7
     data_source: PubChem API (ontology label)
@@ -65927,7 +66722,7 @@ ingredients:
     ontology_id: CHEBI:28908
     ontology_label: bambermycin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -65976,6 +66771,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'bambermycin'; it matches the ChEBI
+      synonym 'Flavomycin' on CHEBI:28908. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 11015-37-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -66321,7 +67126,7 @@ ingredients:
     ontology_id: CHEBI:15640
     ontology_label: 5-formyltetrahydrofolic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -66385,6 +67190,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '5-formyltetrahydrofolic acid'; it matches
+      the ChEBI synonym 'Folinic acid' on CHEBI:15640. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 58-05-9
     data_source: PubChem API
@@ -70871,7 +71686,7 @@ ingredients:
     ontology_id: CHEBI:75456
     ontology_label: 2-stearoylglycerol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -70950,6 +71765,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SURFACTANT -> physicochemical_roles.SURFACTANT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '2-stearoylglycerol'; it matches the
+      ChEBI synonym 'glycerol monostearate' on CHEBI:75456. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 31566-31-1
     data_source: PubChem API
@@ -73013,7 +73838,7 @@ ingredients:
     ontology_id: CHEBI:36272
     ontology_label: tungstic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -73089,6 +73914,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'tungstic acid'; it matches the ChEBI
+      synonym '[WO2(OH)2]' on CHEBI:36272. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7783-03-1
     data_source: PubChem (via CHEBI:36272)
@@ -73817,7 +74652,7 @@ ingredients:
     ontology_id: CHEBI:5623
     ontology_label: harman
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -73855,6 +74690,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'harman'; it matches the ChEBI synonym
+      'harmane' on CHEBI:5623. The schema defines EXACT_MATCH as a direct match to
+      the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+      overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+      is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 486-84-0
@@ -74217,7 +75062,7 @@ ingredients:
     ontology_id: CHEBI:2540
     ontology_label: alantolactone
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -74255,6 +75100,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'alantolactone'; it matches the ChEBI
+      synonym 'Helenine' on CHEBI:2540. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 546-43-0
@@ -74952,7 +75807,7 @@ ingredients:
     ontology_id: CHEBI:18089
     ontology_label: N-benzoylglycine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -75001,6 +75856,16 @@ ingredients:
       already holds CHEBI:18089, so this is a merge rather than a promotion (#213).
       No new SSSOM row; CHEBI:18089 is already mapped. Source: kgmicrobe.trait:hippurate.'
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'N-benzoylglycine'; it matches the ChEBI
+      synonym 'Hippuric acid' on CHEBI:18089. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 495-69-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -76805,7 +77670,7 @@ ingredients:
     ontology_id: CHEBI:43580
     ontology_label: 3-(1H-indol-3-yl)propanoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -76840,6 +77705,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '3-(1H-indol-3-yl)propanoic acid'; it
+      matches the ChEBI synonym 'Indole-3-propionic acid' on CHEBI:43580. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 830-96-6
@@ -76896,7 +77771,7 @@ ingredients:
     ontology_id: CHEBI:16881
     ontology_label: 1H-indole
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: LEXICAL_MATCH
       source: kgm-metatraits
@@ -76937,6 +77812,16 @@ ingredients:
     action: CORRECTED
     changes: 'ontology_label ''indole'' -> ''1H-indole'': synced to canonical CHEBI
       label (preferred_term ''Indole'' unchanged).'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '1H-indole'; it matches the ChEBI synonym
+      'indole' on CHEBI:16881. The schema defines EXACT_MATCH as a direct match to
+      the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+      overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+      is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C8H7N
@@ -80939,7 +81824,7 @@ ingredients:
     ontology_id: CHEBI:8346
     ontology_label: potassium iodide
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -81050,6 +81935,16 @@ ingredients:
       trace elements (NaF and LiCl act as inhibitors / selective agents). MINERAL_SOURCE
       preserves the original MINERAL claim without asserting micronutrient status;
       a selective-agent role needs curator evidence.'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'potassium iodide'; it matches the ChEBI
+      synonym 'Kaliumiodid' on CHEBI:8346. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7681-11-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -81137,7 +82032,7 @@ ingredients:
     ontology_id: CHEBI:63043
     ontology_label: potassium nitrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -81280,6 +82175,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'potassium nitrate'; it matches the
+      ChEBI synonym 'Kaliumnitrat' on CHEBI:63043. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7757-79-1
     data_source: PubChem API
@@ -81301,7 +82206,7 @@ ingredients:
     ontology_id: CHEBI:32035
     ontology_label: potassium hydroxide
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -81416,6 +82321,16 @@ ingredients:
       dropped during the #128 facet migration: this ingredient supplies no mineral
       nutrient (it is a solvent or a pH adjuster), so no NutritionalRoleEnum value
       applies. Flagged for curator re-review.'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'potassium hydroxide'; it matches the
+      ChEBI synonym 'hydroxyde de potassium' on CHEBI:32035. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1310-58-3
     data_source: PubChem API
@@ -82314,7 +83229,7 @@ ingredients:
     ontology_id: CHEBI:74077
     ontology_label: S-allylcysteine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -82362,6 +83277,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'S-allylcysteine'; it matches the ChEBI
+      synonym 'L-deoxyalliin' on CHEBI:74077. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 21593-77-1
     data_source: CultureBotHT compounds_to_cas.csv
@@ -83041,7 +83966,7 @@ ingredients:
     ontology_id: CHEBI:18183
     ontology_label: 5-oxo-L-proline
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -83089,6 +84014,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '5-oxo-L-proline'; it matches the ChEBI
+      synonym 'L-Pyroglutamic acid' on CHEBI:18183. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 98-79-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -83383,7 +84318,7 @@ ingredients:
     ontology_id: CHEBI:2596
     ontology_label: alliin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -83431,6 +84366,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'alliin'; it matches the ChEBI synonym
+      '(+)-L-Alliin' on CHEBI:2596. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 556-27-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -87992,7 +88937,7 @@ ingredients:
     ontology_id: CHEBI:89932
     ontology_label: Lacto-N-fucopentaose-2
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -88037,6 +88982,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'Lacto-N-fucopentaose-2'; it matches
+      the ChEBI synonym 'Lacto-N-fucopentaose II' on CHEBI:89932. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 21973-23-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -88136,7 +89091,7 @@ ingredients:
     ontology_id: CHEBI:60239
     ontology_label: beta-D-Gal-(1->4)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -88184,6 +89139,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'beta-D-Gal-(1->4)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc';
+      it matches the ChEBI synonym 'Lacto-N-neotetraose' on CHEBI:60239. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 13007-32-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -88551,7 +89516,7 @@ ingredients:
     ontology_id: CHEBI:18411
     ontology_label: laminarabiose
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -88599,6 +89564,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'laminarabiose'; it matches the ChEBI
+      synonym 'Laminaribiose' on CHEBI:18411. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 34980-39-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -88796,7 +89771,7 @@ ingredients:
     ontology_id: CHEBI:30805
     ontology_label: dodecanoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -88831,6 +89806,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'dodecanoic acid'; it matches the ChEBI
+      synonym 'lauric acid' on CHEBI:30805. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 143-07-7
@@ -88952,7 +89937,7 @@ ingredients:
     ontology_id: CHEBI:37187
     ontology_label: lead nitrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -88996,6 +89981,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'lead nitrate'; it matches the ChEBI
+      synonym 'lead(II) nitrate' on CHEBI:37187. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 10099-74-8
@@ -89111,7 +90106,7 @@ ingredients:
     ontology_id: CHEBI:4441
     ontology_label: Desacetoxymatricarin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -89146,6 +90141,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'Desacetoxymatricarin'; it matches the
+      ChEBI synonym 'Leucodin' on CHEBI:4441. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 17946-87-1
@@ -89232,7 +90237,7 @@ ingredients:
     ontology_id: CHEBI:15765
     ontology_label: L-dopa
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -89280,6 +90285,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'L-dopa'; it matches the ChEBI synonym
+      'levodopa' on CHEBI:15765. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 59-92-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -89477,7 +90492,7 @@ ingredients:
     ontology_id: CHEBI:45630
     ontology_label: 4-oxopentanoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -89522,6 +90537,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '4-oxopentanoic acid'; it matches the
+      ChEBI synonym 'levulinic acid' on CHEBI:45630. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 123-76-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -89602,7 +90627,7 @@ ingredients:
     ontology_id: CHEBI:48607
     ontology_label: lithium chloride
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -89679,6 +90704,16 @@ ingredients:
       trace elements (NaF and LiCl act as inhibitors / selective agents). MINERAL_SOURCE
       preserves the original MINERAL claim without asserting micronutrient status;
       a selective-agent role needs curator evidence.'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'lithium chloride'; it matches the ChEBI
+      synonym 'chlorure de lithium' on CHEBI:48607. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7447-41-8
     data_source: PubChem API
@@ -91249,7 +92284,7 @@ ingredients:
     ontology_id: CHEBI:86345
     ontology_label: magnesium dichloride hexahydrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -91353,6 +92388,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'magnesium dichloride hexahydrate';
+      it matches the ChEBI synonym 'MgCl2.6H2O' on CHEBI:86345. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7791-18-6
     data_source: OAK/CHEBI xref
@@ -93309,7 +94354,7 @@ ingredients:
     ontology_id: CHEBI:17369
     ontology_label: D-mannose 6-phosphate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -93356,6 +94401,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'D-mannose 6-phosphate'; it matches
+      the ChEBI synonym 'Mannose 6-phosphate' on CHEBI:17369. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 3672-15-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -94295,7 +95350,7 @@ ingredients:
     ontology_id: CHEBI:39005
     ontology_label: 2-(N-morpholino)ethanesulfonic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -94429,6 +95484,17 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '2-(N-morpholino)ethanesulfonic acid';
+      it matches the ChEBI synonym '2-(4-morpholinyl)ethanesulfonic acid' on CHEBI:39005.
+      The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+      as a match to a known synonym, so the recorded grade overstated. ontology_id
+      is unchanged — the term is correct. The SSSOM predicate is unaffected (both
+      grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 4432-31-9
     data_source: PubChem API (ontology label)
@@ -94451,7 +95517,7 @@ ingredients:
     ontology_id: CHEBI:17113
     ontology_label: erythritol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -94499,6 +95565,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'erythritol'; it matches the ChEBI synonym
+      'mesoerythritol' on CHEBI:17113. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 149-32-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -95809,7 +96885,7 @@ ingredients:
     ontology_id: CHEBI:15767
     ontology_label: dichloromethane
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -95843,6 +96919,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'dichloromethane'; it matches the ChEBI
+      synonym 'Methylene chloride' on CHEBI:15767. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 75-09-2
@@ -96085,7 +97171,7 @@ ingredients:
     ontology_id: CHEBI:131389
     ontology_label: magnesium citrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -96149,6 +97235,16 @@ ingredients:
     action: CORRECTED
     changes: 'ontology_label ''Mg-citrate'' -> ''magnesium citrate'': synced to canonical
       CHEBI label (preferred_term ''Mg-citrate'' unchanged).'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'magnesium citrate'; it matches the
+      ChEBI synonym 'Magnesium hydrogen citrate' on CHEBI:131389. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 3344-18-1
     data_source: PubChem API (preprocessed)
@@ -96562,7 +97658,7 @@ ingredients:
     ontology_id: CHEBI:6636
     ontology_label: magnesium dichloride
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -96647,6 +97743,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'magnesium dichloride'; it matches the
+      ChEBI synonym 'Magnesium chloride anhydrous' on CHEBI:6636. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 12285-34-6
     data_source: NCI CACTUS Chemical Identifier Resolver
@@ -96764,7 +97870,7 @@ ingredients:
     ontology_id: CHEBI:6636
     ontology_label: magnesium dichloride
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -96872,6 +97978,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'magnesium dichloride'; it matches the
+      ChEBI synonym 'Magnesium chloride anhydrous' on CHEBI:6636. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 12285-34-6
     data_source: NCI CACTUS Chemical Identifier Resolver
@@ -96898,7 +98014,7 @@ ingredients:
     ontology_id: CHEBI:31793
     ontology_label: magnesium carbonate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: OAK/OLS exact audit
@@ -96930,6 +98046,16 @@ ingredients:
     previous_status: UNMAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'magnesium carbonate'; it matches the
+      ChEBI synonym 'MgCO3' on CHEBI:31793. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   notes: 'CultureMech placeholder_id: 2; curated to CHEBI:31793 magnesium carbonate
     by exact MgCO3 synonym review on 2026-05-11.'
   kg_microbe_node_id: CHEBI:31793
@@ -97131,7 +98257,7 @@ ingredients:
     ontology_id: CHEBI:31795
     ontology_label: magnesium sulfate heptahydrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -97224,6 +98350,17 @@ ingredients:
       migration: the residual MINERAL_SOURCE bucket was suppressed whenever any other
       target existed, which dropped the bulk cation from salts whose other role describes
       the anion (e.g. MgSO4).'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'magnesium sulfate heptahydrate'; it
+      matches the ChEBI synonym 'magnesium sulfate--water (1/7)' on CHEBI:31795. The
+      schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as
+      a match to a known synonym, so the recorded grade overstated. ontology_id is
+      unchanged — the term is correct. The SSSOM predicate is unaffected (both grades
+      emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10034-99-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -98768,7 +99905,7 @@ ingredients:
     ontology_id: CHEBI:86360
     ontology_label: manganese(II) sulfate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -98851,6 +99988,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'manganese(II) sulfate'; it matches
+      the ChEBI synonym 'Manganese sulfate anhydrous' on CHEBI:86360. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86360
   chemical_properties:
     cas_rn: 7785-87-7
@@ -99377,7 +100524,7 @@ ingredients:
     ontology_id: CHEBI:86360
     ontology_label: manganese(II) sulfate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -99460,6 +100607,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'manganese(II) sulfate'; it matches
+      the ChEBI synonym 'Manganese sulfate anhydrous' on CHEBI:86360. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86360
   chemical_properties:
     cas_rn: 7785-87-7
@@ -99745,7 +100902,7 @@ ingredients:
     ontology_id: CHEBI:27617
     ontology_label: monensin A
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -99784,6 +100941,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'monensin A'; it matches the ChEBI synonym
+      'monensin' on CHEBI:27617. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 17090-79-8
@@ -100150,7 +101317,7 @@ ingredients:
     ontology_id: CHEBI:30852
     ontology_label: galactaric acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -100201,6 +101368,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'galactaric acid'; it matches the ChEBI
+      synonym 'Mucic acid' on CHEBI:30852. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 526-99-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -100622,7 +101799,7 @@ ingredients:
     ontology_id: CHEBI:28875
     ontology_label: tetradecanoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -100660,6 +101837,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'tetradecanoic acid'; it matches the
+      ChEBI synonym 'myristic acid' on CHEBI:28875. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 544-63-8
@@ -101151,7 +102338,7 @@ ingredients:
     ontology_id: CHEBI:8006
     ontology_label: Peptidoglycan(N-acetyl-D-glucosamine)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -101246,6 +102433,17 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'Peptidoglycan(N-acetyl-D-glucosamine)';
+      it matches the ChEBI synonym 'Peptideglycan(N-acetyl-D-glucosamine)' on CHEBI:8006.
+      The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+      as a match to a known synonym, so the recorded grade overstated. ontology_id
+      is unchanged — the term is correct. The SSSOM predicate is unaffected (both
+      grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 72-87-7
     data_source: PubChem API
@@ -103396,7 +104594,7 @@ ingredients:
     ontology_id: CHEBI:29988
     ontology_label: L-glutamate(2-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -103465,6 +104663,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
       nutritional_roles.NITROGEN_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'L-glutamate(2-)'; it matches the ChEBI
+      synonym '(2S)-2-aminopentanedioate' on CHEBI:29988. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 16177-21-2
     data_source: PubChem API (preprocessed)
@@ -104478,7 +105686,7 @@ ingredients:
     ontology_id: CHEBI:30924
     ontology_label: L-tartrate(2-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -104558,6 +105766,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'L-tartrate(2-)'; it matches the ChEBI
+      synonym '(2R,3R)-2,3-dihydroxybutanedioate' on CHEBI:30924. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 868-18-8
     data_source: PubChem API (preprocessed)
@@ -105461,7 +106679,7 @@ ingredients:
     ontology_id: CHEBI:16810
     ontology_label: 2-oxoglutarate(2-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -105569,6 +106787,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '2-oxoglutarate(2-)'; it matches the
+      ChEBI synonym '2-oxoglutarate' on CHEBI:16810. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:16810
   chemical_properties:
     cas_rn: 64-15-3
@@ -106000,7 +107228,7 @@ ingredients:
     ontology_id: CHEBI:64758
     ontology_label: EDTA disodium salt dihydrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -106124,6 +107352,16 @@ ingredients:
       number is recorded here rather than discarded: it was correct information in
       the wrong field.'
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'EDTA disodium salt dihydrate'; it matches
+      the ChEBI synonym 'Na2H2EDTA.2H2O' on CHEBI:64758. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 6381-92-6
     data_source: 'CHEBI dbxref on CHEBI:64758 (corrected from an EC number, #114)'
@@ -107143,7 +108381,7 @@ ingredients:
     ontology_id: CHEBI:75215
     ontology_label: sodium molybdate (anhydrous)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -107325,6 +108563,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium molybdate (anhydrous)'; it matches
+      the ChEBI synonym 'Disodium molybdate' on CHEBI:75215. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7631-95-0
     data_source: OAK/CHEBI xref
@@ -107873,7 +109121,7 @@ ingredients:
     ontology_id: CHEBI:76208
     ontology_label: sodium sulfide (anhydrous)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -107987,6 +109235,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT ->
       physicochemical_roles.REDUCING_AGENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium sulfide (anhydrous)'; it matches
+      the ChEBI synonym 'anhydrous sodium sulfide' on CHEBI:76208. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1313-82-2
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -108009,7 +109267,7 @@ ingredients:
     ontology_id: CHEBI:132112
     ontology_label: sodium thiosulfate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -108205,6 +109463,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR ->
       cellular_metabolic_roles.ELECTRON_DONOR'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium thiosulfate'; it matches the
+      ChEBI synonym 'Sodium hyposulfite' on CHEBI:132112. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7772-98-7
     data_source: PubChem API
@@ -109330,7 +110598,7 @@ ingredients:
     ontology_id: CHEBI:86477
     ontology_label: sodium sulfite
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -109430,6 +110698,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT ->
       physicochemical_roles.REDUCING_AGENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium sulfite'; it matches the ChEBI
+      synonym 'Natriumsulfid' on CHEBI:86477. The schema defines EXACT_MATCH as a
+      direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+      the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7757-83-7
     data_source: PubChem API
@@ -109452,7 +110730,7 @@ ingredients:
     ontology_id: CHEBI:86477
     ontology_label: sodium sulfite
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -109512,6 +110790,16 @@ ingredients:
     action: CORRECTED
     changes: 'ontology_label ''Na2SO3 x 5 H2O'' -> ''sodium sulfite'': synced to canonical
       CHEBI label (preferred_term ''Na2SO3 x 5 H2O'' unchanged).'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium sulfite'; it matches the ChEBI
+      synonym 'Sodium sulfite anhydrous' on CHEBI:86477. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86477
   chemical_properties:
     cas_rn: 7757-83-7
@@ -109819,7 +111107,7 @@ ingredients:
     ontology_id: CHEBI:63940
     ontology_label: sodium tungstate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -109886,6 +111174,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium tungstate'; it matches the ChEBI
+      synonym 'Na2WO4' on CHEBI:63940. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 13472-45-2
     data_source: PubChem API
@@ -111298,7 +112596,7 @@ ingredients:
     ontology_id: CHEBI:37585
     ontology_label: sodium dihydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -111439,6 +112737,17 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium dihydrogenphosphate'; it matches
+      the ChEBI synonym 'sodium phosphate monobasic anhydrous' on CHEBI:37585. The
+      schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as
+      a match to a known synonym, so the recorded grade overstated. ontology_id is
+      unchanged — the term is correct. The SSSOM predicate is unaffected (both grades
+      emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7558-80-7
     data_source: PubChem API
@@ -111461,7 +112770,7 @@ ingredients:
     ontology_id: CHEBI:37585
     ontology_label: sodium dihydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -111574,6 +112883,17 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium dihydrogenphosphate'; it matches
+      the ChEBI synonym 'sodium phosphate monobasic anhydrous' on CHEBI:37585. The
+      schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as
+      a match to a known synonym, so the recorded grade overstated. ontology_id is
+      unchanged — the term is correct. The SSSOM predicate is unaffected (both grades
+      emit skos:exactMatch).
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:37585
   chemical_properties:
     cas_rn: 7558-80-7
@@ -112191,7 +113511,7 @@ ingredients:
     ontology_id: CHEBI:63005
     ontology_label: sodium nitrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -112349,6 +113669,16 @@ ingredients:
       occurrences +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
       (#226). Source: communitymech.ingredient:Sodium_nitrate_(nitrogen_source.'
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium nitrate'; it matches the ChEBI
+      synonym 'Chile saltpeter' on CHEBI:63005. The schema defines EXACT_MATCH as
+      a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7631-99-4
     data_source: PubChem API
@@ -113665,7 +114995,7 @@ ingredients:
     ontology_id: CHEBI:86149
     ontology_label: ammonium nickel sulfate hexahydrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -113731,6 +115061,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
       nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'ammonium nickel sulfate hexahydrate';
+      it matches the ChEBI synonym '(NH4)2Ni(SO4)2.6H2O' on CHEBI:86149. The schema
+      defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+      to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+      — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 56110-30-6
     data_source: PubChem (via CHEBI:86149)
@@ -116648,7 +117988,7 @@ ingredients:
     ontology_id: CHEBI:25548
     ontology_label: nitrilotriacetate(3-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -116717,6 +118057,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> physicochemical_roles.CHELATOR'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'nitrilotriacetate(3-)'; it matches
+      the ChEBI synonym "2,2',2''-nitrilotriacetate" on CHEBI:25548. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 28528-44-1
     data_source: PubChem API
@@ -117185,7 +118535,7 @@ ingredients:
     ontology_id: CHEBI:17045
     ontology_label: dinitrogen oxide
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -117247,6 +118597,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR
       -> cellular_metabolic_roles.ELECTRON_ACCEPTOR'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'dinitrogen oxide'; it matches the ChEBI
+      synonym 'N2O' on CHEBI:17045. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10024-97-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -117614,7 +118974,7 @@ ingredients:
     ontology_id: CHEBI:109895
     ontology_label: beta-carboline
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -117652,6 +119012,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'beta-carboline'; it matches the ChEBI
+      synonym 'Norharman' on CHEBI:109895. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 244-63-3
@@ -118664,7 +120034,7 @@ ingredients:
     ontology_id: CHEBI:29081
     ontology_label: synephrine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -118702,6 +120072,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'synephrine'; it matches the ChEBI synonym
+      'Oxedrine' on CHEBI:29081. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 94-07-5
@@ -118767,7 +120147,7 @@ ingredients:
     ontology_id: CHEBI:2672
     ontology_label: Ammothamnine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -118802,6 +120182,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'Ammothamnine'; it matches the ChEBI
+      synonym 'Oxymatrine' on CHEBI:2672. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 16837-52-8
@@ -118881,7 +120271,7 @@ ingredients:
     ontology_id: CHEBI:32374
     ontology_label: trans-4-coumaric acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -118919,6 +120309,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'trans-4-coumaric acid'; it matches
+      the ChEBI synonym 'p-Coumaric acid' on CHEBI:32374. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 501-98-4
@@ -119795,7 +121195,7 @@ ingredients:
     ontology_id: CHEBI:15756
     ontology_label: hexadecanoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -119830,6 +121230,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'hexadecanoic acid'; it matches the
+      ChEBI synonym 'palmitic acid' on CHEBI:15756. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 57-10-3
@@ -126017,7 +127427,7 @@ ingredients:
     ontology_id: CHEBI:50205
     ontology_label: 3,4-dihydroxybenzaldehyde
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -126053,6 +127463,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '3,4-dihydroxybenzaldehyde'; it matches
+      the ChEBI synonym 'protocatechualdehyde' on CHEBI:50205. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 139-85-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -126067,7 +127487,7 @@ ingredients:
     ontology_id: CHEBI:36062
     ontology_label: 3,4-dihydroxybenzoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -126102,6 +127522,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '3,4-dihydroxybenzoic acid'; it matches
+      the ChEBI synonym 'Protocatechuic acid' on CHEBI:36062. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 99-50-3
@@ -126171,7 +127601,7 @@ ingredients:
     ontology_id: CHEBI:88937
     ontology_label: 2-Amino-4-hydroxy-6-pteridinecarboxylic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -126206,6 +127636,17 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '2-Amino-4-hydroxy-6-pteridinecarboxylic
+      acid'; it matches the ChEBI synonym 'Pterin-6-carboxylic acid' on CHEBI:88937.
+      The schema defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH
+      as a match to a known synonym, so the recorded grade overstated. ontology_id
+      is unchanged — the term is correct. The SSSOM predicate is unaffected (both
+      grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 948-60-7
@@ -126690,7 +128131,7 @@ ingredients:
     ontology_id: CHEBI:8653
     ontology_label: pyocyanine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -126729,6 +128170,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'pyocyanine'; it matches the ChEBI synonym
+      'pyocyanin' on CHEBI:8653. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 85-66-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -126743,7 +128194,7 @@ ingredients:
     ontology_id: CHEBI:45285
     ontology_label: pyrazinecarboxamide
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -126781,6 +128232,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'pyrazinecarboxamide'; it matches the
+      ChEBI synonym 'pyrazinamide' on CHEBI:45285. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 98-96-4
@@ -127842,7 +129303,7 @@ ingredients:
     ontology_id: CHEBI:18135
     ontology_label: catechol
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -127927,6 +129388,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'catechol'; it matches the ChEBI synonym
+      'Brenzcatechin' on CHEBI:18135. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 120-80-9
     data_source: PubChem API
@@ -131945,7 +133416,7 @@ ingredients:
     ontology_id: CHEBI:30341
     ontology_label: silver monochloride
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -131985,6 +133456,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'silver monochloride'; it matches the
+      ChEBI synonym 'Silver chloride' on CHEBI:30341. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 7783-90-6
@@ -133087,7 +134568,7 @@ ingredients:
     ontology_id: CHEBI:32954
     ontology_label: sodium acetate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -133159,6 +134640,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium acetate'; it matches the ChEBI
+      synonym 'anhydrous sodium acetate' on CHEBI:32954. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 127-09-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -137448,7 +138939,7 @@ ingredients:
     ontology_id: CHEBI:63675
     ontology_label: sodium succinate (anhydrous)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -137592,6 +139083,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'sodium succinate (anhydrous)'; it matches
+      the ChEBI synonym 'disodium succinate (anh.)' on CHEBI:63675. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 150-90-3
     data_source: OAK/CHEBI xref
@@ -142218,7 +143719,7 @@ ingredients:
     ontology_id: CHEBI:9400
     ontology_label: tangeretin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -142256,6 +143757,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'tangeretin'; it matches the ChEBI synonym
+      'tangeritin' on CHEBI:9400. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 481-53-8
@@ -143582,7 +145093,7 @@ ingredients:
     ontology_id: CHEBI:45931
     ontology_label: thiamine(1+) diphosphate(1-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -143646,6 +145157,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'thiamine(1+) diphosphate(1-)'; it matches
+      the ChEBI synonym 'thiamin pyrophosphate' on CHEBI:45931. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 136-09-4
     data_source: PubChem API
@@ -143784,7 +145305,7 @@ ingredients:
     ontology_id: CHEBI:18385
     ontology_label: thiamine(1+)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -143957,6 +145478,17 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'thiamine(1+)'; it matches the ChEBI
+      synonym '3-[(4-amino-2-methylpyrimidin-5-yl)methyl]-5-(2-hydroxyethyl)-4-methyl-1,3-thiazol-3-ium'
+      on CHEBI:18385. The schema defines EXACT_MATCH as a direct match to the term
+      and SYNONYM_MATCH as a match to a known synonym, so the recorded grade overstated.
+      ontology_id is unchanged — the term is correct. The SSSOM predicate is unaffected
+      (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 70-16-6
     data_source: OAK/CHEBI xref (overrode 200-425-3|59-43-8|67-03-8)
@@ -144647,7 +146179,7 @@ ingredients:
     ontology_id: CHEBI:47869
     ontology_label: thioglycolate(2-)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -144708,6 +146240,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT ->
       physicochemical_roles.REDUCING_AGENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'thioglycolate(2-)'; it matches the
+      ChEBI synonym 'sulfidoacetate' on CHEBI:47869. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 513-66-6
     data_source: PubChem API
@@ -145938,7 +147480,7 @@ ingredients:
     ontology_id: CHEBI:38366
     ontology_label: trans-pent-2-enoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -145976,6 +147518,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'trans-pent-2-enoic acid'; it matches
+      the ChEBI synonym 'trans-2-pentenoic acid' on CHEBI:38366. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 13991-37-2
@@ -146581,7 +148133,7 @@ ingredients:
     ontology_id: CHEBI:9679
     ontology_label: tricalcium bis(phosphate)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -146616,6 +148168,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'tricalcium bis(phosphate)'; it matches
+      the ChEBI synonym 'Tricalcium phosphate' on CHEBI:9679. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 7758-87-4
@@ -149041,7 +150603,7 @@ ingredients:
     ontology_id: CHEBI:53424
     ontology_label: polysorbate 20
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -149102,6 +150664,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SURFACTANT -> physicochemical_roles.SURFACTANT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'polysorbate 20'; it matches the ChEBI
+      synonym 'Tween 20' on CHEBI:53424. The schema defines EXACT_MATCH as a direct
+      match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 9005-64-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -149202,7 +150774,7 @@ ingredients:
     ontology_id: CHEBI:53425
     ontology_label: polysorbate 60
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -149265,6 +150837,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SURFACTANT -> physicochemical_roles.SURFACTANT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'polysorbate 60'; it matches the ChEBI
+      synonym 'Polyoxyethylene sorbitan monostearate' on CHEBI:53425. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:53425
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
@@ -149476,7 +151058,7 @@ ingredients:
     ontology_id: CHEBI:77444
     ontology_label: 1-undecene
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -149514,6 +151096,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '1-undecene'; it matches the ChEBI synonym
+      'Undecene' on CHEBI:77444. The schema defines EXACT_MATCH as a direct match
+      to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+      grade overstated. ontology_id is unchanged — the term is correct. The SSSOM
+      predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 821-95-4
@@ -150856,7 +152448,7 @@ ingredients:
     ontology_id: CHEBI:296881
     ontology_label: 3,4-dimethoxybenzoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -150891,6 +152483,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label '3,4-dimethoxybenzoic acid'; it matches
+      the ChEBI synonym 'Veratric acid' on CHEBI:296881. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
   chemical_properties:
     cas_rn: 93-07-2
@@ -151957,7 +153559,7 @@ ingredients:
     ontology_id: CHEBI:87020
     ontology_label: vanadyl sulfate hydrate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -152072,6 +153674,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'vanadyl sulfate hydrate'; it matches
+      the ChEBI synonym 'VOSO4(H2O)n' on CHEBI:87020. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 123334-20-3
     data_source: PubChem (via CHEBI:87020)
@@ -174255,7 +175867,7 @@ ingredients:
     ontology_id: CHEBI:61278
     ontology_label: scutellarin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -174348,6 +175960,16 @@ ingredients:
     previous_status: MAPPED
     new_status: REJECTED
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'scutellarin'; it matches the ChEBI
+      synonym 'Scutellarein-7-glucuronide' on CHEBI:61278. The schema defines EXACT_MATCH
+      as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
+      so the recorded grade overstated. ontology_id is unchanged — the term is correct.
+      The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7775-14-6
     data_source: PubChem API

@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:31793
   ontology_label: magnesium carbonate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: OAK/OLS exact audit
@@ -36,6 +36,16 @@ curation_history:
   previous_status: UNMAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'magnesium carbonate'; it matches the
+    ChEBI synonym 'MgCO3' on CHEBI:31793. The schema defines EXACT_MATCH as a direct
+    match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+    grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
 notes: 'CultureMech placeholder_id: 2; curated to CHEBI:31793 magnesium carbonate
   by exact MgCO3 synonym review on 2026-05-11.'
 kg_microbe_node_id: CHEBI:31793

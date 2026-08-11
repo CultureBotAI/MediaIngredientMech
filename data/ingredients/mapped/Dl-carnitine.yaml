@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:17126
   ontology_label: carnitine
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -67,6 +67,16 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''DL-carnitine'' -> ''carnitine'': synced to canonical
     CHEBI label (preferred_term ''DL-carnitine'' unchanged).'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'carnitine'; it matches the ChEBI synonym
+    'D,L-carnitine' on CHEBI:17126. The schema defines EXACT_MATCH as a direct match
+    to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+    overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
 chemical_properties:
   cas_rn: 406-76-8
   data_source: PubChem (via CHEBI:17126)

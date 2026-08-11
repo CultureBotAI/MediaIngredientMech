@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:16947
   ontology_label: citrate(3-)
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: kgm-metatraits
@@ -60,6 +60,16 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'citrate(3-)'; it matches the ChEBI synonym
+    'citrate' on CHEBI:16947. The schema defines EXACT_MATCH as a direct match to
+    the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+    overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C6H5O7

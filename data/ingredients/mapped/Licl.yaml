@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:48607
   ontology_label: lithium chloride
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -81,6 +81,16 @@ curation_history:
     elements (NaF and LiCl act as inhibitors / selective agents). MINERAL_SOURCE preserves
     the original MINERAL claim without asserting micronutrient status; a selective-agent
     role needs curator evidence.'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'lithium chloride'; it matches the ChEBI
+    synonym 'chlorure de lithium' on CHEBI:48607. The schema defines EXACT_MATCH as
+    a direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
+    the recorded grade overstated. ontology_id is unchanged — the term is correct.
+    The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7447-41-8
   data_source: PubChem API
