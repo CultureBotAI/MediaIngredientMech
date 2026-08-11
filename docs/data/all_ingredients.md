@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-11T08:21:08.022483+00:00
+Generated: 2026-08-11T08:44:52.769194+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -170,7 +170,7 @@ Total: 2841 ingredients
 | CHEBI:17240 | CHEBI:17240 | Itaconate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:29806 | CHEBI:29806 | Fumarate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15792 | CHEBI:15792 | Malonate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:64243 | CHEBI:64243 | Sodium L-glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:64243 | CHEBI:64243 | Sodium L-glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:15226 | CHEBI:15226 | Tetrathionate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15589 | CHEBI:15589 | L-malate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:29033 | CHEBI:29033 | Ferrous Ion | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -576,7 +576,7 @@ Total: 2841 ingredients
 | CHEBI:3259 | CHEBI:3259 | CCCP | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:134107 | CHEBI:134107 | CHIR-090 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31340 | CHEBI:31340 | Ca-folinate | MAPPED | CHEBI | EXACT_MATCH | 5 |
-| CHEBI:29032 | CHEBI:29032 | Ca-pantothenate | MAPPED | CHEBI | SYNONYM_MATCH | 137 |
+| CHEBI:31345 | CHEBI:29032 | Ca-pantothenate | REJECTED | CHEBI | SYNONYM_MATCH | 137 |
 | CHEBI:64205 | CHEBI:64205 | Ca(NO3)2 | MAPPED | CHEBI | EXACT_MATCH | 13 |
 | CHEBI:86159 | CHEBI:86159 | Ca(NO3)2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 146 |
 | CHEBI:3312 | CHEBI:3312 | CaCl2 | MAPPED | CHEBI | EXACT_MATCH | 502 |
@@ -595,7 +595,7 @@ Total: 2841 ingredients
 | CHEBI:32596 | CHEBI:32596 | CaHPO4 | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:3312 | CHEBI:3312 | Calcium Chloride | MAPPED | CHEBI | SYNONYM_MATCH | 15 |
 | CHEBI:31345 | CHEBI:31345 | Calcium D-Pantothenate | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:31345 | CHEBI:31345 | Calcium pantothenate | MAPPED | CHEBI | EXACT_MATCH | 945 |
+| CHEBI:31345 | CHEBI:31345 | Calcium pantothenate | MAPPED | CHEBI | EXACT_MATCH | 1082 |
 | NCIT:C105971 | NCIT:C105971 | Calprotectin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | kgmicrobe.compound:camphomycin | kgmicrobe.compound:camphomycin | Camphomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:27656 | CHEBI:27656 | Camptothecin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1437,7 +1437,7 @@ Total: 2841 ingredients
 | CHEBI:35899 | CHEBI:35899 | Na-crotonate | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:62965 | CHEBI:62965 | Na-formate | MAPPED | CHEBI | EXACT_MATCH | 143 |
 | CHEBI:115197 | CHEBI:115197 | Na-gallate | MAPPED | CHEBI | EXACT_MATCH | 1 |
-| CHEBI:29988 | CHEBI:29988 | Na-glutamate | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
+| CHEBI:64243 | CHEBI:29988 | Na-glutamate | REJECTED | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:232798 | CHEBI:232798 | Na-L-lactate | MAPPED | CHEBI | EXACT_MATCH | 57 |
 | CHEBI:131839 | CHEBI:131839 | Na-laurate | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:132101 | CHEBI:132101 | Na-orotate | MAPPED | CHEBI | EXACT_MATCH | 2 |
@@ -1445,7 +1445,7 @@ Total: 2841 ingredients
 | CHEBI:50144 | CHEBI:50144 | Na-pyruvate | MAPPED | CHEBI | EXACT_MATCH | 570 |
 | CHEBI:60720 | CHEBI:60720 | Na-silicate | MAPPED | CHEBI | EXACT_MATCH | 197 |
 | CHEBI:132109 | CHEBI:132109 | Na-stearate | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:30924 | CHEBI:30924 | Na-tartrate | MAPPED | CHEBI | SYNONYM_MATCH | 5 |
+| CHEBI:63017 | CHEBI:30924 | Na-tartrate | REJECTED | CHEBI | SYNONYM_MATCH | 5 |
 | CHEBI:86481 | CHEBI:86481 | Na-thioglycolate | MAPPED | CHEBI | EXACT_MATCH | 122 |
 | CHEBI:132748 | CHEBI:132748 | Na-vanillate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:64734 | CHEBI:64734 | Na2-EDTA | MAPPED | CHEBI | EXACT_MATCH | 426 |
@@ -1846,7 +1846,7 @@ Total: 2841 ingredients
 | cas:7758-16-9 | NCIT:C77500 | Sodium pyrophosphate dibasic | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:9180 | CHEBI:9180 | Sodium salicylate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63675 | CHEBI:63675 | Sodium succinate | MAPPED | CHEBI | SYNONYM_MATCH | 145 |
-| CHEBI:63017 | CHEBI:63017 | Sodium tartrate | MAPPED | CHEBI | EXACT_MATCH | 15 |
+| CHEBI:63017 | CHEBI:63017 | Sodium tartrate | MAPPED | CHEBI | EXACT_MATCH | 20 |
 | cas:10489-48-2 | CHEBI:46612 | Sodium thiophosphate tribasic hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:32150 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:114249 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 46 |

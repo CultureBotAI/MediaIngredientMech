@@ -8387,10 +8387,13 @@ ingredients:
   - synonym_text: Sodium L-glutamate
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: Na-glutamate
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:29988
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
+    total_occurrences: 2
+    media_count: 2
     source_occurrences:
     - source: microbedecoder
       count: 2
@@ -8411,6 +8414,16 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0733 -> CHEBI:64243 "monosodium L-glutamate" (SYNONYM_MATCH);
       mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: merge_salt_label_duplicates
+    action: MERGED_FROM
+    changes: 'Absorbed CHEBI:29988 ''Na-glutamate'' (#315). Same substance under an
+      abbreviated-counterion name; the loser was grounded to the bare anion. occurrences
+      0/0 + 2/2 -> 2/2. Raw label kept as a RAW_TEXT synonym. 3 anion-derived synonym(s)
+      deliberately NOT transferred (enriched from the loser''s wrong term; they name
+      the anion, not this salt): (2S)-2-aminopentanedioate, L-glutamic acid dianion,
+      L-glutamate'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:sodium_l_glutamate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -34582,7 +34595,7 @@ ingredients:
         (vitamin (role))'
       curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
         recommended.
-- identifier: CHEBI:29032
+- identifier: CHEBI:31345
   preferred_term: Ca-pantothenate
   ontology_mapping:
     ontology_id: CHEBI:29032
@@ -34608,7 +34621,7 @@ ingredients:
   - synonym_text: Ca pantotenate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 137
     media_count: 50
@@ -34668,6 +34681,13 @@ ingredients:
       as a match to a known synonym, so the recorded grade overstated. ontology_id
       is unchanged — the term is correct. The SSSOM predicate is unaffected (both
       grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: merge_salt_label_duplicates
+    action: MERGED_INTO
+    changes: Merged into CHEBI:31345 'Calcium pantothenate'; occurrences transferred.
+      Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names — the
+      abbreviated `Ca-` prefix is why the earlier merge pass missed it (#315).
     llm_assisted: false
   chemical_properties:
     cas_rn: 137-08-6
@@ -36621,10 +36641,13 @@ ingredients:
   - synonym_text: Calcium D-Pantothenate
     synonym_type: RAW_TEXT
     source: merged_record
+  - synonym_text: Ca-pantothenate
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:29032
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 945
-    media_count: 153
+    total_occurrences: 1082
+    media_count: 203
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -36797,6 +36820,16 @@ ingredients:
       +0/0, role facets from nutritional_roles. Same substance under two names; MERGE_SAME_SUBSTANCE
       in duplicate_identifier_baseline.tsv (#226). Source: mediadive.ingredient:1585.'
     llm_assisted: true
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: merge_salt_label_duplicates
+    action: MERGED_FROM
+    changes: 'Absorbed CHEBI:29032 ''Ca-pantothenate'' (#315). Same substance under
+      an abbreviated-counterion name; the loser was grounded to the bare anion. occurrences
+      945/153 + 137/50 -> 1082/203. Raw label kept as a RAW_TEXT synonym. 2 anion-derived
+      synonym(s) deliberately NOT transferred (enriched from the loser''s wrong term;
+      they name the anion, not this salt): 3-[(2R)-2,4-dihydroxy-3,3-dimethylbutanamido]propanoate,
+      Ca pantotenate'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 137-08-6
     data_source: PubChem API
@@ -104588,7 +104621,7 @@ ingredients:
     inchi: InChI=1S/C7H6O5.Na/c8-4-1-3(7(11)12)2-5(9)6(4)10;/h1-2,8-10H,(H,11,12);/q;+1/p-1
     smiles: O=C([O-])c1cc(O)c(O)c(O)c1.[Na+]
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:29988
+- identifier: CHEBI:64243
   preferred_term: Na-glutamate
   ontology_mapping:
     ontology_id: CHEBI:29988
@@ -104613,7 +104646,7 @@ ingredients:
   - synonym_text: L-glutamate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 2
     media_count: 2
@@ -104672,6 +104705,13 @@ ingredients:
       as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
       so the recorded grade overstated. ontology_id is unchanged — the term is correct.
       The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: merge_salt_label_duplicates
+    action: MERGED_INTO
+    changes: Merged into CHEBI:64243 'Sodium L-glutamate'; occurrences transferred.
+      Tombstoned REJECTED, SSSOM rows dropped. Same substance under two names — the
+      abbreviated `Na-` prefix is why the earlier merge pass missed it (#315).
     llm_assisted: false
   chemical_properties:
     cas_rn: 16177-21-2
@@ -105680,7 +105720,7 @@ ingredients:
         (surfactant (role))'
       curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
         recommended.
-- identifier: CHEBI:30924
+- identifier: CHEBI:63017
   preferred_term: Na-tartrate
   ontology_mapping:
     ontology_id: CHEBI:30924
@@ -105717,7 +105757,7 @@ ingredients:
   - synonym_text: L-threarate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 5
     media_count: 5
@@ -105775,6 +105815,13 @@ ingredients:
       EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
       known synonym, so the recorded grade overstated. ontology_id is unchanged —
       the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: merge_salt_label_duplicates
+    action: MERGED_INTO
+    changes: Merged into CHEBI:63017 'Sodium tartrate'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped. Same substance under two names — the abbreviated
+      `Na-` prefix is why the earlier merge pass missed it (#315).
     llm_assisted: false
   chemical_properties:
     cas_rn: 868-18-8
@@ -139174,10 +139221,13 @@ ingredients:
   - synonym_text: sodium L-tartrate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Na-tartrate
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:30924
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 15
-    media_count: 15
+    total_occurrences: 20
+    media_count: 20
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -139228,6 +139278,16 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: merge_salt_label_duplicates
+    action: MERGED_FROM
+    changes: 'Absorbed CHEBI:30924 ''Na-tartrate'' (#315). Same substance under an
+      abbreviated-counterion name; the loser was grounded to the bare anion. occurrences
+      15/15 + 5/5 -> 20/20. Raw label kept as a RAW_TEXT synonym. 7 anion-derived
+      synonym(s) deliberately NOT transferred (enriched from the loser''s wrong term;
+      they name the anion, not this salt): (+)-tartrate, (2R,3R)-2,3-dihydroxybutanedioate,
+      (2R,3R)-2,3-dihydroxysuccinate, (2R,3R)-tartrate…'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 868-18-8
     data_source: PubChem API

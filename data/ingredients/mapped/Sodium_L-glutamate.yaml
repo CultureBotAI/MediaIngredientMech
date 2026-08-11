@@ -4,10 +4,13 @@ synonyms:
 - synonym_text: Sodium L-glutamate
   synonym_type: RAW_TEXT
   source: microbedecoder
+- synonym_text: Na-glutamate
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:29988
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 2
+  media_count: 2
   source_occurrences:
   - source: microbedecoder
     count: 2
@@ -28,6 +31,16 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0733 -> CHEBI:64243 "monosodium L-glutamate" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: merge_salt_label_duplicates
+  action: MERGED_FROM
+  changes: 'Absorbed CHEBI:29988 ''Na-glutamate'' (#315). Same substance under an
+    abbreviated-counterion name; the loser was grounded to the bare anion. occurrences
+    0/0 + 2/2 -> 2/2. Raw label kept as a RAW_TEXT synonym. 3 anion-derived synonym(s)
+    deliberately NOT transferred (enriched from the loser''s wrong term; they name
+    the anion, not this salt): (2S)-2-aminopentanedioate, L-glutamic acid dianion,
+    L-glutamate'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:sodium_l_glutamate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
