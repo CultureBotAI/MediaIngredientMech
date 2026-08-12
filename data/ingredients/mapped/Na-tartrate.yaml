@@ -1,10 +1,10 @@
-identifier: CHEBI:30924
+identifier: CHEBI:63017
 preferred_term: Na-tartrate
 ontology_mapping:
   ontology_id: CHEBI:30924
   ontology_label: L-tartrate(2-)
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -35,10 +35,10 @@ synonyms:
 - synonym_text: L-threarate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 5
-  media_count: 5
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -84,6 +84,23 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'L-tartrate(2-)'; it matches the ChEBI
+    synonym '(2R,3R)-2,3-dihydroxybutanedioate' on CHEBI:30924. The schema defines
+    EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known
+    synonym, so the recorded grade overstated. ontology_id is unchanged — the term
+    is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: merge_salt_label_duplicates
+  action: MERGED_INTO
+  changes: Merged into CHEBI:63017 'Sodium tartrate'; occurrences transferred. Tombstoned
+    REJECTED, SSSOM rows dropped. Same substance under two names — the abbreviated
+    `Na-` prefix is why the earlier merge pass missed it (#315).
+  llm_assisted: false
 chemical_properties:
   cas_rn: 868-18-8
   data_source: PubChem API (preprocessed)

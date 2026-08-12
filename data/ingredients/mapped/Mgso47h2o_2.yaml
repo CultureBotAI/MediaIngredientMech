@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:31795
   ontology_label: magnesium sulfate heptahydrate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -97,6 +97,16 @@ curation_history:
     the residual MINERAL_SOURCE bucket was suppressed whenever any other target existed,
     which dropped the bulk cation from salts whose other role describes the anion
     (e.g. MgSO4).'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'magnesium sulfate heptahydrate'; it matches
+    the ChEBI synonym 'magnesium sulfate--water (1/7)' on CHEBI:31795. The schema
+    defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+    to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+    — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
 chemical_properties:
   cas_rn: 10034-99-8
   data_source: CultureBotHT compounds_to_cas.csv

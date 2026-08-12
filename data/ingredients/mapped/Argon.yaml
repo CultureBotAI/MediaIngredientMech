@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:49474
   ontology_label: argon(0)
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -54,6 +54,16 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'argon(0)'; it matches the ChEBI synonym
+    '[Ar]' on CHEBI:49474. The schema defines EXACT_MATCH as a direct match to the
+    term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade overstated.
+    ontology_id is unchanged — the term is correct. The SSSOM predicate is unaffected
+    (both grades emit skos:exactMatch).
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7440-37-1
   data_source: CultureBotHT compounds_to_cas.csv

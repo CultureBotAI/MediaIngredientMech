@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:34118
   ontology_label: oct-1-en-3-ol
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -39,6 +39,16 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'oct-1-en-3-ol'; it matches the ChEBI
+    synonym '1-octen-3-ol' on CHEBI:34118. The schema defines EXACT_MATCH as a direct
+    match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
+    grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
   llm_assisted: false
 chemical_properties:
   cas_rn: 3391-86-4

@@ -61,10 +61,13 @@ synonyms:
 - synonym_text: Calcium D-Pantothenate
   synonym_type: RAW_TEXT
   source: merged_record
+- synonym_text: Ca-pantothenate
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:29032
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 945
-  media_count: 153
+  total_occurrences: 1082
+  media_count: 203
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -236,6 +239,16 @@ curation_history:
     +0/0, role facets from nutritional_roles. Same substance under two names; MERGE_SAME_SUBSTANCE
     in duplicate_identifier_baseline.tsv (#226). Source: mediadive.ingredient:1585.'
   llm_assisted: true
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: merge_salt_label_duplicates
+  action: MERGED_FROM
+  changes: 'Absorbed CHEBI:29032 ''Ca-pantothenate'' (#315). Same substance under
+    an abbreviated-counterion name; the loser was grounded to the bare anion. occurrences
+    945/153 + 137/50 -> 1082/203. Raw label kept as a RAW_TEXT synonym. 2 anion-derived
+    synonym(s) deliberately NOT transferred (enriched from the loser''s wrong term;
+    they name the anion, not this salt): 3-[(2R)-2,4-dihydroxy-3,3-dimethylbutanamido]propanoate,
+    Ca pantotenate'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 137-08-6
   data_source: PubChem API

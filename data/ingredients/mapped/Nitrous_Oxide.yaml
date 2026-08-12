@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:17045
   ontology_label: dinitrogen oxide
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -66,6 +66,16 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR ->
     cellular_metabolic_roles.ELECTRON_ACCEPTOR'
+- timestamp: '2026-08-10T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'dinitrogen oxide'; it matches the ChEBI
+    synonym 'N2O' on CHEBI:17045. The schema defines EXACT_MATCH as a direct match
+    to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded grade
+    overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
+    is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
 chemical_properties:
   cas_rn: 10024-97-2
   data_source: CultureBotHT compounds_to_cas.csv
