@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import re
 import sys
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -281,8 +282,22 @@ def export_collection_to_individual_files(
             stale.unlink()
 
     # Names already claimed in this directory, so a reused name and a freshly
-    # derived one cannot land on the same file.
+    # derived one cannot land on the same file. Compared case-INSENSITIVELY:
+    # `Sodium_Tartrate` and `Sodium_tartrate` are distinct Python strings but the
+    # same file on a case-insensitive filesystem, so a case-sensitive set lets
+    # the second record silently overwrite the first (cf. #299).
     taken: set[str] = set()
+
+    # Identifiers held by more than one record in *this collection*. A merge
+    # tombstone deliberately keeps its winner's identifier, so `by_identifier`
+    # would hand both records the same stable filename and the second would
+    # overwrite the first. `collect_existing_filenames` drops such identifiers,
+    # but only when both files are still on disk — once one has been lost the
+    # index can no longer see the duplicate and the loss is self-perpetuating.
+    # Deciding it from the collection instead is stable across runs.
+    ident_counts: Counter[str] = Counter(
+        str(i.get("identifier")) for i in ingredients if i.get("identifier"))
+    shared_identifiers = {k for k, n in ident_counts.items() if n > 1}
 
     for ingredient in ingredients:
         preferred_term = ingredient.get('preferred_term', 'Unknown')
@@ -292,13 +307,17 @@ def export_collection_to_individual_files(
         # and renames the corpus behind git's back on a case-insensitive
         # filesystem. Only genuinely new records get a name from scratch.
         stable = existing_names.for_record(ingredient)
-        if stable is not None and stable not in taken:
+        if ingredient.get("identifier") in shared_identifiers:
+            # Fall back to the term index / a derived name; the identifier
+            # cannot pick between the records that share it.
+            stable = existing_names.by_preferred_term.get(preferred_term)
+        if stable is not None and stable.lower() not in taken:
             filename = stable
         else:
             base_filename = sanitize_filename(preferred_term)
             filename = base_filename
             suffix = 1
-            while filename in taken:
+            while filename.lower() in taken:
                 suffix += 1
                 filename = f"{base_filename}_{suffix}"
             if suffix > 1:
@@ -313,7 +332,7 @@ def export_collection_to_individual_files(
                     f"({preferred_term})[/yellow]"
                 )
 
-        taken.add(filename)
+        taken.add(filename.lower())
         output_path = output_dir / f"{filename}.yaml"
 
         # Re-attach per-record-authored fields (e.g. discussions) that the
