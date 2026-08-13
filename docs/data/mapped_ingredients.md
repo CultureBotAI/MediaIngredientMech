@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-13T06:30:17.733681+00:00
+Generated: 2026-08-13T07:12:29.884619+00:00
 Total: 2497 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -270,7 +270,7 @@ Total: 2497 ingredients
 | CHEBI:48945 | CHEBI:48945 | 2-methyl-1-butanol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:53620 | CHEBI:53620 | 2-methyl-4-isothizaolin-3-one | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28362 | CHEBI:28362 | 2-n-Heptyl-4-hydroxyquinoline N-oxide | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:2013-26-5 | CHEBI:26714 | 2-oxobutyric acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:2013-26-5 | CHEBI:16763 | 2-oxobutyric acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:89197 | CHEBI:89197 | 2-pentyl-furan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:77930 | CHEBI:77930 | 2-undecanol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:30351 | CHEBI:30351 | 2,2'-Dipyridyl | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -349,7 +349,7 @@ Total: 2497 ingredients
 | CHEBI:195418 | CHEBI:195418 | 5-Hydroxydodecanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:412516 | CHEBI:412516 | 5-Hydroxymethylfurfural | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:180039 | CHEBI:180039 | 5-Hydroxyoctanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:91446-96-7 | CHEBI:26218 | 5-Keto-D-Gluconic Acid potassium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:91446-96-7 | CHEBI:17426 | 5-Keto-D-Gluconic Acid potassium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:15887 | CHEBI:15887 | 5-Aminovaleric acid | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:46345 | CHEBI:46345 | 5-fluorouracil | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | mesh:C014480 | mesh:C014480 | 5,6-dihydro-5-azathymidine | MAPPED | MESH | EXACT_MATCH | 0 |
@@ -779,7 +779,7 @@ Total: 2497 ingredients
 | CHEBI:16002 | CHEBI:16002 | D-Glucaric acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:12962 | CHEBI:12962 | D-Glucosamine 6-phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:66-84-2 | NCIT:C83732 | D-Glucosamine Hydrochloride | MAPPED | NCIT | NARROW_MATCH | 0 |
-| cas:54010-71-8 | CHEBI:26714 | D-Glucose-6-Phosphate sodium salt | MAPPED | CHEBI | NARROW_MATCH | 1 |
+| cas:54010-71-8 | CHEBI:14314 | D-Glucose-6-Phosphate sodium salt | MAPPED | CHEBI | NARROW_MATCH | 1 |
 | CHEBI:18268 | CHEBI:18268 | D-Glucuronic acid gamma lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:207300-70-7 | CHEBI:4178 | D-Glucuronic acid sodium salt monohydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:15966 | CHEBI:15966 | D-Glutamic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -792,7 +792,7 @@ Total: 2497 ingredients
 | CHEBI:16313 | CHEBI:16313 | D-Proline | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:17629-30-0 | CHEBI:189430 | D-Raffinose pentahydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16988 | CHEBI:16988 | D-Ribose | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:576-42-1 | CHEBI:26218 | D-Saccharic acid potassium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:576-42-1 | CHEBI:16002 | D-Saccharic acid potassium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16523 | CHEBI:16523 | D-Serine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17992 | CHEBI:17992 | D-Sucrose | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16689 | CHEBI:16689 | D-apiose | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -819,7 +819,7 @@ Total: 2497 ingredients
 | CHEBI:37023 | CHEBI:37023 | DL-2-Aminoadipic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:35621 | CHEBI:35621 | DL-2-Aminobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27389 | CHEBI:27389 | DL-3-Aminoisobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:1219589-99-7 | CHEBI:26714 | DL-3-Hydroxyisobutyric acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:1219589-99-7 | CHEBI:18064 | DL-3-Hydroxyisobutyric acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:17138 | CHEBI:17138 | DL-Glyceraldehyde 3-phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:17603-42-8 | CHEBI:14336 | DL-Glycerol 1-phosphate sodium salt hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:123333-71-1 | NCIT:C87334 | DL-Histidine monohydrochloride monohydrate | MAPPED | NCIT | NARROW_MATCH | 0 |
@@ -1886,7 +1886,7 @@ Total: 2497 ingredients
 | CHEBI:17992 | CHEBI:17992 | Sucrose | MAPPED | CHEBI | EXACT_MATCH | 152 |
 | NCIT:C71939 | NCIT:C71939 | Sugar | MAPPED | NCIT | EXACT_MATCH | 0 |
 | FOODON:00003412 | FOODON:00003412 | Sugar beet molasses | MAPPED | FOODON | LEXICAL_MATCH | 0 |
-| cas:1981-58-4 | CHEBI:26714 | Sulfamethazine sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:1981-58-4 | CHEBI:102265 | Sulfamethazine sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:9331 | CHEBI:9331 | Sulfamethizole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:9332 | CHEBI:9332 | Sulfamethoxazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32164 | CHEBI:32164 | Sulfamonomethoxine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1907,7 +1907,7 @@ Total: 2497 ingredients
 | mesh:C003372 | mesh:C003372 | Synergistin A | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:67380 | CHEBI:67380 | syringaldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:68329 | CHEBI:68329 | Syringic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:91000-53-2 | CHEBI:26714 | TAPS sodium salt | MAPPED | CHEBI | NARROW_MATCH | 6 |
+| cas:91000-53-2 | CHEBI:191055 | TAPS sodium salt | MAPPED | CHEBI | NARROW_MATCH | 6 |
 | CHEBI:9400 | CHEBI:9400 | Tangeritin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:75211 | CHEBI:75211 | tannic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:39300-88-4 | FOODON:03413299 | Tara gum | MAPPED | FOODON | NARROW_MATCH | 0 |

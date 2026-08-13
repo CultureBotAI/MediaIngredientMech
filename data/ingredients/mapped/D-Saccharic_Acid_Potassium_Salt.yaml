@@ -1,8 +1,8 @@
 identifier: cas:576-42-1
 preferred_term: D-Saccharic acid potassium salt
 ontology_mapping:
-  ontology_id: CHEBI:26218
-  ontology_label: potassium salt
+  ontology_id: CHEBI:16002
+  ontology_label: D-glucaric acid
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -15,6 +15,14 @@ ontology_mapping:
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='D-Saccharic acid
       potassium salt'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: 'narrowMatch parent CHEBI:26218 (''potassium salt'') -> CHEBI:16002 (''D-glucaric
+      acid''). The previous parent was the class of all potassium salts: it retained
+      the counterion and discarded the compound, collapsing unrelated ingredients
+      onto one node. Chosen because it is saccharic acid is glucaric acid; the label
+      specifies the D- form. The record stays cas-primary per MAPPING_SEMANTICS §3
+      step 2; only the parent moves.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -48,6 +56,12 @@ curation_history:
   curator: backfill_parent_terms
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:26218 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_compositional_classes
+  action: REGROUNDED_PARENT_TERM
+  changes: ontology_mapping CHEBI:26218 'potassium salt' -> CHEBI:16002 'D-glucaric
+    acid' (#322); saccharic acid is glucaric acid; the label specifies the D- form.
   llm_assisted: false
 chemical_properties:
   cas_rn: 576-42-1

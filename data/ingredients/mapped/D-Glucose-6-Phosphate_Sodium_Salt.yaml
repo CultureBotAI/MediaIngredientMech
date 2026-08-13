@@ -1,8 +1,8 @@
 identifier: cas:54010-71-8
 preferred_term: D-Glucose-6-Phosphate sodium salt
 ontology_mapping:
-  ontology_id: CHEBI:26714
-  ontology_label: sodium salt
+  ontology_id: CHEBI:14314
+  ontology_label: D-glucose 6-phosphate
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -16,6 +16,13 @@ ontology_mapping:
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='D-Glucose-6-Phosphate
       sodium salt'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:14314 (''D-glucose
+      6-phosphate''). The previous parent was the class of all sodium salts: it retained
+      the counterion and discarded the compound, collapsing unrelated ingredients
+      onto one node. Chosen because it is the compound the label names. The record
+      stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -58,6 +65,12 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_compositional_classes
+  action: REGROUNDED_PARENT_TERM
+  changes: ontology_mapping CHEBI:26714 'sodium salt' -> CHEBI:14314 'D-glucose 6-phosphate'
+    (#322); the compound the label names.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 54010-71-8
   data_source: CultureBotHT compounds_to_cas.csv

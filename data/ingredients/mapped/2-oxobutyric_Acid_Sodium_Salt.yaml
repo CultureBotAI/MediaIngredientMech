@@ -1,8 +1,8 @@
 identifier: cas:2013-26-5
 preferred_term: 2-oxobutyric acid sodium salt
 ontology_mapping:
-  ontology_id: CHEBI:26714
-  ontology_label: sodium salt
+  ontology_id: CHEBI:16763
+  ontology_label: 2-oxobutanoate
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -15,6 +15,14 @@ ontology_mapping:
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='2-oxobutyric acid
       sodium salt'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:16763 (''2-oxobutanoate'').
+      The previous parent was the class of all sodium salts: it retained the counterion
+      and discarded the compound, collapsing unrelated ingredients onto one node.
+      Chosen because it is ChEBI has no ''2-oxobutanoic acid'' term, so the anion
+      is the nearest available parent for the sodium salt. The record stays cas-primary
+      per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
 synonyms:
 - synonym_text: Sodium 2-oxobutyrate
   synonym_type: EXACT_SYNONYM
@@ -45,6 +53,13 @@ curation_history:
   curator: backfill_parent_terms
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:26714 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_compositional_classes
+  action: REGROUNDED_PARENT_TERM
+  changes: ontology_mapping CHEBI:26714 'sodium salt' -> CHEBI:16763 '2-oxobutanoate'
+    (#322); ChEBI has no '2-oxobutanoic acid' term, so the anion is the nearest available
+    parent for the sodium salt.
   llm_assisted: false
 chemical_properties:
   cas_rn: 2013-26-5

@@ -15179,8 +15179,8 @@ ingredients:
 - identifier: cas:2013-26-5
   preferred_term: 2-oxobutyric acid sodium salt
   ontology_mapping:
-    ontology_id: CHEBI:26714
-    ontology_label: sodium salt
+    ontology_id: CHEBI:16763
+    ontology_label: 2-oxobutanoate
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -15193,6 +15193,14 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='2-oxobutyric
         acid sodium salt'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:16763 (''2-oxobutanoate'').
+        The previous parent was the class of all sodium salts: it retained the counterion
+        and discarded the compound, collapsing unrelated ingredients onto one node.
+        Chosen because it is ChEBI has no ''2-oxobutanoic acid'' term, so the anion
+        is the nearest available parent for the sodium salt. The record stays cas-primary
+        per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
   synonyms:
   - synonym_text: Sodium 2-oxobutyrate
     synonym_type: EXACT_SYNONYM
@@ -15223,6 +15231,13 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:26714 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_compositional_classes
+    action: REGROUNDED_PARENT_TERM
+    changes: ontology_mapping CHEBI:26714 'sodium salt' -> CHEBI:16763 '2-oxobutanoate'
+      (#322); ChEBI has no '2-oxobutanoic acid' term, so the anion is the nearest
+      available parent for the sodium salt.
     llm_assisted: false
   chemical_properties:
     cas_rn: 2013-26-5
@@ -20225,8 +20240,8 @@ ingredients:
 - identifier: cas:91446-96-7
   preferred_term: 5-Keto-D-Gluconic Acid potassium salt
   ontology_mapping:
-    ontology_id: CHEBI:26218
-    ontology_label: potassium salt
+    ontology_id: CHEBI:17426
+    ontology_label: 5-dehydro-D-gluconic acid
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -20240,6 +20255,13 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='5-Keto-D-Gluconic
         Acid potassium salt'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: 'narrowMatch parent CHEBI:26218 (''potassium salt'') -> CHEBI:17426 (''5-dehydro-D-gluconic
+        acid''). The previous parent was the class of all potassium salts: it retained
+        the counterion and discarded the compound, collapsing unrelated ingredients
+        onto one node. Chosen because it is the acid the label names. The record stays
+        cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -20287,6 +20309,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_compositional_classes
+    action: REGROUNDED_PARENT_TERM
+    changes: ontology_mapping CHEBI:26218 'potassium salt' -> CHEBI:17426 '5-dehydro-D-gluconic
+      acid' (#322); the acid the label names.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 91446-96-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -52036,8 +52064,8 @@ ingredients:
 - identifier: cas:54010-71-8
   preferred_term: D-Glucose-6-Phosphate sodium salt
   ontology_mapping:
-    ontology_id: CHEBI:26714
-    ontology_label: sodium salt
+    ontology_id: CHEBI:14314
+    ontology_label: D-glucose 6-phosphate
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -52051,6 +52079,13 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='D-Glucose-6-Phosphate
         sodium salt'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:14314 (''D-glucose
+        6-phosphate''). The previous parent was the class of all sodium salts: it
+        retained the counterion and discarded the compound, collapsing unrelated ingredients
+        onto one node. Chosen because it is the compound the label names. The record
+        stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -52094,6 +52129,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_compositional_classes
+    action: REGROUNDED_PARENT_TERM
+    changes: ontology_mapping CHEBI:26714 'sodium salt' -> CHEBI:14314 'D-glucose
+      6-phosphate' (#322); the compound the label names.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 54010-71-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -52963,8 +53004,8 @@ ingredients:
 - identifier: cas:576-42-1
   preferred_term: D-Saccharic acid potassium salt
   ontology_mapping:
-    ontology_id: CHEBI:26218
-    ontology_label: potassium salt
+    ontology_id: CHEBI:16002
+    ontology_label: D-glucaric acid
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -52977,6 +53018,14 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='D-Saccharic
         acid potassium salt'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: 'narrowMatch parent CHEBI:26218 (''potassium salt'') -> CHEBI:16002 (''D-glucaric
+        acid''). The previous parent was the class of all potassium salts: it retained
+        the counterion and discarded the compound, collapsing unrelated ingredients
+        onto one node. Chosen because it is saccharic acid is glucaric acid; the label
+        specifies the D- form. The record stays cas-primary per MAPPING_SEMANTICS
+        §3 step 2; only the parent moves.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -53010,6 +53059,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:26218 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_compositional_classes
+    action: REGROUNDED_PARENT_TERM
+    changes: ontology_mapping CHEBI:26218 'potassium salt' -> CHEBI:16002 'D-glucaric
+      acid' (#322); saccharic acid is glucaric acid; the label specifies the D- form.
     llm_assisted: false
   chemical_properties:
     cas_rn: 576-42-1
@@ -55239,8 +55294,8 @@ ingredients:
 - identifier: cas:1219589-99-7
   preferred_term: DL-3-Hydroxyisobutyric acid sodium salt
   ontology_mapping:
-    ontology_id: CHEBI:26714
-    ontology_label: sodium salt
+    ontology_id: CHEBI:18064
+    ontology_label: 3-hydroxyisobutyric acid
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -55253,6 +55308,14 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='DL-3-Hydroxyisobutyric
         acid sodium salt'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:18064 (''3-hydroxyisobutyric
+        acid''). The previous parent was the class of all sodium salts: it retained
+        the counterion and discarded the compound, collapsing unrelated ingredients
+        onto one node. Chosen because it is the acid the label names; the term is
+        stereo-unspecified, which matches the label''s DL-. The record stays cas-primary
+        per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -55285,6 +55348,13 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:26714 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_compositional_classes
+    action: REGROUNDED_PARENT_TERM
+    changes: ontology_mapping CHEBI:26714 'sodium salt' -> CHEBI:18064 '3-hydroxyisobutyric
+      acid' (#322); the acid the label names; the term is stereo-unspecified, which
+      matches the label's DL-.
     llm_assisted: false
   chemical_properties:
     cas_rn: 1219589-99-7
@@ -143495,8 +143565,8 @@ ingredients:
 - identifier: cas:1981-58-4
   preferred_term: Sulfamethazine sodium salt
   ontology_mapping:
-    ontology_id: CHEBI:26714
-    ontology_label: sodium salt
+    ontology_id: CHEBI:102265
+    ontology_label: sulfamethazine
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -143510,6 +143580,13 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Sulfamethazine
         sodium salt'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:102265 (''sulfamethazine'').
+        The previous parent was the class of all sodium salts: it retained the counterion
+        and discarded the compound, collapsing unrelated ingredients onto one node.
+        Chosen because it is the compound the label names. The record stays cas-primary
+        per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -143543,6 +143620,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:26714 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_compositional_classes
+    action: REGROUNDED_PARENT_TERM
+    changes: ontology_mapping CHEBI:26714 'sodium salt' -> CHEBI:102265 'sulfamethazine'
+      (#322); the compound the label names.
     llm_assisted: false
   chemical_properties:
     cas_rn: 1981-58-4
@@ -144886,8 +144969,8 @@ ingredients:
 - identifier: cas:91000-53-2
   preferred_term: TAPS sodium salt
   ontology_mapping:
-    ontology_id: CHEBI:26714
-    ontology_label: sodium salt
+    ontology_id: CHEBI:191055
+    ontology_label: N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic acid
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -144902,6 +144985,13 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='TAPS sodium
         salt'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:191055 (''N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
+        acid''). The previous parent was the class of all sodium salts: it retained
+        the counterion and discarded the compound, collapsing unrelated ingredients
+        onto one node. Chosen because it is the systematic name of TAPS. The record
+        stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
   synonyms:
   - synonym_text: TAPS
     synonym_type: EXACT_SYNONYM
@@ -144947,6 +145037,12 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_compositional_classes
+    action: REGROUNDED_PARENT_TERM
+    changes: ontology_mapping CHEBI:26714 'sodium salt' -> CHEBI:191055 'N-[tris(hydroxymethyl)methyl]-3-aminopropanesulfonic
+      acid' (#322); the systematic name of TAPS.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 91000-53-2
     data_source: CultureBotHT compounds_to_cas.csv
