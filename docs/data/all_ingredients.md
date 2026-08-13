@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-13T17:34:27.298025+00:00
+Generated: 2026-08-13T17:50:51.894253+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -704,7 +704,7 @@ Total: 2841 ingredients
 | CHEBI:34978 | CHEBI:34978 | Cloxacillin sodium salt monohydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:86209 | CHEBI:86209 | Co(NO3)2 | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:86214 | CHEBI:86214 | Co(NO3)2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 192 |
-| CHEBI:28911 | CHEBI:28911 | Cobalamine | MAPPED | CHEBI | EXACT_MATCH | 3 |
+| CHEBI:30411 | CHEBI:30411 | Cobalamine | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:53503 | CHEBI:53503 | Cobalt chloride hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 2388 |
 | CHEBI:35696 | CHEBI:35696 | CoCl2 | MAPPED | CHEBI | EXACT_MATCH | 25 |
 | kgmicrobe.compound:cocl2_x_2_h2o | CHEBI:35696 | CoCl2 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 3 |
