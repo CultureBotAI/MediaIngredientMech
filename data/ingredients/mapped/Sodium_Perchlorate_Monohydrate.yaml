@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:132103
   ontology_label: sodium perchlorate
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -17,6 +17,16 @@ ontology_mapping:
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='Sodium perchlorate
       monohydrate'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:132103 (''sodium perchlorate'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -59,6 +69,12 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR ->
     cellular_metabolic_roles.ELECTRON_ACCEPTOR'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7791-07-3
   data_source: CultureBotHT compounds_to_cas.csv

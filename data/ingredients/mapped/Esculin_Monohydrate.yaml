@@ -10,6 +10,14 @@ ontology_mapping:
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula 'C15H16O9' -> 'C15H16O9.H2O'. The recorded value described
+      the anhydrous salt while the label names a hydrate, understating the mass by
+      18 g/mol per water. Corrected because the label states 1 water(s) of hydration,
+      and the recorded formula was byte-identical to the anhydrous parent CHEBI:4853's
+      ChEBI formula ('C15H16O9') — the mark of a value inherited from the parent rather
+      than measured for this record. Water appended in ChEBI's own dot-separated notation.
 synonyms:
 - synonym_text: 7-hydroxy-2-oxo-2H-chromen-6-yl beta-D-glucopyranoside
   synonym_type: EXACT_SYNONYM
@@ -43,11 +51,20 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula 'C15H16O9' -> 'C15H16O9.H2O' (#321); the label states
+    1 water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
+    parent CHEBI:4853's ChEBI formula ('C15H16O9') — the mark of a value inherited
+    from the parent rather than measured for this record. Water appended in ChEBI's
+    own dot-separated notation.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 531-75-9
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-  molecular_formula: C15H16O9
+  molecular_formula: C15H16O9.H2O
   inchi: InChI=1S/C15H16O9/c16-5-10-12(19)13(20)14(21)15(24-10)23-9-3-6-1-2-11(18)22-8(6)4-7(9)17/h1-4,10,12-17,19-21H,5H2/t10-,12-,13+,14-,15-/m1/s1
   smiles: O=c1ccc2cc(O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)c(O)cc2o1
 ingredient_type: SINGLE_INGREDIENT

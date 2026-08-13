@@ -39,12 +39,18 @@ curation_history:
     MediaDive ingredient 1763 CAS 13446-18-9 confirms the hexahydrate; CHEBI lacks
     the hydrate term so cas: is the primary identifier with the parent as narrowMatch
     (Rule B1 registry rows added). Resolves the prior ''pending CAS evidence'' review.'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
 ontology_mapping:
   ontology_id: CHEBI:64736
   ontology_label: magnesium nitrate
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: MediaDive ingredient 1763 (CAS 13446-18-9)
@@ -56,3 +62,13 @@ ontology_mapping:
     source: CHEBI (parent)
     notes: Parent anhydrous term CHEBI:64736 'magnesium nitrate'; no hexahydrate term
       exists in CHEBI.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:64736 (''magnesium nitrate'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'

@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:62345
   ontology_label: L-rhamnose
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -16,6 +16,16 @@ ontology_mapping:
     notes: L-Rhamnose monohydrate is a hydrate/salt with its own CAS and no exact
       ChEBI term; anchored to the parent CHEBI:62345 'L-rhamnose' by narrowMatch per
       MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of L-rhamnose
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:62345 (''L-rhamnose'') — a subsumption ChEBI itself denies: it files
+      hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -59,6 +69,12 @@ curation_history:
     registry kgmicrobe.compound:l-rhamnose_monohydrate. identifier cas:10030-85-0
     unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of L-rhamnose'
   llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 10030-85-0
   data_source: CultureBotHT compounds_to_cas.csv

@@ -60,6 +60,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0369 -> cas:7788-99-0 "chromium(III) sulfate" (NARROW_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a chromium potassium
   sulfate hydrate shorthand; left unmapped pending exact formula/CAS evidence.
@@ -71,7 +77,7 @@ ontology_mapping:
   ontology_id: CHEBI:53471
   ontology_label: chromium(III) sulfate
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: Edison LITERATURE (PaperQA3) + local CHEBI verification
@@ -80,3 +86,13 @@ ontology_mapping:
       reference. No ontology term covers the potassium double salt or its dodecahydrate;
       CHEBI:53471 chromium(III) sulfate is the nearest parent, lacking both the potassium
       and the twelve waters.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:53471 (''chromium(III) sulfate'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'

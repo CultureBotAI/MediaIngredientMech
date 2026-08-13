@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:16708
   ontology_label: adenine
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -18,6 +18,16 @@ ontology_mapping:
     notes: Adenine hydrochloride hydrate is a hydrate/salt with its own CAS and no
       exact ChEBI term; anchored to the parent CHEBI:16708 'adenine' by narrowMatch
       per MAPPING_SEMANTICS.md Section 3 step 2. hydrochloride hydrate of adenine
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:16708 (''adenine'') — a subsumption ChEBI itself denies: it files
+      hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -53,6 +63,12 @@ curation_history:
     kgmicrobe.compound:adenine_hydrochloride_hydrate. identifier cas:2922-28-3 unchanged;
     mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. hydrochloride hydrate of adenine'
   llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 2922-28-3
   data_source: CultureBotHT compounds_to_cas.csv
