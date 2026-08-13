@@ -1,4 +1,4 @@
-identifier: CHEBI:28057
+identifier: kgmicrobe.ingredient:amylopectin_from_maize
 preferred_term: amylopectin from maize
 ontology_mapping:
   ontology_id: CHEBI:28057
@@ -46,6 +46,15 @@ curation_history:
   action: REGRADED_CLASS_OVERSTATEMENT
   changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); the label carries a
     botanical source the term does not encode.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_registry_for_narrow_records
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: identifier CHEBI:28057 -> kgmicrobe.ingredient:amylopectin_from_maize.
+    The record is narrower than CHEBI:28057 (source-, form- or scope-qualified), and
+    §3 forbids expressing a more specific thing by sharing a broader term's identifier.
+    Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+    to narrow/broad.
   llm_assisted: false
 chemical_properties:
   cas_rn: 9037-22-3

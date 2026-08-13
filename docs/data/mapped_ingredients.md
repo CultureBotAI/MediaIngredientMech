@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-13T08:38:19.293892+00:00
+Generated: 2026-08-13T08:50:19.457595+00:00
 Total: 2497 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -437,7 +437,7 @@ Total: 2497 ingredients
 | CHEBI:2682 | CHEBI:2682 | Amphotericin B | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:28971 | CHEBI:28971 | Ampicillin | MAPPED | CHEBI | EXACT_MATCH | 18 |
 | CHEBI:34535 | CHEBI:34535 | Ampicillin sodium salt | REJECTED | CHEBI | LEXICAL_MATCH | 0 |
-| CHEBI:28057 | CHEBI:28057 | amylopectin from maize | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:amylopectin_from_maize | CHEBI:28057 | amylopectin from maize | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:28102 | CHEBI:28102 | Amylose from potato | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:53912-89-3 | NCIT:C216370 | Anabasine Hydrochloride | MAPPED | NCIT | NARROW_MATCH | 0 |
 | cas:6488-63-7 | cas:6488-63-7 | Andirobin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -470,7 +470,7 @@ Total: 2497 ingredients
 | CHEBI:49474 | CHEBI:49474 | argon | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:2825 | CHEBI:2825 | Aristolochic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33655 | CHEBI:33655 | Aromatic compound | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:33848 | CHEBI:33848 | Aromatic hydrocarbon | MAPPED | CHEBI | BROAD_MATCH | 0 |
+| kgmicrobe.compound:aromatic_hydrocarbon | CHEBI:33848 | Aromatic hydrocarbon | MAPPED | CHEBI | BROAD_MATCH | 0 |
 | CHEBI:29125 | CHEBI:29125 | Arsenate | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | cas:13902-54-0 | cas:13902-54-0 | Artepaulin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0001647 | MICRO:0001647 | Artificial Sea Salt | MAPPED | MICRO | LEXICAL_MATCH | 0 |
@@ -974,7 +974,7 @@ Total: 2497 ingredients
 | NCIT:C71971 | NCIT:C71971 | Fig | MAPPED | NCIT | EXACT_MATCH | 0 |
 | MICRO:0001597 | MICRO:0001597 | Fildes Enrichment | MAPPED | MICRO | EXACT_MATCH | 0 |
 | MICRO:0001773 | MICRO:0001773 | Filtered Seawater | MAPPED | MICRO | EXACT_MATCH | 2 |
-| CHEBI:16991 | CHEBI:16991 | Fish-Sperm DNA | MAPPED | CHEBI | NARROW_MATCH | 4 |
+| kgmicrobe.ingredient:fish-sperm_dna | CHEBI:16991 | Fish-Sperm DNA | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | MICRO:0000462 | MICRO:0000462 | Fish peptone | MAPPED | MICRO | EXACT_MATCH | 0 |
 | kgmicrobe.compound:flavensomycin | kgmicrobe.compound:flavensomycin | Flavensomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:24040 | CHEBI:24040 | Flavin adenine dinucleotide | MAPPED | CHEBI | EXACT_MATCH | 1 |
@@ -1086,7 +1086,7 @@ Total: 2497 ingredients
 | CHEBI:17883 | CHEBI:17883 | HCl | MAPPED | CHEBI | EXACT_MATCH | 1105 |
 | CHEBI:5633 | CHEBI:5633 | Hecogenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2540 | CHEBI:2540 | Helenine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:230519 | CHEBI:230519 | Heparin sodium salt from porcine intestinal mucosa | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa | CHEBI:230519 | Heparin sodium salt from porcine intestinal mucosa | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:42334 | CHEBI:42334 | HEPES | MAPPED | CHEBI | EXACT_MATCH | 168 |
 | CHEBI:16148 | CHEBI:16148 | Heptadecane | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:32365 | CHEBI:32365 | heptadecanoic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1268,7 +1268,7 @@ Total: 2497 ingredients
 | CHEBI:15409 | CHEBI:15409 | Levomenthol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | mesh:D002174 | mesh:D002174 | Levorin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:45630 | CHEBI:45630 | Levulinic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:6452 | CHEBI:6452 | Lichenan (icelandic moss) | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:lichenan_icelandic_moss | CHEBI:6452 | Lichenan (icelandic moss) | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:48607 | CHEBI:48607 | LiCl | MAPPED | CHEBI | SYNONYM_MATCH | 10 |
 | cas:8068-05-1 | cas:8068-05-1 | Lignin alkali | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | mesh:C079132 | mesh:C079132 | Limocrocin | MAPPED | MESH | EXACT_MATCH | 0 |
@@ -1510,7 +1510,7 @@ Total: 2497 ingredients
 | CHEBI:75221 | CHEBI:75221 | NaVO3 | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:132095 | CHEBI:132095 | NaVO3 x H2O | MAPPED | CHEBI | EXACT_MATCH | 16 |
 | CHEBI:7507 | CHEBI:7507 | Neomycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:31635 | CHEBI:31635 | Neomycin trisulfate salt hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.compound:neomycin_trisulfate_salt_hydrate | CHEBI:31635 | Neomycin trisulfate salt hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:29452 | CHEBI:29452 | Nerol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:7524 | CHEBI:7524 | Nerolidol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:91241 | CHEBI:91241 | NH4-oxalate | MAPPED | CHEBI | EXACT_MATCH | 2 |
@@ -1729,7 +1729,7 @@ Total: 2497 ingredients
 | CHEBI:144215 | CHEBI:144215 | Rhodocladonic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:rhodomycin_a | mesh:C004977 | Rhodomycin A | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:17015 | CHEBI:17015 | Riboflavin | MAPPED | CHEBI | EXACT_MATCH | 1837 |
-| CHEBI:33697 | CHEBI:33697 | Ribonucleic acid from torula yeast type VI | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi | CHEBI:33697 | Ribonucleic acid from torula yeast type VI | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:33942 | CHEBI:33942 | Ribose | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:28077 | CHEBI:28077 | Rifampicin | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | kgmicrobe.compound:ristocetin_b | CHEBI:85129 | Ristocetin B | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1897,7 +1897,7 @@ Total: 2497 ingredients
 | CHEBI:50519 | CHEBI:50519 | Sulfoacetic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:26833 | CHEBI:26833 | Sulfur | MAPPED | CHEBI | EXACT_MATCH | 225 |
 | CHEBI:26835 | CHEBI:26835 | Sulfur compounds | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:33403 | CHEBI:33403 | Sulfur (powder) | MAPPED | CHEBI | NARROW_MATCH | 95 |
+| kgmicrobe.compound:sulfur_powder | CHEBI:33403 | Sulfur (powder) | MAPPED | CHEBI | NARROW_MATCH | 95 |
 | CHEBI:17909 | CHEBI:17909 | Sulphur | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | cas:8001-21-6 | NCIT:C1241 | Sunflower oil | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:supplemented_seawater | ENVO:00002149 | Supplemented Seawater | MAPPED | ENVO | CLOSE_MATCH | 2 |

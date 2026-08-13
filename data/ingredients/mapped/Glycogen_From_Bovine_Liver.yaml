@@ -72,6 +72,14 @@ curation_history:
   action: REGRADED_CLASS_OVERSTATEMENT
   changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_registry_for_narrow_records
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: identifier cas:9005-79-2 kept (§3 step 2, its own CAS); the mandatory Rule
+    B1 registry row to kgmicrobe.ingredient:glycogen_from_bovine_liver was missing
+    and is now emitted. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+    to narrow/broad.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 9005-79-2
   data_source: CultureBotHT compounds_to_cas.csv

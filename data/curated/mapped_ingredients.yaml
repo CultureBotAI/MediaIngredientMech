@@ -26826,7 +26826,7 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:28057
+- identifier: kgmicrobe.ingredient:amylopectin_from_maize
   preferred_term: amylopectin from maize
   ontology_mapping:
     ontology_id: CHEBI:28057
@@ -26874,6 +26874,15 @@ ingredients:
     action: REGRADED_CLASS_OVERSTATEMENT
     changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); the label carries
       a botanical source the term does not encode.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:28057 -> kgmicrobe.ingredient:amylopectin_from_maize.
+      The record is narrower than CHEBI:28057 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 9037-22-3
@@ -28951,7 +28960,7 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:33848
+- identifier: kgmicrobe.compound:aromatic_hydrocarbon
   preferred_term: Aromatic hydrocarbon
   ontology_mapping:
     ontology_id: CHEBI:33848
@@ -28998,6 +29007,15 @@ ingredients:
     changes: 'mapping_quality EXACT_MATCH -> BROAD_MATCH (#322); the record is BROADER
       than the term: benzene is an aromatic hydrocarbon and is not a polycyclic arene,
       so narrowMatch would be backwards.'
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:33848 -> kgmicrobe.compound:aromatic_hydrocarbon. The
+      record is narrower than CHEBI:33848 (source-, form- or scope-qualified), and
+      §3 forbids expressing a more specific thing by sharing a broader term's identifier.
+      Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+      to narrow/broad.
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:29125
@@ -67821,7 +67839,7 @@ ingredients:
     environment_label: sea water
     relevance: NATURAL_SOURCE
     notes: Filtered marine water; sourced directly from sea water.
-- identifier: CHEBI:16991
+- identifier: kgmicrobe.ingredient:fish-sperm_dna
   preferred_term: Fish-Sperm DNA
   ontology_mapping:
     ontology_id: CHEBI:16991
@@ -67935,6 +67953,15 @@ ingredients:
     action: REGRADED_CLASS_OVERSTATEMENT
     changes: 'mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified:
       the term is DNA generally.'
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:16991 -> kgmicrobe.ingredient:fish-sperm_dna. The record
+      is narrower than CHEBI:16991 (source-, form- or scope-qualified), and §3 forbids
+      expressing a more specific thing by sharing a broader term's identifier. Minted
+      per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+      to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 9007-49-2
@@ -73770,6 +73797,14 @@ ingredients:
     action: REGRADED_CLASS_OVERSTATEMENT
     changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier cas:9005-79-2 kept (§3 step 2, its own CAS); the mandatory
+      Rule B1 registry row to kgmicrobe.ingredient:glycogen_from_bovine_liver was
+      missing and is now emitted. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 9005-79-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -76631,7 +76666,7 @@ ingredients:
     inchi: InChI=1S/C15H20O2/c1-9-5-4-6-15(3)8-13-11(7-12(9)15)10(2)14(16)17-13/h7,9,11,13H,2,4-6,8H2,1,3H3/t9-,11+,13+,15+/m0/s1
     smiles: '[H][C@@]12C[C@@]3(C)CCC[C@H](C)C3=C[C@]1([H])C(=C)C(=O)O2'
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:230519
+- identifier: kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa
   preferred_term: Heparin sodium salt from porcine intestinal mucosa
   ontology_mapping:
     ontology_id: CHEBI:230519
@@ -76678,6 +76713,15 @@ ingredients:
     curator: regrade_class_overstatements
     action: REGRADED_CLASS_OVERSTATEMENT
     changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:230519 -> kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa.
+      The record is narrower than CHEBI:230519 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 9041-08-1
@@ -92158,7 +92202,7 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:6452
+- identifier: kgmicrobe.ingredient:lichenan_icelandic_moss
   preferred_term: Lichenan (icelandic moss)
   ontology_mapping:
     ontology_id: CHEBI:6452
@@ -92213,6 +92257,15 @@ ingredients:
     curator: regrade_class_overstatements
     action: REGRADED_CLASS_OVERSTATEMENT
     changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:6452 -> kgmicrobe.ingredient:lichenan_icelandic_moss.
+      The record is narrower than CHEBI:6452 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 1402-10-4
@@ -116172,7 +116225,7 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:31635
+- identifier: kgmicrobe.compound:neomycin_trisulfate_salt_hydrate
   preferred_term: Neomycin trisulfate salt hydrate
   ontology_mapping:
     ontology_id: CHEBI:31635
@@ -116229,6 +116282,15 @@ ingredients:
     action: REGRADED_CLASS_OVERSTATEMENT
     changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); a specific salt/hydrate
       form of the term.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:31635 -> kgmicrobe.compound:neomycin_trisulfate_salt_hydrate.
+      The record is narrower than CHEBI:31635 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 1405-10-3
@@ -132952,7 +133014,7 @@ ingredients:
         component'
       curator_note: Widespread use in media formulations (1837 occurrences). High
         confidence based on 'Defined component' property.
-- identifier: CHEBI:33697
+- identifier: kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi
   preferred_term: Ribonucleic acid from torula yeast type VI
   ontology_mapping:
     ontology_id: CHEBI:33697
@@ -133002,6 +133064,15 @@ ingredients:
     curator: regrade_class_overstatements
     action: REGRADED_CLASS_OVERSTATEMENT
     changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source- and grade-qualified.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:33697 -> kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi.
+      The record is narrower than CHEBI:33697 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 63231-63-0
@@ -144835,7 +144906,7 @@ ingredients:
       class.
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:33403
+- identifier: kgmicrobe.compound:sulfur_powder
   preferred_term: Sulfur (powder)
   ontology_mapping:
     ontology_id: CHEBI:33403
@@ -145010,6 +145081,15 @@ ingredients:
     action: REGRADED_CLASS_OVERSTATEMENT
     changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); a physical form of
       elemental sulfur.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:33403 -> kgmicrobe.compound:sulfur_powder. The record
+      is narrower than CHEBI:33403 (source-, form- or scope-qualified), and §3 forbids
+      expressing a more specific thing by sharing a broader term's identifier. Minted
+      per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+      to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 7783-06-4

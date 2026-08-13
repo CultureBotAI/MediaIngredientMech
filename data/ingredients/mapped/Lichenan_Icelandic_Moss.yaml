@@ -1,4 +1,4 @@
-identifier: CHEBI:6452
+identifier: kgmicrobe.ingredient:lichenan_icelandic_moss
 preferred_term: Lichenan (icelandic moss)
 ontology_mapping:
   ontology_id: CHEBI:6452
@@ -52,6 +52,15 @@ curation_history:
   curator: regrade_class_overstatements
   action: REGRADED_CLASS_OVERSTATEMENT
   changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_registry_for_narrow_records
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: identifier CHEBI:6452 -> kgmicrobe.ingredient:lichenan_icelandic_moss.
+    The record is narrower than CHEBI:6452 (source-, form- or scope-qualified), and
+    §3 forbids expressing a more specific thing by sharing a broader term's identifier.
+    Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+    to narrow/broad.
   llm_assisted: false
 chemical_properties:
   cas_rn: 1402-10-4
