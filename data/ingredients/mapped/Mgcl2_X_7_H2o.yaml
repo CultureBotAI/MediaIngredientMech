@@ -1,14 +1,33 @@
-identifier: CHEBI:6636
+identifier: kgmicrobe.compound:mgcl2_x_7_h2o
 preferred_term: MgCl2 x 7 H2O
 ontology_mapping:
   ontology_id: CHEBI:6636
   ontology_label: magnesium dichloride
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is a
+      hydrate of CHEBI:6636, not an exact match to it] Imported from CultureMech pipeline,
+      quality=DIRECT_MATCH'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:6636 -> kgmicrobe.compound:mgcl2_x_7_h2o; mapping_quality
+      SYNONYM_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:6636 ('magnesium
+      dichloride') and was sharing that term's identifier — the identity collapse
+      MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
+      from its anhydrous parent downstream. ChEBI has no term for this hydrate and
+      the record carries no verified CAS, so steps 1 and 2 are unavailable and step
+      3 applies.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula '2Cl.Mg' -> '2Cl.Mg.7H2O'. The recorded value described
+      the anhydrous salt while the label names a hydrate, understating the mass by
+      18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+      and the recorded formula was byte-identical to the anhydrous parent CHEBI:6636's
+      ChEBI formula ('2Cl.Mg') — the mark of a value inherited from the parent rather
+      than measured for this record. Water appended in ChEBI's own dot-separated notation.
 synonyms:
 - synonym_text: Magnesium chloride anhydrous
   synonym_type: EXACT_SYNONYM
@@ -98,11 +117,26 @@ curation_history:
     synonym, so the recorded grade overstated. ontology_id is unchanged — the term
     is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:6636 -> kgmicrobe.compound:mgcl2_x_7_h2o; mapping_quality
+    SYNONYM_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula '2Cl.Mg' -> '2Cl.Mg.7H2O' (#321); the label states 7
+    water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
+    parent CHEBI:6636's ChEBI formula ('2Cl.Mg') — the mark of a value inherited from
+    the parent rather than measured for this record. Water appended in ChEBI's own
+    dot-separated notation.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 12285-34-6
   data_source: NCI CACTUS Chemical Identifier Resolver
   retrieval_date: '2026-04-05T21:54:34.984632+00:00'
-  molecular_formula: 2Cl.Mg
+  molecular_formula: 2Cl.Mg.7H2O
   inchi: InChI=1S/2ClH.Mg/h2*1H;/q;;+2/p-2
   smiles: '[Cl-].[Cl-].[Mg+2]'
 kg_microbe_node_id: CHEBI:6636

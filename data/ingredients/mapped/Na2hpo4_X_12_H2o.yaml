@@ -1,14 +1,16 @@
-identifier: CHEBI:91259
+identifier: kgmicrobe.compound:na2hpo4_x_12_h2o
 preferred_term: Na2HPO4 x 12 H2O
 ontology_mapping:
   ontology_id: CHEBI:91259
   ontology_label: disodium hydrogenphosphate dodecahydrate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is a
+      hydrate of CHEBI:91259, not an exact match to it] Imported from CultureMech
+      pipeline, quality=DIRECT_MATCH'
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#321/#334)
     notes: Promoted off the anhydrous term CHEBI:34683, which was absorbing five distinct
@@ -16,6 +18,22 @@ ontology_mapping:
       dodecahydrate') — MAPPING_SEMANTICS §3 step 1. cas_rn '7782-85-6' -> '10039-32-4',
       taken from ChEBI's own xref on the specific term; the previous value was shared
       across the family and did not denote this hydrate (#334).
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:91259 -> kgmicrobe.compound:na2hpo4_x_12_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:91259 ('disodium
+      hydrogenphosphate dodecahydrate') and was sharing that term's identifier — the
+      identity collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance
+      indistinguishable from its anhydrous parent downstream. ChEBI has no term for
+      this hydrate and the record carries no verified CAS, so steps 1 and 2 are unavailable
+      and step 3 applies.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula 'HO4P.2Na' -> '12H2O.HO4P.2Na'. The recorded value described
+      the anhydrous salt while the label names a hydrate, understating the mass by
+      18 g/mol per water. Corrected because adopted verbatim from the mapped term
+      CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate'), which is the specific
+      hydrate and already carries the water.
 synonyms:
 - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
     Simple component'
@@ -124,12 +142,25 @@ curation_history:
     dodecahydrate'; mapping_quality -> EXACT_MATCH; cas_rn '7782-85-6' -> '10039-32-4'
     (#321/#334).
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:91259 -> kgmicrobe.compound:na2hpo4_x_12_h2o; mapping_quality
+    EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula 'HO4P.2Na' -> '12H2O.HO4P.2Na' (#321); adopted verbatim
+    from the mapped term CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate'),
+    which is the specific hydrate and already carries the water.
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:34683
 chemical_properties:
   cas_rn: 10039-32-4
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: HO4P.2Na
+  molecular_formula: 12H2O.HO4P.2Na
   inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
   smiles: O=P([O-])([O-])O.[Na+].[Na+]
 ingredient_type: SINGLE_INGREDIENT

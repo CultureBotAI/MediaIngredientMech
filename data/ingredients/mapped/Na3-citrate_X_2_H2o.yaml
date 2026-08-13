@@ -52,10 +52,13 @@ synonyms:
 - synonym_text: trisodium 2-hydroxypropane-1,2,3-tricarboxylate--water (1/2)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Trisodium citrate x 2 H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_kgmicrobe.compound:trisodium_citrate_x_2_h2o
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 14
-  media_count: 14
+  total_occurrences: 65
+  media_count: 65
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -124,6 +127,17 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_minted_hydrate_duplicates
+  action: MERGED_FROM
+  changes: Absorbed 'Trisodium citrate x 2 H2O' (#321), which differs from this record
+    only in notation the merge pass does not recognise as the same substance, so it
+    escaped dedup and was grounded to the anhydrous parent. It had just been minted
+    'kgmicrobe.compound:trisodium_citrate_x_2_h2o' on the false premise that ChEBI
+    has no term for this hydrate — the record's own CAS 6132-04-3 is registered by
+    ChEBI against CHEBI:32142 'sodium citrate dihydrate'. Occurrences 14/14 + 51/51
+    -> 65/65. Raw label kept as a RAW_TEXT synonym.
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:32142
 chemical_properties:
   cas_rn: 6132-04-3

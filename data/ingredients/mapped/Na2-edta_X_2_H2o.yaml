@@ -1,14 +1,34 @@
-identifier: CHEBI:64734
+identifier: CHEBI:64758
 preferred_term: Na2-EDTA x 2 H2O
 ontology_mapping:
   ontology_id: CHEBI:64734
   ontology_label: EDTA disodium salt (anhydrous)
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    notes: '[HISTORICAL — superseded by the #321 re-grade below: this record is a
+      hydrate of CHEBI:64734, not an exact match to it] Imported from CultureMech
+      pipeline, quality=DIRECT_MATCH'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:64734 -> kgmicrobe.compound:na2-edta_x_2_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:64734 ('EDTA disodium
+      salt (anhydrous)') and was sharing that term's identifier — the identity collapse
+      MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
+      from its anhydrous parent downstream. ChEBI has no term for this hydrate and
+      the record carries no verified CAS, so steps 1 and 2 are unavailable and step
+      3 applies.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula 'C10H14N2O8.2Na' -> 'C10H14N2O8.2Na.2H2O'. The recorded
+      value described the anhydrous salt while the label names a hydrate, understating
+      the mass by 18 g/mol per water. Corrected because the label states 2 water(s)
+      of hydration, and the recorded formula was byte-identical to the anhydrous parent
+      CHEBI:64734's ChEBI formula ('C10H14N2O8.2Na') — the mark of a value inherited
+      from the parent rather than measured for this record. Water appended in ChEBI's
+      own dot-separated notation.
 synonyms:
 - synonym_text: 'Properties: Defined component, Organic compound, Simple component'
   synonym_type: RAW_TEXT
@@ -37,10 +57,10 @@ synonyms:
 - synonym_text: disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 103
-  media_count: 64
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -120,11 +140,35 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:64734 -> kgmicrobe.compound:na2-edta_x_2_h2o; mapping_quality
+    EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula 'C10H14N2O8.2Na' -> 'C10H14N2O8.2Na.2H2O' (#321); the
+    label states 2 water(s) of hydration, and the recorded formula was byte-identical
+    to the anhydrous parent CHEBI:64734's ChEBI formula ('C10H14N2O8.2Na') — the mark
+    of a value inherited from the parent rather than measured for this record. Water
+    appended in ChEBI's own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_minted_hydrate_duplicates
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:64758 ''Na2EDTA·2H2O''; occurrences transferred. The
+    ''kgmicrobe.compound:na2-edta_x_2_h2o'' minted for this record is withdrawn: §3
+    step 3 requires that no specific term exists, and one does (ChEBI label search
+    for the dihydrate of the minted-off parent), so step 1 applied and the target
+    identifier was already held. Tombstoned REJECTED, SSSOM rows dropped (#321).'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7487-55-0
   data_source: PubChem API (preprocessed)
   retrieval_date: '2026-04-05T23:45:45.687263+00:00'
-  molecular_formula: C10H14N2O8.2Na
+  molecular_formula: C10H14N2O8.2Na.2H2O
   inchi: InChI=1S/C10H16N2O8.2Na/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20;;/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20);;/q;2*+1/p-2
   smiles: O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=O)[O-].[Na+].[Na+]
 kg_microbe_node_id: CHEBI:64734
