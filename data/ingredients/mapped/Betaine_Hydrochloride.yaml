@@ -50,11 +50,21 @@ curation_history:
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:17750 (pubchem-xref)
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_parent_inherited_formulas
+  action: CORRECTED_INHERITED_FORMULA
+  changes: molecular_formula 'C5H11NO2' -> 'C5H12ClNO2' (#326). The recorded value
+    was identical to the narrowMatch parent's, so it described the parent rather than
+    this salt/hydrate. Corrected from the record's own CAS 590-46-5, which resolves
+    in PubChem to 'Betaine chloride' — provenance independent of the ChEBI mapping
+    under test, per MAPPING_SEMANTICS §3. The narrowMatch itself is correct and is
+    unchanged.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 590-46-5
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C5H11NO2
+  molecular_formula: C5H12ClNO2
   smiles: C[N+](C)(C)CC(=O)[O-]
   inchi: InChI=1S/C5H11NO2/c1-6(2,3)4-5(7)8/h4H2,1-3H3
   pubchem_cid: 247
