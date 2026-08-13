@@ -1,8 +1,8 @@
 identifier: cas:150-90-3
 preferred_term: Sodium succinate dibasic
 ontology_mapping:
-  ontology_id: CHEBI:15741
-  ontology_label: succinic acid
+  ontology_id: CHEBI:63675
+  ontology_label: sodium succinate (anhydrous)
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -23,6 +23,14 @@ ontology_mapping:
       per MAPPING_SEMANTICS.md Section 3 step 2. Disodium succinate has no CHEBI entry;
       nearest parent is the free acid. Re-grounded from CHEBI:150903 (an unrelated
       glycoside) in #263.'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: narrowMatch parent CHEBI:15741 ('succinic acid') -> CHEBI:63675 ('sodium
+      succinate (anhydrous)'). The record is the disodium salt ('dibasic') but was
+      parented to the free acid, so the counterion was discarded. Its own cas_rn 150-90-3
+      — independent of the ChEBI mapping under test — is registered by ChEBI against
+      CHEBI:63675, whose formula C4H4O4.2Na is the dibasic salt the label names. The
+      record stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent moves.
 synonyms:
 - synonym_text: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
   synonym_type: EXACT_SYNONYM
@@ -114,6 +122,13 @@ curation_history:
     has no CHEBI entry; nearest parent is the free acid. Re-grounded from CHEBI:150903
     (an unrelated glycoside) in #263.'
   llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_cas_conflict_duplicates
+  action: REGROUNDED_PARENT_TERM
+  changes: ontology_mapping CHEBI:15741 'succinic acid' -> CHEBI:63675 'sodium succinate
+    (anhydrous)' (#320); the record is the disodium salt and was parented to the free
+    acid.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 150-90-3
   data_source: PubChem API
