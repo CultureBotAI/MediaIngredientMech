@@ -54366,10 +54366,13 @@ ingredients:
   - synonym_text: D-gluco-hexose
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Dextrose
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:4167
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 710
-    media_count: 100
+    total_occurrences: 813
+    media_count: 150
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -54448,6 +54451,17 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_glucose_family
+    action: MERGED_FROM
+    changes: Absorbed 'Dextrose' (#320/#334), which sat on CHEBI:4167 ('D-glucopyranose').
+      Merged because dextrose is D-glucose; CHEBI:4167 'D-glucopyranose' is the cyclic
+      pyranose form, a ring conformation the label does not name. Both records carry
+      the same CAS 50-99-7 and the same formula C6H12O6. Four MIM records for glucose
+      carried the identical CAS and formula while sitting on four different ChEBI
+      terms, split only by where lexical matching landed. Occurrences 710/100 + 103/50
+      -> 813/150. Raw label kept as a RAW_TEXT synonym.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 50-99-7
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -57631,7 +57645,7 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Carbon Source'
-- identifier: CHEBI:4167
+- identifier: CHEBI:17634
   preferred_term: Dextrose
   ontology_mapping:
     ontology_id: CHEBI:4167
@@ -57678,10 +57692,10 @@ ingredients:
   - synonym_text: Glc-OH
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 103
-    media_count: 50
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -57738,6 +57752,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_glucose_family
+    action: MERGED_INTO
+    changes: Merged into CHEBI:17634 'D-Glucose'; occurrences transferred. Was on
+      CHEBI:4167 ('D-glucopyranose'); dextrose is D-glucose; CHEBI:4167 'D-glucopyranose'
+      is the cyclic pyranose form, a ring conformation the label does not name. Both
+      records carry the same CAS 50-99-7 and the same formula C6H12O6. Tombstoned
+      REJECTED, SSSOM rows dropped (#320/#334).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 50-99-7
     data_source: PubChem (via CHEBI:4167)
@@ -72272,10 +72295,13 @@ ingredients:
   - synonym_text: α-D-Glucose
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: glucose
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:42758
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 1638
-    media_count: 50
+    total_occurrences: 1672
+    media_count: 84
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -72340,6 +72366,18 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_glucose_family
+    action: MERGED_FROM
+    changes: Absorbed 'glucose' (#320/#334), which sat on CHEBI:42758 ('aldehydo-D-glucose').
+      Merged because this record differs from the winner only in the case of its first
+      letter, and was grounded to CHEBI:42758 'aldehydo-D-glucose' — the open-chain
+      form — which a bare 'glucose' label does not name. Both records carry the same
+      CAS 50-99-7 and the same formula C6H12O6. Four MIM records for glucose carried
+      the identical CAS and formula while sitting on four different ChEBI terms, split
+      only by where lexical matching landed. Occurrences 1638/50 + 34/34 -> 1672/84.
+      Raw label kept as a RAW_TEXT synonym.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 50-99-7
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -72364,7 +72402,7 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
-- identifier: CHEBI:42758
+- identifier: CHEBI:17234
   preferred_term: glucose
   ontology_mapping:
     ontology_id: CHEBI:42758
@@ -72406,10 +72444,10 @@ ingredients:
   - synonym_text: aldehydo-D-gluco-hexose
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 34
-    media_count: 34
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -72473,6 +72511,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_glucose_family
+    action: MERGED_INTO
+    changes: Merged into CHEBI:17234 'Glucose'; occurrences transferred. Was on CHEBI:42758
+      ('aldehydo-D-glucose'); this record differs from the winner only in the case
+      of its first letter, and was grounded to CHEBI:42758 'aldehydo-D-glucose' —
+      the open-chain form — which a bare 'glucose' label does not name. Both records
+      carry the same CAS 50-99-7 and the same formula C6H12O6. Tombstoned REJECTED,
+      SSSOM rows dropped (#320/#334).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 50-99-7
     data_source: CultureBotHT compounds_to_cas.csv
