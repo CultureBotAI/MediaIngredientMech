@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-13T09:51:20.178329+00:00
+Generated: 2026-08-13T10:11:27.140233+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1311,8 +1311,8 @@ Total: 2841 ingredients
 | CHEBI:68428 | CHEBI:68428 | Maltitol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:25140 | CHEBI:25140 | Maltodextrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27445 | CHEBI:27445 | Maltohexaose | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:17306 | CHEBI:17306 | Maltose | MAPPED | CHEBI | EXACT_MATCH | 139 |
-| CHEBI:18167 | CHEBI:18167 | maltose | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:17306 | CHEBI:17306 | Maltose | MAPPED | CHEBI | EXACT_MATCH | 141 |
+| CHEBI:17306 | CHEBI:18167 | maltose | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28460 | CHEBI:28460 | Maltotetraose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:312693-63-3 | CHEBI:61993 | Maltotriose hydrate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:35825 | CHEBI:35825 | Mandelic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1405,7 +1405,7 @@ Total: 2841 ingredients
 | cas:84082-64-4 | cas:84082-64-4 | Mucin from porcine stomach,Type II | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:84082-64-4 | cas:84082-64-4 | Mucin from porcine stomach type III | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | mesh:C010250 | mesh:C010250 | Mycobacidin | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:17268 | CHEBI:17268 | myo-Inositol | MAPPED | CHEBI | EXACT_MATCH | 31 |
+| CHEBI:17268 | CHEBI:17268 | myo-Inositol | MAPPED | CHEBI | EXACT_MATCH | 52 |
 | CHEBI:18152 | CHEBI:18152 | Myricetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28875 | CHEBI:28875 | Myristic acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:29640 | CHEBI:29640 | N-(3-oxohexanoyl)-DL-homoserine lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1525,7 +1525,7 @@ Total: 2841 ingredients
 | CHEBI:184335 | CHEBI:184335 | NH4HCO3 | MAPPED | CHEBI | EXACT_MATCH | 21 |
 | CHEBI:63038 | CHEBI:63038 | (NH4)NO3 | MAPPED | CHEBI | EXACT_MATCH | 257 |
 | CHEBI:53542 | CHEBI:53542 | Nickel (II) chloride hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 2954 |
-| CHEBI:53437 | CHEBI:53437 | Nickel (II) sulfate hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 12 |
+| CHEBI:53437 | CHEBI:53437 | Nickel (II) sulfate hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 37 |
 | CHEBI:34887 | CHEBI:34887 | NiCl2 | MAPPED | CHEBI | EXACT_MATCH | 9 |
 | kgmicrobe.compound:nicl2_x_2_h2o | CHEBI:34887 | NiCl2 x 2 H2O | MAPPED | CHEBI | NARROW_MATCH | 13 |
 | kgmicrobe.compound:nicl2_x_5_h2o | CHEBI:34887 | NiCl2 x 5 H2O | MAPPED | CHEBI | NARROW_MATCH | 1 |
@@ -1535,7 +1535,7 @@ Total: 2841 ingredients
 | CHEBI:15940 | CHEBI:15940 | Nicotinic acid | MAPPED | CHEBI | EXACT_MATCH | 1998 |
 | cas:28643-80-3 | CHEBI:201444 | Nigericin sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:71629 | CHEBI:71629 | Nisin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:53001 | CHEBI:53001 | NiSO4 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 25 |
+| CHEBI:53437 | CHEBI:53001 | NiSO4 x 6 H2O | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:53001 | CHEBI:53001 | NiSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:25548 | CHEBI:25548 | Nitrilotriacetate | MAPPED | CHEBI | SYNONYM_MATCH | 10 |
 | CHEBI:44557 | CHEBI:44557 | Nitrilotriacetic acid | MAPPED | CHEBI | EXACT_MATCH | 1154 |
@@ -2067,7 +2067,7 @@ Total: 2841 ingredients
 | cas:9010-72-4 | NCIT:C183132 | Zymosan | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:16113 | CHEBI:16113 | cholesterol | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:41981 | CHEBI:41981 | deuterated water | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
-| CHEBI:10642 | CHEBI:10642 | m-Inositol | MAPPED | CHEBI | CAS_RN_LOOKUP | 21 |
+| CHEBI:17268 | CHEBI:10642 | m-Inositol | REJECTED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:73685 | CHEBI:73685 | n-Acetyl-glutamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:35704 | CHEBI:35704 | n-Acetyl-lysine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:47966 | CHEBI:47966 | n-Acetyl-muramic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
@@ -2476,7 +2476,7 @@ Total: 2841 ingredients
 | CHEBI:495056 | CHEBI:495056 | Gamma-cyclodextrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:471744 | CHEBI:471744 | Imipenem | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | FOODON:03315719 | FOODON:03315719 | Casamino acids | MAPPED | FOODON | CLOSE_MATCH | 395 |
-| cas:150-90-3 | CHEBI:15741 | Sodium succinate dibasic | MAPPED | CHEBI | NARROW_MATCH | 3 |
+| cas:150-90-3 | CHEBI:63675 | Sodium succinate dibasic | MAPPED | CHEBI | NARROW_MATCH | 3 |
 | CHEBI:61278 | CHEBI:61278 | Na2S2O4 | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.ingredient:isovitalex | kgmicrobe.ingredient:isovitalex | Isovitalex | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:k-phosphate_buffer | kgmicrobe.ingredient:k-phosphate_buffer | K-phosphate buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |

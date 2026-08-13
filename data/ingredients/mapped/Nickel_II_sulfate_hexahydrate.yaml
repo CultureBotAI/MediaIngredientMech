@@ -38,10 +38,13 @@ synonyms:
 - synonym_text: nickel(2+) sulfate--water (1/6)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: NiSO4 x 6 H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:53001
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 12
-  media_count: 12
+  total_occurrences: 37
+  media_count: 37
 curation_history:
 - timestamp: '2026-04-07T10:19:50.730769+00:00'
   curator: feba_ontology_enrichment_batch
@@ -82,6 +85,17 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_cas_conflict_duplicates
+  action: MERGED_FROM
+  changes: 'Absorbed ''NiSO4 x 6 H2O'' (#320), which sat on CHEBI:53001 (''nickel
+    sulfate''). Merged because the record''s CAS 10101-97-0 is registered by ChEBI
+    against CHEBI:53437 ''nickel sulfate hexahydrate'', the specific term §3 step
+    1 requires; the record sat on the generic sulfate and carried its anhydrous formula.
+    The CAS-vs-CURIE conflict #320 flagged on that record was a symptom of the duplicate,
+    not of a bad mapping. Occurrences 12/12 + 25/25 -> 37/37. Raw label kept as a
+    RAW_TEXT synonym.'
+  llm_assisted: false
 notes: Created from FEBA ontology enrichment workflow. Used in 12 FEBA media formulations.
 chemical_properties:
   cas_rn: 10101-97-0
