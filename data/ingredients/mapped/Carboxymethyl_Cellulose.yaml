@@ -1,14 +1,24 @@
-identifier: CHEBI:85146
+identifier: CHEBI:234035
 preferred_term: Carboxymethyl cellulose
 ontology_mapping:
-  ontology_id: CHEBI:85146
-  ontology_label: carboxymethylcellulose
+  ontology_id: CHEBI:234035
+  ontology_label: carboxymethylcellulose sodium salt
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: 'identifier/ontology_id CHEBI:85146 (''carboxymethylcellulose'') -> CHEBI:234035
+      (''carboxymethylcellulose sodium salt''). The record''s own cas_rn 9004-32-4
+      is registered by ChEBI against CHEBI:234035, which is the sodium salt of the
+      term the record previously carried. Curation decision on #320: where the CAS
+      names a more specific FORM than the label, the CAS governs — the recipe is taken
+      to mean the substance actually weighed out. These surfaced as ''unrelated''
+      in the ancestry triage only because ChEBI does not model salt-of / hydrate-of
+      / racemate-of as subsumption, the same gap #342 recorded for hydrates.'
 synonyms:
 - synonym_text: ( sodium salt)
   synonym_type: RAW_TEXT
@@ -120,6 +130,13 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: REGROUNDED_TO_CAS_SPECIFIC_FORM
+  changes: identifier/ontology_id CHEBI:85146 -> CHEBI:234035 'carboxymethylcellulose
+    sodium salt' (#320); the record's CAS 9004-32-4 denotes the sodium salt. mapping_quality
+    -> SYNONYM_MATCH.
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:85146
 chemical_properties:
   cas_rn: 9004-32-4

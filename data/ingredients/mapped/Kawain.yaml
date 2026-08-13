@@ -1,14 +1,23 @@
-identifier: CHEBI:6117
+identifier: CHEBI:156288
 preferred_term: Kawain
 ontology_mapping:
-  ontology_id: CHEBI:6117
-  ontology_label: Kawain
+  ontology_id: CHEBI:156288
+  ontology_label: DL-kavain
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: 'identifier/ontology_id CHEBI:6117 (''Kawain'') -> CHEBI:156288 (''DL-kavain'').
+      The record''s own cas_rn 3155-48-4 is registered by ChEBI against CHEBI:156288,
+      which is the racemate of the term the record previously carried. Curation decision
+      on #320: where the CAS names a more specific FORM than the label, the CAS governs
+      — the recipe is taken to mean the substance actually weighed out. These surfaced
+      as ''unrelated'' in the ancestry triage only because ChEBI does not model salt-of
+      / hydrate-of / racemate-of as subsumption, the same gap #342 recorded for hydrates.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -37,6 +46,12 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: REGROUNDED_TO_CAS_SPECIFIC_FORM
+  changes: identifier/ontology_id CHEBI:6117 -> CHEBI:156288 'DL-kavain' (#320); the
+    record's CAS 3155-48-4 denotes the racemate. mapping_quality -> SYNONYM_MATCH.
   llm_assisted: false
 chemical_properties:
   cas_rn: 3155-48-4

@@ -1,4 +1,4 @@
-identifier: CHEBI:53258
+identifier: CHEBI:32142
 preferred_term: Sodium Citrate
 ontology_mapping:
   ontology_id: CHEBI:53258
@@ -58,10 +58,10 @@ synonyms:
 - synonym_text: trisodium 2-hydroxypropane-1,2,3-tricarboxylate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 11
-  media_count: 11
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -138,6 +138,12 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: MERGED_INTO
+  changes: Merged into CHEBI:32142 'Na3-citrate x 2 H2O'; its CAS 6132-04-3 denotes
+    the dihydrate (#320). Tombstoned REJECTED, SSSOM rows dropped.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 6132-04-3
   data_source: CultureBotHT compounds_to_cas.csv
