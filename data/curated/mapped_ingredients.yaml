@@ -12873,7 +12873,7 @@ ingredients:
     ontology_id: CHEBI:36226
     ontology_label: beta-D-galactopyranosyl-(1->4)-D-galactopyranose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -12883,6 +12883,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 9548802'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:36226''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (GUBGYTABKSRVRQ-HEJLOQJISA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -12926,6 +12935,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 2152-98-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -17026,7 +17041,7 @@ ingredients:
     ontology_id: CHEBI:90065
     ontology_label: 3-fucosyllactose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: EXACT_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -17036,6 +17051,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 16216990'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> EXACT_MATCH. The recorded molecular_formula
+        is identical to CHEBI:90065''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (WJPIUUDKRHCAEL-YVEAQFMBSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms:
   - synonym_text: 6-deoxy-alpha-L-galactopyranosyl-(1->3)-[beta-D-galactopyranosyl-(1->4)]-D-glucopyranose
     synonym_type: EXACT_SYNONYM
@@ -17085,6 +17109,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> EXACT_MATCH (#326); the narrowMatch parent
+      is the same substance, confirmed by InChIKey via the record's own CAS.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 41312-47-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -18594,7 +18624,7 @@ ingredients:
     ontology_id: CHEBI:114194
     ontology_label: 2-(4-methoxyphenyl)-1-benzopyran-4-one
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -18604,6 +18634,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 77793'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:114194''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (OMICQBVLCVRFGN-UHFFFAOYSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -18637,6 +18676,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:114194 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 4143-74-2
@@ -20863,7 +20908,7 @@ ingredients:
     ontology_id: CHEBI:66729
     ontology_label: 6-n-Pentyl-alpha-pyrone
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -20873,6 +20918,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 33960'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:66729''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (MAUFTTLGOUBZNA-UHFFFAOYSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -20905,6 +20959,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:66729 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 27593-23-3
@@ -21125,7 +21185,7 @@ ingredients:
     ontology_id: CHEBI:94071
     ontology_label: 7-hydroxy-2-(2-hydroxyphenyl)-1-benzopyran-4-one
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -21135,6 +21195,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 5391149'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:94071''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (NUGPQONICGTVNA-UHFFFAOYSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -21168,6 +21237,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:94071 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 77298-66-9
@@ -28117,7 +28192,7 @@ ingredients:
     ontology_id: CHEBI:62799
     ontology_label: alpha-L-Araf-(1->5)-alpha-L-Araf-(1->5)-alpha-L-Araf
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -28127,6 +28202,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 53356682'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:62799''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (OUGBMVAQMSBUQH-BGHOBRCPSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms:
   - synonym_text: alpha-L-arabinofuranosyl-(1->5)-alpha-L-arabinofuranosyl-(1->5)-alpha-L-arabinofuranose
     synonym_type: EXACT_SYNONYM
@@ -28173,6 +28257,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 89315-59-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -44129,7 +44219,7 @@ ingredients:
     ontology_id: CHEBI:228794
     ontology_label: Ethyl chrysanthemumate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -44139,6 +44229,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 7334'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:228794''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (VIMXTGUGWLAOFZ-UHFFFAOYSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms:
   - synonym_text: ethyl 2,2-dimethyl-3-(2-methylprop-1-enyl)cyclopropane-1-carboxylate
     synonym_type: EXACT_SYNONYM
@@ -44174,6 +44273,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:228794 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 97-41-6
@@ -58513,7 +58618,7 @@ ingredients:
     ontology_id: CHEBI:93172
     ontology_label: 6,7,8-trimethoxy-1-benzopyran-2-one
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -58523,6 +58628,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 3083928'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:93172''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (RAYQKHLZHPFYEJ-UHFFFAOYSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -58556,6 +58670,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:93172 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 6035-49-0
@@ -71814,7 +71934,7 @@ ingredients:
     ontology_id: CHEBI:32323
     ontology_label: beta-D-glucuronamide
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -71825,6 +71945,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 636367'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:32323''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (VOIFKEWOFUNPBN-QIUUJYRFSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms:
   - synonym_text: D-Glucuronamide
     synonym_type: EXACT_SYNONYM
@@ -71863,6 +71992,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:32323 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 3789-97-7
@@ -72290,7 +72425,7 @@ ingredients:
     ontology_id: CHEBI:193741
     ontology_label: Glycyl-Aspartate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -72301,6 +72436,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 273261'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:193741''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (SCCPDJAQCXWPTF-UHFFFAOYSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms:
   - synonym_text: 2-[(2-aminoacetyl)amino]butanedioic acid
     synonym_type: EXACT_SYNONYM
@@ -72336,6 +72480,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:193741 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 79731-35-4
@@ -78361,7 +78511,7 @@ ingredients:
     ontology_id: CHEBI:107662
     ontology_label: 7-methoxy-4-methyl-1-benzopyran-2-one
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -78371,6 +78521,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 390807'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:107662''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (UDFPKNSWSYBIHO-UHFFFAOYSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -78403,6 +78562,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:107662 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 2555-28-4
@@ -85097,7 +85262,7 @@ ingredients:
     ontology_id: CHEBI:44303
     ontology_label: L-m-tyrosine
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -85107,6 +85272,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 6950578'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:44303''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (JZKXXXDKRQWDET-QMMMGPOBSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms:
   - synonym_text: (2S)-2-amino-3-(3-hydroxyphenyl)propanoic acid
     synonym_type: EXACT_SYNONYM
@@ -85145,6 +85319,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:44303 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 587-33-7
@@ -90419,7 +90599,7 @@ ingredients:
     ontology_id: CHEBI:30248
     ontology_label: beta-D-Gal-(1->3)-beta-D-GlcNAc-(1->3)-beta-D-Gal-(1->4)-D-Glc
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -90429,6 +90609,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 440993'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:30248''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey (AXQLFFDZXPOFPO-FSGZUBPKSA-N):
+        the record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at
+        creation and so independent of this mapping, resolves in PubChem to the same
+        key ChEBI records for the term. ontology_id is unchanged.'
   synonyms:
   - synonym_text: beta-D-galactopyranosyl-(1->3)-2-acetamido-2-deoxy-beta-D-glucopyranosyl-(1->3)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose
     synonym_type: EXACT_SYNONYM
@@ -90475,6 +90664,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 14116-68-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -96345,7 +96540,7 @@ ingredients:
     ontology_id: CHEBI:25187
     ontology_label: p-menthan-3-ol
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -96355,6 +96550,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 1254'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:25187''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey: the record''s own cas_rn,
+        written from CultureBotHT compounds_to_cas.csv at creation and so independent
+        of this mapping, resolves in PubChem to the same key ChEBI records for the
+        term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -96387,6 +96591,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:25187 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 1490-04-6
@@ -97381,7 +97591,7 @@ ingredients:
     ontology_id: CHEBI:194094
     ontology_label: (E)-4-coumaric acid methyl ester
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -97391,6 +97601,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 5319562'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:194094''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey: the record''s own cas_rn,
+        written from CultureBotHT compounds_to_cas.csv at creation and so independent
+        of this mapping, resolves in PubChem to the same key ChEBI records for the
+        term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -97423,6 +97642,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:194094 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 19367-38-5
@@ -97638,7 +97863,7 @@ ingredients:
     ontology_id: CHEBI:67379
     ontology_label: trans-methylferulate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -97648,6 +97873,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 5357283'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:67379''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey: the record''s own cas_rn,
+        written from CultureBotHT compounds_to_cas.csv at creation and so independent
+        of this mapping, resolves in PubChem to the same key ChEBI records for the
+        term. ontology_id is unchanged.'
   synonyms:
   - synonym_text: methyl (2E)-3-(4-hydroxy-3-methoxyphenyl)prop-2-enoate
     synonym_type: EXACT_SYNONYM
@@ -97683,6 +97917,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:67379 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 22329-76-6
@@ -98250,7 +98490,7 @@ ingredients:
     ontology_id: CHEBI:169463
     ontology_label: 2'-Hydroxy-4',6'-dimethoxy-3'-methylacetophenone
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -98260,6 +98500,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 326186'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:169463''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey: the record''s own cas_rn,
+        written from CultureBotHT compounds_to_cas.csv at creation and so independent
+        of this mapping, resolves in PubChem to the same key ChEBI records for the
+        term. ontology_id is unchanged.'
   synonyms:
   - synonym_text: 1-(2-hydroxy-4,6-dimethoxy-3-methylphenyl)ethanone
     synonym_type: EXACT_SYNONYM
@@ -98295,6 +98544,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:169463 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 23121-32-6
@@ -122996,7 +123251,7 @@ ingredients:
     ontology_id: CHEBI:110187
     ontology_label: 2-amino-3-(4-chlorophenyl)propanoic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -123006,6 +123261,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 4652'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:110187''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey: the record''s own cas_rn,
+        written from CultureBotHT compounds_to_cas.csv at creation and so independent
+        of this mapping, resolves in PubChem to the same key ChEBI records for the
+        term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -123038,6 +123302,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:110187 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 7424-00-2
@@ -143923,7 +144193,7 @@ ingredients:
     ontology_id: CHEBI:94719
     ontology_label: 4-amino-N-(2-quinoxalinyl)benzenesulfonamide
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -143933,6 +144203,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 5338'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#326)
+      notes: 'mapping_quality NARROW_MATCH -> SYNONYM_MATCH. The recorded molecular_formula
+        is identical to CHEBI:94719''s, and a ''parent'' with an identical formula
+        is not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref
+        and filed it as one. Identity confirmed by InChIKey: the record''s own cas_rn,
+        written from CultureBotHT compounds_to_cas.csv at creation and so independent
+        of this mapping, resolves in PubChem to the same key ChEBI records for the
+        term. ontology_id is unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -143966,6 +144245,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:94719 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_identical_formula_parents
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: mapping_quality NARROW_MATCH -> SYNONYM_MATCH (#326); the narrowMatch
+      parent is the same substance, confirmed by InChIKey via the record's own CAS.
     llm_assisted: false
   chemical_properties:
     cas_rn: 59-40-5

@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:90065
   ontology_label: 3-fucosyllactose
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -14,6 +14,15 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CHEBI via PubChem (pubchem-xref)
     notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 16216990'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#326)
+    notes: 'mapping_quality NARROW_MATCH -> EXACT_MATCH. The recorded molecular_formula
+      is identical to CHEBI:90065''s, and a ''parent'' with an identical formula is
+      not a parent — BACKFILL_PARENT_CHEBI found the term via a PubChem xref and filed
+      it as one. Identity confirmed by InChIKey (WJPIUUDKRHCAEL-YVEAQFMBSA-N): the
+      record''s own cas_rn, written from CultureBotHT compounds_to_cas.csv at creation
+      and so independent of this mapping, resolves in PubChem to the same key ChEBI
+      records for the term. ontology_id is unchanged.'
 synonyms:
 - synonym_text: 6-deoxy-alpha-L-galactopyranosyl-(1->3)-[beta-D-galactopyranosyl-(1->4)]-D-glucopyranose
   synonym_type: EXACT_SYNONYM
@@ -62,6 +71,12 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_identical_formula_parents
+  action: REGRADED_PARENT_TO_IDENTITY
+  changes: mapping_quality NARROW_MATCH -> EXACT_MATCH (#326); the narrowMatch parent
+    is the same substance, confirmed by InChIKey via the record's own CAS.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 41312-47-4
   data_source: CultureBotHT compounds_to_cas.csv
