@@ -150,9 +150,19 @@ curation_history:
     parent rather than measured for this record. Water appended in ChEBI's own dot-separated
     notation.
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_scrambled_hydrate_cas
+  action: WITHDREW_WRONG_CAS
+  changes: 'cas_rn ''7791-20-0'' removed (#320/#334). It denotes nickel chloride hexahydrate,
+    which contradicts the hydration state this record''s label states — the #334 scrambling,
+    where one CAS is applied across a salt family regardless of hydration. No verified
+    replacement is available: the record''s term CHEBI:34887 is anhydrous nickel dichloride,
+    so its xref 7718-54-9 is the anhydrous CAS — wrong for a pentahydrate. Cleared
+    rather than substituted, because swapping in a second wrong number would read
+    as a correction while still publishing a false identifier.'
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:34887
 chemical_properties:
-  cas_rn: 7791-20-0
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: Cl2Ni.5H2O
