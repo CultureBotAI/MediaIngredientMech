@@ -46435,17 +46435,29 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
-- identifier: CHEBI:28911
+- identifier: CHEBI:30411
   preferred_term: Cobalamine
   ontology_mapping:
-    ontology_id: CHEBI:28911
-    ontology_label: cob(III)alamin
+    ontology_id: CHEBI:30411
+    ontology_label: cobalamin
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#320/#319)
+      notes: 'identifier and ontology_id CHEBI:28911 -> CHEBI:30411. ChEBI''s live
+        definition of CHEBI:28911 is ''A cobalamin in which the central cobalt atom
+        has an oxidation state of +3'' — it specifies an oxidation state this record''s
+        label does not. ''Cobalamine'' names the vitamer generically, so MAPPING_SEMANTICS
+        §3 step 4 gives it the generic term CHEBI:30411 (''cobalamin''), which was
+        unheld. The record''s own CAS 18534-66-2 is registered by ChEBI against cob(I)alamin
+        — a *third* oxidation state — which is the #320 conflict that surfaced this
+        and is itself evidence the record was never specific to +3. Definition read
+        from the live EBI OLS4 API, since #319 records that the local ChEBI build
+        lacks definitions for some of these terms.'
   synonyms:
   - synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component,
       Simple component'
@@ -46524,6 +46536,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_cobalamin
+    action: REGROUNDED_TO_GENERIC_TERM
+    changes: identifier/ontology_id CHEBI:28911 ('cob(III)alamin') -> CHEBI:30411
+      ('cobalamin') (#320); the term specified oxidation state +3 and the label specifies
+      none. §3 step 4.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 18534-66-2
     data_source: PubChem API
