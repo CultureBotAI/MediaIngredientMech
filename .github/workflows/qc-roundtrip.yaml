@@ -23,6 +23,7 @@ on:
       - "scripts/aggregate_records.py"
       - "scripts/verify_roundtrip.py"
       - "scripts/export_individual_records.py"
+      - "scripts/check_record_filename_case.py"
       # The no-op assertion below compares emitted bytes, and save_yaml decides
       # those bytes. A PR changing only its dump kwargs would otherwise skip
       # this gate and land, after which every export diffs the whole corpus.
@@ -37,6 +38,7 @@ on:
       - "scripts/aggregate_records.py"
       - "scripts/verify_roundtrip.py"
       - "scripts/export_individual_records.py"
+      - "scripts/check_record_filename_case.py"
       # The no-op assertion below compares emitted bytes, and save_yaml decides
       # those bytes. A PR changing only its dump kwargs would otherwise skip
       # this gate and land, after which every export diffs the whole corpus.
@@ -68,6 +70,15 @@ jobs:
         # PyYAML that changes Emitter line-wrapping would turn the whole corpus
         # red with zero data change. uv.lock pins the emitter.
         run: uv sync --frozen
+
+      # Runs BEFORE the export steps, on the tree as committed. A record file
+      # whose name drifts in case only is invisible to `git status` on macOS —
+      # where most curation happens — and only materialises here, as a second
+      # file for one record. It surfaced three times as a confusing failure in
+      # some *other* artifact (a stale ingredients.json, an apparent lost
+      # record) rather than as the rename it actually was. Issue #352.
+      - name: Check per-record filenames match what git tracks (case-exact)
+        run: python3 scripts/check_record_filename_case.py
 
       - name: Aggregate per-record files to a temp collection
         run: |
