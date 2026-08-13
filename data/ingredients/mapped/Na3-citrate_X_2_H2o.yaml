@@ -55,10 +55,13 @@ synonyms:
 - synonym_text: Trisodium citrate x 2 H2O
   synonym_type: RAW_TEXT
   source: MERGED_FROM_kgmicrobe.compound:trisodium_citrate_x_2_h2o
+- synonym_text: Sodium Citrate
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:53258
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 65
-  media_count: 65
+  total_occurrences: 76
+  media_count: 76
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -137,6 +140,14 @@ curation_history:
     has no term for this hydrate — the record's own CAS 6132-04-3 is registered by
     ChEBI against CHEBI:32142 'sodium citrate dihydrate'. Occurrences 14/14 + 51/51
     -> 65/65. Raw label kept as a RAW_TEXT synonym.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: MERGED_FROM
+  changes: 'Absorbed ''Sodium Citrate'' (#320), whose CAS 6132-04-3 is registered
+    against CHEBI:32142 — the dihydrate of the generic term it sat on. Per the #320
+    decision the CAS governs, and this record already holds that term. Occurrences
+    65/65 + 11/11 -> 76/76.'
   llm_assisted: false
 kg_microbe_node_id: CHEBI:32142
 chemical_properties:

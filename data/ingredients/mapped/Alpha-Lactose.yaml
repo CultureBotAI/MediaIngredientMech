@@ -1,14 +1,24 @@
-identifier: CHEBI:36219
+identifier: CHEBI:189432
 preferred_term: alpha-Lactose
 ontology_mapping:
-  ontology_id: CHEBI:36219
-  ontology_label: alpha-lactose
+  ontology_id: CHEBI:189432
+  ontology_label: Alpha-lactose monohydrate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: 'identifier/ontology_id CHEBI:36219 (''alpha-lactose'') -> CHEBI:189432
+      (''Alpha-lactose monohydrate''). The record''s own cas_rn 5989-81-1 is registered
+      by ChEBI against CHEBI:189432, which is the monohydrate of the term the record
+      previously carried. Curation decision on #320: where the CAS names a more specific
+      FORM than the label, the CAS governs — the recipe is taken to mean the substance
+      actually weighed out. These surfaced as ''unrelated'' in the ancestry triage
+      only because ChEBI does not model salt-of / hydrate-of / racemate-of as subsumption,
+      the same gap #342 recorded for hydrates.'
 synonyms:
 - synonym_text: beta-D-galactopyranosyl-(1->4)-alpha-D-glucopyranose
   synonym_type: EXACT_SYNONYM
@@ -54,6 +64,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: REGROUNDED_TO_CAS_SPECIFIC_FORM
+  changes: identifier/ontology_id CHEBI:36219 -> CHEBI:189432 'Alpha-lactose monohydrate'
+    (#320); the record's CAS 5989-81-1 denotes the monohydrate. mapping_quality ->
+    SYNONYM_MATCH.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 5989-81-1
   data_source: CultureBotHT compounds_to_cas.csv

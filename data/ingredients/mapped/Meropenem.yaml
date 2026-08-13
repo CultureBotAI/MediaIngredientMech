@@ -1,14 +1,24 @@
-identifier: CHEBI:43968
+identifier: CHEBI:6770
 preferred_term: Meropenem
 ontology_mapping:
-  ontology_id: CHEBI:43968
-  ontology_label: meropenem
+  ontology_id: CHEBI:6770
+  ontology_label: meropenem trihydrate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#320)
+    notes: 'identifier/ontology_id CHEBI:43968 (''meropenem'') -> CHEBI:6770 (''meropenem
+      trihydrate''). The record''s own cas_rn 119478-56-7 is registered by ChEBI against
+      CHEBI:6770, which is the trihydrate of the term the record previously carried.
+      Curation decision on #320: where the CAS names a more specific FORM than the
+      label, the CAS governs — the recipe is taken to mean the substance actually
+      weighed out. These surfaced as ''unrelated'' in the ancestry triage only because
+      ChEBI does not model salt-of / hydrate-of / racemate-of as subsumption, the
+      same gap #342 recorded for hydrates.'
 synonyms:
 - synonym_text: (6S)-2-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]sulfanyl}-6-[(1R)-1-hydroxyethyl]-1beta-methyl-2,3-didehydro-1-carbapenam-3-carboxylic
     acid
@@ -51,6 +61,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_cas_specific_form
+  action: REGROUNDED_TO_CAS_SPECIFIC_FORM
+  changes: identifier/ontology_id CHEBI:43968 -> CHEBI:6770 'meropenem trihydrate'
+    (#320); the record's CAS 119478-56-7 denotes the trihydrate. mapping_quality ->
+    SYNONYM_MATCH.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 119478-56-7
   data_source: CultureBotHT compounds_to_cas.csv

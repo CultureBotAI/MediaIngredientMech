@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-13T19:13:39.943646+00:00
+Generated: 2026-08-13T19:42:35.438522+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -230,7 +230,7 @@ Total: 2841 ingredients
 | CHEBI:62240 | CHEBI:62240 | 1-phenazinecarboxamide | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:36018 | CHEBI:36018 | 1,1,2-Trichloroethane | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:16997 | CHEBI:16997 | 1,2-Propanediol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:142468 | CHEBI:142468 | 1,2-Dichloropropane | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:82163 | CHEBI:82163 | 1,2-Dichloropropane | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:52683 | CHEBI:52683 | 1,3-Butandiol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | cas:21531-91-9 | cas:21531-91-9 | 1,3-Hexanediol | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:16109 | CHEBI:16109 | 1,3-Propanediol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -418,7 +418,7 @@ Total: 2841 ingredients
 | CHEBI:40279 | CHEBI:40279 | Allopurinol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:172687 | CHEBI:172687 | Allura Red AC | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:73222 | CHEBI:73222 | Aloin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:36219 | CHEBI:36219 | alpha-Lactose | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:189432 | CHEBI:189432 | alpha-Lactose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:9643 | CHEBI:9643 | Alpha-Toxicarol (Dl) | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17925 | CHEBI:17925 | alpha-D-Glucose | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:30915 | CHEBI:30915 | alpha-ketoglutaric acid | MAPPED | CHEBI | EXACT_MATCH | 4 |
@@ -528,7 +528,7 @@ Total: 2841 ingredients
 | CHEBI:17484 | CHEBI:17484 | Benzyl isothiocyanate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:25979 | CHEBI:25979 | Benzylcyanide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:3287-99-8 | cas:3287-99-8 | Benzylhydrazine Hydrochloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:16118 | CHEBI:16118 | Berberine | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:31271 | CHEBI:31271 | Berberine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18293 | CHEBI:18293 | Bergapten | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:69499 | CHEBI:69499 | Bergenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:53502 | CHEBI:53502 | beryllium sulfate tetrahydrate | MAPPED | CHEBI | EXACT_MATCH | 1 |
@@ -613,7 +613,7 @@ Total: 2841 ingredients
 | CHEBI:3393 | CHEBI:3393 | Carbenicillin | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:34609 | CHEBI:34609 | Carbenicillin disodium salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16526 | CHEBI:16526 | Carbon dioxide gas | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:85146 | CHEBI:85146 | Carboxymethyl cellulose | MAPPED | CHEBI | EXACT_MATCH | 4 |
+| CHEBI:234035 | CHEBI:234035 | Carboxymethyl cellulose | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
 | FOODON:03460374 | FOODON:03460374 | Carboxymethyl cellulose (sodium salt) | MAPPED | FOODON | LEXICAL_MATCH | 0 |
 | kgmicrobe.compound:carcinomycin | kgmicrobe.compound:carcinomycin | Carcinomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | cas:461-06-3 | CHEBI:17126 | Carnitine (Dl) Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1166,7 +1166,7 @@ Total: 2841 ingredients
 | mesh:C001493 | mesh:C001493 | Kanchanomycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:kao_and_michayluk_vitamin_solution | MICRO:0000460 | Kao and Michayluk vitamin solution | MAPPED | MICRO | CLOSE_MATCH | 0 |
 | CHEBI:166631 | CHEBI:166631 | Karanjin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:6117 | CHEBI:6117 | Kawain | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:156288 | CHEBI:156288 | Kawain | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:32030 | CHEBI:32030 | KBr | MAPPED | CHEBI | EXACT_MATCH | 295 |
 | CHEBI:32588 | CHEBI:32588 | KCl | MAPPED | CHEBI | EXACT_MATCH | 2775 |
 | mesh:C008231 | mesh:C008231 | Ketomycin | MAPPED | MESH | EXACT_MATCH | 0 |
@@ -1332,7 +1332,7 @@ Total: 2841 ingredients
 | CHEBI:63928 | CHEBI:63928 | Menadione sodium bisulfate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1490-04-6 | CHEBI:25187 | Menthol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:31823 | CHEBI:31823 | mercury (II) chloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:43968 | CHEBI:43968 | Meropenem | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:6770 | CHEBI:6770 | Meropenem | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:39010 | CHEBI:39010 | MES | MAPPED | CHEBI | EXACT_MATCH | 72 |
 | CHEBI:39005 | CHEBI:39005 | MES [2-(N-morpholino) ethane sulfonic acid] | MAPPED | CHEBI | SYNONYM_MATCH | 16 |
 | CHEBI:17113 | CHEBI:17113 | meso-Erythritol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -1361,7 +1361,7 @@ Total: 2841 ingredients
 | cas:23121-32-6 | CHEBI:169463 | Methylxanthoxylin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:6909 | CHEBI:6909 | Metronidazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1915-67-9 | mesh:C554989 | Mexicanolide | MAPPED | MESH | NARROW_MATCH | 0 |
-| CHEBI:131389 | CHEBI:131389 | Mg-citrate | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
+| CHEBI:131391 | CHEBI:131391 | Mg-citrate | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
 | CHEBI:6636 | CHEBI:6636 | MgCl2 | MAPPED | CHEBI | EXACT_MATCH | 247 |
 | CHEBI:131394 | CHEBI:131394 | MgCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 18 |
 | CHEBI:86345 | CHEBI:86345 | MgCl2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 2285 |
@@ -1484,7 +1484,7 @@ Total: 2841 ingredients
 | CHEBI:32586 | CHEBI:32586 | Na2SO4 x 10 H2O | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:63940 | CHEBI:63940 | Na2WO4 | MAPPED | CHEBI | SYNONYM_MATCH | 108 |
 | CHEBI:63939 | CHEBI:63939 | Na2WO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 1398 |
-| CHEBI:32142 | CHEBI:32142 | Na3-citrate x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 65 |
+| CHEBI:32142 | CHEBI:32142 | Na3-citrate x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 76 |
 | CHEBI:63125 | CHEBI:63125 | Na3-EDTA | MAPPED | CHEBI | EXACT_MATCH | 25 |
 | CHEBI:35607 | CHEBI:35607 | Na3VO4 | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:64220 | CHEBI:64220 | Na glutamate | MAPPED | CHEBI | EXACT_MATCH | 124 |
@@ -1801,7 +1801,7 @@ Total: 2841 ingredients
 | CHEBI:78667 | CHEBI:78667 | Sodium Chlorite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:206986-87-0 | CHEBI:26711 | Sodium cholate hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:78671 | CHEBI:78671 | Sodium Chromate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:53258 | CHEBI:53258 | Sodium Citrate | MAPPED | CHEBI | EXACT_MATCH | 11 |
+| CHEBI:32142 | CHEBI:53258 | Sodium Citrate | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33192 | CHEBI:33192 | Sodium cyanide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:920-49-0 | cas:920-49-0 | Sodium D-Lactate | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:9177 | CHEBI:9177 | sodium Deoxycholate | MAPPED | CHEBI | EXACT_MATCH | 0 |
