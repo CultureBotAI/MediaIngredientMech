@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-13T07:53:16.105819+00:00
+Generated: 2026-08-13T08:14:32.020895+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -376,7 +376,7 @@ Total: 2841 ingredients
 | kgmicrobe.compound:abyssomicin_g | kgmicrobe.compound:abyssomicin_g | Abyssomicin G | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | kgmicrobe.compound:abyssomicin_h | kgmicrobe.compound:abyssomicin_h | Abyssomicin H | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:15335 | CHEBI:15335 | Acacetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:39061 | CHEBI:39061 | ACES | MAPPED | CHEBI | EXACT_MATCH | 8 |
+| CHEBI:39060 | CHEBI:39061 | ACES | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15343 | CHEBI:15343 | acetaldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30089 | CHEBI:30089 | Acetate | MAPPED | CHEBI | EXACT_MATCH | 44 |
 | CHEBI:30089 | CHEBI:30089 | Acetate (carbon source) | REJECTED | CHEBI | EXACT_MATCH | 0 |
@@ -542,8 +542,8 @@ Total: 2841 ingredients
 | cas:590-46-5 | CHEBI:17750 | Betaine hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:17750 | CHEBI:17750 | Betaine x H2O | MAPPED | CHEBI | EXACT_MATCH | 20 |
 | CHEBI:3080 | CHEBI:3080 | Betanin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:39065 | CHEBI:39065 | Bicine | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:40957 | CHEBI:40957 | BICINE buffer | MAPPED | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:40957 | CHEBI:39065 | Bicine | REJECTED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:40957 | CHEBI:40957 | BICINE buffer | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:60584 | CHEBI:60584 | Bicyclomycin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:22868 | CHEBI:22868 | Bile salts | MAPPED | CHEBI | LEXICAL_MATCH | 0 |
 | NCIT:C187267 | NCIT:C187267 | Bimuno | MAPPED | NCIT | EXACT_MATCH | 0 |
@@ -1087,7 +1087,7 @@ Total: 2841 ingredients
 | CHEBI:5633 | CHEBI:5633 | Hecogenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2540 | CHEBI:2540 | Helenine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:230519 | CHEBI:230519 | Heparin sodium salt from porcine intestinal mucosa | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:46756 | CHEBI:46756 | HEPES | MAPPED | CHEBI | EXACT_MATCH | 168 |
+| CHEBI:42334 | CHEBI:42334 | HEPES | MAPPED | CHEBI | EXACT_MATCH | 168 |
 | CHEBI:16148 | CHEBI:16148 | Heptadecane | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:32365 | CHEBI:32365 | heptadecanoic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45571 | CHEBI:45571 | Heptanoic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1415,7 +1415,7 @@ Total: 2841 ingredients
 | CHEBI:21547 | CHEBI:21547 | N-Acetyl-L-aspartic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:21553 | CHEBI:21553 | N-Acetyl-L-glutamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17724 | CHEBI:17724 | N-N Dimethyl glycine | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:39060 | CHEBI:39060 | N-(2-acetamido)-2-aminoethanesulfonic acid | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:39060 | CHEBI:39060 | N-(2-acetamido)-2-aminoethanesulfonic acid | MAPPED | CHEBI | EXACT_MATCH | 9 |
 | CHEBI:8006 | CHEBI:8006 | N-Acetyl-D-glucosamine | MAPPED | CHEBI | SYNONYM_MATCH | 9 |
 | CHEBI:59640 | CHEBI:59640 | N-Acetylglucosamine | MAPPED | CHEBI | EXACT_MATCH | 35 |
 | CHEBI:47965 | CHEBI:47965 | N-acetylmuramic acid | MAPPED | CHEBI | EXACT_MATCH | 1 |

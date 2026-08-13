@@ -16,10 +16,13 @@ synonyms:
 - synonym_text: N-(carbamoylmethyl)taurine
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: ACES
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:39061
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1
-  media_count: 1
+  total_occurrences: 9
+  media_count: 9
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -65,6 +68,14 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_buffer_class_duplicates
+  action: MERGED_FROM
+  changes: Absorbed 'ACES', which sat on the structureless grouping class CHEBI:39061
+    (#320/#334). Same buffer under a trivial name; the class term carried no structure,
+    so lexical matching had nothing to distinguish it from this record. Occurrences
+    1/1 + 8/8 -> 9/9. Trivial name kept as a RAW_TEXT synonym.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7365-82-4
   data_source: PubChem API

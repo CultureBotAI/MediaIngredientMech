@@ -1,4 +1,4 @@
-identifier: CHEBI:39061
+identifier: CHEBI:39060
 preferred_term: ACES
 ontology_mapping:
   ontology_id: CHEBI:39061
@@ -10,10 +10,10 @@ ontology_mapping:
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
 synonyms: []
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 8
-  media_count: 8
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -62,6 +62,12 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_buffer_class_duplicates
+  action: MERGED_INTO
+  changes: Merged into CHEBI:39060 'N-(2-acetamido)-2-aminoethanesulfonic acid'; occurrences
+    transferred. Tombstoned REJECTED, SSSOM rows dropped (#320/#334).
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7365-82-4
   data_source: PubChem API

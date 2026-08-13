@@ -22031,7 +22031,7 @@ ingredients:
     inchi: InChI=1S/C16H12O5/c1-20-11-4-2-9(3-5-11)14-8-13(19)16-12(18)6-10(17)7-15(16)21-14/h2-8,17-18H,1H3
     smiles: COc1ccc(-c2cc(=O)c3c(O)cc(O)cc3o2)cc1
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:39061
+- identifier: CHEBI:39060
   preferred_term: ACES
   ontology_mapping:
     ontology_id: CHEBI:39061
@@ -22043,10 +22043,10 @@ ingredients:
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
   synonyms: []
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 8
-    media_count: 8
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -22095,6 +22095,12 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_buffer_class_duplicates
+    action: MERGED_INTO
+    changes: Merged into CHEBI:39060 'N-(2-acetamido)-2-aminoethanesulfonic acid';
+      occurrences transferred. Tombstoned REJECTED, SSSOM rows dropped (#320/#334).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7365-82-4
     data_source: PubChem API
@@ -33551,7 +33557,7 @@ ingredients:
     inchi: InChI=1S/C24H26N2O13/c27-8-17-18(29)19(30)20(31)24(39-17)38-16-6-10-5-14(23(36)37)26(13(10)7-15(16)28)2-1-9-3-11(21(32)33)25-12(4-9)22(34)35/h1-3,6-7,12,14,17-20,24,27,29-31H,4-5,8H2,(H4,28,32,33,34,35,36,37)/t12-,14-,17+,18+,19-,20+,24+/m0/s1
     smiles: O=C(O)C1=C/C(=C/C=[N+]2/c3cc(O)c(O[C@@H]4O[C@H](CO)[C@@H](O)[C@H](O)[C@H]4O)cc3C[C@H]2C(=O)[O-])C[C@@H](C(=O)O)N1
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:39065
+- identifier: CHEBI:40957
   preferred_term: Bicine
   ontology_mapping:
     ontology_id: CHEBI:39065
@@ -33567,10 +33573,10 @@ ingredients:
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 3
-    media_count: 3
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -33607,6 +33613,12 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_buffer_class_duplicates
+    action: MERGED_INTO
+    changes: Merged into CHEBI:40957 'BICINE buffer'; occurrences transferred. Tombstoned
+      REJECTED, SSSOM rows dropped (#320/#334).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 150-25-4
     data_source: PubChem API
@@ -33634,10 +33646,13 @@ ingredients:
   - synonym_text: N,N-bis(2-hydroxyethyl)glycine
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Bicine
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:39065
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
+    total_occurrences: 5
+    media_count: 5
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -33687,6 +33702,14 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_buffer_class_duplicates
+    action: MERGED_FROM
+    changes: Absorbed 'Bicine', which sat on the structureless grouping class CHEBI:39065
+      (#320/#334). Same buffer under a trivial name; the class term carried no structure,
+      so lexical matching had nothing to distinguish it from this record. Occurrences
+      2/2 + 3/3 -> 5/5. Trivial name kept as a RAW_TEXT synonym.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 150-25-4
     data_source: PubChem API
@@ -76545,17 +76568,24 @@ ingredients:
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:46756
+- identifier: CHEBI:42334
   preferred_term: HEPES
   ontology_mapping:
-    ontology_id: CHEBI:46756
-    ontology_label: HEPES
+    ontology_id: CHEBI:42334
+    ontology_label: 2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic acid
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#320)
+      notes: Re-grounded CHEBI:46756 -> CHEBI:42334. CHEBI:46756 is a structureless
+        grouping class; the record's own cas_rn 7365-45-9 is registered in ChEBI against
+        CHEBI:42334, which carries a structure and the trivial name 'HEPES' as a synonym.
+        The label names one specific buffer, so §3 step 1 applies rather than the
+        under-specified-parent rule.
   synonyms:
   - synonym_text: 'Role: Buffer; Properties: Defined component, Organic compound,
       Simple component'
@@ -76673,6 +76703,12 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_buffer_classes
+    action: REGROUNDED_FROM_CLASS_TERM
+    changes: ontology_id CHEBI:46756 -> CHEBI:42334 '2-[4-(2-hydroxyethyl)piperazin-1-yl]ethanesulfonic
+      acid' (#320); CAS 7365-45-9 confirms the specific term.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7365-45-9
     data_source: PubChem API
@@ -103784,10 +103820,13 @@ ingredients:
   - synonym_text: N-(carbamoylmethyl)taurine
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: ACES
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:39061
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 1
-    media_count: 1
+    total_occurrences: 9
+    media_count: 9
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -103833,6 +103872,14 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_buffer_class_duplicates
+    action: MERGED_FROM
+    changes: Absorbed 'ACES', which sat on the structureless grouping class CHEBI:39061
+      (#320/#334). Same buffer under a trivial name; the class term carried no structure,
+      so lexical matching had nothing to distinguish it from this record. Occurrences
+      1/1 + 8/8 -> 9/9. Trivial name kept as a RAW_TEXT synonym.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7365-82-4
     data_source: PubChem API
