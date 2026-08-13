@@ -23,6 +23,12 @@ curation_history:
   changes: primary UNMAPPED_0117 → MICRO:0000595 via name normalization to 'Brucella
     agar'
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'agar')
+    (#323)
+  llm_assisted: false
 notes: Extracted from over-conflated Agar.yaml synonyms
 ontology_mapping:
   ontology_id: MICRO:0000595
@@ -34,3 +40,4 @@ ontology_mapping:
     source: MICRO via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0117; matched via 'Brucella agar' (name normalization);
       label-exact
+ingredient_type: UNDEFINED_MIXTURE

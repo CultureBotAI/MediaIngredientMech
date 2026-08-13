@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0646 -> CHEBI:75273 "sodium tetradecyl sulfate" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:niaproof); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -42,3 +48,4 @@ ontology_mapping:
       4' is a registered synonym of CHEBI:75273 in the local ChEBI build. Used as
       a surfactant in Biolog phenotype plates, which matches this record's BacDive
       provenance (#213).
+ingredient_type: SINGLE_INGREDIENT

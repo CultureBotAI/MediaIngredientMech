@@ -38,6 +38,12 @@ curation_history:
     not obsolete; 4,4''-dihydroxybiphenyl is the same compound under an alternative
     name, so mapping_quality CLOSE_MATCH is left as is.'
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_dihydroxy_biphenyl);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -56,3 +62,4 @@ ontology_mapping:
       is the compound. CLOSE_MATCH because the label lost the second locant, matching
       the treatment of 3-butanediol and 2-dimethylsuccinic acid earlier in this issue
       (#213).'
+ingredient_type: SINGLE_INGREDIENT

@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0713 -> CHEBI:17464 "L-galactono-1,4-lactone" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_galactonic_acid_gamma_lactone);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -40,3 +46,4 @@ ontology_mapping:
     source: MIM curation (#213)
     notes: L-galactonic acid gamma-lactone is L-galactono-1,4-lactone; the gamma-lactone
       is the 1,4-lactone (#213).
+ingredient_type: SINGLE_INGREDIENT

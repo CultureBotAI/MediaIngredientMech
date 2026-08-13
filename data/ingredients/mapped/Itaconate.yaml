@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0638 -> CHEBI:17240 "itaconate(2-)" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:itaconate); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -43,3 +49,4 @@ ontology_mapping:
       bare-name CHEBI class where one exists (succinate, acetate, lactate); this acid
       has none, so the fully-deprotonated conjugate base is the correct target. Naive
       first-match enumeration would have picked the mono-anion (#213).
+ingredient_type: SINGLE_INGREDIENT

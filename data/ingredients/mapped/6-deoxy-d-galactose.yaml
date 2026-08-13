@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0793 -> CHEBI:2179 "D-fucopyranose" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:6_deoxy_d_galactose);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -39,3 +45,4 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#213)
     notes: 6-deoxy-D-galactose is D-fucose; CHEBI:2179 is its pyranose form (#213).
+ingredient_type: SINGLE_INGREDIENT
