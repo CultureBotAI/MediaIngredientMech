@@ -29,10 +29,13 @@ synonyms:
 - synonym_text: Cobalt(II) chloride--water (1/7)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: CoCl2 x 6 H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:35696
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 123
-  media_count: 123
+  total_occurrences: 2388
+  media_count: 173
 curation_history:
 - timestamp: '2026-04-07T10:19:09.320352+00:00'
   curator: feba_ontology_enrichment_batch
@@ -73,6 +76,14 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_hydrate_collapse
+  action: MERGED_FROM
+  changes: Absorbed 'CoCl2 x 6 H2O', which sat on the anhydrous term CHEBI:35696 (#321/#334).
+    Same substance in formula notation — a form the merge pass does not recognise,
+    so it escaped dedup and was then grounded to the nearest lexical match. Occurrences
+    123/123 + 2265/50 -> 2388/173. Raw label kept as a RAW_TEXT synonym.
+  llm_assisted: false
 notes: Created from FEBA ontology enrichment workflow. Used in 123 FEBA media formulations.
 chemical_properties:
   cas_rn: 7791-13-1
