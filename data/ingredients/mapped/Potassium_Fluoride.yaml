@@ -9,11 +9,17 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT.
-synonyms: []
+synonyms:
+- synonym_text: KF
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:73605 (#346)
+- synonym_text: K-F
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:73605 (#346)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 4
+  media_count: 4
 curation_history:
 - timestamp: '2026-04-29T06:04:17.380972+00:00'
   curator: audit_integrate_culturebotht
@@ -36,6 +42,19 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_comma_split_d_record
+  action: MERGED_FROM
+  changes: 'Absorbed ''KF'' (#346). ''KF'' is potassium fluoride, not a dipeptide.
+    It was mapped to CHEBI:73605 ''Lys-Phe'' because K and F are the one-letter codes
+    for lysine and phenylalanine — the same false-friend match that put ''D'' on L-aspartic
+    acid residue. The record''s own synonyms give it away: it carries ''Role: Mineral
+    source'' and ''K-F''. Its cas_rn 6235-35-4 was then derived FROM the wrong term
+    (curation history: ''Added CAS-RN 6235-35-4 from PubChem (via CHEBI:73605)''),
+    so the CAS is downstream of the error rather than independent evidence against
+    it — the same cascade as ''D''. Potassium fluoride is CHEBI:66872, already held
+    by this record. Occurrences 0/0 + 4/4 -> 4/4.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 7789-23-3

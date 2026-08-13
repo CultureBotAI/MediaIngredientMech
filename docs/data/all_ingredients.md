@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-13T19:42:35.438522+00:00
+Generated: 2026-08-13T20:24:19.735437+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -811,7 +811,7 @@ Total: 2841 ingredients
 | CHEBI:16296 | CHEBI:16296 | D-tryptophan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:65327 | CHEBI:65327 | D-Xylose | MAPPED | CHEBI | EXACT_MATCH | 14 |
 | cas:66768-39-6 | CHEBI:37492 | D-xylose 5-phosphate lithium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:29958 | CHEBI:29958 | D | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:75228 | CHEBI:29958 | D | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:19741-14-1 | cas:19741-14-1 | DAMPA | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:116509 | CHEBI:116509 | DCMU | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | cas:372965-00-9 | CHEBI:77707 | DEANONOate | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1170,7 +1170,7 @@ Total: 2841 ingredients
 | CHEBI:32030 | CHEBI:32030 | KBr | MAPPED | CHEBI | EXACT_MATCH | 295 |
 | CHEBI:32588 | CHEBI:32588 | KCl | MAPPED | CHEBI | EXACT_MATCH | 2775 |
 | mesh:C008231 | mesh:C008231 | Ketomycin | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:73605 | CHEBI:73605 | KF | MAPPED | CHEBI | EXACT_MATCH | 4 |
+| CHEBI:66872 | CHEBI:73605 | KF | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63036 | CHEBI:63036 | KH2PO4 | MAPPED | CHEBI | EXACT_MATCH | 3862 |
 | CHEBI:81862 | CHEBI:81862 | KHCO3 | MAPPED | CHEBI | EXACT_MATCH | 16 |
 | CHEBI:8346 | CHEBI:8346 | KI | MAPPED | CHEBI | SYNONYM_MATCH | 128 |
@@ -1661,7 +1661,7 @@ Total: 2841 ingredients
 | cas:74978-20-4 | NCIT:C83530 | Potassium aluminum chloride | MAPPED | NCIT | NARROW_MATCH | 2 |
 | cas:1030365-02-6 | CHEBI:15584 | potassium citramalate monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:53444 | CHEBI:53444 | Potassium dichromate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:66872 | CHEBI:66872 | potassium fluoride | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:66872 | CHEBI:66872 | potassium fluoride | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | cas:12208-13-8 | cas:12208-13-8 | potassium hexahydroxoantimonate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:6487-48-5 | NCIT:C87592 | Potassium oxalate monohydrate | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:potassium_phosphate_buffer | NCIT:C29321 | Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 2 |
@@ -1822,7 +1822,7 @@ Total: 2841 ingredients
 | CHEBI:234594 | CHEBI:234594 | Sodium iodoacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1562-00-1 | cas:1562-00-1 | sodium isethionate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:867561 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:75228 | CHEBI:75228 | Sodium lactate | MAPPED | CHEBI | EXACT_MATCH | 190 |
+| CHEBI:75228 | CHEBI:75228 | Sodium lactate | MAPPED | CHEBI | EXACT_MATCH | 191 |
 | CHEBI:29678 | CHEBI:29678 | Sodium m-arsenite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:91261 | CHEBI:91261 | Sodium malate | MAPPED | CHEBI | EXACT_MATCH | 50 |
 | CHEBI:91263 | CHEBI:91263 | Sodium maleate | MAPPED | CHEBI | EXACT_MATCH | 2 |
