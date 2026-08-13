@@ -70,8 +70,16 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''D'' -> ''L-aspartic acid residue'': synced to canonical
     CHEBI label (preferred_term ''D'' unchanged).'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_wrong_compound_cas
+  action: WITHDREW_WRONG_CAS
+  changes: 'cas_rn ''138-86-3'' removed (#320). It denotes limonene, a different substance
+    from the one this record names. No verified replacement: CHEBI:29958 ''L-aspartic
+    acid residue'' carries no CAS xref, and this record is broken beyond its CAS:
+    a single-character label mapped to an amino-acid residue. The label and mapping
+    need an upstream source. Cleared rather than guessed.'
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 138-86-3
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-05T21:48:44.974138+00:00'
   molecular_formula: C4H5NO3
