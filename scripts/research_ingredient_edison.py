@@ -56,7 +56,6 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
@@ -95,7 +94,16 @@ def load_api_key() -> str:
 
     The SDK natively reads ``EDISON_PLATFORM_API_KEY``; this repo's
     ``.env`` sets ``EDISON_API_KEY``. Honor both.
+
+    ``python-dotenv`` is imported here rather than at module scope because it
+    lives in the ``dev`` extra, while the test workflow installs only the base
+    dependencies. A module-level import makes this file unimportable there, so
+    merely *testing* a pure function like ``_terminal_api_error`` would need the
+    whole Edison toolchain present. It is needed only when a key is actually
+    being read, which is only when the script really runs.
     """
+    from dotenv import load_dotenv
+
     load_dotenv(REPO_ROOT / ".env")
     key = os.environ.get("EDISON_PLATFORM_API_KEY") or os.environ.get("EDISON_API_KEY")
     if not key:
