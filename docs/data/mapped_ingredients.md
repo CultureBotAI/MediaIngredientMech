@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-13T19:42:35.433437+00:00
+Generated: 2026-08-13T20:17:14.797574+00:00
 Total: 2497 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -811,7 +811,7 @@ Total: 2497 ingredients
 | CHEBI:16296 | CHEBI:16296 | D-tryptophan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:65327 | CHEBI:65327 | D-Xylose | MAPPED | CHEBI | EXACT_MATCH | 14 |
 | cas:66768-39-6 | CHEBI:37492 | D-xylose 5-phosphate lithium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:29958 | CHEBI:29958 | D | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:75228 | CHEBI:29958 | D | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:19741-14-1 | cas:19741-14-1 | DAMPA | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:116509 | CHEBI:116509 | DCMU | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | cas:372965-00-9 | CHEBI:77707 | DEANONOate | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -1822,7 +1822,7 @@ Total: 2497 ingredients
 | CHEBI:234594 | CHEBI:234594 | Sodium iodoacetate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1562-00-1 | cas:1562-00-1 | sodium isethionate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:867561 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:75228 | CHEBI:75228 | Sodium lactate | MAPPED | CHEBI | EXACT_MATCH | 190 |
+| CHEBI:75228 | CHEBI:75228 | Sodium lactate | MAPPED | CHEBI | EXACT_MATCH | 191 |
 | CHEBI:29678 | CHEBI:29678 | Sodium m-arsenite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:91261 | CHEBI:91261 | Sodium malate | MAPPED | CHEBI | EXACT_MATCH | 50 |
 | CHEBI:91263 | CHEBI:91263 | Sodium maleate | MAPPED | CHEBI | EXACT_MATCH | 2 |

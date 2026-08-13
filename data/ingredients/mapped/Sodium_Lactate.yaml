@@ -100,10 +100,16 @@ synonyms:
 - synonym_text: 1 % Sodium Lactate
   synonym_type: RAW_TEXT
   source: microbedecoder
+- synonym_text: D,L-lactic acid, sodium salt
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:29958 (#346)
+- synonym_text: (L-lactic acid, sodium salt)
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:29958 (#346)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 190
-  media_count: 136
+  total_occurrences: 191
+  media_count: 137
   source_occurrences:
   - source: microbedecoder
     count: 2
@@ -277,6 +283,22 @@ curation_history:
     concentration-prefixed duplicate of sodium lactate. No new SSSOM row; CHEBI:75228
     is already mapped. Source: kgmicrobe.trait:1_sodium_lactate.'
   llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_comma_split_d_record
+  action: MERGED_FROM
+  changes: 'Absorbed the record labelled ''D'' (#346). The label ''D'' is not an ingredient
+    name: it is the head of a comma-split. This record''s own RAW_TEXT synonym, carried
+    over from CultureMech, is ''(L-lactic acid, sodium salt)'' — so the source label
+    was ''D,L-lactic acid, sodium salt'', split at the first comma into ''D'' and
+    the remainder. That is DL-lactic acid sodium salt, i.e. stereo-unspecified sodium
+    lactate, which is CHEBI:75228 and is already held by this record. Everything downstream
+    of the split was then derived from the orphaned ''D'': cas_rn 138-86-3 (LIMONENE)
+    came from fuzzy-matching ''D'' in CultureBotHT compounds_to_cas.csv, and the CHEBI:29958
+    ''L-aspartic acid residue'' mapping from matching the one-letter amino-acid code
+    for aspartate. Three fields, three unrelated substances, all artefacts of one
+    split. Occurrences 190/136 + 1/1 -> 191/137. Both the raw split label and the
+    reconstructed source label kept as RAW_TEXT synonyms.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 72-17-3
   data_source: OAK/CHEBI xref
