@@ -4,11 +4,18 @@ ontology_mapping:
   ontology_id: CHEBI:85248
   ontology_label: gellan gum
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:85248 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      'Gelrite' does not equal the term label 'gellan gum'. EXACT_MATCH therefore
+      asserted an identity the pair does not have. Re-graded because trade name for
+      gellan gum.
 synonyms:
 - synonym_text: 'Role: Solidifying component; Properties: Organic compound, Undefined
     component'
@@ -87,6 +94,12 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT ->
     physicochemical_roles.SOLIDIFYING_AGENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); trade name for gellan
+    gum.
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:85248
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:

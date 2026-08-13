@@ -4,11 +4,18 @@ ontology_mapping:
   ontology_id: CHEBI:16991
   ontology_label: deoxyribonucleic acid
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: 'mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:16991 carries no structural
+      definition, so it is a class rather than an individual, and the record''s label
+      ''Fish-Sperm DNA'' does not equal the term label ''deoxyribonucleic acid''.
+      EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded
+      because source-qualified: the term is DNA generally.'
 synonyms:
 - synonym_text: (Deoxyribonucleotide)m
   synonym_type: EXACT_SYNONYM
@@ -100,6 +107,12 @@ curation_history:
     occurrences +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
     (#226).'
   llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: 'mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified:
+    the term is DNA generally.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 9007-49-2
   data_source: PubChem API (ontology label)

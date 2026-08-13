@@ -4,11 +4,18 @@ ontology_mapping:
   ontology_id: CHEBI:26835
   ontology_label: sulfur molecular entity
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: LEXICAL_MATCH
     source: kgm-metatraits
     notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:sulfur_compounds; '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:26835 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      'Sulfur compounds' does not equal the term label 'sulfur molecular entity'.
+      EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded
+      because plural of the same class.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -30,5 +37,11 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); plural of the same
+    class.
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

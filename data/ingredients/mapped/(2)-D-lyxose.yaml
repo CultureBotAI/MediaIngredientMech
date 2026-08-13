@@ -28,15 +28,28 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0783 -> CHEBI:62318 "D-lyxose" (EXACT_MATCH); mapping_status
     UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); a corrupted numeric
+    prefix on the same sugar.
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_d_lyxose); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
   ontology_id: CHEBI:62318
   ontology_label: D-lyxose
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: 'microbedecoder residual free normalized/fuzzy pass (recovered from closed
       PR #201) + local CHEBI verification'
     notes: (2)-D-lyxose parse artifact of D-lyxose; exact match to CHEBI:62318.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:62318 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      '(2)-D-lyxose' does not equal the term label 'D-lyxose'. EXACT_MATCH therefore
+      asserted an identity the pair does not have. Re-graded because a corrupted numeric
+      prefix on the same sugar.

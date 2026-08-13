@@ -4,12 +4,19 @@ ontology_mapping:
   ontology_id: CHEBI:28057
   ontology_label: amylopectin
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:28057 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      'amylopectin from maize' does not equal the term label 'amylopectin'. EXACT_MATCH
+      therefore asserted an identity the pair does not have. Re-graded because the
+      label carries a botanical source the term does not encode.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -33,6 +40,12 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); the label carries a
+    botanical source the term does not encode.
   llm_assisted: false
 chemical_properties:
   cas_rn: 9037-22-3
