@@ -1,15 +1,22 @@
-identifier: CHEBI:33697
+identifier: kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi
 preferred_term: Ribonucleic acid from torula yeast type VI
 ontology_mapping:
   ontology_id: CHEBI:33697
   ontology_label: ribonucleic acid
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#322)
+    notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:33697 carries no structural
+      definition, so it is a class rather than an individual, and the record's label
+      'Ribonucleic acid from torula yeast type VI' does not equal the term label 'ribonucleic
+      acid'. EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded
+      because source- and grade-qualified.
 synonyms:
 - synonym_text: ribonucleic acids
   synonym_type: EXACT_SYNONYM
@@ -36,6 +43,20 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'yeast')
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_class_overstatements
+  action: REGRADED_CLASS_OVERSTATEMENT
+  changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source- and grade-qualified.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_registry_for_narrow_records
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: identifier CHEBI:33697 -> kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi.
+    The record is narrower than CHEBI:33697 (source-, form- or scope-qualified), and
+    §3 forbids expressing a more specific thing by sharing a broader term's identifier.
+    Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+    to narrow/broad.
   llm_assisted: false
 chemical_properties:
   cas_rn: 63231-63-0

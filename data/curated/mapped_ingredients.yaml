@@ -10516,18 +10516,31 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0783 -> CHEBI:62318 "D-lyxose" (EXACT_MATCH); mapping_status
       UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); a corrupted numeric
+      prefix on the same sugar.
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_d_lyxose); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
     ontology_id: CHEBI:62318
     ontology_label: D-lyxose
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: 'microbedecoder residual free normalized/fuzzy pass (recovered from
         closed PR #201) + local CHEBI verification'
       notes: (2)-D-lyxose parse artifact of D-lyxose; exact match to CHEBI:62318.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:62318 carries no
+        structural definition, so it is a class rather than an individual, and the
+        record's label '(2)-D-lyxose' does not equal the term label 'D-lyxose'. EXACT_MATCH
+        therefore asserted an identity the pair does not have. Re-graded because a
+        corrupted numeric prefix on the same sugar.
 - identifier: CHEBI:16659
   preferred_term: D-glycerate
   synonyms:
@@ -22723,12 +22736,19 @@ ingredients:
     ontology_id: CHEBI:134431
     ontology_label: acetyl xylan
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: local kg-microbe CHEBI transform
       notes: Local CHEBI labels CHEBI:134431 as acetyl xylan and lists acetylated
         xylan as an exact synonym.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:134431 carries no
+        structural definition, so it is a class rather than an individual, and the
+        record's label 'Acetylated xylan' does not equal the term label 'acetyl xylan'.
+        EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded
+        because naming variant of the same substance.
   synonyms:
   - synonym_text: Acetylated xylan
     synonym_type: RAW_TEXT
@@ -22765,6 +22785,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); naming variant of
+      the same substance.
+    llm_assisted: false
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
     or CHEBI mapping available; curated to CHEBI:134431 acetyl xylan by local CHEBI
     exact synonym review on 2026-05-11.
@@ -26800,18 +26826,25 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:28057
+- identifier: kgmicrobe.ingredient:amylopectin_from_maize
   preferred_term: amylopectin from maize
   ontology_mapping:
     ontology_id: CHEBI:28057
     ontology_label: amylopectin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:28057 carries no structural
+        definition, so it is a class rather than an individual, and the record's label
+        'amylopectin from maize' does not equal the term label 'amylopectin'. EXACT_MATCH
+        therefore asserted an identity the pair does not have. Re-graded because the
+        label carries a botanical source the term does not encode.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -26835,6 +26868,21 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); the label carries
+      a botanical source the term does not encode.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:28057 -> kgmicrobe.ingredient:amylopectin_from_maize.
+      The record is narrower than CHEBI:28057 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 9037-22-3
@@ -28912,17 +28960,25 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:33848
+- identifier: kgmicrobe.compound:aromatic_hydrocarbon
   preferred_term: Aromatic hydrocarbon
   ontology_mapping:
     ontology_id: CHEBI:33848
     ontology_label: polycyclic arene
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: BROAD_MATCH
     evidence:
     - evidence_type: LEXICAL_MATCH
       source: kgm-metatraits
       notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:aromatic_hydrocarbon; '
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: 'mapping_quality EXACT_MATCH -> BROAD_MATCH. CHEBI:33848 carries no structural
+        definition, so it is a class rather than an individual, and the record''s
+        label ''Aromatic hydrocarbon'' does not equal the term label ''polycyclic
+        arene''. EXACT_MATCH therefore asserted an identity the pair does not have.
+        Re-graded because the record is BROADER than the term: benzene is an aromatic
+        hydrocarbon and is not a polycyclic arene, so narrowMatch would be backwards.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -28944,6 +29000,22 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: 'mapping_quality EXACT_MATCH -> BROAD_MATCH (#322); the record is BROADER
+      than the term: benzene is an aromatic hydrocarbon and is not a polycyclic arene,
+      so narrowMatch would be backwards.'
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:33848 -> kgmicrobe.compound:aromatic_hydrocarbon. The
+      record is narrower than CHEBI:33848 (source-, form- or scope-qualified), and
+      §3 forbids expressing a more specific thing by sharing a broader term's identifier.
+      Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+      to narrow/broad.
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:29125
@@ -67767,17 +67839,24 @@ ingredients:
     environment_label: sea water
     relevance: NATURAL_SOURCE
     notes: Filtered marine water; sourced directly from sea water.
-- identifier: CHEBI:16991
+- identifier: kgmicrobe.ingredient:fish-sperm_dna
   preferred_term: Fish-Sperm DNA
   ontology_mapping:
     ontology_id: CHEBI:16991
     ontology_label: deoxyribonucleic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: 'mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:16991 carries no
+        structural definition, so it is a class rather than an individual, and the
+        record''s label ''Fish-Sperm DNA'' does not equal the term label ''deoxyribonucleic
+        acid''. EXACT_MATCH therefore asserted an identity the pair does not have.
+        Re-graded because source-qualified: the term is DNA generally.'
   synonyms:
   - synonym_text: (Deoxyribonucleotide)m
     synonym_type: EXACT_SYNONYM
@@ -67869,6 +67948,21 @@ ingredients:
       synonym(s), occurrences +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE
       in duplicate_identifier_baseline.tsv (#226).'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: 'mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified:
+      the term is DNA generally.'
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:16991 -> kgmicrobe.ingredient:fish-sperm_dna. The record
+      is narrower than CHEBI:16991 (source-, form- or scope-qualified), and §3 forbids
+      expressing a more specific thing by sharing a broader term's identifier. Minted
+      per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+      to narrow/broad.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 9007-49-2
     data_source: PubChem API (ontology label)
@@ -70592,11 +70686,18 @@ ingredients:
     ontology_id: CHEBI:5291
     ontology_label: gelatin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:5291 carries no structural
+        definition, so it is a class rather than an individual, and the record's label
+        'Gelatine' does not equal the term label 'gelatin'. EXACT_MATCH therefore
+        asserted an identity the pair does not have. Re-graded because British spelling
+        of the term label.
   synonyms:
   - synonym_text: Gelatin
     synonym_type: EXACT_SYNONYM
@@ -70674,6 +70775,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT
       -> physicochemical_roles.SOLIDIFYING_AGENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); British spelling
+      of the term label.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:5291
   chemical_properties:
     cas_rn: 9000-70-8
@@ -70693,11 +70800,18 @@ ingredients:
     ontology_id: CHEBI:85248
     ontology_label: gellan gum
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:85248 carries no
+        structural definition, so it is a class rather than an individual, and the
+        record's label 'Gelrite' does not equal the term label 'gellan gum'. EXACT_MATCH
+        therefore asserted an identity the pair does not have. Re-graded because trade
+        name for gellan gum.
   synonyms:
   - synonym_text: 'Role: Solidifying component; Properties: Organic compound, Undefined
       component'
@@ -70777,6 +70891,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SOLIDIFYING_AGENT
       -> physicochemical_roles.SOLIDIFYING_AGENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); trade name for gellan
+      gum.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:85248
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
@@ -73608,7 +73728,7 @@ ingredients:
     ontology_id: CHEBI:28087
     ontology_label: glycogen
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: CURATOR_JUDGMENT
       source: cbclaw_chebi_grounding_curation
@@ -73620,6 +73740,12 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT with CAS-RN 9005-79-2 (retained as chemical_properties.cas_rn).
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:28087 carries no structural
+        definition, so it is a class rather than an individual, and the record's label
+        'Glycogen from bovine liver' does not equal the term label 'glycogen'. EXACT_MATCH
+        therefore asserted an identity the pair does not have. Re-graded because source-qualified.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -73666,6 +73792,19 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier cas:9005-79-2 kept (§3 step 2, its own CAS); the mandatory
+      Rule B1 registry row to kgmicrobe.ingredient:glycogen_from_bovine_liver was
+      missing and is now emitted. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 9005-79-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -76527,18 +76666,25 @@ ingredients:
     inchi: InChI=1S/C15H20O2/c1-9-5-4-6-15(3)8-13-11(7-12(9)15)10(2)14(16)17-13/h7,9,11,13H,2,4-6,8H2,1,3H3/t9-,11+,13+,15+/m0/s1
     smiles: '[H][C@@]12C[C@@]3(C)CCC[C@H](C)C3=C[C@]1([H])C(=C)C(=O)O2'
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:230519
+- identifier: kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa
   preferred_term: Heparin sodium salt from porcine intestinal mucosa
   ontology_mapping:
     ontology_id: CHEBI:230519
     ontology_label: heparin sodium
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:230519 carries no
+        structural definition, so it is a class rather than an individual, and the
+        record's label 'Heparin sodium salt from porcine intestinal mucosa' does not
+        equal the term label 'heparin sodium'. EXACT_MATCH therefore asserted an identity
+        the pair does not have. Re-graded because source-qualified.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -76562,6 +76708,20 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:230519 -> kgmicrobe.ingredient:heparin_sodium_salt_from_porcine_intestinal_mucosa.
+      The record is narrower than CHEBI:230519 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 9041-08-1
@@ -92042,18 +92202,24 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:6452
+- identifier: kgmicrobe.ingredient:lichenan_icelandic_moss
   preferred_term: Lichenan (icelandic moss)
   ontology_mapping:
     ontology_id: CHEBI:6452
     ontology_label: lichenin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:6452 carries no structural
+        definition, so it is a class rather than an individual, and the record's label
+        'Lichenan (icelandic moss)' does not equal the term label 'lichenin'. EXACT_MATCH
+        therefore asserted an identity the pair does not have. Re-graded because source-qualified.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -92087,6 +92253,20 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source-qualified.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:6452 -> kgmicrobe.ingredient:lichenan_icelandic_moss.
+      The record is narrower than CHEBI:6452 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1402-10-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -116045,18 +116225,25 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:31635
+- identifier: kgmicrobe.compound:neomycin_trisulfate_salt_hydrate
   preferred_term: Neomycin trisulfate salt hydrate
   ontology_mapping:
     ontology_id: CHEBI:31635
     ontology_label: neomycin sulfate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). FEBA/Hans80 panels: FEBA_stress.'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:31635 carries no structural
+        definition, so it is a class rather than an individual, and the record's label
+        'Neomycin trisulfate salt hydrate' does not equal the term label 'neomycin
+        sulfate'. EXACT_MATCH therefore asserted an identity the pair does not have.
+        Re-graded because a specific salt/hydrate form of the term.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -116090,6 +116277,21 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); a specific salt/hydrate
+      form of the term.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:31635 -> kgmicrobe.compound:neomycin_trisulfate_salt_hydrate.
+      The record is narrower than CHEBI:31635 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1405-10-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -132812,18 +133014,25 @@ ingredients:
         component'
       curator_note: Widespread use in media formulations (1837 occurrences). High
         confidence based on 'Defined component' property.
-- identifier: CHEBI:33697
+- identifier: kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi
   preferred_term: Ribonucleic acid from torula yeast type VI
   ontology_mapping:
     ontology_id: CHEBI:33697
     ontology_label: ribonucleic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:33697 carries no structural
+        definition, so it is a class rather than an individual, and the record's label
+        'Ribonucleic acid from torula yeast type VI' does not equal the term label
+        'ribonucleic acid'. EXACT_MATCH therefore asserted an identity the pair does
+        not have. Re-graded because source- and grade-qualified.
   synonyms:
   - synonym_text: ribonucleic acids
     synonym_type: EXACT_SYNONYM
@@ -132850,6 +133059,20 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'yeast')
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); source- and grade-qualified.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:33697 -> kgmicrobe.ingredient:ribonucleic_acid_from_torula_yeast_type_vi.
+      The record is narrower than CHEBI:33697 (source-, form- or scope-qualified),
+      and §3 forbids expressing a more specific thing by sharing a broader term's
+      identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
+      was re-graded to narrow/broad.
     llm_assisted: false
   chemical_properties:
     cas_rn: 63231-63-0
@@ -144642,11 +144865,18 @@ ingredients:
     ontology_id: CHEBI:26835
     ontology_label: sulfur molecular entity
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: LEXICAL_MATCH
       source: kgm-metatraits
       notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:sulfur_compounds; '
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH. CHEBI:26835 carries no
+        structural definition, so it is a class rather than an individual, and the
+        record's label 'Sulfur compounds' does not equal the term label 'sulfur molecular
+        entity'. EXACT_MATCH therefore asserted an identity the pair does not have.
+        Re-graded because plural of the same class.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -144669,18 +144899,31 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); plural of the same
+      class.
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:33403
+- identifier: kgmicrobe.compound:sulfur_powder
   preferred_term: Sulfur (powder)
   ontology_mapping:
     ontology_id: CHEBI:33403
     ontology_label: elemental sulfur
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#322)
+      notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:33403 carries no structural
+        definition, so it is a class rather than an individual, and the record's label
+        'Sulfur (powder)' does not equal the term label 'elemental sulfur'. EXACT_MATCH
+        therefore asserted an identity the pair does not have. Re-graded because a
+        physical form of elemental sulfur.
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic
       compound, Simple component'
@@ -144833,6 +145076,21 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.SULFUR_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_class_overstatements
+    action: REGRADED_CLASS_OVERSTATEMENT
+    changes: mapping_quality EXACT_MATCH -> NARROW_MATCH (#322); a physical form of
+      elemental sulfur.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: mint_registry_for_narrow_records
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: identifier CHEBI:33403 -> kgmicrobe.compound:sulfur_powder. The record
+      is narrower than CHEBI:33403 (source-, form- or scope-qualified), and §3 forbids
+      expressing a more specific thing by sharing a broader term's identifier. Minted
+      per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
+      to narrow/broad.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7783-06-4
     data_source: PubChem API
