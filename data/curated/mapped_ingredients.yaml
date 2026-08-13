@@ -36934,9 +36934,18 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_scrambled_hydrate_cas
+    action: CORRECTED_SCRAMBLED_CAS
+    changes: cas_rn '10043-52-4' -> '7774-34-7' (#320/#334). The recorded value denotes
+      anhydrous calcium dichloride, contradicting the hydration state this record's
+      own label states. Replaced with ChEBI's hasDbXref on CHEBI:91243, the specific
+      term this record is mapped to — provenance independent of the value being replaced,
+      per MAPPING_SEMANTICS §3.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:91243
   chemical_properties:
-    cas_rn: 10043-52-4
+    cas_rn: 7774-34-7
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Ca.2Cl.6H2O
@@ -111682,9 +111691,19 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_scrambled_hydrate_cas
+    action: WITHDREW_WRONG_CAS
+    changes: 'cas_rn ''10102-40-6'' removed (#320/#334). It denotes sodium molybdate
+      dihydrate, which contradicts the hydration state this record''s label states
+      — the #334 scrambling, where one CAS is applied across a salt family regardless
+      of hydration. No verified replacement is available: the record''s term CHEBI:86473
+      (heptahydrate) carries no CAS xref in ChEBI, so no verified replacement exists.
+      Cleared rather than substituted, because swapping in a second wrong number would
+      read as a correction while still publishing a false identifier.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86473
   chemical_properties:
-    cas_rn: 10102-40-6
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 7H2O.MoO4.2Na
@@ -112531,9 +112550,18 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): REDUCING_AGENT ->
       physicochemical_roles.REDUCING_AGENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_scrambled_hydrate_cas
+    action: CORRECTED_SCRAMBLED_CAS
+    changes: cas_rn '1313-82-2' -> '1313-84-4' (#320/#334). The recorded value denotes
+      anhydrous sodium sulfide, contradicting the hydration state this record's own
+      label states. Replaced with ChEBI's hasDbXref on CHEBI:76209, the specific term
+      this record is mapped to — provenance independent of the value being replaced,
+      per MAPPING_SEMANTICS §3.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:76209
   chemical_properties:
-    cas_rn: 1313-82-2
+    cas_rn: 1313-84-4
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 9H2O.2Na.S
@@ -112673,8 +112701,17 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_scrambled_hydrate_cas
+    action: CORRECTED_SCRAMBLED_CAS
+    changes: cas_rn '26970-82-1' -> '10102-18-8' (#320/#334). The recorded value denotes
+      disodium selenite pentahydrate, while the label is the bare formula, contradicting
+      the hydration state this record's own label states. Replaced with ChEBI's hasDbXref
+      on CHEBI:48843, the specific term this record is mapped to — provenance independent
+      of the value being replaced, per MAPPING_SEMANTICS §3.
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 26970-82-1
+    cas_rn: 10102-18-8
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-05T21:48:45.500815+00:00'
     molecular_formula: 2Na.O3Se
@@ -119530,9 +119567,20 @@ ingredients:
       from the parent rather than measured for this record. Water appended in ChEBI's
       own dot-separated notation.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_scrambled_hydrate_cas
+    action: WITHDREW_WRONG_CAS
+    changes: 'cas_rn ''7791-20-0'' removed (#320/#334). It denotes nickel chloride
+      hexahydrate, which contradicts the hydration state this record''s label states
+      — the #334 scrambling, where one CAS is applied across a salt family regardless
+      of hydration. No verified replacement is available: the record''s term CHEBI:34887
+      is anhydrous nickel dichloride, so its xref 7718-54-9 is the anhydrous CAS —
+      wrong for a dihydrate. Cleared rather than substituted, because swapping in
+      a second wrong number would read as a correction while still publishing a false
+      identifier.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34887
   chemical_properties:
-    cas_rn: 7791-20-0
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cl2Ni.2H2O
@@ -119699,9 +119747,20 @@ ingredients:
       from the parent rather than measured for this record. Water appended in ChEBI's
       own dot-separated notation.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_scrambled_hydrate_cas
+    action: WITHDREW_WRONG_CAS
+    changes: 'cas_rn ''7791-20-0'' removed (#320/#334). It denotes nickel chloride
+      hexahydrate, which contradicts the hydration state this record''s label states
+      — the #334 scrambling, where one CAS is applied across a salt family regardless
+      of hydration. No verified replacement is available: the record''s term CHEBI:34887
+      is anhydrous nickel dichloride, so its xref 7718-54-9 is the anhydrous CAS —
+      wrong for a pentahydrate. Cleared rather than substituted, because swapping
+      in a second wrong number would read as a correction while still publishing a
+      false identifier.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34887
   chemical_properties:
-    cas_rn: 7791-20-0
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cl2Ni.5H2O
@@ -120732,8 +120791,18 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_scrambled_hydrate_cas
+    action: WITHDREW_WRONG_CAS
+    changes: 'cas_rn ''10101-97-0'' removed (#320/#334). It denotes nickel sulfate
+      hexahydrate, which contradicts the hydration state this record''s label states
+      — the #334 scrambling, where one CAS is applied across a salt family regardless
+      of hydration. No verified replacement is available: the record''s term CHEBI:53001
+      is generic nickel sulfate, so its xref 7786-81-4 is the anhydrous CAS — wrong
+      for a heptahydrate. Cleared rather than substituted, because swapping in a second
+      wrong number would read as a correction while still publishing a false identifier.'
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 10101-97-0
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Ni.O4S
