@@ -286,6 +286,44 @@ Work down the list and stop at the first that applies.
    `2-tetrachloroethane` reaches both `CHEBI:34024` and `CHEBI:36026` and gets
    neither.
 
+### Protonation state (bare anion labels)
+
+Steps 1–5 decide *sense*: hydration, salt form, stereochemistry, locants. They do
+not decide **protonation**, and a bare anion label (`Fumarate`, `Aspartate`,
+`Succinate`) forces that choice. The rule:
+
+> **Read the parent term's definition.** If it says the anion is obtained by
+> deprotonation of **"at least one"** carboxy group, the term is *deliberately*
+> protonation-agnostic — it already covers the mono- and di-anion, so a bare
+> label belongs on it. **Stay.** If the parent carries no such definition and has
+> `X(n-)` children, it is merely unspecified — **descend** to the species present
+> at growth-medium pH, following the sibling precedent.
+
+The distinction is not visible offline: the local `chebi.db` carries **no
+definitions**, so this test requires the live ChEBI/OLS4 entry.
+
+Worked both ways:
+
+| record | parent | definition | outcome |
+|---|---|---|---|
+| `Malate` | CHEBI:25115 | "…deprotonation of **at least one**…" | stay |
+| `Succinate` | CHEBI:26806 | same | stay |
+| `Azelaate`, `Glutarate`, `Oxalate` | — | same | stay |
+| `Aspartate` | CHEBI:132943 | **none** | descend → `CHEBI:29995 aspartate(2-)` |
+| `Ascorbate` | CHEBI:22651 | — | stay: no `X(n-)` child exists at all |
+| `Protocatechuate` | CHEBI:36241 | — | stay: already the −1 anion, nothing below |
+
+`Aspartate` descends on the same evidence its sibling `Glutamate` did — the
+family precedent is `CHEBI:29987 glutamate(2-)` — and because 30 bare `-ate`
+labels in this corpus sit on charged terms while only the "at least one" group
+does not.
+
+**For a salt, the `narrowMatch` parent follows the label**: where the label says
+"…Acid sodium salt" the parent is that acid, where it names a neutral compound,
+that compound. This avoids the acid-vs-anion choice entirely. Only reach for the
+anion when ChEBI has no acid term (`2-oxobutyric acid sodium salt` →
+`CHEBI:16763 2-oxobutanoate`).
+
 ### What this decides
 
 | Symptom | What it means | Action |
