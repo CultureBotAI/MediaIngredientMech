@@ -95757,10 +95757,13 @@ ingredients:
   - synonym_text: D-Maltose
     synonym_type: EXACT_SYNONYM
     source: merged_from_duplicate_mim_record
+  - synonym_text: maltose
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:18167
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 139
-    media_count: 58
+    total_occurrences: 141
+    media_count: 60
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -95833,6 +95836,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_cas_conflict_duplicates
+    action: MERGED_FROM
+    changes: 'Absorbed ''maltose'' (#320), which sat on CHEBI:18167 (''alpha-maltose'').
+      Merged because differs from the winning record only in the case of its first
+      letter, and was grounded to the alpha anomer while the winner holds the anomer-agnostic
+      term its CAS 69-79-4 points at. The CAS-vs-CURIE conflict #320 flagged on that
+      record was a symptom of the duplicate, not of a bad mapping. Occurrences 139/58
+      + 2/2 -> 141/60. Raw label kept as a RAW_TEXT synonym.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 69-79-4
     data_source: PubChem (via CHEBI:17306)
@@ -95855,7 +95868,7 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
-- identifier: CHEBI:18167
+- identifier: CHEBI:17306
   preferred_term: maltose
   ontology_mapping:
     ontology_id: CHEBI:18167
@@ -95877,10 +95890,10 @@ ingredients:
   - synonym_text: alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -95923,6 +95936,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_cas_conflict_duplicates
+    action: MERGED_INTO
+    changes: Merged into CHEBI:17306 'Maltose'; occurrences transferred. Was on CHEBI:18167
+      ('alpha-maltose'); differs from the winning record only in the case of its first
+      letter, and was grounded to the alpha anomer while the winner holds the anomer-agnostic
+      term its CAS 69-79-4 points at. Tombstoned REJECTED, SSSOM rows dropped (#320).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 69-79-4
     data_source: PubChem API
@@ -103862,10 +103883,13 @@ ingredients:
   - synonym_text: inosite
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: m-Inositol
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:10642
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 31
-    media_count: 31
+    total_occurrences: 52
+    media_count: 52
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -103931,6 +103955,17 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_cas_conflict_duplicates
+    action: MERGED_FROM
+    changes: 'Absorbed ''m-Inositol'' (#320), which sat on CHEBI:10642 (''scyllo-inositol'').
+      Merged because ''m-Inositol'' is myo-inositol. The record was grounded to scyllo-inositol,
+      a different stereoisomer, by a CAS_RN_LOOKUP that its own CAS 87-89-8 contradicts
+      — ChEBI registers that CAS against CHEBI:17268 myo-inositol. The CAS-vs-CURIE
+      conflict #320 flagged on that record was a symptom of the duplicate, not of
+      a bad mapping. Occurrences 31/31 + 21/21 -> 52/52. Raw label kept as a RAW_TEXT
+      synonym.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 87-89-8
     data_source: PubChem API
@@ -119080,10 +119115,13 @@ ingredients:
   - synonym_text: nickel(2+) sulfate--water (1/6)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: NiSO4 x 6 H2O
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:53001
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 12
-    media_count: 12
+    total_occurrences: 37
+    media_count: 37
   curation_history:
   - timestamp: '2026-04-07T10:19:50.730769+00:00'
     curator: feba_ontology_enrichment_batch
@@ -119125,6 +119163,17 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
       nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_cas_conflict_duplicates
+    action: MERGED_FROM
+    changes: 'Absorbed ''NiSO4 x 6 H2O'' (#320), which sat on CHEBI:53001 (''nickel
+      sulfate''). Merged because the record''s CAS 10101-97-0 is registered by ChEBI
+      against CHEBI:53437 ''nickel sulfate hexahydrate'', the specific term §3 step
+      1 requires; the record sat on the generic sulfate and carried its anhydrous
+      formula. The CAS-vs-CURIE conflict #320 flagged on that record was a symptom
+      of the duplicate, not of a bad mapping. Occurrences 12/12 + 25/25 -> 37/37.
+      Raw label kept as a RAW_TEXT synonym.'
+    llm_assisted: false
   notes: Created from FEBA ontology enrichment workflow. Used in 12 FEBA media formulations.
   chemical_properties:
     cas_rn: 10101-97-0
@@ -120493,7 +120542,7 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:53001
+- identifier: CHEBI:53437
   preferred_term: NiSO4 x 6 H2O
   ontology_mapping:
     ontology_id: CHEBI:53001
@@ -120523,10 +120572,10 @@ ingredients:
   - synonym_text: nickel(2+) sulfate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 25
-    media_count: 25
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -120576,6 +120625,15 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_cas_conflict_duplicates
+    action: MERGED_INTO
+    changes: Merged into CHEBI:53437 'Nickel (II) sulfate hexahydrate'; occurrences
+      transferred. Was on CHEBI:53001 ('nickel sulfate'); the record's CAS 10101-97-0
+      is registered by ChEBI against CHEBI:53437 'nickel sulfate hexahydrate', the
+      specific term §3 step 1 requires; the record sat on the generic sulfate and
+      carried its anhydrous formula. Tombstoned REJECTED, SSSOM rows dropped (#320).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10101-97-0
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -159182,7 +159240,7 @@ ingredients:
     inchi: InChI=1S/H2O/h1H2/i/hD2
     smiles: '[2H]O[2H]'
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:10642
+- identifier: CHEBI:17268
   preferred_term: m-Inositol
   ontology_mapping:
     ontology_id: CHEBI:10642
@@ -159213,10 +159271,10 @@ ingredients:
   - synonym_text: scyllo-Inositol
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 21
-    media_count: 21
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-04-07T10:20:26.825141+00:00'
     curator: feba_ontology_enrichment_batch
@@ -159257,6 +159315,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_cas_conflict_duplicates
+    action: MERGED_INTO
+    changes: Merged into CHEBI:17268 'myo-Inositol'; occurrences transferred. Was
+      on CHEBI:10642 ('scyllo-inositol'); 'm-Inositol' is myo-inositol. The record
+      was grounded to scyllo-inositol, a different stereoisomer, by a CAS_RN_LOOKUP
+      that its own CAS 87-89-8 contradicts — ChEBI registers that CAS against CHEBI:17268
+      myo-inositol. Tombstoned REJECTED, SSSOM rows dropped (#320).
+    llm_assisted: false
   notes: Created from FEBA ontology enrichment workflow. Used in 21 FEBA media formulations.
   chemical_properties:
     cas_rn: 87-89-8
@@ -183521,8 +183588,8 @@ ingredients:
 - identifier: cas:150-90-3
   preferred_term: Sodium succinate dibasic
   ontology_mapping:
-    ontology_id: CHEBI:15741
-    ontology_label: succinic acid
+    ontology_id: CHEBI:63675
+    ontology_label: sodium succinate (anhydrous)
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -183543,6 +183610,15 @@ ingredients:
         per MAPPING_SEMANTICS.md Section 3 step 2. Disodium succinate has no CHEBI
         entry; nearest parent is the free acid. Re-grounded from CHEBI:150903 (an
         unrelated glycoside) in #263.'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#320)
+      notes: narrowMatch parent CHEBI:15741 ('succinic acid') -> CHEBI:63675 ('sodium
+        succinate (anhydrous)'). The record is the disodium salt ('dibasic') but was
+        parented to the free acid, so the counterion was discarded. Its own cas_rn
+        150-90-3 — independent of the ChEBI mapping under test — is registered by
+        ChEBI against CHEBI:63675, whose formula C4H4O4.2Na is the dibasic salt the
+        label names. The record stays cas-primary per MAPPING_SEMANTICS §3 step 2;
+        only the parent moves.
   synonyms:
   - synonym_text: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
     synonym_type: EXACT_SYNONYM
@@ -183635,6 +183711,13 @@ ingredients:
       has no CHEBI entry; nearest parent is the free acid. Re-grounded from CHEBI:150903
       (an unrelated glycoside) in #263.'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: merge_cas_conflict_duplicates
+    action: REGROUNDED_PARENT_TERM
+    changes: ontology_mapping CHEBI:15741 'succinic acid' -> CHEBI:63675 'sodium succinate
+      (anhydrous)' (#320); the record is the disodium salt and was parented to the
+      free acid.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 150-90-3
     data_source: PubChem API
