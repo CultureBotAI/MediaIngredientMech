@@ -55358,8 +55358,16 @@ ingredients:
     action: CORRECTED
     changes: 'ontology_label ''D'' -> ''L-aspartic acid residue'': synced to canonical
       CHEBI label (preferred_term ''D'' unchanged).'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_wrong_compound_cas
+    action: WITHDREW_WRONG_CAS
+    changes: 'cas_rn ''138-86-3'' removed (#320). It denotes limonene, a different
+      substance from the one this record names. No verified replacement: CHEBI:29958
+      ''L-aspartic acid residue'' carries no CAS xref, and this record is broken beyond
+      its CAS: a single-character label mapped to an amino-acid residue. The label
+      and mapping need an upstream source. Cleared rather than guessed.'
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 138-86-3
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-05T21:48:44.974138+00:00'
     molecular_formula: C4H5NO3
@@ -74280,8 +74288,17 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_wrong_compound_cas
+    action: CORRECTED_WRONG_COMPOUND_CAS
+    changes: cas_rn '23147-58-2' -> '141-46-8' (#320). The recorded value denotes
+      the glycolaldehyde dimer, not the monomer — a different compound, not a different
+      form of this one. Replaced with ChEBI's hasDbXref on CHEBI:17071, the term this
+      record is already mapped to, so the new value comes from the existing mapping
+      rather than a fresh lookup.
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 23147-58-2
+    cas_rn: 141-46-8
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:04:17.380972+00:00'
     molecular_formula: C2H4O2
@@ -146155,8 +146172,17 @@ ingredients:
       per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
       to narrow/broad.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_wrong_compound_cas
+    action: WITHDREW_WRONG_CAS
+    changes: 'cas_rn ''7783-06-4'' removed (#320). It denotes hydrogen sulfide, a
+      gas, a different substance from the one this record names. No verified replacement:
+      CHEBI:33403 ''elemental sulfur'' carries no CAS xref in ChEBI. Elemental sulfur''s
+      7704-34-9 does appear, but on the sibling term CHEBI:17909 ''polysulfur'' —
+      copying it across terms would be a guess dressed as a citation. Cleared rather
+      than guessed.'
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 7783-06-4
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:53:59.153587+00:00'
   ingredient_type: SINGLE_INGREDIENT
@@ -146253,8 +146279,17 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.SULFUR_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_wrong_compound_cas
+    action: CORRECTED_WRONG_COMPOUND_CAS
+    changes: cas_rn '12597-03-4' -> '7704-34-9' (#320). The recorded value denotes
+      trisulfur specifically, not polysulfur — a different compound, not a different
+      form of this one. Replaced with ChEBI's hasDbXref on CHEBI:17909, the term this
+      record is already mapped to, so the new value comes from the existing mapping
+      rather than a fresh lookup.
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 12597-03-4
+    cas_rn: 7704-34-9
     data_source: PubChem (via CHEBI:17909)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: (S)n.S2
@@ -157710,8 +157745,17 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: fix_wrong_compound_cas
+    action: CORRECTED_WRONG_COMPOUND_CAS
+    changes: cas_rn '488-81-3' -> '87-99-0' (#320). The recorded value denotes ribitol,
+      a different pentitol — a different compound, not a different form of this one.
+      Replaced with ChEBI's hasDbXref on CHEBI:17151, the term this record is already
+      mapped to, so the new value comes from the existing mapping rather than a fresh
+      lookup.
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 488-81-3
+    cas_rn: 87-99-0
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:54:15.789675+00:00'
     molecular_formula: C5H12O5
