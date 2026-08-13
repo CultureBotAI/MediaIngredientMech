@@ -29,6 +29,11 @@ from mediaingredientmech.validation.write_validated import ValidationFailedError
 
 console = Console()
 
+# Mapping grades that assert the term denotes *this* substance, so its chemistry
+# is this record's chemistry. Everything else (NARROW/CLOSE/BROAD) points at a
+# related but different compound.
+IDENTITY_GRADES = {"EXACT_MATCH", "SYNONYM_MATCH"}
+
 
 def load_ingredients(yaml_path: Path) -> dict:
     """Load ingredients from YAML file."""
@@ -66,8 +71,21 @@ def filter_chebi_without_properties(data: dict) -> list[dict]:
         if not ontology_mapping:
             continue
 
-        if ontology_mapping.get("ontology_source") == "CHEBI":
-            candidates.append(record)
+        if ontology_mapping.get("ontology_source") != "CHEBI":
+            continue
+
+        # Only enrich from a term that IS this substance. A narrow/close/broad
+        # match points at a *different* compound — the anhydrous parent of a
+        # hydrate, the free acid of a salt, the family of a component — so
+        # copying its formula in describes the parent and not the record.
+        # That is #326, where five records had already acquired their parent's
+        # formula this way; without this guard a full run would manufacture 29
+        # more (`CrKSO42 x 12 H2O` from anhydrous CHEBI:53471, `NaH2PO4•H2O`
+        # from `sodium dihydrogenphosphate`, `MES buffer` from `MES`, …).
+        if ontology_mapping.get("mapping_quality") not in IDENTITY_GRADES:
+            continue
+
+        candidates.append(record)
 
     return candidates
 

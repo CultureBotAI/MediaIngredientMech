@@ -265,8 +265,16 @@ class ChemicalPropertiesClient:
             return None
 
         except requests.RequestException as e:
-            # Don't log 404s as warnings - they're expected for many ChEBI terms
-            if not (hasattr(e, "response") and e.response.status_code == 404):
+            # Don't log 404s as warnings - they're expected for many ChEBI terms.
+            #
+            # `hasattr(e, "response")` is always True: requests sets `.response`
+            # on every RequestException and leaves it None for errors that never
+            # got a reply (connection reset, DNS, timeout). Reading
+            # `.status_code` off that None raised inside the handler, so a single
+            # transient network blip aborted the whole enrichment batch instead
+            # of skipping one record.
+            response = getattr(e, "response", None)
+            if response is None or response.status_code != 404:
                 logger.debug("Failed to fetch PubChem properties for CHEBI:%s: %s", chebi_id, e)
             return None
         except (KeyError, ValueError, TypeError) as e:
