@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-13T18:34:55.654215+00:00
+Generated: 2026-08-13T18:47:21.872611+00:00
 Total: 2497 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -218,7 +218,7 @@ Total: 2497 ingredients
 | cas:247167-54-0 | cas:247167-54-0 | (5z)-4-bromo-5-(bromomethylene)-2(5h)-furanone | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:10983 | CHEBI:10983 | (R)-3-hydroxybutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:11047 | CHEBI:11047 | (S)-3-hydroxybutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.ingredient:0_2_thiamine_pyrophosphate | kgmicrobe.ingredient:0_2_thiamine_pyrophosphate | 0.2% Thiamine pyrophosphate | MAPPED | kgm:ingredient | FALLBACK_REGISTRY | 1 |
+| kgmicrobe.ingredient:0_2_thiamine_pyrophosphate | kgmicrobe.ingredient:0_2_thiamine_pyrophosphate | 0.2% Thiamine pyrophosphate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
 | CHEBI:132766 | CHEBI:132766 | 0.5 M Nitrilotriacetic acid, disodium salt | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:16885 | CHEBI:16885 | 1-Kestose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:44884 | CHEBI:44884 | 1-Pentanol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
