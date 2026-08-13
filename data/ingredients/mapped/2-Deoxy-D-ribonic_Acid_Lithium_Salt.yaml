@@ -55,11 +55,21 @@ curation_history:
   changes: molecular_formula=C5H10O5; inchi=InChI=1S/C5H10O5/c6-2-4(8)3(7)1-5(9)10/h3-4,6-8H,1;
     smiles=O=C(O)C[C@H](O)[C@H](O)CO
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_parent_inherited_formulas
+  action: CORRECTED_INHERITED_FORMULA
+  changes: molecular_formula 'C5H10O5' -> 'C5H9LiO5' (#326). The recorded value was
+    identical to the narrowMatch parent's, so it described the parent rather than
+    this salt/hydrate. Corrected from the record's own CAS 7284-15-3, which resolves
+    in PubChem to '2-Deoxy-D-ribonic acid lithium salt' — provenance independent of
+    the ChEBI mapping under test, per MAPPING_SEMANTICS §3. The narrowMatch itself
+    is correct and is unchanged.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7284-15-3
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C5H10O5
+  molecular_formula: C5H9LiO5
   inchi: InChI=1S/C5H10O5/c6-2-4(8)3(7)1-5(9)10/h3-4,6-8H,1-2H2,(H,9,10)/t3-,4+/m0/s1
   smiles: O=C(O)C[C@H](O)[C@H](O)CO
 ingredient_type: SINGLE_INGREDIENT

@@ -62,11 +62,21 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_parent_inherited_formulas
+  action: CORRECTED_INHERITED_FORMULA
+  changes: molecular_formula 'C6H9NO6' -> 'C6H7NNa2O6' (#326). The recorded value
+    was identical to the narrowMatch parent's, so it described the parent rather than
+    this salt/hydrate. Corrected from the record's own CAS 15467-20-6, which resolves
+    in PubChem to 'Disodium nitrilotriacetate' — provenance independent of the ChEBI
+    mapping under test, per MAPPING_SEMANTICS §3. The narrowMatch itself is correct
+    and is unchanged.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 15467-20-6
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C6H9NO6
+  molecular_formula: C6H7NNa2O6
   inchi: InChI=1S/C6H9NO6/c8-4(9)1-7(2-5(10)11)3-6(12)13/h1-3H2,(H,8,9)(H,10,11)(H,12,13)
   smiles: O=C(O)CN(CC(=O)O)CC(=O)O
 ingredient_type: SINGLE_INGREDIENT

@@ -51,11 +51,21 @@ curation_history:
   changes: molecular_formula=C7H13N3O4; inchi=InChI=1S/C7H13N3O4/c8-3-6(12)10-4(7(13)14)1-2-5(9);
     smiles=NCC(=O)N[C@@H](CCC(N)=O)C(=O)O
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: fix_parent_inherited_formulas
+  action: CORRECTED_INHERITED_FORMULA
+  changes: molecular_formula 'C7H13N3O4' -> 'C7H15N3O5' (#326). The recorded value
+    was identical to the narrowMatch parent's, so it described the parent rather than
+    this salt/hydrate. Corrected from the record's own CAS 172669-64-6, which resolves
+    in PubChem to 'Glycyl-glutamine monohydrate' — provenance independent of the ChEBI
+    mapping under test, per MAPPING_SEMANTICS §3. The narrowMatch itself is correct
+    and is unchanged.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 172669-64-6
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-  molecular_formula: C7H13N3O4
+  molecular_formula: C7H15N3O5
   inchi: InChI=1S/C7H13N3O4/c8-3-6(12)10-4(7(13)14)1-2-5(9)11/h4H,1-3,8H2,(H2,9,11)(H,10,12)(H,13,14)/t4-/m0/s1
   smiles: NCC(=O)N[C@@H](CCC(N)=O)C(=O)O
 ingredient_type: SINGLE_INGREDIENT
