@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0636 -> CHEBI:15589 "(S)-malate(2-)" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:l_malate); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -40,3 +46,4 @@ ontology_mapping:
     source: Edison Scientific deep research (PaperQA3 LITERATURE) + local CHEBI verification
     notes: Edison identity research recommends CHEBI:15589; 'L-malate' is a ChEBI
       synonym of (S)-malate(2-).
+ingredient_type: SINGLE_INGREDIENT

@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0801 -> CHEBI:17747 "bis(2-ethylhexyl) phthalate" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:bis_2_ethylhexyl_phthalate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -41,3 +47,4 @@ ontology_mapping:
     notes: 'Edison identity research recommends CHEBI:17747; raw label matches the
       ChEBI related synonym ''Bis(2-ethylhexyl)phthalate'' (canonical label spaces
       it: ''bis(2-ethylhexyl) phthalate'').'
+ingredient_type: SINGLE_INGREDIENT

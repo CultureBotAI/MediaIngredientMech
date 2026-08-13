@@ -30,6 +30,12 @@ curation_history:
   changes: molecular_formula=C6H11N2; inchi=InChI=1S/C6H11N2/c1-3-8-5-4-7(2)6-8/h4-6H,3H2,1-2H;
     smiles=CCn1cc[n+](C)c1
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
@@ -47,3 +53,4 @@ chemical_properties:
   inchi: InChI=1S/C6H11N2/c1-3-8-5-4-7(2)6-8/h4-6H,3H2,1-2H3/q+1
   smiles: CCn1cc[n+](C)c1
   data_source: CHEBI sqlite (oaklib)
+ingredient_type: SINGLE_INGREDIENT

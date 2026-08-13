@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0728 -> CHEBI:16659 "D-glycerate" (EXACT_MATCH); mapping_status
     UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_glycerate); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -41,3 +47,4 @@ ontology_mapping:
       PR #201) + local CHEBI verification'
     notes: D-glycerate exact match to CHEBI:16659 'D-glycerate'; exact-only import
       missed it.
+ingredient_type: SINGLE_INGREDIENT

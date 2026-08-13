@@ -22,6 +22,12 @@ curation_history:
   changes: primary UNMAPPED_0506 → MICRO:0002392 via name normalization to 'Rabbit
     serum'
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'serum')
+    (#323)
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -34,3 +40,4 @@ ontology_mapping:
     source: MICRO via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0506; matched via 'Rabbit serum' (name normalization);
       label-exact
+ingredient_type: UNDEFINED_MIXTURE
