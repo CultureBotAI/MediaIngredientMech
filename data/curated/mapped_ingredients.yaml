@@ -11801,17 +11801,26 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:9532
+- identifier: kgmicrobe.ingredient:0_2_thiamine_pyrophosphate
   preferred_term: 0.2% Thiamine pyrophosphate
   ontology_mapping:
-    ontology_id: CHEBI:9532
-    ontology_label: thiamine(1+) diphosphate
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    ontology_id: kgmicrobe.ingredient:0_2_thiamine_pyrophosphate
+    ontology_label: 0.2% Thiamine pyrophosphate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#288/#320)
+      notes: 'identifier/ontology_id CHEBI:9532 -> kgmicrobe.ingredient:0_2_thiamine_pyrophosphate.
+        This record is a 0.2% stock SOLUTION, not the pure compound, and it was holding
+        CHEBI:9532 (''thiamine(1+) diphosphate'') — the term the pure-compound record
+        needs. #288 established that stock solutions take a kgmicrobe.ingredient:
+        identifier with FALLBACK_REGISTRY; this applies that rule and frees the ChEBI
+        term. Its recorded CAS 154-87-0 is the chloride''s, so that field was never
+        evidence for the ChEBI term either.'
   synonyms:
   - synonym_text: 'Role: Vitamin; Properties: Organic compound, Solution, Defined
       component'
@@ -11887,6 +11896,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_edta_thiamine
+    action: MINTED_REGISTRY_FOR_STOCK_SOLUTION
+    changes: identifier/ontology_id CHEBI:9532 -> kgmicrobe.ingredient:0_2_thiamine_pyrophosphate
+      (#288/#320); a 0.2% stock solution is not the pure compound.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 154-87-0
     data_source: NCI CACTUS Chemical Identifier Resolver
@@ -62777,7 +62792,7 @@ ingredients:
   - synonym_text: (ethane-1,2-diyldinitrilo)tetraacetic acid
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -62832,6 +62847,13 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_edta_thiamine
+    action: MERGED_INTO
+    changes: Merged into CHEBI:4735, now held by 'EDTA' (446 occurrences). This record
+      was unused and duplicated the same substance under an explicit qualifier (#319/#320).
+      Tombstoned REJECTED, SSSOM rows dropped.
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C10H16N2O8
@@ -63221,17 +63243,29 @@ ingredients:
     inchi: InChI=1S/C6H10N2O2/c1-4-7-3-2-5(8-4)6(9)10/h5H,2-3H2,1H3,(H,7,8)(H,9,10)/t5-/m0/s1
     smiles: CC1=N[C@H](C(=O)O)CCN1
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:64755
+- identifier: CHEBI:4735
   preferred_term: EDTA
   ontology_mapping:
-    ontology_id: CHEBI:64755
-    ontology_label: EDTA(2-)
+    ontology_id: CHEBI:4735
+    ontology_label: ethylenediaminetetraacetic acid
     ontology_source: CHEBI
     mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#319/#320)
+      notes: 'identifier/ontology_id CHEBI:64755 (''EDTA(2-)'') -> CHEBI:4735 (''ethylenediaminetetraacetic
+        acid''); mapping_quality -> SYNONYM_MATCH. ChEBI''s live definition of CHEBI:64755
+        is ''a tetracarboxylic acid anion formed by deprotonation of TWO of the four
+        carboxy groups'' — a specific charge state this record''s label never asserts.
+        Under #319''s rule a specific definition means descend, unlike the ''at least
+        one'' wording that keeps the anion. Absorbed ''EDTA (acid form)'', which held
+        the free-acid term with ZERO occurrences and already carried ''EDTA'' as a
+        synonym. The corpus keeps separate Na2-EDTA records for the salt, so plain
+        ''EDTA'' denoting the free acid is consistent with how the rest of the family
+        is modelled.'
   synonyms:
   - synonym_text: 'Properties: Defined component, Organic compound, Simple component'
     synonym_type: RAW_TEXT
@@ -63254,6 +63288,9 @@ ingredients:
   - synonym_text: 2,2',2'',2'''-(ethane-1,2-diyldiazaniumyl)tetraacetate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: EDTA (acid form)
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:4735
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 446
@@ -63316,6 +63353,12 @@ ingredients:
       defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
       to a known synonym, so the recorded grade overstated. ontology_id is unchanged
       — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_edta_thiamine
+    action: MERGED_FROM
+    changes: identifier/ontology_id CHEBI:64755 -> CHEBI:4735; absorbed 'EDTA (acid
+      form)' (0 occurrences). Occurrences 446/50 -> 446/50 (#319/#320).
     llm_assisted: false
   chemical_properties:
     cas_rn: 60-00-4
@@ -150502,17 +150545,26 @@ ingredients:
         compound'
       curator_note: Widespread use in media formulations (1647 occurrences). High
         confidence based on 'Defined component' property.
-- identifier: CHEBI:18290
+- identifier: CHEBI:9532
   preferred_term: Thiamine pyrophosphate
   ontology_mapping:
-    ontology_id: CHEBI:18290
-    ontology_label: thiamine(1+) diphosphate chloride
+    ontology_id: CHEBI:9532
+    ontology_label: thiamine(1+) diphosphate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#319/#320)
+      notes: 'identifier/ontology_id CHEBI:18290 -> CHEBI:9532. ChEBI''s live definition
+        of CHEBI:18290 is ''an organic CHLORIDE SALT of thiamine(1+) diphosphate''
+        — a counterion this record''s label never mentions. CHEBI:9532 is the compound
+        itself; ''pyrophosphate'' and ''diphosphate'' are the same moiety under two
+        naming conventions, hence SYNONYM_MATCH. The term was freed by moving the
+        0.2% stock solution to a minted identifier per #288. The existing SSSOM row
+        already flagged this as ''SYMMETRIC: charge/protonation/ester variant''.'
   synonyms:
   - synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component,
       Simple component'
@@ -150680,6 +150732,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE ->
       nutritional_roles.VITAMIN_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: reground_edta_thiamine
+    action: REGROUNDED_OFF_SALT_TERM
+    changes: identifier/ontology_id CHEBI:18290 (chloride salt) -> CHEBI:9532; mapping_quality
+      -> SYNONYM_MATCH (#319/#320).
+    llm_assisted: false
   chemical_properties:
     cas_rn: 136-09-4
     data_source: PubChem API

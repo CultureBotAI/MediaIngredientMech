@@ -20,7 +20,7 @@ synonyms:
 - synonym_text: (ethane-1,2-diyldinitrilo)tetraacetic acid
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -74,6 +74,13 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_edta_thiamine
+  action: MERGED_INTO
+  changes: Merged into CHEBI:4735, now held by 'EDTA' (446 occurrences). This record
+    was unused and duplicated the same substance under an explicit qualifier (#319/#320).
+    Tombstoned REJECTED, SSSOM rows dropped.
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C10H16N2O8

@@ -1,14 +1,23 @@
-identifier: CHEBI:9532
+identifier: kgmicrobe.ingredient:0_2_thiamine_pyrophosphate
 preferred_term: 0.2% Thiamine pyrophosphate
 ontology_mapping:
-  ontology_id: CHEBI:9532
-  ontology_label: thiamine(1+) diphosphate
-  ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  ontology_id: kgmicrobe.ingredient:0_2_thiamine_pyrophosphate
+  ontology_label: 0.2% Thiamine pyrophosphate
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#288/#320)
+    notes: 'identifier/ontology_id CHEBI:9532 -> kgmicrobe.ingredient:0_2_thiamine_pyrophosphate.
+      This record is a 0.2% stock SOLUTION, not the pure compound, and it was holding
+      CHEBI:9532 (''thiamine(1+) diphosphate'') — the term the pure-compound record
+      needs. #288 established that stock solutions take a kgmicrobe.ingredient: identifier
+      with FALLBACK_REGISTRY; this applies that rule and frees the ChEBI term. Its
+      recorded CAS 154-87-0 is the chloride''s, so that field was never evidence for
+      the ChEBI term either.'
 synonyms:
 - synonym_text: 'Role: Vitamin; Properties: Organic compound, Solution, Defined component'
   synonym_type: RAW_TEXT
@@ -81,6 +90,12 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_edta_thiamine
+  action: MINTED_REGISTRY_FOR_STOCK_SOLUTION
+  changes: identifier/ontology_id CHEBI:9532 -> kgmicrobe.ingredient:0_2_thiamine_pyrophosphate
+    (#288/#320); a 0.2% stock solution is not the pure compound.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 154-87-0
   data_source: NCI CACTUS Chemical Identifier Resolver
