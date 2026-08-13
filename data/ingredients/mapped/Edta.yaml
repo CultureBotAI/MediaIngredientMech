@@ -1,14 +1,25 @@
-identifier: CHEBI:64755
+identifier: CHEBI:4735
 preferred_term: EDTA
 ontology_mapping:
-  ontology_id: CHEBI:64755
-  ontology_label: EDTA(2-)
+  ontology_id: CHEBI:4735
+  ontology_label: ethylenediaminetetraacetic acid
   ontology_source: CHEBI
   mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#319/#320)
+    notes: 'identifier/ontology_id CHEBI:64755 (''EDTA(2-)'') -> CHEBI:4735 (''ethylenediaminetetraacetic
+      acid''); mapping_quality -> SYNONYM_MATCH. ChEBI''s live definition of CHEBI:64755
+      is ''a tetracarboxylic acid anion formed by deprotonation of TWO of the four
+      carboxy groups'' — a specific charge state this record''s label never asserts.
+      Under #319''s rule a specific definition means descend, unlike the ''at least
+      one'' wording that keeps the anion. Absorbed ''EDTA (acid form)'', which held
+      the free-acid term with ZERO occurrences and already carried ''EDTA'' as a synonym.
+      The corpus keeps separate Na2-EDTA records for the salt, so plain ''EDTA'' denoting
+      the free acid is consistent with how the rest of the family is modelled.'
 synonyms:
 - synonym_text: 'Properties: Defined component, Organic compound, Simple component'
   synonym_type: RAW_TEXT
@@ -31,6 +42,9 @@ synonyms:
 - synonym_text: 2,2',2'',2'''-(ethane-1,2-diyldiazaniumyl)tetraacetate
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: EDTA (acid form)
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:4735
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 446
@@ -93,6 +107,12 @@ curation_history:
     defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
     to a known synonym, so the recorded grade overstated. ontology_id is unchanged
     — the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: reground_edta_thiamine
+  action: MERGED_FROM
+  changes: identifier/ontology_id CHEBI:64755 -> CHEBI:4735; absorbed 'EDTA (acid
+    form)' (0 occurrences). Occurrences 446/50 -> 446/50 (#319/#320).
   llm_assisted: false
 chemical_properties:
   cas_rn: 60-00-4

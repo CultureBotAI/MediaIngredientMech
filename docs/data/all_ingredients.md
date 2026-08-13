@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-13T17:50:51.894253+00:00
+Generated: 2026-08-13T18:34:55.657528+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -218,7 +218,7 @@ Total: 2841 ingredients
 | cas:247167-54-0 | cas:247167-54-0 | (5z)-4-bromo-5-(bromomethylene)-2(5h)-furanone | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:10983 | CHEBI:10983 | (R)-3-hydroxybutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:11047 | CHEBI:11047 | (S)-3-hydroxybutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:9532 | CHEBI:9532 | 0.2% Thiamine pyrophosphate | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| kgmicrobe.ingredient:0_2_thiamine_pyrophosphate | kgmicrobe.ingredient:0_2_thiamine_pyrophosphate | 0.2% Thiamine pyrophosphate | MAPPED | kgm:ingredient | FALLBACK_REGISTRY | 1 |
 | CHEBI:132766 | CHEBI:132766 | 0.5 M Nitrilotriacetic acid, disodium salt | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:16885 | CHEBI:16885 | 1-Kestose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:44884 | CHEBI:44884 | 1-Pentanol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -899,14 +899,14 @@ Total: 2841 ingredients
 | kgmicrobe.compound:durhamycin | kgmicrobe.compound:durhamycin | Durhamycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | NCIT:C1928 | NCIT:C1928 | Dynemicin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:16586 | CHEBI:16586 | e-Amino-N-Caproic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:4735 | CHEBI:4735 | EDTA (acid form) | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:4735 | CHEBI:4735 | EDTA (acid form) | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C360 | NCIT:C360 | EDTA (chelating agent) | MAPPED | NCIT | LEXICAL_MATCH | 0 |
 | cas:13235-36-4 | CHEBI:4735 | EDTA tetrasodium tetrahydrate salt | MAPPED | CHEBI | CLOSE_MATCH | 4 |
 | kgmicrobe.compound:e_4_aminostyryl_acetate | kgmicrobe.compound:e_4_aminostyryl_acetate | E 4 Aminostyryl Acetate | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:77543 | CHEBI:77543 | Ebselen | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4755 | CHEBI:4755 | Econazole nitrate salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27592 | CHEBI:27592 | Ectoine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
-| CHEBI:64755 | CHEBI:64755 | EDTA | MAPPED | CHEBI | SYNONYM_MATCH | 446 |
+| CHEBI:4735 | CHEBI:4735 | EDTA | MAPPED | CHEBI | SYNONYM_MATCH | 446 |
 | FOODON:03315772 | FOODON:03315772 | Egg yolk | MAPPED | FOODON | EXACT_MATCH | 0 |
 | CHEBI:4767 | CHEBI:4767 | Elastin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:42223 | CHEBI:42223 | Emodin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1934,7 +1934,7 @@ Total: 2841 ingredients
 | CHEBI:132751 | CHEBI:132751 | Thiamine-HCl x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 579 |
 | CHEBI:18385 | CHEBI:18385 | Thiamine | MAPPED | CHEBI | SYNONYM_MATCH | 136 |
 | CHEBI:49105 | CHEBI:49105 | Thiamine HCl | MAPPED | CHEBI | EXACT_MATCH | 1647 |
-| CHEBI:18290 | CHEBI:18290 | Thiamine pyrophosphate | MAPPED | CHEBI | EXACT_MATCH | 17 |
+| CHEBI:9532 | CHEBI:9532 | Thiamine pyrophosphate | MAPPED | CHEBI | SYNONYM_MATCH | 17 |
 | kgmicrobe.ingredient:thiamine_vitamin_solution | MICRO:0000460 | Thiamine Vitamin Solution | MAPPED | MICRO | CLOSE_MATCH | 14 |
 | CHEBI:30314 | CHEBI:30314 | Thioctic acid | MAPPED | CHEBI | EXACT_MATCH | 30 |
 | CHEBI:47869 | CHEBI:47869 | Thioglycolate | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
