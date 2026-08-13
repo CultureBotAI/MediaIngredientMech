@@ -73972,6 +73972,20 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: Imported from CultureBotHT.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: 'molecular_formula ''C26H43NO6'' -> ''C26H45NO7''. The record''s own
+        CAS 1192657-83-2 resolves in PubChem to a title matching the label verbatim
+        (''Glycocholic acid hydrate'') with formula C26H45NO7 — exactly one H2O more
+        than the recorded value. **Two authorities disagree here and the divergence
+        is deliberate**: the mapped term CHEBI:182320, whose own label is ''Glycocholic
+        acid hydrate'', records the *anhydrous* C26H43NO6, so after this change the
+        record no longer matches its EXACT_MATCH term''s formula. PubChem is preferred
+        because its value is tied to the specific registered substance this record''s
+        CAS denotes, whereas ChEBI carrying an anhydrous formula on a term it names
+        a hydrate is the same modelling gap as #342. Flagged rather than hidden: if
+        #342 concludes ChEBI''s hydrate handling should be taken at face value, this
+        record should revert.'
   synonyms:
   - synonym_text: 2-[[(4R)-4-[(3R,5S,7R,9S,10S,12S,13R,14S,17R)-3,7,12-trihydroxy-10,13-dimethyl-2,3,4,5,6,7,8,9,11,12,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-17-yl]pentanoyl]amino]acetic
       acid
@@ -74005,11 +74019,27 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: 'molecular_formula ''C26H43NO6'' -> ''C26H45NO7''. The record''s own
+      CAS 1192657-83-2 resolves in PubChem to a title matching the label verbatim
+      (''Glycocholic acid hydrate'') with formula C26H45NO7 — exactly one H2O more
+      than the recorded value. Two authorities disagree here and the divergence is
+      deliberate: the mapped term CHEBI:182320, whose own label is ''Glycocholic acid
+      hydrate'', records the *anhydrous* C26H43NO6, so after this change the record
+      no longer matches its EXACT_MATCH term''s formula. PubChem is preferred because
+      its value is tied to the specific registered substance this record''s CAS denotes,
+      whereas ChEBI carrying an anhydrous formula on a term it names a hydrate is
+      the same modelling gap as #342. Flagged rather than hidden: if #342 concludes
+      ChEBI''s hydrate handling should be taken at face value, this record should
+      revert. (#321)'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1192657-83-2
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-    molecular_formula: C26H43NO6
+    molecular_formula: C26H45NO7
     inchi: InChI=1S/C26H43NO6/c1-14(4-7-22(31)27-13-23(32)33)17-5-6-18-24-19(12-21(30)26(17,18)3)25(2)9-8-16(28)10-15(25)11-20(24)29/h14-21,24,28-30H,4-13H2,1-3H3,(H,27,31)(H,32,33)/t14-,15+,16-,17-,18+,19+,20?,21+,24?,25+,26-/m1/s1
     smiles: '[H][C@]12CC(O)C3[C@]([H])(C[C@H](O)[C@@]4(C)[C@@]3([H])CC[C@]4([H])[C@H](C)CCC(=O)NCC(=O)O)[C@@]1(C)CC[C@@H](O)C2'
   ingredient_type: SINGLE_INGREDIENT
