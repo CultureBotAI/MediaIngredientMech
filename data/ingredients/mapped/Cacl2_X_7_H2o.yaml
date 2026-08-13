@@ -1,14 +1,31 @@
-identifier: CHEBI:3312
+identifier: kgmicrobe.compound:cacl2_x_7_h2o
 preferred_term: CaCl2 x 7 H2O
 ontology_mapping:
   ontology_id: CHEBI:3312
   ontology_label: calcium dichloride
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:3312 -> kgmicrobe.compound:cacl2_x_7_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:3312 ('calcium
+      dichloride') and was sharing that term's identifier — the identity collapse
+      MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
+      from its anhydrous parent downstream. ChEBI has no term for this hydrate and
+      the record carries no verified CAS, so steps 1 and 2 are unavailable and step
+      3 applies.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula 'Ca.2Cl' -> 'Ca.2Cl.7H2O'. The recorded value described
+      the anhydrous salt while the label names a hydrate, understating the mass by
+      18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+      and the recorded formula was byte-identical to the anhydrous parent CHEBI:3312's
+      ChEBI formula ('Ca.2Cl') — the mark of a value inherited from the parent rather
+      than measured for this record. Water appended in ChEBI's own dot-separated notation.
 synonyms:
 - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
     Simple component'
@@ -90,12 +107,27 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:3312 -> kgmicrobe.compound:cacl2_x_7_h2o; mapping_quality
+    EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula 'Ca.2Cl' -> 'Ca.2Cl.7H2O' (#321); the label states 7
+    water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
+    parent CHEBI:3312's ChEBI formula ('Ca.2Cl') — the mark of a value inherited from
+    the parent rather than measured for this record. Water appended in ChEBI's own
+    dot-separated notation.
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:3312
 chemical_properties:
   cas_rn: 10043-52-4
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: Ca.2Cl
+  molecular_formula: Ca.2Cl.7H2O
   inchi: InChI=1S/Ca.2ClH/h;2*1H/q+2;;/p-2
   smiles: '[Ca+2].[Cl-].[Cl-]'
 ingredient_type: SINGLE_INGREDIENT

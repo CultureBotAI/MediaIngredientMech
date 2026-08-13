@@ -1,15 +1,24 @@
-identifier: CHEBI:31380
+identifier: kgmicrobe.compound:cefsulodin_sodium_salt_hydrate
 preferred_term: Cefsulodin sodium salt hydrate
 ontology_mapping:
   ontology_id: CHEBI:31380
   ontology_label: Cefsulodin sodium
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:31380 -> kgmicrobe.compound:cefsulodin_sodium_salt_hydrate;
+      mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:31380
+      ('Cefsulodin sodium') and was sharing that term's identifier — the identity
+      collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
+      from its anhydrous parent downstream. ChEBI has no term for this hydrate and
+      the record carries no verified CAS, so steps 1 and 2 are unavailable and step
+      3 applies.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -49,6 +58,12 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:31380 -> kgmicrobe.compound:cefsulodin_sodium_salt_hydrate;
+    mapping_quality EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 52152-93-9
   data_source: CultureBotHT compounds_to_cas.csv

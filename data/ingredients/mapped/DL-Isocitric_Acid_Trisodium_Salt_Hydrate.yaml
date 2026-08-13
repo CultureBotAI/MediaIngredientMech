@@ -1,15 +1,24 @@
-identifier: CHEBI:172950
+identifier: kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate
 preferred_term: DL-Isocitric acid trisodium salt hydrate
 ontology_mapping:
   ontology_id: CHEBI:172950
   ontology_label: Isocitric acid, DL-
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). '
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321/#334)
+    notes: identifier CHEBI:172950 -> kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate;
+      mapping_quality EXACT_MATCH -> NARROW_MATCH. The record is a hydrate of CHEBI:172950
+      ('Isocitric acid, DL-') and was sharing that term's identifier — the identity
+      collapse MAPPING_SEMANTICS §3 forbids, which made a distinct substance indistinguishable
+      from its anhydrous parent downstream. ChEBI has no term for this hydrate and
+      the record carries no verified CAS, so steps 1 and 2 are unavailable and step
+      3 applies.
 synonyms:
 - synonym_text: trisodium;1-hydroxypropane-1,2,3-tricarboxylate
   synonym_type: EXACT_SYNONYM
@@ -51,6 +60,12 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: mint_hydrate_registry_terms
+  action: MINTED_REGISTRY_FOR_HYDRATE
+  changes: identifier CHEBI:172950 -> kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate;
+    mapping_quality EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 1637-73-6
   data_source: CultureBotHT compounds_to_cas.csv
