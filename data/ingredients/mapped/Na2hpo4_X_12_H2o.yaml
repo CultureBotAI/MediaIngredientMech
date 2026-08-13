@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:91259
   ontology_label: disodium hydrogenphosphate dodecahydrate
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -34,6 +34,16 @@ ontology_mapping:
       18 g/mol per water. Corrected because adopted verbatim from the mapped term
       CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate'), which is the specific
       hydrate and already carries the water.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:91259 (''disodium hydrogenphosphate dodecahydrate'') — a subsumption
+      ChEBI itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never
+      under the anhydrous compound, which is not an ancestor even transitively. A
+      hydrate is a distinct substance containing the anhydrous form, not a specialization
+      of it. closeMatch claims similarity without subsumption. The ontology_id and
+      the record''s own identifier are unchanged.'
 synonyms:
 - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
     Simple component'
@@ -154,6 +164,12 @@ curation_history:
   changes: molecular_formula 'HO4P.2Na' -> '12H2O.HO4P.2Na' (#321); adopted verbatim
     from the mapped term CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate'),
     which is the specific hydrate and already carries the water.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
 kg_microbe_node_id: CHEBI:34683
 chemical_properties:

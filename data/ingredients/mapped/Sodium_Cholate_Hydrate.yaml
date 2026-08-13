@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:26711
   ontology_label: sodium cholate
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -16,6 +16,16 @@ ontology_mapping:
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='Sodium cholate
       hydrate'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:26711 (''sodium cholate'') — a subsumption ChEBI itself denies: it
+      files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
 synonyms:
 - synonym_text: sodium 3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-oate
   synonym_type: EXACT_SYNONYM
@@ -52,6 +62,12 @@ curation_history:
   curator: backfill_parent_terms
   action: BACKFILL_PARENT_CHEBI
   changes: set ontology_mapping parent=CHEBI:26711 (stem-substring)
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
 chemical_properties:
   cas_rn: 206986-87-0

@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:73898
   ontology_label: Gly-Gln
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -14,6 +14,16 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CHEBI via OLS (stem-substring)
     notes: Parent class identified via stem-substring; matched_via='Gly-Gln monohydrate'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:73898 (''Gly-Gln'') — a subsumption ChEBI itself denies: it files
+      hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
 synonyms:
 - synonym_text: glycyl-L-glutamine
   synonym_type: EXACT_SYNONYM
@@ -60,6 +70,12 @@ curation_history:
     in PubChem to 'Glycyl-glutamine monohydrate' — provenance independent of the ChEBI
     mapping under test, per MAPPING_SEMANTICS §3. The narrowMatch itself is correct
     and is unchanged.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
 chemical_properties:
   cas_rn: 172669-64-6

@@ -334,6 +334,12 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0369 -> cas:7788-99-0 "chromium(III) sulfate" (NARROW_MATCH);
       mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1977); no CAS-RN
     or CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a chromium
     potassium sulfate hydrate shorthand; left unmapped pending exact formula/CAS evidence.
@@ -345,7 +351,7 @@ ingredients:
     ontology_id: CHEBI:53471
     ontology_label: chromium(III) sulfate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: Edison LITERATURE (PaperQA3) + local CHEBI verification
@@ -354,6 +360,16 @@ ingredients:
         reference. No ontology term covers the potassium double salt or its dodecahydrate;
         CHEBI:53471 chromium(III) sulfate is the nearest parent, lacking both the
         potassium and the twelve waters.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:53471 (''chromium(III) sulfate'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
 - identifier: cas:145224-94-8
   preferred_term: MES Hydrat
   synonyms:
@@ -953,6 +969,12 @@ ingredients:
     changes: Promoted UNMAPPED_0416 -> kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution
       "L-cysteine hydrochloride" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED,
       SSSOM row added.
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as an L-cysteine hydrochloride hydrate
     solution pending exact hydrate and solution composition curation.
@@ -961,7 +983,7 @@ ingredients:
     ontology_id: CHEBI:91247
     ontology_label: L-cysteine hydrochloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MIM curation (#288)
@@ -971,6 +993,16 @@ ingredients:
         in #114. For PBS, note the term is NCIT:C178908 ''phosphate-buffered saline'';
         searching the bare acronym instead returns NCIT:C122728 ''TSPO wt Allele'',
         a gene allele (#288).'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:91247 (''L-cysteine hydrochloride'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
 - identifier: kgmicrobe.ingredient:cholesterol_lipid_concentrate
   preferred_term: cholesterol lipid concentrate
   synonyms:
@@ -6713,19 +6745,35 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0676 -> kgmicrobe.compound:maltose_hydrate "maltose"
       (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:maltose_hydrate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
     ontology_id: CHEBI:17306
     ontology_label: maltose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MIM curation (#213)
       notes: 'Maltose hydrate is the hydrated form of maltose. CHEBI has anhydrous
         maltose CHEBI:17306 but no hydrate term; Section 3 mint + narrowMatch, per
         the hydrate convention in #242 (#213).'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17306 (''maltose'') — a subsumption ChEBI itself denies: it files
+        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
 - identifier: kgmicrobe.compound:potassium_2-ketogluconate
   preferred_term: Potassium 2-ketogluconate
   synonyms:
@@ -10863,12 +10911,18 @@ ingredients:
       MediaDive ingredient 1763 CAS 13446-18-9 confirms the hexahydrate; CHEBI lacks
       the hydrate term so cas: is the primary identifier with the parent as narrowMatch
       (Rule B1 registry rows added). Resolves the prior ''pending CAS evidence'' review.'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   ontology_mapping:
     ontology_id: CHEBI:64736
     ontology_label: magnesium nitrate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MediaDive ingredient 1763 (CAS 13446-18-9)
@@ -10880,6 +10934,16 @@ ingredients:
       source: CHEBI (parent)
       notes: Parent anhydrous term CHEBI:64736 'magnesium nitrate'; no hexahydrate
         term exists in CHEBI.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:64736 (''magnesium nitrate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
 - identifier: CHEBI:229630
   preferred_term: NH42CO3
   synonyms:
@@ -13752,7 +13816,7 @@ ingredients:
     ontology_id: CHEBI:17256
     ontology_label: 2'-deoxyadenosine
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -13764,6 +13828,16 @@ ingredients:
       notes: 2-Deoxyadenosine monohydrate is a hydrate/salt with its own CAS and no
         exact ChEBI term; anchored to the parent CHEBI:17256 '2'-deoxyadenosine' by
         narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of 2'-deoxyadenosine
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17256 ("2''-deoxyadenosine") — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -13801,6 +13875,12 @@ ingredients:
       unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of
       2''-deoxyadenosine'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 16373-93-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -14217,7 +14297,7 @@ ingredients:
     ontology_id: CHEBI:27469
     ontology_label: 2-dehydro-D-gluconic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -14230,6 +14310,16 @@ ingredients:
         its own CAS and no exact ChEBI term; anchored to the parent CHEBI:27469 '2-dehydro-D-gluconic
         acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hemicalcium
         salt hydrate of 2-dehydro-D-gluconic acid
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:27469 (''2-dehydro-D-gluconic acid'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -14274,6 +14364,12 @@ ingredients:
       identifier cas:1040352-40-6 unchanged; mapping_quality FALLBACK_REGISTRY ->
       NARROW_MATCH. hemicalcium salt hydrate of 2-dehydro-D-gluconic acid'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1040352-40-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -14299,7 +14395,7 @@ ingredients:
     ontology_id: CHEBI:27469
     ontology_label: 2-dehydro-D-gluconic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -14312,6 +14408,16 @@ ingredients:
         with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:27469
         '2-dehydro-D-gluconic acid' by narrowMatch per MAPPING_SEMANTICS.md Section
         3 step 2. hemicalcium salt monohydrate of 2-dehydro-D-gluconic acid
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:27469 (''2-dehydro-D-gluconic acid'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -14362,6 +14468,12 @@ ingredients:
       identifier cas:3470-37-9 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
       hemicalcium salt monohydrate of 2-dehydro-D-gluconic acid'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 3470-37-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -18403,7 +18515,7 @@ ingredients:
     ontology_id: CHEBI:16388
     ontology_label: 4-hydroxymandelic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -18414,6 +18526,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='4-Hydroxymandelic
         acid monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:16388 (''4-hydroxymandelic acid'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: hydroxy(4-hydroxyphenyl)acetic acid
     synonym_type: EXACT_SYNONYM
@@ -18449,6 +18571,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:16388 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 184901-84-6
@@ -20084,7 +20212,7 @@ ingredients:
     ontology_id: CHEBI:74498
     ontology_label: 5-fluoroorotic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -20095,6 +20223,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='5-Fluoroorotic
         acid hydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:74498 (''5-fluoroorotic acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: 5-fluoro-2,6-dioxo-1,2,3,6-tetrahydropyrimidine-4-carboxylic acid
     synonym_type: EXACT_SYNONYM
@@ -20130,6 +20268,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:74498 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 207291-81-4
@@ -21396,7 +21540,7 @@ ingredients:
     ontology_id: CHEBI:30915
     ontology_label: 2-oxoglutaric acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -21411,6 +21555,16 @@ ingredients:
         own CAS and no exact ChEBI term; anchored to the parent CHEBI:30915 '2-oxoglutaric
         acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium salt
         hydrate of 2-oxoglutaric acid
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:30915 (''2-oxoglutaric acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: a-Ketoglutaric acid
     synonym_type: EXACT_SYNONYM
@@ -21464,6 +21618,12 @@ ingredients:
       identifier cas:305-72-6 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
       disodium salt hydrate of 2-oxoglutaric acid'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 305-72-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -23396,7 +23556,7 @@ ingredients:
     ontology_id: CHEBI:16708
     ontology_label: adenine
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -23410,6 +23570,16 @@ ingredients:
       notes: Adenine hydrochloride hydrate is a hydrate/salt with its own CAS and
         no exact ChEBI term; anchored to the parent CHEBI:16708 'adenine' by narrowMatch
         per MAPPING_SEMANTICS.md Section 3 step 2. hydrochloride hydrate of adenine
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:16708 (''adenine'') — a subsumption ChEBI itself denies: it files
+        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -23446,6 +23616,12 @@ ingredients:
       unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. hydrochloride
       hydrate of adenine'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 2922-28-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -26004,7 +26180,7 @@ ingredients:
     ontology_id: CHEBI:91249
     ontology_label: ammonium molybdate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -26016,6 +26192,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='ammonium molybdate
         tetrahydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:91249 (''ammonium molybdate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: bisammonium dioxido(dioxo)molybdenum
     synonym_type: EXACT_SYNONYM
@@ -26062,6 +26248,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
       nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 12054-85-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -31815,7 +32007,7 @@ ingredients:
     ontology_id: CHEBI:78157
     ontology_label: disodium 4,7-diphenyl-1,10-phenanthroline 4',4''-disulfonate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -31830,6 +32022,16 @@ ingredients:
         which made a distinct substance indistinguishable from its anhydrous parent
         downstream. ChEBI has no term for this hydrate and the record carries no verified
         CAS, so steps 1 and 2 are unavailable and step 3 applies.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:78157 ("disodium 4,7-diphenyl-1,10-phenanthroline 4'',4''''-disulfonate")
+        — a subsumption ChEBI itself denies: it files hydrates under CHEBI:35505 ''hydrate'',
+        never under the anhydrous compound, which is not an ancestor even transitively.
+        A hydrate is a distinct substance containing the anhydrous form, not a specialization
+        of it. closeMatch claims similarity without subsumption. The ontology_id and
+        the record''s own identifier are unchanged.'
   synonyms:
   - synonym_text: disodium 4,4'-(1,10-phenanthroline-4,7-diyl)dibenzenesulfonate
     synonym_type: EXACT_SYNONYM
@@ -31876,6 +32078,12 @@ ingredients:
     action: MINTED_REGISTRY_FOR_HYDRATE
     changes: identifier CHEBI:78157 -> kgmicrobe.compound:bathophenanthrolinedisulfonic_acid_disodium_salt_hydrate;
       mapping_quality EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 52746-49-3
@@ -32923,7 +33131,7 @@ ingredients:
     ontology_id: CHEBI:17270
     ontology_label: glycerol 2-phosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -32936,6 +33144,16 @@ ingredients:
         own CAS and no exact ChEBI term; anchored to the parent CHEBI:17270 'glycerol
         2-phosphate' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium
         salt hydrate of glycerol 2-phosphate
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17270 (''glycerol 2-phosphate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -32973,6 +33191,12 @@ ingredients:
       identifier cas:154804-51-0 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
       disodium salt hydrate of glycerol 2-phosphate'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 154804-51-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -33460,7 +33684,7 @@ ingredients:
     ontology_id: CHEBI:17750
     ontology_label: glycine betaine
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -33484,6 +33708,16 @@ ingredients:
         ChEBI formula ('C5H11NO2') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17750 (''glycine betaine'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: Betaine
     synonym_type: EXACT_SYNONYM
@@ -33620,6 +33854,12 @@ ingredients:
       anhydrous parent CHEBI:17750's ChEBI formula ('C5H11NO2') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 107-43-7
@@ -36965,7 +37205,7 @@ ingredients:
     ontology_id: CHEBI:3312
     ontology_label: calcium dichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -36990,6 +37230,16 @@ ingredients:
         ChEBI formula ('Ca.2Cl') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:3312 (''calcium dichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -37085,6 +37335,12 @@ ingredients:
       anhydrous parent CHEBI:3312's ChEBI formula ('Ca.2Cl') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   kg_microbe_node_id: CHEBI:3312
   chemical_properties:
@@ -37352,7 +37608,7 @@ ingredients:
     ontology_id: CHEBI:232796
     ontology_label: cadmium acetate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -37363,6 +37619,16 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 10986'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:232796 (''cadmium acetate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: cadmium(2+);diacetate
     synonym_type: EXACT_SYNONYM
@@ -37398,6 +37664,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:232796 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 5743-04-4
@@ -41003,7 +41275,7 @@ ingredients:
     ontology_id: CHEBI:35458
     ontology_label: cerium trichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -41028,6 +41300,16 @@ ingredients:
         ChEBI formula ('CeCl3') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:35458 (''cerium trichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: cerium(3+) chloride
     synonym_type: EXACT_SYNONYM
@@ -41098,6 +41380,12 @@ ingredients:
       parent CHEBI:35458's ChEBI formula ('CeCl3') — the mark of a value inherited
       from the parent rather than measured for this record. Water appended in ChEBI's
       own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 7790-86-5
@@ -41629,7 +41917,7 @@ ingredients:
     ontology_id: CHEBI:31380
     ontology_label: Cefsulodin sodium
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -41644,6 +41932,16 @@ ingredients:
         from its anhydrous parent downstream. ChEBI has no term for this hydrate and
         the record carries no verified CAS, so steps 1 and 2 are unavailable and step
         3 applies.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:31380 (''Cefsulodin sodium'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -41689,6 +41987,12 @@ ingredients:
     changes: identifier CHEBI:31380 -> kgmicrobe.compound:cefsulodin_sodium_salt_hydrate;
       mapping_quality EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 52152-93-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -41710,7 +42014,7 @@ ingredients:
     ontology_id: CHEBI:3508
     ontology_label: ceftazidime
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -41724,6 +42028,16 @@ ingredients:
         term; anchored to the parent CHEBI:3508 'ceftazidime' by narrowMatch per MAPPING_SEMANTICS.md
         Section 3 step 2. unspecified hydrate of ceftazidime; CHEBI:3509 is specifically
         the pentahydrate, which the label does not claim
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:3508 (''ceftazidime'') — a subsumption ChEBI itself denies: it
+        files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -41765,6 +42079,12 @@ ingredients:
       of ceftazidime; CHEBI:3509 is specifically the pentahydrate, which the label
       does not claim'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 120618-65-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -43729,7 +44049,7 @@ ingredients:
     ontology_id: CHEBI:81711
     ontology_label: chlorhexidine acetate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -43744,6 +44064,16 @@ ingredients:
         from its anhydrous parent downstream. ChEBI has no term for this hydrate and
         the record carries no verified CAS, so steps 1 and 2 are unavailable and step
         3 applies.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:81711 (''chlorhexidine acetate'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: N,N''''-hexane-1,6-diylbis[N'-(4-chlorophenyl)triimidodicarbonic
       diamide] acetate (1:2)
@@ -43783,6 +44113,12 @@ ingredients:
     action: MINTED_REGISTRY_FOR_HYDRATE
     changes: identifier CHEBI:81711 -> kgmicrobe.compound:chlorhexidine_diacetate_salt_hydrate;
       mapping_quality EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 56-95-1
@@ -44429,6 +44765,15 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula '3Cl.Cr' -> '3Cl.Cr.6H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 6 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:53351's
+        ChEBI formula ('3Cl.Cr') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -44458,11 +44803,20 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula '3Cl.Cr' -> '3Cl.Cr.6H2O' (#321); the label states
+      6 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:53351's ChEBI formula ('3Cl.Cr') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10025-73-7
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: 3Cl.Cr
+    molecular_formula: 3Cl.Cr.6H2O
     inchi: InChI=1S/3ClH.Cr/h3*1H;/q;;;+3/p-3
     smiles: '[Cl-].[Cl-].[Cl-].[Cr+3]'
   ingredient_type: SINGLE_INGREDIENT
@@ -46402,7 +46756,7 @@ ingredients:
     ontology_id: CHEBI:35696
     ontology_label: cobalt dichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -46427,6 +46781,16 @@ ingredients:
         ChEBI formula ('2Cl.Co') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:35696 (''cobalt dichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: CoCl2 . 6H2O
     synonym_type: HYDRATE_FORM
@@ -46525,6 +46889,12 @@ ingredients:
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:35696
   chemical_properties:
     cas_rn: 7646-79-9
@@ -46547,7 +46917,7 @@ ingredients:
     ontology_id: CHEBI:35696
     ontology_label: cobalt dichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -46572,6 +46942,16 @@ ingredients:
         ChEBI formula ('2Cl.Co') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:35696 (''cobalt dichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: CoCl2 . 6H2O
     synonym_type: HYDRATE_FORM
@@ -46669,6 +47049,12 @@ ingredients:
       anhydrous parent CHEBI:35696's ChEBI formula ('2Cl.Co') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   kg_microbe_node_id: CHEBI:35696
   chemical_properties:
@@ -48734,7 +49120,7 @@ ingredients:
     ontology_id: CHEBI:78036
     ontology_label: copper(II) nitrate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -48758,6 +49144,16 @@ ingredients:
         ChEBI formula ('Cu.2NO3') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:78036 (''copper(II) nitrate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: copper(II) nitrate (anhydrous)
     synonym_type: EXACT_SYNONYM
@@ -48824,6 +49220,12 @@ ingredients:
       anhydrous parent CHEBI:78036's ChEBI formula ('Cu.2NO3') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 10031-43-3
@@ -49405,7 +49807,7 @@ ingredients:
     ontology_id: CHEBI:49553
     ontology_label: copper(II) chloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -49430,6 +49832,16 @@ ingredients:
         ChEBI formula ('Cl2Cu') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:49553 (''copper(II) chloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: CuCl2 x H2O
     synonym_type: HYDRATE_FORM
@@ -49532,6 +49944,12 @@ ingredients:
       parent CHEBI:49553's ChEBI formula ('Cl2Cu') — the mark of a value inherited
       from the parent rather than measured for this record. Water appended in ChEBI's
       own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   kg_microbe_node_id: CHEBI:49553
   chemical_properties:
@@ -51564,7 +51982,7 @@ ingredients:
     ontology_id: CHEBI:6731
     ontology_label: melezitose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -51576,6 +51994,16 @@ ingredients:
       notes: D-(+)-Melezitose hydrate is a hydrate/salt with its own CAS and no exact
         ChEBI term; anchored to the parent CHEBI:6731 'melezitose' by narrowMatch
         per MAPPING_SEMANTICS.md Section 3 step 2. unspecified hydrate of melezitose
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:6731 (''melezitose'') — a subsumption ChEBI itself denies: it files
+        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -51622,6 +52050,12 @@ ingredients:
       unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. unspecified hydrate
       of melezitose'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 207511-10-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -51715,7 +52149,7 @@ ingredients:
     ontology_id: CHEBI:6731
     ontology_label: melezitose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -51727,6 +52161,16 @@ ingredients:
       notes: D-(+)-melezitose monohydrate is a hydrate/salt with its own CAS and no
         exact ChEBI term; anchored to the parent CHEBI:6731 'melezitose' by narrowMatch
         per MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of melezitose
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:6731 (''melezitose'') — a subsumption ChEBI itself denies: it files
+        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -51773,6 +52217,12 @@ ingredients:
       unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of
       melezitose'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10030-67-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -52267,7 +52717,7 @@ ingredients:
     ontology_id: CHEBI:190546
     ontology_label: D-Fructose 6-Phosphate-Disodium Salt
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -52277,6 +52727,16 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 22812950'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:190546 (''D-Fructose 6-Phosphate-Disodium Salt'') — a subsumption
+        ChEBI itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never
+        under the anhydrous compound, which is not an ancestor even transitively.
+        A hydrate is a distinct substance containing the anhydrous form, not a specialization
+        of it. closeMatch claims similarity without subsumption. The ontology_id and
+        the record''s own identifier are unchanged.'
   synonyms:
   - synonym_text: disodium;[(2R,3R,4S)-2,3,4,6-tetrahydroxy-5-oxohexyl] phosphate
     synonym_type: EXACT_SYNONYM
@@ -52323,6 +52783,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 26177-86-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -52345,7 +52811,7 @@ ingredients:
     ontology_id: CHEBI:18024
     ontology_label: D-galacturonic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -52357,6 +52823,25 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='D-Galacturonic
         Acid monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:18024 (''D-galacturonic acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'C6H10O7' -> 'C6H10O7.H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 1 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:18024's
+        ChEBI formula ('C6H10O7') — the mark of a value inherited from the parent
+        rather than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: D-galacturonate
     synonym_type: EXACT_SYNONYM
@@ -52393,11 +52878,26 @@ ingredients:
     action: AUTO_BACKFILL_CHEBI_CHEMISTRY
     changes: molecular_formula=C6H10O7
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'C6H10O7' -> 'C6H10O7.H2O' (#321); the label states
+      1 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:18024's ChEBI formula ('C6H10O7') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 91510-62-2
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C6H10O7
+    molecular_formula: C6H10O7.H2O
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:16002
   preferred_term: D-Glucaric acid
@@ -52722,7 +53222,7 @@ ingredients:
     ontology_id: CHEBI:4178
     ontology_label: D-glucuronic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -52733,6 +53233,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='D-Glucuronic
         acid sodium salt monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:4178 (''D-glucuronic acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -52766,6 +53276,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:4178 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 207300-70-7
@@ -53053,7 +53569,7 @@ ingredients:
     ontology_id: CHEBI:17306
     ontology_label: maltose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -53070,6 +53586,16 @@ ingredients:
         is now retargeted at CHEBI:17306 (maltose) as the correct narrowMatch parent.
         D-Maltose monohydrate is a hydrate of D-maltose, which has no separate CHEBI;
         maltose (CHEBI:17306) is the closest available parent.'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17306 (''maltose'') — a subsumption ChEBI itself denies: it files
+        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms:
   - synonym_text: Maltose monohydrate
     synonym_type: EXACT_SYNONYM
@@ -53126,6 +53652,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE; ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 6363-53-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -55961,7 +56493,7 @@ ingredients:
     ontology_id: CHEBI:14336
     ontology_label: glycerol 1-phosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -55972,6 +56504,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='DL-Glycerol
         1-phosphate sodium salt hydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:14336 (''glycerol 1-phosphate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: 2,3-dihydroxypropyl dihydrogen phosphate
     synonym_type: EXACT_SYNONYM
@@ -56020,6 +56562,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 17603-42-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -56117,7 +56665,7 @@ ingredients:
     ontology_id: CHEBI:172950
     ontology_label: Isocitric acid, DL-
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -56132,6 +56680,16 @@ ingredients:
         from its anhydrous parent downstream. ChEBI has no term for this hydrate and
         the record carries no verified CAS, so steps 1 and 2 are unavailable and step
         3 applies.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:172950 (''Isocitric acid, DL-'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: trisodium;1-hydroxypropane-1,2,3-tricarboxylate
     synonym_type: EXACT_SYNONYM
@@ -56179,6 +56737,12 @@ ingredients:
     action: MINTED_REGISTRY_FOR_HYDRATE
     changes: identifier CHEBI:172950 -> kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate;
       mapping_quality EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 1637-73-6
@@ -59524,7 +60088,7 @@ ingredients:
     ontology_id: CHEBI:34683
     ontology_label: disodium hydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: LEXICAL_MATCH
       source: culturemech-pending
@@ -59535,6 +60099,16 @@ ingredients:
         term. OLS/OAK finds disodium hydrogenphosphate but no exact heptahydrate stock
         solution term, so the stock solution retains a kgmicrobe.ingredient identity
         with CHEBI:34683 as a broader solute parent.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:34683 (''disodium hydrogenphosphate'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: disodium hydrogen phosphate heptahydrate
     synonym_type: RELATED_SYNONYM
@@ -59574,6 +60148,12 @@ ingredients:
       chemical properties.
     previous_status: MAPPED
     new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   ingredient_type: STOCK_SOLUTION
   notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:131825
@@ -62212,7 +62792,7 @@ ingredients:
     ontology_id: CHEBI:4735
     ontology_label: ethylenediaminetetraacetic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -62226,6 +62806,16 @@ ingredients:
         and no exact ChEBI term; anchored to the parent CHEBI:4735 'ethylenediaminetetraacetic
         acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. tetrasodium
         tetrahydrate salt of EDTA
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:4735 (''ethylenediaminetetraacetic acid'') — a subsumption ChEBI
+        itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never under
+        the anhydrous compound, which is not an ancestor even transitively. A hydrate
+        is a distinct substance containing the anhydrous form, not a specialization
+        of it. closeMatch claims similarity without subsumption. The ontology_id and
+        the record''s own identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -62271,6 +62861,12 @@ ingredients:
       cas:13235-36-4 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
       tetrasodium tetrahydrate salt of EDTA'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 13235-36-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -63087,6 +63683,15 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'C15H16O9' -> 'C15H16O9.H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 1 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:4853's
+        ChEBI formula ('C15H16O9') — the mark of a value inherited from the parent
+        rather than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: 7-hydroxy-2-oxo-2H-chromen-6-yl beta-D-glucopyranoside
     synonym_type: EXACT_SYNONYM
@@ -63120,11 +63725,20 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'C15H16O9' -> 'C15H16O9.H2O' (#321); the label states
+      1 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:4853's ChEBI formula ('C15H16O9') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 531-75-9
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C15H16O9
+    molecular_formula: C15H16O9.H2O
     inchi: InChI=1S/C15H16O9/c16-5-10-12(19)13(20)14(21)15(24-10)23-9-3-6-1-2-11(18)22-8(6)4-7(9)17/h1-4,10,12-17,19-21H,5H2/t10-,12-,13+,14-,15-/m1/s1
     smiles: O=c1ccc2cc(O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)c(O)cc2o1
   ingredient_type: SINGLE_INGREDIENT
@@ -66066,7 +66680,7 @@ ingredients:
     ontology_id: CHEBI:30812
     ontology_label: iron dichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -66091,6 +66705,16 @@ ingredients:
         ChEBI formula ('Cl2Fe') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:30812 (''iron dichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: FeCl2 x 7 H2O
     synonym_type: HYDRATE_FORM
@@ -66174,6 +66798,12 @@ ingredients:
       from the parent rather than measured for this record. Water appended in ChEBI's
       own dot-separated notation.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:30812
   chemical_properties:
     cas_rn: 7758-94-3
@@ -66196,7 +66826,7 @@ ingredients:
     ontology_id: CHEBI:30812
     ontology_label: iron dichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -66221,6 +66851,16 @@ ingredients:
         ChEBI formula ('Cl2Fe') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:30812 (''iron dichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: FeCl2 x 6 H2O
     synonym_type: HYDRATE_FORM
@@ -66303,6 +66943,12 @@ ingredients:
       parent CHEBI:30812's ChEBI formula ('Cl2Fe') — the mark of a value inherited
       from the parent rather than measured for this record. Water appended in ChEBI's
       own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   kg_microbe_node_id: CHEBI:30812
   chemical_properties:
@@ -66433,7 +67079,7 @@ ingredients:
     ontology_id: CHEBI:30808
     ontology_label: iron trichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -66458,6 +67104,16 @@ ingredients:
         ChEBI formula ('Cl3Fe') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:30808 (''iron trichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: FeCl3·4H2O
     synonym_type: HYDRATE_FORM
@@ -66533,6 +67189,12 @@ ingredients:
       parent CHEBI:30808's ChEBI formula ('Cl3Fe') — the mark of a value inherited
       from the parent rather than measured for this record. Water appended in ChEBI's
       own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   kg_microbe_node_id: CHEBI:30808
   chemical_properties:
@@ -69354,7 +70016,7 @@ ingredients:
     ontology_id: CHEBI:201600
     ontology_label: Fosmidomycin sodium salt
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -69364,6 +70026,16 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 5141362'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:201600 (''Fosmidomycin sodium salt'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: sodium;3-[ormyl(hydroxy)amino]propyl-hydroxyphosphinate
     synonym_type: EXACT_SYNONYM
@@ -69410,6 +70082,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 66508-37-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -70670,7 +71348,7 @@ ingredients:
     ontology_id: CHEBI:17973
     ontology_label: alpha-D-galactose 1-phosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -70683,6 +71361,16 @@ ingredients:
         with its own CAS and no exact ChEBI term; anchored to the parent CHEBI:17973
         'alpha-D-galactose 1-phosphate' by narrowMatch per MAPPING_SEMANTICS.md Section
         3 step 2. dipotassium pentahydrate salt of alpha-D-galactose 1-phosphate
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17973 (''alpha-D-galactose 1-phosphate'') — a subsumption ChEBI
+        itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never under
+        the anhydrous compound, which is not an ancestor even transitively. A hydrate
+        is a distinct substance containing the anhydrous form, not a specialization
+        of it. closeMatch claims similarity without subsumption. The ontology_id and
+        the record''s own identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -70729,6 +71417,12 @@ ingredients:
       identifier cas:19046-60-7 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
       dipotassium pentahydrate salt of alpha-D-galactose 1-phosphate'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 19046-60-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -73118,7 +73812,7 @@ ingredients:
     ontology_id: CHEBI:73898
     ontology_label: Gly-Gln
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -73128,6 +73822,16 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Gly-Gln monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:73898 (''Gly-Gln'') — a subsumption ChEBI itself denies: it files
+        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms:
   - synonym_text: glycyl-L-glutamine
     synonym_type: EXACT_SYNONYM
@@ -73174,6 +73878,12 @@ ingredients:
       resolves in PubChem to 'Glycyl-glutamine monohydrate' — provenance independent
       of the ChEBI mapping under test, per MAPPING_SEMANTICS §3. The narrowMatch itself
       is correct and is unchanged.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 172669-64-6
@@ -73798,7 +74508,7 @@ ingredients:
     ontology_id: CHEBI:26707
     ontology_label: glycerol phosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -73811,6 +74521,16 @@ ingredients:
         CAS and no exact ChEBI term; anchored to the parent CHEBI:26707 'glycerol
         phosphate' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium
         salt hydrate of glycerol phosphate
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:26707 (''glycerol phosphate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -73857,6 +74577,12 @@ ingredients:
       cas:55073-41-1 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
       disodium salt hydrate of glycerol phosphate'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 55073-41-1
     data_source: CultureBotHT compounds_to_cas.csv
@@ -74709,7 +75435,7 @@ ingredients:
     ontology_id: CHEBI:30076
     ontology_label: gold trichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -74721,6 +75447,16 @@ ingredients:
       notes: gold (III) chloride hydrate is a hydrate/salt with its own CAS and no
         exact ChEBI term; anchored to the parent CHEBI:30076 'gold trichloride' by
         narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hydrate of gold trichloride
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:30076 (''gold trichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -74757,6 +75493,12 @@ ingredients:
       unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. hydrate of gold
       trichloride'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 27988-77-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -82292,7 +83034,7 @@ ingredients:
     ontology_id: CHEBI:131527
     ontology_label: dipotassium hydrogen phosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -82317,6 +83059,16 @@ ingredients:
         ChEBI formula ('HO4P.2K') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:131527 (''dipotassium hydrogen phosphate'') — a subsumption ChEBI
+        itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never under
+        the anhydrous compound, which is not an ancestor even transitively. A hydrate
+        is a distinct substance containing the anhydrous form, not a specialization
+        of it. closeMatch claims similarity without subsumption. The ontology_id and
+        the record''s own identifier are unchanged.'
   synonyms:
   - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -82411,6 +83163,12 @@ ingredients:
       anhydrous parent CHEBI:131527's ChEBI formula ('HO4P.2K') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   kg_microbe_node_id: CHEBI:131527
   chemical_properties:
@@ -85108,7 +85866,7 @@ ingredients:
     ontology_id: CHEBI:17053
     ontology_label: L-aspartic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -85119,6 +85877,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='L-Aspartic acid
         sodium salt monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17053 (''L-aspartic acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: (2S)-2-aminobutanedioic acid
     synonym_type: EXACT_SYNONYM
@@ -85167,6 +85935,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 323194-76-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -85327,7 +86101,7 @@ ingredients:
     ontology_id: CHEBI:17285
     ontology_label: L-cysteic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -85338,6 +86112,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='L-Cysteic acid
         monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17285 (''L-cysteic acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -85370,6 +86154,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:17285 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 23537-25-9
@@ -85544,7 +86334,7 @@ ingredients:
     ontology_id: CHEBI:16015
     ontology_label: L-glutamic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -85557,6 +86347,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='L-Glutamic acid
         monopotassium salt monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:16015 (''L-glutamic acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: L-Glutamic acid potassium salt monohydrate, L-Glutamic acid potassium
       salt
@@ -85609,6 +86409,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 6382-01-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -86219,7 +87025,7 @@ ingredients:
     ontology_id: CHEBI:62345
     ontology_label: L-rhamnose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -86232,6 +87038,16 @@ ingredients:
       notes: L-Rhamnose monohydrate is a hydrate/salt with its own CAS and no exact
         ChEBI term; anchored to the parent CHEBI:62345 'L-rhamnose' by narrowMatch
         per MAPPING_SEMANTICS.md Section 3 step 2. monohydrate of L-rhamnose
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:62345 (''L-rhamnose'') — a subsumption ChEBI itself denies: it
+        files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -86277,6 +87093,12 @@ ingredients:
       unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. monohydrate of
       L-rhamnose'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10030-85-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -93309,7 +94131,7 @@ ingredients:
     ontology_id: CHEBI:48607
     ontology_label: lithium chloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -93320,6 +94142,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Lithium chloride
         hydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:48607 (''lithium chloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -93352,6 +94184,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:48607 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 85144-11-2
@@ -96146,7 +96984,7 @@ ingredients:
     ontology_id: CHEBI:61993
     ontology_label: maltotriose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -96158,6 +96996,16 @@ ingredients:
       notes: Maltotriose hydrate is a hydrate/salt with its own CAS and no exact ChEBI
         term; anchored to the parent CHEBI:61993 'maltotriose' by narrowMatch per
         MAPPING_SEMANTICS.md Section 3 step 2. unspecified hydrate of maltotriose
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:61993 (''maltotriose'') — a subsumption ChEBI itself denies: it
+        files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -96198,6 +97046,12 @@ ingredients:
       unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. unspecified hydrate
       of maltotriose'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 312693-63-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -99953,7 +100807,7 @@ ingredients:
     ontology_id: CHEBI:6636
     ontology_label: magnesium dichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -99978,6 +100832,16 @@ ingredients:
         ChEBI formula ('2Cl.Mg') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:6636 (''magnesium dichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: Magnesium chloride anhydrous
     synonym_type: EXACT_SYNONYM
@@ -100082,6 +100946,12 @@ ingredients:
       anhydrous parent CHEBI:6636's ChEBI formula ('2Cl.Mg') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 12285-34-6
@@ -110148,7 +111018,7 @@ ingredients:
     ontology_id: CHEBI:91259
     ontology_label: disodium hydrogenphosphate dodecahydrate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -110178,6 +111048,16 @@ ingredients:
         the mass by 18 g/mol per water. Corrected because adopted verbatim from the
         mapped term CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate'), which
         is the specific hydrate and already carries the water.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:91259 (''disodium hydrogenphosphate dodecahydrate'') — a subsumption
+        ChEBI itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never
+        under the anhydrous compound, which is not an ancestor even transitively.
+        A hydrate is a distinct substance containing the anhydrous form, not a specialization
+        of it. closeMatch claims similarity without subsumption. The ontology_id and
+        the record''s own identifier are unchanged.'
   synonyms:
   - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -110299,6 +111179,12 @@ ingredients:
       from the mapped term CHEBI:91259 ('disodium hydrogenphosphate dodecahydrate'),
       which is the specific hydrate and already carries the water.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
     cas_rn: 10039-32-4
@@ -110325,7 +111211,7 @@ ingredients:
     ontology_id: CHEBI:91258
     ontology_label: disodium hydrogenphosphate dihydrate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -110355,6 +111241,16 @@ ingredients:
         by 18 g/mol per water. Corrected because adopted verbatim from the mapped
         term CHEBI:91258 ('disodium hydrogenphosphate dihydrate'), which is the specific
         hydrate and already carries the water.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:91258 (''disodium hydrogenphosphate dihydrate'') — a subsumption
+        ChEBI itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never
+        under the anhydrous compound, which is not an ancestor even transitively.
+        A hydrate is a distinct substance containing the anhydrous form, not a specialization
+        of it. closeMatch claims similarity without subsumption. The ontology_id and
+        the record''s own identifier are unchanged.'
   synonyms:
   - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -110506,6 +111402,12 @@ ingredients:
       from the mapped term CHEBI:91258 ('disodium hydrogenphosphate dihydrate'), which
       is the specific hydrate and already carries the water.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
     cas_rn: 10028-24-7
@@ -110532,7 +111434,7 @@ ingredients:
     ontology_id: CHEBI:34683
     ontology_label: disodium hydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -110557,6 +111459,16 @@ ingredients:
         ChEBI formula ('HO4P.2Na') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:34683 (''disodium hydrogenphosphate'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -110663,6 +111575,12 @@ ingredients:
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
     cas_rn: 7782-85-6
@@ -110689,7 +111607,7 @@ ingredients:
     ontology_id: CHEBI:34683
     ontology_label: disodium hydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -110714,6 +111632,16 @@ ingredients:
         ChEBI formula ('HO4P.2Na') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:34683 (''disodium hydrogenphosphate'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: Na2HPO4 . 12H2O
     synonym_type: HYDRATE_FORM
@@ -110826,6 +111754,12 @@ ingredients:
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
     cas_rn: 7782-85-6
@@ -110848,7 +111782,7 @@ ingredients:
     ontology_id: CHEBI:34683
     ontology_label: disodium hydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -110873,6 +111807,16 @@ ingredients:
         ChEBI formula ('HO4P.2Na') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:34683 (''disodium hydrogenphosphate'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: Na2HPO4 . 12H2O
     synonym_type: HYDRATE_FORM
@@ -110986,6 +111930,12 @@ ingredients:
       anhydrous parent CHEBI:34683's ChEBI formula ('HO4P.2Na') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
@@ -115499,7 +116449,7 @@ ingredients:
     ontology_id: CHEBI:37585
     ontology_label: sodium dihydrogenphosphate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -115524,6 +116474,16 @@ ingredients:
         ChEBI formula ('H2O4P.Na') — the mark of a value inherited from the parent
         rather than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:37585 (''sodium dihydrogenphosphate'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: NaH2PO4 x 2H2O
     synonym_type: HYDRATE_FORM
@@ -115657,6 +116617,12 @@ ingredients:
       anhydrous parent CHEBI:37585's ChEBI formula ('H2O4P.Na') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   kg_microbe_node_id: CHEBI:37585
   chemical_properties:
@@ -117208,7 +118174,7 @@ ingredients:
     ontology_id: CHEBI:31635
     ontology_label: neomycin sulfate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -117221,6 +118187,16 @@ ingredients:
         'Neomycin trisulfate salt hydrate' does not equal the term label 'neomycin
         sulfate'. EXACT_MATCH therefore asserted an identity the pair does not have.
         Re-graded because a specific salt/hydrate form of the term.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:31635 (''neomycin sulfate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -117268,6 +118244,12 @@ ingredients:
       and §3 forbids expressing a more specific thing by sharing a broader term's
       identifier. Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping
       was re-graded to narrow/broad.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 1405-10-3
@@ -119515,7 +120497,7 @@ ingredients:
     ontology_id: CHEBI:34887
     ontology_label: nickel dichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -119540,6 +120522,16 @@ ingredients:
         ChEBI formula ('Cl2Ni') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:34887 (''nickel dichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: NiCl2 . 6H2O
     synonym_type: HYDRATE_FORM
@@ -119674,6 +120666,12 @@ ingredients:
       a second wrong number would read as a correction while still publishing a false
       identifier.'
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34887
   chemical_properties:
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -119695,7 +120693,7 @@ ingredients:
     ontology_id: CHEBI:34887
     ontology_label: nickel dichloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -119720,6 +120718,16 @@ ingredients:
         ChEBI formula ('Cl2Ni') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:34887 (''nickel dichloride'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: NiCl2 . 6H2O
     synonym_type: HYDRATE_FORM
@@ -119853,6 +120861,12 @@ ingredients:
       wrong for a pentahydrate. Cleared rather than substituted, because swapping
       in a second wrong number would read as a correction while still publishing a
       false identifier.'
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   kg_microbe_node_id: CHEBI:34887
   chemical_properties:
@@ -123901,7 +124915,7 @@ ingredients:
     ontology_id: CHEBI:18394
     ontology_label: 6-O-alpha-D-glucopyranosyl-D-fructofuranose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -123914,6 +124928,16 @@ ingredients:
         term; anchored to the parent CHEBI:18394 '6-O-alpha-D-glucopyranosyl-D-fructofuranose'
         by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. hydrate of palatinose
         (isomaltulose)
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:18394 (''6-O-alpha-D-glucopyranosyl-D-fructofuranose'') — a subsumption
+        ChEBI itself denies: it files hydrates under CHEBI:35505 ''hydrate'', never
+        under the anhydrous compound, which is not an ancestor even transitively.
+        A hydrate is a distinct substance containing the anhydrous form, not a specialization
+        of it. closeMatch claims similarity without subsumption. The ontology_id and
+        the record''s own identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -123960,6 +124984,12 @@ ingredients:
       unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. hydrate of palatinose
       (isomaltulose)'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 343336-76-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -128899,7 +129929,7 @@ ingredients:
     ontology_id: CHEBI:15584
     ontology_label: citramalic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -128912,6 +129942,16 @@ ingredients:
         and no exact ChEBI term; anchored to the parent CHEBI:15584 'citramalic acid'
         by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. potassium salt monohydrate
         of citramalic acid
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:15584 (''citramalic acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -128949,6 +129989,12 @@ ingredients:
       cas:1030365-02-6 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
       potassium salt monohydrate of citramalic acid'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1030365-02-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -129378,7 +130424,7 @@ ingredients:
     ontology_id: CHEBI:30463
     ontology_label: telluric acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -129392,6 +130438,16 @@ ingredients:
         narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. potassium salt hydrate
         of telluric acid (H2O4Te, neutral, 3-STAR). NOT CHEBI:30464 tellurate, which
         is the (2-) anion: a neutral salt is not a kind of a dianion'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:30463 (''telluric acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -129430,6 +130486,12 @@ ingredients:
       hydrate of telluric acid (H2O4Te, neutral, 3-STAR). NOT CHEBI:30464 tellurate,
       which is the (2-) anion: a neutral salt is not a kind of a dianion'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 314041-10-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -129445,7 +130507,7 @@ ingredients:
     ontology_id: CHEBI:75248
     ontology_label: potassium tellurite
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -129456,6 +130518,16 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via PubChem (pubchem-xref)
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 65186'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:75248 (''potassium tellurite'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: dipotassium tellurite
     synonym_type: EXACT_SYNONYM
@@ -129491,6 +130563,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:75248 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 123333-66-4
@@ -138247,7 +139325,7 @@ ingredients:
     ontology_id: CHEBI:29377
     ontology_label: sodium carbonate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -138258,6 +139336,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='sodium carbonate
         monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:29377 (''sodium carbonate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: disodium trioxidocarbonate
     synonym_type: EXACT_SYNONYM
@@ -138293,6 +139381,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:29377 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 5968-11-6
@@ -138414,7 +139508,7 @@ ingredients:
     ontology_id: CHEBI:26711
     ontology_label: sodium cholate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -138426,6 +139520,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Sodium cholate
         hydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:26711 (''sodium cholate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: sodium 3alpha,7alpha,12alpha-trihydroxy-5beta-cholan-24-oate
     synonym_type: EXACT_SYNONYM
@@ -138462,6 +139566,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:26711 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 206986-87-0
@@ -138863,7 +139973,7 @@ ingredients:
     ontology_id: CHEBI:9177
     ontology_label: sodium deoxycholate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -138875,6 +139985,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Sodium deoxycholate
         monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:9177 (''sodium deoxycholate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms:
   - synonym_text: Sodim deoxycholate monohydrate
     synonym_type: EXACT_SYNONYM
@@ -138914,6 +140034,12 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:9177 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 145224-92-6
@@ -139560,6 +140686,13 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'C5H8NO4.Na' -> 'C5H8NO4.H2O.Na'. The recorded value
+        described the anhydrous salt while the label names a hydrate, understating
+        the mass by 18 g/mol per water. Corrected because adopted verbatim from the
+        mapped term CHEBI:232425 ('monosodium L-glutamate hydrate'), which is the
+        specific hydrate and already carries the water.
   synonyms:
   - synonym_text: 'Role: Nitrogen source; Properties: Defined component, Simple component,
       Organic compound'
@@ -139635,11 +140768,18 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'C5H8NO4.Na' -> 'C5H8NO4.H2O.Na' (#321); adopted verbatim
+      from the mapped term CHEBI:232425 ('monosodium L-glutamate hydrate'), which
+      is the specific hydrate and already carries the water.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 6106-04-3
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:53:51.816519+00:00'
-    molecular_formula: C5H8NO4.Na
+    molecular_formula: C5H8NO4.H2O.Na
     inchi: InChI=1S/C5H9NO4.Na/c6-3(5(9)10)1-2-4(7)8;/h3H,1-2,6H2,(H,7,8)(H,9,10);/q;+1/p-1/t3-;/m0./s1
     smiles: '[NH3+][C@@H](CCC(=O)[O-])C(=O)[O-].[Na+]'
   ingredient_type: SINGLE_INGREDIENT
@@ -139703,7 +140843,7 @@ ingredients:
     ontology_id: CHEBI:234148
     ontology_label: sodium hypophosphite
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -139715,6 +140855,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Sodium hypophosphite
         monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:234148 (''sodium hypophosphite'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -139758,6 +140908,12 @@ ingredients:
       in PubChem to 'Sodium hypophosphite monohydrate' — provenance independent of
       the ChEBI mapping under test, per MAPPING_SEMANTICS §3. The narrowMatch itself
       is correct and is unchanged.
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
   chemical_properties:
     cas_rn: 10039-56-2
@@ -141369,7 +142525,7 @@ ingredients:
     ontology_id: CHEBI:132103
     ontology_label: sodium perchlorate
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -141382,6 +142538,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Sodium perchlorate
         monohydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:132103 (''sodium perchlorate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -141424,6 +142590,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_ACCEPTOR
       -> cellular_metabolic_roles.ELECTRON_ACCEPTOR'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7791-07-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -141674,7 +142846,7 @@ ingredients:
     ontology_id: CHEBI:36361
     ontology_label: phosphorous acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -141688,6 +142860,16 @@ ingredients:
         CAS and no exact ChEBI term; anchored to the parent CHEBI:36361 'phosphorous
         acid' by narrowMatch per MAPPING_SEMANTICS.md Section 3 step 2. disodium pentahydrate
         salt of phosphorous acid
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:36361 (''phosphorous acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -141719,6 +142901,12 @@ ingredients:
       cas:13517-23-2 unchanged; mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH.
       disodium pentahydrate salt of phosphorous acid'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 13517-23-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -142333,7 +143521,7 @@ ingredients:
     ontology_id: CHEBI:46612
     ontology_label: phosphorothioic acid
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -142349,6 +143537,16 @@ ingredients:
         hydrate salt of phosphorothioic acid (H3O3PS, neutral, 3-STAR). NOT CHEBI:37511
         thiophosphate, a 1-STAR grouping term whose only child is organic thiophosphate;
         this record is inorganic Na3PO3S
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:46612 (''phosphorothioic acid'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -142388,6 +143586,12 @@ ingredients:
       CHEBI:37511 thiophosphate, a 1-STAR grouping term whose only child is organic
       thiophosphate; this record is inorganic Na3PO3S'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10489-48-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -143943,7 +145147,7 @@ ingredients:
     ontology_id: CHEBI:17164
     ontology_label: stachyose
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -143955,6 +145159,16 @@ ingredients:
       notes: Stachyose hydrate is a hydrate/salt with its own CAS and no exact ChEBI
         term; anchored to the parent CHEBI:17164 'stachyose' by narrowMatch per MAPPING_SEMANTICS.md
         Section 3 step 2. unspecified hydrate of stachyose
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:17164 (''stachyose'') — a subsumption ChEBI itself denies: it files
+        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -144000,6 +145214,12 @@ ingredients:
       registry kgmicrobe.compound:stachyose_hydrate. identifier cas:54261-98-2 unchanged;
       mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. unspecified hydrate of stachyose'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 54261-98-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -147188,7 +148408,7 @@ ingredients:
     ontology_id: CHEBI:134806
     ontology_label: terpin
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -147201,6 +148421,16 @@ ingredients:
         term; anchored to the parent CHEBI:134806 'terpin' by narrowMatch per MAPPING_SEMANTICS.md
         Section 3 step 2. CAS 2451-01-6 is terpin hydrate; the label 'Terpene' is
         a misspelling of terpin
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:134806 (''terpin'') — a subsumption ChEBI itself denies: it files
+        hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+        which is not an ancestor even transitively. A hydrate is a distinct substance
+        containing the anhydrous form, not a specialization of it. closeMatch claims
+        similarity without subsumption. The ontology_id and the record''s own identifier
+        are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -147232,6 +148462,12 @@ ingredients:
       mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. CAS 2451-01-6 is terpin hydrate;
       the label ''Terpene'' is a misspelling of terpin'
     llm_assisted: true
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 2451-01-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -155350,7 +156586,7 @@ ingredients:
     ontology_id: CHEBI:9932
     ontology_label: Vancomycin hydrochloride
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
@@ -155362,6 +156598,16 @@ ingredients:
       source: CHEBI via OLS (stem-substring)
       notes: Parent class identified via stem-substring; matched_via='Vancomycin Hydrochloride
         Hydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:9932 (''Vancomycin hydrochloride'') — a subsumption ChEBI itself
+        denies: it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -155404,6 +156650,12 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 123409-00-7
     data_source: CultureBotHT compounds_to_cas.csv

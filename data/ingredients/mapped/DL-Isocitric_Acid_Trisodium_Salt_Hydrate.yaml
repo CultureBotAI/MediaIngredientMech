@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:172950
   ontology_label: Isocitric acid, DL-
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -19,6 +19,16 @@ ontology_mapping:
       from its anhydrous parent downstream. ChEBI has no term for this hydrate and
       the record carries no verified CAS, so steps 1 and 2 are unavailable and step
       3 applies.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:172950 (''Isocitric acid, DL-'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
 synonyms:
 - synonym_text: trisodium;1-hydroxypropane-1,2,3-tricarboxylate
   synonym_type: EXACT_SYNONYM
@@ -65,6 +75,12 @@ curation_history:
   action: MINTED_REGISTRY_FOR_HYDRATE
   changes: identifier CHEBI:172950 -> kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate;
     mapping_quality EXACT_MATCH -> NARROW_MATCH (#321/#334); §3 step 3.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
 chemical_properties:
   cas_rn: 1637-73-6

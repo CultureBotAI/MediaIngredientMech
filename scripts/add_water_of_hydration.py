@@ -56,11 +56,30 @@ CURATOR = "add_water_of_hydration"
 ISSUE = "#321"
 
 FORMULA_PRED = "chemrof:generalized_empirical_formula"
-# `x 2 H2O`, `·2H2O`, `x H2O` (n=1 implied).
+# `x 2 H2O`, `·2H2O`, `x H2O` (n=1 implied), and the word forms `monohydrate`,
+# `hexahydrate`, ... which the numeric pattern alone does not reach.
 HYDRATION_N = re.compile(r"(?:x|·)\s*(\d*)\s*H2O", re.IGNORECASE)
+MULTIPLIER = {"mono": 1, "di": 2, "tri": 3, "tetra": 4, "penta": 5, "hexa": 6,
+              "hepta": 7, "octa": 8, "nona": 9, "deca": 10, "dodeca": 12}
+HYDRATION_WORD = re.compile(
+    r"\b(mono|di|tri|tetra|penta|hexa|hepta|octa|nona|deca|dodeca)hydrate\b", re.IGNORECASE)
+# "borohydrate" is not a hydrate; it ends in -hydrate purely by spelling.
+NOT_A_HYDRATE = re.compile(r"borohydrate", re.IGNORECASE)
+
+
+def hydration_number(label: str) -> int | None:
+    """Waters of hydration the label states, by either notation, or None."""
+    m = HYDRATION_N.search(label)
+    if m:
+        return int(m.group(1) or 1)
+    m = HYDRATION_WORD.search(label)
+    return MULTIPLIER[m.group(1).lower()] if m else None
 # Any notation that already accounts for water, in formula/smiles/inchi.
 HAS_WATER = re.compile(r"\.\s*\d*H2O|\d+H2O|H2O\b", re.IGNORECASE)
-HYDRATE_LABEL = re.compile(r"(\bx\s*\d*\s*h2o\b|·\s*\d*\s*h2o|\bhydrate\b)", re.IGNORECASE)
+# No leading \b before `hydrate`: "monohydrate"/"tetrahydrate" have no word
+# boundary there, and an earlier version of this pattern silently skipped every
+# record spelled that way.
+HYDRATE_LABEL = re.compile(r"(\bx\s*\d*\s*h2o\b|·\s*\d*\s*h2o|hydrate\b)", re.IGNORECASE)
 
 
 def chebi_formula(conn: sqlite3.Connection, curie: str) -> str | None:
@@ -95,7 +114,7 @@ def main(argv: list[str] | None = None) -> int:
         if rec.get("mapping_status") == "REJECTED":
             continue
         label = str(rec.get("preferred_term") or "")
-        if not HYDRATE_LABEL.search(label):
+        if not HYDRATE_LABEL.search(label) or NOT_A_HYDRATE.search(label):
             continue
         cp = rec.get("chemical_properties") or {}
         blob = " ".join(str(cp.get(k) or "") for k in ("molecular_formula", "smiles", "inchi"))
@@ -116,11 +135,10 @@ def main(argv: list[str] | None = None) -> int:
                    f"already carries the water")
             bucket = adopted
         else:
-            m = HYDRATION_N.search(label)
-            if not m:
+            n = hydration_number(label)
+            if n is None:
                 unstated.append(f"{label[:42]:<42} {current:<18} ({onto_id})")
                 continue
-            n = int(m.group(1) or 1)
             if not term_formula or current != term_formula:
                 unstated.append(f"{label[:42]:<42} {current:<18} ({onto_id}) "
                                 f"— formula is not the parent's {term_formula!r}")

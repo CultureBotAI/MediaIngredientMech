@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:6636
   ontology_label: magnesium dichloride
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -28,6 +28,16 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:6636's
       ChEBI formula ('2Cl.Mg') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#342)
+    notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+      -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+      than CHEBI:6636 (''magnesium dichloride'') — a subsumption ChEBI itself denies:
+      it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous compound,
+      which is not an ancestor even transitively. A hydrate is a distinct substance
+      containing the anhydrous form, not a specialization of it. closeMatch claims
+      similarity without subsumption. The ontology_id and the record''s own identifier
+      are unchanged.'
 synonyms:
 - synonym_text: Magnesium chloride anhydrous
   synonym_type: EXACT_SYNONYM
@@ -131,6 +141,12 @@ curation_history:
     parent CHEBI:6636's ChEBI formula ('2Cl.Mg') — the mark of a value inherited from
     the parent rather than measured for this record. Water appended in ChEBI's own
     dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: regrade_hydrate_to_close_match
+  action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+  changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
+    by its anhydrous form, and ChEBI does not model it as such.
   llm_assisted: false
 chemical_properties:
   cas_rn: 12285-34-6
