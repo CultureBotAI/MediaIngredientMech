@@ -37629,6 +37629,15 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'C4H6CdO4' -> 'C4H6CdO4.2H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 2 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:232796's
+        ChEBI formula ('2C2H3O2.Cd') — the mark of a value inherited from the parent
+        rather than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: cadmium(2+);diacetate
     synonym_type: EXACT_SYNONYM
@@ -37671,11 +37680,20 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'C4H6CdO4' -> 'C4H6CdO4.2H2O' (#321); the label states
+      2 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:232796's ChEBI formula ('2C2H3O2.Cd') — the mark of a
+      value inherited from the parent rather than measured for this record. Water
+      appended in ChEBI's own dot-separated notation.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 5743-04-4
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C4H6CdO4
+    molecular_formula: C4H6CdO4.2H2O
     smiles: CC(=O)[O-].CC(=O)[O-].[Cd+2]
     inchi: InChI=1S/2C2H4O2.Cd/c2*1-2(3)4;/h2*1H3,(H,3,4);/q;;+2/p-2
     pubchem_cid: 10986
@@ -40935,6 +40953,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Ca.O4S' -> 'Ca.O4S.7H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:31346's
+        ChEBI formula ('Ca.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: CaSO4・7H2O
     synonym_type: HYDRATE_FORM
@@ -41015,11 +41042,20 @@ ingredients:
       so the recorded grade overstated. ontology_id is unchanged — the term is correct.
       The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Ca.O4S' -> 'Ca.O4S.7H2O' (#321); the label states
+      7 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:31346's ChEBI formula ('Ca.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7778-18-9
     data_source: PubChem (via CHEBI:31346)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Ca.O4S
+    molecular_formula: Ca.O4S.7H2O
     inchi: InChI=1S/Ca.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Ca+2]
   ingredient_type: SINGLE_INGREDIENT
@@ -48095,6 +48131,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Co.O4S' -> 'Co.O4S.7H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:53470's
+        ChEBI formula ('Co.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic
       compound, Simple component'
@@ -48172,12 +48217,21 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Co.O4S' -> 'Co.O4S.7H2O' (#321); the label states
+      7 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:53470's ChEBI formula ('Co.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:53470
   chemical_properties:
     cas_rn: 10124-43-3
     data_source: PubChem (via CHEBI:53470)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Co.O4S
+    molecular_formula: Co.O4S.7H2O
     inchi: InChI=1S/Co.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Co+2]
   ingredient_type: SINGLE_INGREDIENT
@@ -50276,6 +50330,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.2H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 2 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:23414's
+        ChEBI formula ('Cu.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: CuSO4 . 2H2O
     synonym_type: HYDRATE_FORM
@@ -50355,12 +50418,21 @@ ingredients:
       known synonym, so the recorded grade overstated. ontology_id is unchanged —
       the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.2H2O' (#321); the label states
+      2 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:23414's ChEBI formula ('Cu.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:23414
   chemical_properties:
     cas_rn: 7758-98-7
     data_source: PubChem (via CHEBI:23414)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cu.O4S
+    molecular_formula: Cu.O4S.2H2O
     inchi: InChI=1S/Cu.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Cu+2]
   ingredient_type: SINGLE_INGREDIENT
@@ -50382,6 +50454,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.4H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 4 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:23414's
+        ChEBI formula ('Cu.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: CuSO4 . 2H2O
     synonym_type: HYDRATE_FORM
@@ -50451,12 +50532,21 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.4H2O' (#321); the label states
+      4 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:23414's ChEBI formula ('Cu.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:23414
   chemical_properties:
     cas_rn: 7758-98-7
     data_source: PubChem (via CHEBI:23414)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cu.O4S
+    molecular_formula: Cu.O4S.4H2O
     inchi: InChI=1S/Cu.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Cu+2]
   ingredient_type: SINGLE_INGREDIENT
@@ -68089,6 +68179,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Fe.O4S' -> 'Fe.O4S.5H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 5 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:75832's
+        ChEBI formula ('Fe.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: FeSO4 x 6 H2O
     synonym_type: HYDRATE_FORM
@@ -68173,12 +68272,21 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Fe.O4S' -> 'Fe.O4S.5H2O' (#321); the label states
+      5 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:75832's ChEBI formula ('Fe.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:75832
   chemical_properties:
     cas_rn: 7720-78-7
     data_source: PubChem (via CHEBI:75832)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Fe.O4S
+    molecular_formula: Fe.O4S.5H2O
     inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Fe+2]
   ingredient_type: SINGLE_INGREDIENT
@@ -68200,6 +68308,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Fe.O4S' -> 'Fe.O4S.6H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 6 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:75832's
+        ChEBI formula ('Fe.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: FeSO4 x 5 H2O
     synonym_type: HYDRATE_FORM
@@ -68284,12 +68401,21 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.IRON_SOURCE'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Fe.O4S' -> 'Fe.O4S.6H2O' (#321); the label states
+      6 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:75832's ChEBI formula ('Fe.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:75832
   chemical_properties:
     cas_rn: 7720-78-7
     data_source: PubChem (via CHEBI:75832)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Fe.O4S
+    molecular_formula: Fe.O4S.6H2O
     inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Fe+2]
   ingredient_type: SINGLE_INGREDIENT
@@ -68528,6 +68654,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Fe.O4S' -> 'Fe.O4S.7H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:75832's
+        ChEBI formula ('Fe.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -68619,11 +68754,20 @@ ingredients:
       known synonym, so the recorded grade overstated. ontology_id is unchanged —
       the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Fe.O4S' -> 'Fe.O4S.7H2O' (#321); the label states
+      7 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:75832's ChEBI formula ('Fe.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7720-78-7
     data_source: PubChem API (ontology label)
     retrieval_date: '2026-04-05T23:44:40.986504+00:00'
-    molecular_formula: Fe.O4S
+    molecular_formula: Fe.O4S.7H2O
     inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Fe+2]
   kg_microbe_node_id: CHEBI:75832
@@ -83453,6 +83597,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula '2K.O4S' -> '2K.O4S.7H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:32036's
+        ChEBI formula ('2K.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: K2SO4·7H2O
     synonym_type: HYDRATE_FORM
@@ -83519,12 +83672,21 @@ ingredients:
       migration: the residual MINERAL_SOURCE bucket was suppressed whenever any other
       target existed, which dropped the bulk cation from salts whose other role describes
       the anion (e.g. MgSO4).'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula '2K.O4S' -> '2K.O4S.7H2O' (#321); the label states
+      7 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:32036's ChEBI formula ('2K.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:32036
   chemical_properties:
     cas_rn: 7778-80-5
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: 2K.O4S
+    molecular_formula: 2K.O4S.7H2O
     inchi: InChI=1S/2K.H2O4S/c;;1-5(2,3)4/h;;(H2,1,2,3,4)/q2*+1;/p-2
     smiles: O=S(=O)([O-])[O-].[K+].[K+]
   ingredient_type: SINGLE_INGREDIENT
@@ -101276,6 +101438,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Mg.O4S' -> 'Mg.O4S.7H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:32599's
+        ChEBI formula ('Mg.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -101428,11 +101599,20 @@ ingredients:
       migration: the residual MINERAL_SOURCE bucket was suppressed whenever any other
       target existed, which dropped the bulk cation from salts whose other role describes
       the anion (e.g. MgSO4).'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Mg.O4S' -> 'Mg.O4S.7H2O' (#321); the label states
+      7 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:32599's ChEBI formula ('Mg.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7487-88-9
     data_source: OAK/CHEBI xref
     retrieval_date: '2026-04-19T07:35:12.781730+00:00'
-    molecular_formula: Mg.O4S
+    molecular_formula: Mg.O4S.7H2O
     inchi: InChI=1S/Mg.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Mg+2]
   kg_microbe_node_id: CHEBI:32599
@@ -101594,6 +101774,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Mg.O4S' -> 'Mg.O4S.6H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 6 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:32599's
+        ChEBI formula ('Mg.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: MgSO4 . 7H2O
     synonym_type: HYDRATE_FORM
@@ -101722,12 +101911,21 @@ ingredients:
       migration: the residual MINERAL_SOURCE bucket was suppressed whenever any other
       target existed, which dropped the bulk cation from salts whose other role describes
       the anion (e.g. MgSO4).'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Mg.O4S' -> 'Mg.O4S.6H2O' (#321); the label states
+      6 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:32599's ChEBI formula ('Mg.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:32599
   chemical_properties:
     cas_rn: 7487-88-9
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Mg.O4S
+    molecular_formula: Mg.O4S.6H2O
     inchi: InChI=1S/Mg.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Mg+2]
   ingredient_type: SINGLE_INGREDIENT
@@ -103110,6 +103308,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Mn.O4S' -> 'Mn.O4S.H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 1 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:86360's
+        ChEBI formula ('Mn.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: Manganese sulfate anhydrous
     synonym_type: EXACT_SYNONYM
@@ -103198,12 +103405,21 @@ ingredients:
       known synonym, so the recorded grade overstated. ontology_id is unchanged —
       the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Mn.O4S' -> 'Mn.O4S.H2O' (#321); the label states 1
+      water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
+      parent CHEBI:86360's ChEBI formula ('Mn.O4S') — the mark of a value inherited
+      from the parent rather than measured for this record. Water appended in ChEBI's
+      own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86360
   chemical_properties:
     cas_rn: 7785-87-7
     data_source: PubChem (via CHEBI:86360)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Mn.O4S
+    molecular_formula: Mn.O4S.H2O
     inchi: InChI=1S/Mn.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Mn+2]
   ingredient_type: SINGLE_INGREDIENT
@@ -103729,6 +103945,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Mn.O4S' -> 'Mn.O4S.7H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:86360's
+        ChEBI formula ('Mn.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: Manganese sulfate anhydrous
     synonym_type: EXACT_SYNONYM
@@ -103817,12 +104042,21 @@ ingredients:
       known synonym, so the recorded grade overstated. ontology_id is unchanged —
       the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Mn.O4S' -> 'Mn.O4S.7H2O' (#321); the label states
+      7 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:86360's ChEBI formula ('Mn.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86360
   chemical_properties:
     cas_rn: 7785-87-7
     data_source: PubChem (via CHEBI:86360)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Mn.O4S
+    molecular_formula: Mn.O4S.7H2O
     inchi: InChI=1S/Mn.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Mn+2]
   ingredient_type: SINGLE_INGREDIENT
@@ -113782,6 +114016,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula '2Na.O3Se' -> '2Na.O3Se.5H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 5 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:48843's
+        ChEBI formula ('2Na.O3Se') — the mark of a value inherited from the parent
+        rather than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic
       compound, Simple component'
@@ -113853,11 +114096,20 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula '2Na.O3Se' -> '2Na.O3Se.5H2O' (#321); the label states
+      5 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:48843's ChEBI formula ('2Na.O3Se') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10102-18-8
     data_source: PubChem API (ontology label)
     retrieval_date: '2026-04-05T23:46:10.663385+00:00'
-    molecular_formula: 2Na.O3Se
+    molecular_formula: 2Na.O3Se.5H2O
     inchi: InChI=1S/2Na.H2O3Se/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2
     smiles: O=[Se]([O-])[O-].[Na+].[Na+]
   kg_microbe_node_id: CHEBI:48843
@@ -114400,6 +114652,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula '2Na.O3S' -> '2Na.O3S.5H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 5 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:86477's
+        ChEBI formula ('2Na.O3S') — the mark of a value inherited from the parent
+        rather than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: Anhydrous sodium sulfite
     synonym_type: EXACT_SYNONYM
@@ -114465,12 +114726,21 @@ ingredients:
       so the recorded grade overstated. ontology_id is unchanged — the term is correct.
       The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula '2Na.O3S' -> '2Na.O3S.5H2O' (#321); the label states
+      5 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:86477's ChEBI formula ('2Na.O3S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86477
   chemical_properties:
     cas_rn: 7757-83-7
     data_source: PubChem (via CHEBI:86477)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: 2Na.O3S
+    molecular_formula: 2Na.O3S.5H2O
     inchi: InChI=1S/2Na.H2O3S/c;;1-4(2)3/h;;(H2,1,2,3)/q2*+1;/p-2
     smiles: O=S([O-])[O-].[Na+].[Na+]
   ingredient_type: SINGLE_INGREDIENT
@@ -121828,6 +122098,15 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Ni.O4S' -> 'Ni.O4S.7H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:53001's
+        ChEBI formula ('Ni.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
   synonyms:
   - synonym_text: NiSO4 . 6H2O
     synonym_type: HYDRATE_FORM
@@ -121911,10 +122190,19 @@ ingredients:
       for a heptahydrate. Cleared rather than substituted, because swapping in a second
       wrong number would read as a correction while still publishing a false identifier.'
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Ni.O4S' -> 'Ni.O4S.7H2O' (#321); the label states
+      7 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:53001's ChEBI formula ('Ni.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
   chemical_properties:
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Ni.O4S
+    molecular_formula: Ni.O4S.7H2O
     inchi: InChI=1S/Ni.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
     smiles: O=S(=O)([O-])[O-].[Ni+2]
   ingredient_type: SINGLE_INGREDIENT

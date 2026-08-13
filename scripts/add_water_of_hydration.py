@@ -38,6 +38,7 @@ guessed.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import re
 import sqlite3
 import sys
@@ -48,6 +49,18 @@ sys.path.insert(0, str(ROOT / "src"))
 import yaml  # noqa: E402
 
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+
+# Reuse the audited detector rather than re-deriving water detection. The
+# previous local version scanned molecular_formula + smiles + inchi for the
+# string "H2O", and `InChI=1S/Cu.H2O4S/...` contains `.H2O` as part of the
+# SULFATE fragment H2O4S. Every sulfate hydrate therefore looked like it already
+# had its water and was skipped — 16 records, all of them sulfates or selenites.
+_spec = importlib.util.spec_from_file_location(
+    "check_hydrate_water", ROOT / "scripts" / "check_hydrate_water.py")
+_chw = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_chw)
+parse_formula = _chw.parse_formula
+classify = _chw.classify
 
 COLLECTION = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
@@ -117,14 +130,20 @@ def main(argv: list[str] | None = None) -> int:
         if not HYDRATE_LABEL.search(label) or NOT_A_HYDRATE.search(label):
             continue
         cp = rec.get("chemical_properties") or {}
-        blob = " ".join(str(cp.get(k) or "") for k in ("molecular_formula", "smiles", "inchi"))
-        if not blob.strip() or HAS_WATER.search(blob):
+        current = str(cp.get("molecular_formula") or "").strip()
+        if not current:
             continue
 
         om = rec.get("ontology_mapping") or {}
         onto_id = str(om.get("ontology_id") or "")
-        current = str(cp.get("molecular_formula") or "").strip()
         term_formula = chebi_formula(conn, onto_id) if onto_id.startswith("CHEBI:") else None
+        # Element totals, not string matching: a formula can carry its water in
+        # combined notation (C7H15N3O5) and an InChI can contain "H2O" that is
+        # not water at all.
+        verdict, _why = classify(label, current, term_formula,
+                                 str(om.get("ontology_label") or ""))
+        if verdict == "ok":
+            continue
 
         # Cohort 2 first: the mapped term is itself the hydrate, so read the
         # formula off it rather than constructing one.
@@ -139,9 +158,13 @@ def main(argv: list[str] | None = None) -> int:
             if n is None:
                 unstated.append(f"{label[:42]:<42} {current:<18} ({onto_id})")
                 continue
-            if not term_formula or current != term_formula:
+            # Element totals, not string equality: `C4H6CdO4` and `2C2H3O2.Cd`
+            # are the same compound written two ways, and a string compare
+            # rejected the pair.
+            if not term_formula or parse_formula(current) != parse_formula(term_formula):
                 unstated.append(f"{label[:42]:<42} {current:<18} ({onto_id}) "
-                                f"— formula is not the parent's {term_formula!r}")
+                                f"— element totals differ from the parent's "
+                                f"{term_formula!r}")
                 continue
             # ChEBI writes the n=1 case as `.H2O`, not `.1H2O`.
             new = f"{current}.{n if n > 1 else ''}H2O"

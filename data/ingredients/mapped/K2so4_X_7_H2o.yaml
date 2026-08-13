@@ -9,6 +9,14 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: molecular_formula '2K.O4S' -> '2K.O4S.7H2O'. The recorded value described
+      the anhydrous salt while the label names a hydrate, understating the mass by
+      18 g/mol per water. Corrected because the label states 7 water(s) of hydration,
+      and the recorded formula was byte-identical to the anhydrous parent CHEBI:32036's
+      ChEBI formula ('2K.O4S') — the mark of a value inherited from the parent rather
+      than measured for this record. Water appended in ChEBI's own dot-separated notation.
 synonyms:
 - synonym_text: K2SO4·7H2O
   synonym_type: HYDRATE_FORM
@@ -75,12 +83,21 @@ curation_history:
     the residual MINERAL_SOURCE bucket was suppressed whenever any other target existed,
     which dropped the bulk cation from salts whose other role describes the anion
     (e.g. MgSO4).'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: add_water_of_hydration
+  action: ADDED_WATER_OF_HYDRATION
+  changes: molecular_formula '2K.O4S' -> '2K.O4S.7H2O' (#321); the label states 7
+    water(s) of hydration, and the recorded formula was byte-identical to the anhydrous
+    parent CHEBI:32036's ChEBI formula ('2K.O4S') — the mark of a value inherited
+    from the parent rather than measured for this record. Water appended in ChEBI's
+    own dot-separated notation.
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:32036
 chemical_properties:
   cas_rn: 7778-80-5
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: 2K.O4S
+  molecular_formula: 2K.O4S.7H2O
   inchi: InChI=1S/2K.H2O4S/c;;1-5(2,3)4/h;;(H2,1,2,3,4)/q2*+1;/p-2
   smiles: O=S(=O)([O-])[O-].[K+].[K+]
 ingredient_type: SINGLE_INGREDIENT
