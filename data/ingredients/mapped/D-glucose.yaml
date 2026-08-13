@@ -49,10 +49,13 @@ synonyms:
 - synonym_text: D-gluco-hexose
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Dextrose
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:4167
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 710
-  media_count: 100
+  total_occurrences: 813
+  media_count: 150
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -131,6 +134,17 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_glucose_family
+  action: MERGED_FROM
+  changes: Absorbed 'Dextrose' (#320/#334), which sat on CHEBI:4167 ('D-glucopyranose').
+    Merged because dextrose is D-glucose; CHEBI:4167 'D-glucopyranose' is the cyclic
+    pyranose form, a ring conformation the label does not name. Both records carry
+    the same CAS 50-99-7 and the same formula C6H12O6. Four MIM records for glucose
+    carried the identical CAS and formula while sitting on four different ChEBI terms,
+    split only by where lexical matching landed. Occurrences 710/100 + 103/50 -> 813/150.
+    Raw label kept as a RAW_TEXT synonym.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 50-99-7
   data_source: CultureBotHT/compounds_to_cas.csv

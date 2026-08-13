@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-13T10:57:06.407196+00:00
+Generated: 2026-08-13T11:11:16.587771+00:00
 Total: 2497 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -801,7 +801,7 @@ Total: 2497 ingredients
 | CHEBI:15824 | CHEBI:15824 | D-Fructose | MAPPED | CHEBI | EXACT_MATCH | 36 |
 | CHEBI:12936 | CHEBI:12936 | D-Galactose | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:18024 | CHEBI:18024 | D-galacturonic acid | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:17634 | CHEBI:17634 | D-Glucose | MAPPED | CHEBI | EXACT_MATCH | 710 |
+| CHEBI:17634 | CHEBI:17634 | D-Glucose | MAPPED | CHEBI | EXACT_MATCH | 813 |
 | CHEBI:4178 | CHEBI:4178 | D-glucuronic acid | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:17061 | CHEBI:17061 | D-glutamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:138-86-7 | cas:138-86-7 | d-limonene | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -847,7 +847,7 @@ Total: 2497 ingredients
 | cas:201417-01-8 | NCIT:C200498 | deuterated glucose | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:52071 | CHEBI:52071 | Dextran | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:28675 | CHEBI:28675 | Dextrin | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| CHEBI:4167 | CHEBI:4167 | Dextrose | MAPPED | CHEBI | EXACT_MATCH | 103 |
+| CHEBI:17634 | CHEBI:4167 | Dextrose | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4489 | CHEBI:4489 | Diallyl sulfide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:23673 | CHEBI:23673 | Diaminopimelic acid | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
 | CHEBI:91249 | CHEBI:91249 | Diammonium molybdate | MAPPED | CHEBI | CAS_RN_LOOKUP | 8 |
@@ -1026,8 +1026,8 @@ Total: 2497 ingredients
 | NCIT:C90636 | NCIT:C90636 | Glebomycin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:11078-31-2 | CHEBI:17020 | Glucomannan (konjac) | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:24266 | CHEBI:24266 | Gluconic acid | MAPPED | CHEBI | EXACT_MATCH | 1 |
-| CHEBI:17234 | CHEBI:17234 | Glucose | MAPPED | CHEBI | EXACT_MATCH | 1638 |
-| CHEBI:42758 | CHEBI:42758 | glucose | MAPPED | CHEBI | EXACT_MATCH | 34 |
+| CHEBI:17234 | CHEBI:17234 | Glucose | MAPPED | CHEBI | EXACT_MATCH | 1672 |
+| CHEBI:17234 | CHEBI:42758 | glucose | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:3789-97-7 | CHEBI:32323 | Glucuronamide | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18237 | CHEBI:18237 | Glutamic acid | MAPPED | CHEBI | EXACT_MATCH | 14 |
 | CHEBI:64276 | CHEBI:64276 | Glutaraldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |

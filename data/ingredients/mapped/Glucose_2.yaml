@@ -1,4 +1,4 @@
-identifier: CHEBI:42758
+identifier: CHEBI:17234
 preferred_term: glucose
 ontology_mapping:
   ontology_id: CHEBI:42758
@@ -40,10 +40,10 @@ synonyms:
 - synonym_text: aldehydo-D-gluco-hexose
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 34
-  media_count: 34
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -107,6 +107,16 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_glucose_family
+  action: MERGED_INTO
+  changes: Merged into CHEBI:17234 'Glucose'; occurrences transferred. Was on CHEBI:42758
+    ('aldehydo-D-glucose'); this record differs from the winner only in the case of
+    its first letter, and was grounded to CHEBI:42758 'aldehydo-D-glucose' — the open-chain
+    form — which a bare 'glucose' label does not name. Both records carry the same
+    CAS 50-99-7 and the same formula C6H12O6. Tombstoned REJECTED, SSSOM rows dropped
+    (#320/#334).
+  llm_assisted: false
 chemical_properties:
   cas_rn: 50-99-7
   data_source: CultureBotHT compounds_to_cas.csv
