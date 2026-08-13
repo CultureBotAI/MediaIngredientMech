@@ -28,6 +28,12 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0681 -> CHEBI:90148 "4-nitrophenyl beta-D-xyloside" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_nitrophenyl_beta_d_xylopyranoside);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -40,3 +46,4 @@ ontology_mapping:
     source: 'microbedecoder residual free normalized/fuzzy pass (recovered from closed
       PR #201) + local CHEBI verification'
     notes: 4-nitrophenyl beta-D-xylopyranoside synonym of CHEBI:90148.
+ingredient_type: SINGLE_INGREDIENT

@@ -45,6 +45,12 @@ curation_history:
     the specificity check (#203) — not a broad class-level term, and no strictly more
     specific sibling label exists. Promoted PENDING_REVIEW -> MAPPED.'
   llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 ontology_mapping:
   ontology_id: CHEBI:747004
   ontology_label: 1-chloropropane
@@ -54,3 +60,4 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: microbedecoder import via ols-label-exact
     notes: Restored after a false-positive demotion; CHEBI:747004 resolves to '1-chloropropane'.
+ingredient_type: SINGLE_INGREDIENT

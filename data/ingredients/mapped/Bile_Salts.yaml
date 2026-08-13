@@ -21,6 +21,12 @@ curation_history:
   action: AUTO_UPGRADE_TO_CHEBI
   changes: primary UNMAPPED_0141 → CHEBI:22868 (strategy=stem-match)
   llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'bile')
+    (#323)
+  llm_assisted: false
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
@@ -32,3 +38,4 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0141; matched via 'Bile salts'; stem-substring
+ingredient_type: UNDEFINED_MIXTURE

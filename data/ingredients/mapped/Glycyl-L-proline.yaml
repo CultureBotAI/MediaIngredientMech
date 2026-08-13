@@ -38,6 +38,12 @@ curation_history:
     dipeptide (Gly-Pro) under a hyphenated residue naming (#213). No new SSSOM row;
     CHEBI:70744 is already mapped. Source: kgmicrobe.trait:glycine_proline.'
   llm_assisted: true
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: classify_ingredient_type
+  action: AUTO_CLASSIFY_INGREDIENT_TYPE
+  changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+    definition) (#323)
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_proline);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -50,3 +56,4 @@ ontology_mapping:
     source: 'microbedecoder residual free normalized/fuzzy pass (recovered from closed
       PR #201) + local CHEBI verification'
     notes: Glycyl-L-proline synonym of CHEBI:70744 (Gly-Pro).
+ingredient_type: SINGLE_INGREDIENT
