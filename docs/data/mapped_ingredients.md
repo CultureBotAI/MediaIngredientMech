@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-13T20:17:14.797574+00:00
+Generated: 2026-08-13T20:24:19.731927+00:00
 Total: 2497 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1170,7 +1170,7 @@ Total: 2497 ingredients
 | CHEBI:32030 | CHEBI:32030 | KBr | MAPPED | CHEBI | EXACT_MATCH | 295 |
 | CHEBI:32588 | CHEBI:32588 | KCl | MAPPED | CHEBI | EXACT_MATCH | 2775 |
 | mesh:C008231 | mesh:C008231 | Ketomycin | MAPPED | MESH | EXACT_MATCH | 0 |
-| CHEBI:73605 | CHEBI:73605 | KF | MAPPED | CHEBI | EXACT_MATCH | 4 |
+| CHEBI:66872 | CHEBI:73605 | KF | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63036 | CHEBI:63036 | KH2PO4 | MAPPED | CHEBI | EXACT_MATCH | 3862 |
 | CHEBI:81862 | CHEBI:81862 | KHCO3 | MAPPED | CHEBI | EXACT_MATCH | 16 |
 | CHEBI:8346 | CHEBI:8346 | KI | MAPPED | CHEBI | SYNONYM_MATCH | 128 |
@@ -1661,7 +1661,7 @@ Total: 2497 ingredients
 | cas:74978-20-4 | NCIT:C83530 | Potassium aluminum chloride | MAPPED | NCIT | NARROW_MATCH | 2 |
 | cas:1030365-02-6 | CHEBI:15584 | potassium citramalate monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:53444 | CHEBI:53444 | Potassium dichromate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:66872 | CHEBI:66872 | potassium fluoride | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:66872 | CHEBI:66872 | potassium fluoride | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | cas:12208-13-8 | cas:12208-13-8 | potassium hexahydroxoantimonate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:6487-48-5 | NCIT:C87592 | Potassium oxalate monohydrate | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:potassium_phosphate_buffer | NCIT:C29321 | Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 2 |
