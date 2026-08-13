@@ -56,7 +56,6 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
@@ -95,7 +94,16 @@ def load_api_key() -> str:
 
     The SDK natively reads ``EDISON_PLATFORM_API_KEY``; this repo's
     ``.env`` sets ``EDISON_API_KEY``. Honor both.
+
+    ``python-dotenv`` is imported here rather than at module scope because it
+    lives in the ``dev`` extra, while the test workflow installs only the base
+    dependencies. A module-level import makes this file unimportable there, so
+    merely *testing* a pure function like ``_terminal_api_error`` would need the
+    whole Edison toolchain present. It is needed only when a key is actually
+    being read, which is only when the script really runs.
     """
+    from dotenv import load_dotenv
+
     load_dotenv(REPO_ROOT / ".env")
     key = os.environ.get("EDISON_PLATFORM_API_KEY") or os.environ.get("EDISON_API_KEY")
     if not key:
@@ -165,6 +173,41 @@ def slug_for(ingredient_path: Path) -> str:
 def _short_job(job) -> str:
     """CLI-friendly filename suffix: ``JobNames.LITERATURE_HIGH`` -> ``literature-high``."""
     return job.name.lower().replace("_", "-")
+
+
+# Account-level HTTP failures. These are not "this record went wrong" -- they
+# mean no record can succeed until a human intervenes, so retrying the next one
+# is pure abuse of the API.
+FATAL_STATUS = {401: "unauthorized (bad or expired API key)",
+                402: "payment required (account out of credit)",
+                403: "forbidden (key lacks access to this job)"}
+EXIT_FATAL_API = 3
+
+
+def _terminal_api_error(exc: BaseException) -> str | None:
+    """Return a reason when this exception means *stop the whole batch*.
+
+    Distinguishing terminal from transient matters more than it looks. Treating
+    a 402 as a per-record failure turned the batch into a fast-fail loop: 1,121
+    records "attempted" and 1,731 rate-limit responses in half an hour, none of
+    which could ever have succeeded. Per-record tolerance is correct for a
+    ConnectTimeout and actively harmful for an account-level refusal.
+
+    tenacity wraps the original in a RetryError, so unwrap before inspecting.
+    """
+    seen = set()
+    while exc is not None and id(exc) not in seen:
+        seen.add(id(exc))
+        response = getattr(exc, "response", None)
+        status = getattr(response, "status_code", None)
+        if status in FATAL_STATUS:
+            return f"HTTP {status}: {FATAL_STATUS[status]}"
+        last = getattr(exc, "last_attempt", None)          # tenacity.RetryError
+        if last is not None and last.failed:
+            exc = last.exception()
+            continue
+        exc = exc.__cause__ or exc.__context__
+    return None
 
 
 def _has_successful_bundle(ingredient_path: Path, job, out_dir: Path) -> bool:
@@ -390,6 +433,7 @@ def main(argv: list[str] | None = None) -> int:
 
     results: list[dict[str, Any]] = []
     failures: list[tuple[str, str]] = []
+    fatal: str | None = None
     try:
         for ingredient_path in targets:
             try:
@@ -399,6 +443,14 @@ def main(argv: list[str] | None = None) -> int:
             except KeyboardInterrupt:
                 raise
             except Exception as exc:  # noqa: BLE001 -- one bad record must not end the batch
+                fatal = _terminal_api_error(exc)
+                if fatal:
+                    print(f"\nFATAL: {fatal}\n  while submitting {ingredient_path.stem}.\n"
+                          f"  Stopping the batch -- no further record can succeed until this is "
+                          f"resolved. Nothing was billed for the aborted records, and none of "
+                          f"them wrote a bundle, so a later --skip-existing run resumes cleanly.",
+                          file=sys.stderr, flush=True)
+                    break
                 # A transient ConnectTimeout used to abort the whole shard, and
                 # with six shards sharing one network blip it ended all six at
                 # once, 97 records into 2,400. Nothing here is lost work: the
@@ -422,6 +474,9 @@ def main(argv: list[str] | None = None) -> int:
         total_cost = sum(r["cost"] or 0.0 for r in results)
         print()
         print(f"Done. {len(results)} ingredients researched. Total reported cost: {total_cost:.4f}")
+    if fatal:
+        print(f"Aborted early: {fatal}", file=sys.stderr)
+        return EXIT_FATAL_API
     return 0
 
 
