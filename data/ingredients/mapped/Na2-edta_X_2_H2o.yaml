@@ -1,4 +1,4 @@
-identifier: kgmicrobe.compound:na2-edta_x_2_h2o
+identifier: CHEBI:64758
 preferred_term: Na2-EDTA x 2 H2O
 ontology_mapping:
   ontology_id: CHEBI:64734
@@ -57,10 +57,10 @@ synonyms:
 - synonym_text: disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 103
-  media_count: 64
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -154,6 +154,15 @@ curation_history:
     to the anhydrous parent CHEBI:64734's ChEBI formula ('C10H14N2O8.2Na') — the mark
     of a value inherited from the parent rather than measured for this record. Water
     appended in ChEBI's own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_minted_hydrate_duplicates
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:64758 ''Na2EDTA·2H2O''; occurrences transferred. The
+    ''kgmicrobe.compound:na2-edta_x_2_h2o'' minted for this record is withdrawn: §3
+    step 3 requires that no specific term exists, and one does (ChEBI label search
+    for the dihydrate of the minted-off parent), so step 1 applied and the target
+    identifier was already held. Tombstoned REJECTED, SSSOM rows dropped (#321).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 7487-55-0

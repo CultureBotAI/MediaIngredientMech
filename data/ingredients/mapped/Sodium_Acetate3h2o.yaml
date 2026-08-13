@@ -1,4 +1,4 @@
-identifier: kgmicrobe.compound:sodium_acetate3h2o
+identifier: CHEBI:32138
 preferred_term: Sodium acetate·3H2O
 ontology_mapping:
   ontology_id: CHEBI:32954
@@ -46,10 +46,10 @@ synonyms:
 - synonym_text: sodium acetate anhydrous
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 2
-  media_count: 2
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -119,6 +119,15 @@ curation_history:
     parent CHEBI:32954's ChEBI formula ('C2H3O2.Na') — the mark of a value inherited
     from the parent rather than measured for this record. Water appended in ChEBI's
     own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_minted_hydrate_duplicates
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:32138 ''Sodium acetate trihydrate''; occurrences transferred.
+    The ''kgmicrobe.compound:sodium_acetate3h2o'' minted for this record is withdrawn:
+    §3 step 3 requires that no specific term exists, and one does (ChEBI label search
+    for the trihydrate of the minted-off parent), so step 1 applied and the target
+    identifier was already held. Tombstoned REJECTED, SSSOM rows dropped (#321).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 127-09-3

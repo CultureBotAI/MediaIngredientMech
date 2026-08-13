@@ -59,10 +59,13 @@ synonyms:
     (1/2)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Na2-EDTA x 2 H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_kgmicrobe.compound:na2-edta_x_2_h2o
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 10
-  media_count: 10
+  total_occurrences: 113
+  media_count: 74
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -137,6 +140,16 @@ curation_history:
     as a direct match to the term and SYNONYM_MATCH as a match to a known synonym,
     so the recorded grade overstated. ontology_id is unchanged — the term is correct.
     The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_minted_hydrate_duplicates
+  action: MERGED_FROM
+  changes: Absorbed 'Na2-EDTA x 2 H2O' (#321), which differs from this record only
+    in notation the merge pass does not recognise as the same substance, so it escaped
+    dedup and was grounded to the anhydrous parent. It had just been minted 'kgmicrobe.compound:na2-edta_x_2_h2o'
+    on the false premise that ChEBI has no term for this hydrate — ChEBI label search
+    for the dihydrate of the minted-off parent. Occurrences 10/10 + 103/64 -> 113/74.
+    Raw label kept as a RAW_TEXT synonym.
   llm_assisted: false
 chemical_properties:
   cas_rn: 6381-92-6

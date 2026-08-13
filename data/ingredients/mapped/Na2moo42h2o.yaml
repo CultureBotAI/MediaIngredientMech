@@ -1,4 +1,4 @@
-identifier: kgmicrobe.compound:na2moo42h2o
+identifier: CHEBI:75213
 preferred_term: Na2MoO4·2H2O
 ontology_mapping:
   ontology_id: CHEBI:75215
@@ -88,10 +88,10 @@ synonyms:
 - synonym_text: sodium dioxido(dioxo)molybdenum
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 255
-  media_count: 52
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -178,6 +178,16 @@ curation_history:
     parent CHEBI:75215's ChEBI formula ('MoO4.2Na') — the mark of a value inherited
     from the parent rather than measured for this record. Water appended in ChEBI's
     own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-13T00:00:00+00:00'
+  curator: merge_minted_hydrate_duplicates
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:75213 ''Na2MoO4 x 2 H2O''; occurrences transferred.
+    The ''kgmicrobe.compound:na2moo42h2o'' minted for this record is withdrawn: §3
+    step 3 requires that no specific term exists, and one does (the record''s own
+    CAS 10102-40-6 is registered by ChEBI against CHEBI:75213 ''sodium molybdate dihydrate''),
+    so step 1 applied and the target identifier was already held. Tombstoned REJECTED,
+    SSSOM rows dropped (#321).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 10102-40-6
