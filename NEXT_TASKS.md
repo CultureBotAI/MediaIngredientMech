@@ -76,7 +76,29 @@ and the 61 duplicate identifier PKs in item 2 will produce exactly those flags).
 
 # Pending & actionable
 
-## 0. Rebuild and publish `UNIFIED_INGREDIENT_MAPPING.tsv` — STALE BY THREE WEEKS
+## 0. Rebuild and publish `UNIFIED_INGREDIENT_MAPPING.tsv` — DONE (2026-08-13, PR #358)
+
+Rebuilt and published: **131 rows changed `mim_id`**, coverage MAPPED 1905 →
+1965, matched-to-MIM 30% → 53%. Verified reproducible — the committed artifact
+is byte-identical to what the builder now produces.
+
+The rebuild found a builder bug first (**culturebotai-claw#67**): `chebi_index`
+and `ontology_index` were last-writer-wins, and MIM's merge pattern deliberately
+gives the REJECTED loser the WINNER's identifier, so tombstones shadowed live
+records. `Glucose` — 2,120 CultureMech occurrences — was being published as
+`REJECTED`. Fixed before publishing; REJECTED 50 → 20.
+
+Two follow-ups filed: **#359** (nothing gates this artifact — the reason it
+drifted; the regenerate-and-diff pattern used elsewhere cannot work because the
+builder and CultureMech live outside this repo) and **#360** (a tombstone keeps
+an `ontology_id` it no longer asserts, mis-routing `D-Glucose`; affects ~31
+tombstones).
+
+**Still open from this item: the `Cobalamine` conflict below is unresolved.**
+The published file carries `CHEBI:30411` per PR #350. If #138's view prevails,
+the record moves first and the TSV is rebuilt after.
+
+### original entry
 
 `UNIFIED_INGREDIENT_MAPPING.tsv` was last written on **2026-07-20**
 (`38a66b67`, PR #140). `data/curated/mapped_ingredients.yaml` has changed on
