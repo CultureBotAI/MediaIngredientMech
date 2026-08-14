@@ -6,7 +6,7 @@ deferrals here. Keep the cross-Mech items in sync with the sibling repos'
 `NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech). The hub,
 culturebotai-claw, now keeps one too, for items no single Mech owns.
 
-Last reconciled: 2026-08-04 (second pass — added the microbedecoder thread).
+Last reconciled: 2026-08-13 (added the deep-research validation thread; item 0 is new and urgent).
 **#160** was filed on 2026-07-30 for the `trigger_paths` gap described in the
 vendored-sync section below.
 
@@ -21,7 +21,26 @@ vendored-sync section below.
 > deferred antibiotics). A second session is concurrently working
 > `fix/microbedecoder-residual-merges-blends`; this pass did not touch it.
 
-**Shipped since the last reconcile — the "guards that were not guarding" thread.**
+> **Reconcile note (2026-08-13).** The file had drifted badly again: **40 PRs
+> merged since 2026-08-04**, and an entire thread went unlogged — the **two-lane
+> deep-research validation of every ingredient record** (#309) and the whole
+> curation arc it produced (#314 → #356), now captured as **item 13**. Item 12's
+> microbedecoder issues are almost all closed (#196, #203, #204, #207, #208,
+> #212, #213); only #206 and #209 remain. #114 is closed, which retires item 7.
+>
+> **The most important finding of this pass is item 0, which was not in the file
+> at all**: `UNIFIED_INGREDIENT_MAPPING.tsv` was last rebuilt **2026-07-20** and
+> still carries superseded identifiers. kg-microbe re-syncs that artifact on
+> every consolidation run, so three weeks of curation is not reaching the
+> consumer.
+>
+> Gates at this pass: `check-instruction-refs` OK (32 files, 62 recipes);
+> `check-chebi-currency` local **252** vs ChEBI **253**, and the check now
+> reports explicitly that **a refresh would not help** — the published semsql
+> build is byte-identical to the local one, so this is upstream lag. Treat any
+> missing-id verdict on a high accession as unproven and check OLS4 first.
+
+**Shipped 2026-08-03/04 — the "guards that were not guarding" thread.**
 Five PRs, all closing the same class of defect: a check that reports OK while
 checking nothing.
 
@@ -56,6 +75,42 @@ and the 61 duplicate identifier PKs in item 2 will produce exactly those flags).
 ---
 
 # Pending & actionable
+
+## 0. Rebuild and publish `UNIFIED_INGREDIENT_MAPPING.tsv` — STALE BY THREE WEEKS
+
+`UNIFIED_INGREDIENT_MAPPING.tsv` was last written on **2026-07-20**
+(`38a66b67`, PR #140). `data/curated/mapped_ingredients.yaml` has changed on
+**2026-08-13** and in ~40 PRs between. kg-microbe's loader re-syncs this file on
+every consolidation run and picks the primary CURIE with
+`best_primary([chebi_id, culturemech_term_id, mim_id, kg_microbe_node_id, cas_rn])`,
+so **every stale row is actively re-asserted downstream**.
+
+Spot-checked 2026-08-13 — the file still carries identifiers that curation has
+since superseded:
+
+| ingredient | still in the TSV | corrected to | where |
+|---|---|---|---|
+| `Cobalamine` | `CHEBI:28911` cob(III)alamin | `CHEBI:30411` cobalamin | PR #350 |
+| `EDTA` | `CHEBI:64755` EDTA(2-) | `CHEBI:4735` the free acid | PR #351 |
+| `m-Inositol` | `CHEBI:10642` scyllo-inositol | merged into `myo-Inositol` | PR #347 |
+
+Plus every merge from #341/#347/#351/#353/#355, which retire whole records the
+TSV still lists.
+
+**Do this before any further curation.** The `build-unified-mapping` skill owns
+it. Two things to settle during the rebuild rather than after:
+
+1. **Item 6 / #138 is the same surface** — the stale-precedence-column bug. A
+   rebuild fixes those three rows only if the builder writes all precedence
+   columns from the current grounding rather than preserving old ones. Verify,
+   do not assume.
+2. **#138 and PR #350 disagree about `Cobalamine`.** #138 records the *intended*
+   grounding as `CHEBI:28911` and calls `CHEBI:30411` stale; #350 moved the
+   record to `CHEBI:30411` on the evidence that ChEBI defines `CHEBI:28911` as
+   "oxidation state of **+3**" while the label states none, and that the
+   record's own CAS points at cob(**I**)alamin — a third state. **One of the two
+   is wrong and the rebuild will publish whichever wins**, so decide it
+   deliberately.
 
 ## 1. `sanitize_filename` casing corruption (#147) — DONE (2026-07-30, PR #159)
 
@@ -402,7 +457,14 @@ on the next refresh. The fix has to land in the CultureMech source record or in
 the builder's column precedence. Worth saying so in the issue. Not blocking —
 kg-microbe already runs a retraction pass, so the published graph is clean.
 
-## 7. PubChem-derived `cas_rn` false-positive audit — the real residue of #114
+## 7. PubChem-derived `cas_rn` false-positive audit — DONE (2026-08-06, PR #289; #114 closed)
+
+PR #289 ran the CAS audit alongside the non-chemical disposition and the 61 stock
+solutions, and #114 is now closed. #287/#290 additionally tightened the `cas_rn`
+pattern so EC/EINECS numbers can no longer be written at all. Retained below for
+the record.
+
+### original entry
 
 #114 is a 75%-done tracker that still reads as fully open. Three of its four
 follow-ups have landed (peptone→MICRO grounding, the Carnitine Hydrochloride
@@ -549,7 +611,16 @@ filed rather than guessed because the fix needs a decision, not a keystroke.
   surfaces agree by discarding one of them. Delete it, or rename it to say the
   collection wins.
 
-## 12. microbedecoder unmapped-labels onboarding + residual grounding (NEW — 2026-08-04)
+## 12. microbedecoder unmapped-labels onboarding + residual grounding — LARGELY DONE
+
+Closed since the last pass: #196 (PR #286), #203 (#269), #204, #207 (#282), #208
+(#274), #212, #213 (#275/#277/#280/#281/#283/#284), plus #249/#263/#273/#279.
+**Still open: #206** (check-chebi-currency infers 'a refresh would help' from byte
+size, not release — note the check now prints the correct verdict, so this may be
+fixed in place; verify) and **#209** (is microbedecoder 'sodium(+)' a media
+ingredient, and relabel `Sodium().yaml`). Original entry follows.
+
+### original entry
 
 An entire thread that was absent from this file. kg-microbe's `microbedecoder`
 transform emits `unmapped_labels.tsv` — 5,224 free-text labels it could not
@@ -660,6 +731,65 @@ because #249 was itself filed as an off-by-six correction to #248. **#207 CLOSED
 see the antibiotics item above.
 
 ---
+
+## 13. Two-lane deep-research validation + the curation arc it produced (NEW — 2026-08-13)
+
+**What**: every ingredient record was validated against two independent research
+lanes — Edison/PaperQA3 (literature; cannot open ontology pages) and a Claude
+lane resolving CURIEs directly against OLS4/ChEBI/PubChem (PR #309). The
+disagreements it surfaced became issues #315–#334, and working those produced
+~20 further PRs. **54% of Edison flags were false alarms**, measured over 243
+adjudicated records — do not treat a flag as a defect.
+
+**Closed by this thread**: #319 (protonation policy), #320 (84 CAS-vs-CURIE
+conflicts), #322, #326(a), #342, #346, #352.
+
+**The reusable findings**, each of which cost real time to establish:
+
+* **Ancestry beats heuristics for CAS-vs-CURIE conflicts.** Asking whether the
+  CAS's ChEBI term is a *descendant* of the record's term reclassified 49 of 84
+  #320 flags as benign registry granularity (`Arginine` → `arginine`, CAS →
+  `L-arginine`). Structurelessness — the heuristic tried first — cuts across all
+  three ancestry classes and can never discriminate.
+* **ChEBI does not subsume hydrates, salts, racemates or conjugate bases.** It
+  files hydrates under `CHEBI:35505 hydrate`, never under the anhydrous form.
+  That is why those relations surface as "unrelated" in any ancestry test, and
+  it is what #342 decided (74 records → `skos:closeMatch`).
+* **Duplicate shadowing is the root cause behind #315/#334/#320.** A notation
+  variant the merge pass does not recognise (`·` vs ` x `, `Na2-EDTA` vs
+  `Na2EDTA`, one letter of case) escapes dedup and is then grounded to the
+  nearest lexical match — usually the anhydrous parent or a false friend.
+* **A derived CAS is not independent evidence.** `KF` → `Lys-Phe` and `D` →
+  aspartate both survived CAS-vs-CURIE checking because the CAS was fetched
+  *from* the wrong CHEBI term. Check `curation_history` for "via CHEBI:…" before
+  treating agreement between the two fields as corroboration.
+* **Count hydrate water by element totals, not string matching** (#349). The
+  string test was wrong four separate ways, the worst being that
+  `InChI=1S/Cu.H2O4S/…` contains `.H2O` as part of the *sulfate* fragment, which
+  silently skipped every sulfate hydrate. `scripts/check_hydrate_water.py --check`
+  now gates it.
+
+**Still open from this thread:**
+
+* **#344** — 9 labels state a hydration number with no known hydrate. Source
+  found: MediaDive's REST API carries all 9 **verbatim**, so the earlier
+  "sulfate→chloride slip" hypothesis is **disproven**. MediaDive gives all 9 the
+  *anhydrous* formula/mass/CAS and `MgCl2 x 7 H2O` has no CAS at all. Needs a
+  decision on whether MIM keeps the constructed hydrate formula, reverts to
+  anhydrous, or clears the field. Publishes into `docs/data/`.
+* **#356** — record `X`, **101 occurrences**, mapped to `NCIT:C189218`, defined
+  as "The 24th letter of the English alphabet". Needs the source media (history
+  says `samples: Wolf…`), not chemistry. The mapping should not stand regardless
+  of what `X` turns out to be.
+* **#321 residual** — 44 hydrate records whose labels state no stoichiometry.
+  Verified unresolvable from the label, ChEBI, **and** PubChem's entry for each
+  record's own CAS; MediaDive has none of them. Needs a supplier catalogue or the
+  original recipe text. `missing` is 0; these are `unknown`, not defects.
+* **#336** — 55 SSSOM rows whose predicate contradicts the record's
+  `mapping_quality`. Untouched by this thread.
+* **Edison lane is blocked** at 1,145/2,841 records on HTTP 402 (account out of
+  credit). `scripts/run_research_shard.sh` exits 3 on account-level refusals and
+  will not retry, so a top-up resumes it cleanly.
 
 # Upstream-blocked — do not schedule
 
