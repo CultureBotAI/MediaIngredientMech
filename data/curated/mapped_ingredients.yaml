@@ -46540,6 +46540,22 @@ ingredients:
         and is itself evidence the record was never specific to +3. Definition read
         from the live EBI OLS4 API, since #319 records that the local ChEBI build
         lacks definitions for some of these terms.'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#138/#320)
+      notes: 'Cleared cas_rn, molecular_formula, inchi and smiles, and moved kg_microbe_node_id
+        CHEBI:28911 -> CHEBI:30411. Every one of these encoded the +3 oxidation state
+        this record does not assert. The formula/InChI/SMILES were written by AUTO_BACKFILL_CHEBI_CHEMISTRY
+        on 2026-05-01 by copying CHEBI:28911 while the record was mapped there, so
+        they were a transcription of the grounding rather than evidence for it — the
+        InChI still ended ''/q;+3/p-2''. The cas_rn 18534-66-2 is cob(I)alamin (KEGG
+        C00853, ChEBI:15982, Gmelin 887721), a THIRD oxidation state, and came from
+        a PubChem name lookup — the mechanism that also put CHES on Beef extract.
+        CHEBI:30411 deliberately carries no formula, charge or mass because its oxidation
+        state is unspecified, so a record grounded there must not carry structure
+        fields that fix one. Leaving them would re-seed the same wrong inference on
+        any future automated re-grading. Note the formula does not discriminate oxidation
+        state in any case: ChEBI records the identical C62H88CoN13O14P for cob(II)alamin
+        and cob(III)alamin, which differ only in the charge field.'
   synonyms:
   - synonym_text: 'Role: Vitamin; Properties: Organic compound, Defined component,
       Simple component'
@@ -46625,14 +46641,28 @@ ingredients:
       ('cobalamin') (#320); the term specified oxidation state +3 and the label specifies
       none. §3 step 4.
     llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: cobalamin_residual_cleanup
+    action: CLEARED_CONTRADICTORY_CHEMISTRY
+    changes: 'Cleared cas_rn, molecular_formula, inchi and smiles, and moved kg_microbe_node_id
+      CHEBI:28911 -> CHEBI:30411. Every one of these encoded the +3 oxidation state
+      this record does not assert. The formula/InChI/SMILES were written by AUTO_BACKFILL_CHEBI_CHEMISTRY
+      on 2026-05-01 by copying CHEBI:28911 while the record was mapped there, so they
+      were a transcription of the grounding rather than evidence for it — the InChI
+      still ended ''/q;+3/p-2''. The cas_rn 18534-66-2 is cob(I)alamin (KEGG C00853,
+      ChEBI:15982, Gmelin 887721), a THIRD oxidation state, and came from a PubChem
+      name lookup — the mechanism that also put CHES on Beef extract. CHEBI:30411
+      deliberately carries no formula, charge or mass because its oxidation state
+      is unspecified, so a record grounded there must not carry structure fields that
+      fix one. Leaving them would re-seed the same wrong inference on any future automated
+      re-grading. Note the formula does not discriminate oxidation state in any case:
+      ChEBI records the identical C62H88CoN13O14P for cob(II)alamin and cob(III)alamin,
+      which differ only in the charge field.'
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 18534-66-2
     data_source: PubChem API
     retrieval_date: '2026-04-05T19:51:30.156796+00:00'
-    molecular_formula: C62H88CoN13O14P
-    inchi: InChI=1S/C62H90N13O14P.Co/c1-29-20-39-40(21-30(29)2)75(28-70-39)57-52(84)53(41(27-76)87-57)89-90(85,86)88-31(3)26-69-49(83)18-19-59(8)37(22-46(66)80)56-62(11)61(10,25-48(68)82)36(14-17-45(65)79)51(74-62)33(5)55-60(9,24-47(67)81)34(12-15-43(63)77)38(71-55)23-42-58(6,7)35(13-16-44(64)78)50(72-42)32(4)54(59)73-56;/h20-21,23,28,31,34-37,41,52-53,56-57,76,84H,12-19,22,24-27H2,1-11H3,(H15,63,64,65,66,67,68,69,71,72,73,74,77,78,79,80,81,82,83,85,86);/q;+3/p-2/t31-,34-,35-,36-,37+,41-,52-,53-,56-,57+,59-,60+,61+,62+;/m1./s1
-    smiles: '[H][C@]12[C@H](CC(N)=O)[C@@]3(C)CCC(=O)NC[C@@H](C)OP(=O)([O-])O[C@H]4[C@@H](O)[C@H](O[C@@H]4CO)n4c[n+](c5cc(C)c(C)cc54)[Co-2]456[N]1C3=C(C)C1=[N+]4C(=CC3=[N+]5C(=C(C)C4=[N+]6[C@]2(C)[C@@](C)(CC(N)=O)[C@@H]4CCC(N)=O)[C@@](C)(CC(N)=O)[C@@H]3CCC(N)=O)C(C)(C)[C@@H]1CCC(N)=O'
-  kg_microbe_node_id: CHEBI:28911
+  kg_microbe_node_id: CHEBI:30411
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: VITAMIN_SOURCE
