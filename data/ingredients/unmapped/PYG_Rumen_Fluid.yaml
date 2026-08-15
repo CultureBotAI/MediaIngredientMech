@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0773
+identifier: kgmicrobe.ingredient:pyg_rumen_fluid
 preferred_term: PYG + Rumen Fluid
 synonyms:
 - synonym_text: PYG + Rumen Fluid
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -44,5 +44,42 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: decompose_substrate_combinations
+  action: DECOMPOSED_TO_COMPONENTS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0773 -> kgmicrobe.ingredient:pyg_rumen_fluid (FALLBACK_REGISTRY).
+    The label enumerates its own constituents, so this is a decomposition rather than
+    a mapping: no ontology has a term for ''PYG + Rumen Fluid'', and none could —
+    a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+    and split on ''+'', which transcribes the label rather than inferring anything.
+    2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+    ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an
+    undefined preparation. No concentrations are recorded: the label states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_rumen_fluid);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ingredient_type: UNDEFINED_MIXTURE
+components:
+- component_name: PYG
+  source: MIM label decomposition (#213/#308)
+  component_id: UNMAPPED_0628
+- component_name: Rumen Fluid
+  source: MIM label decomposition (#213/#308)
+  component_id: UBERON:0010228
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:pyg_rumen_fluid
+  ontology_label: PYG + Rumen Fluid
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'The label enumerates its own constituents, so this is a decomposition
+      rather than a mapping: no ontology has a term for ''PYG + Rumen Fluid'', and
+      none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'

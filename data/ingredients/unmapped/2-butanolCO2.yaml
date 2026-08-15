@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0679
+identifier: kgmicrobe.ingredient:2_butanol_co2
 preferred_term: 2-butanol+CO2
 synonyms:
 - synonym_text: 2-butanol+CO2
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -39,5 +39,45 @@ curation_history:
     that never decided anything is what #203 and #263 exist to undo. Any CURIE above
     is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: decompose_substrate_combinations
+  action: DECOMPOSED_TO_COMPONENTS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0679 -> kgmicrobe.ingredient:2_butanol_co2 (FALLBACK_REGISTRY).
+    The label enumerates its own constituents, so this is a decomposition rather than
+    a mapping: no ontology has a term for ''2-butanol+CO2'', and none could — a combination
+    is not a substance. Minted under the #288 STOCK_SOLUTION convention and split
+    on ''+'', which transcribes the label rather than inferring anything. 1 of 2 constituents
+    resolve to existing MIM records via docs/data/label_index.csv; 2-butanol carries
+    no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+    because every constituent is a defined chemical (an unresolved name here means
+    MIM lacks the record, not that the substance is undefined). No concentrations
+    are recorded: the label states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:2_butanol_co2);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ingredient_type: DEFINED_MEDIUM
+components:
+- component_name: 2-butanol
+  source: MIM label decomposition (#213/#308)
+- component_name: CO2
+  source: MIM label decomposition (#213/#308)
+  component_id: CHEBI:16526
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:2_butanol_co2
+  ontology_label: 2-butanol+CO2
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'The label enumerates its own constituents, so this is a decomposition
+      rather than a mapping: no ontology has a term for ''2-butanol+CO2'', and none
+      could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      2-butanol carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+      because every constituent is a defined chemical (an unresolved name here means
+      MIM lacks the record, not that the substance is undefined). No concentrations
+      are recorded: the label states none.'

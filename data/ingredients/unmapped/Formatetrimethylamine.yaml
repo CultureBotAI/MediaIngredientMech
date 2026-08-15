@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0747
+identifier: kgmicrobe.ingredient:formate_trimethylamine
 preferred_term: Formate+trimethylamine
 synonyms:
 - synonym_text: Formate+trimethylamine
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -40,5 +40,44 @@ curation_history:
     is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
     or reject.'
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: decompose_substrate_combinations
+  action: DECOMPOSED_TO_COMPONENTS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0747 -> kgmicrobe.ingredient:formate_trimethylamine (FALLBACK_REGISTRY).
+    The label enumerates its own constituents, so this is a decomposition rather than
+    a mapping: no ontology has a term for ''Formate+trimethylamine'', and none could
+    — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+    and split on ''+'', which transcribes the label rather than inferring anything.
+    2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+    ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+    (an unresolved name here means MIM lacks the record, not that the substance is
+    undefined). No concentrations are recorded: the label states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_trimethylamine);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ingredient_type: DEFINED_MEDIUM
+components:
+- component_name: Formate
+  source: MIM label decomposition (#213/#308)
+  component_id: CHEBI:15740
+- component_name: trimethylamine
+  source: MIM label decomposition (#213/#308)
+  component_id: CHEBI:18139
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:formate_trimethylamine
+  ontology_label: Formate+trimethylamine
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'The label enumerates its own constituents, so this is a decomposition
+      rather than a mapping: no ontology has a term for ''Formate+trimethylamine'',
+      and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
