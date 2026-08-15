@@ -12654,13 +12654,13 @@ ingredients:
     or CHEBI/NCIT match. Reviewed on 2026-05-11; not collapsed to generic glucose
     without hydrate/form evidence.
   ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0619
+- identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
   preferred_term: 0129 (2
   synonyms:
   - synonym_text: 0129 (2
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12684,6 +12684,18 @@ ingredients:
     previous_status: UNMAPPED
     new_status: NEEDS_EXPERT
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: MERGED_INTO
+    changes: 'Merged into kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+      ''2,4-diamino-6,7-di-iso-propylpteridine phosphate''. Fragment of a comma-split
+      label whose intact compound is already a MIM record. The source label was ''O/129
+      (2,4-diamino-6,7-di-iso-propylpteridine phosphate)'' — the vibriostatic agent
+      — and the ingest strips commas, so it arrived as three fragments. The third,
+      ''7-di-iso-propylpteridine Phosphate)'', is already carried as a synonym on
+      the intact record; these two were left orphaned as separate NEEDS_EXPERT records.
+      Merged rather than grounded separately: neither fragment names a compound.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:0129_2); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
 - identifier: kgmicrobe.ingredient:1_butanol_co2
@@ -13198,13 +13210,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:3_methylacetate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0620
+- identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
   preferred_term: 4-Diamino-6
   synonyms:
   - synonym_text: 4-Diamino-6
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13239,6 +13251,18 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: MERGED_INTO
+    changes: 'Merged into kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+      ''2,4-diamino-6,7-di-iso-propylpteridine phosphate''. Fragment of a comma-split
+      label whose intact compound is already a MIM record. The source label was ''O/129
+      (2,4-diamino-6,7-di-iso-propylpteridine phosphate)'' — the vibriostatic agent
+      — and the ingest strips commas, so it arrived as three fragments. The third,
+      ''7-di-iso-propylpteridine Phosphate)'', is already carried as a synonym on
+      the intact record; these two were left orphaned as separate NEEDS_EXPERT records.
+      Merged rather than grounded separately: neither fragment names a compound.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_diamino_6); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: CHEBI:41189

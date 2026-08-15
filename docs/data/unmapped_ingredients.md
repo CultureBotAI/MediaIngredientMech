@@ -1,6 +1,6 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-15T01:58:39.992967+00:00
+Generated: 2026-08-15T02:57:46.247636+00:00
 Total: 344 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -275,14 +275,14 @@ Total: 344 ingredients
 | UNMAPPED_0272 |  | ZMB_ALS | UNMAPPED |  |  | 33 |
 | UNMAPPED_0150 |  | Zinc-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0587 |  | α-D-Glucose monohydrate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0619 |  | 0129 (2 | NEEDS_EXPERT |  |  | 0 |
+| kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate |  | 0129 (2 | REJECTED |  |  | 0 |
 | kgmicrobe.ingredient:1_butanol_co2 | kgmicrobe.ingredient:1_butanol_co2 | 1-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:1_propanol_co2 | kgmicrobe.ingredient:1_propanol_co2 | 1-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:2_butanol_co2 | kgmicrobe.ingredient:2_butanol_co2 | 2-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:2_propanol_co2 | kgmicrobe.ingredient:2_propanol_co2 | 2-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | CHEBI:36026 | CHEBI:36026 | 1,1,2,2-Tetrachloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | UNMAPPED_0736 |  | 3-methylacetate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
+| kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate |  | 4-Diamino-6 | REJECTED |  |  | 0 |
 | CHEBI:41189 |  | 4-diol | REJECTED |  |  | 0 |
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | NEEDS_EXPERT |  |  | 0 |
 | kgmicrobe.ingredient:bhi | kgmicrobe.ingredient:bhi | BHI | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |

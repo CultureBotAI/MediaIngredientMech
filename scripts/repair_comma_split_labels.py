@@ -25,12 +25,26 @@ term for EDDS at all (searched locally and live at OLS4).
 `Sulfonamide` is not a comma split — it is included because its label matches
 `CHEBI:35358 sulfonamide` exactly and it has been sitting at PENDING_REVIEW.
 
-Deliberately NOT repaired: `0129 (2` and `4-Diamino-6` are two thirds of
-`O/129 (2,4-diamino-6,7-diisopropylpteridine)`, the vibriostatic agent, but the
-third fragment (`7-diisopropylpteridine)`) is not in the corpus, so the label
-cannot be reconstructed from what survives. `3-methylacetate` and
-`DL-2-gamma-aminobutyrate` are likewise fragments whose partners are absent, and
-guessing the missing text would invent a compound.
+**A fragment does not need its partners — the intact compound may already be a
+record.** `0129 (2` and `4-Diamino-6` are two thirds of
+`O/129 (2,4-diamino-6,7-di-iso-propylpteridine phosphate)`, the vibriostatic
+agent. An earlier version of this script called them unrepairable because the
+third fragment was missing from the NEEDS_EXPERT set. It was not missing: the
+whole compound is already a MAPPED record, and the third fragment
+(`7-di-iso-propylpteridine Phosphate)`) is sitting on it as a synonym. Searching
+only the unresolved set, and requiring a complete set of fragments, both hid that.
+
+So the rule is: a **fragment-shaped** label that an intact live record already
+contains is merged into that record. Fragment-shaped means a dangling locant
+(`Butane-1`, `Ethylenediamine-N`), a leading locant or bracket (`4-Diamino-6`,
+`0129 (2`), or unbalanced parentheses — never simply "shorter than something
+else". Without that guard the substring test matches `Tetrazolium` to
+`2,3,5-Triphenyltetrazolium chloride`, which is a class and one of its members,
+not a split name.
+
+Still NOT repaired: `3-methylacetate` and `DL-2-gamma-aminobutyrate` are
+fragment-shaped but no intact record contains them, and guessing the missing text
+would invent a compound.
 
     python scripts/repair_comma_split_labels.py            # dry-run
     python scripts/repair_comma_split_labels.py --apply
