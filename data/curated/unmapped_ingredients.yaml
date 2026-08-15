@@ -1,5 +1,5 @@
 generation_date: '2026-08-07T06:56:58.922489+00:00'
-total_count: 282
+total_count: 281
 mapped_count: 0
 unmapped_count: 270
 ingredients:
@@ -12704,7 +12704,7 @@ ingredients:
   - synonym_text: 3-methylacetate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12744,8 +12744,33 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:3_methylacetate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: retire_assay_labels
+    action: RETIRED_NOT_AN_INGREDIENT
+    previous_status: NEEDS_EXPERT
+    new_status: REJECTED
+    changes: 'Retired as an ingredient record (#213/#308): not a chemical name and
+      not reconstructable. It is a fragment from the same importer that produced `Formate+3-methyl
+      Mercaptopropionate`, so the likely original is `3-methyl mercaptopropionate`
+      — but its partner text is absent from the corpus, and guessing it would invent
+      a compound. Not mapped, because every substrate CURIE it could be grounded to
+      is already the primary key of a live record — in MIM the identifier IS the ontology
+      CURIE, so a mapping here would mint a duplicate rather than add coverage. No
+      synonym is folded onto those records either: this label names a reaction or
+      a splice, not the substance, and asserting the synonymy would make label_index
+      resolve it to something it does not denote.'
+    llm_assisted: false
+  notes: 'Imported from microbedecoder (source_id=kgmicrobe.compound:3_methylacetate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient
+    record (#213/#308): not a chemical name and not reconstructable. It is a fragment
+    from the same importer that produced `Formate+3-methyl Mercaptopropionate`, so
+    the likely original is `3-methyl mercaptopropionate` — but its partner text is
+    absent from the corpus, and guessing it would invent a compound. Not mapped, because
+    every substrate CURIE it could be grounded to is already the primary key of a
+    live record — in MIM the identifier IS the ontology CURIE, so a mapping here would
+    mint a duplicate rather than add coverage. No synonym is folded onto those records
+    either: this label names a reaction or a splice, not the substance, and asserting
+    the synonymy would make label_index resolve it to something it does not denote.'
 - identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
   preferred_term: 4-Diamino-6
   synonyms:
@@ -12862,7 +12887,7 @@ ingredients:
   - synonym_text: 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12903,15 +12928,40 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_nitrophenyl_beta_d_galactopyranoside_hydrolysate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: retire_assay_labels
+    action: RETIRED_NOT_AN_INGREDIENT
+    previous_status: NEEDS_EXPERT
+    new_status: REJECTED
+    changes: 'Retired as an ingredient record (#213/#308): names the beta-galactosidase
+      TEST outcome — 4-nitrophenol released, yellow — not a substance. MicrO models
+      it as MICRO:0000724 ''beta-galactosidase assay with PNPG''. The substrate is
+      already a record: `4-nitrophenyl beta-D-galactopyranoside` (CHEBI:355715), and
+      the product 4-nitrophenol is CHEBI:16836. Not mapped, because every substrate
+      CURIE it could be grounded to is already the primary key of a live record —
+      in MIM the identifier IS the ontology CURIE, so a mapping here would mint a
+      duplicate rather than add coverage. No synonym is folded onto those records
+      either: this label names a reaction or a splice, not the substance, and asserting
+      the synonymy would make label_index resolve it to something it does not denote.'
+    llm_assisted: false
+  notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:4_nitrophenyl_beta_d_galactopyranoside_hydrolysate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient
+    record (#213/#308): names the beta-galactosidase TEST outcome — 4-nitrophenol
+    released, yellow — not a substance. MicrO models it as MICRO:0000724 ''beta-galactosidase
+    assay with PNPG''. The substrate is already a record: `4-nitrophenyl beta-D-galactopyranoside`
+    (CHEBI:355715), and the product 4-nitrophenol is CHEBI:16836. Not mapped, because
+    every substrate CURIE it could be grounded to is already the primary key of a
+    live record — in MIM the identifier IS the ontology CURIE, so a mapping here would
+    mint a duplicate rather than add coverage. No synonym is folded onto those records
+    either: this label names a reaction or a splice, not the substance, and asserting
+    the synonymy would make label_index resolve it to something it does not denote.'
 - identifier: UNMAPPED_0710
   preferred_term: DL-2-gamma-aminobutyrate
   synonyms:
   - synonym_text: DL-2-gamma-aminobutyrate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12950,15 +13000,39 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:dl_2_gamma_aminobutyrate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: retire_assay_labels
+    action: RETIRED_NOT_AN_INGREDIENT
+    previous_status: NEEDS_EXPERT
+    new_status: REJECTED
+    changes: 'Retired as an ingredient record (#213/#308): a splice of two panel substrates
+      by the same ingest: DL-2-aminobutyrate and gamma-aminobutyrate. Both are already
+      records — `DL-2-Aminobutyric acid` (CHEBI:35621) and `gamma-Aminobutyric acid`
+      (CHEBI:16865). No single compound has this name. Not mapped, because every substrate
+      CURIE it could be grounded to is already the primary key of a live record —
+      in MIM the identifier IS the ontology CURIE, so a mapping here would mint a
+      duplicate rather than add coverage. No synonym is folded onto those records
+      either: this label names a reaction or a splice, not the substance, and asserting
+      the synonymy would make label_index resolve it to something it does not denote.'
+    llm_assisted: false
+  notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:dl_2_gamma_aminobutyrate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient
+    record (#213/#308): a splice of two panel substrates by the same ingest: DL-2-aminobutyrate
+    and gamma-aminobutyrate. Both are already records — `DL-2-Aminobutyric acid` (CHEBI:35621)
+    and `gamma-Aminobutyric acid` (CHEBI:16865). No single compound has this name.
+    Not mapped, because every substrate CURIE it could be grounded to is already the
+    primary key of a live record — in MIM the identifier IS the ontology CURIE, so
+    a mapping here would mint a duplicate rather than add coverage. No synonym is
+    folded onto those records either: this label names a reaction or a splice, not
+    the substance, and asserting the synonymy would make label_index resolve it to
+    something it does not denote.'
 - identifier: UNMAPPED_0688
   preferred_term: Esculin Hydrolysate
   synonyms:
   - synonym_text: Esculin Hydrolysate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13000,15 +13074,44 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_hydrolysate);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: retire_assay_labels
+    action: RETIRED_NOT_AN_INGREDIENT
+    previous_status: NEEDS_EXPERT
+    new_status: REJECTED
+    changes: 'Retired as an ingredient record (#213/#308): names the esculin-hydrolysis
+      TEST, not a substance. The API 20 NE reading table lists esculin and ferric
+      citrate as the cupule''s active ingredients and hydrolysis as the reaction;
+      MicrO models it as MICRO:0000722 ''esculin ferric citrate assay''. The reagents
+      are already records: `Esculin Monohydrate` (CHEBI:4853) and `Esculin Ferric
+      Citrate`; the released aglycone esculetin is CHEBI:490095. Not mapped, because
+      every substrate CURIE it could be grounded to is already the primary key of
+      a live record — in MIM the identifier IS the ontology CURIE, so a mapping here
+      would mint a duplicate rather than add coverage. No synonym is folded onto those
+      records either: this label names a reaction or a splice, not the substance,
+      and asserting the synonymy would make label_index resolve it to something it
+      does not denote.'
+    llm_assisted: false
+  notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_hydrolysate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient
+    record (#213/#308): names the esculin-hydrolysis TEST, not a substance. The API
+    20 NE reading table lists esculin and ferric citrate as the cupule''s active ingredients
+    and hydrolysis as the reaction; MicrO models it as MICRO:0000722 ''esculin ferric
+    citrate assay''. The reagents are already records: `Esculin Monohydrate` (CHEBI:4853)
+    and `Esculin Ferric Citrate`; the released aglycone esculetin is CHEBI:490095.
+    Not mapped, because every substrate CURIE it could be grounded to is already the
+    primary key of a live record — in MIM the identifier IS the ontology CURIE, so
+    a mapping here would mint a duplicate rather than add coverage. No synonym is
+    folded onto those records either: this label names a reaction or a splice, not
+    the substance, and asserting the synonymy would make label_index resolve it to
+    something it does not denote.'
 - identifier: UNMAPPED_0731
   preferred_term: Gelatin Hydrolyzed
   synonyms:
   - synonym_text: Gelatin Hydrolyzed
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13051,15 +13154,42 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:gelatin_hydrolyzed);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: retire_assay_labels
+    action: RETIRED_NOT_AN_INGREDIENT
+    previous_status: NEEDS_EXPERT
+    new_status: REJECTED
+    changes: 'Retired as an ingredient record (#213/#308): names the gelatinase TEST
+      result, not a substance. MicrO models it as MICRO:0000649 ''gelatinase assay''.
+      Hydrolysed gelatin does exist as a commercial product, but neither ChEBI nor
+      FOODON has a term distinguishing it from gelatin, and a phenotype table reports
+      the reaction. The substrate is already a record: `Gelatine` (CHEBI:5291). Not
+      mapped, because every substrate CURIE it could be grounded to is already the
+      primary key of a live record — in MIM the identifier IS the ontology CURIE,
+      so a mapping here would mint a duplicate rather than add coverage. No synonym
+      is folded onto those records either: this label names a reaction or a splice,
+      not the substance, and asserting the synonymy would make label_index resolve
+      it to something it does not denote.'
+    llm_assisted: false
+  notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:gelatin_hydrolyzed);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient
+    record (#213/#308): names the gelatinase TEST result, not a substance. MicrO models
+    it as MICRO:0000649 ''gelatinase assay''. Hydrolysed gelatin does exist as a commercial
+    product, but neither ChEBI nor FOODON has a term distinguishing it from gelatin,
+    and a phenotype table reports the reaction. The substrate is already a record:
+    `Gelatine` (CHEBI:5291). Not mapped, because every substrate CURIE it could be
+    grounded to is already the primary key of a live record — in MIM the identifier
+    IS the ontology CURIE, so a mapping here would mint a duplicate rather than add
+    coverage. No synonym is folded onto those records either: this label names a reaction
+    or a splice, not the substance, and asserting the synonymy would make label_index
+    resolve it to something it does not denote.'
 - identifier: UNMAPPED_0817
   preferred_term: Glycyl-L-bromosuccinic Glutamic Acid
   synonyms:
   - synonym_text: Glycyl-L-bromosuccinic Glutamic Acid
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13100,8 +13230,33 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_bromosuccinic_glutamic_acid);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: retire_assay_labels
+    action: RETIRED_NOT_AN_INGREDIENT
+    previous_status: NEEDS_EXPERT
+    new_status: REJECTED
+    changes: 'Retired as an ingredient record (#213/#308): a splice of TWO Biolog
+      panel substrates run together by the #308 ingest: `glycyl-L-glutamic acid` and
+      `bromosuccinic acid`. Both are already records — `Gly-Glu` (CHEBI:73801) and
+      `Bromosuccinate` (CHEBI:73706) — so there is nothing left to ground once the
+      splice is recognised. Not mapped, because every substrate CURIE it could be
+      grounded to is already the primary key of a live record — in MIM the identifier
+      IS the ontology CURIE, so a mapping here would mint a duplicate rather than
+      add coverage. No synonym is folded onto those records either: this label names
+      a reaction or a splice, not the substance, and asserting the synonymy would
+      make label_index resolve it to something it does not denote.'
+    llm_assisted: false
+  notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_bromosuccinic_glutamic_acid);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient
+    record (#213/#308): a splice of TWO Biolog panel substrates run together by the
+    #308 ingest: `glycyl-L-glutamic acid` and `bromosuccinic acid`. Both are already
+    records — `Gly-Glu` (CHEBI:73801) and `Bromosuccinate` (CHEBI:73706) — so there
+    is nothing left to ground once the splice is recognised. Not mapped, because every
+    substrate CURIE it could be grounded to is already the primary key of a live record
+    — in MIM the identifier IS the ontology CURIE, so a mapping here would mint a
+    duplicate rather than add coverage. No synonym is folded onto those records either:
+    this label names a reaction or a splice, not the substance, and asserting the
+    synonymy would make label_index resolve it to something it does not denote.'
 - identifier: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
   preferred_term: N'-disuccinic Acid (EDDS)
   synonyms:
@@ -13157,7 +13312,7 @@ ingredients:
   - synonym_text: Tetrazolium
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13201,72 +13356,34 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrazolium); no
-    CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0447
-  preferred_term: Mineral solution see Medium No. 976
-  synonyms:
-  - synonym_text: Mineral solution see Medium No. 976
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: NEEDS_EXPERT
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:1958); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: retire_assay_labels
+    action: RETIRED_NOT_AN_INGREDIENT
+    previous_status: NEEDS_EXPERT
+    new_status: REJECTED
+    changes: 'Retired as an ingredient record (#213/#308): a bare family name reporting
+      a reduction readout. ChEBI has no generic tetrazolium class — only specific
+      salts — and MicrO models the readout as MICRO:0000270 ''tetrazolium reduction
+      assay''. The salt actually used in bacterial media, TTC, is already a record:
+      `2,3,5-Triphenyltetrazolium chloride` (CHEBI:78019). Grounding the bare family
+      name to one of its members is the error #368 records for sulfur. Not mapped,
+      because every substrate CURIE it could be grounded to is already the primary
+      key of a live record — in MIM the identifier IS the ontology CURIE, so a mapping
+      here would mint a duplicate rather than add coverage. No synonym is folded onto
+      those records either: this label names a reaction or a splice, not the substance,
+      and asserting the synonymy would make label_index resolve it to something it
+      does not denote.'
     llm_assisted: false
-  - timestamp: '2026-05-01T19:58:07.078790+00:00'
-    curator: auto_classify_stock_solution
-    action: CLASSIFY_AS_STOCK_SOLUTION
-    changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:19.749949+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Mineral
-      solution')
-    llm_assisted: false
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: issue_288_stock_solutions
-    action: PROMOTED_TO_MAPPED
-    previous_status: UNMAPPED
-    new_status: MAPPED
-    llm_assisted: true
-    changes: 'Promoted UNMAPPED_0447 -> kgmicrobe.ingredient:mineral_solution_see_medium_no_976
-      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
-      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
-      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
-      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
-      not narrow to any single compound (#288).'
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: issue_288_stock_solutions
-    action: FLAGGED_NEEDS_EXPERT
-    previous_status: MAPPED
-    new_status: NEEDS_EXPERT
-    llm_assisted: true
-    changes: 'Reverted the mint and flagged NEEDS_EXPERT instead. "Mineral solution
-      see Medium No. 976" is a CROSS-REFERENCE to another medium, not the name of
-      a substance -- minting an identifier for it would give a pointer its own identity.
-      The #288 batch minted it because it filtered on ingredient_type STOCK_SOLUTION
-      without reading the label. The referenced medium should be resolved and this
-      record either replaced by that mineral solution or retired (#288).'
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: edison_literature_identity
-    action: ANNOTATED
-    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Mineral_Solution_See_Medium_No_976-edison-literature.md
-      (local artifact — research/ is gitignored, so the findings are quoted here rather
-      than linked). Report reached no single bolded verdict; see the report. No ontology
-      CURIE was proposed. Recorded as provenance only — no grounding applied from
-      this run. Edison''s recommendations are deliberately conservative, and a plausible
-      identifier promoted by a mechanism that never decided anything is what #203
-      and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:1958); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
-  ingredient_type: STOCK_SOLUTION
+  notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:tetrazolium); no
+    CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient record
+    (#213/#308): a bare family name reporting a reduction readout. ChEBI has no generic
+    tetrazolium class — only specific salts — and MicrO models the readout as MICRO:0000270
+    ''tetrazolium reduction assay''. The salt actually used in bacterial media, TTC,
+    is already a record: `2,3,5-Triphenyltetrazolium chloride` (CHEBI:78019). Grounding
+    the bare family name to one of its members is the error #368 records for sulfur.
+    Not mapped, because every substrate CURIE it could be grounded to is already the
+    primary key of a live record — in MIM the identifier IS the ontology CURIE, so
+    a mapping here would mint a duplicate rather than add coverage. No synonym is
+    folded onto those records either: this label names a reaction or a splice, not
+    the substance, and asserting the synonymy would make label_index resolve it to
+    something it does not denote.'

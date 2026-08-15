@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0447
+identifier: kgmicrobe.ingredient:mineral_solution_see_medium_no_976
 preferred_term: Mineral solution see Medium No. 976
 synonyms:
 - synonym_text: Mineral solution see Medium No. 976
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -62,6 +62,37 @@ curation_history:
     identifier promoted by a mechanism that never decided anything is what #203 and
     #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: retire_assay_labels
+  action: PROMOTED_TO_MAPPED
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0447 -> kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+    (FALLBACK_REGISTRY). Minted under the #288 STOCK_SOLUTION convention: a MediaDive
+    cross-reference to the mineral/trace-elements solution of DSMZ Medium 976. The
+    corpus already treats this shape as a stock solution rather than retiring it —
+    `Trace element solution see Medium No. 187` and `Vitamin solution see Medium No.
+    403` are both live kgmicrobe.ingredient mints under the #288 convention — so this
+    follows its siblings. The composition is not transcribed here: it lives in the
+    referenced medium, and #288''s rule is to mint the named preparation rather than
+    inline someone else''s recipe.'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1958); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  ontology_label: Mineral solution see Medium No. 976
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Minted under the #288 STOCK_SOLUTION convention: a MediaDive cross-reference
+      to the mineral/trace-elements solution of DSMZ Medium 976. The corpus already
+      treats this shape as a stock solution rather than retiring it — `Trace element
+      solution see Medium No. 187` and `Vitamin solution see Medium No. 403` are both
+      live kgmicrobe.ingredient mints under the #288 convention — so this follows
+      its siblings. The composition is not transcribed here: it lives in the referenced
+      medium, and #288''s rule is to mint the named preparation rather than inline
+      someone else''s recipe.'

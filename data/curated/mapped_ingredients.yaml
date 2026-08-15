@@ -1,8 +1,106 @@
 generation_date: '2026-08-07T06:56:58.113846+00:00'
-total_count: 2559
-mapped_count: 2518
+total_count: 2560
+mapped_count: 2519
 unmapped_count: 0
 ingredients:
+- identifier: kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+  preferred_term: Mineral solution see Medium No. 976
+  synonyms:
+  - synonym_text: Mineral solution see Medium No. 976
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1958); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T19:58:07.078790+00:00'
+    curator: auto_classify_stock_solution
+    action: CLASSIFY_AS_STOCK_SOLUTION
+    changes: name pattern 'see Medium No.' indicates pre-mixed defined solution
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.749949+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'Mineral
+      solution')
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    changes: 'Promoted UNMAPPED_0447 -> kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+      (FALLBACK_REGISTRY). A named multi-component preparation. Searched CHEBI, NCIT,
+      MeSH, FOODON and ENVO by label and synonym: no term denotes it, and none could
+      -- a preparation is not a substance. Takes the STOCK_SOLUTION convention: a
+      kgmicrobe.ingredient: mint with no parent, because a multi-component mix does
+      not narrow to any single compound (#288).'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: issue_288_stock_solutions
+    action: FLAGGED_NEEDS_EXPERT
+    previous_status: MAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
+    changes: 'Reverted the mint and flagged NEEDS_EXPERT instead. "Mineral solution
+      see Medium No. 976" is a CROSS-REFERENCE to another medium, not the name of
+      a substance -- minting an identifier for it would give a pointer its own identity.
+      The #288 batch minted it because it filtered on ingredient_type STOCK_SOLUTION
+      without reading the label. The referenced medium should be resolved and this
+      record either replaced by that mineral solution or retired (#288).'
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Mineral_Solution_See_Medium_No_976-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report reached no single bolded verdict; see the report. No ontology
+      CURIE was proposed. Recorded as provenance only — no grounding applied from
+      this run. Edison''s recommendations are deliberately conservative, and a plausible
+      identifier promoted by a mechanism that never decided anything is what #203
+      and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
+    llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: retire_assay_labels
+    action: PROMOTED_TO_MAPPED
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0447 -> kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+      (FALLBACK_REGISTRY). Minted under the #288 STOCK_SOLUTION convention: a MediaDive
+      cross-reference to the mineral/trace-elements solution of DSMZ Medium 976. The
+      corpus already treats this shape as a stock solution rather than retiring it
+      — `Trace element solution see Medium No. 187` and `Vitamin solution see Medium
+      No. 403` are both live kgmicrobe.ingredient mints under the #288 convention
+      — so this follows its siblings. The composition is not transcribed here: it
+      lives in the referenced medium, and #288''s rule is to mint the named preparation
+      rather than inline someone else''s recipe.'
+    llm_assisted: false
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1958); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: STOCK_SOLUTION
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:mineral_solution_see_medium_no_976
+    ontology_label: Mineral solution see Medium No. 976
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Minted under the #288 STOCK_SOLUTION convention: a MediaDive cross-reference
+        to the mineral/trace-elements solution of DSMZ Medium 976. The corpus already
+        treats this shape as a stock solution rather than retiring it — `Trace element
+        solution see Medium No. 187` and `Vitamin solution see Medium No. 403` are
+        both live kgmicrobe.ingredient mints under the #288 convention — so this follows
+        its siblings. The composition is not transcribed here: it lives in the referenced
+        medium, and #288''s rule is to mint the named preparation rather than inline
+        someone else''s recipe.'
 - identifier: kgmicrobe.ingredient:1_butanol_co2
   preferred_term: 1-butanol+CO2
   synonyms:

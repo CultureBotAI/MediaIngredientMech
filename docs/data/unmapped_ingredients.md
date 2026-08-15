@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-15T19:37:40.889660+00:00
-Total: 282 ingredients
+Generated: 2026-08-15T21:12:41.205915+00:00
+Total: 281 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -276,14 +276,13 @@ Total: 282 ingredients
 | UNMAPPED_0150 |  | Zinc-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0587 |  | α-D-Glucose monohydrate | UNMAPPED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate |  | 0129 (2 | REJECTED |  |  | 0 |
-| UNMAPPED_0736 |  | 3-methylacetate | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0736 |  | 3-methylacetate | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate |  | 4-Diamino-6 | REJECTED |  |  | 0 |
 | CHEBI:41189 |  | 4-diol | REJECTED |  |  | 0 |
-| UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0688 |  | Esculin Hydrolysate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0731 |  | Gelatin Hydrolyzed | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | REJECTED |  |  | 0 |
+| UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | REJECTED |  |  | 0 |
+| UNMAPPED_0688 |  | Esculin Hydrolysate | REJECTED |  |  | 0 |
+| UNMAPPED_0731 |  | Gelatin Hydrolyzed | REJECTED |  |  | 0 |
+| UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | REJECTED |  |  | 0 |
 | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid |  | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
-| UNMAPPED_0734 |  | Tetrazolium | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0447 |  | Mineral solution see Medium No. 976 | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0734 |  | Tetrazolium | REJECTED |  |  | 0 |

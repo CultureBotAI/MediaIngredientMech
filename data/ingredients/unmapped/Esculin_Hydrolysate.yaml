@@ -4,7 +4,7 @@ synonyms:
 - synonym_text: Esculin Hydrolysate
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -46,5 +46,32 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
-notes: Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_hydrolysate);
-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: retire_assay_labels
+  action: RETIRED_NOT_AN_INGREDIENT
+  previous_status: NEEDS_EXPERT
+  new_status: REJECTED
+  changes: 'Retired as an ingredient record (#213/#308): names the esculin-hydrolysis
+    TEST, not a substance. The API 20 NE reading table lists esculin and ferric citrate
+    as the cupule''s active ingredients and hydrolysis as the reaction; MicrO models
+    it as MICRO:0000722 ''esculin ferric citrate assay''. The reagents are already
+    records: `Esculin Monohydrate` (CHEBI:4853) and `Esculin Ferric Citrate`; the
+    released aglycone esculetin is CHEBI:490095. Not mapped, because every substrate
+    CURIE it could be grounded to is already the primary key of a live record — in
+    MIM the identifier IS the ontology CURIE, so a mapping here would mint a duplicate
+    rather than add coverage. No synonym is folded onto those records either: this
+    label names a reaction or a splice, not the substance, and asserting the synonymy
+    would make label_index resolve it to something it does not denote.'
+  llm_assisted: false
+notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_hydrolysate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient record
+  (#213/#308): names the esculin-hydrolysis TEST, not a substance. The API 20 NE reading
+  table lists esculin and ferric citrate as the cupule''s active ingredients and hydrolysis
+  as the reaction; MicrO models it as MICRO:0000722 ''esculin ferric citrate assay''.
+  The reagents are already records: `Esculin Monohydrate` (CHEBI:4853) and `Esculin
+  Ferric Citrate`; the released aglycone esculetin is CHEBI:490095. Not mapped, because
+  every substrate CURIE it could be grounded to is already the primary key of a live
+  record — in MIM the identifier IS the ontology CURIE, so a mapping here would mint
+  a duplicate rather than add coverage. No synonym is folded onto those records either:
+  this label names a reaction or a splice, not the substance, and asserting the synonymy
+  would make label_index resolve it to something it does not denote.'
