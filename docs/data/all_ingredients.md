@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-15T01:43:44.546910+00:00
+Generated: 2026-08-15T01:58:39.993713+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2435,7 +2435,7 @@ Total: 2841 ingredients
 | CHEBI:26822 | CHEBI:26822 | Sulfide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:102484 | CHEBI:102484 | Sulfisoxazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17359 | CHEBI:17359 | Sulfite | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:35358 | CHEBI:35358 | Sulfonamide | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:35358 | CHEBI:35358 | Sulfonamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33954 | CHEBI:33954 | Tagatose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:132950 | CHEBI:132950 | Tartrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:36257 | CHEBI:36257 | Taurocholate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2777,13 +2777,13 @@ Total: 2841 ingredients
 | kgmicrobe.ingredient:1_propanol_co2 | kgmicrobe.ingredient:1_propanol_co2 | 1-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:2_butanol_co2 | kgmicrobe.ingredient:2_butanol_co2 | 2-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:2_propanol_co2 | kgmicrobe.ingredient:2_propanol_co2 | 2-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| UNMAPPED_0785 |  | 2-tetrachloroethane | NEEDS_EXPERT |  |  | 0 |
+| CHEBI:36026 | CHEBI:36026 | 1,1,2,2-Tetrachloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | UNMAPPED_0736 |  | 3-methylacetate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0620 |  | 4-Diamino-6 | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0791 |  | 4-diol | NEEDS_EXPERT |  |  | 0 |
+| CHEBI:41189 |  | 4-diol | REJECTED |  |  | 0 |
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | NEEDS_EXPERT |  |  | 0 |
 | kgmicrobe.ingredient:bhi | kgmicrobe.ingredient:bhi | BHI | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| UNMAPPED_0805 |  | Butane-1 | NEEDS_EXPERT |  |  | 0 |
+| CHEBI:41189 | CHEBI:41189 | Butane-1,4-diol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:cmc_py_horse_serum | kgmicrobe.ingredient:cmc_py_horse_serum | CMC + PY + Horse Serum | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | Casitone + Yeast Extract + Rumen Fluid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | Corn Steep Liquor + Glucose + Fumarate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2791,7 +2791,7 @@ Total: 2841 ingredients
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0626 |  | Esculin Ferric Citrate | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0688 |  | Esculin Hydrolysate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0812 |  | Ethylenediamine-N | NEEDS_EXPERT |  |  | 0 |
+| kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid | Ethylenediamine-N,N'-disuccinic acid (EDDS) | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules | kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules | Fastidious Anaerobe Broth With Meat Granules | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:fermented_rumen_extract | kgmicrobe.ingredient:fermented_rumen_extract | Fermented Rumen Extract | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate | kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate | Formate+3-methyl Mercaptopropionate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2819,7 +2819,7 @@ Total: 2841 ingredients
 | kgmicrobe.ingredient:h2_trimethylamine | kgmicrobe.ingredient:h2_trimethylamine | H2+trimethylamine | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:modified_cooked_meat_medium | kgmicrobe.ingredient:modified_cooked_meat_medium | Modified Cooked Meat Medium | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | UNMAPPED_0764 |  | Mono- And Disaccharides | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0829 |  | N'-disuccinic Acid (EDDS) | NEEDS_EXPERT |  |  | 0 |
+| kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid |  | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
 | UNMAPPED_0719 |  | PY-cellobiose | NEEDS_EXPERT |  |  | 0 |
 | UNMAPPED_0767 |  | PY-fructose | NEEDS_EXPERT |  |  | 0 |
 | kgmicrobe.ingredient:py_glucose_rumen_fluid | kgmicrobe.ingredient:py_glucose_rumen_fluid | PY-glucose-rumen Fluid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |

@@ -182987,8 +182987,18 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:sulfonamide; '
-  synonyms: []
-  mapping_status: PENDING_REVIEW
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#308/#313)
+      notes: 'Repaired a comma-split label (#308/#313): not a comma split; the label
+        matches CHEBI:35358 `sulfonamide` exactly and the record had been left at
+        PENDING_REVIEW. The ingest strips commas from every chemical label, so a name
+        containing one arrives as separate fragment records — the same mechanism that
+        produced the `D` record resolved in #346.'
+  synonyms:
+  - synonym_text: Sulfonamide
+    synonym_type: RAW_TEXT
+    source: comma-split fragment (#308/#313)
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -183040,6 +183050,18 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: REPAIRED_COMMA_SPLIT_LABEL
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'preferred_term ''Sulfonamide'' -> ''Sulfonamide''; CHEBI:35358 -> CHEBI:35358.
+      Repaired a comma-split label (#308/#313): not a comma split; the label matches
+      CHEBI:35358 `sulfonamide` exactly and the record had been left at PENDING_REVIEW.
+      The ingest strips commas from every chemical label, so a name containing one
+      arrives as separate fragment records — the same mechanism that produced the
+      `D` record resolved in #346.'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:

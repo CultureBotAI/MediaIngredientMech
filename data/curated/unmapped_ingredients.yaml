@@ -13074,13 +13074,13 @@ ingredients:
         ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
         (an unresolved name here means MIM lacks the record, not that the substance
         is undefined). No concentrations are recorded: the label states none.'
-- identifier: UNMAPPED_0785
-  preferred_term: 2-tetrachloroethane
+- identifier: CHEBI:36026
+  preferred_term: 1,1,2,2-Tetrachloroethane
   synonyms:
   - synonym_text: 2-tetrachloroethane
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13119,8 +13119,37 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: REPAIRED_COMMA_SPLIT_LABEL
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'preferred_term ''2-tetrachloroethane'' -> ''1,1,2,2-Tetrachloroethane'';
+      UNMAPPED_0785 -> CHEBI:36026. Repaired a comma-split label (#308/#313): `2-tetrachloroethane`
+      is the tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields
+      `1`, `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record
+      because bare digits are not labels. The reconstruction is unambiguous — no other
+      compound ends in `2-tetrachloroethane`. The ingest strips commas from every
+      chemical label, so a name containing one arrives as separate fragment records
+      — the same mechanism that produced the `D` record resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_tetrachloroethane);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:36026
+    ontology_label: 1,1,2,2-tetrachloroethane
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#308/#313)
+      notes: 'Repaired a comma-split label (#308/#313): `2-tetrachloroethane` is the
+        tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields
+        `1`, `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record
+        because bare digits are not labels. The reconstruction is unambiguous — no
+        other compound ends in `2-tetrachloroethane`. The ingest strips commas from
+        every chemical label, so a name containing one arrives as separate fragment
+        records — the same mechanism that produced the `D` record resolved in #346.'
 - identifier: UNMAPPED_0736
   preferred_term: 3-methylacetate
   synonyms:
@@ -13212,13 +13241,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_diamino_6); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0791
+- identifier: CHEBI:41189
   preferred_term: 4-diol
   synonyms:
   - synonym_text: 4-diol
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13254,6 +13283,17 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: MERGED_INTO
+    changes: 'Merged into CHEBI:41189 ''Butane-1,4-diol'': this record is the other
+      half of a comma-split label, not an ingredient. Repaired a comma-split label
+      (#308/#313): `Butane-1` and `4-diol` are the two halves of `butane-1,4-diol`
+      split at its only comma. Neither fragment names a compound; rejoined they name
+      one ChEBI holds as CHEBI:41189 (C4H10O2). The ingest strips commas from every
+      chemical label, so a name containing one arrives as separate fragment records
+      — the same mechanism that produced the `D` record resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_diol); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0651
@@ -13394,13 +13434,16 @@ ingredients:
         medium CultureMech:015492 (''BHI'') via culturemech_medium_name, verified
         by COMPOSITION not by name: composition Beef heart + Calf brains + Proteose
         Peptone + Disodium phosphate + Sodium Chloride is brain heart infusion.'
-- identifier: UNMAPPED_0805
-  preferred_term: Butane-1
+- identifier: CHEBI:41189
+  preferred_term: Butane-1,4-diol
   synonyms:
   - synonym_text: Butane-1
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  - synonym_text: 4-diol
+    synonym_type: RAW_TEXT
+    source: comma-split fragment (#308/#313)
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13442,8 +13485,35 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: REPAIRED_COMMA_SPLIT_LABEL
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'preferred_term ''Butane-1'' -> ''Butane-1,4-diol''; UNMAPPED_0805 ->
+      CHEBI:41189. Absorbed the partner fragment ''4-diol''. Repaired a comma-split
+      label (#308/#313): `Butane-1` and `4-diol` are the two halves of `butane-1,4-diol`
+      split at its only comma. Neither fragment names a compound; rejoined they name
+      one ChEBI holds as CHEBI:41189 (C4H10O2). The ingest strips commas from every
+      chemical label, so a name containing one arrives as separate fragment records
+      — the same mechanism that produced the `D` record resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:butane_1); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:41189
+    ontology_label: butane-1,4-diol
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#308/#313)
+      notes: 'Repaired a comma-split label (#308/#313): `Butane-1` and `4-diol` are
+        the two halves of `butane-1,4-diol` split at its only comma. Neither fragment
+        names a compound; rejoined they name one ChEBI holds as CHEBI:41189 (C4H10O2).
+        The ingest strips commas from every chemical label, so a name containing one
+        arrives as separate fragment records — the same mechanism that produced the
+        `D` record resolved in #346.'
 - identifier: kgmicrobe.ingredient:cmc_py_horse_serum
   preferred_term: CMC + PY + Horse Serum
   synonyms:
@@ -13994,13 +14064,16 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_hydrolysate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0812
-  preferred_term: Ethylenediamine-N
+- identifier: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
+  preferred_term: Ethylenediamine-N,N'-disuccinic acid (EDDS)
   synonyms:
   - synonym_text: Ethylenediamine-N
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  - synonym_text: N'-disuccinic Acid (EDDS)
+    synonym_type: RAW_TEXT
+    source: comma-split fragment (#308/#313)
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14040,8 +14113,41 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: REPAIRED_COMMA_SPLIT_LABEL
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'preferred_term ''Ethylenediamine-N'' -> "Ethylenediamine-N,N''-disuccinic
+      acid (EDDS)"; UNMAPPED_0812 -> kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid.
+      Absorbed the partner fragment "N''-disuccinic Acid (EDDS)". Repaired a comma-split
+      label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic Acid (EDDS)` are
+      the two halves of `ethylenediamine-N,N''-disuccinic acid` split at its only
+      comma — the surviving `(EDDS)` on the second fragment confirms the reading.
+      ChEBI has no term for EDDS (searched the local build and live at OLS4), so MAPPING_SEMANTICS
+      §3 step 3 applies and the rejoined record takes a registry mint. The ingest
+      strips commas from every chemical label, so a name containing one arrives as
+      separate fragment records — the same mechanism that produced the `D` record
+      resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ethylenediamine_n);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
+    ontology_label: Ethylenediamine-N,N'-disuccinic acid (EDDS)
+    ontology_source: kgmicrobe.compound
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#308/#313)
+      notes: 'Repaired a comma-split label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic
+        Acid (EDDS)` are the two halves of `ethylenediamine-N,N''-disuccinic acid`
+        split at its only comma — the surviving `(EDDS)` on the second fragment confirms
+        the reading. ChEBI has no term for EDDS (searched the local build and live
+        at OLS4), so MAPPING_SEMANTICS §3 step 3 applies and the rejoined record takes
+        a registry mint. The ingest strips commas from every chemical label, so a
+        name containing one arrives as separate fragment records — the same mechanism
+        that produced the `D` record resolved in #346.'
 - identifier: kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules
   preferred_term: Fastidious Anaerobe Broth With Meat Granules
   synonyms:
@@ -16462,13 +16568,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:mono_and_disaccharides);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0829
+- identifier: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
   preferred_term: N'-disuccinic Acid (EDDS)
   synonyms:
   - synonym_text: N'-disuccinic Acid (EDDS)
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -16495,6 +16601,20 @@ ingredients:
     previous_status: UNMAPPED
     new_status: NEEDS_EXPERT
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: MERGED_INTO
+    changes: 'Merged into kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid "Ethylenediamine-N,N''-disuccinic
+      acid (EDDS)": this record is the other half of a comma-split label, not an ingredient.
+      Repaired a comma-split label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic
+      Acid (EDDS)` are the two halves of `ethylenediamine-N,N''-disuccinic acid` split
+      at its only comma — the surviving `(EDDS)` on the second fragment confirms the
+      reading. ChEBI has no term for EDDS (searched the local build and live at OLS4),
+      so MAPPING_SEMANTICS §3 step 3 applies and the rejoined record takes a registry
+      mint. The ingest strips commas from every chemical label, so a name containing
+      one arrives as separate fragment records — the same mechanism that produced
+      the `D` record resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:n_disuccinic_acid_edds);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0719

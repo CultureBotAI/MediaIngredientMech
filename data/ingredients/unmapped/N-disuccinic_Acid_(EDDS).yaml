@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0829
+identifier: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
 preferred_term: N'-disuccinic Acid (EDDS)
 synonyms:
 - synonym_text: N'-disuccinic Acid (EDDS)
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -31,5 +31,19 @@ curation_history:
   previous_status: UNMAPPED
   new_status: NEEDS_EXPERT
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: repair_comma_split_labels
+  action: MERGED_INTO
+  changes: 'Merged into kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid "Ethylenediamine-N,N''-disuccinic
+    acid (EDDS)": this record is the other half of a comma-split label, not an ingredient.
+    Repaired a comma-split label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic
+    Acid (EDDS)` are the two halves of `ethylenediamine-N,N''-disuccinic acid` split
+    at its only comma — the surviving `(EDDS)` on the second fragment confirms the
+    reading. ChEBI has no term for EDDS (searched the local build and live at OLS4),
+    so MAPPING_SEMANTICS §3 step 3 applies and the rejoined record takes a registry
+    mint. The ingest strips commas from every chemical label, so a name containing
+    one arrives as separate fragment records — the same mechanism that produced the
+    `D` record resolved in #346.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:n_disuccinic_acid_edds);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.

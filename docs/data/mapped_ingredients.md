@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-15T01:43:44.534400+00:00
+Generated: 2026-08-15T01:58:39.990079+00:00
 Total: 2497 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2435,7 +2435,7 @@ Total: 2497 ingredients
 | CHEBI:26822 | CHEBI:26822 | Sulfide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:102484 | CHEBI:102484 | Sulfisoxazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17359 | CHEBI:17359 | Sulfite | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:35358 | CHEBI:35358 | Sulfonamide | PENDING_REVIEW | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:35358 | CHEBI:35358 | Sulfonamide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33954 | CHEBI:33954 | Tagatose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:132950 | CHEBI:132950 | Tartrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:36257 | CHEBI:36257 | Taurocholate | MAPPED | CHEBI | EXACT_MATCH | 0 |
