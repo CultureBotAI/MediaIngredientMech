@@ -1,0 +1,103 @@
+identifier: kgmicrobe.ingredient:pyg_0_02_tween_80
+preferred_term: PYG-0.02% Tween 80
+synonyms:
+- synonym_text: PYG-0.02% Tween 80
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: bergey:substrates
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_0_02_tween_80);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: issue_213_residual_triage
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not an ingredient: a PYG medium name with a Tween 80 supplement and its
+    concentration; belongs with the decomposition workstream. Searched CHEBI, NCIT,
+    FOODON, ENVO, MeSH, BTO and UBERON by label and synonym with normalisation, plus
+    exact queries across all of live OLS4.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/PYG-002_Tween_80-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: ## Executive recommendation — Retain the record
+    as **`UNMAPPED`**. The label denotes a **formulation-qualified culture medium—PYG
+    medium containing Tween 80 at a stated 0.02%—not a single chemical substance**.
+    No verified ontology term was found for that complete formulation. Mapping the
+    record directly to polysorbate 80 would discard the PYG-medium context and concentration
+    qualifier. CURIEs discussed: CHEBI:53424, NCIT:C787. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: decompose_py_media_and_ground_categories
+  action: DECOMPOSED_TO_COMPONENTS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0772 -> kgmicrobe.ingredient:pyg_0_02_tween_80 (FALLBACK_REGISTRY).
+    Decomposed into 4 constituents: `PY-` is peptone-yeast, the standard anaerobe
+    base. The curated research file already decomposes `PY-glucose-rumen Fluid` as
+    peptone + yeast extract + glucose + rumen fluid, so this expansion follows an
+    existing precedent in the corpus rather than a guess. Minted under the #288 STOCK_SOLUTION
+    convention because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE.
+    No concentrations recorded — the label states none beyond the 0.02% on the Tween,
+    which is a working concentration for the finished medium rather than a component
+    amount.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: move_mapped_out_of_unmapped_collection
+  action: MOVED_TO_MAPPED_COLLECTION
+  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
+    The record was already MAPPED; it had been promoted in place by a path that does
+    not move between collections, and reconcile_sssom reads only the mapped collection
+    — so its mapping was curated but unpublished.
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_0_02_tween_80);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+components:
+- component_name: peptone
+  component_id: MICRO:0000178
+  source: MIM curation (#213/#308)
+- component_name: yeast extract
+  component_id: FOODON:03315426
+  source: MIM curation (#213/#308)
+- component_name: glucose
+  component_id: CHEBI:17234
+  source: MIM curation (#213/#308)
+- component_name: polysorbate 80
+  component_id: CHEBI:53426
+  source: MIM curation (#213/#308)
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:pyg_0_02_tween_80
+  ontology_label: PYG-0.02% Tween 80
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Decomposed into 4 constituents: `PY-` is peptone-yeast, the standard anaerobe
+      base. The curated research file already decomposes `PY-glucose-rumen Fluid`
+      as peptone + yeast extract + glucose + rumen fluid, so this expansion follows
+      an existing precedent in the corpus rather than a guess. Minted under the #288
+      STOCK_SOLUTION convention because no ontology term denotes the blend itself.
+      ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states
+      none beyond the 0.02% on the Tween, which is a working concentration for the
+      finished medium rather than a component amount.'
