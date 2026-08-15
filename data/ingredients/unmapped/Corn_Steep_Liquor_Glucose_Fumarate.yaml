@@ -56,18 +56,31 @@ curation_history:
     constituent is itself an undefined preparation. No concentrations are recorded:
     the label states none.'
   llm_assisted: false
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: REPLACED_COMPONENTS_WITH_CURATED
+  changes: 'components replaced with the curated research decomposition, superseding
+    the label split. Components taken from the curated microbedecoder research decomposition
+    (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+    the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+    That file was produced by the research pass and never written into the records;
+    this applies it. It resolves constituents a label split cannot — abbreviations
+    such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+    No concentrations are recorded: the curated row states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:corn_steep_liquor_glucose_fumarate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
 components:
-- component_name: Corn Steep Liquor
-  source: MIM label decomposition (#213/#308)
-- component_name: Glucose
-  source: MIM label decomposition (#213/#308)
+- component_name: corn steep liquor
+  component_id: cas:66071-94-1
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: glucose
   component_id: CHEBI:17234
-- component_name: Fumarate
-  source: MIM label decomposition (#213/#308)
-  component_id: CHEBI:29806
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: fumaric acid
+  component_id: CHEBI:18012
+  source: microbedecoder research decomposition (#213/#308)
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate
   ontology_label: Corn Steep Liquor + Glucose + Fumarate

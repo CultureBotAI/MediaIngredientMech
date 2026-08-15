@@ -56,18 +56,34 @@ curation_history:
     because at least one constituent is itself an undefined preparation. No concentrations
     are recorded: the label states none.'
   llm_assisted: false
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: REPLACED_COMPONENTS_WITH_CURATED
+  changes: 'components replaced with the curated research decomposition, superseding
+    the label split. Components taken from the curated microbedecoder research decomposition
+    (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+    the label names its constituents. 4 constituent(s), 4 carrying an identifier.
+    That file was produced by the research pass and never written into the records;
+    this applies it. It resolves constituents a label split cannot — abbreviations
+    such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+    No concentrations are recorded: the curated row states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
 components:
-- component_name: CMC
-  source: MIM label decomposition (#213/#308)
-  component_id: CHEBI:234035
-- component_name: PY
-  source: MIM label decomposition (#213/#308)
-- component_name: Horse Serum
-  source: MIM label decomposition (#213/#308)
+- component_name: carboxymethylcellulose
+  component_id: CHEBI:85146
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: peptone
+  component_id: MICRO:0000178
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: yeast extract
+  component_id: FOODON:03315426
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: horse serum
   component_id: MICRO:0001235
+  source: microbedecoder research decomposition (#213/#308)
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:cmc_py_horse_serum
   ontology_label: CMC + PY + Horse Serum

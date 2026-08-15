@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0742
+identifier: kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules
 preferred_term: Fastidious Anaerobe Broth With Meat Granules
 synonyms:
 - synonym_text: Fastidious Anaerobe Broth With Meat Granules
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -39,5 +39,50 @@ curation_history:
     identifier promoted by a mechanism that never decided anything is what #203 and
     #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: DECOMPOSED_FROM_CURATED_RESEARCH
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0742 -> kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules
+    (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research
+    decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium):
+    it is a named medium and these are what the recipe contains. 4 constituent(s),
+    4 carrying an identifier. That file was produced by the research pass and never
+    written into the records; this applies it. It resolves constituents a label split
+    cannot — abbreviations such as PY, and named media such as BHI, state no composition
+    to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+    the curated row states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:fastidious_anaerobe_broth_with_meat_granules);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+components:
+- component_name: meat (cooked)
+  component_id: FOODON:03305103
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: peptone
+  component_id: MICRO:0000178
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: starch
+  component_id: CHEBI:28017
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: glucose
+  component_id: CHEBI:17234
+  source: microbedecoder research decomposition (#213/#308)
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules
+  ontology_label: Fastidious Anaerobe Broth With Meat Granules
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium):
+      it is a named medium and these are what the recipe contains. 4 constituent(s),
+      4 carrying an identifier. That file was produced by the research pass and never
+      written into the records; this applies it. It resolves constituents a label
+      split cannot — abbreviations such as PY, and named media such as BHI, state
+      no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
+      are recorded: the curated row states none.'

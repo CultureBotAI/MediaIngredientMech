@@ -58,16 +58,28 @@ curation_history:
     (an unresolved name here means MIM lacks the record, not that the substance is
     undefined). No concentrations are recorded: the label states none.'
   llm_assisted: false
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: REPLACED_COMPONENTS_WITH_CURATED
+  changes: 'components replaced with the curated research decomposition, superseding
+    the label split. Components taken from the curated microbedecoder research decomposition
+    (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+    the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+    That file was produced by the research pass and never written into the records;
+    this applies it. It resolves constituents a label split cannot — abbreviations
+    such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+    No concentrations are recorded: the curated row states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_dimethylsulfide);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: DEFINED_MEDIUM
 components:
-- component_name: Formate
-  source: MIM label decomposition (#213/#308)
+- component_name: formate
   component_id: CHEBI:15740
-- component_name: dimethylsulfide
-  source: MIM label decomposition (#213/#308)
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: dimethyl sulfide
   component_id: CHEBI:17437
+  source: microbedecoder research decomposition (#213/#308)
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:formate_dimethylsulfide
   ontology_label: Formate+dimethylsulfide
