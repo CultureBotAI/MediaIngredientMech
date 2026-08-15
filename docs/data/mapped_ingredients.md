@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-15T19:31:07.986076+00:00
+Generated: 2026-08-15T19:37:40.886243+00:00
 Total: 2559 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -11,7 +11,7 @@ Total: 2559 ingredients
 | kgmicrobe.ingredient:2_propanol_co2 | kgmicrobe.ingredient:2_propanol_co2 | 2-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | CHEBI:36026 | CHEBI:36026 | 1,1,2,2-Tetrachloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:bhi | kgmicrobe.ingredient:bhi | BHI | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| CHEBI:41189 | CHEBI:41189 | Butane-1,4-diol | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:41189 | CHEBI:41189 | Butane-1,4-diol | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:cmc_py_horse_serum | kgmicrobe.ingredient:cmc_py_horse_serum | CMC + PY + Horse Serum | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | Casitone + Yeast Extract + Rumen Fluid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | Corn Steep Liquor + Glucose + Fumarate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |

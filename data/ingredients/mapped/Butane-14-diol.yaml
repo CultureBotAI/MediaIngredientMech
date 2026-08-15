@@ -7,7 +7,7 @@ synonyms:
 - synonym_text: 4-diol
   synonym_type: RAW_TEXT
   source: comma-split fragment (#308/#313)
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -69,6 +69,18 @@ curation_history:
     The record was already MAPPED; it had been promoted in place by a path that does
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_butanediol_duplicate
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:41189 ''1,4-Butanediol''. `Butane-1,4-diol` was created
+    by the #308 comma-split repair, which rejoined the fragments `Butane-1` and `4-diol`
+    and grounded them to CHEBI:41189 — without checking whether MIM already held that
+    term. It did: `1,4-Butanediol`. So the repair produced a second live record for
+    one compound, which is the duplicate-shadowing defect this session has been fixing
+    elsewhere (#334/#347). Merged into the pre-existing record; the two fragment labels
+    are kept as RAW_TEXT synonyms so the comma-split provenance survives. Tombstoned
+    REJECTED, SSSOM row dropped.'
   llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:butane_1); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.

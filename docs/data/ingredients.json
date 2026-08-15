@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-08-15T19:31:15.886515+00:00",
+    "generated": "2026-08-15T19:37:48.758645+00:00",
     "total_ingredients": 2841,
     "mapped_count": 2559,
     "unmapped_count": 282,
@@ -637,14 +637,18 @@
       "ontology_label": "butane-1,4-diol",
       "ontology_source": "CHEBI",
       "mapping_quality": "SYNONYM_MATCH",
-      "synonyms": [],
-      "synonym_count": 0,
+      "synonyms": [
+        "Butane-1,4-diol",
+        "Butane-1",
+        "4-diol"
+      ],
+      "synonym_count": 3,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-10T00:00:00+00:00",
-      "curator": "regrade_synonym_matches",
+      "last_curated": "2026-08-15T00:00:00+00:00",
+      "curator": "fix_butanediol_duplicate",
       "source_file": "mapped/14-Butanediol.yaml",
-      "searchable": "1,4-butanediol butane-1,4-diol  chebi:41189"
+      "searchable": "1,4-butanediol butane-1,4-diol butane-1,4-diol butane-1 4-diol chebi:41189"
     },
     {
       "id": "CHEBI:27418",
@@ -9587,7 +9591,7 @@
     {
       "id": "CHEBI:41189",
       "preferred_term": "Butane-1,4-diol",
-      "mapping_status": "MAPPED",
+      "mapping_status": "REJECTED",
       "ontology_id": "CHEBI:41189",
       "ontology_label": "butane-1,4-diol",
       "ontology_source": "CHEBI",
@@ -9600,7 +9604,7 @@
       "total_occurrences": 0,
       "media_count": 0,
       "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "curator": "fix_butanediol_duplicate",
       "source_file": "mapped/Butane-14-diol.yaml",
       "searchable": "butane-1,4-diol butane-1,4-diol butane-1 4-diol chebi:41189"
     },

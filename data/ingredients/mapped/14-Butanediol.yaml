@@ -10,7 +10,16 @@ ontology_mapping:
     source: CultureBotHT
     notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
       sqlite (cas xref). '
-synonyms: []
+synonyms:
+- synonym_text: Butane-1,4-diol
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:41189 (#308/#370)
+- synonym_text: Butane-1
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:41189 (#308/#370)
+- synonym_text: 4-diol
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:41189 (#308/#370)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -49,6 +58,17 @@ curation_history:
     match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
     grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
     is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_butanediol_duplicate
+  action: MERGED_FROM
+  changes: 'Absorbed ''Butane-1,4-diol''. `Butane-1,4-diol` was created by the #308
+    comma-split repair, which rejoined the fragments `Butane-1` and `4-diol` and grounded
+    them to CHEBI:41189 — without checking whether MIM already held that term. It
+    did: `1,4-Butanediol`. So the repair produced a second live record for one compound,
+    which is the duplicate-shadowing defect this session has been fixing elsewhere
+    (#334/#347). Merged into the pre-existing record; the two fragment labels are
+    kept as RAW_TEXT synonyms so the comma-split provenance survives.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 110-63-4
