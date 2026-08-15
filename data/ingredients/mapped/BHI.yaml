@@ -1,0 +1,97 @@
+identifier: kgmicrobe.ingredient:bhi
+preferred_term: BHI
+synonyms:
+- synonym_text: BHI
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 2
+    source_columns: bergey:substrates
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not a single-compound grounding target: multi-component blend or named
+    medium; no single ontology term grounds it -- needs decomposition into constituents.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/BHI-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: | Recommended status | **UNMAPPED** for single-ingredient
+    identity curation, or retain a **non-identity formulation-family handling** if
+    the data model supports named media/formulations. Do **not** map as a single chemical
+    ingredient (le2023anewisolation pages 1-2, atlas2004handbookofmicrobiological
+    pages 8-10) | No ontology CURIE was proposed. Recorded as provenance only — no
+    grounding applied from this run. Edison''s recommendations are deliberately conservative,
+    and a plausible identifier promoted by a mechanism that never decided anything
+    is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+    or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: DECOMPOSED_FROM_CURATED_RESEARCH
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0716 -> kgmicrobe.ingredient:bhi (FALLBACK_REGISTRY). Components
+    taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+    strategy=map_to_medium): it is a named medium and these are what the recipe contains.
+    1 constituent(s), 1 carrying an identifier. That file was produced by the research
+    pass and never written into the records; this applies it. It resolves constituents
+    a label split cannot — abbreviations such as PY, and named media such as BHI,
+    state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
+    are recorded: the curated row states none. Cross-referenced to CultureMech medium
+    CultureMech:015492 (''BHI'') via culturemech_medium_name, verified by COMPOSITION
+    not by name: composition Beef heart + Calf brains + Proteose Peptone + Disodium
+    phosphate + Sodium Chloride is brain heart infusion.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: move_mapped_out_of_unmapped_collection
+  action: MOVED_TO_MAPPED_COLLECTION
+  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
+    The record was already MAPPED; it had been promoted in place by a path that does
+    not move between collections, and reconcile_sssom reads only the mapped collection
+    — so its mapping was curated but unpublished.
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
+  or CHEBI/NCIT match. Curator review needed.
+components:
+- component_name: brain heart infusion
+  component_id: MICRO:0000193
+  source: microbedecoder research decomposition (#213/#308)
+ingredient_type: UNDEFINED_MIXTURE
+culturemech_medium_name: BHI
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:bhi
+  ontology_label: BHI
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium):
+      it is a named medium and these are what the recipe contains. 1 constituent(s),
+      1 carrying an identifier. That file was produced by the research pass and never
+      written into the records; this applies it. It resolves constituents a label
+      split cannot — abbreviations such as PY, and named media such as BHI, state
+      no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
+      are recorded: the curated row states none. Cross-referenced to CultureMech medium
+      CultureMech:015492 (''BHI'') via culturemech_medium_name, verified by COMPOSITION
+      not by name: composition Beef heart + Calf brains + Proteose Peptone + Disodium
+      phosphate + Sodium Chloride is brain heart infusion.'

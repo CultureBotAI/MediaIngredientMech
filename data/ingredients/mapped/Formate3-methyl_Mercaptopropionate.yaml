@@ -1,0 +1,107 @@
+identifier: kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate
+preferred_term: Formate+3-methyl Mercaptopropionate
+synonyms:
+- synonym_text: Formate+3-methyl Mercaptopropionate
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: bergey:substrates
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_3_methyl_mercaptopropionate);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not a single-compound grounding target: multi-component blend or named
+    medium; no single ontology term grounds it -- needs decomposition into constituents.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Formate3-methyl_Mercaptopropionate-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** this is not a single
+    chemical, hydrate, salt, buffer, commercial formulation, or recognized named medium.
+    It is most plausibly a source-list concatenation of **two substrates**, with `+`
+    functioning as a delimiter: CURIEs discussed: CHEBI:15740, CHEBI:30751. Recorded
+    as provenance only — no grounding applied from this run. Edison''s recommendations
+    are deliberately conservative, and a plausible identifier promoted by a mechanism
+    that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+    is a curator''s to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: decompose_substrate_combinations
+  action: DECOMPOSED_TO_COMPONENTS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0743 -> kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate
+    (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a decomposition
+    rather than a mapping: no ontology has a term for ''Formate+3-methyl Mercaptopropionate'',
+    and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+    convention and split on ''+'', which transcribes the label rather than inferring
+    anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+    3-methyl Mercaptopropionate carries no component_id because MIM has no record
+    for it. ingredient_type=DEFINED_MEDIUM because every constituent is a defined
+    chemical (an unresolved name here means MIM lacks the record, not that the substance
+    is undefined). No concentrations are recorded: the label states none.'
+  llm_assisted: false
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: REPLACED_COMPONENTS_WITH_CURATED
+  changes: 'components replaced with the curated research decomposition, superseding
+    the label split. Components taken from the curated microbedecoder research decomposition
+    (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+    the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+    That file was produced by the research pass and never written into the records;
+    this applies it. It resolves constituents a label split cannot — abbreviations
+    such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+    No concentrations are recorded: the curated row states none.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: move_mapped_out_of_unmapped_collection
+  action: MOVED_TO_MAPPED_COLLECTION
+  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
+    The record was already MAPPED; it had been promoted in place by a path that does
+    not move between collections, and reconcile_sssom reads only the mapped collection
+    — so its mapping was curated but unpublished.
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_3_methyl_mercaptopropionate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ingredient_type: DEFINED_MEDIUM
+components:
+- component_name: formate
+  component_id: CHEBI:15740
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: 3-(methylthio)propionic acid
+  component_id: CHEBI:1438
+  source: microbedecoder research decomposition (#213/#308)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate
+  ontology_label: Formate+3-methyl Mercaptopropionate
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'The label enumerates its own constituents, so this is a decomposition
+      rather than a mapping: no ontology has a term for ''Formate+3-methyl Mercaptopropionate'',
+      and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      3-methyl Mercaptopropionate carries no component_id because MIM has no record
+      for it. ingredient_type=DEFINED_MEDIUM because every constituent is a defined
+      chemical (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'

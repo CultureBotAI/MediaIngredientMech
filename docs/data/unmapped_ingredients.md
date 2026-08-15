@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-15T07:07:29.944627+00:00
-Total: 344 ingredients
+Generated: 2026-08-15T19:31:07.989178+00:00
+Total: 282 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -276,76 +276,14 @@ Total: 344 ingredients
 | UNMAPPED_0150 |  | Zinc-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0587 |  | α-D-Glucose monohydrate | UNMAPPED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate |  | 0129 (2 | REJECTED |  |  | 0 |
-| kgmicrobe.ingredient:1_butanol_co2 | kgmicrobe.ingredient:1_butanol_co2 | 1-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:1_propanol_co2 | kgmicrobe.ingredient:1_propanol_co2 | 1-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:2_butanol_co2 | kgmicrobe.ingredient:2_butanol_co2 | 2-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:2_propanol_co2 | kgmicrobe.ingredient:2_propanol_co2 | 2-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| CHEBI:36026 | CHEBI:36026 | 1,1,2,2-Tetrachloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | UNMAPPED_0736 |  | 3-methylacetate | NEEDS_EXPERT |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate |  | 4-Diamino-6 | REJECTED |  |  | 0 |
 | CHEBI:41189 |  | 4-diol | REJECTED |  |  | 0 |
 | UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | NEEDS_EXPERT |  |  | 0 |
-| kgmicrobe.ingredient:bhi | kgmicrobe.ingredient:bhi | BHI | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| CHEBI:41189 | CHEBI:41189 | Butane-1,4-diol | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.ingredient:cmc_py_horse_serum | kgmicrobe.ingredient:cmc_py_horse_serum | CMC + PY + Horse Serum | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | Casitone + Yeast Extract + Rumen Fluid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | Corn Steep Liquor + Glucose + Fumarate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:cyclopentanol_co2 | kgmicrobe.ingredient:cyclopentanol_co2 | Cyclopentanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | NEEDS_EXPERT |  |  | 0 |
-| kgmicrobe.ingredient:esculin_ferric_citrate | kgmicrobe.ingredient:esculin_ferric_citrate | Esculin Ferric Citrate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | UNMAPPED_0688 |  | Esculin Hydrolysate | NEEDS_EXPERT |  |  | 0 |
-| kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid | Ethylenediamine-N,N'-disuccinic acid (EDDS) | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules | kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules | Fastidious Anaerobe Broth With Meat Granules | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:fermented_rumen_extract | kgmicrobe.ingredient:fermented_rumen_extract | Fermented Rumen Extract | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate | kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate | Formate+3-methyl Mercaptopropionate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:formate_dimethylsulfide | kgmicrobe.ingredient:formate_dimethylsulfide | Formate+dimethylsulfide | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:formate_methanol | kgmicrobe.ingredient:formate_methanol | Formate+methanol | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:formate_tetramethylammonium | kgmicrobe.ingredient:formate_tetramethylammonium | Formate+tetramethylammonium | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:formate_trimethylamine | kgmicrobe.ingredient:formate_trimethylamine | Formate+trimethylamine | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:gyps | kgmicrobe.ingredient:gyps | GYPS | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:gallate_formate | kgmicrobe.ingredient:gallate_formate | Gallate + Formate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | UNMAPPED_0731 |  | Gelatin Hydrolyzed | NEEDS_EXPERT |  |  | 0 |
-| kgmicrobe.ingredient:glucose_acetate | kgmicrobe.ingredient:glucose_acetate | Glucose + Acetate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract | kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract | Glucose + Cellobiose + Starch + Trypticase + Yeast Extract | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:glucose_formate | kgmicrobe.ingredient:glucose_formate | Glucose + Formate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:glucose_lactate | kgmicrobe.ingredient:glucose_lactate | Glucose + Lactate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol | kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol | Glucose + Maltose + Cellobiose + Starch + Glycerol | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:glucose_peptone_yeast_extract | kgmicrobe.ingredient:glucose_peptone_yeast_extract | Glucose Peptone-yeast Extract | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:glucose_xylose | kgmicrobe.ingredient:glucose_xylose | Glucose + Xylose | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:glucose_yeast_extract | kgmicrobe.ingredient:glucose_yeast_extract | Glucose + Yeast Extract | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | NEEDS_EXPERT |  |  | 0 |
-| kgmicrobe.ingredient:h2_3_methyl_mercaptopropionate | kgmicrobe.ingredient:h2_3_methyl_mercaptopropionate | H2+3-methyl Mercaptopropionate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:h2_co2 | kgmicrobe.ingredient:h2_co2 | H2 + CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:h2_dimethylsulfide | kgmicrobe.ingredient:h2_dimethylsulfide | H2+dimethylsulfide | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:h2_methanol | kgmicrobe.ingredient:h2_methanol | H2+methanol | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:h2_tetramethylammonium | kgmicrobe.ingredient:h2_tetramethylammonium | H2+tetramethylammonium | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:h2_trimethylamine | kgmicrobe.ingredient:h2_trimethylamine | H2+trimethylamine | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:modified_cooked_meat_medium | kgmicrobe.ingredient:modified_cooked_meat_medium | Modified Cooked Meat Medium | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:mono_and_disaccharides | kgmicrobe.ingredient:mono_and_disaccharides | Mono- And Disaccharides | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid |  | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
-| kgmicrobe.ingredient:py_cellobiose | kgmicrobe.ingredient:py_cellobiose | PY-cellobiose | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:py_fructose | kgmicrobe.ingredient:py_fructose | PY-fructose | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:py_glucose_rumen_fluid | kgmicrobe.ingredient:py_glucose_rumen_fluid | PY-glucose-rumen Fluid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:py_maltose | kgmicrobe.ingredient:py_maltose | PY-maltose | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:py_pectin | kgmicrobe.ingredient:py_pectin | PY-pectin | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:pyeg | kgmicrobe.ingredient:pyeg | PYEG | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:pyg_0_02_tween_80 | kgmicrobe.ingredient:pyg_0_02_tween_80 | PYG-0.02% Tween 80 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:pyg | kgmicrobe.ingredient:pyg | PYG | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:pygs | kgmicrobe.ingredient:pygs | PYGS | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:pyg_rumen_fluid | kgmicrobe.ingredient:pyg_rumen_fluid | PYG + Rumen Fluid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:peptone_yeast_extract_glucose | kgmicrobe.ingredient:peptone_yeast_extract_glucose | Peptone-yeast Extract-glucose | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:peptone_beef_extract_yeast_extract | kgmicrobe.ingredient:peptone_beef_extract_yeast_extract | Peptone + Beef Extract + Yeast Extract | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:peptone_yeast_extract | kgmicrobe.ingredient:peptone_yeast_extract | Peptone + Yeast Extract | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| CHEBI:78037 | CHEBI:78037 | Poly-beta-hydroxyalkanoate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| kgmicrobe.ingredient:sucrose_yeast_extract | kgmicrobe.ingredient:sucrose_yeast_extract | Sucrose + Yeast Extract | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.compound:sugars | CHEBI:16646 | Sugars | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| kgmicrobe.ingredient:tygvs_glucose | kgmicrobe.ingredient:tygvs_glucose | TYGVS + Glucose | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | UNMAPPED_0734 |  | Tetrazolium | NEEDS_EXPERT |  |  | 0 |
-| kgmicrobe.ingredient:trypticase_glucose_yeast_extract | kgmicrobe.ingredient:trypticase_glucose_yeast_extract | Trypticase-glucose-yeast Extract | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:tryptone_yeast_beef_tyb | kgmicrobe.ingredient:tryptone_yeast_beef_tyb | Tryptone/yeast/beef (tyb) | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:yeast_extract_gluconate | kgmicrobe.ingredient:yeast_extract_gluconate | Yeast Extract + Gluconate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:yeast_extract_glucose | kgmicrobe.ingredient:yeast_extract_glucose | Yeast Extract + Glucose | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:yeast_extract_peptone | kgmicrobe.ingredient:yeast_extract_peptone | Yeast Extract + Peptone | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:yeast_extract_sulfur | kgmicrobe.ingredient:yeast_extract_sulfur | Yeast Extract + Sulfur | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:yeast_meat_extract_h2 | kgmicrobe.ingredient:yeast_meat_extract_h2 | Yeast + Meat Extract + H2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | UNMAPPED_0447 |  | Mineral solution see Medium No. 976 | NEEDS_EXPERT |  |  | 0 |

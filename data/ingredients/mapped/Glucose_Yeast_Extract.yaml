@@ -1,0 +1,91 @@
+identifier: kgmicrobe.ingredient:glucose_yeast_extract
+preferred_term: Glucose + Yeast Extract
+synonyms:
+- synonym_text: Glucose + Yeast Extract
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 8
+    source_columns: bergey:substrates
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_yeast_extract);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not a single-compound grounding target: multi-component blend or named
+    medium; no single ontology term grounds it -- needs decomposition into constituents.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Glucose_Yeast_Extract-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** `Glucose + Yeast
+    Extract` is not a single chemical, salt/hydrate, standardized blend, or sufficiently
+    specified named medium. It is a raw-text conjunction of **two separately added
+    medium ingredients**: CURIEs discussed: CHEBI:17234. Recorded as provenance only
+    — no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: decompose_substrate_combinations
+  action: DECOMPOSED_TO_COMPONENTS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0675 -> kgmicrobe.ingredient:glucose_yeast_extract (FALLBACK_REGISTRY).
+    The label enumerates its own constituents, so this is a decomposition rather than
+    a mapping: no ontology has a term for ''Glucose + Yeast Extract'', and none could
+    — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+    and split on ''+'', which transcribes the label rather than inferring anything.
+    2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+    ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an
+    undefined preparation. No concentrations are recorded: the label states none.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: move_mapped_out_of_unmapped_collection
+  action: MOVED_TO_MAPPED_COLLECTION
+  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
+    The record was already MAPPED; it had been promoted in place by a path that does
+    not move between collections, and reconcile_sssom reads only the mapped collection
+    — so its mapping was curated but unpublished.
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_yeast_extract);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ingredient_type: UNDEFINED_MIXTURE
+components:
+- component_name: Glucose
+  source: MIM label decomposition (#213/#308)
+  component_id: CHEBI:17234
+- component_name: Yeast Extract
+  source: MIM label decomposition (#213/#308)
+  component_id: FOODON:03315426
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:glucose_yeast_extract
+  ontology_label: Glucose + Yeast Extract
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'The label enumerates its own constituents, so this is a decomposition
+      rather than a mapping: no ontology has a term for ''Glucose + Yeast Extract'',
+      and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'

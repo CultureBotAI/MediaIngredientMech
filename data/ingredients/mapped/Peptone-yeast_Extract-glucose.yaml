@@ -1,0 +1,96 @@
+identifier: kgmicrobe.ingredient:peptone_yeast_extract_glucose
+preferred_term: Peptone-yeast Extract-glucose
+synonyms:
+- synonym_text: Peptone-yeast Extract-glucose
+  synonym_type: RAW_TEXT
+  source: microbedecoder
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+  source_occurrences:
+  - source: microbedecoder
+    count: 1
+    source_columns: bergey:substrates
+curation_history:
+- timestamp: '2026-08-04T02:54:09.684805+00:00'
+  curator: audit_import_ingredients[microbedecoder]
+  action: CREATED_AS_UNMAPPED
+  changes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_yeast_extract_glucose);
+    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  new_status: UNMAPPED
+  llm_assisted: false
+- timestamp: '2026-08-05T00:01:30.894952+00:00'
+  curator: microbedecoder-residual-dispositions
+  action: FLAGGED_NEEDS_EXPERT
+  changes: 'Not a single-compound grounding target: multi-component blend or named
+    medium; no single ontology term grounds it -- needs decomposition into constituents.'
+  previous_status: UNMAPPED
+  new_status: NEEDS_EXPERT
+  llm_assisted: true
+- timestamp: '2026-08-06T00:00:00+00:00'
+  curator: edison_literature_identity
+  action: ANNOTATED
+  changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Peptone-yeast_Extract-glucose-edison-literature.md
+    (local artifact — research/ is gitignored, so the findings are quoted here rather
+    than linked). Report verdict: **Recommended interpretation:** a **complex culture-medium
+    formulation or recipe family**, conventionally called **peptone–yeast–glucose
+    medium (PYG medium)**, rather than a single chemical, salt, hydrate, buffer, or
+    uniquely defined commercial product. In the clearest retrieved formulation, PYG
+    is made by supplementing a peptone–yeast (PY) basal medium with glucose; it therefore
+    has no single mol CURIEs discussed: CHEBI:17234. Recorded as provenance only —
+    no grounding applied from this run. Edison''s recommendations are deliberately
+    conservative, and a plausible identifier promoted by a mechanism that never decided
+    anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
+    to accept or reject.'
+  llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: DECOMPOSED_FROM_CURATED_RESEARCH
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0766 -> kgmicrobe.ingredient:peptone_yeast_extract_glucose (FALLBACK_REGISTRY).
+    Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+    strategy=split): the label names its constituents. 3 constituent(s), 3 carrying
+    an identifier. That file was produced by the research pass and never written into
+    the records; this applies it. It resolves constituents a label split cannot —
+    abbreviations such as PY, and named media such as BHI, state no composition to
+    split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the
+    curated row states none.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: move_mapped_out_of_unmapped_collection
+  action: MOVED_TO_MAPPED_COLLECTION
+  changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
+    The record was already MAPPED; it had been promoted in place by a path that does
+    not move between collections, and reconcile_sssom reads only the mapped collection
+    — so its mapping was curated but unpublished.
+  llm_assisted: false
+notes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_yeast_extract_glucose);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+components:
+- component_name: peptone
+  component_id: MICRO:0000178
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: yeast extract
+  component_id: FOODON:03315426
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: glucose
+  component_id: CHEBI:17234
+  source: microbedecoder research decomposition (#213/#308)
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:peptone_yeast_extract_glucose
+  ontology_label: Peptone-yeast Extract-glucose
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
