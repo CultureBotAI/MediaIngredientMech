@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0849
+identifier: kgmicrobe.ingredient:tryptone_yeast_beef_tyb
 preferred_term: Tryptone/yeast/beef (tyb)
 synonyms:
 - synonym_text: Tryptone/yeast/beef (tyb)
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -28,5 +28,39 @@ curation_history:
   previous_status: UNMAPPED
   new_status: NEEDS_EXPERT
   llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: decompose_py_media_and_ground_categories
+  action: DECOMPOSED_TO_COMPONENTS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0849 -> kgmicrobe.ingredient:tryptone_yeast_beef_tyb (FALLBACK_REGISTRY).
+    Decomposed into 3 constituents: slash-separated constituents, with the parenthesised
+    `(tyb)` confirming the reading. Minted under the #288 STOCK_SOLUTION convention
+    because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE.
+    No concentrations recorded — the label states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tryptone_yeast_beef_tyb);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+components:
+- component_name: tryptone
+  component_id: MICRO:0000182
+  source: MIM curation (#213/#308)
+- component_name: yeast extract
+  component_id: FOODON:03315426
+  source: MIM curation (#213/#308)
+- component_name: beef extract
+  component_id: FOODON:03302088
+  source: MIM curation (#213/#308)
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:tryptone_yeast_beef_tyb
+  ontology_label: Tryptone/yeast/beef (tyb)
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Decomposed into 3 constituents: slash-separated constituents, with the
+      parenthesised `(tyb)` confirming the reading. Minted under the #288 STOCK_SOLUTION
+      convention because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations recorded — the label states none.'

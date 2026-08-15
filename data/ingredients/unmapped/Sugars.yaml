@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0663
+identifier: kgmicrobe.compound:sugars
 preferred_term: Sugars
 synonyms:
 - synonym_text: Sugars
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -47,5 +47,34 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: decompose_py_media_and_ground_categories
+  action: GROUNDED_TO_CHEBI_CLASS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0663 -> kgmicrobe.compound:sugars; ontology_id CHEBI:16646 (NARROW_MATCH).
+    Grounded to the ChEBI class CHEBI:16646 (''carbohydrate''): the label names a
+    CATEGORY, and a ChEBI class is what a category should map to — the mirror image
+    of #322, where records naming specific substances were wrongly on class terms.
+    NARROW_MATCH because sugars are a proper subset of carbohydrates: ChEBI carries
+    no `sugar` synonym on CHEBI:16646, so this is a real subclass relation and not
+    a naming variant. Rule B1 then requires a sibling registry row, so the record
+    takes a kgmicrobe.compound mint.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:sugars); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:16646
+  ontology_label: carbohydrate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Grounded to the ChEBI class CHEBI:16646 (''carbohydrate''): the label
+      names a CATEGORY, and a ChEBI class is what a category should map to — the mirror
+      image of #322, where records naming specific substances were wrongly on class
+      terms. NARROW_MATCH because sugars are a proper subset of carbohydrates: ChEBI
+      carries no `sugar` synonym on CHEBI:16646, so this is a real subclass relation
+      and not a naming variant. Rule B1 then requires a sibling registry row, so the
+      record takes a kgmicrobe.compound mint.'

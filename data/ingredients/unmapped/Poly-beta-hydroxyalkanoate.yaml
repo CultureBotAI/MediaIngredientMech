@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0836
+identifier: CHEBI:78037
 preferred_term: Poly-beta-hydroxyalkanoate
 synonyms:
 - synonym_text: Poly-beta-hydroxyalkanoate
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -47,5 +47,28 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: decompose_py_media_and_ground_categories
+  action: GROUNDED_TO_CHEBI_CLASS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0836 -> CHEBI:78037; ontology_id CHEBI:78037 (SYNONYM_MATCH).
+    Grounded to the ChEBI class CHEBI:78037 (''polyhydroxyalkanoate''): poly-beta-hydroxyalkanoate
+    and polyhydroxyalkanoate are the same polymer class under two spellings — the
+    beta- records the 3-hydroxy position that PHA implies — so this is a naming variant,
+    not a subclass relation, and needs no registry mint.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:poly_beta_hydroxyalkanoate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:78037
+  ontology_label: polyhydroxyalkanoate
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Grounded to the ChEBI class CHEBI:78037 (''polyhydroxyalkanoate''): poly-beta-hydroxyalkanoate
+      and polyhydroxyalkanoate are the same polymer class under two spellings — the
+      beta- records the 3-hydroxy position that PHA implies — so this is a naming
+      variant, not a subclass relation, and needs no registry mint.'
