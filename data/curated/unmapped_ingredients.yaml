@@ -13986,13 +13986,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:dl_2_gamma_aminobutyrate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0626
+- identifier: kgmicrobe.ingredient:esculin_ferric_citrate
   preferred_term: Esculin Ferric Citrate
   synonyms:
   - synonym_text: Esculin Ferric Citrate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14036,8 +14036,41 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0626 -> kgmicrobe.ingredient:esculin_ferric_citrate (FALLBACK_REGISTRY).
+      Decomposed into 2 constituents: the label names two substances — esculin and
+      ferric citrate, the latter an exact synonym of CHEBI:144421 iron(III) citrate.
+      Minted under the #288 STOCK_SOLUTION convention because no ontology term denotes
+      the blend itself. ingredient_type=DEFINED_MEDIUM. No concentrations recorded
+      — the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_ferric_citrate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: esculin
+    component_id: CHEBI:4853
+    source: MIM curation (#213/#308)
+  - component_name: iron(III) citrate
+    component_id: CHEBI:144421
+    source: MIM curation (#213/#308)
+  ingredient_type: DEFINED_MEDIUM
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:esculin_ferric_citrate
+    ontology_label: Esculin Ferric Citrate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Decomposed into 2 constituents: the label names two substances — esculin
+        and ferric citrate, the latter an exact synonym of CHEBI:144421 iron(III)
+        citrate. Minted under the #288 STOCK_SOLUTION convention because no ontology
+        term denotes the blend itself. ingredient_type=DEFINED_MEDIUM. No concentrations
+        recorded — the label states none.'
 - identifier: UNMAPPED_0688
   preferred_term: Esculin Hydrolysate
   synonyms:
@@ -16544,13 +16577,13 @@ ingredients:
         a label split cannot — abbreviations such as PY, and named media such as BHI,
         state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
         are recorded: the curated row states none.'
-- identifier: UNMAPPED_0764
+- identifier: kgmicrobe.ingredient:mono_and_disaccharides
   preferred_term: Mono- And Disaccharides
   synonyms:
   - synonym_text: Mono- And Disaccharides
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -16590,8 +16623,40 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0764 -> kgmicrobe.ingredient:mono_and_disaccharides (FALLBACK_REGISTRY).
+      Decomposed into 2 constituents: the label names two ChEBI classes, so it decomposes
+      into them rather than grounding to either. Minted under the #288 STOCK_SOLUTION
+      convention because no ontology term denotes the blend itself. ingredient_type=DEFINED_MEDIUM.
+      No concentrations recorded — the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:mono_and_disaccharides);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: monosaccharide
+    component_id: CHEBI:35381
+    source: MIM curation (#213/#308)
+  - component_name: disaccharide
+    component_id: CHEBI:36233
+    source: MIM curation (#213/#308)
+  ingredient_type: DEFINED_MEDIUM
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:mono_and_disaccharides
+    ontology_label: Mono- And Disaccharides
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Decomposed into 2 constituents: the label names two ChEBI classes, so
+        it decomposes into them rather than grounding to either. Minted under the
+        #288 STOCK_SOLUTION convention because no ontology term denotes the blend
+        itself. ingredient_type=DEFINED_MEDIUM. No concentrations recorded — the label
+        states none.'
 - identifier: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
   preferred_term: N'-disuccinic Acid (EDDS)
   synonyms:
@@ -16641,13 +16706,13 @@ ingredients:
     llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:n_disuccinic_acid_edds);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0719
+- identifier: kgmicrobe.ingredient:py_cellobiose
   preferred_term: PY-cellobiose
   synonyms:
   - synonym_text: PY-cellobiose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -16689,15 +16754,55 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0719 -> kgmicrobe.ingredient:py_cellobiose (FALLBACK_REGISTRY).
+      Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe
+      base. The curated research file already decomposes `PY-glucose-rumen Fluid`
+      as peptone + yeast extract + glucose + rumen fluid, so this expansion follows
+      an existing precedent in the corpus rather than a guess. Minted under the #288
+      STOCK_SOLUTION convention because no ontology term denotes the blend itself.
+      ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states
+      none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_cellobiose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0767
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: MIM curation (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: MIM curation (#213/#308)
+  - component_name: cellobiose
+    component_id: CHEBI:17057
+    source: MIM curation (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:py_cellobiose
+    ontology_label: PY-cellobiose
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard
+        anaerobe base. The curated research file already decomposes `PY-glucose-rumen
+        Fluid` as peptone + yeast extract + glucose + rumen fluid, so this expansion
+        follows an existing precedent in the corpus rather than a guess. Minted under
+        the #288 STOCK_SOLUTION convention because no ontology term denotes the blend
+        itself. ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the
+        label states none.'
+- identifier: kgmicrobe.ingredient:py_fructose
   preferred_term: PY-fructose
   synonyms:
   - synonym_text: PY-fructose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -16739,8 +16844,48 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0767 -> kgmicrobe.ingredient:py_fructose (FALLBACK_REGISTRY).
+      Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe
+      base. The curated research file already decomposes `PY-glucose-rumen Fluid`
+      as peptone + yeast extract + glucose + rumen fluid, so this expansion follows
+      an existing precedent in the corpus rather than a guess. Minted under the #288
+      STOCK_SOLUTION convention because no ontology term denotes the blend itself.
+      ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states
+      none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_fructose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: MIM curation (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: MIM curation (#213/#308)
+  - component_name: fructose
+    component_id: CHEBI:28757
+    source: MIM curation (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:py_fructose
+    ontology_label: PY-fructose
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard
+        anaerobe base. The curated research file already decomposes `PY-glucose-rumen
+        Fluid` as peptone + yeast extract + glucose + rumen fluid, so this expansion
+        follows an existing precedent in the corpus rather than a guess. Minted under
+        the #288 STOCK_SOLUTION convention because no ontology term denotes the blend
+        itself. ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the
+        label states none.'
 - identifier: kgmicrobe.ingredient:py_glucose_rumen_fluid
   preferred_term: PY-glucose-rumen Fluid
   synonyms:
@@ -16831,13 +16976,13 @@ ingredients:
         such as PY, and named media such as BHI, state no composition to split on.
         ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
         row states none.'
-- identifier: UNMAPPED_0769
+- identifier: kgmicrobe.ingredient:py_maltose
   preferred_term: PY-maltose
   synonyms:
   - synonym_text: PY-maltose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -16878,15 +17023,55 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0769 -> kgmicrobe.ingredient:py_maltose (FALLBACK_REGISTRY).
+      Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe
+      base. The curated research file already decomposes `PY-glucose-rumen Fluid`
+      as peptone + yeast extract + glucose + rumen fluid, so this expansion follows
+      an existing precedent in the corpus rather than a guess. Minted under the #288
+      STOCK_SOLUTION convention because no ontology term denotes the blend itself.
+      ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states
+      none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_maltose); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0770
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: MIM curation (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: MIM curation (#213/#308)
+  - component_name: maltose
+    component_id: CHEBI:17306
+    source: MIM curation (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:py_maltose
+    ontology_label: PY-maltose
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard
+        anaerobe base. The curated research file already decomposes `PY-glucose-rumen
+        Fluid` as peptone + yeast extract + glucose + rumen fluid, so this expansion
+        follows an existing precedent in the corpus rather than a guess. Minted under
+        the #288 STOCK_SOLUTION convention because no ontology term denotes the blend
+        itself. ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the
+        label states none.'
+- identifier: kgmicrobe.ingredient:py_pectin
   preferred_term: PY-pectin
   synonyms:
   - synonym_text: PY-pectin
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -16925,8 +17110,48 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0770 -> kgmicrobe.ingredient:py_pectin (FALLBACK_REGISTRY).
+      Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe
+      base. The curated research file already decomposes `PY-glucose-rumen Fluid`
+      as peptone + yeast extract + glucose + rumen fluid, so this expansion follows
+      an existing precedent in the corpus rather than a guess. Minted under the #288
+      STOCK_SOLUTION convention because no ontology term denotes the blend itself.
+      ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states
+      none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_pectin); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: MIM curation (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: MIM curation (#213/#308)
+  - component_name: pectin
+    component_id: CHEBI:17309
+    source: MIM curation (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:py_pectin
+    ontology_label: PY-pectin
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard
+        anaerobe base. The curated research file already decomposes `PY-glucose-rumen
+        Fluid` as peptone + yeast extract + glucose + rumen fluid, so this expansion
+        follows an existing precedent in the corpus rather than a guess. Minted under
+        the #288 STOCK_SOLUTION convention because no ontology term denotes the blend
+        itself. ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the
+        label states none.'
 - identifier: kgmicrobe.ingredient:pyeg
   preferred_term: PYEG
   synonyms:
@@ -17012,13 +17237,13 @@ ingredients:
         such as PY, and named media such as BHI, state no composition to split on.
         ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
         row states none.'
-- identifier: UNMAPPED_0772
+- identifier: kgmicrobe.ingredient:pyg_0_02_tween_80
   preferred_term: PYG-0.02% Tween 80
   synonyms:
   - synonym_text: PYG-0.02% Tween 80
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -17060,8 +17285,53 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0772 -> kgmicrobe.ingredient:pyg_0_02_tween_80 (FALLBACK_REGISTRY).
+      Decomposed into 4 constituents: `PY-` is peptone-yeast, the standard anaerobe
+      base. The curated research file already decomposes `PY-glucose-rumen Fluid`
+      as peptone + yeast extract + glucose + rumen fluid, so this expansion follows
+      an existing precedent in the corpus rather than a guess. Minted under the #288
+      STOCK_SOLUTION convention because no ontology term denotes the blend itself.
+      ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states
+      none beyond the 0.02% on the Tween, which is a working concentration for the
+      finished medium rather than a component amount.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_0_02_tween_80);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: MIM curation (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: MIM curation (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: MIM curation (#213/#308)
+  - component_name: polysorbate 80
+    component_id: CHEBI:53426
+    source: MIM curation (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:pyg_0_02_tween_80
+    ontology_label: PYG-0.02% Tween 80
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Decomposed into 4 constituents: `PY-` is peptone-yeast, the standard
+        anaerobe base. The curated research file already decomposes `PY-glucose-rumen
+        Fluid` as peptone + yeast extract + glucose + rumen fluid, so this expansion
+        follows an existing precedent in the corpus rather than a guess. Minted under
+        the #288 STOCK_SOLUTION convention because no ontology term denotes the blend
+        itself. ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the
+        label states none beyond the 0.02% on the Tween, which is a working concentration
+        for the finished medium rather than a component amount.'
 - identifier: kgmicrobe.ingredient:pyg
   preferred_term: PYG
   synonyms:
@@ -17602,13 +17872,13 @@ ingredients:
         ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
         an undefined preparation. No concentrations are recorded: the label states
         none.'
-- identifier: UNMAPPED_0836
+- identifier: CHEBI:78037
   preferred_term: Poly-beta-hydroxyalkanoate
   synonyms:
   - synonym_text: Poly-beta-hydroxyalkanoate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -17651,8 +17921,32 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: GROUNDED_TO_CHEBI_CLASS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0836 -> CHEBI:78037; ontology_id CHEBI:78037 (SYNONYM_MATCH).
+      Grounded to the ChEBI class CHEBI:78037 (''polyhydroxyalkanoate''): poly-beta-hydroxyalkanoate
+      and polyhydroxyalkanoate are the same polymer class under two spellings — the
+      beta- records the 3-hydroxy position that PHA implies — so this is a naming
+      variant, not a subclass relation, and needs no registry mint.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:poly_beta_hydroxyalkanoate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:78037
+    ontology_label: polyhydroxyalkanoate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Grounded to the ChEBI class CHEBI:78037 (''polyhydroxyalkanoate''):
+        poly-beta-hydroxyalkanoate and polyhydroxyalkanoate are the same polymer class
+        under two spellings — the beta- records the 3-hydroxy position that PHA implies
+        — so this is a naming variant, not a subclass relation, and needs no registry
+        mint.'
 - identifier: kgmicrobe.ingredient:sucrose_yeast_extract
   preferred_term: Sucrose + Yeast Extract
   synonyms:
@@ -17747,13 +18041,13 @@ ingredients:
         ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
         an undefined preparation. No concentrations are recorded: the label states
         none.'
-- identifier: UNMAPPED_0663
+- identifier: kgmicrobe.compound:sugars
   preferred_term: Sugars
   synonyms:
   - synonym_text: Sugars
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -17796,8 +18090,37 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: GROUNDED_TO_CHEBI_CLASS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0663 -> kgmicrobe.compound:sugars; ontology_id CHEBI:16646
+      (NARROW_MATCH). Grounded to the ChEBI class CHEBI:16646 (''carbohydrate''):
+      the label names a CATEGORY, and a ChEBI class is what a category should map
+      to — the mirror image of #322, where records naming specific substances were
+      wrongly on class terms. NARROW_MATCH because sugars are a proper subset of carbohydrates:
+      ChEBI carries no `sugar` synonym on CHEBI:16646, so this is a real subclass
+      relation and not a naming variant. Rule B1 then requires a sibling registry
+      row, so the record takes a kgmicrobe.compound mint.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:sugars); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:16646
+    ontology_label: carbohydrate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Grounded to the ChEBI class CHEBI:16646 (''carbohydrate''): the label
+        names a CATEGORY, and a ChEBI class is what a category should map to — the
+        mirror image of #322, where records naming specific substances were wrongly
+        on class terms. NARROW_MATCH because sugars are a proper subset of carbohydrates:
+        ChEBI carries no `sugar` synonym on CHEBI:16646, so this is a real subclass
+        relation and not a naming variant. Rule B1 then requires a sibling registry
+        row, so the record takes a kgmicrobe.compound mint.'
 - identifier: kgmicrobe.ingredient:tygvs_glucose
   preferred_term: TYGVS + Glucose
   synonyms:
@@ -18037,13 +18360,13 @@ ingredients:
         such as PY, and named media such as BHI, state no composition to split on.
         ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
         row states none.'
-- identifier: UNMAPPED_0849
+- identifier: kgmicrobe.ingredient:tryptone_yeast_beef_tyb
   preferred_term: Tryptone/yeast/beef (tyb)
   synonyms:
   - synonym_text: Tryptone/yeast/beef (tyb)
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -18067,8 +18390,42 @@ ingredients:
     previous_status: UNMAPPED
     new_status: NEEDS_EXPERT
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: decompose_py_media_and_ground_categories
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0849 -> kgmicrobe.ingredient:tryptone_yeast_beef_tyb (FALLBACK_REGISTRY).
+      Decomposed into 3 constituents: slash-separated constituents, with the parenthesised
+      `(tyb)` confirming the reading. Minted under the #288 STOCK_SOLUTION convention
+      because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations recorded — the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tryptone_yeast_beef_tyb);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: tryptone
+    component_id: MICRO:0000182
+    source: MIM curation (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: MIM curation (#213/#308)
+  - component_name: beef extract
+    component_id: FOODON:03302088
+    source: MIM curation (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:tryptone_yeast_beef_tyb
+    ontology_label: Tryptone/yeast/beef (tyb)
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Decomposed into 3 constituents: slash-separated constituents, with the
+        parenthesised `(tyb)` confirming the reading. Minted under the #288 STOCK_SOLUTION
+        convention because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE.
+        No concentrations recorded — the label states none.'
 - identifier: kgmicrobe.ingredient:yeast_extract_gluconate
   preferred_term: Yeast Extract + Gluconate
   synonyms:

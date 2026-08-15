@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0719
+identifier: kgmicrobe.ingredient:py_cellobiose
 preferred_term: PY-cellobiose
 synonyms:
 - synonym_text: PY-cellobiose
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -46,5 +46,44 @@ curation_history:
     is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
     or reject.'
   llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: decompose_py_media_and_ground_categories
+  action: DECOMPOSED_TO_COMPONENTS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0719 -> kgmicrobe.ingredient:py_cellobiose (FALLBACK_REGISTRY).
+    Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe
+    base. The curated research file already decomposes `PY-glucose-rumen Fluid` as
+    peptone + yeast extract + glucose + rumen fluid, so this expansion follows an
+    existing precedent in the corpus rather than a guess. Minted under the #288 STOCK_SOLUTION
+    convention because no ontology term denotes the blend itself. ingredient_type=UNDEFINED_MIXTURE.
+    No concentrations recorded — the label states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_cellobiose);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+components:
+- component_name: peptone
+  component_id: MICRO:0000178
+  source: MIM curation (#213/#308)
+- component_name: yeast extract
+  component_id: FOODON:03315426
+  source: MIM curation (#213/#308)
+- component_name: cellobiose
+  component_id: CHEBI:17057
+  source: MIM curation (#213/#308)
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:py_cellobiose
+  ontology_label: PY-cellobiose
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Decomposed into 3 constituents: `PY-` is peptone-yeast, the standard anaerobe
+      base. The curated research file already decomposes `PY-glucose-rumen Fluid`
+      as peptone + yeast extract + glucose + rumen fluid, so this expansion follows
+      an existing precedent in the corpus rather than a guess. Minted under the #288
+      STOCK_SOLUTION convention because no ontology term denotes the blend itself.
+      ingredient_type=UNDEFINED_MIXTURE. No concentrations recorded — the label states
+      none.'
