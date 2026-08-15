@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0628
+identifier: kgmicrobe.ingredient:pyg
 preferred_term: PYG
 synonyms:
 - synonym_text: PYG
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -43,5 +43,45 @@ curation_history:
     identifier promoted by a mechanism that never decided anything is what #203 and
     #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: DECOMPOSED_FROM_CURATED_RESEARCH
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0628 -> kgmicrobe.ingredient:pyg (FALLBACK_REGISTRY). Components
+    taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+    strategy=split): the label names its constituents. 3 constituent(s), 3 carrying
+    an identifier. That file was produced by the research pass and never written into
+    the records; this applies it. It resolves constituents a label split cannot —
+    abbreviations such as PY, and named media such as BHI, state no composition to
+    split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the
+    curated row states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
+components:
+- component_name: peptone
+  component_id: MICRO:0000178
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: yeast extract
+  component_id: FOODON:03315426
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: glucose
+  component_id: CHEBI:17234
+  source: microbedecoder research decomposition (#213/#308)
+ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:pyg
+  ontology_label: PYG
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'

@@ -34,11 +34,14 @@ jobs:
         with:
           repository: CultureBotAI/culturebotai-claw
           path: culturebotai-claw
-          # CLAW_READ_TOKEN is a fine-grained PAT with Contents:Read on
-          # CultureBotAI/culturebotai-claw, set as an Actions secret on
-          # this repo. The default GITHUB_TOKEN can't read the private
-          # sibling.
-          token: ${{ secrets.CLAW_READ_TOKEN }}
+          # No token. culturebotai-claw is PUBLIC, so the default GITHUB_TOKEN
+          # reads it fine. It was private when this job was written, which is why
+          # it used a fine-grained PAT (CLAW_READ_TOKEN) — and that PAT then
+          # expired on 2026-08-14, failing this job at checkout with "Bad
+          # credentials" on every PR, pointing at the claw repo rather than at
+          # the token. Rotating it would have restored the same 90-day fuse.
+          # See #367. If claw ever goes private again, restore
+          # `token: ${{ secrets.CLAW_READ_TOKEN }}` with a fresh PAT.
 
       - uses: actions/setup-python@v5
         with:

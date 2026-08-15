@@ -12654,13 +12654,13 @@ ingredients:
     or CHEBI/NCIT match. Reviewed on 2026-05-11; not collapsed to generic glucose
     without hydrate/form evidence.
   ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0619
+- identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
   preferred_term: 0129 (2
   synonyms:
   - synonym_text: 0129 (2
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12684,15 +12684,27 @@ ingredients:
     previous_status: UNMAPPED
     new_status: NEEDS_EXPERT
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: MERGED_INTO
+    changes: 'Merged into kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+      ''2,4-diamino-6,7-di-iso-propylpteridine phosphate''. Fragment of a comma-split
+      label whose intact compound is already a MIM record. The source label was ''O/129
+      (2,4-diamino-6,7-di-iso-propylpteridine phosphate)'' — the vibriostatic agent
+      — and the ingest strips commas, so it arrived as three fragments. The third,
+      ''7-di-iso-propylpteridine Phosphate)'', is already carried as a synonym on
+      the intact record; these two were left orphaned as separate NEEDS_EXPERT records.
+      Merged rather than grounded separately: neither fragment names a compound.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:0129_2); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0735
+- identifier: kgmicrobe.ingredient:1_butanol_co2
   preferred_term: 1-butanol+CO2
   synonyms:
   - synonym_text: 1-butanol+CO2
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12732,15 +12744,68 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0735 -> kgmicrobe.ingredient:1_butanol_co2 (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''1-butanol+CO2'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      1-butanol carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+      because every constituent is a defined chemical (an unresolved name here means
+      MIM lacks the record, not that the substance is undefined). No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:1_butanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0715
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: butan-1-ol
+    component_id: CHEBI:28885
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: carbon dioxide
+    component_id: CHEBI:16526
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:1_butanol_co2
+    ontology_label: 1-butanol+CO2
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''1-butanol+CO2'', and none
+        could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+        1-butanol carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+        because every constituent is a defined chemical (an unresolved name here means
+        MIM lacks the record, not that the substance is undefined). No concentrations
+        are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:1_propanol_co2
   preferred_term: 1-propanol+CO2
   synonyms:
   - synonym_text: 1-propanol+CO2
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12776,15 +12841,68 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0715 -> kgmicrobe.ingredient:1_propanol_co2 (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''1-propanol+CO2'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      1-propanol carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+      because every constituent is a defined chemical (an unresolved name here means
+      MIM lacks the record, not that the substance is undefined). No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:1_propanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0679
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: propan-1-ol
+    component_id: CHEBI:28831
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: carbon dioxide
+    component_id: CHEBI:16526
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:1_propanol_co2
+    ontology_label: 1-propanol+CO2
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''1-propanol+CO2'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+        1-propanol carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+        because every constituent is a defined chemical (an unresolved name here means
+        MIM lacks the record, not that the substance is undefined). No concentrations
+        are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:2_butanol_co2
   preferred_term: 2-butanol+CO2
   synonyms:
   - synonym_text: 2-butanol+CO2
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12819,15 +12937,68 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0679 -> kgmicrobe.ingredient:2_butanol_co2 (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''2-butanol+CO2'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      2-butanol carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+      because every constituent is a defined chemical (an unresolved name here means
+      MIM lacks the record, not that the substance is undefined). No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:2_butanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0674
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: butan-2-ol
+    component_id: CHEBI:35687
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: carbon dioxide
+    component_id: CHEBI:16526
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:2_butanol_co2
+    ontology_label: 2-butanol+CO2
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''2-butanol+CO2'', and none
+        could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+        2-butanol carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+        because every constituent is a defined chemical (an unresolved name here means
+        MIM lacks the record, not that the substance is undefined). No concentrations
+        are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:2_propanol_co2
   preferred_term: 2-propanol+CO2
   synonyms:
   - synonym_text: 2-propanol+CO2
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12862,15 +13033,66 @@ ingredients:
       promoted by a mechanism that never decided anything is what #203 and #263 exist
       to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0674 -> kgmicrobe.ingredient:2_propanol_co2 (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''2-propanol+CO2'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:2_propanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0785
-  preferred_term: 2-tetrachloroethane
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: propan-2-ol
+    component_id: CHEBI:17824
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: carbon dioxide
+    component_id: CHEBI:16526
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:2_propanol_co2
+    ontology_label: 2-propanol+CO2
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''2-propanol+CO2'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: CHEBI:36026
+  preferred_term: 1,1,2,2-Tetrachloroethane
   synonyms:
   - synonym_text: 2-tetrachloroethane
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -12909,8 +13131,37 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: REPAIRED_COMMA_SPLIT_LABEL
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'preferred_term ''2-tetrachloroethane'' -> ''1,1,2,2-Tetrachloroethane'';
+      UNMAPPED_0785 -> CHEBI:36026. Repaired a comma-split label (#308/#313): `2-tetrachloroethane`
+      is the tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields
+      `1`, `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record
+      because bare digits are not labels. The reconstruction is unambiguous — no other
+      compound ends in `2-tetrachloroethane`. The ingest strips commas from every
+      chemical label, so a name containing one arrives as separate fragment records
+      — the same mechanism that produced the `D` record resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_tetrachloroethane);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:36026
+    ontology_label: 1,1,2,2-tetrachloroethane
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#308/#313)
+      notes: 'Repaired a comma-split label (#308/#313): `2-tetrachloroethane` is the
+        tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields
+        `1`, `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record
+        because bare digits are not labels. The reconstruction is unambiguous — no
+        other compound ends in `2-tetrachloroethane`. The ingest strips commas from
+        every chemical label, so a name containing one arrives as separate fragment
+        records — the same mechanism that produced the `D` record resolved in #346.'
 - identifier: UNMAPPED_0736
   preferred_term: 3-methylacetate
   synonyms:
@@ -12959,13 +13210,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:3_methylacetate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0620
+- identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
   preferred_term: 4-Diamino-6
   synonyms:
   - synonym_text: 4-Diamino-6
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13000,15 +13251,27 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: MERGED_INTO
+    changes: 'Merged into kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+      ''2,4-diamino-6,7-di-iso-propylpteridine phosphate''. Fragment of a comma-split
+      label whose intact compound is already a MIM record. The source label was ''O/129
+      (2,4-diamino-6,7-di-iso-propylpteridine phosphate)'' — the vibriostatic agent
+      — and the ingest strips commas, so it arrived as three fragments. The third,
+      ''7-di-iso-propylpteridine Phosphate)'', is already carried as a synonym on
+      the intact record; these two were left orphaned as separate NEEDS_EXPERT records.
+      Merged rather than grounded separately: neither fragment names a compound.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_diamino_6); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0791
+- identifier: CHEBI:41189
   preferred_term: 4-diol
   synonyms:
   - synonym_text: 4-diol
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13044,6 +13307,17 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: MERGED_INTO
+    changes: 'Merged into CHEBI:41189 ''Butane-1,4-diol'': this record is the other
+      half of a comma-split label, not an ingredient. Repaired a comma-split label
+      (#308/#313): `Butane-1` and `4-diol` are the two halves of `butane-1,4-diol`
+      split at its only comma. Neither fragment names a compound; rejoined they name
+      one ChEBI holds as CHEBI:41189 (C4H10O2). The ingest strips commas from every
+      chemical label, so a name containing one arrives as separate fragment records
+      — the same mechanism that produced the `D` record resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_diol); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0651
@@ -13095,13 +13369,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:4_nitrophenyl_beta_d_galactopyranoside_hydrolysate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0716
+- identifier: kgmicrobe.ingredient:bhi
   preferred_term: BHI
   synonyms:
   - synonym_text: BHI
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13140,15 +13414,60 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0716 -> kgmicrobe.ingredient:bhi (FALLBACK_REGISTRY). Components
+      taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=map_to_medium): it is a named medium and these are what the recipe
+      contains. 1 constituent(s), 1 carrying an identifier. That file was produced
+      by the research pass and never written into the records; this applies it. It
+      resolves constituents a label split cannot — abbreviations such as PY, and named
+      media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none. Cross-referenced
+      to CultureMech medium CultureMech:015492 (''BHI'') via culturemech_medium_name,
+      verified by COMPOSITION not by name: composition Beef heart + Calf brains +
+      Proteose Peptone + Disodium phosphate + Sodium Chloride is brain heart infusion.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0805
-  preferred_term: Butane-1
+  components:
+  - component_name: brain heart infusion
+    component_id: MICRO:0000193
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  culturemech_medium_name: BHI
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:bhi
+    ontology_label: BHI
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium):
+        it is a named medium and these are what the recipe contains. 1 constituent(s),
+        1 carrying an identifier. That file was produced by the research pass and
+        never written into the records; this applies it. It resolves constituents
+        a label split cannot — abbreviations such as PY, and named media such as BHI,
+        state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
+        are recorded: the curated row states none. Cross-referenced to CultureMech
+        medium CultureMech:015492 (''BHI'') via culturemech_medium_name, verified
+        by COMPOSITION not by name: composition Beef heart + Calf brains + Proteose
+        Peptone + Disodium phosphate + Sodium Chloride is brain heart infusion.'
+- identifier: CHEBI:41189
+  preferred_term: Butane-1,4-diol
   synonyms:
   - synonym_text: Butane-1
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  - synonym_text: 4-diol
+    synonym_type: RAW_TEXT
+    source: comma-split fragment (#308/#313)
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13190,15 +13509,42 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: REPAIRED_COMMA_SPLIT_LABEL
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'preferred_term ''Butane-1'' -> ''Butane-1,4-diol''; UNMAPPED_0805 ->
+      CHEBI:41189. Absorbed the partner fragment ''4-diol''. Repaired a comma-split
+      label (#308/#313): `Butane-1` and `4-diol` are the two halves of `butane-1,4-diol`
+      split at its only comma. Neither fragment names a compound; rejoined they name
+      one ChEBI holds as CHEBI:41189 (C4H10O2). The ingest strips commas from every
+      chemical label, so a name containing one arrives as separate fragment records
+      — the same mechanism that produced the `D` record resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:butane_1); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0740
+  ontology_mapping:
+    ontology_id: CHEBI:41189
+    ontology_label: butane-1,4-diol
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#308/#313)
+      notes: 'Repaired a comma-split label (#308/#313): `Butane-1` and `4-diol` are
+        the two halves of `butane-1,4-diol` split at its only comma. Neither fragment
+        names a compound; rejoined they name one ChEBI holds as CHEBI:41189 (C4H10O2).
+        The ingest strips commas from every chemical label, so a name containing one
+        arrives as separate fragment records — the same mechanism that produced the
+        `D` record resolved in #346.'
+- identifier: kgmicrobe.ingredient:cmc_py_horse_serum
   preferred_term: CMC + PY + Horse Serum
   synonyms:
   - synonym_text: CMC + PY + Horse Serum
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13236,15 +13582,72 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0740 -> kgmicrobe.ingredient:cmc_py_horse_serum (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''CMC + PY + Horse Serum'', and none
+      could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      PY carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
+      because at least one constituent is itself an undefined preparation. No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 4 constituent(s), 4 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0739
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: carboxymethylcellulose
+    component_id: CHEBI:85146
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: horse serum
+    component_id: MICRO:0001235
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:cmc_py_horse_serum
+    ontology_label: CMC + PY + Horse Serum
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''CMC + PY + Horse Serum'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv;
+        PY carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
+        because at least one constituent is itself an undefined preparation. No concentrations
+        are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid
   preferred_term: Casitone + Yeast Extract + Rumen Fluid
   synonyms:
   - synonym_text: Casitone + Yeast Extract + Rumen Fluid
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13280,15 +13683,69 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0739 -> kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid
+      (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a
+      decomposition rather than a mapping: no ontology has a term for ''Casitone +
+      Yeast Extract + Rumen Fluid'', and none could — a combination is not a substance.
+      Minted under the #288 STOCK_SOLUTION convention and split on ''+'', which transcribes
+      the label rather than inferring anything. 3 of 3 constituents resolve to existing
+      MIM records via docs/data/label_index.csv. ingredient_type=UNDEFINED_MIXTURE
+      because at least one constituent is itself an undefined preparation. No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:casitone_yeast_extract_rumen_fluid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0741
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: casitone
+    component_id: MICRO:0000606
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: clarified rumen fluid
+    component_id: MICRO:0000520
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid
+    ontology_label: Casitone + Yeast Extract + Rumen Fluid
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Casitone + Yeast Extract
+        + Rumen Fluid'', and none could — a combination is not a substance. Minted
+        under the #288 STOCK_SOLUTION convention and split on ''+'', which transcribes
+        the label rather than inferring anything. 3 of 3 constituents resolve to existing
+        MIM records via docs/data/label_index.csv. ingredient_type=UNDEFINED_MIXTURE
+        because at least one constituent is itself an undefined preparation. No concentrations
+        are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate
   preferred_term: Corn Steep Liquor + Glucose + Fumarate
   synonyms:
   - synonym_text: Corn Steep Liquor + Glucose + Fumarate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13324,15 +13781,71 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0741 -> kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate
+      (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a
+      decomposition rather than a mapping: no ontology has a term for ''Corn Steep
+      Liquor + Glucose + Fumarate'', and none could — a combination is not a substance.
+      Minted under the #288 STOCK_SOLUTION convention and split on ''+'', which transcribes
+      the label rather than inferring anything. 2 of 3 constituents resolve to existing
+      MIM records via docs/data/label_index.csv; Corn Steep Liquor carries no component_id
+      because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because
+      at least one constituent is itself an undefined preparation. No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:corn_steep_liquor_glucose_fumarate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0701
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: corn steep liquor
+    component_id: cas:66071-94-1
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: fumaric acid
+    component_id: CHEBI:18012
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate
+    ontology_label: Corn Steep Liquor + Glucose + Fumarate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Corn Steep Liquor + Glucose
+        + Fumarate'', and none could — a combination is not a substance. Minted under
+        the #288 STOCK_SOLUTION convention and split on ''+'', which transcribes the
+        label rather than inferring anything. 2 of 3 constituents resolve to existing
+        MIM records via docs/data/label_index.csv; Corn Steep Liquor carries no component_id
+        because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because
+        at least one constituent is itself an undefined preparation. No concentrations
+        are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:cyclopentanol_co2
   preferred_term: Cyclopentanol+CO2
   synonyms:
   - synonym_text: Cyclopentanol+CO2
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13371,8 +13884,61 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0701 -> kgmicrobe.ingredient:cyclopentanol_co2 (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Cyclopentanol+CO2'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      Cyclopentanol carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+      because every constituent is a defined chemical (an unresolved name here means
+      MIM lacks the record, not that the substance is undefined). No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:cyclopentanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: cyclopentanol
+    component_id: CHEBI:16133
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: carbon dioxide
+    component_id: CHEBI:16526
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:cyclopentanol_co2
+    ontology_label: Cyclopentanol+CO2
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Cyclopentanol+CO2'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+        Cyclopentanol carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+        because every constituent is a defined chemical (an unresolved name here means
+        MIM lacks the record, not that the substance is undefined). No concentrations
+        are recorded: the label states none.'
 - identifier: UNMAPPED_0710
   preferred_term: DL-2-gamma-aminobutyrate
   synonyms:
@@ -13522,13 +14088,16 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_hydrolysate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0812
-  preferred_term: Ethylenediamine-N
+- identifier: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
+  preferred_term: Ethylenediamine-N,N'-disuccinic acid (EDDS)
   synonyms:
   - synonym_text: Ethylenediamine-N
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  - synonym_text: N'-disuccinic Acid (EDDS)
+    synonym_type: RAW_TEXT
+    source: comma-split fragment (#308/#313)
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13568,15 +14137,48 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: REPAIRED_COMMA_SPLIT_LABEL
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'preferred_term ''Ethylenediamine-N'' -> "Ethylenediamine-N,N''-disuccinic
+      acid (EDDS)"; UNMAPPED_0812 -> kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid.
+      Absorbed the partner fragment "N''-disuccinic Acid (EDDS)". Repaired a comma-split
+      label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic Acid (EDDS)` are
+      the two halves of `ethylenediamine-N,N''-disuccinic acid` split at its only
+      comma — the surviving `(EDDS)` on the second fragment confirms the reading.
+      ChEBI has no term for EDDS (searched the local build and live at OLS4), so MAPPING_SEMANTICS
+      §3 step 3 applies and the rejoined record takes a registry mint. The ingest
+      strips commas from every chemical label, so a name containing one arrives as
+      separate fragment records — the same mechanism that produced the `D` record
+      resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ethylenediamine_n);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0742
+  ontology_mapping:
+    ontology_id: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
+    ontology_label: Ethylenediamine-N,N'-disuccinic acid (EDDS)
+    ontology_source: kgmicrobe.compound
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#308/#313)
+      notes: 'Repaired a comma-split label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic
+        Acid (EDDS)` are the two halves of `ethylenediamine-N,N''-disuccinic acid`
+        split at its only comma — the surviving `(EDDS)` on the second fragment confirms
+        the reading. ChEBI has no term for EDDS (searched the local build and live
+        at OLS4), so MAPPING_SEMANTICS §3 step 3 applies and the rejoined record takes
+        a registry mint. The ingest strips commas from every chemical label, so a
+        name containing one arrives as separate fragment records — the same mechanism
+        that produced the `D` record resolved in #346.'
+- identifier: kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules
   preferred_term: Fastidious Anaerobe Broth With Meat Granules
   synonyms:
   - synonym_text: Fastidious Anaerobe Broth With Meat Granules
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13611,15 +14213,60 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0742 -> kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules
+      (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research
+      decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=map_to_medium): it is a named medium and these are what the recipe
+      contains. 4 constituent(s), 4 carrying an identifier. That file was produced
+      by the research pass and never written into the records; this applies it. It
+      resolves constituents a label split cannot — abbreviations such as PY, and named
+      media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:fastidious_anaerobe_broth_with_meat_granules);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0711
+  components:
+  - component_name: meat (cooked)
+    component_id: FOODON:03305103
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: starch
+    component_id: CHEBI:28017
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules
+    ontology_label: Fastidious Anaerobe Broth With Meat Granules
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium):
+        it is a named medium and these are what the recipe contains. 4 constituent(s),
+        4 carrying an identifier. That file was produced by the research pass and
+        never written into the records; this applies it. It resolves constituents
+        a label split cannot — abbreviations such as PY, and named media such as BHI,
+        state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
+        are recorded: the curated row states none.'
+- identifier: kgmicrobe.ingredient:fermented_rumen_extract
   preferred_term: Fermented Rumen Extract
   synonyms:
   - synonym_text: Fermented Rumen Extract
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13659,15 +14306,50 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0711 -> kgmicrobe.ingredient:fermented_rumen_extract (FALLBACK_REGISTRY).
+      Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=map_to_ingredient): it resolves to a single named ingredient. 1 constituent(s),
+      1 carrying an identifier. That file was produced by the research pass and never
+      written into the records; this applies it. It resolves constituents a label
+      split cannot — abbreviations such as PY, and named media such as BHI, state
+      no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
+      are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:fermented_rumen_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0743
+  components:
+  - component_name: clarified rumen fluid
+    component_id: MICRO:0000520
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:fermented_rumen_extract
+    ontology_label: Fermented Rumen Extract
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_ingredient):
+        it resolves to a single named ingredient. 1 constituent(s), 1 carrying an
+        identifier. That file was produced by the research pass and never written
+        into the records; this applies it. It resolves constituents a label split
+        cannot — abbreviations such as PY, and named media such as BHI, state no composition
+        to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+        the curated row states none.'
+- identifier: kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate
   preferred_term: Formate+3-methyl Mercaptopropionate
   synonyms:
   - synonym_text: Formate+3-methyl Mercaptopropionate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13705,15 +14387,70 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0743 -> kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate
+      (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a
+      decomposition rather than a mapping: no ontology has a term for ''Formate+3-methyl
+      Mercaptopropionate'', and none could — a combination is not a substance. Minted
+      under the #288 STOCK_SOLUTION convention and split on ''+'', which transcribes
+      the label rather than inferring anything. 1 of 2 constituents resolve to existing
+      MIM records via docs/data/label_index.csv; 3-methyl Mercaptopropionate carries
+      no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+      because every constituent is a defined chemical (an unresolved name here means
+      MIM lacks the record, not that the substance is undefined). No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_3_methyl_mercaptopropionate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0744
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: formate
+    component_id: CHEBI:15740
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: 3-(methylthio)propionic acid
+    component_id: CHEBI:1438
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate
+    ontology_label: Formate+3-methyl Mercaptopropionate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Formate+3-methyl Mercaptopropionate'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+        3-methyl Mercaptopropionate carries no component_id because MIM has no record
+        for it. ingredient_type=DEFINED_MEDIUM because every constituent is a defined
+        chemical (an unresolved name here means MIM lacks the record, not that the
+        substance is undefined). No concentrations are recorded: the label states
+        none.'
+- identifier: kgmicrobe.ingredient:formate_dimethylsulfide
   preferred_term: Formate+dimethylsulfide
   synonyms:
   - synonym_text: Formate+dimethylsulfide
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13753,15 +14490,66 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0744 -> kgmicrobe.ingredient:formate_dimethylsulfide (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Formate+dimethylsulfide'', and
+      none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_dimethylsulfide);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0745
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: formate
+    component_id: CHEBI:15740
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: dimethyl sulfide
+    component_id: CHEBI:17437
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:formate_dimethylsulfide
+    ontology_label: Formate+dimethylsulfide
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Formate+dimethylsulfide'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:formate_methanol
   preferred_term: Formate+methanol
   synonyms:
   - synonym_text: Formate+methanol
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13797,15 +14585,66 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0745 -> kgmicrobe.ingredient:formate_methanol (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Formate+methanol'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_methanol);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0746
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: formate
+    component_id: CHEBI:15740
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: methanol
+    component_id: CHEBI:17790
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:formate_methanol
+    ontology_label: Formate+methanol
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Formate+methanol'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:formate_tetramethylammonium
   preferred_term: Formate+tetramethylammonium
   synonyms:
   - synonym_text: Formate+tetramethylammonium
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13842,15 +14681,66 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0746 -> kgmicrobe.ingredient:formate_tetramethylammonium (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Formate+tetramethylammonium'',
+      and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_tetramethylammonium);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0747
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: formate
+    component_id: CHEBI:15740
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: tetramethylammonium
+    component_id: CHEBI:46020
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:formate_tetramethylammonium
+    ontology_label: Formate+tetramethylammonium
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Formate+tetramethylammonium'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:formate_trimethylamine
   preferred_term: Formate+trimethylamine
   synonyms:
   - synonym_text: Formate+trimethylamine
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13886,15 +14776,66 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0747 -> kgmicrobe.ingredient:formate_trimethylamine (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Formate+trimethylamine'', and none
+      could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_trimethylamine);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0755
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: formate
+    component_id: CHEBI:15740
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: trimethylamine
+    component_id: CHEBI:18139
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:formate_trimethylamine
+    ontology_label: Formate+trimethylamine
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Formate+trimethylamine'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:gyps
   preferred_term: GYPS
   synonyms:
   - synonym_text: GYPS
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13933,15 +14874,68 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0755 -> kgmicrobe.ingredient:gyps (FALLBACK_REGISTRY). Components
+      taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=split): the label names its constituents. 4 constituent(s), 4 carrying
+      an identifier. That file was produced by the research pass and never written
+      into the records; this applies it. It resolves constituents a label split cannot
+      — abbreviations such as PY, and named media such as BHI, state no composition
+      to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+      the curated row states none. Cross-referenced to CultureMech medium CultureMech:002799
+      (''gyps_medium'') via culturemech_medium_name, verified by COMPOSITION not by
+      name: name matches exactly and 3 of 4 curated constituents agree (glucose, peptone,
+      yeast extract); CultureMech additionally lists MES and Sea Salt and no starch,
+      so the recipes are close but not identical.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0748
+  components:
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: starch
+    component_id: CHEBI:28017
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  culturemech_medium_name: gyps_medium
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:gyps
+    ontology_label: GYPS
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+        the label names its constituents. 4 constituent(s), 4 carrying an identifier.
+        That file was produced by the research pass and never written into the records;
+        this applies it. It resolves constituents a label split cannot — abbreviations
+        such as PY, and named media such as BHI, state no composition to split on.
+        ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
+        row states none. Cross-referenced to CultureMech medium CultureMech:002799
+        (''gyps_medium'') via culturemech_medium_name, verified by COMPOSITION not
+        by name: name matches exactly and 3 of 4 curated constituents agree (glucose,
+        peptone, yeast extract); CultureMech additionally lists MES and Sea Salt and
+        no starch, so the recipes are close but not identical.'
+- identifier: kgmicrobe.ingredient:gallate_formate
   preferred_term: Gallate + Formate
   synonyms:
   - synonym_text: Gallate + Formate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -13978,8 +14972,61 @@ ingredients:
       promoted by a mechanism that never decided anything is what #203 and #263 exist
       to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0748 -> kgmicrobe.ingredient:gallate_formate (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Gallate + Formate'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      Gallate carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+      because every constituent is a defined chemical (an unresolved name here means
+      MIM lacks the record, not that the substance is undefined). No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:gallate_formate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: gallate
+    component_id: CHEBI:16918
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: formate
+    component_id: CHEBI:15740
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:gallate_formate
+    ontology_label: Gallate + Formate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Gallate + Formate'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+        Gallate carries no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+        because every constituent is a defined chemical (an unresolved name here means
+        MIM lacks the record, not that the substance is undefined). No concentrations
+        are recorded: the label states none.'
 - identifier: UNMAPPED_0731
   preferred_term: Gelatin Hydrolyzed
   synonyms:
@@ -14031,13 +15078,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:gelatin_hydrolyzed);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0702
+- identifier: kgmicrobe.ingredient:glucose_acetate
   preferred_term: Glucose + Acetate
   synonyms:
   - synonym_text: Glucose + Acetate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14073,15 +15120,66 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0702 -> kgmicrobe.ingredient:glucose_acetate (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Glucose + Acetate'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_acetate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0749
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: acetate
+    component_id: CHEBI:30089
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:glucose_acetate
+    ontology_label: Glucose + Acetate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Glucose + Acetate'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract
   preferred_term: Glucose + Cellobiose + Starch + Trypticase + Yeast Extract
   synonyms:
   - synonym_text: Glucose + Cellobiose + Starch + Trypticase + Yeast Extract
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14117,15 +15215,76 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0749 -> kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract
+      (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a
+      decomposition rather than a mapping: no ontology has a term for ''Glucose +
+      Cellobiose + Starch + Trypticase + Yeast Extract'', and none could — a combination
+      is not a substance. Minted under the #288 STOCK_SOLUTION convention and split
+      on ''+'', which transcribes the label rather than inferring anything. 5 of 5
+      constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 5 constituent(s), 5 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_cellobiose_starch_trypticase_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0750
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: cellobiose
+    component_id: CHEBI:17057
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: starch
+    component_id: CHEBI:28017
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: Trypticase peptone
+    component_id: MICRO:0000175
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract
+    ontology_label: Glucose + Cellobiose + Starch + Trypticase + Yeast Extract
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Glucose + Cellobiose +
+        Starch + Trypticase + Yeast Extract'', and none could — a combination is not
+        a substance. Minted under the #288 STOCK_SOLUTION convention and split on
+        ''+'', which transcribes the label rather than inferring anything. 5 of 5
+        constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+        an undefined preparation. No concentrations are recorded: the label states
+        none.'
+- identifier: kgmicrobe.ingredient:glucose_formate
   preferred_term: Glucose + Formate
   synonyms:
   - synonym_text: Glucose + Formate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14164,15 +15323,66 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0750 -> kgmicrobe.ingredient:glucose_formate (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Glucose + Formate'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_formate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0751
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: formate
+    component_id: CHEBI:15740
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:glucose_formate
+    ontology_label: Glucose + Formate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Glucose + Formate'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:glucose_lactate
   preferred_term: Glucose + Lactate
   synonyms:
   - synonym_text: Glucose + Lactate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14208,15 +15418,66 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0751 -> kgmicrobe.ingredient:glucose_lactate (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Glucose + Lactate'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_lactate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0752
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: lactate
+    component_id: CHEBI:24996
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:glucose_lactate
+    ontology_label: Glucose + Lactate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Glucose + Lactate'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol
   preferred_term: Glucose + Maltose + Cellobiose + Starch + Glycerol
   synonyms:
   - synonym_text: Glucose + Maltose + Cellobiose + Starch + Glycerol
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14256,15 +15517,65 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0752 -> kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol
+      (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a
+      decomposition rather than a mapping: no ontology has a term for ''Glucose +
+      Maltose + Cellobiose + Starch + Glycerol'', and none could — a combination is
+      not a substance. Minted under the #288 STOCK_SOLUTION convention and split on
+      ''+'', which transcribes the label rather than inferring anything. 5 of 5 constituents
+      resolve to existing MIM records via docs/data/label_index.csv. ingredient_type=DEFINED_MEDIUM
+      because every constituent is a defined chemical (an unresolved name here means
+      MIM lacks the record, not that the substance is undefined). No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_maltose_cellobiose_starch_glycerol);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0753
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: Glucose
+    source: MIM label decomposition (#213/#308)
+    component_id: CHEBI:17234
+  - component_name: Maltose
+    source: MIM label decomposition (#213/#308)
+    component_id: CHEBI:17306
+  - component_name: Cellobiose
+    source: MIM label decomposition (#213/#308)
+    component_id: CHEBI:17057
+  - component_name: Starch
+    source: MIM label decomposition (#213/#308)
+    component_id: CHEBI:28017
+  - component_name: Glycerol
+    source: MIM label decomposition (#213/#308)
+    component_id: CHEBI:17754
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol
+    ontology_label: Glucose + Maltose + Cellobiose + Starch + Glycerol
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Glucose + Maltose + Cellobiose
+        + Starch + Glycerol'', and none could — a combination is not a substance.
+        Minted under the #288 STOCK_SOLUTION convention and split on ''+'', which
+        transcribes the label rather than inferring anything. 5 of 5 constituents
+        resolve to existing MIM records via docs/data/label_index.csv. ingredient_type=DEFINED_MEDIUM
+        because every constituent is a defined chemical (an unresolved name here means
+        MIM lacks the record, not that the substance is undefined). No concentrations
+        are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:glucose_peptone_yeast_extract
   preferred_term: Glucose Peptone-yeast Extract
   synonyms:
   - synonym_text: Glucose Peptone-yeast Extract
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14299,15 +15610,57 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0753 -> kgmicrobe.ingredient:glucose_peptone_yeast_extract
+      (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research
+      decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=split): the label names its constituents. 3 constituent(s), 3 carrying
+      an identifier. That file was produced by the research pass and never written
+      into the records; this applies it. It resolves constituents a label split cannot
+      — abbreviations such as PY, and named media such as BHI, state no composition
+      to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+      the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_peptone_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0754
+  components:
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:glucose_peptone_yeast_extract
+    ontology_label: Glucose Peptone-yeast Extract
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+        the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+        That file was produced by the research pass and never written into the records;
+        this applies it. It resolves constituents a label split cannot — abbreviations
+        such as PY, and named media such as BHI, state no composition to split on.
+        ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
+        row states none.'
+- identifier: kgmicrobe.ingredient:glucose_xylose
   preferred_term: Glucose + Xylose
   synonyms:
   - synonym_text: Glucose + Xylose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14343,15 +15696,66 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0754 -> kgmicrobe.ingredient:glucose_xylose (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Glucose + Xylose'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_xylose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0675
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: xylose
+    component_id: CHEBI:18222
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:glucose_xylose
+    ontology_label: Glucose + Xylose
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Glucose + Xylose'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:glucose_yeast_extract
   preferred_term: Glucose + Yeast Extract
   synonyms:
   - synonym_text: Glucose + Yeast Extract
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14389,8 +15793,46 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0675 -> kgmicrobe.ingredient:glucose_yeast_extract (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Glucose + Yeast Extract'', and
+      none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: Glucose
+    source: MIM label decomposition (#213/#308)
+    component_id: CHEBI:17234
+  - component_name: Yeast Extract
+    source: MIM label decomposition (#213/#308)
+    component_id: FOODON:03315426
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:glucose_yeast_extract
+    ontology_label: Glucose + Yeast Extract
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Glucose + Yeast Extract'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+        an undefined preparation. No concentrations are recorded: the label states
+        none.'
 - identifier: UNMAPPED_0817
   preferred_term: Glycyl-L-bromosuccinic Glutamic Acid
   synonyms:
@@ -14440,13 +15882,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycyl_l_bromosuccinic_glutamic_acid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0756
+- identifier: kgmicrobe.ingredient:h2_3_methyl_mercaptopropionate
   preferred_term: H2+3-methyl Mercaptopropionate
   synonyms:
   - synonym_text: H2+3-methyl Mercaptopropionate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14486,15 +15928,70 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0756 -> kgmicrobe.ingredient:h2_3_methyl_mercaptopropionate
+      (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a
+      decomposition rather than a mapping: no ontology has a term for ''H2+3-methyl
+      Mercaptopropionate'', and none could — a combination is not a substance. Minted
+      under the #288 STOCK_SOLUTION convention and split on ''+'', which transcribes
+      the label rather than inferring anything. 1 of 2 constituents resolve to existing
+      MIM records via docs/data/label_index.csv; 3-methyl Mercaptopropionate carries
+      no component_id because MIM has no record for it. ingredient_type=DEFINED_MEDIUM
+      because every constituent is a defined chemical (an unresolved name here means
+      MIM lacks the record, not that the substance is undefined). No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_3_methyl_mercaptopropionate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0631
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: dihydrogen
+    component_id: CHEBI:18276
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: 3-(methylthio)propionic acid
+    component_id: CHEBI:1438
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:h2_3_methyl_mercaptopropionate
+    ontology_label: H2+3-methyl Mercaptopropionate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''H2+3-methyl Mercaptopropionate'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+        3-methyl Mercaptopropionate carries no component_id because MIM has no record
+        for it. ingredient_type=DEFINED_MEDIUM because every constituent is a defined
+        chemical (an unresolved name here means MIM lacks the record, not that the
+        substance is undefined). No concentrations are recorded: the label states
+        none.'
+- identifier: kgmicrobe.ingredient:h2_co2
   preferred_term: H2 + CO2
   synonyms:
   - synonym_text: H2 + CO2
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14530,15 +16027,66 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0631 -> kgmicrobe.ingredient:h2_co2 (FALLBACK_REGISTRY). The
+      label enumerates its own constituents, so this is a decomposition rather than
+      a mapping: no ontology has a term for ''H2 + CO2'', and none could — a combination
+      is not a substance. Minted under the #288 STOCK_SOLUTION convention and split
+      on ''+'', which transcribes the label rather than inferring anything. 2 of 2
+      constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_co2); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0757
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: dihydrogen
+    component_id: CHEBI:18276
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: carbon dioxide
+    component_id: CHEBI:16526
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:h2_co2
+    ontology_label: H2 + CO2
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''H2 + CO2'', and none could
+        — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+        and split on ''+'', which transcribes the label rather than inferring anything.
+        2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:h2_dimethylsulfide
   preferred_term: H2+dimethylsulfide
   synonyms:
   - synonym_text: H2+dimethylsulfide
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14576,15 +16124,66 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0757 -> kgmicrobe.ingredient:h2_dimethylsulfide (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''H2+dimethylsulfide'', and none
+      could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_dimethylsulfide);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0703
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: dihydrogen
+    component_id: CHEBI:18276
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: dimethyl sulfide
+    component_id: CHEBI:17437
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:h2_dimethylsulfide
+    ontology_label: H2+dimethylsulfide
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''H2+dimethylsulfide'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:h2_methanol
   preferred_term: H2+methanol
   synonyms:
   - synonym_text: H2+methanol
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14620,15 +16219,66 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0703 -> kgmicrobe.ingredient:h2_methanol (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''H2+methanol'', and none could —
+      a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_methanol);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0758
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: dihydrogen
+    component_id: CHEBI:18276
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: methanol
+    component_id: CHEBI:17790
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:h2_methanol
+    ontology_label: H2+methanol
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''H2+methanol'', and none
+        could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:h2_tetramethylammonium
   preferred_term: H2+tetramethylammonium
   synonyms:
   - synonym_text: H2+tetramethylammonium
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14666,15 +16316,66 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0758 -> kgmicrobe.ingredient:h2_tetramethylammonium (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''H2+tetramethylammonium'', and none
+      could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_tetramethylammonium);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0759
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: dihydrogen
+    component_id: CHEBI:18276
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: tetramethylammonium
+    component_id: CHEBI:46020
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:h2_tetramethylammonium
+    ontology_label: H2+tetramethylammonium
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''H2+tetramethylammonium'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:h2_trimethylamine
   preferred_term: H2+trimethylamine
   synonyms:
   - synonym_text: H2+trimethylamine
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14709,15 +16410,66 @@ ingredients:
       promoted by a mechanism that never decided anything is what #203 and #263 exist
       to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0759 -> kgmicrobe.ingredient:h2_trimethylamine (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''H2+trimethylamine'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_trimethylamine);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0763
+  ingredient_type: DEFINED_MEDIUM
+  components:
+  - component_name: dihydrogen
+    component_id: CHEBI:18276
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: trimethylamine
+    component_id: CHEBI:18139
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:h2_trimethylamine
+    ontology_label: H2+trimethylamine
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''H2+trimethylamine'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+        (an unresolved name here means MIM lacks the record, not that the substance
+        is undefined). No concentrations are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:modified_cooked_meat_medium
   preferred_term: Modified Cooked Meat Medium
   synonyms:
   - synonym_text: Modified Cooked Meat Medium
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14755,8 +16507,43 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0763 -> kgmicrobe.ingredient:modified_cooked_meat_medium (FALLBACK_REGISTRY).
+      Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=map_to_medium): it is a named medium and these are what the recipe
+      contains. 1 constituent(s), 1 carrying an identifier. That file was produced
+      by the research pass and never written into the records; this applies it. It
+      resolves constituents a label split cannot — abbreviations such as PY, and named
+      media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:modified_cooked_meat_medium);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: meat (cooked)
+    component_id: FOODON:03305103
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:modified_cooked_meat_medium
+    ontology_label: Modified Cooked Meat Medium
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium):
+        it is a named medium and these are what the recipe contains. 1 constituent(s),
+        1 carrying an identifier. That file was produced by the research pass and
+        never written into the records; this applies it. It resolves constituents
+        a label split cannot — abbreviations such as PY, and named media such as BHI,
+        state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
+        are recorded: the curated row states none.'
 - identifier: UNMAPPED_0764
   preferred_term: Mono- And Disaccharides
   synonyms:
@@ -14805,13 +16592,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:mono_and_disaccharides);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0829
+- identifier: kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid
   preferred_term: N'-disuccinic Acid (EDDS)
   synonyms:
   - synonym_text: N'-disuccinic Acid (EDDS)
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14838,6 +16625,20 @@ ingredients:
     previous_status: UNMAPPED
     new_status: NEEDS_EXPERT
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: MERGED_INTO
+    changes: 'Merged into kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid "Ethylenediamine-N,N''-disuccinic
+      acid (EDDS)": this record is the other half of a comma-split label, not an ingredient.
+      Repaired a comma-split label (#308/#313): `Ethylenediamine-N` and `N''-disuccinic
+      Acid (EDDS)` are the two halves of `ethylenediamine-N,N''-disuccinic acid` split
+      at its only comma — the surviving `(EDDS)` on the second fragment confirms the
+      reading. ChEBI has no term for EDDS (searched the local build and live at OLS4),
+      so MAPPING_SEMANTICS §3 step 3 applies and the rejoined record takes a registry
+      mint. The ingest strips commas from every chemical label, so a name containing
+      one arrives as separate fragment records — the same mechanism that produced
+      the `D` record resolved in #346.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:n_disuccinic_acid_edds);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
 - identifier: UNMAPPED_0719
@@ -14940,13 +16741,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_fructose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0768
+- identifier: kgmicrobe.ingredient:py_glucose_rumen_fluid
   preferred_term: PY-glucose-rumen Fluid
   synonyms:
   - synonym_text: PY-glucose-rumen Fluid
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -14984,8 +16785,52 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0768 -> kgmicrobe.ingredient:py_glucose_rumen_fluid (FALLBACK_REGISTRY).
+      Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=split): the label names its constituents. 4 constituent(s), 4 carrying
+      an identifier. That file was produced by the research pass and never written
+      into the records; this applies it. It resolves constituents a label split cannot
+      — abbreviations such as PY, and named media such as BHI, state no composition
+      to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+      the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_glucose_rumen_fluid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: clarified rumen fluid
+    component_id: MICRO:0000520
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:py_glucose_rumen_fluid
+    ontology_label: PY-glucose-rumen Fluid
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+        the label names its constituents. 4 constituent(s), 4 carrying an identifier.
+        That file was produced by the research pass and never written into the records;
+        this applies it. It resolves constituents a label split cannot — abbreviations
+        such as PY, and named media such as BHI, state no composition to split on.
+        ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
+        row states none.'
 - identifier: UNMAPPED_0769
   preferred_term: PY-maltose
   synonyms:
@@ -15082,13 +16927,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_pectin); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0771
+- identifier: kgmicrobe.ingredient:pyeg
   preferred_term: PYEG
   synonyms:
   - synonym_text: PYEG
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15124,8 +16969,49 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0771 -> kgmicrobe.ingredient:pyeg (FALLBACK_REGISTRY). Components
+      taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=split): the label names its constituents. 3 constituent(s), 3 carrying
+      an identifier. That file was produced by the research pass and never written
+      into the records; this applies it. It resolves constituents a label split cannot
+      — abbreviations such as PY, and named media such as BHI, state no composition
+      to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+      the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyeg); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:pyeg
+    ontology_label: PYEG
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+        the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+        That file was produced by the research pass and never written into the records;
+        this applies it. It resolves constituents a label split cannot — abbreviations
+        such as PY, and named media such as BHI, state no composition to split on.
+        ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
+        row states none.'
 - identifier: UNMAPPED_0772
   preferred_term: PYG-0.02% Tween 80
   synonyms:
@@ -15176,13 +17062,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_0_02_tween_80);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0628
+- identifier: kgmicrobe.ingredient:pyg
   preferred_term: PYG
   synonyms:
   - synonym_text: PYG
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15221,15 +17107,56 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0628 -> kgmicrobe.ingredient:pyg (FALLBACK_REGISTRY). Components
+      taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=split): the label names its constituents. 3 constituent(s), 3 carrying
+      an identifier. That file was produced by the research pass and never written
+      into the records; this applies it. It resolves constituents a label split cannot
+      — abbreviations such as PY, and named media such as BHI, state no composition
+      to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+      the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0704
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:pyg
+    ontology_label: PYG
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+        the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+        That file was produced by the research pass and never written into the records;
+        this applies it. It resolves constituents a label split cannot — abbreviations
+        such as PY, and named media such as BHI, state no composition to split on.
+        ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
+        row states none.'
+- identifier: kgmicrobe.ingredient:pygs
   preferred_term: PYGS
   synonyms:
   - synonym_text: PYGS
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15265,15 +17192,59 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0704 -> kgmicrobe.ingredient:pygs (FALLBACK_REGISTRY). Components
+      taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=split): the label names its constituents. 4 constituent(s), 4 carrying
+      an identifier. That file was produced by the research pass and never written
+      into the records; this applies it. It resolves constituents a label split cannot
+      — abbreviations such as PY, and named media such as BHI, state no composition
+      to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+      the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pygs); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0773
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: starch
+    component_id: CHEBI:28017
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:pygs
+    ontology_label: PYGS
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+        the label names its constituents. 4 constituent(s), 4 carrying an identifier.
+        That file was produced by the research pass and never written into the records;
+        this applies it. It resolves constituents a label split cannot — abbreviations
+        such as PY, and named media such as BHI, state no composition to split on.
+        ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
+        row states none.'
+- identifier: kgmicrobe.ingredient:pyg_rumen_fluid
   preferred_term: PYG + Rumen Fluid
   synonyms:
   - synonym_text: PYG + Rumen Fluid
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15313,15 +17284,71 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0773 -> kgmicrobe.ingredient:pyg_rumen_fluid (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''PYG + Rumen Fluid'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 4 constituent(s), 4 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_rumen_fluid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0766
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: clarified rumen fluid
+    component_id: MICRO:0000520
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:pyg_rumen_fluid
+    ontology_label: PYG + Rumen Fluid
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''PYG + Rumen Fluid'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+        an undefined preparation. No concentrations are recorded: the label states
+        none.'
+- identifier: kgmicrobe.ingredient:peptone_yeast_extract_glucose
   preferred_term: Peptone-yeast Extract-glucose
   synonyms:
   - synonym_text: Peptone-yeast Extract-glucose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15361,15 +17388,57 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0766 -> kgmicrobe.ingredient:peptone_yeast_extract_glucose
+      (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research
+      decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=split): the label names its constituents. 3 constituent(s), 3 carrying
+      an identifier. That file was produced by the research pass and never written
+      into the records; this applies it. It resolves constituents a label split cannot
+      — abbreviations such as PY, and named media such as BHI, state no composition
+      to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+      the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_yeast_extract_glucose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0765
+  components:
+  - component_name: peptone
+    component_id: MICRO:0000178
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:peptone_yeast_extract_glucose
+    ontology_label: Peptone-yeast Extract-glucose
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+        the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+        That file was produced by the research pass and never written into the records;
+        this applies it. It resolves constituents a label split cannot — abbreviations
+        such as PY, and named media such as BHI, state no composition to split on.
+        ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
+        row states none.'
+- identifier: kgmicrobe.ingredient:peptone_beef_extract_yeast_extract
   preferred_term: Peptone + Beef Extract + Yeast Extract
   synonyms:
   - synonym_text: Peptone + Beef Extract + Yeast Extract
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15407,15 +17476,57 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0765 -> kgmicrobe.ingredient:peptone_beef_extract_yeast_extract
+      (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a
+      decomposition rather than a mapping: no ontology has a term for ''Peptone +
+      Beef Extract + Yeast Extract'', and none could — a combination is not a substance.
+      Minted under the #288 STOCK_SOLUTION convention and split on ''+'', which transcribes
+      the label rather than inferring anything. 3 of 3 constituents resolve to existing
+      MIM records via docs/data/label_index.csv. ingredient_type=UNDEFINED_MIXTURE
+      because at least one constituent is itself an undefined preparation. No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_beef_extract_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0717
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: Peptone
+    source: MIM label decomposition (#213/#308)
+    component_id: MICRO:0000178
+  - component_name: Beef Extract
+    source: MIM label decomposition (#213/#308)
+    component_id: FOODON:03302088
+  - component_name: Yeast Extract
+    source: MIM label decomposition (#213/#308)
+    component_id: FOODON:03315426
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:peptone_beef_extract_yeast_extract
+    ontology_label: Peptone + Beef Extract + Yeast Extract
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Peptone + Beef Extract
+        + Yeast Extract'', and none could — a combination is not a substance. Minted
+        under the #288 STOCK_SOLUTION convention and split on ''+'', which transcribes
+        the label rather than inferring anything. 3 of 3 constituents resolve to existing
+        MIM records via docs/data/label_index.csv. ingredient_type=UNDEFINED_MIXTURE
+        because at least one constituent is itself an undefined preparation. No concentrations
+        are recorded: the label states none.'
+- identifier: kgmicrobe.ingredient:peptone_yeast_extract
   preferred_term: Peptone + Yeast Extract
   synonyms:
   - synonym_text: Peptone + Yeast Extract
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15451,8 +17562,46 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0717 -> kgmicrobe.ingredient:peptone_yeast_extract (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Peptone + Yeast Extract'', and
+      none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: Peptone
+    source: MIM label decomposition (#213/#308)
+    component_id: MICRO:0000178
+  - component_name: Yeast Extract
+    source: MIM label decomposition (#213/#308)
+    component_id: FOODON:03315426
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:peptone_yeast_extract
+    ontology_label: Peptone + Yeast Extract
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Peptone + Yeast Extract'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+        an undefined preparation. No concentrations are recorded: the label states
+        none.'
 - identifier: UNMAPPED_0836
   preferred_term: Poly-beta-hydroxyalkanoate
   synonyms:
@@ -15504,13 +17653,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:poly_beta_hydroxyalkanoate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0705
+- identifier: kgmicrobe.ingredient:sucrose_yeast_extract
   preferred_term: Sucrose + Yeast Extract
   synonyms:
   - synonym_text: Sucrose + Yeast Extract
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15546,8 +17695,58 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0705 -> kgmicrobe.ingredient:sucrose_yeast_extract (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Sucrose + Yeast Extract'', and
+      none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:sucrose_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: sucrose
+    component_id: CHEBI:17992
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:sucrose_yeast_extract
+    ontology_label: Sucrose + Yeast Extract
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Sucrose + Yeast Extract'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+        an undefined preparation. No concentrations are recorded: the label states
+        none.'
 - identifier: UNMAPPED_0663
   preferred_term: Sugars
   synonyms:
@@ -15599,13 +17798,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:sugars); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0776
+- identifier: kgmicrobe.ingredient:tygvs_glucose
   preferred_term: TYGVS + Glucose
   synonyms:
   - synonym_text: TYGVS + Glucose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15642,8 +17841,64 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0776 -> kgmicrobe.ingredient:tygvs_glucose (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''TYGVS + Glucose'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      TYGVS carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
+      because at least one constituent is itself an undefined preparation. No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 4 constituent(s), 3 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:tygvs_glucose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: Trypticase peptone
+    component_id: MICRO:0000175
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: volatile fatty acid mixture (undefined)
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:tygvs_glucose
+    ontology_label: TYGVS + Glucose
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''TYGVS + Glucose'', and
+        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
+        TYGVS carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
+        because at least one constituent is itself an undefined preparation. No concentrations
+        are recorded: the label states none.'
 - identifier: UNMAPPED_0734
   preferred_term: Tetrazolium
   synonyms:
@@ -15696,13 +17951,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tetrazolium); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0668
+- identifier: kgmicrobe.ingredient:trypticase_glucose_yeast_extract
   preferred_term: Trypticase-glucose-yeast Extract
   synonyms:
   - synonym_text: Trypticase-glucose-yeast Extract
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15738,8 +17993,50 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: DECOMPOSED_FROM_CURATED_RESEARCH
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0668 -> kgmicrobe.ingredient:trypticase_glucose_yeast_extract
+      (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research
+      decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+      strategy=split): the label names its constituents. 3 constituent(s), 3 carrying
+      an identifier. That file was produced by the research pass and never written
+      into the records; this applies it. It resolves constituents a label split cannot
+      — abbreviations such as PY, and named media such as BHI, state no composition
+      to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
+      the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:trypticase_glucose_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  components:
+  - component_name: Trypticase peptone
+    component_id: MICRO:0000175
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: glucose
+    component_id: CHEBI:17234
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:trypticase_glucose_yeast_extract
+    ontology_label: Trypticase-glucose-yeast Extract
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'Components taken from the curated microbedecoder research decomposition
+        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+        the label names its constituents. 3 constituent(s), 3 carrying an identifier.
+        That file was produced by the research pass and never written into the records;
+        this applies it. It resolves constituents a label split cannot — abbreviations
+        such as PY, and named media such as BHI, state no composition to split on.
+        ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
+        row states none.'
 - identifier: UNMAPPED_0849
   preferred_term: Tryptone/yeast/beef (tyb)
   synonyms:
@@ -15772,13 +18069,13 @@ ingredients:
     llm_assisted: true
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tryptone_yeast_beef_tyb);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0777
+- identifier: kgmicrobe.ingredient:yeast_extract_gluconate
   preferred_term: Yeast Extract + Gluconate
   synonyms:
   - synonym_text: Yeast Extract + Gluconate
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15814,15 +18111,65 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0777 -> kgmicrobe.ingredient:yeast_extract_gluconate (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Yeast Extract + Gluconate'', and
+      none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_extract_gluconate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0778
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: D-gluconate
+    component_id: CHEBI:18391
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:yeast_extract_gluconate
+    ontology_label: Yeast Extract + Gluconate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Yeast Extract + Gluconate'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+        an undefined preparation. No concentrations are recorded: the label states
+        none.'
+- identifier: kgmicrobe.ingredient:yeast_extract_glucose
   preferred_term: Yeast Extract + Glucose
   synonyms:
   - synonym_text: Yeast Extract + Glucose
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15857,15 +18204,53 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0778 -> kgmicrobe.ingredient:yeast_extract_glucose (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Yeast Extract + Glucose'', and
+      none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_extract_glucose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0779
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: Yeast Extract
+    source: MIM label decomposition (#213/#308)
+    component_id: FOODON:03315426
+  - component_name: Glucose
+    source: MIM label decomposition (#213/#308)
+    component_id: CHEBI:17234
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:yeast_extract_glucose
+    ontology_label: Yeast Extract + Glucose
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Yeast Extract + Glucose'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+        an undefined preparation. No concentrations are recorded: the label states
+        none.'
+- identifier: kgmicrobe.ingredient:yeast_extract_peptone
   preferred_term: Yeast Extract + Peptone
   synonyms:
   - synonym_text: Yeast Extract + Peptone
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15905,15 +18290,53 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0779 -> kgmicrobe.ingredient:yeast_extract_peptone (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Yeast Extract + Peptone'', and
+      none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_extract_peptone);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0780
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: Yeast Extract
+    source: MIM label decomposition (#213/#308)
+    component_id: FOODON:03315426
+  - component_name: Peptone
+    source: MIM label decomposition (#213/#308)
+    component_id: MICRO:0000178
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:yeast_extract_peptone
+    ontology_label: Yeast Extract + Peptone
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Yeast Extract + Peptone'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+        an undefined preparation. No concentrations are recorded: the label states
+        none.'
+- identifier: kgmicrobe.ingredient:yeast_extract_sulfur
   preferred_term: Yeast Extract + Sulfur
   synonyms:
   - synonym_text: Yeast Extract + Sulfur
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15952,15 +18375,65 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0780 -> kgmicrobe.ingredient:yeast_extract_sulfur (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Yeast Extract + Sulfur'', and none
+      could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+      an undefined preparation. No concentrations are recorded: the label states none.'
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: apply_curated_decompositions
+    action: REPLACED_COMPONENTS_WITH_CURATED
+    changes: 'components replaced with the curated research decomposition, superseding
+      the label split. Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_extract_sulfur);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-- identifier: UNMAPPED_0781
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: yeast extract
+    component_id: FOODON:03315426
+    source: microbedecoder research decomposition (#213/#308)
+  - component_name: sulfur
+    component_id: CHEBI:26833
+    source: microbedecoder research decomposition (#213/#308)
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:yeast_extract_sulfur
+    ontology_label: Yeast Extract + Sulfur
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Yeast Extract + Sulfur'',
+        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+        convention and split on ''+'', which transcribes the label rather than inferring
+        anything. 2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+        ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself
+        an undefined preparation. No concentrations are recorded: the label states
+        none.'
+- identifier: kgmicrobe.ingredient:yeast_meat_extract_h2
   preferred_term: Yeast + Meat Extract + H2
   synonyms:
   - synonym_text: Yeast + Meat Extract + H2
     synonym_type: RAW_TEXT
     source: microbedecoder
-  mapping_status: NEEDS_EXPERT
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -15996,8 +18469,50 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: decompose_substrate_combinations
+    action: DECOMPOSED_TO_COMPONENTS
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'UNMAPPED_0781 -> kgmicrobe.ingredient:yeast_meat_extract_h2 (FALLBACK_REGISTRY).
+      The label enumerates its own constituents, so this is a decomposition rather
+      than a mapping: no ontology has a term for ''Yeast + Meat Extract + H2'', and
+      none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
+      convention and split on ''+'', which transcribes the label rather than inferring
+      anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv;
+      Yeast carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
+      because at least one constituent is itself an undefined preparation. No concentrations
+      are recorded: the label states none.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_meat_extract_h2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: UNDEFINED_MIXTURE
+  components:
+  - component_name: Yeast
+    source: MIM label decomposition (#213/#308)
+  - component_name: Meat Extract
+    source: MIM label decomposition (#213/#308)
+    component_id: FOODON:03315424
+  - component_name: H2
+    source: MIM label decomposition (#213/#308)
+    component_id: CHEBI:18276
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:yeast_meat_extract_h2
+    ontology_label: Yeast + Meat Extract + H2
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#213/#308)
+      notes: 'The label enumerates its own constituents, so this is a decomposition
+        rather than a mapping: no ontology has a term for ''Yeast + Meat Extract +
+        H2'', and none could — a combination is not a substance. Minted under the
+        #288 STOCK_SOLUTION convention and split on ''+'', which transcribes the label
+        rather than inferring anything. 2 of 3 constituents resolve to existing MIM
+        records via docs/data/label_index.csv; Yeast carries no component_id because
+        MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because at least
+        one constituent is itself an undefined preparation. No concentrations are
+        recorded: the label states none.'
 - identifier: UNMAPPED_0447
   preferred_term: Mineral solution see Medium No. 976
   synonyms:

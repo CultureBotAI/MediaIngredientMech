@@ -6665,6 +6665,12 @@ ingredients:
   - synonym_text: 7-di-iso-propylpteridine Phosphate)
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: 0129 (2
+    synonym_type: RAW_TEXT
+    source: comma-split fragment (#308/#313)
+  - synonym_text: 4-Diamino-6
+    synonym_type: RAW_TEXT
+    source: comma-split fragment (#308/#313)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -6700,6 +6706,19 @@ ingredients:
     changes: Promoted UNMAPPED_0621 -> kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
       "2,4-diamino-6,7-diisopropylpteridine" (NARROW_MATCH); mapping_status UNMAPPED
       -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: MERGED_FROM
+    changes: 'Absorbed the orphaned fragments ''0129 (2'' and ''4-Diamino-6'' (#308/#313).
+      Fragment of a comma-split label whose intact compound is already a MIM record.
+      The source label was ''O/129 (2,4-diamino-6,7-di-iso-propylpteridine phosphate)''
+      — the vibriostatic agent — and the ingest strips commas, so it arrived as three
+      fragments. The third, ''7-di-iso-propylpteridine Phosphate)'', is already carried
+      as a synonym on the intact record; these two were left orphaned as separate
+      NEEDS_EXPERT records. Merged rather than grounded separately: neither fragment
+      names a compound. Both kept as RAW_TEXT synonyms, matching how the third fragment
+      was already held.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:7_di_iso_propylpteridine_phosphate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -182987,8 +183006,18 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:sulfonamide; '
-  synonyms: []
-  mapping_status: PENDING_REVIEW
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#308/#313)
+      notes: 'Repaired a comma-split label (#308/#313): not a comma split; the label
+        matches CHEBI:35358 `sulfonamide` exactly and the record had been left at
+        PENDING_REVIEW. The ingest strips commas from every chemical label, so a name
+        containing one arrives as separate fragment records — the same mechanism that
+        produced the `D` record resolved in #346.'
+  synonyms:
+  - synonym_text: Sulfonamide
+    synonym_type: RAW_TEXT
+    source: comma-split fragment (#308/#313)
+  mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -183040,6 +183069,18 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: REPAIRED_COMMA_SPLIT_LABEL
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'preferred_term ''Sulfonamide'' -> ''Sulfonamide''; CHEBI:35358 -> CHEBI:35358.
+      Repaired a comma-split label (#308/#313): not a comma split; the label matches
+      CHEBI:35358 `sulfonamide` exactly and the record had been left at PENDING_REVIEW.
+      The ingest strips commas from every chemical label, so a name containing one
+      arrives as separate fragment records — the same mechanism that produced the
+      `D` record resolved in #346.'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:

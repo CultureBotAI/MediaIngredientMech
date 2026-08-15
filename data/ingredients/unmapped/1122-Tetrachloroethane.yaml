@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0785
-preferred_term: 2-tetrachloroethane
+identifier: CHEBI:36026
+preferred_term: 1,1,2,2-Tetrachloroethane
 synonyms:
 - synonym_text: 2-tetrachloroethane
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -43,5 +43,34 @@ curation_history:
     is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
     or reject.'
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: repair_comma_split_labels
+  action: REPAIRED_COMMA_SPLIT_LABEL
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'preferred_term ''2-tetrachloroethane'' -> ''1,1,2,2-Tetrachloroethane'';
+    UNMAPPED_0785 -> CHEBI:36026. Repaired a comma-split label (#308/#313): `2-tetrachloroethane`
+    is the tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields
+    `1`, `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record
+    because bare digits are not labels. The reconstruction is unambiguous — no other
+    compound ends in `2-tetrachloroethane`. The ingest strips commas from every chemical
+    label, so a name containing one arrives as separate fragment records — the same
+    mechanism that produced the `D` record resolved in #346.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_tetrachloroethane);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
+ontology_mapping:
+  ontology_id: CHEBI:36026
+  ontology_label: 1,1,2,2-tetrachloroethane
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#308/#313)
+    notes: 'Repaired a comma-split label (#308/#313): `2-tetrachloroethane` is the
+      tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields `1`,
+      `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record because
+      bare digits are not labels. The reconstruction is unambiguous — no other compound
+      ends in `2-tetrachloroethane`. The ingest strips commas from every chemical
+      label, so a name containing one arrives as separate fragment records — the same
+      mechanism that produced the `D` record resolved in #346.'

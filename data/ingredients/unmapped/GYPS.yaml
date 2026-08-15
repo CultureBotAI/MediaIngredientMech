@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0755
+identifier: kgmicrobe.ingredient:gyps
 preferred_term: GYPS
 synonyms:
 - synonym_text: GYPS
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -43,5 +43,57 @@ curation_history:
     that never decided anything is what #203 and #263 exist to undo. Any CURIE above
     is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: DECOMPOSED_FROM_CURATED_RESEARCH
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0755 -> kgmicrobe.ingredient:gyps (FALLBACK_REGISTRY). Components
+    taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv,
+    strategy=split): the label names its constituents. 4 constituent(s), 4 carrying
+    an identifier. That file was produced by the research pass and never written into
+    the records; this applies it. It resolves constituents a label split cannot —
+    abbreviations such as PY, and named media such as BHI, state no composition to
+    split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the
+    curated row states none. Cross-referenced to CultureMech medium CultureMech:002799
+    (''gyps_medium'') via culturemech_medium_name, verified by COMPOSITION not by
+    name: name matches exactly and 3 of 4 curated constituents agree (glucose, peptone,
+    yeast extract); CultureMech additionally lists MES and Sea Salt and no starch,
+    so the recipes are close but not identical.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
+components:
+- component_name: glucose
+  component_id: CHEBI:17234
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: yeast extract
+  component_id: FOODON:03315426
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: peptone
+  component_id: MICRO:0000178
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: starch
+  component_id: CHEBI:28017
+  source: microbedecoder research decomposition (#213/#308)
+ingredient_type: UNDEFINED_MIXTURE
+culturemech_medium_name: gyps_medium
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:gyps
+  ontology_label: GYPS
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'Components taken from the curated microbedecoder research decomposition
+      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+      the label names its constituents. 4 constituent(s), 4 carrying an identifier.
+      That file was produced by the research pass and never written into the records;
+      this applies it. It resolves constituents a label split cannot — abbreviations
+      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
+      No concentrations are recorded: the curated row states none. Cross-referenced
+      to CultureMech medium CultureMech:002799 (''gyps_medium'') via culturemech_medium_name,
+      verified by COMPOSITION not by name: name matches exactly and 3 of 4 curated
+      constituents agree (glucose, peptone, yeast extract); CultureMech additionally
+      lists MES and Sea Salt and no starch, so the recipes are close but not identical.'

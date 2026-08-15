@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0631
+identifier: kgmicrobe.ingredient:h2_co2
 preferred_term: H2 + CO2
 synonyms:
 - synonym_text: H2 + CO2
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -40,5 +40,56 @@ curation_history:
     is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
     or reject.'
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: decompose_substrate_combinations
+  action: DECOMPOSED_TO_COMPONENTS
+  previous_status: NEEDS_EXPERT
+  new_status: MAPPED
+  changes: 'UNMAPPED_0631 -> kgmicrobe.ingredient:h2_co2 (FALLBACK_REGISTRY). The
+    label enumerates its own constituents, so this is a decomposition rather than
+    a mapping: no ontology has a term for ''H2 + CO2'', and none could — a combination
+    is not a substance. Minted under the #288 STOCK_SOLUTION convention and split
+    on ''+'', which transcribes the label rather than inferring anything. 2 of 2 constituents
+    resolve to existing MIM records via docs/data/label_index.csv. ingredient_type=DEFINED_MEDIUM
+    because every constituent is a defined chemical (an unresolved name here means
+    MIM lacks the record, not that the substance is undefined). No concentrations
+    are recorded: the label states none.'
+  llm_assisted: false
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: apply_curated_decompositions
+  action: REPLACED_COMPONENTS_WITH_CURATED
+  changes: 'components replaced with the curated research decomposition, superseding
+    the label split. Components taken from the curated microbedecoder research decomposition
+    (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
+    the label names its constituents. 2 constituent(s), 2 carrying an identifier.
+    That file was produced by the research pass and never written into the records;
+    this applies it. It resolves constituents a label split cannot — abbreviations
+    such as PY, and named media such as BHI, state no composition to split on. ingredient_type=DEFINED_MEDIUM.
+    No concentrations are recorded: the curated row states none.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_co2); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
+ingredient_type: DEFINED_MEDIUM
+components:
+- component_name: dihydrogen
+  component_id: CHEBI:18276
+  source: microbedecoder research decomposition (#213/#308)
+- component_name: carbon dioxide
+  component_id: CHEBI:16526
+  source: microbedecoder research decomposition (#213/#308)
+ontology_mapping:
+  ontology_id: kgmicrobe.ingredient:h2_co2
+  ontology_label: H2 + CO2
+  ontology_source: kgmicrobe.ingredient
+  mapping_quality: FALLBACK_REGISTRY
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#213/#308)
+    notes: 'The label enumerates its own constituents, so this is a decomposition
+      rather than a mapping: no ontology has a term for ''H2 + CO2'', and none could
+      — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention
+      and split on ''+'', which transcribes the label rather than inferring anything.
+      2 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv.
+      ingredient_type=DEFINED_MEDIUM because every constituent is a defined chemical
+      (an unresolved name here means MIM lacks the record, not that the substance
+      is undefined). No concentrations are recorded: the label states none.'

@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0619
+identifier: kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
 preferred_term: 0129 (2
 synonyms:
 - synonym_text: 0129 (2
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -28,5 +28,17 @@ curation_history:
   previous_status: UNMAPPED
   new_status: NEEDS_EXPERT
   llm_assisted: true
+- timestamp: '2026-08-14T00:00:00+00:00'
+  curator: repair_comma_split_labels
+  action: MERGED_INTO
+  changes: 'Merged into kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate
+    ''2,4-diamino-6,7-di-iso-propylpteridine phosphate''. Fragment of a comma-split
+    label whose intact compound is already a MIM record. The source label was ''O/129
+    (2,4-diamino-6,7-di-iso-propylpteridine phosphate)'' — the vibriostatic agent
+    — and the ingest strips commas, so it arrived as three fragments. The third, ''7-di-iso-propylpteridine
+    Phosphate)'', is already carried as a synonym on the intact record; these two
+    were left orphaned as separate NEEDS_EXPERT records. Merged rather than grounded
+    separately: neither fragment names a compound.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:0129_2); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
