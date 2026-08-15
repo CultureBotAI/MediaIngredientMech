@@ -113,6 +113,12 @@ def parse_components(cell: str) -> list[dict]:
         if len(parts) >= 3:
             curie = ":".join(parts[:2])
             label = ":".join(parts[2:]).strip()
+        elif len(parts) == 2:
+            # A pseudo-prefix marking a constituent with no CURIE, e.g.
+            # `VFA_mix:volatile fatty acid mixture (undefined)`. Keep the human
+            # name and drop the marker — carrying `VFA_mix:` into component_name
+            # would publish a prefix that resolves to nothing.
+            curie, label = "", parts[1].strip()
         else:
             curie, label = "", chunk
         comp = {"component_name": label or curie}
