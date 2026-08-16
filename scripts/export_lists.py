@@ -202,6 +202,16 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     for 594 unmapped rows.
     """
     rows = []
+    # Identifiers that some LIVE record actually claims. Rule 0 below lets a
+    # record that owns a label outrank a live record's synonym, and a merge
+    # tombstone is a legitimate owner because it carries the winner's
+    # identifier. But nothing GATES that invariant, and a tombstone left
+    # pointing at its own dead accession resolves to nothing — `Bacto Soytone`
+    # sat on the obsolete CHEBI:8150 until #360 repointed it. So ownership only
+    # jumps the queue when the owner's identifier is one a live record holds.
+    resolvable = {ing.get("identifier", "") for ing in ingredients
+                  if ing.get("mapping_status") == "MAPPED"}
+
     for ing in ingredients:
         ident = ing.get("identifier", "")
         preferred = ing.get("preferred_term", "")
@@ -227,18 +237,41 @@ def export_label_index(ingredients: list[dict], output_path: Path):
                          "identifier": ident, "preferred_term": preferred,
                          "ontology_id": ont, "mapping_status": status})
     # Order within a label, most significant first:
+    #   0. OWNERSHIP. A record whose own `preferred_term` IS this label makes a
+    #      claim about exactly this string; a synonym or term-label on some
+    #      other record is a weaker claim about something else. So ownership
+    #      outranks even MAPPED-ness: a tombstone that owns the label beats a
+    #      live record that merely lists it. That follows LABEL_INDEX_CONTRACT —
+    #      REJECTED is not "no answer", since a tombstone carries the merge
+    #      winner's identifier and resolves correctly.
+    #      Without this, `FeSO4 x 7H2O` resolved to CHEBI:75832 `FeSO4 x 5 H2O`:
+    #      a heptahydrate label answered with the PENTAhydrate. Same for
+    #      `MnSO4 x 1 H2O` (got the heptahydrate) and `NiCl2 x 6 H2O` (got
+    #      anhydrous NiCl2).
     #   1. MAPPED before anything else. Without this a REJECTED record's
     #      preferred_term outranks a MAPPED record's synonym, so `Bacto Soytone`
     #      resolved to the rejected CHEBI:8150 tombstone instead of the live
-    #      FOODON:03315720 — 21 labels did that.
+    #      FOODON:03315720 — 21 labels did that. Rule 0 is deliberately narrower
+    #      than "match_type beats status": promoting match_rank wholesale also
+    #      lets a tombstone's SYNONYM beat a live record's term label, which
+    #      sent `EDTA disodium salt (anhydrous)` back to the rejected dihydrate.
+    #      Only rank 0 jumps the queue.
     #   2. preferred_term before synonym.
     #   3. identifier, then preferred_term: `identifier` is NOT a unique record
     #      key (46 identifiers are held by 117 records), so without the final
     #      term 188 labels tie completely and the winner is decided by record
     #      order in the YAML.
-    # `label` follows `label.lower()` so rows for one exact string stay
-    # contiguous — 2 labels (`Peptone`, `Bacto Tryptone`) have a case variant
-    # interleaved otherwise.
+    #   4. `label` LAST. It used to sort second, right after `label.lower()`,
+    #      which put raw-string ordering above every semantic key — so among
+    #      case variants of one label ASCII picked the winner, and uppercase
+    #      won. `FRUCTOSE` (a synonym on `Fructooligosaccharides (FOS)`) beat
+    #      `Fructose`, the owning record; `Citric Acid` (a synonym on
+    #      `Trisodium citrate`) beat `Citric acid`; `ASPARAGINE` and `CYSTEINE`
+    #      returned the L-enantiomer for a stereo-unspecified label. 16 labels
+    #      resolved to the wrong record. Grouping is by `label.lower()`, so
+    #      contiguity never needed `label` to sort early — only determinism
+    #      does, and last position gives that.
+    # Pinned by tests/test_label_index_precedence.py.
     # `ontology_label` ranks LAST of the three match types: a term label is the
     # ontology's name for the concept, not a name this record claims, so it is
     # the weakest signal. Measured over the corpus, adding it made 623 labels
@@ -252,10 +285,15 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     # record's term label beats a tombstone's synonym. The new answer is also the
     # right one — CHEBI:64734 IS the anhydrous disodium salt the label names.
     match_rank = {"preferred_term": 0, "synonym": 1, "ontology_label": 2}
-    rows.sort(key=lambda r: (r["label"].lower(), r["label"],
+    def owns_and_resolves(r: dict) -> bool:
+        return (match_rank.get(r["match_type"], 9) == 0
+                and r["identifier"] in resolvable)
+
+    rows.sort(key=lambda r: (r["label"].lower(),
+                             not owns_and_resolves(r),
                              r["mapping_status"] != "MAPPED",
                              match_rank.get(r["match_type"], 9),
-                             r["identifier"], r["preferred_term"]))
+                             r["identifier"], r["preferred_term"], r["label"]))
     fieldnames = ["label", "match_type", "identifier", "preferred_term",
                   "ontology_id", "mapping_status"]
     with open(output_path, "w", newline="") as f:

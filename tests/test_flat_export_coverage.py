@@ -287,9 +287,23 @@ def test_mapped_record_outranks_a_rejected_one(export_lists, tmp_path):
     assert rows[0]["identifier"] == "FOODON:03315720"
 
 
-def test_rows_for_one_exact_label_are_contiguous(export_lists, tmp_path):
-    """`Peptone` and `peptone` are different strings; grouping on lower() alone
-    interleaved them, so a consumer reading the contiguous run over-read."""
+def test_rows_for_one_label_are_contiguous_case_insensitively(export_lists, tmp_path):
+    """Contiguity is guaranteed for the CASE-INSENSITIVE group, not the exact
+    string.
+
+    This test used to require rows for the exact string `Peptone` to be
+    adjacent, which needed the raw `label` to sort directly after
+    `label.lower()` — above every semantic key. That is what let an ALL-CAPS
+    synonym outrank the record owning the label: `FRUCTOSE` beat `Fructose`,
+    `Citric Acid` (on *Trisodium citrate*) beat `Citric acid`, and 16 labels
+    resolved to the wrong identifier (#232).
+
+    The two properties are incompatible — ordering cannot put both the raw
+    string and the semantic keys first — and correctness wins, because
+    `LABEL_INDEX_CONTRACT` promises *take the first row for a label*, matched
+    case-insensitively. It never promised exact-case runs. `label` is now the
+    final tie-break, for determinism only.
+    """
     out = tmp_path / "label_index.csv"
     export_lists.export_label_index([
         rec("CHEBI:1", "Peptone", ["shared"]),
@@ -297,7 +311,7 @@ def test_rows_for_one_exact_label_are_contiguous(export_lists, tmp_path):
         rec("CHEBI:3", "Other", ["Peptone"]),
     ], out)
     labels = [r["label"] for r in csv.DictReader(out.open())]
-    idx = [i for i, l in enumerate(labels) if l == "Peptone"]
+    idx = [i for i, l in enumerate(labels) if l.lower() == "peptone"]
     assert idx == list(range(idx[0], idx[0] + len(idx))), "must be contiguous"
 
 
