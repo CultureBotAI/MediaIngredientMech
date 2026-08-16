@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-08-15T19:37:40.890346+00:00
+Generated: 2026-08-15T21:12:41.206623+00:00
 Total: 2841 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.ingredient:mineral_solution_see_medium_no_976 | kgmicrobe.ingredient:mineral_solution_see_medium_no_976 | Mineral solution see Medium No. 976 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:1_butanol_co2 | kgmicrobe.ingredient:1_butanol_co2 | 1-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:1_propanol_co2 | kgmicrobe.ingredient:1_propanol_co2 | 1-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:2_butanol_co2 | kgmicrobe.ingredient:2_butanol_co2 | 2-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2835,14 +2836,13 @@ Total: 2841 ingredients
 | UNMAPPED_0150 |  | Zinc-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0587 |  | α-D-Glucose monohydrate | UNMAPPED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate |  | 0129 (2 | REJECTED |  |  | 0 |
-| UNMAPPED_0736 |  | 3-methylacetate | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0736 |  | 3-methylacetate | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate |  | 4-Diamino-6 | REJECTED |  |  | 0 |
 | CHEBI:41189 |  | 4-diol | REJECTED |  |  | 0 |
-| UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0688 |  | Esculin Hydrolysate | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0731 |  | Gelatin Hydrolyzed | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0651 |  | 4-nitrophenyl Beta-D-galactopyranoside Hydrolysate | REJECTED |  |  | 0 |
+| UNMAPPED_0710 |  | DL-2-gamma-aminobutyrate | REJECTED |  |  | 0 |
+| UNMAPPED_0688 |  | Esculin Hydrolysate | REJECTED |  |  | 0 |
+| UNMAPPED_0731 |  | Gelatin Hydrolyzed | REJECTED |  |  | 0 |
+| UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | REJECTED |  |  | 0 |
 | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid |  | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
-| UNMAPPED_0734 |  | Tetrazolium | NEEDS_EXPERT |  |  | 0 |
-| UNMAPPED_0447 |  | Mineral solution see Medium No. 976 | NEEDS_EXPERT |  |  | 0 |
+| UNMAPPED_0734 |  | Tetrazolium | REJECTED |  |  | 0 |

@@ -1,10 +1,11 @@
 # Mapped Ingredients
 
-Generated: 2026-08-15T19:37:40.886243+00:00
-Total: 2559 ingredients
+Generated: 2026-08-15T21:12:41.203229+00:00
+Total: 2560 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.ingredient:mineral_solution_see_medium_no_976 | kgmicrobe.ingredient:mineral_solution_see_medium_no_976 | Mineral solution see Medium No. 976 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:1_butanol_co2 | kgmicrobe.ingredient:1_butanol_co2 | 1-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:1_propanol_co2 | kgmicrobe.ingredient:1_propanol_co2 | 1-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:2_butanol_co2 | kgmicrobe.ingredient:2_butanol_co2 | 2-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |

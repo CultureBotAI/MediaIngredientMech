@@ -4,7 +4,7 @@ synonyms:
 - synonym_text: DL-2-gamma-aminobutyrate
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: NEEDS_EXPERT
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -42,5 +42,29 @@ curation_history:
     plausible identifier promoted by a mechanism that never decided anything is what
     #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
   llm_assisted: true
-notes: Imported from microbedecoder (source_id=kgmicrobe.trait:dl_2_gamma_aminobutyrate);
-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: retire_assay_labels
+  action: RETIRED_NOT_AN_INGREDIENT
+  previous_status: NEEDS_EXPERT
+  new_status: REJECTED
+  changes: 'Retired as an ingredient record (#213/#308): a splice of two panel substrates
+    by the same ingest: DL-2-aminobutyrate and gamma-aminobutyrate. Both are already
+    records — `DL-2-Aminobutyric acid` (CHEBI:35621) and `gamma-Aminobutyric acid`
+    (CHEBI:16865). No single compound has this name. Not mapped, because every substrate
+    CURIE it could be grounded to is already the primary key of a live record — in
+    MIM the identifier IS the ontology CURIE, so a mapping here would mint a duplicate
+    rather than add coverage. No synonym is folded onto those records either: this
+    label names a reaction or a splice, not the substance, and asserting the synonymy
+    would make label_index resolve it to something it does not denote.'
+  llm_assisted: false
+notes: 'Imported from microbedecoder (source_id=kgmicrobe.trait:dl_2_gamma_aminobutyrate);
+  no CAS-RN or CHEBI/NCIT match. Curator review needed. Retired as an ingredient record
+  (#213/#308): a splice of two panel substrates by the same ingest: DL-2-aminobutyrate
+  and gamma-aminobutyrate. Both are already records — `DL-2-Aminobutyric acid` (CHEBI:35621)
+  and `gamma-Aminobutyric acid` (CHEBI:16865). No single compound has this name. Not
+  mapped, because every substrate CURIE it could be grounded to is already the primary
+  key of a live record — in MIM the identifier IS the ontology CURIE, so a mapping
+  here would mint a duplicate rather than add coverage. No synonym is folded onto
+  those records either: this label names a reaction or a splice, not the substance,
+  and asserting the synonymy would make label_index resolve it to something it does
+  not denote.'
