@@ -1,7 +1,7 @@
-identifier: cas:0392-12-1
+identifier: cas:392-12-1
 preferred_term: Indole-3-pyruvic acid
 ontology_mapping:
-  ontology_id: cas:0392-12-1
+  ontology_id: cas:392-12-1
   ontology_label: Indole-3-pyruvic acid
   ontology_source: CAS
   mapping_quality: FALLBACK_REGISTRY
@@ -34,8 +34,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
   llm_assisted: false
+- timestamp: '2026-08-16T00:00:00+00:00'
+  curator: strip_cas_leading_zeros
+  action: STRIPPED_CAS_LEADING_ZERO
+  changes: identifier cas:0392-12-1 -> cas:392-12-1; chemical_properties.cas_rn 0392-12-1
+    -> 392-12-1 (#310). A CAS Registry Number never carries leading zeros, so the
+    padded form resolved against nothing and any join on CAS-RN silently missed this
+    record. The stripped value passes the CAS check digit and resolves on PubChem
+    to exactly this compound; the padding was ingest alignment, not identity.
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 0392-12-1
+  cas_rn: 392-12-1
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
 ingredient_type: SINGLE_INGREDIENT
