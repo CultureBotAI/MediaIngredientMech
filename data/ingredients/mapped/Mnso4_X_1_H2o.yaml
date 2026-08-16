@@ -1,4 +1,4 @@
-identifier: CHEBI:86360
+identifier: CHEBI:86364
 preferred_term: MnSO4 x 1 H2O
 ontology_mapping:
   ontology_id: CHEBI:86360
@@ -42,10 +42,10 @@ synonyms:
 - synonym_text: manganese(2+) sulfate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 6
-  media_count: 6
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -113,6 +113,17 @@ curation_history:
     CHEBI:86360's ChEBI formula ('Mn.O4S') — the mark of a value inherited from the
     parent rather than measured for this record. Water appended in ChEBI's own dot-separated
     notation.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:86364 ''MnSO4 x H2O''; occurrences transferred. ''MnSO4
+    x 1 H2O'' and ''MnSO4 x H2O'' are the same substance written two ways — an explicit
+    `1` where the twin omits it — so the pair escaped dedup, and the loser was then
+    grounded to the nearest term lexical matching could reach: CHEBI:86360 (''manganese(II)
+    sulfate''), which does not carry the water its own label states. The #334 shadowing
+    pattern. Found by cross-checking CultureBotAI/CultureMech#272, which grounds these
+    labels correctly. Tombstoned REJECTED, SSSOM rows dropped.'
   llm_assisted: false
 kg_microbe_node_id: CHEBI:86360
 chemical_properties:

@@ -1,8 +1,8 @@
-identifier: CHEBI:53351
+identifier: CHEBI:53442
 preferred_term: Chromium(III) Chloride Hexahydrate
 ontology_mapping:
-  ontology_id: CHEBI:53351
-  ontology_label: chromium(3+) trichloride
+  ontology_id: CHEBI:53442
+  ontology_label: chromium(3+) trichloride hexahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -18,6 +18,13 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:53351's
       ChEBI formula ('3Cl.Cr') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#374/#334)
+    notes: 'Promoted from CHEBI:53351 (''chromium(3+) trichloride'') to the specific
+      hydrate term CHEBI:53442 (''chromium(3+) trichloride hexahydrate'') — MAPPING_SEMANTICS
+      §3 step 1: the label names a hydrate, ChEBI has the term, so nothing needs minting
+      and no closeMatch question arises. The previous term carried no water while
+      the label states it. Found by cross-checking CultureBotAI/CultureMech#272 (#374/#334).'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -55,6 +62,16 @@ curation_history:
     parent CHEBI:53351's ChEBI formula ('3Cl.Cr') — the mark of a value inherited
     from the parent rather than measured for this record. Water appended in ChEBI's
     own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: PROMOTED_TO_SPECIFIC_HYDRATE
+  changes: 'identifier/ontology_id CHEBI:53351 -> CHEBI:53442; Promoted from CHEBI:53351
+    (''chromium(3+) trichloride'') to the specific hydrate term CHEBI:53442 (''chromium(3+)
+    trichloride hexahydrate'') — MAPPING_SEMANTICS §3 step 1: the label names a hydrate,
+    ChEBI has the term, so nothing needs minting and no closeMatch question arises.
+    The previous term carried no water while the label states it. Found by cross-checking
+    CultureBotAI/CultureMech#272 (#374/#334).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 10025-73-7

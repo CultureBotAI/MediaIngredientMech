@@ -82,10 +82,13 @@ synonyms:
 - synonym_text: manganese(2+) sulfate--water (1/1)
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: MnSO4 x 1 H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#374/#334)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 946
-  media_count: 102
+  total_occurrences: 952
+  media_count: 108
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -176,6 +179,17 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: MERGED_FROM
+  changes: 'Absorbed ''MnSO4 x 1 H2O'' (#374/#334). ''MnSO4 x 1 H2O'' and ''MnSO4
+    x H2O'' are the same substance written two ways — an explicit `1` where the twin
+    omits it — so the pair escaped dedup, and the loser was then grounded to the nearest
+    term lexical matching could reach: CHEBI:86360 (''manganese(II) sulfate''), which
+    does not carry the water its own label states. The #334 shadowing pattern. Found
+    by cross-checking CultureBotAI/CultureMech#272, which grounds these labels correctly.
+    Occurrences 946/102 + 6/6 -> 952/108.'
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:86364
 chemical_properties:
   cas_rn: 10034-96-5

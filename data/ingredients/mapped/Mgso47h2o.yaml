@@ -1,4 +1,4 @@
-identifier: CHEBI:32599
+identifier: CHEBI:31795
 preferred_term: MgSO4·7H2O
 ontology_mapping:
   ontology_id: CHEBI:32599
@@ -80,10 +80,10 @@ synonyms:
 - synonym_text: MgSO4 ·7H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 431
-  media_count: 52
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -177,6 +177,17 @@ curation_history:
     parent CHEBI:32599's ChEBI formula ('Mg.O4S') — the mark of a value inherited
     from the parent rather than measured for this record. Water appended in ChEBI's
     own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:31795 ''MgSO4 x 7 H2O''; occurrences transferred. ''MgSO4·7H2O''
+    and ''MgSO4 x 7 H2O'' are the same substance written two ways — `·` where the
+    twin uses ` x ` — so the pair escaped dedup, and the loser was then grounded to
+    the nearest term lexical matching could reach: CHEBI:32599 (''magnesium sulfate''),
+    which does not carry the water its own label states. The #334 shadowing pattern.
+    Found by cross-checking CultureBotAI/CultureMech#272, which grounds these labels
+    correctly. Tombstoned REJECTED, SSSOM rows dropped.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 7487-88-9
