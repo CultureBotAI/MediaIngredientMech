@@ -40,6 +40,11 @@ def _ontology_id(ing: dict) -> str:
     return (ing.get("ontology_mapping") or {}).get("ontology_id", "") or ""
 
 
+def _ontology_label(ing: dict) -> str:
+    """The mapped term's own label, e.g. `potassium hydroxide` for the record `KOH`."""
+    return (ing.get("ontology_mapping") or {}).get("ontology_label", "") or ""
+
+
 # Separator for the CSV synonyms column. `|` is the multi-value separator this
 # repo's SSSOM already uses (the `source`, `validation_method` and `other`
 # columns), so consumers split on it today.
@@ -202,12 +207,23 @@ def export_label_index(ingredients: list[dict], output_path: Path):
         preferred = ing.get("preferred_term", "")
         status = ing.get("mapping_status", "")
         ont = _ontology_id(ing)
+        seen_labels = {preferred.lower()} | {x.lower() for x in _synonyms(ing)}
         if preferred:
             rows.append({"label": preferred, "match_type": "preferred_term",
                          "identifier": ident, "preferred_term": preferred,
                          "ontology_id": ont, "mapping_status": status})
         for syn in _synonyms(ing):
             rows.append({"label": syn, "match_type": "synonym",
+                         "identifier": ident, "preferred_term": preferred,
+                         "ontology_id": ont, "mapping_status": status})
+        # The mapped TERM's own label, as a third way in. Many records are named
+        # by formula (`KOH`, `KI`, `NaH2PO4•H2O`) while consumers write the
+        # chemical name, and that name appears nowhere else on the record: it is
+        # neither the preferred_term nor a synonym. 59 names CultureMech grounds
+        # were unresolvable here for exactly that reason (#365).
+        onto_label = _ontology_label(ing)
+        if onto_label and onto_label.lower() not in seen_labels:
+            rows.append({"label": onto_label, "match_type": "ontology_label",
                          "identifier": ident, "preferred_term": preferred,
                          "ontology_id": ont, "mapping_status": status})
     # Order within a label, most significant first:
@@ -223,9 +239,22 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     # `label` follows `label.lower()` so rows for one exact string stay
     # contiguous — 2 labels (`Peptone`, `Bacto Tryptone`) have a case variant
     # interleaved otherwise.
+    # `ontology_label` ranks LAST of the three match types: a term label is the
+    # ontology's name for the concept, not a name this record claims, so it is
+    # the weakest signal. Measured over the corpus, adding it made 623 labels
+    # newly resolvable, lost none, and changed exactly ONE existing answer:
+    #
+    #   EDTA disodium salt (anhydrous)
+    #     was  CHEBI:64758  via a synonym on `Na2-EDTA x 2 H2O`  (REJECTED)
+    #     now  CHEBI:64734  via the ontology_label of `Na2-EDTA` (MAPPED)
+    #
+    # That is the #232 rule working: MAPPED outranks match_type, so a live
+    # record's term label beats a tombstone's synonym. The new answer is also the
+    # right one — CHEBI:64734 IS the anhydrous disodium salt the label names.
+    match_rank = {"preferred_term": 0, "synonym": 1, "ontology_label": 2}
     rows.sort(key=lambda r: (r["label"].lower(), r["label"],
                              r["mapping_status"] != "MAPPED",
-                             r["match_type"] != "preferred_term",
+                             match_rank.get(r["match_type"], 9),
                              r["identifier"], r["preferred_term"]))
     fieldnames = ["label", "match_type", "identifier", "preferred_term",
                   "ontology_id", "mapping_status"]
