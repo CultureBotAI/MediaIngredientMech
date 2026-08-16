@@ -36,10 +36,13 @@ synonyms:
 - synonym_text: sodium selenite--water (1/5)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Na2SeO3·5H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#374/#334)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1413
-  media_count: 174
+  total_occurrences: 1458
+  media_count: 219
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -113,6 +116,17 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: MERGED_FROM
+  changes: 'Absorbed ''Na2SeO3·5H2O'' (#374/#334). ''Na2SeO3·5H2O'' and ''Na2SeO3
+    x 5 H2O'' are the same substance written two ways — `·` where the twin uses `
+    x ` — so the pair escaped dedup, and the loser was then grounded to the nearest
+    term lexical matching could reach: CHEBI:48843 (''disodium selenite''), which
+    does not carry the water its own label states. The #334 shadowing pattern. Found
+    by cross-checking CultureBotAI/CultureMech#272, which grounds these labels correctly.
+    Occurrences 1413/174 + 45/45 -> 1458/219.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 26970-82-1
   data_source: CultureBotHT/compounds_to_cas.csv

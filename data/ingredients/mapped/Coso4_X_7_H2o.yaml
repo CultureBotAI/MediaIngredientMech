@@ -1,8 +1,8 @@
-identifier: CHEBI:53470
+identifier: CHEBI:91244
 preferred_term: CoSO4 x 7 H2O
 ontology_mapping:
-  ontology_id: CHEBI:53470
-  ontology_label: cobalt(2+) sulfate
+  ontology_id: CHEBI:91244
+  ontology_label: cobalt(2+) sulfate heptahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -17,6 +17,13 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:53470's
       ChEBI formula ('Co.O4S') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#374/#334)
+    notes: 'Promoted from CHEBI:53470 (''cobalt(2+) sulfate'') to the specific hydrate
+      term CHEBI:91244 (''cobalt(2+) sulfate heptahydrate'') — MAPPING_SEMANTICS §3
+      step 1: the label names a hydrate, ChEBI has the term, so nothing needs minting
+      and no closeMatch question arises. The previous term carried no water while
+      the label states it. Found by cross-checking CultureBotAI/CultureMech#272 (#374/#334).'
 synonyms:
 - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
     Simple component'
@@ -102,6 +109,16 @@ curation_history:
     parent CHEBI:53470's ChEBI formula ('Co.O4S') — the mark of a value inherited
     from the parent rather than measured for this record. Water appended in ChEBI's
     own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: PROMOTED_TO_SPECIFIC_HYDRATE
+  changes: 'identifier/ontology_id CHEBI:53470 -> CHEBI:91244; Promoted from CHEBI:53470
+    (''cobalt(2+) sulfate'') to the specific hydrate term CHEBI:91244 (''cobalt(2+)
+    sulfate heptahydrate'') — MAPPING_SEMANTICS §3 step 1: the label names a hydrate,
+    ChEBI has the term, so nothing needs minting and no closeMatch question arises.
+    The previous term carried no water while the label states it. Found by cross-checking
+    CultureBotAI/CultureMech#272 (#374/#334).'
   llm_assisted: false
 kg_microbe_node_id: CHEBI:53470
 chemical_properties:

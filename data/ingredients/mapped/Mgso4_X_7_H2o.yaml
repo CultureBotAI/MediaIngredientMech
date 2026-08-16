@@ -86,10 +86,16 @@ synonyms:
 - synonym_text: magnesium sulfate--water (1/7)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: MgSO4·7H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#374/#334)
+- synonym_text: MgSO47H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#374/#334)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 3618
-  media_count: 112
+  total_occurrences: 4050
+  media_count: 165
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -206,6 +212,29 @@ curation_history:
     the residual MINERAL_SOURCE bucket was suppressed whenever any other target existed,
     which dropped the bulk cation from salts whose other role describes the anion
     (e.g. MgSO4).'
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: MERGED_FROM
+  changes: 'Absorbed ''MgSO4·7H2O'' (#374/#334). ''MgSO4·7H2O'' and ''MgSO4 x 7 H2O''
+    are the same substance written two ways — `·` where the twin uses ` x ` — so the
+    pair escaped dedup, and the loser was then grounded to the nearest term lexical
+    matching could reach: CHEBI:32599 (''magnesium sulfate''), which does not carry
+    the water its own label states. The #334 shadowing pattern. Found by cross-checking
+    CultureBotAI/CultureMech#272, which grounds these labels correctly. Occurrences
+    3618/112 + 431/52 -> 4049/164.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: MERGED_FROM
+  changes: 'Absorbed ''MgSO47H2O'' (#374/#334). ''MgSO47H2O'' and ''MgSO4 x 7 H2O''
+    are the same substance written two ways — no separator at all; already on the
+    correct term, so this is a duplicate identifier rather than a wrong one — so the
+    pair escaped dedup, and the loser was then grounded to the nearest term lexical
+    matching could reach: CHEBI:31795 (''magnesium sulfate heptahydrate''), which
+    does not carry the water its own label states. The #334 shadowing pattern. Found
+    by cross-checking CultureBotAI/CultureMech#272, which grounds these labels correctly.
+    Occurrences 4049/164 + 1/1 -> 4050/165.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 10034-99-8
   data_source: OAK/CHEBI xref

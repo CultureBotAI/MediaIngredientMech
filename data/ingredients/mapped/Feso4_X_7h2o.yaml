@@ -1,4 +1,4 @@
-identifier: CHEBI:75832
+identifier: CHEBI:75836
 preferred_term: FeSO4 x 7H2O
 ontology_mapping:
   ontology_id: CHEBI:75832
@@ -49,10 +49,10 @@ synonyms:
 - synonym_text: iron(2+) sulfate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 1
-  media_count: 1
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -116,6 +116,17 @@ curation_history:
     parent CHEBI:75832's ChEBI formula ('Fe.O4S') — the mark of a value inherited
     from the parent rather than measured for this record. Water appended in ChEBI's
     own dot-separated notation.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_hydrate_terms_and_twins
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:75836 ''FeSO4 x 7 H2O''; occurrences transferred. ''FeSO4
+    x 7H2O'' and ''FeSO4 x 7 H2O'' are the same substance written two ways — a missing
+    space before H2O — so the pair escaped dedup, and the loser was then grounded
+    to the nearest term lexical matching could reach: CHEBI:75832 (''iron(2+) sulfate
+    (anhydrous)''), which does not carry the water its own label states. The #334
+    shadowing pattern. Found by cross-checking CultureBotAI/CultureMech#272, which
+    grounds these labels correctly. Tombstoned REJECTED, SSSOM rows dropped.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 7720-78-7

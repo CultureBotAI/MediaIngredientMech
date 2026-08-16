@@ -1,6 +1,6 @@
 generation_date: '2026-08-07T06:56:58.113846+00:00'
 total_count: 2560
-mapped_count: 2519
+mapped_count: 2514
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.ingredient:mineral_solution_see_medium_no_976
@@ -51183,11 +51183,11 @@ ingredients:
     data_source: CultureBotHT compounds_to_cas.csv
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:53351
+- identifier: CHEBI:53442
   preferred_term: Chromium(III) Chloride Hexahydrate
   ontology_mapping:
-    ontology_id: CHEBI:53351
-    ontology_label: chromium(3+) trichloride
+    ontology_id: CHEBI:53442
+    ontology_label: chromium(3+) trichloride hexahydrate
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
@@ -51204,6 +51204,14 @@ ingredients:
         ChEBI formula ('3Cl.Cr') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#374/#334)
+      notes: 'Promoted from CHEBI:53351 (''chromium(3+) trichloride'') to the specific
+        hydrate term CHEBI:53442 (''chromium(3+) trichloride hexahydrate'') — MAPPING_SEMANTICS
+        §3 step 1: the label names a hydrate, ChEBI has the term, so nothing needs
+        minting and no closeMatch question arises. The previous term carried no water
+        while the label states it. Found by cross-checking CultureBotAI/CultureMech#272
+        (#374/#334).'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -51241,6 +51249,16 @@ ingredients:
       anhydrous parent CHEBI:53351's ChEBI formula ('3Cl.Cr') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: PROMOTED_TO_SPECIFIC_HYDRATE
+    changes: 'identifier/ontology_id CHEBI:53351 -> CHEBI:53442; Promoted from CHEBI:53351
+      (''chromium(3+) trichloride'') to the specific hydrate term CHEBI:53442 (''chromium(3+)
+      trichloride hexahydrate'') — MAPPING_SEMANTICS §3 step 1: the label names a
+      hydrate, ChEBI has the term, so nothing needs minting and no closeMatch question
+      arises. The previous term carried no water while the label states it. Found
+      by cross-checking CultureBotAI/CultureMech#272 (#374/#334).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 10025-73-7
@@ -54563,11 +54581,11 @@ ingredients:
         Simple component'
       curator_note: Widespread use in media formulations (23 occurrences). High confidence
         based on 'Defined component' property.
-- identifier: CHEBI:53470
+- identifier: CHEBI:91244
   preferred_term: CoSO4 x 7 H2O
   ontology_mapping:
-    ontology_id: CHEBI:53470
-    ontology_label: cobalt(2+) sulfate
+    ontology_id: CHEBI:91244
+    ontology_label: cobalt(2+) sulfate heptahydrate
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
@@ -54583,6 +54601,14 @@ ingredients:
         ChEBI formula ('Co.O4S') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#374/#334)
+      notes: 'Promoted from CHEBI:53470 (''cobalt(2+) sulfate'') to the specific hydrate
+        term CHEBI:91244 (''cobalt(2+) sulfate heptahydrate'') — MAPPING_SEMANTICS
+        §3 step 1: the label names a hydrate, ChEBI has the term, so nothing needs
+        minting and no closeMatch question arises. The previous term carried no water
+        while the label states it. Found by cross-checking CultureBotAI/CultureMech#272
+        (#374/#334).'
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic
       compound, Simple component'
@@ -54668,6 +54694,16 @@ ingredients:
       anhydrous parent CHEBI:53470's ChEBI formula ('Co.O4S') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: PROMOTED_TO_SPECIFIC_HYDRATE
+    changes: 'identifier/ontology_id CHEBI:53470 -> CHEBI:91244; Promoted from CHEBI:53470
+      (''cobalt(2+) sulfate'') to the specific hydrate term CHEBI:91244 (''cobalt(2+)
+      sulfate heptahydrate'') — MAPPING_SEMANTICS §3 step 1: the label names a hydrate,
+      ChEBI has the term, so nothing needs minting and no closeMatch question arises.
+      The previous term carried no water while the label states it. Found by cross-checking
+      CultureBotAI/CultureMech#272 (#374/#334).'
     llm_assisted: false
   kg_microbe_node_id: CHEBI:53470
   chemical_properties:
@@ -74994,10 +75030,13 @@ ingredients:
   - synonym_text: iron(2+) sulfate--water (1/7)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: FeSO4 x 7H2O
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM (#374/#334)
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 2295
-    media_count: 255
+    total_occurrences: 2296
+    media_count: 256
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -75111,6 +75150,17 @@ ingredients:
       so the recorded grade overstated. ontology_id is unchanged — the term is correct.
       The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_FROM
+    changes: 'Absorbed ''FeSO4 x 7H2O'' (#374/#334). ''FeSO4 x 7H2O'' and ''FeSO4
+      x 7 H2O'' are the same substance written two ways — a missing space before H2O
+      — so the pair escaped dedup, and the loser was then grounded to the nearest
+      term lexical matching could reach: CHEBI:75832 (''iron(2+) sulfate (anhydrous)''),
+      which does not carry the water its own label states. The #334 shadowing pattern.
+      Found by cross-checking CultureBotAI/CultureMech#272, which grounds these labels
+      correctly. Occurrences 2295/255 + 1/1 -> 2296/256.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7782-63-0
     data_source: PubChem (via CHEBI:75836)
@@ -75130,7 +75180,7 @@ ingredients:
         Simple component'
       curator_note: Widespread use in media formulations (2295 occurrences). High
         confidence based on 'Defined component' property.
-- identifier: CHEBI:75832
+- identifier: CHEBI:75836
   preferred_term: FeSO4 x 7H2O
   ontology_mapping:
     ontology_id: CHEBI:75832
@@ -75182,10 +75232,10 @@ ingredients:
   - synonym_text: iron(2+) sulfate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 1
-    media_count: 1
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -75249,6 +75299,17 @@ ingredients:
       anhydrous parent CHEBI:75832's ChEBI formula ('Fe.O4S') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_INTO
+    changes: 'Merged into CHEBI:75836 ''FeSO4 x 7 H2O''; occurrences transferred.
+      ''FeSO4 x 7H2O'' and ''FeSO4 x 7 H2O'' are the same substance written two ways
+      — a missing space before H2O — so the pair escaped dedup, and the loser was
+      then grounded to the nearest term lexical matching could reach: CHEBI:75832
+      (''iron(2+) sulfate (anhydrous)''), which does not carry the water its own label
+      states. The #334 shadowing pattern. Found by cross-checking CultureBotAI/CultureMech#272,
+      which grounds these labels correctly. Tombstoned REJECTED, SSSOM rows dropped.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 7720-78-7
@@ -107975,7 +108036,7 @@ ingredients:
     molecular_weight: 84.313
     data_source: ChEBI+PubChem
     retrieval_date: '2026-05-23T08:31:06.645018+00:00'
-- identifier: CHEBI:32599
+- identifier: CHEBI:31795
   preferred_term: MgSO4·7H2O
   ontology_mapping:
     ontology_id: CHEBI:32599
@@ -108058,10 +108119,10 @@ ingredients:
   - synonym_text: MgSO4 ·7H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 431
-    media_count: 52
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -108156,6 +108217,17 @@ ingredients:
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
     llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_INTO
+    changes: 'Merged into CHEBI:31795 ''MgSO4 x 7 H2O''; occurrences transferred.
+      ''MgSO4·7H2O'' and ''MgSO4 x 7 H2O'' are the same substance written two ways
+      — `·` where the twin uses ` x ` — so the pair escaped dedup, and the loser was
+      then grounded to the nearest term lexical matching could reach: CHEBI:32599
+      (''magnesium sulfate''), which does not carry the water its own label states.
+      The #334 shadowing pattern. Found by cross-checking CultureBotAI/CultureMech#272,
+      which grounds these labels correctly. Tombstoned REJECTED, SSSOM rows dropped.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7487-88-9
     data_source: OAK/CHEBI xref
@@ -108222,10 +108294,10 @@ ingredients:
   - synonym_text: magnesium sulfate--water (1/7)
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 1
-    media_count: 1
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -108288,6 +108360,18 @@ ingredients:
       a match to a known synonym, so the recorded grade overstated. ontology_id is
       unchanged — the term is correct. The SSSOM predicate is unaffected (both grades
       emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_INTO
+    changes: 'Merged into CHEBI:31795 ''MgSO4 x 7 H2O''; occurrences transferred.
+      ''MgSO47H2O'' and ''MgSO4 x 7 H2O'' are the same substance written two ways
+      — no separator at all; already on the correct term, so this is a duplicate identifier
+      rather than a wrong one — so the pair escaped dedup, and the loser was then
+      grounded to the nearest term lexical matching could reach: CHEBI:31795 (''magnesium
+      sulfate heptahydrate''), which does not carry the water its own label states.
+      The #334 shadowing pattern. Found by cross-checking CultureBotAI/CultureMech#272,
+      which grounds these labels correctly. Tombstoned REJECTED, SSSOM rows dropped.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 10034-99-8
@@ -108579,10 +108663,16 @@ ingredients:
   - synonym_text: magnesium sulfate--water (1/7)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: MgSO4·7H2O
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM (#374/#334)
+  - synonym_text: MgSO47H2O
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM (#374/#334)
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 3618
-    media_count: 112
+    total_occurrences: 4050
+    media_count: 165
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -108700,6 +108790,29 @@ ingredients:
       migration: the residual MINERAL_SOURCE bucket was suppressed whenever any other
       target existed, which dropped the bulk cation from salts whose other role describes
       the anion (e.g. MgSO4).'
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_FROM
+    changes: 'Absorbed ''MgSO4·7H2O'' (#374/#334). ''MgSO4·7H2O'' and ''MgSO4 x 7
+      H2O'' are the same substance written two ways — `·` where the twin uses ` x
+      ` — so the pair escaped dedup, and the loser was then grounded to the nearest
+      term lexical matching could reach: CHEBI:32599 (''magnesium sulfate''), which
+      does not carry the water its own label states. The #334 shadowing pattern. Found
+      by cross-checking CultureBotAI/CultureMech#272, which grounds these labels correctly.
+      Occurrences 3618/112 + 431/52 -> 4049/164.'
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_FROM
+    changes: 'Absorbed ''MgSO47H2O'' (#374/#334). ''MgSO47H2O'' and ''MgSO4 x 7 H2O''
+      are the same substance written two ways — no separator at all; already on the
+      correct term, so this is a duplicate identifier rather than a wrong one — so
+      the pair escaped dedup, and the loser was then grounded to the nearest term
+      lexical matching could reach: CHEBI:31795 (''magnesium sulfate heptahydrate''),
+      which does not carry the water its own label states. The #334 shadowing pattern.
+      Found by cross-checking CultureBotAI/CultureMech#272, which grounds these labels
+      correctly. Occurrences 4049/164 + 1/1 -> 4050/165.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10034-99-8
     data_source: OAK/CHEBI xref
@@ -109845,7 +109958,7 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
-- identifier: CHEBI:86360
+- identifier: CHEBI:86364
   preferred_term: MnSO4 x 1 H2O
   ontology_mapping:
     ontology_id: CHEBI:86360
@@ -109890,10 +110003,10 @@ ingredients:
   - synonym_text: manganese(2+) sulfate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 6
-    media_count: 6
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -109961,6 +110074,17 @@ ingredients:
       parent CHEBI:86360's ChEBI formula ('Mn.O4S') — the mark of a value inherited
       from the parent rather than measured for this record. Water appended in ChEBI's
       own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_INTO
+    changes: 'Merged into CHEBI:86364 ''MnSO4 x H2O''; occurrences transferred. ''MnSO4
+      x 1 H2O'' and ''MnSO4 x H2O'' are the same substance written two ways — an explicit
+      `1` where the twin omits it — so the pair escaped dedup, and the loser was then
+      grounded to the nearest term lexical matching could reach: CHEBI:86360 (''manganese(II)
+      sulfate''), which does not carry the water its own label states. The #334 shadowing
+      pattern. Found by cross-checking CultureBotAI/CultureMech#272, which grounds
+      these labels correctly. Tombstoned REJECTED, SSSOM rows dropped.'
     llm_assisted: false
   kg_microbe_node_id: CHEBI:86360
   chemical_properties:
@@ -110699,10 +110823,13 @@ ingredients:
   - synonym_text: manganese(2+) sulfate--water (1/1)
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: MnSO4 x 1 H2O
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM (#374/#334)
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 946
-    media_count: 102
+    total_occurrences: 952
+    media_count: 108
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -110793,6 +110920,17 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_FROM
+    changes: 'Absorbed ''MnSO4 x 1 H2O'' (#374/#334). ''MnSO4 x 1 H2O'' and ''MnSO4
+      x H2O'' are the same substance written two ways — an explicit `1` where the
+      twin omits it — so the pair escaped dedup, and the loser was then grounded to
+      the nearest term lexical matching could reach: CHEBI:86360 (''manganese(II)
+      sulfate''), which does not carry the water its own label states. The #334 shadowing
+      pattern. Found by cross-checking CultureBotAI/CultureMech#272, which grounds
+      these labels correctly. Occurrences 946/102 + 6/6 -> 952/108.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86364
   chemical_properties:
     cas_rn: 10034-96-5
@@ -120553,7 +120691,7 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
-- identifier: CHEBI:48843
+- identifier: CHEBI:131361
   preferred_term: Na2SeO3·5H2O
   ontology_mapping:
     ontology_id: CHEBI:48843
@@ -120595,10 +120733,10 @@ ingredients:
   - synonym_text: Na2SeO3・5H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 45
-    media_count: 45
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -120652,6 +120790,17 @@ ingredients:
       anhydrous parent CHEBI:48843's ChEBI formula ('2Na.O3Se') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_INTO
+    changes: 'Merged into CHEBI:131361 ''Na2SeO3 x 5 H2O''; occurrences transferred.
+      ''Na2SeO3·5H2O'' and ''Na2SeO3 x 5 H2O'' are the same substance written two
+      ways — `·` where the twin uses ` x ` — so the pair escaped dedup, and the loser
+      was then grounded to the nearest term lexical matching could reach: CHEBI:48843
+      (''disodium selenite''), which does not carry the water its own label states.
+      The #334 shadowing pattern. Found by cross-checking CultureBotAI/CultureMech#272,
+      which grounds these labels correctly. Tombstoned REJECTED, SSSOM rows dropped.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 10102-18-8
@@ -120707,10 +120856,13 @@ ingredients:
   - synonym_text: sodium selenite--water (1/5)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Na2SeO3·5H2O
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM (#374/#334)
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 1413
-    media_count: 174
+    total_occurrences: 1458
+    media_count: 219
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -120784,6 +120936,17 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: MERGED_FROM
+    changes: 'Absorbed ''Na2SeO3·5H2O'' (#374/#334). ''Na2SeO3·5H2O'' and ''Na2SeO3
+      x 5 H2O'' are the same substance written two ways — `·` where the twin uses
+      ` x ` — so the pair escaped dedup, and the loser was then grounded to the nearest
+      term lexical matching could reach: CHEBI:48843 (''disodium selenite''), which
+      does not carry the water its own label states. The #334 shadowing pattern. Found
+      by cross-checking CultureBotAI/CultureMech#272, which grounds these labels correctly.
+      Occurrences 1413/174 + 45/45 -> 1458/219.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 26970-82-1
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -128646,11 +128809,11 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:53001
+- identifier: CHEBI:53504
   preferred_term: NiSO4 x 7 H2O
   ontology_mapping:
-    ontology_id: CHEBI:53001
-    ontology_label: nickel sulfate
+    ontology_id: CHEBI:53504
+    ontology_label: nickel sulfate heptahydrate
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
@@ -128666,6 +128829,14 @@ ingredients:
         ChEBI formula ('Ni.O4S') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#374/#334)
+      notes: 'Promoted from CHEBI:53001 (''nickel sulfate'') to the specific hydrate
+        term CHEBI:53504 (''nickel sulfate heptahydrate'') — MAPPING_SEMANTICS §3
+        step 1: the label names a hydrate, ChEBI has the term, so nothing needs minting
+        and no closeMatch question arises. The previous term carried no water while
+        the label states it. Found by cross-checking CultureBotAI/CultureMech#272
+        (#374/#334).'
   synonyms:
   - synonym_text: NiSO4 . 6H2O
     synonym_type: HYDRATE_FORM
@@ -128757,6 +128928,16 @@ ingredients:
       anhydrous parent CHEBI:53001's ChEBI formula ('Ni.O4S') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: fix_hydrate_terms_and_twins
+    action: PROMOTED_TO_SPECIFIC_HYDRATE
+    changes: 'identifier/ontology_id CHEBI:53001 -> CHEBI:53504; Promoted from CHEBI:53001
+      (''nickel sulfate'') to the specific hydrate term CHEBI:53504 (''nickel sulfate
+      heptahydrate'') — MAPPING_SEMANTICS §3 step 1: the label names a hydrate, ChEBI
+      has the term, so nothing needs minting and no closeMatch question arises. The
+      previous term carried no water while the label states it. Found by cross-checking
+      CultureBotAI/CultureMech#272 (#374/#334).'
     llm_assisted: false
   chemical_properties:
     data_source: CultureBotHT/compounds_to_cas.csv
