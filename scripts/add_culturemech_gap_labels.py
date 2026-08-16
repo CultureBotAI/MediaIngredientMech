@@ -121,22 +121,31 @@ ISSUE = "#260"
 # edited here, and overridden locally so these rows are correct.
 SOURCE = {**OBJECT_SOURCE, "MICRO": "obo:micro.owl"}
 
-# label -> (term, ontology_label, source, quality, why)
+# `ingredient_type` is set explicitly on every record written here. Leaving it
+# unset was a review finding: `auto_classify_ingredient_type` only runs when
+# someone invokes it, so an unset value is not "pending", it is missing. The
+# values follow the corpus's own convention rather than the label's grammar —
+# `Rabbit blood`, `Horse serum` and `Filtered Seawater` are all UNDEFINED_MIXTURE
+# because a biological preparation has no defined composition, and `Brucella
+# agar` / `Bacto Tryptic Soy Agar` are UNDEFINED_MIXTURE because a compounded
+# medium built on peptone and yeast extract does not have one either.
+#
+# label -> (term, ontology_label, source, quality, ingredient_type, why)
 NEW = {
     "Neutral red": (
-        "CHEBI:86370", "neutral red", "CHEBI", "EXACT_MATCH",
+        "CHEBI:86370", "neutral red", "CHEBI", "EXACT_MATCH", "SINGLE_INGREDIENT",
         "the phenazine pH-indicator dye used in MacConkey-type and clostridial "
         "media. ChEBI names it exactly and no MIM record holds the term. "
         "CHEBI:86372 'neutral red base' and CHEBI:86373 'neutral red(1+)' are the "
         "free base and cation; media recipes weigh out the dye itself"),
     "Pyridoxine dihydrochloride": (
-        "CHEBI:189426", "Pyridoxine dihydrochloride", "CHEBI", "EXACT_MATCH",
+        "CHEBI:189426", "Pyridoxine dihydrochloride", "CHEBI", "EXACT_MATCH", "SINGLE_INGREDIENT",
         "a distinct ChEBI term from CHEBI:30961 'pyridoxine hydrochloride', which "
         "`Pyridoxine hydrochloride` already holds (1942 occurrences). The two are "
         "different salts of the same vitamer, so folding this label onto the "
         "mono-hydrochloride record would assert a stoichiometry the label denies"),
     "DL-Tyrosine": (
-        "CHEBI:18186", "tyrosine", "CHEBI", "CLOSE_MATCH",
+        "CHEBI:18186", "tyrosine", "CHEBI", "CLOSE_MATCH", "SINGLE_INGREDIENT",
         "ChEBI has no racemic tyrosine term — a search returns only derivatives "
         "(DL-tyrosine betaine, racemetirosine) — so the stereo-unspecified parent "
         "is the closest available, which is what the corpus's other 15 `DL-` "
@@ -147,17 +156,17 @@ NEW = {
         "which is what CultureMech asserts (CultureMech#276) — that silently "
         "discards the D-enantiomer"),
     "Defibrinated sheep blood": (
-        "MICRO:0001570", "defibrinated sheep blood", "MICRO", "EXACT_MATCH",
+        "MICRO:0001570", "defibrinated sheep blood", "MICRO", "EXACT_MATCH", "UNDEFINED_MIXTURE",
         "MICRO models the defibrinated preparation as its own class, separate "
         "from MICRO:0001230 'sheep blood'. Defibrination removes fibrin so the "
         "blood stays liquid in agar, so the preparation is the thing weighed out "
         "and the specific term is right under MAPPING_SEMANTICS §3 step 1"),
     "Defibrinated horse blood": (
-        "MICRO:0001572", "defibrinated horse blood", "MICRO", "EXACT_MATCH",
+        "MICRO:0001572", "defibrinated horse blood", "MICRO", "EXACT_MATCH", "UNDEFINED_MIXTURE",
         "as for sheep — MICRO has the defibrinated class distinct from "
         "MICRO:0001234 'horse blood'"),
     "R2A agar": (
-        "MICRO:0000543", "R2A agar", "MICRO", "EXACT_MATCH",
+        "MICRO:0000543", "R2A agar", "MICRO", "EXACT_MATCH", "UNDEFINED_MIXTURE",
         "Reasoner & Geldreich's low-nutrient agar for heterotrophic plate counts. "
         "A named medium, but MICRO has the class, so §3 step 1 grounds it rather "
         "than minting — matching `Brucella agar` (MICRO:0000595) and `Bacto "
@@ -278,7 +287,7 @@ def main(argv: list[str] | None = None) -> int:
             CONFIDENCE[grade], "", "", f"manual:{CURATOR}|{DATE}"]) + "\n")
 
     # ---- new records on ontology terms -------------------------------------
-    for label, (term, term_label, src, grade, why) in NEW.items():
+    for label, (term, term_label, src, grade, itype, why) in NEW.items():
         if label in by_label:
             skipped.append(f"{label}: a record already carries this label")
             continue
@@ -299,6 +308,7 @@ def main(argv: list[str] | None = None) -> int:
                 "evidence": [evidence(note)]},
             "synonyms": [],
             "mapping_status": "MAPPED",
+            "ingredient_type": itype,
             "occurrence_statistics": {"total_occurrences": 0, "media_count": 0},
             "curation_history": [history(
                 "CREATED_FROM_CULTUREMECH_GAP", note, new_status="MAPPED")],
@@ -337,7 +347,12 @@ def main(argv: list[str] | None = None) -> int:
         old = rec.get("identifier")
         rec["identifier"] = mint
         rec["mapping_status"] = "MAPPED"
-        rec["ingredient_type"] = "DEFINED_MEDIUM"
+        # UNDEFINED_MIXTURE, not DEFINED_MEDIUM: Marine 2216 is built on peptone
+        # and yeast extract, so its composition is not defined however precisely
+        # the recipe is published. Matches `Brucella agar` and `Bacto Tryptic Soy
+        # Agar`; DEFINED_MEDIUM in the corpus is reserved for media that really
+        # are chemically defined.
+        rec["ingredient_type"] = "UNDEFINED_MIXTURE"
         rec["ontology_mapping"] = {
             "ontology_id": mint, "ontology_label": label,
             "ontology_source": "kgmicrobe.ingredient",
