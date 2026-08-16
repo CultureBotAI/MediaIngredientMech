@@ -1,8 +1,8 @@
 identifier: CHEBI:40957
 preferred_term: Bicine
 ontology_mapping:
-  ontology_id: CHEBI:39065
-  ontology_label: bicine
+  ontology_id: CHEBI:40957
+  ontology_label: N,N-bis(2-hydroxyethyl)glycine
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -59,6 +59,15 @@ curation_history:
   action: MERGED_INTO
   changes: Merged into CHEBI:40957 'BICINE buffer'; occurrences transferred. Tombstoned
     REJECTED, SSSOM rows dropped (#320/#334).
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:39065 -> CHEBI:40957 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''BICINE buffer''. Provenance is unaffected:
+    what the record used to assert is in this history.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 150-25-4

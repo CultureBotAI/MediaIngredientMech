@@ -1,8 +1,8 @@
 identifier: CHEBI:17634
 preferred_term: Dextrose
 ontology_mapping:
-  ontology_id: CHEBI:4167
-  ontology_label: D-glucopyranose
+  ontology_id: CHEBI:17634
+  ontology_label: D-glucose
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -112,6 +112,15 @@ curation_history:
     cyclic pyranose form, a ring conformation the label does not name. Both records
     carry the same CAS 50-99-7 and the same formula C6H12O6. Tombstoned REJECTED,
     SSSOM rows dropped (#320/#334).
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:4167 -> CHEBI:17634 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''D-Glucose''. Provenance is unaffected:
+    what the record used to assert is in this history.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 50-99-7

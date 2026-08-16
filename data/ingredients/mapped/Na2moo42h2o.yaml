@@ -1,8 +1,8 @@
 identifier: CHEBI:75213
 preferred_term: Na2MoO4·2H2O
 ontology_mapping:
-  ontology_id: CHEBI:75215
-  ontology_label: sodium molybdate (anhydrous)
+  ontology_id: CHEBI:75213
+  ontology_label: sodium molybdate dihydrate
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -188,6 +188,15 @@ curation_history:
     CAS 10102-40-6 is registered by ChEBI against CHEBI:75213 ''sodium molybdate dihydrate''),
     so step 1 applied and the target identifier was already held. Tombstoned REJECTED,
     SSSOM rows dropped (#321).'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:75215 -> CHEBI:75213 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''Na2MoO4 x 2 H2O''. Provenance is unaffected:
+    what the record used to assert is in this history.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 10102-40-6
