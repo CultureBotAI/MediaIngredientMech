@@ -1,8 +1,8 @@
 identifier: CHEBI:39060
 preferred_term: ACES
 ontology_mapping:
-  ontology_id: CHEBI:39061
-  ontology_label: ACES
+  ontology_id: CHEBI:39060
+  ontology_label: N-(2-acetamido)-2-aminoethanesulfonic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -67,6 +67,15 @@ curation_history:
   action: MERGED_INTO
   changes: Merged into CHEBI:39060 'N-(2-acetamido)-2-aminoethanesulfonic acid'; occurrences
     transferred. Tombstoned REJECTED, SSSOM rows dropped (#320/#334).
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:39061 -> CHEBI:39060 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''N-(2-acetamido)-2-aminoethanesulfonic acid''.
+    Provenance is unaffected: what the record used to assert is in this history.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 7365-82-4

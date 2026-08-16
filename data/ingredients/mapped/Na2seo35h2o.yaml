@@ -1,8 +1,8 @@
 identifier: CHEBI:131361
 preferred_term: Na2SeO3·5H2O
 ontology_mapping:
-  ontology_id: CHEBI:48843
-  ontology_label: disodium selenite
+  ontology_id: CHEBI:131361
+  ontology_label: disodium selenite pentahydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -107,6 +107,15 @@ curation_history:
     selenite''), which does not carry the water its own label states. The #334 shadowing
     pattern. Found by cross-checking CultureBotAI/CultureMech#272, which grounds these
     labels correctly. Tombstoned REJECTED, SSSOM rows dropped.'
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:48843 -> CHEBI:131361 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''Na2SeO3 x 5 H2O''. Provenance is unaffected:
+    what the record used to assert is in this history.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 10102-18-8

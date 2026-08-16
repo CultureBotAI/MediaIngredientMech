@@ -1,4 +1,4 @@
-identifier: CHEBI:8150
+identifier: FOODON:03315720
 preferred_term: Bacto Soytone
 ontology_mapping:
   ontology_id: FOODON:03315720
@@ -84,6 +84,15 @@ curation_history:
     FOODON:03315720 "vegetable protein, hydrolyzed" this record was already merged
     into. Clears the dangling obsolete reference and empty ontology_label on this
     REJECTED tombstone.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REPOINTED_TOMBSTONE_IDENTIFIER
+  changes: identifier CHEBI:8150 -> FOODON:03315720 (#360). This record was merged
+    into 'Soy peptone' but kept its own old identifier, so a downstream lookup on
+    this label resolved to nothing live. The target is the one named in this record's
+    own MERGED_INTO entry; the chain was followed to the first live record. A tombstone
+    exists to keep the loser resolvable.
   llm_assisted: false
 kg_microbe_node_id: CHEBI:8150
 ingredient_type: SINGLE_INGREDIENT

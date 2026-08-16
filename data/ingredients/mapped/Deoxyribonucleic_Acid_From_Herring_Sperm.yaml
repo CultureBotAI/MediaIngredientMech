@@ -1,4 +1,4 @@
-identifier: CHEBI:16991
+identifier: kgmicrobe.ingredient:fish-sperm_dna
 preferred_term: Deoxyribonucleic acid from herring sperm
 synonyms:
 - synonym_text: Deoxyribonucleic acid from herring sperm
@@ -33,6 +33,15 @@ curation_history:
   previous_status: MAPPED
   new_status: REJECTED
   llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REPOINTED_TOMBSTONE_IDENTIFIER
+  changes: identifier CHEBI:16991 -> kgmicrobe.ingredient:fish-sperm_dna (#360). This
+    record was merged into 'Fish-Sperm DNA' but kept its own old identifier, so a
+    downstream lookup on this label resolved to nothing live. The target is the one
+    named in this record's own MERGED_INTO entry; the chain was followed to the first
+    live record. A tombstone exists to keep the loser resolvable.
+  llm_assisted: false
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:

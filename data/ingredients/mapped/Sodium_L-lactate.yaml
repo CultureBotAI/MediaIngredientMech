@@ -1,4 +1,4 @@
-identifier: CHEBI:867561
+identifier: CHEBI:232798
 preferred_term: Sodium L-lactate
 ontology_mapping:
   ontology_id: CHEBI:232798
@@ -73,6 +73,15 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REPOINTED_TOMBSTONE_IDENTIFIER
+  changes: identifier CHEBI:867561 -> CHEBI:232798 (#360). This record was merged
+    into 'Na-L-lactate' but kept its own old identifier, so a downstream lookup on
+    this label resolved to nothing live. The target is the one named in this record's
+    own MERGED_INTO entry; the chain was followed to the first live record. A tombstone
+    exists to keep the loser resolvable.
+  llm_assisted: false
 representative: CHEBI:232798
 chemical_properties:
   cas_rn: 867-56-1

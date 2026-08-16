@@ -1,8 +1,8 @@
 identifier: CHEBI:32142
 preferred_term: Sodium Citrate
 ontology_mapping:
-  ontology_id: CHEBI:53258
-  ontology_label: sodium citrate
+  ontology_id: CHEBI:32142
+  ontology_label: sodium citrate dihydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -143,6 +143,15 @@ curation_history:
   action: MERGED_INTO
   changes: Merged into CHEBI:32142 'Na3-citrate x 2 H2O'; its CAS 6132-04-3 denotes
     the dihydrate (#320). Tombstoned REJECTED, SSSOM rows dropped.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:53258 -> CHEBI:32142 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''Na3-citrate x 2 H2O''. Provenance is unaffected:
+    what the record used to assert is in this history.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 6132-04-3

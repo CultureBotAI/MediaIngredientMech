@@ -1,8 +1,8 @@
-identifier: CHEBI:61278
+identifier: CHEBI:66870
 preferred_term: Na2S2O4
 ontology_mapping:
-  ontology_id: CHEBI:61278
-  ontology_label: scutellarin
+  ontology_id: CHEBI:66870
+  ontology_label: sodium dithionite
   ontology_source: CHEBI
   mapping_quality: SYNONYM_MATCH
   evidence:
@@ -105,6 +105,24 @@ curation_history:
     a direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
     the recorded grade overstated. ontology_id is unchanged — the term is correct.
     The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REPOINTED_TOMBSTONE_IDENTIFIER
+  changes: identifier CHEBI:61278 -> CHEBI:66870 (#360). This record was merged into
+    'Sodium dithionite' but kept its own old identifier, so a downstream lookup on
+    this label resolved to nothing live. The target is the one named in this record's
+    own MERGED_INTO entry; the chain was followed to the first live record. A tombstone
+    exists to keep the loser resolvable.
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: fix_tombstone_pointers
+  action: REFRESHED_TOMBSTONE_ONTOLOGY_ID
+  changes: 'ontology_id CHEBI:61278 -> CHEBI:66870 (#360). The merge set identifier
+    and status but left ontology_mapping untouched, so this tombstone kept advertising
+    a term it no longer asserts — anything indexing by ontology_id routed through
+    it. Now agrees with the merge target ''Sodium dithionite''. Provenance is unaffected:
+    what the record used to assert is in this history.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 7775-14-6
