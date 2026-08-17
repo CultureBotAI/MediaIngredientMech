@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: Filtered Seawater
   synonym_type: RAW_TEXT
   source: culturebotht
+- synonym_text: Natural seawater (filtered, 95% strength)
+  synonym_type: RELATED_SYNONYM
+  source: CultureMech label unresolvable via label_index (#260)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -31,6 +34,17 @@ curation_history:
   curator: env_context_phase3_initial
   action: ANNOTATED
   changes: 'Added 1 environmental_context entries (issue #1, Phase 3 initial pass).'
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+  changes: 'Added ''Natural seawater (filtered, 95% strength)'' as a RELATED_SYNONYM
+    (#260): the filtered-seawater term with a dilution stated. `95% strength` is a
+    preparation detail belonging to the recipe, not a different substance, and no
+    ontology distinguishes seawater by dilution. CultureMech uses this surface form
+    and label_index did not contain it, so the lookup missed. No new record: MICRO:0001773
+    is this record''s identifier, and in MIM the identifier IS the ontology CURIE,
+    so a second record on it would be a duplicate primary key rather than added coverage.'
+  llm_assisted: false
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   2 CultureBot media; samples: Pro99 seawater, Pro99_seawater. No CAS-RN or CHEBI
   mapping available; curator review needed.'
@@ -43,6 +57,16 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: MICRO via OLS search
     notes: Auto-upgraded from 'UNMAPPED_0282'; match=label-exact
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Added ''Natural seawater (filtered, 95% strength)'' as a RELATED_SYNONYM
+      (#260): the filtered-seawater term with a dilution stated. `95% strength` is
+      a preparation detail belonging to the recipe, not a different substance, and
+      no ontology distinguishes seawater by dilution. CultureMech uses this surface
+      form and label_index did not contain it, so the lookup missed. No new record:
+      MICRO:0001773 is this record''s identifier, and in MIM the identifier IS the
+      ontology CURIE, so a second record on it would be a duplicate primary key rather
+      than added coverage.'
 ingredient_type: UNDEFINED_MIXTURE
 environmental_context:
 - environment_term: ENVO:00002149

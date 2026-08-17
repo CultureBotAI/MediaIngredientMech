@@ -1,8 +1,318 @@
 generation_date: '2026-08-07T06:56:58.113846+00:00'
-total_count: 2560
-mapped_count: 2514
+total_count: 2568
+mapped_count: 2522
 unmapped_count: 0
 ingredients:
+- identifier: kgmicrobe.ingredient:marine_broth_2216
+  preferred_term: Marine broth 2216
+  synonyms:
+  - synonym_text: Marine broth 2216
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.725141+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'broth')
+    llm_assisted: false
+  - timestamp: '2026-07-05T00:00:00+00:00'
+    curator: cbclaw_media_modeling_114
+    action: RECLASSIFY_INGREDIENT_TYPE
+    changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+      culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Marine_Broth_2216-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: - **Recommended mapping status:** `UNMAPPED` No
+      ontology CURIE was proposed. Recorded as provenance only — no grounding applied
+      from this run. Edison''s recommendations are deliberately conservative, and
+      a plausible identifier promoted by a mechanism that never decided anything is
+      what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+      or reject.'
+    llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: PROMOTED_TO_MAPPED
+    changes: 'UNMAPPED_0434 -> kgmicrobe.ingredient:marine_broth_2216 (FALLBACK_REGISTRY).
+      Minted under the #288 named-preparation convention (#260): the broth twin of
+      Marine Agar 2216, already in the corpus as an UNMAPPED record. Minted alongside
+      its agar rather than left unmapped: the two differ only by the gelling agent,
+      and splitting them would be arbitrary. Cross-reference: CultureMech:008094.
+      A CultureMech id cannot be the identifier — MIM''s primary key is an ontology
+      CURIE or a registry mint — so it is carried here as evidence.'
+    llm_assisted: false
+    previous_status: UNMAPPED
+    new_status: MAPPED
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:marine_broth_2216
+    ontology_label: Marine broth 2216
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Minted under the #288 named-preparation convention (#260): the broth
+        twin of Marine Agar 2216, already in the corpus as an UNMAPPED record. Minted
+        alongside its agar rather than left unmapped: the two differ only by the gelling
+        agent, and splitting them would be arbitrary. Cross-reference: CultureMech:008094.
+        A CultureMech id cannot be the identifier — MIM''s primary key is an ontology
+        CURIE or a registry mint — so it is carried here as evidence.'
+- identifier: kgmicrobe.ingredient:marine_agar_2216
+  preferred_term: Marine agar 2216
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:marine_agar_2216
+    ontology_label: Marine agar 2216
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Minted under the #288 named-preparation convention (#260): Difco/BD
+        Marine Agar 2216, ZoBell''s seawater formulation. MICRO has `ZoBell marine
+        agar` (MICRO:0000112) and `216L marine agar` (MICRO:0000064), but neither
+        is verified to be the 2216 formulation and grounding to a maybe-equivalent
+        named medium is how wrong identities enter. No ChEBI/FOODON term covers a
+        compounded medium either, so §3 step 3 mints it under the #288 convention,
+        as `Trace element solution see Medium No. 187` already is. Cross-reference:
+        CultureMech:007629. A CultureMech id cannot be the identifier — MIM''s primary
+        key is an ontology CURIE or a registry mint — so it is carried here as evidence.'
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: CREATED_FROM_CULTUREMECH_GAP
+    changes: 'kgmicrobe.ingredient:marine_agar_2216 -> kgmicrobe.ingredient:marine_agar_2216
+      (FALLBACK_REGISTRY). Minted under the #288 named-preparation convention (#260):
+      Difco/BD Marine Agar 2216, ZoBell''s seawater formulation. MICRO has `ZoBell
+      marine agar` (MICRO:0000112) and `216L marine agar` (MICRO:0000064), but neither
+      is verified to be the 2216 formulation and grounding to a maybe-equivalent named
+      medium is how wrong identities enter. No ChEBI/FOODON term covers a compounded
+      medium either, so §3 step 3 mints it under the #288 convention, as `Trace element
+      solution see Medium No. 187` already is. Cross-reference: CultureMech:007629.
+      A CultureMech id cannot be the identifier — MIM''s primary key is an ontology
+      CURIE or a registry mint — so it is carried here as evidence.'
+    llm_assisted: false
+    new_status: MAPPED
+  ingredient_type: UNDEFINED_MIXTURE
+- identifier: MICRO:0000543
+  preferred_term: R2A agar
+  ontology_mapping:
+    ontology_id: MICRO:0000543
+    ontology_label: R2A agar
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Created to cover a CultureMech label MIM could not resolve (#260): Reasoner
+        & Geldreich''s low-nutrient agar for heterotrophic plate counts. A named medium,
+        but MICRO has the class, so §3 step 1 grounds it rather than minting — matching
+        `Brucella agar` (MICRO:0000595) and `Bacto Tryptic Soy Agar` (MICRO:0000114).
+        MICRO:0000541 ''R2A medium'' is the broth; this label says agar. Cross-reference:
+        CultureMech:002706 (data/normalized_yaml/bacterial/r2a_agar.yaml).'
+  synonyms: []
+  mapping_status: MAPPED
+  ingredient_type: UNDEFINED_MIXTURE
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: CREATED_FROM_CULTUREMECH_GAP
+    changes: 'Created to cover a CultureMech label MIM could not resolve (#260): Reasoner
+      & Geldreich''s low-nutrient agar for heterotrophic plate counts. A named medium,
+      but MICRO has the class, so §3 step 1 grounds it rather than minting — matching
+      `Brucella agar` (MICRO:0000595) and `Bacto Tryptic Soy Agar` (MICRO:0000114).
+      MICRO:0000541 ''R2A medium'' is the broth; this label says agar. Cross-reference:
+      CultureMech:002706 (data/normalized_yaml/bacterial/r2a_agar.yaml).'
+    llm_assisted: false
+    new_status: MAPPED
+- identifier: MICRO:0001572
+  preferred_term: Defibrinated horse blood
+  ontology_mapping:
+    ontology_id: MICRO:0001572
+    ontology_label: defibrinated horse blood
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Created to cover a CultureMech label MIM could not resolve (#260): as
+        for sheep — MICRO has the defibrinated class distinct from MICRO:0001234 ''horse
+        blood''.'
+  synonyms: []
+  mapping_status: MAPPED
+  ingredient_type: UNDEFINED_MIXTURE
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: CREATED_FROM_CULTUREMECH_GAP
+    changes: 'Created to cover a CultureMech label MIM could not resolve (#260): as
+      for sheep — MICRO has the defibrinated class distinct from MICRO:0001234 ''horse
+      blood''.'
+    llm_assisted: false
+    new_status: MAPPED
+- identifier: MICRO:0001570
+  preferred_term: Defibrinated sheep blood
+  ontology_mapping:
+    ontology_id: MICRO:0001570
+    ontology_label: defibrinated sheep blood
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Created to cover a CultureMech label MIM could not resolve (#260): MICRO
+        models the defibrinated preparation as its own class, separate from MICRO:0001230
+        ''sheep blood''. Defibrination removes fibrin so the blood stays liquid in
+        agar, so the preparation is the thing weighed out and the specific term is
+        right under MAPPING_SEMANTICS §3 step 1.'
+  synonyms: []
+  mapping_status: MAPPED
+  ingredient_type: UNDEFINED_MIXTURE
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: CREATED_FROM_CULTUREMECH_GAP
+    changes: 'Created to cover a CultureMech label MIM could not resolve (#260): MICRO
+      models the defibrinated preparation as its own class, separate from MICRO:0001230
+      ''sheep blood''. Defibrination removes fibrin so the blood stays liquid in agar,
+      so the preparation is the thing weighed out and the specific term is right under
+      MAPPING_SEMANTICS §3 step 1.'
+    llm_assisted: false
+    new_status: MAPPED
+- identifier: CHEBI:18186
+  preferred_term: DL-Tyrosine
+  ontology_mapping:
+    ontology_id: CHEBI:18186
+    ontology_label: tyrosine
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Created to cover a CultureMech label MIM could not resolve (#260): ChEBI
+        has no racemic tyrosine term — a search returns only derivatives (DL-tyrosine
+        betaine, racemetirosine) — so the stereo-unspecified parent is the closest
+        available, which is what the corpus''s other 15 `DL-` records do (DL-aspartic
+        acid->CHEBI:22660, DL-methionine->CHEBI:16811). Graded CLOSE_MATCH, not the
+        EXACT those often use: the label names a racemate and the term does not distinguish
+        stereochemistry at all, so skos:closeMatch is the honest predicate. NOT CHEBI:17895
+        L-tyrosine, which is what CultureMech asserts (CultureMech#276) — that silently
+        discards the D-enantiomer.'
+  synonyms: []
+  mapping_status: MAPPED
+  ingredient_type: SINGLE_INGREDIENT
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: CREATED_FROM_CULTUREMECH_GAP
+    changes: 'Created to cover a CultureMech label MIM could not resolve (#260): ChEBI
+      has no racemic tyrosine term — a search returns only derivatives (DL-tyrosine
+      betaine, racemetirosine) — so the stereo-unspecified parent is the closest available,
+      which is what the corpus''s other 15 `DL-` records do (DL-aspartic acid->CHEBI:22660,
+      DL-methionine->CHEBI:16811). Graded CLOSE_MATCH, not the EXACT those often use:
+      the label names a racemate and the term does not distinguish stereochemistry
+      at all, so skos:closeMatch is the honest predicate. NOT CHEBI:17895 L-tyrosine,
+      which is what CultureMech asserts (CultureMech#276) — that silently discards
+      the D-enantiomer.'
+    llm_assisted: false
+    new_status: MAPPED
+- identifier: CHEBI:189426
+  preferred_term: Pyridoxine dihydrochloride
+  ontology_mapping:
+    ontology_id: CHEBI:189426
+    ontology_label: Pyridoxine dihydrochloride
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Created to cover a CultureMech label MIM could not resolve (#260): a
+        distinct ChEBI term from CHEBI:30961 ''pyridoxine hydrochloride'', which `Pyridoxine
+        hydrochloride` already holds (1942 occurrences). The two are different salts
+        of the same vitamer, so folding this label onto the mono-hydrochloride record
+        would assert a stoichiometry the label denies.'
+  synonyms: []
+  mapping_status: MAPPED
+  ingredient_type: SINGLE_INGREDIENT
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: CREATED_FROM_CULTUREMECH_GAP
+    changes: 'Created to cover a CultureMech label MIM could not resolve (#260): a
+      distinct ChEBI term from CHEBI:30961 ''pyridoxine hydrochloride'', which `Pyridoxine
+      hydrochloride` already holds (1942 occurrences). The two are different salts
+      of the same vitamer, so folding this label onto the mono-hydrochloride record
+      would assert a stoichiometry the label denies.'
+    llm_assisted: false
+    new_status: MAPPED
+- identifier: CHEBI:86370
+  preferred_term: Neutral red
+  ontology_mapping:
+    ontology_id: CHEBI:86370
+    ontology_label: neutral red
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Created to cover a CultureMech label MIM could not resolve (#260): the
+        phenazine pH-indicator dye used in MacConkey-type and clostridial media. ChEBI
+        names it exactly and no MIM record holds the term. CHEBI:86372 ''neutral red
+        base'' and CHEBI:86373 ''neutral red(1+)'' are the free base and cation; media
+        recipes weigh out the dye itself.'
+  synonyms: []
+  mapping_status: MAPPED
+  ingredient_type: SINGLE_INGREDIENT
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: CREATED_FROM_CULTUREMECH_GAP
+    changes: 'Created to cover a CultureMech label MIM could not resolve (#260): the
+      phenazine pH-indicator dye used in MacConkey-type and clostridial media. ChEBI
+      names it exactly and no MIM record holds the term. CHEBI:86372 ''neutral red
+      base'' and CHEBI:86373 ''neutral red(1+)'' are the free base and cation; media
+      recipes weigh out the dye itself.'
+    llm_assisted: false
+    new_status: MAPPED
 - identifier: kgmicrobe.ingredient:mineral_solution_see_medium_no_976
   preferred_term: Mineral solution see Medium No. 976
   synonyms:
@@ -47006,6 +47316,16 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: MICRO via OLS search
       notes: Auto-created from foodon_pass; label-exact (micro)
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Added ''Acid hydrolysate of casein'' as a EXACT_SYNONYM (#260): names
+        the hydrolysis route to the same product. Acid hydrolysis destroys tryptophan
+        where enzymatic does not, but MICRO has one casein-hydrolysate class and no
+        acid/enzymatic split, so this is a surface variant of it. CultureMech uses
+        this surface form and label_index did not contain it, so the lookup missed.
+        No new record: MICRO:0001366 is this record''s identifier, and in MIM the
+        identifier IS the ontology CURIE, so a second record on it would be a duplicate
+        primary key rather than added coverage.'
   mapping_status: MAPPED
   curation_history:
   - timestamp: '2026-05-01T19:55:09.676939+00:00'
@@ -47032,6 +47352,18 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE ->
       nutritional_roles.PROTEIN_SOURCE'
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+    changes: 'Added ''Acid hydrolysate of casein'' as a EXACT_SYNONYM (#260): names
+      the hydrolysis route to the same product. Acid hydrolysis destroys tryptophan
+      where enzymatic does not, but MICRO has one casein-hydrolysate class and no
+      acid/enzymatic split, so this is a surface variant of it. CultureMech uses this
+      surface form and label_index did not contain it, so the lookup missed. No new
+      record: MICRO:0001366 is this record''s identifier, and in MIM the identifier
+      IS the ontology CURIE, so a second record on it would be a duplicate primary
+      key rather than added coverage.'
+    llm_assisted: false
   ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
     total_occurrences: 0
@@ -47043,6 +47375,10 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  synonyms:
+  - synonym_text: Acid hydrolysate of casein
+    synonym_type: EXACT_SYNONYM
+    source: CultureMech label unresolvable via label_index (#260)
 - identifier: MICRO:0000606
   preferred_term: Casitone
   ontology_mapping:
@@ -75723,6 +76059,9 @@ ingredients:
   - synonym_text: Filtered Seawater
     synonym_type: RAW_TEXT
     source: culturebotht
+  - synonym_text: Natural seawater (filtered, 95% strength)
+    synonym_type: RELATED_SYNONYM
+    source: CultureMech label unresolvable via label_index (#260)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -75750,6 +76089,18 @@ ingredients:
     curator: env_context_phase3_initial
     action: ANNOTATED
     changes: 'Added 1 environmental_context entries (issue #1, Phase 3 initial pass).'
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+    changes: 'Added ''Natural seawater (filtered, 95% strength)'' as a RELATED_SYNONYM
+      (#260): the filtered-seawater term with a dilution stated. `95% strength` is
+      a preparation detail belonging to the recipe, not a different substance, and
+      no ontology distinguishes seawater by dilution. CultureMech uses this surface
+      form and label_index did not contain it, so the lookup missed. No new record:
+      MICRO:0001773 is this record''s identifier, and in MIM the identifier IS the
+      ontology CURIE, so a second record on it would be a duplicate primary key rather
+      than added coverage.'
+    llm_assisted: false
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 2 CultureBot media; samples: Pro99 seawater, Pro99_seawater. No CAS-RN or CHEBI
     mapping available; curator review needed.'
@@ -75762,6 +76113,16 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: MICRO via OLS search
       notes: Auto-upgraded from 'UNMAPPED_0282'; match=label-exact
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Added ''Natural seawater (filtered, 95% strength)'' as a RELATED_SYNONYM
+        (#260): the filtered-seawater term with a dilution stated. `95% strength`
+        is a preparation detail belonging to the recipe, not a different substance,
+        and no ontology distinguishes seawater by dilution. CultureMech uses this
+        surface form and label_index did not contain it, so the lookup missed. No
+        new record: MICRO:0001773 is this record''s identifier, and in MIM the identifier
+        IS the ontology CURIE, so a second record on it would be a duplicate primary
+        key rather than added coverage.'
   ingredient_type: UNDEFINED_MIXTURE
   environmental_context:
   - environment_term: ENVO:00002149
@@ -80399,6 +80760,16 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Added ''L-glutathione reduced'' as a EXACT_SYNONYM (#260): CHEBI:16856
+        ''glutathione'' IS the reduced form (GSH) — the record already lists `Reduced
+        glutathione` and `GSH`, and the oxidised form is a separate record on CHEBI:17858.
+        The `L-` and `reduced` qualifiers add nothing the term does not already fix.
+        CultureMech uses this surface form and label_index did not contain it, so
+        the lookup missed. No new record: CHEBI:16856 is this record''s identifier,
+        and in MIM the identifier IS the ontology CURIE, so a second record on it
+        would be a duplicate primary key rather than added coverage.'
   synonyms:
   - synonym_text: 'Cross-references: KEGG:gthrd'
     synonym_type: RAW_TEXT
@@ -80435,6 +80806,9 @@ ingredients:
   - synonym_text: L-Glutathione
     synonym_type: RAW_TEXT
     source: merged_record
+  - synonym_text: L-glutathione reduced
+    synonym_type: EXACT_SYNONYM
+    source: CultureMech label unresolvable via label_index (#260)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 13
@@ -80492,6 +80866,18 @@ ingredients:
       Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
       (#226). Source: mediadive.ingredient:2085.'
     llm_assisted: true
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+    changes: 'Added ''L-glutathione reduced'' as a EXACT_SYNONYM (#260): CHEBI:16856
+      ''glutathione'' IS the reduced form (GSH) — the record already lists `Reduced
+      glutathione` and `GSH`, and the oxidised form is a separate record on CHEBI:17858.
+      The `L-` and `reduced` qualifiers add nothing the term does not already fix.
+      CultureMech uses this surface form and label_index did not contain it, so the
+      lookup missed. No new record: CHEBI:16856 is this record''s identifier, and
+      in MIM the identifier IS the ontology CURIE, so a second record on it would
+      be a duplicate primary key rather than added coverage.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 70-18-8
     data_source: PubChem API
@@ -119937,6 +120323,17 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Added ''Sodium sulfide'' as a EXACT_SYNONYM (#260): the systematic name
+        of the formula this record already carries; the record''s own synonym list
+        has `disodium sulfide` and `sodium sulphide`. NOT CHEBI:85357, which CultureMech
+        asserts (CultureMech#276) — that term is 3-[(1E,4R)-4-hydroxycyclohex-2-en-1-ylidene]pyruvic
+        acid, an organic acid with no sodium and no sulfur. CultureMech uses this
+        surface form and label_index did not contain it, so the lookup missed. No
+        new record: CHEBI:76208 is this record''s identifier, and in MIM the identifier
+        IS the ontology CURIE, so a second record on it would be a duplicate primary
+        key rather than added coverage.'
   synonyms:
   - synonym_text: (used for reduction of the medium)
     synonym_type: RAW_TEXT
@@ -119976,6 +120373,9 @@ ingredients:
   - synonym_text: anhydrous sodium sulfide
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Sodium sulfide
+    synonym_type: EXACT_SYNONYM
+    source: CultureMech label unresolvable via label_index (#260)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 32
@@ -120055,6 +120455,19 @@ ingredients:
       EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
       known synonym, so the recorded grade overstated. ontology_id is unchanged —
       the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+    changes: 'Added ''Sodium sulfide'' as a EXACT_SYNONYM (#260): the systematic name
+      of the formula this record already carries; the record''s own synonym list has
+      `disodium sulfide` and `sodium sulphide`. NOT CHEBI:85357, which CultureMech
+      asserts (CultureMech#276) — that term is 3-[(1E,4R)-4-hydroxycyclohex-2-en-1-ylidene]pyruvic
+      acid, an organic acid with no sodium and no sulfur. CultureMech uses this surface
+      form and label_index did not contain it, so the lookup missed. No new record:
+      CHEBI:76208 is this record''s identifier, and in MIM the identifier IS the ontology
+      CURIE, so a second record on it would be a duplicate primary key rather than
+      added coverage.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 1313-82-2
@@ -141399,6 +141812,9 @@ ingredients:
   - synonym_text: Rabbit blood
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Defibrinated rabbit blood
+    synonym_type: RELATED_SYNONYM
+    source: CultureMech label unresolvable via label_index (#260)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -141423,6 +141839,19 @@ ingredients:
     changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'blood')
       (#323)
     llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+    changes: 'Added ''Defibrinated rabbit blood'' as a RELATED_SYNONYM (#260): MICRO
+      has `defibrinated sheep blood` and `defibrinated horse blood` as classes but
+      no rabbit equivalent, and MICRO:0001229 `rabbit blood` is already held here.
+      So unlike its sheep and horse siblings this one cannot become a record — the
+      granularity available in the ontology decides. CultureMech uses this surface
+      form and label_index did not contain it, so the lookup missed. No new record:
+      MICRO:0001229 is this record''s identifier, and in MIM the identifier IS the
+      ontology CURIE, so a second record on it would be a duplicate primary key rather
+      than added coverage.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1927); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -141435,6 +141864,17 @@ ingredients:
       source: MICRO via OLS search (resolve_unmapped)
       notes: Auto-upgraded from UNMAPPED_0505; matched via 'Rabbit blood' (name normalization);
         label-exact
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Added ''Defibrinated rabbit blood'' as a RELATED_SYNONYM (#260): MICRO
+        has `defibrinated sheep blood` and `defibrinated horse blood` as classes but
+        no rabbit equivalent, and MICRO:0001229 `rabbit blood` is already held here.
+        So unlike its sheep and horse siblings this one cannot become a record — the
+        granularity available in the ontology decides. CultureMech uses this surface
+        form and label_index did not contain it, so the lookup missed. No new record:
+        MICRO:0001229 is this record''s identifier, and in MIM the identifier IS the
+        ontology CURIE, so a second record on it would be a duplicate primary key
+        rather than added coverage.'
   ingredient_type: UNDEFINED_MIXTURE
 - identifier: MICRO:0002392
   preferred_term: Rabbit serum
@@ -143204,7 +143644,18 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. FEBA/Hans80 panels: Hans80metals.'
-  synonyms: []
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Added ''RbCl'' as a ABBREVIATION (#260): the molecular formula as a
+        surface form. The corpus routinely carries both (`Na2S`/`sodium sulfide`,
+        `Na2SO4`/`sodium sulfate`). CultureMech uses this surface form and label_index
+        did not contain it, so the lookup missed. No new record: CHEBI:78672 is this
+        record''s identifier, and in MIM the identifier IS the ontology CURIE, so
+        a second record on it would be a duplicate primary key rather than added coverage.'
+  synonyms:
+  - synonym_text: RbCl
+    synonym_type: ABBREVIATION
+    source: CultureMech label unresolvable via label_index (#260)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -143231,6 +143682,16 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+    changes: 'Added ''RbCl'' as a ABBREVIATION (#260): the molecular formula as a
+      surface form. The corpus routinely carries both (`Na2S`/`sodium sulfide`, `Na2SO4`/`sodium
+      sulfate`). CultureMech uses this surface form and label_index did not contain
+      it, so the lookup missed. No new record: CHEBI:78672 is this record''s identifier,
+      and in MIM the identifier IS the ontology CURIE, so a second record on it would
+      be a duplicate primary key rather than added coverage.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 7791-11-9
@@ -151624,6 +152085,16 @@ ingredients:
       notes: Commercial food mixture - FOODON is correct parent ontology. Soy peptone
         is an enzymatic hydrolysate of soybean protein; mapped to FOODON parent 'vegetable
         protein, hydrolyzed'. No exact FOODON term for soy peptone. CLOSE_MATCH.
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Added ''Peptic digest of soybean meal'' as a EXACT_SYNONYM (#260): the
+        USP/compendial descriptor for soy peptone — the same product the record already
+        lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone
+        peptone`. Names the manufacturing process rather than a different substance.
+        CultureMech uses this surface form and label_index did not contain it, so
+        the lookup missed. No new record: FOODON:03315720 is this record''s identifier,
+        and in MIM the identifier IS the ontology CURIE, so a second record on it
+        would be a duplicate primary key rather than added coverage.'
   synonyms:
   - synonym_text: Soy peptone
     synonym_type: EXACT_SYNONYM
@@ -151652,6 +152123,9 @@ ingredients:
   - synonym_text: Bacto Soytone
     synonym_type: CATALOG_VARIANT
     source: merge_from_CHEBI:8150
+  - synonym_text: Peptic digest of soybean meal
+    synonym_type: EXACT_SYNONYM
+    source: CultureMech label unresolvable via label_index (#260)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 47
@@ -151688,6 +152162,18 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE ->
       nutritional_roles.PROTEIN_SOURCE'
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+    changes: 'Added ''Peptic digest of soybean meal'' as a EXACT_SYNONYM (#260): the
+      USP/compendial descriptor for soy peptone — the same product the record already
+      lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`.
+      Names the manufacturing process rather than a different substance. CultureMech
+      uses this surface form and label_index did not contain it, so the lookup missed.
+      No new record: FOODON:03315720 is this record''s identifier, and in MIM the
+      identifier IS the ontology CURIE, so a second record on it would be a duplicate
+      primary key rather than added coverage.'
+    llm_assisted: false
   ingredient_type: UNDEFINED_MIXTURE
   merged:
   - CHEBI:8150
@@ -190611,7 +191097,21 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:threonine; '
-  synonyms: []
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#260)
+      notes: 'Added ''DL-threonine'' as a RELATED_SYNONYM (#260): the racemate under
+        the stereo-unspecified parent — the same treatment `DL-Tyrosine` gets in this
+        batch, except that CHEBI:26986 is already held by this record, so it is a
+        synonym rather than a new one. RELATED rather than EXACT because the racemate
+        is narrower than the parent. NOT CHEBI:16857 L-threonine, which CultureMech
+        asserts (CultureMech#276). CultureMech uses this surface form and label_index
+        did not contain it, so the lookup missed. No new record: CHEBI:26986 is this
+        record''s identifier, and in MIM the identifier IS the ontology CURIE, so
+        a second record on it would be a duplicate primary key rather than added coverage.'
+  synonyms:
+  - synonym_text: DL-threonine
+    synonym_type: RELATED_SYNONYM
+    source: CultureMech label unresolvable via label_index (#260)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -190651,6 +191151,19 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: add_culturemech_gap_labels
+    action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+    changes: 'Added ''DL-threonine'' as a RELATED_SYNONYM (#260): the racemate under
+      the stereo-unspecified parent — the same treatment `DL-Tyrosine` gets in this
+      batch, except that CHEBI:26986 is already held by this record, so it is a synonym
+      rather than a new one. RELATED rather than EXACT because the racemate is narrower
+      than the parent. NOT CHEBI:16857 L-threonine, which CultureMech asserts (CultureMech#276).
+      CultureMech uses this surface form and label_index did not contain it, so the
+      lookup missed. No new record: CHEBI:26986 is this record''s identifier, and
+      in MIM the identifier IS the ontology CURIE, so a second record on it would
+      be a duplicate primary key rather than added coverage.'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:

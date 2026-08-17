@@ -1,7 +1,7 @@
 # Unmapped Ingredients Index
-**Total Records**: 281
+**Total Records**: 280
 **Mapped**: 0 (0.0%)
-**Unmapped**: 270 (96.1%)
+**Unmapped**: 269 (96.1%)
 **Other statuses**: 11 (3.9%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 500
 
@@ -168,7 +168,6 @@
 | UNMAPPED_0432 | Man Rogosa Sharp broth | UNMAPPED | 0 |
 | UNMAPPED_0155 | Manganese-NTA | UNMAPPED | 0 |
 | UNMAPPED_0433 | Marine Broth | UNMAPPED | 0 |
-| UNMAPPED_0434 | Marine broth 2216 | UNMAPPED | 0 |
 | UNMAPPED_0436 | Meat infusion | UNMAPPED | 0 |
 | UNMAPPED_0443 | Methanol-utilizing bacteria medium B | UNMAPPED | 0 |
 | UNMAPPED_0233 | methyl 3-keto-a-D-glucopyranoside | UNMAPPED | 0 |

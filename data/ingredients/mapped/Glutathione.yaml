@@ -9,6 +9,16 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Added ''L-glutathione reduced'' as a EXACT_SYNONYM (#260): CHEBI:16856
+      ''glutathione'' IS the reduced form (GSH) — the record already lists `Reduced
+      glutathione` and `GSH`, and the oxidised form is a separate record on CHEBI:17858.
+      The `L-` and `reduced` qualifiers add nothing the term does not already fix.
+      CultureMech uses this surface form and label_index did not contain it, so the
+      lookup missed. No new record: CHEBI:16856 is this record''s identifier, and
+      in MIM the identifier IS the ontology CURIE, so a second record on it would
+      be a duplicate primary key rather than added coverage.'
 synonyms:
 - synonym_text: 'Cross-references: KEGG:gthrd'
   synonym_type: RAW_TEXT
@@ -45,6 +55,9 @@ synonyms:
 - synonym_text: L-Glutathione
   synonym_type: RAW_TEXT
   source: merged_record
+- synonym_text: L-glutathione reduced
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech label unresolvable via label_index (#260)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 13
@@ -102,6 +115,18 @@ curation_history:
     Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
     (#226). Source: mediadive.ingredient:2085.'
   llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+  changes: 'Added ''L-glutathione reduced'' as a EXACT_SYNONYM (#260): CHEBI:16856
+    ''glutathione'' IS the reduced form (GSH) — the record already lists `Reduced
+    glutathione` and `GSH`, and the oxidised form is a separate record on CHEBI:17858.
+    The `L-` and `reduced` qualifiers add nothing the term does not already fix. CultureMech
+    uses this surface form and label_index did not contain it, so the lookup missed.
+    No new record: CHEBI:16856 is this record''s identifier, and in MIM the identifier
+    IS the ontology CURIE, so a second record on it would be a duplicate primary key
+    rather than added coverage.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 70-18-8
   data_source: PubChem API

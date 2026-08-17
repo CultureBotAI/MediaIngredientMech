@@ -1,6 +1,6 @@
 # Mapped Ingredients Index
-**Total Records**: 2560
-**Mapped**: 2514 (98.2%)
+**Total Records**: 2568
+**Mapped**: 2522 (98.2%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 46 (1.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 127,462
@@ -11,6 +11,14 @@
 
 | Identifier | Preferred Term | Ontology ID | Source | Quality | Occurrences |
 |---|---|---|---|---|---|
+| kgmicrobe.ingredient:marine_broth_2216 | Marine broth 2216 | kgmicrobe.ingredient:marine_broth_2216 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:marine_agar_2216 | Marine agar 2216 | kgmicrobe.ingredient:marine_agar_2216 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| MICRO:0000543 | R2A agar | MICRO:0000543 | MICRO | EXACT_MATCH | 0 |
+| MICRO:0001572 | Defibrinated horse blood | MICRO:0001572 | MICRO | EXACT_MATCH | 0 |
+| MICRO:0001570 | Defibrinated sheep blood | MICRO:0001570 | MICRO | EXACT_MATCH | 0 |
+| CHEBI:18186 | DL-Tyrosine | CHEBI:18186 | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:189426 | Pyridoxine dihydrochloride | CHEBI:189426 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:86370 | Neutral red | CHEBI:86370 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:mineral_solution_see_medium_no_976 | Mineral solution see Medium No. 976 | kgmicrobe.ingredient:mineral_solution_see_medium_no_976 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:1_butanol_co2 | 1-butanol+CO2 | kgmicrobe.ingredient:1_butanol_co2 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:1_propanol_co2 | 1-propanol+CO2 | kgmicrobe.ingredient:1_propanol_co2 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
