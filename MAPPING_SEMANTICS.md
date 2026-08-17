@@ -354,7 +354,7 @@ So:
 | `skos:exactMatch` / `skos:closeMatch` | **renamed** to MIM's `subject_label` |
 | `skos:narrowMatch` / `skos:broadMatch` | keeps its label; MIM's term added as a synonym, and a parent/child edge is emitted |
 
-**2,805 of 2,947 rows are symmetric, and 834 carry a label that differs from the
+**2,805 of 2,946 rows are symmetric, and 835 carry a label that differs from the
 ontology's** — every one renames a node. That is deliberate: a recipe says `KOH`,
 not "potassium hydroxide", and MIM is the naming authority for media
 ingredients. But it makes `preferred_term` quality load-bearing in a way it was
@@ -363,6 +363,12 @@ not before. A typo in a MIM label becomes the KG's name for that term.
 **Consequence for grading.** Over-grading is no longer a private inaccuracy. A
 record graded `EXACT_MATCH` against a class term both asserts a false identity
 *and* renames the class — the doubled harm behind #322 and #317.
+
+That cuts both ways, so check before regrading in bulk: an `EXACT_MATCH` to a
+class term is correct when the MIM record **is** that class. `Aromatic
+hydrocarbon` → `CHEBI:33658 "arene"` is one such row, and it does rename the
+ChEBI class downstream — deliberately, since MIM is the naming authority and
+`aromatic hydrocarbon` is the more recognisable name for `arene`.
 
 ### The asymmetric predicates do not follow SKOS, and downstream compensates
 
