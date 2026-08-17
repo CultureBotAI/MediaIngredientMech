@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-17T18:34:13.144930+00:00
+Generated: 2026-08-17T21:55:37.931179+00:00
 Total: 2848 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -541,7 +541,7 @@ Total: 2848 ingredients
 | CHEBI:49474 | CHEBI:49474 | argon | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:2825 | CHEBI:2825 | Aristolochic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33655 | CHEBI:33655 | Aromatic compound | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.compound:aromatic_hydrocarbon | CHEBI:33848 | Aromatic hydrocarbon | MAPPED | CHEBI | BROAD_MATCH | 0 |
+| CHEBI:33658 | CHEBI:33658 | Aromatic hydrocarbon | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:29125 | CHEBI:29125 | Arsenate | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | cas:13902-54-0 | cas:13902-54-0 | Artepaulin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0001647 | MICRO:0001647 | Artificial Sea Salt | MAPPED | MICRO | LEXICAL_MATCH | 0 |

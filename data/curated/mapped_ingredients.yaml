@@ -35868,13 +35868,13 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
-- identifier: kgmicrobe.compound:aromatic_hydrocarbon
+- identifier: CHEBI:33658
   preferred_term: Aromatic hydrocarbon
   ontology_mapping:
-    ontology_id: CHEBI:33848
-    ontology_label: polycyclic arene
+    ontology_id: CHEBI:33658
+    ontology_label: arene
     ontology_source: CHEBI
-    mapping_quality: BROAD_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: LEXICAL_MATCH
       source: kgm-metatraits
@@ -35887,6 +35887,22 @@ ingredients:
         arene''. EXACT_MATCH therefore asserted an identity the pair does not have.
         Re-graded because the record is BROADER than the term: benzene is an aromatic
         hydrocarbon and is not a polycyclic arene, so narrowMatch would be backwards.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (SSSOM delivery review)
+      notes: 'Regrounded CHEBI:33848 (kgmicrobe.compound:aromatic_hydrocarbon) ->
+        CHEBI:33658 ''arene''. CHEBI:33658 is defined as ''Any monocyclic or polycyclic
+        aromatic hydrocarbon'', which is exactly what this record names; CHEBI:33848
+        ''polycyclic arene'' is a proper subset of it. The old shape asserted skos:broadMatch
+        — the corpus''s only one — and kg-microbe''s consolidator reads narrowMatch
+        and broadMatch identically as ''the MIM subject is NARROWER than the object'',
+        so it published this record as a CHILD of polycyclic arene: backwards, and
+        chemically false. The record''s own history carried both readings, the regrade
+        calling it broader and the mint that followed calling it narrower. Grounding
+        at the term that actually denotes it makes the mapping symmetric and true,
+        which removes the disagreement rather than arguing about direction, and retires
+        a registry mint the record never needed — a mint gives identity to a record
+        NARROWER than every available term. Not a #322 class overstatement: both sides
+        are the same class.'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -35924,6 +35940,24 @@ ingredients:
       §3 forbids expressing a more specific thing by sharing a broader term's identifier.
       Minted per step 3. (#322) Required by SSSOM Rule B1 once the mapping was re-graded
       to narrow/broad.
+    llm_assisted: false
+  - timestamp: '2026-08-18T00:00:00+00:00'
+    curator: reground_aromatic_hydrocarbon
+    action: REGROUNDED_TO_DENOTING_TERM
+    changes: 'Regrounded CHEBI:33848 (kgmicrobe.compound:aromatic_hydrocarbon) ->
+      CHEBI:33658 ''arene''. CHEBI:33658 is defined as ''Any monocyclic or polycyclic
+      aromatic hydrocarbon'', which is exactly what this record names; CHEBI:33848
+      ''polycyclic arene'' is a proper subset of it. The old shape asserted skos:broadMatch
+      — the corpus''s only one — and kg-microbe''s consolidator reads narrowMatch
+      and broadMatch identically as ''the MIM subject is NARROWER than the object'',
+      so it published this record as a CHILD of polycyclic arene: backwards, and chemically
+      false. The record''s own history carried both readings, the regrade calling
+      it broader and the mint that followed calling it narrower. Grounding at the
+      term that actually denotes it makes the mapping symmetric and true, which removes
+      the disagreement rather than arguing about direction, and retires a registry
+      mint the record never needed — a mint gives identity to a record NARROWER than
+      every available term. Not a #322 class overstatement: both sides are the same
+      class.'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:29125

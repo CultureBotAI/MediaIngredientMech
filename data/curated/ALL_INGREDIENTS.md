@@ -542,7 +542,7 @@
 | CHEBI:49474 | argon | CHEBI:49474 | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:2825 | Aristolochic Acid | CHEBI:2825 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33655 | Aromatic compound | CHEBI:33655 | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.compound:aromatic_hydrocarbon | Aromatic hydrocarbon | CHEBI:33848 | CHEBI | BROAD_MATCH | 0 |
+| CHEBI:33658 | Aromatic hydrocarbon | CHEBI:33658 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:29125 | Arsenate | CHEBI:29125 | CHEBI | SYNONYM_MATCH | 1 |
 | cas:13902-54-0 | Artepaulin | cas:13902-54-0 | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0001647 | Artificial Sea Salt | MICRO:0001647 | MICRO | LEXICAL_MATCH | 0 |
