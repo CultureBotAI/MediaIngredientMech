@@ -24,13 +24,52 @@ record (#232).
 Rows for one label are contiguous and ordered most-significant-first. A consumer
 takes the first and stops. The order is:
 
+0. **Ownership.** A row whose `match_type` is `preferred_term` — i.e. a record
+   whose own name IS this label — outranks everything, including status.
 1. `MAPPED` before any other status
 2. `preferred_term`, then `synonym`, then `ontology_label`
 3. `identifier`, then `preferred_term` — a deterministic tie-break, because
    `identifier` is not unique across records (tombstones share the winner's)
+4. `label` (the raw, case-preserving string) — final tie-break only
 
 Note (1) outranks (2): a live record's `ontology_label` beats a tombstone's
 `synonym`. That is deliberate.
+
+**Why (0) sits above (1).** A record that owns the label makes a claim about
+exactly that string; a synonym or term-label on a *different* record is a weaker
+claim about something else. A tombstone still resolves — see the next section —
+so preferring it over an unrelated live record loses nothing. Without rule (0),
+`FeSO4 x 7H2O` resolved to `CHEBI:75832` *FeSO4 x 5 H2O*: a heptahydrate label
+answered with the pentahydrate. `MnSO4 x 1 H2O` and `NiCl2 x 6 H2O` failed the
+same way.
+
+Rule (0) is narrower than "match_type beats status" on purpose. Promoting
+`match_type` wholesale would also let a tombstone's `synonym` beat a live
+record's `ontology_label`, which sent `EDTA disodium salt (anhydrous)` back to
+the rejected dihydrate. Only rank 0 jumps the queue.
+
+**Why (4) sits last.** It used to sort second, above every semantic key, so
+among case variants of one label plain ASCII picked the winner and uppercase
+won: `FRUCTOSE` (a synonym on *Fructooligosaccharides (FOS)*) outranked
+`Fructose`, the owning record, and `ASPARAGINE`/`CYSTEINE` returned the
+L-enantiomer for a stereo-unspecified label. 16 labels resolved to the wrong
+record. Grouping is by lowercased label, so contiguity never depended on
+sorting the raw string early.
+
+These rules are pinned by `tests/test_label_index_precedence.py`, which builds
+records in memory — asserting against the published CSV would pass trivially
+after any regeneration.
+
+### Residual ambiguity this does NOT resolve
+
+336 labels still map to more than one identifier. Precedence now answers every
+one where a record *owns* the label (96 of them, previously 80). The other 240
+are labels no record claims as its `preferred_term` — typically a systematic
+name carried as a synonym by several salts or hydrates of one parent, e.g.
+`(2R)-2,3-dihydroxypropyl dihydrogen phosphate` on both the lithium and
+bis(cyclohexylammonium) salts of sn-glycerol 3-phosphate. For those the first
+row is a deterministic but arbitrary pick among near-equivalent answers.
+Tracked in #232; do not read a first row as "unambiguous".
 
 ## `mapping_status: REJECTED` does not mean "no answer"
 
