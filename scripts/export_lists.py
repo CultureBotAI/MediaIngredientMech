@@ -40,6 +40,13 @@ def _ontology_id(ing: dict) -> str:
     return (ing.get("ontology_mapping") or {}).get("ontology_id", "") or ""
 
 
+def _molecular_formula(ing: dict) -> str:
+    """Used only to decide whether two records competing for one label are the
+    same substance (#232). Absent on ~a third of records, which is why
+    `unresolved:*` exists as a verdict rather than defaulting to agreement."""
+    return (ing.get("chemical_properties") or {}).get("molecular_formula", "") or ""
+
+
 def _ontology_label(ing: dict) -> str:
     """The mapped term's own label, e.g. `potassium hydroxide` for the record `KOH`."""
     return (ing.get("ontology_mapping") or {}).get("ontology_label", "") or ""
@@ -307,8 +314,49 @@ def export_label_index(ingredients: list[dict], output_path: Path):
                              r["mapping_status"] != "MAPPED",
                              match_rank.get(r["match_type"], 9),
                              r["identifier"], r["preferred_term"], r["label"]))
+    # --- ambiguity verdict, per LABEL (#232) ------------------------------
+    # `take the first row` is a promise the index cannot keep for every label:
+    # 167 labels are carried as a synonym by records that are NOT the same
+    # substance, so an arbitrary first row hands a consumer the wrong compound.
+    # The partition below says which case a label is, so a consumer can refuse
+    # the ones that are genuinely undecided instead of trusting all of them
+    # equally. Nothing is suppressed and no curation is deleted — the ambiguity
+    # is published rather than resolved by guess.
+    formula_of = {ing.get("identifier", ""): _molecular_formula(ing)
+                  for ing in ingredients}
+    groups: dict[str, list[dict]] = {}
+    for r in rows:
+        groups.setdefault(r["label"].strip().lower(), []).append(r)
+
+    def _verdict(group: list[dict]) -> str:
+        ids = {r["identifier"] for r in group}
+        if len(ids) < 2:
+            return "unique"
+        # A record whose own name IS the label answers it, and the sort above
+        # puts it first. Without this, 97 correctly-resolved labels — `Citric
+        # acid`, which CHEBI:30769 owns — would be marked untrustworthy.
+        if any(r["match_type"] == "preferred_term" for r in group):
+            return "resolved:owned"
+        formulas = [formula_of.get(i, "") for i in sorted(ids)]
+        known = {f for f in formulas if f}
+        if not known:
+            return "unresolved:no_chemistry"
+        if len(known) > 1:
+            return "conflict:different_substances"
+        if all(formulas):
+            return "agree:same_substance"
+        return "unresolved:partial_chemistry"
+
+    for label_key, group in groups.items():
+        v = _verdict(group)
+        for r in group:
+            r["ambiguity"] = v
+
+    # Appended last so a consumer indexing columns positionally keeps working
+    # and one reading by header name picks it up — same rule as the synonyms
+    # column in #229.
     fieldnames = ["label", "match_type", "identifier", "preferred_term",
-                  "ontology_id", "mapping_status"]
+                  "ontology_id", "mapping_status", "ambiguity"]
     with open(output_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()

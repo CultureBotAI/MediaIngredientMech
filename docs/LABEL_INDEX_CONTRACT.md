@@ -18,6 +18,7 @@ record (#232).
 | `preferred_term` | the record's own name, for display and debugging |
 | `ontology_id` | the mapped term; empty for unmapped records |
 | `mapping_status` | see below — do **not** filter on this naively |
+| `ambiguity` | whether the first row can be trusted for this label — see below |
 
 ## Precedence: take the FIRST row for a label
 
@@ -59,6 +60,42 @@ sorting the raw string early.
 These rules are pinned by `tests/test_label_index_precedence.py`, which builds
 records in memory — asserting against the published CSV would pass trivially
 after any regeneration.
+
+## `ambiguity` — when *take the first row* does not hold
+
+Precedence answers every label a record **owns**. It cannot answer a label no
+record claims, where the first row is a deterministic but arbitrary pick among
+competitors. This column says which case you are in, so the 2% that are
+genuinely undecided can be refused rather than trusted like the rest.
+
+| value | labels | meaning |
+|---|---:|---|
+| `unique` | 8,052 | one identifier. Nothing to choose. |
+| `resolved:owned` | 97 | several identifiers, but a record's own `preferred_term` **is** this label, and it sorts first. Trust it. |
+| `agree:same_substance` | 12 | competitors have the **same molecular formula** — one substance, modelled twice (e.g. `L-Cysteine` and `L-cysteine zwitterion`, both C3H7NO2S). Either pick is right. |
+| `conflict:different_substances` | **167** | competitors have **different formulas**. The first row may be the wrong compound. |
+| `unresolved:partial_chemistry` | 32 | only one competitor has a formula, so it could not be decided. |
+| `unresolved:no_chemistry` | 8 | no competitor has a formula (mixtures, environmental terms, registry mints). |
+
+**Treat `conflict:different_substances` as "this label does not identify one
+substance".** It is the salt-inheritance pattern: a free acid's systematic name
+is carried as a synonym by its salts, so asking for the acid can hand you a
+salt.
+
+```
+(2S)-2-aminobutanedioic acid   CHEBI:17053      C4H7NO4     L-Aspartic acid
+                               cas:1115-63-5    C4H6KNO4    L-Aspartic acid potassium salt
+                               cas:323194-76-9  C4H8NNaO5   L-Aspartic acid sodium salt monohydrate
+```
+
+Nothing is suppressed and no curation was deleted — the ambiguity is published
+rather than resolved by guess. Which of the competitors a given recipe means is
+a curation question, tracked in #232.
+
+Note the verdict is per **label**, so every row sharing a label carries the same
+value. `unresolved:*` means *we could not check*, not *they agree* — a third of
+records carry no formula, and defaulting those to agreement would have blessed
+exactly the collisions this column exists to expose.
 
 ### Residual ambiguity this does NOT resolve
 
