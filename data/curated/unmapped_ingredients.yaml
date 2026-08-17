@@ -1,8 +1,67 @@
 generation_date: '2026-08-07T06:56:58.922489+00:00'
-total_count: 280
+total_count: 281
 mapped_count: 0
-unmapped_count: 269
+unmapped_count: 270
 ingredients:
+- identifier: UNMAPPED_0818
+  preferred_term: X
+  synonyms:
+  - synonym_text: X
+    synonym_type: RAW_TEXT
+    source: culturebotht
+  mapping_status: UNMAPPED
+  occurrence_statistics:
+    total_occurrences: 101
+    media_count: 101
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_AS_UNMAPPED
+    changes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+      in 101 CultureBot media; samples: Wolfe''s mineral mix, Wolfe''s mineral mix_minus_Nitrilotriacetic_acid,
+      Wolfe''s vitamin mix…. No CAS-RN or CHEBI mapping available; curator review
+      needed.'
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T00:41:18.478989+00:00'
+    curator: resolve_unmapped
+    action: AUTO_UPGRADE_TO_NCIT
+    changes: primary UNMAPPED_0256 → NCIT:C189218 via name normalization to 'X'
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.253852+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (NCIT primary (pharmaceutical))
+    llm_assisted: false
+  - timestamp: '2026-08-17T00:00:00+00:00'
+    curator: demote_alphabet_letter_mapping
+    action: DEMOTED_NON_SUBSTANCE_MAPPING
+    previous_status: MAPPED
+    new_status: UNMAPPED
+    changes: 'identifier NCIT:C189218 -> UNMAPPED_0818; ontology_mapping removed.
+      Unmapped from NCIT:C189218 (#356). The term''s definition is ''The 24th letter
+      of the English alphabet'' — it is not a substance, so this record published
+      a meaningless node at EXACT_MATCH confidence across 101 occurrences. The grade
+      was not wrong about the STRING: the record label and the term label are both
+      ''X'', which is how a name-normalisation pass produced it from UNMAPPED_0256.
+      Nothing in that path checked the result was a chemical. What ''X'' denotes is
+      still unknown and is deliberately not guessed here — it needs source archaeology
+      in the CultureBot media that use it. UNMAPPED states that honestly; the previous
+      mapping is retained in this history.'
+    llm_assisted: false
+  notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
+    in 101 CultureBot media; samples: Wolfe''s mineral mix, Wolfe''s mineral mix_minus_Nitrilotriacetic_acid,
+    Wolfe''s vitamin mix…. No CAS-RN or CHEBI mapping available; curator review needed.
+    Unmapped from NCIT:C189218 (#356). The term''s definition is ''The 24th letter
+    of the English alphabet'' — it is not a substance, so this record published a
+    meaningless node at EXACT_MATCH confidence across 101 occurrences. The grade was
+    not wrong about the STRING: the record label and the term label are both ''X'',
+    which is how a name-normalisation pass produced it from UNMAPPED_0256. Nothing
+    in that path checked the result was a chemical. What ''X'' denotes is still unknown
+    and is deliberately not guessed here — it needs source archaeology in the CultureBot
+    media that use it. UNMAPPED states that honestly; the previous mapping is retained
+    in this history.'
+  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0196
   preferred_term: 2-Carene-3-One
   synonyms:

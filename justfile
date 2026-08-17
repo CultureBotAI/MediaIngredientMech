@@ -399,8 +399,20 @@ knowledge-gap-scan *args: (_require-claw "kg_microbe_kgscan")
 export-lists:
     uv run python scripts/export_lists.py
 
+# Regenerate the curated index artifacts under data/curated/:
+#   {mapped,unmapped,all}_ingredients_index.{csv,json}
+#   {MAPPED,UNMAPPED,ALL}_INGREDIENTS.md
+#
+# Same defect as export-lists above, found again in #380: reachable from no
+# recipe and no CI job, so it ran only when a curator remembered — and it had
+# already gone stale, still advertising `UNMAPPED_0434 | Marine broth 2216`
+# after that record was promoted to a kgmicrobe.ingredient mint. Nine artifacts
+# this time rather than six. Issue #217 is the same story for export-lists.
+export-indexes:
+    uv run python scripts/generate_index_files.py
+
 # Build complete documentation site
-build-docs: gen-docs export-lists export-browser
+build-docs: gen-docs export-lists export-indexes export-browser
     @echo "Documentation built in docs/"
     @echo "Open docs/index.html to view locally"
 

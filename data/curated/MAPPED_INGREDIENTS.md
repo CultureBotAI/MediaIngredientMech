@@ -1,9 +1,9 @@
 # Mapped Ingredients Index
-**Total Records**: 2568
-**Mapped**: 2522 (98.2%)
+**Total Records**: 2567
+**Mapped**: 2521 (98.2%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 46 (1.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 127,462
+**Total Occurrences**: 127,361
 
 ---
 
@@ -2076,7 +2076,6 @@
 | MICRO:0000455 | WC Trace Elements Solution | MICRO:0000455 | MICRO | LEXICAL_MATCH | 2 |
 | CHEBI:28427 | Wheat Arabinoxylan | CHEBI:28427 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C84877 | White wine | NCIT:C84877 | NCIT | EXACT_MATCH | 0 |
-| NCIT:C189218 | X | NCIT:C189218 | NCIT | EXACT_MATCH | 101 |
 | cas:11138-66-2 | Xanthan from Xanthomonas campestris | mesh:D016959 | MESH | NARROW_MATCH | 0 |
 | CHEBI:17712 | Xanthine | CHEBI:17712 | CHEBI | CAS_RN_LOOKUP | 16 |
 | kgmicrobe.compound:xanthocidin | Xanthocidin | kgmicrobe.compound:xanthocidin | kgmicrobe.compound | PLACEHOLDER | 0 |

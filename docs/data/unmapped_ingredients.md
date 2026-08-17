@@ -1,10 +1,11 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-17T04:17:34.594641+00:00
-Total: 280 ingredients
+Generated: 2026-08-17T18:34:13.144298+00:00
+Total: 281 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0190 |  | 2',2'-Bisepigallocatechin Digallate | UNMAPPED |  |  | 0 |

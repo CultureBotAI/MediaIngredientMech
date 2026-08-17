@@ -1,7 +1,7 @@
 # Mapped Ingredients
 
-Generated: 2026-08-17T04:17:34.591312+00:00
-Total: 2568 ingredients
+Generated: 2026-08-17T18:34:13.140758+00:00
+Total: 2567 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -2112,7 +2112,6 @@ Total: 2568 ingredients
 | MICRO:0000455 | MICRO:0000455 | WC Trace Elements Solution | MAPPED | MICRO | LEXICAL_MATCH | 2 |
 | CHEBI:28427 | CHEBI:28427 | Wheat Arabinoxylan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C84877 | NCIT:C84877 | White wine | MAPPED | NCIT | EXACT_MATCH | 0 |
-| NCIT:C189218 | NCIT:C189218 | X | MAPPED | NCIT | EXACT_MATCH | 101 |
 | cas:11138-66-2 | mesh:D016959 | Xanthan from Xanthomonas campestris | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:17712 | CHEBI:17712 | Xanthine | MAPPED | CHEBI | CAS_RN_LOOKUP | 16 |
 | kgmicrobe.compound:xanthocidin | kgmicrobe.compound:xanthocidin | Xanthocidin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |

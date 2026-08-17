@@ -1,7 +1,7 @@
 # Complete Ingredients Index
 **Total Records**: 2848
-**Mapped**: 2522 (88.6%)
-**Unmapped**: 269 (9.4%)
+**Mapped**: 2521 (88.5%)
+**Unmapped**: 270 (9.5%)
 **Other statuses**: 57 (2.0%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 127,962
 
@@ -2076,7 +2076,6 @@
 | MICRO:0000455 | WC Trace Elements Solution | MICRO:0000455 | MICRO | LEXICAL_MATCH | 2 |
 | CHEBI:28427 | Wheat Arabinoxylan | CHEBI:28427 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C84877 | White wine | NCIT:C84877 | NCIT | EXACT_MATCH | 0 |
-| NCIT:C189218 | X | NCIT:C189218 | NCIT | EXACT_MATCH | 101 |
 | cas:11138-66-2 | Xanthan from Xanthomonas campestris | mesh:D016959 | MESH | NARROW_MATCH | 0 |
 | CHEBI:17712 | Xanthine | CHEBI:17712 | CHEBI | CAS_RN_LOOKUP | 16 |
 | kgmicrobe.compound:xanthocidin | Xanthocidin | kgmicrobe.compound:xanthocidin | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -2538,6 +2537,7 @@
 
 | Identifier | Preferred Term | Status | Occurrences |
 |---|---|---|---|
+| UNMAPPED_0818 | X | UNMAPPED | 101 |
 | UNMAPPED_0196 | 2-Carene-3-One | UNMAPPED | 0 |
 | UNMAPPED_0182 | 2-methyladeninyl cobamide | UNMAPPED | 0 |
 | UNMAPPED_0190 | 2',2'-Bisepigallocatechin Digallate | UNMAPPED | 0 |

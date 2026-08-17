@@ -51,9 +51,15 @@ ONTOLOGY_DB = {"CHEBI": CHEBI_DB, "NCIT": _OAK / "ncit.db",
                # MeSH is written lowercase in MIM records (mesh:C017721) but
                # uppercase inside the build, so lookups upper-case the prefix.
                "MESH": _OAK / "mesh.db", "UBERON": _OAK / "uberon.db"}
+# MICRO was missing until #381, so a MICRO promotion through this path emitted
+# an EMPTY object_source while all 34 MICRO rows already published use
+# `obo:micro.owl`. The lookup is `.get(prefix, "")`, so it failed silently —
+# add_culturemech_gap_labels.py had to carry a local override to publish correct
+# rows. Keep this table in step with the prefixes the corpus actually uses.
 OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl",
                  "FOODON": "obo:foodon.owl", "ENVO": "obo:envo.owl",
-                 "MESH": "registry:mesh", "UBERON": "obo:uberon.owl"}
+                 "MESH": "registry:mesh", "UBERON": "obo:uberon.owl",
+                 "MICRO": "obo:micro.owl", "BTO": "obo:bto.owl"}
 
 PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch",
              "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch",
