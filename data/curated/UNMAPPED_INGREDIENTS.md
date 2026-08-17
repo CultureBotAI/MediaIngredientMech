@@ -1,9 +1,9 @@
 # Unmapped Ingredients Index
-**Total Records**: 280
+**Total Records**: 281
 **Mapped**: 0 (0.0%)
-**Unmapped**: 269 (96.1%)
+**Unmapped**: 270 (96.1%)
 **Other statuses**: 11 (3.9%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 500
+**Total Occurrences**: 601
 
 ---
 
@@ -11,6 +11,7 @@
 
 | Identifier | Preferred Term | Status | Occurrences |
 |---|---|---|---|
+| UNMAPPED_0818 | X | UNMAPPED | 101 |
 | UNMAPPED_0196 | 2-Carene-3-One | UNMAPPED | 0 |
 | UNMAPPED_0182 | 2-methyladeninyl cobamide | UNMAPPED | 0 |
 | UNMAPPED_0190 | 2',2'-Bisepigallocatechin Digallate | UNMAPPED | 0 |

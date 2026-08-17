@@ -92,6 +92,26 @@ jobs:
             --original-dir data/curated \
             --aggregated-dir "${RUNNER_TEMP}/agg"
 
+      # #380. generate_index_files.py writes nine published artifacts under
+      # data/curated/ and was reachable from no recipe and no CI job, so it ran
+      # only when a curator remembered. It had already gone stale, still
+      # advertising `UNMAPPED_0434 | Marine broth 2216` after that record was
+      # promoted. A recipe alone does not fix that — #217 added one for
+      # export-lists and this is the same defect a second time — so assert the
+      # regeneration is a NO-OP, which is what makes staleness fail loudly
+      # instead of accumulating. The script is idempotent and writes no
+      # timestamps, so a diff here means the artifacts are genuinely behind.
+      - name: Assert the curated indexes are current
+        run: |
+          uv run python scripts/generate_index_files.py
+          if [ -n "$(git status --porcelain -- data/curated)" ]; then
+            echo "::error::data/curated indexes are stale — run 'just export-indexes' and commit the result."
+            git status --porcelain -- data/curated
+            git diff --stat -- data/curated
+            exit 1
+          fi
+          echo "curated indexes are current."
+
       - name: Assert export is a no-op (per-record tree matches the collection)
         run: |
           uv run python scripts/export_individual_records.py \

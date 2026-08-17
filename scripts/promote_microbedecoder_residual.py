@@ -68,7 +68,12 @@ UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 VETTED = ROOT / "mappings" / "microbedecoder_residual_grounded.tsv"
 DB = {"CHEBI": Path.home() / ".data/oaklib/chebi.db", "NCIT": Path.home() / ".data/oaklib/ncit.db"}
-OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl"}
+# Imported, not re-declared (#385). This table existed in FOUR scripts and this
+# copy listed only CHEBI and NCIT — so promoting a FOODON, ENVO, MICRO, UBERON,
+# BTO or MESH record through here published an empty object_source (or, where
+# the lookup indexes directly, raised KeyError). That is #381's defect, which
+# #384 fixed in one table while three others still carried it.
+from promote_resolved_unmapped import OBJECT_SOURCE  # noqa: E402
 CONFIDENCE = {"EXACT_MATCH": "0.99", "SYNONYM_MATCH": "0.95", "CLOSE_MATCH": "0.9"}
 
 

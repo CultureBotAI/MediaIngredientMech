@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-17T04:17:34.595427+00:00
+Generated: 2026-08-17T18:34:13.144930+00:00
 Total: 2848 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2112,7 +2112,6 @@ Total: 2848 ingredients
 | MICRO:0000455 | MICRO:0000455 | WC Trace Elements Solution | MAPPED | MICRO | LEXICAL_MATCH | 2 |
 | CHEBI:28427 | CHEBI:28427 | Wheat Arabinoxylan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C84877 | NCIT:C84877 | White wine | MAPPED | NCIT | EXACT_MATCH | 0 |
-| NCIT:C189218 | NCIT:C189218 | X | MAPPED | NCIT | EXACT_MATCH | 101 |
 | cas:11138-66-2 | mesh:D016959 | Xanthan from Xanthomonas campestris | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:17712 | CHEBI:17712 | Xanthine | MAPPED | CHEBI | CAS_RN_LOOKUP | 16 |
 | kgmicrobe.compound:xanthocidin | kgmicrobe.compound:xanthocidin | Xanthocidin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -2573,6 +2572,7 @@ Total: 2848 ingredients
 | kgmicrobe.ingredient:vitamins_solution | kgmicrobe.ingredient:vitamins_solution | Vitamins solution | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:vitox | kgmicrobe.ingredient:vitox | Vitox | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:x10_jamarin_s | kgmicrobe.ingredient:x10_jamarin_s | X10 Jamarin S | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
 | UNMAPPED_0190 |  | 2',2'-Bisepigallocatechin Digallate | UNMAPPED |  |  | 0 |

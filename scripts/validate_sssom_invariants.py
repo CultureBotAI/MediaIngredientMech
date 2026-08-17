@@ -540,6 +540,40 @@ def evaluate_rule_b4(
         yield idx, row, reason
 
 
+def evaluate_rule_c(
+    rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule C — every published row names the source its object came from.
+
+    `object_source` is how a consumer knows which ontology or registry to
+    resolve `object_id` against. An empty cell publishes an identifier with no
+    stated origin.
+
+    This exists because the failure is silent by construction. The writers look
+    the value up with `OBJECT_SOURCE.get(prefix, "")`, so an unlisted prefix
+    does not raise — it emits an empty column and everything downstream keeps
+    working. MICRO was absent from that table until #381, which meant any MICRO
+    promotion through `promote_resolved_unmapped` (or the script that imports
+    its table) would have published blank-sourced rows alongside the 51 correct
+    `obo:micro.owl` rows already in the file. It never fired only because those
+    rows happened to be written by a path carrying a local override.
+
+    A missing prefix is a one-line fix; noticing it is the hard part. So assert
+    the property rather than trusting the table to stay complete.
+    """
+    for row_num, row in enumerate(rows, start=1):
+        if (row.get("object_source") or "").strip():
+            continue
+        yield (
+            row_num,
+            row,
+            f"empty object_source for object_id "
+            f"{row.get('object_id', '?')!r} — the writer's prefix table is "
+            f"missing this prefix, so the row was published with no stated "
+            f"origin (#381)",
+        )
+
+
 def main(argv: list[str]) -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument(
@@ -673,6 +707,8 @@ def main(argv: list[str]) -> int:
         # and evaluate_rule_b4 silently skips them.
         _collect("Rule B4", evaluate_rule_b4(rows))
 
+    _collect("Rule C", evaluate_rule_c(rows))
+
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
         args.reject_tsv,
@@ -688,7 +724,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, C"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(

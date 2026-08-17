@@ -115,11 +115,10 @@ STAMP = f"{DATE}T00:00:00+00:00"
 CURATOR = "add_culturemech_gap_labels"
 ISSUE = "#260"
 
-# `promote_resolved_unmapped.OBJECT_SOURCE` has no MICRO entry, so a MICRO
-# promotion through that path emits an empty object_source. Every MICRO row
-# already in the SSSOM file uses `obo:micro.owl`; filed separately rather than
-# edited here, and overridden locally so these rows are correct.
-SOURCE = {**OBJECT_SOURCE, "MICRO": "obo:micro.owl"}
+# Was a local override carrying MICRO, because OBJECT_SOURCE lacked it and a
+# MICRO row would have published an empty object_source. Fixed at the source in
+# #381, so the override is gone and there is one table again.
+SOURCE = OBJECT_SOURCE
 
 # `ingredient_type` is set explicitly on every record written here. Leaving it
 # unset was a review finding: `auto_classify_ingredient_type` only runs when
