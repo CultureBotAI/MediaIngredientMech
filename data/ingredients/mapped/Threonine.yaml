@@ -9,7 +9,21 @@ ontology_mapping:
   - evidence_type: LEXICAL_MATCH
     source: microbedecoder
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:threonine; '
-synonyms: []
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Added ''DL-threonine'' as a RELATED_SYNONYM (#260): the racemate under
+      the stereo-unspecified parent — the same treatment `DL-Tyrosine` gets in this
+      batch, except that CHEBI:26986 is already held by this record, so it is a synonym
+      rather than a new one. RELATED rather than EXACT because the racemate is narrower
+      than the parent. NOT CHEBI:16857 L-threonine, which CultureMech asserts (CultureMech#276).
+      CultureMech uses this surface form and label_index did not contain it, so the
+      lookup missed. No new record: CHEBI:26986 is this record''s identifier, and
+      in MIM the identifier IS the ontology CURIE, so a second record on it would
+      be a duplicate primary key rather than added coverage.'
+synonyms:
+- synonym_text: DL-threonine
+  synonym_type: RELATED_SYNONYM
+  source: CultureMech label unresolvable via label_index (#260)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -49,6 +63,19 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+  changes: 'Added ''DL-threonine'' as a RELATED_SYNONYM (#260): the racemate under
+    the stereo-unspecified parent — the same treatment `DL-Tyrosine` gets in this
+    batch, except that CHEBI:26986 is already held by this record, so it is a synonym
+    rather than a new one. RELATED rather than EXACT because the racemate is narrower
+    than the parent. NOT CHEBI:16857 L-threonine, which CultureMech asserts (CultureMech#276).
+    CultureMech uses this surface form and label_index did not contain it, so the
+    lookup missed. No new record: CHEBI:26986 is this record''s identifier, and in
+    MIM the identifier IS the ontology CURIE, so a second record on it would be a
+    duplicate primary key rather than added coverage.'
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:

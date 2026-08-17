@@ -1,10 +1,18 @@
 # All Ingredients
 
-Generated: 2026-08-16T03:03:03.456997+00:00
-Total: 2841 ingredients
+Generated: 2026-08-16T04:48:54.470740+00:00
+Total: 2848 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.ingredient:marine_broth_2216 | kgmicrobe.ingredient:marine_broth_2216 | Marine broth 2216 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| kgmicrobe.ingredient:marine_agar_2216 | kgmicrobe.ingredient:marine_agar_2216 | Marine agar 2216 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
+| MICRO:0000543 | MICRO:0000543 | R2A agar | MAPPED | MICRO | EXACT_MATCH | 0 |
+| MICRO:0001572 | MICRO:0001572 | Defibrinated horse blood | MAPPED | MICRO | EXACT_MATCH | 0 |
+| MICRO:0001570 | MICRO:0001570 | Defibrinated sheep blood | MAPPED | MICRO | EXACT_MATCH | 0 |
+| CHEBI:18186 | CHEBI:18186 | DL-Tyrosine | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:189426 | CHEBI:189426 | Pyridoxine dihydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:86370 | CHEBI:86370 | Neutral red | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:mineral_solution_see_medium_no_976 | kgmicrobe.ingredient:mineral_solution_see_medium_no_976 | Mineral solution see Medium No. 976 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:1_butanol_co2 | kgmicrobe.ingredient:1_butanol_co2 | 1-butanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:1_propanol_co2 | kgmicrobe.ingredient:1_propanol_co2 | 1-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2722,7 +2730,6 @@ Total: 2841 ingredients
 | UNMAPPED_0432 |  | Man Rogosa Sharp broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0155 |  | Manganese-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0433 |  | Marine Broth | UNMAPPED |  |  | 0 |
-| UNMAPPED_0434 |  | Marine broth 2216 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0436 |  | Meat infusion | UNMAPPED |  |  | 0 |
 | UNMAPPED_0443 |  | Methanol-utilizing bacteria medium B | UNMAPPED |  |  | 0 |
 | UNMAPPED_0233 |  | methyl 3-keto-a-D-glucopyranoside | UNMAPPED |  |  | 0 |

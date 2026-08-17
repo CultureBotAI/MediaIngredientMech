@@ -11,6 +11,16 @@ ontology_mapping:
     notes: Commercial food mixture - FOODON is correct parent ontology. Soy peptone
       is an enzymatic hydrolysate of soybean protein; mapped to FOODON parent 'vegetable
       protein, hydrolyzed'. No exact FOODON term for soy peptone. CLOSE_MATCH.
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Added ''Peptic digest of soybean meal'' as a EXACT_SYNONYM (#260): the
+      USP/compendial descriptor for soy peptone — the same product the record already
+      lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`.
+      Names the manufacturing process rather than a different substance. CultureMech
+      uses this surface form and label_index did not contain it, so the lookup missed.
+      No new record: FOODON:03315720 is this record''s identifier, and in MIM the
+      identifier IS the ontology CURIE, so a second record on it would be a duplicate
+      primary key rather than added coverage.'
 synonyms:
 - synonym_text: Soy peptone
   synonym_type: EXACT_SYNONYM
@@ -39,6 +49,9 @@ synonyms:
 - synonym_text: Bacto Soytone
   synonym_type: CATALOG_VARIANT
   source: merge_from_CHEBI:8150
+- synonym_text: Peptic digest of soybean meal
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech label unresolvable via label_index (#260)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 47
@@ -74,6 +87,18 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+  changes: 'Added ''Peptic digest of soybean meal'' as a EXACT_SYNONYM (#260): the
+    USP/compendial descriptor for soy peptone — the same product the record already
+    lists as `Soybean peptone`, `Peptone from soymeal`, `Soytone` and `Phytone peptone`.
+    Names the manufacturing process rather than a different substance. CultureMech
+    uses this surface form and label_index did not contain it, so the lookup missed.
+    No new record: FOODON:03315720 is this record''s identifier, and in MIM the identifier
+    IS the ontology CURIE, so a second record on it would be a duplicate primary key
+    rather than added coverage.'
+  llm_assisted: false
 ingredient_type: UNDEFINED_MIXTURE
 merged:
 - CHEBI:8150

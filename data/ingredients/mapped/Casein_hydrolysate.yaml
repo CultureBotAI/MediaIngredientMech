@@ -9,6 +9,16 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: MICRO via OLS search
     notes: Auto-created from foodon_pass; label-exact (micro)
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Added ''Acid hydrolysate of casein'' as a EXACT_SYNONYM (#260): names
+      the hydrolysis route to the same product. Acid hydrolysis destroys tryptophan
+      where enzymatic does not, but MICRO has one casein-hydrolysate class and no
+      acid/enzymatic split, so this is a surface variant of it. CultureMech uses this
+      surface form and label_index did not contain it, so the lookup missed. No new
+      record: MICRO:0001366 is this record''s identifier, and in MIM the identifier
+      IS the ontology CURIE, so a second record on it would be a duplicate primary
+      key rather than added coverage.'
 mapping_status: MAPPED
 curation_history:
 - timestamp: '2026-05-01T19:55:09.676939+00:00'
@@ -34,6 +44,17 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+  changes: 'Added ''Acid hydrolysate of casein'' as a EXACT_SYNONYM (#260): names
+    the hydrolysis route to the same product. Acid hydrolysis destroys tryptophan
+    where enzymatic does not, but MICRO has one casein-hydrolysate class and no acid/enzymatic
+    split, so this is a surface variant of it. CultureMech uses this surface form
+    and label_index did not contain it, so the lookup missed. No new record: MICRO:0001366
+    is this record''s identifier, and in MIM the identifier IS the ontology CURIE,
+    so a second record on it would be a duplicate primary key rather than added coverage.'
+  llm_assisted: false
 ingredient_type: UNDEFINED_MIXTURE
 occurrence_statistics:
   total_occurrences: 0
@@ -45,3 +66,7 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+synonyms:
+- synonym_text: Acid hydrolysate of casein
+  synonym_type: EXACT_SYNONYM
+  source: CultureMech label unresolvable via label_index (#260)
