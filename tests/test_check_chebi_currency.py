@@ -196,9 +196,38 @@ def test_cache_dir_follows_pystow_not_home(monkeypatch, tmp_path):
         importlib.reload(pystow)
 
 
-def test_kgmicrobe_default_is_a_sibling_not_a_hardcoded_home():
+def test_kgmicrobe_default_is_a_sibling_not_a_hardcoded_home(monkeypatch):
     """It named one developer's home directory, making the check a permanent
-    silent no-op for everyone else."""
+    silent no-op for everyone else.
+
+    The guard was right; `"/Users/" not in path` was the wrong way to express it.
+    A correctly-computed sibling of a macOS checkout *also* contains `/Users/`,
+    so the assertion fired for every developer on a Mac and passed only when the
+    repo happened to live somewhere like /tmp — a permanently red test that
+    trains people to ignore the suite (#297, #311).
+
+    What actually separates a hardcoded path from a computed one is whether it
+    MOVES when the repo moves. So move the repo and look, which is both a real
+    test of the property and independent of where the checkout lives.
+    """
     mod = _load()
-    assert "/Users/" not in str(mod.default_kgm_chebi())
-    assert mod.default_kgm_chebi().parts[-4:] == ("kg-microbe", "data", "raw", "chebi.owl.gz")
+    # The override wins over everything below; a stray value in the environment
+    # would make this pass without testing the fallback at all.
+    monkeypatch.delenv("KGM_CHEBI_OWL", raising=False)
+    tail = ("kg-microbe", "data", "raw", "chebi.owl.gz")
+
+    assert mod.default_kgm_chebi() == mod.REPO_ROOT.parent.joinpath(*tail)
+
+    # The property under test: relocate the repo, and the default must follow.
+    # A hardcoded home directory cannot.
+    monkeypatch.setattr(mod, "REPO_ROOT", Path("/nowhere/near/home/MediaIngredientMech"))
+    assert mod.default_kgm_chebi() == Path("/nowhere/near").joinpath("home", *tail)
+    assert mod.default_kgm_chebi().parts[-4:] == tail
+
+
+def test_kgmicrobe_default_honours_the_env_override(monkeypatch):
+    """KGM_CHEBI_OWL short-circuits the sibling lookup — asserted so the
+    relocation test above cannot be silently defeated by the environment."""
+    mod = _load()
+    monkeypatch.setenv("KGM_CHEBI_OWL", "/explicit/path/chebi.owl.gz")
+    assert mod.default_kgm_chebi() == Path("/explicit/path/chebi.owl.gz")

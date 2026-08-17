@@ -1,0 +1,39 @@
+identifier: CHEBI:18186
+preferred_term: DL-Tyrosine
+ontology_mapping:
+  ontology_id: CHEBI:18186
+  ontology_label: tyrosine
+  ontology_source: CHEBI
+  mapping_quality: CLOSE_MATCH
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Created to cover a CultureMech label MIM could not resolve (#260): ChEBI
+      has no racemic tyrosine term — a search returns only derivatives (DL-tyrosine
+      betaine, racemetirosine) — so the stereo-unspecified parent is the closest available,
+      which is what the corpus''s other 15 `DL-` records do (DL-aspartic acid->CHEBI:22660,
+      DL-methionine->CHEBI:16811). Graded CLOSE_MATCH, not the EXACT those often use:
+      the label names a racemate and the term does not distinguish stereochemistry
+      at all, so skos:closeMatch is the honest predicate. NOT CHEBI:17895 L-tyrosine,
+      which is what CultureMech asserts (CultureMech#276) — that silently discards
+      the D-enantiomer.'
+synonyms: []
+mapping_status: MAPPED
+ingredient_type: SINGLE_INGREDIENT
+occurrence_statistics:
+  total_occurrences: 0
+  media_count: 0
+curation_history:
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: CREATED_FROM_CULTUREMECH_GAP
+  changes: 'Created to cover a CultureMech label MIM could not resolve (#260): ChEBI
+    has no racemic tyrosine term — a search returns only derivatives (DL-tyrosine
+    betaine, racemetirosine) — so the stereo-unspecified parent is the closest available,
+    which is what the corpus''s other 15 `DL-` records do (DL-aspartic acid->CHEBI:22660,
+    DL-methionine->CHEBI:16811). Graded CLOSE_MATCH, not the EXACT those often use:
+    the label names a racemate and the term does not distinguish stereochemistry at
+    all, so skos:closeMatch is the honest predicate. NOT CHEBI:17895 L-tyrosine, which
+    is what CultureMech asserts (CultureMech#276) — that silently discards the D-enantiomer.'
+  llm_assisted: false
+  new_status: MAPPED

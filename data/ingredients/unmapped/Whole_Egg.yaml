@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: Whole egg
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Whole eggs
+  synonym_type: ALTERNATE_FORM
+  source: CultureMech label unresolvable via label_index (#260)
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -40,6 +43,17 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+  changes: 'Added ''Whole eggs'' as a ALTERNATE_FORM (#260): a plural of the record''s
+    own label. This does not ground the record — it stays UNMAPPED — but label_index
+    carries UNMAPPED rows, so both surface forms now resolve to the same record instead
+    of one of them missing. CultureMech uses this surface form and label_index did
+    not contain it, so the lookup missed. No new record: UNMAPPED_0577 is this record''s
+    identifier, and in MIM the identifier IS the ontology CURIE, so a second record
+    on it would be a duplicate primary key rather than added coverage.'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1621); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as food/biological material pending material-level
   curation.

@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: Rabbit blood
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Defibrinated rabbit blood
+  synonym_type: RELATED_SYNONYM
+  source: CultureMech label unresolvable via label_index (#260)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -28,6 +31,18 @@ curation_history:
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'blood')
     (#323)
   llm_assisted: false
+- timestamp: '2026-08-15T00:00:00+00:00'
+  curator: add_culturemech_gap_labels
+  action: ADDED_SYNONYM_FOR_CULTUREMECH_GAP
+  changes: 'Added ''Defibrinated rabbit blood'' as a RELATED_SYNONYM (#260): MICRO
+    has `defibrinated sheep blood` and `defibrinated horse blood` as classes but no
+    rabbit equivalent, and MICRO:0001229 `rabbit blood` is already held here. So unlike
+    its sheep and horse siblings this one cannot become a record — the granularity
+    available in the ontology decides. CultureMech uses this surface form and label_index
+    did not contain it, so the lookup missed. No new record: MICRO:0001229 is this
+    record''s identifier, and in MIM the identifier IS the ontology CURIE, so a second
+    record on it would be a duplicate primary key rather than added coverage.'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1927); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -40,4 +55,15 @@ ontology_mapping:
     source: MICRO via OLS search (resolve_unmapped)
     notes: Auto-upgraded from UNMAPPED_0505; matched via 'Rabbit blood' (name normalization);
       label-exact
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#260)
+    notes: 'Added ''Defibrinated rabbit blood'' as a RELATED_SYNONYM (#260): MICRO
+      has `defibrinated sheep blood` and `defibrinated horse blood` as classes but
+      no rabbit equivalent, and MICRO:0001229 `rabbit blood` is already held here.
+      So unlike its sheep and horse siblings this one cannot become a record — the
+      granularity available in the ontology decides. CultureMech uses this surface
+      form and label_index did not contain it, so the lookup missed. No new record:
+      MICRO:0001229 is this record''s identifier, and in MIM the identifier IS the
+      ontology CURIE, so a second record on it would be a duplicate primary key rather
+      than added coverage.'
 ingredient_type: UNDEFINED_MIXTURE

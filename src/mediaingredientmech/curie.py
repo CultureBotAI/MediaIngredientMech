@@ -82,7 +82,17 @@ def mim_curie_for_stem(stem: str) -> str:
 # detected offline. This is the set verified good against OLS4; anything outside
 # it is refused rather than guessed at.
 #
-# Regenerate with: python scripts/verify_micro_ids.py
+# Regenerate with: python scripts/verify_micro_ids.py — note it only checks ids
+# already present in the SSSOM, so its output is a SUBSET of this set (8 entries
+# here currently have no published row). Treat a regenerator-only id as the gap,
+# not a shorter list as drift.
+#
+# MICRO:0000543 / :0001570 / :0001572 added 2026-08-15 for `R2A agar`,
+# `Defibrinated sheep blood` and `Defibrinated horse blood` (#260). Each was
+# checked the way the refusal note prescribes: is_defining_ontology=true, not
+# obsolete, and the canonical …/obo/MICRO_nnnnnnn IRI round-trips on OLS4. The
+# control MICRO:0002115 'defibrinated blood' 404s on that IRI, so the check
+# discriminates rather than passing everything.
 #
 # KNOWN BAD, and currently present in the published SSSOM — these need
 # re-grounding, see issue #119 follow-up:
@@ -94,11 +104,12 @@ MICRO_VERIFIED = {
     "MICRO:0000182", "MICRO:0000183", "MICRO:0000193", "MICRO:0000253",
     "MICRO:0000307", "MICRO:0000455", "MICRO:0000457", "MICRO:0000460",
     "MICRO:0000462", "MICRO:0000522", "MICRO:0000536", "MICRO:0000541",
-    "MICRO:0000568", "MICRO:0000570", "MICRO:0000594", "MICRO:0000595",
-    "MICRO:0000606", "MICRO:0001229", "MICRO:0001235", "MICRO:0001238",
-    "MICRO:0001349", "MICRO:0001362", "MICRO:0001363", "MICRO:0001365",
-    "MICRO:0001366", "MICRO:0001574", "MICRO:0001597", "MICRO:0001647",
-    "MICRO:0001668", "MICRO:0001709", "MICRO:0001773"
+    "MICRO:0000543", "MICRO:0000568", "MICRO:0000570", "MICRO:0000594",
+    "MICRO:0000595", "MICRO:0000606", "MICRO:0001229", "MICRO:0001235",
+    "MICRO:0001238", "MICRO:0001349", "MICRO:0001362", "MICRO:0001363",
+    "MICRO:0001365", "MICRO:0001366", "MICRO:0001570", "MICRO:0001572",
+    "MICRO:0001574", "MICRO:0001597", "MICRO:0001647", "MICRO:0001668",
+    "MICRO:0001709", "MICRO:0001773"
 }
 
 
