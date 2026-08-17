@@ -58,6 +58,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from oaklib import get_adapter
@@ -66,7 +67,12 @@ MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 MANIFEST = ROOT / "mappings" / "microbedecoder_auto_mapped_review.tsv"
 
-OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl"}
+# Imported, not re-declared (#385). This table existed in FOUR scripts and this
+# copy listed only CHEBI and NCIT — so promoting a FOODON, ENVO, MICRO, UBERON,
+# BTO or MESH record through here published an empty object_source (or, where
+# the lookup indexes directly, raised KeyError). That is #381's defect, which
+# #384 fixed in one table while three others still carried it.
+from promote_resolved_unmapped import OBJECT_SOURCE  # noqa: E402
 NOTE = ("Reviewed by review-ingredients: id resolves in local OAK adapter, its canonical "
         "label exact-matches the record ontology_label (case-insensitive), AND it passed "
         "the specificity check (#203) — not a broad class-level term, and no strictly "
