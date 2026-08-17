@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-16T04:48:54.463792+00:00
+Generated: 2026-08-17T04:06:12.129311+00:00
 Total: 2568 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -309,10 +309,10 @@ Total: 2568 ingredients
 | CHEBI:41189 | CHEBI:41189 | 1,4-Butanediol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27418 | CHEBI:27418 | 1,4-Naphthoquinone | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:185431 | CHEBI:185431 | 1,5-Pentanediol | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:0124-09-4 | cas:0124-09-4 | 1,6-Hexanediamine | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:124-09-4 | cas:124-09-4 | 1,6-Hexanediamine | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:32397 | CHEBI:32397 | 18-Crown-6 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63861 | CHEBI:63861 | 2-(Methylthio)ethanol | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:0303-07-1 | cas:0303-07-1 | 2,6-dihydroxybenzoic acid | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:303-07-1 | cas:303-07-1 | 2,6-dihydroxybenzoic acid | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:59981 | CHEBI:59981 | 2-Acetylpyrrole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:327119 | CHEBI:327119 | 2-Azetidinone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:28816 | CHEBI:28816 | 2-Deoxy-D-Ribose | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -472,7 +472,7 @@ Total: 2568 ingredients
 | CHEBI:16335 | CHEBI:16335 | Adenosine | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:17489 | CHEBI:17489 | Adenosine 3,5-Cyclic Monophosphate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:30832 | CHEBI:30832 | Adipic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:0305-01-1 | cas:0305-01-1 | Aesculetin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:305-01-1 | cas:305-01-1 | Aesculetin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:2509 | CHEBI:2509 | Agar | MAPPED | CHEBI | EXACT_MATCH | 3682 |
 | CHEBI:2511 | CHEBI:2511 | Agarose | MAPPED | CHEBI | EXACT_MATCH | 22 |
 | FOODON:00005198 | FOODON:00005198 | Agave | MAPPED | FOODON | EXACT_MATCH | 0 |
@@ -1198,7 +1198,7 @@ Total: 2568 ingredients
 | kgmicrobe.compound:indochrome | kgmicrobe.compound:indochrome | Indochrome | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:33070 | CHEBI:33070 | Indole-3-butyric acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:43580 | CHEBI:43580 | Indole-3-propionic acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| cas:0392-12-1 | cas:0392-12-1 | Indole-3-pyruvic acid | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:392-12-1 | cas:392-12-1 | Indole-3-pyruvic acid | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:16881 | CHEBI:16881 | Indole | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | cas:6505-45-9 | CHEBI:230840 | indole 3-acetic acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:80180 | CHEBI:80180 | Indolicidin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1413,7 +1413,7 @@ Total: 2568 ingredients
 | cas:89471-28-0 | cas:89471-28-0 | Methyl-2-Hydroxy-Phenylproprionate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:17540 | CHEBI:17540 | Methyl-B-D-galactopyranoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:91-09-8 | cas:91-09-8 | methyl-alpha-D-xylopyranoside | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| cas:0612-05-5 | cas:0612-05-5 | methyl-beta-D-xylopyranoside | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| cas:612-05-5 | cas:612-05-5 | methyl-beta-D-xylopyranoside | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:1825-00-9 | cas:1825-00-9 | methyl-beta-L-arabinopyranoside | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:86904 | CHEBI:86904 | methyl-cis-p-coumarate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:19367-38-5 | CHEBI:194094 | methyl-trans-p-coumarate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |

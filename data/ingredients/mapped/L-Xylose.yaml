@@ -50,8 +50,17 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-16T00:00:00+00:00'
+  curator: strip_cas_leading_zeros
+  action: STRIPPED_CAS_LEADING_ZERO
+  changes: chemical_properties.cas_rn 0609-06-3 -> 609-06-3 (#310). A CAS Registry
+    Number never carries leading zeros, so the padded form resolved against nothing
+    and any join on CAS-RN silently missed this record. The stripped value passes
+    the CAS check digit and resolves on PubChem to exactly this compound; the padding
+    was ingest alignment, not identity.
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 0609-06-3
+  cas_rn: 609-06-3
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
   molecular_formula: C5H10O5

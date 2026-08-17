@@ -314,10 +314,10 @@
 | CHEBI:41189 | 1,4-Butanediol | CHEBI:41189 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27418 | 1,4-Naphthoquinone | CHEBI:27418 | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:185431 | 1,5-Pentanediol | CHEBI:185431 | CHEBI | EXACT_MATCH | 0 |
-| cas:0124-09-4 | 1,6-Hexanediamine | cas:0124-09-4 | CAS | FALLBACK_REGISTRY | 0 |
+| cas:124-09-4 | 1,6-Hexanediamine | cas:124-09-4 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:32397 | 18-Crown-6 | CHEBI:32397 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:63861 | 2-(Methylthio)ethanol | CHEBI:63861 | CHEBI | EXACT_MATCH | 0 |
-| cas:0303-07-1 | 2,6-dihydroxybenzoic acid | cas:0303-07-1 | CAS | FALLBACK_REGISTRY | 0 |
+| cas:303-07-1 | 2,6-dihydroxybenzoic acid | cas:303-07-1 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:59981 | 2-Acetylpyrrole | CHEBI:59981 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:327119 | 2-Azetidinone | CHEBI:327119 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:28816 | 2-Deoxy-D-Ribose | CHEBI:28816 | CHEBI | EXACT_MATCH | 0 |
@@ -475,7 +475,7 @@
 | CHEBI:16335 | Adenosine | CHEBI:16335 | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:17489 | Adenosine 3,5-Cyclic Monophosphate | CHEBI:17489 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:30832 | Adipic acid | CHEBI:30832 | CHEBI | EXACT_MATCH | 0 |
-| cas:0305-01-1 | Aesculetin | cas:0305-01-1 | CAS | FALLBACK_REGISTRY | 0 |
+| cas:305-01-1 | Aesculetin | cas:305-01-1 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:2509 | Agar | CHEBI:2509 | CHEBI | EXACT_MATCH | 3682 |
 | CHEBI:2511 | Agarose | CHEBI:2511 | CHEBI | EXACT_MATCH | 22 |
 | FOODON:00005198 | Agave | FOODON:00005198 | FOODON | EXACT_MATCH | 0 |
@@ -1183,7 +1183,7 @@
 | kgmicrobe.compound:indochrome | Indochrome | kgmicrobe.compound:indochrome | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:33070 | Indole-3-butyric acid | CHEBI:33070 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:43580 | Indole-3-propionic acid | CHEBI:43580 | CHEBI | SYNONYM_MATCH | 0 |
-| cas:0392-12-1 | Indole-3-pyruvic acid | cas:0392-12-1 | CAS | FALLBACK_REGISTRY | 0 |
+| cas:392-12-1 | Indole-3-pyruvic acid | cas:392-12-1 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:16881 | Indole | CHEBI:16881 | CHEBI | SYNONYM_MATCH | 0 |
 | cas:6505-45-9 | indole 3-acetic acid sodium salt | CHEBI:230840 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:80180 | Indolicidin | CHEBI:80180 | CHEBI | EXACT_MATCH | 0 |
@@ -1395,7 +1395,7 @@
 | cas:89471-28-0 | Methyl-2-Hydroxy-Phenylproprionate | cas:89471-28-0 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:17540 | Methyl-B-D-galactopyranoside | CHEBI:17540 | CHEBI | EXACT_MATCH | 0 |
 | cas:91-09-8 | methyl-alpha-D-xylopyranoside | cas:91-09-8 | CAS | FALLBACK_REGISTRY | 0 |
-| cas:0612-05-5 | methyl-beta-D-xylopyranoside | cas:0612-05-5 | CAS | FALLBACK_REGISTRY | 0 |
+| cas:612-05-5 | methyl-beta-D-xylopyranoside | cas:612-05-5 | CAS | FALLBACK_REGISTRY | 0 |
 | cas:1825-00-9 | methyl-beta-L-arabinopyranoside | cas:1825-00-9 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:86904 | methyl-cis-p-coumarate | CHEBI:86904 | CHEBI | EXACT_MATCH | 0 |
 | cas:19367-38-5 | methyl-trans-p-coumarate | CHEBI:194094 | CHEBI | SYNONYM_MATCH | 0 |

@@ -1,7 +1,7 @@
-identifier: cas:0124-09-4
+identifier: cas:124-09-4
 preferred_term: 1,6-Hexanediamine
 ontology_mapping:
-  ontology_id: cas:0124-09-4
+  ontology_id: cas:124-09-4
   ontology_label: 1,6-Hexanediamine
   ontology_source: CAS
   mapping_quality: FALLBACK_REGISTRY
@@ -34,8 +34,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
   llm_assisted: false
+- timestamp: '2026-08-16T00:00:00+00:00'
+  curator: strip_cas_leading_zeros
+  action: STRIPPED_CAS_LEADING_ZERO
+  changes: identifier cas:0124-09-4 -> cas:124-09-4; chemical_properties.cas_rn 0124-09-4
+    -> 124-09-4 (#310). A CAS Registry Number never carries leading zeros, so the
+    padded form resolved against nothing and any join on CAS-RN silently missed this
+    record. The stripped value passes the CAS check digit and resolves on PubChem
+    to exactly this compound; the padding was ingest alignment, not identity.
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 0124-09-4
+  cas_rn: 124-09-4
   data_source: CultureBotHT compounds_to_cas.csv
   retrieval_date: '2026-04-29T06:51:33.117170+00:00'
 ingredient_type: SINGLE_INGREDIENT
