@@ -333,6 +333,62 @@ anion when ChEBI has no acid term (`2-oxobutyric acid sodium salt` →
 | A hydrate/salt sits on the anhydrous/free term | Specificity collapsed into the parent | Step 1 if a specific term exists, else step 2. |
 | One label resolves to several identifiers | Legitimate shared synonym, or a real duplicate | If the records are the same substance it is a duplicate — merge. If not, resolve via `docs/data/label_index.csv`: **take the first row for that label** and use its `identifier`. Rows are ordered MAPPED before non-MAPPED, then `preferred_term` before `synonym`, so the first row is the best available answer. That settles 18 of the 87; the rest are synonym-vs-synonym and need a curation decision (#232). |
 
+## What the predicate does downstream (kg-microbe, priority 11)
+
+Read this before choosing a predicate. It is not only a statement about meaning
+— it decides what happens to the ontology term in the knowledge graph.
+
+kg-microbe consumes this file as the **authoritative** ingredient-mapping source
+(`.claude/skills/chemical-mapping/SKILL.md`, priority 11), syncing it straight
+from this repo as a sibling checkout. Its rule:
+
+> symmetric matches (`skos:exactMatch`, `skos:closeMatch`) **overwrite the
+> canonical name** with MIM's `subject_label`; asymmetric (`narrowMatch`,
+> `broadMatch`) keep the ontology label canonical and add the MIM term as a
+> synonym.
+
+So:
+
+| predicate | effect on the ontology term in kg-microbe |
+|---|---|
+| `skos:exactMatch` / `skos:closeMatch` | **renamed** to MIM's `subject_label` |
+| `skos:narrowMatch` / `skos:broadMatch` | keeps its label; MIM's term added as a synonym, and a parent/child edge is emitted |
+
+**2,805 of 2,946 rows are symmetric, and 835 carry a label that differs from the
+ontology's** — every one renames a node. That is deliberate: a recipe says `KOH`,
+not "potassium hydroxide", and MIM is the naming authority for media
+ingredients. But it makes `preferred_term` quality load-bearing in a way it was
+not before. A typo in a MIM label becomes the KG's name for that term.
+
+**Consequence for grading.** Over-grading is no longer a private inaccuracy. A
+record graded `EXACT_MATCH` against a class term both asserts a false identity
+*and* renames the class — the doubled harm behind #322 and #317.
+
+That cuts both ways, so check before regrading in bulk: an `EXACT_MATCH` to a
+class term is correct when the MIM record **is** that class. `Aromatic
+hydrocarbon` → `CHEBI:33658 "arene"` is one such row, and it does rename the
+ChEBI class downstream — deliberately, since MIM is the naming authority and
+`aromatic hydrocarbon` is the more recognisable name for `arene`.
+
+### The asymmetric predicates do not follow SKOS, and downstream compensates
+
+This document defines `skos:narrowMatch` as *"MIM:X is a kind-of Y (Y is the
+broader/parent term)"*. **SKOS says the opposite**: `skos:narrowMatch` is a
+sub-property of `skos:narrower`, so `A narrowMatch B` asserts that **B is
+narrower than A**. Under the spec, "MIM:X is a kind-of Y" is `skos:broadMatch`.
+
+Nothing is currently broken, because kg-microbe reads MIM's intent rather than
+the spec — its consolidator treats **both** asymmetric predicates identically as
+*"the MIM subject is a NARROWER concept than the ontology object"*. The 141
+`narrowMatch` rows therefore land correctly.
+
+**Do not "fix" this by flipping the predicates.** That would invert 141 edges in
+kg-microbe, which compensates for the current direction. It needs a coordinated
+change on both sides, tracked as an issue. The one row that *did* disagree —
+the corpus's only `broadMatch` — was regrounded rather than flipped, because the
+term it should have used all along made the mapping symmetric and the question
+moot.
+
 ### What *not* to do
 
 **Do not rename a record so its name matches a term it does not denote.** If
