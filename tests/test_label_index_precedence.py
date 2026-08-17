@@ -232,3 +232,54 @@ def test_ambiguity_is_the_last_column(tmp_path):
     out = tmp_path / "label_index.csv"
     mod.export_label_index([_record("CHEBI:1", "X")], out)
     assert out.read_text().splitlines()[0].split(",")[-1] == "ambiguity"
+
+
+def test_dot_notation_formulas_are_not_a_false_conflict(tmp_path):
+    """ChEBI writes salts in dot notation and other sources collapse them, so a
+    raw-string comparison called potassium tellurite two substances (#389).
+    `2K.O3Te` and `K2O3Te` are the same compound."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:75248", "K2TeO3", formula="2K.O3Te",
+                synonyms=["potassium tellurite"]),
+        # NOT named "Potassium tellurite": that would OWN the label and return
+        # resolved:owned, testing the wrong branch entirely.
+        _record("cas:123333-66-4", "K2TeO3 (Sigma)", formula="K2O3Te",
+                synonyms=["potassium tellurite"]),
+    ])
+    assert got["potassium tellurite"]["ambiguity"] == "agree:same_substance"
+
+
+def test_hydrate_and_anhydrous_still_conflict(tmp_path):
+    """The dot-notation fix must not collapse a hydrate into its anhydrous form:
+    `2Cl.Co` and `2Cl.Co.6H2O` differ by six waters and are different
+    substances. Real case — `CoCl2 x 6 H2O` resolves to both."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:35696", "CoCl2", formula="2Cl.Co", synonyms=["CoCl2 x 6 H2O"]),
+        _record("CHEBI:53503", "CoCl2 hexahydrate", formula="2Cl.Co.6H2O",
+                synonyms=["CoCl2 x 6 H2O"]),
+    ])
+    assert got["cocl2 x 6 h2o"]["ambiguity"] == "conflict:different_substances"
+
+
+def test_formula_lookup_ignores_record_order_for_a_shared_identifier(tmp_path):
+    """`identifier` is not unique — a merge tombstone carries the winner's — and
+    28 shared identifiers disagree on formula. A last-wins lookup let YAML order
+    decide the published verdict (#388). The first NON-EMPTY formula wins, so
+    both orderings agree."""
+    tomb = _record("CHEBI:41189", "Butane-1,4-diol", status="REJECTED")
+    live = _record("CHEBI:41189", "1,4-Butanediol", formula="C4H10O2",
+                   synonyms=["shared name"])
+    other = _record("CHEBI:99999", "Something else", formula="C9H9N9",
+                    synonyms=["shared name"])
+    a = _resolve(tmp_path / "a", [tomb, live, other])["shared name"]["ambiguity"]
+    b = _resolve(tmp_path / "b", [live, tomb, other])["shared name"]["ambiguity"]
+    assert a == b == "conflict:different_substances"
+
+
+def test_an_unparseable_formula_is_unknown_not_disagreement(tmp_path):
+    """Guessing either way is worse than saying it could not be checked."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:1", "Real", formula="C6H12O6", synonyms=["shared"]),
+        _record("CHEBI:2", "Junk", formula="???", synonyms=["shared"]),
+    ])
+    assert got["shared"]["ambiguity"] == "unresolved:partial_chemistry"

@@ -47,6 +47,35 @@ def _molecular_formula(ing: dict) -> str:
     return (ing.get("chemical_properties") or {}).get("molecular_formula", "") or ""
 
 
+_ELEMENT = re.compile(r"([A-Z][a-z]?)(\d*)")
+
+
+def _formula_elements(formula: str) -> tuple | None:
+    """`2K.O3Te` -> (('K',2),('O',3),('Te',1)). None if it cannot be parsed.
+
+    Comparing formulas as RAW STRINGS reported false conflicts (#389): ChEBI
+    writes salts in dot notation and other sources collapse them, so
+    `2K.O3Te` and `K2O3Te` — one substance, potassium tellurite — read as two.
+    Two of the 167 flagged conflicts were that. A false conflict is the worst
+    outcome for this column: it tells a consumer to distrust a correct answer.
+
+    Unparseable input returns None and is treated as UNKNOWN by the caller, not
+    as disagreement — guessing in either direction would be worse than saying so.
+    """
+    if not formula:
+        return None
+    total: dict[str, int] = {}
+    for part in formula.split("."):
+        m = re.match(r"^(\d+)(.*)$", part)
+        mult, body = (int(m.group(1)), m.group(2)) if m else (1, part)
+        found = [(el, n) for el, n in _ELEMENT.findall(body) if el]
+        if not found:
+            return None
+        for el, n in found:
+            total[el] = total.get(el, 0) + mult * (int(n) if n else 1)
+    return tuple(sorted(total.items())) or None
+
+
 def _ontology_label(ing: dict) -> str:
     """The mapped term's own label, e.g. `potassium hydroxide` for the record `KOH`."""
     return (ing.get("ontology_mapping") or {}).get("ontology_label", "") or ""
@@ -322,8 +351,17 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     # the ones that are genuinely undecided instead of trusting all of them
     # equally. Nothing is suppressed and no curation is deleted — the ambiguity
     # is published rather than resolved by guess.
-    formula_of = {ing.get("identifier", ""): _molecular_formula(ing)
-                  for ing in ingredients}
+    # First NON-EMPTY formula per identifier, not last-wins (#388). `identifier`
+    # is not unique across records — 75 are held by several, since a merge
+    # tombstone carries the winner's identifier — and 28 of those disagree on
+    # formula. A dict comprehension would let YAML record order decide the
+    # verdict, so a label's published ambiguity would change when records are
+    # reordered.
+    formula_of: dict[str, str] = {}
+    for ing in ingredients:
+        key = ing.get("identifier", "")
+        if not formula_of.get(key):
+            formula_of[key] = _molecular_formula(ing)
     groups: dict[str, list[dict]] = {}
     for r in rows:
         groups.setdefault(r["label"].strip().lower(), []).append(r)
@@ -337,13 +375,13 @@ def export_label_index(ingredients: list[dict], output_path: Path):
         # acid`, which CHEBI:30769 owns — would be marked untrustworthy.
         if any(r["match_type"] == "preferred_term" for r in group):
             return "resolved:owned"
-        formulas = [formula_of.get(i, "") for i in sorted(ids)]
-        known = {f for f in formulas if f}
+        parsed = [_formula_elements(formula_of.get(i, "")) for i in sorted(ids)]
+        known = {p for p in parsed if p is not None}
         if not known:
             return "unresolved:no_chemistry"
         if len(known) > 1:
             return "conflict:different_substances"
-        if all(formulas):
+        if all(p is not None for p in parsed):
             return "agree:same_substance"
         return "unresolved:partial_chemistry"
 
