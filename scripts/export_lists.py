@@ -40,6 +40,42 @@ def _ontology_id(ing: dict) -> str:
     return (ing.get("ontology_mapping") or {}).get("ontology_id", "") or ""
 
 
+def _molecular_formula(ing: dict) -> str:
+    """Used only to decide whether two records competing for one label are the
+    same substance (#232). Absent on ~a third of records, which is why
+    `unresolved:*` exists as a verdict rather than defaulting to agreement."""
+    return (ing.get("chemical_properties") or {}).get("molecular_formula", "") or ""
+
+
+_ELEMENT = re.compile(r"([A-Z][a-z]?)(\d*)")
+
+
+def _formula_elements(formula: str) -> tuple | None:
+    """`2K.O3Te` -> (('K',2),('O',3),('Te',1)). None if it cannot be parsed.
+
+    Comparing formulas as RAW STRINGS reported false conflicts (#389): ChEBI
+    writes salts in dot notation and other sources collapse them, so
+    `2K.O3Te` and `K2O3Te` — one substance, potassium tellurite — read as two.
+    Two of the 167 flagged conflicts were that. A false conflict is the worst
+    outcome for this column: it tells a consumer to distrust a correct answer.
+
+    Unparseable input returns None and is treated as UNKNOWN by the caller, not
+    as disagreement — guessing in either direction would be worse than saying so.
+    """
+    if not formula:
+        return None
+    total: dict[str, int] = {}
+    for part in formula.split("."):
+        m = re.match(r"^(\d+)(.*)$", part)
+        mult, body = (int(m.group(1)), m.group(2)) if m else (1, part)
+        found = [(el, n) for el, n in _ELEMENT.findall(body) if el]
+        if not found:
+            return None
+        for el, n in found:
+            total[el] = total.get(el, 0) + mult * (int(n) if n else 1)
+    return tuple(sorted(total.items())) or None
+
+
 def _ontology_label(ing: dict) -> str:
     """The mapped term's own label, e.g. `potassium hydroxide` for the record `KOH`."""
     return (ing.get("ontology_mapping") or {}).get("ontology_label", "") or ""
@@ -53,10 +89,23 @@ SYNONYM_SEP = "|"
 # Curation strings that live in `synonyms` but are not names anything answers
 # to: role/property annotations carried over from the CultureMech import, and
 # bare parentheticals like `(sodium salt)` or `(for solid medium, alternative)`
-# that are fragments of a name, not a name. 189 distinct strings. Publishing
-# them as resolvable labels would make `Role: Carbon source; Properties: ...`
-# "resolve" to 44 different CHEBI ids.
-_NOT_A_LABEL = re.compile(r"^\s*Role:.*;\s*Properties:|^\s*\([^)]*\)\s*$", re.IGNORECASE)
+# that are fragments of a name, not a name. Publishing them as resolvable labels
+# would make `Role: Carbon source; Properties: ...` "resolve" to 44 different
+# CHEBI ids.
+#
+# The first pattern used to be `Role:.*;\s*Properties:`, requiring BOTH keywords
+# in one string. The import also writes them SPLIT — `Role: Carbon source` and
+# `Properties: Defined component, Simple component` as separate synonyms — and
+# those passed straight through. 183 such rows were published as labels, and
+# they were the worst ambiguity in the index by multiplicity: `properties:
+# defined component, organic compound, simple component` resolved to 19
+# different identifiers, `role: carbon source` to 14 (#232).
+#
+# Anchoring on the keyword and a colon catches both forms. `Cross-references:`
+# is the third shape the same importer emits (53 synonyms).
+_NOT_A_LABEL = re.compile(
+    r"^\s*(?:role|properties|cross-references?)\s*:|^\s*\([^)]*\)\s*$",
+    re.IGNORECASE)
 
 
 def _synonyms(ing: dict) -> list[str]:
@@ -294,8 +343,58 @@ def export_label_index(ingredients: list[dict], output_path: Path):
                              r["mapping_status"] != "MAPPED",
                              match_rank.get(r["match_type"], 9),
                              r["identifier"], r["preferred_term"], r["label"]))
+    # --- ambiguity verdict, per LABEL (#232) ------------------------------
+    # `take the first row` is a promise the index cannot keep for every label:
+    # 167 labels are carried as a synonym by records that are NOT the same
+    # substance, so an arbitrary first row hands a consumer the wrong compound.
+    # The partition below says which case a label is, so a consumer can refuse
+    # the ones that are genuinely undecided instead of trusting all of them
+    # equally. Nothing is suppressed and no curation is deleted — the ambiguity
+    # is published rather than resolved by guess.
+    # First NON-EMPTY formula per identifier, not last-wins (#388). `identifier`
+    # is not unique across records — 75 are held by several, since a merge
+    # tombstone carries the winner's identifier — and 28 of those disagree on
+    # formula. A dict comprehension would let YAML record order decide the
+    # verdict, so a label's published ambiguity would change when records are
+    # reordered.
+    formula_of: dict[str, str] = {}
+    for ing in ingredients:
+        key = ing.get("identifier", "")
+        if not formula_of.get(key):
+            formula_of[key] = _molecular_formula(ing)
+    groups: dict[str, list[dict]] = {}
+    for r in rows:
+        groups.setdefault(r["label"].strip().lower(), []).append(r)
+
+    def _verdict(group: list[dict]) -> str:
+        ids = {r["identifier"] for r in group}
+        if len(ids) < 2:
+            return "unique"
+        # A record whose own name IS the label answers it, and the sort above
+        # puts it first. Without this, 97 correctly-resolved labels — `Citric
+        # acid`, which CHEBI:30769 owns — would be marked untrustworthy.
+        if any(r["match_type"] == "preferred_term" for r in group):
+            return "resolved:owned"
+        parsed = [_formula_elements(formula_of.get(i, "")) for i in sorted(ids)]
+        known = {p for p in parsed if p is not None}
+        if not known:
+            return "unresolved:no_chemistry"
+        if len(known) > 1:
+            return "conflict:different_substances"
+        if all(p is not None for p in parsed):
+            return "agree:same_substance"
+        return "unresolved:partial_chemistry"
+
+    for label_key, group in groups.items():
+        v = _verdict(group)
+        for r in group:
+            r["ambiguity"] = v
+
+    # Appended last so a consumer indexing columns positionally keeps working
+    # and one reading by header name picks it up — same rule as the synonyms
+    # column in #229.
     fieldnames = ["label", "match_type", "identifier", "preferred_term",
-                  "ontology_id", "mapping_status"]
+                  "ontology_id", "mapping_status", "ambiguity"]
     with open(output_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()

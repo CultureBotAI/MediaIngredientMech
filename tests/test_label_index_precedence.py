@@ -28,8 +28,8 @@ def _load():
 
 
 def _record(identifier, preferred_term, status="MAPPED", synonyms=(),
-            ontology_label=None):
-    return {
+            ontology_label=None, formula=None):
+    r = {
         "identifier": identifier,
         "preferred_term": preferred_term,
         "mapping_status": status,
@@ -37,6 +37,9 @@ def _record(identifier, preferred_term, status="MAPPED", synonyms=(),
         "ontology_mapping": {"ontology_id": identifier,
                              "ontology_label": ontology_label or preferred_term},
     }
+    if formula:
+        r["chemical_properties"] = {"molecular_formula": formula}
+    return r
 
 
 def _resolve(tmp_path, records):
@@ -150,3 +153,133 @@ def test_ordering_is_deterministic_regardless_of_record_order(tmp_path):
     b = _record("CHEBI:9", "Ninth", synonyms=["Shared"])
     assert (_resolve(tmp_path / "x", [a, b])["shared"]["identifier"]
             == _resolve(tmp_path / "y", [b, a])["shared"]["identifier"])
+
+
+# --- ambiguity verdicts (#232) ---------------------------------------------
+#
+# `take the first row` cannot be honoured for every label: 167 are carried as a
+# synonym by records that are not the same substance, so an arbitrary first row
+# hands over the wrong compound. These pin the vocabulary a consumer branches on.
+
+
+def test_conflicting_formulas_are_published_as_a_conflict(tmp_path):
+    """The salt-inheritance case: a free acid's systematic name is carried by
+    its salts, whose formulas differ by a counterion. Real instance —
+    `(2S)-2-aminobutanedioic acid` resolves to L-aspartic acid AND its potassium
+    salt AND its sodium salt monohydrate."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:17053", "L-Aspartic acid", formula="C4H7NO4",
+                synonyms=["(2S)-2-aminobutanedioic acid"]),
+        _record("cas:1115-63-5", "L-Aspartic acid potassium salt", formula="C4H6KNO4",
+                synonyms=["(2S)-2-aminobutanedioic acid"]),
+    ])
+    assert got["(2s)-2-aminobutanedioic acid"]["ambiguity"] == "conflict:different_substances"
+
+
+def test_matching_formulas_are_not_a_conflict(tmp_path):
+    """ChEBI models the neutral species and the zwitterion separately and both
+    legitimately carry the name. Nothing is wrong and either pick is correct, so
+    flagging it would cry wolf."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:17561", "L-Cysteine", formula="C3H7NO2S",
+                synonyms=["(2R)-2-ammonio-3-sulfanylpropanoate"]),
+        _record("CHEBI:35235", "L-cysteine zwitterion", formula="C3H7NO2S",
+                synonyms=["(2R)-2-ammonio-3-sulfanylpropanoate"]),
+    ])
+    assert got["(2r)-2-ammonio-3-sulfanylpropanoate"]["ambiguity"] == "agree:same_substance"
+
+
+def test_an_owned_label_is_never_flagged_ambiguous(tmp_path):
+    """Ownership short-circuits the formula check. Without this the prototype
+    flagged `Citric acid` — which CHEBI:30769 owns and precedence already
+    resolves — as a conflict, marking 97 correct answers untrustworthy."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:53258", "Trisodium citrate", formula="C6H5O7.3Na",
+                synonyms=["Citric acid"]),
+        _record("CHEBI:30769", "Citric acid", formula="C6H8O7"),
+    ])
+    assert got["citric acid"]["ambiguity"] == "resolved:owned"
+    assert got["citric acid"]["identifier"] == "CHEBI:30769"
+
+
+def test_missing_chemistry_is_unresolved_not_agreement(tmp_path):
+    """Absent formulas must not read as 'the same substance'. A third of records
+    carry no formula, so defaulting to agreement would silently bless the very
+    collisions this column exists to expose."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:39005", "MES", formula="C6H13NO4S", synonyms=["shared"]),
+        _record("cas:145224-94-8", "MES Hydrat", synonyms=["shared"]),
+    ])
+    assert got["shared"]["ambiguity"] == "unresolved:partial_chemistry"
+
+    got = _resolve(tmp_path / "b", [
+        _record("ENVO:00003031", "Dry cow-manure", synonyms=["animal manure"]),
+        _record("UNMAPPED_0367", "Cow manure", status="UNMAPPED",
+                synonyms=["animal manure"]),
+    ])
+    assert got["animal manure"]["ambiguity"] == "unresolved:no_chemistry"
+
+
+def test_an_unambiguous_label_says_unique(tmp_path):
+    got = _resolve(tmp_path, [_record("CHEBI:17234", "Glucose", formula="C6H12O6")])
+    assert got["glucose"]["ambiguity"] == "unique"
+
+
+def test_ambiguity_is_the_last_column(tmp_path):
+    """Appended, not inserted: a consumer indexing positionally keeps working."""
+    mod = _load()
+    tmp_path.mkdir(parents=True, exist_ok=True)
+    out = tmp_path / "label_index.csv"
+    mod.export_label_index([_record("CHEBI:1", "X")], out)
+    assert out.read_text().splitlines()[0].split(",")[-1] == "ambiguity"
+
+
+def test_dot_notation_formulas_are_not_a_false_conflict(tmp_path):
+    """ChEBI writes salts in dot notation and other sources collapse them, so a
+    raw-string comparison called potassium tellurite two substances (#389).
+    `2K.O3Te` and `K2O3Te` are the same compound."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:75248", "K2TeO3", formula="2K.O3Te",
+                synonyms=["potassium tellurite"]),
+        # NOT named "Potassium tellurite": that would OWN the label and return
+        # resolved:owned, testing the wrong branch entirely.
+        _record("cas:123333-66-4", "K2TeO3 (Sigma)", formula="K2O3Te",
+                synonyms=["potassium tellurite"]),
+    ])
+    assert got["potassium tellurite"]["ambiguity"] == "agree:same_substance"
+
+
+def test_hydrate_and_anhydrous_still_conflict(tmp_path):
+    """The dot-notation fix must not collapse a hydrate into its anhydrous form:
+    `2Cl.Co` and `2Cl.Co.6H2O` differ by six waters and are different
+    substances. Real case — `CoCl2 x 6 H2O` resolves to both."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:35696", "CoCl2", formula="2Cl.Co", synonyms=["CoCl2 x 6 H2O"]),
+        _record("CHEBI:53503", "CoCl2 hexahydrate", formula="2Cl.Co.6H2O",
+                synonyms=["CoCl2 x 6 H2O"]),
+    ])
+    assert got["cocl2 x 6 h2o"]["ambiguity"] == "conflict:different_substances"
+
+
+def test_formula_lookup_ignores_record_order_for_a_shared_identifier(tmp_path):
+    """`identifier` is not unique — a merge tombstone carries the winner's — and
+    28 shared identifiers disagree on formula. A last-wins lookup let YAML order
+    decide the published verdict (#388). The first NON-EMPTY formula wins, so
+    both orderings agree."""
+    tomb = _record("CHEBI:41189", "Butane-1,4-diol", status="REJECTED")
+    live = _record("CHEBI:41189", "1,4-Butanediol", formula="C4H10O2",
+                   synonyms=["shared name"])
+    other = _record("CHEBI:99999", "Something else", formula="C9H9N9",
+                    synonyms=["shared name"])
+    a = _resolve(tmp_path / "a", [tomb, live, other])["shared name"]["ambiguity"]
+    b = _resolve(tmp_path / "b", [live, tomb, other])["shared name"]["ambiguity"]
+    assert a == b == "conflict:different_substances"
+
+
+def test_an_unparseable_formula_is_unknown_not_disagreement(tmp_path):
+    """Guessing either way is worse than saying it could not be checked."""
+    got = _resolve(tmp_path, [
+        _record("CHEBI:1", "Real", formula="C6H12O6", synonyms=["shared"]),
+        _record("CHEBI:2", "Junk", formula="???", synonyms=["shared"]),
+    ])
+    assert got["shared"]["ambiguity"] == "unresolved:partial_chemistry"
