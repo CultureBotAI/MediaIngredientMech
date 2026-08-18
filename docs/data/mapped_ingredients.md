@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-18T03:25:49.342256+00:00
+Generated: 2026-08-18T18:14:42.623988+00:00
 Total: 2567 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -279,7 +279,7 @@ Total: 2567 ingredients
 | CHEBI:45165 | CHEBI:45165 | Pyromelitic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30065 | CHEBI:30065 | Thioglycollic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:232610 | CHEBI:232610 | KNO2 | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:32918 | CHEBI:32918 | 1-Naphtylacetic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:32918 | CHEBI:32918 | 1-Naphthylacetic acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27569 | CHEBI:27569 | (+)-Arabinogalactan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4806 | CHEBI:4806 | (-)-Epigallocatechin gallate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:28918 | CHEBI:28918 | (-)-Epinephrine | MAPPED | CHEBI | EXACT_MATCH | 0 |

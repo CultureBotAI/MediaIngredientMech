@@ -284,7 +284,7 @@
 | CHEBI:45165 | Pyromelitic acid | CHEBI:45165 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30065 | Thioglycollic acid | CHEBI:30065 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:232610 | KNO2 | CHEBI:232610 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:32918 | 1-Naphtylacetic Acid | CHEBI:32918 | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:32918 | 1-Naphthylacetic acid | CHEBI:32918 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27569 | (+)-Arabinogalactan | CHEBI:27569 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4806 | (-)-Epigallocatechin gallate | CHEBI:4806 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:28918 | (-)-Epinephrine | CHEBI:28918 | CHEBI | EXACT_MATCH | 0 |
