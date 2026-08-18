@@ -399,7 +399,7 @@ Renaming destroys the raw label a medium actually used, removes it as an SSSOM
 converts a visible mapping error into an invisible one.
 
 > **Carve-out: correcting a DAMAGED or foreign-language label.** Since MIM
-> became kg-microbe's naming authority, `subject_term` is the KG's canonical
+> became kg-microbe's naming authority, `subject_label` is the KG's canonical
 > name for the term a symmetric row points at, so a misspelling or a
 > source-language label is published as that ontology term's name. Those may be
 > corrected — **and the original kept as a `RAW_TEXT` synonym**, which is what
