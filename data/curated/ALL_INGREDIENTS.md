@@ -679,7 +679,7 @@
 | CHEBI:3393 | Carbenicillin | CHEBI:3393 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:34609 | Carbenicillin disodium salt | CHEBI:34609 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16526 | Carbon dioxide gas | CHEBI:16526 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:85146 | Carboxymethyl cellulose | CHEBI:85146 | CHEBI | SYNONYM_MATCH | 4 |
+| CHEBI:234035 | Carboxymethyl cellulose | CHEBI:234035 | CHEBI | SYNONYM_MATCH | 4 |
 | FOODON:03460374 | Carboxymethyl cellulose (sodium salt) | FOODON:03460374 | FOODON | LEXICAL_MATCH | 0 |
 | kgmicrobe.compound:carcinomycin | Carcinomycin | kgmicrobe.compound:carcinomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | cas:461-06-3 | Carnitine (Dl) Hydrochloride | CHEBI:17126 | CHEBI | NARROW_MATCH | 0 |
