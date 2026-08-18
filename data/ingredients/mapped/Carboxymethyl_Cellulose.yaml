@@ -1,8 +1,8 @@
-identifier: CHEBI:234035
+identifier: CHEBI:85146
 preferred_term: Carboxymethyl cellulose
 ontology_mapping:
-  ontology_id: CHEBI:234035
-  ontology_label: carboxymethylcellulose sodium salt
+  ontology_id: CHEBI:85146
+  ontology_label: carboxymethylcellulose
   ontology_source: CHEBI
   mapping_quality: SYNONYM_MATCH
   evidence:
@@ -19,6 +19,17 @@ ontology_mapping:
       to mean the substance actually weighed out. These surfaced as ''unrelated''
       in the ancestry triage only because ChEBI does not model salt-of / hydrate-of
       / racemate-of as subsumption, the same gap #342 recorded for hydrates.'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#322)
+    notes: 'Regrounded CHEBI:234035 ''carboxymethylcellulose sodium salt'' -> CHEBI:85146
+      ''carboxymethylcellulose'' (#322). The record names plain carboxymethyl cellulose;
+      the old term is the SODIUM SALT, a different substance that MIM already has
+      a separate record for (''Carboxymethyl cellulose (sodium salt)'', FOODON:03460374)
+      — the two were crossed. CHEBI:85146 is the plain form and lists ''Carboxymethyl
+      cellulose'' among its synonyms, i.e. this record''s label exactly. It also matters
+      downstream: kg-microbe overwrites an ontology term''s canonical name from a
+      symmetric row, so the old mapping was renaming the sodium-salt term to the generic
+      name as well as asserting the wrong identity.'
 synonyms:
 - synonym_text: ( sodium salt)
   synonym_type: RAW_TEXT
@@ -136,6 +147,19 @@ curation_history:
   changes: identifier/ontology_id CHEBI:85146 -> CHEBI:234035 'carboxymethylcellulose
     sodium salt' (#320); the record's CAS 9004-32-4 denotes the sodium salt. mapping_quality
     -> SYNONYM_MATCH.
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: reground_carboxymethyl_cellulose
+  action: REGROUNDED_OFF_SALT_TERM
+  changes: 'Regrounded CHEBI:234035 ''carboxymethylcellulose sodium salt'' -> CHEBI:85146
+    ''carboxymethylcellulose'' (#322). The record names plain carboxymethyl cellulose;
+    the old term is the SODIUM SALT, a different substance that MIM already has a
+    separate record for (''Carboxymethyl cellulose (sodium salt)'', FOODON:03460374)
+    — the two were crossed. CHEBI:85146 is the plain form and lists ''Carboxymethyl
+    cellulose'' among its synonyms, i.e. this record''s label exactly. It also matters
+    downstream: kg-microbe overwrites an ontology term''s canonical name from a symmetric
+    row, so the old mapping was renaming the sodium-salt term to the generic name
+    as well as asserting the wrong identity.'
   llm_assisted: false
 kg_microbe_node_id: CHEBI:85146
 chemical_properties:
