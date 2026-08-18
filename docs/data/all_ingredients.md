@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-18T03:25:49.345516+00:00
+Generated: 2026-08-18T18:44:15.622210+00:00
 Total: 2848 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -268,7 +268,7 @@ Total: 2848 ingredients
 | CHEBI:91122 | CHEBI:91122 | 4-nitrophenyl Alpha-D-glucopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:17256 | CHEBI:17256 | 2-deoxyadenosine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16567 | CHEBI:16567 | 2-aminobenzoate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:62318 | CHEBI:62318 | (2)-D-lyxose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:62318 | CHEBI:62318 | D-lyxose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16659 | CHEBI:16659 | D-glycerate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:29101 | CHEBI:29101 | Sodium(+) | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:29034 | CHEBI:29034 | Ferric Iron | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -279,7 +279,7 @@ Total: 2848 ingredients
 | CHEBI:45165 | CHEBI:45165 | Pyromelitic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30065 | CHEBI:30065 | Thioglycollic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:232610 | CHEBI:232610 | KNO2 | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:32918 | CHEBI:32918 | 1-Naphtylacetic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:32918 | CHEBI:32918 | 1-Naphthylacetic acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27569 | CHEBI:27569 | (+)-Arabinogalactan | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4806 | CHEBI:4806 | (-)-Epigallocatechin gallate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:28918 | CHEBI:28918 | (-)-Epinephrine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -302,7 +302,7 @@ Total: 2848 ingredients
 | CHEBI:36018 | CHEBI:36018 | 1,1,2-Trichloroethane | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:16997 | CHEBI:16997 | 1,2-Propanediol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:82163 | CHEBI:82163 | 1,2-Dichloropropane | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
-| CHEBI:52683 | CHEBI:52683 | 1,3-Butandiol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:52683 | CHEBI:52683 | 1,3-Butanediol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | cas:21531-91-9 | cas:21531-91-9 | 1,3-Hexanediol | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:16109 | CHEBI:16109 | 1,3-Propanediol | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | cas:2152-98-9 | CHEBI:36226 | 1,4-B-D-Galactobiose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |

@@ -17137,7 +17137,7 @@ ingredients:
     data_source: ChEBI+PubChem
     retrieval_date: '2026-08-13T04:15:57.772930+00:00'
 - identifier: CHEBI:62318
-  preferred_term: (2)-D-lyxose
+  preferred_term: D-lyxose
   synonyms:
   - synonym_text: (2)-D-lyxose
     synonym_type: RAW_TEXT
@@ -17171,6 +17171,21 @@ ingredients:
     action: REGRADED_CLASS_OVERSTATEMENT
     changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); a corrupted numeric
       prefix on the same sugar.
+    llm_assisted: false
+  - timestamp: '2026-08-18T00:00:00+00:00'
+    curator: correct_labels_keep_raw
+    action: CORRECTED_PREFERRED_TERM
+    changes: 'Corrected preferred_term ''(2)-D-lyxose'' -> ''D-lyxose''. The ''(2)''
+      is a mangled character from the microbedecoder ingest (source_id=kgmicrobe.trait:2_d_lyxose)
+      and carries no recoverable information — the sibling record ''D-(-)-lyxose''
+      suggests it was a ''(-)'' optical-rotation descriptor, but that is inference,
+      not evidence, so it is dropped rather than reconstructed. The corrected label
+      is CHEBI:62318''s own label, which the record already maps to at exactMatch.
+      The original is kept as a RAW_TEXT synonym so any source string still resolves.
+      Applied under the rule agreed for #396: MIM''s subject_label became the KG''s
+      canonical name for the mapped ontology term when kg-microbe made MIM the naming
+      authority, so a damaged or source-language label is published as that term''s
+      name. Correct the label; keep the raw one.'
     llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_d_lyxose); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
@@ -17769,7 +17784,7 @@ ingredients:
     data_source: ChEBI+PubChem
     retrieval_date: '2026-08-13T04:16:08.129242+00:00'
 - identifier: CHEBI:32918
-  preferred_term: 1-Naphtylacetic Acid
+  preferred_term: 1-Naphthylacetic acid
   ontology_mapping:
     ontology_id: CHEBI:32918
     ontology_label: 1-naphthaleneacetic acid
@@ -17831,6 +17846,20 @@ ingredients:
       direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
       the recorded grade overstated. ontology_id is unchanged — the term is correct.
       The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-18T00:00:00+00:00'
+    curator: fix_naphthyl_spelling
+    action: CORRECTED_PREFERRED_TERM_SPELLING
+    changes: 'Corrected the misspelling ''Naphtyl'' -> ''Naphthyl'' in preferred_term.
+      This is not a regrounding: the record stays on CHEBI:32918 and denotes the same
+      substance, and the record already carried ''1-naphthylacetic acid'' as a synonym,
+      so the correct spelling was never in doubt. It matters now because kg-microbe
+      overwrites an ontology term''s canonical name from a symmetric SSSOM row, so
+      this typo was published as the KG''s name for CHEBI:32918 ''1-naphthaleneacetic
+      acid''. The raw misspelling is kept as a RAW_TEXT synonym so any source string
+      still resolves — MAPPING_SEMANTICS warns that renaming a record removes the
+      raw label downstream consumers match on, and keeping it as a synonym is what
+      avoids that.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 86-87-3
@@ -19398,7 +19427,7 @@ ingredients:
     smiles: CC(Cl)CCl
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:52683
-  preferred_term: 1,3-Butandiol
+  preferred_term: 1,3-Butanediol
   ontology_mapping:
     ontology_id: CHEBI:52683
     ontology_label: butane-1,3-diol
@@ -19409,7 +19438,10 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
-  synonyms: []
+  synonyms:
+  - synonym_text: 1,3-Butandiol
+    synonym_type: RAW_TEXT
+    source: pre-correction label
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -19448,6 +19480,19 @@ ingredients:
       direct match to the term and SYNONYM_MATCH as a match to a known synonym, so
       the recorded grade overstated. ontology_id is unchanged — the term is correct.
       The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-18T00:00:00+00:00'
+    curator: correct_labels_keep_raw
+    action: CORRECTED_PREFERRED_TERM
+    changes: 'Corrected preferred_term ''1,3-Butandiol'' -> ''1,3-Butanediol''. ''Butandiol''
+      is the German spelling. CHEBI:52683 lists BOTH ''1,3-Butandiol'' and ''1,3-Butanediol''
+      as synonyms, so the English form is the ontology''s own and no identity changes.
+      The record stays on CHEBI:52683 and its CAS lookup (107-88-0) is unaffected.
+      The original is kept as a RAW_TEXT synonym so any source string still resolves.
+      Applied under the rule agreed for #396: MIM''s subject_label became the KG''s
+      canonical name for the mapped ontology term when kg-microbe made MIM the naming
+      authority, so a damaged or source-language label is published as that term''s
+      name. Correct the label; keep the raw one.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 107-88-0

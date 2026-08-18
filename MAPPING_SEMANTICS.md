@@ -398,6 +398,26 @@ Renaming destroys the raw label a medium actually used, removes it as an SSSOM
 `subject_label` — which is how downstream consumers resolve raw strings — and
 converts a visible mapping error into an invisible one.
 
+> **Carve-out: correcting a DAMAGED or foreign-language label.** Since MIM
+> became kg-microbe's naming authority, `subject_label` is the KG's canonical
+> name for the term a symmetric row points at, so a misspelling or a
+> source-language label is published as that ontology term's name. Those may be
+> corrected — **and the original kept as a `RAW_TEXT` synonym**, which is what
+> makes this compatible with the rule above: the raw string still resolves
+> through `label_index`, so nothing a medium used is lost.
+>
+> The distinction is *what the label denotes*. `1-Naphtylacetic Acid` ->
+> `1-Naphthylacetic acid` and `1,3-Butandiol` -> `1,3-Butanediol` name the same
+> substance either way; only the spelling changes, and the record does not move.
+> Renaming `Sodium glutamate monohydrate` to match an anhydrous term changes
+> what is claimed. Correct spelling, never identity.
+>
+> Keep the SSSOM `subject_id`. Per-record filenames are not renamed
+> (`collect_existing_filenames` keeps the existing stem), so a corrected record
+> keeps subjects like `MIM:13-Butandiol`. A stable subject matters more than a
+> tidy one — re-deriving it from the new label is the #293/#307 mistake and
+> silently matches nothing.
+
 **Do not treat a record's auto-derived chemistry as evidence of its identity.**
 `AUTO_BACKFILL_CHEBI_CHEMISTRY` copies formula, InChI and SMILES *from the
 current mapping*, so they agree with it by construction.
