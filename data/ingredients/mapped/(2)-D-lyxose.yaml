@@ -7,6 +7,9 @@ synonyms:
 - synonym_text: D-(-)-lyxose
   synonym_type: RAW_TEXT
   source: MERGED_FROM (#398)
+- synonym_text: D-lyxo-pentose
+  synonym_type: EXACT_SYNONYM
+  source: MERGED_FROM D-(-)-lyxose (#398)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -66,6 +69,15 @@ curation_history:
     rule pointed the other way; that CAS is now carried in supplied_form and republished
     as a synonym, so nothing purchasable is lost from the identity. Occurrences 0/0
     + 0/0 -> 0/0.'
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_aldehydo_duplicates
+  action: FOLDED_MERGED_SYNONYMS
+  changes: 'Folded 1 synonym(s) from ''D-(-)-lyxose'': [''D-lyxo-pentose'']. The merge
+    kept the loser''s LABEL but left its own synonyms on the tombstone. They still
+    resolved via label_index, which publishes REJECTED rows, but the tombstone''s
+    SSSOM row was dropped — so they no longer reached KGX. These are real chemical
+    names (D-Lyx, D-lyxo-pentose, the systematic forms), not notation noise.'
   llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_d_lyxose); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.

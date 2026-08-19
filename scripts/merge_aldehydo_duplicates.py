@@ -116,11 +116,22 @@ def main(argv: list[str] | None = None) -> int:
         wocc["total_occurrences"] = before[0] + (locc.get("total_occurrences") or 0)
         wocc["media_count"] = before[1] + (locc.get("media_count") or 0)
 
+        # The loser's LABEL *and* its own synonyms. Keeping only the label was a
+        # review finding: the tombstone's SSSOM row is dropped by this merge, so
+        # anything left on it stops reaching KGX even though label_index still
+        # resolves it (label_index publishes REJECTED rows). The losers here
+        # carry real chemical names — `D-Lyx`, `D-lyxo-pentose`, the systematic
+        # forms — not notation noise.
         syns = win.setdefault("synonyms", [])
         have = {str(s.get("synonym_text", "")).lower() for s in syns}
-        if lose_lab.lower() not in have:
-            syns.append({"synonym_text": lose_lab, "synonym_type": "RAW_TEXT",
-                         "source": "MERGED_FROM (#398)"})
+        for text, kind in ([(lose_lab, "RAW_TEXT")]
+                           + [(str(s.get("synonym_text") or ""),
+                               s.get("synonym_type") or "RAW_TEXT")
+                              for s in (lose.get("synonyms") or [])]):
+            if text and text.lower() not in have and text.lower() != win_lab.lower():
+                syns.append({"synonym_text": text, "synonym_type": kind,
+                             "source": f"MERGED_FROM {lose_lab} (#398)"})
+                have.add(text.lower())
 
         # The purchasable form, kept OUT of the identity (#402's supplied_form).
         win.setdefault("supplied_form", []).append({
