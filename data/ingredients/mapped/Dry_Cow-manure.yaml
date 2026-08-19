@@ -1,9 +1,12 @@
-identifier: ENVO:00003031
+identifier: kgmicrobe.ingredient:dry_cow-manure
 preferred_term: Dry cow-manure
 synonyms:
 - synonym_text: Dry cow-manure
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Cow manure
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#391)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -31,13 +34,41 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'manure')
   llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: fix_cow_manure_records
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: 'Minted kgmicrobe.ingredient:dry_cow-manure and anchored to ENVO:00003031
+    ''animal manure'' as a narrowMatch (#391). The record previously HELD ENVO:00003031
+    as its identifier while grading the mapping BROAD_MATCH — in MIM the identifier
+    IS the ontology CURIE, so it asserted identity with animal manure and simultaneously
+    graded that it was not that. §3 step 3 gives a record narrower than every available
+    term its own identity and anchors it to the parent asymmetrically, which is what
+    this does. Step 1 was checked first: ''cow manure'' returns no term in ENVO, AGRO
+    or FOODON, and ENVO:01001116 ''bovine dairy liquid manure'' is LIQUID, the opposite
+    of this record. The predicate follows the corpus convention used by all 141 other
+    asymmetric rows rather than the SKOS-literal direction; that discrepancy is #390
+    and cannot be changed here without inverting those rows downstream.'
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: fix_cow_manure_records
+  action: MERGED_FROM
+  changes: 'Absorbed ''Cow manure'' (#391). Both records name cow manure and both
+    had 0 occurrences, so nothing downstream distinguished them and the merge cannot
+    lose usage data. They also disagreed with each other: ''Dry cow-manure'' graded
+    BROAD_MATCH against ENVO:00003031 and ''Cow manure'' graded NARROW_MATCH against
+    the same term, which are inverses — cow manure cannot be both broader and narrower
+    than animal manure. ''Cow manure'' was additionally UNMAPPED while carrying a
+    populated ontology_mapping, so it advertised a grounding its own status denied.
+    The generic string still resolves: it is kept as a RAW_TEXT synonym. Occurrences
+    0 + 0 -> 0.'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2131); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
   ontology_id: ENVO:00003031
   ontology_label: animal manure
   ontology_source: ENVO
-  mapping_quality: BROAD_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: manual fix after foodon_pass false-positive
@@ -45,4 +76,18 @@ ontology_mapping:
       which is the WRONG sense. Manure-as-ingredient is properly modeled in ENVO.
       ENVO:00003031 (animal manure) is the closest broad match available; cow-specific
       manure is not in ENVO.
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#391)
+    notes: 'Minted kgmicrobe.ingredient:dry_cow-manure and anchored to ENVO:00003031
+      ''animal manure'' as a narrowMatch (#391). The record previously HELD ENVO:00003031
+      as its identifier while grading the mapping BROAD_MATCH — in MIM the identifier
+      IS the ontology CURIE, so it asserted identity with animal manure and simultaneously
+      graded that it was not that. §3 step 3 gives a record narrower than every available
+      term its own identity and anchors it to the parent asymmetrically, which is
+      what this does. Step 1 was checked first: ''cow manure'' returns no term in
+      ENVO, AGRO or FOODON, and ENVO:01001116 ''bovine dairy liquid manure'' is LIQUID,
+      the opposite of this record. The predicate follows the corpus convention used
+      by all 141 other asymmetric rows rather than the SKOS-literal direction; that
+      discrepancy is #390 and cannot be changed here without inverting those rows
+      downstream.'
 ingredient_type: UNDEFINED_MIXTURE

@@ -94,7 +94,7 @@ def main(argv: list[str] | None = None) -> int:
               and not ((recs.get(r["subject_label"]) or {}).get(
                   "chemical_properties") or {}).get("molecular_formula")]
 
-    counts, _ = _specificity_index(_adapters()).get("CHEBI", ({}, set()))
+    counts, _ = _specificity_index(_adapters(("CHEBI",))).get("CHEBI", ({}, set()))
     if not counts:
         print("CANNOT MEASURE: no local ChEBI adapter, so every term would read "
               "as a leaf. Build the sqlite ChEBI cache first.")
@@ -105,7 +105,7 @@ def main(argv: list[str] | None = None) -> int:
     known = set(counts) | {r["object_id"] for r in rows
                            if counts.get(r["object_id"], 0) > 0}
     from sqlalchemy import text  # noqa: E402
-    engine = getattr(_adapters()["CHEBI"], "engine", None)
+    engine = getattr(_adapters(("CHEBI",))["CHEBI"], "engine", None)
     if engine is not None:
         with engine.connect() as conn:
             known |= {str(s) for (s,) in conn.execute(text(

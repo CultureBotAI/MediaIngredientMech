@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-18T18:44:15.621513+00:00
-Total: 281 ingredients
+Generated: 2026-08-19T01:11:30.426840+00:00
+Total: 280 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -81,7 +81,6 @@ Total: 281 ingredients
 | UNMAPPED_0151 |  | Copper-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0130 |  | Corn meal agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0366 |  | Corn steep powder | UNMAPPED |  |  | 0 |
-| UNMAPPED_0367 | ENVO:00003031 | Cow manure | UNMAPPED | ENVO | NARROW_MATCH | 0 |
 | UNMAPPED_0213 |  | Cravingzgone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0370 |  | Czapek-Dox liquid medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0119 |  | Czapek Dox agar | UNMAPPED |  |  | 0 |

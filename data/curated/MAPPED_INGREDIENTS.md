@@ -955,7 +955,7 @@
 | mesh:C048266 | Dopsisamine | mesh:C048266 | MESH | EXACT_MATCH | 0 |
 | CHEBI:31522 | Doxorubicin hydrochloride | CHEBI:31522 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:34730 | Doxycycline hyclate | CHEBI:34730 | CHEBI | EXACT_MATCH | 0 |
-| ENVO:00003031 | Dry cow-manure | ENVO:00003031 | ENVO | BROAD_MATCH | 0 |
+| kgmicrobe.ingredient:dry_cow-manure | Dry cow-manure | ENVO:00003031 | ENVO | NARROW_MATCH | 0 |
 | cas:52305-04-1 | Duartin (-) | mesh:C087989 | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.compound:durhamycin | Durhamycin | kgmicrobe.compound:durhamycin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | NCIT:C1928 | Dynemicin | NCIT:C1928 | NCIT | EXACT_MATCH | 0 |
