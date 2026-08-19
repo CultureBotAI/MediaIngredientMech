@@ -101,6 +101,17 @@ jobs:
       # regeneration is a NO-OP, which is what makes staleness fail loudly
       # instead of accumulating. The script is idempotent and writes no
       # timestamps, so a diff here means the artifacts are genuinely behind.
+      # #401. The published visualizations had not been regenerated since #98,
+      # so 114 of 382 UNMAPPED nodes named records that had been merged, promoted
+      # or retired — roughly one node in three wrong, on an outward-facing page.
+      # This asserts MEMBERSHIP rather than a byte-diff: PaCMAP's layout is not
+      # reproducible run-to-run (median coordinate delta 0.53 with random_state
+      # fixed), so a no-op gate would be permanently red and get deleted. Every
+      # corpus-derived field IS stable, so "no node may name a record that does
+      # not exist" is both checkable and the actual defect.
+      - name: Published visualizations name records that exist
+        run: uv run python scripts/check_visualization_currency.py --strict
+
       - name: Assert the curated indexes are current
         run: |
           uv run python scripts/generate_index_files.py
