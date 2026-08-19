@@ -222,6 +222,54 @@ two records sharing an id, and one substance under two ids.
 > specific stable id that denotes *that* substance. Never express a more
 > specific thing by sharing a broader term's identifier.**
 
+### What counts as "a distinct substance": orderability
+
+MIM is a **practically oriented** resource. Its consumers are building growth
+media, so a record should denote **a specific chemical someone can order** —
+and where the sources disagree about which form that is, **pick one by
+convention** rather than splitting the record or retreating to a generic term.
+
+**But procurement detail does not live in the identity.** Refined 2026-08-18,
+after the first version of this rule pushed a record onto `aldehydo-` terms
+purely because ChEBI hangs the commercial CAS there:
+
+* **the `identifier` optimises for how the node READS in the knowledge graph** —
+  MIM is the naming authority there, so prefer the term a person would recognise;
+* **the purchasable form goes in `supplied_form`** (name, `cas_rn`, form,
+  supplier, catalogue number), which is multivalued because one ingredient is
+  legitimately buyable in several forms;
+* **the CAS-RN is published as a synonym**, so it stays findable on the node
+  without being its name. `scripts/publish_cas_as_synonym.py` writes `CAS:<rn>`
+  into the SSSOM `other` column, which kg-microbe splits into synonyms for
+  symmetric rows and carries into KGX.
+
+So "map to what you can order" is about **not retreating to a generic term**, not
+about letting a catalogue decide the label.
+
+Worked example (#394). `Carboxymethyl cellulose` has four source occurrences and
+they do not agree: two write it plain (KOMODO 1111, DSMZ 1111) and two write
+"sodium salt" (JCM 1052, DSMZ 1684) — and DSMZ 1111's own preparation note
+specifies the sodium salt anyway. Upstream, CultureBotHT's `compounds_to_cas.csv`
+already maps both the plain and the sodium name to the same CAS. The record
+resolves to **CHEBI:234035** because it carries `cas:9004-32-4`, the product on
+the shelf; the plain term `CHEBI:85146` carries `cas:9000-11-7`, which is a
+different purchase. Here identity and orderability agree, so nothing is in
+tension — where they do NOT agree, identity follows readability and
+`supplied_form` records the purchase.
+
+**This does not license collapsing genuinely different products.** A hydrate and
+its anhydrous form have different CAS numbers, different formula weights, and are
+ordered separately — they stay separate records, and the rest of this section
+governs them. Orderability breaks ties about *which term names one purchasable
+thing*; it does not merge two things a curator would buy from different catalogue
+lines.
+
+**The counterweight is mandatory: keep the detail.** Conflating is about the
+record's *identity*, never about discarding information. Every raw form stays a
+synonym, so `label_index` still answers for the plain string and the salt string
+alike, and the SSSOM keeps its asymmetric rows to the broader terms. A record
+that conflates without preserving its synonyms has lost data, not simplified it.
+
 Sharing the parent's id is the identity-collapse bug of Section 2, arriving by a
 different route. `MgSO4·7H2O` mapped to `CHEBI:32599 magnesium sulfate` does not
 say "a hydrate of magnesium sulfate"; it says "this **is** magnesium sulfate",

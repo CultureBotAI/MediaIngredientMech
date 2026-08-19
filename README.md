@@ -6,6 +6,13 @@ LLM-assisted curation system for media ingredient ontology mappings.
 
 MediaIngredientMech provides a structured workflow for curating media ingredient ontology mappings with full audit trails. It manages 995 mapped and 136 unmapped ingredients aggregated from 10,657 media recipes in [CultureMech](https://github.com/CultureBotAI/CultureMech).
 
+**Design stance — practically oriented.** An ingredient record denotes a specific
+chemical someone can **order**. Where sources disagree about which form a recipe
+means, MIM picks one by convention (preferring the term that carries the
+commercial CAS) rather than splitting the record or retreating to a generic
+term — while keeping every raw form as a resolvable synonym. See
+[`MAPPING_SEMANTICS.md`](MAPPING_SEMANTICS.md) Section 3.
+
 **Key Features:**
 - Ingredient-centric data model with LinkML schemas
 - Environmental context linking via ENVO ontology terms
@@ -120,6 +127,25 @@ just lint
 # Run all quality checks
 just check
 ```
+
+## Deep Research Provider Triage
+
+The provider workflow mirrors public DisMech while targeting ingredient
+curation. `identity_mapping` emphasizes exact salts, hydrates, mixtures,
+formulations, CAS-RN provenance, and ontology semantics; `functional_roles`
+emphasizes context-specific roles in culture media.
+
+```bash
+just deep-research-providers
+just deep-research-providers functional_roles
+just deep-research-provider claude_code identity_mapping
+just research-ingredient falcon mapped yeast_extract --dry-run
+```
+
+The command ranks providers separately for discovery, synthesis, and
+verification, including credential/CLI availability, cost, speed, and source
+coverage. Research reports remain proposals until their exact identity and
+evidence are validated.
 
 ## License
 

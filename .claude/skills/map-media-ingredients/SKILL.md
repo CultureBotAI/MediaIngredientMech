@@ -67,6 +67,28 @@ validatable to offer.
 
 ## Chemical Normalization Rules
 
+> **MIM is practically oriented: map to a chemical someone can ORDER.** Where the
+> sources disagree about which form an ingredient is, pick one by convention
+> rather than splitting the record or retreating to a generic term — and prefer
+> the ontology term carrying the **commercial CAS**. `Carboxymethyl cellulose`
+> resolves to `CHEBI:234035` (`cas:9004-32-4`, the product on the shelf) even
+> though two of its four source strings write it plain, because the plain term
+> carries a different CAS and so is a different purchase (#394).
+>
+> This breaks ties about *which term names one purchasable thing*. It does NOT
+> merge things bought from different catalogue lines — a hydrate and its
+> anhydrous form stay separate, per the warning below. And it never discards
+> detail: every raw form stays a synonym, so `label_index` keeps answering for
+> all of them.
+>
+> **Procurement detail does not go in the identity.** The `identifier` optimises
+> for how the node READS in the graph; the purchasable form goes in the
+> `supplied_form` slot (name / cas_rn / form / supplier / catalog_number), and
+> the CAS is published as a **synonym** so it stays findable without becoming the
+> name. Do not push a record onto an odd term — an `aldehydo-` tautomer, say —
+> just because a catalogue CAS hangs there. Full rule in
+> **MAPPING_SEMANTICS.md Section 3**.
+
 Many names need normalization before matching — `chemical_normalizer.py` handles these
 patterns, and **preserves the original form as a typed synonym**:
 

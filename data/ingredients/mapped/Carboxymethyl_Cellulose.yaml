@@ -59,6 +59,15 @@ synonyms:
 - synonym_text: (sodium salt)
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Carboxymethyl cellulose (sodium salt)
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#394)
+- synonym_text: Carboxymethylcellulose sodium
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#394)
+- synonym_text: CMC-Na
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#394)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 4
@@ -137,6 +146,31 @@ curation_history:
     sodium salt' (#320); the record's CAS 9004-32-4 denotes the sodium salt. mapping_quality
     -> SYNONYM_MATCH.
   llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_cmc_records
+  action: MERGED_FROM
+  changes: 'Absorbed ''Carboxymethyl cellulose (sodium salt)'' (#394). The two were
+    crossed: the generic-looking record held the SALT''s term (CHEBI:234035) while
+    the salt-labelled record held FOODON:03460374. Codex read the four source strings
+    behind this record''s occurrences and they are genuinely mixed — 2 plain (''Carboxymethyl
+    cellulose'', KOMODO 1111 and DSMZ 1111) and 2 explicitly sodium salt (''Carboxymethyl
+    cellulose, sodium salt'', JCM 1052; ''Carboxymethylcellulose (CMC), sodium salt'',
+    DSMZ 1684) — and DSMZ 1111''s own prep note specifies the sodium salt. CultureBotHT''s
+    compounds_to_cas.csv maps BOTH the plain and the sodium name to the same CAS 9004-32-4,
+    so the upstream conflation is already there. Resolved under the orderability rule:
+    an ingredient maps to a specific chemical someone can order, picking one by convention
+    when sources disagree. CHEBI:234035 carries cas:9004-32-4 — the product a lab
+    buys — while the plain term CHEBI:85146 carries cas:9000-11-7, a different purchase.
+    Both labels remain resolvable as synonyms.'
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: add_supplied_form
+  action: ADDED_SUPPLIED_FORM
+  changes: Recorded the purchasable form separately from identity. The record's identity
+    question (#394) was settled by CAS, but that put procurement detail into the mapping.
+    supplied_form carries it instead, so the identifier is free to optimise for how
+    the node reads in the KG.
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:85146
 chemical_properties:
   cas_rn: 9004-32-4
@@ -150,3 +184,13 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+supplied_form:
+- name: Carboxymethylcellulose sodium
+  cas_rn: 9004-32-4
+  form: sodium salt
+  supplier: Sigma-Aldrich
+  catalog_number: C-5013
+  notes: 'The form DSMZ 1111''s preparation note specifies (''Carboxymethyl cellulose,
+    sodium salt, high viscosity (Sigma No. C-5013), works well'') even though its
+    ingredient string says plain. JCM 1052 and DSMZ 1684 name the sodium salt in the
+    ingredient string itself. #394.'

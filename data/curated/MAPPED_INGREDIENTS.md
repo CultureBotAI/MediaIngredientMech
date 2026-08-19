@@ -1,6 +1,6 @@
 # Mapped Ingredients Index
-**Total Records**: 2567
-**Mapped**: 2521 (98.2%)
+**Total Records**: 2566
+**Mapped**: 2520 (98.2%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 46 (1.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 127,361
@@ -680,7 +680,6 @@
 | CHEBI:34609 | Carbenicillin disodium salt | CHEBI:34609 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16526 | Carbon dioxide gas | CHEBI:16526 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:234035 | Carboxymethyl cellulose | CHEBI:234035 | CHEBI | SYNONYM_MATCH | 4 |
-| FOODON:03460374 | Carboxymethyl cellulose (sodium salt) | FOODON:03460374 | FOODON | LEXICAL_MATCH | 0 |
 | kgmicrobe.compound:carcinomycin | Carcinomycin | kgmicrobe.compound:carcinomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | cas:461-06-3 | Carnitine (Dl) Hydrochloride | CHEBI:17126 | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:carnitine_hydrochloride | Carnitine Hydrochloride | CHEBI:17126 | CHEBI | NARROW_MATCH | 0 |
