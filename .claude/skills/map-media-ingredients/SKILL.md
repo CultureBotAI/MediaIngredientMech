@@ -79,7 +79,15 @@ validatable to offer.
 > merge things bought from different catalogue lines — a hydrate and its
 > anhydrous form stay separate, per the warning below. And it never discards
 > detail: every raw form stays a synonym, so `label_index` keeps answering for
-> all of them. Full rule in **MAPPING_SEMANTICS.md Section 3**.
+> all of them.
+>
+> **Procurement detail does not go in the identity.** The `identifier` optimises
+> for how the node READS in the graph; the purchasable form goes in the
+> `supplied_form` slot (name / cas_rn / form / supplier / catalog_number), and
+> the CAS is published as a **synonym** so it stays findable without becoming the
+> name. Do not push a record onto an odd term — an `aldehydo-` tautomer, say —
+> just because a catalogue CAS hangs there. Full rule in
+> **MAPPING_SEMANTICS.md Section 3**.
 
 Many names need normalization before matching — `chemical_normalizer.py` handles these
 patterns, and **preserves the original form as a typed synonym**:

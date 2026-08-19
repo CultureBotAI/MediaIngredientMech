@@ -142,6 +142,18 @@ classes:
       chemical_properties:
         range: ChemicalProperties
         description: Chemical structure and properties (for CHEBI-mapped ingredients only)
+      supplied_form:
+        range: SuppliedForm
+        multivalued: true
+        inlined_as_list: true
+        description: >-
+          The material actually ordered and delivered for this ingredient — the
+          thing on the shelf, as distinct from the substance the record denotes.
+          Multivalued because one ingredient is legitimately buyable in several
+          forms (anhydrous vs a hydrate, free acid vs sodium salt) and a recipe
+          may not say which. Keeps procurement detail OUT of the identity: the
+          `identifier` optimises for how the node reads in the knowledge graph,
+          and this slot carries what you would put on a purchase order.
       representative:
         description: >-
           `identifier` of the representative record if this record has been
@@ -418,6 +430,40 @@ classes:
       occurrence_count:
         range: integer
         description: Number of times this variant appears
+
+  SuppliedForm:
+    description: >-
+      A purchasable form of an ingredient: what a lab would physically order and
+      receive. Separate from `ChemicalProperties`, which describes the substance
+      the record denotes — the two differ whenever a recipe names a substance
+      generically but only one form is sold, or several are.
+    attributes:
+      name:
+        description: >-
+          The product name as a catalogue would write it, e.g.
+          `Carboxymethylcellulose sodium`. Not necessarily the record's
+          preferred_term, which optimises for readability in the graph.
+      cas_rn:
+        description: >-
+          The CAS-RN you would order by. This is the operative identifier for
+          procurement and may differ from `chemical_properties.cas_rn`, which
+          describes the substance — the free acid and its sodium salt have
+          different CAS-RNs and are different purchases.
+        pattern: "^\\d{2,7}-\\d{2}-\\d$"
+      form:
+        description: >-
+          The physical/chemical form supplied, e.g. `sodium salt`,
+          `heptahydrate`, `anhydrous powder`, `50% w/v solution`.
+      supplier:
+        description: Vendor, where a specific one is recorded (e.g. `Sigma-Aldrich`).
+      catalog_number:
+        description: Vendor catalogue number, e.g. `C-5013`.
+      notes:
+        description: >-
+          Why this form, or what the source said. Use it when a medium's
+          preparation note names a form its ingredient string does not — DSMZ
+          1111 lists `Carboxymethyl cellulose` but its note specifies the sodium
+          salt.
 
   OccurrenceStats:
     description: Statistics about ingredient usage across media

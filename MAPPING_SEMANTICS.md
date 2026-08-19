@@ -229,9 +229,22 @@ media, so a record should denote **a specific chemical someone can order** —
 and where the sources disagree about which form that is, **pick one by
 convention** rather than splitting the record or retreating to a generic term.
 
-**The operative test is the CAS a lab would buy.** When two ontology terms
-describe the same purchasable substance at different granularity, prefer the one
-carrying the commercial CAS.
+**But procurement detail does not live in the identity.** Refined 2026-08-18,
+after the first version of this rule pushed a record onto `aldehydo-` terms
+purely because ChEBI hangs the commercial CAS there:
+
+* **the `identifier` optimises for how the node READS in the knowledge graph** —
+  MIM is the naming authority there, so prefer the term a person would recognise;
+* **the purchasable form goes in `supplied_form`** (name, `cas_rn`, form,
+  supplier, catalogue number), which is multivalued because one ingredient is
+  legitimately buyable in several forms;
+* **the CAS-RN is published as a synonym**, so it stays findable on the node
+  without being its name. `scripts/publish_cas_as_synonym.py` writes `CAS:<rn>`
+  into the SSSOM `other` column, which kg-microbe splits into synonyms for
+  symmetric rows and carries into KGX.
+
+So "map to what you can order" is about **not retreating to a generic term**, not
+about letting a catalogue decide the label.
 
 Worked example (#394). `Carboxymethyl cellulose` has four source occurrences and
 they do not agree: two write it plain (KOMODO 1111, DSMZ 1111) and two write
@@ -240,7 +253,9 @@ specifies the sodium salt anyway. Upstream, CultureBotHT's `compounds_to_cas.csv
 already maps both the plain and the sodium name to the same CAS. The record
 resolves to **CHEBI:234035** because it carries `cas:9004-32-4`, the product on
 the shelf; the plain term `CHEBI:85146` carries `cas:9000-11-7`, which is a
-different purchase.
+different purchase. Here identity and orderability agree, so nothing is in
+tension — where they do NOT agree, identity follows readability and
+`supplied_form` records the purchase.
 
 **This does not license collapsing genuinely different products.** A hydrate and
 its anhydrous form have different CAS numbers, different formula weights, and are

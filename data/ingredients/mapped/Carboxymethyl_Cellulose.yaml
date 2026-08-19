@@ -163,6 +163,14 @@ curation_history:
     buys — while the plain term CHEBI:85146 carries cas:9000-11-7, a different purchase.
     Both labels remain resolvable as synonyms.'
   llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: add_supplied_form
+  action: ADDED_SUPPLIED_FORM
+  changes: Recorded the purchasable form separately from identity. The record's identity
+    question (#394) was settled by CAS, but that put procurement detail into the mapping.
+    supplied_form carries it instead, so the identifier is free to optimise for how
+    the node reads in the KG.
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:85146
 chemical_properties:
   cas_rn: 9004-32-4
@@ -176,3 +184,13 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+supplied_form:
+- name: Carboxymethylcellulose sodium
+  cas_rn: 9004-32-4
+  form: sodium salt
+  supplier: Sigma-Aldrich
+  catalog_number: C-5013
+  notes: 'The form DSMZ 1111''s preparation note specifies (''Carboxymethyl cellulose,
+    sodium salt, high viscosity (Sigma No. C-5013), works well'') even though its
+    ingredient string says plain. JCM 1052 and DSMZ 1684 name the sodium salt in the
+    ingredient string itself. #394.'
