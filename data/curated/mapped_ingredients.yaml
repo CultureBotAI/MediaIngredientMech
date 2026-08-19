@@ -1,6 +1,6 @@
 generation_date: '2026-08-07T06:56:58.113846+00:00'
-total_count: 2567
-mapped_count: 2521
+total_count: 2566
+mapped_count: 2520
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.ingredient:marine_broth_2216
@@ -46605,6 +46605,15 @@ ingredients:
   - synonym_text: (sodium salt)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Carboxymethyl cellulose (sodium salt)
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM (#394)
+  - synonym_text: Carboxymethylcellulose sodium
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM (#394)
+  - synonym_text: CMC-Na
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM (#394)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
@@ -46685,63 +46694,29 @@ ingredients:
       sodium salt' (#320); the record's CAS 9004-32-4 denotes the sodium salt. mapping_quality
       -> SYNONYM_MATCH.
     llm_assisted: false
+  - timestamp: '2026-08-18T00:00:00+00:00'
+    curator: merge_cmc_records
+    action: MERGED_FROM
+    changes: 'Absorbed ''Carboxymethyl cellulose (sodium salt)'' (#394). The two were
+      crossed: the generic-looking record held the SALT''s term (CHEBI:234035) while
+      the salt-labelled record held FOODON:03460374. Codex read the four source strings
+      behind this record''s occurrences and they are genuinely mixed — 2 plain (''Carboxymethyl
+      cellulose'', KOMODO 1111 and DSMZ 1111) and 2 explicitly sodium salt (''Carboxymethyl
+      cellulose, sodium salt'', JCM 1052; ''Carboxymethylcellulose (CMC), sodium salt'',
+      DSMZ 1684) — and DSMZ 1111''s own prep note specifies the sodium salt. CultureBotHT''s
+      compounds_to_cas.csv maps BOTH the plain and the sodium name to the same CAS
+      9004-32-4, so the upstream conflation is already there. Resolved under the orderability
+      rule: an ingredient maps to a specific chemical someone can order, picking one
+      by convention when sources disagree. CHEBI:234035 carries cas:9004-32-4 — the
+      product a lab buys — while the plain term CHEBI:85146 carries cas:9000-11-7,
+      a different purchase. Both labels remain resolvable as synonyms.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:85146
   chemical_properties:
     cas_rn: 9004-32-4
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: CARBON_SOURCE
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: FOODON:03460374
-  preferred_term: Carboxymethyl cellulose (sodium salt)
-  synonyms:
-  - synonym_text: Carboxymethyl cellulose (sodium salt)
-    synonym_type: RAW_TEXT
-    source: communitymech-unmapped
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-05-01T02:37:08.074047+00:00'
-    curator: audit_import_ingredients[communitymech-unmapped]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Carboxymethyl_cellulose_(sodium_salt));
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:18:21.908812+00:00'
-    curator: resolve_unmapped_v2
-    action: AUTO_UPGRADE_TO_FOODON
-    changes: primary UNMAPPED_0602 → FOODON:03460374 (strategy=stem-match)
-    llm_assisted: false
-  - timestamp: '2026-06-03T02:06:01.736761+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: CARBON_SOURCE (confidence: 0.80)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
-      nutritional_roles.CARBON_SOURCE'
-  notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Carboxymethyl_cellulose_(sodium_salt));
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-  ontology_mapping:
-    ontology_id: FOODON:03460374
-    ontology_label: carboxymethyl cellulose
-    ontology_source: FOODON
-    mapping_quality: LEXICAL_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: FOODON via OLS (resolve_unmapped_v2 strategy=stem-match)
-      notes: Auto-upgraded from UNMAPPED_0602; matched via 'Carboxymethyl cellulose
-        (sodium salt)'; stem-substring
   nutritional_roles:
   - role: CARBON_SOURCE
     confidence: 0.8

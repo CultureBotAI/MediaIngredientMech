@@ -222,6 +222,39 @@ two records sharing an id, and one substance under two ids.
 > specific stable id that denotes *that* substance. Never express a more
 > specific thing by sharing a broader term's identifier.**
 
+### What counts as "a distinct substance": orderability
+
+MIM is a **practically oriented** resource. Its consumers are building growth
+media, so a record should denote **a specific chemical someone can order** —
+and where the sources disagree about which form that is, **pick one by
+convention** rather than splitting the record or retreating to a generic term.
+
+**The operative test is the CAS a lab would buy.** When two ontology terms
+describe the same purchasable substance at different granularity, prefer the one
+carrying the commercial CAS.
+
+Worked example (#394). `Carboxymethyl cellulose` has four source occurrences and
+they do not agree: two write it plain (KOMODO 1111, DSMZ 1111) and two write
+"sodium salt" (JCM 1052, DSMZ 1684) — and DSMZ 1111's own preparation note
+specifies the sodium salt anyway. Upstream, CultureBotHT's `compounds_to_cas.csv`
+already maps both the plain and the sodium name to the same CAS. The record
+resolves to **CHEBI:234035** because it carries `cas:9004-32-4`, the product on
+the shelf; the plain term `CHEBI:85146` carries `cas:9000-11-7`, which is a
+different purchase.
+
+**This does not license collapsing genuinely different products.** A hydrate and
+its anhydrous form have different CAS numbers, different formula weights, and are
+ordered separately — they stay separate records, and the rest of this section
+governs them. Orderability breaks ties about *which term names one purchasable
+thing*; it does not merge two things a curator would buy from different catalogue
+lines.
+
+**The counterweight is mandatory: keep the detail.** Conflating is about the
+record's *identity*, never about discarding information. Every raw form stays a
+synonym, so `label_index` still answers for the plain string and the salt string
+alike, and the SSSOM keeps its asymmetric rows to the broader terms. A record
+that conflates without preserving its synonyms has lost data, not simplified it.
+
 Sharing the parent's id is the identity-collapse bug of Section 2, arriving by a
 different route. `MgSO4·7H2O` mapped to `CHEBI:32599 magnesium sulfate` does not
 say "a hydrate of magnesium sulfate"; it says "this **is** magnesium sulfate",

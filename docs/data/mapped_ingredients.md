@@ -1,7 +1,7 @@
 # Mapped Ingredients
 
-Generated: 2026-08-19T01:11:30.424027+00:00
-Total: 2567 ingredients
+Generated: 2026-08-19T02:13:16.340218+00:00
+Total: 2566 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -685,7 +685,6 @@ Total: 2567 ingredients
 | CHEBI:34609 | CHEBI:34609 | Carbenicillin disodium salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16526 | CHEBI:16526 | Carbon dioxide gas | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:234035 | CHEBI:234035 | Carboxymethyl cellulose | MAPPED | CHEBI | SYNONYM_MATCH | 4 |
-| FOODON:03460374 | FOODON:03460374 | Carboxymethyl cellulose (sodium salt) | MAPPED | FOODON | LEXICAL_MATCH | 0 |
 | kgmicrobe.compound:carcinomycin | kgmicrobe.compound:carcinomycin | Carcinomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | cas:461-06-3 | CHEBI:17126 | Carnitine (Dl) Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:carnitine_hydrochloride | CHEBI:17126 | Carnitine Hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
