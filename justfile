@@ -375,9 +375,24 @@ gen-docs:
 export-browser:
     uv run python scripts/browser_export.py
 
-# Generate UMAP visualization
+# Generate UMAP visualization (docs/data/ingredient_umap.json)
 generate-umap:
     uv run python scripts/generate_ingredient_umap.py
+
+# Generate the sfdp force-directed layout (docs/data/ingredient_graph.json).
+# NOT the same output as generate-umap: --method sfdp writes to the DEFAULT
+# path unless --output names a .json, so running it without --output silently
+# overwrites the pacmap artifact with a graph layout (#401).
+generate-graph:
+    uv run python scripts/generate_ingredient_umap.py \
+      --method sfdp --output docs/data/ingredient_graph.json
+
+# Both published visualizations, ~45s total
+generate-visualizations: generate-umap generate-graph
+
+# Do the published visualizations still name records that exist? (#401)
+check-visualizations:
+    uv run python scripts/check_visualization_currency.py --strict
 
 # QC coverage dashboard (shared kg_microbe_qc generator in culturebotai-claw).
 # Reads conf/qc_config.yaml; writes dashboard/index.html + coverage.png.
@@ -448,6 +463,17 @@ research-providers:
 # Check availability for one deep-research-client provider
 research-provider provider:
     uv run --extra dev python scripts/research_ingredient.py --provider-status {{provider}}
+
+# Rank providers for exact identity/mapping or medium-role evidence research.
+deep-research-providers focus="identity_mapping" *args="":
+    uv run --extra dev python scripts/deep_research_provider.py \
+      --config conf/deep_research_provider.yaml --focus {{focus}} {{args}}
+
+# Show one provider's focus-specific fit, capabilities, and availability.
+deep-research-provider provider focus="identity_mapping" *args="":
+    uv run --extra dev python scripts/deep_research_provider.py \
+      --config conf/deep_research_provider.yaml --provider {{provider}} \
+      --focus {{focus}} {{args}}
 
 # Edison Scientific deep research (PaperQA3) for one ingredient record.
 # target = slug (searched across mapped/ + unmapped/) or YAML path.
