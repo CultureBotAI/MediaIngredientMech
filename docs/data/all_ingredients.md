@@ -1,7 +1,7 @@
 # All Ingredients
 
-Generated: 2026-08-18T18:44:15.622210+00:00
-Total: 2848 ingredients
+Generated: 2026-08-19T01:11:30.427348+00:00
+Total: 2847 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -965,7 +965,7 @@ Total: 2848 ingredients
 | mesh:C048266 | mesh:C048266 | Dopsisamine | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:31522 | CHEBI:31522 | Doxorubicin hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:34730 | CHEBI:34730 | Doxycycline hyclate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| ENVO:00003031 | ENVO:00003031 | Dry cow-manure | MAPPED | ENVO | BROAD_MATCH | 0 |
+| kgmicrobe.ingredient:dry_cow-manure | ENVO:00003031 | Dry cow-manure | MAPPED | ENVO | NARROW_MATCH | 0 |
 | cas:52305-04-1 | mesh:C087989 | Duartin (-) | MAPPED | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.compound:durhamycin | kgmicrobe.compound:durhamycin | Durhamycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | NCIT:C1928 | NCIT:C1928 | Dynemicin | MAPPED | NCIT | EXACT_MATCH | 0 |
@@ -2648,7 +2648,6 @@ Total: 2848 ingredients
 | UNMAPPED_0151 |  | Copper-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0130 |  | Corn meal agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0366 |  | Corn steep powder | UNMAPPED |  |  | 0 |
-| UNMAPPED_0367 | ENVO:00003031 | Cow manure | UNMAPPED | ENVO | NARROW_MATCH | 0 |
 | UNMAPPED_0213 |  | Cravingzgone | UNMAPPED |  |  | 0 |
 | UNMAPPED_0370 |  | Czapek-Dox liquid medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0119 |  | Czapek Dox agar | UNMAPPED |  |  | 0 |

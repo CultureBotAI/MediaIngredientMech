@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-18T18:44:15.618527+00:00
+Generated: 2026-08-19T01:11:30.424027+00:00
 Total: 2567 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -965,7 +965,7 @@ Total: 2567 ingredients
 | mesh:C048266 | mesh:C048266 | Dopsisamine | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:31522 | CHEBI:31522 | Doxorubicin hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:34730 | CHEBI:34730 | Doxycycline hyclate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| ENVO:00003031 | ENVO:00003031 | Dry cow-manure | MAPPED | ENVO | BROAD_MATCH | 0 |
+| kgmicrobe.ingredient:dry_cow-manure | ENVO:00003031 | Dry cow-manure | MAPPED | ENVO | NARROW_MATCH | 0 |
 | cas:52305-04-1 | mesh:C087989 | Duartin (-) | MAPPED | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.compound:durhamycin | kgmicrobe.compound:durhamycin | Durhamycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | NCIT:C1928 | NCIT:C1928 | Dynemicin | MAPPED | NCIT | EXACT_MATCH | 0 |

@@ -1,7 +1,7 @@
 # Unmapped Ingredients Index
-**Total Records**: 281
+**Total Records**: 280
 **Mapped**: 0 (0.0%)
-**Unmapped**: 270 (96.1%)
+**Unmapped**: 269 (96.1%)
 **Other statuses**: 11 (3.9%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 601
 
@@ -87,7 +87,6 @@
 | UNMAPPED_0151 | Copper-NTA | UNMAPPED | 0 |
 | UNMAPPED_0130 | Corn meal agar | UNMAPPED | 0 |
 | UNMAPPED_0366 | Corn steep powder | UNMAPPED | 0 |
-| UNMAPPED_0367 | Cow manure | UNMAPPED | 0 |
 | UNMAPPED_0213 | Cravingzgone | UNMAPPED | 0 |
 | UNMAPPED_0370 | Czapek-Dox liquid medium | UNMAPPED | 0 |
 | UNMAPPED_0119 | Czapek Dox agar | UNMAPPED | 0 |
