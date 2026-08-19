@@ -92,8 +92,18 @@ DEFAULT_SUBCLASS_ALARM = 50
 PREFIX_SUBCLASS_FLOOR = 10
 
 
-def _adapters():
-    return {"CHEBI": get_adapter("sqlite:obo:chebi"), "NCIT": get_adapter("sqlite:obo:ncit")}
+def _adapters(prefixes=("CHEBI", "NCIT")):
+    """Adapters for the prefixes a caller actually needs (#395).
+
+    This used to build CHEBI and NCIT unconditionally, so a CHEBI-only caller
+    downloaded ~525MB of `ncit.db.gz` it never read —
+    `partition_class_term_cohort.py` reads one table of one database and paid
+    that on a cold cache. `_specificity_index` already tolerates a partial map
+    (a prefix whose adapter has no SQL engine yields empty results, making the
+    check a no-op rather than a false alarm), so narrowing the default costs
+    nothing downstream.
+    """
+    return {p: get_adapter(f"sqlite:obo:{p.lower()}") for p in prefixes}
 
 
 def _specificity_index(adapters: dict) -> dict:
