@@ -89,6 +89,24 @@ def test_symmetric_rows_carry_their_records_cas(rows, records):
         f"First few: {missing[:5]}")
 
 
+def test_every_symmetric_row_resolves_to_a_record(rows, records):
+    """Close the gate's own escape hatch.
+
+    The check above looks each row's record up by `subject_label` and skips
+    when there is no match — which would let a row quietly stop being checked
+    rather than fail, exactly when something upstream renamed subjects or left
+    a row behind a merge. All 2,802 symmetric rows resolve today, so this
+    costs nothing now and turns that silent skip into a visible failure later.
+    """
+    orphans = [(r["subject_id"], r["subject_label"], r["object_id"])
+               for r in rows
+               if r["predicate_id"] in SYMMETRIC
+               and r["subject_label"] not in records]
+    assert not orphans, (
+        f"{len(orphans)} symmetric row(s) name a subject_label that matches no "
+        f"record, so the CAS check silently skips them: {orphans[:5]}")
+
+
 def test_no_cas_tokens_on_asymmetric_rows(rows):
     """kg-microbe drops `other` on narrow/broadMatch — a CAS there is a claim
     that the broader parent is purchasable under the child's number."""
