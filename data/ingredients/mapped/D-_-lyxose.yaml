@@ -1,4 +1,4 @@
-identifier: CHEBI:16789
+identifier: CHEBI:62318
 preferred_term: D-(-)-lyxose
 ontology_mapping:
   ontology_id: CHEBI:16789
@@ -17,7 +17,7 @@ synonyms:
 - synonym_text: D-lyxo-pentose
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -63,6 +63,22 @@ curation_history:
     match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
     grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
     is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_aldehydo_duplicates
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:62318 ''D-lyxose''; occurrences transferred. Absorbed
+    ''D-(-)-lyxose'' (CHEBI:16789 aldehydo- form) into CHEBI:62318 (#398). Both records
+    name the same substance — the muramic pair carry an identical CAS and formula
+    — split across a ChEBI class term and its open-chain aldehydo- form. The class
+    term wins because the identifier optimises for how the node READS in the knowledge
+    graph: no catalogue sells an ''aldehydo-'' tautomer, and MIM is kg-microbe''s
+    naming authority, so grounding here would rename the ChEBI node after a minor
+    solution-equilibrium component. ChEBI does hang the commercial CAS (1114-34-7)
+    on the aldehydo- term, which is why the earlier reading of the orderability rule
+    pointed the other way; that CAS is now carried in supplied_form and republished
+    as a synonym, so nothing purchasable is lost from the identity. Tombstoned REJECTED
+    so a lookup on this label still resolves, SSSOM rows dropped.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 1114-34-7

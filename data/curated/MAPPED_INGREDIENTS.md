@@ -1,8 +1,8 @@
 # Mapped Ingredients Index
 **Total Records**: 2566
-**Mapped**: 2520 (98.2%)
+**Mapped**: 2518 (98.1%)
 **Unmapped**: 0 (0.0%)
-**Other statuses**: 46 (1.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 48 (1.9%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 127,361
 
 ---
@@ -832,7 +832,6 @@
 | CHEBI:32528 | D-(+)-Turanose | CHEBI:32528 | CHEBI | EXACT_MATCH | 0 |
 | cas:10030-67-8 | D-(+)-melezitose monohydrate | CHEBI:6731 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:16719 | D-(-)-Pantolactone | CHEBI:16719 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:16789 | D-(-)-lyxose | CHEBI:16789 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:4249 | D-(-)-tagatose | CHEBI:4249 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:28797 | D-2-Aminobutyric acid | CHEBI:28797 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15570 | D-Alanine | CHEBI:15570 | CHEBI | EXACT_MATCH | 0 |
@@ -1467,7 +1466,7 @@
 | CHEBI:39060 | N-(2-acetamido)-2-aminoethanesulfonic acid | CHEBI:39060 | CHEBI | EXACT_MATCH | 9 |
 | CHEBI:8006 | N-Acetyl-D-glucosamine | CHEBI:8006 | CHEBI | SYNONYM_MATCH | 9 |
 | CHEBI:59640 | N-Acetylglucosamine | CHEBI:59640 | CHEBI | EXACT_MATCH | 35 |
-| CHEBI:47965 | N-acetylmuramic acid | CHEBI:47965 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:47965 | N-acetylmuramic acid | CHEBI:47965 | CHEBI | EXACT_MATCH | 11 |
 | CHEBI:17012 | N-acetylneuraminic acid | CHEBI:17012 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:41808 | n-Decane | CHEBI:41808 | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:181434 | N-decanoyl-DL-Homoserine lactone | CHEBI:181434 | CHEBI | EXACT_MATCH | 0 |
@@ -2102,7 +2101,6 @@
 | CHEBI:41981 | deuterated water | CHEBI:41981 | CHEBI | CAS_RN_LOOKUP | 1 |
 | CHEBI:73685 | n-Acetyl-glutamine | CHEBI:73685 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:35704 | n-Acetyl-lysine | CHEBI:35704 | CHEBI | CAS_RN_LOOKUP | 10 |
-| CHEBI:47966 | n-Acetyl-muramic acid | CHEBI:47966 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:16870 | sn-glycero-3-phosphocholine | CHEBI:16870 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:16610 | spermidine | CHEBI:16610 | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:43796 | α-lipoic acid | CHEBI:43796 | CHEBI | EXACT_MATCH | 4 |
@@ -2548,6 +2546,7 @@
 | CHEBI:31345 | Ca-pantothenate | REJECTED | CHEBI:31345 |  | 0 |
 | CHEBI:31345 | Calcium D-Pantothenate | REJECTED | CHEBI:31345 |  | 0 |
 | CHEBI:53503 | CoCl2 x 6 H2O | REJECTED | CHEBI:53503 |  | 0 |
+| CHEBI:62318 | D-(-)-lyxose | REJECTED | CHEBI:16789 |  | 0 |
 | CHEBI:17992 | D-Sucrose | REJECTED | CHEBI:17992 |  | 0 |
 | CHEBI:75228 | D | REJECTED | CHEBI:75228 |  | 0 |
 | kgmicrobe.ingredient:fish-sperm_dna | Deoxyribonucleic acid from herring sperm | REJECTED | CHEBI:16991 |  | 0 |
@@ -2579,6 +2578,7 @@
 | CHEBI:63005 | Sodium nitrate (nitrogen source) | REJECTED | CHEBI:63005 |  | 0 |
 | CHEBI:32142 | Trisodium citrate x 2 H2O | REJECTED | CHEBI:32142 |  | 0 |
 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI:17268 |  | 0 |
+| CHEBI:47965 | n-Acetyl-muramic acid | REJECTED | CHEBI:47966 |  | 0 |
 | CHEBI:66870 | Na2S2O4 | REJECTED | CHEBI:66870 |  | 0 |
 | kgmicrobe.ingredient:na-phosphate_buffer | Na-Phosphate-Buffer | REJECTED | kgmicrobe.ingredient:na-phosphate_buffer |  | 0 |
 | kgmicrobe.ingredient:vitamins_solution | Vitamins-solution | REJECTED | kgmicrobe.ingredient:vitamins_solution |  | 0 |

@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: (2)-D-lyxose
   synonym_type: RAW_TEXT
   source: microbedecoder
+- synonym_text: D-(-)-lyxose
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#398)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -49,6 +52,21 @@ curation_history:
     or source-language label is published as that term''s name. Correct the label;
     keep the raw one.'
   llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_aldehydo_duplicates
+  action: MERGED_FROM
+  changes: 'Absorbed ''D-(-)-lyxose'' (CHEBI:16789 aldehydo- form) into CHEBI:62318
+    (#398). Both records name the same substance — the muramic pair carry an identical
+    CAS and formula — split across a ChEBI class term and its open-chain aldehydo-
+    form. The class term wins because the identifier optimises for how the node READS
+    in the knowledge graph: no catalogue sells an ''aldehydo-'' tautomer, and MIM
+    is kg-microbe''s naming authority, so grounding here would rename the ChEBI node
+    after a minor solution-equilibrium component. ChEBI does hang the commercial CAS
+    (1114-34-7) on the aldehydo- term, which is why the earlier reading of the orderability
+    rule pointed the other way; that CAS is now carried in supplied_form and republished
+    as a synonym, so nothing purchasable is lost from the identity. Occurrences 0/0
+    + 0/0 -> 0/0.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_d_lyxose); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -68,3 +86,9 @@ ontology_mapping:
       '(2)-D-lyxose' does not equal the term label 'D-lyxose'. EXACT_MATCH therefore
       asserted an identity the pair does not have. Re-graded because a corrupted numeric
       prefix on the same sugar.
+supplied_form:
+- name: D-(-)-Lyxose
+  cas_rn: 1114-34-7
+  notes: The CAS ChEBI attaches to CHEBI:16789, the open-chain form. It is what a
+    lab orders; the record is grounded at the class term so the graph node reads sensibly,
+    and publish_cas_as_synonym.py republishes this CAS as a synonym on that node.

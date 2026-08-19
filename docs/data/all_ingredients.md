@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-19T03:38:48.153454+00:00
+Generated: 2026-08-19T05:24:55.115302+00:00
 Total: 2846 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -838,7 +838,7 @@ Total: 2846 ingredients
 | CHEBI:32528 | CHEBI:32528 | D-(+)-Turanose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:10030-67-8 | CHEBI:6731 | D-(+)-melezitose monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:16719 | CHEBI:16719 | D-(-)-Pantolactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:16789 | CHEBI:16789 | D-(-)-lyxose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:62318 | CHEBI:16789 | D-(-)-lyxose | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:4249 | CHEBI:4249 | D-(-)-tagatose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:28797 | CHEBI:28797 | D-2-Aminobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15570 | CHEBI:15570 | D-Alanine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1488,7 +1488,7 @@ Total: 2846 ingredients
 | CHEBI:39060 | CHEBI:39060 | N-(2-acetamido)-2-aminoethanesulfonic acid | MAPPED | CHEBI | EXACT_MATCH | 9 |
 | CHEBI:8006 | CHEBI:8006 | N-Acetyl-D-glucosamine | MAPPED | CHEBI | SYNONYM_MATCH | 9 |
 | CHEBI:59640 | CHEBI:59640 | N-Acetylglucosamine | MAPPED | CHEBI | EXACT_MATCH | 35 |
-| CHEBI:47965 | CHEBI:47965 | N-acetylmuramic acid | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:47965 | CHEBI:47965 | N-acetylmuramic acid | MAPPED | CHEBI | EXACT_MATCH | 11 |
 | CHEBI:17012 | CHEBI:17012 | N-acetylneuraminic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:41808 | CHEBI:41808 | n-Decane | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:181434 | CHEBI:181434 | N-decanoyl-DL-Homoserine lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2139,7 +2139,7 @@ Total: 2846 ingredients
 | CHEBI:17268 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:73685 | CHEBI:73685 | n-Acetyl-glutamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:35704 | CHEBI:35704 | n-Acetyl-lysine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
-| CHEBI:47966 | CHEBI:47966 | n-Acetyl-muramic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
+| CHEBI:47965 | CHEBI:47966 | n-Acetyl-muramic acid | REJECTED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16870 | CHEBI:16870 | sn-glycero-3-phosphocholine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:16610 | CHEBI:16610 | spermidine | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
 | CHEBI:43796 | CHEBI:43796 | α-lipoic acid | MAPPED | CHEBI | EXACT_MATCH | 4 |
