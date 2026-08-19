@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-08-19T03:38:55.377010+00:00",
+    "generated": "2026-08-19T18:56:11.600196+00:00",
     "total_ingredients": 2846,
     "mapped_count": 2566,
     "unmapped_count": 280,
@@ -50,15 +50,17 @@
       "ontology_source": "CHEBI",
       "mapping_quality": "SYNONYM_MATCH",
       "synonyms": [
-        "(2)-D-lyxose"
+        "(2)-D-lyxose",
+        "D-(-)-lyxose",
+        "D-lyxo-pentose"
       ],
-      "synonym_count": 1,
+      "synonym_count": 3,
       "total_occurrences": 0,
       "media_count": 0,
       "last_curated": "2026-08-18T00:00:00+00:00",
-      "curator": "correct_labels_keep_raw",
+      "curator": "merge_aldehydo_duplicates",
       "source_file": "mapped/(2)-D-lyxose.yaml",
-      "searchable": "d-lyxose d-lyxose (2)-d-lyxose chebi:62318"
+      "searchable": "d-lyxose d-lyxose (2)-d-lyxose d-(-)-lyxose d-lyxo-pentose chebi:62318"
     },
     {
       "id": "CHEBI:17019",
@@ -15533,9 +15535,9 @@
       "searchable": "d-(+)-gluconic acid gamma-lactone d-glucono-1,5-lactone (3r,4s,5s,6r)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-one glucarolactone chebi:16217"
     },
     {
-      "id": "CHEBI:16789",
+      "id": "CHEBI:62318",
       "preferred_term": "D-(-)-lyxose",
-      "mapping_status": "MAPPED",
+      "mapping_status": "REJECTED",
       "ontology_id": "CHEBI:16789",
       "ontology_label": "aldehydo-D-lyxose",
       "ontology_source": "CHEBI",
@@ -15547,10 +15549,10 @@
       "synonym_count": 2,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-10T00:00:00+00:00",
-      "curator": "regrade_synonym_matches",
+      "last_curated": "2026-08-18T00:00:00+00:00",
+      "curator": "merge_aldehydo_duplicates",
       "source_file": "mapped/D-_-lyxose.yaml",
-      "searchable": "d-(-)-lyxose aldehydo-d-lyxose d-lyxose d-lyxo-pentose chebi:16789"
+      "searchable": "d-(-)-lyxose aldehydo-d-lyxose d-lyxose d-lyxo-pentose chebi:62318"
     },
     {
       "id": "cas:207511-10-2",
@@ -33778,9 +33780,9 @@
       "searchable": "n-acetyl-lysine n(2)-acetyl-l-lysine (2s)-2-(acetylamino)-6-aminohexanoic acid n(2)-acetyl-l-lysine n(alpha)-acetyl-l-lysine n(alpha)-acetyllysine n-alpha-acetyl-l-lysine n2-acetyl-l-lysine chebi:35704"
     },
     {
-      "id": "CHEBI:47966",
+      "id": "CHEBI:47965",
       "preferred_term": "n-Acetyl-muramic acid",
-      "mapping_status": "MAPPED",
+      "mapping_status": "REJECTED",
       "ontology_id": "CHEBI:47966",
       "ontology_label": "aldehydo-N-acetylmuramic acid",
       "ontology_source": "CHEBI",
@@ -33791,12 +33793,12 @@
         "aldehydo-N-acetylmuramic acid"
       ],
       "synonym_count": 3,
-      "total_occurrences": 10,
-      "media_count": 10,
-      "last_curated": "2026-05-02T03:12:19.379199+00:00",
-      "curator": "auto_classify_ingredient_type",
+      "total_occurrences": 0,
+      "media_count": 0,
+      "last_curated": "2026-08-18T00:00:00+00:00",
+      "curator": "merge_aldehydo_duplicates",
       "source_file": "mapped/N-acetyl-muramic_Acid.yaml",
-      "searchable": "n-acetyl-muramic acid aldehydo-n-acetylmuramic acid (r)-2-acetamido-3-o-(1-carboxyethyl)-2-deoxy-d-glucose 2-acetamido-3-o-[(1r)-1-carboxyethyl]-2-deoxy-aldehydo-d-glucose aldehydo-n-acetylmuramic acid chebi:47966"
+      "searchable": "n-acetyl-muramic acid aldehydo-n-acetylmuramic acid (r)-2-acetamido-3-o-(1-carboxyethyl)-2-deoxy-d-glucose 2-acetamido-3-o-[(1r)-1-carboxyethyl]-2-deoxy-aldehydo-d-glucose aldehydo-n-acetylmuramic acid chebi:47965"
     },
     {
       "id": "CHEBI:28800",
@@ -33847,15 +33849,19 @@
       "synonyms": [
         "2-(acetylamino)-3-O-[(1R)-1-carboxyethyl]-2-deoxy-D-glucose",
         "2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-D-glucose",
-        "acetylmuramic acid"
+        "acetylmuramic acid",
+        "n-Acetyl-muramic acid",
+        "(R)-2-acetamido-3-O-(1-carboxyethyl)-2-deoxy-D-glucose",
+        "2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-aldehydo-D-glucose",
+        "aldehydo-N-acetylmuramic acid"
       ],
-      "synonym_count": 3,
-      "total_occurrences": 1,
-      "media_count": 1,
-      "last_curated": "2026-05-02T03:12:16.709013+00:00",
-      "curator": "auto_classify_ingredient_type",
+      "synonym_count": 7,
+      "total_occurrences": 11,
+      "media_count": 11,
+      "last_curated": "2026-08-18T00:00:00+00:00",
+      "curator": "merge_aldehydo_duplicates",
       "source_file": "mapped/N-acetylmuramic_Acid.yaml",
-      "searchable": "n-acetylmuramic acid n-acetylmuramic acid 2-(acetylamino)-3-o-[(1r)-1-carboxyethyl]-2-deoxy-d-glucose 2-acetamido-3-o-[(1r)-1-carboxyethyl]-2-deoxy-d-glucose acetylmuramic acid chebi:47965"
+      "searchable": "n-acetylmuramic acid n-acetylmuramic acid 2-(acetylamino)-3-o-[(1r)-1-carboxyethyl]-2-deoxy-d-glucose 2-acetamido-3-o-[(1r)-1-carboxyethyl]-2-deoxy-d-glucose acetylmuramic acid n-acetyl-muramic acid (r)-2-acetamido-3-o-(1-carboxyethyl)-2-deoxy-d-glucose 2-acetamido-3-o-[(1r)-1-carboxyethyl]-2-deoxy-aldehydo-d-glucose aldehydo-n-acetylmuramic acid chebi:47965"
     },
     {
       "id": "CHEBI:35418",

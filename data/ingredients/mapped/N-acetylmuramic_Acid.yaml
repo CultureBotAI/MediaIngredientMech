@@ -19,10 +19,22 @@ synonyms:
 - synonym_text: acetylmuramic acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: n-Acetyl-muramic acid
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM (#398)
+- synonym_text: (R)-2-acetamido-3-O-(1-carboxyethyl)-2-deoxy-D-glucose
+  synonym_type: EXACT_SYNONYM
+  source: MERGED_FROM n-Acetyl-muramic acid (#398)
+- synonym_text: 2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-aldehydo-D-glucose
+  synonym_type: EXACT_SYNONYM
+  source: MERGED_FROM n-Acetyl-muramic acid (#398)
+- synonym_text: aldehydo-N-acetylmuramic acid
+  synonym_type: EXACT_SYNONYM
+  source: MERGED_FROM n-Acetyl-muramic acid (#398)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1
-  media_count: 1
+  total_occurrences: 11
+  media_count: 11
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -59,9 +71,40 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_aldehydo_duplicates
+  action: MERGED_FROM
+  changes: 'Absorbed ''n-Acetyl-muramic acid'' (CHEBI:47966 aldehydo- form) into CHEBI:47965
+    (#398). Both records name the same substance — the muramic pair carry an identical
+    CAS and formula — split across a ChEBI class term and its open-chain aldehydo-
+    form. The class term wins because the identifier optimises for how the node READS
+    in the knowledge graph: no catalogue sells an ''aldehydo-'' tautomer, and MIM
+    is kg-microbe''s naming authority, so grounding here would rename the ChEBI node
+    after a minor solution-equilibrium component. ChEBI does hang the commercial CAS
+    (10597-89-4) on the aldehydo- term, which is why the earlier reading of the orderability
+    rule pointed the other way; that CAS is now carried in supplied_form and republished
+    as a synonym, so nothing purchasable is lost from the identity. Occurrences 1/1
+    + 10/10 -> 11/11.'
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_aldehydo_duplicates
+  action: FOLDED_MERGED_SYNONYMS
+  changes: 'Folded 3 synonym(s) from ''n-Acetyl-muramic acid'': [''(R)-2-acetamido-3-O-(1-carboxyethyl)-2-deoxy-D-glucose'',
+    ''2-acetamido-3-O-[(1R)-1-carboxyethyl]-2-deoxy-aldehydo-D-glucose'', ''aldehydo-N-acetylmuramic
+    acid'']. The merge kept the loser''s LABEL but left its own synonyms on the tombstone.
+    They still resolved via label_index, which publishes REJECTED rows, but the tombstone''s
+    SSSOM row was dropped — so they no longer reached KGX. These are real chemical
+    names (D-Lyx, D-lyxo-pentose, the systematic forms), not notation noise.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 10597-89-4
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:53:06.862947+00:00'
   molecular_formula: C11H19NO8
 ingredient_type: SINGLE_INGREDIENT
+supplied_form:
+- name: N-Acetylmuramic acid
+  cas_rn: 10597-89-4
+  notes: The CAS ChEBI attaches to CHEBI:47966, the open-chain form. It is what a
+    lab orders; the record is grounded at the class term so the graph node reads sensibly,
+    and publish_cas_as_synonym.py republishes this CAS as a synonym on that node.
