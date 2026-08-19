@@ -1,4 +1,4 @@
-identifier: CHEBI:47966
+identifier: CHEBI:47965
 preferred_term: n-Acetyl-muramic acid
 ontology_mapping:
   ontology_id: CHEBI:47966
@@ -20,10 +20,10 @@ synonyms:
 - synonym_text: aldehydo-N-acetylmuramic acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 10
-  media_count: 10
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-04-07T10:20:30.886060+00:00'
   curator: feba_ontology_enrichment_batch
@@ -55,6 +55,22 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-18T00:00:00+00:00'
+  curator: merge_aldehydo_duplicates
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:47965 ''N-acetylmuramic acid''; occurrences transferred.
+    Absorbed ''n-Acetyl-muramic acid'' (CHEBI:47966 aldehydo- form) into CHEBI:47965
+    (#398). Both records name the same substance — the muramic pair carry an identical
+    CAS and formula — split across a ChEBI class term and its open-chain aldehydo-
+    form. The class term wins because the identifier optimises for how the node READS
+    in the knowledge graph: no catalogue sells an ''aldehydo-'' tautomer, and MIM
+    is kg-microbe''s naming authority, so grounding here would rename the ChEBI node
+    after a minor solution-equilibrium component. ChEBI does hang the commercial CAS
+    (10597-89-4) on the aldehydo- term, which is why the earlier reading of the orderability
+    rule pointed the other way; that CAS is now carried in supplied_form and republished
+    as a synonym, so nothing purchasable is lost from the identity. Tombstoned REJECTED
+    so a lookup on this label still resolves, SSSOM rows dropped.'
   llm_assisted: false
 notes: Created from FEBA ontology enrichment workflow. Used in 10 FEBA media formulations.
 chemical_properties:
