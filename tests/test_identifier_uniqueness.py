@@ -57,7 +57,6 @@ KNOWN = {
     "CHEBI:31795",      # MgSO4 x 7 H2O / MgSO4·H2O
     "CHEBI:32036",      # K2SO4 / x 7 H2O
     "CHEBI:32599",      # Magnesium sulfate / MgSO4 x 6 H2O
-    "CHEBI:6636",       # MgCl2 / MgCl2x 6 H2O  (records already carry DIFFERENT CAS)
     "CHEBI:75832",      # FeSO4 / x 5 H2O / x 6 H2O
     "CHEBI:86360",      # MnSO4 / x 7 H2O
     "CHEBI:86477",      # Na2SO3 / x 5 H2O
@@ -115,9 +114,9 @@ def test_no_new_identifier_collisions(collisions):
 
 
 def test_the_known_backlog_does_not_grow(collisions):
-    """The count may fall, never rise. 32 at #414; 26 after the first six merges."""
-    assert len(collisions) <= 26, (
-        f"{len(collisions)} identifier collisions, up from the recorded 26. "
+    """The count may fall, never rise. 32 at #414; 25 after the merges in #417."""
+    assert len(collisions) <= 25, (
+        f"{len(collisions)} identifier collisions, up from the recorded 25. "
         f"Something reintroduced one that was merged away."
     )
 

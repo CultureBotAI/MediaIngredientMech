@@ -82,10 +82,37 @@ synonyms:
 - synonym_text: magnesium dichloride--water (1/6)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: MgCl2x 6 H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM MgCl2x 6 H2O (#414)
+- synonym_text: Magnesium chloride anhydrous
+  synonym_type: EXACT_SYNONYM
+  source: MERGED_FROM MgCl2x 6 H2O (#414)
+- synonym_text: MgCl2  x 7 H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM MgCl2x 6 H2O (#414)
+- synonym_text: MgCl2  x 76 H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM MgCl2x 6 H2O (#414)
+- synonym_text: MgCl2 X 6H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM MgCl2x 6 H2O (#414)
+- synonym_text: MgCl2 x 7 H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM MgCl2x 6 H2O (#414)
+- synonym_text: MgCl2 x 7H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM MgCl2x 6 H2O (#414)
+- synonym_text: MgCl2x7H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM MgCl2x 6 H2O (#414)
+- synonym_text: MgCl2 x 6H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM MgCl2x 6 H2O (#414)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 2285
-  media_count: 153
+  total_occurrences: 2292
+  media_count: 160
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -179,6 +206,16 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_FROM
+  changes: 'Absorbed ''MgCl2x 6 H2O'' from CHEBI:6636 (#414). the identical label
+    with one space missing, yet grounded to different terms: the 2,285-occurrence
+    spelling sits on magnesium dichloride HEXAHYDRATE and the 7-occurrence spelling
+    on the ANHYDROUS salt. The label says ''6 H2O'' either way, so the anhydrous grounding
+    is simply wrong. Merging both fixes that grounding and clears CHEBI:6636''s collision,
+    leaving only ''MgCl2'' on the anhydrous term where it belongs.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7791-18-6
   data_source: PubChem (via CHEBI:86345)

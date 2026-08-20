@@ -88,6 +88,20 @@ MERGES = [
      "'Trypticase peptone' for both"),
 ]
 
+# Same substance, but the two records sit on DIFFERENT identifiers, so the loser
+# is re-pointed at the winner's CURIE in the usual tombstone way. Kept separate
+# from MERGES above because that list asserts nothing about grounding — these
+# also correct one.
+CROSS_MERGES = [
+    ("MgCl2 x 6 H2O", "CHEBI:86345", "MgCl2x 6 H2O", "CHEBI:6636",
+     "the identical label with one space missing, yet grounded to different "
+     "terms: the 2,285-occurrence spelling sits on magnesium dichloride "
+     "HEXAHYDRATE and the 7-occurrence spelling on the ANHYDROUS salt. The "
+     "label says '6 H2O' either way, so the anhydrous grounding is simply "
+     "wrong. Merging both fixes that grounding and clears CHEBI:6636's "
+     "collision, leaving only 'MgCl2' on the anhydrous term where it belongs"),
+]
+
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
@@ -154,6 +168,46 @@ def main(argv: list[str] | None = None) -> int:
                         f"Occurrences transferred; kept as a RAW_TEXT synonym there."),
             "llm_assisted": False})
         done.append((ident, win_lab, lose_lab, wocc["total_occurrences"]))
+
+    for win_lab, win_id, lose_lab, lose_id, why in CROSS_MERGES:
+        win, lose = by_term.get(win_lab), by_term.get(lose_lab)
+        if win is None or lose is None or lose.get("mapping_status") == "REJECTED":
+            skipped.append((lose_lab, "not found or already merged"))
+            continue
+        if str(win.get("identifier")) != win_id or str(lose.get("identifier")) != lose_id:
+            skipped.append((lose_lab, "identifiers moved"))
+            continue
+        locc = lose.get("occurrence_statistics") or {}
+        wocc = win.setdefault("occurrence_statistics", {})
+        before = (wocc.get("total_occurrences") or 0, wocc.get("media_count") or 0)
+        wocc["total_occurrences"] = before[0] + (locc.get("total_occurrences") or 0)
+        wocc["media_count"] = before[1] + (locc.get("media_count") or 0)
+        syns = win.setdefault("synonyms", [])
+        have = {str(s.get("synonym_text", "")).lower() for s in syns}
+        for text, kind in ([(lose_lab, "RAW_TEXT")]
+                           + [(str(s.get("synonym_text") or ""),
+                               s.get("synonym_type") or "RAW_TEXT")
+                              for s in (lose.get("synonyms") or [])]):
+            if text and text.lower() not in have and text.lower() != win_lab.lower():
+                syns.append({"synonym_text": text, "synonym_type": kind,
+                             "source": f"MERGED_FROM {lose_lab} (#414)"})
+                have.add(text.lower())
+        win.setdefault("curation_history", []).append({
+            "timestamp": STAMP, "curator": CURATOR, "action": "MERGED_FROM",
+            "changes": (f"Absorbed {lose_lab!r} from {lose_id} (#414). {why}."),
+            "llm_assisted": False})
+        # Tombstone takes the WINNER's identifier, per the merge convention.
+        lose["identifier"] = win_id
+        lose["mapping_status"] = "REJECTED"
+        lo = lose.setdefault("occurrence_statistics", {})
+        lo["total_occurrences"] = 0
+        lo["media_count"] = 0
+        lose.setdefault("curation_history", []).append({
+            "timestamp": STAMP, "curator": CURATOR, "action": "MERGED_INTO",
+            "changes": (f"Merged into {win_lab!r} on {win_id}, re-pointed from "
+                        f"{lose_id} (#414). {why}."),
+            "llm_assisted": False})
+        done.append((f"{lose_id}->{win_id}", win_lab, lose_lab, wocc["total_occurrences"]))
 
     # MIM stores every record twice: the curated aggregate and a per-record file
     # under data/ingredients/mapped/. Earlier merge scripts wrote only the
