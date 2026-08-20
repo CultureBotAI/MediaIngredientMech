@@ -1,8 +1,8 @@
 # Complete Ingredients Index
 **Total Records**: 2846
-**Mapped**: 2518 (88.5%)
+**Mapped**: 2512 (88.3%)
 **Unmapped**: 269 (9.5%)
-**Other statuses**: 59 (2.1%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 65 (2.3%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 127,962
 
 ---
@@ -646,9 +646,8 @@
 | CHEBI:31340 | Ca-folinate | CHEBI:31340 | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:64205 | Ca(NO3)2 | CHEBI:64205 | CHEBI | EXACT_MATCH | 13 |
 | CHEBI:86159 | Ca(NO3)2 x 4 H2O | CHEBI:86159 | CHEBI | EXACT_MATCH | 146 |
-| CHEBI:3312 | CaCl2 | CHEBI:3312 | CHEBI | EXACT_MATCH | 502 |
-| CHEBI:86158 | CaCl22H2O | CHEBI:86158 | CHEBI | SYNONYM_MATCH | 2 |
-| CHEBI:86158 | CaCl2 x 2 H2O | CHEBI:86158 | CHEBI | EXACT_MATCH | 4343 |
+| CHEBI:3312 | CaCl2 | CHEBI:3312 | CHEBI | EXACT_MATCH | 517 |
+| CHEBI:86158 | CaCl2 x 2 H2O | CHEBI:86158 | CHEBI | EXACT_MATCH | 4345 |
 | CHEBI:91243 | CaCl2 x 6 H2O | CHEBI:91243 | CHEBI | EXACT_MATCH | 42 |
 | kgmicrobe.compound:cacl2_x_7_h2o | CaCl2 x 7 H2O | CHEBI:3312 | CHEBI | CLOSE_MATCH | 7 |
 | CHEBI:3311 | CaCO3 | CHEBI:3311 | CHEBI | EXACT_MATCH | 245 |
@@ -660,7 +659,6 @@
 | CHEBI:27732 | Caffeine | CHEBI:27732 | CHEBI | EXACT_MATCH | 0 |
 | cas:5743-18-0 | Caffeine Hydrobromide | cas:5743-18-0 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:32596 | CaHPO4 | CHEBI:32596 | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:3312 | Calcium Chloride | CHEBI:3312 | CHEBI | SYNONYM_MATCH | 15 |
 | CHEBI:31345 | Calcium pantothenate | CHEBI:31345 | CHEBI | EXACT_MATCH | 1082 |
 | NCIT:C105971 | Calprotectin | NCIT:C105971 | NCIT | EXACT_MATCH | 0 |
 | kgmicrobe.compound:camphomycin | Camphomycin | kgmicrobe.compound:camphomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -1264,7 +1262,7 @@
 | CHEBI:17053 | L-Aspartic acid | CHEBI:17053 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:17561 | L-Cysteine | CHEBI:17561 | CHEBI | EXACT_MATCH | 68 |
 | CHEBI:91247 | L-Cysteine HCl | CHEBI:91247 | CHEBI | EXACT_MATCH | 154 |
-| CHEBI:91248 | L-Cysteine HCl x H2O | CHEBI:91248 | CHEBI | EXACT_MATCH | 1027 |
+| CHEBI:91248 | L-Cysteine HCl x H2O | CHEBI:91248 | CHEBI | EXACT_MATCH | 1040 |
 | CHEBI:35235 | L-cysteine zwitterion | CHEBI:35235 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:16283 | L-Cystine | CHEBI:16283 | CHEBI | EXACT_MATCH | 8 |
 | CHEBI:18287 | L-Fucose | CHEBI:18287 | CHEBI | EXACT_MATCH | 2 |
@@ -1288,7 +1286,6 @@
 | CHEBI:81664 | LL-37 | CHEBI:81664 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15671 | L(+)-Tartaric acid | CHEBI:15671 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:16349 | L-Citrulline | CHEBI:16349 | CHEBI | CAS_RN_LOOKUP | 14 |
-| CHEBI:91248 | L-Cysteine hydrochloride monohydrate | CHEBI:91248 | CHEBI | CAS_RN_LOOKUP | 13 |
 | CHEBI:15729 | L-Ornithine | CHEBI:15729 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:195690 | L-ornithine monohydrochloride | CHEBI:195690 | CHEBI | CAS_RN_LOOKUP | 2 |
 | CHEBI:53696 | L-tyrosine disodium salt | CHEBI:53696 | CHEBI | CAS_RN_LOOKUP | 6 |
@@ -1415,10 +1412,9 @@
 | CHEBI:131391 | Mg-citrate | CHEBI:131391 | CHEBI | SYNONYM_MATCH | 4 |
 | CHEBI:6636 | MgCl2 | CHEBI:6636 | CHEBI | EXACT_MATCH | 247 |
 | CHEBI:131394 | MgCl2 x 2 H2O | CHEBI:131394 | CHEBI | EXACT_MATCH | 18 |
-| CHEBI:86345 | MgCl2 x 6 H2O | CHEBI:86345 | CHEBI | EXACT_MATCH | 2285 |
+| CHEBI:86345 | MgCl2 x 6 H2O | CHEBI:86345 | CHEBI | EXACT_MATCH | 2292 |
 | kgmicrobe.compound:mgcl2_x_7_h2o | MgCl2 x 7 H2O | CHEBI:6636 | CHEBI | CLOSE_MATCH | 11 |
 | CHEBI:86355 | MgCl2 x H2O | CHEBI:86355 | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:6636 | MgCl2x 6 H2O | CHEBI:6636 | CHEBI | SYNONYM_MATCH | 7 |
 | CHEBI:31793 | MgCO3 | CHEBI:31793 | CHEBI | SYNONYM_MATCH | 11 |
 | CHEBI:32599 | MgSO4 x 6 H2O | CHEBI:32599 | CHEBI | EXACT_MATCH | 20 |
 | CHEBI:31795 | MgSO4 x 7 H2O | CHEBI:31795 | CHEBI | EXACT_MATCH | 4050 |
@@ -1476,7 +1472,7 @@
 | CHEBI:32850 | N,N,N′,N′-Tetramethylethylenediamine | CHEBI:32850 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:172431 | N-Acetyl-glutamic acid | CHEBI:172431 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:113373 | Na-3-hydroxybutyrate | CHEBI:113373 | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:32954 | Na-acetate | CHEBI:32954 | CHEBI | EXACT_MATCH | 806 |
+| CHEBI:32954 | Na-acetate | CHEBI:32954 | CHEBI | EXACT_MATCH | 809 |
 | CHEBI:34535 | Na-ampicillin | CHEBI:34535 | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:113451 | Na-ascorbate | CHEBI:113451 | CHEBI | EXACT_MATCH | 27 |
 | CHEBI:113455 | Na-benzoate | CHEBI:113455 | CHEBI | EXACT_MATCH | 36 |
@@ -1514,7 +1510,7 @@
 | CHEBI:86473 | Na2MoO4 x 7 H2O | CHEBI:86473 | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:76208 | Na2S | CHEBI:76208 | CHEBI | SYNONYM_MATCH | 32 |
 | CHEBI:132112 | Na2S2O3 | CHEBI:132112 | CHEBI | SYNONYM_MATCH | 70 |
-| CHEBI:32150 | Na2S2O3 x 5 H2O | CHEBI:32150 | CHEBI | EXACT_MATCH | 455 |
+| CHEBI:32150 | Na2S2O3 x 5 H2O | CHEBI:32150 | CHEBI | EXACT_MATCH | 458 |
 | CHEBI:114786 | Na2S2O5 | CHEBI:114786 | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:76209 | Na2S x 9 H2O | CHEBI:76209 | CHEBI | EXACT_MATCH | 1747 |
 | CHEBI:48843 | Na2SeO3 | CHEBI:48843 | CHEBI | EXACT_MATCH | 109 |
@@ -1826,7 +1822,6 @@
 | cas:4263-52-9 | Sodium 2-bromoethanesulfonate | cas:4263-52-9 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:31824 | Sodium 2-mercaptoethanesulfonate | CHEBI:31824 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:113449 | Sodium 4-Hydroxybenzoate | CHEBI:113449 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:32954 | Sodium acetate | CHEBI:32954 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:32138 | Sodium acetate trihydrate | CHEBI:32138 | CHEBI | EXACT_MATCH | 8 |
 | cas:7486-38-6 | Sodium adipate | FOODON:03413240 | FOODON | NARROW_MATCH | 0 |
 | CHEBI:53311 | Sodium alginate | CHEBI:53311 | CHEBI | EXACT_MATCH | 3 |
@@ -1882,7 +1877,6 @@
 | CHEBI:63675 | Sodium succinate | CHEBI:63675 | CHEBI | SYNONYM_MATCH | 145 |
 | CHEBI:63017 | Sodium tartrate | CHEBI:63017 | CHEBI | EXACT_MATCH | 20 |
 | cas:10489-48-2 | Sodium thiophosphate tribasic hydrate | CHEBI:46612 | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:32150 | Sodium Thiosulfate Pentahydrate | CHEBI:32150 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | CHEBI:114249 | CHEBI | CAS_RN_LOOKUP | 46 |
 | CHEBI:63686 | Sodium succinate dibasic hexahydrate | CHEBI:63686 | CHEBI | CAS_RN_LOOKUP | 11 |
 | ENVO:00001998 | Soil | ENVO:00001998 | ENVO | EXACT_MATCH | 0 |
@@ -2818,6 +2812,8 @@
 | MICRO:0000113 | Bacto Tryptic Soy Broth (Difco) | REJECTED | MICRO:0000113 |  | 0 |
 | CHEBI:40957 | Bicine | REJECTED | CHEBI:40957 |  | 0 |
 | CHEBI:31345 | Ca-pantothenate | REJECTED | CHEBI:31345 |  | 0 |
+| CHEBI:86158 | CaCl22H2O | REJECTED | CHEBI:86158 |  | 0 |
+| CHEBI:3312 | Calcium Chloride | REJECTED | CHEBI:3312 |  | 0 |
 | CHEBI:31345 | Calcium D-Pantothenate | REJECTED | CHEBI:31345 |  | 0 |
 | CHEBI:53503 | CoCl2 x 6 H2O | REJECTED | CHEBI:53503 |  | 0 |
 | CHEBI:62318 | D-(-)-lyxose | REJECTED | CHEBI:16789 |  | 0 |
@@ -2832,7 +2828,9 @@
 | CHEBI:17201 | Glycylglycine | REJECTED | CHEBI:17201 |  | 0 |
 | CHEBI:66872 | KF | REJECTED | CHEBI:66872 |  | 0 |
 | CHEBI:16856 | L-Glutathione | REJECTED | CHEBI:16856 |  | 0 |
+| CHEBI:91248 | L-Cysteine hydrochloride monohydrate | REJECTED | CHEBI:91248 |  | 0 |
 | CHEBI:17306 | maltose | REJECTED | CHEBI:17306 |  | 0 |
+| CHEBI:86345 | MgCl2x 6 H2O | REJECTED | CHEBI:6636 |  | 0 |
 | CHEBI:31795 | MgSO4·7H2O | REJECTED | CHEBI:31795 |  | 0 |
 | CHEBI:31795 | MgSO47H2O | REJECTED | CHEBI:31795 |  | 0 |
 | CHEBI:86364 | MnSO4 x 1 H2O | REJECTED | CHEBI:86364 |  | 0 |
@@ -2845,11 +2843,13 @@
 | CHEBI:53437 | NiSO4 x 6 H2O | REJECTED | CHEBI:53437 |  | 0 |
 | CHEBI:61490 | Poly L Lysine Polymer | REJECTED | CHEBI:61490 |  | 0 |
 | ENVO:00002149 | Sea water | REJECTED | ENVO:00002149 |  | 0 |
+| CHEBI:32954 | Sodium acetate | REJECTED | CHEBI:32954 |  | 0 |
 | CHEBI:32138 | Sodium acetate·3H2O | REJECTED | CHEBI:32138 |  | 0 |
 | CHEBI:32142 | Sodium Citrate | REJECTED | CHEBI:32142 |  | 0 |
 | CHEBI:232798 | Sodium L-lactate | REJECTED | CHEBI:232798 | CHEBI:232798 | 0 |
 | mesh:C025349 | Sodium metasilicate (silicate for diatom frustules) | REJECTED | mesh:C025349 |  | 0 |
 | CHEBI:63005 | Sodium nitrate (nitrogen source) | REJECTED | CHEBI:63005 |  | 0 |
+| CHEBI:32150 | Sodium Thiosulfate Pentahydrate | REJECTED | CHEBI:32150 |  | 0 |
 | CHEBI:32142 | Trisodium citrate x 2 H2O | REJECTED | CHEBI:32142 |  | 0 |
 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI:17268 |  | 0 |
 | CHEBI:47965 | n-Acetyl-muramic acid | REJECTED | CHEBI:47966 |  | 0 |

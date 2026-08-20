@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-08-20T21:51:48.482070+00:00
+Generated: 2026-08-20T22:13:31.671258+00:00
 Total: 2566 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2057,7 +2057,7 @@ Total: 2566 ingredients
 | CHEBI:9750 | CHEBI:9750 | Triton X-100 | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16765 | CHEBI:16765 | Tryptamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | MICRO:0000175 | MICRO:0000175 | Trypticase | MAPPED | MICRO | CLOSE_MATCH | 76 |
-| MICRO:0000175 | MICRO:0000175 | Trypticase peptone | REJECTED | MICRO | EXACT_MATCH | 0 |
+| MICRO:0000175 | MICRO:0000175 | Trypticase peptone | MAPPED | MICRO | EXACT_MATCH | 0 |
 | MICRO:0000182 | MICRO:0000182 | Tryptone | MAPPED | MICRO | EXACT_MATCH | 6 |
 | CHEBI:27897 | CHEBI:27897 | Tryptophan | MAPPED | CHEBI | EXACT_MATCH | 35 |
 | MICRO:0000183 | MICRO:0000183 | Tryptose | MAPPED | MICRO | EXACT_MATCH | 0 |

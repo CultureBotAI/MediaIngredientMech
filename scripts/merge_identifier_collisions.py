@@ -63,6 +63,14 @@ STAMP = f"{DATE}T00:00:00+00:00"
 CURATOR = "merge_identifier_collisions"
 
 # (identifier, winner, loser, why this pair is one substance)
+#
+# NOT here: MICRO:0000175 'Trypticase' / 'Trypticase peptone'. It reads like the
+# same product, but mappings/duplicate_identifier_baseline.tsv dispositions it
+# NEEDS_OWN_ID_MEMBER_UNDECIDED — a curator has already recorded that one member
+# is more specific and should take its own id, and that WHICH member surrenders
+# MICRO:0000175 is undecided. Merging would overwrite that decision with a
+# guess. Every entry below is UNREVIEWED or HYDRATE_FAMILY_UNREVIEWED, i.e. no
+# decision exists to contradict.
 MERGES = [
     ("CHEBI:86158", "CaCl2 x 2 H2O", "CaCl22H2O",
      "the same string with the spacing removed — identical CAS 10035-04-8 and "
@@ -82,10 +90,6 @@ MERGES = [
      "formula versus name for the same anhydrous salt; identical CAS 10043-52-4 "
      "and formula Ca.2Cl. Neither label mentions hydration, so this is not the "
      "hydrate/anhydrous trap that rules out the CuSO4 and FeSO4 families"),
-    ("MICRO:0000175", "Trypticase", "Trypticase peptone",
-     "Trypticase IS a pancreatic digest of casein, i.e. a peptone; the longer "
-     "label spells out what the shorter one names, and MICRO:0000175 is "
-     "'Trypticase peptone' for both"),
 ]
 
 # Same substance, but the two records sit on DIFFERENT identifiers, so the loser

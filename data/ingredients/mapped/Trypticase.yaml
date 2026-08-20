@@ -24,24 +24,6 @@ synonyms:
 - synonym_text: trypticase
   synonym_type: EXACT
   source: manual
-- synonym_text: Trypticase peptone
-  synonym_type: RAW_TEXT
-  source: MERGED_FROM Trypticase peptone (#414)
-- synonym_text: Trypticase peptone (BD-BBL)
-  synonym_type: CATALOG_VARIANT
-  source: MERGED_FROM Trypticase peptone (#414)
-- synonym_text: Trypticase peptone (BD BBL)
-  synonym_type: CATALOG_VARIANT
-  source: MERGED_FROM Trypticase peptone (#414)
-- synonym_text: Trypticase Peptone (BBL)
-  synonym_type: CATALOG_VARIANT
-  source: MERGED_FROM Trypticase peptone (#414)
-- synonym_text: Trypticase Peptone (BD 211921)
-  synonym_type: CATALOG_VARIANT
-  source: MERGED_FROM Trypticase peptone (#414)
-- synonym_text: Tripticase peptone
-  synonym_type: EXACT_SYNONYM
-  source: MERGED_FROM Trypticase peptone (#414)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 76
@@ -84,18 +66,6 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
-- timestamp: '2026-08-20T00:00:00+00:00'
-  curator: merge_identifier_collisions
-  action: MERGED_FROM
-  changes: 'Absorbed ''Trypticase peptone'' (#414). Both records held MICRO:0000175
-    while both were live, which MIM''s own rule forbids — for a mapped record the
-    identifier IS the ontology CURIE, so two live records on it assert that two ingredients
-    are one thing. They are one thing: Trypticase IS a pancreatic digest of casein,
-    i.e. a peptone; the longer label spells out what the shorter one names, and MICRO:0000175
-    is ''Trypticase peptone'' for both. ''Trypticase'' wins as the label media actually
-    use (76 occurrences against 0); the other survives as a RAW_TEXT synonym, so label_index
-    still answers for it.'
-  llm_assisted: false
 ingredient_type: UNDEFINED_MIXTURE
 nutritional_roles:
 - role: PROTEIN_SOURCE
