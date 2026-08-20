@@ -304,6 +304,23 @@ def load_config(path: Path) -> dict[str, Any]:
                 raise ValueError(
                     f"Stage {focus_name}.{stage_name}.capabilities must be a mapping"
                 )
+        adjustments = focus.get("provider_adjustments")
+        if adjustments is not None:
+            if not isinstance(adjustments, dict):
+                raise ValueError(
+                    f"Focus {focus_name!r}.provider_adjustments must be a mapping"
+                )
+            canonical = {}
+            for raw_name, value in adjustments.items():
+                name = canonical_provider(str(raw_name))
+                if name not in PROVIDERS:
+                    raise ValueError(
+                        f"Focus {focus_name!r}.provider_adjustments names unknown "
+                        f"provider {raw_name!r} (resolved to {name!r}); "
+                        f"known providers: {', '.join(sorted(PROVIDERS))}"
+                    )
+                canonical[name] = value
+            focus["provider_adjustments"] = canonical
     return data
 
 
@@ -496,6 +513,18 @@ def main(argv: list[str] | None = None) -> int:
                 stage["ranking"] = [
                     row for row in stage["ranking"] if row["provider"] == provider_name
                 ]
+                # recommended_available/fallback_available were computed by
+                # build_report() from the *unfiltered* ranking, so they can
+                # name a provider no longer present in the filtered ranking
+                # above — recompute both from the filtered set the same way
+                # build_report() does, instead of leaving stale, internally-
+                # inconsistent values in the JSON.
+                available = [
+                    row for row in stage["ranking"]
+                    if row["status"] == "available" and row["provider"] != "mock"
+                ]
+                stage["recommended_available"] = available[0] if available else None
+                stage["fallback_available"] = available[1] if len(available) > 1 else None
         print(json.dumps(report, indent=2))
     else:
         print_report(report, provider_name)

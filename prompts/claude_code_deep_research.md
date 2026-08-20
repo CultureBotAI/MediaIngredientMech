@@ -1,8 +1,8 @@
 # Claude Code task: one MediaIngredientMech deep-research curation
 
-Work from the MediaIngredientMech repository root. Read `CLAUDE.md`, any
-applicable `AGENTS.md`, `history/README.md`, the LinkML schema, and the selected
-ingredient record before editing.
+Work from the MediaIngredientMech repository root. Read `README.md`,
+`history/README.md`, the LinkML schema, and the selected ingredient record
+before editing.
 
 ## Mission
 
