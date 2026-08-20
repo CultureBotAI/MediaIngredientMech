@@ -373,7 +373,21 @@ def build_visualization_data(
             except Exception:
                 continue
             ident = ing.get('identifier')
-            if ident and ident not in records_by_id:
+            if not ident:
+                continue
+            # First-wins was filename order, and a merge tombstone deliberately
+            # carries the WINNER's identifier — so whichever of the pair globbed
+            # first became the record for that CURIE. That drew 30 nodes under a
+            # REJECTED label while the surviving record never appeared: dropping
+            # the duplicate NODES (#407) could not fix it, because by then both
+            # copies were the tombstone. Live records win the index outright.
+            held = records_by_id.get(ident)
+            if held is None:
+                records_by_id[ident] = (ing, category, candidate)
+                continue
+            held_rejected = (held[0].get('mapping_status') == 'REJECTED')
+            this_rejected = (ing.get('mapping_status') == 'REJECTED')
+            if held_rejected and not this_rejected:
                 records_by_id[ident] = (ing, category, candidate)
 
     for _, row in umap_df.iterrows():

@@ -35,7 +35,7 @@ synonyms:
 - synonym_text: Tripticase peptone
   synonym_type: EXACT_SYNONYM
   source: manual
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -77,6 +77,14 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE -> nutritional_roles.PROTEIN_SOURCE'
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_INTO
+  changes: Merged into 'Trypticase' on MICRO:0000175 (#414). Trypticase IS a pancreatic
+    digest of casein, i.e. a peptone; the longer label spells out what the shorter
+    one names, and MICRO:0000175 is 'Trypticase peptone' for both. Occurrences transferred;
+    kept as a RAW_TEXT synonym there.
+  llm_assisted: false
 ingredient_type: UNDEFINED_MIXTURE
 nutritional_roles:
 - role: PROTEIN_SOURCE

@@ -70,7 +70,7 @@ label,match_type,identifier,preferred_term,ontology_id,mapping_status,ambiguity
 "(1E,6E)-1,7-bis(4-hydroxy-3-methoxyphenyl)hepta-1,6-diene-3,5-dione",synonym,CHEBI:3962,Curcumin,CHEBI:3962,MAPPED,unique
 (1R)-1-carboxy-2-sulfanylethan-1-aminium chloride,synonym,CHEBI:91247,L-Cysteine HCl,CHEBI:91247,MAPPED,unique
 (1R)-1-carboxy-2-sulfanylethan-1-aminium chloride--water (1/1),synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-(1R)-1-carboxy-2-sulfanylethan-1-aminium chloride--water (1/1),synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+(1R)-1-carboxy-2-sulfanylethan-1-aminium chloride--water (1/1),synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 "(1r,2r,3r,4r,5r,6r)-cyclohexane-1,2,3,4,5,6-hexol",synonym,CHEBI:17268,m-Inositol,CHEBI:17268,REJECTED,unique
 "(1R,2R,3S,4R,6S)-4,6-diamino-2-{[3-O-(2,6-diamino-2,6-dideoxy-beta-L-idopyranosyl)-beta-D-ribofuranosyl]oxy}-3-hydroxycyclohexyl 2-amino-2-deoxy-alpha-D-glucopyranoside sulfate",synonym,CHEBI:7935,Paromomycin sulfate salt,CHEBI:7935,MAPPED,unique
 "(1r,2R,3S,4s,5R,6S)-cyclohexane-1,2,3,4,5,6-hexol",synonym,CHEBI:17268,myo-Inositol,CHEBI:17268,MAPPED,unique
@@ -120,7 +120,7 @@ label,match_type,identifier,preferred_term,ontology_id,mapping_status,ambiguity
 "(2R)-2,6-diaminohexanoic acid",synonym,CHEBI:16855,D-Lysine,CHEBI:16855,MAPPED,unique
 (2R)-2-amino-3-mercaptopropanoic acid,synonym,CHEBI:17561,L-Cysteine,CHEBI:17561,MAPPED,unique
 (2R)-2-Amino-3-sulfanyl-propanoic acid hydrochloride monohydrate,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-(2R)-2-Amino-3-sulfanyl-propanoic acid hydrochloride monohydrate,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+(2R)-2-Amino-3-sulfanyl-propanoic acid hydrochloride monohydrate,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 (2R)-2-amino-3-sulfanylpropanoic acid,synonym,CHEBI:17561,L-Cysteine,CHEBI:17561,MAPPED,unique
 (2R)-2-aminobutanedioic acid,synonym,CHEBI:17364,D-Aspartic Acid,CHEBI:17364,MAPPED,unique
 (2R)-2-aminobutanoic acid,synonym,CHEBI:28797,D-2-Aminobutyric acid,CHEBI:28797,MAPPED,unique
@@ -2508,15 +2508,21 @@ CaCl2 x H2O,synonym,CHEBI:3312,CaCl2,CHEBI:3312,MAPPED,conflict:different_substa
 CaCl2 x H2O,synonym,kgmicrobe.compound:cacl2_x_7_h2o,CaCl2 x 7 H2O,CHEBI:3312,MAPPED,conflict:different_substances
 CaCl2 x2H2O,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,unique
 CaCl2 · 2H2O,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,unique
-CaCl2 × 2 H2O,synonym,CHEBI:3312,Calcium Chloride,CHEBI:3312,MAPPED,conflict:different_substances
-CaCl2 × 2 H2O,synonym,CHEBI:86158,CaCl22H2O,CHEBI:86158,MAPPED,conflict:different_substances
-CaCl2*2H2O,synonym,CHEBI:3312,Calcium Chloride,CHEBI:3312,MAPPED,conflict:different_substances
-CaCl2*2H2O,synonym,CHEBI:86158,CaCl22H2O,CHEBI:86158,MAPPED,conflict:different_substances
+CaCl2 × 2 H2O,synonym,CHEBI:3312,CaCl2,CHEBI:3312,MAPPED,conflict:different_substances
+CaCl2 × 2 H2O,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,conflict:different_substances
+CaCl2 × 2 H2O,synonym,CHEBI:3312,Calcium Chloride,CHEBI:3312,REJECTED,conflict:different_substances
+CaCl2 × 2 H2O,synonym,CHEBI:86158,CaCl22H2O,CHEBI:86158,REJECTED,conflict:different_substances
+CaCl2*2H2O,synonym,CHEBI:3312,CaCl2,CHEBI:3312,MAPPED,conflict:different_substances
+CaCl2*2H2O,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,conflict:different_substances
+CaCl2*2H2O,synonym,CHEBI:3312,Calcium Chloride,CHEBI:3312,REJECTED,conflict:different_substances
+CaCl2*2H2O,synonym,CHEBI:86158,CaCl22H2O,CHEBI:86158,REJECTED,conflict:different_substances
 CaCl2. 2H2O,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,unique
 CaCl2.2H2O,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,unique
 CaCl2.6H2O,synonym,CHEBI:91243,CaCl2 x 6 H2O,CHEBI:91243,MAPPED,unique
-CaCl22H2O,preferred_term,CHEBI:86158,CaCl22H2O,CHEBI:86158,MAPPED,resolved:owned
-CaCl22H2O,synonym,CHEBI:3312,Calcium Chloride,CHEBI:3312,MAPPED,resolved:owned
+CaCl22H2O,preferred_term,CHEBI:86158,CaCl22H2O,CHEBI:86158,REJECTED,resolved:owned
+CaCl22H2O,synonym,CHEBI:3312,CaCl2,CHEBI:3312,MAPPED,resolved:owned
+CaCl22H2O,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,resolved:owned
+CaCl22H2O,synonym,CHEBI:3312,Calcium Chloride,CHEBI:3312,REJECTED,resolved:owned
 CaCl2x 2H2O,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,unique
 CaCl2x2H2O,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,unique
 CaCl2x6H2O,synonym,CHEBI:91243,CaCl2 x 6 H2O,CHEBI:91243,MAPPED,unique
@@ -2562,25 +2568,25 @@ CaHPO4,preferred_term,CHEBI:32596,CaHPO4,CHEBI:32596,MAPPED,unique
 "calcium bis{(3R,5R)-7-[3-(anilinocarbonyl)-5-(4-fluorophenyl)-2-isopropyl-4-phenyl-1H-pyrrol-1-yl]-3,5-dihydroxyheptanoate} trihydrate",synonym,CHEBI:2911,Atorvastatin calcium salt trihydrate,CHEBI:2911,MAPPED,unique
 Calcium Carbonate,synonym,CHEBI:3311,CaCO3,CHEBI:3311,MAPPED,unique
 calcium carbonate (1:1),synonym,CHEBI:3311,CaCO3,CHEBI:3311,MAPPED,unique
-Calcium Chloride,preferred_term,CHEBI:3312,Calcium Chloride,CHEBI:3312,MAPPED,resolved:owned
+Calcium Chloride,preferred_term,CHEBI:3312,Calcium Chloride,CHEBI:3312,REJECTED,resolved:owned
 Calcium chloride,synonym,CHEBI:3312,CaCl2,CHEBI:3312,MAPPED,resolved:owned
-calcium chloride,synonym,CHEBI:3312,Calcium Chloride,CHEBI:3312,MAPPED,resolved:owned
 calcium chloride,synonym,kgmicrobe.compound:cacl2_x_7_h2o,CaCl2 x 7 H2O,CHEBI:3312,MAPPED,resolved:owned
+calcium chloride,synonym,CHEBI:3312,Calcium Chloride,CHEBI:3312,REJECTED,resolved:owned
 Calcium chloride anhydrous,synonym,CHEBI:3312,CaCl2,CHEBI:3312,MAPPED,conflict:different_substances
 Calcium chloride anhydrous,synonym,kgmicrobe.compound:cacl2_x_7_h2o,CaCl2 x 7 H2O,CHEBI:3312,MAPPED,conflict:different_substances
 Calcium chloride dihydrate,synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,unique
-calcium chloride dihydrate,ontology_label,CHEBI:86158,CaCl22H2O,CHEBI:86158,MAPPED,unique
+calcium chloride dihydrate,ontology_label,CHEBI:86158,CaCl22H2O,CHEBI:86158,REJECTED,unique
 calcium chloride hexahydrate,synonym,CHEBI:91243,CaCl2 x 6 H2O,CHEBI:91243,MAPPED,unique
 calcium chloride--water (1/2),synonym,CHEBI:86158,CaCl2 x 2 H2O,CHEBI:86158,MAPPED,unique
-calcium chloride--water (1/2),synonym,CHEBI:86158,CaCl22H2O,CHEBI:86158,MAPPED,unique
+calcium chloride--water (1/2),synonym,CHEBI:86158,CaCl22H2O,CHEBI:86158,REJECTED,unique
 calcium chloride--water (1/6),synonym,CHEBI:91243,CaCl2 x 6 H2O,CHEBI:91243,MAPPED,unique
 "calcium D,L-pantothenate",synonym,CHEBI:31345,Calcium pantothenate,CHEBI:31345,MAPPED,unique
 Calcium D-(+)-pantothenate,synonym,CHEBI:31345,Calcium pantothenate,CHEBI:31345,MAPPED,unique
 Calcium D-Pantothenate,preferred_term,CHEBI:31345,Calcium D-Pantothenate,CHEBI:31345,REJECTED,unique
 Calcium D-Pantothenate,synonym,CHEBI:31345,Calcium pantothenate,CHEBI:31345,MAPPED,unique
 calcium dichloride,synonym,CHEBI:3312,CaCl2,CHEBI:3312,MAPPED,conflict:different_substances
-calcium dichloride,ontology_label,CHEBI:3312,Calcium Chloride,CHEBI:3312,MAPPED,conflict:different_substances
 calcium dichloride,ontology_label,kgmicrobe.compound:cacl2_x_7_h2o,CaCl2 x 7 H2O,CHEBI:3312,MAPPED,conflict:different_substances
+calcium dichloride,ontology_label,CHEBI:3312,Calcium Chloride,CHEBI:3312,REJECTED,conflict:different_substances
 calcium dinitrate,synonym,CHEBI:64205,Ca(NO3)2,CHEBI:64205,MAPPED,unique
 Calcium dinitrate tetrahydrate,synonym,CHEBI:86159,Ca(NO3)2 x 4 H2O,CHEBI:86159,MAPPED,unique
 Calcium folinate,synonym,CHEBI:31340,Ca-folinate,CHEBI:31340,MAPPED,unique
@@ -3339,7 +3345,7 @@ Cyd,synonym,CHEBI:17562,Cytidine,CHEBI:17562,MAPPED,unique
 Cystargin,preferred_term,mesh:C058276,Cystargin,mesh:C058276,MAPPED,unique
 Cystein,synonym,CHEBI:15356,Cysteine,CHEBI:15356,MAPPED,unique
 Cystein-HCl x 2 H2O (5% (w/v)),synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-Cystein-HCl x 2 H2O (5% (w/v)),synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+Cystein-HCl x 2 H2O (5% (w/v)),synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 Cysteine,preferred_term,CHEBI:15356,Cysteine,CHEBI:15356,MAPPED,resolved:owned
 CYSTEINE,synonym,CHEBI:17561,L-Cysteine,CHEBI:17561,MAPPED,resolved:owned
 Cysteine hydrochloride,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
@@ -5156,7 +5162,7 @@ L-(-)-tryptophan,synonym,CHEBI:16828,L-Tryptophan,CHEBI:16828,MAPPED,unique
 L--Cysteine HCl H2O,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
 L--Cysteine・HCl・H2O,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
 L--cysteine・HCl・H2O,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-L--Cysteine・HCL・H2O,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+L--Cysteine・HCL・H2O,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 "L-1,2-dithiolane 3-valeric acid",synonym,CHEBI:43796,α-lipoic acid,CHEBI:43796,MAPPED,unique
 L-15 medium,preferred_term,UNMAPPED_0414,L-15 medium,,UNMAPPED,unique
 L-15 powder,preferred_term,UNMAPPED_0415,L-15 powder,,UNMAPPED,unique
@@ -5236,19 +5242,19 @@ L-Cysteine,preferred_term,CHEBI:17561,L-Cysteine,CHEBI:17561,MAPPED,unique
 L-Cysteine HCl,preferred_term,CHEBI:91247,L-Cysteine HCl,CHEBI:91247,MAPPED,unique
 L-Cysteine HCl monohydrate,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
 L-Cysteine HCl x H2O,preferred_term,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-L-Cysteine HCl x H2O,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+L-Cysteine HCl x H2O,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 L-cysteine HCl.H2O,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-L-cysteine HCl.H2O,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+L-cysteine HCl.H2O,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 L-cysteine hydrochloride,ontology_label,CHEBI:91247,L-Cysteine HCl,CHEBI:91247,MAPPED,unresolved:partial_chemistry
 L-cysteine hydrochloride,ontology_label,kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution,L-Cysteine x HCl x H2O solution,CHEBI:91247,MAPPED,unresolved:partial_chemistry
 L-cysteine hydrochloride hydrate,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-L-cysteine hydrochloride hydrate,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
-L-Cysteine hydrochloride monohydrate,preferred_term,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+L-cysteine hydrochloride hydrate,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
+L-Cysteine hydrochloride monohydrate,preferred_term,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 L-Cysteine hydrochloride monohydrate,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
 L-cysteine hydrochloride--water (1/1),synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-L-cysteine hydrochloride--water (1/1),synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+L-cysteine hydrochloride--water (1/1),synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 L-Cysteine monohydrate monochloride,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-L-Cysteine monohydrate monochloride,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+L-Cysteine monohydrate monochloride,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 L-Cysteine monohydrochloride,synonym,CHEBI:91247,L-Cysteine HCl,CHEBI:91247,MAPPED,unique
 L-Cysteine x HCl x H2O solution,preferred_term,kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution,L-Cysteine x HCl x H2O solution,CHEBI:91247,MAPPED,unique
 L-cysteine zwitterion,preferred_term,CHEBI:35235,L-cysteine zwitterion,CHEBI:35235,MAPPED,resolved:owned
@@ -5256,7 +5262,7 @@ L-cysteine zwitterion,synonym,CHEBI:17561,L-Cysteine,CHEBI:17561,MAPPED,resolved
 L-Cysteine-HCl x H2O,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
 L-Cysteine-HCl·H2O,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
 L-Cysteine・HCl・H2O,synonym,CHEBI:91248,L-Cysteine HCl x H2O,CHEBI:91248,MAPPED,unique
-L-Cysteine・HCl・H2O,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,MAPPED,unique
+L-Cysteine・HCl・H2O,synonym,CHEBI:91248,L-Cysteine hydrochloride monohydrate,CHEBI:91248,REJECTED,unique
 L-cysteinium chloride,synonym,CHEBI:91247,L-Cysteine HCl,CHEBI:91247,MAPPED,unique
 L-Cysteiniumchloride,synonym,CHEBI:91247,L-Cysteine HCl,CHEBI:91247,MAPPED,unique
 L-Cystine,preferred_term,CHEBI:16283,L-Cystine,CHEBI:16283,MAPPED,unique
@@ -7871,13 +7877,14 @@ Sodium 4-morpholin-1-ylethylsulphonate,synonym,CHEBI:62955,MES sodium salt,CHEBI
 "sodium 6beta-[(2R)-2-amino-2-phenylacetamido]-2,2-dimethylpenam-3alpha-carboxylate",synonym,CHEBI:34535,Ampicillin sodium salt,CHEBI:34535,REJECTED,unique
 "sodium 6beta-{(2R)-2-[(4-ethyl-2,3-dioxopiperazin-1-yl)carboxamido]-2-phenylacetamido}-2,2-dimethylpenam-3alpha-carboxylate",synonym,CHEBI:8233,Piperacillin sodium salt,CHEBI:8233,MAPPED,unique
 "sodium 6beta-{[3-(2,6-dichlorophenyl)-5-methyl-1,2-oxazol-4-yl]carboxamido}-2,2-dimethylpenam-3alpha-carboxylate--water (1/1)",synonym,CHEBI:52019,Dicloxacillin sodium salt monohydrate,CHEBI:52019,MAPPED,unique
-Sodium acetate,preferred_term,CHEBI:32954,Sodium acetate,CHEBI:32954,MAPPED,unique
+Sodium acetate,preferred_term,CHEBI:32954,Sodium acetate,CHEBI:32954,REJECTED,unique
 Sodium Acetate,synonym,CHEBI:32954,Na-acetate,CHEBI:32954,MAPPED,unique
 sodium acetate anhydrous,synonym,CHEBI:32138,Sodium acetate·3H2O,CHEBI:32138,REJECTED,unique
 Sodium acetate trihydrate,preferred_term,CHEBI:32138,Sodium acetate trihydrate,CHEBI:32138,MAPPED,unique
 sodium acetate trihydrate,ontology_label,CHEBI:32138,Sodium acetate·3H2O,CHEBI:32138,REJECTED,unique
 Sodium acetate x 3 H2O,synonym,CHEBI:32138,Sodium acetate trihydrate,CHEBI:32138,MAPPED,unique
-Sodium acetate(Fisher BP 333),synonym,CHEBI:32954,Sodium acetate,CHEBI:32954,MAPPED,unique
+Sodium acetate(Fisher BP 333),synonym,CHEBI:32954,Na-acetate,CHEBI:32954,MAPPED,unique
+Sodium acetate(Fisher BP 333),synonym,CHEBI:32954,Sodium acetate,CHEBI:32954,REJECTED,unique
 sodium acetate--water (1/3),synonym,CHEBI:32138,Sodium acetate trihydrate,CHEBI:32138,MAPPED,unique
 Sodium acetate·3H2O,preferred_term,CHEBI:32138,Sodium acetate·3H2O,CHEBI:32138,REJECTED,unique
 Sodium acetate·3H2O,synonym,CHEBI:32138,Sodium acetate trihydrate,CHEBI:32138,MAPPED,unique
@@ -8127,7 +8134,7 @@ sodium sulfoxylate,synonym,CHEBI:66870,Sodium dithionite,CHEBI:66870,MAPPED,uniq
 sodium sulfuret,synonym,CHEBI:76208,Na2S,CHEBI:76208,MAPPED,unique
 sodium sulfurothioate hydrate (2:1:5),synonym,CHEBI:32150,Na2S2O3 x 5 H2O,CHEBI:32150,MAPPED,unique
 sodium sulfurothioate--water (1/5),synonym,CHEBI:32150,Na2S2O3 x 5 H2O,CHEBI:32150,MAPPED,unique
-sodium sulfurothioate--water (1/5),synonym,CHEBI:32150,Sodium Thiosulfate Pentahydrate,CHEBI:32150,MAPPED,unique
+sodium sulfurothioate--water (1/5),synonym,CHEBI:32150,Sodium Thiosulfate Pentahydrate,CHEBI:32150,REJECTED,unique
 sodium sulphate,synonym,CHEBI:32149,Na2SO4,CHEBI:32149,MAPPED,unique
 sodium sulphide,synonym,CHEBI:76208,Na2S,CHEBI:76208,MAPPED,unique
 Sodium sulphite,synonym,CHEBI:86477,Na2SO3,CHEBI:86477,MAPPED,unique
@@ -8140,9 +8147,10 @@ Sodium thioglycolate,synonym,CHEBI:86481,Na-thioglycolate,CHEBI:86481,MAPPED,uni
 Sodium thioglycollate,synonym,CHEBI:86481,Na-thioglycolate,CHEBI:86481,MAPPED,unique
 Sodium thiophosphate tribasic hydrate,preferred_term,cas:10489-48-2,Sodium thiophosphate tribasic hydrate,CHEBI:46612,MAPPED,unique
 sodium thiosulfate,ontology_label,CHEBI:132112,Na2S2O3,CHEBI:132112,MAPPED,unique
-Sodium Thiosulfate Pentahydrate,preferred_term,CHEBI:32150,Sodium Thiosulfate Pentahydrate,CHEBI:32150,MAPPED,unique
+Sodium Thiosulfate Pentahydrate,preferred_term,CHEBI:32150,Sodium Thiosulfate Pentahydrate,CHEBI:32150,REJECTED,unique
 Sodium thiosulfate pentahydrate,synonym,CHEBI:32150,Na2S2O3 x 5 H2O,CHEBI:32150,MAPPED,unique
-"Sodium Thiosulfate Pentahydrate (agar media only,sterile)(Baker 3946)",synonym,CHEBI:32150,Sodium Thiosulfate Pentahydrate,CHEBI:32150,MAPPED,unique
+"Sodium Thiosulfate Pentahydrate (agar media only,sterile)(Baker 3946)",synonym,CHEBI:32150,Na2S2O3 x 5 H2O,CHEBI:32150,MAPPED,unique
+"Sodium Thiosulfate Pentahydrate (agar media only,sterile)(Baker 3946)",synonym,CHEBI:32150,Sodium Thiosulfate Pentahydrate,CHEBI:32150,REJECTED,unique
 Sodium thiosulphate,synonym,CHEBI:132112,Na2S2O3,CHEBI:132112,MAPPED,unique
 sodium trioxidonitrate(1-),synonym,CHEBI:63005,NaNO3,CHEBI:63005,MAPPED,unresolved:partial_chemistry
 sodium trioxidonitrate(1-),synonym,kgmicrobe.ingredient:sodium_nitrate_~28070_m_stock~29,Sodium nitrate (0.70 M stock),CHEBI:63005,MAPPED,unresolved:partial_chemistry
@@ -8665,7 +8673,8 @@ trimethylglycocoll,synonym,kgmicrobe.compound:betaine_x_h2o,Betaine x H2O,CHEBI:
 Trinitrotoluene,preferred_term,CHEBI:27135,Trinitrotoluene,CHEBI:27135,MAPPED,unique
 trioxophosphoric(3-) acid,synonym,CHEBI:36361,phosphorous acid,CHEBI:36361,MAPPED,unique
 Triphenyltetrazolium Chloride,synonym,CHEBI:78019,"2,3,5-Triphenyltetrazolium chloride",CHEBI:78019,MAPPED,unique
-Tripticase peptone,synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,MAPPED,unique
+Tripticase peptone,synonym,MICRO:0000175,Trypticase,MICRO:0000175,MAPPED,unique
+Tripticase peptone,synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,REJECTED,unique
 triptofano,synonym,CHEBI:27897,Tryptophan,CHEBI:27897,MAPPED,unique
 triptohypol C,synonym,CHEBI:132340,Dihydrocelastrol,CHEBI:132340,MAPPED,unique
 Triptolide,preferred_term,CHEBI:9747,Triptolide,CHEBI:9747,MAPPED,unique
@@ -8735,12 +8744,16 @@ tryptic soy broth,ontology_label,MICRO:0000113,Bacto Tryptic Soy Broth,MICRO:000
 tryptic soy broth,ontology_label,MICRO:0000113,Bacto Tryptic Soy Broth (Difco),MICRO:0000113,REJECTED,unique
 Trypticase,preferred_term,MICRO:0000175,Trypticase,MICRO:0000175,MAPPED,unique
 trypticase,synonym,MICRO:0000175,Trypticase,MICRO:0000175,MAPPED,unique
-Trypticase peptone,preferred_term,MICRO:0000175,Trypticase peptone,MICRO:0000175,MAPPED,unique
-Trypticase peptone,ontology_label,MICRO:0000175,Trypticase,MICRO:0000175,MAPPED,unique
-Trypticase Peptone (BBL),synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,MAPPED,unique
-Trypticase Peptone (BD 211921),synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,MAPPED,unique
-Trypticase peptone (BD BBL),synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,MAPPED,unique
-Trypticase peptone (BD-BBL),synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,MAPPED,unique
+Trypticase peptone,preferred_term,MICRO:0000175,Trypticase peptone,MICRO:0000175,REJECTED,unique
+Trypticase peptone,synonym,MICRO:0000175,Trypticase,MICRO:0000175,MAPPED,unique
+Trypticase Peptone (BBL),synonym,MICRO:0000175,Trypticase,MICRO:0000175,MAPPED,unique
+Trypticase Peptone (BBL),synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,REJECTED,unique
+Trypticase Peptone (BD 211921),synonym,MICRO:0000175,Trypticase,MICRO:0000175,MAPPED,unique
+Trypticase Peptone (BD 211921),synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,REJECTED,unique
+Trypticase peptone (BD BBL),synonym,MICRO:0000175,Trypticase,MICRO:0000175,MAPPED,unique
+Trypticase peptone (BD BBL),synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,REJECTED,unique
+Trypticase peptone (BD-BBL),synonym,MICRO:0000175,Trypticase,MICRO:0000175,MAPPED,unique
+Trypticase peptone (BD-BBL),synonym,MICRO:0000175,Trypticase peptone,MICRO:0000175,REJECTED,unique
 Trypticase soy agar,preferred_term,UNMAPPED_0557,Trypticase soy agar,,UNMAPPED,unique
 Trypticase soy broth,preferred_term,UNMAPPED_0252,Trypticase soy broth,,UNMAPPED,unique
 Trypticase-glucose-yeast Extract,preferred_term,kgmicrobe.ingredient:trypticase_glucose_yeast_extract,Trypticase-glucose-yeast Extract,kgmicrobe.ingredient:trypticase_glucose_yeast_extract,MAPPED,unique

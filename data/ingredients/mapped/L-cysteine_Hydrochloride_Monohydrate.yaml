@@ -41,10 +41,10 @@ synonyms:
 - synonym_text: L-cysteine hydrochloride--water (1/1)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 13
-  media_count: 13
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-04-07T10:19:37.160184+00:00'
   curator: feba_ontology_enrichment_batch
@@ -86,6 +86,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
     nutritional_roles.AMINO_ACID_SOURCE'
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_INTO
+  changes: Merged into 'L-Cysteine HCl x H2O' on CHEBI:91248 (#414). abbreviation
+    versus full name; identical CAS 7048-04-6 and formula C3H7NO2S.H2O.HCl, both explicitly
+    the monohydrate. Occurrences transferred; kept as a RAW_TEXT synonym there.
+  llm_assisted: false
 notes: Created from FEBA ontology enrichment workflow. Used in 13 FEBA media formulations.
 chemical_properties:
   cas_rn: 7048-04-6

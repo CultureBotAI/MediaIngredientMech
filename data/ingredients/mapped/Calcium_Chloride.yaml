@@ -31,10 +31,10 @@ synonyms:
 - synonym_text: calcium chloride
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 15
-  media_count: 15
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -117,6 +117,14 @@ curation_history:
     direct match to the term and SYNONYM_MATCH as a match to a known synonym, so the
     recorded grade overstated. ontology_id is unchanged — the term is correct. The
     SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_INTO
+  changes: Merged into 'CaCl2' on CHEBI:3312 (#414). formula versus name for the same
+    anhydrous salt; identical CAS 10043-52-4 and formula Ca.2Cl. Neither label mentions
+    hydration, so this is not the hydrate/anhydrous trap that rules out the CuSO4
+    and FeSO4 families. Occurrences transferred; kept as a RAW_TEXT synonym there.
   llm_assisted: false
 chemical_properties:
   cas_rn: 10043-52-4

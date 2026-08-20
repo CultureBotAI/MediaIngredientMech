@@ -66,10 +66,19 @@ synonyms:
 - synonym_text: CaCl2・H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
+- synonym_text: CaCl2 × 2 H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM Calcium Chloride (#414)
+- synonym_text: CaCl2*2H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM Calcium Chloride (#414)
+- synonym_text: CaCl22H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM Calcium Chloride (#414)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 502
-  media_count: 60
+  total_occurrences: 517
+  media_count: 75
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -139,6 +148,18 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_FROM
+  changes: 'Absorbed ''Calcium Chloride'' (#414). Both records held CHEBI:3312 while
+    both were live, which MIM''s own rule forbids — for a mapped record the identifier
+    IS the ontology CURIE, so two live records on it assert that two ingredients are
+    one thing. They are one thing: formula versus name for the same anhydrous salt;
+    identical CAS 10043-52-4 and formula Ca.2Cl. Neither label mentions hydration,
+    so this is not the hydrate/anhydrous trap that rules out the CuSO4 and FeSO4 families.
+    ''CaCl2'' wins as the label media actually use (502 occurrences against 15); the
+    other survives as a RAW_TEXT synonym, so label_index still answers for it.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 10043-52-4
   data_source: PubChem API

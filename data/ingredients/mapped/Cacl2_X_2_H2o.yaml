@@ -96,10 +96,23 @@ synonyms:
 - synonym_text: calcium chloride--water (1/2)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: CaCl22H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM CaCl22H2O (#414)
+- synonym_text: 'Role: Mineral source; Properties: Simple component, Inorganic compound,
+    Defined component'
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM CaCl22H2O (#414)
+- synonym_text: CaCl2 × 2 H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM CaCl22H2O (#414)
+- synonym_text: CaCl2*2H2O
+  synonym_type: HYDRATE_FORM
+  source: MERGED_FROM CaCl22H2O (#414)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 4343
-  media_count: 125
+  total_occurrences: 4345
+  media_count: 127
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -211,6 +224,18 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.MINERAL_SOURCE'
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_FROM
+  changes: 'Absorbed ''CaCl22H2O'' (#414). Both records held CHEBI:86158 while both
+    were live, which MIM''s own rule forbids — for a mapped record the identifier
+    IS the ontology CURIE, so two live records on it assert that two ingredients are
+    one thing. They are one thing: the same string with the spacing removed — identical
+    CAS 10035-04-8 and formula Ca.2Cl.2H2O, and no reading of ''CaCl22H2O'' yields
+    anything but calcium chloride dihydrate. ''CaCl2 x 2 H2O'' wins as the label media
+    actually use (4343 occurrences against 2); the other survives as a RAW_TEXT synonym,
+    so label_index still answers for it.'
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:86158
 chemical_properties:
   cas_rn: 10035-04-8

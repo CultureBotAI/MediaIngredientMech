@@ -4,10 +4,10 @@ synonyms:
 - synonym_text: Sodium acetate(Fisher BP 333)
   synonym_type: RAW_TEXT
   source: CultureMech
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 3
-  media_count: 3
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -50,6 +50,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_INTO
+  changes: Merged into 'Na-acetate' on CHEBI:32954 (#414). abbreviation versus full
+    name for one salt; identical CAS 127-09-3 and formula C2H3O2.Na. Occurrences transferred;
+    kept as a RAW_TEXT synonym there.
+  llm_assisted: false
 notes: 'CultureMech placeholder_id: 3'
 chemical_properties:
   cas_rn: 127-09-3
