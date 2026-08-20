@@ -130,7 +130,7 @@ def test_main_rejects_unknown_focus_argument():
 def test_provider_adjustment_actually_changes_rank_order(monkeypatch):
     """The canonicalization test above only checks the config-loading side;
     this proves the bonus actually reaches the score — the exact silent-no-op
-    failure mode #487's review found."""
+    failure mode proteintraitsmech#487's review found."""
     monkeypatch.setenv("ASTA_API_KEY", "test-only")
     monkeypatch.setenv("CONSENSUS_API_KEY", "test-only")
     config = drp.load_config(CONFIG_PATH)
