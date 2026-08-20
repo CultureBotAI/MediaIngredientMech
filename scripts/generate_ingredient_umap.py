@@ -438,7 +438,64 @@ def build_visualization_data(
         except Exception as e:
             console.print(f"[red]Error processing {ingredient_id} ({src_path}): {e}[/red]")
 
-    return visualization_data
+    return _dedupe_by_id(visualization_data)
+
+
+def _dedupe_by_id(nodes: list[dict]) -> list[dict]:
+    """One node per identifier, preferring the live record over a tombstone (#407).
+
+    `id` is the record's identifier, and in MIM that identifier IS the ontology
+    CURIE — so a merge tombstone deliberately carries the WINNER's identifier.
+    Emitting one node per record therefore drew 60 identifiers 2-3 times (71
+    extra nodes) in both `ingredient_graph.json` and `ingredient_umap.json`,
+    and for a merged pair the duplicate carried the tombstone's data while the
+    surviving record never appeared under its own name.
+
+    Tombstones lose: they are merge markers, not ingredients. Where two LIVE
+    records collide the higher-occurrence one wins and the collision is
+    reported rather than silently resolved — that case is a data defect (two
+    live records cannot share a CURIE under MIM's own rule), not something a
+    renderer should paper over.
+    """
+    best: dict[str, dict] = {}
+    live_collisions: list[tuple[str, str, str]] = []
+    for node in nodes:
+        key = node.get('id')
+        if not key:
+            continue
+        held = best.get(key)
+        if held is None:
+            best[key] = node
+            continue
+        held_rejected = held.get('mapping_status') == 'REJECTED'
+        node_rejected = node.get('mapping_status') == 'REJECTED'
+        if held_rejected and not node_rejected:
+            best[key] = node
+        elif held_rejected == node_rejected:
+            if not node_rejected:
+                live_collisions.append((key, held.get('name', ''), node.get('name', '')))
+            if (node.get('total_occurrences') or 0) > (held.get('total_occurrences') or 0):
+                best[key] = node
+
+    dropped = len(nodes) - len(best)
+    if dropped:
+        console.print(f"[yellow]Collapsed {dropped} duplicate node(s) by identifier "
+                      f"(#407); {len(best)} unique nodes emitted.[/yellow]")
+    if live_collisions:
+        # Deliberately understated. This function cannot tell a genuine
+        # two-live-records collision from the same record emitted twice: the
+        # caller indexes records BY identifier, so every row sharing an
+        # identifier resolves to one record and both nodes carry identical
+        # data. The underlying data defect — 30 identifiers held by two live
+        # MAPPED records, e.g. `CaCl2` and `Calcium Chloride` both on
+        # CHEBI:3312 — is visible only in the curated YAML, and is filed
+        # separately. Claiming it from here would be asserting more than the
+        # evidence in hand.
+        console.print(f"[yellow]{len(live_collisions)} identifier(s) produced more "
+                      f"than one non-tombstone node; see the curated YAML for "
+                      f"whether that is one record drawn twice or two records "
+                      f"sharing a CURIE.[/yellow]")
+    return list(best.values())
 
 
 @click.command()

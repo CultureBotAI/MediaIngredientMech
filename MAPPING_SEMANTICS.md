@@ -243,6 +243,16 @@ purely because ChEBI hangs the commercial CAS there:
   into the SSSOM `other` column, which kg-microbe splits into synonyms for
   symmetric rows and carries into KGX.
 
+  **`CAS:<rn>` there is a display string, not a CURIE (#410).** The uppercase
+  prefix is deliberate and does not match the `cas:` declared in the mapping
+  set's curie_map or used by the 255 `cas:`-prefixed `object_id`s. `other` is a
+  free-text, pipe-separated synonym field — every entry in it is a name, and a
+  consumer that tries to expand one against the curie_map is reading the column
+  wrong regardless of case. The prefix exists so the number is self-describing
+  as a *label*: a bare `9004-32-4` is indistinguishable from a catalogue code or
+  a concentration once it is sitting in a synonym list. Lowercasing it to `cas:`
+  would make it look expandable, which is the opposite of what is wanted.
+
 So "map to what you can order" is about **not retreating to a generic term**, not
 about letting a catalogue decide the label.
 
