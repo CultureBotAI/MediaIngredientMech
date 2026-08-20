@@ -178,11 +178,29 @@ def load_config(config_path: Path) -> dict:
     return cfg
 
 
-def collect_targets(root: Path, globs: list[str]) -> list[Path]:
+def collect_targets(root: Path, globs: list[str], tracked: set[str]) -> list[Path]:
+    """Files to scan: the configured globs, intersected with what git tracks.
+
+    The glob on its own answers differently on a developer machine than in CI —
+    the same reason `tracked_paths` exists. That reasoning had been applied to
+    the *targets* of references but not to the set of files scanned for them, so
+    an untracked scratch file in the working tree was checked locally and
+    invisible in CI. The check could then fail on a file no reviewer can see,
+    or pass in CI while failing for whoever has that file (#406).
+
+    An untracked file is not part of the repo's instructions, so a reference
+    inside one is not this check's business.
+    """
     seen: dict[Path, None] = {}
     for pattern in globs:
         for path in sorted(root.glob(pattern)):
-            if path.is_file():
+            if not path.is_file():
+                continue
+            try:
+                rel = path.relative_to(root).as_posix()
+            except ValueError:
+                continue
+            if rel in tracked:
                 seen.setdefault(path, None)
     return list(seen)
 
@@ -209,7 +227,7 @@ def main(argv: list[str] | None = None) -> int:
 
     recipes = known_recipes(REPO_ROOT)
     tracked = tracked_paths(REPO_ROOT)
-    targets = collect_targets(REPO_ROOT, cfg["targets"])
+    targets = collect_targets(REPO_ROOT, cfg["targets"], tracked)
     if not targets:
         raise SystemExit(f"No instruction files matched: {cfg['targets']}")
 
