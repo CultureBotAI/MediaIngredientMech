@@ -7,10 +7,10 @@ synonyms:
 - synonym_text: sodium sulfurothioate--water (1/5)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 3
-  media_count: 3
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -50,6 +50,14 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR -> cellular_metabolic_roles.ELECTRON_DONOR'
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_INTO
+  changes: Merged into 'Na2S2O3 x 5 H2O' on CHEBI:32150 (#414). formula notation versus
+    spelled-out name of the same pentahydrate; identical CAS 10102-17-7, and both
+    state the hydration explicitly so neither can be the anhydrous form. Occurrences
+    transferred; kept as a RAW_TEXT synonym there.
+  llm_assisted: false
 notes: 'CultureMech placeholder_id: 10'
 chemical_properties:
   cas_rn: 10102-17-7

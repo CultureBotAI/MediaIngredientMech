@@ -67,10 +67,13 @@ synonyms:
 - synonym_text: sodium sulfurothioate--water (1/5)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Sodium Thiosulfate Pentahydrate (agar media only,sterile)(Baker 3946)
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM Sodium Thiosulfate Pentahydrate (#414)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 455
-  media_count: 112
+  total_occurrences: 458
+  media_count: 115
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -159,6 +162,18 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): ELECTRON_DONOR -> cellular_metabolic_roles.ELECTRON_DONOR'
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_FROM
+  changes: 'Absorbed ''Sodium Thiosulfate Pentahydrate'' (#414). Both records held
+    CHEBI:32150 while both were live, which MIM''s own rule forbids — for a mapped
+    record the identifier IS the ontology CURIE, so two live records on it assert
+    that two ingredients are one thing. They are one thing: formula notation versus
+    spelled-out name of the same pentahydrate; identical CAS 10102-17-7, and both
+    state the hydration explicitly so neither can be the anhydrous form. ''Na2S2O3
+    x 5 H2O'' wins as the label media actually use (455 occurrences against 3); the
+    other survives as a RAW_TEXT synonym, so label_index still answers for it.'
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:32150
 chemical_properties:
   cas_rn: 10102-17-7

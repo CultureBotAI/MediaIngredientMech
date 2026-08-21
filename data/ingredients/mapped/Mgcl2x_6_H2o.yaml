@@ -1,4 +1,4 @@
-identifier: CHEBI:6636
+identifier: CHEBI:86345
 preferred_term: MgCl2x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:6636
@@ -42,10 +42,10 @@ synonyms:
     Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 7
-  media_count: 7
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -119,6 +119,17 @@ curation_history:
     EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a known
     synonym, so the recorded grade overstated. ontology_id is unchanged — the term
     is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-20T00:00:00+00:00'
+  curator: merge_identifier_collisions
+  action: MERGED_INTO
+  changes: 'Merged into ''MgCl2 x 6 H2O'' on CHEBI:86345, re-pointed from CHEBI:6636
+    (#414). the identical label with one space missing, yet grounded to different
+    terms: the 2,285-occurrence spelling sits on magnesium dichloride HEXAHYDRATE
+    and the 7-occurrence spelling on the ANHYDROUS salt. The label says ''6 H2O''
+    either way, so the anhydrous grounding is simply wrong. Merging both fixes that
+    grounding and clears CHEBI:6636''s collision, leaving only ''MgCl2'' on the anhydrous
+    term where it belongs.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 12285-34-6
