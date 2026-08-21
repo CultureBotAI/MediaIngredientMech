@@ -6,12 +6,16 @@ run's sidecars. ``capture_full_response`` used to report ``sidecar_files`` from 
 plain ``.exists()`` sweep of that directory, which meant a fresh run that failed
 to fetch the agent-state trace still reported ``agent_state_json: true`` next to
 its own new ``task_id``. An auditor following the meta would open the previous
-task's trajectory believing it belonged to the new one (#288).
+task's trajectory believing it belonged to the new one (CultureMech#288).
 
 The fix records which keys the invocation actually wrote. These tests pin that
-behaviour, and pin the deliberate escape hatch: ``_existing_sidecars`` without a
-written-set still returns a disk snapshot, because ``enrich_edison_response``
-backfills sidecars for the *same* ``task_id`` already in the meta.
+behaviour, and pin the escape hatch: ``_existing_sidecars`` without a
+written-set falls back to a plain disk snapshot, which ``enrich_edison_response``
+uses. That fallback is NOT proven safe — it assumes ``enrich_edison_response``
+only ever backfills sidecars for the *same* ``task_id`` already in the meta,
+and that assumption does not hold in general (a stem re-run under a new
+task_id can still have an older run's sidecar on disk under the same
+filename, with `enrich_one()` unaware of it); see #429.
 
 No Edison client is constructed and no credits are spent — the response is a
 stub object and ``client=None`` exercises the "verbose fetch skipped" path.
@@ -185,11 +189,13 @@ def test_written_set_cannot_claim_a_file_that_is_absent(ec, tmp_path):
 
 
 def test_omitting_the_written_set_still_snapshots_the_disk(ec, prior_run_dir):
-    """The ``enrich_edison_response`` contract.
+    """The ``enrich_edison_response`` call site's current (imperfect) contract.
 
-    Backfill runs against the ``task_id`` already stored in the meta, so "what
-    is on disk for this stem" is the truthful answer there and must not regress
-    to the written-set semantics.
+    This pins the existing disk-snapshot fallback behavior for when
+    ``written`` is omitted — it does NOT assert that behavior is safe. See
+    #429: it is not, in general, when a stem is re-run under a new task_id.
+    Pinned so a future refactor of this call site is a deliberate choice, not
+    an accidental regression to written-set semantics.
     """
     assert ec._existing_sidecars(prior_run_dir, STEM) == dict.fromkeys(
         ["answer_md", "response_json", "citations_md", "agent_state_json", "files_json"],

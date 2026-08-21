@@ -298,7 +298,7 @@ def test_an_unknown_provider_in_the_allowlist_is_rejected():
 def test_allow_and_no_paid_flow_through_main_json(monkeypatch):
     """Every filtering test above calls build_report()/recommendable() directly
     with pre-built kwargs, bypassing argparse entirely — exactly the kind of gap
-    that let the JSON path and internal filtering silently disagree (#290).
+    that let the JSON path and internal filtering silently disagree (CultureMech#290).
     This exercises --allow and --no-paid through main()'s actual argv/--json
     plumbing."""
     monkeypatch.setenv("ASTA_API_KEY", "test-only")
