@@ -243,8 +243,11 @@ def test_a_measured_dead_provider_is_not_recommended(monkeypatch):
     for stage in report["stages"]:
         falcon_row = next(row for row in stage["ranking"] if row["provider"] == "falcon")
         assert falcon_row["status"] == "blocked"
-        recommended = stage["recommended_available"]
-        assert recommended is None or recommended["provider"] not in drp.KNOWN_BLOCKED
+        # Checking recommended_available's None-or-not-blocked would still
+        # pass vacuously if nothing else happens to be available either —
+        # assert against recommendable() directly instead, which has no
+        # None-branch escape hatch.
+        assert "falcon" not in {row["provider"] for row in drp.recommendable(stage["ranking"])}
 
 
 def test_cyberian_is_also_a_known_blocked_provider():
