@@ -53,6 +53,13 @@ src/mediaingredientmech/datamodel/
 # Data snapshots (keep curated data in git)
 data/snapshots/
 
+# Ad-hoc curated-data backups. Git history and `just snapshot` are the supported
+# recovery mechanisms; do not commit editor/script backup suffixes.
+data/curated/*.bak
+data/curated/*.backup*
+data/curated/*.pre-merge-*
+data/curated/*.pre-dedup-*
+
 # Logs and reports
 *.log
 output/

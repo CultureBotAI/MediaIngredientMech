@@ -41,3 +41,9 @@ jobs:
 
       - name: Run pytest
         run: uv run --with pytest --with pytest-cov pytest
+
+      - name: Enforce maintained-package coverage
+        run: uv run --with coverage coverage report --include='src/mediaingredientmech/*' --fail-under=35
+
+      - name: Report legacy-script coverage
+        run: uv run --with coverage coverage report --include='scripts/*'

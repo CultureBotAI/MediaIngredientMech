@@ -13,7 +13,8 @@ care about via the `slots` filter, or take everything by default.
 
 from __future__ import annotations
 
-from typing import Any, Iterable, Iterator, Optional
+from collections.abc import Iterable, Iterator
+from typing import Any
 
 # Matches the schema's declaration order on IngredientRecord: the
 # organism-level slot first, then the three ingredient-role facets.
@@ -35,7 +36,7 @@ FACET_ROLE_SLOTS: tuple[str, ...] = (
 
 def iter_role_assignments(
     record: dict[str, Any],
-    slots: Optional[Iterable[str]] = None,
+    slots: Iterable[str] | None = None,
 ) -> Iterator[tuple[str, dict[str, Any]]]:
     """Yield (slot_name, role_assignment) for every role-assignment dict on `record`.
 

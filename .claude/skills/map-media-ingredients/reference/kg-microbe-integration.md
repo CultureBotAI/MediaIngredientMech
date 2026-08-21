@@ -19,8 +19,8 @@ CultureMech → MediaIngredientMech (curate) → Export back to CultureMech
 ```bash
 # Import ingredients from CultureMech
 python scripts/import_from_culturemech.py \
-  --culturemech-dir /path/to/CultureMech/data \
-  --output data/ingredients
+  --source-dir /path/to/CultureMech/output \
+  --output-dir data/curated
 ```
 
 ### Export to CultureMech

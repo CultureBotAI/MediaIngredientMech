@@ -140,18 +140,21 @@ candidates with media-usage context; user accepts or marks `NEEDS_EXPERT`.
 ```bash
 python scripts/analyze_unmapped.py                                    # categorize first
 python scripts/batch_curate_unmapped.py --category SIMPLE_CHEMICAL \
-  --auto-normalize --min-confidence 0.9 --dry-run                     # preview
-python scripts/batch_curate_unmapped.py --category SIMPLE_CHEMICAL \
   --auto-normalize --min-confidence 0.9                               # apply
 ```
 Best for `SIMPLE_CHEMICAL` with clear normalization patterns and score ≥ 0.9. Auto-normalizes
-with synonym preservation, multi-variant dedup, dry-run, and provenance tracking.
+with synonym preservation, multi-variant dedup, and provenance tracking. This command has no
+dry-run mode; use a disposable worktree when evaluating a batch.
 
 ### C. Claude Code-assisted curation (complex cases, zero API cost)
 ```bash
 python scripts/prepare_for_claude_curation.py --category UNKNOWN --limit 20 --output notes/batch_001.md
 # Open notes/batch_001.md and ask Claude Code to suggest ontology mappings →
-python scripts/apply_claude_suggestions.py --suggestions notes/batch_001_suggestions.yaml --validate
+python scripts/apply_claude_suggestions.py --suggestions notes/batch_001_suggestions.yaml
+python scripts/move_mapped_out_of_unmapped_collection.py          # preview promotion + SSSOM
+python scripts/move_mapped_out_of_unmapped_collection.py --apply
+just sync-individual
+just qc
 ```
 Full reasoning/audit trail for ambiguous cases. See `docs/CLAUDE_CODE_CURATION.md`.
 

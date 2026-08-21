@@ -7,15 +7,13 @@ Provides functions to navigate and query ingredient hierarchies:
 - Resolve role inheritance
 """
 
-from typing import Optional
-
 from mediaingredientmech.utils.role_iteration import (
     FACET_ROLE_SLOTS,
     iter_role_assignments,
 )
 
 
-def get_parent(ingredient_id: str, all_records: list[dict]) -> Optional[dict]:
+def get_parent(ingredient_id: str, all_records: list[dict]) -> dict | None:
     """
     Get parent ingredient record.
 
@@ -33,20 +31,20 @@ def get_parent(ingredient_id: str, all_records: list[dict]) -> Optional[dict]:
     # Find the record
     record = None
     for r in all_records:
-        if r.get('id') == ingredient_id:
+        if r.get("id") == ingredient_id:
             record = r
             break
 
     if not record:
         return None
 
-    parent_id = record.get('parent_ingredient')
+    parent_id = record.get("parent_ingredient")
     if not parent_id:
         return None
 
     # Find parent record
     for r in all_records:
-        if r.get('id') == parent_id:
+        if r.get("id") == parent_id:
             return r
 
     return None
@@ -71,14 +69,14 @@ def get_children(ingredient_id: str, all_records: list[dict]) -> list[dict]:
     # Find the record
     record = None
     for r in all_records:
-        if r.get('id') == ingredient_id:
+        if r.get("id") == ingredient_id:
             record = r
             break
 
     if not record:
         return []
 
-    child_ids = record.get('child_ingredients', [])
+    child_ids = record.get("child_ingredients", [])
     if not child_ids:
         return []
 
@@ -86,7 +84,7 @@ def get_children(ingredient_id: str, all_records: list[dict]) -> list[dict]:
     children = []
     for child_id in child_ids:
         for r in all_records:
-            if r.get('id') == child_id:
+            if r.get("id") == child_id:
                 children.append(r)
                 break
 
@@ -120,7 +118,7 @@ def get_all_variants(ingredient_id: str, all_records: list[dict]) -> list[dict]:
     # Find the record
     record = None
     for r in all_records:
-        if r.get('id') == ingredient_id:
+        if r.get("id") == ingredient_id:
             record = r
             break
 
@@ -130,7 +128,7 @@ def get_all_variants(ingredient_id: str, all_records: list[dict]) -> list[dict]:
     variants = []
 
     # If this is a child, navigate to parent first
-    parent_id = record.get('parent_ingredient')
+    parent_id = record.get("parent_ingredient")
     if parent_id:
         parent = get_parent(ingredient_id, all_records)
         if parent:
@@ -171,14 +169,14 @@ def get_siblings(ingredient_id: str, all_records: list[dict]) -> list[dict]:
     # Find the record
     record = None
     for r in all_records:
-        if r.get('id') == ingredient_id:
+        if r.get("id") == ingredient_id:
             record = r
             break
 
     if not record:
         return []
 
-    parent_id = record.get('parent_ingredient')
+    parent_id = record.get("parent_ingredient")
     if not parent_id:
         return []  # No parent, no siblings
 
@@ -186,15 +184,13 @@ def get_siblings(ingredient_id: str, all_records: list[dict]) -> list[dict]:
     children = get_children(parent_id, all_records)
 
     # Filter out self
-    siblings = [c for c in children if c.get('id') != ingredient_id]
+    siblings = [c for c in children if c.get("id") != ingredient_id]
 
     return siblings
 
 
 def get_inherited_roles(
-    ingredient_id: str,
-    all_records: list[dict],
-    include_own_roles: bool = True
+    ingredient_id: str, all_records: list[dict], include_own_roles: bool = True
 ) -> list[dict]:
     """
     Resolve role inheritance from parent.
@@ -222,18 +218,18 @@ def get_inherited_roles(
     # Find the record
     record = None
     for r in all_records:
-        if r.get('id') == ingredient_id:
+        if r.get("id") == ingredient_id:
             record = r
             break
 
     if not record:
         return []
 
-    roles = []
+    roles: list[dict] = []
 
     # Check if should inherit
-    role_inheritance = record.get('role_inheritance', False)
-    parent_id = record.get('parent_ingredient')
+    role_inheritance = record.get("role_inheritance", False)
+    parent_id = record.get("parent_ingredient")
 
     if role_inheritance and parent_id:
         parent = get_parent(ingredient_id, all_records)
@@ -268,7 +264,7 @@ def get_hierarchy_path(ingredient_id: str, all_records: list[dict]) -> list[dict
     # Find the record
     record = None
     for r in all_records:
-        if r.get('id') == ingredient_id:
+        if r.get("id") == ingredient_id:
             record = r
             break
 
@@ -280,11 +276,11 @@ def get_hierarchy_path(ingredient_id: str, all_records: list[dict]) -> list[dict
     # Walk up the tree
     current = record
     while True:
-        parent_id = current.get('parent_ingredient')
+        parent_id = current.get("parent_ingredient")
         if not parent_id:
             break
 
-        parent = get_parent(current['id'], all_records)
+        parent = get_parent(current["id"], all_records)
         if not parent:
             break
 
@@ -294,10 +290,7 @@ def get_hierarchy_path(ingredient_id: str, all_records: list[dict]) -> list[dict
     return path
 
 
-def find_by_variant_type(
-    variant_type: str,
-    all_records: list[dict]
-) -> list[dict]:
+def find_by_variant_type(variant_type: str, all_records: list[dict]) -> list[dict]:
     """
     Find all ingredients with given variant_type.
 
@@ -316,17 +309,13 @@ def find_by_variant_type(
     matches = []
 
     for record in all_records:
-        if record.get('variant_type') == variant_type:
+        if record.get("variant_type") == variant_type:
             matches.append(record)
 
     return matches
 
 
-def get_hierarchy_tree_string(
-    ingredient_id: str,
-    all_records: list[dict],
-    indent: int = 0
-) -> str:
+def get_hierarchy_tree_string(ingredient_id: str, all_records: list[dict], indent: int = 0) -> str:
     """
     Generate tree-like string representation of hierarchy.
 
@@ -350,7 +339,7 @@ def get_hierarchy_tree_string(
     # Find the record
     record = None
     for r in all_records:
-        if r.get('id') == ingredient_id:
+        if r.get("id") == ingredient_id:
             record = r
             break
 
@@ -359,7 +348,7 @@ def get_hierarchy_tree_string(
 
     # Build current line
     prefix = "  " * indent
-    variant_type = record.get('variant_type', '')
+    variant_type = record.get("variant_type", "")
     type_str = f" [{variant_type}]" if variant_type else ""
     line = f"{prefix}{record['preferred_term']}{type_str}\n"
 
@@ -371,10 +360,10 @@ def get_hierarchy_tree_string(
 
     # Add children
     for i, child in enumerate(children):
-        is_last = (i == len(children) - 1)
+        is_last = i == len(children) - 1
         child_prefix = "└─ " if is_last else "├─ "
 
-        child_type = child.get('variant_type', '')
+        child_type = child.get("variant_type", "")
         child_type_str = f" [{child_type}]" if child_type else ""
 
         line += f"{prefix}{child_prefix}{child['preferred_term']}{child_type_str}\n"
@@ -402,75 +391,75 @@ def get_hierarchy_summary(ingredient_id: str, all_records: list[dict]) -> dict:
     # Find the record
     record = None
     for r in all_records:
-        if r.get('id') == ingredient_id:
+        if r.get("id") == ingredient_id:
             record = r
             break
 
     if not record:
         return {}
 
-    has_parent = bool(record.get('parent_ingredient'))
-    has_children = bool(record.get('child_ingredients'))
+    has_parent = bool(record.get("parent_ingredient"))
+    has_children = bool(record.get("child_ingredients"))
 
     # Determine role in hierarchy
     if has_parent and not has_children:
-        role = 'child'
+        role = "child"
     elif has_children and not has_parent:
-        role = 'parent'
+        role = "parent"
     elif has_children and has_parent:
-        role = 'intermediate'  # Both parent and child
+        role = "intermediate"  # Both parent and child
     else:
-        role = 'standalone'
+        role = "standalone"
 
     summary = {
-        'id': ingredient_id,
-        'preferred_term': record.get('preferred_term'),
-        'role': role,
-        'variant_type': record.get('variant_type'),
-        'has_parent': has_parent,
-        'has_children': has_children,
-        'role_inheritance': record.get('role_inheritance', False),
+        "id": ingredient_id,
+        "preferred_term": record.get("preferred_term"),
+        "role": role,
+        "variant_type": record.get("variant_type"),
+        "has_parent": has_parent,
+        "has_children": has_children,
+        "role_inheritance": record.get("role_inheritance", False),
     }
 
     # Add parent info
     if has_parent:
         parent = get_parent(ingredient_id, all_records)
         if parent:
-            summary['parent'] = {
-                'id': parent.get('id'),
-                'preferred_term': parent.get('preferred_term'),
-                'variant_type': parent.get('variant_type'),
+            summary["parent"] = {
+                "id": parent.get("id"),
+                "preferred_term": parent.get("preferred_term"),
+                "variant_type": parent.get("variant_type"),
             }
 
     # Add children info
     if has_children:
         children = get_children(ingredient_id, all_records)
-        summary['children'] = [
+        summary["children"] = [
             {
-                'id': c.get('id'),
-                'preferred_term': c.get('preferred_term'),
-                'variant_type': c.get('variant_type'),
+                "id": c.get("id"),
+                "preferred_term": c.get("preferred_term"),
+                "variant_type": c.get("variant_type"),
             }
             for c in children
         ]
-        summary['child_count'] = len(children)
+        summary["child_count"] = len(children)
 
     # Add siblings info
     if has_parent:
         siblings = get_siblings(ingredient_id, all_records)
-        summary['siblings'] = [
+        summary["siblings"] = [
             {
-                'id': s.get('id'),
-                'preferred_term': s.get('preferred_term'),
-                'variant_type': s.get('variant_type'),
+                "id": s.get("id"),
+                "preferred_term": s.get("preferred_term"),
+                "variant_type": s.get("variant_type"),
             }
             for s in siblings
         ]
-        summary['sibling_count'] = len(siblings)
+        summary["sibling_count"] = len(siblings)
 
     # Add inherited roles
-    if record.get('role_inheritance'):
+    if record.get("role_inheritance"):
         inherited_roles = get_inherited_roles(ingredient_id, all_records, include_own_roles=False)
-        summary['inherited_roles'] = [r.get('role') for r in inherited_roles]
+        summary["inherited_roles"] = [r.get("role") for r in inherited_roles]
 
     return summary

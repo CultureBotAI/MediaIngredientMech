@@ -11,7 +11,6 @@ import json
 import logging
 import os
 from dataclasses import dataclass
-from typing import Optional
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +33,7 @@ class LLMCurator:
     def __init__(
         self,
         model: str = "claude-sonnet-4-20250514",
-        api_key: Optional[str] = None,
+        api_key: str | None = None,
     ):
         """Initialize LLM curator.
 
@@ -53,17 +52,17 @@ class LLMCurator:
 
         try:
             from anthropic import Anthropic
+
             self.client = Anthropic(api_key=self.api_key)
         except ImportError:
             raise ImportError(
-                "anthropic package not installed. "
-                "Install with: pip install anthropic"
-            )
+                "anthropic package not installed. " "Install with: pip install anthropic"
+            ) from None
 
     def suggest_mapping(
         self,
         ingredient_name: str,
-        context: Optional[dict] = None,
+        context: dict | None = None,
     ) -> LLMSuggestion:
         """Get LLM suggestion for ontology mapping.
 
@@ -107,7 +106,7 @@ class LLMCurator:
     def _build_prompt(
         self,
         ingredient_name: str,
-        context: Optional[dict] = None,
+        context: dict | None = None,
     ) -> str:
         """Build the prompt for LLM mapping suggestion."""
         context = context or {}
@@ -135,7 +134,7 @@ class LLMCurator:
             prompt += f"- Normalization applied: {', '.join(normalization_rules)}\n"
 
         if synonyms:
-            syn_list = ', '.join(synonyms[:5])
+            syn_list = ", ".join(synonyms[:5])
             prompt += f"- Known synonyms: {syn_list}\n"
 
         prompt += """
@@ -244,15 +243,13 @@ Output:
         except (json.JSONDecodeError, KeyError) as e:
             logger.error(f"Failed to parse LLM response: {e}")
             logger.error(f"Response text: {response_text}")
-            raise ValueError(
-                f"Failed to parse LLM response for '{ingredient_name}': {e}"
-            )
+            raise ValueError(f"Failed to parse LLM response for '{ingredient_name}': {e}") from e
 
 
 def validate_llm_suggestion(
     suggestion: LLMSuggestion,
     ontology_client,
-) -> tuple[bool, Optional[str]]:
+) -> tuple[bool, str | None]:
     """Validate that the LLM-suggested ontology ID actually exists.
 
     Args:

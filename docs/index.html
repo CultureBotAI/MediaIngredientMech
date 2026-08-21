@@ -92,9 +92,9 @@
     <h1>MediaIngredientMech</h1>
     <p class="tagline">Curated media-ingredient ontology mappings — CHEBI &middot; FOODON &middot; NCIT &middot; CAS.</p>
     <div class="stats">
-      <div class="stat"><b>2,258</b><span>ingredients</span></div>
-      <div class="stat"><b>1,873</b><span>mapped</span></div>
-      <div class="stat"><b>83%</b><span>coverage</span></div>
+      <div class="stat"><b id="ingredient-count">…</b><span>ingredients</span></div>
+      <div class="stat"><b id="mapped-count">…</b><span>mapped</span></div>
+      <div class="stat"><b id="coverage-count">…</b><span>coverage</span></div>
     </div>
   </header>
   <main class="wrap">
@@ -124,6 +124,25 @@
       <a href="https://github.com/Knowledge-Graph-Hub/kg-microbe">kg-microbe</a>&middot;<a href="https://bioportal.bioontology.org/ontologies/METPO">METPO</a>
     </div>
   </footer>
+  <script>
+    // export-browser regenerates this catalog during `just build-docs`; derive
+    // landing-page counts from record statuses so the page cannot go stale.
+    fetch("data/ingredients.json")
+      .then((response) => response.json())
+      .then((catalog) => {
+        const records = catalog.ingredients || [];
+        const mapped = records.filter((record) => record.mapping_status === "MAPPED").length;
+        const coverage = records.length ? Math.round((mapped / records.length) * 100) : 0;
+        document.getElementById("ingredient-count").textContent = records.length.toLocaleString();
+        document.getElementById("mapped-count").textContent = mapped.toLocaleString();
+        document.getElementById("coverage-count").textContent = `${coverage}%`;
+      })
+      .catch(() => {
+        for (const id of ["ingredient-count", "mapped-count", "coverage-count"]) {
+          document.getElementById(id).textContent = "—";
+        }
+      });
+  </script>
   <script src="theme-toggle.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
 
 **Dry run (preview only)**:
 ```bash
-python scripts/deduplicate_ingredients.py --dry-run
+python scripts/deduplicate_ingredients.py --dry-run --auto-merge
 ```
 
 **CHEBI ID deduplication only**:
@@ -28,21 +28,20 @@ python scripts/deduplicate_ingredients.py --include-name-matches
 python scripts/deduplicate_ingredients.py --search-kg-microbe
 ```
 
-**Execute merges (no dry run)**:
+**Execute the reviewed eligible merges**:
 ```bash
-python scripts/deduplicate_ingredients.py  # Removes --dry-run flag
+python scripts/deduplicate_ingredients.py --auto-merge
 ```
 
 ### Advanced Options
 
-**Custom thresholds**:
+**Name-matching threshold**:
 ```bash
-# Auto-merge confidence threshold
-python scripts/deduplicate_ingredients.py --auto-merge-threshold 0.95
-
-# Name matching threshold
 python scripts/deduplicate_ingredients.py --name-match-threshold 0.85
 ```
+
+CHEBI auto-merging has no numeric confidence threshold. It uses the fixed safety criteria in
+`CHEBIDeduplicator.should_auto_merge` and requires `--auto-merge` explicitly.
 
 **Custom data paths**:
 ```bash
@@ -108,8 +107,8 @@ python scripts/deduplicate_ingredients.py \
 python scripts/apply_claude_suggestions.py batch1_suggestions.yaml
 
 # Deduplicate
-python scripts/deduplicate_ingredients.py --dry-run
-python scripts/deduplicate_ingredients.py  # Execute
+python scripts/deduplicate_ingredients.py --dry-run --auto-merge
+python scripts/deduplicate_ingredients.py --auto-merge
 
 # Validate
 python scripts/validate_mappings.py
@@ -196,12 +195,12 @@ curation_history:
 
 ```bash
 # Step 1: Dry run
-python scripts/deduplicate_ingredients.py --dry-run
+python scripts/deduplicate_ingredients.py --dry-run --auto-merge
 
 # Step 2: Review output
 
 # Step 3: Execute if satisfied
-python scripts/deduplicate_ingredients.py
+python scripts/deduplicate_ingredients.py --auto-merge
 ```
 
 ### 2. CHEBI First, Names Second
@@ -218,7 +217,7 @@ python scripts/deduplicate_ingredients.py
 **Check**:
 ```bash
 # Run deduplication
-python scripts/deduplicate_ingredients.py
+python scripts/deduplicate_ingredients.py --auto-merge
 
 # Validate
 python scripts/validate_mappings.py
@@ -292,8 +291,8 @@ python scripts/kgx_export.py
 # Compare
 python scripts/compare_with_culturemech.py
 
-# Import missing
-python scripts/import_from_culturemech.py --filter high-frequency
+# Import from the selected CultureMech output directory (the importer has no frequency filter)
+python scripts/import_from_culturemech.py --source-dir ../CultureMech/output --output-dir data/curated
 ```
 
 ---

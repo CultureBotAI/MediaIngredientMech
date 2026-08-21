@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 from collections import defaultdict
-from typing import TYPE_CHECKING, Any, Optional
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from mediaingredientmech.curation.ingredient_curator import IngredientCurator
@@ -174,7 +174,9 @@ class CHEBIDeduplicator:
             from pathlib import Path
 
             # Dynamically load identify_complex_media module
-            script_path = Path(__file__).parent.parent.parent.parent / "scripts" / "identify_complex_media.py"
+            script_path = (
+                Path(__file__).parent.parent.parent.parent / "scripts" / "identify_complex_media.py"
+            )
             if script_path.exists():
                 spec = importlib.util.spec_from_file_location("identify_complex_media", script_path)
                 if spec and spec.loader:
@@ -186,12 +188,16 @@ class CHEBIDeduplicator:
                     source_name = source.get("preferred_term", "")
 
                     # Check if target is complex media
-                    is_target_complex, conf_t, reason_t = detect_complex_medium(target_name, target_chebi)
+                    is_target_complex, conf_t, reason_t = detect_complex_medium(
+                        target_name, target_chebi
+                    )
                     if is_target_complex and conf_t >= 0.75:
                         return False, f"Target is complex media: {reason_t}"
 
                     # Check if source is complex media
-                    is_source_complex, conf_s, reason_s = detect_complex_medium(source_name, source_chebi)
+                    is_source_complex, conf_s, reason_s = detect_complex_medium(
+                        source_name, source_chebi
+                    )
                     if is_source_complex and conf_s >= 0.75:
                         return False, f"Source is complex media: {reason_s}"
         except Exception as e:
@@ -206,7 +212,10 @@ class CHEBIDeduplicator:
         target_rank = QUALITY_RANK.get(target_quality, 0)
         source_rank = QUALITY_RANK.get(source_quality, 0)
         if target_rank > source_rank:
-            return True, f"Same CHEBI ID + higher quality target ({target_quality} > {source_quality})"
+            return (
+                True,
+                f"Same CHEBI ID + higher quality target ({target_quality} > {source_quality})",
+            )
 
         # Flag for review if source has higher quality
         return (
@@ -214,9 +223,7 @@ class CHEBIDeduplicator:
             f"Source has higher quality ({source_quality} > {target_quality}), needs review",
         )
 
-    def merge_duplicates(
-        self, dry_run: bool = True, auto_merge: bool = False
-    ) -> dict[str, Any]:
+    def merge_duplicates(self, dry_run: bool = True, auto_merge: bool = False) -> dict[str, Any]:
         """Find and merge all CHEBI duplicates.
 
         Args:
@@ -225,15 +232,19 @@ class CHEBIDeduplicator:
 
         Returns:
             Dict with merge results:
-            - merged: List of (target_idx, source_indices, chebi_id) tuples
+            - merged: Groups actually merged in apply mode
+            - planned_merges: Groups that would merge in dry-run mode
             - flagged: List of (chebi_id, indices, reason) tuples
-            - total_removed: Count of records that will be REJECTED
+            - total_removed: Count of records actually marked REJECTED
+            - total_planned_removals: Count that would be marked REJECTED in dry-run mode
         """
         duplicates = self.find_chebi_duplicates()
 
         merged: list[tuple[int, list[int], str]] = []
+        planned_merges: list[tuple[int, list[int], str]] = []
         flagged: list[tuple[str, list[int], str]] = []
         total_removed = 0
+        total_planned_removals = 0
 
         for chebi_id, indices in duplicates.items():
             # Choose merge target
@@ -251,10 +262,18 @@ class CHEBIDeduplicator:
                     can_auto_merge = False
 
             # Execute or flag
-            if can_auto_merge and (auto_merge or not dry_run):
-                # Perform merges
-                for source_idx in sorted(source_indices, reverse=True):
-                    if not dry_run:
+            # ``auto_merge`` is the opt-in control; ``dry_run`` only controls
+            # whether an opted-in merge is previewed or executed.  In
+            # particular, apply mode must not implicitly enable auto-merging.
+            if can_auto_merge and auto_merge:
+                merge_group = (target_idx, source_indices, chebi_id)
+                if dry_run:
+                    planned_merges.append(merge_group)
+                    total_planned_removals += len(source_indices)
+                else:
+                    # Perform merges only in apply mode. Result fields named in
+                    # the past tense are populated only after real mutation.
+                    for source_idx in sorted(source_indices, reverse=True):
                         reason_idx = source_indices.index(source_idx)
                         merge_reason = f"Same CHEBI ID ({chebi_id}) - {reasons[reason_idx]}"
                         logger.info(
@@ -271,9 +290,8 @@ class CHEBIDeduplicator:
                             curator_name=self.curator.curator_name,
                             merge_reason=merge_reason,
                         )
-
-                merged.append((target_idx, source_indices, chebi_id))
-                total_removed += len(source_indices)
+                    merged.append(merge_group)
+                    total_removed += len(source_indices)
             else:
                 # Flag for manual review
                 flagged.append((chebi_id, indices, "; ".join(set(reasons))))
@@ -286,8 +304,10 @@ class CHEBIDeduplicator:
 
         return {
             "merged": merged,
+            "planned_merges": planned_merges,
             "flagged": flagged,
             "total_removed": total_removed,
+            "total_planned_removals": total_planned_removals,
             "dry_run": dry_run,
         }
 
@@ -304,9 +324,7 @@ class CHEBIDeduplicator:
         errors = []
         for chebi_id, indices in duplicates.items():
             non_rejected = [
-                i
-                for i in indices
-                if self.curator.records[i].get("mapping_status") != "REJECTED"
+                i for i in indices if self.curator.records[i].get("mapping_status") != "REJECTED"
             ]
             if len(non_rejected) > 1:
                 errors.append(

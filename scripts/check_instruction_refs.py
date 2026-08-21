@@ -10,9 +10,11 @@ per-record files and collections in sync" long after that pairing was identified
 as the mechanism which silently reverted 55 curation events (#148); it had to be
 corrected twice, both times because a human happened to notice (#167, #179).
 
-This is the mechanical version of noticing. It reports two kinds of drift:
+This is the mechanical version of noticing. It reports three kinds of drift:
 
 * `just <recipe>` naming a recipe the justfile does not define;
+* a long option in a documented Python CLI example that the referenced script
+  does not declare;
 * a repo-relative path (`scripts/x.py`, `data/y.yaml`, …) that does not exist.
 
 Deliberately narrow, because a false positive in a docs check is how the check
@@ -46,7 +48,9 @@ Exit codes: 0 = clean (or severity=warn), 1 = findings with severity=error,
 from __future__ import annotations
 
 import argparse
+import ast
 import re
+import shlex
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -70,13 +74,19 @@ PATH_CLAIM = re.compile(
 
 @dataclass(frozen=True)
 class Finding:
-    kind: str  # "recipe" | "path"
+    kind: str  # "recipe" | "path" | "option"
     path: str  # file containing the stale reference
     line: int
     ref: str
+    command: str | None = None
 
     def __str__(self) -> str:
-        what = f"just {self.ref}" if self.kind == "recipe" else self.ref
+        if self.kind == "recipe":
+            what = f"just {self.ref}"
+        elif self.kind == "option":
+            what = f"{self.command} {self.ref}"
+        else:
+            what = self.ref
         return f"{self.path}:{self.line}  {what}"
 
 
@@ -137,6 +147,95 @@ def _references(text: str):
                 yield line_no, match.group(1).strip()
 
 
+def _logical_commands(lines: list[tuple[int, str]]):
+    """Join shell lines ending in a backslash into one documented command."""
+    start = 0
+    parts: list[str] = []
+    for line_no, raw_line in lines:
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if not parts:
+            start = line_no
+        continued = line.endswith("\\")
+        parts.append(line[:-1].rstrip() if continued else line)
+        if not continued:
+            yield start, " ".join(parts)
+            parts = []
+    if parts:
+        yield start, " ".join(parts)
+
+
+def _cli_invocations(text: str):
+    """Yield documented command lines from code spans and fenced blocks."""
+    fence_lines: list[tuple[int, str]] = []
+    in_fence = False
+    for line_no, line in enumerate(text.splitlines(), 1):
+        if line.lstrip().startswith("```"):
+            if in_fence:
+                yield from _logical_commands(fence_lines)
+                fence_lines = []
+            in_fence = not in_fence
+            continue
+        if INLINE_SUPPRESS in line:
+            continue
+        if in_fence:
+            fence_lines.append((line_no, line))
+        else:
+            for match in CODE_SPAN.finditer(line):
+                yield line_no, match.group(1).strip()
+    if fence_lines:
+        yield from _logical_commands(fence_lines)
+
+
+def known_cli_options(script: Path) -> set[str]:
+    """Extract argparse/click options without importing arbitrary scripts."""
+    try:
+        tree = ast.parse(script.read_text(encoding="utf-8"), filename=str(script))
+    except (OSError, SyntaxError):
+        return set()
+
+    options = {"--help"}  # supplied automatically by argparse and Click
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        function = node.func
+        function_name = (
+            function.attr if isinstance(function, ast.Attribute) else getattr(function, "id", "")
+        )
+        if function_name not in {"option", "add_argument"}:
+            continue
+        for arg in node.args:
+            if not isinstance(arg, ast.Constant) or not isinstance(arg.value, str):
+                continue
+            if not arg.value.startswith("--"):
+                continue
+            # Click supports paired declarations such as --color/--no-color.
+            options.update(part for part in arg.value.split("/") if part.startswith("--"))
+    return options
+
+
+def _documented_cli(command: str) -> tuple[str, set[str]] | None:
+    """Parse a Python script invocation into its path and documented options."""
+    try:
+        tokens = shlex.split(command, comments=True)
+    except ValueError:
+        return None
+    python_index = next(
+        (index for index, token in enumerate(tokens) if token in {"python", "python3"}),
+        None,
+    )
+    if python_index is None or python_index + 1 >= len(tokens):
+        return None
+    script = tokens[python_index + 1].removeprefix("./")
+    if not script.startswith("scripts/") or not script.endswith(".py"):
+        return None
+    options = {
+        token.split("=", 1)[0] for token in tokens[python_index + 2 :] if token.startswith("--")
+    }
+    return script, options
+
+
 def scan_file(
     path: Path, root: Path, recipes: set[str], tracked: set[str]
 ) -> tuple[list[Finding], int]:
@@ -144,7 +243,8 @@ def scan_file(
     findings: list[Finding] = []
     unverifiable = 0
     rel = path.relative_to(root).as_posix()
-    for line_no, span in _references(path.read_text(encoding="utf-8")):
+    text = path.read_text(encoding="utf-8")
+    for line_no, span in _references(text):
         recipe = JUST_CALL.match(span)
         if recipe and recipe.group(1) not in recipes:
             findings.append(Finding("recipe", rel, line_no, recipe.group(1)))
@@ -158,13 +258,22 @@ def scan_file(
             # Repo-relative, or relative to the file itself (skills reference
             # their own reference/*.md that way).
             here = (path.parent / target).resolve()
-            as_local = (
-                here.relative_to(root).as_posix()
-                if here.is_relative_to(root)
-                else None
-            )
+            as_local = here.relative_to(root).as_posix() if here.is_relative_to(root) else None
             if target not in tracked and (as_local is None or as_local not in tracked):
                 findings.append(Finding("path", rel, line_no, target))
+
+    for line_no, command in _cli_invocations(text):
+        invocation = _documented_cli(command)
+        if invocation is None:
+            continue
+        script, documented_options = invocation
+        if script not in tracked:
+            # Missing script references are handled separately; without source
+            # there is no useful option-level diagnosis to add.
+            continue
+        supported_options = known_cli_options(root / script)
+        for option in sorted(documented_options - supported_options):
+            findings.append(Finding("option", rel, line_no, option, script))
     return findings, unverifiable
 
 
@@ -221,9 +330,7 @@ def main(argv: list[str] | None = None) -> int:
     ignored_recipes = {
         entry["name"] for entry in (cfg.get("ignore_recipes") or []) if "name" in entry
     }
-    ignored_paths = {
-        entry["path"] for entry in (cfg.get("ignore_paths") or []) if "path" in entry
-    }
+    ignored_paths = {entry["path"] for entry in (cfg.get("ignore_paths") or []) if "path" in entry}
 
     recipes = known_recipes(REPO_ROOT)
     tracked = tracked_paths(REPO_ROOT)
@@ -246,13 +353,16 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Scanned {len(targets)} agent-instruction file(s) against {len(recipes)} recipes.")
     if unverifiable:
         # Say what was not checked, rather than let a green result imply it was.
-        print(f"  ({unverifiable} `../` reference(s) point outside the repo and were not verified.)")
+        print(
+            f"  ({unverifiable} `../` reference(s) point outside the repo and were not verified.)"
+        )
     if not findings:
-        print("OK: every referenced recipe and path exists.")
+        print("OK: every referenced recipe, path, and Python CLI option exists.")
         return 0
 
     stale_recipes = [f for f in findings if f.kind == "recipe"]
     stale_paths = [f for f in findings if f.kind == "path"]
+    stale_options = [f for f in findings if f.kind == "option"]
     if stale_recipes:
         print(f"\nRecipes that no longer exist ({len(stale_recipes)}):")
         for finding in stale_recipes:
@@ -260,6 +370,10 @@ def main(argv: list[str] | None = None) -> int:
     if stale_paths:
         print(f"\nPaths that no longer exist ({len(stale_paths)}):")
         for finding in stale_paths:
+            print(f"  {finding}")
+    if stale_options:
+        print(f"\nCLI options the referenced script does not support ({len(stale_options)}):")
+        for finding in stale_options:
             print(f"  {finding}")
 
     print(

@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 import re
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import yaml
 
@@ -115,7 +115,7 @@ class KGMicrobeSearcher:
         results: list[tuple[dict[str, Any], float]] = []
         norm_tokens = set(norm.split())
 
-        for idx, record in enumerate(self.records):
+        for record in self.records:
             best_score = 0.0
 
             # Check preferred term
@@ -165,7 +165,7 @@ class KGMicrobeSearcher:
         Returns:
             Dict with 'chebi_matches' and 'name_matches' lists.
         """
-        matches = {"chebi_matches": [], "name_matches": []}
+        matches: dict[str, list] = {"chebi_matches": [], "name_matches": []}
 
         # Search by CHEBI ID if record is mapped
         ontology_mapping = ingredient_record.get("ontology_mapping")

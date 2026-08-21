@@ -87,7 +87,7 @@ Output: `validation_report.md`, `validation_data.json`, `dashboard.html`. See
 Auto-fix issues that don't require human review.
 
 ```bash
-PYTHONPATH=src python scripts/auto_correct.py --dry-run                          # preview
+PYTHONPATH=src python scripts/auto_correct.py                                    # preview (default)
 PYTHONPATH=src python scripts/auto_correct.py --apply                            # all safe
 PYTHONPATH=src python scripts/auto_correct.py --apply --types chemical_properties
 PYTHONPATH=src python scripts/auto_correct.py --apply --types synonyms

@@ -242,11 +242,11 @@ for file_path in glob.glob("data/batches/*.yaml"):
 #!/bin/bash
 # .git/hooks/pre-commit
 
-# Run deduplication check
-python scripts/deduplicate_ingredients.py --dry-run > /tmp/dedup_check.txt
+# Preview the same eligible groups that apply mode would merge
+python scripts/deduplicate_ingredients.py --dry-run --auto-merge > /tmp/dedup_check.txt
 
 # Check for duplicates
-if grep -q "Merged groups: [1-9]" /tmp/dedup_check.txt; then
+if grep -q "Merge groups planned: [1-9]" /tmp/dedup_check.txt; then
     echo "ERROR: CHEBI duplicates detected. Run deduplication before committing."
     cat /tmp/dedup_check.txt
     exit 1
@@ -261,8 +261,8 @@ import schedule
 import time
 
 def daily_reconciliation():
-    # Run deduplication
-    os.system("python scripts/deduplicate_ingredients.py")
+    # Report a plan; unattended jobs must not merge curated records.
+    os.system("python scripts/deduplicate_ingredients.py --dry-run --auto-merge")
 
     # Search KG-Microbe
     os.system("python scripts/deduplicate_ingredients.py --search-kg-microbe")
@@ -278,4 +278,3 @@ while True:
 ```
 
 ---
-

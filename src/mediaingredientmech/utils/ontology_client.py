@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass, field
-from typing import Optional
 
 logger = logging.getLogger(__name__)
 
@@ -27,13 +26,13 @@ class OntologyCandidate:
     source: str
     score: float = 0.0
     synonyms: list[str] = field(default_factory=list)
-    definition: Optional[str] = None
+    definition: str | None = None
 
 
 class OntologyClient:
     """Search ontology databases for ingredient term matches."""
 
-    def __init__(self, sources: Optional[list[str]] = None):
+    def __init__(self, sources: list[str] | None = None):
         self._sources = sources or ["CHEBI", "FOODON"]
         self._adapters: dict = {}
 
@@ -56,7 +55,7 @@ class OntologyClient:
     def search(
         self,
         query: str,
-        sources: Optional[list[str]] = None,
+        sources: list[str] | None = None,
         max_results: int = 10,
     ) -> list[OntologyCandidate]:
         """Search ontologies for terms matching the query string.
@@ -111,7 +110,7 @@ class OntologyClient:
     def search_with_variants(
         self,
         queries: list[str],
-        sources: Optional[list[str]] = None,
+        sources: list[str] | None = None,
         max_results: int = 10,
     ) -> list[OntologyCandidate]:
         """Search ontologies with multiple query variants.
@@ -147,16 +146,16 @@ class OntologyClient:
 def _similarity_score(query: str, label: str) -> float:
     """Simple normalized similarity between query and label."""
     q = query.lower().strip()
-    l = label.lower().strip()
-    if not q or not l:
+    normalized_label = label.lower().strip()
+    if not q or not normalized_label:
         return 0.0
-    if q == l:
+    if q == normalized_label:
         return 1.0
-    if q in l or l in q:
+    if q in normalized_label or normalized_label in q:
         return 0.8
     # Token overlap
     q_tokens = set(q.split())
-    l_tokens = set(l.split())
+    l_tokens = set(normalized_label.split())
     if not q_tokens or not l_tokens:
         return 0.0
     overlap = len(q_tokens & l_tokens)

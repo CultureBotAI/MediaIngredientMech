@@ -31,7 +31,6 @@ import sys
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Dict, Optional, Set
 
 _CURIE_RE = re.compile(r"^[A-Z][A-Za-z0-9_.]*:[A-Za-z0-9_\-]+$")
 
@@ -55,17 +54,17 @@ class KgMicrobeEntry:
     chebi_id: str
     canonical_name: str
     formula: str
-    synonyms: Set[str] = field(default_factory=set)
+    synonyms: set[str] = field(default_factory=set)
 
 
 class KgMicrobeDict:
     """In-memory index over kg-microbe's unified chemical mappings TSV."""
 
-    def __init__(self, dict_path: Optional[Path] = None):
+    def __init__(self, dict_path: Path | None = None):
         self.dict_path = Path(dict_path) if dict_path else DEFAULT_DICT_PATH
-        self._by_chebi: Dict[str, KgMicrobeEntry] = {}
-        self._by_synonym: Dict[str, Set[str]] = defaultdict(set)
-        self._polluted_entries: Set[str] = set()
+        self._by_chebi: dict[str, KgMicrobeEntry] = {}
+        self._by_synonym: dict[str, set[str]] = defaultdict(set)
+        self._polluted_entries: set[str] = set()
         self._loaded = False
 
     def load(self) -> None:
@@ -156,11 +155,11 @@ class KgMicrobeDict:
 
         self._loaded = True
 
-    def get_entry(self, chebi_id: str) -> Optional[KgMicrobeEntry]:
+    def get_entry(self, chebi_id: str) -> KgMicrobeEntry | None:
         self.load()
         return self._by_chebi.get(chebi_id)
 
-    def lookup_synonym(self, surface_form: str) -> Set[str]:
+    def lookup_synonym(self, surface_form: str) -> set[str]:
         """Return the set of CHEBI IDs kg-microbe associates with this surface form."""
         self.load()
         if not surface_form:
