@@ -292,8 +292,8 @@ python scripts/kgx_export.py
 # Compare
 python scripts/compare_with_culturemech.py
 
-# Import missing
-python scripts/import_from_culturemech.py --filter high-frequency
+# Import from the selected CultureMech output directory (the importer has no frequency filter)
+python scripts/import_from_culturemech.py --source-dir ../CultureMech/output --output-dir data/curated
 ```
 
 ---

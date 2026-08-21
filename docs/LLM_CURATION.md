@@ -99,28 +99,28 @@ Processing 5 ingredients
 │ Occurrences: 29 across 29 media    │
 └────────────────────────────────────┘
 
-Normalized: MgSO4 (stripped_hydrate)
+Normalized: MgSO4•7H2O (hydrate identity preserved)
 Category: SIMPLE_CHEMICAL
 
 Consulting LLM for mapping suggestion...
 
 LLM Suggestion
 
-Ontology ID     CHEBI:32599
-Label           magnesium sulfate
+Ontology ID     CHEBI:31795
+Label           magnesium sulfate heptahydrate
 Source          CHEBI
 Confidence      0.95
 Status          ✓ Validated
-Reasoning       Hydrate form of magnesium sulfate. Maps to base
-                chemical in CHEBI per curation guidelines.
-Alt. queries    magnesium sulfate, MgSO4, magnesium sulphate
+Reasoning       The form-specific CHEBI term preserves the
+                heptahydrate identity.
+Alt. queries    magnesium sulfate heptahydrate, MgSO4·7H2O
 
 
 High-confidence suggestion (0.95 ≥ 0.9)
 
 Auto-accept this mapping? [Y/n]: y
 
-✓ Mapped to CHEBI:32599 (magnesium sulfate)
+✓ Mapped to CHEBI:31795 (magnesium sulfate heptahydrate)
 Added 'MgSO4•7H2O' as synonym
 
 ─── Ingredient 2/5 ───
@@ -144,15 +144,15 @@ The LLM receives:
 Ingredient name: MgSO4•7H2O
 Category: SIMPLE_CHEMICAL
 Occurrences: 29
-Normalized name: MgSO4
-Normalization applied: stripped_hydrate
+Normalized name: MgSO4•7H2O
+Normalization applied: hydrate identity preserved
 ```
 
 ### 2. LLM Analysis
 
 Claude analyzes the ingredient and suggests:
-- **Ontology ID** (e.g., CHEBI:32599)
-- **Label** (e.g., "magnesium sulfate")
+- **Ontology ID** (e.g., CHEBI:31795)
+- **Label** (e.g., "magnesium sulfate heptahydrate")
 - **Source** (CHEBI, FOODON, or ENVO)
 - **Confidence** (0.0-1.0)
 - **Reasoning** (why this mapping is correct)
@@ -186,14 +186,14 @@ Before presenting to curator:
 All accepted mappings track:
 ```yaml
 ontology_mapping:
-  ontology_id: CHEBI:32599
-  ontology_label: magnesium sulfate
+  ontology_id: CHEBI:31795
+  ontology_label: magnesium sulfate heptahydrate
   mapping_quality: LLM_ASSISTED
   evidence:
     - evidence_type: LLM_SUGGESTION
       source: llm_curator
       confidence_score: 0.95
-      notes: "LLM reasoning: Hydrate form of magnesium sulfate..."
+      notes: "LLM reasoning: The form-specific term preserves the heptahydrate identity."
 
 curation_history:
   - action: MAPPED
@@ -213,7 +213,7 @@ The LLM assigns confidence based on:
 | 0.0-0.49 | Uncertain, needs expert | Manual verification |
 
 **Examples:**
-- `MgSO4•7H2O` → CHEBI:32599 (magnesium sulfate): **0.95** - Exact chemistry, clear mapping
+- `MgSO4•7H2O` → CHEBI:31795 (magnesium sulfate heptahydrate): **0.95** - Form-specific identity
 - `yeast extract` → FOODON:03301439: **0.95** - Exact match in FOODON
 - `tryptone` → FOODON:03305413: **0.90** - Common biological material, well-known
 - `Vitamin B` → Uncertain: **0.40** - Too generic, which B vitamin?
@@ -237,7 +237,7 @@ Claude follows priority rules:
    - Natural materials: sediment, groundwater
 
 **Special cases:**
-- Hydrates → base chemical in CHEBI (`MgSO4•7H2O` → `magnesium sulfate`)
+- Hydrates → the form-specific ontology term when available (`MgSO4•7H2O` → `CHEBI:31795`); never exact-map them to the anhydrous/base term
 - Catalog variants → base chemical (`NaCl (Fisher S271-500)` → `sodium chloride`)
 - Biological extracts → FOODON, not CHEBI
 
@@ -444,12 +444,12 @@ curation_history:
   - timestamp: "2026-03-09T..."
     curator: llm_curator
     action: MAPPED
-    changes: "Mapped to CHEBI:32599 (magnesium sulfate)"
+    changes: "Mapped to CHEBI:31795 (magnesium sulfate heptahydrate)"
     previous_status: UNMAPPED
     new_status: MAPPED
     llm_assisted: true
     llm_model: claude-sonnet-4-20250514
-    notes: "LLM reasoning: Hydrate form of magnesium sulfate. Maps to base chemical in CHEBI per curation guidelines."
+    notes: "LLM reasoning: The form-specific CHEBI term preserves the heptahydrate identity."
 ```
 
 **Queryable:**

@@ -4,13 +4,15 @@ from __future__ import annotations
 
 import logging
 import re
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable, Any, Optional
+from typing import Any
 
 import yaml
 from linkml_runtime.utils.schemaview import SchemaView
 
 from mediaingredientmech.curate.curation_event import now_iso, record_curation_event
+from mediaingredientmech.curation.hydrate_guard import HydrateMismatch, hydrate_mismatch
 from mediaingredientmech.utils.ontology_client import OntologyCandidate, OntologyClient
 from mediaingredientmech.utils.yaml_handler import save_yaml
 
@@ -19,7 +21,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_UNMAPPED_PATH = Path("data/curated/unmapped_ingredients.yaml")
 
 _SCHEMA_PATH = Path(__file__).resolve().parent.parent / "schema" / "mediaingredientmech.yaml"
-_SCHEMA_VIEW: Optional[SchemaView] = None
+_SCHEMA_VIEW: SchemaView | None = None
 
 
 def _schema_view() -> SchemaView:
@@ -70,8 +72,6 @@ VALID_STATUSES = {
     "REJECTED",
 }
 
-from .hydrate_guard import HydrateMismatch, hydrate_mismatch
-
 VALID_QUALITY = {
     "EXACT_MATCH",
     "SYNONYM_MATCH",
@@ -109,10 +109,10 @@ class IngredientCurator:
 
     def __init__(
         self,
-        data_path: Optional[Path] = None,
+        data_path: Path | None = None,
         curator_name: str = "anonymous",
-        ontology_client: Optional[OntologyClient] = None,
-        formula_lookup: Optional[Callable[[str], Optional[str]]] = None,
+        ontology_client: OntologyClient | None = None,
+        formula_lookup: Callable[[str], str | None] | None = None,
     ):
         self.data_path = data_path or DEFAULT_UNMAPPED_PATH
         self.curator_name = curator_name
@@ -183,7 +183,9 @@ class IngredientCurator:
 
     def get_unmapped(self) -> list[dict[str, Any]]:
         """Get unmapped records sorted by occurrence count (most common first)."""
-        unmapped = [r for r in self._records if r.get("mapping_status") in ("UNMAPPED", "PENDING_REVIEW")]
+        unmapped = [
+            r for r in self._records if r.get("mapping_status") in ("UNMAPPED", "PENDING_REVIEW")
+        ]
         unmapped.sort(
             key=lambda r: (r.get("occurrence_statistics") or {}).get("total_occurrences", 0),
             reverse=True,
@@ -191,7 +193,7 @@ class IngredientCurator:
         return unmapped
 
     def search_ontologies(
-        self, query: str, sources: Optional[list[str]] = None
+        self, query: str, sources: list[str] | None = None
     ) -> list[OntologyCandidate]:
         """Search ontologies for a query term."""
         return self.ontology_client.search(query, sources=sources)
@@ -203,8 +205,8 @@ class IngredientCurator:
         quality: str = "MANUAL_CURATION",
         match_level: str = "MANUAL",
         llm_assisted: bool = False,
-        llm_model: Optional[str] = None,
-        notes: Optional[str] = None,
+        llm_model: str | None = None,
+        notes: str | None = None,
         auto_enrich: bool = True,
         allow_hydrate_mismatch: bool = False,
     ) -> dict[str, Any]:
@@ -233,7 +235,9 @@ class IngredientCurator:
             raise ValueError(f"Invalid quality: {quality}. Must be one of {VALID_QUALITY}")
 
         if match_level not in VALID_MATCH_LEVEL:
-            raise ValueError(f"Invalid match_level: {match_level}. Must be one of {VALID_MATCH_LEVEL}")
+            raise ValueError(
+                f"Invalid match_level: {match_level}. Must be one of {VALID_MATCH_LEVEL}"
+            )
 
         previous_status = record.get("mapping_status", "UNMAPPED")
 
@@ -243,8 +247,9 @@ class IngredientCurator:
         # every caller goes through, so the guard lives here rather than in each
         # curation script.
         if not allow_hydrate_mismatch:
-            reason = hydrate_mismatch(record.get("preferred_term", ""), candidate,
-                                      self.formula_lookup)
+            reason = hydrate_mismatch(
+                record.get("preferred_term", ""), candidate, self.formula_lookup
+            )
             if reason:
                 raise HydrateMismatch(reason)
 
@@ -296,7 +301,7 @@ class IngredientCurator:
     def enrich_chemical_properties(
         self,
         record: dict[str, Any],
-        client: Optional[Any] = None,
+        client: Any | None = None,
     ) -> dict[str, Any]:
         """Enrich a record with chemical properties from ChEBI/PubChem.
 
@@ -360,7 +365,7 @@ class IngredientCurator:
         self,
         record: dict[str, Any],
         new_status: str,
-        notes: Optional[str] = None,
+        notes: str | None = None,
         llm_assisted: bool = False,
     ) -> dict[str, Any]:
         """Change the mapping status of a record.
@@ -413,12 +418,12 @@ class IngredientCurator:
         self,
         record: dict[str, Any],
         action: str,
-        changes: Optional[str] = None,
-        previous_status: Optional[str] = None,
-        new_status: Optional[str] = None,
+        changes: str | None = None,
+        previous_status: str | None = None,
+        new_status: str | None = None,
         llm_assisted: bool = False,
-        llm_model: Optional[str] = None,
-        notes: Optional[str] = None,
+        llm_model: str | None = None,
+        notes: str | None = None,
     ) -> dict[str, Any]:
         """Append a curation event to a record's history.
 
@@ -466,16 +471,16 @@ class IngredientCurator:
         self,
         record: dict[str, Any],
         role: str,
-        metabolic_context: Optional[str] = None,
+        metabolic_context: str | None = None,
         confidence: float = 0.9,
-        doi: Optional[str] = None,
-        pmid: Optional[str] = None,
-        reference_text: Optional[str] = None,
+        doi: str | None = None,
+        pmid: str | None = None,
+        reference_text: str | None = None,
         reference_type: str = "MANUAL_CURATION",
-        url: Optional[str] = None,
-        excerpt: Optional[str] = None,
-        curator_note: Optional[str] = None,
-        notes: Optional[str] = None,
+        url: str | None = None,
+        excerpt: str | None = None,
+        curator_note: str | None = None,
+        notes: str | None = None,
     ) -> dict[str, Any]:
         """Add an organism-in-community role to an ingredient/organism record.
 
@@ -563,14 +568,14 @@ class IngredientCurator:
         record: dict[str, Any],
         role: str,
         confidence: float = 0.9,
-        doi: Optional[str] = None,
-        pmid: Optional[str] = None,
-        reference_text: Optional[str] = None,
+        doi: str | None = None,
+        pmid: str | None = None,
+        reference_text: str | None = None,
         reference_type: str = "MANUAL_CURATION",
-        url: Optional[str] = None,
-        excerpt: Optional[str] = None,
-        curator_note: Optional[str] = None,
-        notes: Optional[str] = None,
+        url: str | None = None,
+        excerpt: str | None = None,
+        curator_note: str | None = None,
+        notes: str | None = None,
     ) -> dict[str, Any]:
         """Add a nutritional-facet role assignment (what element/macronutrient the ingredient supplies).
 
@@ -650,14 +655,14 @@ class IngredientCurator:
         record: dict[str, Any],
         role: str,
         confidence: float = 0.9,
-        doi: Optional[str] = None,
-        pmid: Optional[str] = None,
-        reference_text: Optional[str] = None,
+        doi: str | None = None,
+        pmid: str | None = None,
+        reference_text: str | None = None,
         reference_type: str = "MANUAL_CURATION",
-        url: Optional[str] = None,
-        excerpt: Optional[str] = None,
-        curator_note: Optional[str] = None,
-        notes: Optional[str] = None,
+        url: str | None = None,
+        excerpt: str | None = None,
+        curator_note: str | None = None,
+        notes: str | None = None,
     ) -> dict[str, Any]:
         """Add a physicochemical-facet role assignment (chemical/physical job the ingredient does in the medium).
 
@@ -736,16 +741,16 @@ class IngredientCurator:
         self,
         record: dict[str, Any],
         role: str,
-        metabolic_context: Optional[str] = None,
+        metabolic_context: str | None = None,
         confidence: float = 0.9,
-        doi: Optional[str] = None,
-        pmid: Optional[str] = None,
-        reference_text: Optional[str] = None,
+        doi: str | None = None,
+        pmid: str | None = None,
+        reference_text: str | None = None,
         reference_type: str = "MANUAL_CURATION",
-        url: Optional[str] = None,
-        excerpt: Optional[str] = None,
-        curator_note: Optional[str] = None,
-        notes: Optional[str] = None,
+        url: str | None = None,
+        excerpt: str | None = None,
+        curator_note: str | None = None,
+        notes: str | None = None,
     ) -> dict[str, Any]:
         """Add a cellular-metabolic-facet role assignment (what the ingredient does inside/on the cultured microbe).
 
@@ -849,9 +854,7 @@ class IngredientCurator:
             )
 
         record["solution_type"] = solution_type
-        self._add_event(
-            record, action="ANNOTATED", changes=f"Set solution type: {solution_type}"
-        )
+        self._add_event(record, action="ANNOTATED", changes=f"Set solution type: {solution_type}")
         self._dirty = True
         return record
 
@@ -902,9 +905,7 @@ class IngredientCurator:
 
                 confidence = role_assignment.get("confidence")
                 if confidence is not None and not (0.0 <= confidence <= 1.0):
-                    errors.append(
-                        f"Confidence out of range at {label} role {i}: {confidence}"
-                    )
+                    errors.append(f"Confidence out of range at {label} role {i}: {confidence}")
 
                 for j, evidence in enumerate(role_assignment.get("evidence", [])):
                     doi = evidence.get("doi")

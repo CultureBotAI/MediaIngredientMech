@@ -88,17 +88,22 @@ mediaingredientmech = ["schema/*.yaml"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+# The initial floor includes the full legacy scripts/ surface, not only the
+# package. Raise it as historical scripts are archived or brought under test.
 addopts = [
     "--strict-markers",
     "--cov=mediaingredientmech",
+    "--cov=scripts",
     "--cov-report=term-missing",
     "--cov-report=html",
+    "--cov-fail-under=19",
 ]
 
 [tool.black]
 line-length = 100
 target-version = ["py310", "py311", "py312"]
 include = '\.pyi?$'
+extend-exclude = 'src/mediaingredientmech/schema/mapped_ingredients_schema.py'
 exclude = '''
 /(
     \.git
@@ -116,6 +121,11 @@ exclude = '''
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+exclude = [
+    "src/mediaingredientmech/schema/mapped_ingredients_schema.py",
+]
+
+[tool.ruff.lint]
 select = [
     "E",   # pycodestyle errors
     "W",   # pycodestyle warnings
@@ -133,6 +143,10 @@ ignore = [
 
 [tool.mypy]
 python_version = "3.10"
+exclude = [
+    "^src/mediaingredientmech/datamodel/",
+    "^src/mediaingredientmech/schema/mapped_ingredients_schema\\.py$",
+]
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = false
@@ -142,3 +156,27 @@ no_implicit_optional = true
 warn_redundant_casts = true
 warn_unused_ignores = true
 strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "mediaingredientmech.curation.ingredient_curator",
+    "mediaingredientmech.export.report_generator",
+    "mediaingredientmech.render_ingredient_pages",
+    "mediaingredientmech.utils.chemical_properties_client",
+    "mediaingredientmech.utils.doi_resolver",
+    "mediaingredientmech.utils.id_utils",
+    "mediaingredientmech.utils.kg_microbe_searcher",
+    "mediaingredientmech.utils.llm_curator",
+    "mediaingredientmech.utils.ontology_client",
+    "mediaingredientmech.utils.yaml_handler",
+    "mediaingredientmech.validation.ingredient_reviewer",
+    "mediaingredientmech.validation.schema_validator",
+    "mediaingredientmech.validation.write_validated",
+]
+disable_error_code = ["import-not-found", "import-untyped"]
+
+[tool.coverage.run]
+omit = [
+    "src/mediaingredientmech/datamodel/*",
+    "src/mediaingredientmech/schema/mapped_ingredients_schema.py",
+]

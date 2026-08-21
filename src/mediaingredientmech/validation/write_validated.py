@@ -122,9 +122,7 @@ def write_validated_ingredient(
     validation finds any error. Use in place of `yaml.safe_dump(record, fh)`
     inside enrichment / migration / merge scripts.
     """
-    errors = validate_ingredient(
-        record, target_class=target_class, schema_path=schema_path
-    )
+    errors = validate_ingredient(record, target_class=target_class, schema_path=schema_path)
     if errors:
         raise ValidationFailedError(path, errors)
     # Match the existing repo convention (yaml_handler.save_yaml +

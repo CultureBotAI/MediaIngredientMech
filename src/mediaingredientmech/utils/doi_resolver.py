@@ -11,9 +11,8 @@ uses CultureMech DATABASE_ENTRY citations.
 import json
 import os
 import time
-from dataclasses import dataclass, field, asdict
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Optional
 from urllib.parse import quote
 
 import requests
@@ -24,13 +23,13 @@ class DOIMetadata:
     """Metadata for a single DOI citation."""
 
     doi: str
-    title: Optional[str] = None
+    title: str | None = None
     authors: list[str] = field(default_factory=list)
-    year: Optional[int] = None
-    journal: Optional[str] = None
-    citation_text: Optional[str] = None  # Auto-generated APA citation
-    url: Optional[str] = None
-    raw_response: Optional[dict] = None  # Full API response for debugging
+    year: int | None = None
+    journal: str | None = None
+    citation_text: str | None = None  # Auto-generated APA citation
+    url: str | None = None
+    raw_response: dict | None = None  # Full API response for debugging
 
     def to_citation_dict(self) -> dict:
         """Convert to RoleCitation format for IngredientCurator.
@@ -67,10 +66,10 @@ class DOIResolver:
 
     def __init__(
         self,
-        cache_dir: Optional[Path] = None,
+        cache_dir: Path | None = None,
         rate_limit: float = 5.0,  # Max requests per second
         timeout: int = 10,
-        contact_email: Optional[str] = None,
+        contact_email: str | None = None,
     ):
         """Initialize DOI resolver.
 
@@ -84,8 +83,7 @@ class DOIResolver:
                 still serve, but throttling is more aggressive).
         """
         self.cache_dir = (
-            cache_dir
-            or Path.home() / ".cache" / "mediaingredientmech" / "doi_metadata"
+            cache_dir or Path.home() / ".cache" / "mediaingredientmech" / "doi_metadata"
         )
         self.cache_dir.mkdir(parents=True, exist_ok=True)
 
@@ -100,9 +98,7 @@ class DOIResolver:
         self.crossref_base = "https://api.crossref.org/works"
         email = contact_email or os.environ.get("MIM_CROSSREF_EMAIL")
         if email:
-            self.user_agent = (
-                f"MediaIngredientMech/1.0 (mailto:{email}) Python/requests"
-            )
+            self.user_agent = f"MediaIngredientMech/1.0 (mailto:{email}) Python/requests"
         else:
             self.user_agent = "MediaIngredientMech/1.0 Python/requests"
 
@@ -119,7 +115,7 @@ class DOIResolver:
         safe_doi = doi.replace("/", "_").replace(":", "_")
         return self.cache_dir / f"{safe_doi}.json"
 
-    def _load_from_cache(self, doi: str) -> Optional[DOIMetadata]:
+    def _load_from_cache(self, doi: str) -> DOIMetadata | None:
         """Load metadata from cache.
 
         Args:
@@ -167,9 +163,9 @@ class DOIResolver:
     def _format_apa_citation(
         self,
         authors: list[str],
-        year: Optional[int],
-        title: Optional[str],
-        journal: Optional[str],
+        year: int | None,
+        title: str | None,
+        journal: str | None,
         doi: str,
     ) -> str:
         """Format citation in APA style.
@@ -251,7 +247,7 @@ class DOIResolver:
             raw_response=message,
         )
 
-    def resolve(self, doi: str, use_cache: bool = True) -> Optional[DOIMetadata]:
+    def resolve(self, doi: str, use_cache: bool = True) -> DOIMetadata | None:
         """Resolve a single DOI to metadata.
 
         Args:
@@ -292,9 +288,7 @@ class DOIResolver:
                 return None
 
             else:
-                print(
-                    f"⚠️  Crossref API error for {doi}: {response.status_code} {response.text}"
-                )
+                print(f"⚠️  Crossref API error for {doi}: {response.status_code} {response.text}")
                 return None
 
         except requests.exceptions.Timeout:
@@ -307,7 +301,7 @@ class DOIResolver:
 
     def resolve_batch(
         self, dois: list[str], use_cache: bool = True, progress: bool = True
-    ) -> dict[str, Optional[DOIMetadata]]:
+    ) -> dict[str, DOIMetadata | None]:
         """Resolve multiple DOIs with progress tracking.
 
         Args:
@@ -329,13 +323,11 @@ class DOIResolver:
 
         if progress:
             successful = sum(1 for v in results.values() if v is not None)
-            print(
-                f"\n✅ Resolved {successful}/{total} DOIs ({successful/total*100:.1f}%)"
-            )
+            print(f"\n✅ Resolved {successful}/{total} DOIs ({successful/total*100:.1f}%)")
 
         return results
 
-    def clear_cache(self, doi: Optional[str] = None):
+    def clear_cache(self, doi: str | None = None):
         """Clear DOI metadata cache.
 
         Args:

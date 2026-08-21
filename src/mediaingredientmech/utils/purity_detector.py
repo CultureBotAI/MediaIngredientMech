@@ -10,73 +10,69 @@ Example:
 """
 
 import re
-from typing import Optional
-
 
 # Keywords indicating impurity/natural variants (priority order)
 PURITY_KEYWORDS = {
     # Evidence note patterns (confidence: 0.9)
-    'trace_components': [
-        'trace minerals',
-        'trace elements',
-        'trace components',
-        'trace amounts',
+    "trace_components": [
+        "trace minerals",
+        "trace elements",
+        "trace components",
+        "trace amounts",
     ],
-    'impurity_explicit': [
-        'impure',
-        'impurity',
-        'not pure',
-        'lower confidence due to impurity',
+    "impurity_explicit": [
+        "impure",
+        "impurity",
+        "not pure",
+        "lower confidence due to impurity",
     ],
-    'percentage_ranges': [
-        r'~?\d{2,3}-\d{2,3}%',  # e.g., "97-99%", "~95-98%"
-        r'approximately \d{2,3}%',
-        r'about \d{2,3}%',
+    "percentage_ranges": [
+        r"~?\d{2,3}-\d{2,3}%",  # e.g., "97-99%", "~95-98%"
+        r"approximately \d{2,3}%",
+        r"about \d{2,3}%",
     ],
-    'natural_variant': [
-        'natural variant',
-        'as found in nature',
-        'evaporated seawater',
-        'mined',
+    "natural_variant": [
+        "natural variant",
+        "as found in nature",
+        "evaporated seawater",
+        "mined",
     ],
-
     # Preferred term patterns (confidence: 0.85)
-    'purity_qualifiers': [
-        'natural',
-        'crude',
-        'technical grade',
-        'commercial grade',
-        'industrial grade',
+    "purity_qualifiers": [
+        "natural",
+        "crude",
+        "technical grade",
+        "commercial grade",
+        "industrial grade",
     ],
-    'environmental_sources': [
-        'tap water',
-        'seawater',
-        'sea water',
-        'soil extract',
-        'well water',
-        'spring water',
+    "environmental_sources": [
+        "tap water",
+        "seawater",
+        "sea water",
+        "soil extract",
+        "well water",
+        "spring water",
     ],
-
     # Synonym property patterns (confidence: 0.7)
-    'undefined_component': [
-        'undefined component',
-        'undefined composition',
-        'variable composition',
+    "undefined_component": [
+        "undefined component",
+        "undefined composition",
+        "variable composition",
     ],
 }
 
 # Patterns that indicate a pure chemical (negates purity concerns)
 PURE_INDICATORS = [
-    'reagent grade',
-    'analytical grade',
-    'ACS grade',
-    'pure',
-    '>99',
-    '≥99',
-    'anhydrous',  # May still be purity concern if comparing with hydrate
-    'distilled water',
-    'deionized water',
-    'ultrapure',
+    "reagent grade",
+    "analytical grade",
+    "ACS grade",
+    "pure",
+    ">99",
+    "≥99",
+    "anhydrous",  # May still be purity concern if comparing with hydrate
+    "distilled water",
+    "deionized water",
+    "ultrapure",
 ]
 
 
@@ -123,34 +119,34 @@ def detect_purity_concerns(record: dict) -> tuple[bool, float, str]:
         True
     """
     # Collect all text to analyze
-    preferred_term = record.get('preferred_term', '').lower()
-    notes = record.get('notes', '').lower()
+    preferred_term = record.get("preferred_term", "").lower()
+    notes = record.get("notes", "").lower()
 
     # Extract ontology mapping details
-    ontology_mapping = record.get('ontology_mapping', {})
-    mapping_quality = ontology_mapping.get('mapping_quality', '')
-    evidence_list = ontology_mapping.get('evidence', [])
+    ontology_mapping = record.get("ontology_mapping", {})
+    mapping_quality = ontology_mapping.get("mapping_quality", "")
+    evidence_list = ontology_mapping.get("evidence", [])
 
     # Combine all evidence notes
-    evidence_text = ' '.join(
-        ev.get('notes', '') for ev in evidence_list if isinstance(ev, dict)
+    evidence_text = " ".join(
+        ev.get("notes", "") for ev in evidence_list if isinstance(ev, dict)
     ).lower()
 
     # Extract synonyms text and metadata
-    synonyms = record.get('synonyms', [])
+    synonyms = record.get("synonyms", [])
     synonym_parts = []
     for syn in synonyms:
         if isinstance(syn, dict):
             # The schema key is `synonym_text`; fall back to `text` only for
             # backward compatibility with older fixture-style records.
-            synonym_parts.append(syn.get('synonym_text') or syn.get('text', ''))
+            synonym_parts.append(syn.get("synonym_text") or syn.get("text", ""))
             # Add metadata.properties if present
-            metadata = syn.get('metadata', {})
-            if isinstance(metadata, dict) and 'properties' in metadata:
-                synonym_parts.append(metadata['properties'])
+            metadata = syn.get("metadata", {})
+            if isinstance(metadata, dict) and "properties" in metadata:
+                synonym_parts.append(metadata["properties"])
         else:
             synonym_parts.append(str(syn))
-    synonym_text = ' '.join(synonym_parts).lower()
+    synonym_text = " ".join(synonym_parts).lower()
 
     # Combine all text for analysis
     all_text = f"{preferred_term} {notes} {evidence_text} {synonym_text}"
@@ -159,7 +155,7 @@ def detect_purity_concerns(record: dict) -> tuple[bool, float, str]:
     for pure_indicator in PURE_INDICATORS:
         if pure_indicator.lower() in all_text:
             # Exception: if also has explicit impurity markers, those take precedence
-            if any(kw in all_text for kw in PURITY_KEYWORDS['impurity_explicit']):
+            if any(kw in all_text for kw in PURITY_KEYWORDS["impurity_explicit"]):
                 break  # Continue with purity detection
             return False, 0.0, "Pure chemical indicator found"
 
@@ -168,8 +164,8 @@ def detect_purity_concerns(record: dict) -> tuple[bool, float, str]:
     max_confidence = 0.0
 
     # Layer 1: Evidence note keywords (confidence: 0.9)
-    trace_found = any(kw in evidence_text for kw in PURITY_KEYWORDS['trace_components'])
-    impurity_found = any(kw in evidence_text for kw in PURITY_KEYWORDS['impurity_explicit'])
+    trace_found = any(kw in evidence_text for kw in PURITY_KEYWORDS["trace_components"])
+    impurity_found = any(kw in evidence_text for kw in PURITY_KEYWORDS["impurity_explicit"])
 
     if trace_found:
         reasons.append("trace components in evidence")
@@ -180,21 +176,21 @@ def detect_purity_concerns(record: dict) -> tuple[bool, float, str]:
         max_confidence = max(max_confidence, 0.9)
 
     # Check for percentage ranges in evidence
-    for pattern in PURITY_KEYWORDS['percentage_ranges']:
+    for pattern in PURITY_KEYWORDS["percentage_ranges"]:
         if re.search(pattern, evidence_text):
             reasons.append("percentage range indicates impurity")
             max_confidence = max(max_confidence, 0.9)
             break
 
     # Check for natural variant mentions
-    if any(kw in evidence_text for kw in PURITY_KEYWORDS['natural_variant']):
+    if any(kw in evidence_text for kw in PURITY_KEYWORDS["natural_variant"]):
         reasons.append("natural variant mentioned")
         max_confidence = max(max_confidence, 0.9)
 
     # Layer 2: Preferred term patterns (confidence: 0.85)
     term_has_qualifier = any(
         preferred_term.startswith(qual) or f" {qual}" in preferred_term
-        for qual in PURITY_KEYWORDS['purity_qualifiers']
+        for qual in PURITY_KEYWORDS["purity_qualifiers"]
     )
 
     if term_has_qualifier:
@@ -202,28 +198,28 @@ def detect_purity_concerns(record: dict) -> tuple[bool, float, str]:
         max_confidence = max(max_confidence, 0.85)
 
     # Check for environmental sources in term
-    if any(src in preferred_term for src in PURITY_KEYWORDS['environmental_sources']):
+    if any(src in preferred_term for src in PURITY_KEYWORDS["environmental_sources"]):
         reasons.append("environmental source")
         max_confidence = max(max_confidence, 0.85)
 
     # Layer 3: CLOSE_MATCH + low confidence (confidence: 0.75)
-    if mapping_quality == 'CLOSE_MATCH':
+    if mapping_quality == "CLOSE_MATCH":
         # Extract confidence score
         confidence_score = None
         for ev in evidence_list:
-            if isinstance(ev, dict) and 'confidence_score' in ev:
-                confidence_score = ev['confidence_score']
+            if isinstance(ev, dict) and "confidence_score" in ev:
+                confidence_score = ev["confidence_score"]
                 break
 
         if confidence_score is not None and confidence_score < 0.8:
             # Only flag if there are also composition concerns in notes
-            composition_keywords = ['composition', 'contains', 'includes', '%']
+            composition_keywords = ["composition", "contains", "includes", "%"]
             if any(kw in evidence_text for kw in composition_keywords):
                 reasons.append(f"CLOSE_MATCH with low confidence ({confidence_score})")
                 max_confidence = max(max_confidence, 0.75)
 
     # Layer 4: Synonym property extraction (confidence: 0.7)
-    if any(kw in synonym_text for kw in PURITY_KEYWORDS['undefined_component']):
+    if any(kw in synonym_text for kw in PURITY_KEYWORDS["undefined_component"]):
         reasons.append("undefined component property")
         max_confidence = max(max_confidence, 0.7)
 
@@ -235,7 +231,7 @@ def detect_purity_concerns(record: dict) -> tuple[bool, float, str]:
         return False, 0.0, "No purity concerns detected"
 
 
-def get_purity_details(record: dict) -> Optional[str]:
+def get_purity_details(record: dict) -> str | None:
     """
     Extract detailed purity information from evidence notes.
 
@@ -258,22 +254,22 @@ def get_purity_details(record: dict) -> Optional[str]:
         >>> get_purity_details(record)
         'evaporated seawater, 97-99% NaCl. Contains trace minerals (Mg, Ca, K)'
     """
-    ontology_mapping = record.get('ontology_mapping', {})
-    evidence_list = ontology_mapping.get('evidence', [])
+    ontology_mapping = record.get("ontology_mapping", {})
+    evidence_list = ontology_mapping.get("evidence", [])
 
     for ev in evidence_list:
         if not isinstance(ev, dict):
             continue
 
-        notes = ev.get('notes', '')
+        notes = ev.get("notes", "")
 
         # Look for purity-related sentences
         purity_patterns = [
-            r'(\d{2,3}[-~]?\d{0,3}%[^.]+)',  # Percentage descriptions
-            r'([Cc]ontains [^.]+)',  # "Contains X, Y, Z"
-            r'([Tt]race [^.]+)',  # "trace minerals..."
-            r'([Nn]atural [^.]+)',  # "Natural variant..."
-            r'([Uu]ndefined [^.]+)',  # "Undefined component"
+            r"(\d{2,3}[-~]?\d{0,3}%[^.]+)",  # Percentage descriptions
+            r"([Cc]ontains [^.]+)",  # "Contains X, Y, Z"
+            r"([Tt]race [^.]+)",  # "trace minerals..."
+            r"([Nn]atural [^.]+)",  # "Natural variant..."
+            r"([Uu]ndefined [^.]+)",  # "Undefined component"
         ]
 
         for pattern in purity_patterns:
@@ -316,12 +312,12 @@ def compare_purity_reasons(reason1: str, reason2: str) -> bool:
 
     # Extract key concern types
     concern_types = {
-        'trace': 'trace',
-        'percentage': 'percentage',
-        'natural': 'natural',
-        'undefined': 'undefined',
-        'environmental': 'environmental',
-        'qualifier': 'purity qualifier',
+        "trace": "trace",
+        "percentage": "percentage",
+        "natural": "natural",
+        "undefined": "undefined",
+        "environmental": "environmental",
+        "qualifier": "purity qualifier",
     }
 
     r1_types = set()
@@ -338,7 +334,7 @@ def compare_purity_reasons(reason1: str, reason2: str) -> bool:
         return True
 
     # If one is "undefined" and other is specific, they're different
-    if ('undefined' in r1_types) != ('undefined' in r2_types):
+    if ("undefined" in r1_types) != ("undefined" in r2_types):
         return False
 
     # Otherwise, consider them different

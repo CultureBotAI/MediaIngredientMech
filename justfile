@@ -548,26 +548,32 @@ snapshot:
 
 # Run tests
 test:
-    pytest tests/
+    uv run --frozen --extra dev pytest tests/
 
 # Run tests with coverage report
 test-cov:
-    pytest tests/ --cov=mediaingredientmech --cov-report=term-missing --cov-report=html
+    uv run --frozen --extra dev pytest tests/ --cov=mediaingredientmech --cov-report=term-missing --cov-report=html
 
-# Format code with black
+# Format maintained package code with Black. The legacy generated LinkML module
+# is excluded in pyproject.toml; scripts/ enter this gate as they are promoted
+# into the maintained CLI surface (issue #424).
 format:
-    black src/ tests/ scripts/
+    uv run --frozen --extra dev black src/mediaingredientmech
 
-# Lint code with ruff
+# Verify formatting without modifying files.
+format-check:
+    uv run --frozen --extra dev black --check src/mediaingredientmech
+
+# Lint maintained package code with Ruff.
 lint:
-    ruff check src/ tests/ scripts/
+    uv run --frozen --extra dev ruff check src/mediaingredientmech
 
-# Type check with mypy
+# Type check maintained package code with mypy.
 typecheck:
-    mypy src/
+    uv run --frozen --extra dev mypy src/mediaingredientmech
 
 # Run all quality checks
-check: lint typecheck test
+check: lint format-check typecheck test
 
 # Clean generated files
 clean:

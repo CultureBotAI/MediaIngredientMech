@@ -203,13 +203,8 @@ MemoryError: Unable to allocate array
 # Reduce parallel workers
 PYTHONPATH=src python scripts/batch_review.py --threads 2
 
-# Process in chunks
-for i in {0..1000..100}; do
-  PYTHONPATH=src python scripts/batch_review.py --offset $i --limit 100
-done
-
-# Use streaming mode (process one at a time)
-PYTHONPATH=src python scripts/batch_review.py --streaming
+# Limit a diagnostic run before increasing the batch size
+PYTHONPATH=src python scripts/batch_review.py --limit 100
 ```
 
 ### Issue: Chemical Properties Not Found in OLS
@@ -255,9 +250,6 @@ PYTHONPATH=src python scripts/batch_review.py --use-local-owl
 
 # Increase parallelism
 PYTHONPATH=src python scripts/batch_review.py --threads 16
-
-# Skip expensive checks (LLM semantic comparison)
-PYTHONPATH=src python scripts/batch_review.py --skip-llm
 
 # Cache OAK lookups
 # (IngredientReviewer automatically caches term_info in memory)
@@ -334,13 +326,11 @@ less synonym_report.txt
 
 # 3. Auto-add high-confidence exact synonyms
 PYTHONPATH=src python scripts/validate_synonyms.py \
-  --add-missing \
-  --types EXACT
+  --add-missing
 
 # 4. Manually review related synonyms (more subjective)
 PYTHONPATH=src python scripts/validate_synonyms.py \
   --add-missing \
-  --types RELATED \
   --interactive
 ```
 
@@ -355,8 +345,7 @@ python scripts/download_ontologies.py --sources CHEBI --force
 # 2. Run validation with local OWL
 PYTHONPATH=src python scripts/batch_review.py \
   --use-local-owl \
-  --priority P2 \
-  --filter-rule P2.3
+  --priority P2
 
 # 3. Review deprecated terms
 grep "P2.3.*Deprecated" reports/*/validation_report.md
@@ -373,7 +362,7 @@ print(f'Replace with: {replacements[0]}')
 # (Use IngredientCurator.update_mapping())
 
 # 6. Re-validate
-PYTHONPATH=src python scripts/batch_review.py --priority P2 --filter-rule P2.3
+PYTHONPATH=src python scripts/batch_review.py --priority P2
 ```
 
 ---

@@ -31,10 +31,12 @@ def load_yaml(path: str | Path) -> dict:
     path = Path(path)
     if not path.exists():
         raise FileNotFoundError(f"YAML file not found: {path}")
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         data = yaml.safe_load(f)
     if data is None:
         return {}
+    if not isinstance(data, dict):
+        raise TypeError(f"Expected a YAML mapping in {path}, got {type(data).__name__}")
     return data
 
 
@@ -86,6 +88,7 @@ def save_yaml(
             from mediaingredientmech.validation.write_validated import (
                 ValidationFailedError,
             )
+
             raise ValidationFailedError(path, errors)
         if backup and path.exists():
             _create_backup(path)

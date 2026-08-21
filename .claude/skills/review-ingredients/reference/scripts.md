@@ -99,8 +99,8 @@ PYTHONPATH=src python scripts/batch_review.py --limit 10 --dry-run
 
 **Usage:**
 ```bash
-# Dry-run to preview changes
-PYTHONPATH=src python scripts/auto_correct.py --dry-run
+# Preview changes (the default when --apply is omitted)
+PYTHONPATH=src python scripts/auto_correct.py
 
 # Apply all safe corrections
 PYTHONPATH=src python scripts/auto_correct.py --apply

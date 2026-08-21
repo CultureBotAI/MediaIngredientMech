@@ -94,7 +94,7 @@ The normalization system automatically handles common notation issues:
 
 | Issue | Example | Normalized | Search Variants |
 |-------|---------|------------|-----------------|
-| Hydrate notation | `MgSO4•7H2O` | `MgSO4` | MgSO4•7H2O, MgSO4, magnesium sulfate |
+| Hydrate notation | `MgSO4•7H2O` | `MgSO4·7H2O` | MgSO4•7H2O, magnesium sulfate heptahydrate, MgSO4 (parent search only) |
 | Incomplete formula | `K2HPO` | `K2HPO4` | K2HPO, K2HPO4, dipotassium phosphate |
 | Catalog number | `NaCl (Fisher S271-500)` | `NaCl` | NaCl, sodium chloride |
 | Abbreviation | `dH2O` | `dH2O` | dH2O, distilled water |
@@ -102,20 +102,25 @@ The normalization system automatically handles common notation issues:
 ### How It Works
 
 1. **Strip catalog info**: Remove `(Fisher X)`, `(Sigma Y)`, `(CAS: Z)`
-2. **Strip hydrates**: Remove `•nH2O`, `.nH2O`, `·nH2O`
+2. **Preserve hydrate identity**: Normalize dot notation, but keep the water count; a stripped parent formula may be used only to discover candidates
 3. **Fix incomplete**: `NaNO` → `NaNO3`, `MgCO` → `MgCO3`
 4. **Generate variants**:
    - Original name
    - Normalized name
    - Formula → common name (e.g., NaCl → sodium chloride)
    - Abbreviation → expanded (e.g., EDTA → ethylenediaminetetraacetic acid)
-5. **Preserve original form**: When normalization is applied, the original form is automatically added as a synonym with appropriate type:
+5. **Preserve original form**: When normalization is applied, the original form is retained as an identity-bearing label or synonym with appropriate type:
    - `HYDRATE_FORM` - For hydrate notation (e.g., `MgSO4•7H2O`)
    - `CATALOG_VARIANT` - For catalog/supplier codes (e.g., `NaCl (Fisher S271-500)`)
    - `INCOMPLETE_FORMULA` - For incomplete formulas (e.g., `K2HPO`)
    - `ALTERNATE_FORM` - For other chemical form variations
 
 All variants are searched and results deduplicated.
+
+Normalization broadens search; it does not establish identity. Never accept a
+hydrate candidate solely because the stripped formula matches an anhydrous or
+generic parent. Apply the identity decision procedure in
+[`MAPPING_SEMANTICS.md`](../MAPPING_SEMANTICS.md) before accepting a mapping.
 
 ## Recommended Workflow
 
@@ -139,7 +144,7 @@ python scripts/batch_curate_unmapped.py \
 ```
 
 **Expected results:**
-- Hydrates: `MgSO4•7H2O` → CHEBI:32599 (magnesium sulfate)
+- Hydrates: preserve the distinct form, for example `MgSO4•7H2O` → CHEBI:31795 (magnesium sulfate heptahydrate)
 - Incomplete formulas: `K2HPO` → CHEBI:63036 (dipotassium phosphate)
 - Catalog variants: `NaCl (Fisher S271-500)` → CHEBI:26710 (sodium chloride)
 - Abbreviations: `dH2O` → CHEBI:15377 (water)
@@ -244,26 +249,26 @@ Processing 45 unmapped ingredients
 │ Occurrences: 29 across 29 media          │
 └──────────────────────────────────────────┘
 
-Normalized: MgSO4 (rules: stripped_hydrate)
+Normalized: MgSO4•7H2O (hydrate identity preserved)
 
 Ontology Candidates
 ┏━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
 ┃ #  ┃ ID          ┃ Label               ┃ Source ┃ Score ┃
 ┡━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
-│ 1  │ CHEBI:32599 │ magnesium sulfate   │ CHEBI  │  0.95 │
-│ 2  │ CHEBI:86455 │ magnesium sulfate   │ CHEBI  │  0.93 │
+│ 1  │ CHEBI:31795 │ magnesium sulfate   │ CHEBI  │  0.95 │
 │    │             │ heptahydrate        │        │       │
+│ 2  │ CHEBI:32599 │ magnesium sulfate   │ CHEBI  │  0.70 │
 └────┴─────────────┴─────────────────────┴────────┴───────┘
 
 High-confidence match found:
-  MgSO4•7H2O → MgSO4
-  → CHEBI:32599 (magnesium sulfate)
+  MgSO4•7H2O → MgSO4·7H2O
+  → CHEBI:31795 (magnesium sulfate heptahydrate)
   Score: 0.95
 
 Auto-accept this mapping? [Y/n]: y
 
-Mapped to CHEBI:32599 (magnesium sulfate)
-Added 'MgSO4•7H2O' as synonym (normalization: stripped_hydrate)
+Mapped to CHEBI:31795 (magnesium sulfate heptahydrate)
+Preserved 'MgSO4•7H2O' as a source-form synonym
 ```
 
 ## Validation

@@ -8,7 +8,6 @@ import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Optional
 from urllib.parse import quote
 
 import requests
@@ -32,16 +31,16 @@ _last_request_time = 0.0
 class ChemicalProperties:
     """Chemical structure and properties for a chemical entity."""
 
-    molecular_formula: Optional[str] = None
-    smiles: Optional[str] = None
-    inchi: Optional[str] = None
-    molecular_weight: Optional[float] = None
-    data_source: Optional[str] = None
-    retrieval_date: Optional[str] = None
+    molecular_formula: str | None = None
+    smiles: str | None = None
+    inchi: str | None = None
+    molecular_weight: float | None = None
+    data_source: str | None = None
+    retrieval_date: str | None = None
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, str | float]:
         """Convert to dictionary for YAML serialization."""
-        result = {}
+        result: dict[str, str | float] = {}
         if self.molecular_formula:
             result["molecular_formula"] = self.molecular_formula
         if self.smiles:
@@ -73,7 +72,7 @@ class ChemicalPropertiesClient:
         ontology_id: str,
         label: str,
         source: str,
-    ) -> Optional[ChemicalProperties]:
+    ) -> ChemicalProperties | None:
         """Get chemical properties for an ontology term.
 
         Args:
@@ -122,9 +121,7 @@ class ChemicalPropertiesClient:
 
         return props
 
-    def _get_chebi_properties(
-        self, chebi_id: str, ontology_id: str
-    ) -> Optional[ChemicalProperties]:
+    def _get_chebi_properties(self, chebi_id: str, ontology_id: str) -> ChemicalProperties | None:
         """Retrieve properties from ChEBI OLS API v4.
 
         Args:
@@ -197,7 +194,7 @@ class ChemicalPropertiesClient:
             logger.warning("Error parsing ChEBI response for %s: %s", ontology_id, e)
             return None
 
-    def _get_pubchem_properties(self, chebi_id: str) -> Optional[ChemicalProperties]:
+    def _get_pubchem_properties(self, chebi_id: str) -> ChemicalProperties | None:
         """Retrieve SMILES and InChI from PubChem using ChEBI cross-reference.
 
         Args:
@@ -233,8 +230,7 @@ class ChemicalPropertiesClient:
 
             # Get properties for this CID
             props_url = (
-                f"{PUBCHEM_API}/cid/{cid}/property/"
-                f"CanonicalSMILES,InChI,MolecularWeight/JSON"
+                f"{PUBCHEM_API}/cid/{cid}/property/" f"CanonicalSMILES,InChI,MolecularWeight/JSON"
             )
 
             # Rate limiting
@@ -296,7 +292,7 @@ class ChemicalPropertiesClient:
         safe_id = ontology_id.replace(":", "_")
         return CACHE_DIR / f"{safe_id}.json"
 
-    def _get_from_cache(self, ontology_id: str) -> Optional[ChemicalProperties]:
+    def _get_from_cache(self, ontology_id: str) -> ChemicalProperties | None:
         """Retrieve properties from cache if available."""
         cache_path = self._get_cache_path(ontology_id)
         if not cache_path.exists():

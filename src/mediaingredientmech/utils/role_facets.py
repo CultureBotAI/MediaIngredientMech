@@ -18,7 +18,7 @@ touching this module.
 
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any
 
 from mediaingredientmech.curation.ingredient_curator import (
     VALID_CELLULAR_METABOLIC_ROLES,
@@ -90,7 +90,7 @@ def add_role(
     record: dict[str, Any],
     role: str,
     *,
-    slot: Optional[str] = None,
+    slot: str | None = None,
     **kwargs: Any,
 ) -> dict[str, Any]:
     """Add `role` to `record` via the curator writer for its facet.
@@ -106,4 +106,7 @@ def add_role(
         The updated record.
     """
     target = slot or facet_slot_for(role)
-    return getattr(curator, WRITER_BY_SLOT[target])(record, role=role, **kwargs)
+    result = getattr(curator, WRITER_BY_SLOT[target])(record, role=role, **kwargs)
+    if not isinstance(result, dict):
+        raise TypeError(f"Role writer for {target} returned {type(result).__name__}, expected dict")
+    return result

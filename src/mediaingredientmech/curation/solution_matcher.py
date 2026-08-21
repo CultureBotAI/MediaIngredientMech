@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import logging
 import re
-from typing import Optional
 
 logger = logging.getLogger(__name__)
 
@@ -85,7 +84,7 @@ class SolutionMatcher:
         norm = normalize_text(name)
 
         # Try each pattern to extract base name
-        for pattern_type, pattern in self.PATTERNS.items():
+        for _pattern_type, pattern in self.PATTERNS.items():
             match = pattern.search(norm)
             if match:
                 # Return the captured group (base name before type suffix)

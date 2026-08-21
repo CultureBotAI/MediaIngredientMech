@@ -29,7 +29,8 @@ water of crystallisation that this guard does not try to distinguish.
 from __future__ import annotations
 
 import re
-from typing import Callable, Optional, Protocol
+from collections.abc import Callable
+from typing import Protocol
 
 # Water of crystallisation in an ingredient label: 'x 7 H2O', 'x n H2O',
 # '·7H2O', '7H2O', and hydrate words with or without a multiplier prefix.
@@ -40,9 +41,9 @@ from typing import Callable, Optional, Protocol
 # (dihydrogenphosphate) and 'H2O2' would match.
 _SEP = r"[x×·•・⋅∙.]"
 HYDRATE_NOTATION = re.compile(
-    rf"{_SEP}\s*(?:\d+|n)?\s*H2\s*O(?![0-9])"        # MgSO4·7H2O, NiCl2・H2O, FeSO4.H2O
-    rf"|{_SEP}?\s*\(\s*H2\s*O\s*\)\s*[n\d]"         # VOSO4(H2O)n
-    r"|\d\s*H2\s*O(?![0-9])"                          # 7H2O with no separator
+    rf"{_SEP}\s*(?:\d+|n)?\s*H2\s*O(?![0-9])"  # MgSO4·7H2O, NiCl2・H2O, FeSO4.H2O
+    rf"|{_SEP}?\s*\(\s*H2\s*O\s*\)\s*[n\d]"  # VOSO4(H2O)n
+    r"|\d\s*H2\s*O(?![0-9])"  # 7H2O with no separator
     r"|(?<![a-z])(?:hemi|sesqui|mono|di|tri|tetra|penta|hexa|hepta|octa|nona|deca|dodeca)*"
     r"hydrate\b",
     re.IGNORECASE,
@@ -56,24 +57,39 @@ FORMULA_WATER = re.compile(r"(?:^|\.)\(?[\dn]*H2O\)?n?(?:\.|$)")
 # Greek multipliers ChEBI and catalogues use, as numbers. `hexahydrate` and
 # `6 H2O` are the same state; comparing raw tokens reports respellings as
 # mismatches.
-_MULTIPLIER = {"hemi": "0.5", "sesqui": "1.5", "mono": "1", "di": "2", "tri": "3",
-               "tetra": "4", "penta": "5", "hexa": "6", "hepta": "7", "octa": "8",
-               "nona": "9", "deca": "10", "undeca": "11", "dodeca": "12"}
+_MULTIPLIER = {
+    "hemi": "0.5",
+    "sesqui": "1.5",
+    "mono": "1",
+    "di": "2",
+    "tri": "3",
+    "tetra": "4",
+    "penta": "5",
+    "hexa": "6",
+    "hepta": "7",
+    "octa": "8",
+    "nona": "9",
+    "deca": "10",
+    "undeca": "11",
+    "dodeca": "12",
+}
 
 # A digit multiplier must be preceded by a separator, whitespace or the string
 # start. Without that guard `AlCl3.6H2O` reads as "3.6" -- the aluminium
 # subscript captured as part of the multiplier. The hyphen forms (`ZnSO4-7H2O`)
 # occur in the corpus too, so `-` and the Unicode minus are separators (#256).
-_DIGIT_WATER = re.compile(r"(?:^|[x\u00d7\u00b7\u2022\u30fb\u22c5\u2219.\-\u2212\s])(\d+)\s*H2\s*O(?![0-9])",
-                          re.IGNORECASE)
+_DIGIT_WATER = re.compile(
+    r"(?:^|[x\u00d7\u00b7\u2022\u30fb\u22c5\u2219.\-\u2212\s])(\d+)\s*H2\s*O(?![0-9])",
+    re.IGNORECASE,
+)
 # `hemipentahydrate` is hemi x penta = 2.5 waters, so the fraction prefix is
 # matched separately from the count rather than as one alternative.
 _FRACTION = {"hemi": 0.5, "sesqui": 1.5}
 _COUNT = {k: v for k, v in _MULTIPLIER.items() if k not in _FRACTION}
 _WORD_WATER = re.compile(
-    r"(?<![a-z])(hemi|sesqui)?("
-    + "|".join(sorted(_COUNT, key=len, reverse=True)) + r")?hydrate\b",
-    re.IGNORECASE)
+    r"(?<![a-z])(hemi|sesqui)?(" + "|".join(sorted(_COUNT, key=len, reverse=True)) + r")?hydrate\b",
+    re.IGNORECASE,
+)
 
 
 def water_multiplicity(text: str) -> str | None:
@@ -90,17 +106,17 @@ def water_multiplicity(text: str) -> str | None:
     Returns a decimal string so `hemi` (0.5) and `sesqui` (1.5) round-trip.
     """
     text = str(text or "")
-    for m in _WORD_WATER.finditer(text):
-        frac, count = m.group(1), m.group(2)
+    for word_match in _WORD_WATER.finditer(text):
+        frac, count = word_match.group(1), word_match.group(2)
         if not frac and not count:
-            continue                      # a bare `hydrate` states nothing
+            continue  # a bare `hydrate` states nothing
         value = float(_COUNT[count.lower()]) if count else 1.0
         if frac:
             value *= _FRACTION[frac.lower()]
         return f"{value:g}"
-    m = _DIGIT_WATER.search(text)
-    if m:
-        return m.group(1)
+    digit_match = _DIGIT_WATER.search(text)
+    if digit_match:
+        return digit_match.group(1)
     return None
 
 
@@ -120,7 +136,7 @@ def is_hydrate_label(text: str) -> bool:
 
 def term_is_hydrate(
     candidate: _Candidate,
-    formula_lookup: Optional[Callable[[str], Optional[str]]] = None,
+    formula_lookup: Callable[[str], str | None] | None = None,
 ) -> bool:
     """Does the candidate term itself denote a hydrate?"""
     if is_hydrate_label(candidate.label):
@@ -137,8 +153,8 @@ def term_is_hydrate(
 def hydrate_mismatch(
     record_label: str,
     candidate: _Candidate,
-    formula_lookup: Optional[Callable[[str], Optional[str]]] = None,
-) -> Optional[str]:
+    formula_lookup: Callable[[str], str | None] | None = None,
+) -> str | None:
     """Reason to refuse, or None if the mapping is fine.
 
     Only fires in one direction: a hydrate label onto a term that is not a

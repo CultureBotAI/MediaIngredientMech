@@ -71,11 +71,47 @@ def test_flags_references_inside_fenced_blocks(tmp_path):
     assert [f.ref for f in findings] == ["no-such-recipe"]
 
 
+def test_flags_an_unsupported_documented_cli_option(tmp_path):
+    mod = _load()
+    scripts = tmp_path / "scripts"
+    scripts.mkdir()
+    (scripts / "apply.py").write_text(
+        'import click\n@click.command()\n@click.option("--dry-run", is_flag=True)\ndef main(dry_run): pass\n'
+    )
+    doc = _doc(
+        tmp_path,
+        "```bash\npython scripts/apply.py --dry-run --validate\n```\n",
+    )
+
+    findings = _scan(mod, doc, tmp_path, tracked={"scripts/apply.py"})
+
+    assert [(f.kind, f.command, f.ref) for f in findings] == [
+        ("option", "scripts/apply.py", "--validate")
+    ]
+
+
+def test_cli_check_joins_backslash_continuations(tmp_path):
+    mod = _load()
+    scripts = tmp_path / "scripts"
+    scripts.mkdir()
+    (scripts / "apply.py").write_text(
+        'import argparse\np = argparse.ArgumentParser()\np.add_argument("--suggestions")\n'
+    )
+    body = "```bash\npython scripts/apply.py " + "\\" + "\n"
+    body += "  --suggestions batch.yaml " + "\\" + "\n"
+    body += "  --invalid\n```\n"
+    doc = _doc(tmp_path, body)
+
+    findings = _scan(mod, doc, tmp_path, tracked={"scripts/apply.py"})
+
+    assert [(f.kind, f.ref) for f in findings] == [("option", "--invalid")]
+
+
 # --- it must NOT cry wolf ----------------------------------------------------
 
 
 def test_prose_saying_just_is_not_a_recipe_reference(tmp_path):
-    """"...just the collection" must not be read as `just the`. A docs check that
+    """ "...just the collection" must not be read as `just the`. A docs check that
     reports English as breakage is a docs check people turn off."""
     mod = _load()
     doc = _doc(tmp_path, "This rewrites just the collection, not the records.\n")
@@ -157,6 +193,8 @@ def test_repo_config_is_enforcing_and_every_exception_has_a_reason():
     cfg = yaml.safe_load((ROOT / "conf" / "instruction_refs.yaml").read_text())
 
     assert cfg["severity"] == "error"
+    assert "CLAUDE.md" in cfg["targets"]
+    assert "docs/*CURATION*.md" in cfg["targets"]
     for key in ("ignore_recipes", "ignore_paths"):
         for entry in cfg.get(key) or []:
             assert entry.get("reason", "").strip(), f"{key} entry without a reason: {entry}"
@@ -178,7 +216,7 @@ def test_recipe_parsing_needs_no_just_binary_and_finds_parameterised_recipes(tmp
     (tmp_path / "justfile").write_text(
         'research_dir := "research"\n'
         "qc: validate-all validate-strict\n"
-        '  echo hi\n'
+        "  echo hi\n"
         'apply-role-research-results batch *args="":\n'
         "  echo apply\n"
         "# a comment: not a recipe\n"

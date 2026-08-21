@@ -10,6 +10,7 @@ HTML's mtime. Pass --force to regenerate.
 Phase 5 of the dismech-pattern port; see
 ../culturebotai-claw/docs/proposals/phase5_mkdocs_material_and_browser_parity.md
 """
+
 from __future__ import annotations
 
 import argparse
@@ -76,8 +77,9 @@ def make_env() -> Environment:
     return env
 
 
-def render_one(env: Environment, source_path: Path, out_dir: Path,
-               force: bool = False) -> tuple[str, dict | None, str]:
+def render_one(
+    env: Environment, source_path: Path, out_dir: Path, force: bool = False
+) -> tuple[str, dict | None, str]:
     try:
         with open(source_path) as f:
             ingredient = yaml.safe_load(f) or {}
@@ -132,9 +134,11 @@ def _section(prefix: str, items: list[tuple[str, str, str]]) -> str:
         f'<span class="muted">— <code>{ident}</code></span></li>'
         for (ident, slug, name) in sorted(items, key=lambda x: x[2].lower())
     )
-    return (f'<section><h2>{prefix} '
-            f'<small class="muted">({len(items)})</small></h2>'
-            f'<ul class="medium-index">{rows}</ul></section>')
+    return (
+        f"<section><h2>{prefix} "
+        f'<small class="muted">({len(items)})</small></h2>'
+        f'<ul class="medium-index">{rows}</ul></section>'
+    )
 
 
 def write_index(out_dir: Path, all_records: list[dict]) -> None:
@@ -143,10 +147,9 @@ def write_index(out_dir: Path, all_records: list[dict]) -> None:
         ident = r["ingredient"].get("identifier") or ""
         prefix = ident.split(":", 1)[0] if ":" in ident else "(other)"
         by_prefix.setdefault(prefix, []).append(
-            (ident, r["slug"], r["ingredient"].get("preferred_term") or r["slug"]))
-    sections = "\n".join(
-        _section(p, items) for p, items in sorted(by_prefix.items())
-    )
+            (ident, r["slug"], r["ingredient"].get("preferred_term") or r["slug"])
+        )
+    sections = "\n".join(_section(p, items) for p, items in sorted(by_prefix.items()))
     rows_total = sum(len(v) for v in by_prefix.values())
     html = INDEX_TEMPLATE.format(
         count=rows_total,
@@ -159,8 +162,12 @@ def write_index(out_dir: Path, all_records: list[dict]) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--ingredients-dir", type=Path, default=DEFAULT_INGREDIENTS,
-                    help="root containing mapped/ and unmapped/ subdirs")
+    ap.add_argument(
+        "--ingredients-dir",
+        type=Path,
+        default=DEFAULT_INGREDIENTS,
+        help="root containing mapped/ and unmapped/ subdirs",
+    )
     ap.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     ap.add_argument("--index-dir", type=Path, default=DEFAULT_INDEX_DIR)
     ap.add_argument("--limit", type=int, default=None)
@@ -181,8 +188,7 @@ def main() -> int:
     rendered = skipped = errors = 0
     successful: list[dict] = []
     for path in files:
-        status, ingredient, slug = render_one(
-            env, path, args.out_dir, force=args.force)
+        status, ingredient, slug = render_one(env, path, args.out_dir, force=args.force)
         if status == "rendered":
             rendered += 1
         elif status == "skipped":

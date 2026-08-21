@@ -11,16 +11,15 @@ checking for critical errors, warnings, and enrichment opportunities using:
 
 import re
 import time
-from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Any, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from typing import Any
 
 import requests
 
 from mediaingredientmech.utils.ontology_client import OntologyClient
 from mediaingredientmech.validation.kg_microbe_dict import KgMicrobeDict
-
 
 # Validation priority levels
 PRIORITY_P1 = "P1"  # Critical errors
@@ -59,7 +58,7 @@ class ValidationIssue:
     rule_id: str  # e.g., "P1.1", "P2.3"
     category: str  # e.g., "label_mismatch", "missing_properties"
     message: str  # Human-readable description
-    evidence: Dict  # Supporting data for the issue
+    evidence: dict  # Supporting data for the issue
     ingredient_id: str  # Which ingredient (preferred_term or id)
 
 
@@ -81,19 +80,19 @@ class ReviewResult:
     """Result of reviewing a single ingredient."""
 
     status: str  # "PASS", "WARNING", or "ERROR"
-    issues: List[ValidationIssue] = field(default_factory=list)
-    suggestions: List[CorrectionSuggestion] = field(default_factory=list)
-    metadata: Dict = field(default_factory=dict)  # timestamp, duration_ms, etc.
+    issues: list[ValidationIssue] = field(default_factory=list)
+    suggestions: list[CorrectionSuggestion] = field(default_factory=list)
+    metadata: dict = field(default_factory=dict)  # timestamp, duration_ms, etc.
 
 
 @dataclass
 class BatchReviewResult:
     """Result of reviewing multiple ingredients."""
 
-    summary: Dict[str, int] = field(default_factory=dict)  # P1: count, P2: count, etc.
-    all_issues: List[ValidationIssue] = field(default_factory=list)
-    all_suggestions: List[CorrectionSuggestion] = field(default_factory=list)
-    failed: List[Dict] = field(default_factory=list)  # Ingredients that errored
+    summary: dict[str, int] = field(default_factory=dict)  # P1: count, P2: count, etc.
+    all_issues: list[ValidationIssue] = field(default_factory=list)
+    all_suggestions: list[CorrectionSuggestion] = field(default_factory=list)
+    failed: list[dict] = field(default_factory=list)  # Ingredients that errored
 
 
 class IngredientReviewer:
@@ -112,7 +111,7 @@ class IngredientReviewer:
         use_local_owl: bool = False,
         owl_cache_dir: str = "ontology/cache",
         enable_llm: bool = False,
-        kg_microbe_dict: Optional[KgMicrobeDict] = None,
+        kg_microbe_dict: KgMicrobeDict | None = None,
         enable_kg_microbe_checks: bool = True,
     ):
         """
@@ -138,7 +137,7 @@ class IngredientReviewer:
         self.oak_client = OntologyClient()
 
         # Cache for term lookups
-        self._term_cache: Dict[str, Optional[Dict]] = {}
+        self._term_cache: dict[str, dict | None] = {}
 
         # CURIE validation regex
         self._curie_pattern = re.compile(r"^[A-Z]+:\d+$")
@@ -146,7 +145,7 @@ class IngredientReviewer:
         # kg-microbe dictionary (lazy-loaded on first use)
         self._kg_microbe_dict = kg_microbe_dict
 
-    def _get_kg_microbe_dict(self) -> Optional[KgMicrobeDict]:
+    def _get_kg_microbe_dict(self) -> KgMicrobeDict | None:
         """Return the kg-microbe dict, lazy-loading if needed. None if disabled."""
         if not self.enable_kg_microbe_checks:
             return None
@@ -159,7 +158,7 @@ class IngredientReviewer:
             return None
         return self._kg_microbe_dict
 
-    def review_ingredient(self, ingredient_record: Dict) -> ReviewResult:
+    def review_ingredient(self, ingredient_record: dict) -> ReviewResult:
         """
         Validate single ingredient against all rules (P1-P4).
 
@@ -180,8 +179,8 @@ class IngredientReviewer:
                         print(f"  - {issue.message}")
         """
         start_time = time.time()
-        issues = []
-        suggestions = []
+        issues: list[ValidationIssue] = []
+        suggestions: list[CorrectionSuggestion] = []
 
         ingredient_id = ingredient_record.get("preferred_term", "unknown")
 
@@ -219,23 +218,17 @@ class IngredientReviewer:
             )
 
         # P2 Validation - High-Priority Warnings
-        p2_issues, p2_suggestions = self._validate_p2(
-            ingredient_record, ontology_id, ingredient_id
-        )
+        p2_issues, p2_suggestions = self._validate_p2(ingredient_record, ontology_id, ingredient_id)
         issues.extend(p2_issues)
         suggestions.extend(p2_suggestions)
 
         # P3 Validation - Medium-Priority Warnings
-        p3_issues, p3_suggestions = self._validate_p3(
-            ingredient_record, ontology_id, ingredient_id
-        )
+        p3_issues, p3_suggestions = self._validate_p3(ingredient_record, ontology_id, ingredient_id)
         issues.extend(p3_issues)
         suggestions.extend(p3_suggestions)
 
         # P4 Validation - Low-Priority Info
-        p4_issues, p4_suggestions = self._validate_p4(
-            ingredient_record, ontology_id, ingredient_id
-        )
+        p4_issues, p4_suggestions = self._validate_p4(ingredient_record, ontology_id, ingredient_id)
         issues.extend(p4_issues)
         suggestions.extend(p4_suggestions)
 
@@ -262,8 +255,8 @@ class IngredientReviewer:
 
     def batch_review(
         self,
-        ingredient_records: List[Dict],
-        priority_filter: Optional[List[str]] = None,
+        ingredient_records: list[dict],
+        priority_filter: list[str] | None = None,
         parallel: bool = True,
         max_workers: int = 4,
     ) -> BatchReviewResult:
@@ -297,8 +290,7 @@ class IngredientReviewer:
             # Parallel processing
             with ThreadPoolExecutor(max_workers=max_workers) as executor:
                 future_to_ingredient = {
-                    executor.submit(self.review_ingredient, ing): ing
-                    for ing in ingredient_records
+                    executor.submit(self.review_ingredient, ing): ing for ing in ingredient_records
                 }
 
                 for future in as_completed(future_to_ingredient):
@@ -349,8 +341,8 @@ class IngredientReviewer:
         )
 
     def auto_correct(
-        self, ingredient_record: Dict, correction_types: Optional[List[str]] = None
-    ) -> Dict:
+        self, ingredient_record: dict, correction_types: list[str] | None = None
+    ) -> dict:
         """
         Auto-apply safe corrections (P3/P4 only).
 
@@ -387,17 +379,12 @@ class IngredientReviewer:
             s
             for s in result.suggestions
             if s.auto_correctable
-            and any(
-                issue.priority in [PRIORITY_P3, PRIORITY_P4]
-                for issue in result.issues
-            )
+            and any(issue.priority in [PRIORITY_P3, PRIORITY_P4] for issue in result.issues)
         ]
 
         # Filter by correction types if specified
         if correction_types:
-            safe_suggestions = [
-                s for s in safe_suggestions if s.action in correction_types
-            ]
+            safe_suggestions = [s for s in safe_suggestions if s.action in correction_types]
 
         # Apply suggestions
         for suggestion in safe_suggestions:
@@ -425,7 +412,7 @@ class IngredientReviewer:
 
         return corrected
 
-    def enrich_from_ols(self, ontology_id: str) -> Optional[Dict]:
+    def enrich_from_ols(self, ontology_id: str) -> dict | None:
         """
         Fetch chemical properties from EBI OLS v4 API.
 
@@ -499,8 +486,8 @@ class IngredientReviewer:
     # P1 Validation Methods
 
     def _validate_p1(
-        self, ingredient_record: Dict, ontology_id: Optional[str], ingredient_id: str
-    ) -> List[ValidationIssue]:
+        self, ingredient_record: dict, ontology_id: str | None, ingredient_id: str
+    ) -> list[ValidationIssue]:
         """Validate P1 critical errors."""
         issues = []
 
@@ -578,11 +565,11 @@ class IngredientReviewer:
     # P2 Validation Methods
 
     def _validate_p2(
-        self, ingredient_record: Dict, ontology_id: Optional[str], ingredient_id: str
-    ) -> Tuple[List[ValidationIssue], List[CorrectionSuggestion]]:
+        self, ingredient_record: dict, ontology_id: str | None, ingredient_id: str
+    ) -> tuple[list[ValidationIssue], list[CorrectionSuggestion]]:
         """Validate P2 high-priority warnings."""
-        issues = []
-        suggestions = []
+        issues: list[ValidationIssue] = []
+        suggestions: list[CorrectionSuggestion] = []
 
         if not ontology_id:
             return issues, suggestions
@@ -662,13 +649,13 @@ class IngredientReviewer:
 
     def _check_kg_microbe_disagreement(
         self,
-        ingredient_record: Dict,
+        ingredient_record: dict,
         ontology_id: str,
         ingredient_id: str,
-    ) -> Tuple[List[ValidationIssue], List[CorrectionSuggestion]]:
+    ) -> tuple[list[ValidationIssue], list[CorrectionSuggestion]]:
         """P2.5: flag when kg-microbe's dict maps the same surface form elsewhere."""
-        issues: List[ValidationIssue] = []
-        suggestions: List[CorrectionSuggestion] = []
+        issues: list[ValidationIssue] = []
+        suggestions: list[CorrectionSuggestion] = []
 
         if not ontology_id or not ontology_id.startswith("CHEBI:"):
             return issues, suggestions
@@ -678,7 +665,7 @@ class IngredientReviewer:
             return issues, suggestions
 
         # Collect surface forms to probe: preferred_term + explicit synonyms
-        surface_forms: List[str] = []
+        surface_forms: list[str] = []
         pt = ingredient_record.get("preferred_term", "")
         if pt:
             surface_forms.append(pt)
@@ -687,7 +674,7 @@ class IngredientReviewer:
             if text and isinstance(text, str):
                 surface_forms.append(text)
 
-        seen_disagreements: Dict[str, str] = {}  # other_chebi -> surface_form that found it
+        seen_disagreements: dict[str, str] = {}  # other_chebi -> surface_form that found it
 
         for form in surface_forms:
             if kg_dict.is_ambiguous(form):
@@ -750,8 +737,8 @@ class IngredientReviewer:
     # P3 Validation Methods
 
     def _validate_p3(
-        self, ingredient_record: Dict, ontology_id: Optional[str], ingredient_id: str
-    ) -> Tuple[List[ValidationIssue], List[CorrectionSuggestion]]:
+        self, ingredient_record: dict, ontology_id: str | None, ingredient_id: str
+    ) -> tuple[list[ValidationIssue], list[CorrectionSuggestion]]:
         """Validate P3 medium-priority warnings."""
         issues = []
         suggestions = []
@@ -834,8 +821,8 @@ class IngredientReviewer:
     # P4 Validation Methods
 
     def _validate_p4(
-        self, ingredient_record: Dict, ontology_id: Optional[str], ingredient_id: str
-    ) -> Tuple[List[ValidationIssue], List[CorrectionSuggestion]]:
+        self, ingredient_record: dict, ontology_id: str | None, ingredient_id: str
+    ) -> tuple[list[ValidationIssue], list[CorrectionSuggestion]]:
         """Validate P4 low-priority info."""
         issues = []
         suggestions = []
@@ -872,13 +859,13 @@ class IngredientReviewer:
 
     def _check_kg_microbe_synonym_enrichment(
         self,
-        ingredient_record: Dict,
-        ontology_id: Optional[str],
+        ingredient_record: dict,
+        ontology_id: str | None,
         ingredient_id: str,
-    ) -> Tuple[List[ValidationIssue], List[CorrectionSuggestion]]:
+    ) -> tuple[list[ValidationIssue], list[CorrectionSuggestion]]:
         """P4.4: propose new synonyms from kg-microbe, with per-candidate ambiguity filter."""
-        issues: List[ValidationIssue] = []
-        suggestions: List[CorrectionSuggestion] = []
+        issues: list[ValidationIssue] = []
+        suggestions: list[CorrectionSuggestion] = []
 
         if not ontology_id or not ontology_id.startswith("CHEBI:"):
             return issues, suggestions
@@ -897,7 +884,7 @@ class IngredientReviewer:
             if text and isinstance(text, str):
                 existing.add(text.lower())
 
-        candidates: List[str] = []
+        candidates: list[str] = []
         for syn in entry.synonyms:
             if syn.lower() in existing:
                 continue
@@ -956,7 +943,7 @@ class IngredientReviewer:
         term_info = self.get_term_info(ontology_id)
         return term_info is not None
 
-    def get_term_info(self, ontology_id: str) -> Optional[Dict]:
+    def get_term_info(self, ontology_id: str) -> dict | None:
         """
         Fetch term info from ontology via EBI OLS API.
 
@@ -1019,7 +1006,7 @@ class IngredientReviewer:
             self._term_cache[ontology_id] = None
             return None
 
-    def get_ontology_label(self, ontology_id: str) -> Optional[str]:
+    def get_ontology_label(self, ontology_id: str) -> str | None:
         """Fetch canonical label from ontology."""
         term_info = self.get_term_info(ontology_id)
         return term_info.get("label") if term_info else None

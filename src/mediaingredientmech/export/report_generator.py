@@ -8,7 +8,6 @@ from typing import Any
 
 import yaml
 
-
 DEFAULT_DATA_DIR = Path(__file__).resolve().parents[3] / "data" / "curated"
 
 
@@ -17,7 +16,8 @@ def load_yaml(path: Path) -> dict | None:
     if not path.exists():
         return None
     with open(path) as f:
-        return yaml.safe_load(f)
+        data = yaml.safe_load(f)
+    return data if isinstance(data, dict) else None
 
 
 def load_curated_data(
@@ -33,9 +33,7 @@ def load_curated_data(
     return mapped, unmapped
 
 
-def compute_statistics(
-    mapped_data: dict | None, unmapped_data: dict | None
-) -> dict[str, Any]:
+def compute_statistics(mapped_data: dict | None, unmapped_data: dict | None) -> dict[str, Any]:
     """Compute overview statistics from mapped/unmapped data."""
     mapped_ingredients = []
     unmapped_ingredients = []
@@ -89,25 +87,19 @@ def compute_statistics(
         "unmapped_status_distribution": dict(status_dist.most_common()),
         "mapped_category_distribution": dict(mapped_category_dist),
         "unmapped_category_distribution": dict(unmapped_category_dist),
-        "mapped_total_instances": (
-            mapped_data.get("total_instances", 0) if mapped_data else 0
-        ),
-        "unmapped_media_count": (
-            unmapped_data.get("media_count", 0) if unmapped_data else 0
-        ),
+        "mapped_total_instances": (mapped_data.get("total_instances", 0) if mapped_data else 0),
+        "unmapped_media_count": (unmapped_data.get("media_count", 0) if unmapped_data else 0),
     }
 
 
-def collect_curation_history(
-    mapped_data: dict | None, limit: int = 20
-) -> list[dict[str, Any]]:
+def collect_curation_history(mapped_data: dict | None, limit: int = 20) -> list[dict[str, Any]]:
     """Collect recent curation events from mapped ingredient records.
 
     The main schema (mediaingredientmech.yaml) has curation_history on IngredientRecord.
     The mapped_ingredients YAML may or may not include these fields depending on
     the data pipeline. We look for curation_history on each ingredient.
     """
-    events = []
+    events: list[dict[str, Any]] = []
     if not mapped_data:
         return events
 
@@ -165,8 +157,8 @@ def report_to_markdown(report: dict[str, Any]) -> str:
     stats = report["statistics"]
 
     lines.append("## Overview\n")
-    lines.append(f"| Metric | Value |")
-    lines.append(f"|--------|-------|")
+    lines.append("| Metric | Value |")
+    lines.append("|--------|-------|")
     lines.append(f"| Total ingredients | {stats['total_ingredients']} |")
     lines.append(f"| Mapped | {stats['total_mapped']} |")
     lines.append(f"| Unmapped | {stats['total_unmapped']} |")

@@ -52,8 +52,8 @@ and suggest ontology mappings for each one.
 ```
 
 I'll review each ingredient and provide:
-- Ontology ID (e.g., CHEBI:32599)
-- Label (e.g., magnesium sulfate)
+- Ontology ID (e.g., CHEBI:31795)
+- Label (e.g., magnesium sulfate heptahydrate)
 - Source (CHEBI/FOODON/ENVO)
 - Confidence score (0.0-1.0)
 - Reasoning
@@ -73,12 +73,12 @@ I'll generate:
 suggestions:
   - identifier: UNMAPPED_0003
     name: MgSO4•7H2O
-    ontology_id: CHEBI:32599
-    ontology_label: magnesium sulfate
+    ontology_id: CHEBI:31795
+    ontology_label: magnesium sulfate heptahydrate
     ontology_source: CHEBI
     confidence: 0.95
     quality: EXACT_MATCH
-    reasoning: "Hydrate form of magnesium sulfate. Maps to base chemical in CHEBI."
+    reasoning: "The form-specific CHEBI term preserves the heptahydrate identity."
 
   - identifier: UNMAPPED_0004
     name: NaNO
@@ -118,12 +118,12 @@ Save my suggestions to a YAML file:
 suggestions:
   - identifier: UNMAPPED_0003
     name: MgSO4•7H2O
-    ontology_id: CHEBI:32599
-    ontology_label: magnesium sulfate
+    ontology_id: CHEBI:31795
+    ontology_label: magnesium sulfate heptahydrate
     ontology_source: CHEBI
     confidence: 0.95
     quality: EXACT_MATCH
-    reasoning: "Hydrate form maps to base chemical."
+    reasoning: "The form-specific term preserves the heptahydrate identity."
 
   # ... more suggestions ...
 ```
@@ -154,9 +154,9 @@ Application Results
 ┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┓
 ┃ Identifier     ┃ Name              ┃ Mapping           ┃ Status    ┃
 ┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━┩
-│ UNMAPPED_0003  │ MgSO4•7H2O        │ CHEBI:32599 (ma...│ ✓ Success │
+│ UNMAPPED_0003  │ MgSO4•7H2O        │ CHEBI:31795 (ma...│ ✓ Success │
 │ UNMAPPED_0004  │ NaNO              │ CHEBI:75229 (so...│ ✓ Success │
-│ UNMAPPED_0007  │ CaCl2•2H2O        │ CHEBI:3312 (cal...│ ✓ Success │
+│ UNMAPPED_0007  │ CaCl2•2H2O        │ CHEBI:86158 (ca...│ ✓ Success │
 └────────────────┴───────────────────┴───────────────────┴───────────┘
 
 Summary:
@@ -209,12 +209,12 @@ Next steps:
 > suggestions:
 >   - identifier: UNMAPPED_0003
 >     name: MgSO4•7H2O
->     ontology_id: CHEBI:32599
->     ontology_label: magnesium sulfate
+>     ontology_id: CHEBI:31795
+>     ontology_label: magnesium sulfate heptahydrate
 >     ontology_source: CHEBI
 >     confidence: 0.95
 >     quality: EXACT_MATCH
->     reasoning: "Hydrate form of magnesium sulfate. Per curation guidelines, hydrates map to base chemical in CHEBI."
+>     reasoning: "The form-specific CHEBI term preserves the heptahydrate identity."
 >
 >   - identifier: UNMAPPED_0004
 >     name: NaNO
@@ -292,7 +292,7 @@ Please analyze the SIMPLE_CHEMICAL ingredients in
 notes/unmapped_batch1.md and suggest CHEBI mappings.
 
 Focus on:
-- Hydrate forms (map to base chemical)
+- Hydrate forms (preserve the form-specific identity; never collapse to the base chemical)
 - Incomplete formulas (correct and map)
 - Catalog variants (strip and map to base)
 
@@ -412,7 +412,7 @@ Rejected: 2
 Notes:
 - Rejected "Vitamin B" - too generic, marked NEEDS_EXPERT
 - Rejected "P-IV Metal Solution" - complex mixture, left UNMAPPED
-- All hydrate forms mapped successfully
+- All hydrate forms verified against form-specific identifiers
 ```
 
 ## Comparison: Three Curation Modes
@@ -493,14 +493,14 @@ All Claude Code-assisted mappings are tracked:
 
 ```yaml
 ontology_mapping:
-  ontology_id: CHEBI:32599
-  ontology_label: magnesium sulfate
+  ontology_id: CHEBI:31795
+  ontology_label: magnesium sulfate heptahydrate
   mapping_quality: EXACT_MATCH
   evidence:
     - evidence_type: LLM_SUGGESTION
       source: claude_code
       confidence_score: 0.95
-      notes: "Claude Code reasoning: Hydrate form maps to base chemical."
+      notes: "Claude Code reasoning: The form-specific term preserves the heptahydrate identity."
 
 curation_history:
   - timestamp: "2026-03-09T..."
@@ -508,7 +508,7 @@ curation_history:
     action: MAPPED
     llm_assisted: true
     llm_model: claude-code-interactive
-    notes: "Claude Code reasoning: Hydrate form maps to base chemical."
+    notes: "Claude Code reasoning: The form-specific term preserves the heptahydrate identity."
 ```
 
 **Queryable for:**

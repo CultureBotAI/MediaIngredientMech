@@ -4,7 +4,7 @@ LLM-assisted curation system for media ingredient ontology mappings.
 
 ## Overview
 
-MediaIngredientMech provides a structured workflow for curating media ingredient ontology mappings with full audit trails. It manages 995 mapped and 136 unmapped ingredients aggregated from 10,657 media recipes in [CultureMech](https://github.com/CultureBotAI/CultureMech).
+MediaIngredientMech provides a structured workflow for curating media ingredient ontology mappings with full audit trails. It manages the ingredient records aggregated from media recipes in [CultureMech](https://github.com/CultureBotAI/CultureMech). The documentation build regenerates the [current mapping inventory](data/curated/ALL_INGREDIENTS.md), avoiding counts here that quickly become stale.
 
 **Design stance — practically oriented.** An ingredient record denotes a specific
 chemical someone can **order**. Where sources disagree about which form a recipe
@@ -29,7 +29,8 @@ term — while keeping every raw form as a resolvable synonym. See
 
 ```bash
 # Clone repository
-cd /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/MediaIngredientMech
+git clone https://github.com/CultureBotAI/MediaIngredientMech.git
+cd MediaIngredientMech
 
 # Install with dev dependencies
 just install
@@ -41,7 +42,7 @@ just gen-schema
 ### Import Data
 
 ```bash
-# Import from CultureMech (995 mapped + 136 unmapped = 1,131 total)
+# Import the current records from CultureMech
 just import-data
 
 # Validate imported data
@@ -64,8 +65,8 @@ just report
 ## Architecture
 
 **Data Sources:**
-- `CultureMech/output/mapped_ingredients.yaml` → 995 mapped ingredients
-- `CultureMech/output/unmapped_ingredients.yaml` → 136 unmapped ingredients
+- `CultureMech/output/mapped_ingredients.yaml` → mapped ingredient records
+- `CultureMech/output/unmapped_ingredients.yaml` → records awaiting mapping
 
 **Schema:**
 - `IngredientRecord`: Root class with mapping status, synonyms, curation history

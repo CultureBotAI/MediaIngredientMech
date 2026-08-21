@@ -9,7 +9,6 @@ from typing import Any
 
 import yaml
 
-
 SCHEMA_PATH = Path(__file__).resolve().parents[1] / "schema" / "mediaingredientmech.yaml"
 
 # Enum values extracted at module load from the schema YAML so validation
@@ -36,7 +35,8 @@ def _slot_pattern(class_name: str, slot_name: str) -> str | None:
     schema = _load_schema()
     cls = schema.get("classes", {}).get(class_name, {})
     attr = cls.get("attributes", {}).get(slot_name, {})
-    return attr.get("pattern")
+    pattern = attr.get("pattern")
+    return str(pattern) if pattern is not None else None
 
 
 @dataclass
@@ -94,8 +94,7 @@ def _compile_action_pattern() -> re.Pattern[str]:
         return re.compile(declared)
     except re.error as exc:
         raise RuntimeError(
-            f"Invalid CurationEvent.action pattern in {SCHEMA_PATH}: "
-            f"{declared!r} ({exc})"
+            f"Invalid CurationEvent.action pattern in {SCHEMA_PATH}: " f"{declared!r} ({exc})"
         ) from exc
 
 
@@ -120,7 +119,9 @@ def _check_enum(
     if val is not None and val not in allowed:
         msgs.append(
             ValidationMessage(
-                "error", path, f"Invalid value '{val}' for '{field_name}'. Allowed: {sorted(allowed)}"
+                "error",
+                path,
+                f"Invalid value '{val}' for '{field_name}'. Allowed: {sorted(allowed)}",
             )
         )
 
@@ -137,7 +138,9 @@ def _check_type(
     if val is not None and not isinstance(val, expected_type):
         msgs.append(
             ValidationMessage(
-                "warning", path, f"Field '{field_name}' should be {type_name}, got {type(val).__name__}"
+                "warning",
+                path,
+                f"Field '{field_name}' should be {type_name}, got {type(val).__name__}",
             )
         )
 
@@ -154,7 +157,9 @@ def _validate_mapping_evidence(ev: Any, path: str, msgs: list[ValidationMessage]
             score_f = float(score)
             if not (0.0 <= score_f <= 1.0):
                 msgs.append(
-                    ValidationMessage("warning", path, f"confidence_score {score_f} outside 0.0-1.0")
+                    ValidationMessage(
+                        "warning", path, f"confidence_score {score_f} outside 0.0-1.0"
+                    )
                 )
         except (TypeError, ValueError):
             msgs.append(
@@ -247,9 +252,7 @@ def _validate_ingredient_record(rec: Any, path: str, msgs: list[ValidationMessag
             )
         )
     if not rec.get("identifier") and not rec.get("ontology_id"):
-        msgs.append(
-            ValidationMessage("error", path, "Missing required field 'identifier'")
-        )
+        msgs.append(ValidationMessage("error", path, "Missing required field 'identifier'"))
     _check_required(rec, "preferred_term", path, msgs)
     _check_required(rec, "mapping_status", path, msgs)
     _check_enum(rec, "mapping_status", _MAPPING_STATUSES, path, msgs)
@@ -261,7 +264,9 @@ def _validate_ingredient_record(rec: Any, path: str, msgs: list[ValidationMessag
         _validate_synonym(syn, f"{path}.synonyms[{i}]", msgs)
 
     if rec.get("occurrence_statistics") is not None:
-        _validate_occurrence_stats(rec["occurrence_statistics"], f"{path}.occurrence_statistics", msgs)
+        _validate_occurrence_stats(
+            rec["occurrence_statistics"], f"{path}.occurrence_statistics", msgs
+        )
 
     for i, evt in enumerate(rec.get("curation_history") or []):
         _validate_curation_event(evt, f"{path}.curation_history[{i}]", msgs)
@@ -283,7 +288,9 @@ def validate_data(data: dict[str, Any], source: str = "<inline>") -> SchemaValid
     result = SchemaValidationResult(file_path=source)
 
     if not isinstance(data, dict):
-        result.messages.append(ValidationMessage("error", "$", "Top-level document must be a mapping"))
+        result.messages.append(
+            ValidationMessage("error", "$", "Top-level document must be a mapping")
+        )
         return result
 
     # Detect individual-record shape: no `ingredients` list, but the document
@@ -309,7 +316,9 @@ def validate_data(data: dict[str, Any], source: str = "<inline>") -> SchemaValid
         return result
 
     if not isinstance(ingredients, list):
-        result.messages.append(ValidationMessage("error", "$.ingredients", "'ingredients' must be a list"))
+        result.messages.append(
+            ValidationMessage("error", "$.ingredients", "'ingredients' must be a list")
+        )
         return result
 
     for i, rec in enumerate(ingredients):

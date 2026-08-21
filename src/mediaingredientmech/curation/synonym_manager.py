@@ -5,7 +5,9 @@ from __future__ import annotations
 import logging
 import re
 from collections import defaultdict
-from typing import Any, Optional
+from typing import Any
+
+from mediaingredientmech.curate.curation_event import record_curation_event
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +24,7 @@ def normalize_text(text: str) -> str:
 class SynonymManager:
     """Manages synonym consolidation and duplicate detection for ingredient records."""
 
-    def __init__(self, records: Optional[list[dict]] = None):
+    def __init__(self, records: list[dict] | None = None):
         self._records = records or []
         self._norm_index: dict[str, list[int]] = {}
         self._rebuild_index()
@@ -123,7 +125,7 @@ class SynonymManager:
         synonym_text: str,
         synonym_type: str = "EXACT_SYNONYM",
         source: str = "curator",
-        occurrence_count: Optional[int] = None,
+        occurrence_count: int | None = None,
     ) -> dict:
         """Add a synonym to an existing record.
 
@@ -152,11 +154,26 @@ class SynonymManager:
 
         return new_syn
 
-    def merge_records(self, target_index: int, source_index: int) -> dict:
+    def merge_records(
+        self,
+        target_index: int,
+        source_index: int,
+        *,
+        curator_name: str = "synonym-manager",
+        merge_reason: str | None = None,
+    ) -> dict:
         """Merge source record into target, consolidating synonyms and stats.
 
         The source record's preferred_term becomes a synonym on the target.
-        Occurrence stats are combined. The source record is marked REJECTED.
+        Occurrence stats are combined. The source record is marked REJECTED,
+        and both records receive curation events that preserve the merge
+        provenance.
+
+        Args:
+            target_index: Index of the surviving record.
+            source_index: Index of the record being merged into the target.
+            curator_name: Human or tool responsible for the merge.
+            merge_reason: Optional explanation for why the records were merged.
 
         Returns:
             The updated target record.
@@ -165,6 +182,11 @@ class SynonymManager:
             raise ValueError("Cannot merge a record with itself")
         target = self._records[target_index]
         source = self._records[source_index]
+        target_status = target.get("mapping_status")
+        source_status = source.get("mapping_status")
+        target_name = target.get("preferred_term", f"record {target_index}")
+        source_name = source.get("preferred_term", f"record {source_index}")
+        reason = merge_reason or f"Merged duplicate {source_name!r} into {target_name!r}"
 
         # Add source preferred_term as synonym on target
         self.add_synonym(
@@ -189,12 +211,10 @@ class SynonymManager:
         t_stats = target.get("occurrence_statistics") or {}
         s_stats = source.get("occurrence_statistics") or {}
         if s_stats:
-            t_stats["total_occurrences"] = (
-                t_stats.get("total_occurrences", 0) + s_stats.get("total_occurrences", 0)
+            t_stats["total_occurrences"] = t_stats.get("total_occurrences", 0) + s_stats.get(
+                "total_occurrences", 0
             )
-            t_stats["media_count"] = (
-                t_stats.get("media_count", 0) + s_stats.get("media_count", 0)
-            )
+            t_stats["media_count"] = t_stats.get("media_count", 0) + s_stats.get("media_count", 0)
             t_samples = t_stats.get("sample_media", []) or []
             s_samples = s_stats.get("sample_media", []) or []
             t_stats["sample_media"] = list(set(t_samples + s_samples))
@@ -202,6 +222,23 @@ class SynonymManager:
 
         # Mark source as rejected
         source["mapping_status"] = "REJECTED"
+
+        record_curation_event(
+            target,
+            curator=curator_name,
+            action="MERGED_FROM_DUPLICATES",
+            changes=reason,
+            previous_status=target_status,
+            new_status=target_status,
+        )
+        record_curation_event(
+            source,
+            curator=curator_name,
+            action="MERGED",
+            changes=f"Merged into {target_name!r}. {reason}",
+            previous_status=source_status,
+            new_status="REJECTED",
+        )
 
         self._rebuild_index()
         return target
