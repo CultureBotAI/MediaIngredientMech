@@ -243,8 +243,10 @@ def canonical_provider(name: str) -> str:
 # what happened when each was called (CultureMech#284). A credential check cannot discover
 # this: "Available" in `deep-research-client providers` means an env var is set,
 # nothing more. Without this table the triage tool recommended `falcon` as the
-# primary route for every stage while the justfile beside it recorded that falcon
-# returns HTTP 402 — the tool contradicting its own documentation (CultureMech#290).
+# primary route for every stage while nothing on this side of the fleet had
+# ever measured it — CultureMech's own justfile records falcon returning
+# HTTP 402 (CultureMech#284); this repo tracks the same block in NEXT_TASKS.md.
+# The tool was contradicting known reality (CultureMech#290).
 #
 # Remove an entry when the provider is verified working again, rather than
 # editing the reason.

@@ -519,11 +519,15 @@ def _existing_sidecars(
     whole point is provenance, an auditor following the meta would read the wrong
     trajectory.
 
-    Pass ``written`` (the keys this run actually wrote) to report truthfully. It
-    is optional so the call sites that genuinely want a disk snapshot keep
-    working — ``enrich_edison_response`` backfills sidecars for the *same*
-    ``task_id`` already recorded in the meta, so for it "what is on disk now" is
-    the honest answer.
+    Pass ``written`` (the keys this run actually wrote) to report truthfully.
+    ``written=None`` falls back to a plain disk snapshot — ``enrich_edison_response``
+    uses that mode, on the assumption that it only backfills sidecars for the
+    *same* ``task_id`` already recorded in the meta. That assumption does not
+    hold in general: a stem re-run under a new ``task_id`` can still have an
+    older run's sidecar file on disk under the same filename, and
+    ``enrich_one`` does not detect or guard against that (tracked: #429).
+    Callers that need a truthful answer across a task_id change should pass
+    ``written`` instead.
     """
     on_disk = {
         "answer_md": (out_dir / f"{stem}.md").exists(),

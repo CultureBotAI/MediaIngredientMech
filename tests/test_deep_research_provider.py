@@ -200,7 +200,7 @@ def test_exact_zero_max_score_does_not_divide_by_zero(monkeypatch):
 
 
 def test_a_measured_dead_provider_is_not_recommended(monkeypatch):
-    """The tool used to contradict the justfile beside it.
+    """The tool used to contradict known reality.
 
     CultureMech#284 measured falcon returning HTTP 402 and cyberian HTTP 500, and recorded
     both in the provider table. The triage tool still routed every stage to
