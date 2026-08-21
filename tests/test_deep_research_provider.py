@@ -295,6 +295,19 @@ def test_an_unknown_provider_in_the_allowlist_is_rejected():
         drp.main(["--config", str(CONFIG_PATH), "--allow", "not_a_provider"])
 
 
+def test_allow_and_no_paid_flow_through_main_json(monkeypatch):
+    """Every filtering test above calls build_report()/recommendable() directly
+    with pre-built kwargs, bypassing argparse entirely — exactly the kind of gap
+    that let the JSON path and internal filtering silently disagree (#290).
+    This exercises --allow and --no-paid through main()'s actual argv/--json
+    plumbing."""
+    monkeypatch.setenv("ASTA_API_KEY", "test-only")
+    out = _run_json(["--allow", "asta", "--no-paid"])
+    for stage in out["stages"]:
+        recommended = stage["recommended_available"]
+        assert recommended is None or recommended["provider"] == "asta"
+
+
 def test_main_rejects_unknown_provider_argument():
     focus = next(iter(drp.load_config(CONFIG_PATH)["focuses"]))
     with pytest.raises(ValueError, match="Unknown provider"):
