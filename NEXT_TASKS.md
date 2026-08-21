@@ -6,9 +6,41 @@ deferrals here. Keep the cross-Mech items in sync with the sibling repos'
 `NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech). The hub,
 culturebotai-claw, now keeps one too, for items no single Mech owns.
 
-Last reconciled: 2026-08-13 (added the deep-research validation thread; item 0 is new and urgent).
+Last reconciled: 2026-08-21 (measured the `publish-sssom` blocker; item 14 is new and is the top of the queue).
 **#160** was filed on 2026-07-30 for the `trigger_paths` gap described in the
 vendored-sync section below.
+
+> **Reconcile note (2026-08-21).** Scope of this pass was the question "what
+> stands between us and a fresh published MIM SSSOM?", so it measured the
+> blocker rather than re-reading the issue that describes it. **#416's diagnosis
+> is incomplete, and the incomplete half is the larger half** — see the new
+> **item 14**. #416 frames the entire 155/102 row difference as a registry-CURIE
+> *policy* question. Rebuilt from both mains on 2026-08-21: 82 published subjects
+> are absent from the rebuild and 82 new ones appear, and they are **the same 82
+> records under a different spelling** — 65 case variants, 17 paren-escape
+> variants, plus a few genuine relabels. Checked against the repo's own
+> `mim_curie_for_stem`, **all 2,512 rebuilt subjects resolve to a real record
+> file and 82 published subjects do not**, and 11 published subjects violate
+> `curie.py`'s own `_CURIE_RE`. The rebuild is the correct side and the guard is
+> refusing to promote a correction. Only ~73 rows are a genuine policy call.
+>
+> Found on the way: **`just curie-validate` does not read the SSSOM.** Its
+> justfile comment claims to assert the published file satisfies the CURIE
+> standard; the body runs `pytest tests/test_curie_normalizer.py` and opens no
+> artifact. It is green today against a file with 11 violating subjects — the
+> #178/#179/#180/#188/#189 "guard that is not guarding" class, again.
+>
+> 13 PRs merged since 2026-08-13 (#397–#430). Predicate flips are **0** on shared
+> keys, confirming #409/#415 fixed that half for real. Gates at this pass:
+> `check-instruction-refs` OK (33 files, 68 recipes); `check-chebi-currency`
+> unchanged — local **252** vs ChEBI **253**, still upstream lag a refresh cannot
+> fix.
+>
+> ⚠ The working tree of the primary checkout was 2 commits behind `origin/main`
+> at this pass, with locally-modified `pyproject.toml`/`uv.lock` and five
+> untracked files that partly duplicate merged #412 content. This reconcile was
+> therefore done in a clean worktree off `origin/main`. Sort that checkout out
+> before curating from it.
 
 > **Reconcile note (2026-08-04, second pass).** After PR #190's reconcile earlier
 > today, an entire thread shipped and went unlogged: the **microbedecoder
@@ -812,6 +844,142 @@ conflicts), #322, #326(a), #342, #346, #352.
 * **Edison lane is blocked** at 1,145/2,841 records on HTTP 402 (account out of
   credit). `scripts/run_research_shard.sh` exits 3 on account-level refusals and
   will not retry, so a top-up resumes it cleanly.
+
+## 14. Unblock `just publish-sssom` — the row-count guard is firing on a subject-spelling defect, not a policy gap (#416) (NEW — 2026-08-21)
+
+**This is the top of the queue**: `mappings/ingredient_mappings.sssom.tsv` is the
+artifact kg-microbe re-syncs, and nothing curated since 2026-08-20 can reach it
+while promotion is refused. Reproduce in `culturebotai-claw`:
+
+```
+just build-sssom          # -> workspace/reports/mim_ingredient_mappings.sssom.tsv
+just publish-sssom-dry    # -> Refusing to promote: row count would drop from 2938 -> 2885
+```
+
+Measured 2026-08-21 against MIM `62af3ebf` / claw `d70988a`:
+
+| | |
+|---|---|
+| published rows | 2,938 |
+| rebuilt rows | 2,885 |
+| published-only `(subject, object)` | 155 |
+| rebuilt-only `(subject, object)` | 102 |
+| **predicate flips on shared keys** | **0** — #409/#415 fixed this half |
+| published subjects / rebuilt subjects | 2,512 / 2,512 |
+| subjects present in one side only | **82 lost / 82 gained** |
+
+Coverage is *not* the problem. Both sides carry all 2,512 `MAPPED` records; the
+54 records the builder reports as "skipped, no supported `ontology_id` prefix"
+are exactly the 54 `REJECTED` tombstones, which is correct.
+
+### The finding #416 does not have: the rebuild is right and the published file is stale
+
+`82 lost / 82 gained` is not a coincidence — they are the same 82 records under
+two different spellings. **The rebuild carries the correct one.** Measured
+against `src/mediaingredientmech/curie.py::mim_curie_for_stem`, the repo's own
+canonical subject function, over the 2,566 files in `data/ingredients/mapped/`:
+
+| | subjects NOT derivable from any real mapped/ stem |
+|---|---|
+| rebuilt | **0** of 2,512 |
+| published | **82** of 2,512 |
+
+So every subject the builder emits resolves to a file that exists, and 82
+published subjects point at filenames that were renamed out from under them.
+Two shapes, and in both the published spelling is the older one:
+
+**65 casing** — the published file predates renames the corpus has already made:
+
+| published subject | actual file on disk today |
+|---|---|
+| `MIM:ATCC_Wolfes_mineral_mix` | `ATCC_Wolfes_Mineral_Mix.yaml` |
+| `MIM:EDTA_Stock` | `Edta_Stock.yaml` |
+| `MIM:DAS_Vitamin_Cocktail` | `Das_Vitamin_Cocktail.yaml` |
+| `MIM:BG-11_Trace_Metals_Solution` | `Bg-11_Trace_Metals_Solution.yaml` |
+
+Note the *stems themselves* are scarred by item 1's `capitalize()` bug —
+`Edta_Stock`, `Das_Vitamin_Cocktail`, `Bg-11_…` are exactly the corruption item 1
+catalogues. PR #159 froze the filenames in place rather than repairing them, so
+the SSSOM is now correctly reflecting a corpus whose filenames are wrong. **The
+subjects are consistent; the underlying names still want fixing** — but that is
+item 1's residue, not a reason to hold the SSSOM.
+
+**17 paren escaping** — and here the published file is not merely stale, it is
+**invalid**. `mim_curie_for_stem` escapes any character outside
+`[A-Za-z0-9_.\-]` as `~HEX`, and `_CURIE_RE` (`curie.py:67`) rejects anything
+else:
+
+| published (violates `_CURIE_RE`) | rebuilt (conforms) |
+|---|---|
+| `MIM:(R)-lactate` | `MIM:~28R~29-lactate` |
+| `MIM:Calcium(2)` | `MIM:Calcium~282~29` |
+| `MIM:(-)-anisomycin` | `MIM:~28-~29-anisomycin` |
+
+**11 published subjects fail the repo's own CURIE regex right now**, and the
+rebuild fails 0.
+
+### `just curie-validate` is a guard that is not guarding
+
+The justfile comment reads *"Assert the published SSSOM satisfies the CURIE
+standard"* (`justfile:603`). The recipe body is:
+
+```
+uv run python -m pytest tests/test_curie_normalizer.py -q --no-cov
+```
+
+It never opens `mappings/ingredient_mappings.sssom.tsv`. It exercises the
+normalizer on fixtures, passes 19/19, and reports green while the published
+artifact it claims to assert on carries 11 subjects that violate the very regex
+those tests cover. This is the same defect class as the #178/#179/#180/#188/#189
+thread — **file it, and make the recipe read the file.** It is also why #300
+("no gate catches a published `MIM:` subject leaving the mapping set") stayed
+open long enough for 82 subjects to drift.
+
+### What is actually left to decide
+
+Normalising subject spelling collapses the difference from 155/102 to **73
+published-only / 20 rebuilt-only**, and *that* residue is the real #416:
+
+* **67 of the 73** are `kgmicrobe.compound:<slug>` registry rows on records whose
+  own identifier is a `cas:` CURIE — `MIM:3-Fucosyllactose →
+  kgmicrobe.compound:3-fucosyllactose`, `MIM:Ammonium_Molybdate_Tetrahydrate →
+  kgmicrobe.compound:ammonium_molybdate_tetrahydrate`, and 65 more of one shape.
+  #416's question 1: *does a `cas:`-primary record also get a minted registry
+  row?* The published file says yes; the builder emits only the `cas:` row. This
+  is a genuine policy call worth 67 rows, and it is the **only** part of the
+  blocker that needs a curator rather than a code fix.
+* **5 published-only / 5 rebuilt-only `CHEBI:` rows**, plus 14 rebuilt-only
+  `kgmicrobe.compound:` and 1 `cas:` — adjudicate individually.
+
+### Order of work
+
+1. **Make the guard set-based — #416's question 2 is well-founded and is now the
+   critical path.** `publish_sssom.py` compares row *counts*, which is blind to
+   155 out and 102 in; it should diff row *sets* on `(subject_id, object_id)` and
+   report added / removed / re-spelled. Had it done so, this whole diagnosis
+   would have been the guard's own output.
+2. Settle the `cas:` + minted-registry-row question — 67 rows.
+3. Adjudicate the ~10 residual `CHEBI:` rows.
+4. Record the genuine relabels (e.g. `MIM:2-phenylethylamine` →
+   `MIM:Phenethylamine_Hydrochloride`, #236) in
+   `mappings/mim_curie_aliases.tsv` so a consumer holding the old subject can
+   still resolve it. **This is required, not optional** — 82 published subjects
+   are about to change and kg-microbe re-syncs the file.
+5. Promote, bumping `mapping_set_version` / `mapping_date` (**#301** — both still
+   read `2026-08-18` and nothing moves them).
+6. Then fix `curie-validate` to read the artifact, and land #300's
+   subject-survival gate, so the next drift is caught by CI rather than by a
+   reconcile.
+
+**Do not "fix" the builder to reproduce the published spellings.** It is already
+honouring `mim_curie_for_stem`; the published file is the stale side.
+
+**Related open issues this item subsumes or unblocks:** #416 (row-count
+difference — its diagnosis needs correcting), #300 (no subject-survival gate),
+#301 (version/date go stale), #236 / #293 / #307 (subject recomputed from
+`preferred_term` rather than the stem — the MIM-side scripts still do this, and
+they are what *creates* the drift the builder then faithfully reports).
+
 
 # Upstream-blocked — do not schedule
 
