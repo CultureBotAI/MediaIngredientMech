@@ -17,8 +17,10 @@ Files written per task (under ``out_dir``):
                                Every SDK-exposed field, future-proof
                                against new ones.
     {stem}-citations.md        Parsed reference list from
-                               ``formatted_answer`` (PaperQA convention,
-                               matches the falcon citations.md sidecar).
+                               ``formatted_answer`` (PaperQA convention).
+                               Unrelated to falcon's removed
+                               --separate-citations sidecar; Edison's own
+                               extractor here is not affected.
     {stem}-agent-state.json    ``agent_state`` (tool-call trace) +
                                ``environment_frame`` + verbose
                                ``metadata``. Only written when verbose

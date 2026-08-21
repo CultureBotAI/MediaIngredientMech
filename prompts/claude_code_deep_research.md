@@ -10,9 +10,9 @@ Select exactly one unresolved culture-media ingredient identity question,
 research it with the `claude_code` deep-research provider, and save supported
 findings in one schema-compliant `IngredientRecord`.
 
-The deep-research Markdown and citations files are raw audit artifacts. They do
-not satisfy the schema requirement by themselves. The accepted result must be
-curated into the canonical YAML record and validated.
+The deep-research Markdown report is a raw audit artifact. It does not satisfy
+the schema requirement by itself. The accepted result must be curated into the
+canonical YAML record and validated.
 
 ## Constraints
 
@@ -60,8 +60,8 @@ unavailable; do not switch providers. Otherwise run exactly once:
 just research-ingredient claude_code <mapped-or-unmapped> <slug>
 ```
 
-Capture the report and citations paths, then verify that the report is non-empty
-and its conclusions trace to real sources. Do not retry an unsuccessful or
+Capture the report path, then verify that the report is non-empty and its
+conclusions trace to real sources. Do not retry an unsuccessful or
 inconclusive job, and do not turn an inconclusive answer into a confident map.
 
 ## 3. Curate into IngredientRecord YAML
@@ -105,7 +105,7 @@ research job. Finish with `git diff --check` and inspect the focused diff.
 ## Completion report
 
 Report the question and target-selection rationale, provider check, one research
-command, report/citations paths, canonical YAML and history paths, the mapping
-decision and rejected alternatives, validation results, and unresolved identity
+command, report path, canonical YAML and history paths, the mapping decision
+and rejected alternatives, validation results, and unresolved identity
 uncertainty.
 

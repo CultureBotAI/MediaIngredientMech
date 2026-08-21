@@ -47,7 +47,7 @@ def test_falcon_platform_key_is_recognized_without_exposing_it():
     """Credential RECOGNITION, asked of `credential_status`.
 
     `provider_status` now reports falcon as blocked whatever the credential says
-    (#290), so this has to ask the lower-level question or adding a provider to
+    (CultureMech#290), so this has to ask the lower-level question or adding a provider to
     KNOWN_BLOCKED would silently drop the check that its env-var aliases are
     spelled right.
     """
@@ -196,13 +196,13 @@ def test_exact_zero_max_score_does_not_divide_by_zero(monkeypatch):
     assert all(row["fit"] == 0 for row in rows)
 
 
-# --- policy and machine-readable consistency (#290) ------------------------
+# --- policy and machine-readable consistency (CultureMech#290) ------------------------
 
 
-def test_a_measured_dead_provider_is_not_recommended():
+def test_a_measured_dead_provider_is_not_recommended(monkeypatch):
     """The tool used to contradict the justfile beside it.
 
-    #284 measured falcon returning HTTP 402 and cyberian HTTP 500, and recorded
+    CultureMech#284 measured falcon returning HTTP 402 and cyberian HTTP 500, and recorded
     both in the provider table. The triage tool still routed every stage to
     falcon, because "available" only ever meant "an env var is set".
     """
@@ -211,11 +211,28 @@ def test_a_measured_dead_provider_is_not_recommended():
     assert "402" in reason
     assert "secret" not in reason
 
+    # Exercise the override end-to-end through rank_stage/build_report, not
+    # just the direct provider_status() call above. With no credentials set
+    # at all every provider is "unavailable" and recommended_available is
+    # None for an unrelated reason, making an assertion against
+    # build_report() vacuous unless falcon is actually made
+    # "available"-but-blocked here.
+    monkeypatch.setenv("EDISON_API_KEY", "test-only")
     config = drp.load_config(CONFIG_PATH)
     report = drp.build_report(config, config["default_focus"])
     for stage in report["stages"]:
+        falcon_row = next(row for row in stage["ranking"] if row["provider"] == "falcon")
+        assert falcon_row["status"] == "blocked"
         recommended = stage["recommended_available"]
         assert recommended is None or recommended["provider"] not in drp.KNOWN_BLOCKED
+
+
+def test_cyberian_is_also_a_known_blocked_provider():
+    """KNOWN_BLOCKED holds two entries (CultureMech#284); falcon-only coverage
+    above would miss a regression in cyberian's blocked status or reason text."""
+    status, reason = drp.provider_status("cyberian", {})
+    assert status == "blocked"
+    assert "500" in reason
 
 
 def test_provider_filtered_json_never_recommends_a_provider_it_did_not_rank(monkeypatch):
@@ -276,3 +293,23 @@ def test_an_allowlist_confines_the_recommendation(monkeypatch):
 def test_an_unknown_provider_in_the_allowlist_is_rejected():
     with pytest.raises(ValueError, match="Unknown provider"):
         drp.main(["--config", str(CONFIG_PATH), "--allow", "not_a_provider"])
+
+
+def test_main_rejects_unknown_provider_argument():
+    focus = next(iter(drp.load_config(CONFIG_PATH)["focuses"]))
+    with pytest.raises(ValueError, match="Unknown provider"):
+        drp.main(
+            [
+                "--config",
+                str(CONFIG_PATH),
+                "--focus",
+                focus,
+                "--provider",
+                "not-a-real-provider",
+            ]
+        )
+
+
+def test_main_rejects_unknown_focus_argument():
+    with pytest.raises(ValueError, match="Unknown focus"):
+        drp.main(["--config", str(CONFIG_PATH), "--focus", "not-a-real-focus"])
