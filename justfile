@@ -549,6 +549,10 @@ snapshot:
 # Run tests
 test:
     uv run --frozen --extra dev pytest tests/
+    # Enforce the maintained package independently. Report all scripts without
+    # coupling their legacy denominator to the package gate (issue #432).
+    uv run --frozen --extra dev coverage report --include='src/mediaingredientmech/*' --fail-under=35
+    uv run --frozen --extra dev coverage report --include='scripts/*'
 
 # Run tests with coverage report
 test-cov:

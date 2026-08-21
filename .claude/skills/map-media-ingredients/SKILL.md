@@ -151,6 +151,10 @@ dry-run mode; use a disposable worktree when evaluating a batch.
 python scripts/prepare_for_claude_curation.py --category UNKNOWN --limit 20 --output notes/batch_001.md
 # Open notes/batch_001.md and ask Claude Code to suggest ontology mappings →
 python scripts/apply_claude_suggestions.py --suggestions notes/batch_001_suggestions.yaml
+python scripts/move_mapped_out_of_unmapped_collection.py          # preview promotion + SSSOM
+python scripts/move_mapped_out_of_unmapped_collection.py --apply
+just sync-individual
+just qc
 ```
 Full reasoning/audit trail for ambiguous cases. See `docs/CLAUDE_CODE_CURATION.md`.
 

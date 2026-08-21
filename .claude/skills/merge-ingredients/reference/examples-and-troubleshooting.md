@@ -122,7 +122,7 @@ occurrences: 50
 
 **Action**:
 ```bash
-python scripts/deduplicate_ingredients.py --dry-run
+python scripts/deduplicate_ingredients.py --dry-run --auto-merge
 ```
 
 **Result**:
@@ -215,4 +215,3 @@ python scripts/deduplicate_ingredients.py \
 3. Use generator-based loading for CultureMech data
 
 ---
-

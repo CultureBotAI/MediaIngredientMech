@@ -136,6 +136,13 @@ Apply the accepted suggestions to your database:
 python scripts/apply_claude_suggestions.py \
   --suggestions notes/claude_suggestions_batch1.yaml \
   --curator marcin
+
+# The importer changes status in the unmapped collection. Promote and publish
+# those mappings before exporting the aggregate collections to per-record files.
+python scripts/move_mapped_out_of_unmapped_collection.py          # preview
+python scripts/move_mapped_out_of_unmapped_collection.py --apply
+just sync-individual
+just qc
 ```
 
 **Options:**

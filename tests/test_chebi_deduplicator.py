@@ -45,18 +45,19 @@ def _deduplicator() -> CHEBIDeduplicator:
 
 
 @pytest.mark.parametrize(
-    ("dry_run", "auto_merge", "reported_merged", "mutated"),
+    ("dry_run", "auto_merge", "reported_merged", "reported_planned", "mutated"),
     [
-        (True, False, False, False),
-        (True, True, True, False),
-        (False, False, False, False),
-        (False, True, True, True),
+        (True, False, False, False, False),
+        (True, True, False, True, False),
+        (False, False, False, False, False),
+        (False, True, True, False, True),
     ],
 )
 def test_merge_control_truth_table(
     dry_run: bool,
     auto_merge: bool,
     reported_merged: bool,
+    reported_planned: bool,
     mutated: bool,
 ) -> None:
     deduplicator = _deduplicator()
@@ -64,8 +65,10 @@ def test_merge_control_truth_table(
     result = deduplicator.merge_duplicates(dry_run=dry_run, auto_merge=auto_merge)
 
     assert bool(result["merged"]) is reported_merged
-    assert bool(result["flagged"]) is (not reported_merged)
+    assert bool(result["planned_merges"]) is reported_planned
+    assert bool(result["flagged"]) is not (reported_merged or reported_planned)
     assert result["total_removed"] == (1 if reported_merged else 0)
+    assert result["total_planned_removals"] == (1 if reported_planned else 0)
     source = deduplicator.curator.records[1]
     assert (source["mapping_status"] == "REJECTED") is mutated
     assert bool(deduplicator.curator.records[0]["synonyms"]) is mutated
@@ -135,10 +138,25 @@ def _load_script_module():
     return module
 
 
-def test_script_default_apply_mode_does_not_enable_auto_merge(monkeypatch, tmp_path) -> None:
-    """The CLI must preserve its default safe, review-only apply behavior."""
+@pytest.mark.parametrize(
+    ("extra_args", "expected", "expected_saved"),
+    [
+        ([], (False, False), False),
+        (["--dry-run", "--auto-merge"], (True, True), False),
+        (["--auto-merge"], (False, True), True),
+    ],
+)
+def test_script_forwards_explicit_merge_controls(
+    monkeypatch,
+    tmp_path,
+    extra_args: list[str],
+    expected: tuple[bool, bool],
+    expected_saved: bool,
+) -> None:
+    """Bare apply is safe, while preview/apply share the explicit opt-in."""
     module = _load_script_module()
     calls: list[tuple[bool, bool]] = []
+    saved: list[bool] = []
 
     class FakeCurator:
         def __init__(self, data_path):
@@ -148,7 +166,7 @@ def test_script_default_apply_mode_does_not_enable_auto_merge(monkeypatch, tmp_p
             return self.records
 
         def save(self):
-            pass
+            saved.append(True)
 
     class FakeDeduplicator:
         def __init__(self, curator):
@@ -156,10 +174,14 @@ def test_script_default_apply_mode_does_not_enable_auto_merge(monkeypatch, tmp_p
 
         def merge_duplicates(self, dry_run, auto_merge):
             calls.append((dry_run, auto_merge))
+            executed = auto_merge and not dry_run
+            planned = auto_merge and dry_run
             return {
-                "merged": [],
+                "merged": [(0, [], "CHEBI:1234")] if executed else [],
+                "planned_merges": [(0, [], "CHEBI:1234")] if planned else [],
                 "flagged": [],
                 "total_removed": 0,
+                "total_planned_removals": 0,
                 "dry_run": dry_run,
             }
 
@@ -172,9 +194,16 @@ def test_script_default_apply_mode_does_not_enable_auto_merge(monkeypatch, tmp_p
     monkeypatch.setattr(
         sys,
         "argv",
-        ["deduplicate_ingredients.py", "--chebi-only", "--data-path", str(tmp_path / "x.yaml")],
+        [
+            "deduplicate_ingredients.py",
+            "--chebi-only",
+            "--data-path",
+            str(tmp_path / "x.yaml"),
+            *extra_args,
+        ],
     )
 
     module.main()
 
-    assert calls == [(False, False)]
+    assert calls == [expected]
+    assert bool(saved) is expected_saved

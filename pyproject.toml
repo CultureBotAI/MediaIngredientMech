@@ -88,15 +88,15 @@ mediaingredientmech = ["schema/*.yaml"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
-# The initial floor includes the full legacy scripts/ surface, not only the
-# package. Raise it as historical scripts are archived or brought under test.
+# Measure both maintained package code and the legacy scripts surface in one
+# run. The package floor and advisory script report are applied separately by
+# `just test`, so adding a historical script cannot lower the package gate.
 addopts = [
     "--strict-markers",
     "--cov=mediaingredientmech",
     "--cov=scripts",
     "--cov-report=term-missing",
     "--cov-report=html",
-    "--cov-fail-under=19",
 ]
 
 [tool.black]

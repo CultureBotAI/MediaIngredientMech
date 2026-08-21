@@ -185,3 +185,64 @@ def test_dry_run_uses_source_identifier_and_has_no_external_or_file_side_effects
     assert "no files, ontology downloads, or enrichment caches" in result.output
     assert FakeCurator.last.auto_enrich is False
     assert FakeCurator.last.saved is False
+
+
+def test_apply_instructions_promote_collection_before_sync_and_qc(tmp_path, monkeypatch):
+    mod = _load()
+    suggestions = tmp_path / "suggestions.yaml"
+    suggestions.write_text(yaml.safe_dump({"suggestions": [_suggestion()]}))
+
+    class FakeClient:
+        def __init__(self, *args, **kwargs):
+            pass
+
+    class FakeCurator:
+        def __init__(self, *args, **kwargs):
+            self.records = []
+            self._dirty = False
+
+        @property
+        def is_dirty(self):
+            return self._dirty
+
+        def load(self):
+            self.records = [
+                {
+                    "identifier": "UNMAPPED_0001",
+                    "preferred_term": "NaNO",
+                    "mapping_status": "UNMAPPED",
+                }
+            ]
+
+        def accept_mapping(self, record, candidate, **kwargs):
+            record["identifier"] = candidate.ontology_id
+            record["mapping_status"] = "MAPPED"
+            self._dirty = True
+
+        def save(self):
+            pass
+
+    monkeypatch.setattr(mod, "OntologyClient", FakeClient)
+    monkeypatch.setattr(mod, "IngredientCurator", FakeCurator)
+
+    result = CliRunner().invoke(
+        mod.main,
+        [
+            "--suggestions",
+            str(suggestions),
+            "--skip-validation",
+            "--data-path",
+            str(ROOT / "data" / "curated" / "unmapped_ingredients.yaml"),
+        ],
+    )
+
+    assert result.exit_code == 0, result.output
+    preview = "move_mapped_out_of_unmapped_collection.py` (preview)"
+    apply = "move_mapped_out_of_unmapped_collection.py --apply"
+    normalized_output = " ".join(result.output.split())
+    assert preview in result.output
+    assert apply in result.output
+    assert "`just sync-individual` alone" in normalized_output
+    assert result.output.index(preview) < result.output.index(apply)
+    assert result.output.index(apply) < result.output.index("`just sync-individual`")
+    assert result.output.index("`just sync-individual`") < result.output.index("`just qc`")

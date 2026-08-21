@@ -7,9 +7,9 @@ This script implements a comprehensive deduplication workflow:
 3. KG-Microbe reconciliation (optional)
 
 Usage:
-    python scripts/deduplicate_ingredients.py --dry-run
+    python scripts/deduplicate_ingredients.py --dry-run --auto-merge
+    python scripts/deduplicate_ingredients.py --auto-merge
     python scripts/deduplicate_ingredients.py --chebi-only
-    python scripts/deduplicate_ingredients.py --auto-merge-threshold 0.9
     python scripts/deduplicate_ingredients.py --search-kg-microbe
 """
 
@@ -42,39 +42,42 @@ console = Console()
 def display_chebi_results(results: dict[str, Any], curator: IngredientCurator) -> None:
     """Display CHEBI deduplication results in a formatted table."""
     merged = results.get("merged", [])
+    planned_merges = results.get("planned_merges", [])
     flagged = results.get("flagged", [])
     total_removed = results.get("total_removed", 0)
+    total_planned_removals = results.get("total_planned_removals", 0)
     dry_run = results.get("dry_run", True)
+    displayed_merges = planned_merges if dry_run else merged
 
     # Summary panel
     mode_str = "DRY RUN" if dry_run else "EXECUTED"
+    groups_label = "Merge groups planned" if dry_run else "Groups merged"
+    removals_label = "Records that would be rejected" if dry_run else "Records rejected"
+    removal_count = total_planned_removals if dry_run else total_removed
     console.print(
         Panel(
             f"[bold]CHEBI Deduplication Results ({mode_str})[/bold]\n"
-            f"Merged groups: {len(merged)}\n"
-            f"Records removed: {total_removed}\n"
+            f"{groups_label}: {len(displayed_merges)}\n"
+            f"{removals_label}: {removal_count}\n"
             f"Flagged for review: {len(flagged)}",
             title="Phase 1: CHEBI ID Deduplication",
-            border_style="green" if len(merged) > 0 else "yellow",
+            border_style="green" if displayed_merges else "yellow",
         )
     )
 
-    # Merged records table
-    if merged:
-        table = Table(title="Merged Records", show_header=True, header_style="bold cyan")
+    # Applied or planned records table
+    if displayed_merges:
+        table_title = "Planned Merges" if dry_run else "Merged Records"
+        table = Table(title=table_title, show_header=True, header_style="bold cyan")
         table.add_column("CHEBI ID", style="cyan")
         table.add_column("Target", style="green")
         table.add_column("Merged From", style="yellow")
         table.add_column("Count", justify="right")
 
-        for target_idx, source_indices, chebi_id in merged:
+        for target_idx, source_indices, chebi_id in displayed_merges:
             target_name = curator.records[target_idx].get("preferred_term", "")
-            source_names = [
-                curator.records[i].get("preferred_term", "") for i in source_indices
-            ]
-            table.add_row(
-                chebi_id, target_name, "\n".join(source_names), str(len(source_indices))
-            )
+            source_names = [curator.records[i].get("preferred_term", "") for i in source_indices]
+            table.add_row(chebi_id, target_name, "\n".join(source_names), str(len(source_indices)))
 
         console.print(table)
 
@@ -139,9 +142,7 @@ def display_solution_results(
 def display_kg_microbe_results(matches: dict[int, dict], curator: IngredientCurator) -> None:
     """Display KG-Microbe search results."""
     total_with_matches = sum(
-        1
-        for m in matches.values()
-        if m.get("chebi_matches") or m.get("name_matches")
+        1 for m in matches.values() if m.get("chebi_matches") or m.get("name_matches")
     )
 
     console.print(
@@ -208,9 +209,7 @@ def search_kg_microbe_matches(
 
 def main():
     """Main deduplication workflow."""
-    parser = argparse.ArgumentParser(
-        description="Deduplicate MediaIngredientMech ingredients"
-    )
+    parser = argparse.ArgumentParser(description="Deduplicate MediaIngredientMech ingredients")
     parser.add_argument(
         "--data-path",
         type=Path,
@@ -220,12 +219,12 @@ def main():
     parser.add_argument(
         "--culturemech-path",
         type=Path,
-        default=Path("/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureMech/output/mapped_ingredients.yaml"),
+        default=Path(
+            "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureMech/output/mapped_ingredients.yaml"
+        ),
         help="Path to CultureMech mapped ingredients",
     )
-    parser.add_argument(
-        "--dry-run", action="store_true", help="Preview changes without saving"
-    )
+    parser.add_argument("--dry-run", action="store_true", help="Preview changes without saving")
     parser.add_argument(
         "--chebi-only", action="store_true", help="Only perform CHEBI ID deduplication"
     )
@@ -240,10 +239,9 @@ def main():
         help="Search CultureMech for additional matches",
     )
     parser.add_argument(
-        "--auto-merge-threshold",
-        type=float,
-        default=1.0,
-        help="Auto-merge above this confidence (0.0-1.0)",
+        "--auto-merge",
+        action="store_true",
+        help="Explicitly opt in to eligible CHEBI merges; combine with --dry-run to preview",
     )
     parser.add_argument(
         "--name-match-threshold",
@@ -265,8 +263,7 @@ def main():
     # Phase 1: CHEBI ID deduplication
     console.print("\n[bold cyan]Phase 1: CHEBI ID Deduplication[/bold cyan]")
     chebi_dedup = CHEBIDeduplicator(curator)
-    auto_merge = not args.dry_run and args.auto_merge_threshold < 1.0
-    chebi_results = chebi_dedup.merge_duplicates(dry_run=args.dry_run, auto_merge=auto_merge)
+    chebi_results = chebi_dedup.merge_duplicates(dry_run=args.dry_run, auto_merge=args.auto_merge)
     display_chebi_results(chebi_results, curator)
 
     # Phase 2: Name-based matching (optional)
@@ -299,9 +296,7 @@ def main():
                 f"{stats['unique_chebi_ids']} unique CHEBI IDs[/dim]"
             )
         else:
-            console.print(
-                f"[yellow]CultureMech file not found: {args.culturemech_path}[/yellow]"
-            )
+            console.print(f"[yellow]CultureMech file not found: {args.culturemech_path}[/yellow]")
 
     # Summary
     final_count = len([r for r in curator.records if r.get("mapping_status") != "REJECTED"])
@@ -316,11 +311,16 @@ def main():
         )
     )
 
-    # Save if not dry run
+    # Save only after an explicitly opted-in merge actually changed records.
+    # Bare apply mode is a read-only audit and must not rewrite collection
+    # metadata or formatting merely because --dry-run was omitted.
     if not args.dry_run:
-        console.print(f"\n[bold green]Saving changes to {args.data_path}[/bold green]")
-        curator.save()
-        console.print("[green]✓ Saved successfully[/green]")
+        if chebi_results.get("merged"):
+            console.print(f"\n[bold green]Saving changes to {args.data_path}[/bold green]")
+            curator.save()
+            console.print("[green]✓ Saved successfully[/green]")
+        else:
+            console.print("\n[yellow]No merges executed; collection was not written[/yellow]")
 
         # Validate
         is_valid, errors = chebi_dedup.validate_no_chebi_duplicates()

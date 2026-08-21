@@ -198,6 +198,28 @@ def _deduplicate_synonyms(record: dict[str, Any]) -> None:
         record["synonyms"] = unique
 
 
+def _print_post_save_guidance(data_path: Path) -> None:
+    """Explain collection promotion, SSSOM publication, and synchronization."""
+    canonical_unmapped = _project_root / "data" / "curated" / "unmapped_ingredients.yaml"
+    if data_path.resolve() == canonical_unmapped.resolve():
+        console.print(
+            "[yellow]Newly mapped records are still in the unmapped collection. "
+            "`just sync-individual` alone would preserve that wrong placement and does not "
+            "publish their SSSOM rows. Run this sequence:[/yellow]\n"
+            "  1. `python scripts/move_mapped_out_of_unmapped_collection.py` (preview)\n"
+            "  2. `python scripts/move_mapped_out_of_unmapped_collection.py --apply`\n"
+            "  3. `just sync-individual`\n"
+            "  4. `just qc`"
+        )
+        return
+
+    console.print(
+        "[yellow]This command edited a non-default collection. Verify mapped/unmapped "
+        "placement and update SSSOM before running `just sync-individual`, then run "
+        "`just qc`.[/yellow]"
+    )
+
+
 def apply_suggestion(
     suggestion: MappingSuggestion | Mapping[str, Any],
     curator: IngredientCurator,
@@ -469,10 +491,7 @@ def main(
     if not dry_run and success_count > 0:
         ingredient_curator.save()
         console.print(f"\n[green]✓ Saved {success_count} mappings to {data_path}[/green]")
-        console.print(
-            "[yellow]This command edited a curated collection. Run `just sync-individual` "
-            "to update per-record files, then `just qc`.[/yellow]"
-        )
+        _print_post_save_guidance(data_path)
     elif dry_run:
         console.print("\n[dim]Dry run - no changes saved[/dim]")
 

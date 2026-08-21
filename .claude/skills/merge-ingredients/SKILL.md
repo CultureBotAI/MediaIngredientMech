@@ -72,22 +72,24 @@ The full decision-flow diagram and worked conflict-resolution scenarios are in
 ## Running the Deduplication
 
 ```bash
-python scripts/deduplicate_ingredients.py --dry-run               # ALWAYS preview first
+python scripts/deduplicate_ingredients.py --dry-run --auto-merge  # preview eligible CHEBI merges
+python scripts/deduplicate_ingredients.py --auto-merge            # apply the reviewed plan
 python scripts/deduplicate_ingredients.py --chebi-only            # primary rule only
 python scripts/deduplicate_ingredients.py --include-name-matches  # + name matching
 python scripts/deduplicate_ingredients.py --search-kg-microbe     # + KG-Microbe search
-python scripts/deduplicate_ingredients.py                         # execute merges
 ```
 
-Thresholds (`--auto-merge-threshold`, `--name-match-threshold`), custom data paths, and a
-full walkthrough of the three-phase output (CHEBI → name → KG-Microbe) and post-merge
-validation are in [`reference/script-and-workflow.md`](reference/script-and-workflow.md).
+Automatic CHEBI merging requires the explicit `--auto-merge` opt-in. The
+`--name-match-threshold`, custom data paths, and a full walkthrough of the three-phase output
+(CHEBI → name → KG-Microbe) and post-merge validation are in
+[`reference/script-and-workflow.md`](reference/script-and-workflow.md).
 
 ---
 
 ## Best Practices
 
-1. **Always start with `--dry-run`** — review the output, then execute.
+1. **Always start with `--dry-run --auto-merge`** — review the exact plan, then execute with
+   `--auto-merge`.
 2. **CHEBI first, names second.** CHEBI duplicates are non-negotiable; name matches need
    domain judgment; KG-Microbe search is exploratory.
 3. **Validate after every merge** — run `just validate-all` and re-check

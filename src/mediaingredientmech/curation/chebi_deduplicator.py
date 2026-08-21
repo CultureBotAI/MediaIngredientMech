@@ -232,15 +232,19 @@ class CHEBIDeduplicator:
 
         Returns:
             Dict with merge results:
-            - merged: List of (target_idx, source_indices, chebi_id) tuples
+            - merged: Groups actually merged in apply mode
+            - planned_merges: Groups that would merge in dry-run mode
             - flagged: List of (chebi_id, indices, reason) tuples
-            - total_removed: Count of records that will be REJECTED
+            - total_removed: Count of records actually marked REJECTED
+            - total_planned_removals: Count that would be marked REJECTED in dry-run mode
         """
         duplicates = self.find_chebi_duplicates()
 
         merged: list[tuple[int, list[int], str]] = []
+        planned_merges: list[tuple[int, list[int], str]] = []
         flagged: list[tuple[str, list[int], str]] = []
         total_removed = 0
+        total_planned_removals = 0
 
         for chebi_id, indices in duplicates.items():
             # Choose merge target
@@ -262,9 +266,14 @@ class CHEBIDeduplicator:
             # whether an opted-in merge is previewed or executed.  In
             # particular, apply mode must not implicitly enable auto-merging.
             if can_auto_merge and auto_merge:
-                # Perform merges
-                for source_idx in sorted(source_indices, reverse=True):
-                    if not dry_run:
+                merge_group = (target_idx, source_indices, chebi_id)
+                if dry_run:
+                    planned_merges.append(merge_group)
+                    total_planned_removals += len(source_indices)
+                else:
+                    # Perform merges only in apply mode. Result fields named in
+                    # the past tense are populated only after real mutation.
+                    for source_idx in sorted(source_indices, reverse=True):
                         reason_idx = source_indices.index(source_idx)
                         merge_reason = f"Same CHEBI ID ({chebi_id}) - {reasons[reason_idx]}"
                         logger.info(
@@ -281,9 +290,8 @@ class CHEBIDeduplicator:
                             curator_name=self.curator.curator_name,
                             merge_reason=merge_reason,
                         )
-
-                merged.append((target_idx, source_indices, chebi_id))
-                total_removed += len(source_indices)
+                    merged.append(merge_group)
+                    total_removed += len(source_indices)
             else:
                 # Flag for manual review
                 flagged.append((chebi_id, indices, "; ".join(set(reasons))))
@@ -296,8 +304,10 @@ class CHEBIDeduplicator:
 
         return {
             "merged": merged,
+            "planned_merges": planned_merges,
             "flagged": flagged,
             "total_removed": total_removed,
+            "total_planned_removals": total_planned_removals,
             "dry_run": dry_run,
         }
 
