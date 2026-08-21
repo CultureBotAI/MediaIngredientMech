@@ -397,7 +397,6 @@ def build_command(
     provider: str,
     template: Path,
     output_file: Path,
-    citations_file: Path,
     variables: dict[str, str],
     passthrough_args: list[str] | None = None,
     client_command: str = "deep-research-client",
@@ -412,7 +411,21 @@ def build_command(
     for key in sorted(variables):
         command.extend(["--var", f"{key}={variables[key]}"])
     command.extend(provider_args(provider))
-    command.extend(["--output", str(output_file), "--separate-citations", str(citations_file)])
+    command.extend(
+        [
+            # NO --separate-citations. The client builds that sidecar with a
+            # regex over the report prose, and it is malformed: TraitMech's
+            # #249 found 353 sidecars with 194 broken markdown-link tails,
+            # 2,770 stray trailing commas, and 332 of 353 duplicating a
+            # reference two or three times; CultureMech's own single sample
+            # re-emitted the ~55-line rendered prompt as "Query" and listed
+            # one DOI three times over. The report's own References section
+            # is the trustworthy artifact — see CultureMech's
+            # docs/RESEARCH_ARTIFACT_CONTRACT.md.
+            "--output",
+            str(output_file),
+        ]
+    )
     command.extend(passthrough_args or [])
     return command
 
@@ -474,12 +487,10 @@ def main() -> int:
 
     output_dir = args.research_dir / "ingredients" / ingredient_status
     output_file = output_dir / f"{ingredient_slug}-deep-research-{args.provider}.md"
-    citations_file = output_dir / f"{ingredient_slug}-deep-research-{args.provider}.citations.md"
     command = build_command(
         provider=args.provider,
         template=args.template,
         output_file=output_file,
-        citations_file=citations_file,
         variables=variables,
         passthrough_args=args.passthrough,
         client_command=args.client_command,

@@ -61,9 +61,6 @@ def test_build_command_for_falcon_research():
         provider="falcon",
         template=Path("templates/ingredient_mapping_research.md"),
         output_file=Path("research/ingredients/mapped/Glucose-deep-research-falcon.md"),
-        citations_file=Path(
-            "research/ingredients/mapped/Glucose-deep-research-falcon.citations.md"
-        ),
         variables={"ingredient_label": "Glucose", "ingredient_identifier": "CHEBI:17234"},
         passthrough_args=["--max-cost", "1"],
     )
@@ -75,8 +72,11 @@ def test_build_command_for_falcon_research():
     ]
     assert "--provider" in command
     assert "falcon" in command
-    assert "--separate-citations" in command
-    assert "research/ingredients/mapped/Glucose-deep-research-falcon.citations.md" in command
+    # NO --separate-citations: the client's regex-based sidecar is malformed
+    # (see build_command's docstring comment / CultureMech's
+    # docs/RESEARCH_ARTIFACT_CONTRACT.md). The report's own References
+    # section is the trustworthy artifact.
+    assert "--separate-citations" not in command
     assert command[-2:] == ["--max-cost", "1"]
 
 
