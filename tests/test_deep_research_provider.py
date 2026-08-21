@@ -295,6 +295,40 @@ def test_an_unknown_provider_in_the_allowlist_is_rejected():
         drp.main(["--config", str(CONFIG_PATH), "--allow", "not_a_provider"])
 
 
+def test_allow_cannot_force_a_known_blocked_provider_through():
+    """recommendable() filters on status == "available" before applying
+    --allow, so a KNOWN_BLOCKED provider's "blocked" status should make it
+    unrecommendable even when explicitly --allow'd. Nothing previously
+    asserted this: every existing --allow test only exercises a healthy
+    provider (asta), so a future refactor that reordered the filters (e.g.
+    checking provider-in-allow before status) would silently start
+    recommending a known-dead provider with the suite still green."""
+    rows = [
+        {"provider": "falcon", "status": "blocked", "cost": "high"},
+        {"provider": "asta", "status": "available", "cost": "low"},
+    ]
+    kept = drp.recommendable(rows, allow=frozenset({"falcon"}))
+    assert kept == []
+
+
+def test_allow_with_a_measured_dead_provider_end_to_end(monkeypatch):
+    """Same guarantee as the synthetic test above, but through the real
+    provider_status()/KNOWN_BLOCKED path rather than a hand-built row."""
+    monkeypatch.setenv("EDISON_API_KEY", "test-only")
+    config = drp.load_config(CONFIG_PATH)
+    report = drp.build_report(config, config["default_focus"], allow=frozenset({"falcon"}))
+    for stage in report["stages"]:
+        assert stage["recommended_available"] is None
+
+
+def test_allow_dedups_aliased_provider_names():
+    """edison and futurehouse both canonicalize to falcon — --allow
+    "edison,futurehouse" should behave the same as --allow "falcon", not
+    silently keep two entries or otherwise mishandle the collision."""
+    allow = frozenset(drp.canonical_provider(p) for p in "edison,futurehouse".split(","))
+    assert allow == {"falcon"}
+
+
 def test_allow_and_no_paid_flow_through_main_json(monkeypatch):
     """Every filtering test above calls build_report()/recommendable() directly
     with pre-built kwargs, bypassing argparse entirely — exactly the kind of gap
