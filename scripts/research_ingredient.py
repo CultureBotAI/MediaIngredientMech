@@ -186,6 +186,7 @@ def summarize_curation_history(doc: dict[str, Any], limit: int = 8) -> str:
 
 # --- Step 7b role-facet helpers (used by templates/ingredient_role_research.md). ------
 
+
 def _facet_enum_values(enum_name: str) -> list[str]:
     """Return the permissible-value token list for a facet enum in the LinkML schema.
 
@@ -194,17 +195,21 @@ def _facet_enum_values(enum_name: str) -> list[str]:
     template rendering can compose a candidate menu Edison can pick from.
     """
     import sys
+
     sys.path.insert(0, str(REPO_ROOT / "src"))
     from mediaingredientmech.curation.ingredient_curator import (
         VALID_CELLULAR_METABOLIC_ROLES,
         VALID_NUTRITIONAL_ROLES,
         VALID_PHYSICOCHEMICAL_ROLES,
     )
-    return sorted({
-        "NutritionalRoleEnum":       VALID_NUTRITIONAL_ROLES,
-        "PhysicochemicalRoleEnum":   VALID_PHYSICOCHEMICAL_ROLES,
-        "CellularMetabolicRoleEnum": VALID_CELLULAR_METABOLIC_ROLES,
-    }[enum_name])
+
+    return sorted(
+        {
+            "NutritionalRoleEnum": VALID_NUTRITIONAL_ROLES,
+            "PhysicochemicalRoleEnum": VALID_PHYSICOCHEMICAL_ROLES,
+            "CellularMetabolicRoleEnum": VALID_CELLULAR_METABOLIC_ROLES,
+        }[enum_name]
+    )
 
 
 def summarize_existing_role_assignments(doc: dict[str, Any]) -> str:
@@ -214,8 +219,8 @@ def summarize_existing_role_assignments(doc: dict[str, Any]) -> str:
     knows which facets are the actual gaps to fill.
     """
     facets = [
-        ("nutritional_roles",       "Nutritional"),
-        ("physicochemical_roles",   "Physicochemical"),
+        ("nutritional_roles", "Nutritional"),
+        ("physicochemical_roles", "Physicochemical"),
         ("cellular_metabolic_roles", "Cellular-metabolic"),
     ]
     parts: list[str] = []
@@ -279,7 +284,7 @@ def summarize_chebi_role_axioms(doc: dict[str, Any], limit: int = 15) -> str:
 
 
 _CHEBI_ID_PATHS = (
-    ("identifier",),           # IngredientRecord's own identifier when it starts with CHEBI:
+    ("identifier",),  # IngredientRecord's own identifier when it starts with CHEBI:
     ("ontology_mapping", "ontology_id"),
 )
 
@@ -307,6 +312,7 @@ def _oak_chebi_adapter():
         return _OAK_CACHE["chebi"]
     try:
         from oaklib import get_adapter  # type: ignore
+
         adapter = get_adapter("sqlite:obo:chebi")
     except Exception:  # pragma: no cover — oaklib install / sqlite fetch failures
         adapter = None
@@ -342,9 +348,11 @@ def template_vars(
         "curation_summary": summarize_curation_history(doc),
         "notes": _scalar_text(doc.get("notes")) or "None recorded",
         # Step 7b (ingredient_role_research.md) additions:
-        "candidate_nutritional_roles":       ", ".join(_facet_enum_values("NutritionalRoleEnum")),
-        "candidate_physicochemical_roles":   ", ".join(_facet_enum_values("PhysicochemicalRoleEnum")),
-        "candidate_cellular_metabolic_roles": ", ".join(_facet_enum_values("CellularMetabolicRoleEnum")),
+        "candidate_nutritional_roles": ", ".join(_facet_enum_values("NutritionalRoleEnum")),
+        "candidate_physicochemical_roles": ", ".join(_facet_enum_values("PhysicochemicalRoleEnum")),
+        "candidate_cellular_metabolic_roles": ", ".join(
+            _facet_enum_values("CellularMetabolicRoleEnum")
+        ),
         "existing_role_assignments": summarize_existing_role_assignments(doc),
         "chebi_role_axioms": summarize_chebi_role_axioms(doc),
     }

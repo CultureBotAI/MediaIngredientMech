@@ -36,8 +36,11 @@ Reports are written to:
 
 ```text
 research/ingredients/<mapped|unmapped>/<slug>-deep-research-falcon.md
-research/ingredients/<mapped|unmapped>/<slug>-deep-research-falcon.citations.md
 ```
+
+No separate `.citations.md` sidecar: the client's regex-based extractor is
+malformed (see `scripts/research_ingredient.py`'s `build_command`), so the
+report's own References section is the citation source of truth.
 
 ## Workflow
 
@@ -49,7 +52,7 @@ research/ingredients/<mapped|unmapped>/<slug>-deep-research-falcon.citations.md
 just research-ingredient falcon <mapped|unmapped> <slug>
 ```
 
-4. Read the report and citation file. Treat Falcon output as leads; verify identity, formula, hydrate state, composition, and ontology grounding against cited source metadata/snippets before editing.
+4. Read the report's References section. Treat Falcon output as leads; verify identity, formula, hydrate state, composition, and ontology grounding against cited source metadata/snippets before editing.
 5. Curate only locally supported fields:
    `mapping_status`, `ontology_mapping`, `chemical_properties`, `synonyms`, `notes`, `kg_microbe_node_id`, `ingredient_type`, and `curation_history`.
 6. Keep edits narrow and schema-consistent. Preserve filenames and existing identifiers unless the task is explicitly an identifier repair.
@@ -116,7 +119,7 @@ If broad validation or tests fail on pre-existing schema, merge, or data-shape i
 Report:
 
 - records reviewed and curated
-- Falcon reports and citation files used
+- Falcon reports used
 - identity, formula, hydrate/salt, formulation, or ontology decisions made
 - YAML fields and SSSOM rows changed
 - DOI citations added, and any PMID fallbacks

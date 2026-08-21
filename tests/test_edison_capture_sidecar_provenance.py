@@ -16,6 +16,7 @@ backfills sidecars for the *same* ``task_id`` already in the meta.
 No Edison client is constructed and no credits are spent — the response is a
 stub object and ``client=None`` exercises the "verbose fetch skipped" path.
 """
+
 from __future__ import annotations
 
 import importlib.util
@@ -107,9 +108,10 @@ def test_stale_sidecars_are_not_attributed_to_the_new_task(ec, prior_run_dir):
     # The stale files themselves are left alone; only the claim about them
     # changes. Deleting them would destroy the earlier run's evidence.
     assert (prior_run_dir / f"{STEM}-agent-state.json").exists()
-    assert json.loads(
-        (prior_run_dir / f"{STEM}-agent-state.json").read_text()
-    )["task_id"] == "task-OLD"
+    assert (
+        json.loads((prior_run_dir / f"{STEM}-agent-state.json").read_text())["task_id"]
+        == "task-OLD"
+    )
 
 
 def test_sidecars_this_run_did_write_are_reported_true(ec, prior_run_dir):
@@ -122,9 +124,11 @@ def test_sidecars_this_run_did_write_are_reported_true(ec, prior_run_dir):
 
     class _Client:
         def get_task(self, task_id, verbose=False):  # noqa: ARG002
-            return type("V", (), {"agent_state": [{"tool": "search"}],
-                                  "environment_frame": None,
-                                  "metadata": None})()
+            return type(
+                "V",
+                (),
+                {"agent_state": [{"tool": "search"}], "environment_frame": None, "metadata": None},
+            )()
 
         def list_files(self, trajectory_id):  # noqa: ARG002
             return []
@@ -139,14 +143,14 @@ def test_sidecars_this_run_did_write_are_reported_true(ec, prior_run_dir):
     )
 
     assert meta["sidecar_files"] == dict.fromkeys(
-        ["answer_md", "response_json", "citations_md",
-         "agent_state_json", "files_json"],
+        ["answer_md", "response_json", "citations_md", "agent_state_json", "files_json"],
         True,
     )
     # ...and the rewritten trace really is the new task's.
-    assert json.loads(
-        (prior_run_dir / f"{STEM}-agent-state.json").read_text()
-    )["task_id"] == "task-NEW"
+    assert (
+        json.loads((prior_run_dir / f"{STEM}-agent-state.json").read_text())["task_id"]
+        == "task-NEW"
+    )
 
 
 def test_empty_output_dir_reports_only_what_was_written(ec, tmp_path):
@@ -188,8 +192,7 @@ def test_omitting_the_written_set_still_snapshots_the_disk(ec, prior_run_dir):
     to the written-set semantics.
     """
     assert ec._existing_sidecars(prior_run_dir, STEM) == dict.fromkeys(
-        ["answer_md", "response_json", "citations_md",
-         "agent_state_json", "files_json"],
+        ["answer_md", "response_json", "citations_md", "agent_state_json", "files_json"],
         True,
     )
 
