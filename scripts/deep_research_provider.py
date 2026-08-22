@@ -189,9 +189,7 @@ PROVIDERS: dict[str, Provider] = {
         "deep",
         "medium",
         "slow",
-        frozenset(
-            {"web_search", "citation_tracking", "synthesis", "code_interpretation"}
-        ),
+        frozenset({"web_search", "citation_tracking", "synthesis", "code_interpretation"}),
         "OpenAI-compatible research through the LBL proxy",
         "capabilities depend on the selected proxy model",
     ),
@@ -241,10 +239,49 @@ def canonical_provider(name: str) -> str:
     return ALIASES.get(key, key)
 
 
-def provider_status(
-    provider: str, environ: Mapping[str, str] | None = None
-) -> tuple[str, str]:
-    """Return status and a safe explanation without exposing credential values."""
+# Providers whose credential is configurable but which do not actually work, with
+# what happened when each was called (CultureMech#284). A credential check cannot discover
+# this: "Available" in `deep-research-client providers` means an env var is set,
+# nothing more. Without this table the triage tool recommended `falcon` as the
+# primary route for every stage while nothing on this side of the fleet had
+# ever measured it — CultureMech's own justfile records falcon returning
+# HTTP 402 (CultureMech#284); this repo tracks the same block in NEXT_TASKS.md.
+# The tool was contradicting known reality (CultureMech#290).
+#
+# Remove an entry when the provider is verified working again, rather than
+# editing the reason.
+KNOWN_BLOCKED: dict[str, str] = {
+    "falcon": "HTTP 402 Payment Required (measured CultureMech#284)",
+    "cyberian": "HTTP 500; wraps an agentapi service that is not running (CultureMech#284)",
+}
+
+# Costs that count as "paid" for --no-paid. `medium` is deliberately NOT here:
+# claude_code and cborg are the medium-cost providers, and keeping them is
+# usually the point of asking for no paid providers in the first place.
+PAID_COSTS = frozenset({"high", "very_high"})
+
+
+def provider_status(provider: str, environ: Mapping[str, str] | None = None) -> tuple[str, str]:
+    """Whether this provider can actually be routed to, and why.
+
+    A measured-dead provider reports `blocked` however well its credential is
+    configured — that is the whole point, since a configured credential is what
+    made `falcon` look routable while returning HTTP 402. Credential recognition
+    is still a separate, testable question: see `credential_status`.
+    """
+    if provider in KNOWN_BLOCKED:
+        return "blocked", KNOWN_BLOCKED[provider]
+    return credential_status(provider, environ)
+
+
+def credential_status(provider: str, environ: Mapping[str, str] | None = None) -> tuple[str, str]:
+    """Status from local configuration alone, ignoring whether the provider works.
+
+    Kept separate from `provider_status` so "do we recognise this env var name"
+    stays covered for providers that are currently blocked — otherwise adding a
+    provider to KNOWN_BLOCKED would silently drop the test that its credential
+    aliases are spelled right.
+    """
     env = os.environ if environ is None else environ
     if provider == "deeper_med":
         return "stub", "no public API"
@@ -293,9 +330,7 @@ def load_config(path: Path) -> dict[str, Any]:
         raise ValueError("Provider profile requires a non-empty 'focuses' mapping")
     default_focus = data.get("default_focus")
     if default_focus not in focuses:
-        raise ValueError(
-            f"default_focus {default_focus!r} is not defined under focuses"
-        )
+        raise ValueError(f"default_focus {default_focus!r} is not defined under focuses")
     for focus_name, focus in focuses.items():
         if not isinstance(focus, dict) or not isinstance(focus.get("stages"), dict):
             raise ValueError(f"Focus {focus_name!r} requires a 'stages' mapping")
@@ -304,23 +339,26 @@ def load_config(path: Path) -> dict[str, Any]:
                 raise ValueError(f"Stage {focus_name}.{stage_name} must be a mapping")
             capabilities = stage.get("capabilities", {})
             if not isinstance(capabilities, dict):
-                raise ValueError(
-                    f"Stage {focus_name}.{stage_name}.capabilities must be a mapping"
-                )
+                raise ValueError(f"Stage {focus_name}.{stage_name}.capabilities must be a mapping")
             unknown_caps = set(capabilities) - _ALL_CAPABILITIES
             if unknown_caps:
                 raise ValueError(
                     f"Stage {focus_name}.{stage_name}.capabilities names unknown "
                     f"capability/ies {sorted(unknown_caps)}; no provider declares "
-                    f"them, so they would silently score 0"
+                    f"them, so they would silently score 0. Known capabilities: "
+                    f"{', '.join(sorted(_ALL_CAPABILITIES))}"
                 )
-        adjustments = focus.get("provider_adjustments")
-        if adjustments is not None:
-            if not isinstance(adjustments, dict):
-                raise ValueError(
-                    f"Focus {focus_name!r}.provider_adjustments must be a mapping"
-                )
-            canonical = {}
+        # .get(key, {}) only supplies the default when the key is ABSENT — an
+        # explicit YAML `provider_adjustments: null` still returns None here,
+        # so this isinstance check (unconditional, like the sibling
+        # `capabilities` check above) must run either way, not be skipped by
+        # an `is not None` guard (which let a null block crash later in
+        # rank_stage/_score with AttributeError instead of this ValueError).
+        adjustments = focus.get("provider_adjustments", {})
+        if not isinstance(adjustments, dict):
+            raise ValueError(f"Focus {focus_name!r}.provider_adjustments must be a mapping")
+        if adjustments:
+            canonical: dict[str, Any] = {}
             for raw_name, value in adjustments.items():
                 name = canonical_provider(str(raw_name))
                 if name not in PROVIDERS:
@@ -340,39 +378,34 @@ def load_config(path: Path) -> dict[str, Any]:
     return data
 
 
-def _score(
-    provider: Provider, stage: Mapping[str, Any], adjustments: Mapping[str, Any]
-) -> float:
+def _score(provider: Provider, stage: Mapping[str, Any], adjustments: Mapping[str, Any]) -> float:
     capabilities = stage.get("capabilities", {})
     score = sum(
         float(weight)
         for capability, weight in capabilities.items()
         if capability in provider.capabilities
     )
-    score += (
-        float(stage.get("synthesis_weight", 0)) * SYNTHESIS_VALUE[provider.synthesis]
-    )
+    score += float(stage.get("synthesis_weight", 0)) * SYNTHESIS_VALUE[provider.synthesis]
     score += float(stage.get("speed_weight", 0)) * (5 - TIME_VALUE[provider.time])
     score += float(stage.get("cost_weight", 0)) * (5 - COST_VALUE[provider.cost])
     score += float(adjustments.get(provider.name, 0))
     return score
 
 
-def rank_stage(
-    config: Mapping[str, Any], focus_name: str, stage_name: str
-) -> list[dict[str, Any]]:
+def rank_stage(config: Mapping[str, Any], focus_name: str, stage_name: str) -> list[dict[str, Any]]:
     focus = config["focuses"][focus_name]
     stage = focus["stages"][stage_name]
     adjustments = focus.get("provider_adjustments", {})
-    raw = {
-        name: _score(provider, stage, adjustments)
-        for name, provider in PROVIDERS.items()
-    }
-    # `or 1.0` only guards an exact-zero max; a large negative
-    # provider_adjustments value can push every score negative, leaving
-    # `high` negative too. Every fit then clamps to 0 (max(0.0, raw[name])
-    # below), collapsing the ranking to alphabetical order instead of the
-    # intended relative comparison. Guard the sign, not just falsiness.
+    raw = {name: _score(provider, stage, adjustments) for name, provider in PROVIDERS.items()}
+    # `or 1.0` only replaces an exact-zero max (e.g. every raw score landing
+    # at precisely 0 through cancelling adjustments) — a real, if rare, case
+    # this guards. It does NOT fix the harder case where every score is
+    # negative: fit is 0/high either way there (0.0 divided by any nonzero
+    # number is 0.0), so the ranking still collapses to alphabetical order
+    # once every candidate is "actively bad" rather than merely "not the
+    # best." That needs a different normalization (e.g. min-max instead of
+    # max-only) and is a real design decision, not a one-line fix — see
+    # CultureMech#315.
     high = max(raw.values())
     if high <= 0:
         high = 1.0
@@ -397,16 +430,36 @@ def rank_stage(
     return sorted(rows, key=lambda row: (-row["fit"], row["provider"]))
 
 
-def build_report(config: Mapping[str, Any], focus_name: str) -> dict[str, Any]:
+def recommendable(
+    rows: list[dict[str, Any]], *, allow: frozenset[str] | None = None, no_paid: bool = False
+) -> list[dict[str, Any]]:
+    """The rows a recommendation may be drawn from, in ranked order.
+
+    One place, so the text and JSON paths cannot disagree — the JSON filter used
+    to narrow `ranking` while leaving `recommended_available` untouched, so
+    `--provider asta --json` recommended `claude_code` out of a document whose
+    only ranked provider was asta (CultureMech#290).
+    """
+    out = [row for row in rows if row["status"] == "available" and row["provider"] != "mock"]
+    if allow is not None:
+        out = [row for row in out if row["provider"] in allow]
+    if no_paid:
+        out = [row for row in out if row["cost"] not in PAID_COSTS]
+    return out
+
+
+def build_report(
+    config: Mapping[str, Any],
+    focus_name: str,
+    *,
+    allow: frozenset[str] | None = None,
+    no_paid: bool = False,
+) -> dict[str, Any]:
     focus = config["focuses"][focus_name]
     stages = []
     for stage_name, stage in focus["stages"].items():
         ranking = rank_stage(config, focus_name, stage_name)
-        available = [
-            row
-            for row in ranking
-            if row["status"] == "available" and row["provider"] != "mock"
-        ]
+        available = recommendable(ranking, allow=allow, no_paid=no_paid)
         stages.append(
             {
                 "name": stage_name,
@@ -443,14 +496,8 @@ def _table(rows: list[dict[str, Any]]) -> str:
                 row["source_scope"],
             )
         )
-    widths = [
-        max(len(str(row[index])) for row in values) for index in range(len(headers))
-    ]
-    lines = [
-        "  ".join(
-            str(value).ljust(widths[index]) for index, value in enumerate(values[0])
-        )
-    ]
+    widths = [max(len(str(row[index])) for row in values) for index in range(len(headers))]
+    lines = ["  ".join(str(value).ljust(widths[index]) for index, value in enumerate(values[0]))]
     lines.append("  ".join("-" * width for width in widths))
     lines.extend(
         "  ".join(str(value).ljust(widths[index]) for index, value in enumerate(row))
@@ -494,20 +541,23 @@ def print_report(report: Mapping[str, Any], provider_name: str | None = None) ->
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--config", type=Path, required=True, help="Mech provider profile YAML"
-    )
+    parser.add_argument("--config", type=Path, required=True, help="Mech provider profile YAML")
     parser.add_argument(
         "--focus", help="Research focus from the profile (default: profile default)"
     )
     parser.add_argument(
         "--provider", help="Show one provider (aliases such as edison are accepted)"
     )
+    parser.add_argument("--list-focuses", action="store_true", help="List domain-specific focuses")
+    parser.add_argument("--json", action="store_true", help="Emit machine-readable triage JSON")
     parser.add_argument(
-        "--list-focuses", action="store_true", help="List domain-specific focuses"
+        "--allow",
+        help="Comma-separated allowlist; only these providers may be recommended",
     )
     parser.add_argument(
-        "--json", action="store_true", help="Emit machine-readable triage JSON"
+        "--no-paid",
+        action="store_true",
+        help=f"Never recommend a provider whose cost is {' or '.join(sorted(PAID_COSTS))}",
     )
     return parser.parse_args(argv)
 
@@ -529,25 +579,27 @@ def main(argv: list[str] | None = None) -> int:
         raise ValueError(
             f"Unknown provider {args.provider!r}; choose one of: {', '.join(PROVIDERS)}"
         )
-    report = build_report(config, focus_name)
+    allow = (
+        frozenset(canonical_provider(p) for p in args.allow.split(",") if p.strip())
+        if args.allow
+        else None
+    )
+    if allow is not None:
+        unknown = allow - set(PROVIDERS)
+        if unknown:
+            raise ValueError(f"Unknown provider(s) in --allow: {', '.join(sorted(unknown))}")
+    report = build_report(config, focus_name, allow=allow, no_paid=args.no_paid)
     if args.json:
         if provider_name:
             for stage in report["stages"]:
                 stage["ranking"] = [
                     row for row in stage["ranking"] if row["provider"] == provider_name
                 ]
-                # recommended_available/fallback_available were computed by
-                # build_report() from the *unfiltered* ranking, so they can
-                # name a provider no longer present in the filtered ranking
-                # above — recompute both from the filtered set the same way
-                # build_report() does, instead of leaving stale, internally-
-                # inconsistent values in the JSON.
-                available = [
-                    row for row in stage["ranking"]
-                    if row["status"] == "available" and row["provider"] != "mock"
-                ]
-                stage["recommended_available"] = available[0] if available else None
-                stage["fallback_available"] = available[1] if len(available) > 1 else None
+                # Recompute from what survived, so the document cannot recommend a
+                # provider absent from its own ranking (CultureMech#290).
+                kept = recommendable(stage["ranking"], allow=allow, no_paid=args.no_paid)
+                stage["recommended_available"] = kept[0] if kept else None
+                stage["fallback_available"] = kept[1] if len(kept) > 1 else None
         print(json.dumps(report, indent=2))
     else:
         print_report(report, provider_name)
