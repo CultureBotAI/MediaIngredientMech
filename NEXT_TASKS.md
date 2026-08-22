@@ -974,6 +974,26 @@ published-only / 20 rebuilt-only**, and *that* residue is the real #416:
 **Do not "fix" the builder to reproduce the published spellings.** It is already
 honouring `mim_curie_for_stem`; the published file is the stale side.
 
+> **Correction (2026-08-21, after this item was first written).** The paragraph
+> above is right but was written without noticing that **#299 had already
+> litigated the case cohort and decided the other way**, pinning all 64 spellings
+> in `tests/test_published_mim_subject_case.py` as a deliberately literal table.
+> Promoting the rebuild fails all 64. That test defers to **#236** — "are `MIM:`
+> slugs paths or opaque identifiers?" — which was the real gate, not the registry
+> policy question.
+>
+> #299's *stated* objection turned out to be narrower than its remedy: the
+> renames "produced no alias trail … which would have left all 64 dangling",
+> and `CURIE_STANDARD.md` §1 documents the filename-derived rule as the standard.
+> **#236 was settled on 2026-08-21 in favour of filename-derived**, the alias
+> trail was supplied (`mappings/mim_curie_alias_seeds.tsv`, 82 seeds), the 64-row
+> test was rewritten to pin *no published CURIE dangles* across all 2,512
+> subjects, and the rebuild was promoted. **PR #436.**
+>
+> Lesson worth keeping: a backlog item that says "X is simply correct" should be
+> checked against the test suite for a guard that says otherwise. The guard was
+> there, named after the issue, and green.
+
 **Related open issues this item subsumes or unblocks:** #416 (row-count
 difference — its diagnosis needs correcting), #300 (no subject-survival gate),
 #301 (version/date go stale), #236 / #293 / #307 (subject recomputed from
