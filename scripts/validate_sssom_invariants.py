@@ -59,6 +59,15 @@ Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
   of B2 (catches the case where rows differ in trivia such as
   whitespace but share the same subject+object tuple).
 
+* **Rule C** — every published row names the source its object came from
+  (non-empty ``object_source``).
+
+* **Rule D** — a row whose ``object_id`` is the subject record's own
+  ``identifier`` must be ``skos:exactMatch``. That row asserts identity;
+  publishing it as ``closeMatch`` says a record is merely similar to itself.
+  448 rows did (#438). ``mapping_quality`` grades the *ontology grounding* and
+  must not reach this row's predicate.
+
 * **Rule B4** — canonical ``object_label`` drift. For every row whose
   ``object_id`` prefix is in ``{CHEBI, FOODON, UBERON, ENVO, BTO,
   MICRO, PATO}``, look up the canonical label in the local sibling
@@ -78,10 +87,10 @@ claw builder) or leave it in the triage TSV; CI fails as long as a
 violating row sits in ``ingredient_mappings.sssom.tsv``.
 
 Exit codes:
-  0 — every row passes Rules A, B1, B2, B3, and (when its label source
-      is present) B4.
-  2 — at least one row failed Rule A, B1, B2, B3, or B4. (B1 contributes
-      to exit-2 unless ``--lenient-b1`` is passed.)
+  0 — every row passes Rules A, B1, B2, B3, C, D, and (when its label
+      source is present) B4.
+  2 — at least one row failed Rule A, B1, B2, B3, B4, C or D. (B1
+      contributes to exit-2 unless ``--lenient-b1`` is passed.)
 """
 from __future__ import annotations
 
@@ -89,6 +98,7 @@ import argparse
 import csv
 import re
 import sys
+from functools import lru_cache
 from pathlib import Path
 from typing import Iterable, Iterator
 
@@ -153,8 +163,43 @@ _CHEM_BLOCK_RE = re.compile(
 _SCALAR_RE = re.compile(r"^\s+(\w+):\s*(.+?)\s*$", re.MULTILINE)
 
 
+# `curie.py::mim_curie_for_stem` escapes any character outside this set as
+# `~HEX`. Inlined rather than imported to keep the validator stdlib-only; any
+# change there must be mirrored here.
+_STEM_UNSAFE_RE = re.compile(r"[^A-Za-z0-9_\-.]")
+
+
+@lru_cache(maxsize=1)
+def _subject_to_path() -> dict[str, Path]:
+    """`MIM:<escaped stem>` -> the record file, built by escaping every stem.
+
+    Built forwards, from the filenames, because the `~HEX` escape is
+    variable-width (`f"~{ord(c):02X}"` — `02` is a *minimum*) and therefore
+    ambiguous to decode: `~3911` is `chr(0x391) + "1"`, and nothing in the
+    string says so. Encoding each real stem has no such ambiguity.
+
+    This is why the naive `subject_id[4:]` it replaces was wrong: it looked for
+    `~28R~29-lactate.yaml` when the file is `(R)-lactate.yaml`. All 19 escaped
+    subjects in the published set resolved to nothing, which silently disabled
+    Rule A's registry-corroboration tier for them and would have done the same
+    to Rule D.
+    """
+    index: dict[str, Path] = {}
+    for path in INGREDIENTS_DIR.glob("*.yaml"):
+        escaped = _STEM_UNSAFE_RE.sub(lambda m: f"~{ord(m.group(0)):02X}", path.stem)
+        index[f"MIM:{escaped}"] = path
+    return index
+
+
 def _yaml_path_for_subject(subject_id: str) -> Path:
-    """Map ``MIM:<slug>`` -> ``data/ingredients/mapped/<slug>.yaml``."""
+    """Map ``MIM:<slug>`` -> ``data/ingredients/mapped/<slug>.yaml``.
+
+    Returns the literal-stem path when the subject is not in the index, so
+    callers keep their existing "missing file" behaviour rather than raising.
+    """
+    hit = _subject_to_path().get(subject_id)
+    if hit is not None:
+        return hit
     if not subject_id.startswith("MIM:"):
         return INGREDIENTS_DIR / f"{subject_id}.yaml"
     return INGREDIENTS_DIR / f"{subject_id[4:]}.yaml"
@@ -574,6 +619,77 @@ def evaluate_rule_c(
         )
 
 
+# ---------------------------------------------------------------------------
+# Rule D — a row pointing at the record's own identifier must be exactMatch
+# ---------------------------------------------------------------------------
+_IDENTIFIER_RE = re.compile(r"^identifier:\s*(\S+)\s*$", re.MULTILINE)
+
+
+@lru_cache(maxsize=None)
+def record_identifier(subject_id: str) -> str | None:
+    """The `identifier:` of the subject's YAML, or None if unreadable.
+
+    Deliberately a regex over the top-level key rather than a YAML parse:
+    `identifier` is always a top-level scalar and this is asked once per row.
+    Tolerant of a missing file, like `has_registry_chemistry` — a subject with
+    no record is Rule B1 / #300 territory, not this rule's business.
+    """
+    try:
+        text = _yaml_path_for_subject(subject_id).read_text(encoding="utf-8")
+    except (FileNotFoundError, OSError):
+        return None
+    m = _IDENTIFIER_RE.search(text)
+    return m.group(1).strip().strip('"').strip("'") if m else None
+
+
+def evaluate_rule_d(
+    rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule D — the identity row asserts identity, so it must say exactMatch.
+
+    Every mapped record emits exactly one row whose ``object_id`` **is** the
+    record's own ``identifier``. A record whose ``identifier`` is
+    ``CHEBI:17634`` asserts "I am CHEBI:17634"; publishing that as
+    ``skos:closeMatch`` says the record is merely similar to itself.
+
+    448 rows said exactly that (#438), and the same ``mapping_quality``
+    produced both predicates: ``EXACT_MATCH`` split 1597/38, ``SYNONYM_MATCH``
+    230/11, ``CLOSE_MATCH`` 93/22, ``CAS_RN_LOOKUP`` 1/39. Meanwhile all 142
+    ``NARROW_MATCH`` identity rows were ``exactMatch`` — correctly, because the
+    narrowness describes the *ontology parent*, not the record's identity with
+    its own primary id. Exactly backwards from the 38.
+
+    Mechanism: the builder hard-codes ``exactMatch`` on the dual-emission
+    registry row, but when a record's ``identifier`` equals its ``ontology_id``
+    there is no second row — the parent row *is* the identity row, and it took
+    the quality-derived predicate. All 448 came from that path, none from
+    dual-emission.
+
+    So ``mapping_quality`` must not reach the identity row's predicate. It
+    grades the *ontology grounding*; identity with one's own primary identifier
+    is not graded, it is definitional.
+    """
+    for row_num, row in enumerate(rows, start=1):
+        predicate = (row.get("predicate_id") or "").strip()
+        if predicate == "skos:exactMatch":
+            continue
+        subject_id = (row.get("subject_id") or "").strip()
+        object_id = (row.get("object_id") or "").strip()
+        if not subject_id.startswith("MIM:") or not object_id:
+            continue
+        if record_identifier(subject_id) != object_id:
+            continue
+        yield (
+            row_num,
+            row,
+            f"Rule D: {subject_id} is published as {predicate} to "
+            f"{object_id}, which is its own `identifier`. A record is not "
+            f"merely close to itself — the identity row must be "
+            f"skos:exactMatch. mapping_quality grades the ontology grounding "
+            f"and must not reach this row's predicate (#438).",
+        )
+
+
 def main(argv: list[str]) -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument(
@@ -708,6 +824,7 @@ def main(argv: list[str]) -> int:
         _collect("Rule B4", evaluate_rule_b4(rows))
 
     _collect("Rule C", evaluate_rule_c(rows))
+    _collect("Rule D", evaluate_rule_d(rows))
 
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
@@ -724,7 +841,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, C"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(
