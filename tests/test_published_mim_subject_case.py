@@ -1,9 +1,10 @@
-"""The 62+ published `MIM:` subjects that #299 caught being silently case-mangled.
+"""Every published `MIM:` subject must resolve to a live record (#299, #236).
 
-`988029fa` realigned SSSOM subjects to their per-record filename stems. The stems
-were written by an older sanitiser that title-cases every token, so acronyms came
-out wrong -- `MIM:EDTA_Stock` became `MIM:Edta_Stock`, `MIM:P-IV_Metal_Solution`
-became `MIM:P-iv_Metal_Solution`. 64 already-published CURIEs moved.
+## What #299 was actually protecting
+
+`988029fa` realigned SSSOM subjects to their per-record filename stems. 64
+already-published CURIEs moved -- `MIM:EDTA_Stock` became `MIM:Edta_Stock`,
+`MIM:P-IV_Metal_Solution` became `MIM:P-iv_Metal_Solution`.
 
 Nothing caught it. `validate_sssom_invariants` Rule B1 lowercases the subject
 before comparing it to the registry mint, so it is blind to subject case by
@@ -11,31 +12,52 @@ construction (`test_registry_mint_is_invariant_to_subject_case` pins exactly tha
 property). Rules A/B2/B3, `reconcile_sssom`, `qc-duplicate-ids` and
 `check_flat_export_coverage` never look at the subject slug at all.
 
-And the rename produced no alias trail: `build_curie_alias_map` derives
-`mappings/mim_curie_aliases.tsv` from *git file renames* under `data/ingredients/`,
-so renaming a subject without renaming its file emits nothing.
-`docs/CURIE_STANDARD.md` section 5 tells consumers to persist `MIM:<name>` and
-resolve through that map, which would have left all 64 dangling.
+The concrete harm was never the spelling. It was that the rename produced **no
+alias trail**: `build_curie_alias_map` derived `mim_curie_aliases.tsv` from *git
+file renames*, so renaming a subject without renaming its file emitted nothing,
+and `docs/CURIE_STANDARD.md` section 5 -- which tells consumers to persist
+`MIM:<name>` and resolve through that map -- would have left all 64 dangling.
 
-The renames were reverted (#299 option 1): the published spellings stand, and the
-subject/file drift stays at the 73 cases `main` already carries until #236 decides
-whether `MIM:` slugs are paths or opaque identifiers.
+So #299 reverted, and this file used to pin the 64 published spellings as a
+literal table, holding the line until #236 decided whether `MIM:` slugs are
+paths or opaque identifiers.
 
-This test pins the published spelling of each of the 64. It is deliberately a
-literal table rather than a derived rule -- the whole failure was a rule that
-looked equivalent to the corpus and was not.
+## What changed
+
+**#236 is decided: subjects are derived from the filename stem.** That is what
+`CURIE_STANDARD.md` section 1 always said -- *"The SSSOM subject is derived from
+the ingredient YAML's filename stem ... Filenames move ... 113 changed a CURIE
+and are published as aliases."* Subjects are expected to move; the alias map is
+the designated mechanism, and `mim_curie_alias_seeds.tsv` now supplies the
+retirements git cannot derive (escaping, case-only renames on a case-insensitive
+filesystem, subjects recomputed from `preferred_term`).
+
+With the trail supplied, #299's objection is answered, so this file no longer
+pins spellings. It pins the property the spellings were standing in for: **no
+published CURIE dangles.** That is strictly stronger -- the old table only
+covered 64 known subjects, this covers all of them -- and it does not have to be
+rewritten every time a filename legitimately changes.
+
+The 64 are kept below as a regression cohort: they are the ones known to have
+moved, so they are the ones most likely to lose their alias.
 """
 
 from __future__ import annotations
 
+import csv
 from pathlib import Path
 
 import pytest
 
+from mediaingredientmech.curie import mim_curie_for_stem
+
 ROOT = Path(__file__).resolve().parent.parent
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
+ALIASES = ROOT / "mappings" / "mim_curie_aliases.tsv"
 
-# (spelling introduced by 988029fa and reverted, published spelling that stands)
+# (filename-stem spelling, spelling published before #236 was decided).
+# Both must remain resolvable; which one the SSSOM currently carries depends on
+# whether the rebuild has been promoted yet, so no test below asserts either.
 CASE_MANGLED = [
     ("MIM:84_GL_NaHCO3_Solution", "MIM:84_gL_NaHCO3_solution"),
     ("MIM:ATCC_Wolfes_Mineral_Mix", "MIM:ATCC_Wolfes_mineral_mix"),
@@ -110,20 +132,75 @@ def subjects() -> set[str]:
             if ln.startswith("MIM:")}
 
 
-@pytest.mark.parametrize("mangled,published", CASE_MANGLED,
+@pytest.fixture(scope="module")
+def aliases() -> dict[str, str]:
+    with ALIASES.open(newline="", encoding="utf-8") as f:
+        return {r["old_curie"]: r["current_curie"]
+                for r in csv.DictReader(f, delimiter="\t")}
+
+
+@pytest.fixture(scope="module")
+def live() -> set[str]:
+    return {mim_curie_for_stem(p.stem)
+            for d in ("mapped", "unmapped")
+            for p in (ROOT / "data" / "ingredients" / d).glob("*.yaml")}
+
+
+def resolve(curie: str, aliases: dict[str, str], live: set[str]) -> str | None:
+    """Follow the alias chain to a live record, or None. Cycle-safe."""
+    seen: set[str] = set()
+    cur = curie
+    while cur not in live:
+        if cur in seen or cur not in aliases:
+            return None
+        seen.add(cur)
+        cur = aliases[cur]
+    return cur
+
+
+def test_every_published_subject_resolves_to_a_live_record(subjects, aliases, live):
+    """The invariant the 64-row table was standing in for.
+
+    A subject either names a record file directly or reaches one through the
+    alias map. Anything else is a CURIE a consumer persisted that now resolves
+    to nothing -- the failure #299 reverted a rename to avoid.
+    """
+    dangling = sorted(s for s in subjects if resolve(s, aliases, live) is None)
+
+    assert not dangling, (
+        f"{len(dangling)} published MIM: subject(s) resolve to no record and have "
+        f"no alias: {dangling[:10]}. Add them to mappings/mim_curie_alias_seeds.tsv "
+        f"and re-run scripts/build_curie_alias_map.py.")
+
+
+@pytest.mark.parametrize("stem_spelling,published_spelling", CASE_MANGLED,
                          ids=[p for _, p in CASE_MANGLED])
-def test_published_subject_spelling_stands(mangled, published, subjects):
-    assert published in subjects, (
-        f"{published} has left the mapping set. It is a published CURIE; moving it "
-        f"needs an alias row in mappings/mim_curie_aliases.tsv, not a silent rewrite.")
-    assert mangled not in subjects, (
-        f"{mangled} is back. It is the filename-stem spelling, which loses the "
-        f"acronym case in {published}. See #299; #236 is still undecided.")
+def test_both_spellings_of_a_known_mover_still_resolve(
+    stem_spelling, published_spelling, aliases, live
+):
+    """Whichever spelling a consumer holds, it must still reach the record.
+
+    These 64 are the cohort known to have moved, so they are the ones whose
+    alias is most likely to be dropped by a regeneration.
+    """
+    for spelling in (stem_spelling, published_spelling):
+        assert resolve(spelling, aliases, live) is not None, (
+            f"{spelling} resolves to nothing. Both spellings of a subject that has "
+            f"moved must stay resolvable -- consumers persisted one of them.")
 
 
-def test_the_table_is_the_full_set_299_measured():
+def test_the_cohort_is_the_full_set_299_measured():
     """64 subjects moved -- 62 in the diff #299 quotes plus 2 it folds into the two
-    records promoted in the same commit. Pinning the count keeps a partial revert
-    from passing."""
+    records promoted in the same commit. Pinning the count keeps a partial
+    migration from passing."""
     assert len(CASE_MANGLED) == 64
     assert len({p for _, p in CASE_MANGLED}) == 64
+
+
+def test_no_alias_points_at_a_dead_target(aliases, live):
+    """`build_curie_alias_map` withholds dangling aliases; this pins that the
+    published map stayed that way."""
+    dead = sorted(old for old, new in aliases.items()
+                  if resolve(new, aliases, live) is None)
+
+    assert not dead, f"{len(dead)} alias target(s) resolve to no record: {dead[:10]}"
