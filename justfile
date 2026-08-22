@@ -40,6 +40,7 @@ install:
 
 # Generate LinkML dataclasses from schema
 gen-schema:
+    mkdir -p src/mediaingredientmech/datamodel
     gen-python src/mediaingredientmech/schema/mediaingredientmech.yaml > src/mediaingredientmech/datamodel/mediaingredientmech.py
 
 # Validate schema syntax
