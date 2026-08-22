@@ -1164,8 +1164,8 @@ Drift is now caught by `scripts/check_vendored_sync.sh` (dependency-free: bash +
 curl + diff, byte-exact `cmp`), run by the **`vendored-sync`** job in
 `.github/workflows/label-correspondence.yaml`. It covers **6 files** against
 `CultureBotAI/CultureMech@<scripts/.vendored_canon_ref>` — currently
-`6be694f3` — with the public `CultureMech` as the hub because the Mechs' CI is
-itself public and cannot fetch raw content from private culturebotai-claw:
+`6be694f3` — with public `CultureMech` as the hub by explicit governance choice,
+not because of a visibility constraint:
 
 `scripts/validate_id_label_correspondence.py` · `scripts/chem_formula.py` ·
 `tests/test_id_label_empty_adapter.py` · `tests/test_id_label_unknown_prefix.py` ·
@@ -1178,16 +1178,13 @@ commit **in the same PR**. The ref bump is the deliberate propagation act. The
 hub's nightly `vendored-fleet-audit.yml` is the backstop.
 
 **Settled topology — do not re-propose moving the canon into claw.** CultureMech
-is the hub by design, not as a fallback for a private claw: claw's
+is the hub by design, not as a fallback for claw: claw's
 `shared/idlabel/` is a passive *mirror* of it (claw #19). Making claw canonical
 was tried and abandoned — claw #21 enforced it (merged 2026-07-22) and claw #22
-reverted it (2026-07-25) as off-model for claw-as-mirror. claw is still private,
-but that is **not** a live blocker on anything, since the plan it blocked no
-longer exists. Two directions are covered: spokes == hub by CultureMech's
-`scripts/audit_vendored_fleet.sh` (nightly `vendored-fleet-audit.yml`), and
-mirror == hub by claw's `matches-hub` job in `id-label-canon.yaml`, which claw
-#24 (merged 2026-07-25, closes claw #23) put on a nightly schedule — it
-previously fired only on claw-side changes, so it could never see the hub move.
+reverted it (2026-07-25) as off-model for claw-as-mirror. Claw is public, but
+that does not revive the abandoned plan. The single fleet audit in claw now
+checks spokes and claw's mirrors against CultureMech; it replaced the two
+overlapping audit jobs described in the original incident chronology.
 
 **Known gap, now tracked as #160** (filed 2026-07-30): `scripts/chem_formula.py`,
 `scripts/check_vendored_sync.sh`, `scripts/.vendored_canon_ref` and the
