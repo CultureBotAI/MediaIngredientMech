@@ -865,12 +865,22 @@ Measured 2026-08-21 against MIM `62af3ebf` / claw `d70988a`:
 | published-only `(subject, object)` | 155 |
 | rebuilt-only `(subject, object)` | 102 |
 | **predicate flips on shared keys** | **0** — #409/#415 fixed this half |
+| rows sharing key+predicate but differing elsewhere | **~1,900** — see note |
 | published subjects / rebuilt subjects | 2,512 / 2,512 |
 | subjects present in one side only | **82 lost / 82 gained** |
 
 Coverage is *not* the problem. Both sides carry all 2,512 `MAPPED` records; the
 54 records the builder reports as "skipped, no supported `ontology_id` prefix"
 are exactly the 54 `REJECTED` tombstones, which is correct.
+
+> **A `(subject, object, predicate)` diff does not mean "identical row".** Of the
+> 2,783 rows that survive with the same key and predicate, roughly 1,900 differ
+> in some other column: `source` 1886, `mapping_date` 1626, `other` 682,
+> `mapping_justification` 203 (179 `LexicalMatching` → `ManualMappingCuration`),
+> `confidence` 154, `object_label` 1. Most is legitimate rebuild output, but the
+> guard was blind to all of it — a rebuild could rewrite every `object_label` and
+> still report "unchanged". Fixed in culturebotai-claw#115; the one
+> `object_label` regression it surfaced is #441.
 
 ### The finding #416 does not have: the rebuild is right and the published file is stale
 
