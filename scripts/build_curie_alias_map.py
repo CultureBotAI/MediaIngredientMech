@@ -13,6 +13,30 @@ resolves to today. Renames are chained transitively (A→B→C yields A→C and 
 and validated against the working tree, so a stale alias whose target no longer
 exists is reported rather than published.
 
+Git history is not the only way a subject is retired
+-----------------------------------------------------
+A published ``MIM:`` subject can stop resolving without any file ever being
+renamed, so ``git log --diff-filter=R`` cannot see it:
+
+* **Escaping.** ``(R)-lactate.yaml`` has always had that name, but the published
+  SSSOM carried ``MIM:(R)-lactate`` while ``mim_curie_for_stem`` produces
+  ``MIM:~28R~29-lactate``. The file never moved; the two sides disagree about
+  how to spell it, and only the escaped form satisfies ``curie.py``'s
+  ``_CURIE_RE``.
+* **Case.** ``MIM:EDTA_Stock`` vs ``Edta_Stock.yaml`` — a case-only rename on a
+  case-insensitive filesystem, which git may never have recorded.
+* **Recomputed subjects.** Several MIM writers derive the SSSOM subject from
+  ``preferred_term`` rather than the filename (#293, #307), so the published
+  file contains subjects that were never filenames at all.
+
+Those are supplied by ``mappings/mim_curie_alias_seeds.tsv`` and folded into the
+same graph as the git renames, so chaining and validation apply identically. The
+seeds file is an **input**, hand- or tooling-maintained; this script overwrites
+its output wholesale, so anything not derivable from git has to live there or it
+is silently dropped on the next run.
+
+Input:  ``mappings/mim_curie_alias_seeds.tsv``
+    old_curie  current_curie  retired_at  reason
 Output: ``mappings/mim_curie_aliases.tsv``
     old_curie  current_curie  first_seen  retired_at  chain_length
 """
@@ -28,6 +52,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 OUT_DEFAULT = REPO / "mappings" / "mim_curie_aliases.tsv"
+SEEDS_DEFAULT = REPO / "mappings" / "mim_curie_alias_seeds.tsv"
 
 # Mirrors build_mim_ingredient_sssom._mim_curie: the stem, with characters that
 # are not URL-safe percent-style escaped as ~HEX so the CURIE round-trips.
@@ -60,20 +85,51 @@ def collect_renames() -> list[tuple[str, str, str]]:
     return renames
 
 
+def collect_seeds(path: Path) -> list[tuple[str, str, str]]:
+    """[(old_curie, current_curie, iso_date)] from the seeds TSV, or [] if absent.
+
+    Seeds are retirements git cannot see (escaping, case-only renames on a
+    case-insensitive filesystem, subjects recomputed from `preferred_term`).
+    Applied after the git renames so a seed can retarget an alias whose git
+    target was itself later re-spelled.
+    """
+    if not path.exists():
+        return []
+    seeds: list[tuple[str, str, str]] = []
+    with path.open(newline="") as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            old = (row.get("old_curie") or "").strip()
+            new = (row.get("current_curie") or "").strip()
+            if not old or not new:
+                continue
+            seeds.append((old, new, (row.get("retired_at") or "").strip()))
+    return seeds
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--output", type=Path, default=OUT_DEFAULT)
+    ap.add_argument("--seeds", type=Path, default=SEEDS_DEFAULT,
+                    help="Retirements git cannot derive. Default: %(default)s")
     args = ap.parse_args()
 
     renames = collect_renames()
     print(f"rename records in history: {len(renames)}")
 
+    seeds = collect_seeds(args.seeds)
+    print(f"seeded retirements (not derivable from git): {len(seeds)}")
+
+    # One edge list, folded once: git renames first (historical), then seeds
+    # (discovered at publish time), so a seed can retarget an alias whose git
+    # target was itself later re-spelled.
+    edges = [(mim_curie(old), mim_curie(new), date) for old, new, date in renames]
+    edges += seeds
+
     # Fold the chain: each old stem points at wherever its target ended up.
     current: dict[str, str] = {}
     first_seen: dict[str, str] = {}
     retired_at: dict[str, str] = {}
-    for old, new, date in renames:
-        o, n = mim_curie(old), mim_curie(new)
+    for o, n, date in edges:
         if o == n:
             continue  # directory move only; CURIE unchanged
         # Anything that previously resolved to `o` now resolves to `n`.
