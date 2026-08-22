@@ -520,14 +520,8 @@ def _existing_sidecars(
     trajectory.
 
     Pass ``written`` (the keys this run actually wrote) to report truthfully.
-    ``written=None`` falls back to a plain disk snapshot — ``enrich_edison_response``
-    uses that mode, on the assumption that it only backfills sidecars for the
-    *same* ``task_id`` already recorded in the meta. That assumption does not
-    hold in general: a stem re-run under a new ``task_id`` can still have an
-    older run's sidecar file on disk under the same filename, and
-    ``enrich_one`` does not detect or guard against that (tracked: #429).
-    Callers that need a truthful answer across a task_id change should pass
-    ``written`` instead.
+    With ``written=None``, this returns a disk snapshot only; callers must
+    separately validate that task-specific artifacts belong to their task id.
     """
     on_disk = {
         "answer_md": (out_dir / f"{stem}.md").exists(),
