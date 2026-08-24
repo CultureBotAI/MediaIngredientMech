@@ -3,6 +3,30 @@
 These instructions apply to the whole repository. Keep changes narrow, preserve
 provenance, and do not treat generated or research output as curated truth.
 
+## Fact-based answers only
+
+Never state a comparison, count, status, or historical claim without having
+verified it in the current conversation via a tool call (`gh`, `git`, `grep`,
+`Read`, etc.). "I recall," "this is typically the case," or a prior summary
+are not verification — YAML records, SSSOM rows, and PR/issue state change
+between turns and across concurrent sessions.
+
+- Prefer a live check over memory: `gh api`/`gh pr view`/`gh issue view` over
+  a remembered issue list; `git log`/`git blame` over a recalled commit; a
+  fresh `Read` over trusting an earlier read of the same file.
+- Ingredient and mapping counts (`data/curated/*_ingredients.yaml`,
+  `mappings/ingredient_mappings.sssom.tsv`, `UNIFIED_INGREDIENT_MAPPING.tsv`)
+  are mutable and shift with every curation batch — recompute a count instead
+  of quoting one from an earlier turn or an archived report.
+- A local checkout of this repo can lag `origin/main` without warning —
+  verify against `gh api` or a fresh `git fetch`, not the working tree on
+  disk, before asserting what `main` currently contains.
+- If a claim can't be verified this session, say so ("I did not check X" /
+  "I don't know") instead of presenting a plausible guess as fact.
+- Re-verify rather than repeat: restating an earlier claim in this same
+  conversation without re-checking it is exactly the failure mode this rule
+  exists to prevent.
+
 ## Source precedence
 
 When instructions disagree, use this order:
