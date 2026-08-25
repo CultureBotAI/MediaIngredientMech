@@ -1,6 +1,6 @@
 
 
-# Class: MappingEvidence 
+# Class: MappingEvidence
 
 
 _Evidence for an ontology mapping_
@@ -20,44 +20,44 @@ URI: [mediaingredientmech:MappingEvidence](https://w3id.org/mediaingredientmech/
     class MappingEvidence
     click MappingEvidence href "../MappingEvidence/"
       MappingEvidence : cas_rn
-        
+
       MappingEvidence : confidence_score
-        
+
       MappingEvidence : doi
-        
+
       MappingEvidence : evidence_type
-        
-          
-    
-        
-        
+
+
+
+
+
         MappingEvidence --> "1" EvidenceTypeEnum : evidence_type
         click EvidenceTypeEnum href "../EvidenceTypeEnum/"
-    
 
-        
+
+
       MappingEvidence : explanation
-        
+
       MappingEvidence : notes
-        
+
       MappingEvidence : pmid
-        
+
       MappingEvidence : snippet
-        
+
       MappingEvidence : source
-        
+
       MappingEvidence : supports
-        
-          
-    
-        
-        
+
+
+
+
+
         MappingEvidence --> "0..1" EvidenceSupportEnum : supports
         click EvidenceSupportEnum href "../EvidenceSupportEnum/"
-    
 
-        
-      
+
+
+
 ```
 
 
@@ -143,6 +143,7 @@ attributes:
     rank: 1000
     domain_of:
     - MappingEvidence
+    - ComponentEvidence
     range: EvidenceTypeEnum
     required: true
   source:
@@ -153,6 +154,8 @@ attributes:
     domain_of:
     - MappingEvidence
     - IngredientSynonym
+    - SourceOccurrence
+    - ComponentEvidence
     - StockComponent
   confidence_score:
     name: confidence_score
@@ -170,11 +173,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset
@@ -188,7 +194,8 @@ attributes:
     domain_of:
     - ChemicalProperties
     - MappingEvidence
-    pattern: ^\d+-\d+-\d+$
+    - SuppliedForm
+    pattern: ^\d{2,7}-\d{2}-\d$
   pmid:
     name: pmid
     description: PubMed ID for MEDLINE citations (e.g., 12345678)
@@ -275,6 +282,7 @@ attributes:
     owner: MappingEvidence
     domain_of:
     - MappingEvidence
+    - ComponentEvidence
     range: EvidenceTypeEnum
     required: true
   source:
@@ -287,6 +295,8 @@ attributes:
     domain_of:
     - MappingEvidence
     - IngredientSynonym
+    - SourceOccurrence
+    - ComponentEvidence
     - StockComponent
     range: string
   confidence_score:
@@ -309,11 +319,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset
@@ -330,8 +343,9 @@ attributes:
     domain_of:
     - ChemicalProperties
     - MappingEvidence
+    - SuppliedForm
     range: string
-    pattern: ^\d+-\d+-\d+$
+    pattern: ^\d{2,7}-\d{2}-\d$
   pmid:
     name: pmid
     description: PubMed ID for MEDLINE citations (e.g., 12345678)

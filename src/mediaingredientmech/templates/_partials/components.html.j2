@@ -1,0 +1,43 @@
+<section id="components">
+<h2>Material components</h2>
+{% set assertion = ingredient.component_assertion or {} %}
+<dl class="kv">
+  <dt>Method</dt><dd>{{ assertion.method }}</dd>
+  <dt>Completeness</dt><dd>{{ assertion.completeness }}</dd>
+</dl>
+<table class="components">
+  <thead><tr><th>Component</th><th>Identifier</th><th>Scope</th><th>Concentration</th></tr></thead>
+  <tbody>
+  {% for component in ingredient.components %}
+    <tr>
+      <td>{{ component.component_name }}</td>
+      <td>
+        {% if component.component_id %}
+          <a href="{{ curie_to_url(component.component_id) }}" rel="nofollow noreferrer"><code>{{ component.component_id }}</code></a>
+        {% else %}<span class="muted">unmapped</span>{% endif %}
+      </td>
+      <td>{{ component.reference_scope }}</td>
+      <td>
+        {% if component.concentration_value %}
+          {{ component.concentration_value }} {{ component.concentration_unit }}
+        {% else %}<span class="muted">not stated</span>{% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% if assertion.evidence %}
+<h3>Decomposition evidence</h3>
+{% for item in assertion.evidence %}
+  <div class="evidence">
+    <div class="evidence-head">
+      <span class="badge">{{ item.evidence_type }}</span>
+      <code>{{ item.source }}</code>
+      {% if item.source_record %}<span class="muted">— {{ item.source_record }}</span>{% endif %}
+    </div>
+    {% if item.notes %}<p class="explanation">{{ item.notes }}</p>{% endif %}
+  </div>
+{% endfor %}
+{% endif %}
+{% if assertion.notes %}<p class="muted small">{{ assertion.notes }}</p>{% endif %}
+</section>

@@ -76,21 +76,44 @@ curation_history:
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
   llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: TYPED_COMPONENT_PARTONOMY
+  changes: '#369: added method/evidence/completeness and explicit reference scope
+    to 4 existing component(s) (MIM_CATALOG, UNMAPPED); constituent names, identifiers,
+    and concentrations were not changed.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:tygvs_glucose);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
 components:
 - component_name: Trypticase peptone
   component_id: MICRO:0000175
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: yeast extract
   component_id: FOODON:03315426
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: glucose
   component_id: CHEBI:17234
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: volatile fatty acid mixture (undefined)
+  reference_scope: UNMAPPED
   source: microbedecoder research decomposition (#213/#308)
+component_assertion:
+  method: ABBREVIATION_EXPANSION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: CURATED_DATASET
+    source: mappings/microbedecoder_residual_research_decomposition.tsv
+    source_record: TYGVS + Glucose
+    notes: 'Reviewed row: strategy=split, confidence=medium; Trypticase-Yeast-Glucose-VFA-Salts
+      rumen medium (Caldwell & Bryant 1966) + extra glucose. VFA mix = acetate/propionate/butyrate/isobutyrate/valerate/isovalerate;
+      no single CURIE.'
+  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:tygvs_glucose
   ontology_label: TYGVS + Glucose

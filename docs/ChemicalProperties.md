@@ -1,6 +1,6 @@
 
 
-# Class: ChemicalProperties 
+# Class: ChemicalProperties
 
 
 _Chemical structure and properties for CHEBI-mapped ingredients_
@@ -20,22 +20,22 @@ URI: [mediaingredientmech:ChemicalProperties](https://w3id.org/mediaingredientme
     class ChemicalProperties
     click ChemicalProperties href "../ChemicalProperties/"
       ChemicalProperties : cas_rn
-        
+
       ChemicalProperties : data_source
-        
+
       ChemicalProperties : inchi
-        
+
       ChemicalProperties : molecular_formula
-        
+
       ChemicalProperties : molecular_weight
-        
+
       ChemicalProperties : pubchem_cid
-        
+
       ChemicalProperties : retrieval_date
-        
+
       ChemicalProperties : smiles
-        
-      
+
+
 ```
 
 
@@ -122,7 +122,8 @@ attributes:
     domain_of:
     - ChemicalProperties
     - MappingEvidence
-    pattern: ^\d+-\d+-\d+$
+    - SuppliedForm
+    pattern: ^\d{2,7}-\d{2}-\d$
   molecular_formula:
     name: molecular_formula
     description: Molecular formula (e.g., H2O, C6H12O6)
@@ -202,8 +203,9 @@ attributes:
     domain_of:
     - ChemicalProperties
     - MappingEvidence
+    - SuppliedForm
     range: string
-    pattern: ^\d+-\d+-\d+$
+    pattern: ^\d{2,7}-\d{2}-\d$
   molecular_formula:
     name: molecular_formula
     description: Molecular formula (e.g., H2O, C6H12O6)

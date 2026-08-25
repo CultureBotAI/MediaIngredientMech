@@ -342,7 +342,8 @@ stats = get_hierarchy_statistics(all_records)
 **❌ Don't use hierarchy for:**
 - True duplicates (merge instead: "NaCl" + "sodium chloride" → merge)
 - Unrelated chemicals (use separate records)
-- Complex media (use `ingredient_type: DEFINED_MEDIUM`)
+- Complex media (use `ingredient_type: DEFINED_MEDIUM`; material membership belongs
+  in the typed [`components` partonomy](stock_components.md), not this hierarchy)
 
 ### 2. Variant Notes Best Practices
 

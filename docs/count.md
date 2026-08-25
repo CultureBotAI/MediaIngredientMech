@@ -1,11 +1,6 @@
 
 
-# Slot: count 
-
-
-_Record count for this categorized partition. Mirrors len(ingredients) when present._
-
-
+# Slot: count
 
 
 
@@ -23,6 +18,7 @@ Alias: count
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IngredientCollection](IngredientCollection.md) | Root container for all ingredient records |  no  |
+| [SourceOccurrence](SourceOccurrence.md) | An occurrence count attributed to a specific upstream source, with the source... |  no  |
 
 
 
@@ -31,7 +27,7 @@ Alias: count
 
 ## Properties
 
-* Range: [Integer](Integer.md)
+* Range: [String](String.md)
 
 
 
@@ -40,13 +36,6 @@ Alias: count
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -66,15 +55,11 @@ Alias: count
 <details>
 ```yaml
 name: count
-description: Record count for this categorized partition. Mirrors len(ingredients)
-  when present.
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: count
-owner: IngredientCollection
 domain_of:
 - IngredientCollection
-range: integer
+- SourceOccurrence
+range: string
 
 ```
 </details>

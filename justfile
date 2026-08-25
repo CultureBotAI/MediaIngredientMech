@@ -112,6 +112,13 @@ qc-flat-coverage:
 qc-duplicate-ids:
     python3 scripts/audit_duplicate_identifiers.py --check
 
+# Validate recipe/mixture has-part semantics across the authoritative catalog.
+# LinkML validates one StockComponent at a time; this gate additionally checks
+# local-vs-external reference scope, target labels, self/duplicate parts, and
+# paired concentration values/units. OAK- and network-free. Issue #369.
+qc-component-partonomy:
+    uv run python scripts/validate_component_partonomy.py
+
 schema_path := "src/mediaingredientmech/schema/mediaingredientmech.yaml"
 
 # OBO-resolvable prefixes that linkml-term-validator's `sqlite:obo:` adapter
@@ -202,7 +209,7 @@ report-label-drift:
 # `just validate-products` locally to reproduce the gate; `just report-label-drift`
 # writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
 # LinkML cross-check (one validator process per record → too slow for CI).
-qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids qc-flat-coverage check-instruction-refs check-curation-targets
+qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids qc-component-partonomy qc-flat-coverage check-instruction-refs check-curation-targets
 
 # Section 3 makes a hydration state a distinct substance, but the id-label gate
 # cannot see violations: its plausible waiver compares ontology_id against the

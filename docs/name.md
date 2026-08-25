@@ -1,6 +1,6 @@
 
 
-# Slot: name 
+# Slot: name
 
 
 
@@ -18,6 +18,7 @@ Alias: name
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [ProposedExperiment](ProposedExperiment.md) | A lightweight, domain-neutral sketch of an experiment or analysis that could ... |  no  |
+| [SuppliedForm](SuppliedForm.md) | A purchasable form of an ingredient: what a lab would physically order and re... |  no  |
 
 
 
@@ -28,8 +29,6 @@ Alias: name
 
 * Range: [String](String.md)
 
-* Recommended: True
-
 
 
 
@@ -37,13 +36,6 @@ Alias: name
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -63,14 +55,11 @@ Alias: name
 <details>
 ```yaml
 name: name
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: name
-owner: ProposedExperiment
 domain_of:
+- SuppliedForm
 - ProposedExperiment
 range: string
-recommended: true
 
 ```
 </details>

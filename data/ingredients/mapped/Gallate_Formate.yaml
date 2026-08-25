@@ -77,16 +77,40 @@ curation_history:
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
   llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: TYPED_COMPONENT_PARTONOMY
+  changes: '#369: added method/evidence/completeness and explicit reference scope
+    to 2 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names, identifiers,
+    and concentrations were not changed.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:gallate_formate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: DEFINED_MEDIUM
 components:
 - component_name: gallate
   component_id: CHEBI:16918
+  reference_scope: EXTERNAL_TERM
   source: microbedecoder research decomposition (#213/#308)
 - component_name: formate
   component_id: CHEBI:15740
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: SOURCE_LABEL
+    source: microbedecoder
+    source_record: Gallate + Formate
+    notes: The source label explicitly names every retained top-level part.
+  - evidence_type: CURATED_DATASET
+    source: mappings/microbedecoder_residual_research_decomposition.tsv
+    source_record: Gallate + Formate
+    notes: 'Reviewed row: strategy=split, confidence=high; Gallate = conjugate base
+      of gallic acid.'
+  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:gallate_formate
   ontology_label: Gallate + Formate

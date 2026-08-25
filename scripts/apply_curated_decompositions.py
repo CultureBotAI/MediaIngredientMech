@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Apply the curated microbedecoder decompositions to the records (#213/#308).
+"""RETIRED one-time application of MicrobeDecoder decompositions (#213/#308).
+
+The results were migrated to the typed component-partonomy contract in #369.
+This historical script exits before reading or writing data because rerunning it
+would strip reference scopes/evidence and recreate non-partonomic rows.
 
 `mappings/microbedecoder_residual_research_decomposition.tsv` holds 42 curated
 decompositions — `source_label`, `strategy`, and a `component_curies` column of
@@ -37,8 +41,7 @@ Records still at NEEDS_EXPERT are promoted and minted under the #288
 STOCK_SOLUTION convention. Records already minted keep their identifier and only
 their `components` are replaced.
 
-    python scripts/apply_curated_decompositions.py            # dry-run
-    python scripts/apply_curated_decompositions.py --apply
+There is no supported invocation; both dry-run and ``--apply`` fail closed.
 """
 from __future__ import annotations
 
@@ -134,6 +137,12 @@ def main(argv: list[str] | None = None) -> int:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args(argv)
+    print(
+        "error: this one-time decomposition writer is retired after the typed "
+        "component-partonomy migration (#369); no files were read or written",
+        file=sys.stderr,
+    )
+    return 2
 
     curated = {}
     with CURATED.open(encoding="utf-8") as fh:

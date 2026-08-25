@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Decompose the `A + B` microbedecoder labels into their components (#213/#308).
+"""RETIRED one-time decomposition of `A + B` MicrobeDecoder labels (#213/#308).
+
+The results were migrated to the typed component-partonomy contract in #369.
+This historical script exits before reading or writing data because its old
+component shape omits reference scope and structured evidence.
 
 37 microbedecoder labels state a composition in the label itself — `Formate+methanol`,
 `Glucose + Yeast Extract`, `Peptone + Beef Extract + Yeast Extract`. All 37 sit at
@@ -11,11 +15,9 @@ So these are not a mapping problem, they are a *decomposition* problem. Each is
 minted as a blend under the `#288` STOCK_SOLUTION convention and its constituents
 are recorded in `components`, resolved against MIM's own label index.
 
-**The label is the recipe source.** `IngredientRecord.components` requires that
-composition be populated "only from a verifiable recipe source"; here the label
-literally enumerates the constituents, so splitting on `+` transcribes rather than
-infers. Nothing is added that the label does not say — no concentrations are
-invented, and `concentration_value` is left unset because no label states one.
+**The label was the decomposition evidence.** It literally enumerates the
+constituents, so splitting on `+` transcribed rather than inferred. It was not
+evidence of a complete culturing recipe. No concentrations were invented.
 
 **Unresolved constituents keep their name and lose only their id.**
 `component_id` is optional in the schema. `Yeast + Meat Extract + H2` records all
@@ -30,8 +32,7 @@ or body fluid). `1-butanol+CO2` stays `DEFINED_MEDIUM` even though MIM has no
 `1-butanol` record: the substance is perfectly well defined, MIM simply lacks the
 record. `Glucose + Acetate` is defined; `Glucose + Yeast Extract` is not.
 
-    python scripts/decompose_substrate_combinations.py            # dry-run
-    python scripts/decompose_substrate_combinations.py --apply
+There is no supported invocation; both dry-run and ``--apply`` fail closed.
 """
 from __future__ import annotations
 
@@ -96,6 +97,12 @@ def main(argv: list[str] | None = None) -> int:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args(argv)
+    print(
+        "error: this one-time decomposition writer is retired after the typed "
+        "component-partonomy migration (#369); no files were read or written",
+        file=sys.stderr,
+    )
+    return 2
 
     idx = load_index()
     colls = {p: (yaml.safe_load(p.read_text(encoding="utf-8", errors="replace")) or {})

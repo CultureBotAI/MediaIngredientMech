@@ -184,11 +184,21 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: >-
-          Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM: the
-          list of component ingredients (with concentration where known). Lets a
-          named mixture (e.g. a trace-element or vitamin solution) be resolved to
-          its constituents. Populate only from a verifiable recipe source; leave
-          empty when the composition is unknown.
+          A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or
+          UNDEFINED_MIXTURE: the list of component ingredients (with concentration
+          where known). This is ingredient/mixture partonomy, not an identity mapping,
+          a complete culturing recipe, or the parent/child variant hierarchy. It may
+          transcribe a combination label. Populate only from verifiable evidence;
+          omit the slot when no constituent is known. When present, component_assertion
+          records how the decomposition was made and its evidence.
+      component_assertion:
+        range: ComponentAssertion
+        inlined: true
+        description: >-
+          Method and structured evidence for the record-level has-part claim carried
+          by components. Required whenever components is non-empty and forbidden when
+          components is absent; the corpus-level partonomy validator enforces that
+          cross-field invariant.
       culturemech_medium_name:
         description: >-
           Cross-reference to CultureMech medium name if this is a defined medium.
@@ -268,6 +278,27 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: Public datasets (omics/sequence/phenotype) relevant to this ingredient.
+    rules:
+      - preconditions:
+          slot_conditions:
+            components:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            component_assertion:
+              value_presence: PRESENT
+        bidirectional: true
+      - preconditions:
+          slot_conditions:
+            components:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            ingredient_type:
+              equals_string_in:
+                - STOCK_SOLUTION
+                - DEFINED_MEDIUM
+                - UNDEFINED_MIXTURE
 
   EnvironmentContext:
     description: >-
@@ -646,21 +677,70 @@ classes:
       notes:
         description: Additional context about this role assignment
 
+  ComponentAssertion:
+    description: >-
+      Provenance for one IngredientRecord.components decomposition. The method states
+      how the constituent list was derived; evidence identifies the source that can be
+      checked. It describes has-part only: a mapping or interpretation of the whole
+      record as another ingredient is an ontology-grounding claim, not a component.
+    attributes:
+      method:
+        range: ComponentMethodEnum
+        required: true
+        description: Method used to derive the constituent list.
+      completeness:
+        range: ComponentCompletenessEnum
+        required: true
+        description: Whether the cited source establishes a complete constituent list.
+      evidence:
+        range: ComponentEvidence
+        multivalued: true
+        inlined_as_list: true
+        required: true
+        description: One or more structured evidence records supporting the decomposition.
+      notes:
+        description: Additional context about the decomposition as a whole.
+
+  ComponentEvidence:
+    description: Evidence supporting an IngredientRecord.components decomposition.
+    attributes:
+      evidence_type:
+        range: ComponentEvidenceTypeEnum
+        required: true
+        description: Kind of source that supports the constituent list.
+      source:
+        required: true
+        description: >-
+          Stable source name, repository-relative path, database identifier, DOI, or URL.
+      source_record:
+        description: >-
+          Row key, recipe identifier, source label, or other locator within source.
+      notes:
+        description: Curator explanation of what the source establishes.
+
   StockComponent:
     description: >-
-      One constituent of a stock solution or defined medium recipe — a component
-      ingredient with its concentration. Used in IngredientRecord.components to
-      decompose a named mixture (e.g. a trace-element or vitamin solution) into
-      its parts. Populate only from a verifiable recipe source.
+      One constituent in an IngredientRecord.components has-part assertion. The
+      component may resolve to the current MIM catalog, deliberately name an external
+      ontology/registry term, or remain unmapped; reference_scope makes those cases
+      explicit. This class does not represent an identity mapping or variant hierarchy.
     attributes:
       component_name:
         required: true
-        description: Component ingredient name as listed in the recipe (e.g. "FeCl3 x 6 H2O").
+        description: >-
+          Component ingredient name as listed in the supporting source
+          (e.g. "FeCl3 x 6 H2O").
       component_id:
         description: >-
-          Identifier of the component when mapped to an ontology/registry term
-          (e.g. CHEBI:..., or a registry CURIE). Omit when the component is
-          unmapped. (No pattern constraint: components may be unmapped.)
+          Semantic CURIE for the component (e.g. CHEBI:..., MICRO:..., or cas:...).
+          It is not unconditionally a foreign key to one MIM row: reference_scope
+          states whether the CURIE is represented in MIM or deliberately external.
+          Omit only when reference_scope is UNMAPPED.
+        pattern: "^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$"
+      reference_scope:
+        range: ComponentReferenceScopeEnum
+        required: true
+        description: Resolution status and intended scope of component_id.
       concentration_value:
         description: >-
           Amount/concentration of the component, kept as a string to preserve the
@@ -669,9 +749,39 @@ classes:
         description: Unit for concentration_value (e.g. G_PER_L, MG_PER_L, M, MM, PERCENT).
       source:
         description: >-
-          Provenance of this component entry (e.g. a CultureMech medium ID, a
-          MediaDive solution ID, or a publication / DOI). Recording it keeps the
-          recipe verifiable rather than fabricated.
+          Legacy free-text component provenance retained for compatibility; it may
+          duplicate component_assertion.evidence. New curation should put record-level
+          decomposition method and structured evidence in component_assertion, using
+          this slot only when a part has additional component-specific provenance.
+    rules:
+      - preconditions:
+          slot_conditions:
+            reference_scope:
+              equals_string_in:
+                - MIM_CATALOG
+                - EXTERNAL_TERM
+        postconditions:
+          slot_conditions:
+            component_id:
+              value_presence: PRESENT
+      - preconditions:
+          slot_conditions:
+            reference_scope:
+              equals_string_in:
+                - UNMAPPED
+        postconditions:
+          slot_conditions:
+            component_id:
+              value_presence: ABSENT
+      - preconditions:
+          slot_conditions:
+            concentration_value:
+              value_presence: PRESENT
+        postconditions:
+          slot_conditions:
+            concentration_unit:
+              value_presence: PRESENT
+        bidirectional: true
 
 enums:
   MappingStatusEnum:
@@ -943,6 +1053,61 @@ enums:
         description: |
           Reference is incorrectly cited (placeholder for legacy data;
           flagged for cleanup)
+
+  ComponentMethodEnum:
+    description: Method used to derive an IngredientRecord.components has-part list.
+    permissible_values:
+      LABEL_ENUMERATION:
+        description: Constituents were transcribed from a source label that explicitly enumerates them.
+      ABBREVIATION_EXPANSION:
+        description: >-
+          A curator expanded an abbreviation or named blend using a reviewed curation
+          or research artifact; the parts are not all spelled out by the source label.
+      CURATED_INTERPRETATION:
+        description: >-
+          A curator established the constituent list from reviewed evidence that is
+          neither a literal label enumeration nor a direct recipe transcription.
+      RECIPE_TRANSCRIPTION:
+        description: Constituents and quantities were transcribed from a cited verified recipe.
+
+  ComponentEvidenceTypeEnum:
+    description: Kind of evidence supporting a component decomposition.
+    permissible_values:
+      SOURCE_LABEL:
+        description: The upstream label explicitly enumerates the constituents.
+      CURATED_DATASET:
+        description: A reviewed structured curation table supplies the constituents.
+      MANUAL_CURATION:
+        description: A curator established the constituent list and recorded the rationale.
+      RECIPE_SOURCE:
+        description: A cited medium or stock-solution recipe supplies the constituents.
+      PUBLICATION:
+        description: A publication supplies or directly supports the constituent list.
+
+  ComponentReferenceScopeEnum:
+    description: Resolution scope of a StockComponent.component_id.
+    permissible_values:
+      MIM_CATALOG:
+        description: >-
+          The CURIE is the primary identifier of at least one active MIM record. Because
+          the catalog still has tracked duplicate-identifier families, this denotes the
+          represented entity and is not guaranteed to select one physical YAML row.
+      EXTERNAL_TERM:
+        description: >-
+          The CURIE is a deliberate ontology or registry reference for which MIM has no
+          active record; no local record is implied or fabricated.
+      UNMAPPED:
+        description: The component is named but has no component_id.
+
+  ComponentCompletenessEnum:
+    description: Completeness of a component decomposition relative to its cited source.
+    permissible_values:
+      COMPLETE:
+        description: The source explicitly establishes that the listed constituents are complete.
+      PARTIAL:
+        description: The source explicitly indicates that additional constituents are omitted.
+      UNKNOWN:
+        description: The source does not establish whether the list is complete.
 
   NutritionalRoleEnum:
     description: >-

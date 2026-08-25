@@ -1,6 +1,6 @@
 
 
-# Slot: concentration_unit 
+# Slot: concentration_unit
 
 
 _Unit for concentration_value (e.g. G_PER_L, MG_PER_L, M, MM, PERCENT)._
@@ -22,7 +22,7 @@ Alias: concentration_unit
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StockComponent](StockComponent.md) | One constituent of a stock solution or defined medium recipe — a component in... |  no  |
+| [StockComponent](StockComponent.md) | One constituent in an IngredientRecord |  no  |
 
 
 

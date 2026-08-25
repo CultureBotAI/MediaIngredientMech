@@ -264,6 +264,24 @@
             font-size: 0.75rem;
         }
 
+        .component-summary {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .component-list {
+            display: grid;
+            gap: 0.35rem;
+            margin-top: 0.5rem;
+        }
+
+        .component-item code {
+            color: #666;
+        }
+
         .no-results {
             text-align: center;
             padding: 3rem;
@@ -314,7 +332,8 @@
           :root:not([data-theme="light"]) .ingredient-ontology,
           :root:not([data-theme="light"]) .loading{color:#b499f0;}
           :root:not([data-theme="light"]) .ingredient-meta{border-top-color:#302b40;}
-          :root:not([data-theme="light"]) .synonyms{background:#14121c;}
+          :root:not([data-theme="light"]) .synonyms,
+          :root:not([data-theme="light"]) .component-summary{background:#14121c;}
           :root:not([data-theme="light"]) .synonym-tag{background:#1e1b29;border-color:#302b40;}
           :root:not([data-theme="light"]) .badge-mapped{background:rgba(52,211,153,.15);color:#34d399;}
           :root:not([data-theme="light"]) .badge-unmapped{background:rgba(251,191,36,.15);color:#fbbf24;}
@@ -342,7 +361,8 @@
         :root[data-theme="dark"] .ingredient-ontology,
         :root[data-theme="dark"] .loading{color:#b499f0;}
         :root[data-theme="dark"] .ingredient-meta{border-top-color:#302b40;}
-        :root[data-theme="dark"] .synonyms{background:#14121c;}
+        :root[data-theme="dark"] .synonyms,
+        :root[data-theme="dark"] .component-summary{background:#14121c;}
         :root[data-theme="dark"] .synonym-tag{background:#1e1b29;border-color:#302b40;}
         :root[data-theme="dark"] .badge-mapped{background:rgba(52,211,153,.15);color:#34d399;}
         :root[data-theme="dark"] .badge-unmapped{background:rgba(251,191,36,.15);color:#fbbf24;}
@@ -361,7 +381,7 @@
                 <input type="text"
                        id="search"
                        class="search-box"
-                       placeholder="Search ingredients by name, synonym, or ontology ID...">
+                       placeholder="Search ingredients, components, synonyms, or ontology IDs...">
 
                 <div class="filters">
                     <div class="filter-group">
@@ -515,6 +535,25 @@
                         </div>
                         ` : ''}
                     </div>
+
+                    ${ing.components && ing.components.length > 0 ? `
+                        <div class="component-summary">
+                            <div class="synonyms-label">
+                                Material components (${ing.components.length})
+                                ${ing.component_assertion ? `— ${escapeHtml(ing.component_assertion.method)} / ${escapeHtml(ing.component_assertion.completeness)}` : ''}
+                            </div>
+                            <div class="component-list">
+                                ${ing.components.map(component => `
+                                    <div class="component-item">
+                                        ${escapeHtml(component.component_name)}
+                                        ${component.component_id ? `<code>${escapeHtml(component.component_id)}</code>` : '<em>unmapped</em>'}
+                                        <span class="badge">${escapeHtml(component.reference_scope)}</span>
+                                        ${component.concentration_value ? `— ${escapeHtml(component.concentration_value)} ${escapeHtml(component.concentration_unit || '')}` : ''}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
 
                     ${ing.synonyms.length > 0 ? `
                         <div class="synonyms">

@@ -1,6 +1,6 @@
 
 
-# Class: OntologyMapping 
+# Class: OntologyMapping
 
 
 _Mapping to an ontology term (CHEBI, FOODON, etc.)_
@@ -20,54 +20,54 @@ URI: [mediaingredientmech:OntologyMapping](https://w3id.org/mediaingredientmech/
     class OntologyMapping
     click OntologyMapping href "../OntologyMapping/"
       OntologyMapping : evidence
-        
-          
-    
-        
-        
+
+
+
+
+
         OntologyMapping --> "*" MappingEvidence : evidence
         click MappingEvidence href "../MappingEvidence/"
-    
 
-        
+
+
       OntologyMapping : mapping_quality
-        
-          
-    
-        
-        
+
+
+
+
+
         OntologyMapping --> "1" MappingQualityEnum : mapping_quality
         click MappingQualityEnum href "../MappingQualityEnum/"
-    
 
-        
+
+
       OntologyMapping : match_level
-        
-          
-    
-        
-        
+
+
+
+
+
         OntologyMapping --> "0..1" MatchLevelEnum : match_level
         click MatchLevelEnum href "../MatchLevelEnum/"
-    
 
-        
+
+
       OntologyMapping : ontology_id
-        
+
       OntologyMapping : ontology_label
-        
+
       OntologyMapping : ontology_source
-        
-          
-    
-        
-        
+
+
+
+
+
         OntologyMapping --> "1" OntologySourceEnum : ontology_source
         click OntologySourceEnum href "../OntologySourceEnum/"
-    
 
-        
-      
+
+
+
 ```
 
 
@@ -204,6 +204,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
     - Discussion
     - Dataset
     range: MappingEvidence
@@ -298,6 +299,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
     - Discussion
     - Dataset
     range: MappingEvidence

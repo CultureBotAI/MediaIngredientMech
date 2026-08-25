@@ -9,6 +9,7 @@ it *fails* when it should, since a gate that can only pass is worthless.
 
 import importlib.util
 import sys
+from copy import deepcopy
 from pathlib import Path
 
 import yaml
@@ -84,6 +85,36 @@ def test_identical_collections_pass(tmp_path):
     assert results["errors"] == []
 
 
+def test_nested_component_assertion_round_trips_and_scope_drift_is_caught(tmp_path):
+    vr = _load("verify_roundtrip")
+    record = _record(
+        "kgmicrobe.ingredient:test_mix",
+        "Test mix",
+        ingredient_type="DEFINED_MEDIUM",
+        components=[
+            {
+                "component_name": "alpha",
+                "component_id": "CHEBI:1",
+                "reference_scope": "MIM_CATALOG",
+            }
+        ],
+        component_assertion={
+            "method": "LABEL_ENUMERATION",
+            "completeness": "COMPLETE",
+            "evidence": [{"evidence_type": "SOURCE_LABEL", "source": "test"}],
+        },
+    )
+    original, aggregated = _pair(tmp_path, [record], [deepcopy(record)])
+    assert vr.verify_round_trip(original, aggregated)["errors"] == []
+
+    changed = deepcopy(record)
+    changed["components"][0]["reference_scope"] = "EXTERNAL_TERM"
+    drift_dir = tmp_path / "drift"
+    drift_dir.mkdir()
+    original, aggregated = _pair(drift_dir, [record], [changed])
+    assert vr.verify_round_trip(original, aggregated)["data_diffs"] == 1
+
+
 def test_per_record_only_field_is_ignored(tmp_path):
     """`discussions` lives only on per-record files by design; comparing it
     would report a permanent expected difference and make the gate useless."""
@@ -113,7 +144,9 @@ def test_single_field_drift_is_caught_with_counts_unchanged(tmp_path):
 
 def test_record_count_mismatch_is_caught(tmp_path):
     vr = _load("verify_roundtrip")
-    o, a = _pair(tmp_path, [_record("CHEBI:1", "A"), _record("CHEBI:2", "B")], [_record("CHEBI:1", "A")])
+    o, a = _pair(
+        tmp_path, [_record("CHEBI:1", "A"), _record("CHEBI:2", "B")], [_record("CHEBI:1", "A")]
+    )
 
     assert vr.verify_round_trip(o, a)["errors"]
 

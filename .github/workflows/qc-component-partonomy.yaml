@@ -1,0 +1,38 @@
+name: QC — component partonomy
+
+on:
+  pull_request:
+    paths: &trigger_paths
+      - "data/curated/mapped_ingredients.yaml"
+      - "data/curated/unmapped_ingredients.yaml"
+      - "src/mediaingredientmech/schema/mediaingredientmech.yaml"
+      - "src/mediaingredientmech/validation/component_partonomy.py"
+      - "scripts/validate_component_partonomy.py"
+      - "justfile"
+      - ".github/workflows/qc-component-partonomy.yaml"
+  push:
+    branches: [main]
+    paths: *trigger_paths
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout MIM
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # Corpus semantics only need PyYAML; no ontology database, network, or
+      # sibling checkout is involved.
+      - name: Install dependency
+        run: python3 -m pip install pyyaml
+
+      - name: Validate component partonomy
+        run: python3 scripts/validate_component_partonomy.py

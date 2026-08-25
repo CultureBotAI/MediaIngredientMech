@@ -1,6 +1,6 @@
 
 
-# Class: CommunityOrganismRoleAssignment 
+# Class: CommunityOrganismRoleAssignment
 
 
 _Assignment of an organism-in-community role with supporting evidence (e.g., which member of a consortium plays the PRIMARY_DEGRADER or SYNERGIST role)._
@@ -20,34 +20,34 @@ URI: [mediaingredientmech:CommunityOrganismRoleAssignment](https://w3id.org/medi
     class CommunityOrganismRoleAssignment
     click CommunityOrganismRoleAssignment href "../CommunityOrganismRoleAssignment/"
       CommunityOrganismRoleAssignment : confidence
-        
+
       CommunityOrganismRoleAssignment : evidence
-        
-          
-    
-        
-        
+
+
+
+
+
         CommunityOrganismRoleAssignment --> "*" RoleCitation : evidence
         click RoleCitation href "../RoleCitation/"
-    
 
-        
+
+
       CommunityOrganismRoleAssignment : metabolic_context
-        
+
       CommunityOrganismRoleAssignment : notes
-        
+
       CommunityOrganismRoleAssignment : role
-        
-          
-    
-        
-        
+
+
+
+
+
         CommunityOrganismRoleAssignment --> "1" CommunityOrganismRoleEnum : role
         click CommunityOrganismRoleEnum href "../CommunityOrganismRoleEnum/"
-    
 
-        
-      
+
+
+
 ```
 
 
@@ -165,6 +165,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
     - Discussion
     - Dataset
     range: RoleCitation
@@ -179,11 +180,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset
@@ -252,6 +256,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
     - Discussion
     - Dataset
     range: RoleCitation
@@ -268,11 +273,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset

@@ -220,6 +220,47 @@ def test_null_ontology_mapping_does_not_drop_the_record(browser_export):
     assert out["preferred_term"] == "TAPSO"
 
 
+def test_browser_export_preserves_and_indexes_component_partonomy(browser_export):
+    rec = {
+        "identifier": "kgmicrobe.ingredient:test_mix",
+        "preferred_term": "Test mix",
+        "mapping_status": "MAPPED",
+        "components": [
+            {
+                "component_name": "clarified rumen fluid",
+                "component_id": "MICRO:0000520",
+                "reference_scope": "EXTERNAL_TERM",
+            }
+        ],
+        "component_assertion": {
+            "method": "LABEL_ENUMERATION",
+            "completeness": "COMPLETE",
+            "evidence": [{"evidence_type": "SOURCE_LABEL", "source": "test"}],
+        },
+    }
+    out = browser_export.extract_ingredient_for_browser(rec, "test.yaml")
+    assert out["components"] == rec["components"]
+    assert out["component_assertion"] == rec["component_assertion"]
+    assert "clarified rumen fluid" in out["searchable"]
+    assert "micro:0000520" in out["searchable"]
+
+
+def test_browser_export_does_not_change_search_text_without_components(browser_export):
+    rec = {
+        "identifier": "CHEBI:1",
+        "preferred_term": "Test ingredient",
+        "mapping_status": "MAPPED",
+        "ontology_mapping": {
+            "ontology_id": "CHEBI:1",
+            "ontology_label": "test chemical",
+        },
+        "synonyms": [{"synonym_text": "example synonym"}],
+    }
+    out = browser_export.extract_ingredient_for_browser(rec, "test.yaml")
+    expected = "Test ingredient test chemical example synonym CHEBI:1".lower()
+    assert out["searchable"] == expected
+
+
 def test_browser_export_exits_nonzero_when_a_record_fails(tmp_path):
     """A short catalog deploys to Pages; nothing downstream notices the gap."""
     src = (ROOT / "scripts" / "browser_export.py").read_text()
@@ -234,6 +275,13 @@ def test_stale_ingredients_json_names_export_browser_not_export_lists():
     src = (ROOT / "scripts" / "check_flat_export_coverage.py").read_text()
     assert "just export-browser" in src
     assert "browser_export.py, reads data/ingredients/" in src
+
+
+def test_published_browser_renders_typed_components():
+    html = (ROOT / "docs" / "browser.html").read_text()
+    assert "ing.components" in html
+    assert "component.reference_scope" in html
+    assert "Material components" in html
 
 
 # --- label_index.csv: per-label resolution with precedence (#232) -----------

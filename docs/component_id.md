@@ -1,9 +1,9 @@
 
 
-# Slot: component_id 
+# Slot: component_id
 
 
-_Identifier of the component when mapped to an ontology/registry term (e.g. CHEBI:..., or a registry CURIE). Omit when the component is unmapped. (No pattern constraint: components may be unmapped.)_
+_Semantic CURIE for the component (e.g. CHEBI:..., MICRO:..., or cas:...). It is not unconditionally a foreign key to one MIM row: reference_scope states whether the CURIE is represented in MIM or deliberately external. Omit only when reference_scope is UNMAPPED._
 
 
 
@@ -22,7 +22,7 @@ Alias: component_id
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StockComponent](StockComponent.md) | One constituent of a stock solution or defined medium recipe — a component in... |  no  |
+| [StockComponent](StockComponent.md) | One constituent in an IngredientRecord |  no  |
 
 
 
@@ -32,6 +32,8 @@ Alias: component_id
 ## Properties
 
 * Range: [String](String.md)
+
+* Regex pattern: `^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$`
 
 
 
@@ -66,9 +68,10 @@ Alias: component_id
 <details>
 ```yaml
 name: component_id
-description: 'Identifier of the component when mapped to an ontology/registry term
-  (e.g. CHEBI:..., or a registry CURIE). Omit when the component is unmapped. (No
-  pattern constraint: components may be unmapped.)'
+description: 'Semantic CURIE for the component (e.g. CHEBI:..., MICRO:..., or cas:...).
+  It is not unconditionally a foreign key to one MIM row: reference_scope states whether
+  the CURIE is represented in MIM or deliberately external. Omit only when reference_scope
+  is UNMAPPED.'
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 alias: component_id
@@ -76,6 +79,7 @@ owner: StockComponent
 domain_of:
 - StockComponent
 range: string
+pattern: ^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$
 
 ```
 </details>

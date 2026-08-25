@@ -78,22 +78,43 @@ curation_history:
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
   llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: TYPED_COMPONENT_PARTONOMY
+  changes: '#369: added method/evidence/completeness and explicit reference scope
+    to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names, identifiers,
+    and concentrations were not changed.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_rumen_fluid);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
 components:
 - component_name: peptone
   component_id: MICRO:0000178
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: yeast extract
   component_id: FOODON:03315426
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: glucose
   component_id: CHEBI:17234
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: clarified rumen fluid
   component_id: MICRO:0000520
+  reference_scope: EXTERNAL_TERM
   source: microbedecoder research decomposition (#213/#308)
+component_assertion:
+  method: ABBREVIATION_EXPANSION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: CURATED_DATASET
+    source: mappings/microbedecoder_residual_research_decomposition.tsv
+    source_record: PYG + Rumen Fluid
+    notes: 'Reviewed row: strategy=split, confidence=high; PYG + rumen fluid supplement.'
+  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:pyg_rumen_fluid
   ontology_label: PYG + Rumen Fluid

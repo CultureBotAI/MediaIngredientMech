@@ -1,6 +1,6 @@
 
 
-# Class: IngredientSynonym 
+# Class: IngredientSynonym
 
 
 _Alternative name or raw text variant for an ingredient_
@@ -20,23 +20,23 @@ URI: [mediaingredientmech:IngredientSynonym](https://w3id.org/mediaingredientmec
     class IngredientSynonym
     click IngredientSynonym href "../IngredientSynonym/"
       IngredientSynonym : occurrence_count
-        
+
       IngredientSynonym : source
-        
+
       IngredientSynonym : synonym_text
-        
+
       IngredientSynonym : synonym_type
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientSynonym --> "0..1" SynonymTypeEnum : synonym_type
         click SynonymTypeEnum href "../SynonymTypeEnum/"
-    
 
-        
-      
+
+
+
 ```
 
 
@@ -132,6 +132,8 @@ attributes:
     domain_of:
     - MappingEvidence
     - IngredientSynonym
+    - SourceOccurrence
+    - ComponentEvidence
     - StockComponent
   occurrence_count:
     name: occurrence_count
@@ -183,6 +185,8 @@ attributes:
     domain_of:
     - MappingEvidence
     - IngredientSynonym
+    - SourceOccurrence
+    - ComponentEvidence
     - StockComponent
     range: string
   occurrence_count:

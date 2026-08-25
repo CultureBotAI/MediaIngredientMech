@@ -1,6 +1,6 @@
 
 
-# Slot: source 
+# Slot: source
 
 
 
@@ -17,9 +17,11 @@ Alias: source
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [IngredientSynonym](IngredientSynonym.md) | Alternative name or raw text variant for an ingredient |  no  |
-| [StockComponent](StockComponent.md) | One constituent of a stock solution or defined medium recipe — a component in... |  no  |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [StockComponent](StockComponent.md) | One constituent in an IngredientRecord |  no  |
+| [SourceOccurrence](SourceOccurrence.md) | An occurrence count attributed to a specific upstream source, with the source... |  no  |
+| [ComponentEvidence](ComponentEvidence.md) | Evidence supporting an IngredientRecord |  no  |
 
 
 
@@ -60,6 +62,8 @@ alias: source
 domain_of:
 - MappingEvidence
 - IngredientSynonym
+- SourceOccurrence
+- ComponentEvidence
 - StockComponent
 range: string
 

@@ -855,6 +855,33 @@ if the rule needs additional inputs (it usually does not).
 
 ---
 
+## 6. Component partonomy is not identity or variant hierarchy
+
+`IngredientRecord.components` asserts one-level material **has-part** relations for
+a medium or mixture. A component CURIE identifies the part; it never identifies the
+whole record. Therefore:
+
+- do not ground a mixture to one component's CURIE or copy one component's CAS-RN
+  onto the mixture — that would assert that the whole *is* the part;
+- do not translate a component edge into `skos:exactMatch`, `closeMatch`,
+  `narrowMatch`, or `broadMatch`; those predicates describe grounding of the whole;
+- do not use `parent_ingredient` / `child_ingredients` for mixture membership;
+  that hierarchy is reserved for chemical-form variants such as hydrates,
+  stereoisomers, salts, and purity forms;
+- do not infer a complete culturing recipe from a component list. Completeness is
+  explicit in `component_assertion` and is relative to its cited evidence.
+
+`components[].reference_scope` states whether the part identity is represented by
+at least one active MIM record (`MIM_CATALOG`), deliberately remains an external
+ontology/registry CURIE (`EXTERNAL_TERM`), or is named but ungrounded (`UNMAPPED`).
+It is not a unique document key: duplicate-identifier families remain a separately
+tracked catalog defect.
+
+See `docs/stock_components.md` and run `just qc-component-partonomy` for the full
+shape and cross-record invariants.
+
+---
+
 ## See also
 
 - `scripts/validate_sssom_invariants.py` — the validator that enforces
@@ -863,3 +890,4 @@ if the rule needs additional inputs (it usually does not).
 - `mappings/needs_curator_review.tsv` — triage queue for rejected rows.
 - `docs/CURATION_GUIDE.md` — broader curation workflow (this file is
   scoped to mapping semantics specifically).
+- `docs/stock_components.md` — typed ingredient/mixture partonomy contract.

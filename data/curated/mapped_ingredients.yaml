@@ -1,4 +1,4 @@
-generation_date: '2026-08-07T06:56:58.113846+00:00'
+generation_date: '2026-08-25T07:05:30.758293+00:00'
 total_count: 2566
 mapped_count: 2512
 unmapped_count: 0
@@ -493,16 +493,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:1_butanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: butan-1-ol
     component_id: CHEBI:28885
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: carbon dioxide
     component_id: CHEBI:16526
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: 1-butanol+CO2
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: 1-butanol+CO2
+      notes: 'Reviewed row: strategy=split, confidence=high; Alcohol donor + CO2 acceptor.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:1_butanol_co2
     ontology_label: 1-butanol+CO2
@@ -598,16 +621,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:1_propanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: propan-1-ol
     component_id: CHEBI:28831
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: carbon dioxide
     component_id: CHEBI:16526
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: 1-propanol+CO2
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: 1-propanol+CO2
+      notes: 'Reviewed row: strategy=split, confidence=high; Alcohol donor + CO2 acceptor.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:1_propanol_co2
     ontology_label: 1-propanol+CO2
@@ -702,16 +748,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:2_butanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: butan-2-ol
     component_id: CHEBI:35687
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
   - component_name: carbon dioxide
     component_id: CHEBI:16526
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: 2-butanol+CO2
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: 2-butanol+CO2
+      notes: 'Reviewed row: strategy=split, confidence=high; Secondary-alcohol donor
+        + CO2 acceptor.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:2_butanol_co2
     ontology_label: 2-butanol+CO2
@@ -805,16 +875,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:2_propanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: propan-2-ol
     component_id: CHEBI:17824
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: carbon dioxide
     component_id: CHEBI:16526
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: 2-propanol+CO2
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: 2-propanol+CO2
+      notes: 'Reviewed row: strategy=split, confidence=high; Isopropanol donor + CO2
+        acceptor.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:2_propanol_co2
     ontology_label: 2-propanol+CO2
@@ -985,12 +1079,16 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: REMOVED_NON_PARTONOMIC_COMPONENTS
+    changes: '#369: BHI to MICRO:0000193 brain heart infusion is a whole-medium identity/alias
+      claim, not a has-part edge. The component was removed; identity cleanup must
+      be handled separately. Replaced the active mapping evidence that described the
+      false component claim; registry identity and ingredient type were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
-  components:
-  - component_name: brain heart infusion
-    component_id: MICRO:0000193
-    source: microbedecoder research decomposition (#213/#308)
   ingredient_type: UNDEFINED_MIXTURE
   culturemech_medium_name: BHI
   ontology_mapping:
@@ -1000,18 +1098,11 @@ ingredients:
     mapping_quality: FALLBACK_REGISTRY
     evidence:
     - evidence_type: MANUAL_CURATION
-      source: MIM curation (#213/#308)
-      notes: 'Components taken from the curated microbedecoder research decomposition
-        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium):
-        it is a named medium and these are what the recipe contains. 1 constituent(s),
-        1 carrying an identifier. That file was produced by the research pass and
-        never written into the records; this applies it. It resolves constituents
-        a label split cannot — abbreviations such as PY, and named media such as BHI,
-        state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
-        are recorded: the curated row states none. Cross-referenced to CultureMech
-        medium CultureMech:015492 (''BHI'') via culturemech_medium_name, verified
-        by COMPOSITION not by name: composition Beef heart + Calf brains + Proteose
-        Peptone + Disodium phosphate + Sodium Chloride is brain heart infusion.'
+      source: MIM curation (#369)
+      notes: 'Registry identity retained while the whole-record grounding is reviewed
+        separately. Corrected prior active evidence: BHI to MICRO:0000193 brain heart
+        infusion is a whole-medium identity/alias claim, not a has-part edge. The
+        component was removed; identity cleanup must be handled separately.'
 - identifier: CHEBI:41189
   preferred_term: Butane-1,4-diol
   synonyms:
@@ -1191,22 +1282,44 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: carboxymethylcellulose
     component_id: CHEBI:85146
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: horse serum
     component_id: MICRO:0001235
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: CMC + PY + Horse Serum
+      notes: 'Reviewed row: strategy=split, confidence=high; Cellulolytic-anaerobe
+        medium; CMC carbon source in PY base + horse serum.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:cmc_py_horse_serum
     ontology_label: CMC + PY + Horse Serum
@@ -1300,19 +1413,44 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:casitone_yeast_extract_rumen_fluid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: casitone
     component_id: MICRO:0000606
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: clarified rumen fluid
     component_id: MICRO:0000520
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Casitone + Yeast Extract + Rumen Fluid
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Casitone + Yeast Extract + Rumen Fluid
+      notes: 'Reviewed row: strategy=split, confidence=high; Undefined rumen-anaerobe
+        base.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid
     ontology_label: Casitone + Yeast Extract + Rumen Fluid
@@ -1407,19 +1545,45 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:corn_steep_liquor_glucose_fumarate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: corn steep liquor
     component_id: cas:66071-94-1
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: fumaric acid
     component_id: CHEBI:18012
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Corn Steep Liquor + Glucose + Fumarate
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Corn Steep Liquor + Glucose + Fumarate
+      notes: 'Reviewed row: strategy=split, confidence=high; Corn steep liquor has
+        no FOODON/CHEBI term (use CAS or mint kgmicrobe.compound). Fumarate: CHEBI:18012
+        acid (or CHEBI:115156 disodium fumarate if Na2 salt).'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate
     ontology_label: Corn Steep Liquor + Glucose + Fumarate
@@ -1518,16 +1682,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:cyclopentanol_co2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: cyclopentanol
     component_id: CHEBI:16133
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
   - component_name: carbon dioxide
     component_id: CHEBI:16526
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Cyclopentanol+CO2
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: cyclopentanol+CO2
+      notes: 'Reviewed row: strategy=split, confidence=high; Alcohol donor + CO2 acceptor.
+        Single-compound cyclopentanol CHEBI:16133 (not class CHEBI:23495).'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:cyclopentanol_co2
     ontology_label: Cyclopentanol+CO2
@@ -1615,15 +1803,34 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_ferric_citrate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: esculin
     component_id: CHEBI:4853
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: iron(III) citrate
     component_id: CHEBI:144421
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Esculin Ferric Citrate
+      notes: The source label explicitly names every retained top-level part.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: DEFINED_MEDIUM
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:esculin_ferric_citrate
@@ -1794,21 +2001,44 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:fastidious_anaerobe_broth_with_meat_granules);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: meat (cooked)
     component_id: FOODON:03305103
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: starch
     component_id: CHEBI:28017
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: CURATED_INTERPRETATION
+    completeness: PARTIAL
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Fastidious Anaerobe Broth With Meat Granules
+      notes: 'Reviewed row: strategy=map_to_medium, confidence=medium; FAB (LabM/Neogen)
+        commercial rich medium + cooked-meat granules. Best as complex medium; no
+        single component captures it.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules
@@ -1894,12 +2124,16 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: REMOVED_NON_PARTONOMIC_COMPONENTS
+    changes: '#369: Clarified rumen fluid is a related source material/interpretation,
+      not an asserted physical constituent of fermented rumen extract. Replaced the
+      active mapping evidence that described the false component claim; registry identity
+      and ingredient type were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:fermented_rumen_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-  components:
-  - component_name: clarified rumen fluid
-    component_id: MICRO:0000520
-    source: microbedecoder research decomposition (#213/#308)
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:fermented_rumen_extract
@@ -1908,15 +2142,11 @@ ingredients:
     mapping_quality: FALLBACK_REGISTRY
     evidence:
     - evidence_type: MANUAL_CURATION
-      source: MIM curation (#213/#308)
-      notes: 'Components taken from the curated microbedecoder research decomposition
-        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_ingredient):
-        it resolves to a single named ingredient. 1 constituent(s), 1 carrying an
-        identifier. That file was produced by the research pass and never written
-        into the records; this applies it. It resolves constituents a label split
-        cannot — abbreviations such as PY, and named media such as BHI, state no composition
-        to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded:
-        the curated row states none.'
+      source: MIM curation (#369)
+      notes: 'Registry identity retained while the whole-record grounding is reviewed
+        separately. Corrected prior active evidence: Clarified rumen fluid is a related
+        source material/interpretation, not an asserted physical constituent of fermented
+        rumen extract.'
 - identifier: kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate
   preferred_term: Formate+3-methyl Mercaptopropionate
   synonyms:
@@ -1998,16 +2228,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_3_methyl_mercaptopropionate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: formate
     component_id: CHEBI:15740
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: 3-(methylthio)propionic acid
     component_id: CHEBI:1438
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Formate+3-methyl Mercaptopropionate
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Formate + 3-methyl mercaptopropionate
+      notes: 'Reviewed row: strategy=split, confidence=medium; Same anion-vs-acid
+        caveat as H2 pair.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate
     ontology_label: Formate+3-methyl Mercaptopropionate
@@ -2107,16 +2361,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_dimethylsulfide);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: formate
     component_id: CHEBI:15740
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: dimethyl sulfide
     component_id: CHEBI:17437
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Formate+dimethylsulfide
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Formate + dimethylsulfide
+      notes: 'Reviewed row: strategy=split, confidence=high; Formate donor + DMS.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:formate_dimethylsulfide
     ontology_label: Formate+dimethylsulfide
@@ -2210,16 +2487,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_methanol);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: formate
     component_id: CHEBI:15740
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: methanol
     component_id: CHEBI:17790
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Formate+methanol
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Formate + methanol
+      notes: 'Reviewed row: strategy=split, confidence=high; Formate donor + methanol.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:formate_methanol
     ontology_label: Formate+methanol
@@ -2314,16 +2614,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_tetramethylammonium);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: formate
     component_id: CHEBI:15740
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: tetramethylammonium
     component_id: CHEBI:46020
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Formate+tetramethylammonium
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Formate + tetramethylammonium
+      notes: 'Reviewed row: strategy=split, confidence=high; Formate donor + tetramethylammonium.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:formate_tetramethylammonium
     ontology_label: Formate+tetramethylammonium
@@ -2417,16 +2740,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_trimethylamine);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: formate
     component_id: CHEBI:15740
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: trimethylamine
     component_id: CHEBI:18139
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Formate+trimethylamine
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Formate + trimethylamine
+      notes: 'Reviewed row: strategy=split, confidence=high; Formate donor + TMA.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:formate_trimethylamine
     ontology_label: Formate+trimethylamine
@@ -2514,21 +2860,43 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: starch
     component_id: CHEBI:28017
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: GYPS
+      notes: 'Reviewed row: strategy=split, confidence=medium; Glucose-Yeast-Peptone
+        (DSMZ Medium 852) + Salts (or Starch). Same set as PYG family, reordered.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   culturemech_medium_name: gyps_medium
   ontology_mapping:
@@ -2630,16 +2998,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:gallate_formate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: gallate
     component_id: CHEBI:16918
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
   - component_name: formate
     component_id: CHEBI:15740
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Gallate + Formate
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Gallate + Formate
+      notes: 'Reviewed row: strategy=split, confidence=high; Gallate = conjugate base
+        of gallic acid.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:gallate_formate
     ontology_label: Gallate + Formate
@@ -2734,16 +3126,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_acetate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: acetate
     component_id: CHEBI:30089
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Glucose + Acetate
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Glucose + Acetate
+      notes: 'Reviewed row: strategy=split, confidence=high; Two carbon substrates.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:glucose_acetate
     ontology_label: Glucose + Acetate
@@ -2837,25 +3252,52 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 5 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_cellobiose_starch_trypticase_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: cellobiose
     component_id: CHEBI:17057
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: starch
     component_id: CHEBI:28017
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: Trypticase peptone
     component_id: MICRO:0000175
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Glucose + Cellobiose + Starch + Trypticase + Yeast Extract
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Glucose + Cellobiose + Starch + Trypticase + Yeast Extract
+      notes: 'Reviewed row: strategy=split, confidence=high; GSC/M2GSC-type rumen/cellulolytic
+        carbohydrate blend.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract
     ontology_label: Glucose + Cellobiose + Starch + Trypticase + Yeast Extract
@@ -2953,16 +3395,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_formate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: formate
     component_id: CHEBI:15740
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Glucose + Formate
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Glucose + Formate
+      notes: 'Reviewed row: strategy=split, confidence=high; Two substrates.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:glucose_formate
     ontology_label: Glucose + Formate
@@ -3056,16 +3521,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_lactate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: lactate
     component_id: CHEBI:24996
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Glucose + Lactate
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Glucose + Lactate
+      notes: 'Reviewed row: strategy=split, confidence=high; Two substrates.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:glucose_lactate
     ontology_label: Glucose + Lactate
@@ -3152,6 +3640,13 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 5 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_maltose_cellobiose_starch_glycerol);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
@@ -3159,18 +3654,33 @@ ingredients:
   - component_name: Glucose
     source: MIM label decomposition (#213/#308)
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
   - component_name: Maltose
     source: MIM label decomposition (#213/#308)
     component_id: CHEBI:17306
+    reference_scope: MIM_CATALOG
   - component_name: Cellobiose
     source: MIM label decomposition (#213/#308)
     component_id: CHEBI:17057
+    reference_scope: MIM_CATALOG
   - component_name: Starch
     source: MIM label decomposition (#213/#308)
     component_id: CHEBI:28017
+    reference_scope: MIM_CATALOG
   - component_name: Glycerol
     source: MIM label decomposition (#213/#308)
     component_id: CHEBI:17754
+    reference_scope: MIM_CATALOG
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Glucose + Maltose + Cellobiose + Starch + Glycerol
+      notes: The source label explicitly names every retained top-level part.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol
     ontology_label: Glucose + Maltose + Cellobiose + Starch + Glycerol
@@ -3252,18 +3762,42 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_peptone_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Glucose Peptone-yeast Extract
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Glucose Peptone-yeast Extract
+      notes: 'Reviewed row: strategy=split, confidence=high; PYG-family reordering.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:glucose_peptone_yeast_extract
@@ -3358,16 +3892,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_xylose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: xylose
     component_id: CHEBI:18222
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Glucose + Xylose
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Glucose + Xylose
+      notes: 'Reviewed row: strategy=split, confidence=high; Two sugars.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:glucose_xylose
     ontology_label: Glucose + Xylose
@@ -3450,6 +4007,13 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -3457,9 +4021,21 @@ ingredients:
   - component_name: Glucose
     source: MIM label decomposition (#213/#308)
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
   - component_name: Yeast Extract
     source: MIM label decomposition (#213/#308)
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Glucose + Yeast Extract
+      notes: The source label explicitly names every retained top-level part.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:glucose_yeast_extract
     ontology_label: Glucose + Yeast Extract
@@ -3559,16 +4135,41 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_3_methyl_mercaptopropionate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: dihydrogen
     component_id: CHEBI:18276
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: 3-(methylthio)propionic acid
     component_id: CHEBI:1438
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: H2+3-methyl Mercaptopropionate
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: H2 + 3-methyl mercaptopropionate
+      notes: 'Reviewed row: strategy=split, confidence=medium; MMPA (DMSP demethylation
+        product). CHEBI:1438 is acid form; label is anion (no distinct anion entry
+        located).'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:h2_3_methyl_mercaptopropionate
     ontology_label: H2+3-methyl Mercaptopropionate
@@ -3664,16 +4265,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_co2); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: dihydrogen
     component_id: CHEBI:18276
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: carbon dioxide
     component_id: CHEBI:16526
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: H2 + CO2
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: H2 + CO2
+      notes: 'Reviewed row: strategy=split, confidence=high; Hydrogenotrophic-methanogen
+        donor/acceptor pair.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:h2_co2
     ontology_label: H2 + CO2
@@ -3769,16 +4394,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_dimethylsulfide);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: dihydrogen
     component_id: CHEBI:18276
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: dimethyl sulfide
     component_id: CHEBI:17437
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: H2+dimethylsulfide
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: H2 + dimethylsulfide
+      notes: 'Reviewed row: strategy=split, confidence=high; H2 donor + DMS methylated
+        substrate.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:h2_dimethylsulfide
     ontology_label: H2+dimethylsulfide
@@ -3872,16 +4521,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_methanol);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: dihydrogen
     component_id: CHEBI:18276
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: methanol
     component_id: CHEBI:17790
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: H2+methanol
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: H2 + methanol
+      notes: 'Reviewed row: strategy=split, confidence=high; H2 donor + methanol methylotrophic
+        substrate.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:h2_methanol
     ontology_label: H2+methanol
@@ -3977,16 +4650,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_tetramethylammonium);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: dihydrogen
     component_id: CHEBI:18276
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: tetramethylammonium
     component_id: CHEBI:46020
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: H2+tetramethylammonium
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: H2 + tetramethylammonium
+      notes: 'Reviewed row: strategy=split, confidence=high; H2 donor + quaternary-amine
+        methylotrophic substrate.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:h2_tetramethylammonium
     ontology_label: H2+tetramethylammonium
@@ -4079,16 +4776,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_trimethylamine);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: DEFINED_MEDIUM
   components:
   - component_name: dihydrogen
     component_id: CHEBI:18276
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: trimethylamine
     component_id: CHEBI:18139
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: H2+trimethylamine
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: H2 + trimethylamine
+      notes: 'Reviewed row: strategy=split, confidence=high; H2 donor + TMA methylated
+        substrate.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:h2_trimethylamine
     ontology_label: H2+trimethylamine
@@ -4171,12 +4892,32 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 1 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:modified_cooked_meat_medium);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: meat (cooked)
     component_id: FOODON:03305103
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: CURATED_INTERPRETATION
+    completeness: PARTIAL
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Modified Cooked Meat Medium
+      notes: 'Reviewed row: strategy=map_to_medium, confidence=high; Robertson''s
+        cooked-meat anaerobe medium; repo ''Cooked meat medium'' already grounds to
+        FOODON:03305103. Undefined parts: beef-heart granules, peptone, glucose.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:modified_cooked_meat_medium
@@ -4259,15 +5000,16 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: REMOVED_NON_PARTONOMIC_COMPONENTS
+    changes: '#369: Monosaccharide and disaccharide are category members named by
+      a coordinated class label, not physical constituents of a mixture. Replaced
+      the active mapping evidence that described the false component claim; registry
+      identity and ingredient type were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:mono_and_disaccharides);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
-  components:
-  - component_name: monosaccharide
-    component_id: CHEBI:35381
-    source: MIM curation (#213/#308)
-  - component_name: disaccharide
-    component_id: CHEBI:36233
-    source: MIM curation (#213/#308)
   ingredient_type: DEFINED_MEDIUM
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:mono_and_disaccharides
@@ -4276,12 +5018,11 @@ ingredients:
     mapping_quality: FALLBACK_REGISTRY
     evidence:
     - evidence_type: MANUAL_CURATION
-      source: MIM curation (#213/#308)
-      notes: 'Decomposed into 2 constituents: the label names two ChEBI classes, so
-        it decomposes into them rather than grounding to either. Minted under the
-        #288 STOCK_SOLUTION convention because no ontology term denotes the blend
-        itself. ingredient_type=DEFINED_MEDIUM. No concentrations recorded — the label
-        states none.'
+      source: MIM curation (#369)
+      notes: 'Registry identity retained while the whole-record grounding is reviewed
+        separately. Corrected prior active evidence: Monosaccharide and disaccharide
+        are category members named by a coordinated class label, not physical constituents
+        of a mixture.'
 - identifier: kgmicrobe.ingredient:py_cellobiose
   preferred_term: PY-cellobiose
   synonyms:
@@ -4352,18 +5093,38 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_cellobiose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: cellobiose
     component_id: CHEBI:17057
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: scripts/decompose_py_media_and_ground_categories.py
+      source_record: PY-cellobiose
+      notes: The checked-in curation script records this expansion explicitly.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:py_cellobiose
@@ -4450,18 +5211,38 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_fructose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: fructose
     component_id: CHEBI:28757
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: scripts/decompose_py_media_and_ground_categories.py
+      source_record: PY-fructose
+      notes: The checked-in curation script records this expansion explicitly.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:py_fructose
@@ -4544,21 +5325,44 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_glucose_rumen_fluid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: clarified rumen fluid
     component_id: MICRO:0000520
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: PY-glucose-rumen Fluid
+      notes: 'Reviewed row: strategy=split, confidence=high; PY base + glucose + clarified
+        rumen fluid. Rumen fluid: MICRO:0000520 (broadMatch) / UBERON:0010228 ruminal
+        fluid; no exact term.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:py_glucose_rumen_fluid
@@ -4645,18 +5449,38 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_maltose); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: maltose
     component_id: CHEBI:17306
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: scripts/decompose_py_media_and_ground_categories.py
+      source_record: PY-maltose
+      notes: The checked-in curation script records this expansion explicitly.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:py_maltose
@@ -4740,18 +5564,38 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_pectin); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: pectin
     component_id: CHEBI:17309
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: scripts/decompose_py_media_and_ground_categories.py
+      source_record: PY-pectin
+      notes: The checked-in curation script records this expansion explicitly.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:py_pectin
@@ -4832,18 +5676,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyeg); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: PYEG
+      notes: 'Reviewed row: strategy=split, confidence=high; Peptone-Yeast Extract-Glucose;
+        same composition as PYG.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:pyeg
@@ -4932,21 +5797,42 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_0_02_tween_80);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: polysorbate 80
     component_id: CHEBI:53426
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: scripts/decompose_py_media_and_ground_categories.py
+      source_record: PYG-0.02% Tween 80
+      notes: The checked-in curation script records this expansion explicitly.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:pyg_0_02_tween_80
@@ -5031,18 +5917,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: PYG
+      notes: 'Reviewed row: strategy=split, confidence=high; Peptone-Yeast extract-Glucose
+        (VPI/DSMZ Medium 104 family). Undefined biologicals carry own terms.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:pyg
@@ -5124,21 +6031,43 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pygs); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: starch
     component_id: CHEBI:28017
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: PYGS
+      notes: 'Reviewed row: strategy=split, confidence=medium; PYG + mineral Salts
+        (usually); ''S'' occasionally soluble Starch (CHEBI:28017). Ambiguity flagged.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:pygs
@@ -5236,22 +6165,43 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
+      identifiers, and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_rumen_fluid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: clarified rumen fluid
     component_id: MICRO:0000520
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: PYG + Rumen Fluid
+      notes: 'Reviewed row: strategy=split, confidence=high; PYG + rumen fluid supplement.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:pyg_rumen_fluid
     ontology_label: PYG + Rumen Fluid
@@ -5337,18 +6287,42 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_yeast_extract_glucose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: peptone
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Peptone-yeast Extract-glucose
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Peptone-yeast Extract-glucose
+      notes: 'Reviewed row: strategy=split, confidence=high; Full spelling of PYG.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:peptone_yeast_extract_glucose
@@ -5433,6 +6407,13 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_beef_extract_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -5440,12 +6421,25 @@ ingredients:
   - component_name: Peptone
     source: MIM label decomposition (#213/#308)
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
   - component_name: Beef Extract
     source: MIM label decomposition (#213/#308)
     component_id: FOODON:03302088
+    reference_scope: MIM_CATALOG
   - component_name: Yeast Extract
     source: MIM label decomposition (#213/#308)
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Peptone + Beef Extract + Yeast Extract
+      notes: The source label explicitly names every retained top-level part.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:peptone_beef_extract_yeast_extract
     ontology_label: Peptone + Beef Extract + Yeast Extract
@@ -5526,6 +6520,13 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:peptone_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -5533,9 +6534,21 @@ ingredients:
   - component_name: Peptone
     source: MIM label decomposition (#213/#308)
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
   - component_name: Yeast Extract
     source: MIM label decomposition (#213/#308)
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Peptone + Yeast Extract
+      notes: The source label explicitly names every retained top-level part.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:peptone_yeast_extract
     ontology_label: Peptone + Yeast Extract
@@ -5711,16 +6724,39 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:sucrose_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: sucrose
     component_id: CHEBI:17992
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Sucrose + Yeast Extract
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Sucrose + Yeast Extract
+      notes: 'Reviewed row: strategy=split, confidence=high; Sucrose + yeast extract.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:sucrose_yeast_extract
     ontology_label: Sucrose + Yeast Extract
@@ -5903,21 +6939,44 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 4 existing component(s) (MIM_CATALOG, UNMAPPED); constituent names, identifiers,
+      and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:tygvs_glucose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: Trypticase peptone
     component_id: MICRO:0000175
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: volatile fatty acid mixture (undefined)
+    reference_scope: UNMAPPED
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: ABBREVIATION_EXPANSION
+    completeness: UNKNOWN
+    evidence:
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: TYGVS + Glucose
+      notes: 'Reviewed row: strategy=split, confidence=medium; Trypticase-Yeast-Glucose-VFA-Salts
+        rumen medium (Caldwell & Bryant 1966) + extra glucose. VFA mix = acetate/propionate/butyrate/isobutyrate/valerate/isovalerate;
+        no single CURIE.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:tygvs_glucose
     ontology_label: TYGVS + Glucose
@@ -5999,18 +7058,43 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:trypticase_glucose_yeast_extract);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: Trypticase peptone
     component_id: MICRO:0000175
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: glucose
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Trypticase-glucose-yeast Extract
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Trypticase-glucose-yeast Extract
+      notes: 'Reviewed row: strategy=split, confidence=high; TGY/TYG-type medium (ATCC
+        603, DSMZ 1618).'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:trypticase_glucose_yeast_extract
@@ -6077,18 +7161,38 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:tryptone_yeast_beef_tyb);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
   - component_name: tryptone
     component_id: MICRO:0000182
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
   - component_name: beef extract
     component_id: FOODON:03302088
+    reference_scope: MIM_CATALOG
     source: MIM curation (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Tryptone/yeast/beef (tyb)
+      notes: The source label explicitly names every retained top-level part.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:tryptone_yeast_beef_tyb
@@ -6178,16 +7282,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_extract_gluconate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: D-gluconate
     component_id: CHEBI:18391
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Yeast Extract + Gluconate
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Yeast Extract + Gluconate
+      notes: 'Reviewed row: strategy=split, confidence=medium; Gluconate in media
+        is D-form (sodium D-gluconate); label stereo-unspecified.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:yeast_extract_gluconate
     ontology_label: Yeast Extract + Gluconate
@@ -6267,6 +7395,13 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_extract_glucose);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -6274,9 +7409,21 @@ ingredients:
   - component_name: Yeast Extract
     source: MIM label decomposition (#213/#308)
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
   - component_name: Glucose
     source: MIM label decomposition (#213/#308)
     component_id: CHEBI:17234
+    reference_scope: MIM_CATALOG
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Yeast Extract + Glucose
+      notes: The source label explicitly names every retained top-level part.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:yeast_extract_glucose
     ontology_label: Yeast Extract + Glucose
@@ -6361,6 +7508,13 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_extract_peptone);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -6368,9 +7522,21 @@ ingredients:
   - component_name: Yeast Extract
     source: MIM label decomposition (#213/#308)
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
   - component_name: Peptone
     source: MIM label decomposition (#213/#308)
     component_id: MICRO:0000178
+    reference_scope: MIM_CATALOG
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Yeast Extract + Peptone
+      notes: The source label explicitly names every retained top-level part.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:yeast_extract_peptone
     ontology_label: Yeast Extract + Peptone
@@ -6466,16 +7632,40 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+      concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_extract_sulfur);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: yeast extract
     component_id: FOODON:03315426
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: sulfur
     component_id: CHEBI:26833
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Yeast Extract + Sulfur
+      notes: The source label explicitly names every retained top-level part.
+    - evidence_type: CURATED_DATASET
+      source: mappings/microbedecoder_residual_research_decomposition.tsv
+      source_record: Yeast Extract + Sulfur
+      notes: 'Reviewed row: strategy=split, confidence=high; Yeast extract + elemental
+        sulfur.'
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:yeast_extract_sulfur
     ontology_label: Yeast Extract + Sulfur
@@ -6557,18 +7747,38 @@ ingredients:
       does not move between collections, and reconcile_sssom reads only the mapped
       collection — so its mapping was curated but unpublished.
     llm_assisted: false
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: migrate_component_partonomy
+    action: TYPED_COMPONENT_PARTONOMY
+    changes: '#369: added method/evidence/completeness and explicit reference scope
+      to 3 existing component(s) (MIM_CATALOG, UNMAPPED); constituent names, identifiers,
+      and concentrations were not changed.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_meat_extract_h2);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: Yeast
+    reference_scope: UNMAPPED
     source: MIM label decomposition (#213/#308)
   - component_name: Meat Extract
     source: MIM label decomposition (#213/#308)
     component_id: FOODON:03315424
+    reference_scope: MIM_CATALOG
   - component_name: H2
     source: MIM label decomposition (#213/#308)
     component_id: CHEBI:18276
+    reference_scope: MIM_CATALOG
+  component_assertion:
+    method: LABEL_ENUMERATION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: SOURCE_LABEL
+      source: microbedecoder
+      source_record: Yeast + Meat Extract + H2
+      notes: The source label explicitly names every retained top-level part.
+    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+      variant hierarchy, or complete culturing recipe.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:yeast_meat_extract_h2
     ontology_label: Yeast + Meat Extract + H2

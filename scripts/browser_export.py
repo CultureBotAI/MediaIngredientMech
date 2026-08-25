@@ -70,8 +70,22 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
         last_curated = last_event.get('timestamp', '')
         curator = last_event.get('curator', '')
 
+    # Ingredient/mixture partonomy (#369). Keep the nested typed shape so the
+    # published browser can distinguish local, external, and unmapped parts.
+    components = ingredient.get('components') or []
+    component_assertion = ingredient.get('component_assertion') or {}
+    component_search = ' '.join(
+        f"{component.get('component_name', '')} {component.get('component_id', '')}"
+        for component in components
+    ).strip()
+    searchable = (
+        f"{preferred_term} {ontology_label} {' '.join(synonyms)} {identifier}"
+    ).lower()
+    if component_search:
+        searchable = f"{searchable} {component_search.lower()}"
+
     # Create browser record
-    return {
+    record = {
         'id': identifier,
         'preferred_term': preferred_term,
         'mapping_status': mapping_status,
@@ -87,8 +101,12 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
         'curator': curator,
         'source_file': source_file,
         # Searchable text (for quick filtering)
-        'searchable': f"{preferred_term} {ontology_label} {' '.join(synonyms)} {identifier}".lower()
+        'searchable': searchable
     }
+    if components:
+        record['components'] = components
+        record['component_assertion'] = component_assertion
+    return record
 
 
 def export_ingredients_to_json(

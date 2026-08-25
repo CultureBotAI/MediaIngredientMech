@@ -69,21 +69,42 @@ curation_history:
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
   llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: TYPED_COMPONENT_PARTONOMY
+  changes: '#369: added method/evidence/completeness and explicit reference scope
+    to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+    concentrations were not changed.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_0_02_tween_80);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 components:
 - component_name: peptone
   component_id: MICRO:0000178
+  reference_scope: MIM_CATALOG
   source: MIM curation (#213/#308)
 - component_name: yeast extract
   component_id: FOODON:03315426
+  reference_scope: MIM_CATALOG
   source: MIM curation (#213/#308)
 - component_name: glucose
   component_id: CHEBI:17234
+  reference_scope: MIM_CATALOG
   source: MIM curation (#213/#308)
 - component_name: polysorbate 80
   component_id: CHEBI:53426
+  reference_scope: MIM_CATALOG
   source: MIM curation (#213/#308)
+component_assertion:
+  method: ABBREVIATION_EXPANSION
+  completeness: UNKNOWN
+  evidence:
+  - evidence_type: MANUAL_CURATION
+    source: scripts/decompose_py_media_and_ground_categories.py
+    source_record: PYG-0.02% Tween 80
+    notes: The checked-in curation script records this expansion explicitly.
+  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe.
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:pyg_0_02_tween_80

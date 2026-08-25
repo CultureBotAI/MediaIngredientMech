@@ -1,6 +1,6 @@
 
 
-# Class: IngredientRecord 
+# Class: IngredientRecord
 
 
 _Core record for a media ingredient with ontology mapping, synonyms, and curation history. Represents either a mapped ingredient (with an ontology CURIE identifier) or an unmapped ingredient (placeholder identifier, awaits curation). Can serve as root element for individual YAML files or as elements in IngredientCollection._
@@ -20,215 +20,237 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
     class IngredientRecord
     click IngredientRecord href "../IngredientRecord/"
       IngredientRecord : cellular_metabolic_roles
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" CellularMetabolicRoleAssignment : cellular_metabolic_roles
         click CellularMetabolicRoleAssignment href "../CellularMetabolicRoleAssignment/"
-    
 
-        
+
+
       IngredientRecord : chemical_properties
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" ChemicalProperties : chemical_properties
         click ChemicalProperties href "../ChemicalProperties/"
-    
 
-        
+
+
       IngredientRecord : child_ingredients
-        
+
       IngredientRecord : community_organism_roles
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" CommunityOrganismRoleAssignment : community_organism_roles
         click CommunityOrganismRoleAssignment href "../CommunityOrganismRoleAssignment/"
-    
 
-        
+
+
+      IngredientRecord : component_assertion
+
+
+
+
+
+        IngredientRecord --> "0..1" ComponentAssertion : component_assertion
+        click ComponentAssertion href "../ComponentAssertion/"
+
+
+
       IngredientRecord : components
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" StockComponent : components
         click StockComponent href "../StockComponent/"
-    
 
-        
+
+
       IngredientRecord : culturemech_medium_name
-        
+
       IngredientRecord : curation_history
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" CurationEvent : curation_history
         click CurationEvent href "../CurationEvent/"
-    
 
-        
+
+
       IngredientRecord : datasets
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" Dataset : datasets
         click Dataset href "../Dataset/"
-    
 
-        
+
+
       IngredientRecord : discussions
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" Discussion : discussions
         click Discussion href "../Discussion/"
-    
 
-        
+
+
       IngredientRecord : environmental_context
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" EnvironmentContext : environmental_context
         click EnvironmentContext href "../EnvironmentContext/"
-    
 
-        
+
+
       IngredientRecord : identifier
-        
+
       IngredientRecord : ingredient_type
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" IngredientTypeEnum : ingredient_type
         click IngredientTypeEnum href "../IngredientTypeEnum/"
-    
 
-        
+
+
       IngredientRecord : kg_microbe_node_id
-        
+
       IngredientRecord : mapping_status
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "1" MappingStatusEnum : mapping_status
         click MappingStatusEnum href "../MappingStatusEnum/"
-    
 
-        
+
+
       IngredientRecord : merged
-        
+
       IngredientRecord : notes
-        
+
       IngredientRecord : nutritional_roles
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" NutritionalRoleAssignment : nutritional_roles
         click NutritionalRoleAssignment href "../NutritionalRoleAssignment/"
-    
 
-        
+
+
       IngredientRecord : occurrence_statistics
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" OccurrenceStats : occurrence_statistics
         click OccurrenceStats href "../OccurrenceStats/"
-    
 
-        
+
+
       IngredientRecord : ontology_mapping
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" OntologyMapping : ontology_mapping
         click OntologyMapping href "../OntologyMapping/"
-    
 
-        
+
+
       IngredientRecord : parent_ingredient
-        
+
       IngredientRecord : physicochemical_roles
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" PhysicochemicalRoleAssignment : physicochemical_roles
         click PhysicochemicalRoleAssignment href "../PhysicochemicalRoleAssignment/"
-    
 
-        
+
+
       IngredientRecord : preferred_term
-        
+
       IngredientRecord : representative
-        
+
       IngredientRecord : role_inheritance
-        
+
       IngredientRecord : solution_type
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" SolutionTypeEnum : solution_type
         click SolutionTypeEnum href "../SolutionTypeEnum/"
-    
 
-        
+
+
+      IngredientRecord : supplied_form
+
+
+
+
+
+        IngredientRecord --> "*" SuppliedForm : supplied_form
+        click SuppliedForm href "../SuppliedForm/"
+
+
+
       IngredientRecord : synonyms
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "*" IngredientSynonym : synonyms
         click IngredientSynonym href "../IngredientSynonym/"
-    
 
-        
+
+
       IngredientRecord : variant_notes
-        
+
       IngredientRecord : variant_type
-        
-          
-    
-        
-        
+
+
+
+
+
         IngredientRecord --> "0..1" VariantTypeEnum : variant_type
         click VariantTypeEnum href "../VariantTypeEnum/"
-    
 
-        
-      
+
+
+
 ```
 
 
@@ -255,10 +277,12 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | [cellular_metabolic_roles](cellular_metabolic_roles.md) | * <br/> [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Role of this ingredient inside/on the cultured microbe (e | direct |
 | [solution_type](solution_type.md) | 0..1 <br/> [SolutionTypeEnum](SolutionTypeEnum.md) | Type of solution if this is a stock/pre-mix rather than individual chemical | direct |
 | [chemical_properties](chemical_properties.md) | 0..1 <br/> [ChemicalProperties](ChemicalProperties.md) | Chemical structure and properties (for CHEBI-mapped ingredients only) | direct |
+| [supplied_form](supplied_form.md) | * <br/> [SuppliedForm](SuppliedForm.md) | The material actually ordered and delivered for this ingredient — the thing o... | direct |
 | [representative](representative.md) | 0..1 <br/> [String](String.md) | `identifier` of the representative record if this record has been merged | direct |
 | [merged](merged.md) | * <br/> [String](String.md) | List of record `identifier`s merged into this representative | direct |
 | [ingredient_type](ingredient_type.md) | 0..1 <br/> [IngredientTypeEnum](IngredientTypeEnum.md) | Classification of entry type: single chemical ingredient vs whole named mediu... | direct |
-| [components](components.md) | * <br/> [StockComponent](StockComponent.md) | Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM: the list o... | direct |
+| [components](components.md) | * <br/> [StockComponent](StockComponent.md) | A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_M... | direct |
+| [component_assertion](component_assertion.md) | 0..1 <br/> [ComponentAssertion](ComponentAssertion.md) | Method and structured evidence for the record-level has-part claim carried by... | direct |
 | [culturemech_medium_name](culturemech_medium_name.md) | 0..1 <br/> [String](String.md) | Cross-reference to CultureMech medium name if this is a defined medium | direct |
 | [parent_ingredient](parent_ingredient.md) | 0..1 <br/> [String](String.md) | Reference to parent ingredient's `identifier` in the variant hierarchy | direct |
 | [child_ingredients](child_ingredients.md) | * <br/> [String](String.md) | List of child ingredient `identifier`s in the variant hierarchy | direct |
@@ -279,6 +303,26 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [IngredientCollection](IngredientCollection.md) | [ingredients](ingredients.md) | range | [IngredientRecord](IngredientRecord.md) |
+
+
+
+
+## Rules
+
+
+###
+
+| Rule Applied | Preconditions | Postconditions | Elseconditions |
+|--------------|---------------|----------------|----------------|
+| slot_conditions |```{'components': {'value_presence': 'PRESENT'}}``` |```{'component_assertion': {'value_presence': 'PRESENT'}}``` | |
+
+
+
+###
+
+| Rule Applied | Preconditions | Postconditions | Elseconditions |
+|--------------|---------------|----------------|----------------|
+| slot_conditions |```{'components': {'value_presence': 'PRESENT'}}``` |```{'ingredient_type': {'equals_string_in': ['STOCK_SOLUTION', 'DEFINED_MEDIUM', 'UNDEFINED_MIXTURE']}}``` | |
 
 
 
@@ -408,11 +452,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset
@@ -487,6 +534,23 @@ attributes:
     domain_of:
     - IngredientRecord
     range: ChemicalProperties
+  supplied_form:
+    name: supplied_form
+    description: 'The material actually ordered and delivered for this ingredient
+      — the thing on the shelf, as distinct from the substance the record denotes.
+      Multivalued because one ingredient is legitimately buyable in several forms
+      (anhydrous vs a hydrate, free acid vs sodium salt) and a recipe may not say
+      which. Keeps procurement detail OUT of the identity: the `identifier` optimises
+      for how the node reads in the knowledge graph, and this slot carries what you
+      would put on a purchase order.'
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: SuppliedForm
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   representative:
     name: representative
     description: '`identifier` of the representative record if this record has been
@@ -524,11 +588,13 @@ attributes:
     range: IngredientTypeEnum
   components:
     name: components
-    description: 'Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM:
-      the list of component ingredients (with concentration where known). Lets a named
-      mixture (e.g. a trace-element or vitamin solution) be resolved to its constituents.
-      Populate only from a verifiable recipe source; leave empty when the composition
-      is unknown.'
+    description: 'A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or
+      UNDEFINED_MIXTURE: the list of component ingredients (with concentration where
+      known). This is ingredient/mixture partonomy, not an identity mapping, a complete
+      culturing recipe, or the parent/child variant hierarchy. It may transcribe a
+      combination label. Populate only from verifiable evidence; omit the slot when
+      no constituent is known. When present, component_assertion records how the decomposition
+      was made and its evidence.'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
@@ -537,6 +603,18 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  component_assertion:
+    name: component_assertion
+    description: Method and structured evidence for the record-level has-part claim
+      carried by components. Required whenever components is non-empty and forbidden
+      when components is absent; the corpus-level partonomy validator enforces that
+      cross-field invariant.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - IngredientRecord
+    range: ComponentAssertion
+    inlined: true
   culturemech_medium_name:
     name: culturemech_medium_name
     description: Cross-reference to CultureMech medium name if this is a defined medium.
@@ -657,6 +735,31 @@ attributes:
     inlined: true
     inlined_as_list: true
 tree_root: true
+rules:
+- preconditions:
+    slot_conditions:
+      components:
+        name: components
+        value_presence: PRESENT
+  postconditions:
+    slot_conditions:
+      component_assertion:
+        name: component_assertion
+        value_presence: PRESENT
+  bidirectional: true
+- preconditions:
+    slot_conditions:
+      components:
+        name: components
+        value_presence: PRESENT
+  postconditions:
+    slot_conditions:
+      ingredient_type:
+        name: ingredient_type
+        equals_string_in:
+        - STOCK_SOLUTION
+        - DEFINED_MEDIUM
+        - UNDEFINED_MIXTURE
 
 ```
 </details>
@@ -770,11 +873,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset
@@ -862,6 +968,25 @@ attributes:
     domain_of:
     - IngredientRecord
     range: ChemicalProperties
+  supplied_form:
+    name: supplied_form
+    description: 'The material actually ordered and delivered for this ingredient
+      — the thing on the shelf, as distinct from the substance the record denotes.
+      Multivalued because one ingredient is legitimately buyable in several forms
+      (anhydrous vs a hydrate, free acid vs sodium salt) and a recipe may not say
+      which. Keeps procurement detail OUT of the identity: the `identifier` optimises
+      for how the node reads in the knowledge graph, and this slot carries what you
+      would put on a purchase order.'
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: supplied_form
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: SuppliedForm
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   representative:
     name: representative
     description: '`identifier` of the representative record if this record has been
@@ -907,11 +1032,13 @@ attributes:
     range: IngredientTypeEnum
   components:
     name: components
-    description: 'Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM:
-      the list of component ingredients (with concentration where known). Lets a named
-      mixture (e.g. a trace-element or vitamin solution) be resolved to its constituents.
-      Populate only from a verifiable recipe source; leave empty when the composition
-      is unknown.'
+    description: 'A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or
+      UNDEFINED_MIXTURE: the list of component ingredients (with concentration where
+      known). This is ingredient/mixture partonomy, not an identity mapping, a complete
+      culturing recipe, or the parent/child variant hierarchy. It may transcribe a
+      combination label. Populate only from verifiable evidence; omit the slot when
+      no constituent is known. When present, component_assertion records how the decomposition
+      was made and its evidence.'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     alias: components
@@ -922,6 +1049,20 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  component_assertion:
+    name: component_assertion
+    description: Method and structured evidence for the record-level has-part claim
+      carried by components. Required whenever components is non-empty and forbidden
+      when components is absent; the corpus-level partonomy validator enforces that
+      cross-field invariant.
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: component_assertion
+    owner: IngredientRecord
+    domain_of:
+    - IngredientRecord
+    range: ComponentAssertion
+    inlined: true
   culturemech_medium_name:
     name: culturemech_medium_name
     description: Cross-reference to CultureMech medium name if this is a defined medium.
@@ -1067,6 +1208,31 @@ attributes:
     inlined: true
     inlined_as_list: true
 tree_root: true
+rules:
+- preconditions:
+    slot_conditions:
+      components:
+        name: components
+        value_presence: PRESENT
+  postconditions:
+    slot_conditions:
+      component_assertion:
+        name: component_assertion
+        value_presence: PRESENT
+  bidirectional: true
+- preconditions:
+    slot_conditions:
+      components:
+        name: components
+        value_presence: PRESENT
+  postconditions:
+    slot_conditions:
+      ingredient_type:
+        name: ingredient_type
+        equals_string_in:
+        - STOCK_SOLUTION
+        - DEFINED_MEDIUM
+        - UNDEFINED_MIXTURE
 
 ```
 </details>

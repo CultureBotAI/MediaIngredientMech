@@ -119,6 +119,7 @@ See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:
 - [Environmental Context](docs/schema/environmental_context.md) - ENVO-based environmental linking
 - [Workflows](docs/WORKFLOWS.md) - Common operations and integration
 - [Mapping Semantics](MAPPING_SEMANTICS.md) - SSSOM predicate semantics and registry/identity row pattern
+- [Component Partonomy](docs/stock_components.md) - Typed has-part references, evidence, and validation
 
 ## Development
 

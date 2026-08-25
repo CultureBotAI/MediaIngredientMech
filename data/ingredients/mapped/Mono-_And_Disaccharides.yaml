@@ -63,15 +63,16 @@ curation_history:
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
   llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: REMOVED_NON_PARTONOMIC_COMPONENTS
+  changes: '#369: Monosaccharide and disaccharide are category members named by a
+    coordinated class label, not physical constituents of a mixture. Replaced the
+    active mapping evidence that described the false component claim; registry identity
+    and ingredient type were not changed.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:mono_and_disaccharides);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
-components:
-- component_name: monosaccharide
-  component_id: CHEBI:35381
-  source: MIM curation (#213/#308)
-- component_name: disaccharide
-  component_id: CHEBI:36233
-  source: MIM curation (#213/#308)
 ingredient_type: DEFINED_MEDIUM
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:mono_and_disaccharides
@@ -80,9 +81,8 @@ ontology_mapping:
   mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: MANUAL_CURATION
-    source: MIM curation (#213/#308)
-    notes: 'Decomposed into 2 constituents: the label names two ChEBI classes, so
-      it decomposes into them rather than grounding to either. Minted under the #288
-      STOCK_SOLUTION convention because no ontology term denotes the blend itself.
-      ingredient_type=DEFINED_MEDIUM. No concentrations recorded — the label states
-      none.'
+    source: MIM curation (#369)
+    notes: 'Registry identity retained while the whole-record grounding is reviewed
+      separately. Corrected prior active evidence: Monosaccharide and disaccharide
+      are category members named by a coordinated class label, not physical constituents
+      of a mixture.'

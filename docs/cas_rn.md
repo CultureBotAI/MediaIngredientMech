@@ -1,6 +1,6 @@
 
 
-# Slot: cas_rn 
+# Slot: cas_rn
 
 
 
@@ -17,8 +17,9 @@ Alias: cas_rn
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 | [ChemicalProperties](ChemicalProperties.md) | Chemical structure and properties for CHEBI-mapped ingredients |  no  |
+| [SuppliedForm](SuppliedForm.md) | A purchasable form of an ingredient: what a lab would physically order and re... |  no  |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
 
 
 
@@ -59,6 +60,7 @@ alias: cas_rn
 domain_of:
 - ChemicalProperties
 - MappingEvidence
+- SuppliedForm
 range: string
 
 ```

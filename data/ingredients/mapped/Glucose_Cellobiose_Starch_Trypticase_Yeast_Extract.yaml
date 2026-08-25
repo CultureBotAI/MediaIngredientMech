@@ -75,25 +75,52 @@ curation_history:
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
   llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: TYPED_COMPONENT_PARTONOMY
+  changes: '#369: added method/evidence/completeness and explicit reference scope
+    to 5 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
+    concentrations were not changed.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:glucose_cellobiose_starch_trypticase_yeast_extract);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
 components:
 - component_name: glucose
   component_id: CHEBI:17234
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: cellobiose
   component_id: CHEBI:17057
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: starch
   component_id: CHEBI:28017
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: Trypticase peptone
   component_id: MICRO:0000175
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 - component_name: yeast extract
   component_id: FOODON:03315426
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
+component_assertion:
+  method: LABEL_ENUMERATION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: SOURCE_LABEL
+    source: microbedecoder
+    source_record: Glucose + Cellobiose + Starch + Trypticase + Yeast Extract
+    notes: The source label explicitly names every retained top-level part.
+  - evidence_type: CURATED_DATASET
+    source: mappings/microbedecoder_residual_research_decomposition.tsv
+    source_record: Glucose + Cellobiose + Starch + Trypticase + Yeast Extract
+    notes: 'Reviewed row: strategy=split, confidence=high; GSC/M2GSC-type rumen/cellulolytic
+      carbohydrate blend.'
+  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
+    variant hierarchy, or complete culturing recipe.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract
   ontology_label: Glucose + Cellobiose + Starch + Trypticase + Yeast Extract

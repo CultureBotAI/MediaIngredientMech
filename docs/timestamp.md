@@ -1,6 +1,6 @@
 
 
-# Slot: timestamp 
+# Slot: timestamp
 
 
 _When this action occurred_
@@ -34,6 +34,8 @@ Alias: timestamp
 * Range: [Datetime](Datetime.md)
 
 * Required: True
+
+* Regex pattern: `^20[0-9]{2}-`
 
 
 
@@ -77,6 +79,7 @@ domain_of:
 - CurationEvent
 range: datetime
 required: true
+pattern: ^20[0-9]{2}-
 
 ```
 </details>
