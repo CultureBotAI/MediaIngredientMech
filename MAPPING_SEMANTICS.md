@@ -855,7 +855,7 @@ if the rule needs additional inputs (it usually does not).
 
 ---
 
-## 6. Component partonomy is not identity or variant hierarchy
+## 6. Component partonomy is not identity or a variant relationship
 
 `IngredientRecord.components` asserts one-level material **has-part** relations for
 a medium or mixture. A component CURIE identifies the part; it never identifies the
@@ -865,9 +865,10 @@ whole record. Therefore:
   onto the mixture — that would assert that the whole *is* the part;
 - do not translate a component edge into `skos:exactMatch`, `closeMatch`,
   `narrowMatch`, or `broadMatch`; those predicates describe grounding of the whole;
-- do not use `parent_ingredient` / `child_ingredients` for mixture membership;
-  that hierarchy is reserved for chemical-form variants such as hydrates,
-  stereoisomers, salts, and purity forms;
+- do not use component edges to relate chemical forms. MIM currently records no
+  local relationship among records that differ in hydration, stereochemistry,
+  salt form, or grade. Whether those details create a distinct identity or live
+  in `supplied_form` is governed by Section 3; `components` decides neither;
 - do not infer a complete culturing recipe from a component list. Completeness is
   explicit in `component_assertion` and is relative to its cited evidence.
 

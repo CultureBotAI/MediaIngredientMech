@@ -3,7 +3,7 @@
 # Slot: components
 
 
-_A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_MIXTURE: the list of component ingredients (with concentration where known). This is ingredient/mixture partonomy, not an identity mapping, a complete culturing recipe, or the parent/child variant hierarchy. It may transcribe a combination label. Populate only from verifiable evidence; omit the slot when no constituent is known. When present, component_assertion records how the decomposition was made and its evidence._
+_A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_MIXTURE: the list of component ingredients (with concentration where known). This is ingredient/mixture partonomy, not an identity mapping, a complete culturing recipe, or a relationship among chemical forms. It may transcribe a combination label. Populate only from verifiable evidence; omit the slot when no constituent is known. When present, component_assertion records how the decomposition was made and its evidence._
 
 
 
@@ -70,9 +70,9 @@ Alias: components
 name: components
 description: 'A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_MIXTURE:
   the list of component ingredients (with concentration where known). This is ingredient/mixture
-  partonomy, not an identity mapping, a complete culturing recipe, or the parent/child
-  variant hierarchy. It may transcribe a combination label. Populate only from verifiable
-  evidence; omit the slot when no constituent is known. When present, component_assertion
+  partonomy, not an identity mapping, a complete culturing recipe, or a relationship
+  among chemical forms. It may transcribe a combination label. Populate only from
+  verifiable evidence; omit the slot when no constituent is known. When present, component_assertion
   records how the decomposition was made and its evidence.'
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000

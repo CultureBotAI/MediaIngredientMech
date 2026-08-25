@@ -102,11 +102,12 @@ qc-sssom:
 qc-flat-coverage:
     python3 scripts/check_flat_export_coverage.py
 
-# The record `identifier` IS the ontology CURIE, so two mapped records sharing
-# one both claim to BE that term — and an `{identifier: record}` lookup silently
-# keeps whichever came last. #214 nearly attached merged synonyms to the wrong
-# peptone record that way. 61 such groups already exist, so this gates against
-# NEW ones rather than asserting a clean slate that isn't. Issue #218.
+# `identifier` is a semantic identity, not a unique record address. Reviewed
+# families may share one, but a new or changed family still needs an explicit
+# disposition — and an `{identifier: record}` lookup silently keeps whichever
+# came last. #214 nearly attached merged synonyms to the wrong peptone record
+# that way. Gate against baseline drift rather than asserting global uniqueness.
+# Issue #218.
 #
 # Fail if a mapped identifier is duplicated beyond the tracked baseline
 qc-duplicate-ids:

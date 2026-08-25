@@ -35,9 +35,9 @@ ri = _load("research_ingredient")
 
 def _minimal_doc() -> dict:
     return {
-        "identifier": "MediaIngredientMech:000042",
+        "identifier": "kgmicrobe.compound:test_ingredient",
         "preferred_term": "Test ingredient",
-        "ingredient_type": "SINGLE",
+        "ingredient_type": "SINGLE_INGREDIENT",
         "mapping_status": "MAPPED",
     }
 
@@ -101,7 +101,7 @@ def test_existing_role_assignments_handles_plain_string_roles():
 
 
 def test_chebi_role_axioms_no_grounding_returns_placeholder():
-    doc = _minimal_doc()  # identifier is `MediaIngredientMech:000042` — not CHEBI:*
+    doc = _minimal_doc()  # local registry identity, not CHEBI grounding
     tv = ri.template_vars(doc, "mapped", "t")
     assert "no chebi grounding" in tv["chebi_role_axioms"].lower()
 
@@ -122,13 +122,18 @@ def test_ingredient_chebi_id_extraction_prefers_identifier_when_chebi():
 
 
 def test_ingredient_chebi_id_falls_back_to_ontology_mapping():
-    doc = {"identifier": "MIM:00042", "ontology_mapping": {"ontology_id": "CHEBI:17234"}}
+    doc = {
+        "identifier": "kgmicrobe.compound:test_ingredient",
+        "ontology_mapping": {"ontology_id": "CHEBI:17234"},
+    }
     assert ri._ingredient_chebi_id(doc) == "CHEBI:17234"
 
 
 def test_ingredient_chebi_id_returns_none_when_no_chebi():
     assert ri._ingredient_chebi_id({}) is None
-    assert ri._ingredient_chebi_id({"identifier": "MIM:00042"}) is None
+    assert ri._ingredient_chebi_id(
+        {"identifier": "kgmicrobe.compound:test_ingredient"}
+    ) is None
 
 
 # ---------------- template file itself ----------------

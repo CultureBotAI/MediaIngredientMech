@@ -1,5 +1,9 @@
 # Water Variant Curation Guide
 
+> **RETIRED 2026-08-25 (#448).** The proposed MIM hierarchy in this document was
+> never populated and is not supported. Preserve distinct water/material records
+> under current identity semantics; see `docs/HIERARCHY_GUIDE.md`.
+
 **Version:** 1.0
 **Date:** 2026-03-14
 **Purpose:** Decision rules for curating water purity variants

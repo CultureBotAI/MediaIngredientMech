@@ -91,7 +91,7 @@ class RoleAnnotation:
 class IngredientRoleSummary:
     """Summary of roles for a single ingredient."""
 
-    id: str
+    identifier: str
     ontology_id: str
     preferred_term: str
     occurrence_count: int
@@ -196,8 +196,10 @@ def analyze_all_ingredients(
             print(f"  Processed {i}/{len(curator.records)} ingredients...")
 
         # Extract basic info
-        ingredient_id = record.get("id", "")
-        ontology_id = (record.get("identifier") or record.get("ontology_id", ""))
+        identifier = record.get("identifier", "")
+        ontology_id = (
+            record.get("ontology_mapping", {}).get("ontology_id") or identifier
+        )
         preferred_term = record.get("preferred_term", "")
         occurrence_count = record.get("occurrence_statistics", {}).get(
             "total_occurrences", 0
@@ -242,7 +244,7 @@ def analyze_all_ingredients(
             confidence = calculate_confidence(roles, occurrence_count)
 
             summary = IngredientRoleSummary(
-                id=ingredient_id,
+                identifier=identifier,
                 ontology_id=ontology_id,
                 preferred_term=preferred_term,
                 occurrence_count=occurrence_count,
@@ -333,7 +335,7 @@ def save_top_n_crossref(summaries: list[IngredientRoleSummary], output_path: Pat
         else 0.0,
         "ingredients": [
             {
-                "id": s.id,
+                "identifier": s.identifier,
                 "ontology_id": s.ontology_id,
                 "preferred_term": s.preferred_term,
                 "occurrence_count": s.occurrence_count,

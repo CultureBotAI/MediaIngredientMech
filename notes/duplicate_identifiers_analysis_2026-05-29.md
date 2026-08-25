@@ -1,5 +1,19 @@
 # Duplicate `identifier` analysis — 2026-05-29
 
+> **Hierarchy resolution (2026-08-25):** #448 retired the unused local
+> ingredient-variant schema/API. Option B below is historical and is not a
+> supported resolution: ontology/registry `identifier` values are not unique
+> document keys, so they cannot address parent and child records unambiguously.
+> Any future hierarchy needs a distinct stable record-addressing contract.
+>
+> **Identity correction:** the hydrate judgments in this snapshot are obsolete
+> and chemically unsafe. Hydrates and anhydrous salts are distinct supplied
+> substances under `MAPPING_SEMANTICS.md` section 3; sharing an anhydrous CURIE
+> does not make them “the same substance” or an exact mapping. The TL;DR,
+> Categories 1–2, Options, and recommendation below are retained only as a dated
+> record of the analysis that prompted the reviewed duplicate-family baseline.
+> Use `mappings/duplicate_identifier_baseline.tsv` and the current hydrate review.
+
 ## Resolution status (updated 2026-06-02)
 - **Stereoisomer mis-maps — RESOLVED (PR #37)** via `scripts/fix_stereoisomer_remaps.py`:
   `(R)-3-hydroxybutyrate`→CHEBI:10983, `(S)-3-hydroxybutyrate`→CHEBI:11047 (off achiral
@@ -39,10 +53,9 @@ No action was taken on the data — resolving these is a design decision (see Op
 
 ## Why this is safe today
 - **Indexes are not deduped**: `generate_index_files.py` iterates the record list directly,
-  so all 143 records appear in every index. The only identifier-keyed structure is
-  `records_by_identifier` (line ~177), used solely to resolve `parent_ingredient` /
-  `child_ingredients` hierarchy links — a feature that is currently unused. With dups it
-  keeps the last record per id, but nothing depends on it.
+  so all records appear in every index. The old identifier-keyed hierarchy lookup was
+  retired under #448 because a shared ontology identifier cannot address one record in a
+  duplicate family unambiguously.
 - **validate_strict passes**: closed-schema validation is per-record; the collection is a
   YAML list, not an identifier-keyed map, so duplicates are never flagged.
 

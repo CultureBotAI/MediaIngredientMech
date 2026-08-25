@@ -47,12 +47,14 @@ class PreservedFields:
     """Per-record-authored fields recovered from disk, looked up by a move-stable key.
 
     Two indexes, because neither key is stable across every move:
-    * `by_identifier` — survives a display-name normalisation (identifier stable,
-      filename/preferred_term change).
+    * `by_identifier` — survives a display-name normalisation when the semantic
+      identifier is unique among records (identifier stable,
+      filename/preferred_term change). Shared identifiers are deliberately not
+      indexed because they cannot address one sibling safely.
     * `by_preferred_term` — survives an identifier change (promotion
-      UNMAPPED_NNNN->CHEBI:x, demotion, or a CHEBI remap), where the primary key
-      is exactly what moves. Only unambiguous terms are indexed; a preferred_term
-      shared by more than one authored record is dropped rather than risk
+      UNMAPPED_NNNN->CHEBI:x, demotion, or a CHEBI remap), where the semantic
+      identity is exactly what moves. Only unambiguous terms are indexed; a
+      preferred_term shared by more than one record is dropped rather than risk
       attributing a discussion to the wrong record.
     """
 
@@ -75,9 +77,9 @@ def collect_preserved_fields(ingredients_root: Path) -> PreservedFields:
 
     Scans the whole `data/ingredients/` tree (both mapped/ and unmapped/) so a
     record that moves between them still keeps its authored fields. Indexed by
-    both `identifier` and `preferred_term` — see `PreservedFields`, because in
-    MIM the identifier IS the mapping CURIE and changes on promotion/remap, so
-    identifier alone would miss exactly the moves this preservation exists for.
+    both `identifier` and `preferred_term` — see `PreservedFields`. The semantic
+    identifier changes on promotion/remap and may also be shared by reviewed
+    sibling records, so neither field is an unconditional document key.
 
     Rebuilt from current disk state each run, so an edit that removes a
     discussion survives (it is simply absent from the index), while an export
@@ -86,6 +88,9 @@ def collect_preserved_fields(ingredients_root: Path) -> PreservedFields:
     result = PreservedFields()
     if not ingredients_root.exists():
         return result
+    seen_identifiers: set[str] = set()
+    identifier_collisions: set[str] = set()
+    seen_terms: set[str] = set()
     term_collisions: set[str] = set()
     for path in ingredients_root.rglob("*.yaml"):
         try:
@@ -95,24 +100,28 @@ def collect_preserved_fields(ingredients_root: Path) -> PreservedFields:
         if not isinstance(record, dict):
             continue
         authored = {
-            fname: record[fname]
-            for fname in PER_RECORD_AUTHORED_FIELDS
-            if record.get(fname)
+            fname: record[fname] for fname in PER_RECORD_AUTHORED_FIELDS if record.get(fname)
         }
-        if not authored:
-            continue
         ident = record.get("identifier")
         if ident:
-            result.by_identifier[ident] = authored
+            if ident in seen_identifiers:
+                result.by_identifier.pop(ident, None)
+                identifier_collisions.add(ident)
+            else:
+                seen_identifiers.add(ident)
+                if authored:
+                    result.by_identifier[ident] = authored
         term = record.get("preferred_term")
         if term:
-            # Two authored records sharing a term make term-based lookup
-            # ambiguous; drop it entirely rather than guess.
-            if term in result.by_preferred_term or term in term_collisions:
+            # Two records sharing a term make term-based lookup ambiguous,
+            # even if only one currently carries an authored field.
+            if term in seen_terms:
                 result.by_preferred_term.pop(term, None)
                 term_collisions.add(term)
             else:
-                result.by_preferred_term[term] = authored
+                seen_terms.add(term)
+                if authored:
+                    result.by_preferred_term[term] = authored
     return result
 
 
@@ -183,6 +192,52 @@ def collect_existing_filenames(ingredients_root: Path) -> FilenameIndex:
     return result
 
 
+def assert_unambiguous_record_moves(
+    ingredients: list[dict],
+    existing_names: FilenameIndex,
+    shared_identifiers: set[str] | None = None,
+) -> None:
+    """Reject incoming records whose two continuity keys name different files.
+
+    A unique semantic identifier and a unique preferred term are both useful
+    continuity hints, but neither is an unconditional document key. If they
+    resolve to different old records, choosing either would silently move the
+    wrong filename and per-record-authored fields onto the incoming record. A
+    typical ambiguous shape is an incoming remap to an identifier whose former
+    holder was retired in the same export.
+
+    Shared incoming identifiers are excluded: identifier lookup is deliberately
+    disabled for those records and the unambiguous preferred term is the only
+    continuity hint. All other two-key conflicts must be curated explicitly.
+    """
+    shared_identifiers = set(shared_identifiers or ())
+    conflicts: list[str] = []
+    for ingredient in ingredients:
+        ident = ingredient.get("identifier")
+        term = ingredient.get("preferred_term")
+        if not ident or not term or ident in shared_identifiers:
+            continue
+        identifier_stem = existing_names.by_identifier.get(ident)
+        term_stem = existing_names.by_preferred_term.get(term)
+        if (
+            identifier_stem is not None
+            and term_stem is not None
+            and identifier_stem.casefold() != term_stem.casefold()
+        ):
+            conflicts.append(
+                f"{term!r} ({ident}): identifier -> {identifier_stem}.yaml; "
+                f"preferred_term -> {term_stem}.yaml"
+            )
+
+    if conflicts:
+        details = "\n".join(f"  - {conflict}" for conflict in conflicts)
+        raise click.ClickException(
+            "Incoming records conflict with existing record keys. Refusing to "
+            "clear per-record files because filename/authored-field continuity "
+            f"is ambiguous:\n{details}"
+        )
+
+
 def sanitize_filename(preferred_term: str) -> str:
     """Convert preferred term to a safe filename.
 
@@ -204,18 +259,18 @@ def sanitize_filename(preferred_term: str) -> str:
     name = preferred_term.replace(" ", "_")
 
     # Remove parentheses and their contents but preserve what's inside
-    name = re.sub(r'\(([^)]*)\)', r'_\1', name)
+    name = re.sub(r"\(([^)]*)\)", r"_\1", name)
 
     # Remove special characters but keep hyphens and underscores
-    name = re.sub(r'[^\w\-]', '', name)
+    name = re.sub(r"[^\w\-]", "", name)
 
     # Collapse repeated underscores/hyphens left by stripped punctuation
-    name = re.sub(r'_+', '_', name)
-    name = re.sub(r'-+', '-', name)
+    name = re.sub(r"_+", "_", name)
+    name = re.sub(r"-+", "-", name)
 
     # Remove leading/trailing underscores and hyphens (e.g. from a leading
     # "(-)-"/"(R)-" stereodescriptor) so filenames don't start with a dash
-    name = name.strip('_-')
+    name = name.strip("_-")
 
     # Uppercase the leading character only. str.capitalize() would lowercase
     # everything after it, which destroys chemical casing that carries meaning
@@ -236,6 +291,7 @@ def export_collection_to_individual_files(
     dry_run: bool = False,
     preserved: PreservedFields | None = None,
     existing_names: FilenameIndex | None = None,
+    shared_identifiers: set[str] | None = None,
 ) -> dict[str, int]:
     """Export a collection YAML file to individual ingredient files.
 
@@ -249,13 +305,16 @@ def export_collection_to_individual_files(
         existing_names: Filename stems already in use (from
             ``collect_existing_filenames``), so records keep the names they have.
             Pass None to name every record from scratch.
+        shared_identifiers: Semantic identifiers known to be shared across the
+            full incoming export. Identifier-keyed preservation and filename
+            lookup are disabled for these values.
 
     Returns:
         Dictionary with statistics: 'total', 'created', 'collisions', 'renamed'.
     """
     preserved = preserved or PreservedFields()
     existing_names = existing_names or FilenameIndex()
-    stats = {'total': 0, 'created': 0, 'collisions': 0, 'renamed': 0}
+    stats = {"total": 0, "created": 0, "collisions": 0, "renamed": 0}
 
     # Load collection
     try:
@@ -264,12 +323,33 @@ def export_collection_to_individual_files(
         console.print(f"[red]Error loading {collection_path}: {e}[/red]")
         return stats
 
-    ingredients = collection.get('ingredients', [])
+    ingredients = collection.get("ingredients", [])
     if not ingredients:
         console.print(f"[yellow]No ingredients found in {collection_path}[/yellow]")
         return stats
 
-    stats['total'] = len(ingredients)
+    stats["total"] = len(ingredients)
+
+    # Identifiers held by more than one record in *this collection*. A merge
+    # tombstone deliberately keeps its winner's identifier, so `by_identifier`
+    # would hand both records the same stable filename and the second would
+    # overwrite the first. `collect_existing_filenames` drops such identifiers,
+    # but only when both files are still on disk — once one has been lost the
+    # index can no longer see the duplicate and the loss is self-perpetuating.
+    # Deciding it from the collection instead is stable across runs.
+    ident_counts: Counter[str] = Counter(
+        str(i.get("identifier")) for i in ingredients if i.get("identifier")
+    )
+    shared_identifiers = set(shared_identifiers or ()) | {
+        key for key, count in ident_counts.items() if count > 1
+    }
+
+    # Both continuity hints are safe only when they resolve to the same old
+    # record. Run this before clearing anything so an ambiguous remap fails
+    # closed and leaves the per-record tree untouched.
+    assert_unambiguous_record_moves(
+        ingredients, existing_names, shared_identifiers=shared_identifiers
+    )
 
     # Create output directory and clear any stale per-record files, so
     # deletions/renames in the source propagate (otherwise a removed record's
@@ -288,19 +368,8 @@ def export_collection_to_individual_files(
     # the second record silently overwrite the first (cf. #299).
     taken: set[str] = set()
 
-    # Identifiers held by more than one record in *this collection*. A merge
-    # tombstone deliberately keeps its winner's identifier, so `by_identifier`
-    # would hand both records the same stable filename and the second would
-    # overwrite the first. `collect_existing_filenames` drops such identifiers,
-    # but only when both files are still on disk — once one has been lost the
-    # index can no longer see the duplicate and the loss is self-perpetuating.
-    # Deciding it from the collection instead is stable across runs.
-    ident_counts: Counter[str] = Counter(
-        str(i.get("identifier")) for i in ingredients if i.get("identifier"))
-    shared_identifiers = {k for k, n in ident_counts.items() if n > 1}
-
     for ingredient in ingredients:
-        preferred_term = ingredient.get('preferred_term', 'Unknown')
+        preferred_term = ingredient.get("preferred_term", "Unknown")
 
         # Keep the name this record already has. Re-deriving it from
         # preferred_term on every run is what makes the naming rule retroactive
@@ -321,12 +390,12 @@ def export_collection_to_individual_files(
                 suffix += 1
                 filename = f"{base_filename}_{suffix}"
             if suffix > 1:
-                stats['collisions'] += 1
+                stats["collisions"] += 1
                 console.print(
                     f"[yellow]Collision detected: {preferred_term} -> {filename}.yaml[/yellow]"
                 )
             if stable is not None and stable != filename:
-                stats['renamed'] += 1
+                stats["renamed"] += 1
                 console.print(
                     f"[yellow]Renamed: {stable}.yaml -> {filename}.yaml "
                     f"({preferred_term})[/yellow]"
@@ -339,6 +408,12 @@ def export_collection_to_individual_files(
         # collection does not carry, so export does not wipe them. Only fill
         # gaps — a value present in the collection wins.
         authored = preserved.for_record(ingredient)
+        if ingredient.get("identifier") in shared_identifiers:
+            # The incoming collection can introduce a new shared identifier
+            # that the old per-record tree could not know was ambiguous. Fall
+            # back to the unambiguous term or preserve nothing; never graft one
+            # sibling's authored fields onto another.
+            authored = preserved.by_preferred_term.get(preferred_term, {})
         for fname, value in authored.items():
             if not ingredient.get(fname):
                 ingredient[fname] = value
@@ -348,7 +423,7 @@ def export_collection_to_individual_files(
         else:
             # Write individual file (no collection wrapper, just the IngredientRecord)
             save_yaml(ingredient, output_path, backup=False)
-            stats['created'] += 1
+            stats["created"] += 1
 
     return stats
 
@@ -400,7 +475,9 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
 
     if not collection_files:
         console.print(f"[yellow]No collection files found in {input_dir_path}[/yellow]")
-        console.print("[yellow]Expected: mapped_ingredients.yaml, unmapped_ingredients.yaml[/yellow]")
+        console.print(
+            "[yellow]Expected: mapped_ingredients.yaml, unmapped_ingredients.yaml[/yellow]"
+        )
         sys.exit(0)
 
     # Header
@@ -423,8 +500,33 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
     # over the same whole tree.
     existing_names = collect_existing_filenames(output_dir_path)
 
+    # Ambiguity must be decided from the entire incoming export, not only one
+    # old directory or one collection partition. A promotion/remap can create a
+    # shared identifier that neither on-disk index could see beforehand.
+    incoming_identifier_counts: Counter[str] = Counter()
+    incoming_records: list[dict] = []
+    for _, collection_file in collection_files:
+        incoming = load_yaml(collection_file)
+        records = incoming.get("ingredients", [])
+        incoming_records.extend(records)
+        incoming_identifier_counts.update(
+            str(record.get("identifier")) for record in records if record.get("identifier")
+        )
+    incoming_shared_identifiers = {
+        key for key, count in incoming_identifier_counts.items() if count > 1
+    }
+
+    # Validate the whole mapped+unmapped export before either output directory
+    # is cleared. Otherwise a conflict found in the second collection could
+    # leave the first collection partially rewritten.
+    assert_unambiguous_record_moves(
+        incoming_records,
+        existing_names,
+        shared_identifiers=incoming_shared_identifiers,
+    )
+
     # Process each collection
-    total_stats = {'total': 0, 'created': 0, 'collisions': 0, 'renamed': 0}
+    total_stats = {"total": 0, "created": 0, "collisions": 0, "renamed": 0}
 
     with Progress(
         SpinnerColumn(),
@@ -441,16 +543,17 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
                 dry_run=dry_run,
                 preserved=preserved,
                 existing_names=existing_names,
+                shared_identifiers=incoming_shared_identifiers,
             )
 
-            total_stats['total'] += stats['total']
-            total_stats['created'] += stats['created']
-            total_stats['collisions'] += stats['collisions']
-            total_stats['renamed'] += stats['renamed']
+            total_stats["total"] += stats["total"]
+            total_stats["created"] += stats["created"]
+            total_stats["collisions"] += stats["collisions"]
+            total_stats["renamed"] += stats["renamed"]
 
             progress.update(
                 task,
-                description=f"[green]{category}: {stats['created']}/{stats['total']} files[/green]"
+                description=f"[green]{category}: {stats['created']}/{stats['total']} files[/green]",
             )
 
     # Summary
@@ -461,10 +564,10 @@ def main(input_dir: str | None, output_dir: str | None, dry_run: bool):
     else:
         console.print(f"  Created: {total_stats['created']} files")
 
-    if total_stats['collisions'] > 0:
+    if total_stats["collisions"] > 0:
         console.print(f"  [yellow]Filename collisions: {total_stats['collisions']}[/yellow]")
 
-    if total_stats['renamed'] > 0:
+    if total_stats["renamed"] > 0:
         console.print(f"  [yellow]Renamed: {total_stats['renamed']}[/yellow]")
 
     if not dry_run:

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Analyze ingredient data for duplicates and variant relationships.
+"""RETIRED historical duplicate/variant analysis prototype.
+
+This script targets the rolled-back ``id``/``ontology_id`` record shape and the
+retired local ingredient-hierarchy design. It is preserved only to explain the
+adjacent ``duplicates_and_variants.yaml`` snapshot and must not be run against
+current curated data.
 
 Finds:
 1. True duplicates (same chemical, same form) - candidates for merging

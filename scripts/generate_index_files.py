@@ -34,12 +34,6 @@ def generate_json_index(records: list[dict], output_path: Path) -> None:
             entry['ontology_source'] = om.get('ontology_source')
             entry['mapping_quality'] = om.get('mapping_quality')
 
-        # Add hierarchy info if exists
-        if 'parent_ingredient' in record:
-            entry['parent_ingredient'] = record['parent_ingredient']
-        if 'variant_type' in record:
-            entry['variant_type'] = record['variant_type']
-
         index.append(entry)
 
     with open(output_path, 'w') as f:
@@ -51,7 +45,9 @@ def generate_json_index(records: list[dict], output_path: Path) -> None:
 def generate_csv_index(records: list[dict], output_path: Path) -> None:
     """Generate CSV index with key fields."""
     with open(output_path, 'w', newline='') as f:
-        writer = csv.writer(f)
+        # Use repository-stable LF endings so changed rows pass `git diff --check`
+        # on every platform.
+        writer = csv.writer(f, lineterminator='\n')
 
         # Header
         writer.writerow([
@@ -62,8 +58,6 @@ def generate_csv_index(records: list[dict], output_path: Path) -> None:
             'ontology_source',
             'mapping_quality',
             'occurrences',
-            'parent_ingredient',
-            'variant_type',
         ])
 
         # Rows
@@ -77,8 +71,6 @@ def generate_csv_index(records: list[dict], output_path: Path) -> None:
                 om.get('ontology_source', ''),
                 om.get('mapping_quality', ''),
                 record.get('occurrence_statistics', {}).get('total_occurrences', 0),
-                record.get('parent_ingredient', ''),
-                record.get('variant_type', ''),
             ])
 
     print(f"✓ Created {output_path} ({len(records)} records)")
@@ -168,27 +160,6 @@ def generate_markdown_index(records: list[dict], output_path: Path, title: str) 
             )
 
         lines.append("\n")
-
-    # Hierarchy parents
-    hierarchy_parents = [r for r in records if r.get('child_ingredients')]
-    if hierarchy_parents:
-        # Build an O(1) identifier -> record lookup once instead of doing a
-        # linear scan per child (was O(num_children × num_records)).
-        records_by_identifier = {
-            r.get('identifier'): r for r in records if r.get('identifier')
-        }
-        lines.append("## Hierarchy Parents\n\n")
-        for parent in hierarchy_parents:
-            lines.append(f"### {parent.get('preferred_term')} ({parent.get('identifier')})\n\n")
-            lines.append(f"**Variant Type**: {parent.get('variant_type', 'N/A')}\n\n")
-            lines.append(f"**Children**: {len(parent.get('child_ingredients', []))}\n\n")
-
-            children_ids = parent.get('child_ingredients', [])
-            for child_id in children_ids:
-                child = records_by_identifier.get(child_id)
-                if child:
-                    lines.append(f"- {child.get('preferred_term')} ({child_id}) - {child.get('variant_type', 'N/A')}\n")
-            lines.append("\n")
 
     with open(output_path, 'w') as f:
         f.writelines(lines)

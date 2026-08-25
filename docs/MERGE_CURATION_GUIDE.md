@@ -14,7 +14,7 @@
 4. [Merge Decision Workflow](#merge-decision-workflow)
 5. [Pre-Merge Validation Checklist](#pre-merge-validation-checklist)
 6. [Post-Merge Validation](#post-merge-validation)
-7. [Real Examples from Pattern Analysis](#real-examples-from-pattern-analysis)
+7. [Historical Incident: Complex Media Conflation](#historical-incident-complex-media-conflation)
 
 ---
 
@@ -31,7 +31,9 @@ Merging ingredient records consolidates duplicate or variant entries into a sing
 - Losing semantic distinctions (e.g., stereoisomers)
 - Breaking downstream analyses
 
-This guide provides decision rules based on analysis of 211 merge clusters from automated CHEBI-based merging.
+This guide states the current decision rules. A March 2026 automated-merge
+snapshot is retained in `../ATTIC/` only as non-authoritative history; its
+water and hydrate judgments conflict with the current identity contract.
 
 ---
 
@@ -92,15 +94,15 @@ if len(set(normalized)) == 1:
 **Confidence:** 95% safe
 
 **Examples:**
-- `Distilled water` ⬅ `H2O`, `water`, `Water`
 - `NaCl` ⬅ `sodium chloride`
+- `KH2PO4` ⬅ `potassium dihydrogen phosphate`
 
 **Verification Required:**
 1. ✓ Shorter name is recognized abbreviation
 2. ✓ Same CHEBI ID
 3. ✓ No semantic difference
 
-**Action:** Auto-merge with verification ✓
+**Action:** Merge only after identity verification ✓
 
 ---
 
@@ -159,7 +161,7 @@ if is_complex and confidence >= 0.75:
 **Examples:**
 ```
 ❌ DEFINED_MEDIUM ≠ SINGLE_INGREDIENT
-❌ COMPLEX_MIXTURE ≠ SINGLE_INGREDIENT
+❌ UNDEFINED_MIXTURE ≠ SINGLE_INGREDIENT
 ```
 
 **Why This Is Wrong:**
@@ -179,13 +181,14 @@ if len(set(types)) > 1:
 
 ### ❌ Pattern 3: Stereoisomers and Variants
 
-**Rule:** Related but chemically distinct entities should use hierarchy, not merge
+**Rule:** Related but chemically distinct entities must remain separate records
 
-**Confidence:** 80% unsafe (depends on use case)
+**Confidence:** 100% unsafe once distinct stereochemistry or material grade is
+confirmed; name-based detection still requires review
 
 **Examples:**
 ```
-❌ Biotin ⬅ D-biotin, D(+)-Biotin, D-(+)-biotin
+❌ D-biotin ≠ L-biotin (different stereoisomers)
 ❌ D-glucose ≠ L-glucose (different stereoisomers)
 ❌ Tap water ≠ Distilled water ≠ Double distilled water
 ```
@@ -195,28 +198,25 @@ if len(set(types)) > 1:
 - Water purity levels affect media composition
 - Merging loses important semantic distinctions
 
-**Better Approach:** Build parent-child hierarchy
-```yaml
-Water (parent)
-  ├── Tap water
-  ├── Distilled water
-  └── Double distilled water
-```
+**Better Approach:** Preserve each distinct identity and ground it at the most
+specific supported ontology or registry level. MIM does not currently encode a
+local relationship among these records; see `HIERARCHY_GUIDE.md`.
 
 **Detection:**
 - D/L prefixes (stereochemistry)
 - Purity qualifiers (distilled, double distilled, ultrapure)
 - Variant-indicating terms
 
-**Action:** Flag for hierarchy implementation ⚠️
+**Action:** Block the merge and review identity/grounding ⚠️
 
 ---
 
 ### ⚠️ Pattern 4: Hydrate Variants
 
-**Rule:** Different hydration states may need hierarchy instead of merge
+**Rule:** Different hydration states are distinct substances; do not merge them
 
-**Confidence:** 70% unsafe (expert review needed)
+**Confidence:** 100% unsafe when the hydration states differ; expert review may
+still be needed to interpret an ambiguous label
 
 **Examples from Real Data:**
 ```
@@ -329,23 +329,13 @@ PYTHONPATH=src python scripts/validate_merge_integrity.py
 
 ---
 
-## Real Examples from Pattern Analysis
+## Historical Incident: Complex Media Conflation
 
-### Analysis Summary (211 merge clusters, 498 merged records)
+The retired March 2026 pattern-analysis snapshot exposed one useful failure
+mode, but its cluster counts and good/bad labels are stale and are not current
+merge evidence. The original catalogs live in `../ATTIC/` for provenance.
 
-**Classifications:**
-- ✅ Good merges: 163 (77.3%)
-- ❌ Bad merges: 1 (0.5%)
-- ⚠️ Needs review: 47 (22.3%)
-
-**Patterns:**
-- Chemical synonym: 113 clusters
-- Case variation: 50 clusters
-- Unclear: 42 clusters
-- Hydrate variant: 5 clusters
-- Complex media mixed: 1 cluster (21 records!)
-
-### The Single Bad Merge Cluster
+### Agar cluster
 
 **Representative:** `Agar` (CHEBI:2509)
 
@@ -420,10 +410,9 @@ When manually reviewing merge suggestions:
 
 ## References
 
-- **Pattern Analysis Report:** `analysis/merge_pattern_analysis.md`
 - **Complex Media Detection:** `scripts/identify_complex_media.py`
 - **Merge Validation:** `scripts/validate_merge_integrity.py`
-- **Implementation Plan:** `MERGE_TRACKING_IMPLEMENTATION.md`
+- **Retired implementation plan:** `../ATTIC/MERGE_TRACKING_IMPLEMENTATION.md`
 
 ---
 

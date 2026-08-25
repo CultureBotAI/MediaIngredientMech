@@ -256,13 +256,15 @@ lowercased by #147, and it disappears when the casing is restored. Note that
 #149 only ever mentioned one of the two Greek-alpha records; fixing #147 covers
 both.
 
-## 2. Duplicate identifier primary keys — 61 collisions across 86 records (NEW)
+## 2. Duplicate identifier families — SUPERSEDED BY REVIEWED BASELINE
 
-Not previously tracked. In MIM the record `identifier` **is** the primary key
-(`docs/CURIE_STANDARD.md`), yet `data/ingredients/mapped/` holds 1,879 files
-carrying only **1,793 distinct identifiers** — 61 identifier values are used by
-two or more records. The same 61 collisions are present in
-`data/curated/mapped_ingredients.yaml`. Reproduce:
+**Historical snapshot (2026-07-30).** This item predates the reviewed duplicate-family
+contract and must not be read as a current uniqueness requirement. `identifier` is a
+semantic identity slot, not a guaranteed unique document address; distinct supplied
+forms may share a CURIE when `MAPPING_SEMANTICS.md` permits it. Current duplicate
+families and their reviewed dispositions are governed by
+`mappings/duplicate_identifier_baseline.tsv`. At the time of this snapshot,
+`data/ingredients/mapped/` held 1,879 files carrying 1,793 distinct identifiers:
 
 ```
 grep -h '^identifier:' data/ingredients/mapped/*.yaml | sort | uniq -d
@@ -285,9 +287,9 @@ The collisions split into two dispositions, and telling them apart is the work:
   trihydrate is arguably a `skos:narrowMatch` on a `cas:`-primary record (the
   pattern used for `Mg(NO3)2 x 6 H2O`, see the ledger below), not a merge.
 
-`promote_resolved_unmapped.py` already refuses to *create* a duplicate CHEBI
-primary; these 61 predate that guard. Consider adding the same check as a
-repo-wide test so the count can only go down.
+Do not add a repo-wide uniqueness invariant. New or changed families must instead
+be checked against `mappings/duplicate_identifier_baseline.tsv` and assigned the
+appropriate reviewed disposition; true duplicate records remain merge candidates.
 
 ## 3. Collection ↔ per-record drift (#148) — DONE (2026-08-02, PR #167)
 

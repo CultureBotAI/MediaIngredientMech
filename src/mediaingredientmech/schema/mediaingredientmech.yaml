@@ -69,20 +69,24 @@ classes:
     tree_root: true
     description: >-
       Core record for a media ingredient with ontology mapping, synonyms, and curation history.
-      Represents either a mapped ingredient (with an ontology CURIE identifier) or an
-      unmapped ingredient (placeholder identifier, awaits curation).
+      Represents either a mapped ingredient (with a primary ontology, registry, or local
+      identity CURIE) or an unmapped ingredient (placeholder identifier, awaits curation).
       Can serve as root element for individual YAML files or as elements in IngredientCollection.
     attributes:
       identifier:
         identifier: true
         required: true
         description: >-
-          Primary key for the record. For mapped ingredients this is the
-          ontology CURIE (e.g. `CHEBI:26710`, `FOODON:3311109`, `cas:247167-54-0`,
-          `kgmicrobe.compound:aburamycin_a`); for unmapped ingredients it is
-          a generated `UNMAPPED_NNNN` placeholder. The nested
-          `ontology_mapping.ontology_id` carries the same value for mapped
-          records (and is absent for unmapped records).
+          Semantic identifier for the record and its LinkML identifier slot,
+          but not a guaranteed unique document address: reviewed duplicate
+          families may share a CURIE. For mapped ingredients this is the
+          primary ontology, registry, or local identity (e.g. `CHEBI:26710`,
+          `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`); for unmapped
+          ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested
+          `ontology_mapping.ontology_id` is a grounding target: it equals
+          `identifier` when the identifier itself names the grounded ontology
+          term, but registry or local identities may legitimately differ from
+          the ontology target at any evidence-backed mapping quality.
       preferred_term:
         required: true
         description: Canonical name for this ingredient
@@ -187,7 +191,7 @@ classes:
           A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or
           UNDEFINED_MIXTURE: the list of component ingredients (with concentration
           where known). This is ingredient/mixture partonomy, not an identity mapping,
-          a complete culturing recipe, or the parent/child variant hierarchy. It may
+          a complete culturing recipe, or a relationship among chemical forms. It may
           transcribe a combination label. Populate only from verifiable evidence;
           omit the slot when no constituent is known. When present, component_assertion
           records how the decomposition was made and its evidence.
@@ -203,40 +207,6 @@ classes:
         description: >-
           Cross-reference to CultureMech medium name if this is a defined medium.
           Used to link complex media entries to their full recipe formulations.
-      parent_ingredient:
-        description: >-
-          Reference to parent ingredient's `identifier` in the variant
-          hierarchy. Used for variants: purity levels
-          (tap/distilled/double-distilled water), hydrates (CaCl2·2H2O vs
-          CaCl2), stereoisomers (D-glucose vs L-glucose). Enables queries
-          like "find all media using any form of water".
-          (No pattern constraint: the hierarchy feature is currently unused —
-          when populated, expect the schema's canonical `identifier` format.)
-      child_ingredients:
-        multivalued: true
-        description: >-
-          List of child ingredient `identifier`s in the variant hierarchy.
-          Parent record contains all children (e.g. Water → Tap water,
-          Distilled water). Used to navigate hierarchy and query all variants.
-          (No pattern constraint: see `parent_ingredient` above.)
-      variant_type:
-        range: VariantTypeEnum
-        description: >-
-          Classification of variant relationship to parent.
-          Indicates why this ingredient is distinct from parent/siblings.
-          Examples: PURIFIED (distilled), ULTRA_PURIFIED (double distilled), TAP (impure).
-      variant_notes:
-        description: >-
-          Human-readable explanation of variant distinction from parent/siblings.
-          Example: "Higher purity (10x, <0.1 µS/cm vs <1 µS/cm) than standard distilled water.
-          Used for trace-metal sensitive work."
-      role_inheritance:
-        range: boolean
-        description: >-
-          If true, inherits the three role facets (nutritional_roles,
-          physicochemical_roles, cellular_metabolic_roles) from the parent ingredient.
-          Allows child variants to automatically get parent's roles while enabling
-          variant-specific role overrides or restrictions.
       kg_microbe_node_id:
         description: >-
           KG-Microbe node ID for this ingredient when found in the KG exactly.
@@ -723,7 +693,8 @@ classes:
       One constituent in an IngredientRecord.components has-part assertion. The
       component may resolve to the current MIM catalog, deliberately name an external
       ontology/registry term, or remain unmapped; reference_scope makes those cases
-      explicit. This class does not represent an identity mapping or variant hierarchy.
+      explicit. This class does not represent an identity mapping or a relationship
+      among chemical forms.
     attributes:
       component_name:
         required: true
@@ -973,7 +944,10 @@ enums:
       MERGED_FROM_DUPLICATES:
         description: Duplicate records consolidated into this representative.
       BACKFILL_PARENT_CHEBI:
-        description: "`parent_ingredient` populated by lookup against CHEBI hierarchy."
+        description: >-
+          Legacy history value emitted when old tooling looked up a broader ChEBI
+          parent. It does not denote an active MIM hierarchy edge; retain it only so
+          historical curation events remain valid.
 
   SynonymTypeEnum:
     permissible_values:
@@ -1345,45 +1319,3 @@ enums:
           Pre-mixed solution of defined ingredients
           (e.g., vitamin B12 solution, trace metal mix).
           Components known but premixed for convenience.
-
-  VariantTypeEnum:
-    description: >-
-      Classification of ingredient variant in hierarchy.
-      Indicates the type of relationship to parent ingredient.
-    permissible_values:
-      BASE_CHEMICAL:
-        description: >-
-          Parent/base form of chemical in hierarchy.
-          Example: Water (base) as parent of tap/distilled/double-distilled variants.
-      HYDRATE:
-        description: >-
-          Hydrated crystalline form of compound.
-          Example: CaCl2·2H2O vs CaCl2 (anhydrous).
-      STEREOISOMER:
-        description: >-
-          Different spatial arrangement of atoms (stereochemistry).
-          Example: D-glucose vs L-glucose, D-biotin vs L-biotin.
-      PURIFIED:
-        description: >-
-          Standard purified/distilled form.
-          Example: Distilled water (<1 µS/cm conductivity).
-      ULTRA_PURIFIED:
-        description: >-
-          Higher purity variant than standard purified form.
-          Example: Double distilled water (<0.1 µS/cm, 10x purer than distilled).
-      TAP:
-        description: >-
-          Impure tap water variant containing chlorine and minerals.
-          Example: Tap water (municipal water supply).
-      DEMINERALIZED:
-        description: >-
-          Demineralized/deionized variant (ion exchange process).
-          Example: Demineralized water, DI water.
-      SALT:
-        description: >-
-          Salt form of compound (different counterion).
-          Example: Sodium phosphate vs potassium phosphate.
-      ANHYDROUS:
-        description: >-
-          Water-free (anhydrous) form of compound.
-          Example: CaCl2 (anhydrous) vs CaCl2·2H2O (dihydrate).

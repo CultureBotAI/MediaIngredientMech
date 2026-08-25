@@ -1,6 +1,7 @@
 # Validation & Troubleshooting
 
-*Reference for the **manage-identifiers** skill — see [`../SKILL.md`](../SKILL.md) for the MediaIngredientMech overview and core workflow.*
+> **RETIRED:** This snapshot predates MIM's sequential-ID rollback. Its MIM
+> examples are false for the current schema; do not use it as instructions.
 
 ---
 
@@ -230,4 +231,3 @@ To fill gaps (NOT RECOMMENDED):
 - Re-run batch assignment with sequential ordering
 - Document the renumbering in changelog
 ```
-

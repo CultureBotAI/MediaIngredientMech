@@ -81,11 +81,13 @@ recipe merely because it has `components`.
 - A whole-to-part identity or ontology match belongs in grounding/SSSOM, never in
   `components`. Giving a mixture one part's CAS or CURIE would assert that the
   whole *is* that part.
-- Chemical-form relationships (hydrate, stereoisomer, purity variant) belong in
-  `parent_ingredient` / `child_ingredients`, not here.
+- MIM currently encodes no local relationship among records that differ in
+  hydration, stereochemistry, salt form, or grade. Whether those details create
+  a distinct identity or live in `supplied_form` follows `MAPPING_SEMANTICS.md`;
+  `components` must not substitute for either decision.
 - CultureMech recipe procedure, solution hierarchy, family, and variant semantics
   remain CultureMech responsibilities; this slot carries only the MIM-side material
   parts supported by the cited evidence.
 
 See [MAPPING_SEMANTICS.md](../MAPPING_SEMANTICS.md) for the identity boundary and
-[HIERARCHY_GUIDE.md](HIERARCHY_GUIDE.md) for chemical-form hierarchy.
+[HIERARCHY_GUIDE.md](HIERARCHY_GUIDE.md) for the hierarchy boundary.

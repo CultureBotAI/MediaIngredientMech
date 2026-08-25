@@ -39,10 +39,10 @@ START: Should I merge Record A and Record B?
 │     │  └─ ✅ SAFE TO MERGE
 │     │
 │     ├─ Hydrate variants?
-│     │  └─ ⚠️ FLAG FOR REVIEW (consider hierarchy)
+│     │  └─ ❌ KEEP SEPARATE (review exact grounding)
 │     │
 │     ├─ Stereoisomers (D/L prefix)?
-│     │  └─ ⚠️ FLAG FOR REVIEW (consider hierarchy)
+│     │  └─ ❌ KEEP SEPARATE (review exact grounding)
 │     │
 │     └─ Unclear pattern?
 │        └─ ⚠️ FLAG FOR MANUAL REVIEW
@@ -126,15 +126,15 @@ START: Should I merge Record A and Record B?
 │                                                     │
 │  Compare: "CaCl2" vs "CaCl2·2H2O"                  │
 │  Analysis: Different hydration states              │
-│  Decision: ⚠️ REVIEW (may need hierarchy)          │
+│  Decision: ❌ KEEP SEPARATE; review grounding         │
 └─────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────┐
 │  Pattern 4: Stereoisomers                          │
 │                                                     │
-│  Compare: "Biotin" vs "D-biotin"                   │
+│  Compare: "D-biotin" vs "L-biotin"                 │
 │  Analysis: Stereochemistry difference              │
-│  Decision: ⚠️ REVIEW (may need hierarchy)          │
+│  Decision: ❌ KEEP SEPARATE; review grounding         │
 └─────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────┐
@@ -156,11 +156,14 @@ START: Should I merge Record A and Record B?
 - Abbreviations (H2O/water)
 
 🟡 **YELLOW - Needs Review**
-- Hydrate variants (MgSO4/MgSO4·7H2O)
-- Stereoisomers (biotin/D-biotin)
+- Labels that may encode a hydrate, stereoisomer, or purity distinction but are
+  ambiguous without source evidence
 - Unclear patterns (requires expert judgment)
 
 🔴 **RED - Do NOT Merge**
+- Confirmed hydrate variants (MgSO4/MgSO4·7H2O)
+- Confirmed stereoisomers (D-biotin/L-biotin)
+- Confirmed distinct material grades
 - Complex media detected (R2A agar ≠ Agar)
 - Different ingredient_type
 - Different CHEBI IDs
@@ -188,13 +191,15 @@ Agar (CHEBI:2509)
 
 **What happened:**
 ```
-Biotin (parent)
-└─ D-biotin ✗ (specific stereoisomer)
+D-biotin
+└─ L-biotin ✗ (different stereoisomer)
 ```
 
-**Why it's wrong:** D-biotin and L-biotin have different biological activity
+**Why it's wrong:** D-biotin and L-biotin have different stereochemistry and
+biological activity
 
-**Prevention:** Check for D/L prefixes, use hierarchy instead
+**Prevention:** Check for D/L prefixes, keep distinct records, and use
+stereospecific grounding
 
 ### ❌ Mistake 3: Merging Water Variants
 
@@ -208,7 +213,8 @@ Water (general)
 
 **Why it's wrong:** Different purity levels affect media composition
 
-**Prevention:** Purity qualifiers indicate variants, use hierarchy
+**Prevention:** Purity qualifiers can denote distinct materials; keep separate
+records unless identity evidence proves they are interchangeable
 
 ---
 
@@ -219,9 +225,9 @@ Water (general)
 | Case only | Water / water | ✅ MERGE | Identical except capitalization |
 | Chemical synonym | NaCl / sodium chloride | ✅ MERGE | Same chemical, different names |
 | Abbreviation | H2O / water | ✅ MERGE | Standard abbreviation |
-| Hydrate | CaCl2 / CaCl2·2H2O | ⚠️ REVIEW | Different molecular weight |
-| Stereoisomer | biotin / D-biotin | ⚠️ REVIEW | Different chirality |
-| Purity level | water / distilled water | ⚠️ REVIEW | Different purity |
+| Hydrate | CaCl2 / CaCl2·2H2O | ❌ KEEP SEPARATE | Different substance and molecular weight |
+| Stereoisomer | D-biotin / L-biotin | ❌ KEEP SEPARATE | Different chirality |
+| Purity level | water / distilled water | ❌ KEEP SEPARATE | Different material grade |
 | Complex media | agar / R2A agar | ❌ STOP | Recipe vs ingredient |
 | Different type | SINGLE vs DEFINED | ❌ STOP | Different categories |
 | Different CHEBI | glucose / fructose | ❌ STOP | Different chemicals |
@@ -245,5 +251,4 @@ When implementing merge logic, ensure:
 
 **See Also:**
 - `docs/MERGE_CURATION_GUIDE.md` - Detailed curation rules
-- `analysis/merge_pattern_analysis.md` - Real data analysis
 - `scripts/identify_complex_media.py` - Detection algorithm

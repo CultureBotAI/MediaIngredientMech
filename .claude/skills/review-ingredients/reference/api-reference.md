@@ -21,7 +21,7 @@ class IngredientReviewer:
       - OAK for term existence/metadata
       - OLS for chemical properties enrichment
       - LinkML for schema validation
-      - Custom rules for domain logic (purity, dual identifiers)
+      - Custom rules for domain logic (purity, mapped-state identifier consistency)
     """
 
     def __init__(self,
@@ -387,4 +387,3 @@ Interactive web dashboard with:
 - Bootstrap for styling
 - Export buttons (CSV, JSON, PDF)
 - Progress bars for summary stats
-

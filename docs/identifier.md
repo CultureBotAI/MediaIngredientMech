@@ -1,9 +1,9 @@
 
 
-# Slot: identifier 
+# Slot: identifier
 
 
-_Primary key for the record. For mapped ingredients this is the ontology CURIE (e.g. `CHEBI:26710`, `FOODON:3311109`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`); for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested `ontology_mapping.ontology_id` carries the same value for mapped records (and is absent for unmapped records)._
+_Semantic identifier for the record and its LinkML identifier slot, but not a guaranteed unique document address: reviewed duplicate families may share a CURIE. For mapped ingredients this is the primary ontology, registry, or local identity (e.g. `CHEBI:26710`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`); for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested `ontology_mapping.ontology_id` is a grounding target: it equals `identifier` when the identifier itself names the grounded ontology term, but registry or local identities may legitimately differ from the ontology target at any evidence-backed mapping quality._
 
 
 
@@ -68,11 +68,15 @@ Alias: identifier
 <details>
 ```yaml
 name: identifier
-description: Primary key for the record. For mapped ingredients this is the ontology
-  CURIE (e.g. `CHEBI:26710`, `FOODON:3311109`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
+description: 'Semantic identifier for the record and its LinkML identifier slot, but
+  not a guaranteed unique document address: reviewed duplicate families may share
+  a CURIE. For mapped ingredients this is the primary ontology, registry, or local
+  identity (e.g. `CHEBI:26710`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
   for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The nested
-  `ontology_mapping.ontology_id` carries the same value for mapped records (and is
-  absent for unmapped records).
+  `ontology_mapping.ontology_id` is a grounding target: it equals `identifier` when
+  the identifier itself names the grounded ontology term, but registry or local
+  identities may legitimately differ from the ontology target at any evidence-backed
+  mapping quality.'
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 identifier: true

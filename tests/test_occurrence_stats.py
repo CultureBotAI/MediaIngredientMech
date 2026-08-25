@@ -32,3 +32,25 @@ def test_occurrence_stats_consistent():
         "occurrence_statistics inconsistencies found:\n"
         + "\n".join(f"  {k}: {v}" for k, v in issues.items() if v)
     )
+
+
+def test_backfill_addresses_shared_identifier_siblings_by_preferred_term():
+    audit = _load_audit()
+    dry = {
+        "identifier": "CHEBI:1",
+        "preferred_term": "salt",
+        "mapping_status": "MAPPED",
+        "occurrence_statistics": {"total_occurrences": 4, "media_count": 2},
+    }
+    wet = {
+        "identifier": "CHEBI:1",
+        "preferred_term": "salt hydrate",
+        "mapping_status": "MAPPED",
+    }
+    records = [dry, wet]
+    issues = audit.find_issues(records)
+
+    assert issues["missing"] == [("CHEBI:1", "salt hydrate")]
+    assert audit.backfill_missing(records, issues["missing"]) == 1
+    assert dry["occurrence_statistics"] == {"total_occurrences": 4, "media_count": 2}
+    assert wet["occurrence_statistics"] == {"total_occurrences": 0, "media_count": 0}

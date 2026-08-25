@@ -99,9 +99,9 @@ start_index = checkpoint.state["last_index"]
 for i, ingredient in enumerate(ingredients[start_index:], start=start_index):
     try:
         result = validate_ingredient(ingredient)
-        checkpoint.mark_completed(ingredient['id'], i)
+        checkpoint.mark_completed(ingredient['identifier'], i)
     except Exception as e:
-        checkpoint.mark_error(ingredient['id'], str(e))
+        checkpoint.mark_error(ingredient['identifier'], str(e))
 ```
 
 ---

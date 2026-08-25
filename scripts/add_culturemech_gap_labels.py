@@ -57,9 +57,9 @@ to `CultureMech:007629`. `Marine broth 2216` — already in the corpus as
 UNMAPPED_0434 — is promoted the same way, because minting the agar and leaving
 its broth twin unmapped would be an arbitrary split.
 
-A CultureMech id cannot be the `identifier`: MIM's primary key is an ontology
-CURIE or a registry mint, and `CultureMech:` is neither. It is carried as
-evidence, which is where a cross-reference belongs.
+For these records the `identifier` is the supported ontology or local registry
+identity; the CultureMech recipe ID is a cross-reference, not ingredient
+identity. It is therefore carried as evidence.
 
 ## Synonyms onto existing records (9)
 
@@ -291,8 +291,8 @@ def main(argv: list[str] | None = None) -> int:
             skipped.append(f"{label}: a record already carries this label")
             continue
         if term in taken:
-            # The Butane-1,4-diol defect: identifier IS the CURIE, so this would
-            # be a duplicate primary key, not a new mapping.
+            # The Butane-1,4-diol defect: this primary identity is already held,
+            # so adding a same-substance record would create an unreviewed family.
             holder = next(r for r in all_recs if str(r.get("identifier")) == term)
             skipped.append(f"{label}: {term} already held by "
                            f"{holder.get('preferred_term')!r} — would duplicate")
@@ -321,9 +321,8 @@ def main(argv: list[str] | None = None) -> int:
     # ---- mints (no ontology term at any granularity) ------------------------
     for label, (mint, cm_id, why) in MINT.items():
         note = (f"Minted under the #288 named-preparation convention ({ISSUE}): {why}. "
-                f"Cross-reference: {cm_id}. A CultureMech id cannot be the identifier "
-                f"— MIM's primary key is an ontology CURIE or a registry mint — so it "
-                f"is carried here as evidence.")
+                f"Cross-reference: {cm_id}. This recipe ID is not the ingredient's "
+                f"semantic identity, so it is carried here as evidence.")
         rec = by_label.get(label)
         if rec is None:
             rec = {
@@ -390,9 +389,9 @@ def main(argv: list[str] | None = None) -> int:
             "source": f"CultureMech label unresolvable via label_index ({ISSUE})"})
         note = (f"Added {surface!r} as a {syn_type} ({ISSUE}): {why}. CultureMech uses "
                 f"this surface form and label_index did not contain it, so the lookup "
-                f"missed. No new record: {expect} is this record's identifier, and in "
-                f"MIM the identifier IS the ontology CURIE, so a second record on it "
-                f"would be a duplicate primary key rather than added coverage.")
+                f"missed. No new record: {expect} is this record's identity, so a "
+                f"second same-substance record on it would be an unreviewed duplicate "
+                f"family rather than added coverage.")
         rec.setdefault("curation_history", []).append(
             history("ADDED_SYNONYM_FOR_CULTUREMECH_GAP", note))
         om = rec.get("ontology_mapping")

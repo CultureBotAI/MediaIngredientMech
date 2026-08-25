@@ -1,4 +1,8 @@
-"""Generic ID utilities for X-Mech repositories.
+"""RETIRED sequential-ID utility; not valid for current MIM records.
+
+MediaIngredientMech removed its separate ``MediaIngredientMech:NNNNNN`` key.
+This unused module is preserved only as historical sister-repository design
+material and must not be run against current MIM curated files.
 
 This module provides reusable functions for managing stable, sequential identifiers
 across X-Mech repositories (MediaIngredientMech, CultureMech, CommunityMech, etc.).

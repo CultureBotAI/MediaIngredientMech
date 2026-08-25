@@ -1,7 +1,10 @@
 """Report records that share one identifier, and gate against new ones (#218).
 
-In MIM the record `identifier` IS the ontology CURIE, so two records with the
-same identifier both assert they are that term. 61 such groups exist today.
+In MIM `identifier` is a semantic identity, not a unique document address.
+Reviewed supplied-form families may legitimately share it, but every new or
+changed family needs an explicit disposition: otherwise record-key lookups
+silently collapse siblings and a shared ontology identity may overstate what
+one supplied form denotes.
 
 They are not one problem with one fix. Collapsing them blindly destroys real
 distinctions -- CHEBI:34683 is held by Na2HPO4 and five of its hydrates, and a
@@ -16,8 +19,8 @@ machine-readable verdict. It emits the signals a curator needs and carries a
 `disposition` column humans own.
 
 `disposition` values come from MAPPING_SEMANTICS.md Section 3, which settles the
-whole class in one rule -- one record per distinct substance, and a record's
-identifier is the most specific stable id denoting THAT substance:
+whole class in one rule -- preserve distinct supplied forms when the recipe
+distinction matters and use the most specific supported identity/grounding:
 
   MERGE_SAME_SUBSTANCE           the records describe one substance; fold one
                                  into the other. NOTE every baseline row is

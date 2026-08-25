@@ -40,7 +40,7 @@ Core record for a media ingredient. Represents either a mapped ingredient (with 
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `identifier` | string (ID) | Yes | Unique identifier. Ontology ID for mapped (e.g., `CHEBI:26710`) or placeholder for unmapped (e.g., `UNMAPPED_001`) |
+| `identifier` | string (ID) | Yes | Primary semantic identity for a mapped record (ontology, registry, or local CURIE) or placeholder for unmapped (e.g., `UNMAPPED_001`). Its ontology grounding may differ, and known duplicate families may share it, so this is not a unique document address. |
 | `preferred_term` | string | Yes | Canonical name for this ingredient |
 | `ontology_mapping` | OntologyMapping | No | Ontology term mapping |
 | `synonyms` | IngredientSynonym[] | No | Alternative names and raw text variants |

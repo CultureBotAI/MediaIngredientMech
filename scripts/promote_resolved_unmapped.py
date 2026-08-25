@@ -187,7 +187,10 @@ def main():
     if idx is None:
         raise SystemExit(f"{a.identifier} not found in {UNMAPPED.name}")
     if any(r["identifier"] == a.to for r in mapped["ingredients"]):
-        raise SystemExit(f"{a.to} is already a primary key in {MAPPED.name} (PK collision)")
+        raise SystemExit(
+            f"{a.to} is already a live semantic identity in {MAPPED.name}; "
+            "promotion would create an unreviewed shared-identifier family"
+        )
 
     rec = unmapped["ingredients"][idx]
     pref = rec.get("preferred_term", a.identifier)

@@ -1,5 +1,9 @@
 # Bad Merge Examples Catalog
 
+> **RETIRED:** This catalog belongs to the same pre-current, surrogate-ID merge
+> analysis as `good_merge_examples.md`. It is historical context, not a complete
+> or current validation set.
+
 **Purpose:** Document incorrect merges to prevent future mistakes
 
 **Source:** Pattern analysis of 211 merge clusters (1 bad merge cluster = 0.5%, but affecting 21 records!)

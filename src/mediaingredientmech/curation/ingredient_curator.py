@@ -270,7 +270,7 @@ class IngredientCurator:
             ],
         }
 
-        # Update record's primary key. The schema slot is named `identifier`
+        # Update the record's semantic identifier. The schema slot is named `identifier`
         # (as of 2026-05-16) and carries the same value the nested
         # `ontology_mapping.ontology_id` now has. Drop any stale legacy
         # top-level `ontology_id` so the record can't end up with

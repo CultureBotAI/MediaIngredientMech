@@ -1,10 +1,10 @@
 """Fold an UNMAPPED record into the MAPPED record it duplicates.
 
 `promote_resolved_unmapped.py` cannot do this: promoting would give the record
-an identifier another record already holds, and in MIM the identifier IS the
-ontology CURIE, so two records would claim to be the same term -- the defect
-`just qc-duplicate-ids` now gates (#218). When research resolves a raw label to
-a CHEBI term that is already mapped, the answer is a merge, not a promotion.
+an identifier another record already holds, creating an unreviewed family and
+an ambiguous record address -- the defect `just qc-duplicate-ids` gates (#218).
+When research shows that a raw label is the same supplied substance as the
+existing mapped record, the answer is a merge, not a second record.
 
 What a merge does:
   * add the raw label to the target as a RAW_TEXT synonym

@@ -6,7 +6,7 @@ checking for critical errors, warnings, and enrichment opportunities using:
 - OAK (Ontology Access Kit) for term verification
 - EBI OLS v4 API for chemical properties enrichment
 - LinkML schema validation
-- Domain-specific rules (purity, dual identifiers)
+- Domain-specific rules (purity, mapped-state identifier consistency)
 """
 
 import re
@@ -30,7 +30,7 @@ PRIORITY_P4 = "P4"  # Low-priority info
 # Validation rules
 RULE_P1_1 = "P1.1"  # Term does not exist
 RULE_P1_2 = "P1.2"  # Invalid CURIE format
-RULE_P1_3 = "P1.3"  # Dual identifier mismatch
+RULE_P1_3 = "P1.3"  # Mapped record still carries an UNMAPPED placeholder
 RULE_P1_4 = "P1.4"  # Missing required fields
 
 RULE_P2_1 = "P2.1"  # Label mismatch
@@ -59,7 +59,7 @@ class ValidationIssue:
     category: str  # e.g., "label_mismatch", "missing_properties"
     message: str  # Human-readable description
     evidence: dict  # Supporting data for the issue
-    ingredient_id: str  # Which ingredient (preferred_term or id)
+    ingredient_id: str  # Which ingredient (normally preferred_term)
 
 
 @dataclass
@@ -103,7 +103,7 @@ class IngredientReviewer:
       - OAK for term existence/metadata
       - OLS for chemical properties enrichment
       - LinkML for schema validation
-      - Custom rules for domain logic (purity, dual identifiers)
+      - Custom rules for domain logic (purity, mapped-state identifier consistency)
     """
 
     def __init__(
@@ -518,7 +518,9 @@ class IngredientReviewer:
                 )
             )
 
-        # P1.3: Dual identifier mismatch
+        # P1.3: a mapped record must not retain an UNMAPPED placeholder. Its
+        # registry/identity identifier may legitimately differ from the
+        # ontology grounding target (MAPPING_SEMANTICS.md section 0).
         record_identifier = ingredient_record.get("identifier")
         if record_identifier and record_identifier.startswith("UNMAPPED_"):
             issues.append(

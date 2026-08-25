@@ -1,5 +1,11 @@
 # LinkML Schema Validation Report
 
+> **Historical snapshot, not current identity guidance.** This report records the
+> repository state on 2026-03-06. Counts and schema excerpts below are not maintained.
+> In the current contract, `identifier` is required but is not globally unique across
+> documents; reviewed duplicate families are governed by
+> `mappings/duplicate_identifier_baseline.tsv` and `MAPPING_SEMANTICS.md`.
+
 **Date:** 2026-03-06
 **Total Files:** 1,131 individual YAML records (995 mapped + 136 unmapped)
 **Status:** ✅ **ALL RECORDS VALID AND STANDARDIZED**
@@ -39,7 +45,7 @@ classes:
   IngredientRecord:
     tree_root: true              # For individual files (NEW)
     attributes:
-      identifier: string (required, unique)
+      identifier: string (required semantic identity; not globally unique)
       preferred_term: string (required)
       ontology_mapping: OntologyMapping
       synonyms: IngredientSynonym[]
@@ -174,7 +180,7 @@ linkml-validate --schema src/mediaingredientmech/schema/mediaingredientmech.yaml
 All records comply with:
 
 ✅ **Required fields present:**
-- `identifier` (unique CURIE or placeholder ID)
+- `identifier` (semantic CURIE or placeholder ID; reviewed families may share it)
 - `preferred_term` (canonical name)
 - `mapping_status` (MAPPED, UNMAPPED, etc.)
 

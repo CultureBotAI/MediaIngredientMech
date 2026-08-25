@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""
-Apply correction plan from JSON file.
+"""RETIRED correction-plan writer for the rolled-back record shape.
+
+The script used the removed ``id`` selector and emitted invalid curation events;
+it is historical material, not a supported write path.
 
 Usage:
     python scripts/apply_corrections.py corrections_plan.json --validate

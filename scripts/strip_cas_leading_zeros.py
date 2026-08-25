@@ -36,8 +36,8 @@ were meaningful. Two checks:
   establishes the padding is cosmetic.
 
 The stripped identifier is checked against the corpus for an existing holder
-before it is taken — in MIM the identifier IS the CURIE, so colliding with a
-live record would create a duplicate primary key rather than fix anything.
+before it is taken. A collision would create an unreviewed shared-identity family
+and make identifier-keyed tooling ambiguous rather than safely fix one record.
 
     python scripts/strip_cas_leading_zeros.py            # dry-run
     python scripts/strip_cas_leading_zeros.py --apply

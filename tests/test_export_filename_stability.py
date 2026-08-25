@@ -94,7 +94,7 @@ def test_index_finds_existing_stem_by_identifier(tmp_path):
 
 
 def test_index_finds_existing_stem_by_preferred_term_when_identifier_changed(tmp_path):
-    """Promotion UNMAPPED_NNNN -> CHEBI:x changes the primary key itself."""
+    """Promotion UNMAPPED_NNNN -> CHEBI:x changes semantic identity itself."""
     exp = _load_exporter()
     root = tmp_path / "ingredients"
     (root / "unmapped").mkdir(parents=True)

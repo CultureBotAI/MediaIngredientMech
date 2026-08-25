@@ -30,28 +30,64 @@ from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 DATA = Path("data/curated/mapped_ingredients.yaml")
 
 
+def record_address(record: dict) -> tuple[str, str]:
+    """Composite address used where a semantic identifier may be shared."""
+    return (
+        str(record.get("identifier") or ""),
+        str(record.get("preferred_term") or ""),
+    )
+
+
 def find_issues(records: list[dict]) -> dict[str, list]:
     issues = {"missing": [], "rejected_nonzero": [], "negative": [], "media_gt_occ": []}
     for r in records:
-        ident = r.get("identifier")
+        address = record_address(r)
         st = r.get("occurrence_statistics")
         # Treat absent, non-mapping, or partially-populated stats as MISSING; the
         # later numeric checks then only run when both counts are present.
         if not isinstance(st, dict):
-            issues["missing"].append(ident)
+            issues["missing"].append(address)
             continue
         occ = st.get("total_occurrences")
         mc = st.get("media_count")
         if occ is None or mc is None:
-            issues["missing"].append(ident)
+            issues["missing"].append(address)
             continue
         if r.get("mapping_status") == "REJECTED" and occ > 0:
-            issues["rejected_nonzero"].append((ident, occ))
+            issues["rejected_nonzero"].append((address, occ))
         if occ < 0 or mc < 0:
-            issues["negative"].append((ident, occ, mc))
+            issues["negative"].append((address, occ, mc))
         if mc > occ:
-            issues["media_gt_occ"].append((ident, occ, mc))
+            issues["media_gt_occ"].append((address, occ, mc))
     return issues
+
+
+def backfill_missing(records: list[dict], missing: list[tuple[str, str]]) -> int:
+    """Backfill exactly addressed records; reject ambiguous document addresses."""
+    by_address: dict[tuple[str, str], dict] = {}
+    for record in records:
+        address = record_address(record)
+        if address in by_address:
+            raise ValueError(f"Duplicate occurrence-audit record address: {address}")
+        by_address[address] = record
+
+    for address in missing:
+        rec = by_address[address]
+        st = rec.get("occurrence_statistics")
+        st = st if isinstance(st, dict) else {}
+        # Preserve any value that is present; only fill the missing count(s).
+        rec["occurrence_statistics"] = {
+            "total_occurrences": st.get("total_occurrences") or 0,
+            "media_count": st.get("media_count") or 0,
+        }
+        record_curation_event(
+            rec,
+            curator="audit_occurrence_stats",
+            action="CORRECTED",
+            changes="Backfilled missing occurrence_statistics (0/0): ontology-derived "
+            "record with no tracked media occurrences.",
+        )
+    return len(missing)
 
 
 def main() -> int:
@@ -75,25 +111,7 @@ def main() -> int:
         print(f"\n{total} issue(s). Backfill MISSING with --fix; resolve others by hand.")
         return 1
 
-    by_ident = {r.get("identifier"): r for r in curator.records}
-    n = 0
-    for ident in issues["missing"]:
-        rec = by_ident[ident]
-        st = rec.get("occurrence_statistics")
-        st = st if isinstance(st, dict) else {}
-        # Preserve any value that is present; only fill the missing count(s).
-        rec["occurrence_statistics"] = {
-            "total_occurrences": st.get("total_occurrences") or 0,
-            "media_count": st.get("media_count") or 0,
-        }
-        record_curation_event(
-            rec,
-            curator="audit_occurrence_stats",
-            action="CORRECTED",
-            changes="Backfilled missing occurrence_statistics (0/0): ontology-derived "
-            "record with no tracked media occurrences.",
-        )
-        n += 1
+    n = backfill_missing(curator.records, issues["missing"])
     curator.save()
     print(f"\nBackfilled {n} record(s). (Other categories, if any, left for manual review.)")
     return 0
