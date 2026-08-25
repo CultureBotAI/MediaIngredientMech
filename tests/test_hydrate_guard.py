@@ -228,3 +228,37 @@ def test_hexahydrate_and_6H2O_are_the_same_state():
     """Comparing raw tokens reported 96 records as mismatched when almost all
     were respellings (#254)."""
     assert water_multiplicity("CoCl2 x 6 H2O") == water_multiplicity("cobalt chloride hexahydrate")
+
+
+# --- #257: a digit run above MAX_PLAUSIBLE_WATERS is parse damage -----------
+@pytest.mark.parametrize(
+    "label",
+    ["MgCl2 x 76 H2O", "FeSO43 x 999 H2O", "CoCl2·31H2O"],
+)
+def test_an_implausible_water_count_reads_as_unstated(label):
+    """Reporting 76 does not merely lose information -- it manufactures a
+    confident mismatch against every sibling stating a real count."""
+    assert water_multiplicity(label) is None
+
+
+@pytest.mark.parametrize("label", ["Al2(SO4)3 x 18 H2O", "AlK(SO4)2 x 12 H2O",
+                                   "Na2SO4 x 10 H2O", "CoCl2·30H2O"])
+def test_real_hydration_states_are_not_capped(label):
+    """The corpus tops out at 18; the ceiling must clear everything real."""
+    assert water_multiplicity(label) is not None
+
+
+def test_word_forms_are_not_subject_to_the_ceiling():
+    """`_COUNT` already bounds them, and `dodecahydrate` cannot be a typo."""
+    assert water_multiplicity("magnesium chloride dodecahydrate") == "12"
+
+
+# --- #256 regression: hyphen-separated hydrates ----------------------------
+@pytest.mark.parametrize(
+    ("label", "expected"),
+    [("MgCl2-6H2O", "6"), ("Na2HPO4-12H2O", "12"), ("MgCl2 - 6 H2O", "6")],
+)
+def test_hyphen_separated_hydrates_are_read(label, expected):
+    """Filed as broken in #256; verified fixed 2026-08-24. Pinned so the
+    separator class cannot lose `-` again."""
+    assert water_multiplicity(label) == expected

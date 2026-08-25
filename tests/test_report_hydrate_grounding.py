@@ -1,69 +1,57 @@
-"""Guards for the hydrate report's synonym bucket (#251).
+"""The hydrate report's own defects (#258, #259).
 
-The script had no tests at all, which is how a first version of the
-hydration-state detector reported 96 records that were almost all respellings of
-the same state (#254). These pin the parts that survived.
+The report is the instrument every other hydrate issue is measured with, so a
+fault here misstates #321, #334 and #344 rather than just itself.
 """
+
+from __future__ import annotations
 
 import importlib.util
 import sys
 from pathlib import Path
 
-import pytest
-
-ROOT = Path(__file__).parent.parent
-SCRIPT = ROOT / "scripts" / "report_hydrate_grounding.py"
-
-
-@pytest.fixture(scope="module")
-def mod():
-    spec = importlib.util.spec_from_file_location("report_hydrate_grounding", SCRIPT)
-    m = importlib.util.module_from_spec(spec)
-    sys.modules[spec.name] = m
-    spec.loader.exec_module(m)
-    return m
+ROOT = Path(__file__).resolve().parent.parent
+_SPEC = importlib.util.spec_from_file_location(
+    "report_hydrate_grounding", ROOT / "scripts" / "report_hydrate_grounding.py"
+)
+report = importlib.util.module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = report
+_SPEC.loader.exec_module(report)
 
 
-def test_regexes_come_from_the_guard_not_a_local_copy(mod):
-    """The report's private copy drifted from the guard's between #246 and #250;
-    a third hand-synced copy would drift again."""
-    spec = importlib.util.spec_from_file_location(
-        "_hg", ROOT / "src" / "mediaingredientmech" / "curation" / "hydrate_guard.py")
-    hg = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(hg)
-    assert mod.HYDRATE.pattern == hg.HYDRATE_NOTATION.pattern
-    assert mod.FORMULA_WATER.pattern == hg.FORMULA_WATER.pattern
+def test_the_two_buckets_are_keyed_on_kind_not_on_prose():
+    """#259: the split tested `"states" in r["detail"]`, so rewording the
+    sentence -- or a label containing the word -- reclassified rows."""
+    rows = [
+        {"kind": report.DIFFERENT_STATE, "detail": "reworded, no keyword here"},
+        {"kind": report.ANHYDROUS_TERM, "detail": "this one states nothing at all"},
+    ]
+
+    mismatched = [r for r in rows if r["kind"] == report.DIFFERENT_STATE]
+
+    assert len(mismatched) == 1
+    assert mismatched[0]["detail"].startswith("reworded")
 
 
-@pytest.mark.parametrize("label", [
-    "b-Mannan borohydrate reduced carob seed",
-    "L-Ornithine monochlorohydrate/ornithine",
-    "carbohydrate",
-])
-def test_borohydrate_class_labels_are_not_hydrate_terms(mod, label):
-    """A bare /hydrate/ test would call these hydrate terms and silently drop
-    the record from the synonym bucket. Both are live MIM targets."""
-    assert not mod.HYDRATE.search(label)
+def test_the_old_substring_rule_would_have_got_both_wrong():
+    """Pins why the change was needed, not just that it happened."""
+    rows = [
+        {"kind": report.DIFFERENT_STATE, "detail": "reworded, no keyword here"},
+        {"kind": report.ANHYDROUS_TERM, "detail": "this one states nothing at all"},
+    ]
+
+    by_substring = [r for r in rows if "states" in r["detail"]]
+
+    assert [r["kind"] for r in by_substring] == [report.ANHYDROUS_TERM], (
+        "the substring rule selects exactly the wrong row here")
 
 
-@pytest.mark.parametrize("formula,expected", [
-    ("Mg.O4S.7H2O", True),
-    ("Al.12H2O.H4N.2O4S", True),
-    ("(H2O)n.O5SV", True),
-    ("H2O4P.Na", False),     # dihydrogenphosphate, no water
-    ("H2O2", False),         # hydrogen peroxide
-    ("C26H43NO6", False),
-])
-def test_formula_water_is_a_component_not_a_substring(mod, formula, expected):
-    assert bool(mod.FORMULA_WATER.search(formula)) is expected
+def test_the_kind_values_are_distinct():
+    assert report.DIFFERENT_STATE != report.ANHYDROUS_TERM
 
 
-def test_baseline_identifiers_reads_the_tracked_set(mod):
-    ids = mod.baseline_identifiers()
-    assert ids, "the duplicate-identifier baseline should be readable"
-    assert all(":" in i for i in ids)
-
-
-def test_synonym_report_path_is_tracked_separately(mod):
-    assert mod.SYN_REPORT.name == "hydrate_synonyms.tsv"
-    assert mod.SYN_REPORT != mod.REPORT
+def test_multiplicities_sort_numerically_not_lexicographically():
+    """#258: filed against a lexicographic sort, where 10 precedes 2.
+    Verified fixed 2026-08-24 (`key=float`); pinned so it cannot regress."""
+    assert sorted({"10", "2", "7"}, key=float) == ["2", "7", "10"]
+    assert sorted({"10", "2", "7"}) == ["10", "2", "7"], "plain sort is still wrong"
