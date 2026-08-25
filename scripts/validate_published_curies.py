@@ -26,6 +26,12 @@ Deliberately NOT checked here, because another gate owns each:
 * label correspondence — ``just validate-products``
 * the SSSOM invariants A/B/C/D — ``scripts/validate_sssom_invariants.py``
 
+Scope is ``subject_id`` and ``object_id`` only. ``object_source`` and
+``mapping_justification`` also hold CURIE-shaped values (``obo:chebi.owl``,
+``semapv:LexicalMatching``) but draw on vocabularies MIM does not own, so
+``PREFIX_RANK`` is the wrong authority for them; Rule C owns ``object_source``
+being present at all.
+
 Exit codes: 0 clean, 2 at least one bad CURIE.
 """
 
@@ -33,13 +39,35 @@ from __future__ import annotations
 
 import argparse
 import csv
+import importlib.util
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "src"))
 
-from mediaingredientmech.curie import _CURIE_RE, PREFIX_RANK  # noqa: E402
+
+def _load_curie_module():
+    """Import `curie.py` by path, not as `mediaingredientmech.curie`.
+
+    This runs in the `qc-sssom` CI job, which installs only pyyaml and invokes
+    scripts with bare `python3`. Importing the package would execute
+    `mediaingredientmech/__init__.py`, so anything added there later — a
+    linkml or pandas import, say — would break this gate for a reason having
+    nothing to do with CURIEs. Loading the one module by path keeps the gate's
+    dependency surface equal to what it actually reads.
+    """
+    spec = importlib.util.spec_from_file_location(
+        "_mim_curie", REPO / "src" / "mediaingredientmech" / "curie.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+_curie = _load_curie_module()
+_CURIE_RE = _curie._CURIE_RE
+PREFIX_RANK = _curie.PREFIX_RANK
 
 DEFAULT_SSSOM = REPO / "mappings" / "ingredient_mappings.sssom.tsv"
 
