@@ -612,8 +612,12 @@ curie-verify-micro:
     uv run python scripts/verify_micro_ids.py
 
 # Assert the published SSSOM satisfies the CURIE standard.
+# Reads the artifact FIRST, then the normalizer's unit tests. Until #439 this
+# recipe ran only the unit tests and opened no file, so it passed 19/19 green
+# against a published set carrying 11 subjects that violate `_CURIE_RE`.
 [group('QC')]
 curie-validate:
+    uv run python scripts/validate_published_curies.py
     uv run python -m pytest tests/test_curie_normalizer.py -q --no-cov
 
 # =============================================================================
