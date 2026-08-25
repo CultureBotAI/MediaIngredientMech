@@ -71,6 +71,19 @@ def test_flags_references_inside_fenced_blocks(tmp_path):
     assert [f.ref for f in findings] == ["no-such-recipe"]
 
 
+def test_flags_missing_script_in_a_command_prefixed_path(tmp_path):
+    """`python scripts/x.py` must not bypass the bare-path matcher."""
+    mod = _load()
+    doc = _doc(
+        tmp_path,
+        "```bash\npython scripts/export_to_nowhere.py --output out.tsv\n```\n",
+    )
+
+    findings = _scan(mod, doc, tmp_path)
+
+    assert [(f.kind, f.ref) for f in findings] == [("path", "scripts/export_to_nowhere.py")]
+
+
 def test_flags_an_unsupported_documented_cli_option(tmp_path):
     mod = _load()
     scripts = tmp_path / "scripts"

@@ -5,6 +5,9 @@ for every mapped ingredient. It does not preserve whether the recipe surface
 matched an ontology primary label, a synonym, or some other lookup path. MIM
 must therefore not translate that value to its stronger, label-level
 ``EXACT_MATCH`` grade.
+
+The unsafe bulk intake scripts are retired under #453, but this side-effect-free
+contract remains for any future replacement built under #447 and #449.
 """
 
 from __future__ import annotations

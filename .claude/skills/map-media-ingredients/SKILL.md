@@ -208,6 +208,6 @@ All mappings record curator (automated/manual/LLM), timestamp, and reasoning.
 | File | Contents |
 |------|----------|
 | [`reference/matching-strategies.md`](reference/matching-strategies.md) | Full code for all 4 matching levels — OAK `basic_search`, `OntologyClient.search`/`search_with_variants`, `chemical_normalizer`, OAK `l~` fuzzy search, and the EBI OLS API wrapper |
-| [`reference/kg-microbe-integration.md`](reference/kg-microbe-integration.md) | CultureMech import/export scripts, checking existing KG-Microbe ingredients, and how ingredients link to media/organisms |
+| [`reference/kg-microbe-integration.md`](reference/kg-microbe-integration.md) | Current CultureMech comparison/publication boundary, checking existing KG-Microbe ingredients, and how ingredients link to media/organisms |
 | [`reference/examples-and-troubleshooting.md`](reference/examples-and-troubleshooting.md) | Five worked examples (hydrate, incomplete formula, biological extract, environmental, unmappable mixture) and troubleshooting (no/too-many/ambiguous matches, complex mixtures) |
 | [`reference/tools-and-api.md`](reference/tools-and-api.md) | Curation scripts, core utilities, docs, related skills, and the `chemical_normalizer`/`OntologyClient`/`UnmappedCurator` implementation API |

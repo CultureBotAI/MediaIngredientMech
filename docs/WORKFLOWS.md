@@ -20,68 +20,31 @@ just gen-schema
 
 Generates Python dataclasses from the LinkML schema into `src/mediaingredientmech/datamodel/`.
 
-## Data Import
+## CultureMech Intake Status
 
-### Import from CultureMech
+MIM does not currently have a supported bulk-import workflow. The legacy
+`import-data` compatibility recipe and all four CultureMech collection writers
+listed in `scripts/README.md` deliberately exit non-zero before reading or
+writing files (#453).
 
-```bash
-just import-data
-```
+The retired implementation projected CultureMech aggregate rows directly over
+both curated collections. That projection used obsolete schema fields, dropped
+MIM-owned curation and history, derived counts from capped examples, and could
+leave a half-updated data surface. A snapshot does not make that operation a
+valid synchronization strategy.
 
-This runs `scripts/import_from_culturemech.py`, which:
+Until the stable recipe-reference and occurrence contracts in #447 and #449
+land:
 
-1. Reads mapped ingredients from `CultureMech/output/mapped_ingredients.yaml` (995 records)
-2. Reads unmapped ingredients from `CultureMech/output/unmapped_ingredients.yaml` (136 records)
-3. Converts each ingredient into an IngredientRecord with:
-   - Mapped ingredients: `mapping_status: MAPPED`, populated `ontology_mapping`
-   - Unmapped ingredients: `mapping_status: UNMAPPED`, no `ontology_mapping`
-4. Aggregates synonyms from raw text variants
-5. Populates occurrence statistics from media recipe counts
-6. Creates initial CurationEvent with `action: IMPORTED`
-7. Writes output to `data/curated/ingredients.yaml`
-
-### Expected Output Structure
-
-After import, `data/curated/ingredients.yaml` contains an IngredientCollection:
-
-```yaml
-generation_date: "2026-03-06T10:00:00"
-total_count: 1131
-mapped_count: 995
-unmapped_count: 136
-ingredients:
-  - identifier: CHEBI:26710
-    preferred_term: sodium chloride
-    mapping_status: MAPPED
-    ontology_mapping:
-      ontology_id: CHEBI:26710
-      ontology_label: sodium chloride
-      ontology_source: CHEBI
-      mapping_quality: EXACT_MATCH
-    synonyms:
-      - synonym_text: NaCl
-        synonym_type: ABBREVIATION
-        source: CultureMech
-    occurrence_statistics:
-      total_occurrences: 2341
-      media_count: 2341
-    curation_history:
-      - timestamp: "2026-03-06T10:00:00"
-        curator: system
-        action: IMPORTED
-        changes: "Imported from CultureMech mapped_ingredients.yaml"
-        new_status: MAPPED
-  # ... more records
-```
-
-### Re-importing
-
-Running `just import-data` again overwrites existing data. Always create a snapshot first:
-
-```bash
-just snapshot
-just import-data
-```
+1. Treat `data/curated/` and `data/ingredients/` as the authoritative MIM
+   curation surfaces.
+2. Use CultureMech aggregates only to produce a read-only, partial diagnostic
+   report. Their current solution coverage is incomplete (CultureMech #337), so
+   absence from an aggregate is not evidence that a source record was removed.
+3. Review each proposed addition, target change, or prevalence update.
+4. Apply accepted changes through focused curation tooling with history and
+   validation.
+5. Run `just sync-curated` after per-record edits, then `just qc`.
 
 ## Batch Curation Workflow
 
@@ -126,15 +89,10 @@ This runs `scripts/validate_all.py`, which checks:
 - Ontology term existence (via OAK/OLS if configured)
 - Status consistency (MAPPED records have ontology_mapping, UNMAPPED do not)
 
-Expected output:
-```
-Validating data/curated/ingredients.yaml...
-Checked 1131 records.
-Errors: 0
-Warnings: 2
-  - WARN: CHEBI:99999 not found in CHEBI (record: CHEBI:99999)
-  - WARN: Missing occurrence_statistics for 3 records
-```
+The validator reports separate results for the tracked collection files in
+`data/curated/` and the per-record files in `data/ingredients/`, followed by
+aggregate error and warning counts. A successful run ends with
+`Validation PASSED`.
 
 ### Step 5: Generate Report
 
@@ -219,7 +177,7 @@ Always validate after restoring to confirm data integrity.
 ### Backup Strategy
 
 - Create a snapshot before each curation session
-- Create a snapshot before re-importing data
+- Create a snapshot before applying a reviewed upstream update
 - Commit curated data to git regularly
 - Git provides the primary version history; snapshots provide quick rollback within a session
 
@@ -228,45 +186,37 @@ Always validate after restoring to confirm data integrity.
 ### Data Flow
 
 ```
-CultureMech                    MediaIngredientMech
------------                    -------------------
-output/mapped_ingredients.yaml   --import-->  data/curated/ingredients.yaml
-output/unmapped_ingredients.yaml --import-->       (curate and validate)
-                                              data/curated/ingredients.yaml
-input/ingredient_mappings.yaml <--export--        (validated mappings)
+CultureMech                         MediaIngredientMech
+-----------                         -------------------
+aggregate outputs --compare/report--> tracked curated records
+reviewed downstream changes <--------- published MIM artifacts
 ```
 
-### Import from CultureMech
+Inbound aggregate synchronization is review-only until a merge-safe replacement
+is implemented. The comparison is partial and diagnostic while CultureMech
+#337 remains open; it cannot establish removal from the upstream corpus.
+CultureMech remains the source of recipe data; MIM remains the source of
+ingredient identity curation.
 
-```bash
-just import-data
-```
+### Outbound CultureMech updates
 
-Reads from the CultureMech output directory and creates IngredientRecords. See the Data Import section above for details.
-
-### Round-Trip Export to CultureMech
-
-After curating and validating ingredients, export the mappings back to CultureMech format:
-
-```bash
-python scripts/export_to_culturemech.py
-```
-
-This produces a file compatible with CultureMech's expected input format, containing:
-- All MAPPED ingredients with their ontology IDs and labels
-- Updated synonym lists
-- Mapping quality metadata
+There is also no supported direct CultureMech exporter in this repository; the
+previously documented Python path does not exist. Publish and validate MIM's
+normal artifacts, then coordinate any CultureMech change as an explicit,
+reviewed downstream update. A future round trip must define conflict handling
+and provenance in both directions rather than recreating an untracked file-copy
+workflow.
 
 ### Keeping Data in Sync
 
 When CultureMech data is updated (new media recipes added, new ingredients discovered):
 
-1. Create a snapshot of current curated data
-2. Re-run import: `just import-data`
-3. The import script preserves existing curation history for known ingredients
-4. New ingredients appear as UNMAPPED
-5. Validate and curate the new entries
-6. Export updated mappings back to CultureMech
+1. Generate and review a comparison report; do not overwrite curated files.
+2. Separate new labels, occurrence changes, and target conflicts.
+3. Apply accepted changes with their source evidence and curation history.
+4. Synchronize aggregate/per-record projections with `just sync-curated`.
+5. Run `just qc` and the ontology-backed validation gates.
+6. Publish the reviewed MIM artifacts and coordinate downstream changes.
 
 ### Directory Conventions
 
@@ -280,10 +230,15 @@ KG-Microbe/
       unmapped_ingredients.yaml
   MediaIngredientMech/
     data/curated/
-      ingredients.yaml
+      mapped_ingredients.yaml
+      unmapped_ingredients.yaml
+    data/ingredients/
+      mapped/
+      unmapped/
 ```
 
-If CultureMech is in a different location, set the `CULTUREMECH_DIR` environment variable before importing.
+The read-only comparison script uses the sibling checkout by default. Set
+`CULTUREMECH_DIR` when comparing against a different checkout.
 
 ## Development Workflows
 

@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-"""Compare MediaIngredientMech data with CultureMech source to detect updates.
+"""Compare MediaIngredientMech data with CultureMech source for review.
 
 This script compares ingredient data between MediaIngredientMech and CultureMech
-to determine if an update/re-import is needed.
+to identify differences that may warrant a scoped curation update. It never
+imports or mutates curated MIM records.
 """
 
 import os
-import sys
-from pathlib import Path
-from collections import defaultdict
 from datetime import datetime
+from pathlib import Path
 
 import yaml
 
@@ -54,7 +53,7 @@ def load_mediaingredient_data():
     Returns:
         Tuple of (mapped_data, unmapped_data)
     """
-    print(f"Loading MediaIngredientMech data from: data/curated/")
+    print("Loading MediaIngredientMech data from: data/curated/")
 
     with open(MEDIAINGREDIENT_MAPPED) as f:
         mapped_data = yaml.safe_load(f)
@@ -92,18 +91,87 @@ def build_ingredient_index(data, data_type="culturemech_mapped"):
                 # Skip pure numeric IDs and empty placeholders - these are data quality issues
                 index[key] = ingredient
 
-    elif data_type == "mediaingredient":
-        for ingredient in data.get("ingredients", []):
-            preferred_term = ingredient.get("preferred_term")
-            if preferred_term:
-                index[preferred_term] = ingredient
-
     return index
 
 
-def compare_ingredients(
-    cm_mapped, cm_unmapped, mi_mapped, mi_unmapped
-):
+def _mim_ontology_id(ingredient):
+    """Return the asserted MIM ontology target from the current record shape."""
+    mapping = ingredient.get("ontology_mapping")
+    if isinstance(mapping, dict):
+        target = mapping.get("ontology_id")
+        if target:
+            return target
+    return ingredient.get("identifier") or ingredient.get("ontology_id")
+
+
+def _build_mim_status_indexes(mi_mapped, mi_unmapped):
+    """Index MIM records by asserted status, never by collection filename."""
+    indexes = {"MAPPED": {}, "UNMAPPED": {}}
+    rejected = []
+    other = []
+    for collection, data in (
+        ("mapped_ingredients.yaml", mi_mapped),
+        ("unmapped_ingredients.yaml", mi_unmapped),
+    ):
+        for ingredient in data.get("ingredients", []):
+            term = ingredient.get("preferred_term")
+            if not term:
+                continue
+            status = ingredient.get("mapping_status")
+            if status in indexes:
+                indexes[status][term] = ingredient
+                continue
+            diagnostic = {
+                "term": term,
+                "mapping_status": status or "MISSING",
+                "identifier": ingredient.get("identifier"),
+                "collection": collection,
+            }
+            if status == "REJECTED":
+                rejected.append(diagnostic)
+            else:
+                other.append(diagnostic)
+    rejected.sort(key=lambda record: (record["term"], record["collection"]))
+    other.sort(key=lambda record: (record["term"], record["collection"]))
+    return indexes["MAPPED"], indexes["UNMAPPED"], rejected, other
+
+
+def _status(mapped_index, unmapped_index, term):
+    """Return an explicit status without resolving cross-status collisions."""
+    is_mapped = term in mapped_index
+    is_unmapped = term in unmapped_index
+    if is_mapped and is_unmapped:
+        return "MAPPED_AND_UNMAPPED"
+    if is_mapped:
+        return "MAPPED"
+    if is_unmapped:
+        return "UNMAPPED"
+    return "NOT_PRESENT"
+
+
+def _status_collision(term, mapped_record, unmapped_record, source):
+    """Describe a label present in both collections of one source."""
+    if source == "culturemech":
+        mapped_target = mapped_record.get("ontology_id")
+        mapped_count = mapped_record.get("occurrence_count", 0)
+        unmapped_count = unmapped_record.get("occurrence_count", 0)
+    else:
+        mapped_target = _mim_ontology_id(mapped_record)
+        mapped_count = mapped_record.get("occurrence_statistics", {}).get("total_occurrences", 0)
+        unmapped_count = unmapped_record.get("occurrence_statistics", {}).get(
+            "total_occurrences", 0
+        )
+    return {
+        "term": term,
+        "source": source,
+        "statuses": ["MAPPED", "UNMAPPED"],
+        "mapped_ontology": mapped_target,
+        "mapped_occurrence_count": mapped_count,
+        "unmapped_occurrence_count": unmapped_count,
+    }
+
+
+def compare_ingredients(cm_mapped, cm_unmapped, mi_mapped, mi_unmapped):
     """Compare ingredients between CultureMech and MediaIngredientMech.
 
     Args:
@@ -118,12 +186,23 @@ def compare_ingredients(
     # Build indices
     cm_mapped_idx = build_ingredient_index(cm_mapped, "culturemech_mapped")
     cm_unmapped_idx = build_ingredient_index(cm_unmapped, "culturemech_unmapped")
-    mi_mapped_idx = build_ingredient_index(mi_mapped, "mediaingredient")
-    mi_unmapped_idx = build_ingredient_index(mi_unmapped, "mediaingredient")
+    (
+        mi_mapped_idx,
+        mi_unmapped_idx,
+        mi_rejected,
+        mi_non_active_or_missing,
+    ) = _build_mim_status_indexes(mi_mapped, mi_unmapped)
 
     # Combine for comparison
     cm_all_terms = set(cm_mapped_idx.keys()) | set(cm_unmapped_idx.keys())
     mi_all_terms = set(mi_mapped_idx.keys()) | set(mi_unmapped_idx.keys())
+    mi_rejected_terms = {record["term"] for record in mi_rejected}
+    mi_non_active_or_missing_terms = {record["term"] for record in mi_non_active_or_missing}
+    mi_known_terms = mi_all_terms | mi_rejected_terms | mi_non_active_or_missing_terms
+    rejected_only_cm_terms = sorted((cm_all_terms & mi_rejected_terms) - mi_all_terms)
+    non_active_or_missing_cm_terms = sorted(
+        (cm_all_terms & mi_non_active_or_missing_terms) - mi_all_terms - mi_rejected_terms
+    )
 
     results = {
         "culturemech": {
@@ -139,46 +218,120 @@ def compare_ingredients(
             "mapped_count": len(mi_mapped_idx),
             "unmapped_count": len(mi_unmapped_idx),
             "total_count": len(mi_all_terms),
+            "rejected_count": len(mi_rejected),
+            "non_active_or_missing_count": len(mi_non_active_or_missing),
         },
-        "new_in_culturemech": sorted(cm_all_terms - mi_all_terms),
-        "removed_from_culturemech": sorted(mi_all_terms - cm_all_terms),
+        "present_only_in_current_culturemech_aggregate": sorted(cm_all_terms - mi_known_terms),
+        "absent_from_current_culturemech_aggregate": sorted(mi_all_terms - cm_all_terms),
+        "culturemech_labels_with_rejected_mim_tombstones": rejected_only_cm_terms,
+        "culturemech_labels_with_non_active_or_missing_mim_records": (
+            non_active_or_missing_cm_terms
+        ),
+        "mediaingredientmech_rejected_tombstones": mi_rejected,
+        "mediaingredientmech_non_active_or_missing_records": mi_non_active_or_missing,
+        "culturemech_status_collisions": [],
+        "mediaingredientmech_status_collisions": [],
         "occurrence_changes": [],
-        "mapping_changes": [],
+        "target_conflicts": [],
+        "mim_coverage_gains": [],
+        "culturemech_only_grounding": [],
+        "both_unmapped": [],
     }
 
-    # Check for occurrence count changes in common ingredients
+    for term in sorted(cm_all_terms):
+        if term in cm_mapped_idx and term in cm_unmapped_idx:
+            results["culturemech_status_collisions"].append(
+                _status_collision(
+                    term,
+                    cm_mapped_idx[term],
+                    cm_unmapped_idx[term],
+                    "culturemech",
+                )
+            )
+
+    for term in sorted(mi_all_terms):
+        if term in mi_mapped_idx and term in mi_unmapped_idx:
+            results["mediaingredientmech_status_collisions"].append(
+                _status_collision(
+                    term,
+                    mi_mapped_idx[term],
+                    mi_unmapped_idx[term],
+                    "mediaingredientmech",
+                )
+            )
+
+    # Compare common ingredients without silently choosing one side of a
+    # mapped/unmapped collision. Those terms are reported above for source repair.
     common_terms = cm_all_terms & mi_all_terms
 
-    for term in common_terms:
-        # Get from both sources
-        cm_ing = cm_mapped_idx.get(term) or cm_unmapped_idx.get(term)
-        mi_ing = mi_mapped_idx.get(term) or mi_unmapped_idx.get(term)
-
-        if not cm_ing or not mi_ing:
+    for term in sorted(common_terms):
+        cm_status = _status(cm_mapped_idx, cm_unmapped_idx, term)
+        mi_status = _status(mi_mapped_idx, mi_unmapped_idx, term)
+        if "_AND_" in cm_status or "_AND_" in mi_status:
             continue
+
+        cm_ing = cm_mapped_idx[term] if cm_status == "MAPPED" else cm_unmapped_idx[term]
+        mi_ing = mi_mapped_idx[term] if mi_status == "MAPPED" else mi_unmapped_idx[term]
 
         # Compare occurrence counts
         cm_count = cm_ing.get("occurrence_count", 0)
         mi_count = mi_ing.get("occurrence_statistics", {}).get("total_occurrences", 0)
 
         if cm_count != mi_count:
-            results["occurrence_changes"].append({
-                "term": term,
-                "culturemech_count": cm_count,
-                "mediaingredient_count": mi_count,
-                "delta": cm_count - mi_count,
-            })
+            results["occurrence_changes"].append(
+                {
+                    "term": term,
+                    "culturemech_count": cm_count,
+                    "mediaingredient_count": mi_count,
+                    "delta": cm_count - mi_count,
+                    "culturemech_status": cm_status,
+                    "mediaingredientmech_status": mi_status,
+                }
+            )
 
-        # Compare ontology mappings
-        cm_ontology = cm_ing.get("ontology_id")
-        mi_ontology = mi_ing.get("ontology_id")
-
-        if cm_ontology != mi_ontology:
-            results["mapping_changes"].append({
-                "term": term,
-                "culturemech_ontology": cm_ontology,
-                "mediaingredient_ontology": mi_ontology,
-            })
+        if cm_status == "MAPPED" and mi_status == "MAPPED":
+            cm_ontology = cm_ing.get("ontology_id")
+            mi_ontology = _mim_ontology_id(mi_ing)
+            if cm_ontology != mi_ontology:
+                results["target_conflicts"].append(
+                    {
+                        "term": term,
+                        "culturemech_status": cm_status,
+                        "mediaingredientmech_status": mi_status,
+                        "culturemech_ontology": cm_ontology,
+                        "mediaingredientmech_ontology": mi_ontology,
+                    }
+                )
+        elif cm_status == "UNMAPPED" and mi_status == "MAPPED":
+            results["mim_coverage_gains"].append(
+                {
+                    "term": term,
+                    "culturemech_status": cm_status,
+                    "mediaingredientmech_status": mi_status,
+                    "culturemech_ontology": None,
+                    "mediaingredientmech_ontology": _mim_ontology_id(mi_ing),
+                }
+            )
+        elif cm_status == "MAPPED" and mi_status == "UNMAPPED":
+            results["culturemech_only_grounding"].append(
+                {
+                    "term": term,
+                    "culturemech_status": cm_status,
+                    "mediaingredientmech_status": mi_status,
+                    "culturemech_ontology": cm_ing.get("ontology_id"),
+                    "mediaingredientmech_ontology": None,
+                }
+            )
+        else:
+            results["both_unmapped"].append(
+                {
+                    "term": term,
+                    "culturemech_status": cm_status,
+                    "mediaingredientmech_status": mi_status,
+                    "culturemech_ontology": None,
+                    "mediaingredientmech_ontology": None,
+                }
+            )
 
     # Sort occurrence changes by delta (descending)
     results["occurrence_changes"].sort(key=lambda x: abs(x["delta"]), reverse=True)
@@ -187,133 +340,241 @@ def compare_ingredients(
 
 
 def print_comparison_report(results):
-    """Print formatted comparison report.
-
-    Args:
-        results: Comparison results dictionary
-    """
+    """Print a status-aware comparison report without lifecycle overclaims."""
     print("\n" + "=" * 80)
     print("CULTUREMECH vs MEDIAINGREDIENTMECH COMPARISON")
     print("=" * 80)
 
-    # Generation dates
     cm_date = results["culturemech"]["generation_date"]
     mi_date = results["mediaingredientmech"]["generation_date"]
-
-    print(f"\nGENERATION DATES:")
-    print(f"  CultureMech:        {cm_date}")
+    print("\nGENERATION DATES:")
+    print(f"  CultureMech:         {cm_date}")
     print(f"  MediaIngredientMech: {mi_date}")
-
-    # Parse dates to calculate age difference
     try:
-        cm_dt = datetime.fromisoformat(cm_date.replace('Z', '+00:00'))
-        mi_dt = datetime.fromisoformat(mi_date.replace('Z', '+00:00'))
+        cm_dt = datetime.fromisoformat(cm_date.replace("Z", "+00:00"))
+        mi_dt = datetime.fromisoformat(mi_date.replace("Z", "+00:00"))
         age_diff = cm_dt - mi_dt
-        print(f"  Age difference:     {age_diff.total_seconds() / 3600:.1f} hours")
-    except:
+        print(f"  Age difference:      {age_diff.total_seconds() / 3600:.1f} hours")
+    except (AttributeError, TypeError, ValueError):
         pass
-
-    # Counts
-    print(f"\nINGREDIENT COUNTS:")
-    print(f"  {'':30s} {'CultureMech':>15s} {'MediaIngMech':>15s} {'Delta':>10s}")
-    print(f"  {'-'*70}")
 
     cm = results["culturemech"]
     mi = results["mediaingredientmech"]
+    print("\nINGREDIENT COUNTS:")
+    print(f"  {'':30s} {'CultureMech':>15s} {'MediaIngMech':>15s} {'Delta':>10s}")
+    print(f"  {'-' * 70}")
+    for label, key in (
+        ("Active mapped ingredients", "mapped_count"),
+        ("Active unmapped ingredients", "unmapped_count"),
+        ("Unique active labels", "total_count"),
+    ):
+        print(f"  {label:30s} {cm[key]:>15,} {mi[key]:>15,} {cm[key] - mi[key]:>10,}")
+    print(f"  {'MIM REJECTED tombstones':30s} {'n/a':>15s} {mi['rejected_count']:>15,}")
+    if mi["non_active_or_missing_count"]:
+        print(
+            f"  {'MIM other non-active/missing':30s} "
+            f"{'n/a':>15s} {mi['non_active_or_missing_count']:>15,}"
+        )
 
-    print(f"  {'Mapped ingredients':30s} {cm['mapped_count']:>15,} {mi['mapped_count']:>15,} {cm['mapped_count']-mi['mapped_count']:>10,}")
-    print(f"  {'Unmapped ingredients':30s} {cm['unmapped_count']:>15,} {mi['unmapped_count']:>15,} {cm['unmapped_count']-mi['unmapped_count']:>10,}")
-    print(f"  {'Total ingredients':30s} {cm['total_count']:>15,} {mi['total_count']:>15,} {cm['total_count']-mi['total_count']:>10,}")
-
-    print(f"\nMEDIA COLLECTION:")
+    print("\nMEDIA COLLECTION:")
     print(f"  CultureMech media count: {cm['media_count']:,}")
     print(f"  Total ingredient instances: {cm['total_instances']:,}")
 
-    # New ingredients
-    new_count = len(results["new_in_culturemech"])
-    if new_count > 0:
-        print(f"\n⚠️  NEW INGREDIENTS IN CULTUREMECH ({new_count}):")
-        for i, term in enumerate(results["new_in_culturemech"][:20], 1):
-            print(f"  {i:2d}. {term}")
-        if new_count > 20:
-            print(f"  ... and {new_count - 20} more")
+    present_only = results["present_only_in_current_culturemech_aggregate"]
+    absent = results["absent_from_current_culturemech_aggregate"]
+    if present_only:
+        print(f"\n⚠️  PRESENT ONLY IN CURRENT CULTUREMECH AGGREGATE ({len(present_only)}):")
+        for index, term in enumerate(present_only[:20], 1):
+            print(f"  {index:2d}. {term}")
+        if len(present_only) > 20:
+            print(f"  ... and {len(present_only) - 20} more")
     else:
-        print(f"\n✅ No new ingredients in CultureMech")
+        print("\n✅ No labels unique to the current CultureMech aggregate")
 
-    # Removed ingredients
-    removed_count = len(results["removed_from_culturemech"])
-    if removed_count > 0:
-        print(f"\n⚠️  INGREDIENTS REMOVED FROM CULTUREMECH ({removed_count}):")
-        for i, term in enumerate(results["removed_from_culturemech"][:20], 1):
-            print(f"  {i:2d}. {term}")
-        if removed_count > 20:
-            print(f"  ... and {removed_count - 20} more")
+    if absent:
+        print(
+            "\nℹ️  ABSENT FROM CURRENT CULTUREMECH AGGREGATE "
+            f"({len(absent)}; not evidence of removal):"
+        )
+        for index, term in enumerate(absent[:20], 1):
+            print(f"  {index:2d}. {term}")
+        if len(absent) > 20:
+            print(f"  ... and {len(absent) - 20} more")
     else:
-        print(f"\n✅ No ingredients removed from CultureMech")
+        print("\n✅ Every MIM label occurs in the current CultureMech aggregate")
 
-    # Occurrence changes
+    rejected_tombstones = results["mediaingredientmech_rejected_tombstones"]
+    rejected_cm_matches = results["culturemech_labels_with_rejected_mim_tombstones"]
+    print(
+        f"\nℹ️  MIM REJECTED TOMBSTONES ({len(rejected_tombstones)}; excluded from "
+        "active comparisons)"
+    )
+    if rejected_cm_matches:
+        print(
+            "  CultureMech labels matching only a rejected MIM tombstone "
+            f"({len(rejected_cm_matches)}):"
+        )
+        for term in rejected_cm_matches[:20]:
+            print(f"    - {term}")
+        if len(rejected_cm_matches) > 20:
+            print(f"    ... and {len(rejected_cm_matches) - 20} more")
+
+    non_active_or_missing_records = results["mediaingredientmech_non_active_or_missing_records"]
+    non_active_cm_matches = results["culturemech_labels_with_non_active_or_missing_mim_records"]
+    if non_active_or_missing_records:
+        print(
+            "\nℹ️  MIM RECORDS WITH OTHER NON-ACTIVE OR MISSING STATUS "
+            f"({len(non_active_or_missing_records)}; excluded):"
+        )
+        for record in non_active_or_missing_records[:20]:
+            print(f"  {record['term']}: {record['mapping_status']}")
+        if non_active_cm_matches:
+            print(
+                "  CultureMech labels matching only one of these excluded records "
+                f"({len(non_active_cm_matches)}):"
+            )
+            for term in non_active_cm_matches[:20]:
+                print(f"    - {term}")
+
+    cm_collisions = results["culturemech_status_collisions"]
+    if cm_collisions:
+        print(f"\n⚠️  CULTUREMECH MAPPED/UNMAPPED COLLISIONS ({len(cm_collisions)}):")
+        for collision in cm_collisions[:20]:
+            print(
+                f"  {collision['term']}: mapped={collision['mapped_ontology']}, "
+                f"mapped occurrences={collision['mapped_occurrence_count']}, "
+                f"unmapped occurrences={collision['unmapped_occurrence_count']}"
+            )
+        if len(cm_collisions) > 20:
+            print(f"  ... and {len(cm_collisions) - 20} more")
+
+    mi_collisions = results["mediaingredientmech_status_collisions"]
+    if mi_collisions:
+        print(f"\n⚠️  MEDIAINGREDIENTMECH MAPPED/UNMAPPED COLLISIONS ({len(mi_collisions)}):")
+        for collision in mi_collisions[:20]:
+            print(
+                f"  {collision['term']}: mapped={collision['mapped_ontology']}, "
+                f"mapped occurrences={collision['mapped_occurrence_count']}, "
+                f"unmapped occurrences={collision['unmapped_occurrence_count']}"
+            )
+        if len(mi_collisions) > 20:
+            print(f"  ... and {len(mi_collisions) - 20} more")
+
     occ_changes = results["occurrence_changes"]
     if occ_changes:
-        print(f"\n⚠️  OCCURRENCE COUNT CHANGES ({len(occ_changes)} ingredients):")
-        print(f"  {'Ingredient':40s} {'CM Count':>12s} {'MI Count':>12s} {'Delta':>10s}")
-        print(f"  {'-'*74}")
+        print(f"\n⚠️  OCCURRENCE COUNT CHANGES ({len(occ_changes)} labels):")
         for change in occ_changes[:15]:
-            print(f"  {change['term']:40s} {change['culturemech_count']:>12,} {change['mediaingredient_count']:>12,} {change['delta']:>+10,}")
+            statuses = f"{change['culturemech_status']}↔{change['mediaingredientmech_status']}"
+            print(
+                f"  {change['term']} ({statuses}): "
+                f"{change['culturemech_count']:,} vs "
+                f"{change['mediaingredient_count']:,} "
+                f"({change['delta']:+,})"
+            )
         if len(occ_changes) > 15:
-            print(f"  ... and {len(occ_changes) - 15} more with changes")
+            print(f"  ... and {len(occ_changes) - 15} more")
     else:
-        print(f"\n✅ No occurrence count changes")
+        print("\n✅ No occurrence count changes")
 
-    # Mapping changes
-    map_changes = results["mapping_changes"]
-    if map_changes:
-        print(f"\n⚠️  ONTOLOGY MAPPING CHANGES ({len(map_changes)} ingredients):")
-        for change in map_changes[:10]:
+    target_conflicts = results["target_conflicts"]
+    if target_conflicts:
+        print(f"\n⚠️  MAPPED↔MAPPED TARGET CONFLICTS ({len(target_conflicts)}):")
+        for change in target_conflicts[:10]:
             print(f"  {change['term']}:")
-            print(f"    CultureMech:        {change['culturemech_ontology']}")
-            print(f"    MediaIngredientMech: {change['mediaingredient_ontology']}")
-        if len(map_changes) > 10:
-            print(f"  ... and {len(map_changes) - 10} more")
+            print(f"    CultureMech:         {change['culturemech_ontology']}")
+            print(f"    MediaIngredientMech: {change['mediaingredientmech_ontology']}")
+        if len(target_conflicts) > 10:
+            print(f"  ... and {len(target_conflicts) - 10} more")
     else:
-        print(f"\n✅ No ontology mapping changes")
+        print("\n✅ No mapped↔mapped ontology target conflicts")
 
-    # Recommendation
+    mim_gains = results["mim_coverage_gains"]
+    if mim_gains:
+        print(f"\nℹ️  MIM GROUNDING COVERAGE GAINS ({len(mim_gains)}):")
+        for change in mim_gains[:10]:
+            print(f"  {change['term']} -> {change['mediaingredientmech_ontology']}")
+        if len(mim_gains) > 10:
+            print(f"  ... and {len(mim_gains) - 10} more")
+
+    cm_only_grounding = results["culturemech_only_grounding"]
+    if cm_only_grounding:
+        print(f"\n⚠️  CULTUREMECH-ONLY GROUNDING ({len(cm_only_grounding)}):")
+        for change in cm_only_grounding[:10]:
+            print(f"  {change['term']} -> {change['culturemech_ontology']}")
+        if len(cm_only_grounding) > 10:
+            print(f"  ... and {len(cm_only_grounding) - 10} more")
+
+    both_unmapped = results["both_unmapped"]
+    if both_unmapped:
+        print(f"\nℹ️  UNMAPPED IN BOTH SOURCES ({len(both_unmapped)})")
+
     print("\n" + "=" * 80)
     print("RECOMMENDATION")
     print("=" * 80)
-
-    needs_update = (
-        new_count > 0 or
-        removed_count > 0 or
-        len(occ_changes) > 10 or
-        len(map_changes) > 0
+    needs_review = (
+        bool(present_only)
+        or bool(occ_changes)
+        or bool(target_conflicts)
+        or bool(mim_gains)
+        or bool(cm_only_grounding)
+        or bool(cm_collisions)
+        or bool(mi_collisions)
+        or bool(rejected_cm_matches)
+        or bool(non_active_or_missing_records)
     )
 
-    if needs_update:
-        print("\n⚠️  UPDATE RECOMMENDED")
+    if needs_review:
+        print("\n⚠️  SOURCE REVIEW RECOMMENDED")
         print("\nReasons:")
-        if new_count > 0:
-            print(f"  • {new_count} new ingredients in CultureMech")
-        if removed_count > 0:
-            print(f"  • {removed_count} ingredients removed from CultureMech")
-        if len(occ_changes) > 10:
-            print(f"  • {len(occ_changes)} ingredients have occurrence count changes")
-        if len(map_changes) > 0:
-            print(f"  • {len(map_changes)} ingredients have ontology mapping changes")
+        if present_only:
+            print(f"  • {len(present_only)} labels occur only in the current CultureMech aggregate")
+        if occ_changes:
+            label_word = "label" if len(occ_changes) == 1 else "labels"
+            verb = "has" if len(occ_changes) == 1 else "have"
+            print(f"  • {len(occ_changes)} {label_word} {verb} occurrence count changes")
+        if target_conflicts:
+            print(f"  • {len(target_conflicts)} mapped labels have target conflicts")
+        if mim_gains:
+            print(f"  • {len(mim_gains)} labels are grounded only in MIM")
+        if cm_only_grounding:
+            print(f"  • {len(cm_only_grounding)} labels are grounded only in CultureMech")
+        if cm_collisions:
+            print(
+                f"  • {len(cm_collisions)} CultureMech labels occur in both mapped "
+                "and unmapped aggregates"
+            )
+        if mi_collisions:
+            print(
+                f"  • {len(mi_collisions)} MIM labels occur in both mapped and unmapped collections"
+            )
+        if rejected_cm_matches:
+            print(
+                f"  • {len(rejected_cm_matches)} CultureMech labels match only a "
+                "rejected MIM tombstone"
+            )
+        if non_active_or_missing_records:
+            print(
+                f"  • {len(non_active_or_missing_records)} MIM records have another "
+                "non-active or missing mapping_status"
+            )
 
         print("\nRecommended action:")
-        print("  1. Review changes above")
-        print("  2. Backup current data:")
-        print("     cp data/curated/mapped_ingredients.yaml data/curated/mapped_ingredients.yaml.backup")
-        print("  3. Re-run import:")
-        print("     PYTHONPATH=src python scripts/import_from_culturemech.py")
-        print("  4. Re-run role extraction for new ingredients:")
-        print("     PYTHONPATH=src python scripts/analyze_culturemech_roles.py")
-        print("  5. Validate results:")
-        print("     PYTHONPATH=src python scripts/validate_roles.py")
+        print("  1. Review the detailed status-aware comparison report")
+        print("  2. Treat target conflicts, coverage gaps, and collisions separately")
+        print("  3. Apply accepted changes through focused curation tooling")
+        print("  4. Preserve source evidence and append curation history")
+        print("  5. Run 'just sync-curated' and 'just qc'")
+        print("\nDo not bulk-import these aggregates. The legacy importer is retired")
+        print("because it overwrote MIM-owned curation with lossy, invalid records (#453).")
     else:
-        print("\n✅ NO UPDATE NEEDED")
-        print("\nMediaIngredientMech is up-to-date with CultureMech")
+        print("\n✅ NO ACTIONABLE SOURCE DIFFERENCES DETECTED")
+        if absent:
+            print(
+                "\nMIM-only labels were observed, but aggregate absence alone is not "
+                "evidence of upstream removal."
+            )
+        else:
+            print("\nThe compared CultureMech aggregate and MIM records agree")
 
     print("\n" + "=" * 80)
 

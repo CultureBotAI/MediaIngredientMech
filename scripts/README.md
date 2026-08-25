@@ -25,6 +25,25 @@ Scripts reached by those recipes are maintained even when their filename looks
 like a generic `check_` or `generate_` utility. CI workflow entry points are
 also maintained.
 
+## Retired compatibility commands
+
+The `import-data` recipe and four legacy CultureMech writers are retained only
+to fail closed with an actionable message for old automation:
+
+- `scripts/import_from_culturemech.py`
+- `scripts/merge_culturemech_updates.py`
+- `scripts/prepare_unmapped_for_curation.py`
+- `scripts/enrich_with_concentration_notes.py`
+
+They do not read CultureMech files or write MIM data. The former implementations
+performed lossy collection-level overwrites from incomplete aggregate outputs,
+violated current data contracts, or discarded MIM-owned curation (#453).
+
+Do not bypass that guard by copying the historical conversion functions into a
+new writer. A supported replacement must first implement stable recipe
+references (#447), lossless occurrence edges (#449), conflict-reviewed merging,
+atomic writes, and preservation of existing curation history.
+
 ## Historical migration and repair scripts
 
 Names beginning with `fix_`, `migrate_`, `repair_`, `reground_`, `regrade_`,

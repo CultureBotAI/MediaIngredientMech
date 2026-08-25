@@ -11,26 +11,22 @@ MediaIngredientMech integrates with **CultureMech** (primary integration point) 
 ### Data Flow
 
 ```
-CultureMech → MediaIngredientMech (curate) → Export back to CultureMech
+CultureMech → compare/review in MediaIngredientMech → publish MIM artifacts
 ```
 
-### Import from CultureMech
+### Inbound updates from CultureMech
 
-```bash
-# Import ingredients from CultureMech
-python scripts/import_from_culturemech.py \
-  --source-dir /path/to/CultureMech/output \
-  --output-dir data/curated
-```
+There is no supported bulk importer. The legacy entry point is fail-closed
+because it overwrote MIM-owned curation with a lossy aggregate projection
+(MediaIngredientMech#453). Treat CultureMech output as comparison input, then
+apply reviewed changes through focused MIM curation workflows. Stable recipe
+references and lossless occurrence edges are tracked in #447 and #449.
 
-### Export to CultureMech
+### Outbound updates
 
-```bash
-# Export curated mappings back
-python scripts/export_to_culturemech.py \
-  --input data/ingredients/mapped \
-  --output /path/to/CultureMech/data/ingredients
-```
+No supported direct CultureMech exporter exists in this repository. Publish the
+normal validated MIM products, and treat any CultureMech update as a separate,
+reviewed downstream change with explicit provenance.
 
 ### Check Existing Ingredients
 

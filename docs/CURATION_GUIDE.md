@@ -5,21 +5,28 @@ Step-by-step guide for curating media ingredient ontology mappings in MediaIngre
 ## Prerequisites
 
 - MediaIngredientMech installed (`just install`)
-- Data imported from CultureMech (`just import-data`)
+- A checkout containing the tracked curated ingredient corpus
 - Familiarity with CHEBI and FOODON ontologies
 
 ## Curation Workflow Overview
 
 ```
-Import Data -> Snapshot -> Curate -> Validate -> Report -> Export
+Review Tracked Data -> Snapshot -> Curate -> Validate -> Report -> Publish
 ```
 
-1. Import ingredients from CultureMech
+1. Review the tracked MIM records and any scoped upstream change report
 2. Create a snapshot before making changes
 3. Curate unmapped ingredients using the interactive CLI
 4. Validate all mappings against the schema and ontology
 5. Generate a progress report
-6. Export validated mappings back to CultureMech
+6. Publish validated MIM artifacts and coordinate any downstream update
+
+There is currently no supported bulk import from CultureMech. The four retired
+collection writers fail before reading or writing files because their aggregate
+projections discarded MIM-owned curation, used incomplete source views, or did
+not validate against the current schema (#453). Upstream changes must be applied
+as reviewed, provenance-recorded curation until #447 and #449 provide the
+replacement data contracts.
 
 ## Using the Interactive CLI
 

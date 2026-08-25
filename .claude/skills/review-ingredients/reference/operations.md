@@ -309,8 +309,8 @@ PYTHONPATH=src python scripts/auto_correct.py --apply
 # 5. Re-validate to confirm
 PYTHONPATH=src python scripts/batch_review.py --priority P1 --limit 1034
 
-# 6. Export if clean
-PYTHONPATH=src python scripts/kgx_export.py
+# 6. Build the maintained published products if clean
+just build-docs
 ```
 
 ### Example 3: Synonym Enrichment
@@ -415,41 +415,13 @@ def save_with_validation(curator, ingredient):
     return True
 ```
 
-### Pre-Export Workflow
+### Publication Workflow
 
-**Current:**
-1. Run `kgx_export.py`
-2. Generate nodes.tsv, edges.tsv
-3. Ingest into KG-Microbe
-
-**Enhanced:**
-1. **NEW: Run batch validation** → Generate report
-2. **NEW: Block export if P1 errors** → Show error count
-3. Run `kgx_export.py`
-4. **NEW: Attach validation report to export metadata**
-5. Generate nodes.tsv, edges.tsv
-6. Ingest into KG-Microbe with QA provenance
-
-**Integration Point:**
-
-```python
-# In kgx_export.py, before export:
-from mediaingredientmech.validation.ingredient_reviewer import IngredientReviewer
-
-reviewer = IngredientReviewer()
-curator = IngredientCurator()
-
-mapped = curator.get_by_status("MAPPED")
-results = reviewer.batch_review(mapped, priority_filter=["P1"])
-
-if results.summary["P1"] > 0:
-    print(f"❌ Cannot export: {results.summary['P1']} P1 critical errors")
-    print("Run: python scripts/batch_review.py --priority P1")
-    sys.exit(1)
-
-print(f"✓ Validation passed: 0 P1 errors, {results.summary['P2']} P2 warnings")
-# Proceed with export
-```
+This repository has no maintained local KGX exporter. The older pre-export
+proposal named a script that was never present and must not be treated as an
+executable integration point. Before publishing the maintained MIM products,
+run the normal validation gates and `just build-docs`; downstream graph export
+belongs to the consuming pipeline and needs its own reviewed contract.
 
 ### Periodic Maintenance Workflow
 
@@ -589,13 +561,9 @@ def predict_mismatch(model, ingredient, ontology_label):
 
 **Idea:** Detect changes between ontology versions
 
-```bash
-# Compare CHEBI v2024-01 vs v2024-03
-python scripts/ontology_diff.py \
-  --old ontology/cache/chebi_v2024-01.owl \
-  --new ontology/cache/chebi_v2024-03.owl \
-  --report reports/chebi_diff_2024-03.md
-```
+No maintained command currently implements this proposal. Do not infer a local
+`ontology_diff.py` entry point; file and review an implementation issue before
+turning the idea into an executable workflow.
 
 **Output:**
 - New terms added

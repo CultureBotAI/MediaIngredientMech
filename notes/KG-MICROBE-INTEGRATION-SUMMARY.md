@@ -1,7 +1,13 @@
 # KG-Microbe Integration Summary
 
+> **Historical snapshot — superseded.** This March 2026 note does not describe
+> the supported workflow. All four legacy CultureMech intake writers are
+> fail-closed under #453; their counts, mapping-quality translation, and
+> overwrite diagrams below are retained only as historical context. Use `README.md` and
+> `docs/WORKFLOWS.md` for current commands.
+
 **Date**: 2026-03-10  
-**Status**: Fully explored and documented  
+**Status**: Historical snapshot; superseded by #453
 **Key Finding**: 995 mapped ingredients from CultureMech available as reference database with direct media occurrence tracking
 
 ---
@@ -333,7 +339,7 @@ results = run_query(sparql, endpoint)
 
 | Purpose | Path | Type |
 |---------|------|------|
-| **Import from CultureMech** | `scripts/import_from_culturemech.py` | Python |
+| **Retired CultureMech import stub** | `scripts/import_from_culturemech.py` | Fail-closed Python entry point |
 | **Ontology Client** | `src/mediaingredientmech/utils/ontology_client.py` | Python |
 | **CultureMech OAK** | `../CultureMech/src/culturemech/ontology/oak_client.py` | Python |
 | **CultureMech OLS** | `../CultureMech/src/culturemech/ontology/ols_client.py` | Python |

@@ -268,8 +268,11 @@ def scan_file(
             continue
         script, documented_options = invocation
         if script not in tracked:
-            # Missing script references are handled separately; without source
-            # there is no useful option-level diagnosis to add.
+            # A command-prefixed path (``python scripts/x.py``) is not a bare
+            # PATH_CLAIM span, so the path pass above cannot see it. Treat the
+            # missing executable itself as the finding; option validation only
+            # makes sense after the script resolves (#453 review).
+            findings.append(Finding("path", rel, line_no, script))
             continue
         supported_options = known_cli_options(root / script)
         for option in sorted(documented_options - supported_options):

@@ -39,15 +39,20 @@ just install
 just gen-schema
 ```
 
-### Import Data
+### Use the Curated Corpus
 
 ```bash
-# Import the current records from CultureMech
-just import-data
-
-# Validate imported data
+# Validate the tracked curated records
 just validate-all
 ```
+
+The four former CultureMech collection writers are retired and fail closed
+because they overwrote MIM-owned curation with lossy or incomplete aggregate
+projections. Until the
+replacement contracts in [#447](https://github.com/CultureBotAI/MediaIngredientMech/issues/447)
+and [#449](https://github.com/CultureBotAI/MediaIngredientMech/issues/449) are
+implemented, review upstream changes and apply scoped curated updates rather
+than regenerating `data/curated/`.
 
 ### Curate Ingredients
 
@@ -65,8 +70,10 @@ just report
 ## Architecture
 
 **Data Sources:**
-- `CultureMech/output/mapped_ingredients.yaml` → mapped ingredient records
-- `CultureMech/output/unmapped_ingredients.yaml` → records awaiting mapping
+- Tracked MIM ingredient collections and per-record YAML are the authoritative
+  curated surfaces
+- CultureMech aggregates are partial diagnostic inputs, not evidence of
+  upstream absence and not overwrite-ready MIM records
 
 **Schema:**
 - `IngredientRecord`: Root class with mapping status, synonyms, curation history
@@ -76,11 +83,11 @@ just report
 - `MappedIngredient`: Aggregated ingredient with environmental context annotations
 
 **Workflow:**
-1. Import data from CultureMech
-2. Curate unmapped ingredients (sorted by occurrence count)
-3. Validate ontology terms via OAK/OLS
-4. Record curation events with timestamps
-5. Export validated mappings back to CultureMech
+1. Review upstream changes against the tracked MIM corpus
+2. Apply scoped, provenance-recorded curation updates
+3. Curate unmapped ingredients (sorted by occurrence count)
+4. Validate ontology terms via OAK/OLS
+5. Publish validated MIM artifacts and coordinate scoped downstream updates
 
 ## Project Structure
 
