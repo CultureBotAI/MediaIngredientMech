@@ -66,12 +66,16 @@ curation_history:
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
   llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: REMOVED_NON_PARTONOMIC_COMPONENTS
+  changes: '#369: Clarified rumen fluid is a related source material/interpretation,
+    not an asserted physical constituent of fermented rumen extract. Replaced the
+    active mapping evidence that described the false component claim; registry identity
+    and ingredient type were not changed.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:fermented_rumen_extract);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
-components:
-- component_name: clarified rumen fluid
-  component_id: MICRO:0000520
-  source: microbedecoder research decomposition (#213/#308)
 ingredient_type: UNDEFINED_MIXTURE
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:fermented_rumen_extract
@@ -80,11 +84,8 @@ ontology_mapping:
   mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: MANUAL_CURATION
-    source: MIM curation (#213/#308)
-    notes: 'Components taken from the curated microbedecoder research decomposition
-      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_ingredient):
-      it resolves to a single named ingredient. 1 constituent(s), 1 carrying an identifier.
-      That file was produced by the research pass and never written into the records;
-      this applies it. It resolves constituents a label split cannot — abbreviations
-      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
-      No concentrations are recorded: the curated row states none.'
+    source: MIM curation (#369)
+    notes: 'Registry identity retained while the whole-record grounding is reviewed
+      separately. Corrected prior active evidence: Clarified rumen fluid is a related
+      source material/interpretation, not an asserted physical constituent of fermented
+      rumen extract.'

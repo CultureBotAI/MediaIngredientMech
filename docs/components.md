@@ -1,9 +1,9 @@
 
 
-# Slot: components 
+# Slot: components
 
 
-_Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM: the list of component ingredients (with concentration where known). Lets a named mixture (e.g. a trace-element or vitamin solution) be resolved to its constituents. Populate only from a verifiable recipe source; leave empty when the composition is unknown._
+_A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_MIXTURE: the list of component ingredients (with concentration where known). This is ingredient/mixture partonomy, not an identity mapping, a complete culturing recipe, or the parent/child variant hierarchy. It may transcribe a combination label. Populate only from verifiable evidence; omit the slot when no constituent is known. When present, component_assertion records how the decomposition was made and its evidence._
 
 
 
@@ -68,10 +68,12 @@ Alias: components
 <details>
 ```yaml
 name: components
-description: 'Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM: the
-  list of component ingredients (with concentration where known). Lets a named mixture
-  (e.g. a trace-element or vitamin solution) be resolved to its constituents. Populate
-  only from a verifiable recipe source; leave empty when the composition is unknown.'
+description: 'A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_MIXTURE:
+  the list of component ingredients (with concentration where known). This is ingredient/mixture
+  partonomy, not an identity mapping, a complete culturing recipe, or the parent/child
+  variant hierarchy. It may transcribe a combination label. Populate only from verifiable
+  evidence; omit the slot when no constituent is known. When present, component_assertion
+  records how the decomposition was made and its evidence.'
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 alias: components

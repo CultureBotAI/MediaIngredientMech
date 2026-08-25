@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-08-25T05:11:20.689850+00:00",
+    "generated": "2026-08-25T07:10:25.942896+00:00",
     "total_ingredients": 2846,
     "mapped_count": 2566,
     "unmapped_count": 280,
@@ -272,10 +272,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/1-butanolCO2.yaml",
-      "searchable": "1-butanol+co2 1-butanol+co2 1-butanol+co2 kgmicrobe.ingredient:1_butanol_co2"
+      "searchable": "1-butanol+co2 1-butanol+co2 1-butanol+co2 kgmicrobe.ingredient:1_butanol_co2 butan-1-ol chebi:28885 carbon dioxide chebi:16526",
+      "components": [
+        {
+          "component_name": "butan-1-ol",
+          "component_id": "CHEBI:28885",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "carbon dioxide",
+          "component_id": "CHEBI:16526",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "1-butanol+CO2",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "1-butanol+CO2",
+            "notes": "Reviewed row: strategy=split, confidence=high; Alcohol donor + CO2 acceptor."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:747005",
@@ -475,10 +508,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/1-propanolCO2.yaml",
-      "searchable": "1-propanol+co2 1-propanol+co2 1-propanol+co2 kgmicrobe.ingredient:1_propanol_co2"
+      "searchable": "1-propanol+co2 1-propanol+co2 1-propanol+co2 kgmicrobe.ingredient:1_propanol_co2 propan-1-ol chebi:28831 carbon dioxide chebi:16526",
+      "components": [
+        {
+          "component_name": "propan-1-ol",
+          "component_id": "CHEBI:28831",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "carbon dioxide",
+          "component_id": "CHEBI:16526",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "1-propanol+CO2",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "1-propanol+CO2",
+            "notes": "Reviewed row: strategy=split, confidence=high; Alcohol donor + CO2 acceptor."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:36018",
@@ -1181,10 +1247,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/2-butanolCO2.yaml",
-      "searchable": "2-butanol+co2 2-butanol+co2 2-butanol+co2 kgmicrobe.ingredient:2_butanol_co2"
+      "searchable": "2-butanol+co2 2-butanol+co2 2-butanol+co2 kgmicrobe.ingredient:2_butanol_co2 butan-2-ol chebi:35687 carbon dioxide chebi:16526",
+      "components": [
+        {
+          "component_name": "butan-2-ol",
+          "component_id": "CHEBI:35687",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "carbon dioxide",
+          "component_id": "CHEBI:16526",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "2-butanol+CO2",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "2-butanol+CO2",
+            "notes": "Reviewed row: strategy=split, confidence=high; Secondary-alcohol donor + CO2 acceptor."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:15930",
@@ -1641,10 +1740,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/2-propanolCO2.yaml",
-      "searchable": "2-propanol+co2 2-propanol+co2 2-propanol+co2 kgmicrobe.ingredient:2_propanol_co2"
+      "searchable": "2-propanol+co2 2-propanol+co2 2-propanol+co2 kgmicrobe.ingredient:2_propanol_co2 propan-2-ol chebi:17824 carbon dioxide chebi:16526",
+      "components": [
+        {
+          "component_name": "propan-2-ol",
+          "component_id": "CHEBI:17824",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "carbon dioxide",
+          "component_id": "CHEBI:16526",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "2-propanol+CO2",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "2-propanol+CO2",
+            "notes": "Reviewed row: strategy=split, confidence=high; Isopropanol donor + CO2 acceptor."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:77930",
@@ -7571,8 +7703,8 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/BHI.yaml",
       "searchable": "bhi bhi bhi kgmicrobe.ingredient:bhi"
     },
@@ -9803,10 +9935,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/CMC_PY_Horse_Serum.yaml",
-      "searchable": "cmc + py + horse serum cmc + py + horse serum cmc + py + horse serum kgmicrobe.ingredient:cmc_py_horse_serum"
+      "searchable": "cmc + py + horse serum cmc + py + horse serum cmc + py + horse serum kgmicrobe.ingredient:cmc_py_horse_serum carboxymethylcellulose chebi:85146 peptone micro:0000178 yeast extract foodon:03315426 horse serum micro:0001235",
+      "components": [
+        {
+          "component_name": "carboxymethylcellulose",
+          "component_id": "CHEBI:85146",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "horse serum",
+          "component_id": "MICRO:0001235",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "CMC + PY + Horse Serum",
+            "notes": "Reviewed row: strategy=split, confidence=high; Cellulolytic-anaerobe medium; CMC carbon source in PY base + horse serum."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:31340",
@@ -11158,10 +11329,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Casitone_Yeast_Extract_Rumen_Fluid.yaml",
-      "searchable": "casitone + yeast extract + rumen fluid casitone + yeast extract + rumen fluid casitone + yeast extract + rumen fluid kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid"
+      "searchable": "casitone + yeast extract + rumen fluid casitone + yeast extract + rumen fluid casitone + yeast extract + rumen fluid kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid casitone micro:0000606 yeast extract foodon:03315426 clarified rumen fluid micro:0000520",
+      "components": [
+        {
+          "component_name": "casitone",
+          "component_id": "MICRO:0000606",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "clarified rumen fluid",
+          "component_id": "MICRO:0000520",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Casitone + Yeast Extract + Rumen Fluid",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Casitone + Yeast Extract + Rumen Fluid",
+            "notes": "Reviewed row: strategy=split, confidence=high; Undefined rumen-anaerobe base."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:31346",
@@ -13894,10 +14104,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Corn_Steep_Liquor_Glucose_Fumarate.yaml",
-      "searchable": "corn steep liquor + glucose + fumarate corn steep liquor + glucose + fumarate corn steep liquor + glucose + fumarate kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate"
+      "searchable": "corn steep liquor + glucose + fumarate corn steep liquor + glucose + fumarate corn steep liquor + glucose + fumarate kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate corn steep liquor cas:66071-94-1 glucose chebi:17234 fumaric acid chebi:18012",
+      "components": [
+        {
+          "component_name": "corn steep liquor",
+          "component_id": "cas:66071-94-1",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "fumaric acid",
+          "component_id": "CHEBI:18012",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Corn Steep Liquor + Glucose + Fumarate",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Corn Steep Liquor + Glucose + Fumarate",
+            "notes": "Reviewed row: strategy=split, confidence=high; Corn steep liquor has no FOODON/CHEBI term (use CAS or mint kgmicrobe.compound). Fumarate: CHEBI:18012 acid (or CHEBI:115156 disodium fumarate if Na2 salt)."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:53470",
@@ -14819,10 +15068,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/CyclopentanolCO2.yaml",
-      "searchable": "cyclopentanol+co2 cyclopentanol+co2 cyclopentanol+co2 kgmicrobe.ingredient:cyclopentanol_co2"
+      "searchable": "cyclopentanol+co2 cyclopentanol+co2 cyclopentanol+co2 kgmicrobe.ingredient:cyclopentanol_co2 cyclopentanol chebi:16133 carbon dioxide chebi:16526",
+      "components": [
+        {
+          "component_name": "cyclopentanol",
+          "component_id": "CHEBI:16133",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "carbon dioxide",
+          "component_id": "CHEBI:16526",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Cyclopentanol+CO2",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "cyclopentanol+CO2",
+            "notes": "Reviewed row: strategy=split, confidence=high; Alcohol donor + CO2 acceptor. Single-compound cyclopentanol CHEBI:16133 (not class CHEBI:23495)."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:200226",
@@ -19150,10 +19432,37 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Esculin_Ferric_Citrate.yaml",
-      "searchable": "esculin ferric citrate esculin ferric citrate esculin ferric citrate kgmicrobe.ingredient:esculin_ferric_citrate"
+      "searchable": "esculin ferric citrate esculin ferric citrate esculin ferric citrate kgmicrobe.ingredient:esculin_ferric_citrate esculin chebi:4853 iron(iii) citrate chebi:144421",
+      "components": [
+        {
+          "component_name": "esculin",
+          "component_id": "CHEBI:4853",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "iron(III) citrate",
+          "component_id": "CHEBI:144421",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Esculin Ferric Citrate",
+            "notes": "The source label explicitly names every retained top-level part."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:4853",
@@ -19734,10 +20043,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Fastidious_Anaerobe_Broth_With_Meat_Granules.yaml",
-      "searchable": "fastidious anaerobe broth with meat granules fastidious anaerobe broth with meat granules fastidious anaerobe broth with meat granules kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules"
+      "searchable": "fastidious anaerobe broth with meat granules fastidious anaerobe broth with meat granules fastidious anaerobe broth with meat granules kgmicrobe.ingredient:fastidious_anaerobe_broth_with_meat_granules meat (cooked) foodon:03305103 peptone micro:0000178 starch chebi:28017 glucose chebi:17234",
+      "components": [
+        {
+          "component_name": "meat (cooked)",
+          "component_id": "FOODON:03305103",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "starch",
+          "component_id": "CHEBI:28017",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "CURATED_INTERPRETATION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Fastidious Anaerobe Broth With Meat Granules",
+            "notes": "Reviewed row: strategy=map_to_medium, confidence=medium; FAB (LabM/Neogen) commercial rich medium + cooked-meat granules. Best as complex medium; no single component captures it."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:35366",
@@ -20189,8 +20537,8 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Fermented_Rumen_Extract.yaml",
       "searchable": "fermented rumen extract fermented rumen extract fermented rumen extract kgmicrobe.ingredient:fermented_rumen_extract"
     },
@@ -21070,10 +21418,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Formate3-methyl_Mercaptopropionate.yaml",
-      "searchable": "formate+3-methyl mercaptopropionate formate+3-methyl mercaptopropionate formate+3-methyl mercaptopropionate kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate"
+      "searchable": "formate+3-methyl mercaptopropionate formate+3-methyl mercaptopropionate formate+3-methyl mercaptopropionate kgmicrobe.ingredient:formate_3_methyl_mercaptopropionate formate chebi:15740 3-(methylthio)propionic acid chebi:1438",
+      "components": [
+        {
+          "component_name": "formate",
+          "component_id": "CHEBI:15740",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "3-(methylthio)propionic acid",
+          "component_id": "CHEBI:1438",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Formate+3-methyl Mercaptopropionate",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Formate + 3-methyl mercaptopropionate",
+            "notes": "Reviewed row: strategy=split, confidence=medium; Same anion-vs-acid caveat as H2 pair."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:formate_dimethylsulfide",
@@ -21089,10 +21470,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Formatedimethylsulfide.yaml",
-      "searchable": "formate+dimethylsulfide formate+dimethylsulfide formate+dimethylsulfide kgmicrobe.ingredient:formate_dimethylsulfide"
+      "searchable": "formate+dimethylsulfide formate+dimethylsulfide formate+dimethylsulfide kgmicrobe.ingredient:formate_dimethylsulfide formate chebi:15740 dimethyl sulfide chebi:17437",
+      "components": [
+        {
+          "component_name": "formate",
+          "component_id": "CHEBI:15740",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "dimethyl sulfide",
+          "component_id": "CHEBI:17437",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Formate+dimethylsulfide",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Formate + dimethylsulfide",
+            "notes": "Reviewed row: strategy=split, confidence=high; Formate donor + DMS."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:formate_methanol",
@@ -21108,10 +21522,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Formatemethanol.yaml",
-      "searchable": "formate+methanol formate+methanol formate+methanol kgmicrobe.ingredient:formate_methanol"
+      "searchable": "formate+methanol formate+methanol formate+methanol kgmicrobe.ingredient:formate_methanol formate chebi:15740 methanol chebi:17790",
+      "components": [
+        {
+          "component_name": "formate",
+          "component_id": "CHEBI:15740",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "methanol",
+          "component_id": "CHEBI:17790",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Formate+methanol",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Formate + methanol",
+            "notes": "Reviewed row: strategy=split, confidence=high; Formate donor + methanol."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:formate_tetramethylammonium",
@@ -21127,10 +21574,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Formatetetramethylammonium.yaml",
-      "searchable": "formate+tetramethylammonium formate+tetramethylammonium formate+tetramethylammonium kgmicrobe.ingredient:formate_tetramethylammonium"
+      "searchable": "formate+tetramethylammonium formate+tetramethylammonium formate+tetramethylammonium kgmicrobe.ingredient:formate_tetramethylammonium formate chebi:15740 tetramethylammonium chebi:46020",
+      "components": [
+        {
+          "component_name": "formate",
+          "component_id": "CHEBI:15740",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "tetramethylammonium",
+          "component_id": "CHEBI:46020",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Formate+tetramethylammonium",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Formate + tetramethylammonium",
+            "notes": "Reviewed row: strategy=split, confidence=high; Formate donor + tetramethylammonium."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:formate_trimethylamine",
@@ -21146,10 +21626,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Formatetrimethylamine.yaml",
-      "searchable": "formate+trimethylamine formate+trimethylamine formate+trimethylamine kgmicrobe.ingredient:formate_trimethylamine"
+      "searchable": "formate+trimethylamine formate+trimethylamine formate+trimethylamine kgmicrobe.ingredient:formate_trimethylamine formate chebi:15740 trimethylamine chebi:18139",
+      "components": [
+        {
+          "component_name": "formate",
+          "component_id": "CHEBI:15740",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "trimethylamine",
+          "component_id": "CHEBI:18139",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Formate+trimethylamine",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Formate + trimethylamine",
+            "notes": "Reviewed row: strategy=split, confidence=high; Formate donor + TMA."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:30751",
@@ -21674,10 +22187,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/GYPS.yaml",
-      "searchable": "gyps gyps gyps kgmicrobe.ingredient:gyps"
+      "searchable": "gyps gyps gyps kgmicrobe.ingredient:gyps glucose chebi:17234 yeast extract foodon:03315426 peptone micro:0000178 starch chebi:28017",
+      "components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "starch",
+          "component_id": "CHEBI:28017",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "GYPS",
+            "notes": "Reviewed row: strategy=split, confidence=medium; Glucose-Yeast-Peptone (DSMZ Medium 852) + Salts (or Starch). Same set as PYG family, reordered."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:16537",
@@ -21821,10 +22373,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Gallate_Formate.yaml",
-      "searchable": "gallate + formate gallate + formate gallate + formate kgmicrobe.ingredient:gallate_formate"
+      "searchable": "gallate + formate gallate + formate gallate + formate kgmicrobe.ingredient:gallate_formate gallate chebi:16918 formate chebi:15740",
+      "components": [
+        {
+          "component_name": "gallate",
+          "component_id": "CHEBI:16918",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "formate",
+          "component_id": "CHEBI:15740",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Gallate + Formate",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Gallate + Formate",
+            "notes": "Reviewed row: strategy=split, confidence=high; Gallate = conjugate base of gallic acid."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:30778",
@@ -22406,10 +22991,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Glucose_Acetate.yaml",
-      "searchable": "glucose + acetate glucose + acetate glucose + acetate kgmicrobe.ingredient:glucose_acetate"
+      "searchable": "glucose + acetate glucose + acetate glucose + acetate kgmicrobe.ingredient:glucose_acetate glucose chebi:17234 acetate chebi:30089",
+      "components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "acetate",
+          "component_id": "CHEBI:30089",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Glucose + Acetate",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Glucose + Acetate",
+            "notes": "Reviewed row: strategy=split, confidence=high; Two carbon substrates."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract",
@@ -22425,10 +23043,61 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Glucose_Cellobiose_Starch_Trypticase_Yeast_Extract.yaml",
-      "searchable": "glucose + cellobiose + starch + trypticase + yeast extract glucose + cellobiose + starch + trypticase + yeast extract glucose + cellobiose + starch + trypticase + yeast extract kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract"
+      "searchable": "glucose + cellobiose + starch + trypticase + yeast extract glucose + cellobiose + starch + trypticase + yeast extract glucose + cellobiose + starch + trypticase + yeast extract kgmicrobe.ingredient:glucose_cellobiose_starch_trypticase_yeast_extract glucose chebi:17234 cellobiose chebi:17057 starch chebi:28017 trypticase peptone micro:0000175 yeast extract foodon:03315426",
+      "components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "cellobiose",
+          "component_id": "CHEBI:17057",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "starch",
+          "component_id": "CHEBI:28017",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "Trypticase peptone",
+          "component_id": "MICRO:0000175",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Glucose + Cellobiose + Starch + Trypticase + Yeast Extract",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Glucose + Cellobiose + Starch + Trypticase + Yeast Extract",
+            "notes": "Reviewed row: strategy=split, confidence=high; GSC/M2GSC-type rumen/cellulolytic carbohydrate blend."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:glucose_formate",
@@ -22444,10 +23113,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Glucose_Formate.yaml",
-      "searchable": "glucose + formate glucose + formate glucose + formate kgmicrobe.ingredient:glucose_formate"
+      "searchable": "glucose + formate glucose + formate glucose + formate kgmicrobe.ingredient:glucose_formate glucose chebi:17234 formate chebi:15740",
+      "components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "formate",
+          "component_id": "CHEBI:15740",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Glucose + Formate",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Glucose + Formate",
+            "notes": "Reviewed row: strategy=split, confidence=high; Two substrates."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:glucose_lactate",
@@ -22463,10 +23165,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Glucose_Lactate.yaml",
-      "searchable": "glucose + lactate glucose + lactate glucose + lactate kgmicrobe.ingredient:glucose_lactate"
+      "searchable": "glucose + lactate glucose + lactate glucose + lactate kgmicrobe.ingredient:glucose_lactate glucose chebi:17234 lactate chebi:24996",
+      "components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "lactate",
+          "component_id": "CHEBI:24996",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Glucose + Lactate",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Glucose + Lactate",
+            "notes": "Reviewed row: strategy=split, confidence=high; Two substrates."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol",
@@ -22482,10 +23217,55 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Glucose_Maltose_Cellobiose_Starch_Glycerol.yaml",
-      "searchable": "glucose + maltose + cellobiose + starch + glycerol glucose + maltose + cellobiose + starch + glycerol glucose + maltose + cellobiose + starch + glycerol kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol"
+      "searchable": "glucose + maltose + cellobiose + starch + glycerol glucose + maltose + cellobiose + starch + glycerol glucose + maltose + cellobiose + starch + glycerol kgmicrobe.ingredient:glucose_maltose_cellobiose_starch_glycerol glucose chebi:17234 maltose chebi:17306 cellobiose chebi:17057 starch chebi:28017 glycerol chebi:17754",
+      "components": [
+        {
+          "component_name": "Glucose",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Maltose",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "CHEBI:17306",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Cellobiose",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "CHEBI:17057",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Starch",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "CHEBI:28017",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Glycerol",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "CHEBI:17754",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Glucose + Maltose + Cellobiose + Starch + Glycerol",
+            "notes": "The source label explicitly names every retained top-level part."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:glucose_peptone_yeast_extract",
@@ -22501,10 +23281,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Glucose_Peptone-yeast_Extract.yaml",
-      "searchable": "glucose peptone-yeast extract glucose peptone-yeast extract glucose peptone-yeast extract kgmicrobe.ingredient:glucose_peptone_yeast_extract"
+      "searchable": "glucose peptone-yeast extract glucose peptone-yeast extract glucose peptone-yeast extract kgmicrobe.ingredient:glucose_peptone_yeast_extract glucose chebi:17234 peptone micro:0000178 yeast extract foodon:03315426",
+      "components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Glucose Peptone-yeast Extract",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Glucose Peptone-yeast Extract",
+            "notes": "Reviewed row: strategy=split, confidence=high; PYG-family reordering."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:glucose_xylose",
@@ -22520,10 +23339,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Glucose_Xylose.yaml",
-      "searchable": "glucose + xylose glucose + xylose glucose + xylose kgmicrobe.ingredient:glucose_xylose"
+      "searchable": "glucose + xylose glucose + xylose glucose + xylose kgmicrobe.ingredient:glucose_xylose glucose chebi:17234 xylose chebi:18222",
+      "components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "xylose",
+          "component_id": "CHEBI:18222",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Glucose + Xylose",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Glucose + Xylose",
+            "notes": "Reviewed row: strategy=split, confidence=high; Two sugars."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:glucose_yeast_extract",
@@ -22539,10 +23391,37 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Glucose_Yeast_Extract.yaml",
-      "searchable": "glucose + yeast extract glucose + yeast extract glucose + yeast extract kgmicrobe.ingredient:glucose_yeast_extract"
+      "searchable": "glucose + yeast extract glucose + yeast extract glucose + yeast extract kgmicrobe.ingredient:glucose_yeast_extract glucose chebi:17234 yeast extract foodon:03315426",
+      "components": [
+        {
+          "component_name": "Glucose",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Yeast Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Glucose + Yeast Extract",
+            "notes": "The source label explicitly names every retained top-level part."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "cas:3789-97-7",
@@ -23683,10 +24562,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/H23-methyl_Mercaptopropionate.yaml",
-      "searchable": "h2+3-methyl mercaptopropionate h2+3-methyl mercaptopropionate h2+3-methyl mercaptopropionate kgmicrobe.ingredient:h2_3_methyl_mercaptopropionate"
+      "searchable": "h2+3-methyl mercaptopropionate h2+3-methyl mercaptopropionate h2+3-methyl mercaptopropionate kgmicrobe.ingredient:h2_3_methyl_mercaptopropionate dihydrogen chebi:18276 3-(methylthio)propionic acid chebi:1438",
+      "components": [
+        {
+          "component_name": "dihydrogen",
+          "component_id": "CHEBI:18276",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "3-(methylthio)propionic acid",
+          "component_id": "CHEBI:1438",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "H2+3-methyl Mercaptopropionate",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "H2 + 3-methyl mercaptopropionate",
+            "notes": "Reviewed row: strategy=split, confidence=medium; MMPA (DMSP demethylation product). CHEBI:1438 is acid form; label is anion (no distinct anion entry located)."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:h2_co2",
@@ -23702,10 +24614,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/H2_CO2.yaml",
-      "searchable": "h2 + co2 h2 + co2 h2 + co2 kgmicrobe.ingredient:h2_co2"
+      "searchable": "h2 + co2 h2 + co2 h2 + co2 kgmicrobe.ingredient:h2_co2 dihydrogen chebi:18276 carbon dioxide chebi:16526",
+      "components": [
+        {
+          "component_name": "dihydrogen",
+          "component_id": "CHEBI:18276",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "carbon dioxide",
+          "component_id": "CHEBI:16526",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "H2 + CO2",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "H2 + CO2",
+            "notes": "Reviewed row: strategy=split, confidence=high; Hydrogenotrophic-methanogen donor/acceptor pair."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:h2_dimethylsulfide",
@@ -23721,10 +24666,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/H2dimethylsulfide.yaml",
-      "searchable": "h2+dimethylsulfide h2+dimethylsulfide h2+dimethylsulfide kgmicrobe.ingredient:h2_dimethylsulfide"
+      "searchable": "h2+dimethylsulfide h2+dimethylsulfide h2+dimethylsulfide kgmicrobe.ingredient:h2_dimethylsulfide dihydrogen chebi:18276 dimethyl sulfide chebi:17437",
+      "components": [
+        {
+          "component_name": "dihydrogen",
+          "component_id": "CHEBI:18276",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "dimethyl sulfide",
+          "component_id": "CHEBI:17437",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "H2+dimethylsulfide",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "H2 + dimethylsulfide",
+            "notes": "Reviewed row: strategy=split, confidence=high; H2 donor + DMS methylated substrate."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:h2_methanol",
@@ -23740,10 +24718,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/H2methanol.yaml",
-      "searchable": "h2+methanol h2+methanol h2+methanol kgmicrobe.ingredient:h2_methanol"
+      "searchable": "h2+methanol h2+methanol h2+methanol kgmicrobe.ingredient:h2_methanol dihydrogen chebi:18276 methanol chebi:17790",
+      "components": [
+        {
+          "component_name": "dihydrogen",
+          "component_id": "CHEBI:18276",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "methanol",
+          "component_id": "CHEBI:17790",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "H2+methanol",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "H2 + methanol",
+            "notes": "Reviewed row: strategy=split, confidence=high; H2 donor + methanol methylotrophic substrate."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:26642",
@@ -23819,10 +24830,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/H2tetramethylammonium.yaml",
-      "searchable": "h2+tetramethylammonium h2+tetramethylammonium h2+tetramethylammonium kgmicrobe.ingredient:h2_tetramethylammonium"
+      "searchable": "h2+tetramethylammonium h2+tetramethylammonium h2+tetramethylammonium kgmicrobe.ingredient:h2_tetramethylammonium dihydrogen chebi:18276 tetramethylammonium chebi:46020",
+      "components": [
+        {
+          "component_name": "dihydrogen",
+          "component_id": "CHEBI:18276",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "tetramethylammonium",
+          "component_id": "CHEBI:46020",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "H2+tetramethylammonium",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "H2 + tetramethylammonium",
+            "notes": "Reviewed row: strategy=split, confidence=high; H2 donor + quaternary-amine methylotrophic substrate."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:h2_trimethylamine",
@@ -23838,10 +24882,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/H2trimethylamine.yaml",
-      "searchable": "h2+trimethylamine h2+trimethylamine h2+trimethylamine kgmicrobe.ingredient:h2_trimethylamine"
+      "searchable": "h2+trimethylamine h2+trimethylamine h2+trimethylamine kgmicrobe.ingredient:h2_trimethylamine dihydrogen chebi:18276 trimethylamine chebi:18139",
+      "components": [
+        {
+          "component_name": "dihydrogen",
+          "component_id": "CHEBI:18276",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "trimethylamine",
+          "component_id": "CHEBI:18139",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "H2+trimethylamine",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "H2 + trimethylamine",
+            "notes": "Reviewed row: strategy=split, confidence=high; H2 donor + TMA methylated substrate."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:36272",
@@ -33070,10 +34147,31 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Modified_Cooked_Meat_Medium.yaml",
-      "searchable": "modified cooked meat medium modified cooked meat medium modified cooked meat medium kgmicrobe.ingredient:modified_cooked_meat_medium"
+      "searchable": "modified cooked meat medium modified cooked meat medium modified cooked meat medium kgmicrobe.ingredient:modified_cooked_meat_medium meat (cooked) foodon:03305103",
+      "components": [
+        {
+          "component_name": "meat (cooked)",
+          "component_id": "FOODON:03305103",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "CURATED_INTERPRETATION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Modified Cooked Meat Medium",
+            "notes": "Reviewed row: strategy=map_to_medium, confidence=high; Robertson's cooked-meat anaerobe medium; repo 'Cooked meat medium' already grounds to FOODON:03305103. Undefined parts: beef-heart granules, peptone, glucose."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:modified_p-iv_chelated_micronutrient_solution",
@@ -33184,8 +34282,8 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Mono-_And_Disaccharides.yaml",
       "searchable": "mono- and disaccharides mono- and disaccharides mono- and disaccharides kgmicrobe.ingredient:mono_and_disaccharides"
     },
@@ -38818,10 +39916,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PY-cellobiose.yaml",
-      "searchable": "py-cellobiose py-cellobiose py-cellobiose kgmicrobe.ingredient:py_cellobiose"
+      "searchable": "py-cellobiose py-cellobiose py-cellobiose kgmicrobe.ingredient:py_cellobiose peptone micro:0000178 yeast extract foodon:03315426 cellobiose chebi:17057",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "cellobiose",
+          "component_id": "CHEBI:17057",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PY-cellobiose",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:py_fructose",
@@ -38837,10 +39968,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PY-fructose.yaml",
-      "searchable": "py-fructose py-fructose py-fructose kgmicrobe.ingredient:py_fructose"
+      "searchable": "py-fructose py-fructose py-fructose kgmicrobe.ingredient:py_fructose peptone micro:0000178 yeast extract foodon:03315426 fructose chebi:28757",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "fructose",
+          "component_id": "CHEBI:28757",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PY-fructose",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:py_glucose_rumen_fluid",
@@ -38856,10 +40020,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PY-glucose-rumen_Fluid.yaml",
-      "searchable": "py-glucose-rumen fluid py-glucose-rumen fluid py-glucose-rumen fluid kgmicrobe.ingredient:py_glucose_rumen_fluid"
+      "searchable": "py-glucose-rumen fluid py-glucose-rumen fluid py-glucose-rumen fluid kgmicrobe.ingredient:py_glucose_rumen_fluid peptone micro:0000178 yeast extract foodon:03315426 glucose chebi:17234 clarified rumen fluid micro:0000520",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "clarified rumen fluid",
+          "component_id": "MICRO:0000520",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "PY-glucose-rumen Fluid",
+            "notes": "Reviewed row: strategy=split, confidence=high; PY base + glucose + clarified rumen fluid. Rumen fluid: MICRO:0000520 (broadMatch) / UBERON:0010228 ruminal fluid; no exact term."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:py_maltose",
@@ -38875,10 +40078,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PY-maltose.yaml",
-      "searchable": "py-maltose py-maltose py-maltose kgmicrobe.ingredient:py_maltose"
+      "searchable": "py-maltose py-maltose py-maltose kgmicrobe.ingredient:py_maltose peptone micro:0000178 yeast extract foodon:03315426 maltose chebi:17306",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "maltose",
+          "component_id": "CHEBI:17306",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PY-maltose",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:py_pectin",
@@ -38894,10 +40130,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PY-pectin.yaml",
-      "searchable": "py-pectin py-pectin py-pectin kgmicrobe.ingredient:py_pectin"
+      "searchable": "py-pectin py-pectin py-pectin kgmicrobe.ingredient:py_pectin peptone micro:0000178 yeast extract foodon:03315426 pectin chebi:17309",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "pectin",
+          "component_id": "CHEBI:17309",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PY-pectin",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:pyeg",
@@ -38913,10 +40182,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PYEG.yaml",
-      "searchable": "pyeg pyeg pyeg kgmicrobe.ingredient:pyeg"
+      "searchable": "pyeg pyeg pyeg kgmicrobe.ingredient:pyeg peptone micro:0000178 yeast extract foodon:03315426 glucose chebi:17234",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "PYEG",
+            "notes": "Reviewed row: strategy=split, confidence=high; Peptone-Yeast Extract-Glucose; same composition as PYG."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:pyg_0_02_tween_80",
@@ -38932,10 +40234,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PYG-002_Tween_80.yaml",
-      "searchable": "pyg-0.02% tween 80 pyg-0.02% tween 80 pyg-0.02% tween 80 kgmicrobe.ingredient:pyg_0_02_tween_80"
+      "searchable": "pyg-0.02% tween 80 pyg-0.02% tween 80 pyg-0.02% tween 80 kgmicrobe.ingredient:pyg_0_02_tween_80 peptone micro:0000178 yeast extract foodon:03315426 glucose chebi:17234 polysorbate 80 chebi:53426",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "polysorbate 80",
+          "component_id": "CHEBI:53426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "scripts/decompose_py_media_and_ground_categories.py",
+            "source_record": "PYG-0.02% Tween 80",
+            "notes": "The checked-in curation script records this expansion explicitly."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:pyg",
@@ -38951,10 +40292,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PYG.yaml",
-      "searchable": "pyg pyg pyg kgmicrobe.ingredient:pyg"
+      "searchable": "pyg pyg pyg kgmicrobe.ingredient:pyg peptone micro:0000178 yeast extract foodon:03315426 glucose chebi:17234",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "PYG",
+            "notes": "Reviewed row: strategy=split, confidence=high; Peptone-Yeast extract-Glucose (VPI/DSMZ Medium 104 family). Undefined biologicals carry own terms."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:pygs",
@@ -38970,10 +40344,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PYGS.yaml",
-      "searchable": "pygs pygs pygs kgmicrobe.ingredient:pygs"
+      "searchable": "pygs pygs pygs kgmicrobe.ingredient:pygs peptone micro:0000178 yeast extract foodon:03315426 glucose chebi:17234 starch chebi:28017",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "starch",
+          "component_id": "CHEBI:28017",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "PYGS",
+            "notes": "Reviewed row: strategy=split, confidence=medium; PYG + mineral Salts (usually); 'S' occasionally soluble Starch (CHEBI:28017). Ambiguity flagged."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:pyg_rumen_fluid",
@@ -38989,10 +40402,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/PYG_Rumen_Fluid.yaml",
-      "searchable": "pyg + rumen fluid pyg + rumen fluid pyg + rumen fluid kgmicrobe.ingredient:pyg_rumen_fluid"
+      "searchable": "pyg + rumen fluid pyg + rumen fluid pyg + rumen fluid kgmicrobe.ingredient:pyg_rumen_fluid peptone micro:0000178 yeast extract foodon:03315426 glucose chebi:17234 clarified rumen fluid micro:0000520",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "clarified rumen fluid",
+          "component_id": "MICRO:0000520",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "PYG + Rumen Fluid",
+            "notes": "Reviewed row: strategy=split, confidence=high; PYG + rumen fluid supplement."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:45863",
@@ -39543,10 +40995,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Peptone-yeast_Extract-glucose.yaml",
-      "searchable": "peptone-yeast extract-glucose peptone-yeast extract-glucose peptone-yeast extract-glucose kgmicrobe.ingredient:peptone_yeast_extract_glucose"
+      "searchable": "peptone-yeast extract-glucose peptone-yeast extract-glucose peptone-yeast extract-glucose kgmicrobe.ingredient:peptone_yeast_extract_glucose peptone micro:0000178 yeast extract foodon:03315426 glucose chebi:17234",
+      "components": [
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Peptone-yeast Extract-glucose",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Peptone-yeast Extract-glucose",
+            "notes": "Reviewed row: strategy=split, confidence=high; Full spelling of PYG."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "MICRO:0000178",
@@ -39582,10 +41073,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Peptone_Beef_Extract_Yeast_Extract.yaml",
-      "searchable": "peptone + beef extract + yeast extract peptone + beef extract + yeast extract peptone + beef extract + yeast extract kgmicrobe.ingredient:peptone_beef_extract_yeast_extract"
+      "searchable": "peptone + beef extract + yeast extract peptone + beef extract + yeast extract peptone + beef extract + yeast extract kgmicrobe.ingredient:peptone_beef_extract_yeast_extract peptone micro:0000178 beef extract foodon:03302088 yeast extract foodon:03315426",
+      "components": [
+        {
+          "component_name": "Peptone",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Beef Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03302088",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Yeast Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Peptone + Beef Extract + Yeast Extract",
+            "notes": "The source label explicitly names every retained top-level part."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:peptone_yeast_extract",
@@ -39601,10 +41125,37 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Peptone_Yeast_Extract.yaml",
-      "searchable": "peptone + yeast extract peptone + yeast extract peptone + yeast extract kgmicrobe.ingredient:peptone_yeast_extract"
+      "searchable": "peptone + yeast extract peptone + yeast extract peptone + yeast extract kgmicrobe.ingredient:peptone_yeast_extract peptone micro:0000178 yeast extract foodon:03315426",
+      "components": [
+        {
+          "component_name": "Peptone",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Yeast Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Peptone + Yeast Extract",
+            "notes": "The source label explicitly names every retained top-level part."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:36999",
@@ -46877,10 +48428,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Sucrose_Yeast_Extract.yaml",
-      "searchable": "sucrose + yeast extract sucrose + yeast extract sucrose + yeast extract kgmicrobe.ingredient:sucrose_yeast_extract"
+      "searchable": "sucrose + yeast extract sucrose + yeast extract sucrose + yeast extract kgmicrobe.ingredient:sucrose_yeast_extract sucrose chebi:17992 yeast extract foodon:03315426",
+      "components": [
+        {
+          "component_name": "sucrose",
+          "component_id": "CHEBI:17992",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Sucrose + Yeast Extract",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Sucrose + Yeast Extract",
+            "notes": "Reviewed row: strategy=split, confidence=high; Sucrose + yeast extract."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "NCIT:C71939",
@@ -47599,10 +49183,48 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/TYGVS_Glucose.yaml",
-      "searchable": "tygvs + glucose tygvs + glucose tygvs + glucose kgmicrobe.ingredient:tygvs_glucose"
+      "searchable": "tygvs + glucose tygvs + glucose tygvs + glucose kgmicrobe.ingredient:tygvs_glucose trypticase peptone micro:0000175 yeast extract foodon:03315426 glucose chebi:17234 volatile fatty acid mixture (undefined)",
+      "components": [
+        {
+          "component_name": "Trypticase peptone",
+          "component_id": "MICRO:0000175",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "volatile fatty acid mixture (undefined)",
+          "reference_scope": "UNMAPPED",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "TYGVS + Glucose",
+            "notes": "Reviewed row: strategy=split, confidence=medium; Trypticase-Yeast-Glucose-VFA-Salts rumen medium (Caldwell & Bryant 1966) + extra glucose. VFA mix = acetate/propionate/butyrate/isobutyrate/valerate/isovalerate; no single CURIE."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:tyg_salts_solution",
@@ -49914,10 +51536,49 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Trypticase-glucose-yeast_Extract.yaml",
-      "searchable": "trypticase-glucose-yeast extract trypticase-glucose-yeast extract trypticase-glucose-yeast extract kgmicrobe.ingredient:trypticase_glucose_yeast_extract"
+      "searchable": "trypticase-glucose-yeast extract trypticase-glucose-yeast extract trypticase-glucose-yeast extract kgmicrobe.ingredient:trypticase_glucose_yeast_extract trypticase peptone micro:0000175 glucose chebi:17234 yeast extract foodon:03315426",
+      "components": [
+        {
+          "component_name": "Trypticase peptone",
+          "component_id": "MICRO:0000175",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Trypticase-glucose-yeast Extract",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Trypticase-glucose-yeast Extract",
+            "notes": "Reviewed row: strategy=split, confidence=high; TGY/TYG-type medium (ATCC 603, DSMZ 1618)."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "MICRO:0000175",
@@ -50039,10 +51700,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Tryptoneyeastbeef_(tyb).yaml",
-      "searchable": "tryptone/yeast/beef (tyb) tryptone/yeast/beef (tyb) tryptone/yeast/beef (tyb) kgmicrobe.ingredient:tryptone_yeast_beef_tyb"
+      "searchable": "tryptone/yeast/beef (tyb) tryptone/yeast/beef (tyb) tryptone/yeast/beef (tyb) kgmicrobe.ingredient:tryptone_yeast_beef_tyb tryptone micro:0000182 yeast extract foodon:03315426 beef extract foodon:03302088",
+      "components": [
+        {
+          "component_name": "tryptone",
+          "component_id": "MICRO:0000182",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        },
+        {
+          "component_name": "beef extract",
+          "component_id": "FOODON:03302088",
+          "reference_scope": "MIM_CATALOG",
+          "source": "MIM curation (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Tryptone/yeast/beef (tyb)",
+            "notes": "The source label explicitly names every retained top-level part."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:27897",
@@ -51878,10 +53572,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Yeast_Extract_Gluconate.yaml",
-      "searchable": "yeast extract + gluconate yeast extract + gluconate yeast extract + gluconate kgmicrobe.ingredient:yeast_extract_gluconate"
+      "searchable": "yeast extract + gluconate yeast extract + gluconate yeast extract + gluconate kgmicrobe.ingredient:yeast_extract_gluconate yeast extract foodon:03315426 d-gluconate chebi:18391",
+      "components": [
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "D-gluconate",
+          "component_id": "CHEBI:18391",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Yeast Extract + Gluconate",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Yeast Extract + Gluconate",
+            "notes": "Reviewed row: strategy=split, confidence=medium; Gluconate in media is D-form (sodium D-gluconate); label stereo-unspecified."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:yeast_extract_glucose",
@@ -51897,10 +53624,37 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Yeast_Extract_Glucose.yaml",
-      "searchable": "yeast extract + glucose yeast extract + glucose yeast extract + glucose kgmicrobe.ingredient:yeast_extract_glucose"
+      "searchable": "yeast extract + glucose yeast extract + glucose yeast extract + glucose kgmicrobe.ingredient:yeast_extract_glucose yeast extract foodon:03315426 glucose chebi:17234",
+      "components": [
+        {
+          "component_name": "Yeast Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Glucose",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Yeast Extract + Glucose",
+            "notes": "The source label explicitly names every retained top-level part."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:yeast_extract_peptone",
@@ -51916,10 +53670,37 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Yeast_Extract_Peptone.yaml",
-      "searchable": "yeast extract + peptone yeast extract + peptone yeast extract + peptone kgmicrobe.ingredient:yeast_extract_peptone"
+      "searchable": "yeast extract + peptone yeast extract + peptone yeast extract + peptone kgmicrobe.ingredient:yeast_extract_peptone yeast extract foodon:03315426 peptone micro:0000178",
+      "components": [
+        {
+          "component_name": "Yeast Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "Peptone",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Yeast Extract + Peptone",
+            "notes": "The source label explicitly names every retained top-level part."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:yeast_extract_sulfur",
@@ -51935,10 +53716,43 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Yeast_Extract_Sulfur.yaml",
-      "searchable": "yeast extract + sulfur yeast extract + sulfur yeast extract + sulfur kgmicrobe.ingredient:yeast_extract_sulfur"
+      "searchable": "yeast extract + sulfur yeast extract + sulfur yeast extract + sulfur kgmicrobe.ingredient:yeast_extract_sulfur yeast extract foodon:03315426 sulfur chebi:26833",
+      "components": [
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "sulfur",
+          "component_id": "CHEBI:26833",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Yeast Extract + Sulfur",
+            "notes": "The source label explicitly names every retained top-level part."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "Yeast Extract + Sulfur",
+            "notes": "Reviewed row: strategy=split, confidence=high; Yeast extract + elemental sulfur."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "kgmicrobe.ingredient:yeast_meat_extract_h2",
@@ -51954,10 +53768,42 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-15T00:00:00+00:00",
-      "curator": "move_mapped_out_of_unmapped_collection",
+      "last_curated": "2026-08-24T00:00:00+00:00",
+      "curator": "migrate_component_partonomy",
       "source_file": "mapped/Yeast_Meat_Extract_H2.yaml",
-      "searchable": "yeast + meat extract + h2 yeast + meat extract + h2 yeast + meat extract + h2 kgmicrobe.ingredient:yeast_meat_extract_h2"
+      "searchable": "yeast + meat extract + h2 yeast + meat extract + h2 yeast + meat extract + h2 kgmicrobe.ingredient:yeast_meat_extract_h2 yeast  meat extract foodon:03315424 h2 chebi:18276",
+      "components": [
+        {
+          "component_name": "Yeast",
+          "reference_scope": "UNMAPPED",
+          "source": "MIM label decomposition (#213/#308)"
+        },
+        {
+          "component_name": "Meat Extract",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "FOODON:03315424",
+          "reference_scope": "MIM_CATALOG"
+        },
+        {
+          "component_name": "H2",
+          "source": "MIM label decomposition (#213/#308)",
+          "component_id": "CHEBI:18276",
+          "reference_scope": "MIM_CATALOG"
+        }
+      ],
+      "component_assertion": {
+        "method": "LABEL_ENUMERATION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "SOURCE_LABEL",
+            "source": "microbedecoder",
+            "source_record": "Yeast + Meat Extract + H2",
+            "notes": "The source label explicitly names every retained top-level part."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      }
     },
     {
       "id": "CHEBI:10100",

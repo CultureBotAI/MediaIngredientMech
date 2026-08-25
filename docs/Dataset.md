@@ -1,6 +1,6 @@
 
 
-# Class: Dataset 
+# Class: Dataset
 
 
 _A reference to a publicly available dataset (omics, sequence, phenotype) relevant to this record. A lightweight repository-accession reference, not a full Datasheets-for-Datasets / DCAT description._
@@ -20,63 +20,63 @@ URI: [mediaingredientmech:Dataset](https://w3id.org/mediaingredientmech/Dataset)
     class Dataset
     click Dataset href "../Dataset/"
       Dataset : accession
-        
+
       Dataset : conditions
-        
+
       Dataset : dataset_type
-        
-          
-    
-        
-        
+
+
+
+
+
         Dataset --> "0..1" DatasetTypeEnum : dataset_type
         click DatasetTypeEnum href "../DatasetTypeEnum/"
-    
 
-        
+
+
       Dataset : description
-        
+
       Dataset : evidence
-        
-          
-    
-        
-        
+
+
+
+
+
         Dataset --> "*" SupportingReference : evidence
         click SupportingReference href "../SupportingReference/"
-    
 
-        
+
+
       Dataset : findings
-        
+
       Dataset : notes
-        
+
       Dataset : organism
-        
+
       Dataset : platform
-        
+
       Dataset : publication
-        
+
       Dataset : repository
-        
-          
-    
-        
-        
+
+
+
+
+
         Dataset --> "0..1" DatasetRepositoryEnum : repository
         click DatasetRepositoryEnum href "../DatasetRepositoryEnum/"
-    
 
-        
+
+
       Dataset : sample_count
-        
+
       Dataset : sample_types
-        
+
       Dataset : title
-        
+
       Dataset : url
-        
-      
+
+
 ```
 
 
@@ -269,6 +269,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
     - Discussion
     - Dataset
     range: SupportingReference
@@ -282,11 +283,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset
@@ -448,6 +452,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
     - Discussion
     - Dataset
     range: SupportingReference
@@ -463,11 +468,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset

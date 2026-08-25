@@ -35,6 +35,7 @@ _CURIE_RESOLVERS = {
     "ENVO": "https://www.ebi.ac.uk/ols4/ontologies/envo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FENVO_{}",
     "UBERON": "https://www.ebi.ac.uk/ols4/ontologies/uberon/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FUBERON_{}",
     "NCIT": "https://www.ebi.ac.uk/ols4/ontologies/ncit/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FNCIT_{}",
+    "MICRO": "https://www.ebi.ac.uk/ols4/ontologies/micro/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMICRO_{}",
     "cas": "https://commonchemistry.cas.org/detail?cas_rn={}",
     "kgmicrobe.compound": "#",  # placeholder primary; no resolver
     "MIM": None,

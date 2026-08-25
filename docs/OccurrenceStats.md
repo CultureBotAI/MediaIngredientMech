@@ -1,6 +1,6 @@
 
 
-# Class: OccurrenceStats 
+# Class: OccurrenceStats
 
 
 _Statistics about ingredient usage across media_
@@ -20,14 +20,25 @@ URI: [mediaingredientmech:OccurrenceStats](https://w3id.org/mediaingredientmech/
     class OccurrenceStats
     click OccurrenceStats href "../OccurrenceStats/"
       OccurrenceStats : concentration_range
-        
+
       OccurrenceStats : media_count
-        
+
       OccurrenceStats : sample_media
-        
+
+      OccurrenceStats : source_occurrences
+
+
+
+
+
+        OccurrenceStats --> "*" SourceOccurrence : source_occurrences
+        click SourceOccurrence href "../SourceOccurrence/"
+
+
+
       OccurrenceStats : total_occurrences
-        
-      
+
+
 ```
 
 
@@ -44,6 +55,7 @@ URI: [mediaingredientmech:OccurrenceStats](https://w3id.org/mediaingredientmech/
 | [media_count](media_count.md) | 1 <br/> [Integer](Integer.md) | Number of unique media containing this ingredient | direct |
 | [sample_media](sample_media.md) | * <br/> [String](String.md) | Sample media names (for reference) | direct |
 | [concentration_range](concentration_range.md) | 0..1 <br/> [String](String.md) | Observed concentration range (if available) | direct |
+| [source_occurrences](source_occurrences.md) | * <br/> [SourceOccurrence](SourceOccurrence.md) | Prevalence recorded by a NON-media source, kept separate from total_occurrenc... | direct |
 
 
 
@@ -133,6 +145,23 @@ attributes:
     rank: 1000
     domain_of:
     - OccurrenceStats
+  source_occurrences:
+    name: source_occurrences
+    description: Prevalence recorded by a NON-media source, kept separate from total_occurrences/media_count
+      so it never inflates the media counts. total_occurrences answers "in how many
+      CultureMech media recipes does this appear", which is legitimately 0 for an
+      ingredient sourced from BacDive traits or Bergey substrates. Recording that
+      alone discarded the abundance signal those sources carry -- the same signal
+      used to rank the candidates worth onboarding -- leaving 386 zero-weight records
+      for anything downstream that weights ingredients by prevalence (#196).
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    domain_of:
+    - OccurrenceStats
+    range: SourceOccurrence
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 
 ```
 </details>
@@ -188,6 +217,25 @@ attributes:
     domain_of:
     - OccurrenceStats
     range: string
+  source_occurrences:
+    name: source_occurrences
+    description: Prevalence recorded by a NON-media source, kept separate from total_occurrences/media_count
+      so it never inflates the media counts. total_occurrences answers "in how many
+      CultureMech media recipes does this appear", which is legitimately 0 for an
+      ingredient sourced from BacDive traits or Bergey substrates. Recording that
+      alone discarded the abundance signal those sources carry -- the same signal
+      used to rank the candidates worth onboarding -- leaving 386 zero-weight records
+      for anything downstream that weights ingredients by prevalence (#196).
+    from_schema: https://w3id.org/mediaingredientmech
+    rank: 1000
+    alias: source_occurrences
+    owner: OccurrenceStats
+    domain_of:
+    - OccurrenceStats
+    range: SourceOccurrence
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 
 ```
 </details>

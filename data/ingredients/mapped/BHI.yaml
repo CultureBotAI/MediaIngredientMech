@@ -68,12 +68,16 @@ curation_history:
     not move between collections, and reconcile_sssom reads only the mapped collection
     — so its mapping was curated but unpublished.
   llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: migrate_component_partonomy
+  action: REMOVED_NON_PARTONOMIC_COMPONENTS
+  changes: '#369: BHI to MICRO:0000193 brain heart infusion is a whole-medium identity/alias
+    claim, not a has-part edge. The component was removed; identity cleanup must be
+    handled separately. Replaced the active mapping evidence that described the false
+    component claim; registry identity and ingredient type were not changed.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
-components:
-- component_name: brain heart infusion
-  component_id: MICRO:0000193
-  source: microbedecoder research decomposition (#213/#308)
 ingredient_type: UNDEFINED_MIXTURE
 culturemech_medium_name: BHI
 ontology_mapping:
@@ -83,15 +87,8 @@ ontology_mapping:
   mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: MANUAL_CURATION
-    source: MIM curation (#213/#308)
-    notes: 'Components taken from the curated microbedecoder research decomposition
-      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium):
-      it is a named medium and these are what the recipe contains. 1 constituent(s),
-      1 carrying an identifier. That file was produced by the research pass and never
-      written into the records; this applies it. It resolves constituents a label
-      split cannot — abbreviations such as PY, and named media such as BHI, state
-      no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations
-      are recorded: the curated row states none. Cross-referenced to CultureMech medium
-      CultureMech:015492 (''BHI'') via culturemech_medium_name, verified by COMPOSITION
-      not by name: composition Beef heart + Calf brains + Proteose Peptone + Disodium
-      phosphate + Sodium Chloride is brain heart infusion.'
+    source: MIM curation (#369)
+    notes: 'Registry identity retained while the whole-record grounding is reviewed
+      separately. Corrected prior active evidence: BHI to MICRO:0000193 brain heart
+      infusion is a whole-medium identity/alias claim, not a has-part edge. The component
+      was removed; identity cleanup must be handled separately.'

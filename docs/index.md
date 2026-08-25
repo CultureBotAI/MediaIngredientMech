@@ -15,6 +15,8 @@ Name: mediaingredientmech-schema
 | [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Assignment of a cellular-metabolic facet role (what the ingredient does insid... |
 | [ChemicalProperties](ChemicalProperties.md) | Chemical structure and properties for CHEBI-mapped ingredients |
 | [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |
+| [ComponentAssertion](ComponentAssertion.md) | Provenance for one IngredientRecord |
+| [ComponentEvidence](ComponentEvidence.md) | Evidence supporting an IngredientRecord |
 | [CurationEvent](CurationEvent.md) | Audit trail entry for a curation action |
 | [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |
 | [Discussion](Discussion.md) | A thread-like record of an open question, controversy, curation todo, emergin... |
@@ -29,7 +31,9 @@ Name: mediaingredientmech-schema
 | [PhysicochemicalRoleAssignment](PhysicochemicalRoleAssignment.md) | Assignment of a physicochemical facet role (the chemical or physical function... |
 | [ProposedExperiment](ProposedExperiment.md) | A lightweight, domain-neutral sketch of an experiment or analysis that could ... |
 | [RoleCitation](RoleCitation.md) | Citation supporting a role assignment (DOI, publication, database reference) |
-| [StockComponent](StockComponent.md) | One constituent of a stock solution or defined medium recipe — a component in... |
+| [SourceOccurrence](SourceOccurrence.md) | An occurrence count attributed to a specific upstream source, with the source... |
+| [StockComponent](StockComponent.md) | One constituent in an IngredientRecord |
+| [SuppliedForm](SuppliedForm.md) | A purchasable form of an ingredient: what a lab would physically order and re... |
 | [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |
 
 
@@ -43,15 +47,18 @@ Name: mediaingredientmech-schema
 | [approach](approach.md) | Method/assay in brief (e |
 | [attaches_to](attaches_to.md) | Hash-anchor pointers into the sections/nodes this discussion concerns: `<sect... |
 | [cas_rn](cas_rn.md) | Chemical Abstracts Service Registry Number (CAS-RN) in format XXX-XX-X or XXX... |
+| [catalog_number](catalog_number.md) | Vendor catalogue number, e |
 | [category](category.md) | Categorization label for partitioned unmapped collections (e |
 | [cellular_metabolic_roles](cellular_metabolic_roles.md) | Role of this ingredient inside/on the cultured microbe (e |
 | [changes](changes.md) | Description of what changed |
 | [chemical_properties](chemical_properties.md) | Chemical structure and properties (for CHEBI-mapped ingredients only) |
 | [child_ingredients](child_ingredients.md) | List of child ingredient `identifier`s in the variant hierarchy |
 | [community_organism_roles](community_organism_roles.md) | Role(s) this organism plays in a microbial community (e |
-| [component_id](component_id.md) | Identifier of the component when mapped to an ontology/registry term (e |
-| [component_name](component_name.md) | Component ingredient name as listed in the recipe (e |
-| [components](components.md) | Recipe-level decomposition for a STOCK_SOLUTION or DEFINED_MEDIUM: the list o... |
+| [completeness](completeness.md) | Whether the cited source establishes a complete constituent list |
+| [component_assertion](component_assertion.md) | Method and structured evidence for the record-level has-part claim carried by... |
+| [component_id](component_id.md) | Semantic CURIE for the component (e |
+| [component_name](component_name.md) | Component ingredient name as listed in the supporting source (e |
+| [components](components.md) | A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_M... |
 | [concentration_range](concentration_range.md) | Observed concentration range (if available) |
 | [concentration_unit](concentration_unit.md) | Unit for concentration_value (e |
 | [concentration_value](concentration_value.md) | Amount/concentration of the component, kept as a string to preserve the sourc... |
@@ -81,10 +88,11 @@ Name: mediaingredientmech-schema
 | [experiment_id](experiment_id.md) | Stable local id (optional; for cross-reference) |
 | [explanation](explanation.md) | Curator (or LLM)'s rationale connecting the snippet to the |
 | [findings](findings.md) | Brief note on what the dataset shows relevant to this record |
+| [form](form.md) | The physical/chemical form supplied, e |
 | [generation_date](generation_date.md) | Timestamp when this collection was generated |
 | [identifier](identifier.md) | Primary key for the record |
 | [inchi](inchi.md) | IUPAC International Chemical Identifier |
-| [ingredient_type](ingredient_type.md) | Classification of entry type: single chemical ingredient vs complex defined m... |
+| [ingredient_type](ingredient_type.md) | Classification of entry type: single chemical ingredient vs whole named mediu... |
 | [ingredients](ingredients.md) | List of all ingredient records |
 | [kg_microbe_node_id](kg_microbe_node_id.md) | KG-Microbe node ID for this ingredient when found in the KG exactly |
 | [kind](kind.md) |  |
@@ -97,10 +105,11 @@ Name: mediaingredientmech-schema
 | [media_count](media_count.md) | Number of unique media containing this ingredient |
 | [merged](merged.md) | List of record `identifier`s merged into this representative |
 | [metabolic_context](metabolic_context.md) | Pathway or metabolic context (e |
+| [method](method.md) | Method used to derive the constituent list |
 | [model_systems](model_systems.md) | Systems to use (e |
 | [molecular_formula](molecular_formula.md) | Molecular formula (e |
 | [molecular_weight](molecular_weight.md) | Molecular weight in g/mol |
-| [name](name.md) |  |
+| [name](name.md) | The product name as a catalogue would write it, e |
 | [new_status](new_status.md) | Status after this action |
 | [notes](notes.md) | Free-text curation notes |
 | [nutritional_roles](nutritional_roles.md) | What element or macronutrient this ingredient supplies to the medium (e |
@@ -127,6 +136,7 @@ Name: mediaingredientmech-schema
 | [rationale](rationale.md) | Why this matters / what resolving it would change |
 | [readouts](readouts.md) | What would be measured |
 | [reference](reference.md) | PMID: |
+| [reference_scope](reference_scope.md) | Resolution status and intended scope of component_id |
 | [reference_text](reference_text.md) | Human-readable citation text |
 | [reference_title](reference_title.md) | Title of the cited source (optional; populated by tooling) |
 | [reference_type](reference_type.md) | Type of reference (peer-reviewed, database, manual curation, etc |
@@ -145,7 +155,12 @@ Name: mediaingredientmech-schema
 | [snippet](snippet.md) | Exact substring quoted from the cited abstract that supports |
 | [solution_type](solution_type.md) | Type of solution if this is a stock/pre-mix rather than individual chemical |
 | [source](source.md) | Source of evidence (e |
+| [source_columns](source_columns.md) | The upstream columns the count was aggregated over, verbatim (e |
+| [source_occurrences](source_occurrences.md) | Prevalence recorded by a NON-media source, kept separate from total_occurrenc... |
+| [source_record](source_record.md) | Row key, recipe identifier, source label, or other locator within source |
 | [status](status.md) |  |
+| [supplied_form](supplied_form.md) | The material actually ordered and delivered for this ingredient — the thing o... |
+| [supplier](supplier.md) | Vendor, where a specific one is recorded (e |
 | [supports](supports.md) | How the cited reference relates to the mapping claim |
 | [synonym_text](synonym_text.md) | The synonym text |
 | [synonym_type](synonym_type.md) | Type of synonym |
@@ -169,6 +184,10 @@ Name: mediaingredientmech-schema
 | [CellularMetabolicRoleEnum](CellularMetabolicRoleEnum.md) | Role of the ingredient inside or on the cultured microbe(s) — the compound's ... |
 | [CitationTypeEnum](CitationTypeEnum.md) | Type of reference or citation |
 | [CommunityOrganismRoleEnum](CommunityOrganismRoleEnum.md) | Role an organism plays in a microbial community (formerly `CellularRoleEnum`;... |
+| [ComponentCompletenessEnum](ComponentCompletenessEnum.md) | Completeness of a component decomposition relative to its cited source |
+| [ComponentEvidenceTypeEnum](ComponentEvidenceTypeEnum.md) | Kind of evidence supporting a component decomposition |
+| [ComponentMethodEnum](ComponentMethodEnum.md) | Method used to derive an IngredientRecord |
+| [ComponentReferenceScopeEnum](ComponentReferenceScopeEnum.md) | Resolution scope of a StockComponent |
 | [CurationActionEnum](CurationActionEnum.md) | Documentation-only reference list of well-known curation action labels |
 | [DatasetRepositoryEnum](DatasetRepositoryEnum.md) | Public repository hosting the dataset |
 | [DatasetTypeEnum](DatasetTypeEnum.md) | Type of dataset or data resource |

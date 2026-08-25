@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Decompose the PY- media and ground the category labels to ChEBI classes (#213).
+"""RETIRED one-time resolution of PY media and category rows (#213).
+
+The component-bearing results were migrated to the typed partonomy contract in
+#369. This historical script exits before reading or writing data because it would
+recreate the old untyped shape and the non-partonomic Mono-/Disaccharides list.
 
 Two treatments for the microbedecoder residual, both extending work already in
 the corpus rather than inventing an approach.
@@ -12,8 +16,9 @@ already decomposed `PY-glucose-rumen Fluid` as peptone + yeast extract + glucose
 expansion is not a guess. `Tryptone/yeast/beef (tyb)` is the same shape with
 slashes, and its own parenthesised `(tyb)` confirms the reading.
 
-`Mono- And Disaccharides` and `Esculin Ferric Citrate` are decompositions too:
-the first names two ChEBI classes, the second two substances.
+The historical pass also decomposed `Mono- And Disaccharides`; #369 removed that
+list because coordinated category members are not material parts. `Esculin Ferric
+Citrate` remains a two-substance label enumeration.
 
 ## Category grounding (2)
 
@@ -47,8 +52,7 @@ class — only specific salts (`tetrazolium blue`, `tetrazolium violet`,
 indicator, but "usually" is an inference, and matching the bare class name to one
 of its members is the error #368 records for sulfur.
 
-    python scripts/decompose_py_media_and_ground_categories.py            # dry-run
-    python scripts/decompose_py_media_and_ground_categories.py --apply
+There is no supported invocation; both dry-run and ``--apply`` fail closed.
 """
 from __future__ import annotations
 
@@ -133,6 +137,12 @@ def main(argv: list[str] | None = None) -> int:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args(argv)
+    print(
+        "error: this one-time decomposition writer is retired after the typed "
+        "component-partonomy migration (#369); no files were read or written",
+        file=sys.stderr,
+    )
+    return 2
 
     colls = {p: (yaml.safe_load(p.read_text(encoding="utf-8", errors="replace")) or {})
              for p in (MAPPED, UNMAPPED)}

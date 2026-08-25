@@ -1,9 +1,9 @@
 
 
-# Slot: component_name 
+# Slot: component_name
 
 
-_Component ingredient name as listed in the recipe (e.g. "FeCl3 x 6 H2O")._
+_Component ingredient name as listed in the supporting source (e.g. "FeCl3 x 6 H2O")._
 
 
 
@@ -22,7 +22,7 @@ Alias: component_name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [StockComponent](StockComponent.md) | One constituent of a stock solution or defined medium recipe — a component in... |  no  |
+| [StockComponent](StockComponent.md) | One constituent in an IngredientRecord |  no  |
 
 
 
@@ -68,7 +68,8 @@ Alias: component_name
 <details>
 ```yaml
 name: component_name
-description: Component ingredient name as listed in the recipe (e.g. "FeCl3 x 6 H2O").
+description: Component ingredient name as listed in the supporting source (e.g. "FeCl3
+  x 6 H2O").
 from_schema: https://w3id.org/mediaingredientmech
 rank: 1000
 alias: component_name

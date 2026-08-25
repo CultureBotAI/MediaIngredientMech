@@ -1,6 +1,6 @@
 
 
-# Class: NutritionalRoleAssignment 
+# Class: NutritionalRoleAssignment
 
 
 _Assignment of a nutritional facet role (what element or macronutrient the ingredient supplies) with supporting evidence._
@@ -20,32 +20,32 @@ URI: [mediaingredientmech:NutritionalRoleAssignment](https://w3id.org/mediaingre
     class NutritionalRoleAssignment
     click NutritionalRoleAssignment href "../NutritionalRoleAssignment/"
       NutritionalRoleAssignment : confidence
-        
+
       NutritionalRoleAssignment : evidence
-        
-          
-    
-        
-        
+
+
+
+
+
         NutritionalRoleAssignment --> "*" RoleCitation : evidence
         click RoleCitation href "../RoleCitation/"
-    
 
-        
+
+
       NutritionalRoleAssignment : notes
-        
+
       NutritionalRoleAssignment : role
-        
-          
-    
-        
-        
+
+
+
+
+
         NutritionalRoleAssignment --> "1" NutritionalRoleEnum : role
         click NutritionalRoleEnum href "../NutritionalRoleEnum/"
-    
 
-        
-      
+
+
+
 ```
 
 
@@ -150,6 +150,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
     - Discussion
     - Dataset
     range: RoleCitation
@@ -164,11 +165,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset
@@ -222,6 +226,7 @@ attributes:
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
     - Discussion
     - Dataset
     range: RoleCitation
@@ -238,11 +243,14 @@ attributes:
     - IngredientRecord
     - EnvironmentContext
     - MappingEvidence
+    - SuppliedForm
     - CurationEvent
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
     - CellularMetabolicRoleAssignment
+    - ComponentAssertion
+    - ComponentEvidence
     - SupportingReference
     - Discussion
     - Dataset

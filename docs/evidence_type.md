@@ -1,11 +1,6 @@
 
 
-# Slot: evidence_type 
-
-
-_Type of evidence_
-
-
+# Slot: evidence_type
 
 
 
@@ -23,6 +18,7 @@ Alias: evidence_type
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [ComponentEvidence](ComponentEvidence.md) | Evidence supporting an IngredientRecord |  no  |
 
 
 
@@ -31,9 +27,7 @@ Alias: evidence_type
 
 ## Properties
 
-* Range: [EvidenceTypeEnum](EvidenceTypeEnum.md)
-
-* Required: True
+* Range: [String](String.md)
 
 
 
@@ -42,13 +36,6 @@ Alias: evidence_type
 
 
 
-
-
-
-### Schema Source
-
-
-* from schema: https://w3id.org/mediaingredientmech
 
 
 
@@ -68,15 +55,11 @@ Alias: evidence_type
 <details>
 ```yaml
 name: evidence_type
-description: Type of evidence
-from_schema: https://w3id.org/mediaingredientmech
-rank: 1000
 alias: evidence_type
-owner: MappingEvidence
 domain_of:
 - MappingEvidence
-range: EvidenceTypeEnum
-required: true
+- ComponentEvidence
+range: string
 
 ```
 </details>
