@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:18397
   ontology_label: 2-phenylethylamine
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -68,6 +68,16 @@ curation_history:
     CHEBI:18397; held back from #227 until the record stopped claiming to be the hydrochloride.
     No new SSSOM row; CHEBI:18397 is already mapped. Source: kgmicrobe.trait:beta_phenylethylamine.'
   llm_assisted: true
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 64-04-0 uniquely resolves
+    by ChEBI xref to CHEBI:18397 '2-phenylethylamine'. CAS_RN_LOOKUP records the method
+    that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 64-04-0
   data_source: CultureBotHT compounds_to_cas.csv

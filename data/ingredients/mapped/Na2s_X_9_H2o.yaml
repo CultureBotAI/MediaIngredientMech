@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:76209
   ontology_label: sodium sulfide nonahydrate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -163,6 +163,17 @@ curation_history:
     label states. Replaced with ChEBI's hasDbXref on CHEBI:76209, the specific term
     this record is mapped to — provenance independent of the value being replaced,
     per MAPPING_SEMANTICS §3.
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_EXACT_TO_SYNONYM
+  changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+    does not equal the term's primary label 'sodium sulfide nonahydrate'; preferred_term
+    'Na2S x 9 H2O' matches the ChEBI synonym 'Na2S.9H2O' on CHEBI:76209. The schema
+    defines EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match
+    to a known synonym, so the recorded grade overstated. ontology_id is unchanged
+    — the term is correct. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
   llm_assisted: false
 kg_microbe_node_id: CHEBI:76209
 chemical_properties:

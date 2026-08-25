@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:41189
   ontology_label: butane-1,4-diol
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -69,6 +69,16 @@ curation_history:
     which is the duplicate-shadowing defect this session has been fixing elsewhere
     (#334/#347). Merged into the pre-existing record; the two fragment labels are
     kept as RAW_TEXT synonyms so the comma-split provenance survives.'
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 110-63-4 uniquely resolves
+    by ChEBI xref to CHEBI:41189 'butane-1,4-diol'. CAS_RN_LOOKUP records the method
+    that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
   llm_assisted: false
 chemical_properties:
   cas_rn: 110-63-4

@@ -14,22 +14,24 @@ Usage:
 """
 
 import argparse
+import copy
 import sys
-from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
 
 import yaml
 
 from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.import_quality import (
+    culturemech_quality_note,
+    map_culturemech_quality,
+)
 from mediaingredientmech.utils.role_iteration import (
     FACET_ROLE_SLOTS,
     iter_role_assignments,
 )
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from mediaingredientmech.validation.write_validated import ValidationFailedError
-
 
 # Default paths
 CULTUREMECH_DIR = Path(
@@ -47,7 +49,7 @@ TIMESTAMP = datetime.now(timezone.utc).isoformat()
 
 def load_yaml(path: Path) -> dict:
     """Load a YAML file."""
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
@@ -55,6 +57,7 @@ def normalize_term(term: str) -> str:
     """Normalize an ingredient term for matching."""
     # Remove whitespace, lowercase, remove special chars
     import re
+
     normalized = term.lower().strip()
     # Normalize hydrate separators (• vs x vs · vs .)
     normalized = re.sub(r"[•·×x]\s*", "x", normalized)
@@ -76,11 +79,13 @@ def merge_synonyms(mi_record: dict, cm_ingredient: dict) -> list[dict]:
     for cm_syn_text in cm_synonyms:
         cm_syn_text = str(cm_syn_text).strip()
         if cm_syn_text and cm_syn_text not in existing_texts:
-            merged.append({
-                "synonym_text": cm_syn_text,
-                "synonym_type": "RAW_TEXT",
-                "source": "CultureMech",
-            })
+            merged.append(
+                {
+                    "synonym_text": cm_syn_text,
+                    "synonym_type": "RAW_TEXT",
+                    "source": "CultureMech",
+                }
+            )
             existing_texts.add(cm_syn_text)
 
     return merged
@@ -91,17 +96,16 @@ def has_role_curation(record: dict) -> bool:
     return any(iter_role_assignments(record, slots=FACET_ROLE_SLOTS))
 
 
-def merge_ingredient(mi_record: dict, cm_ingredient: dict, verbose: bool = False) -> tuple[dict, dict]:
+def merge_ingredient(
+    mi_record: dict, cm_ingredient: dict, verbose: bool = False
+) -> tuple[dict, dict]:
     """Merge CultureMech data into MediaIngredientMech record.
 
     Returns:
         (merged_record, changes_dict)
     """
     changes = {}
-    merged = dict(mi_record)  # Copy MI record
-
-    # PRESERVE these critical fields from MediaIngredientMech
-    preserved_fields = [*FACET_ROLE_SLOTS, "curation_history", "id", "identifier"]
+    merged = copy.deepcopy(mi_record)
 
     # Update occurrence counts
     cm_count = cm_ingredient.get("occurrence_count", 0)
@@ -121,7 +125,7 @@ def merge_ingredient(mi_record: dict, cm_ingredient: dict, verbose: bool = False
 
     # Check for ontology ID changes
     cm_ontology = cm_ingredient.get("ontology_id")
-    mi_ontology = (mi_record.get("identifier") or mi_record.get("ontology_id"))
+    mi_ontology = mi_record.get("identifier") or mi_record.get("ontology_id")
 
     if cm_ontology and mi_ontology and cm_ontology != mi_ontology:
         changes["ontology_update"] = {
@@ -137,6 +141,22 @@ def merge_ingredient(mi_record: dict, cm_ingredient: dict, verbose: bool = False
             merged["ontology_mapping"]["ontology_id"] = cm_ontology
             merged["ontology_mapping"]["ontology_label"] = cm_ingredient.get(
                 "ontology_label", cm_ingredient["preferred_term"]
+            )
+            source_quality = cm_ingredient.get("mapping_quality")
+            imported_quality = map_culturemech_quality(source_quality)
+            merged["ontology_mapping"]["mapping_quality"] = imported_quality
+            merged["ontology_mapping"].setdefault("evidence", []).append(
+                {
+                    "evidence_type": "DATABASE_MATCH",
+                    "source": "CultureMech",
+                    "notes": culturemech_quality_note(
+                        source_quality,
+                        imported_quality,
+                        cm_ingredient.get("preferred_term"),
+                        cm_ingredient.get("ontology_label"),
+                        operation="Updated",
+                    ),
+                }
             )
 
         record_curation_event(
@@ -195,21 +215,17 @@ def import_new_ingredient(cm_ingredient: dict) -> dict:
     for text in raw_synonyms:
         text = str(text).strip()
         if text and text not in seen:
-            synonyms.append({
-                "synonym_text": text,
-                "synonym_type": "RAW_TEXT",
-                "source": "CultureMech",
-            })
+            synonyms.append(
+                {
+                    "synonym_text": text,
+                    "synonym_type": "RAW_TEXT",
+                    "source": "CultureMech",
+                }
+            )
             seen.add(text)
 
-    # Map quality
-    quality_map = {
-        "DIRECT_MATCH": "EXACT_MATCH",
-        "SYNONYM_MATCH": "SYNONYM_MATCH",
-        "CLOSE_MATCH": "CLOSE_MATCH",
-        "MANUAL_CURATION": "MANUAL_CURATION",
-    }
-    quality = quality_map.get(cm_ingredient.get("mapping_quality", "DIRECT_MATCH"), "PROVISIONAL")
+    source_quality = cm_ingredient.get("mapping_quality")
+    quality = map_culturemech_quality(source_quality)
 
     record = {
         "ontology_id": ontology_id,
@@ -223,7 +239,12 @@ def import_new_ingredient(cm_ingredient: dict) -> dict:
                 {
                     "evidence_type": "DATABASE_MATCH",
                     "source": "CultureMech",
-                    "notes": f"Imported from CultureMech update, quality={cm_ingredient.get('mapping_quality', 'DIRECT_MATCH')}",
+                    "notes": culturemech_quality_note(
+                        source_quality,
+                        quality,
+                        cm_ingredient.get("preferred_term"),
+                        cm_ingredient.get("ontology_label"),
+                    ),
                 }
             ],
         },
@@ -277,14 +298,18 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
     cm_data = load_yaml(cm_mapped_path)
     cm_ingredients = cm_data.get("mapped_ingredients", [])
 
-    print(f"Loaded {len(cm_ingredients)} ingredients from CultureMech (generated {cm_data.get('generation_date', 'unknown')})")
+    print(
+        f"Loaded {len(cm_ingredients)} ingredients from CultureMech (generated {cm_data.get('generation_date', 'unknown')})"
+    )
 
     # Load MediaIngredientMech data
     mi_mapped_path = MI_DATA_DIR / "mapped_ingredients.yaml"
     mi_data = load_yaml(mi_mapped_path)
     mi_ingredients = mi_data.get("ingredients", [])
 
-    print(f"Loaded {len(mi_ingredients)} ingredients from MediaIngredientMech (generated {mi_data.get('generation_date', 'unknown')})")
+    print(
+        f"Loaded {len(mi_ingredients)} ingredients from MediaIngredientMech (generated {mi_data.get('generation_date', 'unknown')})"
+    )
 
     # Count roles before merge
     roles_before = sum(1 for ing in mi_ingredients if has_role_curation(ing))
@@ -337,7 +362,7 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
                 stats["archived"] += 1
                 archived = archive_ingredient(
                     mi_record,
-                    "Removed from CultureMech 2026-03-15 (likely complex media decomposition or data cleanup)"
+                    "Removed from CultureMech 2026-03-15 (likely complex media decomposition or data cleanup)",
                 )
                 archived_ingredients.append(archived)
 
@@ -391,9 +416,9 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
     }
 
     # Print statistics
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("MERGE SUMMARY")
-    print("="*60)
+    print("=" * 60)
     print(f"Common ingredients:              {stats['common']}")
     print(f"  - Updated:                     {stats['updated']}")
     print(f"  - Ontology changes:            {stats['ontology_changes']}")
@@ -404,7 +429,7 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
     print(f"  - Archived (has roles):        {stats['archived']}")
     print(f"  - Dropped (no roles):          {stats['removed'] - stats['archived']}")
     print()
-    print(f"ROLES PRESERVATION CHECK:")
+    print("ROLES PRESERVATION CHECK:")
     print(f"  Before merge:                  {roles_before}")
     print(f"  After merge:                   {roles_after}")
     print(f"  Delta:                         {roles_after - roles_before}")
@@ -412,7 +437,7 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
     print(f"Total ingredients after merge:   {len(all_ingredients)}")
     print(f"  - Active (mapped):             {len(merged_ingredients) + len(new_ingredients)}")
     print(f"  - Archived:                    {len(archived_ingredients)}")
-    print("="*60)
+    print("=" * 60)
 
     # Validation checks
     if roles_after < roles_before:
@@ -425,7 +450,9 @@ def perform_merge(dry_run: bool = False, verbose: bool = False) -> dict:
     if not dry_run:
         print("\nSaving merged data...")
         try:
-            save_yaml(output_data, mi_mapped_path, validate=True, target_class="IngredientCollection")
+            save_yaml(
+                output_data, mi_mapped_path, validate=True, target_class="IngredientCollection"
+            )
         except ValidationFailedError as exc:
             print(exc.summary(), file=sys.stderr)
             raise
@@ -470,20 +497,13 @@ def main():
         description="Merge CultureMech updates into MediaIngredientMech while preserving role curation"
     )
     parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Preview merge without writing files"
+        "--dry-run", action="store_true", help="Preview merge without writing files"
     )
-    parser.add_argument(
-        "--verbose",
-        "-v",
-        action="store_true",
-        help="Verbose output"
-    )
+    parser.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
     args = parser.parse_args()
 
     print("CultureMech Data Merge Tool")
-    print("="*60)
+    print("=" * 60)
 
     if args.dry_run:
         print("MODE: DRY RUN (no files will be modified)")
@@ -494,7 +514,7 @@ def main():
 
     print("\n")
 
-    stats = perform_merge(dry_run=args.dry_run, verbose=args.verbose)
+    perform_merge(dry_run=args.dry_run, verbose=args.verbose)
 
     print("\n✅ Merge complete!")
 

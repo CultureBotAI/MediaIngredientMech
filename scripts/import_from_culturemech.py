@@ -17,9 +17,12 @@ from typing import Any
 import yaml
 
 from mediaingredientmech.curate.curation_event import record_curation_event
+from mediaingredientmech.import_quality import (
+    culturemech_quality_note,
+    map_culturemech_quality,
+)
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from mediaingredientmech.validation.write_validated import ValidationFailedError
-
 
 # Default paths
 DEFAULT_SOURCE_DIR = Path(
@@ -34,7 +37,7 @@ TIMESTAMP = datetime.now(timezone.utc).isoformat()
 
 def load_source(path: Path) -> dict:
     """Load a CultureMech YAML file."""
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
@@ -93,21 +96,13 @@ def extract_unmapped_synonyms(ingredient: dict) -> list[dict]:
     return result
 
 
-def map_quality(culturemech_quality: str) -> str:
-    """Map CultureMech mapping_quality to schema MappingQualityEnum."""
-    mapping = {
-        "DIRECT_MATCH": "EXACT_MATCH",
-        "SYNONYM_MATCH": "SYNONYM_MATCH",
-        "CLOSE_MATCH": "CLOSE_MATCH",
-        "MANUAL_CURATION": "MANUAL_CURATION",
-    }
-    return mapping.get(culturemech_quality, "PROVISIONAL")
-
-
 def convert_mapped_ingredient(ingredient: dict) -> dict:
     """Convert a single CultureMech mapped ingredient to IngredientRecord."""
     ontology_id = ingredient["ontology_id"]
     ontology_source = ingredient.get("ontology_source", "CHEBI")
+    source_quality = ingredient.get("mapping_quality")
+    source_ontology_label = ingredient.get("ontology_label")
+    imported_quality = map_culturemech_quality(source_quality)
 
     record: dict[str, Any] = {
         "ontology_id": ontology_id,
@@ -116,12 +111,17 @@ def convert_mapped_ingredient(ingredient: dict) -> dict:
             "ontology_id": ontology_id,
             "ontology_label": ingredient.get("ontology_label", ingredient["preferred_term"]),
             "ontology_source": ontology_source,
-            "mapping_quality": map_quality(ingredient.get("mapping_quality", "DIRECT_MATCH")),
+            "mapping_quality": imported_quality,
             "evidence": [
                 {
                     "evidence_type": "DATABASE_MATCH",
                     "source": "CultureMech",
-                    "notes": f"Imported from CultureMech pipeline, quality={ingredient.get('mapping_quality', 'DIRECT_MATCH')}",
+                    "notes": culturemech_quality_note(
+                        source_quality,
+                        imported_quality,
+                        ingredient.get("preferred_term"),
+                        source_ontology_label,
+                    ),
                 }
             ],
         },
@@ -151,7 +151,11 @@ def convert_unmapped_ingredient(ingredient: dict, index: int) -> dict:
     identifier = f"UNMAPPED_{index:04d}"
 
     # Use parsed_chemical_name as preferred_term if available, else placeholder_id
-    preferred_term = ingredient.get("parsed_chemical_name", placeholder) or placeholder or f"Unmapped ingredient {index}"
+    preferred_term = (
+        ingredient.get("parsed_chemical_name", placeholder)
+        or placeholder
+        or f"Unmapped ingredient {index}"
+    )
 
     record: dict[str, Any] = {
         "ontology_id": identifier,
@@ -215,9 +219,7 @@ def import_unmapped(source_dir: Path, output_dir: Path) -> int:
     data = load_source(source_path)
     source_ingredients = data.get("unmapped_ingredients", [])
 
-    records = [
-        convert_unmapped_ingredient(ing, i + 1) for i, ing in enumerate(source_ingredients)
-    ]
+    records = [convert_unmapped_ingredient(ing, i + 1) for i, ing in enumerate(source_ingredients)]
 
     collection = build_collection(records, mapped_count=0, unmapped_count=len(records))
 

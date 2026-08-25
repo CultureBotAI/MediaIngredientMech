@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:18268
   ontology_label: D-glucurono-6,3-lactone
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -39,6 +39,16 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 32449-92-6 uniquely
+    resolves by ChEBI xref to CHEBI:18268 'D-glucurono-6,3-lactone'. CAS_RN_LOOKUP
+    records the method that established this mapping; a lexical grade would discard
+    that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate
+    remains skos:exactMatch under Rule D (#438), independently of mapping quality.
   llm_assisted: false
 chemical_properties:
   cas_rn: 32449-92-6
