@@ -66,7 +66,9 @@ def generate_markdown_report(
     lines.append("# Complex Media Detection Report")
     lines.append(f"\n**Generated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     lines.append(f"**Data source**: {curator.data_path}")
-    lines.append(f"**Total records analyzed**: {len(curator.records)}\n")
+    analyzed_count = sum(len(entries) for entries in results.values())
+    lines.append(f"**Total records loaded**: {len(curator.records)}")
+    lines.append(f"**Records eligible and analyzed**: {analyzed_count}\n")
 
     # Summary
     lines.append("## Summary\n")
@@ -138,17 +140,15 @@ def generate_markdown_report(
     lines.append("2. **Check CHEBI mappings** - Complex media should not be mapped to pure chemical CHEBI terms")
     lines.append("3. **Cross-reference CultureMech** - Find full recipe formulations for these media\n")
 
-    lines.append("### Reclassification Steps\n")
+    lines.append("### Review Steps\n")
     lines.append("```bash")
-    lines.append("# Interactive review")
-    lines.append("python scripts/identify_complex_media.py --interactive")
-    lines.append("")
-    lines.append("# Auto-reclassify high confidence (dry run first)")
-    lines.append("python scripts/identify_complex_media.py --auto-reclassify --dry-run")
+    lines.append("# Produce the read-only detection report")
+    lines.append("python scripts/identify_complex_media.py")
     lines.append("")
     lines.append("# Cross-reference with CultureMech")
     lines.append("python scripts/cross_reference_culturemech.py --complex-media-only")
     lines.append("```\n")
+    lines.append("Apply any accepted correction through a current validated curation workflow; the detector does not mutate records.\n")
 
     # Specific cases
     lines.append("## Special Cases Requiring Expert Review\n")
@@ -196,7 +196,8 @@ def generate_yaml_report(
     report = {
         "generation_date": datetime.now(timezone.utc).isoformat(),
         "data_source": str(curator.data_path),
-        "total_records": len(curator.records),
+        "total_records_loaded": len(curator.records),
+        "records_analyzed": sum(len(entries) for entries in results.values()),
         "summary": {
             "high_confidence_complex_media": len(results["complex_media_high"]),
             "medium_confidence_complex_media": len(results["complex_media_medium"]),

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build water variant hierarchy as proof of concept.
+RETIRED historical prototype for a water variant hierarchy.
 
 Creates parent "Water (base)" record and links all water purity variants:
 - Tap water (variant_type: TAP)
@@ -8,7 +8,7 @@ Creates parent "Water (base)" record and links all water purity variants:
 - Distilled water (variant_type: PURIFIED)
 - Double distilled water (variant_type: ULTRA_PURIFIED)
 
-Run with: PYTHONPATH=src python scripts/build_water_hierarchy.py
+Archived under #448. Do not run this file.
 
 NOT CURRENTLY RUNNABLE. This one-shot predates two schema changes and would fail
 validation as written:
@@ -18,9 +18,9 @@ validation as written:
 * it writes `media_roles` with `role: SOLVENT`. The `media_roles` slot was
   retired in #128, and SOLVENT was never a permissible value of any role enum.
 
-Left in place for its hierarchy-linking logic. Before running it again, rewrite
-the record scaffolding against the current schema and pick a real role value
-from one of the three facet enums (see utils/role_facets.py).
+The MIM hierarchy schema and helper modules were retired because no curated
+record used them and ontology/registry identifiers cannot unambiguously address
+every physical record. This file remains only as historical design material.
 """
 
 import sys

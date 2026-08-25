@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Reconcile MediaIngredientMech unmapped ingredients with CultureMech.
+"""RETIRED reconciliation report for a pre-current aggregate record shape.
+
+The script uses removed top-level identifiers, hard-coded workspace paths, and
+collision-losing label dictionaries. The #453 comparator supersedes it; do not
+run this historical snapshot.
 
 Cross-references CultureMech's unmapped ingredients with MediaIngredientMech's
 mapped ingredients to identify:

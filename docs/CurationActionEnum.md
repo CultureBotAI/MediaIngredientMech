@@ -1,4 +1,4 @@
-# Enum: CurationActionEnum 
+# Enum: CurationActionEnum
 
 
 
@@ -37,7 +37,7 @@ URI: [mediaingredientmech:CurationActionEnum](https://w3id.org/mediaingredientme
 | CLASSIFIED_STOCK_SOLUTION | None | Classified as a stock solution / premix |
 | CLASSIFIED_DEFINED_MEDIUM | None | Classified as a complete defined-medium recipe |
 | MERGED_FROM_DUPLICATES | None | Duplicate records consolidated into this representative |
-| BACKFILL_PARENT_CHEBI | None | `parent_ingredient` populated by lookup against CHEBI hierarchy |
+| BACKFILL_PARENT_CHEBI | None | Legacy history value emitted when old tooling looked up a broader ChEBI paren... |
 
 
 
@@ -155,7 +155,9 @@ permissible_values:
     description: Duplicate records consolidated into this representative.
   BACKFILL_PARENT_CHEBI:
     text: BACKFILL_PARENT_CHEBI
-    description: '`parent_ingredient` populated by lookup against CHEBI hierarchy.'
+    description: Legacy history value emitted when old tooling looked up a broader
+      ChEBI parent. It does not denote an active MIM hierarchy edge; retain it only
+      so historical curation events remain valid.
 
 ```
 </details>

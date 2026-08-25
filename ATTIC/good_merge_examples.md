@@ -1,5 +1,10 @@
 # Good Merge Examples Catalog
 
+> **RETIRED:** This pre-current training snapshot uses rolled-back surrogate
+> IDs and incorrectly treats water grades and hydrate/anhydrous forms as safe
+> merges. It is preserved only as historical evidence; do not train or validate
+> current curation against it.
+
 **Purpose:** Reference examples of valid merges for training and validation
 
 **Source:** Pattern analysis of 211 merge clusters (163 good merges = 77.3%)

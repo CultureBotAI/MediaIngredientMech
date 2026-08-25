@@ -1,6 +1,7 @@
 # Finding the Highest ID (all collection types)
 
-*Reference for the **manage-identifiers** skill — see [`../SKILL.md`](../SKILL.md) for the MediaIngredientMech overview and core workflow.*
+> **RETIRED:** This snapshot predates MIM's sequential-ID rollback. Its MIM
+> examples are false for the current schema; do not use it as instructions.
 
 ---
 
@@ -180,4 +181,3 @@ print(f"Highest ID: {highest}")  # Output: 15431
 tail -n +2 data/culturemech_id_registry.tsv | \
   cut -f1 | cut -d: -f2 | sort -n | tail -1
 ```
-

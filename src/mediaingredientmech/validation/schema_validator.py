@@ -237,7 +237,8 @@ def _validate_ingredient_record(rec: Any, path: str, msgs: list[ValidationMessag
     if not isinstance(rec, dict):
         msgs.append(ValidationMessage("error", path, "Ingredient record must be a mapping"))
         return
-    # `identifier` is the canonical primary key on every record. Flag any
+    # `identifier` is the canonical semantic-identifier slot on every record.
+    # It is not a guaranteed unique document address. Flag any
     # presence of legacy top-level `ontology_id` independently of
     # `identifier` so mid-migration records that carry BOTH keys (the most
     # common shape during a rename) still trigger the warning.
@@ -247,7 +248,7 @@ def _validate_ingredient_record(rec: Any, path: str, msgs: list[ValidationMessag
                 "warning",
                 path,
                 "Record has legacy top-level `ontology_id`; drop it — the "
-                "canonical primary key is `identifier` (schema slot renamed "
+                "canonical semantic identifier is `identifier` (slot renamed "
                 "2026-05-16).",
             )
         )

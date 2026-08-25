@@ -26,13 +26,13 @@ impact: Parser failures in downstream systems
 fix: Auto-correct to valid CURIE format
 ```
 
-**Rule P1.3: Dual Identifier Mismatch**
+**Rule P1.3: Mapped Record Retains Placeholder**
 ```yaml
 id: P1.3
-description: Sequential ID (id field) doesn't match ontology ID (identifier field)
-check: For mapped ingredients, identifier should be ontology_id (not UNMAPPED_X)
-impact: Confusion between persistent ID and semantic ID
-fix: Update identifier field to match ontology_id
+description: A mapped record still has an UNMAPPED_NNNN identifier
+check: For mapped ingredients, identifier must not start with UNMAPPED_
+impact: The record has mapped state but still carries an unresolved placeholder
+fix: Assign the evidence-backed primary identity and preserve promotion provenance
 ```
 
 **Rule P1.4: Missing Required Fields**

@@ -1,6 +1,7 @@
 # Minting IDs, Adding Records & Batch Assignment (all collection types)
 
-*Reference for the **manage-identifiers** skill — see [`../SKILL.md`](../SKILL.md) for the MediaIngredientMech overview and core workflow.*
+> **RETIRED:** This snapshot predates MIM's sequential-ID rollback. Its MIM
+> examples are false for the current schema; do not use it as instructions.
 
 ---
 
@@ -369,4 +370,3 @@ python scripts/add_community_ids.py
 - ✓ Processes files in sorted order
 - ✓ Updates YAML with ID as first field
 - ✓ Progress output for each file
-

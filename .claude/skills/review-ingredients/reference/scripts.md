@@ -128,56 +128,7 @@ PYTHONPATH=src python scripts/auto_correct.py --apply --source CHEBI
 - Never modifies preferred_term (except whitespace)
 - Records all changes in curation_history
 
-### 4. apply_corrections.py
-
-**Purpose:** Apply correction plan from JSON file
-
-**Usage:**
-```bash
-# Apply corrections from batch review
-PYTHONPATH=src python scripts/apply_corrections.py \
-  corrections_plan.json \
-  --validate
-
-# Dry-run
-PYTHONPATH=src python scripts/apply_corrections.py \
-  corrections_plan.json \
-  --dry-run
-
-# Filter by priority
-PYTHONPATH=src python scripts/apply_corrections.py \
-  corrections_plan.json \
-  --priority P3,P4
-```
-
-**Input Format (`corrections_plan.json`):**
-```json
-{
-  "corrections": [
-    {
-      "ingredient_id": "MediaIngredientMech:000123",
-      "preferred_term": "glucose",
-      "action": "enrich_properties",
-      "changes": {
-        "chemical_properties": {
-          "molecular_formula": "C6H12O6",
-          "smiles": "C([C@@H]1[C@H]([C@@H]([C@H](C(O1)O)O)O)O)O"
-        }
-      },
-      "auto_correctable": true,
-      "confidence": 1.0
-    }
-  ]
-}
-```
-
-**Validation:**
-- Checks ingredient exists
-- Verifies changes are safe (no ontology ID changes for P3/P4)
-- Confirms auto_correctable flag
-- Validates data types match schema
-
-### 5. download_ontologies.py
+### 4. download_ontologies.py
 
 **Purpose:** Download and cache OWL files from OBO Foundry
 
@@ -220,7 +171,7 @@ python scripts/download_ontologies.py --verify
 }
 ```
 
-### 6. validate_synonyms.py
+### 5. validate_synonyms.py
 
 **Purpose:** Cross-check ingredient synonyms with ontology synonyms
 
@@ -265,7 +216,7 @@ Missing from record (5):
 Add missing synonyms? [y/N]:
 ```
 
-### 7. enrich_from_ols.py
+### 6. enrich_from_ols.py
 
 **Purpose:** Batch enrich all CHEBI-mapped ingredients from OLS
 

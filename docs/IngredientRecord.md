@@ -3,7 +3,7 @@
 # Class: IngredientRecord
 
 
-_Core record for a media ingredient with ontology mapping, synonyms, and curation history. Represents either a mapped ingredient (with an ontology CURIE identifier) or an unmapped ingredient (placeholder identifier, awaits curation). Can serve as root element for individual YAML files or as elements in IngredientCollection._
+_Core record for a media ingredient with ontology mapping, synonyms, and curation history. Represents either a mapped ingredient (with a primary ontology, registry, or local identity CURIE) or an unmapped ingredient (placeholder identifier, awaits curation). Can serve as root element for individual YAML files or as elements in IngredientCollection._
 
 
 
@@ -40,8 +40,6 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
         click ChemicalProperties href "../ChemicalProperties/"
 
 
-
-      IngredientRecord : child_ingredients
 
       IngredientRecord : community_organism_roles
 
@@ -185,8 +183,6 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 
 
-      IngredientRecord : parent_ingredient
-
       IngredientRecord : physicochemical_roles
 
 
@@ -201,8 +197,6 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
       IngredientRecord : preferred_term
 
       IngredientRecord : representative
-
-      IngredientRecord : role_inheritance
 
       IngredientRecord : solution_type
 
@@ -237,19 +231,6 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 
 
-      IngredientRecord : variant_notes
-
-      IngredientRecord : variant_type
-
-
-
-
-
-        IngredientRecord --> "0..1" VariantTypeEnum : variant_type
-        click VariantTypeEnum href "../VariantTypeEnum/"
-
-
-
 
 ```
 
@@ -263,7 +244,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [identifier](identifier.md) | 1 <br/> [String](String.md) | Primary key for the record | direct |
+| [identifier](identifier.md) | 1 <br/> [String](String.md) | Semantic identifier for the record and its LinkML identifier slot, but not a ... | direct |
 | [preferred_term](preferred_term.md) | 1 <br/> [String](String.md) | Canonical name for this ingredient | direct |
 | [ontology_mapping](ontology_mapping.md) | 0..1 <br/> [OntologyMapping](OntologyMapping.md) | Ontology term mapping (CHEBI/FOODON) | direct |
 | [synonyms](synonyms.md) | * <br/> [IngredientSynonym](IngredientSynonym.md) | Alternative names and raw text variants | direct |
@@ -284,11 +265,6 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | [components](components.md) | * <br/> [StockComponent](StockComponent.md) | A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_M... | direct |
 | [component_assertion](component_assertion.md) | 0..1 <br/> [ComponentAssertion](ComponentAssertion.md) | Method and structured evidence for the record-level has-part claim carried by... | direct |
 | [culturemech_medium_name](culturemech_medium_name.md) | 0..1 <br/> [String](String.md) | Cross-reference to CultureMech medium name if this is a defined medium | direct |
-| [parent_ingredient](parent_ingredient.md) | 0..1 <br/> [String](String.md) | Reference to parent ingredient's `identifier` in the variant hierarchy | direct |
-| [child_ingredients](child_ingredients.md) | * <br/> [String](String.md) | List of child ingredient `identifier`s in the variant hierarchy | direct |
-| [variant_type](variant_type.md) | 0..1 <br/> [VariantTypeEnum](VariantTypeEnum.md) | Classification of variant relationship to parent | direct |
-| [variant_notes](variant_notes.md) | 0..1 <br/> [String](String.md) | Human-readable explanation of variant distinction from parent/siblings | direct |
-| [role_inheritance](role_inheritance.md) | 0..1 <br/> [Boolean](Boolean.md) | If true, inherits the three role facets (nutritional_roles, physicochemical_r... | direct |
 | [kg_microbe_node_id](kg_microbe_node_id.md) | 0..1 <br/> [String](String.md) | KG-Microbe node ID for this ingredient when found in the KG exactly | direct |
 | [environmental_context](environmental_context.md) | * <br/> [EnvironmentContext](EnvironmentContext.md) | Environmental contexts where this ingredient is relevant | direct |
 | [discussions](discussions.md) | * <br/> [Discussion](Discussion.md) | Open questions, knowledge gaps, controversies, and curation todos attached to... | direct |
@@ -367,18 +343,23 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 ```yaml
 name: IngredientRecord
 description: Core record for a media ingredient with ontology mapping, synonyms, and
-  curation history. Represents either a mapped ingredient (with an ontology CURIE
-  identifier) or an unmapped ingredient (placeholder identifier, awaits curation).
+  curation history. Represents either a mapped ingredient (with a primary ontology,
+  registry, or local identity CURIE) or an unmapped ingredient (placeholder identifier,
+  awaits curation).
   Can serve as root element for individual YAML files or as elements in IngredientCollection.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
   identifier:
     name: identifier
-    description: Primary key for the record. For mapped ingredients this is the ontology
-      CURIE (e.g. `CHEBI:26710`, `FOODON:3311109`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
+    description: 'Semantic identifier for the record and its LinkML identifier slot,
+      but not a guaranteed unique document address: reviewed duplicate families may
+      share a CURIE. For mapped ingredients this is the primary ontology, registry,
+      or local identity (e.g. `CHEBI:26710`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
       for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The
-      nested `ontology_mapping.ontology_id` carries the same value for mapped records
-      (and is absent for unmapped records).
+      nested `ontology_mapping.ontology_id` is a grounding target: it equals `identifier`
+      when the identifier itself names the grounded ontology term, but registry or
+      local identities may legitimately differ from the ontology target at any evidence-backed
+      mapping quality.'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     identifier: true
@@ -591,8 +572,8 @@ attributes:
     description: 'A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or
       UNDEFINED_MIXTURE: the list of component ingredients (with concentration where
       known). This is ingredient/mixture partonomy, not an identity mapping, a complete
-      culturing recipe, or the parent/child variant hierarchy. It may transcribe a
-      combination label. Populate only from verifiable evidence; omit the slot when
+      culturing recipe, or a relationship among chemical forms. It may transcribe
+      a combination label. Populate only from verifiable evidence; omit the slot when
       no constituent is known. When present, component_assertion records how the decomposition
       was made and its evidence.'
     from_schema: https://w3id.org/mediaingredientmech
@@ -623,59 +604,6 @@ attributes:
     rank: 1000
     domain_of:
     - IngredientRecord
-  parent_ingredient:
-    name: parent_ingredient
-    description: 'Reference to parent ingredient''s `identifier` in the variant hierarchy.
-      Used for variants: purity levels (tap/distilled/double-distilled water), hydrates
-      (CaCl2·2H2O vs CaCl2), stereoisomers (D-glucose vs L-glucose). Enables queries
-      like "find all media using any form of water". (No pattern constraint: the hierarchy
-      feature is currently unused — when populated, expect the schema''s canonical
-      `identifier` format.)'
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    domain_of:
-    - IngredientRecord
-  child_ingredients:
-    name: child_ingredients
-    description: 'List of child ingredient `identifier`s in the variant hierarchy.
-      Parent record contains all children (e.g. Water → Tap water, Distilled water).
-      Used to navigate hierarchy and query all variants. (No pattern constraint: see
-      `parent_ingredient` above.)'
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    domain_of:
-    - IngredientRecord
-    multivalued: true
-  variant_type:
-    name: variant_type
-    description: 'Classification of variant relationship to parent. Indicates why
-      this ingredient is distinct from parent/siblings. Examples: PURIFIED (distilled),
-      ULTRA_PURIFIED (double distilled), TAP (impure).'
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    domain_of:
-    - IngredientRecord
-    range: VariantTypeEnum
-  variant_notes:
-    name: variant_notes
-    description: 'Human-readable explanation of variant distinction from parent/siblings.
-      Example: "Higher purity (10x, <0.1 µS/cm vs <1 µS/cm) than standard distilled
-      water. Used for trace-metal sensitive work."'
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    domain_of:
-    - IngredientRecord
-  role_inheritance:
-    name: role_inheritance
-    description: If true, inherits the three role facets (nutritional_roles, physicochemical_roles,
-      cellular_metabolic_roles) from the parent ingredient. Allows child variants
-      to automatically get parent's roles while enabling variant-specific role overrides
-      or restrictions.
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    domain_of:
-    - IngredientRecord
-    range: boolean
   kg_microbe_node_id:
     name: kg_microbe_node_id
     description: KG-Microbe node ID for this ingredient when found in the KG exactly.
@@ -770,18 +698,23 @@ rules:
 ```yaml
 name: IngredientRecord
 description: Core record for a media ingredient with ontology mapping, synonyms, and
-  curation history. Represents either a mapped ingredient (with an ontology CURIE
-  identifier) or an unmapped ingredient (placeholder identifier, awaits curation).
+  curation history. Represents either a mapped ingredient (with a primary ontology,
+  registry, or local identity CURIE) or an unmapped ingredient (placeholder identifier,
+  awaits curation).
   Can serve as root element for individual YAML files or as elements in IngredientCollection.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
   identifier:
     name: identifier
-    description: Primary key for the record. For mapped ingredients this is the ontology
-      CURIE (e.g. `CHEBI:26710`, `FOODON:3311109`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
+    description: 'Semantic identifier for the record and its LinkML identifier slot,
+      but not a guaranteed unique document address: reviewed duplicate families may
+      share a CURIE. For mapped ingredients this is the primary ontology, registry,
+      or local identity (e.g. `CHEBI:26710`, `cas:247167-54-0`, `kgmicrobe.compound:aburamycin_a`);
       for unmapped ingredients it is a generated `UNMAPPED_NNNN` placeholder. The
-      nested `ontology_mapping.ontology_id` carries the same value for mapped records
-      (and is absent for unmapped records).
+      nested `ontology_mapping.ontology_id` is a grounding target: it equals `identifier`
+      when the identifier itself names the grounded ontology term, but registry or
+      local identities may legitimately differ from the ontology target at any evidence-backed
+      mapping quality.'
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     identifier: true
@@ -1035,8 +968,8 @@ attributes:
     description: 'A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or
       UNDEFINED_MIXTURE: the list of component ingredients (with concentration where
       known). This is ingredient/mixture partonomy, not an identity mapping, a complete
-      culturing recipe, or the parent/child variant hierarchy. It may transcribe a
-      combination label. Populate only from verifiable evidence; omit the slot when
+      culturing recipe, or a relationship among chemical forms. It may transcribe
+      a combination label. Populate only from verifiable evidence; omit the slot when
       no constituent is known. When present, component_assertion records how the decomposition
       was made and its evidence.'
     from_schema: https://w3id.org/mediaingredientmech
@@ -1074,72 +1007,6 @@ attributes:
     domain_of:
     - IngredientRecord
     range: string
-  parent_ingredient:
-    name: parent_ingredient
-    description: 'Reference to parent ingredient''s `identifier` in the variant hierarchy.
-      Used for variants: purity levels (tap/distilled/double-distilled water), hydrates
-      (CaCl2·2H2O vs CaCl2), stereoisomers (D-glucose vs L-glucose). Enables queries
-      like "find all media using any form of water". (No pattern constraint: the hierarchy
-      feature is currently unused — when populated, expect the schema''s canonical
-      `identifier` format.)'
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    alias: parent_ingredient
-    owner: IngredientRecord
-    domain_of:
-    - IngredientRecord
-    range: string
-  child_ingredients:
-    name: child_ingredients
-    description: 'List of child ingredient `identifier`s in the variant hierarchy.
-      Parent record contains all children (e.g. Water → Tap water, Distilled water).
-      Used to navigate hierarchy and query all variants. (No pattern constraint: see
-      `parent_ingredient` above.)'
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    alias: child_ingredients
-    owner: IngredientRecord
-    domain_of:
-    - IngredientRecord
-    range: string
-    multivalued: true
-  variant_type:
-    name: variant_type
-    description: 'Classification of variant relationship to parent. Indicates why
-      this ingredient is distinct from parent/siblings. Examples: PURIFIED (distilled),
-      ULTRA_PURIFIED (double distilled), TAP (impure).'
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    alias: variant_type
-    owner: IngredientRecord
-    domain_of:
-    - IngredientRecord
-    range: VariantTypeEnum
-  variant_notes:
-    name: variant_notes
-    description: 'Human-readable explanation of variant distinction from parent/siblings.
-      Example: "Higher purity (10x, <0.1 µS/cm vs <1 µS/cm) than standard distilled
-      water. Used for trace-metal sensitive work."'
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    alias: variant_notes
-    owner: IngredientRecord
-    domain_of:
-    - IngredientRecord
-    range: string
-  role_inheritance:
-    name: role_inheritance
-    description: If true, inherits the three role facets (nutritional_roles, physicochemical_roles,
-      cellular_metabolic_roles) from the parent ingredient. Allows child variants
-      to automatically get parent's roles while enabling variant-specific role overrides
-      or restrictions.
-    from_schema: https://w3id.org/mediaingredientmech
-    rank: 1000
-    alias: role_inheritance
-    owner: IngredientRecord
-    domain_of:
-    - IngredientRecord
-    range: boolean
   kg_microbe_node_id:
     name: kg_microbe_node_id
     description: KG-Microbe node ID for this ingredient when found in the KG exactly.

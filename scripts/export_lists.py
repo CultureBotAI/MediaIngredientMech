@@ -246,9 +246,9 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     row has one preferred_term and many synonyms — the ambiguity is per LABEL.
 
     So the precedence is made machine-readable instead of documented in prose:
-    **take the first row for the label**. Resolve to its `identifier`, which is
-    the record's primary key; `ontology_id` is included for context and is empty
-    for 594 unmapped rows.
+    **take the first row for the label**. Resolve to its semantic `identifier`;
+    `ontology_id` is the separate grounding target and is empty for 594 unmapped
+    rows. Neither field is a guaranteed unique document address.
     """
     rows = []
     # Identifiers that some LIVE record actually claims. Rule 0 below lets a

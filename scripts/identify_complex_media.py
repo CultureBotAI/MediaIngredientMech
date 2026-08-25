@@ -1,35 +1,31 @@
 #!/usr/bin/env python3
-"""Identify and reclassify complex media entries that are actually medium formulations.
+"""Report ingredient records that look like complete medium formulations.
 
 This script detects ingredients that are likely complete media recipes rather than
 single chemical ingredients, particularly focusing on entries mapped to CHEBI:2509 (agar)
 that are actually complex agar-based media.
 
 Usage:
-    python scripts/identify_complex_media.py --dry-run
-    python scripts/identify_complex_media.py --interactive
-    python scripts/identify_complex_media.py --auto-reclassify --confidence-threshold 0.9
+    python scripts/identify_complex_media.py
+
+This is deliberately read-only. The former automatic reclassification path
+depended on the retired sequential ``id`` field to mint a replacement address.
+Apply any reviewed correction through a current, validated curation workflow.
 """
 
 import argparse
-import logging
 import re
 import sys
 from pathlib import Path
-from typing import Any, Optional
+from typing import Optional
 
 from rich.console import Console
-from rich.panel import Panel
-from rich.prompt import Confirm, Prompt
 from rich.table import Table
 
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
-
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
-logger = logging.getLogger(__name__)
 
 console = Console()
 
@@ -177,7 +173,7 @@ def display_analysis_summary(results: dict[str, list[dict]]) -> None:
     table.add_row(
         "Complex Media (High Confidence)",
         str(len(results["complex_media_high"])),
-        "Auto-reclassify or review"
+        "Review through validated curation"
     )
     table.add_row(
         "Complex Media (Medium Confidence)",
@@ -234,89 +230,16 @@ def display_complex_media_details(entries: list[dict], max_display: int = 50) ->
         console.print(f"\n[dim]... and {len(sorted_entries) - max_display} more[/dim]")
 
 
-def reclassify_record(
-    record: dict,
-    curator: IngredientCurator,
-    reason: str,
-    dry_run: bool = True
-) -> bool:
-    """Reclassify a record as DEFINED_MEDIUM.
-
-    Returns:
-        True if reclassified, False if skipped.
-    """
-    if dry_run:
-        logger.info(f"[DRY RUN] Would reclassify: {record.get('preferred_term')}")
-        return False
-
-    # Set ingredient_type
-    record["ingredient_type"] = "DEFINED_MEDIUM"
-
-    # Change status to UNMAPPED if currently mapped to wrong ontology
-    current_status = record.get("mapping_status")
-    ontology_id = record.get("ontology_mapping", {}).get("ontology_id")
-
-    if ontology_id and ontology_id.startswith("CHEBI:"):
-        # Complex media should not have CHEBI mappings (unless it's a specific case)
-        curator.change_status(
-            record,
-            "UNMAPPED",
-            notes=f"Reclassified as DEFINED_MEDIUM: {reason}. "
-                  f"Previous CHEBI mapping inappropriate for complex medium."
-        )
-        # Clear ontology mapping and reassign as unmapped. Drop any stale
-        # legacy top-level `ontology_id` so the record doesn't keep its
-        # mapped CHEBI ID at root after reclassification.
-        record["ontology_mapping"] = None
-        record["identifier"] = f"UNMAPPED_{record.get('id', 'UNKNOWN').split(':')[-1]}"
-        record.pop("ontology_id", None)
-    else:
-        # Just add note
-        curator.add_note(
-            record,
-            f"Classified as DEFINED_MEDIUM: {reason}"
-        )
-
-    logger.info(f"Reclassified: {record.get('preferred_term')} → DEFINED_MEDIUM")
-    return True
-
-
 def main():
-    """Main workflow."""
+    """Run the read-only detection report."""
     parser = argparse.ArgumentParser(
-        description="Identify and reclassify complex media ingredients"
+        description="Report ingredient records that look like complex media"
     )
     parser.add_argument(
         "--data-path",
         type=Path,
         default=Path("data/curated/mapped_ingredients.yaml"),
         help="Path to ingredient data file",
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Preview changes without saving"
-    )
-    parser.add_argument(
-        "--interactive",
-        action="store_true",
-        help="Interactive review mode"
-    )
-    parser.add_argument(
-        "--auto-reclassify",
-        action="store_true",
-        help="Automatically reclassify high-confidence complex media"
-    )
-    parser.add_argument(
-        "--confidence-threshold",
-        type=float,
-        default=0.85,
-        help="Minimum confidence for auto-reclassification (default: 0.85)"
-    )
-    parser.add_argument(
-        "--report-only",
-        action="store_true",
-        help="Generate report without any reclassification"
     )
 
     args = parser.parse_args()
@@ -339,59 +262,7 @@ def main():
     if results["complex_media_high"]:
         display_complex_media_details(results["complex_media_high"])
 
-    # Report only mode
-    if args.report_only:
-        console.print("\n[yellow]Report-only mode: No reclassification performed[/yellow]")
-        return 0
-
-    # Auto-reclassify mode
-    if args.auto_reclassify:
-        console.print(f"\n[bold]Auto-reclassifying entries with confidence >= {args.confidence_threshold}[/bold]")
-
-        reclassified = 0
-        for entry in results["complex_media_high"]:
-            if entry["confidence"] >= args.confidence_threshold:
-                if reclassify_record(entry["record"], curator, entry["reason"], args.dry_run):
-                    reclassified += 1
-
-        console.print(f"\n{'[DRY RUN] Would reclassify' if args.dry_run else 'Reclassified'}: {reclassified} records")
-
-    # Interactive mode
-    elif args.interactive:
-        console.print("\n[bold]Interactive Review Mode[/bold]")
-        console.print("Review high-confidence complex media detections\n")
-
-        reclassified = 0
-        for entry in results["complex_media_high"][:20]:  # Limit to first 20 in interactive
-            record = entry["record"]
-            console.print(Panel(
-                f"[bold]{record.get('preferred_term')}[/bold]\n"
-                f"CHEBI ID: {record.get('ontology_mapping', {}).get('ontology_id', 'N/A')}\n"
-                f"Confidence: {entry['confidence']:.2f}\n"
-                f"Reason: {entry['reason']}",
-                title=f"Record {entry['index'] + 1}",
-                border_style="cyan"
-            ))
-
-            if Confirm.ask("Reclassify as DEFINED_MEDIUM?"):
-                if reclassify_record(entry["record"], curator, entry["reason"], args.dry_run):
-                    reclassified += 1
-
-            if not Confirm.ask("Continue to next?"):
-                break
-
-        console.print(f"\n{'[DRY RUN] Would reclassify' if args.dry_run else 'Reclassified'}: {reclassified} records")
-
-    # Save if not dry run
-    if not args.dry_run and (args.auto_reclassify or args.interactive):
-        if curator.is_dirty:
-            console.print(f"\n[bold green]Saving changes to {args.data_path}[/bold green]")
-            curator.save()
-            console.print("[green]✓ Saved successfully[/green]")
-        else:
-            console.print("\n[yellow]No changes to save[/yellow]")
-    elif args.dry_run:
-        console.print("\n[yellow]DRY RUN: No changes saved[/yellow]")
+    console.print("\n[yellow]Read-only report: no records were changed.[/yellow]")
 
     return 0
 

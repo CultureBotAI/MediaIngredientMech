@@ -1,5 +1,9 @@
 # MediaIngredientMech Merge Pattern Analysis
 
+> **RETIRED:** This 211-cluster snapshot uses rolled-back surrogate IDs and
+> encodes merge judgments that conflict with current identity semantics. Do not
+> use it as current analysis or merge guidance.
+
 **Analysis Date:** /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/MediaIngredientMech
 
 ## Summary Statistics

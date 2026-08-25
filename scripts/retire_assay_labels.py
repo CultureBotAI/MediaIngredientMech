@@ -5,9 +5,9 @@ The last of the microbedecoder residual. Deep research over the API 20 NE readin
 table, the ASM gelatinase protocol, Biolog panel listings and MicrO settled all
 eight, and the decisive check was local rather than bibliographic:
 
-**Every substrate CURIE one might ground these to is already the primary key of a
-live record.** In MIM the `identifier` IS the ontology CURIE, so "grounding" any
-of these would mint a duplicate identifier rather than add coverage — the defect
+**Every substrate CURIE one might use as the primary identity is already held by a
+live record.** Assigning it to another same-substance label would mint an
+unreviewed duplicate family rather than add coverage — the defect
 fixed in #370 for `Butane-1,4-diol`, which this script exists partly to avoid
 repeating:
 
@@ -144,9 +144,9 @@ def main(argv: list[str] | None = None) -> int:
             skipped.append(f"{label}: absent or already resolved")
             continue
         note = (f"Retired as an ingredient record ({ISSUE}): {why}. Not mapped, because "
-                f"every substrate CURIE it could be grounded to is already the primary "
-                f"key of a live record — in MIM the identifier IS the ontology CURIE, so "
-                f"a mapping here would mint a duplicate rather than add coverage. No "
+                f"every substrate identity it could use is already held by a live "
+                f"record, so a mapping here would mint an unreviewed duplicate family "
+                f"rather than add coverage. No "
                 f"synonym is folded onto those records either: this label names a "
                 f"reaction or a splice, not the substance, and asserting the synonymy "
                 f"would make label_index resolve it to something it does not denote.")

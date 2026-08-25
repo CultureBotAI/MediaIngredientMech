@@ -240,7 +240,7 @@ def apply_suggestion(
     except SuggestionValidationError as exc:
         return False, f"Invalid suggestion: {exc}"
 
-    # `identifier` here is the EXISTING unmapped record's primary key
+    # `identifier` here is the EXISTING unmapped record's semantic identity
     # (e.g. `UNMAPPED_0001`), used to find the record below. `ontology_id`
     # is the PROPOSED mapping target (e.g. `CHEBI:26710`). These are two
     # different fields on the suggestion document.

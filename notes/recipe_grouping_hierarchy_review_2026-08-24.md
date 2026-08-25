@@ -7,13 +7,20 @@ components, and parent/child relationships.
 
 **Method:** Read-only schema, pipeline, data, validation, and generated-output audit.
 
+> **Resolution (2026-08-25):** #448 retired the zero-use ingredient-variant
+> schema/API rather than repairing it. The retired implementation and water
+> example are preserved in `ATTIC/`; the maintained boundary is now documented
+> in `docs/HIERARCHY_GUIDE.md`. References below describe the pre-retirement
+> state captured by this review. The duplicate/variant analysis script and its
+> output were also archived because they target the same rolled-back record shape.
+
 Bottom line: this repo does not maintain a working hierarchy of culturing recipes.
 It is an ingredient-centric mapping repository that sometimes represents named
 media or mixtures as `IngredientRecord`s. Recipe grouping is mostly flat
 classification; recipe composition is sparse; the only parent/child model is
 dormant ingredient-variant scaffolding.
 
-## Current model
+## Model at the time of review
 
 | Mechanism | Meaning | Live usage |
 |---|---|---:|
@@ -51,16 +58,15 @@ replacement occurrence contract is tracked in
 hydrates, stereoisomers, salts, and purity variants—not media recipes. The guide
 expressly says not to use them for complex media. The schema calls the feature
 “currently unused,” and the live corpus confirms zero populated hierarchy
-fields. [Hierarchy fields](../src/mediaingredientmech/schema/mediaingredientmech.yaml#L196)
-[scope guidance](../docs/HIERARCHY_GUIDE.md#L332)
+fields. [Retired hierarchy guide](../ATTIC/HIERARCHY_GUIDE_RETIRED.md)
+[current scope guidance](../docs/HIERARCHY_GUIDE.md)
 
 More seriously, the hierarchy utilities still search for the retired `id` field
 rather than the canonical `identifier`. A valid current-style parent/child pair
 is consequently reported as missing. The historical water builder is explicitly
 marked non-runnable and fails current strict validation. Normal QC never invokes
-hierarchy validation. [Query bug](../src/mediaingredientmech/utils/hierarchy_utils.py#L18)
-[validator bug](../src/mediaingredientmech/utils/hierarchy_validator.py#L14)
-[disabled builder](../scripts/build_water_hierarchy.py#L13)
+hierarchy validation. [Retired hierarchy guide](../ATTIC/HIERARCHY_GUIDE_RETIRED.md)
+[retired water example and builder](../ATTIC/WATER_VARIANT_CURATION_RETIRED.md)
 
 ### 3. `ingredient_type` has competing meanings
 
@@ -128,9 +134,9 @@ must translate unqualified `DIRECT_MATCH` to `PROVISIONAL`.
 - Separate `record_kind` from `composition_definedness`.
 - Keep `components` as partonomy; add a distinct recipe-level `variant_of`
   relation rather than reusing `parent_ingredient`.
-- Either repair the dormant hierarchy around `identifier` and add reciprocal/
-  cycle validation to QC, or remove the misleading utilities and
-  “production-ready” documentation.
+- **Resolved by #448:** the dormant hierarchy was removed from the maintained
+  schema/API because `identifier` is not an unambiguous document address. Any
+  future replacement needs the contract in `docs/HIERARCHY_GUIDE.md`.
 - Preserve mapping-method provenance so synonym matches cannot be promoted to
   `EXACT_MATCH`.
 

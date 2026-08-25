@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Merge the unambiguous identifier collisions from #414.
+"""RETIRED one-shot: merge the selected identifier families from #414.
+
+This script was applied by PR #417 and is preserved only for provenance. Do not
+run it against current data. Its language about globally forbidden shared
+identifiers reflects the pre-baseline contract and is not current guidance;
+`MAPPING_SEMANTICS.md` and `mappings/duplicate_identifier_baseline.tsv` govern.
 
 30 ontology CURIEs are held by two or more LIVE records, which MIM's own rule
 forbids: for a mapped record the `identifier` IS the ontology CURIE, so two live

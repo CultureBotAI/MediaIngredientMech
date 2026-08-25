@@ -3,7 +3,7 @@
 # Class: StockComponent
 
 
-_One constituent in an IngredientRecord.components has-part assertion. The component may resolve to the current MIM catalog, deliberately name an external ontology/registry term, or remain unmapped; reference_scope makes those cases explicit. This class does not represent an identity mapping or variant hierarchy._
+_One constituent in an IngredientRecord.components has-part assertion. The component may resolve to the current MIM catalog, deliberately name an external ontology/registry term, or remain unmapped; reference_scope makes those cases explicit. This class does not represent an identity mapping or a relationship among chemical forms._
 
 
 
@@ -143,7 +143,8 @@ name: StockComponent
 description: One constituent in an IngredientRecord.components has-part assertion.
   The component may resolve to the current MIM catalog, deliberately name an external
   ontology/registry term, or remain unmapped; reference_scope makes those cases explicit.
-  This class does not represent an identity mapping or variant hierarchy.
+  This class does not represent an identity mapping or a relationship among chemical
+  forms.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
   component_name:
@@ -250,7 +251,8 @@ name: StockComponent
 description: One constituent in an IngredientRecord.components has-part assertion.
   The component may resolve to the current MIM catalog, deliberately name an external
   ontology/registry term, or remain unmapped; reference_scope makes those cases explicit.
-  This class does not represent an identity mapping or variant hierarchy.
+  This class does not represent an identity mapping or a relationship among chemical
+  forms.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
   component_name:

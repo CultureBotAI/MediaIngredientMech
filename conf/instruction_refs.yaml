@@ -37,11 +37,6 @@ ignore_recipes:
     reason: >-
       culturebotai-claw's recipe, not this repo's. The skill documents the claw
       lane that produces UNIFIED_INGREDIENT_MAPPING.tsv.
-  - name: enrich-with-hierarchy
-    reason: >-
-      Cited as a CultureMech recipe, but it does not exist there either
-      (closest is `enrich-with-chebi`). Marked STALE inline pending issue #186 —
-      remove this entry once the real recipe is identified.
   - name: aggregate-collections
     reason: >-
       Removed from this repo in #169 — it wrote data/collections/, which nothing
@@ -63,14 +58,6 @@ ignore_paths:
       Generated on demand by `just report-label-drift`; gitignored, so it exists
       after you run that and not before. The skill correctly tells the reader to
       produce it.
-  - path: scripts/add_mediaingredientmech_ids.py
-    reason: CultureMech script; cited by the manage-identifiers cross-repo reference.
-  - path: scripts/assign_culturemech_ids.py
-    reason: CultureMech script; cited by the manage-identifiers cross-repo reference.
-  - path: scripts/add_community_ids.py
-    reason: CommunityMech script; cited by the manage-identifiers cross-repo reference.
-  - path: data/culturemech_id_registry.tsv
-    reason: CultureMech data file; the sequential-id registry MIM does not use.
   - path: workspace/unified_ingredient_mapping.tsv
     reason: >-
       culturebotai-claw workspace output that build-unified-mapping copies into

@@ -60,7 +60,7 @@ class KGMicrobeSearcher:
         self.name_index.clear()
 
         for idx, record in enumerate(self.records):
-            # Index by CHEBI ID. `identifier` is the canonical primary key
+            # Index by CHEBI ID. `identifier` is the canonical semantic-id
             # slot; fall back to legacy `ontology_id` for pre-rename data.
             ontology_id = record.get("identifier") or record.get("ontology_id", "")
             if ontology_id and ontology_id.startswith("CHEBI:"):

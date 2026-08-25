@@ -14,7 +14,7 @@ record (#232).
 |---|---|
 | `label` | the raw string a recipe might contain |
 | `match_type` | how the label reached the record — `preferred_term`, `synonym`, or `ontology_label` |
-| `identifier` | **the value to trust.** The record's primary key, and in MIM that IS the ontology CURIE for mapped records |
+| `identifier` | **the semantic identifier to trust.** For mapped records this is the primary ontology, registry, or local identity CURIE; it is not a unique document address |
 | `preferred_term` | the record's own name, for display and debugging |
 | `ontology_id` | the mapped term; empty for unmapped records |
 | `mapping_status` | see below — do **not** filter on this naively |

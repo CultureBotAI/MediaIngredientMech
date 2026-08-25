@@ -1,11 +1,11 @@
 """Guards for the duplicate-identifier gate (#218).
 
-This gate exists because a record's `identifier` IS its ontology CURIE, so two
-records sharing one both claim to be that term and an `{identifier: record}`
-lookup silently keeps whichever came last. The gate is only worth having if it
-actually fails, and "a check that looks healthiest when it has stopped working"
-is a failure this repo has shipped three times (#148, #180, #181). So each test
-below pins a way the gate could go quietly green.
+This gate exists because `identifier` is not a unique document address. Reviewed
+families may share it, but an unreviewed new/changed family can overstate identity
+and an `{identifier: record}` lookup silently keeps whichever came last. The gate
+is only worth having if it actually fails, and "a check that looks healthiest
+when it has stopped working" is a failure this repo has shipped three times
+(#148, #180, #181). So each test below pins a way the gate could go quietly green.
 """
 
 import subprocess

@@ -105,6 +105,24 @@ def format_occurrence_summary(occurrence_count: int, role_enum: str) -> str:
     return f"High-confidence assignment. Appears in {occurrence_count} media occurrences as '{role_display}'."
 
 
+def build_record_lookup(records: list[dict]) -> dict[tuple[str, str], dict]:
+    """Index records by the current unambiguous composite address.
+
+    An ontology ``identifier`` alone is not a document key because reviewed
+    duplicate families may share it. Refuse exact-pair collisions rather than
+    silently selecting a sibling.
+    """
+    lookup: dict[tuple[str, str], dict] = {}
+    for record in records:
+        key = (record.get("identifier", ""), record.get("preferred_term", ""))
+        if not all(key):
+            raise ValueError(f"Role target lacks composite address: {key!r}")
+        if key in lookup:
+            raise ValueError(f"Duplicate role-target address: {key!r}")
+        lookup[key] = record
+    return lookup
+
+
 def extract_roles_for_top100(
     curator: IngredientCurator,
     crossref_data: dict,
@@ -124,13 +142,12 @@ def extract_roles_for_top100(
     roles_added = 0
     roles_skipped = 0
 
-    # Build lookup by ingredient ID
-    ingredient_lookup = {record["id"]: record for record in curator.records}
+    ingredient_lookup = build_record_lookup(curator.records)
 
     print(f"\nProcessing {len(crossref_data['ingredients'])} ingredients from crossref...")
 
     for i, ingredient_data in enumerate(crossref_data["ingredients"], 1):
-        ingredient_id = ingredient_data["id"]
+        ingredient_id = ingredient_data["identifier"]
         preferred_term = ingredient_data["preferred_term"]
         occurrence_count = ingredient_data["occurrence_count"]
         confidence = ingredient_data["confidence"]
@@ -142,8 +159,8 @@ def extract_roles_for_top100(
         if i % 25 == 0:
             print(f"  Processed {i}/{len(crossref_data['ingredients'])} ingredients...")
 
-        # Find record in curator
-        record = ingredient_lookup.get(ingredient_id)
+        # Resolve the physical record without collapsing a shared-CURIE family.
+        record = ingredient_lookup.get((ingredient_id, preferred_term))
         if not record:
             print(f"⚠️  Ingredient {ingredient_id} ({preferred_term}) not found in curator records")
             continue

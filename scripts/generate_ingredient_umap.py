@@ -8,7 +8,7 @@ import os
 import pickle
 import sys
 from pathlib import Path
-from typing import Dict, List, Any, Tuple
+from typing import Dict, List, Any
 
 import click
 import numpy as np
@@ -29,6 +29,7 @@ _scripts_dir = Path(__file__).resolve().parent
 if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
+from mediaingredientmech.curie import mim_curie_for_stem
 from mediaingredientmech.utils.yaml_handler import load_yaml
 
 console = Console()
@@ -201,13 +202,16 @@ class IngredientUMAPGenerator:
             for yaml_file in sorted(category_dir.glob('*.yaml')):
                 try:
                     ingredient = load_yaml(yaml_file)
+                    if ingredient.get('mapping_status') == 'REJECTED':
+                        continue
                     ingredient_id = ingredient.get('identifier', '')
+                    record_key = mim_curie_for_stem(yaml_file.stem)
                     found_embedding = False
 
                     # Strategy 1: Try direct identifier match
                     if ingredient_id in self.embeddings:
                         ingredient_vectors.append(self.embeddings[ingredient_id])
-                        ingredient_ids.append(ingredient_id)
+                        ingredient_ids.append(record_key)
                         found_embedding = True
 
                     # Strategy 2: Try ontology_mapping ID
@@ -216,7 +220,7 @@ class IngredientUMAPGenerator:
                         ontology_id = ontology_mapping.get('ontology_id', '')
                         if ontology_id and ontology_id in self.embeddings:
                             ingredient_vectors.append(self.embeddings[ontology_id])
-                            ingredient_ids.append(ingredient_id)
+                            ingredient_ids.append(record_key)
                             found_embedding = True
 
                     # Strategy 3: For unmapped ingredients, try to find embeddings from synonyms
@@ -230,7 +234,7 @@ class IngredientUMAPGenerator:
                                 potential_id = f"CHEBI:{chebi_id}"
                                 if potential_id in self.embeddings:
                                     ingredient_vectors.append(self.embeddings[potential_id])
-                                    ingredient_ids.append(ingredient_id)
+                                    ingredient_ids.append(record_key)
                                     found_embedding = True
                                     break
                             if found_embedding:
@@ -256,13 +260,13 @@ class IngredientUMAPGenerator:
                             potential_id = f"{prefix}:{local}"
                             if potential_id in self.embeddings:
                                 ingredient_vectors.append(self.embeddings[potential_id])
-                                ingredient_ids.append(ingredient_id)
+                                ingredient_ids.append(record_key)
                                 found_embedding = True
                                 break
 
                     # Strategy 4: If still not found and it's unmapped, add to unmapped list
                     if not found_embedding and ingredient_id.startswith('UNMAPPED'):
-                        unmapped_ids.append(ingredient_id)
+                        unmapped_ids.append(record_key)
 
                 except Exception as e:
                     console.print(f"[red]Error loading {yaml_file.name}: {e}[/red]")
@@ -359,12 +363,14 @@ def build_visualization_data(
     """
     visualization_data = []
 
-    # Index every per-record YAML once by identifier. Previously this function
+    # Index every per-record YAML once by its filename-derived MIM record CURIE.
+    # `identifier` is a semantic identity and reviewed sibling records may share
+    # it, so it cannot safely address one record. Previously this function
     # re-globbed and re-parsed the entire corpus for every UMAP row (O(rows x
     # files) ~= millions of YAML loads), which made "Step 3" take far longer than
     # the UMAP fit itself. One pass + dict lookup makes it near-instant.
-    # identifier -> (parsed record, category, source YAML path)
-    records_by_id: Dict[str, Tuple[dict, str, Path]] = {}
+    # MIM record CURIE -> (parsed record, category, source YAML path)
+    records_by_key: Dict[str, tuple[dict, str, Path]] = {}
     for category in ['mapped', 'unmapped']:
         category_dir = ingredients_dir / category
         for candidate in category_dir.glob('*.yaml'):
@@ -372,27 +378,16 @@ def build_visualization_data(
                 ing = load_yaml(candidate)
             except Exception:
                 continue
-            ident = ing.get('identifier')
-            if not ident:
+            if ing.get('mapping_status') == 'REJECTED':
                 continue
-            # First-wins was filename order, and a merge tombstone deliberately
-            # carries the WINNER's identifier — so whichever of the pair globbed
-            # first became the record for that CURIE. That drew 30 nodes under a
-            # REJECTED label while the surviving record never appeared: dropping
-            # the duplicate NODES (#407) could not fix it, because by then both
-            # copies were the tombstone. Live records win the index outright.
-            held = records_by_id.get(ident)
-            if held is None:
-                records_by_id[ident] = (ing, category, candidate)
-                continue
-            held_rejected = (held[0].get('mapping_status') == 'REJECTED')
-            this_rejected = (ing.get('mapping_status') == 'REJECTED')
-            if held_rejected and not this_rejected:
-                records_by_id[ident] = (ing, category, candidate)
+            record_key = mim_curie_for_stem(candidate.stem)
+            if record_key in records_by_key:
+                raise ValueError(f"Duplicate visualization record key: {record_key}")
+            records_by_key[record_key] = (ing, category, candidate)
 
     for _, row in umap_df.iterrows():
-        ingredient_id = row['ingredient_id']
-        entry = records_by_id.get(ingredient_id)
+        record_key = row['ingredient_id']
+        entry = records_by_key.get(record_key)
         if entry is None:
             continue
         ingredient, category, src_path = entry
@@ -405,7 +400,7 @@ def build_visualization_data(
             # Better display name for empty placeholders
             if preferred_term.startswith('empty_'):
                 # Use identifier instead for empty placeholders
-                preferred_term = f"Unnamed Component ({ingredient_id})"
+                preferred_term = f"Unnamed Component ({record_key})"
 
             mapping_status = ingredient.get('mapping_status', 'UNKNOWN')
 
@@ -432,7 +427,8 @@ def build_visualization_data(
             cas_rn = chem_props.get('cas_rn') or ''
 
             visualization_data.append({
-                'id': ingredient_id,
+                'id': record_key,
+                'identifier': ingredient.get('identifier', ''),
                 'name': preferred_term,
                 'umap_x': float(row['umap_x']),
                 'umap_y': float(row['umap_y']),
@@ -450,66 +446,28 @@ def build_visualization_data(
             })
 
         except Exception as e:
-            console.print(f"[red]Error processing {ingredient_id} ({src_path}): {e}[/red]")
+            console.print(f"[red]Error processing {record_key} ({src_path}): {e}[/red]")
 
-    return _dedupe_by_id(visualization_data)
+    return _require_unique_record_keys(visualization_data)
 
 
-def _dedupe_by_id(nodes: list[dict]) -> list[dict]:
-    """One node per identifier, preferring the live record over a tombstone (#407).
-
-    `id` is the record's identifier, and in MIM that identifier IS the ontology
-    CURIE — so a merge tombstone deliberately carries the WINNER's identifier.
-    Emitting one node per record therefore drew 60 identifiers 2-3 times (71
-    extra nodes) in both `ingredient_graph.json` and `ingredient_umap.json`,
-    and for a merged pair the duplicate carried the tombstone's data while the
-    surviving record never appeared under its own name.
-
-    Tombstones lose: they are merge markers, not ingredients. Where two LIVE
-    records collide the higher-occurrence one wins and the collision is
-    reported rather than silently resolved — that case is a data defect (two
-    live records cannot share a CURIE under MIM's own rule), not something a
-    renderer should paper over.
-    """
-    best: dict[str, dict] = {}
-    live_collisions: list[tuple[str, str, str]] = []
-    for node in nodes:
-        key = node.get('id')
-        if not key:
-            continue
-        held = best.get(key)
-        if held is None:
-            best[key] = node
-            continue
-        held_rejected = held.get('mapping_status') == 'REJECTED'
-        node_rejected = node.get('mapping_status') == 'REJECTED'
-        if held_rejected and not node_rejected:
-            best[key] = node
-        elif held_rejected == node_rejected:
-            if not node_rejected:
-                live_collisions.append((key, held.get('name', ''), node.get('name', '')))
-            if (node.get('total_occurrences') or 0) > (held.get('total_occurrences') or 0):
-                best[key] = node
-
-    dropped = len(nodes) - len(best)
-    if dropped:
-        console.print(f"[yellow]Collapsed {dropped} duplicate node(s) by identifier "
-                      f"(#407); {len(best)} unique nodes emitted.[/yellow]")
-    if live_collisions:
-        # Deliberately understated. This function cannot tell a genuine
-        # two-live-records collision from the same record emitted twice: the
-        # caller indexes records BY identifier, so every row sharing an
-        # identifier resolves to one record and both nodes carry identical
-        # data. The underlying data defect — 30 identifiers held by two live
-        # MAPPED records, e.g. `CaCl2` and `Calcium Chloride` both on
-        # CHEBI:3312 — is visible only in the curated YAML, and is filed
-        # separately. Claiming it from here would be asserting more than the
-        # evidence in hand.
-        console.print(f"[yellow]{len(live_collisions)} identifier(s) produced more "
-                      f"than one non-tombstone node; see the curated YAML for "
-                      f"whether that is one record drawn twice or two records "
-                      f"sharing a CURIE.[/yellow]")
-    return list(best.values())
+def _require_unique_record_keys(nodes: list[dict]) -> list[dict]:
+    """Reject duplicate file-backed record keys instead of collapsing records."""
+    keys = [str(node.get('id') or '') for node in nodes]
+    missing = [index for index, key in enumerate(keys) if not key]
+    if missing:
+        raise ValueError(f"Visualization node(s) lack a record key: {missing[:8]}")
+    seen: set[str] = set()
+    duplicates: set[str] = set()
+    for key in keys:
+        if key in seen:
+            duplicates.add(key)
+        seen.add(key)
+    if duplicates:
+        raise ValueError(
+            f"Duplicate visualization record key(s): {sorted(duplicates)[:8]}"
+        )
+    return nodes
 
 
 @click.command()

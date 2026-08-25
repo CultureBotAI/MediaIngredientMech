@@ -1,6 +1,6 @@
 ---
 name: review-ingredients
-description: Use this skill to quality-check ontology-mapped MediaIngredientMech ingredient records — verify CHEBI/FOODON/ENVO terms exist and labels match (OAK), enrich chemical properties and synonyms (OLS/OWL), and catch dual-identifier, purity-merge, and kg-microbe-dictionary disagreements. Use after a curation batch, before a KG export, or for periodic maintenance. Issues are graded P1 (blocking) → P4 (optional); P3/P4 can be auto-corrected.
+description: Use this skill to quality-check ontology-mapped MediaIngredientMech ingredient records — verify CHEBI/FOODON/ENVO terms exist and labels match (OAK), enrich chemical properties and synonyms (OLS/OWL), and catch mapped-state identifier, purity-merge, and kg-microbe-dictionary disagreements. Use after a curation batch, before a KG export, or for periodic maintenance. Issues are graded P1 (blocking) → P4 (optional); P3/P4 can be auto-corrected.
 version: 1.1.0
 tags: [validation, quality-assurance, ontology, oak, ols, owl, chebi, foodon, envo]
 author: MediaIngredientMech Team
@@ -15,7 +15,7 @@ The **Review Ingredients** skill provides quality assurance for ontology-mapped
 ingredients in MediaIngredientMech. It verifies that:
 
 1. **Ontology mappings are correct** — term exists, label matches, definition appropriate
-2. **Identifiers are valid** — proper CURIE format, dual identifier system consistency
+2. **Identifiers are valid** — proper CURIE format and no unresolved placeholder on a mapped record
 3. **Synonyms are accurate** — chemical variants preserved, no duplicates
 4. **Chemical properties are enriched** — SMILES, InChI, molecular formulas populated
 5. **Merge integrity is maintained** — purity-aware merge rules followed
@@ -128,7 +128,7 @@ known false-positive patterns) live in
 |------|---------|
 | **P1.1** | Ontology term does not exist (404 from OAK/OLS) |
 | **P1.2** | Invalid CURIE format (e.g. `CHEBI123` not `CHEBI:123`) |
-| **P1.3** | Dual identifier mismatch (`id` vs `identifier`/ontology ID) |
+| **P1.3** | Mapped record still carries an `UNMAPPED_NNNN` identifier |
 | **P1.4** | Missing required fields (`ontology_id`, `preferred_term`) |
 | **P2.1** | Label mismatch (ontology label vs `preferred_term`) |
 | **P2.2** | Definition mismatch (semantic) |
@@ -183,5 +183,5 @@ Deep material is bundled alongside this skill (progressive disclosure — read o
 | [`reference/validation-rules.md`](reference/validation-rules.md) | Full P1–P4 rule definitions: checks, impact, fixes, data sources, false-positive patterns |
 | [`reference/integrations.md`](reference/integrations.md) | KG-Microbe unified-dictionary integration (loader, guards), OAK lookup patterns, EBI OLS enrichment, OWL file management |
 | [`reference/api-reference.md`](reference/api-reference.md) | `IngredientReviewer` class + supporting dataclasses, and the markdown/JSON/HTML report formats |
-| [`reference/scripts.md`](reference/scripts.md) | The 7 supporting scripts (`review_ingredient`, `batch_review`, `auto_correct`, `apply_corrections`, `download_ontologies`, `validate_synonyms`, `enrich_from_ols`) with usage and options |
+| [`reference/scripts.md`](reference/scripts.md) | The 6 supporting scripts (`review_ingredient`, `batch_review`, `auto_correct`, `download_ontologies`, `validate_synonyms`, `enrich_from_ols`) with usage and options |
 | [`reference/operations.md`](reference/operations.md) | Error handling & retry, troubleshooting, worked examples/scenarios, workflow integration points, quality metrics & trends, and the future-enhancements roadmap |

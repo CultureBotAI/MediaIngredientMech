@@ -1,6 +1,6 @@
 ---
 name: manage-identifiers
-description: Use this skill to manage MediaIngredientMech record identifiers. In MIM the record `identifier` IS the ontology mapping CURIE (CHEBI / FOODON / cas / kgmicrobe.compound / kgmicrobe.ingredient / mesh / NCIT / MICRO / ENVO) for a mapped ingredient, or an `UNMAPPED_NNNN` placeholder for an unmapped one — there is no separate sequential id. Use when adding or importing ingredient records, minting the next `UNMAPPED_NNNN` placeholder, promoting an unmapped record to its resolved CURIE, or reconciling identifier collisions. (Sequential `RepoName:NNNNNN` ids are a sister-repo scheme — see the cross-repo reference.)
+description: Use this skill to manage MediaIngredientMech record identifiers. In MIM the record `identifier` is the primary ontology, registry, or local identity CURIE for a mapped ingredient, or an `UNMAPPED_NNNN` placeholder for an unmapped one; it may differ from the separate ontology grounding target and there is no sequential MIM id. Use when adding or importing records, minting placeholders, promoting an unmapped record, or reconciling identifier collisions. Sequential `RepoName:NNNNNN` ids, where used, belong to sister-repository contracts.
 category: workflow
 requires_database: false
 requires_internet: false
@@ -16,8 +16,11 @@ under `data/ingredients/mapped/` (mapped) or `data/ingredients/unmapped/` (unmap
 identifying field is **`identifier`** (the schema's `identifier: true` slot on
 `IngredientRecord`), and its value is:
 
-- **Mapped record** → the ontology mapping **CURIE**, equal to `ontology_mapping.ontology_id`
-  (e.g. `identifier: CHEBI:9532`). Prefixes actually in use, by frequency: `CHEBI:` (~1360),
+- **Mapped record** → its primary ontology, registry, or local identity **CURIE**
+  (e.g. `identifier: CHEBI:9532` or `kgmicrobe.compound:sugars`). It often equals
+  `ontology_mapping.ontology_id`, but registry/local identities legitimately
+  differ from ontology grounding targets at any evidence-backed mapping quality.
+  Prefixes in use include `CHEBI:`,
   `cas:` (~248), `kgmicrobe.compound:` (~64), `mesh:` (~61), `MICRO:` (~44), `NCIT:` (~31),
   `FOODON:` (~26), `kgmicrobe.ingredient:` (~25), `ENVO:` (~10).
 - **Unmapped record** → an **`UNMAPPED_NNNN`** placeholder (zero-padded 4-digit, e.g.
@@ -25,8 +28,9 @@ identifying field is **`identifier`** (the schema's `identifier: true` slot on
 
 > **There is no `MediaIngredientMech:NNNNNN` sequential id in MIM.** The legacy separate id
 > was removed (`scripts/migrate_drop_legacy_ontology_id.py`); records carry only `identifier`.
-> Sister repos **CultureMech** and **CommunityMech** *do* mint sequential `RepoName:NNNNNN`
-> ids — that scheme lives in the [cross-repo reference](reference/cross-repo.md), not here.
+> Sister repositories may define their own sequential `RepoName:NNNNNN` ids;
+> consult each repository's current schema and identifier instructions. MIM's
+> retired copy of that generic guidance is historical material in `ATTIC/`.
 
 ## When to Use This Skill
 
@@ -41,26 +45,27 @@ identifying field is **`identifier`** (the schema's `identifier: true` slot on
 
 | Record state | `identifier` value | Example |
 |---|---|---|
-| **Mapped** | the ontology CURIE, `== ontology_mapping.ontology_id` | `CHEBI:26710`, `cas:7647-14-5`, `kgmicrobe.compound:foo` |
+| **Mapped** | primary ontology, registry, or local identity CURIE | `CHEBI:26710`, `cas:7647-14-5`, `kgmicrobe.compound:foo` |
 | **Unmapped** | `UNMAPPED_NNNN` (4-digit, zero-padded) | `UNMAPPED_0042` |
 
 Schema pattern for CURIE identifiers (`src/mediaingredientmech/schema/mediaingredientmech.yaml`):
-`^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$`. The `identifier` of a mapped record
-**must equal** its `ontology_mapping.ontology_id` (the id↔label gate checks this).
+`^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$`. Consult
+`MAPPING_SEMANTICS.md` before choosing between a direct ontology identity and a
+registry/local identity with separate ontology grounding.
 
 ---
 
 ## Core Workflow
 
 Records are one file per ingredient. Choosing/curating the ontology mapping is the
-[`map-media-ingredients`](../map-media-ingredients/skill.md) skill; consolidating duplicates is
-[`merge-ingredients`](../merge-ingredients/skill.md). This skill is about the **`identifier`
+[`map-media-ingredients`](../map-media-ingredients/SKILL.md) skill; consolidating duplicates is
+[`merge-ingredients`](../merge-ingredients/SKILL.md). This skill is about the **`identifier`
 value** itself.
 
-### 1. Mapped record — the identifier IS the CURIE
+### 1. Mapped record — choose the primary identity
 
-The identifier is **not** minted sequentially; it is the ontology term selected during mapping.
-Set `identifier` to the mapping's CURIE so the two agree:
+The identifier is **not** minted sequentially. For a direct ontology identity,
+it is the selected ontology term and the two fields agree:
 
 ```yaml
 identifier: CHEBI:26710          # == ontology_mapping.ontology_id
@@ -69,6 +74,19 @@ ontology_mapping:
   ontology_id: CHEBI:26710
   ontology_label: sodium chloride
   ontology_source: CHEBI
+```
+
+For a registry/local identity, keep that primary identifier and record the
+ontology grounding independently, with the correct mapping quality:
+
+```yaml
+identifier: kgmicrobe.compound:sugars
+preferred_term: Sugars
+ontology_mapping:
+  ontology_id: CHEBI:16646
+  ontology_label: carbohydrate
+  ontology_source: CHEBI
+  mapping_quality: NARROW_MATCH
 ```
 
 ### 2. Unmapped record — mint the next `UNMAPPED_NNNN`
@@ -92,20 +110,25 @@ Write the new record as its own file `data/ingredients/unmapped/<slug>.yaml` wit
 `identifier: <next_id>`, `mapping_status: UNMAPPED`, and a `curation_history` entry. Save with
 `sort_keys=False` to preserve field order.
 
-### 3. Promote an unmapped record to its CURIE
+### 3. Promote an unmapped record to its primary identity
 
-When an `UNMAPPED_NNNN` ingredient gets an ontology mapping, change `identifier` from the
-placeholder to the CURIE (matching `ontology_mapping.ontology_id`), flip `mapping_status`,
-move the file from `unmapped/` to `mapped/`, and append a `curation_history` entry recording
-the old placeholder → new CURIE transition. Never silently drop the provenance.
+When an `UNMAPPED_NNNN` ingredient is resolved, change `identifier` from the
+placeholder to the evidence-backed ontology, registry, or local identity CURIE,
+flip `mapping_status`, move the file from `unmapped/` to `mapped/`, and append a
+`curation_history` entry recording the transition. Populate ontology grounding
+separately under `MAPPING_SEMANTICS.md`; never silently drop provenance.
 
 ---
 
 ## Validation
 
 - **Format:** every `identifier` is a valid CURIE (schema pattern above) **or** `UNMAPPED_NNNN`.
-- **Consistency:** for mapped records, `identifier == ontology_mapping.ontology_id`.
-- **Uniqueness:** no two records share an `identifier` (collisions break cross-references).
+- **Mapped state:** a mapped record must not retain an `UNMAPPED_NNNN` placeholder;
+  equality with the ontology grounding is not required.
+- **Duplicate-family control:** ontology identifiers can be shared by known
+  duplicate families; `mappings/duplicate_identifier_baseline.tsv` records the
+  accepted baseline and QC rejects unreviewed drift. Do not treat `identifier`
+  as a unique document address.
 - **Gate:** `just validate-strict` (closed-schema), `just validate-terms[-all]`, and
   `just validate-products` (Engine B id↔label) enforce the above.
 
@@ -114,30 +137,23 @@ the old placeholder → new CURIE transition. Never silently drop the provenance
 ## Best Practices
 
 ### DO
-- **Mapped identifier = the ontology CURIE** (equal to `ontology_mapping.ontology_id`).
+- **Choose the mapped identifier from identity evidence** and treat ontology
+  grounding as a separate decision when a registry/local identity is needed.
 - **Mint `UNMAPPED_NNNN` as highest+1**, zero-padded to 4 digits, scanning all record files.
 - **Append `curation_history`** on every identifier assignment or change; save `sort_keys=False`.
 - **Preserve provenance** when promoting `UNMAPPED_NNNN` → CURIE (record it in history).
 
 ### DON'T
 - **Don't invent `MediaIngredientMech:NNNNNN` ids** — MIM does not use a sequential record id.
-- **Don't let `identifier` diverge** from `ontology_mapping.ontology_id` on a mapped record.
+- **Don't force equality** between `identifier` and ontology grounding when
+  `MAPPING_SEMANTICS.md` requires a distinct registry/identity row.
 - **Don't reuse a retired `UNMAPPED_NNNN`** number, and don't renumber existing placeholders.
 - **Don't use `sort_keys=True`** when saving (breaks field order).
 
 ---
 
-## Reference Files (sister-repo sequential-id scheme — not MIM's model)
+## Sister-repository identifiers
 
-> These describe the **sequential `RepoName:NNNNNN`** identifier scheme used by **CultureMech**
-> and **CommunityMech** (and the generic X-Mech template). They do **not** apply to MIM, whose
-> model is the CURIE / `UNMAPPED_NNNN` `identifier` described above. Use them when working in
-> those sister repos or bootstrapping a new X-Mech repository.
-
-| File | Contents |
-|------|----------|
-| [`reference/finding-highest-id.md`](reference/finding-highest-id.md) | Finding the highest sequential id (single-file, multi-file scan, registry) |
-| [`reference/minting-and-adding.md`](reference/minting-and-adding.md) | Generic mint function and add-record workflows + batch-assignment scripts for the sequential scheme |
-| [`reference/validation.md`](reference/validation.md) | Sequential-id format validator, duplicate finder, gap finder |
-| [`reference/cross-repo.md`](reference/cross-repo.md) | Collection-type comparison, CultureMech/CommunityMech quick references, integration, decision tree |
-| [`reference/utility-module.md`](reference/utility-module.md) | Copy-paste `xmech_id_utils` module for the sequential scheme |
+Do not copy MIM identifier rules into another repository. CultureMech,
+CommunityMech, and other X-Mech projects own their current record-addressing
+contracts. Check their live schema and instructions before minting an id.

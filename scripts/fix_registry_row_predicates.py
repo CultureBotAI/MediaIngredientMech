@@ -66,8 +66,8 @@ def main(argv: list[str] | None = None) -> int:
             # Only records whose identifier DIFFERS from their ontology parent
             # have a separate identity row at all — that is the claw builder's
             # own dual-emission condition (`primary_id != obj_id`). Without it
-            # this also matches every ordinary record's primary mapping row,
-            # because there the identifier IS the ontology term: 353 rows
+            # this also matches every direct-ontology record's primary mapping
+            # row, because there the identifier equals the grounded term: 353 rows
             # instead of 22, and 273 of them are rows the builder agrees are
             # closeMatch because the curator graded the mapping CLOSE_MATCH.
             # Promoting those would overwrite a curation decision.

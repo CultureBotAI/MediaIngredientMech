@@ -52,7 +52,6 @@ Name: mediaingredientmech-schema
 | [cellular_metabolic_roles](cellular_metabolic_roles.md) | Role of this ingredient inside/on the cultured microbe (e |
 | [changes](changes.md) | Description of what changed |
 | [chemical_properties](chemical_properties.md) | Chemical structure and properties (for CHEBI-mapped ingredients only) |
-| [child_ingredients](child_ingredients.md) | List of child ingredient `identifier`s in the variant hierarchy |
 | [community_organism_roles](community_organism_roles.md) | Role(s) this organism plays in a microbial community (e |
 | [completeness](completeness.md) | Whether the cited source establishes a complete constituent list |
 | [component_assertion](component_assertion.md) | Method and structured evidence for the record-level has-part claim carried by... |
@@ -90,7 +89,7 @@ Name: mediaingredientmech-schema
 | [findings](findings.md) | Brief note on what the dataset shows relevant to this record |
 | [form](form.md) | The physical/chemical form supplied, e |
 | [generation_date](generation_date.md) | Timestamp when this collection was generated |
-| [identifier](identifier.md) | Primary key for the record |
+| [identifier](identifier.md) | Semantic identifier for the record and its LinkML identifier slot, but not a ... |
 | [inchi](inchi.md) | IUPAC International Chemical Identifier |
 | [ingredient_type](ingredient_type.md) | Classification of entry type: single chemical ingredient vs whole named mediu... |
 | [ingredients](ingredients.md) | List of all ingredient records |
@@ -120,7 +119,6 @@ Name: mediaingredientmech-schema
 | [ontology_mapping](ontology_mapping.md) | Ontology term mapping (CHEBI/FOODON) |
 | [ontology_source](ontology_source.md) | Source ontology |
 | [organism](organism.md) | Source organism / community label (free text or CURIE) |
-| [parent_ingredient](parent_ingredient.md) | Reference to parent ingredient's `identifier` in the variant hierarchy |
 | [perturbations](perturbations.md) | Interventions applied (e |
 | [physicochemical_roles](physicochemical_roles.md) | Chemical or physical function this ingredient performs in the medium (e |
 | [platform](platform.md) | Sequencing/assay platform |
@@ -147,7 +145,6 @@ Name: mediaingredientmech-schema
 | [resolved_date](resolved_date.md) |  |
 | [retrieval_date](retrieval_date.md) | When these properties were retrieved |
 | [role](role.md) | The community/ecological role of the organism (e |
-| [role_inheritance](role_inheritance.md) | If true, inherits the three role facets (nutritional_roles, physicochemical_r... |
 | [sample_count](sample_count.md) |  |
 | [sample_media](sample_media.md) | Sample media names (for reference) |
 | [sample_types](sample_types.md) | Sample/material types represented (free text or term labels) |
@@ -171,8 +168,6 @@ Name: mediaingredientmech-schema
 | [total_occurrences](total_occurrences.md) | Total number of occurrences across all media |
 | [unmapped_count](unmapped_count.md) | Number of unmapped ingredients |
 | [url](url.md) | Web URL for the reference |
-| [variant_notes](variant_notes.md) | Human-readable explanation of variant distinction from parent/siblings |
-| [variant_type](variant_type.md) | Classification of variant relationship to parent |
 | [would_refute](would_refute.md) | Outcome that would refute it |
 | [would_support](would_support.md) | Outcome that would support the hypothesis/assertion |
 
@@ -206,7 +201,6 @@ Name: mediaingredientmech-schema
 | [SolutionTypeEnum](SolutionTypeEnum.md) | Type of solution for mixture ingredients (stock solutions, pre-mixes) |
 | [SupportLevelEnum](SupportLevelEnum.md) | How a SupportingReference bears on the claim it is attached to (mirrors the s... |
 | [SynonymTypeEnum](SynonymTypeEnum.md) |  |
-| [VariantTypeEnum](VariantTypeEnum.md) | Classification of ingredient variant in hierarchy |
 
 
 ## Types

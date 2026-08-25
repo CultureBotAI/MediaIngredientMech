@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Unmerge incorrectly merged complex media entries.
+"""RETIRED unmerge prototype for the rolled-back record-addressing scheme.
+
+The script used the removed ``id`` field as a unique document key and could not
+safely resolve current duplicate-identifier families. It must not be run.
 
 This script finds complex media that were incorrectly merged with single ingredients
 (e.g., "Oatmeal agar" merged into "Agar") and unmerges them.

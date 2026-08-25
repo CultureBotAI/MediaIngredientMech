@@ -439,7 +439,8 @@
         function applyFilters() {
             if (!circles) return;
             const q = (document.getElementById('search').value || '').toLowerCase();
-            const match = d => !q || d.name.toLowerCase().includes(q) || d.id.toLowerCase().includes(q);
+            const match = d => !q || d.name.toLowerCase().includes(q) ||
+                d.id.toLowerCase().includes(q) || (d.identifier || '').toLowerCase().includes(q);
             circles
                 .style('display', d => facetPass(d) ? null : 'none')
                 .attr('fill-opacity', d => !q ? 0.7 : (match(d) ? 0.9 : 0.2))
@@ -472,8 +473,8 @@
             const subtitle = document.getElementById('subtitle');
             if (subtitle) {
                 subtitle.textContent =
-                    `PaCMAP projection of ${ingredientData.length.toLocaleString()} of 2,258 curated `
-                    + `ingredients — those with a KG-Microbe embedding`;
+                    `PaCMAP projection of ${ingredientData.length.toLocaleString()} live ingredient `
+                    + `records included by the embedding pipeline`;
             }
         }
 
@@ -615,7 +616,8 @@
                         .style('top', (event.pageY - 10) + 'px')
                         .html(`
                             <div class="tooltip-title">${d.name}</div>
-                            <div class="tooltip-row">ID: ${d.id}</div>
+                            <div class="tooltip-row">Record: ${d.id}</div>
+                            ${d.identifier ? `<div class="tooltip-row">Identity: ${d.identifier}</div>` : ''}
                             ${d.mapping_status === 'UNMAPPED' ?
                                 `<div class="tooltip-row" style="color: #fbbf24;">⚠️ Unmapped (synthetic embedding)</div>` :
                                 `${d.ontology_label ? `<div class="tooltip-row">Ontology: ${d.ontology_label}</div>` : ''}`
@@ -693,7 +695,8 @@
             const el = document.getElementById('data-table-el');
             if (!el) return;
             const cols = [
-                ['name', 'Ingredient'], ['id', 'ID'], ['ontology_source', 'Source'],
+                ['name', 'Ingredient'], ['id', 'Record ID'], ['identifier', 'Identity'],
+                ['ontology_source', 'Source'],
                 ['ontology_id', 'Ontology ID'], ['ontology_label', 'Ontology label'],
                 ['mapping_status', 'Status'], ['total_occurrences', 'Occurrences'],
                 ['media_count', 'Media count']

@@ -20,28 +20,32 @@ from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS, iter_role_assignments
 
 
-def load_crossref_lookup(crossref_path: Path) -> dict[str, dict]:
-    """Load top 100 cross-reference as a lookup keyed by ontology identifier.
+def load_crossref_lookup(crossref_path: Path) -> dict[tuple[str, str], dict]:
+    """Load a cross-reference keyed by identifier and preferred term.
 
-    The crossref still stores the rolled-back ``id: MediaIngredientMech:NNNNNN``
-    key, which no longer exists on records. Records are keyed by their ontology
-    CURIE ``identifier`` instead, so we key the lookup on the crossref's
-    ``ontology_id`` (== the record ``identifier`` for mapped records).
+    ``identifier`` alone is intentionally insufficient because reviewed
+    duplicate families can share a CURIE.
 
     Args:
         crossref_path: Path to top100_role_crossref.yaml
 
     Returns:
-        Dictionary mapping ontology identifier → ingredient_data
+        Dictionary mapping ``(identifier, preferred_term)`` → ingredient data
     """
     with open(crossref_path) as f:
         data = yaml.safe_load(f)
 
-    lookup = {}
+    lookup: dict[tuple[str, str], dict] = {}
     for ingredient in data["ingredients"]:
-        key = ingredient.get("ontology_id") or ingredient.get("id")
-        if key:
-            lookup[key] = ingredient
+        key = (
+            ingredient.get("identifier", ""),
+            ingredient.get("preferred_term", ""),
+        )
+        if not all(key):
+            raise ValueError(f"Cross-reference row lacks composite address: {key!r}")
+        if key in lookup:
+            raise ValueError(f"Duplicate cross-reference address: {key!r}")
+        lookup[key] = ingredient
 
     return lookup
 
@@ -107,7 +111,6 @@ def enrich_role_citation(
     is_defined = "Defined component" in properties
 
     # Build curator note
-    role_display = role_enum.replace("_", " ").title()
     property_note = "High confidence based on 'Defined component' property." if is_defined else "Moderate confidence based on CultureMech annotations."
     curator_note = f"Widespread use in media formulations ({occurrence_count} occurrences). {property_note}"
 
@@ -128,14 +131,14 @@ def enrich_role_citation(
 
 def enrich_existing_roles(
     curator: IngredientCurator,
-    crossref_lookup: dict[str, dict],
+    crossref_lookup: dict[tuple[str, str], dict],
     dry_run: bool = False,
 ) -> tuple[int, int, int]:
     """Enrich existing role assignments with structured metadata.
 
     Args:
         curator: IngredientCurator instance
-        crossref_lookup: Lookup from ingredient_id → crossref_data
+        crossref_lookup: Lookup from (identifier, preferred_term) → crossref data
         dry_run: If True, preview changes without saving
 
     Returns:
@@ -167,7 +170,7 @@ def enrich_existing_roles(
         )
 
         # Get cross-reference data if available
-        crossref_data = crossref_lookup.get(ingredient_id)
+        crossref_data = crossref_lookup.get((ingredient_id, preferred_term))
 
         # Process each role assignment (enriched in place on its facet slot)
         for role_assignment in facet_roles:

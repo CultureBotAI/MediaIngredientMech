@@ -7,8 +7,8 @@
 Three problems in four lines.
 
 **`Dry cow-manure` claims to BE animal manure while grading that it is not.**
-In MIM the `identifier` IS the ontology CURIE for a mapped record, so holding
-`ENVO:00003031` asserts identity with *animal manure* — and the record
+Here the primary `identifier` is itself `ENVO:00003031`, so the record asserts
+identity with *animal manure* — and it
 simultaneously grades the mapping BROAD_MATCH, i.e. "the term is broader than
 this record". Both cannot hold. §3 is explicit about the remedy: a record
 narrower than every available term takes a registry mint and anchors to the
@@ -108,8 +108,8 @@ def main(argv: list[str] | None = None) -> int:
     note = (
         f"Minted {MINT} and anchored to {PARENT} {PARENT_LABEL!r} as a "
         f"narrowMatch (#391). The record previously HELD {PARENT} as its "
-        f"identifier while grading the mapping BROAD_MATCH — in MIM the "
-        f"identifier IS the ontology CURIE, so it asserted identity with animal "
+        f"identifier while grading the mapping BROAD_MATCH — because its "
+        f"identifier was the ontology term itself, it asserted identity with animal "
         f"manure and simultaneously graded that it was not that. §3 step 3 gives "
         f"a record narrower than every available term its own identity and "
         f"anchors it to the parent asymmetrically, which is what this does. Step "
