@@ -43,20 +43,19 @@ tags: [unified-mapping, cross-repo, integration, tsv, ingredients, chebi, cas-rn
 ## How to Run
 
 ```bash
-# From culturebotai-claw repo (recommended — it has the script)
-cd ~/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/culturebotai-claw
+# Run the producer maintained in the default sibling culturebotai-claw checkout
 
 # Default: both TSV and YAML summary in workspace/
-python scripts/build_unified_ingredient_mapping.py
+python ../culturebotai-claw/scripts/build_unified_ingredient_mapping.py
 
 # Custom output path
-python scripts/build_unified_ingredient_mapping.py --output workspace/my_mapping.tsv
+python ../culturebotai-claw/scripts/build_unified_ingredient_mapping.py --output workspace/my_mapping.tsv
 
 # TSV only
-python scripts/build_unified_ingredient_mapping.py --format tsv
+python ../culturebotai-claw/scripts/build_unified_ingredient_mapping.py --format tsv
 
 # Or via culturebotai-claw's justfile (NOT a recipe in this repo)
-just build-unified-mapping
+just --justfile ../culturebotai-claw/justfile build-unified-mapping
 ```
 
 **Output files**:
@@ -89,14 +88,15 @@ The ~70% not matched to MIM are largely: complex trace mineral stocks, undefined
 To increase the match rate:
 1. **Add CHEBI IDs to CultureMech media** → `just feba-enrich-ontology` in culturebotai-claw
 2. **Add unmapped ingredients to MIM** → `just feba-create-mim-ingredients` in culturebotai-claw
-3. **Add CAS-RNs to MIM** → `python scripts/enrich_mim_cas_rn.py` in culturebotai-claw
+3. **Add CAS-RNs to MIM** → use
+   `../culturebotai-claw/scripts/enrich_mim_cas_rn.py` from this checkout
 4. **Re-run this skill** to regenerate the unified mapping
 
 ## Workflow
 
 ```
 1. Run the script
-   python scripts/build_unified_ingredient_mapping.py
+   python ../culturebotai-claw/scripts/build_unified_ingredient_mapping.py
 
 2. Review coverage
    # Count fully-mapped rows

@@ -47,9 +47,12 @@ gen-schema:
 validate-schema:
     linkml-validate --schema src/mediaingredientmech/schema/mediaingredientmech.yaml
 
-# Import data from CultureMech
+# Retired compatibility target. This deliberately exits non-zero before any I/O;
+# it remains named so old automation gets an actionable #453 error instead of an
+# unknown-recipe failure. There is no supported bulk importer today.
 import-data:
-    uv run python scripts/import_from_culturemech.py
+    @echo "error: CultureMech bulk import is retired; no files were read or written (#453)." >&2
+    @exit 2
 
 # Validate all data against schema (both collection and individual files)
 validate-all:

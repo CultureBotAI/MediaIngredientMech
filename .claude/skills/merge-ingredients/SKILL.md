@@ -98,8 +98,8 @@ Automatic CHEBI merging requires the explicit `--auto-merge` opt-in. The
    record indices, reason, reviewer, resolution).
 5. **Preserve original terms** — add every variant name as a `synonym` tagged with
    `synonym_type`, `source: merge`, and `occurrence_count`.
-6. **Periodic KG-Microbe sync** — monthly: KGX export → compare with CultureMech baseline
-   → import missing high-frequency ingredients.
+6. **Periodic cross-repo review** — compare with the CultureMech baseline,
+   review discrepancies, and apply only scoped provenance-recorded changes.
 
 Commands and the full flagged-record / synonym examples are in
 [`reference/script-and-workflow.md`](reference/script-and-workflow.md).

@@ -156,7 +156,7 @@ known false-positive patterns) live in
 
 ### DO ✅
 
-1. **Run batch validation before KG export** — no P1 errors propagate; generates an audit trail.
+1. **Run batch validation before publishing MIM products** — no P1 errors propagate; generates an audit trail.
 2. **Use auto-correct for P3/P4 only** — properties enrichment and synonym addition are low-risk; review P1/P2 manually.
 3. **Cache OWL files locally** — faster, offline-capable, reproducible.
 4. **Track validation history** — add validation events to `curation_history`; monitor trends.

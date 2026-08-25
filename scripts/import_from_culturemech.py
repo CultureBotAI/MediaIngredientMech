@@ -1,262 +1,51 @@
 #!/usr/bin/env python3
-"""Import ingredient data from CultureMech into MediaIngredientMech format.
+"""Fail-closed compatibility stub for the retired CultureMech bulk importer.
 
-Transforms CultureMech mapped/unmapped ingredient YAML files into
-IngredientRecord collections conforming to the mediaingredientmech schema.
-
-Usage:
-    python scripts/import_from_culturemech.py [--source-dir PATH] [--output-dir PATH]
+The former implementation replaced both curated collections with lossy,
+schema-invalid projections of CultureMech aggregate files. Git history retains
+that migration artifact; this module deliberately exposes no conversion or
+write API. See issue #453.
 """
+
+from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime, timezone
+from collections.abc import Sequence
 from pathlib import Path
-from typing import Any
 
-import yaml
-
-from mediaingredientmech.curate.curation_event import record_curation_event
-from mediaingredientmech.import_quality import (
-    culturemech_quality_note,
-    map_culturemech_quality,
-)
-from mediaingredientmech.utils.yaml_handler import save_yaml
-from mediaingredientmech.validation.write_validated import ValidationFailedError
-
-# Default paths
-DEFAULT_SOURCE_DIR = Path(
-    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureMech/output"
-)
-DEFAULT_OUTPUT_DIR = Path(
-    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/MediaIngredientMech/data/curated"
+RETIREMENT_MESSAGE = (
+    "error: the CultureMech bulk importer is retired because it can overwrite "
+    "MIM-owned curation with a lossy, schema-invalid projection (#453). No files "
+    "were read or written. Review CultureMech changes and apply a scoped curated "
+    "update until the replacement contracts in #447 and #449 are implemented."
 )
 
-TIMESTAMP = datetime.now(timezone.utc).isoformat()
 
-
-def load_source(path: Path) -> dict:
-    """Load a CultureMech YAML file."""
-    with open(path, encoding="utf-8") as f:
-        return yaml.safe_load(f)
-
-
-def extract_synonyms(ingredient: dict) -> list[dict]:
-    """Extract synonyms from a mapped ingredient's synonyms list.
-
-    CultureMech synonyms are role/property descriptions from the raw data.
-    We treat them as RAW_TEXT synonyms.
-    """
-    raw_synonyms = ingredient.get("synonyms", [])
-    if not raw_synonyms:
-        return []
-
-    seen = set()
-    result = []
-    for text in raw_synonyms:
-        text = str(text).strip()
-        if not text or text in seen:
-            continue
-        seen.add(text)
-        result.append(
-            {
-                "synonym_text": text,
-                "synonym_type": "RAW_TEXT",
-                "source": "CultureMech",
-            }
-        )
-    return result
-
-
-def extract_unmapped_synonyms(ingredient: dict) -> list[dict]:
-    """Extract synonyms from unmapped ingredient raw_ingredient_text list."""
-    raw_texts = ingredient.get("raw_ingredient_text", [])
-    if not raw_texts:
-        return []
-
-    seen = set()
-    result = []
-    for text in raw_texts:
-        text = str(text).strip()
-
-        # Clean up "Original amount: " prefix from CultureMech notes
-        if text.startswith("Original amount: "):
-            text = text.replace("Original amount: ", "", 1).strip()
-
-        if not text or text in seen:
-            continue
-        seen.add(text)
-        result.append(
-            {
-                "synonym_text": text,
-                "synonym_type": "RAW_TEXT",
-                "source": "CultureMech",
-            }
-        )
-    return result
-
-
-def convert_mapped_ingredient(ingredient: dict) -> dict:
-    """Convert a single CultureMech mapped ingredient to IngredientRecord."""
-    ontology_id = ingredient["ontology_id"]
-    ontology_source = ingredient.get("ontology_source", "CHEBI")
-    source_quality = ingredient.get("mapping_quality")
-    source_ontology_label = ingredient.get("ontology_label")
-    imported_quality = map_culturemech_quality(source_quality)
-
-    record: dict[str, Any] = {
-        "ontology_id": ontology_id,
-        "preferred_term": ingredient["preferred_term"],
-        "ontology_mapping": {
-            "ontology_id": ontology_id,
-            "ontology_label": ingredient.get("ontology_label", ingredient["preferred_term"]),
-            "ontology_source": ontology_source,
-            "mapping_quality": imported_quality,
-            "evidence": [
-                {
-                    "evidence_type": "DATABASE_MATCH",
-                    "source": "CultureMech",
-                    "notes": culturemech_quality_note(
-                        source_quality,
-                        imported_quality,
-                        ingredient.get("preferred_term"),
-                        source_ontology_label,
-                    ),
-                }
-            ],
-        },
-        "synonyms": extract_synonyms(ingredient),
-        "mapping_status": "MAPPED",
-        "occurrence_statistics": {
-            "total_occurrences": ingredient.get("occurrence_count", 0),
-            "media_count": len(ingredient.get("media_occurrences", [])),
-        },
-    }
-
-    record_curation_event(
-        record,
-        curator="import_from_culturemech",
-        action="IMPORTED",
-        changes="Initial import from CultureMech pipeline",
-        new_status="MAPPED",
-        timestamp=TIMESTAMP,
-    )
-
-    return record
-
-
-def convert_unmapped_ingredient(ingredient: dict, index: int) -> dict:
-    """Convert a single CultureMech unmapped ingredient to IngredientRecord."""
-    placeholder = ingredient.get("placeholder_id", "")
-    identifier = f"UNMAPPED_{index:04d}"
-
-    # Use parsed_chemical_name as preferred_term if available, else placeholder_id
-    preferred_term = (
-        ingredient.get("parsed_chemical_name", placeholder)
-        or placeholder
-        or f"Unmapped ingredient {index}"
-    )
-
-    record: dict[str, Any] = {
-        "ontology_id": identifier,
-        "preferred_term": preferred_term,
-        "synonyms": extract_unmapped_synonyms(ingredient),
-        "mapping_status": "UNMAPPED",
-        "occurrence_statistics": {
-            "total_occurrences": ingredient.get("occurrence_count", 0),
-            "media_count": len(ingredient.get("media_occurrences", [])),
-        },
-        "notes": f"CultureMech placeholder_id: {placeholder}",
-    }
-
-    record_curation_event(
-        record,
-        curator="import_from_culturemech",
-        action="IMPORTED",
-        changes="Initial import from CultureMech pipeline",
-        new_status="UNMAPPED",
-        timestamp=TIMESTAMP,
-    )
-
-    return record
-
-
-def build_collection(ingredients: list[dict], mapped_count: int, unmapped_count: int) -> dict:
-    """Wrap ingredient records in an IngredientCollection."""
-    return {
-        "generation_date": TIMESTAMP,
-        "total_count": len(ingredients),
-        "mapped_count": mapped_count,
-        "unmapped_count": unmapped_count,
-        "ingredients": ingredients,
-    }
-
-
-def import_mapped(source_dir: Path, output_dir: Path) -> int:
-    """Import mapped ingredients and write output file."""
-    source_path = source_dir / "mapped_ingredients.yaml"
-    data = load_source(source_path)
-    source_ingredients = data.get("mapped_ingredients", [])
-
-    records = [convert_mapped_ingredient(ing) for ing in source_ingredients]
-
-    collection = build_collection(records, mapped_count=len(records), unmapped_count=0)
-
-    output_path = output_dir / "mapped_ingredients.yaml"
-    try:
-        save_yaml(collection, output_path, validate=True, target_class="IngredientCollection")
-    except ValidationFailedError as exc:
-        print(exc.summary(), file=sys.stderr)
-        raise
-
-    print(f"Wrote {len(records)} mapped ingredients to {output_path}")
-    return len(records)
-
-
-def import_unmapped(source_dir: Path, output_dir: Path) -> int:
-    """Import unmapped ingredients and write output file."""
-    source_path = source_dir / "unmapped_ingredients.yaml"
-    data = load_source(source_path)
-    source_ingredients = data.get("unmapped_ingredients", [])
-
-    records = [convert_unmapped_ingredient(ing, i + 1) for i, ing in enumerate(source_ingredients)]
-
-    collection = build_collection(records, mapped_count=0, unmapped_count=len(records))
-
-    output_path = output_dir / "unmapped_ingredients.yaml"
-    try:
-        save_yaml(collection, output_path, validate=True, target_class="IngredientCollection")
-    except ValidationFailedError as exc:
-        print(exc.summary(), file=sys.stderr)
-        raise
-
-    print(f"Wrote {len(records)} unmapped ingredients to {output_path}")
-    return len(records)
-
-
-def main():
+def build_parser() -> argparse.ArgumentParser:
+    """Retain legacy arguments so old automation receives a clear error."""
     parser = argparse.ArgumentParser(
-        description="Import CultureMech ingredients into MediaIngredientMech format"
+        description="Retired CultureMech-to-MIM bulk importer (see #453)"
     )
     parser.add_argument(
         "--source-dir",
         type=Path,
-        default=DEFAULT_SOURCE_DIR,
-        help="Directory containing CultureMech output YAML files",
+        help="Ignored legacy argument; retained so old automation fails clearly",
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=DEFAULT_OUTPUT_DIR,
-        help="Output directory for curated YAML files",
+        help="Ignored legacy argument; retained so old automation fails clearly",
     )
-    args = parser.parse_args()
+    return parser
 
-    mapped_count = import_mapped(args.source_dir, args.output_dir)
-    unmapped_count = import_unmapped(args.source_dir, args.output_dir)
 
-    print(f"\nImport complete: {mapped_count} mapped, {unmapped_count} unmapped ingredients")
+def main(argv: Sequence[str] | None = None) -> int:
+    """Explain the retirement and fail before reading or writing any path."""
+    build_parser().parse_args(argv)
+    print(RETIREMENT_MESSAGE, file=sys.stderr)
+    return 2
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

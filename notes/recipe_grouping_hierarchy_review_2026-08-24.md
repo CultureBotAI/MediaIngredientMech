@@ -33,14 +33,17 @@ class. [Schema definition](../src/mediaingredientmech/schema/mediaingredientmech
 
 ## Main findings
 
-### 1. Recipe membership is flattened during import
+### 1. Recipe membership was flattened by the retired import
 
 CultureMech occurrence entries can identify the medium, file, category, and
-ingredient position, but MIM reduces them to `total_occurrences` and
-`media_count = len(media_occurrences)`. It stores no recipe-membership edge, and
-`sample_media` is empty on every live record. MIM therefore cannot reconstruct
-which recipes contain an ingredient. [Importer](../scripts/import_from_culturemech.py#L107)
-[occurrence schema](../src/mediaingredientmech/schema/mediaingredientmech.yaml#L468)
+ingredient position, but the historical import reduced them to
+`total_occurrences` and a count of retained examples. The resulting corpus
+stores no recipe-membership edge, and `sample_media` is empty on every live
+record. MIM therefore cannot reconstruct which recipes contain an ingredient.
+All four legacy collection-level intake writers are now fail-closed under #453; the
+replacement occurrence contract is tracked in
+[#449](https://github.com/CultureBotAI/MediaIngredientMech/issues/449).
+[Occurrence schema](../src/mediaingredientmech/schema/mediaingredientmech.yaml#L468)
 
 ### 2. The apparent hierarchy is both out of scope and nonfunctional
 
@@ -105,11 +108,12 @@ Ingredient pages display only a type badge, with no components or relationships.
 
 ## Relation to #317
 
-There is a plausible direct source of some false `EXACT_MATCH` grades: MIM
-translates CultureMech `DIRECT_MATCH` to `EXACT_MATCH`, while CultureMech’s
-aggregator currently assigns `DIRECT_MATCH` broadly. That loses whether the
-underlying evidence was actually a preferred-label or synonym match.
-[MIM translation](../scripts/import_from_culturemech.py#L96)
+The historical intake path translated CultureMech's broad `DIRECT_MATCH`
+default to MIM `EXACT_MATCH`, losing whether the evidence was a preferred-label
+or synonym match. #317 was closed by #457: affected provenance grades were
+repaired, all four unsafe intake writers are now retired, and any future boundary
+must translate unqualified `DIRECT_MATCH` to `PROVISIONAL`.
+[Boundary contract](../src/mediaingredientmech/import_quality.py)
 
 ## Recommended boundary
 
@@ -153,8 +157,8 @@ reused where the underlying problem was already tracked.
   makes the chemical/material hierarchy either operational or explicitly
   unsupported; it does not repurpose that hierarchy for recipes.
 - [#453 — Retire or rebuild the public CultureMech bulk importer](https://github.com/CultureBotAI/MediaIngredientMech/issues/453)
-  records the implementation-review finding that `just import-data` is both
-  schema-invalid today and destructive if superficially repaired. It is the
+  records the implementation-review finding that `just import-data` was
+  schema-invalid and would have been destructive if superficially repaired. It is the
   lifecycle/safety prerequisite for the #447/#449 redesign.
 - [#454 — Resolve the thioctic-acid CAS/stereochemistry conflict](https://github.com/CultureBotAI/MediaIngredientMech/issues/454)
   tracks the one CAS-provenance candidate whose current CAS does not cross-reference

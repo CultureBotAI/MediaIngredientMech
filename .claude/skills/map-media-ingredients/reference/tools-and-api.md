@@ -13,8 +13,10 @@
 - `scripts/curate_unmapped.py` - Interactive single-ingredient curation
 - `scripts/prepare_for_claude_curation.py` - Prepare batches for Claude Code
 - `scripts/apply_claude_suggestions.py` - Apply Claude Code suggestions
-- `scripts/import_from_culturemech.py` - Import from CultureMech
-- `scripts/merge_culturemech_updates.py` - Merge CultureMech updates back in
+
+The former CultureMech bulk importer is retired and fail-closed (#453).
+`scripts/merge_culturemech_updates.py` is likewise a fail-closed compatibility
+stub, not a supported synchronization API.
 
 ### Core Utilities
 

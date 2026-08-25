@@ -111,7 +111,7 @@ python scripts/deduplicate_ingredients.py --dry-run --auto-merge
 python scripts/deduplicate_ingredients.py --auto-merge
 
 # Validate
-python scripts/validate_mappings.py
+just qc
 ```
 
 ### Periodic Maintenance
@@ -220,7 +220,7 @@ python scripts/deduplicate_ingredients.py --auto-merge
 python scripts/deduplicate_ingredients.py --auto-merge
 
 # Validate
-python scripts/validate_mappings.py
+just qc
 
 # Check counts
 python -c "
@@ -279,20 +279,19 @@ synonyms:
 ### 6. Periodic KG-Microbe Sync
 
 **Monthly workflow**:
-1. Export MediaIngredientMech to KGX format
-2. Compare with CultureMech baseline
+1. Build the normal validated MIM products
+2. Compare with the CultureMech baseline
 3. Identify discrepancies
-4. Import missing high-frequency ingredients
+4. Review and apply scoped curation updates
 
 ```bash
-# Export to KGX
-python scripts/kgx_export.py
-
 # Compare
 python scripts/compare_with_culturemech.py
-
-# Import from the selected CultureMech output directory (the importer has no frequency filter)
-python scripts/import_from_culturemech.py --source-dir ../CultureMech/output --output-dir data/curated
 ```
+
+The former bulk importer is retired and fail-closed (#453). Do not overwrite
+the curated collections from an aggregate comparison. Record each accepted
+addition or change through maintained curation tooling, synchronize projections,
+and run the normal validation gates.
 
 ---
