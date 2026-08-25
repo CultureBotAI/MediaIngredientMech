@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:171747
   ontology_label: 6-Butyltetrahydro-2H-pyran-2-one
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -42,6 +42,16 @@ curation_history:
   curator: auto_classify_ingredient_type
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 3301-94-8 uniquely resolves
+    by ChEBI xref to CHEBI:171747 '6-Butyltetrahydro-2H-pyran-2-one'. CAS_RN_LOOKUP
+    records the method that established this mapping; a lexical grade would discard
+    that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate
+    remains skos:exactMatch under Rule D (#438), independently of mapping quality.
   llm_assisted: false
 chemical_properties:
   cas_rn: 3301-94-8

@@ -8,10 +8,10 @@ mistakes a curator can make, and what to do when CI rejects a row.
 It is written for a curator who has never read the kg-microbe code. You should
 not need to look at any other repository to understand the rules. Where a rule
 is enforced by the SSSOM validator (`scripts/validate_sssom_invariants.py`),
-the rule's identifier (Rule A, B1, B2, B3, B4) is given inline so you can match
+the rule's identifier (Rule A, B1, B2, B3, B4, D) is given inline so you can match
 a CI failure to the section that explains it.
 
-> **Status of validator rules**: Rules A, B1, B2, B3, and B4 are all
+> **Status of validator rules**: Rules A, B1, B2, B3, B4, and D are all
 > implemented in `scripts/validate_sssom_invariants.py` and enforced by
 > CI. Rule B1 is strict-by-default (a missing registry row contributes
 > to exit-2). Rule B4 silently skips per-prefix when the kg-microbe
@@ -26,6 +26,48 @@ subject_id  subject_label  predicate_id  object_id  object_label  object_source 
 ```
 
 A "row" is one tab-separated line in that file.
+
+---
+
+## 0. Grounding quality and identity predicates are independent
+
+`ontology_mapping.mapping_quality` records how the ontology grounding was
+established or how closely the stored label fits the target. It does **not**
+directly select the predicate on the row pointing to the record's own primary
+`identifier`:
+
+- a primary-label resolution is `EXACT_MATCH`;
+- a resolution through a unique ontology synonym is `SYNONYM_MATCH`;
+- a resolution established by an explicit CAS-to-ontology lookup is
+  `CAS_RN_LOOKUP` when the record's CAS RN uniquely resolves by ontology xref
+  to that target;
+- ambiguous, circular, or conflicting evidence must be reviewed rather than
+  promoted to one of those grades.
+
+When a mapping was established by CAS, keep `CAS_RN_LOOKUP` even if the label
+also happens to equal a primary label or synonym. The lexical agreement is
+useful supporting evidence, but replacing the CAS grade with a lexical grade
+discards the method provenance. Merely having a CAS field is not sufficient:
+the lookup must be recorded in curation history/evidence and the current CAS
+must agree uniquely with the current target. A CAS shared by multiple ontology
+entities does not, without additional independent evidence, identify which one
+was selected and therefore requires review. CAS provenance also does not
+override an identity conflict in the labels: concentration-qualified
+preparations and incompatible hydrate forms must be re-grounded rather than
+having their existing target merely re-graded. Explicit counterion, salt, or
+oxidation-state conflicts likewise require identity review, as do explicit
+racemate/enantiomer or cis/trans qualifiers that disagree with an unspecified
+or different target. A CAS xref on the current target is evidence to examine,
+not permission to erase the conflict.
+
+`match_level` is a separate, lower-level description of string processing
+(`EXACT`, `NORMALIZED`, `FUZZY`, and so on); it does not replace the evidence
+contract above.
+
+Rule D then applies independently: a row whose object is the record's own
+primary identifier is an identity row and must use `skos:exactMatch`. Thus a
+record graded `SYNONYM_MATCH` or `CAS_RN_LOOKUP` can—and normally does—publish
+an own-identifier `skos:exactMatch` without contradiction (#317, #438).
 
 ---
 
@@ -418,12 +460,18 @@ not "potassium hydroxide", and MIM is the naming authority for media
 ingredients. But it makes `preferred_term` quality load-bearing in a way it was
 not before. A typo in a MIM label becomes the KG's name for that term.
 
-**Consequence for grading.** Over-grading is no longer a private inaccuracy. A
-record graded `EXACT_MATCH` against a class term both asserts a false identity
-*and* renames the class — the doubled harm behind #322 and #317.
+**Consequence for identity and grading.** A wrong primary identifier published
+through a symmetric own-identifier row asserts a false identity and renames the
+target; that is the doubled harm behind #322. Independently, #317's
+`mapping_quality` defects overstate how a grounding was established, but do not
+select the Rule D predicate or cause the downstream rename. Regrading an
+own-identifier row from `EXACT_MATCH` to `SYNONYM_MATCH` or `CAS_RN_LOOKUP`
+therefore leaves both its `skos:exactMatch` predicate and downstream naming
+effect unchanged.
 
 That cuts both ways, so check before regrading in bulk: an `EXACT_MATCH` to a
-class term is correct when the MIM record **is** that class. `Aromatic
+class term can reflect a correct identity when the MIM record **is** that class.
+`Aromatic
 hydrocarbon` → `CHEBI:33658 "arene"` is one such row, and it does rename the
 ChEBI class downstream — deliberately, since MIM is the naming authority and
 `aromatic hydrocarbon` is the more recognisable name for `arene`.

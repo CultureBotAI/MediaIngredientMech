@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:3542
   ontology_label: cephalothin sodium
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -52,6 +52,16 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 58-71-9 uniquely resolves
+    by ChEBI xref to CHEBI:3542 'cephalothin sodium'. CAS_RN_LOOKUP records the method
+    that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 58-71-9
   data_source: CultureBotHT compounds_to_cas.csv

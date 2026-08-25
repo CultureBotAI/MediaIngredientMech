@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:46645
   ontology_label: isobutanol
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -53,6 +53,16 @@ curation_history:
     and isobutyl alcohol are the same compound. No new SSSOM row; CHEBI:46645 is already
     mapped. Source: kgmicrobe.compound:iso_butanol.'
   llm_assisted: true
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 78-83-1 uniquely resolves
+    by ChEBI xref to CHEBI:46645 'isobutanol'. CAS_RN_LOOKUP records the method that
+    established this mapping; a lexical grade would discard that provenance. ontology_id
+    is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under
+    Rule D (#438), independently of mapping quality.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 78-83-1
   data_source: CultureBotHT compounds_to_cas.csv

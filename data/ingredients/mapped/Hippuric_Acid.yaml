@@ -4,7 +4,7 @@ ontology_mapping:
   ontology_id: CHEBI:18089
   ontology_label: N-benzoylglycine
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -62,6 +62,16 @@ curation_history:
     match to the term and SYNONYM_MATCH as a match to a known synonym, so the recorded
     grade overstated. ontology_id is unchanged — the term is correct. The SSSOM predicate
     is unaffected (both grades emit skos:exactMatch).
+  llm_assisted: false
+- timestamp: '2026-08-24T00:00:00+00:00'
+  curator: regrade_synonym_matches
+  action: REGRADED_TO_CAS_RN_LOOKUP
+  changes: mapping_quality SYNONYM_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+    by an explicit CAS-to-ChEBI lookup and its current CAS RN 495-69-2 uniquely resolves
+    by ChEBI xref to CHEBI:18089 'N-benzoylglycine'. CAS_RN_LOOKUP records the method
+    that established this mapping; a lexical grade would discard that provenance.
+    ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
+    under Rule D (#438), independently of mapping quality.
   llm_assisted: false
 chemical_properties:
   cas_rn: 495-69-2
