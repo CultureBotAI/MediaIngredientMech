@@ -20,6 +20,29 @@ just gen-schema
 
 Generates Python dataclasses from the LinkML schema into `src/mediaingredientmech/datamodel/`.
 
+### Run quality checks from a linked worktree
+
+The composite gate uses the locked project environment; activating a virtualenv
+is not required:
+
+```bash
+uv sync --frozen --extra dev
+just qc
+```
+
+`qc-evidence` uses shared tooling from a local `culturebotai-claw` checkout. It
+first looks beside the primary MIM checkout, so the same command works from a
+linked Git worktree. For a different layout, point it at the repository root:
+
+```bash
+CLAW_ROOT=/path/to/culturebotai-claw just qc-evidence
+```
+
+The legacy `CLAW_SRC=/path/to/culturebotai-claw/src` override is also accepted.
+An invalid or missing checkout fails with the locations that were checked.
+Evidence reports are always written below the active MIM checkout at
+`workspace/reports/`, never into the shared tooling checkout.
+
 ## CultureMech Intake Status
 
 MIM does not currently have a supported bulk-import workflow. The legacy

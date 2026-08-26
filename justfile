@@ -56,7 +56,7 @@ import-data:
 
 # Validate all data against schema (both collection and individual files)
 validate-all:
-    uv run python scripts/validate_all.py --mode both
+    uv run --frozen python scripts/validate_all.py --mode both
 
 # Strict closed-schema validation: in-process LinkML validator with
 # JsonschemaValidationPlugin(closed=True) so unknown fields are flagged.
@@ -64,7 +64,7 @@ validate-all:
 # Emits a categorized TSV (reports/instance_validation_failures.tsv) and
 # exits non-zero if any ERROR rows were produced.
 validate-strict *args:
-    uv run python scripts/validate_strict.py {{args}}
+    uv run --frozen python scripts/validate_strict.py {{args}}
 
 # Inventory YAML-writing scripts under scripts/ and the central curation /
 # utils packages. Records whether each writer validates before writing
@@ -74,12 +74,13 @@ validate-strict *args:
 audit-writers:
     uv run python scripts/audit_writers.py --out reports/pipeline_writers_audit.tsv
 
-# Verify literature snippets in evidence claims appear verbatim in
-# cached PubMed abstracts. Anti-hallucination gate. See
-# ../culturebotai-claw/.claude/skills/evidence-reference-validation/.
-# Exits 2 on SNIPPET_NOT_IN_ABSTRACT (CI blocking).
+# Verify literature snippets in evidence claims appear verbatim in cached
+# PubMed abstracts. The adapter resolves the shared claw checkout from
+# CLAW_ROOT, the legacy CLAW_SRC override, or the primary checkout's sibling;
+# it binds both inputs and reports to this active MIM worktree. Exits 2 on
+# SNIPPET_NOT_IN_ABSTRACT (CI blocking). Issue #462.
 qc-evidence:
-    uv run python {{claw_root}}/scripts/validate_evidence_references.py
+    uv run --frozen python scripts/run_shared_evidence_validator.py
 
 # Fetch missing PubMed abstracts referenced by MIM evidence claims.
 # Polite (3 req/s, 10 with NCBI_API_KEY env var).
@@ -91,7 +92,7 @@ fetch-pubmed *args:
 # written to mappings/needs_curator_review.tsv. Exits 2 on violation
 # (CI blocking). See ../culturebotai-claw/.claude/plans/now-focus-on-culturemech-piped-shell.md.
 qc-sssom:
-    python3 scripts/validate_sssom_invariants.py
+    uv run --frozen python scripts/validate_sssom_invariants.py
 
 # A merged raw label survives only as a synonym on its target, and merges add no
 # SSSOM row — so before #229 `D-lactate` resolved to UNMAPPED_0654 and, after the
@@ -100,7 +101,7 @@ qc-sssom:
 #
 # Fail if a raw label MIM knows is unresolvable from docs/data/
 qc-flat-coverage:
-    python3 scripts/check_flat_export_coverage.py
+    uv run --frozen python scripts/check_flat_export_coverage.py
 
 # `identifier` is a semantic identity, not a unique record address. Reviewed
 # families may share one, but a new or changed family still needs an explicit
@@ -111,14 +112,14 @@ qc-flat-coverage:
 #
 # Fail if a mapped identifier is duplicated beyond the tracked baseline
 qc-duplicate-ids:
-    python3 scripts/audit_duplicate_identifiers.py --check
+    uv run --frozen python scripts/audit_duplicate_identifiers.py --check
 
 # Validate recipe/mixture has-part semantics across the authoritative catalog.
 # LinkML validates one StockComponent at a time; this gate additionally checks
 # local-vs-external reference scope, target labels, self/duplicate parts, and
 # paired concentration values/units. OAK- and network-free. Issue #369.
 qc-component-partonomy:
-    uv run python scripts/validate_component_partonomy.py
+    uv run --frozen python scripts/validate_component_partonomy.py
 
 schema_path := "src/mediaingredientmech/schema/mediaingredientmech.yaml"
 
@@ -271,7 +272,7 @@ check-curation-targets *args:
     # records" — the check looks healthiest when it has stopped working.
     # `data/custom/*.yaml` matched zero tracked files for its whole life (#180).
     # Issue #181.
-    uv run python scripts/check_curation_targets.py {{args}}
+    uv run --frozen python scripts/check_curation_targets.py {{args}}
 
 # Flag skills/commands/prompts naming recipes or paths that no longer exist
 check-instruction-refs *args:
@@ -281,7 +282,7 @@ check-instruction-refs *args:
     # the export/aggregate pairing that silently reverted 55 curation events long
     # after it was identified (#148), and needed correcting twice because a human
     # happened to notice. This is the mechanical version. Issue #185.
-    uv run python scripts/check_instruction_refs.py {{args}}
+    uv run --frozen python scripts/check_instruction_refs.py {{args}}
 
 # Assert data/curated/ and data/ingredients/ still describe the same records (CI blocking)
 qc-roundtrip:
@@ -299,9 +300,9 @@ qc-roundtrip:
     # names itself here. (It now also exits 1 and writes nothing rather than
     # dropping the record silently -- see #172 -- but the diagnostic is still
     # what tells you WHICH file.)
-    uv run python scripts/aggregate_records.py \
+    uv run --frozen python scripts/aggregate_records.py \
         --ingredients-dir data/ingredients --output-dir "$tmp"
-    uv run python scripts/verify_roundtrip.py \
+    uv run --frozen python scripts/verify_roundtrip.py \
         --original-dir data/curated --aggregated-dir "$tmp"
     # The same byte-level assertion the qc-roundtrip workflow makes, so this
     # recipe also catches serialization drift (key order, quoting, line
@@ -317,7 +318,7 @@ qc-roundtrip:
     tree="$(mktemp -d)"
     trap 'rm -rf "$tmp" "$tree"' EXIT
     cp -R data/ingredients/. "$tree/"
-    uv run python scripts/export_individual_records.py \
+    uv run --frozen python scripts/export_individual_records.py \
         --input-dir data/curated --output-dir "$tree" >/dev/null
     if ! diff -r -q data/ingredients "$tree"; then
       echo "" >&2
