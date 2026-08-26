@@ -3,8 +3,7 @@
 CI-friendly validator for ``mappings/ingredient_mappings.sssom.tsv``.
 
 Mirrors ``kg-microbe/mappings/validate_isolation_source_mappings.py``:
-stdlib only (``csv`` + ``argparse``), per-row stderr report, exit-2 on
-violation so CI blocks the merge.
+per-row stderr report, exit-2 on violation so CI blocks the merge.
 
 Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
 
@@ -68,6 +67,11 @@ Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
   448 rows did (#438). ``mapping_quality`` grades the *ontology grounding* and
   must not reach this row's predicate.
 
+* **Rule E** — a synonym entry typed ``REJECTED_LABEL`` is provenance-only.
+  Its text must not appear in any published SSSOM ``other`` cell for that MIM
+  subject. This keeps a reviewed false alias from returning through an
+  enrichment rebuild.
+
 * **Rule B4** — canonical ``object_label`` drift. For every row whose
   ``object_id`` prefix is in ``{CHEBI, FOODON, UBERON, ENVO, BTO,
   MICRO, PATO}``, look up the canonical label in the local sibling
@@ -87,9 +91,9 @@ claw builder) or leave it in the triage TSV; CI fails as long as a
 violating row sits in ``ingredient_mappings.sssom.tsv``.
 
 Exit codes:
-  0 — every row passes Rules A, B1, B2, B3, C, D, and (when its label
+  0 — every row passes Rules A, B1, B2, B3, C, D, E, and (when its label
       source is present) B4.
-  2 — at least one row failed Rule A, B1, B2, B3, B4, C or D. (B1
+  2 — at least one row failed Rule A, B1, B2, B3, B4, C, D or E. (B1
       contributes to exit-2 unless ``--lenient-b1`` is passed.)
 """
 from __future__ import annotations
@@ -98,9 +102,11 @@ import argparse
 import csv
 import re
 import sys
-from functools import lru_cache
+from collections.abc import Iterable, Iterator
+from functools import cache, lru_cache
 from pathlib import Path
-from typing import Iterable, Iterator
+
+import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SSSOM = REPO_ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
@@ -625,7 +631,7 @@ def evaluate_rule_c(
 _IDENTIFIER_RE = re.compile(r"^identifier:\s*(\S+)\s*$", re.MULTILINE)
 
 
-@lru_cache(maxsize=None)
+@cache
 def record_identifier(subject_id: str) -> str | None:
     """The `identifier:` of the subject's YAML, or None if unreadable.
 
@@ -687,6 +693,60 @@ def evaluate_rule_d(
             f"merely close to itself — the identity row must be "
             f"skos:exactMatch. mapping_quality grades the ontology grounding "
             f"and must not reach this row's predicate (#438).",
+        )
+
+
+# ---------------------------------------------------------------------------
+# Rule E — reviewed non-identity labels cannot be published as synonyms
+# ---------------------------------------------------------------------------
+@cache
+def rejected_labels(subject_id: str) -> dict[str, str]:
+    """Return ``casefolded text -> curated spelling`` for one MIM subject.
+
+    A missing or unreadable record yields no labels, matching Rule D's tolerant
+    lookup behavior. Subject/file coverage is checked independently.
+    """
+    try:
+        data = yaml.safe_load(
+            _yaml_path_for_subject(subject_id).read_text(encoding="utf-8")
+        ) or {}
+    except (OSError, yaml.YAMLError):
+        return {}
+    out: dict[str, str] = {}
+    for synonym in data.get("synonyms") or []:
+        if not isinstance(synonym, dict):
+            continue
+        if (synonym.get("synonym_type") or "").strip().upper() != "REJECTED_LABEL":
+            continue
+        text = (synonym.get("synonym_text") or "").strip()
+        if text:
+            out[text.casefold()] = text
+    return out
+
+
+def evaluate_rule_e(
+    rows: Iterable[dict[str, str]],
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Yield rows that publish a curator-rejected label through ``other``."""
+    for row_num, row in enumerate(rows, start=1):
+        subject_id = (row.get("subject_id") or "").strip()
+        rejected = rejected_labels(subject_id)
+        if not rejected:
+            continue
+        published = {
+            token.strip().casefold()
+            for token in (row.get("other") or "").split("|")
+            if token.strip()
+        }
+        leaked = sorted(rejected[key] for key in rejected.keys() & published)
+        if not leaked:
+            continue
+        yield (
+            row_num,
+            row,
+            "Rule E: provenance-only REJECTED_LABEL value(s) were published "
+            f"through `other`: {leaked}. Remove them from the SSSOM and make "
+            "the enrichment builder honor the curated rejection (#464/#470).",
         )
 
 
@@ -825,6 +885,7 @@ def main(argv: list[str]) -> int:
 
     _collect("Rule C", evaluate_rule_c(rows))
     _collect("Rule D", evaluate_rule_d(rows))
+    _collect("Rule E", evaluate_rule_e(rows))
 
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
@@ -841,7 +902,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(
@@ -872,7 +933,8 @@ def main(argv: list[str]) -> int:
         f"\nRejects written to {reject_display}. "
         "Fix the offending row(s) in MIM (re-emit via the claw builder, "
         "mint the missing registry CURIE for B1, dedupe pairs for B2/B3, "
-        "or update object_label for B4), or remove the row from the SSSOM. "
+        "update object_label for B4, or remove rejected labels for E), or "
+        "remove the row from the SSSOM. "
         "CI fails while a violating row remains in "
         "ingredient_mappings.sssom.tsv.",
         file=sys.stderr,

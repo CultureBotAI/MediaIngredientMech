@@ -19,6 +19,14 @@ import yaml
 from rich.console import Console
 from rich.table import Table
 
+# Ensure the src package is importable when this file is run directly.
+_project_root = Path(__file__).resolve().parents[1]
+_src = _project_root / "src"
+if str(_src) not in sys.path:
+    sys.path.insert(0, str(_src))
+
+from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
+
 console = Console()
 
 
@@ -120,6 +128,8 @@ def _synonyms(ing: dict) -> list[str]:
     preferred = ing.get("preferred_term", "")
     seen, out = {preferred}, []
     for s in ing.get("synonyms") or []:
+        if not is_resolving_synonym(s or {}):
+            continue
         text = (s or {}).get("synonym_text")
         if not text or text in seen or _NOT_A_LABEL.match(text):
             continue
@@ -385,7 +395,7 @@ def export_label_index(ingredients: list[dict], output_path: Path):
             return "agree:same_substance"
         return "unresolved:partial_chemistry"
 
-    for label_key, group in groups.items():
+    for _label_key, group in groups.items():
         v = _verdict(group)
         for r in group:
             r["ambiguity"] = v

@@ -22,7 +22,8 @@ _src = _project_root / "src"
 if str(_src) not in sys.path:
     sys.path.insert(0, str(_src))
 
-from mediaingredientmech.utils.yaml_handler import load_yaml
+from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
+from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 console = Console()
 
@@ -52,6 +53,8 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
     # Synonyms
     synonyms = []
     for syn in ingredient.get('synonyms') or []:
+        if not is_resolving_synonym(syn or {}):
+            continue
         synonym_text = syn.get('synonym_text', '')
         if synonym_text and synonym_text not in synonyms:
             synonyms.append(synonym_text)

@@ -13,6 +13,7 @@ URI: [mediaingredientmech:SynonymTypeEnum](https://w3id.org/mediaingredientmech/
 | EXACT | None | Shorthand alias for EXACT_SYNONYM emitted by some import tooling; retained fo... |
 | RELATED | None | Shorthand alias for RELATED_SYNONYM emitted by some import tooling; retained ... |
 | RAW_TEXT | None | Raw text from original data |
+| REJECTED_LABEL | None | Reviewed candidate or source label that is not an identity-bearing name for t... |
 | ABBREVIATION | None | Abbreviated form |
 | COMMON_NAME | None | Common or colloquial name |
 | SYSTEMATIC_NAME | None | Systematic chemical name |
@@ -76,6 +77,11 @@ permissible_values:
   RAW_TEXT:
     text: RAW_TEXT
     description: Raw text from original data
+  REJECTED_LABEL:
+    text: REJECTED_LABEL
+    description: Reviewed candidate or source label that is not an identity-bearing
+      name for this record. Retained for provenance only; resolvers and published
+      synonym exports must exclude it.
   ABBREVIATION:
     text: ABBREVIATION
     description: Abbreviated form

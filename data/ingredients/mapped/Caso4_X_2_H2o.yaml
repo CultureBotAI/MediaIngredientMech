@@ -71,6 +71,69 @@ synonyms:
 - synonym_text: calcium sulfate--water (1/2)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: (dibasic)
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: CaSO4
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Calcium sulfate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: KH PO
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: KH2PO4
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Kalziumsulfat
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: MKP
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Monopotassium dihydrogen phosphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Monopotassium monophosphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Monopotassium orthophosphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Monopotassium phosphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Orthophosphoric acid, monopotassium salt
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Phosphoric acid, monopotassium salt
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Phosphoric acid, potassium salt (1:1)
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Potassium Phosphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Potassium acid phosphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Potassium dihydrogen orthophosphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Potassium dihydrogen phosphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Potassium phosphate monobasic
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: Sorensen's potassium phosphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
+- synonym_text: calcium sulphate
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#464)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 86
@@ -169,6 +232,17 @@ curation_history:
     the residual MINERAL_SOURCE bucket was suppressed whenever any other target existed,
     which dropped the bulk cation from salts whose other role describes the anion
     (e.g. MgSO4).'
+- timestamp: '2026-08-26T00:00:00+00:00'
+  curator: review_false_exact_synonyms
+  action: CORRECTED
+  changes: 'Recorded the false SSSOM aliases found in #464 as REJECTED_LABEL entries
+    with their kg-microbe provenance. Potassium phosphate names belong to KH2PO4,
+    while CaSO4 and unqualified calcium sulfate names omit the two waters of crystallization
+    and are not exact names for gypsum. These labels are retained solely to prevent
+    enrichment from publishing them again.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:32583
 chemical_properties:
   cas_rn: 10101-41-4
