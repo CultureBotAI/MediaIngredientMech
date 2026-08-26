@@ -10,11 +10,19 @@ on:
       - "data/ingredients/**/*.yaml"
       - "references_cache/**"
       - "src/mediaingredientmech/schema/mediaingredientmech.yaml"
+      - "scripts/run_shared_evidence_validator.py"
+      - "justfile"
+      - "pyproject.toml"
+      - "uv.lock"
   push:
     branches: [main]
     paths:
       - "data/ingredients/**/*.yaml"
       - "references_cache/**"
+      - "scripts/run_shared_evidence_validator.py"
+      - "justfile"
+      - "pyproject.toml"
+      - "uv.lock"
   workflow_dispatch:
 
 permissions:
@@ -43,21 +51,22 @@ jobs:
           # See #367. If claw ever goes private again, restore
           # `token: ${{ secrets.CLAW_READ_TOKEN }}` with a fresh PAT.
 
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@v3
         with:
-          python-version: "3.13"
+          enable-cache: true
 
-      - name: Install deps
+      - name: Set up Python and locked dependencies
+        working-directory: MediaIngredientMech
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install pyyaml
+          uv python install 3.12
+          uv sync --frozen
 
       - name: Validate evidence references
         env:
-          MEDIAINGREDIENTMECH_ROOT: ${{ github.workspace }}/MediaIngredientMech
+          CLAW_ROOT: ${{ github.workspace }}/culturebotai-claw
+        working-directory: MediaIngredientMech
         run: |
-          cd culturebotai-claw
-          python3 scripts/validate_evidence_references.py
+          uv run --frozen python scripts/run_shared_evidence_validator.py
 
       - name: Upload report
         if: always()
@@ -65,6 +74,6 @@ jobs:
         with:
           name: evidence-validation-${{ github.run_id }}
           path: |
-            culturebotai-claw/workspace/reports/evidence_reference_validation.tsv
-            culturebotai-claw/workspace/reports/evidence_reference_validation.md
+            MediaIngredientMech/workspace/reports/evidence_reference_validation.tsv
+            MediaIngredientMech/workspace/reports/evidence_reference_validation.md
           if-no-files-found: warn
