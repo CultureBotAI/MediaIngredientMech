@@ -322,6 +322,15 @@ synonym, so `label_index` still answers for the plain string and the salt string
 alike, and the SSSOM keeps its asymmetric rows to the broader terms. A record
 that conflates without preserving its synonyms has lost data, not simplified it.
 
+**A reviewed non-name is not a raw form.** When an upstream enrichment proposes
+a label that is not an identity-bearing name for the record, retain the text and
+its source as a synonym entry typed `REJECTED_LABEL`. This is a provenance-only
+disposition: it must not resolve through `label_index`, appear in searchable
+synonym exports, or enter the SSSOM `other` column. An upstream
+`skos:closeMatch`, `skos:narrowMatch`, or `skos:broadMatch` label must likewise
+not be promoted to a synonym by discarding its predicate. The rejected entry is
+kept precisely so the same enrichment candidate cannot silently return later.
+
 Sharing the parent's id is the identity-collapse bug of Section 2, arriving by a
 different route. `MgSO4·7H2O` mapped to `CHEBI:32599 magnesium sulfate` does not
 say "a hydrate of magnesium sulfate"; it says "this **is** magnesium sulfate",

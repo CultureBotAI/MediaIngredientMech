@@ -1,4 +1,4 @@
-generation_date: '2026-08-25T07:05:30.758293+00:00'
+generation_date: '2026-08-26T03:01:05.222355+00:00'
 total_count: 2566
 mapped_count: 2512
 unmapped_count: 0
@@ -49759,6 +49759,69 @@ ingredients:
   - synonym_text: calcium sulfate--water (1/2)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: (dibasic)
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: CaSO4
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Calcium sulfate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: KH PO
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: KH2PO4
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Kalziumsulfat
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: MKP
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Monopotassium dihydrogen phosphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Monopotassium monophosphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Monopotassium orthophosphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Monopotassium phosphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Orthophosphoric acid, monopotassium salt
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Phosphoric acid, monopotassium salt
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Phosphoric acid, potassium salt (1:1)
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Potassium Phosphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Potassium acid phosphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Potassium dihydrogen orthophosphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Potassium dihydrogen phosphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Potassium phosphate monobasic
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: Sorensen's potassium phosphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
+  - synonym_text: calcium sulphate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#464)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 86
@@ -49857,6 +49920,17 @@ ingredients:
       migration: the residual MINERAL_SOURCE bucket was suppressed whenever any other
       target existed, which dropped the bulk cation from salts whose other role describes
       the anion (e.g. MgSO4).'
+  - timestamp: '2026-08-26T00:00:00+00:00'
+    curator: review_false_exact_synonyms
+    action: CORRECTED
+    changes: 'Recorded the false SSSOM aliases found in #464 as REJECTED_LABEL entries
+      with their kg-microbe provenance. Potassium phosphate names belong to KH2PO4,
+      while CaSO4 and unqualified calcium sulfate names omit the two waters of crystallization
+      and are not exact names for gypsum. These labels are retained solely to prevent
+      enrichment from publishing them again.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:32583
   chemical_properties:
     cas_rn: 10101-41-4
@@ -69685,13 +69759,13 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: BOUND WATER
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Demineralized water
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Double distilled water
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: H(2)O
     synonym_type: EXACT_SYNONYM
@@ -69703,7 +69777,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Tap water
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: WATER
     synonym_type: EXACT_SYNONYM
@@ -69726,6 +69800,9 @@ ingredients:
   - synonym_text: dH2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
+  - synonym_text: Distiled water
+    synonym_type: RAW_TEXT
+    source: kg_microbe unified mapping review (#470)
   - synonym_text: dihydridooxygen
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
@@ -69753,11 +69830,14 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: sterile dH2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: unmapped_duplicate_review_2026_05_11
   - synonym_text: Sterile dH2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: unmapped_duplicate_review_2026_05_11
+  - synonym_text: Charcoal-filtered, natural seawater
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe unified mapping review (#470)
   - synonym_text: oxidane
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
@@ -69938,6 +70018,20 @@ ingredients:
       ionic strength or osmotic balance, so the assignment was a mis-curation rather
       than a role to rehome. Re-curate onto PhysicochemicalRoleEnum.OSMOTIC_AGENT
       only if warranted.'
+  - timestamp: '2026-08-26T00:00:00+00:00'
+    curator: review_false_exact_synonyms
+    action: CORRECTED
+    changes: 'Reviewed every retained synonym for supplied-form identity (#470). Marked
+      bound, tap, demineralized, double-distilled, sterile, and charcoal-filtered
+      natural seawater labels REJECTED_LABEL: they are distinct preparations, states,
+      or mixtures, not exact names for distilled water. Preserved their source provenance
+      without publishing them as resolvable labels. Retained molecular names, translations,
+      H2O/dH2O notation, and the identity-preserving ''Distiled water'' typo because
+      the current semantic identifier is CHEBI:15377 water; no water-purity hierarchy
+      was minted pending the stable-record contract in #447.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:15377
   chemical_properties:
     cas_rn: 7732-18-5

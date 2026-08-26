@@ -304,6 +304,7 @@ Types of synonyms for an ingredient.
 | `EXACT_SYNONYM` | Exact alternative name | "table salt" for sodium chloride |
 | `RELATED_SYNONYM` | Related but not identical | "saline" for sodium chloride |
 | `RAW_TEXT` | Raw text from original data | "NaCl (5g/L)" |
+| `REJECTED_LABEL` | Reviewed non-identity candidate retained only for provenance; never resolvable or published as a synonym | "Tap water" on a distilled-water record |
 | `ABBREVIATION` | Abbreviated form | "NaCl" |
 | `COMMON_NAME` | Common or colloquial name | "table salt" |
 | `SYSTEMATIC_NAME` | Systematic chemical name | "sodium chloride" |

@@ -39,13 +39,13 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: BOUND WATER
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Demineralized water
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Double distilled water
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: H(2)O
   synonym_type: EXACT_SYNONYM
@@ -57,7 +57,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Tap water
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: WATER
   synonym_type: EXACT_SYNONYM
@@ -80,6 +80,9 @@ synonyms:
 - synonym_text: dH2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
+- synonym_text: Distiled water
+  synonym_type: RAW_TEXT
+  source: kg_microbe unified mapping review (#470)
 - synonym_text: dihydridooxygen
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
@@ -107,11 +110,14 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: sterile dH2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: unmapped_duplicate_review_2026_05_11
 - synonym_text: Sterile dH2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: unmapped_duplicate_review_2026_05_11
+- synonym_text: Charcoal-filtered, natural seawater
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe unified mapping review (#470)
 - synonym_text: oxidane
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
@@ -292,6 +298,20 @@ curation_history:
     strength or osmotic balance, so the assignment was a mis-curation rather than
     a role to rehome. Re-curate onto PhysicochemicalRoleEnum.OSMOTIC_AGENT only if
     warranted.'
+- timestamp: '2026-08-26T00:00:00+00:00'
+  curator: review_false_exact_synonyms
+  action: CORRECTED
+  changes: 'Reviewed every retained synonym for supplied-form identity (#470). Marked
+    bound, tap, demineralized, double-distilled, sterile, and charcoal-filtered natural
+    seawater labels REJECTED_LABEL: they are distinct preparations, states, or mixtures,
+    not exact names for distilled water. Preserved their source provenance without
+    publishing them as resolvable labels. Retained molecular names, translations,
+    H2O/dH2O notation, and the identity-preserving ''Distiled water'' typo because
+    the current semantic identifier is CHEBI:15377 water; no water-purity hierarchy
+    was minted pending the stable-record contract in #447.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:15377
 chemical_properties:
   cas_rn: 7732-18-5

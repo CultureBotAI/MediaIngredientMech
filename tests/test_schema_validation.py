@@ -278,6 +278,7 @@ class TestSchemaEnums:
             "EXACT",
             "RELATED",
             "RAW_TEXT",
+            "REJECTED_LABEL",
             "ABBREVIATION",
             "COMMON_NAME",
             "SYSTEMATIC_NAME",
