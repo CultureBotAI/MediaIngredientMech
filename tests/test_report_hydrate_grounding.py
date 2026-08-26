@@ -67,3 +67,51 @@ def test_baseline_identifiers_reads_the_tracked_set(mod):
 def test_synonym_report_path_is_tracked_separately(mod):
     assert mod.SYN_REPORT.name == "hydrate_synonyms.tsv"
     assert mod.SYN_REPORT != mod.REPORT
+
+
+# --- #259: the two summary buckets are keyed on data, not on prose ---------
+def test_the_two_buckets_are_keyed_on_kind_not_on_prose(mod):
+    """The split tested `"states" in r["detail"]`, so rewording the sentence --
+    or a term label that happens to contain the word -- reclassified rows."""
+    rows = [
+        {"kind": mod.DIFFERENT_STATE, "detail": "reworded, no keyword here"},
+        {"kind": mod.ANHYDROUS_TERM, "detail": "this one states nothing at all"},
+    ]
+
+    mismatched = [r for r in rows if r["kind"] == mod.DIFFERENT_STATE]
+
+    assert len(mismatched) == 1
+    assert mismatched[0]["detail"].startswith("reworded")
+
+
+def test_the_old_substring_rule_would_have_got_both_wrong(mod):
+    """Pins why the change was needed, not just that it happened."""
+    rows = [
+        {"kind": mod.DIFFERENT_STATE, "detail": "reworded, no keyword here"},
+        {"kind": mod.ANHYDROUS_TERM, "detail": "this one states nothing at all"},
+    ]
+
+    by_substring = [r for r in rows if "states" in r["detail"]]
+
+    assert [r["kind"] for r in by_substring] == [mod.ANHYDROUS_TERM], (
+        "the substring rule selects exactly the wrong row here")
+
+
+def test_the_kind_values_are_distinct(mod):
+    assert mod.DIFFERENT_STATE != mod.ANHYDROUS_TERM
+
+
+def test_kind_is_written_to_the_synonym_tsv(mod):
+    """Downstream consumers should be able to key on it too, not re-derive it
+    from the prose the way the report used to."""
+    source = SCRIPT.read_text(encoding="utf-8")
+
+    assert '"identifier", "preferred_term", "ontology_id", "kind", "detail"' in source
+
+
+# --- #258 regression --------------------------------------------------------
+def test_multiplicities_sort_numerically_not_lexicographically():
+    """Filed against a lexicographic sort, where 10 precedes 2. Verified fixed
+    2026-08-24 (`key=float`); pinned so it cannot regress."""
+    assert sorted({"10", "2", "7"}, key=float) == ["2", "7", "10"]
+    assert sorted({"10", "2", "7"}) == ["10", "2", "7"], "plain sort is still wrong"

@@ -53,6 +53,11 @@ def _load_hydrate_notation():
 
 HYDRATE, FORMULA_WATER, water_multiplicity = _load_hydrate_notation()
 
+# Machine-readable classification for the hydrate-synonym rows. Separate from
+# the `detail` prose so the two cannot drift apart (#259).
+DIFFERENT_STATE = "different_state"
+ANHYDROUS_TERM = "anhydrous_term"
+
 
 def formulas() -> dict[str, str]:
     if not CHEBI_DB.exists():
@@ -217,6 +222,9 @@ def main() -> int:
                 continue                  # same state, just respelled
             syn_rows.append({"identifier": str(rec.get("identifier") or ""),
                              "preferred_term": term, "ontology_id": target,
+                             # `kind` is the machine key; `detail` is prose for a
+                             # human and may be reworded freely (#259).
+                             "kind": DIFFERENT_STATE,
                              "detail": f"record states {here} H2O; synonyms state "
                                        + ", ".join(other),
                              "hydrate_synonyms": " | ".join(hyd)})
@@ -227,10 +235,15 @@ def main() -> int:
             continue                      # cannot tell; do not assert either way
         syn_rows.append({"identifier": str(rec.get("identifier") or ""),
                          "preferred_term": term, "ontology_id": target,
+                         "kind": ANHYDROUS_TERM,
                          "detail": "term formula has no water",
                          "hydrate_synonyms": " | ".join(hyd)})
 
-    mismatched = [r for r in syn_rows if "states" in r["detail"]]
+    # Keyed on `kind`, not on a substring of `detail`. The split used to test
+    # `"states" in r["detail"]`, so rewording the human-readable sentence -- or
+    # a term label that happens to contain "states" -- silently reclassified
+    # rows between the two buckets the summary reports (#259).
+    mismatched = [r for r in syn_rows if r["kind"] == DIFFERENT_STATE]
     print(f"\n{len(syn_rows)} mapped record(s) carry a hydrate SYNONYM their own term does "
           f"not account for\n  {len(syn_rows) - len(mismatched)} on an anhydrous term, "
           f"{len(mismatched)} naming a different hydration state.")
@@ -249,7 +262,7 @@ def main() -> int:
     SYN_REPORT.parent.mkdir(parents=True, exist_ok=True)
     with SYN_REPORT.open("w", newline="") as fh:
         w = csv.DictWriter(fh, delimiter="\t", fieldnames=[
-            "identifier", "preferred_term", "ontology_id", "detail",
+            "identifier", "preferred_term", "ontology_id", "kind", "detail",
             "hydrate_synonyms"])
         w.writeheader(); w.writerows(syn_rows)
 

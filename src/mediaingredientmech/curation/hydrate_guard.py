@@ -86,6 +86,13 @@ _DIGIT_WATER = re.compile(
 # matched separately from the count rather than as one alternative.
 _FRACTION = {"hemi": 0.5, "sesqui": 1.5}
 _COUNT = {k: v for k, v in _MULTIPLIER.items() if k not in _FRACTION}
+
+# Above this, a digit run is parse damage rather than a hydration state (#257).
+# The corpus tops out at 18 (`Al2(SO4)3 x 18 H2O`) and the highest counts
+# anywhere in inorganic chemistry are in the twenties, so 30 clears anything
+# real while still catching a formula digit swallowed by the multiplier -- the
+# `FeSO43 x n H2O` shape, and the `MgCl2 x 76 H2O` the issue was filed on.
+MAX_PLAUSIBLE_WATERS = 30
 _WORD_WATER = re.compile(
     r"(?<![a-z])(hemi|sesqui)?(" + "|".join(sorted(_COUNT, key=len, reverse=True)) + r")?hydrate\b",
     re.IGNORECASE,
@@ -103,6 +110,19 @@ def water_multiplicity(text: str) -> str | None:
     Word forms win over digits: `dihydrochloride pentahydrate` is a
     pentahydrate, and its digits belong to neither.
 
+    A digit count above `MAX_PLAUSIBLE_WATERS` is also None (#257). `MgCl2 x 76
+    H2O` is not a 76-hydrate, it is a mangled label, and reporting 76 does not
+    merely lose information -- it manufactures a confident mismatch against
+    every sibling that states a real count. "Implausible" and "unstated" are
+    both cases where the label gives nothing usable, so they share a return.
+    An implausible match is skipped rather than abandoning the search, so a real
+    count later in the same string is still found -- `MgSO4 x 76 H2O and MgSO4 x
+    7 H2O` is a 7-hydrate, and the information needed to say so is right there
+    (#475). This mirrors the word path, which has always stepped over a bare
+    `hydrate` to reach a form that states something.
+    Word forms are not capped: they are bounded by `_COUNT` already, and
+    `dodecahydrate` cannot be a typo for a number.
+
     Returns a decimal string so `hemi` (0.5) and `sesqui` (1.5) round-trip.
     """
     text = str(text or "")
@@ -114,8 +134,9 @@ def water_multiplicity(text: str) -> str | None:
         if frac:
             value *= _FRACTION[frac.lower()]
         return f"{value:g}"
-    digit_match = _DIGIT_WATER.search(text)
-    if digit_match:
+    for digit_match in _DIGIT_WATER.finditer(text):
+        if int(digit_match.group(1)) > MAX_PLAUSIBLE_WATERS:
+            continue  # parse damage; a real count may still follow (#475)
         return digit_match.group(1)
     return None
 
