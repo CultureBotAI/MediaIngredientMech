@@ -115,6 +115,11 @@ def water_multiplicity(text: str) -> str | None:
     merely lose information -- it manufactures a confident mismatch against
     every sibling that states a real count. "Implausible" and "unstated" are
     both cases where the label gives nothing usable, so they share a return.
+    An implausible match is skipped rather than abandoning the search, so a real
+    count later in the same string is still found -- `MgSO4 x 76 H2O and MgSO4 x
+    7 H2O` is a 7-hydrate, and the information needed to say so is right there
+    (#475). This mirrors the word path, which has always stepped over a bare
+    `hydrate` to reach a form that states something.
     Word forms are not capped: they are bounded by `_COUNT` already, and
     `dodecahydrate` cannot be a typo for a number.
 
@@ -129,10 +134,9 @@ def water_multiplicity(text: str) -> str | None:
         if frac:
             value *= _FRACTION[frac.lower()]
         return f"{value:g}"
-    digit_match = _DIGIT_WATER.search(text)
-    if digit_match:
+    for digit_match in _DIGIT_WATER.finditer(text):
         if int(digit_match.group(1)) > MAX_PLAUSIBLE_WATERS:
-            return None
+            continue  # parse damage; a real count may still follow (#475)
         return digit_match.group(1)
     return None
 

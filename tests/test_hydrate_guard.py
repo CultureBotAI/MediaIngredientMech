@@ -262,3 +262,25 @@ def test_hyphen_separated_hydrates_are_read(label, expected):
     """Filed as broken in #256; verified fixed 2026-08-24. Pinned so the
     separator class cannot lose `-` again."""
     assert water_multiplicity(label) == expected
+
+
+# --- #475: an implausible match is skipped, not fatal ----------------------
+@pytest.mark.parametrize(
+    ("label", "expected"),
+    [
+        ("MgSO4 x 76 H2O and MgSO4 x 7 H2O", "7"),
+        ("MgCl2  x 76 H2O | MgCl2 x 6 H2O", "6"),
+        ("MgCl2 x 76 H2O", None),  # nothing real to fall through to
+    ],
+)
+def test_a_corrupt_count_does_not_swallow_a_real_one_beside_it(label, expected):
+    """The digit path used to `search` and give up on the first match, so a
+    rejected count abandoned a real one later in the same string. The word path
+    has always stepped over a bare `hydrate` to reach an informative form."""
+    assert water_multiplicity(label) == expected
+
+
+def test_both_paths_step_over_an_uninformative_match():
+    """Pins the symmetry itself, so the two halves cannot diverge again."""
+    assert water_multiplicity("hydrate, specifically the hexahydrate") == "6"
+    assert water_multiplicity("x 99 H2O, corrected to x 9 H2O") == "9"
