@@ -3,8 +3,9 @@
 Deferred work, each entry with enough context to pick up cold. **Maintenance:**
 update this file as work is started/finished — move done items out, add new
 deferrals here. Keep the cross-Mech items in sync with the sibling repos'
-`NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech). The hub,
-culturebotai-claw, now keeps one too, for items no single Mech owns.
+`NEXT_TASKS.md` (CultureMech / CommunityMech / TraitMech). The canonical fleet
+governance repository, culturebotai-claw, keeps one too for items no single Mech
+owns.
 
 Last reconciled: 2026-08-21 (measured the `publish-sssom` blocker; item 14 is new and is the top of the queue).
 **#160** was filed on 2026-07-30 for the `trigger_paths` gap described in the
@@ -1155,6 +1156,14 @@ corrupt (CAS 77-10-1 / "Phencyclidine") and an earlier review had wrongly flagge
 it as a kilojoule unit.
 
 ## Cross-repo vendored-file sync — the sha256 pins are retired
+
+**Current governance update (2026-08-25; supersedes the topology chronology
+below):** reviewed `CultureBotAI/culturebotai-claw#133` makes
+`CultureBotAI/culturebotai-claw` the canonical manifest and payload source.
+MediaIngredientMech is one of five pinned consumers. Shared changes land in claw
+first and then roll to all five Mechs at one immutable claw commit. The older
+notes below remain as incident history; their CultureMech-hub instructions are
+no longer active.
 
 **This replaces the old "validator pin guard" section, which described a
 mechanism that no longer exists.** The self-generated sha256 pin compared a copy
