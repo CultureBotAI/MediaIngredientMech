@@ -13,7 +13,7 @@ identifier wearing someone else's prefix. #193 acted on that wording and demoted
 17 real ChEBI terms; 11 of them resolved locally the whole time (#197, #205).
 
 These tests live HERE rather than in `tests/test_id_label_plausibility.py`
-because that file is vendored byte-identical from CultureMech (see
+because that file is governed byte-identically from canonical claw (see
 `scripts/check_vendored_sync.sh`); adding to it forks the vendored copy. They
 assert properties of MIM's OWN config, which is not vendored, so this is the
 right home for them regardless.
