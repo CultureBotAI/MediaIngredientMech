@@ -13,6 +13,7 @@ only. The comparison uses a fresh YAML-load path instead of SchemaView so
 that a SchemaView bug can't silently satisfy both sides of the assertion.
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -161,6 +162,13 @@ def test_the_legacy_event_count_in_the_schema_matches_the_corpus():
                 .get("curation_history") or []))
     )
 
-    assert f"{actual} recorded events" in described, (
-        f"schema says {described!r}; the corpus has {actual} records carrying "
-        "a CLASSIFIED_DEFINED_MEDIUM event")
+    # Parsed as a number, not matched as a substring: `f"{actual} recorded
+    # events" in described` passes when the true count is a *suffix* of the
+    # documented one, so 3 would satisfy a schema claiming 43 -- and 43 -> 3 is
+    # exactly what a bulk record merge produces (#483). This is the #259 and
+    # #476 defect, which this file exists to guard against.
+    stated = re.search(r"(\d+) recorded events", described)
+    assert stated, f"the description no longer states a count: {described!r}"
+    assert int(stated.group(1)) == actual, (
+        f"schema claims {stated.group(1)} recorded events; the corpus has "
+        f"{actual} records carrying a CLASSIFIED_DEFINED_MEDIUM event")
