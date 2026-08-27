@@ -50,7 +50,22 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 # The semsql artifact oaklib downloads for `sqlite:obo:chebi`.
-SEMSQL_URL = "https://s3.amazonaws.com/bbop-sqlite/chebi.db.gz"
+#
+# Was `https://s3.amazonaws.com/bbop-sqlite/...`. INCATools/semantic-sql#112 is
+# removing `AllUsers` from that bucket, and this constant bypasses oaklib
+# entirely, so bumping the dependency does NOT migrate it -- exactly the
+# category tracked in INCATools/semantic-sql#115 (#488).
+#
+# The env var is oaklib's own escape hatch (`SEMSQL_SQLITE_URL_BASE` in
+# oaklib.constants, >= 0.7.2). Honouring it here rather than hardcoding a bare
+# string keeps the two in step: pointing oaklib at a mirror points this check at
+# the same mirror, instead of silently comparing against a different artifact
+# than the one that would actually be downloaded. It is read rather than
+# imported so this script stays stdlib-only.
+SEMSQL_URL_BASE = os.environ.get(
+    "OAKLIB_SEMSQL_SQLITE_URL_BASE", "https://semanticsql.berkeleybop.io"
+).rstrip("/")
+SEMSQL_URL = f"{SEMSQL_URL_BASE}/chebi.db.gz"
 
 # Anchored on versionIRI AND the full `obo/chebi/NNN/chebi.owl` form. A looser
 # `obo/chebi/(\d+)` matches decoy strings earlier in the header — the real file
