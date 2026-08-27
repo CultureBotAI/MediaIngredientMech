@@ -37,8 +37,8 @@ synonyms:
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 11
-  media_count: 11
+  total_occurrences: 20
+  media_count: 20
 curation_history:
 - timestamp: '2026-04-07T10:20:07.566994+00:00'
   curator: feba_ontology_enrichment_batch
@@ -84,6 +84,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE;
     ENERGY_SOURCE -> nutritional_roles.ENERGY_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519884+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 11/11 -> 20/20 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 notes: Created from FEBA ontology enrichment workflow. Used in 11 FEBA media formulations.
 chemical_properties:
   cas_rn: 6106-21-4

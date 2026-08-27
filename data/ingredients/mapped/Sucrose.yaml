@@ -67,8 +67,8 @@ synonyms:
   source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 152
-  media_count: 54
+  total_occurrences: 233
+  media_count: 233
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -145,6 +145,14 @@ curation_history:
     facets from nutritional_roles. Same substance under two names; MERGE_SAME_SUBSTANCE
     in duplicate_identifier_baseline.tsv (#226). Source: mediadive.ingredient:1358.'
   llm_assisted: true
+- timestamp: '2026-08-27T03:16:39.519919+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 54/152 -> 233/233 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 chemical_properties:
   cas_rn: 57-50-1
   data_source: PubChem API

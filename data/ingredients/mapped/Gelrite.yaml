@@ -39,8 +39,8 @@ synonyms:
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 24
-  media_count: 24
+  total_occurrences: 33
+  media_count: 33
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -100,6 +100,14 @@ curation_history:
   changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); trade name for gellan
     gum.
   llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518922+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 24/24 -> 33/33 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 kg_microbe_node_id: CHEBI:85248
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:

@@ -66,8 +66,8 @@ synonyms:
   source: MERGED_FROM_CHEBI:29032
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1082
-  media_count: 203
+  total_occurrences: 2375
+  media_count: 2348
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -249,6 +249,14 @@ curation_history:
     they name the anion, not this salt): 3-[(2R)-2,4-dihydroxy-3,3-dimethylbutanamido]propanoate,
     Ca pantotenate'
   llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518492+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 203/1082 -> 2348/2375 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 chemical_properties:
   cas_rn: 137-08-6
   data_source: PubChem API

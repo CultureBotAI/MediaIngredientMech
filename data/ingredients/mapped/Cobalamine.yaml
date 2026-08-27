@@ -68,8 +68,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 3
-  media_count: 3
+  total_occurrences: 9
+  media_count: 9
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -139,6 +139,14 @@ curation_history:
     the identical C62H88CoN13O14P for cob(II)alamin and cob(III)alamin, which differ
     only in the charge field.'
   llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518580+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 3/3 -> 9/9 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 chemical_properties:
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:51:30.156796+00:00'

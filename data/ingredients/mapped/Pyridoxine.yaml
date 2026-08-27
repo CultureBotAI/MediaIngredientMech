@@ -76,8 +76,8 @@ synonyms:
   source: merged_from_unmapped_duplicate_review_2026_05_11
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 45
-  media_count: 45
+  total_occurrences: 61
+  media_count: 61
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -132,6 +132,14 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): VITAMIN_SOURCE -> nutritional_roles.VITAMIN_SOURCE'
+- timestamp: '2026-08-27T03:16:39.519775+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 45/45 -> 61/61 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 chemical_properties:
   cas_rn: 65-23-6
   data_source: PubChem API

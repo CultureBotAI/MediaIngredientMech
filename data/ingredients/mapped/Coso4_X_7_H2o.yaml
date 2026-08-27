@@ -50,8 +50,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 693
-  media_count: 50
+  total_occurrences: 828
+  media_count: 828
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -120,6 +120,14 @@ curation_history:
     The previous term carried no water while the label states it. Found by cross-checking
     CultureBotAI/CultureMech#272 (#374/#334).'
   llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.518609+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 50/693 -> 828/828 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 kg_microbe_node_id: CHEBI:53470
 chemical_properties:
   cas_rn: 10124-43-3

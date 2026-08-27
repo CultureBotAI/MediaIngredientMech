@@ -87,8 +87,8 @@ synonyms:
   source: MERGED_FROM (#374/#334)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 952
-  media_count: 108
+  total_occurrences: 1183
+  media_count: 1179
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -190,6 +190,14 @@ curation_history:
     by cross-checking CultureBotAI/CultureMech#272, which grounds these labels correctly.
     Occurrences 946/102 + 6/6 -> 952/108.'
   llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519351+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 108/952 -> 1179/1183 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 kg_microbe_node_id: CHEBI:86364
 chemical_properties:
   cas_rn: 10034-96-5

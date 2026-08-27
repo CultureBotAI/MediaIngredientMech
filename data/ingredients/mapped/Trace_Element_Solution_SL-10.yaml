@@ -6,8 +6,8 @@ synonyms:
   source: communitymech-unmapped
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 8
+  media_count: 8
 curation_history:
 - timestamp: '2026-05-01T02:37:08.074047+00:00'
   curator: audit_import_ingredients[communitymech-unmapped]
@@ -27,6 +27,14 @@ curation_history:
   action: AUTO_UPGRADE_TO_NCIT
   changes: primary UNMAPPED_0619 → NCIT:C896 (strategy=stem-match)
   llm_assisted: false
+- timestamp: '2026-08-27T03:16:39.519989+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 8/8 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Trace_element_solution_SL-10);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION
