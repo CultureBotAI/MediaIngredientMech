@@ -269,3 +269,27 @@ def test_the_url_base_matches_what_oaklib_would_resolve(monkeypatch):
     mod = _load()
 
     assert mod.SEMSQL_URL_BASE == oaklib_constants.SEMSQL_SQLITE_URL_BASE.rstrip("/")
+
+
+def test_oaklib_is_new_enough_to_be_off_raw_s3():
+    """The other half of #488. Below 0.7.2 the `sqlite:obo:` selector resolves
+    against `https://s3.amazonaws.com/bbop-sqlite` again, and once
+    INCATools/semantic-sql#112 removes `AllUsers` that fails at download time in
+    a 760 MB code path rather than in CI. The floor drifted to 0.6.23 under a
+    `>=0.5.0` constraint precisely because nothing checked it (#494)."""
+    from importlib.metadata import version
+
+    from packaging.version import Version
+
+    assert Version(version("oaklib")) >= Version("0.7.2")
+
+
+def test_oaklibs_semsql_base_is_not_the_raw_bucket():
+    """Checks the behaviour the version number is only a proxy for, so it keeps
+    working if upstream renumbers or backports."""
+    oaklib_constants = pytest.importorskip("oaklib.constants")
+
+    base = oaklib_constants.SEMSQL_SQLITE_URL_BASE
+
+    assert "s3.amazonaws.com" not in base
+    assert "bbop-sqlite" not in base
