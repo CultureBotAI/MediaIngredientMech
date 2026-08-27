@@ -1,6 +1,6 @@
 
 
-# Slot: source_occurrences
+# Slot: source_occurrences 
 
 
 _Prevalence recorded by a NON-media source, kept separate from total_occurrences/media_count so it never inflates the media counts. total_occurrences answers "in how many CultureMech media recipes does this appear", which is legitimately 0 for an ingredient sourced from BacDive traits or Bergey substrates. Recording that alone discarded the abundance signal those sources carry -- the same signal used to rank the candidates worth onboarding -- leaving 386 zero-weight records for anything downstream that weights ingredients by prevalence (#196)._

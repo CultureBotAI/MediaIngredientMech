@@ -1,6 +1,6 @@
 
 
-# Slot: metabolic_context
+# Slot: metabolic_context 
 
 
 
@@ -17,8 +17,8 @@ Alias: metabolic_context
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |  no  |
 | [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Assignment of a cellular-metabolic facet role (what the ingredient does insid... |  no  |
+| [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |  no  |
 
 
 

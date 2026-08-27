@@ -1,6 +1,6 @@
 
 
-# Slot: reference_scope
+# Slot: reference_scope 
 
 
 _Resolution status and intended scope of component_id._

@@ -1,6 +1,6 @@
 
 
-# Class: ComponentEvidence
+# Class: ComponentEvidence 
 
 
 _Evidence supporting an IngredientRecord.components decomposition._
@@ -20,23 +20,23 @@ URI: [mediaingredientmech:ComponentEvidence](https://w3id.org/mediaingredientmec
     class ComponentEvidence
     click ComponentEvidence href "../ComponentEvidence/"
       ComponentEvidence : evidence_type
-
-
-
-
-
+        
+          
+    
+        
+        
         ComponentEvidence --> "1" ComponentEvidenceTypeEnum : evidence_type
         click ComponentEvidenceTypeEnum href "../ComponentEvidenceTypeEnum/"
+    
 
-
-
+        
       ComponentEvidence : notes
-
+        
       ComponentEvidence : source
-
+        
       ComponentEvidence : source_record
-
-
+        
+      
 ```
 
 

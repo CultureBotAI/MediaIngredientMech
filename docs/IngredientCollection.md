@@ -1,6 +1,6 @@
 
 
-# Class: IngredientCollection
+# Class: IngredientCollection 
 
 
 _Root container for all ingredient records_
@@ -20,29 +20,29 @@ URI: [mediaingredientmech:IngredientCollection](https://w3id.org/mediaingredient
     class IngredientCollection
     click IngredientCollection href "../IngredientCollection/"
       IngredientCollection : category
-
+        
       IngredientCollection : count
-
+        
       IngredientCollection : generation_date
-
+        
       IngredientCollection : ingredients
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientCollection --> "*" IngredientRecord : ingredients
         click IngredientRecord href "../IngredientRecord/"
+    
 
-
-
+        
       IngredientCollection : mapped_count
-
+        
       IngredientCollection : total_count
-
+        
       IngredientCollection : unmapped_count
-
-
+        
+      
 ```
 
 

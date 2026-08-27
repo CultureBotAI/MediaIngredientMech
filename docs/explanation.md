@@ -1,6 +1,6 @@
 
 
-# Slot: explanation
+# Slot: explanation 
 
 
 
@@ -17,8 +17,8 @@ Alias: explanation
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
 | [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [SupportingReference](SupportingReference.md) | A lightweight literature/database citation supporting a Discussion or Dataset |  no  |
 
 
 

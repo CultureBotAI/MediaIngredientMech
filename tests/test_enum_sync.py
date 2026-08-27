@@ -13,6 +13,7 @@ only. The comparison uses a fresh YAML-load path instead of SchemaView so
 that a SchemaView bug can't silently satisfy both sides of the assertion.
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -136,3 +137,38 @@ def test_the_legacy_classification_event_is_retained():
     assert "CLASSIFIED_NAMED_MEDIUM" in events
     assert "CLASSIFIED_DEFINED_MEDIUM" in events, (
         "retiring this would invalidate 91 historical curation events")
+
+
+def test_the_legacy_event_count_in_the_schema_matches_the_corpus():
+    """The description justifies keeping CLASSIFIED_DEFINED_MEDIUM by naming a
+    count. #479 shipped 91 -- a raw textual grep that double-counted every event,
+    because each appears in both the per-record file and the curated aggregate.
+    The real figure is 43 records. A number used as a justification should be
+    checkable, so this pins it rather than trusting the prose (#480).
+    """
+    root = Path(__file__).parent.parent
+    with open(SCHEMA_PATH, encoding="utf-8") as fh:
+        schema = yaml.safe_load(fh)
+    described = schema["enums"]["CurationActionEnum"]["permissible_values"][
+        "CLASSIFIED_DEFINED_MEDIUM"]["description"]
+
+    actual = sum(
+        1
+        for directory in ("data/ingredients/mapped", "data/ingredients/unmapped")
+        for path in (root / directory).rglob("*.yaml")
+        if any(event.get("action") == "CLASSIFIED_DEFINED_MEDIUM"
+               for event in
+               ((yaml.safe_load(path.read_text(encoding="utf-8")) or {})
+                .get("curation_history") or []))
+    )
+
+    # Parsed as a number, not matched as a substring: `f"{actual} recorded
+    # events" in described` passes when the true count is a *suffix* of the
+    # documented one, so 3 would satisfy a schema claiming 43 -- and 43 -> 3 is
+    # exactly what a bulk record merge produces (#483). This is the #259 and
+    # #476 defect, which this file exists to guard against.
+    stated = re.search(r"(\d+) recorded events", described)
+    assert stated, f"the description no longer states a count: {described!r}"
+    assert int(stated.group(1)) == actual, (
+        f"schema claims {stated.group(1)} recorded events; the corpus has "
+        f"{actual} records carrying a CLASSIFIED_DEFINED_MEDIUM event")

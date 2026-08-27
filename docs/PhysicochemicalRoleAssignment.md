@@ -1,6 +1,6 @@
 
 
-# Class: PhysicochemicalRoleAssignment
+# Class: PhysicochemicalRoleAssignment 
 
 
 _Assignment of a physicochemical facet role (the chemical or physical function the ingredient performs in the medium) with supporting evidence._
@@ -20,32 +20,32 @@ URI: [mediaingredientmech:PhysicochemicalRoleAssignment](https://w3id.org/mediai
     class PhysicochemicalRoleAssignment
     click PhysicochemicalRoleAssignment href "../PhysicochemicalRoleAssignment/"
       PhysicochemicalRoleAssignment : confidence
-
+        
       PhysicochemicalRoleAssignment : evidence
-
-
-
-
-
+        
+          
+    
+        
+        
         PhysicochemicalRoleAssignment --> "*" RoleCitation : evidence
         click RoleCitation href "../RoleCitation/"
+    
 
-
-
+        
       PhysicochemicalRoleAssignment : notes
-
+        
       PhysicochemicalRoleAssignment : role
-
-
-
-
-
+        
+          
+    
+        
+        
         PhysicochemicalRoleAssignment --> "1" PhysicochemicalRoleEnum : role
         click PhysicochemicalRoleEnum href "../PhysicochemicalRoleEnum/"
+    
 
-
-
-
+        
+      
 ```
 
 

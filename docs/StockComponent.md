@@ -1,6 +1,6 @@
 
 
-# Class: StockComponent
+# Class: StockComponent 
 
 
 _One constituent in an IngredientRecord.components has-part assertion. The component may resolve to the current MIM catalog, deliberately name an external ontology/registry term, or remain unmapped; reference_scope makes those cases explicit. This class does not represent an identity mapping or a relationship among chemical forms._
@@ -20,27 +20,27 @@ URI: [mediaingredientmech:StockComponent](https://w3id.org/mediaingredientmech/S
     class StockComponent
     click StockComponent href "../StockComponent/"
       StockComponent : component_id
-
+        
       StockComponent : component_name
-
+        
       StockComponent : concentration_unit
-
+        
       StockComponent : concentration_value
-
+        
       StockComponent : reference_scope
-
-
-
-
-
+        
+          
+    
+        
+        
         StockComponent --> "1" ComponentReferenceScopeEnum : reference_scope
         click ComponentReferenceScopeEnum href "../ComponentReferenceScopeEnum/"
+    
 
-
-
+        
       StockComponent : source
-
-
+        
+      
 ```
 
 
@@ -76,7 +76,7 @@ URI: [mediaingredientmech:StockComponent](https://w3id.org/mediaingredientmech/S
 ## Rules
 
 
-###
+### 
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
@@ -84,7 +84,7 @@ URI: [mediaingredientmech:StockComponent](https://w3id.org/mediaingredientmech/S
 
 
 
-###
+### 
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
@@ -92,7 +92,7 @@ URI: [mediaingredientmech:StockComponent](https://w3id.org/mediaingredientmech/S
 
 
 
-###
+### 
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|

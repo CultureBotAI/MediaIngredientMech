@@ -1,6 +1,6 @@
 
 
-# Slot: supplied_form
+# Slot: supplied_form 
 
 
 _The material actually ordered and delivered for this ingredient — the thing on the shelf, as distinct from the substance the record denotes. Multivalued because one ingredient is legitimately buyable in several forms (anhydrous vs a hydrate, free acid vs sodium salt) and a recipe may not say which. Keeps procurement detail OUT of the identity: the `identifier` optimises for how the node reads in the knowledge graph, and this slot carries what you would put on a purchase order._

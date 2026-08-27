@@ -1,6 +1,6 @@
 
 
-# Slot: method
+# Slot: method 
 
 
 _Method used to derive the constituent list._

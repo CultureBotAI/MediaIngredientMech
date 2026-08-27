@@ -1,6 +1,6 @@
 
 
-# Class: SourceOccurrence
+# Class: SourceOccurrence 
 
 
 _An occurrence count attributed to a specific upstream source, with the source's own provenance detail._
@@ -20,12 +20,12 @@ URI: [mediaingredientmech:SourceOccurrence](https://w3id.org/mediaingredientmech
     class SourceOccurrence
     click SourceOccurrence href "../SourceOccurrence/"
       SourceOccurrence : count
-
+        
       SourceOccurrence : source
-
+        
       SourceOccurrence : source_columns
-
-
+        
+      
 ```
 
 

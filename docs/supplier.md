@@ -1,6 +1,6 @@
 
 
-# Slot: supplier
+# Slot: supplier 
 
 
 _Vendor, where a specific one is recorded (e.g. `Sigma-Aldrich`)._

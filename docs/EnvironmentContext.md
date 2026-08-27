@@ -1,6 +1,6 @@
 
 
-# Class: EnvironmentContext
+# Class: EnvironmentContext 
 
 
 _Environmental context annotation for an ingredient. Links an ingredient to an ENVO environment with a relevance qualifier explaining why the ingredient is associated with that environment. Schema mirrors the legacy `MappedIngredient.environmental_context` class in mapped_ingredients_schema.yaml so cross-repo tooling can treat the two interchangeably._
@@ -20,23 +20,23 @@ URI: [mediaingredientmech:EnvironmentContext](https://w3id.org/mediaingredientme
     class EnvironmentContext
     click EnvironmentContext href "../EnvironmentContext/"
       EnvironmentContext : environment_label
-
+        
       EnvironmentContext : environment_term
-
+        
       EnvironmentContext : notes
-
+        
       EnvironmentContext : relevance
-
-
-
-
-
+        
+          
+    
+        
+        
         EnvironmentContext --> "1" EnvironmentRelevanceEnum : relevance
         click EnvironmentRelevanceEnum href "../EnvironmentRelevanceEnum/"
+    
 
-
-
-
+        
+      
 ```
 
 

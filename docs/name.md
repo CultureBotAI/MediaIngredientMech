@@ -1,6 +1,6 @@
 
 
-# Slot: name
+# Slot: name 
 
 
 
@@ -17,8 +17,8 @@ Alias: name
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [ProposedExperiment](ProposedExperiment.md) | A lightweight, domain-neutral sketch of an experiment or analysis that could ... |  no  |
 | [SuppliedForm](SuppliedForm.md) | A purchasable form of an ingredient: what a lab would physically order and re... |  no  |
+| [ProposedExperiment](ProposedExperiment.md) | A lightweight, domain-neutral sketch of an experiment or analysis that could ... |  no  |
 
 
 

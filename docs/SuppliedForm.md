@@ -1,6 +1,6 @@
 
 
-# Class: SuppliedForm
+# Class: SuppliedForm 
 
 
 _A purchasable form of an ingredient: what a lab would physically order and receive. Separate from `ChemicalProperties`, which describes the substance the record denotes — the two differ whenever a recipe names a substance generically but only one form is sold, or several are._
@@ -20,18 +20,18 @@ URI: [mediaingredientmech:SuppliedForm](https://w3id.org/mediaingredientmech/Sup
     class SuppliedForm
     click SuppliedForm href "../SuppliedForm/"
       SuppliedForm : cas_rn
-
+        
       SuppliedForm : catalog_number
-
+        
       SuppliedForm : form
-
+        
       SuppliedForm : name
-
+        
       SuppliedForm : notes
-
+        
       SuppliedForm : supplier
-
-
+        
+      
 ```
 
 

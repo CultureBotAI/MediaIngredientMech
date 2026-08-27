@@ -1,6 +1,6 @@
 
 
-# Slot: concentration_unit
+# Slot: concentration_unit 
 
 
 _Unit for concentration_value (e.g. G_PER_L, MG_PER_L, M, MM, PERCENT)._

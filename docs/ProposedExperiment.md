@@ -1,6 +1,6 @@
 
 
-# Class: ProposedExperiment
+# Class: ProposedExperiment 
 
 
 _A lightweight, domain-neutral sketch of an experiment or analysis that could resolve a knowledge gap. Records the idea and how its outcome would decide the gap; intentionally simpler than a full study design._
@@ -20,26 +20,26 @@ URI: [mediaingredientmech:ProposedExperiment](https://w3id.org/mediaingredientme
     class ProposedExperiment
     click ProposedExperiment href "../ProposedExperiment/"
       ProposedExperiment : approach
-
+        
       ProposedExperiment : decision_criterion
-
+        
       ProposedExperiment : description
-
+        
       ProposedExperiment : experiment_id
-
+        
       ProposedExperiment : model_systems
-
+        
       ProposedExperiment : name
-
+        
       ProposedExperiment : perturbations
-
+        
       ProposedExperiment : readouts
-
+        
       ProposedExperiment : would_refute
-
+        
       ProposedExperiment : would_support
-
-
+        
+      
 ```
 
 

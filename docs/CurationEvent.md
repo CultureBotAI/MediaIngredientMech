@@ -1,6 +1,6 @@
 
 
-# Class: CurationEvent
+# Class: CurationEvent 
 
 
 _Audit trail entry for a curation action_
@@ -20,42 +20,42 @@ URI: [mediaingredientmech:CurationEvent](https://w3id.org/mediaingredientmech/Cu
     class CurationEvent
     click CurationEvent href "../CurationEvent/"
       CurationEvent : action
-
+        
       CurationEvent : changes
-
+        
       CurationEvent : curator
-
+        
       CurationEvent : llm_assisted
-
+        
       CurationEvent : llm_model
-
+        
       CurationEvent : new_status
-
-
-
-
-
+        
+          
+    
+        
+        
         CurationEvent --> "0..1" MappingStatusEnum : new_status
         click MappingStatusEnum href "../MappingStatusEnum/"
+    
 
-
-
+        
       CurationEvent : notes
-
+        
       CurationEvent : previous_status
-
-
-
-
-
+        
+          
+    
+        
+        
         CurationEvent --> "0..1" MappingStatusEnum : previous_status
         click MappingStatusEnum href "../MappingStatusEnum/"
+    
 
-
-
+        
       CurationEvent : timestamp
-
-
+        
+      
 ```
 
 

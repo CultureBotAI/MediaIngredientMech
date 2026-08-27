@@ -1,6 +1,6 @@
 
 
-# Slot: concentration_value
+# Slot: concentration_value 
 
 
 _Amount/concentration of the component, kept as a string to preserve the source's formatting (e.g. "1.5", "0.1-0.5")._

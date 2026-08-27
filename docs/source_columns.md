@@ -1,6 +1,6 @@
 
 
-# Slot: source_columns
+# Slot: source_columns 
 
 
 _The upstream columns the count was aggregated over, verbatim (e.g. `BacDive_Metabolite_utilization|Bergey_substrate`), so the number stays interpretable without the original extract._

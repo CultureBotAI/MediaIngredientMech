@@ -154,7 +154,7 @@ permissible_values:
   CLASSIFIED_DEFINED_MEDIUM:
     text: CLASSIFIED_DEFINED_MEDIUM
     description: Legacy history value. The pre-#222 spelling of CLASSIFIED_NAMED_MEDIUM,
-      retained because 91 recorded events carry it and an event log states what was
+      retained because 43 recorded events carry it and an event log states what was
       done at the time. New events use CLASSIFIED_NAMED_MEDIUM.
   MERGED_FROM_DUPLICATES:
     text: MERGED_FROM_DUPLICATES

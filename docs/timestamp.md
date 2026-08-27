@@ -1,6 +1,6 @@
 
 
-# Slot: timestamp
+# Slot: timestamp 
 
 
 _When this action occurred_
