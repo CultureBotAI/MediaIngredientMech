@@ -18,6 +18,8 @@ import sqlite3
 import sys
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).parent.parent
 
 
@@ -231,3 +233,63 @@ def test_kgmicrobe_default_honours_the_env_override(monkeypatch):
     mod = _load()
     monkeypatch.setenv("KGM_CHEBI_OWL", "/explicit/path/chebi.owl.gz")
     assert mod.default_kgm_chebi() == Path("/explicit/path/chebi.owl.gz")
+
+
+# --- #488: off the raw S3 bucket -------------------------------------------
+def test_the_published_artifact_is_not_fetched_from_the_raw_s3_bucket(monkeypatch):
+    """INCATools/semantic-sql#112 is removing `AllUsers` from that bucket. This
+    constant bypasses oaklib, so bumping the dependency does not migrate it --
+    the category tracked in INCATools/semantic-sql#115."""
+    monkeypatch.delenv("OAKLIB_SEMSQL_SQLITE_URL_BASE", raising=False)
+    mod = _load()
+
+    assert "s3.amazonaws.com" not in mod.SEMSQL_URL
+    assert "bbop-sqlite" not in mod.SEMSQL_URL
+    assert mod.SEMSQL_URL.startswith("https://semanticsql.berkeleybop.io/")
+    assert mod.SEMSQL_URL.endswith("/chebi.db.gz")
+
+
+def test_the_url_honours_oaklibs_own_mirror_override(monkeypatch):
+    """Read from `OAKLIB_SEMSQL_SQLITE_URL_BASE`, the same escape hatch oaklib
+    uses, so pointing oaklib at a mirror points this check at the SAME mirror.
+    Otherwise the currency check compares against a different artifact than the
+    one that would actually be downloaded, and reports a false 'refresh needed'."""
+    monkeypatch.setenv("OAKLIB_SEMSQL_SQLITE_URL_BASE", "https://mirror.example.org/base/")
+    mod = _load()
+
+    assert mod.SEMSQL_URL == "https://mirror.example.org/base/chebi.db.gz"
+
+
+def test_the_url_base_matches_what_oaklib_would_resolve(monkeypatch):
+    """The constant exists to mirror oaklib's own default. If oaklib changes it
+    again, this is the check that says so rather than the check silently
+    comparing against a stale host."""
+    monkeypatch.delenv("OAKLIB_SEMSQL_SQLITE_URL_BASE", raising=False)
+    oaklib_constants = pytest.importorskip("oaklib.constants")
+    mod = _load()
+
+    assert mod.SEMSQL_URL_BASE == oaklib_constants.SEMSQL_SQLITE_URL_BASE.rstrip("/")
+
+
+def test_oaklib_is_new_enough_to_be_off_raw_s3():
+    """The other half of #488. Below 0.7.2 the `sqlite:obo:` selector resolves
+    against `https://s3.amazonaws.com/bbop-sqlite` again, and once
+    INCATools/semantic-sql#112 removes `AllUsers` that fails at download time in
+    a 760 MB code path rather than in CI. The floor drifted to 0.6.23 under a
+    `>=0.5.0` constraint precisely because nothing checked it (#494)."""
+    from importlib.metadata import version
+
+    from packaging.version import Version
+
+    assert Version(version("oaklib")) >= Version("0.7.2")
+
+
+def test_oaklibs_semsql_base_is_not_the_raw_bucket():
+    """Checks the behaviour the version number is only a proxy for, so it keeps
+    working if upstream renumbers or backports."""
+    oaklib_constants = pytest.importorskip("oaklib.constants")
+
+    base = oaklib_constants.SEMSQL_SQLITE_URL_BASE
+
+    assert "s3.amazonaws.com" not in base
+    assert "bbop-sqlite" not in base
