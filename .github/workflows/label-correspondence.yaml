@@ -23,6 +23,13 @@ on:
       - "src/mediaingredientmech/schema/**"
       - "scripts/validate_id_label_correspondence.py"
       - "conf/id_label_targets.yaml"
+      # The gate resolves ontology terms through oaklib, so a dependency change
+      # is one of the few things that can alter its verdict without touching any
+      # data. Omitting these meant the oaklib 0.6.23 -> 0.7.4 bump in #488 could
+      # not trigger the workflow most likely to catch it (#495). Every other
+      # library-dependent gate here already lists them.
+      - "pyproject.toml"
+      - "uv.lock"
       - ".github/workflows/label-correspondence.yaml"
   push:
     branches: [main]
