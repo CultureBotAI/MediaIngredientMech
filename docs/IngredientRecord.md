@@ -74,7 +74,16 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
     
 
         
-      IngredientRecord : culturemech_medium_name
+      IngredientRecord : culturemech_reference
+        
+          
+    
+        
+        
+        IngredientRecord --> "0..1" CultureMechReference : culturemech_reference
+        click CultureMechReference href "../CultureMechReference/"
+    
+
         
       IngredientRecord : curation_history
         
@@ -264,7 +273,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | [ingredient_type](ingredient_type.md) | 0..1 <br/> [IngredientTypeEnum](IngredientTypeEnum.md) | Classification of entry type: single chemical ingredient vs whole named mediu... | direct |
 | [components](components.md) | * <br/> [StockComponent](StockComponent.md) | A has-part decomposition for a STOCK_SOLUTION, NAMED_MEDIUM, or UNDEFINED_MIX... | direct |
 | [component_assertion](component_assertion.md) | 0..1 <br/> [ComponentAssertion](ComponentAssertion.md) | Method and structured evidence for the record-level has-part claim carried by... | direct |
-| [culturemech_medium_name](culturemech_medium_name.md) | 0..1 <br/> [String](String.md) | Cross-reference to CultureMech medium name if this is a defined medium | direct |
+| [culturemech_reference](culturemech_reference.md) | 0..1 <br/> [CultureMechReference](CultureMechReference.md) | Typed, stable link to a CultureMech recipe | direct |
 | [kg_microbe_node_id](kg_microbe_node_id.md) | 0..1 <br/> [String](String.md) | KG-Microbe node ID for this ingredient when found in the KG exactly | direct |
 | [environmental_context](environmental_context.md) | * <br/> [EnvironmentContext](EnvironmentContext.md) | Environmental contexts where this ingredient is relevant | direct |
 | [discussions](discussions.md) | * <br/> [Discussion](Discussion.md) | Open questions, knowledge gaps, controversies, and curation todos attached to... | direct |
@@ -596,14 +605,18 @@ attributes:
     - IngredientRecord
     range: ComponentAssertion
     inlined: true
-  culturemech_medium_name:
-    name: culturemech_medium_name
-    description: Cross-reference to CultureMech medium name if this is a defined medium.
-      Used to link complex media entries to their full recipe formulations.
+  culturemech_reference:
+    name: culturemech_reference
+    description: Typed, stable link to a CultureMech recipe. Replaces the former `culturemech_medium_name`,
+      which held a display string and no relationship semantics, so it could not distinguish
+      the same formulation from a variant or a merely similar composition (#447).
+      CultureMech remains authoritative for the recipe body and for recipe family/variant
+      structure; this records only which recipe a record answers to and how.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
     domain_of:
     - IngredientRecord
+    range: CultureMechReference
   kg_microbe_node_id:
     name: kg_microbe_node_id
     description: KG-Microbe node ID for this ingredient when found in the KG exactly.
@@ -996,17 +1009,20 @@ attributes:
     - IngredientRecord
     range: ComponentAssertion
     inlined: true
-  culturemech_medium_name:
-    name: culturemech_medium_name
-    description: Cross-reference to CultureMech medium name if this is a defined medium.
-      Used to link complex media entries to their full recipe formulations.
+  culturemech_reference:
+    name: culturemech_reference
+    description: Typed, stable link to a CultureMech recipe. Replaces the former `culturemech_medium_name`,
+      which held a display string and no relationship semantics, so it could not distinguish
+      the same formulation from a variant or a merely similar composition (#447).
+      CultureMech remains authoritative for the recipe body and for recipe family/variant
+      structure; this records only which recipe a record answers to and how.
     from_schema: https://w3id.org/mediaingredientmech
     rank: 1000
-    alias: culturemech_medium_name
+    alias: culturemech_reference
     owner: IngredientRecord
     domain_of:
     - IngredientRecord
-    range: string
+    range: CultureMechReference
   kg_microbe_node_id:
     name: kg_microbe_node_id
     description: KG-Microbe node ID for this ingredient when found in the KG exactly.

@@ -203,10 +203,16 @@ classes:
           by components. Required whenever components is non-empty and forbidden when
           components is absent; the corpus-level partonomy validator enforces that
           cross-field invariant.
-      culturemech_medium_name:
+      culturemech_reference:
+        range: CultureMechReference
         description: >-
-          Cross-reference to CultureMech medium name if this is a defined medium.
-          Used to link complex media entries to their full recipe formulations.
+          Typed, stable link to a CultureMech recipe. Replaces the former
+          `culturemech_medium_name`, which held a display string and no
+          relationship semantics, so it could not distinguish the same
+          formulation from a variant or a merely similar composition (#447).
+          CultureMech remains authoritative for the recipe body and for recipe
+          family/variant structure; this records only which recipe a record
+          answers to and how.
       kg_microbe_node_id:
         description: >-
           KG-Microbe node ID for this ingredient when found in the KG exactly.
@@ -371,6 +377,42 @@ classes:
         range: datetime
         description: When these properties were retrieved
 
+  CultureMechReference:
+    description: >-
+      A verified link from a MIM record to a CultureMech recipe, carried by
+      stable id rather than by display name. CultureMech names are not unique --
+      2291 are shared by more than one recipe and 4784 recipes carry none -- so a
+      name cannot identify a recipe and must never be the stored identity (#447).
+    attributes:
+      medium_id:
+        required: true
+        pattern: '^CultureMech:[0-9]{6}$'
+        description: >-
+          The stable CultureMech recipe id. Every recipe in
+          `data/normalized_yaml/` carries one as its first field, and they are
+          unique across all 15877 of them.
+      medium_name:
+        description: >-
+          Display name at the time of linking. Convenience for a human reader
+          only -- never used for matching, and not authoritative if CultureMech
+          renames the recipe.
+      relationship:
+        range: CultureMechRelationshipEnum
+        required: true
+        description: >-
+          How this record relates to that recipe. Required because an untyped
+          link cannot distinguish the claims it might be making, which is the
+          defect that motivated this class.
+      source_path:
+        description: >-
+          Path to the recipe within CultureMech at the time of linking, as
+          provenance. Not resolved at read time; the id is the identity.
+      evidence:
+        required: true
+        description: >-
+          Why this link is believed, in prose. Required so a link can never rest
+          on a name match alone -- both existing links were verified by
+          composition, and the record of that is the reason to trust them.
   MappingEvidence:
     description: Evidence for an ontology mapping
     attributes:
@@ -1303,6 +1345,29 @@ enums:
       OTHER:
         description: Other type of pre-mixed solution
 
+  CultureMechRelationshipEnum:
+    description: How a MIM record relates to the CultureMech recipe it references
+    permissible_values:
+      EXACT_FORMULATION:
+        description: >-
+          The same formulation. Asserted only when composition was compared, not
+          when names agree.
+      VARIANT_OF:
+        description: >-
+          A documented variant of that recipe -- a modification of it rather than
+          a different medium.
+      SIMILAR_COMPOSITION:
+        description: >-
+          Compositionally close but not identical, with the differences recorded
+          in `evidence`. The honest value when recipes overlap substantially and
+          disagree in named ways.
+      CANDIDATE_UNVERIFIED:
+        description: >-
+          A candidate proposed by matching but not yet confirmed by a curator.
+          Exists so "not linked" and "linked but unchecked" are different states:
+          absence would otherwise conflate a record nobody has looked at with one
+          whose candidate was rejected. Never written by an automated matcher
+          into an accepted link.
   IngredientTypeEnum:
     description: Classification of ingredient entry type
     permissible_values:

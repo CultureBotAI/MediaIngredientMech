@@ -67,9 +67,9 @@ ISSUE = "#213/#308"
 UNDEFINED_PREFIXES = ("MICRO:", "FOODON:", "UBERON:", "ENVO:", "UNMAPPED", "cas:")
 
 # CultureMech media these blends resolve to, VERIFIED BY COMPOSITION rather than
-# by name — fuzzy name matching is what put `KF` on Lys-Phe. Recorded in
-# `culturemech_medium_name`, the slot whose stated purpose is to "link complex
-# media entries to their full recipe formulations".
+# by name — fuzzy name matching is what put `KF` on Lys-Phe. Recorded as a typed
+# `culturemech_reference` carrying the stable id and the relationship, so the
+# claim is machine-readable rather than buried in evidence prose (#447).
 #
 # Only two of the twelve survive that check. `Modified Cooked Meat Medium` matches
 # `cooked_meat_medium`, which is the UNmodified one; `Fastidious Anaerobe Broth
@@ -78,10 +78,12 @@ UNDEFINED_PREFIXES = ("MICRO:", "FOODON:", "UBERON:", "ENVO:", "UNMAPPED", "cas:
 # `pyg_medium_b`, `pyg_medium_c`, `pyg_medium_modified`, `pyg_agar_h`) and
 # picking one would be a guess. The rest have no CultureMech medium at all.
 CULTUREMECH_MEDIUM = {
-    "BHI": ("CultureMech:015492", "BHI",
+    "BHI": ("CultureMech:015492", "BHI", "EXACT_FORMULATION",
+            "data/normalized_yaml/specialized/bhi.yaml",
             "composition Beef heart + Calf brains + Proteose Peptone + Disodium "
             "phosphate + Sodium Chloride is brain heart infusion"),
-    "GYPS": ("CultureMech:002799", "gyps_medium",
+    "GYPS": ("CultureMech:002799", "gyps_medium", "SIMILAR_COMPOSITION",
+             "data/normalized_yaml/bacterial/gyps_medium.yaml",
              "name matches exactly and 3 of 4 curated constituents agree (glucose, "
              "peptone, yeast extract); CultureMech additionally lists MES and Sea "
              "Salt and no starch, so the recipes are close but not identical"),
@@ -176,7 +178,13 @@ def main(argv: list[str] | None = None) -> int:
             rec["ingredient_type"] = itype
             cm = CULTUREMECH_MEDIUM.get(label)
             if cm:
-                rec["culturemech_medium_name"] = cm[1]
+                rec["culturemech_reference"] = {
+                    "medium_id": cm[0],
+                    "medium_name": cm[1],
+                    "relationship": cm[2],
+                    "source_path": cm[3],
+                    "evidence": f"Verified by composition, not by name: {cm[4]}.",
+                }
 
             why = (
                 f"Components taken from the curated microbedecoder research "
@@ -191,8 +199,8 @@ def main(argv: list[str] | None = None) -> int:
                 f"no composition to split on. ingredient_type={itype}. No concentrations "
                 f"are recorded: the curated row states none."
                 + (f" Cross-referenced to CultureMech medium {cm[0]} ({cm[1]!r}) via "
-                   f"culturemech_medium_name, verified by COMPOSITION not by name: "
-                   f"{cm[2]}." if cm else ""))
+                   f"culturemech_reference, relationship={cm[2]}, verified by "
+                   f"COMPOSITION not by name: {cm[4]}." if cm else ""))
 
             if was_expert:
                 old_id = rec.get("identifier")

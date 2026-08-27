@@ -23,6 +23,7 @@ Alias: evidence
 | [NutritionalRoleAssignment](NutritionalRoleAssignment.md) | Assignment of a nutritional facet role (what element or macronutrient the ing... |  no  |
 | [CellularMetabolicRoleAssignment](CellularMetabolicRoleAssignment.md) | Assignment of a cellular-metabolic facet role (what the ingredient does insid... |  no  |
 | [Discussion](Discussion.md) | A thread-like record of an open question, controversy, curation todo, emergin... |  no  |
+| [CultureMechReference](CultureMechReference.md) | A verified link from a MIM record to a CultureMech recipe, carried by stable ... |  no  |
 | [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |  no  |
 | [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |  no  |
 
@@ -64,6 +65,7 @@ name: evidence
 alias: evidence
 domain_of:
 - OntologyMapping
+- CultureMechReference
 - CommunityOrganismRoleAssignment
 - NutritionalRoleAssignment
 - PhysicochemicalRoleAssignment
