@@ -26,8 +26,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 4
-  media_count: 4
+  total_occurrences: 5
+  media_count: 5
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -84,6 +84,13 @@ curation_history:
     unchanged — the term is correct. The SSSOM predicate is unaffected (both grades
     emit skos:exactMatch).
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.740438+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 5/5 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449).'
 chemical_properties:
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:51:58.519606+00:00'

@@ -54,8 +54,8 @@ synonyms:
   source: CultureMech label unresolvable via label_index (#260)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 47
-  media_count: 47
+  total_occurrences: 1089
+  media_count: 833
 curation_history:
 - timestamp: '2026-04-18T04:19:36+00:00'
   curator: foodon_promotion_cbclaw
@@ -99,6 +99,13 @@ curation_history:
     IS the ontology CURIE, so a second record on it would be a duplicate primary key
     rather than added coverage.'
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.741280+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 47/47 -> 833/1089 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 ingredient_type: UNDEFINED_MIXTURE
 merged:
 - CHEBI:8150

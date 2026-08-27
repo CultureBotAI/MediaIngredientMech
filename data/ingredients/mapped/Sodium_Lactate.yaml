@@ -108,8 +108,8 @@ synonyms:
   source: MERGED_FROM_CHEBI:29958 (#346)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 191
-  media_count: 137
+  total_occurrences: 283
+  media_count: 283
   source_occurrences:
   - source: microbedecoder
     count: 2
@@ -299,6 +299,13 @@ curation_history:
     split. Occurrences 190/136 + 1/1 -> 191/137. Both the raw split label and the
     reconstructed source label kept as RAW_TEXT synonyms.'
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.741235+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 137/191 -> 283/283 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 chemical_properties:
   cas_rn: 72-17-3
   data_source: OAK/CHEBI xref

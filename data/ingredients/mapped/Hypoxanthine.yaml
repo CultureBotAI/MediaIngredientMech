@@ -33,8 +33,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 4
-  media_count: 4
+  total_occurrences: 19
+  media_count: 19
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -76,6 +76,13 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Hypoxanthine'' -> ''hypoxanthine'': synced to canonical
     CHEBI label (preferred_term ''Hypoxanthine'' unchanged).'
+- timestamp: '2026-08-27T03:06:34.740611+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 19/19 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449).'
 chemical_properties:
   cas_rn: 68-94-0
   data_source: PubChem API

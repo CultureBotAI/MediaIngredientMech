@@ -87,8 +87,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1040
-  media_count: 131
+  total_occurrences: 1768
+  media_count: 1767
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -218,6 +218,13 @@ curation_history:
     occurrences against 13); the other survives as a RAW_TEXT synonym, so label_index
     still answers for it.'
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.740701+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 131/1040 -> 1767/1768 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 chemical_properties:
   cas_rn: 7048-04-6
   data_source: PubChem (via CHEBI:91248)

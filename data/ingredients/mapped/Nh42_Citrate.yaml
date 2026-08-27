@@ -68,8 +68,8 @@ synonyms:
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 53
-  media_count: 53
+  total_occurrences: 63
+  media_count: 63
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -161,6 +161,13 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): NITROGEN_SOURCE ->
     nutritional_roles.NITROGEN_SOURCE'
+- timestamp: '2026-08-27T03:06:34.741039+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 53/53 -> 63/63 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 kg_microbe_node_id: CHEBI:63076
 chemical_properties:
   cas_rn: 3012-65-5

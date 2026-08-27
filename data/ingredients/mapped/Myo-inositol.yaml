@@ -76,8 +76,8 @@ synonyms:
   source: MERGED_FROM_CHEBI:10642
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 52
-  media_count: 52
+  total_occurrences: 59
+  media_count: 59
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -153,6 +153,13 @@ curation_history:
     bad mapping. Occurrences 31/31 + 21/21 -> 52/52. Raw label kept as a RAW_TEXT
     synonym.'
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.740875+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 52/52 -> 59/59 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 chemical_properties:
   cas_rn: 87-89-8
   data_source: PubChem API

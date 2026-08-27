@@ -64,8 +64,8 @@ synonyms:
   source: MERGED_FROM_kgmicrobe.compound:na2-edta_x_2_h2o
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 113
-  media_count: 74
+  total_occurrences: 140
+  media_count: 139
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -151,6 +151,13 @@ curation_history:
     for the dihydrate of the minted-off parent. Occurrences 10/10 + 103/64 -> 113/74.
     Raw label kept as a RAW_TEXT synonym.
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.740941+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 74/113 -> 139/140 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 chemical_properties:
   cas_rn: 6381-92-6
   data_source: 'CHEBI dbxref on CHEBI:64758 (corrected from an EC number, #114)'

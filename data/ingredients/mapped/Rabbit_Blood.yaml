@@ -9,8 +9,8 @@ synonyms:
   source: CultureMech label unresolvable via label_index (#260)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 9
+  media_count: 9
 curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
@@ -43,6 +43,13 @@ curation_history:
     record''s identifier, and in MIM the identifier IS the ontology CURIE, so a second
     record on it would be a duplicate primary key rather than added coverage.'
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.741186+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 9/9 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449).'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1927); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

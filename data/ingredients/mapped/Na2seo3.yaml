@@ -55,8 +55,8 @@ synonyms:
   source: merge_from_UNMAPPED_0473
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 109
-  media_count: 50
+  total_occurrences: 185
+  media_count: 185
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -133,6 +133,13 @@ curation_history:
     on CHEBI:48843, the specific term this record is mapped to — provenance independent
     of the value being replaced, per MAPPING_SEMANTICS §3.
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.740973+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 50/109 -> 185/185 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 chemical_properties:
   cas_rn: 10102-18-8
   data_source: CultureBotHT compounds_to_cas.csv

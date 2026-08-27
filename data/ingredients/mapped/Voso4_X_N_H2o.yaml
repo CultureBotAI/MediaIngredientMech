@@ -38,8 +38,8 @@ synonyms:
   source: unmapped_duplicate_review_2026_05_07
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 32
-  media_count: 32
+  total_occurrences: 65
+  media_count: 65
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -129,6 +129,13 @@ curation_history:
     so the recorded grade overstated. ontology_id is unchanged — the term is correct.
     The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.741435+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 32/32 -> 65/65 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 chemical_properties:
   cas_rn: 123334-20-3
   data_source: PubChem (via CHEBI:87020)

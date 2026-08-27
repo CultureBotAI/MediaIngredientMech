@@ -12,8 +12,8 @@ synonyms:
   source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 4
-  media_count: 4
+  total_occurrences: 301
+  media_count: 301
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -50,6 +50,13 @@ curation_history:
     Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
     (#226). Source: mediadive.ingredient:286.'
   llm_assisted: true
+- timestamp: '2026-08-27T03:06:34.741207+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 4/4 -> 301/301 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 notes: 'CultureMech placeholder_id: 1'
 ontology_mapping:
   ontology_id: ENVO:00002149

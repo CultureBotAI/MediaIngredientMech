@@ -13,8 +13,8 @@ ontology_mapping:
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 1
+  media_count: 1
 curation_history:
 - timestamp: '2026-04-29T06:34:31.158938+00:00'
   curator: audit_cas_chebi_followup
@@ -60,6 +60,13 @@ curation_history:
     ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
     under Rule D (#438), independently of mapping quality.
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.741367+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449).'
 chemical_properties:
   cas_rn: 7758-87-4
   data_source: CultureBotHT compounds_to_cas.csv

@@ -72,8 +72,8 @@ synonyms:
   source: MERGED_FROM Sodium Thiosulfate Pentahydrate (#414)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 458
-  media_count: 115
+  total_occurrences: 716
+  media_count: 716
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -174,6 +174,13 @@ curation_history:
     x 5 H2O'' wins as the label media actually use (455 occurrences against 3); the
     other survives as a RAW_TEXT synonym, so label_index still answers for it.'
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.740967+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 115/458 -> 716/716 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 kg_microbe_node_id: CHEBI:32150
 chemical_properties:
   cas_rn: 10102-17-7

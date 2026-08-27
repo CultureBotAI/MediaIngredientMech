@@ -6,8 +6,8 @@ synonyms:
   source: extracted_from_malt_extract_yaml
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 5
+  media_count: 5
 curation_history:
 - timestamp: '2026-04-19T07:53:54.781350+00:00'
   curator: audit_extract_complex_media_synonyms
@@ -35,6 +35,13 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.740790+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 5/5 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449).'
 notes: Extracted from over-conflated Malt_Extract.yaml synonyms Malt extract broth
   is a formulation, not identical to malt extract.
 ingredient_type: UNDEFINED_MIXTURE

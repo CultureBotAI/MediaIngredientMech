@@ -6,8 +6,8 @@ synonyms:
   source: mim-queue
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 4
+  media_count: 4
 curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
@@ -58,6 +58,13 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0441 -> cas:145224-94-8 "2-(N-morpholino)ethanesulfonic
     acid" (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-27T03:06:34.739969+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 4/4 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449).'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2394); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as MES hydrate shorthand; not merged to
   anhydrous MES or MES sodium salt.

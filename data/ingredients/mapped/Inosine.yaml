@@ -40,8 +40,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 27
-  media_count: 27
+  total_occurrences: 36
+  media_count: 36
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -102,6 +102,13 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-08-27T03:06:34.740615+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 27/27 -> 36/36 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 notes: Created from FEBA ontology enrichment workflow. Used in 14 FEBA media formulations.
 chemical_properties:
   cas_rn: 58-63-9

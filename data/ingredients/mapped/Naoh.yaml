@@ -59,8 +59,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1184
-  media_count: 51
+  total_occurrences: 1210
+  media_count: 1209
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -128,6 +128,13 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''NaOH'' -> ''sodium hydroxide'': synced to canonical CHEBI
     label (preferred_term ''NaOH'' unchanged).'
+- timestamp: '2026-08-27T03:06:34.741024+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 51/1184 -> 1209/1210 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 chemical_properties:
   cas_rn: 1310-73-2
   data_source: PubChem API

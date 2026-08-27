@@ -12,8 +12,8 @@ ontology_mapping:
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 3
-  media_count: 3
+  total_occurrences: 5
+  media_count: 5
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -42,6 +42,13 @@ curation_history:
   action: CORRECTED
   changes: 'ontology_label ''Charcoal'' -> ''charcoal'': synced to canonical CHEBI
     label (preferred_term ''Charcoal'' unchanged).'
+- timestamp: '2026-08-27T03:06:34.740265+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 3/3 -> 5/5 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449).'
 chemical_properties:
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:51:25.985992+00:00'

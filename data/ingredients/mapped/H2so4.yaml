@@ -70,8 +70,8 @@ synonyms:
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 262
-  media_count: 50
+  total_occurrences: 337
+  media_count: 337
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -124,6 +124,13 @@ curation_history:
     dropped during the #128 facet migration: this ingredient supplies no mineral nutrient
     (it is a solvent or a pH adjuster), so no NutritionalRoleEnum value applies. Flagged
     for curator re-review.'
+- timestamp: '2026-08-27T03:06:34.740581+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 50/262 -> 337/337 (media_count/total_occurrences),
+    derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+    prior values came from the importer retired in #453, whose media_count counted
+    a list truncated to 50 examples (#449).'
 chemical_properties:
   cas_rn: 7664-93-9
   data_source: PubChem API
