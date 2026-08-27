@@ -152,13 +152,14 @@ curation_history:
     only by where lexical matching landed. Occurrences 1638/50 + 34/34 -> 1672/84.
     Raw label kept as a RAW_TEXT synonym.
   llm_assisted: false
-- timestamp: '2026-08-27T03:06:34.740556+00:00'
+- timestamp: '2026-08-27T03:16:39.518936+00:00'
   curator: refresh_occurrence_statistics
   action: CORRECTED
   changes: 'occurrence_statistics 84/1672 -> 2675/2752 (media_count/total_occurrences),
     derived from distinct CultureMech recipe ids in the #337 occurrence table. The
     prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449).'
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 chemical_properties:
   cas_rn: 50-99-7
   data_source: CultureBotHT/compounds_to_cas.csv

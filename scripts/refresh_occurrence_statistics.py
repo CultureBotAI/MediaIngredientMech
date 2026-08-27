@@ -40,6 +40,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import subprocess
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -57,10 +58,41 @@ REPORT = Path("reports/occurrence_statistics_refresh.tsv")
 csv.field_size_limit(1 << 30)
 
 
-def read_occurrences(path: Path) -> dict[str, tuple[int, int]]:
-    """identifier -> (distinct recipe count, total occurrence rows)."""
+def source_provenance(path: Path, rows: int, recipes: int) -> str:
+    """Where these numbers came from, in one line (#486).
+
+    The values this replaces were untraceable -- nothing recorded that a
+    media_count of 50 came from a truncated list, and establishing it took a
+    distribution analysis. Writing fresh numbers with the same gap would repeat
+    that. CultureMech is actively changing (#337 landed hours before this run,
+    and identity resolution changed just before it), so the vintage is what
+    makes a count interpretable later.
+    """
+    sha = "unknown"
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(path.resolve().parent), "rev-parse", "--short", "HEAD"],
+            capture_output=True, text=True, timeout=30)
+        if result.returncode == 0:
+            sha = result.stdout.strip() or "unknown"
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return (f"source={path.name} culturemech_rev={sha} "
+            f"rows={rows} distinct_recipes={recipes}")
+
+
+def read_occurrences(path: Path) -> tuple[dict[str, tuple[int, int]], int, int]:
+    """(identifier -> (distinct recipes, rows), total rows, total distinct recipes).
+
+    The two totals are corpus-wide, not sums of the per-identifier figures --
+    summing those double-counts every recipe that lists more than one mapped
+    ingredient, which is nearly all of them. They exist so a partial or
+    truncated input is visible in the provenance line (#486).
+    """
     recipes: dict[str, set[str]] = defaultdict(set)
     rows: dict[str, int] = defaultdict(int)
+    all_recipes: set[str] = set()
+    total_rows = 0
     with path.open(newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh, delimiter="\t")
         for field in ("resolved_identifier", "recipe_id"):
@@ -75,7 +107,10 @@ def read_occurrences(path: Path) -> dict[str, tuple[int, int]]:
                 continue
             recipes[identifier].add(row["recipe_id"])
             rows[identifier] += 1
-    return {k: (len(v), rows[k]) for k, v in recipes.items()}
+            all_recipes.add(row["recipe_id"])
+            total_rows += 1
+    return ({k: (len(v), rows[k]) for k, v in recipes.items()},
+            total_rows, len(all_recipes))
 
 
 def shared_identifiers(records: list[dict]) -> set[str]:
@@ -121,7 +156,7 @@ def plan(records: list[dict], fresh: dict[str, tuple[int, int]]) -> tuple[list, 
     return changes, stranded, rejected
 
 
-def apply(changes: list) -> None:
+def apply(changes: list, provenance: str) -> None:
     for record, old, new in changes:
         stats = record.get("occurrence_statistics")
         record["occurrence_statistics"] = {
@@ -138,22 +173,35 @@ def apply(changes: list) -> None:
                 "(media_count/total_occurrences), derived from distinct "
                 "CultureMech recipe ids in the #337 occurrence table. The prior "
                 "values came from the importer retired in #453, whose media_count "
-                "counted a list truncated to 50 examples (#449)."
+                f"counted a list truncated to 50 examples (#449). [{provenance}]"
             ),
         )
 
 
-def write_report(changes: list, stranded: list, shared: set[str]) -> None:
+def _kind(record: dict, old: tuple, new: tuple, shared: set[str]) -> str:
+    """A downward move is not self-explaining the way an upward one is: it says
+    the record was credited with media it no longer matches, which is benign
+    re-resolution or a partial scan, and those are different facts (#487)."""
+    parts = ["REFRESHED"]
+    if new[0] < old[0]:
+        parts.append("DECREASED")
+    if record.get("identifier") in shared:
+        parts.append("SHARED_IDENTIFIER")
+    return "_".join(parts)
+
+
+def write_report(changes: list, stranded: list, shared: set[str],
+                 provenance: str) -> None:
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     with REPORT.open("w", newline="", encoding="utf-8") as fh:
         writer = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        writer.writerow([f"# {provenance}"])
         writer.writerow(["kind", "identifier", "preferred_term", "old_media_count",
                          "old_total_occurrences", "new_media_count",
                          "new_total_occurrences"])
         for record, old, new in changes:
             writer.writerow([
-                "REFRESHED_SHARED_IDENTIFIER"
-                if record.get("identifier") in shared else "REFRESHED",
+                _kind(record, old, new, shared),
                 record.get("identifier", ""),
                 record.get("preferred_term", ""), old[0], old[1], new[0], new[1]])
         for record, old in stranded:
@@ -169,7 +217,9 @@ def main() -> int:
                         help="write the refreshed counts (default: report only)")
     args = parser.parse_args()
 
-    fresh = read_occurrences(args.occurrences)
+    fresh, total_rows, total_recipes = read_occurrences(args.occurrences)
+    provenance = source_provenance(args.occurrences, total_rows, total_recipes)
+    print(provenance)
     curator = IngredientCurator(data_path=DATA, curator_name="refresh_occurrence_statistics")
     curator.load()
     changes, stranded, rejected = plan(curator.records, fresh)
@@ -189,13 +239,13 @@ def main() -> int:
         print(f"  {str(record.get('preferred_term'))[:34]:34} "
               f"{old[0]:>6} -> {new[0]:<6} media")
 
-    write_report(changes, stranded, shared)
+    write_report(changes, stranded, shared, provenance)
     print(f"\nreport: {REPORT}")
 
     if not args.apply:
         print("dry run; re-run with --apply to write")
         return 0
-    apply(changes)
+    apply(changes, provenance)
     curator.save()
     print(f"wrote {len(changes)} record(s) to {DATA}")
     print("run `just sync-individual` to propagate into data/ingredients/ "

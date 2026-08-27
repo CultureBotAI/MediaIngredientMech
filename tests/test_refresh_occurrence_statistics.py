@@ -45,8 +45,9 @@ def test_media_count_is_distinct_recipes_not_rows(mod, tmp_path):
         ("CultureMech:2", "CHEBI:1"),
     ])
 
-    fresh = mod.read_occurrences(path)
+    fresh, total_rows, total_recipes = mod.read_occurrences(path)
 
+    assert (total_rows, total_recipes) == (3, 2)
     assert fresh["CHEBI:1"] == (2, 3), "expected (2 distinct media, 3 rows)"
 
 
@@ -54,7 +55,7 @@ def test_no_cap_at_fifty(mod, tmp_path):
     """The pre-#337 aggregator truncated to 50 examples; nothing here may."""
     path = _table(tmp_path, [(f"CultureMech:{i}", "CHEBI:1") for i in range(120)])
 
-    assert mod.read_occurrences(path)["CHEBI:1"] == (120, 120)
+    assert mod.read_occurrences(path)[0]["CHEBI:1"] == (120, 120)
 
 
 def test_a_pre_337_table_is_refused_rather_than_misread(mod, tmp_path):
@@ -107,7 +108,7 @@ def test_apply_never_lets_media_count_exceed_total_occurrences(mod):
                 "occurrence_statistics": {"media_count": 50, "total_occurrences": 1579}}]
     changes, _, _ = mod.plan(records, {"CHEBI:1": (1839, 1839)})
 
-    mod.apply(changes)
+    mod.apply(changes, "test-provenance")
 
     stats = records[0]["occurrence_statistics"]
     assert stats["media_count"] <= stats["total_occurrences"]
@@ -119,7 +120,7 @@ def test_apply_records_a_curation_event(mod):
                 "occurrence_statistics": {"media_count": 50, "total_occurrences": 100}}]
     changes, _, _ = mod.plan(records, {"CHEBI:1": (7, 9)})
 
-    mod.apply(changes)
+    mod.apply(changes, "test-provenance")
 
     history = records[0].get("curation_history") or []
     assert history, "a data correction must leave an audit trail"

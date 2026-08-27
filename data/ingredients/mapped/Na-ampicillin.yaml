@@ -103,13 +103,14 @@ curation_history:
     +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
     (#226). Source: mediadive.ingredient:1283.'
   llm_assisted: true
-- timestamp: '2026-08-27T03:06:34.740893+00:00'
+- timestamp: '2026-08-27T03:16:39.519388+00:00'
   curator: refresh_occurrence_statistics
   action: CORRECTED
   changes: 'occurrence_statistics 5/5 -> 12/12 (media_count/total_occurrences), derived
     from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
     came from the importer retired in #453, whose media_count counted a list truncated
-    to 50 examples (#449).'
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 chemical_properties:
   cas_rn: 69-52-3
   data_source: PubChem API (preprocessed)

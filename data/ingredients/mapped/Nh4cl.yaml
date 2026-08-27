@@ -186,13 +186,14 @@ curation_history:
     names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv (#226). Source:
     communitymech.ingredient:Ammonium_chloride_(nitrogen_source.'
   llm_assisted: true
-- timestamp: '2026-08-27T03:06:34.741052+00:00'
+- timestamp: '2026-08-27T03:16:39.519599+00:00'
   curator: refresh_occurrence_statistics
   action: CORRECTED
   changes: 'occurrence_statistics 111/3240 -> 4665/4665 (media_count/total_occurrences),
     derived from distinct CultureMech recipe ids in the #337 occurrence table. The
     prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449).'
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 chemical_properties:
   cas_rn: 12125-02-9
   data_source: CultureBotHT compounds_to_cas.csv

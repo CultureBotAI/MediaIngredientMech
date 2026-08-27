@@ -216,13 +216,14 @@ curation_history:
     is simply wrong. Merging both fixes that grounding and clears CHEBI:6636''s collision,
     leaving only ''MgCl2'' on the anhydrous term where it belongs.'
   llm_assisted: false
-- timestamp: '2026-08-27T03:06:34.740828+00:00'
+- timestamp: '2026-08-27T03:16:39.519297+00:00'
   curator: refresh_occurrence_statistics
   action: CORRECTED
   changes: 'occurrence_statistics 160/2292 -> 4019/4026 (media_count/total_occurrences),
     derived from distinct CultureMech recipe ids in the #337 occurrence table. The
     prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449).'
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 chemical_properties:
   cas_rn: 7791-18-6
   data_source: PubChem (via CHEBI:86345)

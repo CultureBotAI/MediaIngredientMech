@@ -138,13 +138,14 @@ curation_history:
     the recorded grade overstated. ontology_id is unchanged — the term is correct.
     The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
   llm_assisted: false
-- timestamp: '2026-08-27T03:06:34.740428+00:00'
+- timestamp: '2026-08-27T03:16:39.518766+00:00'
   curator: refresh_occurrence_statistics
   action: CORRECTED
   changes: 'occurrence_statistics 56/56 -> 121/121 (media_count/total_occurrences),
     derived from distinct CultureMech recipe ids in the #337 occurrence table. The
     prior values came from the importer retired in #453, whose media_count counted
-    a list truncated to 50 examples (#449).'
+    a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 chemical_properties:
   cas_rn: 3483-12-3
   data_source: OAK/CHEBI xref

@@ -47,13 +47,14 @@ curation_history:
     only in a hyphen (''Vitamins-solution'' vs ''Vitamins solution''). Both were minted
     by the #288 batch, which did not compare the batch against itself. Source: mediadive.ingredient:2065.'
   llm_assisted: true
-- timestamp: '2026-08-27T03:06:34.741580+00:00'
+- timestamp: '2026-08-27T03:16:39.520314+00:00'
   curator: refresh_occurrence_statistics
   action: CORRECTED
   changes: 'occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived
     from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
     came from the importer retired in #453, whose media_count counted a list truncated
-    to 50 examples (#449).'
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+    rows=194137 distinct_recipes=15257]'
 notes: Imported from mim-queue (source_id=mediadive.ingredient:284); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a vitamin stock/pre-mix solution pending
   component-level recipe curation.
