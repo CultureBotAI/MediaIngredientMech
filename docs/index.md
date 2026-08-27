@@ -17,6 +17,7 @@ Name: mediaingredientmech-schema
 | [CommunityOrganismRoleAssignment](CommunityOrganismRoleAssignment.md) | Assignment of an organism-in-community role with supporting evidence (e |
 | [ComponentAssertion](ComponentAssertion.md) | Provenance for one IngredientRecord |
 | [ComponentEvidence](ComponentEvidence.md) | Evidence supporting an IngredientRecord |
+| [CultureMechReference](CultureMechReference.md) | A verified link from a MIM record to a CultureMech recipe, carried by stable ... |
 | [CurationEvent](CurationEvent.md) | Audit trail entry for a curation action |
 | [Dataset](Dataset.md) | A reference to a publicly available dataset (omics, sequence, phenotype) rele... |
 | [Discussion](Discussion.md) | A thread-like record of an open question, controversy, curation todo, emergin... |
@@ -65,7 +66,7 @@ Name: mediaingredientmech-schema
 | [confidence](confidence.md) | Confidence score for this role assignment (0 |
 | [confidence_score](confidence_score.md) | Confidence score (0 |
 | [count](count.md) | Record count for this categorized partition |
-| [culturemech_medium_name](culturemech_medium_name.md) | Cross-reference to CultureMech medium name if this is a defined medium |
+| [culturemech_reference](culturemech_reference.md) | Typed, stable link to a CultureMech recipe |
 | [curation_history](curation_history.md) | Audit trail of all curation actions |
 | [curator](curator.md) | Who performed this action (username or system) |
 | [curator_note](curator_note.md) | Curator's explanation of why this supports the role assignment |
@@ -102,6 +103,8 @@ Name: mediaingredientmech-schema
 | [mapping_status](mapping_status.md) | Current mapping status |
 | [match_level](match_level.md) | Technical method used to find this mapping |
 | [media_count](media_count.md) | Number of unique media containing this ingredient |
+| [medium_id](medium_id.md) | The stable CultureMech recipe id |
+| [medium_name](medium_name.md) | Display name at the time of linking |
 | [merged](merged.md) | List of record `identifier`s merged into this representative |
 | [metabolic_context](metabolic_context.md) | Pathway or metabolic context (e |
 | [method](method.md) | Method used to derive the constituent list |
@@ -138,6 +141,7 @@ Name: mediaingredientmech-schema
 | [reference_text](reference_text.md) | Human-readable citation text |
 | [reference_title](reference_title.md) | Title of the cited source (optional; populated by tooling) |
 | [reference_type](reference_type.md) | Type of reference (peer-reviewed, database, manual curation, etc |
+| [relationship](relationship.md) | How this record relates to that recipe |
 | [relevance](relevance.md) | Why this ingredient is relevant to the specified environment |
 | [repository](repository.md) |  |
 | [representative](representative.md) | `identifier` of the representative record if this record has been merged |
@@ -154,6 +158,7 @@ Name: mediaingredientmech-schema
 | [source](source.md) | Source of evidence (e |
 | [source_columns](source_columns.md) | The upstream columns the count was aggregated over, verbatim (e |
 | [source_occurrences](source_occurrences.md) | Prevalence recorded by a NON-media source, kept separate from total_occurrenc... |
+| [source_path](source_path.md) | Path to the recipe within CultureMech at the time of linking, as provenance |
 | [source_record](source_record.md) | Row key, recipe identifier, source label, or other locator within source |
 | [status](status.md) |  |
 | [supplied_form](supplied_form.md) | The material actually ordered and delivered for this ingredient — the thing o... |
@@ -183,6 +188,7 @@ Name: mediaingredientmech-schema
 | [ComponentEvidenceTypeEnum](ComponentEvidenceTypeEnum.md) | Kind of evidence supporting a component decomposition |
 | [ComponentMethodEnum](ComponentMethodEnum.md) | Method used to derive an IngredientRecord |
 | [ComponentReferenceScopeEnum](ComponentReferenceScopeEnum.md) | Resolution scope of a StockComponent |
+| [CultureMechRelationshipEnum](CultureMechRelationshipEnum.md) | How a MIM record relates to the CultureMech recipe it references |
 | [CurationActionEnum](CurationActionEnum.md) | Documentation-only reference list of well-known curation action labels |
 | [DatasetRepositoryEnum](DatasetRepositoryEnum.md) | Public repository hosting the dataset |
 | [DatasetTypeEnum](DatasetTypeEnum.md) | Type of dataset or data resource |

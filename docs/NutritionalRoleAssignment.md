@@ -146,6 +146,7 @@ attributes:
     from_schema: https://w3id.org/mediaingredientmech
     domain_of:
     - OntologyMapping
+    - CultureMechReference
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -222,6 +223,7 @@ attributes:
     owner: NutritionalRoleAssignment
     domain_of:
     - OntologyMapping
+    - CultureMechReference
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment

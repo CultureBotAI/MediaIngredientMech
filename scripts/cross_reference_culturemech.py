@@ -12,6 +12,8 @@ Usage:
 """
 
 import argparse
+import csv
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Optional
@@ -33,95 +35,135 @@ class CultureMechMatcher:
     """Match MediaIngredientMech entries to CultureMech media."""
 
     def __init__(self, culturemech_path: Path):
-        """Initialize with path to CultureMech data.
-
+        """
         Args:
-            culturemech_path: Path to CultureMech media YAML file.
+            culturemech_path: CultureMech `data/normalized_yaml/` recipe tree.
         """
         self.culturemech_path = culturemech_path
-        self.media_data = None
-        self.media_by_name = {}
+        self.media_by_id: dict[str, dict] = {}
+        self.media_by_name: dict[str, list[dict]] = {}
         self._load_culturemech()
 
-    def _load_culturemech(self) -> None:
-        """Load CultureMech media data."""
-        if not self.culturemech_path.exists():
-            console.print(f"[yellow]Warning: CultureMech file not found at {self.culturemech_path}[/yellow]")
-            return
+    def provenance(self) -> str:
+        """Which CultureMech tree produced these candidates (#491, cf. #486).
 
+        Ids are stable but the SET of recipes is not, so a candidate list read
+        later cannot be checked against the tree that produced it without this.
+        """
+        sha = "unknown"
         try:
-            with open(self.culturemech_path) as f:
-                self.media_data = yaml.safe_load(f)
+            result = subprocess.run(
+                ["git", "-C", str(self.culturemech_path), "rev-parse", "--short", "HEAD"],
+                capture_output=True, text=True, timeout=30)
+            if result.returncode == 0:
+                sha = result.stdout.strip() or "unknown"
+        except (OSError, subprocess.SubprocessError):
+            pass
+        shared = sum(1 for v in self.media_by_name.values() if len(v) > 1)
+        return (f"source=normalized_yaml culturemech_rev={sha} "
+                f"recipes={len(self.media_by_id)} "
+                f"distinct_names={len(self.media_by_name)} shared_names={shared}")
 
-            # Index by medium name
-            media_list = self.media_data.get("media", [])
-            for medium in media_list:
-                name = medium.get("medium_name", "").lower().strip()
-                if name:
-                    self.media_by_name[name] = medium
+    def _load_culturemech(self) -> None:
+        """Index the recipe tree by stable id, and by name MULTI-VALUED.
 
-            console.print(f"[green]Loaded {len(self.media_by_name)} media from CultureMech[/green]")
+        Fails closed. The previous version warned and returned on a missing
+        source, leaving an empty index, so every lookup returned "no match" --
+        indistinguishable from "the source could not be read". Its default path
+        (`../CultureMech/output/media.yaml`) did not exist, so that was the
+        normal case, not an edge one (#447, and the same shape as CultureMech#339).
 
-        except Exception as e:
-            console.print(f"[red]Error loading CultureMech data: {e}[/red]")
+        The name index maps to a LIST because CultureMech names are not unique:
+        2291 names are shared by more than one recipe (`defined_freshwater_medium_cocl2`
+        names 29) and 4784 recipes have no name at all. A one-value dict silently
+        dropped 3190 recipes, keeping whichever happened to be indexed last.
+        """
+        if not self.culturemech_path.exists():
+            raise SystemExit(
+                f"error: CultureMech recipe tree not found at {self.culturemech_path}. "
+                "Nothing was read. Pass --culturemech-path pointing at CultureMech's "
+                "data/normalized_yaml/ directory."
+            )
+
+        for path in sorted(self.culturemech_path.rglob("*.yaml")):
+            try:
+                recipe = yaml.safe_load(path.read_text(encoding="utf-8"))
+            except yaml.YAMLError:
+                continue
+            if not isinstance(recipe, dict):
+                continue
+            medium_id = str(recipe.get("id") or "").strip()
+            if not medium_id.startswith("CultureMech:"):
+                continue  # only stable-id-bearing recipes can be linked to
+            recipe["_source_path"] = str(path.relative_to(self.culturemech_path.parent.parent))
+            self.media_by_id[medium_id] = recipe
+            name = str(recipe.get("name") or "").lower().strip()
+            if name:
+                self.media_by_name.setdefault(name, []).append(recipe)
+
+        if not self.media_by_id:
+            raise SystemExit(
+                f"error: no recipes carrying a CultureMech: id found under "
+                f"{self.culturemech_path}. Refusing to report 'no matches' from an "
+                "empty index."
+            )
+
+        shared = sum(1 for v in self.media_by_name.values() if len(v) > 1)
+        console.print(
+            f"[green]Indexed {len(self.media_by_id)} recipes by stable id "
+            f"({len(self.media_by_name)} distinct names, {shared} shared by more "
+            f"than one recipe)[/green]"
+        )
 
     def find_medium_matches(self, ingredient_name: str) -> list[dict[str, Any]]:
-        """Find CultureMech media that match an ingredient name.
+        """CANDIDATES for a name, never accepted links.
 
-        Args:
-            ingredient_name: Ingredient name to search for.
+        Every result is a proposal for a curator. Name agreement is not evidence
+        of recipe identity -- both existing links in the corpus were verified by
+        composition, and the one whose names matched exactly (`GYPS` /
+        `gyps_medium`) turned out NOT to be the same formulation. So this returns
+        candidates and the caller may not promote them on its own; see
+        `report_candidates`.
 
-        Returns:
-            List of matching media records with match scores.
+        Every candidate carries the stable `CultureMech:` id, because a name
+        cannot identify a recipe: 2291 names are shared, and the worst names 29
+        distinct recipes.
         """
-        if not self.media_by_name:
+        matches: list[dict[str, Any]] = []
+        search_name = ingredient_name.lower().strip()
+        if not search_name:
             return []
 
-        matches = []
-        search_name = ingredient_name.lower().strip()
+        def add(recipes: list[dict], match_type: str, confidence: float) -> None:
+            for recipe in recipes:
+                matches.append({
+                    "medium": recipe,
+                    "medium_id": recipe.get("id"),
+                    "match_type": match_type,
+                    "confidence": confidence,
+                })
 
-        # Exact match
+        # Exact name. Still only a candidate, and still possibly several recipes.
         if search_name in self.media_by_name:
-            matches.append({
-                "medium": self.media_by_name[search_name],
-                "match_type": "exact",
-                "confidence": 1.0,
-            })
+            add(self.media_by_name[search_name], "exact_name", 1.0)
             return matches
 
-        # Partial matches
-        for name, medium in self.media_by_name.items():
-            # Check if search term is in medium name
+        for name, recipes in self.media_by_name.items():
             if search_name in name:
-                matches.append({
-                    "medium": medium,
-                    "match_type": "contains",
-                    "confidence": 0.8,
-                })
-            # Check if medium name is in search term
+                add(recipes, "contains", 0.8)
             elif name in search_name:
-                matches.append({
-                    "medium": medium,
-                    "match_type": "contained_by",
-                    "confidence": 0.7,
-                })
+                add(recipes, "contained_by", 0.7)
 
-        # Fuzzy matching (token overlap)
         if not matches:
             search_tokens = set(search_name.split())
-            for name, medium in self.media_by_name.items():
+            for name, recipes in self.media_by_name.items():
                 name_tokens = set(name.split())
                 overlap = search_tokens & name_tokens
-                if overlap and len(overlap) >= 2:  # At least 2 words match
-                    confidence = len(overlap) / max(len(search_tokens), len(name_tokens))
-                    matches.append({
-                        "medium": medium,
-                        "match_type": "fuzzy",
-                        "confidence": confidence,
-                    })
+                if len(overlap) >= 2:
+                    add(recipes, "fuzzy",
+                        len(overlap) / max(len(search_tokens), len(name_tokens)))
 
-        # Sort by confidence descending
-        matches.sort(key=lambda x: x["confidence"], reverse=True)
+        matches.sort(key=lambda x: (-x["confidence"], str(x["medium_id"])))
         return matches
 
     def get_medium_ingredients(self, medium: dict) -> list[str]:
@@ -167,7 +209,7 @@ def cross_reference_all(
             continue
 
         # Filter by type if requested
-        if complex_media_only and record.get("ingredient_type") != "NAMED_MEDIUM":
+        if complex_media_only and record.get("ingredient_type") not in WHOLE_MEDIUM_TYPES:
             continue
 
         ingredient_name = record.get("preferred_term", "")
@@ -213,7 +255,7 @@ def display_cross_reference_results(
         # Show best match
         best_match = results[idx][0]
         medium = best_match["medium"]
-        medium_name = medium.get("medium_name", "N/A")
+        medium_name = medium.get("name", "N/A")
         match_type = best_match["match_type"]
         confidence = best_match["confidence"]
 
@@ -262,48 +304,75 @@ def display_medium_details(medium: dict, matcher: CultureMechMatcher) -> None:
     console.print(Panel(panel_content, title=medium_name, border_style="cyan"))
 
 
-def update_culturemech_links(
+# A record can be a whole named medium AND compositionally undefined, and
+# IngredientTypeEnum makes it pick one (#478). BHI -- a named medium and one of
+# only two records carrying a CultureMech link -- is filed UNDEFINED_MIXTURE,
+# its own note saying "state no composition to split on". Filtering on
+# NAMED_MEDIUM alone therefore excluded 100% of the records that actually have a
+# link, and the run returned a clean, confident 0 candidates (#490).
+WHOLE_MEDIUM_TYPES = frozenset({"NAMED_MEDIUM", "UNDEFINED_MIXTURE"})
+
+CANDIDATE_REPORT = Path("reports/culturemech_link_candidates.tsv")
+
+
+def report_candidates(
     curator: IngredientCurator,
     results: dict[int, list[dict]],
     confidence_threshold: float = 0.8,
-    dry_run: bool = True
+    provenance: str = "",
 ) -> int:
-    """Update records with CultureMech cross-references.
+    """Write candidates for curator review. Writes NO links into any record.
 
-    Args:
-        curator: IngredientCurator instance.
-        results: Cross-reference results.
-        confidence_threshold: Minimum confidence for auto-linking.
-        dry_run: If True, don't actually update records.
+    This replaces `update_culturemech_links`, which took `matches[0]` -- possibly
+    a substring or two-token-overlap match -- and stored it as an accepted link
+    keyed on a display name. Three things were wrong with that, and only the
+    third is fixed by storing an id instead:
 
-    Returns:
-        Number of records updated.
+      1. a name match is not evidence of recipe identity. `GYPS` and
+         `gyps_medium` match exactly and are NOT the same formulation;
+      2. a confidence threshold cannot separate "right" from "plausible" here --
+         `contains` scored 0.8 and cleared the default threshold;
+      3. the stored value could not identify a recipe at all.
+
+    So acceptance is a curator's act. The tool proposes; a human writes the
+    `culturemech_reference` with a relationship and evidence. Ambiguous
+    candidates -- PYG matches six CultureMech variants -- are reported as
+    ambiguous and stay unlinked, which is the required behaviour, not a
+    limitation.
     """
-    updated = 0
+    CANDIDATE_REPORT.parent.mkdir(parents=True, exist_ok=True)
+    rows = 0
+    with CANDIDATE_REPORT.open("w", newline="", encoding="utf-8") as fh:
+        writer = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        if provenance:
+            writer.writerow([f"# {provenance}"])
+        writer.writerow([
+            "mim_identifier", "preferred_term", "candidate_count", "ambiguous",
+            "candidate_medium_id", "candidate_medium_name", "match_type",
+            "confidence", "source_path",
+        ])
+        for idx, matches in sorted(results.items()):
+            record = curator.records[idx]
+            keep = [m for m in matches if m["confidence"] >= confidence_threshold]
+            if not keep:
+                continue
+            ambiguous = "YES" if len(keep) > 1 else "no"
+            for match in keep:
+                medium = match["medium"]
+                writer.writerow([
+                    record.get("identifier", ""), record.get("preferred_term", ""),
+                    len(keep), ambiguous, match.get("medium_id", ""),
+                    medium.get("name", ""), match["match_type"],
+                    f"{match['confidence']:.2f}", medium.get("_source_path", ""),
+                ])
+                rows += 1
 
-    for idx, matches in results.items():
-        best_match = matches[0]
-        if best_match["confidence"] < confidence_threshold:
-            continue
-
-        record = curator.records[idx]
-        medium = best_match["medium"]
-        medium_name = medium.get("medium_name", "")
-
-        if dry_run:
-            console.print(f"[DRY RUN] Would link: {record.get('preferred_term')} → {medium_name}")
-        else:
-            record["culturemech_medium_name"] = medium_name
-            curator.add_note(
-                record,
-                f"Cross-referenced to CultureMech medium: {medium_name} "
-                f"(confidence: {best_match['confidence']:.2f})"
-            )
-            console.print(f"Linked: {record.get('preferred_term')} → {medium_name}")
-
-        updated += 1
-
-    return updated
+    console.print(
+        f"[bold]{rows} candidate row(s) written to {CANDIDATE_REPORT}[/bold]\n"
+        "No record was modified. A candidate becomes a link only when a curator "
+        "adds `culturemech_reference` with a relationship and the evidence for it."
+    )
+    return rows
 
 
 def main():
@@ -320,7 +389,7 @@ def main():
     parser.add_argument(
         "--culturemech-path",
         type=Path,
-        default=Path("../CultureMech/output/media.yaml"),
+        default=Path("../CultureMech/data/normalized_yaml"),
         help="Path to CultureMech media file",
     )
     parser.add_argument(
@@ -334,20 +403,15 @@ def main():
         help="Search for specific ingredient name",
     )
     parser.add_argument(
-        "--update-links",
+        "--report-candidates",
         action="store_true",
-        help="Update records with CultureMech links",
+        help="Write a curator-review candidate report. Never writes links (#447)",
     )
     parser.add_argument(
         "--confidence-threshold",
         type=float,
         default=0.8,
-        help="Minimum confidence for auto-linking (default: 0.8)",
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Preview changes without saving",
+        help="Minimum confidence for a candidate to be reported (default: 0.8)",
     )
     parser.add_argument(
         "--show-details",
@@ -402,17 +466,12 @@ def main():
     # Display results
     display_cross_reference_results(curator, results, matcher)
 
-    # Update links
-    if args.update_links:
-        console.print(f"\n[bold]Updating CultureMech links (threshold: {args.confidence_threshold})[/bold]")
-        updated = update_culturemech_links(curator, results, args.confidence_threshold, args.dry_run)
-
-        console.print(f"\n{'[DRY RUN] Would update' if args.dry_run else 'Updated'}: {updated} records")
-
-        if not args.dry_run and updated > 0:
-            console.print(f"\n[bold green]Saving changes to {args.data_path}[/bold green]")
-            curator.save()
-            console.print("[green]✓ Saved successfully[/green]")
+    # Candidates for review. This tool no longer writes links (#447): acceptance
+    # requires a relationship and evidence, which is a curator's judgement.
+    if args.report_candidates:
+        console.print(f"\n[bold]Collecting candidates (threshold: {args.confidence_threshold})[/bold]")
+        report_candidates(curator, results, args.confidence_threshold,
+                          provenance=matcher.provenance())
 
     return 0
 

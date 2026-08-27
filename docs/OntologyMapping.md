@@ -200,6 +200,7 @@ attributes:
     rank: 1000
     domain_of:
     - OntologyMapping
+    - CultureMechReference
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -295,6 +296,7 @@ attributes:
     owner: OntologyMapping
     domain_of:
     - OntologyMapping
+    - CultureMechReference
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment

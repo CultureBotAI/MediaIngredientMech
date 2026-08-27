@@ -265,6 +265,7 @@ attributes:
     from_schema: https://w3id.org/kg-microbe/mech-shared
     domain_of:
     - OntologyMapping
+    - CultureMechReference
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment
@@ -448,6 +449,7 @@ attributes:
     owner: Dataset
     domain_of:
     - OntologyMapping
+    - CultureMechReference
     - CommunityOrganismRoleAssignment
     - NutritionalRoleAssignment
     - PhysicochemicalRoleAssignment

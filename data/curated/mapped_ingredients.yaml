@@ -1151,10 +1151,17 @@ ingredients:
       be handled separately. Replaced the active mapping evidence that described the
       false component claim; registry identity and ingredient type were not changed.'
     llm_assisted: false
+  - timestamp: '2026-08-27T18:00:01.744834+00:00'
+    curator: migrate_culturemech_reference
+    action: CORRECTED
+    changes: 'culturemech_medium_name=''BHI'' -> culturemech_reference CultureMech:015492
+      (EXACT_FORMULATION). The id was already in the evidence prose; a stable reference
+      in a sentence is not a reference. Neither claim is strengthened: BHI was already
+      composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical
+      (#447).'
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
-  culturemech_medium_name: BHI
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:bhi
     ontology_label: BHI
@@ -1167,6 +1174,15 @@ ingredients:
         separately. Corrected prior active evidence: BHI to MICRO:0000193 brain heart
         infusion is a whole-medium identity/alias claim, not a has-part edge. The
         component was removed; identity cleanup must be handled separately.'
+  culturemech_reference:
+    medium_id: CultureMech:015492
+    medium_name: BHI
+    relationship: EXACT_FORMULATION
+    source_path: data/normalized_yaml/specialized/bhi.yaml
+    evidence: 'Verified by composition, not by name: CultureMech:015492 lists Beef
+      heart + Calf brains + Proteose Peptone + Disodium phosphate + Sodium Chloride,
+      which is brain heart infusion. The name agreeing is incidental — it was the
+      composition that was checked (#213/#308).'
 - identifier: CHEBI:41189
   preferred_term: Butane-1,4-diol
   synonyms:
@@ -2931,6 +2947,14 @@ ingredients:
       to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
       concentrations were not changed.'
     llm_assisted: false
+  - timestamp: '2026-08-27T18:00:01.745103+00:00'
+    curator: migrate_culturemech_reference
+    action: CORRECTED
+    changes: 'culturemech_medium_name=''gyps_medium'' -> culturemech_reference CultureMech:002799
+      (SIMILAR_COMPOSITION). The id was already in the evidence prose; a stable reference
+      in a sentence is not a reference. Neither claim is strengthened: BHI was already
+      composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical
+      (#447).'
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   components:
@@ -2962,7 +2986,6 @@ ingredients:
     notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
       variant hierarchy, or complete culturing recipe.
   ingredient_type: UNDEFINED_MIXTURE
-  culturemech_medium_name: gyps_medium
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:gyps
     ontology_label: GYPS
@@ -2983,6 +3006,15 @@ ingredients:
         by name: name matches exactly and 3 of 4 curated constituents agree (glucose,
         peptone, yeast extract); CultureMech additionally lists MES and Sea Salt and
         no starch, so the recipes are close but not identical.'
+  culturemech_reference:
+    medium_id: CultureMech:002799
+    medium_name: gyps_medium
+    relationship: SIMILAR_COMPOSITION
+    source_path: data/normalized_yaml/bacterial/gyps_medium.yaml
+    evidence: Close but NOT identical, so deliberately not EXACT_FORMULATION. 3 of
+      4 curated constituents agree (glucose, peptone, yeast extract); CultureMech
+      additionally lists MES and Sea Salt and no starch. The names match exactly,
+      which is precisely why the name is not the evidence (#213/#308).
 - identifier: kgmicrobe.ingredient:gallate_formate
   preferred_term: Gallate + Formate
   synonyms:

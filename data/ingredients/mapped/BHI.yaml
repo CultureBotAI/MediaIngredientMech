@@ -76,10 +76,17 @@ curation_history:
     handled separately. Replaced the active mapping evidence that described the false
     component claim; registry identity and ingredient type were not changed.'
   llm_assisted: false
+- timestamp: '2026-08-27T18:00:01.744834+00:00'
+  curator: migrate_culturemech_reference
+  action: CORRECTED
+  changes: 'culturemech_medium_name=''BHI'' -> culturemech_reference CultureMech:015492
+    (EXACT_FORMULATION). The id was already in the evidence prose; a stable reference
+    in a sentence is not a reference. Neither claim is strengthened: BHI was already
+    composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical
+    (#447).'
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
   or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
-culturemech_medium_name: BHI
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:bhi
   ontology_label: BHI
@@ -92,3 +99,12 @@ ontology_mapping:
       separately. Corrected prior active evidence: BHI to MICRO:0000193 brain heart
       infusion is a whole-medium identity/alias claim, not a has-part edge. The component
       was removed; identity cleanup must be handled separately.'
+culturemech_reference:
+  medium_id: CultureMech:015492
+  medium_name: BHI
+  relationship: EXACT_FORMULATION
+  source_path: data/normalized_yaml/specialized/bhi.yaml
+  evidence: 'Verified by composition, not by name: CultureMech:015492 lists Beef heart
+    + Calf brains + Proteose Peptone + Disodium phosphate + Sodium Chloride, which
+    is brain heart infusion. The name agreeing is incidental — it was the composition
+    that was checked (#213/#308).'
