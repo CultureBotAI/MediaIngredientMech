@@ -1,7 +1,7 @@
 # Ingredient/mixture partonomy: `components`
 
 `IngredientRecord.components` is an unordered, one-level material **has-part**
-assertion for a `STOCK_SOLUTION`, `DEFINED_MEDIUM`, or `UNDEFINED_MIXTURE`.
+assertion for a `STOCK_SOLUTION`, `NAMED_MEDIUM`, or `UNDEFINED_MIXTURE`.
 It may transcribe a combination label or record known parts of a named mixture.
 It does not say that the record *is* one of its parts, and it is not evidence of
 a complete culturing recipe unless the assertion says so explicitly.

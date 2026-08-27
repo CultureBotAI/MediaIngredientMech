@@ -136,7 +136,7 @@ def generate_markdown_report(
     # Recommendations
     lines.append("## Recommendations\n")
     lines.append("### Immediate Actions\n")
-    lines.append("1. **Review high-confidence entries** - These should likely be reclassified as `DEFINED_MEDIUM`")
+    lines.append("1. **Review high-confidence entries** - These should likely be reclassified as `NAMED_MEDIUM`")
     lines.append("2. **Check CHEBI mappings** - Complex media should not be mapped to pure chemical CHEBI terms")
     lines.append("3. **Cross-reference CultureMech** - Find full recipe formulations for these media\n")
 

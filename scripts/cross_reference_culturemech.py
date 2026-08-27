@@ -154,7 +154,7 @@ def cross_reference_all(
     Args:
         curator: IngredientCurator instance.
         matcher: CultureMechMatcher instance.
-        complex_media_only: If True, only check DEFINED_MEDIUM entries.
+        complex_media_only: If True, only check NAMED_MEDIUM entries.
 
     Returns:
         Dict mapping ingredient index to list of CultureMech matches.
@@ -167,7 +167,7 @@ def cross_reference_all(
             continue
 
         # Filter by type if requested
-        if complex_media_only and record.get("ingredient_type") != "DEFINED_MEDIUM":
+        if complex_media_only and record.get("ingredient_type") != "NAMED_MEDIUM":
             continue
 
         ingredient_name = record.get("preferred_term", "")
@@ -326,7 +326,7 @@ def main():
     parser.add_argument(
         "--complex-media-only",
         action="store_true",
-        help="Only search for DEFINED_MEDIUM entries",
+        help="Only search for NAMED_MEDIUM entries",
     )
     parser.add_argument(
         "--ingredient",

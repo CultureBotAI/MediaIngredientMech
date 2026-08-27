@@ -3,7 +3,7 @@
 # Slot: ingredient_type 
 
 
-_Classification of entry type: single chemical ingredient vs whole named medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). DEFINED_MEDIUM: A complete, named medium formulation/recipe (R2A agar, LB broth) -- "defined" = record granularity (a whole named medium), NOT "chemically defined"; undefined components are expected. UNDEFINED_MIXTURE: Complex mixture of unknown composition (yeast extract, peptone). STOCK_SOLUTION: Pre-mixed solution of defined ingredients._
+_Classification of entry type: single chemical ingredient vs whole named medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). NAMED_MEDIUM: A complete, named medium formulation/recipe (R2A agar, LB broth) -- "defined" = record granularity (a whole named medium), NOT "chemically defined"; undefined components are expected. UNDEFINED_MIXTURE: Complex mixture of unknown composition (yeast extract, peptone). STOCK_SOLUTION: Pre-mixed solution of defined ingredients._
 
 
 
@@ -67,9 +67,9 @@ Alias: ingredient_type
 ```yaml
 name: ingredient_type
 description: 'Classification of entry type: single chemical ingredient vs whole named
-  medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). DEFINED_MEDIUM:
-  A complete, named medium formulation/recipe (R2A agar, LB broth) -- "defined" =
-  record granularity (a whole named medium), NOT "chemically defined"; undefined components
+  medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). NAMED_MEDIUM: A
+  complete, named medium formulation/recipe (R2A agar, LB broth) -- "defined" = record
+  granularity (a whole named medium), NOT "chemically defined"; undefined components
   are expected. UNDEFINED_MIXTURE: Complex mixture of unknown composition (yeast extract,
   peptone). STOCK_SOLUTION: Pre-mixed solution of defined ingredients.'
 from_schema: https://w3id.org/mediaingredientmech

@@ -90,7 +90,7 @@ def test_nested_component_assertion_round_trips_and_scope_drift_is_caught(tmp_pa
     record = _record(
         "kgmicrobe.ingredient:test_mix",
         "Test mix",
-        ingredient_type="DEFINED_MEDIUM",
+        ingredient_type="NAMED_MEDIUM",
         components=[
             {
                 "component_name": "alpha",
@@ -134,7 +134,7 @@ def test_single_field_drift_is_caught_with_counts_unchanged(tmp_path):
     shape of the #148 drift (ingredient_type flipped on 53 records)."""
     vr = _load("verify_roundtrip")
     orig = [_record("UNMAPPED_0113", "BCYE agar", ingredient_type="UNDEFINED_MIXTURE")]
-    agg = [_record("UNMAPPED_0113", "BCYE agar", ingredient_type="DEFINED_MEDIUM")]
+    agg = [_record("UNMAPPED_0113", "BCYE agar", ingredient_type="NAMED_MEDIUM")]
     o, a = _pair(tmp_path, orig, agg)
 
     results = vr.verify_round_trip(o, a)
@@ -165,7 +165,7 @@ def test_many_mismatches_still_fail_despite_the_error_cap(tmp_path):
     """The cap bounds *reporting*, not the verdict — data_diffs is set before it."""
     vr = _load("verify_roundtrip")
     orig = [_record(f"CHEBI:{i}", f"T{i}", ingredient_type="UNDEFINED_MIXTURE") for i in range(60)]
-    agg = [_record(f"CHEBI:{i}", f"T{i}", ingredient_type="DEFINED_MEDIUM") for i in range(60)]
+    agg = [_record(f"CHEBI:{i}", f"T{i}", ingredient_type="NAMED_MEDIUM") for i in range(60)]
     o, a = _pair(tmp_path, orig, agg)
 
     results = vr.verify_round_trip(o, a)

@@ -88,10 +88,10 @@ DECOMPOSE = {
          ("beef extract", "FOODON:03302088")], "UNDEFINED_MIXTURE"),
     "Mono- And Disaccharides": (
         [("monosaccharide", "CHEBI:35381"), ("disaccharide", "CHEBI:36233")],
-        "DEFINED_MEDIUM"),
+        "NAMED_MEDIUM"),
     "Esculin Ferric Citrate": (
         [("esculin", "CHEBI:4853"), ("iron(III) citrate", "CHEBI:144421")],
-        "DEFINED_MEDIUM"),
+        "NAMED_MEDIUM"),
 }
 WHY_DECOMPOSE = {
     "Mono- And Disaccharides":

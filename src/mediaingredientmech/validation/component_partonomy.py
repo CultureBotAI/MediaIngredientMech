@@ -18,7 +18,7 @@ from typing import Any
 import yaml
 
 CURIE_RE = re.compile(r"^[A-Za-z][A-Za-z0-9.]*:[A-Za-z0-9][A-Za-z0-9._~-]*$")
-COMPONENT_PARENT_TYPES = frozenset({"DEFINED_MEDIUM", "UNDEFINED_MIXTURE", "STOCK_SOLUTION"})
+COMPONENT_PARENT_TYPES = frozenset({"NAMED_MEDIUM", "UNDEFINED_MIXTURE", "STOCK_SOLUTION"})
 
 
 @dataclass(frozen=True)
