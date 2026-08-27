@@ -1,6 +1,6 @@
 
 
-# Slot: form
+# Slot: form 
 
 
 _The physical/chemical form supplied, e.g. `sodium salt`, `heptahydrate`, `anhydrous powder`, `50% w/v solution`._

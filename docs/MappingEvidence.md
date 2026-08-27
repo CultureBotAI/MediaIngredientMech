@@ -1,6 +1,6 @@
 
 
-# Class: MappingEvidence
+# Class: MappingEvidence 
 
 
 _Evidence for an ontology mapping_
@@ -20,44 +20,44 @@ URI: [mediaingredientmech:MappingEvidence](https://w3id.org/mediaingredientmech/
     class MappingEvidence
     click MappingEvidence href "../MappingEvidence/"
       MappingEvidence : cas_rn
-
+        
       MappingEvidence : confidence_score
-
+        
       MappingEvidence : doi
-
+        
       MappingEvidence : evidence_type
-
-
-
-
-
+        
+          
+    
+        
+        
         MappingEvidence --> "1" EvidenceTypeEnum : evidence_type
         click EvidenceTypeEnum href "../EvidenceTypeEnum/"
+    
 
-
-
+        
       MappingEvidence : explanation
-
+        
       MappingEvidence : notes
-
+        
       MappingEvidence : pmid
-
+        
       MappingEvidence : snippet
-
+        
       MappingEvidence : source
-
+        
       MappingEvidence : supports
-
-
-
-
-
+        
+          
+    
+        
+        
         MappingEvidence --> "0..1" EvidenceSupportEnum : supports
         click EvidenceSupportEnum href "../EvidenceSupportEnum/"
+    
 
-
-
-
+        
+      
 ```
 
 

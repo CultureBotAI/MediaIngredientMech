@@ -1,6 +1,6 @@
 
 
-# Slot: component_id
+# Slot: component_id 
 
 
 _Semantic CURIE for the component (e.g. CHEBI:..., MICRO:..., or cas:...). It is not unconditionally a foreign key to one MIM row: reference_scope states whether the CURIE is represented in MIM or deliberately external. Omit only when reference_scope is UNMAPPED._

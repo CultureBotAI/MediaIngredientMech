@@ -1,6 +1,6 @@
 
 
-# Class: CellularMetabolicRoleAssignment
+# Class: CellularMetabolicRoleAssignment 
 
 
 _Assignment of a cellular-metabolic facet role (what the ingredient does inside or to the cultured microbe) with supporting evidence. Assignments in this facet are often organism-conditional (e.g., ELECTRON_DONOR applies only for organisms that oxidize the compound for energy); capture that in `metabolic_context`._
@@ -20,34 +20,34 @@ URI: [mediaingredientmech:CellularMetabolicRoleAssignment](https://w3id.org/medi
     class CellularMetabolicRoleAssignment
     click CellularMetabolicRoleAssignment href "../CellularMetabolicRoleAssignment/"
       CellularMetabolicRoleAssignment : confidence
-
+        
       CellularMetabolicRoleAssignment : evidence
-
-
-
-
-
+        
+          
+    
+        
+        
         CellularMetabolicRoleAssignment --> "*" RoleCitation : evidence
         click RoleCitation href "../RoleCitation/"
+    
 
-
-
+        
       CellularMetabolicRoleAssignment : metabolic_context
-
+        
       CellularMetabolicRoleAssignment : notes
-
+        
       CellularMetabolicRoleAssignment : role
-
-
-
-
-
+        
+          
+    
+        
+        
         CellularMetabolicRoleAssignment --> "1" CellularMetabolicRoleEnum : role
         click CellularMetabolicRoleEnum href "../CellularMetabolicRoleEnum/"
+    
 
-
-
-
+        
+      
 ```
 
 

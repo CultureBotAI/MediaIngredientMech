@@ -1,6 +1,6 @@
 
 
-# Slot: component_name
+# Slot: component_name 
 
 
 _Component ingredient name as listed in the supporting source (e.g. "FeCl3 x 6 H2O")._

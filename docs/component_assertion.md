@@ -1,6 +1,6 @@
 
 
-# Slot: component_assertion
+# Slot: component_assertion 
 
 
 _Method and structured evidence for the record-level has-part claim carried by components. Required whenever components is non-empty and forbidden when components is absent; the corpus-level partonomy validator enforces that cross-field invariant._

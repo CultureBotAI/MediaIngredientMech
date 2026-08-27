@@ -1,6 +1,6 @@
 
 
-# Slot: catalog_number
+# Slot: catalog_number 
 
 
 _Vendor catalogue number, e.g. `C-5013`._

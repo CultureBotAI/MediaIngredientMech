@@ -1,6 +1,6 @@
 
 
-# Class: OccurrenceStats
+# Class: OccurrenceStats 
 
 
 _Statistics about ingredient usage across media_
@@ -20,25 +20,25 @@ URI: [mediaingredientmech:OccurrenceStats](https://w3id.org/mediaingredientmech/
     class OccurrenceStats
     click OccurrenceStats href "../OccurrenceStats/"
       OccurrenceStats : concentration_range
-
+        
       OccurrenceStats : media_count
-
+        
       OccurrenceStats : sample_media
-
+        
       OccurrenceStats : source_occurrences
-
-
-
-
-
+        
+          
+    
+        
+        
         OccurrenceStats --> "*" SourceOccurrence : source_occurrences
         click SourceOccurrence href "../SourceOccurrence/"
+    
 
-
-
+        
       OccurrenceStats : total_occurrences
-
-
+        
+      
 ```
 
 

@@ -1,6 +1,6 @@
 
 
-# Class: SupportingReference
+# Class: SupportingReference 
 
 
 _A lightweight literature/database citation supporting a Discussion or Dataset. Self-contained (so this module has no dependency on each repo's EvidenceItem); carries a verbatim `snippet` so the same anti-hallucination snippet-vs-cached-abstract check the Mechs already run can validate it._
@@ -20,29 +20,29 @@ URI: [mediaingredientmech:SupportingReference](https://w3id.org/mediaingredientm
     class SupportingReference
     click SupportingReference href "../SupportingReference/"
       SupportingReference : evidence_source
-
+        
       SupportingReference : explanation
-
+        
       SupportingReference : notes
-
+        
       SupportingReference : reference
-
+        
       SupportingReference : reference_title
-
+        
       SupportingReference : snippet
-
+        
       SupportingReference : supports
-
-
-
-
-
+        
+          
+    
+        
+        
         SupportingReference --> "0..1" SupportLevelEnum : supports
         click SupportLevelEnum href "../SupportLevelEnum/"
+    
 
-
-
-
+        
+      
 ```
 
 

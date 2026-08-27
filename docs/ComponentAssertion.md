@@ -1,6 +1,6 @@
 
 
-# Class: ComponentAssertion
+# Class: ComponentAssertion 
 
 
 _Provenance for one IngredientRecord.components decomposition. The method states how the constituent list was derived; evidence identifies the source that can be checked. It describes has-part only: a mapping or interpretation of the whole record as another ingredient is an ontology-grounding claim, not a component._
@@ -20,41 +20,41 @@ URI: [mediaingredientmech:ComponentAssertion](https://w3id.org/mediaingredientme
     class ComponentAssertion
     click ComponentAssertion href "../ComponentAssertion/"
       ComponentAssertion : completeness
-
-
-
-
-
+        
+          
+    
+        
+        
         ComponentAssertion --> "1" ComponentCompletenessEnum : completeness
         click ComponentCompletenessEnum href "../ComponentCompletenessEnum/"
+    
 
-
-
+        
       ComponentAssertion : evidence
-
-
-
-
-
+        
+          
+    
+        
+        
         ComponentAssertion --> "1..*" ComponentEvidence : evidence
         click ComponentEvidence href "../ComponentEvidence/"
+    
 
-
-
+        
       ComponentAssertion : method
-
-
-
-
-
+        
+          
+    
+        
+        
         ComponentAssertion --> "1" ComponentMethodEnum : method
         click ComponentMethodEnum href "../ComponentMethodEnum/"
+    
 
-
-
+        
       ComponentAssertion : notes
-
-
+        
+      
 ```
 
 

@@ -1,6 +1,6 @@
 
 
-# Slot: source
+# Slot: source 
 
 
 
@@ -18,10 +18,10 @@ Alias: source
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
 | [IngredientSynonym](IngredientSynonym.md) | Alternative name or raw text variant for an ingredient |  no  |
-| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
-| [StockComponent](StockComponent.md) | One constituent in an IngredientRecord |  no  |
-| [SourceOccurrence](SourceOccurrence.md) | An occurrence count attributed to a specific upstream source, with the source... |  no  |
 | [ComponentEvidence](ComponentEvidence.md) | Evidence supporting an IngredientRecord |  no  |
+| [StockComponent](StockComponent.md) | One constituent in an IngredientRecord |  no  |
+| [MappingEvidence](MappingEvidence.md) | Evidence for an ontology mapping |  no  |
+| [SourceOccurrence](SourceOccurrence.md) | An occurrence count attributed to a specific upstream source, with the source... |  no  |
 
 
 

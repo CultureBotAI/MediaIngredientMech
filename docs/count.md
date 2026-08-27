@@ -1,6 +1,6 @@
 
 
-# Slot: count
+# Slot: count 
 
 
 
@@ -17,8 +17,8 @@ Alias: count
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-| [IngredientCollection](IngredientCollection.md) | Root container for all ingredient records |  no  |
 | [SourceOccurrence](SourceOccurrence.md) | An occurrence count attributed to a specific upstream source, with the source... |  no  |
+| [IngredientCollection](IngredientCollection.md) | Root container for all ingredient records |  no  |
 
 
 

@@ -1,6 +1,6 @@
 
 
-# Class: Discussion
+# Class: Discussion 
 
 
 _A thread-like record of an open question, controversy, curation todo, emerging hypothesis, knowledge gap, or interpretation debate attached to a record or one of its sub-objects. Captures the discourse / knowledge-gap layer of curation. External thread links (GitHub issues, forum posts) are cited via the `evidence` block, not a separate slot._
@@ -20,68 +20,68 @@ URI: [mediaingredientmech:Discussion](https://w3id.org/mediaingredientmech/Discu
     class Discussion
     click Discussion href "../Discussion/"
       Discussion : attaches_to
-
+        
       Discussion : discussion_id
-
+        
       Discussion : evidence
-
-
-
-
-
+        
+          
+    
+        
+        
         Discussion --> "*" SupportingReference : evidence
         click SupportingReference href "../SupportingReference/"
+    
 
-
-
+        
       Discussion : kind
-
-
-
-
-
+        
+          
+    
+        
+        
         Discussion --> "0..1" DiscussionKindEnum : kind
         click DiscussionKindEnum href "../DiscussionKindEnum/"
+    
 
-
-
+        
       Discussion : notes
-
+        
       Discussion : posed_by
-
+        
       Discussion : posed_date
-
+        
       Discussion : prompt
-
+        
       Discussion : proposed_experiments
-
-
-
-
-
+        
+          
+    
+        
+        
         Discussion --> "*" ProposedExperiment : proposed_experiments
         click ProposedExperiment href "../ProposedExperiment/"
+    
 
-
-
+        
       Discussion : rationale
-
+        
       Discussion : resolution_note
-
+        
       Discussion : resolved_date
-
+        
       Discussion : status
-
-
-
-
-
+        
+          
+    
+        
+        
         Discussion --> "0..1" DiscussionStatusEnum : status
         click DiscussionStatusEnum href "../DiscussionStatusEnum/"
+    
 
-
-
-
+        
+      
 ```
 
 
