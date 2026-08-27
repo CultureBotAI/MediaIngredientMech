@@ -183,3 +183,38 @@ def test_gyps_keeps_its_compositional_caveat():
 
     assert "not identical" in evidence.lower()
     assert "mes" in evidence.lower() and "starch" in evidence.lower()
+
+
+def test_the_whole_medium_filter_admits_records_that_actually_have_links(mod):
+    """`--complex-media-only` filtered on NAMED_MEDIUM alone, and BOTH records
+    carrying a CultureMech link are UNDEFINED_MIXTURE -- so it excluded 100% of
+    its target population and returned a confident 0 candidates (#490). The enum
+    mixes granularity with composition (#478), so a whole medium can legitimately
+    be filed under either."""
+    linked_types = {
+        yaml.safe_load(
+            (ROOT / "data/ingredients/mapped" / f"{stem}.yaml").read_text(encoding="utf-8")
+        )["ingredient_type"]
+        for stem in ("BHI", "GYPS")
+    }
+
+    assert linked_types <= mod.WHOLE_MEDIUM_TYPES, (
+        f"records with links are typed {linked_types}, which the filter excludes")
+
+
+def test_the_candidate_report_carries_provenance(mod, tmp_path, monkeypatch):
+    """Ids are stable but the SET of recipes is not, so a candidate list read
+    later cannot be checked against the tree that produced it (#491, cf. #486)."""
+    monkeypatch.chdir(tmp_path)
+
+    class _Curator:
+        records = [{"identifier": "x", "preferred_term": "PYG"}]
+
+    results = {0: [{"medium": {"id": "CultureMech:000001", "name": "p", "_source_path": ""},
+                    "medium_id": "CultureMech:000001",
+                    "match_type": "contains", "confidence": 0.9}]}
+
+    mod.report_candidates(_Curator(), results, 0.8, provenance="culturemech_rev=abc123")
+
+    first = (tmp_path / "reports/culturemech_link_candidates.tsv").read_text().splitlines()[0]
+    assert first.startswith("# ") and "culturemech_rev=abc123" in first

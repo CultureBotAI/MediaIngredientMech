@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import csv
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Optional
@@ -42,6 +43,26 @@ class CultureMechMatcher:
         self.media_by_id: dict[str, dict] = {}
         self.media_by_name: dict[str, list[dict]] = {}
         self._load_culturemech()
+
+    def provenance(self) -> str:
+        """Which CultureMech tree produced these candidates (#491, cf. #486).
+
+        Ids are stable but the SET of recipes is not, so a candidate list read
+        later cannot be checked against the tree that produced it without this.
+        """
+        sha = "unknown"
+        try:
+            result = subprocess.run(
+                ["git", "-C", str(self.culturemech_path), "rev-parse", "--short", "HEAD"],
+                capture_output=True, text=True, timeout=30)
+            if result.returncode == 0:
+                sha = result.stdout.strip() or "unknown"
+        except (OSError, subprocess.SubprocessError):
+            pass
+        shared = sum(1 for v in self.media_by_name.values() if len(v) > 1)
+        return (f"source=normalized_yaml culturemech_rev={sha} "
+                f"recipes={len(self.media_by_id)} "
+                f"distinct_names={len(self.media_by_name)} shared_names={shared}")
 
     def _load_culturemech(self) -> None:
         """Index the recipe tree by stable id, and by name MULTI-VALUED.
@@ -188,7 +209,7 @@ def cross_reference_all(
             continue
 
         # Filter by type if requested
-        if complex_media_only and record.get("ingredient_type") != "NAMED_MEDIUM":
+        if complex_media_only and record.get("ingredient_type") not in WHOLE_MEDIUM_TYPES:
             continue
 
         ingredient_name = record.get("preferred_term", "")
@@ -283,6 +304,14 @@ def display_medium_details(medium: dict, matcher: CultureMechMatcher) -> None:
     console.print(Panel(panel_content, title=medium_name, border_style="cyan"))
 
 
+# A record can be a whole named medium AND compositionally undefined, and
+# IngredientTypeEnum makes it pick one (#478). BHI -- a named medium and one of
+# only two records carrying a CultureMech link -- is filed UNDEFINED_MIXTURE,
+# its own note saying "state no composition to split on". Filtering on
+# NAMED_MEDIUM alone therefore excluded 100% of the records that actually have a
+# link, and the run returned a clean, confident 0 candidates (#490).
+WHOLE_MEDIUM_TYPES = frozenset({"NAMED_MEDIUM", "UNDEFINED_MIXTURE"})
+
 CANDIDATE_REPORT = Path("reports/culturemech_link_candidates.tsv")
 
 
@@ -290,6 +319,7 @@ def report_candidates(
     curator: IngredientCurator,
     results: dict[int, list[dict]],
     confidence_threshold: float = 0.8,
+    provenance: str = "",
 ) -> int:
     """Write candidates for curator review. Writes NO links into any record.
 
@@ -314,6 +344,8 @@ def report_candidates(
     rows = 0
     with CANDIDATE_REPORT.open("w", newline="", encoding="utf-8") as fh:
         writer = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        if provenance:
+            writer.writerow([f"# {provenance}"])
         writer.writerow([
             "mim_identifier", "preferred_term", "candidate_count", "ambiguous",
             "candidate_medium_id", "candidate_medium_name", "match_type",
@@ -438,7 +470,8 @@ def main():
     # requires a relationship and evidence, which is a curator's judgement.
     if args.report_candidates:
         console.print(f"\n[bold]Collecting candidates (threshold: {args.confidence_threshold})[/bold]")
-        report_candidates(curator, results, args.confidence_threshold)
+        report_candidates(curator, results, args.confidence_threshold,
+                          provenance=matcher.provenance())
 
     return 0
 
