@@ -178,7 +178,7 @@ classes:
         description: >-
           Classification of entry type: single chemical ingredient vs whole named medium.
           SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose).
-          DEFINED_MEDIUM: A complete, named medium formulation/recipe (R2A agar, LB
+          NAMED_MEDIUM: A complete, named medium formulation/recipe (R2A agar, LB
           broth) -- "defined" = record granularity (a whole named medium), NOT
           "chemically defined"; undefined components are expected.
           UNDEFINED_MIXTURE: Complex mixture of unknown composition (yeast extract, peptone).
@@ -188,7 +188,7 @@ classes:
         multivalued: true
         inlined_as_list: true
         description: >-
-          A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or
+          A has-part decomposition for a STOCK_SOLUTION, NAMED_MEDIUM, or
           UNDEFINED_MIXTURE: the list of component ingredients (with concentration
           where known). This is ingredient/mixture partonomy, not an identity mapping,
           a complete culturing recipe, or a relationship among chemical forms. It may
@@ -267,7 +267,7 @@ classes:
             ingredient_type:
               equals_string_in:
                 - STOCK_SOLUTION
-                - DEFINED_MEDIUM
+                - NAMED_MEDIUM
                 - UNDEFINED_MIXTURE
 
   EnvironmentContext:
@@ -939,8 +939,14 @@ enums:
         description: Classified as an undefined mixture (yeast extract, peptone, ...).
       CLASSIFIED_STOCK_SOLUTION:
         description: Classified as a stock solution / premix.
+      CLASSIFIED_NAMED_MEDIUM:
+        description: Classified as a complete named-medium recipe.
       CLASSIFIED_DEFINED_MEDIUM:
-        description: Classified as a complete defined-medium recipe.
+        description: >-
+          Legacy history value. The pre-#222 spelling of
+          CLASSIFIED_NAMED_MEDIUM, retained because 91 recorded events carry it
+          and an event log states what was done at the time. New events use
+          CLASSIFIED_NAMED_MEDIUM.
       MERGED_FROM_DUPLICATES:
         description: Duplicate records consolidated into this representative.
       BACKFILL_PARENT_CHEBI:
@@ -1304,16 +1310,20 @@ enums:
         description: >-
           Pure chemical compound or single ingredient (e.g., NaCl, agar, glucose, water).
           Can be mapped to chemical ontologies like CHEBI.
-      DEFINED_MEDIUM:
+      NAMED_MEDIUM:
         description: >-
           A complete, named medium formulation or recipe with multiple ingredients
           (e.g., R2A agar, LB broth, Marine agar 2216, Oatmeal agar).
-          NOTE: "DEFINED" here denotes RECORD GRANULARITY -- this record is a whole
-          named medium rather than a single ingredient -- and is NOT the microbiology
-          term of art "chemically defined medium". Complex, undefined components
-          (digests, infusions, extracts, sera) are expected and normal in these
-          records; the compositional distinction is carried by UNDEFINED_MIXTURE, not
-          by this value. Should cross-reference to CultureMech for the full recipe.
+          Denotes RECORD GRANULARITY -- this record is a whole named medium rather
+          than a single ingredient. Complex, undefined components (digests,
+          infusions, extracts, sera) are expected and normal in these records; the
+          compositional distinction is carried by UNDEFINED_MIXTURE, not by this
+          value. Should cross-reference to CultureMech for the full recipe.
+          Spelled DEFINED_MEDIUM before #222, which renamed it because "DEFINED"
+          read as the microbiology term of art "chemically defined medium" -- see
+          #478 for the remaining conflation, that this enum mixes granularity
+          (SINGLE_INGREDIENT / NAMED_MEDIUM / STOCK_SOLUTION) with composition
+          (UNDEFINED_MIXTURE).
       UNDEFINED_MIXTURE:
         description: >-
           Complex mixture of unknown or variable composition

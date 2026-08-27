@@ -1,6 +1,6 @@
 
 
-# Class: IngredientRecord
+# Class: IngredientRecord 
 
 
 _Core record for a media ingredient with ontology mapping, synonyms, and curation history. Represents either a mapped ingredient (with a primary ontology, registry, or local identity CURIE) or an unmapped ingredient (placeholder identifier, awaits curation). Can serve as root element for individual YAML files or as elements in IngredientCollection._
@@ -20,218 +20,218 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
     class IngredientRecord
     click IngredientRecord href "../IngredientRecord/"
       IngredientRecord : cellular_metabolic_roles
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" CellularMetabolicRoleAssignment : cellular_metabolic_roles
         click CellularMetabolicRoleAssignment href "../CellularMetabolicRoleAssignment/"
+    
 
-
-
+        
       IngredientRecord : chemical_properties
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "0..1" ChemicalProperties : chemical_properties
         click ChemicalProperties href "../ChemicalProperties/"
+    
 
-
-
+        
       IngredientRecord : community_organism_roles
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" CommunityOrganismRoleAssignment : community_organism_roles
         click CommunityOrganismRoleAssignment href "../CommunityOrganismRoleAssignment/"
+    
 
-
-
+        
       IngredientRecord : component_assertion
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "0..1" ComponentAssertion : component_assertion
         click ComponentAssertion href "../ComponentAssertion/"
+    
 
-
-
+        
       IngredientRecord : components
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" StockComponent : components
         click StockComponent href "../StockComponent/"
+    
 
-
-
+        
       IngredientRecord : culturemech_medium_name
-
+        
       IngredientRecord : curation_history
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" CurationEvent : curation_history
         click CurationEvent href "../CurationEvent/"
+    
 
-
-
+        
       IngredientRecord : datasets
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" Dataset : datasets
         click Dataset href "../Dataset/"
+    
 
-
-
+        
       IngredientRecord : discussions
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" Discussion : discussions
         click Discussion href "../Discussion/"
+    
 
-
-
+        
       IngredientRecord : environmental_context
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" EnvironmentContext : environmental_context
         click EnvironmentContext href "../EnvironmentContext/"
+    
 
-
-
+        
       IngredientRecord : identifier
-
+        
       IngredientRecord : ingredient_type
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "0..1" IngredientTypeEnum : ingredient_type
         click IngredientTypeEnum href "../IngredientTypeEnum/"
+    
 
-
-
+        
       IngredientRecord : kg_microbe_node_id
-
+        
       IngredientRecord : mapping_status
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "1" MappingStatusEnum : mapping_status
         click MappingStatusEnum href "../MappingStatusEnum/"
+    
 
-
-
+        
       IngredientRecord : merged
-
+        
       IngredientRecord : notes
-
+        
       IngredientRecord : nutritional_roles
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" NutritionalRoleAssignment : nutritional_roles
         click NutritionalRoleAssignment href "../NutritionalRoleAssignment/"
+    
 
-
-
+        
       IngredientRecord : occurrence_statistics
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "0..1" OccurrenceStats : occurrence_statistics
         click OccurrenceStats href "../OccurrenceStats/"
+    
 
-
-
+        
       IngredientRecord : ontology_mapping
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "0..1" OntologyMapping : ontology_mapping
         click OntologyMapping href "../OntologyMapping/"
+    
 
-
-
+        
       IngredientRecord : physicochemical_roles
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" PhysicochemicalRoleAssignment : physicochemical_roles
         click PhysicochemicalRoleAssignment href "../PhysicochemicalRoleAssignment/"
+    
 
-
-
+        
       IngredientRecord : preferred_term
-
+        
       IngredientRecord : representative
-
+        
       IngredientRecord : solution_type
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "0..1" SolutionTypeEnum : solution_type
         click SolutionTypeEnum href "../SolutionTypeEnum/"
+    
 
-
-
+        
       IngredientRecord : supplied_form
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" SuppliedForm : supplied_form
         click SuppliedForm href "../SuppliedForm/"
+    
 
-
-
+        
       IngredientRecord : synonyms
-
-
-
-
-
+        
+          
+    
+        
+        
         IngredientRecord --> "*" IngredientSynonym : synonyms
         click IngredientSynonym href "../IngredientSynonym/"
+    
 
-
-
-
+        
+      
 ```
 
 
@@ -262,7 +262,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 | [representative](representative.md) | 0..1 <br/> [String](String.md) | `identifier` of the representative record if this record has been merged | direct |
 | [merged](merged.md) | * <br/> [String](String.md) | List of record `identifier`s merged into this representative | direct |
 | [ingredient_type](ingredient_type.md) | 0..1 <br/> [IngredientTypeEnum](IngredientTypeEnum.md) | Classification of entry type: single chemical ingredient vs whole named mediu... | direct |
-| [components](components.md) | * <br/> [StockComponent](StockComponent.md) | A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_M... | direct |
+| [components](components.md) | * <br/> [StockComponent](StockComponent.md) | A has-part decomposition for a STOCK_SOLUTION, NAMED_MEDIUM, or UNDEFINED_MIX... | direct |
 | [component_assertion](component_assertion.md) | 0..1 <br/> [ComponentAssertion](ComponentAssertion.md) | Method and structured evidence for the record-level has-part claim carried by... | direct |
 | [culturemech_medium_name](culturemech_medium_name.md) | 0..1 <br/> [String](String.md) | Cross-reference to CultureMech medium name if this is a defined medium | direct |
 | [kg_microbe_node_id](kg_microbe_node_id.md) | 0..1 <br/> [String](String.md) | KG-Microbe node ID for this ingredient when found in the KG exactly | direct |
@@ -286,7 +286,7 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 ## Rules
 
 
-###
+### 
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
@@ -294,11 +294,11 @@ URI: [mediaingredientmech:IngredientRecord](https://w3id.org/mediaingredientmech
 
 
 
-###
+### 
 
 | Rule Applied | Preconditions | Postconditions | Elseconditions |
 |--------------|---------------|----------------|----------------|
-| slot_conditions |```{'components': {'value_presence': 'PRESENT'}}``` |```{'ingredient_type': {'equals_string_in': ['STOCK_SOLUTION', 'DEFINED_MEDIUM', 'UNDEFINED_MIXTURE']}}``` | |
+| slot_conditions |```{'components': {'value_presence': 'PRESENT'}}``` |```{'ingredient_type': {'equals_string_in': ['STOCK_SOLUTION', 'NAMED_MEDIUM', 'UNDEFINED_MIXTURE']}}``` | |
 
 
 
@@ -345,8 +345,8 @@ name: IngredientRecord
 description: Core record for a media ingredient with ontology mapping, synonyms, and
   curation history. Represents either a mapped ingredient (with a primary ontology,
   registry, or local identity CURIE) or an unmapped ingredient (placeholder identifier,
-  awaits curation).
-  Can serve as root element for individual YAML files or as elements in IngredientCollection.
+  awaits curation). Can serve as root element for individual YAML files or as elements
+  in IngredientCollection.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
   identifier:
@@ -557,7 +557,7 @@ attributes:
   ingredient_type:
     name: ingredient_type
     description: 'Classification of entry type: single chemical ingredient vs whole
-      named medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). DEFINED_MEDIUM:
+      named medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). NAMED_MEDIUM:
       A complete, named medium formulation/recipe (R2A agar, LB broth) -- "defined"
       = record granularity (a whole named medium), NOT "chemically defined"; undefined
       components are expected. UNDEFINED_MIXTURE: Complex mixture of unknown composition
@@ -569,7 +569,7 @@ attributes:
     range: IngredientTypeEnum
   components:
     name: components
-    description: 'A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or
+    description: 'A has-part decomposition for a STOCK_SOLUTION, NAMED_MEDIUM, or
       UNDEFINED_MIXTURE: the list of component ingredients (with concentration where
       known). This is ingredient/mixture partonomy, not an identity mapping, a complete
       culturing recipe, or a relationship among chemical forms. It may transcribe
@@ -686,7 +686,7 @@ rules:
         name: ingredient_type
         equals_string_in:
         - STOCK_SOLUTION
-        - DEFINED_MEDIUM
+        - NAMED_MEDIUM
         - UNDEFINED_MIXTURE
 
 ```
@@ -700,8 +700,8 @@ name: IngredientRecord
 description: Core record for a media ingredient with ontology mapping, synonyms, and
   curation history. Represents either a mapped ingredient (with a primary ontology,
   registry, or local identity CURIE) or an unmapped ingredient (placeholder identifier,
-  awaits curation).
-  Can serve as root element for individual YAML files or as elements in IngredientCollection.
+  awaits curation). Can serve as root element for individual YAML files or as elements
+  in IngredientCollection.
 from_schema: https://w3id.org/mediaingredientmech
 attributes:
   identifier:
@@ -951,7 +951,7 @@ attributes:
   ingredient_type:
     name: ingredient_type
     description: 'Classification of entry type: single chemical ingredient vs whole
-      named medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). DEFINED_MEDIUM:
+      named medium. SINGLE_INGREDIENT: Pure chemical (NaCl, agar, glucose). NAMED_MEDIUM:
       A complete, named medium formulation/recipe (R2A agar, LB broth) -- "defined"
       = record granularity (a whole named medium), NOT "chemically defined"; undefined
       components are expected. UNDEFINED_MIXTURE: Complex mixture of unknown composition
@@ -965,7 +965,7 @@ attributes:
     range: IngredientTypeEnum
   components:
     name: components
-    description: 'A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or
+    description: 'A has-part decomposition for a STOCK_SOLUTION, NAMED_MEDIUM, or
       UNDEFINED_MIXTURE: the list of component ingredients (with concentration where
       known). This is ingredient/mixture partonomy, not an identity mapping, a complete
       culturing recipe, or a relationship among chemical forms. It may transcribe
@@ -1098,7 +1098,7 @@ rules:
         name: ingredient_type
         equals_string_in:
         - STOCK_SOLUTION
-        - DEFINED_MEDIUM
+        - NAMED_MEDIUM
         - UNDEFINED_MIXTURE
 
 ```

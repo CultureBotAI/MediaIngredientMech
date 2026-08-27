@@ -84,3 +84,55 @@ def test_citation_types_match_schema():
         "VALID_CITATION_TYPES is out of sync with CitationTypeEnum. "
         "Update the set in curation/ingredient_curator.py to match the schema."
     )
+
+
+# --- #222: DEFINED_MEDIUM -> NAMED_MEDIUM ---------------------------------
+def test_ingredient_type_uses_the_renamed_medium_value():
+    """`DEFINED` read as the microbiology term of art "chemically defined
+    medium"; the value has always denoted record granularity (#168, #216, #222)."""
+    values = _schema_enum("IngredientTypeEnum")
+
+    assert "NAMED_MEDIUM" in values
+    assert "DEFINED_MEDIUM" not in values, (
+        "the retired spelling is back in IngredientTypeEnum")
+
+
+def test_no_record_carries_the_retired_ingredient_type():
+    """The schema and the corpus have to move together — a value the schema no
+    longer offers is an instance-validation failure waiting for the next run."""
+    root = Path(__file__).parent.parent
+    stale = [
+        path.relative_to(root)
+        for directory in ("data/ingredients/mapped", "data/ingredients/unmapped")
+        for path in (root / directory).rglob("*.yaml")
+        if (yaml.safe_load(path.read_text(encoding="utf-8")) or {})
+        .get("ingredient_type") == "DEFINED_MEDIUM"
+    ]
+
+    assert not stale, f"{len(stale)} record(s) still typed DEFINED_MEDIUM: {stale[:5]}"
+
+
+def test_component_parent_types_match_the_schema():
+    """`COMPONENT_PARENT_TYPES` is a hand-written copy of three schema values.
+    Renaming one side only makes every decomposition on that type violate the
+    partonomy gate — 23 NAMED_MEDIUM records carry components today."""
+    sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+    from mediaingredientmech.validation.component_partonomy import (
+        COMPONENT_PARENT_TYPES,
+    )
+
+    assert COMPONENT_PARENT_TYPES <= _schema_enum("IngredientTypeEnum"), (
+        "COMPONENT_PARENT_TYPES names a value the schema does not offer: "
+        f"{COMPONENT_PARENT_TYPES - _schema_enum('IngredientTypeEnum')}")
+
+
+def test_the_legacy_classification_event_is_retained():
+    """91 recorded events say CLASSIFIED_DEFINED_MEDIUM. An event log states
+    what was done at the time, so the old token stays valid and only new events
+    use the new one — unlike the ingredient_type value, which is a claim about
+    the record now and was migrated."""
+    events = _schema_enum("CurationActionEnum")
+
+    assert "CLASSIFIED_NAMED_MEDIUM" in events
+    assert "CLASSIFIED_DEFINED_MEDIUM" in events, (
+        "retiring this would invalidate 91 historical curation events")

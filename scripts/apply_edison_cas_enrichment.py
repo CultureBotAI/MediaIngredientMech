@@ -109,7 +109,7 @@ COMPONENT_ONLY = {
                     "family name that also covers amphotericin A",
     "Riboflavin solution see Medium No. 462":
         "83-88-5 is riboflavin; the record is the SOLUTION, and its own "
-        "ingredient_type is DEFINED_MEDIUM",
+        "ingredient_type is NAMED_MEDIUM",
     "DL-2-gamma-aminobutyrate":
         "56-12-2 is GABA, but the label is parse noise -- 'DL-' and '2-' cannot "
         "both qualify 4-aminobutyrate, so what the record names is unresolved",

@@ -57,7 +57,7 @@ Name: mediaingredientmech-schema
 | [component_assertion](component_assertion.md) | Method and structured evidence for the record-level has-part claim carried by... |
 | [component_id](component_id.md) | Semantic CURIE for the component (e |
 | [component_name](component_name.md) | Component ingredient name as listed in the supporting source (e |
-| [components](components.md) | A has-part decomposition for a STOCK_SOLUTION, DEFINED_MEDIUM, or UNDEFINED_M... |
+| [components](components.md) | A has-part decomposition for a STOCK_SOLUTION, NAMED_MEDIUM, or UNDEFINED_MIX... |
 | [concentration_range](concentration_range.md) | Observed concentration range (if available) |
 | [concentration_unit](concentration_unit.md) | Unit for concentration_value (e |
 | [concentration_value](concentration_value.md) | Amount/concentration of the component, kept as a string to preserve the sourc... |

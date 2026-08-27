@@ -160,7 +160,7 @@ if is_complex and confidence >= 0.75:
 
 **Examples:**
 ```
-❌ DEFINED_MEDIUM ≠ SINGLE_INGREDIENT
+❌ NAMED_MEDIUM ≠ SINGLE_INGREDIENT
 ❌ UNDEFINED_MIXTURE ≠ SINGLE_INGREDIENT
 ```
 
@@ -286,7 +286,7 @@ Before executing any merge operation, verify:
 
 - [ ] **Same CHEBI ID** - Both records reference the same ontology term
 - [ ] **Same ingredient_type** - Or both have no type set
-- [ ] **Not DEFINED_MEDIUM** - Neither is a defined medium
+- [ ] **Not NAMED_MEDIUM** - Neither is a defined medium
 - [ ] **Not complex media** - `detect_complex_medium()` returns False or low confidence
 - [ ] **Clear pattern match** - Names fit case/synonym/abbreviation pattern
 - [ ] **No expert flag** - Neither has NEEDS_EXPERT status

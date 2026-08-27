@@ -17,7 +17,7 @@ START: Should I merge Record A and Record B?
 │  ├─ NO ──> ❌ STOP - Don't merge
 │  └─ YES ──> Continue ↓
 │
-├─ Is either record a DEFINED_MEDIUM?
+├─ Is either record a NAMED_MEDIUM?
 │  ├─ YES ──> ❌ STOP - Don't merge
 │  └─ NO ──> Continue ↓
 │
@@ -69,7 +69,7 @@ START: Should I merge Record A and Record B?
 │                                                     │
 │  ✓ Both SINGLE_INGREDIENT                          │
 │  ✓ Both unset                                       │
-│  ✗ SINGLE_INGREDIENT vs DEFINED_MEDIUM             │
+│  ✗ SINGLE_INGREDIENT vs NAMED_MEDIUM             │
 └─────────────────────────────────────────────────────┘
                          │
                     PASS │ FAIL → STOP

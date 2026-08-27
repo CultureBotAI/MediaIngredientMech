@@ -169,7 +169,7 @@ def main(argv: list[str] | None = None) -> int:
             ids = [c.get("component_id", "") for c in comps]
             undefined = any(str(i).startswith(UNDEFINED_PREFIXES) for i in ids) or \
                 any(not i for i in ids)
-            itype = "UNDEFINED_MIXTURE" if undefined else "DEFINED_MEDIUM"
+            itype = "UNDEFINED_MIXTURE" if undefined else "NAMED_MEDIUM"
             was_expert = rec.get("mapping_status") in ("NEEDS_EXPERT", "PENDING_REVIEW")
 
             rec["components"] = comps

@@ -345,10 +345,10 @@ def main(argv: list[str] | None = None) -> int:
         old = rec.get("identifier")
         rec["identifier"] = mint
         rec["mapping_status"] = "MAPPED"
-        # UNDEFINED_MIXTURE, not DEFINED_MEDIUM: Marine 2216 is built on peptone
+        # UNDEFINED_MIXTURE, not NAMED_MEDIUM: Marine 2216 is built on peptone
         # and yeast extract, so its composition is not defined however precisely
         # the recipe is published. Matches `Brucella agar` and `Bacto Tryptic Soy
-        # Agar`; DEFINED_MEDIUM in the corpus is reserved for media that really
+        # Agar`; NAMED_MEDIUM in the corpus is reserved for media that really
         # are chemically defined.
         rec["ingredient_type"] = "UNDEFINED_MIXTURE"
         rec["ontology_mapping"] = {

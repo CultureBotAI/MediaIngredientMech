@@ -1,4 +1,4 @@
-# Enum: CurationActionEnum
+# Enum: CurationActionEnum 
 
 
 
@@ -35,7 +35,8 @@ URI: [mediaingredientmech:CurationActionEnum](https://w3id.org/mediaingredientme
 | CREATED_FROM_KGM_PLACEHOLDER | None | Record created from a kg-microbe placeholder ingredient row |
 | CLASSIFIED_UNDEFINED_MIXTURE | None | Classified as an undefined mixture (yeast extract, peptone,  |
 | CLASSIFIED_STOCK_SOLUTION | None | Classified as a stock solution / premix |
-| CLASSIFIED_DEFINED_MEDIUM | None | Classified as a complete defined-medium recipe |
+| CLASSIFIED_NAMED_MEDIUM | None | Classified as a complete named-medium recipe |
+| CLASSIFIED_DEFINED_MEDIUM | None | Legacy history value |
 | MERGED_FROM_DUPLICATES | None | Duplicate records consolidated into this representative |
 | BACKFILL_PARENT_CHEBI | None | Legacy history value emitted when old tooling looked up a broader ChEBI paren... |
 
@@ -147,9 +148,14 @@ permissible_values:
   CLASSIFIED_STOCK_SOLUTION:
     text: CLASSIFIED_STOCK_SOLUTION
     description: Classified as a stock solution / premix.
+  CLASSIFIED_NAMED_MEDIUM:
+    text: CLASSIFIED_NAMED_MEDIUM
+    description: Classified as a complete named-medium recipe.
   CLASSIFIED_DEFINED_MEDIUM:
     text: CLASSIFIED_DEFINED_MEDIUM
-    description: Classified as a complete defined-medium recipe.
+    description: Legacy history value. The pre-#222 spelling of CLASSIFIED_NAMED_MEDIUM,
+      retained because 91 recorded events carry it and an event log states what was
+      done at the time. New events use CLASSIFIED_NAMED_MEDIUM.
   MERGED_FROM_DUPLICATES:
     text: MERGED_FROM_DUPLICATES
     description: Duplicate records consolidated into this representative.

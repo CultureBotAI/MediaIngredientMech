@@ -28,7 +28,7 @@ record, and it makes the gap visible to anyone querying components for a null id
 **`ingredient_type` follows the constituents, not the label** — and *unresolved
 is not the same as undefined*. A blend is `UNDEFINED_MIXTURE` only when one of
 its constituents is itself an undefined preparation (an extract, peptone, digest
-or body fluid). `1-butanol+CO2` stays `DEFINED_MEDIUM` even though MIM has no
+or body fluid). `1-butanol+CO2` stays `NAMED_MEDIUM` even though MIM has no
 `1-butanol` record: the substance is perfectly well defined, MIM simply lacks the
 record. `Glucose + Acetate` is defined; `Glucose + Yeast Extract` is not.
 
@@ -57,11 +57,11 @@ ISSUE = "#213/#308"
 
 SPLIT = re.compile(r"\s*\+\s*")
 # Prefixes whose referent is itself an undefined preparation, so any blend
-# containing one cannot be a DEFINED_MEDIUM however well the rest resolves.
+# containing one cannot be a NAMED_MEDIUM however well the rest resolves.
 UNDEFINED_PREFIXES = ("MICRO:", "FOODON:", "UBERON:", "ENVO:", "UNMAPPED")
 # Unresolved is NOT the same as undefined. `1-butanol` is a perfectly defined
 # chemical that MIM simply has no record for, so `1-butanol+CO2` is a
-# DEFINED_MEDIUM with one component_id missing. Only names that denote a
+# NAMED_MEDIUM with one component_id missing. Only names that denote a
 # preparation or an abbreviation for one make the blend undefined.
 UNDEFINED_UNRESOLVED = re.compile(
     r"extract|liquor|serum|fluid|digest|infusion|peptone|broth|yeast"
@@ -138,7 +138,7 @@ def main(argv: list[str] | None = None) -> int:
             ids = [c.get("component_id", "") for c in components]
             undefined = (any(str(i).startswith(UNDEFINED_PREFIXES) for i in ids)
                          or any(UNDEFINED_UNRESOLVED.search(u) for u in unresolved))
-            itype = "UNDEFINED_MIXTURE" if undefined else "DEFINED_MEDIUM"
+            itype = "UNDEFINED_MIXTURE" if undefined else "NAMED_MEDIUM"
 
             old_id = rec.get("identifier")
             new_id = f"kgmicrobe.ingredient:{slug(label)}"

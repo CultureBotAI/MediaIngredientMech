@@ -28,7 +28,7 @@ def _parent() -> dict:
         "identifier": "kgmicrobe.ingredient:test_mix",
         "preferred_term": "test mix",
         "mapping_status": "MAPPED",
-        "ingredient_type": "DEFINED_MEDIUM",
+        "ingredient_type": "NAMED_MEDIUM",
         "components": [
             {
                 "component_name": "alpha salt",

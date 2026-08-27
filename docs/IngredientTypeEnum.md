@@ -14,7 +14,7 @@ URI: [mediaingredientmech:IngredientTypeEnum](https://w3id.org/mediaingredientme
 | Value | Meaning | Description |
 | --- | --- | --- |
 | SINGLE_INGREDIENT | None | Pure chemical compound or single ingredient (e |
-| DEFINED_MEDIUM | None | A complete, named medium formulation or recipe with multiple ingredients (e |
+| NAMED_MEDIUM | None | A complete, named medium formulation or recipe with multiple ingredients (e |
 | UNDEFINED_MIXTURE | None | Complex mixture of unknown or variable composition (e |
 | STOCK_SOLUTION | None | Pre-mixed solution of defined ingredients (e |
 
@@ -61,16 +61,18 @@ permissible_values:
     text: SINGLE_INGREDIENT
     description: Pure chemical compound or single ingredient (e.g., NaCl, agar, glucose,
       water). Can be mapped to chemical ontologies like CHEBI.
-  DEFINED_MEDIUM:
-    text: DEFINED_MEDIUM
+  NAMED_MEDIUM:
+    text: NAMED_MEDIUM
     description: 'A complete, named medium formulation or recipe with multiple ingredients
-      (e.g., R2A agar, LB broth, Marine agar 2216, Oatmeal agar). NOTE: "DEFINED"
-      here denotes RECORD GRANULARITY -- this record is a whole named medium rather
-      than a single ingredient -- and is NOT the microbiology term of art "chemically
-      defined medium". Complex, undefined components (digests, infusions, extracts,
-      sera) are expected and normal in these records; the compositional distinction
-      is carried by UNDEFINED_MIXTURE, not by this value. Should cross-reference to
-      CultureMech for the full recipe.'
+      (e.g., R2A agar, LB broth, Marine agar 2216, Oatmeal agar). Denotes RECORD GRANULARITY
+      -- this record is a whole named medium rather than a single ingredient. Complex,
+      undefined components (digests, infusions, extracts, sera) are expected and normal
+      in these records; the compositional distinction is carried by UNDEFINED_MIXTURE,
+      not by this value. Should cross-reference to CultureMech for the full recipe.
+      Spelled DEFINED_MEDIUM before #222, which renamed it because "DEFINED" read
+      as the microbiology term of art "chemically defined medium" -- see #478 for
+      the remaining conflation, that this enum mixes granularity (SINGLE_INGREDIENT
+      / NAMED_MEDIUM / STOCK_SOLUTION) with composition (UNDEFINED_MIXTURE).'
   UNDEFINED_MIXTURE:
     text: UNDEFINED_MIXTURE
     description: Complex mixture of unknown or variable composition (e.g., yeast extract,
