@@ -380,7 +380,14 @@ report:
 #
 # Generate HTML documentation from schema
 gen-docs:
-    uv run --extra dev gen-doc --directory docs src/mediaingredientmech/schema/mediaingredientmech.yaml
+    # PYTHONHASHSEED=0: linkml's doc generator iterates unordered sets, so
+    # Python's per-process hash randomisation shuffles rows in the generated
+    # class tables. Two consecutive runs on identical input differed in 12
+    # files before this; with the seed fixed they are byte-identical (#481).
+    # `--frozen` matches every other recipe -- it does NOT affect determinism
+    # (verified: the churn reproduced with it), it just stops gen-docs
+    # re-resolving the lock as a side effect of building docs.
+    PYTHONHASHSEED=0 uv run --frozen --extra dev gen-doc --directory docs src/mediaingredientmech/schema/mediaingredientmech.yaml
 
 # Export ingredients to browser JSON
 export-browser:
