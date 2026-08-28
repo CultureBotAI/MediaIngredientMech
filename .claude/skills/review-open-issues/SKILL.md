@@ -4,7 +4,7 @@ description: Sweep and triage the full open-issue queue for MediaIngredientMech 
 category: workflow
 requires_database: false
 requires_internet: true
-version: 1.0.0
+version: 2.0.0
 ---
 
 # Review & Prioritize Open Issues
@@ -35,6 +35,35 @@ sorting.
 work to implement — that's `next-tasks`. This skill produces a priority
 ranking; it does not implement fixes.
 
+## Sources of truth
+
+Check these before trusting an issue title or an old planning note. The order
+is `CLAUDE.md`'s own source precedence, so a lower entry never overrides a
+higher one:
+
+1. `MAPPING_SEMANTICS.md` — identity, mapping predicates, and SSSOM rules.
+   This decides almost every mapping dispute; read it before ruling on one.
+2. `src/mediaingredientmech/schema/mediaingredientmech.yaml` — data shape,
+   enums, and required slots.
+3. `justfile` — which commands and validators actually exist.
+4. The focused skill under `.claude/skills/` matching the task.
+5. Narrative guides under `docs/` and `notes/`.
+
+Alongside those:
+
+- `CLAUDE.md` for repository-wide safety and the validation sequence;
+- `mappings/ingredient_mappings.sssom.tsv` for the published mapping artifact;
+- `data/ingredients/{mapped,unmapped}/` and `data/curated/*_ingredients.yaml`
+  for the two maintained record surfaces;
+- `curation_history` on the record itself for what actually changed and when;
+- `NEXT_TASKS.md` for the curated backlog, which is a different surface from
+  this queue.
+
+Treat issue bodies and titles as claims. Read comments: corrections and
+narrowed residual scope get recorded there, so a body-only fetch overstates
+what is still open. A merged PR is evidence only once its code and acceptance
+criteria have been checked.
+
 ## Workflow
 
 ### Step 1 — Fetch the full open-issue queue
@@ -59,7 +88,31 @@ length` — omitting `--limit` silently caps at gh's default of 30), then
 re-run Step 1 with `--limit` comfortably above that count rather than
 sampling.
 
-### Step 2 — Group and dedupe
+### Step 2 — Place each issue on the curation pipeline before ranking it
+
+Rank by where a defect enters, not by where it was noticed:
+
+```text
+source label or external ingredient row
+  -> identity resolution (hydrate / anhydrous / salt / stereoisomer are distinct)
+  -> ontology mapping and predicate choice (exact identity vs asymmetric parent)
+  -> per-record YAML in data/ingredients/{mapped,unmapped}/
+  -> aggregate collections in data/curated/ (just sync-curated / sync-individual)
+  -> SSSOM rows in mappings/ingredient_mappings.sssom.tsv
+  -> downstream consumers (CultureMech recipes, kg-microbe chemical mappings)
+```
+
+An identity or predicate error upstream silently propagates into the
+collections, the SSSOM, and every downstream consumer, so fix or audit the root
+before polishing anything downstream. Group issues that share a root cause
+without hiding their individual numbers.
+
+For each issue record, when applicable: the pipeline stage; the records or
+CURIEs affected; which of the two data surfaces is authoritative for it;
+whether the SSSOM is implicated; prerequisites, blockers, and duplicates; the
+cheapest decisive evidence; and its acceptance test.
+
+### Step 3 — Group and dedupe
 
 Issues filed from the same review pass (same PR, same session) often overlap —
 several may describe the same root cause from different angles. Group by:
@@ -70,7 +123,7 @@ several may describe the same root cause from different angles. Group by:
 Note groups explicitly in the report; do not silently merge them (a human may
 want to close duplicates deliberately, not have them hidden).
 
-### Step 3 — Check each issue against current reality
+### Step 4 — Check each issue against current reality
 
 For each issue (or each group's representative), spot-check:
 
@@ -91,7 +144,33 @@ For each issue (or each group's representative), spot-check:
 - **Superseded?** Does a newer issue or a merged PR's description explicitly
   supersede this one?
 
-### Step 4 — Assign priority
+### Step 5 — Apply the identity and mapping stop-the-line checks
+
+Treat these as P0 when live, because each one silently produces wrong curated
+data rather than failing loudly:
+
+- a hydrate, anhydrous form, salt, or stereoisomer mapped to a generic or
+  parent term as an **exact identity** — `MAPPING_SEMANTICS.md` requires a
+  form-specific term, or a preserved distinct identity with an asymmetric
+  parent mapping;
+- a mapping predicate that overstates the relation (an `exactMatch` where the
+  evidence supports only a broader or narrower match);
+- the two record surfaces diverged, or a synchronization run in the wrong
+  direction — `just sync-individual` exports collections first and will
+  overwrite unsynced per-record edits;
+- `mappings/ingredient_mappings.sssom.tsv` inconsistent with the YAML after an
+  identifier, label, ontology mapping, or predicate change;
+- a material curation change with no `curation_history` event, which breaks the
+  audit trail the whole corpus depends on;
+- a bulk rewrite in a diff that was expected to touch a handful of records;
+- an outward-facing published artifact asserting an identity the evidence does
+  not support.
+
+Research reports and LLM suggestions are proposals. An issue asserting a
+mapping is wrong is itself a claim to verify against `MAPPING_SEMANTICS.md` and
+the schema, not a finding to rank on sight.
+
+### Step 6 — Assign priority
 
 - **P0 — blocking/correctness/security.** Data corruption, a crash/hang in a
   path every caller hits, a security-relevant defect (injection, secret
@@ -107,7 +186,7 @@ For each issue (or each group's representative), spot-check:
 Do not default everything to P1 — that makes the tier meaningless. Use P0
 sparingly and justify it; most issues are P1 or P2.
 
-### Step 5 — Present the report
+### Step 7 — Present the report
 
 - Ranked list, P0 first, one line per issue/group with number + one-sentence
   why.
@@ -117,7 +196,7 @@ sparingly and justify it; most issues are P1 or P2.
 - Do not silently drop old issues from the report — if something is 6 months
   old and still open, say so; that itself is a signal.
 
-### Step 6 — Act only when asked
+### Step 8 — Act only when asked
 
 This skill does not close issues, comment, or create/update a tracker issue on
 its own, and a general "yes, go ahead" is not blanket approval to loop over
@@ -150,6 +229,48 @@ the queue.
   probably wrong; recheck.
 - **Read-only by default.** Reporting and ranking happen automatically;
   closing issues or touching a tracker issue requires explicit confirmation.
+- **Titles are claims and they drift.** Issues get retitled mid-life, including
+  to `[WITHDRAWN]` or `[RESOLVED]`, while staying open. Re-read titles at report
+  time rather than trusting the ones fetched at the start of the sweep.
+- **The queue moves during the sweep.** Parallel PRs can resolve issues while
+  triage is in progress. Re-check the open set immediately before reporting,
+  and say so if it changed.
+
+## Measurement discipline
+
+The recurring failure is not misreading evidence, it is mismeasuring it. Before
+citing any of the following, confirm how it was obtained:
+
+- **A stale checkout is not the repository.** This clone regularly sits tens of
+  commits behind, and files can exist locally while being untracked, or exist
+  on `origin/main` while absent locally. Read contracts and code with
+  `git show origin/main:<path>` after `git fetch`, not from the working tree,
+  before calling an issue fixed or stale.
+- **Row sets, not row counts.** Two SSSOM files with the same number of rows
+  can differ in every row. Compare the row *sets* keyed by subject/object/
+  predicate; an unchanged count is not an unchanged mapping table.
+- **Exit codes through pipes.** `cmd | tail -3; echo $?` reports `tail`'s
+  status, not `cmd`'s, so a fail-closed validator looks like it passed. Use
+  `cmd >/tmp/o 2>/tmp/e; echo $?`, or `${PIPESTATUS[0]}`.
+- **A green validator is scoped.** `just validate-all`, `just qc-sssom`, and
+  `just qc-roundtrip` each check different things, and `just qc` needs the full
+  data environment. Name which one ran; do not generalize one green run into
+  "validation passes".
+- **Whitespace-splitting file lists.** `git status --porcelain | awk '{print $2}'`
+  turns one path containing spaces into several bogus entries. Use
+  `--porcelain -z | tr '\0' '\n'`.
+- **A diff you did not read is not a reviewed diff.** Synchronization can
+  rewrite far more than intended, and the guard against that is inspecting the
+  diff before and after — not the command's exit code.
+- **YAML plain scalars.** An unquoted value can parse as a bool, a number, or
+  `null` and silently change meaning. Check how a cited field actually parses
+  before ruling on it.
+- **Truncated tool output.** Long lines get elided. Re-read the cited file at
+  the cited line before acting on it.
+- **Backticks in a double-quoted `-m`.** `git commit -m "...`cmd`..."` executes
+  the backticked text and ships its output in place of the example. Write
+  reports and commit messages containing shell examples via `-F <file>` or a
+  quoted heredoc (`<<'EOF'`), then read the result back before pushing.
 
 ## Notes & limitations
 
@@ -164,6 +285,21 @@ the queue.
   but do not open issues in sibling repos without being asked.
 - No @-mentions in issue comments or tracker updates without explicit
   per-mention authorization (standing rule).
+
+## Mutation boundary
+
+Do not close, comment on, relabel, retitle, or create issues or trackers during
+the review. If the user later asks to act, present the exact issue numbers and
+the proposed mutation first, then apply closures one at a time with cited
+evidence. General approval is never authorization for an unattended bulk-close.
+
+Do not edit YAML records, aggregate collections, or
+`mappings/ingredient_mappings.sssom.tsv` as part of triage. A recommended
+correction is a proposal; applying it is a separate, separately approved task
+that follows the validation sequence in `CLAUDE.md`.
+
+Do not open issues in sibling repositories, and no `@` mentions anywhere
+without explicit per-mention authorization (standing rule).
 
 ## Related
 
