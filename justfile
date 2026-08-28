@@ -230,6 +230,25 @@ check-chebi-currency *args:
     # artifact CI does not have. Issue #197.
     uv run python scripts/check_chebi_currency.py {{args}}
 
+# Rebuild the CultureMech membership edge list from an occurrence table
+build-membership occurrences="../CultureMech/output/ingredient_occurrences.tsv":
+    #!/usr/bin/env bash
+    set -euo pipefail
+    # Regenerate `{{occurrences}}` first with `just aggregate-all-ingredients`
+    # in CultureMech — it is gitignored output, not a checked-in artifact.
+    #
+    # The result IS checked in: the point of publishing it is that a consumer
+    # can answer "which recipes use this ingredient?" without a CultureMech
+    # checkout. Re-running is deterministic, so a rebuild against an unchanged
+    # tree produces no diff.
+    if [ ! -f "{{occurrences}}" ]; then
+      echo "error: {{occurrences}} not found." >&2
+      echo "Run 'just aggregate-all-ingredients' in CultureMech first." >&2
+      exit 1
+    fi
+    uv run --frozen python scripts/build_culturemech_membership.py \
+        --occurrences "{{occurrences}}"
+
 # Re-download the local ChEBI build that validate-products grounds against
 refresh-chebi:
     #!/usr/bin/env bash
