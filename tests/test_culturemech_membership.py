@@ -140,7 +140,9 @@ def test_an_identifier_mim_does_not_hold_is_reported_not_published(mod, tmp_path
     collected, unknown = mod.collect(source, {"CHEBI:known"})
 
     assert list(collected) == [("CHEBI:known", "CultureMech:000001")]
-    assert unknown == ["CHEBI:absent"]
+    assert unknown == {"CHEBI:absent": 1}, (
+        "the absent identifier and the recipes it would have contributed must "
+        "both survive -- a bare count cannot be worked by a curator (#498)")
 
 
 def test_repeated_listings_in_one_recipe_become_a_count_not_a_row(mod, tmp_path):
@@ -173,3 +175,19 @@ def test_the_artifact_is_tracked_not_a_local_leftover():
         capture_output=True, text=True)
 
     assert tracked.returncode == 0, f"{ARTIFACT.name} is not tracked by git"
+
+
+def test_the_absent_identifiers_are_persisted_not_only_counted(mod, tmp_path,
+                                                               monkeypatch):
+    """The edges are in the artifact and the counts are in the records, but an
+    identifier CultureMech grounded that MIM has no record for exists nowhere
+    else -- printing it to stdout loses it (#498)."""
+    report = tmp_path / "reports" / "unknown.tsv"
+    monkeypatch.setattr(mod, "UNKNOWN_REPORT", report)
+
+    mod.write_unknown({"CHEBI:absent": 26, "CHEBI:other": 2}, "prov=x")
+
+    lines = report.read_text(encoding="utf-8").splitlines()
+    assert lines[0].startswith("# prov=x")
+    assert lines[1] == "upstream_identifier\trecipes_it_would_have_contributed"
+    assert lines[2:] == ["CHEBI:absent\t26", "CHEBI:other\t2"]

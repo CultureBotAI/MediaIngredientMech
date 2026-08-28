@@ -46,6 +46,10 @@ import yaml
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CURATED = REPO_ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 OUTPUT = REPO_ROOT / "mappings" / "culturemech_recipe_membership.tsv"
+# The absences, which are the one signal here nobody can reconstruct later: the
+# edges are in the artifact and the counts are in the records, but an identifier
+# CultureMech grounded that MIM has no record for exists nowhere else (#498).
+UNKNOWN_REPORT = REPO_ROOT / "reports" / "culturemech_membership_unknown_ids.tsv"
 
 # `ingredient_json` carries a whole serialized component.
 csv.field_size_limit(1 << 30)
@@ -75,10 +79,10 @@ def mim_identifiers() -> set[str]:
     return {str(r.get("identifier") or "") for r in data["ingredients"]} - {""}
 
 
-def collect(occurrences: Path, known: set[str]) -> tuple[dict, list[str]]:
-    """(edge -> occurrence count, identifiers seen upstream but absent from MIM)."""
+def collect(occurrences: Path, known: set[str]) -> tuple[dict, dict[str, int]]:
+    """(edge -> occurrence count, absent identifier -> recipes it would have had)."""
     edges: dict[tuple[str, str], int] = defaultdict(int)
-    unknown: set[str] = set()
+    unknown: dict[str, set[str]] = defaultdict(set)
     with occurrences.open(newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh, delimiter="\t")
         for field in ("resolved_identifier", "recipe_id"):
@@ -96,10 +100,10 @@ def collect(occurrences: Path, known: set[str]) -> tuple[dict, list[str]]:
                 # Reported, not dropped silently: an id CultureMech resolved to
                 # that MIM does not hold is a gap in one of the two, and which
                 # one is a curation question.
-                unknown.add(identifier)
+                unknown[identifier].add(recipe_id)
                 continue
             edges[(identifier, recipe_id)] += 1
-    return edges, sorted(unknown)
+    return edges, {k: len(v) for k, v in sorted(unknown.items())}
 
 
 def write(edges: dict, header: str) -> None:
@@ -112,6 +116,17 @@ def write(edges: dict, header: str) -> None:
         # dict order would make every rebuild look like a rewrite.
         for (identifier, recipe_id), count in sorted(edges.items()):
             writer.writerow([identifier, recipe_id, count])
+
+
+def write_unknown(unknown: dict[str, int], header: str) -> None:
+    """Persist the gap so it is inspectable and diffable, not just counted."""
+    UNKNOWN_REPORT.parent.mkdir(parents=True, exist_ok=True)
+    with UNKNOWN_REPORT.open("w", newline="", encoding="utf-8") as fh:
+        writer = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        writer.writerow([f"# {header}"])
+        writer.writerow(["upstream_identifier", "recipes_it_would_have_contributed"])
+        for identifier, recipes in sorted(unknown.items()):
+            writer.writerow([identifier, recipes])
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -132,10 +147,12 @@ def main(argv: list[str] | None = None) -> int:
     print(f"{len(edges)} membership edge(s) over {len(records)} MIM identifier(s) "
           f"and {len(recipes)} recipe(s)")
     print(f"{multi} edge(s) list the ingredient more than once in one recipe")
+    write_unknown(unknown, header)
     if unknown:
         print(f"{len(unknown)} upstream identifier(s) are not held by MIM and were "
-              f"reported rather than published: {', '.join(unknown[:5])}"
-              + (" ..." if len(unknown) > 5 else ""))
+              f"reported rather than published, over "
+              f"{sum(unknown.values())} recipe(s); full list in "
+              f"{UNKNOWN_REPORT.relative_to(REPO_ROOT)}")
     print(f"\nwrote {OUTPUT.relative_to(REPO_ROOT)}")
     return 0
 
