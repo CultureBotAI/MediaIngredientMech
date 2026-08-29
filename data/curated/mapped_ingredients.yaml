@@ -47236,9 +47236,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717156+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 10043-52-4 REMOVED, not replaced: it is the anhydrous CaCl2 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
   kg_microbe_node_id: CHEBI:3312
   chemical_properties:
-    cas_rn: 10043-52-4
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Ca.2Cl.7H2O
@@ -51251,8 +51258,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717433+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7778-18-9 REMOVED, not replaced: it is the anhydrous CaSO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
   chemical_properties:
-    cas_rn: 7778-18-9
     data_source: PubChem (via CHEBI:31346)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Ca.O4S.7H2O
@@ -51655,8 +51669,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717442+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7790-86-5 REMOVED, not replaced: it is the anhydrous CeCl3 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
   chemical_properties:
-    cas_rn: 7790-86-5
     data_source: PubChem (via CHEBI:35458)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: CeCl3.7H2O
@@ -57500,9 +57521,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T03:56:37.918203+00:00'
+    curator: hydrate_duplicate_merges
+    action: CORRECTED
+    changes: 'cas_rn 7646-79-9 REMOVED, not replaced: it is the anhydrous CoCl2 CAS,
+      so it names a different substance than this record. ChEBI has no term for this
+      hydration state, so no authoritative CAS is available and substituting a guess
+      is how wrong CAS numbers spread. Absent is recoverable; wrong is not (#334).'
   kg_microbe_node_id: CHEBI:35696
   chemical_properties:
-    cas_rn: 7646-79-9
     data_source: PubChem (via CHEBI:35696)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2Cl.Co.2H2O
@@ -57669,9 +57696,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T03:56:37.918502+00:00'
+    curator: hydrate_duplicate_merges
+    action: CORRECTED
+    changes: 'cas_rn 7646-79-9 REMOVED, not replaced: it is the anhydrous CoCl2 CAS,
+      so it names a different substance than this record. ChEBI has no term for this
+      hydration state, so no authoritative CAS is available and substituting a guess
+      is how wrong CAS numbers spread. Absent is recoverable; wrong is not (#334).'
   kg_microbe_node_id: CHEBI:35696
   chemical_properties:
-    cas_rn: 7646-79-9
     data_source: PubChem (via CHEBI:35696)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2Cl.Co.4H2O
@@ -57814,9 +57847,16 @@ ingredients:
       it. Now agrees with the merge target ''Cobalt chloride hexahydrate''. Provenance
       is unaffected: what the record used to assert is in this history.'
     llm_assisted: false
+  - timestamp: '2026-08-29T03:56:37.918511+00:00'
+    curator: hydrate_duplicate_merges
+    action: CORRECTED
+    changes: cas_rn 7646-79-9 -> 7791-13-1. 7646-79-9 is the ANHYDROUS parent's CAS;
+      7791-13-1 is the dbxref on CHEBI:53503 cobalt chloride hexahydrate, which this
+      record is grounded to. A hydrate and its anhydrous parent are different substances
+      with different formula weights (#334).
   kg_microbe_node_id: CHEBI:35696
   chemical_properties:
-    cas_rn: 7646-79-9
+    cas_rn: 7791-13-1
     data_source: PubChem (via CHEBI:35696)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2Cl.Co
@@ -58896,9 +58936,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717487+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: cas_rn 10124-43-3 -> 10026-24-1. 10124-43-3 is the ANHYDROUS parent's
+      CAS; this record is grounded to CHEBI:91244 cobalt(2+) sulfate heptahydrate,
+      whose ChEBI dbxref is 10026-24-1 (#334).
   kg_microbe_node_id: CHEBI:53470
   chemical_properties:
-    cas_rn: 10124-43-3
+    cas_rn: 10026-24-1
     data_source: PubChem (via CHEBI:53470)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Co.O4S.7H2O
@@ -60795,9 +60841,16 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717501+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7447-39-4 REMOVED, not replaced: it is the anhydrous CuCl2 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
   kg_microbe_node_id: CHEBI:49553
   chemical_properties:
-    cas_rn: 7447-39-4
     data_source: PubChem (via CHEBI:49553)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cl2Cu.6H2O
@@ -61233,9 +61286,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:13:24.025883+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7758-98-7 REMOVED, not replaced: it is the anhydrous CuSO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted and a guess is how wrong CAS numbers spread. The grounding
+      is separately wrong (#321); this corrects only the CAS (#334).'
   kg_microbe_node_id: CHEBI:23414
   chemical_properties:
-    cas_rn: 7758-98-7
     data_source: PubChem (via CHEBI:23414)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cu.O4S.2H2O
@@ -61355,9 +61415,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:13:24.026123+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7758-98-7 REMOVED, not replaced: it is the anhydrous CuSO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted and a guess is how wrong CAS numbers spread. The grounding
+      is separately wrong (#321); this corrects only the CAS (#334).'
   kg_microbe_node_id: CHEBI:23414
   chemical_properties:
-    cas_rn: 7758-98-7
     data_source: PubChem (via CHEBI:23414)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cu.O4S.4H2O
@@ -78626,9 +78693,16 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:13:24.026300+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7758-94-3 REMOVED, not replaced: it is the anhydrous FeCl2 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted and a guess is how wrong CAS numbers spread. The grounding
+      is separately wrong (#321); this corrects only the CAS (#334).'
   kg_microbe_node_id: CHEBI:30812
   chemical_properties:
-    cas_rn: 7758-94-3
     data_source: PubChem (via CHEBI:30812)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cl2Fe.6H2O
@@ -78780,9 +78854,16 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:13:24.026319+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7758-94-3 REMOVED, not replaced: it is the anhydrous FeCl2 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted and a guess is how wrong CAS numbers spread. The grounding
+      is separately wrong (#321); this corrects only the CAS (#334).'
   kg_microbe_node_id: CHEBI:30812
   chemical_properties:
-    cas_rn: 7758-94-3
     data_source: PubChem (via CHEBI:30812)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cl2Fe.7H2O
@@ -79042,9 +79123,16 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717678+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7705-08-0 REMOVED, not replaced: it is the anhydrous FeCl3 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
   kg_microbe_node_id: CHEBI:30808
   chemical_properties:
-    cas_rn: 7705-08-0
     data_source: PubChem (via CHEBI:30808)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Cl3Fe.4H2O
@@ -80112,9 +80200,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:13:24.026329+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7720-78-7 REMOVED, not replaced: it is the anhydrous FeSO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted and a guess is how wrong CAS numbers spread. The grounding
+      is separately wrong (#321); this corrects only the CAS (#334).'
   kg_microbe_node_id: CHEBI:75832
   chemical_properties:
-    cas_rn: 7720-78-7
     data_source: PubChem (via CHEBI:75832)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Fe.O4S.5H2O
@@ -80249,9 +80344,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:13:24.026333+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7720-78-7 REMOVED, not replaced: it is the anhydrous FeSO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted and a guess is how wrong CAS numbers spread. The grounding
+      is separately wrong (#321); this corrects only the CAS (#334).'
   kg_microbe_node_id: CHEBI:75832
   chemical_properties:
-    cas_rn: 7720-78-7
     data_source: PubChem (via CHEBI:75832)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Fe.O4S.6H2O
@@ -80644,8 +80746,14 @@ ingredients:
       it. Now agrees with the merge target ''FeSO4 x 7 H2O''. Provenance is unaffected:
       what the record used to assert is in this history.'
     llm_assisted: false
+  - timestamp: '2026-08-29T04:13:24.026340+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: cas_rn 7720-78-7 -> 7782-63-0. 7720-78-7 is the ANHYDROUS parent's CAS.
+      This record is grounded to CHEBI:75836 iron(2+) sulfate heptahydrate, whose
+      ChEBI dbxref is 7782-63-0 (#334).
   chemical_properties:
-    cas_rn: 7720-78-7
+    cas_rn: 7782-63-0
     data_source: PubChem API (ontology label)
     retrieval_date: '2026-04-05T23:44:40.986504+00:00'
     molecular_formula: Fe.O4S.7H2O
@@ -95943,9 +96051,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717834+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7758-11-4 REMOVED, not replaced: it is the anhydrous K2HPO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
   kg_microbe_node_id: CHEBI:131527
   chemical_properties:
-    cas_rn: 7758-11-4
     data_source: PubChem (via CHEBI:131527)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: HO4P.2K.3H2O
@@ -96334,9 +96449,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717841+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7778-80-5 REMOVED, not replaced: it is the anhydrous K2SO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
   kg_microbe_node_id: CHEBI:32036
   chemical_properties:
-    cas_rn: 7778-80-5
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2K.O4S.7H2O
@@ -117391,9 +117513,15 @@ ingredients:
       it. Now agrees with the merge target ''MnSO4 x H2O''. Provenance is unaffected:
       what the record used to assert is in this history.'
     llm_assisted: false
+  - timestamp: '2026-08-29T04:13:24.026560+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: cas_rn 7785-87-7 -> 10034-96-5. 7785-87-7 is the ANHYDROUS parent's CAS.
+      This record is grounded to CHEBI:86364 manganese(II) sulfate monohydrate, whose
+      ChEBI dbxref is 10034-96-5 (#334).
   kg_microbe_node_id: CHEBI:86360
   chemical_properties:
-    cas_rn: 7785-87-7
+    cas_rn: 10034-96-5
     data_source: PubChem (via CHEBI:86360)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Mn.O4S.H2O
@@ -118068,9 +118196,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:13:24.026575+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7785-87-7 REMOVED, not replaced: it is the anhydrous MnSO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted and a guess is how wrong CAS numbers spread. The grounding
+      is separately wrong (#321); this corrects only the CAS (#334).'
   kg_microbe_node_id: CHEBI:86360
   chemical_properties:
-    cas_rn: 7785-87-7
     data_source: PubChem (via CHEBI:86360)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Mn.O4S.7H2O
@@ -125756,13 +125891,13 @@ ingredients:
         component'
       curator_note: Widespread use in media formulations (637 occurrences). High confidence
         based on 'Defined component' property.
-- identifier: kgmicrobe.compound:na2hpo4_x_12_h2o
+- identifier: CHEBI:91259
   preferred_term: Na2HPO4 x 12 H2O
   ontology_mapping:
     ontology_id: CHEBI:91259
     ontology_label: disodium hydrogenphosphate dodecahydrate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: EXACT_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -125937,6 +126072,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T03:56:37.918918+00:00'
+    curator: hydrate_duplicate_merges
+    action: CORRECTED
+    changes: 'identifier kgmicrobe.compound:na2hpo4_x_12_h2o -> CHEBI:91259; mapping_quality
+      CLOSE_MATCH -> EXACT_MATCH. The record was already grounded to CHEBI:91259 (disodium
+      hydrogenphosphate dodecahydrate) -- it IS that substance, so a registry mint
+      and a close match both understated it. Every one of the 54 registry-identified
+      records is graded non-exact, so the two move together: an exact grounding takes
+      the ontology id, as MgSO4 x 7 H2O does (#334).'
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
     cas_rn: 10039-32-4
@@ -125957,13 +126101,13 @@ ingredients:
         component'
       curator_note: Widespread use in media formulations (112 occurrences). High confidence
         based on 'Defined component' property.
-- identifier: kgmicrobe.compound:na2hpo4_x_2_h2o
+- identifier: CHEBI:91258
   preferred_term: Na2HPO4 x 2 H2O
   ontology_mapping:
     ontology_id: CHEBI:91258
     ontology_label: disodium hydrogenphosphate dihydrate
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: EXACT_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -126168,6 +126312,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T03:56:37.918934+00:00'
+    curator: hydrate_duplicate_merges
+    action: CORRECTED
+    changes: 'identifier kgmicrobe.compound:na2hpo4_x_2_h2o -> CHEBI:91258; mapping_quality
+      CLOSE_MATCH -> EXACT_MATCH. The record was already grounded to CHEBI:91258 (disodium
+      hydrogenphosphate dihydrate) -- it IS that substance, so a registry mint and
+      a close match both understated it. Every one of the 54 registry-identified records
+      is graded non-exact, so the two move together: an exact grounding takes the
+      ontology id, as MgSO4 x 7 H2O does (#334).'
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
     cas_rn: 10028-24-7
@@ -126349,9 +126502,16 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T03:56:37.918942+00:00'
+    curator: hydrate_duplicate_merges
+    action: CORRECTED
+    changes: 'cas_rn 7782-85-6 REMOVED, not replaced: it is the HEPTAhydrate CAS,
+      also on x 6 and x 7, so it names a different substance than this record. ChEBI
+      has no term for this hydration state, so no authoritative CAS is available and
+      substituting a guess is how wrong CAS numbers spread. Absent is recoverable;
+      wrong is not (#334).'
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
-    cas_rn: 7782-85-6
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: HO4P.2Na.3H2O
@@ -126536,9 +126696,16 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T03:56:37.918947+00:00'
+    curator: hydrate_duplicate_merges
+    action: CORRECTED
+    changes: 'cas_rn 7782-85-6 REMOVED, not replaced: it is the HEPTAhydrate CAS,
+      also on x 3 and x 7, so it names a different substance than this record. ChEBI
+      has no term for this hydration state, so no authoritative CAS is available and
+      substituting a guess is how wrong CAS numbers spread. Absent is recoverable;
+      wrong is not (#334).'
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
-    cas_rn: 7782-85-6
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: HO4P.2Na.6H2O
@@ -129494,9 +129661,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.717988+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7757-83-7 REMOVED, not replaced: it is the anhydrous Na2SO3 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
   kg_microbe_node_id: CHEBI:86477
   chemical_properties:
-    cas_rn: 7757-83-7
     data_source: PubChem (via CHEBI:86477)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 2Na.O3S.5H2O
@@ -131786,9 +131960,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.718000+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7558-80-7 REMOVED, not replaced: it is the anhydrous NaH2PO4
+      CAS, and this record names a hydrate -- a different substance with a different
+      formula weight. ChEBI has no term for this hydration state, so no authoritative
+      value can be substituted. The grounding is separately wrong (#321); this corrects
+      only the CAS (#334).'
   kg_microbe_node_id: CHEBI:37585
   chemical_properties:
-    cas_rn: 7558-80-7
     data_source: OAK/CHEBI xref
     retrieval_date: '2026-04-19T07:35:12.781730+00:00'
     molecular_formula: H2O4P.Na.2H2O
@@ -134300,8 +134481,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:18:06.718015+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: cas_rn 56110-30-6 -> 7785-20-8. 56110-30-6 is the ANHYDROUS parent's
+      CAS; this record is grounded to CHEBI:86149 ammonium nickel sulfate hexahydrate,
+      whose ChEBI dbxref is 7785-20-8 (#334).
   chemical_properties:
-    cas_rn: 56110-30-6
+    cas_rn: 7785-20-8
     data_source: PubChem (via CHEBI:86149)
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: 6H2O.2H4N.Ni.2O4S
@@ -136473,9 +136660,16 @@ ingredients:
       it. Now agrees with the merge target ''Nickel (II) chloride hexahydrate''. Provenance
       is unaffected: what the record used to assert is in this history.'
     llm_assisted: false
+  - timestamp: '2026-08-29T03:56:37.918985+00:00'
+    curator: hydrate_duplicate_merges
+    action: CORRECTED
+    changes: cas_rn 7718-54-9 -> 7791-20-0. 7718-54-9 is the ANHYDROUS parent's CAS;
+      7791-20-0 is the dbxref on CHEBI:53542 nickel chloride hexahydrate, which this
+      record is grounded to. A hydrate and its anhydrous parent are different substances
+      with different formula weights (#334).
   kg_microbe_node_id: CHEBI:34887
   chemical_properties:
-    cas_rn: 7718-54-9
+    cas_rn: 7791-20-0
     data_source: OAK/CHEBI xref
     retrieval_date: '2026-04-19T07:35:12.781730+00:00'
     molecular_formula: Cl2Ni
