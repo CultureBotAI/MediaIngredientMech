@@ -148,9 +148,16 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-29T04:18:06.717156+00:00'
+  curator: hydrate_family_cas
+  action: CORRECTED
+  changes: 'cas_rn 10043-52-4 REMOVED, not replaced: it is the anhydrous CaCl2 CAS,
+    and this record names a hydrate -- a different substance with a different formula
+    weight. ChEBI has no term for this hydration state, so no authoritative value
+    can be substituted. The grounding is separately wrong (#321); this corrects only
+    the CAS (#334).'
 kg_microbe_node_id: CHEBI:3312
 chemical_properties:
-  cas_rn: 10043-52-4
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: Ca.2Cl.7H2O

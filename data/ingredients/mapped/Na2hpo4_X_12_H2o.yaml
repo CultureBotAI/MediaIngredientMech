@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:na2hpo4_x_12_h2o
+identifier: CHEBI:91259
 preferred_term: Na2HPO4 x 12 H2O
 ontology_mapping:
   ontology_id: CHEBI:91259
   ontology_label: disodium hydrogenphosphate dodecahydrate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -179,6 +179,15 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-29T03:56:37.918918+00:00'
+  curator: hydrate_duplicate_merges
+  action: CORRECTED
+  changes: 'identifier kgmicrobe.compound:na2hpo4_x_12_h2o -> CHEBI:91259; mapping_quality
+    CLOSE_MATCH -> EXACT_MATCH. The record was already grounded to CHEBI:91259 (disodium
+    hydrogenphosphate dodecahydrate) -- it IS that substance, so a registry mint and
+    a close match both understated it. Every one of the 54 registry-identified records
+    is graded non-exact, so the two move together: an exact grounding takes the ontology
+    id, as MgSO4 x 7 H2O does (#334).'
 kg_microbe_node_id: CHEBI:34683
 chemical_properties:
   cas_rn: 10039-32-4

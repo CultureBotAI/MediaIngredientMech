@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-08-27T18:24:05.059237+00:00
+Generated: 2026-08-29T04:40:21.650530+00:00
 Total: 2846 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1529,8 +1529,8 @@ Total: 2846 ingredients
 | CHEBI:64758 | CHEBI:64758 | Na2EDTA·2H2O | MAPPED | CHEBI | SYNONYM_MATCH | 140 |
 | CHEBI:91257 | CHEBI:91257 | Na2HAsO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 14 |
 | CHEBI:34683 | CHEBI:34683 | Na2HPO4 | MAPPED | CHEBI | EXACT_MATCH | 1124 |
-| kgmicrobe.compound:na2hpo4_x_12_h2o | CHEBI:91259 | Na2HPO4 x 12 H2O | MAPPED | CHEBI | CLOSE_MATCH | 159 |
-| kgmicrobe.compound:na2hpo4_x_2_h2o | CHEBI:91258 | Na2HPO4 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 304 |
+| CHEBI:91259 | CHEBI:91259 | Na2HPO4 x 12 H2O | MAPPED | CHEBI | EXACT_MATCH | 159 |
+| CHEBI:91258 | CHEBI:91258 | Na2HPO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 304 |
 | kgmicrobe.compound:na2hpo4_x_3_h2o | CHEBI:34683 | Na2HPO4 x 3 H2O | MAPPED | CHEBI | CLOSE_MATCH | 4 |
 | kgmicrobe.compound:na2hpo4_x_6_h2o | CHEBI:34683 | Na2HPO4 x 6 H2O | MAPPED | CHEBI | CLOSE_MATCH | 5 |
 | kgmicrobe.compound:na2hpo4_x_7_h2o | CHEBI:34683 | Na2HPO4 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 26 |

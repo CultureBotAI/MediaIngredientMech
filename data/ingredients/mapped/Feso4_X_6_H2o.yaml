@@ -118,9 +118,16 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-29T04:13:24.026333+00:00'
+  curator: hydrate_family_cas
+  action: CORRECTED
+  changes: 'cas_rn 7720-78-7 REMOVED, not replaced: it is the anhydrous FeSO4 CAS,
+    and this record names a hydrate -- a different substance with a different formula
+    weight. ChEBI has no term for this hydration state, so no authoritative value
+    can be substituted and a guess is how wrong CAS numbers spread. The grounding
+    is separately wrong (#321); this corrects only the CAS (#334).'
 kg_microbe_node_id: CHEBI:75832
 chemical_properties:
-  cas_rn: 7720-78-7
   data_source: PubChem (via CHEBI:75832)
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: Fe.O4S.6H2O

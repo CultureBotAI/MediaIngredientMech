@@ -158,9 +158,15 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-29T03:56:37.918942+00:00'
+  curator: hydrate_duplicate_merges
+  action: CORRECTED
+  changes: 'cas_rn 7782-85-6 REMOVED, not replaced: it is the HEPTAhydrate CAS, also
+    on x 6 and x 7, so it names a different substance than this record. ChEBI has
+    no term for this hydration state, so no authoritative CAS is available and substituting
+    a guess is how wrong CAS numbers spread. Absent is recoverable; wrong is not (#334).'
 kg_microbe_node_id: CHEBI:34683
 chemical_properties:
-  cas_rn: 7782-85-6
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: HO4P.2Na.3H2O
