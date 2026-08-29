@@ -129,3 +129,36 @@ def test_the_population_is_not_silently_empty(rows):
         f"only {n} row(s) carry a CAS token; ~1,700 is the curated population. "
         f"This is the shape of a wholesale rebuild dropping the column, not of "
         f"incremental curation.")
+
+
+def test_no_row_publishes_a_cas_its_record_does_not_carry(rows, records):
+    """The reverse direction, which was unguarded (#501).
+
+    `test_symmetric_rows_carry_their_records_cas` checks that a record's CAS
+    REACHES `other`. Nothing checked that a CAS in `other` still corresponds to
+    the record. So adding was guarded, correcting was guarded (the old value
+    fails the equality check), and REMOVING was not -- the row is simply skipped
+    as "no CAS on record".
+
+    Removal is the case where the published value is most likely to be wrong
+    rather than merely stale. #500 removed 20 CAS numbers that named a hydrate's
+    ANHYDROUS parent, and all 20 kept publishing to KGX until this was added.
+
+    `_cas_for` is deliberately reused rather than reading `chemical_properties`
+    directly: a `supplied_form` CAS is the number a lab orders by and is
+    legitimate even when the denoted form carries none. Reading the wrong field
+    strips D-lyxose's real value.
+    """
+    orphans = []
+    for row in rows:
+        record = records.get(row.get("subject_label", ""))
+        if record is None:
+            continue
+        expected = _cas_for(record)
+        for token in _tokens(row):
+            if token.startswith("cas:") and token[4:] != (expected or "").lower():
+                orphans.append((row.get("subject_label"), token, expected))
+
+    assert not orphans, (
+        f"{len(orphans)} row(s) publish a CAS the record does not carry, which "
+        f"reaches KGX as a synonym: {orphans[:4]}")
