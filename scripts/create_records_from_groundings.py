@@ -70,6 +70,7 @@ def main(argv: list[str] | None = None) -> int:
 
     proposer = _load("proposer", _REPO / "scripts" / "propose_residual_groundings.py")
     exporter = _load("exporter", _REPO / "scripts" / "export_individual_records.py")
+    promoter = _load("promoter", _REPO / "scripts" / "promote_resolved_unmapped.py")
 
     rows: list[dict[str, str]] = []
     for path in args.groundings:
@@ -122,7 +123,10 @@ def main(argv: list[str] | None = None) -> int:
                 "ontology_id": curie,
                 # The canonical OBO label, never the surface form (PR #49).
                 "ontology_label": row["term_label"],
-                "ontology_source": curie.split(":")[0],
+                # Reused, not reimplemented: the schema takes upper-case ontology
+                # prefixes but lower-case registry namespaces, and upper-casing everything
+                # produced KGMICROBE.COMPOUND, which the write-time validator rejects.
+                "ontology_source": promoter._source_enum(curie),
                 "mapping_quality": "EXACT_MATCH" if exact else "SYNONYM_MATCH",
                 "match_level": "EXACT" if exact else "NORMALIZED",
             },

@@ -50,7 +50,10 @@ ONTOLOGY_DB = {"CHEBI": CHEBI_DB, "NCIT": _OAK / "ncit.db",
                "FOODON": _OAK / "foodon.db", "ENVO": _OAK / "envo.db",
                # MeSH is written lowercase in MIM records (mesh:C017721) but
                # uppercase inside the build, so lookups upper-case the prefix.
-               "MESH": _OAK / "mesh.db", "UBERON": _OAK / "uberon.db"}
+               "MESH": _OAK / "mesh.db", "UBERON": _OAK / "uberon.db",
+               # BTO has a local build; without it here every BTO lookup took the OLS4
+               # fallback and paid a network round trip for a question answerable locally.
+               "BTO": _OAK / "bto.db"}
 # MICRO was missing until #381, so a MICRO promotion through this path emitted
 # an EMPTY object_source while all 34 MICRO rows already published use
 # `obo:micro.owl`. The lookup is `.get(prefix, "")`, so it failed silently —
