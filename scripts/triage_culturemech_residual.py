@@ -105,7 +105,9 @@ def is_noise(label: str) -> str | None:
         return "empty"
     if _BARE_NUMBER.match(stripped):
         return "bare_number"
-    if len(stripped) <= 2 and not stripped.isalpha():
+    if len(stripped) <= 2 and not any(c.isalpha() for c in stripped):
+        # A short token needs a letter to be a formula. `O2` and `N2` are real
+        # ingredients; requiring `.isalpha()` rejected them as parse damage.
         return "too_short"
     quotes = stripped.count("'") + stripped.count('"')
     if quotes % 2 == 1 and _UNBALANCED_QUOTE.search(stripped):

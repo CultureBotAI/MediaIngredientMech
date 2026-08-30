@@ -196,3 +196,14 @@ class TestWrittenRecordsStayCanonical:
                 if event.get("curator") == aliases.CURATOR and "T" not in str(event.get("timestamp", "")):
                     offenders.append(path.name)
         assert not offenders, f"bare-date timestamps on {offenders[:5]}"
+
+
+class TestShortFormulaeAreNotNoise:
+    @pytest.mark.parametrize("label", ["O2", "N2", "H2"])
+    def test_two_character_formulae_survive(self, label):
+        """`O2` is a real ingredient with 10 recipe mentions.
+
+        The first rule rejected any <=2-character token that was not pure alpha,
+        which discards every short formula along with the parse damage.
+        """
+        assert triage.is_noise(label) is None
