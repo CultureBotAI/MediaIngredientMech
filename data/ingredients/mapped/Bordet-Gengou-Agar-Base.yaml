@@ -1,4 +1,4 @@
-identifier: UNMAPPED_0341
+identifier: MICRO:0002398
 preferred_term: Bordet-Gengou-Agar-Base
 synonyms:
 - synonym_text: Bordet-Gengou-Agar-Base
@@ -7,7 +7,7 @@ synonyms:
 - synonym_text: Bordet-Gengou Agar Base (BD 248200)
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -57,7 +57,25 @@ curation_history:
     not resolve them: ''Bordet-Gengou Agar Base (BD 248200)'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0341 -> MICRO:0002398 "Bordet Gengou Agar Base" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as an agar base preparation pending product-
   or recipe-level curation.
 ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: MICRO:0002398
+  ontology_label: Bordet Gengou Agar Base
+  ontology_source: MICRO
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: OLS4 MICRO exact synonym match
+    notes: MICRO:0002398 'Bordet Gengou Agar Base' carries this surface form as an
+      exact synonym; the difference is hyphenation only.

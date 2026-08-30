@@ -244,3 +244,90 @@ class TestGroundingProposerGuards:
     def test_punctuation_is_not_stripped_for_comparison(self, proposer):
         """Stripping it would make EDTA and EDTA-2Na compare equal."""
         assert proposer.comparison_key("EDTA") != proposer.comparison_key("EDTA-2Na")
+
+
+class TestServerSideExactMatchesAreTrusted:
+    """A backend that already matched exactly must not be re-checked against the label.
+
+    OLS4 is queried with `exact=true` over `label,synonym`, so a returned term matched
+    one of them exactly. Re-checking client-side against the label alone discarded every
+    synonym match -- `Christensen's urea agar` is an exact MICRO synonym of `urea agar`
+    (MICRO:0000643) and was thrown away, making the whole MICRO pass label-only without
+    reporting that it had.
+    """
+
+    @pytest.fixture
+    def proposer(self):
+        return _load("propose_residual_groundings")
+
+    class _ServerExact:
+        server_side_exact = True
+
+        def basic_search(self, query, config=None):  # noqa: ARG002
+            return ["MICRO:0000643"]
+
+        def label(self, curie):  # noqa: ARG002
+            return "urea agar"
+
+    class _ClientChecked:
+        def basic_search(self, query, config=None):  # noqa: ARG002
+            return ["MICRO:0000643"]
+
+        def label(self, curie):  # noqa: ARG002
+            return "urea agar"
+
+        def entity_aliases(self, curie):  # noqa: ARG002
+            return ["urea agar"]
+
+    def test_synonym_match_survives_when_backend_is_trusted(self, proposer):
+        hits = proposer.exact_hits(self._ServerExact(), "Christensen's urea agar", "MICRO")
+        assert hits == [("MICRO:0000643", "urea agar")]
+
+    def test_untrusted_backend_still_requires_a_local_name_match(self, proposer):
+        """The trust must be opt-in, or a local adapter would stop being checked."""
+        hits = proposer.exact_hits(self._ClientChecked(), "Christensen's urea agar", "MICRO")
+        assert hits == []
+
+    def test_ols_adapter_declares_itself_trusted(self, proposer):
+        assert proposer.OlsAdapter("MICRO").server_side_exact is True
+
+
+class TestOntologyPreferenceDominatesQueryVariants:
+    """Preference order must not be decided by the surface form's capitalisation.
+
+    oaklib's `basic_search` is case-sensitive: ENVO answers `air` but not `Air`. With
+    the query variants as the outer loop, the raw `Air` reached NCIT before the
+    normalised `air` ever reached ENVO, so `Air` and `air` -- the same substance --
+    were grounded to two different ontologies.
+    """
+
+    @pytest.fixture
+    def proposer(self):
+        return _load("propose_residual_groundings")
+
+    def test_normalised_query_reaches_the_preferred_ontology_first(self, proposer):
+        class _CaseSensitive:
+            """Answers only the lowercase form, like ENVO."""
+
+            def __init__(self, curie, label):
+                self.curie, self._label = curie, label
+
+            def basic_search(self, query, config=None):  # noqa: ARG002
+                return [self.curie] if query == self._label else []
+
+            def label(self, curie):  # noqa: ARG002
+                return self._label
+
+            def entity_aliases(self, curie):  # noqa: ARG002
+                return [self._label]
+
+        preferred = _CaseSensitive("ENVO:00002005", "air")
+        # The raw surface form matches nothing here, the normalised one does.
+        assert proposer.exact_hits(preferred, "Air", "ENVO") == []
+        assert proposer.exact_hits(preferred, proposer.comparison_key("Air"), "ENVO") == [
+            ("ENVO:00002005", "air")
+        ]
+
+    def test_candidate_queries_include_the_normalised_form(self, proposer):
+        queries = proposer.candidate_queries("Air", lambda s: s)
+        assert "air" in queries, "the lowercase form must be searched, not only compared"

@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-30T06:21:20.114000+00:00
-Total: 280 ingredients
+Generated: 2026-08-30T07:09:22.567902+00:00
+Total: 277 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -43,12 +43,10 @@ Total: 280 ingredients
 | UNMAPPED_0104 |  | Barley grains autoclaved | UNMAPPED |  |  | 1 |
 | UNMAPPED_0336 |  | Basal mineral NaCl medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0178 |  | benzimidazolyl cobamide | UNMAPPED |  |  | 0 |
-| UNMAPPED_0061 |  | BG-11 Medium | UNMAPPED |  |  | 2 |
 | UNMAPPED_0207 |  | Bioecolians | UNMAPPED |  |  | 0 |
 | UNMAPPED_0339 |  | Blood Agar Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0340 |  | Blood agar No 2 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0051 |  | Bold 1NV Medium | UNMAPPED |  |  | 2 |
-| UNMAPPED_0341 |  | Bordet-Gengou-Agar-Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0344 |  | Bovine horn meal | UNMAPPED |  |  | 0 |
 | UNMAPPED_0345 |  | Bovine serum | UNMAPPED |  |  | 0 |
 | UNMAPPED_0116 |  | Brewer anaerobic agar | UNMAPPED |  |  | 0 |
@@ -60,7 +58,6 @@ Total: 280 ingredients
 | UNMAPPED_0170 | UBERON:0000955 | Calf brains | UNMAPPED | UBERON | NARROW_MATCH | 7 |
 | UNMAPPED_0229 |  | Calprotectin S1 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0230 |  | Calprotectin S1S2 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0355 |  | CeNO33 x 6 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0354 |  | Cellulose MN 300 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0356 |  | Cereal leaves | UNMAPPED |  |  | 0 |

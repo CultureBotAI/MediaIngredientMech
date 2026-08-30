@@ -1,10 +1,13 @@
 # Mapped Ingredients
 
-Generated: 2026-08-30T06:21:20.110870+00:00
-Total: 2566 ingredients
+Generated: 2026-08-30T07:09:22.564921+00:00
+Total: 2569 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| MICRO:0002402 | MICRO:0002402 | Casman-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
+| MICRO:0002398 | MICRO:0002398 | Bordet-Gengou-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
+| MICRO:0001348 | MICRO:0001348 | BG-11 Medium | MAPPED | MICRO | SYNONYM_MATCH | 2 |
 | kgmicrobe.ingredient:marine_broth_2216 | kgmicrobe.ingredient:marine_broth_2216 | Marine broth 2216 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 19 |
 | kgmicrobe.ingredient:marine_agar_2216 | kgmicrobe.ingredient:marine_agar_2216 | Marine agar 2216 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 32 |
 | MICRO:0000543 | MICRO:0000543 | R2A agar | MAPPED | MICRO | EXACT_MATCH | 16 |

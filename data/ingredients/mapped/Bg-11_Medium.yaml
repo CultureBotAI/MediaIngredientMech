@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0061
+identifier: MICRO:0001348
 preferred_term: BG-11 Medium
 synonyms:
 - synonym_text: BG-11 Medium
   synonym_type: RAW_TEXT
   source: CultureMech
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
   media_count: 2
@@ -34,6 +34,24 @@ curation_history:
     plausible identifier promoted by a mechanism that never decided anything is what
     #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0061 -> MICRO:0001348 "BG 11 medium" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
 notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 as a named BG-11 medium
   formulation pending recipe-level curation.'
 ingredient_type: NAMED_MEDIUM
+ontology_mapping:
+  ontology_id: MICRO:0001348
+  ontology_label: BG 11 medium
+  ontology_source: MICRO
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: OLS4 MICRO exact synonym match
+    notes: MICRO:0001348 'BG 11 medium' carries this surface form as an exact synonym;
+      the difference is hyphenation only.

@@ -61,6 +61,13 @@ OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl",
                  "MESH": "registry:mesh", "UBERON": "obo:uberon.owl",
                  "MICRO": "obo:micro.owl", "BTO": "obo:bto.owl"}
 
+# Prefixes this helper can promote to: every ontology the corpus already publishes rows
+# for. It is deliberately keyed on OBJECT_SOURCE rather than ONTOLOGY_DB -- a missing local
+# build is an availability problem, not a reason to refuse a legitimate destination, and
+# canonical_label falls back to OLS4 for those. Gating on ONTOLOGY_DB refused every MICRO
+# promotion even though OBJECT_SOURCE has carried `obo:micro.owl` since #381.
+PROMOTABLE = frozenset(OBJECT_SOURCE)
+
 PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch",
              "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch",
              # The record IS its mint; closeMatch is what the 136 existing
@@ -77,15 +84,61 @@ from reground_mapped_record import (  # noqa: E402
 )
 
 
+def _label_via_ols4(cid: str) -> str:
+    """Canonical label for a prefix with no usable local semantic-sql build.
+
+    MICRO is the reason this exists: it is the ontology that models named growth media,
+    MIM already publishes 48 MICRO records and OBJECT_SOURCE has carried `obo:micro.owl`
+    since #381, but its local build is a 0-byte stub — so every MICRO promotion was
+    refused here and add_culturemech_gap_labels.py had to carry a local override to
+    publish correct rows.
+    """
+    import json, urllib.error, urllib.parse, urllib.request  # noqa: PLC0415
+
+    prefix = cid.split(":", 1)[0]
+    # Looked up by obo_id rather than by a constructed IRI: MICRO terms do not all follow
+    # the OBO purl pattern -- MICRO:0002398's IRI is `.../obo/MicrO.owl/MICRO_0002398`,
+    # so building `.../obo/MICRO_0002398` 404s on exactly the terms this unblocks.
+    params = urllib.parse.urlencode(
+        {"q": cid, "ontology": prefix.lower(), "queryFields": "obo_id",
+         "exact": "true", "rows": 5}
+    )
+    url = f"https://www.ebi.ac.uk/ols4/api/search?{params}"
+    try:
+        with urllib.request.urlopen(
+            urllib.request.Request(url, headers={"User-Agent": "MediaIngredientMech-promote"}),
+            timeout=30,
+        ) as response:
+            payload = json.load(response)
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        raise SystemExit(f"{cid}: OLS4 lookup failed ({exc}); cannot verify the label") from exc
+    docs = [d for d in payload.get("response", {}).get("docs", []) if d.get("obo_id") == cid]
+    if not docs:
+        raise SystemExit(f"{cid}: not found in OLS4 {prefix} (absent / wrong id)")
+    doc = docs[0]
+    if doc.get("is_obsolete"):
+        raise SystemExit(f"{cid} is obsolete in {prefix} — pick a current term")
+    label = str(doc.get("label") or "")
+    if not label:
+        raise SystemExit(f"{cid} has no label in OLS4 (absent / wrong id)")
+    # OLS4 hands back the IRI fragment as `label` for some terms. Writing that produces
+    # junk labels like `CHEBI_1`, which a previous backfill had to revert; reject it.
+    if label.replace("_", ":") == cid or label == cid.replace(":", "_"):
+        raise SystemExit(f"{cid}: OLS4 returned the IRI fragment as its label — not usable")
+    return label
+
+
 def canonical_label(cid: str) -> str:
     prefix = cid.split(":", 1)[0].upper()
     cid = f"{prefix}:{cid.split(':', 1)[1]}"      # builds store the prefix uppercase
     db = ONTOLOGY_DB.get(prefix)
-    if db is None:
+    if db is None or not db.exists() or db.stat().st_size == 0:
+        if prefix in OBJECT_SOURCE:
+            # The corpus already publishes rows for this prefix, so a promotion to it is
+            # legitimate; only the local build is unavailable.
+            return _label_via_ols4(cid)
         raise SystemExit(f"{cid}: no local build configured for prefix {prefix!r} "
                          f"(have {', '.join(sorted(ONTOLOGY_DB))})")
-    if not db.exists():
-        raise SystemExit(f"{cid}: {db} is missing — the {prefix} build is not downloaded")
     con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
     row = con.execute("SELECT value FROM statements WHERE subject=? AND predicate='rdfs:label'", (cid,)).fetchone()
     dep = con.execute("SELECT 1 FROM statements WHERE subject=? AND predicate='owl:deprecated'", (cid,)).fetchone()
@@ -162,16 +215,16 @@ def main():
                 "MAPPING_SEMANTICS.md Section 3: a substance with no exact ontology "
                 "term takes its registry CURIE as identifier AND asserts a narrowMatch "
                 "to the nearest parent. Rule B1 then requires both SSSOM rows.")
-        elif a.parent.split(":", 1)[0].upper() not in ONTOLOGY_DB:
-            raise SystemExit(f"--parent must be one of {', '.join(sorted(ONTOLOGY_DB))}")
+        elif a.parent.split(":", 1)[0].upper() not in PROMOTABLE:
+            raise SystemExit(f"--parent must be one of {', '.join(sorted(PROMOTABLE))}")
         if a.parent:
             a.quality = "NARROW_MATCH"
             term_curie = a.parent
     else:
         if a.parent:
             raise SystemExit("--parent applies only when --to is a registry mint")
-        if a.to.split(":", 1)[0].upper() not in ONTOLOGY_DB:
-            raise SystemExit(f"this helper promotes to {', '.join(sorted(ONTOLOGY_DB))} ids "
+        if a.to.split(":", 1)[0].upper() not in PROMOTABLE:
+            raise SystemExit(f"this helper promotes to {', '.join(sorted(PROMOTABLE))} ids "
                              "or a registry mint")
         if a.quality == "NARROW_MATCH":
             raise SystemExit(

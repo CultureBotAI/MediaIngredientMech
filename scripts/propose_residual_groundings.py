@@ -170,11 +170,15 @@ def exact_hits(adapter, query: str, prefix: str) -> list[tuple[str, str]]:
     # synonyms rather than primary labels, so without ALIAS this finds almost nothing --
     # it reported 0 hits on the whole canary set.
     config = SearchConfiguration(properties=[SearchProperty.LABEL, SearchProperty.ALIAS])
+    trusted = getattr(adapter, "server_side_exact", False)
     out = []
     for curie in list(adapter.basic_search(query, config=config))[:25]:
         if not str(curie).startswith(f"{prefix}:"):
             continue
         label = adapter.label(curie) or ""
+        if trusted:
+            out.append((str(curie), label))
+            continue
         names = {comparison_key(label)}
         if prefix not in LABEL_ONLY:
             try:
@@ -201,6 +205,13 @@ class OlsAdapter:
     """
 
     BASE = "https://www.ebi.ac.uk/ols4/api/search"
+
+    # OLS4 is asked for `exact=true` over `label,synonym`, so a returned term already
+    # matched the query exactly on one of them. Re-checking client-side against the label
+    # alone would discard every synonym match: `Christensen's urea agar` is an exact MICRO
+    # synonym of `urea agar` (MICRO:0000643), and the check threw it away. That made the
+    # whole MICRO pass label-only without saying so.
+    server_side_exact = True
 
     def __init__(self, prefix: str, pause: float = 0.34) -> None:
         self.prefix = prefix
@@ -240,8 +251,8 @@ class OlsAdapter:
         return self._labels.get(curie, "")
 
     def entity_aliases(self, curie: str):  # noqa: ARG002 - adapter protocol
-        # OLS4 already applied exact label+synonym matching server-side, so a hit is
-        # exact by construction; re-deriving aliases would cost one request per term.
+        # Never consulted: `server_side_exact` short-circuits the client-side check.
+        # Re-deriving real aliases would cost one request per term for no added trust.
         return [self._labels.get(curie, "")]
 
 
@@ -317,15 +328,22 @@ def main(argv: list[str] | None = None) -> int:
     for row in rows:
         label = row["label"]
         hits: list[tuple[str, str, str]] = []
-        for query in candidate_queries(label, triage.fold):
-            for prefix, adapter in adapters:
+        queries = candidate_queries(label, triage.fold)
+        # Ontology preference has to dominate the query variants, not the other way round.
+        # With queries outer, the RAW query found a match at a low-priority ontology before
+        # the NORMALISED query ever reached a high-priority one -- oaklib's search is
+        # case-sensitive, so `Air` missed ENVO's `air` and landed on NCIT while the
+        # lowercase surface form `air` resolved to ENVO. The same substance took two
+        # different ontologies based on nothing but capitalisation.
+        for prefix, adapter in adapters:
+            for query in queries:
                 for curie, term_label in exact_hits(adapter, query, prefix):
                     hits.append((curie, term_label, query))
                 if hits:
-                    # First ontology in preference order that answers exactly wins; a
-                    # lower-priority ontology carrying the same name adds no information.
                     break
             if hits:
+                # First ontology in preference order that answers exactly wins; a
+                # lower-priority ontology carrying the same name adds no information.
                 break
         if not hits:
             results.append({**row, "verdict": "NO_EXACT_HIT", "curie": "", "term_label": "", "matched_query": "", "holder": ""})
