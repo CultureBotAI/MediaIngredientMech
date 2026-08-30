@@ -436,3 +436,61 @@ class TestMicroRoundTripGuard:
             if identifier.startswith("MICRO:") and identifier not in MICRO_VERIFIED:
                 offenders.append((path.name, identifier))
         assert not offenders, f"records on unverified MICRO ids: {offenders}"
+
+
+class TestMatchedTermMustDenoteASubstance:
+    """An exact string match says nothing about whether the term is an ingredient.
+
+    `Dissolve` matches NCIT:C64929 ("Dissolve", a procedure) and `Stock A` matches
+    NCIT:C14643 -- perfect label matches, neither a substance. This is the defect
+    class of #356, where `X` was published as EXACT_MATCH against the 24th letter of
+    the alphabet on a record with 101 occurrences.
+    """
+
+    @pytest.fixture
+    def proposer(self):
+        return _load("propose_residual_groundings")
+
+    class _Hierarchy:
+        """Minimal is_a hierarchy: only `good` sits under the substance root."""
+
+        def __init__(self, parents):
+            self.parents = parents
+
+        def ancestors(self, curies, predicates=None):  # noqa: ARG002
+            return self.parents.get(curies[0], set()) | set(curies)
+
+        def label(self, curie):
+            return curie
+
+        def basic_search(self, query, config=None):  # noqa: ARG002
+            return list(self.parents)
+
+        def entity_aliases(self, curie):  # noqa: ARG002
+            return [curie]
+
+    def test_a_term_outside_the_substance_branch_is_rejected(self, proposer):
+        adapter = self._Hierarchy({"NCIT:C64929": set()})
+        assert not proposer.denotes_a_substance(adapter, "NCIT:C64929", "NCIT")
+
+    def test_a_term_under_the_substance_root_is_kept(self, proposer):
+        adapter = self._Hierarchy({"NCIT:C45869": {"NCIT:C1908"}})
+        assert proposer.denotes_a_substance(adapter, "NCIT:C45869", "NCIT")
+
+    def test_ontologies_without_a_configured_root_are_unaffected(self, proposer):
+        """CHEBI and FOODON are substance-scoped already; do not gate them."""
+        adapter = self._Hierarchy({})
+        assert proposer.denotes_a_substance(adapter, "CHEBI:15377", "CHEBI")
+        assert proposer.denotes_a_substance(adapter, "FOODON:03306272", "FOODON")
+
+    def test_an_unavailable_hierarchy_fails_closed(self, proposer):
+        """A lookup error must not read as 'this is a substance'."""
+
+        class _Broken:
+            def ancestors(self, curies, predicates=None):  # noqa: ARG002
+                raise RuntimeError("no hierarchy")
+
+        assert not proposer.denotes_a_substance(_Broken(), "NCIT:C1", "NCIT")
+
+    def test_ncit_root_is_the_substance_branch(self, proposer):
+        assert proposer.SUBSTANCE_ROOTS["NCIT"] == frozenset({"NCIT:C1908"})

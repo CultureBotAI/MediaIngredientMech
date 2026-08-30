@@ -158,6 +158,34 @@ LABEL_ONLY = frozenset({"NCIT", "MESH"})
 # matched through a formula alias. Short labels are reported for curation, not proposed.
 MIN_QUERY_LENGTH = 3
 
+# An exact string match says nothing about whether the term denotes a *substance*.
+# `Dissolve` matches NCIT:C64929 ("Dissolve", a procedure) and `Stock A` matches
+# NCIT:C14643 -- both perfect label matches, neither an ingredient. That is the defect
+# class of #356, where `X` was published as EXACT_MATCH against the 24th letter of the
+# alphabet on a record with 101 occurrences. For ontologies broad enough to contain
+# non-substances, require the term to descend from a substance root.
+SUBSTANCE_ROOTS = {
+    "NCIT": frozenset({"NCIT:C1908"}),  # Drug, Food, Chemical or Biomedical Material
+}
+
+
+def denotes_a_substance(adapter, curie: str, prefix: str) -> bool:
+    """Whether `curie` descends from one of its ontology's substance roots.
+
+    Only consulted for ontologies in SUBSTANCE_ROOTS. Anything else is assumed to be
+    substance-scoped already (CHEBI, FOODON) or narrow enough not to need it.
+    """
+    roots = SUBSTANCE_ROOTS.get(prefix)
+    if not roots:
+        return True
+    try:
+        from oaklib.datamodels.vocabulary import IS_A  # noqa: PLC0415
+
+        ancestors = set(adapter.ancestors([curie], predicates=[IS_A]))
+    except Exception:  # noqa: BLE001 - an unavailable hierarchy must not silently pass
+        return False
+    return bool(ancestors & roots)
+
 
 def exact_hits(adapter, query: str, prefix: str) -> list[tuple[str, str]]:
     """Return (curie, label) for terms whose label or exact synonym equals `query`."""
@@ -177,7 +205,8 @@ def exact_hits(adapter, query: str, prefix: str) -> list[tuple[str, str]]:
             continue
         label = adapter.label(curie) or ""
         if trusted:
-            out.append((str(curie), label))
+            if denotes_a_substance(adapter, str(curie), prefix):
+                out.append((str(curie), label))
             continue
         names = {comparison_key(label)}
         if prefix not in LABEL_ONLY:
@@ -185,7 +214,7 @@ def exact_hits(adapter, query: str, prefix: str) -> list[tuple[str, str]]:
                 names.update(comparison_key(a) for a in adapter.entity_aliases(curie))
             except Exception:  # noqa: BLE001 - alias lookup is best-effort per term
                 pass
-        if wanted in names:
+        if wanted in names and denotes_a_substance(adapter, str(curie), prefix):
             out.append((str(curie), label))
     return out
 
