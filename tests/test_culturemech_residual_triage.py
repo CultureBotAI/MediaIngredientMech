@@ -331,3 +331,52 @@ class TestOntologyPreferenceDominatesQueryVariants:
     def test_candidate_queries_include_the_normalised_form(self, proposer):
         queries = proposer.candidate_queries("Air", lambda s: s)
         assert "air" in queries, "the lowercase form must be searched, not only compared"
+
+
+class TestPromotionTargets:
+    """`promote_resolved_unmapped.py` must accept every prefix the corpus publishes."""
+
+    @pytest.fixture
+    def promote(self):
+        return _load("promote_resolved_unmapped")
+
+    def test_micro_is_promotable_despite_having_no_local_build(self, promote):
+        """MICRO models named media and MIM publishes 48 MICRO records.
+
+        The guard used to be keyed on ONTOLOGY_DB, and MICRO's local semantic-sql
+        build is a 0-byte stub, so every MICRO promotion was refused -- a missing
+        local build is an availability problem, not an illegitimate destination.
+        """
+        assert "MICRO" in promote.PROMOTABLE
+
+    def test_promotable_covers_every_published_object_source(self, promote):
+        """Otherwise a prefix can be published in SSSOM but unreachable by promotion."""
+        assert promote.PROMOTABLE == frozenset(promote.OBJECT_SOURCE)
+
+    def test_every_promotable_prefix_has_an_object_source(self, promote):
+        """A promotion with no object_source writes an empty column (the #381 defect)."""
+        for prefix in promote.PROMOTABLE:
+            assert promote.OBJECT_SOURCE.get(prefix), f"{prefix} has no object_source"
+
+
+class TestRecordCreatorRoutesPromotions:
+    """A surface form MIM already holds as UNMAPPED is a promotion, not a creation.
+
+    Creating a second record would strand the existing record's synonyms, occurrence
+    statistics and curation history, and -- because in MIM the identifier IS the CURIE
+    -- would be a duplicate by construction.
+    """
+
+    def test_creator_module_loads(self):
+        creator = _load("create_records_from_groundings")
+        assert creator.CURATOR
+        assert creator.MAPPED.name == "mapped"
+
+    def test_promoted_records_left_the_unmapped_tree(self):
+        """The four MICRO promotions must not still be sitting in unmapped/."""
+        stale = [
+            path.name
+            for path in (_REPO / "data" / "ingredients" / "unmapped").glob("*.yaml")
+            if yaml.safe_load(path.read_text(encoding="utf-8")).get("identifier", "").startswith("MICRO:")
+        ]
+        assert not stale, f"MICRO-identified records still under unmapped/: {stale}"

@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-08-30T07:09:22.569074+00:00
+Generated: 2026-08-30T07:15:23.448719+00:00
 Total: 2846 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| MICRO:0000610 | MICRO:0000610 | Ox-bile | MAPPED | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0002402 | MICRO:0002402 | Casman-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0002398 | MICRO:0002398 | Bordet-Gengou-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0001348 | MICRO:0001348 | BG-11 Medium | MAPPED | MICRO | SYNONYM_MATCH | 2 |
@@ -2759,7 +2760,6 @@ Total: 2846 ingredients
 | UNMAPPED_0487 |  | OXOID Legionella CYE-Agar base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0129 |  | Oatmeal agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0099 |  | Organic Peat | UNMAPPED |  |  | 1 |
-| UNMAPPED_0485 |  | Ox-bile | UNMAPPED |  |  | 0 |
 | UNMAPPED_0486 |  | Oxgall | UNMAPPED |  |  | 0 |
 | UNMAPPED_0497 |  | PPLO broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0231 |  | Pectic galactan from potato | UNMAPPED |  |  | 1 |

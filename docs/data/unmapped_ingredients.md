@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-30T07:09:22.567902+00:00
-Total: 277 ingredients
+Generated: 2026-08-30T07:15:23.448229+00:00
+Total: 276 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -190,7 +190,6 @@ Total: 277 ingredients
 | UNMAPPED_0487 |  | OXOID Legionella CYE-Agar base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0129 |  | Oatmeal agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0099 |  | Organic Peat | UNMAPPED |  |  | 1 |
-| UNMAPPED_0485 |  | Ox-bile | UNMAPPED |  |  | 0 |
 | UNMAPPED_0486 |  | Oxgall | UNMAPPED |  |  | 0 |
 | UNMAPPED_0497 |  | PPLO broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0231 |  | Pectic galactan from potato | UNMAPPED |  |  | 1 |

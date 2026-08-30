@@ -1,10 +1,10 @@
-identifier: UNMAPPED_0485
+identifier: MICRO:0000610
 preferred_term: Ox-bile
 synonyms:
 - synonym_text: Ox-bile
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: UNMAPPED
+mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -40,7 +40,26 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0485 -> MICRO:0000610 "ox bile" (SYNONYM_MATCH); mapping_status
+    UNMAPPED -> MAPPED, SSSOM row added.
 notes: Imported from mim-queue (source_id=mediadive.ingredient:502); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as animal bile material/preparation pending
   material-level curation.
 ingredient_type: UNDEFINED_MIXTURE
+ontology_mapping:
+  ontology_id: MICRO:0000610
+  ontology_label: ox bile
+  ontology_source: MICRO
+  mapping_quality: SYNONYM_MATCH
+  evidence:
+  - evidence_type: DATABASE_MATCH
+    source: OLS4 MICRO exact synonym match
+    notes: MICRO:0000610 'ox bile' carries this surface form as an exact synonym;
+      the difference is hyphenation only. MICRO models the material directly, so MAPPING_SEMANTICS
+      Section 3 step 1 grounds it rather than leaving it unmapped for variable composition.

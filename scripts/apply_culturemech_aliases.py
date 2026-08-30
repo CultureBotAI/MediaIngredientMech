@@ -93,6 +93,28 @@ def existing_texts(record: dict) -> dict[str, str]:
     return seen
 
 
+def load_grounding_rows(path: Path) -> list[dict[str, str]]:
+    """SYNONYM_ONTO_EXISTING proposals, reshaped to look like triage ALIAS rows.
+
+    The proposer found an exact ontology match for a surface form MIM had no record
+    for, and a record already holds that CURIE -- so the surface form belongs on that
+    record as a synonym. `mim_identifier` is the matched CURIE rather than a triage
+    lookup, but everything downstream (the REJECTED_LABEL guard, the shared-identifier
+    guard, the ambiguity guards) applies unchanged.
+    """
+    if not path.is_file():
+        raise SystemExit(f"groundings report not found: {path}")
+    with path.open(encoding="utf-8", newline="") as handle:
+        rows = [
+            {**r, "mim_identifier": r["curie"], "mim_label": r["term_label"]}
+            for r in csv.DictReader(handle, delimiter="\t")
+            if r.get("verdict") == "SYNONYM_ONTO_EXISTING"
+        ]
+    if not rows:
+        raise SystemExit(f"no SYNONYM_ONTO_EXISTING rows in {path}")
+    return rows
+
+
 def load_alias_rows(path: Path, buckets: tuple[str, ...]) -> list[dict[str, str]]:
     if not path.is_file():
         raise SystemExit(
@@ -110,6 +132,12 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--triage", type=Path, default=TRIAGE)
     parser.add_argument(
+        "--groundings",
+        type=Path,
+        action="append",
+        help="apply SYNONYM_ONTO_EXISTING proposals from a groundings report instead",
+    )
+    parser.add_argument(
         "--buckets",
         default="ALIAS,UNMAPPED",
         help="triage buckets to apply (default: the two that name an existing record)",
@@ -121,8 +149,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--date", default=datetime.now(timezone.utc).isoformat())
     args = parser.parse_args(argv)
 
-    buckets = tuple(b.strip().upper() for b in args.buckets.split(",") if b.strip())
-    rows = load_alias_rows(args.triage, buckets)
+    if args.groundings:
+        rows = []
+        for path in args.groundings:
+            rows.extend(load_grounding_rows(path))
+        buckets = ("SYNONYM_ONTO_EXISTING",)
+    else:
+        buckets = tuple(b.strip().upper() for b in args.buckets.split(",") if b.strip())
+        rows = load_alias_rows(args.triage, buckets)
     if args.only:
         wanted = {label.casefold() for label in args.only}
         rows = [r for r in rows if r["label"].casefold() in wanted]

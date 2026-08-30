@@ -1,10 +1,11 @@
 # Mapped Ingredients
 
-Generated: 2026-08-30T07:09:22.564921+00:00
-Total: 2569 ingredients
+Generated: 2026-08-30T07:15:23.445516+00:00
+Total: 2570 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| MICRO:0000610 | MICRO:0000610 | Ox-bile | MAPPED | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0002402 | MICRO:0002402 | Casman-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0002398 | MICRO:0002398 | Bordet-Gengou-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0001348 | MICRO:0001348 | BG-11 Medium | MAPPED | MICRO | SYNONYM_MATCH | 2 |

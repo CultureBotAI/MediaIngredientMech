@@ -82,8 +82,19 @@ def main(argv: list[str] | None = None) -> int:
 
     held = held_identifiers()
     existing_stems = {p.stem for p in (_REPO / "data" / "ingredients").rglob("*.yaml")}
+    # A surface form MIM already has as an UNMAPPED record is not a creation at all --
+    # it is a promotion of that record, which carries its synonyms, occurrence statistics
+    # and curation history with it. Creating a second record would strand all of that.
+    unmapped_by_term: dict[str, str] = {}
+    for path in (_REPO / "data" / "ingredients" / "unmapped").glob("*.yaml"):
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if isinstance(data, dict) and data.get("mapping_status") == "UNMAPPED":
+            term = str(data.get("preferred_term") or "").casefold()
+            if term:
+                unmapped_by_term[term] = str(data.get("identifier") or "")
 
     planned: list[tuple[Path, dict]] = []
+    promotions: list[tuple[str, str, str, str]] = []
     skipped: list[tuple[str, str]] = []
     claimed: dict[str, str] = {}
     for row in sorted(rows, key=lambda r: (-int(r["occurrences"]), r["label"])):
@@ -94,6 +105,10 @@ def main(argv: list[str] | None = None) -> int:
             continue
         if curie in claimed:
             skipped.append((label, f"{curie} already claimed this run by {claimed[curie]!r}"))
+            continue
+        promote_target = unmapped_by_term.get(label.casefold())
+        if promote_target:
+            promotions.append((promote_target, label, curie, row["term_label"]))
             continue
         stem = exporter.sanitize_filename(label)
         if not stem or stem in existing_stems:
@@ -134,8 +149,15 @@ def main(argv: list[str] | None = None) -> int:
         planned.append((MAPPED / f"{stem}.yaml", record))
 
     print(f"NEW_RECORD proposals: {len(rows)}")
-    print(f"  records to create: {len(planned)}")
-    print(f"  skipped:           {len(skipped)}")
+    print(f"  records to create:    {len(planned)}")
+    print(f"  promote instead:      {len(promotions)}")
+    print(f"  skipped:              {len(skipped)}")
+    for identifier, label, curie, term_label in promotions[:12]:
+        print(f"      ! {label!r} is {identifier}; promote it rather than creating a record:")
+        print(f"          scripts/promote_resolved_unmapped.py --identifier {identifier} "
+              f"--to {curie} --quality <EXACT_MATCH|SYNONYM_MATCH> --apply")
+    if len(promotions) > 12:
+        print(f"      ... and {len(promotions) - 12} more promotions")
     for label, why in skipped[:12]:
         print(f"      - {label!r}: {why}")
 
