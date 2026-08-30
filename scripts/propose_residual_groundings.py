@@ -37,6 +37,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
+from functools import lru_cache
 from pathlib import Path
 
 import yaml
@@ -167,6 +168,24 @@ MIN_QUERY_LENGTH = 3
 SUBSTANCE_ROOTS = {
     "NCIT": frozenset({"NCIT:C1908"}),  # Drug, Food, Chemical or Biomedical Material
 }
+
+# Prefixes whose accessions must be confirmed to round-trip before a proposal on them can
+# be published. `promote_resolved_unmapped.canonical_label` performs the check and refuses
+# `is_defining_ontology=false`.
+ROUND_TRIP_CHECKED = frozenset({"MICRO"})
+
+
+@lru_cache(maxsize=1)
+def promoter():
+    """The promotion helper, loaded lazily so the common path pays nothing for it."""
+    spec = importlib.util.spec_from_file_location(
+        "promote_resolved_unmapped", _REPO / "scripts" / "promote_resolved_unmapped.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    sys.modules["promote_resolved_unmapped"] = module
+    spec.loader.exec_module(module)
+    return module
 
 
 def denotes_a_substance(adapter, curie: str, prefix: str) -> bool:
@@ -308,6 +327,16 @@ def recheck(report: Path, out: Path) -> int:
             dropped.append((row["label"], curie, "label shorter than MIN_QUERY_LENGTH"))
             continue
         prefix = curie.split(":", 1)[0]
+        if prefix in ROUND_TRIP_CHECKED:
+            # MicrO has ~1,472 classes under a malformed IRI that do not round-trip:
+            # kg-microbe's ontology transform never produces them, so a published row
+            # would dangle. curie.py gates MICRO behind MICRO_VERIFIED for this reason,
+            # and a proposal on such an id is unpublishable however good the label match.
+            try:
+                promoter().canonical_label(curie)
+            except SystemExit as exc:
+                dropped.append((row["label"], curie, str(exc).split(" (IRI")[0]))
+                continue
         if prefix in SUBSTANCE_ROOTS:
             if prefix not in adapters:
                 adapters[prefix] = get_adapter(f"sqlite:obo:{prefix.lower()}")

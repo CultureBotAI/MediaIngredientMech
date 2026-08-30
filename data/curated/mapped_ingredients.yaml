@@ -1,6 +1,6 @@
-generation_date: '2026-08-30T08:21:58.362815+00:00'
-total_count: 2568
-mapped_count: 2514
+generation_date: '2026-08-30T11:00:14.983822+00:00'
+total_count: 2675
+mapped_count: 2621
 unmapped_count: 0
 ingredients:
 - identifier: MICRO:0000610
@@ -1697,6 +1697,14 @@ ingredients:
       to 3 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
       identifiers, and concentrations were not changed.'
     llm_assisted: false
+  - timestamp: '2026-08-30T10:54:21.025609+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: UPDATED_COMPONENT_SCOPE
+    changes: 'reference_scope EXTERNAL_TERM -> MIM_CATALOG for component 2 (clarified
+      rumen fluid): MICRO:0000520 was outside MIM when this partonomy was written
+      and now has a record, so the component resolves inside the catalog rather than
+      out of it.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:casitone_yeast_extract_rumen_fluid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -1711,7 +1719,7 @@ ingredients:
     source: microbedecoder research decomposition (#213/#308)
   - component_name: clarified rumen fluid
     component_id: MICRO:0000520
-    reference_scope: EXTERNAL_TERM
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   component_assertion:
     method: LABEL_ENUMERATION
@@ -5625,6 +5633,14 @@ ingredients:
       to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
       identifiers, and concentrations were not changed.'
     llm_assisted: false
+  - timestamp: '2026-08-30T10:54:21.025609+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: UPDATED_COMPONENT_SCOPE
+    changes: 'reference_scope EXTERNAL_TERM -> MIM_CATALOG for component 3 (clarified
+      rumen fluid): MICRO:0000520 was outside MIM when this partonomy was written
+      and now has a record, so the component resolves inside the catalog rather than
+      out of it.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:py_glucose_rumen_fluid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   components:
@@ -5642,7 +5658,7 @@ ingredients:
     source: microbedecoder research decomposition (#213/#308)
   - component_name: clarified rumen fluid
     component_id: MICRO:0000520
-    reference_scope: EXTERNAL_TERM
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   component_assertion:
     method: ABBREVIATION_EXPANSION
@@ -6465,6 +6481,14 @@ ingredients:
       to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
       identifiers, and concentrations were not changed.'
     llm_assisted: false
+  - timestamp: '2026-08-30T10:54:21.025609+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: UPDATED_COMPONENT_SCOPE
+    changes: 'reference_scope EXTERNAL_TERM -> MIM_CATALOG for component 3 (clarified
+      rumen fluid): MICRO:0000520 was outside MIM when this partonomy was written
+      and now has a record, so the component resolves inside the catalog rather than
+      out of it.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_rumen_fluid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -6483,7 +6507,7 @@ ingredients:
     source: microbedecoder research decomposition (#213/#308)
   - component_name: clarified rumen fluid
     component_id: MICRO:0000520
-    reference_scope: EXTERNAL_TERM
+    reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   component_assertion:
     method: ABBREVIATION_EXPANSION
@@ -17491,6 +17515,9 @@ ingredients:
   - synonym_text: Ferrous Ion
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: Fe2+
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -17520,6 +17547,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Fe2+'' (x3 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferrous_ion); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
@@ -19120,6 +19154,9 @@ ingredients:
   - synonym_text: Ferric Iron
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: Fe3+
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -19149,6 +19186,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Fe3+'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferric_iron); no
     CAS-RN or CHEBI/NCIT match. Curator review needed.
@@ -22316,6 +22360,9 @@ ingredients:
   - synonym_text: 2-deoxy-D-erythro-pentose
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Deoxyribose
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -22353,6 +22400,13 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Deoxyribose'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 533-67-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -45744,7 +45798,10 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
-  synonyms: []
+  synonyms:
+  - synonym_text: 1-Butanol
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -45783,6 +45840,13 @@ ingredients:
       that established this mapping; a lexical grade would discard that provenance.
       ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
       under Rule D (#438), independently of mapping quality.
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''1-Butanol'' (x4 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 71-36-3
@@ -59153,6 +59217,9 @@ ingredients:
   - synonym_text: Corn meal
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Maize meal
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 6
@@ -59181,6 +59248,13 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Maize meal'' (x3 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2087); no CAS-RN
     or CHEBI/NCIT match. Curated to FOODON:03310257 cornmeal on 2026-05-11.
   kg_microbe_node_id: FOODON:03310257
@@ -59365,6 +59439,9 @@ ingredients:
   - synonym_text: CoSO4・7H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
+  - synonym_text: Cobalt sulfate heptahydrate
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 828
@@ -59451,6 +59528,14 @@ ingredients:
     changes: cas_rn 10124-43-3 -> 10026-24-1. 10124-43-3 is the ANHYDROUS parent's
       CAS; this record is grounded to CHEBI:91244 cobalt(2+) sulfate heptahydrate,
       whose ChEBI dbxref is 10026-24-1 (#334).
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Cobalt sulfate heptahydrate'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:53470
   chemical_properties:
     cas_rn: 10026-24-1
@@ -96534,6 +96619,9 @@ ingredients:
   - synonym_text: K2HPO4(Sigma P 3786)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Potassium dibasic phosphate trihydrate
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4555
@@ -96669,6 +96757,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Potassium dibasic phosphate trihydrate'' (x2 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7758-11-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -135164,6 +135260,9 @@ ingredients:
   - synonym_text: diazanium hydrogen phosphate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Ammonium phosphate
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 35
@@ -135244,6 +135343,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Ammonium phosphate'' (x8 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7783-28-0
     data_source: PubChem API
@@ -148292,6 +148399,9 @@ ingredients:
   - synonym_text: Propanol
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: Propane-1-ol
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -148328,6 +148438,13 @@ ingredients:
       rather than asserting a new mapping (#213). No new SSSOM row; CHEBI:28831 is
       already mapped. Source: kgmicrobe.trait:propanol.'
     llm_assisted: true
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Propane-1-ol'' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 71-23-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -155926,7 +156043,13 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: kgm-metatraits
       notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:skimmed_milk; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Skim milk
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Skim milk (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -155952,6 +156075,14 @@ ingredients:
     curator: fix_ontology_source_mismatch
     action: CORRECTED
     changes: 'ontology_source: registry -> FOODON (aligned with FOODON:03301484 prefix)'
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Skim milk'' (x24 CultureMech mentions); ''Skim milk (BD-Difco)''
+      (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   ingredient_type: UNDEFINED_MIXTURE
 - identifier: ENVO:00002044
   preferred_term: Sludge
@@ -167824,6 +167955,9 @@ ingredients:
   - synonym_text: thallium(1+) acetate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Thallium acetate
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -167851,6 +167985,13 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Thallium acetate'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 563-68-8
@@ -171395,7 +171536,10 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). '
-  synonyms: []
+  synonyms:
+  - synonym_text: Ca3(PO4)2
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
@@ -171453,6 +171597,13 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Ca3(PO4)2'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7758-87-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -184175,7 +184326,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:ammonium; '
-  synonyms: []
+  synonyms:
+  - synonym_text: NH4+
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -184215,6 +184369,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:32:13.266276+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''NH4+'' (x3 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
@@ -196039,7 +196200,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:methicillin; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Meticillin
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -196079,6 +196243,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Meticillin'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
@@ -199419,7 +199590,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:propionate; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Propanoate
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -199459,6 +199633,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:32:26.469831+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Propanoate'' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
@@ -206798,3 +206979,2550 @@ ingredients:
         is not a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
         mint with no parent, because a multi-component mix does not narrow to any
         single compound (#288).'
+- identifier: MICRO:0001234
+  preferred_term: Horse blood
+  ontology_mapping:
+    ontology_id: MICRO:0001234
+    ontology_label: horse blood
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 68
+    media_count: 68
+  curation_history:
+  - timestamp: '2026-08-30T10:33:31.787536+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (68 mentions across 68 recipes). Grounded to MICRO:0001234 (''horse blood'')
+      on an exact match of the canonical label to the query ''Horse blood''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:17043
+  preferred_term: '[1,1′-Biphenyl]-2-ol'
+  ontology_mapping:
+    ontology_id: CHEBI:17043
+    ontology_label: biphenyl-2-ol
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 60
+    media_count: 60
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (60 mentions across 60 recipes). Grounded to CHEBI:17043 (''biphenyl-2-ol'')
+      on an exact match of an exact synonym to the query "[1,1''-biphenyl]-2-ol".
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:15573
+  preferred_term: 2-Aminoethylphosphonate
+  ontology_mapping:
+    ontology_id: CHEBI:15573
+    ontology_label: (2-aminoethyl)phosphonic acid
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:15573 (''(2-aminoethyl)phosphonic
+      acid'') on an exact match of an exact synonym to the query ''2-Aminoethylphosphonate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:30793
+  preferred_term: 2-Chlorobenzoic acid
+  ontology_mapping:
+    ontology_id: CHEBI:30793
+    ontology_label: 2-chlorobenzoic acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:30793 (''2-chlorobenzoic acid'')
+      on an exact match of the canonical label to the query ''2-Chlorobenzoic acid''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312073+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:16260
+  preferred_term: 2-Nitrophenol
+  ontology_mapping:
+    ontology_id: CHEBI:16260
+    ontology_label: 2-nitrophenol
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:16260 (''2-nitrophenol'') on
+      an exact match of the canonical label to the query ''2-Nitrophenol''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312376+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:28854
+  preferred_term: 2,4-Dichlorophenoxyacetic acid
+  ontology_mapping:
+    ontology_id: CHEBI:28854
+    ontology_label: 2,4-D
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:28854 (''2,4-D'') on an exact
+      match of an exact synonym to the query ''2,4-Dichlorophenoxyacetic acid''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:42094
+  preferred_term: 2,4-Dihydroxybenzoic acid
+  ontology_mapping:
+    ontology_id: CHEBI:42094
+    ontology_label: 2,4-dihydroxybenzoic acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (5 mentions across 5 recipes). Grounded to CHEBI:42094 (''2,4-dihydroxybenzoic
+      acid'') on an exact match of the canonical label to the query ''2,4-dihydroxybenzoic
+      acid''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312380+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:28924
+  preferred_term: 3-Aminophenol
+  ontology_mapping:
+    ontology_id: CHEBI:28924
+    ontology_label: 3-aminophenol
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:28924 (''3-aminophenol'') on
+      an exact match of the canonical label to the query ''3-Aminophenol''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312383+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:47106
+  preferred_term: 3-Chloro-4-hydroxyphenylacetic acid
+  ontology_mapping:
+    ontology_id: CHEBI:47106
+    ontology_label: (3-chloro-4-hydroxyphenyl)acetic acid
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:47106 (''(3-chloro-4-hydroxyphenyl)acetic
+      acid'') on an exact match of an exact synonym to the query ''3-chloro-4-hydroxyphenylacetic
+      acid''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:19982
+  preferred_term: 3-Chloroacrylic acid
+  ontology_mapping:
+    ontology_id: CHEBI:19982
+    ontology_label: 3-chloroacrylic acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:19982 (''3-chloroacrylic acid'')
+      on an exact match of the canonical label to the query ''3-chloroacrylic acid''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312385+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:17871
+  preferred_term: 3-Hydroxypropanal
+  ontology_mapping:
+    ontology_id: CHEBI:17871
+    ontology_label: 3-hydroxypropanal
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:17871 (''3-hydroxypropanal'')
+      on an exact match of the canonical label to the query ''3-Hydroxypropanal''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:17612
+  preferred_term: 3,4-Dihydroxyphenylacetate
+  ontology_mapping:
+    ontology_id: CHEBI:17612
+    ontology_label: (3,4-dihydroxyphenyl)acetate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:17612 (''(3,4-dihydroxyphenyl)acetate'')
+      on an exact match of an exact synonym to the query ''3,4-dihydroxyphenylacetate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:566519
+  preferred_term: 3,4,5-Trimethoxycinnamic acid
+  ontology_mapping:
+    ontology_id: CHEBI:566519
+    ontology_label: 3,4,5-trimethoxycinnamic acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 4
+    media_count: 4
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (4 mentions across 4 recipes). Grounded to CHEBI:566519 (''3,4,5-trimethoxycinnamic
+      acid'') on an exact match of the canonical label to the query ''3,4,5-trimethoxycinnamic
+      acid''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:39912
+  preferred_term: 3,5-Dihydroxybenzoic acid
+  ontology_mapping:
+    ontology_id: CHEBI:39912
+    ontology_label: 3,5-dihydroxybenzoic acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to CHEBI:39912 (''3,5-dihydroxybenzoic
+      acid'') on an exact match of the canonical label to the query ''3,5-dihydroxybenzoic
+      acid''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312388+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:16892
+  preferred_term: 4-Amino-5-hydroxymethyl-2-methylpyrimidine
+  ontology_mapping:
+    ontology_id: CHEBI:16892
+    ontology_label: 4-amino-5-hydroxymethyl-2-methylpyrimidine
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:16892 (''4-amino-5-hydroxymethyl-2-methylpyrimidine'')
+      on an exact match of the canonical label to the query ''4-Amino-5-hydroxymethyl-2-methylpyrimidine''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:17847
+  preferred_term: 4-Cresol
+  ontology_mapping:
+    ontology_id: CHEBI:17847
+    ontology_label: p-cresol
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:17847 (''p-cresol'') on an
+      exact match of an exact synonym to the query ''4-Cresol''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: ENVO:00002005
+  preferred_term: Air
+  ontology_mapping:
+    ontology_id: ENVO:00002005
+    ontology_label: air
+    ontology_source: ENVO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 12
+    media_count: 12
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (12 mentions across 12 recipes). Grounded to ENVO:00002005 (''air'') on an exact
+      match of the canonical label to the query ''air''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:18145
+  preferred_term: alpha-Tocopherol
+  ontology_mapping:
+    ontology_id: CHEBI:18145
+    ontology_label: (R,R,R)-alpha-tocopherol
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:18145 (''(R,R,R)-alpha-tocopherol'')
+      on an exact match of an exact synonym to the query ''alpha-Tocopherol''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:16551
+  preferred_term: alpha,alpha-Trehalose
+  ontology_mapping:
+    ontology_id: CHEBI:16551
+    ontology_label: alpha,alpha-trehalose
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:16551 (''alpha,alpha-trehalose'')
+      on an exact match of the canonical label to the query ''alpha,alpha-Trehalose''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: ENVO:01000173
+  preferred_term: Anaerobic water
+  ontology_mapping:
+    ontology_id: ENVO:01000173
+    ontology_label: anoxic water
+    ontology_source: ENVO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to ENVO:01000173 (''anoxic water'')
+      on an exact match of an exact synonym to the query ''anaerobic water''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:00001059
+  preferred_term: Apple Juice
+  ontology_mapping:
+    ontology_id: FOODON:00001059
+    ontology_label: apple juice
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to FOODON:00001059 (''apple juice'')
+      on an exact match of the canonical label to the query ''apple juice''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0001715
+  preferred_term: Artificial seawater
+  ontology_mapping:
+    ontology_id: MICRO:0001715
+    ontology_label: artificial seawater
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 19
+    media_count: 19
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (19 mentions across 19 recipes). Grounded to MICRO:0001715 (''artificial seawater'')
+      on an exact match of the canonical label to the query ''Artificial seawater''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:41:26.546472+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Artificial seawater (see below)'' (x7 CultureMech mentions);
+      ''Artificial seawater (see Medium No. 736 )'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  synonyms:
+  - synonym_text: Artificial seawater (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Artificial seawater (see Medium No. 736 )
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+- identifier: CHEBI:2956
+  preferred_term: azlocillin
+  ontology_mapping:
+    ontology_id: CHEBI:2956
+    ontology_label: azlocillin
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:2956 (''azlocillin'') on an
+      exact match of the canonical label to the query ''azlocillin''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:17169
+  preferred_term: Benzaldehyde
+  ontology_mapping:
+    ontology_id: CHEBI:17169
+    ontology_label: benzaldehyde
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:17169 (''benzaldehyde'') on
+      an exact match of the canonical label to the query ''Benzaldehyde''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:45993
+  preferred_term: Benzothiazole
+  ontology_mapping:
+    ontology_id: CHEBI:45993
+    ontology_label: benzothiazole
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:45993 (''benzothiazole'') on
+      an exact match of the canonical label to the query ''benzothiazole''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312390+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:17544
+  preferred_term: Bicarbonate
+  ontology_mapping:
+    ontology_id: CHEBI:17544
+    ontology_label: hydrogencarbonate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (4 mentions across 4 recipes). Grounded to CHEBI:17544 (''hydrogencarbonate'')
+      on an exact match of an exact synonym to the query ''Bicarbonate''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312392+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: UBERON:0000178
+  preferred_term: Blood
+  ontology_mapping:
+    ontology_id: UBERON:0000178
+    ontology_label: blood
+    ontology_source: UBERON
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to UBERON:0000178 (''blood'') on an
+      exact match of the canonical label to the query ''blood''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:22908
+  preferred_term: Borate
+  ontology_mapping:
+    ontology_id: CHEBI:22908
+    ontology_label: borate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:22908 (''borate'') on an exact
+      match of the canonical label to the query ''borate''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000566
+  preferred_term: brain–heart infusion agar
+  ontology_mapping:
+    ontology_id: MICRO:0000566
+    ontology_label: brain heart infusion agar
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0000566 (''brain heart infusion
+      agar'') on an exact match of an exact synonym to the query ''brain heart infusion
+      agar''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:59424
+  preferred_term: Bromophenol blue
+  ontology_mapping:
+    ontology_id: CHEBI:59424
+    ontology_label: bromophenol blue
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:59424 (''bromophenol blue'')
+      on an exact match of the canonical label to the query ''bromophenol blue''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:41:26.546472+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Bromophenol blue (0.5% in 0.2N KOH)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  synonyms:
+  - synonym_text: Bromophenol blue (0.5% in 0.2N KOH)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+- identifier: CHEBI:22984
+  preferred_term: Calcium
+  ontology_mapping:
+    ontology_id: CHEBI:22984
+    ontology_label: calcium atom
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:22984 (''calcium atom'') on
+      an exact match of an exact synonym to the query ''Calcium''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:03413044
+  preferred_term: Calcium lactate
+  ontology_mapping:
+    ontology_id: FOODON:03413044
+    ontology_label: calcium lactate
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to FOODON:03413044 (''calcium lactate'')
+      on an exact match of the canonical label to the query ''calcium lactate''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:03413045
+  preferred_term: Calcium malate
+  ontology_mapping:
+    ontology_id: FOODON:03413045
+    ontology_label: calcium malate
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to FOODON:03413045 (''calcium malate'')
+      on an exact match of the canonical label to the query ''calcium malate''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:03310367
+  preferred_term: Cellulose powder
+  ontology_mapping:
+    ontology_id: FOODON:03310367
+    ontology_label: cellulose powder
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to FOODON:03310367 (''cellulose powder'')
+      on an exact match of the canonical label to the query ''cellulose powder''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000591
+  preferred_term: chocolate agar
+  ontology_mapping:
+    ontology_id: MICRO:0000591
+    ontology_label: chocolate agar
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to MICRO:0000591 (''chocolate agar'')
+      on an exact match of the canonical label to the query ''chocolate agar''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:17996
+  preferred_term: Cl-
+  ontology_mapping:
+    ontology_id: CHEBI:17996
+    ontology_label: chloride
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 5
+    media_count: 5
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (5 mentions across 5 recipes). Grounded to CHEBI:17996 (''chloride'') on an
+      exact match of an exact synonym to the query ''Cl-''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000520
+  preferred_term: Clarified rumen fluid
+  ontology_mapping:
+    ontology_id: MICRO:0000520
+    ontology_label: clarified rumen fluid
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 6
+    media_count: 6
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (6 mentions across 6 recipes). Grounded to MICRO:0000520 (''clarified rumen
+      fluid'') on an exact match of the canonical label to the query ''Clarified rumen
+      fluid''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:28694
+  preferred_term: Copper
+  ontology_mapping:
+    ontology_id: CHEBI:28694
+    ontology_label: copper atom
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:28694 (''copper atom'') on
+      an exact match of an exact synonym to the query ''Copper''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:25399
+  preferred_term: Cresol
+  ontology_mapping:
+    ontology_id: CHEBI:25399
+    ontology_label: cresol
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to CHEBI:25399 (''cresol'') on an exact
+      match of the canonical label to the query ''cresol''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312394+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:38028
+  preferred_term: Cyanuric acid
+  ontology_mapping:
+    ontology_id: CHEBI:38028
+    ontology_label: cyanuric acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:38028 (''cyanuric acid'') on
+      an exact match of the canonical label to the query ''Cyanuric acid''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312396+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:33198
+  preferred_term: D-Gluconic acid
+  ontology_mapping:
+    ontology_id: CHEBI:33198
+    ontology_label: D-gluconic acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 4
+    media_count: 4
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (4 mentions across 4 recipes). Grounded to CHEBI:33198 (''D-gluconic acid'')
+      on an exact match of the canonical label to the query ''D-Gluconic acid''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:63075
+  preferred_term: Diammonium tartrate
+  ontology_mapping:
+    ontology_id: CHEBI:63075
+    ontology_label: diammonium L-tartrate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:63075 (''diammonium L-tartrate'')
+      on an exact match of an exact synonym to the query ''diammonium tartrate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:41962
+  preferred_term: Diethyl phosphonate
+  ontology_mapping:
+    ontology_id: CHEBI:41962
+    ontology_label: diethyl phosphonate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:41962 (''diethyl phosphonate'')
+      on an exact match of the canonical label to the query ''diethyl phosphonate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312397+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: MICRO:0001599
+  preferred_term: Dried Bovine Hemoglobin (BD 212392)
+  ontology_mapping:
+    ontology_id: MICRO:0001599
+    ontology_label: dried bovine hemoglobin
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to MICRO:0001599 (''dried bovine hemoglobin'')
+      on an exact match of an exact synonym to the query ''dried bovine hemoglobin''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:87426
+  preferred_term: Ethyl octanoate
+  ontology_mapping:
+    ontology_id: CHEBI:87426
+    ontology_label: ethyl octanoate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:87426 (''ethyl octanoate'')
+      on an exact match of the canonical label to the query ''ethyl octanoate''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0001358
+  preferred_term: Eugon agar (BD-Difco)
+  ontology_mapping:
+    ontology_id: MICRO:0001358
+    ontology_label: Eugon agar
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0001358 (''Eugon agar'') on
+      an exact match of an exact synonym to the query ''eugon agar''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: ENVO:00005749
+  preferred_term: farm soil
+  ontology_mapping:
+    ontology_id: ENVO:00005749
+    ontology_label: farm soil
+    ontology_source: ENVO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to ENVO:00005749 (''farm soil'') on
+      an exact match of the canonical label to the query ''farm soil''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:132238
+  preferred_term: Ferric nitrilotriacetate
+  ontology_mapping:
+    ontology_id: CHEBI:132238
+    ontology_label: iron(III) nitrilotriacetate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:132238 (''iron(III) nitrilotriacetate'')
+      on an exact match of an exact synonym to the query ''ferric nitrilotriacetate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:76243
+  preferred_term: Ferrous ammonium sulfate
+  ontology_mapping:
+    ontology_id: CHEBI:76243
+    ontology_label: ferrous ammonium sulfate (anhydrous)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 6
+    media_count: 6
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (6 mentions across 6 recipes). Grounded to CHEBI:76243 (''ferrous ammonium sulfate
+      (anhydrous)'') on an exact match of an exact synonym to the query ''Ferrous
+      ammonium sulfate''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:5098
+  preferred_term: flucloxacillin
+  ontology_mapping:
+    ontology_id: CHEBI:5098
+    ontology_label: flucloxacillin
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:5098 (''flucloxacillin'') on
+      an exact match of the canonical label to the query ''flucloxacillin''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:26078
+  preferred_term: H3PO4
+  ontology_mapping:
+    ontology_id: CHEBI:26078
+    ontology_label: phosphoric acid
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:26078 (''phosphoric acid'')
+      on an exact match of an exact synonym to the query ''H3PO4''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000567
+  preferred_term: Heart Infusion Agar (BD 211065)
+  ontology_mapping:
+    ontology_id: MICRO:0000567
+    ontology_label: heart infusion agar
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0000567 (''heart infusion agar'')
+      on an exact match of an exact synonym to the query ''heart infusion agar''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:41:26.546472+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Heart Infusion Agar (Difco)'' (x1 CultureMech mentions);
+      ''Heart infusion agar (Eiken)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  synonyms:
+  - synonym_text: Heart Infusion Agar (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Heart infusion agar (Eiken)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+- identifier: MICRO:0001598
+  preferred_term: Hemin solution (see below)
+  ontology_mapping:
+    ontology_id: MICRO:0001598
+    ontology_label: hemin solution
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0001598 (''hemin solution'')
+      on an exact match of an exact synonym to the query ''hemin solution''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:5656
+  preferred_term: Hemoglobin
+  ontology_mapping:
+    ontology_id: CHEBI:5656
+    ontology_label: deoxyhemoglobin
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:5656 (''deoxyhemoglobin'')
+      on an exact match of an exact synonym to the query ''Hemoglobin''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:61448
+  preferred_term: IPTG
+  ontology_mapping:
+    ontology_id: CHEBI:61448
+    ontology_label: isopropyl beta-D-thiogalactopyranoside
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:61448 (''isopropyl beta-D-thiogalactopyranoside'')
+      on an exact match of an exact synonym to the query ''IPTG''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:03000441
+  preferred_term: liver powder
+  ontology_mapping:
+    ontology_id: FOODON:03000441
+    ontology_label: liver powder supplement
+    ontology_source: FOODON
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to FOODON:03000441 (''liver powder supplement'')
+      on an exact match of an exact synonym to the query ''liver powder''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0001328
+  preferred_term: MH agar
+  ontology_mapping:
+    ontology_id: MICRO:0001328
+    ontology_label: MH agar
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0001328 (''MH agar'') on an
+      exact match of the canonical label to the query ''MH agar''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000554
+  preferred_term: MRS agar (Oxoid)
+  ontology_mapping:
+    ontology_id: MICRO:0000554
+    ontology_label: MRS agar
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0000554 (''MRS agar'') on an
+      exact match of an exact synonym to the query ''mrs agar''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:25107
+  preferred_term: Magnesium
+  ontology_mapping:
+    ontology_id: CHEBI:25107
+    ontology_label: magnesium atom
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to CHEBI:25107 (''magnesium atom'')
+      on an exact match of an exact synonym to the query ''Magnesium''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000456
+  preferred_term: Metals ''44'' (see below)
+  ontology_mapping:
+    ontology_id: MICRO:0000456
+    ontology_label: trace metals 44
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0000456 (''trace metals 44'')
+      on an exact match of an exact synonym to the query ''metals 44''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:41:26.546472+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''\\"Metals 44\\"'' (x1 CultureMech mentions); ''“Metals 44”
+      (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  synonyms:
+  - synonym_text: \"Metals 44\"
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: “Metals 44” (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+- identifier: CHEBI:28115
+  preferred_term: methylcobalamin
+  ontology_mapping:
+    ontology_id: CHEBI:28115
+    ontology_label: methylcobalamin
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:28115 (''methylcobalamin'')
+      on an exact match of the canonical label to the query ''methylcobalamin''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:45129
+  preferred_term: Methylphosphonic acid
+  ontology_mapping:
+    ontology_id: CHEBI:45129
+    ontology_label: methylphosphonic acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:45129 (''methylphosphonic acid'')
+      on an exact match of the canonical label to the query ''methylphosphonic acid''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:31794
+  preferred_term: MgO
+  ontology_mapping:
+    ontology_id: CHEBI:31794
+    ontology_label: magnesium oxide
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to CHEBI:31794 (''magnesium oxide'')
+      on an exact match of an exact synonym to the query ''MgO''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:27027
+  preferred_term: Micronutrients
+  ontology_mapping:
+    ontology_id: CHEBI:27027
+    ontology_label: micronutrient
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:27027 (''micronutrient'') on
+      an exact match of an exact synonym to the query ''micronutrients''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:46662
+  preferred_term: Minerals
+  ontology_mapping:
+    ontology_id: CHEBI:46662
+    ontology_label: mineral
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:46662 (''mineral'') on an exact
+      match of an exact synonym to the query ''minerals''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:28685
+  preferred_term: Molybdenum
+  ontology_mapping:
+    ontology_id: CHEBI:28685
+    ontology_label: molybdenum atom
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:28685 (''molybdenum atom'')
+      on an exact match of an exact synonym to the query ''Molybdenum''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:205364
+  preferred_term: Mycobactin J
+  ontology_mapping:
+    ontology_id: CHEBI:205364
+    ontology_label: Mycobactin J
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:205364 (''Mycobactin J'') on
+      an exact match of the canonical label to the query ''Mycobactin J''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:18219
+  preferred_term: NH4OH
+  ontology_mapping:
+    ontology_id: CHEBI:18219
+    ontology_label: ammonium hydroxide
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:18219 (''ammonium hydroxide'')
+      on an exact match of an exact synonym to the query ''NH4OH''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0001611
+  preferred_term: Na-caseinate
+  ontology_mapping:
+    ontology_id: MICRO:0001611
+    ontology_label: sodium caseinate
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 5
+    media_count: 5
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (5 mentions across 5 recipes). Grounded to MICRO:0001611 (''sodium caseinate'')
+      on an exact match of an exact synonym to the query ''Na-caseinate''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:53001
+  preferred_term: Nickel Sulfate
+  ontology_mapping:
+    ontology_id: CHEBI:53001
+    ontology_label: nickel sulfate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (8 mentions across 8 recipes). Grounded to CHEBI:53001 (''nickel sulfate'')
+      on an exact match of the canonical label to the query ''nickel sulfate''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312399+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 19/19 (media_count/total_occurrences),
+      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+      prior values came from the importer retired in #453, whose media_count counted
+      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 19
+    total_occurrences: 19
+- identifier: CHEBI:18723
+  preferred_term: Nicotine (Fluka)
+  ontology_mapping:
+    ontology_id: CHEBI:18723
+    ontology_label: nicotine
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:18723 (''nicotine'') on an
+      exact match of an exact synonym to the query ''nicotine''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:15811
+  preferred_term: O-Phospho-L-serine
+  ontology_mapping:
+    ontology_id: CHEBI:15811
+    ontology_label: O-phospho-L-serine
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:15811 (''O-phospho-L-serine'')
+      on an exact match of the canonical label to the query ''O-Phospho-L-serine''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:03306272
+  preferred_term: Oat flakes
+  ontology_mapping:
+    ontology_id: FOODON:03306272
+    ontology_label: oat flakes
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 11
+    media_count: 11
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (11 mentions across 11 recipes). Grounded to FOODON:03306272 (''oat flakes'')
+      on an exact match of the canonical label to the query ''oat flakes''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:03301826
+  preferred_term: Olive oil
+  ontology_mapping:
+    ontology_id: FOODON:03301826
+    ontology_label: olive oil
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 7
+    media_count: 7
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (7 mentions across 7 recipes). Grounded to FOODON:03301826 (''olive oil'') on
+      an exact match of the canonical label to the query ''olive oil''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:30839
+  preferred_term: Orotate
+  ontology_mapping:
+    ontology_id: CHEBI:30839
+    ontology_label: orotate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to CHEBI:30839 (''orotate'') on an exact
+      match of the canonical label to the query ''orotate''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:18367
+  preferred_term: Orthophosphate
+  ontology_mapping:
+    ontology_id: CHEBI:18367
+    ontology_label: phosphate(3-)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to CHEBI:18367 (''phosphate(3-)'') on
+      an exact match of an exact synonym to the query ''Orthophosphate''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:67410
+  preferred_term: p-Hydroxybenzyl alcohol
+  ontology_mapping:
+    ontology_id: CHEBI:67410
+    ontology_label: p-hydroxybenzyl alcohol
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:67410 (''p-hydroxybenzyl alcohol'')
+      on an exact match of the canonical label to the query ''p-hydroxybenzyl alcohol''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000094
+  preferred_term: PPLO medium
+  ontology_mapping:
+    ontology_id: MICRO:0000094
+    ontology_label: PPLO medium
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to MICRO:0000094 (''PPLO medium'') on
+      an exact match of the canonical label to the query ''PPLO medium''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000466
+  preferred_term: Pancreatic Digest of Gelatin (Hardy C6540)
+  ontology_mapping:
+    ontology_id: MICRO:0000466
+    ontology_label: pancreatic digest of gelatin
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0000466 (''pancreatic digest
+      of gelatin'') on an exact match of an exact synonym to the query ''pancreatic
+      digest of gelatin''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:8082
+  preferred_term: Phenyl acetate
+  ontology_mapping:
+    ontology_id: CHEBI:8082
+    ontology_label: phenyl acetate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:8082 (''phenyl acetate'') on
+      an exact match of the canonical label to the query ''Phenyl acetate''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:17246
+  preferred_term: Polyvinyl alcohol
+  ontology_mapping:
+    ontology_id: CHEBI:17246
+    ontology_label: poly(vinyl alcohol) macromolecule
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:17246 (''poly(vinyl alcohol)
+      macromolecule'') on an exact match of an exact synonym to the query ''Polyvinyl
+      alcohol''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: NCIT:C87343
+  preferred_term: Potassium Aspartate
+  ontology_mapping:
+    ontology_id: NCIT:C87343
+    ontology_label: Potassium Aspartate
+    ontology_source: NCIT
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to NCIT:C87343 (''Potassium Aspartate'')
+      on an exact match of the canonical label to the query ''Potassium Aspartate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:17362
+  preferred_term: Quinoline
+  ontology_mapping:
+    ontology_id: CHEBI:17362
+    ontology_label: quinoline
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:17362 (''quinoline'') on an
+      exact match of the canonical label to the query ''Quinoline''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312402+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: CHEBI:63247
+  preferred_term: Reducing Agent
+  ontology_mapping:
+    ontology_id: CHEBI:63247
+    ontology_label: reducing agent
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:63247 (''reducing agent'')
+      on an exact match of the canonical label to the query ''reducing agent''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: ENVO:00003870
+  preferred_term: rice straw
+  ontology_mapping:
+    ontology_id: ENVO:00003870
+    ontology_label: rice straw
+    ontology_source: ENVO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to ENVO:00003870 (''rice straw'') on
+      an exact match of the canonical label to the query ''rice straw''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:03311582
+  preferred_term: Rye-bran
+  ontology_mapping:
+    ontology_id: FOODON:03311582
+    ontology_label: rye bran
+    ontology_source: FOODON
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to FOODON:03311582 (''rye bran'') on
+      an exact match of an exact synonym to the query ''rye bran''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:41:26.546472+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Rye--bran'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  synonyms:
+  - synonym_text: Rye--bran
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+- identifier: FOODON:03301670
+  preferred_term: Sake
+  ontology_mapping:
+    ontology_id: FOODON:03301670
+    ontology_label: sake
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to FOODON:03301670 (''sake'') on an
+      exact match of the canonical label to the query ''sake''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:30762
+  preferred_term: Salicylate
+  ontology_mapping:
+    ontology_id: CHEBI:30762
+    ontology_label: salicylate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:30762 (''salicylate'') on an
+      exact match of the canonical label to the query ''Salicylate''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312403+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: MICRO:0001230
+  preferred_term: Sheep blood
+  ontology_mapping:
+    ontology_id: MICRO:0001230
+    ontology_label: sheep blood
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 20
+    media_count: 19
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (20 mentions across 19 recipes). Grounded to MICRO:0001230 (''sheep blood'')
+      on an exact match of the canonical label to the query ''Sheep blood''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0001241
+  preferred_term: Skim milk powder
+  ontology_mapping:
+    ontology_id: MICRO:0001241
+    ontology_label: skim milk powder
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0001241 (''skim milk powder'')
+      on an exact match of the canonical label to the query ''Skim milk powder''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000521
+  preferred_term: Sludge fluid
+  ontology_mapping:
+    ontology_id: MICRO:0000521
+    ontology_label: sludge fluid
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to MICRO:0000521 (''sludge fluid'')
+      on an exact match of the canonical label to the query ''Sludge fluid''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:41:26.546472+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Sludge fluid (see below)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  synonyms:
+  - synonym_text: Sludge fluid (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+- identifier: NCIT:C220851
+  preferred_term: Sodium Pantothenate
+  ontology_mapping:
+    ontology_id: NCIT:C220851
+    ontology_label: Sodium Pantothenate
+    ontology_source: NCIT
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to NCIT:C220851 (''Sodium Pantothenate'')
+      on an exact match of the canonical label to the query ''Sodium Pantothenate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: NCIT:C75654
+  preferred_term: Sorbitan Monooleate
+  ontology_mapping:
+    ontology_id: NCIT:C75654
+    ontology_label: Sorbitan Monooleate
+    ontology_source: NCIT
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to NCIT:C75654 (''Sorbitan Monooleate'')
+      on an exact match of the canonical label to the query ''Sorbitan Monooleate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:00004062
+  preferred_term: Table wine
+  ontology_mapping:
+    ontology_id: FOODON:00004062
+    ontology_label: Vino de Mesa
+    ontology_source: FOODON
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to FOODON:00004062 (''Vino de Mesa'')
+      on an exact match of an exact synonym to the query ''table wine''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:03315081
+  preferred_term: Tea
+  ontology_mapping:
+    ontology_id: FOODON:03315081
+    ontology_label: tea food product
+    ontology_source: FOODON
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to FOODON:03315081 (''tea food product'')
+      on an exact match of an exact synonym to the query ''tea''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:17347
+  preferred_term: testosterone
+  ontology_mapping:
+    ontology_id: CHEBI:17347
+    ontology_label: testosterone
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:17347 (''testosterone'') on
+      an exact match of the canonical label to the query ''testosterone''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:9533
+  preferred_term: thiamine monophosphate
+  ontology_mapping:
+    ontology_id: CHEBI:9533
+    ontology_label: thiamine(1+) monophosphate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:9533 (''thiamine(1+) monophosphate'')
+      on an exact match of an exact synonym to the query ''thiamine monophosphate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:231499
+  preferred_term: Titanium chloride
+  ontology_mapping:
+    ontology_id: CHEBI:231499
+    ontology_label: titanium tetrachloride
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to CHEBI:231499 (''titanium tetrachloride'')
+      on an exact match of an exact synonym to the query ''titanium chloride''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312405+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 2/2 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 2
+    total_occurrences: 2
+- identifier: CHEBI:9765
+  preferred_term: Trypsin
+  ontology_mapping:
+    ontology_id: CHEBI:9765
+    ontology_label: Trypsin
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:9765 (''Trypsin'') on an exact
+      match of the canonical label to the query ''Trypsin''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:48:57.312407+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+      rows=194137 distinct_recipes=15257]'
+  occurrence_statistics:
+    media_count: 1
+    total_occurrences: 1
+- identifier: MICRO:0000673
+  preferred_term: Trypsin (Sigma--Aldrich)
+  ontology_mapping:
+    ontology_id: MICRO:0000673
+    ontology_label: trypsin assay
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0000673 (''trypsin assay'')
+      on an exact match of an exact synonym to the query ''trypsin''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:28940
+  preferred_term: Vitamin D3
+  ontology_mapping:
+    ontology_id: CHEBI:28940
+    ontology_label: calciol
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:28940 (''calciol'') on an exact
+      match of an exact synonym to the query ''Vitamin D3''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:28384
+  preferred_term: Vitamin K
+  ontology_mapping:
+    ontology_id: CHEBI:28384
+    ontology_label: vitamin K
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to CHEBI:28384 (''vitamin K'') on an
+      exact match of the canonical label to the query ''Vitamin K''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: CHEBI:33229
+  preferred_term: Vitamins
+  ontology_mapping:
+    ontology_id: CHEBI:33229
+    ontology_label: vitamin (role)
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to CHEBI:33229 (''vitamin (role)'')
+      on an exact match of an exact synonym to the query ''vitamins''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:41:26.546472+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Vitamins (ATCC)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  synonyms:
+  - synonym_text: Vitamins (ATCC)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+- identifier: MICRO:0001723
+  preferred_term: washed agar
+  ontology_mapping:
+    ontology_id: MICRO:0001723
+    ontology_label: washed agar
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (1 mentions across 1 recipes). Grounded to MICRO:0001723 (''washed agar'') on
+      an exact match of the canonical label to the query ''washed agar''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: FOODON:03411345
+  preferred_term: Yeast
+  ontology_mapping:
+    ontology_id: FOODON:03411345
+    ontology_label: yeast
+    ontology_source: FOODON
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (3 mentions across 3 recipes). Grounded to FOODON:03411345 (''yeast'') on an
+      exact match of the canonical label to the query ''yeast''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+- identifier: MICRO:0000522
+  preferred_term: Yeastolate (BD; 2%, autoclaved)
+  ontology_mapping:
+    ontology_id: MICRO:0000522
+    ontology_label: Yeastolate
+    ontology_source: MICRO
+    mapping_quality: SYNONYM_MATCH
+    match_level: NORMALIZED
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 4
+    media_count: 4
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (4 mentions across 4 recipes). Grounded to MICRO:0000522 (''Yeastolate'') on
+      an exact match of an exact synonym to the query ''yeastolate''. Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-30T10:41:26.546472+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Yeastolate (Difco)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  synonyms:
+  - synonym_text: Yeastolate (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+- identifier: CHEBI:62984
+  preferred_term: Zinc Acetate
+  ontology_mapping:
+    ontology_id: CHEBI:62984
+    ontology_label: zinc acetate
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 7
+    media_count: 7
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (7 mentions across 7 recipes). Grounded to CHEBI:62984 (''zinc acetate'') on
+      an exact match of the canonical label to the query ''zinc acetate''. Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false

@@ -1,0 +1,30 @@
+identifier: CHEBI:41962
+preferred_term: Diethyl phosphonate
+ontology_mapping:
+  ontology_id: CHEBI:41962
+  ontology_label: diethyl phosphonate
+  ontology_source: CHEBI
+  mapping_quality: EXACT_MATCH
+  match_level: EXACT
+mapping_status: MAPPED
+curation_history:
+- timestamp: '2026-08-30T10:35:03.361102+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: CREATED_FROM_CULTUREMECH_RESIDUAL
+  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (2
+    mentions across 2 recipes). Grounded to CHEBI:41962 (''diethyl phosphonate'')
+    on an exact match of the canonical label to the query ''diethyl phosphonate''.
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-30T10:48:57.312397+00:00'
+  curator: refresh_occurrence_statistics
+  action: CORRECTED
+  changes: 'occurrence_statistics 0/0 -> 1/1 (media_count/total_occurrences), derived
+    from distinct CultureMech recipe ids in the #337 occurrence table. The prior values
+    came from the importer retired in #453, whose media_count counted a list truncated
+    to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=12f9cdee05
+    rows=194137 distinct_recipes=15257]'
+occurrence_statistics:
+  media_count: 1
+  total_occurrences: 1

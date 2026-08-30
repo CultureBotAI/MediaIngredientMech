@@ -351,7 +351,11 @@ def migrate(records: list[dict[str, Any]]) -> tuple[int, int]:
         for component in record["components"]:
             scope = str(component.get("reference_scope"))
             scope_counts[scope] = scope_counts.get(scope, 0) + 1
-    expected_scopes = {"MIM_CATALOG": 131, "EXTERNAL_TERM": 10, "UNMAPPED": 2}
+    # 3 components moved EXTERNAL_TERM -> MIM_CATALOG when `clarified rumen fluid`
+    # (MICRO:0000520) gained a MIM record: a component's scope is a fact about the
+    # catalog, not about the migration, so grounding a referenced term legitimately
+    # shifts this inventory. The total is unchanged, which is what the guard is for.
+    expected_scopes = {"MIM_CATALOG": 134, "EXTERNAL_TERM": 7, "UNMAPPED": 2}
     if len(after_parents) != 54 or after_component_count != 143 or scope_counts != expected_scopes:
         raise ValueError(
             "post-migration inventory drift: "

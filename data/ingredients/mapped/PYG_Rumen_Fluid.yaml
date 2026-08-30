@@ -85,6 +85,14 @@ curation_history:
     to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names, identifiers,
     and concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-08-30T10:54:21.025609+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: UPDATED_COMPONENT_SCOPE
+  changes: 'reference_scope EXTERNAL_TERM -> MIM_CATALOG for component 3 (clarified
+    rumen fluid): MICRO:0000520 was outside MIM when this partonomy was written and
+    now has a record, so the component resolves inside the catalog rather than out
+    of it.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:pyg_rumen_fluid);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
@@ -103,7 +111,7 @@ components:
   source: microbedecoder research decomposition (#213/#308)
 - component_name: clarified rumen fluid
   component_id: MICRO:0000520
-  reference_scope: EXTERNAL_TERM
+  reference_scope: MIM_CATALOG
   source: microbedecoder research decomposition (#213/#308)
 component_assertion:
   method: ABBREVIATION_EXPANSION
