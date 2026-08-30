@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: DL vitamins
   synonym_type: RAW_TEXT
   source: culturebotht
+- synonym_text: DL vitamins (see below)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 6
@@ -33,6 +36,14 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0277 -> kgmicrobe.ingredient:dl_vitamins "DL vitamins"
     (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''DL vitamins (see below)'' (x1 CultureMech mentions). Source:
+    culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   6 CultureBot media; samples: SCFM, Hans_Basal_Media, Hans_Basal_Media_plus_0.2x_20AA_mix….
   No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a vitamin stock/pre-mix

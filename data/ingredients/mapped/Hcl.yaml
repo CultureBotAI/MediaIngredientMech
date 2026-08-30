@@ -74,6 +74,30 @@ synonyms:
 - synonym_text: hydrochloric acid
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: HCl (25%; 7.7 M)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25%)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (35%)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25%, v/v)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (32%)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25% or 7.7 M)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25% v/ v)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: HCl (25%, 7.7 M)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1208
@@ -143,6 +167,17 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 8 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''HCl (25%; 7.7 M)'' (x72 CultureMech mentions); ''HCl (25%)''
+    (x13 CultureMech mentions); ''HCl (35%)'' (x11 CultureMech mentions); ''HCl (25%,
+    v/v)'' (x5 CultureMech mentions); ''HCl (32%)'' (x2 CultureMech mentions); ''HCl
+    (25% or 7.7 M)'' (x1 CultureMech mentions); ''HCl (25% v/ v)'' (x1 CultureMech
+    mentions); ''HCl (25%, 7.7 M)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7647-01-0
   data_source: PubChem API

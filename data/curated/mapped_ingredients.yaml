@@ -1,4 +1,4 @@
-generation_date: '2026-08-27T01:18:52.480510+00:00'
+generation_date: '2026-08-30T04:48:31.594949+00:00'
 total_count: 2566
 mapped_count: 2512
 unmapped_count: 0
@@ -9,6 +9,18 @@ ingredients:
   - synonym_text: Marine broth 2216
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Marine broth 2216 (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Marine Broth  (MB) 2216  (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Marine Broth 2216 (BD 279110)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Marine Broth 2216 (BD--Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 19
@@ -65,6 +77,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Marine broth 2216 (BD-Difco)'' (x9 CultureMech mentions);
+      ''Marine Broth  (MB) 2216  (Difco)'' (x1 CultureMech mentions); ''Marine Broth
+      2216 (BD 279110)'' (x1 CultureMech mentions); ''Marine Broth 2216 (BD--Difco)''
+      (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -101,7 +123,10 @@ ingredients:
         as `Trace element solution see Medium No. 187` already is. Cross-reference:
         CultureMech:007629. A CultureMech id cannot be the identifier — MIM''s primary
         key is an ontology CURIE or a registry mint — so it is carried here as evidence.'
-  synonyms: []
+  synonyms:
+  - synonym_text: Marine agar 2216 (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 32
@@ -130,6 +155,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Marine agar 2216 (BD-Difco)'' (x6 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   ingredient_type: UNDEFINED_MIXTURE
 - identifier: MICRO:0000543
   preferred_term: R2A agar
@@ -147,7 +180,16 @@ ingredients:
         `Brucella agar` (MICRO:0000595) and `Bacto Tryptic Soy Agar` (MICRO:0000114).
         MICRO:0000541 ''R2A medium'' is the broth; this label says agar. Cross-reference:
         CultureMech:002706 (data/normalized_yaml/bacterial/r2a_agar.yaml).'
-  synonyms: []
+  synonyms:
+  - synonym_text: R2A agar (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: R2A agar (DB-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: R2A agar (BD--Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
@@ -173,6 +215,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''R2A agar (BD-Difco)'' (x5 CultureMech mentions); ''R2A agar
+      (DB-Difco)'' (x2 CultureMech mentions); ''R2A agar (BD--Difco)'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
 - identifier: MICRO:0001572
   preferred_term: Defibrinated horse blood
   ontology_mapping:
@@ -186,7 +237,10 @@ ingredients:
       notes: 'Created to cover a CultureMech label MIM could not resolve (#260): as
         for sheep — MICRO has the defibrinated class distinct from MICRO:0001234 ''horse
         blood''.'
-  synonyms: []
+  synonyms:
+  - synonym_text: defibrinated horse blood (TCS Biologicals)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
@@ -209,6 +263,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''defibrinated horse blood (TCS Biologicals)'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
 - identifier: MICRO:0001570
   preferred_term: Defibrinated sheep blood
   ontology_mapping:
@@ -383,6 +445,9 @@ ingredients:
   - synonym_text: Mineral solution see Medium No. 976
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Mineral solution (see Medium No. 976
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -455,6 +520,14 @@ ingredients:
       — so this follows its siblings. The composition is not transcribed here: it
       lives in the referenced medium, and #288''s rule is to mint the named preparation
       rather than inline someone else''s recipe.'
+    llm_assisted: false
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Mineral solution (see Medium No. 976'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1958); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
@@ -11572,6 +11645,9 @@ ingredients:
   - synonym_text: DL vitamins
     synonym_type: RAW_TEXT
     source: culturebotht
+  - synonym_text: DL vitamins (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 6
@@ -11601,6 +11677,14 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0277 -> kgmicrobe.ingredient:dl_vitamins "DL vitamins"
       (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''DL vitamins (see below)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 6 CultureBot media; samples: SCFM, Hans_Basal_Media, Hans_Basal_Media_plus_0.2x_20AA_mix….
     No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a vitamin stock/pre-mix
@@ -12466,6 +12550,9 @@ ingredients:
   - synonym_text: sea salts (Sigma)
     synonym_type: RAW_TEXT
     source: culturebotht
+  - synonym_text: Sea salts (Sigma-Aldrich)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 40
@@ -12510,6 +12597,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Sea salts (Sigma-Aldrich)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 22
     CultureBot media; samples: DinoMM alphaKetoGlutAcid NoNitrogen, DinoMM noNitrogen,
     DinoMM noNitrogen HighNutrient GlucoseC…. No CAS-RN or CHEBI mapping available;
@@ -12584,6 +12679,9 @@ ingredients:
   - synonym_text: PIPES buffer
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: PIPES buffer (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
@@ -12618,6 +12716,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''PIPES buffer (Sigma)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:867); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ingredient_type: STOCK_SOLUTION
@@ -16039,7 +16145,10 @@ ingredients:
     retrieval_date: '2026-08-13T04:15:12.786711+00:00'
 - identifier: CHEBI:17833
   preferred_term: Gentamicin
-  synonyms: []
+  synonyms:
+  - synonym_text: gentamicin (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -16108,6 +16217,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''gentamicin (if needed)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   ontology_mapping:
     ontology_id: CHEBI:17833
     ontology_label: gentamycin
@@ -18812,6 +18929,9 @@ ingredients:
   - synonym_text: Sodium(+)
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: Sodium
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -18841,6 +18961,13 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Sodium'' (x6 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:sodium); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
@@ -21067,6 +21194,9 @@ ingredients:
   - synonym_text: 2-dichloropropane
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: 1,2--Dichloropropane (10 mg/ml in methanol)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -21126,6 +21256,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''1,2--Dichloropropane (10 mg/ml in methanol)'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 78-87-5
     data_source: PubChem API
@@ -23280,6 +23418,9 @@ ingredients:
   - synonym_text: 6-chloro-N-ethyl-N'-(propan-2-yl)-1,3,5-triazine-2,4-diamine
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: 2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
@@ -23308,6 +23449,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''2-chloro-4(ethylamino)-6-(isopropylamino)-1,3,5-triazine''
+      (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2120); curated to
     CHEBI:15930 atrazine by local CHEBI exact synonym review on 2026-05-11.
   kg_microbe_node_id: CHEBI:15930
@@ -23551,6 +23700,9 @@ ingredients:
   - synonym_text: (sodium salt)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: 2-Mercaptoethanesulfonic acid (Coenzyme M)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 79
@@ -23637,6 +23789,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''2-Mercaptoethanesulfonic acid (Coenzyme M)'' (x2 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:17905
   chemical_properties:
     cas_rn: 3375-50-6
@@ -26932,6 +27092,9 @@ ingredients:
       component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: MOPS buffer (SIGMA)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 56
@@ -27021,6 +27184,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''MOPS buffer (SIGMA)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Created from FEBA ontology enrichment workflow. Used in 32 FEBA media formulations.
   chemical_properties:
     cas_rn: 1132-61-2
@@ -33106,6 +33277,33 @@ ingredients:
   - synonym_text: ( modified)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Agar (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: agar (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Agar (Molecular Genetics)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Agar  (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Agar (BD)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Agar (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Agar (Purified)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Agar (if needed)*
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Agar* (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4456
@@ -33216,6 +33414,26 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Agar (if needed)'' (x289 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 8 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''agar (BD-Difco)'' (x4 CultureMech mentions); ''Agar (Molecular
+      Genetics)'' (x3 CultureMech mentions); ''Agar  (if needed)'' (x2 CultureMech
+      mentions); ''Agar (BD)'' (x1 CultureMech mentions); ''Agar (Difco)'' (x1 CultureMech
+      mentions); ''Agar (Purified)'' (x1 CultureMech mentions); ''Agar (if needed)*''
+      (x1 CultureMech mentions); ''Agar* (if needed)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 9002-18-0
     data_source: PubChem API
@@ -34915,6 +35133,9 @@ ingredients:
   - synonym_text: alpha-ketoglutamate
     synonym_type: RAW_TEXT
     source: merge_from_UNMAPPED_0323
+  - synonym_text: alpha-ketoglutaric acid (100 mM).
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 7
@@ -35003,6 +35224,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''alpha-ketoglutaric acid (100 mM).'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 328-50-7
     data_source: PubChem API
@@ -35940,6 +36169,9 @@ ingredients:
   - synonym_text: 'Role: Antimicrobial agent'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Amphotericin B (5 mg/ml DMSO)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
@@ -36026,6 +36258,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Amphotericin B (5 mg/ml DMSO)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1397-89-3
     data_source: PubChem API
@@ -36113,6 +36353,9 @@ ingredients:
       Defined component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Ampicillin (50 mg/ml)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 23
@@ -36201,6 +36444,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Ampicillin (50 mg/ml)'' (x2 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 69-53-4
     data_source: PubChem API
@@ -38804,6 +39055,9 @@ ingredients:
       Defined component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Ascorbic acid (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 65
@@ -38853,6 +39107,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Ascorbic acid (Sigma)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 50-81-7
     data_source: PubChem API
@@ -43007,6 +43269,15 @@ ingredients:
       dihydrogen diphosphate}
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: NAD
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: nicotinamide adenine dinucleotide (NAD)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: NAD (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 17
@@ -43066,6 +43337,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''NAD'' (x5 CultureMech mentions); ''nicotinamide adenine
+      dinucleotide (NAD)'' (x2 CultureMech mentions); ''NAD (Sigma)'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 53-84-9
     data_source: PubChem API
@@ -44722,6 +45002,9 @@ ingredients:
   - synonym_text: Bovine calf serum
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Calf serum (Gibco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 8
@@ -44753,6 +45036,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Calf serum (Gibco)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2061); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -45213,6 +45504,9 @@ ingredients:
   - synonym_text: Brucella agar
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: Brucella agar (BD-BBL)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
@@ -45246,6 +45540,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Brucella agar (BD-BBL)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms
   ontology_mapping:
     ontology_id: MICRO:0000595
@@ -46277,6 +46579,9 @@ ingredients:
   - synonym_text: calcium nitrate--water (1/4)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Ca(NO3)2•4H2O
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 199
@@ -46378,6 +46683,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Ca(NO3)2•4H2O'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 13477-34-4
     data_source: PubChem (via CHEBI:86159)
@@ -49782,6 +50094,9 @@ ingredients:
   - synonym_text: CMC-Na
     synonym_type: RAW_TEXT
     source: MERGED_FROM (#394)
+  - synonym_text: Carboxymethyl cellulose, sodium salt
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 7
@@ -49895,6 +50210,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Carboxymethyl cellulose, sodium salt'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:85146
   chemical_properties:
     cas_rn: 9004-32-4
@@ -50351,6 +50674,12 @@ ingredients:
   - synonym_text: Casamino acids (vit. assay)
     synonym_type: RAW_TEXT
     source: culturebotht
+  - synonym_text: Casamino acids, vitamin assay (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Casamino acids, vitamin assay (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -50382,6 +50711,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE ->
       nutritional_roles.PROTEIN_SOURCE'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Casamino acids, vitamin assay (BD-Difco)'' (x5 CultureMech
+      mentions); ''Casamino acids, vitamin assay (Difco)'' (x3 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
     or CHEBI mapping available; curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -51301,6 +51639,9 @@ ingredients:
   - synonym_text: 'Properties: Simple component, Defined component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Catalase (Sigma C--10)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 34
@@ -51335,6 +51676,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Catalase (Sigma C--10)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:86156
   preferred_term: Cd(NO3)2 x 4 H2O
@@ -53151,6 +53500,9 @@ ingredients:
   - synonym_text: Filter paper (cellulose substrate)
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Cellulose (Avicel or MN 300)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 45
@@ -53215,6 +53567,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Cellulose (Avicel or MN 300)'' (x2 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 9004-34-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -54415,6 +54775,12 @@ ingredients:
   - synonym_text: 2,2-dichloro-N-[(1R,2R)-2-hydroxy-1-(hydroxymethyl)-2-(4-nitrophenyl)ethyl]acetamide
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: (-)-Chloramphenicol
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: chloramphenicol (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 9
@@ -54462,6 +54828,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''(-)-Chloramphenicol'' (x1 CultureMech mentions); ''chloramphenicol
+      (if needed)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 56-75-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -58586,6 +58960,9 @@ ingredients:
   - synonym_text: Cooked meat medium
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Cooked meat medium (Oxoid)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -58616,6 +58993,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Cooked meat medium (Oxoid)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1824); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -59729,6 +60114,9 @@ ingredients:
       Organic compound'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Crotonic acid (ALDRICH 113018)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 42
@@ -59814,6 +60202,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Crotonic acid (ALDRICH 113018)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 107-93-7
     data_source: OAK/CHEBI xref
@@ -69212,6 +69608,9 @@ ingredients:
   - synonym_text: Desulfovibrio trace elements
     synonym_type: RAW_TEXT
     source: culturebotht
+  - synonym_text: Trace elements (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
@@ -69239,6 +69638,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
       nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trace elements (see below)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 3 CultureBot media; samples: MoLS4, Dv_base_medium, MoLS4_no_vitamins. No CAS-RN
     or CHEBI mapping available; curator review needed.'
@@ -70992,6 +71399,9 @@ ingredients:
   - synonym_text: sulfinylbis(methane)
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: dimethyl sulfoxide (DMSO)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 161
@@ -71056,6 +71466,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''dimethyl sulfoxide (DMSO)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 67-68-5
     data_source: PubChem API
@@ -71756,6 +72174,12 @@ ingredients:
   - synonym_text: oxidane
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Distilled water (for liquid medium)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Distilled water (for solid medium)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 6872
@@ -71955,6 +72379,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Distilled water (for liquid medium)'' (x1 CultureMech mentions);
+      ''Distilled water (for solid medium)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:15377
   chemical_properties:
     cas_rn: 7732-18-5
@@ -72760,6 +73192,21 @@ ingredients:
   - synonym_text: (100 mM solution)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: DL-Dithiothreitol (DTT)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: 1,4--dithiothreitol (DTT)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: DTT (DL-Dithiothreitol)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Dithiothreitol (0.25 M)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Dithiothreitol (DTT)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 121
@@ -72868,6 +73315,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 5 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''DL-Dithiothreitol (DTT)'' (x2 CultureMech mentions); ''1,4--dithiothreitol
+      (DTT)'' (x1 CultureMech mentions); ''DTT (DL-Dithiothreitol)'' (x1 CultureMech
+      mentions); ''Dithiothreitol (0.25 M)'' (x1 CultureMech mentions); ''Dithiothreitol
+      (DTT)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 3483-12-3
     data_source: OAK/CHEBI xref
@@ -77188,6 +77645,12 @@ ingredients:
   - synonym_text: fatty acids
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Fatty acid mixture
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Fatty acid mixture (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
@@ -77241,6 +77704,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Fatty acid mixture'' (x3 CultureMech mentions); ''Fatty
+      acid mixture (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: CHO2R
@@ -77541,6 +78012,15 @@ ingredients:
   - synonym_text: (ethane-1,2-diyldinitrilo)tetraacetatoferrate(1-)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Fe(III)・EDTA
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Fe(III)-EDTA (0.66% [wt/vol] in water)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Fe·EDTA
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 58
@@ -77640,6 +78120,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Fe(III)・EDTA'' (x3 CultureMech mentions); ''Fe(III)-EDTA
+      (0.66% [wt/vol] in water)'' (x1 CultureMech mentions); ''Fe·EDTA'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 15275-07-7
     data_source: PubChem API
@@ -77712,6 +78201,12 @@ ingredients:
       Organic compound'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Ferric citrate (0.1%, w/v)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Fe(III)-citrate (19% Fe)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 409
@@ -77849,6 +78344,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Ferric citrate (0.1%, w/v)'' (x11 CultureMech mentions);
+      ''Fe(III)-citrate (19% Fe)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 3522-50-7
     data_source: OAK/CHEBI xref
@@ -78030,6 +78533,9 @@ ingredients:
   - synonym_text: ammonium iron(2+) sulfate--water (1/6)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Fe(NH4)2(SO4)2.6H2O
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 276
@@ -78106,6 +78612,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Fe(NH4)2(SO4)2.6H2O'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: Fe.6H2O.2H4N.2O4S
@@ -78916,6 +79430,9 @@ ingredients:
   - synonym_text: iron(III) chloride
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: FeCl3 (25mM)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 58
@@ -78976,6 +79493,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''FeCl3 (25mM)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7705-08-0
     data_source: PubChem API
@@ -80904,6 +81428,9 @@ ingredients:
   - synonym_text: FBS
     synonym_type: RAW_TEXT
     source: merged_from_unmapped_duplicate_review_2026_05_11
+  - synonym_text: Fetal Bovine Serum (ATCC 30-2020)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 122
@@ -80955,6 +81482,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Fetal Bovine Serum (ATCC 30-2020)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). Used in 8
     CultureBot media; samples: MHII biocarbonate serum, RPMI with Fetal bovine serum
     Conditioned, RPMI with Fetal bovine serum…. No CAS-RN or CHEBI mapping available;
@@ -81072,6 +81607,9 @@ ingredients:
   - synonym_text: Natural seawater (filtered, 95% strength)
     synonym_type: RELATED_SYNONYM
     source: CultureMech label unresolvable via label_index (#260)
+  - synonym_text: Natural seawater
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 7
@@ -81119,6 +81657,13 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Natural seawater'' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 2 CultureBot media; samples: Pro99 seawater, Pro99_seawater. No CAS-RN or CHEBI
     mapping available; curator review needed.'
@@ -84305,6 +84850,18 @@ ingredients:
       compound'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Gellan gum (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Gelrite (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Gellan Gum (Phytagel)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: gelrite (Gellan Gum)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 33
@@ -84377,6 +84934,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Gellan gum (if needed)'' (x5 CultureMech mentions); ''Gelrite
+      (if needed)'' (x4 CultureMech mentions); ''Gellan Gum (Phytagel)'' (x1 CultureMech
+      mentions); ''gelrite (Gellan Gum)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:85248
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
@@ -89089,6 +89655,9 @@ ingredients:
   - synonym_text: hydrogen tetraoxosulfate(2-)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: H2SO4 (0.1 N)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 337
@@ -89154,6 +89723,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''H2SO4 (0.1 N)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7664-93-9
     data_source: PubChem API
@@ -89719,6 +90295,12 @@ ingredients:
       Defined component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Hemin (0.1% in 0.05 N NaOH)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: hemin (ICN)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 257
@@ -89832,6 +90414,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Hemin (0.1% in 0.05 N NaOH)'' (x1 CultureMech mentions);
+      ''hemin (ICN)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 16009-13-5
     data_source: PubChem API
@@ -90319,6 +90909,30 @@ ingredients:
   - synonym_text: hydrochloric acid
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: HCl (25%; 7.7 M)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: HCl (25%)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: HCl (35%)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: HCl (25%, v/v)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: HCl (32%)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: HCl (25% or 7.7 M)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: HCl (25% v/ v)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: HCl (25%, 7.7 M)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1208
@@ -90388,6 +91002,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 8 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''HCl (25%; 7.7 M)'' (x72 CultureMech mentions); ''HCl (25%)''
+      (x13 CultureMech mentions); ''HCl (35%)'' (x11 CultureMech mentions); ''HCl
+      (25%, v/v)'' (x5 CultureMech mentions); ''HCl (32%)'' (x2 CultureMech mentions);
+      ''HCl (25% or 7.7 M)'' (x1 CultureMech mentions); ''HCl (25% v/ v)'' (x1 CultureMech
+      mentions); ''HCl (25%, 7.7 M)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7647-01-0
     data_source: PubChem API
@@ -90637,6 +91262,12 @@ ingredients:
   - synonym_text: 4-(2-Hydroxyethyl)-1-piperazineethane sulfonic acid
     synonym_type: EXACT_SYNONYM
     source: local_chebi_exact_alias_review_2026_05_11
+  - synonym_text: 4-(2-hydroxyethyl)-1-piperazineethanesulfonic acid
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: HEPES (10mM)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 251
@@ -90729,6 +91360,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''4-(2-hydroxyethyl)-1-piperazineethanesulfonic acid'' (x1
+      CultureMech mentions); ''HEPES (10mM)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7365-45-9
     data_source: PubChem API
@@ -91597,6 +92236,21 @@ ingredients:
   - synonym_text: Horse serum
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Horse Serum (Gibco)*
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Horse Serum (RM1239)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Horse Serum (not inactivated)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Horse serum (Invitrogen)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Horse serum (Oxoid)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 30
@@ -91629,6 +92283,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 5 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Horse Serum (Gibco)*'' (x1 CultureMech mentions); ''Horse
+      Serum (RM1239)'' (x1 CultureMech mentions); ''Horse Serum (not inactivated)''
+      (x1 CultureMech mentions); ''Horse serum (Invitrogen)'' (x1 CultureMech mentions);
+      ''Horse serum (Oxoid)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:146); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -96487,7 +97151,10 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. Used in 1 CultureBot media; samples: Abx
         Rhodanos.'
-  synonyms: []
+  synonyms:
+  - synonym_text: kanamycin (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 5
@@ -96527,6 +97194,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''kanamycin (if needed)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: SELECTIVE_AGENT
@@ -97499,6 +98174,12 @@ ingredients:
   - synonym_text: (dibasic)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: KH2PO4 (0.4 g/l)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: KH2PO4 (7% w/v)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 5649
@@ -97618,6 +98299,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''KH2PO4 (0.4 g/l)'' (x1 CultureMech mentions); ''KH2PO4 (7%
+      w/v)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7778-77-0
     data_source: PubChem API
@@ -97795,6 +98484,9 @@ ingredients:
   - synonym_text: Kaliumjodid
     synonym_type: EXACT_SYNONYM
     source: merge_from_UNMAPPED_0412
+  - synonym_text: KI (0.01% w/v)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 186
@@ -97897,6 +98589,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''KI (0.01% w/v)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7681-11-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -101369,6 +102068,9 @@ ingredients:
   - synonym_text: CYSTEINE
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: L-cysteine (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 129
@@ -101449,6 +102151,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''L-cysteine (Sigma)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 52-90-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -101507,6 +102217,21 @@ ingredients:
   - synonym_text: N-(9-{2-[(4-{[(2,5-dioxopyrrolidin-1-yl)oxy]carbonyl}piperidin-1-yl)sulfonyl]phenyl}-6-[methyl(4-sulfophenyl)amino]-3H-xanthen-3-ylidene)-N-methyl-4-sulfoanilinium
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: L-Cysteine . HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: L--cysteine・HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Cysteine.HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: L-cysteine · HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: cysteine . HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 302
@@ -101605,6 +102330,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 5 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''L-Cysteine . HCl'' (x19 CultureMech mentions); ''L--cysteine・HCl''
+      (x2 CultureMech mentions); ''Cysteine.HCl'' (x1 CultureMech mentions); ''L-cysteine
+      · HCl'' (x1 CultureMech mentions); ''cysteine . HCl'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 52-89-1
     data_source: OAK/CHEBI xref
@@ -112711,6 +113446,15 @@ ingredients:
   - synonym_text: wood spirit
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Methanol*
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Methanol (10%)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Methanol**
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 251
@@ -112790,6 +113534,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Methanol*'' (x3 CultureMech mentions); ''Methanol (10%)''
+      (x1 CultureMech mentions); ''Methanol**'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 67-56-1
     data_source: PubChem API
@@ -116328,6 +117081,9 @@ ingredients:
   - synonym_text: Middlebrook 7H10 agar
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: Middlebrook 7H10 Agar (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 5
@@ -116358,6 +117114,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Middlebrook 7H10 Agar (Difco)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; curated to the specific
     named medium NCIT:C85509 on 2026-05-11.
   kg_microbe_node_id: NCIT:C85509
@@ -116889,6 +117653,9 @@ ingredients:
   - synonym_text: MnCl4 x 4 H2O
     synonym_type: RAW_TEXT
     source: merge_from_UNMAPPED_0449
+  - synonym_text: MnCl2·4H2O
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2990
@@ -116991,6 +117758,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''MnCl2·4H2O'' (x6 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 13446-34-9
     data_source: PubChem (via CHEBI:86368)
@@ -120082,6 +120856,9 @@ ingredients:
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: N--Acetyl--D--glucosamine (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 29
@@ -120172,6 +120949,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''N--Acetyl--D--glucosamine (Sigma)'' (x2 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 72-87-7
     data_source: PubChem API
@@ -120211,6 +120996,9 @@ ingredients:
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: N-acetylglucosamine (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 57
@@ -120274,6 +121062,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''N-acetylglucosamine (Sigma)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7512-17-6
     data_source: PubChem API
@@ -122285,6 +123081,9 @@ ingredients:
   - synonym_text: 'Properties: Defined component, Organic compound, Solution'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Sodium formate (Wako)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 222
@@ -122406,6 +123205,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Sodium formate (Wako)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 141-53-7
     data_source: PubChem API (preprocessed)
@@ -124144,6 +124951,12 @@ ingredients:
   - synonym_text: disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: EDTA(Disodium salt)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: EDTA•2Na
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 614
@@ -124269,6 +125082,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''EDTA(Disodium salt)'' (x1 CultureMech mentions); ''EDTA•2Na''
+      (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:64734
   chemical_properties:
     cas_rn: 139-33-3
@@ -126997,6 +127818,9 @@ ingredients:
   - synonym_text: sodium dioxido(dioxo)molybdenum
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Na2MoO4 (0.01 M)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 227
@@ -127110,6 +127934,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Na2MoO4 (0.01 M)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7631-95-0
     data_source: OAK/CHEBI xref
@@ -127995,6 +128826,9 @@ ingredients:
   - synonym_text: Na2S2SO3
     synonym_type: RAW_TEXT
     source: merge_from_UNMAPPED_0472
+  - synonym_text: Na2S2O3 (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 119
@@ -128147,6 +128981,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Na2S2O3 (if needed)'' (x2 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7772-98-7
     data_source: PubChem API
@@ -128564,6 +129406,9 @@ ingredients:
   - synonym_text: disodium sulfide--water (1/9)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Na2S-9H2O
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2751
@@ -128682,6 +129527,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Na2S-9H2O'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:76209
   chemical_properties:
     cas_rn: 1313-84-4
@@ -130004,6 +130856,9 @@ ingredients:
   - synonym_text: disodium tungstate
     synonym_type: EXACT
     source: manual
+  - synonym_text: Na2WO4 (10 mM)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 132
@@ -130076,6 +130931,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Na2WO4 (10 mM)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 13472-45-2
     data_source: PubChem API
@@ -130157,6 +131019,9 @@ ingredients:
   - synonym_text: Na2WO2 x 2 H2O
     synonym_type: RAW_TEXT
     source: merge_from_UNMAPPED_0474
+  - synonym_text: Na2WO4•2H2O
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1642
@@ -130288,6 +131153,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Na2WO4•2H2O'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10213-10-2
     data_source: PubChem (via CHEBI:63939)
@@ -132069,6 +132941,24 @@ ingredients:
   - synonym_text: NaHCO3(Fisher S 233)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: NaHCO3 (10% (w/v))
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: NaHCO3 (10%, w/v)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: NaHCO3 (1 M)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: NaHCO3 (3% (w/v))
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: NaHCO3 (5%, w/v)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: NaHCO3 (7.5% w/v in water)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3168
@@ -132179,6 +133069,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 6 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''NaHCO3 (10% (w/v))'' (x6 CultureMech mentions); ''NaHCO3
+      (10%, w/v)'' (x5 CultureMech mentions); ''NaHCO3 (1 M)'' (x1 CultureMech mentions);
+      ''NaHCO3 (3% (w/v))'' (x1 CultureMech mentions); ''NaHCO3 (5%, w/v)'' (x1 CultureMech
+      mentions); ''NaHCO3 (7.5% w/v in water)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 144-55-8
     data_source: PubChem API
@@ -132867,6 +133768,12 @@ ingredients:
   - synonym_text: soude caustique
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: NaOH (1N)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: NaOH (0.38 M)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1210
@@ -132946,6 +133853,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''NaOH (1N)'' (x2 CultureMech mentions); ''NaOH (0.38 M)''
+      (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1310-73-2
     data_source: PubChem API
@@ -136770,6 +137685,9 @@ ingredients:
   - synonym_text: pyridine-3-carboxylic acid amide
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Nicotinamide (Niacinamide)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 254
@@ -136891,6 +137809,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Nicotinamide (Niacinamide)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 98-92-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -138855,6 +139781,24 @@ ingredients:
   - synonym_text: Nutrient broth No. 2
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Nutrient Broth (OXOID)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Nutrient Broth (BD cat 234000)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Nutrient Broth (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Nutrient broth (BD Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Nutrient broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Nutrient broth (NB) (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 53
@@ -138886,6 +139830,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 6 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Nutrient Broth (OXOID)'' (x4 CultureMech mentions); ''Nutrient
+      Broth (BD cat 234000)'' (x1 CultureMech mentions); ''Nutrient Broth (Difco)''
+      (x1 CultureMech mentions); ''Nutrient broth (BD Difco)'' (x1 CultureMech mentions);
+      ''Nutrient broth (BD-Difco)'' (x1 CultureMech mentions); ''Nutrient broth (NB)
+      (Difco)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:501); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -139092,6 +140047,9 @@ ingredients:
   - synonym_text: Oatmeal
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Oatmeal (Quaker White Oats)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 18
@@ -139120,6 +140078,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Oatmeal (Quaker White Oats)'' (x2 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:471); no CAS-RN or
     CHEBI/NCIT match. Curated to NCIT:C29298 Oatmeal Powder on 2026-05-11.
   kg_microbe_node_id: NCIT:C29298
@@ -142167,6 +143133,9 @@ ingredients:
   - synonym_text: sodium 2,2-dimethyl-6beta-(phenylacetamido)penam-3alpha-carboxylate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Penicillin G (Parke)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
@@ -142223,6 +143192,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Penicillin G (Parke)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 69-57-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -143063,6 +144040,12 @@ ingredients:
       acid gamma-sultone
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Phenol red (0.04%)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Phenol red (0.1% aqueous)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 113
@@ -143148,6 +144131,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Phenol red (0.04%)'' (x2 CultureMech mentions); ''Phenol
+      red (0.1% aqueous)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 143-74-8
     data_source: PubChem API
@@ -145418,6 +146409,9 @@ ingredients:
   - synonym_text: alpha-hydro-omega-hydroxypoly(oxyethylene)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Polyethylene glycol (Mw 106-20000)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -145456,6 +146450,14 @@ ingredients:
       records the method that established this mapping; a lexical grade would discard
       that provenance. ontology_id is unchanged. The own-identifier SSSOM predicate
       remains skos:exactMatch under Rule D (#438), independently of mapping quality.
+    llm_assisted: false
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Polyethylene glycol (Mw 106-20000)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   chemical_properties:
     cas_rn: 25322-68-3
@@ -145723,6 +146725,15 @@ ingredients:
   - synonym_text: Hipolypepton (Nihon seiyaku)
     synonym_type: CATALOG_VARIANT
     source: manual
+  - synonym_text: Hipolypepton*
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Polypepton (Nihon Seiyaku)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Polypeptone (BBL)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 135
@@ -145762,6 +146773,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Hipolypepton*'' (x4 CultureMech mentions); ''Polypepton
+      (Nihon Seiyaku)'' (x1 CultureMech mentions); ''Polypeptone (BBL)'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   ingredient_type: UNDEFINED_MIXTURE
   nutritional_roles:
   - role: PROTEIN_SOURCE
@@ -146339,6 +147359,18 @@ ingredients:
   - synonym_text: Potassium phosphate buffer
     synonym_type: RAW_TEXT
     source: culturebotht
+  - synonym_text: Potassium phosphate buffer (0.01 M, pH 7.2)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Potassium phosphate buffer (0.02 M, pH 7.0)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Potassium phosphate buffer (1 M, pH 7.1)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Potassium phosphate buffer* (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 44
@@ -146388,6 +147420,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Potassium phosphate buffer (0.01 M, pH 7.2)'' (x1 CultureMech
+      mentions); ''Potassium phosphate buffer (0.02 M, pH 7.0)'' (x1 CultureMech mentions);
+      ''Potassium phosphate buffer (1 M, pH 7.1)'' (x1 CultureMech mentions); ''Potassium
+      phosphate buffer* (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 2 CultureBot media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available;
     curator review needed. Potassium phosphate buffer is a formulation variant, not
@@ -147503,6 +148545,9 @@ ingredients:
   - synonym_text: Peptic digest of animal tissue
     synonym_type: RAW_TEXT
     source: merged_from_unmapped_duplicate_review_2026_05_11
+  - synonym_text: Proteose peptone (BD Difico)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 571
@@ -147569,6 +148614,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Proteose peptone (BD Difico)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'CultureMech placeholder_id: 3; absorbed Peptic digest of animal tissue source
     surface on 2026-05-11.'
   chemical_properties:
@@ -148587,6 +149640,12 @@ ingredients:
   - synonym_text: Pyridoxal·HCl
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Pyridoxal・HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: pyridoxal-HCl (Sigma Aldrich)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 36
@@ -148652,6 +149711,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Pyridoxal・HCl'' (x1 CultureMech mentions); ''pyridoxal-HCl
+      (Sigma Aldrich)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 65-22-5
     data_source: PubChem API
@@ -148714,6 +149781,9 @@ ingredients:
   - synonym_text: pyridoxal 5-monophosphoric acid ester
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: pyridoxal-phosphate (Sigma Aldrich)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 10
@@ -148778,6 +149848,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''pyridoxal-phosphate (Sigma Aldrich)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 54-47-7
     data_source: PubChem API
@@ -148948,6 +150026,12 @@ ingredients:
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Pyridoxamine . 2HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Pyridoxamine・2HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 21
@@ -149029,6 +150113,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Pyridoxamine . 2HCl'' (x1 CultureMech mentions); ''Pyridoxamine・2HCl''
+      (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 524-36-7
     data_source: PubChem API
@@ -149087,6 +150179,9 @@ ingredients:
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Pyridoxamine・HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 112
@@ -149183,6 +150278,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Pyridoxamine・HCl'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 5103-96-8
     data_source: PubChem (via CHEBI:131531)
@@ -149416,6 +150518,18 @@ ingredients:
   - synonym_text: Pyridoxine・HCl
     synonym_type: EXACT
     source: manual
+  - synonym_text: Pyridoxine-HCl (VitaminB6)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Pyridoxine-HCl (Vitamin B6)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Pyridoxine . HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Pyridoxine.HCL
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2029
@@ -149537,6 +150651,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Pyridoxine-HCl (VitaminB6)'' (x4 CultureMech mentions);
+      ''Pyridoxine-HCl (Vitamin B6)'' (x2 CultureMech mentions); ''Pyridoxine . HCl''
+      (x1 CultureMech mentions); ''Pyridoxine.HCL'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 58-56-0
     data_source: PubChem API
@@ -150941,6 +152065,27 @@ ingredients:
   - synonym_text: resazurin sodium salt
     synonym_type: EXACT
     source: manual
+  - synonym_text: Sodium resazurin (0.1% w/v)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Resazurin (0,1%)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Resazurin (0.1%)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Resazurin (0.02%)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Resazurin (0.025%)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Resazurin (0.1% w/v in water)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Resazurin (1 mg/L)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3671
@@ -151024,6 +152169,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 7 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Sodium resazurin (0.1% w/v)'' (x18 CultureMech mentions);
+      ''Resazurin (0,1%)'' (x3 CultureMech mentions); ''Resazurin (0.1%)'' (x2 CultureMech
+      mentions); ''Resazurin (0.02%)'' (x1 CultureMech mentions); ''Resazurin (0.025%)''
+      (x1 CultureMech mentions); ''Resazurin (0.1% w/v in water)'' (x1 CultureMech
+      mentions); ''Resazurin (1 mg/L)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 550-82-3
     data_source: PubChem API
@@ -151529,6 +152685,18 @@ ingredients:
   - synonym_text: Riboflavine (B2)
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Riboflavin (Vitamine B2)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Riboflavin (Vitamin B2)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Riboflavin (0.2 mg/ml)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Riboflavin (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2123
@@ -151621,6 +152789,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Riboflavin (Vitamine B2)'' (x4 CultureMech mentions); ''Riboflavin
+      (Vitamin B2)'' (x2 CultureMech mentions); ''Riboflavin (0.2 mg/ml)'' (x1 CultureMech
+      mentions); ''Riboflavin (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 83-88-5
     data_source: PubChem API
@@ -156988,6 +158165,9 @@ ingredients:
   - synonym_text: sodium {2,2',2'',2'''-[ethane-1,2-diyldi(nitrilo-kappaN)]tetraacetato-kappaO(4-)}ferrate(1-)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: FeNa.EDTA
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 27
@@ -157044,6 +158224,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''FeNa.EDTA'' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 15708-41-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -159550,6 +160737,18 @@ ingredients:
   - synonym_text: Sodium phosphate buffer
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Sodium phosphate buffer (10 mM; pH7.1)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Sodium phosphate buffer (25 mM; pH 3.4)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Sodium phosphate buffer (10 mM, pH 7.1)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Sodium phosphate buffer (25 mM, pH 3.4)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 19
@@ -159598,6 +160797,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Sodium phosphate buffer (10 mM; pH7.1)'' (x10 CultureMech
+      mentions); ''Sodium phosphate buffer (25 mM; pH 3.4)'' (x9 CultureMech mentions);
+      ''Sodium phosphate buffer (10 mM, pH 7.1)'' (x2 CultureMech mentions); ''Sodium
+      phosphate buffer (25 mM, pH 3.4)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1753); no CAS-RN
     or CHEBI/NCIT match. Curator review needed. Sodium phosphate buffer is a formulation
     variant, not identical to the generic phosphate buffer class.
@@ -160841,6 +162050,12 @@ ingredients:
   - synonym_text: Soil extract
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Soil extract (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Soil extract (SE1)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 17
@@ -160875,6 +162090,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Soil extract (see below)'' (x3 CultureMech mentions); ''Soil
+      extract (SE1)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:180); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -162440,6 +163663,18 @@ ingredients:
   - synonym_text: 'Role: Carbon source'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Starch (soluble)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Starch, soluble
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Soluble starch (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Soluble starch (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 741
@@ -162555,6 +163790,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Starch (soluble)'' (x8 CultureMech mentions); ''Starch,
+      soluble'' (x3 CultureMech mentions); ''Soluble starch (BD-Difco)'' (x2 CultureMech
+      mentions); ''Soluble starch (Sigma)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 9005-25-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -165777,6 +167021,9 @@ ingredients:
   - synonym_text: TES buffer(Sigma T 1375)
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: TES (Dry Buffer)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 20
@@ -165829,6 +167076,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''TES (Dry Buffer)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7365-44-8
     data_source: PubChem API
@@ -166841,6 +168095,12 @@ ingredients:
       chloride--water (1/2)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Thiamine・HCl・2H2O
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Thiamine·HCl·2H2O
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 441
@@ -166906,6 +168166,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Thiamine・HCl・2H2O'' (x8 CultureMech mentions); ''Thiamine·HCl·2H2O''
+      (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 13465-05-9
     data_source: PubChem API (preprocessed)
@@ -167237,6 +168505,12 @@ ingredients:
   - synonym_text: Thiamine HCl (Vitamin B1)
     synonym_type: RAW_TEXT
     source: merged_from_unmapped_duplicate_review_2026_05_11
+  - synonym_text: Thiamine . HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Thiamine・HCl (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2009
@@ -167404,6 +168678,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Thiamine . HCl'' (x10 CultureMech mentions); ''Thiamine・HCl
+      (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 67-03-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -168885,6 +170167,9 @@ ingredients:
   - synonym_text: Tomato juice
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Tomato juice (Del Monte)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 21
@@ -168915,6 +170200,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Tomato juice (Del Monte)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:105); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -169124,6 +170417,9 @@ ingredients:
   - synonym_text: Trace element solution see Medium No. 187
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Trace element solution (see Medium No. 187
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -169161,6 +170457,14 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trace element solution (see Medium No. 187'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1886); no CAS-RN
     or CHEBI/NCIT match. Curator review needed. Named trace element solution is a
     formulation, not identical to the generic trace element class.
@@ -169182,6 +170486,9 @@ ingredients:
   - synonym_text: Trace metal mix A5
     synonym_type: RAW_TEXT
     source: culturebotht
+  - synonym_text: Trace Metal Mix A5 (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -169224,6 +170531,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trace Metal Mix A5 (see below)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 7 CultureBot media; samples: BG11C, BG11, BG11R…. No CAS-RN or CHEBI mapping
     available; curator review needed.'
@@ -170079,6 +171394,9 @@ ingredients:
   - synonym_text: triciene
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Trichloroethylene (10 mg/ml in methanol)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -170131,6 +171449,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trichloroethylene (10 mg/ml in methanol)'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 79-01-6
     data_source: PubChem API
@@ -170426,6 +171752,9 @@ ingredients:
   - synonym_text: 5-(3,4,5-trimethoxybenzyl)pyrimidine-2,4-diamine
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: trimethoprim (GlaxoSmithKline)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
@@ -170471,6 +171800,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''trimethoprim (GlaxoSmithKline)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 738-70-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -170595,6 +171932,12 @@ ingredients:
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Trimethylamine . HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Trimethylamine・HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 63
@@ -170670,6 +172013,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trimethylamine . HCl'' (x1 CultureMech mentions); ''Trimethylamine・HCl''
+      (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:64700
   chemical_properties:
     cas_rn: 593-81-7
@@ -171069,6 +172420,12 @@ ingredients:
   - synonym_text: Tris base (buffer)
     synonym_type: RAW_TEXT
     source: merged_from_unmapped_duplicate_review_2026_05_11
+  - synonym_text: Tris (hydroxymethyl) aminomethane
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Tris・HCl
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 212
@@ -171198,6 +172555,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Tris (hydroxymethyl) aminomethane'' (x4 CultureMech mentions);
+      ''Tris・HCl'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:9754
   chemical_properties:
     cas_rn: 77-86-1
@@ -172254,6 +173619,9 @@ ingredients:
   - synonym_text: Tryptose
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Tryptose (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 12
@@ -172288,6 +173656,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Tryptose (BD-Difco)'' (x3 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:819); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -172962,6 +174338,12 @@ ingredients:
   - synonym_text: Polysorbate 80
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Tween 80 (BD)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Tween 80 (pH 8.0)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 299
@@ -173026,6 +174408,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Tween 80 (BD)'' (x2 CultureMech mentions); ''Tween 80 (pH
+      8.0)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 9005-65-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -173462,6 +174852,9 @@ ingredients:
   - synonym_text: uree
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Urea (Sigma U5218)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 72
@@ -173524,6 +174917,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Urea (Sigma U5218)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 57-13-6
     data_source: PubChem API
@@ -175224,6 +176625,9 @@ ingredients:
       component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Vitamin K1 (1 mg/ml)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 127
@@ -175303,6 +176707,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Vitamin K1 (1 mg/ml)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 84-80-0
     data_source: PubChem API
@@ -175810,6 +177222,12 @@ ingredients:
   - synonym_text: VOSO4 x H2O
     synonym_type: HYDRATE_FORM
     source: unmapped_duplicate_review_2026_05_07
+  - synonym_text: VOSO4・xH2O
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: VOSO4·nH2O
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 65
@@ -175911,6 +177329,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''VOSO4・xH2O'' (x14 CultureMech mentions); ''VOSO4·nH2O''
+      (x5 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 123334-20-3
     data_source: PubChem (via CHEBI:87020)
@@ -176593,6 +178019,9 @@ ingredients:
   - synonym_text: Xylan (hemicellulose substrate)
     synonym_type: EXACT_SYNONYM
     source: unmapped_ols_exact_audit
+  - synonym_text: Xylan (Tokyo Kasei or Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 29
@@ -176651,6 +178080,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Xylan (Tokyo Kasei or Sigma)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:37166
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
@@ -177429,6 +178866,9 @@ ingredients:
   - synonym_text: Yeast Extract (0.01 %
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: Fresh Baker’s Yeast Extract
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 7697
@@ -177491,6 +178931,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Fresh Baker’s Yeast Extract'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'CultureMech placeholder_id: 3'
   chemical_properties:
     cas_rn: 8013-01-2
@@ -186839,7 +188287,10 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:ciprofloxacin; '
-  synonyms: []
+  synonyms:
+  - synonym_text: ciprofloxacin (if needed)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -186879,6 +188330,14 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''ciprofloxacin (if needed)'' (x2 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
@@ -203532,6 +204991,12 @@ ingredients:
   - synonym_text: Isovitalex
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: IsoVitaleX (BD 211876)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: isovitalex (BD Biosciences)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4
@@ -203572,6 +205037,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''IsoVitaleX (BD 211876)'' (x2 CultureMech mentions); ''isovitalex
+      (BD Biosciences)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:977); no CAS-RN or
     CHEBI/NCIT match. Reviewed on 2026-05-11 as a named enrichment supplement/stock
     preparation pending product-specific composition curation.
@@ -203660,6 +205133,9 @@ ingredients:
   - synonym_text: Legionella agar enrichment
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: Legionella agar enrichment (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -203702,6 +205178,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Legionella agar enrichment (BD-Difco)'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
     as an agar enrichment supplement/preparation, not agar identity.
   ingredient_type: STOCK_SOLUTION
@@ -203906,6 +205390,9 @@ ingredients:
   - synonym_text: Modified trace vitamins
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Modified trace vitamins (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -203946,6 +205433,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Modified trace vitamins (see below)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2017); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a modified trace vitamin stock
     mixture pending component list and formulation-specific curation.
@@ -204317,6 +205812,9 @@ ingredients:
   - synonym_text: OADC Enrichment
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: OADC Enrichment (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -204357,6 +205855,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''OADC Enrichment (Difco)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2129); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as an enrichment supplement/preparation
     pending component-level recipe curation.
@@ -204441,6 +205947,9 @@ ingredients:
   - synonym_text: Salts solution
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Salts solution***
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
@@ -204479,6 +205988,13 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Salts solution***'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1684); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: STOCK_SOLUTION
@@ -204629,6 +206145,9 @@ ingredients:
   - synonym_text: Trace metal solution
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Trace metal solution*
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -204667,6 +206186,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trace metal solution*'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1551); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: STOCK_SOLUTION
@@ -204689,6 +206216,21 @@ ingredients:
   - synonym_text: Trace mineral solution
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Trace mineral solution (see Medium No. 151 )
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Trace mineral solution (see Medium No. 852 )
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Trace mineral solution (see Medium No.852)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Trace mineral solution (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Trace mineral solution**
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -204727,6 +206269,17 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 5 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trace mineral solution (see Medium No. 151 )'' (x2 CultureMech
+      mentions); ''Trace mineral solution (see Medium No. 852 )'' (x1 CultureMech
+      mentions); ''Trace mineral solution (see Medium No.852)'' (x1 CultureMech mentions);
+      ''Trace mineral solution (see below)'' (x1 CultureMech mentions); ''Trace mineral
+      solution**'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:897); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ingredient_type: STOCK_SOLUTION
@@ -204749,6 +206302,12 @@ ingredients:
   - synonym_text: Trace minerals
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Trace minerals (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Trace minerals*
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
@@ -204798,6 +206357,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trace minerals (see below)'' (x2 CultureMech mentions);
+      ''Trace minerals*'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1031); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 and not identity-mapped to MESH:D014131
     Trace Elements because the source is a trace-mineral ingredient/preparation label.

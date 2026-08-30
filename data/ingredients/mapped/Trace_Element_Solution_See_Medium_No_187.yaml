@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: Trace element solution see Medium No. 187
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Trace element solution (see Medium No. 187
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -40,6 +43,14 @@ curation_history:
     formulation, not identical to the generic trace element class.
   previous_status: MAPPED
   new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Trace element solution (see Medium No. 187'' (x1 CultureMech
+    mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1886); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. Named trace element solution is a formulation,

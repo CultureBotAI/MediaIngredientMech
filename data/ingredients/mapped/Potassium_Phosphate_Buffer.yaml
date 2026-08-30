@@ -4,6 +4,18 @@ synonyms:
 - synonym_text: Potassium phosphate buffer
   synonym_type: RAW_TEXT
   source: culturebotht
+- synonym_text: Potassium phosphate buffer (0.01 M, pH 7.2)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Potassium phosphate buffer (0.02 M, pH 7.0)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Potassium phosphate buffer (1 M, pH 7.1)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Potassium phosphate buffer* (see below)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 44
@@ -53,6 +65,16 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Potassium phosphate buffer (0.01 M, pH 7.2)'' (x1 CultureMech
+    mentions); ''Potassium phosphate buffer (0.02 M, pH 7.0)'' (x1 CultureMech mentions);
+    ''Potassium phosphate buffer (1 M, pH 7.1)'' (x1 CultureMech mentions); ''Potassium
+    phosphate buffer* (see below)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   2 CultureBot media; samples: Mega, TYG. No CAS-RN or CHEBI mapping available; curator
   review needed. Potassium phosphate buffer is a formulation variant, not identical
