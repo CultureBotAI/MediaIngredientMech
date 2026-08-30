@@ -1,9 +1,9 @@
 # Mapped Ingredients Index
-**Total Records**: 2566
-**Mapped**: 2512 (97.9%)
+**Total Records**: 2568
+**Mapped**: 2514 (97.9%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 54 (2.1%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 219,602
+**Total Occurrences**: 219,604
 
 ---
 
@@ -11,6 +11,8 @@
 
 | Identifier | Preferred Term | Ontology ID | Source | Quality | Occurrences |
 |---|---|---|---|---|---|
+| MICRO:0000610 | Ox-bile | MICRO:0000610 | MICRO | SYNONYM_MATCH | 0 |
+| MICRO:0001348 | BG-11 Medium | MICRO:0001348 | MICRO | SYNONYM_MATCH | 2 |
 | kgmicrobe.ingredient:marine_broth_2216 | Marine broth 2216 | kgmicrobe.ingredient:marine_broth_2216 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 19 |
 | kgmicrobe.ingredient:marine_agar_2216 | Marine agar 2216 | kgmicrobe.ingredient:marine_agar_2216 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 32 |
 | MICRO:0000543 | R2A agar | MICRO:0000543 | MICRO | EXACT_MATCH | 16 |

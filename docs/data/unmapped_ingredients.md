@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-08-30T07:15:23.448229+00:00
-Total: 276 ingredients
+Generated: 2026-08-30T08:22:48.384527+00:00
+Total: 278 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -281,3 +281,5 @@ Total: 276 ingredients
 | UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | REJECTED |  |  | 0 |
 | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid |  | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
 | UNMAPPED_0734 |  | Tetrazolium | REJECTED |  |  | 0 |
+| UNMAPPED_0341 |  | Bordet-Gengou-Agar-Base | UNMAPPED |  |  | 0 |
+| UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |

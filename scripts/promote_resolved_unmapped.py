@@ -104,7 +104,10 @@ def _label_via_ols4(cid: str) -> str:
     # so building `.../obo/MICRO_0002398` 404s on exactly the terms this unblocks.
     params = urllib.parse.urlencode(
         {"q": cid, "ontology": prefix.lower(), "queryFields": "obo_id",
-         "exact": "true", "rows": 5}
+         "exact": "true", "rows": 5,
+         # is_defining_ontology is not returned unless asked for; without it the
+         # round-trip guard below reads None and silently passes.
+         "fieldList": "obo_id,label,iri,is_obsolete,is_defining_ontology"}
     )
     url = f"https://www.ebi.ac.uk/ols4/api/search?{params}"
     try:
@@ -121,6 +124,17 @@ def _label_via_ols4(cid: str) -> str:
     doc = docs[0]
     if doc.get("is_obsolete"):
         raise SystemExit(f"{cid} is obsolete in {prefix} — pick a current term")
+    # Looking a term up by obo_id routes around a malformed IRI, which is the point --
+    # but it also routes around the reason MIM gates MICRO behind MICRO_VERIFIED. MicrO
+    # has ~1,472 classes under `.../obo/MicrO.owl/MICRO_NNNNNNN` that do not round-trip:
+    # kg-microbe's ontology transform never produces them, so a published row would
+    # dangle. Refuse them here rather than let the workaround defeat the guard.
+    if doc.get("is_defining_ontology") is False:
+        raise SystemExit(
+            f"{cid} has is_defining_ontology=false in OLS4 (IRI {doc.get('iri')!r}). "
+            "It does not round-trip and must not be published; pick a term whose IRI "
+            "follows the OBO pattern."
+        )
     label = str(doc.get("label") or "")
     if not label:
         raise SystemExit(f"{cid} has no label in OLS4 (absent / wrong id)")

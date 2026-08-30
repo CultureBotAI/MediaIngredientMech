@@ -1,10 +1,10 @@
-identifier: MICRO:0002402
+identifier: UNMAPPED_0353
 preferred_term: Casman-Agar-Base
 synonyms:
 - synonym_text: Casman-Agar-Base
   synonym_type: RAW_TEXT
   source: mim-queue
-mapping_status: MAPPED
+mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -54,17 +54,19 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0353 -> MICRO:0002402 "Casman Agar Base" (SYNONYM_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-30T08:20:52.193944+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: DEMOTED_TO_UNMAPPED
+  changes: 'Returned to UNMAPPED: MICRO:0002402 is `is_defining_ontology=false` in
+    OLS4 and carries the malformed IRI http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002402.
+    MicrO has ~1,472 such classes; they do not round-trip, so kg-microbe''s ontology
+    transform would not produce the term and the published row would dangle. curie.py
+    gates these behind MICRO_VERIFIED and this id is deliberately not on it. The medium
+    is real and the label matches; only this accession is unusable.'
+  previous_status: MAPPED
+  new_status: UNMAPPED
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2099); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as an agar base preparation pending product-
   or recipe-level curation.
 ingredient_type: NAMED_MEDIUM
-ontology_mapping:
-  ontology_id: MICRO:0002402
-  ontology_label: Casman Agar Base
-  ontology_source: MICRO
-  mapping_quality: SYNONYM_MATCH
-  evidence:
-  - evidence_type: DATABASE_MATCH
-    source: OLS4 MICRO exact synonym match
-    notes: MICRO:0002402 'Casman Agar Base' carries this surface form as an exact
-      synonym; the difference is hyphenation only.

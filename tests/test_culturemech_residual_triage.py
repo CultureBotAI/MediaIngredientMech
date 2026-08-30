@@ -380,3 +380,59 @@ class TestRecordCreatorRoutesPromotions:
             if yaml.safe_load(path.read_text(encoding="utf-8")).get("identifier", "").startswith("MICRO:")
         ]
         assert not stale, f"MICRO-identified records still under unmapped/: {stale}"
+
+
+class TestMicroRoundTripGuard:
+    """Looking a term up by obo_id must not defeat the reason MICRO is gated.
+
+    MicrO has ~1,472 classes under `.../obo/MicrO.owl/MICRO_NNNNNNN` that do not
+    round-trip: kg-microbe's ontology transform never produces them, so a published
+    row dangles. `curie.py` gates MICRO behind MICRO_VERIFIED for exactly this. The
+    OLS4 fallback was added to look terms up by obo_id *because* the IRI is malformed
+    -- which routed around the guard and promoted two of them before the CI gate
+    caught it.
+    """
+
+    @pytest.fixture
+    def promote(self):
+        return _load("promote_resolved_unmapped")
+
+    def test_the_fallback_requests_the_field_it_checks(self, promote):
+        """Without fieldList, is_defining_ontology is absent and .get() reads None."""
+        source = (_REPO / "scripts" / "promote_resolved_unmapped.py").read_text(encoding="utf-8")
+        assert "is_defining_ontology" in source
+        assert "fieldList" in source, "the guard silently passes unless the field is requested"
+
+    def test_verified_ids_are_on_the_allowlist(self):
+        from mediaingredientmech.curie import MICRO_VERIFIED
+
+        # Both confirmed is_defining_ontology=true with an OBO-pattern IRI.
+        assert "MICRO:0001348" in MICRO_VERIFIED
+        assert "MICRO:0000610" in MICRO_VERIFIED
+
+    def test_malformed_iri_ids_are_not_allowlisted(self):
+        from mediaingredientmech.curie import MICRO_VERIFIED
+
+        # is_defining_ontology=false, IRI .../obo/MicrO.owl/MICRO_000239[8|02].
+        assert "MICRO:0002398" not in MICRO_VERIFIED
+        assert "MICRO:0002402" not in MICRO_VERIFIED
+
+    def test_no_record_is_grounded_to_an_unverified_micro_id(self):
+        """No NEW record may sit on an unverified MICRO id.
+
+        Three predate this work and are excluded by the same KNOWN_BAD_MICRO list
+        test_curie_normalizer.py uses -- they have the identical malformed-IRI defect
+        and their re-grounding is tracked separately. This asserts the set does not grow.
+        """
+        from mediaingredientmech.curie import MICRO_VERIFIED
+        from tests.test_curie_normalizer import KNOWN_BAD_MICRO
+
+        offenders = []
+        for path in (_REPO / "data" / "ingredients").rglob("*.yaml"):
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            identifier = str(data.get("identifier") or "")
+            if identifier in KNOWN_BAD_MICRO:
+                continue
+            if identifier.startswith("MICRO:") and identifier not in MICRO_VERIFIED:
+                offenders.append((path.name, identifier))
+        assert not offenders, f"records on unverified MICRO ids: {offenders}"

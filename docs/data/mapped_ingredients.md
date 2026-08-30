@@ -1,13 +1,11 @@
 # Mapped Ingredients
 
-Generated: 2026-08-30T07:15:23.445516+00:00
-Total: 2570 ingredients
+Generated: 2026-08-30T08:22:48.381481+00:00
+Total: 2568 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
 | MICRO:0000610 | MICRO:0000610 | Ox-bile | MAPPED | MICRO | SYNONYM_MATCH | 0 |
-| MICRO:0002402 | MICRO:0002402 | Casman-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
-| MICRO:0002398 | MICRO:0002398 | Bordet-Gengou-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0001348 | MICRO:0001348 | BG-11 Medium | MAPPED | MICRO | SYNONYM_MATCH | 2 |
 | kgmicrobe.ingredient:marine_broth_2216 | kgmicrobe.ingredient:marine_broth_2216 | Marine broth 2216 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 19 |
 | kgmicrobe.ingredient:marine_agar_2216 | kgmicrobe.ingredient:marine_agar_2216 | Marine agar 2216 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 32 |

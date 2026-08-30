@@ -1,13 +1,11 @@
 # All Ingredients
 
-Generated: 2026-08-30T07:15:23.448719+00:00
+Generated: 2026-08-30T08:22:48.385146+00:00
 Total: 2846 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
 | MICRO:0000610 | MICRO:0000610 | Ox-bile | MAPPED | MICRO | SYNONYM_MATCH | 0 |
-| MICRO:0002402 | MICRO:0002402 | Casman-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
-| MICRO:0002398 | MICRO:0002398 | Bordet-Gengou-Agar-Base | MAPPED | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0001348 | MICRO:0001348 | BG-11 Medium | MAPPED | MICRO | SYNONYM_MATCH | 2 |
 | kgmicrobe.ingredient:marine_broth_2216 | kgmicrobe.ingredient:marine_broth_2216 | Marine broth 2216 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 19 |
 | kgmicrobe.ingredient:marine_agar_2216 | kgmicrobe.ingredient:marine_agar_2216 | Marine agar 2216 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 32 |
@@ -2851,3 +2849,5 @@ Total: 2846 ingredients
 | UNMAPPED_0817 |  | Glycyl-L-bromosuccinic Glutamic Acid | REJECTED |  |  | 0 |
 | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid |  | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
 | UNMAPPED_0734 |  | Tetrazolium | REJECTED |  |  | 0 |
+| UNMAPPED_0341 |  | Bordet-Gengou-Agar-Base | UNMAPPED |  |  | 0 |
+| UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
