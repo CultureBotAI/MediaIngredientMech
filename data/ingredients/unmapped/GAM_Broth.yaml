@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: GAM broth
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: GAM broth (Nissui)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -38,6 +41,13 @@ curation_history:
     plausible identifier promoted by a mechanism that never decided anything is what
     #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''GAM broth (Nissui)'' (x5 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1620); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: NAMED_MEDIUM

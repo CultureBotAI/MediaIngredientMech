@@ -29,8 +29,13 @@ from __future__ import annotations
 import argparse
 import csv
 import importlib.util
+import json
 import sys
+import time
 import unicodedata
+import urllib.error
+import urllib.parse
+import urllib.request
 from collections import defaultdict
 from pathlib import Path
 
@@ -70,6 +75,40 @@ def held_curies() -> dict[str, str]:
     if not held:
         raise SystemExit("no ingredient records found")
     return held
+
+
+def mim_unmapped_rows(ingredient_type: str | None) -> list[dict[str, str]]:
+    """MIM's own UNMAPPED records as a worklist, newest-first by occurrence.
+
+    Restricting to SINGLE_INGREDIENT matters. Of 269 UNMAPPED records, 102 are
+    NAMED_MEDIUM -- whole culture media rather than ingredients, whose home is a
+    `CultureMechReference` link (#489), not an ontology term; grounding one as an
+    ingredient is a category error. Another 91 are UNDEFINED_MIXTURE, for which
+    staying UNMAPPED is the correct outcome. Only the remainder is a grounding backlog.
+    """
+    rows = []
+    for path in sorted((_REPO / "data" / "ingredients" / "unmapped").glob("*.yaml")):
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict) or data.get("mapping_status") != "UNMAPPED":
+            continue
+        if ingredient_type and data.get("ingredient_type") != ingredient_type:
+            continue
+        stats = data.get("occurrence_statistics") or {}
+        rows.append(
+            {
+                "bucket": "MIM_UNMAPPED",
+                "label": str(data.get("preferred_term") or ""),
+                "occurrences": str(stats.get("total_occurrences") or 0),
+                "recipes": str(stats.get("media_count") or 0),
+                "folded": "",
+                "mim_identifier": str(data.get("identifier") or ""),
+                "mim_label": str(data.get("preferred_term") or ""),
+                "culturemech_reason": str(data.get("ingredient_type") or ""),
+            }
+        )
+    if not rows:
+        raise SystemExit("no matching UNMAPPED records found")
+    return rows
 
 
 def candidate_queries(label: str, fold_decoration) -> list[str]:
@@ -113,10 +152,18 @@ def comparison_key(text: str) -> str:
 # gene allele. Requiring the primary label removes that class of hit entirely.
 LABEL_ONLY = frozenset({"NCIT", "MESH"})
 
+# Below this length a name carries too little information for an exact match to mean
+# anything: ontologies use short strings as formula and abbreviation synonyms across
+# unrelated branches. `X` matched UBERON's "area X of ventral lateral nucleus" and `Ca`
+# matched through a formula alias. Short labels are reported for curation, not proposed.
+MIN_QUERY_LENGTH = 3
+
 
 def exact_hits(adapter, query: str, prefix: str) -> list[tuple[str, str]]:
     """Return (curie, label) for terms whose label or exact synonym equals `query`."""
     wanted = comparison_key(query)
+    if len(wanted) < MIN_QUERY_LENGTH:
+        return []
     if not wanted:
         return []
     # The default search config covers labels only. Most recipe surface forms are
@@ -139,6 +186,65 @@ def exact_hits(adapter, query: str, prefix: str) -> list[tuple[str, str]]:
     return out
 
 
+class OlsAdapter:
+    """Minimal exact-search backend for an ontology with no local semantic-sql build.
+
+    MICRO ships as a 0-byte stub locally, and it is the ontology that actually models
+    named growth media -- so without this every commercial broth and agar falls to
+    NO_EXACT_HIT and looks like it needs minting when MAPPING_SEMANTICS Section 3 step 1
+    would have grounded it.
+
+    `queryFields` is not optional: without it OLS4's default search returned 0 hits for
+    `MRS agar` and `nutrient broth`, both of which MICRO carries verbatim. The
+    `ontology=` filter is also not trusted -- it leaks CHEBI rows -- so results are
+    filtered on the CURIE prefix here.
+    """
+
+    BASE = "https://www.ebi.ac.uk/ols4/api/search"
+
+    def __init__(self, prefix: str, pause: float = 0.34) -> None:
+        self.prefix = prefix
+        self.pause = pause
+        self._labels: dict[str, str] = {}
+
+    def basic_search(self, query: str, config=None):  # noqa: ARG002 - adapter protocol
+        params = urllib.parse.urlencode(
+            {
+                "q": query,
+                "ontology": self.prefix.lower(),
+                "queryFields": "label,synonym",
+                "exact": "true",
+                "rows": 10,
+            }
+        )
+        request = urllib.request.Request(
+            f"{self.BASE}?{params}", headers={"User-Agent": "MediaIngredientMech-grounding"}
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                payload = json.load(response)
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+            print(f"  (OLS4 lookup failed for {query!r}: {exc})", file=sys.stderr)
+            return []
+        finally:
+            time.sleep(self.pause)
+        out = []
+        for doc in payload.get("response", {}).get("docs", []):
+            curie = str(doc.get("obo_id") or "")
+            if curie.startswith(f"{self.prefix}:"):
+                self._labels[curie] = str(doc.get("label") or "")
+                out.append(curie)
+        return out
+
+    def label(self, curie: str) -> str:
+        return self._labels.get(curie, "")
+
+    def entity_aliases(self, curie: str):  # noqa: ARG002 - adapter protocol
+        # OLS4 already applied exact label+synonym matching server-side, so a hit is
+        # exact by construction; re-deriving aliases would cost one request per term.
+        return [self._labels.get(curie, "")]
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--triage", type=Path, default=TRIAGE)
@@ -150,17 +256,35 @@ def main(argv: list[str] | None = None) -> int:
         default="CHEBI,FOODON,ENVO,UBERON,BTO,NCIT",
         help="ontology prefixes to search, in preference order",
     )
+    parser.add_argument(
+        "--ols-sources",
+        default="MICRO",
+        help="of --sources, which to query over OLS4 rather than a local build",
+    )
+    parser.add_argument(
+        "--from-mim-unmapped",
+        action="store_true",
+        help="work MIM's own UNMAPPED records instead of the CultureMech triage",
+    )
+    parser.add_argument(
+        "--ingredient-type",
+        default="SINGLE_INGREDIENT",
+        help="with --from-mim-unmapped, restrict to this ingredient_type ( for all)",
+    )
     args = parser.parse_args(argv)
 
-    if not args.triage.is_file():
+    if args.from_mim_unmapped:
+        rows = mim_unmapped_rows(args.ingredient_type)
+    elif not args.triage.is_file():
         raise SystemExit(
             f"triage report not found: {args.triage}\n"
             "Run: python scripts/triage_culturemech_residual.py"
         )
-    with args.triage.open(encoding="utf-8", newline="") as handle:
-        rows = [r for r in csv.DictReader(handle, delimiter="\t") if r["bucket"] == args.bucket]
-    if not rows:
-        raise SystemExit(f"no {args.bucket} rows in {args.triage}")
+    else:
+        with args.triage.open(encoding="utf-8", newline="") as handle:
+            rows = [r for r in csv.DictReader(handle, delimiter="\t") if r["bucket"] == args.bucket]
+        if not rows:
+            raise SystemExit(f"no {args.bucket} rows in {args.triage}")
     rows.sort(key=lambda r: -int(r["occurrences"]))
     if args.limit:
         rows = rows[: args.limit]
@@ -176,8 +300,12 @@ def main(argv: list[str] | None = None) -> int:
     # MICRO is absent because its local semantic-sql build is a 0-byte stub; named media
     # therefore stay in NO_EXACT_HIT rather than being silently routed elsewhere.
     sources = [s.strip().upper() for s in args.sources.split(",") if s.strip()]
+    via_ols = {s.strip().upper() for s in args.ols_sources.split(",") if s.strip()}
     adapters = []
     for prefix in sources:
+        if prefix in via_ols:
+            adapters.append((prefix, OlsAdapter(prefix)))
+            continue
         try:
             adapters.append((prefix, get_adapter(f"sqlite:obo:{prefix.lower()}")))
         except Exception as exc:  # noqa: BLE001 - a missing build must not kill the run

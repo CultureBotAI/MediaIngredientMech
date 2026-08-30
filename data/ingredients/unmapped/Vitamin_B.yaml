@@ -4,6 +4,12 @@ synonyms:
 - synonym_text: Vitamin B12
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Vitamin B (Thiamine.HCl)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Vitamin B . (Cyanocobalamin)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: UNMAPPED
 ingredient_type: UNDEFINED_MIXTURE
 occurrence_statistics:
@@ -60,6 +66,14 @@ curation_history:
     plausible identifier promoted by a mechanism that never decided anything is what
     #203 and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Vitamin B (Thiamine.HCl)'' (x1 CultureMech mentions); ''Vitamin
+    B . (Cyanocobalamin)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 notes: 'CultureMech placeholder_id: 8; reviewed on 2026-05-11 and left unmapped because
   "Vitamin B" is ambiguous and the raw Vitamin B12 surface form should not force identity
   mapping to either B vitamin or cobalamin; classified as an undefined mixture/category

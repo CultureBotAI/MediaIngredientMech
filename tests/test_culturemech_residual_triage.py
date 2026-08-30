@@ -207,3 +207,40 @@ class TestShortFormulaeAreNotNoise:
         which discards every short formula along with the parse damage.
         """
         assert triage.is_noise(label) is None
+
+
+class TestGroundingProposerGuards:
+    """The proposer's job is to refuse a match it cannot justify."""
+
+    @pytest.fixture
+    def proposer(self):
+        return _load("propose_residual_groundings")
+
+    def test_ncit_and_mesh_are_label_only(self, proposer):
+        """NCIT synonyms carry gene symbols: `B12` resolved to `TNFAIP1 wt Allele`."""
+        assert "NCIT" in proposer.LABEL_ONLY
+        assert "MESH" in proposer.LABEL_ONLY
+
+    def test_chebi_and_foodon_may_match_on_synonyms(self, proposer):
+        """Most recipe surface forms are synonyms, so these must not be label-only."""
+        assert "CHEBI" not in proposer.LABEL_ONLY
+        assert "FOODON" not in proposer.LABEL_ONLY
+
+    @pytest.mark.parametrize("query", ["X", "Ca", "B"])
+    def test_very_short_names_are_never_matched(self, proposer, query):
+        """`X` matched UBERON's "area X of ventral lateral nucleus"."""
+
+        class _Boom:
+            def basic_search(self, *a, **k):
+                raise AssertionError("short query should not reach the ontology")
+
+        assert proposer.exact_hits(_Boom(), query, "CHEBI") == []
+
+    def test_prime_and_subscripts_normalise_for_comparison(self, proposer):
+        """CHEBI writes an ASCII apostrophe where recipe text writes U+2032 PRIME."""
+        assert proposer.comparison_key("[1,1′-Biphenyl]-2-ol") == "[1,1'-biphenyl]-2-ol"
+        assert proposer.comparison_key("H₃BO₃") == "h3bo3"
+
+    def test_punctuation_is_not_stripped_for_comparison(self, proposer):
+        """Stripping it would make EDTA and EDTA-2Na compare equal."""
+        assert proposer.comparison_key("EDTA") != proposer.comparison_key("EDTA-2Na")

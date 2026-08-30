@@ -8,7 +8,12 @@ a synonym is therefore a labelling fix, not a grounding claim -- it asserts
 nothing about chemical identity that the record does not already assert.
 
 Consequently this tool refuses to invent identity:
-  * ALIAS rows only -- RESIDUAL/UNMAPPED/AMBIGUOUS/NOISE are never touched.
+  * ALIAS and UNMAPPED rows only -- RESIDUAL/AMBIGUOUS/NOISE are never touched.
+    An UNMAPPED row attaches the spelling to a record that exists but is not
+    grounded. That grounds nothing, and it is still worth doing: `label_index.csv`
+    carries UNMAPPED rows, and a row is an answer about identity regardless of
+    mapping status, so both spellings resolve to the same record (the `Whole eggs`
+    precedent from the #260 pass).
   * A label already carried as a REJECTED_LABEL synonym is skipped, never
     promoted. MediaIngredientMech#477 made rejected labels stop resolving as
     synonyms; re-adding one here as RAW_TEXT would quietly undo that.
@@ -88,22 +93,27 @@ def existing_texts(record: dict) -> dict[str, str]:
     return seen
 
 
-def load_alias_rows(path: Path) -> list[dict[str, str]]:
+def load_alias_rows(path: Path, buckets: tuple[str, ...]) -> list[dict[str, str]]:
     if not path.is_file():
         raise SystemExit(
             f"triage report not found: {path}\n"
             "Run: python scripts/triage_culturemech_residual.py"
         )
     with path.open(encoding="utf-8", newline="") as handle:
-        rows = [r for r in csv.DictReader(handle, delimiter="\t") if r["bucket"] == "ALIAS"]
+        rows = [r for r in csv.DictReader(handle, delimiter="\t") if r["bucket"] in buckets]
     if not rows:
-        raise SystemExit(f"no ALIAS rows in {path}")
+        raise SystemExit(f"no {'/'.join(buckets)} rows in {path}")
     return rows
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--triage", type=Path, default=TRIAGE)
+    parser.add_argument(
+        "--buckets",
+        default="ALIAS,UNMAPPED",
+        help="triage buckets to apply (default: the two that name an existing record)",
+    )
     parser.add_argument("--apply", action="store_true", help="write changes (default: dry run)")
     parser.add_argument("--only", action="append", help="restrict to these labels (canary mode)")
     # CurationEvent.timestamp is `date-time`, not `date`: a bare YYYY-MM-DD fails
@@ -111,7 +121,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--date", default=datetime.now(timezone.utc).isoformat())
     args = parser.parse_args(argv)
 
-    rows = load_alias_rows(args.triage)
+    buckets = tuple(b.strip().upper() for b in args.buckets.split(",") if b.strip())
+    rows = load_alias_rows(args.triage, buckets)
     if args.only:
         wanted = {label.casefold() for label in args.only}
         rows = [r for r in rows if r["label"].casefold() in wanted]
@@ -199,7 +210,7 @@ def main(argv: list[str] | None = None) -> int:
             del planned[path]
 
     total = sum(len(v) for v in planned.values())
-    print(f"ALIAS rows considered: {len(rows)}")
+    print(f"{'/'.join(buckets)} rows considered: {len(rows)}")
     print(f"  synonyms to add:  {total} across {len(planned)} records")
     print(f"  skipped:          {len(skipped)}")
     for label, why in skipped[:15]:
@@ -211,7 +222,8 @@ def main(argv: list[str] | None = None) -> int:
         for path, syns in sorted(planned.items())[:10]:
             print(f"\n  {path.relative_to(_REPO)}")
             for syn in syns:
-                print(f"      + [{syn['synonym_type']}] {syn['synonym_text']!r} (x{syn['occurrence_count']})")
+                mentions = counts.get(syn["synonym_text"], 0)
+                print(f"      + [{syn['synonym_type']}] {syn['synonym_text']!r} (x{mentions})")
         if len(planned) > 10:
             print(f"\n  ... and {len(planned) - 10} more records")
         print("\nDry run. Re-run with --apply to write.")
