@@ -285,6 +285,48 @@ class OlsAdapter:
         return [self._labels.get(curie, "")]
 
 
+def recheck(report: Path, out: Path) -> int:
+    """Re-apply the current guards to an existing proposals report.
+
+    A full pass is expensive, so when a guard is added after a run the proposals it
+    would now reject are removed here rather than by re-searching every label. Only
+    rejects: a row this cannot re-validate is dropped, never upgraded, so recheck can
+    never introduce a proposal the run did not make.
+    """
+    from oaklib import get_adapter  # noqa: PLC0415
+
+    with report.open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle, delimiter="\t"))
+    adapters: dict[str, object] = {}
+    kept, dropped = [], []
+    for row in rows:
+        curie, verdict = row.get("curie", ""), row.get("verdict", "")
+        if verdict not in ("NEW_RECORD", "SYNONYM_ONTO_EXISTING") or not curie:
+            kept.append(row)
+            continue
+        if len(comparison_key(row["label"])) < MIN_QUERY_LENGTH:
+            dropped.append((row["label"], curie, "label shorter than MIN_QUERY_LENGTH"))
+            continue
+        prefix = curie.split(":", 1)[0]
+        if prefix in SUBSTANCE_ROOTS:
+            if prefix not in adapters:
+                adapters[prefix] = get_adapter(f"sqlite:obo:{prefix.lower()}")
+            if not denotes_a_substance(adapters[prefix], curie, prefix):
+                dropped.append((row["label"], curie, f"outside the {prefix} substance branch"))
+                continue
+        kept.append(row)
+
+    with out.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), delimiter="\t", lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(kept)
+    print(f"rechecked {len(rows)} rows; dropped {len(dropped)} proposal(s)")
+    for label, curie, why in dropped:
+        print(f"  - {label!r} -> {curie}: {why}")
+    print(f"\nwrote {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--triage", type=Path, default=TRIAGE)
@@ -311,7 +353,15 @@ def main(argv: list[str] | None = None) -> int:
         default="SINGLE_INGREDIENT",
         help="with --from-mim-unmapped, restrict to this ingredient_type ( for all)",
     )
+    parser.add_argument(
+        "--recheck",
+        type=Path,
+        help="re-apply current guards to an existing report instead of searching",
+    )
     args = parser.parse_args(argv)
+
+    if args.recheck:
+        return recheck(args.recheck, args.out)
 
     if args.from_mim_unmapped:
         rows = mim_unmapped_rows(args.ingredient_type)
