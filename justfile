@@ -501,6 +501,10 @@ research-providers:
 research-provider provider:
     uv run --extra dev python scripts/research_ingredient.py --provider-status {{provider}}
 
+# Non-billing provider checks; see docs/DEEP_RESEARCH_PROVIDERS.md.
+deep-research-canary provider="all" *args="":
+    uv run --extra dev python scripts/deep_research_contract.py {{provider}} {{args}}
+
 # Rank providers for exact identity/mapping or medium-role evidence research.
 deep-research-providers focus="identity_mapping" *args="":
     uv run --extra dev python scripts/deep_research_provider.py \

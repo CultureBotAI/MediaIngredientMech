@@ -6,10 +6,16 @@ import argparse
 import os
 import shlex
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
 import yaml
+from deep_research_contract import (
+    ContractError,
+    render_prompt_template,
+    run_codex_research,
+)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 INGREDIENTS_DIR = REPO_ROOT / "data" / "ingredients"
@@ -468,6 +474,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--template", type=Path, default=DEFAULT_TEMPLATE)
     parser.add_argument("--research-dir", type=Path, default=DEFAULT_RESEARCH_DIR)
     parser.add_argument("--client-command", default="deep-research-client")
+    parser.add_argument("--timeout", type=int, default=1800)
+    parser.add_argument("--min-chars", type=int, default=1000)
+    parser.add_argument("--min-sources", type=int, default=3)
     parser.add_argument("--dry-run", action="store_true", help="Print command without running it")
     parser.add_argument(
         "passthrough",
@@ -492,11 +501,37 @@ def main() -> int:
     ingredient_status, ingredient_slug = infer_status_slug(target)
     doc = load_ingredient(target)
     variables = template_vars(doc, ingredient_status, ingredient_slug)
+    provider = normalize_provider(args.provider)
 
     output_dir = args.research_dir / "ingredients" / ingredient_status
-    output_file = output_dir / f"{ingredient_slug}-deep-research-{args.provider}.md"
+    output_file = output_dir / f"{ingredient_slug}-deep-research-{provider}.md"
+    print(f"Researching: {variables['ingredient_label']} ({provider}) -> {output_file}")
+    if provider == "codex":
+        if args.passthrough:
+            print("Codex does not accept deep-research-client passthrough arguments", file=sys.stderr)
+            return 2
+        try:
+            prompt = render_prompt_template(args.template, variables)
+            if args.dry_run:
+                print("codex --search --ask-for-approval never exec [schema validated]")
+                print(f"prompt: {len(prompt)} characters")
+                return 0
+            summary = run_codex_research(
+                prompt,
+                output_file,
+                repo_root=REPO_ROOT,
+                timeout=args.timeout,
+                min_chars=args.min_chars,
+                min_sources=args.min_sources,
+            )
+        except ContractError as exc:
+            print(f"Codex research rejected: {exc}", file=sys.stderr)
+            return 1
+        print(f"Validated {summary.characters} characters and {summary.sources} sources")
+        return 0
+
     command = build_command(
-        provider=args.provider,
+        provider=provider,
         template=args.template,
         output_file=output_file,
         variables=variables,
@@ -504,13 +539,12 @@ def main() -> int:
         client_command=args.client_command,
     )
 
-    print(f"Researching: {variables['ingredient_label']} ({args.provider}) -> {output_file}")
     if args.dry_run:
         print(shlex.join(command))
         return 0
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    subprocess.run(command, check=True, env=research_env(args.provider))
+    subprocess.run(command, check=True, env=research_env(provider))
     return 0
 
 

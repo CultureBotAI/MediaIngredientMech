@@ -10,7 +10,7 @@ focuses:
       - ChEBI and other authoritative ontology/database records
       - PubChem, NIST, EPA, supplier primary documentation, and pharmacopeias
       - primary literature for named extracts, digests, and formulations
-    provider_adjustments: {claude_code: 4, perplexity: 3, asta: 2, falcon: 2, consensus: 1}
+    provider_adjustments: {claude_code: 4, codex: 4, perplexity: 3, asta: 2, falcon: 2, consensus: 1}
     stages:
       discovery:
         objective: Search structured chemical resources, formulation documents, and scientific literature.
@@ -31,7 +31,7 @@ focuses:
       - primary cultivation experiments and methods
       - defined-medium design studies and metabolic literature
       - ChEBI role axioms as context, not experimental proof
-    provider_adjustments: {falcon: 4, openscientist: 4, asta: 3, consensus: 2}
+    provider_adjustments: {falcon: 4, openscientist: 4, asta: 3, codex: 2, consensus: 2}
     stages:
       discovery:
         objective: Retrieve studies that manipulate or explain the ingredient in culture.
