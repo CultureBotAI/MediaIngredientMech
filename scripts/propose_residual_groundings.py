@@ -216,7 +216,15 @@ def exact_hits(adapter, query: str, prefix: str) -> list[tuple[str, str]]:
     # The default search config covers labels only. Most recipe surface forms are
     # synonyms rather than primary labels, so without ALIAS this finds almost nothing --
     # it reported 0 hits on the whole canary set.
-    config = SearchConfiguration(properties=[SearchProperty.LABEL, SearchProperty.ALIAS])
+    # force_case_insensitive matters as much as the properties. oaklib's search is
+    # case-sensitive by default, so the lowercase normalised query missed every term
+    # stored capitalised: `sodium glycerophosphate` did not reach NCIT:C120561
+    # `Sodium Glycerophosphate`, an exact match this pass is supposed to find. The
+    # near-match report surfaced it at similarity 1.000 with no risk flags, which is
+    # what an exact match looks like when the exact pass has missed it.
+    config = SearchConfiguration(
+        properties=[SearchProperty.LABEL, SearchProperty.ALIAS], force_case_insensitive=True
+    )
     trusted = getattr(adapter, "server_side_exact", False)
     out = []
     for curie in list(adapter.basic_search(query, config=config))[:25]:
