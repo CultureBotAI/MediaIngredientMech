@@ -54,6 +54,22 @@ FORMULA_TO_NAME = {
     "NaNO3": "sodium nitrate",
     "KNO3": "potassium nitrate",
     "H3BO3": "boric acid",
+    # Gases and water. Anaerobic recipes name these constantly -- `N2 gas` (71 recipe
+    # mentions) and `Oxygen gas` (42) head the unresolved residual -- and their formulas
+    # share almost no characters with their ontology labels, so without an entry here no
+    # search variant and no string-similarity measure will ever connect `N2` to
+    # `dinitrogen`. The names are the CHEBI labels, so the variant lands on the term.
+    "N2": "dinitrogen",
+    "O2": "dioxygen",
+    "H2": "dihydrogen",
+    "CO2": "carbon dioxide",
+    "CO": "carbon monoxide",
+    "CH4": "methane",
+    "H2S": "hydrogen sulfide",
+    "NH3": "ammonia",
+    "H2O": "water",
+    "N2O": "dinitrogen oxide",
+    "SO2": "sulfur dioxide",
 }
 
 # Common abbreviations → full terms
