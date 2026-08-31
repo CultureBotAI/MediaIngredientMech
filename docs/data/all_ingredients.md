@@ -1,7 +1,7 @@
 # All Ingredients
 
-Generated: 2026-08-30T11:01:02.574842+00:00
-Total: 2953 ingredients
+Generated: 2026-08-31T21:54:04.359205+00:00
+Total: 2956 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -2680,6 +2680,9 @@ Total: 2953 ingredients
 | FOODON:03411345 | FOODON:03411345 | Yeast | MAPPED | FOODON | EXACT_MATCH | 3 |
 | MICRO:0000522 | MICRO:0000522 | Yeastolate (BD; 2%, autoclaved) | MAPPED | MICRO | SYNONYM_MATCH | 4 |
 | CHEBI:62984 | CHEBI:62984 | Zinc Acetate | MAPPED | CHEBI | EXACT_MATCH | 7 |
+| CHEBI:27864 | CHEBI:27864 | Dichloran (0.2% in ethanol) | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
+| NCIT:C217966 | NCIT:C217966 | hydroxocobalamin hydrochloride | MAPPED | NCIT | EXACT_MATCH | 1 |
+| NCIT:C120561 | NCIT:C120561 | Sodium glycerophosphate | MAPPED | NCIT | EXACT_MATCH | 25 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
