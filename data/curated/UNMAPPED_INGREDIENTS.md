@@ -1,9 +1,9 @@
 # Unmapped Ingredients Index
-**Total Records**: 280
+**Total Records**: 278
 **Mapped**: 0 (0.0%)
-**Unmapped**: 269 (96.1%)
-**Other statuses**: 11 (3.9%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 601
+**Unmapped**: 267 (96.0%)
+**Other statuses**: 11 (4.0%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Total Occurrences**: 599
 
 ---
 
@@ -49,12 +49,10 @@
 | UNMAPPED_0104 | Barley grains autoclaved | UNMAPPED | 1 |
 | UNMAPPED_0336 | Basal mineral NaCl medium | UNMAPPED | 0 |
 | UNMAPPED_0178 | benzimidazolyl cobamide | UNMAPPED | 0 |
-| UNMAPPED_0061 | BG-11 Medium | UNMAPPED | 2 |
 | UNMAPPED_0207 | Bioecolians | UNMAPPED | 0 |
 | UNMAPPED_0339 | Blood Agar Base | UNMAPPED | 0 |
 | UNMAPPED_0340 | Blood agar No 2 | UNMAPPED | 0 |
 | UNMAPPED_0051 | Bold 1NV Medium | UNMAPPED | 2 |
-| UNMAPPED_0341 | Bordet-Gengou-Agar-Base | UNMAPPED | 0 |
 | UNMAPPED_0344 | Bovine horn meal | UNMAPPED | 0 |
 | UNMAPPED_0345 | Bovine serum | UNMAPPED | 0 |
 | UNMAPPED_0116 | Brewer anaerobic agar | UNMAPPED | 0 |
@@ -66,7 +64,6 @@
 | UNMAPPED_0170 | Calf brains | UNMAPPED | 7 |
 | UNMAPPED_0229 | Calprotectin S1 | UNMAPPED | 0 |
 | UNMAPPED_0230 | Calprotectin S1S2 | UNMAPPED | 0 |
-| UNMAPPED_0353 | Casman-Agar-Base | UNMAPPED | 0 |
 | UNMAPPED_0355 | CeNO33 x 6 H2O | UNMAPPED | 0 |
 | UNMAPPED_0354 | Cellulose MN 300 | UNMAPPED | 0 |
 | UNMAPPED_0356 | Cereal leaves | UNMAPPED | 0 |
@@ -199,7 +196,6 @@
 | UNMAPPED_0487 | OXOID Legionella CYE-Agar base | UNMAPPED | 0 |
 | UNMAPPED_0129 | Oatmeal agar | UNMAPPED | 0 |
 | UNMAPPED_0099 | Organic Peat | UNMAPPED | 1 |
-| UNMAPPED_0485 | Ox-bile | UNMAPPED | 0 |
 | UNMAPPED_0486 | Oxgall | UNMAPPED | 0 |
 | UNMAPPED_0497 | PPLO broth | UNMAPPED | 0 |
 | UNMAPPED_0231 | Pectic galactan from potato | UNMAPPED | 1 |
@@ -280,6 +276,8 @@
 | UNMAPPED_0272 | ZMB_ALS | UNMAPPED | 33 |
 | UNMAPPED_0150 | Zinc-NTA | UNMAPPED | 0 |
 | UNMAPPED_0587 | α-D-Glucose monohydrate | UNMAPPED | 0 |
+| UNMAPPED_0341 | Bordet-Gengou-Agar-Base | UNMAPPED | 0 |
+| UNMAPPED_0353 | Casman-Agar-Base | UNMAPPED | 0 |
 
 ## Other Statuses
 

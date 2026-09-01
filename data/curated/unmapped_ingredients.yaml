@@ -1,7 +1,7 @@
-generation_date: '2026-08-27T01:18:53.695843+00:00'
-total_count: 280
+generation_date: '2026-08-30T11:00:15.836638+00:00'
+total_count: 278
 mapped_count: 0
-unmapped_count: 269
+unmapped_count: 267
 ingredients:
 - identifier: UNMAPPED_0818
   preferred_term: X
@@ -1282,6 +1282,9 @@ ingredients:
   - synonym_text: BCYE agar
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: BCYE agar (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -1321,6 +1324,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:19:46.816488+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''BCYE agar (BD-Difco)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
     as a named agar medium/base preparation, not agar identity.
   ingredient_type: NAMED_MEDIUM
@@ -1464,6 +1475,9 @@ ingredients:
   - synonym_text: Bacto Heart Infusion Broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Bacto Heart Infusion Broth (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -1503,6 +1517,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Bacto Heart Infusion Broth (Difco)'' (x3 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1460); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -1512,6 +1534,9 @@ ingredients:
   - synonym_text: Bacto m TGE broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Bacto m TGE broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -1547,6 +1572,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Bacto m TGE broth (BD-Difco)'' (x2 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1896); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -1556,6 +1589,9 @@ ingredients:
   - synonym_text: Bacto Middlebrook 7H10 agar
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: Bacto Middlebrook 7H10 agar (Difco 262710)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -1596,6 +1632,14 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Bacto Middlebrook 7H10 agar (Difco 262710)'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
     as a commercial agar medium/base preparation, not agar identity.
   ingredient_type: NAMED_MEDIUM
@@ -1831,46 +1875,6 @@ ingredients:
     or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a
     specific cobamide variant; not identity-mapped to generic cobamide or cobalamin.
   ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0061
-  preferred_term: BG-11 Medium
-  synonyms:
-  - synonym_text: BG-11 Medium
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T10:45:00Z'
-    curator: mediaingredientmech-agentic-curation
-    action: CLASSIFIED_DEFINED_MEDIUM
-    changes: Classified as a named BG-11 medium formulation and left unmapped pending
-      recipe-level curation.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: edison_literature_identity
-    action: ANNOTATED
-    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Bg-11_Medium-edison-literature.md
-      (local artifact — research/ is gitignored, so the findings are quoted here rather
-      than linked). Report verdict: ## Curation recommendation — ### Mapping decision
-      No ontology CURIE was proposed. Recorded as provenance only — no grounding applied
-      from this run. Edison''s recommendations are deliberately conservative, and
-      a plausible identifier promoted by a mechanism that never decided anything is
-      what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
-      or reject.'
-    llm_assisted: true
-  notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 as a named BG-11 medium
-    formulation pending recipe-level curation.'
-  ingredient_type: NAMED_MEDIUM
 - identifier: UNMAPPED_0207
   preferred_term: Bioecolians
   synonyms:
@@ -1923,6 +1927,9 @@ ingredients:
   - synonym_text: Blood Agar Base
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Blood agar base (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -1965,6 +1972,14 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Blood agar base (BD-Difco)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2130); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a blood agar base preparation pending
     product- or recipe-level curation.
@@ -2059,58 +2074,6 @@ ingredients:
     llm_assisted: true
   notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 as a named Bold 1NV
     medium formulation pending recipe-level curation.'
-  ingredient_type: NAMED_MEDIUM
-- identifier: UNMAPPED_0341
-  preferred_term: Bordet-Gengou-Agar-Base
-  synonyms:
-  - synonym_text: Bordet-Gengou-Agar-Base
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T19:05:00Z'
-    curator: mediaingredientmech-agentic-curation
-    action: CLASSIFIED_UNDEFINED_MIXTURE
-    changes: Classified as a Bordet-Gengou agar base preparation and left unmapped
-      pending product- or recipe-level curation.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  - timestamp: '2026-07-05T00:00:00+00:00'
-    curator: cbclaw_media_modeling_114
-    action: RECLASSIFY_INGREDIENT_TYPE
-    changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
-      culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
-    llm_assisted: true
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: edison_literature_identity
-    action: ANNOTATED
-    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Bordet-Gengou-Agar-Base-edison-literature.md
-      (local artifact — research/ is gitignored, so the findings are quoted here rather
-      than linked). Report verdict: **Recommended identity:** a named **culture-medium
-      agar-base formulation**, not a single chemical, salt, hydrate, buffer, or chemically
-      defined substance. The source terminology distinguishes “Bordet-Gengou Agar,”
-      “Bordet-Gengou Medium,” and a selective medium prepared “with Bordet-Gengou
-      Agar Base,” supporting a meaningful boundary between the base and finished or
-      supplemented media. The same han No ontology CURIE was proposed. Recorded as
-      provenance only — no grounding applied from this run. Edison''s recommendations
-      are deliberately conservative, and a plausible identifier promoted by a mechanism
-      that never decided anything is what #203 and #263 exist to undo. Any CURIE above
-      is a curator''s to accept or reject.'
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN
-    or CHEBI/NCIT match. Reviewed on 2026-05-11 as an agar base preparation pending
-    product- or recipe-level curation.
   ingredient_type: NAMED_MEDIUM
 - identifier: UNMAPPED_0344
   preferred_term: Bovine horn meal
@@ -2220,6 +2183,9 @@ ingredients:
   - synonym_text: Brewer anaerobic agar
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: Brewer anaerobic agar (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -2262,6 +2228,14 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Brewer anaerobic agar (BD-Difco)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
     as a named agar medium/base preparation, not agar identity.
   ingredient_type: NAMED_MEDIUM
@@ -2315,6 +2289,12 @@ ingredients:
   - synonym_text: Brucella Broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Brucella Broth (BD 211088)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Brucella broth (BD-BBL)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -2351,6 +2331,14 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Brucella Broth (BD 211088)'' (x2 CultureMech mentions);
+      ''Brucella broth (BD-BBL)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1136); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -2360,6 +2348,12 @@ ingredients:
   - synonym_text: CMRL 1066
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: CMRL 1066 (Gibco 330--1540)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: CMRL-1066 (ATCC 20-2206)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   ingredient_type: NAMED_MEDIUM
   occurrence_statistics:
@@ -2392,6 +2386,14 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''CMRL 1066 (Gibco 330--1540)'' (x1 CultureMech mentions);
+      ''CMRL-1066 (ATCC 20-2206)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1680); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped as a named medium
     formulation.
@@ -2656,58 +2658,6 @@ ingredients:
     or CHEBI mapping available; curator review needed. Reviewed on 2026-05-11 as a
     specific calprotectin reagent/form; not identity-mapped to a generic protein family.
   ingredient_type: SINGLE_INGREDIENT
-- identifier: UNMAPPED_0353
-  preferred_term: Casman-Agar-Base
-  synonyms:
-  - synonym_text: Casman-Agar-Base
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:2099); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T19:05:00Z'
-    curator: mediaingredientmech-agentic-curation
-    action: CLASSIFIED_UNDEFINED_MIXTURE
-    changes: Classified as a Casman agar base preparation and left unmapped pending
-      product- or recipe-level curation.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  - timestamp: '2026-07-05T00:00:00+00:00'
-    curator: cbclaw_media_modeling_114
-    action: RECLASSIFY_INGREDIENT_TYPE
-    changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
-      culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
-    llm_assisted: true
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: edison_literature_identity
-    action: ANNOTATED
-    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Casman-Agar-Base-edison-literature.md
-      (local artifact — research/ is gitignored, so the findings are quoted here rather
-      than linked). Report verdict: **Recommended identity:** a named, multicomponent
-      **basal agar culture-medium formulation**, not a single chemical, salt/hydrate,
-      buffer, or chemically defined molecular entity. A clinical-media handbook lists
-      **“Casman Agar Base”** as a standalone entry and separately lists **“Casman
-      Agar Base with Rabbit Blood.”** The handbook describes its entries as formulations
-      with preparation instructions,  No ontology CURIE was proposed. Recorded as
-      provenance only — no grounding applied from this run. Edison''s recommendations
-      are deliberately conservative, and a plausible identifier promoted by a mechanism
-      that never decided anything is what #203 and #263 exist to undo. Any CURIE above
-      is a curator''s to accept or reject.'
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:2099); no CAS-RN
-    or CHEBI/NCIT match. Reviewed on 2026-05-11 as an agar base preparation pending
-    product- or recipe-level curation.
-  ingredient_type: NAMED_MEDIUM
 - identifier: UNMAPPED_0355
   preferred_term: CeNO33 x 6 H2O
   synonyms:
@@ -3422,6 +3372,12 @@ ingredients:
   - synonym_text: Columbia blood agar base
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: Columbia blood agar base (Oxoid CM331)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Columbia blood agar base (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -3460,6 +3416,15 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Columbia blood agar base (Oxoid CM331)'' (x4 CultureMech
+      mentions); ''Columbia blood agar base (BD-Difco)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
     as a blood agar base preparation, not agar identity.
   ingredient_type: NAMED_MEDIUM
@@ -3557,6 +3522,12 @@ ingredients:
   - synonym_text: Corn meal agar
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: Corn meal agar (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Corn meal agar (Nissui)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -3595,6 +3566,14 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Corn meal agar (BD-Difco)'' (x3 CultureMech mentions); ''Corn
+      meal agar (Nissui)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
     as a corn meal agar medium preparation, not agar identity.
   ingredient_type: NAMED_MEDIUM
@@ -5155,6 +5134,9 @@ ingredients:
   - synonym_text: GAM agar
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: GAM agar (Nissui)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -5198,6 +5180,13 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''GAM agar (Nissui)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
     as a GAM agar medium/base preparation, not agar identity.
   ingredient_type: NAMED_MEDIUM
@@ -5207,6 +5196,9 @@ ingredients:
   - synonym_text: GAM broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: GAM broth (Nissui)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -5242,6 +5234,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''GAM broth (Nissui)'' (x5 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1620); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -5703,6 +5703,15 @@ ingredients:
   - synonym_text: Heart Infusion Broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Heart infusion broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Heart Infusion Broth (BD 238400)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Heart infusion broth (Eiken)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -5738,6 +5747,15 @@ ingredients:
       what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Heart infusion broth (BD-Difco)'' (x5 CultureMech mentions);
+      ''Heart Infusion Broth (BD 238400)'' (x2 CultureMech mentions); ''Heart infusion
+      broth (Eiken)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1104); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -5747,6 +5765,9 @@ ingredients:
   - synonym_text: Homo-PIPES
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Homo-PIPES (SIGMA)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -5783,6 +5804,14 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Homo-PIPES (SIGMA)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1141); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a specific buffer reagent; retained
     as unmapped pending exact ontology evidence.
@@ -5836,6 +5865,9 @@ ingredients:
   - synonym_text: Hy-Case Amino
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Hy--Case Amino (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -5868,6 +5900,14 @@ ingredients:
       promoted by a mechanism that never decided anything is what #203 and #263 exist
       to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Hy--Case Amino (Sigma)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1875); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a casein/amino nutrient hydrolysate
     preparation pending product-level curation.
@@ -6733,6 +6773,18 @@ ingredients:
   - synonym_text: Lab Lemco powder
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Lab-Lemco powder
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Lab--Lemco powder (Oxoid)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: '`Lab-Lemco’ powder'
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: ‘Lab-Lemco’ powder
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -6767,6 +6819,15 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Lab-Lemco powder'' (x5 CultureMech mentions); ''Lab--Lemco
+      powder (Oxoid)'' (x4 CultureMech mentions); ''`Lab-Lemco’ powder'' (x2 CultureMech
+      mentions); ''‘Lab-Lemco’ powder'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2136); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complex nutrient powder
     pending product-specific composition curation.
@@ -6777,6 +6838,12 @@ ingredients:
   - synonym_text: Lactobacilli MRS broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Lactobacilli MRS broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Lactobacilli MRS Broth (BD 288130)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -6812,6 +6879,14 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Lactobacilli MRS broth (BD-Difco)'' (x10 CultureMech mentions);
+      ''Lactobacilli MRS Broth (BD 288130)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1711); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -6821,6 +6896,9 @@ ingredients:
   - synonym_text: Lactobacillus MRS broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Lactobacillus MRS broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -6856,6 +6934,14 @@ ingredients:
       is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
       or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Lactobacillus MRS broth (BD-Difco)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1776); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -6865,6 +6951,9 @@ ingredients:
   - synonym_text: Larchwood xylan
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Larchwood xylan (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -6911,6 +7000,14 @@ ingredients:
       this record: one saying no CURIE was proposed, one sourcing a CURIE to the same
       run. Re-proposing it is fine, with its own evidence; see #294.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Larchwood xylan (Sigma)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1624); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a larchwood-derived xylan substrate/fraction
     pending polymer source and composition curation.
@@ -6921,6 +7018,9 @@ ingredients:
   - synonym_text: Leptospira Medium Base EMJH
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Leptospira Medium Base EMJH (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -6958,6 +7058,14 @@ ingredients:
       promoted by a mechanism that never decided anything is what #203 and #263 exist
       to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Leptospira Medium Base EMJH (Difco)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:990); no CAS-RN or
     CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium base preparation pending
     product- or recipe-level curation.
@@ -7151,6 +7259,9 @@ ingredients:
   - synonym_text: MEM alpha Modification
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: MEM alpha Modification (BioWest)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -7186,6 +7297,14 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''MEM alpha Modification (BioWest)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1923); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named complete MEM alpha medium
     formulation pending formulation-specific curation.
@@ -7196,6 +7315,21 @@ ingredients:
   - synonym_text: MRS broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: MRS broth (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: MRS broth (Oxoid)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: MRS broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: MRS broth (Criterion)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: MRS broth (Sigma)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -7230,6 +7364,16 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 5 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''MRS broth (Difco)'' (x3 CultureMech mentions); ''MRS broth
+      (Oxoid)'' (x2 CultureMech mentions); ''MRS broth (BD-Difco)'' (x1 CultureMech
+      mentions); ''MRS broth (Criterion)'' (x1 CultureMech mentions); ''MRS broth
+      (Sigma)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1899); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -7239,6 +7383,12 @@ ingredients:
   - synonym_text: MRS medium
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: MRS medium (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: MRS medium (Scharlau Chemie)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -7275,6 +7425,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''MRS medium (Difco)'' (x1 CultureMech mentions); ''MRS medium
+      (Scharlau Chemie)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1626); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named MRS medium formulation
     pending formulation-specific curation.
@@ -7882,6 +8040,9 @@ ingredients:
   - synonym_text: Mueller Hinton II agar
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: Mueller Hinton II agar (BD-BBL)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -7920,6 +8081,14 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Mueller Hinton II agar (BD-BBL)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
     as a Mueller Hinton II agar medium/base preparation, not agar identity.
   ingredient_type: NAMED_MEDIUM
@@ -8021,6 +8190,9 @@ ingredients:
   - synonym_text: N-Z-Amine® A
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: N-Z-Amine A
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -8057,6 +8229,13 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''N-Z-Amine A'' (x6 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2439); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a protein hydrolysate/preparation
     pending product-level curation.
@@ -8067,6 +8246,9 @@ ingredients:
   - synonym_text: N-Z-Case
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: N-Z-Case (Wako)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -8103,6 +8285,13 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''N-Z-Case (Wako)'' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1829); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a casein hydrolysate/preparation
     pending product-level curation.
@@ -8113,6 +8302,9 @@ ingredients:
   - synonym_text: N-Z amine
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: N-Z-Amine
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -8144,6 +8336,13 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''N-Z-Amine'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1608); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a protein hydrolysate/preparation
     pending product-level curation.
@@ -8603,6 +8802,9 @@ ingredients:
   - synonym_text: Nutrient agar
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Nutrient agar (Oxoid CM3)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -8645,6 +8847,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Nutrient agar (Oxoid CM3)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2364); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a nutrient agar medium/base preparation
     pending recipe- or product-level curation.
@@ -8753,6 +8963,9 @@ ingredients:
   - synonym_text: Oatmeal agar
     synonym_type: RAW_TEXT
     source: extracted_from_agar_yaml
+  - synonym_text: Oatmeal agar (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -8791,6 +9004,14 @@ ingredients:
       identifier promoted by a mechanism that never decided anything is what #203
       and #263 exist to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Oatmeal agar (BD-Difco)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Extracted from over-conflated Agar.yaml synonyms; reviewed on 2026-05-11
     as an oatmeal agar medium/base preparation, not agar identity.
   ingredient_type: NAMED_MEDIUM
@@ -8838,58 +9059,15 @@ ingredients:
   notes: 'CultureMech placeholder_id: 1; reviewed on 2026-05-11 as peat-derived organic
     material pending source/composition curation.'
   ingredient_type: UNDEFINED_MIXTURE
-- identifier: UNMAPPED_0485
-  preferred_term: Ox-bile
-  synonyms:
-  - synonym_text: Ox-bile
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:502); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T19:35:00Z'
-    curator: mediaingredientmech-agentic-curation
-    action: CLASSIFIED_UNDEFINED_MIXTURE
-    changes: Classified as animal bile material/preparation and left unmapped pending
-      material-level curation.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: edison_literature_identity
-    action: ANNOTATED
-    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Ox-bile-edison-literature.md
-      (local artifact — research/ is gitignored, so the findings are quoted here rather
-      than linked). Report verdict: **Recommended interpretation:** `Ox-bile` is an
-      **animal-derived, compositionally variable bovine bile material/preparation**,
-      often encountered in microbiology as dried or dehydrated oxgall. It is not a
-      single chemical, salt/hydrate, buffer, or invariant named formulation. The literature
-      explicitly uses **bovine bile**, **oxgall**, **oxbile**, and **ox-bile** for
-      this material; a microbiology stu No ontology CURIE was proposed. Recorded as
-      provenance only — no grounding applied from this run. Edison''s recommendations
-      are deliberately conservative, and a plausible identifier promoted by a mechanism
-      that never decided anything is what #203 and #263 exist to undo. Any CURIE above
-      is a curator''s to accept or reject.'
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:502); no CAS-RN or
-    CHEBI/NCIT match. Reviewed on 2026-05-11 as animal bile material/preparation pending
-    material-level curation.
-  ingredient_type: UNDEFINED_MIXTURE
 - identifier: UNMAPPED_0486
   preferred_term: Oxgall
   synonyms:
   - synonym_text: Oxgall
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Oxgall (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -8926,6 +9104,13 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Oxgall (BD-Difco)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1656); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as animal bile material/preparation
     pending material-level curation.
@@ -8936,6 +9121,12 @@ ingredients:
   - synonym_text: PPLO broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: PPLO broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: PPLO broth (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -8975,6 +9166,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''PPLO broth (BD-Difco)'' (x1 CultureMech mentions); ''PPLO
+      broth (Difco)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:953); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -9210,6 +9409,9 @@ ingredients:
   - synonym_text: Poly[R-3-hydroxybutyric acid]
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Poly[(R)-3-hydroxybutyric acid]
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -9247,6 +9449,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Poly[(R)-3-hydroxybutyric acid]'' (x11 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:300); no CAS-RN or
     CHEBI/NCIT match. Curator review needed. Reviewed on 2026-05-11 as a stereospecific
     PHB-like polymer surface form; not merged without exact CAS/stereochemistry evidence.
@@ -9435,6 +9645,9 @@ ingredients:
   - synonym_text: Probumin Universal Grade
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Probumin Universal Grade (Millipore)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -9471,6 +9684,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Probumin Universal Grade (Millipore)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1924); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a protein/albumin product preparation
     pending product-level curation.
@@ -9705,6 +9926,15 @@ ingredients:
   - synonym_text: Reinforced clostridial medium
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Reinforced clostridial medium (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Reinforced Clostridial medium (Oxoid CM149)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Reinforced clostridial medium (Oxoid)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -9747,6 +9977,16 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Reinforced clostridial medium (BD-Difco)'' (x3 CultureMech
+      mentions); ''Reinforced Clostridial medium (Oxoid CM149)'' (x1 CultureMech mentions);
+      ''Reinforced clostridial medium (Oxoid)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1769); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a medium preparation pending product-
     or recipe-level curation.
@@ -11095,6 +11335,15 @@ ingredients:
   - synonym_text: Todd Hewitt Broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Todd Hewitt Broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Todd–Hewitt (TH) broth (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Todd–Hewitt broth (Oxoid)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -11133,6 +11382,15 @@ ingredients:
       promoted by a mechanism that never decided anything is what #203 and #263 exist
       to undo. Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Todd Hewitt Broth (BD-Difco)'' (x1 CultureMech mentions);
+      ''Todd–Hewitt (TH) broth (Difco)'' (x1 CultureMech mentions); ''Todd–Hewitt
+      broth (Oxoid)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1705); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -11182,6 +11440,9 @@ ingredients:
   - synonym_text: Trace minerals see Medium No. 151
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Trace minerals (see Medium No. 151
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -11221,6 +11482,14 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trace minerals (see Medium No. 151'' (x3 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1883); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -11230,6 +11499,9 @@ ingredients:
   - synonym_text: Trace minerals see Medium No. 197
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Trace minerals (see Medium No. 197
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -11269,6 +11541,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Trace minerals (see Medium No. 197'' (x2 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1833); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -11510,6 +11790,9 @@ ingredients:
   - synonym_text: Tryptose-phosphate broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Tryptose phosphate broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -11544,6 +11827,14 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Tryptose phosphate broth (BD-Difco)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2163); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -11553,6 +11844,9 @@ ingredients:
   - synonym_text: V8 canned vegetable juice
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: V8 canned vegetable juice (Campbell)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -11585,6 +11879,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''V8 canned vegetable juice (Campbell)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1616); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a food/material preparation pending
     material-level curation.
@@ -11734,6 +12036,12 @@ ingredients:
   - synonym_text: Vitamin B12
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Vitamin B (Thiamine.HCl)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Vitamin B . (Cyanocobalamin)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
@@ -11791,6 +12099,14 @@ ingredients:
       decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
       to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Vitamin B (Thiamine.HCl)'' (x1 CultureMech mentions); ''Vitamin
+      B . (Cyanocobalamin)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: 'CultureMech placeholder_id: 8; reviewed on 2026-05-11 and left unmapped
     because "Vitamin B" is ambiguous and the raw Vitamin B12 surface form should not
     force identity mapping to either B vitamin or cobalamin; classified as an undefined
@@ -11982,6 +12298,9 @@ ingredients:
   - synonym_text: water distilled or tapwater
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: water (distilled or tapwater)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
@@ -12020,6 +12339,14 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''water (distilled or tapwater)'' (x2 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2389); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 and left unmapped because "distilled
     or tapwater" is a source-choice expression, not an exact identity with distilled
@@ -12136,6 +12463,9 @@ ingredients:
   - synonym_text: Wilkins-Chalgren-Anaerobe-Broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Wilkins-Chalgren Anaerobe Broth (Oxoid CM0643)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -12170,6 +12500,14 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Wilkins-Chalgren Anaerobe Broth (Oxoid CM0643)'' (x1 CultureMech
+      mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2093); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -12297,6 +12635,9 @@ ingredients:
   - synonym_text: YM broth
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: YM broth (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -12331,6 +12672,14 @@ ingredients:
       by a mechanism that never decided anything is what #203 and #263 exist to undo.
       Any CURIE above is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''YM broth (BD-Difco)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1683); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -12386,6 +12735,9 @@ ingredients:
   - synonym_text: Yeast cell paste
     synonym_type: RAW_TEXT
     source: mim-queue
+  - synonym_text: Yeast cell paste (see below)
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: UNMAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -12419,6 +12771,14 @@ ingredients:
       that never decided anything is what #203 and #263 exist to undo. Any CURIE above
       is a curator''s to accept or reject.'
     llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Yeast cell paste (see below)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:2079); no CAS-RN
     or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -13355,3 +13715,158 @@ ingredients:
     folded onto those records either: this label names a reaction or a splice, not
     the substance, and asserting the synonymy would make label_index resolve it to
     something it does not denote.'
+- identifier: UNMAPPED_0341
+  preferred_term: Bordet-Gengou-Agar-Base
+  synonyms:
+  - synonym_text: Bordet-Gengou-Agar-Base
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  - synonym_text: Bordet-Gengou Agar Base (BD 248200)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  mapping_status: UNMAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_UNDEFINED_MIXTURE
+    changes: Classified as a Bordet-Gengou agar base preparation and left unmapped
+      pending product- or recipe-level curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-07-05T00:00:00+00:00'
+    curator: cbclaw_media_modeling_114
+    action: RECLASSIFY_INGREDIENT_TYPE
+    changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+      culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Bordet-Gengou-Agar-Base-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: **Recommended identity:** a named **culture-medium
+      agar-base formulation**, not a single chemical, salt, hydrate, buffer, or chemically
+      defined substance. The source terminology distinguishes “Bordet-Gengou Agar,”
+      “Bordet-Gengou Medium,” and a selective medium prepared “with Bordet-Gengou
+      Agar Base,” supporting a meaningful boundary between the base and finished or
+      supplemented media. The same han No ontology CURIE was proposed. Recorded as
+      provenance only — no grounding applied from this run. Edison''s recommendations
+      are deliberately conservative, and a plausible identifier promoted by a mechanism
+      that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+      is a curator''s to accept or reject.'
+    llm_assisted: true
+  - timestamp: '2026-08-30T06:20:04.233651+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Bordet-Gengou Agar Base (BD 248200)'' (x1 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-06-16T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0341 -> MICRO:0002398 "Bordet Gengou Agar Base" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-30T08:20:52.193944+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: DEMOTED_TO_UNMAPPED
+    changes: 'Returned to UNMAPPED: MICRO:0002398 is `is_defining_ontology=false`
+      in OLS4 and carries the malformed IRI http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002398.
+      MicrO has ~1,472 such classes; they do not round-trip, so kg-microbe''s ontology
+      transform would not produce the term and the published row would dangle. curie.py
+      gates these behind MICRO_VERIFIED and this id is deliberately not on it. The
+      medium is real and the label matches; only this accession is unusable.'
+    previous_status: MAPPED
+    new_status: UNMAPPED
+    llm_assisted: false
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as an agar base preparation pending
+    product- or recipe-level curation.
+  ingredient_type: NAMED_MEDIUM
+- identifier: UNMAPPED_0353
+  preferred_term: Casman-Agar-Base
+  synonyms:
+  - synonym_text: Casman-Agar-Base
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: UNMAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:2099); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T19:05:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CLASSIFIED_UNDEFINED_MIXTURE
+    changes: Classified as a Casman agar base preparation and left unmapped pending
+      product- or recipe-level curation.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-07-05T00:00:00+00:00'
+    curator: cbclaw_media_modeling_114
+    action: RECLASSIFY_INGREDIENT_TYPE
+    changes: 'ingredient_type UNDEFINED_MIXTURE -> DEFINED_MEDIUM: this is a complete
+      culture-medium/agar/broth formulation (a medium), not an ingredient-level mixture.'
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Casman-Agar-Base-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: **Recommended identity:** a named, multicomponent
+      **basal agar culture-medium formulation**, not a single chemical, salt/hydrate,
+      buffer, or chemically defined molecular entity. A clinical-media handbook lists
+      **“Casman Agar Base”** as a standalone entry and separately lists **“Casman
+      Agar Base with Rabbit Blood.”** The handbook describes its entries as formulations
+      with preparation instructions,  No ontology CURIE was proposed. Recorded as
+      provenance only — no grounding applied from this run. Edison''s recommendations
+      are deliberately conservative, and a plausible identifier promoted by a mechanism
+      that never decided anything is what #203 and #263 exist to undo. Any CURIE above
+      is a curator''s to accept or reject.'
+    llm_assisted: true
+  - timestamp: '2026-06-16T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0353 -> MICRO:0002402 "Casman Agar Base" (SYNONYM_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-30T08:20:52.193944+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: DEMOTED_TO_UNMAPPED
+    changes: 'Returned to UNMAPPED: MICRO:0002402 is `is_defining_ontology=false`
+      in OLS4 and carries the malformed IRI http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002402.
+      MicrO has ~1,472 such classes; they do not round-trip, so kg-microbe''s ontology
+      transform would not produce the term and the published row would dangle. curie.py
+      gates these behind MICRO_VERIFIED and this id is deliberately not on it. The
+      medium is real and the label matches; only this accession is unusable.'
+    previous_status: MAPPED
+    new_status: UNMAPPED
+    llm_assisted: false
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:2099); no CAS-RN
+    or CHEBI/NCIT match. Reviewed on 2026-05-11 as an agar base preparation pending
+    product- or recipe-level curation.
+  ingredient_type: NAMED_MEDIUM

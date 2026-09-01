@@ -1,0 +1,32 @@
+identifier: CHEBI:33229
+preferred_term: Vitamins
+ontology_mapping:
+  ontology_id: CHEBI:33229
+  ontology_label: vitamin (role)
+  ontology_source: CHEBI
+  mapping_quality: SYNONYM_MATCH
+  match_level: NORMALIZED
+mapping_status: MAPPED
+occurrence_statistics:
+  total_occurrences: 3
+  media_count: 3
+curation_history:
+- timestamp: '2026-08-30T10:35:03.361102+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: CREATED_FROM_CULTUREMECH_RESIDUAL
+  changes: 'Created from a CultureMech recipe ingredient MIM held no record for (3
+    mentions across 3 recipes). Grounded to CHEBI:33229 (''vitamin (role)'') on an
+    exact match of an exact synonym to the query ''vitamins''. Source: culturemech:output/ingredient_occurrences.tsv.'
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-08-30T10:41:26.546472+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Vitamins (ATCC)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+synonyms:
+- synonym_text: Vitamins (ATCC)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv

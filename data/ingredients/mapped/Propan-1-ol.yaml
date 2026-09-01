@@ -13,6 +13,9 @@ synonyms:
 - synonym_text: Propanol
   synonym_type: RAW_TEXT
   source: microbedecoder
+- synonym_text: Propane-1-ol
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -48,6 +51,13 @@ curation_history:
     rather than asserting a new mapping (#213). No new SSSOM row; CHEBI:28831 is already
     mapped. Source: kgmicrobe.trait:propanol.'
   llm_assisted: true
+- timestamp: '2026-08-30T10:32:26.469831+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Propane-1-ol'' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 71-23-8
   data_source: CultureBotHT compounds_to_cas.csv

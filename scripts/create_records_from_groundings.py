@@ -1,0 +1,273 @@
+#!/usr/bin/env python3
+"""Create MIM records for CultureMech ingredients with an exact ontology match.
+
+`propose_residual_groundings.py` marks a proposal NEW_RECORD when a CultureMech surface
+form matches an ontology term exactly and no MIM record holds that CURIE yet. This tool
+turns those proposals into records.
+
+In MIM the record `identifier` IS the ontology CURIE, so creating a record on a CURIE
+another record already holds is a duplicate by construction. The proposer routes those to
+SYNONYM_ONTO_EXISTING instead, and this tool re-checks the invariant at write time --
+the corpus may have moved since the proposal was generated.
+
+Grading follows what actually matched:
+    EXACT_MATCH     the surface form equals the term's canonical label
+    SYNONYM_MATCH   it equals one of the term's exact synonyms
+`ontology_label` always carries the canonical OBO label, never the surface form; the
+surface form is `preferred_term`. Conflating them is the defect PR #49 had to repair
+across 413 records.
+
+Writes per-record files under data/ingredients/mapped/. Follow with `just sync-curated`.
+
+Usage:
+    python scripts/create_records_from_groundings.py --groundings reports/x.tsv
+    python scripts/create_records_from_groundings.py --groundings reports/x.tsv --apply
+"""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import importlib.util
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+import yaml
+
+_REPO = Path(__file__).resolve().parent.parent
+MAPPED = _REPO / "data" / "ingredients" / "mapped"
+CURATOR = "claude_culturemech_residual_grounding"
+SOURCE = "culturemech:output/ingredient_occurrences.tsv"
+
+
+def _load(name: str, path: Path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    # Register before executing: the exporter defines dataclasses, and dataclasses
+    # resolves annotations through sys.modules[cls.__module__], which is None otherwise.
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+def held_identifiers() -> dict[str, str]:
+    held: dict[str, str] = {}
+    for path in (_REPO / "data" / "ingredients").rglob("*.yaml"):
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if isinstance(data, dict) and data.get("identifier"):
+            held[str(data["identifier"])] = path.name
+    return held
+
+
+def emit_sssom_rows(promoter, date: str) -> int:
+    """Publish an SSSOM row for every MAPPED record that has no subject row yet.
+
+    `reconcile_sssom.py` reports these as GAPs and deliberately will not fill them --
+    it cannot synthesise provenance for a row it knows nothing about. Here the
+    provenance is known: the record was created by this tool from an exact ontology
+    match, and its `ontology_mapping` carries the grade that decides predicate and
+    confidence. Reuses the promotion helper's PREDICATE/CONFIDENCE/OBJECT_SOURCE tables
+    so the two paths that can publish a row cannot drift apart.
+
+    Idempotent: a record whose subject already appears is skipped, so re-running adds
+    nothing.
+    """
+    sssom = _REPO / "mappings" / "ingredient_mappings.sssom.tsv"
+    lines = sssom.read_text(encoding="utf-8").splitlines(keepends=True)
+    header_i = next(i for i, line in enumerate(lines) if not line.startswith("#"))
+    published = {line.split("\t", 1)[0] for line in lines[header_i + 1:] if line.strip()}
+
+    added = 0
+    for path in sorted((_REPO / "data" / "ingredients" / "mapped").glob("*.yaml")):
+        record = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if not isinstance(record, dict) or record.get("mapping_status") != "MAPPED":
+            continue
+        if not any(
+            e.get("action") == "CREATED_FROM_CULTUREMECH_RESIDUAL"
+            for e in record.get("curation_history") or []
+            if isinstance(e, dict)
+        ):
+            continue
+        subject = f"MIM:{path.stem}"
+        if subject in published:
+            continue
+        mapping = record.get("ontology_mapping") or {}
+        curie, quality = str(mapping.get("ontology_id") or ""), str(mapping.get("mapping_quality") or "")
+        if not curie or quality not in promoter.PREDICATE:
+            continue
+        prefix = curie.split(":", 1)[0]
+        source = (promoter.REGISTRY_SOURCE.get(prefix, "")
+                  if promoter.is_registry_mint(curie)
+                  else promoter.OBJECT_SOURCE.get(prefix.upper(), ""))
+        src = f"MIM:{SOURCE}|MIM:curator={CURATOR}"
+        row = "\t".join([
+            subject, str(record.get("preferred_term") or ""), promoter.PREDICATE[quality],
+            curie, str(mapping.get("ontology_label") or ""), source,
+            "semapv:ManualMappingCuration", src, date, promoter.CONFIDENCE[quality],
+            "", "", f"manual:{CURATOR}|CREATED|{date}",
+        ]) + "\n"
+        # The header index stays put: `_sorted_insert` returns where the row landed,
+        # not a new header. Feeding that back made each insertion start scanning from the
+        # previous one, so a row that sorted earlier could never reach its place -- 30
+        # inversions across 109 rows, against a 4.8% baseline (#510).
+        promoter._sorted_insert(lines, header_i, str(record.get("preferred_term") or ""), row)
+        published.add(subject)
+        added += 1
+
+    if added:
+        sssom.write_text("".join(lines), encoding="utf-8")
+    print(f"SSSOM rows added: {added}")
+    return added
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--groundings", type=Path, action="append", required=True)
+    parser.add_argument("--apply", action="store_true")
+    parser.add_argument("--limit", type=int, help="write at most N records (canary)")
+    parser.add_argument(
+        "--sssom-only",
+        action="store_true",
+        help="skip creation; only publish rows for records already created",
+    )
+    parser.add_argument("--date", default=datetime.now(timezone.utc).isoformat())
+    args = parser.parse_args(argv)
+
+    proposer = _load("proposer", _REPO / "scripts" / "propose_residual_groundings.py")
+    exporter = _load("exporter", _REPO / "scripts" / "export_individual_records.py")
+    promoter = _load("promoter", _REPO / "scripts" / "promote_resolved_unmapped.py")
+
+    rows: list[dict[str, str]] = []
+    for path in args.groundings:
+        if not path.is_file():
+            raise SystemExit(f"groundings report not found: {path}")
+        with path.open(encoding="utf-8", newline="") as handle:
+            rows.extend(r for r in csv.DictReader(handle, delimiter="\t") if r["verdict"] == "NEW_RECORD")
+    if not rows:
+        raise SystemExit("no NEW_RECORD proposals in the given reports")
+
+    if args.sssom_only:
+        emit_sssom_rows(promoter, args.date[:10])
+        return 0
+
+    held = held_identifiers()
+    existing_stems = {p.stem for p in (_REPO / "data" / "ingredients").rglob("*.yaml")}
+    # A surface form MIM already has as an UNMAPPED record is not a creation at all --
+    # it is a promotion of that record, which carries its synonyms, occurrence statistics
+    # and curation history with it. Creating a second record would strand all of that.
+    unmapped_by_term: dict[str, str] = {}
+    for path in (_REPO / "data" / "ingredients" / "unmapped").glob("*.yaml"):
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if isinstance(data, dict) and data.get("mapping_status") == "UNMAPPED":
+            term = str(data.get("preferred_term") or "").casefold()
+            if term:
+                unmapped_by_term[term] = str(data.get("identifier") or "")
+
+    planned: list[tuple[Path, dict]] = []
+    promotions: list[tuple[str, str, str, str]] = []
+    skipped: list[tuple[str, str]] = []
+    claimed: dict[str, str] = {}
+    for row in sorted(rows, key=lambda r: (-int(r["occurrences"]), r["label"])):
+        label, curie = row["label"], row["curie"]
+        if curie in held:
+            # The corpus moved since the proposal, or two reports proposed the same CURIE.
+            skipped.append((label, f"{curie} already held by {held[curie]}"))
+            continue
+        if curie in claimed:
+            skipped.append((label, f"{curie} already claimed this run by {claimed[curie]!r}"))
+            continue
+        promote_target = unmapped_by_term.get(label.casefold())
+        if promote_target:
+            promotions.append((promote_target, label, curie, row["term_label"]))
+            continue
+        stem = exporter.sanitize_filename(label)
+        if not stem or stem in existing_stems:
+            skipped.append((label, f"filename stem {stem!r} collides"))
+            continue
+        exact = proposer.comparison_key(label) == proposer.comparison_key(row["term_label"])
+        record = {
+            "identifier": curie,
+            "preferred_term": label,
+            "ontology_mapping": {
+                "ontology_id": curie,
+                # The canonical OBO label, never the surface form (PR #49).
+                "ontology_label": row["term_label"],
+                # Reused, not reimplemented: the schema takes upper-case ontology
+                # prefixes but lower-case registry namespaces, and upper-casing everything
+                # produced KGMICROBE.COMPOUND, which the write-time validator rejects.
+                "ontology_source": promoter._source_enum(curie),
+                "mapping_quality": "EXACT_MATCH" if exact else "SYNONYM_MATCH",
+                "match_level": "EXACT" if exact else "NORMALIZED",
+            },
+            "mapping_status": "MAPPED",
+            # From CultureMech's occurrence table, counted over the surface form this
+            # record was created from. CultureMech's table is the established source for
+            # these counts (#485), but refresh_occurrence_statistics.py matches on
+            # `resolved_identifier` -- which cannot match a CURIE CultureMech has not
+            # re-resolved to yet. Seeding here keeps the record honest until the next
+            # index bump lets that tool take over.
+            "occurrence_statistics": {
+                "total_occurrences": int(row["occurrences"]),
+                "media_count": int(row["recipes"]),
+            },
+            "curation_history": [
+                {
+                    "timestamp": args.date,
+                    "curator": CURATOR,
+                    "action": "CREATED_FROM_CULTUREMECH_RESIDUAL",
+                    "changes": (
+                        f"Created from a CultureMech recipe ingredient MIM held no record for "
+                        f"({row['occurrences']} mentions across {row['recipes']} recipes). "
+                        f"Grounded to {curie} ({row['term_label']!r}) on an exact match of "
+                        f"{'the canonical label' if exact else 'an exact synonym'} to the query "
+                        f"{row['matched_query']!r}. Source: {SOURCE}."
+                    ),
+                    "new_status": "MAPPED",
+                    "llm_assisted": False,
+                }
+            ],
+        }
+        claimed[curie] = label
+        existing_stems.add(stem)
+        planned.append((MAPPED / f"{stem}.yaml", record))
+
+    print(f"NEW_RECORD proposals: {len(rows)}")
+    print(f"  records to create:    {len(planned)}")
+    print(f"  promote instead:      {len(promotions)}")
+    print(f"  skipped:              {len(skipped)}")
+    for identifier, label, curie, term_label in promotions[:12]:
+        print(f"      ! {label!r} is {identifier}; promote it rather than creating a record:")
+        print(f"          scripts/promote_resolved_unmapped.py --identifier {identifier} "
+              f"--to {curie} --quality <EXACT_MATCH|SYNONYM_MATCH> --apply")
+    if len(promotions) > 12:
+        print(f"      ... and {len(promotions) - 12} more promotions")
+    for label, why in skipped[:12]:
+        print(f"      - {label!r}: {why}")
+
+    if not args.apply:
+        for path, record in planned[:15]:
+            om = record["ontology_mapping"]
+            print(f"    {path.name:<48} {om['ontology_id']:<16} {om['mapping_quality']}")
+        if len(planned) > 15:
+            print(f"    ... and {len(planned) - 15} more")
+        print("\nDry run. Re-run with --apply to write.")
+        return 0
+
+    MAPPED.mkdir(parents=True, exist_ok=True)
+    if args.limit:
+        planned = planned[: args.limit]
+    for path, record in planned:
+        path.write_text(
+            yaml.dump(record, sort_keys=False, allow_unicode=True, default_flow_style=False),
+            encoding="utf-8",
+        )
+    print(f"\nCreated {len(planned)} records.")
+    emit_sssom_rows(promoter, args.date[:10])
+    print("Next: `just sync-curated`, then the export recipes.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

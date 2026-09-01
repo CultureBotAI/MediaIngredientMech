@@ -36,6 +36,12 @@ synonyms:
 - synonym_text: VOSO4 x H2O
   synonym_type: HYDRATE_FORM
   source: unmapped_duplicate_review_2026_05_07
+- synonym_text: VOSO4・xH2O
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: VOSO4·nH2O
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 65
@@ -137,6 +143,14 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''VOSO4・xH2O'' (x14 CultureMech mentions); ''VOSO4·nH2O'' (x5
+    CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 123334-20-3
   data_source: PubChem (via CHEBI:87020)

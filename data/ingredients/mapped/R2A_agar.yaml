@@ -14,7 +14,16 @@ ontology_mapping:
       `Brucella agar` (MICRO:0000595) and `Bacto Tryptic Soy Agar` (MICRO:0000114).
       MICRO:0000541 ''R2A medium'' is the broth; this label says agar. Cross-reference:
       CultureMech:002706 (data/normalized_yaml/bacterial/r2a_agar.yaml).'
-synonyms: []
+synonyms:
+- synonym_text: R2A agar (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: R2A agar (DB-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: R2A agar (BD--Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 ingredient_type: UNDEFINED_MIXTURE
 occurrence_statistics:
@@ -40,3 +49,12 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 3 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''R2A agar (BD-Difco)'' (x5 CultureMech mentions); ''R2A agar
+    (DB-Difco)'' (x2 CultureMech mentions); ''R2A agar (BD--Difco)'' (x1 CultureMech
+    mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false

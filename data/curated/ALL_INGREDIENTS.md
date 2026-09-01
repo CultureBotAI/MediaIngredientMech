@@ -1,9 +1,9 @@
 # Complete Ingredients Index
-**Total Records**: 2846
-**Mapped**: 2512 (88.3%)
-**Unmapped**: 269 (9.5%)
-**Other statuses**: 65 (2.3%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 220,203
+**Total Records**: 2953
+**Mapped**: 2621 (88.8%)
+**Unmapped**: 267 (9.0%)
+**Other statuses**: 65 (2.2%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Total Occurrences**: 220,590
 
 ---
 
@@ -11,6 +11,8 @@
 
 | Identifier | Preferred Term | Ontology ID | Source | Quality | Occurrences |
 |---|---|---|---|---|---|
+| MICRO:0000610 | Ox-bile | MICRO:0000610 | MICRO | SYNONYM_MATCH | 0 |
+| MICRO:0001348 | BG-11 Medium | MICRO:0001348 | MICRO | SYNONYM_MATCH | 2 |
 | kgmicrobe.ingredient:marine_broth_2216 | Marine broth 2216 | kgmicrobe.ingredient:marine_broth_2216 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 19 |
 | kgmicrobe.ingredient:marine_agar_2216 | Marine agar 2216 | kgmicrobe.ingredient:marine_agar_2216 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 32 |
 | MICRO:0000543 | R2A agar | MICRO:0000543 | MICRO | EXACT_MATCH | 16 |
@@ -2523,6 +2525,113 @@
 | kgmicrobe.ingredient:vitamins_solution | Vitamins solution | kgmicrobe.ingredient:vitamins_solution | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
 | kgmicrobe.ingredient:vitox | Vitox | kgmicrobe.ingredient:vitox | kgmicrobe.ingredient | FALLBACK_REGISTRY | 4 |
 | kgmicrobe.ingredient:x10_jamarin_s | X10 Jamarin S | kgmicrobe.ingredient:x10_jamarin_s | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
+| MICRO:0001234 | Horse blood | MICRO:0001234 | MICRO | EXACT_MATCH | 68 |
+| CHEBI:17043 | [1,1′-Biphenyl]-2-ol | CHEBI:17043 | CHEBI | SYNONYM_MATCH | 60 |
+| CHEBI:15573 | 2-Aminoethylphosphonate | CHEBI:15573 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:30793 | 2-Chlorobenzoic acid | CHEBI:30793 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:16260 | 2-Nitrophenol | CHEBI:16260 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:28854 | 2,4-Dichlorophenoxyacetic acid | CHEBI:28854 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:42094 | 2,4-Dihydroxybenzoic acid | CHEBI:42094 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:28924 | 3-Aminophenol | CHEBI:28924 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:47106 | 3-Chloro-4-hydroxyphenylacetic acid | CHEBI:47106 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:19982 | 3-Chloroacrylic acid | CHEBI:19982 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:17871 | 3-Hydroxypropanal | CHEBI:17871 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:17612 | 3,4-Dihydroxyphenylacetate | CHEBI:17612 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:566519 | 3,4,5-Trimethoxycinnamic acid | CHEBI:566519 | CHEBI | EXACT_MATCH | 4 |
+| CHEBI:39912 | 3,5-Dihydroxybenzoic acid | CHEBI:39912 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:16892 | 4-Amino-5-hydroxymethyl-2-methylpyrimidine | CHEBI:16892 | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:17847 | 4-Cresol | CHEBI:17847 | CHEBI | SYNONYM_MATCH | 2 |
+| ENVO:00002005 | Air | ENVO:00002005 | ENVO | EXACT_MATCH | 12 |
+| CHEBI:18145 | alpha-Tocopherol | CHEBI:18145 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:16551 | alpha,alpha-Trehalose | CHEBI:16551 | CHEBI | EXACT_MATCH | 1 |
+| ENVO:01000173 | Anaerobic water | ENVO:01000173 | ENVO | SYNONYM_MATCH | 2 |
+| FOODON:00001059 | Apple Juice | FOODON:00001059 | FOODON | EXACT_MATCH | 1 |
+| MICRO:0001715 | Artificial seawater | MICRO:0001715 | MICRO | EXACT_MATCH | 19 |
+| CHEBI:2956 | azlocillin | CHEBI:2956 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:17169 | Benzaldehyde | CHEBI:17169 | CHEBI | EXACT_MATCH | 2 |
+| CHEBI:45993 | Benzothiazole | CHEBI:45993 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:17544 | Bicarbonate | CHEBI:17544 | CHEBI | SYNONYM_MATCH | 1 |
+| UBERON:0000178 | Blood | UBERON:0000178 | UBERON | EXACT_MATCH | 1 |
+| CHEBI:22908 | Borate | CHEBI:22908 | CHEBI | EXACT_MATCH | 2 |
+| MICRO:0000566 | brain–heart infusion agar | MICRO:0000566 | MICRO | SYNONYM_MATCH | 1 |
+| CHEBI:59424 | Bromophenol blue | CHEBI:59424 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:22984 | Calcium | CHEBI:22984 | CHEBI | SYNONYM_MATCH | 2 |
+| FOODON:03413044 | Calcium lactate | FOODON:03413044 | FOODON | EXACT_MATCH | 1 |
+| FOODON:03413045 | Calcium malate | FOODON:03413045 | FOODON | EXACT_MATCH | 3 |
+| FOODON:03310367 | Cellulose powder | FOODON:03310367 | FOODON | EXACT_MATCH | 1 |
+| MICRO:0000591 | chocolate agar | MICRO:0000591 | MICRO | EXACT_MATCH | 2 |
+| CHEBI:17996 | Cl- | CHEBI:17996 | CHEBI | SYNONYM_MATCH | 5 |
+| MICRO:0000520 | Clarified rumen fluid | MICRO:0000520 | MICRO | EXACT_MATCH | 6 |
+| CHEBI:28694 | Copper | CHEBI:28694 | CHEBI | SYNONYM_MATCH | 2 |
+| CHEBI:25399 | Cresol | CHEBI:25399 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:38028 | Cyanuric acid | CHEBI:38028 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:33198 | D-Gluconic acid | CHEBI:33198 | CHEBI | EXACT_MATCH | 4 |
+| CHEBI:63075 | Diammonium tartrate | CHEBI:63075 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:41962 | Diethyl phosphonate | CHEBI:41962 | CHEBI | EXACT_MATCH | 1 |
+| MICRO:0001599 | Dried Bovine Hemoglobin (BD 212392) | MICRO:0001599 | MICRO | SYNONYM_MATCH | 2 |
+| CHEBI:87426 | Ethyl octanoate | CHEBI:87426 | CHEBI | EXACT_MATCH | 1 |
+| MICRO:0001358 | Eugon agar (BD-Difco) | MICRO:0001358 | MICRO | SYNONYM_MATCH | 1 |
+| ENVO:00005749 | farm soil | ENVO:00005749 | ENVO | EXACT_MATCH | 1 |
+| CHEBI:132238 | Ferric nitrilotriacetate | CHEBI:132238 | CHEBI | SYNONYM_MATCH | 2 |
+| CHEBI:76243 | Ferrous ammonium sulfate | CHEBI:76243 | CHEBI | SYNONYM_MATCH | 6 |
+| CHEBI:5098 | flucloxacillin | CHEBI:5098 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:26078 | H3PO4 | CHEBI:26078 | CHEBI | SYNONYM_MATCH | 2 |
+| MICRO:0000567 | Heart Infusion Agar (BD 211065) | MICRO:0000567 | MICRO | SYNONYM_MATCH | 1 |
+| MICRO:0001598 | Hemin solution (see below) | MICRO:0001598 | MICRO | SYNONYM_MATCH | 1 |
+| CHEBI:5656 | Hemoglobin | CHEBI:5656 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:61448 | IPTG | CHEBI:61448 | CHEBI | SYNONYM_MATCH | 1 |
+| FOODON:03000441 | liver powder | FOODON:03000441 | FOODON | SYNONYM_MATCH | 1 |
+| MICRO:0001328 | MH agar | MICRO:0001328 | MICRO | EXACT_MATCH | 1 |
+| MICRO:0000554 | MRS agar (Oxoid) | MICRO:0000554 | MICRO | SYNONYM_MATCH | 1 |
+| CHEBI:25107 | Magnesium | CHEBI:25107 | CHEBI | SYNONYM_MATCH | 3 |
+| MICRO:0000456 | Metals ''44'' (see below) | MICRO:0000456 | MICRO | SYNONYM_MATCH | 1 |
+| CHEBI:28115 | methylcobalamin | CHEBI:28115 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:45129 | Methylphosphonic acid | CHEBI:45129 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:31794 | MgO | CHEBI:31794 | CHEBI | SYNONYM_MATCH | 3 |
+| CHEBI:27027 | Micronutrients | CHEBI:27027 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:46662 | Minerals | CHEBI:46662 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:28685 | Molybdenum | CHEBI:28685 | CHEBI | SYNONYM_MATCH | 2 |
+| CHEBI:205364 | Mycobactin J | CHEBI:205364 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:18219 | NH4OH | CHEBI:18219 | CHEBI | SYNONYM_MATCH | 1 |
+| MICRO:0001611 | Na-caseinate | MICRO:0001611 | MICRO | SYNONYM_MATCH | 5 |
+| CHEBI:53001 | Nickel Sulfate | CHEBI:53001 | CHEBI | EXACT_MATCH | 19 |
+| CHEBI:18723 | Nicotine (Fluka) | CHEBI:18723 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:15811 | O-Phospho-L-serine | CHEBI:15811 | CHEBI | EXACT_MATCH | 1 |
+| FOODON:03306272 | Oat flakes | FOODON:03306272 | FOODON | EXACT_MATCH | 11 |
+| FOODON:03301826 | Olive oil | FOODON:03301826 | FOODON | EXACT_MATCH | 7 |
+| CHEBI:30839 | Orotate | CHEBI:30839 | CHEBI | EXACT_MATCH | 3 |
+| CHEBI:18367 | Orthophosphate | CHEBI:18367 | CHEBI | SYNONYM_MATCH | 3 |
+| CHEBI:67410 | p-Hydroxybenzyl alcohol | CHEBI:67410 | CHEBI | EXACT_MATCH | 2 |
+| MICRO:0000094 | PPLO medium | MICRO:0000094 | MICRO | EXACT_MATCH | 2 |
+| MICRO:0000466 | Pancreatic Digest of Gelatin (Hardy C6540) | MICRO:0000466 | MICRO | SYNONYM_MATCH | 1 |
+| CHEBI:8082 | Phenyl acetate | CHEBI:8082 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:17246 | Polyvinyl alcohol | CHEBI:17246 | CHEBI | SYNONYM_MATCH | 2 |
+| NCIT:C87343 | Potassium Aspartate | NCIT:C87343 | NCIT | EXACT_MATCH | 3 |
+| CHEBI:17362 | Quinoline | CHEBI:17362 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:63247 | Reducing Agent | CHEBI:63247 | CHEBI | EXACT_MATCH | 1 |
+| ENVO:00003870 | rice straw | ENVO:00003870 | ENVO | EXACT_MATCH | 1 |
+| FOODON:03311582 | Rye-bran | FOODON:03311582 | FOODON | SYNONYM_MATCH | 2 |
+| FOODON:03301670 | Sake | FOODON:03301670 | FOODON | EXACT_MATCH | 3 |
+| CHEBI:30762 | Salicylate | CHEBI:30762 | CHEBI | EXACT_MATCH | 1 |
+| MICRO:0001230 | Sheep blood | MICRO:0001230 | MICRO | EXACT_MATCH | 20 |
+| MICRO:0001241 | Skim milk powder | MICRO:0001241 | MICRO | EXACT_MATCH | 1 |
+| MICRO:0000521 | Sludge fluid | MICRO:0000521 | MICRO | EXACT_MATCH | 2 |
+| NCIT:C220851 | Sodium Pantothenate | NCIT:C220851 | NCIT | EXACT_MATCH | 2 |
+| NCIT:C75654 | Sorbitan Monooleate | NCIT:C75654 | NCIT | EXACT_MATCH | 2 |
+| FOODON:00004062 | Table wine | FOODON:00004062 | FOODON | SYNONYM_MATCH | 1 |
+| FOODON:03315081 | Tea | FOODON:03315081 | FOODON | SYNONYM_MATCH | 2 |
+| CHEBI:17347 | testosterone | CHEBI:17347 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:9533 | thiamine monophosphate | CHEBI:9533 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:231499 | Titanium chloride | CHEBI:231499 | CHEBI | SYNONYM_MATCH | 2 |
+| CHEBI:9765 | Trypsin | CHEBI:9765 | CHEBI | EXACT_MATCH | 1 |
+| MICRO:0000673 | Trypsin (Sigma--Aldrich) | MICRO:0000673 | MICRO | SYNONYM_MATCH | 1 |
+| CHEBI:28940 | Vitamin D3 | CHEBI:28940 | CHEBI | SYNONYM_MATCH | 1 |
+| CHEBI:28384 | Vitamin K | CHEBI:28384 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:33229 | Vitamins | CHEBI:33229 | CHEBI | SYNONYM_MATCH | 3 |
+| MICRO:0001723 | washed agar | MICRO:0001723 | MICRO | EXACT_MATCH | 1 |
+| FOODON:03411345 | Yeast | FOODON:03411345 | FOODON | EXACT_MATCH | 3 |
+| MICRO:0000522 | Yeastolate (BD; 2%, autoclaved) | MICRO:0000522 | MICRO | SYNONYM_MATCH | 4 |
+| CHEBI:62984 | Zinc Acetate | CHEBI:62984 | CHEBI | EXACT_MATCH | 7 |
 
 ## Unmapped Ingredients
 
@@ -2566,12 +2675,10 @@
 | UNMAPPED_0104 | Barley grains autoclaved | UNMAPPED | 1 |
 | UNMAPPED_0336 | Basal mineral NaCl medium | UNMAPPED | 0 |
 | UNMAPPED_0178 | benzimidazolyl cobamide | UNMAPPED | 0 |
-| UNMAPPED_0061 | BG-11 Medium | UNMAPPED | 2 |
 | UNMAPPED_0207 | Bioecolians | UNMAPPED | 0 |
 | UNMAPPED_0339 | Blood Agar Base | UNMAPPED | 0 |
 | UNMAPPED_0340 | Blood agar No 2 | UNMAPPED | 0 |
 | UNMAPPED_0051 | Bold 1NV Medium | UNMAPPED | 2 |
-| UNMAPPED_0341 | Bordet-Gengou-Agar-Base | UNMAPPED | 0 |
 | UNMAPPED_0344 | Bovine horn meal | UNMAPPED | 0 |
 | UNMAPPED_0345 | Bovine serum | UNMAPPED | 0 |
 | UNMAPPED_0116 | Brewer anaerobic agar | UNMAPPED | 0 |
@@ -2583,7 +2690,6 @@
 | UNMAPPED_0170 | Calf brains | UNMAPPED | 7 |
 | UNMAPPED_0229 | Calprotectin S1 | UNMAPPED | 0 |
 | UNMAPPED_0230 | Calprotectin S1S2 | UNMAPPED | 0 |
-| UNMAPPED_0353 | Casman-Agar-Base | UNMAPPED | 0 |
 | UNMAPPED_0355 | CeNO33 x 6 H2O | UNMAPPED | 0 |
 | UNMAPPED_0354 | Cellulose MN 300 | UNMAPPED | 0 |
 | UNMAPPED_0356 | Cereal leaves | UNMAPPED | 0 |
@@ -2716,7 +2822,6 @@
 | UNMAPPED_0487 | OXOID Legionella CYE-Agar base | UNMAPPED | 0 |
 | UNMAPPED_0129 | Oatmeal agar | UNMAPPED | 0 |
 | UNMAPPED_0099 | Organic Peat | UNMAPPED | 1 |
-| UNMAPPED_0485 | Ox-bile | UNMAPPED | 0 |
 | UNMAPPED_0486 | Oxgall | UNMAPPED | 0 |
 | UNMAPPED_0497 | PPLO broth | UNMAPPED | 0 |
 | UNMAPPED_0231 | Pectic galactan from potato | UNMAPPED | 1 |
@@ -2797,6 +2902,8 @@
 | UNMAPPED_0272 | ZMB_ALS | UNMAPPED | 33 |
 | UNMAPPED_0150 | Zinc-NTA | UNMAPPED | 0 |
 | UNMAPPED_0587 | α-D-Glucose monohydrate | UNMAPPED | 0 |
+| UNMAPPED_0341 | Bordet-Gengou-Agar-Base | UNMAPPED | 0 |
+| UNMAPPED_0353 | Casman-Agar-Base | UNMAPPED | 0 |
 
 ## Other Statuses
 

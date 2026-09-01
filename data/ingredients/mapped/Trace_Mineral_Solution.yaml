@@ -4,6 +4,21 @@ synonyms:
 - synonym_text: Trace mineral solution
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Trace mineral solution (see Medium No. 151 )
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Trace mineral solution (see Medium No. 852 )
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Trace mineral solution (see Medium No.852)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Trace mineral solution (see below)
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Trace mineral solution**
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -42,6 +57,17 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 5 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Trace mineral solution (see Medium No. 151 )'' (x2 CultureMech
+    mentions); ''Trace mineral solution (see Medium No. 852 )'' (x1 CultureMech mentions);
+    ''Trace mineral solution (see Medium No.852)'' (x1 CultureMech mentions); ''Trace
+    mineral solution (see below)'' (x1 CultureMech mentions); ''Trace mineral solution**''
+    (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:897); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION

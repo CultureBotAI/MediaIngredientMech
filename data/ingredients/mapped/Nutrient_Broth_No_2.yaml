@@ -4,6 +4,24 @@ synonyms:
 - synonym_text: Nutrient broth No. 2
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Nutrient Broth (OXOID)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Nutrient Broth (BD cat 234000)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Nutrient Broth (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Nutrient broth (BD Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Nutrient broth (BD-Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Nutrient broth (NB) (Difco)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 53
@@ -35,6 +53,17 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-30T04:48:06.233536+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 6 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Nutrient Broth (OXOID)'' (x4 CultureMech mentions); ''Nutrient
+    Broth (BD cat 234000)'' (x1 CultureMech mentions); ''Nutrient Broth (Difco)''
+    (x1 CultureMech mentions); ''Nutrient broth (BD Difco)'' (x1 CultureMech mentions);
+    ''Nutrient broth (BD-Difco)'' (x1 CultureMech mentions); ''Nutrient broth (NB)
+    (Difco)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:501); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

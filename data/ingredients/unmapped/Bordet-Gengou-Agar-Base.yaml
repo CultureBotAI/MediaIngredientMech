@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: Bordet-Gengou-Agar-Base
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: Bordet-Gengou Agar Base (BD 248200)
+  synonym_type: CATALOG_VARIANT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: UNMAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -46,6 +49,34 @@ curation_history:
     anything is what #203 and #263 exist to undo. Any CURIE above is a curator''s
     to accept or reject.'
   llm_assisted: true
+- timestamp: '2026-08-30T06:20:04.233651+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Bordet-Gengou Agar Base (BD 248200)'' (x1 CultureMech mentions).
+    Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-06-16T00:00:00+00:00'
+  curator: promote_resolved_unmapped
+  action: PROMOTED_TO_MAPPED
+  previous_status: UNMAPPED
+  new_status: MAPPED
+  llm_assisted: false
+  changes: Promoted UNMAPPED_0341 -> MICRO:0002398 "Bordet Gengou Agar Base" (SYNONYM_MATCH);
+    mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-08-30T08:20:52.193944+00:00'
+  curator: claude_culturemech_residual_grounding
+  action: DEMOTED_TO_UNMAPPED
+  changes: 'Returned to UNMAPPED: MICRO:0002398 is `is_defining_ontology=false` in
+    OLS4 and carries the malformed IRI http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002398.
+    MicrO has ~1,472 such classes; they do not round-trip, so kg-microbe''s ontology
+    transform would not produce the term and the published row would dangle. curie.py
+    gates these behind MICRO_VERIFIED and this id is deliberately not on it. The medium
+    is real and the label matches; only this accession is unusable.'
+  previous_status: MAPPED
+  new_status: UNMAPPED
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2112); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as an agar base preparation pending product-
   or recipe-level curation.
