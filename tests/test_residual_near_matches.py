@@ -154,3 +154,63 @@ class TestFormulaTableEntriesReachRealTerms:
         from mediaingredientmech.utils.chemical_normalizer import formula_to_common_name
 
         assert formula_to_common_name(formula) == name
+
+
+class TestGreekLettersReachAsciiOntologyLabels:
+    """Ontologies spell Greek letters out; recipe text uses the letter.
+
+    CHEBI stores `beta-D-glucose` and `alpha-tocopherol`, so `beta-NAD` resolves to
+    CHEBI:15846 and `β-NAD` resolves to nothing at all. The near-match report surfaced
+    this: its only six zero-risk rows were all Greek-letter labels sitting next to the
+    term they obviously denote.
+    """
+
+    @pytest.fixture
+    def triage(self):
+        return _load("triage_culturemech_residual")
+
+    @pytest.fixture
+    def proposer(self):
+        return _load("propose_residual_groundings")
+
+    @pytest.mark.parametrize(
+        "surface,ascii_form",
+        [
+            ("β-NAD", "beta-NAD"),
+            ("α-Ketoglutarate", "alpha-Ketoglutarate"),
+            ("17β-Estradiol", "17beta-Estradiol"),
+            ("γ-aminobutyrate", "gamma-aminobutyrate"),
+        ],
+    )
+    def test_both_spellings_compare_equal(self, proposer, surface, ascii_form):
+        assert proposer.comparison_key(surface) == proposer.comparison_key(ascii_form)
+
+    def test_the_fold_transliterates_too(self, triage):
+        assert triage.fold("β-NAD") == triage.fold("beta-NAD")
+
+
+class TestMicroPrefixedConcentrationsAreStripped:
+    """`Biotin (1 µg/µL)` must reach `Biotin`.
+
+    The concentration branch matched mg/l and w/v but no micro-prefixed unit, so six
+    vitamin records kept an annotation that stopped them resolving.
+    """
+
+    @pytest.fixture
+    def triage(self):
+        return _load("triage_culturemech_residual")
+
+    @pytest.mark.parametrize(
+        "surface,expected",
+        [
+            ("Biotin (1 μg/μL)", "biotin"),
+            ("Riboflavin (0.05 μg/mL)", "riboflavin"),
+            ("Folic acid (5 μg/μL)", "folic acid"),
+        ],
+    )
+    def test_the_annotation_is_dropped(self, triage, surface, expected):
+        assert triage.fold(surface) == expected
+
+    def test_a_hydrate_is_still_never_stripped(self, triage):
+        """The wider concentration pattern must not reach past the hydration guard."""
+        assert "hydrat" in triage.fold("Sodium acetate (hydrated) (1 μg/μL)")
