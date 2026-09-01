@@ -22,7 +22,7 @@ table, one row per ingredient mention). Read-only: writes a report, edits nothin
 Usage:
     python scripts/triage_culturemech_residual.py \
         --occurrences ../CultureMech/output/ingredient_occurrences.tsv \
-        --out reports/culturemech_residual_triage.tsv
+        --out mappings/culturemech_residual_triage.tsv
 """
 
 from __future__ import annotations
@@ -190,7 +190,7 @@ def main(argv: list[str] | None = None) -> int:
         default=_REPO.parent / "CultureMech" / "output" / "ingredient_occurrences.tsv",
     )
     parser.add_argument("--index", type=Path, default=LABEL_INDEX)
-    parser.add_argument("--out", type=Path, default=_REPO / "reports" / "culturemech_residual_triage.tsv")
+    parser.add_argument("--out", type=Path, default=_REPO / "mappings" / "culturemech_residual_triage.tsv")
     parser.add_argument("--label", action="append", help="classify only these labels (canary mode)")
     args = parser.parse_args(argv)
 

@@ -43,7 +43,7 @@ import yaml
 
 _REPO = Path(__file__).resolve().parent.parent
 RECORDS = _REPO / "data" / "ingredients"
-TRIAGE = _REPO / "reports" / "culturemech_residual_triage.tsv"
+TRIAGE = _REPO / "mappings" / "culturemech_residual_triage.tsv"
 
 CURATOR = "claude_culturemech_alias_backfill"
 SOURCE = "culturemech:output/ingredient_occurrences.tsv"

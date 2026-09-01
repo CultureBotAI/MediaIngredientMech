@@ -44,8 +44,8 @@ import yaml
 from oaklib.datamodels.search import SearchConfiguration, SearchProperty
 
 _REPO = Path(__file__).resolve().parent.parent
-TRIAGE = _REPO / "reports" / "culturemech_residual_triage.tsv"
-OUT = _REPO / "reports" / "culturemech_residual_groundings.tsv"
+TRIAGE = _REPO / "mappings" / "culturemech_residual_triage.tsv"
+OUT = _REPO / "mappings" / "culturemech_residual_groundings.tsv"
 
 # Shared with the triage fold: the codepoints recipe text uses and ontologies do not.
 _UNICODE_FOLD = {

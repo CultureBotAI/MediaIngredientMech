@@ -108,7 +108,11 @@ def emit_sssom_rows(promoter, date: str) -> int:
             "semapv:ManualMappingCuration", src, date, promoter.CONFIDENCE[quality],
             "", "", f"manual:{CURATOR}|CREATED|{date}",
         ]) + "\n"
-        header_i = promoter._sorted_insert(lines, header_i, str(record.get("preferred_term") or ""), row)
+        # The header index stays put: `_sorted_insert` returns where the row landed,
+        # not a new header. Feeding that back made each insertion start scanning from the
+        # previous one, so a row that sorted earlier could never reach its place -- 30
+        # inversions across 109 rows, against a 4.8% baseline (#510).
+        promoter._sorted_insert(lines, header_i, str(record.get("preferred_term") or ""), row)
         published.add(subject)
         added += 1
 

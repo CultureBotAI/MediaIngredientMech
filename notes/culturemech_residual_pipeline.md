@@ -15,7 +15,7 @@ knowing the split is what makes the work tractable.
 ```
 python scripts/triage_culturemech_residual.py \
     --occurrences ../CultureMech/output/ingredient_occurrences.tsv \
-    --out reports/culturemech_residual_triage.tsv
+    --out mappings/culturemech_residual_triage.tsv
 ```
 
 | bucket | meaning | what it needs |
