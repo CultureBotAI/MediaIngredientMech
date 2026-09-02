@@ -47,45 +47,26 @@ permissions:
 # uses only a thin Bash launcher plus Python's standard library. The filter
 # above is correct for THIS job, which needs uv + a cached OAK ontology download.
 
-
+# This job's body now lives in claw as a reusable workflow (culturebotai-claw
+# #180, Phase 5). TraitMech was the canary and its run passed on main on
+# 2026-08-31, so the workflow is proven rather than merely written; this is the
+# second adopter. What stays here is what is MediaIngredientMech's: the trigger
+# filter above and the inputs below.
 jobs:
   id-label-gate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: extractions/setup-just@v3
-      - uses: astral-sh/setup-uv@v3
-        with:
-          enable-cache: true
-      - name: Set up Python
-        run: uv python install 3.12
-      - name: Install dependencies
-        run: uv sync --frozen
-
-      # Cache the OAK sqlite ontologies (CHEBI etc.) so repeat runs don't
-      # re-download. First run on a fresh cache will be slow.
-      - name: Cache OAK ontologies
-        uses: actions/cache@v4
-        with:
-          path: ~/.data/oaklib
-          key: oaklib-${{ runner.os }}-v1
-
-      # Vendored-file drift is guarded by the fast `vendored-sync` job above
-      # (scripts/check_vendored_sync.sh against the pinned claw manifest), not
-      # a self-generated sha256 pin. Generate the drift report first so the
-      # artifact is uploaded even when the blocking gate below fails (report
-      # mode never exits non-zero).
-      - name: Generate id↔label drift report
-        run: just report-label-drift
-
-      # BLOCKING: enforce id↔label correspondence (exit 2 on any error).
-      - name: Enforce id↔label correspondence
-        run: just validate-products
-
-      - name: Upload drift report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: label-drift-report-${{ github.run_id }}
-          path: reports/label_drift.tsv
-          if-no-files-found: warn
+    # Pinned to a claw commit, not a branch: a moving ref would change this
+    # gate with no commit in this repository to show for it. This is the exact
+    # ref TraitMech's passing run used.
+    uses: CultureBotAI/culturebotai-claw/.github/workflows/label-correspondence-reusable.yaml@5de472d13e20f02ac494878939ba1cae26468a07
+    with:
+      python-version: "3.12"
+      # No prepare-recipe: the SSSOM and docs CSV this gate reads are
+      # committed, so there is nothing to build first. CultureMech differs.
+      #
+      # `--frozen` is not a default in the reusable workflow, and dropping it
+      # here would let CI update the lockfile -- a hardening this repository
+      # has and TraitMech does not.
+      uv-sync-args: "--frozen"
+      # report-label-drift / validate-products / reports/label_drift.tsv are
+      # the reusable workflow's defaults and match what ran here before, so
+      # they are left unstated rather than restated.
