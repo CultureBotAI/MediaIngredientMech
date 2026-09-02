@@ -89,6 +89,9 @@ synonyms:
 - synonym_text: Alpha-maltose
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 189
@@ -187,6 +190,14 @@ curation_history:
   action: ADDED_SYNONYMS
   changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
     no curated record did, so a rebuild would have dropped them from KGX: ''Alpha-maltose''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose''.
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
   llm_assisted: false

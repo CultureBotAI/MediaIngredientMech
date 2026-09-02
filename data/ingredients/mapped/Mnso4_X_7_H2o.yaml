@@ -42,6 +42,12 @@ synonyms:
 - synonym_text: manganese(2+) sulfate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: MnSO4 x n H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MnSO4·nH2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 415
@@ -130,6 +136,14 @@ curation_history:
     weight. ChEBI has no term for this hydration state, so no authoritative value
     can be substituted and a guess is how wrong CAS numbers spread. The grounding
     is separately wrong (#321); this corrects only the CAS (#334).'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''MnSO4
+    x n H2O''; ''MnSO4·nH2O''. Tokens already present on the kg-microbe ontology node
+    were left out as redundant (#520).'
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:86360
 chemical_properties:
   data_source: PubChem (via CHEBI:86360)

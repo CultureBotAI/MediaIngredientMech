@@ -82,6 +82,9 @@ synonyms:
 - synonym_text: EDTA•2Na
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: NaEDTA
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 614
@@ -213,6 +216,14 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''EDTA(Disodium salt)'' (x1 CultureMech mentions); ''EDTA•2Na''
     (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''NaEDTA''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
   llm_assisted: false
 kg_microbe_node_id: CHEBI:64734
 chemical_properties:

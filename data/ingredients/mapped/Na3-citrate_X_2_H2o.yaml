@@ -58,6 +58,24 @@ synonyms:
 - synonym_text: Sodium Citrate
   synonym_type: RAW_TEXT
   source: MERGED_FROM_CHEBI:53258
+- synonym_text: Na2citrate
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Na3Citrate
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Sodiumcitrate
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Trisodium citrate dehydrate
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Trisodium citrate·2H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Trisodium citrate·3H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 277
@@ -157,6 +175,15 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Na2citrate'';
+    ''Na3Citrate''; ''Sodiumcitrate''; ''Trisodium citrate dehydrate''; ''Trisodium
+    citrate·2H2O''; ''Trisodium citrate·3H2O''. Tokens already present on the kg-microbe
+    ontology node were left out as redundant (#520).'
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:32142
 chemical_properties:
   cas_rn: 6132-04-3

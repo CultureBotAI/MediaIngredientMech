@@ -67,6 +67,12 @@ synonyms:
 - synonym_text: MnCl2·4H2O
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: MnCl2 x 4H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MnCl4・4H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2990
@@ -175,6 +181,14 @@ curation_history:
   changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''MnCl2·4H2O'' (x6 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''MnCl2
+    x 4H2O''; ''MnCl4・4H2O''. Tokens already present on the kg-microbe ontology node
+    were left out as redundant (#520).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 13446-34-9

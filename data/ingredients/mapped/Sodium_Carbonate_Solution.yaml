@@ -7,6 +7,27 @@ synonyms:
 - synonym_text: disodium trioxidocarbonate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: (adjust if required)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Na CO
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Na2CO
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Na2CO3 anhydrous
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Na2CO3(Baker 3604)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Na2CO3-CO2 buffer
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: NaCO3
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1751
@@ -44,6 +65,15 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 7 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''(adjust
+    if required)''; ''Na CO''; ''Na2CO''; ''Na2CO3 anhydrous''; ''Na2CO3(Baker 3604)'';
+    ''Na2CO3-CO2 buffer''; ''NaCO3''. Tokens already present on the kg-microbe ontology
+    node were left out as redundant (#520).'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:797); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

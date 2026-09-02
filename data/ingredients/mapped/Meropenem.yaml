@@ -28,6 +28,25 @@ synonyms:
     ACID
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: (4R,5S,6S)-3-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]thio}-6-[(1R)-1-hydroxyethyl]-4-methyl-7-oxo-1-azabicyclo[3.2.0]hept-2-ene-2-carboxylic
+    acid
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Antibiotic SM 7338
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MEM
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MEPM
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: meropenem anhydrous
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: meropenemum
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -79,6 +98,15 @@ curation_history:
     no curated record did, so a rebuild would have dropped them from KGX: ''(1R,5S,6S)-2-[(3S,5S)-5-DIMETHYLAMINOCARBONYLPYRROLIDIN-3-YLTHIO]-6-[(R)-1-HYDROXYETHYL]-1-METHYLCARBAPEN-2-EM-3-CARBOXYLIC
     ACID''. Tokens already present on the kg-microbe ontology node were left out as
     redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''(4R,5S,6S)-3-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]thio}-6-[(1R)-1-hydroxyethyl]-4-methyl-7-oxo-1-azabicyclo[3.2.0]hept-2-ene-2-carboxylic
+    acid''; ''Antibiotic SM 7338''; ''MEM''; ''MEPM''; ''meropenem anhydrous''; ''meropenemum''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 119478-56-7
