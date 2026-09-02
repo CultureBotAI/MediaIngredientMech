@@ -55,9 +55,13 @@ def justification_for(quality: str | None) -> str:
     return JUSTIFICATION_LEXICAL if (quality or "") in LEXICAL_QUALITIES else JUSTIFICATION_MANUAL
 
 
-# Dict view for the writers that index by grade. Every grade the corpus uses must be
-# present: a KeyError here is a write that never happens, so a missing key is worse than
-# a wrong value. Derived from the rule above so the two cannot disagree.
+# The grades the corpus uses today. Listed for documentation and for the tests, NOT as
+# the set of permitted keys: `mapping_quality` is one of MIM's organically-growing enums
+# (the validators treat it as warn-only), so any fixed list goes stale. An enumerated
+# table already shipped this bug once -- `promote_microbedecoder_residual.py` knew three
+# grades and raised KeyError on the rest -- and enumerating a longer list would only move
+# the failure, not remove it. `PLACEHOLDER` (54 records) is the one an eleven-grade list
+# missed.
 KNOWN_QUALITIES = (
     "EXACT_MATCH",
     "SYNONYM_MATCH",
@@ -66,11 +70,31 @@ KNOWN_QUALITIES = (
     "BROAD_MATCH",
     "LEXICAL_MATCH",
     "CAS_RN_LOOKUP",
+    "PLACEHOLDER",
     "MANUAL_CURATION",
     "LLM_ASSISTED",
     "PROVISIONAL",
     "FALLBACK_REGISTRY",
 )
 
-CONFIDENCE = {quality: confidence_for(quality) for quality in KNOWN_QUALITIES}
-JUSTIFICATION = {quality: justification_for(quality) for quality in KNOWN_QUALITIES}
+
+class _GradeTable(dict):
+    """Dict view for writers that index by grade, total over every possible key.
+
+    A KeyError here is a row that never gets written, which is strictly worse than a
+    conservatively-graded one -- so an unrecognised grade falls back to the rule rather
+    than raising. The rule fails low: anything not known to be an exact identity is
+    graded below exact, so a new enum value cannot silently acquire exact-match
+    confidence by being unknown.
+    """
+
+    def __init__(self, rule):
+        super().__init__({quality: rule(quality) for quality in KNOWN_QUALITIES})
+        self._rule = rule
+
+    def __missing__(self, quality: str) -> str:
+        return self._rule(quality)
+
+
+CONFIDENCE = _GradeTable(confidence_for)
+JUSTIFICATION = _GradeTable(justification_for)

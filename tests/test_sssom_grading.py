@@ -114,3 +114,41 @@ class TestAgreesWithClaw:
         assert theirs == set(grading.LEXICAL_QUALITIES), (
             f"claw treats {theirs} as lexical; MIM treats {set(grading.LEXICAL_QUALITIES)}"
         )
+
+
+class TestTheTableIsTotal:
+    """A KeyError is a row that never gets written -- worse than a conservative grade.
+
+    `mapping_quality` is one of MIM's organically-growing enums, so any fixed key list
+    goes stale. An enumerated table already shipped this bug once:
+    `promote_microbedecoder_residual.py` knew three grades and raised on the rest, and
+    the first cut of this module missed `PLACEHOLDER`, which 54 records use.
+    """
+
+    def test_every_quality_in_the_corpus_resolves(self):
+        import glob
+
+        import yaml
+
+        seen = set()
+        for path in glob.glob(str(_REPO / "data" / "ingredients" / "**" / "*.yaml"), recursive=True):
+            data = yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {}
+            quality = (data.get("ontology_mapping") or {}).get("mapping_quality")
+            if quality:
+                seen.add(quality)
+        assert seen, "no mapping_quality values found -- the corpus check is vacuous"
+        for quality in seen:
+            assert grading.CONFIDENCE[quality]
+            assert grading.JUSTIFICATION[quality]
+
+    def test_an_unseen_grade_does_not_raise(self):
+        assert grading.CONFIDENCE["A_GRADE_INVENTED_TOMORROW"] == grading.CONFIDENCE_OTHER
+        assert grading.JUSTIFICATION["A_GRADE_INVENTED_TOMORROW"] == grading.JUSTIFICATION_MANUAL
+
+    def test_an_unseen_grade_cannot_acquire_exact_confidence(self):
+        """The rule fails low, so a new enum value cannot become exact by being unknown."""
+        assert grading.CONFIDENCE["UNKNOWN"] != grading.CONFIDENCE_EXACT
+
+    def test_placeholder_is_covered(self):
+        """The specific grade the first enumerated list missed."""
+        assert grading.CONFIDENCE["PLACEHOLDER"] == grading.CONFIDENCE_OTHER
