@@ -7,11 +7,23 @@ synonyms:
 - synonym_text: 'Na2glycerophosphate•5H2O(CAS:  13408-09-8)'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Na2Glycerophosphate.5H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Na2Glycerophosphate.5H2O(CAS:  13408-09-8)'
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: Na2Glycerophosphate•5H2O
+  synonym_type: RAW_TEXT
+  source: CultureMech
+- synonym_text: 'Na2Glycerophosphate•5H2O(CAS: 13408-09-8)'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 mapping_status: MAPPED
 ingredient_type: SINGLE_INGREDIENT
 occurrence_statistics:
-  total_occurrences: 4
-  media_count: 4
+  total_occurrences: 6
+  media_count: 6
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -37,6 +49,15 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0030 -> cas:13408-09-8 "sn-glycerol 3-phosphate" (NARROW_MATCH);
     mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-09-01T00:00:00+00:00'
+  curator: codex_unmapped_synonym_review
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed UNMAPPED_0081 'Na2Glycerophosphate.5H2O' and UNMAPPED_0101 'Na2Glycerophosphate•5H2O'.
+    Both source records state the same pentahydrate and CAS 13408-09-8 as this mapped
+    record. Preserved both punctuation/case variants and their CAS-bearing raw labels
+    as synonyms; transferred 2 total occurrences across 2 media. No new SSSOM row
+    is required.
+  llm_assisted: true
 notes: 'CultureMech placeholder_id: 3; reviewed on 2026-05-11 and retained as an unmapped
   single ingredient pending exact sodium glycerophosphate pentahydrate/CAS reconciliation.'
 ontology_mapping:

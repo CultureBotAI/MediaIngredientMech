@@ -1,9 +1,9 @@
 # Unmapped Ingredients Index
-**Total Records**: 278
+**Total Records**: 274
 **Mapped**: 0 (0.0%)
-**Unmapped**: 267 (96.0%)
+**Unmapped**: 263 (96.0%)
 **Other statuses**: 11 (4.0%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 599
+**Total Occurrences**: 597
 
 ---
 
@@ -129,7 +129,6 @@
 | UNMAPPED_0395 | Grace's Insect Medium | UNMAPPED | 0 |
 | UNMAPPED_0398 | HBO3 | UNMAPPED | 0 |
 | UNMAPPED_0399 | Heart Infusion Broth | UNMAPPED | 0 |
-| UNMAPPED_0401 | Homo-PIPES | UNMAPPED | 0 |
 | UNMAPPED_0402 | Horikoshi-I medium | UNMAPPED | 0 |
 | UNMAPPED_0404 | Hy-Case Amino | UNMAPPED | 0 |
 | UNMAPPED_0405 | IMDM-Medium | UNMAPPED | 0 |
@@ -177,15 +176,12 @@
 | UNMAPPED_0111 | Modified COMBO Medium | UNMAPPED | 1 |
 | UNMAPPED_0128 | Mueller Hinton II agar | UNMAPPED | 0 |
 | UNMAPPED_0455 | Murashige & Skoog medium | UNMAPPED | 0 |
-| UNMAPPED_0456 | Mycobactine J | UNMAPPED | 0 |
 | UNMAPPED_0458 | N-Z-Amine® A | UNMAPPED | 0 |
 | UNMAPPED_0459 | N-Z-Case | UNMAPPED | 0 |
 | UNMAPPED_0457 | N-Z amine | UNMAPPED | 0 |
 | UNMAPPED_0460 | Na-Nitrilotriacetat | UNMAPPED | 0 |
 | UNMAPPED_0463 | Na-tetrathionate | UNMAPPED | 0 |
 | UNMAPPED_0465 | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED | 0 |
-| UNMAPPED_0081 | Na2Glycerophosphate.5H2O | UNMAPPED | 1 |
-| UNMAPPED_0101 | Na2Glycerophosphate•5H2O | UNMAPPED | 1 |
 | UNMAPPED_0475 | Na3-NTA x H2O | UNMAPPED | 0 |
 | UNMAPPED_0477 | NaSiO3 x 9 H2O | UNMAPPED | 0 |
 | UNMAPPED_0050 | Natural sea-salt | UNMAPPED | 2 |

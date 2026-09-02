@@ -1,7 +1,7 @@
 # Complete Ingredients Index
-**Total Records**: 2956
-**Mapped**: 2624 (88.8%)
-**Unmapped**: 267 (9.0%)
+**Total Records**: 2952
+**Mapped**: 2624 (88.9%)
+**Unmapped**: 263 (8.9%)
 **Other statuses**: 65 (2.2%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 220,617
 
@@ -88,7 +88,7 @@
 | cas:13977-65-6 | KH2PO3 | CHEBI:44976 | CHEBI | NARROW_MATCH | 3 |
 | cas:7788-99-0 | CrKSO42 x 12 H2O | CHEBI:53471 | CHEBI | CLOSE_MATCH | 0 |
 | cas:145224-94-8 | MES Hydrat | CHEBI:39005 | CHEBI | NARROW_MATCH | 4 |
-| cas:13408-09-8 | Na2glycerophosphate•5H2O | CHEBI:15978 | CHEBI | NARROW_MATCH | 4 |
+| cas:13408-09-8 | Na2glycerophosphate•5H2O | CHEBI:15978 | CHEBI | NARROW_MATCH | 6 |
 | cas:10049-21-5 | NaH2PO4•H2O | CHEBI:37585 | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.ingredient:hans_100x_vitamins | Hans 100x vitamins | kgmicrobe.ingredient:hans_100x_vitamins | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:hans_1000x_minerals | Hans 1000x minerals | kgmicrobe.ingredient:hans_1000x_minerals | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2758,7 +2758,6 @@
 | UNMAPPED_0395 | Grace's Insect Medium | UNMAPPED | 0 |
 | UNMAPPED_0398 | HBO3 | UNMAPPED | 0 |
 | UNMAPPED_0399 | Heart Infusion Broth | UNMAPPED | 0 |
-| UNMAPPED_0401 | Homo-PIPES | UNMAPPED | 0 |
 | UNMAPPED_0402 | Horikoshi-I medium | UNMAPPED | 0 |
 | UNMAPPED_0404 | Hy-Case Amino | UNMAPPED | 0 |
 | UNMAPPED_0405 | IMDM-Medium | UNMAPPED | 0 |
@@ -2806,15 +2805,12 @@
 | UNMAPPED_0111 | Modified COMBO Medium | UNMAPPED | 1 |
 | UNMAPPED_0128 | Mueller Hinton II agar | UNMAPPED | 0 |
 | UNMAPPED_0455 | Murashige & Skoog medium | UNMAPPED | 0 |
-| UNMAPPED_0456 | Mycobactine J | UNMAPPED | 0 |
 | UNMAPPED_0458 | N-Z-Amine® A | UNMAPPED | 0 |
 | UNMAPPED_0459 | N-Z-Case | UNMAPPED | 0 |
 | UNMAPPED_0457 | N-Z amine | UNMAPPED | 0 |
 | UNMAPPED_0460 | Na-Nitrilotriacetat | UNMAPPED | 0 |
 | UNMAPPED_0463 | Na-tetrathionate | UNMAPPED | 0 |
 | UNMAPPED_0465 | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED | 0 |
-| UNMAPPED_0081 | Na2Glycerophosphate.5H2O | UNMAPPED | 1 |
-| UNMAPPED_0101 | Na2Glycerophosphate•5H2O | UNMAPPED | 1 |
 | UNMAPPED_0475 | Na3-NTA x H2O | UNMAPPED | 0 |
 | UNMAPPED_0477 | NaSiO3 x 9 H2O | UNMAPPED | 0 |
 | UNMAPPED_0050 | Natural sea-salt | UNMAPPED | 2 |
