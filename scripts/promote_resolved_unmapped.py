@@ -71,17 +71,11 @@ OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl",
 # promotion even though OBJECT_SOURCE has carried `obo:micro.owl` since #381.
 PROMOTABLE = frozenset(OBJECT_SOURCE)
 
-PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch",
-             "CLOSE_MATCH": "skos:closeMatch", "NARROW_MATCH": "skos:narrowMatch",
-             # The record IS its mint; closeMatch is what the 136 existing
-             # self-referential registry records use, and it keeps Rule B1 (which
-             # fires only on narrowMatch) out of the picture.
-             "FALLBACK_REGISTRY": "skos:closeMatch"}
 # Imported, not re-declared: claw's builder regenerates every row from the records, so
 # a grade MIM writes that disagrees with claw's survives only until the next rebuild and
 # then flips back (#519). Same argument as REGISTRY_PREFIXES below (#279).
 from mediaingredientmech.sssom_grading import (  # noqa: E402
-    CONFIDENCE, justification_for,
+    CONFIDENCE, PREDICATE, justification_for,
 )
 
 # The Section 3 registry namespaces, imported rather than re-declared so the two
