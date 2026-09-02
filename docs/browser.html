@@ -454,6 +454,21 @@
         let allIngredients = [];
         let filteredIngredients = [];
 
+        function applyHashFilters() {
+            const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+            const status = params.get('status') || '';
+            const statusControl = document.getElementById('filter-status');
+            const supported = Array.from(statusControl.options)
+                .some(option => option.value === status);
+            statusControl.value = supported ? status : '';
+        }
+
+        applyHashFilters();
+        window.addEventListener('hashchange', () => {
+            applyHashFilters();
+            applyFilters();
+        });
+
         // Load data
         fetch('data/ingredients.json')
             .then(response => response.json())
