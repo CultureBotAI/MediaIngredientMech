@@ -74,7 +74,9 @@ DB = {"CHEBI": Path.home() / ".data/oaklib/chebi.db", "NCIT": Path.home() / ".da
 # the lookup indexes directly, raised KeyError). That is #381's defect, which
 # #384 fixed in one table while three others still carried it.
 from promote_resolved_unmapped import OBJECT_SOURCE  # noqa: E402
-CONFIDENCE = {"EXACT_MATCH": "0.99", "SYNONYM_MATCH": "0.95", "CLOSE_MATCH": "0.9"}
+# Was a partial copy of the table -- three grades, missing NARROW_MATCH and
+# FALLBACK_REGISTRY, so those raised KeyError rather than writing a row (#519).
+from mediaingredientmech.sssom_grading import CONFIDENCE  # noqa: E402
 
 
 def canonical_label(cid: str) -> str:
