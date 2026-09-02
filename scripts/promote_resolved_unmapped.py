@@ -77,8 +77,12 @@ PREDICATE = {"EXACT_MATCH": "skos:exactMatch", "SYNONYM_MATCH": "skos:exactMatch
              # self-referential registry records use, and it keeps Rule B1 (which
              # fires only on narrowMatch) out of the picture.
              "FALLBACK_REGISTRY": "skos:closeMatch"}
-CONFIDENCE = {"EXACT_MATCH": "0.99", "SYNONYM_MATCH": "0.95", "CLOSE_MATCH": "0.9",
-              "NARROW_MATCH": "0.9", "FALLBACK_REGISTRY": "0.9"}
+# Imported, not re-declared: claw's builder regenerates every row from the records, so
+# a grade MIM writes that disagrees with claw's survives only until the next rebuild and
+# then flips back (#519). Same argument as REGISTRY_PREFIXES below (#279).
+from mediaingredientmech.sssom_grading import (  # noqa: E402
+    CONFIDENCE, justification_for,
+)
 
 # The Section 3 registry namespaces, imported rather than re-declared so the two
 # scripts that can perform this move cannot drift apart (#279).
@@ -346,13 +350,15 @@ def main():
                      (REGISTRY_SOURCE.get(term_curie.split(":", 1)[0], "")
                       if is_registry_mint(term_curie)
                       else OBJECT_SOURCE.get(term_curie.split(":", 1)[0].upper(), "")),
-                     "semapv:ManualMappingCuration", src, a.date,
+                     justification_for(a.quality), src, a.date,
                      CONFIDENCE[a.quality], "", "", review]) + "\n"
     if minted and a.quality == "NARROW_MATCH":
         # Rule B1: a narrowMatch from a MIM subject must carry a sibling registry
         # exactMatch row, or validate_sssom_invariants rejects the file. A
         # FALLBACK_REGISTRY record has no narrowMatch, so its single closeMatch row
         # to the mint IS the registry row -- a second one would just duplicate it.
+        # Deliberately manual, unlike the row above: a registry mint is a curator's
+        # decision that no ontology term fits, which is the opposite of a lexical match.
         registry = REGISTRY_SOURCE.get(a.to.split(":", 1)[0], "")
         row += "\t".join([f"MIM:{slug}", pref, "skos:exactMatch", a.to, pref, registry,
                           "semapv:ManualMappingCuration", src, a.date, "0.99",

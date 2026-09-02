@@ -105,7 +105,7 @@ def emit_sssom_rows(promoter, date: str) -> int:
         row = "\t".join([
             subject, str(record.get("preferred_term") or ""), promoter.PREDICATE[quality],
             curie, str(mapping.get("ontology_label") or ""), source,
-            "semapv:ManualMappingCuration", src, date, promoter.CONFIDENCE[quality],
+            grading.justification_for(quality), src, date, grading.CONFIDENCE[quality],
             "", "", f"manual:{CURATOR}|CREATED|{date}",
         ]) + "\n"
         # The header index stays put: `_sorted_insert` returns where the row landed,
@@ -138,6 +138,7 @@ def main(argv: list[str] | None = None) -> int:
     proposer = _load("proposer", _REPO / "scripts" / "propose_residual_groundings.py")
     exporter = _load("exporter", _REPO / "scripts" / "export_individual_records.py")
     promoter = _load("promoter", _REPO / "scripts" / "promote_resolved_unmapped.py")
+    from mediaingredientmech import sssom_grading as grading  # noqa: PLC0415
 
     rows: list[dict[str, str]] = []
     for path in args.groundings:
