@@ -13,6 +13,9 @@ synonyms:
 - synonym_text: methyl 2-[3-[(3E,5E)-7-(2,4-dioxopyrrolidin-3-ylidene)-7-hydroxy-4-methylhepta-3,5-dien-2-yl]-1,4-dimethyl-6-oxospiro[2,9-dioxabicyclo[3.3.1]nonane-8,3'-oxirane]-2'-yl]propanoate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: 'produces: nocamycin'
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -50,6 +53,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    nocamycin''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C26H33NO9

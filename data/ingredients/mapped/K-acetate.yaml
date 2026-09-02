@@ -39,6 +39,9 @@ synonyms:
     Organic compound'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: Acetic ester
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 18
@@ -123,6 +126,14 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Acetic
+    ester''. Tokens already present on the kg-microbe ontology node were left out
+    as redundant (#520).'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 127-08-2
   data_source: PubChem API (preprocessed)

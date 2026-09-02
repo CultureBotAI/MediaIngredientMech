@@ -4,6 +4,9 @@ synonyms:
 - synonym_text: 84 g/L NaHCO3 solution
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: (5% w/v solution)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1
@@ -41,6 +44,14 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''(5% w/v
+    solution)''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1764); no CAS-RN or
   CHEBI/NCIT match. Reviewed on 2026-05-11 as a concentration-specific sodium bicarbonate
   stock solution pending component-level recipe curation.

@@ -14,6 +14,9 @@ synonyms:
 - synonym_text: 4-ethenylphenol
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Trace minerals (see Medium No.151
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -62,6 +65,14 @@ curation_history:
     that established this mapping; a lexical grade would discard that provenance.
     ontology_id is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch
     under Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Trace
+    minerals (see Medium No.151''. Tokens already present on the kg-microbe ontology
+    node were left out as redundant (#520).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 2628-17-3

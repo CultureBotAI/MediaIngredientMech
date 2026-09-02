@@ -82,6 +82,9 @@ synonyms:
 - synonym_text: p-aminobenzoic acid (0.3 μg/μL)
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: 4-aminobenzoic acid zwitterion
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2270
@@ -248,6 +251,14 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''p-aminobenzoic acid (0.3 μg/μL)'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''4-aminobenzoic
+    acid zwitterion''. Tokens already present on the kg-microbe ontology node were
+    left out as redundant (#520).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 150-13-0

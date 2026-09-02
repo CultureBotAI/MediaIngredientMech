@@ -16,6 +16,9 @@ synonyms:
 - synonym_text: poly(L-lysine)
   synonym_type: RAW_TEXT
   source: merged_record
+- synonym_text: 'produces: poly(L-lysine) polymer'
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -45,4 +48,12 @@ curation_history:
     +0/0. Same substance under two names; MERGE_SAME_SUBSTANCE in duplicate_identifier_baseline.tsv
     (#226).'
   llm_assisted: true
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    poly(L-lysine) polymer''. Tokens already present on the kg-microbe ontology node
+    were left out as redundant (#520).'
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

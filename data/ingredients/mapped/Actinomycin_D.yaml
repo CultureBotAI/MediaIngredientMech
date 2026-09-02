@@ -13,6 +13,9 @@ synonyms:
 - synonym_text: 2-amino-4,6-dimethyl-3-oxo-1-N,9-N-bis-[(18aS)-10c,14,17-trimethyl-5,8,12,15,18-pentaoxo-6c,13t-di(propan-2-yl)-18ar-hexadecahydro-1H-pyrrolo[2,1-i][1,4,7,10,13]oxatetraazacyclohexadecin-9c-yl]-3H-phenoxazine-1,9-dicarboxamide
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: actinomycin B
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -50,6 +53,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''actinomycin
+    B''. Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 50-76-0
   data_source: CultureBotHT compounds_to_cas.csv

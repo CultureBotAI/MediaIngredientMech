@@ -15,7 +15,10 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CHEBI via OLS (label-exact)
     notes: Parent class identified via label-exact; matched_via='Actinomycin'
-synonyms: []
+synonyms:
+- synonym_text: 'produces: actinomycin A'
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -53,6 +56,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    actinomycin A''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: SELECTIVE_AGENT

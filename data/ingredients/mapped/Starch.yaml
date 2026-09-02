@@ -70,6 +70,9 @@ synonyms:
 - synonym_text: Soluble starch (Sigma)
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Rice starch
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 741
@@ -191,6 +194,14 @@ curation_history:
     not resolve them: ''Starch (soluble)'' (x8 CultureMech mentions); ''Starch, soluble''
     (x3 CultureMech mentions); ''Soluble starch (BD-Difco)'' (x2 CultureMech mentions);
     ''Soluble starch (Sigma)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''Rice starch''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 9005-25-8
