@@ -42,6 +42,12 @@ synonyms:
 - synonym_text: NAD (Sigma)
   synonym_type: CATALOG_VARIANT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: β-NAD
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: β--NAD
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 17
@@ -109,6 +115,14 @@ curation_history:
     not resolve them: ''NAD'' (x5 CultureMech mentions); ''nicotinamide adenine dinucleotide
     (NAD)'' (x2 CultureMech mentions); ''NAD (Sigma)'' (x1 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-08-31T23:56:54.854807+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''β-NAD'' (x3 CultureMech mentions); ''β--NAD'' (x1 CultureMech
+    mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
 chemical_properties:
   cas_rn: 53-84-9

@@ -55,6 +55,20 @@ _UNICODE_FOLD = {
 }
 _SUBSCRIPTS = str.maketrans("\u2080\u2081\u2082\u2083\u2084\u2085\u2086\u2087\u2088\u2089", "0123456789")
 
+# Ontologies spell Greek letters out in ASCII -- CHEBI stores `beta-D-glucose` and
+# `alpha-tocopherol` -- while recipe text uses the letter itself. Without this the two
+# never meet: `beta-NAD` resolves to CHEBI:15846 and `β-NAD` resolves to nothing.
+# Transliteration is applied for BOTH searching and comparison, so a surface form
+# written either way reaches the same term.
+_GREEK = {
+    "\u03b1": "alpha", "\u03b2": "beta", "\u03b3": "gamma", "\u03b4": "delta",
+    "\u03b5": "epsilon", "\u03b6": "zeta", "\u03b7": "eta", "\u03b8": "theta",
+    "\u03ba": "kappa", "\u03bb": "lambda", "\u03c0": "pi", "\u03c1": "rho",
+    "\u03c3": "sigma", "\u03c4": "tau", "\u03c9": "omega",
+    "\u0391": "alpha", "\u0392": "beta", "\u0393": "gamma", "\u0394": "delta",
+}
+
+
 
 def _triage_module():
     spec = importlib.util.spec_from_file_location(
@@ -144,6 +158,8 @@ def comparison_key(text: str) -> str:
     text = unicodedata.normalize("NFKC", text)
     for src, dst in _UNICODE_FOLD.items():
         text = text.replace(src, dst)
+    for src, dst in _GREEK.items():
+        text = text.replace(src, dst)
     return " ".join(text.translate(_SUBSCRIPTS).casefold().split())
 
 
@@ -216,7 +232,15 @@ def exact_hits(adapter, query: str, prefix: str) -> list[tuple[str, str]]:
     # The default search config covers labels only. Most recipe surface forms are
     # synonyms rather than primary labels, so without ALIAS this finds almost nothing --
     # it reported 0 hits on the whole canary set.
-    config = SearchConfiguration(properties=[SearchProperty.LABEL, SearchProperty.ALIAS])
+    # force_case_insensitive matters as much as the properties. oaklib's search is
+    # case-sensitive by default, so the lowercase normalised query missed every term
+    # stored capitalised: `sodium glycerophosphate` did not reach NCIT:C120561
+    # `Sodium Glycerophosphate`, an exact match this pass is supposed to find. The
+    # near-match report surfaced it at similarity 1.000 with no risk flags, which is
+    # what an exact match looks like when the exact pass has missed it.
+    config = SearchConfiguration(
+        properties=[SearchProperty.LABEL, SearchProperty.ALIAS], force_case_insensitive=True
+    )
     trusted = getattr(adapter, "server_side_exact", False)
     out = []
     for curie in list(adapter.basic_search(query, config=config))[:25]:

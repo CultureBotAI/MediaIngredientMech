@@ -37,6 +37,12 @@ synonyms:
 - synonym_text: Na2-ß-glycerolphosphate
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
+- synonym_text: Sodium β--glycerophosphate
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: Sodium-β-glycerophosphate
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 23
@@ -108,6 +114,14 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-08-31T23:56:54.854807+00:00'
+  curator: claude_culturemech_alias_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+    published label but were absent from MIM''s label index, so CultureMech could
+    not resolve them: ''Sodium β--glycerophosphate'' (x1 CultureMech mentions); ''Sodium-β-glycerophosphate''
+    (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 819-83-0
   data_source: PubChem (via CHEBI:132089)

@@ -60,7 +60,7 @@ _PARENTHETICAL = re.compile(
     r"(?i:if needed|if required|if desired|optional|omit[^)]*)|"
     r"(?i:see [^)]*|note[^)]*|for [^)]*)|"
     r"(?i:[^)]*\d[^)]*%[^)]*)|"
-    r"(?i:[\d.,;:\s]*(?:mm?|nm?|m|w/v|v/v|g/l|mg/l|ph\s*[\d.]+)[^)]*)|"
+    r"(?i:[\d.,;:\s]*(?:[unmµμ]?g\s*/\s*[unmµμ]?l|mm?|nm?|m|w/v|v/v|g/l|mg/l|ph\s*[\d.]+)[^)]*)|"
     r"[A-Z][\w.-]*(?:[- ][\w.-]+)*"  # vendor/catalog tags: (BD-Difco), (Sigma A1296)
     r")\)"
 )
@@ -80,6 +80,20 @@ _UNICODE_FOLD = {
 }
 _SUBSCRIPTS = str.maketrans("₀₁₂₃₄₅₆₇₈₉", "0123456789")
 
+# Ontologies spell Greek letters out in ASCII -- CHEBI stores `beta-D-glucose` and
+# `alpha-tocopherol` -- while recipe text uses the letter itself. Without this the two
+# never meet: `beta-NAD` resolves to CHEBI:15846 and `β-NAD` resolves to nothing.
+# Transliteration is applied for BOTH searching and comparison, so a surface form
+# written either way reaches the same term.
+_GREEK = {
+    "\u03b1": "alpha", "β": "beta", "\u03b3": "gamma", "\u03b4": "delta",
+    "\u03b5": "epsilon", "\u03b6": "zeta", "\u03b7": "eta", "\u03b8": "theta",
+    "\u03ba": "kappa", "\u03bb": "lambda", "\u03c0": "pi", "\u03c1": "rho",
+    "\u03c3": "sigma", "\u03c4": "tau", "\u03c9": "omega",
+    "\u0391": "alpha", "\u0392": "beta", "\u0393": "gamma", "\u0394": "delta",
+}
+
+
 # Parse damage, not ingredient names.
 _BARE_NUMBER = re.compile(r"^[\d.,;:%\s+-]+$")
 _UNBALANCED_QUOTE = re.compile(r"^['\"]|['\"]$")
@@ -91,6 +105,8 @@ def fold(text: str) -> str:
     for src, dst in _UNICODE_FOLD.items():
         text = text.replace(src, dst)
     text = text.translate(_SUBSCRIPTS)
+    for src, dst in _GREEK.items():
+        text = text.replace(src, dst)
     if not _HYDRATION_STATE.search(text):
         text = _PARENTHETICAL.sub(" ", text)
         text = _TRAILING_QUALIFIER.sub("", text)

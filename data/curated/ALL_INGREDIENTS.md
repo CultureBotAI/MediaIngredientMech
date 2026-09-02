@@ -1,9 +1,9 @@
 # Complete Ingredients Index
-**Total Records**: 2953
-**Mapped**: 2621 (88.8%)
+**Total Records**: 2956
+**Mapped**: 2624 (88.8%)
 **Unmapped**: 267 (9.0%)
 **Other statuses**: 65 (2.2%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 220,590
+**Total Occurrences**: 220,617
 
 ---
 
@@ -2632,6 +2632,9 @@
 | FOODON:03411345 | Yeast | FOODON:03411345 | FOODON | EXACT_MATCH | 3 |
 | MICRO:0000522 | Yeastolate (BD; 2%, autoclaved) | MICRO:0000522 | MICRO | SYNONYM_MATCH | 4 |
 | CHEBI:62984 | Zinc Acetate | CHEBI:62984 | CHEBI | EXACT_MATCH | 7 |
+| CHEBI:27864 | Dichloran (0.2% in ethanol) | CHEBI:27864 | CHEBI | SYNONYM_MATCH | 1 |
+| NCIT:C217966 | hydroxocobalamin hydrochloride | NCIT:C217966 | NCIT | EXACT_MATCH | 1 |
+| NCIT:C120561 | Sodium glycerophosphate | NCIT:C120561 | NCIT | EXACT_MATCH | 25 |
 
 ## Unmapped Ingredients
 
