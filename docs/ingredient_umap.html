@@ -391,6 +391,18 @@
         const STATUS_COLORS = { 'MAPPED': '#2a78d6', 'UNMAPPED': '#eb6834', 'PENDING_REVIEW': '#eda100' };
         function isHollow(d, attr) { return attr === 'mapping_status' && d.mapping_status === 'UNMAPPED'; }
 
+        // Point outline at rest. Only the UNMAPPED ring survives, because that ring
+        // carries MEANING (mapping status) rather than separation.
+        //
+        // Filled points used to carry a background-coloured halo so neighbours stayed
+        // legible. At this density that defeated the whole plot: with ~2,400 points at
+        // r=5-15 in a UMAP, an opaque background-coloured ring does not merely look
+        // solid, it ERASES the point beneath it -- so `fill-opacity: 0.7` never blended
+        // and the map showed no density at all. The halo is now applied on hover only,
+        // where legibility is what you actually want and overlap no longer matters.
+        function restStroke(d) { return isHollow(d, currentColorBy) ? STATUS_COLORS.UNMAPPED : 'none'; }
+        function restStrokeWidth(d) { return isHollow(d, currentColorBy) ? 1.6 : 0; }
+
         // --- Facets: live-filter the plotted points (panel sits below the plot) ---
         const FACET_FIELDS = [
             { key: 'mapping_status', title: 'Mapping status' },
@@ -445,8 +457,10 @@
                 .style('display', d => facetPass(d) ? null : 'none')
                 .attr('fill-opacity', d => !q ? 0.7 : (match(d) ? 0.9 : 0.2))
                 .attr('stroke-width', d => {
-                    const base = isHollow(d, currentColorBy) ? 1.6 : 1;
-                    return !q ? base : (match(d) ? base + 1 : base);
+                    const base = restStrokeWidth(d);
+                    // Only a ring that exists can be thickened; filled points carry the
+                    // search signal through fill-opacity (0.9 matched / 0.2 not).
+                    return base && q && match(d) ? base + 1 : base;
                 });
             const cnt = document.getElementById('facet-count');
             if (cnt) cnt.textContent = ingredientData.filter(facetPass).length.toLocaleString();
@@ -491,7 +505,6 @@
             // identical to the former hard-coded ones, so the light look is unchanged).
             const _cs = getComputedStyle(document.documentElement);
             const axisTextColor = _cs.getPropertyValue('--text').trim() || '#1e293b';
-            const HALO = getComputedStyle(container).backgroundColor || '#fff';   // point-stroke halo = plot bg
             const HILITE = axisTextColor;                                          // hover emphasis stroke
 
             // Create SVG
@@ -602,8 +615,8 @@
                 .attr('r', d => sizeScale(d[currentSizeBy] || 1))
                 .attr('fill', d => isHollow(d, currentColorBy) ? 'none' : colorScale(d[currentColorBy] || 'Unknown'))
                 .attr('fill-opacity', 0.7)
-                .attr('stroke', d => isHollow(d, currentColorBy) ? STATUS_COLORS.UNMAPPED : HALO)
-                .attr('stroke-width', d => isHollow(d, currentColorBy) ? 1.6 : 1)
+                .attr('stroke', restStroke)
+                .attr('stroke-width', restStrokeWidth)
                 .style('cursor', 'pointer')
                 .on('mouseover', function(event, d) {
                     d3.select(this)
@@ -633,8 +646,8 @@
                 })
                 .on('mouseout', function(event, d) {
                     d3.select(this)
-                        .attr('stroke', isHollow(d, currentColorBy) ? STATUS_COLORS.UNMAPPED : HALO)
-                        .attr('stroke-width', isHollow(d, currentColorBy) ? 1.6 : 1);
+                        .attr('stroke', restStroke(d))
+                        .attr('stroke-width', restStrokeWidth(d));
                     tooltip.style('opacity', 0);
                 })
                 .on('click', (event, d) => {
@@ -651,8 +664,8 @@
 
                 circles
                     .attr('fill', d => isHollow(d, currentColorBy) ? 'none' : newColorScale(d[currentColorBy] || 'Unknown'))
-                    .attr('stroke', d => isHollow(d, currentColorBy) ? STATUS_COLORS.UNMAPPED : HALO)
-                    .attr('stroke-width', d => isHollow(d, currentColorBy) ? 1.6 : 1);
+                    .attr('stroke', restStroke)
+                    .attr('stroke-width', restStrokeWidth);
                 updateLegend(newColorScale, currentColorBy);
                 applyFilters();
             });
