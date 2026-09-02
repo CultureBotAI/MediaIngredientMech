@@ -6,6 +6,10 @@ ontology_mapping:
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   match_level: EXACT
+synonyms:
+- synonym_text: Mycobactine J
+  synonym_type: RAW_TEXT
+  source: mim-queue
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 1
@@ -19,3 +23,11 @@ curation_history:
     exact match of the canonical label to the query ''Mycobactin J''. Source: culturemech:output/ingredient_occurrences.tsv.'
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-09-01T00:00:00+00:00'
+  curator: codex_unmapped_synonym_review
+  action: MERGED_FROM_UNMAPPED_DUPLICATE
+  changes: Absorbed UNMAPPED_0456 'Mycobactine J' as a spelling variant of Mycobactin
+    J. The source record's Edison review explicitly recommended normalizing the label
+    to Mycobactin J while retaining Mycobactine J as a spelling variant; CHEBI:205364
+    now supplies the exact ontology identity. No new SSSOM row is required.
+  llm_assisted: true
