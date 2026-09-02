@@ -32,6 +32,8 @@ SSSOM validator's Rule B4.
 
 from __future__ import annotations
 
+from collections.abc import Callable
+
 # Qualities that denote an exact identity, and so earn exact-match confidence.
 EXACT_QUALITIES = frozenset({"EXACT_MATCH", "SYNONYM_MATCH"})
 
@@ -88,7 +90,7 @@ class _GradeTable(dict):
     confidence by being unknown.
     """
 
-    def __init__(self, rule):
+    def __init__(self, rule: Callable[[str | None], str]) -> None:
         super().__init__({quality: rule(quality) for quality in KNOWN_QUALITIES})
         self._rule = rule
 
