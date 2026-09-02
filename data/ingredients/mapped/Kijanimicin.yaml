@@ -13,6 +13,9 @@ synonyms:
 - synonym_text: methyl N-[(2R,3R,4S,6R)-6-[[(1S,3R,6S,7E,9S,11E,13S,16S,17S,18S,20S,21R,22S,23E)-17-[(2R,4R,5S,6S)-4-[(2S,6S)-4-[(2S,4S,5R,6S)-4,5-dihydroxy-6-methyloxan-2-yl]oxy-5-[(2R,4R,5R,6S)-4-hydroxy-5-methoxy-6-methyloxan-2-yl]oxy-6-methyloxan-2-yl]oxy-5-hydroxy-6-methyloxan-2-yl]oxy-23-hydroxy-4-(hydroxymethyl)-3,8,12,18,20,22-hexamethyl-25,27-dioxo-26-oxapentacyclo[22.2.1.01,6.013,22.016,21]heptacosa-4,7,11,14,23-pentaen-9-yl]oxy]-2,4-dimethyl-4-nitrooxan-3-yl]carbamate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: 'produces: kijanimicin'
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -50,6 +53,14 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
     physicochemical_roles.SELECTIVE_AGENT'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+    kijanimicin''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
+  llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C67H100N2O24

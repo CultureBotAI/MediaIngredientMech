@@ -48,6 +48,9 @@ synonyms:
 - synonym_text: iron(2+) sulfate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: FeSO .7H O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 294
@@ -126,6 +129,14 @@ curation_history:
     weight. ChEBI has no term for this hydration state, so no authoritative value
     can be substituted and a guess is how wrong CAS numbers spread. The grounding
     is separately wrong (#321); this corrects only the CAS (#334).'
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''FeSO .7H
+    O''. Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:75832
 chemical_properties:
   data_source: PubChem (via CHEBI:75832)

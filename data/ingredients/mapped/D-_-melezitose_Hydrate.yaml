@@ -26,7 +26,10 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
-synonyms: []
+synonyms:
+- synonym_text: D-melezitose (melezitose)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -76,6 +79,14 @@ curation_history:
   action: REGRADED_HYDRATE_TO_CLOSE_MATCH
   changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not subsumed
     by its anhydrous form, and ChEBI does not model it as such.
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''D-melezitose
+    (melezitose)''. Tokens already present on the kg-microbe ontology node were left
+    out as redundant (#520).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 207511-10-2

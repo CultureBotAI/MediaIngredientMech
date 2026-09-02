@@ -16,7 +16,10 @@ ontology_mapping:
       'Sulfur compounds' does not equal the term label 'sulfur molecular entity'.
       EXACT_MATCH therefore asserted an identity the pair does not have. Re-graded
       because plural of the same class.
-synonyms: []
+synonyms:
+- synonym_text: 'oxidation in darkness: sulfur compounds'
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -43,5 +46,13 @@ curation_history:
   action: REGRADED_CLASS_OVERSTATEMENT
   changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#322); plural of the same
     class.
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''oxidation
+    in darkness: sulfur compounds''. Tokens already present on the kg-microbe ontology
+    node were left out as redundant (#520).'
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT

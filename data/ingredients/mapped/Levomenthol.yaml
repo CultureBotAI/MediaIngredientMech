@@ -14,6 +14,9 @@ synonyms:
 - synonym_text: (1R,2S,5R)-5-methyl-2-(propan-2-yl)cyclohexan-1-ol
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: (+-)-menthol
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -52,6 +55,14 @@ curation_history:
     established this mapping; a lexical grade would discard that provenance. ontology_id
     is unchanged. The own-identifier SSSOM predicate remains skos:exactMatch under
     Rule D (#438), independently of mapping quality.
+  llm_assisted: false
+- timestamp: '2026-09-02T17:40:44.716277+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''(+-)-menthol''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 2216-51-5
