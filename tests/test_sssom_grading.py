@@ -152,3 +152,60 @@ class TestTheTableIsTotal:
     def test_placeholder_is_covered(self):
         """The specific grade the first enumerated list missed."""
         assert grading.CONFIDENCE["PLACEHOLDER"] == grading.CONFIDENCE_OTHER
+
+
+class TestPredicateIsARuleNotATable:
+    """The enumerated PREDICATE covered five grades; the corpus uses nine.
+
+    `PLACEHOLDER`, `CAS_RN_LOOKUP`, `LEXICAL_MATCH` and `BROAD_MATCH` -- 339 records --
+    raised KeyError on every write path that indexed it, which is a row that never gets
+    written (#525). Four scripts index this table.
+    """
+
+    def test_the_five_previously_enumerated_grades_are_unchanged(self):
+        """The rule must reproduce the old table exactly, or it rewrites history."""
+        assert grading.predicate_for("EXACT_MATCH") == "skos:exactMatch"
+        assert grading.predicate_for("SYNONYM_MATCH") == "skos:exactMatch"
+        assert grading.predicate_for("NARROW_MATCH") == "skos:narrowMatch"
+        assert grading.predicate_for("CLOSE_MATCH") == "skos:closeMatch"
+        assert grading.predicate_for("FALLBACK_REGISTRY") == "skos:closeMatch"
+
+    @pytest.mark.parametrize(
+        "quality", ["PLACEHOLDER", "CAS_RN_LOOKUP", "LEXICAL_MATCH", "BROAD_MATCH"]
+    )
+    def test_the_grades_that_used_to_raise_now_resolve(self, quality):
+        assert grading.PREDICATE[quality] == grading.PREDICATE_CLOSE
+
+    def test_an_unknown_grade_does_not_claim_identity(self):
+        """Fail weak: an unrecognised grade must not assert skos:exactMatch."""
+        assert grading.PREDICATE["INVENTED_TOMORROW"] == grading.PREDICATE_CLOSE
+
+    def test_every_corpus_quality_resolves(self):
+        import glob
+
+        import yaml
+
+        for path in glob.glob(str(_REPO / "data" / "ingredients" / "**" / "*.yaml"), recursive=True):
+            data = yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {}
+            quality = (data.get("ontology_mapping") or {}).get("mapping_quality")
+            if quality:
+                assert grading.PREDICATE[quality]
+
+    def test_the_promotion_helper_does_not_declare_its_own_predicate(self):
+        source = (_REPO / "scripts" / "promote_resolved_unmapped.py").read_text(encoding="utf-8")
+        assert not re.search(r"^PREDICATE = \{", source, re.M), (
+            "a second predicate table re-opens the KeyError this rule closes"
+        )
+
+
+@pytest.mark.skipif(not CLAW_BUILDER.is_file(), reason="claw not checked out at the sibling path")
+class TestPredicateAgreesWithClaw:
+    def test_non_exact_qualities_get_close_match(self):
+        claw = CLAW_BUILDER.read_text(encoding="utf-8")
+        assert 'predicate = "skos:closeMatch"' in claw
+        assert "if quality and quality not in EXACT_QUALITIES:" in claw
+
+    def test_narrow_match_is_special_cased_the_same_way(self):
+        claw = CLAW_BUILDER.read_text(encoding="utf-8")
+        assert 'if quality == "NARROW_MATCH":' in claw
+        assert 'predicate = "skos:narrowMatch"' in claw

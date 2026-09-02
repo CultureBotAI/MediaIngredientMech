@@ -244,17 +244,22 @@ def main(argv: list[str] | None = None) -> int:
                 stats["no_record"] += 1
                 continue
             # Would this name then be claimed by more than one record?
-            key = token.casefold()
+            #
+            # NOT named `key`: that is the loop's (subject_id, object_id) tuple, and
+            # rebinding it here made `records.get(key[0])` look up the token's first
+            # CHARACTER for every later token in the same row -- so each row migrated
+            # its first token and silently counted the rest as having no record.
+            label_key = token.casefold()
             mine = identifier_of.get(key_subject, "")
-            if owners.get(key, set()) - {mine}:
+            if owners.get(label_key, set()) - {mine}:
                 stats["would_collide"] += 1
                 if len(collision_examples) < 8:
-                    collision_examples.append((key_subject, token, sorted(owners[key])[:2]))
+                    collision_examples.append((key_subject, token, sorted(owners[label_key])[:2]))
                 continue
-            if claimed.get(key, key_subject) != key_subject:
+            if claimed.get(label_key, key_subject) != key_subject:
                 stats["would_collide"] += 1
                 continue
-            claimed[key] = key_subject
+            claimed[label_key] = key_subject
             planned[path].append(token)
             stats["kept"] += 1
 

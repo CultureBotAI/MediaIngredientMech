@@ -30,6 +30,27 @@ synonyms:
     Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
+- synonym_text: MgCl 2
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2 . 6H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2 x 6 H2O (200 g/l stock solution)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2x 6H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2x6H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: MgCl2·6 H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: magnesium dichloride--water (1/2)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 4026
@@ -126,6 +147,15 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 7 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''MgCl 2'';
+    ''MgCl2 . 6H2O''; ''MgCl2 x 6 H2O (200 g/l stock solution)''; ''MgCl2x 6H2O'';
+    ''MgCl2x6H2O''; ''MgCl2·6 H2O''; ''magnesium dichloride--water (1/2)''. Tokens
+    already present on the kg-microbe ontology node were left out as redundant (#520).'
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7791-18-6
   data_source: OAK/CHEBI xref

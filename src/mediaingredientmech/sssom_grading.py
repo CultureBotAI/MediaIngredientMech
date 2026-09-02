@@ -46,6 +46,10 @@ CONFIDENCE_OTHER = "0.9"
 JUSTIFICATION_LEXICAL = "semapv:LexicalMatching"
 JUSTIFICATION_MANUAL = "semapv:ManualMappingCuration"
 
+PREDICATE_EXACT = "skos:exactMatch"
+PREDICATE_CLOSE = "skos:closeMatch"
+PREDICATE_NARROW = "skos:narrowMatch"
+
 
 def confidence_for(quality: str | None) -> str:
     """SSSOM `confidence` for a record's `mapping_quality`."""
@@ -55,6 +59,25 @@ def confidence_for(quality: str | None) -> str:
 def justification_for(quality: str | None) -> str:
     """SSSOM `mapping_justification` for a record's `mapping_quality`."""
     return JUSTIFICATION_LEXICAL if (quality or "") in LEXICAL_QUALITIES else JUSTIFICATION_MANUAL
+
+
+def predicate_for(quality: str | None) -> str:
+    """SSSOM `predicate_id` for a record's `mapping_quality`.
+
+    Mirrors the builder: exact by default, `closeMatch` for any quality that is not an
+    exact identity so downstream consumers do not read it as one, and `narrowMatch` for
+    NARROW_MATCH, where the MIM term is narrower than the ontology parent.
+
+    Expressed as a rule rather than a table because the enumerated version covered five
+    grades while the corpus uses nine -- PLACEHOLDER, CAS_RN_LOOKUP, LEXICAL_MATCH and
+    BROAD_MATCH (339 records) raised KeyError on any write path that touched them (#525).
+    """
+    grade = quality or ""
+    if grade == "NARROW_MATCH":
+        return PREDICATE_NARROW
+    if grade and grade not in EXACT_QUALITIES:
+        return PREDICATE_CLOSE
+    return PREDICATE_EXACT
 
 
 # The grades the corpus uses today. Listed for documentation and for the tests, NOT as
@@ -100,3 +123,4 @@ class _GradeTable(dict):
 
 CONFIDENCE = _GradeTable(confidence_for)
 JUSTIFICATION = _GradeTable(justification_for)
+PREDICATE = _GradeTable(predicate_for)

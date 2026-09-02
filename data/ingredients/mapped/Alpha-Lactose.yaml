@@ -23,6 +23,21 @@ synonyms:
 - synonym_text: beta-D-galactopyranosyl-(1->4)-alpha-D-glucopyranose
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: 1-beta-D-Galactopyranosyl-4-alpha-D-glucopyranose
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: 4-O-beta-D-galactopyranosyl-alpha-D-glucopyranose
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Anhydrous lactose
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: Milk sugar
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: beta-D-Galp-(1->4)-alpha-D-Glcp
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -70,6 +85,15 @@ curation_history:
   changes: identifier/ontology_id CHEBI:36219 -> CHEBI:189432 'Alpha-lactose monohydrate'
     (#320); the record's CAS 5989-81-1 denotes the monohydrate. mapping_quality ->
     SYNONYM_MATCH.
+  llm_assisted: false
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 5 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''1-beta-D-Galactopyranosyl-4-alpha-D-glucopyranose'';
+    ''4-O-beta-D-galactopyranosyl-alpha-D-glucopyranose''; ''Anhydrous lactose'';
+    ''Milk sugar''; ''beta-D-Galp-(1->4)-alpha-D-Glcp''. Tokens already present on
+    the kg-microbe ontology node were left out as redundant (#520).'
   llm_assisted: false
 chemical_properties:
   cas_rn: 5989-81-1

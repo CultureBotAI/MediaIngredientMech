@@ -1,4 +1,4 @@
-generation_date: '2026-09-02T17:41:16.890734+00:00'
+generation_date: '2026-09-02T22:42:18.115108+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -9079,6 +9079,9 @@ ingredients:
   - synonym_text: (5% w/v solution)
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: (after autoclaving)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
@@ -9124,6 +9127,14 @@ ingredients:
       w/v solution)''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''(after
+      autoclaving)''. Tokens already present on the kg-microbe ontology node were
+      left out as redundant (#520).'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1764); no CAS-RN
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a concentration-specific sodium
     bicarbonate stock solution pending component-level recipe curation.
@@ -9150,6 +9161,9 @@ ingredients:
     synonym_type: RAW_TEXT
     source: mim-queue
   - synonym_text: (add to make medium anoxic)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: QSY9 succinimidyl ester(1+)
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   mapping_status: MAPPED
@@ -9201,6 +9215,14 @@ ingredients:
     changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
       but no curated record did, so a rebuild would have dropped them from KGX: ''(add
       to make medium anoxic)''. Tokens already present on the kg-microbe ontology
+      node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''QSY9
+      succinimidyl ester(1+)''. Tokens already present on the kg-microbe ontology
       node were left out as redundant (#520).'
     llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:1860); no CAS-RN
@@ -15989,6 +16011,15 @@ ingredients:
   - synonym_text: Glycerol 3-phosphate
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: Gro
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: glycerolum
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: glycyl alcohol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
@@ -16027,6 +16058,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 3 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Gro'';
+      ''glycerolum''; ''glycyl alcohol''. Tokens already present on the kg-microbe
+      ontology node were left out as redundant (#520).'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glycerol_3_phosphate);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -29060,6 +29099,12 @@ ingredients:
   - synonym_text: 4-nitrophenyl-beta-D-galactopyranoside
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: 'degradation: 4-nitrophenyl beta-D-galactopyranoside'
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: 'hydrolysis: 4-nitrophenyl beta-D-galactopyranoside'
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -29098,6 +29143,15 @@ ingredients:
       is unchanged — the term is correct. The SSSOM predicate is unaffected (both
       grades emit skos:exactMatch).
     llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''degradation:
+      4-nitrophenyl beta-D-galactopyranoside''; ''hydrolysis: 4-nitrophenyl beta-D-galactopyranoside''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C12H15NO8
@@ -29121,6 +29175,9 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: Trace minerals (see Medium No.151
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Trace minerals(see Medium No.151)
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   mapping_status: MAPPED
@@ -29178,6 +29235,14 @@ ingredients:
     changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
       but no curated record did, so a rebuild would have dropped them from KGX: ''Trace
       minerals (see Medium No.151''. Tokens already present on the kg-microbe ontology
+      node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Trace
+      minerals(see Medium No.151)''. Tokens already present on the kg-microbe ontology
       node were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
@@ -31890,6 +31955,9 @@ ingredients:
   - synonym_text: 'aerobic catabolization: acetate'
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: 'anaerobic catabolization: acetate'
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 48
@@ -31989,6 +32057,14 @@ ingredients:
     action: ADDED_SYNONYMS
     changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
       but no curated record did, so a rebuild would have dropped them from KGX: ''aerobic
+      catabolization: acetate''. Tokens already present on the kg-microbe ontology
+      node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''anaerobic
       catabolization: acetate''. Tokens already present on the kg-microbe ontology
       node were left out as redundant (#520).'
     llm_assisted: false
@@ -35220,6 +35296,21 @@ ingredients:
   - synonym_text: beta-D-galactopyranosyl-(1->4)-alpha-D-glucopyranose
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: 1-beta-D-Galactopyranosyl-4-alpha-D-glucopyranose
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: 4-O-beta-D-galactopyranosyl-alpha-D-glucopyranose
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Anhydrous lactose
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Milk sugar
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: beta-D-Galp-(1->4)-alpha-D-Glcp
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -35267,6 +35358,15 @@ ingredients:
     changes: identifier/ontology_id CHEBI:36219 -> CHEBI:189432 'Alpha-lactose monohydrate'
       (#320); the record's CAS 5989-81-1 denotes the monohydrate. mapping_quality
       -> SYNONYM_MATCH.
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 5 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''1-beta-D-Galactopyranosyl-4-alpha-D-glucopyranose'';
+      ''4-O-beta-D-galactopyranosyl-alpha-D-glucopyranose''; ''Anhydrous lactose'';
+      ''Milk sugar''; ''beta-D-Galp-(1->4)-alpha-D-Glcp''. Tokens already present
+      on the kg-microbe ontology node were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 5989-81-1
@@ -36037,6 +36137,30 @@ ingredients:
   - synonym_text: bisammonium dioxido(dioxo)molybdenum
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: (NH4)6Mo7O4
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)6Mo7O4 x 24 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)6MoO24·4H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)6MoO7O24
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)6MoO7O24 x 4 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)Mo7O24·4H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)MoO7O24
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)MoO7O24 x 4 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 12
@@ -36093,6 +36217,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 8 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''(NH4)6Mo7O4'';
+      ''(NH4)6Mo7O4 x 24 H2O''; ''(NH4)6MoO24·4H2O''; ''(NH4)6MoO7O24''; ''(NH4)6MoO7O24
+      x 4 H2O''; ''(NH4)Mo7O24·4H2O''; ''(NH4)MoO7O24''; ''(NH4)MoO7O24 x 4 H2O''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 12054-85-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -39239,6 +39373,18 @@ ingredients:
   - synonym_text: H2AsO3(-)
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: '[AsO(OH)2](-)'
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: arsenite
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: arsenite(1-)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: dihydroxidooxidoarsenate(1-)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -39309,6 +39455,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''H2AsO3(-)''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 4 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''[AsO(OH)2](-)'';
+      ''arsenite''; ''arsenite(1-)''; ''dihydroxidooxidoarsenate(1-)''. Tokens already
+      present on the kg-microbe ontology node were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 15584-04-0
@@ -43091,6 +43245,18 @@ ingredients:
   - synonym_text: 5,6-dihydro-9,10-dimethoxy-1,3-benzodioxolo[5,6-a]benzo[g]quinolizinium
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: 7,8,13,13a-tetradehydro-9,10-dimethoxy-2,3-[methylenebis(oxy)]berbinium
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: 9,10-dimethoxy-2,3-(methylenedioxy)-7,8,13,13a-tetradehydroberbinium
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Berberin
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Umbellatine
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -43133,6 +43299,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''5,6-dihydro-9,10-dimethoxy-1,3-benzodioxolo[5,6-a]benzo[g]quinolizinium''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 4 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''7,8,13,13a-tetradehydro-9,10-dimethoxy-2,3-[methylenebis(oxy)]berbinium'';
+      ''9,10-dimethoxy-2,3-(methylenedioxy)-7,8,13,13a-tetradehydroberbinium''; ''Berberin'';
+      ''Umbellatine''. Tokens already present on the kg-microbe ontology node were
+      left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 633-65-8
@@ -49036,6 +49211,18 @@ ingredients:
   - synonym_text: Ca-pantothenate
     synonym_type: RAW_TEXT
     source: MERGED_FROM_CHEBI:29032
+  - synonym_text: (E)-8-Methyl-N-vanillyl-6-nonenamide
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Isodecenoic acid vanillylamide
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Zostrix
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: trans-8-Methyl-N-vanillyl-6-nonenamide
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2375
@@ -49230,6 +49417,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 4 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''(E)-8-Methyl-N-vanillyl-6-nonenamide'';
+      ''Isodecenoic acid vanillylamide''; ''Zostrix''; ''trans-8-Methyl-N-vanillyl-6-nonenamide''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 137-08-6
     data_source: PubChem API
@@ -56925,6 +57121,12 @@ ingredients:
   - synonym_text: H3cit
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Citric Acid•H2O(Fisher A 104)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Trisodium citrate x 3 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 113
@@ -56998,6 +57200,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Citric
+      Acid•H2O(Fisher A 104)''; ''Trisodium citrate x 3 H2O''. Tokens already present
+      on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 77-92-9
     data_source: PubChem API
@@ -57041,6 +57251,15 @@ ingredients:
   - synonym_text: Citric acid·H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
+  - synonym_text: H2cit
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: citrate(1-)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: dihydrogen citrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 8
@@ -57107,6 +57326,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 3 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''H2cit'';
+      ''citrate(1-)''; ''dihydrogen citrate''. Tokens already present on the kg-microbe
+      ontology node were left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 5949-29-1
     data_source: PubChem (via CHEBI:31404)
@@ -58208,6 +58435,9 @@ ingredients:
   - synonym_text: cobalt(II) chloride
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: CoCl2.6H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 527
@@ -58274,6 +58504,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''CoCl2.6H2O''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7646-79-9
     data_source: PubChem (via CHEBI:35696)
@@ -59664,6 +59902,18 @@ ingredients:
   - synonym_text: cobalt(2+) sulfate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Cobalt monosulfate heptahydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: cobalt(2+) sulfate--water (1/7)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: cobalt(II) sulfate heptahydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: cobaltous sulfate heptahydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 64
@@ -59731,6 +59981,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 4 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Cobalt
+      monosulfate heptahydrate''; ''cobalt(2+) sulfate--water (1/7)''; ''cobalt(II)
+      sulfate heptahydrate''; ''cobaltous sulfate heptahydrate''. Tokens already present
+      on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10124-43-3
     data_source: PubChem API
@@ -62493,6 +62752,9 @@ ingredients:
   - synonym_text: CuSO .5H O
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: CuSO4*5 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1490
@@ -62621,6 +62883,14 @@ ingredients:
     changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
       but no curated record did, so a rebuild would have dropped them from KGX: ''CuSO
       .5H O''. Tokens already present on the kg-microbe ontology node were left out
+      as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''CuSO4*5
+      H2O''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
   kg_microbe_node_id: CHEBI:31440
@@ -66148,6 +66418,9 @@ ingredients:
   - synonym_text: (+)-l-rhamnose
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: (-)-d-rhamnose
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
@@ -66201,6 +66474,14 @@ ingredients:
     action: ADDED_SYNONYMS
     changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
       but no curated record did, so a rebuild would have dropped them from KGX: ''(+)-l-rhamnose''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''(-)-d-rhamnose''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
@@ -67111,6 +67392,9 @@ ingredients:
   - synonym_text: Dextrose
     synonym_type: RAW_TEXT
     source: MERGED_FROM_CHEBI:4167
+  - synonym_text: aldehydo-D-glucose
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1250
@@ -67212,6 +67496,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''aldehydo-D-glucose''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 50-99-7
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -72654,6 +72946,24 @@ ingredients:
   - synonym_text: Disodium phosphate dihydrate
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: Phosphoric acid, disodium salt, dihydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Sodium phosphate, dibasic, dihydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: disodium hydrogen phosphate dihydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: sodium hydrogen orthophosphate dihydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: sodium hydrogen phosphate--water (1/2)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: sodium monohydrogen phosphate dihydrat
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1
@@ -72710,6 +73020,17 @@ ingredients:
     changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
       but no curated record did, so a rebuild would have dropped them from KGX: ''Disodium
       phosphate dihydrate''. Tokens already present on the kg-microbe ontology node
+      were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Phosphoric
+      acid, disodium salt, dihydrate''; ''Sodium phosphate, dibasic, dihydrate'';
+      ''disodium hydrogen phosphate dihydrate''; ''sodium hydrogen orthophosphate
+      dihydrate''; ''sodium hydrogen phosphate--water (1/2)''; ''sodium monohydrogen
+      phosphate dihydrat''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
     llm_assisted: false
   ingredient_type: STOCK_SOLUTION
@@ -73882,6 +74203,24 @@ ingredients:
   - synonym_text: (2R,3R)-1,4-dimercaptobutane-2,3-diol
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: (2R,3R)-1,4-disulfanylbutane-2,3-diol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: 2,3-DIHYDROXY-1,4-DITHIOBUTANE
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: L-1,4-dithiothreitol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: L-DTT
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: L-dithiothreitol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: L-threo-1,4-dimercapto-2,3-butanediol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 121
@@ -74007,6 +74346,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''(2R,3R)-1,4-dimercaptobutane-2,3-diol''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''(2R,3R)-1,4-disulfanylbutane-2,3-diol'';
+      ''2,3-DIHYDROXY-1,4-DITHIOBUTANE''; ''L-1,4-dithiothreitol''; ''L-DTT''; ''L-dithiothreitol'';
+      ''L-threo-1,4-dimercapto-2,3-butanediol''. Tokens already present on the kg-microbe
+      ontology node were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 3483-12-3
@@ -75621,7 +75969,10 @@ ingredients:
         is a distinct substance containing the anhydrous form, not a specialization
         of it. closeMatch claims similarity without subsumption. The ontology_id and
         the record''s own identifier are unchanged.'
-  synonyms: []
+  synonyms:
+  - synonym_text: Ethylenediamintetraacetic acid (EDTA)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
@@ -75680,6 +76031,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Ethylenediamintetraacetic
+      acid (EDTA)''. Tokens already present on the kg-microbe ontology node were left
+      out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 13235-36-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -76595,6 +76954,9 @@ ingredients:
   - synonym_text: 7-hydroxy-2-oxo-2H-chromen-6-yl beta-D-glucopyranoside
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: 'hydrolysis: esculin'
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -76632,6 +76994,14 @@ ingredients:
       anhydrous parent CHEBI:4853's ChEBI formula ('C15H16O9') — the mark of a value
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''hydrolysis:
+      esculin''. Tokens already present on the kg-microbe ontology node were left
+      out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 531-75-9
@@ -80455,6 +80825,30 @@ ingredients:
   - synonym_text: trichloroiron--water (1/6)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: FeCl3 . 6H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: FeCl3 x 6 H2O (0.1% w/v in 0.2 N HCl)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: FeCl3 x 6 H2O (0.5%)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: FeCl3 x 6 H2O (w/v=1%)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: FeCl3 x 6 H2O NaEDTA
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: FeCl3 x 6 H2O solution (2%)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: FeCl3 x6H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: FeCl3*6 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 618
@@ -80547,6 +80941,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 8 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''FeCl3
+      . 6H2O''; ''FeCl3 x 6 H2O (0.1% w/v in 0.2 N HCl)''; ''FeCl3 x 6 H2O (0.5%)'';
+      ''FeCl3 x 6 H2O (w/v=1%)''; ''FeCl3 x 6 H2O NaEDTA''; ''FeCl3 x 6 H2O solution
+      (2%)''; ''FeCl3 x6H2O''; ''FeCl3*6 H2O''. Tokens already present on the kg-microbe
+      ontology node were left out as redundant (#520).'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86254
   chemical_properties:
     cas_rn: 10025-77-1
@@ -80988,6 +81392,9 @@ ingredients:
   - synonym_text: goethite
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: 'growth: goethite'
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 5
@@ -81033,6 +81440,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''goethite''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''growth:
+      goethite''. Tokens already present on the kg-microbe ontology node were left
+      out as redundant (#520).'
     llm_assisted: false
   kg_microbe_node_id: CHEBI:192761
   ingredient_type: SINGLE_INGREDIENT
@@ -81580,6 +81995,9 @@ ingredients:
   - synonym_text: iron(2+) sulfate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: FeSO .7H O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 294
@@ -81658,6 +82076,14 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted and a guess is how wrong CAS numbers spread. The grounding
       is separately wrong (#321); this corrects only the CAS (#334).'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''FeSO
+      .7H O''. Tokens already present on the kg-microbe ontology node were left out
+      as redundant (#520).'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:75832
   chemical_properties:
     data_source: PubChem (via CHEBI:75832)
@@ -96916,6 +97342,24 @@ ingredients:
   - synonym_text: Acetic ester
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: Acetyl ester
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: acetate ester
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: acetate esters
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: acetates
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: acetyl esters
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: an acetyl ester
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 18
@@ -97007,6 +97451,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Acetic
       ester''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Acetyl
+      ester''; ''acetate ester''; ''acetate esters''; ''acetates''; ''acetyl esters'';
+      ''an acetyl ester''. Tokens already present on the kg-microbe ontology node
+      were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 127-08-2
@@ -107532,6 +107985,18 @@ ingredients:
   - synonym_text: (2)-D-lactose
     synonym_type: RAW_TEXT
     source: microbedecoder
+  - synonym_text: Lactose monohydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: beta-D-Lactose
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: beta-D-galactopyranosyl-(1->4)-beta-D-glucose
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: beta-D-glucopyranose, 4-O-beta-D-galactopyranosyl-
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 55
@@ -107617,6 +108082,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 4 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Lactose
+      monohydrate''; ''beta-D-Lactose''; ''beta-D-galactopyranosyl-(1->4)-beta-D-glucose'';
+      ''beta-D-glucopyranose, 4-O-beta-D-galactopyranosyl-''. Tokens already present
+      on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 63-42-3
     data_source: PubChem (via CHEBI:17716)
@@ -108685,6 +109159,24 @@ ingredients:
   - synonym_text: (+-)-menthol
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: DL-menthol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: rac-(1R,2S,5R)-5-methyl-2-(propan-2-yl)cyclohexan-1-ol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: rac-menthol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: racementhol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: racementholum
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: racementol
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -108731,6 +109223,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''(+-)-menthol''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''DL-menthol'';
+      ''rac-(1R,2S,5R)-5-methyl-2-(propan-2-yl)cyclohexan-1-ol''; ''rac-menthol'';
+      ''racementhol''; ''racementholum''; ''racementol''. Tokens already present on
+      the kg-microbe ontology node were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 2216-51-5
@@ -109561,6 +110062,15 @@ ingredients:
   - synonym_text: N-(tri(hydroxymethyl)methyl)glycine
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: N-[2-hydroxy-1,1-bis(hydroxymethyl)ethyl]glycine
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: N-tris(hydroxymethyl)methylglycine
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: berbaman
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -109596,6 +110106,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''N-(tri(hydroxymethyl)methyl)glycine''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 3 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''N-[2-hydroxy-1,1-bis(hydroxymethyl)ethyl]glycine'';
+      ''N-tris(hydroxymethyl)methylglycine''; ''berbaman''. Tokens already present
+      on the kg-microbe ontology node were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 434-13-9
@@ -110764,6 +111282,27 @@ ingredients:
       compound, Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: MgCl 2
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgCl2 . 6H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgCl2 x 6 H2O (200 g/l stock solution)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgCl2x 6H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgCl2x6H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgCl2·6 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: magnesium dichloride--water (1/2)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4026
@@ -110860,6 +111399,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 7 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''MgCl
+      2''; ''MgCl2 . 6H2O''; ''MgCl2 x 6 H2O (200 g/l stock solution)''; ''MgCl2x
+      6H2O''; ''MgCl2x6H2O''; ''MgCl2·6 H2O''; ''magnesium dichloride--water (1/2)''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7791-18-6
     data_source: OAK/CHEBI xref
@@ -110974,6 +111523,9 @@ ingredients:
   - synonym_text: MgSO4 ·7H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
+  - synonym_text: MgSO4·6H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 714
@@ -111085,6 +111637,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''MgSO4·6H2O''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7487-88-9
     data_source: PubChem API
@@ -112195,6 +112755,9 @@ ingredients:
   - synonym_text: Alpha-maltose
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 189
@@ -112294,6 +112857,14 @@ ingredients:
     action: ADDED_SYNONYMS
     changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
       but no curated record did, so a rebuild would have dropped them from KGX: ''Alpha-maltose''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
@@ -113916,6 +114487,25 @@ ingredients:
       ACID
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: (4R,5S,6S)-3-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]thio}-6-[(1R)-1-hydroxyethyl]-4-methyl-7-oxo-1-azabicyclo[3.2.0]hept-2-ene-2-carboxylic
+      acid
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Antibiotic SM 7338
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MEM
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MEPM
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: meropenem anhydrous
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: meropenemum
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -113967,6 +114557,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''(1R,5S,6S)-2-[(3S,5S)-5-DIMETHYLAMINOCARBONYLPYRROLIDIN-3-YLTHIO]-6-[(R)-1-HYDROXYETHYL]-1-METHYLCARBAPEN-2-EM-3-CARBOXYLIC
       ACID''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''(4R,5S,6S)-3-{[(3S,5S)-5-(dimethylcarbamoyl)pyrrolidin-3-yl]thio}-6-[(1R)-1-hydroxyethyl]-4-methyl-7-oxo-1-azabicyclo[3.2.0]hept-2-ene-2-carboxylic
+      acid''; ''Antibiotic SM 7338''; ''MEM''; ''MEPM''; ''meropenem anhydrous'';
+      ''meropenemum''. Tokens already present on the kg-microbe ontology node were
+      left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 119478-56-7
@@ -114345,6 +114944,9 @@ ingredients:
   - synonym_text: 'produces: methane from acetate'
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: 'produces: methane from formate'
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 8
@@ -114386,6 +114988,14 @@ ingredients:
     changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
       but no curated record did, so a rebuild would have dropped them from KGX: ''produces:
       methane from acetate''. Tokens already present on the kg-microbe ontology node
+      were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''produces:
+      methane from formate''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
@@ -116491,6 +117101,9 @@ ingredients:
   - synonym_text: MgCl2 x 6H2O
     synonym_type: HYDRATE_FORM
     source: MERGED_FROM MgCl2x 6 H2O (#414)
+  - synonym_text: MgCl*6H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4026
@@ -116607,6 +117220,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''MgCl*6H2O''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7791-18-6
     data_source: PubChem (via CHEBI:86345)
@@ -117549,6 +118170,15 @@ ingredients:
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
+  - synonym_text: Mg2SO4
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO .7H O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO4 × 7 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 714
@@ -117650,6 +118280,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 3 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Mg2SO4'';
+      ''MgSO .7H O''; ''MgSO4 × 7 H2O''. Tokens already present on the kg-microbe
+      ontology node were left out as redundant (#520).'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:32599
   chemical_properties:
     cas_rn: 7487-88-9
@@ -117768,6 +118406,39 @@ ingredients:
     synonym_type: RAW_TEXT
     source: MERGED_FROM (#374/#334)
   - synonym_text: .MgSO4
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO .7H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO 4
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO2
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO2·7H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO4 x 7 H20
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: magnesium sulfate anhydrous
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: magnesium sulphate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: magnesium(II) sulfate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: sulfuric acid magnesium salt
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: sulphate of magnesia
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   mapping_status: MAPPED
@@ -117930,6 +118601,16 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 11 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''MgSO'';
+      ''MgSO .7H2O''; ''MgSO 4''; ''MgSO2''; ''MgSO2·7H2O''; ''MgSO4 x 7 H20''; ''magnesium
+      sulfate anhydrous''; ''magnesium sulphate''; ''magnesium(II) sulfate''; ''sulfuric
+      acid magnesium salt''; ''sulphate of magnesia''. Tokens already present on the
+      kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10034-99-8
     data_source: OAK/CHEBI xref
@@ -117998,6 +118679,18 @@ ingredients:
   - synonym_text: magnesium sulfate--water (1/7)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: .MgSO4
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO4•7H2O (Sigma 230391)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: 'MgSO4•7H2O(CAS: 10034-99-8)'
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MgSO4•7H2O(Sigma 230391)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 5673
@@ -118061,6 +118754,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 4 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''.MgSO4'';
+      ''MgSO4•7H2O (Sigma 230391)''; ''MgSO4•7H2O(CAS: 10034-99-8)''; ''MgSO4•7H2O(Sigma
+      230391)''. Tokens already present on the kg-microbe ontology node were left
+      out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10034-99-8
     data_source: PubChem (via CHEBI:31795)
@@ -118685,6 +119387,12 @@ ingredients:
   - synonym_text: MnCl2·4H2O
     synonym_type: RAW_TEXT
     source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: MnCl2 x 4H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MnCl4・4H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2990
@@ -118793,6 +119501,14 @@ ingredients:
     changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
       published label but were absent from MIM''s label index, so CultureMech could
       not resolve them: ''MnCl2·4H2O'' (x6 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''MnCl2
+      x 4H2O''; ''MnCl4・4H2O''. Tokens already present on the kg-microbe ontology
+      node were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 13446-34-9
@@ -119919,6 +120635,12 @@ ingredients:
   - synonym_text: manganese(2+) sulfate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: MnSO4 x n H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MnSO4·nH2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 415
@@ -120007,6 +120729,14 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted and a guess is how wrong CAS numbers spread. The grounding
       is separately wrong (#321); this corrects only the CAS (#334).'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''MnSO4
+      x n H2O''; ''MnSO4·nH2O''. Tokens already present on the kg-microbe ontology
+      node were left out as redundant (#520).'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:86360
   chemical_properties:
     data_source: PubChem (via CHEBI:86360)
@@ -121913,6 +122643,12 @@ ingredients:
   - synonym_text: 2-Acetamido-2-deoxy-D-glucose
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: GlcNAc
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: N-Acetylchitosamine
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 29
@@ -122018,6 +122754,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''2-Acetamido-2-deoxy-D-glucose''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''GlcNAc'';
+      ''N-Acetylchitosamine''. Tokens already present on the kg-microbe ontology node
+      were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 72-87-7
@@ -126041,6 +126785,9 @@ ingredients:
   - synonym_text: EDTA•2Na
     synonym_type: RAW_TEXT
     source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: NaEDTA
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 614
@@ -126173,6 +126920,14 @@ ingredients:
       published label but were absent from MIM''s label index, so CultureMech could
       not resolve them: ''EDTA(Disodium salt)'' (x1 CultureMech mentions); ''EDTA•2Na''
       (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''NaEDTA''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
     llm_assisted: false
   kg_microbe_node_id: CHEBI:64734
   chemical_properties:
@@ -127915,6 +128670,15 @@ ingredients:
   - synonym_text: Na2HPO4 × 12 H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe_via_hydration_routing
+  - synonym_text: disodium acid orthophosphate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: disodium monohydrogen phosphate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: disodium orthophosphate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 159
@@ -128018,6 +128782,15 @@ ingredients:
       and a close match both understated it. Every one of the 54 registry-identified
       records is graded non-exact, so the two move together: an exact grounding takes
       the ontology id, as MgSO4 x 7 H2O does (#334).'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 3 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''disodium
+      acid orthophosphate''; ''disodium monohydrogen phosphate''; ''disodium orthophosphate''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
     cas_rn: 10039-32-4
@@ -129390,6 +130163,15 @@ ingredients:
   - synonym_text: Na2MO4.2H2O
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: Na2MoO7・2H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: NaMoO4 · 2H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: NaMoO4.2H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 4008
@@ -129575,6 +130357,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Na2MO4.2H2O''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 3 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Na2MoO7・2H2O'';
+      ''NaMoO4 · 2H2O''; ''NaMoO4.2H2O''. Tokens already present on the kg-microbe
+      ontology node were left out as redundant (#520).'
     llm_assisted: false
   kg_microbe_node_id: CHEBI:75213
   chemical_properties:
@@ -130205,6 +130995,9 @@ ingredients:
       3946)
     synonym_type: RAW_TEXT
     source: MERGED_FROM Sodium Thiosulfate Pentahydrate (#414)
+  - synonym_text: Na2S2O3 x 5 H20
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 716
@@ -130319,6 +131112,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Na2S2O3
+      x 5 H20''. Tokens already present on the kg-microbe ontology node were left
+      out as redundant (#520).'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:32150
   chemical_properties:
     cas_rn: 10102-17-7
@@ -130743,6 +131544,12 @@ ingredients:
   - synonym_text: Na2Se2O3
     synonym_type: RAW_TEXT
     source: merge_from_UNMAPPED_0473
+  - synonym_text: Na2SeO·5H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: NaSeO3·5H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 185
@@ -130831,6 +131638,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Na2SeO·5H2O'';
+      ''NaSeO3·5H2O''. Tokens already present on the kg-microbe ontology node were
+      left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10102-18-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -131024,6 +131839,15 @@ ingredients:
   - synonym_text: Na2SeO3·5H2O
     synonym_type: RAW_TEXT
     source: MERGED_FROM (#374/#334)
+  - synonym_text: Na2Se3 x 5 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Na2SeO3 . 5H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Na2SeO3 x 5 H2O (0.01% w/v)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1622
@@ -131120,6 +131944,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 3 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Na2Se3
+      x 5 H2O''; ''Na2SeO3 . 5H2O''; ''Na2SeO3 x 5 H2O (0.01% w/v)''. Tokens already
+      present on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 26970-82-1
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -131308,6 +132140,9 @@ ingredients:
   - synonym_text: Na2SiO3
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: Na2SiO3 x 9 H20
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 36
@@ -131414,6 +132249,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Na2SiO3''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Na2SiO3
+      x 9 H20''. Tokens already present on the kg-microbe ontology node were left
+      out as redundant (#520).'
     llm_assisted: false
   kg_microbe_node_id: CHEBI:132108
   chemical_properties:
@@ -131753,6 +132596,15 @@ ingredients:
   - synonym_text: Glauber's salt
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: Glaubersalz
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: disodium sulfate decahydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: sodium sulphate decahydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1305
@@ -131871,6 +132723,14 @@ ingredients:
       salt". Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 3 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Glaubersalz'';
+      ''disodium sulfate decahydrate''; ''sodium sulphate decahydrate''. Tokens already
+      present on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7757-82-6
     data_source: PubChem API
@@ -131915,6 +132775,9 @@ ingredients:
   - synonym_text: sodium sulfate--water (1/10)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: sodium sulfate, anhydrous
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 6
@@ -131990,6 +132853,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''sodium
+      sulfate, anhydrous''. Tokens already present on the kg-microbe ontology node
+      were left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7727-73-3
     data_source: PubChem (via CHEBI:32586)
@@ -132030,6 +132901,9 @@ ingredients:
   - synonym_text: Na2WO4 (10 mM)
     synonym_type: RAW_TEXT
     source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Na2WO4 x 2H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 132
@@ -132108,6 +132982,14 @@ ingredients:
     changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
       published label but were absent from MIM''s label index, so CultureMech could
       not resolve them: ''Na2WO4 (10 mM)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Na2WO4
+      x 2H2O''. Tokens already present on the kg-microbe ontology node were left out
+      as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 13472-45-2
@@ -132194,6 +133076,24 @@ ingredients:
     synonym_type: RAW_TEXT
     source: culturemech:output/ingredient_occurrences.tsv
   - synonym_text: Disodium tetraoxotungstate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Na2WO2.2H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Sodium tungstate(VI)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Sodium tungsten oxide
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Sodium wolframate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Tungstic acid, disodium salt
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: sodium tetraoxotungstate(VI)
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   mapping_status: MAPPED
@@ -132342,6 +133242,15 @@ ingredients:
       tetraoxotungstate''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Na2WO2.2H2O'';
+      ''Sodium tungstate(VI)''; ''Sodium tungsten oxide''; ''Sodium wolframate'';
+      ''Tungstic acid, disodium salt''; ''sodium tetraoxotungstate(VI)''. Tokens already
+      present on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
   chemical_properties:
     cas_rn: 10213-10-2
     data_source: PubChem (via CHEBI:63939)
@@ -132421,6 +133330,24 @@ ingredients:
   - synonym_text: Sodium Citrate
     synonym_type: RAW_TEXT
     source: MERGED_FROM_CHEBI:53258
+  - synonym_text: Na2citrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Na3Citrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Sodiumcitrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Trisodium citrate dehydrate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Trisodium citrate·2H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Trisodium citrate·3H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 277
@@ -132520,6 +133447,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 6 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Na2citrate'';
+      ''Na3Citrate''; ''Sodiumcitrate''; ''Trisodium citrate dehydrate''; ''Trisodium
+      citrate·2H2O''; ''Trisodium citrate·3H2O''. Tokens already present on the kg-microbe
+      ontology node were left out as redundant (#520).'
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:32142
   chemical_properties:
     cas_rn: 6132-04-3
@@ -138080,6 +139016,9 @@ ingredients:
   - synonym_text: NiCl 2
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: NiCl 2 x 6 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 440
@@ -138168,6 +139107,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''NiCl
       2''. Tokens already present on the kg-microbe ontology node were left out as
       redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''NiCl
+      2 x 6 H2O''. Tokens already present on the kg-microbe ontology node were left
+      out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 7718-54-9
@@ -140068,6 +141015,9 @@ ingredients:
   - synonym_text: ( disodium salt)
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: ( trisodium salt)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 7
@@ -140133,6 +141083,14 @@ ingredients:
     changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
       but no curated record did, so a rebuild would have dropped them from KGX: ''(
       disodium salt)''. Tokens already present on the kg-microbe ontology node were
+      left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''(
+      trisodium salt)''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
@@ -142400,6 +143358,12 @@ ingredients:
   - synonym_text: 4-aminobenzoic acid zwitterion
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: 4-ammoniobenzoate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: 4-azaniumylbenzoate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2270
@@ -142575,6 +143539,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''4-aminobenzoic
       acid zwitterion''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 2 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''4-ammoniobenzoate'';
+      ''4-azaniumylbenzoate''. Tokens already present on the kg-microbe ontology node
+      were left out as redundant (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 150-13-0
@@ -158663,6 +159635,27 @@ ingredients:
   - synonym_text: disodium trioxidocarbonate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: (adjust if required)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Na CO
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Na2CO
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Na2CO3 anhydrous
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Na2CO3(Baker 3604)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Na2CO3-CO2 buffer
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: NaCO3
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1751
@@ -158700,6 +159693,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 7 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''(adjust
+      if required)''; ''Na CO''; ''Na2CO''; ''Na2CO3 anhydrous''; ''Na2CO3(Baker 3604)'';
+      ''Na2CO3-CO2 buffer''; ''NaCO3''. Tokens already present on the kg-microbe ontology
+      node were left out as redundant (#520).'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:797); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -160040,6 +161042,36 @@ ingredients:
   - synonym_text: Glutamate Sodium
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: Glutamate monosodium salt
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Glutamic acid, monosodium salt
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Glutammato monosodico
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: L(+) Sodium glutamate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: MSG
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Monosodioglutammato
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Natrium L-hydrogenglutamat
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Natriumglutaminat
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: Sodium hydrogen glutamate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: sodium (2S)-2-ammoniopentanedioate
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 16
@@ -160125,6 +161157,17 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Glutamate
       Sodium''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 10 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Glutamate
+      monosodium salt''; ''Glutamic acid, monosodium salt''; ''Glutammato monosodico'';
+      ''L(+) Sodium glutamate''; ''MSG''; ''Monosodioglutammato''; ''Natrium L-hydrogenglutamat'';
+      ''Natriumglutaminat''; ''Sodium hydrogen glutamate''; ''sodium (2S)-2-ammoniopentanedioate''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 6106-04-3
@@ -163383,6 +164426,9 @@ ingredients:
   - synonym_text: Disodium succinate x 6 H2O
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: Disodium succinate・6H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 20
@@ -163447,6 +164493,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Disodium
       succinate x 6 H2O''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''Disodium
+      succinate・6H2O''. Tokens already present on the kg-microbe ontology node were
+      left out as redundant (#520).'
     llm_assisted: false
   notes: Created from FEBA ontology enrichment workflow. Used in 11 FEBA media formulations.
   chemical_properties:
@@ -201566,6 +202620,9 @@ ingredients:
   - synonym_text: (+)-D-arabitol
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: D-adonitol (D-ribitol)
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -201613,6 +202670,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''(+)-D-arabitol''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 1 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''D-adonitol
+      (D-ribitol)''. Tokens already present on the kg-microbe ontology node were left
+      out as redundant (#520).'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:

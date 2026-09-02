@@ -85,6 +85,15 @@ synonyms:
 - synonym_text: Na2HPO4 × 12 H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe_via_hydration_routing
+- synonym_text: disodium acid orthophosphate
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: disodium monohydrogen phosphate
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: disodium orthophosphate
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 159
@@ -188,6 +197,15 @@ curation_history:
     a close match both understated it. Every one of the 54 registry-identified records
     is graded non-exact, so the two move together: an exact grounding takes the ontology
     id, as MgSO4 x 7 H2O does (#334).'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 3 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''disodium
+    acid orthophosphate''; ''disodium monohydrogen phosphate''; ''disodium orthophosphate''.
+    Tokens already present on the kg-microbe ontology node were left out as redundant
+    (#520).'
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:34683
 chemical_properties:
   cas_rn: 10039-32-4

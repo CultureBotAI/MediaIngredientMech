@@ -45,6 +45,30 @@ synonyms:
 - synonym_text: trichloroiron--water (1/6)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: FeCl3 . 6H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: FeCl3 x 6 H2O (0.1% w/v in 0.2 N HCl)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: FeCl3 x 6 H2O (0.5%)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: FeCl3 x 6 H2O (w/v=1%)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: FeCl3 x 6 H2O NaEDTA
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: FeCl3 x 6 H2O solution (2%)
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: FeCl3 x6H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
+- synonym_text: FeCl3*6 H2O
+  synonym_type: RAW_TEXT
+  source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 618
@@ -137,6 +161,16 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-02T22:41:49.137449+00:00'
+  curator: claude_sssom_surface_form_backfill
+  action: ADDED_SYNONYMS
+  changes: 'Recovered 8 surface form(s) that the published SSSOM `other` carried but
+    no curated record did, so a rebuild would have dropped them from KGX: ''FeCl3
+    . 6H2O''; ''FeCl3 x 6 H2O (0.1% w/v in 0.2 N HCl)''; ''FeCl3 x 6 H2O (0.5%)'';
+    ''FeCl3 x 6 H2O (w/v=1%)''; ''FeCl3 x 6 H2O NaEDTA''; ''FeCl3 x 6 H2O solution
+    (2%)''; ''FeCl3 x6H2O''; ''FeCl3*6 H2O''. Tokens already present on the kg-microbe
+    ontology node were left out as redundant (#520).'
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:86254
 chemical_properties:
   cas_rn: 10025-77-1
