@@ -1,7 +1,7 @@
 # All Ingredients
 
-Generated: 2026-09-01T02:19:46.943736+00:00
-Total: 2956 ingredients
+Generated: 2026-09-02T05:56:49.427165+00:00
+Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -83,7 +83,7 @@ Total: 2956 ingredients
 | cas:13977-65-6 | CHEBI:44976 | KH2PO3 | MAPPED | CHEBI | NARROW_MATCH | 3 |
 | cas:7788-99-0 | CHEBI:53471 | CrKSO42 x 12 H2O | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | cas:145224-94-8 | CHEBI:39005 | MES Hydrat | MAPPED | CHEBI | NARROW_MATCH | 4 |
-| cas:13408-09-8 | CHEBI:15978 | Na2glycerophosphate•5H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
+| cas:13408-09-8 | CHEBI:15978 | Na2glycerophosphate•5H2O | MAPPED | CHEBI | NARROW_MATCH | 6 |
 | cas:10049-21-5 | CHEBI:37585 | NaH2PO4•H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.ingredient:hans_100x_vitamins | kgmicrobe.ingredient:hans_100x_vitamins | Hans 100x vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:hans_1000x_minerals | kgmicrobe.ingredient:hans_1000x_minerals | Hans 1000x minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2801,7 +2801,6 @@ Total: 2956 ingredients
 | UNMAPPED_0395 |  | Grace's Insect Medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0398 |  | HBO3 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0399 |  | Heart Infusion Broth | UNMAPPED |  |  | 0 |
-| UNMAPPED_0401 |  | Homo-PIPES | UNMAPPED |  |  | 0 |
 | UNMAPPED_0402 |  | Horikoshi-I medium | UNMAPPED |  |  | 0 |
 | UNMAPPED_0404 |  | Hy-Case Amino | UNMAPPED |  |  | 0 |
 | UNMAPPED_0405 |  | IMDM-Medium | UNMAPPED |  |  | 0 |
@@ -2849,15 +2848,12 @@ Total: 2956 ingredients
 | UNMAPPED_0111 |  | Modified COMBO Medium | UNMAPPED |  |  | 1 |
 | UNMAPPED_0128 |  | Mueller Hinton II agar | UNMAPPED |  |  | 0 |
 | UNMAPPED_0455 |  | Murashige & Skoog medium | UNMAPPED |  |  | 0 |
-| UNMAPPED_0456 |  | Mycobactine J | UNMAPPED |  |  | 0 |
 | UNMAPPED_0458 |  | N-Z-Amine® A | UNMAPPED |  |  | 0 |
 | UNMAPPED_0459 |  | N-Z-Case | UNMAPPED |  |  | 0 |
 | UNMAPPED_0457 |  | N-Z amine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0460 |  | Na-Nitrilotriacetat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0463 |  | Na-tetrathionate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0465 |  | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED |  |  | 0 |
-| UNMAPPED_0081 |  | Na2Glycerophosphate.5H2O | UNMAPPED |  |  | 1 |
-| UNMAPPED_0101 |  | Na2Glycerophosphate•5H2O | UNMAPPED |  |  | 1 |
 | UNMAPPED_0475 |  | Na3-NTA x H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0477 |  | NaSiO3 x 9 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0050 |  | Natural sea-salt | UNMAPPED |  |  | 2 |
