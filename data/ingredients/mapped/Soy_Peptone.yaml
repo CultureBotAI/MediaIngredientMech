@@ -107,13 +107,27 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-04T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Replaced computational nutritional_roles.PROTEIN_SOURCE evidence with a
+    PMID/DOI citation for Soytone as a soybean-meal hydrolysate nitrogen source.
+  llm_assisted: true
+  llm_model: gpt-5
 ingredient_type: UNDEFINED_MIXTURE
 merged:
 - CHEBI:8150
 nutritional_roles:
 - role: PROTEIN_SOURCE
-  confidence: 0.8
+  confidence: 0.95
   evidence:
-  - reference_type: COMPUTATIONAL_PREDICTION
-    reference_text: Inferred from curated media-role name pattern
-    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  - reference_text: Kwon et al. 2000. Production of lactic acid by Lactobacillus rhamnosus
+      with vitamin-supplemented soybean hydrolysate.
+    reference_type: PEER_REVIEWED_PUBLICATION
+    doi: 10.1016/s0141-0229(99)00134-9
+    pmid: '10689079'
+    url: https://pubmed.ncbi.nlm.nih.gov/10689079/
+    excerpt: An enzyme-hydrolysate of soybean meal, Soytone
+    curator_note: Kwon et al. evaluated Soytone as a complex nitrogen source for Lactobacillus
+      rhamnosus lactic acid fermentation, directly supporting soy peptone as a peptide/proteinaceous
+      nutrient source.

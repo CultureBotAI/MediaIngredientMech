@@ -34,12 +34,88 @@ curation_history:
   changes: Promoted UNMAPPED_0306 -> kgmicrobe.ingredient:wolfes_vitamin_mix "Wolfe's
     vitamin mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row
     added.
+- timestamp: '2026-09-04T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added nutritional_roles.VITAMIN_SOURCE plus components and component_assertion
+    by transcribing NCMA Medium 6 Wolfe's Vitamin Solution.
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   61 CultureBot media; samples: ShewMM, YCFA, MG minimal media…. No CAS-RN or CHEBI
   mapping available; reviewed on 2026-05-11 as a named vitamin stock/pre-mix pending
   component-level recipe curation.'
 ingredient_type: STOCK_SOLUTION
 solution_type: VITAMIN_MIX
+components:
+- component_name: Pyridoxine HCl
+  component_id: CHEBI:30961
+  reference_scope: MIM_CATALOG
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_L
+- component_name: Thiamine HCl
+  component_id: CHEBI:49105
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: Riboflavin
+  component_id: CHEBI:17015
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: Nicotinic Acid
+  component_id: CHEBI:15940
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: Calcium pantothenate
+  component_id: CHEBI:31345
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: p-Aminobenzoic acid
+  component_id: CHEBI:30753
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: Thioctic acid
+  component_id: CHEBI:30314
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: Biotin
+  component_id: CHEBI:15956
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.0'
+  concentration_unit: MG_PER_L
+- component_name: Folic acid
+  component_id: CHEBI:27470
+  reference_scope: MIM_CATALOG
+  concentration_value: '2'
+  concentration_unit: MG_PER_L
+- component_name: Vitamin B12
+  component_id: CHEBI:176843
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: MG_PER_L
+- component_name: Potassium phosphate monobasic
+  component_id: CHEBI:63036
+  reference_scope: MIM_CATALOG
+  concentration_value: '900'
+  concentration_unit: MG_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: L_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://ncma.bigelow.org/PDF%20Files/NCMA%20Medium%206%20Wolfe%27s%20Vitamin%20Solution.pdf
+    source_record: NCMA Medium 6
+    notes: NCMA Medium 6 lists the per-liter constituents for Wolfe's Vitamin Solution.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:wolfes_vitamin_mix
   ontology_label: Wolfe's vitamin mix
@@ -54,3 +130,13 @@ ontology_mapping:
       not a substance. Takes the STOCK_SOLUTION convention used by 12 existing mapped
       records: a kgmicrobe.ingredient: mint. No parent, because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: NCMA Medium 6 Wolfe's Vitamin Solution
+    reference_type: TECHNICAL_REPORT
+    url: https://ncma.bigelow.org/PDF%20Files/NCMA%20Medium%206%20Wolfe%27s%20Vitamin%20Solution.pdf
+    excerpt: Based on Wolfe's Vitamin Solution
+    curator_note: NCMA Medium 6 enumerates a Wolfe's vitamin stock containing B vitamins
+      and related micronutrient cofactors.

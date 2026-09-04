@@ -34,6 +34,13 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-04T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added components and component_assertion by transcribing the FDA BAM Medium
+    1 Brain Heart Infusion formula.
+  llm_assisted: true
+  llm_model: gpt-5
 notes: Imported from mim-queue (source_id=mediadive.ingredient:827); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
@@ -47,3 +54,49 @@ ontology_mapping:
     source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0347; matched via 'Brain heart infusion broth';
       stem-substring
+components:
+- component_name: Calf brain, infusion from
+  reference_scope: UNMAPPED
+  concentration_value: '200'
+  concentration_unit: G_PER_L
+- component_name: Beef Heart Infusion
+  component_id: kgmicrobe.ingredient:beef_heart_infusion
+  reference_scope: MIM_CATALOG
+  concentration_value: '250'
+  concentration_unit: G_PER_L
+- component_name: Proteose peptone (Difco)
+  component_id: MICRO:0000180
+  reference_scope: MIM_CATALOG
+  concentration_value: '10'
+  concentration_unit: G_PER_L
+- component_name: NaCl
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '5'
+  concentration_unit: G_PER_L
+- component_name: Na2HPO4
+  component_id: CHEBI:34683
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.5'
+  concentration_unit: G_PER_L
+- component_name: Dextrose
+  component_id: CHEBI:17634
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.0'
+  concentration_unit: G_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: L_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.fda.gov/food/laboratory-methods-food/bam-media-m24-brain-heart-infusion-bhi-broth-and-agar-equivalent-media-are-available-difco-and-bbl
+    source_record: BAM Media M24 Medium 1
+    notes: FDA's BAM Medium 1 recipe names the Brain Heart Infusion broth constituents
+      and per-liter amounts.
+  notes: FDA lists Proteose peptone (Difco) or polypeptone (Bioquest) as alternatives;
+    this MIM decomposition follows the Difco alternative.

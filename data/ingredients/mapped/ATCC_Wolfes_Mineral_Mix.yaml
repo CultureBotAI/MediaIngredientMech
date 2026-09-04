@@ -34,12 +34,95 @@ curation_history:
   changes: Promoted UNMAPPED_0298 -> kgmicrobe.ingredient:atcc_wolfes_mineral_mix
     "ATCC Wolfe's mineral mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED,
     SSSOM row added.
+- timestamp: '2026-09-04T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added nutritional mineral/trace-element roles plus components and component_assertion
+    by transcribing the ATCC MD-TMS Wolfe's Mineral Solution formula in ATCC Medium
+    2672.
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   46 CultureBot media; samples: NLDM_defined_nocarbon_novitamin, Mega, NLDM_defined_no_iron….
   No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as an ATCC-branded
   Wolfe mineral stock/pre-mix pending component-level recipe curation.'
 ingredient_type: STOCK_SOLUTION
 solution_type: MINERAL_STOCK
+components:
+- component_name: EDTA
+  component_id: CHEBI:4735
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: MgSO4.7H2O
+  component_id: CHEBI:31795
+  reference_scope: MIM_CATALOG
+  concentration_value: '3.0'
+  concentration_unit: G_PER_L
+- component_name: MnSO4.H2O
+  component_id: CHEBI:86364
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: NaCl
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L
+- component_name: FeSO4.7H2O
+  component_id: CHEBI:75836
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: CoCl2 x 6 H2O
+  component_id: CHEBI:53503
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: CaCl2
+  component_id: CHEBI:3312
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: ZnSO4.7H2O
+  component_id: CHEBI:32312
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: CuSO4.5H2O
+  component_id: CHEBI:31440
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: AlK(SO4)2.12H2O
+  component_id: CHEBI:86465
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: H3BO3
+  component_id: CHEBI:33118
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: Na2MoO4.2H2O
+  component_id: CHEBI:75213
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: L_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+    source_record: ATCC Medium 2672 Wolfe's Mineral Solution
+    notes: ATCC Medium 2672 includes the MD-TMS Wolfe's Mineral Solution formulation
+      and per-liter amounts.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:atcc_wolfes_mineral_mix
   ontology_label: ATCC Wolfe's mineral mix
@@ -54,3 +137,23 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: ATCC Medium 2672 Modified Wolfe's Mineral Media
+    reference_type: TECHNICAL_REPORT
+    url: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+    excerpt: Trace Mineral Supplement, catalog no. MD-TMS
+    curator_note: ATCC Medium 2672 enumerates the ready-to-use ATCC MD-TMS stock as
+      a Wolfe's mineral solution containing bulk inorganic mineral salts.
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_text: ATCC Medium 2672 Modified Wolfe's Mineral Media
+    reference_type: TECHNICAL_REPORT
+    url: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+    excerpt: Trace Mineral Supplement, catalog no. MD-TMS
+    curator_note: ATCC Medium 2672 enumerates the ready-to-use ATCC MD-TMS stock as
+      a Wolfe's mineral solution containing iron, cobalt, zinc, copper, aluminium,
+      boron, and molybdate trace salts.

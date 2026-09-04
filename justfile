@@ -572,6 +572,12 @@ enrich-edison-response *args="":
 apply-role-research-results batch *args="":
     uv run python scripts/apply_role_research_results.py {{batch}} {{args}}
 
+# Score individual records by causal graph edge content and citation quality.
+# Writes reports/causal_graph_readiness.tsv by default, ordered with the poorest
+# graph-ready records first so role-evidence review can start at the top.
+score-causal-graph-readiness *args="":
+    uv run python scripts/score_causal_graph_readiness.py {{args}}
+
 # Project data/curated/ onto the per-record tree, validate, and verify they agree
 sync-individual:
     # Treats the COLLECTION as the source of truth, so it OVERWRITES anything
