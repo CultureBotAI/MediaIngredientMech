@@ -88,11 +88,11 @@ CITATION_TYPE_POINTS = {
     "COMPUTATIONAL_PREDICTION": 0.10,
 }
 
-EXTERNAL_ROLE_REFERENCE_TYPES = {
-    "PEER_REVIEWED_PUBLICATION",
-    "PREPRINT",
-    "DATABASE_ENTRY",
-    "TECHNICAL_REPORT",
+EXTERNAL_ROLE_REFERENCE_LOCATORS = {
+    "PEER_REVIEWED_PUBLICATION": ("doi", "pmid", "url", "reference_text"),
+    "PREPRINT": ("doi", "url", "reference_text"),
+    "DATABASE_ENTRY": ("url", "reference_text"),
+    "TECHNICAL_REPORT": ("url", "reference_text"),
 }
 
 DUPLICATE_IDENTIFIER_PENALTY_POINTS = {
@@ -189,10 +189,19 @@ def best_citation_score(evidence: Sequence[dict[str, Any]]) -> float:
     return max((citation_score(citation) for citation in evidence), default=0.0)
 
 
+def has_value(value: Any) -> bool:
+    if isinstance(value, str):
+        return bool(value.strip())
+    return value is not None
+
+
+def has_external_role_locator(citation: dict[str, Any]) -> bool:
+    locators = EXTERNAL_ROLE_REFERENCE_LOCATORS.get(citation.get("reference_type"), ())
+    return any(has_value(citation.get(locator)) for locator in locators)
+
+
 def has_external_role_evidence(evidence: Sequence[dict[str, Any]]) -> bool:
-    return any(
-        citation.get("reference_type") in EXTERNAL_ROLE_REFERENCE_TYPES for citation in evidence
-    )
+    return any(has_external_role_locator(citation) for citation in evidence)
 
 
 def _mapping_evidence_points(evidence: Sequence[dict[str, Any]]) -> float:

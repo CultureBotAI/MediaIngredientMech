@@ -105,6 +105,74 @@ def test_detailed_non_external_role_evidence_still_lacks_external_source(referen
     assert "role_lacks_external_evidence:nutritional_roles.CARBON_SOURCE" in row.issues
 
 
+@pytest.mark.parametrize(
+    "reference_type",
+    [
+        "PEER_REVIEWED_PUBLICATION",
+        "PREPRINT",
+        "DATABASE_ENTRY",
+        "TECHNICAL_REPORT",
+    ],
+)
+def test_bare_external_role_evidence_still_lacks_external_source(reference_type):
+    record = _record(
+        nutritional_roles=[
+            {
+                "role": "CARBON_SOURCE",
+                "confidence": 0.9,
+                "evidence": [{"reference_type": reference_type}],
+            }
+        ]
+    )
+
+    row = _score.score_record(Path("bare.yaml"), record)
+
+    assert row.best_role_evidence > 0
+    assert "role_lacks_external_evidence:nutritional_roles.CARBON_SOURCE" in row.issues
+
+
+def test_blank_external_role_locator_still_lacks_external_source():
+    record = _record(
+        nutritional_roles=[
+            {
+                "role": "CARBON_SOURCE",
+                "confidence": 0.9,
+                "evidence": [{"reference_type": "DATABASE_ENTRY", "reference_text": "  "}],
+            }
+        ]
+    )
+
+    row = _score.score_record(Path("blank.yaml"), record)
+
+    assert "role_lacks_external_evidence:nutritional_roles.CARBON_SOURCE" in row.issues
+
+
+@pytest.mark.parametrize(
+    ("reference_type", "locator"),
+    [
+        ("PEER_REVIEWED_PUBLICATION", {"pmid": "12345678"}),
+        ("PREPRINT", {"doi": "10.1101/2026.01.01.000001"}),
+        ("DATABASE_ENTRY", {"reference_text": "ChEBI role annotation"}),
+        ("TECHNICAL_REPORT", {"url": "https://example.org/report"}),
+    ],
+)
+def test_located_external_role_evidence_clears_external_source_issue(reference_type, locator):
+    citation = {"reference_type": reference_type, **locator}
+    record = _record(
+        nutritional_roles=[
+            {
+                "role": "CARBON_SOURCE",
+                "confidence": 0.9,
+                "evidence": [citation],
+            }
+        ]
+    )
+
+    row = _score.score_record(Path("located.yaml"), record)
+
+    assert "role_lacks_external_evidence:nutritional_roles.CARBON_SOURCE" not in row.issues
+
+
 def test_records_without_roles_sort_ahead_of_higher_scoring_role_records(tmp_path):
     ingredients_dir = tmp_path / "ingredients" / "mapped"
     ingredients_dir.mkdir(parents=True)
