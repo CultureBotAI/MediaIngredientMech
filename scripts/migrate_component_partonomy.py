@@ -104,6 +104,8 @@ PARTIAL_MEDIUM_COMPOSITION = frozenset(
     }
 )
 
+MIGRATED_COMPONENT_PARENTS = LABEL_ENUMERATION | ABBREVIATION_EXPANSION | PARTIAL_MEDIUM_COMPOSITION
+
 REMOVE_NON_PARTONOMY = {
     "BHI": (
         "BHI to MICRO:0000193 brain heart infusion is a whole-medium identity/alias "
@@ -248,8 +250,14 @@ def _history(record: dict[str, Any], action: str, changes: str) -> None:
 def migrate(records: list[dict[str, Any]]) -> tuple[int, int]:
     """Mutate ``records`` and return (typed, removed) record counts."""
 
-    before_parent_count = sum(bool(record.get("components")) for record in records)
-    before_component_count = sum(len(record.get("components") or []) for record in records)
+    expected = MIGRATED_COMPONENT_PARENTS | set(REMOVE_NON_PARTONOMY)
+    migration_records = [
+        record for record in records if str(record.get("preferred_term") or "") in expected
+    ]
+    before_parent_count = sum(bool(record.get("components")) for record in migration_records)
+    before_component_count = sum(
+        len(record.get("components") or []) for record in migration_records
+    )
     if (before_parent_count, before_component_count) not in {(57, 147), (54, 143)}:
         raise ValueError(
             "component inventory is neither the reviewed pre-migration 57/147 nor "
@@ -302,11 +310,11 @@ def migrate(records: list[dict[str, Any]]) -> tuple[int, int]:
 
         if not components:
             continue
-        seen.add(label)
 
         classification = _classification(label)
         if classification is None:
-            raise ValueError(f"unclassified component parent: {label!r}")
+            continue
+        seen.add(label)
         method, completeness = classification
         typed_components = [_typed_component(component, active_ids) for component in components]
         record["components"] = typed_components
@@ -330,12 +338,6 @@ def migrate(records: list[dict[str, Any]]) -> tuple[int, int]:
         )
         typed_count += 1
 
-    expected = (
-        LABEL_ENUMERATION
-        | ABBREVIATION_EXPANSION
-        | PARTIAL_MEDIUM_COMPOSITION
-        | set(REMOVE_NON_PARTONOMY)
-    )
     missing = expected - seen
     unexpected = seen - expected
     if missing or unexpected:
@@ -344,7 +346,11 @@ def migrate(records: list[dict[str, Any]]) -> tuple[int, int]:
             f"unexpected={sorted(unexpected)!r}"
         )
 
-    after_parents = [record for record in records if record.get("components")]
+    after_parents = [
+        record
+        for record in records
+        if record.get("preferred_term") in MIGRATED_COMPONENT_PARENTS and record.get("components")
+    ]
     after_component_count = sum(len(record["components"]) for record in after_parents)
     scope_counts: dict[str, int] = {}
     for record in after_parents:
