@@ -88,11 +88,11 @@ CITATION_TYPE_POINTS = {
     "COMPUTATIONAL_PREDICTION": 0.10,
 }
 
-EXTERNAL_ROLE_REFERENCE_TYPES = {
-    "PEER_REVIEWED_PUBLICATION",
-    "PREPRINT",
-    "DATABASE_ENTRY",
-    "TECHNICAL_REPORT",
+EXTERNAL_ROLE_REFERENCE_LOCATORS = {
+    "PEER_REVIEWED_PUBLICATION": ("doi", "pmid", "url", "reference_text"),
+    "PREPRINT": ("doi", "url", "reference_text"),
+    "DATABASE_ENTRY": ("url", "reference_text"),
+    "TECHNICAL_REPORT": ("url", "reference_text"),
 }
 
 DUPLICATE_IDENTIFIER_PENALTY_POINTS = {
@@ -169,18 +169,34 @@ def _int(value: Any, default: int = 0) -> int:
         return default
 
 
+def has_value(value: Any) -> bool:
+    if isinstance(value, str):
+        return bool(value.strip())
+    return value is not None
+
+
+def has_external_role_locator(citation: dict[str, Any]) -> bool:
+    locators = EXTERNAL_ROLE_REFERENCE_LOCATORS.get(citation.get("reference_type"), ())
+    return any(has_value(citation.get(locator)) for locator in locators)
+
+
 def citation_score(citation: dict[str, Any]) -> float:
     """Score one RoleCitation from 0.0 to 1.0."""
-    score = CITATION_TYPE_POINTS.get(citation.get("reference_type"), 0.0)
-    if citation.get("doi") or citation.get("pmid"):
+    reference_type = citation.get("reference_type")
+    score = CITATION_TYPE_POINTS.get(reference_type, 0.0)
+    if reference_type in EXTERNAL_ROLE_REFERENCE_LOCATORS and not has_external_role_locator(
+        citation
+    ):
+        score = 0.0
+    if has_value(citation.get("doi")) or has_value(citation.get("pmid")):
         score += 0.20
-    if citation.get("url"):
+    if has_value(citation.get("url")):
         score += 0.10
-    if citation.get("reference_text"):
+    if has_value(citation.get("reference_text")):
         score += 0.05
-    if citation.get("excerpt"):
+    if has_value(citation.get("excerpt")):
         score += 0.15
-    if citation.get("curator_note"):
+    if has_value(citation.get("curator_note")):
         score += 0.10
     return min(1.0, score)
 
@@ -190,9 +206,18 @@ def best_citation_score(evidence: Sequence[dict[str, Any]]) -> float:
 
 
 def has_external_role_evidence(evidence: Sequence[dict[str, Any]]) -> bool:
-    return any(
-        citation.get("reference_type") in EXTERNAL_ROLE_REFERENCE_TYPES for citation in evidence
-    )
+    return any(has_external_role_locator(citation) for citation in evidence)
+
+
+def external_role_references_missing_locators(
+    evidence: Sequence[dict[str, Any]],
+) -> set[str]:
+    return {
+        reference_type
+        for citation in evidence
+        if (reference_type := citation.get("reference_type")) in EXTERNAL_ROLE_REFERENCE_LOCATORS
+        and not has_external_role_locator(citation)
+    }
 
 
 def _mapping_evidence_points(evidence: Sequence[dict[str, Any]]) -> float:
@@ -263,6 +288,8 @@ def score_roles(record: dict[str, Any]) -> tuple[float, float, int, int, float, 
             issues.append(f"role_missing_evidence:{slot}.{role}")
         elif not has_external_role_evidence(evidence):
             issues.append(f"role_lacks_external_evidence:{slot}.{role}")
+        for reference_type in sorted(external_role_references_missing_locators(evidence)):
+            issues.append(f"external_role_evidence_missing_locator:{slot}.{role}.{reference_type}")
         if slot == "cellular_metabolic_roles" and not assignment.get("metabolic_context"):
             issues.append(f"cellular_role_missing_metabolic_context:{role}")
 
