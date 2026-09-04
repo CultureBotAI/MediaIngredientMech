@@ -88,6 +88,13 @@ CITATION_TYPE_POINTS = {
     "COMPUTATIONAL_PREDICTION": 0.10,
 }
 
+EXTERNAL_ROLE_REFERENCE_TYPES = {
+    "PEER_REVIEWED_PUBLICATION",
+    "PREPRINT",
+    "DATABASE_ENTRY",
+    "TECHNICAL_REPORT",
+}
+
 DUPLICATE_IDENTIFIER_PENALTY_POINTS = {
     "NEEDS_OWN_ID": 3.0,
     "NEEDS_OWN_ID_MEMBER_UNDECIDED": 2.0,
@@ -182,6 +189,12 @@ def best_citation_score(evidence: Sequence[dict[str, Any]]) -> float:
     return max((citation_score(citation) for citation in evidence), default=0.0)
 
 
+def has_external_role_evidence(evidence: Sequence[dict[str, Any]]) -> bool:
+    return any(
+        citation.get("reference_type") in EXTERNAL_ROLE_REFERENCE_TYPES for citation in evidence
+    )
+
+
 def _mapping_evidence_points(evidence: Sequence[dict[str, Any]]) -> float:
     if not evidence:
         return 0.0
@@ -248,7 +261,7 @@ def score_roles(record: dict[str, Any]) -> tuple[float, float, int, int, float, 
         evidence_scores.append(best)
         if not evidence:
             issues.append(f"role_missing_evidence:{slot}.{role}")
-        elif best <= CITATION_TYPE_POINTS["COMPUTATIONAL_PREDICTION"] + 0.20:
+        elif not has_external_role_evidence(evidence):
             issues.append(f"role_lacks_external_evidence:{slot}.{role}")
         if slot == "cellular_metabolic_roles" and not assignment.get("metabolic_context"):
             issues.append(f"cellular_role_missing_metabolic_context:{role}")

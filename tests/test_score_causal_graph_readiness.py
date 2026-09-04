@@ -79,6 +79,32 @@ def test_role_evidence_outranks_computational_predictions():
     assert "role_lacks_external_evidence:physicochemical_roles.BUFFER" in weak_row.issues
 
 
+@pytest.mark.parametrize("reference_type", ["COMPUTATIONAL_PREDICTION", "MANUAL_CURATION"])
+def test_detailed_non_external_role_evidence_still_lacks_external_source(reference_type):
+    record = _record(
+        nutritional_roles=[
+            {
+                "role": "CARBON_SOURCE",
+                "confidence": 0.9,
+                "evidence": [
+                    {
+                        "reference_type": reference_type,
+                        "reference_text": "name-list or manual inference",
+                        "url": "https://example.org/model",
+                        "excerpt": "predicted carbon source",
+                        "curator_note": "The role was inferred without an external source.",
+                    }
+                ],
+            }
+        ]
+    )
+
+    row = _score.score_record(Path("predicted.yaml"), record)
+
+    assert row.best_role_evidence > _score.CITATION_TYPE_POINTS["COMPUTATIONAL_PREDICTION"]
+    assert "role_lacks_external_evidence:nutritional_roles.CARBON_SOURCE" in row.issues
+
+
 def test_records_without_roles_sort_ahead_of_higher_scoring_role_records(tmp_path):
     ingredients_dir = tmp_path / "ingredients" / "mapped"
     ingredients_dir.mkdir(parents=True)
