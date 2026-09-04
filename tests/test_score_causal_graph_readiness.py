@@ -6,6 +6,7 @@ import importlib.util
 import sys
 from pathlib import Path
 
+import pytest
 import yaml
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -164,6 +165,14 @@ def test_load_duplicate_identifier_dispositions(tmp_path):
     assert _score.load_duplicate_identifier_dispositions(baseline) == {
         ("mapped", "NCIT:C896"): "NEEDS_OWN_ID"
     }
+
+
+def test_load_duplicate_identifier_dispositions_rejects_malformed_baseline(tmp_path):
+    baseline = tmp_path / "baseline.tsv"
+    baseline.write_text("identifier\tcollection\nNCIT:C896\tmapped\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="disposition"):
+        _score.load_duplicate_identifier_dispositions(baseline)
 
 
 def test_rejected_records_are_skipped_by_default(tmp_path):

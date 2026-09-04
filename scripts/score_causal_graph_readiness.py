@@ -62,6 +62,7 @@ FIELDNAMES = [
     "best_role_evidence",
     "issues",
 ]
+DUPLICATE_BASELINE_REQUIRED_FIELDS = {"identifier", "collection", "disposition"}
 
 MAPPING_QUALITY_POINTS = {
     "EXACT_MATCH": 10.0,
@@ -353,11 +354,16 @@ def load_duplicate_identifier_dispositions(
 
     dispositions: dict[tuple[str, str], str] = {}
     with baseline.open(newline="", encoding="utf-8") as handle:
-        for row in csv.DictReader(handle, delimiter="\t"):
+        reader = csv.DictReader(handle, delimiter="\t")
+        missing = DUPLICATE_BASELINE_REQUIRED_FIELDS - set(reader.fieldnames or [])
+        if missing:
+            raise ValueError(f"{baseline} is missing column(s): {', '.join(sorted(missing))}")
+
+        for row in reader:
             identifier = row.get("identifier", "")
             collection = row.get("collection", "")
             if identifier and collection:
-                dispositions[(collection, identifier)] = row.get("disposition", "UNREVIEWED")
+                dispositions[(collection, identifier)] = row.get("disposition") or "UNREVIEWED"
     return dispositions
 
 
@@ -448,13 +454,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     statuses = tuple(args.status) if args.status else DEFAULT_STATUSES
+    try:
+        duplicate_identifier_dispositions = load_duplicate_identifier_dispositions(
+            args.duplicate_baseline
+        )
+    except ValueError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+
     rows = rank_records(
         collect_paths(args.ingredients_dir, statuses),
         args.min_occurrences,
         include_rejected=args.include_rejected,
-        duplicate_identifier_dispositions=load_duplicate_identifier_dispositions(
-            args.duplicate_baseline
-        ),
+        duplicate_identifier_dispositions=duplicate_identifier_dispositions,
     )
     if args.limit is not None:
         rows = rows[: args.limit]
