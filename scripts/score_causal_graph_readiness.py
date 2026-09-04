@@ -10,7 +10,8 @@ least graph-ready records can be researched first.
 Lower scores need review first:
 
     just score-causal-graph-readiness
-    just score-causal-graph-readiness --status mapped --limit 50
+    just score-causal-graph-readiness --limit 50
+    just score-causal-graph-readiness --status unmapped --limit 50
 """
 
 from __future__ import annotations
@@ -37,6 +38,7 @@ from mediaingredientmech.utils.role_iteration import (  # noqa: E402
 DEFAULT_INGREDIENTS_DIR = ROOT / "data" / "ingredients"
 DEFAULT_OUT = ROOT / "reports" / "causal_graph_readiness.tsv"
 STATUSES = ("mapped", "unmapped")
+DEFAULT_STATUSES = ("mapped",)
 COMPONENT_PARENT_TYPES = {"NAMED_MEDIUM", "STOCK_SOLUTION", "UNDEFINED_MIXTURE"}
 SAFE_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
@@ -363,7 +365,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--status",
         choices=STATUSES,
         action="append",
-        help="Restrict to a status subdirectory. Repeatable; defaults to both.",
+        help="Restrict to a status subdirectory. Repeatable; defaults to mapped.",
     )
     parser.add_argument(
         "--min-occurrences",
@@ -383,7 +385,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    statuses = tuple(args.status) if args.status else STATUSES
+    statuses = tuple(args.status) if args.status else DEFAULT_STATUSES
     rows = rank_records(
         collect_paths(args.ingredients_dir, statuses),
         args.min_occurrences,

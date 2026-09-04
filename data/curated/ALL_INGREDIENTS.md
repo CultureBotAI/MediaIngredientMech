@@ -1985,7 +1985,6 @@
 | mesh:C069668 | Toray silicone SH 5535 | mesh:C069668 | MESH | LEXICAL_MATCH | 2 |
 | CHEBI:69241 | Totarol | CHEBI:69241 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C896 | Trace element solution | NCIT:C896 | NCIT | LEXICAL_MATCH | 8 |
-| NCIT:C896 | Trace element solution SL-10 | NCIT:C896 | NCIT | LEXICAL_MATCH | 8 |
 | kgmicrobe.ingredient:trace_element_solution_see_medium_no_187 | Trace element solution see Medium No. 187 | NCIT:C896 | NCIT | CLOSE_MATCH | 0 |
 | MICRO:0001349 | Trace metal mix A5 | MICRO:0001349 | MICRO | EXACT_MATCH | 2 |
 | CHEBI:38366 | trans-2-Pentenoic acid | CHEBI:38366 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -2635,6 +2634,7 @@
 | CHEBI:27864 | Dichloran (0.2% in ethanol) | CHEBI:27864 | CHEBI | SYNONYM_MATCH | 1 |
 | NCIT:C217966 | hydroxocobalamin hydrochloride | NCIT:C217966 | NCIT | EXACT_MATCH | 1 |
 | NCIT:C120561 | Sodium glycerophosphate | NCIT:C120561 | NCIT | EXACT_MATCH | 25 |
+| kgmicrobe.ingredient:trace_element_solution_sl-10 | Trace element solution SL-10 | NCIT:C896 | NCIT | CLOSE_MATCH | 8 |
 
 ## Unmapped Ingredients
 

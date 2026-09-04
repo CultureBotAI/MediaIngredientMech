@@ -5,14 +5,20 @@ Generate index files for all MediaIngredientMech records.
 Creates JSON, CSV, and Markdown exports for easy reference.
 """
 
-import sys
-import json
 import csv
+import json
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+import yaml
 
-from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+
+def load_records(path: Path) -> list[dict]:
+    """Load the aggregate collection that drives one curated index."""
+    doc = yaml.safe_load(path.read_text(encoding='utf-8')) or {}
+    records = doc.get('ingredients')
+    if not isinstance(records, list):
+        raise ValueError(f"{path} does not contain an ingredients list")
+    return records
 
 
 def generate_json_index(records: list[dict], output_path: Path) -> None:
@@ -174,19 +180,14 @@ def main():
     print("=" * 80)
     print()
 
-    # Load mapped ingredients
-    mapped_curator = IngredientCurator(data_path='data/curated/mapped_ingredients.yaml')
-    mapped_curator.load()
-    print(f"Loaded {len(mapped_curator.records)} mapped ingredients")
+    mapped_records = load_records(Path('data/curated/mapped_ingredients.yaml'))
+    print(f"Loaded {len(mapped_records)} mapped ingredients")
 
-    # Load unmapped ingredients
-    unmapped_curator = IngredientCurator(data_path='data/curated/unmapped_ingredients.yaml')
-    unmapped_curator.load()
-    print(f"Loaded {len(unmapped_curator.records)} unmapped ingredients")
+    unmapped_records = load_records(Path('data/curated/unmapped_ingredients.yaml'))
+    print(f"Loaded {len(unmapped_records)} unmapped ingredients")
     print()
 
-    # Combine all records
-    all_records = mapped_curator.records + unmapped_curator.records
+    all_records = mapped_records + unmapped_records
     print(f"Total: {len(all_records)} ingredients")
     print()
 
@@ -194,22 +195,22 @@ def main():
 
     # Generate JSON
     print("Generating JSON indexes...")
-    generate_json_index(mapped_curator.records, output_dir / 'mapped_ingredients_index.json')
-    generate_json_index(unmapped_curator.records, output_dir / 'unmapped_ingredients_index.json')
+    generate_json_index(mapped_records, output_dir / 'mapped_ingredients_index.json')
+    generate_json_index(unmapped_records, output_dir / 'unmapped_ingredients_index.json')
     generate_json_index(all_records, output_dir / 'all_ingredients_index.json')
     print()
 
     # Generate CSV
     print("Generating CSV indexes...")
-    generate_csv_index(mapped_curator.records, output_dir / 'mapped_ingredients_index.csv')
-    generate_csv_index(unmapped_curator.records, output_dir / 'unmapped_ingredients_index.csv')
+    generate_csv_index(mapped_records, output_dir / 'mapped_ingredients_index.csv')
+    generate_csv_index(unmapped_records, output_dir / 'unmapped_ingredients_index.csv')
     generate_csv_index(all_records, output_dir / 'all_ingredients_index.csv')
     print()
 
     # Generate Markdown
     print("Generating Markdown indexes...")
-    generate_markdown_index(mapped_curator.records, output_dir / 'MAPPED_INGREDIENTS.md', 'Mapped Ingredients Index')
-    generate_markdown_index(unmapped_curator.records, output_dir / 'UNMAPPED_INGREDIENTS.md', 'Unmapped Ingredients Index')
+    generate_markdown_index(mapped_records, output_dir / 'MAPPED_INGREDIENTS.md', 'Mapped Ingredients Index')
+    generate_markdown_index(unmapped_records, output_dir / 'UNMAPPED_INGREDIENTS.md', 'Unmapped Ingredients Index')
     generate_markdown_index(all_records, output_dir / 'ALL_INGREDIENTS.md', 'Complete Ingredients Index')
     print()
 

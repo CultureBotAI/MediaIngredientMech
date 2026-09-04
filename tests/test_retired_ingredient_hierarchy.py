@@ -14,6 +14,7 @@ from scripts.generate_index_files import (
     generate_csv_index,
     generate_json_index,
     generate_markdown_index,
+    load_records,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -85,6 +86,25 @@ def test_index_exports_do_not_restore_legacy_hierarchy(tmp_path):
     exported = json.loads(json_path.read_text(encoding="utf-8"))[0]
     assert RETIRED_FIELDS.keys().isdisjoint(exported)
     assert "Hierarchy Parents" not in markdown_path.read_text(encoding="utf-8")
+
+
+def test_index_record_loader_reads_aggregate_ingredients(tmp_path):
+    path = tmp_path / "collection.yaml"
+    path.write_text(yaml.safe_dump({"ingredients": [BASE_RECORD]}), encoding="utf-8")
+
+    assert load_records(path) == [BASE_RECORD]
+
+
+def test_index_record_loader_rejects_malformed_collections(tmp_path):
+    path = tmp_path / "collection.yaml"
+    path.write_text(yaml.safe_dump({"records": []}), encoding="utf-8")
+
+    try:
+        load_records(path)
+    except ValueError as exc:
+        assert "does not contain an ingredients list" in str(exc)
+    else:
+        raise AssertionError("malformed collection was accepted")
 
 
 def test_prototype_is_archived_not_maintained():
