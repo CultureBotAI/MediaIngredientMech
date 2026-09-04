@@ -359,14 +359,25 @@ def load_duplicate_identifier_dispositions(
         if missing:
             raise ValueError(f"{baseline} is missing column(s): {', '.join(sorted(missing))}")
 
-        for row in reader:
-            identifier = row.get("identifier", "")
-            collection = row.get("collection", "")
-            if identifier and collection:
-                key = (collection, identifier)
-                if key in dispositions:
-                    raise ValueError(f"{baseline}: duplicate row for {identifier} in {collection}")
-                dispositions[key] = row.get("disposition") or "UNREVIEWED"
+        for line_number, row in enumerate(reader, start=2):
+            identifier = (row.get("identifier") or "").strip()
+            collection = (row.get("collection") or "").strip()
+            disposition = (row.get("disposition") or "").strip() or "UNREVIEWED"
+            if not identifier:
+                raise ValueError(f"{baseline}:{line_number} is missing an identifier")
+            if collection not in STATUSES:
+                raise ValueError(
+                    f"{baseline}:{line_number} has unsupported collection {collection!r}"
+                )
+            if disposition not in DUPLICATE_IDENTIFIER_PENALTY_POINTS:
+                raise ValueError(
+                    f"{baseline}:{line_number} has unsupported disposition {disposition!r}"
+                )
+
+            key = (collection, identifier)
+            if key in dispositions:
+                raise ValueError(f"{baseline}: duplicate row for {identifier} in {collection}")
+            dispositions[key] = disposition
     return dispositions
 
 

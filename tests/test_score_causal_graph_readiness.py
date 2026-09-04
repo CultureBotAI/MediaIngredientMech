@@ -188,6 +188,25 @@ def test_load_duplicate_identifier_dispositions_rejects_repeated_groups(tmp_path
         _score.load_duplicate_identifier_dispositions(baseline)
 
 
+@pytest.mark.parametrize(
+    ("row", "message"),
+    [
+        ("\tmapped\tNEEDS_OWN_ID\n", "missing an identifier"),
+        ("NCIT:C896\tmappped\tNEEDS_OWN_ID\n", "unsupported collection"),
+        ("NCIT:C896\tmapped\tNEED_OWN_ID\n", "unsupported disposition"),
+    ],
+)
+def test_load_duplicate_identifier_dispositions_rejects_invalid_rows(tmp_path, row, message):
+    baseline = tmp_path / "baseline.tsv"
+    baseline.write_text(
+        "identifier\tcollection\tdisposition\n" + row,
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match=message):
+        _score.load_duplicate_identifier_dispositions(baseline)
+
+
 def test_rejected_records_are_skipped_by_default(tmp_path):
     active = tmp_path / "active.yaml"
     rejected = tmp_path / "rejected.yaml"
