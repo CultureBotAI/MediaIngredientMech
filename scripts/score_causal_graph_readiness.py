@@ -363,7 +363,10 @@ def load_duplicate_identifier_dispositions(
             identifier = row.get("identifier", "")
             collection = row.get("collection", "")
             if identifier and collection:
-                dispositions[(collection, identifier)] = row.get("disposition") or "UNREVIEWED"
+                key = (collection, identifier)
+                if key in dispositions:
+                    raise ValueError(f"{baseline}: duplicate row for {identifier} in {collection}")
+                dispositions[key] = row.get("disposition") or "UNREVIEWED"
     return dispositions
 
 

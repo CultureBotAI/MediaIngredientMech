@@ -175,6 +175,19 @@ def test_load_duplicate_identifier_dispositions_rejects_malformed_baseline(tmp_p
         _score.load_duplicate_identifier_dispositions(baseline)
 
 
+def test_load_duplicate_identifier_dispositions_rejects_repeated_groups(tmp_path):
+    baseline = tmp_path / "baseline.tsv"
+    baseline.write_text(
+        "identifier\tcollection\tdisposition\n"
+        "NCIT:C896\tmapped\tNEEDS_OWN_ID\n"
+        "NCIT:C896\tmapped\tUNREVIEWED\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="duplicate row"):
+        _score.load_duplicate_identifier_dispositions(baseline)
+
+
 def test_rejected_records_are_skipped_by_default(tmp_path):
     active = tmp_path / "active.yaml"
     rejected = tmp_path / "rejected.yaml"
