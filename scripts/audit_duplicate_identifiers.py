@@ -49,6 +49,8 @@ distinction matters and use the most specific supported identity/grounding:
 What it enforces (`--check`, exit 2):
   * an identifier duplicated that is not in the baseline
   * a baseline group that GREW
+  * a baseline group that SHRANK -- normally good, but the preferred_terms and
+    fingerprint in the baseline must be refreshed deliberately
   * a baseline group whose MEMBERS CHANGED at constant size -- otherwise
     records can be swapped underneath a curator's verdict, and "these two
     spellings are safe to merge" silently comes to mean two different compounds
@@ -255,12 +257,14 @@ def main() -> int:
         new = sorted(k for k in now if k not in known)
         grew = sorted(k for k in now if k in known
                       and now[k]["record_count"] > int(known[k]["record_count"]))
+        shrank = sorted(k for k in now if k in known
+                        and now[k]["record_count"] < int(known[k]["record_count"]))
         swapped = sorted(k for k in now if k in known
                          and now[k]["record_count"] == int(known[k]["record_count"])
                          and now[k]["members_fingerprint"] != known[k].get("members_fingerprint"))
         gone = sorted(k for k in known if k not in now)
 
-        if not (new or grew or swapped or gone):
+        if not (new or grew or shrank or swapped or gone):
             print("\nOK: duplicate identifiers match the tracked baseline exactly.")
             return 0
 
@@ -270,6 +274,11 @@ def main() -> int:
         for k in grew:
             print(f"  GREW     {k[0]} ({k[1]}) "
                   f"{known[k]['record_count']} -> {now[k]['record_count']} records")
+        for k in shrank:
+            print(f"  SHRANK   {k[0]} ({k[1]}) "
+                  f"{known[k]['record_count']} -> {now[k]['record_count']} records")
+            print(f"           was: {known[k]['preferred_terms']}")
+            print(f"           now: {now[k]['preferred_terms']}")
         for k in swapped:
             print(f"  SWAPPED  {k[0]} ({k[1]}) same count, different records — "
                   f"baseline disposition {known[k]['disposition']!r} no longer applies")
@@ -277,10 +286,10 @@ def main() -> int:
             print(f"           now: {now[k]['preferred_terms']}")
         for k in gone:
             print(f"  GONE     {k[0]} ({k[1]}) no longer duplicated")
-        if gone and not (new or grew or swapped):
-            print("\nGONE entries are usually progress — but losing records wholesale looks "
-                  "identical here, so refresh the baseline deliberately rather than letting "
-                  "this pass silently.")
+        if (shrank or gone) and not (new or grew or swapped):
+            print("\nSHRANK/GONE entries are usually progress — but losing records wholesale "
+                  "looks identical here, so refresh the baseline deliberately rather than "
+                  "letting this pass silently.")
         print("\nTwo records sharing an identifier both claim to BE that term. Merge them, "
               "give one a distinct identifier, or refresh the baseline deliberately:\n"
               "  uv run python scripts/audit_duplicate_identifiers.py --write-baseline")

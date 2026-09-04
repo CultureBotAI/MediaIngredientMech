@@ -82,6 +82,37 @@ def test_group_growing_fails(repo):
     assert "GREW" in out.stdout
 
 
+def test_group_shrinking_fails(tmp_path):
+    repo = build(
+        tmp_path,
+        [
+            rec("CHEBI:1", "Glycerol"),
+            rec("CHEBI:1", "glycerol"),
+            rec("CHEBI:1", "Glycerine"),
+            rec("CHEBI:2", "Water"),
+        ],
+    )
+    run(repo, "--write-baseline")
+    path = repo / "data" / "curated" / "mapped_ingredients.yaml"
+    path.write_text(
+        yaml.safe_dump(
+            {
+                "ingredients": [
+                    rec("CHEBI:1", "Glycerol"),
+                    rec("CHEBI:1", "glycerol"),
+                    rec("CHEBI:2", "Water"),
+                ]
+            }
+        )
+    )
+
+    out = run(repo, "--check")
+
+    assert out.returncode == 2
+    assert "SHRANK" in out.stdout
+    assert "Glycerine" in out.stdout
+
+
 def test_member_swap_at_constant_size_fails(repo):
     """The hole that lets a curator's verdict be transplanted onto other records."""
     run(repo, "--write-baseline")
