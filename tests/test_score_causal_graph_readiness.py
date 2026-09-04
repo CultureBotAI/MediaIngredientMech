@@ -6,6 +6,7 @@ import importlib.util
 import sys
 from pathlib import Path
 
+import pytest
 import yaml
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -122,6 +123,88 @@ def test_component_parent_without_components_is_penalized():
 
     assert row.component_score == 0
     assert "no_component_edges" in row.issues
+
+
+def test_duplicate_identifier_disposition_penalizes_identity_score():
+    record = _record()
+
+    clean = _score.score_record(Path("clean.yaml"), record)
+    duplicate = _score.score_record(
+        Path("duplicate.yaml"),
+        record,
+        duplicate_identifier_disposition="NEEDS_OWN_ID",
+    )
+
+    assert duplicate.identity_score == clean.identity_score - 3.0
+    assert "duplicate_identifier:NEEDS_OWN_ID" in duplicate.issues
+
+
+def test_rank_records_uses_duplicate_baseline_by_collection(tmp_path):
+    ingredients_dir = tmp_path / "ingredients" / "mapped"
+    ingredients_dir.mkdir(parents=True)
+    record_path = ingredients_dir / "record.yaml"
+    record_path.write_text(yaml.safe_dump(_record(identifier="NCIT:C896")))
+
+    rows = _score.rank_records(
+        [record_path],
+        duplicate_identifier_dispositions={("mapped", "NCIT:C896"): "NEEDS_OWN_ID"},
+    )
+
+    assert rows[0].identity_score == 14.0
+    assert "duplicate_identifier:NEEDS_OWN_ID" in rows[0].issues
+
+
+def test_load_duplicate_identifier_dispositions(tmp_path):
+    baseline = tmp_path / "baseline.tsv"
+    baseline.write_text(
+        "identifier\tcollection\trecord_count\tdisposition\n"
+        "NCIT:C896\tmapped\t2\tNEEDS_OWN_ID\n",
+        encoding="utf-8",
+    )
+
+    assert _score.load_duplicate_identifier_dispositions(baseline) == {
+        ("mapped", "NCIT:C896"): "NEEDS_OWN_ID"
+    }
+
+
+def test_load_duplicate_identifier_dispositions_rejects_malformed_baseline(tmp_path):
+    baseline = tmp_path / "baseline.tsv"
+    baseline.write_text("identifier\tcollection\nNCIT:C896\tmapped\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="disposition"):
+        _score.load_duplicate_identifier_dispositions(baseline)
+
+
+def test_load_duplicate_identifier_dispositions_rejects_repeated_groups(tmp_path):
+    baseline = tmp_path / "baseline.tsv"
+    baseline.write_text(
+        "identifier\tcollection\tdisposition\n"
+        "NCIT:C896\tmapped\tNEEDS_OWN_ID\n"
+        "NCIT:C896\tmapped\tUNREVIEWED\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match="duplicate row"):
+        _score.load_duplicate_identifier_dispositions(baseline)
+
+
+@pytest.mark.parametrize(
+    ("row", "message"),
+    [
+        ("\tmapped\tNEEDS_OWN_ID\n", "missing an identifier"),
+        ("NCIT:C896\tmappped\tNEEDS_OWN_ID\n", "unsupported collection"),
+        ("NCIT:C896\tmapped\tNEED_OWN_ID\n", "unsupported disposition"),
+    ],
+)
+def test_load_duplicate_identifier_dispositions_rejects_invalid_rows(tmp_path, row, message):
+    baseline = tmp_path / "baseline.tsv"
+    baseline.write_text(
+        "identifier\tcollection\tdisposition\n" + row,
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ValueError, match=message):
+        _score.load_duplicate_identifier_dispositions(baseline)
 
 
 def test_rejected_records_are_skipped_by_default(tmp_path):

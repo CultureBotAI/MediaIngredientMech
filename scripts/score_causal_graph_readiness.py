@@ -19,7 +19,7 @@ from __future__ import annotations
 import argparse
 import csv
 import sys
-from collections.abc import Iterable, Sequence
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -37,6 +37,7 @@ from mediaingredientmech.utils.role_iteration import (  # noqa: E402
 
 DEFAULT_INGREDIENTS_DIR = ROOT / "data" / "ingredients"
 DEFAULT_OUT = ROOT / "reports" / "causal_graph_readiness.tsv"
+DEFAULT_DUPLICATE_BASELINE = ROOT / "mappings" / "duplicate_identifier_baseline.tsv"
 STATUSES = ("mapped", "unmapped")
 DEFAULT_STATUSES = ("mapped",)
 COMPONENT_PARENT_TYPES = {"NAMED_MEDIUM", "STOCK_SOLUTION", "UNDEFINED_MIXTURE"}
@@ -61,6 +62,7 @@ FIELDNAMES = [
     "best_role_evidence",
     "issues",
 ]
+DUPLICATE_BASELINE_REQUIRED_FIELDS = {"identifier", "collection", "disposition"}
 
 MAPPING_QUALITY_POINTS = {
     "EXACT_MATCH": 10.0,
@@ -84,6 +86,14 @@ CITATION_TYPE_POINTS = {
     "PREPRINT": 0.25,
     "MANUAL_CURATION": 0.20,
     "COMPUTATIONAL_PREDICTION": 0.10,
+}
+
+DUPLICATE_IDENTIFIER_PENALTY_POINTS = {
+    "NEEDS_OWN_ID": 3.0,
+    "NEEDS_OWN_ID_MEMBER_UNDECIDED": 2.0,
+    "HYDRATE_FAMILY_UNREVIEWED": 1.0,
+    "MERGE_SAME_SUBSTANCE": 1.0,
+    "UNREVIEWED": 1.0,
 }
 
 
@@ -186,7 +196,10 @@ def _mapping_evidence_points(evidence: Sequence[dict[str, Any]]) -> float:
     return score
 
 
-def score_identity(record: dict[str, Any]) -> tuple[float, list[str]]:
+def score_identity(
+    record: dict[str, Any],
+    duplicate_identifier_disposition: str | None = None,
+) -> tuple[float, list[str]]:
     ontology_mapping = record.get("ontology_mapping") or {}
     mapping_status = record.get("mapping_status") or ""
     mapping_quality = ontology_mapping.get("mapping_quality") or ""
@@ -198,13 +211,19 @@ def score_identity(record: dict[str, Any]) -> tuple[float, list[str]]:
         issues.append(f"weak_mapping_quality:{mapping_quality}")
     if not ontology_mapping.get("evidence"):
         issues.append("mapping_missing_evidence")
+    if duplicate_identifier_disposition:
+        issues.append(f"duplicate_identifier:{duplicate_identifier_disposition}")
 
     score = 0.0
     if mapping_status == "MAPPED":
         score += 5.0
     score += MAPPING_QUALITY_POINTS.get(mapping_quality, 0.0)
     score += _mapping_evidence_points(ontology_mapping.get("evidence") or [])
-    return min(20.0, score), issues
+    score -= DUPLICATE_IDENTIFIER_PENALTY_POINTS.get(
+        duplicate_identifier_disposition or "",
+        0.0,
+    )
+    return max(0.0, min(20.0, score)), issues
 
 
 def score_roles(record: dict[str, Any]) -> tuple[float, float, int, int, float, list[str]]:
@@ -271,8 +290,12 @@ def score_components(record: dict[str, Any]) -> tuple[float, list[str]]:
     return min(10.0, score), issues
 
 
-def score_record(path: Path, record: dict[str, Any]) -> ScoreRow:
-    identity_score, identity_issues = score_identity(record)
+def score_record(
+    path: Path,
+    record: dict[str, Any],
+    duplicate_identifier_disposition: str | None = None,
+) -> ScoreRow:
+    identity_score, identity_issues = score_identity(record, duplicate_identifier_disposition)
     (
         role_content_score,
         role_evidence_score,
@@ -313,11 +336,58 @@ def collect_paths(ingredients_dir: Path, statuses: Iterable[str]) -> list[Path]:
     return paths
 
 
+def collection_for(path: Path, record: dict[str, Any]) -> str:
+    if path.parent.name in STATUSES:
+        return path.parent.name
+
+    status = str(record.get("mapping_status") or "").lower()
+    if status in STATUSES:
+        return status
+    return "mapped"
+
+
+def load_duplicate_identifier_dispositions(
+    baseline: Path,
+) -> dict[tuple[str, str], str]:
+    if not baseline.exists():
+        return {}
+
+    dispositions: dict[tuple[str, str], str] = {}
+    with baseline.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle, delimiter="\t")
+        missing = DUPLICATE_BASELINE_REQUIRED_FIELDS - set(reader.fieldnames or [])
+        if missing:
+            raise ValueError(f"{baseline} is missing column(s): {', '.join(sorted(missing))}")
+
+        for line_number, row in enumerate(reader, start=2):
+            identifier = (row.get("identifier") or "").strip()
+            collection = (row.get("collection") or "").strip()
+            disposition = (row.get("disposition") or "").strip() or "UNREVIEWED"
+            if not identifier:
+                raise ValueError(f"{baseline}:{line_number} is missing an identifier")
+            if collection not in STATUSES:
+                raise ValueError(
+                    f"{baseline}:{line_number} has unsupported collection {collection!r}"
+                )
+            if disposition not in DUPLICATE_IDENTIFIER_PENALTY_POINTS:
+                raise ValueError(
+                    f"{baseline}:{line_number} has unsupported disposition {disposition!r}"
+                )
+
+            key = (collection, identifier)
+            if key in dispositions:
+                raise ValueError(f"{baseline}: duplicate row for {identifier} in {collection}")
+            dispositions[key] = disposition
+    return dispositions
+
+
 def rank_records(
     paths: Iterable[Path],
     min_occurrences: int = 0,
     include_rejected: bool = False,
+    duplicate_identifier_dispositions: Mapping[tuple[str, str], str] | None = None,
 ) -> list[ScoreRow]:
+    duplicate_identifier_dispositions = duplicate_identifier_dispositions or {}
     rows: list[ScoreRow] = []
     for path in paths:
         record = yaml.load(path.read_text(encoding="utf-8"), Loader=SAFE_LOADER) or {}
@@ -325,7 +395,10 @@ def rank_records(
             continue
         if not include_rejected and record.get("mapping_status") == "REJECTED":
             continue
-        row = score_record(path, record)
+        duplicate_disposition = duplicate_identifier_dispositions.get(
+            (collection_for(path, record), str(record.get("identifier") or ""))
+        )
+        row = score_record(path, record, duplicate_disposition)
         if row.total_occurrences >= min_occurrences:
             rows.append(row)
 
@@ -378,6 +451,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Include REJECTED tombstone records in the worklist.",
     )
+    parser.add_argument(
+        "--duplicate-baseline",
+        type=Path,
+        default=DEFAULT_DUPLICATE_BASELINE,
+        help=(
+            "Duplicate-identifier baseline that marks shared identifiers needing "
+            "curation. Missing files are ignored."
+        ),
+    )
     parser.add_argument("--limit", type=int, help="Limit rows written after sorting.")
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
     return parser.parse_args(argv)
@@ -386,10 +468,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     statuses = tuple(args.status) if args.status else DEFAULT_STATUSES
+    try:
+        duplicate_identifier_dispositions = load_duplicate_identifier_dispositions(
+            args.duplicate_baseline
+        )
+    except ValueError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+
     rows = rank_records(
         collect_paths(args.ingredients_dir, statuses),
         args.min_occurrences,
         include_rejected=args.include_rejected,
+        duplicate_identifier_dispositions=duplicate_identifier_dispositions,
     )
     if args.limit is not None:
         rows = rows[: args.limit]
