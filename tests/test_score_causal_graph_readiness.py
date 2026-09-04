@@ -124,6 +124,48 @@ def test_component_parent_without_components_is_penalized():
     assert "no_component_edges" in row.issues
 
 
+def test_duplicate_identifier_disposition_penalizes_identity_score():
+    record = _record()
+
+    clean = _score.score_record(Path("clean.yaml"), record)
+    duplicate = _score.score_record(
+        Path("duplicate.yaml"),
+        record,
+        duplicate_identifier_disposition="NEEDS_OWN_ID",
+    )
+
+    assert duplicate.identity_score == clean.identity_score - 3.0
+    assert "duplicate_identifier:NEEDS_OWN_ID" in duplicate.issues
+
+
+def test_rank_records_uses_duplicate_baseline_by_collection(tmp_path):
+    ingredients_dir = tmp_path / "ingredients" / "mapped"
+    ingredients_dir.mkdir(parents=True)
+    record_path = ingredients_dir / "record.yaml"
+    record_path.write_text(yaml.safe_dump(_record(identifier="NCIT:C896")))
+
+    rows = _score.rank_records(
+        [record_path],
+        duplicate_identifier_dispositions={("mapped", "NCIT:C896"): "NEEDS_OWN_ID"},
+    )
+
+    assert rows[0].identity_score == 14.0
+    assert "duplicate_identifier:NEEDS_OWN_ID" in rows[0].issues
+
+
+def test_load_duplicate_identifier_dispositions(tmp_path):
+    baseline = tmp_path / "baseline.tsv"
+    baseline.write_text(
+        "identifier\tcollection\trecord_count\tdisposition\n"
+        "NCIT:C896\tmapped\t2\tNEEDS_OWN_ID\n",
+        encoding="utf-8",
+    )
+
+    assert _score.load_duplicate_identifier_dispositions(baseline) == {
+        ("mapped", "NCIT:C896"): "NEEDS_OWN_ID"
+    }
+
+
 def test_rejected_records_are_skipped_by_default(tmp_path):
     active = tmp_path / "active.yaml"
     rejected = tmp_path / "rejected.yaml"
