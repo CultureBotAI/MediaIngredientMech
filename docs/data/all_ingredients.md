@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-02T22:43:11.016300+00:00
+Generated: 2026-09-04T06:05:36.678470+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2027,7 +2027,6 @@ Total: 2952 ingredients
 | mesh:C069668 | mesh:C069668 | Toray silicone SH 5535 | MAPPED | MESH | LEXICAL_MATCH | 2 |
 | CHEBI:69241 | CHEBI:69241 | Totarol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C896 | NCIT:C896 | Trace element solution | MAPPED | NCIT | LEXICAL_MATCH | 8 |
-| NCIT:C896 | NCIT:C896 | Trace element solution SL-10 | MAPPED | NCIT | LEXICAL_MATCH | 8 |
 | kgmicrobe.ingredient:trace_element_solution_see_medium_no_187 | NCIT:C896 | Trace element solution see Medium No. 187 | MAPPED | NCIT | CLOSE_MATCH | 0 |
 | MICRO:0001349 | MICRO:0001349 | Trace metal mix A5 | MAPPED | MICRO | EXACT_MATCH | 2 |
 | CHEBI:38366 | CHEBI:38366 | trans-2-Pentenoic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -2683,6 +2682,7 @@ Total: 2952 ingredients
 | CHEBI:27864 | CHEBI:27864 | Dichloran (0.2% in ethanol) | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | NCIT:C217966 | NCIT:C217966 | hydroxocobalamin hydrochloride | MAPPED | NCIT | EXACT_MATCH | 1 |
 | NCIT:C120561 | NCIT:C120561 | Sodium glycerophosphate | MAPPED | NCIT | EXACT_MATCH | 25 |
+| kgmicrobe.ingredient:trace_element_solution_sl-10 | NCIT:C896 | Trace element solution SL-10 | MAPPED | NCIT | CLOSE_MATCH | 8 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |

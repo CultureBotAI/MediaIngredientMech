@@ -75,6 +75,12 @@ def test_csv_synonyms_column_is_appended_last(export_lists, tmp_path):
                           "total_occurrences", "media_count"]
 
 
+def test_csv_uses_lf_line_endings(export_lists, tmp_path):
+    out = tmp_path / "all.csv"
+    export_lists.export_to_csv([rec("CHEBI:1", "X")], out)
+    assert b"\r\n" not in out.read_bytes()
+
+
 def test_json_carries_synonyms_as_a_list(export_lists, tmp_path):
     import json
     out = tmp_path / "all.json"
@@ -121,6 +127,14 @@ def build(tmp_path, records, csv_rows, header=None):
     # the gate imports the exporter's _synonyms() on purpose, so the rule for
     # what is publishable cannot drift between producing and checking
     (tmp_path / "scripts" / EXPORT.name).write_text(EXPORT.read_text())
+    (tmp_path / "src" / "mediaingredientmech").mkdir(parents=True)
+    (tmp_path / "src" / "mediaingredientmech" / "__init__.py").write_text("")
+    (tmp_path / "src" / "mediaingredientmech" / "synonym_policy.py").write_text(
+        "NON_RESOLVING_SYNONYM_TYPES = frozenset({'REJECTED_LABEL'})\n\n"
+        "def is_resolving_synonym(synonym):\n"
+        "    synonym_type = str(synonym.get('synonym_type') or '').strip().upper()\n"
+        "    return synonym_type not in NON_RESOLVING_SYNONYM_TYPES\n"
+    )
     return tmp_path
 
 
@@ -306,6 +320,12 @@ def test_label_index_has_a_row_per_label_not_per_record(export_lists, tmp_path):
     assert n == 3, "one preferred_term row plus one per synonym"
 
 
+def test_label_index_uses_lf_line_endings(export_lists, tmp_path):
+    out = tmp_path / "label_index.csv"
+    export_lists.export_label_index([rec("CHEBI:1", "A", ["b", "c"])], out)
+    assert b"\r\n" not in out.read_bytes()
+
+
 def test_label_index_excludes_curation_detritus(export_lists, tmp_path):
     """It reuses _synonyms(), so `Role: …; Properties: …` must not become a label."""
     out = tmp_path / "label_index.csv"
@@ -359,7 +379,7 @@ def test_rows_for_one_label_are_contiguous_case_insensitively(export_lists, tmp_
         rec("CHEBI:3", "Other", ["Peptone"]),
     ], out)
     labels = [r["label"] for r in csv.DictReader(out.open())]
-    idx = [i for i, l in enumerate(labels) if l.lower() == "peptone"]
+    idx = [i for i, label in enumerate(labels) if label.lower() == "peptone"]
     assert idx == list(range(idx[0], idx[0] + len(idx))), "must be contiguous"
 
 

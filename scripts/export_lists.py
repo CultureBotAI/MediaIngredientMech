@@ -212,7 +212,7 @@ def export_to_csv(ingredients: list[dict], output_path: Path):
     ]
 
     with open(output_path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
 
         for ing in ingredients:
@@ -406,7 +406,7 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     fieldnames = ["label", "match_type", "identifier", "preferred_term",
                   "ontology_id", "mapping_status", "ambiguity"]
     with open(output_path, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
     return len(rows)

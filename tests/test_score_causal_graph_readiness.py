@@ -136,6 +136,26 @@ def test_rejected_records_are_skipped_by_default(tmp_path):
     assert _score.rank_records([rejected], include_rejected=True)[0].mapping_status == "REJECTED"
 
 
+def test_main_defaults_to_mapped_records(tmp_path):
+    ingredients_dir = tmp_path / "ingredients"
+    mapped_dir = ingredients_dir / "mapped"
+    unmapped_dir = ingredients_dir / "unmapped"
+    mapped_dir.mkdir(parents=True)
+    unmapped_dir.mkdir(parents=True)
+    (mapped_dir / "mapped.yaml").write_text(yaml.safe_dump(_record(preferred_term="Mapped")))
+    (unmapped_dir / "unmapped.yaml").write_text(
+        yaml.safe_dump(_record(preferred_term="Unmapped", mapping_status="UNMAPPED"))
+    )
+
+    out = tmp_path / "readiness.tsv"
+
+    assert _score.main(["--ingredients-dir", str(ingredients_dir), "--out", str(out)]) == 0
+
+    lines = out.read_text(encoding="utf-8").splitlines()
+    assert len(lines) == 2
+    assert "\tMapped\t" in lines[1]
+
+
 def test_write_tsv_emits_ranked_rows(tmp_path):
     out = tmp_path / "readiness.tsv"
     rows = [

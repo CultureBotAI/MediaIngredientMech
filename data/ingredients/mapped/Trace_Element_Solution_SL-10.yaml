@@ -1,4 +1,4 @@
-identifier: NCIT:C896
+identifier: kgmicrobe.ingredient:trace_element_solution_sl-10
 preferred_term: Trace element solution SL-10
 synonyms:
 - synonym_text: Trace element solution SL-10
@@ -35,16 +35,109 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-04T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: CORRECTED
+  changes: Changed identifier from NCIT:C896 to kgmicrobe.ingredient:trace_element_solution_sl-10
+    and retained NCIT:C896 only as CLOSE_MATCH. Trace element solution SL-10 is a
+    named stock formulation, not identical to the generic trace-element class.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
+- timestamp: '2026-09-04T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added the TRACE_ELEMENT role plus components and component_assertion by
+    transcribing DSMZ solution 4178 Trace element solution SL-10.
+  llm_assisted: true
+  llm_model: gpt-5
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Trace_element_solution_SL-10);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+components:
+- component_name: HCl (25%, 7.7 M)
+  component_id: CHEBI:17883
+  reference_scope: MIM_CATALOG
+  concentration_value: '10.0'
+  concentration_unit: ML_PER_L
+- component_name: FeCl2 x 4 H2O
+  component_id: CHEBI:86249
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.5'
+  concentration_unit: G_PER_L
+- component_name: ZnCl2
+  component_id: CHEBI:49976
+  reference_scope: MIM_CATALOG
+  concentration_value: '70.0'
+  concentration_unit: MG_PER_L
+- component_name: MnCl2 x 4 H2O
+  component_id: CHEBI:86368
+  reference_scope: MIM_CATALOG
+  concentration_value: '100.0'
+  concentration_unit: MG_PER_L
+- component_name: H3BO3
+  component_id: CHEBI:33118
+  reference_scope: MIM_CATALOG
+  concentration_value: '6.0'
+  concentration_unit: MG_PER_L
+- component_name: CoCl2 x 6 H2O
+  component_id: CHEBI:53503
+  reference_scope: MIM_CATALOG
+  concentration_value: '190.0'
+  concentration_unit: MG_PER_L
+- component_name: CuCl2 x 2 H2O
+  component_id: CHEBI:86318
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.0'
+  concentration_unit: MG_PER_L
+- component_name: NiCl2 x 6 H2O
+  component_id: CHEBI:53542
+  reference_scope: MIM_CATALOG
+  concentration_value: '24.0'
+  concentration_unit: MG_PER_L
+- component_name: Na2MoO4 x 2 H2O
+  component_id: CHEBI:75213
+  reference_scope: MIM_CATALOG
+  concentration_value: '36.0'
+  concentration_unit: MG_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '990.0'
+  concentration_unit: ML_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/download/solution/4178/pdf
+    source_record: DSMZ solution 4178 Trace element solution SL-10
+    notes: DSMZ solution 4178 enumerates HCl, the trace metal, borate, and molybdate
+      salts, and distilled water per liter.
 ontology_mapping:
   ontology_id: NCIT:C896
   ontology_label: Trace Element
   ontology_source: NCIT
-  mapping_quality: LEXICAL_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0619; matched via 'Trace element solution SL-10';
       stem-substring
+  - evidence_type: CURATOR_JUDGMENT
+    source: mediaingredientmech-agentic-curation
+    notes: Trace element solution SL-10 is a DSMZ stock-solution formulation; NCIT:C896
+      is retained only as a related trace-element category.
+kg_microbe_node_id: kgmicrobe.ingredient:trace_element_solution_sl-10
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_text: DSMZ solution 4178 Trace element solution SL-10
+    reference_type: TECHNICAL_REPORT
+    url: https://mediadive.dsmz.de/download/solution/4178/pdf
+    excerpt: Trace element solution SL-10
+    curator_note: DSMZ solution 4178 is an SL-10 formulation containing iron, zinc,
+      manganese, boron, cobalt, copper, nickel, and molybdenum salts.
