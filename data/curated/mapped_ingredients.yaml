@@ -1,4 +1,4 @@
-generation_date: '2026-09-02T22:42:18.115108+00:00'
+generation_date: '2026-09-04T01:22:34.909188+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -12521,12 +12521,85 @@ ingredients:
     changes: Promoted UNMAPPED_0259 -> kgmicrobe.ingredient:atcc_wolfes_vitamin_mix
       "ATCC Wolfe's vitamin mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED,
       SSSOM row added.
+  - timestamp: '2026-09-04T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Added nutritional_roles.VITAMIN_SOURCE plus components and component_assertion
+      by transcribing the ATCC MD-VS Wolfe's Vitamin Solution formula in ATCC Medium
+      2672.
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 43 CultureBot media; samples: Mega, NLDM_defined, M9 minimal media plus…. No
     CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as an ATCC-branded Wolfe
     vitamin stock/pre-mix pending component-level recipe curation.'
   ingredient_type: STOCK_SOLUTION
   solution_type: VITAMIN_MIX
+  components:
+  - component_name: Biotin
+    component_id: CHEBI:15956
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.0'
+    concentration_unit: MG_PER_L
+  - component_name: Folic acid
+    component_id: CHEBI:27470
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.0'
+    concentration_unit: MG_PER_L
+  - component_name: Pyridoxine hydrochloride
+    component_id: CHEBI:30961
+    reference_scope: MIM_CATALOG
+    concentration_value: '10.0'
+    concentration_unit: MG_PER_L
+  - component_name: Thiamine HCl
+    component_id: CHEBI:49105
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Riboflavin
+    component_id: CHEBI:17015
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Nicotinic acid
+    component_id: CHEBI:15940
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Calcium D-(+)-pantothenate
+    component_id: CHEBI:31345
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Vitamin B12
+    component_id: CHEBI:176843
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: MG_PER_L
+  - component_name: p-Aminobenzoic acid
+    component_id: CHEBI:30753
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Thioctic acid
+    component_id: CHEBI:30314
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Distilled water
+    component_id: CHEBI:15377
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: L_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+      source_record: ATCC Medium 2672 Wolfe's Vitamin Solution
+      notes: ATCC Medium 2672 includes the MD-VS Wolfe's Vitamin Solution formulation
+        and per-liter amounts.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:atcc_wolfes_vitamin_mix
     ontology_label: ATCC Wolfe's vitamin mix
@@ -12541,6 +12614,17 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: VITAMIN_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: ATCC Medium 2672 Modified Wolfe's Mineral Media
+      reference_type: TECHNICAL_REPORT
+      url: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+      excerpt: Vitamin Supplement, catalog no. MD-VS
+      curator_note: ATCC Medium 2672 enumerates the ready-to-use ATCC MD-VS stock
+        as a Wolfe's vitamin solution containing B vitamins and related micronutrient
+        cofactors.
 - identifier: kgmicrobe.ingredient:atcc_wolfes_mineral_mix
   preferred_term: ATCC Wolfe's mineral mix
   synonyms:
@@ -12577,12 +12661,95 @@ ingredients:
     changes: Promoted UNMAPPED_0298 -> kgmicrobe.ingredient:atcc_wolfes_mineral_mix
       "ATCC Wolfe's mineral mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED,
       SSSOM row added.
+  - timestamp: '2026-09-04T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Added nutritional mineral/trace-element roles plus components and component_assertion
+      by transcribing the ATCC MD-TMS Wolfe's Mineral Solution formula in ATCC Medium
+      2672.
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 46 CultureBot media; samples: NLDM_defined_nocarbon_novitamin, Mega, NLDM_defined_no_iron….
     No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as an ATCC-branded
     Wolfe mineral stock/pre-mix pending component-level recipe curation.'
   ingredient_type: STOCK_SOLUTION
   solution_type: MINERAL_STOCK
+  components:
+  - component_name: EDTA
+    component_id: CHEBI:4735
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: G_PER_L
+  - component_name: MgSO4.7H2O
+    component_id: CHEBI:31795
+    reference_scope: MIM_CATALOG
+    concentration_value: '3.0'
+    concentration_unit: G_PER_L
+  - component_name: MnSO4.H2O
+    component_id: CHEBI:86364
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: G_PER_L
+  - component_name: NaCl
+    component_id: CHEBI:26710
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: G_PER_L
+  - component_name: FeSO4.7H2O
+    component_id: CHEBI:75836
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: CoCl2 x 6 H2O
+    component_id: CHEBI:53503
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: CaCl2
+    component_id: CHEBI:3312
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: ZnSO4.7H2O
+    component_id: CHEBI:32312
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: CuSO4.5H2O
+    component_id: CHEBI:31440
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: AlK(SO4)2.12H2O
+    component_id: CHEBI:86465
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: H3BO3
+    component_id: CHEBI:33118
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: Na2MoO4.2H2O
+    component_id: CHEBI:75213
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: Distilled water
+    component_id: CHEBI:15377
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: L_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+      source_record: ATCC Medium 2672 Wolfe's Mineral Solution
+      notes: ATCC Medium 2672 includes the MD-TMS Wolfe's Mineral Solution formulation
+        and per-liter amounts.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:atcc_wolfes_mineral_mix
     ontology_label: ATCC Wolfe's mineral mix
@@ -12597,6 +12764,26 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: MINERAL_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: ATCC Medium 2672 Modified Wolfe's Mineral Media
+      reference_type: TECHNICAL_REPORT
+      url: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+      excerpt: Trace Mineral Supplement, catalog no. MD-TMS
+      curator_note: ATCC Medium 2672 enumerates the ready-to-use ATCC MD-TMS stock
+        as a Wolfe's mineral solution containing bulk inorganic mineral salts.
+  - role: TRACE_ELEMENT
+    confidence: 1.0
+    evidence:
+    - reference_text: ATCC Medium 2672 Modified Wolfe's Mineral Media
+      reference_type: TECHNICAL_REPORT
+      url: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+      excerpt: Trace Mineral Supplement, catalog no. MD-TMS
+      curator_note: ATCC Medium 2672 enumerates the ready-to-use ATCC MD-TMS stock
+        as a Wolfe's mineral solution containing iron, cobalt, zinc, copper, aluminium,
+        boron, and molybdate trace salts.
 - identifier: kgmicrobe.ingredient:wolfes_mineral_mix
   preferred_term: Wolfe's mineral mix
   synonyms:
@@ -12634,12 +12821,94 @@ ingredients:
     changes: Promoted UNMAPPED_0315 -> kgmicrobe.ingredient:wolfes_mineral_mix "Wolfe's
       mineral mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row
       added.
+  - timestamp: '2026-09-04T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Added nutritional mineral/trace-element roles plus components and component_assertion
+      by transcribing ATCC Medium 2672 Wolfe's Mineral Solution.
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 60 CultureBot media; samples: ShewMM, ALP_defined, ALP_defined_noC…. No CAS-RN
     or CHEBI mapping available; reviewed on 2026-05-11 as a named mineral stock/pre-mix
     pending component-level recipe curation.'
   ingredient_type: STOCK_SOLUTION
   solution_type: MINERAL_STOCK
+  components:
+  - component_name: EDTA
+    component_id: CHEBI:4735
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: G_PER_L
+  - component_name: MgSO4.7H2O
+    component_id: CHEBI:31795
+    reference_scope: MIM_CATALOG
+    concentration_value: '3.0'
+    concentration_unit: G_PER_L
+  - component_name: MnSO4.H2O
+    component_id: CHEBI:86364
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: G_PER_L
+  - component_name: NaCl
+    component_id: CHEBI:26710
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: G_PER_L
+  - component_name: FeSO4.7H2O
+    component_id: CHEBI:75836
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: CoCl2 x 6 H2O
+    component_id: CHEBI:53503
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: CaCl2
+    component_id: CHEBI:3312
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: ZnSO4.7H2O
+    component_id: CHEBI:32312
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: CuSO4.5H2O
+    component_id: CHEBI:31440
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: AlK(SO4)2.12H2O
+    component_id: CHEBI:86465
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: H3BO3
+    component_id: CHEBI:33118
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: Na2MoO4.2H2O
+    component_id: CHEBI:75213
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: Distilled water
+    component_id: CHEBI:15377
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: L_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+      source_record: ATCC Medium 2672 Wolfe's Mineral Solution
+      notes: ATCC Medium 2672 includes the Wolfe's Mineral Solution formulation and
+        per-liter amounts.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:wolfes_mineral_mix
     ontology_label: Wolfe's mineral mix
@@ -12654,6 +12923,25 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: MINERAL_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: ATCC Medium 2672 Modified Wolfe's Mineral Media
+      reference_type: TECHNICAL_REPORT
+      url: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+      excerpt: Wolfe's Mineral Solution
+      curator_note: ATCC Medium 2672 enumerates a Wolfe's mineral stock containing
+        bulk inorganic mineral salts.
+  - role: TRACE_ELEMENT
+    confidence: 1.0
+    evidence:
+    - reference_text: ATCC Medium 2672 Modified Wolfe's Mineral Media
+      reference_type: TECHNICAL_REPORT
+      url: https://www.atcc.org/~/media/a457a0ae8c604a12b5597e5eb1a6583a.ashx
+      excerpt: Wolfe's Mineral Solution
+      curator_note: ATCC Medium 2672 enumerates a Wolfe's mineral stock containing
+        iron, cobalt, zinc, copper, aluminium, boron, and molybdate trace salts.
 - identifier: kgmicrobe.ingredient:wolfes_vitamin_mix
   preferred_term: Wolfe's vitamin mix
   synonyms:
@@ -12690,12 +12978,88 @@ ingredients:
     changes: Promoted UNMAPPED_0306 -> kgmicrobe.ingredient:wolfes_vitamin_mix "Wolfe's
       vitamin mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row
       added.
+  - timestamp: '2026-09-04T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Added nutritional_roles.VITAMIN_SOURCE plus components and component_assertion
+      by transcribing NCMA Medium 6 Wolfe's Vitamin Solution.
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 61 CultureBot media; samples: ShewMM, YCFA, MG minimal media…. No CAS-RN or
     CHEBI mapping available; reviewed on 2026-05-11 as a named vitamin stock/pre-mix
     pending component-level recipe curation.'
   ingredient_type: STOCK_SOLUTION
   solution_type: VITAMIN_MIX
+  components:
+  - component_name: Pyridoxine HCl
+    component_id: CHEBI:30961
+    reference_scope: MIM_CATALOG
+    concentration_value: '10.0'
+    concentration_unit: MG_PER_L
+  - component_name: Thiamine HCl
+    component_id: CHEBI:49105
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Riboflavin
+    component_id: CHEBI:17015
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Nicotinic Acid
+    component_id: CHEBI:15940
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Calcium pantothenate
+    component_id: CHEBI:31345
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: p-Aminobenzoic acid
+    component_id: CHEBI:30753
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Thioctic acid
+    component_id: CHEBI:30314
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Biotin
+    component_id: CHEBI:15956
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.0'
+    concentration_unit: MG_PER_L
+  - component_name: Folic acid
+    component_id: CHEBI:27470
+    reference_scope: MIM_CATALOG
+    concentration_value: '2'
+    concentration_unit: MG_PER_L
+  - component_name: Vitamin B12
+    component_id: CHEBI:176843
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: MG_PER_L
+  - component_name: Potassium phosphate monobasic
+    component_id: CHEBI:63036
+    reference_scope: MIM_CATALOG
+    concentration_value: '900'
+    concentration_unit: MG_PER_L
+  - component_name: Distilled water
+    component_id: CHEBI:15377
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: L_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://ncma.bigelow.org/PDF%20Files/NCMA%20Medium%206%20Wolfe%27s%20Vitamin%20Solution.pdf
+      source_record: NCMA Medium 6
+      notes: NCMA Medium 6 lists the per-liter constituents for Wolfe's Vitamin Solution.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:wolfes_vitamin_mix
     ontology_label: Wolfe's vitamin mix
@@ -12710,6 +13074,16 @@ ingredients:
         a lab preparation, not a substance. Takes the STOCK_SOLUTION convention used
         by 12 existing mapped records: a kgmicrobe.ingredient: mint. No parent, because
         a multi-component mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: VITAMIN_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: NCMA Medium 6 Wolfe's Vitamin Solution
+      reference_type: TECHNICAL_REPORT
+      url: https://ncma.bigelow.org/PDF%20Files/NCMA%20Medium%206%20Wolfe%27s%20Vitamin%20Solution.pdf
+      excerpt: Based on Wolfe's Vitamin Solution
+      curator_note: NCMA Medium 6 enumerates a Wolfe's vitamin stock containing B
+        vitamins and related micronutrient cofactors.
 - identifier: UBERON:0010228
   preferred_term: Rumen fluid
   synonyms:
@@ -45821,6 +46195,13 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-04T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Added components and component_assertion by transcribing the FDA BAM
+      Medium 1 Brain Heart Infusion formula.
+    llm_assisted: true
+    llm_model: gpt-5
   notes: Imported from mim-queue (source_id=mediadive.ingredient:827); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -45834,6 +46215,52 @@ ingredients:
       source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
       notes: Auto-upgraded from UNMAPPED_0347; matched via 'Brain heart infusion broth';
         stem-substring
+  components:
+  - component_name: Calf brain, infusion from
+    reference_scope: UNMAPPED
+    concentration_value: '200'
+    concentration_unit: G_PER_L
+  - component_name: Beef Heart Infusion
+    component_id: kgmicrobe.ingredient:beef_heart_infusion
+    reference_scope: MIM_CATALOG
+    concentration_value: '250'
+    concentration_unit: G_PER_L
+  - component_name: Proteose peptone (Difco)
+    component_id: MICRO:0000180
+    reference_scope: MIM_CATALOG
+    concentration_value: '10'
+    concentration_unit: G_PER_L
+  - component_name: NaCl
+    component_id: CHEBI:26710
+    reference_scope: MIM_CATALOG
+    concentration_value: '5'
+    concentration_unit: G_PER_L
+  - component_name: Na2HPO4
+    component_id: CHEBI:34683
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.5'
+    concentration_unit: G_PER_L
+  - component_name: Dextrose
+    component_id: CHEBI:17634
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.0'
+    concentration_unit: G_PER_L
+  - component_name: Distilled water
+    component_id: CHEBI:15377
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: L_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://www.fda.gov/food/laboratory-methods-food/bam-media-m24-brain-heart-infusion-bhi-broth-and-agar-equivalent-media-are-available-difco-and-bbl
+      source_record: BAM Media M24 Medium 1
+      notes: FDA's BAM Medium 1 recipe names the Brain Heart Infusion broth constituents
+        and per-liter amounts.
+    notes: FDA lists Proteose peptone (Difco) or polypeptone (Bioquest) as alternatives;
+      this MIM decomposition follows the Difco alternative.
 - identifier: CHEBI:69196
   preferred_term: Brazilein
   ontology_mapping:
@@ -159702,6 +160129,13 @@ ingredients:
       ''Na2CO3-CO2 buffer''; ''NaCO3''. Tokens already present on the kg-microbe ontology
       node were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-04T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Added physicochemical_roles.BUFFER with DSMZ MediaDive evidence for bicarbonate-buffered
+      anoxic media.
+    llm_assisted: true
+    llm_model: gpt-5
   notes: Imported from mim-queue (source_id=mediadive.ingredient:797); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
@@ -159721,6 +160155,17 @@ ingredients:
     data_source: CHEBI sqlite (oaklib)
   kg_microbe_node_id: CHEBI:29377
   ingredient_type: STOCK_SOLUTION
+  physicochemical_roles:
+  - role: BUFFER
+    confidence: 0.9
+    evidence:
+    - reference_text: DSMZ MediaDive Cultivation of Anaerobes, Preparation of anoxic
+        media buffered with bicarbonate
+      reference_type: TECHNICAL_REPORT
+      url: https://mediadive.dsmz.de/docs/cultivation/anaerobes
+      excerpt: solid sodium bicarbonate or sodium carbonate
+      curator_note: DSMZ describes sodium carbonate additions and Na2CO3 stock solutions
+        in the preparation of bicarbonate-buffered anoxic media.
 - identifier: CHEBI:78667
   preferred_term: Sodium Chlorite
   ontology_mapping:
@@ -165030,16 +165475,30 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-04T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Replaced computational nutritional_roles.PROTEIN_SOURCE evidence with
+      a PMID/DOI citation for Soytone as a soybean-meal hydrolysate nitrogen source.
+    llm_assisted: true
+    llm_model: gpt-5
   ingredient_type: UNDEFINED_MIXTURE
   merged:
   - CHEBI:8150
   nutritional_roles:
   - role: PROTEIN_SOURCE
-    confidence: 0.8
+    confidence: 0.95
     evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+    - reference_text: Kwon et al. 2000. Production of lactic acid by Lactobacillus
+        rhamnosus with vitamin-supplemented soybean hydrolysate.
+      reference_type: PEER_REVIEWED_PUBLICATION
+      doi: 10.1016/s0141-0229(99)00134-9
+      pmid: '10689079'
+      url: https://pubmed.ncbi.nlm.nih.gov/10689079/
+      excerpt: An enzyme-hydrolysate of soybean meal, Soytone
+      curator_note: Kwon et al. evaluated Soytone as a complex nitrogen source for
+        Lactobacillus rhamnosus lactic acid fermentation, directly supporting soy
+        peptone as a peptide/proteinaceous nutrient source.
 - identifier: FOODON:03315720
   preferred_term: Soya peptone
   ontology_mapping:

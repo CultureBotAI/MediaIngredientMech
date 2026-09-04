@@ -74,6 +74,13 @@ curation_history:
     ''Na2CO3-CO2 buffer''; ''NaCO3''. Tokens already present on the kg-microbe ontology
     node were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-04T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added physicochemical_roles.BUFFER with DSMZ MediaDive evidence for bicarbonate-buffered
+    anoxic media.
+  llm_assisted: true
+  llm_model: gpt-5
 notes: Imported from mim-queue (source_id=mediadive.ingredient:797); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -93,3 +100,14 @@ chemical_properties:
   data_source: CHEBI sqlite (oaklib)
 kg_microbe_node_id: CHEBI:29377
 ingredient_type: STOCK_SOLUTION
+physicochemical_roles:
+- role: BUFFER
+  confidence: 0.9
+  evidence:
+  - reference_text: DSMZ MediaDive Cultivation of Anaerobes, Preparation of anoxic
+      media buffered with bicarbonate
+    reference_type: TECHNICAL_REPORT
+    url: https://mediadive.dsmz.de/docs/cultivation/anaerobes
+    excerpt: solid sodium bicarbonate or sodium carbonate
+    curator_note: DSMZ describes sodium carbonate additions and Na2CO3 stock solutions
+      in the preparation of bicarbonate-buffered anoxic media.
