@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-06T08:23:59.742944+00:00
+Generated: 2026-09-06T13:49:42.825636+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2025,7 +2025,6 @@ Total: 2952 ingredients
 | FOODON:03301454 | FOODON:03301454 | Tomato juice | MAPPED | FOODON | EXACT_MATCH | 21 |
 | mesh:C069668 | mesh:C069668 | Toray silicone SH 5535 | MAPPED | MESH | LEXICAL_MATCH | 2 |
 | CHEBI:69241 | CHEBI:69241 | Totarol | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| NCIT:C896 | NCIT:C896 | Trace element solution | MAPPED | NCIT | LEXICAL_MATCH | 8 |
 | kgmicrobe.ingredient:trace_element_solution_see_medium_no_187 | NCIT:C896 | Trace element solution see Medium No. 187 | MAPPED | NCIT | CLOSE_MATCH | 0 |
 | MICRO:0001349 | MICRO:0001349 | Trace metal mix A5 | MAPPED | MICRO | EXACT_MATCH | 2 |
 | CHEBI:38366 | CHEBI:38366 | trans-2-Pentenoic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -2127,7 +2126,6 @@ Total: 2952 ingredients
 | kgmicrobe.ingredient:yeast_extract_malt_extract_agar | FOODON:03301056 | Yeast extract-malt extract agar | MAPPED | FOODON | CLOSE_MATCH | 6 |
 | FOODON:03315426 | FOODON:03315426 | Yeast extract | MAPPED | FOODON | EXACT_MATCH | 7697 |
 | CHEBI:10100 | CHEBI:10100 | Zafirlukast | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| NCIT:C896 | NCIT:C896 | Zeikus trace element solution | MAPPED | NCIT | LEXICAL_MATCH | 8 |
 | CHEBI:32076 | CHEBI:32076 | Zinc Pyrithione | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:35176 | CHEBI:35176 | Zinc sulfate | MAPPED | CHEBI | EXACT_MATCH | 250 |
 | CHEBI:49976 | CHEBI:49976 | ZnCl2 | MAPPED | CHEBI | EXACT_MATCH | 1839 |
@@ -2683,6 +2681,8 @@ Total: 2952 ingredients
 | NCIT:C120561 | NCIT:C120561 | Sodium glycerophosphate | MAPPED | NCIT | EXACT_MATCH | 25 |
 | kgmicrobe.ingredient:trace_element_solution_sl-10 | NCIT:C896 | Trace element solution SL-10 | MAPPED | NCIT | CLOSE_MATCH | 8 |
 | kgmicrobe.ingredient:air-dried_garden_soil | ENVO:00002263 | air-dried garden soil | MAPPED | ENVO | NARROW_MATCH | 10 |
+| kgmicrobe.ingredient:trace_element_solution | NCIT:C896 | Trace element solution | MAPPED | NCIT | CLOSE_MATCH | 8 |
+| kgmicrobe.ingredient:zeikus_trace_element_solution | NCIT:C896 | Zeikus trace element solution | MAPPED | NCIT | CLOSE_MATCH | 8 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
