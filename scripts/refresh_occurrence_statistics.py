@@ -14,9 +14,10 @@ no cap, so both counts can be derived honestly:
     media_count       = distinct recipe_id
     total_occurrences = row count
 
-Matching is by `identifier` == `resolved_identifier` -- a stable id on both
-sides. Names are never used: CultureMech recipe names are not unique (2291 are
-shared, 4784 recipes have none), and MIM has its own label-drift history.
+Matching is by the MIM identifier that should own a row. Usually that is
+CultureMech's `resolved_identifier`; narrow local splits can override exact
+source labels that a vendored CultureMech label index still maps to a broader
+parent.
 
 Records with no match are LEFT ALONE rather than zeroed. Absence from a scan can
 mean the ingredient is genuinely gone or that resolution changed upstream, and
@@ -49,6 +50,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from mediaingredientmech.curate.curation_event import record_curation_event
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
+from mediaingredientmech.utils.culturemech_occurrences import mim_identifier_for_occurrence
 
 DATA = Path("data/curated/mapped_ingredients.yaml")
 REPORT = Path("reports/occurrence_statistics_refresh.tsv")
@@ -102,7 +104,7 @@ def read_occurrences(path: Path) -> tuple[dict[str, tuple[int, int]], int, int]:
                     "CultureMech#337 occurrence table, not the pre-#337 aggregate."
                 )
         for row in reader:
-            identifier = (row.get("resolved_identifier") or "").strip()
+            identifier = mim_identifier_for_occurrence(row)
             if not identifier:
                 continue
             recipes[identifier].add(row["recipe_id"])

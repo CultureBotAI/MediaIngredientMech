@@ -58,6 +58,23 @@ def test_no_cap_at_fifty(mod, tmp_path):
     assert mod.read_occurrences(path)[0]["CHEBI:1"] == (120, 120)
 
 
+def test_source_label_override_splits_air_dried_garden_soil(mod, tmp_path):
+    """Counts split on the same source-label override as the membership edges."""
+    path = tmp_path / "occurrences.tsv"
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "ENVO:00002263", "air-dried garden soil"])
+        w.writerow(["CultureMech:000002", "ENVO:00002263", "Garden soil"])
+        w.writerow(["CultureMech:000003", "ENVO:00002263", "air--dried garden soil"])
+
+    fresh, total_rows, total_recipes = mod.read_occurrences(path)
+
+    assert (total_rows, total_recipes) == (3, 3)
+    assert fresh["kgmicrobe.ingredient:air-dried_garden_soil"] == (2, 2)
+    assert fresh["ENVO:00002263"] == (1, 1)
+
+
 def test_a_pre_337_table_is_refused_rather_than_misread(mod, tmp_path):
     """Without recipe_id there is no stable key, and silently falling back to
     names would reintroduce the identity problem this fix exists to avoid."""

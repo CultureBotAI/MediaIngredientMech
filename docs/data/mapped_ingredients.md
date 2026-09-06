@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-09-06T06:57:31.884978+00:00
+Generated: 2026-09-06T08:23:59.715269+00:00
 Total: 2678 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1080,7 +1080,7 @@ Total: 2678 ingredients
 | cas:13450-90-3 | cas:13450-90-3 | Gallium(III)chloride | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:67521 | CHEBI:67521 | Gambogic Acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16865 | CHEBI:16865 | gamma-Aminobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 13 |
-| ENVO:00002263 | ENVO:00002263 | Garden soil | MAPPED | ENVO | EXACT_MATCH | 15 |
+| ENVO:00002263 | ENVO:00002263 | Garden soil | MAPPED | ENVO | EXACT_MATCH | 5 |
 | mesh:C012993 | mesh:C012993 | Gardimycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:5291 | CHEBI:5291 | Gelatine | MAPPED | CHEBI | SYNONYM_MATCH | 15 |
 | CHEBI:85248 | CHEBI:85248 | Gelrite | MAPPED | CHEBI | SYNONYM_MATCH | 33 |
@@ -2682,4 +2682,4 @@ Total: 2678 ingredients
 | NCIT:C217966 | NCIT:C217966 | hydroxocobalamin hydrochloride | MAPPED | NCIT | EXACT_MATCH | 1 |
 | NCIT:C120561 | NCIT:C120561 | Sodium glycerophosphate | MAPPED | NCIT | EXACT_MATCH | 25 |
 | kgmicrobe.ingredient:trace_element_solution_sl-10 | NCIT:C896 | Trace element solution SL-10 | MAPPED | NCIT | CLOSE_MATCH | 8 |
-| kgmicrobe.ingredient:air-dried_garden_soil | ENVO:00002263 | air-dried garden soil | MAPPED | ENVO | NARROW_MATCH | 15 |
+| kgmicrobe.ingredient:air-dried_garden_soil | ENVO:00002263 | air-dried garden soil | MAPPED | ENVO | NARROW_MATCH | 10 |

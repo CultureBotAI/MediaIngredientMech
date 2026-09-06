@@ -6,8 +6,8 @@ synonyms:
   source: mim-queue
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 15
-  media_count: 15
+  total_occurrences: 5
+  media_count: 5
 curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
@@ -38,6 +38,17 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-06T08:17:02.834323+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: CORRECTED
+  changes: occurrence_statistics 15/15 -> 5/5 (media_count/total_occurrences), recomputed
+    from culturemech_recipe_membership.tsv after exact air-dried garden soil source
+    rows were reassigned from ENVO:00002263 to kgmicrobe.ingredient:air-dried_garden_soil
+    (#548). [source=ingredient_occurrences.tsv culturemech_rev=8c79a66fec edges=191616
+    recipes=15254 mim_records=801]
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2159); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

@@ -8,14 +8,12 @@ import os
 import pickle
 import sys
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Any
 
 import click
 import numpy as np
 import pandas as pd
-import umap
 from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn
 
 # Ensure the src package is importable
 _project_root = Path(__file__).resolve().parents[1]
@@ -29,8 +27,8 @@ _scripts_dir = Path(__file__).resolve().parent
 if str(_scripts_dir) not in sys.path:
     sys.path.insert(0, str(_scripts_dir))
 
-from mediaingredientmech.curie import mim_curie_for_stem
-from mediaingredientmech.utils.yaml_handler import load_yaml
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
+from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 console = Console()
 
@@ -78,7 +76,7 @@ class IngredientEmbeddingLoader:
         self.cache_dir = cache_dir
         self.cache_dir.mkdir(exist_ok=True)
 
-    def _cache_key(self, prefixes: List[str]) -> str:
+    def _cache_key(self, prefixes: list[str]) -> str:
         """Cache filename keyed on (embedding source identity, prefix set).
         Embedding identity is the basename plus an mtime+size fingerprint, so
         bumping the embedding file (e.g. 2026-02-01 → 2026-04-25) automatically
@@ -96,9 +94,9 @@ class IngredientEmbeddingLoader:
 
     def load_embeddings(
         self,
-        prefixes: List[str] = None,
+        prefixes: list[str] = None,
         force_reload: bool = False
-    ) -> Dict[str, np.ndarray]:
+    ) -> dict[str, np.ndarray]:
         """Load embeddings from TSV.gz, filter by prefixes, and cache."""
         if prefixes is None:
             # Ontology prefixes used by mapped records, plus the non-ontology
@@ -122,7 +120,7 @@ class IngredientEmbeddingLoader:
                 return pickle.load(f)
 
         console.print(f"[yellow]Loading embeddings from {self.embeddings_path}[/yellow]")
-        console.print(f"[yellow]This may take a few minutes...[/yellow]")
+        console.print("[yellow]This may take a few minutes...[/yellow]")
 
         embeddings = {}
 
@@ -161,7 +159,7 @@ class IngredientEmbeddingLoader:
 class IngredientUMAPGenerator:
     """Generate UMAP visualization for ingredients."""
 
-    def __init__(self, embeddings: Dict[str, np.ndarray]):
+    def __init__(self, embeddings: dict[str, np.ndarray]):
         self.embeddings = embeddings
 
     def generate_umap(
@@ -298,8 +296,8 @@ class IngredientUMAPGenerator:
         if method == "pacmap":
             # L2-normalize rows first (mirrors cosine on the original vectors),
             # then PCA-init + fixed seed for a reproducible embedding.
-            from sklearn.preprocessing import normalize
             import pacmap
+            from sklearn.preprocessing import normalize
 
             console.print(
                 f"[yellow]Running PaCMAP (PCA-init, random_state={random_state})...[/yellow]"
@@ -308,6 +306,8 @@ class IngredientUMAPGenerator:
             reducer = pacmap.PaCMAP(n_components=2, random_state=random_state)
             embedding_2d = reducer.fit_transform(X_norm, init="pca")
         elif method == "umap":
+            import umap
+
             console.print(
                 f"[yellow]Running UMAP (n_neighbors={n_neighbors}, min_dist={min_dist})...[/yellow]"
             )
@@ -351,7 +351,7 @@ class IngredientUMAPGenerator:
 def build_visualization_data(
     umap_df: pd.DataFrame,
     ingredients_dir: Path
-) -> List[Dict[str, Any]]:
+) -> list[dict[str, Any]]:
     """Build JSON data for visualization.
 
     Args:
@@ -370,7 +370,7 @@ def build_visualization_data(
     # files) ~= millions of YAML loads), which made "Step 3" take far longer than
     # the UMAP fit itself. One pass + dict lookup makes it near-instant.
     # MIM record CURIE -> (parsed record, category, source YAML path)
-    records_by_key: Dict[str, tuple[dict, str, Path]] = {}
+    records_by_key: dict[str, tuple[dict, str, Path]] = {}
     for category in ['mapped', 'unmapped']:
         category_dir = ingredients_dir / category
         for candidate in category_dir.glob('*.yaml'):
