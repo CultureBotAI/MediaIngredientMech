@@ -50,8 +50,8 @@ curation_history:
   curator: mediaingredientmech-agentic-curation
   action: ANNOTATED
   changes: Added the TRACE_ELEMENT role plus components and component_assertion by
-    following MediaDive JCM medium J849's "see Medium No. 684" pointer to DSMZ medium
-    684 solution 595, Trace element solution SL-10.
+    following MediaDive JCM medium J849's "see Medium No. 684" pointer to JCM
+    medium 684, Trace mineral solution.
   llm_assisted: true
   llm_model: gpt-5
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1914); no CAS-RN or
@@ -59,55 +59,65 @@ notes: Imported from mim-queue (source_id=mediadive.ingredient:1914); no CAS-RN 
 ingredient_type: STOCK_SOLUTION
 solution_type: TRACE_METAL_MIX
 components:
-- component_name: HCl (25%)
-  component_id: CHEBI:17883
+- component_name: Nitrilotriacetic acid
+  component_id: CHEBI:44557
   reference_scope: MIM_CATALOG
-  concentration_value: '10.0'
-  concentration_unit: ML_PER_L
+  concentration_value: '12.5'
+  concentration_unit: G_PER_L
 - component_name: FeCl2 x 4 H2O
   component_id: CHEBI:86249
   reference_scope: MIM_CATALOG
-  concentration_value: '1.5'
+  concentration_value: '0.2'
+  concentration_unit: G_PER_L
+- component_name: MnCl2 x 4 H2O
+  component_id: CHEBI:86368
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: CoCl2 x 6 H2O
+  component_id: CHEBI:53503
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.02'
+  concentration_unit: G_PER_L
+- component_name: CaCl2 x 2 H2O
+  component_id: CHEBI:86158
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
   concentration_unit: G_PER_L
 - component_name: ZnCl2
   component_id: CHEBI:49976
   reference_scope: MIM_CATALOG
-  concentration_value: '70.0'
-  concentration_unit: MG_PER_L
-- component_name: MnCl2 x 4 H2O
-  component_id: CHEBI:86368
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: CuCl2
+  component_id: CHEBI:49553
   reference_scope: MIM_CATALOG
-  concentration_value: '100.0'
-  concentration_unit: MG_PER_L
+  concentration_value: '0.2'
+  concentration_unit: G_PER_L
 - component_name: H3BO3
   component_id: CHEBI:33118
   reference_scope: MIM_CATALOG
-  concentration_value: '6.0'
-  concentration_unit: MG_PER_L
-- component_name: CoCl2 x 6 H2O
-  component_id: CHEBI:53503
-  reference_scope: MIM_CATALOG
-  concentration_value: '190.0'
-  concentration_unit: MG_PER_L
-- component_name: CuCl2 x 2 H2O
-  component_id: CHEBI:86318
-  reference_scope: MIM_CATALOG
-  concentration_value: '2.0'
-  concentration_unit: MG_PER_L
-- component_name: NiCl2 x 6 H2O
-  component_id: CHEBI:53542
-  reference_scope: MIM_CATALOG
-  concentration_value: '24.0'
-  concentration_unit: MG_PER_L
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
 - component_name: Na2MoO4 x 2 H2O
   component_id: CHEBI:75213
   reference_scope: MIM_CATALOG
-  concentration_value: '36.0'
-  concentration_unit: MG_PER_L
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: NaCl
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L
+- component_name: Na2SeO3 x 5 H2O
+  component_id: CHEBI:131361
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.02'
+  concentration_unit: G_PER_L
 - component_name: Distilled water
   component_id: CHEBI:15377
   reference_scope: MIM_CATALOG
-  concentration_value: '990.0'
+  concentration_value: '1000.0'
   concentration_unit: ML_PER_L
 component_assertion:
   method: RECIPE_TRANSCRIPTION
@@ -119,10 +129,11 @@ component_assertion:
     notes: JCM medium J849 lists Zeikus trace element solution with a "see Medium
       No. 684" attribute.
   - evidence_type: RECIPE_SOURCE
-    source: https://mediadive.dsmz.de/download/medium/684/json
-    source_record: DSMZ medium 684 solution 595 Trace element solution SL-10
-    notes: DSMZ medium 684 enumerates the HCl, trace metal, borate, and molybdate
-      salts and distilled water in the referenced SL-10 stock.
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=684
+    source_record: JCM Medium No. 684 Trace mineral solution
+    notes: JCM Medium No. 684 defines the pointed Trace mineral solution and enumerates
+      nitrilotriacetic acid, Fe/Mn/Co/Ca/Zn/Cu salts, H3BO3, Na2MoO4 x 2 H2O,
+      NaCl, Na2SeO3 x 5 H2O, and distilled water.
 ontology_mapping:
   ontology_id: NCIT:C896
   ontology_label: Trace Element
@@ -142,10 +153,10 @@ nutritional_roles:
 - role: TRACE_ELEMENT
   confidence: 1.0
   evidence:
-  - reference_text: DSMZ medium 684 Trace element solution SL-10
+  - reference_text: JCM Medium No. 684 Trace mineral solution
     reference_type: TECHNICAL_REPORT
-    url: https://mediadive.dsmz.de/download/medium/684/json
-    excerpt: Trace element solution SL-10
-    curator_note: JCM medium J849's Zeikus trace element solution refers to DSMZ medium
-      684, whose SL-10 stock contains iron, zinc, manganese, boron, cobalt, copper,
-      nickel, and molybdenum salts.
+    url: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=684
+    excerpt: 'Trace mineral solution:'
+    curator_note: JCM medium J849's Zeikus trace element solution refers to JCM medium
+      684, whose Trace mineral solution contains iron, manganese, cobalt, calcium,
+      zinc, copper, molybdenum, and selenium salts plus boric acid.
