@@ -6,6 +6,13 @@ ontology_mapping:
   ontology_source: MICRO
   mapping_quality: EXACT_MATCH
   match_level: EXACT
+  evidence:
+  - evidence_type: LEXICAL_MATCH
+    source: culturemech:output/ingredient_occurrences.tsv
+    notes: Surface form appears in CultureMech's occurrence table and was grounded
+      to MICRO:0001230 on an exact match against the ontology label. Restored from
+      the record's own creation history (#541); the residual importer wrote this provenance
+      only into the published SSSOM.
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 20
@@ -18,4 +25,13 @@ curation_history:
     mentions across 19 recipes). Grounded to MICRO:0001230 (''sheep blood'') on an
     exact match of the canonical label to the query ''Sheep blood''. Source: culturemech:output/ingredient_occurrences.tsv.'
   new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-06T07:34:56.956907+00:00'
+  curator: claude_restore_culturemech_evidence
+  action: CORRECTED
+  changes: Added ontology_mapping.evidence recording the CultureMech occurrence table
+    as the source of this grounding. The provenance was already in this record's CREATED_FROM_CULTUREMECH_RESIDUAL
+    history entry but absent from the structured field the SSSOM builder reads, so
+    a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
+    row (#541).
   llm_assisted: false
