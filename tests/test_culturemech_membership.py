@@ -158,6 +158,29 @@ def test_repeated_listings_in_one_recipe_become_a_count_not_a_row(mod, tmp_path)
     assert collected == {("CHEBI:x", "CultureMech:000001"): 2}
 
 
+def test_source_label_override_splits_air_dried_garden_soil(mod, tmp_path):
+    """MIM narrowed only the air-dried source label; Garden soil remains ENVO."""
+    source = tmp_path / "occ.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "ENVO:00002263", "air-dried garden soil"])
+        w.writerow(["CultureMech:000002", "ENVO:00002263", "Garden soil"])
+        w.writerow(["CultureMech:000003", "ENVO:00002263", "air--dried garden soil"])
+
+    collected, unknown = mod.collect(
+        source,
+        {"ENVO:00002263", "kgmicrobe.ingredient:air-dried_garden_soil"},
+    )
+
+    assert collected == {
+        ("kgmicrobe.ingredient:air-dried_garden_soil", "CultureMech:000001"): 1,
+        ("ENVO:00002263", "CultureMech:000002"): 1,
+        ("kgmicrobe.ingredient:air-dried_garden_soil", "CultureMech:000003"): 1,
+    }
+    assert unknown == {}
+
+
 def test_a_pre_337_table_is_refused(mod, tmp_path):
     source = tmp_path / "old.tsv"
     source.write_text("preferred_term\tmedium_name\nNaCl\tR2A\n", encoding="utf-8")

@@ -24,9 +24,9 @@ documented definition the issue asks for, and the invariant the test asserts.
 CAUTION, and it is not a rounding error: several MIM records share one
 identifier (#225 / #334). `MgSO4 x 7 H2O` and `MgSO4·H2O` both resolve to
 CHEBI:31795, so they share these edges and a monohydrate inherits the
-heptahydrate's memberships. Edges are keyed on the identifier because that is
-what CultureMech resolved to; they cannot be split until those records are
-merged. Do not sum membership across records.
+heptahydrate's memberships. Most edges are keyed on CultureMech's resolved
+identifier, with narrow source-label overrides for records MIM split locally.
+Do not sum membership across records.
 
 Usage:
     python scripts/build_culturemech_membership.py --occurrences PATH
@@ -44,6 +44,12 @@ from pathlib import Path
 import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT / "src"))
+
+from mediaingredientmech.utils.culturemech_occurrences import (  # noqa: E402
+    mim_identifier_for_occurrence,
+)
+
 CURATED = REPO_ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 OUTPUT = REPO_ROOT / "mappings" / "culturemech_recipe_membership.tsv"
 # The absences, which are the one signal here nobody can reconstruct later: the
@@ -92,7 +98,7 @@ def collect(occurrences: Path, known: set[str]) -> tuple[dict, dict[str, int]]:
                     "CultureMech#337 occurrence table."
                 )
         for row in reader:
-            identifier = (row.get("resolved_identifier") or "").strip()
+            identifier = mim_identifier_for_occurrence(row)
             recipe_id = (row.get("recipe_id") or "").strip()
             if not identifier or not recipe_id:
                 continue
