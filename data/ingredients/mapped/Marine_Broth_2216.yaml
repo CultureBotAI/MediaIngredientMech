@@ -81,9 +81,112 @@ curation_history:
     2216 (BD 279110)'' (x1 CultureMech mentions); ''Marine Broth 2216 (BD--Difco)''
     (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added components and component_assertion by transcribing the ATCC Medium
+    2887 Difco Marine Agar 2216 scratch formula with agar omitted for broth.
+  llm_assisted: true
+  llm_model: gpt-5
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1607); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
+components:
+- component_name: Peptone
+  component_id: MICRO:0000178
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: G_PER_L
+- component_name: Yeast Extract
+  component_id: FOODON:03315426
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L
+- component_name: Ferric Citrate
+  component_id: CHEBI:144421
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: Sodium Chloride
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '19.45'
+  concentration_unit: G_PER_L
+- component_name: Magnesium Chloride
+  component_id: CHEBI:86345
+  reference_scope: MIM_CATALOG
+  concentration_value: '8.8'
+  concentration_unit: G_PER_L
+- component_name: Sodium Sulfate
+  component_id: CHEBI:32149
+  reference_scope: MIM_CATALOG
+  concentration_value: '3.24'
+  concentration_unit: G_PER_L
+- component_name: Calcium Chloride
+  component_id: CHEBI:3312
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.8'
+  concentration_unit: G_PER_L
+- component_name: Potassium Chloride
+  component_id: CHEBI:32588
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.55'
+  concentration_unit: G_PER_L
+- component_name: Sodium Bicarbonate
+  component_id: CHEBI:32139
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.16'
+  concentration_unit: G_PER_L
+- component_name: Potassium Bromide
+  component_id: CHEBI:32030
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.08'
+  concentration_unit: G_PER_L
+- component_name: Strontium Chloride
+  component_id: CHEBI:36383
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.034'
+  concentration_unit: G_PER_L
+- component_name: Boric Acid
+  component_id: CHEBI:33118
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.022'
+  concentration_unit: G_PER_L
+- component_name: Sodium Silicate
+  component_id: CHEBI:60720
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.004'
+  concentration_unit: G_PER_L
+- component_name: Sodium Fluoride
+  component_id: CHEBI:28741
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0024'
+  concentration_unit: G_PER_L
+- component_name: Ammonium Nitrate
+  component_id: CHEBI:63038
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0016'
+  concentration_unit: G_PER_L
+- component_name: Disodium Phosphate
+  component_id: CHEBI:34683
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.008'
+  concentration_unit: G_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: L_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.atcc.org/~/media/5a4142bda5cf458b9131902a1791833d.ashx
+    source_record: ATCC Medium 2887 Marine Agar/Broth 2216
+    notes: ATCC Medium 2887 lists the Difco Marine Agar 2216 scratch formula with
+      peptone, yeast extract, ferric citrate, salts, agar, and distilled water per
+      liter, and says to omit agar for broth medium.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:marine_broth_2216
   ontology_label: Marine broth 2216
