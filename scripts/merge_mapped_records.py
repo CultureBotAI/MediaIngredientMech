@@ -36,6 +36,7 @@ import argparse
 import datetime as dt
 import re
 import sys
+from collections.abc import Iterable
 from pathlib import Path
 
 import yaml
@@ -98,18 +99,69 @@ def transfer_occurrences(src: dict, dst: dict) -> tuple[int, int]:
     return moved
 
 
-def drop_sssom_rows(subject_label: str, apply: bool) -> tuple[str, int]:
+def _pipe_union(existing: str, values: Iterable[str]) -> tuple[str, int]:
+    parts = [part.strip() for part in existing.split("|") if part.strip()]
+    seen = {part.casefold() for part in parts}
+    added = 0
+    for value in values:
+        text = str(value).strip()
+        if not text or text.casefold() in seen:
+            continue
+        parts.append(text)
+        seen.add(text.casefold())
+        added += 1
+    return "|".join(parts), added
+
+
+def update_sssom_rows(
+    source_label: str,
+    target_label: str,
+    target_id: str,
+    carried_synonyms: Iterable[str],
+) -> tuple[str, int, int]:
     lines = SSSOM.read_text().splitlines(keepends=True)
     header = next(i for i, ln in enumerate(lines) if ln.startswith("subject_id"))
-    keep, dropped = [], 0
+    columns = lines[header].rstrip("\n").split("\t")
+    index = {column: n for n, column in enumerate(columns)}
+    needed = ("subject_label", "predicate_id", "object_id", "other")
+    missing = [column for column in needed if column not in index]
+    if missing:
+        raise SystemExit(f"SSSOM is missing required column(s): {', '.join(missing)}")
+
+    carried = tuple(carried_synonyms)
+    max_column = max(index[column] for column in needed)
+    keep, dropped, published, saw_target = [], 0, 0, False
     for i, ln in enumerate(lines):
-        if i > header and ln.split("\t")[1:2] == [subject_label]:
+        if i <= header:
+            keep.append(ln)
+            continue
+        fields = ln.rstrip("\n").split("\t")
+        if len(fields) <= max_column:
+            keep.append(ln)
+            continue
+        if fields[index["subject_label"]] == source_label:
             dropped += 1
             continue
+        if (
+            carried
+            and fields[index["subject_label"]] == target_label
+            and fields[index["predicate_id"]] == "skos:exactMatch"
+            and fields[index["object_id"]] == target_id
+        ):
+            saw_target = True
+            fields[index["other"]], added = _pipe_union(fields[index["other"]], carried)
+            published += added
+            keep.append("\t".join(fields) + ("\n" if ln.endswith("\n") else ""))
+            continue
         keep.append(ln)
+    if carried and not saw_target:
+        raise SystemExit(
+            f"no exact SSSOM row for survivor {target_label!r} -> {target_id}; "
+            "carried synonyms would be dropped from the final SSSOM"
+        )
     if keep and not keep[-1].endswith("\n"):
         keep[-1] += "\n"
-    return "".join(keep), dropped
+    return "".join(keep), dropped, published
 
 
 def main() -> int:
@@ -187,13 +239,19 @@ def main() -> int:
     doc["total_count"] = len(recs)
     doc["generation_date"] = stamp
 
-    sssom_text, dropped = drop_sssom_rows(src_term, args.apply)
+    sssom_text, dropped, published = update_sssom_rows(
+        src_term,
+        dst["preferred_term"],
+        dst["identifier"],
+        carried,
+    )
 
     print(f"{args.src_curie} {src_term!r}  ->  {args.dst_curie} {dst['preferred_term']!r}")
     print(f"  synonyms carried:   {len(carried)}")
     print(f"  occurrences moved:  {moved[0]} total / {moved[1]} media")
     print(f"  role facets:        {', '.join(sorted(set(roles_added))) or 'none'}")
     print(f"  SSSOM rows dropped: {dropped}")
+    print(f"  SSSOM synonyms:     {published} added to survivor other")
     print("  source tombstoned REJECTED (identifier kept; excluded from duplicate claims)")
     print(f"  mapped_count -> {doc['mapped_count']}")
 

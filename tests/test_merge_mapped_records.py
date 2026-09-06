@@ -17,6 +17,14 @@ import yaml
 
 ROOT = Path(__file__).parent.parent
 SCRIPT = ROOT / "scripts" / "merge_mapped_records.py"
+SSSOM_HEADER = "\t".join([
+    "subject_id",
+    "subject_label",
+    "predicate_id",
+    "object_id",
+    "object_label",
+    "other",
+]) + "\n"
 
 
 def _load():
@@ -54,14 +62,25 @@ def test_source_id_is_scraped_from_notes(mod):
     assert mod.source_id({"notes": None}) is None
 
 
-def test_dropped_sssom_rows_are_the_sources_only(mod, tmp_path, monkeypatch):
+def test_updates_sssom_rows_for_the_merge(mod, tmp_path, monkeypatch):
     tsv = tmp_path / "s.tsv"
-    tsv.write_text("subject_id\tsubject_label\tp\n"
-                   "MIM:A\tA\tx\nMIM:B\tB\tx\nMIM:B\tB\ty\n")
+    tsv.write_text(
+        SSSOM_HEADER
+        + "MIM:A\tA\tskos:exactMatch\tCHEBI:1\tA\told\n"
+        + "MIM:B\tB\tskos:exactMatch\tCHEBI:1\tB\t\n"
+        + "MIM:B\tB\tskos:closeMatch\tCHEBI:2\tB\t\n"
+    )
     monkeypatch.setattr(mod, "SSSOM", tsv)
-    text, dropped = mod.drop_sssom_rows("B", apply=False)
+    text, dropped, published = mod.update_sssom_rows(
+        "B",
+        "A",
+        "CHEBI:1",
+        ["B", "alt"],
+    )
     assert dropped == 2
-    assert "MIM:A\tA" in text and "MIM:B" not in text
+    assert published == 2
+    assert "MIM:A\tA\tskos:exactMatch\tCHEBI:1\tA\told|B|alt\n" in text
+    assert "MIM:B" not in text
     assert tsv.read_text().count("MIM:B") == 2, "dry-run must not write"
 
 
@@ -75,7 +94,11 @@ def test_occurrences_transfer_and_source_is_tombstoned(mod, tmp_path, monkeypatc
     src = tmp_path / "mapped.yaml"
     src.write_text(yaml.safe_dump(coll))
     tsv = tmp_path / "s.tsv"
-    tsv.write_text("subject_id\tsubject_label\tp\nMIM:Loser\tLoser\tx\n")
+    tsv.write_text(
+        SSSOM_HEADER
+        + "MIM:Winner\tWinner\tskos:exactMatch\tCHEBI:1\tWinner\t\n"
+        + "MIM:Loser\tLoser\tskos:exactMatch\tCHEBI:1\tLoser\t\n"
+    )
     monkeypatch.setattr(mod, "MAPPED", src)
     monkeypatch.setattr(mod, "SSSOM", tsv)
     monkeypatch.setattr(sys, "argv", ["x", "--from", "CHEBI:1", "--from-term", "Loser",
@@ -95,7 +118,9 @@ def test_occurrences_transfer_and_source_is_tombstoned(mod, tmp_path, monkeypatc
     assert {"Loser", "alt"} <= syns, "the source's name and synonyms must survive"
     assert winner.get("nutritional_roles"), "role facets union onto the survivor"
     assert out["mapped_count"] == 1
-    assert "MIM:Loser" not in tsv.read_text(), "a row pointing at a REJECTED record is ORPHAN"
+    sssom = tsv.read_text()
+    assert "MIM:Loser" not in sssom, "a row pointing at a REJECTED record is ORPHAN"
+    assert "Loser|alt" in sssom, "carried labels must stay in the final SSSOM"
 
 
 def test_physicochemical_roles_union_onto_the_survivor(mod, tmp_path, monkeypatch):
@@ -109,7 +134,11 @@ def test_physicochemical_roles_union_onto_the_survivor(mod, tmp_path, monkeypatc
     src = tmp_path / "mapped.yaml"
     src.write_text(yaml.safe_dump(coll))
     tsv = tmp_path / "s.tsv"
-    tsv.write_text("subject_id\tsubject_label\tp\nMIM:Loser\tLoser\tx\n")
+    tsv.write_text(
+        SSSOM_HEADER
+        + "MIM:Winner\tWinner\tskos:exactMatch\tCHEBI:1\tWinner\t\n"
+        + "MIM:Loser\tLoser\tskos:exactMatch\tCHEBI:1\tLoser\t\n"
+    )
     monkeypatch.setattr(mod, "MAPPED", src)
     monkeypatch.setattr(mod, "SSSOM", tsv)
     monkeypatch.setattr(
