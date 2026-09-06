@@ -1,4 +1,4 @@
-identifier: NCIT:C896
+identifier: kgmicrobe.ingredient:trace_element_solution
 preferred_term: Trace element solution
 synonyms:
 - synonym_text: Trace element solution
@@ -35,16 +35,55 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: CORRECTED
+  changes: Changed identifier from NCIT:C896 to kgmicrobe.ingredient:trace_element_solution
+    and retained NCIT:C896 only as CLOSE_MATCH. MediaDive ingredient 96 is a trace-element
+    stock solution surface used across several stock-solution attributes, not a single
+    elemental trace component.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added the TRACE_ELEMENT role and TRACE_METAL_MIX solution_type from MediaDive
+    ingredient 96; left components unset because this generic source label does not
+    establish one complete stock formulation.
+  llm_assisted: true
+  llm_model: gpt-5
 notes: Imported from mim-queue (source_id=mediadive.ingredient:96); no CAS-RN or CHEBI/NCIT
-  match. Curator review needed.
+  match. Curator review needed. MediaDive ingredient 96 is a trace-element stock solution
+  surface with multiple recipe-local attributes; its occurrence set may refer to different
+  formulae, so component assertions require a more specific source recipe.
 ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
 ontology_mapping:
   ontology_id: NCIT:C896
   ontology_label: Trace Element
   ontology_source: NCIT
-  mapping_quality: LEXICAL_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0548; matched via 'Trace element solution';
       stem-substring
+  - evidence_type: CURATOR_JUDGMENT
+    source: mediaingredientmech-agentic-curation
+    notes: MediaDive ingredient 96 is a trace-element stock-solution label with no
+      CAS, CHEBI, or exact NCIT denotation for the complete mixture; NCIT:C896 is
+      retained as a broad trace-element category only.
+kg_microbe_node_id: kgmicrobe.ingredient:trace_element_solution
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 0.95
+  evidence:
+  - reference_text: MediaDive ingredient 96 Trace element solution
+    reference_type: DATABASE_ENTRY
+    url: https://mediadive.dsmz.de/ingredients/96
+    excerpt: Trace element solution
+    curator_note: MediaDive lists ingredient 96 as a trace element solution with no
+      formula, mass, CAS number, ChEBI ID, or KEGG ID, supporting curation as a trace-element
+      stock-solution placeholder rather than one chemical.

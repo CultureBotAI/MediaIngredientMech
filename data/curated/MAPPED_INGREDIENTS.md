@@ -1983,7 +1983,6 @@
 | FOODON:03301454 | Tomato juice | FOODON:03301454 | FOODON | EXACT_MATCH | 21 |
 | mesh:C069668 | Toray silicone SH 5535 | mesh:C069668 | MESH | LEXICAL_MATCH | 2 |
 | CHEBI:69241 | Totarol | CHEBI:69241 | CHEBI | EXACT_MATCH | 0 |
-| NCIT:C896 | Trace element solution | NCIT:C896 | NCIT | LEXICAL_MATCH | 8 |
 | kgmicrobe.ingredient:trace_element_solution_see_medium_no_187 | Trace element solution see Medium No. 187 | NCIT:C896 | NCIT | CLOSE_MATCH | 0 |
 | MICRO:0001349 | Trace metal mix A5 | MICRO:0001349 | MICRO | EXACT_MATCH | 2 |
 | CHEBI:38366 | trans-2-Pentenoic acid | CHEBI:38366 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -2084,7 +2083,6 @@
 | kgmicrobe.ingredient:yeast_extract_malt_extract_agar | Yeast extract-malt extract agar | FOODON:03301056 | FOODON | CLOSE_MATCH | 6 |
 | FOODON:03315426 | Yeast extract | FOODON:03315426 | FOODON | EXACT_MATCH | 7697 |
 | CHEBI:10100 | Zafirlukast | CHEBI:10100 | CHEBI | EXACT_MATCH | 0 |
-| NCIT:C896 | Zeikus trace element solution | NCIT:C896 | NCIT | LEXICAL_MATCH | 8 |
 | CHEBI:32076 | Zinc Pyrithione | CHEBI:32076 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:35176 | Zinc sulfate | CHEBI:35176 | CHEBI | EXACT_MATCH | 250 |
 | CHEBI:49976 | ZnCl2 | CHEBI:49976 | CHEBI | EXACT_MATCH | 1839 |
@@ -2635,6 +2633,8 @@
 | NCIT:C120561 | Sodium glycerophosphate | NCIT:C120561 | NCIT | EXACT_MATCH | 25 |
 | kgmicrobe.ingredient:trace_element_solution_sl-10 | Trace element solution SL-10 | NCIT:C896 | NCIT | CLOSE_MATCH | 8 |
 | kgmicrobe.ingredient:air-dried_garden_soil | air-dried garden soil | ENVO:00002263 | ENVO | NARROW_MATCH | 10 |
+| kgmicrobe.ingredient:trace_element_solution | Trace element solution | NCIT:C896 | NCIT | CLOSE_MATCH | 8 |
+| kgmicrobe.ingredient:zeikus_trace_element_solution | Zeikus trace element solution | NCIT:C896 | NCIT | CLOSE_MATCH | 8 |
 
 ## Other Statuses
 

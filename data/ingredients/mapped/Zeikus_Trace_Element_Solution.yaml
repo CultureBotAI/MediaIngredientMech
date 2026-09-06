@@ -1,4 +1,4 @@
-identifier: NCIT:C896
+identifier: kgmicrobe.ingredient:zeikus_trace_element_solution
 preferred_term: Zeikus trace element solution
 synonyms:
 - synonym_text: Zeikus trace element solution
@@ -35,16 +35,128 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: CORRECTED
+  changes: Changed identifier from NCIT:C896 to kgmicrobe.ingredient:zeikus_trace_element_solution
+    and retained NCIT:C896 only as CLOSE_MATCH. Zeikus trace element solution is a
+    JCM/DSMZ stock formulation reference, not identical to the generic trace-element
+    class.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added the TRACE_ELEMENT role plus components and component_assertion by
+    following MediaDive JCM medium J849's "see Medium No. 684" pointer to JCM medium
+    684, Trace mineral solution.
+  llm_assisted: true
+  llm_model: gpt-5
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1914); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION
+solution_type: TRACE_METAL_MIX
+components:
+- component_name: Nitrilotriacetic acid
+  component_id: CHEBI:44557
+  reference_scope: MIM_CATALOG
+  concentration_value: '12.5'
+  concentration_unit: G_PER_L
+- component_name: FeCl2 x 4 H2O
+  component_id: CHEBI:86249
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.2'
+  concentration_unit: G_PER_L
+- component_name: MnCl2 x 4 H2O
+  component_id: CHEBI:86368
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: CoCl2 x 6 H2O
+  component_id: CHEBI:53503
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.02'
+  concentration_unit: G_PER_L
+- component_name: CaCl2 x 2 H2O
+  component_id: CHEBI:86158
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: ZnCl2
+  component_id: CHEBI:49976
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: CuCl2
+  component_id: CHEBI:49553
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.2'
+  concentration_unit: G_PER_L
+- component_name: H3BO3
+  component_id: CHEBI:33118
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: Na2MoO4 x 2 H2O
+  component_id: CHEBI:75213
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: NaCl
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L
+- component_name: Na2SeO3 x 5 H2O
+  component_id: CHEBI:131361
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.02'
+  concentration_unit: G_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1000.0'
+  concentration_unit: ML_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://mediadive.dsmz.de/download/medium/J849/json
+    source_record: JCM medium J849 row 8, compound_id 1914
+    notes: JCM medium J849 lists Zeikus trace element solution with a "see Medium
+      No. 684" attribute.
+  - evidence_type: RECIPE_SOURCE
+    source: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=684
+    source_record: JCM Medium No. 684 Trace mineral solution
+    notes: JCM Medium No. 684 defines the pointed Trace mineral solution and enumerates
+      nitrilotriacetic acid, Fe/Mn/Co/Ca/Zn/Cu salts, H3BO3, Na2MoO4 x 2 H2O, NaCl,
+      Na2SeO3 x 5 H2O, and distilled water.
 ontology_mapping:
   ontology_id: NCIT:C896
   ontology_label: Trace Element
   ontology_source: NCIT
-  mapping_quality: LEXICAL_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0584; matched via 'Zeikus trace element solution';
       stem-substring
+  - evidence_type: CURATOR_JUDGMENT
+    source: mediaingredientmech-agentic-curation
+    notes: Zeikus trace element solution is a named stock formulation; NCIT:C896 is
+      retained only as a broad trace-element category.
+kg_microbe_node_id: kgmicrobe.ingredient:zeikus_trace_element_solution
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_text: JCM Medium No. 684 Trace mineral solution
+    reference_type: TECHNICAL_REPORT
+    url: https://www.jcm.riken.jp/cgi-bin/jcm/jcm_grmd?GRMD=684
+    excerpt: 'Trace mineral solution:'
+    curator_note: JCM medium J849's Zeikus trace element solution refers to JCM medium
+      684, whose Trace mineral solution contains iron, manganese, cobalt, calcium,
+      zinc, copper, molybdenum, and selenium salts plus boric acid.
