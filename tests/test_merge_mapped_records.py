@@ -89,7 +89,7 @@ def test_occurrences_transfer_and_source_is_tombstoned(mod, tmp_path, monkeypatc
     becomes a REJECTED tombstone reporting zero — not a deletion."""
     coll = {"total_count": 2, "mapped_count": 2,
             "ingredients": [rec("CHEBI:1", "Winner", (10, 4)),
-                            rec("CHEBI:1", "Loser", (6, 3), syns=("alt",),
+                            rec("CHEBI:2", "Loser", (6, 3), syns=("alt",),
                                 roles=[{"role": "CARBON_SOURCE"}])]}
     src = tmp_path / "mapped.yaml"
     src.write_text(yaml.safe_dump(coll))
@@ -97,11 +97,11 @@ def test_occurrences_transfer_and_source_is_tombstoned(mod, tmp_path, monkeypatc
     tsv.write_text(
         SSSOM_HEADER
         + "MIM:Winner\tWinner\tskos:exactMatch\tCHEBI:1\tWinner\t\n"
-        + "MIM:Loser\tLoser\tskos:exactMatch\tCHEBI:1\tLoser\t\n"
+        + "MIM:Loser\tLoser\tskos:exactMatch\tCHEBI:2\tLoser\t\n"
     )
     monkeypatch.setattr(mod, "MAPPED", src)
     monkeypatch.setattr(mod, "SSSOM", tsv)
-    monkeypatch.setattr(sys, "argv", ["x", "--from", "CHEBI:1", "--from-term", "Loser",
+    monkeypatch.setattr(sys, "argv", ["x", "--from", "CHEBI:2", "--from-term", "Loser",
                                       "--into", "CHEBI:1", "--into-term", "Winner",
                                       "--reason", "same substance", "--apply"])
     mod.main()

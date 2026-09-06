@@ -1,8 +1,8 @@
 # Mapped Ingredients Index
 **Total Records**: 2678
-**Mapped**: 2623 (97.9%)
+**Mapped**: 2624 (98.0%)
 **Unmapped**: 0 (0.0%)
-**Other statuses**: 55 (2.1%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 54 (2.0%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 220,020
 
 ---
@@ -1065,7 +1065,7 @@
 | cas:13450-90-3 | Gallium(III)chloride | cas:13450-90-3 | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:67521 | Gambogic Acid | CHEBI:67521 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16865 | gamma-Aminobutyric acid | CHEBI:16865 | CHEBI | EXACT_MATCH | 13 |
-| ENVO:00002263 | Garden soil | ENVO:00002263 | ENVO | EXACT_MATCH | 30 |
+| ENVO:00002263 | Garden soil | ENVO:00002263 | ENVO | EXACT_MATCH | 15 |
 | mesh:C012993 | Gardimycin | mesh:C012993 | MESH | EXACT_MATCH | 0 |
 | CHEBI:5291 | Gelatine | CHEBI:5291 | CHEBI | SYNONYM_MATCH | 15 |
 | CHEBI:85248 | Gelrite | CHEBI:85248 | CHEBI | SYNONYM_MATCH | 33 |
@@ -2634,6 +2634,7 @@
 | NCIT:C217966 | hydroxocobalamin hydrochloride | NCIT:C217966 | NCIT | EXACT_MATCH | 1 |
 | NCIT:C120561 | Sodium glycerophosphate | NCIT:C120561 | NCIT | EXACT_MATCH | 25 |
 | kgmicrobe.ingredient:trace_element_solution_sl-10 | Trace element solution SL-10 | NCIT:C896 | NCIT | CLOSE_MATCH | 8 |
+| kgmicrobe.ingredient:air-dried_garden_soil | air-dried garden soil | ENVO:00002263 | ENVO | NARROW_MATCH | 15 |
 
 ## Other Statuses
 
@@ -2642,7 +2643,6 @@
 | CHEBI:41189 | Butane-1,4-diol | REJECTED | CHEBI:41189 |  | 0 |
 | CHEBI:39060 | ACES | REJECTED | CHEBI:39060 |  | 0 |
 | CHEBI:30089 | Acetate (carbon source) | REJECTED | CHEBI:30089 |  | 0 |
-| ENVO:00002263 | air-dried garden soil | REJECTED | ENVO:00002263 |  | 0 |
 | CHEBI:31206 | Ammonium chloride (nitrogen source) | REJECTED | CHEBI:31206 |  | 0 |
 | CHEBI:34535 | Ampicillin sodium salt | REJECTED | CHEBI:34535 |  | 0 |
 | FOODON:03315720 | Bacto Soytone | REJECTED | FOODON:03315720 | FOODON:03315720 | 0 |

@@ -13,9 +13,10 @@ documents `REJECTED_NONZERO` as "a REJECTED (merged) record still reporting
 occurrences (counts should have been transferred to its representative)", so a
 merge here:
 
-  * transfers occurrence_statistics to the representative (summed -- each
-    mention is a real mention, and media_count <= total_occurrences is preserved
-    when both inputs satisfy it, which audit_occurrence_stats enforces)
+  * transfers occurrence_statistics to the representative unless the records
+    already share one identifier. The CultureMech membership edge table is
+    keyed by resolved identifier, so same-identifier duplicates already carry
+    the full identifier-level aggregate on both records.
   * carries the source's preferred_term and synonyms over as RAW_TEXT synonyms,
     and unions its role facets
   * tombstones the source as REJECTED with zeroed counts rather than deleting
@@ -72,16 +73,23 @@ def one(recs: list[dict], curie: str, term: str | None, what: str) -> dict:
 def transfer_occurrences(src: dict, dst: dict) -> tuple[int, int]:
     """Move ``src``'s occurrence statistics onto ``dst``. Returns what was moved.
 
-    The two totals are summed — each mention is a real mention. ``source_occurrences``
-    is summed PER SOURCE (#196): it is not covered by the totals, and the caller
-    replaces the source's whole stats block with zeros afterwards, so a source-scoped
-    count that is not moved here is destroyed rather than merely double-counted.
+    If both records already hold the same identifier, the two media totals are
+    copies of the same identifier-level CultureMech edge aggregate. Those two
+    fields should not be summed or they double the recipes. Otherwise, the media
+    totals are summed -- each mention is a real mention. ``source_occurrences`` is
+    summed PER SOURCE (#196): it is not covered by the totals, and the caller
+    replaces the source's whole stats block with zeros afterwards, so a
+    source-scoped count that is not moved here is destroyed rather than merely
+    double-counted.
     """
     so = src.get("occurrence_statistics") or {}
     do = dst.setdefault("occurrence_statistics", {})
     moved = (so.get("total_occurrences") or 0, so.get("media_count") or 0)
-    do["total_occurrences"] = (do.get("total_occurrences") or 0) + moved[0]
-    do["media_count"] = (do.get("media_count") or 0) + moved[1]
+    if src.get("identifier") and src.get("identifier") == dst.get("identifier"):
+        moved = (0, 0)
+    else:
+        do["total_occurrences"] = (do.get("total_occurrences") or 0) + moved[0]
+        do["media_count"] = (do.get("media_count") or 0) + moved[1]
 
     by_source = {e.get("source"): dict(e)
                  for e in (do.get("source_occurrences") or []) if e.get("source")}
@@ -199,6 +207,7 @@ def main() -> int:
             carried.append(text)
 
     # occurrence statistics transfer to the representative
+    shared_identifier = src["identifier"] == dst["identifier"]
     moved = transfer_occurrences(src, dst)
 
     # role facets union
@@ -214,11 +223,15 @@ def main() -> int:
                 roles_added.append(field)
 
     sid = source_id(src)
+    occurrence_change = (
+        f"occurrences unchanged for shared {dst['identifier']} membership"
+        if shared_identifier else f"occurrences +{moved[0]}/{moved[1]}"
+    )
     dst.setdefault("curation_history", []).append({
         "timestamp": stamp, "curator": args.curator,
         "action": "MERGED_FROM_MAPPED_RECORD",
         "changes": (f"Absorbed {args.src_curie} {src_term!r}: {len(carried)} synonym(s), "
-                    f"occurrences +{moved[0]}/{moved[1]}"
+                    f"{occurrence_change}"
                     + (f", role facets from {', '.join(sorted(set(roles_added)))}"
                        if roles_added else "")
                     + f". {args.reason}" + (f" Source: {sid}." if sid else "")),
