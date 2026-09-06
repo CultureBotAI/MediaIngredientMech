@@ -34,14 +34,14 @@ def test_migration_is_idempotent_and_has_reviewed_final_inventory():
     scopes = [
         component["reference_scope"] for record in parents for component in record["components"]
     ]
-    assert len(parents) == 61
-    assert sum(len(record["components"]) for record in parents) == 221
+    assert len(parents) == 63
+    assert sum(len(record["components"]) for record in parents) == 256
     # 3 components moved EXTERNAL_TERM -> MIM_CATALOG when `clarified rumen fluid`
     # (MICRO:0000520) gained a MIM record. A component's scope is a fact about the
     # catalog, not about the migration, so grounding a referenced term legitimately
     # shifts the split. The migrated total (143) is unchanged, which is what
     # migrate_component_partonomy.py guards.
-    assert scopes.count("MIM_CATALOG") == 211
+    assert scopes.count("MIM_CATALOG") == 246
     assert scopes.count("EXTERNAL_TERM") == 7
     assert scopes.count("UNMAPPED") == 3
 
