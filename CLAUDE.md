@@ -88,8 +88,11 @@ hand-wave a failing invariant or invent an identity row.
 2. Run the narrowest relevant test or validator while iterating.
 3. Synchronize the two data surfaces in the correct direction and inspect the
    resulting diff for unexpected bulk rewrites.
-4. For data changes, run `just validate-all`, `just qc-sssom`, and
-   `just qc-roundtrip`.
+4. For data changes, run `just validate-all`, `just qc-sssom`,
+   `just qc-roundtrip`, and `just qc-flat-coverage`. The last one checks that
+   every generated artifact under `docs/data/` still matches its producer; any
+   edit under `data/ingredients/` stales at least `ingredients.json`, and this
+   is the only gate that says so before CI does (#551).
 5. For code changes, run focused tests, then the applicable broader recipes in
    `justfile`. Run `just qc` when the full data/dependency environment is
    available.
