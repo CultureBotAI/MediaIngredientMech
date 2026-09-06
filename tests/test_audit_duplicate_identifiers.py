@@ -60,6 +60,13 @@ def test_baseline_then_check_passes(repo):
     assert run(repo, "--check").returncode == 0
 
 
+def test_write_baseline_uses_lf_line_endings(repo):
+    assert run(repo, "--write-baseline").returncode == 0
+
+    baseline = repo / "mappings" / "duplicate_identifier_baseline.tsv"
+    assert b"\r" not in baseline.read_bytes()
+
+
 def test_new_duplicate_fails(repo):
     run(repo, "--write-baseline")
     path = repo / "data" / "curated" / "mapped_ingredients.yaml"

@@ -5,10 +5,9 @@ recipes, so they are legitimately 0 for an ingredient sourced from BacDive trait
 or Bergey substrates. `source_occurrences` keeps that source's own prevalence
 signal without inflating the media counts.
 
-The merge path is where it can vanish silently: `merge_mapped_records` sums the
-two totals and then replaces the SOURCE record's whole stats block with zeros as
-a tombstone. Anything not moved before that point is destroyed, not just
-double-counted.
+The merge path is where it can vanish silently: `merge_mapped_records` replaces
+the SOURCE record's whole stats block with zeros as a tombstone. Anything not
+moved before that point is destroyed, not just double-counted.
 """
 
 from __future__ import annotations
@@ -32,6 +31,35 @@ def test_totals_are_summed():
     assert transfer(src, dst) == (25, 3)
     assert dst["occurrence_statistics"]["total_occurrences"] == 36
     assert dst["occurrence_statistics"]["media_count"] == 5
+
+
+def test_same_identifier_totals_are_not_summed():
+    src = {
+        "identifier": "CHEBI:1",
+        "occurrence_statistics": {
+            "total_occurrences": 25,
+            "media_count": 3,
+            "source_occurrences": [{"source": "bergey", "count": 25}],
+        },
+    }
+    dst = {
+        "identifier": "CHEBI:1",
+        "occurrence_statistics": {
+            "total_occurrences": 25,
+            "media_count": 3,
+            "source_occurrences": [{"source": "microbedecoder", "count": 100}],
+        },
+    }
+
+    assert transfer(src, dst) == (0, 0)
+    assert dst["occurrence_statistics"] == {
+        "total_occurrences": 25,
+        "media_count": 3,
+        "source_occurrences": [
+            {"source": "bergey", "count": 25},
+            {"source": "microbedecoder", "count": 100},
+        ],
+    }
 
 
 def test_source_counts_move_when_the_destination_has_none():

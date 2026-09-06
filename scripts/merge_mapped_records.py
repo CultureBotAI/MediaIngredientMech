@@ -13,9 +13,10 @@ documents `REJECTED_NONZERO` as "a REJECTED (merged) record still reporting
 occurrences (counts should have been transferred to its representative)", so a
 merge here:
 
-  * transfers occurrence_statistics to the representative (summed -- each
-    mention is a real mention, and media_count <= total_occurrences is preserved
-    when both inputs satisfy it, which audit_occurrence_stats enforces)
+  * transfers occurrence_statistics to the representative unless the records
+    already share one identifier. The CultureMech membership edge table is
+    keyed by resolved identifier, so same-identifier duplicates already carry
+    the full identifier-level aggregate on both records.
   * carries the source's preferred_term and synonyms over as RAW_TEXT synonyms,
     and unions its role facets
   * tombstones the source as REJECTED with zeroed counts rather than deleting
@@ -36,18 +37,20 @@ import argparse
 import datetime as dt
 import re
 import sys
+from collections.abc import Iterable
 from pathlib import Path
 
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 
-ROLE_FIELDS = ("nutritional_roles", "functional_roles", "cellular_metabolic_roles")
+ROLE_FIELDS = FACET_ROLE_SLOTS
 
 
 def source_id(rec: dict) -> str | None:
@@ -70,16 +73,23 @@ def one(recs: list[dict], curie: str, term: str | None, what: str) -> dict:
 def transfer_occurrences(src: dict, dst: dict) -> tuple[int, int]:
     """Move ``src``'s occurrence statistics onto ``dst``. Returns what was moved.
 
-    The two totals are summed — each mention is a real mention. ``source_occurrences``
-    is summed PER SOURCE (#196): it is not covered by the totals, and the caller
-    replaces the source's whole stats block with zeros afterwards, so a source-scoped
-    count that is not moved here is destroyed rather than merely double-counted.
+    If both records already hold the same identifier, the two media totals are
+    copies of the same identifier-level CultureMech edge aggregate. Those two
+    fields should not be summed or they double the recipes. Otherwise, the media
+    totals are summed -- each mention is a real mention. ``source_occurrences`` is
+    summed PER SOURCE (#196): it is not covered by the totals, and the caller
+    replaces the source's whole stats block with zeros afterwards, so a
+    source-scoped count that is not moved here is destroyed rather than merely
+    double-counted.
     """
     so = src.get("occurrence_statistics") or {}
     do = dst.setdefault("occurrence_statistics", {})
     moved = (so.get("total_occurrences") or 0, so.get("media_count") or 0)
-    do["total_occurrences"] = (do.get("total_occurrences") or 0) + moved[0]
-    do["media_count"] = (do.get("media_count") or 0) + moved[1]
+    if src.get("identifier") and src.get("identifier") == dst.get("identifier"):
+        moved = (0, 0)
+    else:
+        do["total_occurrences"] = (do.get("total_occurrences") or 0) + moved[0]
+        do["media_count"] = (do.get("media_count") or 0) + moved[1]
 
     by_source = {e.get("source"): dict(e)
                  for e in (do.get("source_occurrences") or []) if e.get("source")}
@@ -97,18 +107,69 @@ def transfer_occurrences(src: dict, dst: dict) -> tuple[int, int]:
     return moved
 
 
-def drop_sssom_rows(subject_label: str, apply: bool) -> tuple[str, int]:
+def _pipe_union(existing: str, values: Iterable[str]) -> tuple[str, int]:
+    parts = [part.strip() for part in existing.split("|") if part.strip()]
+    seen = {part.casefold() for part in parts}
+    added = 0
+    for value in values:
+        text = str(value).strip()
+        if not text or text.casefold() in seen:
+            continue
+        parts.append(text)
+        seen.add(text.casefold())
+        added += 1
+    return "|".join(parts), added
+
+
+def update_sssom_rows(
+    source_label: str,
+    target_label: str,
+    target_id: str,
+    carried_synonyms: Iterable[str],
+) -> tuple[str, int, int]:
     lines = SSSOM.read_text().splitlines(keepends=True)
     header = next(i for i, ln in enumerate(lines) if ln.startswith("subject_id"))
-    keep, dropped = [], 0
+    columns = lines[header].rstrip("\n").split("\t")
+    index = {column: n for n, column in enumerate(columns)}
+    needed = ("subject_label", "predicate_id", "object_id", "other")
+    missing = [column for column in needed if column not in index]
+    if missing:
+        raise SystemExit(f"SSSOM is missing required column(s): {', '.join(missing)}")
+
+    carried = tuple(carried_synonyms)
+    max_column = max(index[column] for column in needed)
+    keep, dropped, published, saw_target = [], 0, 0, False
     for i, ln in enumerate(lines):
-        if i > header and ln.split("\t")[1:2] == [subject_label]:
+        if i <= header:
+            keep.append(ln)
+            continue
+        fields = ln.rstrip("\n").split("\t")
+        if len(fields) <= max_column:
+            keep.append(ln)
+            continue
+        if fields[index["subject_label"]] == source_label:
             dropped += 1
             continue
+        if (
+            carried
+            and fields[index["subject_label"]] == target_label
+            and fields[index["predicate_id"]] == "skos:exactMatch"
+            and fields[index["object_id"]] == target_id
+        ):
+            saw_target = True
+            fields[index["other"]], added = _pipe_union(fields[index["other"]], carried)
+            published += added
+            keep.append("\t".join(fields) + ("\n" if ln.endswith("\n") else ""))
+            continue
         keep.append(ln)
+    if carried and not saw_target:
+        raise SystemExit(
+            f"no exact SSSOM row for survivor {target_label!r} -> {target_id}; "
+            "carried synonyms would be dropped from the final SSSOM"
+        )
     if keep and not keep[-1].endswith("\n"):
         keep[-1] += "\n"
-    return "".join(keep), dropped
+    return "".join(keep), dropped, published
 
 
 def main() -> int:
@@ -146,6 +207,7 @@ def main() -> int:
             carried.append(text)
 
     # occurrence statistics transfer to the representative
+    shared_identifier = src["identifier"] == dst["identifier"]
     moved = transfer_occurrences(src, dst)
 
     # role facets union
@@ -161,11 +223,15 @@ def main() -> int:
                 roles_added.append(field)
 
     sid = source_id(src)
+    occurrence_change = (
+        f"occurrences unchanged for shared {dst['identifier']} membership"
+        if shared_identifier else f"occurrences +{moved[0]}/{moved[1]}"
+    )
     dst.setdefault("curation_history", []).append({
         "timestamp": stamp, "curator": args.curator,
         "action": "MERGED_FROM_MAPPED_RECORD",
         "changes": (f"Absorbed {args.src_curie} {src_term!r}: {len(carried)} synonym(s), "
-                    f"occurrences +{moved[0]}/{moved[1]}"
+                    f"{occurrence_change}"
                     + (f", role facets from {', '.join(sorted(set(roles_added)))}"
                        if roles_added else "")
                     + f". {args.reason}" + (f" Source: {sid}." if sid else "")),
@@ -186,14 +252,20 @@ def main() -> int:
     doc["total_count"] = len(recs)
     doc["generation_date"] = stamp
 
-    sssom_text, dropped = drop_sssom_rows(src_term, args.apply)
+    sssom_text, dropped, published = update_sssom_rows(
+        src_term,
+        dst["preferred_term"],
+        dst["identifier"],
+        carried,
+    )
 
     print(f"{args.src_curie} {src_term!r}  ->  {args.dst_curie} {dst['preferred_term']!r}")
     print(f"  synonyms carried:   {len(carried)}")
     print(f"  occurrences moved:  {moved[0]} total / {moved[1]} media")
     print(f"  role facets:        {', '.join(sorted(set(roles_added))) or 'none'}")
     print(f"  SSSOM rows dropped: {dropped}")
-    print(f"  source tombstoned REJECTED (identifier kept; excluded from duplicate claims)")
+    print(f"  SSSOM synonyms:     {published} added to survivor other")
+    print("  source tombstoned REJECTED (identifier kept; excluded from duplicate claims)")
     print(f"  mapped_count -> {doc['mapped_count']}")
 
     if not args.apply:

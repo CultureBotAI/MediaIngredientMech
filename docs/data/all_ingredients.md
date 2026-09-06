@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-04T06:05:36.678470+00:00
+Generated: 2026-09-06T06:57:31.893065+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -478,7 +478,6 @@ Total: 2952 ingredients
 | CHEBI:2509 | CHEBI:2509 | Agar | MAPPED | CHEBI | EXACT_MATCH | 4456 |
 | CHEBI:2511 | CHEBI:2511 | Agarose | MAPPED | CHEBI | EXACT_MATCH | 29 |
 | FOODON:00005198 | FOODON:00005198 | Agave | MAPPED | FOODON | EXACT_MATCH | 0 |
-| ENVO:00002263 | ENVO:00002263 | air-dried garden soil | MAPPED | ENVO | LEXICAL_MATCH | 15 |
 | CHEBI:74779 | CHEBI:74779 | Al2(SO4)3 x 18 H2O | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:221124 | CHEBI:221124 | alanosine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:alboverticillin | kgmicrobe.compound:alboverticillin | Alboverticillin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -2683,6 +2682,7 @@ Total: 2952 ingredients
 | NCIT:C217966 | NCIT:C217966 | hydroxocobalamin hydrochloride | MAPPED | NCIT | EXACT_MATCH | 1 |
 | NCIT:C120561 | NCIT:C120561 | Sodium glycerophosphate | MAPPED | NCIT | EXACT_MATCH | 25 |
 | kgmicrobe.ingredient:trace_element_solution_sl-10 | NCIT:C896 | Trace element solution SL-10 | MAPPED | NCIT | CLOSE_MATCH | 8 |
+| kgmicrobe.ingredient:air-dried_garden_soil | ENVO:00002263 | air-dried garden soil | MAPPED | ENVO | NARROW_MATCH | 15 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |

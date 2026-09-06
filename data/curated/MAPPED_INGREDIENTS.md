@@ -481,7 +481,6 @@
 | CHEBI:2509 | Agar | CHEBI:2509 | CHEBI | EXACT_MATCH | 4456 |
 | CHEBI:2511 | Agarose | CHEBI:2511 | CHEBI | EXACT_MATCH | 29 |
 | FOODON:00005198 | Agave | FOODON:00005198 | FOODON | EXACT_MATCH | 0 |
-| ENVO:00002263 | air-dried garden soil | ENVO:00002263 | ENVO | LEXICAL_MATCH | 15 |
 | CHEBI:74779 | Al2(SO4)3 x 18 H2O | CHEBI:74779 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:221124 | alanosine | CHEBI:221124 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:alboverticillin | Alboverticillin | kgmicrobe.compound:alboverticillin | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -2635,6 +2634,7 @@
 | NCIT:C217966 | hydroxocobalamin hydrochloride | NCIT:C217966 | NCIT | EXACT_MATCH | 1 |
 | NCIT:C120561 | Sodium glycerophosphate | NCIT:C120561 | NCIT | EXACT_MATCH | 25 |
 | kgmicrobe.ingredient:trace_element_solution_sl-10 | Trace element solution SL-10 | NCIT:C896 | NCIT | CLOSE_MATCH | 8 |
+| kgmicrobe.ingredient:air-dried_garden_soil | air-dried garden soil | ENVO:00002263 | ENVO | NARROW_MATCH | 15 |
 
 ## Other Statuses
 

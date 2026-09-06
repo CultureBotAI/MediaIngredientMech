@@ -1,4 +1,4 @@
-identifier: ENVO:00002263
+identifier: kgmicrobe.ingredient:air-dried_garden_soil
 preferred_term: air-dried garden soil
 synonyms:
 - synonym_text: air-dried garden soil
@@ -34,6 +34,16 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-06T06:35:41Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CORRECTED
+  changes: Changed identifier from ENVO:00002263 to kgmicrobe.ingredient:air-dried_garden_soil
+    and retained ENVO:00002263 only as a NARROW_MATCH parent. Air-dried garden soil
+    is a process-qualified garden-soil preparation, not the generic ENVO garden soil
+    identity (#547).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2083); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: UNDEFINED_MIXTURE
@@ -41,9 +51,15 @@ ontology_mapping:
   ontology_id: ENVO:00002263
   ontology_label: garden soil
   ontology_source: ENVO
-  mapping_quality: LEXICAL_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: ENVO via OLS (resolve_unmapped_v2 strategy=stem-match)
     notes: Auto-upgraded from UNMAPPED_0322; matched via 'air-dried garden soil';
       stem-substring
+  - evidence_type: CURATOR_JUDGMENT
+    source: mediaingredientmech-agentic-curation
+    notes: Air-dried garden soil is a dried preparation of garden soil, and no ENVO
+      term names the preparation. Retain ENVO:00002263 garden soil only as the broader
+      parent per MAPPING_SEMANTICS.md Section 3.
+kg_microbe_node_id: kgmicrobe.ingredient:air-dried_garden_soil
