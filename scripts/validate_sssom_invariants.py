@@ -72,6 +72,12 @@ Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
   subject. This keeps a reviewed false alias from returning through an
   enrichment rebuild.
 
+* **Rule F** — every published row carries a `mapping_date` of the form
+  ``YYYY-MM-DD``. The builder emits an empty cell when a record has no
+  parseable ``curation_history`` timestamp (#542); nothing else in the repo or
+  in ``sssom`` rejects that, so a dateless row would otherwise ship
+  silently (#550).
+
 * **Rule B4** — canonical ``object_label`` drift. For every row whose
   ``object_id`` prefix is in ``{CHEBI, FOODON, UBERON, ENVO, BTO,
   MICRO, PATO}``, look up the canonical label in the local sibling
@@ -93,7 +99,7 @@ violating row sits in ``ingredient_mappings.sssom.tsv``.
 Exit codes:
   0 — every row passes Rules A, B1, B2, B3, C, D, E, and (when its label
       source is present) B4.
-  2 — at least one row failed Rule A, B1, B2, B3, B4, C, D or E. (B1
+  2 — at least one row failed Rule A, B1, B2, B3, B4, C, D, E or F. (B1
       contributes to exit-2 unless ``--lenient-b1`` is passed.)
 """
 from __future__ import annotations
@@ -648,6 +654,48 @@ def record_identifier(subject_id: str) -> str | None:
     return m.group(1).strip().strip('"').strip("'") if m else None
 
 
+
+_MAPPING_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def evaluate_rule_f(
+    rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule F — every published row carries a real `mapping_date`.
+
+    The builder derives this from the record's latest `curation_history`
+    timestamp. When no entry has a parseable one it emits an empty cell and
+    warns, which is deliberate: it used to fall back to the file's mtime, and
+    since git does not preserve mtimes that stamped records with whenever the
+    machine happened to clone (#542).
+
+    Empty is the honest answer, but on its own it is not much better than the
+    wrong one. Nothing else checks this column -- the shared contract does not
+    mention it, and the `sssom` package accepts a blank cell, verified by
+    blanking one on a real published row and running its JSON-schema validation
+    clean. The builder's warning is a single line in a log that runs to
+    hundreds, so a blank date would ship through every gate the repo has (#550).
+
+    A row without a date cannot be ordered against its siblings or audited for
+    staleness, and the record behind it is missing the `curation_history` event
+    CLAUDE.md requires on every material change. That is a curation defect, so
+    route it to the curator review file like any other reject.
+    """
+    for row_num, row in enumerate(rows, start=1):
+        value = (row.get("mapping_date") or "").strip()
+        if _MAPPING_DATE_RE.match(value):
+            continue
+        detail = "empty" if not value else f"{value!r}"
+        yield (
+            row_num,
+            row,
+            f"mapping_date is {detail} for subject "
+            f"{row.get('subject_id', '?')!r} — the record has no parseable "
+            f"curation_history timestamp, so the builder had no date to "
+            f"publish (#550)",
+        )
+
+
 def evaluate_rule_d(
     rows: Iterable[dict[str, str]]
 ) -> Iterator[tuple[int, dict[str, str], str]]:
@@ -886,6 +934,7 @@ def main(argv: list[str]) -> int:
     _collect("Rule C", evaluate_rule_c(rows))
     _collect("Rule D", evaluate_rule_d(rows))
     _collect("Rule E", evaluate_rule_e(rows))
+    _collect("Rule F", evaluate_rule_f(rows))
 
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
@@ -902,7 +951,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(
