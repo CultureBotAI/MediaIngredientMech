@@ -98,9 +98,50 @@ def test_occurrences_transfer_and_source_is_tombstoned(mod, tmp_path, monkeypatc
     assert "MIM:Loser" not in tsv.read_text(), "a row pointing at a REJECTED record is ORPHAN"
 
 
+def test_physicochemical_roles_union_onto_the_survivor(mod, tmp_path, monkeypatch):
+    loser = rec("CHEBI:1", "Loser")
+    loser["physicochemical_roles"] = [{"role": "BUFFER"}]
+    coll = {
+        "total_count": 2,
+        "mapped_count": 2,
+        "ingredients": [rec("CHEBI:1", "Winner"), loser],
+    }
+    src = tmp_path / "mapped.yaml"
+    src.write_text(yaml.safe_dump(coll))
+    tsv = tmp_path / "s.tsv"
+    tsv.write_text("subject_id\tsubject_label\tp\nMIM:Loser\tLoser\tx\n")
+    monkeypatch.setattr(mod, "MAPPED", src)
+    monkeypatch.setattr(mod, "SSSOM", tsv)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "x",
+            "--from",
+            "CHEBI:1",
+            "--from-term",
+            "Loser",
+            "--into",
+            "CHEBI:1",
+            "--into-term",
+            "Winner",
+            "--reason",
+            "same substance",
+            "--apply",
+        ],
+    )
+
+    mod.main()
+
+    out = yaml.safe_load(src.read_text())
+    winner = [r for r in out["ingredients"] if r["preferred_term"] == "Winner"][0]
+    assert winner["physicochemical_roles"] == [{"role": "BUFFER"}]
+
+
 def test_refuses_when_either_record_is_not_mapped(mod, tmp_path, monkeypatch):
     coll = {"ingredients": [rec("CHEBI:1", "A"), rec("CHEBI:2", "B", status="REJECTED")]}
-    src = tmp_path / "m.yaml"; src.write_text(yaml.safe_dump(coll))
+    src = tmp_path / "m.yaml"
+    src.write_text(yaml.safe_dump(coll))
     monkeypatch.setattr(mod, "MAPPED", src)
     monkeypatch.setattr(sys, "argv", ["x", "--from", "CHEBI:2", "--into", "CHEBI:1",
                                       "--reason", "r"])

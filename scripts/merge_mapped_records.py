@@ -41,13 +41,14 @@ from pathlib import Path
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from mediaingredientmech.utils.role_iteration import FACET_ROLE_SLOTS  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 
-ROLE_FIELDS = ("nutritional_roles", "functional_roles", "cellular_metabolic_roles")
+ROLE_FIELDS = FACET_ROLE_SLOTS
 
 
 def source_id(rec: dict) -> str | None:
@@ -193,7 +194,7 @@ def main() -> int:
     print(f"  occurrences moved:  {moved[0]} total / {moved[1]} media")
     print(f"  role facets:        {', '.join(sorted(set(roles_added))) or 'none'}")
     print(f"  SSSOM rows dropped: {dropped}")
-    print(f"  source tombstoned REJECTED (identifier kept; excluded from duplicate claims)")
+    print("  source tombstoned REJECTED (identifier kept; excluded from duplicate claims)")
     print(f"  mapped_count -> {doc['mapped_count']}")
 
     if not args.apply:

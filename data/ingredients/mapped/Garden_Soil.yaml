@@ -4,10 +4,13 @@ synonyms:
 - synonym_text: Garden soil
   synonym_type: RAW_TEXT
   source: mim-queue
+- synonym_text: air-dried garden soil
+  synonym_type: RAW_TEXT
+  source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 15
-  media_count: 15
+  total_occurrences: 30
+  media_count: 30
 curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
@@ -38,6 +41,15 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-06T05:00:10.891290+00:00'
+  curator: merge_mapped_records
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: 'Absorbed ENVO:00002263 ''air-dried garden soil'': 1 synonym(s), occurrences
+    +15/15. Air-dried garden soil is a preparation of the same garden soil material;
+    keep the process-qualified source text as a synonym on the label-exact Garden
+    soil representative and avoid a duplicate ENVO identity claim (#538 follow-on
+    causal readiness). Source: mediadive.ingredient:2083.'
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:2159); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:

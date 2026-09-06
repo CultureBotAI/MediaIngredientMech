@@ -190,7 +190,7 @@ def load_baseline() -> dict[tuple[str, str], dict]:
 def write_tsv(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=FIELDS, delimiter="\t")
+        w = csv.DictWriter(fh, fieldnames=FIELDS, delimiter="\t", lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
 

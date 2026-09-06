@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-04T06:05:36.678470+00:00
+Generated: 2026-09-06T05:04:43.876240+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -478,7 +478,7 @@ Total: 2952 ingredients
 | CHEBI:2509 | CHEBI:2509 | Agar | MAPPED | CHEBI | EXACT_MATCH | 4456 |
 | CHEBI:2511 | CHEBI:2511 | Agarose | MAPPED | CHEBI | EXACT_MATCH | 29 |
 | FOODON:00005198 | FOODON:00005198 | Agave | MAPPED | FOODON | EXACT_MATCH | 0 |
-| ENVO:00002263 | ENVO:00002263 | air-dried garden soil | MAPPED | ENVO | LEXICAL_MATCH | 15 |
+| ENVO:00002263 | ENVO:00002263 | air-dried garden soil | REJECTED | ENVO | LEXICAL_MATCH | 0 |
 | CHEBI:74779 | CHEBI:74779 | Al2(SO4)3 x 18 H2O | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:221124 | CHEBI:221124 | alanosine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:alboverticillin | kgmicrobe.compound:alboverticillin | Alboverticillin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -1081,7 +1081,7 @@ Total: 2952 ingredients
 | cas:13450-90-3 | cas:13450-90-3 | Gallium(III)chloride | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:67521 | CHEBI:67521 | Gambogic Acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16865 | CHEBI:16865 | gamma-Aminobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 13 |
-| ENVO:00002263 | ENVO:00002263 | Garden soil | MAPPED | ENVO | EXACT_MATCH | 15 |
+| ENVO:00002263 | ENVO:00002263 | Garden soil | MAPPED | ENVO | EXACT_MATCH | 30 |
 | mesh:C012993 | mesh:C012993 | Gardimycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:5291 | CHEBI:5291 | Gelatine | MAPPED | CHEBI | SYNONYM_MATCH | 15 |
 | CHEBI:85248 | CHEBI:85248 | Gelrite | MAPPED | CHEBI | SYNONYM_MATCH | 33 |
