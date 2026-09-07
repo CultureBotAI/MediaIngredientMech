@@ -32,10 +32,64 @@ curation_history:
   changes: Promoted UNMAPPED_0011 -> kgmicrobe.ingredient:p-iv_metal_solution "P-IV
     Metal Solution" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM
     row added.
+- timestamp: '2026-09-06T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Added the TRACE_ELEMENT role plus components and component_assertion by
+    transcribing UTEX HEPES Medium's P-IV Metal Solution formulation.
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'CultureMech placeholder_id: 6; reviewed on 2026-05-11 as a metal/trace-element
-  stock solution pending component-level recipe curation.'
+  stock solution. Component-level recipe transcribed from UTEX HEPES Medium P-IV Metal
+  Solution on 2026-09-06.'
 ingredient_type: STOCK_SOLUTION
 solution_type: TRACE_METAL_MIX
+components:
+- component_name: Na2EDTA•2H2O
+  component_id: CHEBI:64758
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.75'
+  concentration_unit: G_PER_L
+- component_name: FeCl3 x 6 H2O
+  component_id: CHEBI:86254
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.097'
+  concentration_unit: G_PER_L
+- component_name: MnCl2 x 4 H2O
+  component_id: CHEBI:86368
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.041'
+  concentration_unit: G_PER_L
+- component_name: ZnCl2
+  component_id: CHEBI:49976
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.005'
+  concentration_unit: G_PER_L
+- component_name: CoCl2 x 6 H2O
+  component_id: CHEBI:53503
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.002'
+  concentration_unit: G_PER_L
+- component_name: Na2MoO4 x 2 H2O
+  component_id: CHEBI:75213
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.004'
+  concentration_unit: G_PER_L
+- component_name: Distilled water
+  component_id: CHEBI:15377
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: L_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://web.biosci.utexas.edu/utex/Media%20PDF/hepes-medium%202.pdf
+    source_record: UTEX HEPES Medium P-IV Metal Solution Component
+    notes: UTEX HEPES Medium enumerates the six P-IV Metal Solution salts and chelator
+      per liter, and instructs preparing them in deionized water to a final volume
+      of one liter.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:p-iv_metal_solution
   ontology_label: P-IV Metal Solution
@@ -50,3 +104,14 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_text: UTEX HEPES Medium
+    reference_type: TECHNICAL_REPORT
+    url: https://web.biosci.utexas.edu/utex/Media%20PDF/hepes-medium%202.pdf
+    excerpt: P-IV Metal Solution Component
+    curator_note: UTEX HEPES Medium defines P-IV Metal Solution as a trace-metal stock
+      containing iron, manganese, zinc, cobalt, and molybdate salts chelated with
+      disodium EDTA.
