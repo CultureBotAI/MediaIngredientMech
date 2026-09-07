@@ -16,7 +16,8 @@ Audit `mappings/ingredient_mappings.sssom.tsv` as the final published
 MediaIngredientMech SSSOM product. Every row must agree with
 `data/curated/mapped_ingredients.yaml`, obey the predicate contract in
 `MAPPING_SEMANTICS.md`, carry canonical-or-synonym labels in product columns,
-and avoid republishing rejected or noisy text through the `other` column.
+and restrict every `other` token to a genuine synonym for the MIM subject.
+Treat `other` as a published synonym surface, not as a free-text note.
 
 Use this skill for the published TSV and downstream products:
 
@@ -85,8 +86,38 @@ Check each questionable row against these questions:
   resolving synonym for the subject, not a `REJECTED_LABEL`, assay role,
   concentration note, non-resolving catalog label, or bare CAS value copied from
   structured chemistry metadata?
+- **Payload placement:** are `source`, `comment`, `other`, and
+  `validation_method` carrying only their own content types, with provenance in
+  `source`, row explanations in `comment`, synonyms in `other`, and the final
+  validation stamp in `validation_method`?
 - **Duplicate pairs:** does each `(subject_id, object_id)` pair appear once and
   under only one predicate?
+
+## `other` Column Triage
+
+Review `other` as zero or more pipe-delimited labels for the same MIM subject:
+
+1. Split on `|`, trim whitespace, and compare both exact and casefolded text so
+   duplicate spelling and capitalization variants do not hide.
+2. Classify every non-empty token as a curated synonym, raw same-substance
+   label, registry alias, CAS alias, or non-identity payload before deciding to
+   keep it.
+3. Keep CAS values only in `CAS:<cas-rn>` form and only when the CAS-RN belongs
+   to the same subject identity in `supplied_form[].cas_rn` or
+   `chemical_properties.cas_rn`.
+4. Keep supplier/catalog labels only when they are curated as true same-subject
+   `CATALOG_VARIANT` or `RAW_TEXT` synonyms.
+5. Drop tokens that are only procurement notes, assay roles, medium
+   concentrations, import statuses, merge rationales, rejected candidate
+   identifiers, or rejected labels.
+6. For parent mappings, keep synonyms for the specific MIM subject rather than
+   synonyms of the broader parent that erase hydrate, salt, stereochemistry, or
+   mixture boundaries.
+
+When a token is not a true synonym, fix the curated YAML or the SSSOM enrichment
+builder that emitted it. Do not move noise into `comment`; keep rejected labels
+as `REJECTED_LABEL` provenance in the source YAML and omit them from the final
+SSSOM.
 
 ## Fix Patterns
 
