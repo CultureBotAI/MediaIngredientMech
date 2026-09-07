@@ -1,4 +1,4 @@
-generation_date: '2026-09-07T04:09:14.522390+00:00'
+generation_date: '2026-09-07T06:43:19.287850+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -12793,12 +12793,102 @@ ingredients:
     changes: Promoted UNMAPPED_0276 -> kgmicrobe.ingredient:mc_trace_minerals_so4free
       "Mc_trace_minerals_SO4free" (FALLBACK_REGISTRY); mapping_status UNMAPPED ->
       MAPPED, SSSOM row added.
+  - timestamp: '2026-09-07T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for Mc_trace_minerals_SO4free
+      and added complete component partonomy for its 12 1000X trace-mineral stock
+      constituents plus a source-backed trace-element role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 22 CultureBot media; samples: McCas_formate_SO4Free_BicarbFree, Mc_defined_formate,
     Mc_defined_H2…. No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as
-    a sulfate-free Mc-series trace mineral stock/pre-mix.'
+    a sulfate-free Mc-series trace mineral stock/pre-mix. Component-level recipe transcribed
+    from the CultureBotHT media definitions Mixes tab on 2026-09-07.'
   ingredient_type: STOCK_SOLUTION
   solution_type: TRACE_METAL_MIX
+  components:
+  - component_name: sodium citrate dihydrate
+    component_id: CHEBI:32142
+    reference_scope: MIM_CATALOG
+    concentration_value: '21.0'
+    concentration_unit: G_PER_L
+  - component_name: manganese(II) chloride tetrahydrate
+    component_id: CHEBI:86368
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: G_PER_L
+  - component_name: Cobalt chloride hexahydrate
+    component_id: CHEBI:53503
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: G_PER_L
+    source: CultureBotHT Mixes row 1148 labels this constituent as cobalt chloride;
+      CultureBotHT compounds-to-CAS resolves Cobalt Chloride to cobalt chloride hexahydrate.
+  - component_name: zinc chloride
+    component_id: CHEBI:49976
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: G_PER_L
+  - component_name: copper (II) chloride dihydrate
+    component_id: CHEBI:86318
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: aluminum chloride hydrate
+    component_id: cas:10124-27-3
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: H3BO3
+    component_id: CHEBI:33118
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: sodium molybdate dihydrate
+    component_id: CHEBI:75213
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: G_PER_L
+  - component_name: nickel (II) chloride hexahydrate
+    component_id: CHEBI:53542
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.25'
+    concentration_unit: G_PER_L
+  - component_name: sodium selenate
+    component_id: CHEBI:77775
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.0'
+    concentration_unit: G_PER_L
+  - component_name: vanadium chloride
+    component_id: cas:7718-98-1
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: sodium tungstate dihydrate
+    component_id: CHEBI:63939
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.033'
+    concentration_unit: G_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!1142:1157 Mc_trace_minerals_SO4free
+      notes: CultureBotHT's media definitions Mixes tab defines Mc_trace_minerals_SO4free
+        as a 1000X trace-mineral stock for Mc media with 12 listed citrate, chloride,
+        borate, molybdate, selenate, vanadium, and tungstate constituents.
+    - evidence_type: CURATED_DATASET
+      source: https://docs.google.com/spreadsheets/d/11koiUdEUco1rXg9zL6KrfOBikW38O7Fhef-uBzXUctM
+      source_record: compounds-to-CAS rows 55,84,123,128,278,296,399,411,420,455,472,485
+      notes: CultureBotHT's compounds-to-CAS crosswalk grounds the sulfate-free trace
+        minerals to CAS-backed salts; its Cobalt chloride hexahydrate row lists Cobalt
+        Chloride as a synonym, resolving the Mixes-tab cobalt chloride surface to
+        the hexahydrate.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:mc_trace_minerals_so4free
     ontology_label: Mc_trace_minerals_SO4free
@@ -12813,6 +12903,18 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: Mc_trace_minerals_SO4free
+      curator_note: Mc_trace_minerals_SO4free is a 1000X stock of citrate-chelated
+        chloride, borate, molybdate, selenate, vanadium, and tungstate trace salts
+        for Mc media; the source lists no sulfate salts, preserving the sulfate-free
+        intent of the formulation.
 - identifier: kgmicrobe.ingredient:mc_general_salts_so4free
   preferred_term: Mc_general_salts_SO4free
   synonyms:
