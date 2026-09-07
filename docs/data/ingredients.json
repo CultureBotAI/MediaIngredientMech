@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2026-09-07T01:34:17.702853+00:00",
+    "generated": "2026-09-07T04:13:33.628286+00:00",
     "total_ingredients": 2952,
     "mapped_count": 2678,
     "unmapped_count": 274,
@@ -33914,10 +33914,51 @@
       "synonym_count": 1,
       "total_occurrences": 22,
       "media_count": 22,
-      "last_curated": "2026-08-06T00:00:00+00:00",
-      "curator": "promote_resolved_unmapped",
+      "last_curated": "2026-09-07T00:00:00+00:00",
+      "curator": "mediaingredientmech-agentic-curation",
       "source_file": "mapped/Mc_general_salts_SO4free.yaml",
-      "searchable": "mc_general_salts_so4free mc_general_salts_so4free mc_general_salts_so4free kgmicrobe.ingredient:mc_general_salts_so4free"
+      "searchable": "mc_general_salts_so4free mc_general_salts_so4free mc_general_salts_so4free kgmicrobe.ingredient:mc_general_salts_so4free kcl chebi:32588 magnesium chloride hexahydrate chebi:86345 calcium chloride chebi:3312",
+      "components": [
+        {
+          "component_name": "KCl",
+          "component_id": "CHEBI:32588",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "0.67",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "magnesium chloride hexahydrate",
+          "component_id": "CHEBI:86345",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "11.2",
+          "concentration_unit": "G_PER_L"
+        },
+        {
+          "component_name": "calcium chloride",
+          "component_id": "CHEBI:3312",
+          "reference_scope": "MIM_CATALOG",
+          "concentration_value": "0.21",
+          "concentration_unit": "G_PER_L"
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "COMPLETE",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84",
+            "source_record": "Mixes!1134:1140 Mc_general_salts_SO4free",
+            "notes": "CultureBotHT's media definitions Mixes tab defines Mc_general_salts_SO4free as a 2.0X general salts stock for Mc media containing 0.67 g/L KCl, 11.2 g/L magnesium chloride hexahydrate, and 0.21 g/L calcium chloride."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "https://docs.google.com/spreadsheets/d/11koiUdEUco1rXg9zL6KrfOBikW38O7Fhef-uBzXUctM",
+            "source_record": "Compound=Calcium chloride",
+            "notes": "CultureBotHT's compounds-to-CAS crosswalk maps Calcium chloride to CAS 10043-52-4 and carries Calcium chloride dihydrate as a distinct row on CAS 10035-04-8, supporting anhydrous CaCl2/CHEBI:3312 for the Mixes-tab calcium chloride component."
+          }
+        ]
+      }
     },
     {
       "id": "kgmicrobe.ingredient:mc_trace_minerals",

@@ -34,12 +34,54 @@ curation_history:
   changes: Promoted UNMAPPED_0300 -> kgmicrobe.ingredient:mc_general_salts_so4free
     "Mc_general_salts_SO4free" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED,
     SSSOM row added.
+- timestamp: '2026-09-07T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Transcribed the CultureBotHT Mixes-tab recipe for Mc_general_salts_SO4free
+    and added complete component partonomy for KCl, magnesium chloride hexahydrate,
+    and anhydrous calcium chloride, plus a source-backed mineral-source role.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   22 CultureBot media; samples: McCas_formate_SO4Free_BicarbFree, Mc_defined_formate,
   Mc_defined_H2…. No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as
-  a sulfate-free Mc-series general salts stock/pre-mix.'
+  a sulfate-free Mc-series general salts stock/pre-mix. Component-level recipe transcribed
+  from the CultureBotHT media definitions Mixes tab on 2026-09-07.'
 ingredient_type: STOCK_SOLUTION
 solution_type: MINERAL_STOCK
+components:
+- component_name: KCl
+  component_id: CHEBI:32588
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.67'
+  concentration_unit: G_PER_L
+- component_name: magnesium chloride hexahydrate
+  component_id: CHEBI:86345
+  reference_scope: MIM_CATALOG
+  concentration_value: '11.2'
+  concentration_unit: G_PER_L
+- component_name: calcium chloride
+  component_id: CHEBI:3312
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.21'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!1134:1140 Mc_general_salts_SO4free
+    notes: CultureBotHT's media definitions Mixes tab defines Mc_general_salts_SO4free
+      as a 2.0X general salts stock for Mc media containing 0.67 g/L KCl, 11.2 g/L
+      magnesium chloride hexahydrate, and 0.21 g/L calcium chloride.
+  - evidence_type: CURATED_DATASET
+    source: https://docs.google.com/spreadsheets/d/11koiUdEUco1rXg9zL6KrfOBikW38O7Fhef-uBzXUctM
+    source_record: Compound=Calcium chloride
+    notes: CultureBotHT's compounds-to-CAS crosswalk maps Calcium chloride to CAS
+      10043-52-4 and carries Calcium chloride dihydrate as a distinct row on CAS 10035-04-8,
+      supporting anhydrous CaCl2/CHEBI:3312 for the Mixes-tab calcium chloride component.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:mc_general_salts_so4free
   ontology_label: Mc_general_salts_SO4free
@@ -54,3 +96,14 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: Mc_general_salts_SO4free
+    curator_note: Mc_general_salts_SO4free is a stock of inorganic potassium, magnesium,
+      calcium, and chloride salts for Mc media; the source lists only chloride salts,
+      preserving the sulfate-free intent of the formulation.
