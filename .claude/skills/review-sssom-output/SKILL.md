@@ -103,10 +103,14 @@ Review `other` as zero or more pipe-delimited labels for the same MIM subject:
    label, registry alias, CAS alias, or non-identity payload before deciding to
    keep it.
 3. Keep CAS values only in `CAS:<cas-rn>` form and only when the CAS-RN belongs
-   to the same subject identity in structured chemistry metadata.
-4. Drop tokens that describe supplier, assay role, medium concentration, import
-   status, merge rationale, rejected candidate identifiers, or rejected labels.
-5. For parent mappings, keep synonyms for the specific MIM subject rather than
+   to the same subject identity in `supplied_form[].cas_rn` or
+   `chemical_properties.cas_rn`.
+4. Keep supplier/catalog labels only when they are curated as true same-subject
+   `CATALOG_VARIANT` or `RAW_TEXT` synonyms.
+5. Drop tokens that are only procurement notes, assay roles, medium
+   concentrations, import statuses, merge rationales, rejected candidate
+   identifiers, or rejected labels.
+6. For parent mappings, keep synonyms for the specific MIM subject rather than
    synonyms of the broader parent that erase hydrate, salt, stereochemistry, or
    mixture boundaries.
 
