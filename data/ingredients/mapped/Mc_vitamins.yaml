@@ -33,12 +33,91 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0288 -> kgmicrobe.ingredient:mc_vitamins "Mc_vitamins"
     (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-09-07T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Transcribed the CultureBotHT Mixes-tab recipe for Mc_vitamins and added
+    complete component partonomy for its 10 100X vitamin stock constituents plus a
+    source-backed vitamin role.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   22 CultureBot media; samples: McCas, McCas_MOPS, McCas_formate_SO4…. No CAS-RN or
   CHEBI mapping available; reviewed on 2026-05-11 as an Mc-series vitamin stock/pre-mix
-  rather than an exact ontology identity.'
+  rather than an exact ontology identity. Component-level recipe transcribed from
+  the CultureBotHT media definitions Mixes tab on 2026-09-07.'
 ingredient_type: STOCK_SOLUTION
 solution_type: VITAMIN_MIX
+components:
+- component_name: biotin
+  component_id: CHEBI:15956
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.002'
+  concentration_unit: G_PER_L
+- component_name: folic acid
+  component_id: CHEBI:27470
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.002'
+  concentration_unit: G_PER_L
+- component_name: pyridoxine hydrochloride
+  component_id: CHEBI:30961
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: thiamine HCl
+  component_id: CHEBI:49105
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.005'
+  concentration_unit: G_PER_L
+- component_name: riboflavin
+  component_id: CHEBI:17015
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.005'
+  concentration_unit: G_PER_L
+- component_name: nicotinic acid
+  component_id: CHEBI:15940
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.005'
+  concentration_unit: G_PER_L
+- component_name: calcium D,L-pantothenate
+  component_id: CHEBI:31345
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.005'
+  concentration_unit: G_PER_L
+- component_name: vitamin B12
+  component_id: CHEBI:176843
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0001'
+  concentration_unit: G_PER_L
+- component_name: p-aminobenzoic acid
+  component_id: CHEBI:30753
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.005'
+  concentration_unit: G_PER_L
+- component_name: lipoic acid
+  component_id: CHEBI:16494
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.005'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!1112:1125 Mc_vitamins
+    notes: CultureBotHT's media definitions Mixes tab defines Mc_vitamins as a 100X
+      vitamin stock for Mc media with biotin, folic acid, pyridoxine hydrochloride,
+      thiamine HCl, riboflavin, nicotinic acid, calcium D,L-pantothenate, vitamin
+      B12, p-aminobenzoic acid, and lipoic acid constituents.
+  - evidence_type: CURATED_DATASET
+    source: https://docs.google.com/spreadsheets/d/11koiUdEUco1rXg9zL6KrfOBikW38O7Fhef-uBzXUctM
+    source_record: compounds-to-CAS rows 28,81,92,131,191,271,299,349,354,441
+    notes: CultureBotHT's compounds-to-CAS crosswalk grounds every Mc_vitamins constituent
+      to CAS-backed biotin, folic acid, pyridoxine hydrochloride, thiamine HCl, riboflavin,
+      nicotinic acid, calcium pantothenate, cyanocobalamin/vitamin B12, 4-aminobenzoic
+      acid, and lipoic acid records or synonyms.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:mc_vitamins
   ontology_label: Mc_vitamins
@@ -53,3 +132,13 @@ ontology_mapping:
       substance. Takes the STOCK_SOLUTION convention used by the existing mapped records:
       a kgmicrobe.ingredient: mint, with no parent because a multi-component mix does
       not narrow to any single compound (#114).'
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: Mc_vitamins
+    curator_note: Mc_vitamins is a 100X stock of B vitamins and related micronutrient
+      cofactors for Mc media.
