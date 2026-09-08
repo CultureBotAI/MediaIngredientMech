@@ -129,8 +129,8 @@ def test_real_curated_corpus_has_no_partonomy_violations():
     records = load_curated_records(ROOT / "data" / "curated")
     assert validate_component_partonomy(records) == []
     parents = [record for record in records if record.get("components")]
-    assert len(parents) == 69
-    assert sum(len(record["components"]) for record in parents) == 317
+    assert len(parents) == 70
+    assert sum(len(record["components"]) for record in parents) == 381
 
 
 def test_curated_loader_reports_missing_and_invalid_yaml(tmp_path):
