@@ -34,13 +34,52 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0253 -> kgmicrobe.ingredient:4_carbon_mix "4 Carbon Mix"
     (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-09-08T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Transcribed the CultureBotHT Mixes-tab recipe for 4 Carbon Mix and added
+    complete component partonomy for its four organic-acid constituents plus a source-backed
+    carbon role.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   8 CultureBot media; samples: UGA_defined_4CarbonMix_Nitrate_anaerobic_pH_7.1, UGA_defined_4CarbonMix_Nitrate_anaerobic_pH_6.8,
   UGA_defined_4CarbonMix_Nitrate_anaerobic_pH_6.5…. No CAS-RN or CHEBI mapping available;
-  reviewed on 2026-05-11 as a carbon-source stock/pre-mix pending component-level
-  recipe curation.'
+  reviewed on 2026-05-11 as a carbon-source stock/pre-mix. Component-level recipe
+  transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
 ingredient_type: STOCK_SOLUTION
 solution_type: CARBON_SOURCE_MIX
+components:
+- component_name: Sodium L-Lactate
+  component_id: CHEBI:232798
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.25'
+  concentration_unit: MM
+- component_name: Sodium acetate
+  component_id: CHEBI:32954
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.25'
+  concentration_unit: MM
+- component_name: Glutamic acid
+  component_id: CHEBI:18237
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.25'
+  concentration_unit: MM
+- component_name: Benzoic acid
+  component_id: CHEBI:30746
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.25'
+  concentration_unit: MM
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!777:780 4 Carbon Mix
+    notes: CultureBotHT's media definitions Mixes tab defines 4 Carbon Mix as sodium
+      L-lactate, sodium acetate, glutamic acid, and benzoic acid, each at 1.25 mM.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:4_carbon_mix
   ontology_label: 4 Carbon Mix
@@ -55,3 +94,12 @@ ontology_mapping:
       substance. Takes the STOCK_SOLUTION convention used by the existing mapped records:
       a kgmicrobe.ingredient: mint, with no parent because a multi-component mix does
       not narrow to any single compound (#114).'
+nutritional_roles:
+- role: CARBON_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: 4 Carbon Mix
+    curator_note: CultureBotHT defines 4 Carbon Mix as a mixture of carbon sources.

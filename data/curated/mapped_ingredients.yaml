@@ -1,4 +1,4 @@
-generation_date: '2026-09-08T06:35:48.778061+00:00'
+generation_date: '2026-09-08T07:28:19.031092+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -9677,12 +9677,87 @@ ingredients:
     changes: Promoted UNMAPPED_0289 -> kgmicrobe.ingredient:uw_concentrated_base_no_sulfur
       "UW concentrated base no sulfur" (FALLBACK_REGISTRY); mapping_status UNMAPPED
       -> MAPPED, SSSOM row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for UW concentrated base
+      no sulfur and added complete component partonomy for its 11 constituents plus
+      source-backed mineral, trace-element, and iron roles.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: NoS. No CAS-RN or CHEBI mapping available; curator
-    reviewed on 2026-05-11 as a variant concentrated base stock pending component-level
-    recipe curation.'
+    reviewed on 2026-05-11 as a variant concentrated base stock. Component-level recipe
+    transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: OTHER
+  components:
+  - component_name: Nitrilotriacetic acid
+    component_id: CHEBI:44557
+    reference_scope: MIM_CATALOG
+    concentration_value: '20.0'
+    concentration_unit: G_PER_L
+  - component_name: Magnesium chloride hexahydrate
+    component_id: CHEBI:86345
+    reference_scope: MIM_CATALOG
+    concentration_value: '28.9'
+    concentration_unit: G_PER_L
+  - component_name: Calcium Chloride Dihydrate
+    component_id: CHEBI:86158
+    reference_scope: MIM_CATALOG
+    concentration_value: '6.67'
+    concentration_unit: G_PER_L
+  - component_name: ammonium molybdate tetrahydrate
+    component_id: cas:12054-85-2
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0185'
+    concentration_unit: G_PER_L
+  - component_name: Iron (II) chloride tetrahydrate
+    component_id: CHEBI:86249
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.698'
+    concentration_unit: G_PER_L
+  - component_name: EDTA
+    component_id: CHEBI:4735
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.25'
+    concentration_unit: G_PER_L
+  - component_name: Zinc chloride
+    component_id: CHEBI:49976
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.095'
+    concentration_unit: G_PER_L
+  - component_name: Manganese (II) chloride tetrahydrate
+    component_id: CHEBI:86368
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.154'
+    concentration_unit: G_PER_L
+  - component_name: copper (II) chloride dihydrate
+    component_id: CHEBI:86318
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0392'
+    concentration_unit: G_PER_L
+  - component_name: Cobalt(II) nitrate hexahydrate
+    component_id: CHEBI:86214
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.025'
+    concentration_unit: G_PER_L
+  - component_name: sodium tetraborate decahydrate
+    component_id: CHEBI:131366
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0177'
+    concentration_unit: G_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!1633:1643 UW concentrated base no sulfur
+      notes: CultureBotHT's media definitions Mixes tab defines UW concentrated base
+        no sulfur as an eleven-component 1000X concentrated base using chloride salts
+        in place of sulfate salts.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:uw_concentrated_base_no_sulfur
     ontology_label: UW concentrated base no sulfur
@@ -9697,6 +9772,34 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
         mint, no parent because a multi-component mix does not narrow to a single
         compound (#114).'
+  nutritional_roles:
+  - role: MINERAL_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base no sulfur
+      curator_note: CultureBotHT defines UW concentrated base no sulfur with concentrated
+        magnesium and calcium salts.
+  - role: TRACE_ELEMENT
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base no sulfur
+      curator_note: CultureBotHT defines UW concentrated base no sulfur with zinc,
+        manganese, copper, cobalt, and borate trace salts.
+  - role: IRON_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base no sulfur
+      curator_note: CultureBotHT defines UW concentrated base no sulfur with an iron
+        salt.
 - identifier: kgmicrobe.ingredient:thauers_vitamin_mix_no_biotin
   preferred_term: Thauer's vitamin mix no Biotin
   synonyms:
@@ -9733,12 +9836,81 @@ ingredients:
     changes: Promoted UNMAPPED_0257 -> kgmicrobe.ingredient:thauers_vitamin_mix_no_biotin
       "Thauer's vitamin mix no Biotin" (FALLBACK_REGISTRY); mapping_status UNMAPPED
       -> MAPPED, SSSOM row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for Thauer's vitamin mix
+      no Biotin and added complete component partonomy for its 10 vitamin-stock constituents
+      plus a source-backed vitamin role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: M9_Thauers_noBiotin. No CAS-RN or CHEBI mapping
-    available; reviewed on 2026-05-11 as a Thauer vitamin stock/pre-mix variant pending
-    component-level recipe curation.'
+    available; reviewed on 2026-05-11 as a Thauer vitamin stock/pre-mix variant. Component-level
+    recipe transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: VITAMIN_MIX
+  components:
+  - component_name: pyridoxine HCl
+    component_id: CHEBI:30961
+    reference_scope: MIM_CATALOG
+    concentration_value: '10.0'
+    concentration_unit: MG_PER_L
+  - component_name: 4-Aminobenzoic acid
+    component_id: CHEBI:30753
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Lipoic acid
+    component_id: CHEBI:16494
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Nicotinic Acid
+    component_id: CHEBI:15940
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Riboflavin
+    component_id: CHEBI:17015
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: thiamine HCl
+    component_id: CHEBI:49105
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: calcium pantothenate
+    component_id: CHEBI:31345
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Folic Acid
+    component_id: CHEBI:27470
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.0'
+    concentration_unit: MG_PER_L
+  - component_name: Cyanocobalamin
+    component_id: CHEBI:17439
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: MG_PER_L
+  - component_name: Choline chloride
+    component_id: CHEBI:133341
+    reference_scope: MIM_CATALOG
+    concentration_value: '200.0'
+    concentration_unit: MG_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!168:177 Thauer's vitamin mix no Biotin
+      notes: CultureBotHT's media definitions Mixes tab defines Thauer's vitamin mix
+        no Biotin as a ten-component 1000X vitamin solution omitting biotin.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:thauers_vitamin_mix_no_biotin
     ontology_label: Thauer's vitamin mix no Biotin
@@ -9753,6 +9925,16 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention: a kgmicrobe.ingredient:
         mint, no parent because a multi-component mix does not narrow to a single
         compound (#114).'
+  nutritional_roles:
+  - role: VITAMIN_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: Thauer's vitamin mix no Biotin
+      curator_note: CultureBotHT defines Thauer's vitamin mix no Biotin as a 1000X
+        vitamin solution.
 - identifier: kgmicrobe.ingredient:sulfur_free_mineral_mix
   preferred_term: Sulfur free mineral mix
   synonyms:
@@ -11057,12 +11239,83 @@ ingredients:
     changes: Promoted UNMAPPED_0260 -> kgmicrobe.ingredient:uw_concentrated_base_no_mo
       "UW concentrated base no Mo" (FALLBACK_REGISTRY); mapping_status UNMAPPED ->
       MAPPED, SSSOM row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for UW concentrated base
+      no Mo and added complete component partonomy for its 10 constituents plus source-backed
+      mineral, trace-element, iron, and sulfur roles.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 2 CultureBot media; samples: NFM_No_Mo, NFM_No_Mo_Plus_VCl3. No CAS-RN or CHEBI
-    mapping available; reviewed on 2026-05-11 as a variant concentrated base stock
-    pending component-level recipe curation.'
+    mapping available; reviewed on 2026-05-11 as a variant concentrated base stock.
+    Component-level recipe transcribed from the CultureBotHT media definitions Mixes
+    tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: OTHER
+  components:
+  - component_name: Nitrilotriacetic acid
+    component_id: CHEBI:44557
+    reference_scope: MIM_CATALOG
+    concentration_value: '20.0'
+    concentration_unit: G_PER_L
+  - component_name: MgSO4
+    component_id: CHEBI:32599
+    reference_scope: MIM_CATALOG
+    concentration_value: '28.9'
+    concentration_unit: G_PER_L
+  - component_name: Calcium Chloride Dihydrate
+    component_id: CHEBI:86158
+    reference_scope: MIM_CATALOG
+    concentration_value: '6.67'
+    concentration_unit: G_PER_L
+  - component_name: Iron (II) sulfate heptahydrate
+    component_id: CHEBI:75836
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.698'
+    concentration_unit: G_PER_L
+  - component_name: EDTA
+    component_id: CHEBI:4735
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.25'
+    concentration_unit: G_PER_L
+  - component_name: Zinc sulfate heptahydrate
+    component_id: CHEBI:32312
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.095'
+    concentration_unit: G_PER_L
+  - component_name: Manganese (II) sulfate monohydrate
+    component_id: CHEBI:86364
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.154'
+    concentration_unit: G_PER_L
+  - component_name: Copper (II) sulfate pentahydrate
+    component_id: CHEBI:31440
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0392'
+    concentration_unit: G_PER_L
+  - component_name: Cobalt(II) nitrate hexahydrate
+    component_id: CHEBI:86214
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.025'
+    concentration_unit: G_PER_L
+  - component_name: sodium tetraborate decahydrate
+    component_id: CHEBI:131366
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0177'
+    concentration_unit: G_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!1618:1627 UW concentrated base no Mo
+      notes: CultureBotHT's media definitions Mixes tab defines UW concentrated base
+        no Mo as a ten-component 1000X concentrated base omitting ammonium molybdate
+        tetrahydrate.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:uw_concentrated_base_no_mo
     ontology_label: UW concentrated base no Mo
@@ -11077,6 +11330,42 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: MINERAL_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base no Mo
+      curator_note: CultureBotHT defines UW concentrated base no Mo with concentrated
+        magnesium and calcium salts.
+  - role: TRACE_ELEMENT
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base no Mo
+      curator_note: CultureBotHT defines UW concentrated base no Mo with zinc, manganese,
+        copper, cobalt, and borate trace salts.
+  - role: IRON_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base no Mo
+      curator_note: CultureBotHT defines UW concentrated base no Mo with an iron salt.
+  - role: SULFUR_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base no Mo
+      curator_note: CultureBotHT defines UW concentrated base no Mo with multiple
+        sulfate salts.
 - identifier: kgmicrobe.ingredient:tyg_salts_solution
   preferred_term: TYG salts solution
   synonyms:
@@ -12120,12 +12409,82 @@ ingredients:
       not resolve them: ''DL vitamins (see below)'' (x1 CultureMech mentions). Source:
       culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for DL vitamins and added
+      complete component partonomy for its 10 vitamin-stock constituents plus a source-backed
+      vitamin role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 6 CultureBot media; samples: SCFM, Hans_Basal_Media, Hans_Basal_Media_plus_0.2x_20AA_mix….
-    No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a vitamin stock/pre-mix
-    pending component-level recipe curation.'
+    No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a vitamin stock/pre-mix.
+    Component-level recipe transcribed from the CultureBotHT media definitions Mixes
+    tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: VITAMIN_MIX
+  components:
+  - component_name: d-Biotin
+    component_id: CHEBI:15956
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.02'
+    concentration_unit: MG_PER_L
+  - component_name: Folic Acid
+    component_id: CHEBI:27470
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.02'
+    concentration_unit: MG_PER_L
+  - component_name: Pyridoxine HCl
+    component_id: CHEBI:30961
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: MG_PER_L
+  - component_name: Riboflavin
+    component_id: CHEBI:17015
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.05'
+    concentration_unit: MG_PER_L
+  - component_name: Thiamine
+    component_id: CHEBI:18385
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.05'
+    concentration_unit: MG_PER_L
+  - component_name: Nicotinic Acid
+    component_id: CHEBI:15940
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.05'
+    concentration_unit: MG_PER_L
+  - component_name: Pantothenic Acid
+    component_id: CHEBI:7916
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.05'
+    concentration_unit: MG_PER_L
+  - component_name: Vitamin B12
+    component_id: CHEBI:176843
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.001'
+    concentration_unit: MG_PER_L
+  - component_name: p-Amino Benzoic Acid
+    component_id: CHEBI:30753
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.05'
+    concentration_unit: MG_PER_L
+  - component_name: DL-6,8-thioctic acid
+    component_id: CHEBI:16494
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.05'
+    concentration_unit: MG_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!1015:1024 DL vitamins
+      notes: CultureBotHT's media definitions Mixes tab defines DL vitamins as a ten-component
+        100X vitamin mix.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:dl_vitamins
     ontology_label: DL vitamins
@@ -12140,6 +12499,15 @@ ingredients:
         a substance. Takes the STOCK_SOLUTION convention used by the existing mapped
         records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: VITAMIN_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: DL vitamins
+      curator_note: CultureBotHT defines DL vitamins as a 100X vitamin mix.
 - identifier: kgmicrobe.ingredient:thauers_vitamin_mix
   preferred_term: Thauer's vitamin mix
   synonyms:
@@ -12176,12 +12544,86 @@ ingredients:
     changes: Promoted UNMAPPED_0270 -> kgmicrobe.ingredient:thauers_vitamin_mix "Thauer's
       vitamin mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row
       added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for Thauer's vitamin mix
+      and added complete component partonomy for its 11 vitamin-stock constituents
+      plus a source-backed vitamin role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 8 CultureBot media; samples: MoLS4, LS4D, MoYLS4…. No CAS-RN or CHEBI mapping
-    available; reviewed on 2026-05-11 as a named vitamin stock/pre-mix pending component-level
-    recipe curation.'
+    available; reviewed on 2026-05-11 as a named vitamin stock/pre-mix. Component-level
+    recipe transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: VITAMIN_MIX
+  components:
+  - component_name: pyridoxine HCl
+    component_id: CHEBI:30961
+    reference_scope: MIM_CATALOG
+    concentration_value: '10.0'
+    concentration_unit: MG_PER_L
+  - component_name: 4-Aminobenzoic acid
+    component_id: CHEBI:30753
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Lipoic acid
+    component_id: CHEBI:16494
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Nicotinic Acid
+    component_id: CHEBI:15940
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: Riboflavin
+    component_id: CHEBI:17015
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: thiamine HCl
+    component_id: CHEBI:49105
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: calcium pantothenate
+    component_id: CHEBI:31345
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: MG_PER_L
+  - component_name: biotin
+    component_id: CHEBI:15956
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.0'
+    concentration_unit: MG_PER_L
+  - component_name: Folic Acid
+    component_id: CHEBI:27470
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.0'
+    concentration_unit: MG_PER_L
+  - component_name: Cyanocobalamin
+    component_id: CHEBI:17439
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: MG_PER_L
+  - component_name: Choline chloride
+    component_id: CHEBI:133341
+    reference_scope: MIM_CATALOG
+    concentration_value: '200.0'
+    concentration_unit: MG_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!88:98 Thauer's vitamin mix
+      notes: CultureBotHT's media definitions Mixes tab defines Thauer's vitamin mix
+        as an eleven-component 1000X vitamin solution.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:thauers_vitamin_mix
     ontology_label: Thauer's vitamin mix
@@ -12196,6 +12638,15 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: VITAMIN_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: Thauer's vitamin mix
+      curator_note: CultureBotHT defines Thauer's vitamin mix as a 1000X vitamin solution.
 - identifier: kgmicrobe.ingredient:4_carbon_mix
   preferred_term: 4 Carbon Mix
   synonyms:
@@ -12232,13 +12683,53 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0253 -> kgmicrobe.ingredient:4_carbon_mix "4 Carbon
       Mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for 4 Carbon Mix and added
+      complete component partonomy for its four organic-acid constituents plus a source-backed
+      carbon role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 8 CultureBot media; samples: UGA_defined_4CarbonMix_Nitrate_anaerobic_pH_7.1,
     UGA_defined_4CarbonMix_Nitrate_anaerobic_pH_6.8, UGA_defined_4CarbonMix_Nitrate_anaerobic_pH_6.5….
     No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a carbon-source
-    stock/pre-mix pending component-level recipe curation.'
+    stock/pre-mix. Component-level recipe transcribed from the CultureBotHT media
+    definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: CARBON_SOURCE_MIX
+  components:
+  - component_name: Sodium L-Lactate
+    component_id: CHEBI:232798
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.25'
+    concentration_unit: MM
+  - component_name: Sodium acetate
+    component_id: CHEBI:32954
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.25'
+    concentration_unit: MM
+  - component_name: Glutamic acid
+    component_id: CHEBI:18237
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.25'
+    concentration_unit: MM
+  - component_name: Benzoic acid
+    component_id: CHEBI:30746
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.25'
+    concentration_unit: MM
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!777:780 4 Carbon Mix
+      notes: CultureBotHT's media definitions Mixes tab defines 4 Carbon Mix as sodium
+        L-lactate, sodium acetate, glutamic acid, and benzoic acid, each at 1.25 mM.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:4_carbon_mix
     ontology_label: 4 Carbon Mix
@@ -12253,6 +12744,15 @@ ingredients:
         a substance. Takes the STOCK_SOLUTION convention used by the existing mapped
         records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: CARBON_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: 4 Carbon Mix
+      curator_note: CultureBotHT defines 4 Carbon Mix as a mixture of carbon sources.
 - identifier: kgmicrobe.ingredient:uw_concentrated_base
   preferred_term: UW concentrated base
   synonyms:
@@ -12289,12 +12789,86 @@ ingredients:
     changes: Promoted UNMAPPED_0255 -> kgmicrobe.ingredient:uw_concentrated_base "UW
       concentrated base" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM
       row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for UW concentrated base
+      and added complete component partonomy for its 11 constituents plus source-backed
+      mineral, trace-element, iron, and sulfur roles.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 9 CultureBot media; samples: CAAc, PM, MDC…. No CAS-RN or CHEBI mapping available;
-    reviewed on 2026-05-11 as a concentrated base stock formulation pending component-level
-    recipe curation.'
+    reviewed on 2026-05-11 as a concentrated base stock formulation. Component-level
+    recipe transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: OTHER
+  components:
+  - component_name: Nitrilotriacetic acid
+    component_id: CHEBI:44557
+    reference_scope: MIM_CATALOG
+    concentration_value: '20.0'
+    concentration_unit: G_PER_L
+  - component_name: MgSO4
+    component_id: CHEBI:32599
+    reference_scope: MIM_CATALOG
+    concentration_value: '28.9'
+    concentration_unit: G_PER_L
+  - component_name: Calcium Chloride Dihydrate
+    component_id: CHEBI:86158
+    reference_scope: MIM_CATALOG
+    concentration_value: '6.67'
+    concentration_unit: G_PER_L
+  - component_name: ammonium molybdate tetrahydrate
+    component_id: cas:12054-85-2
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0185'
+    concentration_unit: G_PER_L
+  - component_name: Iron (II) sulfate heptahydrate
+    component_id: CHEBI:75836
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.698'
+    concentration_unit: G_PER_L
+  - component_name: EDTA
+    component_id: CHEBI:4735
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.25'
+    concentration_unit: G_PER_L
+  - component_name: Zinc sulfate heptahydrate
+    component_id: CHEBI:32312
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.095'
+    concentration_unit: G_PER_L
+  - component_name: Manganese (II) sulfate monohydrate
+    component_id: CHEBI:86364
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.154'
+    concentration_unit: G_PER_L
+  - component_name: Copper (II) sulfate pentahydrate
+    component_id: CHEBI:31440
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0392'
+    concentration_unit: G_PER_L
+  - component_name: Cobalt(II) nitrate hexahydrate
+    component_id: CHEBI:86214
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.025'
+    concentration_unit: G_PER_L
+  - component_name: sodium tetraborate decahydrate
+    component_id: CHEBI:131366
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0177'
+    concentration_unit: G_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!1602:1612 UW concentrated base
+      notes: CultureBotHT's media definitions Mixes tab defines UW concentrated base
+        as an eleven-component 1000X concentrated mineral and trace-element base.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:uw_concentrated_base
     ontology_label: UW concentrated base
@@ -12309,6 +12883,42 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: MINERAL_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base
+      curator_note: CultureBotHT defines UW concentrated base with concentrated magnesium
+        and calcium salts.
+  - role: TRACE_ELEMENT
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base
+      curator_note: CultureBotHT defines UW concentrated base with zinc, manganese,
+        copper, cobalt, and borate trace salts.
+  - role: IRON_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base
+      curator_note: CultureBotHT defines UW concentrated base with an iron salt.
+  - role: SULFUR_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: UW concentrated base
+      curator_note: CultureBotHT defines UW concentrated base with multiple sulfate
+        salts.
 - identifier: kgmicrobe.ingredient:mineral_3b_solution
   preferred_term: Mineral 3B solution
   synonyms:
