@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
 import sys
 from pathlib import Path
 from typing import Any
@@ -32,6 +33,13 @@ from mediaingredientmech.curation.chebi_deduplicator import CHEBIDeduplicator
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.curation.solution_matcher import SolutionMatcher
 from mediaingredientmech.utils.kg_microbe_searcher import KGMicrobeSearcher
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+# The fleet's variable for the CultureMech checkout, with the sibling
+# directory as the fallback (MediaIngredientMech#573).
+CULTUREMECH_ROOT = Path(
+    os.environ.get("CULTUREMECH_ROOT", REPO_ROOT.parent / "CultureMech")
+)
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -219,10 +227,9 @@ def main():
     parser.add_argument(
         "--culturemech-path",
         type=Path,
-        default=Path(
-            "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/CultureMech/output/mapped_ingredients.yaml"
-        ),
-        help="Path to CultureMech mapped ingredients",
+        default=CULTUREMECH_ROOT / "output" / "mapped_ingredients.yaml",
+        help="Path to CultureMech mapped ingredients "
+        "(default: $CULTUREMECH_ROOT/output/mapped_ingredients.yaml)",
     )
     parser.add_argument("--dry-run", action="store_true", help="Preview changes without saving")
     parser.add_argument(
