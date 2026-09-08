@@ -1,4 +1,4 @@
-generation_date: '2026-09-07T19:33:48.616189+00:00'
+generation_date: '2026-09-08T02:51:37.297196+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -12565,12 +12565,132 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0312 -> kgmicrobe.ingredient:day_aminoacid20 "Day_AminoAcid20"
       (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-09-07T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for Day_AminoAcid20 and
+      added complete component partonomy for its 20 amino-acid constituents plus a
+      source-backed amino-acid role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 11 CultureBot media; samples: McAA_formate_No_biotin, McAA_formate_No_FolicAcid,
-    McAA_formate_No_Pyroxidine…. No CAS-RN or CHEBI mapping available; curator review
-    needed. Reviewed on 2026-05-11 as an amino-acid stock/pre-mix.'
+    McAA_formate_No_Pyroxidine…. No CAS-RN or CHEBI mapping available; reviewed on
+    2026-05-11 as an amino-acid stock/pre-mix. Component-level recipe transcribed
+    from the CultureBotHT media definitions Mixes tab on 2026-09-07.'
   ingredient_type: STOCK_SOLUTION
   solution_type: AMINO_ACID_MIX
+  components:
+  - component_name: L-Alanine
+    component_id: CHEBI:16977
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Arginine
+    component_id: CHEBI:16467
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Asparagine
+    component_id: CHEBI:17196
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Aspartic Acid
+    component_id: CHEBI:17053
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Cysteine
+    component_id: CHEBI:17561
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: Glutamic acid
+    component_id: CHEBI:16015
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Glutamine
+    component_id: CHEBI:18050
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: Glycine
+    component_id: CHEBI:15428
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Histidine
+    component_id: CHEBI:15971
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Isoleucine
+    component_id: CHEBI:17191
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Leucine
+    component_id: CHEBI:15603
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Lysine
+    component_id: CHEBI:18019
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Methionine
+    component_id: CHEBI:16643
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Phenylalanine
+    component_id: CHEBI:17295
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Proline
+    component_id: CHEBI:17203
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Serine
+    component_id: CHEBI:17115
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Threonine
+    component_id: CHEBI:16857
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Tryptophan
+    component_id: CHEBI:16828
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-tyrosine
+    component_id: CHEBI:17895
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  - component_name: L-Valine
+    component_id: CHEBI:16414
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: MM
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!1321:1340 Day_AminoAcid20
+      notes: CultureBotHT's media definitions Mixes tab defines Day_AminoAcid20 as
+        an amino-acid stock containing 20 amino acids at 0.5 mM each.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:day_aminoacid20
     ontology_label: Day_AminoAcid20
@@ -12585,6 +12705,13 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: AMINO_ACID_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      curator_note: CultureBotHT enumerates 20 amino-acid constituents in Day_AminoAcid20.
 - identifier: kgmicrobe.ingredient:p-iv_metal_solution
   preferred_term: P-IV Metal Solution
   synonyms:
