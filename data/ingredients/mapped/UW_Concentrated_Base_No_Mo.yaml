@@ -34,12 +34,83 @@ curation_history:
   changes: Promoted UNMAPPED_0260 -> kgmicrobe.ingredient:uw_concentrated_base_no_mo
     "UW concentrated base no Mo" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED,
     SSSOM row added.
+- timestamp: '2026-09-08T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Transcribed the CultureBotHT Mixes-tab recipe for UW concentrated base
+    no Mo and added complete component partonomy for its 10 constituents plus source-backed
+    mineral, trace-element, iron, and sulfur roles.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   2 CultureBot media; samples: NFM_No_Mo, NFM_No_Mo_Plus_VCl3. No CAS-RN or CHEBI
-  mapping available; reviewed on 2026-05-11 as a variant concentrated base stock pending
-  component-level recipe curation.'
+  mapping available; reviewed on 2026-05-11 as a variant concentrated base stock.
+  Component-level recipe transcribed from the CultureBotHT media definitions Mixes
+  tab on 2026-09-08.'
 ingredient_type: STOCK_SOLUTION
 solution_type: OTHER
+components:
+- component_name: Nitrilotriacetic acid
+  component_id: CHEBI:44557
+  reference_scope: MIM_CATALOG
+  concentration_value: '20.0'
+  concentration_unit: G_PER_L
+- component_name: MgSO4
+  component_id: CHEBI:32599
+  reference_scope: MIM_CATALOG
+  concentration_value: '28.9'
+  concentration_unit: G_PER_L
+- component_name: Calcium Chloride Dihydrate
+  component_id: CHEBI:86158
+  reference_scope: MIM_CATALOG
+  concentration_value: '6.67'
+  concentration_unit: G_PER_L
+- component_name: Iron (II) sulfate heptahydrate
+  component_id: CHEBI:75836
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.698'
+  concentration_unit: G_PER_L
+- component_name: EDTA
+  component_id: CHEBI:4735
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.25'
+  concentration_unit: G_PER_L
+- component_name: Zinc sulfate heptahydrate
+  component_id: CHEBI:32312
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.095'
+  concentration_unit: G_PER_L
+- component_name: Manganese (II) sulfate monohydrate
+  component_id: CHEBI:86364
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.154'
+  concentration_unit: G_PER_L
+- component_name: Copper (II) sulfate pentahydrate
+  component_id: CHEBI:31440
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0392'
+  concentration_unit: G_PER_L
+- component_name: Cobalt(II) nitrate hexahydrate
+  component_id: CHEBI:86214
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.025'
+  concentration_unit: G_PER_L
+- component_name: sodium tetraborate decahydrate
+  component_id: CHEBI:131366
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0177'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!1618:1627 UW concentrated base no Mo
+    notes: CultureBotHT's media definitions Mixes tab defines UW concentrated base
+      no Mo as a ten-component 1000X concentrated base omitting ammonium molybdate
+      tetrahydrate.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:uw_concentrated_base_no_mo
   ontology_label: UW concentrated base no Mo
@@ -54,3 +125,39 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: UW concentrated base no Mo
+    curator_note: CultureBotHT defines UW concentrated base no Mo with concentrated
+      magnesium and calcium salts.
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: UW concentrated base no Mo
+    curator_note: CultureBotHT defines UW concentrated base no Mo with zinc, manganese,
+      copper, cobalt, and borate trace salts.
+- role: IRON_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: UW concentrated base no Mo
+    curator_note: CultureBotHT defines UW concentrated base no Mo with an iron salt.
+- role: SULFUR_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: UW concentrated base no Mo
+    curator_note: CultureBotHT defines UW concentrated base no Mo with multiple sulfate
+      salts.

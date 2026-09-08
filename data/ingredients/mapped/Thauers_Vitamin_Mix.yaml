@@ -34,12 +34,86 @@ curation_history:
   changes: Promoted UNMAPPED_0270 -> kgmicrobe.ingredient:thauers_vitamin_mix "Thauer's
     vitamin mix" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row
     added.
+- timestamp: '2026-09-08T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Transcribed the CultureBotHT Mixes-tab recipe for Thauer's vitamin mix
+    and added complete component partonomy for its 11 vitamin-stock constituents plus
+    a source-backed vitamin role.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   8 CultureBot media; samples: MoLS4, LS4D, MoYLS4…. No CAS-RN or CHEBI mapping available;
-  reviewed on 2026-05-11 as a named vitamin stock/pre-mix pending component-level
-  recipe curation.'
+  reviewed on 2026-05-11 as a named vitamin stock/pre-mix. Component-level recipe
+  transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
 ingredient_type: STOCK_SOLUTION
 solution_type: VITAMIN_MIX
+components:
+- component_name: pyridoxine HCl
+  component_id: CHEBI:30961
+  reference_scope: MIM_CATALOG
+  concentration_value: '10.0'
+  concentration_unit: MG_PER_L
+- component_name: 4-Aminobenzoic acid
+  component_id: CHEBI:30753
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: Lipoic acid
+  component_id: CHEBI:16494
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: Nicotinic Acid
+  component_id: CHEBI:15940
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: Riboflavin
+  component_id: CHEBI:17015
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: thiamine HCl
+  component_id: CHEBI:49105
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: calcium pantothenate
+  component_id: CHEBI:31345
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.0'
+  concentration_unit: MG_PER_L
+- component_name: biotin
+  component_id: CHEBI:15956
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.0'
+  concentration_unit: MG_PER_L
+- component_name: Folic Acid
+  component_id: CHEBI:27470
+  reference_scope: MIM_CATALOG
+  concentration_value: '2.0'
+  concentration_unit: MG_PER_L
+- component_name: Cyanocobalamin
+  component_id: CHEBI:17439
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: MG_PER_L
+- component_name: Choline chloride
+  component_id: CHEBI:133341
+  reference_scope: MIM_CATALOG
+  concentration_value: '200.0'
+  concentration_unit: MG_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!88:98 Thauer's vitamin mix
+    notes: CultureBotHT's media definitions Mixes tab defines Thauer's vitamin mix
+      as an eleven-component 1000X vitamin solution.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:thauers_vitamin_mix
   ontology_label: Thauer's vitamin mix
@@ -54,3 +128,12 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: VITAMIN_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: Thauer's vitamin mix
+    curator_note: CultureBotHT defines Thauer's vitamin mix as a 1000X vitamin solution.
