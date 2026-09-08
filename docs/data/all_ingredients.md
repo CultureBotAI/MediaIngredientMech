@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-07T01:34:19.347566+00:00
+Generated: 2026-09-08T02:04:39.641984+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
