@@ -106,7 +106,11 @@ max_accession:
 # accepts it as OK_EXCEPTION (non-error) so the gate can be enforced/blocking. The
 # match is exact: a *different* label on the same id still fails. Remove an entry
 # once mesh.db includes that SCR.
-mesh_scr_exceptions: &mesh_scr_exceptions
+# Parked here to be aliased into the targets below, not read as a config key:
+# the id-label validator rejects top-level keys it does not read, and an "x-"
+# prefix is how a block says it is deliberately one of those
+# (culturebotai-claw#367).
+x-mesh-scr-exceptions: &mesh_scr_exceptions
   - {id: mesh:C000709627, label: avocatin B, reason: "valid MeSH SCR (2020); absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
   - {id: mesh:C000655964, label: cholinium lysinate, reason: "valid MeSH SCR; absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
   - {id: mesh:C000730144, label: sodium glutarate, reason: "valid MeSH SCR (2024); absent from cached sqlite:obo:mesh; no CHEBI equivalent"}
