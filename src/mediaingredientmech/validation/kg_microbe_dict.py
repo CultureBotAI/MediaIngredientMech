@@ -180,6 +180,7 @@ class KgMicrobeDict:
         self._polluted_entries: set[str] = set()
         self._surface_forms: dict[str, set[str]] = defaultdict(set)
         self._db: sqlite3.Connection | None = None
+        self._cache_target: Path | None = None
         self._loaded = False
 
     def load(self) -> None:
@@ -452,6 +453,12 @@ class KgMicrobeDict:
             return False
         self._db = db
         self._cache_target = path
+        # Keep the quarantine set visible on this path too, so a warm instance
+        # reports the same state as the one that built the index rather than
+        # silently claiming nothing was quarantined.
+        self._polluted_entries = {
+            chebi_id for (chebi_id,) in db.execute("SELECT chebi_id FROM entity WHERE polluted = 1")
+        }
         logger.info("kg-microbe dictionary served from cache %s (%d entities)", path, count)
         return True
 
@@ -466,7 +473,9 @@ class KgMicrobeDict:
 
         :return: None.
         """
-        path = getattr(self, "_cache_target", None) or self._cache_path()
+        # Reuse the path _open_cache already derived; recomputing it would
+        # re-hash the whole artifact for nothing.
+        path = self._cache_target or self._cache_path()
         if path is None or not self._by_chebi:
             return
         try:
@@ -555,6 +564,25 @@ class KgMicrobeDict:
     def is_ambiguous(self, surface_form: str) -> bool:
         """True if kg-microbe maps this surface form to too many CHEBI IDs to trust."""
         return len(self.lookup_synonym(surface_form)) > AMBIGUITY_THRESHOLD
+
+    def close(self) -> None:
+        """
+        Release the on-disk index, if one is attached.
+
+        A CLI exits and the handle goes with it, but a long-lived caller that
+        builds many dictionaries would otherwise hold one descriptor each.
+
+        :return: None.
+        """
+        if self._db is not None:
+            self._db.close()
+            self._db = None
+
+    def __enter__(self) -> KgMicrobeDict:
+        return self
+
+    def __exit__(self, *exc_info: object) -> None:
+        self.close()
 
     @property
     def loaded(self) -> bool:

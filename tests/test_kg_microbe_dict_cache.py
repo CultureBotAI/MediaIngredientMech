@@ -183,3 +183,34 @@ def test_the_index_is_a_readable_database(mapping_set):
     tables = {name for (name,) in db.execute("SELECT name FROM sqlite_master WHERE type='table'")}
     assert {"entity", "synonym"} <= tables
     db.close()
+
+
+def test_the_warm_path_reports_the_same_quarantine_set(tmp_path):
+    """The `polluted` column is load-bearing, not decoration (self-review of #597)."""
+    from mediaingredientmech.validation.kg_microbe_dict import POLLUTION_SYNONYM_THRESHOLD
+
+    rows = [_row("kgm.name:p", "Polluted", "skos:exactMatch", "CHEBI:9", "Polluted")]
+    rows += [
+        _row(f"kgm.name:s{i}", f"surface form {i}", "skos:closeMatch", "CHEBI:9", "Polluted")
+        for i in range(POLLUTION_SYNONYM_THRESHOLD + 1)
+    ]
+    path = _write_set(tmp_path / "polluted.sssom.tsv.gz", rows)
+
+    cold = KgMicrobeDict(path)
+    cold.load()
+    warm = KgMicrobeDict(path)
+    warm.load()
+
+    assert warm._db is not None
+    assert warm._polluted_entries == cold._polluted_entries == {"CHEBI:9"}
+    assert warm.get_entry("CHEBI:9").synonyms == set()
+    assert warm.lookup_synonym("surface form 3") == set()
+    assert warm.lookup_synonym("Polluted") == {"CHEBI:9"}
+
+
+def test_close_releases_the_index(mapping_set):
+    KgMicrobeDict(mapping_set).load()
+    with KgMicrobeDict(mapping_set) as d:
+        assert d.size == 3
+        assert d._db is not None
+    assert d._db is None
