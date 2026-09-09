@@ -218,6 +218,10 @@ class KgMicrobeDict:
 
         self._quarantine_polluted()
         self._build_synonym_index()
+        # The staging map has been folded into the entries and the reverse
+        # index; holding a second copy of every surface form for the life of
+        # the process is pure overhead (#589).
+        self._surface_forms.clear()
         logger.info(
             "kg-microbe dictionary loaded from %s: %d CHEBI entities, "
             "%d indexed surface forms, %d quarantined as polluted",

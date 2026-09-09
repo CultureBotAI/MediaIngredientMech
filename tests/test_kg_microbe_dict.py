@@ -76,6 +76,8 @@ def mapping_set(tmp_path):
         _row("kgm.name:glucose", "Glucose", "skos:exactMatch", "CHEBI:17234", "Glucose", "C6H12O6"),
         _row("kgm.name:dextrose", "Dextrose", "skos:closeMatch", "CHEBI:17234", "Glucose", "C6H12O6"),
         _row("cas:50-99-7", "", "skos:exactMatch", "CHEBI:17234", "Glucose", "C6H12O6"),
+        # An xref row that *does* carry a label; it is still not a surface form.
+        _row("kegg.compound:C00293", "Grape sugar", "skos:exactMatch", "CHEBI:17234", "Glucose"),
         # A registry code wearing a name's clothing, and a one-character label
         _row("kgm.name:cas50-99-7", "CAS:50-99-7", "skos:closeMatch", "CHEBI:17234", "Glucose"),
         _row("kgm.name:g", "G", "skos:closeMatch", "CHEBI:17234", "Glucose"),
@@ -104,8 +106,16 @@ def test_the_canonical_name_is_not_offered_as_a_synonym(mapping_set):
 
 
 def test_xref_rows_contribute_no_surface_form(mapping_set):
-    """`cas:50-99-7` is an xref subject, so its (empty) label must not be indexed."""
-    assert KgMicrobeDict(mapping_set).lookup_synonym("") == set()
+    """Only `kgm.name:*` subjects carry names; an xref's label is not one (#591).
+
+    Probed with a non-empty label, because `lookup_synonym("")` returns early
+    and would pass this test without consulting the index at all.
+    """
+    d = KgMicrobeDict(mapping_set)
+    assert d.lookup_synonym("Grape sugar") == set()
+    assert "Grape sugar" not in d.get_entry("CHEBI:17234").synonyms
+    # The row still contributed its entity, just not a name for it.
+    assert d.get_entry("CHEBI:17234").canonical_name == "Glucose"
 
 
 @pytest.mark.parametrize("junk", ["CAS:50-99-7", "G"])
