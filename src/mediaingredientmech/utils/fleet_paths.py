@@ -21,24 +21,61 @@ one, or a CI step whose input was blank. See MediaIngredientMech#580.
 
 from __future__ import annotations
 
+import logging
 import os
+from collections.abc import Sequence
 from pathlib import Path
 
+logger = logging.getLogger(__name__)
 
-def checkout_root(env_var: str, fallback: Path) -> Path:
+
+def _value_of(env_var: str) -> str | None:
+    """
+    Return the variable's value when it names something, else None.
+
+    :param env_var: Environment variable to read.
+    :return: The stripped value, or None when unset, empty or whitespace.
+    """
+    value = os.environ.get(env_var)
+    return value.strip() if value and value.strip() else None
+
+
+def checkout_root(env_var: str, fallback: Path, *, deprecated: Sequence[str] = ()) -> Path:
     """
     Return the checkout root named by ``env_var``, else ``fallback``.
 
     A variable that is unset, empty, or whitespace counts as unset. A value
     starting with ``~`` is expanded.
 
+    ``deprecated`` names older spellings that still work. The fleet-standard
+    ``env_var`` always wins; a deprecated name is honoured only when the
+    standard one names nothing, and doing so logs a warning naming both. A
+    silently-ignored variable is the defect this argument exists to prevent:
+    before it, exporting ``CULTUREMECH_ROOT`` steered one script and was
+    ignored by another that read ``CULTUREMECH_DIR``, with no indication
+    (MediaIngredientMech#593).
+
     :param env_var: Fleet environment variable naming the checkout, e.g.
         ``"CULTUREMECH_ROOT"``.
-    :param fallback: Path to use when the variable does not name one.
+    :param fallback: Path to use when no variable names one.
+    :param deprecated: Older variable names, tried in order after ``env_var``.
     :return: The resolved checkout root. Existence is not checked -- callers
         report a missing checkout in their own terms.
     """
-    value = os.environ.get(env_var)
-    if value and value.strip():
-        return Path(value.strip()).expanduser()
+    value = _value_of(env_var)
+    if value:
+        return Path(value).expanduser()
+
+    for old_name in deprecated:
+        old_value = _value_of(old_name)
+        if old_value:
+            logger.warning(
+                "%s is deprecated; use %s. Honouring %s=%s for now.",
+                old_name,
+                env_var,
+                old_name,
+                old_value,
+            )
+            return Path(old_value).expanduser()
+
     return Path(fallback).expanduser()
