@@ -20,7 +20,17 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / "scripts"
+
+# Both trees that ship code. `src/` was outside the guard when it was written,
+# and it was where the live offender sat: the kg-microbe dictionary loader
+# pointed at one laptop's home directory, which is exactly this shape
+# (MediaIngredientMech#579).
+CHECKED_ROOTS = (ROOT / "scripts", ROOT / "src")
+
+# `ATTIC/` is archived, not maintained, and keeps its hardcoded paths on
+# purpose. It is excluded by name rather than by living outside the globs, so
+# the exemption survives someone moving it (#579).
+EXCLUDED_DIRS = {"ATTIC", "__pycache__"}
 
 _MACHINE_PATH = re.compile(
     r"""(
@@ -38,12 +48,29 @@ def has_machine_path(source: str) -> bool:
 
 
 def _scripts() -> list[Path]:
-    return sorted(SCRIPTS.glob("*.py"))
+    """Every maintained Python file, recursively, minus the archived tree."""
+    return sorted(
+        path
+        for root in CHECKED_ROOTS
+        for path in root.rglob("*.py")
+        if not EXCLUDED_DIRS.intersection(path.relative_to(ROOT).parts)
+    )
 
 
 def test_there_are_scripts_to_check():
     """Guards the parametrization: an empty glob would pass everything."""
     assert len(_scripts()) >= 10, f"only {len(_scripts())} scripts found"
+
+
+def test_both_trees_are_actually_covered():
+    """`rglob` over one root would still satisfy the count check above."""
+    covered = {root for root in CHECKED_ROOTS for path in _scripts() if root in path.parents}
+    assert covered == set(CHECKED_ROOTS), f"only checking {sorted(str(c) for c in covered)}"
+
+
+def test_nested_files_are_reached():
+    """The original glob was non-recursive, so a subpackage was exempt."""
+    assert any(len(p.relative_to(ROOT).parts) > 3 for p in _scripts())
 
 
 @pytest.mark.parametrize(

@@ -1,22 +1,40 @@
 """
-KG-Microbe unified chemical dictionary loader.
+KG-Microbe unified entity dictionary loader.
 
-Loads the gzipped TSV at
-  kg-microbe/mappings/unified_chemical_mappings.tsv.gz
-and exposes two indexes:
+Reads kg-microbe's published SSSOM mapping set
+
+  kg-microbe/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz
+
+and reconstructs a per-entity view of it, exposing two indexes:
 
   by_chebi:   CHEBI:X -> {canonical_name, synonyms: set[str], formula}
   by_synonym: lower(synonym) -> set[CHEBI:X]   (1:many, intentional)
 
+The published set is a long triple table, one row per mapping, so the
+per-entity view is rebuilt by grouping on ``object_id`` -- the read pattern
+kg-microbe's own ``mappings/README.md`` documents. Per row:
+
+  object_id       the entity's primary key; only CHEBI:* is kept here
+  object_label    its canonical name, repeated on every row for the entity
+  object_formula  its chemical formula, likewise repeated
+  subject_id      a ``kgm.name:*`` subject means the row carries a surface
+                  form for the entity; any other prefix is an xref
+  subject_label   that surface form
+  predicate_id    skos:exactMatch on a kgm.name subject is the entity's own
+                  name; skos:closeMatch is a synonym of it
+
+Before 2026-09 this module read a wide per-entity TSV,
+``mappings/unified_chemical_mappings.tsv.gz``, which kg-microbe deleted on
+2026-04-30. Nothing noticed for four months, because a missing file made
+``load()`` return quietly and the reviewer then disabled the checks: a clean
+review looked exactly like a review that never ran (#578). Every path that
+cannot produce a dictionary now says so through the module logger.
+
 Known data-quality issues the loader defends against:
-  * CSV row-merge bug: fields can contain embedded quotes; csv.DictReader
-    merges subsequent rows. We parse line-by-line via split("\t") instead.
-  * Field-size overflow: some synonym lists exceed the default csv field
-    size limit. We raise the limit as a safeguard even though we do not
-    use the csv module.
   * Symmetric-synonym pollution: short cation/anion tokens appear under
     hundreds of CHEBI IDs. The by_synonym index is kept 1:many so callers
-    can filter by ambiguity count.
+    can filter by ambiguity count, and an entry whose synonym list is
+    implausibly long is quarantined out of that index entirely.
 
 See .claude/skills/review-ingredients/SKILL.md ("KG-Microbe Dictionary
 Integration") for the P2.5 / P4.4 rules that consume this data.
@@ -24,29 +42,91 @@ Integration") for the P2.5 / P4.4 rules that consume this data.
 
 from __future__ import annotations
 
-import csv
 import gzip
+import logging
+import os
 import re
-import sys
 from collections import defaultdict
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
+from typing import TextIO
+
+logger = logging.getLogger(__name__)
 
 _CURIE_RE = re.compile(r"^[A-Z][A-Za-z0-9_.]*:[A-Za-z0-9_\-]+$")
 
-DEFAULT_DICT_PATH = Path(
-    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/"
-    "kg-microbe/mappings/unified_chemical_mappings.tsv.gz"
-)
+REPO_ROOT = Path(__file__).resolve().parents[3]
+
+#: Environment variable naming the kg-microbe checkout, as the fleet spells it.
+KGMICROBE_ROOT_ENV = "KGMICROBE_ROOT"
+
+#: Where the published mapping set sits inside that checkout.
+ARTIFACT_RELPATH = Path("mappings") / "kgmicrobe_unified_entity_mappings.sssom.tsv.gz"
+
+#: Subject prefix marking a row that carries a surface form rather than an xref.
+NAME_SUBJECT_PREFIX = "kgm.name:"
+
+#: Predicate marking the entity's own name; anything else on a name row is a synonym.
+CANONICAL_PREDICATE = "skos:exactMatch"
+
+#: Predicates whose name rows assert an equivalent surface form for the entity.
+#: ``skos:narrowMatch`` is deliberately absent: a narrower term's name is not a
+#: synonym of the broader entity, and proposing it as one would be a mapping
+#: error rather than an enrichment (#585). No such row exists in the current
+#: artifact, so this is a guard against the emitter changing, not a fix.
+SURFACE_FORM_PREDICATES = frozenset({"skos:exactMatch", "skos:closeMatch"})
 
 AMBIGUITY_THRESHOLD = 5
 MIN_SYNONYM_LEN = 2
 # An entry with more synonyms than this is almost certainly contaminated by
-# the upstream row-merge bug. Legitimate entries (enzyme superfamilies, etc.)
-# cap out around 250; CHEBI:86254 observed at 50,686 in 2026-04 dump.
+# upstream symmetric-synonym propagation. Legitimate entries (enzyme
+# superfamilies, etc.) cap out around 250; CHEBI:86254 observed at 50,686 in
+# the 2026-04 dump.
 POLLUTION_SYNONYM_THRESHOLD = 500
 
-csv.field_size_limit(sys.maxsize)
+_REQUIRED_COLUMNS = ("subject_id", "subject_label", "predicate_id", "object_id", "object_label")
+
+
+def kgmicrobe_root() -> Path | None:
+    """
+    Return the kg-microbe checkout root, or None when it cannot be located.
+
+    ``KGMICROBE_ROOT`` wins when it is set to a non-empty value; an exported
+    but empty variable is treated as unset rather than as the current
+    directory, and a leading ``~`` is expanded (MediaIngredientMech#580).
+    Otherwise fall back to a sibling of this checkout, which is where the
+    fleet convention puts it.
+
+    :return: The checkout root, or None when neither candidate exists.
+    """
+    override = os.environ.get(KGMICROBE_ROOT_ENV)
+    if override and override.strip():
+        return Path(override.strip()).expanduser()
+    sibling = REPO_ROOT.parent / "kg-microbe"
+    return sibling if sibling.is_dir() else None
+
+
+def resolve_default_dict_path() -> Path | None:
+    """
+    Return the path to kg-microbe's published mapping set, if it can be found.
+
+    :return: Path to the artifact, or None when the checkout cannot be located.
+    """
+    root = kgmicrobe_root()
+    return root / ARTIFACT_RELPATH if root is not None else None
+
+
+def _open_text(path: Path) -> TextIO:
+    """
+    Open a mapping set that may or may not be gzipped.
+
+    :param path: File to open.
+    :return: A text-mode file object.
+    """
+    if path.suffix == ".gz":
+        return gzip.open(path, "rt", encoding="utf-8")
+    return path.open("rt", encoding="utf-8")
 
 
 @dataclass
@@ -58,102 +138,210 @@ class KgMicrobeEntry:
 
 
 class KgMicrobeDict:
-    """In-memory index over kg-microbe's unified chemical mappings TSV."""
+    """In-memory per-entity index over kg-microbe's unified SSSOM mapping set."""
 
     def __init__(self, dict_path: Path | None = None):
-        self.dict_path = Path(dict_path) if dict_path else DEFAULT_DICT_PATH
+        self.dict_path = Path(dict_path) if dict_path else resolve_default_dict_path()
         self._by_chebi: dict[str, KgMicrobeEntry] = {}
         self._by_synonym: dict[str, set[str]] = defaultdict(set)
         self._polluted_entries: set[str] = set()
+        self._surface_forms: dict[str, set[str]] = defaultdict(set)
         self._loaded = False
 
     def load(self) -> None:
-        """Parse the gzipped TSV and build indexes. Safe to call twice."""
+        """
+        Parse the mapping set and build the indexes. Safe to call twice.
+
+        Every unusable outcome is logged rather than swallowed: an
+        unlocatable checkout, a missing file, and a table whose columns are
+        not the ones this loader groups on all leave the dictionary empty,
+        and each says why (#578).
+
+        :return: None.
+        """
         if self._loaded:
             return
-        if not self.dict_path.exists():
-            self._loaded = True
+        self._loaded = True
+
+        if self.dict_path is None:
+            logger.warning(
+                "kg-microbe dictionary unavailable: no kg-microbe checkout found. "
+                "Set %s to the checkout root (expected %s inside it). "
+                "P2.5/P4.4 cross-reference checks will not run.",
+                KGMICROBE_ROOT_ENV,
+                ARTIFACT_RELPATH,
+            )
             return
 
-        with gzip.open(self.dict_path, "rt", encoding="utf-8") as f:
-            header_line = f.readline().rstrip("\n")
-            header = header_line.split("\t")
-            col = {name: i for i, name in enumerate(header)}
+        if not self.dict_path.exists():
+            logger.warning(
+                "kg-microbe dictionary unavailable: %s does not exist. "
+                "Set %s to a checkout that publishes %s. "
+                "P2.5/P4.4 cross-reference checks will not run.",
+                self.dict_path,
+                KGMICROBE_ROOT_ENV,
+                ARTIFACT_RELPATH,
+            )
+            return
 
-            # Accept either legacy "chebi_id" or current "id" as the CHEBI column
-            if "chebi_id" in col:
-                id_col = "chebi_id"
-            elif "id" in col:
-                id_col = "id"
-            else:
-                self._loaded = True
-                return
-
-            if "synonyms" not in col or "canonical_name" not in col:
-                self._loaded = True
-                return
-
-            for raw in f:
-                parts = raw.rstrip("\n").split("\t")
-                if len(parts) < len(header):
-                    continue
-
-                chebi_id = parts[col[id_col]].strip()
-                if not chebi_id.startswith("CHEBI:"):
-                    continue
-
-                canonical = parts[col["canonical_name"]].strip()
-                formula = parts[col["formula"]].strip() if "formula" in col else ""
-                syn_field = parts[col["synonyms"]]
-
-                synonyms = {
-                    s.strip()
-                    for s in syn_field.split("|")
-                    if s.strip()
-                    and len(s.strip()) >= MIN_SYNONYM_LEN
-                    and s.strip() != chebi_id
-                    and not _CURIE_RE.match(s.strip())
-                }
-
-                entry = self._by_chebi.get(chebi_id)
-                if entry is None:
-                    entry = KgMicrobeEntry(
-                        chebi_id=chebi_id,
-                        canonical_name=canonical,
-                        formula=formula,
-                        synonyms=set(synonyms),
+        try:
+            with _open_text(self.dict_path) as handle:
+                header = self._read_header(handle)
+                if header is None:
+                    return
+                col = {name: i for i, name in enumerate(header)}
+                missing = [name for name in _REQUIRED_COLUMNS if name not in col]
+                if missing:
+                    logger.warning(
+                        "kg-microbe dictionary unavailable: %s is missing the column(s) %s "
+                        "this loader groups on. Expected kg-microbe's unified SSSOM mapping "
+                        "set. P2.5/P4.4 cross-reference checks will not run.",
+                        self.dict_path,
+                        ", ".join(missing),
                     )
-                    self._by_chebi[chebi_id] = entry
-                else:
-                    entry.synonyms.update(synonyms)
-                    if not entry.canonical_name and canonical:
-                        entry.canonical_name = canonical
-                    if not entry.formula and formula:
-                        entry.formula = formula
+                    return
+                self._ingest_rows(handle, col)
+        except (OSError, EOFError, UnicodeDecodeError) as exc:
+            # A truncated or corrupt artifact must not abort a review that is
+            # otherwise fine, and a half-built index must not be served as a
+            # complete one (#586).
+            self._by_chebi.clear()
+            self._surface_forms.clear()
+            logger.warning(
+                "kg-microbe dictionary unavailable: %s could not be read (%s: %s). "
+                "P2.5/P4.4 cross-reference checks will not run.",
+                self.dict_path,
+                type(exc).__name__,
+                exc,
+            )
+            return
 
-        # Post-process: quarantine polluted entries (row-merge-bug victims).
-        # Their synonyms are clearly not real, so they must not participate
-        # in the by_synonym index. Canonical name stays so the CHEBI remains
-        # lookupable via get_entry() for its own ID.
-        for chebi_id, entry in self._by_chebi.items():
-            if len(entry.synonyms) > POLLUTION_SYNONYM_THRESHOLD:
-                self._polluted_entries.add(chebi_id)
-                entry.synonyms = set()
+        self._quarantine_polluted()
+        self._build_synonym_index()
+        logger.info(
+            "kg-microbe dictionary loaded from %s: %d CHEBI entities, "
+            "%d indexed surface forms, %d quarantined as polluted",
+            self.dict_path,
+            len(self._by_chebi),
+            len(self._by_synonym),
+            len(self._polluted_entries),
+        )
 
-        # Build reverse index only from non-polluted entries
-        for chebi_id, entry in self._by_chebi.items():
-            if chebi_id in self._polluted_entries:
-                # still index the canonical name (safe) but not the dumped synonyms
-                if entry.canonical_name:
-                    self._by_synonym[entry.canonical_name.lower()].add(chebi_id)
+    def _read_header(self, handle: Iterable[str]) -> list[str] | None:
+        """
+        Return the column names, skipping the SSSOM ``#`` metadata block.
+
+        :param handle: Open text handle positioned at the start of the file.
+        :return: Column names, or None when the file holds no header row.
+        """
+        for raw in handle:
+            if raw.startswith("#"):
                 continue
-            lookup_terms = set(entry.synonyms)
+            line = raw.rstrip("\n")
+            if not line.strip():
+                continue
+            return line.split("\t")
+        logger.warning(
+            "kg-microbe dictionary unavailable: %s has no header row. "
+            "P2.5/P4.4 cross-reference checks will not run.",
+            self.dict_path,
+        )
+        return None
+
+    def _ingest_rows(self, handle: Iterable[str], col: dict[str, int]) -> None:
+        """
+        Group the triple rows into per-entity records.
+
+        :param handle: Open text handle positioned just after the header.
+        :param col: Column-name to index mapping.
+        :return: None.
+        """
+        width = max(col.values()) + 1
+        formula_idx = col.get("object_formula")
+        for raw in handle:
+            if raw.startswith("#"):
+                continue
+            parts = raw.rstrip("\n").split("\t")
+            if len(parts) < width:
+                continue
+
+            chebi_id = parts[col["object_id"]].strip()
+            if not chebi_id.startswith("CHEBI:"):
+                continue
+
+            canonical = parts[col["object_label"]].strip()
+            formula = parts[formula_idx].strip() if formula_idx is not None else ""
+
+            entry = self._by_chebi.get(chebi_id)
+            if entry is None:
+                entry = KgMicrobeEntry(chebi_id=chebi_id, canonical_name=canonical, formula=formula)
+                self._by_chebi[chebi_id] = entry
+            else:
+                if not entry.canonical_name and canonical:
+                    entry.canonical_name = canonical
+                if not entry.formula and formula:
+                    entry.formula = formula
+
+            if not parts[col["subject_id"]].strip().startswith(NAME_SUBJECT_PREFIX):
+                continue  # an xref row carries no surface form
+            if parts[col["predicate_id"]].strip() not in SURFACE_FORM_PREDICATES:
+                continue  # e.g. a narrowMatch name, which is not an equivalent (#585)
+            surface = parts[col["subject_label"]].strip()
+            if not self._is_usable_surface_form(surface, chebi_id):
+                continue
+            self._surface_forms[chebi_id].add(surface)
+
+    @staticmethod
+    def _is_usable_surface_form(surface: str, chebi_id: str) -> bool:
+        """
+        Report whether a surface form is worth indexing.
+
+        Drops the entity's own CURIE and bare identifiers of any kind: a
+        ``kgm.name`` row whose label is ``CAS:50-99-7`` is a registry code
+        wearing a name's clothing, and matching MIM records against it would
+        be noise.
+
+        :param surface: The candidate surface form.
+        :param chebi_id: The entity it was found under.
+        :return: True when the form should be indexed.
+        """
+        return bool(
+            surface
+            and len(surface) >= MIN_SYNONYM_LEN
+            and surface != chebi_id
+            and not _CURIE_RE.match(surface)
+        )
+
+    def _quarantine_polluted(self) -> None:
+        """
+        Drop the synonym sets of entries whose size marks them as contaminated.
+
+        The canonical name survives, so the entity stays reachable through
+        :meth:`get_entry` and by its own name.
+
+        :return: None.
+        """
+        for chebi_id, entry in self._by_chebi.items():
+            forms = self._surface_forms.get(chebi_id, set())
+            if len(forms) > POLLUTION_SYNONYM_THRESHOLD:
+                self._polluted_entries.add(chebi_id)
+                continue
+            # The canonical name is not itself a synonym; P4.4 proposes from
+            # this set and must not offer the name the entity already has.
+            entry.synonyms = {f for f in forms if f.lower() != entry.canonical_name.lower()}
+
+    def _build_synonym_index(self) -> None:
+        """
+        Build the reverse surface-form index, skipping quarantined entries.
+
+        :return: None.
+        """
+        for chebi_id, entry in self._by_chebi.items():
+            lookup_terms = set() if chebi_id in self._polluted_entries else set(entry.synonyms)
             if entry.canonical_name:
                 lookup_terms.add(entry.canonical_name)
             for term in lookup_terms:
                 self._by_synonym[term.lower()].add(chebi_id)
-
-        self._loaded = True
 
     def get_entry(self, chebi_id: str) -> KgMicrobeEntry | None:
         self.load()

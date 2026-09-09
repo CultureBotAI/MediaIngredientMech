@@ -9,6 +9,7 @@ checking for critical errors, warnings, and enrichment opportunities using:
 - Domain-specific rules (purity, mapped-state identifier consistency)
 """
 
+import logging
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -20,6 +21,8 @@ import requests
 
 from mediaingredientmech.utils.ontology_client import OntologyClient
 from mediaingredientmech.validation.kg_microbe_dict import KgMicrobeDict
+
+logger = logging.getLogger(__name__)
 
 # Validation priority levels
 PRIORITY_P1 = "P1"  # Critical errors
@@ -153,7 +156,15 @@ class IngredientReviewer:
             self._kg_microbe_dict = KgMicrobeDict()
         self._kg_microbe_dict.load()
         if self._kg_microbe_dict.size == 0:
-            # Dict file not present or empty; disable silently to avoid repeated attempts
+            # Disable to avoid repeated attempts, but say so: silence here is
+            # what let P2.5/P4.4 report nothing for four months while looking
+            # exactly like a clean review (#578). KgMicrobeDict.load() has
+            # already logged which specific path failed.
+            logger.warning(
+                "P2.5/P4.4 kg-microbe cross-reference checks are DISABLED for this run: "
+                "the kg-microbe dictionary is empty or unavailable. Findings from these "
+                "two rules will be absent, which is not the same as clean."
+            )
             self.enable_kg_microbe_checks = False
             return None
         return self._kg_microbe_dict
