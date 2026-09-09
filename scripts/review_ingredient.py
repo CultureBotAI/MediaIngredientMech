@@ -184,6 +184,15 @@ def main():
         action="store_true",
         help="Apply corrections interactively",
     )
+    parser.add_argument(
+        "--no-kg-microbe",
+        action="store_true",
+        help=(
+            "Skip the P2.5/P4.4 cross-reference against kg-microbe. Loading that "
+            "dictionary costs ~5s and ~350MB, which is most of the cost of "
+            "reviewing a single record (#589)."
+        ),
+    )
 
     args = parser.parse_args()
 
@@ -192,7 +201,7 @@ def main():
 
     # Initialize
     curator = IngredientCurator()
-    reviewer = IngredientReviewer()
+    reviewer = IngredientReviewer(enable_kg_microbe_checks=not args.no_kg_microbe)
 
     # Find ingredient
     if args.id:

@@ -311,11 +311,23 @@ def main():
         action="store_true",
         help="Use local OWL files instead of remote OAK",
     )
+    parser.add_argument(
+        "--no-kg-microbe",
+        action="store_true",
+        help=(
+            "Skip the P2.5/P4.4 cross-reference against kg-microbe. The "
+            "dictionary load is amortised over a batch, so this matters less "
+            "here than for a single record (#589)."
+        ),
+    )
 
     args = parser.parse_args()
 
     # Initialize
-    reviewer = IngredientReviewer(use_local_owl=args.use_local_owl)
+    reviewer = IngredientReviewer(
+        use_local_owl=args.use_local_owl,
+        enable_kg_microbe_checks=not args.no_kg_microbe,
+    )
 
     # Load ingredients
     console.print("[cyan]Loading mapped ingredients...[/cyan]")
