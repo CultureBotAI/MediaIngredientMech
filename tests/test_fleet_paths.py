@@ -12,6 +12,7 @@ that needs a sibling checkout.
 
 from __future__ import annotations
 
+import logging
 import re
 from pathlib import Path
 
@@ -116,3 +117,48 @@ def test_no_module_builds_a_path_from_environ_get_with_a_default(path):
         f"value resolves to the working directory. Use "
         f"mediaingredientmech.utils.fleet_paths.checkout_root instead (#580)"
     )
+
+
+class TestDeprecatedNames:
+    """One checkout, two variable names — the standard one must win (#593)."""
+
+    OLD = "MIM_TEST_CHECKOUT_DIR"
+
+    def test_the_standard_name_wins_when_both_are_set(self, monkeypatch, caplog):
+        monkeypatch.setenv(VAR, "/new/CultureMech")
+        monkeypatch.setenv(self.OLD, "/old/CultureMech")
+        with caplog.at_level(logging.WARNING):
+            assert checkout_root(VAR, FALLBACK, deprecated=(self.OLD,)) == Path(
+                "/new/CultureMech"
+            )
+        assert caplog.text == ""  # nothing was ignored, so nothing to say
+
+    def test_the_deprecated_name_still_works_and_warns(self, monkeypatch, caplog):
+        """It is documented in docs/WORKFLOWS.md, so it cannot just stop working."""
+        monkeypatch.delenv(VAR, raising=False)
+        monkeypatch.setenv(self.OLD, "/old/CultureMech")
+        with caplog.at_level(logging.WARNING):
+            assert checkout_root(VAR, FALLBACK, deprecated=(self.OLD,)) == Path(
+                "/old/CultureMech"
+            )
+        assert self.OLD in caplog.text
+        assert VAR in caplog.text
+
+    def test_an_empty_deprecated_name_is_skipped(self, monkeypatch):
+        monkeypatch.delenv(VAR, raising=False)
+        monkeypatch.setenv(self.OLD, "")
+        assert checkout_root(VAR, FALLBACK, deprecated=(self.OLD,)) == FALLBACK
+
+    def test_neither_set_falls_back_without_warning(self, monkeypatch, caplog):
+        monkeypatch.delenv(VAR, raising=False)
+        monkeypatch.delenv(self.OLD, raising=False)
+        with caplog.at_level(logging.WARNING):
+            assert checkout_root(VAR, FALLBACK, deprecated=(self.OLD,)) == FALLBACK
+        assert caplog.text == ""
+
+    def test_a_deprecated_value_is_expanded_too(self, monkeypatch):
+        monkeypatch.delenv(VAR, raising=False)
+        monkeypatch.setenv(self.OLD, "~/CultureMech")
+        assert checkout_root(VAR, FALLBACK, deprecated=(self.OLD,)) == (
+            Path.home() / "CultureMech"
+        )

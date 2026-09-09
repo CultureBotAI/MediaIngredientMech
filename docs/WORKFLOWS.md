@@ -261,7 +261,8 @@ KG-Microbe/
 ```
 
 The read-only comparison script uses the sibling checkout by default. Set
-`CULTUREMECH_DIR` when comparing against a different checkout.
+`CULTUREMECH_ROOT` when comparing against a different checkout.
+(`CULTUREMECH_DIR` is the former name; it still works and warns.)
 
 ## Development Workflows
 

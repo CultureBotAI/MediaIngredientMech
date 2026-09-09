@@ -14,13 +14,15 @@ import yaml
 from mediaingredientmech.utils.fleet_paths import checkout_root
 
 # Default paths assume the standard sibling-checkout layout. Override the
-# CultureMech location with the CULTUREMECH_DIR env var when running
-# elsewhere.
+# CultureMech location with CULTUREMECH_ROOT, the fleet-wide variable.
+# CULTUREMECH_DIR is the older name this script used alone; it still works and
+# warns (#593). Read through checkout_root so an exported-but-empty value does
+# not silently resolve to the working directory (#580).
 _REPO_ROOT = Path(__file__).resolve().parents[1]
-# Read through checkout_root so an exported-but-empty value does not silently
-# resolve to the working directory (#580).
 CULTUREMECH_DIR = checkout_root(
-    "CULTUREMECH_DIR", (_REPO_ROOT.parent / "CultureMech").resolve()
+    "CULTUREMECH_ROOT",
+    (_REPO_ROOT.parent / "CultureMech").resolve(),
+    deprecated=("CULTUREMECH_DIR",),
 )
 CULTUREMECH_MAPPED = CULTUREMECH_DIR / "output" / "mapped_ingredients.yaml"
 CULTUREMECH_UNMAPPED = CULTUREMECH_DIR / "output" / "unmapped_ingredients.yaml"
