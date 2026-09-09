@@ -43,9 +43,12 @@ Integration") for the P2.5 / P4.4 rules that consume this data.
 from __future__ import annotations
 
 import gzip
+import hashlib
 import logging
 import os
 import re
+import sqlite3
+import tempfile
 from collections import defaultdict
 from collections.abc import Iterable
 from dataclasses import dataclass, field
@@ -86,6 +89,35 @@ MIN_SYNONYM_LEN = 2
 POLLUTION_SYNONYM_THRESHOLD = 500
 
 _REQUIRED_COLUMNS = ("subject_id", "subject_label", "predicate_id", "object_id", "object_label")
+
+#: Overrides where the parsed index is cached. Tests point it at a tmpdir.
+CACHE_DIR_ENV = "MEDIAINGREDIENTMECH_CACHE_DIR"
+
+#: Bumping this invalidates every cache built by an older parser, which is how
+#: a change to the grouping rules reaches an operator who already has one.
+CACHE_SCHEMA_VERSION = 1
+
+#: Read in 1MB blocks: the artifact is ~13MB and hashing it is ~50ms, against
+#: the ~5.4s parse the hash is there to avoid.
+_HASH_BLOCK = 1 << 20
+
+
+def cache_dir() -> Path:
+    """
+    Return the directory holding parsed dictionary indexes.
+
+    ``MEDIAINGREDIENTMECH_CACHE_DIR`` wins, then ``XDG_CACHE_HOME``, then
+    ``~/.cache``. A dot-directory under home is a tool cache, not a checkout,
+    which is why the machine-path guard allows it.
+
+    :return: The cache directory. Not created here.
+    """
+    override = os.environ.get(CACHE_DIR_ENV)
+    if override and override.strip():
+        return Path(override.strip()).expanduser()
+    xdg = os.environ.get("XDG_CACHE_HOME")
+    base = Path(xdg.strip()).expanduser() if xdg and xdg.strip() else Path.home() / ".cache"
+    return base / "mediaingredientmech"
 
 
 def kgmicrobe_root() -> Path | None:
@@ -140,12 +172,14 @@ class KgMicrobeEntry:
 class KgMicrobeDict:
     """In-memory per-entity index over kg-microbe's unified SSSOM mapping set."""
 
-    def __init__(self, dict_path: Path | None = None):
+    def __init__(self, dict_path: Path | None = None, *, use_cache: bool = True):
         self.dict_path = Path(dict_path) if dict_path else resolve_default_dict_path()
+        self.use_cache = use_cache
         self._by_chebi: dict[str, KgMicrobeEntry] = {}
         self._by_synonym: dict[str, set[str]] = defaultdict(set)
         self._polluted_entries: set[str] = set()
         self._surface_forms: dict[str, set[str]] = defaultdict(set)
+        self._db: sqlite3.Connection | None = None
         self._loaded = False
 
     def load(self) -> None:
@@ -182,6 +216,9 @@ class KgMicrobeDict:
                 KGMICROBE_ROOT_ENV,
                 ARTIFACT_RELPATH,
             )
+            return
+
+        if self.use_cache and self._open_cache():
             return
 
         try:
@@ -222,6 +259,8 @@ class KgMicrobeDict:
         # index; holding a second copy of every surface form for the life of
         # the process is pure overhead (#589).
         self._surface_forms.clear()
+        if self.use_cache:
+            self._write_cache()
         logger.info(
             "kg-microbe dictionary loaded from %s: %d CHEBI entities, "
             "%d indexed surface forms, %d quarantined as polluted",
@@ -347,8 +386,153 @@ class KgMicrobeDict:
             for term in lookup_terms:
                 self._by_synonym[term.lower()].add(chebi_id)
 
+    # -- on-disk index ----------------------------------------------------
+    #
+    # Parsing 610,248 rows into 119,462 entities costs ~5.4s and ~350MB. A
+    # batch amortises that; reviewing a single record does not, and reviewing
+    # one record is what `review_ingredient.py` does (#589). The parse is a
+    # pure function of the artifact's bytes, so it is done once and kept in a
+    # SQLite index keyed by the artifact's content hash. Later runs answer the
+    # handful of lookups a record needs straight from disk.
+
+    def _fingerprint(self) -> str | None:
+        """
+        Return the artifact's content hash, or None when it cannot be read.
+
+        Keyed on content rather than mtime so a republished-but-identical
+        artifact reuses its index, and a changed one can never hit a stale
+        entry.
+
+        :return: Hex sha256, or None.
+        """
+        assert self.dict_path is not None
+        digest = hashlib.sha256()
+        try:
+            with self.dict_path.open("rb") as handle:
+                for block in iter(lambda: handle.read(_HASH_BLOCK), b""):
+                    digest.update(block)
+        except OSError as exc:
+            logger.warning("could not hash %s (%s); not using a cache", self.dict_path, exc)
+            return None
+        return digest.hexdigest()
+
+    def _cache_path(self) -> Path | None:
+        """
+        Return this artifact's index path, or None when it cannot be keyed.
+
+        :return: Path to the SQLite index, or None.
+        """
+        fingerprint = self._fingerprint()
+        if fingerprint is None:
+            return None
+        return cache_dir() / f"kgm-dict-v{CACHE_SCHEMA_VERSION}-{fingerprint[:32]}.sqlite"
+
+    def _open_cache(self) -> bool:
+        """
+        Attach an existing index for this artifact, if there is a usable one.
+
+        A cache that is missing, corrupt, or written by a different schema is
+        simply not used -- the parse still works, so a bad cache must never be
+        an error. A corrupt one is deleted so the next run rebuilds it rather
+        than failing the same way forever.
+
+        :return: True when queries will be served from disk.
+        """
+        path = self._cache_path()
+        if path is None or not path.exists():
+            self._cache_target = path
+            return False
+        try:
+            db = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+            count = db.execute("SELECT count(*) FROM entity").fetchone()[0]
+        except (sqlite3.Error, OSError) as exc:
+            logger.warning("discarding unusable dictionary cache %s (%s)", path, exc)
+            path.unlink(missing_ok=True)
+            self._cache_target = path
+            return False
+        self._db = db
+        self._cache_target = path
+        logger.info("kg-microbe dictionary served from cache %s (%d entities)", path, count)
+        return True
+
+    def _write_cache(self) -> None:
+        """
+        Persist the parsed view so the next run does not repeat the parse.
+
+        Written to a temporary file and renamed, so a concurrent reader never
+        sees a half-built index and two racing builders cannot corrupt one.
+        Any failure is logged and ignored: a cache is an optimisation, and
+        losing it must not cost a review.
+
+        :return: None.
+        """
+        path = getattr(self, "_cache_target", None) or self._cache_path()
+        if path is None or not self._by_chebi:
+            return
+        try:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            handle, tmp_name = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
+            os.close(handle)
+            tmp = Path(tmp_name)
+            db = sqlite3.connect(tmp)
+            with db:
+                # No separate reverse-index table: it would repeat every
+                # surface form a third time. A lowercased column on each of the
+                # two tables that already hold the strings answers the same
+                # query, and `lookup_synonym` unions them. Lowercasing happens
+                # in Python so it matches the in-memory path exactly -- SQLite's
+                # NOCASE collation folds ASCII only, and these names are not.
+                db.execute(
+                    "CREATE TABLE entity (chebi_id TEXT PRIMARY KEY, canonical_name TEXT, "
+                    "canonical_lower TEXT, formula TEXT, polluted INTEGER)"
+                )
+                db.execute("CREATE TABLE synonym (chebi_id TEXT, surface TEXT, surface_lower TEXT)")
+                db.executemany(
+                    "INSERT INTO entity VALUES (?, ?, ?, ?, ?)",
+                    (
+                        (
+                            e.chebi_id,
+                            e.canonical_name,
+                            e.canonical_name.lower(),
+                            e.formula,
+                            int(e.chebi_id in self._polluted_entries),
+                        )
+                        for e in self._by_chebi.values()
+                    ),
+                )
+                db.executemany(
+                    "INSERT INTO synonym VALUES (?, ?, ?)",
+                    (
+                        (e.chebi_id, syn, syn.lower())
+                        for e in self._by_chebi.values()
+                        for syn in e.synonyms
+                    ),
+                )
+                db.execute("CREATE INDEX synonym_lower ON synonym (surface_lower)")
+                db.execute("CREATE INDEX synonym_chebi ON synonym (chebi_id)")
+                db.execute("CREATE INDEX entity_lower ON entity (canonical_lower)")
+            db.execute("VACUUM")
+            db.close()
+            tmp.replace(path)
+            logger.info("wrote kg-microbe dictionary cache %s", path)
+        except (sqlite3.Error, OSError) as exc:
+            logger.warning("could not write dictionary cache (%s); continuing", exc)
+
     def get_entry(self, chebi_id: str) -> KgMicrobeEntry | None:
         self.load()
+        if self._db is not None:
+            row = self._db.execute(
+                "SELECT canonical_name, formula FROM entity WHERE chebi_id = ?", (chebi_id,)
+            ).fetchone()
+            if row is None:
+                return None
+            synonyms = {
+                s
+                for (s,) in self._db.execute(
+                    "SELECT surface FROM synonym WHERE chebi_id = ?", (chebi_id,)
+                )
+            }
+            return KgMicrobeEntry(chebi_id, row[0], row[1], synonyms)
         return self._by_chebi.get(chebi_id)
 
     def lookup_synonym(self, surface_form: str) -> set[str]:
@@ -356,6 +540,16 @@ class KgMicrobeDict:
         self.load()
         if not surface_form:
             return set()
+        if self._db is not None:
+            form = surface_form.lower()
+            return {
+                chebi_id
+                for (chebi_id,) in self._db.execute(
+                    "SELECT chebi_id FROM entity WHERE canonical_lower = ? "
+                    "UNION SELECT chebi_id FROM synonym WHERE surface_lower = ?",
+                    (form, form),
+                )
+            }
         return set(self._by_synonym.get(surface_form.lower(), set()))
 
     def is_ambiguous(self, surface_form: str) -> bool:
@@ -369,4 +563,6 @@ class KgMicrobeDict:
     @property
     def size(self) -> int:
         self.load()
+        if self._db is not None:
+            return int(self._db.execute("SELECT count(*) FROM entity").fetchone()[0])
         return len(self._by_chebi)
