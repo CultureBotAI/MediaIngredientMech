@@ -8,21 +8,35 @@
 
 ### Data Source
 
-**File:** `/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/mappings/unified_chemical_mappings.tsv.gz`
+**File:** `$KGMICROBE_ROOT/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz`
 
-**Schema (tab-separated, gzipped):**
+Set `KGMICROBE_ROOT` to the kg-microbe checkout; it is not a sibling of the
+Mech checkouts. `KgMicrobeDict` resolves it, falls back to a sibling, and
+**warns** when it can find neither — an unavailable dictionary disables P2.5
+and P4.4, and absent findings are not clean ones (#578).
+
+Until 2026-04-30 this was a wide per-entity table,
+`mappings/unified_chemical_mappings.tsv.gz`, with one row per CHEBI and a
+pipe-separated `synonyms` column. kg-microbe deleted it in `4617f84b6`. Any
+instruction written against that shape is stale.
+
+**Schema (SSSOM, tab-separated, gzipped, `#` metadata block then a header row):**
 | Column | Description |
 |---|---|
-| `id` (legacy: `chebi_id`) | CURIE, e.g. `CHEBI:17234` |
-| `category` | Biolink category (new column, may be absent in older dumps) |
-| `canonical_name` | Primary label for the term |
-| `formula` | Molecular formula if available |
-| `synonyms` | Pipe-separated (`|`) list of surface forms |
-| `xrefs` | Cross-references to other databases |
-| `sources` | Which upstream dictionaries contributed |
+| `subject_id` | A `kgm.name:*` subject carries a surface form; any other prefix is an xref |
+| `subject_label` | That surface form |
+| `predicate_id` | `skos:exactMatch` on a name row = the entity's own name; `skos:closeMatch` = a synonym; `skos:narrowMatch` is **not** an equivalent |
+| `object_id` | The entity's primary key, e.g. `CHEBI:17234` |
+| `object_label` | Its canonical name, repeated on every row for the entity |
+| `object_formula` | Its molecular formula, likewise repeated |
+| `object_category` | Biolink category |
 
-**Row count:** ~119,421 canonical CHEBI entries (as of 2026-04-18);
-the raw TSV has more rows but many are duplicates or non-CHEBI IDs.
+It is a long triple table, so the per-entity view is rebuilt by **grouping on
+`object_id`** — the read pattern kg-microbe's own
+`$KGMICROBE_ROOT/mappings/README.md` documents.
+
+**Scale (2026-09-08):** 610,248 data rows → 119,462 CHEBI entities and
+369,988 indexed surface forms. Loading costs ~5.4s and ~350MB (#589).
 
 **Companion curated data:** `kg-microbe/kg_microbe/transform_utils/metatraits/mappings/*.tsv` — 277 hand-curated rows across 6 TSVs, should be consulted for high-confidence overrides.
 
@@ -52,12 +66,14 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+# Prefer the maintained loader over hand-rolling this:
+#   from mediaingredientmech.validation.kg_microbe_dict import KgMicrobeDict
+#   d = KgMicrobeDict()          # resolves $KGMICROBE_ROOT, warns if absent
+#   d.get_entry("CHEBI:17234")   # canonical_name, synonyms, formula
+#   d.lookup_synonym("Dextrose") # -> {"CHEBI:17234", "CHEBI:4167"}
 KG_MICROBE_DICT = Path(
-    "/Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/"
-    "kg-microbe/mappings/unified_chemical_mappings.tsv.gz"
-)
-
-csv.field_size_limit(sys.maxsize)
+    os.environ.get("KGMICROBE_ROOT", "../kg-microbe")
+) / "mappings" / "kgmicrobe_unified_entity_mappings.sssom.tsv.gz"
 
 
 def load_kg_microbe_dict():
@@ -166,7 +182,7 @@ dict lookup (not just enrich existing), the reviewer MUST:
 3. **Check for ambiguity**: if the same surface form maps to ≥2 CHEBI IDs
    in kg-microbe, escalate to manual review even if OAK verification passes.
 4. **Log provenance**: the ingredient's `curation_history` entry must cite
-   `source: kg-microbe/unified_chemical_mappings` and include the exact
+   `source: kg-microbe/kgmicrobe_unified_entity_mappings` and include the exact
    surface form that triggered the match.
 5. **Sanity-check with CultureBotHT CAS-RN** if available — a matching CAS
    number is strong positive evidence that the proposed CHEBI is correct.
