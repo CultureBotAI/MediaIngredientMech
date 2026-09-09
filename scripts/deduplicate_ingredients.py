@@ -17,7 +17,6 @@ from __future__ import annotations
 
 import argparse
 import logging
-import os
 import sys
 from pathlib import Path
 from typing import Any
@@ -32,14 +31,15 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from mediaingredientmech.curation.chebi_deduplicator import CHEBIDeduplicator
 from mediaingredientmech.curation.ingredient_curator import IngredientCurator
 from mediaingredientmech.curation.solution_matcher import SolutionMatcher
+from mediaingredientmech.utils.fleet_paths import checkout_root
 from mediaingredientmech.utils.kg_microbe_searcher import KGMicrobeSearcher
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 # The fleet's variable for the CultureMech checkout, with the sibling
-# directory as the fallback (MediaIngredientMech#573).
-CULTUREMECH_ROOT = Path(
-    os.environ.get("CULTUREMECH_ROOT", REPO_ROOT.parent / "CultureMech")
-)
+# directory as the fallback (MediaIngredientMech#573). Read through
+# checkout_root so an exported-but-empty value does not silently become the
+# working directory (#580).
+CULTUREMECH_ROOT = checkout_root("CULTUREMECH_ROOT", REPO_ROOT.parent / "CultureMech")
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
