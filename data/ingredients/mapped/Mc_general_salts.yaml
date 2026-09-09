@@ -33,12 +33,59 @@ curation_history:
   llm_assisted: false
   changes: Promoted UNMAPPED_0269 -> kgmicrobe.ingredient:mc_general_salts "Mc_general_salts"
     (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+- timestamp: '2026-09-08T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Transcribed the CultureBotHT Mixes-tab recipe for Mc_general_salts and
+    added complete component partonomy for its 4 general-salt stock constituents plus
+    a source-backed mineral-source role.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   3 CultureBot media; samples: McCas, McCas_MOPS, McCas_formate_SO4. No CAS-RN or
   CHEBI mapping available; reviewed on 2026-05-11 as a named general-salts stock/pre-mix
-  pending component-level recipe curation.'
+  pending component-level recipe curation. Component-level recipe transcribed from
+  the CultureBotHT media definitions Mixes tab on 2026-09-08.'
 ingredient_type: STOCK_SOLUTION
 solution_type: MINERAL_STOCK
+components:
+- component_name: KCl
+  component_id: CHEBI:32588
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.67'
+  concentration_unit: G_PER_L
+- component_name: magnesium chloride hexahydrate
+  component_id: CHEBI:86345
+  reference_scope: MIM_CATALOG
+  concentration_value: '5.5'
+  concentration_unit: G_PER_L
+- component_name: magnesium sulfate heptahydrate
+  component_id: CHEBI:31795
+  reference_scope: MIM_CATALOG
+  concentration_value: '6.9'
+  concentration_unit: G_PER_L
+- component_name: calcium chloride
+  component_id: CHEBI:3312
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.21'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!1090:1093 Mc_general_salts
+    notes: CultureBotHT's media definitions Mixes tab defines Mc_general_salts as
+      a 4-component general salts stock for Mc media containing KCl, magnesium chloride
+      hexahydrate, magnesium sulfate heptahydrate, and calcium chloride.
+  - evidence_type: CURATED_DATASET
+    source: https://docs.google.com/spreadsheets/d/11koiUdEUco1rXg9zL6KrfOBikW38O7Fhef-uBzXUctM
+    source_record: Compound=Calcium chloride
+    notes: CultureBotHT's compounds-to-CAS crosswalk maps Calcium chloride to CAS
+      10043-52-4 and carries Calcium chloride dihydrate as a distinct row on CAS 10035-04-8,
+      supporting anhydrous CaCl2/CHEBI:3312 for the Mixes-tab calcium chloride component.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:mc_general_salts
   ontology_label: Mc_general_salts
@@ -53,3 +100,13 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: Mc_general_salts
+    curator_note: Mc_general_salts is a stock of inorganic potassium, magnesium, calcium,
+      chloride, and sulfate salts for Mc media.

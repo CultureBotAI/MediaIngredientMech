@@ -34,12 +34,78 @@ curation_history:
   changes: Promoted UNMAPPED_0309 -> kgmicrobe.ingredient:mme_trace_minerals "MME
     Trace Minerals" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM
     row added.
+- timestamp: '2026-09-08T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Transcribed the CultureBotHT Mixes-tab recipe for MME Trace Minerals and
+    added complete component partonomy for its 9 trace-mineral stock constituents
+    plus a source-backed trace-element role.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   3 CultureBot media; samples: MME_noNitrogen_noCarbon, MME_noCarbon, MTM_noNitrogen_noCarbon.
   No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a named trace-mineral
-  stock/pre-mix pending component-level recipe curation.'
+  stock/pre-mix pending component-level recipe curation. Component-level recipe transcribed
+  from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
 ingredient_type: STOCK_SOLUTION
 solution_type: TRACE_METAL_MIX
+components:
+- component_name: EDTA tetrasodium tetrahydrate salt
+  component_id: cas:13235-36-4
+  reference_scope: MIM_CATALOG
+  concentration_value: '500.0'
+  concentration_unit: MG_PER_L
+- component_name: Ferric chloride
+  component_id: CHEBI:30808
+  reference_scope: MIM_CATALOG
+  concentration_value: '2000.0'
+  concentration_unit: MG_PER_L
+- component_name: Boric Acid
+  component_id: CHEBI:33118
+  reference_scope: MIM_CATALOG
+  concentration_value: '50.0'
+  concentration_unit: MG_PER_L
+- component_name: Zinc chloride
+  component_id: CHEBI:49976
+  reference_scope: MIM_CATALOG
+  concentration_value: '50.0'
+  concentration_unit: MG_PER_L
+- component_name: copper (II) chloride dihydrate
+  component_id: CHEBI:86318
+  reference_scope: MIM_CATALOG
+  concentration_value: '30.0'
+  concentration_unit: MG_PER_L
+- component_name: Manganese (II) chloride tetrahydrate
+  component_id: CHEBI:86368
+  reference_scope: MIM_CATALOG
+  concentration_value: '50.0'
+  concentration_unit: MG_PER_L
+- component_name: Diammonium molybdate
+  component_id: CHEBI:91249
+  reference_scope: MIM_CATALOG
+  concentration_value: '50.0'
+  concentration_unit: MG_PER_L
+- component_name: Cobalt chloride hexahydrate
+  component_id: CHEBI:53503
+  reference_scope: MIM_CATALOG
+  concentration_value: '50.0'
+  concentration_unit: MG_PER_L
+- component_name: Nickel (II) chloride hexahydrate
+  component_id: CHEBI:53542
+  reference_scope: MIM_CATALOG
+  concentration_value: '50.0'
+  concentration_unit: MG_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!981:989 MME Trace Minerals
+    notes: CultureBotHT's media definitions Mixes tab defines MME Trace Minerals as
+      a 9-component EDTA-chelated trace stock containing ferric, borate, zinc, copper,
+      manganese, molybdate, cobalt, and nickel salts.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:mme_trace_minerals
   ontology_label: MME Trace Minerals
@@ -54,3 +120,14 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: TRACE_ELEMENT
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: MME Trace Minerals
+    curator_note: MME Trace Minerals is an EDTA-chelated trace stock supplying ferric,
+      borate, zinc, copper, manganese, molybdate, cobalt, and nickel salts for MME
+      and MTM omission media.
