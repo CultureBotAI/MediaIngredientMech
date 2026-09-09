@@ -90,7 +90,8 @@ description: MIM ontology_id disagrees with kg-microbe's unified chemical dictio
              for the same preferred_term or synonym
 check: |
   For each MIM record, look up preferred_term (and each synonym_text) in
-  kg-microbe's unified_chemical_mappings.tsv.gz synonym→chebi_id index.
+  kg-microbe's unified SSSOM mapping set, via the surface-form index
+  KgMicrobeDict rebuilds from it.
   Flag if kg-microbe maps the same surface form to a different CHEBI ID.
 impact: Cross-repo semantic drift. MIM and kg-microbe knowledge graphs will
         disagree on the same chemical, breaking joins on CHEBI ID at KG ingest.
@@ -104,11 +105,13 @@ fix: |
     4. Pick the winner; update MIM or log an issue upstream against kg-microbe
 severity: P2 (possible wrong mapping, needs expert review)
 data_source: |
-  /Users/marcin/Documents/VIMSS/ontology/KG-Hub/KG-Microbe/kg-microbe/
-    mappings/unified_chemical_mappings.tsv.gz
-  Columns: chebi_id, canonical_name, formula, synonyms (pipe-separated),
-           xrefs, sources
-  Rows: ~164,597
+  $KGMICROBE_ROOT/mappings/kgmicrobe_unified_entity_mappings.sssom.tsv.gz
+  A long SSSOM triple table; the per-entity view is rebuilt by grouping on
+  object_id (object_label = canonical name, object_formula = formula,
+  kgm.name:* subject_labels = surface forms, split by predicate).
+  Use mediaingredientmech.validation.kg_microbe_dict.KgMicrobeDict rather
+  than parsing it by hand.
+  Rows: 610,248 -> 119,462 CHEBI entities, 369,988 surface forms (2026-09-08)
 known_false_positive_patterns:
   - Merged-row pollution: when a synonym field contains embedded quotes,
     csv.DictReader may merge the next row, attaching the following row's
@@ -192,9 +195,10 @@ id: P4.4
 description: kg-microbe's unified chemical dict has synonyms for this record's
              CHEBI ID that MIM does not yet carry
 check: |
-  For MIM record with ontology_id=CHEBI:X, fetch the row from
-  unified_chemical_mappings.tsv.gz keyed by chebi_id=X. The "synonyms"
-  column is pipe-separated. Diff against existing MIM synonym_text values
+  For MIM record with ontology_id=CHEBI:X, call
+  KgMicrobeDict().get_entry("CHEBI:X").synonyms, which collects every
+  kgm.name:* surface form the mapping set carries for that entity, minus
+  its canonical name. Diff against existing MIM synonym_text values
   (case-insensitive, whitespace-normalized).
 impact: Search/matching recall in CultureMech recipe mapping — every missing
         synonym is a potential ingredient that won't resolve to this CHEBI.
@@ -203,9 +207,10 @@ fix: |
   verified before adding:
     1. Sanity-check: does the synonym plausibly name this chemical?
        (A synonym like "MnCl2" on kaempferol glucoside fails this check.)
-    2. Reverse-lookup: in the kg-microbe TSV, does this synonym also map
-       to a DIFFERENT CHEBI? If yes, it's ambiguous — skip or investigate.
-    3. If accepted, add with source="kg-microbe/unified_chemical_mappings"
+    2. Reverse-lookup with KgMicrobeDict.lookup_synonym(): does this synonym
+       also map to a DIFFERENT CHEBI? If yes, it's ambiguous — skip or
+       investigate. (The loader applies this filter itself.)
+    3. If accepted, add with source="kg-microbe/kgmicrobe_unified_entity_mappings"
        and synonym_type=EXACT or RELATED per kg-microbe's context.
 severity: P4 (enrichment, not correctness)
 safety: |
