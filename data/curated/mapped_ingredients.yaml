@@ -1,4 +1,4 @@
-generation_date: '2026-09-08T07:28:19.031092+00:00'
+generation_date: '2026-09-08T20:21:47.294291+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -11887,12 +11887,85 @@ ingredients:
     changes: Promoted UNMAPPED_0314 -> kgmicrobe.ingredient:modified_wolfes_minerals
       "Modified Wolfe's Minerals" (FALLBACK_REGISTRY); mapping_status UNMAPPED ->
       MAPPED, SSSOM row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for Modified Wolfe's Minerals
+      and added complete component partonomy for its 10 mineral-stock constituents
+      plus a source-backed mineral-source role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 3 CultureBot media; samples: MG minimal media, MG minimal media_noIron, MG
     minimal media_noCarbon. No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11
-    as a modified Wolfe mineral stock/pre-mix pending component-level recipe curation.'
+    as a modified Wolfe mineral stock/pre-mix pending component-level recipe curation.
+    Component-level recipe transcribed from the CultureBotHT media definitions Mixes
+    tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: MINERAL_STOCK
+  components:
+  - component_name: Nitrilotriacetic acid
+    component_id: CHEBI:44557
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.5'
+    concentration_unit: G_PER_L
+  - component_name: Magnesium sulfate
+    component_id: CHEBI:32599
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.465'
+    concentration_unit: G_PER_L
+  - component_name: Manganese (II) sulfate monohydrate
+    component_id: CHEBI:86364
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.5'
+    concentration_unit: G_PER_L
+  - component_name: Sodium Chloride
+    component_id: CHEBI:26710
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: G_PER_L
+  - component_name: Cobalt chloride hexahydrate
+    component_id: CHEBI:53503
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: Calcium Chloride Dihydrate
+    component_id: CHEBI:86158
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: Zinc sulfate heptahydrate
+    component_id: CHEBI:32312
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: Aluminum potassium sulfate dodecahydrate
+    component_id: CHEBI:86465
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.02'
+    concentration_unit: G_PER_L
+  - component_name: Boric Acid
+    component_id: CHEBI:33118
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: Sodium Molybdate Dihydrate
+    component_id: CHEBI:75213
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!206:215 Modified Wolfe's Minerals
+      notes: CultureBotHT's media definitions Mixes tab defines Modified Wolfe's Minerals
+        as a 10-component stock containing nitrilotriacetic acid, magnesium, manganese,
+        sodium, cobalt, calcium, zinc, aluminum potassium sulfate, boric acid, and
+        molybdate salts.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:modified_wolfes_minerals
     ontology_label: Modified Wolfe's Minerals
@@ -11907,6 +11980,16 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: MINERAL_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: Modified Wolfe's Minerals
+      curator_note: Modified Wolfe's Minerals is a stock of inorganic mineral and
+        trace salts chelated by nitrilotriacetic acid for MG minimal media variants.
 - identifier: kgmicrobe.ingredient:mc_trace_minerals
   preferred_term: Mc_trace_minerals
   synonyms:
@@ -11942,12 +12025,101 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0311 -> kgmicrobe.ingredient:mc_trace_minerals "Mc_trace_minerals"
       (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for Mc_trace_minerals and
+      added complete component partonomy for its 12 1000X trace-mineral stock constituents
+      plus a source-backed trace-element role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 3 CultureBot media; samples: McCas, McCas_MOPS, McCas_formate_SO4. No CAS-RN
     or CHEBI mapping available; reviewed on 2026-05-11 as a named trace-mineral stock/pre-mix
-    pending component-level recipe curation.'
+    pending component-level recipe curation. Component-level recipe transcribed from
+    the CultureBotHT media definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: TRACE_METAL_MIX
+  components:
+  - component_name: sodium citrate dihydrate
+    component_id: CHEBI:32142
+    reference_scope: MIM_CATALOG
+    concentration_value: '21.0'
+    concentration_unit: G_PER_L
+  - component_name: manganese(II) sulfate dihydrate
+    component_id: CHEBI:86356
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.0'
+    concentration_unit: G_PER_L
+  - component_name: Cobalt chloride hexahydrate
+    component_id: CHEBI:53503
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: G_PER_L
+    source: CultureBotHT Mixes row 1101 labels this constituent as cobalt chloride;
+      CultureBotHT compounds-to-CAS resolves Cobalt Chloride to cobalt chloride hexahydrate.
+  - component_name: zinc sulfate heptahydrate
+    component_id: CHEBI:32312
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: G_PER_L
+  - component_name: copper sulfate pentahydrate
+    component_id: CHEBI:31440
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: AlK(SO4)2 12H2O
+    component_id: CHEBI:86465
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: H3BO3
+    component_id: CHEBI:33118
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: sodium molybdate dihydrate
+    component_id: CHEBI:75213
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.0'
+    concentration_unit: G_PER_L
+  - component_name: nickel (II) chloride hexahydrate
+    component_id: CHEBI:53542
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.25'
+    concentration_unit: G_PER_L
+  - component_name: sodium selenate
+    component_id: CHEBI:77775
+    reference_scope: MIM_CATALOG
+    concentration_value: '2.0'
+    concentration_unit: G_PER_L
+  - component_name: vanadium chloride
+    component_id: cas:7718-98-1
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.1'
+    concentration_unit: G_PER_L
+  - component_name: sodium tungstate dihydrate
+    component_id: CHEBI:63939
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.033'
+    concentration_unit: G_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!1099:1110 Mc_trace_minerals
+      notes: CultureBotHT's media definitions Mixes tab defines Mc_trace_minerals
+        as a 1000X 12-component trace-mineral stock for Mc media containing citrate-chelated
+        sulfate, chloride, borate, molybdate, selenate, vanadium, and tungstate constituents.
+    - evidence_type: CURATED_DATASET
+      source: https://docs.google.com/spreadsheets/d/11koiUdEUco1rXg9zL6KrfOBikW38O7Fhef-uBzXUctM
+      source_record: compounds-to-CAS rows 55,84,123,128,278,296,399,411,420,455,472,485
+      notes: CultureBotHT's compounds-to-CAS crosswalk grounds the trace minerals
+        to CAS-backed salts; its Cobalt chloride hexahydrate row lists Cobalt Chloride
+        as a synonym, resolving the Mixes-tab cobalt chloride surface to the hexahydrate.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:mc_trace_minerals
     ontology_label: Mc_trace_minerals
@@ -11962,6 +12134,17 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: Mc_trace_minerals
+      curator_note: Mc_trace_minerals is a 1000X stock of citrate-chelated sulfate,
+        chloride, borate, molybdate, selenate, vanadium, and tungstate trace salts
+        for Mc media.
 - identifier: kgmicrobe.ingredient:mc_general_salts
   preferred_term: Mc_general_salts
   synonyms:
@@ -11997,12 +12180,60 @@ ingredients:
     llm_assisted: false
     changes: Promoted UNMAPPED_0269 -> kgmicrobe.ingredient:mc_general_salts "Mc_general_salts"
       (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for Mc_general_salts and
+      added complete component partonomy for its 4 general-salt stock constituents
+      plus a source-backed mineral-source role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 3 CultureBot media; samples: McCas, McCas_MOPS, McCas_formate_SO4. No CAS-RN
     or CHEBI mapping available; reviewed on 2026-05-11 as a named general-salts stock/pre-mix
-    pending component-level recipe curation.'
+    pending component-level recipe curation. Component-level recipe transcribed from
+    the CultureBotHT media definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: MINERAL_STOCK
+  components:
+  - component_name: KCl
+    component_id: CHEBI:32588
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.67'
+    concentration_unit: G_PER_L
+  - component_name: magnesium chloride hexahydrate
+    component_id: CHEBI:86345
+    reference_scope: MIM_CATALOG
+    concentration_value: '5.5'
+    concentration_unit: G_PER_L
+  - component_name: magnesium sulfate heptahydrate
+    component_id: CHEBI:31795
+    reference_scope: MIM_CATALOG
+    concentration_value: '6.9'
+    concentration_unit: G_PER_L
+  - component_name: calcium chloride
+    component_id: CHEBI:3312
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.21'
+    concentration_unit: G_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!1090:1093 Mc_general_salts
+      notes: CultureBotHT's media definitions Mixes tab defines Mc_general_salts as
+        a 4-component general salts stock for Mc media containing KCl, magnesium chloride
+        hexahydrate, magnesium sulfate heptahydrate, and calcium chloride.
+    - evidence_type: CURATED_DATASET
+      source: https://docs.google.com/spreadsheets/d/11koiUdEUco1rXg9zL6KrfOBikW38O7Fhef-uBzXUctM
+      source_record: Compound=Calcium chloride
+      notes: CultureBotHT's compounds-to-CAS crosswalk maps Calcium chloride to CAS
+        10043-52-4 and carries Calcium chloride dihydrate as a distinct row on CAS
+        10035-04-8, supporting anhydrous CaCl2/CHEBI:3312 for the Mixes-tab calcium
+        chloride component.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:mc_general_salts
     ontology_label: Mc_general_salts
@@ -12017,6 +12248,16 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: MINERAL_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: Mc_general_salts
+      curator_note: Mc_general_salts is a stock of inorganic potassium, magnesium,
+        calcium, chloride, and sulfate salts for Mc media.
 - identifier: kgmicrobe.ingredient:mme_trace_minerals
   preferred_term: MME Trace Minerals
   synonyms:
@@ -12053,12 +12294,78 @@ ingredients:
     changes: Promoted UNMAPPED_0309 -> kgmicrobe.ingredient:mme_trace_minerals "MME
       Trace Minerals" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED, SSSOM
       row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for MME Trace Minerals
+      and added complete component partonomy for its 9 trace-mineral stock constituents
+      plus a source-backed trace-element role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 3 CultureBot media; samples: MME_noNitrogen_noCarbon, MME_noCarbon, MTM_noNitrogen_noCarbon.
     No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a named trace-mineral
-    stock/pre-mix pending component-level recipe curation.'
+    stock/pre-mix pending component-level recipe curation. Component-level recipe
+    transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: TRACE_METAL_MIX
+  components:
+  - component_name: EDTA tetrasodium tetrahydrate salt
+    component_id: cas:13235-36-4
+    reference_scope: MIM_CATALOG
+    concentration_value: '500.0'
+    concentration_unit: MG_PER_L
+  - component_name: Ferric chloride
+    component_id: CHEBI:30808
+    reference_scope: MIM_CATALOG
+    concentration_value: '2000.0'
+    concentration_unit: MG_PER_L
+  - component_name: Boric Acid
+    component_id: CHEBI:33118
+    reference_scope: MIM_CATALOG
+    concentration_value: '50.0'
+    concentration_unit: MG_PER_L
+  - component_name: Zinc chloride
+    component_id: CHEBI:49976
+    reference_scope: MIM_CATALOG
+    concentration_value: '50.0'
+    concentration_unit: MG_PER_L
+  - component_name: copper (II) chloride dihydrate
+    component_id: CHEBI:86318
+    reference_scope: MIM_CATALOG
+    concentration_value: '30.0'
+    concentration_unit: MG_PER_L
+  - component_name: Manganese (II) chloride tetrahydrate
+    component_id: CHEBI:86368
+    reference_scope: MIM_CATALOG
+    concentration_value: '50.0'
+    concentration_unit: MG_PER_L
+  - component_name: Diammonium molybdate
+    component_id: CHEBI:91249
+    reference_scope: MIM_CATALOG
+    concentration_value: '50.0'
+    concentration_unit: MG_PER_L
+  - component_name: Cobalt chloride hexahydrate
+    component_id: CHEBI:53503
+    reference_scope: MIM_CATALOG
+    concentration_value: '50.0'
+    concentration_unit: MG_PER_L
+  - component_name: Nickel (II) chloride hexahydrate
+    component_id: CHEBI:53542
+    reference_scope: MIM_CATALOG
+    concentration_value: '50.0'
+    concentration_unit: MG_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!981:989 MME Trace Minerals
+      notes: CultureBotHT's media definitions Mixes tab defines MME Trace Minerals
+        as a 9-component EDTA-chelated trace stock containing ferric, borate, zinc,
+        copper, manganese, molybdate, cobalt, and nickel salts.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:mme_trace_minerals
     ontology_label: MME Trace Minerals
@@ -12073,6 +12380,17 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: MME Trace Minerals
+      curator_note: MME Trace Minerals is an EDTA-chelated trace stock supplying ferric,
+        borate, zinc, copper, manganese, molybdate, cobalt, and nickel salts for MME
+        and MTM omission media.
 - identifier: kgmicrobe.ingredient:trace_metals_solution
   preferred_term: Trace Metals Solution
   synonyms:
@@ -12285,13 +12603,70 @@ ingredients:
     changes: Promoted UNMAPPED_0254 -> kgmicrobe.ingredient:mineral_3b_solution_minus_nitrogen
       "Mineral 3B solution minus Nitrogen" (FALLBACK_REGISTRY); mapping_status UNMAPPED
       -> MAPPED, SSSOM row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for Mineral 3B solution
+      minus Nitrogen and added complete component partonomy for its 7 mineral-stock
+      constituents plus a source-backed mineral-source role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 5 CultureBot media; samples: Varel_Bryant_medium_Glucose_lowCys_noNitrogen,
     Varel_Bryant_medium_Glucose_DTT_noNitrogen, Varel_Bryant_medium_Glucose_DTT_NaS_noNitrogen….
     No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a nitrogen-free
-    mineral stock solution variant pending component-level recipe curation.'
+    mineral stock solution variant pending component-level recipe curation. Component-level
+    recipe transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: MINERAL_STOCK
+  components:
+  - component_name: Potassium phosphate monobasic
+    component_id: CHEBI:63036
+    reference_scope: MIM_CATALOG
+    concentration_value: '6.6'
+    concentration_unit: MM
+  - component_name: Sodium Chloride
+    component_id: CHEBI:26710
+    reference_scope: MIM_CATALOG
+    concentration_value: '15.4'
+    concentration_unit: MM
+  - component_name: Magnesium chloride hexahydrate
+    component_id: CHEBI:86345
+    reference_scope: MIM_CATALOG
+    concentration_value: '98.0'
+    concentration_unit: UM
+  - component_name: Calcium chloride dihydrate
+    component_id: CHEBI:86158
+    reference_scope: MIM_CATALOG
+    concentration_value: '176.5'
+    concentration_unit: UM
+  - component_name: Cobalt chloride hexahydrate
+    component_id: CHEBI:53503
+    reference_scope: MIM_CATALOG
+    concentration_value: '4.2'
+    concentration_unit: UM
+  - component_name: Manganese (II) chloride tetrahydrate
+    component_id: CHEBI:86368
+    reference_scope: MIM_CATALOG
+    concentration_value: '50.5'
+    concentration_unit: UM
+  - component_name: Sodium sulfate
+    component_id: CHEBI:32149
+    reference_scope: MIM_CATALOG
+    concentration_value: '1.75'
+    concentration_unit: MM
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!156:162 Mineral 3B solution minus Nitrogen
+      notes: CultureBotHT's media definitions Mixes tab defines Mineral 3B solution
+        minus Nitrogen as a 7-component mineral stock containing potassium phosphate,
+        sodium, magnesium, calcium, cobalt, manganese, and sulfate salts, with no
+        ammonium salt.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:mineral_3b_solution_minus_nitrogen
     ontology_label: Mineral 3B solution minus Nitrogen
@@ -12307,6 +12682,17 @@ ingredients:
         used by the existing mapped records: a kgmicrobe.ingredient: mint, with no
         parent because a multi-component mix does not narrow to any single compound
         (#114).'
+  nutritional_roles:
+  - role: MINERAL_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: Mineral 3B solution minus Nitrogen
+      curator_note: Mineral 3B solution minus Nitrogen is a stock of inorganic potassium,
+        sodium, magnesium, calcium, cobalt, manganese, phosphate, and sulfate salts
+        for nitrogen-omission media.
 - identifier: kgmicrobe.ingredient:sulfur-free_dl_minerals
   preferred_term: Sulfur-free DL minerals
   synonyms:
@@ -12343,12 +12729,108 @@ ingredients:
     changes: Promoted UNMAPPED_0302 -> kgmicrobe.ingredient:sulfur-free_dl_minerals
       "Sulfur-free DL minerals" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED,
       SSSOM row added.
+  - timestamp: '2026-09-08T00:00:00+00:00'
+    curator: mediaingredientmech-agentic-curation
+    action: ANNOTATED
+    changes: Transcribed the CultureBotHT Mixes-tab recipe for Sulfur-free DL minerals
+      and added complete component partonomy for its 15 sulfur-free mineral-stock
+      constituents plus a source-backed mineral-source role.
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-5
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 6 CultureBot media; samples: SCFM, Hans_Basal_Media, Hans_Basal_Media_plus_0.2x_20AA_mix….
     No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a sulfur-free
-    mineral stock/pre-mix pending component-level recipe curation.'
+    mineral stock/pre-mix pending component-level recipe curation. Component-level
+    recipe transcribed from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
   ingredient_type: STOCK_SOLUTION
   solution_type: MINERAL_STOCK
+  components:
+  - component_name: Magnesium chloride hexahydrate
+    component_id: CHEBI:86345
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.03'
+    concentration_unit: G_PER_L
+  - component_name: Nitrilotriacetic acid disodium salt
+    component_id: cas:15467-20-6
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.015'
+    concentration_unit: G_PER_L
+  - component_name: Sodium Chloride
+    component_id: CHEBI:26710
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.01'
+    concentration_unit: G_PER_L
+  - component_name: Manganese (II) chloride tetrahydrate
+    component_id: CHEBI:86368
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.005'
+    concentration_unit: G_PER_L
+  - component_name: Cobalt chloride hexahydrate
+    component_id: CHEBI:53503
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.001'
+    concentration_unit: G_PER_L
+  - component_name: Zinc chloride
+    component_id: CHEBI:49976
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0013'
+    concentration_unit: G_PER_L
+  - component_name: Calcium Chloride Dihydrate
+    component_id: CHEBI:86158
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.001'
+    concentration_unit: G_PER_L
+  - component_name: Iron (II) chloride tetrahydrate
+    component_id: CHEBI:86249
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.001'
+    concentration_unit: G_PER_L
+  - component_name: Nickel (II) chloride hexahydrate
+    component_id: CHEBI:53542
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.00025'
+    concentration_unit: G_PER_L
+  - component_name: Aluminum chloride hydrate
+    component_id: cas:10124-27-3
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0002'
+    concentration_unit: G_PER_L
+  - component_name: copper (II) chloride dihydrate
+    component_id: CHEBI:86318
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0001'
+    concentration_unit: G_PER_L
+  - component_name: Boric Acid
+    component_id: CHEBI:33118
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0001'
+    concentration_unit: G_PER_L
+  - component_name: Sodium Molybdate Dihydrate
+    component_id: CHEBI:75213
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0001'
+    concentration_unit: G_PER_L
+  - component_name: Sodium selenite pentahydrate
+    component_id: CHEBI:131361
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.003'
+    concentration_unit: G_PER_L
+  - component_name: Sodium tungstate dihydrate
+    component_id: CHEBI:63939
+    reference_scope: MIM_CATALOG
+    concentration_value: '0.0025'
+    concentration_unit: G_PER_L
+  component_assertion:
+    method: RECIPE_TRANSCRIPTION
+    completeness: COMPLETE
+    evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      source_record: Mixes!995:1009 Sulfur-free DL minerals
+      notes: CultureBotHT's media definitions Mixes tab defines Sulfur-free DL minerals
+        as a 15-component sulfur-free mineral stock with chloride, borate, molybdate,
+        selenite, and tungstate constituents and no sulfate salts.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:sulfur-free_dl_minerals
     ontology_label: Sulfur-free DL minerals
@@ -12363,6 +12845,17 @@ ingredients:
         rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
         mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
         mix does not narrow to any single compound (#114).'
+  nutritional_roles:
+  - role: MINERAL_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_text: CultureBotHT media definitions Mixes tab
+      reference_type: DATABASE_ENTRY
+      url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+      excerpt: Sulfur-free DL minerals
+      curator_note: Sulfur-free DL minerals is a mineral and trace stock that avoids
+        sulfate salts while supplying chloride, borate, molybdate, selenite, and tungstate
+        constituents for sulfur-omission media.
 - identifier: kgmicrobe.ingredient:dl_vitamins
   preferred_term: DL vitamins
   synonyms:

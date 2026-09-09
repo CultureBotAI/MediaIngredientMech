@@ -34,12 +34,85 @@ curation_history:
   changes: Promoted UNMAPPED_0314 -> kgmicrobe.ingredient:modified_wolfes_minerals
     "Modified Wolfe's Minerals" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED,
     SSSOM row added.
+- timestamp: '2026-09-08T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Transcribed the CultureBotHT Mixes-tab recipe for Modified Wolfe's Minerals
+    and added complete component partonomy for its 10 mineral-stock constituents plus
+    a source-backed mineral-source role.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   3 CultureBot media; samples: MG minimal media, MG minimal media_noIron, MG minimal
   media_noCarbon. No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as
-  a modified Wolfe mineral stock/pre-mix pending component-level recipe curation.'
+  a modified Wolfe mineral stock/pre-mix pending component-level recipe curation.
+  Component-level recipe transcribed from the CultureBotHT media definitions Mixes
+  tab on 2026-09-08.'
 ingredient_type: STOCK_SOLUTION
 solution_type: MINERAL_STOCK
+components:
+- component_name: Nitrilotriacetic acid
+  component_id: CHEBI:44557
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.5'
+  concentration_unit: G_PER_L
+- component_name: Magnesium sulfate
+  component_id: CHEBI:32599
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.465'
+  concentration_unit: G_PER_L
+- component_name: Manganese (II) sulfate monohydrate
+  component_id: CHEBI:86364
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.5'
+  concentration_unit: G_PER_L
+- component_name: Sodium Chloride
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '1.0'
+  concentration_unit: G_PER_L
+- component_name: Cobalt chloride hexahydrate
+  component_id: CHEBI:53503
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: Calcium Chloride Dihydrate
+  component_id: CHEBI:86158
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: Zinc sulfate heptahydrate
+  component_id: CHEBI:32312
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.1'
+  concentration_unit: G_PER_L
+- component_name: Aluminum potassium sulfate dodecahydrate
+  component_id: CHEBI:86465
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.02'
+  concentration_unit: G_PER_L
+- component_name: Boric Acid
+  component_id: CHEBI:33118
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: Sodium Molybdate Dihydrate
+  component_id: CHEBI:75213
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!206:215 Modified Wolfe's Minerals
+    notes: CultureBotHT's media definitions Mixes tab defines Modified Wolfe's Minerals
+      as a 10-component stock containing nitrilotriacetic acid, magnesium, manganese,
+      sodium, cobalt, calcium, zinc, aluminum potassium sulfate, boric acid, and molybdate
+      salts.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:modified_wolfes_minerals
   ontology_label: Modified Wolfe's Minerals
@@ -54,3 +127,13 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: Modified Wolfe's Minerals
+    curator_note: Modified Wolfe's Minerals is a stock of inorganic mineral and trace
+      salts chelated by nitrilotriacetic acid for MG minimal media variants.

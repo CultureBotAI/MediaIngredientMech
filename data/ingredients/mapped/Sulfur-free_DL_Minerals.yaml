@@ -34,12 +34,108 @@ curation_history:
   changes: Promoted UNMAPPED_0302 -> kgmicrobe.ingredient:sulfur-free_dl_minerals
     "Sulfur-free DL minerals" (FALLBACK_REGISTRY); mapping_status UNMAPPED -> MAPPED,
     SSSOM row added.
+- timestamp: '2026-09-08T00:00:00+00:00'
+  curator: mediaingredientmech-agentic-curation
+  action: ANNOTATED
+  changes: Transcribed the CultureBotHT Mixes-tab recipe for Sulfur-free DL minerals
+    and added complete component partonomy for its 15 sulfur-free mineral-stock constituents
+    plus a source-backed mineral-source role.
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-5
 notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used in
   6 CultureBot media; samples: SCFM, Hans_Basal_Media, Hans_Basal_Media_plus_0.2x_20AA_mix….
   No CAS-RN or CHEBI mapping available; reviewed on 2026-05-11 as a sulfur-free mineral
-  stock/pre-mix pending component-level recipe curation.'
+  stock/pre-mix pending component-level recipe curation. Component-level recipe transcribed
+  from the CultureBotHT media definitions Mixes tab on 2026-09-08.'
 ingredient_type: STOCK_SOLUTION
 solution_type: MINERAL_STOCK
+components:
+- component_name: Magnesium chloride hexahydrate
+  component_id: CHEBI:86345
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.03'
+  concentration_unit: G_PER_L
+- component_name: Nitrilotriacetic acid disodium salt
+  component_id: cas:15467-20-6
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.015'
+  concentration_unit: G_PER_L
+- component_name: Sodium Chloride
+  component_id: CHEBI:26710
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.01'
+  concentration_unit: G_PER_L
+- component_name: Manganese (II) chloride tetrahydrate
+  component_id: CHEBI:86368
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.005'
+  concentration_unit: G_PER_L
+- component_name: Cobalt chloride hexahydrate
+  component_id: CHEBI:53503
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.001'
+  concentration_unit: G_PER_L
+- component_name: Zinc chloride
+  component_id: CHEBI:49976
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0013'
+  concentration_unit: G_PER_L
+- component_name: Calcium Chloride Dihydrate
+  component_id: CHEBI:86158
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.001'
+  concentration_unit: G_PER_L
+- component_name: Iron (II) chloride tetrahydrate
+  component_id: CHEBI:86249
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.001'
+  concentration_unit: G_PER_L
+- component_name: Nickel (II) chloride hexahydrate
+  component_id: CHEBI:53542
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.00025'
+  concentration_unit: G_PER_L
+- component_name: Aluminum chloride hydrate
+  component_id: cas:10124-27-3
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0002'
+  concentration_unit: G_PER_L
+- component_name: copper (II) chloride dihydrate
+  component_id: CHEBI:86318
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0001'
+  concentration_unit: G_PER_L
+- component_name: Boric Acid
+  component_id: CHEBI:33118
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0001'
+  concentration_unit: G_PER_L
+- component_name: Sodium Molybdate Dihydrate
+  component_id: CHEBI:75213
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0001'
+  concentration_unit: G_PER_L
+- component_name: Sodium selenite pentahydrate
+  component_id: CHEBI:131361
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.003'
+  concentration_unit: G_PER_L
+- component_name: Sodium tungstate dihydrate
+  component_id: CHEBI:63939
+  reference_scope: MIM_CATALOG
+  concentration_value: '0.0025'
+  concentration_unit: G_PER_L
+component_assertion:
+  method: RECIPE_TRANSCRIPTION
+  completeness: COMPLETE
+  evidence:
+  - evidence_type: RECIPE_SOURCE
+    source: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    source_record: Mixes!995:1009 Sulfur-free DL minerals
+    notes: CultureBotHT's media definitions Mixes tab defines Sulfur-free DL minerals
+      as a 15-component sulfur-free mineral stock with chloride, borate, molybdate,
+      selenite, and tungstate constituents and no sulfate salts.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:sulfur-free_dl_minerals
   ontology_label: Sulfur-free DL minerals
@@ -54,3 +150,14 @@ ontology_mapping:
       rather than a substance. Takes the STOCK_SOLUTION convention used by the existing
       mapped records: a kgmicrobe.ingredient: mint, with no parent because a multi-component
       mix does not narrow to any single compound (#114).'
+nutritional_roles:
+- role: MINERAL_SOURCE
+  confidence: 1.0
+  evidence:
+  - reference_text: CultureBotHT media definitions Mixes tab
+    reference_type: DATABASE_ENTRY
+    url: https://docs.google.com/spreadsheets/d/1lNNW8BtrJL3pBlsnwvrQRKLU-9asECU_qaBfZ36Ft84
+    excerpt: Sulfur-free DL minerals
+    curator_note: Sulfur-free DL minerals is a mineral and trace stock that avoids
+      sulfate salts while supplying chloride, borate, molybdate, selenite, and tungstate
+      constituents for sulfur-omission media.
