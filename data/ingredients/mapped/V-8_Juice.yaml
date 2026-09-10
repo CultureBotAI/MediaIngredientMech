@@ -1,4 +1,4 @@
-identifier: MICRO:0002250
+identifier: kgmicrobe.ingredient:v-8_juice
 preferred_term: V-8 Juice
 synonyms:
 - synonym_text: V-8 Juice
@@ -29,15 +29,26 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-10T11:25:00.020162+00:00'
+  curator: fix_micro_malformed_iris
+  action: CORRECTED
+  changes: 'Re-grounded MICRO:0002250 ''V-8 juice'' -> kgmicrobe.ingredient:v-8_juice
+    ''vegetable juice (us cfr)'' (NARROW_MATCH). MICRO:0002250 is an OLS4 non-defining
+    MicrO.owl IRI; V-8 Juice has no well-formed exact OBO term, so this keeps a local
+    identity and anchors it to the vegetable juice parent. See #137.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:363); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: MICRO:0002250
-  ontology_label: V-8 juice
-  ontology_source: MICRO
-  mapping_quality: EXACT_MATCH
+  ontology_id: FOODON:03400264
+  ontology_label: vegetable juice (us cfr)
+  ontology_source: FOODON
+  mapping_quality: NARROW_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: MICRO via OLS search (resolve_unmapped)
-    notes: Auto-upgraded from UNMAPPED_0563; matched via 'V-8 Juice' (name normalization);
-      label-exact
+  - evidence_type: CURATOR_JUDGMENT
+    source: fix_micro_malformed_iris
+    notes: MICRO:0002250 is an OLS4 non-defining MicrO.owl IRI; V-8 Juice has no well-formed
+      exact OBO term, so this record keeps a local identity and anchors to the vegetable
+      juice parent.

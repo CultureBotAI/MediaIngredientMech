@@ -82,10 +82,6 @@ Note that **term-level PURLs 404 for all of MicrO**, well-formed or not (control
 PURLs for CHEBI/FOODON/UBERON return 200). Do not use PURL status to triage this —
 use `is_defining_ontology` and the IRI shape.
 
-> Three MICRO ids currently in the published SSSOM are in the malformed class and
-> need re-grounding: `MICRO:0002250` "V-8 juice", `MICRO:0002392` "rabbit serum",
-> `MICRO:0002393` "Proteose Peptone No. 2".
-
 ## 4. Which ontology term does a MIM ingredient mean?
 
 A selection rule, not a lookup. **180 of 1,876 subjects carry more than one

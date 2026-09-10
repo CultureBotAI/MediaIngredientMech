@@ -454,21 +454,13 @@ class TestMicroRoundTripGuard:
         assert "MICRO:0002402" not in MICRO_VERIFIED
 
     def test_no_record_is_grounded_to_an_unverified_micro_id(self):
-        """No NEW record may sit on an unverified MICRO id.
-
-        Three predate this work and are excluded by the same KNOWN_BAD_MICRO list
-        test_curie_normalizer.py uses -- they have the identical malformed-IRI defect
-        and their re-grounding is tracked separately. This asserts the set does not grow.
-        """
+        """No record may sit on an unverified MICRO id."""
         from mediaingredientmech.curie import MICRO_VERIFIED
-        from tests.test_curie_normalizer import KNOWN_BAD_MICRO
 
         offenders = []
         for path in (_REPO / "data" / "ingredients").rglob("*.yaml"):
             data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
             identifier = str(data.get("identifier") or "")
-            if identifier in KNOWN_BAD_MICRO:
-                continue
             if identifier.startswith("MICRO:") and identifier not in MICRO_VERIFIED:
                 offenders.append((path.name, identifier))
         assert not offenders, f"records on unverified MICRO ids: {offenders}"

@@ -1,4 +1,4 @@
-identifier: MICRO:0002392
+identifier: kgmicrobe.ingredient:rabbit_serum
 preferred_term: Rabbit serum
 synonyms:
 - synonym_text: Rabbit serum
@@ -36,16 +36,27 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-10T11:26:28.923830+00:00'
+  curator: fix_micro_malformed_iris
+  action: CORRECTED
+  changes: 'Re-grounded MICRO:0002392 ''rabbit serum'' -> kgmicrobe.ingredient:rabbit_serum
+    ''blood serum'' (NARROW_MATCH). MICRO:0002392 is an OLS4 non-defining MicrO.owl
+    IRI; rabbit serum has no well-formed exact OBO term, so this keeps a local identity
+    and anchors it to blood serum. See #137.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 notes: Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: MICRO:0002392
-  ontology_label: rabbit serum
-  ontology_source: MICRO
-  mapping_quality: EXACT_MATCH
+  ontology_id: UBERON:0001977
+  ontology_label: blood serum
+  ontology_source: UBERON
+  mapping_quality: NARROW_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: MICRO via OLS search (resolve_unmapped)
-    notes: Auto-upgraded from UNMAPPED_0506; matched via 'Rabbit serum' (name normalization);
-      label-exact
+  - evidence_type: CURATOR_JUDGMENT
+    source: fix_micro_malformed_iris
+    notes: MICRO:0002392 is an OLS4 non-defining MicrO.owl IRI; rabbit serum has no
+      well-formed exact OBO term, so this record keeps a local identity and anchors
+      to the blood serum parent.
 ingredient_type: UNDEFINED_MIXTURE
