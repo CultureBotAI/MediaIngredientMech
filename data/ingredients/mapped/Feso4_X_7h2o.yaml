@@ -143,6 +143,13 @@ curation_history:
   changes: cas_rn 7720-78-7 -> 7782-63-0. 7720-78-7 is the ANHYDROUS parent's CAS.
     This record is grounded to CHEBI:75836 iron(2+) sulfate heptahydrate, whose ChEBI
     dbxref is 7782-63-0 (#334).
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:75832 -> CHEBI:75836 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7782-63-0
   data_source: PubChem API (ontology label)
@@ -150,7 +157,7 @@ chemical_properties:
   molecular_formula: Fe.O4S.7H2O
   inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
   smiles: O=S(=O)([O-])[O-].[Fe+2]
-kg_microbe_node_id: CHEBI:75832
+kg_microbe_node_id: CHEBI:75836
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: IRON_SOURCE

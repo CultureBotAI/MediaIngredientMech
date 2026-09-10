@@ -145,7 +145,14 @@ curation_history:
     not resolve them: ''Cobalt sulfate heptahydrate'' (x1 CultureMech mentions). Source:
     culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
-kg_microbe_node_id: CHEBI:53470
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:53470 -> CHEBI:91244 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+kg_microbe_node_id: CHEBI:91244
 chemical_properties:
   cas_rn: 10026-24-1
   data_source: PubChem (via CHEBI:53470)

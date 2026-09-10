@@ -83,6 +83,13 @@ curation_history:
     it. Now agrees with the merge target ''Maltose''. Provenance is unaffected: what
     the record used to assert is in this history.'
   llm_assisted: false
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:18167 -> CHEBI:17306 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 69-79-4
   data_source: PubChem API
@@ -90,7 +97,7 @@ chemical_properties:
   molecular_formula: C12H22O11
   inchi: InChI=1S/C12H22O11/c13-1-3-5(15)6(16)9(19)12(22-3)23-10-4(2-14)21-11(20)8(18)7(10)17/h3-20H,1-2H2/t3-,4-,5-,6+,7-,8-,9-,10-,11+,12-/m1/s1
   smiles: OC[C@H]1O[C@H](O[C@H]2[C@H](O)[C@@H](O)[C@@H](O)O[C@@H]2CO)[C@H](O)[C@@H](O)[C@@H]1O
-kg_microbe_node_id: CHEBI:18167
+kg_microbe_node_id: CHEBI:17306
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE

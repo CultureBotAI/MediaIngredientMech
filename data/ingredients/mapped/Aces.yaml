@@ -77,11 +77,18 @@ curation_history:
     it. Now agrees with the merge target ''N-(2-acetamido)-2-aminoethanesulfonic acid''.
     Provenance is unaffected: what the record used to assert is in this history.'
   llm_assisted: false
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:39061 -> CHEBI:39060 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7365-82-4
   data_source: PubChem API
   retrieval_date: '2026-04-05T19:50:57.924216+00:00'
-kg_microbe_node_id: CHEBI:39061
+kg_microbe_node_id: CHEBI:39060
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: BUFFER

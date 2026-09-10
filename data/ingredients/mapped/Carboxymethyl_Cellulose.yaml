@@ -201,7 +201,14 @@ curation_history:
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
   llm_assisted: false
-kg_microbe_node_id: CHEBI:85146
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:85146 -> CHEBI:234035 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+kg_microbe_node_id: CHEBI:234035
 chemical_properties:
   cas_rn: 9004-32-4
   data_source: CultureBotHT/compounds_to_cas.csv

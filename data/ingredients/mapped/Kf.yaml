@@ -97,7 +97,14 @@ curation_history:
     it. Now agrees with the merge target ''potassium fluoride''. Provenance is unaffected:
     what the record used to assert is in this history.'
   llm_assisted: false
-kg_microbe_node_id: CHEBI:73605
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:73605 -> CHEBI:66872 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+kg_microbe_node_id: CHEBI:66872
 chemical_properties:
   data_source: PubChem (via CHEBI:73605)
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'
