@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-10T06:21:19.109128+00:00
+Generated: 2026-09-10T09:39:16.194031+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -200,7 +200,7 @@ Total: 2952 ingredients
 | CHEBI:81879 | CHEBI:81879 | Rhodomycin B | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18394 | CHEBI:18394 | Palatinose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:75273 | CHEBI:75273 | Niaproof | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:37671 | CHEBI:37671 | 3-beta-d-glucan | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:37671 | CHEBI:37671 | 3-beta-D-glucan | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | CHEBI:73908 | 2,4-diamino-6,7-di-iso-propylpteridine phosphate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:maltose_hydrate | CHEBI:17306 | Maltose Hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | kgmicrobe.compound:potassium_2-ketogluconate | CHEBI:16808 | Potassium 2-ketogluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -224,7 +224,7 @@ Total: 2952 ingredients
 | CHEBI:81287 | CHEBI:81287 | Neomycin F | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81430 | CHEBI:81430 | Dactimicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27907 | CHEBI:27907 | Alpha-L-rhamnose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:2179 | CHEBI:2179 | 6-deoxy-d-galactose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:2179 | CHEBI:2179 | 6-deoxy-D-galactose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:67135 | CHEBI:67135 | Azomycin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:17833 | CHEBI:17833 | Gentamicin | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:71422 | CHEBI:71422 | Beta-gentiobiose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -1487,7 +1487,7 @@ Total: 2952 ingredients
 | CHEBI:21553 | CHEBI:21553 | N-Acetyl-L-glutamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17724 | CHEBI:17724 | N-N Dimethyl glycine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:39060 | CHEBI:39060 | N-(2-acetamido)-2-aminoethanesulfonic acid | MAPPED | CHEBI | EXACT_MATCH | 15 |
-| CHEBI:8006 | CHEBI:8006 | N-Acetyl-D-glucosamine | MAPPED | CHEBI | SYNONYM_MATCH | 29 |
+| CHEBI:506227 | CHEBI:506227 | N-Acetyl-D-glucosamine | MAPPED | CHEBI | EXACT_MATCH | 29 |
 | CHEBI:59640 | CHEBI:59640 | N-Acetylglucosamine | MAPPED | CHEBI | EXACT_MATCH | 57 |
 | CHEBI:47965 | CHEBI:47965 | N-acetylmuramic acid | MAPPED | CHEBI | EXACT_MATCH | 12 |
 | CHEBI:17012 | CHEBI:17012 | N-acetylneuraminic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2169,7 +2169,7 @@ Total: 2952 ingredients
 | CHEBI:32373 | CHEBI:32373 | 4-coumarate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:18240 | CHEBI:18240 | 4-hydroxy-L-proline | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:16724 | CHEBI:16724 | 4-hydroxybutyrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:1904 | CHEBI:1904 | 4-methylumbelliferone Beta-d-glucuronide | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:1904 | CHEBI:1904 | 4-methylumbelliferone Beta-D-glucuronide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:90128 | CHEBI:90128 | 4-nitrophenyl 6-O-phosphono-beta-D-galactoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:90146 | CHEBI:90146 | 4-nitrophenyl Beta-D-glucuronide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:90343 | CHEBI:90343 | 4-nitrophenyl N-acetyl-beta-D-glucosaminide | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2227,7 +2227,7 @@ Total: 2952 ingredients
 | CHEBI:28034 | CHEBI:28034 | Beta-D-galactoside | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28860 | CHEBI:28860 | Beta-D-glucuronic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28161 | CHEBI:28161 | Beta-D-xylose | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:15903 | CHEBI:15903 | Beta-d-glucose | MAPPED | CHEBI | EXACT_MATCH | 16 |
+| CHEBI:15903 | CHEBI:15903 | Beta-D-glucose | MAPPED | CHEBI | EXACT_MATCH | 16 |
 | CHEBI:3098 | CHEBI:3098 | Bile Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17097 | CHEBI:17097 | Biphenyl | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:218571 | CHEBI:218571 | Blasticidin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
