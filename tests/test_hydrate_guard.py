@@ -176,7 +176,10 @@ def test_formula_lookup_is_reachable_from_the_curator():
 # --- water_multiplicity (#254) ----------------------------------------------
 # Two earlier attempts at this shipped wrong, so each trap is pinned.
 
-from mediaingredientmech.curation.hydrate_guard import water_multiplicity  # noqa: E402
+from mediaingredientmech.curation.hydrate_guard import (  # noqa: E402
+    implausible_water_counts,
+    water_multiplicity,
+)
 
 
 @pytest.mark.parametrize("label,expected", [
@@ -239,6 +242,12 @@ def test_an_implausible_water_count_reads_as_unstated(label):
     """Reporting 76 does not merely lose information -- it manufactures a
     confident mismatch against every sibling stating a real count."""
     assert water_multiplicity(label) is None
+
+
+def test_implausible_water_counts_reports_rejected_digit_counts():
+    assert implausible_water_counts("MgCl2 x 76 H2O") == ("76",)
+    assert implausible_water_counts("x 99 H2O, corrected to x 9 H2O") == ("99",)
+    assert implausible_water_counts("Al2(SO4)3 x 18 H2O") == ()
 
 
 @pytest.mark.parametrize("label", ["Al2(SO4)3 x 18 H2O", "AlK(SO4)2 x 12 H2O",

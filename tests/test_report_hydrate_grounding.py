@@ -99,7 +99,7 @@ def test_the_old_substring_rule_would_have_got_both_wrong(mod):
 
 
 def test_the_kind_values_are_distinct(mod):
-    assert mod.DIFFERENT_STATE != mod.ANHYDROUS_TERM
+    assert len({mod.DIFFERENT_STATE, mod.ANHYDROUS_TERM, mod.MALFORMED_NOTATION}) == 3
 
 
 def test_kind_is_written_to_the_synonym_tsv(mod):
@@ -151,6 +151,33 @@ def test_synonym_different_state_rows_are_classified_by_the_source(mod):
 
     assert len(rows) == 1
     assert rows[0]["kind"] == mod.DIFFERENT_STATE
+
+
+def test_implausible_hydrate_synonyms_are_classified_as_malformed(mod):
+    rows = mod.classify_synonym_rows(
+        [
+            {
+                "identifier": "CHEBI:1",
+                "preferred_term": "MgCl2 x 7 H2O",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:1",
+                    "ontology_label": "magnesium chloride heptahydrate",
+                },
+                "synonyms": [
+                    {"synonym_text": "MgCl2  x 76 H2O"},
+                    {"synonym_text": "MgCl2 x 6 H2O"},
+                ],
+            }
+        ],
+        {"CHEBI:1": "Cl2Mg.7H2O"},
+    )
+
+    buckets = mod.split_synonym_buckets(rows)
+
+    assert len(buckets[mod.MALFORMED_NOTATION]) == 1
+    assert buckets[mod.MALFORMED_NOTATION][0]["hydrate_synonyms"] == "MgCl2  x 76 H2O"
+    assert "76" in buckets[mod.MALFORMED_NOTATION][0]["detail"]
+    assert len(buckets[mod.DIFFERENT_STATE]) == 1
 
 
 def test_preferred_term_hydrate_rows_are_classified_by_the_source(mod):

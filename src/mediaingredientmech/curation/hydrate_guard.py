@@ -141,6 +141,15 @@ def water_multiplicity(text: str) -> str | None:
     return None
 
 
+def implausible_water_counts(text: str) -> tuple[str, ...]:
+    """Digit water counts rejected by the hydrate-state ceiling (#474)."""
+    return tuple(
+        digit_match.group(1)
+        for digit_match in _DIGIT_WATER.finditer(str(text or ""))
+        if int(digit_match.group(1)) > MAX_PLAUSIBLE_WATERS
+    )
+
+
 class _Candidate(Protocol):
     ontology_id: str
     label: str
