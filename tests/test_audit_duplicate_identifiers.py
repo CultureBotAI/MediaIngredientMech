@@ -180,6 +180,47 @@ def test_missing_or_corrupt_baseline_exits_2_not_traceback(repo):
     assert out.returncode == 2 and "Traceback" not in out.stderr
 
 
+def test_repeated_baseline_groups_are_rejected(repo):
+    b = repo / "mappings" / "duplicate_identifier_baseline.tsv"
+    b.write_text(
+        BASELINE_HEADER
+        + "CHEBI:1\tmapped\t2\tdead\tUNREVIEWED\tfalse\t0\tx\n"
+        + "CHEBI:1\tmapped\t2\tdead\tNEEDS_OWN_ID\tfalse\t0\tx\n"
+    )
+
+    out = run(repo, "--check")
+
+    assert out.returncode == 2 and "Traceback" not in out.stderr
+    assert "duplicate row for CHEBI:1 in mapped" in out.stdout
+
+
+@pytest.mark.parametrize(
+    ("row", "message"),
+    [
+        ("\tmapped\t2\tdead\tUNREVIEWED\tfalse\t0\tx\n", "missing an identifier"),
+        ("CHEBI:1\tmappped\t2\tdead\tUNREVIEWED\tfalse\t0\tx\n", "unsupported collection"),
+        ("CHEBI:1\tmapped\t2\tdead\tNEED_OWN_ID\tfalse\t0\tx\n", "unsupported disposition"),
+    ],
+)
+def test_invalid_baseline_rows_are_rejected(repo, row, message):
+    b = repo / "mappings" / "duplicate_identifier_baseline.tsv"
+    b.write_text(BASELINE_HEADER + row)
+
+    out = run(repo, "--check")
+
+    assert out.returncode == 2 and "Traceback" not in out.stderr
+    assert message in out.stdout
+
+
+def test_blank_baseline_disposition_defaults_to_unreviewed(repo):
+    b = repo / "mappings" / "duplicate_identifier_baseline.tsv"
+    b.write_text(BASELINE_HEADER + "CHEBI:1\tmapped\t2\tdead\t\tfalse\t0\tx\n")
+
+    out = run(repo, "--check")
+
+    assert out.returncode == 2 and "unsupported disposition" not in out.stdout
+
+
 def test_unparseable_collection_exits_2_not_traceback(repo):
     (repo / "data" / "curated" / "mapped_ingredients.yaml").write_text("{[not yaml")
     out = run(repo, "--check")
