@@ -1,4 +1,4 @@
-generation_date: '2026-09-10T05:41:01.447111+00:00'
+generation_date: '2026-09-10T06:16:34.712766+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -106125,7 +106125,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Cysteine-HCl∙H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: E 920
     synonym_type: EXACT_SYNONYM
@@ -106249,6 +106249,12 @@ ingredients:
       not resolve them: ''L-cysteine (Sigma)'' (x1 CultureMech mentions). Source:
       culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-09-10T06:14:55Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CORRECTED
+    changes: Marked hydrate/salt synonym Cysteine-HCl∙H2O non-resolving for free L-cysteine;
+      the monohydrate resolves to CHEBI:91248 (#521).
+    llm_assisted: true
   chemical_properties:
     cas_rn: 52-90-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -106520,6 +106526,9 @@ ingredients:
   - synonym_text: Cysteine-HCl·H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
+  - synonym_text: Cysteine-HCl∙H2O
+    synonym_type: HYDRATE_FORM
+    source: kg_microbe
   - synonym_text: Cysteine-HCl⋅H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
@@ -106685,6 +106694,13 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-10T06:14:55Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CORRECTED
+    changes: Added bullet-operator hydrate synonym Cysteine-HCl∙H2O moved from free
+      L-cysteine; this spelling names L-cysteine hydrochloride hydrate CHEBI:91248
+      (#521).
+    llm_assisted: true
   chemical_properties:
     cas_rn: 7048-04-6
     data_source: PubChem (via CHEBI:91248)

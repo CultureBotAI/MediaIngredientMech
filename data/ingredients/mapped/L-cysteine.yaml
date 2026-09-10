@@ -41,7 +41,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Cysteine-HCl∙H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: E 920
   synonym_type: EXACT_SYNONYM
@@ -164,6 +164,12 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''L-cysteine (Sigma)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-10T06:14:55Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CORRECTED
+  changes: Marked hydrate/salt synonym Cysteine-HCl∙H2O non-resolving for free L-cysteine;
+    the monohydrate resolves to CHEBI:91248 (#521).
+  llm_assisted: true
 chemical_properties:
   cas_rn: 52-90-4
   data_source: CultureBotHT compounds_to_cas.csv
