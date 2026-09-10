@@ -1718,7 +1718,7 @@
 | CHEBI:51240 | Propidium iodide | CHEBI:51240 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30768 | Propionic acid | CHEBI:30768 | CHEBI | EXACT_MATCH | 37 |
 | MICRO:0000180 | Proteose Peptone | MICRO:0000180 | MICRO | EXACT_MATCH | 571 |
-| MICRO:0002393 | Proteose peptone no. 2 | MICRO:0002393 | MICRO | EXACT_MATCH | 7 |
+| kgmicrobe.ingredient:proteose_peptone_no_2 | Proteose peptone no. 2 | MICRO:0000180 | MICRO | NARROW_MATCH | 7 |
 | CHEBI:50205 | Protocatechualdehyde | CHEBI:50205 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:36062 | Protocatechuic Acid | CHEBI:36062 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:15430 | Protoporphyrin | CHEBI:15430 | CHEBI | EXACT_MATCH | 0 |
@@ -1751,7 +1751,7 @@
 | CHEBI:26493 | Quinic acid | CHEBI:26493 | CHEBI | EXACT_MATCH | 11 |
 | cas:6119-47-7 | Quinine Hdrochloride | cas:6119-47-7 | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0001229 | Rabbit blood | MICRO:0001229 | MICRO | EXACT_MATCH | 9 |
-| MICRO:0002392 | Rabbit serum | MICRO:0002392 | MICRO | EXACT_MATCH | 21 |
+| kgmicrobe.ingredient:rabbit_serum | Rabbit serum | UBERON:0001977 | UBERON | NARROW_MATCH | 21 |
 | CHEBI:139272 | rac-3-Hydroxypentanoic Acid | CHEBI:139272 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:racemomycin_e | Racemomycin E | mesh:C019594 | MESH | NARROW_MATCH | 0 |
 | CHEBI:556075 | Radicicol | CHEBI:556075 | CHEBI | EXACT_MATCH | 0 |
@@ -2037,7 +2037,7 @@
 | cas:3387-36-8 | Uridine 5-monophosphate disodium salt | cas:3387-36-8 | CAS | FALLBACK_REGISTRY | 0 |
 | cas:28290-51-9 | Ursololactone Acetate | cas:28290-51-9 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:38319 | Usnic Acid | CHEBI:38319 | CHEBI | EXACT_MATCH | 0 |
-| MICRO:0002250 | V-8 Juice | MICRO:0002250 | MICRO | EXACT_MATCH | 3 |
+| kgmicrobe.ingredient:v-8_juice | V-8 Juice | FOODON:03400264 | FOODON | NARROW_MATCH | 3 |
 | CHEBI:17418 | Valeric acid | CHEBI:17418 | CHEBI | EXACT_MATCH | 113 |
 | CHEBI:16545 | Valerolactone | CHEBI:16545 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:7718-98-1 | vanadium chloride | cas:7718-98-1 | CAS | FALLBACK_REGISTRY | 26 |

@@ -1,14 +1,20 @@
-identifier: MICRO:0002393
+identifier: kgmicrobe.ingredient:proteose_peptone_no_2
 preferred_term: Proteose peptone no. 2
+synonyms:
+- synonym_text: Proteose peptone No 2 (DIFCO 0121-01-3)
+  synonym_type: CATALOG_VARIANT
+  source: manual
 ontology_mapping:
-  ontology_id: MICRO:0002393
-  ontology_label: Proteose Peptone No. 2
+  ontology_id: MICRO:0000180
+  ontology_label: proteose peptone
   ontology_source: MICRO
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: MICRO via OLS search
-    notes: Auto-created from foodon_pass; label-exact (micro)
+  - evidence_type: CURATOR_JUDGMENT
+    source: fix_micro_malformed_iris
+    notes: MICRO:0002393 is an OLS4 non-defining MicrO.owl IRI; Proteose Peptone No.
+      2 is a distinct catalog-specific peptone, so this record keeps a local identity
+      and anchors to the well-formed generic Proteose peptone parent.
 mapping_status: MAPPED
 curation_history:
 - timestamp: '2026-05-01T19:55:09.678923+00:00'
@@ -42,6 +48,17 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-10T11:28:59.951056+00:00'
+  curator: fix_micro_malformed_iris
+  action: CORRECTED
+  changes: 'Re-grounded MICRO:0002393 ''Proteose Peptone No. 2'' -> kgmicrobe.ingredient:proteose_peptone_no_2
+    ''proteose peptone'' (NARROW_MATCH). MICRO:0002393 is an OLS4 non-defining MicrO.owl
+    IRI; Proteose Peptone No. 2 is a distinct catalog-specific peptone, so this keeps
+    a local identity and anchors it to the well-formed generic Proteose peptone parent.
+    See #137.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 ingredient_type: UNDEFINED_MIXTURE
 occurrence_statistics:
   total_occurrences: 7

@@ -55,13 +55,29 @@ from pathlib import Path
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from mediaingredientmech.curie import CurieNormalizer
+from mediaingredientmech.sssom_grading import (
+    CONFIDENCE,
+    JUSTIFICATION,
+    JUSTIFICATION_MANUAL,
+    PREDICATE,
+)
 from mediaingredientmech.utils.object_source import object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
-CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
+MEMBERSHIP = ROOT / "mappings" / "culturemech_recipe_membership.tsv"
+OAK_DB = {
+    "BTO": Path(os.path.expanduser("~/.data/oaklib/bto.db")),
+    "CHEBI": Path(os.path.expanduser("~/.data/oaklib/chebi.db")),
+    "ENVO": Path(os.path.expanduser("~/.data/oaklib/envo.db")),
+    "FOODON": Path(os.path.expanduser("~/.data/oaklib/foodon.db")),
+    "NCIT": Path(os.path.expanduser("~/.data/oaklib/ncit.db")),
+    "PATO": Path(os.path.expanduser("~/.data/oaklib/pato.db")),
+    "UBERON": Path(os.path.expanduser("~/.data/oaklib/uberon.db")),
+}
 
 
 # Registry namespaces a record may take as its IDENTIFIER when no ontology term
@@ -102,23 +118,83 @@ def check_registry_mint(curie: str, subject_slug: str) -> str:
     return f"{prefix}:{want}"
 
 
-def chebi_label(curie: str) -> str:
-    con = sqlite3.connect(CHEBI_DB)
+def normalize_object_curie(curie: str) -> str:
+    verdict = CurieNormalizer().normalize(curie)
+    if not verdict:
+        raise SystemExit(
+            f"{curie} failed CURIE validation: {verdict.problem} {verdict.note}".strip()
+        )
+    object_source_for(verdict.curie)
+    return verdict.curie
+
+
+def source_enum(curie: str) -> str:
+    prefix, _, _ = normalize_object_curie(curie).partition(":")
+    if not prefix:
+        raise SystemExit(f"{curie!r} is not a CURIE")
+    return prefix.upper()
+
+
+def ontology_label(curie: str, explicit: str | None = None) -> str:
+    """Return a canonical label from a local OAK DB or from explicit curator input.
+
+    A few prefixes MIM publishes, most notably MICRO, do not have a usable local
+    semantic-sql build. Those still need re-grounding occasionally, so an explicit
+    label is accepted after the prefix itself has been declared publishable.
+    """
+    curie = normalize_object_curie(curie)
+    prefix = source_enum(curie)
+    db = OAK_DB.get(prefix)
+    if db is None:
+        if explicit:
+            return explicit
+        raise SystemExit(
+            f"{curie} cannot be resolved from a local OAK DB; pass --parent-label "
+            "with the canonical label after checking the term in its source ontology"
+        )
+    if not db.exists():
+        raise SystemExit(f"{curie} cannot be resolved because {db} does not exist")
+
+    con = sqlite3.connect(db)
     row = con.execute(
         "select value from statements where subject=? and predicate='rdfs:label'",
         (curie,)).fetchone()
     if not row:
-        raise SystemExit(f"{curie} has no rdfs:label in {CHEBI_DB} — absent or wrong id")
+        raise SystemExit(f"{curie} has no rdfs:label in {db} — absent or wrong id")
     dep = con.execute(
         "select value from statements where subject=? and predicate='owl:deprecated'",
         (curie,)).fetchone()
     if dep:
-        raise SystemExit(f"{curie} is obsolete in ChEBI — pick a current term")
+        raise SystemExit(f"{curie} is obsolete in {prefix} — pick a current term")
     return row[0]
 
 
-def plan_sssom(subject_label: str, old_curie: str, new_curie: str, new_label: str,
-               mint: str | None = None) -> tuple[str, str]:
+def chebi_label(curie: str) -> str:
+    return ontology_label(curie)
+
+
+def _set(fields: list[str], column: dict[str, int], name: str, value: str) -> None:
+    idx = column.get(name)
+    if idx is not None:
+        fields[idx] = value
+
+
+def _sync_grade(fields: list[str], column: dict[str, int], quality: str) -> None:
+    _set(fields, column, "predicate_id", PREDICATE[quality])
+    _set(fields, column, "mapping_justification", JUSTIFICATION[quality])
+    _set(fields, column, "confidence", CONFIDENCE[quality])
+
+
+def plan_sssom(
+    subject_label: str,
+    old_curie: str,
+    new_curie: str,
+    new_label: str,
+    *,
+    quality: str = "EXACT_MATCH",
+    mint: str | None = None,
+    source: str | None = None,
+) -> tuple[str, str]:
     """Rewrite the object columns in place. Subject is unchanged, so no re-sort.
 
     When ``mint`` is given the record is taking a registry identifier: the existing
@@ -128,6 +204,8 @@ def plan_sssom(subject_label: str, old_curie: str, new_curie: str, new_label: st
     """
     lines = SSSOM.read_text().splitlines(keepends=True)
     header = next(i for i, ln in enumerate(lines) if ln.startswith("subject_id"))
+    columns = lines[header].rstrip("\n").split("\t")
+    column = {name: index for index, name in enumerate(columns)}
     hits = [i for i, ln in enumerate(lines)
             if i > header and ln.split("\t")[1:2] == [subject_label]]
     if len(hits) != 1:
@@ -136,17 +214,28 @@ def plan_sssom(subject_label: str, old_curie: str, new_curie: str, new_label: st
             f"found {len(hits)}. Records carrying a Rule-B1 registry set (narrowMatch + "
             "kgmicrobe.compound: + cas:) have several rows — re-ground those by hand.")
     cols = lines[hits[0]].rstrip("\n").split("\t")
-    if cols[3] != old_curie:
-        raise SystemExit(f"SSSOM row object_id is {cols[3]}, expected {old_curie}")
-    cols[3], cols[4] = new_curie, new_label
+    object_i = column["object_id"]
+    if cols[object_i] != old_curie:
+        raise SystemExit(f"SSSOM row object_id is {cols[object_i]}, expected {old_curie}")
+    cols[column["object_id"]] = new_curie
+    cols[column["object_label"]] = new_label
+    cols[column["object_source"]] = object_source_for(new_curie)
+    _sync_grade(cols, column, quality)
+    if source:
+        _set(cols, column, "source", source)
+        _set(cols, column, "mapping_source", source)
+    _set(cols, column, "validation_method", "")
     note = f"object {old_curie} -> {new_curie} '{new_label}' (line {hits[0] + 1})"
     eol = "\n" if lines[hits[0]].endswith("\n") else ""
     if mint:
-        cols[2] = "skos:narrowMatch"
         registry = object_source_for(mint)
         sibling = list(cols)
-        sibling[2], sibling[3], sibling[4] = "skos:exactMatch", mint, subject_label
-        sibling[5] = registry
+        _sync_grade(sibling, column, "EXACT_MATCH")
+        _set(sibling, column, "mapping_justification", JUSTIFICATION_MANUAL)
+        _set(sibling, column, "object_match_field", "")
+        sibling[column["object_id"]] = mint
+        sibling[column["object_label"]] = subject_label
+        sibling[column["object_source"]] = registry
         lines[hits[0]] = "\t".join(cols) + eol
         lines.insert(hits[0] + 1, "\t".join(sibling) + (eol or "\n"))
         note += (f"; predicate -> skos:narrowMatch, plus a Rule B1 registry "
@@ -156,6 +245,39 @@ def plan_sssom(subject_label: str, old_curie: str, new_curie: str, new_label: st
     if not lines[-1].endswith("\n"):
         lines[-1] += "\n"
     return "".join(lines), note
+
+
+def rewrite_membership(old_curie: str, new_curie: str) -> tuple[str, int]:
+    if not MEMBERSHIP.exists():
+        return "", 0
+
+    lines = MEMBERSHIP.read_text().splitlines(keepends=True)
+    comments: list[str] = []
+    rows: list[list[str]] = []
+    moved = 0
+    for line in lines:
+        if line.startswith("#"):
+            comments.append(line if line.endswith("\n") else f"{line}\n")
+            continue
+        fields = line.rstrip("\n").split("\t")
+        if fields and fields[0] == old_curie:
+            fields[0] = new_curie
+            moved += 1
+        rows.append(fields)
+
+    if not rows:
+        return "".join(comments), moved
+
+    header, data = rows[0], rows[1:]
+    data.sort(key=lambda fields: tuple(fields[:2]))
+    out = [
+        *comments,
+        "\t".join(header) + "\n",
+        *("\t".join(fields) + "\n" for fields in data),
+    ]
+    if out and not out[-1].endswith("\n"):
+        out[-1] += "\n"
+    return "".join(out), moved
 
 
 def main() -> int:
@@ -169,6 +291,9 @@ def main() -> int:
                     help=("REQUIRED when --to is a registry mint: the ontology term to "
                           "narrowMatch. Section 3 says a minted record asserts a parent; "
                           "without one the record claims an identity nothing relates to"))
+    ap.add_argument("--parent-label",
+                    help=("canonical label for --parent when the ontology has no local "
+                          "OAK DB; verify it in the source ontology before passing it"))
     ap.add_argument("--quality", default="EXACT_MATCH")
     ap.add_argument("--reason", required=True)
     ap.add_argument("--curator", default="reground_mapped_record")
@@ -207,11 +332,15 @@ def main() -> int:
         if is_registry_mint(args.parent):
             raise SystemExit(f"--parent {args.parent} must be an ontology term, not a mint")
         args.quality = "NARROW_MATCH"          # the only honest quality for a parent
-        term_curie, new_label = args.parent, chebi_label(args.parent)
+        term_curie = normalize_object_curie(args.parent)
+        new_label = ontology_label(term_curie, args.parent_label)
     else:
         if args.parent:
             raise SystemExit("--parent applies only when --to is a registry mint")
-        term_curie, new_label = args.to, chebi_label(args.to)
+        if args.parent_label:
+            raise SystemExit("--parent-label applies only when --parent is given")
+        term_curie = normalize_object_curie(args.to)
+        new_label = ontology_label(term_curie)
 
     stamp = dt.datetime.now(dt.timezone.utc).isoformat()
     old = args.identifier
@@ -219,7 +348,12 @@ def main() -> int:
     old_label = om.get("ontology_label")
     rec["identifier"] = args.to
     om.update({"ontology_id": term_curie, "ontology_label": new_label,
-               "mapping_quality": args.quality})
+               "ontology_source": source_enum(term_curie), "mapping_quality": args.quality})
+    om["evidence"] = [{
+        "evidence_type": "CURATOR_JUDGMENT",
+        "source": args.curator,
+        "notes": args.reason,
+    }]
     rec.setdefault("curation_history", []).append({
         "timestamp": stamp, "curator": args.curator, "action": "CORRECTED",
         "changes": (f"Re-grounded {old} '{old_label}' -> {args.to} '{new_label}' "
@@ -228,12 +362,22 @@ def main() -> int:
     })
     doc["generation_date"] = stamp
 
-    sssom_text, moved = plan_sssom(rec["preferred_term"], old, term_curie, new_label,
-                                   mint=args.to if minted else None)
+    sssom_text, moved = plan_sssom(
+        rec["preferred_term"],
+        old,
+        term_curie,
+        new_label,
+        quality=args.quality,
+        mint=args.to if minted else None,
+        source=f"MIM:curator={args.curator}",
+    )
+    membership_text, membership_moved = rewrite_membership(old, args.to)
     print(f"{rec['preferred_term']!r}: {old} '{old_label}' -> {args.to} "
           + (f"(narrowMatch {term_curie} '{new_label}')" if minted
              else f"'{new_label}'"))
     print(f"  SSSOM: {moved}")
+    if membership_text:
+        print(f"  membership rows moved: {membership_moved}")
     print(f"  {old} is now free")
 
     if not args.apply:
@@ -241,7 +385,9 @@ def main() -> int:
         return 0
     save_yaml(doc, MAPPED, validate=True, target_class="IngredientCollection")
     SSSOM.write_text(sssom_text)
-    print("\nwrote data/curated/mapped_ingredients.yaml + SSSOM")
+    if membership_text:
+        MEMBERSHIP.write_text(membership_text)
+    print("\nwrote data/curated/mapped_ingredients.yaml + SSSOM + membership")
     return 0
 
 

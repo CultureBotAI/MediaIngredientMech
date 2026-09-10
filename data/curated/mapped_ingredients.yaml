@@ -1,4 +1,4 @@
-generation_date: '2026-09-10T09:35:46.753696+00:00'
+generation_date: '2026-09-10T11:28:59.951056+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -153629,9 +153629,6 @@ ingredients:
   - synonym_text: Proteose Peptone
     synonym_type: EXACT_SYNONYM
     source: manual
-  - synonym_text: Proteose peptone no. 2
-    synonym_type: RELATED_SYNONYM
-    source: manual
   - synonym_text: Proteose peptone (BD-Difco)
     synonym_type: CATALOG_VARIANT
     source: manual
@@ -153654,9 +153651,6 @@ ingredients:
     synonym_type: CATALOG_VARIANT
     source: manual
   - synonym_text: Proteose peptone no.3 (Difco)
-    synonym_type: CATALOG_VARIANT
-    source: manual
-  - synonym_text: Proteose peptone No 2 (DIFCO 0121-01-3)
     synonym_type: CATALOG_VARIANT
     source: manual
   - synonym_text: Proteose peptone No. 3 (BD--Difco)
@@ -153745,6 +153739,14 @@ ingredients:
       not resolve them: ''Proteose peptone (BD Difico)'' (x1 CultureMech mentions).
       Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-09-10T12:00:00+00:00'
+    curator: fix_micro_malformed_iris
+    action: REMOVED_SYNONYMS
+    changes: 'Removed Proteose peptone No. 2 surface forms from the generic Proteose
+      Peptone record after splitting Proteose peptone no. 2 to a local
+      kgmicrobe.ingredient identity anchored to the well-formed MICRO:0000180 parent.
+      See #137.'
+    llm_assisted: true
   notes: 'CultureMech placeholder_id: 3; absorbed Peptic digest of animal tissue source
     surface on 2026-05-11.'
   chemical_properties:
@@ -153759,17 +153761,23 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: MICRO:0002393
+- identifier: kgmicrobe.ingredient:proteose_peptone_no_2
   preferred_term: Proteose peptone no. 2
+  synonyms:
+  - synonym_text: Proteose peptone No 2 (DIFCO 0121-01-3)
+    synonym_type: CATALOG_VARIANT
+    source: manual
   ontology_mapping:
-    ontology_id: MICRO:0002393
-    ontology_label: Proteose Peptone No. 2
+    ontology_id: MICRO:0000180
+    ontology_label: proteose peptone
     ontology_source: MICRO
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: MICRO via OLS search
-      notes: Auto-created from foodon_pass; label-exact (micro)
+    - evidence_type: CURATOR_JUDGMENT
+      source: fix_micro_malformed_iris
+      notes: MICRO:0002393 is an OLS4 non-defining MicrO.owl IRI; Proteose Peptone
+        No. 2 is a distinct catalog-specific peptone, so this record keeps a local
+        identity and anchors to the well-formed generic Proteose peptone parent.
   mapping_status: MAPPED
   curation_history:
   - timestamp: '2026-05-01T19:55:09.678923+00:00'
@@ -153804,6 +153812,17 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-10T11:28:59.951056+00:00'
+    curator: fix_micro_malformed_iris
+    action: CORRECTED
+    changes: 'Re-grounded MICRO:0002393 ''Proteose Peptone No. 2'' -> kgmicrobe.ingredient:proteose_peptone_no_2
+      ''proteose peptone'' (NARROW_MATCH). MICRO:0002393 is an OLS4 non-defining MicrO.owl
+      IRI; Proteose Peptone No. 2 is a distinct catalog-specific peptone, so this
+      keeps a local identity and anchors it to the well-formed generic Proteose peptone
+      parent. See #137.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
   ingredient_type: UNDEFINED_MIXTURE
   occurrence_statistics:
     total_occurrences: 7
@@ -156804,7 +156823,7 @@ ingredients:
         ontology CURIE, so a second record on it would be a duplicate primary key
         rather than added coverage.'
   ingredient_type: UNDEFINED_MIXTURE
-- identifier: MICRO:0002392
+- identifier: kgmicrobe.ingredient:rabbit_serum
   preferred_term: Rabbit serum
   synonyms:
   - synonym_text: Rabbit serum
@@ -156842,18 +156861,29 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-10T11:26:28.923830+00:00'
+    curator: fix_micro_malformed_iris
+    action: CORRECTED
+    changes: 'Re-grounded MICRO:0002392 ''rabbit serum'' -> kgmicrobe.ingredient:rabbit_serum
+      ''blood serum'' (NARROW_MATCH). MICRO:0002392 is an OLS4 non-defining MicrO.owl
+      IRI; rabbit serum has no well-formed exact OBO term, so this keeps a local identity
+      and anchors it to blood serum. See #137.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
-    ontology_id: MICRO:0002392
-    ontology_label: rabbit serum
-    ontology_source: MICRO
-    mapping_quality: EXACT_MATCH
+    ontology_id: UBERON:0001977
+    ontology_label: blood serum
+    ontology_source: UBERON
+    mapping_quality: NARROW_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: MICRO via OLS search (resolve_unmapped)
-      notes: Auto-upgraded from UNMAPPED_0506; matched via 'Rabbit serum' (name normalization);
-        label-exact
+    - evidence_type: CURATOR_JUDGMENT
+      source: fix_micro_malformed_iris
+      notes: MICRO:0002392 is an OLS4 non-defining MicrO.owl IRI; rabbit serum has
+        no well-formed exact OBO term, so this record keeps a local identity and
+        anchors to the blood serum parent.
   ingredient_type: UNDEFINED_MIXTURE
 - identifier: CHEBI:139272
   preferred_term: rac-3-Hydroxypentanoic Acid
@@ -180665,7 +180695,7 @@ ingredients:
     inchi: InChI=1S/C18H16O7/c1-6-14(22)12(8(3)20)16-13(15(6)23)18(4)10(25-16)5-9(21)11(7(2)19)17(18)24/h5,21-23H,1-4H3
     smiles: CC(=O)C1=C(O)C=C2Oc3c(C(C)=O)c(O)c(C)c(O)c3C2(C)C1=O
   ingredient_type: SINGLE_INGREDIENT
-- identifier: MICRO:0002250
+- identifier: kgmicrobe.ingredient:v-8_juice
   preferred_term: V-8 Juice
   synonyms:
   - synonym_text: V-8 Juice
@@ -180697,18 +180727,29 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-10T11:25:00.020162+00:00'
+    curator: fix_micro_malformed_iris
+    action: CORRECTED
+    changes: 'Re-grounded MICRO:0002250 ''V-8 juice'' -> kgmicrobe.ingredient:v-8_juice
+      ''vegetable juice (us cfr)'' (NARROW_MATCH). MICRO:0002250 is an OLS4 non-defining
+      MicrO.owl IRI; V-8 Juice has no well-formed exact OBO term, so this keeps a
+      local identity and anchors it to the vegetable juice parent. See #137.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
   notes: Imported from mim-queue (source_id=mediadive.ingredient:363); no CAS-RN or
     CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
-    ontology_id: MICRO:0002250
-    ontology_label: V-8 juice
-    ontology_source: MICRO
-    mapping_quality: EXACT_MATCH
+    ontology_id: FOODON:03400264
+    ontology_label: vegetable juice (us cfr)
+    ontology_source: FOODON
+    mapping_quality: NARROW_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: MICRO via OLS search (resolve_unmapped)
-      notes: Auto-upgraded from UNMAPPED_0563; matched via 'V-8 Juice' (name normalization);
-        label-exact
+    - evidence_type: CURATOR_JUDGMENT
+      source: fix_micro_malformed_iris
+      notes: MICRO:0002250 is an OLS4 non-defining MicrO.owl IRI; V-8 Juice has no
+        well-formed exact OBO term, so this record keeps a local identity and anchors
+        to the vegetable juice parent.
 - identifier: CHEBI:17418
   preferred_term: Valeric acid
   ontology_mapping:

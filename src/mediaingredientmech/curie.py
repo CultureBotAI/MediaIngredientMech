@@ -126,11 +126,6 @@ def mim_curie_for_stem(stem: str) -> str:
 # obsolete, and the canonical …/obo/MICRO_nnnnnnn IRI round-trips on OLS4. The
 # control MICRO:0002115 'defibrinated blood' 404s on that IRI, so the check
 # discriminates rather than passing everything.
-#
-# KNOWN BAD, and currently present in the published SSSOM — these need
-# re-grounding, see issue #119 follow-up:
-#   MICRO:0002250 "V-8 juice", MICRO:0002392 "rabbit serum",
-#   MICRO:0002393 "Proteose Peptone No. 2"
 MICRO_VERIFIED = {
     "MICRO:0000082",
     "MICRO:0000094",

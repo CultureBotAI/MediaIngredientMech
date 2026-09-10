@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-09-10T09:39:16.183338+00:00
+Generated: 2026-09-10T13:11:42.011053+00:00
 Total: 2678 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1752,7 +1752,7 @@ Total: 2678 ingredients
 | CHEBI:51240 | CHEBI:51240 | Propidium iodide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30768 | CHEBI:30768 | Propionic acid | MAPPED | CHEBI | EXACT_MATCH | 37 |
 | MICRO:0000180 | MICRO:0000180 | Proteose Peptone | MAPPED | MICRO | EXACT_MATCH | 571 |
-| MICRO:0002393 | MICRO:0002393 | Proteose peptone no. 2 | MAPPED | MICRO | EXACT_MATCH | 7 |
+| kgmicrobe.ingredient:proteose_peptone_no_2 | MICRO:0000180 | Proteose peptone no. 2 | MAPPED | MICRO | NARROW_MATCH | 7 |
 | CHEBI:50205 | CHEBI:50205 | Protocatechualdehyde | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:36062 | CHEBI:36062 | Protocatechuic Acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:15430 | CHEBI:15430 | Protoporphyrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1785,7 +1785,7 @@ Total: 2678 ingredients
 | CHEBI:26493 | CHEBI:26493 | Quinic acid | MAPPED | CHEBI | EXACT_MATCH | 11 |
 | cas:6119-47-7 | cas:6119-47-7 | Quinine Hdrochloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0001229 | MICRO:0001229 | Rabbit blood | MAPPED | MICRO | EXACT_MATCH | 9 |
-| MICRO:0002392 | MICRO:0002392 | Rabbit serum | MAPPED | MICRO | EXACT_MATCH | 21 |
+| kgmicrobe.ingredient:rabbit_serum | UBERON:0001977 | Rabbit serum | MAPPED | UBERON | NARROW_MATCH | 21 |
 | CHEBI:139272 | CHEBI:139272 | rac-3-Hydroxypentanoic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:racemomycin_e | mesh:C019594 | Racemomycin E | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:556075 | CHEBI:556075 | Radicicol | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2080,7 +2080,7 @@ Total: 2678 ingredients
 | cas:3387-36-8 | cas:3387-36-8 | Uridine 5-monophosphate disodium salt | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:28290-51-9 | cas:28290-51-9 | Ursololactone Acetate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:38319 | CHEBI:38319 | Usnic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| MICRO:0002250 | MICRO:0002250 | V-8 Juice | MAPPED | MICRO | EXACT_MATCH | 3 |
+| kgmicrobe.ingredient:v-8_juice | FOODON:03400264 | V-8 Juice | MAPPED | FOODON | NARROW_MATCH | 3 |
 | CHEBI:17418 | CHEBI:17418 | Valeric acid | MAPPED | CHEBI | EXACT_MATCH | 113 |
 | CHEBI:16545 | CHEBI:16545 | Valerolactone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:7718-98-1 | cas:7718-98-1 | vanadium chloride | MAPPED | CAS | FALLBACK_REGISTRY | 26 |

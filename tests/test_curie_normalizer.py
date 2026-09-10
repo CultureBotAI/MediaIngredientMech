@@ -6,8 +6,6 @@ regression here is a regression of something we already paid for once.
 
 from __future__ import annotations
 
-import csv
-
 import pytest
 
 from mediaingredientmech.curie import CurieNormalizer, Verdict
@@ -97,7 +95,8 @@ def test_alias_map_has_no_cycles(n):
         while cur in n._aliases and hops < 20:
             cur = n._aliases[cur]
             assert cur not in seen or cur == old, f"cycle through {old}"
-            seen.add(cur); hops += 1
+            seen.add(cur)
+            hops += 1
         assert hops < 20, f"alias chain from {old} does not terminate"
 
 
@@ -144,21 +143,15 @@ def test_verdict_is_falsy_on_failure():
 
 # ---- the published SSSOM itself -------------------------------------------
 
-KNOWN_BAD_MICRO = {"MICRO:0002250", "MICRO:0002392", "MICRO:0002393"}
-
-
 def test_every_published_object_id_normalises(n):
     """The artifact we publish must satisfy our own standard.
 
-    Three MICRO ids are known-bad (malformed upstream IRI) and are excluded here
-    so this test guards against NEW breakage; re-grounding them is tracked
-    separately. If that list ever shrinks to empty, delete the exclusion.
+    Malformed upstream MICRO ids are not excluded here; if one reaches the SSSOM,
+    downstream consumers get a CURIE that OLS cannot round-trip.
     """
     bad = []
     for rows in n._mappings.values():
         for obj, _ in rows:
-            if obj in KNOWN_BAD_MICRO:
-                continue
             v = n.normalize(obj)
             if not v:
                 bad.append((obj, v.problem))
@@ -166,7 +159,7 @@ def test_every_published_object_id_normalises(n):
                      f"{sorted(set(bad))[:10]}")
 
 
-def test_known_bad_micro_ids_are_still_bad(n):
-    """The exclusion above must not outlive the defect it works around."""
-    for c in KNOWN_BAD_MICRO:
-        assert not n.normalize(c), f"{c} now passes — remove it from KNOWN_BAD_MICRO"
+@pytest.mark.parametrize("curie", ["MICRO:0002250", "MICRO:0002392", "MICRO:0002393"])
+def test_retired_malformed_micro_ids_stay_blocked(n, curie):
+    """Issue #137 re-grounded these records; the bad upstream terms stay blocked."""
+    assert not n.normalize(curie)
