@@ -117,6 +117,42 @@ def test_both_sides_are_stable_ids(edges):
     assert all(":" in r["mim_identifier"] for r in sample)
 
 
+def test_every_published_identifier_is_held_by_active_record(edges, records):
+    active = {
+        str(record.get("identifier") or "")
+        for record in records
+        if record.get("mapping_status") != "REJECTED"
+    } - {""}
+    absent = sorted({row["mim_identifier"] for row in edges} - active)
+
+    assert absent == []
+
+
+def test_split_trace_solutions_are_not_published_under_ncit_parent(edges):
+    by_identifier = defaultdict(list)
+    for row in edges:
+        if row["mim_identifier"] in {
+            "NCIT:C896",
+            "kgmicrobe.ingredient:trace_element_solution",
+            "kgmicrobe.ingredient:zeikus_trace_element_solution",
+        }:
+            by_identifier[row["mim_identifier"]].append(row["recipe_id"])
+
+    assert by_identifier["NCIT:C896"] == []
+    assert by_identifier["kgmicrobe.ingredient:trace_element_solution"] == [
+        "CultureMech:013208",
+        "CultureMech:013463",
+        "CultureMech:013693",
+        "CultureMech:013905",
+        "CultureMech:013964",
+        "CultureMech:014176",
+        "CultureMech:014194",
+    ]
+    assert by_identifier["kgmicrobe.ingredient:zeikus_trace_element_solution"] == [
+        "CultureMech:013758",
+    ]
+
+
 def test_the_artifact_carries_provenance():
     """Recipe ids are stable but the SET of recipes is not, so an edge list read
     later cannot be checked against the tree that produced it (#486)."""
@@ -143,6 +179,24 @@ def test_an_identifier_mim_does_not_hold_is_reported_not_published(mod, tmp_path
     assert unknown == {"CHEBI:absent": 1}, (
         "the absent identifier and the recipes it would have contributed must "
         "both survive -- a bare count cannot be worked by a curator (#498)")
+
+
+def test_rejected_identifiers_are_not_known_membership_targets(
+    mod, tmp_path, monkeypatch
+):
+    mapped = tmp_path / "mapped.yaml"
+    mapped.write_text(
+        yaml.safe_dump({
+            "ingredients": [
+                {"identifier": "CHEBI:active", "mapping_status": "MAPPED"},
+                {"identifier": "CHEBI:rejected", "mapping_status": "REJECTED"},
+            ],
+        }),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(mod, "CURATED", mapped)
+
+    assert mod.mim_identifiers() == {"CHEBI:active"}
 
 
 def test_repeated_listings_in_one_recipe_become_a_count_not_a_row(mod, tmp_path):
@@ -177,6 +231,38 @@ def test_source_label_override_splits_air_dried_garden_soil(mod, tmp_path):
         ("kgmicrobe.ingredient:air-dried_garden_soil", "CultureMech:000001"): 1,
         ("ENVO:00002263", "CultureMech:000002"): 1,
         ("kgmicrobe.ingredient:air-dried_garden_soil", "CultureMech:000003"): 1,
+    }
+    assert unknown == {}
+
+
+def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
+    source = tmp_path / "occ.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "NCIT:C896", "Trace element solution"])
+        w.writerow(["CultureMech:000002", "NCIT:C896", "Trace element solution SL-10"])
+        w.writerow(["CultureMech:000003", "NCIT:C896", "Zeikus trace element solution"])
+        w.writerow([
+            "CultureMech:000004", "NCIT:C896",
+            "Trace element solution (see Medium No. 187",
+        ])
+
+    collected, unknown = mod.collect(
+        source,
+        {
+            "NCIT:C896",
+            "kgmicrobe.ingredient:trace_element_solution",
+            "kgmicrobe.ingredient:trace_element_solution_sl-10",
+            "kgmicrobe.ingredient:zeikus_trace_element_solution",
+        },
+    )
+
+    assert collected == {
+        ("kgmicrobe.ingredient:trace_element_solution", "CultureMech:000001"): 1,
+        ("kgmicrobe.ingredient:trace_element_solution_sl-10", "CultureMech:000002"): 1,
+        ("kgmicrobe.ingredient:zeikus_trace_element_solution", "CultureMech:000003"): 1,
+        ("NCIT:C896", "CultureMech:000004"): 1,
     }
     assert unknown == {}
 

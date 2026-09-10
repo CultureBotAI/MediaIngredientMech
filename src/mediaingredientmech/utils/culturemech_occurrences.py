@@ -6,6 +6,9 @@ import re
 from collections.abc import Mapping
 
 AIR_DRIED_GARDEN_SOIL_ID = "kgmicrobe.ingredient:air-dried_garden_soil"
+TRACE_ELEMENT_SOLUTION_ID = "kgmicrobe.ingredient:trace_element_solution"
+TRACE_ELEMENT_SOLUTION_SL_10_ID = "kgmicrobe.ingredient:trace_element_solution_sl-10"
+ZEIKUS_TRACE_ELEMENT_SOLUTION_ID = "kgmicrobe.ingredient:zeikus_trace_element_solution"
 
 
 def _source_label_key(value: str) -> str:
@@ -20,6 +23,9 @@ def _source_label_key(value: str) -> str:
 # but MIM now publishes as narrower local registry records.
 SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("air-dried garden soil"): AIR_DRIED_GARDEN_SOIL_ID,
+    _source_label_key("Trace element solution"): TRACE_ELEMENT_SOLUTION_ID,
+    _source_label_key("Trace element solution SL-10"): TRACE_ELEMENT_SOLUTION_SL_10_ID,
+    _source_label_key("Zeikus trace element solution"): ZEIKUS_TRACE_ELEMENT_SOLUTION_ID,
 }
 
 

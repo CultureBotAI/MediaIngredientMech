@@ -6,8 +6,8 @@ synonyms:
   source: communitymech-unmapped
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 8
-  media_count: 8
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-05-01T02:37:08.074047+00:00'
   curator: audit_import_ingredients[communitymech-unmapped]
@@ -52,6 +52,14 @@ curation_history:
     transcribing DSMZ solution 4178 Trace element solution SL-10.
   llm_assisted: true
   llm_model: gpt-5
+- timestamp: '2026-09-10T02:58:59+00:00'
+  curator: split_trace_solution_memberships
+  action: CORRECTED
+  changes: Corrected occurrence_statistics 8/8 -> 0/0 (media_count/total_occurrences)
+    after source-label-specific CultureMech membership splitting in issue 560. No
+    Trace element solution SL-10 row occurs in the 8c79a66fec occurrence snapshot;
+    the old 8/8 count was inherited from shared parent NCIT:C896 rows.
+  llm_assisted: false
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Trace_element_solution_SL-10);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION
