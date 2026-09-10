@@ -131,6 +131,13 @@ curation_history:
     grounding and clears CHEBI:6636''s collision, leaving only ''MgCl2'' on the anhydrous
     term where it belongs.'
   llm_assisted: false
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:6636 -> CHEBI:86345 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 12285-34-6
   data_source: NCI CACTUS Chemical Identifier Resolver
@@ -138,7 +145,7 @@ chemical_properties:
   molecular_formula: 2Cl.Mg
   inchi: InChI=1S/2ClH.Mg/h2*1H;/q;;+2/p-2
   smiles: '[Cl-].[Cl-].[Mg+2]'
-kg_microbe_node_id: CHEBI:6636
+kg_microbe_node_id: CHEBI:86345
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: MINERAL_SOURCE

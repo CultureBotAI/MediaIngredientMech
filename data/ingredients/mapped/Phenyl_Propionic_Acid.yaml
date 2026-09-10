@@ -75,6 +75,13 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:501520 -> CHEBI:28631 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 501-52-0
   data_source: PubChem API
@@ -82,7 +89,7 @@ chemical_properties:
   molecular_formula: C9H10O2
   inchi: InChI=1S/C9H10O2/c10-9(11)7-6-8-4-2-1-3-5-8/h1-5H,6-7H2,(H,10,11)
   smiles: O=C(O)CCc1ccccc1
-kg_microbe_node_id: CHEBI:501520
+kg_microbe_node_id: CHEBI:28631
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE

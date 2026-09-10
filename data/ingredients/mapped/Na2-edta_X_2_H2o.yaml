@@ -173,6 +173,13 @@ curation_history:
     it. Now agrees with the merge target ''Na2EDTA·2H2O''. Provenance is unaffected:
     what the record used to assert is in this history.'
   llm_assisted: false
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:64734 -> CHEBI:64758 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7487-55-0
   data_source: PubChem API (preprocessed)
@@ -180,7 +187,7 @@ chemical_properties:
   molecular_formula: C10H14N2O8.2Na.2H2O
   inchi: InChI=1S/C10H16N2O8.2Na/c13-7(14)3-11(4-8(15)16)1-2-12(5-9(17)18)6-10(19)20;;/h1-6H2,(H,13,14)(H,15,16)(H,17,18)(H,19,20);;/q;2*+1/p-2
   smiles: O=C([O-])C[NH+](CC[NH+](CC(=O)[O-])CC(=O)[O-])CC(=O)[O-].[Na+].[Na+]
-kg_microbe_node_id: CHEBI:64734
+kg_microbe_node_id: CHEBI:64758
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: CHELATOR

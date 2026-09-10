@@ -206,6 +206,13 @@ curation_history:
     not resolve them: ''Thiamine (0.05 μg/mL)'' (x1 CultureMech mentions). Source:
     culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:26948 -> CHEBI:18385 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 70-16-6
   data_source: OAK/CHEBI xref (overrode 200-425-3|59-43-8|67-03-8)
@@ -213,7 +220,7 @@ chemical_properties:
   molecular_formula: C12H17N4OS
   inchi: InChI=1S/C12H17N4OS/c1-8-11(3-4-17)18-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7,17H,3-4,6H2,1-2H3,(H2,13,14,15)/q+1
   smiles: Cc1ncc(C[n+]2csc(CCO)c2C)c(N)n1
-kg_microbe_node_id: CHEBI:26948
+kg_microbe_node_id: CHEBI:18385
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: VITAMIN_SOURCE

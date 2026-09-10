@@ -110,6 +110,13 @@ curation_history:
     it. Now agrees with the merge target ''Sodium tartrate''. Provenance is unaffected:
     what the record used to assert is in this history.'
   llm_assisted: false
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:30924 -> CHEBI:63017 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
 chemical_properties:
   cas_rn: 868-18-8
   data_source: PubChem API (preprocessed)
@@ -117,7 +124,7 @@ chemical_properties:
   molecular_formula: C4H4O6
   inchi: InChI=1S/C4H6O6/c5-1(3(7)8)2(6)4(9)10/h1-2,5-6H,(H,7,8)(H,9,10)/p-2/t1-,2-/m1/s1
   smiles: O=C([O-])[C@H](O)[C@@H](O)C(=O)[O-]
-kg_microbe_node_id: CHEBI:30924
+kg_microbe_node_id: CHEBI:63017
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: CARBON_SOURCE

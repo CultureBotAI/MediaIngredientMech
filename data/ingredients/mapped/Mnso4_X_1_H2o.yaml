@@ -140,7 +140,14 @@ curation_history:
   changes: cas_rn 7785-87-7 -> 10034-96-5. 7785-87-7 is the ANHYDROUS parent's CAS.
     This record is grounded to CHEBI:86364 manganese(II) sulfate monohydrate, whose
     ChEBI dbxref is 10034-96-5 (#334).
-kg_microbe_node_id: CHEBI:86360
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:86360 -> CHEBI:86364 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+kg_microbe_node_id: CHEBI:86364
 chemical_properties:
   cas_rn: 10034-96-5
   data_source: PubChem (via CHEBI:86360)

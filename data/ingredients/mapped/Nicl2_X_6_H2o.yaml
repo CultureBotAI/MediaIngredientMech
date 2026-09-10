@@ -209,7 +209,14 @@ curation_history:
     7791-20-0 is the dbxref on CHEBI:53542 nickel chloride hexahydrate, which this
     record is grounded to. A hydrate and its anhydrous parent are different substances
     with different formula weights (#334).
-kg_microbe_node_id: CHEBI:34887
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:34887 -> CHEBI:53542 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+kg_microbe_node_id: CHEBI:53542
 chemical_properties:
   cas_rn: 7791-20-0
   data_source: OAK/CHEBI xref

@@ -218,7 +218,14 @@ curation_history:
     close match both understated it. Every one of the 54 registry-identified records
     is graded non-exact, so the two move together: an exact grounding takes the ontology
     id, as MgSO4 x 7 H2O does (#334).'
-kg_microbe_node_id: CHEBI:34683
+- timestamp: '2026-09-09T00:00:00+00:00'
+  curator: fix_kg_microbe_node_id_drift
+  action: CORRECTED
+  changes: kg_microbe_node_id CHEBI:34683 -> CHEBI:91258 (#554). The compatibility
+    node id lagged a same-prefix identifier correction; the downstream node id must
+    match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+kg_microbe_node_id: CHEBI:91258
 chemical_properties:
   cas_rn: 10028-24-7
   data_source: OAK/CHEBI xref

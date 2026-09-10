@@ -114,6 +114,15 @@ qc-flat-coverage:
 qc-duplicate-ids:
     uv run --frozen python scripts/audit_duplicate_identifiers.py --check
 
+# The exported node id is a compatibility copy of identifier. Same-prefix drift
+# means a Section 3 identity repair corrected the record without correcting the
+# downstream node id; cross-prefix mismatches are reported for separate review.
+# Issue #554.
+#
+# Fail if kg_microbe_node_id disagrees with identifier inside one CURIE prefix
+qc-kg-microbe-node-ids:
+    uv run --frozen python scripts/audit_kg_microbe_node_ids.py --check
+
 # Validate recipe/mixture has-part semantics across the authoritative catalog.
 # LinkML validates one StockComponent at a time; this gate additionally checks
 # local-vs-external reference scope, target labels, self/duplicate parts, and
@@ -209,7 +218,7 @@ report-label-drift:
 # `just validate-products` locally to reproduce the gate; `just report-label-drift`
 # writes the full drift TSV. Engine A (`just validate-terms-all`) is a local-only
 # LinkML cross-check (one validator process per record → too slow for CI).
-qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids qc-component-partonomy qc-flat-coverage check-instruction-refs check-curation-targets
+qc: validate-all validate-strict qc-evidence qc-sssom qc-roundtrip qc-duplicate-ids qc-kg-microbe-node-ids qc-component-partonomy qc-flat-coverage check-instruction-refs check-curation-targets
 
 # Section 3 makes a hydration state a distinct substance, but the id-label gate
 # cannot see violations: its plausible waiver compares ontology_id against the
