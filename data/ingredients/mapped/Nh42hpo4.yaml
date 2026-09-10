@@ -21,9 +21,6 @@ synonyms:
 - synonym_text: (NH4)2HPO4(Fisher A686)
   synonym_type: RAW_TEXT
   source: merged_from_unmapped_duplicate_review_2026_05_11
-- synonym_text: 'Original amount: (NH4)2HPO4(Fisher A686)'
-  synonym_type: RAW_TEXT
-  source: merged_from_unmapped_duplicate_review_2026_05_11
 - synonym_text: diazanium hydrogen phosphate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
@@ -117,6 +114,14 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''Ammonium phosphate'' (x8 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-10T04:48:50Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CORRECTED
+  changes: 'Removed stale CultureMech note text from synonyms: Original amount: (NH4)2HPO4(Fisher
+    A686). The resolvable vendor form remains as (NH4)2HPO4(Fisher A686).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7783-28-0
   data_source: PubChem API

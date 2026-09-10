@@ -1,4 +1,4 @@
-generation_date: '2026-09-08T20:21:47.294291+00:00'
+generation_date: '2026-09-10T04:50:00.135270+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -139926,9 +139926,6 @@ ingredients:
   - synonym_text: (NH4)2HPO4(Fisher A686)
     synonym_type: RAW_TEXT
     source: merged_from_unmapped_duplicate_review_2026_05_11
-  - synonym_text: 'Original amount: (NH4)2HPO4(Fisher A686)'
-    synonym_type: RAW_TEXT
-    source: merged_from_unmapped_duplicate_review_2026_05_11
   - synonym_text: diazanium hydrogen phosphate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
@@ -140023,6 +140020,15 @@ ingredients:
       not resolve them: ''Ammonium phosphate'' (x8 CultureMech mentions). Source:
       culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-09-10T04:48:50Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CORRECTED
+    changes: 'Removed stale CultureMech note text from synonyms: Original amount:
+      (NH4)2HPO4(Fisher A686). The resolvable vendor form remains as (NH4)2HPO4(Fisher
+      A686).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
   chemical_properties:
     cas_rn: 7783-28-0
     data_source: PubChem API
@@ -140411,9 +140417,6 @@ ingredients:
   - synonym_text: (NH4)2SO4(Fisher A 702)
     synonym_type: RAW_TEXT
     source: merged_from_unmapped_duplicate_review_2026_05_11
-  - synonym_text: 'Original amount: (NH4)2SO4(Fisher A 702)'
-    synonym_type: RAW_TEXT
-    source: merged_from_unmapped_duplicate_review_2026_05_11
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 1807
@@ -140533,6 +140536,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-10T04:48:50Z'
+    curator: mediaingredientmech-agentic-curation
+    action: CORRECTED
+    changes: 'Removed stale CultureMech note text from synonyms: Original amount:
+      (NH4)2SO4(Fisher A 702). The resolvable vendor form remains as (NH4)2SO4(Fisher
+      A 702).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
   kg_microbe_node_id: CHEBI:62946
   chemical_properties:
     cas_rn: 7783-20-2
@@ -216578,9 +216590,9 @@ ingredients:
     curator: split_trace_solution_memberships
     action: CORRECTED
     changes: Corrected occurrence_statistics 8/8 -> 0/0 (media_count/total_occurrences)
-      after source-label-specific CultureMech membership splitting in issue 560. No Trace
-      element solution SL-10 row occurs in the 8c79a66fec occurrence snapshot; the
-      old 8/8 count was inherited from shared parent NCIT:C896 rows.
+      after source-label-specific CultureMech membership splitting in issue 560. No
+      Trace element solution SL-10 row occurs in the 8c79a66fec occurrence snapshot;
+      the old 8/8 count was inherited from shared parent NCIT:C896 rows.
     llm_assisted: false
   notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:Trace_element_solution_SL-10);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
@@ -216905,8 +216917,8 @@ ingredients:
     curator: split_trace_solution_memberships
     action: CORRECTED
     changes: Corrected occurrence_statistics 8/8 -> 1/1 (media_count/total_occurrences)
-      after source-label-specific CultureMech membership splitting in issue 560. The single
-      mediadive.compound:1914 Zeikus trace element solution row from the 8c79a66fec
+      after source-label-specific CultureMech membership splitting in issue 560. The
+      single mediadive.compound:1914 Zeikus trace element solution row from the 8c79a66fec
       occurrence snapshot now resolves to this local stock-solution identity instead
       of the parent NCIT:C896.
     llm_assisted: false
