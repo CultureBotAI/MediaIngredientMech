@@ -22,6 +22,9 @@ synonyms:
 - synonym_text: alpha-dextrose
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
+- synonym_text: α-D-Glucose
+  synonym_type: EXACT_SYNONYM
+  source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 7
@@ -88,6 +91,12 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-10T05:18:56Z'
+  curator: mediaingredientmech-agentic-curation
+  action: CORRECTED
+  changes: Added Unicode-Greek synonym α-D-Glucose moved from generic Glucose; this
+    spelling names the alpha anomer CHEBI:17925 (#518).
+  llm_assisted: true
 chemical_properties:
   cas_rn: 492-62-6
   data_source: PubChem API
