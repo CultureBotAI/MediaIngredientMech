@@ -78,10 +78,11 @@ def test_the_two_buckets_are_keyed_on_kind_not_on_prose(mod):
         {"kind": mod.ANHYDROUS_TERM, "detail": "this one states nothing at all"},
     ]
 
-    mismatched = [r for r in rows if r["kind"] == mod.DIFFERENT_STATE]
+    buckets = mod.split_synonym_buckets(rows)
 
-    assert len(mismatched) == 1
-    assert mismatched[0]["detail"].startswith("reworded")
+    assert len(buckets[mod.DIFFERENT_STATE]) == 1
+    assert buckets[mod.DIFFERENT_STATE][0]["detail"].startswith("reworded")
+    assert len(buckets[mod.ANHYDROUS_TERM]) == 1
 
 
 def test_the_old_substring_rule_would_have_got_both_wrong(mod):
@@ -111,6 +112,80 @@ def test_kind_is_written_to_the_synonym_tsv(mod):
         "kind",
         "detail",
         "hydrate_synonyms",
+    ]
+
+    rows = mod.classify_synonym_rows(
+        [
+            {
+                "identifier": "CHEBI:1",
+                "preferred_term": "magnesium chloride",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:1",
+                    "ontology_label": "magnesium chloride",
+                },
+                "synonyms": [{"synonym_text": "MgCl2 x 6 H2O"}],
+            }
+        ],
+        {"CHEBI:1": "Cl2Mg"},
+    )
+
+    assert rows and set(rows[0]) == set(mod.SYNONYM_FIELDS)
+    assert rows[0]["kind"] == mod.ANHYDROUS_TERM
+
+
+def test_synonym_different_state_rows_are_classified_by_the_source(mod):
+    rows = mod.classify_synonym_rows(
+        [
+            {
+                "identifier": "CHEBI:1",
+                "preferred_term": "MgCl2 x 6 H2O",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:1",
+                    "ontology_label": "magnesium chloride hexahydrate",
+                },
+                "synonyms": [{"synonym_text": "MgCl2 x 7 H2O"}],
+            }
+        ],
+        {"CHEBI:1": "Cl2Mg.6H2O"},
+    )
+
+    assert len(rows) == 1
+    assert rows[0]["kind"] == mod.DIFFERENT_STATE
+
+
+def test_preferred_term_hydrate_rows_are_classified_by_the_source(mod):
+    rows = mod.classify_hydrate_rows(
+        [
+            {
+                "identifier": "CHEBI:1",
+                "preferred_term": "MgCl2 x 6 H2O",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:1",
+                    "ontology_label": "magnesium chloride",
+                },
+            },
+            {
+                "identifier": "CHEBI:2",
+                "preferred_term": "NaCl",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:2",
+                    "ontology_label": "sodium chloride",
+                },
+            },
+        ],
+        {"CHEBI:1": "Cl2Mg", "CHEBI:2": "ClNa"},
+        set(),
+    )
+
+    assert rows == [
+        {
+            "identifier": "CHEBI:1",
+            "preferred_term": "MgCl2 x 6 H2O",
+            "ontology_id": "CHEBI:1",
+            "ontology_label": "magnesium chloride",
+            "term_formula": "Cl2Mg",
+            "status": "HYDRATE_ON_ANHYDROUS_TERM",
+        }
     ]
 
 

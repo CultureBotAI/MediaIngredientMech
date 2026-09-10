@@ -18,6 +18,7 @@ from the local chebi.db. Exits 0 -- it is a measurement, not a gate.
 from __future__ import annotations
 
 import argparse
+import collections
 import csv
 import os
 import re
@@ -73,6 +74,141 @@ SYNONYM_FIELDS = [
     "detail",
     "hydrate_synonyms",
 ]
+
+
+def term_is_hydrate(
+    ontology_id: str,
+    ontology_label: str,
+    form: dict[str, str],
+) -> bool:
+    """Water as its own formula component, or the term's own label saying so.
+
+    Both tests come from hydrate_guard so they cannot drift: a bare "H2O"
+    substring matches `H2O4P` (dihydrogenphosphate, no water), and a bare
+    /hydrate/ matches `borohydrate` and `carbohydrate` — two live MIM targets
+    (`CHEBI:195690` monochlorohydrate, `cas:9036-88-8` b-Mannan borohydrate)
+    would otherwise be called hydrate terms.
+    """
+    return bool(
+        FORMULA_WATER.search(form.get(ontology_id, ""))
+        or HYDRATE.search(str(ontology_label or ""))
+    )
+
+
+def formula_known(ontology_id: str, form: dict[str, str]) -> bool:
+    return bool(form.get(ontology_id))
+
+
+def classify_hydrate_rows(
+    records: list[dict],
+    form: dict[str, str],
+    anchored: set[str],
+) -> list[dict]:
+    rows = []
+    for rec in records:
+        term = str(rec.get("preferred_term") or "")
+        if not HYDRATE.search(term):
+            continue
+        ident = str(rec.get("identifier") or "")
+        om = rec.get("ontology_mapping") or {}
+        target = str(om.get("ontology_id") or "")
+        f = form.get(target, "")
+        is_hydrate = term_is_hydrate(target, om.get("ontology_label"), form)
+        if ident.startswith("cas:"):
+            status = (
+                "OK_OWN_CAS_ID"
+                if term in anchored
+                else "CAS_MISSING_ANCHOR_ROWS"
+            )
+        elif is_hydrate:
+            status = "OK_HYDRATE_TERM"
+        elif target.startswith("CHEBI:") and f:
+            status = "HYDRATE_ON_ANHYDROUS_TERM"
+        else:
+            status = "UNKNOWN_NO_FORMULA"
+        rows.append({
+            "identifier": ident,
+            "preferred_term": term,
+            "ontology_id": target,
+            "ontology_label": om.get("ontology_label") or "",
+            "term_formula": f,
+            "status": status,
+        })
+    return rows
+
+
+def hydrate_synonyms(rec: dict) -> list[str]:
+    return [
+        str(sy.get("synonym_text") or "")
+        for sy in (rec.get("synonyms") or [])
+        if HYDRATE.search(str(sy.get("synonym_text") or ""))
+    ]
+
+
+def classify_synonym_rows(records: list[dict], form: dict[str, str]) -> list[dict]:
+    syn_rows = []
+    for rec in records:
+        term = str(rec.get("preferred_term") or "")
+        om = rec.get("ontology_mapping") or {}
+        target = str(om.get("ontology_id") or "")
+        hyd = hydrate_synonyms(rec)
+        if not hyd:
+            continue
+        if HYDRATE.search(term):
+            # The record's own label is a hydrate, but a synonym may name a
+            # DIFFERENT state (`MgSO4·7H2O` with `MgSO4 x 6 H2O`) — the same
+            # Section 3 collapse, and one the mapped bucket calls clean.
+            # water_multiplicity returns None for "unspecified", which must not
+            # count as a mismatch (#254).
+            here = water_multiplicity(term)
+            if here is None:
+                continue
+            other = sorted(
+                {
+                    w
+                    for w in (water_multiplicity(h) for h in hyd)
+                    if w is not None and w != here
+                },
+                key=float,
+            )
+            if not other:
+                continue                  # same state, just respelled
+            syn_rows.append({
+                "identifier": str(rec.get("identifier") or ""),
+                "preferred_term": term,
+                "ontology_id": target,
+                # `kind` is the machine key; `detail` is prose for a
+                # human and may be reworded freely (#259).
+                "kind": DIFFERENT_STATE,
+                "detail": f"record states {here} H2O; synonyms state "
+                          + ", ".join(other),
+                "hydrate_synonyms": " | ".join(hyd),
+            })
+            continue
+        if term_is_hydrate(target, om.get("ontology_label"), form):
+            continue                      # the term itself is the hydrate
+        if not formula_known(target, form):
+            continue                      # cannot tell; do not assert either way
+        syn_rows.append({
+            "identifier": str(rec.get("identifier") or ""),
+            "preferred_term": term,
+            "ontology_id": target,
+            "kind": ANHYDROUS_TERM,
+            "detail": "term formula has no water",
+            "hydrate_synonyms": " | ".join(hyd),
+        })
+    return syn_rows
+
+
+def split_synonym_buckets(rows: list[dict]) -> dict[str, list[dict]]:
+    # Key on `kind`, not on a substring of `detail`. The split used to test
+    # `"states" in r["detail"]`, so rewording the human-readable sentence -- or
+    # a term label that happens to contain "states" -- silently reclassified
+    # rows between the two buckets the summary reports (#259).
+    out: dict[str, list[dict]] = collections.defaultdict(list)
+    for row in rows:
+        out[row["kind"]].append(row)
+    return out
 
 
 def formulas() -> dict[str, str]:
@@ -134,47 +270,11 @@ def main() -> int:
     form = formulas()
     anchored = anchored_subjects()
 
-    def _term_is_hydrate(ontology_id: str, ontology_label: str) -> bool:
-        """Water as its own formula component, or the term's own label saying so.
-
-        Both tests come from hydrate_guard so they cannot drift: a bare "H2O"
-        substring matches `H2O4P` (dihydrogenphosphate, no water), and a bare
-        /hydrate/ matches `borohydrate` and `carbohydrate` — two live MIM targets
-        (`CHEBI:195690` monochlorohydrate, `cas:9036-88-8` b-Mannan borohydrate)
-        would otherwise be called hydrate terms.
-        """
-        return bool(FORMULA_WATER.search(form.get(ontology_id, ""))
-                    or HYDRATE.search(str(ontology_label or "")))
-
-    def _formula_known(ontology_id: str) -> bool:
-        return bool(form.get(ontology_id))
-
     # parsed once: re-reading this 6.7 MB / 2308-record file for the second scan
     # cost +55% wall clock
     mapped_records = yaml.safe_load(MAPPED.read_text())["ingredients"]
     baseline_ids = baseline_identifiers()
-    rows = []
-    for rec in mapped_records:
-        term = str(rec.get("preferred_term") or "")
-        if not HYDRATE.search(term):
-            continue
-        ident = str(rec.get("identifier") or "")
-        om = rec.get("ontology_mapping") or {}
-        target = str(om.get("ontology_id") or "")
-        f = form.get(target, "")
-        term_is_hydrate = _term_is_hydrate(target, om.get("ontology_label"))
-        if ident.startswith("cas:"):
-            status = ("OK_OWN_CAS_ID" if term in anchored
-                      else "CAS_MISSING_ANCHOR_ROWS")
-        elif term_is_hydrate:
-            status = "OK_HYDRATE_TERM"
-        elif target.startswith("CHEBI:") and f:
-            status = "HYDRATE_ON_ANHYDROUS_TERM"
-        else:
-            status = "UNKNOWN_NO_FORMULA"
-        rows.append({"identifier": ident, "preferred_term": term,
-                     "ontology_id": target, "ontology_label": om.get("ontology_label") or "",
-                     "term_formula": f, "status": status})
+    rows = classify_hydrate_rows(mapped_records, form, anchored)
 
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     with REPORT.open("w", newline="") as fh:
@@ -188,7 +288,6 @@ def main() -> int:
     if not rows:
         print("no mapped record carries hydrate notation")
 
-    import collections
     c = collections.Counter(r["status"] for r in rows)
     print(f"{len(rows)} record(s) whose preferred_term carries hydrate notation\n")
     for k in ("HYDRATE_ON_ANHYDROUS_TERM", "CAS_MISSING_ANCHOR_ROWS",
@@ -214,57 +313,12 @@ def main() -> int:
     #                    DIFFERENT one (MgSO4·7H2O carrying MgSO4 x 6 H2O).
     #                    These land in OK_HYDRATE_TERM above, i.e. reported clean.
     # Issue #251.
-    def _hydrate_synonyms(rec):
-        return [str(sy.get("synonym_text") or "") for sy in (rec.get("synonyms") or [])
-                if HYDRATE.search(str(sy.get("synonym_text") or ""))]
-
-    syn_rows = []
-    for rec in mapped_records:
-        term = str(rec.get("preferred_term") or "")
-        om = rec.get("ontology_mapping") or {}
-        target = str(om.get("ontology_id") or "")
-        hyd = _hydrate_synonyms(rec)
-        if not hyd:
-            continue
-        if HYDRATE.search(term):
-            # The record's own label is a hydrate, but a synonym may name a
-            # DIFFERENT state (`MgSO4·7H2O` with `MgSO4 x 6 H2O`) — the same
-            # Section 3 collapse, and one the mapped bucket calls clean.
-            # water_multiplicity returns None for "unspecified", which must not
-            # count as a mismatch (#254).
-            here = water_multiplicity(term)
-            if here is None:
-                continue
-            other = sorted({w for w in (water_multiplicity(h) for h in hyd)
-                            if w is not None and w != here}, key=float)
-            if not other:
-                continue                  # same state, just respelled
-            syn_rows.append({"identifier": str(rec.get("identifier") or ""),
-                             "preferred_term": term, "ontology_id": target,
-                             # `kind` is the machine key; `detail` is prose for a
-                             # human and may be reworded freely (#259).
-                             "kind": DIFFERENT_STATE,
-                             "detail": f"record states {here} H2O; synonyms state "
-                                       + ", ".join(other),
-                             "hydrate_synonyms": " | ".join(hyd)})
-            continue
-        if _term_is_hydrate(target, om.get("ontology_label")):
-            continue                      # the term itself is the hydrate
-        if not _formula_known(target):
-            continue                      # cannot tell; do not assert either way
-        syn_rows.append({"identifier": str(rec.get("identifier") or ""),
-                         "preferred_term": term, "ontology_id": target,
-                         "kind": ANHYDROUS_TERM,
-                         "detail": "term formula has no water",
-                         "hydrate_synonyms": " | ".join(hyd)})
-
-    # Keyed on `kind`, not on a substring of `detail`. The split used to test
-    # `"states" in r["detail"]`, so rewording the human-readable sentence -- or
-    # a term label that happens to contain "states" -- silently reclassified
-    # rows between the two buckets the summary reports (#259).
-    mismatched = [r for r in syn_rows if r["kind"] == DIFFERENT_STATE]
+    syn_rows = classify_synonym_rows(mapped_records, form)
+    buckets = split_synonym_buckets(syn_rows)
+    mismatched = buckets[DIFFERENT_STATE]
+    anhydrous = buckets[ANHYDROUS_TERM]
     print(f"\n{len(syn_rows)} mapped record(s) carry a hydrate SYNONYM their own term does "
-          f"not account for\n  {len(syn_rows) - len(mismatched)} on an anhydrous term, "
+          f"not account for\n  {len(anhydrous)} on an anhydrous term, "
           f"{len(mismatched)} naming a different hydration state.")
     if syn_rows:
         known = {r["identifier"] for r in syn_rows} & baseline_ids
