@@ -329,7 +329,12 @@ def main() -> int:
                 "verdict on the intended sense before promotion (#203). Left "
                 "PENDING_REVIEW.")
     with MANIFEST.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(manifest_rows[0].keys()), delimiter="\t")
+        w = csv.DictWriter(
+            f,
+            fieldnames=list(manifest_rows[0].keys()),
+            delimiter="\t",
+            lineterminator="\n",
+        )
         w.writeheader(); w.writerows(manifest_rows)
 
     print(f"\nApplied: promoted {len(promoted_ids)}, added {len(sssom_rows)} SSSOM rows, wrote manifest verdicts.")
