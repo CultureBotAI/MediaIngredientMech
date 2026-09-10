@@ -26,7 +26,6 @@ Usage:
 
 from __future__ import annotations
 
-from mediaingredientmech.utils.object_source import object_source_for
 import argparse
 import csv
 import importlib.util
@@ -37,6 +36,11 @@ from pathlib import Path
 import yaml
 
 _REPO = Path(__file__).resolve().parent.parent
+# Same bootstrap as the sibling writers: this module imported the package only
+# lazily before the shared object_source table, so a top-level import must not
+# make it need an installed package to run (#603).
+sys.path.insert(0, str(_REPO / "src"))
+from mediaingredientmech.utils.object_source import object_source_for  # noqa: E402
 MAPPED = _REPO / "data" / "ingredients" / "mapped"
 CURATOR = "claude_culturemech_residual_grounding"
 SOURCE = "culturemech:output/ingredient_occurrences.tsv"

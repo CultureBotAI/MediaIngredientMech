@@ -42,6 +42,10 @@ CURATED = _REPO / "data" / "curated" / "mapped_ingredients.yaml"
 
 # One table, shared with every other writer (#385). It used to be duplicated
 # here and in promote_resolved_unmapped, where three prefixes were missing.
+# This script carried no package import before that, so it takes the same
+# sys.path bootstrap its sibling writers use rather than starting to require an
+# installed package to run (#603).
+sys.path.insert(0, str(_REPO / "src"))
 from mediaingredientmech.utils.object_source import OBJECT_SOURCE  # noqa: E402
 PREDICATE = {
     "EXACT_MATCH": "skos:exactMatch", "CLOSE_MATCH": "skos:closeMatch",

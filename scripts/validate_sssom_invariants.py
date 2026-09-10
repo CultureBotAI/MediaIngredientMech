@@ -734,7 +734,7 @@ def evaluate_rule_g(
                 {"subject_id": f"(header {field})"},
                 f"header {field} is {value!r} but the newest row mapping_date "
                 f"is {newest!r} — a consumer caching on the version would not "
-                f"see this set as changed (#301)",
+                f"see this set as changed (#301). Fix: just bump-sssom-header",
             )
 
 

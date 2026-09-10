@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
-from mediaingredientmech.utils.object_source import object_source_for
+from mediaingredientmech.utils.object_source import OBJECT_SOURCE, object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from export_individual_records import collect_existing_filenames, sanitize_filename
 
@@ -64,7 +64,6 @@ ONTOLOGY_DB = {"CHEBI": CHEBI_DB, "NCIT": _OAK / "ncit.db",
 # prefixes, missing cas / kgmicrobe.compound / kgmicrobe.ingredient -- 682 of
 # the 2,999 published rows -- so a promotion to one of those wrote an empty
 # object_source and nothing said so (#386).
-from mediaingredientmech.utils.object_source import OBJECT_SOURCE  # noqa: E402
 
 # Prefixes this helper can promote to: every ontology the corpus already publishes rows
 # for. It is deliberately keyed on OBJECT_SOURCE rather than ONTOLOGY_DB -- a missing local
