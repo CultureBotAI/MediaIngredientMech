@@ -3,8 +3,9 @@
 The SSSOM has no full generator (its provenance columns encode pipeline-run state
 absent from the curated YAML), so it is reconciled by scripts/reconcile_sssom.py.
 This asserts there is zero drift — no mapped record missing from the set, no
-orphaned/REJECTED subject still present, and no subject pointing at a superseded
-ontology_id. It complements test_role_plausibility and the SSSOM invariant gate.
+orphaned/REJECTED subject still present, no subject pointing at a superseded
+ontology_id, and no current ontology row carrying a stale predicate. It complements
+test_role_plausibility and the SSSOM invariant gate.
 """
 
 import importlib.util
@@ -32,8 +33,9 @@ def test_sssom_in_sync_with_curated():
     curated = yaml.safe_load((ROOT / "data" / "curated" / "mapped_ingredients.yaml").read_text())
     _, _, _, rows = rec._read_sssom()
     drift = rec.find_drift(curated, rows)
-    assert drift == {"gaps": [], "orphans": [], "stale": []}, (
+    assert drift == {"gaps": [], "orphans": [], "stale": [], "predicate": []}, (
         "SSSOM has drifted from the curated data. Reconcile with "
         "`python scripts/reconcile_sssom.py --apply --date <YYYY-MM-DD>`.\n"
-        f"  gaps={drift['gaps']}\n  orphans={drift['orphans']}\n  stale={drift['stale']}"
+        f"  gaps={drift['gaps']}\n  orphans={drift['orphans']}\n"
+        f"  stale={drift['stale']}\n  predicate={drift['predicate']}"
     )

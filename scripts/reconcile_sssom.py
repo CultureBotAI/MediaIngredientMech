@@ -14,11 +14,13 @@ Drift kinds (curated MAPPED records with an ontology_id are authoritative):
   ORPHAN  — an SSSOM subject has no mapped record (record removed or now REJECTED)
   STALE   — the subject's ontology row carries an id other than the record's
             current ontology_id (e.g. curated migrated to a generic/parent term)
+  PREDICATE — the current non-identity ontology row has a predicate other than
+              the one implied by the record's mapping_quality
 
 Modes:
   --check (default)  read-only; print drift; exit 1 if any (use as a CI gate)
-  --apply --date D   reconcile STALE (rewrite the ontology row from curated) and
-                     drop ORPHAN rows; GAPs are reported for manual handling
+  --apply --date D   reconcile STALE rows, sync PREDICATE-only drift, and drop
+                     ORPHAN rows; GAPs are reported for manual handling
 
 Usage:
     python scripts/reconcile_sssom.py
@@ -46,12 +48,12 @@ CURATED = _REPO / "data" / "curated" / "mapped_ingredients.yaml"
 # sys.path bootstrap its sibling writers use rather than starting to require an
 # installed package to run (#603).
 sys.path.insert(0, str(_REPO / "src"))
+from mediaingredientmech.sssom_grading import (  # noqa: E402
+    CONFIDENCE,
+    PREDICATE,
+    justification_for,
+)
 from mediaingredientmech.utils.object_source import OBJECT_SOURCE  # noqa: E402
-PREDICATE = {
-    "EXACT_MATCH": "skos:exactMatch", "CLOSE_MATCH": "skos:closeMatch",
-    "SYNONYM_MATCH": "skos:exactMatch", "NARROW_MATCH": "skos:narrowMatch",
-    "BROAD_MATCH": "skos:broadMatch",
-}
 
 # Object-id prefixes that denote an ONTOLOGY mapping row (vs a registry/identity
 # row such as cas: / kgmicrobe.*). The stale ontology row must be recognised by
@@ -83,6 +85,17 @@ def expected_mappings(curated: dict) -> dict[str, dict]:
     return out
 
 
+def expected_identifiers(curated: dict) -> dict[str, str]:
+    """preferred_term -> primary identifier for MAPPED ontology-grounded records."""
+    out = {}
+    for r in curated["ingredients"]:
+        if r.get("mapping_status") == "MAPPED":
+            om = r.get("ontology_mapping") or {}
+            if om.get("ontology_id") and r.get("identifier"):
+                out[r["preferred_term"]] = str(r["identifier"])
+    return out
+
+
 def _read_sssom():
     lines = SSSOM.read_text().splitlines(keepends=True)
     header = [ln for ln in lines if ln.startswith("#")]
@@ -100,10 +113,27 @@ def find_drift(curated: dict, rows: list[dict]) -> dict[str, list]:
     gaps = sorted(t for t in expected if t not in by_label)
     orphans = sorted(t for t in by_label if t not in expected)
     stale = []
+    predicate = []
+    primary_identifiers = expected_identifiers(curated)
     for term, om in sorted(expected.items()):
-        if term in by_label and om["ontology_id"] not in {r["object_id"] for r in by_label[term]}:
+        if term not in by_label:
+            continue
+        if om["ontology_id"] not in {r["object_id"] for r in by_label[term]}:
             stale.append((term, om["ontology_id"], sorted(r["object_id"] for r in by_label[term])))
-    return {"gaps": gaps, "orphans": orphans, "stale": stale}
+            continue
+        expected_predicate = PREDICATE[str(om.get("mapping_quality") or "")]
+        for row in by_label[term]:
+            object_id = row["object_id"]
+            if (
+                object_id == om["ontology_id"]
+                and object_id != primary_identifiers.get(term)
+                and _is_ontology_row(object_id)
+                and row["predicate_id"] != expected_predicate
+            ):
+                predicate.append(
+                    (term, object_id, expected_predicate, row["predicate_id"])
+                )
+    return {"gaps": gaps, "orphans": orphans, "stale": stale, "predicate": predicate}
 
 
 def _canonical_label_resolver():
@@ -139,11 +169,22 @@ def _append_comment(existing: str, note: str) -> str:
     return f"{existing} {note}".strip() if existing else note
 
 
-def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
+def _quality(ontology_mapping: dict) -> str:
+    return str(ontology_mapping.get("mapping_quality") or "")
+
+
+def _sync_quality_columns(fields: list[str], column: dict[str, int], quality: str) -> None:
+    fields[column["predicate_id"]] = PREDICATE[quality]
+    fields[column["mapping_justification"]] = justification_for(quality)
+    fields[column["confidence"]] = CONFIDENCE[quality]
+
+
+def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int]:
     header, col_line, data_lines, rows = _read_sssom()
     cols = col_line.rstrip("\n").split("\t")
     idx = {c: i for i, c in enumerate(cols)}
     expected = expected_mappings(curated)
+    primary_identifiers = expected_identifiers(curated)
     canonical_label = _canonical_label_resolver()
 
     # Pass 1: per stale subject, record (old id, new id, old predicate-local,
@@ -157,13 +198,11 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
             new_id = expected[term]["ontology_id"]
             if r["object_id"] != new_id:
                 old_pred = r["predicate_id"].split(":", 1)[-1]
-                new_pred = PREDICATE.get(
-                    expected[term].get("mapping_quality"), r["predicate_id"]
-                ).split(":", 1)[-1]
+                new_pred = PREDICATE[_quality(expected[term])].split(":", 1)[-1]
                 remap[term] = (r["object_id"], new_id, old_pred, new_pred)
 
     # Pass 2: rewrite.
-    out, n_stale, n_orphan = [], 0, 0
+    out, n_stale, n_orphan, n_predicate = [], 0, 0, 0
     for ln in data_lines:
         if not ln.strip():
             out.append(ln)
@@ -182,7 +221,7 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
                 # Use the OBO-canonical label (Rule B4), not the curated ontology_label.
                 f[idx["object_label"]] = canonical_label(new_id) or om.get("ontology_label") or ""
                 f[idx["object_source"]] = OBJECT_SOURCE.get(om.get("ontology_source"), f[idx["object_source"]])
-                f[idx["predicate_id"]] = PREDICATE.get(om.get("mapping_quality"), f[idx["predicate_id"]])
+                _sync_quality_columns(f, idx, _quality(om))
                 f[idx["mapping_date"]] = date
                 if "comment" in idx:
                     f[idx["comment"]] = _append_comment(f[idx["comment"]], f"[reconciled to curated mapping {date}]")
@@ -201,6 +240,23 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
                 if old_pred != new_pred:
                     c = c.replace(old_pred, new_pred)
                 f[idx["comment"]] = c
+        elif (
+            _is_ontology_row(f[idx["object_id"]])
+            and f[idx["object_id"]] == expected[term].get("ontology_id")
+            and f[idx["object_id"]] != primary_identifiers.get(term)
+        ):
+            expected_predicate = PREDICATE[_quality(expected[term])]
+            if f[idx["predicate_id"]] != expected_predicate:
+                _sync_quality_columns(f, idx, _quality(expected[term]))
+                f[idx["mapping_date"]] = date
+                if "comment" in idx:
+                    f[idx["comment"]] = _append_comment(
+                        f[idx["comment"]],
+                        f"[predicate reconciled to curated mapping {date}]",
+                    )
+                if "validation_method" in idx:
+                    f[idx["validation_method"]] = f"manual:reconcile_sssom|PREDICATE|{date}"
+                n_predicate += 1
         out.append("\t".join(f) + "\n")
 
     new_header = []
@@ -211,7 +267,7 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int]:
             ln = f'# mapping_date: "{date}"\n'
         new_header.append(ln)
     SSSOM.write_text("".join(new_header) + col_line + "".join(out))
-    return n_stale, n_orphan
+    return n_stale, n_orphan, n_predicate
 
 
 def main() -> int:
@@ -235,6 +291,12 @@ def main() -> int:
     print(f"  STALE  (row lacks current ontology_id): {len(drift['stale'])}")
     for term, oid, present in drift["stale"][:50]:
         print(f"     - {term}: expected {oid}, present {present}")
+    print(f"  PREDICATE (current ontology row, wrong predicate): {len(drift['predicate'])}")
+    for term, oid, expected_predicate, present_predicate in drift["predicate"][:50]:
+        print(
+            f"     - {term}: {oid} expected {expected_predicate}, "
+            f"present {present_predicate}"
+        )
 
     if not args.apply:
         if total == 0:
@@ -249,8 +311,11 @@ def main() -> int:
     if drift["gaps"]:
         print(f"\nNOTE: {len(drift['gaps'])} GAP(s) need new rows with full provenance — "
               "not auto-added; handle manually.")
-    n_stale, n_orphan = apply_reconcile(curated, args.date)
-    print(f"\nApplied: synced {n_stale} stale row(s), removed {n_orphan} orphan row(s).")
+    n_stale, n_orphan, n_predicate = apply_reconcile(curated, args.date)
+    print(
+        f"\nApplied: synced {n_stale} stale row(s), removed {n_orphan} "
+        f"orphan row(s), fixed {n_predicate} predicate row(s)."
+    )
     return 0
 
 
