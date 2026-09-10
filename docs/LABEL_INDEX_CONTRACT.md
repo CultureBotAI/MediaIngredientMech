@@ -70,12 +70,12 @@ genuinely undecided can be refused rather than trusted like the rest.
 
 | value | labels | meaning |
 |---|---:|---|
-| `unique` | 8,052 | one identifier. Nothing to choose. |
-| `resolved:owned` | 97 | several identifiers, but a record's own `preferred_term` **is** this label, and it sorts first. Trust it. |
-| `agree:same_substance` | 9 | competitors have the **same molecular formula** — one substance, modelled twice (e.g. `L-Cysteine` and `L-cysteine zwitterion`, both C3H7NO2S). Either pick is right. |
-| `conflict:different_substances` | **170** | competitors have **different formulas**. The first row may be the wrong compound. |
-| `unresolved:partial_chemistry` | 32 | only one competitor has a formula, so it could not be decided. |
-| `unresolved:no_chemistry` | 8 | no competitor has a formula (mixtures, environmental terms, registry mints). |
+| `unique` | 8,745 | one identifier. Nothing to choose. |
+| `resolved:owned` | 75 | several identifiers, but a record's own `preferred_term` **is** this label, and it sorts first. Trust it. |
+| `agree:same_substance` | 8 | competitors have the **same molecular formula** — one substance, modelled twice (e.g. `L-Cysteine` and `L-cysteine zwitterion`, both C3H7NO2S). Either pick is right. |
+| `conflict:different_substances` | **162** | competitors have **different formulas**. The first row may be the wrong compound. |
+| `unresolved:partial_chemistry` | 24 | only one competitor has a formula, so it could not be decided. |
+| `unresolved:no_chemistry` | 4 | no competitor has a formula (mixtures, environmental terms, registry mints). |
 
 **Treat `conflict:different_substances` as "this label does not identify one
 substance".** It is the salt-inheritance pattern: a free acid's systematic name
@@ -104,8 +104,8 @@ exactly the collisions this column exists to expose.
 
 ### Residual ambiguity this does NOT resolve
 
-336 labels still map to more than one identifier. Precedence now answers every
-one where a record *owns* the label (96 of them, previously 80). The other 240
+273 labels still map to more than one identifier. Precedence now answers every
+one where a record *owns* the label (75 of them). The other 198
 are labels no record claims as its `preferred_term` — typically a systematic
 name carried as a synonym by several salts or hydrates of one parent, e.g.
 `(2R)-2,3-dihydroxypropyl dihydrogen phosphate` on both the lithium and
@@ -130,7 +130,9 @@ an `UNMAPPED_NNNN` identifier, which resolves to nothing by design.
 The mapped term's own label, added in #365. Many records are named by formula
 (`KOH`, `KI`, `NaH2PO4•H2O`) while consumers write the chemical name, and that
 name appears nowhere else on the record — neither preferred_term nor synonym.
-754 rows; 623 labels became resolvable that were not before.
+677 rows; 538 labels became resolvable that were not before. Term labels from
+asymmetric `NARROW_MATCH` / `BROAD_MATCH` parent-child mappings are suppressed:
+a parent's label is not a name for the child, and vice versa.
 
 It ranks last because it is the ontology's name for the concept, not a name the
 record claims.
