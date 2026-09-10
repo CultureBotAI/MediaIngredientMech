@@ -71,6 +71,9 @@ from pathlib import Path
 #   d = KgMicrobeDict()          # resolves $KGMICROBE_ROOT, warns if absent
 #   d.get_entry("CHEBI:17234")   # canonical_name, synonyms, formula
 #   d.lookup_synonym("Dextrose") # -> {"CHEBI:17234", "CHEBI:4167"}
+# Parsed indexes live under cache_dir() and are safe to delete by hand:
+# MEDIAINGREDIENTMECH_CACHE_DIR, XDG_CACHE_HOME/mediaingredientmech, or
+# ~/.cache/mediaingredientmech.
 KG_MICROBE_DICT = Path(
     os.environ.get("KGMICROBE_ROOT", "../kg-microbe")
 ) / "mappings" / "kgmicrobe_unified_entity_mappings.sssom.tsv.gz"

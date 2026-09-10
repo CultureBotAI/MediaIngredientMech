@@ -97,9 +97,15 @@ CACHE_DIR_ENV = "MEDIAINGREDIENTMECH_CACHE_DIR"
 #: a change to the grouping rules reaches an operator who already has one.
 CACHE_SCHEMA_VERSION = 1
 
+#: Keep only the latest parsed kg-microbe artifact. A cache miss costs seconds,
+#: while every retained real-world index costs roughly 94 MB (#598).
+MAX_CACHE_INDEXES = 1
+
 #: Read in 1MB blocks: the artifact is ~13MB and hashing it is ~50ms, against
 #: the ~5.4s parse the hash is there to avoid.
 _HASH_BLOCK = 1 << 20
+
+_CACHE_FILE_RE = re.compile(r"^kgm-dict-v\d+-[0-9a-f]{32}\.sqlite$")
 
 
 def cache_dir() -> Path:
@@ -459,6 +465,7 @@ class KgMicrobeDict:
         self._polluted_entries = {
             chebi_id for (chebi_id,) in db.execute("SELECT chebi_id FROM entity WHERE polluted = 1")
         }
+        self._reap_stale_caches(path)
         logger.info("kg-microbe dictionary served from cache %s (%d entities)", path, count)
         return True
 
@@ -480,6 +487,7 @@ class KgMicrobeDict:
             return
         try:
             path.parent.mkdir(parents=True, exist_ok=True)
+            self._reap_stale_caches(path)
             handle, tmp_name = tempfile.mkstemp(dir=path.parent, suffix=".tmp")
             os.close(handle)
             tmp = Path(tmp_name)
@@ -523,9 +531,38 @@ class KgMicrobeDict:
             db.execute("VACUUM")
             db.close()
             tmp.replace(path)
+            self._reap_stale_caches(path)
             logger.info("wrote kg-microbe dictionary cache %s", path)
         except (sqlite3.Error, OSError) as exc:
             logger.warning("could not write dictionary cache (%s); continuing", exc)
+
+    def _reap_stale_caches(self, current: Path) -> None:
+        """
+        Remove stale kg-microbe dictionary indexes from the cache directory.
+
+        The cache key is intentionally content-based, so a new kg-microbe
+        artifact produces a new file. Keep the newly written index and the
+        newest older indexes up to :data:`MAX_CACHE_INDEXES`. Calling this
+        before the current index exists keeps enough space for it.
+
+        :param current: Path of the index just written.
+        :return: None.
+        """
+        keep_stale = max(0, MAX_CACHE_INDEXES - 1)
+        try:
+            candidates = [
+                path
+                for path in current.parent.iterdir()
+                if path != current and path.is_file() and _CACHE_FILE_RE.match(path.name)
+            ]
+            candidates.sort(
+                key=lambda path: (path.stat().st_mtime_ns, path.name),
+                reverse=True,
+            )
+            for stale in candidates[keep_stale:]:
+                stale.unlink(missing_ok=True)
+        except OSError as exc:
+            logger.warning("could not reap stale dictionary caches (%s); continuing", exc)
 
     def get_entry(self, chebi_id: str) -> KgMicrobeEntry | None:
         self.load()
