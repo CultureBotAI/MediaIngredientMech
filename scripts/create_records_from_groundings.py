@@ -26,6 +26,7 @@ Usage:
 
 from __future__ import annotations
 
+from mediaingredientmech.utils.object_source import object_source_for
 import argparse
 import csv
 import importlib.util
@@ -98,9 +99,7 @@ def emit_sssom_rows(promoter, date: str) -> int:
         if not curie or quality not in promoter.PREDICATE:
             continue
         prefix = curie.split(":", 1)[0]
-        source = (promoter.REGISTRY_SOURCE.get(prefix, "")
-                  if promoter.is_registry_mint(curie)
-                  else promoter.OBJECT_SOURCE.get(prefix.upper(), ""))
+        source = object_source_for(curie)
         src = f"MIM:{SOURCE}|MIM:curator={CURATOR}"
         row = "\t".join([
             subject, str(record.get("preferred_term") or ""), promoter.PREDICATE[quality],

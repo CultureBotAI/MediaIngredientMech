@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
+from mediaingredientmech.utils.object_source import object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from export_individual_records import collect_existing_filenames, sanitize_filename
 
@@ -59,17 +60,25 @@ ONTOLOGY_DB = {"CHEBI": CHEBI_DB, "NCIT": _OAK / "ncit.db",
 # `obo:micro.owl`. The lookup is `.get(prefix, "")`, so it failed silently —
 # add_culturemech_gap_labels.py had to carry a local override to publish correct
 # rows. Keep this table in step with the prefixes the corpus actually uses.
-OBJECT_SOURCE = {"CHEBI": "obo:chebi.owl", "NCIT": "obo:ncit.owl",
-                 "FOODON": "obo:foodon.owl", "ENVO": "obo:envo.owl",
-                 "MESH": "registry:mesh", "UBERON": "obo:uberon.owl",
-                 "MICRO": "obo:micro.owl", "BTO": "obo:bto.owl"}
+# The shared table (#385). This module used to carry its own copy of eight
+# prefixes, missing cas / kgmicrobe.compound / kgmicrobe.ingredient -- 682 of
+# the 2,999 published rows -- so a promotion to one of those wrote an empty
+# object_source and nothing said so (#386).
+from mediaingredientmech.utils.object_source import OBJECT_SOURCE  # noqa: E402
 
 # Prefixes this helper can promote to: every ontology the corpus already publishes rows
 # for. It is deliberately keyed on OBJECT_SOURCE rather than ONTOLOGY_DB -- a missing local
 # build is an availability problem, not a reason to refuse a legitimate destination, and
 # canonical_label falls back to OLS4 for those. Gating on ONTOLOGY_DB refused every MICRO
 # promotion even though OBJECT_SOURCE has carried `obo:micro.owl` since #381.
-PROMOTABLE = frozenset(OBJECT_SOURCE)
+# Spelled out rather than derived from OBJECT_SOURCE. It used to be
+# `frozenset(OBJECT_SOURCE)`, which was the same set only because that table
+# happened to list ontologies alone; sharing the fuller table would have
+# silently added cas: and kgmicrobe.* as promotion destinations, which is a
+# curation policy change and not one this refactor gets to make (#385).
+PROMOTABLE = frozenset(
+    {"CHEBI", "NCIT", "FOODON", "ENVO", "MESH", "UBERON", "MICRO", "BTO"}
+)
 
 # Imported, not re-declared: claw's builder regenerates every row from the records, so
 # a grade MIM writes that disagrees with claw's survives only until the next rebuild and
@@ -341,9 +350,7 @@ def main():
     src = f"MIM:{a.evidence_source}|MIM:curator=promote_resolved_unmapped"
     review = f"manual:promote_resolved_unmapped|PROMOTED|{a.date}"
     row = "\t".join([f"MIM:{slug}", pref, PREDICATE[a.quality], term_curie, label,
-                     (REGISTRY_SOURCE.get(term_curie.split(":", 1)[0], "")
-                      if is_registry_mint(term_curie)
-                      else OBJECT_SOURCE.get(term_curie.split(":", 1)[0].upper(), "")),
+                     object_source_for(term_curie),
                      justification_for(a.quality), src, a.date,
                      CONFIDENCE[a.quality], "", "", review]) + "\n"
     if minted and a.quality == "NARROW_MATCH":
@@ -353,7 +360,7 @@ def main():
         # to the mint IS the registry row -- a second one would just duplicate it.
         # Deliberately manual, unlike the row above: a registry mint is a curator's
         # decision that no ontology term fits, which is the opposite of a lexical match.
-        registry = REGISTRY_SOURCE.get(a.to.split(":", 1)[0], "")
+        registry = object_source_for(a.to)
         row += "\t".join([f"MIM:{slug}", pref, "skos:exactMatch", a.to, pref, registry,
                           "semapv:ManualMappingCuration", src, a.date, "0.99",
                           "", "", review]) + "\n"
@@ -365,7 +372,7 @@ def main():
         if not a.to.lower().startswith("kgmicrobe."):
             reg_mint = check_registry_mint("kgmicrobe.compound:", slug)
             row += "\t".join([f"MIM:{slug}", pref, "skos:exactMatch", reg_mint, pref,
-                              REGISTRY_SOURCE.get("kgmicrobe.compound", ""),
+                              object_source_for("kgmicrobe.compound"),
                               "semapv:ManualMappingCuration", src, a.date, "0.99",
                               "", "", review]) + "\n"
 

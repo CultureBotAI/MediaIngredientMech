@@ -60,6 +60,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
+from mediaingredientmech.utils.object_source import object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from oaklib import get_adapter
 
@@ -260,7 +261,7 @@ def main() -> int:
     for mrow, rec in promote:
         stem = mrow["file"][:-5] if mrow["file"].endswith(".yaml") else mrow["file"]
         oid = mrow["ontology_id"]
-        obj_src = OBJECT_SOURCE.get(oid.split(":")[0], "")
+        obj_src = object_source_for(oid)  # raises on an undeclared prefix (#386)
         src = "MIM:microbedecoder|MIM:curator=review-ingredients"
         # object_label from the record, not the manifest: 11 manifest rows carry an
         # empty ontology_label, which published SSSOM rows with a blank object_label.

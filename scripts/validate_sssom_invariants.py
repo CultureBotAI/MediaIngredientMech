@@ -696,6 +696,106 @@ def evaluate_rule_f(
         )
 
 
+def evaluate_rule_g(
+    prelude: Iterable[str], rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule G — the header's set version matches the newest row it describes.
+
+    `mapping_set_version` is what an SSSOM consumer caches on: it decides
+    whether the copy it holds is current. Nothing bumped it, so it was
+    hand-edited and therefore wrong most of the time -- the header read
+    2026-08-06 while two later commits had changed the rows underneath it
+    (#301). A version that does not move is worse than no version, because a
+    consumer reads it as "unchanged".
+
+    Checking it against the clock would make the file un-reproducible, which is
+    the defect kg-microbe fixed in its own artifact. So the anchor is the data:
+    the header must equal the newest `mapping_date` in the set. That moves when
+    and only when the mappings move.
+    """
+    dates = sorted(
+        value
+        for row in rows
+        if _MAPPING_DATE_RE.match(value := (row.get("mapping_date") or "").strip())
+    )
+    if not dates:
+        return
+    newest = dates[-1]
+    declared = {}
+    for line in prelude:
+        for field in ("mapping_set_version", "mapping_date"):
+            marker = f"# {field}:"
+            if line.startswith(marker):
+                declared[field] = line[len(marker):].strip().strip('"')
+    for field, value in sorted(declared.items()):
+        if value != newest:
+            yield (
+                0,
+                {"subject_id": f"(header {field})"},
+                f"header {field} is {value!r} but the newest row mapping_date "
+                f"is {newest!r} — a consumer caching on the version would not "
+                f"see this set as changed (#301)",
+            )
+
+
+def evaluate_rule_h(
+    rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule H — one published label belongs to one record.
+
+    Two records publishing the same `subject_label` make the label ambiguous
+    for anything that resolves by name, which is what CultureMech and the label
+    index do (#504, #232). A record legitimately publishes several rows -- its
+    ontology row plus its registry identity rows -- so the check is on distinct
+    *subjects* sharing a label, never on row count.
+    """
+    by_label: dict[str, set[str]] = {}
+    first_seen: dict[str, tuple[int, dict[str, str]]] = {}
+    for row_num, row in enumerate(rows, start=1):
+        label = (row.get("subject_label") or "").strip().lower()
+        if not label:
+            continue
+        subject = (row.get("subject_id") or "").strip()
+        by_label.setdefault(label, set()).add(subject)
+        first_seen.setdefault(label, (row_num, row))
+    for label, subjects in sorted(by_label.items()):
+        if len(subjects) > 1:
+            row_num, row = first_seen[label]
+            yield (
+                row_num,
+                row,
+                f"label {label!r} is published by {len(subjects)} distinct "
+                f"subjects ({', '.join(sorted(subjects))}) — a name-based "
+                f"consumer cannot tell which record is meant (#504)",
+            )
+
+
+def evaluate_rule_i(
+    rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule I — the `other` column does not repeat a synonym.
+
+    kg-microbe merges `other` into the entity's synonym set, so a repeated
+    token inflates every count taken over it and wastes a slot in the cap the
+    builder applies (#529). Comparison is case-insensitive, because that is how
+    the consumer indexes them.
+    """
+    for row_num, row in enumerate(rows, start=1):
+        tokens = [t.strip() for t in (row.get("other") or "").split("|") if t.strip()]
+        if not tokens:
+            continue
+        seen: set[str] = set()
+        repeated = sorted({t for t in tokens if t.lower() in seen or seen.add(t.lower())})
+        if repeated:
+            yield (
+                row_num,
+                row,
+                f"other repeats {', '.join(repr(r) for r in repeated)} for "
+                f"subject {row.get('subject_id', '?')!r} — the consumer merges "
+                f"this column into a synonym set (#529)",
+            )
+
+
 def evaluate_rule_d(
     rows: Iterable[dict[str, str]]
 ) -> Iterator[tuple[int, dict[str, str], str]]:
@@ -935,6 +1035,9 @@ def main(argv: list[str]) -> int:
     _collect("Rule D", evaluate_rule_d(rows))
     _collect("Rule E", evaluate_rule_e(rows))
     _collect("Rule F", evaluate_rule_f(rows))
+    _collect("Rule G", evaluate_rule_g(prelude, rows))
+    _collect("Rule H", evaluate_rule_h(rows))
+    _collect("Rule I", evaluate_rule_i(rows))
 
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
@@ -951,7 +1054,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F, G, H, I"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(
