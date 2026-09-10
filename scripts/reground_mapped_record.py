@@ -55,6 +55,7 @@ from pathlib import Path
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from mediaingredientmech.utils.object_source import object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -142,7 +143,7 @@ def plan_sssom(subject_label: str, old_curie: str, new_curie: str, new_label: st
     eol = "\n" if lines[hits[0]].endswith("\n") else ""
     if mint:
         cols[2] = "skos:narrowMatch"
-        registry = REGISTRY_SOURCE.get(mint.split(":", 1)[0], "")
+        registry = object_source_for(mint)
         sibling = list(cols)
         sibling[2], sibling[3], sibling[4] = "skos:exactMatch", mint, subject_label
         sibling[5] = registry

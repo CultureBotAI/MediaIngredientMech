@@ -36,6 +36,11 @@ from pathlib import Path
 import yaml
 
 _REPO = Path(__file__).resolve().parent.parent
+# Same bootstrap as the sibling writers: this module imported the package only
+# lazily before the shared object_source table, so a top-level import must not
+# make it need an installed package to run (#603).
+sys.path.insert(0, str(_REPO / "src"))
+from mediaingredientmech.utils.object_source import object_source_for  # noqa: E402
 MAPPED = _REPO / "data" / "ingredients" / "mapped"
 CURATOR = "claude_culturemech_residual_grounding"
 SOURCE = "culturemech:output/ingredient_occurrences.tsv"
@@ -98,9 +103,7 @@ def emit_sssom_rows(promoter, date: str) -> int:
         if not curie or quality not in promoter.PREDICATE:
             continue
         prefix = curie.split(":", 1)[0]
-        source = (promoter.REGISTRY_SOURCE.get(prefix, "")
-                  if promoter.is_registry_mint(curie)
-                  else promoter.OBJECT_SOURCE.get(prefix.upper(), ""))
+        source = object_source_for(curie)
         src = f"MIM:{SOURCE}|MIM:curator={CURATOR}"
         row = "\t".join([
             subject, str(record.get("preferred_term") or ""), promoter.PREDICATE[quality],

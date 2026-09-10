@@ -40,12 +40,13 @@ _REPO = Path(__file__).resolve().parent.parent
 SSSOM = _REPO / "mappings" / "ingredient_mappings.sssom.tsv"
 CURATED = _REPO / "data" / "curated" / "mapped_ingredients.yaml"
 
-OBJECT_SOURCE = {
-    "CHEBI": "obo:chebi.owl", "FOODON": "obo:foodon.owl", "ENVO": "obo:envo.owl",
-    "UBERON": "obo:uberon.owl", "NCIT": "obo:ncit.owl", "MICRO": "obo:micro.owl",
-    "BTO": "obo:bto.owl", "MESH": "registry:mesh", "CAS": "registry:cas",
-    "kgmicrobe.compound": "kgm:compound", "kgmicrobe.ingredient": "kgm:ingredient",
-}
+# One table, shared with every other writer (#385). It used to be duplicated
+# here and in promote_resolved_unmapped, where three prefixes were missing.
+# This script carried no package import before that, so it takes the same
+# sys.path bootstrap its sibling writers use rather than starting to require an
+# installed package to run (#603).
+sys.path.insert(0, str(_REPO / "src"))
+from mediaingredientmech.utils.object_source import OBJECT_SOURCE  # noqa: E402
 PREDICATE = {
     "EXACT_MATCH": "skos:exactMatch", "CLOSE_MATCH": "skos:closeMatch",
     "SYNONYM_MATCH": "skos:exactMatch", "NARROW_MATCH": "skos:narrowMatch",

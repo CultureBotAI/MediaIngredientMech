@@ -91,6 +91,12 @@ fetch-pubmed *args:
 # invariants (Rule A: auto-classifier token-overlap gate). Rejects are
 # written to mappings/needs_curator_review.tsv. Exits 2 on violation
 # (CI blocking). See ../culturebotai-claw/.claude/plans/now-focus-on-culturemech-piped-shell.md.
+# Stamp the SSSOM header with the newest row mapping_date, which is what Rule G
+# requires. Row writers append without touching the header, so a curation batch
+# leaves it behind and qc-sssom blocks until this runs (#602).
+bump-sssom-header *ARGS:
+    uv run --frozen python scripts/bump_sssom_header.py {{ARGS}}
+
 qc-sssom:
     uv run --frozen python scripts/validate_sssom_invariants.py
 

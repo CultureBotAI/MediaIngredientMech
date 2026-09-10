@@ -6,6 +6,7 @@ failure would have shipped a wrong identity claim or an unreviewable diff.
 
 from __future__ import annotations
 
+import csv
 import importlib.util
 from pathlib import Path
 
@@ -349,9 +350,44 @@ class TestPromotionTargets:
         """
         assert "MICRO" in promote.PROMOTABLE
 
-    def test_promotable_covers_every_published_object_source(self, promote):
-        """Otherwise a prefix can be published in SSSOM but unreachable by promotion."""
-        assert promote.PROMOTABLE == frozenset(promote.OBJECT_SOURCE)
+    def test_promotable_is_exactly_the_ontology_prefixes(self, promote):
+        """PROMOTABLE gates ontology destinations; registry mints take another path.
+
+        This used to read `PROMOTABLE == frozenset(OBJECT_SOURCE)`, which compared
+        the set to the very thing it was derived from and so could not fail. Its
+        docstring claimed to guarantee that every publishable prefix is reachable
+        by promotion, and while it sat green three published prefixes -- cas,
+        kgmicrobe.compound, kgmicrobe.ingredient -- were missing from that table
+        altogether (#385). The tautology is what let them stay missing.
+
+        Registry prefixes are deliberately absent here. `--parent` must name an
+        ontology term (MAPPING_SEMANTICS.md Section 3), and a `--to` that is a
+        registry mint is handled by the `is_registry_mint` branch, never this gate.
+        """
+        assert promote.PROMOTABLE == frozenset(
+            {"CHEBI", "NCIT", "FOODON", "ENVO", "MESH", "UBERON", "MICRO", "BTO"}
+        )
+
+    def test_every_published_prefix_is_reachable_one_way_or_the_other(self, promote):
+        """The property the old self-comparison only claimed to check."""
+        sssom = _REPO / "mappings" / "ingredient_mappings.sssom.tsv"
+        # Skip the `#` prelude, then let csv consume the column header, so the
+        # header row cannot be read as data (it parsed as prefix "object_id").
+        body = [
+            line
+            for line in sssom.read_text(encoding="utf-8").splitlines()
+            if not line.startswith("#")
+        ]
+        published = {
+            row["object_id"].split(":", 1)[0]
+            for row in csv.DictReader(body, delimiter="\t")
+        }
+        for prefix in sorted(published):
+            reachable = (
+                prefix.upper() in promote.PROMOTABLE
+                or promote.is_registry_mint(f"{prefix}:x")
+            )
+            assert reachable, f"{prefix} is published but no promotion path reaches it"
 
     def test_every_promotable_prefix_has_an_object_source(self, promote):
         """A promotion with no object_source writes an empty column (the #381 defect)."""

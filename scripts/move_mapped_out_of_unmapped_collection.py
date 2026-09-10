@@ -42,6 +42,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml  # noqa: E402
 
+from mediaingredientmech.utils.object_source import object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 from export_individual_records import (  # noqa: E402
     collect_existing_filenames, sanitize_filename,
@@ -109,8 +110,9 @@ def main(argv: list[str] | None = None) -> int:
 
         slug = index.for_record(rec) or sanitize_filename(pref)
         prefix = term.split(":", 1)[0]
-        source = (REGISTRY_SOURCE.get(prefix, "") if is_registry_mint(term)
-                  else OBJECT_SOURCE.get(prefix.upper(), ""))
+        # One lookup for both kinds, and it raises rather than writing an
+        # empty object_source nobody notices (#386).
+        source = object_source_for(term)
         label = str(om.get("ontology_label") or pref)
         rows.append("\t".join([
             f"MIM:{slug}", pref, PREDICATE[grade], term, label, source,
@@ -128,7 +130,7 @@ def main(argv: list[str] | None = None) -> int:
         if PREDICATE[grade] == "skos:narrowMatch" and is_registry_mint(ident):
             rows.append("\t".join([
                 f"MIM:{slug}", pref, "skos:exactMatch", ident, pref,
-                REGISTRY_SOURCE.get(ident.split(":", 1)[0], ""),
+                object_source_for(ident),
                 "semapv:ManualMappingCuration",
                 f"MIM:curation ({ISSUE})|MIM:curator={CURATOR}", DATE,
                 CONFIDENCE[grade], "", "",
