@@ -134,6 +134,19 @@ class TestRuleJ:
         assert len(rejects) == 1
         assert "Original amount: (NH4)2HPO4(Fisher A686)" in rejects[0][2]
 
+    def test_bare_parenthetical_fragments_are_rejected(self):
+        rejects = list(mod.evaluate_rule_j([
+            _row(other="Agar|(for solid medium)"),
+        ]))
+
+        assert len(rejects) == 1
+        assert "(for solid medium)" in rejects[0][2]
+
+    def test_internal_parenthetical_labels_pass(self):
+        assert list(mod.evaluate_rule_j([
+            _row(other="(R)-lactate|MOPS buffer (SIGMA)"),
+        ])) == []
+
     def test_an_empty_column_passes(self):
         assert list(mod.evaluate_rule_j([_row(other="")])) == []
 
