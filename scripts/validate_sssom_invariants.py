@@ -78,6 +78,10 @@ Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
   in ``sssom`` rejects that, so a dateless row would otherwise ship
   silently (#550).
 
+* **Rule J** — curation-note text such as ``Original amount: ...`` is not
+  published as SSSOM ``other`` synonyms. Those notes are not names a record
+  answers to, and kg-microbe merges ``other`` into synonym sets.
+
 * **Rule B4** — canonical ``object_label`` drift. For every row whose
   ``object_id`` prefix is in ``{CHEBI, FOODON, UBERON, ENVO, BTO,
   MICRO, PATO}``, look up the canonical label in the local sibling
@@ -97,10 +101,10 @@ claw builder) or leave it in the triage TSV; CI fails as long as a
 violating row sits in ``ingredient_mappings.sssom.tsv``.
 
 Exit codes:
-  0 — every row passes Rules A, B1, B2, B3, C, D, E, and (when its label
-      source is present) B4.
-  2 — at least one row failed Rule A, B1, B2, B3, B4, C, D, E or F. (B1
-      contributes to exit-2 unless ``--lenient-b1`` is passed.)
+  0 — every row passes Rules A, B1, B2, B3, C, D, E, F, G, H, I, J, and
+      (when its label source is present) B4.
+  2 — at least one row failed Rule A, B1, B2, B3, B4, C, D, E, F, G, H, I or
+      J. (B1 contributes to exit-2 unless ``--lenient-b1`` is passed.)
 """
 from __future__ import annotations
 
@@ -115,6 +119,12 @@ from pathlib import Path
 import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+_SRC = REPO_ROOT / "src"
+if str(_SRC) not in sys.path:
+    sys.path.insert(0, str(_SRC))
+
+from mediaingredientmech.synonym_policy import is_curation_note_synonym_text  # noqa: E402
+
 DEFAULT_SSSOM = REPO_ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 DEFAULT_REJECT_TSV = REPO_ROOT / "mappings" / "needs_curator_review.tsv"
 INGREDIENTS_DIR = REPO_ROOT / "data" / "ingredients" / "mapped"
@@ -796,6 +806,28 @@ def evaluate_rule_i(
             )
 
 
+def evaluate_rule_j(
+    rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule J — the `other` column does not publish curation notes."""
+    for row_num, row in enumerate(rows, start=1):
+        tokens = [t.strip() for t in (row.get("other") or "").split("|") if t.strip()]
+        non_resolving = sorted(
+            {token for token in tokens if is_curation_note_synonym_text(token)},
+            key=str.casefold,
+        )
+        if not non_resolving:
+            continue
+        yield (
+            row_num,
+            row,
+            "Rule J: non-resolving curation text was published through "
+            f"`other`: {non_resolving}. Remove it from the mapped record's "
+            "synonyms; SSSOM `other` is merged into downstream synonym sets "
+            "(#502).",
+        )
+
+
 def evaluate_rule_d(
     rows: Iterable[dict[str, str]]
 ) -> Iterator[tuple[int, dict[str, str], str]]:
@@ -1038,6 +1070,7 @@ def main(argv: list[str]) -> int:
     _collect("Rule G", evaluate_rule_g(prelude, rows))
     _collect("Rule H", evaluate_rule_h(rows))
     _collect("Rule I", evaluate_rule_i(rows))
+    _collect("Rule J", evaluate_rule_j(rows))
 
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
@@ -1054,7 +1087,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F, G, H, I"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F, G, H, I, J"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(

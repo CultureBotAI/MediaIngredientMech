@@ -103,28 +103,6 @@ def _resolves_by_ontology_label(ing: dict) -> bool:
 # columns), so consumers split on it today.
 SYNONYM_SEP = "|"
 
-# Curation strings that live in `synonyms` but are not names anything answers
-# to: role/property annotations carried over from the CultureMech import, and
-# bare parentheticals like `(sodium salt)` or `(for solid medium, alternative)`
-# that are fragments of a name, not a name. Publishing them as resolvable labels
-# would make `Role: Carbon source; Properties: ...` "resolve" to 44 different
-# CHEBI ids.
-#
-# The first pattern used to be `Role:.*;\s*Properties:`, requiring BOTH keywords
-# in one string. The import also writes them SPLIT — `Role: Carbon source` and
-# `Properties: Defined component, Simple component` as separate synonyms — and
-# those passed straight through. 183 such rows were published as labels, and
-# they were the worst ambiguity in the index by multiplicity: `properties:
-# defined component, organic compound, simple component` resolved to 19
-# different identifiers, `role: carbon source` to 14 (#232).
-#
-# Anchoring on the keyword and a colon catches both forms. `Cross-references:`
-# is the third shape the same importer emits (53 synonyms).
-_NOT_A_LABEL = re.compile(
-    r"^\s*(?:role|properties|cross-references?)\s*:|^\s*\([^)]*\)\s*$",
-    re.IGNORECASE)
-
-
 def _synonyms(ing: dict) -> list[str]:
     """Every raw label this record answers to, minus the preferred_term itself.
 
@@ -140,7 +118,7 @@ def _synonyms(ing: dict) -> list[str]:
         if not is_resolving_synonym(s or {}):
             continue
         text = (s or {}).get("synonym_text")
-        if not text or text in seen or _NOT_A_LABEL.match(text):
+        if text in seen:
             continue
         seen.add(text)
         out.append(text)

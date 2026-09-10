@@ -121,16 +121,34 @@ class TestRuleI:
         assert len(list(mod.evaluate_rule_i([_row(other="D-lactate| D-lactate ")]))) == 1
 
 
-def test_the_published_set_satisfies_all_three():
+class TestRuleJ:
+    """`other` is merged into synonyms, so curation notes cannot be tokens."""
+
+    def test_real_synonyms_pass(self):
+        assert list(mod.evaluate_rule_j([_row(other="D-lactate|D-2-hydroxypropanoate")])) == []
+
+    def test_an_original_amount_note_is_rejected(self):
+        rejects = list(mod.evaluate_rule_j([
+            _row(other="D-lactate|Original amount: (NH4)2HPO4(Fisher A686)"),
+        ]))
+        assert len(rejects) == 1
+        assert "Original amount: (NH4)2HPO4(Fisher A686)" in rejects[0][2]
+
+    def test_an_empty_column_passes(self):
+        assert list(mod.evaluate_rule_j([_row(other="")])) == []
+
+
+def test_the_published_set_satisfies_all_pinned_rules():
     """The point of pinning them: they hold today, and must keep holding."""
     path = Path(__file__).parent.parent / "mappings" / "ingredient_mappings.sssom.tsv"
     prelude, _, rows = mod._read_sssom(path)
     assert list(mod.evaluate_rule_g(prelude, rows)) == []
     assert list(mod.evaluate_rule_h(rows)) == []
     assert list(mod.evaluate_rule_i(rows)) == []
+    assert list(mod.evaluate_rule_j(rows)) == []
 
 
-@pytest.mark.parametrize("rule", ["Rule G", "Rule H", "Rule I"])
+@pytest.mark.parametrize("rule", ["Rule G", "Rule H", "Rule I", "Rule J"])
 def test_each_rule_is_wired_into_the_run(rule):
     """A rule nobody calls is not a gate."""
     source = (Path(__file__).parent.parent / "scripts" / "validate_sssom_invariants.py").read_text()

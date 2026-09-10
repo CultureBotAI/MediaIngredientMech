@@ -47,6 +47,11 @@ def _record():
                 "synonym_type": "REJECTED_LABEL",
                 "source": "upstream",
             },
+            {
+                "synonym_text": "Original amount: (NH4)2HPO4(Fisher A686)",
+                "synonym_type": "RAW_TEXT",
+                "source": "CultureMech",
+            },
         ],
     }
 
@@ -60,10 +65,12 @@ def test_rejected_label_is_absent_from_flat_and_browser_exports(tmp_path):
     labels = {row["label"] for row in csv.DictReader(out.open())}
     assert "accepted alias" in labels
     assert "false upstream alias" not in labels
+    assert "Original amount: (NH4)2HPO4(Fisher A686)" not in labels
 
     browser = browser_export.extract_ingredient_for_browser(record, "mapped/X.yaml")
     assert browser["synonyms"] == ["accepted alias"]
     assert "false upstream alias" not in browser["searchable"]
+    assert "Original amount: (NH4)2HPO4(Fisher A686)" not in browser["searchable"]
 
 
 def test_rule_e_fires_on_a_synthetic_rejected_label_leak(tmp_path, monkeypatch):
@@ -100,3 +107,17 @@ def test_published_sssom_contains_no_curator_rejected_label():
     _, _, rows = validator._read_sssom(validator.DEFAULT_SSSOM)
     violations = list(validator.evaluate_rule_e(rows))
     assert not violations, violations[:3]
+
+
+def test_rule_j_fires_on_synthetic_curation_note_leak():
+    rows = [
+        {
+            "subject_id": "MIM:Nh42hpo4",
+            "other": "accepted alias|Original amount: (NH4)2HPO4(Fisher A686)",
+        }
+    ]
+
+    violations = list(validator.evaluate_rule_j(rows))
+
+    assert len(violations) == 1
+    assert "Original amount: (NH4)2HPO4(Fisher A686)" in violations[0][2]

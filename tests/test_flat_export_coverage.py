@@ -20,6 +20,7 @@ import yaml
 ROOT = Path(__file__).parent.parent
 EXPORT = ROOT / "scripts" / "export_lists.py"
 CHECK = ROOT / "scripts" / "check_flat_export_coverage.py"
+POLICY = ROOT / "src" / "mediaingredientmech" / "synonym_policy.py"
 
 
 def _load(path):
@@ -130,10 +131,7 @@ def build(tmp_path, records, csv_rows, header=None):
     (tmp_path / "src" / "mediaingredientmech").mkdir(parents=True)
     (tmp_path / "src" / "mediaingredientmech" / "__init__.py").write_text("")
     (tmp_path / "src" / "mediaingredientmech" / "synonym_policy.py").write_text(
-        "NON_RESOLVING_SYNONYM_TYPES = frozenset({'REJECTED_LABEL'})\n\n"
-        "def is_resolving_synonym(synonym):\n"
-        "    synonym_type = str(synonym.get('synonym_type') or '').strip().upper()\n"
-        "    return synonym_type not in NON_RESOLVING_SYNONYM_TYPES\n"
+        POLICY.read_text()
     )
     return tmp_path
 
@@ -181,6 +179,7 @@ def test_gate_fails_when_the_flat_artifact_is_absent(tmp_path):
 @pytest.mark.parametrize("text", [
     "Role: Carbon source; Properties: Organic compound, Defined component",
     "Role: Mineral source; Properties: Solution",
+    "Original amount: (NH4)2HPO4(Fisher A686)",
     "(sodium salt)",
     "(for solid medium, alternative)",
     "( Noble)",
