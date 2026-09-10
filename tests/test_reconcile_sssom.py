@@ -36,8 +36,9 @@ def _write_sssom(path, rows):
     path.write_text("\n".join(head + ["\t".join(COLS)] + rows) + "\n")
 
 
-def _curated(term, oid, label, source, quality):
+def _curated(term, oid, label, source, quality, *, identifier=None):
     return {"ingredients": [{
+        "identifier": identifier or oid,
         "preferred_term": term, "mapping_status": "MAPPED",
         "ontology_mapping": {
             "ontology_id": oid, "ontology_label": label,
@@ -100,22 +101,22 @@ def test_apply_remaps_mesh_parent_to_chebi(tmp_path, monkeypatch):
     _stub_resolver(monkeypatch, {"CHEBI:28874": "phosphatidylinositol"})
     curated = _curated("Foo", "CHEBI:28874", "phosphatidylinositol", "CHEBI", "BROAD_MATCH")
 
-    n_stale, n_orphan = mod.apply_reconcile(curated, "2026-06-13")
-    assert (n_stale, n_orphan) == (1, 0)  # before the fix this was (0, 0)
+    n_stale, n_orphan, n_predicate = mod.apply_reconcile(curated, "2026-06-13")
+    assert (n_stale, n_orphan, n_predicate) == (1, 0, 0)  # before the fix this was (0, 0, 0)
 
     _, _, _, parsed = mod._read_sssom()
     onto = [r for r in parsed if r["object_id"] == "CHEBI:28874"][0]
-    assert onto["predicate_id"] == "skos:broadMatch"
+    assert onto["predicate_id"] == "skos:closeMatch"
     assert onto["object_label"] == "phosphatidylinositol"
     assert onto["object_source"] == "obo:chebi.owl"
     assert onto["mapping_date"] == "2026-06-13"
     assert "REMAPPED" in onto["validation_method"]
     assert "reconciled to curated mapping" in onto["comment"]
     # the registry/identity row's comment is repointed to the new parent id AND
-    # its now-stale predicate word (narrowMatch -> broadMatch) is updated too
+    # its now-stale predicate word (narrowMatch -> closeMatch) is updated too
     ident = [r for r in parsed if r["object_id"] == "cas:1-1-1"][0]
     assert "CHEBI:28874" in ident["comment"] and "mesh:D013025" not in ident["comment"]
-    assert "broadMatch" in ident["comment"] and "narrowMatch" not in ident["comment"]
+    assert "closeMatch" in ident["comment"] and "narrowMatch" not in ident["comment"]
 
 
 # -- regression: obo→obo remap still works ----------------------------------
@@ -134,8 +135,8 @@ def test_apply_still_remaps_obo_to_obo(tmp_path, monkeypatch):
     _stub_resolver(monkeypatch, {"CHEBI:28874": "phosphatidylinositol"})
     curated = _curated("Bar", "CHEBI:28874", "phosphatidylinositol", "CHEBI", "EXACT_MATCH")
 
-    n_stale, n_orphan = mod.apply_reconcile(curated, "2026-06-13")
-    assert (n_stale, n_orphan) == (1, 0)
+    n_stale, n_orphan, n_predicate = mod.apply_reconcile(curated, "2026-06-13")
+    assert (n_stale, n_orphan, n_predicate) == (1, 0, 0)
     _, _, _, parsed = mod._read_sssom()
     onto = parsed[0]
     assert onto["object_id"] == "CHEBI:28874"
@@ -158,7 +159,85 @@ def test_apply_drops_orphan_subject(tmp_path, monkeypatch):
     monkeypatch.setattr(mod, "SSSOM", sssom)
     _stub_resolver(monkeypatch, {})
     curated = {"ingredients": []}  # no record for "Gone" -> orphan
-    n_stale, n_orphan = mod.apply_reconcile(curated, "2026-06-13")
-    assert (n_stale, n_orphan) == (0, 1)
+    n_stale, n_orphan, n_predicate = mod.apply_reconcile(curated, "2026-06-13")
+    assert (n_stale, n_orphan, n_predicate) == (0, 1, 0)
     _, _, _, parsed = mod._read_sssom()
     assert parsed == []  # orphan row dropped
+
+
+# -- predicate-only drift ---------------------------------------------------
+
+def test_find_drift_reports_current_non_identity_ontology_predicate_mismatch():
+    rows = [
+        _row(subject_id="MIM:Foo", subject_label="Foo", predicate_id="skos:exactMatch",
+             object_id="CHEBI:28874", object_label="phosphatidylinositol",
+             object_source="obo:chebi.owl", mapping_justification="semapv:LexicalMatching",
+             source="MIM:x", mapping_date="2026-01-01", confidence="0.99",
+             comment="", other="", validation_method="none"),
+    ]
+    curated = _curated(
+        "Foo", "CHEBI:28874", "phosphatidylinositol", "CHEBI", "CLOSE_MATCH",
+        identifier="kgmicrobe.compound:foo",
+    )
+
+    drift = mod.find_drift(curated, [
+        dict(zip(COLS, row.split("\t"), strict=True)) for row in rows
+    ])
+
+    assert drift == {
+        "gaps": [],
+        "orphans": [],
+        "stale": [],
+        "predicate": [(
+            "Foo", "CHEBI:28874", "skos:closeMatch", "skos:exactMatch",
+        )],
+    }
+
+
+def test_find_drift_ignores_own_identifier_predicate_mismatch():
+    rows = [
+        _row(subject_id="MIM:Foo", subject_label="Foo", predicate_id="skos:exactMatch",
+             object_id="CHEBI:28874", object_label="phosphatidylinositol",
+             object_source="obo:chebi.owl", mapping_justification="semapv:ManualMappingCuration",
+             source="MIM:x", mapping_date="2026-01-01", confidence="0.9",
+             comment="", other="", validation_method="none"),
+    ]
+    curated = _curated(
+        "Foo", "CHEBI:28874", "phosphatidylinositol", "CHEBI", "CLOSE_MATCH",
+    )
+
+    drift = mod.find_drift(curated, [
+        dict(zip(COLS, row.split("\t"), strict=True)) for row in rows
+    ])
+
+    assert drift == {"gaps": [], "orphans": [], "stale": [], "predicate": []}
+
+
+def test_apply_repairs_predicate_only_drift(tmp_path, monkeypatch):
+    sssom = tmp_path / "predicate.sssom.tsv"
+    rows = [
+        _row(subject_id="MIM:Foo", subject_label="Foo", predicate_id="skos:exactMatch",
+             object_id="CHEBI:28874", object_label="phosphatidylinositol",
+             object_source="obo:chebi.owl", mapping_justification="semapv:LexicalMatching",
+             source="MIM:x", mapping_date="2026-01-01", confidence="0.99",
+             comment="keep this.", other="", validation_method="none"),
+    ]
+    _write_sssom(sssom, rows)
+    monkeypatch.setattr(mod, "SSSOM", sssom)
+    curated = _curated(
+        "Foo", "CHEBI:28874", "phosphatidylinositol", "CHEBI", "CLOSE_MATCH",
+        identifier="kgmicrobe.compound:foo",
+    )
+
+    n_stale, n_orphan, n_predicate = mod.apply_reconcile(curated, "2026-09-10")
+
+    assert (n_stale, n_orphan, n_predicate) == (0, 0, 1)
+    _, _, _, parsed = mod._read_sssom()
+    onto = parsed[0]
+    assert onto["predicate_id"] == "skos:closeMatch"
+    assert onto["object_id"] == "CHEBI:28874"
+    assert onto["mapping_justification"] == "semapv:ManualMappingCuration"
+    assert onto["confidence"] == "0.9"
+    assert onto["mapping_date"] == "2026-09-10"
+    assert onto["validation_method"] == "manual:reconcile_sssom|PREDICATE|2026-09-10"
+    assert onto["comment"] == "keep this. [predicate reconciled to curated mapping 2026-09-10]"
