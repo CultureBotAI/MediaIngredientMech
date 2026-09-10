@@ -49,15 +49,21 @@ def _load_hydrate_notation():
     spec = importlib.util.spec_from_file_location("_hydrate_guard", path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    return mod.HYDRATE_NOTATION, mod.FORMULA_WATER, mod.water_multiplicity
+    return (
+        mod.HYDRATE_NOTATION,
+        mod.FORMULA_WATER,
+        mod.water_multiplicity,
+        mod.implausible_water_counts,
+    )
 
 
-HYDRATE, FORMULA_WATER, water_multiplicity = _load_hydrate_notation()
+HYDRATE, FORMULA_WATER, water_multiplicity, implausible_water_counts = _load_hydrate_notation()
 
 # Machine-readable classification for the hydrate-synonym rows. Separate from
 # the `detail` prose so the two cannot drift apart (#259).
 DIFFERENT_STATE = "different_state"
 ANHYDROUS_TERM = "anhydrous_term"
+MALFORMED_NOTATION = "malformed_notation"
 HYDRATE_FIELDS = [
     "identifier",
     "preferred_term",
@@ -154,6 +160,24 @@ def classify_synonym_rows(records: list[dict], form: dict[str, str]) -> list[dic
         hyd = hydrate_synonyms(rec)
         if not hyd:
             continue
+        malformed = [syn for syn in hyd if implausible_water_counts(syn)]
+        if malformed:
+            counts = sorted(
+                {
+                    count
+                    for synonym in malformed
+                    for count in implausible_water_counts(synonym)
+                },
+                key=int,
+            )
+            syn_rows.append({
+                "identifier": str(rec.get("identifier") or ""),
+                "preferred_term": term,
+                "ontology_id": target,
+                "kind": MALFORMED_NOTATION,
+                "detail": "water count above plausible ceiling: " + ", ".join(counts),
+                "hydrate_synonyms": " | ".join(malformed),
+            })
         if HYDRATE.search(term):
             # The record's own label is a hydrate, but a synonym may name a
             # DIFFERENT state (`MgSO4·7H2O` with `MgSO4 x 6 H2O`) — the same
@@ -312,14 +336,18 @@ def main() -> int:
     #   HYDRATION_STATE  preferred_term IS a hydrate, but a synonym names a
     #                    DIFFERENT one (MgSO4·7H2O carrying MgSO4 x 6 H2O).
     #                    These land in OK_HYDRATE_TERM above, i.e. reported clean.
+    #   MALFORMED        a synonym's digit count is parse damage, not a real
+    #                    hydration state (MgCl2 x 76 H2O).
     # Issue #251.
     syn_rows = classify_synonym_rows(mapped_records, form)
     buckets = split_synonym_buckets(syn_rows)
     mismatched = buckets[DIFFERENT_STATE]
     anhydrous = buckets[ANHYDROUS_TERM]
-    print(f"\n{len(syn_rows)} mapped record(s) carry a hydrate SYNONYM their own term does "
+    malformed = buckets[MALFORMED_NOTATION]
+    print(f"\n{len(syn_rows)} hydrate-synonym finding(s) their own term does "
           f"not account for\n  {len(anhydrous)} on an anhydrous term, "
-          f"{len(mismatched)} naming a different hydration state.")
+          f"{len(mismatched)} naming a different hydration state, "
+          f"{len(malformed)} with malformed notation.")
     if syn_rows:
         known = {r["identifier"] for r in syn_rows} & baseline_ids
         print(f"\n{len(known)} of these identifiers are already tracked in "
