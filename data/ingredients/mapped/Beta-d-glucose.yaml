@@ -1,5 +1,5 @@
 identifier: CHEBI:15903
-preferred_term: Beta-d-glucose
+preferred_term: Beta-D-glucose
 ontology_mapping:
   ontology_id: CHEBI:15903
   ontology_label: beta-D-glucose
@@ -58,6 +58,14 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-10T09:35:46.753696+00:00'
+  curator: fix_lowercase_stereodescriptors
+  action: CORRECTED
+  changes: preferred_term 'Beta-d-glucose' -> 'Beta-D-glucose'; fixed a lowercase
+    D stereodescriptor parse artifact (#460).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C6H12O6

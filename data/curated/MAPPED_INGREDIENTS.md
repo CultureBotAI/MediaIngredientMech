@@ -205,7 +205,7 @@
 | CHEBI:81879 | Rhodomycin B | CHEBI:81879 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18394 | Palatinose | CHEBI:18394 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:75273 | Niaproof | CHEBI:75273 | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:37671 | 3-beta-d-glucan | CHEBI:37671 | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:37671 | 3-beta-D-glucan | CHEBI:37671 | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 2,4-diamino-6,7-di-iso-propylpteridine phosphate | CHEBI:73908 | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:maltose_hydrate | Maltose Hydrate | CHEBI:17306 | CHEBI | CLOSE_MATCH | 0 |
 | kgmicrobe.compound:potassium_2-ketogluconate | Potassium 2-ketogluconate | CHEBI:16808 | CHEBI | NARROW_MATCH | 0 |
@@ -229,7 +229,7 @@
 | CHEBI:81287 | Neomycin F | CHEBI:81287 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81430 | Dactimicin | CHEBI:81430 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27907 | Alpha-L-rhamnose | CHEBI:27907 | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:2179 | 6-deoxy-d-galactose | CHEBI:2179 | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:2179 | 6-deoxy-D-galactose | CHEBI:2179 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:67135 | Azomycin | CHEBI:67135 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:17833 | Gentamicin | CHEBI:17833 | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:71422 | Beta-gentiobiose | CHEBI:71422 | CHEBI | SYNONYM_MATCH | 0 |
@@ -1461,7 +1461,7 @@
 | CHEBI:21553 | N-Acetyl-L-glutamine | CHEBI:21553 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17724 | N-N Dimethyl glycine | CHEBI:17724 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:39060 | N-(2-acetamido)-2-aminoethanesulfonic acid | CHEBI:39060 | CHEBI | EXACT_MATCH | 15 |
-| CHEBI:8006 | N-Acetyl-D-glucosamine | CHEBI:8006 | CHEBI | SYNONYM_MATCH | 29 |
+| CHEBI:506227 | N-Acetyl-D-glucosamine | CHEBI:506227 | CHEBI | EXACT_MATCH | 29 |
 | CHEBI:59640 | N-Acetylglucosamine | CHEBI:59640 | CHEBI | EXACT_MATCH | 57 |
 | CHEBI:47965 | N-acetylmuramic acid | CHEBI:47965 | CHEBI | EXACT_MATCH | 12 |
 | CHEBI:17012 | N-acetylneuraminic acid | CHEBI:17012 | CHEBI | EXACT_MATCH | 0 |
@@ -2124,7 +2124,7 @@
 | CHEBI:32373 | 4-coumarate | CHEBI:32373 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:18240 | 4-hydroxy-L-proline | CHEBI:18240 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:16724 | 4-hydroxybutyrate | CHEBI:16724 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:1904 | 4-methylumbelliferone Beta-d-glucuronide | CHEBI:1904 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:1904 | 4-methylumbelliferone Beta-D-glucuronide | CHEBI:1904 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:90128 | 4-nitrophenyl 6-O-phosphono-beta-D-galactoside | CHEBI:90128 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:90146 | 4-nitrophenyl Beta-D-glucuronide | CHEBI:90146 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:90343 | 4-nitrophenyl N-acetyl-beta-D-glucosaminide | CHEBI:90343 | CHEBI | EXACT_MATCH | 0 |
@@ -2182,7 +2182,7 @@
 | CHEBI:28034 | Beta-D-galactoside | CHEBI:28034 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28860 | Beta-D-glucuronic Acid | CHEBI:28860 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28161 | Beta-D-xylose | CHEBI:28161 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:15903 | Beta-d-glucose | CHEBI:15903 | CHEBI | EXACT_MATCH | 16 |
+| CHEBI:15903 | Beta-D-glucose | CHEBI:15903 | CHEBI | EXACT_MATCH | 16 |
 | CHEBI:3098 | Bile Acid | CHEBI:3098 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17097 | Biphenyl | CHEBI:17097 | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:218571 | Blasticidin A | CHEBI:218571 | CHEBI | EXACT_MATCH | 0 |

@@ -1,5 +1,5 @@
 identifier: CHEBI:1904
-preferred_term: 4-methylumbelliferone Beta-d-glucuronide
+preferred_term: 4-methylumbelliferone Beta-D-glucuronide
 ontology_mapping:
   ontology_id: CHEBI:1904
   ontology_label: 4-methylumbelliferone beta-D-glucuronide
@@ -50,6 +50,14 @@ curation_history:
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
   llm_assisted: false
+- timestamp: '2026-09-10T09:35:46.753696+00:00'
+  curator: fix_lowercase_stereodescriptors
+  action: CORRECTED
+  changes: preferred_term '4-methylumbelliferone Beta-d-glucuronide' -> '4-methylumbelliferone
+    Beta-D-glucuronide'; fixed a lowercase D stereodescriptor parse artifact (#460).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C16H16O9

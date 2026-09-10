@@ -1,9 +1,6 @@
 identifier: CHEBI:37671
-preferred_term: 3-beta-d-glucan
-synonyms:
-- synonym_text: 3-beta-d-glucan
-  synonym_type: RAW_TEXT
-  source: microbedecoder
+preferred_term: 3-beta-D-glucan
+synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -34,6 +31,14 @@ curation_history:
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
   llm_assisted: false
+- timestamp: '2026-09-10T09:35:46.753696+00:00'
+  curator: fix_lowercase_stereodescriptors
+  action: CORRECTED
+  changes: preferred_term '3-beta-d-glucan' -> '3-beta-D-glucan'; fixed a lowercase
+    D stereodescriptor parse artifact (#460).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:3_beta_d_glucan); no
   CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
