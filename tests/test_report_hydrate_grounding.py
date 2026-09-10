@@ -104,9 +104,14 @@ def test_the_kind_values_are_distinct(mod):
 def test_kind_is_written_to_the_synonym_tsv(mod):
     """Downstream consumers should be able to key on it too, not re-derive it
     from the prose the way the report used to."""
-    source = SCRIPT.read_text(encoding="utf-8")
-
-    assert '"identifier", "preferred_term", "ontology_id", "kind", "detail"' in source
+    assert mod.SYNONYM_FIELDS == [
+        "identifier",
+        "preferred_term",
+        "ontology_id",
+        "kind",
+        "detail",
+        "hydrate_synonyms",
+    ]
 
 
 # --- #258 regression --------------------------------------------------------

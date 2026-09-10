@@ -183,7 +183,12 @@ def main() -> int:
                 w.writerow(row)
         print(f"Wrote {len(rows)} rows to {args.out}", file=sys.stderr)
     else:
-        w = csv.DictWriter(sys.stdout, fieldnames=fields, delimiter="\t")
+        w = csv.DictWriter(
+            sys.stdout,
+            fieldnames=fields,
+            delimiter="\t",
+            lineterminator="\n",
+        )
         w.writeheader()
         for row in rows:
             w.writerow(row)

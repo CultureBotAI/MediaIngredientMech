@@ -57,6 +57,22 @@ HYDRATE, FORMULA_WATER, water_multiplicity = _load_hydrate_notation()
 # the `detail` prose so the two cannot drift apart (#259).
 DIFFERENT_STATE = "different_state"
 ANHYDROUS_TERM = "anhydrous_term"
+HYDRATE_FIELDS = [
+    "identifier",
+    "preferred_term",
+    "ontology_id",
+    "ontology_label",
+    "term_formula",
+    "status",
+]
+SYNONYM_FIELDS = [
+    "identifier",
+    "preferred_term",
+    "ontology_id",
+    "kind",
+    "detail",
+    "hydrate_synonyms",
+]
 
 
 def formulas() -> dict[str, str]:
@@ -160,11 +176,14 @@ def main() -> int:
                      "ontology_id": target, "ontology_label": om.get("ontology_label") or "",
                      "term_formula": f, "status": status})
 
-    FIELDS = ["identifier", "preferred_term", "ontology_id", "ontology_label",
-              "term_formula", "status"]
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     with REPORT.open("w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=FIELDS, delimiter="\t")
+        w = csv.DictWriter(
+            fh,
+            fieldnames=HYDRATE_FIELDS,
+            delimiter="\t",
+            lineterminator="\n",
+        )
         w.writeheader(); w.writerows(rows)
     if not rows:
         print("no mapped record carries hydrate notation")
@@ -261,9 +280,12 @@ def main() -> int:
                   f"(full list in {SYN_REPORT.relative_to(ROOT)})")
     SYN_REPORT.parent.mkdir(parents=True, exist_ok=True)
     with SYN_REPORT.open("w", newline="") as fh:
-        w = csv.DictWriter(fh, delimiter="\t", fieldnames=[
-            "identifier", "preferred_term", "ontology_id", "kind", "detail",
-            "hydrate_synonyms"])
+        w = csv.DictWriter(
+            fh,
+            delimiter="\t",
+            fieldnames=SYNONYM_FIELDS,
+            lineterminator="\n",
+        )
         w.writeheader(); w.writerows(syn_rows)
 
     if not UNMAPPED.exists():
