@@ -89,6 +89,14 @@ FIELDS = ["identifier", "collection", "record_count", "members_fingerprint",
 # with a live mapping is exactly what should be caught before it is promoted.
 NOT_A_CLAIM = {"REJECTED"}
 
+VALID_DISPOSITIONS = {
+    "MERGE_SAME_SUBSTANCE",
+    "NEEDS_OWN_ID",
+    "NEEDS_OWN_ID_MEMBER_UNDECIDED",
+    "HYDRATE_FAMILY_UNREVIEWED",
+    "UNREVIEWED",
+}
+
 # Water of crystallisation. Covers 'x 7 H2O', 'x n H2O', '·7H2O', '7H2O',
 # 'x H2O', and hydrate words with or without a multiplier prefix (hemipenta-,
 # sesqui-, dodeca-). Deliberately NOT a bare /hydrate/ substring: that matches
@@ -167,21 +175,44 @@ def load_baseline() -> dict[tuple[str, str], dict]:
     if not BASELINE.exists():
         raise DataProblem(
             f"no baseline at {BASELINE.relative_to(ROOT)}; run --write-baseline once and commit it")
-    with BASELINE.open() as fh:
+    with BASELINE.open(newline="", encoding="utf-8") as fh:
         reader = csv.DictReader(fh, delimiter="\t")
         missing = set(FIELDS) - set(reader.fieldnames or [])
         if missing:
             raise DataProblem(
                 f"{BASELINE.relative_to(ROOT)} is missing column(s): {', '.join(sorted(missing))}")
         out = {}
-        for r in reader:
+        for line_number, r in enumerate(reader, start=2):
+            identifier = (r.get("identifier") or "").strip()
+            collection = (r.get("collection") or "").strip()
+            disposition = (r.get("disposition") or "").strip() or "UNREVIEWED"
+            if not identifier:
+                raise DataProblem(
+                    f"{BASELINE.relative_to(ROOT)}:{line_number} is missing an identifier")
+            if collection not in COLLECTIONS:
+                raise DataProblem(
+                    f"{BASELINE.relative_to(ROOT)}:{line_number} has unsupported "
+                    f"collection {collection!r}")
+            if disposition not in VALID_DISPOSITIONS:
+                raise DataProblem(
+                    f"{BASELINE.relative_to(ROOT)}:{line_number} has unsupported "
+                    f"disposition {disposition!r}")
+
+            key = (identifier, collection)
+            if key in out:
+                raise DataProblem(
+                    f"{BASELINE.relative_to(ROOT)}: duplicate row for {identifier} "
+                    f"in {collection}")
             try:
                 int(r["record_count"])
             except (TypeError, ValueError):
                 raise DataProblem(
                     f"{BASELINE.relative_to(ROOT)}: bad record_count "
-                    f"{r['record_count']!r} for {r['identifier']}") from None
-            out[(r["identifier"], r["collection"])] = r
+                    f"{r['record_count']!r} for {identifier}") from None
+            r["identifier"] = identifier
+            r["collection"] = collection
+            r["disposition"] = disposition
+            out[key] = r
     if not out:
         raise DataProblem(f"{BASELINE.relative_to(ROOT)} has no rows")
     return out
