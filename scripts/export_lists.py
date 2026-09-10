@@ -89,6 +89,15 @@ def _ontology_label(ing: dict) -> str:
     return (ing.get("ontology_mapping") or {}).get("ontology_label", "") or ""
 
 
+_PARENT_CHILD_QUALITIES = {"NARROW_MATCH", "BROAD_MATCH"}
+
+
+def _resolves_by_ontology_label(ing: dict) -> bool:
+    """Parent/child ontology labels are not names for the local record (#562)."""
+    quality = str((ing.get("ontology_mapping") or {}).get("mapping_quality") or "")
+    return quality not in _PARENT_CHILD_QUALITIES
+
+
 # Separator for the CSV synonyms column. `|` is the multi-value separator this
 # repo's SSSOM already uses (the `source`, `validation_method` and `other`
 # columns), so consumers split on it today.
@@ -291,7 +300,11 @@ def export_label_index(ingredients: list[dict], output_path: Path):
         # neither the preferred_term nor a synonym. 59 names CultureMech grounds
         # were unresolvable here for exactly that reason (#365).
         onto_label = _ontology_label(ing)
-        if onto_label and onto_label.lower() not in seen_labels:
+        if (
+            onto_label
+            and onto_label.lower() not in seen_labels
+            and _resolves_by_ontology_label(ing)
+        ):
             rows.append({"label": onto_label, "match_type": "ontology_label",
                          "identifier": ident, "preferred_term": preferred,
                          "ontology_id": ont, "mapping_status": status})
@@ -333,8 +346,11 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     # Pinned by tests/test_label_index_precedence.py.
     # `ontology_label` ranks LAST of the three match types: a term label is the
     # ontology's name for the concept, not a name this record claims, so it is
-    # the weakest signal. Measured over the corpus, adding it made 623 labels
-    # newly resolvable, lost none, and changed exactly ONE existing answer:
+    # the weakest signal. It is also suppressed for NARROW_MATCH/BROAD_MATCH
+    # parent-child mappings, where the ontology term is deliberately asymmetric
+    # to the local record and its label would name the wrong thing (#562).
+    # Measured when the term-label fallback was introduced, adding it lost no
+    # existing answers and changed exactly ONE:
     #
     #   EDTA disodium salt (anhydrous)
     #     was  CHEBI:64758  via a synonym on `Na2-EDTA x 2 H2O`  (REJECTED)

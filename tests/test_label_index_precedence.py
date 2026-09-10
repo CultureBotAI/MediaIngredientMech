@@ -28,30 +28,36 @@ def _load():
 
 
 def _record(identifier, preferred_term, status="MAPPED", synonyms=(),
-            ontology_label=None, formula=None):
+            ontology_id=None, ontology_label=None,
+            mapping_quality="EXACT_MATCH", formula=None):
     r = {
         "identifier": identifier,
         "preferred_term": preferred_term,
         "mapping_status": status,
         "synonyms": [{"synonym_text": s} for s in synonyms],
-        "ontology_mapping": {"ontology_id": identifier,
-                             "ontology_label": ontology_label or preferred_term},
+        "ontology_mapping": {"ontology_id": ontology_id or identifier,
+                             "ontology_label": ontology_label or preferred_term,
+                             "mapping_quality": mapping_quality},
     }
     if formula:
         r["chemical_properties"] = {"molecular_formula": formula}
     return r
 
 
-def _resolve(tmp_path, records):
-    """label -> the row a take-the-first-row consumer receives."""
+def _rows(tmp_path, records):
     mod = _load()
     tmp_path.mkdir(parents=True, exist_ok=True)
     out = tmp_path / "label_index.csv"
     mod.export_label_index(records, out)
-    first = {}
     with out.open() as f:
-        for row in csv.DictReader(f):
-            first.setdefault(row["label"].strip().lower(), row)
+        return list(csv.DictReader(f))
+
+
+def _resolve(tmp_path, records):
+    """label -> the row a take-the-first-row consumer receives."""
+    first = {}
+    for row in _rows(tmp_path, records):
+        first.setdefault(row["label"].strip().lower(), row)
     return first
 
 
@@ -143,6 +149,26 @@ def test_preferred_term_beats_synonym_beats_ontology_label(tmp_path):
     ])
     assert got["shared"]["identifier"] == "CHEBI:1"
     assert got["shared"]["match_type"] == "preferred_term"
+
+
+def test_asymmetric_parent_labels_do_not_resolve_to_local_children(tmp_path):
+    rows = _rows(tmp_path, [
+        _record("ENVO:00002263", "Garden soil"),
+        _record("kgmicrobe.ingredient:air-dried_garden_soil",
+                "air-dried garden soil",
+                ontology_id="ENVO:00002263",
+                ontology_label="Garden soil",
+                mapping_quality="NARROW_MATCH"),
+        _record("kgmicrobe.ingredient:garden_soils", "garden soils",
+                ontology_id="ENVO:00002263",
+                ontology_label="Garden soil",
+                mapping_quality="BROAD_MATCH"),
+    ])
+
+    garden_soil_rows = {(row["identifier"], row["match_type"])
+                        for row in rows
+                        if row["label"].lower() == "garden soil"}
+    assert garden_soil_rows == {("ENVO:00002263", "preferred_term")}
 
 
 def test_ordering_is_deterministic_regardless_of_record_order(tmp_path):
