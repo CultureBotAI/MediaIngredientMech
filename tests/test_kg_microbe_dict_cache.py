@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import gzip
 import logging
+import os
 import sqlite3
 
 import pytest
@@ -96,6 +97,44 @@ def test_the_index_is_keyed_on_content_so_a_changed_artifact_rebuilds(tmp_path, 
         handle.write(text + extra + "\n")
 
     assert KgMicrobeDict(mapping_set).size == 4
+
+
+def test_writing_a_new_index_reaps_older_artifact_indexes(tmp_path, mapping_set):
+    """A content-keyed cache must still stay bounded as kg-microbe republishes."""
+    KgMicrobeDict(mapping_set).load()
+    old_cache = next(cache_dir().glob("*.sqlite"))
+    os.utime(old_cache, (1, 1))
+
+    unrelated = cache_dir() / "do-not-touch.sqlite"
+    unrelated.write_text("not a kg-microbe dictionary", encoding="utf-8")
+
+    with gzip.open(mapping_set, "rt", encoding="utf-8") as handle:
+        text = handle.read()
+    extra = _row("kgm.name:sucrose", "Sucrose", "skos:exactMatch", "CHEBI:17992", "Sucrose")
+    with gzip.open(mapping_set, "wt", encoding="utf-8") as handle:
+        handle.write(text + extra + "\n")
+
+    KgMicrobeDict(mapping_set).load()
+
+    assert not old_cache.exists()
+    assert unrelated.exists()
+    assert len(list(cache_dir().glob("kgm-dict-v*.sqlite"))) == 1
+
+
+def test_a_warm_load_reaps_older_artifact_indexes(mapping_set):
+    KgMicrobeDict(mapping_set).load()
+    current_cache = next(cache_dir().glob("kgm-dict-v*.sqlite"))
+
+    old_cache = cache_dir() / f"kgm-dict-v0-{'0' * 32}.sqlite"
+    old_cache.write_text("superseded schema", encoding="utf-8")
+    os.utime(old_cache, (1, 1))
+
+    warm = KgMicrobeDict(mapping_set)
+    warm.load()
+
+    assert warm._db is not None
+    assert current_cache.exists()
+    assert not old_cache.exists()
 
 
 def test_an_identical_artifact_at_another_path_reuses_the_index(tmp_path, mapping_set):
