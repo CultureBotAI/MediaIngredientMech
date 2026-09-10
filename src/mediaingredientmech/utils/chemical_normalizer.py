@@ -15,13 +15,10 @@ from dataclasses import dataclass
 
 # Hydrate notation patterns to strip
 HYDRATE_PATTERNS = [
-    r"[•·.]\s*\d+\s*H2O",  # •2H2O, .7H2O, ·nH2O
-    r"\s*hydrate",
+    r"[•·.]\s*\d+\s*H2O",  # •2H2O, .7H2O
     r"\s*\(hydrated\)",
-    r"\s*heptahydrate",
-    r"\s*dihydrate",
-    r"\s*monohydrate",
-    r"\s*trihydrate",
+    r"\s*(?<![a-z])(?:hemi|sesqui)?"
+    r"(?:mono|di|tri|tetra|penta|hexa|hepta|octa|nona|deca|dodeca)?hydrate\b",
 ]
 
 # Catalog/CAS patterns to strip
