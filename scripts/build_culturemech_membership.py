@@ -82,7 +82,11 @@ def provenance(occurrences: Path, edges: int, recipes: int, records: int) -> str
 
 def mim_identifiers() -> set[str]:
     data = yaml.safe_load(CURATED.read_text(encoding="utf-8"))
-    return {str(r.get("identifier") or "") for r in data["ingredients"]} - {""}
+    return {
+        str(r.get("identifier") or "")
+        for r in data["ingredients"]
+        if r.get("mapping_status") != "REJECTED"
+    } - {""}
 
 
 def collect(occurrences: Path, known: set[str]) -> tuple[dict, dict[str, int]]:

@@ -75,6 +75,28 @@ def test_source_label_override_splits_air_dried_garden_soil(mod, tmp_path):
     assert fresh["ENVO:00002263"] == (1, 1)
 
 
+def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
+    path = tmp_path / "occurrences.tsv"
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "NCIT:C896", "Trace element solution"])
+        w.writerow(["CultureMech:000002", "NCIT:C896", "Trace element solution SL-10"])
+        w.writerow(["CultureMech:000003", "NCIT:C896", "Zeikus trace element solution"])
+        w.writerow([
+            "CultureMech:000004", "NCIT:C896",
+            "Trace element solution (see Medium No. 187",
+        ])
+
+    fresh, total_rows, total_recipes = mod.read_occurrences(path)
+
+    assert (total_rows, total_recipes) == (4, 4)
+    assert fresh["kgmicrobe.ingredient:trace_element_solution"] == (1, 1)
+    assert fresh["kgmicrobe.ingredient:trace_element_solution_sl-10"] == (1, 1)
+    assert fresh["kgmicrobe.ingredient:zeikus_trace_element_solution"] == (1, 1)
+    assert fresh["NCIT:C896"] == (1, 1)
+
+
 def test_a_pre_337_table_is_refused_rather_than_misread(mod, tmp_path):
     """Without recipe_id there is no stable key, and silently falling back to
     names would reintroduce the identity problem this fix exists to avoid."""

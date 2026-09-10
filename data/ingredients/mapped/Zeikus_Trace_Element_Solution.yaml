@@ -6,8 +6,8 @@ synonyms:
   source: mim-queue
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 8
-  media_count: 8
+  total_occurrences: 1
+  media_count: 1
 curation_history:
 - timestamp: '2026-04-30T18:43:03.698454+00:00'
   curator: audit_import_ingredients[mim-queue]
@@ -54,6 +54,15 @@ curation_history:
     684, Trace mineral solution.
   llm_assisted: true
   llm_model: gpt-5
+- timestamp: '2026-09-10T02:58:59+00:00'
+  curator: split_trace_solution_memberships
+  action: CORRECTED
+  changes: Corrected occurrence_statistics 8/8 -> 1/1 (media_count/total_occurrences)
+    after source-label-specific CultureMech membership splitting in issue 560. The
+    single mediadive.compound:1914 Zeikus trace element solution row from the 8c79a66fec
+    occurrence snapshot now resolves to this local stock-solution identity instead
+    of the parent NCIT:C896.
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:1914); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ingredient_type: STOCK_SOLUTION
