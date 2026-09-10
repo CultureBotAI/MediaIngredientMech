@@ -78,9 +78,10 @@ Rules implemented (see ``MAPPING_SEMANTICS.md`` for the full contract):
   in ``sssom`` rejects that, so a dateless row would otherwise ship
   silently (#550).
 
-* **Rule J** — curation-note text such as ``Original amount: ...`` is not
-  published as SSSOM ``other`` synonyms. Those notes are not names a record
-  answers to, and kg-microbe merges ``other`` into synonym sets.
+* **Rule J** — non-resolving text such as ``Original amount: ...`` or bare
+  parenthetical fragments is not published as SSSOM ``other`` synonyms. Those
+  notes are not names a record answers to, and kg-microbe merges ``other`` into
+  synonym sets.
 
 * **Rule B4** — canonical ``object_label`` drift. For every row whose
   ``object_id`` prefix is in ``{CHEBI, FOODON, UBERON, ENVO, BTO,
@@ -123,7 +124,7 @@ _SRC = REPO_ROOT / "src"
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 
-from mediaingredientmech.synonym_policy import is_curation_note_synonym_text  # noqa: E402
+from mediaingredientmech.synonym_policy import is_resolving_synonym_text  # noqa: E402
 
 DEFAULT_SSSOM = REPO_ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 DEFAULT_REJECT_TSV = REPO_ROOT / "mappings" / "needs_curator_review.tsv"
@@ -809,11 +810,11 @@ def evaluate_rule_i(
 def evaluate_rule_j(
     rows: Iterable[dict[str, str]]
 ) -> Iterator[tuple[int, dict[str, str], str]]:
-    """Rule J — the `other` column does not publish curation notes."""
+    """Rule J — the `other` column does not publish non-resolving text."""
     for row_num, row in enumerate(rows, start=1):
         tokens = [t.strip() for t in (row.get("other") or "").split("|") if t.strip()]
         non_resolving = sorted(
-            {token for token in tokens if is_curation_note_synonym_text(token)},
+            {token for token in tokens if not is_resolving_synonym_text(token)},
             key=str.casefold,
         )
         if not non_resolving:
@@ -824,7 +825,7 @@ def evaluate_rule_j(
             "Rule J: non-resolving curation text was published through "
             f"`other`: {non_resolving}. Remove it from the mapped record's "
             "synonyms; SSSOM `other` is merged into downstream synonym sets "
-            "(#502).",
+            "(#502/#610).",
         )
 
 
