@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import io
+import json
 from pathlib import Path
 
 import pytest
@@ -69,6 +70,12 @@ def label_index_rows() -> list[dict[str, str]]:
 
 
 @pytest.fixture(scope="module")
+def browser_records() -> dict[str, dict]:
+    data = json.loads((REPO / "docs" / "data" / "ingredients.json").read_text())
+    return {record["preferred_term"]: record for record in data["ingredients"]}
+
+
+@pytest.fixture(scope="module")
 def membership_rows() -> list[dict[str, str]]:
     with (REPO / "mappings" / "culturemech_recipe_membership.tsv").open(
         encoding="utf-8", newline=""
@@ -109,6 +116,21 @@ def test_unsupported_lipoic_enantiomer_records_are_tombstoned(
         }
         assert record["ontology_mapping"]["ontology_id"] == "CHEBI:16494"
         assert record["chemical_properties"] == {}
+
+
+def test_lipoic_tombstones_reject_stereospecific_synonyms(
+    mapped_records: dict[str, dict],
+) -> None:
+    for term in ("Thioctic acid", "α-lipoic acid"):
+        synonyms = {
+            synonym["synonym_text"]: synonym["synonym_type"]
+            for synonym in mapped_records[term].get("synonyms", [])
+        }
+        rejected_labels = STEREOSPECIFIC_LABELS & set(synonyms)
+
+        assert rejected_labels
+        for label in rejected_labels:
+            assert synonyms[label] == "REJECTED_LABEL"
 
 
 def test_surviving_lipoic_record_carries_only_generic_source_labels(
@@ -161,6 +183,27 @@ def test_lipoic_label_index_resolves_only_to_generic_lipoic_acid(
 
     for label in STEREOSPECIFIC_LABELS:
         assert label not in by_label
+
+
+def test_lipoic_stereospecific_labels_are_not_searchable(
+    label_index_rows: list[dict[str, str]],
+) -> None:
+    indexed_labels = {row["label"] for row in label_index_rows}
+
+    assert not STEREOSPECIFIC_LABELS & indexed_labels
+
+
+def test_lipoic_browser_tombstones_do_not_publish_stereospecific_labels(
+    browser_records: dict[str, dict],
+) -> None:
+    for term in ("Thioctic acid", "α-lipoic acid"):
+        record = browser_records[term]
+
+        assert not STEREOSPECIFIC_LABELS & set(record["synonyms"])
+
+        searchable = f" {record['searchable'].casefold()} "
+        for label in STEREOSPECIFIC_LABELS:
+            assert f" {label.casefold()} " not in searchable
 
 
 def test_lipoic_memberships_are_collapsed_to_generic_lipoic_acid(

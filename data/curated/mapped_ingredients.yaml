@@ -76654,9 +76654,9 @@ ingredients:
     curator: fix_lipoic_stereochemistry
     action: MERGED_FROM_MAPPED_RECORD
     changes: Absorbed generic/racemic Thioctic acid and alpha-lipoic acid records
-      from CHEBI:30314/CHEBI:43796; carried 4 observed source label(s), left R/S-only
-      target synonyms on the tombstones, moved 47/47 occurrences, and retargeted 2
-      component reference(s) (#454).
+      from CHEBI:30314/CHEBI:43796; carried 4 observed source label(s), kept R/S-only
+      target synonyms as REJECTED_LABEL provenance on the tombstones, moved 47/47
+      occurrences, and retargeted 2 component reference(s) (#454/#634).
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -174749,37 +174749,37 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: (+)-alpha-Lipoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (R)-(+)-Lipoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (R)-(+)-lipoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (R)-1,2-Dithiolane-3-pentanoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (R)-1,2-dithiolane-3-valeric acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (R)-6,8-thioctic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 5-[(3R)-1,2-dithiolan-3-yl]pentanoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: R-(+)-Lipoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: R-LA
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: RLA
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Thioctic acid d-form
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   mapping_status: REJECTED
   occurrence_statistics:
@@ -174859,7 +174859,8 @@ ingredients:
     action: MERGED_INTO
     changes: Merged into CHEBI:16494 '(DL)-alpha-Lipoic acid'; the old CHEBI:30314
       target was an unsupported enantiomer-specific grounding. Occurrences were transferred
-      to the generic lipoic acid record and SSSOM rows were dropped (#454).
+      to the generic lipoic acid record and SSSOM rows were dropped (#454), and 11
+      R/S-only target synonym(s) were retained as REJECTED_LABEL provenance (#454/#634).
     previous_status: MAPPED
     new_status: REJECTED
     llm_assisted: false
@@ -186171,37 +186172,37 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: (S)-(-)-lipoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (S)-1,2-dithiolane-3-pentanoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (S)-alpha-lipoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 5-[(3S)-1,2-dithiolan-3-yl]pentanoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: D,L-6,8-Thioctic Acid
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: L-1,2-dithiolane 3-valeric acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: L-6,8-thioctic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: L-6-thioctic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: S-LA
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: SLA
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: thioctic acid l-form
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   mapping_status: REJECTED
   occurrence_statistics:
@@ -186267,7 +186268,8 @@ ingredients:
     action: MERGED_INTO
     changes: Merged into CHEBI:16494 '(DL)-alpha-Lipoic acid'; the old CHEBI:43796
       target was an unsupported enantiomer-specific grounding. Occurrences were transferred
-      to the generic lipoic acid record and SSSOM rows were dropped (#454).
+      to the generic lipoic acid record and SSSOM rows were dropped (#454), and 10
+      R/S-only target synonym(s) were retained as REJECTED_LABEL provenance (#454/#634).
     previous_status: MAPPED
     new_status: REJECTED
     llm_assisted: false

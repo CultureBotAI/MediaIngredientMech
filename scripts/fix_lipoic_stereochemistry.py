@@ -88,6 +88,9 @@ STEREOSPECIFIC_SOURCE_LABELS = frozenset({
     "Thioctic acid d-form",
     "thioctic acid l-form",
 })
+STEREOSPECIFIC_SOURCE_LABEL_KEYS = frozenset(
+    text.casefold() for text in STEREOSPECIFIC_SOURCE_LABELS
+)
 
 
 def _read_collection(path: Path) -> dict:
@@ -203,8 +206,22 @@ def _retarget_to_survivor(record: dict) -> None:
     record["chemical_properties"] = {}
 
 
-def _tombstone(record: dict, old_identifier: str, stamp: str) -> None:
+def _reject_stereospecific_synonyms(record: dict) -> int:
+    rejected = 0
+    for synonym in record.get("synonyms") or []:
+        if not isinstance(synonym, dict):
+            continue
+        text = str(synonym.get("synonym_text") or "").strip()
+        if text.casefold() not in STEREOSPECIFIC_SOURCE_LABEL_KEYS:
+            continue
+        synonym["synonym_type"] = "REJECTED_LABEL"
+        rejected += 1
+    return rejected
+
+
+def _tombstone(record: dict, old_identifier: str, stamp: str) -> int:
     _retarget_to_survivor(record)
+    rejected_synonyms = _reject_stereospecific_synonyms(record)
     record["mapping_status"] = "REJECTED"
     record["representative"] = SURVIVOR_ID
     record["occurrence_statistics"] = {"total_occurrences": 0, "media_count": 0}
@@ -217,13 +234,16 @@ def _tombstone(record: dict, old_identifier: str, stamp: str) -> None:
                 f"Merged into {SURVIVOR_ID} {SURVIVOR_TERM!r}; the old "
                 f"{old_identifier} target was an unsupported enantiomer-specific "
                 "grounding. Occurrences were transferred to the generic lipoic "
-                f"acid record and SSSOM rows were dropped ({ISSUE})."
+                f"acid record and SSSOM rows were dropped ({ISSUE}), and "
+                f"{rejected_synonyms} R/S-only target synonym(s) were retained as "
+                f"REJECTED_LABEL provenance ({ISSUE}/#634)."
             ),
             "previous_status": "MAPPED",
             "new_status": "REJECTED",
             "llm_assisted": False,
         }
     )
+    return rejected_synonyms
 
 
 def _fix_components(records: list[dict], stamp: str) -> int:
@@ -417,9 +437,10 @@ def main(argv: list[str] | None = None) -> int:
             "changes": (
                 "Absorbed generic/racemic Thioctic acid and alpha-lipoic acid "
                 f"records from CHEBI:30314/CHEBI:43796; carried {added_synonyms} "
-                "observed source label(s), left R/S-only target synonyms on the "
-                f"tombstones, moved {moved_total}/{moved_media} occurrences, "
-                f"and retargeted {fixed_components} component reference(s) ({ISSUE})."
+                "observed source label(s), kept R/S-only target synonyms as "
+                "REJECTED_LABEL provenance on the tombstones, moved "
+                f"{moved_total}/{moved_media} occurrences, and retargeted "
+                f"{fixed_components} component reference(s) ({ISSUE}/#634)."
             ),
             "previous_status": "MAPPED",
             "new_status": "MAPPED",
@@ -427,8 +448,10 @@ def main(argv: list[str] | None = None) -> int:
         }
     )
 
-    for duplicate in duplicates:
+    rejected_synonyms = sum(
         _tombstone(duplicate, duplicate["identifier"], stamp)
+        for duplicate in duplicates
+    )
 
     collection["generation_date"] = stamp
     collection["total_count"] = len(records)
@@ -444,6 +467,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  occurrence counts moved: {moved_total}/{moved_media}")
     print(f"  role facets added: {added_roles}")
     print(f"  component references fixed: {fixed_components}")
+    print(f"  R/S labels rejected: {rejected_synonyms}")
     print(f"  SSSOM rows rewritten: {rewrote}")
     print(f"  SSSOM rows dropped: {dropped}")
     print(f"  membership rows moved: {moved_edges}")
