@@ -141,13 +141,24 @@ def _append_source_synonyms(record: dict, specs: Iterable[DuplicateSpec]) -> int
 
 def _merge_roles(survivor: dict, duplicates: Iterable[dict]) -> int:
     added = 0
-    for duplicate in duplicates:
-        for field in FACET_ROLE_SLOTS:
+    for field in FACET_ROLE_SLOTS:
+        target = survivor.setdefault(field, [])
+        present_roles = {
+            item.get("role")
+            for item in target
+            if isinstance(item, dict) and item.get("role")
+        }
+        for duplicate in duplicates:
             for item in duplicate.get(field) or []:
-                target = survivor.setdefault(field, [])
-                if item not in target:
-                    target.append(copy.deepcopy(item))
-                    added += 1
+                role = item.get("role") if isinstance(item, dict) else None
+                if role and role in present_roles:
+                    continue
+                if item in target:
+                    continue
+                target.append(copy.deepcopy(item))
+                if role:
+                    present_roles.add(role)
+                added += 1
     return added
 
 

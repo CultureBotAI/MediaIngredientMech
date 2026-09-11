@@ -223,6 +223,15 @@ def test_lipoic_memberships_are_collapsed_to_generic_lipoic_acid(
     assert not OLD_IDENTIFIERS & set(counts)
 
 
+def test_surviving_lipoic_record_has_one_vitamin_role(
+    mapped_records: dict[str, dict],
+) -> None:
+    roles = mapped_records["(DL)-alpha-Lipoic acid"].get("nutritional_roles") or []
+
+    assert [role["role"] for role in roles] == ["VITAMIN_SOURCE"]
+    assert roles[0]["confidence"] == 1.0
+
+
 def test_wolfe_vitamin_components_use_generic_lipoic_acid(
     mapped_records: dict[str, dict],
 ) -> None:
