@@ -9,6 +9,11 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#454)
+    notes: The Thioctic acid, alpha-lipoic acid, and D,L-6,8-Thioctic Acid source
+      labels name generic or racemic lipoic/thioctic acid rather than R- or S-only
+      lipoic acid.
 synonyms:
 - synonym_text: 'Role: Growth factor; Properties: Organic compound, Defined component,
     Simple component'
@@ -88,10 +93,22 @@ synonyms:
 - synonym_text: Lipoate
   synonym_type: EXACT
   source: manual
+- synonym_text: Thioctic acid
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:30314
+- synonym_text: α-lipoic acid
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:43796
+- synonym_text: α--Lipoic acid
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:43796
+- synonym_text: D,L-6,8-Thioctic Acid
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:43796
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 1701
-  media_count: 1700
+  total_occurrences: 1748
+  media_count: 1747
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -194,6 +211,16 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-11T14:49:05.979520+00:00'
+  curator: fix_lipoic_stereochemistry
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: Absorbed generic/racemic Thioctic acid and alpha-lipoic acid records from
+    CHEBI:30314/CHEBI:43796; carried 4 observed source label(s), left R/S-only target
+    synonyms on the tombstones, moved 47/47 occurrences, and retargeted 2 component
+    reference(s) (#454).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:16494
 chemical_properties:
   cas_rn: 1077-28-7
@@ -214,3 +241,9 @@ nutritional_roles:
       Organic compound'
     curator_note: Widespread use in media formulations (1399 occurrences). High confidence
       based on 'Defined component' property.
+- role: VITAMIN_SOURCE
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.

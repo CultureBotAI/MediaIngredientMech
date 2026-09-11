@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-09-11T13:42:52.892659+00:00
+Generated: 2026-09-11T14:52:09.961943+00:00
 Total: 2678 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -948,7 +948,7 @@ Total: 2678 ingredients
 | CHEBI:15377 | CHEBI:15377 | Distilled water | MAPPED | CHEBI | EXACT_MATCH | 6872 |
 | CHEBI:42160 | CHEBI:42160 | Dithionite | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:37070 | CHEBI:37070 | DL-2-Methylbutyric acid | MAPPED | CHEBI | EXACT_MATCH | 23 |
-| CHEBI:16494 | CHEBI:16494 | (DL)-alpha-Lipoic acid | MAPPED | CHEBI | EXACT_MATCH | 1701 |
+| CHEBI:16494 | CHEBI:16494 | (DL)-alpha-Lipoic acid | MAPPED | CHEBI | EXACT_MATCH | 1748 |
 | CHEBI:22660 | CHEBI:22660 | DL-aspartic acid | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:17126 | CHEBI:17126 | DL-carnitine | MAPPED | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:18320 | CHEBI:18320 | DL-Dithiothreitol | MAPPED | CHEBI | SYNONYM_MATCH | 121 |
@@ -2007,7 +2007,7 @@ Total: 2678 ingredients
 | CHEBI:49105 | CHEBI:49105 | Thiamine HCl | MAPPED | CHEBI | EXACT_MATCH | 2009 |
 | CHEBI:9532 | CHEBI:9532 | Thiamine pyrophosphate | MAPPED | CHEBI | SYNONYM_MATCH | 26 |
 | kgmicrobe.ingredient:thiamine_vitamin_solution | MICRO:0000460 | Thiamine Vitamin Solution | MAPPED | MICRO | CLOSE_MATCH | 14 |
-| CHEBI:30314 | CHEBI:30314 | Thioctic acid | MAPPED | CHEBI | EXACT_MATCH | 36 |
+| CHEBI:16494 | CHEBI:16494 | Thioctic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:47869 | CHEBI:47869 | Thioglycolate | MAPPED | CHEBI | SYNONYM_MATCH | 7 |
 | CHEBI:48566 | CHEBI:48566 | Thioridazine hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:26977 | CHEBI:26977 | Thiosulfate | MAPPED | CHEBI | EXACT_MATCH | 6 |
@@ -2140,7 +2140,7 @@ Total: 2678 ingredients
 | CHEBI:47965 | CHEBI:47966 | n-Acetyl-muramic acid | REJECTED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:16870 | CHEBI:16870 | sn-glycero-3-phosphocholine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:16610 | CHEBI:16610 | spermidine | MAPPED | CHEBI | CAS_RN_LOOKUP | 14 |
-| CHEBI:43796 | CHEBI:43796 | α-lipoic acid | MAPPED | CHEBI | EXACT_MATCH | 11 |
+| CHEBI:16494 | CHEBI:16494 | α-lipoic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:66455-27-4 | cas:66455-27-4 | α1-Acid Glycoprotein from bovine plasma | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0000182 | MICRO:0000182 | Tryptone peptone | MAPPED | MICRO | EXACT_MATCH | 1600 |
 | FOODON:03315720 | FOODON:03315720 | Phytone | MAPPED | FOODON | CLOSE_MATCH | 1089 |

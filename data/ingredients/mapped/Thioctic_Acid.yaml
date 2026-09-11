@@ -1,14 +1,16 @@
-identifier: CHEBI:30314
+identifier: CHEBI:16494
 preferred_term: Thioctic acid
 ontology_mapping:
-  ontology_id: CHEBI:30314
-  ontology_label: (R)-lipoic acid
+  ontology_id: CHEBI:16494
+  ontology_label: lipoic acid
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#454)
+    notes: The source label names generic or racemic lipoic/thioctic acid. No source
+      occurrence asserts an R- or S-only enantiomer, so CHEBI:16494 is the supported
+      ChEBI target.
 synonyms:
 - synonym_text: 'Role: Growth factor; Properties: Organic compound, Defined component,
     Simple component'
@@ -47,10 +49,10 @@ synonyms:
 - synonym_text: Thioctic acid d-form
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 36
-  media_count: 36
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -119,14 +121,17 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
-chemical_properties:
-  cas_rn: 1077-28-7
-  data_source: PubChem API
-  retrieval_date: '2026-04-05T19:54:04.445615+00:00'
-  molecular_formula: C8H14O2S2
-  inchi: InChI=1S/C8H14O2S2/c9-8(10)4-2-1-3-7-5-6-11-12-7/h7H,1-6H2,(H,9,10)/t7-/m1/s1
-  smiles: O=C(O)CCCC[C@@H]1CCSS1
-kg_microbe_node_id: CHEBI:30314
+- timestamp: '2026-09-11T14:49:05.979520+00:00'
+  curator: fix_lipoic_stereochemistry
+  action: MERGED_INTO
+  changes: Merged into CHEBI:16494 '(DL)-alpha-Lipoic acid'; the old CHEBI:30314 target
+    was an unsupported enantiomer-specific grounding. Occurrences were transferred
+    to the generic lipoic acid record and SSSOM rows were dropped (#454).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: false
+chemical_properties: {}
+kg_microbe_node_id: CHEBI:16494
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: VITAMIN_SOURCE
@@ -135,3 +140,4 @@ nutritional_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+representative: CHEBI:16494

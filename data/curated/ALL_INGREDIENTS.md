@@ -1,8 +1,8 @@
 # Complete Ingredients Index
 **Total Records**: 2951
-**Mapped**: 2622 (88.9%)
+**Mapped**: 2620 (88.8%)
 **Unmapped**: 262 (8.9%)
-**Other statuses**: 67 (2.3%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 69 (2.3%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 220,585
 
 ---
@@ -935,7 +935,7 @@
 | CHEBI:15377 | Distilled water | CHEBI:15377 | CHEBI | EXACT_MATCH | 6872 |
 | CHEBI:42160 | Dithionite | CHEBI:42160 | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:37070 | DL-2-Methylbutyric acid | CHEBI:37070 | CHEBI | EXACT_MATCH | 23 |
-| CHEBI:16494 | (DL)-alpha-Lipoic acid | CHEBI:16494 | CHEBI | EXACT_MATCH | 1701 |
+| CHEBI:16494 | (DL)-alpha-Lipoic acid | CHEBI:16494 | CHEBI | EXACT_MATCH | 1748 |
 | CHEBI:22660 | DL-aspartic acid | CHEBI:22660 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:17126 | DL-carnitine | CHEBI:17126 | CHEBI | SYNONYM_MATCH | 2 |
 | CHEBI:18320 | DL-Dithiothreitol | CHEBI:18320 | CHEBI | SYNONYM_MATCH | 121 |
@@ -1963,7 +1963,6 @@
 | CHEBI:49105 | Thiamine HCl | CHEBI:49105 | CHEBI | EXACT_MATCH | 2009 |
 | CHEBI:9532 | Thiamine pyrophosphate | CHEBI:9532 | CHEBI | SYNONYM_MATCH | 26 |
 | kgmicrobe.ingredient:thiamine_vitamin_solution | Thiamine Vitamin Solution | MICRO:0000460 | MICRO | CLOSE_MATCH | 14 |
-| CHEBI:30314 | Thioctic acid | CHEBI:30314 | CHEBI | EXACT_MATCH | 36 |
 | CHEBI:47869 | Thioglycolate | CHEBI:47869 | CHEBI | SYNONYM_MATCH | 7 |
 | CHEBI:48566 | Thioridazine hydrochloride | CHEBI:48566 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:26977 | Thiosulfate | CHEBI:26977 | CHEBI | EXACT_MATCH | 6 |
@@ -2093,7 +2092,6 @@
 | CHEBI:35704 | n-Acetyl-lysine | CHEBI:35704 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:16870 | sn-glycero-3-phosphocholine | CHEBI:16870 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:16610 | spermidine | CHEBI:16610 | CHEBI | CAS_RN_LOOKUP | 14 |
-| CHEBI:43796 | α-lipoic acid | CHEBI:43796 | CHEBI | EXACT_MATCH | 11 |
 | cas:66455-27-4 | α1-Acid Glycoprotein from bovine plasma | cas:66455-27-4 | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0000182 | Tryptone peptone | MICRO:0000182 | MICRO | EXACT_MATCH | 1600 |
 | FOODON:03315720 | Phytone | FOODON:03315720 | FOODON | CLOSE_MATCH | 1089 |
@@ -2955,9 +2953,11 @@
 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | REJECTED | CHEBI:32150 |  | 0 |
 | CHEBI:33403 | Sulfur (powder) | REJECTED | CHEBI:33403 | CHEBI:33403 | 0 |
 | CHEBI:33403 | Sulphur | REJECTED | CHEBI:33403 | CHEBI:33403 | 0 |
+| CHEBI:16494 | Thioctic acid | REJECTED | CHEBI:16494 | CHEBI:16494 | 0 |
 | CHEBI:32142 | Trisodium citrate x 2 H2O | REJECTED | CHEBI:32142 |  | 0 |
 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI:17268 |  | 0 |
 | CHEBI:47965 | n-Acetyl-muramic acid | REJECTED | CHEBI:47966 |  | 0 |
+| CHEBI:16494 | α-lipoic acid | REJECTED | CHEBI:16494 | CHEBI:16494 | 0 |
 | CHEBI:66870 | Na2S2O4 | REJECTED | CHEBI:66870 |  | 0 |
 | kgmicrobe.ingredient:na-phosphate_buffer | Na-Phosphate-Buffer | REJECTED | kgmicrobe.ingredient:na-phosphate_buffer |  | 0 |
 | kgmicrobe.ingredient:vitamins_solution | Vitamins-solution | REJECTED | kgmicrobe.ingredient:vitamins_solution |  | 0 |
