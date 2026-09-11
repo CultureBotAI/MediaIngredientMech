@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-09-11T17:52:44.747307+00:00
-Total: 273 ingredients
+Generated: 2026-09-11T19:38:51.350458+00:00
+Total: 272 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -175,7 +175,6 @@ Total: 273 ingredients
 | UNMAPPED_0457 |  | N-Z amine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0460 |  | Na-Nitrilotriacetat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0463 |  | Na-tetrathionate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0465 |  | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0475 |  | Na3-NTA x H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0477 |  | NaSiO3 x 9 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0050 |  | Natural sea-salt | UNMAPPED |  |  | 2 |

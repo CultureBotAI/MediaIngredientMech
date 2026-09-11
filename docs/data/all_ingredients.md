@@ -1,10 +1,11 @@
 # All Ingredients
 
-Generated: 2026-09-11T17:52:44.749045+00:00
+Generated: 2026-09-11T19:38:51.351573+00:00
 Total: 2951 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
+| kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o | CHEBI:15978 | Na2 beta-glycerol PO4 x 5 H2O | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | MICRO:0000610 | MICRO:0000610 | Ox-bile | MAPPED | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0001348 | MICRO:0001348 | BG-11 Medium | MAPPED | MICRO | SYNONYM_MATCH | 2 |
 | kgmicrobe.ingredient:marine_broth_2216 | kgmicrobe.ingredient:marine_broth_2216 | Marine broth 2216 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 19 |
@@ -2853,7 +2854,6 @@ Total: 2951 ingredients
 | UNMAPPED_0457 |  | N-Z amine | UNMAPPED |  |  | 0 |
 | UNMAPPED_0460 |  | Na-Nitrilotriacetat | UNMAPPED |  |  | 0 |
 | UNMAPPED_0463 |  | Na-tetrathionate | UNMAPPED |  |  | 0 |
-| UNMAPPED_0465 |  | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0475 |  | Na3-NTA x H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0477 |  | NaSiO3 x 9 H2O | UNMAPPED |  |  | 0 |
 | UNMAPPED_0050 |  | Natural sea-salt | UNMAPPED |  |  | 2 |

@@ -1,6 +1,6 @@
 # Mapped Ingredients Index
-**Total Records**: 2678
-**Mapped**: 2620 (97.8%)
+**Total Records**: 2679
+**Mapped**: 2621 (97.8%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 58 (2.2%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 219,988
@@ -11,6 +11,7 @@
 
 | Identifier | Preferred Term | Ontology ID | Source | Quality | Occurrences |
 |---|---|---|---|---|---|
+| kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o | Na2 beta-glycerol PO4 x 5 H2O | CHEBI:15978 | CHEBI | NARROW_MATCH | 0 |
 | MICRO:0000610 | Ox-bile | MICRO:0000610 | MICRO | SYNONYM_MATCH | 0 |
 | MICRO:0001348 | BG-11 Medium | MICRO:0001348 | MICRO | SYNONYM_MATCH | 2 |
 | kgmicrobe.ingredient:marine_broth_2216 | Marine broth 2216 | kgmicrobe.ingredient:marine_broth_2216 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 19 |
