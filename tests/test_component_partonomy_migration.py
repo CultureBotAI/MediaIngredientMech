@@ -37,12 +37,11 @@ def test_migration_is_idempotent_and_has_reviewed_final_inventory():
     assert len(parents) == 83
     assert sum(len(record["components"]) for record in parents) == 505
     # 3 components moved EXTERNAL_TERM -> MIM_CATALOG when `clarified rumen fluid`
-    # (MICRO:0000520) gained a MIM record. A component's scope is a fact about the
-    # catalog, not about the migration, so grounding a referenced term legitimately
-    # shifts the split. The migrated total (143) is unchanged, which is what
-    # migrate_component_partonomy.py guards.
-    assert scopes.count("MIM_CATALOG") == 493
-    assert scopes.count("EXTERNAL_TERM") == 7
+    # (MICRO:0000520) gained a MIM record; 1 moved MIM_CATALOG -> EXTERNAL_TERM when
+    # `Esculin Monohydrate` was re-grounded to a hydrate-specific CHEBI term (#321).
+    # The total is unchanged, which is what the guard is for.
+    assert scopes.count("MIM_CATALOG") == 492
+    assert scopes.count("EXTERNAL_TERM") == 8
     assert scopes.count("UNMAPPED") == 5
 
     by_label = {record["preferred_term"]: record for record in second}

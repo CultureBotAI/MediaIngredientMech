@@ -97,7 +97,7 @@
 | kgmicrobe.ingredient:aminoacids | Aminoacids | kgmicrobe.ingredient:aminoacids | kgmicrobe.ingredient | FALLBACK_REGISTRY | 6 |
 | kgmicrobe.ingredient:pbs | PBS | NCIT:C178908 | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:84_gl_nahco3_solution | 84 g/L NaHCO3 solution | CHEBI:32139 | CHEBI | NARROW_MATCH | 1 |
-| kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution | L-Cysteine x HCl x H2O solution | CHEBI:91247 | CHEBI | CLOSE_MATCH | 1 |
+| kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution | L-Cysteine x HCl x H2O solution | CHEBI:91248 | CHEBI | CLOSE_MATCH | 1 |
 | kgmicrobe.ingredient:cholesterol_lipid_concentrate | cholesterol lipid concentrate | CHEBI:16113 | CHEBI | NARROW_MATCH | 2 |
 | kgmicrobe.ingredient:menadione_solution | Menadione solution | CHEBI:28869 | CHEBI | NARROW_MATCH | 1 |
 | kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid | Wolfe's mineral mix_minus_Nitrilotriacetic_acid | kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
@@ -610,7 +610,7 @@
 | CHEBI:15846 | beta-NAD | CHEBI:15846 | CHEBI | EXACT_MATCH | 17 |
 | CHEBI:36218 | Beta-Lactose | CHEBI:36218 | CHEBI | CAS_RN_LOOKUP | 1 |
 | cas:590-46-5 | Betaine hydrochloride | CHEBI:17750 | CHEBI | NARROW_MATCH | 3 |
-| kgmicrobe.compound:betaine_x_h2o | Betaine x H2O | CHEBI:17750 | CHEBI | CLOSE_MATCH | 40 |
+| CHEBI:91242 | Betaine x H2O | CHEBI:91242 | CHEBI | EXACT_MATCH | 40 |
 | CHEBI:3080 | Betanin | CHEBI:3080 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:40957 | BICINE buffer | CHEBI:40957 | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:60584 | Bicyclomycin | CHEBI:60584 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -972,7 +972,7 @@
 | CHEBI:42255 | Epigallocatechin | CHEBI:42255 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:48923 | erythromycin | CHEBI:48923 | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:2500 | Escin | CHEBI:2500 | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:4853 | Esculin Monohydrate | CHEBI:4853 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:73111 | Esculin Monohydrate | CHEBI:73111 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4867 | Estragole | CHEBI:4867 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:etabetacin | Etabetacin | kgmicrobe.compound:etabetacin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | mesh:C004910 | Etamycin | mesh:C004910 | MESH | EXACT_MATCH | 0 |

@@ -75,12 +75,19 @@ curation_history:
     to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
     concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-09-10T00:00:00+00:00'
+  curator: fix_remaining_hydrate_regroundings
+  action: RESCOPED_COMPONENT
+  changes: esculin component reference_scope MIM_CATALOG -> EXTERNAL_TERM. CHEBI:4853
+    names anhydrous esculin; after Esculin Monohydrate moved to CHEBI:73111, no active
+    MIM record represents that component (#321).
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:esculin_ferric_citrate);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 components:
 - component_name: esculin
   component_id: CHEBI:4853
-  reference_scope: MIM_CATALOG
+  reference_scope: EXTERNAL_TERM
   source: MIM curation (#213/#308)
 - component_name: iron(III) citrate
   component_id: CHEBI:144421

@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-10T13:11:42.021089+00:00
+Generated: 2026-09-11T05:42:59.014767+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -92,7 +92,7 @@ Total: 2952 ingredients
 | kgmicrobe.ingredient:aminoacids | kgmicrobe.ingredient:aminoacids | Aminoacids | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 6 |
 | kgmicrobe.ingredient:pbs | NCIT:C178908 | PBS | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:84_gl_nahco3_solution | CHEBI:32139 | 84 g/L NaHCO3 solution | MAPPED | CHEBI | NARROW_MATCH | 1 |
-| kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution | CHEBI:91247 | L-Cysteine x HCl x H2O solution | MAPPED | CHEBI | CLOSE_MATCH | 1 |
+| kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution | CHEBI:91248 | L-Cysteine x HCl x H2O solution | MAPPED | CHEBI | CLOSE_MATCH | 1 |
 | kgmicrobe.ingredient:cholesterol_lipid_concentrate | CHEBI:16113 | cholesterol lipid concentrate | MAPPED | CHEBI | NARROW_MATCH | 2 |
 | kgmicrobe.ingredient:menadione_solution | CHEBI:28869 | Menadione solution | MAPPED | CHEBI | NARROW_MATCH | 1 |
 | kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid | kgmicrobe.ingredient:wolfes_mineral_mix_minus_nitrilotriacetic_acid | Wolfe's mineral mix_minus_Nitrilotriacetic_acid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 1 |
@@ -612,7 +612,7 @@ Total: 2952 ingredients
 | CHEBI:15846 | CHEBI:15846 | beta-NAD | MAPPED | CHEBI | EXACT_MATCH | 17 |
 | CHEBI:36218 | CHEBI:36218 | Beta-Lactose | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
 | cas:590-46-5 | CHEBI:17750 | Betaine hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 3 |
-| kgmicrobe.compound:betaine_x_h2o | CHEBI:17750 | Betaine x H2O | MAPPED | CHEBI | CLOSE_MATCH | 40 |
+| CHEBI:91242 | CHEBI:91242 | Betaine x H2O | MAPPED | CHEBI | EXACT_MATCH | 40 |
 | CHEBI:3080 | CHEBI:3080 | Betanin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:40957 | CHEBI:40957 | Bicine | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:40957 | CHEBI:40957 | BICINE buffer | MAPPED | CHEBI | EXACT_MATCH | 7 |
@@ -986,7 +986,7 @@ Total: 2952 ingredients
 | CHEBI:42255 | CHEBI:42255 | Epigallocatechin | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:48923 | CHEBI:48923 | erythromycin | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:2500 | CHEBI:2500 | Escin | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:4853 | CHEBI:4853 | Esculin Monohydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:73111 | CHEBI:73111 | Esculin Monohydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4867 | CHEBI:4867 | Estragole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:etabetacin | kgmicrobe.compound:etabetacin | Etabetacin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | mesh:C004910 | mesh:C004910 | Etamycin | MAPPED | MESH | EXACT_MATCH | 0 |

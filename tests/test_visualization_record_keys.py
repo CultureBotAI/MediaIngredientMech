@@ -71,8 +71,36 @@ def test_currency_index_uses_record_keys_and_excludes_tombstones(tmp_path):
     )
 
     assert live_records(ingredients) == {
-        "MIM:Dry": "CHEBI:1",
-        "MIM:Wet": "CHEBI:1",
+        "MIM:Dry": {
+            "identifier": "CHEBI:1",
+            "name": "salt",
+            "mapping_status": "MAPPED",
+            "ontology_source": "CHEBI",
+            "ontology_id": "CHEBI:1",
+            "ontology_label": "salt",
+            "mapping_quality": "EXACT_MATCH",
+            "total_occurrences": 0,
+            "media_count": 0,
+            "num_synonyms": 0,
+            "molecular_formula": "",
+            "cas_rn": "",
+            "category": "mapped",
+        },
+        "MIM:Wet": {
+            "identifier": "CHEBI:1",
+            "name": "salt hydrate",
+            "mapping_status": "MAPPED",
+            "ontology_source": "CHEBI",
+            "ontology_id": "CHEBI:1",
+            "ontology_label": "salt hydrate",
+            "mapping_quality": "EXACT_MATCH",
+            "total_occurrences": 0,
+            "media_count": 0,
+            "num_synonyms": 0,
+            "molecular_formula": "",
+            "cas_rn": "",
+            "category": "mapped",
+        },
     }
 
 
@@ -89,3 +117,25 @@ def test_currency_audit_rejects_blank_keys_and_non_object_entries():
 
     assert defects["blank_ids"] == [0]
     assert defects["invalid_entries"] == [1]
+
+
+def test_currency_audit_rejects_stale_metadata():
+    defects = audit_entries(
+        [
+            {
+                "id": "MIM:Dry",
+                "identifier": "CHEBI:1",
+                "ontology_id": "CHEBI:old",
+            }
+        ],
+        {
+            "MIM:Dry": {
+                "identifier": "CHEBI:1",
+                "ontology_id": "CHEBI:2",
+            }
+        },
+    )
+
+    assert defects["metadata_mismatches"] == [
+        ("MIM:Dry", {"ontology_id": ("CHEBI:old", "CHEBI:2")})
+    ]

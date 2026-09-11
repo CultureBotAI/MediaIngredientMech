@@ -1,8 +1,8 @@
-identifier: CHEBI:4853
+identifier: CHEBI:73111
 preferred_term: Esculin Monohydrate
 ontology_mapping:
-  ontology_id: CHEBI:4853
-  ontology_label: esculin
+  ontology_id: CHEBI:73111
+  ontology_label: esculin hydrate
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
@@ -18,13 +18,18 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:4853's
       ChEBI formula ('C15H16O9') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: Promoted from CHEBI:4853 ('esculin') to the exact ChEBI hydrate term CHEBI:73111
+      ('esculin hydrate'). The label names a hydrate and ChEBI has a term for that
+      hydrate, so MAPPING_SEMANTICS.md Section 3 step 1 applies.
 synonyms:
-- synonym_text: 7-hydroxy-2-oxo-2H-chromen-6-yl beta-D-glucopyranoside
-  synonym_type: EXACT_SYNONYM
-  source: chebi_synonym_review
 - synonym_text: 'hydrolysis: esculin'
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: 7-hydroxy-2-oxo-2H-chromen-6-yl beta-D-glucopyranoside--water (1/1)
+  synonym_type: EXACT_SYNONYM
+  source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -71,11 +76,18 @@ curation_history:
     esculin''. Tokens already present on the kg-microbe ontology node were left out
     as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-10T00:00:00+00:00'
+  curator: fix_remaining_hydrate_regroundings
+  action: PROMOTED_TO_SPECIFIC_HYDRATE
+  changes: identifier CHEBI:4853 -> CHEBI:73111; ontology_id CHEBI:4853 -> CHEBI:73111;
+    mapping_quality -> EXACT_MATCH. Structure fields were copied from the exact ChEBI
+    hydrate term, 1 stale anhydrous exact synonym(s) were replaced, and stale kg_microbe_node_id
+    values were aligned where present (#321).
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 531-75-9
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  data_source: OAK/CHEBI exact hydrate term CHEBI:73111
+  retrieval_date: '2026-09-10T00:00:00+00:00'
   molecular_formula: C15H16O9.H2O
-  inchi: InChI=1S/C15H16O9/c16-5-10-12(19)13(20)14(21)15(24-10)23-9-3-6-1-2-11(18)22-8(6)4-7(9)17/h1-4,10,12-17,19-21H,5H2/t10-,12-,13+,14-,15-/m1/s1
-  smiles: O=c1ccc2cc(O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)c(O)cc2o1
+  inchi: InChI=1S/C15H16O9.H2O/c16-5-10-12(19)13(20)14(21)15(24-10)23-9-3-6-1-2-11(18)22-8(6)4-7(9)17;/h1-4,10,12-17,19-21H,5H2;1H2/t10-,12-,13+,14-,15-;/m1./s1
+  smiles: O.O=c1ccc2cc(O[C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)c(O)cc2o1
 ingredient_type: SINGLE_INGREDIENT

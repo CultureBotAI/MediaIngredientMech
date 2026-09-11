@@ -1,10 +1,10 @@
-identifier: kgmicrobe.compound:betaine_x_h2o
+identifier: CHEBI:91242
 preferred_term: Betaine x H2O
 ontology_mapping:
-  ontology_id: CHEBI:17750
-  ontology_label: glycine betaine
+  ontology_id: CHEBI:91242
+  ontology_label: glycine betaine hydrate
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -37,10 +37,13 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: DATABASE_MATCH
+    source: MIM curation (#321)
+    notes: Promoted from CHEBI:17750 ('glycine betaine') to the exact ChEBI hydrate
+      term CHEBI:91242 ('glycine betaine hydrate'). The label names a hydrate and
+      ChEBI has a term for that hydrate, so MAPPING_SEMANTICS.md Section 3 step 1
+      applies.
 synonyms:
-- synonym_text: Betaine
-  synonym_type: EXACT_SYNONYM
-  source: merged_from_duplicate_mim_record
 - synonym_text: 'Role: Growth factor; Properties: Defined component, Simple component,
     Organic compound'
   synonym_type: RAW_TEXT
@@ -49,48 +52,12 @@ synonyms:
     Simple component'
   synonym_type: RAW_TEXT
   source: CultureMech
-- synonym_text: (trimethylammonio)acetate
+- synonym_text: (trimethylazaniumyl)acetate--water (1/1)
   synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: (trimethylammoniumyl)acetate
+  source: chebi_synonym_review
+- synonym_text: carboxy-N,N,N-trimethylmethanaminium hydroxide
   synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 1-carboxy-N,N,N-trimethylmethanaminium inner salt
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: 2-N,N,N-trimethylammonio acetate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Bet
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Glycine betaine
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: N,N,N-Trimethylglycine
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: N,N,N-trimethylammonioacetate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Trimethylaminoacetate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Trimethylammonioacetate
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: Trimethylglycine
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: abromine
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: acidol
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
-- synonym_text: trimethylglycocoll
-  synonym_type: EXACT_SYNONYM
-  source: kg_microbe
+  source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 40
@@ -188,12 +155,21 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-10T00:00:00+00:00'
+  curator: fix_remaining_hydrate_regroundings
+  action: PROMOTED_TO_SPECIFIC_HYDRATE
+  changes: identifier kgmicrobe.compound:betaine_x_h2o -> CHEBI:91242; ontology_id
+    CHEBI:17750 -> CHEBI:91242; mapping_quality -> EXACT_MATCH. Structure fields were
+    copied from the exact ChEBI hydrate term, 15 stale anhydrous exact synonym(s)
+    were replaced, and stale kg_microbe_node_id values were aligned where present
+    (#321).
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 107-43-7
-  data_source: OAK/CHEBI xref
-  retrieval_date: '2026-04-19T07:39:40.088267+00:00'
+  cas_rn: 590-47-6
+  data_source: OAK/CHEBI exact hydrate term CHEBI:91242
+  retrieval_date: '2026-09-10T00:00:00+00:00'
   molecular_formula: C5H11NO2.H2O
-  inchi: InChI=1S/C5H11NO2/c1-6(2,3)4-5(7)8/h4H2,1-3H3
-  smiles: C[N+](C)(C)CC(=O)[O-]
-kg_microbe_node_id: CHEBI:17750
+  inchi: InChI=1S/C5H11NO2.H2O/c1-6(2,3)4-5(7)8;/h4H2,1-3H3;1H2
+  smiles: C[N+](C)(C)CC(=O)[O-].O
+kg_microbe_node_id: CHEBI:91242
 ingredient_type: SINGLE_INGREDIENT

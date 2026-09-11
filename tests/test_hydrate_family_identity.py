@@ -8,6 +8,7 @@ hexahydrate, so any CAS-keyed dedup run at the time would have merged the wrong
 records.
 """
 
+import csv
 from pathlib import Path
 
 import pytest
@@ -15,6 +16,7 @@ import yaml
 
 ROOT = Path(__file__).parent.parent
 CURATED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
+SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 
 
 @pytest.fixture(scope="module")
@@ -30,6 +32,13 @@ def _by_term(records: list[dict], term: str) -> dict:
 
 def _cas(record: dict) -> str | None:
     return (record.get("chemical_properties") or {}).get("cas_rn")
+
+
+@pytest.fixture(scope="module")
+def sssom_rows() -> list[dict]:
+    with SSSOM.open(newline="", encoding="utf-8") as fh:
+        rows = [line for line in fh if not line.startswith("#")]
+    return list(csv.DictReader(rows, delimiter="\t"))
 
 
 # --- #334: the two promotions ---------------------------------------------
@@ -137,3 +146,176 @@ def test_hydrate_specific_groundings_carry_their_own_cas(records, term, cas, che
 
     assert record["ontology_mapping"]["ontology_id"] == chebi
     assert _cas(record) == cas
+
+
+@pytest.mark.parametrize(
+    ("term", "chebi", "label", "formula", "cas", "data_source"),
+    [
+        (
+            "Esculin Monohydrate",
+            "CHEBI:73111",
+            "esculin hydrate",
+            "C15H16O9.H2O",
+            None,
+            "OAK/CHEBI exact hydrate term CHEBI:73111",
+        ),
+        ("Betaine x H2O", "CHEBI:91242", "glycine betaine hydrate",
+         "C5H11NO2.H2O", "590-47-6",
+         "OAK/CHEBI exact hydrate term CHEBI:91242"),
+    ],
+)
+def test_late_specific_hydrates_use_the_exact_chebi_term(
+    records, term, chebi, label, formula, cas, data_source
+):
+    record = _by_term(records, term)
+
+    assert record["identifier"] == chebi
+    assert record["ontology_mapping"]["ontology_id"] == chebi
+    assert record["ontology_mapping"]["ontology_label"] == label
+    assert record["ontology_mapping"]["mapping_quality"] == "EXACT_MATCH"
+    assert record["chemical_properties"]["molecular_formula"] == formula
+    assert _cas(record) == cas
+    assert record["chemical_properties"]["data_source"] == data_source
+    if "kg_microbe_node_id" in record:
+        assert record["kg_microbe_node_id"] == chebi
+
+
+@pytest.mark.parametrize(
+    ("term", "required", "forbidden"),
+    [
+        (
+            "Esculin Monohydrate",
+            {
+                "7-hydroxy-2-oxo-2H-chromen-6-yl "
+                "beta-D-glucopyranoside--water (1/1)"
+            },
+            {"7-hydroxy-2-oxo-2H-chromen-6-yl beta-D-glucopyranoside"},
+        ),
+        (
+            "Betaine x H2O",
+            {
+                "(trimethylazaniumyl)acetate--water (1/1)",
+                "carboxy-N,N,N-trimethylmethanaminium hydroxide",
+            },
+            {"Betaine", "Glycine betaine", "Trimethylglycine"},
+        ),
+    ],
+)
+def test_late_specific_hydrates_do_not_publish_anhydrous_exact_synonyms(
+    records, term, required, forbidden
+):
+    exact = {
+        synonym["synonym_text"]
+        for synonym in _by_term(records, term).get("synonyms") or []
+        if synonym.get("synonym_type") == "EXACT_SYNONYM"
+    }
+
+    assert required <= exact
+    assert exact.isdisjoint(forbidden)
+
+
+def test_esculin_ferric_citrate_keeps_anhydrous_component_as_external_term(records):
+    record = _by_term(records, "Esculin Ferric Citrate")
+    esculin = [
+        component for component in record["components"]
+        if component["component_name"] == "esculin"
+    ]
+
+    assert esculin == [
+        {
+            "component_name": "esculin",
+            "component_id": "CHEBI:4853",
+            "reference_scope": "EXTERNAL_TERM",
+            "source": "MIM curation (#213/#308)",
+        }
+    ]
+
+
+@pytest.mark.parametrize(
+    ("term", "chebi", "other"),
+    [
+        (
+            "Esculin Monohydrate",
+            "CHEBI:73111",
+            [
+                "hydrolysis: esculin",
+                (
+                    "7-hydroxy-2-oxo-2H-chromen-6-yl "
+                    "beta-D-glucopyranoside--water (1/1)"
+                ),
+            ],
+        ),
+        (
+            "Betaine x H2O",
+            "CHEBI:91242",
+            [
+                "(trimethylazaniumyl)acetate--water (1/1)",
+                "carboxy-N,N,N-trimethylmethanaminium hydroxide",
+                "CAS:590-47-6",
+            ],
+        ),
+    ],
+)
+def test_late_specific_hydrates_have_single_sssom_exact_rows(
+    sssom_rows, term, chebi, other
+):
+    rows = [row for row in sssom_rows if row["subject_label"] == term]
+
+    assert len(rows) == 1
+    assert rows[0]["predicate_id"] == "skos:exactMatch"
+    assert rows[0]["object_id"] == chebi
+    assert rows[0]["mapping_date"] == "2026-09-10"
+    assert rows[0]["other"].split("|") == other
+
+
+def test_l_cysteine_solution_keeps_local_identity_on_the_hydrate_parent(
+    records, sssom_rows
+):
+    record = _by_term(records, "L-Cysteine x HCl x H2O solution")
+
+    assert record["identifier"] == (
+        "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution"
+    )
+    assert record["ontology_mapping"]["ontology_id"] == "CHEBI:91248"
+    assert record["ontology_mapping"]["mapping_quality"] == "CLOSE_MATCH"
+
+    rows = {
+        row["object_id"]: row
+        for row in sssom_rows
+        if row["subject_label"] == "L-Cysteine x HCl x H2O solution"
+    }
+    assert set(rows) == {
+        "CHEBI:91248",
+        "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution",
+    }
+    assert rows["CHEBI:91248"]["predicate_id"] == "skos:closeMatch"
+    assert rows["CHEBI:91248"]["mapping_date"] == "2026-09-10"
+    assert rows["CHEBI:91248"]["other"] == "QSY9 succinimidyl ester(1+)"
+    assert (
+        rows["kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution"]["mapping_date"]
+        == "2026-09-10"
+    )
+    assert "CHEBI:91248" in rows[
+        "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution"
+    ]["comment"]
+
+
+def test_variable_ferric_sulfate_hydrate_is_not_moved_to_the_monohydrate(
+    records, sssom_rows
+):
+    """`Fe2(SO4)3 x n H2O` needs a variable-hydrate identity.
+
+    CHEBI:131387 is labelled "iron(3+) sulfate hydrate", but its formula and
+    exact synonym state a 1:1 monohydrate. Exact-matching the variable `n`
+    record to it would collapse two hydration states.
+    """
+    record = _by_term(records, "Fe2(SO4)3 x n H2O")
+    rows = [
+        row for row in sssom_rows if row["subject_label"] == "Fe2(SO4)3 x n H2O"
+    ]
+
+    assert rows
+    assert record["identifier"] != "CHEBI:131387"
+    assert record["ontology_mapping"]["ontology_id"] != "CHEBI:131387"
+    assert record.get("chemical_properties", {}).get("cas_rn") != "43059-01-4"
+    assert all(row["object_id"] != "CHEBI:131387" for row in rows)

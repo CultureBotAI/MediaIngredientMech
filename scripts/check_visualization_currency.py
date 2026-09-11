@@ -30,10 +30,10 @@ deleted rather than obeyed, which is the failure #380's docstring warns about.
 
 Everything that is *derived from the corpus* is stable, so this asserts that
 instead: **every published node must name one live file-backed record, and must
-carry that record's semantic identifier separately.** Visualization `id` values
-are filename-derived `MIM:` record CURIEs; the non-unique ingredient
-`identifier` cannot address sibling records. The check tolerates layout jitter
-and needs no regeneration to compare coordinates.
+carry that record's semantic metadata.** Visualization `id` values are
+filename-derived `MIM:` record CURIEs; the non-unique ingredient `identifier`
+cannot address sibling records. The check tolerates layout jitter and needs no
+regeneration to compare coordinates.
 
 It deliberately does NOT require every live record to appear. The generator drops
 ingredients with no embedding, so absence is a coverage question rather than
@@ -59,11 +59,57 @@ from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
 INGREDIENTS = ROOT / "data" / "ingredients"
 ARTIFACTS = ("ingredient_umap.json", "ingredient_graph.json")
+STABLE_NODE_FIELDS = (
+    "identifier",
+    "name",
+    "mapping_status",
+    "ontology_source",
+    "ontology_id",
+    "ontology_label",
+    "mapping_quality",
+    "total_occurrences",
+    "media_count",
+    "num_synonyms",
+    "molecular_formula",
+    "cas_rn",
+    "category",
+)
 
 
-def live_records(ingredients_root: Path = INGREDIENTS) -> dict[str, str]:
-    """Return file-backed record CURIE -> semantic identifier for live records."""
-    records: dict[str, str] = {}
+def visualization_metadata(
+    record: dict,
+    category: str,
+    record_key: str,
+) -> dict[str, object]:
+    """Return the non-coordinate visualization fields derived from one record."""
+    preferred_term = record.get("preferred_term", "Unknown")
+    if preferred_term.startswith("empty_"):
+        preferred_term = f"Unnamed Component ({record_key})"
+
+    ontology_mapping = record.get("ontology_mapping") or {}
+    stats = record.get("occurrence_statistics", {})
+    synonyms = record.get("synonyms", [])
+    chem_props = record.get("chemical_properties") or {}
+    return {
+        "identifier": record.get("identifier", ""),
+        "name": preferred_term,
+        "mapping_status": record.get("mapping_status", "UNKNOWN"),
+        "ontology_source": ontology_mapping.get("ontology_source", ""),
+        "ontology_id": ontology_mapping.get("ontology_id", ""),
+        "ontology_label": ontology_mapping.get("ontology_label", ""),
+        "mapping_quality": ontology_mapping.get("mapping_quality", ""),
+        "total_occurrences": stats.get("total_occurrences", 0),
+        "media_count": stats.get("media_count", 0),
+        "num_synonyms": len(synonyms),
+        "molecular_formula": chem_props.get("molecular_formula") or "",
+        "cas_rn": chem_props.get("cas_rn") or "",
+        "category": category,
+    }
+
+
+def live_records(ingredients_root: Path = INGREDIENTS) -> dict[str, dict[str, object]]:
+    """Return file-backed record CURIE -> stable visualization metadata."""
+    records: dict[str, dict[str, object]] = {}
     for category in ("mapped", "unmapped"):
         for path in (ingredients_root / category).glob("*.yaml"):
             try:
@@ -75,19 +121,22 @@ def live_records(ingredients_root: Path = INGREDIENTS) -> dict[str, str]:
             record_key = mim_curie_for_stem(path.stem)
             if record_key in records:
                 raise ValueError(f"Duplicate visualization record key: {record_key}")
-            records[record_key] = str(record.get("identifier") or "").strip()
+            records[record_key] = visualization_metadata(record, category, record_key)
     return records
 
 
-def audit_entries(entries: object, live: dict[str, str]) -> dict[str, list]:
-    """Return stable identity defects for one published artifact payload."""
+def audit_entries(
+    entries: object,
+    live: dict[str, dict[str, object]],
+) -> dict[str, list]:
+    """Return stable metadata defects for one published artifact payload."""
     if not isinstance(entries, list):
         return {
             "invalid_entries": ["payload is not a list"],
             "blank_ids": [],
             "duplicate_ids": [],
             "stale": [],
-            "identity_mismatches": [],
+            "metadata_mismatches": [],
         }
 
     invalid_entries = [index for index, entry in enumerate(entries) if not isinstance(entry, dict)]
@@ -99,22 +148,24 @@ def audit_entries(entries: object, live: dict[str, str]) -> dict[str, list]:
         node_id for node_id, count in Counter(node_ids).items() if node_id and count > 1
     )
     stale = sorted(ids - live.keys())
-    identity_mismatches = []
+    metadata_mismatches = []
     for entry in nodes:
         record_key = str(entry.get("id") or "").strip()
         if record_key not in live:
             continue
-        semantic_id = str(entry.get("identifier") or "").strip()
-        if semantic_id != live[record_key]:
-            identity_mismatches.append(
-                (record_key, semantic_id or "<missing>", live[record_key])
-            )
+        mismatches = {
+            field: (entry.get(field), expected)
+            for field, expected in live[record_key].items()
+            if entry.get(field) != expected
+        }
+        if mismatches:
+            metadata_mismatches.append((record_key, mismatches))
     return {
         "invalid_entries": invalid_entries,
         "blank_ids": blank_ids,
         "duplicate_ids": duplicate_ids,
         "stale": stale,
-        "identity_mismatches": identity_mismatches,
+        "metadata_mismatches": metadata_mismatches,
     }
 
 
@@ -148,7 +199,7 @@ def main(argv: list[str] | None = None) -> int:
         blank_ids = audit["blank_ids"]
         duplicate_ids = audit["duplicate_ids"]
         stale = audit["stale"]
-        identity_mismatches = audit["identity_mismatches"]
+        metadata_mismatches = audit["metadata_mismatches"]
         node_count = len(entries) if isinstance(entries, list) else 0
         nonblank_count = max(node_count - len(blank_ids) - len(invalid_entries), 0)
         pct = (100 * len(stale) // nonblank_count) if nonblank_count else 0
@@ -159,7 +210,7 @@ def main(argv: list[str] | None = None) -> int:
             f"records {len(stale):>4} ({pct}%)  duplicate keys "
             f"{len(duplicate_ids):>3}  blank keys {len(blank_ids):>3}  "
             f"invalid entries {len(invalid_entries):>3}  "
-            f"wrong identities {len(identity_mismatches):>3}"
+            f"wrong metadata {len(metadata_mismatches):>3}"
         )
         for s in stale[:8]:
             print(f"            {s}")
@@ -171,14 +222,18 @@ def main(argv: list[str] | None = None) -> int:
             print(f"            blank record key at node index {index}")
         for index in invalid_entries[:8]:
             print(f"            invalid node entry at index {index}")
-        for record_key, observed, expected in identity_mismatches[:8]:
-            print(f"            {record_key}: identifier {observed}, expected {expected}")
+        for record_key, mismatches in metadata_mismatches[:8]:
+            details = ", ".join(
+                f"{field} {observed!r} != {expected!r}"
+                for field, (observed, expected) in mismatches.items()
+            )
+            print(f"            {record_key}: {details}")
         worst = max(worst, defects)
 
     if worst:
         print(
             "\nVisualization nodes have stale, duplicate, or semantically mismatched "
-            "record identities. Regenerate:\n"
+            "record metadata. Regenerate:\n"
             "    just generate-umap        # writes docs/data/ingredient_umap.json\n"
             "    just generate-graph       # writes docs/data/ingredient_graph.json\n"
             "Layout coordinates will differ between runs (PaCMAP is not fully "
@@ -187,7 +242,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.strict:
             return 1
     else:
-        print("\nOK: every published node names one live record and carries its semantic identity.")
+        print("\nOK: every published node names one live record and carries its metadata.")
     return 0
 
 
