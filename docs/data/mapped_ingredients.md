@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-09-11T16:17:20.712435+00:00
+Generated: 2026-09-11T17:52:44.740890+00:00
 Total: 2678 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -798,7 +798,7 @@ Total: 2678 ingredients
 | cas:10018-19-6 | NCIT:C79997 | Cotarnine Chloride | MAPPED | NCIT | NARROW_MATCH | 0 |
 | FOODON:02020891 | FOODON:02020891 | Cow's milk | MAPPED | FOODON | LEXICAL_MATCH | 2 |
 | ENVO:00001998 | ENVO:00001998 | CR1 Soil | MAPPED | ENVO | CLOSE_MATCH | 46 |
-| CHEBI:53471 | CHEBI:53471 | Cr2(SO4)3 x n H2O | MAPPED | CHEBI | EXACT_MATCH | 3 |
+| kgmicrobe.compound:cr2_so43_x_n_h2o | CHEBI:53471 | Cr2(SO4)3 x n H2O | MAPPED | CHEBI | NARROW_MATCH | 3 |
 | CHEBI:86206 | CHEBI:86206 | Cr(NO3)3 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:16919 | CHEBI:16919 | Creatine | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:16737 | CHEBI:16737 | Creatinine | MAPPED | CHEBI | EXACT_MATCH | 5 |
@@ -1014,7 +1014,7 @@ Total: 2678 ingredients
 | cas:322455-70-9 | cas:322455-70-9 | FSL | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:16238 | CHEBI:16238 | FAD | MAPPED | CHEBI | EXACT_MATCH | 8 |
 | CHEBI:35366 | CHEBI:35366 | Fatty acid mixture (see Medium No. 266) | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| CHEBI:53438 | CHEBI:53438 | Fe2(SO4)3 x n H2O | MAPPED | CHEBI | EXACT_MATCH | 43 |
+| kgmicrobe.compound:fe2_so43_x_n_h2o | CHEBI:53438 | Fe2(SO4)3 x n H2O | MAPPED | CHEBI | NARROW_MATCH | 43 |
 | CHEBI:132767 | CHEBI:132767 | Fe4(PO4)2 | MAPPED | CHEBI | EXACT_MATCH | 10 |
 | CHEBI:30729 | CHEBI:30729 | Fe(III)-EDTA | MAPPED | CHEBI | SYNONYM_MATCH | 58 |
 | CHEBI:144421 | CHEBI:144421 | Fe(III) citrate | MAPPED | CHEBI | EXACT_MATCH | 409 |

@@ -17,6 +17,7 @@ import yaml
 ROOT = Path(__file__).parent.parent
 CURATED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
+MEMBERSHIP = ROOT / "mappings" / "culturemech_recipe_membership.tsv"
 
 
 @pytest.fixture(scope="module")
@@ -41,11 +42,20 @@ def sssom_rows() -> list[dict]:
     return list(csv.DictReader(rows, delimiter="\t"))
 
 
+@pytest.fixture(scope="module")
+def membership_rows() -> list[dict]:
+    with MEMBERSHIP.open(newline="", encoding="utf-8") as fh:
+        rows = [line for line in fh if not line.startswith("#")]
+    return list(csv.DictReader(rows, delimiter="\t"))
+
+
 # --- #334: the two promotions ---------------------------------------------
 @pytest.mark.parametrize(
     ("term", "chebi", "label"),
-    [("Na2HPO4 x 2 H2O", "CHEBI:91258", "dihydrate"),
-     ("Na2HPO4 x 12 H2O", "CHEBI:91259", "dodecahydrate")],
+    [
+        ("Na2HPO4 x 2 H2O", "CHEBI:91258", "dihydrate"),
+        ("Na2HPO4 x 12 H2O", "CHEBI:91259", "dodecahydrate"),
+    ],
 )
 def test_a_record_that_is_the_chebi_term_carries_its_id(records, term, chebi, label):
     """These were grounded to the right specific hydrate term while keeping a
@@ -65,8 +75,11 @@ def test_a_registry_identifier_still_implies_a_non_exact_grounding(records):
     erode: a record kept on a `kgmicrobe.` mint is one that is NOT the ontology
     term, so grading it exact would make the mint meaningless."""
     offenders = [
-        (r.get("preferred_term"), r["identifier"],
-         (r.get("ontology_mapping") or {}).get("mapping_quality"))
+        (
+            r.get("preferred_term"),
+            r["identifier"],
+            (r.get("ontology_mapping") or {}).get("mapping_quality"),
+        )
         for r in records
         if str(r.get("identifier") or "").startswith("kgmicrobe.")
         and (r.get("ontology_mapping") or {}).get("mapping_quality")
@@ -79,8 +92,7 @@ def test_a_registry_identifier_still_implies_a_non_exact_grounding(records):
 # --- #334: CAS within a hydrate family ------------------------------------
 @pytest.mark.parametrize(
     ("term", "cas", "chebi"),
-    [("CoCl2 x 6 H2O", "7791-13-1", "CHEBI:53503"),
-     ("NiCl2 x 6 H2O", "7791-20-0", "CHEBI:53542")],
+    [("CoCl2 x 6 H2O", "7791-13-1", "CHEBI:53503"), ("NiCl2 x 6 H2O", "7791-20-0", "CHEBI:53542")],
 )
 def test_a_hexahydrate_carries_its_own_cas_not_the_anhydrous_one(records, term, cas, chebi):
     """Both carried the ANHYDROUS parent's CAS. ChEBI's dbxref on the term the
@@ -92,7 +104,8 @@ def test_a_hexahydrate_carries_its_own_cas_not_the_anhydrous_one(records, term, 
 
 
 @pytest.mark.parametrize(
-    "term", ["CoCl2 x 2 H2O", "CoCl2 x 4 H2O", "Na2HPO4 x 3 H2O", "Na2HPO4 x 6 H2O"])
+    "term", ["CoCl2 x 2 H2O", "CoCl2 x 4 H2O", "Na2HPO4 x 3 H2O", "Na2HPO4 x 6 H2O"]
+)
 def test_a_hydrate_with_no_chebi_term_carries_no_borrowed_cas(records, term):
     """These held a CAS belonging to a different substance -- the anhydrous
     parent, or the heptahydrate. ChEBI has no term for these hydration states,
@@ -129,14 +142,12 @@ def test_no_hydrate_carries_its_anhydrous_parents_cas(records):
         if anhydrous.get(parent) and anhydrous[parent] == cas:
             offenders.append((term, cas, parent))
 
-    assert not offenders, (
-        f"hydrate carrying its anhydrous parent's CAS: {offenders}")
+    assert not offenders, f"hydrate carrying its anhydrous parent's CAS: {offenders}"
 
 
 @pytest.mark.parametrize(
     ("term", "cas", "chebi"),
-    [("FeSO4 x 7H2O", "7782-63-0", "CHEBI:75836"),
-     ("MnSO4 x 1 H2O", "10034-96-5", "CHEBI:86364")],
+    [("FeSO4 x 7H2O", "7782-63-0", "CHEBI:75836"), ("MnSO4 x 1 H2O", "10034-96-5", "CHEBI:86364")],
 )
 def test_hydrate_specific_groundings_carry_their_own_cas(records, term, cas, chebi):
     """Found by the general check above, not by #334's enumerated list: both are
@@ -159,9 +170,14 @@ def test_hydrate_specific_groundings_carry_their_own_cas(records, term, cas, che
             None,
             "OAK/CHEBI exact hydrate term CHEBI:73111",
         ),
-        ("Betaine x H2O", "CHEBI:91242", "glycine betaine hydrate",
-         "C5H11NO2.H2O", "590-47-6",
-         "OAK/CHEBI exact hydrate term CHEBI:91242"),
+        (
+            "Betaine x H2O",
+            "CHEBI:91242",
+            "glycine betaine hydrate",
+            "C5H11NO2.H2O",
+            "590-47-6",
+            "OAK/CHEBI exact hydrate term CHEBI:91242",
+        ),
     ],
 )
 def test_late_specific_hydrates_use_the_exact_chebi_term(
@@ -185,10 +201,7 @@ def test_late_specific_hydrates_use_the_exact_chebi_term(
     [
         (
             "Esculin Monohydrate",
-            {
-                "7-hydroxy-2-oxo-2H-chromen-6-yl "
-                "beta-D-glucopyranoside--water (1/1)"
-            },
+            {"7-hydroxy-2-oxo-2H-chromen-6-yl " "beta-D-glucopyranoside--water (1/1)"},
             {"7-hydroxy-2-oxo-2H-chromen-6-yl beta-D-glucopyranoside"},
         ),
         (
@@ -217,8 +230,7 @@ def test_late_specific_hydrates_do_not_publish_anhydrous_exact_synonyms(
 def test_esculin_ferric_citrate_keeps_anhydrous_component_as_external_term(records):
     record = _by_term(records, "Esculin Ferric Citrate")
     esculin = [
-        component for component in record["components"]
-        if component["component_name"] == "esculin"
+        component for component in record["components"] if component["component_name"] == "esculin"
     ]
 
     assert esculin == [
@@ -239,10 +251,7 @@ def test_esculin_ferric_citrate_keeps_anhydrous_component_as_external_term(recor
             "CHEBI:73111",
             [
                 "hydrolysis: esculin",
-                (
-                    "7-hydroxy-2-oxo-2H-chromen-6-yl "
-                    "beta-D-glucopyranoside--water (1/1)"
-                ),
+                ("7-hydroxy-2-oxo-2H-chromen-6-yl " "beta-D-glucopyranoside--water (1/1)"),
             ],
         ),
         (
@@ -256,9 +265,7 @@ def test_esculin_ferric_citrate_keeps_anhydrous_component_as_external_term(recor
         ),
     ],
 )
-def test_late_specific_hydrates_have_single_sssom_exact_rows(
-    sssom_rows, term, chebi, other
-):
+def test_late_specific_hydrates_have_single_sssom_exact_rows(sssom_rows, term, chebi, other):
     rows = [row for row in sssom_rows if row["subject_label"] == term]
 
     assert len(rows) == 1
@@ -268,14 +275,10 @@ def test_late_specific_hydrates_have_single_sssom_exact_rows(
     assert rows[0]["other"].split("|") == other
 
 
-def test_l_cysteine_solution_keeps_local_identity_on_the_hydrate_parent(
-    records, sssom_rows
-):
+def test_l_cysteine_solution_keeps_local_identity_on_the_hydrate_parent(records, sssom_rows):
     record = _by_term(records, "L-Cysteine x HCl x H2O solution")
 
-    assert record["identifier"] == (
-        "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution"
-    )
+    assert record["identifier"] == ("kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution")
     assert record["ontology_mapping"]["ontology_id"] == "CHEBI:91248"
     assert record["ontology_mapping"]["mapping_quality"] == "CLOSE_MATCH"
 
@@ -292,17 +295,12 @@ def test_l_cysteine_solution_keeps_local_identity_on_the_hydrate_parent(
     assert rows["CHEBI:91248"]["mapping_date"] == "2026-09-10"
     assert rows["CHEBI:91248"]["other"] == "QSY9 succinimidyl ester(1+)"
     assert (
-        rows["kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution"]["mapping_date"]
-        == "2026-09-10"
+        rows["kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution"]["mapping_date"] == "2026-09-10"
     )
-    assert "CHEBI:91248" in rows[
-        "kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution"
-    ]["comment"]
+    assert "CHEBI:91248" in rows["kgmicrobe.ingredient:l-cysteine_x_hcl_x_h2o_solution"]["comment"]
 
 
-def test_variable_ferric_sulfate_hydrate_is_not_moved_to_the_monohydrate(
-    records, sssom_rows
-):
+def test_variable_ferric_sulfate_hydrate_is_not_moved_to_the_monohydrate(records, sssom_rows):
     """`Fe2(SO4)3 x n H2O` needs a variable-hydrate identity.
 
     CHEBI:131387 is labelled "iron(3+) sulfate hydrate", but its formula and
@@ -310,12 +308,96 @@ def test_variable_ferric_sulfate_hydrate_is_not_moved_to_the_monohydrate(
     record to it would collapse two hydration states.
     """
     record = _by_term(records, "Fe2(SO4)3 x n H2O")
-    rows = [
-        row for row in sssom_rows if row["subject_label"] == "Fe2(SO4)3 x n H2O"
-    ]
+    rows = [row for row in sssom_rows if row["subject_label"] == "Fe2(SO4)3 x n H2O"]
 
     assert rows
     assert record["identifier"] != "CHEBI:131387"
     assert record["ontology_mapping"]["ontology_id"] != "CHEBI:131387"
     assert record.get("chemical_properties", {}).get("cas_rn") != "43059-01-4"
     assert all(row["object_id"] != "CHEBI:131387" for row in rows)
+
+
+@pytest.mark.parametrize(
+    ("term", "identifier", "parent", "parent_label"),
+    [
+        (
+            "Cr2(SO4)3 x n H2O",
+            "kgmicrobe.compound:cr2_so43_x_n_h2o",
+            "CHEBI:53471",
+            "chromium(III) sulfate",
+        ),
+        (
+            "Fe2(SO4)3 x n H2O",
+            "kgmicrobe.compound:fe2_so43_x_n_h2o",
+            "CHEBI:53438",
+            "iron(3+) sulfate",
+        ),
+    ],
+)
+def test_variable_sulfate_hydrates_are_locally_identified(
+    records, term, identifier, parent, parent_label
+):
+    record = _by_term(records, term)
+
+    assert record["identifier"] == identifier
+    assert record["ontology_mapping"]["ontology_id"] == parent
+    assert record["ontology_mapping"]["ontology_label"] == parent_label
+    assert record["ontology_mapping"]["mapping_quality"] == "NARROW_MATCH"
+    assert record.get("chemical_properties") == {}
+    assert record.get("kg_microbe_node_id") != parent
+
+    kg_microbe_exact = [
+        synonym
+        for synonym in record.get("synonyms") or []
+        if synonym.get("synonym_type") == "EXACT_SYNONYM" and synonym.get("source") == "kg_microbe"
+    ]
+
+    assert kg_microbe_exact == []
+
+
+@pytest.mark.parametrize(
+    ("term", "identifier", "parent", "expected_other"),
+    [
+        ("Cr2(SO4)3 x n H2O", "kgmicrobe.compound:cr2_so43_x_n_h2o", "CHEBI:53471", ""),
+        (
+            "Fe2(SO4)3 x n H2O",
+            "kgmicrobe.compound:fe2_so43_x_n_h2o",
+            "CHEBI:53438",
+            "Fe(SO4)3 x n H2O",
+        ),
+    ],
+)
+def test_variable_sulfate_hydrates_publish_parent_and_registry_rows(
+    sssom_rows, term, identifier, parent, expected_other
+):
+    rows = {row["object_id"]: row for row in sssom_rows if row["subject_label"] == term}
+
+    assert set(rows) == {parent, identifier}
+    assert rows[parent]["predicate_id"] == "skos:narrowMatch"
+    assert rows[parent]["confidence"] == "0.9"
+    assert rows[parent]["other"] == expected_other
+    assert rows[identifier]["predicate_id"] == "skos:exactMatch"
+    assert rows[identifier]["object_label"] == term
+    assert rows[identifier]["object_source"] == "kgm:compound"
+    assert rows[identifier]["confidence"] == "0.99"
+    assert rows[identifier]["other"] == expected_other
+
+
+@pytest.mark.parametrize(
+    ("term", "old", "new"),
+    [
+        ("Cr2(SO4)3 x n H2O", "CHEBI:53471", "kgmicrobe.compound:cr2_so43_x_n_h2o"),
+        ("Fe2(SO4)3 x n H2O", "CHEBI:53438", "kgmicrobe.compound:fe2_so43_x_n_h2o"),
+    ],
+)
+def test_variable_sulfate_membership_rows_move_to_local_identity(
+    records, membership_rows, term, old, new
+):
+    expected = _by_term(records, term)["occurrence_statistics"]["media_count"]
+    new_recipes = {row["recipe_id"] for row in membership_rows if row["mim_identifier"] == new}
+    stale_old_recipes = {
+        row["recipe_id"] for row in membership_rows if row["mim_identifier"] == old
+    }
+
+    assert len(new_recipes) == expected
+    assert not stale_old_recipes
