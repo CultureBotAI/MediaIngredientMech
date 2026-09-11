@@ -1,4 +1,4 @@
-generation_date: '2026-09-10T11:28:59.951056+00:00'
+generation_date: '2026-09-11T12:13:21.267484+00:00'
 total_count: 2678
 mapped_count: 2624
 unmapped_count: 0
@@ -3124,6 +3124,14 @@ ingredients:
       to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
       concentrations were not changed.'
     llm_assisted: false
+  - timestamp: '2026-09-11T12:12:18+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: CORRECTED_COMPONENT_REFERENCE_SCOPE
+    changes: 'Rescoped the tetramethylammonium component from MIM_CATALOG to EXTERNAL_TERM
+      (#315): CHEBI:46020 denotes the cation component itself, while kgmicrobe.compound:tetramethyl_ammonium
+      denotes a distinct supplied salt or ion-pair ingredient and must not stand in
+      for component partonomy.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_tetramethylammonium);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -3134,7 +3142,7 @@ ingredients:
     source: microbedecoder research decomposition (#213/#308)
   - component_name: tetramethylammonium
     component_id: CHEBI:46020
-    reference_scope: MIM_CATALOG
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
   component_assertion:
     method: LABEL_ENUMERATION
@@ -5176,6 +5184,14 @@ ingredients:
       to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
       concentrations were not changed.'
     llm_assisted: false
+  - timestamp: '2026-09-11T12:12:18+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: CORRECTED_COMPONENT_REFERENCE_SCOPE
+    changes: 'Rescoped the tetramethylammonium component from MIM_CATALOG to EXTERNAL_TERM
+      (#315): CHEBI:46020 denotes the cation component itself, while kgmicrobe.compound:tetramethyl_ammonium
+      denotes a distinct supplied salt or ion-pair ingredient and must not stand in
+      for component partonomy.'
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:h2_tetramethylammonium);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: NAMED_MEDIUM
@@ -5186,7 +5202,7 @@ ingredients:
     source: microbedecoder research decomposition (#213/#308)
   - component_name: tetramethylammonium
     component_id: CHEBI:46020
-    reference_scope: MIM_CATALOG
+    reference_scope: EXTERNAL_TERM
     source: microbedecoder research decomposition (#213/#308)
   component_assertion:
     method: LABEL_ENUMERATION
@@ -23632,8 +23648,11 @@ ingredients:
         acetate'
   synonyms:
   - synonym_text: 1-ethyl-3-methyl-1H-imidazol-3-ium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
+  - synonym_text: 1-ethyl-3-methylimidazolium lysine
+    synonym_type: REJECTED_LABEL
+    source: mappings/ingredient_mappings.sssom.tsv
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -23665,6 +23684,13 @@ ingredients:
     curator: backfill_parent_terms
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:61326 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-09-11T06:31:23.789310+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: REJECTED_ION_SYNONYMS
+    changes: 'Marked cation/other-salt synonym(s) as REJECTED_LABEL so they cannot
+      leak through SSSOM `other`: ''1-ethyl-3-methyl-1H-imidazol-3-ium'', ''1-ethyl-3-methylimidazolium
+      lysine'' (#315).'
     llm_assisted: false
   chemical_properties:
     cas_rn: 143314-17-4
@@ -23726,14 +23752,14 @@ ingredients:
     inchi: InChI=1S/C6H11N2.ClH/c1-3-8-5-4-7(2)6-8;/h4-6H,3H2,1-2H3;1H/q+1;/p-1
     smiles: CCn1cc[n+](C)c1.[Cl-]
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:61326
+- identifier: kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine
   preferred_term: 1-ethyl-3-methylimidazolium lysine
   synonyms:
   - synonym_text: 1-ethyl-3-methylimidazolium lysine
     synonym_type: RAW_TEXT
     source: culturebotht
   - synonym_text: 1-ethyl-3-methyl-1H-imidazol-3-ium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -23764,23 +23790,38 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
     llm_assisted: false
+  - timestamp: '2026-09-11T06:31:23.789310+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: REGROUNDED_ION_OVERCLAIM
+    changes: identifier CHEBI:61326 -> kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine;
+      mapping_quality -> NARROW_MATCH to CHEBI:63895 ('ionic liquid').
+      Cleared chemical_properties because they described the EMIM cation only, marked
+      1 bare-ion synonym(s) as REJECTED_LABEL, and kept the complete salt or ion-pair
+      identity distinct (#315).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
     or CHEBI mapping available; curator review needed.
   ontology_mapping:
-    ontology_id: CHEBI:61326
-    ontology_label: 1-ethyl-3-methylimidazolium
+    ontology_id: CHEBI:63895
+    ontology_label: ionic liquid
     ontology_source: CHEBI
-    mapping_quality: LEXICAL_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
-      notes: Auto-upgraded from UNMAPPED_0139; matched via '1-ethyl-3-methylimidazolium
-        lysine'; stem-substring
-  chemical_properties:
-    molecular_formula: C6H11N2
-    inchi: InChI=1S/C6H11N2/c1-3-8-5-4-7(2)6-8/h4-6H,3H2,1-2H3/q+1
-    smiles: CCn1cc[n+](C)c1
-    data_source: CHEBI sqlite (oaklib)
+      notes: 'SUPERSEDED (#315): describes the bare ion identity, not the complete
+        salt or ion pair. Original note follows. Auto-upgraded from UNMAPPED_0139;
+        matched via ''1-ethyl-3-methylimidazolium lysine''; stem-substring'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#315)
+      notes: The label names a complete EMIM/lysinate ion pair, while CHEBI:61326
+        denotes only the 1-ethyl-3-methylimidazolium cation; CHEBI:63895 is the nearest
+        verified ChEBI whole-substance parent. No exact local ChEBI term for '1-ethyl-3-methylimidazolium
+        lysine' was found, so MAPPING_SEMANTICS.md Section 3 uses a kgmicrobe.compound
+        identity with the nearest whole-substance ChEBI parent.
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:34118
   preferred_term: 1-octen-3-ol
@@ -127488,58 +127529,69 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:35899
+- identifier: kgmicrobe.compound:na-crotonate
   preferred_term: Na-crotonate
   ontology_mapping:
-    ontology_id: CHEBI:35899
-    ontology_label: crotonate
+    ontology_id: CHEBI:41131
+    ontology_label: crotonic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+      notes: 'SUPERSEDED (#315): describes the bare ion identity, not the complete
+        salt or ion pair. Original note follows. Imported from CultureMech pipeline,
+        quality=DIRECT_MATCH'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#315)
+      notes: The label names sodium crotonate, not the crotonate anion in CHEBI:35899;
+        CHEBI:41131 is the ChEBI acid parent. No exact local ChEBI term for 'Na-crotonate'
+        was found, so MAPPING_SEMANTICS.md Section 3 uses a kgmicrobe.compound identity
+        with the nearest ChEBI parent.
   synonyms:
+  - synonym_text: Sodium crotonate
+    synonym_type: RAW_TEXT
+    source: UNMAPPED_0524
   - synonym_text: (2E)-2-butenoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (2E)-but-2-enoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (E)-2-butenoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: (E)-crotonate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 3-methylacrylate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: alpha-butenoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: alpha-crotonate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: beta-methacrylate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: beta-methylacrylate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: crotonate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: trans-2-butenoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: trans-crotonate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 7
-    media_count: 7
+    total_occurrences: 9
+    media_count: 9
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -127600,14 +127652,35 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  chemical_properties:
-    cas_rn: 17342-77-7
-    data_source: PubChem API (preprocessed)
-    retrieval_date: '2026-04-05T23:45:34.470966+00:00'
-    molecular_formula: C4H5O2
-    inchi: InChI=1S/C4H6O2/c1-2-3-4(5)6/h2-3H,1H3,(H,5,6)/p-1/b3-2+
-    smiles: '[H]/C(C)=CC(=O)[O-]'
-  kg_microbe_node_id: CHEBI:35899
+  - timestamp: '2026-09-11T06:31:23.789310+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: REGROUNDED_ION_OVERCLAIM
+    changes: identifier CHEBI:35899 -> kgmicrobe.compound:na-crotonate; mapping_quality
+      -> NARROW_MATCH to CHEBI:41131 ('crotonic acid'). Cleared chemical_properties
+      because they described the crotonate anion only, marked 12 bare-ion synonym(s)
+      as REJECTED_LABEL, and kept the complete salt or ion-pair identity distinct
+      (#315).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-11T06:31:23.789310+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: 'Absorbed UNMAPPED_0524 ''Sodium crotonate'' as a RAW_TEXT synonym after
+      Na-crotonate moved off the bare crotonate anion and took its own sodium-salt
+      identity (#315). Deleted source had upstream source_id=mediadive.ingredient:2053.
+      Deleted source also carried Edison literature identity review: sodium crotonate
+      was a defined sodium carboxylate/aqueous sodium-crotonate preparation with no
+      ontology CURIE proposed.'
+    llm_assisted: false
+  - timestamp: '2026-09-11T09:57:00+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: CORRECTED
+    changes: occurrence_statistics 7/7 -> 9/9 (media_count/total_occurrences) to match
+      label-aware CultureMech membership routing after the salt/anion split (#315).
+    llm_assisted: false
+  chemical_properties: {}
+  kg_microbe_node_id: kgmicrobe.compound:na-crotonate
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -130237,40 +130310,48 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Carbon Source'
-- identifier: CHEBI:16810
+- identifier: kgmicrobe.compound:na2_alpha-ketoglutarate
   preferred_term: Na2 alpha-ketoglutarate
   ontology_mapping:
-    ontology_id: CHEBI:16810
-    ontology_label: 2-oxoglutarate(2-)
+    ontology_id: CHEBI:30915
+    ontology_label: 2-oxoglutaric acid
     ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+      notes: 'SUPERSEDED (#315): describes the bare ion identity, not the complete
+        salt or ion pair. Original note follows. Imported from CultureMech pipeline,
+        quality=DIRECT_MATCH'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#315)
+      notes: The label names a disodium salt, not the 2-oxoglutarate dianion in CHEBI:16810;
+        CHEBI:30915 is the ChEBI acid parent. No exact local ChEBI term for 'Na2 alpha-ketoglutarate'
+        was found, so MAPPING_SEMANTICS.md Section 3 uses a kgmicrobe.compound identity
+        with the nearest ChEBI parent.
   synonyms:
-  - synonym_text: 2-Oxoglutarate
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: 2-oxopentanedioate
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
   - synonym_text: Na2 α-ketoglutarate
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: 2-Oxoglutarate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: 2-oxopentanedioate
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
   - synonym_text: alpha-ketoglutarate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 'Role: Growth factor'
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: α-Ketoglutarate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 7
-    media_count: 7
+    total_occurrences: 4
+    media_count: 4
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -130379,14 +130460,25 @@ ingredients:
       published label but were absent from MIM''s label index, so CultureMech could
       not resolve them: ''α-Ketoglutarate'' (x3 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
-  kg_microbe_node_id: CHEBI:16810
-  chemical_properties:
-    cas_rn: 64-15-3
-    data_source: PubChem (via CHEBI:16810)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: C5H4O5
-    inchi: InChI=1S/C5H6O5/c6-3(5(9)10)1-2-4(7)8/h1-2H2,(H,7,8)(H,9,10)/p-2
-    smiles: O=C([O-])CCC(=O)C(=O)[O-]
+  - timestamp: '2026-09-11T06:31:23.789310+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: REGROUNDED_ION_OVERCLAIM
+    changes: identifier CHEBI:16810 -> kgmicrobe.compound:na2_alpha-ketoglutarate;
+      mapping_quality -> NARROW_MATCH to CHEBI:30915 ('2-oxoglutaric acid'). Cleared
+      chemical_properties because they described the 2-oxoglutarate dianion only,
+      marked 4 bare-ion synonym(s) as REJECTED_LABEL, and kept the complete salt or
+      ion-pair identity distinct (#315).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-11T09:57:00+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: CORRECTED
+    changes: occurrence_statistics 7/7 -> 4/4 (media_count/total_occurrences) to match
+      label-aware CultureMech membership routing after the salt/anion split (#315).
+    llm_assisted: false
+  kg_microbe_node_id: kgmicrobe.compound:na2_alpha-ketoglutarate
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: CARBON_SOURCE
@@ -172904,33 +172996,43 @@ ingredients:
     inchi: InChI=1S/2C4H12O4P.H2O4S/c2*5-1-9(2-6,3-7)4-8;1-5(2,3)4/h2*5-8H,1-4H2;(H2,1,2,3,4)/q2*+1;/p-2
     pubchem_cid: 41478
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:46020
+- identifier: kgmicrobe.compound:tetramethyl_ammonium
   preferred_term: Tetramethyl ammonium
   ontology_mapping:
-    ontology_id: CHEBI:46020
-    ontology_label: tetramethylammonium
+    ontology_id: CHEBI:35273
+    ontology_label: quaternary ammonium salt
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+      notes: 'SUPERSEDED (#315): describes the bare ion identity, not the complete
+        salt or ion pair. Original note follows. Imported from CultureMech pipeline,
+        quality=DIRECT_MATCH'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#315)
+      notes: The culture-media surface form names tetramethyl ammonium as a supplied
+        ingredient; CHEBI:46020 denotes only the cation, which cannot be supplied
+        as a standalone neutral compound. CHEBI:35273 is the nearest verified whole-substance
+        salt parent. No exact local ChEBI term for 'Tetramethyl ammonium' was found,
+        so MAPPING_SEMANTICS.md Section 3 uses a kgmicrobe.compound identity with
+        the nearest whole-substance ChEBI parent.
   synonyms:
   - synonym_text: 'Role: Nutrient source; Properties: Inorganic compound, Defined
       component, Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: N,N,N-trimethylmethanaminium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: TETRAMETHYLAMMONIUM ION
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: tetramethylammonium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: tetramethylazanium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 'Role: Nutrient source; Properties: Defined component, Inorganic
       compound, Simple component'
@@ -172992,14 +173094,19 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  kg_microbe_node_id: CHEBI:46020
-  chemical_properties:
-    cas_rn: 51-92-3
-    data_source: PubChem (via CHEBI:46020)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: C4H12N
-    inchi: InChI=1S/C4H12N/c1-5(2,3)4/h1-4H3/q+1
-    smiles: C[N+](C)(C)C
+  - timestamp: '2026-09-11T06:31:23.789310+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: REGROUNDED_ION_OVERCLAIM
+    changes: identifier CHEBI:46020 -> kgmicrobe.compound:tetramethyl_ammonium; mapping_quality
+      -> NARROW_MATCH to CHEBI:35273 ('quaternary ammonium salt'). Cleared
+      chemical_properties because they described the tetramethylammonium cation only,
+      marked 4 bare-ion synonym(s) as REJECTED_LABEL, and kept the complete salt or
+      ion-pair identity distinct (#315).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  kg_microbe_node_id: kgmicrobe.compound:tetramethyl_ammonium
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
 - identifier: kgmicrobe.compound:tetramethyl_ammonium_chloride
   preferred_term: Tetramethyl ammonium chloride
@@ -173008,7 +173115,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: mim-queue
   - synonym_text: N,N,N-trimethylmethanaminium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -173050,6 +173157,12 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-11T06:31:23.789310+00:00'
+    curator: fix_salt_ion_identity_overclaims
+    action: REJECTED_ION_SYNONYMS
+    changes: 'Marked cation/other-salt synonym(s) as REJECTED_LABEL so they cannot
+      leak through SSSOM `other`: ''N,N,N-trimethylmethanaminium'' (#315).'
+    llm_assisted: false
   notes: Imported from mim-queue (source_id=mediadive.ingredient:720); no CAS-RN or
     CHEBI/NCIT match. Curator review needed. No exact local ontology term for tetramethylammonium
     chloride was verified; retained as a kg-microbe compound with a non-identity link

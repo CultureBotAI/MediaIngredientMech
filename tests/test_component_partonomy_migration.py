@@ -39,9 +39,12 @@ def test_migration_is_idempotent_and_has_reviewed_final_inventory():
     # 3 components moved EXTERNAL_TERM -> MIM_CATALOG when `clarified rumen fluid`
     # (MICRO:0000520) gained a MIM record; 1 moved MIM_CATALOG -> EXTERNAL_TERM when
     # `Esculin Monohydrate` was re-grounded to a hydrate-specific CHEBI term (#321).
+    # 2 tetramethylammonium component references stayed on the cation as an
+    # EXTERNAL_TERM when the standalone supplied ingredient moved to a complete
+    # salt/ion-pair identity (#315).
     # The total is unchanged, which is what the guard is for.
-    assert scopes.count("MIM_CATALOG") == 492
-    assert scopes.count("EXTERNAL_TERM") == 8
+    assert scopes.count("MIM_CATALOG") == 490
+    assert scopes.count("EXTERNAL_TERM") == 10
     assert scopes.count("UNMAPPED") == 5
 
     by_label = {record["preferred_term"]: record for record in second}

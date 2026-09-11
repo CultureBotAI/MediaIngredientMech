@@ -1,9 +1,9 @@
 # Complete Ingredients Index
-**Total Records**: 2952
+**Total Records**: 2951
 **Mapped**: 2624 (88.9%)
-**Unmapped**: 263 (8.9%)
+**Unmapped**: 262 (8.9%)
 **Other statuses**: 65 (2.2%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 220,586
+**Total Occurrences**: 220,585
 
 ---
 
@@ -303,7 +303,7 @@
 | CHEBI:18053 | 1-aminocyclopropane-1-carboxylate | CHEBI:18053 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:143314-17-4 | 1-ethyl-3-methylimidazolium acetate | CHEBI:61326 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:61327 | 1-ethyl-3-methylimidazolium chloride | CHEBI:61327 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:61326 | 1-ethyl-3-methylimidazolium lysine | CHEBI:61326 | CHEBI | LEXICAL_MATCH | 0 |
+| kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine | 1-ethyl-3-methylimidazolium lysine | CHEBI:63895 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:34118 | 1-octen-3-ol | CHEBI:34118 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:62240 | 1-phenazinecarboxamide | CHEBI:62240 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:36018 | 1,1,2-Trichloroethane | CHEBI:36018 | CHEBI | EXACT_MATCH | 3 |
@@ -1479,7 +1479,7 @@
 | CHEBI:113455 | Na-benzoate | CHEBI:113455 | CHEBI | EXACT_MATCH | 50 |
 | CHEBI:64103 | Na-butyrate | CHEBI:64103 | CHEBI | EXACT_MATCH | 35 |
 | CHEBI:114126 | Na-caproate | CHEBI:114126 | CHEBI | EXACT_MATCH | 10 |
-| CHEBI:35899 | Na-crotonate | CHEBI:35899 | CHEBI | EXACT_MATCH | 7 |
+| kgmicrobe.compound:na-crotonate | Na-crotonate | CHEBI:41131 | CHEBI | NARROW_MATCH | 9 |
 | CHEBI:62965 | Na-formate | CHEBI:62965 | CHEBI | EXACT_MATCH | 222 |
 | CHEBI:115197 | Na-gallate | CHEBI:115197 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:232798 | Na-L-lactate | CHEBI:232798 | CHEBI | EXACT_MATCH | 162 |
@@ -1494,7 +1494,7 @@
 | CHEBI:64734 | Na2-EDTA | CHEBI:64734 | CHEBI | SYNONYM_MATCH | 614 |
 | CHEBI:115156 | Na2-fumarate | CHEBI:115156 | CHEBI | EXACT_MATCH | 135 |
 | CHEBI:91251 | Na2-glyoxalate | CHEBI:91251 | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:16810 | Na2 alpha-ketoglutarate | CHEBI:16810 | CHEBI | SYNONYM_MATCH | 7 |
+| kgmicrobe.compound:na2_alpha-ketoglutarate | Na2 alpha-ketoglutarate | CHEBI:30915 | CHEBI | NARROW_MATCH | 4 |
 | CHEBI:38892 | Na2B4O7 | CHEBI:38892 | CHEBI | EXACT_MATCH | 9 |
 | CHEBI:131366 | Na2B4O7 x 10 H2O | CHEBI:131366 | CHEBI | EXACT_MATCH | 263 |
 | CHEBI:29377 | Na2CO3 | CHEBI:29377 | CHEBI | EXACT_MATCH | 1751 |
@@ -1950,7 +1950,7 @@
 | CHEBI:27902 | Tetracycline | CHEBI:27902 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:35006 | Tetracycline hydrochloride | CHEBI:35006 | CHEBI | EXACT_MATCH | 0 |
 | cas:55566-30-8 | Tetrakis(hydroxymethyl)phosphonium sulfate | cas:55566-30-8 | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:46020 | Tetramethyl ammonium | CHEBI:46020 | CHEBI | EXACT_MATCH | 4 |
+| kgmicrobe.compound:tetramethyl_ammonium | Tetramethyl ammonium | CHEBI:35273 | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.compound:tetramethyl_ammonium_chloride | Tetramethyl ammonium chloride | CHEBI:46020 | CHEBI | CLOSE_MATCH | 3 |
 | CHEBI:49 | Tetrandrine | CHEBI:49 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:75193 | Tetrazolium violet | CHEBI:75193 | CHEBI | EXACT_MATCH | 0 |
@@ -2851,7 +2851,6 @@
 | UNMAPPED_0002 | See source for composition | UNMAPPED | 143 |
 | UNMAPPED_0519 | Selenite-tungstate solution see Medium No. 431 | UNMAPPED | 0 |
 | UNMAPPED_0520 | Sigmacell alpha Type 50 | UNMAPPED | 0 |
-| UNMAPPED_0524 | Sodium crotonate | UNMAPPED | 0 |
 | UNMAPPED_0615 | Sodium phosphate monobasic (phosphorus source) | UNMAPPED | 0 |
 | UNMAPPED_0303 | Soil Defined Carbon Mix | UNMAPPED | 1 |
 | UNMAPPED_0055 | Soil+Seawater Medium | UNMAPPED | 2 |

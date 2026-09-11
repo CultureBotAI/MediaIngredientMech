@@ -5,7 +5,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: mim-queue
 - synonym_text: N,N,N-trimethylmethanaminium
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -47,6 +47,12 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-11T06:31:23.789310+00:00'
+  curator: fix_salt_ion_identity_overclaims
+  action: REJECTED_ION_SYNONYMS
+  changes: 'Marked cation/other-salt synonym(s) as REJECTED_LABEL so they cannot leak
+    through SSSOM `other`: ''N,N,N-trimethylmethanaminium'' (#315).'
+  llm_assisted: false
 notes: Imported from mim-queue (source_id=mediadive.ingredient:720); no CAS-RN or
   CHEBI/NCIT match. Curator review needed. No exact local ontology term for tetramethylammonium
   chloride was verified; retained as a kg-microbe compound with a non-identity link

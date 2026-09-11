@@ -171,6 +171,20 @@ def test_asymmetric_parent_labels_do_not_resolve_to_local_children(tmp_path):
     assert garden_soil_rows == {("ENVO:00002263", "preferred_term")}
 
 
+def test_close_match_ontology_labels_do_not_resolve_to_local_records(tmp_path):
+    rows = _rows(tmp_path, [
+        _record("kgmicrobe.compound:tetramethyl_ammonium_chloride",
+                "Tetramethyl ammonium chloride",
+                ontology_id="CHEBI:46020",
+                ontology_label="tetramethylammonium",
+                mapping_quality="CLOSE_MATCH"),
+    ])
+
+    assert not [
+        row for row in rows if row["label"].casefold() == "tetramethylammonium"
+    ]
+
+
 def test_ordering_is_deterministic_regardless_of_record_order(tmp_path):
     """`identifier` is not a unique record key — 46 identifiers are held by 117
     records — so without a full tiebreak the winner is decided by YAML order,
