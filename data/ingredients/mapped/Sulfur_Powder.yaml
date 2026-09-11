@@ -1,21 +1,15 @@
-identifier: kgmicrobe.compound:sulfur_powder
+identifier: CHEBI:33403
 preferred_term: Sulfur (powder)
 ontology_mapping:
   ontology_id: CHEBI:33403
   ontology_label: elemental sulfur
   ontology_source: CHEBI
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-  - evidence_type: DATABASE_MATCH
-    source: MIM curation (#322)
-    notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:33403 carries no structural
-      definition, so it is a class rather than an individual, and the record's label
-      'Sulfur (powder)' does not equal the term label 'elemental sulfur'. EXACT_MATCH
-      therefore asserted an identity the pair does not have. Re-graded because a physical
-      form of elemental sulfur.
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#368)
+    notes: A culture-media ingredient named sulfur, sulphur, or sulfur powder denotes
+      weighable elemental sulfur, not ChEBI's sulfur atom or polysulfur terms.
 synonyms:
 - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic compound,
     Simple component'
@@ -43,10 +37,10 @@ synonyms:
 - synonym_text: Elemental sulphur
   synonym_type: EXACT_SYNONYM
   source: merged_from_duplicate_mim_record
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 104
-  media_count: 104
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -200,9 +194,17 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
-chemical_properties:
-  data_source: PubChem API
-  retrieval_date: '2026-04-05T19:53:59.153587+00:00'
+- timestamp: '2026-09-11T13:41:33.694587+00:00'
+  curator: fix_sulfur_family
+  action: MERGED_INTO
+  changes: Merged into CHEBI:33403 'Sulfur'; occurrences transferred to the surviving
+    elemental sulfur record and SSSOM rows dropped. The old record kgmicrobe.compound:sulfur_powder
+    split a spelling or supplied powder form from the same weighable sulfur substance
+    (#368).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: false
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: SULFUR_SOURCE
@@ -211,3 +213,4 @@ nutritional_roles:
   - reference_type: DATABASE_ENTRY
     reference_text: Imported from CultureMech pipeline
     curator_note: 'Original role text: Mineral'
+representative: CHEBI:33403

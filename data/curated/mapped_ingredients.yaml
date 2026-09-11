@@ -1,6 +1,6 @@
-generation_date: '2026-09-11T12:13:21.267484+00:00'
+generation_date: '2026-09-11T13:41:33.694587+00:00'
 total_count: 2678
-mapped_count: 2624
+mapped_count: 2622
 unmapped_count: 0
 ingredients:
 - identifier: MICRO:0000610
@@ -8201,6 +8201,12 @@ ingredients:
       to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
       concentrations were not changed.'
     llm_assisted: false
+  - timestamp: '2026-09-11T13:41:33.694587+00:00'
+    curator: fix_sulfur_family
+    action: CORRECTED
+    changes: Retargeted sulfur component CHEBI:26833 -> CHEBI:33403 after the standalone
+      Sulfur record moved from the atom term to elemental sulfur (#368).
+    llm_assisted: false
   notes: Imported from microbedecoder (source_id=kgmicrobe.compound:yeast_extract_sulfur);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ingredient_type: UNDEFINED_MIXTURE
@@ -8210,7 +8216,7 @@ ingredients:
     reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   - component_name: sulfur
-    component_id: CHEBI:26833
+    component_id: CHEBI:33403
     reference_scope: MIM_CATALOG
     source: microbedecoder research decomposition (#213/#308)
   component_assertion:
@@ -23794,10 +23800,9 @@ ingredients:
     curator: fix_salt_ion_identity_overclaims
     action: REGROUNDED_ION_OVERCLAIM
     changes: identifier CHEBI:61326 -> kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine;
-      mapping_quality -> NARROW_MATCH to CHEBI:63895 ('ionic liquid').
-      Cleared chemical_properties because they described the EMIM cation only, marked
-      1 bare-ion synonym(s) as REJECTED_LABEL, and kept the complete salt or ion-pair
-      identity distinct (#315).
+      mapping_quality -> NARROW_MATCH to CHEBI:63895 ('ionic liquid'). Cleared chemical_properties
+      because they described the EMIM cation only, marked 1 bare-ion synonym(s) as
+      REJECTED_LABEL, and kept the complete salt or ion-pair identity distinct (#315).
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -170974,17 +170979,18 @@ ingredients:
     inchi: InChI=1S/C2H4O5S/c3-2(4)1-8(5,6)7/h1H2,(H,3,4)(H,5,6,7)
     smiles: O=C(O)CS(=O)(=O)O
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:26833
+- identifier: CHEBI:33403
   preferred_term: Sulfur
   ontology_mapping:
-    ontology_id: CHEBI:26833
-    ontology_label: sulfur atom
+    ontology_id: CHEBI:33403
+    ontology_label: elemental sulfur
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#368)
+      notes: A culture-media ingredient named sulfur, sulphur, or sulfur powder denotes
+        weighable elemental sulfur, not ChEBI's sulfur atom or polysulfur terms.
   synonyms:
   - synonym_text: (for anaerobic media only)
     synonym_type: RAW_TEXT
@@ -171004,7 +171010,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: 16S
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Schwefel
     synonym_type: EXACT_SYNONYM
@@ -171016,7 +171022,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: sulfur atom
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: theion
     synonym_type: EXACT_SYNONYM
@@ -171024,10 +171030,37 @@ ingredients:
   - synonym_text: sulfur
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Sulphur
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:17909
+  - synonym_text: Sulfur, precipitated
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:17909
+  - synonym_text: polysulfur
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: sulfur, homopolymer
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: Sulfur (powder)
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_kgmicrobe.compound:sulfur_powder
+  - synonym_text: Sulfur powder
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_kgmicrobe.compound:sulfur_powder
+  - synonym_text: Elemental sulphur
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_kgmicrobe.compound:sulfur_powder
+  - synonym_text: Sulfur, powder
+    synonym_type: RAW_TEXT
+    source: mappings/culturemech_residual_triage.tsv
+  - synonym_text: Sulfur, powdered
+    synonym_type: RAW_TEXT
+    source: mappings/culturemech_residual_triage.tsv
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 366
-    media_count: 366
+    total_occurrences: 477
+    media_count: 477
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -171123,11 +171156,18 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  chemical_properties:
-    molecular_formula: S
-    inchi: InChI=1S/S
-    smiles: '[S]'
-  kg_microbe_node_id: CHEBI:26833
+  - timestamp: '2026-09-11T13:41:33.694587+00:00'
+    curator: fix_sulfur_family
+    action: CORRECTED
+    changes: identifier CHEBI:26833 -> CHEBI:33403 (elemental sulfur); absorbed duplicate
+      Sulphur and Sulfur (powder) records; merged CultureMech membership from 3 identifiers
+      into CHEBI:33403; added 7 resolving source label(s) and retained 4 atom/polysulfur-only
+      label(s) as REJECTED_LABEL (#368).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
+  kg_microbe_node_id: CHEBI:33403
   ingredient_type: SINGLE_INGREDIENT
   environmental_context:
   - environment_term: ENVO:01000030
@@ -171208,24 +171248,18 @@ ingredients:
       node were left out as redundant (#520).'
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
-- identifier: kgmicrobe.compound:sulfur_powder
+- identifier: CHEBI:33403
   preferred_term: Sulfur (powder)
   ontology_mapping:
     ontology_id: CHEBI:33403
     ontology_label: elemental sulfur
     ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
+    mapping_quality: EXACT_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#322)
-      notes: mapping_quality EXACT_MATCH -> NARROW_MATCH. CHEBI:33403 carries no structural
-        definition, so it is a class rather than an individual, and the record's label
-        'Sulfur (powder)' does not equal the term label 'elemental sulfur'. EXACT_MATCH
-        therefore asserted an identity the pair does not have. Re-graded because a
-        physical form of elemental sulfur.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#368)
+      notes: A culture-media ingredient named sulfur, sulphur, or sulfur powder denotes
+        weighable elemental sulfur, not ChEBI's sulfur atom or polysulfur terms.
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Defined component, Inorganic
       compound, Simple component'
@@ -171253,10 +171287,10 @@ ingredients:
   - synonym_text: Elemental sulphur
     synonym_type: EXACT_SYNONYM
     source: merged_from_duplicate_mim_record
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 104
-    media_count: 104
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -171411,9 +171445,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  chemical_properties:
-    data_source: PubChem API
-    retrieval_date: '2026-04-05T19:53:59.153587+00:00'
+  - timestamp: '2026-09-11T13:41:33.694587+00:00'
+    curator: fix_sulfur_family
+    action: MERGED_INTO
+    changes: Merged into CHEBI:33403 'Sulfur'; occurrences transferred to the surviving
+      elemental sulfur record and SSSOM rows dropped. The old record kgmicrobe.compound:sulfur_powder
+      split a spelling or supplied powder form from the same weighable sulfur substance
+      (#368).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: SULFUR_SOURCE
@@ -171422,17 +171464,19 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
-- identifier: CHEBI:17909
+  representative: CHEBI:33403
+- identifier: CHEBI:33403
   preferred_term: Sulphur
   ontology_mapping:
-    ontology_id: CHEBI:17909
-    ontology_label: polysulfur
+    ontology_id: CHEBI:33403
+    ontology_label: elemental sulfur
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#368)
+      notes: A culture-media ingredient named sulfur, sulphur, or sulfur powder denotes
+        weighable elemental sulfur, not ChEBI's sulfur atom or polysulfur terms.
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -171442,18 +171486,18 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: polysulfur
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: sulfur, homopolymer
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Sulfur
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 7
-    media_count: 7
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -171525,13 +171569,17 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  chemical_properties:
-    cas_rn: 7704-34-9
-    data_source: PubChem (via CHEBI:17909)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: (S)n.S2
-    inchi: InChI=1S/S3/c1-3-2
-    smiles: S=S=S
+  - timestamp: '2026-09-11T13:41:33.694587+00:00'
+    curator: fix_sulfur_family
+    action: MERGED_INTO
+    changes: Merged into CHEBI:33403 'Sulfur'; occurrences transferred to the surviving
+      elemental sulfur record and SSSOM rows dropped. The old record CHEBI:17909 split
+      a spelling or supplied powder form from the same weighable sulfur substance
+      (#368).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: SULFUR_SOURCE
@@ -171540,6 +171588,7 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
+  representative: CHEBI:33403
 - identifier: cas:8001-21-6
   preferred_term: Sunflower oil
   ontology_mapping:
@@ -173098,10 +173147,10 @@ ingredients:
     curator: fix_salt_ion_identity_overclaims
     action: REGROUNDED_ION_OVERCLAIM
     changes: identifier CHEBI:46020 -> kgmicrobe.compound:tetramethyl_ammonium; mapping_quality
-      -> NARROW_MATCH to CHEBI:35273 ('quaternary ammonium salt'). Cleared
-      chemical_properties because they described the tetramethylammonium cation only,
-      marked 4 bare-ion synonym(s) as REJECTED_LABEL, and kept the complete salt or
-      ion-pair identity distinct (#315).
+      -> NARROW_MATCH to CHEBI:35273 ('quaternary ammonium salt'). Cleared chemical_properties
+      because they described the tetramethylammonium cation only, marked 4 bare-ion
+      synonym(s) as REJECTED_LABEL, and kept the complete salt or ion-pair identity
+      distinct (#315).
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false

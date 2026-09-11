@@ -1,8 +1,8 @@
 # Mapped Ingredients Index
 **Total Records**: 2678
-**Mapped**: 2624 (98.0%)
+**Mapped**: 2622 (97.9%)
 **Unmapped**: 0 (0.0%)
-**Other statuses**: 54 (2.0%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 56 (2.1%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 219,988
 
 ---
@@ -1924,10 +1924,8 @@
 | cas:967-80-6 | Sulfaquinoxaline sodium salt | CHEBI:26714 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:9334 | Sulfasalazine | CHEBI:9334 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:50519 | Sulfoacetic acid | CHEBI:50519 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:26833 | Sulfur | CHEBI:26833 | CHEBI | EXACT_MATCH | 366 |
+| CHEBI:33403 | Sulfur | CHEBI:33403 | CHEBI | EXACT_MATCH | 477 |
 | CHEBI:26835 | Sulfur compounds | CHEBI:26835 | CHEBI | SYNONYM_MATCH | 0 |
-| kgmicrobe.compound:sulfur_powder | Sulfur (powder) | CHEBI:33403 | CHEBI | NARROW_MATCH | 104 |
-| CHEBI:17909 | Sulphur | CHEBI:17909 | CHEBI | EXACT_MATCH | 7 |
 | cas:8001-21-6 | Sunflower oil | NCIT:C1241 | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:supplemented_seawater | Supplemented Seawater | ENVO:00002149 | ENVO | CLOSE_MATCH | 2 |
 | CHEBI:35195 | Surfactant | CHEBI:35195 | CHEBI | EXACT_MATCH | 3 |
@@ -2688,6 +2686,8 @@
 | mesh:C025349 | Sodium metasilicate (silicate for diatom frustules) | REJECTED | mesh:C025349 |  | 0 |
 | CHEBI:63005 | Sodium nitrate (nitrogen source) | REJECTED | CHEBI:63005 |  | 0 |
 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | REJECTED | CHEBI:32150 |  | 0 |
+| CHEBI:33403 | Sulfur (powder) | REJECTED | CHEBI:33403 | CHEBI:33403 | 0 |
+| CHEBI:33403 | Sulphur | REJECTED | CHEBI:33403 | CHEBI:33403 | 0 |
 | CHEBI:32142 | Trisodium citrate x 2 H2O | REJECTED | CHEBI:32142 |  | 0 |
 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI:17268 |  | 0 |
 | CHEBI:47965 | n-Acetyl-muramic acid | REJECTED | CHEBI:47966 |  | 0 |
