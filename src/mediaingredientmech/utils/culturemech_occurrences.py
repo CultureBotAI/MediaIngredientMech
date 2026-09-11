@@ -10,6 +10,7 @@ BETAINE_HYDRATE_ID = "CHEBI:91242"
 DISODIUM_2_OXOGLUTARATE_ID = "kgmicrobe.compound:na2_alpha-ketoglutarate"
 ELEMENTAL_SULFUR_ID = "CHEBI:33403"
 EMIM_LYSINE_ID = "kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine"
+LIPOIC_ACID_ID = "CHEBI:16494"
 SODIUM_CROTONATE_ID = "kgmicrobe.compound:na-crotonate"
 TETRAMETHYL_AMMONIUM_ID = "kgmicrobe.compound:tetramethyl_ammonium"
 TRACE_ELEMENT_SOLUTION_ID = "kgmicrobe.ingredient:trace_element_solution"
@@ -37,6 +38,10 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("Elemental sulphur"): ELEMENTAL_SULFUR_ID,
     _source_label_key("Na2 alpha-ketoglutarate"): DISODIUM_2_OXOGLUTARATE_ID,
     _source_label_key("Na2 α-ketoglutarate"): DISODIUM_2_OXOGLUTARATE_ID,
+    _source_label_key("D,L-6,8-Thioctic Acid"): LIPOIC_ACID_ID,
+    _source_label_key("Thioctic acid"): LIPOIC_ACID_ID,
+    _source_label_key("α-lipoic acid"): LIPOIC_ACID_ID,
+    _source_label_key("α--Lipoic acid"): LIPOIC_ACID_ID,
     _source_label_key("Sulfur"): ELEMENTAL_SULFUR_ID,
     _source_label_key("Sulfur (powder)"): ELEMENTAL_SULFUR_ID,
     _source_label_key("Sulfur, powder"): ELEMENTAL_SULFUR_ID,

@@ -144,6 +144,25 @@ def test_source_label_override_counts_sulfur_family(mod, tmp_path):
     assert fresh["CHEBI:33403"] == (5, 5)
 
 
+def test_source_label_override_counts_lipoic_family(mod, tmp_path):
+    path = tmp_path / "occurrences.tsv"
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "CHEBI:30314", "Thioctic acid"])
+        w.writerow(["CultureMech:000002", "CHEBI:30314", "Thioctic Acid"])
+        w.writerow(["CultureMech:000003", "CHEBI:43796", "α-lipoic acid"])
+        w.writerow(["CultureMech:000004", "CHEBI:43796", "α--Lipoic acid"])
+        w.writerow(["CultureMech:000005", "CHEBI:43796", "D,L-6,8-Thioctic Acid"])
+
+    fresh, total_rows, total_recipes = mod.read_occurrences(path)
+
+    assert (total_rows, total_recipes) == (5, 5)
+    assert fresh["CHEBI:16494"] == (5, 5)
+    assert "CHEBI:30314" not in fresh
+    assert "CHEBI:43796" not in fresh
+
+
 def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
     path = tmp_path / "occurrences.tsv"
     with path.open("w", newline="", encoding="utf-8") as fh:
