@@ -1,7 +1,7 @@
 # Unmapped Ingredients Index
-**Total Records**: 273
+**Total Records**: 272
 **Mapped**: 0 (0.0%)
-**Unmapped**: 262 (96.0%)
+**Unmapped**: 261 (96.0%)
 **Other statuses**: 11 (4.0%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 597
 
@@ -181,7 +181,6 @@
 | UNMAPPED_0457 | N-Z amine | UNMAPPED | 0 |
 | UNMAPPED_0460 | Na-Nitrilotriacetat | UNMAPPED | 0 |
 | UNMAPPED_0463 | Na-tetrathionate | UNMAPPED | 0 |
-| UNMAPPED_0465 | Na2 beta-glycerol PO4 x 5 H2O | UNMAPPED | 0 |
 | UNMAPPED_0475 | Na3-NTA x H2O | UNMAPPED | 0 |
 | UNMAPPED_0477 | NaSiO3 x 9 H2O | UNMAPPED | 0 |
 | UNMAPPED_0050 | Natural sea-salt | UNMAPPED | 2 |
