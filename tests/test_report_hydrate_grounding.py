@@ -28,32 +28,39 @@ def test_regexes_come_from_the_guard_not_a_local_copy(mod):
     """The report's private copy drifted from the guard's between #246 and #250;
     a third hand-synced copy would drift again."""
     spec = importlib.util.spec_from_file_location(
-        "_hg", ROOT / "src" / "mediaingredientmech" / "curation" / "hydrate_guard.py")
+        "_hg", ROOT / "src" / "mediaingredientmech" / "curation" / "hydrate_guard.py"
+    )
     hg = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(hg)
     assert mod.HYDRATE.pattern == hg.HYDRATE_NOTATION.pattern
     assert mod.FORMULA_WATER.pattern == hg.FORMULA_WATER.pattern
 
 
-@pytest.mark.parametrize("label", [
-    "b-Mannan borohydrate reduced carob seed",
-    "L-Ornithine monochlorohydrate/ornithine",
-    "carbohydrate",
-])
+@pytest.mark.parametrize(
+    "label",
+    [
+        "b-Mannan borohydrate reduced carob seed",
+        "L-Ornithine monochlorohydrate/ornithine",
+        "carbohydrate",
+    ],
+)
 def test_borohydrate_class_labels_are_not_hydrate_terms(mod, label):
     """A bare /hydrate/ test would call these hydrate terms and silently drop
     the record from the synonym bucket. Both are live MIM targets."""
     assert not mod.HYDRATE.search(label)
 
 
-@pytest.mark.parametrize("formula,expected", [
-    ("Mg.O4S.7H2O", True),
-    ("Al.12H2O.H4N.2O4S", True),
-    ("(H2O)n.O5SV", True),
-    ("H2O4P.Na", False),     # dihydrogenphosphate, no water
-    ("H2O2", False),         # hydrogen peroxide
-    ("C26H43NO6", False),
-])
+@pytest.mark.parametrize(
+    "formula,expected",
+    [
+        ("Mg.O4S.7H2O", True),
+        ("Al.12H2O.H4N.2O4S", True),
+        ("(H2O)n.O5SV", True),
+        ("H2O4P.Na", False),  # dihydrogenphosphate, no water
+        ("H2O2", False),  # hydrogen peroxide
+        ("C26H43NO6", False),
+    ],
+)
 def test_formula_water_is_a_component_not_a_substring(mod, formula, expected):
     assert bool(mod.FORMULA_WATER.search(formula)) is expected
 
@@ -94,8 +101,9 @@ def test_the_old_substring_rule_would_have_got_both_wrong(mod):
 
     by_substring = [r for r in rows if "states" in r["detail"]]
 
-    assert [r["kind"] for r in by_substring] == [mod.ANHYDROUS_TERM], (
-        "the substring rule selects exactly the wrong row here")
+    assert [r["kind"] for r in by_substring] == [
+        mod.ANHYDROUS_TERM
+    ], "the substring rule selects exactly the wrong row here"
 
 
 def test_the_kind_values_are_distinct(mod):
@@ -199,9 +207,17 @@ def test_preferred_term_hydrate_rows_are_classified_by_the_source(mod):
                     "ontology_label": "sodium chloride",
                 },
             },
+            {
+                "identifier": "kgmicrobe.compound:mgcl2_x_7_h2o",
+                "preferred_term": "MgCl2 x 7 H2O",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:1",
+                    "ontology_label": "magnesium chloride",
+                },
+            },
         ],
         {"CHEBI:1": "Cl2Mg", "CHEBI:2": "ClNa"},
-        set(),
+        {"MgCl2 x 7 H2O"},
     )
 
     assert rows == [
@@ -212,8 +228,35 @@ def test_preferred_term_hydrate_rows_are_classified_by_the_source(mod):
             "ontology_label": "magnesium chloride",
             "term_formula": "Cl2Mg",
             "status": "HYDRATE_ON_ANHYDROUS_TERM",
-        }
+        },
+        {
+            "identifier": "kgmicrobe.compound:mgcl2_x_7_h2o",
+            "preferred_term": "MgCl2 x 7 H2O",
+            "ontology_id": "CHEBI:1",
+            "ontology_label": "magnesium chloride",
+            "term_formula": "Cl2Mg",
+            "status": mod.OK_LOCAL_REGISTRY_ID,
+        },
     ]
+
+
+def test_local_hydrate_registry_ids_still_need_parent_rows(mod):
+    rows = mod.classify_hydrate_rows(
+        [
+            {
+                "identifier": "kgmicrobe.compound:mgcl2_x_7_h2o",
+                "preferred_term": "MgCl2 x 7 H2O",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:1",
+                    "ontology_label": "magnesium chloride",
+                },
+            },
+        ],
+        {"CHEBI:1": "Cl2Mg"},
+        set(),
+    )
+
+    assert rows[0]["status"] == "HYDRATE_ON_ANHYDROUS_TERM"
 
 
 def test_preferred_term_hydrate_rows_ignore_rejected_records(mod):

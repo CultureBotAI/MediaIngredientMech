@@ -35,6 +35,7 @@ REPORT = ROOT / "reports" / "hydrate_grounding.tsv"
 SYN_REPORT = ROOT / "reports" / "hydrate_synonyms.tsv"
 CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
 
+
 def _load_hydrate_notation():
     """Load the shared regexes WITHOUT importing the package.
 
@@ -45,6 +46,7 @@ def _load_hydrate_notation():
     click/rich). hydrate_guard itself imports nothing but `re` and `typing`.
     """
     import importlib.util
+
     path = ROOT / "src" / "mediaingredientmech" / "curation" / "hydrate_guard.py"
     spec = importlib.util.spec_from_file_location("_hydrate_guard", path)
     mod = importlib.util.module_from_spec(spec)
@@ -72,6 +74,7 @@ HYDRATE_FIELDS = [
     "term_formula",
     "status",
 ]
+OK_LOCAL_REGISTRY_ID = "OK_LOCAL_REGISTRY_ID"
 SYNONYM_FIELDS = [
     "identifier",
     "preferred_term",
@@ -96,8 +99,7 @@ def term_is_hydrate(
     would otherwise be called hydrate terms.
     """
     return bool(
-        FORMULA_WATER.search(form.get(ontology_id, ""))
-        or HYDRATE.search(str(ontology_label or ""))
+        FORMULA_WATER.search(form.get(ontology_id, "")) or HYDRATE.search(str(ontology_label or ""))
     )
 
 
@@ -123,25 +125,25 @@ def classify_hydrate_rows(
         f = form.get(target, "")
         is_hydrate = term_is_hydrate(target, om.get("ontology_label"), form)
         if ident.startswith("cas:"):
-            status = (
-                "OK_OWN_CAS_ID"
-                if term in anchored
-                else "CAS_MISSING_ANCHOR_ROWS"
-            )
+            status = "OK_OWN_CAS_ID" if term in anchored else "CAS_MISSING_ANCHOR_ROWS"
+        elif ident.startswith("kgmicrobe.") and term in anchored:
+            status = OK_LOCAL_REGISTRY_ID
         elif is_hydrate:
             status = "OK_HYDRATE_TERM"
         elif target.startswith("CHEBI:") and f:
             status = "HYDRATE_ON_ANHYDROUS_TERM"
         else:
             status = "UNKNOWN_NO_FORMULA"
-        rows.append({
-            "identifier": ident,
-            "preferred_term": term,
-            "ontology_id": target,
-            "ontology_label": om.get("ontology_label") or "",
-            "term_formula": f,
-            "status": status,
-        })
+        rows.append(
+            {
+                "identifier": ident,
+                "preferred_term": term,
+                "ontology_id": target,
+                "ontology_label": om.get("ontology_label") or "",
+                "term_formula": f,
+                "status": status,
+            }
+        )
     return rows
 
 
@@ -167,21 +169,19 @@ def classify_synonym_rows(records: list[dict], form: dict[str, str]) -> list[dic
         malformed = [syn for syn in hyd if implausible_water_counts(syn)]
         if malformed:
             counts = sorted(
-                {
-                    count
-                    for synonym in malformed
-                    for count in implausible_water_counts(synonym)
-                },
+                {count for synonym in malformed for count in implausible_water_counts(synonym)},
                 key=int,
             )
-            syn_rows.append({
-                "identifier": str(rec.get("identifier") or ""),
-                "preferred_term": term,
-                "ontology_id": target,
-                "kind": MALFORMED_NOTATION,
-                "detail": "water count above plausible ceiling: " + ", ".join(counts),
-                "hydrate_synonyms": " | ".join(malformed),
-            })
+            syn_rows.append(
+                {
+                    "identifier": str(rec.get("identifier") or ""),
+                    "preferred_term": term,
+                    "ontology_id": target,
+                    "kind": MALFORMED_NOTATION,
+                    "detail": "water count above plausible ceiling: " + ", ".join(counts),
+                    "hydrate_synonyms": " | ".join(malformed),
+                }
+            )
         if HYDRATE.search(term):
             # The record's own label is a hydrate, but a synonym may name a
             # DIFFERENT state (`MgSO4·7H2O` with `MgSO4 x 6 H2O`) — the same
@@ -192,39 +192,38 @@ def classify_synonym_rows(records: list[dict], form: dict[str, str]) -> list[dic
             if here is None:
                 continue
             other = sorted(
-                {
-                    w
-                    for w in (water_multiplicity(h) for h in hyd)
-                    if w is not None and w != here
-                },
+                {w for w in (water_multiplicity(h) for h in hyd) if w is not None and w != here},
                 key=float,
             )
             if not other:
-                continue                  # same state, just respelled
-            syn_rows.append({
+                continue  # same state, just respelled
+            syn_rows.append(
+                {
+                    "identifier": str(rec.get("identifier") or ""),
+                    "preferred_term": term,
+                    "ontology_id": target,
+                    # `kind` is the machine key; `detail` is prose for a
+                    # human and may be reworded freely (#259).
+                    "kind": DIFFERENT_STATE,
+                    "detail": f"record states {here} H2O; synonyms state " + ", ".join(other),
+                    "hydrate_synonyms": " | ".join(hyd),
+                }
+            )
+            continue
+        if term_is_hydrate(target, om.get("ontology_label"), form):
+            continue  # the term itself is the hydrate
+        if not formula_known(target, form):
+            continue  # cannot tell; do not assert either way
+        syn_rows.append(
+            {
                 "identifier": str(rec.get("identifier") or ""),
                 "preferred_term": term,
                 "ontology_id": target,
-                # `kind` is the machine key; `detail` is prose for a
-                # human and may be reworded freely (#259).
-                "kind": DIFFERENT_STATE,
-                "detail": f"record states {here} H2O; synonyms state "
-                          + ", ".join(other),
+                "kind": ANHYDROUS_TERM,
+                "detail": "term formula has no water",
                 "hydrate_synonyms": " | ".join(hyd),
-            })
-            continue
-        if term_is_hydrate(target, om.get("ontology_label"), form):
-            continue                      # the term itself is the hydrate
-        if not formula_known(target, form):
-            continue                      # cannot tell; do not assert either way
-        syn_rows.append({
-            "identifier": str(rec.get("identifier") or ""),
-            "preferred_term": term,
-            "ontology_id": target,
-            "kind": ANHYDROUS_TERM,
-            "detail": "term formula has no water",
-            "hydrate_synonyms": " | ".join(hyd),
-        })
+            }
+        )
     return syn_rows
 
 
@@ -246,8 +245,10 @@ def formulas() -> dict[str, str]:
         print(f"ERROR: no chebi.db at {CHEBI_DB}; cannot compare formulas")
         raise SystemExit(2)
     con = sqlite3.connect(CHEBI_DB)
-    q = ("select subject, value from statements "
-         "where predicate like '%formula%' and subject like 'CHEBI:%'")
+    q = (
+        "select subject, value from statements "
+        "where predicate like '%formula%' and subject like 'CHEBI:%'"
+    )
     return dict(con.execute(q))
 
 
@@ -264,7 +265,11 @@ def anchored_subjects() -> set[str]:
     with __import__("io").StringIO("".join(lines[start:])) as fh:
         r = csv.DictReader(fh, delimiter="\t")
         for row in r:
-            lab, pred, obj = row.get("subject_label"), row.get("predicate_id",""), row.get("object_id","")
+            lab, pred, obj = (
+                row.get("subject_label"),
+                row.get("predicate_id", ""),
+                row.get("object_id", ""),
+            )
             if not lab:
                 continue
             if pred in ("skos:narrowMatch", "skos:broadMatch"):
@@ -287,12 +292,11 @@ def baseline_identifiers() -> set[str]:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--limit", type=int, default=25,
-                    help="cap the violations list")
-    ap.add_argument("--queue-limit", type=int, default=25,
-                    help="cap the UNMAPPED pending-queue list")
-    ap.add_argument("--synonym-limit", type=int, default=15,
-                    help="cap the hydrate-synonym list")
+    ap.add_argument("--limit", type=int, default=25, help="cap the violations list")
+    ap.add_argument(
+        "--queue-limit", type=int, default=25, help="cap the UNMAPPED pending-queue list"
+    )
+    ap.add_argument("--synonym-limit", type=int, default=15, help="cap the hydrate-synonym list")
     args = ap.parse_args()
 
     form = formulas()
@@ -319,16 +323,24 @@ def main() -> int:
 
     c = collections.Counter(r["status"] for r in rows)
     print(f"{len(rows)} record(s) whose preferred_term carries hydrate notation\n")
-    for k in ("HYDRATE_ON_ANHYDROUS_TERM", "CAS_MISSING_ANCHOR_ROWS",
-              "OK_HYDRATE_TERM", "OK_OWN_CAS_ID", "UNKNOWN_NO_FORMULA"):
+    for k in (
+        "HYDRATE_ON_ANHYDROUS_TERM",
+        "CAS_MISSING_ANCHOR_ROWS",
+        "OK_HYDRATE_TERM",
+        "OK_OWN_CAS_ID",
+        OK_LOCAL_REGISTRY_ID,
+        "UNKNOWN_NO_FORMULA",
+    ):
         if c.get(k):
             print(f"  {k:28} {c[k]}")
     bad = [r for r in rows if r["status"] == "HYDRATE_ON_ANHYDROUS_TERM"]
     if bad:
         print("\nGrounded onto a term whose formula has no water (Section 3 violations):")
-        for r in bad[:args.limit]:
-            print(f"  {r['preferred_term'][:34]:34} -> {r['ontology_id']:14} "
-                  f"{r['ontology_label'][:26]:26} [{r['term_formula']}]")
+        for r in bad[: args.limit]:
+            print(
+                f"  {r['preferred_term'][:34]:34} -> {r['ontology_id']:14} "
+                f"{r['ontology_label'][:26]:26} [{r['term_formula']}]"
+            )
         if len(bad) > args.limit:
             print(f"  ... and {len(bad) - args.limit} more")
     # The guard added in #246 refuses these rather than mis-filing them, so they
@@ -349,22 +361,30 @@ def main() -> int:
     mismatched = buckets[DIFFERENT_STATE]
     anhydrous = buckets[ANHYDROUS_TERM]
     malformed = buckets[MALFORMED_NOTATION]
-    print(f"\n{len(syn_rows)} hydrate-synonym finding(s) their own term does "
-          f"not account for\n  {len(anhydrous)} on an anhydrous term, "
-          f"{len(mismatched)} naming a different hydration state, "
-          f"{len(malformed)} with malformed notation.")
+    print(
+        f"\n{len(syn_rows)} hydrate-synonym finding(s) their own term does "
+        f"not account for\n  {len(anhydrous)} on an anhydrous term, "
+        f"{len(mismatched)} naming a different hydration state, "
+        f"{len(malformed)} with malformed notation."
+    )
     if syn_rows:
         known = {r["identifier"] for r in syn_rows} & baseline_ids
-        print(f"\n{len(known)} of these identifiers are already tracked in "
-              "mappings/duplicate_identifier_baseline.tsv\n(as HYDRATE_FAMILY_UNREVIEWED); "
-              f"the other {len({r['identifier'] for r in syn_rows}) - len(known)} are not "
-              "tracked by any existing check.")
-        for r in syn_rows[:args.synonym_limit]:
-            print(f"  {r['identifier']:16} {r['preferred_term'][:22]:22} "
-                  f"<- {r['hydrate_synonyms'][:44]}")
+        print(
+            f"\n{len(known)} of these identifiers are already tracked in "
+            "mappings/duplicate_identifier_baseline.tsv\n(as HYDRATE_FAMILY_UNREVIEWED); "
+            f"the other {len({r['identifier'] for r in syn_rows}) - len(known)} are not "
+            "tracked by any existing check."
+        )
+        for r in syn_rows[: args.synonym_limit]:
+            print(
+                f"  {r['identifier']:16} {r['preferred_term'][:22]:22} "
+                f"<- {r['hydrate_synonyms'][:44]}"
+            )
         if len(syn_rows) > args.synonym_limit:
-            print(f"  ... and {len(syn_rows) - args.synonym_limit} more "
-                  f"(full list in {SYN_REPORT.relative_to(ROOT)})")
+            print(
+                f"  ... and {len(syn_rows) - args.synonym_limit} more "
+                f"(full list in {SYN_REPORT.relative_to(ROOT)})"
+            )
     SYN_REPORT.parent.mkdir(parents=True, exist_ok=True)
     with SYN_REPORT.open("w", newline="") as fh:
         w = csv.DictWriter(
@@ -377,8 +397,9 @@ def main() -> int:
         w.writerows(syn_rows)
 
     if not UNMAPPED.exists():
-        print(f"\nERROR: {UNMAPPED.relative_to(ROOT)} is missing; cannot report the "
-              "pending queue")
+        print(
+            f"\nERROR: {UNMAPPED.relative_to(ROOT)} is missing; cannot report the " "pending queue"
+        )
         return 2
     doc = yaml.safe_load(UNMAPPED.read_text()) or {}
     if not isinstance(doc.get("ingredients"), list):
@@ -387,24 +408,33 @@ def main() -> int:
     # 'MES Hydrat' is the German spelling and its own history action is
     # REVIEWED_HYDRATE_AMBIGUITY -- the one record whose audit trail says "this is
     # the hydrate problem" was the one the \bhydrate\b anchor dropped.
-    pending = [r for r in doc["ingredients"]
-               if r.get("mapping_status") == "UNMAPPED"
-               and (HYDRATE.search(str(r.get("preferred_term") or ""))
-                    or re.search(r"(?<![a-z])hydrat\b", str(r.get("preferred_term") or ""),
-                                 re.IGNORECASE))]
+    pending = [
+        r
+        for r in doc["ingredients"]
+        if r.get("mapping_status") == "UNMAPPED"
+        and (
+            HYDRATE.search(str(r.get("preferred_term") or ""))
+            or re.search(r"(?<![a-z])hydrat\b", str(r.get("preferred_term") or ""), re.IGNORECASE)
+        )
+    ]
+
     def occ(r: dict) -> int:
         return (r.get("occurrence_statistics") or {}).get("total_occurrences") or 0
 
-    pending.sort(key=occ, reverse=True)   # a 4-medium record is not a 0-medium one
+    pending.sort(key=occ, reverse=True)  # a 4-medium record is not a 0-medium one
     print(f"\n{len(pending)} UNMAPPED record(s) whose label carries hydrate notation.")
     if pending:
-        print("This is the queue the #246 guard refuses into; it also holds records that "
-              "predate\nthe guard. Each needs MAPPING_SEMANTICS.md Section 3: a "
-              "hydrate-specific ontology term\nif one exists, else its own cas:<hydrate CAS> "
-              "with a narrowMatch to the parent plus\nthe Rule B1 registry row.")
-        for r in pending[:args.queue_limit]:
-            print(f"  {str(r.get('identifier')):16} occ={occ(r):<4} "
-                  f"{str(r.get('preferred_term'))[:48]}")
+        print(
+            "This is the queue the #246 guard refuses into; it also holds records that "
+            "predate\nthe guard. Each needs MAPPING_SEMANTICS.md Section 3: a "
+            "hydrate-specific ontology term\nif one exists, else its own cas:<hydrate CAS> "
+            "with a narrowMatch to the parent plus\nthe Rule B1 registry row."
+        )
+        for r in pending[: args.queue_limit]:
+            print(
+                f"  {str(r.get('identifier')):16} occ={occ(r):<4} "
+                f"{str(r.get('preferred_term'))[:48]}"
+            )
         if len(pending) > args.queue_limit:
             print(f"  ... and {len(pending) - args.queue_limit} more")
 
