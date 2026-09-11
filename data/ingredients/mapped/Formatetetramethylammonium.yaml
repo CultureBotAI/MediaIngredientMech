@@ -83,6 +83,14 @@ curation_history:
     to 2 existing component(s) (MIM_CATALOG); constituent names, identifiers, and
     concentrations were not changed.'
   llm_assisted: false
+- timestamp: '2026-09-11T12:12:18+00:00'
+  curator: fix_salt_ion_identity_overclaims
+  action: CORRECTED_COMPONENT_REFERENCE_SCOPE
+  changes: 'Rescoped the tetramethylammonium component from MIM_CATALOG to EXTERNAL_TERM
+    (#315): CHEBI:46020 denotes the cation component itself, while kgmicrobe.compound:tetramethyl_ammonium
+    denotes a distinct supplied salt or ion-pair ingredient and must not stand in
+    for component partonomy.'
+  llm_assisted: false
 notes: Imported from microbedecoder (source_id=kgmicrobe.compound:formate_tetramethylammonium);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ingredient_type: NAMED_MEDIUM
@@ -93,7 +101,7 @@ components:
   source: microbedecoder research decomposition (#213/#308)
 - component_name: tetramethylammonium
   component_id: CHEBI:46020
-  reference_scope: MIM_CATALOG
+  reference_scope: EXTERNAL_TERM
   source: microbedecoder research decomposition (#213/#308)
 component_assertion:
   method: LABEL_ENUMERATION

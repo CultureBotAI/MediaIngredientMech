@@ -92,6 +92,35 @@ def test_source_label_override_counts_promoted_hydrate(mod, tmp_path):
     assert fresh["CHEBI:91242"] == (1, 1)
 
 
+def test_source_label_override_counts_salt_ion_splits(mod, tmp_path):
+    path = tmp_path / "occurrences.tsv"
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow([
+            "CultureMech:000001",
+            "CHEBI:61326",
+            "1-ethyl-3-methylimidazolium lysine",
+        ])
+        w.writerow(["CultureMech:000002", "CHEBI:35899", "Na-crotonate"])
+        w.writerow(["CultureMech:000003", "UNMAPPED_0524", "Sodium crotonate"])
+        w.writerow([
+            "CultureMech:000004",
+            "CHEBI:16810",
+            "Na2 alpha-ketoglutarate",
+        ])
+        w.writerow(["CultureMech:000005", "CHEBI:16810", "Na2 α-ketoglutarate"])
+        w.writerow(["CultureMech:000006", "CHEBI:46020", "Tetramethyl ammonium"])
+
+    fresh, total_rows, total_recipes = mod.read_occurrences(path)
+
+    assert (total_rows, total_recipes) == (6, 6)
+    assert fresh["kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine"] == (1, 1)
+    assert fresh["kgmicrobe.compound:na-crotonate"] == (2, 2)
+    assert fresh["kgmicrobe.compound:na2_alpha-ketoglutarate"] == (2, 2)
+    assert fresh["kgmicrobe.compound:tetramethyl_ammonium"] == (1, 1)
+
+
 def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
     path = tmp_path / "occurrences.tsv"
     with path.open("w", newline="", encoding="utf-8") as fh:

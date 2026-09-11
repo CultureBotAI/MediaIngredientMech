@@ -1,7 +1,7 @@
 # Unmapped Ingredients Index
-**Total Records**: 274
+**Total Records**: 273
 **Mapped**: 0 (0.0%)
-**Unmapped**: 263 (96.0%)
+**Unmapped**: 262 (96.0%)
 **Other statuses**: 11 (4.0%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 597
 
@@ -222,7 +222,6 @@
 | UNMAPPED_0002 | See source for composition | UNMAPPED | 143 |
 | UNMAPPED_0519 | Selenite-tungstate solution see Medium No. 431 | UNMAPPED | 0 |
 | UNMAPPED_0520 | Sigmacell alpha Type 50 | UNMAPPED | 0 |
-| UNMAPPED_0524 | Sodium crotonate | UNMAPPED | 0 |
 | UNMAPPED_0615 | Sodium phosphate monobasic (phosphorus source) | UNMAPPED | 0 |
 | UNMAPPED_0303 | Soil Defined Carbon Mix | UNMAPPED | 1 |
 | UNMAPPED_0055 | Soil+Seawater Medium | UNMAPPED | 2 |

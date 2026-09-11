@@ -1,7 +1,7 @@
-generation_date: '2026-09-10T06:16:38.165628+00:00'
-total_count: 274
+generation_date: '2026-09-11T11:07:48.411896+00:00'
+total_count: 273
 mapped_count: 0
-unmapped_count: 263
+unmapped_count: 262
 ingredients:
 - identifier: UNMAPPED_0818
   preferred_term: X
@@ -10317,53 +10317,6 @@ ingredients:
     or CHEBI/NCIT match. Reviewed on 2026-05-11 as a named cellulose material/preparation
     pending grade and source curation.
   ingredient_type: UNDEFINED_MIXTURE
-- identifier: UNMAPPED_0524
-  preferred_term: Sodium crotonate
-  synonyms:
-  - synonym_text: Sodium crotonate
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: UNMAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:2053); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T09:31:08Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_SALT_ANION_AMBIGUITY
-    changes: Classified as a single sodium salt surface form and left unmapped because
-      the local Na-crotonate mapping resolves to crotonate anion, not a verified sodium
-      crotonate salt identity.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: edison_literature_identity
-    action: ANNOTATED
-    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/Sodium_crotonate-edison-literature.md
-      (local artifact — research/ is gitignored, so the findings are quoted here rather
-      than linked). Report verdict: **Recommended status: `UNMAPPED`.** The literature
-      treats “sodium crotonate” as a defined sodium carboxylate ingredient or as an
-      aqueous sodium-crotonate preparation, not as a mixture, extract, buffer, commercial
-      formulation, or medium family. The abbreviation **NaCr** is explicitly used
-      in experimental protocols. One study prepared NaCr by dissolving “crotonate”
-      in water and titrating with sodium No ontology CURIE was proposed. Recorded
-      as provenance only — no grounding applied from this run. Edison''s recommendations
-      are deliberately conservative, and a plausible identifier promoted by a mechanism
-      that never decided anything is what #203 and #263 exist to undo. Any CURIE above
-      is a curator''s to accept or reject.'
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:2053); no CAS-RN
-    or CHEBI/NCIT match. Reviewed on 2026-05-11; not merged to crotonate anion mapping
-    without exact sodium salt evidence.
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: UNMAPPED_0615
   preferred_term: Sodium phosphate monobasic (phosphorus source)
   synonyms:

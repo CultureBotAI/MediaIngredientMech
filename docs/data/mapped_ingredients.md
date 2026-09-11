@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-09-11T05:42:58.975976+00:00
+Generated: 2026-09-11T11:08:41.420437+00:00
 Total: 2678 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -298,7 +298,7 @@ Total: 2678 ingredients
 | CHEBI:18053 | CHEBI:18053 | 1-aminocyclopropane-1-carboxylate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:143314-17-4 | CHEBI:61326 | 1-ethyl-3-methylimidazolium acetate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:61327 | CHEBI:61327 | 1-ethyl-3-methylimidazolium chloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:61326 | CHEBI:61326 | 1-ethyl-3-methylimidazolium lysine | MAPPED | CHEBI | LEXICAL_MATCH | 0 |
+| kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine | CHEBI:63895 | 1-ethyl-3-methylimidazolium lysine | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:34118 | CHEBI:34118 | 1-octen-3-ol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:62240 | CHEBI:62240 | 1-phenazinecarboxamide | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:36018 | CHEBI:36018 | 1,1,2-Trichloroethane | MAPPED | CHEBI | EXACT_MATCH | 3 |
@@ -1505,7 +1505,7 @@ Total: 2678 ingredients
 | CHEBI:113455 | CHEBI:113455 | Na-benzoate | MAPPED | CHEBI | EXACT_MATCH | 50 |
 | CHEBI:64103 | CHEBI:64103 | Na-butyrate | MAPPED | CHEBI | EXACT_MATCH | 35 |
 | CHEBI:114126 | CHEBI:114126 | Na-caproate | MAPPED | CHEBI | EXACT_MATCH | 10 |
-| CHEBI:35899 | CHEBI:35899 | Na-crotonate | MAPPED | CHEBI | EXACT_MATCH | 7 |
+| kgmicrobe.compound:na-crotonate | CHEBI:41131 | Na-crotonate | MAPPED | CHEBI | NARROW_MATCH | 9 |
 | CHEBI:62965 | CHEBI:62965 | Na-formate | MAPPED | CHEBI | EXACT_MATCH | 222 |
 | CHEBI:115197 | CHEBI:115197 | Na-gallate | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:64243 | CHEBI:64243 | Na-glutamate | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
@@ -1523,7 +1523,7 @@ Total: 2678 ingredients
 | CHEBI:64758 | CHEBI:64758 | Na2-EDTA x 2 H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:115156 | CHEBI:115156 | Na2-fumarate | MAPPED | CHEBI | EXACT_MATCH | 135 |
 | CHEBI:91251 | CHEBI:91251 | Na2-glyoxalate | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:16810 | CHEBI:16810 | Na2 alpha-ketoglutarate | MAPPED | CHEBI | SYNONYM_MATCH | 7 |
+| kgmicrobe.compound:na2_alpha-ketoglutarate | CHEBI:30915 | Na2 alpha-ketoglutarate | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | CHEBI:38892 | CHEBI:38892 | Na2B4O7 | MAPPED | CHEBI | EXACT_MATCH | 9 |
 | CHEBI:131366 | CHEBI:131366 | Na2B4O7 x 10 H2O | MAPPED | CHEBI | EXACT_MATCH | 263 |
 | CHEBI:29377 | CHEBI:29377 | Na2CO3 | MAPPED | CHEBI | EXACT_MATCH | 1751 |
@@ -1992,7 +1992,7 @@ Total: 2678 ingredients
 | CHEBI:27902 | CHEBI:27902 | Tetracycline | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:35006 | CHEBI:35006 | Tetracycline hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:55566-30-8 | cas:55566-30-8 | Tetrakis(hydroxymethyl)phosphonium sulfate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:46020 | CHEBI:46020 | Tetramethyl ammonium | MAPPED | CHEBI | EXACT_MATCH | 4 |
+| kgmicrobe.compound:tetramethyl_ammonium | CHEBI:35273 | Tetramethyl ammonium | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.compound:tetramethyl_ammonium_chloride | CHEBI:46020 | Tetramethyl ammonium chloride | MAPPED | CHEBI | CLOSE_MATCH | 3 |
 | CHEBI:49 | CHEBI:49 | Tetrandrine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:75193 | CHEBI:75193 | Tetrazolium violet | MAPPED | CHEBI | EXACT_MATCH | 0 |

@@ -1,11 +1,11 @@
-identifier: CHEBI:61326
+identifier: kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine
 preferred_term: 1-ethyl-3-methylimidazolium lysine
 synonyms:
 - synonym_text: 1-ethyl-3-methylimidazolium lysine
   synonym_type: RAW_TEXT
   source: culturebotht
 - synonym_text: 1-ethyl-3-methyl-1H-imidazol-3-ium
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -36,21 +36,35 @@ curation_history:
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
   llm_assisted: false
+- timestamp: '2026-09-11T06:31:23.789310+00:00'
+  curator: fix_salt_ion_identity_overclaims
+  action: REGROUNDED_ION_OVERCLAIM
+  changes: identifier CHEBI:61326 -> kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine;
+    mapping_quality -> NARROW_MATCH to CHEBI:63895 ('ionic liquid'). Cleared chemical_properties
+    because they described the EMIM cation only, marked 1 bare-ion synonym(s) as REJECTED_LABEL,
+    and kept the complete salt or ion-pair identity distinct (#315).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN or
   CHEBI mapping available; curator review needed.
 ontology_mapping:
-  ontology_id: CHEBI:61326
-  ontology_label: 1-ethyl-3-methylimidazolium
+  ontology_id: CHEBI:63895
+  ontology_label: ionic liquid
   ontology_source: CHEBI
-  mapping_quality: LEXICAL_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
-    notes: Auto-upgraded from UNMAPPED_0139; matched via '1-ethyl-3-methylimidazolium
-      lysine'; stem-substring
-chemical_properties:
-  molecular_formula: C6H11N2
-  inchi: InChI=1S/C6H11N2/c1-3-8-5-4-7(2)6-8/h4-6H,3H2,1-2H3/q+1
-  smiles: CCn1cc[n+](C)c1
-  data_source: CHEBI sqlite (oaklib)
+    notes: 'SUPERSEDED (#315): describes the bare ion identity, not the complete salt
+      or ion pair. Original note follows. Auto-upgraded from UNMAPPED_0139; matched
+      via ''1-ethyl-3-methylimidazolium lysine''; stem-substring'
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#315)
+    notes: The label names a complete EMIM/lysinate ion pair, while CHEBI:61326 denotes
+      only the 1-ethyl-3-methylimidazolium cation; CHEBI:63895 is the nearest verified
+      ChEBI whole-substance parent. No exact local ChEBI term for '1-ethyl-3-methylimidazolium
+      lysine' was found, so MAPPING_SEMANTICS.md Section 3 uses a kgmicrobe.compound
+      identity with the nearest whole-substance ChEBI parent.
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT

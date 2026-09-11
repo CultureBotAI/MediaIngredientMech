@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-09-11T05:42:59.006604+00:00
-Total: 274 ingredients
+Generated: 2026-09-11T11:08:41.427591+00:00
+Total: 273 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -216,7 +216,6 @@ Total: 274 ingredients
 | UNMAPPED_0002 |  | See source for composition | UNMAPPED |  |  | 143 |
 | UNMAPPED_0519 |  | Selenite-tungstate solution see Medium No. 431 | UNMAPPED |  |  | 0 |
 | UNMAPPED_0520 |  | Sigmacell alpha Type 50 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0524 |  | Sodium crotonate | UNMAPPED |  |  | 0 |
 | UNMAPPED_0615 | CHEBI:37586 | Sodium phosphate monobasic (phosphorus source) | UNMAPPED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0303 |  | Soil Defined Carbon Mix | UNMAPPED |  |  | 1 |
 | UNMAPPED_0055 |  | Soil+Seawater Medium | UNMAPPED |  |  | 2 |

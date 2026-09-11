@@ -360,8 +360,11 @@ def migrate(records: list[dict[str, Any]]) -> tuple[int, int]:
     # 3 components moved EXTERNAL_TERM -> MIM_CATALOG when `clarified rumen fluid`
     # (MICRO:0000520) gained a MIM record; 1 moved MIM_CATALOG -> EXTERNAL_TERM when
     # `Esculin Monohydrate` was re-grounded to a hydrate-specific CHEBI term (#321).
+    # 2 tetramethylammonium component references stayed on the cation as an
+    # EXTERNAL_TERM when the standalone supplied ingredient moved to a complete
+    # salt/ion-pair identity (#315).
     # The total is unchanged, which is what the guard is for.
-    expected_scopes = {"MIM_CATALOG": 133, "EXTERNAL_TERM": 8, "UNMAPPED": 2}
+    expected_scopes = {"MIM_CATALOG": 131, "EXTERNAL_TERM": 10, "UNMAPPED": 2}
     if len(after_parents) != 54 or after_component_count != 143 or scope_counts != expected_scopes:
         raise ValueError(
             "post-migration inventory drift: "

@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "generated": "2026-09-11T05:42:56.653908+00:00",
-    "total_ingredients": 2952,
+    "generated": "2026-09-11T12:16:10.556670+00:00",
+    "total_ingredients": 2951,
     "mapped_count": 2678,
-    "unmapped_count": 274,
+    "unmapped_count": 273,
     "version": "1.0.0"
   },
   "ingredients": [
@@ -351,16 +351,14 @@
       "ontology_label": "1-ethyl-3-methylimidazolium",
       "ontology_source": "CHEBI",
       "mapping_quality": "NARROW_MATCH",
-      "synonyms": [
-        "1-ethyl-3-methyl-1H-imidazol-3-ium"
-      ],
-      "synonym_count": 1,
+      "synonyms": [],
+      "synonym_count": 0,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-05-02T04:35:53.785633+00:00",
-      "curator": "backfill_parent_terms",
+      "last_curated": "2026-09-11T06:31:23.789310+00:00",
+      "curator": "fix_salt_ion_identity_overclaims",
       "source_file": "mapped/1-ethyl-3-methylimidazolium_Acetate.yaml",
-      "searchable": "1-ethyl-3-methylimidazolium acetate 1-ethyl-3-methylimidazolium 1-ethyl-3-methyl-1h-imidazol-3-ium cas:143314-17-4"
+      "searchable": "1-ethyl-3-methylimidazolium acetate 1-ethyl-3-methylimidazolium  cas:143314-17-4"
     },
     {
       "id": "CHEBI:61327",
@@ -382,24 +380,23 @@
       "searchable": "1-ethyl-3-methylimidazolium chloride 1-ethyl-3-methylimidazolium chloride 1-ethyl-3-methyl-1h-imidazol-3-ium chloride chebi:61327"
     },
     {
-      "id": "CHEBI:61326",
+      "id": "kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine",
       "preferred_term": "1-ethyl-3-methylimidazolium lysine",
       "mapping_status": "MAPPED",
-      "ontology_id": "CHEBI:61326",
-      "ontology_label": "1-ethyl-3-methylimidazolium",
+      "ontology_id": "CHEBI:63895",
+      "ontology_label": "ionic liquid",
       "ontology_source": "CHEBI",
-      "mapping_quality": "LEXICAL_MATCH",
+      "mapping_quality": "NARROW_MATCH",
       "synonyms": [
-        "1-ethyl-3-methylimidazolium lysine",
-        "1-ethyl-3-methyl-1H-imidazol-3-ium"
+        "1-ethyl-3-methylimidazolium lysine"
       ],
-      "synonym_count": 2,
+      "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-13T00:00:00+00:00",
-      "curator": "classify_ingredient_type",
+      "last_curated": "2026-09-11T06:31:23.789310+00:00",
+      "curator": "fix_salt_ion_identity_overclaims",
       "source_file": "mapped/1-ethyl-3-methylimidazolium_Lysine.yaml",
-      "searchable": "1-ethyl-3-methylimidazolium lysine 1-ethyl-3-methylimidazolium 1-ethyl-3-methylimidazolium lysine 1-ethyl-3-methyl-1h-imidazol-3-ium chebi:61326"
+      "searchable": "1-ethyl-3-methylimidazolium lysine ionic liquid 1-ethyl-3-methylimidazolium lysine kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine"
     },
     {
       "id": "CHEBI:35860",
@@ -22876,8 +22873,8 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-24T00:00:00+00:00",
-      "curator": "migrate_component_partonomy",
+      "last_curated": "2026-09-11T12:12:18+00:00",
+      "curator": "fix_salt_ion_identity_overclaims",
       "source_file": "mapped/Formatetetramethylammonium.yaml",
       "searchable": "formate+tetramethylammonium formate+tetramethylammonium formate+tetramethylammonium kgmicrobe.ingredient:formate_tetramethylammonium formate chebi:15740 tetramethylammonium chebi:46020",
       "components": [
@@ -22890,7 +22887,7 @@
         {
           "component_name": "tetramethylammonium",
           "component_id": "CHEBI:46020",
-          "reference_scope": "MIM_CATALOG",
+          "reference_scope": "EXTERNAL_TERM",
           "source": "microbedecoder research decomposition (#213/#308)"
         }
       ],
@@ -26088,8 +26085,8 @@
       "synonym_count": 1,
       "total_occurrences": 0,
       "media_count": 0,
-      "last_curated": "2026-08-24T00:00:00+00:00",
-      "curator": "migrate_component_partonomy",
+      "last_curated": "2026-09-11T12:12:18+00:00",
+      "curator": "fix_salt_ion_identity_overclaims",
       "source_file": "mapped/H2tetramethylammonium.yaml",
       "searchable": "h2+tetramethylammonium h2+tetramethylammonium h2+tetramethylammonium kgmicrobe.ingredient:h2_tetramethylammonium dihydrogen chebi:18276 tetramethylammonium chebi:46020",
       "components": [
@@ -26102,7 +26099,7 @@
         {
           "component_name": "tetramethylammonium",
           "component_id": "CHEBI:46020",
-          "reference_scope": "MIM_CATALOG",
+          "reference_scope": "EXTERNAL_TERM",
           "source": "microbedecoder research decomposition (#213/#308)"
         }
       ],
@@ -38280,34 +38277,23 @@
       "searchable": "na-caseinate sodium caseinate  micro:0001611"
     },
     {
-      "id": "CHEBI:35899",
+      "id": "kgmicrobe.compound:na-crotonate",
       "preferred_term": "Na-crotonate",
       "mapping_status": "MAPPED",
-      "ontology_id": "CHEBI:35899",
-      "ontology_label": "crotonate",
+      "ontology_id": "CHEBI:41131",
+      "ontology_label": "crotonic acid",
       "ontology_source": "CHEBI",
-      "mapping_quality": "EXACT_MATCH",
+      "mapping_quality": "NARROW_MATCH",
       "synonyms": [
-        "(2E)-2-butenoate",
-        "(2E)-but-2-enoate",
-        "(E)-2-butenoate",
-        "(E)-crotonate",
-        "3-methylacrylate",
-        "alpha-butenoate",
-        "alpha-crotonate",
-        "beta-methacrylate",
-        "beta-methylacrylate",
-        "crotonate",
-        "trans-2-butenoate",
-        "trans-crotonate"
+        "Sodium crotonate"
       ],
-      "synonym_count": 12,
-      "total_occurrences": 7,
-      "media_count": 7,
-      "last_curated": "2026-08-27T03:16:39.519404+00:00",
-      "curator": "refresh_occurrence_statistics",
+      "synonym_count": 1,
+      "total_occurrences": 9,
+      "media_count": 9,
+      "last_curated": "2026-09-11T09:57:00+00:00",
+      "curator": "fix_salt_ion_identity_overclaims",
       "source_file": "mapped/Na-crotonate.yaml",
-      "searchable": "na-crotonate crotonate (2e)-2-butenoate (2e)-but-2-enoate (e)-2-butenoate (e)-crotonate 3-methylacrylate alpha-butenoate alpha-crotonate beta-methacrylate beta-methylacrylate crotonate trans-2-butenoate trans-crotonate chebi:35899"
+      "searchable": "na-crotonate crotonic acid sodium crotonate kgmicrobe.compound:na-crotonate"
     },
     {
       "id": "CHEBI:62965",
@@ -38783,27 +38769,23 @@
       "searchable": "na2hpo4-nah2po4 buffer na2hpo4-nah2po4 buffer na2hpo4-nah2po4 buffer kgmicrobe.ingredient:na2hpo4-nah2po4_buffer"
     },
     {
-      "id": "CHEBI:16810",
+      "id": "kgmicrobe.compound:na2_alpha-ketoglutarate",
       "preferred_term": "Na2 alpha-ketoglutarate",
       "mapping_status": "MAPPED",
-      "ontology_id": "CHEBI:16810",
-      "ontology_label": "2-oxoglutarate(2-)",
+      "ontology_id": "CHEBI:30915",
+      "ontology_label": "2-oxoglutaric acid",
       "ontology_source": "CHEBI",
-      "mapping_quality": "SYNONYM_MATCH",
+      "mapping_quality": "NARROW_MATCH",
       "synonyms": [
-        "2-Oxoglutarate",
-        "2-oxopentanedioate",
-        "Na2 α-ketoglutarate",
-        "alpha-ketoglutarate",
-        "α-Ketoglutarate"
+        "Na2 α-ketoglutarate"
       ],
-      "synonym_count": 5,
-      "total_occurrences": 7,
-      "media_count": 7,
-      "last_curated": "2026-08-31T23:56:54.854807+00:00",
-      "curator": "claude_culturemech_alias_backfill",
+      "synonym_count": 1,
+      "total_occurrences": 4,
+      "media_count": 4,
+      "last_curated": "2026-09-11T09:57:00+00:00",
+      "curator": "fix_salt_ion_identity_overclaims",
       "source_file": "mapped/Na2_Alpha-ketoglutarate.yaml",
-      "searchable": "na2 alpha-ketoglutarate 2-oxoglutarate(2-) 2-oxoglutarate 2-oxopentanedioate na2 α-ketoglutarate alpha-ketoglutarate α-ketoglutarate chebi:16810"
+      "searchable": "na2 alpha-ketoglutarate 2-oxoglutaric acid na2 α-ketoglutarate kgmicrobe.compound:na2_alpha-ketoglutarate"
     },
     {
       "id": "CHEBI:38892",
@@ -53084,26 +53066,21 @@
       "searchable": "tetrakis(hydroxymethyl)phosphonium sulfate tetrakis(hydroxymethyl)phosphonium sulfate thps cas:55566-30-8"
     },
     {
-      "id": "CHEBI:46020",
+      "id": "kgmicrobe.compound:tetramethyl_ammonium",
       "preferred_term": "Tetramethyl ammonium",
       "mapping_status": "MAPPED",
-      "ontology_id": "CHEBI:46020",
-      "ontology_label": "tetramethylammonium",
+      "ontology_id": "CHEBI:35273",
+      "ontology_label": "quaternary ammonium salt",
       "ontology_source": "CHEBI",
-      "mapping_quality": "EXACT_MATCH",
-      "synonyms": [
-        "N,N,N-trimethylmethanaminium",
-        "TETRAMETHYLAMMONIUM ION",
-        "tetramethylammonium",
-        "tetramethylazanium"
-      ],
-      "synonym_count": 4,
+      "mapping_quality": "NARROW_MATCH",
+      "synonyms": [],
+      "synonym_count": 0,
       "total_occurrences": 4,
       "media_count": 4,
-      "last_curated": "2026-08-27T03:16:39.519949+00:00",
-      "curator": "refresh_occurrence_statistics",
+      "last_curated": "2026-09-11T06:31:23.789310+00:00",
+      "curator": "fix_salt_ion_identity_overclaims",
       "source_file": "mapped/Tetramethyl_Ammonium.yaml",
-      "searchable": "tetramethyl ammonium tetramethylammonium n,n,n-trimethylmethanaminium tetramethylammonium ion tetramethylammonium tetramethylazanium chebi:46020"
+      "searchable": "tetramethyl ammonium quaternary ammonium salt  kgmicrobe.compound:tetramethyl_ammonium"
     },
     {
       "id": "kgmicrobe.compound:tetramethyl_ammonium_chloride",
@@ -53114,16 +53091,15 @@
       "ontology_source": "CHEBI",
       "mapping_quality": "CLOSE_MATCH",
       "synonyms": [
-        "Tetramethyl ammonium chloride",
-        "N,N,N-trimethylmethanaminium"
+        "Tetramethyl ammonium chloride"
       ],
-      "synonym_count": 2,
+      "synonym_count": 1,
       "total_occurrences": 3,
       "media_count": 3,
-      "last_curated": "2026-08-27T03:16:39.519952+00:00",
-      "curator": "refresh_occurrence_statistics",
+      "last_curated": "2026-09-11T06:31:23.789310+00:00",
+      "curator": "fix_salt_ion_identity_overclaims",
       "source_file": "mapped/Tetramethyl_Ammonium_Chloride.yaml",
-      "searchable": "tetramethyl ammonium chloride tetramethylammonium tetramethyl ammonium chloride n,n,n-trimethylmethanaminium kgmicrobe.compound:tetramethyl_ammonium_chloride"
+      "searchable": "tetramethyl ammonium chloride tetramethylammonium tetramethyl ammonium chloride kgmicrobe.compound:tetramethyl_ammonium_chloride"
     },
     {
       "id": "CHEBI:49",
@@ -62753,25 +62729,6 @@
       "curator": "edison_literature_identity",
       "source_file": "unmapped/Sigmacell_Alpha_Type_50.yaml",
       "searchable": "sigmacell alpha type 50  sigmacell alpha type 50 unmapped_0520"
-    },
-    {
-      "id": "UNMAPPED_0524",
-      "preferred_term": "Sodium crotonate",
-      "mapping_status": "UNMAPPED",
-      "ontology_id": "",
-      "ontology_label": "",
-      "ontology_source": "",
-      "mapping_quality": "",
-      "synonyms": [
-        "Sodium crotonate"
-      ],
-      "synonym_count": 1,
-      "total_occurrences": 0,
-      "media_count": 0,
-      "last_curated": "2026-08-06T00:00:00+00:00",
-      "curator": "edison_literature_identity",
-      "source_file": "unmapped/Sodium_Crotonate.yaml",
-      "searchable": "sodium crotonate  sodium crotonate unmapped_0524"
     },
     {
       "id": "UNMAPPED_0615",

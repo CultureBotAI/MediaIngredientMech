@@ -89,13 +89,13 @@ def _ontology_label(ing: dict) -> str:
     return (ing.get("ontology_mapping") or {}).get("ontology_label", "") or ""
 
 
-_PARENT_CHILD_QUALITIES = {"NARROW_MATCH", "BROAD_MATCH"}
+_NON_IDENTITY_QUALITIES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH"}
 
 
 def _resolves_by_ontology_label(ing: dict) -> bool:
-    """Parent/child ontology labels are not names for the local record (#562)."""
+    """Ontology labels resolve only for identity-preserving mappings (#562)."""
     quality = str((ing.get("ontology_mapping") or {}).get("mapping_quality") or "")
-    return quality not in _PARENT_CHILD_QUALITIES
+    return quality not in _NON_IDENTITY_QUALITIES
 
 
 # Separator for the CSV synonyms column. `|` is the multi-value separator this
@@ -324,9 +324,10 @@ def export_label_index(ingredients: list[dict], output_path: Path):
     # Pinned by tests/test_label_index_precedence.py.
     # `ontology_label` ranks LAST of the three match types: a term label is the
     # ontology's name for the concept, not a name this record claims, so it is
-    # the weakest signal. It is also suppressed for NARROW_MATCH/BROAD_MATCH
-    # parent-child mappings, where the ontology term is deliberately asymmetric
-    # to the local record and its label would name the wrong thing (#562).
+    # the weakest signal. It is also suppressed for non-identity mappings:
+    # NARROW_MATCH/BROAD_MATCH parent-child rows are asymmetric to the local
+    # record, and a CLOSE_MATCH row is informational rather than a resolvable
+    # name for the local record (#562, #315).
     # Measured when the term-label fallback was introduced, adding it lost no
     # existing answers and changed exactly ONE:
     #

@@ -252,6 +252,50 @@ def test_source_label_override_routes_promoted_hydrate(mod, tmp_path):
     assert unknown == {}
 
 
+def test_source_label_override_routes_salt_ion_splits(mod, tmp_path):
+    source = tmp_path / "occ.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow([
+            "CultureMech:000001",
+            "CHEBI:61326",
+            "1-ethyl-3-methylimidazolium lysine",
+        ])
+        w.writerow(["CultureMech:000002", "CHEBI:35899", "Na-crotonate"])
+        w.writerow(["CultureMech:000003", "UNMAPPED_0524", "Sodium crotonate"])
+        w.writerow([
+            "CultureMech:000004",
+            "CHEBI:16810",
+            "Na2 alpha-ketoglutarate",
+        ])
+        w.writerow(["CultureMech:000005", "CHEBI:16810", "Na2 α-ketoglutarate"])
+        w.writerow(["CultureMech:000006", "CHEBI:46020", "Tetramethyl ammonium"])
+
+    collected, unknown = mod.collect(
+        source,
+        {
+            "kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine",
+            "kgmicrobe.compound:na-crotonate",
+            "kgmicrobe.compound:na2_alpha-ketoglutarate",
+            "kgmicrobe.compound:tetramethyl_ammonium",
+        },
+    )
+
+    assert collected == {
+        (
+            "kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine",
+            "CultureMech:000001",
+        ): 1,
+        ("kgmicrobe.compound:na-crotonate", "CultureMech:000002"): 1,
+        ("kgmicrobe.compound:na-crotonate", "CultureMech:000003"): 1,
+        ("kgmicrobe.compound:na2_alpha-ketoglutarate", "CultureMech:000004"): 1,
+        ("kgmicrobe.compound:na2_alpha-ketoglutarate", "CultureMech:000005"): 1,
+        ("kgmicrobe.compound:tetramethyl_ammonium", "CultureMech:000006"): 1,
+    }
+    assert unknown == {}
+
+
 def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
     source = tmp_path / "occ.tsv"
     with source.open("w", newline="", encoding="utf-8") as fh:
