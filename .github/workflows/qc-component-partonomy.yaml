@@ -1,18 +1,21 @@
 name: QC — component partonomy
 
+# Required checks must report for every PR and merge queue candidate.
 on:
   pull_request:
-    paths: &trigger_paths
-      - "data/curated/mapped_ingredients.yaml"
-      - "data/curated/unmapped_ingredients.yaml"
-      - "src/mediaingredientmech/schema/mediaingredientmech.yaml"
-      - "src/mediaingredientmech/validation/component_partonomy.py"
-      - "scripts/validate_component_partonomy.py"
-      - "justfile"
-      - ".github/workflows/qc-component-partonomy.yaml"
+  merge_group:
+    types: [checks_requested]
   push:
-    branches: [main]
-    paths: *trigger_paths
+    branches:
+    - main
+    paths:
+    - data/curated/mapped_ingredients.yaml
+    - data/curated/unmapped_ingredients.yaml
+    - src/mediaingredientmech/schema/mediaingredientmech.yaml
+    - src/mediaingredientmech/validation/component_partonomy.py
+    - scripts/validate_component_partonomy.py
+    - justfile
+    - .github/workflows/qc-component-partonomy.yaml
   workflow_dispatch:
 
 permissions:
@@ -20,6 +23,7 @@ permissions:
 
 jobs:
   qc:
+    name: qc-component-partonomy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout MIM

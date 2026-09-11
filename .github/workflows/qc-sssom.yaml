@@ -1,27 +1,20 @@
 name: QC — SSSOM invariant validation
 
+# Required checks must report for every PR and merge queue candidate.
 on:
   pull_request:
-    # NO branches filter. A PR whose base is not `main` — every stacked PR —
-    # would otherwise skip this gate entirely, so the more carefully work is
-    # split into reviewable PRs the less CI it gets (#174). `push` below stays
-    # pinned to main, so this does not double-run on feature-branch pushes.
-    paths:
-      - "mappings/ingredient_mappings.sssom.tsv"
-      - "mappings/needs_curator_review.tsv"
-      - "scripts/validate_sssom_invariants.py"
-      - "scripts/validate_published_curies.py"
-      - "scripts/reconcile_sssom.py"
-      - "data/curated/mapped_ingredients.yaml"
+  merge_group:
+    types: [checks_requested]
   push:
-    branches: [main]
+    branches:
+    - main
     paths:
-      - "mappings/ingredient_mappings.sssom.tsv"
-      - "mappings/needs_curator_review.tsv"
-      - "scripts/validate_sssom_invariants.py"
-      - "scripts/validate_published_curies.py"
-      - "scripts/reconcile_sssom.py"
-      - "data/curated/mapped_ingredients.yaml"
+    - mappings/ingredient_mappings.sssom.tsv
+    - mappings/needs_curator_review.tsv
+    - scripts/validate_sssom_invariants.py
+    - scripts/validate_published_curies.py
+    - scripts/reconcile_sssom.py
+    - data/curated/mapped_ingredients.yaml
   workflow_dispatch:
 
 permissions:
@@ -29,6 +22,7 @@ permissions:
 
 jobs:
   qc:
+    name: qc-sssom
     runs-on: ubuntu-latest
     steps:
       - name: Checkout MIM
