@@ -1,14 +1,15 @@
-identifier: CHEBI:26833
+identifier: CHEBI:33403
 preferred_term: Sulfur
 ontology_mapping:
-  ontology_id: CHEBI:26833
-  ontology_label: sulfur atom
+  ontology_id: CHEBI:33403
+  ontology_label: elemental sulfur
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#368)
+    notes: A culture-media ingredient named sulfur, sulphur, or sulfur powder denotes
+      weighable elemental sulfur, not ChEBI's sulfur atom or polysulfur terms.
 synonyms:
 - synonym_text: (for anaerobic media only)
   synonym_type: RAW_TEXT
@@ -28,7 +29,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: 16S
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Schwefel
   synonym_type: EXACT_SYNONYM
@@ -40,7 +41,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: sulfur atom
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: theion
   synonym_type: EXACT_SYNONYM
@@ -48,10 +49,37 @@ synonyms:
 - synonym_text: sulfur
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: Sulphur
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:17909
+- synonym_text: Sulfur, precipitated
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:17909
+- synonym_text: polysulfur
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: sulfur, homopolymer
+  synonym_type: REJECTED_LABEL
+  source: kg_microbe
+- synonym_text: Sulfur (powder)
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_kgmicrobe.compound:sulfur_powder
+- synonym_text: Sulfur powder
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_kgmicrobe.compound:sulfur_powder
+- synonym_text: Elemental sulphur
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_kgmicrobe.compound:sulfur_powder
+- synonym_text: Sulfur, powder
+  synonym_type: RAW_TEXT
+  source: mappings/culturemech_residual_triage.tsv
+- synonym_text: Sulfur, powdered
+  synonym_type: RAW_TEXT
+  source: mappings/culturemech_residual_triage.tsv
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 366
-  media_count: 366
+  total_occurrences: 477
+  media_count: 477
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -147,11 +175,18 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
-chemical_properties:
-  molecular_formula: S
-  inchi: InChI=1S/S
-  smiles: '[S]'
-kg_microbe_node_id: CHEBI:26833
+- timestamp: '2026-09-11T13:41:33.694587+00:00'
+  curator: fix_sulfur_family
+  action: CORRECTED
+  changes: identifier CHEBI:26833 -> CHEBI:33403 (elemental sulfur); absorbed duplicate
+    Sulphur and Sulfur (powder) records; merged CultureMech membership from 3 identifiers
+    into CHEBI:33403; added 7 resolving source label(s) and retained 4 atom/polysulfur-only
+    label(s) as REJECTED_LABEL (#368).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties: {}
+kg_microbe_node_id: CHEBI:33403
 ingredient_type: SINGLE_INGREDIENT
 environmental_context:
 - environment_term: ENVO:01000030

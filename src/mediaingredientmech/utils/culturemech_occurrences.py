@@ -8,6 +8,7 @@ from collections.abc import Mapping
 AIR_DRIED_GARDEN_SOIL_ID = "kgmicrobe.ingredient:air-dried_garden_soil"
 BETAINE_HYDRATE_ID = "CHEBI:91242"
 DISODIUM_2_OXOGLUTARATE_ID = "kgmicrobe.compound:na2_alpha-ketoglutarate"
+ELEMENTAL_SULFUR_ID = "CHEBI:33403"
 EMIM_LYSINE_ID = "kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine"
 SODIUM_CROTONATE_ID = "kgmicrobe.compound:na-crotonate"
 TETRAMETHYL_AMMONIUM_ID = "kgmicrobe.compound:tetramethyl_ammonium"
@@ -32,8 +33,16 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("1-ethyl-3-methylimidazolium lysine"): EMIM_LYSINE_ID,
     _source_label_key("Na-crotonate"): SODIUM_CROTONATE_ID,
     _source_label_key("Sodium crotonate"): SODIUM_CROTONATE_ID,
+    _source_label_key("Elemental sulfur"): ELEMENTAL_SULFUR_ID,
+    _source_label_key("Elemental sulphur"): ELEMENTAL_SULFUR_ID,
     _source_label_key("Na2 alpha-ketoglutarate"): DISODIUM_2_OXOGLUTARATE_ID,
     _source_label_key("Na2 α-ketoglutarate"): DISODIUM_2_OXOGLUTARATE_ID,
+    _source_label_key("Sulfur"): ELEMENTAL_SULFUR_ID,
+    _source_label_key("Sulfur (powder)"): ELEMENTAL_SULFUR_ID,
+    _source_label_key("Sulfur, powder"): ELEMENTAL_SULFUR_ID,
+    _source_label_key("Sulfur, powdered"): ELEMENTAL_SULFUR_ID,
+    _source_label_key("Sulfur powder"): ELEMENTAL_SULFUR_ID,
+    _source_label_key("Sulphur"): ELEMENTAL_SULFUR_ID,
     _source_label_key("Tetramethyl ammonium"): TETRAMETHYL_AMMONIUM_ID,
     _source_label_key("Trace element solution"): TRACE_ELEMENT_SOLUTION_ID,
     _source_label_key("Trace element solution SL-10"): TRACE_ELEMENT_SOLUTION_SL_10_ID,

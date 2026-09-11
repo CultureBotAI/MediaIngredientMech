@@ -296,6 +296,35 @@ def test_source_label_override_routes_salt_ion_splits(mod, tmp_path):
     assert unknown == {}
 
 
+def test_source_label_override_routes_sulfur_family(mod, tmp_path):
+    source = tmp_path / "occ.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "CHEBI:26833", "Sulfur"])
+        w.writerow(["CultureMech:000002", "CHEBI:17909", "Sulphur"])
+        w.writerow(
+            [
+                "CultureMech:000003",
+                "kgmicrobe.compound:sulfur_powder",
+                "Sulfur (powder)",
+            ]
+        )
+        w.writerow(["CultureMech:000004", "CHEBI:17909", "Sulfur, powder"])
+        w.writerow(["CultureMech:000005", "CHEBI:17909", "Sulfur, powdered"])
+
+    collected, unknown = mod.collect(source, {"CHEBI:33403"})
+
+    assert collected == {
+        ("CHEBI:33403", "CultureMech:000001"): 1,
+        ("CHEBI:33403", "CultureMech:000002"): 1,
+        ("CHEBI:33403", "CultureMech:000003"): 1,
+        ("CHEBI:33403", "CultureMech:000004"): 1,
+        ("CHEBI:33403", "CultureMech:000005"): 1,
+    }
+    assert unknown == {}
+
+
 def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
     source = tmp_path / "occ.tsv"
     with source.open("w", newline="", encoding="utf-8") as fh:

@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-11T11:08:41.430731+00:00
+Generated: 2026-09-11T13:42:52.900400+00:00
 Total: 2951 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -1966,10 +1966,10 @@ Total: 2951 ingredients
 | cas:967-80-6 | CHEBI:26714 | Sulfaquinoxaline sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:9334 | CHEBI:9334 | Sulfasalazine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:50519 | CHEBI:50519 | Sulfoacetic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:26833 | CHEBI:26833 | Sulfur | MAPPED | CHEBI | EXACT_MATCH | 366 |
+| CHEBI:33403 | CHEBI:33403 | Sulfur | MAPPED | CHEBI | EXACT_MATCH | 477 |
 | CHEBI:26835 | CHEBI:26835 | Sulfur compounds | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| kgmicrobe.compound:sulfur_powder | CHEBI:33403 | Sulfur (powder) | MAPPED | CHEBI | NARROW_MATCH | 104 |
-| CHEBI:17909 | CHEBI:17909 | Sulphur | MAPPED | CHEBI | EXACT_MATCH | 7 |
+| CHEBI:33403 | CHEBI:33403 | Sulfur (powder) | REJECTED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:33403 | CHEBI:33403 | Sulphur | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | cas:8001-21-6 | NCIT:C1241 | Sunflower oil | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:supplemented_seawater | ENVO:00002149 | Supplemented Seawater | MAPPED | ENVO | CLOSE_MATCH | 2 |
 | CHEBI:35195 | CHEBI:35195 | Surfactant | MAPPED | CHEBI | EXACT_MATCH | 3 |

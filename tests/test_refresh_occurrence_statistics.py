@@ -121,6 +121,29 @@ def test_source_label_override_counts_salt_ion_splits(mod, tmp_path):
     assert fresh["kgmicrobe.compound:tetramethyl_ammonium"] == (1, 1)
 
 
+def test_source_label_override_counts_sulfur_family(mod, tmp_path):
+    path = tmp_path / "occurrences.tsv"
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "CHEBI:26833", "Sulfur"])
+        w.writerow(["CultureMech:000002", "CHEBI:17909", "Sulphur"])
+        w.writerow(
+            [
+                "CultureMech:000003",
+                "kgmicrobe.compound:sulfur_powder",
+                "Sulfur (powder)",
+            ]
+        )
+        w.writerow(["CultureMech:000004", "CHEBI:17909", "Sulfur, powder"])
+        w.writerow(["CultureMech:000005", "CHEBI:17909", "Sulfur, powdered"])
+
+    fresh, total_rows, total_recipes = mod.read_occurrences(path)
+
+    assert (total_rows, total_recipes) == (5, 5)
+    assert fresh["CHEBI:33403"] == (5, 5)
+
+
 def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
     path = tmp_path / "occurrences.tsv"
     with path.open("w", newline="", encoding="utf-8") as fh:
