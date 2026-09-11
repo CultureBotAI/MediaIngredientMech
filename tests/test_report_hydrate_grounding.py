@@ -216,6 +216,46 @@ def test_preferred_term_hydrate_rows_are_classified_by_the_source(mod):
     ]
 
 
+def test_preferred_term_hydrate_rows_ignore_rejected_records(mod):
+    rows = mod.classify_hydrate_rows(
+        [
+            {
+                "identifier": "CHEBI:wrong",
+                "preferred_term": "MgCl2x 6 H2O",
+                "mapping_status": "REJECTED",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:wrong",
+                    "ontology_label": "magnesium dichloride",
+                },
+            }
+        ],
+        {"CHEBI:wrong": "Cl2Mg"},
+        set(),
+    )
+
+    assert rows == []
+
+
+def test_hydrate_synonym_rows_ignore_rejected_records(mod):
+    rows = mod.classify_synonym_rows(
+        [
+            {
+                "identifier": "CHEBI:wrong",
+                "preferred_term": "magnesium chloride",
+                "mapping_status": "REJECTED",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:wrong",
+                    "ontology_label": "magnesium chloride",
+                },
+                "synonyms": [{"synonym_text": "MgCl2 x 6 H2O"}],
+            }
+        ],
+        {"CHEBI:wrong": "Cl2Mg"},
+    )
+
+    assert rows == []
+
+
 # --- #258 regression --------------------------------------------------------
 def test_multiplicities_sort_numerically_not_lexicographically():
     """Filed against a lexicographic sort, where 10 precedes 2. Verified fixed

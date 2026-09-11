@@ -112,6 +112,8 @@ def classify_hydrate_rows(
 ) -> list[dict]:
     rows = []
     for rec in records:
+        if rec.get("mapping_status") == "REJECTED":
+            continue
         term = str(rec.get("preferred_term") or "")
         if not HYDRATE.search(term):
             continue
@@ -154,6 +156,8 @@ def hydrate_synonyms(rec: dict) -> list[str]:
 def classify_synonym_rows(records: list[dict], form: dict[str, str]) -> list[dict]:
     syn_rows = []
     for rec in records:
+        if rec.get("mapping_status") == "REJECTED":
+            continue
         term = str(rec.get("preferred_term") or "")
         om = rec.get("ontology_mapping") or {}
         target = str(om.get("ontology_id") or "")
@@ -244,7 +248,7 @@ def formulas() -> dict[str, str]:
     con = sqlite3.connect(CHEBI_DB)
     q = ("select subject, value from statements "
          "where predicate like '%formula%' and subject like 'CHEBI:%'")
-    return {s: v for s, v in con.execute(q)}
+    return dict(con.execute(q))
 
 
 def anchored_subjects() -> set[str]:
@@ -308,7 +312,8 @@ def main() -> int:
             delimiter="\t",
             lineterminator="\n",
         )
-        w.writeheader(); w.writerows(rows)
+        w.writeheader()
+        w.writerows(rows)
     if not rows:
         print("no mapped record carries hydrate notation")
 
@@ -320,7 +325,7 @@ def main() -> int:
             print(f"  {k:28} {c[k]}")
     bad = [r for r in rows if r["status"] == "HYDRATE_ON_ANHYDROUS_TERM"]
     if bad:
-        print(f"\nGrounded onto a term whose formula has no water (Section 3 violations):")
+        print("\nGrounded onto a term whose formula has no water (Section 3 violations):")
         for r in bad[:args.limit]:
             print(f"  {r['preferred_term'][:34]:34} -> {r['ontology_id']:14} "
                   f"{r['ontology_label'][:26]:26} [{r['term_formula']}]")
@@ -368,7 +373,8 @@ def main() -> int:
             fieldnames=SYNONYM_FIELDS,
             lineterminator="\n",
         )
-        w.writeheader(); w.writerows(syn_rows)
+        w.writeheader()
+        w.writerows(syn_rows)
 
     if not UNMAPPED.exists():
         print(f"\nERROR: {UNMAPPED.relative_to(ROOT)} is missing; cannot report the "
@@ -386,7 +392,9 @@ def main() -> int:
                and (HYDRATE.search(str(r.get("preferred_term") or ""))
                     or re.search(r"(?<![a-z])hydrat\b", str(r.get("preferred_term") or ""),
                                  re.IGNORECASE))]
-    occ = lambda r: (r.get("occurrence_statistics") or {}).get("total_occurrences") or 0
+    def occ(r: dict) -> int:
+        return (r.get("occurrence_statistics") or {}).get("total_occurrences") or 0
+
     pending.sort(key=occ, reverse=True)   # a 4-medium record is not a 0-medium one
     print(f"\n{len(pending)} UNMAPPED record(s) whose label carries hydrate notation.")
     if pending:

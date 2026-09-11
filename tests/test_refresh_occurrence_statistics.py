@@ -75,6 +75,23 @@ def test_source_label_override_splits_air_dried_garden_soil(mod, tmp_path):
     assert fresh["ENVO:00002263"] == (1, 1)
 
 
+def test_source_label_override_counts_promoted_hydrate(mod, tmp_path):
+    path = tmp_path / "occurrences.tsv"
+    with path.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow([
+            "CultureMech:000001",
+            "kgmicrobe.compound:betaine_x_h2o",
+            "Betaine x H2O",
+        ])
+
+    fresh, total_rows, total_recipes = mod.read_occurrences(path)
+
+    assert (total_rows, total_recipes) == (1, 1)
+    assert fresh["CHEBI:91242"] == (1, 1)
+
+
 def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
     path = tmp_path / "occurrences.tsv"
     with path.open("w", newline="", encoding="utf-8") as fh:

@@ -235,6 +235,23 @@ def test_source_label_override_splits_air_dried_garden_soil(mod, tmp_path):
     assert unknown == {}
 
 
+def test_source_label_override_routes_promoted_hydrate(mod, tmp_path):
+    source = tmp_path / "occ.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow([
+            "CultureMech:000001",
+            "kgmicrobe.compound:betaine_x_h2o",
+            "Betaine x H2O",
+        ])
+
+    collected, unknown = mod.collect(source, {"CHEBI:91242"})
+
+    assert collected == {("CHEBI:91242", "CultureMech:000001"): 1}
+    assert unknown == {}
+
+
 def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
     source = tmp_path / "occ.tsv"
     with source.open("w", newline="", encoding="utf-8") as fh:
