@@ -23,16 +23,16 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: MnSO4 x n H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: MnSO4・xH2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: MnSO4·nH2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: MnSO4 x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: Manganese monosulfate
   synonym_type: EXACT_SYNONYM
@@ -124,6 +124,15 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''MnSO4 x n H2O'', ''MnSO4・xH2O'',
+    ''MnSO4·nH2O'', ''MnSO4 x H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7785-87-7
   data_source: PubChem API

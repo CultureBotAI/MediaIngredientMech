@@ -78,7 +78,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: Maltose x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: merged_from_duplicate_mim_record
 - synonym_text: D-Maltose
   synonym_type: EXACT_SYNONYM
@@ -200,6 +200,14 @@ curation_history:
     no curated record did, so a rebuild would have dropped them from KGX: ''alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose''.
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''Maltose x H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 69-79-4

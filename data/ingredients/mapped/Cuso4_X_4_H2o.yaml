@@ -19,13 +19,13 @@ ontology_mapping:
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
 synonyms:
 - synonym_text: CuSO4 . 2H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CuSO4 x 2 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CuSO4 x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: cupric sulfate anhydrous
   synonym_type: EXACT_SYNONYM
@@ -111,6 +111,15 @@ curation_history:
     weight. ChEBI has no term for this hydration state, so no authoritative value
     can be substituted and a guess is how wrong CAS numbers spread. The grounding
     is separately wrong (#321); this corrects only the CAS (#334).'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''CuSO4 . 2H2O'', ''CuSO4 x 2 H2O'',
+    ''CuSO4 x H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:23414
 chemical_properties:
   data_source: PubChem (via CHEBI:23414)

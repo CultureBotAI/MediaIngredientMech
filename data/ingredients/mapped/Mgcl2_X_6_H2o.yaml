@@ -92,7 +92,7 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: MERGED_FROM MgCl2x 6 H2O (#414)
 - synonym_text: MgCl2  x 76 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: MERGED_FROM MgCl2x 6 H2O (#414)
 - synonym_text: MgCl2 X 6H2O
   synonym_type: HYDRATE_FORM
@@ -241,6 +241,14 @@ curation_history:
   changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain on
     their own #344 local identities only: ''MgCl2  x 7 H2O'', ''MgCl2 x 7 H2O'', ''MgCl2
     x 7H2O'', ''MgCl2x7H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''MgCl2  x 76 H2O''.'
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false

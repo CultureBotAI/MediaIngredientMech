@@ -50,10 +50,10 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: Na2HPO4 . 12H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 12 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 2H2O
   synonym_type: HYDRATE_FORM
@@ -65,22 +65,22 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 7 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x2 H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Na2HPO4.12H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4.7H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4·12H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4·2H2O
   synonym_type: HYDRATE_FORM
@@ -230,6 +230,16 @@ curation_history:
   action: REJECTED_MALFORMED_HYDRATE_ALIASES
   changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain on
     their own #344 local identities only: ''Na2HPO4 x 3 H2O'', ''Na2HPO4 x 6 H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''Na2HPO4 . 12H2O'', ''Na2HPO4 x 12
+    H2O'', ''Na2HPO4 x 7 H2O'', ''Na2HPO4 x H2O'', ''Na2HPO4.12H2O'', ''Na2HPO4.7H2O'',
+    ''Na2HPO4·12H2O''.'
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false

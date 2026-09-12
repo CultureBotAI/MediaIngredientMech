@@ -38905,7 +38905,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   - synonym_text: (NH4)6Mo7O4 x 24 H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: (NH4)6MoO24·4H2O
     synonym_type: RAW_TEXT
@@ -38990,6 +38990,14 @@ ingredients:
       x 4 H2O''; ''(NH4)Mo7O24·4H2O''; ''(NH4)MoO7O24''; ''(NH4)MoO7O24 x 4 H2O''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''(NH4)6Mo7O4 x 24 H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 12054-85-2
@@ -42616,7 +42624,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: DL-Asparagine x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   mapping_status: MAPPED
   occurrence_statistics:
@@ -42703,6 +42711,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''DL-Asparagine x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 3130-87-8
     data_source: OAK/CHEBI xref (overrode 5794-13-8|70-47-3)
@@ -50177,7 +50193,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: CaCl2 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: CaCl2 . 7H2O
     synonym_type: REJECTED_LABEL
@@ -50186,22 +50202,22 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl2·H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl2⋅7H2O
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl2・H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl2 × 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM Calcium Chloride (#414)
   - synonym_text: CaCl2*2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM Calcium Chloride (#414)
   - synonym_text: CaCl22H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM Calcium Chloride (#414)
   - synonym_text: CaCl 2
     synonym_type: RAW_TEXT
@@ -50314,6 +50330,15 @@ ingredients:
     changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
       on their own #344 local identities only: ''CaCl2 . 7H2O'', ''CaCl2 x 7 H2O'',
       ''CaCl2⋅7H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CaCl2 x H2O'', ''CaCl2·H2O'',
+      ''CaCl2・H2O'', ''CaCl2 × 2 H2O'', ''CaCl2*2H2O'', ''CaCl22H2O''.'
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -59981,10 +60006,10 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Citric Acid•H2O(Fisher A 104)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: Trisodium citrate x 3 H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -60066,6 +60091,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Citric
       Acid•H2O(Fisher A 104)''; ''Trisodium citrate x 3 H2O''. Tokens already present
       on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Citric Acid•H2O(Fisher
+      A 104)'', ''Trisodium citrate x 3 H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 77-92-9
@@ -61265,13 +61299,13 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: CoCl2 × 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 ∙ 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2∙6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cobalt chloride
     synonym_type: EXACT_SYNONYM
@@ -61295,7 +61329,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: CoCl2.6H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -61371,6 +61405,15 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CoCl2 × 6H2O'', ''CoCl2
+      ∙ 6 H2O'', ''CoCl2∙6H2O'', ''CoCl2.6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7646-79-9
     data_source: PubChem (via CHEBI:35696)
@@ -61434,28 +61477,28 @@ ingredients:
         identifier are unchanged.'
   synonyms:
   - synonym_text: CoCl2 . 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 x 4 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 x 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 · 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2·6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2⋅6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2・6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: cobalt(2+) chloride
     synonym_type: EXACT_SYNONYM
@@ -61551,6 +61594,16 @@ ingredients:
       so it names a different substance than this record. ChEBI has no term for this
       hydration state, so no authoritative CAS is available and substituting a guess
       is how wrong CAS numbers spread. Absent is recoverable; wrong is not (#334).'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CoCl2 . 6H2O'', ''CoCl2
+      x 4 H2O'', ''CoCl2 x 6 H2O'', ''CoCl2 x 6H2O'', ''CoCl2 · 6H2O'', ''CoCl2·6H2O'',
+      ''CoCl2⋅6H2O'', ''CoCl2・6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:35696
   chemical_properties:
     data_source: PubChem (via CHEBI:35696)
@@ -61609,28 +61662,28 @@ ingredients:
         identifier are unchanged.'
   synonyms:
   - synonym_text: CoCl2 . 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 x 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2 · 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2·6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2⋅6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CoCl2・6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: cobalt(2+) chloride
     synonym_type: EXACT_SYNONYM
@@ -61726,6 +61779,16 @@ ingredients:
       so it names a different substance than this record. ChEBI has no term for this
       hydration state, so no authoritative CAS is available and substituting a guess
       is how wrong CAS numbers spread. Absent is recoverable; wrong is not (#334).'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CoCl2 . 6H2O'', ''CoCl2
+      x 2 H2O'', ''CoCl2 x 6 H2O'', ''CoCl2 x 6H2O'', ''CoCl2 · 6H2O'', ''CoCl2·6H2O'',
+      ''CoCl2⋅6H2O'', ''CoCl2・6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:35696
   chemical_properties:
     data_source: PubChem (via CHEBI:35696)
@@ -62766,16 +62829,16 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Cobalt monosulfate heptahydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: cobalt(2+) sulfate--water (1/7)
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   - synonym_text: cobalt(II) sulfate heptahydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: cobaltous sulfate heptahydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -62852,6 +62915,15 @@ ingredients:
       monosulfate heptahydrate''; ''cobalt(2+) sulfate--water (1/7)''; ''cobalt(II)
       sulfate heptahydrate''; ''cobaltous sulfate heptahydrate''. Tokens already present
       on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Cobalt monosulfate heptahydrate'',
+      ''cobalt(II) sulfate heptahydrate'', ''cobaltous sulfate heptahydrate''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 10124-43-3
@@ -64331,13 +64403,13 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: CuCl2 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: CuCl2 x 6 H2O
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CuCl2 · H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cupric chloride anhydrous
     synonym_type: EXACT_SYNONYM
@@ -64434,6 +64506,15 @@ ingredients:
     action: REJECTED_MALFORMED_HYDRATE_ALIASES
     changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
       on their own #344 local identities only: ''CuCl2 x 6 H2O'', ''CuCl2 × 6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CuCl2 x H2O'', ''CuCl2
+      · H2O''.'
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -65146,16 +65227,16 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: CuSO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: CuSO4 . 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CuSO4 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CuSO4 x 4 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: cupric sulfate anhydrous
     synonym_type: EXACT_SYNONYM
@@ -65251,6 +65332,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CuSO4 x H2O'', ''CuSO4
+      . 2H2O'', ''CuSO4 x 2 H2O'', ''CuSO4 x 4 H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7758-98-7
     data_source: PubChem API (ontology label)
@@ -65292,10 +65382,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: CuSO4 x 4 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CuSO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: cupric sulfate anhydrous
     synonym_type: EXACT_SYNONYM
@@ -65391,6 +65481,15 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted and a guess is how wrong CAS numbers spread. The grounding
       is separately wrong (#321); this corrects only the CAS (#334).'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CuSO4 x 4 H2O'', ''CuSO4
+      x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:23414
   chemical_properties:
     data_source: PubChem (via CHEBI:23414)
@@ -65428,13 +65527,13 @@ ingredients:
         notation.
   synonyms:
   - synonym_text: CuSO4 . 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CuSO4 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CuSO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: cupric sulfate anhydrous
     synonym_type: EXACT_SYNONYM
@@ -65520,6 +65619,15 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted and a guess is how wrong CAS numbers spread. The grounding
       is separately wrong (#321); this corrects only the CAS (#334).'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CuSO4 . 2H2O'', ''CuSO4
+      x 2 H2O'', ''CuSO4 x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:23414
   chemical_properties:
     data_source: PubChem (via CHEBI:23414)
@@ -74166,23 +74274,23 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: (NH4)6Mo7O24 x 4 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: (NH4)6Mo7O24
     synonym_type: EXACT
     source: manual
   - synonym_text: Molybdic acid ammonium salt tetrahydrate
-    synonym_type: EXACT
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: Ammonium heptamolybdate tetrahydrate
-    synonym_type: EXACT
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: (NH4)6Mo7O24.4H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -74312,6 +74420,16 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''(NH4)6Mo7O24.4H2O''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''(NH4)6Mo7O24 x 4 H2O'',
+      ''Molybdic acid ammonium salt tetrahydrate'', ''Ammonium heptamolybdate tetrahydrate'',
+      ''(NH4)6Mo7O24.4H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   notes: Created from FEBA ontology enrichment workflow. Used in 3 FEBA media formulations.
   chemical_properties:
@@ -75903,19 +76021,19 @@ ingredients:
     synonym_type: RELATED_SYNONYM
     source: sssom_synonym_enrich_review_2026_05_10
   - synonym_text: Disodium phosphate dihydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: Phosphoric acid, disodium salt, dihydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: Sodium phosphate, dibasic, dihydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: disodium hydrogen phosphate dihydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: sodium hydrogen orthophosphate dihydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: sodium hydrogen phosphate--water (1/2)
     synonym_type: RAW_TEXT
@@ -75991,6 +76109,17 @@ ingredients:
       dihydrate''; ''sodium hydrogen phosphate--water (1/2)''; ''sodium monohydrogen
       phosphate dihydrat''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Disodium phosphate dihydrate'',
+      ''Phosphoric acid, disodium salt, dihydrate'', ''Sodium phosphate, dibasic,
+      dihydrate'', ''disodium hydrogen phosphate dihydrate'', ''sodium hydrogen orthophosphate
+      dihydrate''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   ingredient_type: STOCK_SOLUTION
   notes: '2026-05-10 SSSOM SYNONYM_ENRICH review: repaired unrelated CHEBI:131825
@@ -84823,22 +84952,22 @@ ingredients:
         notation.
   synonyms:
   - synonym_text: FeSO4 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeSO4 x 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeSO4 x 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeSO4 x7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeSO4·6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeSO4・6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ferrous sulfate (anhydrous)
     synonym_type: EXACT_SYNONYM
@@ -84941,6 +85070,15 @@ ingredients:
       .7H O''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''FeSO4 x 6 H2O'', ''FeSO4
+      x 6H2O'', ''FeSO4 x 7H2O'', ''FeSO4 x7 H2O'', ''FeSO4·6H2O'', ''FeSO4・6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:75832
   chemical_properties:
     data_source: PubChem (via CHEBI:75832)
@@ -84978,16 +85116,16 @@ ingredients:
         notation.
   synonyms:
   - synonym_text: FeSO4 x 5 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeSO4 x 6H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: FeSO4 x 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeSO4 x7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeSO4·6H2O
     synonym_type: HYDRATE_FORM
@@ -85095,6 +85233,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''FeSO
       .7H O''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''FeSO4 x 5 H2O'', ''FeSO4
+      x 7H2O'', ''FeSO4 x7 H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   kg_microbe_node_id: CHEBI:75832
   chemical_properties:
@@ -100884,7 +101031,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Potassium dibasic phosphate trihydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
@@ -101028,6 +101175,15 @@ ingredients:
       published label but were absent from MIM''s label index, so CultureMech could
       not resolve them: ''Potassium dibasic phosphate trihydrate'' (x2 CultureMech
       mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Potassium dibasic phosphate
+      trihydrate''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 7758-11-4
@@ -111169,7 +111325,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: microbedecoder
   - synonym_text: Lactose monohydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: beta-D-Lactose
     synonym_type: RAW_TEXT
@@ -111273,6 +111429,14 @@ ingredients:
       monohydrate''; ''beta-D-Lactose''; ''beta-D-galactopyranosyl-(1->4)-beta-D-glucose'';
       ''beta-D-glucopyranose, 4-O-beta-D-galactopyranosyl-''. Tokens already present
       on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Lactose monohydrate''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 63-42-3
@@ -114652,13 +114816,13 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: MgSO4 × 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4
     synonym_type: EXACT_SYNONYM
     source: merged_from_duplicate_mim_record
   - synonym_text: MgSO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: 'Role: Mineral source; Properties: Defined component, Simple component,
       Inorganic compound'
@@ -114668,46 +114832,46 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: MgSO4 . 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 . H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 7 H2O (0.1% w/v)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 7 H2O (100 mM)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 7 H2O solution (25%)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 7 H2O to 15.0 g).
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 · 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 ·7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4·6H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -114827,6 +114991,18 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''MgSO4·6H2O''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''MgSO4 × 7 H2O'', ''MgSO4
+      x H2O'', ''MgSO4 . 7H2O'', ''MgSO4 . H2O'', ''MgSO4 x 6 H2O'', ''MgSO4 x 6H2O'',
+      ''MgSO4 x 7 H2O (0.1% w/v)'', ''MgSO4 x 7 H2O (100 mM)'', ''MgSO4 x 7 H2O solution
+      (25%)'', ''MgSO4 x 7 H2O to 15.0 g).'', ''MgSO4 x 7H2O'', ''MgSO4 x7 H2O'',
+      ''MgSO4 x7H2O'', ''MgSO4 · 7H2O'', ''MgSO4 ·7H2O'', ''MgSO4·6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 7487-88-9
@@ -115927,7 +116103,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Maltose x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: D-Maltose
     synonym_type: EXACT_SYNONYM
@@ -116050,6 +116226,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''alpha-D-glucopyranosyl-(1->4)-alpha-D-glucopyranose''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Maltose x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 69-79-4
@@ -120289,7 +120473,7 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: MERGED_FROM MgCl2x 6 H2O (#414)
   - synonym_text: MgCl2  x 76 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM MgCl2x 6 H2O (#414)
   - synonym_text: MgCl2 X 6H2O
     synonym_type: HYDRATE_FORM
@@ -120439,6 +120623,14 @@ ingredients:
     changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
       on their own #344 local identities only: ''MgCl2  x 7 H2O'', ''MgCl2 x 7 H2O'',
       ''MgCl2 x 7H2O'', ''MgCl2x7H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''MgCl2  x 76 H2O''.'
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -121368,43 +121560,43 @@ ingredients:
         notation.
   synonyms:
   - synonym_text: MgSO4 . 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 . H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 6H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: MgSO4 x 7 H2O (0.1% w/v)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 7 H2O (100 mM)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 7 H2O solution (25%)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 7 H2O to 15.0 g).
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 x7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 · 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgSO4 ·7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -121417,7 +121609,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   - synonym_text: MgSO4 × 7 H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -121527,6 +121719,18 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Mg2SO4'';
       ''MgSO .7H O''; ''MgSO4 × 7 H2O''. Tokens already present on the kg-microbe
       ontology node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''MgSO4 . 7H2O'', ''MgSO4
+      . H2O'', ''MgSO4 x 7 H2O (0.1% w/v)'', ''MgSO4 x 7 H2O (100 mM)'', ''MgSO4 x
+      7 H2O solution (25%)'', ''MgSO4 x 7 H2O to 15.0 g).'', ''MgSO4 x 7H2O'', ''MgSO4
+      x H2O'', ''MgSO4 x7 H2O'', ''MgSO4 x7H2O'', ''MgSO4 · 7H2O'', ''MgSO4 ·7H2O'',
+      ''MgSO4 × 7 H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   kg_microbe_node_id: CHEBI:32599
   chemical_properties:
@@ -123018,16 +123222,16 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: MnSO4 x n H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: MnSO4・xH2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: MnSO4·nH2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: MnSO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: Manganese monosulfate
     synonym_type: EXACT_SYNONYM
@@ -123119,6 +123323,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''MnSO4 x n H2O'', ''MnSO4・xH2O'',
+      ''MnSO4·nH2O'', ''MnSO4 x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7785-87-7
     data_source: PubChem API
@@ -123865,7 +124078,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: MnSO4 x 1 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MnSO4 x 7H2O
     synonym_type: HYDRATE_FORM
@@ -123877,16 +124090,16 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: MnSO4・xH2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: manganese(2+) sulfate
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: MnSO4 x n H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: MnSO4·nH2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -123983,6 +124196,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''MnSO4
       x n H2O''; ''MnSO4·nH2O''. Tokens already present on the kg-microbe ontology
       node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''MnSO4 x 1 H2O'', ''MnSO4・xH2O'',
+      ''MnSO4 x n H2O'', ''MnSO4·nH2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   kg_microbe_node_id: CHEBI:86360
   chemical_properties:
@@ -129377,7 +129599,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na2SiO3 x 5 H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -129508,6 +129730,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Na2SiO3
       x 5 H2O''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2SiO3 x 5 H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 1344-09-8
@@ -131763,26 +131993,26 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na2HPO4 × 12 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Simple component,
       Defined component'
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Na2HPO4 . 12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 12 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 3 H2O
     synonym_type: REJECTED_LABEL
@@ -131791,19 +132021,19 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4·12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
@@ -131929,6 +132159,17 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2HPO4 × 12 H2O'', ''Na2HPO4
+      x H2O'', ''Na2HPO4 . 12H2O'', ''Na2HPO4 x 12 H2O'', ''Na2HPO4 x 2 H2O'', ''Na2HPO4
+      x 2H2O'', ''Na2HPO4 x 7 H2O'', ''Na2HPO4 x2 H2O'', ''Na2HPO4.12H2O'', ''Na2HPO4.7H2O'',
+      ''Na2HPO4·12H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7558-79-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -132004,10 +132245,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 3 H2O
     synonym_type: REJECTED_LABEL
@@ -132016,19 +132257,19 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.12H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2HPO4.7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4·12H2O
     synonym_type: HYDRATE_FORM
@@ -132173,6 +132414,15 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2HPO4 x 2 H2O'', ''Na2HPO4
+      x 2H2O'', ''Na2HPO4 x 7 H2O'', ''Na2HPO4 x H2O'', ''Na2HPO4 x2 H2O'', ''Na2HPO4.7H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:91259
   chemical_properties:
     cas_rn: 10039-32-4
@@ -132245,10 +132495,10 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Na2HPO4 . 12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 12 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2H2O
     synonym_type: HYDRATE_FORM
@@ -132260,22 +132510,22 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x2 H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2HPO4.12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4·12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4·2H2O
     synonym_type: HYDRATE_FORM
@@ -132426,6 +132676,16 @@ ingredients:
     changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
       on their own #344 local identities only: ''Na2HPO4 x 3 H2O'', ''Na2HPO4 x 6
       H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2HPO4 . 12H2O'', ''Na2HPO4
+      x 12 H2O'', ''Na2HPO4 x 7 H2O'', ''Na2HPO4 x H2O'', ''Na2HPO4.12H2O'', ''Na2HPO4.7H2O'',
+      ''Na2HPO4·12H2O''.'
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -132898,16 +133158,16 @@ ingredients:
         identifier are unchanged.'
   synonyms:
   - synonym_text: Na2HPO4 . 12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 12 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 3 H2O
     synonym_type: REJECTED_LABEL
@@ -132916,19 +133176,19 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.7H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2HPO4·12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4•7H2O
     synonym_type: HYDRATE_FORM
@@ -133033,6 +133293,16 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2HPO4 . 12H2O'', ''Na2HPO4
+      x 12 H2O'', ''Na2HPO4 x 2 H2O'', ''Na2HPO4 x 2H2O'', ''Na2HPO4 x H2O'', ''Na2HPO4
+      x2 H2O'', ''Na2HPO4.12H2O'', ''Na2HPO4·12H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
     cas_rn: 7782-85-6
@@ -133080,13 +133350,13 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na2MoO4 × H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 ∙ 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4∙2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Natriummolybdat
     synonym_type: EXACT_SYNONYM
@@ -133095,49 +133365,49 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na2MoO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: Sodium molybdate(VI)
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na2MoO4 . 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 . H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 x 2 H2O (0.1% w/v)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 x 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 · 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 · H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4 ⋅ 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4. 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4.H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4xH2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4·2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4⋅2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2MoO4・2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: sodium dioxido(dioxo)molybdenum
     synonym_type: EXACT_SYNONYM
@@ -133264,6 +133534,18 @@ ingredients:
     changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
       published label but were absent from MIM''s label index, so CultureMech could
       not resolve them: ''Na2MoO4 (0.01 M)'' (x1 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2MoO4 × H2O'', ''Na2MoO4
+      ∙ 2 H2O'', ''Na2MoO4∙2H2O'', ''Na2MoO4 x H2O'', ''Na2MoO4 . 2H2O'', ''Na2MoO4
+      . H2O'', ''Na2MoO4 x 2 H2O (0.1% w/v)'', ''Na2MoO4 x 2H2O'', ''Na2MoO4 · 2H2O'',
+      ''Na2MoO4 · H2O'', ''Na2MoO4 ⋅ 2H2O'', ''Na2MoO4. 2H2O'', ''Na2MoO4.H2O'', ''Na2MoO4xH2O'',
+      ''Na2MoO4·2H2O'', ''Na2MoO4⋅2H2O'', ''Na2MoO4・2H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 7631-95-0
@@ -133992,7 +134274,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Na2S x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: anhydrous sodium sulfide
     synonym_type: EXACT_SYNONYM
@@ -134101,6 +134383,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2S x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 1313-82-2
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -134987,10 +135277,10 @@ ingredients:
     synonym_type: RAW_TEXT
     source: merge_from_UNMAPPED_0473
   - synonym_text: Na2SeO·5H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: NaSeO3·5H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -135087,6 +135377,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Na2SeO·5H2O'';
       ''NaSeO3·5H2O''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2SeO·5H2O'', ''NaSeO3·5H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 10102-18-8
@@ -135458,7 +135756,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: Na2SeO4 x 10 H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -135530,6 +135828,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Na2SeO4
       x 10 H2O''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2SeO4 x 10 H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 13410-01-0
@@ -136049,10 +136355,10 @@ ingredients:
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   - synonym_text: disodium sulfate decahydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: sodium sulphate decahydrate
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -136179,6 +136485,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Glaubersalz'';
       ''disodium sulfate decahydrate''; ''sodium sulphate decahydrate''. Tokens already
       present on the kg-microbe ontology node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''disodium sulfate decahydrate'',
+      ''sodium sulphate decahydrate''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 7757-82-6
@@ -136351,7 +136666,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: culturemech:output/ingredient_occurrences.tsv
   - synonym_text: Na2WO4 x 2H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -136439,6 +136754,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Na2WO4
       x 2H2O''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Na2WO4 x 2H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 13472-45-2
@@ -136795,7 +137118,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   - synonym_text: Trisodium citrate·3H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -136904,6 +137227,14 @@ ingredients:
       ''Na3Citrate''; ''Sodiumcitrate''; ''Trisodium citrate dehydrate''; ''Trisodium
       citrate·2H2O''; ''Trisodium citrate·3H2O''. Tokens already present on the kg-microbe
       ontology node were left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Trisodium citrate·3H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   kg_microbe_node_id: CHEBI:32142
   chemical_properties:
@@ -137223,7 +137554,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Sodium glutamate·H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -137338,6 +137669,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Sodium
       glutamate·H2O''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Sodium glutamate·H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   kg_microbe_node_id: CHEBI:64220
   chemical_properties:
@@ -138083,25 +138422,25 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: NaH2PO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: NaH2PO4 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NaH2PO4 x 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NaH2PO4·2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NaH2PO4·H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NaH2PO4・2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NaH2PO4・H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: sodium phosphate monobasic anhydrous
     synonym_type: EXACT_SYNONYM
@@ -138205,6 +138544,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''NaH2PO4 x H2O'', ''NaH2PO4
+      x 2 H2O'', ''NaH2PO4 x 2H2O'', ''NaH2PO4·2H2O'', ''NaH2PO4·H2O'', ''NaH2PO4・2H2O'',
+      ''NaH2PO4・H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7558-80-7
     data_source: PubChem API
@@ -142412,64 +142761,64 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: NiCl2 ∙ 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2∙6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: '[NiCl2]'
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: NiCl2 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: NiCl2 . 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 5 H2O
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6 H2O (0.1% w/v)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 · 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2.6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2x6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2·2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2·6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2⋅6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・5H2O
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: nickel(2+) chloride
     synonym_type: EXACT_SYNONYM
@@ -142478,7 +142827,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   - synonym_text: NiCl 2 x 6 H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -142585,6 +142934,18 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''NiCl2 ∙ 6 H2O'', ''NiCl2∙6H2O'',
+      ''NiCl2 x H2O'', ''NiCl2 . 6H2O'', ''NiCl2 x 2 H2O'', ''NiCl2 x 2H2O'', ''NiCl2
+      x 6 H2O'', ''NiCl2 x 6 H2O (0.1% w/v)'', ''NiCl2 x 6H2O'', ''NiCl2 · 6H2O'',
+      ''NiCl2.6H2O'', ''NiCl2x6H2O'', ''NiCl2·2H2O'', ''NiCl2·6H2O'', ''NiCl2⋅6H2O'',
+      ''NiCl2・6H2O'', ''NiCl2・H2O'', ''NiCl 2 x 6 H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7718-54-9
     data_source: PubChem API
@@ -142648,7 +143009,7 @@ ingredients:
         identifier are unchanged.'
   synonyms:
   - synonym_text: NiCl2 . 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 2H2O
     synonym_type: HYDRATE_FORM
@@ -142657,43 +143018,43 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6 H2O (0.1% w/v)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 · 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2.6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2x6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2·2H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NiCl2·6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2⋅6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・5H2O
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: nickel(2+) chloride
     synonym_type: EXACT_SYNONYM
@@ -142799,6 +143160,17 @@ ingredients:
     action: REJECTED_MALFORMED_HYDRATE_ALIASES
     changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
       on their own #344 local identities only: ''NiCl2 x 5 H2O'', ''NiCl2・5H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''NiCl2 . 6H2O'', ''NiCl2
+      x 6 H2O'', ''NiCl2 x 6 H2O (0.1% w/v)'', ''NiCl2 x 6H2O'', ''NiCl2 x H2O'',
+      ''NiCl2 · 6H2O'', ''NiCl2.6H2O'', ''NiCl2x6H2O'', ''NiCl2·6H2O'', ''NiCl2⋅6H2O'',
+      ''NiCl2・6H2O'', ''NiCl2・H2O''.'
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -144057,16 +144429,16 @@ ingredients:
         (#374/#334).'
   synonyms:
   - synonym_text: NiSO4 . 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiSO4 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiSO4·6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiSO4・6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiSO4・7H2O
     synonym_type: HYDRATE_FORM
@@ -144165,6 +144537,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''NiSO4 . 6H2O'', ''NiSO4
+      x 6 H2O'', ''NiSO4·6H2O'', ''NiSO4・6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     data_source: CultureBotHT/compounds_to_cas.csv
     retrieval_date: '2026-04-09T00:32:50.689620+00:00'
@@ -167443,7 +167824,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Disodium succinate·6H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -167572,6 +167953,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''Disodium
       succinate·6H2O''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''Disodium succinate·6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 150-90-3

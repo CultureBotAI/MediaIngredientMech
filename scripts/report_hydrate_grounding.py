@@ -29,6 +29,10 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
+
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 REPORT = ROOT / "reports" / "hydrate_grounding.tsv"
@@ -151,7 +155,7 @@ def hydrate_synonyms(rec: dict) -> list[str]:
     return [
         str(sy.get("synonym_text") or "")
         for sy in (rec.get("synonyms") or [])
-        if HYDRATE.search(str(sy.get("synonym_text") or ""))
+        if is_resolving_synonym(sy or {}) and HYDRATE.search(str(sy.get("synonym_text") or ""))
     ]
 
 
@@ -397,9 +401,7 @@ def main() -> int:
         w.writerows(syn_rows)
 
     if not UNMAPPED.exists():
-        print(
-            f"\nERROR: {UNMAPPED.relative_to(ROOT)} is missing; cannot report the " "pending queue"
-        )
+        print(f"\nERROR: {UNMAPPED.relative_to(ROOT)} is missing; cannot report the pending queue")
         return 2
     doc = yaml.safe_load(UNMAPPED.read_text()) or {}
     if not isinstance(doc.get("ingredients"), list):
