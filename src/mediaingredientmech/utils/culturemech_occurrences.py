@@ -9,13 +9,18 @@ AIR_DRIED_GARDEN_SOIL_ID = "kgmicrobe.ingredient:air-dried_garden_soil"
 BETAINE_HYDRATE_ID = "CHEBI:91242"
 CALCIUM_2_ID = "CHEBI:29108"
 CALCIUM_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:caso4_x_7_h2o"
+CITRIC_ACID_MONOHYDRATE_ID = "CHEBI:31404"
 COPPER_ID = "kgmicrobe.compound:copper"
 DISODIUM_2_OXOGLUTARATE_ID = "kgmicrobe.compound:na2_alpha-ketoglutarate"
 ELEMENTAL_SULFUR_ID = "CHEBI:33403"
 EMIM_LYSINE_ID = "kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine"
+FERROUS_SULFATE_HEXAHYDRATE_ID = "kgmicrobe.compound:feso4_x_6_h2o"
+FERROUS_SULFATE_PENTAHYDRATE_ID = "kgmicrobe.compound:feso4_x_5_h2o"
 IRON_0_ID = "CHEBI:82664"
 LIPOIC_ACID_ID = "CHEBI:16494"
 MAGNESIUM_2_ID = "CHEBI:18420"
+MAGNESIUM_SULFATE_HEXAHYDRATE_ID = "kgmicrobe.compound:mgso4_x_6_h2o"
+MANGANESE_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:mnso4_x_7_h2o"
 MOLYBDENUM_ID = "kgmicrobe.compound:molybdenum"
 POTASSIUM_SULFATE_HEPTAHYDRATE_ID = "kgmicrobe.compound:k2so4_x_7_h2o"
 SODIUM_CROTONATE_ID = "kgmicrobe.compound:na-crotonate"
@@ -61,9 +66,24 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("Zeikus trace element solution"): ZEIKUS_TRACE_ELEMENT_SOLUTION_ID,
     _source_label_key("Calcium"): CALCIUM_2_ID,
     _source_label_key("CaSO4 x 7 H2O"): CALCIUM_SULFATE_HEPTAHYDRATE_ID,
+    _source_label_key("Citric Acid•H2O"): CITRIC_ACID_MONOHYDRATE_ID,
+    _source_label_key("Citric Acid•H2O(Fisher A 104)"): CITRIC_ACID_MONOHYDRATE_ID,
     _source_label_key("Copper"): COPPER_ID,
+    _source_label_key("FeSO4 x 5 H2O"): FERROUS_SULFATE_PENTAHYDRATE_ID,
+    _source_label_key("FeSO4 x 6 H2O"): FERROUS_SULFATE_HEXAHYDRATE_ID,
+    _source_label_key("FeSO4 x 6H2O"): FERROUS_SULFATE_HEXAHYDRATE_ID,
+    _source_label_key("FeSO4·6H2O"): FERROUS_SULFATE_HEXAHYDRATE_ID,
+    _source_label_key("FeSO4・6H2O"): FERROUS_SULFATE_HEXAHYDRATE_ID,
     _source_label_key("Iron"): IRON_0_ID,
     _source_label_key("Magnesium"): MAGNESIUM_2_ID,
+    _source_label_key("MgSO4 x 6 H2O"): MAGNESIUM_SULFATE_HEXAHYDRATE_ID,
+    _source_label_key("MgSO4 x 6H2O"): MAGNESIUM_SULFATE_HEXAHYDRATE_ID,
+    _source_label_key("MgSO4·6H2O"): MAGNESIUM_SULFATE_HEXAHYDRATE_ID,
+    _source_label_key("MnSO4 . 7H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
+    _source_label_key("MnSO4 x 7 H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
+    _source_label_key("MnSO4 x 7H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
+    _source_label_key("MnSO4.7H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
+    _source_label_key("MnSO4·7H2O"): MANGANESE_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("Molybdenum"): MOLYBDENUM_ID,
     _source_label_key("K2SO4 x 7 H2O"): POTASSIUM_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("K2SO4·7H2O"): POTASSIUM_SULFATE_HEPTAHYDRATE_ID,

@@ -1,10 +1,10 @@
-identifier: CHEBI:32599
+identifier: kgmicrobe.compound:mgso4_x_6_h2o
 preferred_term: MgSO4 x 6 H2O
 ontology_mapping:
   ontology_id: CHEBI:32599
   ontology_label: magnesium sulfate
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -17,6 +17,12 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:32599's
       ChEBI formula ('Mg.O4S') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#652)
+    notes: MgSO4 x 6 H2O names a formula-supported hydrate, but no exact external
+      ontology term is verified. CHEBI:32599 (magnesium sulfate) is retained only
+      as the asymmetric anhydrous parent while the supplied hydrate keeps a local
+      kgmicrobe.compound identity.
 synonyms:
 - synonym_text: MgSO4 . 7H2O
   synonym_type: REJECTED_LABEL
@@ -62,18 +68,21 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: Mg2SO4
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: MgSO .7H O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: MgSO4 × 7 H2O
   synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
+- synonym_text: MgSO4·6H2O
+  synonym_type: HYDRATE_FORM
+  source: MIM curation (#652)
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 714
-  media_count: 712
+  total_occurrences: 35
+  media_count: 35
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -190,14 +199,48 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
-kg_microbe_node_id: CHEBI:32599
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: LOCALIZED_HYDRATE_IDENTITY
+  changes: 'identifier CHEBI:32599 -> kgmicrobe.compound:mgso4_x_6_h2o; mapping_quality
+    EXACT_MATCH -> NARROW_MATCH. Preserved the curated formula Mg.O4S.6H2O, cleared
+    parent-derived chemical_properties {''cas_rn'': ''7487-88-9'', ''data_source'':
+    ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+    ''molecular_formula'': ''Mg.O4S.6H2O'', ''inchi'': ''InChI=1S/Mg.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2'',
+    ''smiles'': ''O=S(=O)([O-])[O-].[Mg+2]''}, and marked 2 parent-derived synonym(s)
+    as REJECTED_LABEL (#652).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: REFRESHED_HYDRATE_OCCURRENCES
+  changes: occurrence_statistics 712/714 -> 32/32 after moving reviewed hydrate source
+    labels off their anhydrous parent identifiers and onto their exact hydrate identities
+    (#652).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: ADDED_HYDRATE_FORM_SYNONYMS
+  changes: Added MgSO4·6H2O as reviewed HYDRATE_FORM source label(s) for the local
+    hydrate identity (#663).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: REFRESHED_HYDRATE_OCCURRENCES
+  changes: occurrence_statistics 32/32 -> 35/35 after moving reviewed hydrate source
+    labels off their anhydrous parent identifiers and onto their exact hydrate identities
+    (#652).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 7487-88-9
-  data_source: CultureBotHT/compounds_to_cas.csv
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: Mg.O4S.6H2O
-  inchi: InChI=1S/Mg.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-  smiles: O=S(=O)([O-])[O-].[Mg+2]
+  data_source: MIM curation (#652)
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: SULFUR_SOURCE

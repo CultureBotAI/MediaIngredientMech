@@ -60153,6 +60153,12 @@ ingredients:
   - synonym_text: dihydrogen citrate
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
+  - synonym_text: Citric Acid•H2O
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:30769 (#652)
+  - synonym_text: Citric Acid•H2O(Fisher A 104)
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:30769 (#652)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 8
@@ -60227,6 +60233,15 @@ ingredients:
       ''citrate(1-)''; ''dihydrogen citrate''. Tokens already present on the kg-microbe
       ontology node were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: MERGED_FROM
+    changes: Absorbed duplicate CHEBI:30769 Citric Acid•H2O; added 2 monohydrate source
+      label(s) as RAW_TEXT synonym(s) and left anhydrous or bare-parenthetical labels
+      on the rejected tombstone (#652).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 5949-29-1
     data_source: PubChem (via CHEBI:31404)
@@ -60249,22 +60264,22 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
-- identifier: CHEBI:30769
+- identifier: CHEBI:31404
   preferred_term: Citric Acid•H2O
   synonyms:
   - synonym_text: Citric Acid•H2O(Fisher A 104)
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: 2-hydroxypropane-1,2,3-tricarboxylic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: (trisodium salt)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 113
-    media_count: 110
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -60318,21 +60333,27 @@ ingredients:
       salt)''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: MERGED_INTO
+    changes: Merged duplicate Citric Acid•H2O into the existing CHEBI:31404 Citric
+      acid x H2O monohydrate record; tombstoned this record, zeroed occurrences, and
+      rejected 2 anhydrous or non-resolving synonym(s) instead of carrying them forward
+      (#652).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: false
   notes: 'CultureMech placeholder_id: 9'
   ontology_mapping:
-    ontology_id: CHEBI:30769
-    ontology_label: citric acid
+    ontology_id: CHEBI:31404
+    ontology_label: Citric acid monohydrate
     ontology_source: CHEBI
-    mapping_quality: LEXICAL_MATCH
+    mapping_quality: EXACT_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
-      notes: Auto-upgraded from UNMAPPED_0039; matched via 'Citric Acid•H2O'; stem-substring
-  chemical_properties:
-    molecular_formula: C6H8O7
-    inchi: InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12)
-    smiles: O=C(O)CC(O)(CC(=O)O)C(=O)O
-    data_source: CHEBI sqlite (oaklib)
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#652)
+      notes: Citric Acid•H2O is a duplicate source label for the existing CHEBI:31404
+        Citric acid x H2O monohydrate record.
   nutritional_roles:
   - role: CARBON_SOURCE
     confidence: 0.8
@@ -84817,8 +84838,8 @@ ingredients:
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 294
-    media_count: 294
+    total_occurrences: 267
+    media_count: 267
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -84914,6 +84935,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 294/294 -> 267/267 after moving reviewed hydrate
+      source labels off their anhydrous parent identifiers and onto their exact hydrate
+      identities (#652).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7720-78-7
     data_source: PubChem API
@@ -84930,13 +84960,13 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
-- identifier: CHEBI:75832
+- identifier: kgmicrobe.compound:feso4_x_5_h2o
   preferred_term: FeSO4 x 5 H2O
   ontology_mapping:
     ontology_id: CHEBI:75832
     ontology_label: iron(2+) sulfate (anhydrous)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -84950,6 +84980,12 @@ ingredients:
         ChEBI formula ('Fe.O4S') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#652)
+      notes: FeSO4 x 5 H2O names a formula-supported hydrate, but no exact external
+        ontology term is verified. CHEBI:75832 (iron(2+) sulfate (anhydrous)) is retained
+        only as the asymmetric anhydrous parent while the supplied hydrate keeps a
+        local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: FeSO4 x 6 H2O
     synonym_type: REJECTED_LABEL
@@ -84970,24 +85006,24 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ferrous sulfate (anhydrous)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ferrous sulfate anhydrous
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: iron(2+) sulfate (anhydrous)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: iron(2+) sulfate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: FeSO .7H O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 294
-    media_count: 294
+    total_occurrences: 4
+    media_count: 4
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -85079,13 +85115,31 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
-  kg_microbe_node_id: CHEBI:75832
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: LOCALIZED_HYDRATE_IDENTITY
+    changes: 'identifier CHEBI:75832 -> kgmicrobe.compound:feso4_x_5_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH. Preserved the curated formula Fe.O4S.5H2O, cleared
+      parent-derived chemical_properties {''data_source'': ''PubChem (via CHEBI:75832)'',
+      ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'', ''molecular_formula'':
+      ''Fe.O4S.5H2O'', ''inchi'': ''InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2'',
+      ''smiles'': ''O=S(=O)([O-])[O-].[Fe+2]''}, and marked 5 parent-derived synonym(s)
+      as REJECTED_LABEL (#652).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 294/294 -> 4/4 after moving reviewed hydrate source
+      labels off their anhydrous parent identifiers and onto their exact hydrate identities
+      (#652).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    data_source: PubChem (via CHEBI:75832)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Fe.O4S.5H2O
-    inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Fe+2]
+    data_source: MIM curation (#652)
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: IRON_SOURCE
@@ -85094,13 +85148,13 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:75832
+- identifier: kgmicrobe.compound:feso4_x_6_h2o
   preferred_term: FeSO4 x 6 H2O
   ontology_mapping:
     ontology_id: CHEBI:75832
     ontology_label: iron(2+) sulfate (anhydrous)
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -85114,6 +85168,12 @@ ingredients:
         ChEBI formula ('Fe.O4S') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#652)
+      notes: FeSO4 x 6 H2O names a formula-supported hydrate, but no exact external
+        ontology term is verified. CHEBI:75832 (iron(2+) sulfate (anhydrous)) is retained
+        only as the asymmetric anhydrous parent while the supplied hydrate keeps a
+        local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: FeSO4 x 5 H2O
     synonym_type: REJECTED_LABEL
@@ -85134,24 +85194,24 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: ferrous sulfate (anhydrous)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ferrous sulfate anhydrous
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: iron(2+) sulfate (anhydrous)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: iron(2+) sulfate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: FeSO .7H O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 294
-    media_count: 294
+    total_occurrences: 23
+    media_count: 23
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -85243,13 +85303,31 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
-  kg_microbe_node_id: CHEBI:75832
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: LOCALIZED_HYDRATE_IDENTITY
+    changes: 'identifier CHEBI:75832 -> kgmicrobe.compound:feso4_x_6_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH. Preserved the curated formula Fe.O4S.6H2O, cleared
+      parent-derived chemical_properties {''data_source'': ''PubChem (via CHEBI:75832)'',
+      ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'', ''molecular_formula'':
+      ''Fe.O4S.6H2O'', ''inchi'': ''InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2'',
+      ''smiles'': ''O=S(=O)([O-])[O-].[Fe+2]''}, and marked 5 parent-derived synonym(s)
+      as REJECTED_LABEL (#652).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 294/294 -> 23/23 after moving reviewed hydrate
+      source labels off their anhydrous parent identifiers and onto their exact hydrate
+      identities (#652).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    data_source: PubChem (via CHEBI:75832)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Fe.O4S.6H2O
-    inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Fe+2]
+    data_source: MIM curation (#652)
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: IRON_SOURCE
@@ -114875,8 +114953,8 @@ ingredients:
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 714
-    media_count: 712
+    total_occurrences: 679
+    media_count: 677
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -115001,6 +115079,24 @@ ingredients:
       ''MgSO4 x 7 H2O (0.1% w/v)'', ''MgSO4 x 7 H2O (100 mM)'', ''MgSO4 x 7 H2O solution
       (25%)'', ''MgSO4 x 7 H2O to 15.0 g).'', ''MgSO4 x 7H2O'', ''MgSO4 x7 H2O'',
       ''MgSO4 x7H2O'', ''MgSO4 · 7H2O'', ''MgSO4 ·7H2O'', ''MgSO4·6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 712/714 -> 680/682 after moving reviewed hydrate
+      source labels off their anhydrous parent identifiers and onto their exact hydrate
+      identities (#652).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 680/682 -> 677/679 after moving reviewed hydrate
+      source labels off their anhydrous parent identifiers and onto their exact hydrate
+      identities (#652).
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -121538,13 +121634,13 @@ ingredients:
   - role: MINERAL_SOURCE
     confidence: 0.8
     evidence: []
-- identifier: CHEBI:32599
+- identifier: kgmicrobe.compound:mgso4_x_6_h2o
   preferred_term: MgSO4 x 6 H2O
   ontology_mapping:
     ontology_id: CHEBI:32599
     ontology_label: magnesium sulfate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -121558,6 +121654,12 @@ ingredients:
         ChEBI formula ('Mg.O4S') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#652)
+      notes: MgSO4 x 6 H2O names a formula-supported hydrate, but no exact external
+        ontology term is verified. CHEBI:32599 (magnesium sulfate) is retained only
+        as the asymmetric anhydrous parent while the supplied hydrate keeps a local
+        kgmicrobe.compound identity.
   synonyms:
   - synonym_text: MgSO4 . 7H2O
     synonym_type: REJECTED_LABEL
@@ -121603,18 +121705,21 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Mg2SO4
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: MgSO .7H O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: MgSO4 × 7 H2O
     synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
+  - synonym_text: MgSO4·6H2O
+    synonym_type: HYDRATE_FORM
+    source: MIM curation (#652)
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 714
-    media_count: 712
+    total_occurrences: 35
+    media_count: 35
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -121732,14 +121837,48 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
-  kg_microbe_node_id: CHEBI:32599
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: LOCALIZED_HYDRATE_IDENTITY
+    changes: 'identifier CHEBI:32599 -> kgmicrobe.compound:mgso4_x_6_h2o; mapping_quality
+      EXACT_MATCH -> NARROW_MATCH. Preserved the curated formula Mg.O4S.6H2O, cleared
+      parent-derived chemical_properties {''cas_rn'': ''7487-88-9'', ''data_source'':
+      ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+      ''molecular_formula'': ''Mg.O4S.6H2O'', ''inchi'': ''InChI=1S/Mg.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2'',
+      ''smiles'': ''O=S(=O)([O-])[O-].[Mg+2]''}, and marked 2 parent-derived synonym(s)
+      as REJECTED_LABEL (#652).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 712/714 -> 32/32 after moving reviewed hydrate
+      source labels off their anhydrous parent identifiers and onto their exact hydrate
+      identities (#652).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: ADDED_HYDRATE_FORM_SYNONYMS
+    changes: Added MgSO4·6H2O as reviewed HYDRATE_FORM source label(s) for the local
+      hydrate identity (#663).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 32/32 -> 35/35 after moving reviewed hydrate source
+      labels off their anhydrous parent identifiers and onto their exact hydrate identities
+      (#652).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 7487-88-9
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Mg.O4S.6H2O
-    inchi: InChI=1S/Mg.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Mg+2]
+    data_source: MIM curation (#652)
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: SULFUR_SOURCE
@@ -123256,8 +123395,8 @@ ingredients:
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 415
-    media_count: 415
+    total_occurrences: 399
+    media_count: 399
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -123329,6 +123468,15 @@ ingredients:
     changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
       longer resolves sibling hydrate identities (#251): ''MnSO4 x n H2O'', ''MnSO4・xH2O'',
       ''MnSO4·nH2O'', ''MnSO4 x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 415/415 -> 399/399 after moving reviewed hydrate
+      source labels off their anhydrous parent identifiers and onto their exact hydrate
+      identities (#652).
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
@@ -124050,13 +124198,13 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:86360
+- identifier: kgmicrobe.compound:mnso4_x_7_h2o
   preferred_term: MnSO4 x 7 H2O
   ontology_mapping:
     ontology_id: CHEBI:86360
     ontology_label: manganese(II) sulfate
     ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -124070,9 +124218,15 @@ ingredients:
         ChEBI formula ('Mn.O4S') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#652)
+      notes: MnSO4 x 7 H2O names a formula-supported hydrate, but no exact external
+        ontology term is verified. CHEBI:86360 (manganese(II) sulfate) is retained
+        only as the asymmetric anhydrous parent while the supplied hydrate keeps a
+        local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: Manganese sulfate anhydrous
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MnSO4 . 7H2O
     synonym_type: HYDRATE_FORM
@@ -124093,7 +124247,7 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: manganese(2+) sulfate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: MnSO4 x n H2O
     synonym_type: REJECTED_LABEL
@@ -124103,8 +124257,8 @@ ingredients:
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 415
-    media_count: 415
+    total_occurrences: 16
+    media_count: 16
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -124206,13 +124360,31 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
-  kg_microbe_node_id: CHEBI:86360
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: LOCALIZED_HYDRATE_IDENTITY
+    changes: 'identifier CHEBI:86360 -> kgmicrobe.compound:mnso4_x_7_h2o; mapping_quality
+      SYNONYM_MATCH -> NARROW_MATCH. Preserved the curated formula Mn.O4S.7H2O, cleared
+      parent-derived chemical_properties {''data_source'': ''PubChem (via CHEBI:86360)'',
+      ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'', ''molecular_formula'':
+      ''Mn.O4S.7H2O'', ''inchi'': ''InChI=1S/Mn.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2'',
+      ''smiles'': ''O=S(=O)([O-])[O-].[Mn+2]''}, and marked 2 parent-derived synonym(s)
+      as REJECTED_LABEL (#652).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_hydrate_local_identities
+    action: REFRESHED_HYDRATE_OCCURRENCES
+    changes: occurrence_statistics 415/415 -> 16/16 after moving reviewed hydrate
+      source labels off their anhydrous parent identifiers and onto their exact hydrate
+      identities (#652).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    data_source: PubChem (via CHEBI:86360)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Mn.O4S.7H2O
-    inchi: InChI=1S/Mn.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Mn+2]
+    data_source: MIM curation (#652)
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT

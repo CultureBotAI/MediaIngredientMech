@@ -1,19 +1,19 @@
-identifier: CHEBI:30769
+identifier: CHEBI:31404
 preferred_term: Citric Acid•H2O
 synonyms:
 - synonym_text: Citric Acid•H2O(Fisher A 104)
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: 2-hydroxypropane-1,2,3-tricarboxylic acid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: (trisodium salt)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 113
-  media_count: 110
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -67,21 +67,26 @@ curation_history:
     salt)''. Tokens already present on the kg-microbe ontology node were left out
     as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: MERGED_INTO
+  changes: Merged duplicate Citric Acid•H2O into the existing CHEBI:31404 Citric acid
+    x H2O monohydrate record; tombstoned this record, zeroed occurrences, and rejected
+    2 anhydrous or non-resolving synonym(s) instead of carrying them forward (#652).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: false
 notes: 'CultureMech placeholder_id: 9'
 ontology_mapping:
-  ontology_id: CHEBI:30769
-  ontology_label: citric acid
+  ontology_id: CHEBI:31404
+  ontology_label: Citric acid monohydrate
   ontology_source: CHEBI
-  mapping_quality: LEXICAL_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CHEBI via OLS (resolve_unmapped_v2 strategy=stem-match)
-    notes: Auto-upgraded from UNMAPPED_0039; matched via 'Citric Acid•H2O'; stem-substring
-chemical_properties:
-  molecular_formula: C6H8O7
-  inchi: InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12)
-  smiles: O=C(O)CC(O)(CC(=O)O)C(=O)O
-  data_source: CHEBI sqlite (oaklib)
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#652)
+    notes: Citric Acid•H2O is a duplicate source label for the existing CHEBI:31404
+      Citric acid x H2O monohydrate record.
 nutritional_roles:
 - role: CARBON_SOURCE
   confidence: 0.8

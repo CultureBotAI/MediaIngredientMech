@@ -1,10 +1,10 @@
-identifier: CHEBI:75832
+identifier: kgmicrobe.compound:feso4_x_5_h2o
 preferred_term: FeSO4 x 5 H2O
 ontology_mapping:
   ontology_id: CHEBI:75832
   ontology_label: iron(2+) sulfate (anhydrous)
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -17,6 +17,12 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:75832's
       ChEBI formula ('Fe.O4S') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#652)
+    notes: FeSO4 x 5 H2O names a formula-supported hydrate, but no exact external
+      ontology term is verified. CHEBI:75832 (iron(2+) sulfate (anhydrous)) is retained
+      only as the asymmetric anhydrous parent while the supplied hydrate keeps a local
+      kgmicrobe.compound identity.
 synonyms:
 - synonym_text: FeSO4 x 6 H2O
   synonym_type: REJECTED_LABEL
@@ -37,24 +43,24 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ferrous sulfate (anhydrous)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: ferrous sulfate anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: iron(2+) sulfate (anhydrous)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: iron(2+) sulfate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: FeSO .7H O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 294
-  media_count: 294
+  total_occurrences: 4
+  media_count: 4
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -146,13 +152,31 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
-kg_microbe_node_id: CHEBI:75832
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: LOCALIZED_HYDRATE_IDENTITY
+  changes: 'identifier CHEBI:75832 -> kgmicrobe.compound:feso4_x_5_h2o; mapping_quality
+    EXACT_MATCH -> NARROW_MATCH. Preserved the curated formula Fe.O4S.5H2O, cleared
+    parent-derived chemical_properties {''data_source'': ''PubChem (via CHEBI:75832)'',
+    ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'', ''molecular_formula'':
+    ''Fe.O4S.5H2O'', ''inchi'': ''InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2'',
+    ''smiles'': ''O=S(=O)([O-])[O-].[Fe+2]''}, and marked 5 parent-derived synonym(s)
+    as REJECTED_LABEL (#652).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: REFRESHED_HYDRATE_OCCURRENCES
+  changes: occurrence_statistics 294/294 -> 4/4 after moving reviewed hydrate source
+    labels off their anhydrous parent identifiers and onto their exact hydrate identities
+    (#652).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  data_source: PubChem (via CHEBI:75832)
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
   molecular_formula: Fe.O4S.5H2O
-  inchi: InChI=1S/Fe.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-  smiles: O=S(=O)([O-])[O-].[Fe+2]
+  data_source: MIM curation (#652)
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: IRON_SOURCE
