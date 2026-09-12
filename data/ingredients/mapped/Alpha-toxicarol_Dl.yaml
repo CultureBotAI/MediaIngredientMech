@@ -1,15 +1,23 @@
-identifier: CHEBI:9643
+identifier: kgmicrobe.compound:alpha-toxicarol_dl
 preferred_term: Alpha-Toxicarol (Dl)
 ontology_mapping:
-  ontology_id: CHEBI:9643
-  ontology_label: Toxicarol
-  ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  ontology_id: kgmicrobe.compound:alpha-toxicarol_dl
+  ontology_label: Alpha-Toxicarol (Dl)
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-      sqlite (cas xref). '
+    notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a sibling stereochemical
+      form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+      resolved via OAK CHEBI sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#456)
+    notes: The CultureBotHT label names the DL/racemic form, while CHEBI:9643 and
+      CAS 82-09-7 denote a fixed stereoisomer. No exact local ChEBI term, CAS number,
+      or broader ontology parent was verified for the racemate. The record now keeps
+      kgmicrobe.compound:alpha-toxicarol_dl as a local fallback identity without an
+      ontology row.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -40,11 +48,17 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_stereochemical_identity_conflicts
+  action: REGROUNDED_STEREOCHEMICAL_FORM
+  changes: identifier CHEBI:9643 -> kgmicrobe.compound:alpha-toxicarol_dl; removed
+    the sibling ChEBI stereoisomer mapping. Replaced target-derived chemistry and
+    marked 0 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 82-09-7
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  data_source: CHEBI:9643 formula only
+  retrieval_date: '2026-09-12T00:00:00+00:00'
   molecular_formula: C23H22O7
-  inchi: InChI=1S/C23H22O7/c1-23(2)6-5-11-15(30-23)8-13(24)20-21(25)19-12-7-16(26-3)17(27-4)9-14(12)28-10-18(19)29-22(11)20/h5-9,18-19,24H,10H2,1-4H3/t18-,19+/m1/s1
-  smiles: '[H][C@@]12COc3cc(OC)c(OC)cc3[C@]1([H])C(=O)c1c(O)cc3c(c1O2)C=CC(C)(C)O3'
 ingredient_type: SINGLE_INGREDIENT

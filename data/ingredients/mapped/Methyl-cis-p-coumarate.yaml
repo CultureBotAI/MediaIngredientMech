@@ -1,18 +1,26 @@
-identifier: CHEBI:86904
+identifier: kgmicrobe.compound:methyl-cis-p-coumarate
 preferred_term: methyl-cis-p-coumarate
 ontology_mapping:
   ontology_id: CHEBI:86904
   ontology_label: 4-coumaric acid methyl ester
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-      sqlite (cas xref). '
+    notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+      form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+      resolved via OAK CHEBI sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#456)
+    notes: The CultureBotHT label names the cis/Z ester, while CHEBI:86904 is stereo-unspecified
+      and CAS 3943-97-3 denotes the trans/E ester. No exact local ChEBI term or CAS
+      number was verified for the cis form. Per MAPPING_SEMANTICS.md Section 3, the
+      record now uses kgmicrobe.compound:methyl-cis-p-coumarate as the exact registry
+      identity plus a narrowMatch to CHEBI:86904.
 synonyms:
 - synonym_text: methyl 3-(4-hydroxyphenyl)prop-2-enoate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -43,11 +51,18 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_stereochemical_identity_conflicts
+  action: REGROUNDED_STEREOCHEMICAL_FORM
+  changes: identifier CHEBI:86904 -> kgmicrobe.compound:methyl-cis-p-coumarate; ontology
+    mapping set to NARROW_MATCH CHEBI:86904 ('4-coumaric acid methyl ester'). Replaced
+    target-derived chemistry and marked 1 inherited ChEBI synonym(s) as REJECTED_LABEL
+    (#456).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 3943-97-3
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  data_source: ChEBI:86904 formula only
+  retrieval_date: '2026-09-12T00:00:00+00:00'
   molecular_formula: C10H10O3
-  inchi: InChI=1S/C10H10O3/c1-13-10(12)7-4-8-2-5-9(11)6-3-8/h2-7,11H,1H3
-  smiles: '[H]C(=Cc1ccc(O)cc1)C(=O)OC'
 ingredient_type: SINGLE_INGREDIENT

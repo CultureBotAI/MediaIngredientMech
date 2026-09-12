@@ -38133,18 +38133,26 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
-- identifier: CHEBI:9643
+- identifier: kgmicrobe.compound:alpha-toxicarol_dl
   preferred_term: Alpha-Toxicarol (Dl)
   ontology_mapping:
-    ontology_id: CHEBI:9643
-    ontology_label: Toxicarol
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    ontology_id: kgmicrobe.compound:alpha-toxicarol_dl
+    ontology_label: Alpha-Toxicarol (Dl)
+    ontology_source: kgmicrobe.compound
+    mapping_quality: FALLBACK_REGISTRY
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a sibling stereochemical
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label names the DL/racemic form, while CHEBI:9643 and
+        CAS 82-09-7 denote a fixed stereoisomer. No exact local ChEBI term, CAS number,
+        or broader ontology parent was verified for the racemate. The record now keeps
+        kgmicrobe.compound:alpha-toxicarol_dl as a local fallback identity without
+        an ontology row.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -38175,13 +38183,19 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:9643 -> kgmicrobe.compound:alpha-toxicarol_dl; removed
+      the sibling ChEBI stereoisomer mapping. Replaced target-derived chemistry and
+      marked 0 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 82-09-7
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: CHEBI:9643 formula only
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C23H22O7
-    inchi: InChI=1S/C23H22O7/c1-23(2)6-5-11-15(30-23)8-13(24)20-21(25)19-12-7-16(26-3)17(27-4)9-14(12)28-10-18(19)29-22(11)20/h5-9,18-19,24H,10H2,1-4H3/t18-,19+/m1/s1
-    smiles: '[H][C@@]12COc3cc(OC)c(OC)cc3[C@]1([H])C(=O)c1c(O)cc3c(c1O2)C=CC(C)(C)O3'
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:17925
   preferred_term: alpha-D-Glucose
@@ -71677,21 +71691,29 @@ ingredients:
         (amino acid)'
       curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
         recommended.
-- identifier: CHEBI:35621
+- identifier: cas:2835-81-6
   preferred_term: DL-2-Aminobutyric acid
   ontology_mapping:
     ontology_id: CHEBI:35621
     ontology_label: alpha-aminobutyric acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label and CAS-RN name the DL/racemic form, while CHEBI:35621
+        is stereo-unspecified and has separate D and L children. No exact local ChEBI
+        term denotes the racemate. Per MAPPING_SEMANTICS.md Section 3, the record
+        now uses cas:2835-81-6 as the exact registry identity plus a narrowMatch to
+        CHEBI:35621.
   synonyms:
   - synonym_text: 2-aminobutanoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -71731,11 +71753,20 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:35621 -> cas:2835-81-6; ontology mapping set to NARROW_MATCH
+      CHEBI:35621 ('alpha-aminobutyric acid'). Replaced target-derived chemistry and
+      marked 1 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 2835-81-6
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: CultureBotHT compounds_to_cas.csv; ChEBI:35621
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C4H9NO2
+    cas_rn: 2835-81-6
     inchi: InChI=1S/C4H9NO2/c1-2-3(5)4(6)7/h3H,2,5H2,1H3,(H,6,7)
     smiles: CCC(N)C(=O)O
   ingredient_type: SINGLE_INGREDIENT
@@ -71748,21 +71779,29 @@ ingredients:
         (amino acid)'
       curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
         recommended.
-- identifier: CHEBI:27389
+- identifier: cas:144-90-1
   preferred_term: DL-3-Aminoisobutyric acid
   ontology_mapping:
     ontology_id: CHEBI:27389
     ontology_label: 3-aminoisobutyric acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label and CAS-RN name the DL/racemic form, while CHEBI:27389
+        is stereo-unspecified and has separate R and S children. No exact local ChEBI
+        term denotes the racemate. Per MAPPING_SEMANTICS.md Section 3, the record
+        now uses cas:144-90-1 as the exact registry identity plus a narrowMatch to
+        CHEBI:27389.
   synonyms:
   - synonym_text: 3-amino-2-methylpropanoic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -71802,11 +71841,21 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE
       -> nutritional_roles.AMINO_ACID_SOURCE'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:27389 -> cas:144-90-1; ontology mapping set to NARROW_MATCH
+      CHEBI:27389 ('3-aminoisobutyric acid'). Replaced target-derived chemistry and
+      marked 1 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 144-90-1
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: CultureBotHT compounds_to_cas.csv; PubChem CID 64956
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C4H9NO2
+    cas_rn: 144-90-1
+    pubchem_cid: 64956
     inchi: InChI=1S/C4H9NO2/c1-3(2-5)4(6)7/h3H,2,5H2,1H3,(H,6,7)
     smiles: CC(CN)C(=O)O
   ingredient_type: SINGLE_INGREDIENT
@@ -71893,21 +71942,29 @@ ingredients:
     inchi: InChI=1S/C4H8O3.Na/c1-3(2-5)4(6)7;/h3,5H,2H2,1H3,(H,6,7);/q;+1/p-1
     pubchem_cid: 71311737
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:17138
+- identifier: cas:591-59-3
   preferred_term: DL-Glyceraldehyde 3-phosphate
   ontology_mapping:
     ontology_id: CHEBI:17138
     ontology_label: glyceraldehyde 3-phosphate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label and CAS-RN name the DL/racemic form, while CHEBI:17138
+        is stereo-unspecified and has separate D and L children. No exact local ChEBI
+        term denotes the racemate. Per MAPPING_SEMANTICS.md Section 3, the record
+        now uses cas:591-59-3 as the exact registry identity plus a narrowMatch to
+        CHEBI:17138.
   synonyms:
   - synonym_text: 2-hydroxy-3-oxopropyl dihydrogen phosphate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -71938,11 +71995,21 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:17138 -> cas:591-59-3; ontology mapping set to NARROW_MATCH
+      CHEBI:17138 ('glyceraldehyde 3-phosphate'). Replaced target-derived chemistry
+      and marked 1 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 591-59-3
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: CultureBotHT compounds_to_cas.csv; PubChem CID 729
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C3H7O6P
+    cas_rn: 591-59-3
+    pubchem_cid: 729
     inchi: InChI=1S/C3H7O6P/c4-1-3(5)2-9-10(6,7)8/h1,3,5H,2H2,(H2,6,7,8)
     smiles: '[H]C(=O)C(O)COP(=O)(O)O'
   ingredient_type: SINGLE_INGREDIENT
@@ -72218,21 +72285,29 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:5445
+- identifier: cas:56-82-6
   preferred_term: DL-glyceraldehyde
   ontology_mapping:
     ontology_id: CHEBI:5445
     ontology_label: glyceraldehyde
     ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label and CAS-RN name the DL/racemic form, while CHEBI:5445
+        is stereo-unspecified and has separate D and L children. No exact local ChEBI
+        term denotes the racemate. Per MAPPING_SEMANTICS.md Section 3, the record
+        now uses cas:56-82-6 as the exact registry identity plus a narrowMatch to
+        CHEBI:5445.
   synonyms:
   - synonym_text: 2,3-dihydroxypropanal
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -72282,11 +72357,21 @@ ingredients:
       so the recorded grade overstated. ontology_id is unchanged — the term is correct.
       The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:5445 -> cas:56-82-6; ontology mapping set to NARROW_MATCH
+      CHEBI:5445 ('glyceraldehyde'). Replaced target-derived chemistry and marked
+      1 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 56-82-6
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: CultureBotHT compounds_to_cas.csv; PubChem CID 751
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C3H6O3
+    cas_rn: 56-82-6
+    pubchem_cid: 751
     inchi: InChI=1S/C3H6O3/c4-1-3(6)2-5/h1,3,5-6H,2H2
     smiles: '[H]C(=O)C(O)CO'
   ingredient_type: SINGLE_INGREDIENT
@@ -118580,21 +118665,29 @@ ingredients:
     inchi: InChI=1S/C6H12O5/c1-10-6-5(9)4(8)3(7)2-11-6/h3-9H,2H2,1H3/t3-,4-,5+,6-/m0/s1
     pubchem_cid: 102169
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:86904
+- identifier: kgmicrobe.compound:methyl-cis-p-coumarate
   preferred_term: methyl-cis-p-coumarate
   ontology_mapping:
     ontology_id: CHEBI:86904
     ontology_label: 4-coumaric acid methyl ester
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label names the cis/Z ester, while CHEBI:86904 is stereo-unspecified
+        and CAS 3943-97-3 denotes the trans/E ester. No exact local ChEBI term or
+        CAS number was verified for the cis form. Per MAPPING_SEMANTICS.md Section
+        3, the record now uses kgmicrobe.compound:methyl-cis-p-coumarate as the exact
+        registry identity plus a narrowMatch to CHEBI:86904.
   synonyms:
   - synonym_text: methyl 3-(4-hydroxyphenyl)prop-2-enoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -118625,13 +118718,20 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:86904 -> kgmicrobe.compound:methyl-cis-p-coumarate;
+      ontology mapping set to NARROW_MATCH CHEBI:86904 ('4-coumaric acid methyl ester').
+      Replaced target-derived chemistry and marked 1 inherited ChEBI synonym(s) as
+      REJECTED_LABEL (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 3943-97-3
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: ChEBI:86904 formula only
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C10H10O3
-    inchi: InChI=1S/C10H10O3/c1-13-10(12)7-4-8-2-5-9(11)6-3-8/h2-7,11H,1H3
-    smiles: '[H]C(=Cc1ccc(O)cc1)C(=O)OC'
   ingredient_type: SINGLE_INGREDIENT
 - identifier: cas:19367-38-5
   preferred_term: methyl-trans-p-coumarate
@@ -125242,21 +125342,29 @@ ingredients:
     inchi: InChI=1S/C14H28O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14(15)16/h2-13H2,1H3,(H,15,16)
     smiles: CCCCCCCCCCCCCC(=O)O
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:29640
+- identifier: cas:76924-95-3
   preferred_term: N-(3-oxohexanoyl)-DL-homoserine lactone
   ontology_mapping:
     ontology_id: CHEBI:29640
     ontology_label: N-(3-oxohexanoyl)homoserine lactone
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label and CAS-RN name the DL/racemic homoserine lactone,
+        while CHEBI:29640 is stereo-unspecified and has a separate L child. No exact
+        local ChEBI term denotes the racemate. Per MAPPING_SEMANTICS.md Section 3,
+        the record now uses cas:76924-95-3 as the exact registry identity plus a narrowMatch
+        to CHEBI:29640.
   synonyms:
   - synonym_text: 3-oxo-N-(2-oxotetrahydrofuran-3-yl)hexanamide
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -125287,11 +125395,21 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:29640 -> cas:76924-95-3; ontology mapping set to NARROW_MATCH
+      CHEBI:29640 ('N-(3-oxohexanoyl)homoserine lactone'). Replaced target-derived
+      chemistry and marked 1 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 76924-95-3
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: CultureBotHT compounds_to_cas.csv; PubChem CID 119133
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C10H15NO4
+    cas_rn: 76924-95-3
+    pubchem_cid: 119133
     inchi: InChI=1S/C10H15NO4/c1-2-3-7(12)6-9(13)11-8-4-5-15-10(8)14/h8H,2-6H2,1H3,(H,11,13)
     smiles: CCCC(=O)CC(=O)NC1CCOC1=O
   ingredient_type: SINGLE_INGREDIENT
@@ -149033,21 +149151,28 @@ ingredients:
   - synonym_text: Peptone (0.01 %
     synonym_type: RAW_TEXT
     source: microbedecoder
-- identifier: CHEBI:36999
+- identifier: CHEBI:109544
   preferred_term: Perillic Acid (-)
   ontology_mapping:
-    ontology_id: CHEBI:36999
-    ontology_label: perillic acid
+    ontology_id: CHEBI:109544
+    ontology_label: (4R)-4-(1-methylethenyl)-1-cyclohexenecarboxylic acid
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a broader stereochemical
+        parent. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label names the (-) enantiomer. PubChem CID 5702197
+        has the same stereochemical InChIKey as CHEBI:109544, while the old CHEBI:36999
+        target is stereo-unspecified. The record now maps exactly to CHEBI:109544
+        instead of the old CHEBI:36999 stereo-unspecified parent.
   synonyms:
   - synonym_text: 4-(prop-1-en-2-yl)cyclohex-1-ene-1-carboxylic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -149078,13 +149203,23 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:36999 -> CHEBI:109544; ontology mapping set to EXACT_MATCH
+      CHEBI:109544 ('(4R)-4-(1-methylethenyl)-1-cyclohexenecarboxylic acid'). Replaced
+      target-derived chemistry and marked 1 inherited ChEBI synonym(s) as REJECTED_LABEL
+      (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 7694-45-3
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: PubChem CID 5702197
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C10H14O2
-    inchi: InChI=1S/C10H14O2/c1-7(2)8-3-5-9(6-4-8)10(11)12/h5,8H,1,3-4,6H2,2H3,(H,11,12)
-    smiles: C=C(C)C1CC=C(C(=O)O)CC1
+    pubchem_cid: 5702197
+    inchi: InChI=1S/C10H14O2/c1-7(2)8-3-5-9(6-4-8)10(11)12/h5,8H,1,3-4,6H2,2H3,(H,11,12)/t8-/m0/s1
+    smiles: C=C(C)[C@H]1CC=C(C(=O)O)CC1
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:15420
   preferred_term: Perillyl Alcohol
@@ -157447,18 +157582,26 @@ ingredients:
         no well-formed exact OBO term, so this record keeps a local identity and anchors
         to the blood serum parent.
   ingredient_type: UNDEFINED_MIXTURE
-- identifier: CHEBI:139272
+- identifier: cas:10237-77-1
   preferred_term: rac-3-Hydroxypentanoic Acid
   ontology_mapping:
     ontology_id: CHEBI:139272
     ontology_label: 3-hydroxypentanoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label and CAS-RN name a racemate, while CHEBI:139272
+        is stereo-unspecified and has separate R and S children. No exact local ChEBI
+        term denotes the racemate. Per MAPPING_SEMANTICS.md Section 3, the record
+        now uses cas:10237-77-1 as the exact registry identity plus a narrowMatch
+        to CHEBI:139272.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -157489,11 +157632,21 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:139272 -> cas:10237-77-1; ontology mapping set to NARROW_MATCH
+      CHEBI:139272 ('3-hydroxypentanoic acid'). Replaced target-derived chemistry
+      and marked 0 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 10237-77-1
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: CultureBotHT compounds_to_cas.csv; PubChem CID 107802
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C5H10O3
+    cas_rn: 10237-77-1
+    pubchem_cid: 107802
     inchi: InChI=1S/C5H10O3/c1-2-4(6)3-5(7)8/h4,6H,2-3H2,1H3,(H,7,8)
     smiles: CCC(O)CC(=O)O
   ingredient_type: SINGLE_INGREDIENT
@@ -176946,21 +177099,28 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
-- identifier: CHEBI:28600
+- identifier: CHEBI:16619
   preferred_term: Trans,Trans-Farnesol
   ontology_mapping:
-    ontology_id: CHEBI:28600
-    ontology_label: farnesol
+    ontology_id: CHEBI:16619
+    ontology_label: (2-trans,6-trans)-farnesol
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a broader stereochemical
+        parent. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#456)
+      notes: The CultureBotHT label names the (2E,6E) isomer. CHEBI:16619 and PubChem
+        CID 445070 denote (2-trans,6-trans)-farnesol, while the old CHEBI:28600 target
+        and CAS 4602-84-0 are stereo-unspecified. The record now maps exactly to CHEBI:16619
+        instead of the old CHEBI:28600 stereo-unspecified parent.
   synonyms:
   - synonym_text: 3,7,11-trimethyldodeca-2,6,10-trien-1-ol
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -176991,13 +177151,23 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_stereochemical_identity_conflicts
+    action: REGROUNDED_STEREOCHEMICAL_FORM
+    changes: identifier CHEBI:28600 -> CHEBI:16619; ontology mapping set to EXACT_MATCH
+      CHEBI:16619 ('(2-trans,6-trans)-farnesol'). Replaced target-derived chemistry
+      and marked 1 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 4602-84-0
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    data_source: PubChem CID 445070
+    retrieval_date: '2026-09-12T00:00:00+00:00'
     molecular_formula: C15H26O
-    inchi: InChI=1S/C15H26O/c1-13(2)7-5-8-14(3)9-6-10-15(4)11-12-16/h7,9,11,16H,5-6,8,10,12H2,1-4H3
-    smiles: '[H]C(CO)=C(C)CCC([H])=C(C)CCC=C(C)C'
+    cas_rn: 106-28-5
+    pubchem_cid: 445070
+    inchi: InChI=1S/C15H26O/c1-13(2)7-5-8-14(3)9-6-10-15(4)11-12-16/h7,9,11,16H,5-6,8,10,12H2,1-4H3/b14-9+,15-11+
+    smiles: CC(C)=CCC/C(C)=C/CC/C(C)=C/CO
   ingredient_type: SINGLE_INGREDIENT
 - identifier: kgmicrobe.compound:trans_styrylacetic_acid
   preferred_term: Trans Styrylacetic Acid

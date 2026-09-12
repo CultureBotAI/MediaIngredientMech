@@ -1,18 +1,25 @@
-identifier: CHEBI:27389
+identifier: cas:144-90-1
 preferred_term: DL-3-Aminoisobutyric acid
 ontology_mapping:
   ontology_id: CHEBI:27389
   ontology_label: 3-aminoisobutyric acid
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-      sqlite (cas xref). '
+    notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a different stereochemical
+      form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+      resolved via OAK CHEBI sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#456)
+    notes: The CultureBotHT label and CAS-RN name the DL/racemic form, while CHEBI:27389
+      is stereo-unspecified and has separate R and S children. No exact local ChEBI
+      term denotes the racemate. Per MAPPING_SEMANTICS.md Section 3, the record now
+      uses cas:144-90-1 as the exact registry identity plus a narrowMatch to CHEBI:27389.
 synonyms:
 - synonym_text: 3-amino-2-methylpropanoic acid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -52,11 +59,21 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
     nutritional_roles.AMINO_ACID_SOURCE'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_stereochemical_identity_conflicts
+  action: REGROUNDED_STEREOCHEMICAL_FORM
+  changes: identifier CHEBI:27389 -> cas:144-90-1; ontology mapping set to NARROW_MATCH
+    CHEBI:27389 ('3-aminoisobutyric acid'). Replaced target-derived chemistry and
+    marked 1 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 144-90-1
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  data_source: CultureBotHT compounds_to_cas.csv; PubChem CID 64956
+  retrieval_date: '2026-09-12T00:00:00+00:00'
   molecular_formula: C4H9NO2
+  cas_rn: 144-90-1
+  pubchem_cid: 64956
   inchi: InChI=1S/C4H9NO2/c1-3(2-5)4(6)7/h3H,2,5H2,1H3,(H,6,7)
   smiles: CC(CN)C(=O)O
 ingredient_type: SINGLE_INGREDIENT

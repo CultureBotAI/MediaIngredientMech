@@ -495,7 +495,7 @@
 | CHEBI:172687 | Allura Red AC | CHEBI:172687 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:73222 | Aloin | CHEBI:73222 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:189432 | alpha-Lactose | CHEBI:189432 | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:9643 | Alpha-Toxicarol (Dl) | CHEBI:9643 | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.compound:alpha-toxicarol_dl | Alpha-Toxicarol (Dl) | kgmicrobe.compound:alpha-toxicarol_dl | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | CHEBI:17925 | alpha-D-Glucose | CHEBI:17925 | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:30915 | alpha-ketoglutaric acid | CHEBI:30915 | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:74772 | Aluminium sulfate | CHEBI:74772 | CHEBI | EXACT_MATCH | 1 |
@@ -877,14 +877,14 @@
 | cas:372965-00-9 | DEANONOate | CHEBI:77707 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:50154 | DETA/NO | CHEBI:50154 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:37023 | DL-2-Aminoadipic acid | CHEBI:37023 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:35621 | DL-2-Aminobutyric acid | CHEBI:35621 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:27389 | DL-3-Aminoisobutyric acid | CHEBI:27389 | CHEBI | EXACT_MATCH | 0 |
+| cas:2835-81-6 | DL-2-Aminobutyric acid | CHEBI:35621 | CHEBI | NARROW_MATCH | 0 |
+| cas:144-90-1 | DL-3-Aminoisobutyric acid | CHEBI:27389 | CHEBI | NARROW_MATCH | 0 |
 | cas:1219589-99-7 | DL-3-Hydroxyisobutyric acid sodium salt | CHEBI:18064 | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:17138 | DL-Glyceraldehyde 3-phosphate | CHEBI:17138 | CHEBI | EXACT_MATCH | 0 |
+| cas:591-59-3 | DL-Glyceraldehyde 3-phosphate | CHEBI:17138 | CHEBI | NARROW_MATCH | 0 |
 | cas:17603-42-8 | DL-Glycerol 1-phosphate sodium salt hydrate | CHEBI:14336 | CHEBI | CLOSE_MATCH | 0 |
 | cas:123333-71-1 | DL-Histidine monohydrochloride monohydrate | NCIT:C87334 | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate | DL-Isocitric acid trisodium salt hydrate | CHEBI:172950 | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:5445 | DL-glyceraldehyde | CHEBI:5445 | CHEBI | SYNONYM_MATCH | 0 |
+| cas:56-82-6 | DL-glyceraldehyde | CHEBI:5445 | CHEBI | NARROW_MATCH | 0 |
 | cas:438545-06-3 | DNA from Salmon | cas:438545-06-3 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:232797 | D-Trehalose dihydrate | CHEBI:232797 | CHEBI | CAS_RN_LOOKUP | 15 |
 | CHEBI:28197 | Daidzein | CHEBI:28197 | CHEBI | EXACT_MATCH | 0 |
@@ -1392,7 +1392,7 @@
 | cas:91-09-8 | methyl-alpha-D-xylopyranoside | cas:91-09-8 | CAS | FALLBACK_REGISTRY | 0 |
 | cas:612-05-5 | methyl-beta-D-xylopyranoside | cas:612-05-5 | CAS | FALLBACK_REGISTRY | 0 |
 | cas:1825-00-9 | methyl-beta-L-arabinopyranoside | cas:1825-00-9 | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:86904 | methyl-cis-p-coumarate | CHEBI:86904 | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.compound:methyl-cis-p-coumarate | methyl-cis-p-coumarate | CHEBI:86904 | CHEBI | NARROW_MATCH | 0 |
 | cas:19367-38-5 | methyl-trans-p-coumarate | CHEBI:194094 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:176565 | Methyl 3-(4-hydroxyphenyl)propionate | CHEBI:176565 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:181871 | Methyl 6-Hydroxyangolensate | CHEBI:181871 | CHEBI | EXACT_MATCH | 0 |
@@ -1452,7 +1452,7 @@
 | CHEBI:17268 | myo-Inositol | CHEBI:17268 | CHEBI | EXACT_MATCH | 59 |
 | CHEBI:18152 | Myricetin | CHEBI:18152 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28875 | Myristic acid | CHEBI:28875 | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:29640 | N-(3-oxohexanoyl)-DL-homoserine lactone | CHEBI:29640 | CHEBI | EXACT_MATCH | 0 |
+| cas:76924-95-3 | N-(3-oxohexanoyl)-DL-homoserine lactone | CHEBI:29640 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:28037 | N-Acetyl-D-galactosamine | CHEBI:28037 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15784 | N-Acetyl-D-glucosamine 6-phosphate sodium salt | CHEBI:15784 | CHEBI | LEXICAL_MATCH | 0 |
 | CHEBI:17533 | N-Acetyl-L-Glutamic Acid | CHEBI:17533 | CHEBI | EXACT_MATCH | 2 |
@@ -1639,7 +1639,7 @@
 | CHEBI:17642 | Pentachlorophenol | CHEBI:17642 | CHEBI | EXACT_MATCH | 2 |
 | cas:15091-98-2 | Pentasodium tripolyphosphate hexahydrate | FOODON:03530244 | FOODON | NARROW_MATCH | 0 |
 | MICRO:0000178 | Peptone | MICRO:0000178 | MICRO | EXACT_MATCH | 2255 |
-| CHEBI:36999 | Perillic Acid (-) | CHEBI:36999 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:109544 | Perillic Acid (-) | CHEBI:109544 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15420 | Perillyl Alcohol | CHEBI:15420 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:25941 | peroxynitrite | CHEBI:25941 | CHEBI | EXACT_MATCH | 0 |
 | cas:578-72-3 | Peucenin | cas:578-72-3 | CAS | FALLBACK_REGISTRY | 0 |
@@ -1751,7 +1751,7 @@
 | cas:6119-47-7 | Quinine Hdrochloride | cas:6119-47-7 | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0001229 | Rabbit blood | MICRO:0001229 | MICRO | EXACT_MATCH | 9 |
 | kgmicrobe.ingredient:rabbit_serum | Rabbit serum | UBERON:0001977 | UBERON | NARROW_MATCH | 21 |
-| CHEBI:139272 | rac-3-Hydroxypentanoic Acid | CHEBI:139272 | CHEBI | EXACT_MATCH | 0 |
+| cas:10237-77-1 | rac-3-Hydroxypentanoic Acid | CHEBI:139272 | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:racemomycin_e | Racemomycin E | mesh:C019594 | MESH | NARROW_MATCH | 0 |
 | CHEBI:556075 | Radicicol | CHEBI:556075 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16634 | Raffinose | CHEBI:16634 | CHEBI | EXACT_MATCH | 8 |
@@ -1985,7 +1985,7 @@
 | CHEBI:9592 | Trans-2-methyl-2-butenoic acid | CHEBI:9592 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:32806 | trans-aconitic acid | CHEBI:32806 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:35697 | trans-Cinnamic acid | CHEBI:35697 | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:28600 | Trans,Trans-Farnesol | CHEBI:28600 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16619 | Trans,Trans-Farnesol | CHEBI:16619 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:trans_styrylacetic_acid | Trans Styrylacetic Acid | kgmicrobe.compound:trans_styrylacetic_acid | kgmicrobe.compound | PLACEHOLDER | 0 |
 | mesh:C498222 | Transvalencin A | mesh:C498222 | MESH | EXACT_MATCH | 0 |
 | CHEBI:27082 | Trehalose | CHEBI:27082 | CHEBI | EXACT_MATCH | 15 |

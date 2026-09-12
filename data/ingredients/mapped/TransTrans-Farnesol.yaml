@@ -1,18 +1,25 @@
-identifier: CHEBI:28600
+identifier: CHEBI:16619
 preferred_term: Trans,Trans-Farnesol
 ontology_mapping:
-  ontology_id: CHEBI:28600
-  ontology_label: farnesol
+  ontology_id: CHEBI:16619
+  ontology_label: (2-trans,6-trans)-farnesol
   ontology_source: CHEBI
   mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-      sqlite (cas xref). '
+    notes: 'SUPERSEDED (#456): the CAS-selected ChEBI term denotes a broader stereochemical
+      parent. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+      resolved via OAK CHEBI sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#456)
+    notes: The CultureBotHT label names the (2E,6E) isomer. CHEBI:16619 and PubChem
+      CID 445070 denote (2-trans,6-trans)-farnesol, while the old CHEBI:28600 target
+      and CAS 4602-84-0 are stereo-unspecified. The record now maps exactly to CHEBI:16619
+      instead of the old CHEBI:28600 stereo-unspecified parent.
 synonyms:
 - synonym_text: 3,7,11-trimethyldodeca-2,6,10-trien-1-ol
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -43,11 +50,21 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_stereochemical_identity_conflicts
+  action: REGROUNDED_STEREOCHEMICAL_FORM
+  changes: identifier CHEBI:28600 -> CHEBI:16619; ontology mapping set to EXACT_MATCH
+    CHEBI:16619 ('(2-trans,6-trans)-farnesol'). Replaced target-derived chemistry
+    and marked 1 inherited ChEBI synonym(s) as REJECTED_LABEL (#456).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 4602-84-0
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+  data_source: PubChem CID 445070
+  retrieval_date: '2026-09-12T00:00:00+00:00'
   molecular_formula: C15H26O
-  inchi: InChI=1S/C15H26O/c1-13(2)7-5-8-14(3)9-6-10-15(4)11-12-16/h7,9,11,16H,5-6,8,10,12H2,1-4H3
-  smiles: '[H]C(CO)=C(C)CCC([H])=C(C)CCC=C(C)C'
+  cas_rn: 106-28-5
+  pubchem_cid: 445070
+  inchi: InChI=1S/C15H26O/c1-13(2)7-5-8-14(3)9-6-10-15(4)11-12-16/h7,9,11,16H,5-6,8,10,12H2,1-4H3/b14-9+,15-11+
+  smiles: CC(C)=CCC/C(C)=C/CC/C(C)=C/CO
 ingredient_type: SINGLE_INGREDIENT

@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-12T03:53:56.172033+00:00
+Generated: 2026-09-12T05:34:09.687420+00:00
 Total: 2951 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -492,7 +492,7 @@ Total: 2951 ingredients
 | CHEBI:172687 | CHEBI:172687 | Allura Red AC | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:73222 | CHEBI:73222 | Aloin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:189432 | CHEBI:189432 | alpha-Lactose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:9643 | CHEBI:9643 | Alpha-Toxicarol (Dl) | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.compound:alpha-toxicarol_dl | kgmicrobe.compound:alpha-toxicarol_dl | Alpha-Toxicarol (Dl) | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | CHEBI:17925 | CHEBI:17925 | alpha-D-Glucose | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:30915 | CHEBI:30915 | alpha-ketoglutaric acid | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:74772 | CHEBI:74772 | Aluminium sulfate | MAPPED | CHEBI | EXACT_MATCH | 1 |
@@ -889,14 +889,14 @@ Total: 2951 ingredients
 | cas:372965-00-9 | CHEBI:77707 | DEANONOate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:50154 | CHEBI:50154 | DETA/NO | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:37023 | CHEBI:37023 | DL-2-Aminoadipic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:35621 | CHEBI:35621 | DL-2-Aminobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:27389 | CHEBI:27389 | DL-3-Aminoisobutyric acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| cas:2835-81-6 | CHEBI:35621 | DL-2-Aminobutyric acid | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:144-90-1 | CHEBI:27389 | DL-3-Aminoisobutyric acid | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:1219589-99-7 | CHEBI:18064 | DL-3-Hydroxyisobutyric acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:17138 | CHEBI:17138 | DL-Glyceraldehyde 3-phosphate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| cas:591-59-3 | CHEBI:17138 | DL-Glyceraldehyde 3-phosphate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:17603-42-8 | CHEBI:14336 | DL-Glycerol 1-phosphate sodium salt hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | cas:123333-71-1 | NCIT:C87334 | DL-Histidine monohydrochloride monohydrate | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.compound:dl-isocitric_acid_trisodium_salt_hydrate | CHEBI:172950 | DL-Isocitric acid trisodium salt hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:5445 | CHEBI:5445 | DL-glyceraldehyde | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| cas:56-82-6 | CHEBI:5445 | DL-glyceraldehyde | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:438545-06-3 | cas:438545-06-3 | DNA from Salmon | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:232797 | CHEBI:232797 | D-Trehalose dihydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 15 |
 | CHEBI:28197 | CHEBI:28197 | Daidzein | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1416,7 +1416,7 @@ Total: 2951 ingredients
 | cas:91-09-8 | cas:91-09-8 | methyl-alpha-D-xylopyranoside | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:612-05-5 | cas:612-05-5 | methyl-beta-D-xylopyranoside | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:1825-00-9 | cas:1825-00-9 | methyl-beta-L-arabinopyranoside | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| CHEBI:86904 | CHEBI:86904 | methyl-cis-p-coumarate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.compound:methyl-cis-p-coumarate | CHEBI:86904 | methyl-cis-p-coumarate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:19367-38-5 | CHEBI:194094 | methyl-trans-p-coumarate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:176565 | CHEBI:176565 | Methyl 3-(4-hydroxyphenyl)propionate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:181871 | CHEBI:181871 | Methyl 6-Hydroxyangolensate | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1480,7 +1480,7 @@ Total: 2951 ingredients
 | CHEBI:17268 | CHEBI:17268 | myo-Inositol | MAPPED | CHEBI | EXACT_MATCH | 59 |
 | CHEBI:18152 | CHEBI:18152 | Myricetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28875 | CHEBI:28875 | Myristic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:29640 | CHEBI:29640 | N-(3-oxohexanoyl)-DL-homoserine lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| cas:76924-95-3 | CHEBI:29640 | N-(3-oxohexanoyl)-DL-homoserine lactone | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:28037 | CHEBI:28037 | N-Acetyl-D-galactosamine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15784 | CHEBI:15784 | N-Acetyl-D-glucosamine 6-phosphate sodium salt | MAPPED | CHEBI | LEXICAL_MATCH | 0 |
 | CHEBI:17533 | CHEBI:17533 | N-Acetyl-L-Glutamic Acid | MAPPED | CHEBI | EXACT_MATCH | 2 |
@@ -1674,7 +1674,7 @@ Total: 2951 ingredients
 | CHEBI:17642 | CHEBI:17642 | Pentachlorophenol | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | cas:15091-98-2 | FOODON:03530244 | Pentasodium tripolyphosphate hexahydrate | MAPPED | FOODON | NARROW_MATCH | 0 |
 | MICRO:0000178 | MICRO:0000178 | Peptone | MAPPED | MICRO | EXACT_MATCH | 2255 |
-| CHEBI:36999 | CHEBI:36999 | Perillic Acid (-) | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:109544 | CHEBI:109544 | Perillic Acid (-) | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15420 | CHEBI:15420 | Perillyl Alcohol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:25941 | CHEBI:25941 | peroxynitrite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:578-72-3 | cas:578-72-3 | Peucenin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
@@ -1787,7 +1787,7 @@ Total: 2951 ingredients
 | cas:6119-47-7 | cas:6119-47-7 | Quinine Hdrochloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0001229 | MICRO:0001229 | Rabbit blood | MAPPED | MICRO | EXACT_MATCH | 9 |
 | kgmicrobe.ingredient:rabbit_serum | UBERON:0001977 | Rabbit serum | MAPPED | UBERON | NARROW_MATCH | 21 |
-| CHEBI:139272 | CHEBI:139272 | rac-3-Hydroxypentanoic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| cas:10237-77-1 | CHEBI:139272 | rac-3-Hydroxypentanoic Acid | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:racemomycin_e | mesh:C019594 | Racemomycin E | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:556075 | CHEBI:556075 | Radicicol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16634 | CHEBI:16634 | Raffinose | MAPPED | CHEBI | EXACT_MATCH | 8 |
@@ -2032,7 +2032,7 @@ Total: 2951 ingredients
 | CHEBI:9592 | CHEBI:9592 | Trans-2-methyl-2-butenoic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:32806 | CHEBI:32806 | trans-aconitic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:35697 | CHEBI:35697 | trans-Cinnamic acid | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| CHEBI:28600 | CHEBI:28600 | Trans,Trans-Farnesol | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:16619 | CHEBI:16619 | Trans,Trans-Farnesol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:trans_styrylacetic_acid | kgmicrobe.compound:trans_styrylacetic_acid | Trans Styrylacetic Acid | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | mesh:C498222 | mesh:C498222 | Transvalencin A | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:27082 | CHEBI:27082 | Trehalose | MAPPED | CHEBI | EXACT_MATCH | 15 |
