@@ -105,9 +105,12 @@ qc-sssom:
 # from, so it went three weeks and forty PRs stale unnoticed (#359) and ended up
 # disagreeing with the SSSOM about record identity (#624). A rebuild needs three
 # checkouts, but staleness is visible from MIM alone: the snapshot is stale
-# exactly when data/ingredients has moved since it was built.
+# exactly when data/ingredients has moved since it was built. The check is a
+# drift budget, not absolute freshness: failing on a single edited record would
+# red-light every curation PR, and the only remedy needs three checkouts (#654).
+# Pass --max-drift to change the budget.
 #
-# Fail if the unified snapshot no longer reflects MIM's records
+# Fail if the unified snapshot has drifted past its budget (25 records)
 check-unified-freshness:
     uv run --frozen python scripts/check_unified_freshness.py --check
 
