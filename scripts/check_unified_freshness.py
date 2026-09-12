@@ -220,7 +220,10 @@ def check(
         problems.append(
             f"{drift} record files have changed since the snapshot was built "
             f"(budget {max_drift}; stamped at {recorded.get('mim_rev')}). This is the "
-            f"unbounded drift #359 describes, not one curation batch."
+            f"unbounded drift #359 describes, not one curation batch.\n"
+            f"    This counts drift accumulated across everything merged since the "
+            f"stamp, so it is usually not about the PR that first sees it: the "
+            f"remedy is a rebuild, by anyone, not a change to your records."
         )
     else:
         print(
