@@ -7,10 +7,15 @@ from collections.abc import Mapping
 
 AIR_DRIED_GARDEN_SOIL_ID = "kgmicrobe.ingredient:air-dried_garden_soil"
 BETAINE_HYDRATE_ID = "CHEBI:91242"
+CALCIUM_2_ID = "CHEBI:29108"
+COPPER_ID = "kgmicrobe.compound:copper"
 DISODIUM_2_OXOGLUTARATE_ID = "kgmicrobe.compound:na2_alpha-ketoglutarate"
 ELEMENTAL_SULFUR_ID = "CHEBI:33403"
 EMIM_LYSINE_ID = "kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine"
+IRON_0_ID = "CHEBI:82664"
 LIPOIC_ACID_ID = "CHEBI:16494"
+MAGNESIUM_2_ID = "CHEBI:18420"
+MOLYBDENUM_ID = "kgmicrobe.compound:molybdenum"
 SODIUM_CROTONATE_ID = "kgmicrobe.compound:na-crotonate"
 TETRAMETHYL_AMMONIUM_ID = "kgmicrobe.compound:tetramethyl_ammonium"
 TRACE_ELEMENT_SOLUTION_ID = "kgmicrobe.ingredient:trace_element_solution"
@@ -52,6 +57,11 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("Trace element solution"): TRACE_ELEMENT_SOLUTION_ID,
     _source_label_key("Trace element solution SL-10"): TRACE_ELEMENT_SOLUTION_SL_10_ID,
     _source_label_key("Zeikus trace element solution"): ZEIKUS_TRACE_ELEMENT_SOLUTION_ID,
+    _source_label_key("Calcium"): CALCIUM_2_ID,
+    _source_label_key("Copper"): COPPER_ID,
+    _source_label_key("Iron"): IRON_0_ID,
+    _source_label_key("Magnesium"): MAGNESIUM_2_ID,
+    _source_label_key("Molybdenum"): MOLYBDENUM_ID,
 }
 
 

@@ -1,22 +1,19 @@
-identifier: CHEBI:22984
+identifier: CHEBI:29108
 preferred_term: Calcium
 ontology_mapping:
-  ontology_id: CHEBI:22984
-  ontology_label: calcium atom
+  ontology_id: CHEBI:29108
+  ontology_label: calcium(2+)
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
-  match_level: NORMALIZED
+  mapping_quality: EXACT_MATCH
   evidence:
-  - evidence_type: LEXICAL_MATCH
-    source: culturemech:output/ingredient_occurrences.tsv
-    notes: Surface form appears in CultureMech's occurrence table and was grounded
-      to CHEBI:22984 on an exact match against an exact ontology synonym. Restored
-      from the record's own creation history (#541); the residual importer wrote this
-      provenance only into the published SSSOM.
-mapping_status: MAPPED
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#631)
+    notes: CultureMech's source rows explicitly carry KEGG:ca2, so the source label
+      denotes dissolved Ca2+ rather than a neutral calcium atom.
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 2
-  media_count: 2
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-08-30T10:35:03.361102+00:00'
   curator: claude_culturemech_residual_grounding
@@ -35,3 +32,14 @@ curation_history:
     a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
     row (#541).
   llm_assisted: false
+- timestamp: '2026-09-11T23:46:36.251078+00:00'
+  curator: fix_element_atom_overclaims
+  action: MERGED_INTO
+  changes: Merged into CHEBI:29108 'Calcium(2+)'; transferred 2 CultureMech occurrence(s)
+    and dropped the atom-grounded SSSOM row. CultureMech's source rows explicitly
+    carry KEGG:ca2, so the source label denotes dissolved Ca2+ rather than a neutral
+    calcium atom. (#631).
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: false
+representative: CHEBI:29108
