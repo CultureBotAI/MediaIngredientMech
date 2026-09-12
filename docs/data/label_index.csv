@@ -845,7 +845,6 @@ label,match_type,identifier,preferred_term,ontology_id,mapping_status,ambiguity
 2-hydroxyphenol,synonym,CHEBI:18135,Pyrocatechol,CHEBI:18135,MAPPED,unique
 2-hydroxypropane,synonym,CHEBI:17824,Isopropyl alcohol,CHEBI:17824,MAPPED,unique
 "2-hydroxypropane-1,2,3-tricarboxylate",synonym,CHEBI:16947,Citrate,CHEBI:16947,MAPPED,unique
-"2-hydroxypropane-1,2,3-tricarboxylic acid",synonym,CHEBI:30769,Citric Acid•H2O,CHEBI:30769,MAPPED,unique
 "2-hydroxypropane-1,2,3-tricarboxylic acid",synonym,CHEBI:30769,Citric acid,CHEBI:30769,MAPPED,unique
 2-hydroxypropanoate,synonym,CHEBI:24996,Lactate,CHEBI:24996,MAPPED,unique
 "2-Hydroxypropanoic acid, monosodium salt",synonym,CHEBI:75228,Sodium lactate,CHEBI:75228,MAPPED,unique
@@ -2994,16 +2993,18 @@ citrate(1-),synonym,CHEBI:31404,Citric acid x H2O,CHEBI:31404,MAPPED,unique
 citrate(3-),ontology_label,CHEBI:16947,Citrate,CHEBI:16947,MAPPED,unique
 Citric acid,preferred_term,CHEBI:30769,Citric acid,CHEBI:30769,MAPPED,resolved:owned
 Citric Acid,synonym,CHEBI:53258,Trisodium citrate,CHEBI:53258,MAPPED,resolved:owned
-citric acid,ontology_label,CHEBI:30769,Citric Acid•H2O,CHEBI:30769,MAPPED,resolved:owned
 Citric acid . H2O,synonym,CHEBI:31404,Citric acid x H2O,CHEBI:31404,MAPPED,unique
 citric acid diammonium salt,synonym,CHEBI:63076,(NH4)2 citrate,CHEBI:63076,MAPPED,unique
 Citric acid monohydrate,synonym,CHEBI:31404,Citric acid x H2O,CHEBI:31404,MAPPED,unique
+Citric acid monohydrate,ontology_label,CHEBI:31404,Citric Acid•H2O,CHEBI:31404,REJECTED,unique
 citric acid triammonium salt,synonym,CHEBI:63037,(NH4)3 citrate,CHEBI:63037,MAPPED,unique
 citric acid trisodium salt,synonym,CHEBI:53258,Trisodium citrate,CHEBI:53258,MAPPED,unique
 Citric acid x H2O,preferred_term,CHEBI:31404,Citric acid x H2O,CHEBI:31404,MAPPED,unique
 Citric acid·H2O,synonym,CHEBI:31404,Citric acid x H2O,CHEBI:31404,MAPPED,unique
-Citric Acid•H2O,preferred_term,CHEBI:30769,Citric Acid•H2O,CHEBI:30769,MAPPED,unique
-Citric Acid•H2O(Fisher A 104),synonym,CHEBI:30769,Citric Acid•H2O,CHEBI:30769,MAPPED,unique
+Citric Acid•H2O,preferred_term,CHEBI:31404,Citric Acid•H2O,CHEBI:31404,REJECTED,unique
+Citric Acid•H2O,synonym,CHEBI:31404,Citric acid x H2O,CHEBI:31404,MAPPED,unique
+Citric Acid•H2O(Fisher A 104),synonym,CHEBI:31404,Citric acid x H2O,CHEBI:31404,MAPPED,unique
+Citric Acid•H2O(Fisher A 104),synonym,CHEBI:31404,Citric Acid•H2O,CHEBI:31404,REJECTED,unique
 Citronensaeure,synonym,CHEBI:30769,Citric acid,CHEBI:30769,MAPPED,unique
 "Citronensaeure,Trinatrium-Salz-Dihydrat",synonym,CHEBI:32142,Sodium Citrate,CHEBI:32142,REJECTED,unique
 CITRULLINE,synonym,CHEBI:16349,L-Citrulline,CHEBI:16349,MAPPED,unique
@@ -4298,12 +4299,8 @@ Ferrous citrate,preferred_term,mesh:C016600,Ferrous citrate,mesh:C016600,MAPPED,
 Ferrous Ion,preferred_term,CHEBI:29033,Ferrous Ion,CHEBI:29033,MAPPED,unique
 Ferrous sulfate,synonym,CHEBI:75832,FeSO4,CHEBI:75832,MAPPED,unique
 ferrous sulfate (anh.),synonym,CHEBI:75832,FeSO4,CHEBI:75832,MAPPED,unique
-ferrous sulfate (anhydrous),synonym,CHEBI:75832,FeSO4 x 5 H2O,CHEBI:75832,MAPPED,conflict:different_substances
-ferrous sulfate (anhydrous),synonym,CHEBI:75832,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,conflict:different_substances
-ferrous sulfate (anhydrous),synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,conflict:different_substances
-ferrous sulfate anhydrous,synonym,CHEBI:75832,FeSO4 x 5 H2O,CHEBI:75832,MAPPED,conflict:different_substances
-ferrous sulfate anhydrous,synonym,CHEBI:75832,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,conflict:different_substances
-ferrous sulfate anhydrous,synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,conflict:different_substances
+ferrous sulfate (anhydrous),synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,unique
+ferrous sulfate anhydrous,synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,unique
 ferrous sulfate heptahydrate,synonym,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
 ferrous sulfate monohydrate,synonym,CHEBI:75834,FeSO4 x H2O,CHEBI:75834,MAPPED,unique
 ferrous sulfate.7H2O,synonym,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
@@ -4311,16 +4308,14 @@ ferroverdin,preferred_term,CHEBI:219729,ferroverdin,CHEBI:219729,MAPPED,unique
 Ferulate,preferred_term,CHEBI:17620,Ferulate,CHEBI:17620,MAPPED,unique
 Ferulic Acid,preferred_term,CHEBI:193350,Ferulic Acid,CHEBI:193350,MAPPED,unique
 FeSO .7H O,synonym,CHEBI:75832,FeSO4,CHEBI:75832,MAPPED,unique
-FeSO .7H O,synonym,CHEBI:75832,FeSO4 x 5 H2O,CHEBI:75832,MAPPED,unique
-FeSO .7H O,synonym,CHEBI:75832,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,unique
 FeSO4,preferred_term,CHEBI:75832,FeSO4,CHEBI:75832,MAPPED,unique
 FeSO4 . 7H2O,synonym,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
 FeSO4 7H2O,synonym,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
-FeSO4 x 5 H2O,preferred_term,CHEBI:75832,FeSO4 x 5 H2O,CHEBI:75832,MAPPED,resolved:owned
+FeSO4 x 5 H2O,preferred_term,kgmicrobe.compound:feso4_x_5_h2o,FeSO4 x 5 H2O,CHEBI:75832,MAPPED,resolved:owned
 FeSO4 x 5 H2O,synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,resolved:owned
-FeSO4 x 6 H2O,preferred_term,CHEBI:75832,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,resolved:owned
+FeSO4 x 6 H2O,preferred_term,kgmicrobe.compound:feso4_x_6_h2o,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,resolved:owned
 FeSO4 x 6 H2O,synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,resolved:owned
-FeSO4 x 6H2O,synonym,CHEBI:75832,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,conflict:different_substances
+FeSO4 x 6H2O,synonym,kgmicrobe.compound:feso4_x_6_h2o,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,conflict:different_substances
 FeSO4 x 6H2O,synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,conflict:different_substances
 FeSO4 x 7 H2O,preferred_term,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
 FeSO4 x 7H2O,preferred_term,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,unique
@@ -4333,11 +4328,11 @@ FeSO4 ⋅ 7H2O,synonym,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
 FeSO4.7H2O,synonym,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
 FeSO4.H2O,synonym,CHEBI:75834,FeSO4 x H2O,CHEBI:75834,MAPPED,unique
 FeSO43 x n H2O,preferred_term,UNMAPPED_0385,FeSO43 x n H2O,,UNMAPPED,unique
-FeSO4·6H2O,synonym,CHEBI:75832,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,conflict:different_substances
+FeSO4·6H2O,synonym,kgmicrobe.compound:feso4_x_6_h2o,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,conflict:different_substances
 FeSO4·6H2O,synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,conflict:different_substances
 FeSO4·7H2O,synonym,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
 FeSO4⋅7H2O,synonym,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
-FeSO4・6H2O,synonym,CHEBI:75832,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,conflict:different_substances
+FeSO4・6H2O,synonym,kgmicrobe.compound:feso4_x_6_h2o,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,conflict:different_substances
 FeSO4・6H2O,synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,conflict:different_substances
 FeSO4・7H2O,synonym,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
 FeSO4・H2O,synonym,CHEBI:75834,FeSO4 x H2O,CHEBI:75834,MAPPED,unique
@@ -5002,12 +4997,8 @@ iron(2+) chloride,synonym,CHEBI:30812,FeCl2,CHEBI:30812,MAPPED,unique
 "Iron(2+) chloride, tetrahydrate",synonym,CHEBI:86249,FeCl2 x 4 H2O,CHEBI:86249,MAPPED,unique
 iron(2+) disulfide,synonym,CHEBI:86471,Pyrite,CHEBI:86471,MAPPED,unique
 iron(2+) sulfate,synonym,CHEBI:75832,FeSO4,CHEBI:75832,MAPPED,conflict:different_substances
-iron(2+) sulfate,synonym,CHEBI:75832,FeSO4 x 5 H2O,CHEBI:75832,MAPPED,conflict:different_substances
-iron(2+) sulfate,synonym,CHEBI:75832,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,conflict:different_substances
 iron(2+) sulfate,synonym,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,conflict:different_substances
 iron(2+) sulfate (anh.),synonym,CHEBI:75832,FeSO4,CHEBI:75832,MAPPED,unique
-iron(2+) sulfate (anhydrous),synonym,CHEBI:75832,FeSO4 x 5 H2O,CHEBI:75832,MAPPED,unique
-iron(2+) sulfate (anhydrous),synonym,CHEBI:75832,FeSO4 x 6 H2O,CHEBI:75832,MAPPED,unique
 iron(2+) sulfate (anhydrous),ontology_label,CHEBI:75832,FeSO4,CHEBI:75832,MAPPED,unique
 iron(2+) sulfate heptahydrate,ontology_label,CHEBI:75836,FeSO4 x 7 H2O,CHEBI:75836,MAPPED,unique
 iron(2+) sulfate heptahydrate,ontology_label,CHEBI:75836,FeSO4 x 7H2O,CHEBI:75836,REJECTED,unique
@@ -5618,7 +5609,6 @@ Magnesium hydrogen citrate,synonym,CHEBI:131391,Mg-citrate,CHEBI:131391,MAPPED,u
 magnesium nitrate hexahydrate,preferred_term,cas:13446-18-9,magnesium nitrate hexahydrate,CHEBI:64736,MAPPED,unique
 magnesium oxide,ontology_label,CHEBI:31794,MgO,CHEBI:31794,MAPPED,unique
 Magnesium sulfate,preferred_term,CHEBI:32599,Magnesium sulfate,CHEBI:32599,MAPPED,unique
-magnesium sulfate,ontology_label,CHEBI:32599,MgSO4 x 6 H2O,CHEBI:32599,MAPPED,unique
 Magnesium sulfate (1:1),synonym,CHEBI:32599,Magnesium sulfate,CHEBI:32599,MAPPED,unique
 magnesium sulfate (1:1) heptahydrate,synonym,CHEBI:31795,MgSO4 x 7 H2O,CHEBI:31795,MAPPED,unique
 magnesium sulfate (1:1) heptahydrate,synonym,CHEBI:31795,MgSO4·H2O,CHEBI:31795,MAPPED,unique
@@ -5695,8 +5685,7 @@ manganese dioxide,synonym,CHEBI:136511,MnO2,CHEBI:136511,MAPPED,unique
 Manganese monosulfate,synonym,CHEBI:86360,MnSO4,CHEBI:86360,MAPPED,unique
 manganese peroxide,synonym,CHEBI:136511,MnO2,CHEBI:136511,MAPPED,unique
 Manganese sulfate,synonym,CHEBI:86364,MnSO4 x H2O,CHEBI:86364,MAPPED,unique
-Manganese sulfate anhydrous,synonym,CHEBI:86360,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
-Manganese sulfate anhydrous,synonym,CHEBI:86364,MnSO4 x 1 H2O,CHEBI:86364,REJECTED,conflict:different_substances
+Manganese sulfate anhydrous,synonym,CHEBI:86364,MnSO4 x 1 H2O,CHEBI:86364,REJECTED,unique
 Manganese sulfate hydrate,synonym,CHEBI:86364,MnSO4 x H2O,CHEBI:86364,MAPPED,unique
 Manganese sulfate monohydrate,synonym,CHEBI:86364,MnSO4 x H2O,CHEBI:86364,MAPPED,unique
 Manganese sulfate tetrahydrate,synonym,CHEBI:86358,MnSO4 x 4 H2O,CHEBI:86358,MAPPED,unique
@@ -5709,7 +5698,6 @@ manganese(2+) chloride--water (1/2),synonym,CHEBI:131395,MnCl2 x 2 H2O,CHEBI:131
 manganese(2+) chloride--water (1/4),synonym,CHEBI:86368,MnCl2 x 4 H2O,CHEBI:86368,MAPPED,unique
 manganese(2+) dichloride,synonym,CHEBI:63041,MnCl2,CHEBI:63041,MAPPED,unique
 manganese(2+) sulfate,synonym,CHEBI:86360,MnSO4,CHEBI:86360,MAPPED,conflict:different_substances
-manganese(2+) sulfate,synonym,CHEBI:86360,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
 manganese(2+) sulfate,synonym,CHEBI:86364,MnSO4 x 1 H2O,CHEBI:86364,REJECTED,conflict:different_substances
 manganese(2+) sulfate dihydrate,synonym,CHEBI:86356,MnSO4 x 2 H2O,CHEBI:86356,MAPPED,unique
 manganese(2+) sulfate hexahydrate,synonym,CHEBI:131523,MnSO4 x 6 H2O,CHEBI:131523,MAPPED,unique
@@ -5734,7 +5722,6 @@ manganese(II) chloride dihydrate,synonym,CHEBI:131395,MnCl2 x 2 H2O,CHEBI:131395
 manganese(II) chloride tetrahydrate,synonym,CHEBI:86368,MnCl2 x 4 H2O,CHEBI:86368,MAPPED,unique
 manganese(II) dichloride,synonym,CHEBI:63041,MnCl2,CHEBI:63041,MAPPED,unique
 manganese(II) sulfate,synonym,CHEBI:86360,MnSO4,CHEBI:86360,MAPPED,unique
-manganese(II) sulfate,ontology_label,CHEBI:86360,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,unique
 manganese(II) sulfate dihydrate,synonym,CHEBI:86356,MnSO4 x 2 H2O,CHEBI:86356,MAPPED,unique
 manganese(II) sulfate hexahydrate,synonym,CHEBI:131523,MnSO4 x 6 H2O,CHEBI:131523,MAPPED,unique
 manganese(II) sulfate monohydrate,synonym,CHEBI:86364,MnSO4 x H2O,CHEBI:86364,MAPPED,unique
@@ -5939,7 +5926,6 @@ Mg(II) acetate,synonym,CHEBI:62964,Magnesium acetate,CHEBI:62964,MAPPED,unique
 Mg(NO3)2 x 6 H2O,synonym,cas:13446-18-9,magnesium nitrate hexahydrate,CHEBI:64736,MAPPED,unique
 Mg-citrate,preferred_term,CHEBI:131391,Mg-citrate,CHEBI:131391,MAPPED,unique
 Mg2SO4,synonym,CHEBI:32599,Magnesium sulfate,CHEBI:32599,MAPPED,unique
-Mg2SO4,synonym,CHEBI:32599,MgSO4 x 6 H2O,CHEBI:32599,MAPPED,unique
 MG[18:1(omega-9)],synonym,CHEBI:75937,Glycerol mono-oleate,CHEBI:75937,MAPPED,unique
 MgCl 2,synonym,CHEBI:86345,Magnesium chloride,CHEBI:86345,MAPPED,unique
 MgCl*6H2O,synonym,CHEBI:86345,Magnesium chloride,CHEBI:86345,MAPPED,unique
@@ -5991,7 +5977,6 @@ MgO,preferred_term,CHEBI:31794,MgO,CHEBI:31794,MAPPED,unique
 MgSO,synonym,CHEBI:31795,MgSO4 x 7 H2O,CHEBI:31795,MAPPED,unique
 MgSO,synonym,CHEBI:31795,MgSO47H2O,CHEBI:31795,REJECTED,unique
 MgSO .7H O,synonym,CHEBI:32599,Magnesium sulfate,CHEBI:32599,MAPPED,unique
-MgSO .7H O,synonym,CHEBI:32599,MgSO4 x 6 H2O,CHEBI:32599,MAPPED,unique
 MgSO .7H2O,synonym,CHEBI:31795,MgSO4 x 7 H2O,CHEBI:31795,MAPPED,unique
 MgSO 4,synonym,CHEBI:31795,MgSO4 x 7 H2O,CHEBI:31795,MAPPED,unique
 MgSO 4,synonym,CHEBI:31795,MgSO47H2O,CHEBI:31795,REJECTED,unique
@@ -6007,9 +5992,9 @@ MgSO2·7H2O,synonym,CHEBI:31795,MgSO4 x 7 H2O,CHEBI:31795,MAPPED,unique
 MgSO4,synonym,CHEBI:32599,Magnesium sulfate,CHEBI:32599,MAPPED,unique
 MgSO4 . 7H2O,synonym,CHEBI:31795,MgSO4·7H2O,CHEBI:31795,REJECTED,unique
 MgSO4 . H2O,synonym,CHEBI:31795,MgSO4·7H2O,CHEBI:31795,REJECTED,unique
-MgSO4 x 6 H2O,preferred_term,CHEBI:32599,MgSO4 x 6 H2O,CHEBI:32599,MAPPED,resolved:owned
+MgSO4 x 6 H2O,preferred_term,kgmicrobe.compound:mgso4_x_6_h2o,MgSO4 x 6 H2O,CHEBI:32599,MAPPED,resolved:owned
 MgSO4 x 6 H2O,synonym,CHEBI:31795,MgSO4·7H2O,CHEBI:31795,REJECTED,resolved:owned
-MgSO4 x 6H2O,synonym,CHEBI:32599,MgSO4 x 6 H2O,CHEBI:32599,MAPPED,conflict:different_substances
+MgSO4 x 6H2O,synonym,kgmicrobe.compound:mgso4_x_6_h2o,MgSO4 x 6 H2O,CHEBI:32599,MAPPED,conflict:different_substances
 MgSO4 x 6H2O,synonym,CHEBI:31795,MgSO4·7H2O,CHEBI:31795,REJECTED,conflict:different_substances
 MgSO4 x 7 H20,synonym,CHEBI:31795,MgSO4 x 7 H2O,CHEBI:31795,MAPPED,unique
 MgSO4 x 7 H20,synonym,CHEBI:31795,MgSO47H2O,CHEBI:31795,REJECTED,unique
@@ -6030,6 +6015,7 @@ MgSO47H2O,preferred_term,CHEBI:31795,MgSO47H2O,CHEBI:31795,REJECTED,unique
 MgSO47H2O,synonym,CHEBI:31795,MgSO4 x 7 H2O,CHEBI:31795,MAPPED,unique
 MgSO4x7H2O,synonym,CHEBI:31795,MgSO4 x 7 H2O,CHEBI:31795,MAPPED,unique
 MgSO4x7H2O,synonym,CHEBI:31795,MgSO4·H2O,CHEBI:31795,MAPPED,unique
+MgSO4·6H2O,synonym,kgmicrobe.compound:mgso4_x_6_h2o,MgSO4 x 6 H2O,CHEBI:32599,MAPPED,unique
 MgSO4·7H2O,preferred_term,CHEBI:31795,MgSO4·7H2O,CHEBI:31795,REJECTED,unique
 MgSO4·7H2O,synonym,CHEBI:31795,MgSO4 x 7 H2O,CHEBI:31795,MAPPED,unique
 MgSO4·H2O,preferred_term,CHEBI:31795,MgSO4·H2O,CHEBI:31795,MAPPED,unique
@@ -6096,7 +6082,7 @@ MnO2,preferred_term,CHEBI:136511,MnO2,CHEBI:136511,MAPPED,unique
 MnSO4,preferred_term,CHEBI:86360,MnSO4,CHEBI:86360,MAPPED,unique
 MnSO4 . 2H2O,synonym,CHEBI:86356,MnSO4 x 2 H2O,CHEBI:86356,MAPPED,unique
 MnSO4 . 5H2O,synonym,CHEBI:131524,MnSO4 x 5 H2O,CHEBI:131524,MAPPED,unique
-MnSO4 . 7H2O,synonym,CHEBI:86360,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
+MnSO4 . 7H2O,synonym,kgmicrobe.compound:mnso4_x_7_h2o,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
 MnSO4 . 7H2O,synonym,CHEBI:86364,MnSO4 x 1 H2O,CHEBI:86364,REJECTED,conflict:different_substances
 MnSO4 . H2O,synonym,CHEBI:86364,MnSO4 x H2O,CHEBI:86364,MAPPED,unique
 MnSO4 x 1 H2O,preferred_term,CHEBI:86364,MnSO4 x 1 H2O,CHEBI:86364,REJECTED,unique
@@ -6107,9 +6093,9 @@ MnSO4 x 2 H2O (1% solution),synonym,CHEBI:86356,MnSO4 x 2 H2O,CHEBI:86356,MAPPED
 MnSO4 x 4 H2O,preferred_term,CHEBI:86358,MnSO4 x 4 H2O,CHEBI:86358,MAPPED,unique
 MnSO4 x 5 H2O,preferred_term,CHEBI:131524,MnSO4 x 5 H2O,CHEBI:131524,MAPPED,unique
 MnSO4 x 6 H2O,preferred_term,CHEBI:131523,MnSO4 x 6 H2O,CHEBI:131523,MAPPED,unique
-MnSO4 x 7 H2O,preferred_term,CHEBI:86360,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,resolved:owned
+MnSO4 x 7 H2O,preferred_term,kgmicrobe.compound:mnso4_x_7_h2o,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,resolved:owned
 MnSO4 x 7 H2O,synonym,CHEBI:86364,MnSO4 x 1 H2O,CHEBI:86364,REJECTED,resolved:owned
-MnSO4 x 7H2O,synonym,CHEBI:86360,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
+MnSO4 x 7H2O,synonym,kgmicrobe.compound:mnso4_x_7_h2o,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
 MnSO4 x 7H2O,synonym,CHEBI:86364,MnSO4 x 1 H2O,CHEBI:86364,REJECTED,conflict:different_substances
 MnSO4 x H2O,preferred_term,CHEBI:86364,MnSO4 x H2O,CHEBI:86364,MAPPED,unique
 MnSO4 · 4 H2O,synonym,CHEBI:86358,MnSO4 x 4 H2O,CHEBI:86358,MAPPED,unique
@@ -6119,13 +6105,13 @@ MnSO4.2H2O,synonym,CHEBI:86356,MnSO4 x 2 H2O,CHEBI:86356,MAPPED,unique
 MnSO4.4H2O,synonym,CHEBI:86358,MnSO4 x 4 H2O,CHEBI:86358,MAPPED,unique
 MnSO4.5H2O,synonym,CHEBI:131524,MnSO4 x 5 H2O,CHEBI:131524,MAPPED,unique
 MnSO4.6H2O,synonym,CHEBI:131523,MnSO4 x 6 H2O,CHEBI:131523,MAPPED,unique
-MnSO4.7H2O,synonym,CHEBI:86360,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
+MnSO4.7H2O,synonym,kgmicrobe.compound:mnso4_x_7_h2o,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
 MnSO4.7H2O,synonym,CHEBI:86364,MnSO4 x 1 H2O,CHEBI:86364,REJECTED,conflict:different_substances
 MnSO4.H2O,synonym,CHEBI:86364,MnSO4 x H2O,CHEBI:86364,MAPPED,unique
 MnSO4·2H2O,synonym,CHEBI:86356,MnSO4 x 2 H2O,CHEBI:86356,MAPPED,unique
 MnSO4·4H2O,synonym,CHEBI:86358,MnSO4 x 4 H2O,CHEBI:86358,MAPPED,unique
 MnSO4·5H2O,synonym,CHEBI:131524,MnSO4 x 5 H2O,CHEBI:131524,MAPPED,unique
-MnSO4·7H2O,synonym,CHEBI:86360,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
+MnSO4·7H2O,synonym,kgmicrobe.compound:mnso4_x_7_h2o,MnSO4 x 7 H2O,CHEBI:86360,MAPPED,conflict:different_substances
 MnSO4·7H2O,synonym,CHEBI:86364,MnSO4 x 1 H2O,CHEBI:86364,REJECTED,conflict:different_substances
 MnSO4·H2O,synonym,CHEBI:86364,MnSO4 x H2O,CHEBI:86364,MAPPED,unique
 MnSO4⋅H2O,synonym,CHEBI:86364,MnSO4 x H2O,CHEBI:86364,MAPPED,unique

@@ -9,6 +9,7 @@ records.
 """
 
 import csv
+from collections import defaultdict
 from pathlib import Path
 
 import pytest
@@ -18,6 +19,33 @@ ROOT = Path(__file__).parent.parent
 CURATED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 MEMBERSHIP = ROOT / "mappings" / "culturemech_recipe_membership.tsv"
+
+LOCAL_SULFATE_HYDRATES = {
+    "FeSO4 x 5 H2O": (
+        "kgmicrobe.compound:feso4_x_5_h2o",
+        "CHEBI:75832",
+        "Fe.O4S.5H2O",
+        4,
+    ),
+    "FeSO4 x 6 H2O": (
+        "kgmicrobe.compound:feso4_x_6_h2o",
+        "CHEBI:75832",
+        "Fe.O4S.6H2O",
+        23,
+    ),
+    "MgSO4 x 6 H2O": (
+        "kgmicrobe.compound:mgso4_x_6_h2o",
+        "CHEBI:32599",
+        "Mg.O4S.6H2O",
+        35,
+    ),
+    "MnSO4 x 7 H2O": (
+        "kgmicrobe.compound:mnso4_x_7_h2o",
+        "CHEBI:86360",
+        "Mn.O4S.7H2O",
+        16,
+    ),
+}
 
 
 @pytest.fixture(scope="module")
@@ -401,3 +429,142 @@ def test_variable_sulfate_membership_rows_move_to_local_identity(
 
     assert len(new_recipes) == expected
     assert not stale_old_recipes
+
+
+@pytest.mark.parametrize("term", sorted(LOCAL_SULFATE_HYDRATES))
+def test_formula_supported_sulfates_have_local_identities(records, term):
+    identifier, parent, formula, _ = LOCAL_SULFATE_HYDRATES[term]
+    record = _by_term(records, term)
+    properties = record.get("chemical_properties") or {}
+
+    assert record["identifier"] == identifier
+    assert record["ontology_mapping"]["ontology_id"] == parent
+    assert record["ontology_mapping"]["mapping_quality"] == "NARROW_MATCH"
+    assert properties == {
+        "molecular_formula": formula,
+        "data_source": "MIM curation (#652)",
+    }
+    assert record.get("kg_microbe_node_id") not in {identifier, parent}
+
+
+@pytest.mark.parametrize("term", sorted(LOCAL_SULFATE_HYDRATES))
+def test_formula_supported_sulfate_sssom_has_parent_and_registry_rows(
+    sssom_rows,
+    term,
+):
+    identifier, parent, _, _ = LOCAL_SULFATE_HYDRATES[term]
+    rows = {row["object_id"]: row for row in sssom_rows if row["subject_label"] == term}
+
+    assert set(rows) == {parent, identifier}
+    assert rows[parent]["predicate_id"] == "skos:narrowMatch"
+    assert rows[parent]["confidence"] == "0.9"
+    assert rows[identifier]["predicate_id"] == "skos:exactMatch"
+    assert rows[identifier]["confidence"] == "0.99"
+    assert rows[identifier]["object_source"] == "kgm:compound"
+    assert "CAS:" not in rows[parent]["other"]
+    assert "CAS:" not in rows[identifier]["other"]
+
+
+def test_mgso4_middle_dot_hexahydrate_publishes_on_local_identity(sssom_rows):
+    rows = {row["object_id"]: row for row in sssom_rows if row["subject_id"] == "MIM:Mgso4_X_6_H2o"}
+
+    assert "MgSO4·6H2O" in rows["CHEBI:32599"]["other"].split("|")
+    assert "MgSO4·6H2O" in rows["kgmicrobe.compound:mgso4_x_6_h2o"]["other"].split("|")
+
+
+@pytest.mark.parametrize("term", sorted(LOCAL_SULFATE_HYDRATES))
+def test_formula_supported_sulfates_have_no_resolving_anhydrous_aliases(records, term):
+    forbidden = {
+        "CAS:7487-88-9",
+        "CAS:7720-78-7",
+        "CAS:7785-87-7",
+        "FeSO .7H O",
+        "Mg2SO4",
+        "MgSO .7H O",
+        "Manganese sulfate anhydrous",
+        "ferrous sulfate (anhydrous)",
+        "ferrous sulfate anhydrous",
+        "iron(2+) sulfate",
+        "iron(2+) sulfate (anhydrous)",
+        "manganese(2+) sulfate",
+    }
+    resolving = {
+        synonym["synonym_text"]
+        for synonym in _by_term(records, term).get("synonyms") or []
+        if synonym.get("synonym_type") != "REJECTED_LABEL"
+    }
+
+    assert resolving.isdisjoint(forbidden)
+
+
+def test_reviewed_hydrate_memberships_are_split_from_anhydrous_parents(
+    membership_rows,
+):
+    stats = defaultdict(lambda: [0, 0])
+    for row in membership_rows:
+        identifier = row["mim_identifier"]
+        stats[identifier][0] += 1
+        stats[identifier][1] += int(row["occurrences"])
+
+    for identifier, _, _, count in LOCAL_SULFATE_HYDRATES.values():
+        assert tuple(stats[identifier]) == (count, count)
+
+    assert tuple(stats["CHEBI:31404"]) == (8, 8)
+    assert tuple(stats["CHEBI:30769"]) == (110, 113)
+
+
+def test_citric_bullet_duplicate_is_merged_into_monohydrate(records, sssom_rows):
+    duplicate = _by_term(records, "Citric Acid•H2O")
+    monohydrate = _by_term(records, "Citric acid x H2O")
+    synonyms = {
+        synonym["synonym_text"]
+        for synonym in monohydrate.get("synonyms") or []
+        if synonym.get("synonym_type") != "REJECTED_LABEL"
+    }
+
+    assert duplicate["identifier"] == "CHEBI:31404"
+    assert duplicate["mapping_status"] == "REJECTED"
+    assert duplicate["ontology_mapping"]["ontology_id"] == "CHEBI:31404"
+    assert duplicate["ontology_mapping"]["ontology_label"] == "Citric acid monohydrate"
+    assert duplicate["occurrence_statistics"] == {
+        "total_occurrences": 0,
+        "media_count": 0,
+    }
+    assert monohydrate["identifier"] == "CHEBI:31404"
+    assert monohydrate["occurrence_statistics"] == {
+        "media_count": 8,
+        "total_occurrences": 8,
+    }
+    assert {"Citric Acid•H2O", "Citric Acid•H2O(Fisher A 104)"} <= synonyms
+    assert not any(row["subject_id"] == "MIM:Citric_Acidh2o" for row in sssom_rows)
+
+
+def test_reviewed_hydrate_aliases_do_not_leak_to_parent_sssom_rows(sssom_rows):
+    leaks = []
+    for row in sssom_rows:
+        if row["subject_label"] in {
+            "Citric acid x H2O",
+            *LOCAL_SULFATE_HYDRATES,
+        }:
+            continue
+        other = set((row.get("other") or "").split("|"))
+        for token in {
+            "Citric Acid•H2O",
+            "Citric Acid•H2O(Fisher A 104)",
+            "FeSO4 x 5 H2O",
+            "FeSO4 x 6 H2O",
+            "FeSO4 x 6H2O",
+            "FeSO4·6H2O",
+            "FeSO4・6H2O",
+            "MgSO4 x 6 H2O",
+            "MgSO4 x 6H2O",
+            "MgSO4·6H2O",
+            "MnSO4 . 7H2O",
+            "MnSO4 x 7 H2O",
+            "MnSO4 x 7H2O",
+            "MnSO4.7H2O",
+            "MnSO4·7H2O",
+        } & other:
+            leaks.append((row["subject_label"], token))
+
+    assert leaks == []

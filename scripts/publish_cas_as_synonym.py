@@ -41,11 +41,15 @@ would order by.
     python scripts/publish_cas_as_synonym.py            # dry-run
     python scripts/publish_cas_as_synonym.py --apply
 """
+
 from __future__ import annotations
 
 import argparse
 import csv
+import io
 import sys
+from collections.abc import Mapping
+from dataclasses import dataclass
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -57,72 +61,92 @@ SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 SYMMETRIC = {"skos:exactMatch", "skos:closeMatch"}
 
 
+@dataclass(frozen=True)
+class PublishStats:
+    added: int = 0
+    already: int = 0
+    skipped_asym: int = 0
+    no_cas: int = 0
+
+
 def cas_for(rec: dict) -> str | None:
     """The CAS a lab would order by, preferring the supplied form."""
     for sf in rec.get("supplied_form") or []:
         if (sf or {}).get("cas_rn"):
             return str(sf["cas_rn"]).strip()
-    return (str((rec.get("chemical_properties") or {}).get("cas_rn") or "").strip()
-            or None)
+    return str((rec.get("chemical_properties") or {}).get("cas_rn") or "").strip() or None
+
+
+def publish_cas_rows(text: str, recs: Mapping[str, dict]) -> tuple[str, PublishStats]:
+    lines = text.splitlines(keepends=True)
+    hdr_i = next(i for i, line in enumerate(lines) if line.startswith("subject_id"))
+    reader = csv.DictReader(lines[hdr_i:], delimiter="\t")
+
+    added, already, skipped_asym, no_cas = 0, 0, 0, 0
+    body = io.StringIO()
+    writer = csv.DictWriter(
+        body,
+        fieldnames=reader.fieldnames,
+        delimiter="\t",
+        lineterminator="\n",
+    )
+    writer.writeheader()
+
+    for row in reader:
+        if row["predicate_id"] not in SYMMETRIC:
+            skipped_asym += 1
+            writer.writerow(row)
+            continue
+        rec = recs.get(row["subject_label"])
+        cas = cas_for(rec) if rec else None
+        if not cas:
+            no_cas += 1
+            writer.writerow(row)
+            continue
+        token = f"CAS:{cas}"
+        parts = [p for p in row["other"].split("|") if p.strip()]
+        if any(p.strip().casefold() == token.casefold() for p in parts):
+            already += 1
+            writer.writerow(row)
+            continue
+        parts.append(token)
+        row["other"] = "|".join(parts)
+        added += 1
+        writer.writerow(row)
+
+    return "".join(lines[:hdr_i]) + body.getvalue(), PublishStats(
+        added=added,
+        already=already,
+        skipped_asym=skipped_asym,
+        no_cas=no_cas,
+    )
 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
-        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args(argv)
 
-    recs = {str(r.get("preferred_term")): r
-            for r in (yaml.safe_load(MAPPED.read_text(encoding="utf-8")) or {}
-                      ).get("ingredients", [])}
+    recs = {
+        str(r.get("preferred_term")): r
+        for r in (yaml.safe_load(MAPPED.read_text(encoding="utf-8")) or {}).get("ingredients", [])
+    }
 
-    lines = SSSOM.read_text(encoding="utf-8").splitlines(keepends=True)
-    hdr_i = next(i for i, l in enumerate(lines) if l.startswith("subject_id"))
-    cols = lines[hdr_i].rstrip("\n").split("\t")
-    other_i = cols.index("other")
-    pred_i, subj_i = cols.index("predicate_id"), cols.index("subject_label")
-
-    added, already, skipped_asym, no_cas = 0, 0, 0, 0
-    out = []
-    for i, line in enumerate(lines):
-        if i <= hdr_i or line.startswith("#"):
-            out.append(line)
-            continue
-        cells = line.rstrip("\n").split("\t")
-        if len(cells) <= other_i:
-            out.append(line)
-            continue
-        if cells[pred_i] not in SYMMETRIC:
-            skipped_asym += 1
-            out.append(line)
-            continue
-        rec = recs.get(cells[subj_i])
-        cas = cas_for(rec) if rec else None
-        if not cas:
-            no_cas += 1
-            out.append(line)
-            continue
-        token = f"CAS:{cas}"
-        parts = [p for p in cells[other_i].split("|") if p.strip()]
-        if any(p.strip().lower() == token.lower() for p in parts):
-            already += 1
-            out.append(line)
-            continue
-        parts.append(token)
-        cells[other_i] = "|".join(parts)
-        added += 1
-        out.append("\t".join(cells) + "\n")
-
-    if args.apply and added:
-        SSSOM.write_text("".join(out), encoding="utf-8")
+    out, stats = publish_cas_rows(SSSOM.read_text(encoding="utf-8"), recs)
+    if args.apply and stats.added:
+        SSSOM.write_text(out, encoding="utf-8")
 
     print(f"{'APPLIED' if args.apply else 'DRY RUN (re-run with --apply)'}\n")
-    print(f"  CAS added to `other` on {added} symmetric row(s)")
-    print(f"  already present   : {already}")
-    print(f"  no CAS on record  : {no_cas}")
-    print(f"  asymmetric, skipped by design: {skipped_asym}")
-    print("\n  These become synonyms on the ontology entity in kg-microbe, and "
-          "from there KGX.")
+    print(f"  CAS added to `other` on {stats.added} symmetric row(s)")
+    print(f"  already present   : {stats.already}")
+    print(f"  no CAS on record  : {stats.no_cas}")
+    print(f"  asymmetric, skipped by design: {stats.skipped_asym}")
+    kgx_message = (
+        "\n  These become synonyms on the ontology entity in kg-microbe, " "and from there KGX."
+    )
+    print(kgx_message)
     return 0
 
 

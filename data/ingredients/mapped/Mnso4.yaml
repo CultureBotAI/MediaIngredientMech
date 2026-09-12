@@ -57,8 +57,8 @@ synonyms:
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 415
-  media_count: 415
+  total_occurrences: 399
+  media_count: 399
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -130,6 +130,15 @@ curation_history:
   changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
     resolves sibling hydrate identities (#251): ''MnSO4 x n H2O'', ''MnSO4・xH2O'',
     ''MnSO4·nH2O'', ''MnSO4 x H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: REFRESHED_HYDRATE_OCCURRENCES
+  changes: occurrence_statistics 415/415 -> 399/399 after moving reviewed hydrate
+    source labels off their anhydrous parent identifiers and onto their exact hydrate
+    identities (#652).
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false

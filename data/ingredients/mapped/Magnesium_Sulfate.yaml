@@ -98,8 +98,8 @@ synonyms:
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 714
-  media_count: 712
+  total_occurrences: 679
+  media_count: 677
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -223,6 +223,24 @@ curation_history:
     x 7 H2O (0.1% w/v)'', ''MgSO4 x 7 H2O (100 mM)'', ''MgSO4 x 7 H2O solution (25%)'',
     ''MgSO4 x 7 H2O to 15.0 g).'', ''MgSO4 x 7H2O'', ''MgSO4 x7 H2O'', ''MgSO4 x7H2O'',
     ''MgSO4 · 7H2O'', ''MgSO4 ·7H2O'', ''MgSO4·6H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: REFRESHED_HYDRATE_OCCURRENCES
+  changes: occurrence_statistics 712/714 -> 680/682 after moving reviewed hydrate
+    source labels off their anhydrous parent identifiers and onto their exact hydrate
+    identities (#652).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: REFRESHED_HYDRATE_OCCURRENCES
+  changes: occurrence_statistics 680/682 -> 677/679 after moving reviewed hydrate
+    source labels off their anhydrous parent identifiers and onto their exact hydrate
+    identities (#652).
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false

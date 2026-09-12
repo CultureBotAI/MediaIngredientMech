@@ -336,6 +336,56 @@ def test_source_label_override_routes_malformed_sulfate_hydrates(mod, tmp_path):
     assert unknown == {}
 
 
+def test_source_label_override_routes_reviewed_hydrate_local_identities(mod, tmp_path):
+    source = tmp_path / "occ.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "CHEBI:30769", "Citric acid"])
+        w.writerow(["CultureMech:000002", "CHEBI:30769", "Citric Acid•H2O"])
+        w.writerow(["CultureMech:000003", "CHEBI:75832", "FeSO4 x 5 H2O"])
+        w.writerow(["CultureMech:000004", "CHEBI:75832", "FeSO4 x 6 H2O"])
+        w.writerow(["CultureMech:000005", "CHEBI:75832", "FeSO4·6H2O"])
+        w.writerow(["CultureMech:000006", "CHEBI:32599", "MgSO4 x 6 H2O"])
+        w.writerow(["CultureMech:000007", "CHEBI:32599", "MgSO4·6H2O"])
+        w.writerow(["CultureMech:000008", "CHEBI:32599", "MgSO .7H O"])
+        w.writerow(["CultureMech:000009", "CHEBI:32599", "MgSO4 x H2O"])
+        w.writerow(["CultureMech:000010", "CHEBI:86360", "MnSO4 x 7 H2O"])
+        w.writerow(["CultureMech:000011", "CHEBI:86360", "MnSO4·7H2O"])
+        w.writerow(["CultureMech:000012", "CHEBI:86360", "MnSO4 x n H2O"])
+
+    collected, unknown = mod.collect(
+        source,
+        {
+            "CHEBI:30769",
+            "CHEBI:31404",
+            "CHEBI:32599",
+            "CHEBI:75832",
+            "CHEBI:86360",
+            "kgmicrobe.compound:feso4_x_5_h2o",
+            "kgmicrobe.compound:feso4_x_6_h2o",
+            "kgmicrobe.compound:mgso4_x_6_h2o",
+            "kgmicrobe.compound:mnso4_x_7_h2o",
+        },
+    )
+
+    assert collected == {
+        ("CHEBI:30769", "CultureMech:000001"): 1,
+        ("CHEBI:31404", "CultureMech:000002"): 1,
+        ("kgmicrobe.compound:feso4_x_5_h2o", "CultureMech:000003"): 1,
+        ("kgmicrobe.compound:feso4_x_6_h2o", "CultureMech:000004"): 1,
+        ("kgmicrobe.compound:feso4_x_6_h2o", "CultureMech:000005"): 1,
+        ("kgmicrobe.compound:mgso4_x_6_h2o", "CultureMech:000006"): 1,
+        ("kgmicrobe.compound:mgso4_x_6_h2o", "CultureMech:000007"): 1,
+        ("CHEBI:32599", "CultureMech:000008"): 1,
+        ("CHEBI:32599", "CultureMech:000009"): 1,
+        ("kgmicrobe.compound:mnso4_x_7_h2o", "CultureMech:000010"): 1,
+        ("kgmicrobe.compound:mnso4_x_7_h2o", "CultureMech:000011"): 1,
+        ("CHEBI:86360", "CultureMech:000012"): 1,
+    }
+    assert unknown == {}
+
+
 def test_source_label_override_routes_sulfur_family(mod, tmp_path):
     source = tmp_path / "occ.tsv"
     with source.open("w", newline="", encoding="utf-8") as fh:

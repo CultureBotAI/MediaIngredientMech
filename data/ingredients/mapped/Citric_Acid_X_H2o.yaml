@@ -28,6 +28,12 @@ synonyms:
 - synonym_text: dihydrogen citrate
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
+- synonym_text: Citric Acid•H2O
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:30769 (#652)
+- synonym_text: Citric Acid•H2O(Fisher A 104)
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:30769 (#652)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 8
@@ -101,6 +107,15 @@ curation_history:
     no curated record did, so a rebuild would have dropped them from KGX: ''H2cit'';
     ''citrate(1-)''; ''dihydrogen citrate''. Tokens already present on the kg-microbe
     ontology node were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_hydrate_local_identities
+  action: MERGED_FROM
+  changes: Absorbed duplicate CHEBI:30769 Citric Acid•H2O; added 2 monohydrate source
+    label(s) as RAW_TEXT synonym(s) and left anhydrous or bare-parenthetical labels
+    on the rejected tombstone (#652).
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 5949-29-1
