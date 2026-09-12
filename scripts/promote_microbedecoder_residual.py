@@ -61,7 +61,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
 from mediaingredientmech.utils.yaml_handler import save_yaml
-from export_individual_records import sanitize_filename
+from export_individual_records import collect_existing_filenames, sanitize_filename
 
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
@@ -116,6 +116,10 @@ def main() -> int:
     mapped_pks = {r["identifier"] for r in mapped["ingredients"]}
     unmapped_idx = {r["identifier"]: i for i, r in enumerate(unmapped["ingredients"])}
 
+    # Indexed once over the whole ingredients tree, before any record moves
+    # between mapped/ and unmapped/, so a promotion keeps the record's name.
+    _stems = collect_existing_filenames(ROOT / "data" / "ingredients")
+
     plan, skipped, sssom_rows, to_pop = [], [], [], []
     for row in rows:
         ident, tid = row["identifier"], row["target_id"]
@@ -127,7 +131,13 @@ def main() -> int:
         quality = row["quality"]
         rec = unmapped["ingredients"][unmapped_idx[ident]]
         pref = rec.get("preferred_term", ident)
-        slug = sanitize_filename(pref)
+        # Reuse the stem the record already has rather than re-deriving it from
+        # preferred_term (#307). The corpus was written by more than one
+        # historical naming rule, so re-deriving publishes a MIM: subject no
+        # file backs; FilenameIndex is the same "never rename" lookup the
+        # exporter uses. sanitize_filename remains the answer for a record that
+        # genuinely has no file yet.
+        slug = _stems.for_record(rec) or sanitize_filename(pref)
         plan.append((ident, pref, tid, label, quality))
         rec["identifier"] = tid
         rec["ontology_mapping"] = {
