@@ -38,27 +38,33 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#344)
+    notes: mediadive.compound:632 still carries the source label 'MgCl2 x 7 H2O',
+      but no exact ontology term or CAS has been verified for that stated hydration
+      count. CHEBI:6636 (magnesium dichloride) is retained only as the closest anhydrous
+      parent while the source label keeps its local kgmicrobe.compound identity.
 synonyms:
 - synonym_text: Magnesium chloride anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2  x 76 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2 X 6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2 x 7H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MgCl2x 6 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2x7H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MgCl2 x 6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MgCl2  x 7 H2O
   synonym_type: HYDRATE_FORM
@@ -156,14 +162,20 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
-chemical_properties:
-  cas_rn: 12285-34-6
-  data_source: NCI CACTUS Chemical Identifier Resolver
-  retrieval_date: '2026-04-05T21:54:34.984632+00:00'
-  molecular_formula: 2Cl.Mg.7H2O
-  inchi: InChI=1S/2ClH.Mg/h2*1H;/q;;+2/p-2
-  smiles: '[Cl-].[Cl-].[Mg+2]'
-kg_microbe_node_id: CHEBI:6636
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+  changes: 'identifier kgmicrobe.compound:mgcl2_x_7_h2o -> kgmicrobe.compound:mgcl2_x_7_h2o;
+    mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+    {''cas_rn'': ''12285-34-6'', ''data_source'': ''NCI CACTUS Chemical Identifier
+    Resolver'', ''retrieval_date'': ''2026-04-05T21:54:34.984632+00:00'', ''molecular_formula'':
+    ''2Cl.Mg.7H2O'', ''inchi'': ''InChI=1S/2ClH.Mg/h2*1H;/q;;+2/p-2'', ''smiles'':
+    ''[Cl-].[Cl-].[Mg+2]''} and marked 5 anhydrous or wrong-hydrate synonym(s) as
+    REJECTED_LABEL for mediadive.compound:632 (#344).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: MINERAL_SOURCE

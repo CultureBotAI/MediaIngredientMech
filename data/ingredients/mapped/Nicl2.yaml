@@ -51,7 +51,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2 x 5 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 6 H2O
   synonym_type: HYDRATE_FORM
@@ -81,7 +81,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2・5H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2・6H2O
   synonym_type: HYDRATE_FORM
@@ -194,6 +194,14 @@ curation_history:
     no curated record did, so a rebuild would have dropped them from KGX: ''NiCl 2
     x 6 H2O''. Tokens already present on the kg-microbe ontology node were left out
     as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REJECTED_MALFORMED_HYDRATE_ALIASES
+  changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain on
+    their own #344 local identities only: ''NiCl2 x 5 H2O'', ''NiCl2・5H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 7718-54-9

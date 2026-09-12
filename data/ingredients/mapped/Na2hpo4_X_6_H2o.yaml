@@ -38,39 +38,45 @@ ontology_mapping:
       substance containing the anhydrous form, not a specialization of it. closeMatch
       claims similarity without subsumption. The ontology_id and the record''s own
       identifier are unchanged.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#344)
+    notes: mediadive.compound:1580 still carries the source label 'Na2HPO4 x 6 H2O',
+      but no exact ontology term or CAS has been verified for that stated hydration
+      count. CHEBI:34683 (disodium hydrogenphosphate) is retained only as the closest
+      anhydrous parent while the source label keeps its local kgmicrobe.compound identity.
 synonyms:
 - synonym_text: Na2HPO4 . 12H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 12 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 2 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 2H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 3 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 7 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x2 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4.12H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4.7H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4·12H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4·6H2O
   synonym_type: HYDRATE_FORM
@@ -171,13 +177,19 @@ curation_history:
     on x 3 and x 7, so it names a different substance than this record. ChEBI has
     no term for this hydration state, so no authoritative CAS is available and substituting
     a guess is how wrong CAS numbers spread. Absent is recoverable; wrong is not (#334).'
-kg_microbe_node_id: CHEBI:34683
-chemical_properties:
-  data_source: CultureBotHT/compounds_to_cas.csv
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: HO4P.2Na.6H2O
-  inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-  smiles: O=P([O-])([O-])O.[Na+].[Na+]
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+  changes: 'identifier kgmicrobe.compound:na2hpo4_x_6_h2o -> kgmicrobe.compound:na2hpo4_x_6_h2o;
+    mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+    {''data_source'': ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+    ''molecular_formula'': ''HO4P.2Na.6H2O'', ''inchi'': ''InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2'',
+    ''smiles'': ''O=P([O-])([O-])O.[Na+].[Na+]''} and marked 11 anhydrous or wrong-hydrate
+    synonym(s) as REJECTED_LABEL for mediadive.compound:1580 (#344).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 physicochemical_roles:
 - role: BUFFER

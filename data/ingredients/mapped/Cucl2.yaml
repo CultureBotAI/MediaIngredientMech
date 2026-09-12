@@ -42,7 +42,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: CuCl2 × 6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Cupric dichloride
   synonym_type: EXACT_SYNONYM
@@ -54,7 +54,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: merged_from_duplicate_mim_record
 - synonym_text: CuCl2 x 6 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CuCl2 · H2O
   synonym_type: HYDRATE_FORM
@@ -149,6 +149,14 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REJECTED_MALFORMED_HYDRATE_ALIASES
+  changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain on
+    their own #344 local identities only: ''CuCl2 x 6 H2O'', ''CuCl2 × 6H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 7447-39-4
   data_source: PubChem (via CHEBI:49553)

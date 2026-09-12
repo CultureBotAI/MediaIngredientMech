@@ -40,7 +40,8 @@ def edges() -> list[dict]:
 @pytest.fixture(scope="module")
 def records() -> list[dict]:
     data = yaml.safe_load(
-        (ROOT / "data/curated/mapped_ingredients.yaml").read_text(encoding="utf-8"))
+        (ROOT / "data/curated/mapped_ingredients.yaml").read_text(encoding="utf-8")
+    )
     return data["ingredients"]
 
 
@@ -83,8 +84,9 @@ def test_an_ingredient_in_more_than_fifty_recipes_is_represented(edges):
     over = {k: v for k, v in counts.items() if v > 50}
 
     assert over, "no ingredient has more than 50 memberships"
-    assert max(over.values()) > 1000, (
-        f"largest membership is {max(over.values())}; the corpus has one at 7695")
+    assert (
+        max(over.values()) > 1000
+    ), f"largest membership is {max(over.values())}; the corpus has one at 7695"
 
 
 def test_edges_are_unique_so_a_rebuild_cannot_duplicate_them(edges):
@@ -178,20 +180,21 @@ def test_an_identifier_mim_does_not_hold_is_reported_not_published(mod, tmp_path
     assert list(collected) == [("CHEBI:known", "CultureMech:000001")]
     assert unknown == {"CHEBI:absent": 1}, (
         "the absent identifier and the recipes it would have contributed must "
-        "both survive -- a bare count cannot be worked by a curator (#498)")
+        "both survive -- a bare count cannot be worked by a curator (#498)"
+    )
 
 
-def test_rejected_identifiers_are_not_known_membership_targets(
-    mod, tmp_path, monkeypatch
-):
+def test_rejected_identifiers_are_not_known_membership_targets(mod, tmp_path, monkeypatch):
     mapped = tmp_path / "mapped.yaml"
     mapped.write_text(
-        yaml.safe_dump({
-            "ingredients": [
-                {"identifier": "CHEBI:active", "mapping_status": "MAPPED"},
-                {"identifier": "CHEBI:rejected", "mapping_status": "REJECTED"},
-            ],
-        }),
+        yaml.safe_dump(
+            {
+                "ingredients": [
+                    {"identifier": "CHEBI:active", "mapping_status": "MAPPED"},
+                    {"identifier": "CHEBI:rejected", "mapping_status": "REJECTED"},
+                ],
+            }
+        ),
         encoding="utf-8",
     )
     monkeypatch.setattr(mod, "CURATED", mapped)
@@ -240,11 +243,13 @@ def test_source_label_override_routes_promoted_hydrate(mod, tmp_path):
     with source.open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
         w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
-        w.writerow([
-            "CultureMech:000001",
-            "kgmicrobe.compound:betaine_x_h2o",
-            "Betaine x H2O",
-        ])
+        w.writerow(
+            [
+                "CultureMech:000001",
+                "kgmicrobe.compound:betaine_x_h2o",
+                "Betaine x H2O",
+            ]
+        )
 
     collected, unknown = mod.collect(source, {"CHEBI:91242"})
 
@@ -257,18 +262,22 @@ def test_source_label_override_routes_salt_ion_splits(mod, tmp_path):
     with source.open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh, delimiter="\t", lineterminator="\n")
         w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
-        w.writerow([
-            "CultureMech:000001",
-            "CHEBI:61326",
-            "1-ethyl-3-methylimidazolium lysine",
-        ])
+        w.writerow(
+            [
+                "CultureMech:000001",
+                "CHEBI:61326",
+                "1-ethyl-3-methylimidazolium lysine",
+            ]
+        )
         w.writerow(["CultureMech:000002", "CHEBI:35899", "Na-crotonate"])
         w.writerow(["CultureMech:000003", "UNMAPPED_0524", "Sodium crotonate"])
-        w.writerow([
-            "CultureMech:000004",
-            "CHEBI:16810",
-            "Na2 alpha-ketoglutarate",
-        ])
+        w.writerow(
+            [
+                "CultureMech:000004",
+                "CHEBI:16810",
+                "Na2 alpha-ketoglutarate",
+            ]
+        )
         w.writerow(["CultureMech:000005", "CHEBI:16810", "Na2 α-ketoglutarate"])
         w.writerow(["CultureMech:000006", "CHEBI:46020", "Tetramethyl ammonium"])
 
@@ -292,6 +301,37 @@ def test_source_label_override_routes_salt_ion_splits(mod, tmp_path):
         ("kgmicrobe.compound:na2_alpha-ketoglutarate", "CultureMech:000004"): 1,
         ("kgmicrobe.compound:na2_alpha-ketoglutarate", "CultureMech:000005"): 1,
         ("kgmicrobe.compound:tetramethyl_ammonium", "CultureMech:000006"): 1,
+    }
+    assert unknown == {}
+
+
+def test_source_label_override_routes_malformed_sulfate_hydrates(mod, tmp_path):
+    source = tmp_path / "occ.tsv"
+    with source.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter="\t", lineterminator="\n")
+        w.writerow(["recipe_id", "resolved_identifier", "preferred_term"])
+        w.writerow(["CultureMech:000001", "CHEBI:31346", "CaSO4"])
+        w.writerow(["CultureMech:000002", "CHEBI:31346", "CaSO4 x 7 H2O"])
+        w.writerow(["CultureMech:000003", "CHEBI:32036", "K2SO4"])
+        w.writerow(["CultureMech:000004", "CHEBI:32036", "K2SO4 x 7 H2O"])
+        w.writerow(["CultureMech:000005", "CHEBI:32036", "K2SO4・7H2O"])
+
+    collected, unknown = mod.collect(
+        source,
+        {
+            "CHEBI:31346",
+            "CHEBI:32036",
+            "kgmicrobe.compound:caso4_x_7_h2o",
+            "kgmicrobe.compound:k2so4_x_7_h2o",
+        },
+    )
+
+    assert collected == {
+        ("CHEBI:31346", "CultureMech:000001"): 1,
+        ("kgmicrobe.compound:caso4_x_7_h2o", "CultureMech:000002"): 1,
+        ("CHEBI:32036", "CultureMech:000003"): 1,
+        ("kgmicrobe.compound:k2so4_x_7_h2o", "CultureMech:000004"): 1,
+        ("kgmicrobe.compound:k2so4_x_7_h2o", "CultureMech:000005"): 1,
     }
     assert unknown == {}
 
@@ -356,10 +396,13 @@ def test_source_label_override_splits_trace_element_solutions(mod, tmp_path):
         w.writerow(["CultureMech:000001", "NCIT:C896", "Trace element solution"])
         w.writerow(["CultureMech:000002", "NCIT:C896", "Trace element solution SL-10"])
         w.writerow(["CultureMech:000003", "NCIT:C896", "Zeikus trace element solution"])
-        w.writerow([
-            "CultureMech:000004", "NCIT:C896",
-            "Trace element solution (see Medium No. 187",
-        ])
+        w.writerow(
+            [
+                "CultureMech:000004",
+                "NCIT:C896",
+                "Trace element solution (see Medium No. 187",
+            ]
+        )
 
     collected, unknown = mod.collect(
         source,
@@ -392,15 +435,15 @@ def test_the_artifact_is_tracked_not_a_local_leftover():
     """It is a published artifact, not a report -- the point is that a consumer
     can read it without a CultureMech checkout."""
     tracked = subprocess.run(
-        ["git", "-C", str(ROOT), "ls-files", "--error-unmatch",
-         str(ARTIFACT.relative_to(ROOT))],
-        capture_output=True, text=True)
+        ["git", "-C", str(ROOT), "ls-files", "--error-unmatch", str(ARTIFACT.relative_to(ROOT))],
+        capture_output=True,
+        text=True,
+    )
 
     assert tracked.returncode == 0, f"{ARTIFACT.name} is not tracked by git"
 
 
-def test_the_absent_identifiers_are_persisted_not_only_counted(mod, tmp_path,
-                                                               monkeypatch):
+def test_the_absent_identifiers_are_persisted_not_only_counted(mod, tmp_path, monkeypatch):
     """The edges are in the artifact and the counts are in the records, but an
     identifier CultureMech grounded that MIM has no record for exists nowhere
     else -- printing it to stdout loses it (#498)."""
