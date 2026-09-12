@@ -17,8 +17,15 @@ was built. So `--stamp` records a digest of those inputs beside the artifact and
     just stamp-unified-freshness    # after a rebuild
     just check-unified-freshness    # CI, and before publishing
 
-`--check` also verifies the artifact's own sha256, so a hand-edit of the TSV is
-caught as well: the whole point is that this file is generated, not curated.
+The check is a drift *budget*, not absolute freshness. #359's complaint is that
+the snapshot went three weeks and forty PRs stale -- unbounded drift, not any
+drift. A snapshot one curation batch behind is normal; failing on that would
+red-light every curation PR while the only remedy, a rebuild, needs three
+checkouts and cannot run in CI (#654). So drift is counted in changed record
+files since the stamped rev and compared against a threshold.
+
+A hand-edited artifact is different and always fails: this file is generated,
+and editing it in place is the thing to refuse outright.
 """
 
 from __future__ import annotations
@@ -104,13 +111,52 @@ def stamp(artifact: Path, provenance: Path, inputs: Path) -> dict:
     return record
 
 
-def check(artifact: Path, provenance: Path, inputs: Path) -> list[str]:
+def drift_since(rev: str, inputs: Path, repo: Path = _REPO) -> int | None:
     """
-    Return one line per reason the artifact is not current; empty when fresh.
+    Return how many record files changed since `rev`, or None if unmeasurable.
+
+    Compares the stamped revision against the working tree, so uncommitted
+    curation counts too. None means the question could not be asked -- no git,
+    a shallow clone, or a rev this checkout does not have -- which is reported
+    as advisory rather than failed: a gate must not fail on a condition it
+    cannot measure (#654).
+
+    :param rev: The revision recorded when the snapshot was stamped.
+    :param inputs: The `data/ingredients` tree.
+    :param repo: The checkout to ask.
+    :return: Number of changed record files, or None.
+    """
+    if not rev:
+        return None
+    try:
+        relative = inputs.resolve().relative_to(repo.resolve())
+    except ValueError:
+        return None
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(repo), "diff", "--name-only", rev, "--", str(relative)],
+            capture_output=True, text=True, check=True, timeout=60,
+        )
+    except (subprocess.SubprocessError, OSError):
+        return None
+    return len([line for line in result.stdout.splitlines() if line.strip()])
+
+
+def check(
+    artifact: Path,
+    provenance: Path,
+    inputs: Path,
+    max_drift: int = 25,
+    repo: Path = _REPO,
+) -> list[str]:
+    """
+    Return one line per reason the artifact must be rebuilt; empty when within budget.
 
     :param artifact: The built TSV.
     :param provenance: The sidecar written at build time.
     :param inputs: The `data/ingredients` tree.
+    :param max_drift: Changed record files tolerated before this fails.
+    :param repo: The checkout used to measure drift.
     :return: Human-readable failure reasons.
     """
     if not artifact.exists():
@@ -133,12 +179,27 @@ def check(artifact: Path, provenance: Path, inputs: Path) -> list[str]:
         )
 
     digest, count = inputs_digest(inputs)
-    if digest != recorded.get("mim_inputs_digest"):
+    if digest == recorded.get("mim_inputs_digest"):
+        return problems
+
+    drift = drift_since(str(recorded.get("mim_rev") or ""), inputs, repo)
+    if drift is None:
+        print(
+            f"NOTE: data/ingredients has moved since the snapshot was stamped, and "
+            f"drift could not be measured from git (stamped rev "
+            f"{recorded.get('mim_rev') or '?'}). Reporting, not failing (#654)."
+        )
+        return problems
+    if drift > max_drift:
         problems.append(
-            f"data/ingredients has changed since the snapshot was built "
-            f"({recorded.get('mim_record_count', '?')} records stamped, {count} now; "
-            f"digest {recorded.get('mim_inputs_digest', '')[:12]} -> {digest[:12]}). "
-            f"The snapshot no longer reflects MIM's records."
+            f"{drift} record files have changed since the snapshot was built "
+            f"(budget {max_drift}; stamped at {recorded.get('mim_rev')}). This is the "
+            f"unbounded drift #359 describes, not one curation batch."
+        )
+    else:
+        print(
+            f"NOTE: {drift} record file(s) changed since the snapshot was stamped "
+            f"(budget {max_drift}). Within budget; rebuild when convenient."
         )
     return problems
 
@@ -151,6 +212,10 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--artifact", type=Path, default=ARTIFACT)
     parser.add_argument("--provenance", type=Path, default=PROVENANCE)
     parser.add_argument("--inputs", type=Path, default=INPUTS)
+    parser.add_argument(
+        "--max-drift", type=int, default=25,
+        help="Changed record files tolerated before this fails (default: 25)",
+    )
     args = parser.parse_args(argv)
 
     if args.stamp:
@@ -162,9 +227,9 @@ def main(argv: list[str]) -> int:
         print(f"  mim_inputs_digest: {record['mim_inputs_digest'][:12]}")
         return 0
 
-    problems = check(args.artifact, args.provenance, args.inputs)
+    problems = check(args.artifact, args.provenance, args.inputs, args.max_drift)
     if problems:
-        print(f"STALE: {args.artifact.name} is not current with MIM's records.")
+        print(f"STALE: {args.artifact.name} must be rebuilt.")
         for line in problems:
             print(f"  - {line}")
         print(
@@ -173,7 +238,7 @@ def main(argv: list[str]) -> int:
             "then `just stamp-unified-freshness` and commit both files."
         )
         return 1
-    print(f"OK: {args.artifact.name} is current with data/ingredients.")
+    print(f"OK: {args.artifact.name} is within its drift budget.")
     return 0
 
 

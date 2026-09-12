@@ -23,8 +23,12 @@ jobs:
     name: qc-unified-freshness
     runs-on: ubuntu-latest
     steps:
+      # Full history: drift is measured as record files changed since the
+      # stamped rev, which a shallow clone cannot answer (#654).
       - name: Checkout MIM
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
