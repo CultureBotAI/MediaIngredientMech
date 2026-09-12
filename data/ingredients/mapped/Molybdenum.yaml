@@ -1,18 +1,15 @@
-identifier: CHEBI:28685
+identifier: kgmicrobe.compound:molybdenum
 preferred_term: Molybdenum
 ontology_mapping:
-  ontology_id: CHEBI:28685
-  ontology_label: molybdenum atom
-  ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
-  match_level: NORMALIZED
+  ontology_id: kgmicrobe.compound:molybdenum
+  ontology_label: Molybdenum
+  ontology_source: kgmicrobe.compound
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
-  - evidence_type: LEXICAL_MATCH
-    source: culturemech:output/ingredient_occurrences.tsv
-    notes: Surface form appears in CultureMech's occurrence table and was grounded
-      to CHEBI:28685 on an exact match against an exact ontology synonym. Restored
-      from the record's own creation history (#541); the residual importer wrote this
-      provenance only into the published SSSOM.
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#631)
+    notes: The source rows are TAP trace-element entries with no charge or counter-ion.
+      Keep a local identity until a precise molybdenum species is evidenced. (#631)
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -34,4 +31,14 @@ curation_history:
     history entry but absent from the structured field the SSSOM builder reads, so
     a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
     row (#541).
+  llm_assisted: false
+- timestamp: '2026-09-11T23:46:36.251078+00:00'
+  curator: fix_element_atom_overclaims
+  action: CORRECTED
+  changes: identifier CHEBI:28685 -> kgmicrobe.compound:molybdenum; removed exact
+    ChEBI atom grounding. The source rows are TAP trace-element entries with no charge
+    or counter-ion. Keep a local identity until a precise molybdenum species is evidenced.
+    (#631).
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false

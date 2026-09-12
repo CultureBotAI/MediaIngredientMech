@@ -1,8 +1,8 @@
 # Mapped Ingredients Index
 **Total Records**: 2679
-**Mapped**: 2621 (97.8%)
+**Mapped**: 2618 (97.7%)
 **Unmapped**: 0 (0.0%)
-**Other statuses**: 58 (2.2%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 61 (2.3%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 219,988
 
 ---
@@ -1191,8 +1191,7 @@
 | CHEBI:75421 | Iodonitrotetrazolium chloride | CHEBI:75421 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:164200 | Irgasan | CHEBI:164200 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:81409 | Irigenin | CHEBI:81409 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:18248 | Iron | CHEBI:18248 | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:82664 | Iron powder | CHEBI:82664 | CHEBI | EXACT_MATCH | 5 |
+| CHEBI:82664 | Iron | CHEBI:82664 | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:46645 | Isobutyl alcohol | CHEBI:46645 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:193555 | Isobutyramide | CHEBI:193555 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:16135 | Isobutyric acid | CHEBI:16135 | CHEBI | EXACT_MATCH | 116 |
@@ -2190,7 +2189,7 @@
 | CHEBI:73706 | Bromosuccinate | CHEBI:73706 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:43799 | Butan-1-amine | CHEBI:43799 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17968 | Butyrate | CHEBI:17968 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:29108 | Calcium(2+) | CHEBI:29108 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:29108 | Calcium(2+) | CHEBI:29108 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:3371 | Capreomycin | CHEBI:3371 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17245 | Carbon Monoxide | CHEBI:17245 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:31359 | Carminomycin | CHEBI:31359 | CHEBI | EXACT_MATCH | 0 |
@@ -2342,7 +2341,7 @@
 | CHEBI:25094 | Lysine | CHEBI:25094 | CHEBI | EXACT_MATCH | 11 |
 | CHEBI:212437 | Lysocellin | CHEBI:212437 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:25105 | Macrolide Antibiotic | CHEBI:25105 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:18420 | Magnesium(2+) | CHEBI:18420 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:18420 | Magnesium(2+) | CHEBI:18420 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:48537 | Malonamide | CHEBI:48537 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:61993 | Maltotriose | CHEBI:61993 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C624 | Manganese | NCIT:C624 | NCIT | EXACT_MATCH | 2 |
@@ -2548,14 +2547,13 @@
 | CHEBI:22908 | Borate | CHEBI:22908 | CHEBI | EXACT_MATCH | 2 |
 | MICRO:0000566 | brain–heart infusion agar | MICRO:0000566 | MICRO | SYNONYM_MATCH | 1 |
 | CHEBI:59424 | Bromophenol blue | CHEBI:59424 | CHEBI | EXACT_MATCH | 1 |
-| CHEBI:22984 | Calcium | CHEBI:22984 | CHEBI | SYNONYM_MATCH | 2 |
 | FOODON:03413044 | Calcium lactate | FOODON:03413044 | FOODON | EXACT_MATCH | 1 |
 | FOODON:03413045 | Calcium malate | FOODON:03413045 | FOODON | EXACT_MATCH | 3 |
 | FOODON:03310367 | Cellulose powder | FOODON:03310367 | FOODON | EXACT_MATCH | 1 |
 | MICRO:0000591 | chocolate agar | MICRO:0000591 | MICRO | EXACT_MATCH | 2 |
 | CHEBI:17996 | Cl- | CHEBI:17996 | CHEBI | SYNONYM_MATCH | 5 |
 | MICRO:0000520 | Clarified rumen fluid | MICRO:0000520 | MICRO | EXACT_MATCH | 6 |
-| CHEBI:28694 | Copper | CHEBI:28694 | CHEBI | SYNONYM_MATCH | 2 |
+| kgmicrobe.compound:copper | Copper | kgmicrobe.compound:copper | kgmicrobe.compound | FALLBACK_REGISTRY | 2 |
 | CHEBI:25399 | Cresol | CHEBI:25399 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:38028 | Cyanuric acid | CHEBI:38028 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:33198 | D-Gluconic acid | CHEBI:33198 | CHEBI | EXACT_MATCH | 4 |
@@ -2576,14 +2574,13 @@
 | FOODON:03000441 | liver powder | FOODON:03000441 | FOODON | SYNONYM_MATCH | 1 |
 | MICRO:0001328 | MH agar | MICRO:0001328 | MICRO | EXACT_MATCH | 1 |
 | MICRO:0000554 | MRS agar (Oxoid) | MICRO:0000554 | MICRO | SYNONYM_MATCH | 1 |
-| CHEBI:25107 | Magnesium | CHEBI:25107 | CHEBI | SYNONYM_MATCH | 3 |
 | MICRO:0000456 | Metals ''44'' (see below) | MICRO:0000456 | MICRO | SYNONYM_MATCH | 1 |
 | CHEBI:28115 | methylcobalamin | CHEBI:28115 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:45129 | Methylphosphonic acid | CHEBI:45129 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:31794 | MgO | CHEBI:31794 | CHEBI | SYNONYM_MATCH | 3 |
 | CHEBI:27027 | Micronutrients | CHEBI:27027 | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:46662 | Minerals | CHEBI:46662 | CHEBI | SYNONYM_MATCH | 1 |
-| CHEBI:28685 | Molybdenum | CHEBI:28685 | CHEBI | SYNONYM_MATCH | 2 |
+| kgmicrobe.compound:molybdenum | Molybdenum | kgmicrobe.compound:molybdenum | kgmicrobe.compound | FALLBACK_REGISTRY | 2 |
 | CHEBI:205364 | Mycobactin J | CHEBI:205364 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:18219 | NH4OH | CHEBI:18219 | CHEBI | SYNONYM_MATCH | 1 |
 | MICRO:0001611 | Na-caseinate | MICRO:0001611 | MICRO | SYNONYM_MATCH | 5 |
@@ -2661,6 +2658,7 @@
 | CHEBI:17234 | glucose | REJECTED | CHEBI:17234 |  | 0 |
 | CHEBI:17754 | glycerol | REJECTED | CHEBI:17754 |  | 0 |
 | CHEBI:17201 | Glycylglycine | REJECTED | CHEBI:17201 |  | 0 |
+| CHEBI:82664 | Iron powder | REJECTED | CHEBI:82664 | CHEBI:82664 | 0 |
 | CHEBI:66872 | KF | REJECTED | CHEBI:66872 |  | 0 |
 | CHEBI:16856 | L-Glutathione | REJECTED | CHEBI:16856 |  | 0 |
 | CHEBI:91248 | L-Cysteine hydrochloride monohydrate | REJECTED | CHEBI:91248 |  | 0 |
@@ -2695,4 +2693,6 @@
 | CHEBI:66870 | Na2S2O4 | REJECTED | CHEBI:66870 |  | 0 |
 | kgmicrobe.ingredient:na-phosphate_buffer | Na-Phosphate-Buffer | REJECTED | kgmicrobe.ingredient:na-phosphate_buffer |  | 0 |
 | kgmicrobe.ingredient:vitamins_solution | Vitamins-solution | REJECTED | kgmicrobe.ingredient:vitamins_solution |  | 0 |
+| CHEBI:29108 | Calcium | REJECTED | CHEBI:29108 | CHEBI:29108 | 0 |
+| CHEBI:18420 | Magnesium | REJECTED | CHEBI:18420 | CHEBI:18420 | 0 |
 

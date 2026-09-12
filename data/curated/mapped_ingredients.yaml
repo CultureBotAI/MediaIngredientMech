@@ -1,6 +1,6 @@
-generation_date: '2026-09-11T00:00:00+00:00'
+generation_date: '2026-09-11T23:46:36.251078+00:00'
 total_count: 2679
-mapped_count: 2621
+mapped_count: 2618
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o
@@ -98800,43 +98800,63 @@ ingredients:
     inchi: InChI=1S/C18H16O8/c1-23-13-5-8(4-10(19)17(13)24-2)9-7-26-12-6-11(20)18(25-3)16(22)14(12)15(9)21/h4-7,19-20,22H,1-3H3
     smiles: COc1cc(-c2coc3cc(O)c(OC)c(O)c3c2=O)cc(O)c1OC
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:18248
+- identifier: CHEBI:82664
   preferred_term: Iron
   ontology_mapping:
-    ontology_id: CHEBI:18248
-    ontology_label: iron atom
+    ontology_id: CHEBI:82664
+    ontology_label: iron(0)
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#631)
+      notes: CultureMech supplies Iron as a weighable grams-per-liter element, and
+        MIM already curated Iron powder and Iron metal source labels to ChEBI iron(0),
+        not to the ChEBI iron atom.
   synonyms:
   - synonym_text: 26Fe
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Eisen
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: fer
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ferrum
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: hierro
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: iron atom
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Iron
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: Iron powder
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:82664
+  - synonym_text: Fe(0)
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:82664
+  - synonym_text: Fen
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:82664
+  - synonym_text: Iron metal
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:82664
+  - synonym_text: iron dust
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:82664
+  - synonym_text: iron(0)
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:82664
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
+    total_occurrences: 7
+    media_count: 7
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -98885,14 +98905,31 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-11T23:46:36.251078+00:00'
+    curator: fix_element_atom_overclaims
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: identifier CHEBI:18248 -> CHEBI:82664; retargeted from ChEBI iron atom
+      to iron(0), absorbed the Iron powder record, moved 2 atom memberships onto the
+      5 existing iron(0) memberships, carried 6 iron(0) label(s), and retained 6 atom-only
+      synonym(s) as REJECTED_LABEL (#631).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7439-89-6
-    data_source: PubChem API
-    retrieval_date: '2026-04-05T19:52:26.777987+00:00'
+    data_source: PubChem (via CHEBI:82664)
+    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
     molecular_formula: Fe
     inchi: InChI=1S/Fe
     smiles: '[Fe]'
   ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: IRON_SOURCE
+    confidence: 1.0
+    evidence:
+    - reference_type: DATABASE_ENTRY
+      reference_text: Imported from CultureMech pipeline
+      curator_note: 'Original role text: Mineral'
 - identifier: CHEBI:82664
   preferred_term: Iron powder
   ontology_mapping:
@@ -98901,9 +98938,11 @@ ingredients:
     ontology_source: CHEBI
     mapping_quality: EXACT_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#631)
+      notes: CultureMech supplies Iron as a weighable grams-per-liter element, and
+        MIM already curated Iron powder and Iron metal source labels to ChEBI iron(0),
+        not to the ChEBI iron atom.
   synonyms:
   - synonym_text: Fe(0)
     synonym_type: EXACT_SYNONYM
@@ -98924,10 +98963,10 @@ ingredients:
       Defined component'
     synonym_type: RAW_TEXT
     source: CultureMech
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 5
-    media_count: 5
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -99013,6 +99052,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-11T23:46:36.251078+00:00'
+    curator: fix_element_atom_overclaims
+    action: MERGED_INTO
+    changes: Merged into CHEBI:82664 'Iron'; occurrences transferred to the generic
+      iron(0) record and the duplicate SSSOM row dropped (#631).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7439-89-6
     data_source: PubChem (via CHEBI:82664)
@@ -99028,6 +99075,7 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
+  representative: CHEBI:82664
 - identifier: CHEBI:46645
   preferred_term: Isobutyl alcohol
   ontology_mapping:
@@ -192221,11 +192269,14 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:calcium_2; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Calcium
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
+    total_occurrences: 2
+    media_count: 2
     source_occurrences:
     - source: microbedecoder
       count: 3
@@ -192261,6 +192312,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-09-11T23:46:36.251078+00:00'
+    curator: fix_element_atom_overclaims
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: Absorbed 'Calcium' from CHEBI:22984; moved 2 CultureMech occurrence(s)
+      from the ChEBI atom term to CHEBI:29108. CultureMech's source rows explicitly
+      carry KEGG:ca2, so the source label denotes dissolved Ca2+ rather than a neutral
+      calcium atom. (#631).
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
@@ -201078,11 +201139,14 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:magnesium_2; '
-  synonyms: []
+  synonyms:
+  - synonym_text: Magnesium
+    synonym_type: RAW_TEXT
+    source: culturemech:output/ingredient_occurrences.tsv
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
+    total_occurrences: 3
+    media_count: 3
     source_occurrences:
     - source: microbedecoder
       count: 12
@@ -201118,6 +201182,16 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-09-11T23:46:36.251078+00:00'
+    curator: fix_element_atom_overclaims
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: Absorbed 'Magnesium' from CHEBI:25107; moved 3 CultureMech occurrence(s)
+      from the ChEBI atom term to CHEBI:18420. CultureMech's source rows explicitly
+      carry KEGG:mg2, so the source label denotes dissolved Mg2+ rather than a neutral
+      magnesium atom. (#631).
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
@@ -213717,25 +213791,22 @@ ingredients:
   - synonym_text: Bromophenol blue (0.5% in 0.2N KOH)
     synonym_type: RAW_TEXT
     source: culturemech:output/ingredient_occurrences.tsv
-- identifier: CHEBI:22984
+- identifier: CHEBI:29108
   preferred_term: Calcium
   ontology_mapping:
-    ontology_id: CHEBI:22984
-    ontology_label: calcium atom
+    ontology_id: CHEBI:29108
+    ontology_label: calcium(2+)
     ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
-    match_level: NORMALIZED
+    mapping_quality: EXACT_MATCH
     evidence:
-    - evidence_type: LEXICAL_MATCH
-      source: culturemech:output/ingredient_occurrences.tsv
-      notes: Surface form appears in CultureMech's occurrence table and was grounded
-        to CHEBI:22984 on an exact match against an exact ontology synonym. Restored
-        from the record's own creation history (#541); the residual importer wrote
-        this provenance only into the published SSSOM.
-  mapping_status: MAPPED
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#631)
+      notes: CultureMech's source rows explicitly carry KEGG:ca2, so the source label
+        denotes dissolved Ca2+ rather than a neutral calcium atom.
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-08-30T10:35:03.361102+00:00'
     curator: claude_culturemech_residual_grounding
@@ -213754,6 +213825,17 @@ ingredients:
       field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
       from the published row (#541).
     llm_assisted: false
+  - timestamp: '2026-09-11T23:46:36.251078+00:00'
+    curator: fix_element_atom_overclaims
+    action: MERGED_INTO
+    changes: Merged into CHEBI:29108 'Calcium(2+)'; transferred 2 CultureMech occurrence(s)
+      and dropped the atom-grounded SSSOM row. CultureMech's source rows explicitly
+      carry KEGG:ca2, so the source label denotes dissolved Ca2+ rather than a neutral
+      calcium atom. (#631).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: false
+  representative: CHEBI:29108
 - identifier: FOODON:03413044
   preferred_term: Calcium lactate
   ontology_mapping:
@@ -213981,21 +214063,19 @@ ingredients:
       field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
       from the published row (#541).
     llm_assisted: false
-- identifier: CHEBI:28694
+- identifier: kgmicrobe.compound:copper
   preferred_term: Copper
   ontology_mapping:
-    ontology_id: CHEBI:28694
-    ontology_label: copper atom
-    ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
-    match_level: NORMALIZED
+    ontology_id: kgmicrobe.compound:copper
+    ontology_label: Copper
+    ontology_source: kgmicrobe.compound
+    mapping_quality: FALLBACK_REGISTRY
     evidence:
-    - evidence_type: LEXICAL_MATCH
-      source: culturemech:output/ingredient_occurrences.tsv
-      notes: Surface form appears in CultureMech's occurrence table and was grounded
-        to CHEBI:28694 on an exact match against an exact ontology synonym. Restored
-        from the record's own creation history (#541); the residual importer wrote
-        this provenance only into the published SSSOM.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#631)
+      notes: The source rows are TAP trace-element entries, and CultureMech only recorded
+        KEGG:cu with no charge or counter-ion. Keep a local identity until a precise
+        copper species is evidenced. (#631)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -214017,6 +214097,16 @@ ingredients:
       CREATED_FROM_CULTUREMECH_RESIDUAL history entry but absent from the structured
       field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
       from the published row (#541).
+    llm_assisted: false
+  - timestamp: '2026-09-11T23:46:36.251078+00:00'
+    curator: fix_element_atom_overclaims
+    action: CORRECTED
+    changes: identifier CHEBI:28694 -> kgmicrobe.compound:copper; removed exact ChEBI
+      atom grounding. The source rows are TAP trace-element entries, and CultureMech
+      only recorded KEGG:cu with no charge or counter-ion. Keep a local identity until
+      a precise copper species is evidenced. (#631).
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
 - identifier: CHEBI:25399
   preferred_term: Cresol
@@ -214809,25 +214899,22 @@ ingredients:
       field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
       from the published row (#541).
     llm_assisted: false
-- identifier: CHEBI:25107
+- identifier: CHEBI:18420
   preferred_term: Magnesium
   ontology_mapping:
-    ontology_id: CHEBI:25107
-    ontology_label: magnesium atom
+    ontology_id: CHEBI:18420
+    ontology_label: magnesium(2+)
     ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
-    match_level: NORMALIZED
+    mapping_quality: EXACT_MATCH
     evidence:
-    - evidence_type: LEXICAL_MATCH
-      source: culturemech:output/ingredient_occurrences.tsv
-      notes: Surface form appears in CultureMech's occurrence table and was grounded
-        to CHEBI:25107 on an exact match against an exact ontology synonym. Restored
-        from the record's own creation history (#541); the residual importer wrote
-        this provenance only into the published SSSOM.
-  mapping_status: MAPPED
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#631)
+      notes: CultureMech's source rows explicitly carry KEGG:mg2, so the source label
+        denotes dissolved Mg2+ rather than a neutral magnesium atom.
+  mapping_status: REJECTED
   occurrence_statistics:
-    total_occurrences: 3
-    media_count: 3
+    total_occurrences: 0
+    media_count: 0
   curation_history:
   - timestamp: '2026-08-30T10:35:03.361102+00:00'
     curator: claude_culturemech_residual_grounding
@@ -214846,6 +214933,17 @@ ingredients:
       field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
       from the published row (#541).
     llm_assisted: false
+  - timestamp: '2026-09-11T23:46:36.251078+00:00'
+    curator: fix_element_atom_overclaims
+    action: MERGED_INTO
+    changes: Merged into CHEBI:18420 'Magnesium(2+)'; transferred 3 CultureMech occurrence(s)
+      and dropped the atom-grounded SSSOM row. CultureMech's source rows explicitly
+      carry KEGG:mg2, so the source label denotes dissolved Mg2+ rather than a neutral
+      magnesium atom. (#631).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: false
+  representative: CHEBI:18420
 - identifier: MICRO:0000456
   preferred_term: Metals ''44'' (see below)
   ontology_mapping:
@@ -215086,21 +215184,18 @@ ingredients:
       field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
       from the published row (#541).
     llm_assisted: false
-- identifier: CHEBI:28685
+- identifier: kgmicrobe.compound:molybdenum
   preferred_term: Molybdenum
   ontology_mapping:
-    ontology_id: CHEBI:28685
-    ontology_label: molybdenum atom
-    ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
-    match_level: NORMALIZED
+    ontology_id: kgmicrobe.compound:molybdenum
+    ontology_label: Molybdenum
+    ontology_source: kgmicrobe.compound
+    mapping_quality: FALLBACK_REGISTRY
     evidence:
-    - evidence_type: LEXICAL_MATCH
-      source: culturemech:output/ingredient_occurrences.tsv
-      notes: Surface form appears in CultureMech's occurrence table and was grounded
-        to CHEBI:28685 on an exact match against an exact ontology synonym. Restored
-        from the record's own creation history (#541); the residual importer wrote
-        this provenance only into the published SSSOM.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#631)
+      notes: The source rows are TAP trace-element entries with no charge or counter-ion.
+        Keep a local identity until a precise molybdenum species is evidenced. (#631)
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 2
@@ -215122,6 +215217,16 @@ ingredients:
       CREATED_FROM_CULTUREMECH_RESIDUAL history entry but absent from the structured
       field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
       from the published row (#541).
+    llm_assisted: false
+  - timestamp: '2026-09-11T23:46:36.251078+00:00'
+    curator: fix_element_atom_overclaims
+    action: CORRECTED
+    changes: identifier CHEBI:28685 -> kgmicrobe.compound:molybdenum; removed exact
+      ChEBI atom grounding. The source rows are TAP trace-element entries with no
+      charge or counter-ion. Keep a local identity until a precise molybdenum species
+      is evidenced. (#631).
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
 - identifier: CHEBI:205364
   preferred_term: Mycobactin J

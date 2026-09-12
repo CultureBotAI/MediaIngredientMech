@@ -9,11 +9,14 @@ ontology_mapping:
   - evidence_type: LEXICAL_MATCH
     source: microbedecoder
     notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:magnesium_2; '
-synonyms: []
+synonyms:
+- synonym_text: Magnesium
+  synonym_type: RAW_TEXT
+  source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 0
-  media_count: 0
+  total_occurrences: 3
+  media_count: 3
   source_occurrences:
   - source: microbedecoder
     count: 12
@@ -49,6 +52,16 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
+  llm_assisted: false
+- timestamp: '2026-09-11T23:46:36.251078+00:00'
+  curator: fix_element_atom_overclaims
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: Absorbed 'Magnesium' from CHEBI:25107; moved 3 CultureMech occurrence(s)
+    from the ChEBI atom term to CHEBI:18420. CultureMech's source rows explicitly
+    carry KEGG:mg2, so the source label denotes dissolved Mg2+ rather than a neutral
+    magnesium atom. (#631).
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
