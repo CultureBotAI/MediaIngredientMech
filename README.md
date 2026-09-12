@@ -27,6 +27,10 @@ term — while keeping every raw form as a resolvable synonym. See
 
 ### Installation
 
+Development and CI use Python 3.13, pinned in `.python-version`. The broader
+`requires-python` package metadata remains unchanged; CI uses one Python minor
+for each test and validation job.
+
 ```bash
 # Clone repository
 git clone https://github.com/CultureBotAI/MediaIngredientMech.git

@@ -3,6 +3,15 @@
 These instructions apply to the whole repository. Keep changes narrow, preserve
 provenance, and do not treat generated or research output as curated truth.
 
+## Python runtime
+
+Python 3.13 is the maintained development and GitHub Actions runtime, selected
+by `.python-version`. CI runs each test tier on this one minor version to
+avoid duplicate environment installation and test runs. The broader
+`requires-python` metadata remains the package installation compatibility
+floor; it is not a promise of a CI matrix. Add another CI version only for a
+documented dependency or consumer requirement.
+
 ## Fact-based answers only
 
 Never state a comparison, count, status, or historical claim without having
