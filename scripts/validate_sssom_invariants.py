@@ -102,7 +102,7 @@ claw builder) or leave it in the triage TSV; CI fails as long as a
 violating row sits in ``ingredient_mappings.sssom.tsv``.
 
 Exit codes:
-  0 — every row passes Rules A, B1, B2, B3, C, D, E, F, G, H, I, J, and
+  0 — every row passes Rules A, B1, B2, B3, C, D, E, F, G, H, I, J, K, and
       (when its label source is present) B4.
   2 — at least one row failed Rule A, B1, B2, B3, B4, C, D, E, F, G, H, I or
       J. (B1 contributes to exit-2 unless ``--lenient-b1`` is passed.)
@@ -829,6 +829,97 @@ def evaluate_rule_j(
         )
 
 
+OTHER_BASELINE = REPO_ROOT / "mappings" / "other_cross_record_baseline.tsv"
+
+
+@lru_cache(maxsize=1)
+def _preferred_term_owners() -> dict[str, frozenset[str]]:
+    """
+    Map a casefolded ``preferred_term`` to the subjects that own it.
+
+    Built from every mapped record rather than from the SSSOM's own
+    ``subject_label`` values: a record whose label never appears as a subject
+    label still owns its name, and keying on the published labels alone misses
+    44% of the cross-record cases (64 of 115).
+    """
+    owners: dict[str, set[str]] = {}
+    for subject_id, path in _subject_to_path().items():
+        try:
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        except (OSError, yaml.YAMLError):
+            continue
+        term = str(data.get("preferred_term") or "").strip()
+        if term:
+            owners.setdefault(term.casefold(), set()).add(subject_id)
+    return {term: frozenset(ids) for term, ids in owners.items()}
+
+
+@lru_cache(maxsize=1)
+def _other_baseline() -> frozenset[tuple[str, str]]:
+    """
+    Return the ``(subject_id, casefolded token)`` pairs already known to Rule K.
+
+    `other` is generated in claw, so clearing a violation means a rebuild there
+    rather than an edit here. The baseline lets the rule block new contamination
+    while the known set is triaged, the way
+    ``mappings/duplicate_identifier_baseline.tsv`` does for identifiers.
+    """
+    if not OTHER_BASELINE.exists():
+        return frozenset()
+    with OTHER_BASELINE.open(encoding="utf-8", newline="") as handle:
+        return frozenset(
+            (row["subject_id"], row["token"].casefold())
+            for row in csv.DictReader(handle, delimiter="\t")
+            if row.get("subject_id") and row.get("token")
+        )
+
+
+def evaluate_rule_k(
+    rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule K — `other` does not publish a name another record owns.
+
+    kg-microbe merges `other` into the ontology entity's synonym set, so a token
+    there is a name the subject answers to. When that token is another record's
+    ``preferred_term``, two records claim one name and the distinction between
+    them stops existing downstream -- which is how a monohydrate ends up
+    answering to the anhydrous compound's name (#669).
+
+    Most of `other` is kg-microbe's synonyms for the *ontology term*, so when a
+    hydrate family shares one CHEBI parent the parent's synonyms are merged into
+    every member and each claims its siblings' names. That is the generator's
+    behaviour, not a curation slip, which is why the known set is baselined
+    rather than failed outright.
+    """
+    owners = _preferred_term_owners()
+    baseline = _other_baseline()
+    for row_num, row in enumerate(rows, start=1):
+        subject_id = (row.get("subject_id") or "").strip()
+        offenders: list[str] = []
+        for token in (row.get("other") or "").split("|"):
+            token = token.strip()
+            if not token:
+                continue
+            folded = token.casefold()
+            holder = owners.get(folded)
+            if not holder or subject_id in holder:
+                continue
+            if (subject_id, folded) in baseline:
+                continue
+            offenders.append(f"{token!r} (owned by {sorted(holder)[0]})")
+        if not offenders:
+            continue
+        yield (
+            row_num,
+            row,
+            "Rule K: `other` publishes a name another record owns: "
+            f"{sorted(offenders)}. kg-microbe merges `other` into the synonym "
+            "set, so both records would answer to it. Rebuild the SSSOM in claw "
+            "after fixing the record's synonyms, or add the pair to "
+            "mappings/other_cross_record_baseline.tsv with a disposition (#669).",
+        )
+
+
 def evaluate_rule_d(
     rows: Iterable[dict[str, str]]
 ) -> Iterator[tuple[int, dict[str, str], str]]:
@@ -1072,6 +1163,7 @@ def main(argv: list[str]) -> int:
     _collect("Rule H", evaluate_rule_h(rows))
     _collect("Rule I", evaluate_rule_i(rows))
     _collect("Rule J", evaluate_rule_j(rows))
+    _collect("Rule K", evaluate_rule_k(rows))
 
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
@@ -1088,7 +1180,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F, G, H, I, J"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F, G, H, I, J, K"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(
