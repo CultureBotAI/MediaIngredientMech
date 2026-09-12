@@ -43,5 +43,6 @@ jobs:
       - name: Install locked development environment
         run: uv sync --frozen --extra dev
 
-      - name: Run the advertised quality gate
-        run: just check
+      # tests.yaml owns the full pytest suite and its coverage floor.
+      - name: Run static quality checks
+        run: just lint format-check typecheck
