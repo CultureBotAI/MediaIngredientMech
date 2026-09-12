@@ -1,18 +1,26 @@
-identifier: CHEBI:16457
+identifier: cas:4337-33-1
 preferred_term: Dimethylsulfoniopropionate hydrochloride
 ontology_mapping:
   ontology_id: CHEBI:16457
   ontology_label: S,S-dimethyl-beta-propiothetin
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-      sqlite (cas xref). '
+    notes: 'SUPERSEDED (#455): the CAS-selected ChEBI term denotes a different salt/counterion
+      form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+      resolved via OAK CHEBI sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#455)
+    notes: The CultureBotHT label names the hydrochloride/chloride form, while CHEBI:16457
+      denotes zwitterionic DMSP with no chloride. PubChem CID 5316899 verifies CAS
+      4337-33-1 for the chloride, and no exact local ChEBI term denotes this salt.
+      Per MAPPING_SEMANTICS.md Section 3, the record now uses cas:4337-33-1 as the
+      exact registry identity plus a narrowMatch to CHEBI:16457.
 synonyms:
 - synonym_text: 3-(dimethylsulfonio)propanoate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -43,11 +51,22 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_counterion_identity_conflicts
+  action: REGROUNDED_COUNTERION_FORM
+  changes: identifier CHEBI:16457 -> cas:4337-33-1; CAS-RN 7314-30-9 -> 4337-33-1;
+    ontology mapping set to NARROW_MATCH CHEBI:16457 ('S,S-dimethyl-beta-propiothetin').
+    Replaced target-derived chemistry with PubChem CID 5316899 and marked 1 inherited
+    ChEBI synonym(s) as REJECTED_LABEL (#455).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 7314-30-9
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-  molecular_formula: C5H10O2S
-  inchi: InChI=1S/C5H10O2S/c1-8(2)4-3-5(6)7/h3-4H2,1-2H3
-  smiles: C[S+](C)CCC(=O)[O-]
+  cas_rn: 4337-33-1
+  data_source: PubChem CID 5316899
+  retrieval_date: '2026-09-12T00:00:00+00:00'
+  pubchem_cid: 5316899
+  molecular_formula: C5H11ClO2S
+  inchi: InChI=1S/C5H10O2S.ClH/c1-8(2)4-3-5(6)7;/h3-4H2,1-2H3;1H
+  smiles: C[S+](C)CCC(=O)O.[Cl-]
 ingredient_type: SINGLE_INGREDIENT

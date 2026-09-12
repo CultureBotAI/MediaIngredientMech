@@ -1,6 +1,9 @@
 identifier: NCIT:C386
 preferred_term: Colistin Sulfate
-synonyms: []
+synonyms:
+- synonym_text: Colistin sulfate salt
+  synonym_type: RAW_TEXT
+  source: MERGED_FROM_CHEBI:37943
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 0
@@ -45,6 +48,13 @@ curation_history:
     is not. A term this repo can resolve and label-check is the better published mapping,
     and that judgement does not expire when the build catches up. Do not re-ground
     to CHEBI:759883 without a new curator decision.'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_counterion_identity_conflicts
+  action: MERGED_FROM
+  changes: Absorbed 'Colistin sulfate salt' from the CultureBotHT CAS-selected CHEBI:37943
+    duplicate. The losing ChEBI target denoted colistin without sulfate; existing
+    NCIT:C386 denotes Colistin Sulfate exactly. Raw label and CAS 1264-72-8 kept (#455).
+  llm_assisted: false
 ontology_mapping:
   ontology_id: NCIT:C386
   ontology_label: Colistin Sulfate
@@ -55,3 +65,14 @@ ontology_mapping:
     source: MIM curation (#213)
     notes: 'Exact NCIT label match; CHEBI:759883 is live upstream but absent from
       the local build (#249, #213).'
+physicochemical_roles:
+- role: SELECTIVE_AGENT
+  confidence: 0.8
+  evidence:
+  - reference_type: COMPUTATIONAL_PREDICTION
+    reference_text: Inferred from curated media-role name pattern
+    curator_note: Provisional role from a curated name-pattern rule; review recommended.
+chemical_properties:
+  cas_rn: 1264-72-8
+  data_source: CultureBotHT compounds_to_cas.csv
+  retrieval_date: '2026-09-12T00:00:00+00:00'

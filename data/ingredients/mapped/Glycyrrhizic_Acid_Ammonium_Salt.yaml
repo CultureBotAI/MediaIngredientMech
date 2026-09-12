@@ -1,19 +1,27 @@
-identifier: CHEBI:15939
+identifier: cas:53956-04-0
 preferred_term: Glycyrrhizic Acid, Ammonium Salt
 ontology_mapping:
   ontology_id: CHEBI:15939
   ontology_label: glycyrrhizinic acid
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-      sqlite (cas xref). '
+    notes: 'SUPERSEDED (#455): the CAS-selected ChEBI term denotes a different salt/counterion
+      form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+      resolved via OAK CHEBI sqlite (cas xref). '
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#455)
+    notes: The CultureBotHT label names an ammonium salt, while the ChEBI xref selected
+      glycyrrhizinic acid without ammonium. PubChem CID 62074 verifies CAS 53956-04-0
+      for ammonium glycyrrhizate, and no exact local ChEBI term denotes this salt.
+      Per MAPPING_SEMANTICS.md Section 3, the record now uses cas:53956-04-0 as the
+      exact registry identity plus a narrowMatch to CHEBI:15939.
 synonyms:
 - synonym_text: 30-hydroxy-11,30-dioxoolean-12-en-3beta-yl (2-O-beta-D-glucopyranosyluronic
     acid)-alpha-D-glucopyranosiduronic acid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -44,11 +52,22 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_cas_counterion_identity_conflicts
+  action: REGROUNDED_COUNTERION_FORM
+  changes: identifier CHEBI:15939 -> cas:53956-04-0; CAS-RN 1405-86-3 -> 53956-04-0;
+    ontology mapping set to NARROW_MATCH CHEBI:15939 ('glycyrrhizinic acid'). Replaced
+    target-derived chemistry with PubChem CID 62074 and marked 1 inherited ChEBI synonym(s)
+    as REJECTED_LABEL (#455).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
-  cas_rn: 1405-86-3
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-  molecular_formula: C42H62O16
-  inchi: InChI=1S/C42H62O16/c1-37(2)21-8-11-42(7)31(20(43)16-18-19-17-39(4,36(53)54)13-12-38(19,3)14-15-41(18,42)6)40(21,5)10-9-22(37)55-35-30(26(47)25(46)29(57-35)33(51)52)58-34-27(48)23(44)24(45)28(56-34)32(49)50/h16,19,21-31,34-35,44-48H,8-15,17H2,1-7H3,(H,49,50)(H,51,52)(H,53,54)/t19-,21-,22-,23-,24-,25-,26-,27+,28-,29-,30+,31+,34-,35-,38+,39-,40-,41+,42+/m0/s1
-  smiles: '[H][C@]12C(=O)C=C3[C@]4([H])C[C@@](C)(C(=O)O)CC[C@]4(C)CC[C@@]3(C)[C@]1(C)CC[C@@]1([H])C(C)(C)[C@@H](O[C@H]3O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]3O[C@@H]3O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]3O)CC[C@]21C'
+  cas_rn: 53956-04-0
+  data_source: PubChem CID 62074
+  retrieval_date: '2026-09-12T00:00:00+00:00'
+  pubchem_cid: 62074
+  molecular_formula: C42H65NO16
+  inchi: InChI=1S/C42H62O16.H3N/c1-37(2)21-8-11-42(7)31(20(43)16-18-19-17-39(4,36(53)54)13-12-38(19,3)14-15-41(18,42)6)40(21,5)10-9-22(37)55-35-30(26(47)25(46)29(57-35)33(51)52)58-34-27(48)23(44)24(45)28(56-34)32(49)50;/h16,19,21-31,34-35,44-48H,8-15,17H2,1-7H3,(H,49,50)(H,51,52)(H,53,54);1H3/t19-,21-,22-,23-,24-,25-,26-,27+,28-,29-,30+,31+,34-,35-,38+,39-,40-,41+,42+;/m0./s1
+  smiles: C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O.N
 ingredient_type: SINGLE_INGREDIENT

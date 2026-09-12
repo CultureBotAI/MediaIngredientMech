@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-12T00:49:38.247925+00:00
+Generated: 2026-09-12T03:53:56.172033+00:00
 Total: 2951 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -784,7 +784,7 @@ Total: 2951 ingredients
 | CHEBI:53503 | CHEBI:53503 | CoCl2 x 6 H2O | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:15346 | CHEBI:15346 | Coenzyme A | MAPPED | CHEBI | EXACT_MATCH | 10 |
 | CHEBI:183909 | CHEBI:183909 | Colchiceine | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:37943 | CHEBI:37943 | Colistin sulfate salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| NCIT:C386 | NCIT:C386 | Colistin sulfate salt | REJECTED | NCIT | EXACT_MATCH | 0 |
 | kgmicrobe.compound:collinomycin | kgmicrobe.compound:collinomycin | Collinomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | MICRO:0000536 | MICRO:0000536 | Columbia agar base | MAPPED | MICRO | EXACT_MATCH | 52 |
 | CHEBI:27965 | CHEBI:27965 | Conessine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -939,7 +939,7 @@ Total: 2951 ingredients
 | CHEBI:9349 | CHEBI:9349 | dimethyl sulfone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:28262 | CHEBI:28262 | Dimethyl sulfoxide | MAPPED | CHEBI | EXACT_MATCH | 161 |
 | cas:6035-49-0 | CHEBI:93172 | Dimethylfraxetin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:16457 | CHEBI:16457 | Dimethylsulfoniopropionate hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| cas:4337-33-1 | CHEBI:16457 | Dimethylsulfoniopropionate hydrochloride | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:141155 | CHEBI:141155 | Dimetridazole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4629 | CHEBI:4629 | Diosgenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:46837 | CHEBI:46837 | Dipicolinic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1123,7 +1123,7 @@ Total: 2951 ingredients
 | CHEBI:17497 | CHEBI:17497 | Glycolic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17201 | CHEBI:17201 | Glycyl-glycine | MAPPED | CHEBI | EXACT_MATCH | 14 |
 | CHEBI:17201 | CHEBI:17201 | Glycylglycine | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:15939 | CHEBI:15939 | Glycyrrhizic Acid, Ammonium Salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| cas:53956-04-0 | CHEBI:15939 | Glycyrrhizic Acid, Ammonium Salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:27988-77-8 | CHEBI:30076 | gold (III) chloride hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:16400 | CHEBI:16400 | Gossypetin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28584 | CHEBI:28584 | Gossypol | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1494,7 +1494,7 @@ Total: 2951 ingredients
 | CHEBI:17012 | CHEBI:17012 | N-acetylneuraminic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:41808 | CHEBI:41808 | n-Decane | MAPPED | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:181434 | CHEBI:181434 | N-decanoyl-DL-Homoserine lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:183704 | CHEBI:183704 | N-lauroylsarcosine sodium salt | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| cas:137-16-6 | CHEBI:183705 | N-lauroylsarcosine sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16354 | CHEBI:16354 | N-methylhydantoin | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:88217 | CHEBI:88217 | N,N,N′,N′-Tetrakis(2-pyridylmethyl)ethylenediamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:32850 | CHEBI:32850 | N,N,N′,N′-Tetramethylethylenediamine | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -1738,7 +1738,7 @@ Total: 2951 ingredients
 | cas:6487-48-5 | NCIT:C87592 | Potassium oxalate monohydrate | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:potassium_phosphate_buffer | NCIT:C29321 | Potassium phosphate buffer | MAPPED | NCIT | CLOSE_MATCH | 44 |
 | cas:16788-57-1 | mesh:C013216 | Potassium phosphate dibasic trihydrate | MAPPED | MESH | NARROW_MATCH | 3 |
-| CHEBI:75248 | CHEBI:75248 | potassium tellurate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:75248 | CHEBI:75248 | potassium tellurite | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:314041-10-6 | CHEBI:30463 | potassium tellurate hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | cas:123333-66-4 | CHEBI:75248 | Potassium tellurite hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | FOODON:03302378 | FOODON:03302378 | Potato flour | MAPPED | FOODON | EXACT_MATCH | 7 |

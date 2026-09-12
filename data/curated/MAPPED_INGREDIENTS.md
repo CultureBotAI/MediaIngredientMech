@@ -1,8 +1,8 @@
 # Mapped Ingredients Index
 **Total Records**: 2679
-**Mapped**: 2618 (97.7%)
+**Mapped**: 2617 (97.7%)
 **Unmapped**: 0 (0.0%)
-**Other statuses**: 61 (2.3%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 62 (2.3%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 219,831
 
 ---
@@ -776,7 +776,6 @@
 | kgmicrobe.compound:cocl2_x_4_h2o | CoCl2 x 4 H2O | CHEBI:35696 | CHEBI | CLOSE_MATCH | 8 |
 | CHEBI:15346 | Coenzyme A | CHEBI:15346 | CHEBI | EXACT_MATCH | 10 |
 | CHEBI:183909 | Colchiceine | CHEBI:183909 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:37943 | Colistin sulfate salt | CHEBI:37943 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:collinomycin | Collinomycin | kgmicrobe.compound:collinomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | MICRO:0000536 | Columbia agar base | MICRO:0000536 | MICRO | EXACT_MATCH | 52 |
 | CHEBI:27965 | Conessine | CHEBI:27965 | CHEBI | EXACT_MATCH | 0 |
@@ -926,7 +925,7 @@
 | CHEBI:9349 | dimethyl sulfone | CHEBI:9349 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:28262 | Dimethyl sulfoxide | CHEBI:28262 | CHEBI | EXACT_MATCH | 161 |
 | cas:6035-49-0 | Dimethylfraxetin | CHEBI:93172 | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:16457 | Dimethylsulfoniopropionate hydrochloride | CHEBI:16457 | CHEBI | EXACT_MATCH | 0 |
+| cas:4337-33-1 | Dimethylsulfoniopropionate hydrochloride | CHEBI:16457 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:141155 | Dimetridazole | CHEBI:141155 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:4629 | Diosgenin | CHEBI:4629 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:46837 | Dipicolinic Acid | CHEBI:46837 | CHEBI | EXACT_MATCH | 0 |
@@ -1105,7 +1104,7 @@
 | CHEBI:17071 | glycolaldehyde | CHEBI:17071 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17497 | Glycolic Acid | CHEBI:17497 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17201 | Glycyl-glycine | CHEBI:17201 | CHEBI | EXACT_MATCH | 14 |
-| CHEBI:15939 | Glycyrrhizic Acid, Ammonium Salt | CHEBI:15939 | CHEBI | EXACT_MATCH | 0 |
+| cas:53956-04-0 | Glycyrrhizic Acid, Ammonium Salt | CHEBI:15939 | CHEBI | NARROW_MATCH | 0 |
 | cas:27988-77-8 | gold (III) chloride hydrate | CHEBI:30076 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:16400 | Gossypetin | CHEBI:16400 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:28584 | Gossypol | CHEBI:28584 | CHEBI | EXACT_MATCH | 0 |
@@ -1467,7 +1466,7 @@
 | CHEBI:17012 | N-acetylneuraminic acid | CHEBI:17012 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:41808 | n-Decane | CHEBI:41808 | CHEBI | EXACT_MATCH | 6 |
 | CHEBI:181434 | N-decanoyl-DL-Homoserine lactone | CHEBI:181434 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:183704 | N-lauroylsarcosine sodium salt | CHEBI:183704 | CHEBI | EXACT_MATCH | 0 |
+| cas:137-16-6 | N-lauroylsarcosine sodium salt | CHEBI:183705 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:16354 | N-methylhydantoin | CHEBI:16354 | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:88217 | N,N,N′,N′-Tetrakis(2-pyridylmethyl)ethylenediamine | CHEBI:88217 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:32850 | N,N,N′,N′-Tetramethylethylenediamine | CHEBI:32850 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -1703,7 +1702,7 @@
 | cas:6487-48-5 | Potassium oxalate monohydrate | NCIT:C87592 | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:potassium_phosphate_buffer | Potassium phosphate buffer | NCIT:C29321 | NCIT | CLOSE_MATCH | 44 |
 | cas:16788-57-1 | Potassium phosphate dibasic trihydrate | mesh:C013216 | MESH | NARROW_MATCH | 3 |
-| CHEBI:75248 | potassium tellurate | CHEBI:75248 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:75248 | potassium tellurite | CHEBI:75248 | CHEBI | EXACT_MATCH | 0 |
 | cas:314041-10-6 | potassium tellurate hydrate | CHEBI:30463 | CHEBI | CLOSE_MATCH | 0 |
 | cas:123333-66-4 | Potassium tellurite hydrate | CHEBI:75248 | CHEBI | CLOSE_MATCH | 0 |
 | FOODON:03302378 | Potato flour | FOODON:03302378 | FOODON | EXACT_MATCH | 7 |
@@ -2648,6 +2647,7 @@
 | CHEBI:3312 | Calcium Chloride | REJECTED | CHEBI:3312 |  | 0 |
 | CHEBI:31345 | Calcium D-Pantothenate | REJECTED | CHEBI:31345 |  | 0 |
 | CHEBI:53503 | CoCl2 x 6 H2O | REJECTED | CHEBI:53503 |  | 0 |
+| NCIT:C386 | Colistin sulfate salt | REJECTED | NCIT:C386 |  | 0 |
 | CHEBI:62318 | D-(-)-lyxose | REJECTED | CHEBI:16789 |  | 0 |
 | CHEBI:17992 | D-Sucrose | REJECTED | CHEBI:17992 |  | 0 |
 | CHEBI:75228 | D | REJECTED | CHEBI:75228 |  | 0 |

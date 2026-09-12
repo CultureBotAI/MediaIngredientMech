@@ -161,21 +161,6 @@ CONCENTRATION_LABEL = re.compile(
 # values. Any later correction to the source label, target, or CAS automatically
 # falls out of this list and is evaluated normally.
 REVIEWED_IDENTITY_CONFLICTS = {
-    ("Glycyrrhizic Acid, Ammonium Salt", "CHEBI:15939", "1405-86-3"): (
-        "target is the free glycyrrhizinic acid and has no ammonium"
-    ),
-    ("Colistin sulfate salt", "CHEBI:37943", "1264-72-8"): (
-        "target is colistin and its formula has no sulfate"
-    ),
-    ("Dimethylsulfoniopropionate hydrochloride", "CHEBI:16457", "7314-30-9"): (
-        "target is zwitterionic DMSP and has no hydrochloride/chloride"
-    ),
-    ("potassium tellurate", "CHEBI:75248", "7790-58-1"): (
-        "target is Te(IV) potassium tellurite, not bare Te(VI) tellurate"
-    ),
-    ("N-lauroylsarcosine sodium salt", "CHEBI:183704", "137-16-6"): (
-        "target is the organic anion and has no sodium"
-    ),
     ("Alpha-Toxicarol (Dl)", "CHEBI:9643", "82-09-7"): (
         "source denotes a racemate but target is a fixed stereoisomer"
     ),
