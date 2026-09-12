@@ -28,11 +28,16 @@ on:
     - scripts/check_record_filename_case.py
     - src/mediaingredientmech/utils/yaml_handler.py
     - uv.lock
+    - .python-version
     - .github/workflows/qc-roundtrip.yaml
   workflow_dispatch:
 
 permissions:
   contents: read
+
+# Keep uv commands on the fleet runtime, including --no-project invocations.
+env:
+  UV_PYTHON: "3.13"
 
 jobs:
   roundtrip:
@@ -46,7 +51,7 @@ jobs:
           enable-cache: true
 
       - name: Set up Python
-        run: uv python install 3.12
+        run: uv python install 3.13
 
       - name: Install dependencies
         # `uv sync --frozen`, not `pip install pyyaml`, because the final step
@@ -62,7 +67,7 @@ jobs:
       # some *other* artifact (a stale ingredients.json, an apparent lost
       # record) rather than as the rename it actually was. Issue #352.
       - name: Check per-record filenames match what git tracks (case-exact)
-        run: python3 scripts/check_record_filename_case.py
+        run: uv run --no-project python scripts/check_record_filename_case.py
 
       - name: Aggregate per-record files to a temp collection
         run: |

@@ -13,12 +13,17 @@ on:
     - tests/**/*.py
     - pyproject.toml
     - uv.lock
+    - .python-version
     - justfile
     - .github/workflows/quality.yaml
   workflow_dispatch:
 
 permissions:
   contents: read
+
+# Keep uv commands on the fleet runtime, including --no-project invocations.
+env:
+  UV_PYTHON: "3.13"
 
 jobs:
   check:
@@ -33,7 +38,7 @@ jobs:
           enable-cache: true
 
       - name: Set up Python
-        run: uv python install 3.12
+        run: uv python install 3.13
 
       - name: Install locked development environment
         run: uv sync --frozen --extra dev

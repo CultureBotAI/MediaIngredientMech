@@ -15,10 +15,15 @@ on:
     - justfile
     - pyproject.toml
     - uv.lock
+    - .python-version
   workflow_dispatch:
 
 permissions:
   contents: read
+
+# Keep uv commands on the fleet runtime, including --no-project invocations.
+env:
+  UV_PYTHON: "3.13"
 
 jobs:
   qc:
@@ -53,7 +58,7 @@ jobs:
       - name: Set up Python and locked dependencies
         working-directory: MediaIngredientMech
         run: |
-          uv python install 3.12
+          uv python install 3.13
           uv sync --frozen
 
       - name: Validate evidence references

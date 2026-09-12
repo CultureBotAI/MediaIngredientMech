@@ -31,6 +31,7 @@ on:
     - conf/id_label_targets.yaml
     - pyproject.toml
     - uv.lock
+    - .python-version
     - .github/workflows/label-correspondence.yaml
   workflow_dispatch:
 
@@ -57,7 +58,7 @@ jobs:
     # ref TraitMech's passing run used.
     uses: CultureBotAI/culturebotai-claw/.github/workflows/label-correspondence-reusable.yaml@5de472d13e20f02ac494878939ba1cae26468a07
     with:
-      python-version: "3.12"
+      python-version: "3.13"
       # No prepare-recipe: the SSSOM and docs CSV this gate reads are
       # committed, so there is nothing to build first. CultureMech differs.
       #
