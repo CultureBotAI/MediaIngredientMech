@@ -29,6 +29,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The worktree recipe regression test needs the real just executable.
+      - uses: extractions/setup-just@v3
+
       - uses: astral-sh/setup-uv@v3
         with:
           enable-cache: true
