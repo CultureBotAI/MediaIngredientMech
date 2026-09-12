@@ -114,6 +114,7 @@ def find_drift(curated: dict, rows: list[dict]) -> dict[str, list]:
     orphans = sorted(t for t in by_label if t not in expected)
     stale = []
     predicate = []
+    grade: list = []
     primary_identifiers = expected_identifiers(curated)
     for term, om in sorted(expected.items()):
         if term not in by_label:
@@ -121,19 +122,40 @@ def find_drift(curated: dict, rows: list[dict]) -> dict[str, list]:
         if om["ontology_id"] not in {r["object_id"] for r in by_label[term]}:
             stale.append((term, om["ontology_id"], sorted(r["object_id"] for r in by_label[term])))
             continue
-        expected_predicate = PREDICATE[str(om.get("mapping_quality") or "")]
+        quality = str(om.get("mapping_quality") or "")
+        if quality not in PREDICATE:
+            continue
+        want = expected_grade(quality)
         for row in by_label[term]:
             object_id = row["object_id"]
-            if (
+            if not (
                 object_id == om["ontology_id"]
                 and object_id != primary_identifiers.get(term)
                 and _is_ontology_row(object_id)
-                and row["predicate_id"] != expected_predicate
             ):
-                predicate.append(
-                    (term, object_id, expected_predicate, row["predicate_id"])
-                )
-    return {"gaps": gaps, "orphans": orphans, "stale": stale, "predicate": predicate}
+                continue
+            have = row_grade(row)
+            if have[0] != want[0]:
+                predicate.append((term, object_id, want[0], have[0]))
+            elif have != want:
+                # Right predicate, stale grade metadata: invisible before #623,
+                # because the detector keyed on the predicate while the writer
+                # syncs all three columns together.
+                fields = [
+                    name
+                    for name, got, expect in zip(
+                        ("mapping_justification", "confidence"), have[1:], want[1:]
+                    )
+                    if got != expect
+                ]
+                grade.append((term, object_id, quality, fields, have, want))
+    return {
+        "gaps": gaps,
+        "orphans": orphans,
+        "stale": stale,
+        "predicate": predicate,
+        "grade": grade,
+    }
 
 
 def _canonical_label_resolver():
@@ -179,7 +201,36 @@ def _sync_quality_columns(fields: list[str], column: dict[str, int], quality: st
     fields[column["confidence"]] = CONFIDENCE[quality]
 
 
-def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int]:
+def expected_grade(quality: str) -> tuple[str, str, str]:
+    """
+    Return the (predicate, justification, confidence) a quality implies.
+
+    `_sync_quality_columns` writes all three together, so all three are what
+    "in sync" has to mean. Keying drift on the predicate alone let a row keep
+    the right predicate with stale justification or confidence and still be
+    reported as clean (#623).
+
+    :param quality: The record's `ontology_mapping.mapping_quality`.
+    :return: The grade triple the published row should carry.
+    """
+    return PREDICATE[quality], justification_for(quality), str(CONFIDENCE[quality])
+
+
+def row_grade(row: dict) -> tuple[str, str, str]:
+    """
+    Return the (predicate, justification, confidence) a published row carries.
+
+    :param row: One parsed SSSOM row.
+    :return: The grade triple as published.
+    """
+    return (
+        row.get("predicate_id") or "",
+        row.get("mapping_justification") or "",
+        row.get("confidence") or "",
+    )
+
+
+def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int, int]:
     header, col_line, data_lines, rows = _read_sssom()
     cols = col_line.rstrip("\n").split("\t")
     idx = {c: i for i, c in enumerate(cols)}
@@ -202,7 +253,7 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int]:
                 remap[term] = (r["object_id"], new_id, old_pred, new_pred)
 
     # Pass 2: rewrite.
-    out, n_stale, n_orphan, n_predicate = [], 0, 0, 0
+    out, n_stale, n_orphan, n_predicate, n_grade = [], 0, 0, 0, 0
     for ln in data_lines:
         if not ln.strip():
             out.append(ln)
@@ -245,18 +296,34 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int]:
             and f[idx["object_id"]] == expected[term].get("ontology_id")
             and f[idx["object_id"]] != primary_identifiers.get(term)
         ):
-            expected_predicate = PREDICATE[_quality(expected[term])]
-            if f[idx["predicate_id"]] != expected_predicate:
-                _sync_quality_columns(f, idx, _quality(expected[term]))
-                f[idx["mapping_date"]] = date
-                if "comment" in idx:
-                    f[idx["comment"]] = _append_comment(
-                        f[idx["comment"]],
-                        f"[predicate reconciled to curated mapping {date}]",
-                    )
-                if "validation_method" in idx:
-                    f[idx["validation_method"]] = f"manual:reconcile_sssom|PREDICATE|{date}"
-                n_predicate += 1
+            quality = _quality(expected[term])
+            if quality in PREDICATE:
+                want = expected_grade(quality)
+                have = (
+                    f[idx["predicate_id"]],
+                    f[idx["mapping_justification"]] if "mapping_justification" in idx else want[1],
+                    f[idx["confidence"]] if "confidence" in idx else want[2],
+                )
+                if have != want:
+                    # Sync on any grade difference, not only a wrong predicate:
+                    # the writer has always set all three, so a predicate-only
+                    # trigger left justification and confidence stale (#623).
+                    kind = "predicate" if have[0] != want[0] else "grade"
+                    _sync_quality_columns(f, idx, quality)
+                    f[idx["mapping_date"]] = date
+                    if "comment" in idx:
+                        f[idx["comment"]] = _append_comment(
+                            f[idx["comment"]],
+                            f"[{kind} reconciled to curated mapping {date}]",
+                        )
+                    if "validation_method" in idx:
+                        f[idx["validation_method"]] = (
+                            f"manual:reconcile_sssom|{kind.upper()}|{date}"
+                        )
+                    if kind == "predicate":
+                        n_predicate += 1
+                    else:
+                        n_grade += 1
         out.append("\t".join(f) + "\n")
 
     new_header = []
@@ -267,7 +334,7 @@ def apply_reconcile(curated: dict, date: str) -> tuple[int, int, int]:
             ln = f'# mapping_date: "{date}"\n'
         new_header.append(ln)
     SSSOM.write_text("".join(new_header) + col_line + "".join(out))
-    return n_stale, n_orphan, n_predicate
+    return n_stale, n_orphan, n_predicate, n_grade
 
 
 def main() -> int:
@@ -297,6 +364,14 @@ def main() -> int:
             f"     - {term}: {oid} expected {expected_predicate}, "
             f"present {present_predicate}"
         )
+    print(f"  GRADE (right predicate, stale grade metadata):     {len(drift['grade'])}")
+    for term, oid, quality, fields, have, want in drift["grade"][:50]:
+        print(f"     - {term}: {oid} [{quality}] {', '.join(fields)}")
+        for name, got, expect in zip(
+            ("mapping_justification", "confidence"), have[1:], want[1:]
+        ):
+            if got != expect:
+                print(f"         {name}: present {got!r}, expected {expect!r}")
 
     if not args.apply:
         if total == 0:
@@ -311,10 +386,11 @@ def main() -> int:
     if drift["gaps"]:
         print(f"\nNOTE: {len(drift['gaps'])} GAP(s) need new rows with full provenance — "
               "not auto-added; handle manually.")
-    n_stale, n_orphan, n_predicate = apply_reconcile(curated, args.date)
+    n_stale, n_orphan, n_predicate, n_grade = apply_reconcile(curated, args.date)
     print(
         f"\nApplied: synced {n_stale} stale row(s), removed {n_orphan} "
-        f"orphan row(s), fixed {n_predicate} predicate row(s)."
+        f"orphan row(s), fixed {n_predicate} predicate row(s) and "
+        f"{n_grade} grade row(s)."
     )
     return 0
 
