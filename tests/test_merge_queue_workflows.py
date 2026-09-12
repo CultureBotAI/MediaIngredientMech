@@ -1,5 +1,6 @@
 """Required checks must report on every PR and its actual merge queue candidate."""
 
+import re
 from copy import deepcopy
 from pathlib import Path
 
@@ -7,6 +8,7 @@ import pytest
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+VALIDATOR_PIN = (ROOT / "scripts" / ".vendored_canon_ref").read_text().strip()
 # Job/check names are an external ruleset contract. Renames require coordinated
 # settings changes; deriving this list from the workflows would hide a deletion.
 REQUIRED_JOBS = {
@@ -42,7 +44,19 @@ def _assert_required_workflow(document, expected_jobs):
         assert not job.get("continue-on-error"), "required job must fail on errors"
         for step in job.get("steps", []):
             if step.get("uses", "").startswith("actions/checkout@"):
-                assert "ref" not in step.get("with", {}), "must check out the event's candidate"
+                options = step.get("with", {})
+                if options.get("repository") == "CultureBotAI/culturebotai-claw":
+                    assert re.fullmatch(r"[0-9a-f]{40}", VALIDATOR_PIN)
+                    assert options.get("ref") == VALIDATOR_PIN, "validator must use reviewed CLAW pin"
+                    assert options.get("path") == "culturebotai-claw", "validator must be separate"
+                    assert any(
+                        other.get("uses", "").startswith("actions/checkout@")
+                        and other.get("with") == {"path": "MediaIngredientMech"}
+                        for other in job["steps"]
+                    ), "validator requires the separate event-bound MIM candidate"
+                else:
+                    assert options.get("repository") in (None, "${{ github.repository }}")
+                    assert "ref" not in options, "must check out the event's candidate"
     concurrency = document.get("concurrency")
     if concurrency:
         assert "github.run_id" in concurrency["group"], "queue runs need distinct groups"
@@ -83,3 +97,22 @@ def test_required_job_names_are_unambiguous():
         for job_id in jobs
     ]
     assert len(names) == len(set(names)), "different required workflows report the same check"
+
+
+@pytest.mark.parametrize("defect", ["unpinned", "mutable", "overlap", "candidate-ref"])
+def test_evidence_validator_cannot_drift_or_replace_candidate(defect):
+    name = "qc-evidence.yaml"
+    document = _load(name)
+    _assert_required_workflow(document, REQUIRED_JOBS[name])
+    broken = deepcopy(document)
+    candidate, validator = broken["jobs"]["qc"]["steps"][:2]
+    if defect == "unpinned":
+        del validator["with"]["ref"]
+    elif defect == "mutable":
+        validator["with"]["ref"] = "main"
+    elif defect == "overlap":
+        validator["with"]["path"] = candidate["with"]["path"]
+    else:
+        candidate["with"]["ref"] = "main"
+    with pytest.raises(AssertionError):
+        _assert_required_workflow(broken, REQUIRED_JOBS[name])
