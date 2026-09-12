@@ -122,6 +122,7 @@ def test_final_sssom_no_longer_publishes_atom_targets(
     assert by_subject["MIM:Magnesium~282~29"]["object_id"] == "CHEBI:18420"
     assert by_subject["MIM:Magnesium~282~29"]["other"] == "Magnesium"
     assert by_subject["MIM:Iron"]["object_id"] == "CHEBI:82664"
+    assert "CAS:7439-89-6" in by_subject["MIM:Iron"]["other"].split("|")
     assert by_subject["MIM:Copper"]["object_id"] == "kgmicrobe.compound:copper"
     assert by_subject["MIM:Copper"]["object_source"] == "kgm:compound"
     assert by_subject["MIM:Molybdenum"]["object_id"] == ("kgmicrobe.compound:molybdenum")

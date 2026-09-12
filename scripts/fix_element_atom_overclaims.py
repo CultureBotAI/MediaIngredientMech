@@ -436,7 +436,26 @@ def _sssom_other(record: dict, object_label: str) -> str:
             continue
         out.append(text)
         seen.add(key)
+    cas_rn = _cas_for(record)
+    if cas_rn:
+        cas_token = f"CAS:{cas_rn}"
+        if cas_token.casefold() not in seen:
+            out.append(cas_token)
     return "|".join(out)
+
+
+def _cas_for(record: dict) -> str | None:
+    for supplied_form in record.get("supplied_form") or []:
+        if not isinstance(supplied_form, dict):
+            continue
+        cas_rn = str(supplied_form.get("cas_rn") or "").strip()
+        if cas_rn:
+            return cas_rn
+
+    chemical_properties = record.get("chemical_properties") or {}
+    if not isinstance(chemical_properties, dict):
+        return None
+    return str(chemical_properties.get("cas_rn") or "").strip() or None
 
 
 def _update_sssom_row(
