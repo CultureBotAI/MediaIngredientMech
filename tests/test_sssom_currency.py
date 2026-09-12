@@ -33,9 +33,10 @@ def test_sssom_in_sync_with_curated():
     curated = yaml.safe_load((ROOT / "data" / "curated" / "mapped_ingredients.yaml").read_text())
     _, _, _, rows = rec._read_sssom()
     drift = rec.find_drift(curated, rows)
-    assert drift == {"gaps": [], "orphans": [], "stale": [], "predicate": []}, (
+    assert drift == {"gaps": [], "orphans": [], "stale": [], "predicate": [], "grade": []}, (
         "SSSOM has drifted from the curated data. Reconcile with "
         "`python scripts/reconcile_sssom.py --apply --date <YYYY-MM-DD>`.\n"
         f"  gaps={drift['gaps']}\n  orphans={drift['orphans']}\n"
-        f"  stale={drift['stale']}\n  predicate={drift['predicate']}"
+        f"  stale={drift['stale']}\n  predicate={drift['predicate']}\n"
+        f"  grade={drift['grade']}"
     )
