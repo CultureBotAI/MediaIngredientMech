@@ -201,3 +201,12 @@ def test_the_stamped_rev_survives_a_squash_merge(tmp_path):
     stamped = gate._git_rev(repo)
     assert stamped == main_rev, "must stamp the merge-base, not the branch tip"
     assert stamped != branch_rev
+
+
+def test_a_corrupt_sidecar_reports_rather_than_crashes(snapshot):
+    """Fails closed either way; the point is that it says what to do (#659)."""
+    artifact, provenance, inputs = snapshot
+    provenance.write_text("{not json", encoding="utf-8")
+    problems = gate.check(artifact, provenance, inputs)
+    assert problems and "not readable JSON" in problems[0]
+    assert "stamp-unified-freshness" in problems[0]

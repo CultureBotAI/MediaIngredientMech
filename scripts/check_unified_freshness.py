@@ -193,7 +193,15 @@ def check(
             f"was built from, which is the state #359 describes. Rebuild, then run "
             f"`just stamp-unified-freshness`."
         ]
-    recorded = json.loads(provenance.read_text(encoding="utf-8"))
+    try:
+        recorded = json.loads(provenance.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as error:
+        # Fails closed either way, but a traceback reads as "the tool is broken"
+        # rather than "this file needs re-stamping" (#659).
+        return [
+            f"{provenance.name} is not readable JSON ({error}). Rebuild, then run "
+            f"`just stamp-unified-freshness`."
+        ]
     problems: list[str] = []
 
     actual_sha = _sha256(artifact)
