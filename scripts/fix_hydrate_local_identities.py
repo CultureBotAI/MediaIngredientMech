@@ -604,15 +604,18 @@ def rewrite_sssom(
             touched += 1
             continue
         if row["subject_id"] == "MIM:Citric_Acid_X_H2o":
+            other = sssom_other(
+                citric["destination"],
+                object_label="Citric acid monohydrate",
+            )
+            source_term = source_label_key(citric["source"].get("preferred_term") or "")
+            # Rule K treats every preferred_term as owned, including rejected tombstones.
+            other = "|".join(
+                token for token in other.split("|") if source_label_key(token) != source_term
+            )
             row["source"] = append_mapping_source(row.get("source", ""))
             row["mapping_date"] = MAPPING_DATE
-            row["other"] = append_record_cas(
-                sssom_other(
-                    citric["destination"],
-                    object_label="Citric acid monohydrate",
-                ),
-                citric["destination"],
-            )
+            row["other"] = append_record_cas(other, citric["destination"])
             writer.writerow(row)
             touched += 1
             continue

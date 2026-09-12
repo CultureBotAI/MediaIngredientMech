@@ -516,11 +516,13 @@ def test_reviewed_hydrate_memberships_are_split_from_anhydrous_parents(
 def test_citric_bullet_duplicate_is_merged_into_monohydrate(records, sssom_rows):
     duplicate = _by_term(records, "Citric Acid•H2O")
     monohydrate = _by_term(records, "Citric acid x H2O")
+    row = [row for row in sssom_rows if row["subject_id"] == "MIM:Citric_Acid_X_H2o"][0]
     synonyms = {
         synonym["synonym_text"]
         for synonym in monohydrate.get("synonyms") or []
         if synonym.get("synonym_type") != "REJECTED_LABEL"
     }
+    sssom_other = row["other"].split("|")
 
     assert duplicate["identifier"] == "CHEBI:31404"
     assert duplicate["mapping_status"] == "REJECTED"
@@ -536,6 +538,8 @@ def test_citric_bullet_duplicate_is_merged_into_monohydrate(records, sssom_rows)
         "total_occurrences": 8,
     }
     assert {"Citric Acid•H2O", "Citric Acid•H2O(Fisher A 104)"} <= synonyms
+    assert "Citric Acid•H2O" not in sssom_other
+    assert "Citric Acid•H2O(Fisher A 104)" in sssom_other
     assert not any(row["subject_id"] == "MIM:Citric_Acidh2o" for row in sssom_rows)
 
 
