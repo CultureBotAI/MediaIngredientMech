@@ -15,33 +15,32 @@ name: Curation history
 # a culturebotai-claw checkout. Only the `just new-history` scaffolder
 # needs claw, and that is a dev-time tool.
 
+# Required checks must report for every PR and merge queue candidate.
 on:
   pull_request:
-    paths: &trigger_paths
-      - "data/ingredients/**"
-      - "data/curated/**"
-      - "data/custom/**"
-      - "mappings/**"
-      - "history/**"
-      - "src/mediaingredientmech/schema/history.yaml"
-      - ".github/workflows/curation-history.yaml"
-      # The blocking gate below reads these. Without them a PR editing only the
-      # spec list would not fire this workflow at all: it would merge green, and
-      # the next unrelated curation PR would fail the gate and blame the wrong
-      # author — a hole shaped exactly like the bug the gate exists to prevent.
-      - "conf/curation_targets.txt"
-      - "scripts/check_curation_targets.py"
+  merge_group:
+    types: [checks_requested]
   push:
-    branches: [main]
-    paths: *trigger_paths
+    branches:
+    - main
+    paths:
+    - data/ingredients/**
+    - data/curated/**
+    - data/custom/**
+    - mappings/**
+    - history/**
+    - src/mediaingredientmech/schema/history.yaml
+    - .github/workflows/curation-history.yaml
+    - conf/curation_targets.txt
+    - scripts/check_curation_targets.py
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: curation-history-${{ github.ref }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.ref || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   history:

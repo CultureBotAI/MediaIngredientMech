@@ -1,29 +1,22 @@
 name: QC — flat export coverage
 
+# Required checks must report for every PR and merge queue candidate.
 on:
   pull_request:
-    # NO branches filter, same reason as qc-sssom.yaml (#174): a stacked PR whose
-    # base is not `main` would otherwise skip the gate entirely.
-    paths:
-      - "data/curated/mapped_ingredients.yaml"
-      - "data/curated/unmapped_ingredients.yaml"
-      - "docs/data/all_ingredients.csv"
-      - "scripts/export_lists.py"
-      - "scripts/browser_export.py"
-      - "docs/data/ingredients.json"
-      - "docs/data/label_index.csv"
-      - "scripts/check_flat_export_coverage.py"
+  merge_group:
+    types: [checks_requested]
   push:
-    branches: [main]
+    branches:
+    - main
     paths:
-      - "data/curated/mapped_ingredients.yaml"
-      - "data/curated/unmapped_ingredients.yaml"
-      - "docs/data/all_ingredients.csv"
-      - "scripts/export_lists.py"
-      - "scripts/browser_export.py"
-      - "docs/data/ingredients.json"
-      - "docs/data/label_index.csv"
-      - "scripts/check_flat_export_coverage.py"
+    - data/curated/mapped_ingredients.yaml
+    - data/curated/unmapped_ingredients.yaml
+    - docs/data/all_ingredients.csv
+    - scripts/export_lists.py
+    - scripts/browser_export.py
+    - docs/data/ingredients.json
+    - docs/data/label_index.csv
+    - scripts/check_flat_export_coverage.py
   workflow_dispatch:
 
 permissions:
@@ -31,6 +24,7 @@ permissions:
 
 jobs:
   qc:
+    name: qc-flat-coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout MIM

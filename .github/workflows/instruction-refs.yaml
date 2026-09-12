@@ -15,27 +15,22 @@ name: QC — agent-instruction references
 # (the justfile, scripts/, src/, conf/, data/, mappings/), because the common way
 # these rot is not editing the doc — it is deleting the recipe the doc names.
 
+# Required checks must report for every PR and merge queue candidate.
 on:
   pull_request:
-    # No branches filter — a stacked PR must not skip this (#174).
-    paths:
-      - ".claude/**"
-      - "prompts/**"
-      - "justfile"
-      - "scripts/**"
-      - "src/**"
-      - "conf/instruction_refs.yaml"
-      - ".github/workflows/instruction-refs.yaml"
+  merge_group:
+    types: [checks_requested]
   push:
-    branches: [main]
+    branches:
+    - main
     paths:
-      - ".claude/**"
-      - "prompts/**"
-      - "justfile"
-      - "scripts/**"
-      - "src/**"
-      - "conf/instruction_refs.yaml"
-      - ".github/workflows/instruction-refs.yaml"
+    - .claude/**
+    - prompts/**
+    - justfile
+    - scripts/**
+    - src/**
+    - conf/instruction_refs.yaml
+    - .github/workflows/instruction-refs.yaml
   workflow_dispatch:
 
 permissions:

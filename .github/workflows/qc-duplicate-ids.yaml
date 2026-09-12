@@ -1,21 +1,18 @@
 name: QC — duplicate mapped identifiers
 
+# Required checks must report for every PR and merge queue candidate.
 on:
   pull_request:
-    # NO branches filter, for the same reason as qc-sssom.yaml (#174): a stacked
-    # PR whose base is not `main` would otherwise skip the gate entirely.
-    paths:
-      - "data/curated/mapped_ingredients.yaml"
-      - "data/curated/unmapped_ingredients.yaml"
-      - "mappings/duplicate_identifier_baseline.tsv"
-      - "scripts/audit_duplicate_identifiers.py"
+  merge_group:
+    types: [checks_requested]
   push:
-    branches: [main]
+    branches:
+    - main
     paths:
-      - "data/curated/mapped_ingredients.yaml"
-      - "data/curated/unmapped_ingredients.yaml"
-      - "mappings/duplicate_identifier_baseline.tsv"
-      - "scripts/audit_duplicate_identifiers.py"
+    - data/curated/mapped_ingredients.yaml
+    - data/curated/unmapped_ingredients.yaml
+    - mappings/duplicate_identifier_baseline.tsv
+    - scripts/audit_duplicate_identifiers.py
   workflow_dispatch:
 
 permissions:
@@ -23,6 +20,7 @@ permissions:
 
 jobs:
   qc:
+    name: qc-duplicate-ids
     runs-on: ubuntu-latest
     steps:
       - name: Checkout MIM

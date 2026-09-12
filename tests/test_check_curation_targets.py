@@ -9,7 +9,6 @@ life for this reason (#180).
 
 import importlib.util
 import shlex
-import subprocess
 import sys
 from pathlib import Path
 
@@ -144,7 +143,9 @@ def test_print_specs_survives_a_spec_containing_a_quote(tmp_path, capsys):
 
 
 def _advisory_step_script() -> str:
-    workflow = yaml.safe_load((ROOT / ".github" / "workflows" / "curation-history.yaml").read_text())
+    workflow = yaml.safe_load(
+        (ROOT / ".github" / "workflows" / "curation-history.yaml").read_text()
+    )
     for job in workflow["jobs"].values():
         for step in job["steps"]:
             if "advisory" in str(step.get("name", "")).lower():
@@ -162,9 +163,7 @@ def test_workflow_consumes_the_shared_list_rather_than_its_own_copy():
     # Comments legitimately NAME the specs when explaining the history; only
     # executable lines may not carry them. Same prose-vs-code distinction the
     # instruction-reference checker makes.
-    code = "\n".join(
-        line for line in script.splitlines() if not line.strip().startswith("#")
-    )
+    code = "\n".join(line for line in script.splitlines() if not line.strip().startswith("#"))
 
     assert "check_curation_targets.py --print-specs" in code
     for spec in mod.load_specs(ROOT / "conf" / "curation_targets.txt"):
@@ -174,7 +173,9 @@ def test_workflow_consumes_the_shared_list_rather_than_its_own_copy():
 def test_gate_runs_before_the_dependency_install():
     """The gate needs only the stdlib and git; a dependency-install failure must
     not mask it."""
-    workflow = yaml.safe_load((ROOT / ".github" / "workflows" / "curation-history.yaml").read_text())
+    workflow = yaml.safe_load(
+        (ROOT / ".github" / "workflows" / "curation-history.yaml").read_text()
+    )
     names = [str(s.get("name", "")) for s in workflow["jobs"]["history"]["steps"]]
     gate = next(i for i, n in enumerate(names) if "pathspecs still match" in n)
     install = next(i for i, n in enumerate(names) if n == "Install uv")
@@ -186,8 +187,16 @@ def test_workflow_triggers_on_its_own_config_and_script():
     """A PR editing only the spec list must fire this workflow. Otherwise it
     merges green and the next unrelated curation PR fails the gate — a hole
     shaped exactly like the bug the gate prevents."""
-    workflow = yaml.safe_load((ROOT / ".github" / "workflows" / "curation-history.yaml").read_text())
-    paths = workflow[True]["pull_request"]["paths"]
+    workflow = yaml.safe_load(
+        (ROOT / ".github" / "workflows" / "curation-history.yaml").read_text()
+    )
+    triggers = workflow.get("on", workflow.get(True, {}))
+    assert "pull_request" in triggers
+    config = triggers["pull_request"] or {}
+    assert "paths-ignore" not in config
+    paths = config.get("paths")
+    if paths is None:
+        return  # An unconditional PR event covers the config and checker too.
 
     assert "conf/curation_targets.txt" in paths
     assert "scripts/check_curation_targets.py" in paths

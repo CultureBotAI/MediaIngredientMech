@@ -13,45 +13,43 @@ name: label-correspondence
 # for CI, and Engine B already covers the same YAML ontology_label checks (and
 # more — ID_NOT_FOUND, products). It remains a local LinkML-native cross-check.
 
+# Required checks must report for every PR and merge queue candidate.
 on:
   pull_request:
-    paths: &trigger_paths
-      - "data/ingredients/**"
-      - "data/curated/**"
-      - "mappings/**"
-      - "docs/data/**"
-      - "src/mediaingredientmech/schema/**"
-      - "scripts/validate_id_label_correspondence.py"
-      - "conf/id_label_targets.yaml"
-      # The gate resolves ontology terms through oaklib, so a dependency change
-      # is one of the few things that can alter its verdict without touching any
-      # data. Omitting these meant the oaklib 0.6.23 -> 0.7.4 bump in #488 could
-      # not trigger the workflow most likely to catch it (#495). Every other
-      # library-dependent gate here already lists them.
-      - "pyproject.toml"
-      - "uv.lock"
-      - ".github/workflows/label-correspondence.yaml"
+  merge_group:
+    types: [checks_requested]
   push:
-    branches: [main]
-    paths: *trigger_paths
+    branches:
+    - main
+    paths:
+    - data/ingredients/**
+    - data/curated/**
+    - mappings/**
+    - docs/data/**
+    - src/mediaingredientmech/schema/**
+    - scripts/validate_id_label_correspondence.py
+    - conf/id_label_targets.yaml
+    - pyproject.toml
+    - uv.lock
+    - .github/workflows/label-correspondence.yaml
   workflow_dispatch:
 
 permissions:
   contents: read
 
 # The vendored-sync job used to live here and inherited the `paths:` filter
-# above, which is scoped to this workflow's expensive OAK-backed gate. That
+# previously used for this workflow's expensive OAK-backed gate. That
 # filter listed only 2 of the 6 files governed at the time, so the guard almost
 # never fired (CultureBotAI/TraitMech#198). It now has its own unfiltered
 # workflow, reads all 14 applicable artifacts from claw's pinned manifest, and
-# uses only a thin Bash launcher plus Python's standard library. The filter
-# above is correct for THIS job, which needs uv + a cached OAK ontology download.
+# uses only a thin Bash launcher plus Python's standard library. PR and queue
+# runs now always execute this gate too; push runs retain their existing scope.
 
 # This job's body now lives in claw as a reusable workflow (culturebotai-claw
 # #180, Phase 5). TraitMech was the canary and its run passed on main on
 # 2026-08-31, so the workflow is proven rather than merely written; this is the
 # second adopter. What stays here is what is MediaIngredientMech's: the trigger
-# filter above and the inputs below.
+# events above and the inputs below.
 jobs:
   id-label-gate:
     # Pinned to a claw commit, not a branch: a moving ref would change this

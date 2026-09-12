@@ -1,28 +1,20 @@
 name: QC — evidence reference validation
 
+# Required checks must report for every PR and merge queue candidate.
 on:
   pull_request:
-    # NO branches filter. A PR whose base is not `main` — every stacked PR —
-    # would otherwise skip this gate entirely, so the more carefully work is
-    # split into reviewable PRs the less CI it gets (#174). `push` below stays
-    # pinned to main, so this does not double-run on feature-branch pushes.
-    paths:
-      - "data/ingredients/**/*.yaml"
-      - "references_cache/**"
-      - "src/mediaingredientmech/schema/mediaingredientmech.yaml"
-      - "scripts/run_shared_evidence_validator.py"
-      - "justfile"
-      - "pyproject.toml"
-      - "uv.lock"
+  merge_group:
+    types: [checks_requested]
   push:
-    branches: [main]
+    branches:
+    - main
     paths:
-      - "data/ingredients/**/*.yaml"
-      - "references_cache/**"
-      - "scripts/run_shared_evidence_validator.py"
-      - "justfile"
-      - "pyproject.toml"
-      - "uv.lock"
+    - data/ingredients/**/*.yaml
+    - references_cache/**
+    - scripts/run_shared_evidence_validator.py
+    - justfile
+    - pyproject.toml
+    - uv.lock
   workflow_dispatch:
 
 permissions:
@@ -30,6 +22,7 @@ permissions:
 
 jobs:
   qc:
+    name: qc-evidence
     runs-on: ubuntu-latest
     steps:
       - name: Checkout MIM
@@ -41,6 +34,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: CultureBotAI/culturebotai-claw
+          # Reviewed validator code; keep aligned with scripts/.vendored_canon_ref.
+          ref: 83cfacc0d67d775dcb94c8e2261800f8e9d4b2f9
           path: culturebotai-claw
           # No token. culturebotai-claw is PUBLIC, so the default GITHUB_TOKEN
           # reads it fine. It was private when this job was written, which is why

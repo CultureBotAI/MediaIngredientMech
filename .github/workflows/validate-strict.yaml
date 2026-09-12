@@ -1,20 +1,23 @@
 name: validate-strict
 
+# Required checks must report for every PR and merge queue candidate.
 on:
   pull_request:
-    paths: &trigger_paths
-      - "data/ingredients/**"
-      - "data/curated/**"
-      - "src/mediaingredientmech/schema/**"
-      - "src/mediaingredientmech/**/*.py"
-      - "scripts/**/*.py"
-      - "justfile"
-      - "pyproject.toml"
-      - "uv.lock"
-      - ".github/workflows/validate-strict.yaml"
+  merge_group:
+    types: [checks_requested]
   push:
-    branches: [main]
-    paths: *trigger_paths
+    branches:
+    - main
+    paths:
+    - data/ingredients/**
+    - data/curated/**
+    - src/mediaingredientmech/schema/**
+    - src/mediaingredientmech/**/*.py
+    - scripts/**/*.py
+    - justfile
+    - pyproject.toml
+    - uv.lock
+    - .github/workflows/validate-strict.yaml
   workflow_dispatch:
 
 permissions:
