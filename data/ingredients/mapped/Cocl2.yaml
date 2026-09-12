@@ -33,13 +33,13 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: CoCl2 × 6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CoCl2 ∙ 6 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CoCl2∙6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Cobalt chloride
   synonym_type: EXACT_SYNONYM
@@ -63,7 +63,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
 - synonym_text: CoCl2.6H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -138,6 +138,15 @@ curation_history:
     no curated record did, so a rebuild would have dropped them from KGX: ''CoCl2.6H2O''.
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''CoCl2 × 6H2O'', ''CoCl2 ∙ 6 H2O'',
+    ''CoCl2∙6H2O'', ''CoCl2.6H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 7646-79-9

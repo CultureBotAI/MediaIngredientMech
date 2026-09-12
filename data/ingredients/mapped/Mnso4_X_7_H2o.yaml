@@ -25,7 +25,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MnSO4 x 1 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: MnSO4 x 7H2O
   synonym_type: HYDRATE_FORM
@@ -37,16 +37,16 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: MnSO4・xH2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: manganese(2+) sulfate
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
 - synonym_text: MnSO4 x n H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: MnSO4·nH2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -143,6 +143,15 @@ curation_history:
     no curated record did, so a rebuild would have dropped them from KGX: ''MnSO4
     x n H2O''; ''MnSO4·nH2O''. Tokens already present on the kg-microbe ontology node
     were left out as redundant (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''MnSO4 x 1 H2O'', ''MnSO4・xH2O'',
+    ''MnSO4 x n H2O'', ''MnSO4·nH2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 kg_microbe_node_id: CHEBI:86360
 chemical_properties:

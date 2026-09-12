@@ -26,16 +26,16 @@ ontology_mapping:
       label states it. Found by cross-checking CultureBotAI/CultureMech#272 (#374/#334).'
 synonyms:
 - synonym_text: NiSO4 . 6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiSO4 x 6 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiSO4·6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiSO4・6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiSO4・7H2O
   synonym_type: HYDRATE_FORM
@@ -134,6 +134,15 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''NiSO4 . 6H2O'', ''NiSO4 x 6 H2O'',
+    ''NiSO4·6H2O'', ''NiSO4・6H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   data_source: CultureBotHT/compounds_to_cas.csv
   retrieval_date: '2026-04-09T00:32:50.689620+00:00'

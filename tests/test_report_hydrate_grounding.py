@@ -101,9 +101,9 @@ def test_the_old_substring_rule_would_have_got_both_wrong(mod):
 
     by_substring = [r for r in rows if "states" in r["detail"]]
 
-    assert [r["kind"] for r in by_substring] == [
-        mod.ANHYDROUS_TERM
-    ], "the substring rule selects exactly the wrong row here"
+    assert [r["kind"] for r in by_substring] == [mod.ANHYDROUS_TERM], (
+        "the substring rule selects exactly the wrong row here"
+    )
 
 
 def test_the_kind_values_are_distinct(mod):
@@ -139,6 +139,31 @@ def test_kind_is_written_to_the_synonym_tsv(mod):
 
     assert rows and set(rows[0]) == set(mod.SYNONYM_FIELDS)
     assert rows[0]["kind"] == mod.ANHYDROUS_TERM
+
+
+def test_hydrate_synonyms_ignore_non_resolving_synonyms(mod):
+    rows = mod.classify_synonym_rows(
+        [
+            {
+                "identifier": "CHEBI:1",
+                "preferred_term": "magnesium chloride",
+                "ontology_mapping": {
+                    "ontology_id": "CHEBI:1",
+                    "ontology_label": "magnesium chloride",
+                },
+                "synonyms": [
+                    {
+                        "synonym_text": "MgCl2 x 6 H2O",
+                        "synonym_type": "REJECTED_LABEL",
+                    },
+                    {"synonym_text": "Role: MgCl2 x 6 H2O surrogate"},
+                ],
+            }
+        ],
+        {"CHEBI:1": "Cl2Mg"},
+    )
+
+    assert rows == []
 
 
 def test_synonym_different_state_rows_are_classified_by_the_source(mod):

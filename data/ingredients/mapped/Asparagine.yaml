@@ -37,7 +37,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: DL-Asparagine x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: merged_from_duplicate_mim_record
 mapping_status: MAPPED
 occurrence_statistics:
@@ -124,6 +124,14 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''DL-Asparagine x H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 chemical_properties:
   cas_rn: 3130-87-8
   data_source: OAK/CHEBI xref (overrode 5794-13-8|70-47-3)

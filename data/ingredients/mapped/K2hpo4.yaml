@@ -98,7 +98,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: Potassium dibasic phosphate trihydrate
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: culturemech:output/ingredient_occurrences.tsv
 mapping_status: MAPPED
 occurrence_statistics:
@@ -242,6 +242,14 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''Potassium dibasic phosphate trihydrate'' (x2 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: reject_hidden_hydrate_synonym_collapses
+  action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+  changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no longer
+    resolves sibling hydrate identities (#251): ''Potassium dibasic phosphate trihydrate''.'
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 7758-11-4
