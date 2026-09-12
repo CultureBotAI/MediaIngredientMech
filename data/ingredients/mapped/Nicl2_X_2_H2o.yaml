@@ -46,7 +46,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2 x 5 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 6 H2O
   synonym_type: HYDRATE_FORM
@@ -79,7 +79,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2・5H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2・6H2O
   synonym_type: HYDRATE_FORM
@@ -185,6 +185,14 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REJECTED_MALFORMED_HYDRATE_ALIASES
+  changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain on
+    their own #344 local identities only: ''NiCl2 x 5 H2O'', ''NiCl2・5H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
 kg_microbe_node_id: CHEBI:34887
 chemical_properties:
   data_source: CultureBotHT/compounds_to_cas.csv

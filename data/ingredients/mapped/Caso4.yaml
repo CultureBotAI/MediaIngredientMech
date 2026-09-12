@@ -24,12 +24,12 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: CaSO4・7H2O
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 19
-  media_count: 19
+  total_occurrences: 15
+  media_count: 15
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -101,6 +101,22 @@ curation_history:
     no curated record did, so a rebuild would have dropped them from KGX: ''CaSO4・7H2O''.
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REJECTED_MALFORMED_HYDRATE_ALIASES
+  changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain on
+    their own #344 local identities only: ''CaSO4・7H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REFRESHED_MALFORMED_SULFATE_OCCURRENCES
+  changes: occurrence_statistics 19/19 -> 15/15 after moving CaSO4/K2SO4 x 7 H2O memberships
+    off the anhydrous parent identifiers (#344).
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 7778-18-9

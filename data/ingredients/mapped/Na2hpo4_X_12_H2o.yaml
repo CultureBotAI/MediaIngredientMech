@@ -59,10 +59,10 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: Na2HPO4 x 3 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 6 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na2HPO4 x 7 H2O
   synonym_type: HYDRATE_FORM
@@ -212,6 +212,14 @@ curation_history:
   changes: kg_microbe_node_id CHEBI:34683 -> CHEBI:91259 (#554). The compatibility
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REJECTED_MALFORMED_HYDRATE_ALIASES
+  changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain on
+    their own #344 local identities only: ''Na2HPO4 x 3 H2O'', ''Na2HPO4 x 6 H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 kg_microbe_node_id: CHEBI:91259
 chemical_properties:

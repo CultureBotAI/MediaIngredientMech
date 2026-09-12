@@ -38,6 +38,12 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#344)
+    notes: mediadive.compound:479 still carries the source label 'CaCl2 x 7 H2O',
+      but no exact ontology term or CAS has been verified for that stated hydration
+      count. CHEBI:3312 (calcium dichloride) is retained only as the closest anhydrous
+      parent while the source label keeps its local kgmicrobe.compound identity.
 synonyms:
 - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
     Simple component'
@@ -47,25 +53,25 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: CaCl2 x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CaCl2·H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: CaCl2⋅7H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: CaCl2・H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Calcium chloride anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: anhydrous calcium chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: calcium chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -156,13 +162,19 @@ curation_history:
     weight. ChEBI has no term for this hydration state, so no authoritative value
     can be substituted. The grounding is separately wrong (#321); this corrects only
     the CAS (#334).'
-kg_microbe_node_id: CHEBI:3312
-chemical_properties:
-  data_source: CultureBotHT/compounds_to_cas.csv
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: Ca.2Cl.7H2O
-  inchi: InChI=1S/Ca.2ClH/h;2*1H/q+2;;/p-2
-  smiles: '[Ca+2].[Cl-].[Cl-]'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+  changes: 'identifier kgmicrobe.compound:cacl2_x_7_h2o -> kgmicrobe.compound:cacl2_x_7_h2o;
+    mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+    {''data_source'': ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+    ''molecular_formula'': ''Ca.2Cl.7H2O'', ''inchi'': ''InChI=1S/Ca.2ClH/h;2*1H/q+2;;/p-2'',
+    ''smiles'': ''[Ca+2].[Cl-].[Cl-]''} and marked 6 anhydrous or wrong-hydrate synonym(s)
+    as REJECTED_LABEL for mediadive.compound:479 (#344).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: MINERAL_SOURCE

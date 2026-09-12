@@ -1,4 +1,4 @@
-generation_date: '2026-09-11T23:46:36.251078+00:00'
+generation_date: '2026-09-12T00:00:00+00:00'
 total_count: 2679
 mapped_count: 2618
 unmapped_count: 0
@@ -50143,16 +50143,16 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: merged_from_duplicate_mim_record
   - synonym_text: CaCl2 . 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl2 x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl2·H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: CaCl2⋅7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl2・H2O
     synonym_type: HYDRATE_FORM
@@ -50270,6 +50270,15 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''CaCl
       2''. Tokens already present on the kg-microbe ontology node were left out as
       redundant (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''CaCl2 . 7H2O'', ''CaCl2 x 7 H2O'',
+      ''CaCl2⋅7H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 10043-52-4
@@ -50833,6 +50842,12 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:479 still carries the source label 'CaCl2 x 7 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:3312 (calcium dichloride) is retained only as the closest anhydrous
+        parent while the source label keeps its local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
       Simple component'
@@ -50842,25 +50857,25 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: CaCl2 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl2·H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CaCl2⋅7H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: CaCl2・H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Calcium chloride anhydrous
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: anhydrous calcium chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: calcium chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -50951,13 +50966,20 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted. The grounding is separately wrong (#321); this corrects
       only the CAS (#334).'
-  kg_microbe_node_id: CHEBI:3312
-  chemical_properties:
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Ca.2Cl.7H2O
-    inchi: InChI=1S/Ca.2ClH/h;2*1H/q+2;;/p-2
-    smiles: '[Ca+2].[Cl-].[Cl-]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier kgmicrobe.compound:cacl2_x_7_h2o -> kgmicrobe.compound:cacl2_x_7_h2o;
+      mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+      {''data_source'': ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'':
+      ''2026-04-09T00:32:50.689620+00:00'', ''molecular_formula'': ''Ca.2Cl.7H2O'',
+      ''inchi'': ''InChI=1S/Ca.2ClH/h;2*1H/q+2;;/p-2'', ''smiles'': ''[Ca+2].[Cl-].[Cl-]''}
+      and marked 6 anhydrous or wrong-hydrate synonym(s) as REJECTED_LABEL for mediadive.compound:479
+      (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: MINERAL_SOURCE
@@ -54556,12 +54578,12 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: CaSO4・7H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 19
-    media_count: 19
+    total_occurrences: 15
+    media_count: 15
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -54633,6 +54655,22 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''CaSO4・7H2O''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''CaSO4・7H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REFRESHED_MALFORMED_SULFATE_OCCURRENCES
+    changes: occurrence_statistics 19/19 -> 15/15 after moving CaSO4/K2SO4 x 7 H2O
+      memberships off the anhydrous parent identifiers (#344).
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 7778-18-9
@@ -54924,13 +54962,13 @@ ingredients:
   - role: MINERAL_SOURCE
     confidence: 0.8
     evidence: []
-- identifier: CHEBI:31346
+- identifier: kgmicrobe.compound:caso4_x_7_h2o
   preferred_term: CaSO4 x 7 H2O
   ontology_mapping:
     ontology_id: CHEBI:31346
     ontology_label: calcium sulfate
     ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -54944,20 +54982,26 @@ ingredients:
         ChEBI formula ('Ca.O4S') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:2000 still carries the source label 'CaSO4 x 7 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:31346 (calcium sulfate) is retained only as the closest anhydrous
+        parent while the source label keeps its local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: CaSO4・7H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: anhydrous gypsum
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: calcium sulfate, anhydrous
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 19
-    media_count: 19
+    total_occurrences: 4
+    media_count: 4
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -55049,12 +55093,27 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted. The grounding is separately wrong (#321); this corrects
       only the CAS (#334).'
-  chemical_properties:
-    data_source: PubChem (via CHEBI:31346)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Ca.O4S.7H2O
-    inchi: InChI=1S/Ca.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Ca+2]
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier CHEBI:31346 -> kgmicrobe.compound:caso4_x_7_h2o; mapping_quality
+      SYNONYM_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties {''data_source'':
+      ''PubChem (via CHEBI:31346)'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+      ''molecular_formula'': ''Ca.O4S.7H2O'', ''inchi'': ''InChI=1S/Ca.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2'',
+      ''smiles'': ''O=S(=O)([O-])[O-].[Ca+2]''} and marked 2 anhydrous or wrong-hydrate
+      synonym(s) as REJECTED_LABEL for mediadive.compound:2000 (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REFRESHED_MALFORMED_SULFATE_OCCURRENCES
+    changes: occurrence_statistics 19/19 -> 4/4 after moving CaSO4/K2SO4 x 7 H2O memberships
+      off the anhydrous parent identifiers (#344).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: SULFUR_SOURCE
@@ -64229,7 +64288,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: CuCl2 × 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cupric dichloride
     synonym_type: EXACT_SYNONYM
@@ -64241,7 +64300,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: merged_from_duplicate_mim_record
   - synonym_text: CuCl2 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CuCl2 · H2O
     synonym_type: HYDRATE_FORM
@@ -64336,6 +64395,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''CuCl2 x 6 H2O'', ''CuCl2 × 6H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7447-39-4
     data_source: PubChem (via CHEBI:49553)
@@ -64708,24 +64775,30 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:1056 still carries the source label 'CuCl2 x 6 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:49553 (copper(II) chloride) is retained only as the closest anhydrous
+        parent while the source label keeps its local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: CuCl2 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CuCl2 · H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cupric chloride anhydrous
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: CuCl2 × 6H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe_via_hydration_routing
   - synonym_text: copper dichloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: copper(2+) dichloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -64833,13 +64906,19 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted. The grounding is separately wrong (#321); this corrects
       only the CAS (#334).'
-  kg_microbe_node_id: CHEBI:49553
-  chemical_properties:
-    data_source: PubChem (via CHEBI:49553)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cl2Cu.6H2O
-    inchi: InChI=1S/2ClH.Cu/h2*1H;/q;;+2/p-2
-    smiles: '[Cl][Cu][Cl]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier kgmicrobe.compound:cucl2_x_6_h2o -> kgmicrobe.compound:cucl2_x_6_h2o;
+      mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+      {''data_source'': ''PubChem (via CHEBI:49553)'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+      ''molecular_formula'': ''Cl2Cu.6H2O'', ''inchi'': ''InChI=1S/2ClH.Cu/h2*1H;/q;;+2/p-2'',
+      ''smiles'': ''[Cl][Cu][Cl]''} and marked 5 anhydrous or wrong-hydrate synonym(s)
+      as REJECTED_LABEL for mediadive.compound:1056 (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT
@@ -82991,9 +83070,15 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:555 still carries the source label 'FeCl2 x 6 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:30812 (iron dichloride) is retained only as the closest anhydrous
+        parent while the source label keeps its local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: FeCl2 x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeCl2·6H2O
     synonym_type: HYDRATE_FORM
@@ -83002,10 +83087,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: iron(2+) chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: iron(II) chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -83096,13 +83181,19 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted and a guess is how wrong CAS numbers spread. The grounding
       is separately wrong (#321); this corrects only the CAS (#334).'
-  kg_microbe_node_id: CHEBI:30812
-  chemical_properties:
-    data_source: PubChem (via CHEBI:30812)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cl2Fe.6H2O
-    inchi: InChI=1S/2ClH.Fe/h2*1H;/q;;+2/p-2
-    smiles: '[Cl][Fe][Cl]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier kgmicrobe.compound:fecl2_x_6_h2o -> kgmicrobe.compound:fecl2_x_6_h2o;
+      mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+      {''data_source'': ''PubChem (via CHEBI:30812)'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+      ''molecular_formula'': ''Cl2Fe.6H2O'', ''inchi'': ''InChI=1S/2ClH.Fe/h2*1H;/q;;+2/p-2'',
+      ''smiles'': ''[Cl][Fe][Cl]''} and marked 3 anhydrous or wrong-hydrate synonym(s)
+      as REJECTED_LABEL for mediadive.compound:555 (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: IRON_SOURCE
@@ -83152,21 +83243,27 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:840 still carries the source label 'FeCl2 x 7 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:30812 (iron dichloride) is retained only as the closest anhydrous
+        parent while the source label keeps its local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: FeCl2 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeCl2·6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: FeCl2⋅6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: iron(2+) chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: iron(II) chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -83257,13 +83354,19 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted and a guess is how wrong CAS numbers spread. The grounding
       is separately wrong (#321); this corrects only the CAS (#334).'
-  kg_microbe_node_id: CHEBI:30812
-  chemical_properties:
-    data_source: PubChem (via CHEBI:30812)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cl2Fe.7H2O
-    inchi: InChI=1S/2ClH.Fe/h2*1H;/q;;+2/p-2
-    smiles: '[Cl][Fe][Cl]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier kgmicrobe.compound:fecl2_x_7_h2o -> kgmicrobe.compound:fecl2_x_7_h2o;
+      mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+      {''data_source'': ''PubChem (via CHEBI:30812)'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+      ''molecular_formula'': ''Cl2Fe.7H2O'', ''inchi'': ''InChI=1S/2ClH.Fe/h2*1H;/q;;+2/p-2'',
+      ''smiles'': ''[Cl][Fe][Cl]''} and marked 5 anhydrous or wrong-hydrate synonym(s)
+      as REJECTED_LABEL for mediadive.compound:840 (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: IRON_SOURCE
@@ -83438,15 +83541,21 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:922 still carries the source label 'FeCl3 x 4 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:30808 (iron trichloride) is retained only as the closest anhydrous
+        parent while the source label keeps its local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: FeCl3·4H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: iron(3+) chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: iron(III) chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -83536,13 +83645,19 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted. The grounding is separately wrong (#321); this corrects
       only the CAS (#334).'
-  kg_microbe_node_id: CHEBI:30808
-  chemical_properties:
-    data_source: PubChem (via CHEBI:30808)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cl3Fe.4H2O
-    inchi: InChI=1S/3ClH.Fe/h3*1H;/q;;;+3/p-3
-    smiles: '[Cl][Fe]([Cl])[Cl]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier kgmicrobe.compound:fecl3_x_4_h2o -> kgmicrobe.compound:fecl3_x_4_h2o;
+      mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+      {''data_source'': ''PubChem (via CHEBI:30808)'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+      ''molecular_formula'': ''Cl3Fe.4H2O'', ''inchi'': ''InChI=1S/3ClH.Fe/h3*1H;/q;;;+3/p-3'',
+      ''smiles'': ''[Cl][Fe]([Cl])[Cl]''} and marked 2 anhydrous or wrong-hydrate
+      synonym(s) as REJECTED_LABEL for mediadive.compound:922 (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: IRON_SOURCE
@@ -101128,12 +101243,12 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: K2SO4·7H2O
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 138
-    media_count: 138
+    total_occurrences: 134
+    media_count: 134
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -101228,6 +101343,22 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''K2SO4·7H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REFRESHED_MALFORMED_SULFATE_OCCURRENCES
+    changes: occurrence_statistics 138/138 -> 134/134 after moving CaSO4/K2SO4 x 7
+      H2O memberships off the anhydrous parent identifiers (#344).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7778-80-5
     data_source: PubChem API
@@ -101247,13 +101378,13 @@ ingredients:
   - role: MINERAL_SOURCE
     confidence: 0.8
     evidence: []
-- identifier: CHEBI:32036
+- identifier: kgmicrobe.compound:k2so4_x_7_h2o
   preferred_term: K2SO4 x 7 H2O
   ontology_mapping:
     ontology_id: CHEBI:32036
     ontology_label: potassium sulfate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
@@ -101267,6 +101398,12 @@ ingredients:
         ChEBI formula ('2K.O4S') — the mark of a value inherited from the parent rather
         than measured for this record. Water appended in ChEBI's own dot-separated
         notation.
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:1920 still carries the source label 'K2SO4 x 7 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:32036 (potassium sulfate) is retained only as the closest anhydrous
+        parent while the source label keeps its local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: K2SO4·7H2O
     synonym_type: HYDRATE_FORM
@@ -101276,8 +101413,8 @@ ingredients:
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 138
-    media_count: 138
+    total_occurrences: 4
+    media_count: 4
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -101358,13 +101495,27 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted. The grounding is separately wrong (#321); this corrects
       only the CAS (#334).'
-  kg_microbe_node_id: CHEBI:32036
-  chemical_properties:
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: 2K.O4S.7H2O
-    inchi: InChI=1S/2K.H2O4S/c;;1-5(2,3)4/h;;(H2,1,2,3,4)/q2*+1;/p-2
-    smiles: O=S(=O)([O-])[O-].[K+].[K+]
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier CHEBI:32036 -> kgmicrobe.compound:k2so4_x_7_h2o; mapping_quality
+      EXACT_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties {''data_source'':
+      ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+      ''molecular_formula'': ''2K.O4S.7H2O'', ''inchi'': ''InChI=1S/2K.H2O4S/c;;1-5(2,3)4/h;;(H2,1,2,3,4)/q2*+1;/p-2'',
+      ''smiles'': ''O=S(=O)([O-])[O-].[K+].[K+]''} and marked 0 anhydrous or wrong-hydrate
+      synonym(s) as REJECTED_LABEL for mediadive.compound:1920 (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REFRESHED_MALFORMED_SULFATE_OCCURRENCES
+    changes: occurrence_statistics 138/138 -> 4/4 after moving CaSO4/K2SO4 x 7 H2O
+      memberships off the anhydrous parent identifiers (#344).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: SULFUR_SOURCE
@@ -119977,7 +120128,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: MERGED_FROM MgCl2x 6 H2O (#414)
   - synonym_text: MgCl2  x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM MgCl2x 6 H2O (#414)
   - synonym_text: MgCl2  x 76 H2O
     synonym_type: HYDRATE_FORM
@@ -119986,13 +120137,13 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: MERGED_FROM MgCl2x 6 H2O (#414)
   - synonym_text: MgCl2 x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM MgCl2x 6 H2O (#414)
   - synonym_text: MgCl2 x 7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM MgCl2x 6 H2O (#414)
   - synonym_text: MgCl2x7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: MERGED_FROM MgCl2x 6 H2O (#414)
   - synonym_text: MgCl2 x 6H2O
     synonym_type: HYDRATE_FORM
@@ -120124,6 +120275,15 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''MgCl2  x 7 H2O'', ''MgCl2 x 7 H2O'',
+      ''MgCl2 x 7H2O'', ''MgCl2x7H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7791-18-6
     data_source: PubChem (via CHEBI:86345)
@@ -120184,27 +120344,33 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:632 still carries the source label 'MgCl2 x 7 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:6636 (magnesium dichloride) is retained only as the closest anhydrous
+        parent while the source label keeps its local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: Magnesium chloride anhydrous
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2  x 76 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2 X 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2 x 7H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: MgCl2x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2x7H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: MgCl2 x 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2  x 7 H2O
     synonym_type: HYDRATE_FORM
@@ -120303,14 +120469,20 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  chemical_properties:
-    cas_rn: 12285-34-6
-    data_source: NCI CACTUS Chemical Identifier Resolver
-    retrieval_date: '2026-04-05T21:54:34.984632+00:00'
-    molecular_formula: 2Cl.Mg.7H2O
-    inchi: InChI=1S/2ClH.Mg/h2*1H;/q;;+2/p-2
-    smiles: '[Cl-].[Cl-].[Mg+2]'
-  kg_microbe_node_id: CHEBI:6636
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier kgmicrobe.compound:mgcl2_x_7_h2o -> kgmicrobe.compound:mgcl2_x_7_h2o;
+      mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+      {''cas_rn'': ''12285-34-6'', ''data_source'': ''NCI CACTUS Chemical Identifier
+      Resolver'', ''retrieval_date'': ''2026-04-05T21:54:34.984632+00:00'', ''molecular_formula'':
+      ''2Cl.Mg.7H2O'', ''inchi'': ''InChI=1S/2ClH.Mg/h2*1H;/q;;+2/p-2'', ''smiles'':
+      ''[Cl-].[Cl-].[Mg+2]''} and marked 5 anhydrous or wrong-hydrate synonym(s) as
+      REJECTED_LABEL for mediadive.compound:632 (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: MINERAL_SOURCE
@@ -131418,10 +131590,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2HPO4 x 3 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 7 H2O
     synonym_type: HYDRATE_FORM
@@ -131553,6 +131725,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''Na2HPO4 x 3 H2O'', ''Na2HPO4 x 6
+      H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7558-79-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -131634,10 +131815,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2HPO4 x 3 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 7 H2O
     synonym_type: HYDRATE_FORM
@@ -131788,6 +131969,15 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''Na2HPO4 x 3 H2O'', ''Na2HPO4 x 6
+      H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:91259
   chemical_properties:
     cas_rn: 10039-32-4
@@ -131869,10 +132059,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2HPO4 x 3 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 7 H2O
     synonym_type: HYDRATE_FORM
@@ -132035,6 +132225,15 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''Na2HPO4 x 3 H2O'', ''Na2HPO4 x 6
+      H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:91258
   chemical_properties:
     cas_rn: 10028-24-7
@@ -132096,43 +132295,50 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:525 still carries the source label 'Na2HPO4 x 3 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:34683 (disodium hydrogenphosphate) is retained only as the closest
+        anhydrous parent while the source label keeps its local kgmicrobe.compound
+        identity.
   synonyms:
   - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Na2HPO4 . 12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 12 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4·12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
@@ -132224,13 +132430,20 @@ ingredients:
       has no term for this hydration state, so no authoritative CAS is available and
       substituting a guess is how wrong CAS numbers spread. Absent is recoverable;
       wrong is not (#334).'
-  kg_microbe_node_id: CHEBI:34683
-  chemical_properties:
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: HO4P.2Na.3H2O
-    inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    smiles: O=P([O-])([O-])O.[Na+].[Na+]
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier kgmicrobe.compound:na2hpo4_x_3_h2o -> kgmicrobe.compound:na2hpo4_x_3_h2o;
+      mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+      {''data_source'': ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'':
+      ''2026-04-09T00:32:50.689620+00:00'', ''molecular_formula'': ''HO4P.2Na.3H2O'',
+      ''inchi'': ''InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2'', ''smiles'':
+      ''O=P([O-])([O-])O.[Na+].[Na+]''} and marked 11 anhydrous or wrong-hydrate synonym(s)
+      as REJECTED_LABEL for mediadive.compound:525 (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -132284,39 +132497,46 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:1580 still carries the source label 'Na2HPO4 x 6 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:34683 (disodium hydrogenphosphate) is retained only as the closest
+        anhydrous parent while the source label keeps its local kgmicrobe.compound
+        identity.
   synonyms:
   - synonym_text: Na2HPO4 . 12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 12 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 3 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 7 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4.7H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4·12H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4·6H2O
     synonym_type: HYDRATE_FORM
@@ -132418,13 +132638,20 @@ ingredients:
       has no term for this hydration state, so no authoritative CAS is available and
       substituting a guess is how wrong CAS numbers spread. Absent is recoverable;
       wrong is not (#334).'
-  kg_microbe_node_id: CHEBI:34683
-  chemical_properties:
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: HO4P.2Na.6H2O
-    inchi: InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2
-    smiles: O=P([O-])([O-])O.[Na+].[Na+]
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier kgmicrobe.compound:na2hpo4_x_6_h2o -> kgmicrobe.compound:na2hpo4_x_6_h2o;
+      mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+      {''data_source'': ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'':
+      ''2026-04-09T00:32:50.689620+00:00'', ''molecular_formula'': ''HO4P.2Na.6H2O'',
+      ''inchi'': ''InChI=1S/2Na.H3O4P/c;;1-5(2,3)4/h;;(H3,1,2,3,4)/q2*+1;/p-2'', ''smiles'':
+      ''O=P([O-])([O-])O.[Na+].[Na+]''} and marked 11 anhydrous or wrong-hydrate synonym(s)
+      as REJECTED_LABEL for mediadive.compound:1580 (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: BUFFER
@@ -132488,10 +132715,10 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: Na2HPO4 x 3 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Na2HPO4 x H2O
     synonym_type: HYDRATE_FORM
@@ -132602,6 +132829,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''Na2HPO4 x 3 H2O'', ''Na2HPO4 x 6
+      H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34683
   chemical_properties:
     cas_rn: 7782-85-6
@@ -142002,7 +142238,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NiCl2 x 5 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6 H2O
     synonym_type: HYDRATE_FORM
@@ -142032,7 +142268,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NiCl2・5H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・6H2O
     synonym_type: HYDRATE_FORM
@@ -142146,6 +142382,14 @@ ingredients:
       2 x 6 H2O''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''NiCl2 x 5 H2O'', ''NiCl2・5H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 7718-54-9
     data_source: PubChem API
@@ -142215,7 +142459,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NiCl2 x 5 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6 H2O
     synonym_type: HYDRATE_FORM
@@ -142248,7 +142492,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NiCl2・5H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・6H2O
     synonym_type: HYDRATE_FORM
@@ -142355,6 +142599,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: REJECTED_MALFORMED_HYDRATE_ALIASES
+    changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain
+      on their own #344 local identities only: ''NiCl2 x 5 H2O'', ''NiCl2・5H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   kg_microbe_node_id: CHEBI:34887
   chemical_properties:
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -142411,60 +142663,66 @@ ingredients:
         substance containing the anhydrous form, not a specialization of it. closeMatch
         claims similarity without subsumption. The ontology_id and the record''s own
         identifier are unchanged.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#344)
+      notes: mediadive.compound:2037 still carries the source label 'NiCl2 x 5 H2O',
+        but no exact ontology term or CAS has been verified for that stated hydration
+        count. CHEBI:34887 (nickel dichloride) is retained only as the closest anhydrous
+        parent while the source label keeps its local kgmicrobe.compound identity.
   synonyms:
   - synonym_text: NiCl2 . 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 2 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6 H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6 H2O (0.1% w/v)
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 x H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2 · 6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2.6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2x6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2·2H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2·6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2⋅6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・5H2O
     synonym_type: HYDRATE_FORM
     source: kg_microbe
   - synonym_text: NiCl2・6H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: NiCl2・H2O
-    synonym_type: HYDRATE_FORM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: nickel(2+) chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: nickel(II) chloride
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -142559,13 +142817,20 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  kg_microbe_node_id: CHEBI:34887
-  chemical_properties:
-    data_source: CultureBotHT/compounds_to_cas.csv
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cl2Ni.5H2O
-    inchi: InChI=1S/2ClH.Ni/h2*1H;/q;;+2/p-2
-    smiles: '[Cl][Ni][Cl]'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_malformed_hydrate_identities
+    action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+    changes: 'identifier kgmicrobe.compound:nicl2_x_5_h2o -> kgmicrobe.compound:nicl2_x_5_h2o;
+      mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+      {''data_source'': ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'':
+      ''2026-04-09T00:32:50.689620+00:00'', ''molecular_formula'': ''Cl2Ni.5H2O'',
+      ''inchi'': ''InChI=1S/2ClH.Ni/h2*1H;/q;;+2/p-2'', ''smiles'': ''[Cl][Ni][Cl]''}
+      and marked 17 anhydrous or wrong-hydrate synonym(s) as REJECTED_LABEL for mediadive.compound:2037
+      (#344).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   nutritional_roles:
   - role: TRACE_ELEMENT

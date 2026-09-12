@@ -37,9 +37,15 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#344)
+    notes: mediadive.compound:555 still carries the source label 'FeCl2 x 6 H2O',
+      but no exact ontology term or CAS has been verified for that stated hydration
+      count. CHEBI:30812 (iron dichloride) is retained only as the closest anhydrous
+      parent while the source label keeps its local kgmicrobe.compound identity.
 synonyms:
 - synonym_text: FeCl2 x 7 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: FeCl2·6H2O
   synonym_type: HYDRATE_FORM
@@ -48,10 +54,10 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: iron(2+) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: iron(II) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -142,13 +148,19 @@ curation_history:
     weight. ChEBI has no term for this hydration state, so no authoritative value
     can be substituted and a guess is how wrong CAS numbers spread. The grounding
     is separately wrong (#321); this corrects only the CAS (#334).'
-kg_microbe_node_id: CHEBI:30812
-chemical_properties:
-  data_source: PubChem (via CHEBI:30812)
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: Cl2Fe.6H2O
-  inchi: InChI=1S/2ClH.Fe/h2*1H;/q;;+2/p-2
-  smiles: '[Cl][Fe][Cl]'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+  changes: 'identifier kgmicrobe.compound:fecl2_x_6_h2o -> kgmicrobe.compound:fecl2_x_6_h2o;
+    mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+    {''data_source'': ''PubChem (via CHEBI:30812)'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+    ''molecular_formula'': ''Cl2Fe.6H2O'', ''inchi'': ''InChI=1S/2ClH.Fe/h2*1H;/q;;+2/p-2'',
+    ''smiles'': ''[Cl][Fe][Cl]''} and marked 3 anhydrous or wrong-hydrate synonym(s)
+    as REJECTED_LABEL for mediadive.compound:555 (#344).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: IRON_SOURCE

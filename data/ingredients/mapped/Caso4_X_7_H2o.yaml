@@ -1,10 +1,10 @@
-identifier: CHEBI:31346
+identifier: kgmicrobe.compound:caso4_x_7_h2o
 preferred_term: CaSO4 x 7 H2O
 ontology_mapping:
   ontology_id: CHEBI:31346
   ontology_label: calcium sulfate
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
@@ -17,20 +17,26 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:31346's
       ChEBI formula ('Ca.O4S') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#344)
+    notes: mediadive.compound:2000 still carries the source label 'CaSO4 x 7 H2O',
+      but no exact ontology term or CAS has been verified for that stated hydration
+      count. CHEBI:31346 (calcium sulfate) is retained only as the closest anhydrous
+      parent while the source label keeps its local kgmicrobe.compound identity.
 synonyms:
 - synonym_text: CaSO4・7H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: anhydrous gypsum
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: calcium sulfate, anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 19
-  media_count: 19
+  total_occurrences: 4
+  media_count: 4
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -122,12 +128,27 @@ curation_history:
     weight. ChEBI has no term for this hydration state, so no authoritative value
     can be substituted. The grounding is separately wrong (#321); this corrects only
     the CAS (#334).'
-chemical_properties:
-  data_source: PubChem (via CHEBI:31346)
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: Ca.O4S.7H2O
-  inchi: InChI=1S/Ca.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-  smiles: O=S(=O)([O-])[O-].[Ca+2]
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+  changes: 'identifier CHEBI:31346 -> kgmicrobe.compound:caso4_x_7_h2o; mapping_quality
+    SYNONYM_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties {''data_source'':
+    ''PubChem (via CHEBI:31346)'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+    ''molecular_formula'': ''Ca.O4S.7H2O'', ''inchi'': ''InChI=1S/Ca.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2'',
+    ''smiles'': ''O=S(=O)([O-])[O-].[Ca+2]''} and marked 2 anhydrous or wrong-hydrate
+    synonym(s) as REJECTED_LABEL for mediadive.compound:2000 (#344).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REFRESHED_MALFORMED_SULFATE_OCCURRENCES
+  changes: occurrence_statistics 19/19 -> 4/4 after moving CaSO4/K2SO4 x 7 H2O memberships
+    off the anhydrous parent identifiers (#344).
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: SULFUR_SOURCE

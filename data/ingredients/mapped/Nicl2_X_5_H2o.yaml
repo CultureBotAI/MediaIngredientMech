@@ -38,60 +38,66 @@ ontology_mapping:
       containing the anhydrous form, not a specialization of it. closeMatch claims
       similarity without subsumption. The ontology_id and the record''s own identifier
       are unchanged.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: MIM curation (#344)
+    notes: mediadive.compound:2037 still carries the source label 'NiCl2 x 5 H2O',
+      but no exact ontology term or CAS has been verified for that stated hydration
+      count. CHEBI:34887 (nickel dichloride) is retained only as the closest anhydrous
+      parent while the source label keeps its local kgmicrobe.compound identity.
 synonyms:
 - synonym_text: NiCl2 . 6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 2 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 2H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 6 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 6 H2O (0.1% w/v)
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 · 6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2.6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2x6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2·2H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2·6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2⋅6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2・5H2O
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2・6H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2・H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: nickel(2+) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: nickel(II) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -185,13 +191,19 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
-kg_microbe_node_id: CHEBI:34887
-chemical_properties:
-  data_source: CultureBotHT/compounds_to_cas.csv
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: Cl2Ni.5H2O
-  inchi: InChI=1S/2ClH.Ni/h2*1H;/q;;+2/p-2
-  smiles: '[Cl][Ni][Cl]'
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: LOCALIZED_MALFORMED_HYDRATE_IDENTITY
+  changes: 'identifier kgmicrobe.compound:nicl2_x_5_h2o -> kgmicrobe.compound:nicl2_x_5_h2o;
+    mapping_quality CLOSE_MATCH -> CLOSE_MATCH. Cleared unverified chemical_properties
+    {''data_source'': ''CultureBotHT/compounds_to_cas.csv'', ''retrieval_date'': ''2026-04-09T00:32:50.689620+00:00'',
+    ''molecular_formula'': ''Cl2Ni.5H2O'', ''inchi'': ''InChI=1S/2ClH.Ni/h2*1H;/q;;+2/p-2'',
+    ''smiles'': ''[Cl][Ni][Cl]''} and marked 17 anhydrous or wrong-hydrate synonym(s)
+    as REJECTED_LABEL for mediadive.compound:2037 (#344).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: false
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: TRACE_ELEMENT

@@ -89,7 +89,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: MERGED_FROM MgCl2x 6 H2O (#414)
 - synonym_text: MgCl2  x 7 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: MERGED_FROM MgCl2x 6 H2O (#414)
 - synonym_text: MgCl2  x 76 H2O
   synonym_type: HYDRATE_FORM
@@ -98,13 +98,13 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: MERGED_FROM MgCl2x 6 H2O (#414)
 - synonym_text: MgCl2 x 7 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: MERGED_FROM MgCl2x 6 H2O (#414)
 - synonym_text: MgCl2 x 7H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: MERGED_FROM MgCl2x 6 H2O (#414)
 - synonym_text: MgCl2x7H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: MERGED_FROM MgCl2x 6 H2O (#414)
 - synonym_text: MgCl2 x 6H2O
   synonym_type: HYDRATE_FORM
@@ -234,6 +234,15 @@ curation_history:
     no curated record did, so a rebuild would have dropped them from KGX: ''MgCl*6H2O''.
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
+  llm_assisted: false
+- timestamp: '2026-09-12T00:00:00+00:00'
+  curator: fix_malformed_hydrate_identities
+  action: REJECTED_MALFORMED_HYDRATE_ALIASES
+  changes: 'Marked malformed hydrate alias(es) as REJECTED_LABEL so they remain on
+    their own #344 local identities only: ''MgCl2  x 7 H2O'', ''MgCl2 x 7 H2O'', ''MgCl2
+    x 7H2O'', ''MgCl2x7H2O''.'
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 7791-18-6
