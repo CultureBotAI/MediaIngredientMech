@@ -1,0 +1,37 @@
+name: QC — unified snapshot freshness
+
+# Required checks must report for every PR and merge queue candidate.
+on:
+  pull_request:
+  merge_group:
+    types: [checks_requested]
+  push:
+    branches:
+    - main
+    paths:
+    - data/ingredients/**
+    - UNIFIED_INGREDIENT_MAPPING.tsv
+    - UNIFIED_INGREDIENT_MAPPING.provenance.json
+    - scripts/check_unified_freshness.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qc:
+    name: qc-unified-freshness
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout MIM
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # Deliberately no deps, no claw checkout and no CultureMech: this gate
+      # hashes MIM's own records and the artifact, which is all that staleness
+      # needs. Rebuilding is a local, three-checkout operation (#359).
+      - name: Check the unified snapshot is current with data/ingredients
+        run: python3 scripts/check_unified_freshness.py --check

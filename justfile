@@ -100,6 +100,30 @@ bump-sssom-header *ARGS:
 qc-sssom:
     uv run --frozen python scripts/validate_sssom_invariants.py
 
+# UNIFIED_INGREDIENT_MAPPING.tsv is built by claw from MIM's records plus
+# CultureMech's recipes and committed here. Nothing recorded what it was built
+# from, so it went three weeks and forty PRs stale unnoticed (#359) and ended up
+# disagreeing with the SSSOM about record identity (#624). A rebuild needs three
+# checkouts, but staleness is visible from MIM alone: the snapshot is stale
+# exactly when data/ingredients has moved since it was built.
+#
+# Fail if the unified snapshot no longer reflects MIM's records
+check-unified-freshness:
+    uv run --frozen python scripts/check_unified_freshness.py --check
+
+# Record what the snapshot was built from. Run after rebuild-unified.
+stamp-unified-freshness:
+    uv run --frozen python scripts/check_unified_freshness.py --stamp
+
+# Rebuild the snapshot. Needs CultureMech, MIM and claw checked out as siblings
+# and claw's own virtualenv: the builder imports kg_microbe_fleet, which pulls
+# in python-dotenv that MIM's venv does not carry. Stamp and commit both files.
+rebuild-unified CLAW="../../KG-Hub/KG-Microbe/culturebotai-claw" CULTUREMECH="../CultureMech":
+    {{CLAW}}/.venv/bin/python {{CLAW}}/scripts/build_unified_ingredient_mapping.py \
+        --culturemech {{CULTUREMECH}} --mim . \
+        --output UNIFIED_INGREDIENT_MAPPING.tsv --format tsv
+    just stamp-unified-freshness
+
 # A merged raw label survives only as a synonym on its target, and merges add no
 # SSSOM row — so before #229 `D-lactate` resolved to UNMAPPED_0654 and, after the
 # merge, to nothing. reconcile/roundtrip/duplicate-ids were all green throughout:
