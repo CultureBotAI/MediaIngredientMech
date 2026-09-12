@@ -76,15 +76,31 @@ def inputs_digest(inputs: Path = INPUTS) -> tuple[str, int]:
 
 
 def _git_rev(root: Path) -> str:
-    """Return a short git rev for a checkout, or the empty string."""
-    try:
-        result = subprocess.run(
-            ["git", "-C", str(root), "rev-parse", "--short", "HEAD"],
-            capture_output=True, text=True, check=True, timeout=30,
-        )
-        return result.stdout.strip()
-    except (subprocess.SubprocessError, OSError):
-        return ""
+    """
+    Return a rev to stamp: the merge-base with origin/main, else HEAD.
+
+    Stamping bare HEAD records a branch commit, and the rebuild-then-squash-merge
+    workflow discards exactly that commit -- after which drift is unmeasurable and
+    the gate goes quietly advisory, which is the silent-no-op class it exists to
+    catch (#658). The merge-base is on the default branch and survives.
+
+    :param root: The checkout to ask.
+    :return: A short rev, or the empty string when git cannot answer.
+    """
+    def _rev(*args: str) -> str:
+        try:
+            result = subprocess.run(
+                ["git", "-C", str(root), *args],
+                capture_output=True, text=True, check=True, timeout=30,
+            )
+            return result.stdout.strip()
+        except (subprocess.SubprocessError, OSError):
+            return ""
+
+    base = _rev("merge-base", "origin/main", "HEAD")
+    if base:
+        return _rev("rev-parse", "--short", base) or base[:8]
+    return _rev("rev-parse", "--short", "HEAD")
 
 
 def stamp(artifact: Path, provenance: Path, inputs: Path) -> dict:
@@ -132,14 +148,24 @@ def drift_since(rev: str, inputs: Path, repo: Path = _REPO) -> int | None:
         relative = inputs.resolve().relative_to(repo.resolve())
     except ValueError:
         return None
-    try:
-        result = subprocess.run(
-            ["git", "-C", str(repo), "diff", "--name-only", rev, "--", str(relative)],
-            capture_output=True, text=True, check=True, timeout=60,
-        )
-    except (subprocess.SubprocessError, OSError):
+    def _git(*args: str) -> list[str] | None:
+        try:
+            result = subprocess.run(
+                ["git", "-C", str(repo), *args],
+                capture_output=True, text=True, check=True, timeout=60,
+            )
+        except (subprocess.SubprocessError, OSError):
+            return None
+        return [line for line in result.stdout.splitlines() if line.strip()]
+
+    changed = _git("diff", "--name-only", rev, "--", str(relative))
+    if changed is None:
         return None
-    return len([line for line in result.stdout.splitlines() if line.strip()])
+    # `git diff` cannot see a file git does not know about, and adding a record
+    # is the commonest curation action -- thirty new records read as zero drift
+    # without this (#657).
+    untracked = _git("ls-files", "--others", "--exclude-standard", "--", str(relative))
+    return len(set(changed) | set(untracked or []))
 
 
 def check(

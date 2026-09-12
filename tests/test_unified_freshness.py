@@ -157,3 +157,47 @@ def test_stamp_records_what_a_reader_needs(snapshot):
 def test_the_committed_snapshot_is_within_budget():
     """Asserted against the real committed artifact."""
     assert gate.check(gate.ARTIFACT, gate.PROVENANCE, gate.INPUTS) == []
+
+def test_new_records_count_as_drift(git_snapshot):
+    """`git diff` cannot see an untracked file, and adding records is the
+    commonest curation action -- thirty of them read as zero drift (#657)."""
+    artifact, provenance, inputs, repo = git_snapshot
+    for index in range(5):
+        _write(inputs / "mapped" / f"new_{index}.yaml", f"identifier: X:{index}\n")
+    rev = json.loads(provenance.read_text(encoding="utf-8"))["mim_rev"]
+    assert gate.drift_since(rev, inputs, repo) == 5
+    assert gate.check(artifact, provenance, inputs, max_drift=2, repo=repo)
+
+
+def test_an_added_and_a_changed_record_are_not_double_counted(git_snapshot):
+    """A file both modified and listed untracked must count once."""
+    artifact, provenance, inputs, repo = git_snapshot
+    (inputs / "mapped" / "a.yaml").write_text("identifier: X:a\n", encoding="utf-8")
+    _write(inputs / "mapped" / "brand_new.yaml", "identifier: X:n\n")
+    rev = json.loads(provenance.read_text(encoding="utf-8"))["mim_rev"]
+    assert gate.drift_since(rev, inputs, repo) == 2
+
+
+def test_the_stamped_rev_survives_a_squash_merge(tmp_path):
+    """Stamping bare HEAD records a branch commit the squash-merge discards,
+    after which drift is unmeasurable and the gate goes quietly advisory (#658)."""
+    repo = tmp_path / "r"
+    (repo / "data" / "ingredients" / "mapped").mkdir(parents=True)
+    _write(repo / "data" / "ingredients" / "mapped" / "a.yaml", "identifier: X:a\n")
+    env = {"GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@t", "GIT_COMMITTER_NAME": "t",
+           "GIT_COMMITTER_EMAIL": "t@t", "PATH": "/usr/bin:/bin:/usr/local/bin"}
+    run = lambda *a: subprocess.run(["git", *a], cwd=repo, check=True, env=env,
+                                    capture_output=True, text=True)
+    run("init", "-q", "-b", "main")
+    run("add", "-A"); run("commit", "-qm", "seed")
+    main_rev = run("rev-parse", "--short", "HEAD").stdout.strip()
+    run("remote", "add", "origin", str(repo))
+    run("update-ref", "refs/remotes/origin/main", "HEAD")
+    run("checkout", "-qb", "feature")
+    _write(repo / "data" / "ingredients" / "mapped" / "b.yaml", "identifier: X:b\n")
+    run("add", "-A"); run("commit", "-qm", "branch work")
+    branch_rev = run("rev-parse", "--short", "HEAD").stdout.strip()
+
+    stamped = gate._git_rev(repo)
+    assert stamped == main_rev, "must stamp the merge-base, not the branch tip"
+    assert stamped != branch_rev
