@@ -37,6 +37,7 @@ MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 REPORT = ROOT / "reports" / "hydrate_grounding.tsv"
 SYN_REPORT = ROOT / "reports" / "hydrate_synonyms.tsv"
+SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
 
 
@@ -114,8 +115,11 @@ def formula_known(ontology_id: str, form: dict[str, str]) -> bool:
 def classify_hydrate_rows(
     records: list[dict],
     form: dict[str, str],
-    anchored: set[str],
+    cas_anchored: set[str],
+    local_anchored: set[str] | None = None,
 ) -> list[dict]:
+    if local_anchored is None:
+        local_anchored = cas_anchored
     rows = []
     for rec in records:
         if rec.get("mapping_status") == "REJECTED":
@@ -129,8 +133,8 @@ def classify_hydrate_rows(
         f = form.get(target, "")
         is_hydrate = term_is_hydrate(target, om.get("ontology_label"), form)
         if ident.startswith("cas:"):
-            status = "OK_OWN_CAS_ID" if term in anchored else "CAS_MISSING_ANCHOR_ROWS"
-        elif ident.startswith("kgmicrobe.") and term in anchored:
+            status = "OK_OWN_CAS_ID" if term in cas_anchored else "CAS_MISSING_ANCHOR_ROWS"
+        elif ident.startswith("kgmicrobe.") and term in local_anchored:
             status = OK_LOCAL_REGISTRY_ID
         elif is_hydrate:
             status = "OK_HYDRATE_TERM"
@@ -256,31 +260,47 @@ def formulas() -> dict[str, str]:
     return dict(con.execute(q))
 
 
-def anchored_subjects() -> set[str]:
-    """subject_labels that carry BOTH a parent narrow/broadMatch and the Rule B1
-    kgmicrobe registry row — Section 3 step 2 requires both, not just a cas: id."""
-    sssom = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
-    parents: set[str] = set()
+def anchored_subjects() -> tuple[set[str], set[str]]:
+    """Return subject_labels with Section 3 anchors and local registry anchors.
+
+    `cas:` records still require BOTH a parent narrow/broadMatch and the Rule B1
+    kgmicrobe registry row — Section 3 step 2 requires both, not just a cas: id.
+    Local kgmicrobe identities may use closeMatch for malformed or unresolved
+    hydrate labels whose anhydrous parent is related but not a subclass (#342,
+    #344).
+    """
+    labels: dict[str, str] = {}
+    cas_parents: set[str] = set()
+    local_parents: set[str] = set()
     registry: set[str] = set()
     # the file opens with a commented YAML curie_map preamble; DictReader would
     # otherwise take the first comment line as the header and match nothing
-    lines = sssom.read_text().splitlines(keepends=True)
+    lines = SSSOM.read_text().splitlines(keepends=True)
     start = next(i for i, ln in enumerate(lines) if ln.startswith("subject_id"))
     with __import__("io").StringIO("".join(lines[start:])) as fh:
         r = csv.DictReader(fh, delimiter="\t")
         for row in r:
-            lab, pred, obj = (
+            sid, lab, pred, obj = (
+                row.get("subject_id"),
                 row.get("subject_label"),
                 row.get("predicate_id", ""),
                 row.get("object_id", ""),
             )
-            if not lab:
+            if not sid or not lab:
                 continue
+            labels[sid] = lab
             if pred in ("skos:narrowMatch", "skos:broadMatch"):
-                parents.add(lab)
+                cas_parents.add(sid)
+                local_parents.add(sid)
+            elif pred == "skos:closeMatch" and not obj.startswith("kgmicrobe."):
+                local_parents.add(sid)
             elif pred == "skos:exactMatch" and obj.startswith("kgmicrobe."):
-                registry.add(lab)
-    return parents & registry
+                registry.add(sid)
+
+    return (
+        {labels[sid] for sid in cas_parents & registry},
+        {labels[sid] for sid in local_parents & registry},
+    )
 
 
 def baseline_identifiers() -> set[str]:
@@ -304,13 +324,13 @@ def main() -> int:
     args = ap.parse_args()
 
     form = formulas()
-    anchored = anchored_subjects()
+    cas_anchored, local_anchored = anchored_subjects()
 
     # parsed once: re-reading this 6.7 MB / 2308-record file for the second scan
     # cost +55% wall clock
     mapped_records = yaml.safe_load(MAPPED.read_text())["ingredients"]
     baseline_ids = baseline_identifiers()
-    rows = classify_hydrate_rows(mapped_records, form, anchored)
+    rows = classify_hydrate_rows(mapped_records, form, cas_anchored, local_anchored)
 
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     with REPORT.open("w", newline="") as fh:

@@ -265,6 +265,69 @@ def test_preferred_term_hydrate_rows_are_classified_by_the_source(mod):
     ]
 
 
+def test_close_match_rows_anchor_local_registry_subjects_only(mod, monkeypatch, tmp_path):
+    sssom = tmp_path / "ingredient_mappings.sssom.tsv"
+    sssom.write_text(
+        "\n".join(
+            [
+                "# curie_map:",
+                "subject_id\tsubject_label\tpredicate_id\tobject_id",
+                "MIM:CasHydrate\tCas hydrate\tskos:closeMatch\tCHEBI:1",
+                "MIM:CasHydrate\tCas hydrate\tskos:exactMatch\tkgmicrobe.compound:cas_hydrate",
+                "MIM:LocalHydrate\tLocal hydrate\tskos:closeMatch\tCHEBI:2",
+                "MIM:LocalHydrate\tLocal hydrate\tskos:exactMatch\t"
+                "kgmicrobe.compound:local_hydrate",
+                "MIM:StrictHydrate\tStrict hydrate\tskos:narrowMatch\tCHEBI:3",
+                "MIM:StrictHydrate\tStrict hydrate\tskos:exactMatch\t"
+                "kgmicrobe.compound:strict_hydrate",
+                "MIM:MissingRegistry\tMissing registry\tskos:closeMatch\tCHEBI:4",
+                "MIM:SplitParent\tSplit hydrate\tskos:closeMatch\tCHEBI:5",
+                "MIM:SplitRegistry\tSplit hydrate\tskos:exactMatch\t"
+                "kgmicrobe.compound:split_hydrate",
+            ]
+        )
+    )
+    monkeypatch.setattr(mod, "SSSOM", sssom)
+
+    cas_anchored, local_anchored = mod.anchored_subjects()
+
+    assert cas_anchored == {"Strict hydrate"}
+    assert local_anchored == {"Local hydrate", "Strict hydrate", "Cas hydrate"}
+
+
+def test_close_match_local_registry_hydrates_are_ok_but_cas_rows_are_not(mod):
+    records = [
+        {
+            "identifier": "kgmicrobe.compound:local_hydrate",
+            "preferred_term": "Local hydrate",
+            "ontology_mapping": {
+                "ontology_id": "CHEBI:1",
+                "ontology_label": "parent",
+            },
+        },
+        {
+            "identifier": "cas:123-45-6",
+            "preferred_term": "CAS hydrate",
+            "ontology_mapping": {
+                "ontology_id": "CHEBI:1",
+                "ontology_label": "parent",
+            },
+        },
+    ]
+
+    rows = mod.classify_hydrate_rows(
+        records,
+        {"CHEBI:1": "C1"},
+        set(),
+        {"Local hydrate", "CAS hydrate"},
+    )
+
+    assert [row["status"] for row in rows] == [
+        mod.OK_LOCAL_REGISTRY_ID,
+        "CAS_MISSING_ANCHOR_ROWS",
+    ]
+
+
 def test_local_hydrate_registry_ids_still_need_parent_rows(mod):
     rows = mod.classify_hydrate_rows(
         [
