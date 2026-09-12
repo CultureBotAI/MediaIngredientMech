@@ -234,11 +234,15 @@ def test_parenthetical_hemiheptahydrate_is_same_as_contracted_form():
     )
 
 
-@pytest.mark.parametrize(
-    ("preferred", "curie", "cas_rn"),
-    sorted(mod.REVIEWED_IDENTITY_CONFLICTS),
-)
-def test_reviewed_cas_identity_conflicts_are_not_merely_regraded(preferred, curie, cas_rn):
+def test_reviewed_cas_identity_conflicts_are_not_merely_regraded(monkeypatch):
+    preferred = "CAS-selected stereochemical conflict"
+    curie = "CHEBI:1"
+    cas_rn = "123-45-6"
+    monkeypatch.setattr(
+        mod,
+        "REVIEWED_IDENTITY_CONFLICTS",
+        {(preferred, curie, cas_rn): "source denotes a racemate but target is broad"},
+    )
     rec = _record(preferred, curie=curie, cas_rn=cas_rn, cas_created=True)
     todo, tally = _plan(
         [rec],

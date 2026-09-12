@@ -122,10 +122,8 @@ def synonym_subjects(cur: sqlite3.Cursor, values: list[str]) -> dict[str, set[st
     requested = {norm(value) for value in values if norm(value)}
     if not requested:
         return {}
-    cur.execute(
-        """SELECT subject, value FROM statements
-           WHERE predicate = 'rdfs:label' OR predicate LIKE '%ynonym%'"""
-    )
+    cur.execute("""SELECT subject, value FROM statements
+           WHERE predicate = 'rdfs:label' OR predicate LIKE '%ynonym%'""")
     grouped: dict[str, set[str]] = defaultdict(set)
     for subject, value in cur.fetchall():
         key = norm(value)
@@ -154,44 +152,12 @@ CONCENTRATION_LABEL = re.compile(
     re.I,
 )
 
-# Review found fifteen explicit source-label/target-form conflicts in the CAS
-# cohort. Generic counterion and stereochemistry parsers would be unsafe here
-# (ChEBI uses several valid ion, salt, historical-name, and underspecified-label
-# conventions), so key the reviewed exceptions by all three identity-bearing
-# values. Any later correction to the source label, target, or CAS automatically
-# falls out of this list and is evaluated normally.
-REVIEWED_IDENTITY_CONFLICTS = {
-    ("Alpha-Toxicarol (Dl)", "CHEBI:9643", "82-09-7"): (
-        "source denotes a racemate but target is a fixed stereoisomer"
-    ),
-    ("DL-2-Aminobutyric acid", "CHEBI:35621", "2835-81-6"): (
-        "source denotes a racemate but target is stereo-unspecified"
-    ),
-    ("DL-3-Aminoisobutyric acid", "CHEBI:27389", "144-90-1"): (
-        "source denotes a racemate but target is stereo-unspecified"
-    ),
-    ("DL-Glyceraldehyde 3-phosphate", "CHEBI:17138", "591-59-3"): (
-        "source denotes a racemate but target is stereo-unspecified"
-    ),
-    ("DL-glyceraldehyde", "CHEBI:5445", "56-82-6"): (
-        "source denotes a racemate but target is stereo-unspecified"
-    ),
-    ("methyl-cis-p-coumarate", "CHEBI:86904", "3943-97-3"): (
-        "source is cis/Z while CAS denotes trans/E and target is stereo-unspecified"
-    ),
-    ("N-(3-oxohexanoyl)-DL-homoserine lactone", "CHEBI:29640", "76924-95-3"): (
-        "source denotes a racemate but target is stereo-unspecified"
-    ),
-    ("Perillic Acid (-)", "CHEBI:36999", "7694-45-3"): (
-        "source denotes one enantiomer but target is stereo-unspecified"
-    ),
-    ("rac-3-Hydroxypentanoic Acid", "CHEBI:139272", "10237-77-1"): (
-        "source denotes a racemate but target is stereo-unspecified"
-    ),
-    ("Trans,Trans-Farnesol", "CHEBI:28600", "4602-84-0"): (
-        "source is (2E,6E) but target and CAS are stereo-unspecified"
-    ),
-}
+# Reviewed source-label/target-form conflicts are keyed by all three
+# identity-bearing values so later corrections to the source label, target, or
+# CAS automatically fall out of this list. #455 and #456 intentionally resolved
+# the reviewed counterion and stereochemical conflicts, leaving no active
+# one-off guards.
+REVIEWED_IDENTITY_CONFLICTS: dict[tuple[str, str, str], str] = {}
 
 
 def _is_derived_source(source: object) -> bool:
