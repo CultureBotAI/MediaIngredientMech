@@ -17222,7 +17222,10 @@ ingredients:
         the local build (#249, #213).'
 - identifier: NCIT:C386
   preferred_term: Colistin Sulfate
-  synonyms: []
+  synonyms:
+  - synonym_text: Colistin sulfate salt
+    synonym_type: RAW_TEXT
+    source: MERGED_FROM_CHEBI:37943
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 0
@@ -17267,6 +17270,14 @@ ingredients:
       It is not. A term this repo can resolve and label-check is the better published
       mapping, and that judgement does not expire when the build catches up. Do not
       re-ground to CHEBI:759883 without a new curator decision.'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_counterion_identity_conflicts
+    action: MERGED_FROM
+    changes: Absorbed 'Colistin sulfate salt' from the CultureBotHT CAS-selected CHEBI:37943
+      duplicate. The losing ChEBI target denoted colistin without sulfate; existing
+      NCIT:C386 denotes Colistin Sulfate exactly. Raw label and CAS 1264-72-8 kept
+      (#455).
+    llm_assisted: false
   ontology_mapping:
     ontology_id: NCIT:C386
     ontology_label: Colistin Sulfate
@@ -17277,6 +17288,18 @@ ingredients:
       source: MIM curation (#213)
       notes: 'Exact NCIT label match; CHEBI:759883 is live upstream but absent from
         the local build (#249, #213).'
+  physicochemical_roles:
+  - &id002
+    role: SELECTIVE_AGENT
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  chemical_properties:
+    cas_rn: 1264-72-8
+    data_source: CultureBotHT compounds_to_cas.csv
+    retrieval_date: '2026-09-12T00:00:00+00:00'
 - identifier: NCIT:C166895
   preferred_term: Lysostaphin
   synonyms: []
@@ -62067,20 +62090,20 @@ ingredients:
     inchi: InChI=1S/C21H23NO6/c1-11(23)22-15-7-5-12-9-18(26-2)20(27-3)21(28-4)19(12)13-6-8-16(24)17(25)10-14(13)15/h6,8-10,15H,5,7H2,1-4H3,(H,22,23)(H,24,25)/t15-/m0/s1
     smiles: COc1cc2c(c(OC)c1OC)-c1ccc(O)c(=O)cc1[C@@H](NC(C)=O)CC2
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:37943
+- identifier: NCIT:C386
   preferred_term: Colistin sulfate salt
   ontology_mapping:
-    ontology_id: CHEBI:37943
-    ontology_label: colistin
-    ontology_source: CHEBI
+    ontology_id: NCIT:C386
+    ontology_label: Colistin Sulfate
+    ontology_source: NCIT
     mapping_quality: EXACT_MATCH
     evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#455)
+      notes: Duplicate of the existing NCIT:C386 'Colistin Sulfate' record; the old
+        CHEBI:37943 xref denoted colistin without sulfate.
   synonyms: []
-  mapping_status: MAPPED
+  mapping_status: REJECTED
   occurrence_statistics:
     total_occurrences: 0
     media_count: 0
@@ -62117,20 +62140,17 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
       physicochemical_roles.SELECTIVE_AGENT'
-  chemical_properties:
-    cas_rn: 1264-72-8
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C52H97N16O13R
-    smiles: '*C[C@@H](C)CCCCC(=O)N[C@@H](CCN)C(=O)N[C@H](C(=O)N[C@@H](CCN)C(=O)N[C@H]1CCNC(=O)[C@H]([C@@H](C)O)NC(=O)[C@H](CCN)NC(=O)[C@H](CCN)NC(=O)[C@H](CC(C)C)NC(=O)[C@@H](CC(C)C)NC(=O)[C@H](CCN)NC1=O)[C@@H](C)O'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_counterion_identity_conflicts
+    action: MERGED_INTO
+    changes: Merged into NCIT:C386 'Colistin Sulfate'; this zero-occurrence CAS-selected
+      duplicate was grounded to CHEBI:37943 colistin without sulfate. Tombstoned REJECTED
+      and SSSOM row dropped (#455).
+    llm_assisted: false
+  chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
-  - role: SELECTIVE_AGENT
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  - *id002
 - identifier: kgmicrobe.compound:collinomycin
   preferred_term: Collinomycin
   ontology_mapping:
@@ -75345,21 +75365,29 @@ ingredients:
     inchi: InChI=1S/C12H12O5/c1-14-8-6-7-4-5-9(13)17-10(7)12(16-3)11(8)15-2/h4-6H,1-3H3
     pubchem_cid: 3083928
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:16457
+- identifier: cas:4337-33-1
   preferred_term: Dimethylsulfoniopropionate hydrochloride
   ontology_mapping:
     ontology_id: CHEBI:16457
     ontology_label: S,S-dimethyl-beta-propiothetin
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#455): the CAS-selected ChEBI term denotes a different salt/counterion
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#455)
+      notes: The CultureBotHT label names the hydrochloride/chloride form, while CHEBI:16457
+        denotes zwitterionic DMSP with no chloride. PubChem CID 5316899 verifies CAS
+        4337-33-1 for the chloride, and no exact local ChEBI term denotes this salt.
+        Per MAPPING_SEMANTICS.md Section 3, the record now uses cas:4337-33-1 as the
+        exact registry identity plus a narrowMatch to CHEBI:16457.
   synonyms:
   - synonym_text: 3-(dimethylsulfonio)propanoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -75390,13 +75418,24 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_counterion_identity_conflicts
+    action: REGROUNDED_COUNTERION_FORM
+    changes: identifier CHEBI:16457 -> cas:4337-33-1; CAS-RN 7314-30-9 -> 4337-33-1;
+      ontology mapping set to NARROW_MATCH CHEBI:16457 ('S,S-dimethyl-beta-propiothetin').
+      Replaced target-derived chemistry with PubChem CID 5316899 and marked 1 inherited
+      ChEBI synonym(s) as REJECTED_LABEL (#455).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 7314-30-9
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C5H10O2S
-    inchi: InChI=1S/C5H10O2S/c1-8(2)4-3-5(6)7/h3-4H2,1-2H3
-    smiles: C[S+](C)CCC(=O)[O-]
+    cas_rn: 4337-33-1
+    data_source: PubChem CID 5316899
+    retrieval_date: '2026-09-12T00:00:00+00:00'
+    pubchem_cid: 5316899
+    molecular_formula: C5H11ClO2S
+    inchi: InChI=1S/C5H10O2S.ClH/c1-8(2)4-3-5(6)7;/h3-4H2,1-2H3;1H
+    smiles: C[S+](C)CCC(=O)O.[Cl-]
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:141155
   preferred_term: Dimetridazole
@@ -83969,13 +84008,13 @@ ingredients:
   nutritional_roles:
   - role: IRON_SOURCE
     confidence: 1.0
-    evidence: &id002
+    evidence: &id003
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: PHOSPHATE_SOURCE
     confidence: 1.0
-    evidence: *id002
+    evidence: *id003
 - identifier: CHEBI:31604
   preferred_term: Ferric ammonium citrate
   ontology_mapping:
@@ -92587,22 +92626,30 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
-- identifier: CHEBI:15939
+- identifier: cas:53956-04-0
   preferred_term: Glycyrrhizic Acid, Ammonium Salt
   ontology_mapping:
     ontology_id: CHEBI:15939
     ontology_label: glycyrrhizinic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#455): the CAS-selected ChEBI term denotes a different salt/counterion
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#455)
+      notes: The CultureBotHT label names an ammonium salt, while the ChEBI xref selected
+        glycyrrhizinic acid without ammonium. PubChem CID 62074 verifies CAS 53956-04-0
+        for ammonium glycyrrhizate, and no exact local ChEBI term denotes this salt.
+        Per MAPPING_SEMANTICS.md Section 3, the record now uses cas:53956-04-0 as
+        the exact registry identity plus a narrowMatch to CHEBI:15939.
   synonyms:
   - synonym_text: 30-hydroxy-11,30-dioxoolean-12-en-3beta-yl (2-O-beta-D-glucopyranosyluronic
       acid)-alpha-D-glucopyranosiduronic acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -92633,13 +92680,24 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_counterion_identity_conflicts
+    action: REGROUNDED_COUNTERION_FORM
+    changes: identifier CHEBI:15939 -> cas:53956-04-0; CAS-RN 1405-86-3 -> 53956-04-0;
+      ontology mapping set to NARROW_MATCH CHEBI:15939 ('glycyrrhizinic acid'). Replaced
+      target-derived chemistry with PubChem CID 62074 and marked 1 inherited ChEBI
+      synonym(s) as REJECTED_LABEL (#455).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
-    cas_rn: 1405-86-3
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C42H62O16
-    inchi: InChI=1S/C42H62O16/c1-37(2)21-8-11-42(7)31(20(43)16-18-19-17-39(4,36(53)54)13-12-38(19,3)14-15-41(18,42)6)40(21,5)10-9-22(37)55-35-30(26(47)25(46)29(57-35)33(51)52)58-34-27(48)23(44)24(45)28(56-34)32(49)50/h16,19,21-31,34-35,44-48H,8-15,17H2,1-7H3,(H,49,50)(H,51,52)(H,53,54)/t19-,21-,22-,23-,24-,25-,26-,27+,28-,29-,30+,31+,34-,35-,38+,39-,40-,41+,42+/m0/s1
-    smiles: '[H][C@]12C(=O)C=C3[C@]4([H])C[C@@](C)(C(=O)O)CC[C@]4(C)CC[C@@]3(C)[C@]1(C)CC[C@@]1([H])C(C)(C)[C@@H](O[C@H]3O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]3O[C@@H]3O[C@H](C(=O)O)[C@@H](O)[C@H](O)[C@H]3O)CC[C@]21C'
+    cas_rn: 53956-04-0
+    data_source: PubChem CID 62074
+    retrieval_date: '2026-09-12T00:00:00+00:00'
+    pubchem_cid: 62074
+    molecular_formula: C42H65NO16
+    inchi: InChI=1S/C42H62O16.H3N/c1-37(2)21-8-11-42(7)31(20(43)16-18-19-17-39(4,36(53)54)13-12-38(19,3)14-15-41(18,42)6)40(21,5)10-9-22(37)55-35-30(26(47)25(46)29(57-35)33(51)52)58-34-27(48)23(44)24(45)28(56-34)32(49)50;/h16,19,21-31,34-35,44-48H,8-15,17H2,1-7H3,(H,49,50)(H,51,52)(H,53,54);1H3/t19-,21-,22-,23-,24-,25-,26-,27+,28-,29-,30+,31+,34-,35-,38+,39-,40-,41+,42+;/m0./s1
+    smiles: C[C@]12CC[C@](C[C@H]1C3=CC(=O)[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O[C@@H]6[C@@H]([C@H]([C@@H]([C@H](O6)C(=O)O)O)O)O[C@H]7[C@@H]([C@H]([C@@H]([C@H](O7)C(=O)O)O)O)O)C)(C)C(=O)O.N
   ingredient_type: SINGLE_INGREDIENT
 - identifier: cas:27988-77-8
   preferred_term: gold (III) chloride hydrate
@@ -114283,13 +114341,13 @@ ingredients:
   nutritional_roles:
   - role: CARBON_SOURCE
     confidence: 1.0
-    evidence: &id003
+    evidence: &id004
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: MINERAL_SOURCE
     confidence: 1.0
-    evidence: *id003
+    evidence: *id004
 - identifier: CHEBI:86345
   preferred_term: Magnesium chloride
   ontology_mapping:
@@ -126346,24 +126404,32 @@ ingredients:
     inchi: InChI=1S/C14H25NO3/c1-2-3-4-5-6-7-8-9-13(16)15-12-10-11-18-14(12)17/h12H,2-11H2,1H3,(H,15,16)
     smiles: CCCCCCCCCC(=O)NC1CCOC1=O
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:183704
+- identifier: cas:137-16-6
   preferred_term: N-lauroylsarcosine sodium salt
   ontology_mapping:
-    ontology_id: CHEBI:183704
-    ontology_label: '[dodecanoyl(methyl)amino]acetate'
+    ontology_id: CHEBI:183705
+    ontology_label: N-Lauroylsarcosine
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
+      notes: 'SUPERSEDED (#455): the CAS-selected ChEBI term denotes a different salt/counterion
+        form. Original note follows. Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#455)
+      notes: The CultureBotHT label and CAS-RN name sodium lauroylsarcosinate, while
+        CHEBI:183704 denotes only the organic anion. PubChem CID 23668817 verifies
+        CAS 137-16-6 for the sodium salt; CHEBI:183705 is the local free-acid parent.
+        Per MAPPING_SEMANTICS.md Section 3, the record now uses cas:137-16-6 as the
+        exact registry identity plus a narrowMatch to CHEBI:183705.
   synonyms:
   - synonym_text: '[dodecanoyl(methyl)amino] acetate'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   - synonym_text: sodium;2-[dodecanoyl(methyl)amino]acetate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -126394,13 +126460,24 @@ ingredients:
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
     llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_counterion_identity_conflicts
+    action: REGROUNDED_COUNTERION_FORM
+    changes: identifier CHEBI:183704 -> cas:137-16-6; CAS-RN 137-16-6 -> 137-16-6;
+      ontology mapping set to NARROW_MATCH CHEBI:183705 ('N-Lauroylsarcosine'). Replaced
+      target-derived chemistry with PubChem CID 23668817 and marked 2 inherited ChEBI
+      synonym(s) as REJECTED_LABEL (#455).
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
   chemical_properties:
     cas_rn: 137-16-6
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C15H29NO3
-    inchi: InChI=1S/C15H29NO3/c1-4-5-6-7-8-9-10-11-12-13-15(18)16(3)19-14(2)17/h4-13H2,1-3H3
-    smiles: CCCCCCCCCCCC(=O)N(C)OC(C)=O
+    data_source: PubChem CID 23668817
+    retrieval_date: '2026-09-12T00:00:00+00:00'
+    pubchem_cid: 23668817
+    molecular_formula: C15H28NNaO3
+    inchi: InChI=1S/C15H29NO3.Na/c1-3-4-5-6-7-8-9-10-11-12-14(17)16(2)13-15(18)19;/h3-13H2,1-2H3,(H,18,19);/q;+1/p-1
+    smiles: CCCCCCCCCCCC(=O)N(C)CC(=O)[O-].[Na+]
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:16354
   preferred_term: N-methylhydantoin
@@ -153121,7 +153198,7 @@ ingredients:
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
 - identifier: CHEBI:75248
-  preferred_term: potassium tellurate
+  preferred_term: potassium tellurite
   ontology_mapping:
     ontology_id: CHEBI:75248
     ontology_label: potassium tellurite
@@ -153132,6 +153209,12 @@ ingredients:
       source: CultureBotHT
       notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
         sqlite (cas xref). FEBA/Hans80 panels: Hans80metals.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: MIM curation (#455)
+      notes: CultureBotHT imported the label as 'potassium tellurate', but CAS 7790-58-1
+        and CHEBI:75248 both denote potassium tellurite. The record label was corrected
+        to match the exact substance; the identifier and ontology_id were already
+        correct.
   synonyms:
   - synonym_text: dipotassium tellurite
     synonym_type: EXACT_SYNONYM
@@ -153164,6 +153247,15 @@ ingredients:
     curator: auto_classify_ingredient_type
     action: AUTO_CLASSIFY_INGREDIENT_TYPE
     changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: fix_cas_counterion_identity_conflicts
+    action: CORRECTED_SOURCE_LABEL
+    changes: preferred_term 'potassium tellurate' -> 'potassium tellurite'. CAS 7790-58-1
+      and CHEBI:75248 both denote potassium tellurite, so the previous CultureBotHT
+      label was a typo (#455).
+    previous_status: MAPPED
+    new_status: MAPPED
     llm_assisted: false
   chemical_properties:
     cas_rn: 7790-58-1
