@@ -53,10 +53,9 @@ permissions:
 # events above and the inputs below.
 jobs:
   id-label-gate:
-    # Pinned to a claw commit, not a branch: a moving ref would change this
-    # gate with no commit in this repository to show for it. This is the exact
-    # ref TraitMech's passing run used.
-    uses: CultureBotAI/culturebotai-claw/.github/workflows/label-correspondence-reusable.yaml@5de472d13e20f02ac494878939ba1cae26468a07
+    # Immutable CLAW revision selects the fleet Python runtime while keeping
+    # shared validator changes reviewable in this repository.
+    uses: CultureBotAI/culturebotai-claw/.github/workflows/label-correspondence-reusable.yaml@c8b8f89ecf29574d7e24f6c65cfd925aefbdd007
     with:
       python-version: "3.13"
       # No prepare-recipe: the SSSOM and docs CSV this gate reads are
