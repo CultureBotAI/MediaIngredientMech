@@ -20,3 +20,22 @@ receipt = load_receipt(Path("path/to/projection.metadata.json"))
 ```
 
 This verifies all sibling artifacts declared by the receipt. It is not a tool for attaching newly guessed provenance to legacy arrays. Full published artifacts must be regenerated from reviewed current inputs before the graph correction is considered complete.
+
+## Current publication gate
+
+Run `just check-graph-receipts` before publishing. The standalone equivalent,
+`python -S scripts/check_graph_receipts.py`, uses only the standard library. It
+validates both graph JSON/receipt pairs, exact output membership and bytes,
+ordered point identities and lookup methods, and coverage of every current
+`data/ingredients/{mapped,unmapped}/*.yaml` file, including ignored and rejected
+files. It does not load embeddings or rerun a layout.
+
+`just build-docs` and `just check-visualizations` run this gate first. Pages also
+runs it before any site writes or upload, even when the common semantic text
+map is disabled. A source edit, addition/removal, missing receipt or damaged
+output refuses current publication while leaving the previous site intact.
+Semantic text freshness alone is insufficient: a MediaDive reference in notes
+can change graph matching without changing the common BGE input. Such changes
+require a local graph refresh from the reviewed vector source before publication.
+The historical no-receipt browser fallback remains available for archived data;
+it does not exempt the two maintained current graphs from this required gate.

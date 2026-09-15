@@ -17,6 +17,8 @@ on:
       - "data/text_map/**"
       - "conf/text_map.yaml"
       - "src/mediaingredientmech/text_map_*.py"
+      - "scripts/check_graph_receipts.py"
+      - "src/mediaingredientmech/graph_embedding_receipts.py"
       - "scripts/stage_text_map.py"
       - "scripts/embedding_pipeline.py"
       - ".github/workflows/generate-pages.yaml"
@@ -41,13 +43,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Disable Jekyll (serve docs/ as static)
-        run: touch docs/.nojekyll
-
       - name: Set up Python for map validation
         uses: actions/setup-python@v5
         with:
           python-version-file: .python-version
+
+      - name: Validate both graph maps against the complete current corpus
+        run: python scripts/check_graph_receipts.py
+
+      - name: Disable Jekyll (serve docs/ as static)
+        run: touch docs/.nojekyll
 
       - name: Validate and stage the configured semantic text map
         run: |
