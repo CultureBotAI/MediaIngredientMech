@@ -506,7 +506,7 @@ export-indexes:
     uv run python scripts/generate_index_files.py
 
 # Build complete documentation site
-build-docs: gen-docs export-lists export-indexes export-browser
+build-docs: stage-text-map gen-docs export-lists export-indexes export-browser
     @echo "Documentation built in docs/"
     @echo "Open docs/index.html to view locally"
 
@@ -765,4 +765,8 @@ validate-history target="history":
 
 # Full canonical semantic text by default; --record/--limit are explicit canaries.
 text-map-inputs *args:
-    uv run python scripts/text_map_inputs.py {{args}}
+    uv run python scripts/text_map_inputs.py "$@"
+
+# Validate full inputs and stage the configured common map; no model inference.
+stage-text-map *args:
+    uv run python scripts/stage_text_map.py "$@"

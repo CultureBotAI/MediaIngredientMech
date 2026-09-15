@@ -17,3 +17,27 @@ The `page` field is relative to the directory containing the published map
 folder: from `text-map/index.html`, the shared renderer uses `../` plus `page`.
 This repository publishes the contents of `docs/`, so the bundle is staged at
 `docs/text-map/` and links resolve to records in the same published site root.
+
+
+## Publish the common semantic view
+
+`conf/text_map.yaml` is explicitly disabled until a reviewed full-input bundle
+exists at `data/text_map/current.json` and the canonical CLAW runtime is vendored
+at `scripts/embedding_pipeline.py`. Enablement requires the pinned fleet BGE
+model, revision, dimension and 512-token window, actual PaCMAP, valid checksums,
+and fresh complete adapter inputs. Missing or stale enabled inputs fail loudly.
+
+`just stage-text-map` validates and stages the three public files at
+`docs/text-map/` without inference. It binds the exact immutable generation
+approved by preflight, refusing pointer changes or manifest substitution before
+publication. The Pages workflow performs the same validation before uploading
+`docs/`; a standalone stage does not regenerate existing browser pages.
+
+The shared text map complements the existing domain graph views. Record URLs
+are relative to `docs/`, so the shared map's `../` link prefix resolves to the
+existing browser/detail routes. No legacy graph vector or model artifact is
+relabeled as BGE.
+
+`just build-docs` stages the map before its other generators. Static navigation
+starts hidden and is enabled only after successful staging writes an explicit
+boolean status at `docs/data/text_map_status.json`; disabling clears that status.
