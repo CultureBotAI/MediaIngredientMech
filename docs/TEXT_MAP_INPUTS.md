@@ -21,9 +21,9 @@ This repository publishes the contents of `docs/`, so the bundle is staged at
 
 ## Publish the common semantic view
 
-`conf/text_map.yaml` is explicitly disabled until a reviewed full-input bundle
-exists at `data/text_map/current.json` and the canonical CLAW runtime is vendored
-at `scripts/embedding_pipeline.py`. Enablement requires the pinned fleet BGE
+`conf/text_map.yaml` enables the common map selected by
+`data/text_map/current.json`. The governed runtime is installed at
+`scripts/embedding_pipeline.py`. Publication requires the pinned fleet BGE
 model, revision, dimension and 512-token window, actual PaCMAP, valid checksums,
 and fresh complete adapter inputs. Missing or stale enabled inputs fail loudly.
 
@@ -41,3 +41,11 @@ relabeled as BGE.
 `just build-docs` stages the map before its other generators. Static navigation
 starts hidden and is enabled only after successful staging writes an explicit
 boolean status at `docs/data/text_map_status.json`; disabling clears that status.
+
+For local generation and refresh, follow the
+[locked runtime instructions](../conf/embedding-runtime/README.md). After a
+semantic record change, export the complete input, reuse the matching verified
+vector cache to encode only changed text, and project a new immutable bundle
+before running `just build-docs`. Keep the same recorded model/runtime profile
+to reuse its cache. Normal CI and Pages validation perform no model inference;
+they reject a stale enabled bundle until this explicit refresh is complete.
