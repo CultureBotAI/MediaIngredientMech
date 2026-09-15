@@ -320,8 +320,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>Ingredient Embedding Space</h1>
-            <p class="subtitle" id="subtitle">PaCMAP projection of ingredients from the KG-Microbe knowledge graph</p>
+            <h1 id="graph-heading">Ingredient graph embedding map</h1>
+            <p class="subtitle" id="subtitle">Loading graph coordinates and checking provenance…</p>
             <a href="index.html" class="nav-link">← Back to Home</a>
         </header>
 
@@ -363,7 +363,7 @@
             <ul>
                 <li><strong>Proximity:</strong> Ingredients close together have similar semantic relationships in the knowledge graph embedding space</li>
                 <li><strong>Color &amp; shape:</strong> Categorical grouping (default: mapping status - <span style="color: #2a78d6;">blue filled circle = mapped</span>, <span style="color: #eb6834;">orange hollow ring = unmapped</span>)</li>
-                <li><strong>Unmapped Ingredients:</strong> Complex mixtures (e.g., "Allen Medium", "Biotin Vitamin Solution") without single chemical entity embeddings - shown with synthetic embeddings near cluster center</li>
+                <li id="graph-coverage-explanation">Graph matching and coverage are unverified until the data and receipt are checked.</li>
                 <li><strong>Size:</strong> Metric of interest (default: total occurrences across media recipes)</li>
                 <li><strong>Hover:</strong> View detailed metadata tooltip</li>
                 <li><strong>Click:</strong> View detailed information (future: link to detail page)</li>
@@ -376,9 +376,11 @@
     <div class="tooltip" id="tooltip"></div>
 
     <script src="d3.v7.min.js"></script>
+    <script src="graph-receipt.js"></script>
     <script>
         // Load data
         let ingredientData = [];
+        let graphGeneration = null;
         let circles = null;
         let currentColorBy = 'mapping_status';  // Start with mapping_status to show unmapped
 
@@ -466,11 +468,11 @@
             if (cnt) cnt.textContent = ingredientData.filter(facetPass).length.toLocaleString();
         }
 
-        fetch('data/ingredient_umap.json')
-            .then(response => response.json())
-            .then(data => {
-                ingredientData = data;
-                updateStats();
+        IngredientGraphReceipt.load('data/ingredient_umap.json', 'data/ingredient_umap.metadata.json')
+            .then(result => {
+                ingredientData = result.data;
+                graphGeneration = result;
+                IngredientGraphReceipt.display(result, document.getElementById('graph-heading'), document.getElementById('subtitle'), document.getElementById('graph-coverage-explanation'));
                 renderUMAP();
                 buildFacets();
                 buildTable();
@@ -478,19 +480,10 @@
             })
             .catch(error => {
                 console.error('Error loading data:', error);
+                document.getElementById('subtitle').textContent = 'Graph unavailable: its data or provenance could not be verified.';
                 document.getElementById('umap-plot').innerHTML =
                     '<p style="padding: 2rem; text-align: center; color: #ef4444;">Error loading visualization data</p>';
             });
-
-        function updateStats() {
-            // Keep the subtitle count in sync with the loaded data (never stale).
-            const subtitle = document.getElementById('subtitle');
-            if (subtitle) {
-                subtitle.textContent =
-                    `PaCMAP projection of ${ingredientData.length.toLocaleString()} live ingredient `
-                    + `records included by the embedding pipeline`;
-            }
-        }
 
         function renderUMAP() {
             const container = document.getElementById('umap-plot');
@@ -632,10 +625,10 @@
                             <div class="tooltip-row">Record: ${d.id}</div>
                             ${d.identifier ? `<div class="tooltip-row">Identity: ${d.identifier}</div>` : ''}
                             ${d.mapping_status === 'UNMAPPED' ?
-                                `<div class="tooltip-row" style="color: #fbbf24;">⚠️ Unmapped (synthetic embedding)</div>` :
+                                `<div class="tooltip-row" style="color: #fbbf24;">Unmapped record</div>` :
                                 `${d.ontology_label ? `<div class="tooltip-row">Ontology: ${d.ontology_label}</div>` : ''}`
                             }
-                            <div class="tooltip-row">Source: ${d.ontology_source || 'None (complex mixture)'}</div>
+                            <div class="tooltip-row">Ontology source: ${d.ontology_source || 'Not recorded'}</div>
                             <div class="tooltip-row">Status: ${d.mapping_status}</div>
                             ${d.molecular_formula ? `<div class="tooltip-row">Formula: ${d.molecular_formula}</div>` : ''}
                             ${d.cas_rn ? `<div class="tooltip-row">CAS-RN: ${d.cas_rn}</div>` : ''}
@@ -643,6 +636,8 @@
                             <div class="tooltip-row">Media count: ${d.media_count}</div>
                             <div class="tooltip-row">Synonyms: ${d.num_synonyms}</div>
                         `);
+                    tooltip.append('div').attr('class', 'tooltip-row graph-match')
+                        .text(IngredientGraphReceipt.pointDescription(d, graphGeneration.verified));
                 })
                 .on('mouseout', function(event, d) {
                     d3.select(this)
