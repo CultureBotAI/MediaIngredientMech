@@ -762,3 +762,7 @@ validate-history target="history":
         --schema src/mediaingredientmech/schema/history.yaml \
         --target-class HistoryRecord "$target"
     fi
+
+# Full canonical semantic text by default; --record/--limit are explicit canaries.
+text-map-inputs *args:
+    uv run python scripts/text_map_inputs.py {{args}}
