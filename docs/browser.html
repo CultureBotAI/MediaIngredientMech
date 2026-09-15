@@ -372,8 +372,13 @@
     <header class="header">
         <h1>MediaIngredientMech Browser</h1>
         <p id="subtitle">Explore curated media ingredients with ontology mappings</p>
+<p><a href="text-map/" data-text-map-link hidden>Semantic text map</a></p>
         <a href="index.html" class="nav-link">← Back to Home</a>
     </header>
+
+    <p id="record-selection-notice" hidden>A specific ingredient is selected.
+        <button type="button" id="clear-record-selection">Show all ingredients</button>
+    </p>
 
     <div class="layout">
         <aside class="sidebar">
@@ -450,11 +455,15 @@
         <p>MediaIngredientMech Browser | Generated from LinkML schema | <a href="index.md">Schema Documentation</a></p>
     </footer>
 
+    <script src="record-selection.js"></script>
     <script>
+        let selectedRecord = "";
         let allIngredients = [];
         let filteredIngredients = [];
 
         function applyHashFilters() {
+            selectedRecord = MIMRecordSelection.recordFromHash(window.location.hash);
+            document.getElementById('record-selection-notice').hidden = !selectedRecord;
             const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
             const status = params.get('status') || '';
             const statusControl = document.getElementById('filter-status');
@@ -466,6 +475,15 @@
         applyHashFilters();
         window.addEventListener('hashchange', () => {
             applyHashFilters();
+            applyFilters();
+        });
+
+        document.getElementById('clear-record-selection').addEventListener('click', () => {
+            selectedRecord = '';
+            document.getElementById('record-selection-notice').hidden = true;
+            const hash = MIMRecordSelection.clearRecord(window.location.hash);
+            history.replaceState(null, '', window.location.pathname + window.location.search + hash);
+            // Preserve the user's current search/status/source/quality controls.
             applyFilters();
         });
 
@@ -504,7 +522,8 @@
                 const matchesSource = !sourceFilter || ing.ontology_source === sourceFilter;
                 const matchesQuality = !qualityFilter || ing.mapping_quality === qualityFilter;
 
-                return matchesSearch && matchesStatus && matchesSource && matchesQuality;
+                return MIMRecordSelection.matches(ing, selectedRecord) &&
+                    matchesSearch && matchesStatus && matchesSource && matchesQuality;
             });
 
             document.getElementById('filtered-count').textContent = filteredIngredients.length;
@@ -599,5 +618,6 @@
         document.getElementById('filter-quality').addEventListener('change', applyFilters);
     </script>
     <script src="theme-toggle.js"></script>
+  <script src="text-map-nav.js"></script>
 </body>
 </html>

@@ -469,8 +469,13 @@ generate-graph:
 # Both published visualizations, ~45s total
 generate-visualizations: generate-umap generate-graph
 
+# Verify exact current graph corpus, output bytes and lookup/coverage receipts (#684).
+# This requires no vector source, model inference or projection dependency.
+check-graph-receipts:
+    uv run python scripts/check_graph_receipts.py
+
 # Do the published visualizations still name records that exist? (#401)
-check-visualizations:
+check-visualizations: check-graph-receipts
     uv run python scripts/check_visualization_currency.py --strict
 
 # QC coverage dashboard (shared kg_microbe_qc generator in culturebotai-claw).
@@ -506,7 +511,7 @@ export-indexes:
     uv run python scripts/generate_index_files.py
 
 # Build complete documentation site
-build-docs: gen-docs export-lists export-indexes export-browser
+build-docs: check-graph-receipts stage-text-map gen-docs export-lists export-indexes export-browser
     @echo "Documentation built in docs/"
     @echo "Open docs/index.html to view locally"
 
@@ -762,3 +767,11 @@ validate-history target="history":
         --schema src/mediaingredientmech/schema/history.yaml \
         --target-class HistoryRecord "$target"
     fi
+
+# Full canonical semantic text by default; --record/--limit are explicit canaries.
+text-map-inputs *args:
+    uv run python scripts/text_map_inputs.py "$@"
+
+# Validate full inputs and stage the configured common map; no model inference.
+stage-text-map *args:
+    uv run python scripts/stage_text_map.py "$@"
