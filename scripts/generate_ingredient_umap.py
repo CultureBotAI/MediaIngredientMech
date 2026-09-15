@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import pickle
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -44,7 +45,7 @@ _EMBEDDINGS_FILENAME = "DeepWalkSkipGramEnsmallen_degreenorm_embedding_512_v3_20
 _REPO_ROOT = Path(__file__).resolve().parents[1]
 _LOCAL_EMBEDDINGS = _REPO_ROOT / "data" / "embeddings" / _EMBEDDINGS_FILENAME
 _COMMUNITYMECH_EMBEDDINGS = (
-    _REPO_ROOT.parent / "CommunityMech" / "CommunityMech"
+    Path(os.environ.get("COMMUNITYMECH_ROOT") or _REPO_ROOT.parent / "CommunityMech")
     / "data" / "embeddings" / _EMBEDDINGS_FILENAME
 )
 
@@ -186,110 +187,34 @@ class IngredientUMAPGenerator:
             DataFrame with ingredient_id, umap_x, umap_y (coordinate field names
             are kept as umap_x/umap_y regardless of method for HTML/JS compatibility)
         """
-        # Collect ingredient data
         ingredient_vectors = []
         ingredient_ids = []
-        unmapped_ids = []  # Track which ones are unmapped without embeddings
-
-        # First pass: collect all ingredients with real embeddings
-        for category in ['mapped', 'unmapped']:
-            category_dir = ingredients_dir / category
-            if not category_dir.exists():
-                continue
-
-            for yaml_file in sorted(category_dir.glob('*.yaml')):
-                try:
-                    ingredient = load_yaml(yaml_file)
-                    if ingredient.get('mapping_status') == 'REJECTED':
-                        continue
-                    ingredient_id = ingredient.get('identifier', '')
-                    record_key = mim_curie_for_stem(yaml_file.stem)
-                    found_embedding = False
-
-                    # Strategy 1: Try direct identifier match
-                    if ingredient_id in self.embeddings:
-                        ingredient_vectors.append(self.embeddings[ingredient_id])
-                        ingredient_ids.append(record_key)
-                        found_embedding = True
-
-                    # Strategy 2: Try ontology_mapping ID
-                    if not found_embedding:
-                        ontology_mapping = ingredient.get('ontology_mapping') or {}
-                        ontology_id = ontology_mapping.get('ontology_id', '')
-                        if ontology_id and ontology_id in self.embeddings:
-                            ingredient_vectors.append(self.embeddings[ontology_id])
-                            ingredient_ids.append(record_key)
-                            found_embedding = True
-
-                    # Strategy 3: For unmapped ingredients, try to find embeddings from synonyms
-                    if not found_embedding and ingredient_id.startswith('UNMAPPED'):
-                        synonyms = ingredient.get('synonyms', [])
-                        for syn in synonyms:
-                            syn_text = syn.get('synonym_text', '')
-                            import re
-                            chebi_matches = re.findall(r'CHEBI:?\s*(\d+)', syn_text, re.IGNORECASE)
-                            for chebi_id in chebi_matches:
-                                potential_id = f"CHEBI:{chebi_id}"
-                                if potential_id in self.embeddings:
-                                    ingredient_vectors.append(self.embeddings[potential_id])
-                                    ingredient_ids.append(record_key)
-                                    found_embedding = True
-                                    break
-                            if found_embedding:
-                                break
-
-                    # Strategy 3b: For unmapped ingredients, pull the mim-queue
-                    # source ID out of curation_history / notes and try it as a
-                    # KG-Microbe node. ~186 UNMAPPED_* records carry a
-                    # `source_id=mediadive.ingredient:NNNN` (or kgmicrobe.compound /
-                    # mediadive.solution / bacdive.isolation_source) reference
-                    # written by the mim-queue importer.
-                    if not found_embedding and ingredient_id.startswith('UNMAPPED'):
-                        import re
-                        haystack_parts = [ingredient.get('notes', '') or '']
-                        for event in ingredient.get('curation_history', []) or []:
-                            haystack_parts.append(event.get('changes', '') or '')
-                        haystack = '\n'.join(haystack_parts)
-                        source_id_re = re.compile(
-                            r'(mediadive\.ingredient|mediadive\.solution|'
-                            r'kgmicrobe\.compound):([A-Za-z0-9_.\-]+)'
-                        )
-                        for prefix, local in source_id_re.findall(haystack):
-                            potential_id = f"{prefix}:{local}"
-                            if potential_id in self.embeddings:
-                                ingredient_vectors.append(self.embeddings[potential_id])
-                                ingredient_ids.append(record_key)
-                                found_embedding = True
-                                break
-
-                    # Strategy 4: If still not found and it's unmapped, add to unmapped list
-                    if not found_embedding and ingredient_id.startswith('UNMAPPED'):
-                        unmapped_ids.append(record_key)
-
-                except Exception as e:
-                    console.print(f"[red]Error loading {yaml_file.name}: {e}[/red]")
-
-        console.print(f"[green]Found embeddings for {len(ingredient_ids)} ingredients[/green]")
-        console.print(f"[yellow]Adding {len(unmapped_ids)} unmapped ingredients with synthetic embeddings[/yellow]")
-
-        # Second pass: Add unmapped ingredients with synthetic embeddings
-        if len(ingredient_vectors) > 0:
-            # Create mean embedding for reference
-            mean_embedding = np.mean(ingredient_vectors, axis=0)
-
-            for unmapped_id in unmapped_ids:
-                # Create a synthetic embedding: mean + small random noise
-                # This will place unmapped ingredients in a cluster near the center
-                noise_scale = 0.1 * np.std(ingredient_vectors, axis=0)
-                synthetic_embedding = mean_embedding + np.random.randn(len(mean_embedding)) * noise_scale
-                ingredient_vectors.append(synthetic_embedding)
-                ingredient_ids.append(unmapped_id)
-
-        if len(ingredient_vectors) == 0:
-            raise ValueError("No ingredient embeddings found!")
-
-        # Convert to numpy array
-        X = np.array(ingredient_vectors)
+        matches = []
+        missing = []
+        seen = set()
+        for category in ["mapped", "unmapped"]:
+            for yaml_file in sorted((ingredients_dir / category).glob("*.yaml")):
+                ingredient = load_yaml(yaml_file)
+                if ingredient.get("mapping_status") == "REJECTED":
+                    continue
+                record_key = mim_curie_for_stem(yaml_file.stem)
+                if record_key in seen:
+                    raise ValueError(f"Duplicate visualization record key: {record_key}")
+                seen.add(record_key)
+                match = self.match_embedding(ingredient)
+                if match is None:
+                    missing.append(record_key)
+                    continue
+                node_id, match_method = match
+                ingredient_ids.append(record_key)
+                ingredient_vectors.append(self.embeddings[node_id])
+                matches.append({"embedding_method": match_method, "embedding_source_node": node_id})
+        if not ingredient_vectors:
+            raise ValueError("No ingredient embeddings found; missing records have no coordinates")
+        X = np.asarray(ingredient_vectors)
+        if not np.isfinite(X).all():
+            raise ValueError("Ingredient vectors must be finite")
+        console.print(f"Found {len(ingredient_ids)} graph vectors; omitted {len(missing)} missing records")
 
         # Run the selected 2D reducer.
         method = (method or "pacmap").lower()
@@ -338,14 +263,47 @@ class IngredientUMAPGenerator:
         df = pd.DataFrame({
             'ingredient_id': ingredient_ids,
             'umap_x': embedding_2d[:, 0],
-            'umap_y': embedding_2d[:, 1]
+            'umap_y': embedding_2d[:, 1],
+            'embedding_method': [match['embedding_method'] for match in matches],
+            'embedding_source_node': [match['embedding_source_node'] for match in matches]
         })
 
         console.print(
             f"[green]{method.upper()} completed: {len(df)} ingredients projected to 2D[/green]"
         )
 
+        df.attrs["coverage"] = {"eligible_records": len(seen), "embedded_records": len(ingredient_ids),
+                                "missing_records": missing, "synthetic_records": 0}
+        df.attrs["projection"] = {"method": method, "random_state": random_state,
+                                  "input_dimensions": X.shape[1],
+                                  "input_vectors_sha256": hashlib.sha256(X.tobytes()).hexdigest(),
+                                  "input_dtype": str(X.dtype)}
         return df
+
+    def match_embedding(self, ingredient: dict) -> tuple[str, str] | None:
+        """Return the actual graph node and lookup method; absence is not a vector."""
+        identifier = ingredient.get("identifier", "")
+        if identifier in self.embeddings:
+            return identifier, "direct_identifier"
+        ontology_id = (ingredient.get("ontology_mapping") or {}).get("ontology_id", "")
+        if ontology_id in self.embeddings:
+            return ontology_id, "ontology_mapping"
+        if identifier.startswith("UNMAPPED"):
+            for synonym in ingredient.get("synonyms", []) or []:
+                for local_id in re.findall(r"CHEBI:?\s*(\d+)", synonym.get("synonym_text", ""), re.I):
+                    node_id = f"CHEBI:{local_id}"
+                    if node_id in self.embeddings:
+                        return node_id, "synonym_reference"
+            text = "\n".join([ingredient.get("notes", "") or ""] + [
+                event.get("changes", "") or "" for event in ingredient.get("curation_history", []) or []
+            ])
+            for prefix, local_id in re.findall(
+                r"(mediadive\.ingredient|mediadive\.solution|kgmicrobe\.compound):([A-Za-z0-9_.\-]+)", text
+            ):
+                node_id = f"{prefix}:{local_id}"
+                if node_id in self.embeddings:
+                    return node_id, "history_reference"
+        return None
 
 
 def build_visualization_data(
@@ -442,7 +400,9 @@ def build_visualization_data(
                 'num_synonyms': num_synonyms,
                 'molecular_formula': molecular_formula,
                 'cas_rn': cas_rn,
-                'category': category
+                'category': category,
+                'embedding_method': row.get('embedding_method', 'legacy_unverified'),
+                'embedding_source_node': row.get('embedding_source_node')
             })
 
         except Exception as e:
@@ -475,7 +435,7 @@ def _require_unique_record_keys(nodes: list[dict]) -> list[dict]:
     '--embeddings-path',
     type=click.Path(exists=True),
     default=KG_MICROBE_EMBEDDINGS,
-    help='Path to embeddings TSV.gz file (default: 2026-04-25 v2 512-D, '
+    help='Path to embeddings TSV.gz file (default: 2026-06-26 v3 512-D, '
          'shared across Mech repos via CommunityMech location)'
 )
 @click.option(
@@ -573,6 +533,18 @@ def main(
     with open(json_output, 'w') as f:
         json.dump(viz_data, f, indent=2)
     console.print(f"[green]Saved JSON data to {json_output}[/green]")
+
+    # Bind metadata to these new coordinates; never retrofit old arrays.
+    metadata = {
+        "schema_version": 1,
+        "embedding_family": "kg_microbe_deepwalk",
+        "source_filename": embeddings_path.name,
+        "source_identity_status": "unverified_cache_lineage",
+        "coverage": umap_df.attrs["coverage"],
+        "projection": umap_df.attrs["projection"],
+        "output_sha256": hashlib.sha256(json_output.read_bytes()).hexdigest(),
+    }
+    json_output.with_suffix(".metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
 
     # Step 5: Generate HTML (will be done separately)
     console.print(f"\n[yellow]Next: Create HTML template at {output_path}[/yellow]")
