@@ -48,6 +48,7 @@ CURATED = _REPO / "data" / "curated" / "mapped_ingredients.yaml"
 # sys.path bootstrap its sibling writers use rather than starting to require an
 # installed package to run (#603).
 sys.path.insert(0, str(_REPO / "src"))
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 from mediaingredientmech.sssom_grading import (  # noqa: E402
     CONFIDENCE,
     PREDICATE,
@@ -167,7 +168,7 @@ def _canonical_label_resolver():
     from oaklib import get_adapter
 
     adapters: dict = {}
-    chebi_db = f"sqlite:///{Path.home() / '.data' / 'oaklib' / 'chebi.db'}"
+    chebi_db = f"sqlite:///{db_path('CHEBI')}"
 
     def resolve(oid: str) -> str | None:
         prefix = oid.split(":", 1)[0]

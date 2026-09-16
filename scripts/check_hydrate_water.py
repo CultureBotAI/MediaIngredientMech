@@ -44,10 +44,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 import yaml  # noqa: E402
 
 COLLECTION = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
-CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
+CHEBI_DB = db_path("CHEBI")
 FORMULA_PRED = "chemrof:generalized_empirical_formula"
 
 MULTIPLIER = {"mono": 1, "di": 2, "tri": 3, "tetra": 4, "penta": 5, "hexa": 6,

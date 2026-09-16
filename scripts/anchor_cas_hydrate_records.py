@@ -32,11 +32,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from export_individual_records import sanitize_filename  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
-CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
+CHEBI_DB = db_path("CHEBI")
 
 
 def chebi_label(curie: str) -> str:

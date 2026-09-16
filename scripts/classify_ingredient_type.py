@@ -51,10 +51,11 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 import yaml  # noqa: E402
 
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 COLLECTION = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
-CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
+CHEBI_DB = db_path("CHEBI")
 STAMP = "2026-08-13T00:00:00+00:00"
 CURATOR = "classify_ingredient_type"
 ISSUE = "#323"

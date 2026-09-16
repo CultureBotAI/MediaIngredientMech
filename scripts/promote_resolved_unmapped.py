@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
+from mediaingredientmech.utils.oaklib_cache import db_path, oaklib_cache_dir  # noqa: E402
 from mediaingredientmech.utils.object_source import OBJECT_SOURCE, object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from export_individual_records import collect_existing_filenames, sanitize_filename
@@ -41,12 +42,12 @@ from export_individual_records import collect_existing_filenames, sanitize_filen
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
-CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
+CHEBI_DB = db_path("CHEBI")
 # Ontologies this helper can resolve a target in. NCIT matters because it carries
 # drugs and reagents ChEBI's semsql build lags on -- Polymyxin B, Lysostaphin,
 # Colistin Sulfate and Carbomycin all have exact NCIT labels while their CHEBI
 # accessions are absent locally, so a CHEBI-only helper called them unresolvable.
-_OAK = Path.home() / ".data" / "oaklib"
+_OAK = oaklib_cache_dir()
 ONTOLOGY_DB = {"CHEBI": CHEBI_DB, "NCIT": _OAK / "ncit.db",
                "FOODON": _OAK / "foodon.db", "ENVO": _OAK / "envo.db",
                # MeSH is written lowercase in MIM records (mesh:C017721) but
