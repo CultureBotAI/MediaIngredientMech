@@ -114,3 +114,34 @@ def test_no_script_derives_the_oaklib_cache_by_hand():
                 if pattern.search(line):
                     offenders.append(f"{path.relative_to(ROOT)}:{number}")
     assert not offenders, f"derive these through oaklib_cache.db_path(): {offenders}"
+
+
+def test_canonical_label_blames_the_cache_not_the_identifier(monkeypatch, tmp_path):
+    """#306's actual harm: a path problem reported as a verdict about an id (#687)."""
+    import importlib
+
+    monkeypatch.setenv("OAK_CHEBI_DB", str(tmp_path / "absent.db"))
+    module = importlib.import_module("promote_microbedecoder_residual")
+    importlib.reload(module)
+
+    with pytest.raises(SystemExit) as excinfo:
+        module.canonical_label("CHEBI:17234")
+    message = str(excinfo.value)
+    assert "not a bad identifier" in message
+    assert "no rdfs:label" not in message, "this is the verdict that must not be reached"
+
+
+def test_opening_a_missing_build_does_not_create_one(monkeypatch, tmp_path):
+    """`sqlite3.connect(path)` creates the file, which is how a 0-byte stub is
+    born; the guard must fire before any connect happens (#687)."""
+    import importlib
+
+    ghost = tmp_path / "ghost.db"
+    monkeypatch.setenv("OAK_CHEBI_DB", str(ghost))
+    module = importlib.import_module("anchor_cas_hydrate_records")
+    importlib.reload(module)
+
+    with pytest.raises(SystemExit) as excinfo:
+        module.chebi_label("CHEBI:17234")
+    assert "not a bad identifier" in str(excinfo.value)
+    assert not ghost.exists(), "a missing build must not be created by opening it"

@@ -62,7 +62,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from export_individual_records import collect_existing_filenames, sanitize_filename
-from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
+from mediaingredientmech.utils.oaklib_cache import db_path, require_db  # noqa: E402
 
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
@@ -84,6 +84,10 @@ from mediaingredientmech.sssom_grading import CONFIDENCE  # noqa: E402
 
 def canonical_label(cid: str) -> str:
     pfx = cid.split(":")[0]
+    # Fail on the cache before querying it, so a missing or stub build is
+    # reported as a path problem rather than as "no rdfs:label (absent / wrong
+    # id)" -- a verdict about the identifier, which is the #197 harm (#687).
+    require_db(pfx)
     con = sqlite3.connect(f"file:{DB[pfx]}?mode=ro", uri=True)
     row = con.execute("SELECT value FROM statements WHERE subject=? AND predicate='rdfs:label'", (cid,)).fetchone()
     dep = con.execute("SELECT 1 FROM statements WHERE subject=? AND predicate='owl:deprecated'", (cid,)).fetchone()
