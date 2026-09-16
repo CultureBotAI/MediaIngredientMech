@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 import yaml  # noqa: E402
 
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 from mediaingredientmech.sssom_grading import (  # noqa: E402
     CONFIDENCE,
     JUSTIFICATION,
@@ -49,7 +50,7 @@ from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 COLLECTION = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 MEMBERSHIP = ROOT / "mappings" / "culturemech_recipe_membership.tsv"
-CHEBI_DB = Path.home() / ".data" / "oaklib" / "chebi.db"
+CHEBI_DB = db_path("CHEBI")
 
 STAMP = "2026-09-10T00:00:00+00:00"
 CURATOR = "fix_remaining_hydrate_regroundings"

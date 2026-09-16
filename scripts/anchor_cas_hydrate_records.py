@@ -32,15 +32,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from export_individual_records import sanitize_filename  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.utils.oaklib_cache import db_path, require_db  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
-CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
+CHEBI_DB = db_path("CHEBI")
 
 
 def chebi_label(curie: str) -> str:
-    con = sqlite3.connect(CHEBI_DB)
+    # `sqlite3.connect(path)` CREATES the file when it is missing, so a wrong
+    # cache path silently yields an empty database that answers every query with
+    # nothing -- which is how a 0-byte stub gets into the cache in the first
+    # place. Fail on the path, then open read-only (#687).
+    require_db("CHEBI")
+    con = sqlite3.connect(f"file:{CHEBI_DB}?mode=ro", uri=True)
     row = con.execute("select value from statements where subject=? and predicate='rdfs:label'",
                       (curie,)).fetchone()
     if not row:

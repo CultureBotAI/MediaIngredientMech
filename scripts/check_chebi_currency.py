@@ -49,6 +49,16 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
+# This module is otherwise stdlib-only and is also imported directly via
+# `sys.path.insert(0, "scripts")` from the justfile, so it takes the bootstrap
+# rather than a bare package import -- the #603 lesson: a script that ran
+# standalone must keep running standalone when it starts sharing a rule.
+sys.path.insert(0, str(REPO_ROOT / "src"))
+
+from mediaingredientmech.utils.oaklib_cache import (  # noqa: E402
+    oaklib_cache_dir as _oaklib_cache_dir,
+)
+
 # The semsql artifact oaklib downloads for `sqlite:obo:chebi`.
 #
 # Was `https://s3.amazonaws.com/bbop-sqlite/...`. INCATools/semantic-sql#112 is
@@ -83,17 +93,12 @@ BARE_INTEGER = re.compile(r"^\s*(\d+)\s*$")
 def oaklib_cache_dir() -> Path:
     """Where oaklib actually caches its sqlite builds.
 
-    Resolved through pystow, which oaklib itself uses (oaklib/constants.py), so
-    this honours PYSTOW_HOME. Deriving it from $HOME instead means a developer
-    with PYSTOW_HOME set gets a check that reads — and a refresh that deletes —
-    the wrong path, while reporting success.
+    The rule now lives in ``mediaingredientmech.utils.oaklib_cache``, which is
+    its single home across the fifteen scripts that used to derive it by hand
+    (#306). Kept as a module-level name here because it is this script's public
+    surface and its tests call it at this path.
     """
-    try:
-        import pystow
-
-        return Path(pystow.module("oaklib").base)
-    except Exception:
-        return Path.home() / ".data" / "oaklib"
+    return _oaklib_cache_dir()
 
 
 def default_local_db() -> Path:

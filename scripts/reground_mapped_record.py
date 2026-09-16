@@ -56,6 +56,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from mediaingredientmech.curie import CurieNormalizer
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 from mediaingredientmech.sssom_grading import (
     CONFIDENCE,
     JUSTIFICATION,
@@ -70,13 +71,13 @@ MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 MEMBERSHIP = ROOT / "mappings" / "culturemech_recipe_membership.tsv"
 OAK_DB = {
-    "BTO": Path(os.path.expanduser("~/.data/oaklib/bto.db")),
-    "CHEBI": Path(os.path.expanduser("~/.data/oaklib/chebi.db")),
-    "ENVO": Path(os.path.expanduser("~/.data/oaklib/envo.db")),
-    "FOODON": Path(os.path.expanduser("~/.data/oaklib/foodon.db")),
-    "NCIT": Path(os.path.expanduser("~/.data/oaklib/ncit.db")),
-    "PATO": Path(os.path.expanduser("~/.data/oaklib/pato.db")),
-    "UBERON": Path(os.path.expanduser("~/.data/oaklib/uberon.db")),
+    "BTO": db_path("BTO"),
+    "CHEBI": db_path("CHEBI"),
+    "ENVO": db_path("ENVO"),
+    "FOODON": db_path("FOODON"),
+    "NCIT": db_path("NCIT"),
+    "PATO": db_path("PATO"),
+    "UBERON": db_path("UBERON"),
 }
 
 

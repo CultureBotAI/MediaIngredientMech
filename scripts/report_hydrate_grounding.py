@@ -32,13 +32,14 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
+from mediaingredientmech.utils.oaklib_cache import db_path  # noqa: E402
 
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 UNMAPPED = ROOT / "data" / "curated" / "unmapped_ingredients.yaml"
 REPORT = ROOT / "reports" / "hydrate_grounding.tsv"
 SYN_REPORT = ROOT / "reports" / "hydrate_synonyms.tsv"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
-CHEBI_DB = Path(os.path.expanduser("~/.data/oaklib/chebi.db"))
+CHEBI_DB = db_path("CHEBI")
 
 
 def _load_hydrate_notation():
