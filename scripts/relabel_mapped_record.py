@@ -6,10 +6,15 @@ carrying the free base's CAS (64-04-0, the same xref ChEBI itself records),
 formula (C8H11N) and SMILES. The name, not the mapping, was wrong, and the SSSOM
 row published `skos:exactMatch` between the salt's name and the free base.
 
-preferred_term is load-bearing: it is the SSSOM subject_label and the source of
-the subject_id slug, and the per-record filename derives from it. So a rename
-has to move the SSSOM row too, and keep it in subject_label sort order. Doing
-that by hand is how rows go STALE.
+preferred_term is load-bearing: it is the SSSOM subject_label, so a rename has
+to move the SSSOM row too, and keep it in subject_label sort order. Doing that
+by hand is how rows go STALE.
+
+It is NOT the source of subject_id. Per #236 the subject is the record's file
+stem (`mim_curie_for_stem`), and FilenameIndex never renames a file, so a
+relabel changes subject_label and leaves subject_id exactly as it was. This
+script used to re-derive subject_id from the new term, which is the mechanism
+#236 was filed about.
 
 The old name is preserved as a RAW_TEXT synonym -- it is a real label some
 medium recipe used, and #229 means synonyms are published, so it stays
@@ -29,7 +34,6 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from export_individual_records import sanitize_filename  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,7 +66,10 @@ def plan_sssom_move(old_term: str, new_term: str) -> tuple[str, str]:
     row = lines.pop(hits[0])
     eol = "\n" if row.endswith("\n") else ""
     cols = row.rstrip("\n").split("\t")
-    cols[0] = f"MIM:{sanitize_filename(new_term)}"
+    # cols[0] is left alone. The subject is the record's file stem, and this
+    # script does not move the file -- re-deriving it from new_term is exactly
+    # how `MIM:2-phenylethylamine` came to point at
+    # `Phenethylamine_Hydrochloride.yaml` (#236). Only the label changes.
     cols[1] = new_term
     new_row = "\t".join(cols) + eol
     i = header_i + 1

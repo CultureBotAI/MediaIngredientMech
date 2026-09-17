@@ -124,6 +124,7 @@ _SRC = REPO_ROOT / "src"
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.synonym_policy import is_resolving_synonym_text  # noqa: E402
 
 DEFAULT_SSSOM = REPO_ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
@@ -186,10 +187,6 @@ _CHEM_BLOCK_RE = re.compile(
 _SCALAR_RE = re.compile(r"^\s+(\w+):\s*(.+?)\s*$", re.MULTILINE)
 
 
-# `curie.py::mim_curie_for_stem` escapes any character outside this set as
-# `~HEX`. Inlined rather than imported to keep the validator stdlib-only; any
-# change there must be mirrored here.
-_STEM_UNSAFE_RE = re.compile(r"[^A-Za-z0-9_\-.]")
 
 
 @lru_cache(maxsize=1)
@@ -209,8 +206,7 @@ def _subject_to_path() -> dict[str, Path]:
     """
     index: dict[str, Path] = {}
     for path in INGREDIENTS_DIR.glob("*.yaml"):
-        escaped = _STEM_UNSAFE_RE.sub(lambda m: f"~{ord(m.group(0)):02X}", path.stem)
-        index[f"MIM:{escaped}"] = path
+        index[mim_curie_for_stem(path.stem)] = path
     return index
 
 

@@ -150,7 +150,11 @@ def main(argv: list[str] | None = None) -> int:
     # mistake #293/#307 record, and it silently matches nothing.
     hdr = next(i for i, l in enumerate(kept) if l.startswith("subject_id"))
     ncols = len(kept[hdr].rstrip("\n").split("\t"))
-    row = [subject or f"MIM:{LABEL.replace(' ', '_')}", LABEL, "skos:exactMatch",
+    if not subject:
+        # Guessing a subject from LABEL is the re-derivation the comment above
+        # rules out: it would write a row no record file backs (#236).
+        raise SystemExit(f"no existing SSSOM row for {LABEL!r}; refusing to guess its subject")
+    row = [subject, LABEL, "skos:exactMatch",
            NEW_TERM, NEW_LABEL, "obo:chebi.owl", "semapv:ManualMappingCuration",
            f"MIM:curation (SSSOM delivery review)|MIM:curator={CURATOR}",
            DATE, "0.95", "", "", f"manual:{CURATOR}|{DATE}"]
