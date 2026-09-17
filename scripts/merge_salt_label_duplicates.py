@@ -188,8 +188,22 @@ def main(argv: list[str] | None = None) -> int:
         if lose_stem:
             drop_subjects.append(mim_curie_for_stem(lose_stem))
         else:
-            print(f"  note: {lose_label} ({lose_id}) has no record file, so it "
-                  f"published no SSSOM row to drop")
+            # No stem does not mean no row. FilenameIndex misses a record whose
+            # collection copy has drifted from its file on both keys, and then a
+            # real row would survive as an ORPHAN. Look before concluding (#690).
+            published = [
+                ln.split("\t", 1)[0]
+                for ln in SSSOM.read_text(encoding="utf-8").splitlines()
+                if not ln.startswith("#") and ln.split("\t")[1:2] == [lose_label]
+            ]
+            if published:
+                raise SystemExit(
+                    f"{lose_label} ({lose_id}) has published rows {published} but no "
+                    f"record file matched it; refusing to leave them as orphans. "
+                    f"Sync the collection (`just sync-curated`) and re-run."
+                )
+            print(f"  note: {lose_label} ({lose_id}) has no record file and no "
+                  f"published row, so there is nothing to drop")
         out.append(f"{lose_label} ({lose_id}) -> {win_id} {win_label}\n"
                    f"        {occ}\n"
                    f"        synonyms added: {added or 'none'}\n"

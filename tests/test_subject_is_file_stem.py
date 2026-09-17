@@ -185,13 +185,15 @@ def test_no_second_copy_of_the_escape_regex():
     assert copies == ["src/mediaingredientmech/curie.py"], copies
 
 
-# A subject spelled by hand is how #236 keeps coming back. These are the uses
-# that build something other than a subject, or that are the rule's own home.
+# A subject spelled by hand is how #236 keeps coming back. These are the exact
+# lines that build something other than a subject, or that are the rule's own
+# home. Exempting lines rather than files means a second, genuinely wrong site
+# added to one of these files is still caught (#691).
 _NOT_A_SUBJECT = {
-    "src/mediaingredientmech/curie.py",           # mim_curie_for_stem itself
-    "scripts/backfill_sssom_surface_forms.py",    # lenient unescaped alias, beside the escaped key
-    "scripts/restore_culturemech_grounding_evidence.py",  # provenance string
-    "scripts/reground_mapped_record.py",          # inside an error message
+    ("src/mediaingredientmech/curie.py", 'return f"MIM:{safe}"'),           # the rule itself
+    ("scripts/backfill_sssom_surface_forms.py", 'out[f"MIM:{path.stem}"] = path'),  # lenient alias
+    ("scripts/restore_culturemech_grounding_evidence.py", 'f"MIM:{EVIDENCE_SOURCE}'),  # provenance
+    ("scripts/reground_mapped_record.py", 'f"MIM:{subject_slug}.'),         # error message text
 }
 
 
@@ -200,12 +202,64 @@ def test_no_writer_spells_a_subject_by_hand():
     for directory in ("scripts", "src"):
         for path in (ROOT / directory).rglob("*.py"):
             rel = str(path.relative_to(ROOT))
-            if rel in _NOT_A_SUBJECT:
-                continue
             for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+                if any(rel == f and marker in line for f, marker in _NOT_A_SUBJECT):
+                    continue
                 # Provenance strings ("MIM:<source>|MIM:curator=...") are not subjects.
                 if "curator=" in line:
                     continue
                 if re.search(r'''f["']MIM:\{''', line):
                     offenders.append(f"{rel}:{number}")
     assert not offenders, f"build these with mim_curie_for_stem(<file stem>): {offenders}"
+
+
+def test_every_exemption_still_matches_a_real_line():
+    """An exemption that no longer matches anything is dead, and hides nothing
+    it claims to — but a stale one is how the list quietly grows."""
+    for rel, marker in _NOT_A_SUBJECT:
+        assert marker in (ROOT / rel).read_text(encoding="utf-8"), f"{rel}: {marker!r}"
+
+
+# --------------------------------------------------------------------------- #
+# merge: "nothing to drop" must be checked, not assumed (#690)
+# --------------------------------------------------------------------------- #
+
+def _merge_fixture(tmp_path, monkeypatch, *, published_label):
+    """One loser/winner pair whose loser the stem index cannot find."""
+    import yaml
+    from export_individual_records import FilenameIndex
+
+    merge = importlib.import_module("merge_salt_label_duplicates")
+    collection = tmp_path / "mapped_ingredients.yaml"
+    collection.write_text(yaml.safe_dump({"ingredients": [
+        {"identifier": "CHEBI:1", "preferred_term": "Na-thing", "mapping_status": "MAPPED",
+         "synonyms": [], "occurrence_statistics": {"total_occurrences": 1}},
+        {"identifier": "CHEBI:2", "preferred_term": "Sodium thing", "mapping_status": "MAPPED",
+         "synonyms": [], "occurrence_statistics": {"total_occurrences": 1}},
+    ]}), encoding="utf-8")
+    sssom = tmp_path / "s.tsv"
+    body = "" if published_label is None else (
+        f"MIM:Some_Drifted_Stem\t{published_label}\tskos:exactMatch\tCHEBI:1\tx\n")
+    sssom.write_text("# curie_map: {}\n" + HEADER + body, encoding="utf-8")
+
+    monkeypatch.setattr(merge, "COLLECTION", collection)
+    monkeypatch.setattr(merge, "SSSOM", sssom)
+    monkeypatch.setattr(merge, "MERGES", [("Na-thing", "CHEBI:1", "CHEBI:2", "Sodium thing")])
+    # The miss this guards against: an unsynced collection the index cannot match.
+    monkeypatch.setattr(merge, "collect_existing_filenames", lambda root: FilenameIndex())
+    return merge
+
+
+def test_merge_refuses_when_an_unmatched_loser_still_has_a_row(tmp_path, monkeypatch):
+    """Skipping the drop would leave the row as an ORPHAN while reporting success."""
+    merge = _merge_fixture(tmp_path, monkeypatch, published_label="Na-thing")
+    with pytest.raises(SystemExit) as excinfo:
+        merge.main([])
+    assert "refusing to leave them as orphans" in str(excinfo.value)
+    assert "MIM:Some_Drifted_Stem" in str(excinfo.value)
+
+
+def test_merge_says_nothing_to_drop_only_when_that_is_true(tmp_path, monkeypatch, capsys):
+    merge = _merge_fixture(tmp_path, monkeypatch, published_label=None)
+    merge.main([])
+    assert "no published row, so there is nothing to drop" in capsys.readouterr().out
