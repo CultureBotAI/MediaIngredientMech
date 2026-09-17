@@ -9,8 +9,11 @@ each of which had a wrong-but-plausible default (see issue #119):
    ``CHEBI:10716816``) must not pass as a real term.
 
 2. **Has this MIM CURIE been renamed?** ``MIM:<name>`` is derived from the
-   ingredient YAML's filename, and filenames move — 205 renames to date. A
-   consumer holding an old CURIE needs it to still resolve.
+   ingredient YAML's filename (#236). Its *spelling* has changed many times —
+   mostly subjects re-derived from a relabelled ``preferred_term``, an older
+   sanitiser, case, or the introduction of escaping, rather than files moving.
+   ``mappings/mim_curie_aliases.tsv`` keeps every earlier spelling resolvable, so
+   a consumer holding an old CURIE still gets an answer.
 
 3. **Which ontology term does a MIM ingredient "mean"?** 180 of 1,876 subjects
    carry more than one mapping (typically CHEBI + cas + kgmicrobe.compound), so

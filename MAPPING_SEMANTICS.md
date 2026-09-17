@@ -271,10 +271,15 @@ Why it is load-bearing rather than cosmetic:
   so it is ambiguous to decode: `~3911` is `chr(0x391) + "1"`. Always encode
   forward from a stem; never decode a subject back into one.
 
-**Deliberate renames still happen** — `curie.py` records 205 to date. When a file
-is renamed on purpose, the subject follows the new stem and
-`build_curie_alias_map.py` keeps the old CURIE resolvable. What is ruled out is a
-rename *as a side effect* of relabelling.
+**Earlier spellings stay resolvable.** `mappings/mim_curie_aliases.tsv` maps
+every subject spelling that has ever been published to the current one, so a
+consumer holding an old CURIE still resolves it. Most entries are *not* file
+renames: they record subjects spelled from a relabelled `preferred_term`, from an
+older sanitiser, in a different case, or before escaping existed —
+`MIM:2-phenylethylamine -> MIM:Phenethylamine_Hydrochloride` is the #236 case
+itself. That is the drift this rule stops. If a file is ever renamed on purpose,
+its subject follows the new stem and the alias map records the old one; what is
+ruled out is a subject changing *as a side effect* of relabelling.
 
 `scripts/check_sssom_subject_files.py` gates this: every published subject must
 equal `mim_curie_for_stem` of some record file.
