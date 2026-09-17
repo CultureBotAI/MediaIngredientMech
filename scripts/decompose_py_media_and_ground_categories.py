@@ -219,23 +219,13 @@ def main(argv: list[str] | None = None) -> int:
         # No SSSOM rows: every record touched here lives in
         # unmapped_ingredients.yaml, which reconcile_sssom does not read, so any
         # row would be an immediate ORPHAN. See the module docstring.
-        sssom_rows = []
-        lines = SSSOM.read_text(encoding="utf-8").splitlines(keepends=True)
-        hdr = next(i for i, l in enumerate(lines) if l.startswith("subject_id"))
-        ncols = len(lines[hdr].rstrip("\n").split("\t"))
-        new = []
-        for label, pred, oid, olabel, ident in sssom_rows:
-            subj = f"MIM:{re.sub(r'[^A-Za-z0-9]+', '_', label).strip('_')}"
-            row = [subj, label, pred, oid, olabel, "obo:chebi.owl",
-                   "semapv:ManualMappingCuration", f"MIM:curation ({ISSUE})", "2026-08-15"]
-            new.append("\t".join(row + [""] * (ncols - len(row))) + "\n")
-            if pred == "skos:narrowMatch":     # Rule B1 registry row
-                reg = [subj, label, "skos:exactMatch", ident, label, "kgm:compound",
-                       "semapv:ManualMappingCuration", f"MIM:curation ({ISSUE})",
-                       "2026-08-15"]
-                new.append("\t".join(reg + [""] * (ncols - len(reg))) + "\n")
-        lines[hdr + 1:hdr + 1] = new
-        SSSOM.write_text("".join(lines), encoding="utf-8")
+        #
+        # A row-writing block used to follow, looping over a list hard-set to []
+        # two lines above it. It never emitted a row, but it still read and
+        # rewrote the published SSSOM on every --apply, and it spelled subjects
+        # from the label rather than from the record's file stem -- the #236
+        # defect, dormant. Removed rather than repaired: if rows are ever wanted
+        # here, derive them with mim_curie_for_stem(<file stem>).
 
     print(f"{'APPLIED' if args.apply else 'DRY RUN (re-run with --apply)'} — "
           f"{len(dec_out)} decomposed, {len(gnd_out)} grounded to a ChEBI class\n")

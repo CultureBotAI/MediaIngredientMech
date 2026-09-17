@@ -1,30 +1,32 @@
 #!/usr/bin/env python3
-"""Report SSSOM `MIM:` subjects that do not resolve to a per-record file (#236).
+"""Every SSSOM ``MIM:`` subject must be a per-record file stem (#236).
 
-The SSSOM ``curie_map`` expands ``MIM:`` to ``data/ingredients/mapped/``, so a
-``MIM:<slug>`` subject reads as an address for the per-record file. But
-``export_individual_records.FilenameIndex`` deliberately never renames an existing
-file — per-record paths stay stable across relabels — while the SSSOM subject is
-recomputed from ``preferred_term`` via ``sanitize_filename`` every time. The two
-therefore drift apart whenever a record is relabelled, or whenever a stem predates
-a change in the sanitiser.
+**Decided (#236):** a ``MIM:`` subject is ``mim_curie_for_stem(<file stem>)`` —
+the record's per-record filename stem with non-URL-safe characters ``~HEX``
+escaped. It is fixed for the life of the record and is never re-derived from
+``preferred_term``.
 
-Nothing else detects this. ``reconcile_sssom`` checks GAP / ORPHAN / STALE against
-``ontology_id`` and never looks at the subject slug, which is why a clean reconcile
-does not imply the subjects resolve.
+#236 posed this as a trade-off between stable per-record paths and slug/path
+agreement, with three options: rename files on relabel, declare the slug opaque,
+or require every subject to resolve. The trade-off only exists if the slug is
+computed from the label. ``export_individual_records.FilenameIndex`` never
+renames a file, so deriving the subject from the *stem* gives both properties at
+once — the subject never changes, and it always names a file.
 
-**This is a report, not a gate.** #236 has not decided between:
+The pipeline already worked this way before the decision was written down:
 
-  1. rename per-record files when ``preferred_term`` changes (slug/path agree,
-     paths stop being stable);
-  2. declare ``MIM:`` slugs opaque identifiers rather than paths and document that
-     in the curie_map (the mismatch stops being a defect);
-  3. require every subject to resolve, and fix the existing cases.
+  * claw's publisher emits ``subject_id  MIM:<safe_stem>  -- stable per-YAML CURIE``;
+  * ``CurieNormalizer`` builds its known-record set from file stems and returns
+    ``UNKNOWN_SUBJECT`` for anything else, so a subject that names no file is not
+    harmless — ``equivalent_term`` refuses to cite the mapping;
+  * #293 and #307 made promotions publish the existing stem.
 
-Under (2) a non-zero count here is expected and harmless. The point of the script
-is that whichever option is chosen, the number stops being invisible — and a
-relabel's effect on it becomes measurable before the relabel lands, which is what
-#209 needs.
+**This is a gate.** Before #236 was decided it only reported, and it compared
+subjects against *raw* stems without escaping. Every subject whose stem holds a
+``(``, ``)`` or ``α`` therefore looked unresolved — 18 false alarms, and zero
+genuine ones, measured with the escaping ``CurieNormalizer`` itself uses. The
+tool announcing that the question was open was itself producing the evidence
+that it was.
 
     python scripts/check_sssom_subject_files.py
 """
@@ -35,30 +37,65 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "src"))
+
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
+
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 RECORD_DIRS = (ROOT / "data" / "ingredients" / "mapped",
                ROOT / "data" / "ingredients" / "unmapped")
 
 
-def main() -> int:
-    stems = {p.stem for d in RECORD_DIRS if d.is_dir() for p in d.glob("*.yaml")}
-    subjects: dict[str, str] = {}
-    with SSSOM.open(newline="", encoding="utf-8") as fh:
-        for row in csv.reader(fh, delimiter="\t"):
-            if row and row[0].startswith("MIM:"):
-                subjects.setdefault(row[0][4:], row[1] if len(row) > 1 else "")
+def known_subjects(record_dirs: tuple[Path, ...] = RECORD_DIRS) -> set[str]:
+    """
+    Return the ``MIM:`` CURIE every per-record file addresses.
 
-    unresolved = {s: lbl for s, lbl in subjects.items() if s not in stems}
-    print(f"MIM: subjects: {len(subjects)}   per-record files: {len(stems)}")
-    print(f"subjects with NO matching file stem: {len(unresolved)}")
-    for slug, label in sorted(unresolved.items()):
-        print(f"  MIM:{slug}")
+    Uses ``mim_curie_for_stem`` — the same escaping ``CurieNormalizer`` applies —
+    rather than the raw stem, which is what made the old report cry wolf.
+
+    :param record_dirs: The per-record directories to scan.
+    :return: One escaped ``MIM:`` CURIE per record file.
+    """
+    return {
+        mim_curie_for_stem(path.stem)
+        for directory in record_dirs
+        if directory.is_dir()
+        for path in directory.glob("*.yaml")
+    }
+
+
+def unresolved_subjects(sssom: Path = SSSOM, record_dirs: tuple[Path, ...] = RECORD_DIRS) -> dict[str, str]:
+    """
+    Return ``{subject_id: subject_label}`` for subjects that name no record file.
+
+    :param sssom: The published mapping set.
+    :param record_dirs: The per-record directories to scan.
+    :return: The subjects a consumer would resolve as ``UNKNOWN_SUBJECT``.
+    """
+    known = known_subjects(record_dirs)
+    subjects: dict[str, str] = {}
+    with sssom.open(newline="", encoding="utf-8") as handle:
+        for row in csv.reader(handle, delimiter="\t"):
+            if row and row[0].startswith("MIM:"):
+                subjects.setdefault(row[0], row[1] if len(row) > 1 else "")
+    return {subject: label for subject, label in subjects.items() if subject not in known}
+
+
+def main() -> int:
+    unresolved = unresolved_subjects()
+    print(f"MIM: subjects that name no per-record file: {len(unresolved)}")
+    for subject, label in sorted(unresolved.items()):
+        print(f"  {subject}")
         print(f"      subject_label: {label!r}")
-    if unresolved:
-        print("\nThis is expected under #236 option 2 (MIM: slugs are opaque ids, not "
-              "paths).\nIt is a defect only under option 1 or 3, which are undecided. "
-              "Reported, not gated.")
-    return 0
+    if not unresolved:
+        print("OK: every MIM: subject is an escaped per-record file stem (#236).")
+        return 0
+    print(
+        "\nA subject must be mim_curie_for_stem(<the record's file stem>) and must "
+        "never be re-derived from preferred_term (#236). CurieNormalizer resolves "
+        "these as UNKNOWN_SUBJECT, so the mapping publishes but cannot be cited."
+    )
+    return 1
 
 
 if __name__ == "__main__":

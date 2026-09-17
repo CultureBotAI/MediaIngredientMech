@@ -14,6 +14,9 @@ on:
     - scripts/validate_sssom_invariants.py
     - scripts/validate_published_curies.py
     - scripts/reconcile_sssom.py
+    - scripts/check_sssom_subject_files.py
+    - src/mediaingredientmech/curie.py
+    - data/ingredients/**
     - data/curated/mapped_ingredients.yaml
   workflow_dispatch:
 
@@ -43,6 +46,11 @@ jobs:
 
       - name: Check SSSOM currency vs curated data
         run: python3 scripts/reconcile_sssom.py
+
+      # A subject that names no record file resolves as UNKNOWN_SUBJECT, so the
+      # row publishes but cannot be cited (#236).
+      - name: Check every MIM subject is a record file stem
+        run: python3 scripts/check_sssom_subject_files.py
 
       - name: Upload triage TSV
         if: always()

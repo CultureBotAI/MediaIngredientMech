@@ -235,6 +235,50 @@ the child's own primary id. The narrowMatch row is then available
 separately for subclass-of inference, but it is no longer the only path
 from the MIM subject to a CURIE.
 
+### Subject identifiers — `MIM:<file stem>` (#236)
+
+A `MIM:` subject is the record's **per-record filename stem**, with every
+character outside `[A-Za-z0-9_.-]` escaped as `~HEX`:
+
+```text
+data/ingredients/mapped/(R)-lactate.yaml   ->  MIM:~28R~29-lactate
+data/ingredients/mapped/Glucose.yaml       ->  MIM:Glucose
+```
+
+It is computed by `mediaingredientmech.curie.mim_curie_for_stem`, and nothing
+else may compute it. It is fixed for the life of the record: **a subject is
+never re-derived from `preferred_term`.**
+
+That gives two properties that looked like a trade-off and are not.
+`export_individual_records.FilenameIndex` never renames an existing file, so a
+subject derived from the stem both **never changes** and **always names a file**.
+The apparent choice between stable paths and slug/path agreement only exists if
+the slug is computed from the label.
+
+So relabelling a record changes `subject_label` and leaves `subject_id` exactly
+as it was. A corrected record keeps a subject like `MIM:13-Butandiol` even though
+its label now reads `1,3-Butanediol`. A stable subject is worth more than a tidy
+one.
+
+Why it is load-bearing rather than cosmetic:
+
+- **`CurieNormalizer` resolves subjects against file stems.** A subject that
+  names no file is `UNKNOWN_SUBJECT`, and `equivalent_term` refuses to cite it —
+  the row publishes, passes every invariant, and cannot be used.
+- **claw's publisher already emits it this way**
+  (`subject_id  MIM:<safe_stem>  -- stable per-YAML CURIE`).
+- **The escape is variable-width** (`~{ord(c):02X}`, where `02` is a minimum),
+  so it is ambiguous to decode: `~3911` is `chr(0x391) + "1"`. Always encode
+  forward from a stem; never decode a subject back into one.
+
+**Deliberate renames still happen** — `curie.py` records 205 to date. When a file
+is renamed on purpose, the subject follows the new stem and
+`build_curie_alias_map.py` keeps the old CURIE resolvable. What is ruled out is a
+rename *as a side effect* of relabelling.
+
+`scripts/check_sssom_subject_files.py` gates this: every published subject must
+equal `mim_curie_for_stem` of some record file.
+
 ### Naming convention
 
 The registry CURIE always uses the same slug as the MIM subject:
@@ -244,7 +288,10 @@ The registry CURIE always uses the same slug as the MIM subject:
 - `MIM:KH2PO4` → `kgmicrobe.compound:kh2po4`
 
 Slug normalization: lowercase, underscore-separated, no special
-characters. The `ingredient` vs `compound` namespace split mirrors the
+characters. So the registry slug matches the subject slug only where the stem
+has no characters to escape: `MIM:Synthetic_Sea_Salts_~28sss~29` pairs with
+`kgmicrobe.compound:synthetic_sea_salts_sss`, because the subject escapes the
+parentheses and the registry slug drops them. The `ingredient` vs `compound` namespace split mirrors the
 type assigned by the auto-classifier (`scripts/classify_ingredient_type.py`
 in claw): pure compounds use `kgmicrobe.compound:`, complex/biological
 materials use `kgmicrobe.ingredient:`.
@@ -527,11 +574,10 @@ converts a visible mapping error into an invisible one.
 > Renaming `Sodium glutamate monohydrate` to match an anhydrous term changes
 > what is claimed. Correct spelling, never identity.
 >
-> Keep the SSSOM `subject_id`. Per-record filenames are not renamed
-> (`collect_existing_filenames` keeps the existing stem), so a corrected record
-> keeps subjects like `MIM:13-Butandiol`. A stable subject matters more than a
-> tidy one — re-deriving it from the new label is the #293/#307 mistake and
-> silently matches nothing.
+> Keep the SSSOM `subject_id` — see [Subject identifiers](#subject-identifiers--mimfile-stem-236).
+> Per-record filenames are not renamed, so a corrected record keeps subjects like
+> `MIM:13-Butandiol`. Re-deriving the subject from the new label is the
+> #236/#293/#307 mistake and silently matches nothing.
 
 **Do not treat a record's auto-derived chemistry as evidence of its identity.**
 `AUTO_BACKFILL_CHEBI_CHEMISTRY` copies formula, InChI and SMILES *from the
