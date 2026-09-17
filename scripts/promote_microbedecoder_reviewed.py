@@ -60,6 +60,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.object_source import object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from oaklib import get_adapter
@@ -267,7 +268,7 @@ def main() -> int:
         # empty ontology_label, which published SSSOM rows with a blank object_label.
         obj_label = ((rec.get("ontology_mapping") or {}).get("ontology_label")
                      or mrow["ontology_label"] or "")
-        row = "\t".join([f"MIM:{stem}", rec["preferred_term"], "skos:exactMatch", oid,
+        row = "\t".join([mim_curie_for_stem(stem), rec["preferred_term"], "skos:exactMatch", oid,
                          obj_label, obj_src, "semapv:LexicalMatching", src,
                          args.date, "0.99", "", "",
                          f"manual:review-ingredients|APPROVED|{args.date}"]) + "\n"

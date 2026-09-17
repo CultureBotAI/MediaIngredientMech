@@ -99,6 +99,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml  # noqa: E402
 
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 from export_individual_records import (  # noqa: E402
     collect_existing_filenames, sanitize_filename,
@@ -280,7 +281,7 @@ def main(argv: list[str] | None = None) -> int:
     def sssom_row(slug: str, label: str, term: str, term_label: str,
                   source: str, grade: str) -> None:
         rows.append("\t".join([
-            f"MIM:{slug}", label, PREDICATE[grade], term, term_label, source,
+            mim_curie_for_stem(slug), label, PREDICATE[grade], term, term_label, source,
             "semapv:ManualMappingCuration",
             f"MIM:curation ({ISSUE})|MIM:curator={CURATOR}", DATE,
             CONFIDENCE[grade], "", "", f"manual:{CURATOR}|{DATE}"]) + "\n")

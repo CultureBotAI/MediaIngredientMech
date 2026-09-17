@@ -38,6 +38,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml  # noqa: E402
 
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 # `data/curated/*.yaml` is the source of truth; `data/ingredients/<status>/*.yaml`
@@ -274,7 +275,7 @@ def sync_sssom(apply: bool) -> list[str]:
 
     # subject-id prefix -> (new subject_label, new object_id or None, new object_label or None)
     edits: dict[str, tuple[str, str | None, str | None]] = {
-        f"MIM:{REGROUND['slug']}": (REGROUND["preferred_term"],
+        mim_curie_for_stem(REGROUND["slug"]): (REGROUND["preferred_term"],
                                     REGROUND["to_id"], REGROUND["to_label"]),
     }
     for slug, spec in LABEL_FIXES.items():
@@ -282,7 +283,7 @@ def sync_sssom(apply: bool) -> list[str]:
         # its object_label tracks the correction too; an ontology row's
         # object_label belongs to the ontology and must not be rewritten.
         registry = not spec["identifier"].startswith("CHEBI:")
-        edits[f"MIM:{slug}"] = (spec["preferred_term"], None,
+        edits[mim_curie_for_stem(slug)] = (spec["preferred_term"], None,
                                 spec["preferred_term"] if registry else None)
 
     for i, line in enumerate(lines):

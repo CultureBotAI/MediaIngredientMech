@@ -40,6 +40,7 @@ _REPO = Path(__file__).resolve().parent.parent
 # lazily before the shared object_source table, so a top-level import must not
 # make it need an installed package to run (#603).
 sys.path.insert(0, str(_REPO / "src"))
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.object_source import object_source_for  # noqa: E402
 MAPPED = _REPO / "data" / "ingredients" / "mapped"
 CURATOR = "claude_culturemech_residual_grounding"
@@ -95,7 +96,9 @@ def emit_sssom_rows(promoter, date: str) -> int:
             if isinstance(e, dict)
         ):
             continue
-        subject = f"MIM:{path.stem}"
+        # Escaped exactly as the publisher does, or a stem holding "(" misses the
+        # `published` check below and a duplicate row is emitted (#236).
+        subject = mim_curie_for_stem(path.stem)
         if subject in published:
             continue
         mapping = record.get("ontology_mapping") or {}

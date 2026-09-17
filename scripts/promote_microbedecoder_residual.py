@@ -60,6 +60,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml
 from export_individual_records import collect_existing_filenames, sanitize_filename
 from mediaingredientmech.utils.oaklib_cache import db_path, require_db  # noqa: E402
@@ -163,7 +164,7 @@ def main() -> int:
         })
         src = "MIM:microbedecoder|MIM:curator=microbedecoder-residual-grounding"
         sssom_rows.append((pref, "\t".join([
-            f"MIM:{slug}", pref, "skos:exactMatch", tid, label, OBJECT_SOURCE[tid.split(":")[0]],
+            mim_curie_for_stem(slug), pref, "skos:exactMatch", tid, label, OBJECT_SOURCE[tid.split(":")[0]],
             "semapv:LexicalMatching", src, args.date, CONFIDENCE[quality], "", "",
             f"manual:microbedecoder-residual-grounding|PROMOTED|{args.date}"]) + "\n"))
         to_pop.append(ident)

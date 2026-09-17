@@ -106,6 +106,8 @@ bump-sssom-header *ARGS:
 
 qc-sssom:
     uv run --frozen python scripts/validate_sssom_invariants.py
+    # Every MIM: subject must be an escaped per-record file stem (#236).
+    uv run --frozen python scripts/check_sssom_subject_files.py
 
 # Export the complete explicit MIM ingredient graph into a new directory.
 export-kgx output="output/mim-kgx":

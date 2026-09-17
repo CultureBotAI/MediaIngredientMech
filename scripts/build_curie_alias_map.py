@@ -45,21 +45,22 @@ from __future__ import annotations
 
 import argparse
 import csv
-import re
 import subprocess
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+# Standalone until #236 gave the subject rule one home (#603 bootstrap).
+sys.path.insert(0, str(REPO / "src"))
+
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 OUT_DEFAULT = REPO / "mappings" / "mim_curie_aliases.tsv"
 SEEDS_DEFAULT = REPO / "mappings" / "mim_curie_alias_seeds.tsv"
 
 # Mirrors build_mim_ingredient_sssom._mim_curie: the stem, with characters that
 # are not URL-safe percent-style escaped as ~HEX so the CURIE round-trips.
 def mim_curie(path: str) -> str:
-    stem = Path(path).stem
-    safe = re.sub(r"[^A-Za-z0-9_\-.]", lambda m: f"~{ord(m.group(0)):02X}", stem)
-    return f"MIM:{safe}"
+    return mim_curie_for_stem(Path(path).stem)
 
 
 def git(*args: str) -> str:

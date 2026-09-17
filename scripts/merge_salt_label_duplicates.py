@@ -38,8 +38,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT / "scripts"))
 import yaml  # noqa: E402
 
+from export_individual_records import collect_existing_filenames  # noqa: E402
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 COLLECTION = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
@@ -117,9 +120,15 @@ def main(argv: list[str] | None = None) -> int:
     recs = coll.get("ingredients", [])
     out: list[str] = []
     drop_subjects: list[str] = []
+    stems = collect_existing_filenames(ROOT / "data" / "ingredients")
 
     for lose_label, lose_id, win_id, win_label in MERGES:
         lose = find(recs, lose_id, label=lose_label)
+        # Capture the subject NOW. Further down the loser is rewritten to carry
+        # the winner's identifier, and FilenameIndex matches identifier first --
+        # a lookup after that point returns the *winner's* stem, and the SSSOM
+        # rows dropped would be the winner's (#236).
+        lose_stem = stems.for_record(lose) if lose is not None else None
         win = find(recs, win_id, label=win_label, status="MAPPED")
         if lose is None:
             # Already merged. Zeroing the tombstone was added after the first
@@ -172,7 +181,15 @@ def main(argv: list[str] | None = None) -> int:
                         f"the earlier merge pass missed it ({ISSUE})."),
             "llm_assisted": False,
         })
-        drop_subjects.append(f"MIM:{lose_label.replace(' ', '_')}")
+        # The subject is the loser's escaped file stem, never a spelling of its
+        # label: `lose_label.replace(" ", "_")` only matched because these three
+        # labels happen to equal their stems, and a wrong subject here drops
+        # nothing and leaves the loser's row behind as an ORPHAN (#236).
+        if lose_stem:
+            drop_subjects.append(mim_curie_for_stem(lose_stem))
+        else:
+            print(f"  note: {lose_label} ({lose_id}) has no record file, so it "
+                  f"published no SSSOM row to drop")
         out.append(f"{lose_label} ({lose_id}) -> {win_id} {win_label}\n"
                    f"        {occ}\n"
                    f"        synonyms added: {added or 'none'}\n"
