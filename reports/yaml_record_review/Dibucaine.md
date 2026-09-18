@@ -1,0 +1,65 @@
+# `data/ingredients/mapped/Dibucaine.yaml`
+
+## Verdict
+
+Pass. The CultureBotHT CAS lookup resolves to active `CHEBI:247956`
+cinchocaine, the stored CAS RN, formula, InChI, and SMILES match ChEBI, and the
+final SSSOM row exports only same-base synonyms plus `CAS:85-79-0`.
+
+## Identity
+
+- Reviewed record: `data/ingredients/mapped/Dibucaine.yaml`.
+- Identifier and grounding: `identifier: CHEBI:247956` with
+  `ontology_mapping.ontology_id: CHEBI:247956`, source `CHEBI`,
+  `mapping_quality: CAS_RN_LOOKUP`, `mapping_status: MAPPED`,
+  `ingredient_type: SINGLE_INGREDIENT`, and 0/0 CultureMech occurrences.
+- Local OAK resolves `CHEBI:247956` to active `cinchocaine`, formula
+  `C20H29N3O2`, InChI, SMILES, CAS xref `85-79-0`, exact synonym
+  `2-butoxy-N-[2-(diethylamino)ethyl]quinoline-4-carboxamide`, and related
+  synonyms including `Dibucaine` and `dibucaine`.
+
+## Validation
+
+- `uv run --frozen python scripts/validate_strict.py data/ingredients/mapped/Diammonium_tartrate.yaml data/ingredients/mapped/Dibenzofuran.yaml data/ingredients/mapped/Dibenzothiophene.yaml data/ingredients/mapped/Dibucaine.yaml data/ingredients/mapped/Dichloran_02_in_ethanol.yaml`:
+  passed; 5 files scanned, 0 ERROR rows.
+- `uv run --frozen linkml-term-validator validate-data data/ingredients/mapped/Diammonium_tartrate.yaml data/ingredients/mapped/Dibenzofuran.yaml data/ingredients/mapped/Dibenzothiophene.yaml data/ingredients/mapped/Dibucaine.yaml data/ingredients/mapped/Dichloran_02_in_ethanol.yaml -s src/mediaingredientmech/schema/mediaingredientmech.yaml -t IngredientRecord --labels`:
+  passed all 5 records.
+- `uv run --frozen runoak -i sqlite:obo:chebi term-metadata CHEBI:63075 CHEBI:28145 CHEBI:23681 CHEBI:247956 CHEBI:27864`:
+  returned the canonical ChEBI label, definition, synonyms, CAS xref,
+  formula, InChI, SMILES, charge, and mass for `CHEBI:247956`.
+- `uv run --frozen python scripts/validate_sssom_invariants.py`: passed Rules
+  A, B1, B2, B3, C, D, E, F, G, H, I, J, and K; Rule B4 was skipped because
+  the sibling kg-microbe ontology transforms were absent.
+- `uv run --frozen python scripts/validate_id_label_correspondence.py -c conf/id_label_targets.yaml`:
+  passed; all id-label pairs corresponded, with only full-corpus
+  plausibility warnings.
+
+## Evidence
+
+- `data/curated/mapped_ingredients.yaml` contains the same maintained record
+  body as the per-record YAML.
+- The hidden/ignored-inclusive exact search over `data/ingredients`,
+  `data/curated`, `mappings`, `docs/data`, `src`, `scripts`, and `tests`
+  found the expected active record, generated/indexed copies, and row-review
+  rows.
+- A focused hidden/ignored-inclusive search of `data/ingredients` for
+  `CHEBI:247956` found only `data/ingredients/mapped/Dibucaine.yaml`.
+- `mappings/ingredient_mappings_oak_ols_review.tsv` and
+  `mappings/ingredient_mappings_row_review_manifest.tsv` both record the
+  `CHEBI:247956` mapping as confirmed with no row-review action required.
+- The final `mappings/ingredient_mappings.sssom.tsv` row maps
+  `MIM:Dibucaine` to `CHEBI:247956` with `skos:exactMatch`, canonical object
+  label `cinchocaine`, CHEBI object source, the exact ChEBI synonym in
+  `other`, and `CAS:85-79-0`.
+
+## Completeness
+
+- CAS RN, formula, InChI, SMILES, the CultureBotHT provenance, CAS lookup
+  regrade history, and no-action row-review provenance are populated.
+- The 0/0 occurrence count is acceptable for a CultureBotHT panel record with
+  no tracked CultureMech recipe memberships; ingredient roles, supplied forms,
+  mixture components, and environmental contexts are correctly empty.
+
+## Recommended Edits
+
+- None.
