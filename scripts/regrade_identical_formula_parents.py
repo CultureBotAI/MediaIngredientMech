@@ -45,6 +45,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import yaml  # noqa: E402
 
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.sssom_grading import PREDICATE_BROAD  # noqa: E402
 
 COLLECTION = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
@@ -133,7 +134,7 @@ def main(argv: list[str] | None = None) -> int:
             "llm_assisted": False,
         })
         sssom_grade[label] = ("skos:exactMatch" if new_grade in ("EXACT_MATCH", "SYNONYM_MATCH")
-                              else "skos:narrowMatch")
+                              else PREDICATE_BROAD)
         changed.append(f"{label[:36]:<36} {old_grade:<13} -> {new_grade}")
 
     # Both EXACT_MATCH and SYNONYM_MATCH emit skos:exactMatch, so the rows that were
@@ -145,7 +146,7 @@ def main(argv: list[str] | None = None) -> int:
         cells = line.rstrip("\n").split("\t")
         if len(cells) < 5 or cells[1] not in sssom_grade:
             continue
-        if cells[2] != "skos:narrowMatch" or not cells[3].startswith("CHEBI:"):
+        if cells[2] != PREDICATE_BROAD or not cells[3].startswith("CHEBI:"):
             continue
         cells[2] = sssom_grade[cells[1]]
         lines[i] = "\t".join(cells) + "\n"

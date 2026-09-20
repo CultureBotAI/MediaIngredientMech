@@ -401,7 +401,7 @@ def test_variable_sulfate_hydrates_publish_parent_and_registry_rows(
     rows = {row["object_id"]: row for row in sssom_rows if row["subject_label"] == term}
 
     assert set(rows) == {parent, identifier}
-    assert rows[parent]["predicate_id"] == "skos:narrowMatch"
+    assert rows[parent]["predicate_id"] == "skos:broadMatch"
     assert rows[parent]["confidence"] == "0.9"
     assert rows[parent]["other"] == expected_other
     assert rows[identifier]["predicate_id"] == "skos:exactMatch"
@@ -456,7 +456,7 @@ def test_formula_supported_sulfate_sssom_has_parent_and_registry_rows(
     rows = {row["object_id"]: row for row in sssom_rows if row["subject_label"] == term}
 
     assert set(rows) == {parent, identifier}
-    assert rows[parent]["predicate_id"] == "skos:narrowMatch"
+    assert rows[parent]["predicate_id"] == "skos:broadMatch"
     assert rows[parent]["confidence"] == "0.9"
     assert rows[identifier]["predicate_id"] == "skos:exactMatch"
     assert rows[identifier]["confidence"] == "0.99"

@@ -125,7 +125,7 @@ def test_equivalent_term_picks_highest_ranked_exact_match(n):
 
 
 def test_narrow_match_is_not_offered_as_equivalent(n):
-    """narrowMatch means MIM is MORE specific — citing it as equal generalises."""
+    """A broadMatch row means MIM is MORE specific — citing it as equal generalises."""
     narrow_only = [
         s for s, rows in n._mappings.items()
         if rows and all(p != "skos:exactMatch" for _, p in rows)

@@ -94,8 +94,8 @@ MIM:14-B-D-Galactobiose -> CHEBI:36226 | cas:2152-98-9 | kgmicrobe.compound:14-b
 `CurieNormalizer.equivalent_term()` applies:
 
 1. **Filter to `skos:exactMatch`.** Only that predicate asserts the two denote the
-   same thing. `closeMatch` and `narrowMatch` are excluded — `narrowMatch` means
-   the MIM subject is *more specific*, so citing the object as an equivalent
+   same thing. `closeMatch` and `broadMatch` are excluded — a `broadMatch` row means
+   the MIM subject is *more specific* than the object, so citing the object as an equivalent
    silently generalises the ingredient. Of 2,200 published rows, 1,720 are
    `exactMatch` and **480 are not**.
 2. **Rank the survivors by prefix**: ontology terms (CHEBI < FOODON < UBERON <
@@ -105,7 +105,7 @@ MIM:14-B-D-Galactobiose -> CHEBI:36226 | cas:2152-98-9 | kgmicrobe.compound:14-b
 The rule never reaches past the `exactMatch` set to grab a better-ranked prefix
 that is only a close match. When a subject has no exact match, the call returns
 `NO_EXACT_MATCH` — a refusal, not a guess — so a caller cannot mistake a
-`narrowMatch` for an equivalence.
+`broadMatch` for an equivalence.
 
 ## 5. For consumers
 

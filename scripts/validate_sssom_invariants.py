@@ -102,7 +102,7 @@ claw builder) or leave it in the triage TSV; CI fails as long as a
 violating row sits in ``ingredient_mappings.sssom.tsv``.
 
 Exit codes:
-  0 — every row passes Rules A, B1, B2, B3, C, D, E, F, G, H, I, J, K, and
+  0 — every row passes Rules A, B1, B2, B3, C, D, E, F, G, H, I, J, K, L, and
       (when its label source is present) B4.
   2 — at least one row failed Rule A, B1, B2, B3, B4, C, D, E, F, G, H, I or
       J. (B1 contributes to exit-2 unless ``--lenient-b1`` is passed.)
@@ -707,6 +707,70 @@ def evaluate_rule_f(
         )
 
 
+PREDICATE_SEMANTICS_KEY = "predicate_semantics"
+SKOS_SEMANTICS = "skos"
+
+
+def declared_predicate_semantics(prelude: Iterable[str]) -> str:
+    """
+    Return the set's top-level ``predicate_semantics`` declaration, or ``""``.
+
+    Parsed the way kg-microbe's reader parses it, deliberately: a top-level key
+    is ``# key: value`` with exactly one space after the ``#``. SSSOM headers
+    are nested YAML, so a key of this name under some parent means something
+    else, and a gate that accepted it would pass a file the consumer reads as
+    legacy.
+
+    :param prelude: The ``#`` header lines of the mapping set.
+    :return: The declared value, or the empty string when absent.
+    """
+    for line in prelude:
+        if not line.startswith("#"):
+            continue
+        body = line[1:].rstrip("\n")
+        if body[:1] not in ("", " ") or body[1:2] == " ":
+            continue
+        stripped = body.strip()
+        if stripped.startswith(f"{PREDICATE_SEMANTICS_KEY}:"):
+            return stripped.split(":", 1)[1].strip().strip("\"'")
+    return ""
+
+
+def evaluate_rule_l(
+    prelude: Iterable[str], rows: Iterable[dict[str, str]]
+) -> Iterator[tuple[int, dict[str, str], str]]:
+    """Rule L — the set declares that its asymmetric predicates follow SKOS.
+
+    Since #390 a parent-anchoring row is ``skos:broadMatch``, which is what the
+    spec says and the inverse of what MIM published before. kg-microbe reads
+    the direction from one header line, ``# predicate_semantics: skos``, and
+    treats its absence as the legacy inverted convention. So the declaration is
+    load-bearing: strip that line from the flipped set and every parent edge
+    inverts -- measured, 166 of 166, with ontology terms becoming children of
+    MIM records.
+
+    The rows and the declaration live in one file, which makes them atomic on
+    publication, but nothing made them atomic on *rebuild*: a generator that
+    wrote the new rows under an old header would produce exactly that inverted
+    set, and every other rule would pass it.
+    """
+    declared = declared_predicate_semantics(prelude)
+    if declared == SKOS_SEMANTICS:
+        return
+    asymmetric = sum(
+        1 for row in rows if (row.get("predicate_id") or "").strip() in ASYMMETRIC_PREDICATES
+    )
+    yield (
+        0,
+        {},
+        f"Rule L: the header does not declare `{PREDICATE_SEMANTICS_KEY}: "
+        f"{SKOS_SEMANTICS}` at the top level (found {declared!r}). A consumer "
+        f"treats absence as the legacy inverted convention and would read all "
+        f"{asymmetric} asymmetric row(s) backwards. Add "
+        f"`# {PREDICATE_SEMANTICS_KEY}: {SKOS_SEMANTICS}` to the header (#390).",
+    )
+
+
 def evaluate_rule_g(
     prelude: Iterable[str], rows: Iterable[dict[str, str]]
 ) -> Iterator[tuple[int, dict[str, str], str]]:
@@ -1164,6 +1228,7 @@ def main(argv: list[str]) -> int:
     _collect("Rule I", evaluate_rule_i(rows))
     _collect("Rule J", evaluate_rule_j(rows))
     _collect("Rule K", evaluate_rule_k(rows))
+    _collect("Rule L", evaluate_rule_l(prelude, rows))
 
     args.reject_tsv.parent.mkdir(parents=True, exist_ok=True)
     _write_reject_tsv(
@@ -1180,7 +1245,7 @@ def main(argv: list[str]) -> int:
 
     if not all_rejects:
         b1_label = "B1" if args.strict_b1 else "B1(lenient)"
-        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F, G, H, I, J, K"
+        rule_summary = f"Rules A, {b1_label}, B2, B3, C, D, E, F, G, H, I, J, K, L"
         if "Rule B4" in rule_counts or not missing_prefixes:
             rule_summary += ", B4"
         print(

@@ -91,9 +91,10 @@ PREFIX_RANK = {
     "kgmicrobe.ingredient": 11,
 }
 
-# Only these assert that subject and object denote the same thing. narrowMatch
-# in particular means the MIM subject is MORE specific, so treating the object as
-# an equivalent silently generalises the ingredient.
+# Only these assert that subject and object denote the same thing. A broadMatch
+# row in particular means the MIM subject is MORE specific than the object (the
+# object is the broader concept, #390), so treating the object as an equivalent
+# silently generalises the ingredient.
 EQUIVALENT_PREDICATES = {"skos:exactMatch"}
 
 _CURIE_RE = re.compile(r"^([A-Za-z][A-Za-z0-9_.]*):([A-Za-z0-9_.~%\-]+)$")
@@ -320,7 +321,7 @@ class CurieNormalizer:
 
         Only ``skos:exactMatch`` rows qualify; among those the highest-ranked
         prefix wins. Returns a problem verdict — never a guess — when the subject
-        has no exact match, so a caller cannot mistake a ``narrowMatch`` for an
+        has no exact match, so a caller cannot mistake a ``broadMatch`` for an
         equivalence.
         """
         r = self.resolve(mim_curie)

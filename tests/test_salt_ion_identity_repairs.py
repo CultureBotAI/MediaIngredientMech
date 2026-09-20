@@ -124,7 +124,7 @@ def test_salt_named_subjects_have_parent_and_registry_sssom_rows(
 
     for preferred_term, (identifier, parent) in REPAIRED.items():
         parent_row = by_label[preferred_term][parent]
-        assert parent_row["predicate_id"] == "skos:narrowMatch"
+        assert parent_row["predicate_id"] == "skos:broadMatch"
         assert parent_row["other"] == EXPECTED_OTHER[preferred_term]
 
         registry_row = by_label[preferred_term][identifier]

@@ -43,6 +43,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import yaml  # noqa: E402
 
 from mediaingredientmech.utils.object_source import object_source_for
+from mediaingredientmech.sssom_grading import PREDICATE_BROAD  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 from export_individual_records import (  # noqa: E402
     collect_existing_filenames, sanitize_filename,
@@ -127,7 +128,7 @@ def main(argv: list[str] | None = None) -> int:
         # FALLBACK_REGISTRY record needs none — its closeMatch row to its own
         # mint already IS that row, and B1 fires only on narrow/broadMatch.
         ident = str(rec.get("identifier") or "")
-        if PREDICATE[grade] == "skos:narrowMatch" and is_registry_mint(ident):
+        if PREDICATE[grade] == PREDICATE_BROAD and is_registry_mint(ident):
             rows.append("\t".join([
                 f"MIM:{slug}", pref, "skos:exactMatch", ident, pref,
                 object_source_for(ident),

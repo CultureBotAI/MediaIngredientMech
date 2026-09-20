@@ -64,7 +64,7 @@ Use `MAPPING_SEMANTICS.md` as the authority for SSSOM predicate decisions:
 
 - `skos:exactMatch`: true identity only; bidirectional substitution is safe.
 - `skos:closeMatch`: related but not substitutable.
-- `skos:narrowMatch`: MIM ingredient is more specific than the ontology parent; must have a registry exact row for the same `MIM:<slug>`.
+- `skos:broadMatch`: MIM ingredient is more specific than the ontology parent, so the parent is the broader concept; must have a registry exact row for the same `MIM:<slug>`. (This was `skos:narrowMatch` until #390, which under SKOS asserts the reverse.)
 - Registry rows use `MIM:<slug> skos:exactMatch kgmicrobe.{ingredient,compound}:<slug_lc>`.
 
 When SSSOM rows change, update `mappings/ingredient_mappings.sssom.tsv` consistently with the YAML and run:
@@ -73,7 +73,7 @@ When SSSOM rows change, update `mappings/ingredient_mappings.sssom.tsv` consiste
 python3 scripts/validate_sssom_invariants.py
 ```
 
-If a `narrowMatch` is added manually, verify the required `kgmicrobe.compound:` or `kgmicrobe.ingredient:` registry row is present.
+If a `broadMatch` is added manually, verify the required `kgmicrobe.compound:` or `kgmicrobe.ingredient:` registry row is present.
 
 ## Editing Pattern
 

@@ -102,7 +102,7 @@ Per MAPPING_SEMANTICS.md **Section 3**, split them instead:
 
 1. Keep the anhydrous record on the anhydrous term.
 2. Give the hydrate its own identifier — a hydrate-specific ontology term if one
-   exists, else `cas:<hydrate CAS>` with a `skos:narrowMatch` to the anhydrous
+   exists, else `cas:<hydrate CAS>` with a `skos:broadMatch` to the anhydrous
    parent plus the Rule B1 registry row.
 3. `scripts/reground_mapped_record.py` performs the move.
 
