@@ -48,6 +48,11 @@ from pathlib import Path
 import yaml
 
 _REPO = Path(__file__).resolve().parent.parent
+# Standalone until #236 gave the subject rule one home; the bootstrap keeps a
+# bare `python scripts/...` run working (#603).
+sys.path.insert(0, str(_REPO / "src"))
+
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 PUBLISHED = _REPO / "mappings" / "ingredient_mappings.sssom.tsv"
 CURATOR = "claude_sssom_surface_form_backfill"
 SOURCE = "sssom_other_backfill"
@@ -147,7 +152,7 @@ def mim_curie(stem: str) -> str:
     parenthesis or a Greek letter -- 19 subjects and 1,409 of their surface-form
     tokens, which would otherwise have been silently reported as having no record.
     """
-    return "MIM:" + re.sub(r"[^A-Za-z0-9_\-.]", lambda m: f"~{ord(m.group(0)):02X}", stem)
+    return mim_curie_for_stem(stem)
 
 
 def records_by_subject() -> dict[str, Path]:

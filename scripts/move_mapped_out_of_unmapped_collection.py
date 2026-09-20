@@ -42,6 +42,7 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml  # noqa: E402
 
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.object_source import object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 from export_individual_records import (  # noqa: E402
@@ -115,7 +116,7 @@ def main(argv: list[str] | None = None) -> int:
         source = object_source_for(term)
         label = str(om.get("ontology_label") or pref)
         rows.append("\t".join([
-            f"MIM:{slug}", pref, PREDICATE[grade], term, label, source,
+            mim_curie_for_stem(slug), pref, PREDICATE[grade], term, label, source,
             "semapv:ManualMappingCuration",
             f"MIM:curation ({ISSUE})|MIM:curator={CURATOR}", DATE,
             CONFIDENCE[grade], "", "",
@@ -129,7 +130,7 @@ def main(argv: list[str] | None = None) -> int:
         ident = str(rec.get("identifier") or "")
         if PREDICATE[grade] == "skos:narrowMatch" and is_registry_mint(ident):
             rows.append("\t".join([
-                f"MIM:{slug}", pref, "skos:exactMatch", ident, pref,
+                mim_curie_for_stem(slug), pref, "skos:exactMatch", ident, pref,
                 object_source_for(ident),
                 "semapv:ManualMappingCuration",
                 f"MIM:curation ({ISSUE})|MIM:curator={CURATOR}", DATE,

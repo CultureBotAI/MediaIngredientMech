@@ -99,6 +99,8 @@ bump-sssom-header *ARGS:
 
 qc-sssom:
     uv run --frozen python scripts/validate_sssom_invariants.py
+    # Every MIM: subject must be an escaped per-record file stem (#236).
+    uv run --frozen python scripts/check_sssom_subject_files.py
 
 # UNIFIED_INGREDIENT_MAPPING.tsv is built by claw from MIM's records plus
 # CultureMech's recipes and committed here. Nothing recorded what it was built

@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 import yaml
+from mediaingredientmech.curie import mim_curie_for_stem  # noqa: E402
 from mediaingredientmech.utils.oaklib_cache import db_path, oaklib_cache_dir  # noqa: E402
 from mediaingredientmech.utils.object_source import OBJECT_SOURCE, object_source_for
 from mediaingredientmech.utils.yaml_handler import save_yaml
@@ -349,7 +350,7 @@ def main():
     # build SSSOM row (13 cols)
     src = f"MIM:{a.evidence_source}|MIM:curator=promote_resolved_unmapped"
     review = f"manual:promote_resolved_unmapped|PROMOTED|{a.date}"
-    row = "\t".join([f"MIM:{slug}", pref, PREDICATE[a.quality], term_curie, label,
+    row = "\t".join([mim_curie_for_stem(slug), pref, PREDICATE[a.quality], term_curie, label,
                      object_source_for(term_curie),
                      justification_for(a.quality), src, a.date,
                      CONFIDENCE[a.quality], "", "", review]) + "\n"
@@ -361,7 +362,7 @@ def main():
         # Deliberately manual, unlike the row above: a registry mint is a curator's
         # decision that no ontology term fits, which is the opposite of a lexical match.
         registry = object_source_for(a.to)
-        row += "\t".join([f"MIM:{slug}", pref, "skos:exactMatch", a.to, pref, registry,
+        row += "\t".join([mim_curie_for_stem(slug), pref, "skos:exactMatch", a.to, pref, registry,
                           "semapv:ManualMappingCuration", src, a.date, "0.99",
                           "", "", review]) + "\n"
         # A `cas:` identifier does NOT satisfy Rule B1: the rule matches
@@ -371,7 +372,7 @@ def main():
         # Tomatidine_Hydrochloride has narrowMatch + cas: + kgmicrobe.compound:).
         if not a.to.lower().startswith("kgmicrobe."):
             reg_mint = check_registry_mint("kgmicrobe.compound:", slug)
-            row += "\t".join([f"MIM:{slug}", pref, "skos:exactMatch", reg_mint, pref,
+            row += "\t".join([mim_curie_for_stem(slug), pref, "skos:exactMatch", reg_mint, pref,
                               object_source_for("kgmicrobe.compound"),
                               "semapv:ManualMappingCuration", src, a.date, "0.99",
                               "", "", review]) + "\n"
