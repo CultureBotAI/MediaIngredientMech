@@ -32,6 +32,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from export_individual_records import sanitize_filename  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.sssom_grading import PREDICATE_BROAD  # noqa: E402
 from mediaingredientmech.utils.oaklib_cache import db_path, require_db  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -141,7 +142,7 @@ def main() -> int:
                      "source": f"MIM:{args.curator}|MIM:curator={args.curator}",
                      "mapping_date": args.date})
         if subject_id not in have_parent:
-            r = dict(base, predicate_id="skos:narrowMatch", object_id=parent,
+            r = dict(base, predicate_id=PREDICATE_BROAD, object_id=parent,
                      object_label=label, object_source="obo:chebi.owl", confidence="0.9")
             new_rows.append("\t".join(r[f] for f in fields) + "\n")
         if subject_id not in have_registry:

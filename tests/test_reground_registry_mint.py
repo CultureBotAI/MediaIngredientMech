@@ -85,7 +85,7 @@ def test_ontology_reground_rewrites_object_and_keeps_one_row(tmp_path, monkeypat
     rows = [ln for ln in text.splitlines() if ln.startswith("MIM:")]
     assert len(rows) == 1, "an ordinary re-ground must not add a row"
     cols = rows[0].split("\t")
-    assert cols[2] == "skos:narrowMatch"
+    assert cols[2] == "skos:broadMatch"
     assert (cols[3], cols[4], cols[5]) == ("FOODON:222", "new label", "obo:foodon.owl")
     assert (cols[6], cols[7], cols[9]) == ("semapv:ManualMappingCuration", "MIM:test", "0.9")
 
@@ -105,7 +105,7 @@ def test_mint_reground_emits_the_rule_b1_pair(tmp_path, monkeypatch):
     assert len(rows) == 2, "Rule B1 needs the narrowMatch AND its registry sibling"
 
     narrow, registry = rows
-    assert narrow[2] == "skos:narrowMatch"
+    assert narrow[2] == "skos:broadMatch"
     assert (narrow[3], narrow[4], narrow[5]) == ("FOODON:222", "parent label", "obo:foodon.owl")
     assert (narrow[6], narrow[7], narrow[9]) == ("semapv:ManualMappingCuration", "MIM:test", "0.9")
 

@@ -71,9 +71,13 @@ Check each questionable row against these questions:
   `ontology_mapping.ontology_id` for the ontology row?
 - **Predicate semantics:** does `mapping_quality` map to the right SSSOM
   predicate: `EXACT_MATCH` and `SYNONYM_MATCH` to `skos:exactMatch`,
-  `CLOSE_MATCH` to `skos:closeMatch`, `NARROW_MATCH` to `skos:narrowMatch`, and
-  `BROAD_MATCH` to `skos:broadMatch`?
-- **Registry sibling:** does every `skos:narrowMatch` or `skos:broadMatch` row
+  `CLOSE_MATCH` to `skos:closeMatch`, and `NARROW_MATCH` to `skos:broadMatch`
+  (the record is narrower, so its ontology parent is the *broader* concept;
+  #390)? Every other grade, `BROAD_MATCH` included, publishes `skos:closeMatch`.
+- **Declared semantics:** does the header carry a top-level
+  `# predicate_semantics: skos`? kg-microbe treats its absence as the legacy
+  inverted convention and would read every asymmetric row backwards (Rule L).
+- **Registry sibling:** does every `skos:broadMatch` or `skos:narrowMatch` row
   have a sibling `MIM:<slug> skos:exactMatch
   kgmicrobe.{ingredient,compound}:<slug_lc>` row for the same subject?
 - **Identity rows:** is a row that maps to the record's own `identifier` always

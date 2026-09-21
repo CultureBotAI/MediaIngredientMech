@@ -174,7 +174,7 @@ def test_narrow_stereochemical_forms_publish_registry_rows(
 
     for label, (identifier, parent, _, cas_rn) in CAS_REGROUNDINGS.items():
         parent_row = by_label[label][parent]
-        assert parent_row["predicate_id"] == "skos:narrowMatch"
+        assert parent_row["predicate_id"] == "skos:broadMatch"
         assert not any(token.startswith("cas:") for token in _other_tokens(parent_row))
 
         cas_row = by_label[label][identifier]
@@ -190,7 +190,7 @@ def test_narrow_stereochemical_forms_publish_registry_rows(
 
     for label, (identifier, parent, _, _) in KGM_REGROUNDINGS.items():
         parent_row = by_label[label][parent]
-        assert parent_row["predicate_id"] == "skos:narrowMatch"
+        assert parent_row["predicate_id"] == "skos:broadMatch"
         assert not any(token.startswith("cas:") for token in _other_tokens(parent_row))
 
         kgm_row = by_label[label][identifier]

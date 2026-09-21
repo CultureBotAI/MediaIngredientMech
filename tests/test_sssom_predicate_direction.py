@@ -1,33 +1,27 @@
-"""Pin the asymmetric-predicate direction until both repos change together (#390).
+"""Pin the asymmetric-predicate direction now that both repos have moved (#390).
 
-**This test asserts something that is wrong by the SKOS spec, on purpose.**
+Until #390 this file asserted something wrong by the SKOS spec, on purpose. MIM
+wrote `skos:narrowMatch` for *"MIM:X is a kind-of Y"*, which is the inverse of
+the spec -- `skos:narrowMatch` is a sub-property of `skos:narrower`, so
+`A narrowMatch B` asserts **B is narrower than A** -- and kg-microbe read it the
+same inverted way, so every row still produced a correct `biolink:subclass_of`
+edge. A one-sided fix would have inverted every one of them, silently, so the
+old test refused `broadMatch` and asked whoever tripped it one question: *is the
+kg-microbe half landing too?*
 
-`MAPPING_SEMANTICS.md` defines `skos:narrowMatch` as *"MIM:X is a kind-of Y (Y is
-the broader/parent term)"*. SKOS says the opposite: `skos:narrowMatch` is a
-sub-property of `skos:narrower`, so `A narrowMatch B` asserts **B is narrower
-than A**. Under the spec, "MIM:X is a kind-of Y" is `skos:broadMatch`.
+It has landed (Knowledge-Graph-Hub/kg-microbe#822, `97d458f75`), and not as the
+branch-swap this file once anticipated but as something order-independent: the
+mapping set declares its own semantics in its header,
 
-Nothing is broken today because kg-microbe reads the predicates the same inverted
-way MIM writes them (`kg_microbe/utils/chemical_mapping_utils.py`):
+    # predicate_semantics: skos
 
-    if predicate == "skos:narrowMatch":
-        parent_sets.setdefault(subject, set()).add(curie)   # object is the parent
-    if predicate == "skos:broadMatch":
-        parent_sets.setdefault(curie, set()).add(subject)   # subject is the parent
-
-The two repos agree, both differ from SKOS, and every asymmetric row produces a
-correct `biolink:subclass_of` edge.
-
-**So a one-sided fix inverts 141 subclass edges.** Someone reading the spec
-against this corpus would reasonably flip MIM to `broadMatch` — and that is
-precisely the change that breaks the graph, silently, producing a plausible-
-looking result. This test exists to stop that landing alone.
-
-Coordination is tracked in MIM #390 and Knowledge-Graph-Hub/kg-microbe#822. When
-both sides are ready, the flip is: MIM re-emits these rows as `broadMatch`,
-kg-microbe swaps the two branches above, **and this test is updated in the same
-change**. If you are here because it failed, that is the question to answer: is
-the kg-microbe half landing too?
+and a reader treats absence as the legacy convention. The consolidator reads the
+declaration and re-emits it into the unified set, so the whole chain follows it.
+Verified with kg-microbe's own indexer at the cutover: the legacy file under the
+legacy reading and the flipped file under the SKOS reading yield identical
+parent edges, 166 of 166 -- and the flipped file with the declaration stripped
+inverts all of them. The header line is load-bearing, which is why Rule L and
+the tests below pin the rows and the declaration *together*.
 """
 
 import csv
@@ -45,25 +39,89 @@ def _rows():
             (l for l in fh if not l.startswith("#")), delimiter="\t"))
 
 
-def test_asymmetric_rows_use_narrowmatch_not_broadmatch():
-    """The convention is narrowMatch for "MIM:X is a kind-of Y".
+def _header():
+    with SSSOM.open(encoding="utf-8") as fh:
+        return [line for line in fh if line.startswith("#")]
 
-    Not because it is right by SKOS -- it is not -- but because kg-microbe's
-    parent-index reads it that way, so the two must move together.
-    """
+
+def test_parent_anchoring_rows_are_broadmatch():
+    """ "MIM:X is a kind-of Y" is `skos:broadMatch`: Y is the broader concept."""
     rows = _rows()
     asym = [r for r in rows if r["predicate_id"] in ASYMMETRIC]
-    broad = [r for r in asym if r["predicate_id"] == "skos:broadMatch"]
+    narrow = [r for r in asym if r["predicate_id"] == "skos:narrowMatch"]
     assert asym, "no asymmetric rows at all — has the corpus changed shape?"
-    assert not broad, (
-        f"{len(broad)} skos:broadMatch row(s) found, e.g. "
-        f"{[(r['subject_label'], r['object_id']) for r in broad[:3]]}.\n"
-        f"MIM's convention is narrowMatch for 'MIM:X is a kind-of Y'. That is "
-        f"inverted relative to SKOS, and kg-microbe is inverted the same way, so "
-        f"they agree. Emitting broadMatch here makes kg-microbe index the SUBJECT "
-        f"as the parent — the edge points the wrong way.\n"
-        f"If this is the coordinated flip (#390, kg-microbe#822), update this test "
-        f"in the same change and confirm the kg-microbe half is landing too.")
+    assert not narrow, (
+        f"{len(narrow)} skos:narrowMatch row(s) found, e.g. "
+        f"{[(r['subject_label'], r['object_id']) for r in narrow[:3]]}.\n"
+        f"Since #390 the set declares SKOS semantics, under which narrowMatch "
+        f"asserts the OBJECT is narrower. For a MIM record anchored to an OBO "
+        f"parent that is backwards: kg-microbe would index the ontology term as "
+        f"a child of the MIM record. Use skos:broadMatch. A genuine narrowMatch "
+        f"(the MIM record is the broader concept) is possible but was absent from "
+        f"the corpus at the cutover, so check it is not a legacy-convention row."
+    )
+
+
+def test_the_set_declares_skos_semantics_at_the_top_level():
+    """The declaration is load-bearing: without it every parent edge inverts."""
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "validate_sssom_invariants", ROOT / "scripts" / "validate_sssom_invariants.py"
+    )
+    validator = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(validator)
+    assert validator.declared_predicate_semantics(_header()) == "skos"
+
+
+def test_a_nested_key_does_not_count_as_the_declaration():
+    """SSSOM headers are nested YAML; kg-microbe reads top-level keys only (#831)."""
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "validate_sssom_invariants", ROOT / "scripts" / "validate_sssom_invariants.py"
+    )
+    validator = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(validator)
+    nested = ["# extension_definitions:\n", "#   predicate_semantics: skos\n"]
+    assert validator.declared_predicate_semantics(nested) == ""
+    assert validator.declared_predicate_semantics(["# predicate_semantics: skos\n"]) == "skos"
+    assert validator.declared_predicate_semantics(['# predicate_semantics: "skos"\n']) == "skos"
+
+
+def test_rule_l_rejects_a_flipped_set_with_no_declaration():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "validate_sssom_invariants", ROOT / "scripts" / "validate_sssom_invariants.py"
+    )
+    validator = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(validator)
+    rows = [{"predicate_id": "skos:broadMatch"}]
+    assert list(validator.evaluate_rule_l([], rows)), "absence must not pass"
+    assert list(validator.evaluate_rule_l(["# predicate_semantics: legacy\n"], rows))
+    assert list(validator.evaluate_rule_l(["# predicate_semantics: skos\n"], rows)) == []
+
+
+def test_no_script_emits_the_legacy_literal():
+    """A writer that hardcodes `skos:narrowMatch` would put a legacy-convention
+    row into a SKOS-declared set -- an inverted edge nothing else would catch.
+    Parent-anchoring writers take PREDICATE_BROAD from sssom_grading instead.
+    """
+    allowed_fragments = ('"skos:narrowMatch", "skos:broadMatch"',)  # direction-agnostic sets
+    offenders = []
+    for folder in ("scripts", "src"):
+        for path in (ROOT / folder).rglob("*.py"):
+            for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+                if '"skos:narrowMatch"' not in line or line.lstrip().startswith("#"):
+                    continue
+                if any(fragment in line for fragment in allowed_fragments):
+                    continue
+                offenders.append(f"{path.relative_to(ROOT)}:{number}")
+    assert not offenders, (
+        f"hardcoded legacy predicate literal at {offenders}. Import PREDICATE_BROAD "
+        f"from mediaingredientmech.sssom_grading for a parent-anchoring row (#390)."
+    )
 
 
 def test_every_asymmetric_subject_has_its_registry_row():

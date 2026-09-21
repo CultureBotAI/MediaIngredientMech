@@ -101,7 +101,7 @@ Use `skos:exactMatch` when:
 Do **not** use `skos:exactMatch` when:
 
 - The ontology term is a parent/broader category and the MIM ingredient is a
-  more specific child (use `skos:narrowMatch`).
+  more specific child (use `skos:broadMatch`).
 - The two terms refer to similar but distinct entities (use `skos:closeMatch`).
 
 ### `skos:closeMatch`
@@ -128,11 +128,20 @@ Do **not** use `skos:closeMatch` as a "soft exactMatch" when you are unsure.
 If you are unsure, the correct action is to leave the row out and flag the
 ingredient for review, not to weaken the predicate.
 
-### `skos:narrowMatch`
+### `skos:broadMatch`
 
 > **MIM:X is a kind-of Y (Y is the broader/parent term). Used to anchor MIM
 > children to OBO parents. Downstream consumers MUST emit this as
 > `biolink:subclass_of` (or `rdfs:subClassOf`), NEVER as identity.**
+
+`skos:broadMatch` is a sub-property of `skos:broader`, and `A skos:broader B`
+means **B is broader than A**. So `MIM:Vermont_Soil skos:broadMatch
+ENVO:00001998` reads "soil is broader than Vermont Soil" — which is the
+intent. MIM published `skos:narrowMatch` for this until #390; that is the
+inverse relation, because `skos:narrowMatch` is a sub-property of
+`skos:narrower` and asserted the OBO parent was *narrower* than the MIM
+record. The grade name and the predicate still agree: a record graded
+`NARROW_MATCH` is narrower, therefore its ontology term is broader.
 
 This predicate is **asymmetric**: substitution is only legal in one
 direction (specific → general for inference like "Vermont Soil is soil"),
@@ -140,43 +149,47 @@ and even that direction is only valid for subclass-of reasoning, not
 identity. The MIM child and the ontology parent are **different graph
 nodes**.
 
-Use `skos:narrowMatch` when:
+Use `skos:broadMatch` when:
 
 - The MIM ingredient is more specific than any available ontology term
   and you want to anchor it to the closest parent. Example: there is no
   CHEBI/ENVO term for "Vermont Soil" specifically, so `MIM:Vermont_Soil`
-  narrowMatches `ENVO:00001998 "soil"`.
+  broadMatches `ENVO:00001998 "soil"`.
 - You are asserting subclass-of, not identity. The parent term retains
   its own identity; the MIM subject does not collapse into it.
 
-Do **not** use `skos:narrowMatch` when:
+Do **not** use `skos:broadMatch` when:
 
 - A more specific ontology term exists. Find that term and use
   `skos:exactMatch` instead.
 - The MIM ingredient is a sibling of the ontology term, not a child.
-- You omit the registry row (Section 2). Every `narrowMatch` from a
+- You omit the registry row (Section 2). Every `broadMatch` from a
   `MIM:<slug>` subject **must** be accompanied by a registry exactMatch
-  row. This is enforced by **Rule B1**.
+  row. This is enforced by **Rule B1**, which keys on both asymmetric
+  predicates and so was unaffected by the #390 flip.
 
-### `skos:broadMatch`
+### `skos:narrowMatch`
 
-> **Inverse of narrowMatch. MIM:X is broader than Y; Y is a kind-of MIM:X.**
+> **Inverse of broadMatch. MIM:X is broader than Y; Y is a kind-of MIM:X.**
 
 Used rarely in MIM, since the typical pattern is "MIM ingredient → OBO
-parent" (i.e. narrowMatch). The semantic guarantee is symmetric to
-narrowMatch: asymmetric, subclass-of only, not identity. If you find
-yourself reaching for `broadMatch`, double-check that the relationship
-is actually broad-to-narrow in the direction the row claims, and not a
-mislabeled `narrowMatch`.
+parent" (i.e. broadMatch). The semantic guarantee is symmetric to
+broadMatch: asymmetric, subclass-of only, not identity. If you find
+yourself reaching for `narrowMatch`, double-check that the relationship
+really runs broad-to-narrow in the direction the row claims, and is not a
+mislabeled `broadMatch`.
+
+The corpus published **0** `skos:narrowMatch` rows after the #390 flip, so a
+new one is worth a second look.
 
 ---
 
 ## 2. Registry/identity row pattern
 
 MIM uses two **independent kinds of mapping rows** for any ingredient that
-also asserts a `narrowMatch` to an OBO term:
+also asserts a `broadMatch` to an OBO term:
 
-1. **Ontology row** — `MIM:<slug> skos:narrowMatch <ENVO|CHEBI|FOODON|…>:<id>`
+1. **Ontology row** — `MIM:<slug> skos:broadMatch <ENVO|CHEBI|FOODON|…>:<id>`
    anchors the MIM child to its OBO parent. The object_id is an external
    ontology term.
 2. **Registry/identity row** — `MIM:<slug> skos:exactMatch
@@ -185,7 +198,7 @@ also asserts a `narrowMatch` to an OBO term:
    first-class kg-microbe CURIE.
 
 The registry row is **mandatory** whenever the same MIM subject also
-asserts any narrowMatch. This is enforced by **Rule B1** of the SSSOM
+asserts any broadMatch. This is enforced by **Rule B1** of the SSSOM
 validator (strict-by-default — a missing registry row makes CI
 fail). The claw SSSOM builder
 (`culturebotai-claw/scripts/build_mim_ingredient_sssom.py`,
@@ -205,22 +218,22 @@ closest parent is `ENVO:00001998 "soil"`. Vermont_Soil is mapped using
 
 ```tsv
 subject_id      subject_label  predicate_id      object_id                          object_label  object_source  mapping_justification        source                                                                                                          mapping_date  confidence  comment
-MIM:Vermont_Soil  Vermont Soil  skos:narrowMatch  ENVO:00001998                       soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion|MIM:specificity-loss-review (mint_kgm_ingredient)|MIM:curator=auto_classify_ingredient_type  2026-05-02    0.9
+MIM:Vermont_Soil  Vermont Soil  skos:broadMatch  ENVO:00001998                       soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion|MIM:specificity-loss-review (mint_kgm_ingredient)|MIM:curator=auto_classify_ingredient_type  2026-05-02    0.9
 MIM:Vermont_Soil  Vermont Soil  skos:exactMatch   kgmicrobe.ingredient:vermont_soil  Vermont Soil  kgm:ingredient  semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion|MIM:specificity-loss-review (mint_kgm_ingredient)|MIM:curator=auto_classify_ingredient_type  2026-05-02    0.99        Registry/identity row preserving kgmicrobe.ingredient:vermont_soil alongside parent ENVO:00001998.
 ```
 
 What the two rows together say:
 
-- "Vermont Soil **is a kind of** soil" — the narrowMatch row.
+- "Vermont Soil **is a kind of** soil" — the broadMatch row.
 - "Vermont Soil **also has a kg-microbe primary id**, namely
   `kgmicrobe.ingredient:vermont_soil`, distinct from the parent
   `ENVO:00001998`" — the registry row.
 
 ### Why both rows are required
 
-Imagine the registry row were missing — only the narrowMatch row exists.
+Imagine the registry row were missing — only the broadMatch row exists.
 A downstream consumer that calls `find_chebi_by_name("Vermont Soil")`
-walks the SSSOM by `subject_label`, finds the narrowMatch row, and
+walks the SSSOM by `subject_label`, finds the broadMatch row, and
 returns its `object_id`: **`ENVO:00001998`** (the parent "soil"). The
 consumer has now silently substituted the parent for the child. Every
 recipe that uses Vermont Soil will be indexed against the generic
@@ -231,7 +244,7 @@ adversarial review #558 round 3 flagged.
 
 With the registry row present, the same consumer call resolves to the
 exactMatch row first and returns `kgmicrobe.ingredient:vermont_soil` —
-the child's own primary id. The narrowMatch row is then available
+the child's own primary id. The broadMatch row is then available
 separately for subclass-of inference, but it is no longer the only path
 from the MIM subject to a CURIE.
 
@@ -327,7 +340,7 @@ a label that is not an identity-bearing name for the record, retain the text and
 its source as a synonym entry typed `REJECTED_LABEL`. This is a provenance-only
 disposition: it must not resolve through `label_index`, appear in searchable
 synonym exports, or enter the SSSOM `other` column. An upstream
-`skos:closeMatch`, `skos:narrowMatch`, or `skos:broadMatch` label must likewise
+`skos:closeMatch`, `skos:broadMatch`, or `skos:narrowMatch` label must likewise
 not be promoted to a synonym by discarding its predicate. The rejected entry is
 kept precisely so the same enrichment candidate cannot silently return later.
 
@@ -351,9 +364,9 @@ Work down the list and stop at the first that applies.
    `Sodium glutamate monohydrate` → `CHEBI:232425 monosodium L-glutamate hydrate`.
 
 2. **No exact term, but the substance has its own CAS.** `identifier` =
-   `cas:<its own CAS>`, `skos:narrowMatch` to the nearest ontology parent, plus
+   `cas:<its own CAS>`, `skos:broadMatch` to the nearest ontology parent, plus
    the mandatory registry row (Section 2, Rule B1).
-   `Sodium hypophosphite monohydrate` → `cas:10039-56-2`, narrowMatch
+   `Sodium hypophosphite monohydrate` → `cas:10039-56-2`, broadMatch
    `sodium hypophosphite`.
 
    The registry row's `kgmicrobe.*` CURIE is **not a competing identifier** — it
@@ -363,14 +376,14 @@ Work down the list and stop at the first that applies.
    not the subject's own registry handle.
 
    **This is already the established pattern**: 34 hydrate-labelled subjects
-   carry `cas:` exactMatch plus a parent narrowMatch plus the Rule B1 registry
+   carry `cas:` exactMatch plus a parent broadMatch plus the Rule B1 registry
    row. Note that a further **22** `cas:`-identified hydrate records have no
    parent row and no registry row, and become non-compliant with this step the
    moment it lands — they are a backlog, not counter-examples.
 
 3. **No exact term and no CAS.** Mint `kgmicrobe.compound:<slug>` (pure
    compounds) or `kgmicrobe.ingredient:<slug>` (complex/biological materials),
-   `narrowMatch` to the nearest parent, plus the registry row.
+   `broadMatch` to the nearest parent, plus the registry row.
 
 4. **The label is genuinely under-specified and an unspecified-sense parent term
    exists** — *and the record carries no independent evidence of which specific
@@ -427,7 +440,7 @@ family precedent is `CHEBI:29987 glutamate(2-)` — and because 30 bare `-ate`
 labels in this corpus sit on charged terms while only the "at least one" group
 does not.
 
-**For a salt, the `narrowMatch` parent follows the label**: where the label says
+**For a salt, the `broadMatch` parent follows the label**: where the label says
 "…Acid sodium salt" the parent is that acid, where it names a neutral compound,
 that compound. This avoids the acid-vs-anion choice entirely. Only reach for the
 anion when ChEBI has no acid term (`2-oxobutyric acid sodium salt` →
@@ -452,7 +465,7 @@ kg-microbe consumes this file as the **authoritative** ingredient-mapping source
 from this repo as a sibling checkout. Its rule:
 
 > symmetric matches (`skos:exactMatch`, `skos:closeMatch`) **overwrite the
-> canonical name** with MIM's `subject_label`; asymmetric (`narrowMatch`,
+> canonical name** with MIM's `subject_label`; asymmetric (`broadMatch`,
 > `broadMatch`) keep the ontology label canonical and add the MIM term as a
 > synonym.
 
@@ -461,7 +474,7 @@ So:
 | predicate | effect on the ontology term in kg-microbe |
 |---|---|
 | `skos:exactMatch` / `skos:closeMatch` | **renamed** to MIM's `subject_label` |
-| `skos:narrowMatch` / `skos:broadMatch` | keeps its label; MIM's term added as a synonym, and a parent/child edge is emitted |
+| `skos:broadMatch` / `skos:narrowMatch` | keeps its label; MIM's term added as a synonym, and a parent/child edge is emitted |
 
 **2,805 of 2,946 rows are symmetric, and 835 carry a label that differs from the
 ontology's** — every one renames a node. That is deliberate: a recipe says `KOH`,
@@ -485,24 +498,45 @@ hydrocarbon` → `CHEBI:33658 "arene"` is one such row, and it does rename the
 ChEBI class downstream — deliberately, since MIM is the naming authority and
 `aromatic hydrocarbon` is the more recognisable name for `arene`.
 
-### The asymmetric predicates do not follow SKOS, and downstream compensates
+### The asymmetric predicates follow SKOS, and the set says so (#390)
 
-This document defines `skos:narrowMatch` as *"MIM:X is a kind-of Y (Y is the
-broader/parent term)"*. **SKOS says the opposite**: `skos:narrowMatch` is a
-sub-property of `skos:narrower`, so `A narrowMatch B` asserts that **B is
-narrower than A**. Under the spec, "MIM:X is a kind-of Y" is `skos:broadMatch`.
+MIM once defined `skos:narrowMatch` as *"MIM:X is a kind-of Y"*, which is the
+inverse of the spec: `skos:narrowMatch` is a sub-property of `skos:narrower`, so
+`A narrowMatch B` asserts **B is narrower than A**. Every parent-anchoring row
+therefore claimed the OBO parent was the more specific concept. Both definitions
+in Section 1 were inverted, consistently, so the corpus was internally coherent
+and externally wrong.
 
-Nothing is currently broken, because kg-microbe reads MIM's intent rather than
-the spec — its consolidator treats **both** asymmetric predicates identically as
-*"the MIM subject is a NARROWER concept than the ontology object"*. The 141
-`narrowMatch` rows therefore land correctly.
+Nothing broke, because kg-microbe read MIM's intent rather than the spec. That
+is also why this could not be fixed by flipping the rows alone: the reader
+compensated, so a flip on one side would have inverted every asymmetric edge.
 
-**Do not "fix" this by flipping the predicates.** That would invert 141 edges in
-kg-microbe, which compensates for the current direction. It needs a coordinated
-change on both sides, tracked as an issue. The one row that *did* disagree —
-the corpus's only `broadMatch` — was regrounded rather than flipped, because the
-term it should have used all along made the mapping symmetric and the question
-moot.
+**The mapping set now declares its semantics in its own header**, which is what
+made the cutover safe:
+
+```
+# predicate_semantics: skos
+```
+
+A consumer reads that key at the top level of the SSSOM header and applies the
+SKOS reading. **Absence means legacy** — the pre-#390 inverted convention — and
+so does any unrecognised value. Failing closed this way makes the two halves
+order-independent: an old file, or a *rebuild of old content*, carries no
+declaration and is read as legacy however new the reader is. A date threshold
+could not do that, because `mapping_set_version` is build time and a rebuild of
+unfixed content would stamp a post-cutover date onto legacy rows.
+
+The declaration and the flipped rows live in the same file, so they are atomic
+by construction — a published set can never assert one and contain the other.
+
+Consequences for curators:
+
+- The parent-anchoring predicate is now **`skos:broadMatch`** (Section 1).
+- A record graded `NARROW_MATCH` still means "this record is narrower"; its
+  published predicate is `broadMatch` because the *ontology term* is broader.
+- Rule B1 keys on both asymmetric predicates and was unaffected.
+- `skos:narrowMatch` is now rare-to-nonexistent in the corpus; treat a new one
+  as a likely mislabelled `broadMatch`.
 
 ### What *not* to do
 
@@ -577,7 +611,7 @@ monobasic) to `CHEBI:31346 "calcium sulfate dihydrate"`:
 
 ```tsv
 subject_id     subject_label                     predicate_id      object_id     object_label              object_source  mapping_justification        source                                          mapping_date  confidence
-MIM:KH2PO4     potassium phosphate monobasic     skos:narrowMatch  CHEBI:31346   calcium sulfate dihydrate  obo:chebi.owl  semapv:ManualMappingCuration  MIM:curator=auto_classify_ingredient_type  2026-05-02    0.85
+MIM:KH2PO4     potassium phosphate monobasic     skos:broadMatch  CHEBI:31346   calcium sulfate dihydrate  obo:chebi.owl  semapv:ManualMappingCuration  MIM:curator=auto_classify_ingredient_type  2026-05-02    0.85
 ```
 
 `subject_label` = "potassium phosphate monobasic"; `object_label` =
@@ -617,7 +651,7 @@ child of the same ontology term:
 ```tsv
 subject_id          subject_label  predicate_id      object_id      object_label  object_source  mapping_justification        source                                  mapping_date  confidence
 MIM:Vermont_Soil    Vermont Soil   skos:exactMatch   ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion           2026-05-02    0.9
-MIM:Vermont_Soil    Vermont Soil   skos:narrowMatch  ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:specificity-loss-review        2026-05-02    0.9
+MIM:Vermont_Soil    Vermont Soil   skos:broadMatch  ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:specificity-loss-review        2026-05-02    0.9
 ```
 
 Both rows have the same `(subject_id, object_id) = (MIM:Vermont_Soil,
@@ -626,22 +660,22 @@ parent/child. They cannot both be true.
 
 **Rule B2** rejects this: at most one row per `(subject_id, object_id)`
 pair. **Rule B3** also rejects this specific shape: for any subject
-`MIM:<slug>` and any OBO-parent target `Y`, if `narrowMatch Y` is
+`MIM:<slug>` and any OBO-parent target `Y`, if `broadMatch Y` is
 asserted, then `exactMatch Y` must NOT be.
 
-**Antidote**: pick `narrowMatch` (the parent IS broader; Vermont Soil
+**Antidote**: pick `broadMatch` (the parent IS broader; Vermont Soil
 is not literally identical to all soil) and remove the `exactMatch`
 row. Then add the registry row to
 `kgmicrobe.ingredient:vermont_soil` per Section 2.
 
 ### Mistake 3 — Missing registry row (Rule B1)
 
-A `narrowMatch` row is present, but no registry exactMatch row
+A `broadMatch` row is present, but no registry exactMatch row
 accompanies it:
 
 ```tsv
 subject_id          subject_label  predicate_id      object_id      object_label  object_source  mapping_justification        source                       mapping_date  confidence
-MIM:Vermont_Soil    Vermont Soil   skos:narrowMatch  ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion  2026-05-02    0.9
+MIM:Vermont_Soil    Vermont Soil   skos:broadMatch  ENVO:00001998  soil          obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion  2026-05-02    0.9
 ```
 
 That's the only row for `MIM:Vermont_Soil`. There is no second row
@@ -673,7 +707,7 @@ old one:
 
 ```tsv
 subject_id          subject_label  predicate_id      object_id      object_label  object_source  mapping_justification        source                       mapping_date  confidence
-MIM:Vermont_Soil    Vermont Soil   skos:narrowMatch  ENVO:00001998  soils         obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion  2026-05-02    0.9
+MIM:Vermont_Soil    Vermont Soil   skos:broadMatch  ENVO:00001998  soils         obo:envo.owl   semapv:ManualMappingCuration  MIM:cbclaw_envo_promotion  2026-05-02    0.9
 ```
 
 `object_label = "soils"` instead of the canonical ENVO label `"soil"`.
@@ -691,7 +725,7 @@ canonical label source.
 This rule prevents the "stale child label leaking onto parent"
 pollution that kg-microbe's `purge_asymmetric_pollution()` exists to
 clean up: if a curator typed in "Vermont soil" as the `object_label`
-of a `narrowMatch ENVO:00001998` row, downstream consumers might index
+of a `broadMatch ENVO:00001998` row, downstream consumers might index
 "Vermont soil" against the ENVO parent — exactly the kind of identity
 collapse Section 2 describes.
 
@@ -748,7 +782,7 @@ This is the right option when the row reflects genuinely incorrect data.
      SSSOM was edited directly — re-run `just build-sssom` from
      claw and the reject should clear.
    - **Rule B2/B3**: pick one predicate. If the ontology term is a
-     proper parent, keep the narrowMatch and drop the exactMatch.
+     proper parent, keep the broadMatch and drop the exactMatch.
    - **Rule B4**: update `object_label` in the YAML's
      `ontology_mappings` entry to the canonical OBO label.
 3. Regenerate `mappings/ingredient_mappings.sssom.tsv` from the

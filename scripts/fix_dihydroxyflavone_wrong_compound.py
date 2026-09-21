@@ -49,6 +49,7 @@ sys.path.insert(0, str(ROOT / "src"))
 import yaml  # noqa: E402
 
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
+from mediaingredientmech.sssom_grading import PREDICATE_BROAD  # noqa: E402
 
 COLLECTION = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
@@ -135,7 +136,7 @@ def main(argv: list[str] | None = None) -> int:
         return "\t".join(cells) + "\n"
 
     new_rows = [
-        row("skos:narrowMatch", PARENT_ID, PARENT_LABEL, "obo:chebi.owl"),
+        row(PREDICATE_BROAD, PARENT_ID, PARENT_LABEL, "obo:chebi.owl"),
         row("skos:exactMatch", NEW_ID, LABEL, "kgm:compound"),
     ]
     # Insert in the file's sort order by subject id, as the reconciler expects.
