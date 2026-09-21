@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-09-12T10:15:44.702186+00:00
-Total: 272 ingredients
+Generated: 2026-09-21T21:40:03.720166+00:00
+Total: 275 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -277,3 +277,6 @@ Total: 272 ingredients
 | UNMAPPED_0734 |  | Tetrazolium | REJECTED |  |  | 0 |
 | UNMAPPED_0341 |  | Bordet-Gengou-Agar-Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
+| UNMAPPED_0785 |  | 2-tetrachloroethane | AMBIGUOUS |  |  | 0 |
+| UNMAPPED_0696 |  | 2-dimethylsuccinic Acid | AMBIGUOUS |  |  | 0 |
+| UNMAPPED_0819 |  | Artepaulin | AMBIGUOUS |  |  | 0 |

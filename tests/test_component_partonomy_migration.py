@@ -34,16 +34,17 @@ def test_migration_is_idempotent_and_has_reviewed_final_inventory():
     scopes = [
         component["reference_scope"] for record in parents for component in record["components"]
     ]
-    assert len(parents) == 83
-    assert sum(len(record["components"]) for record in parents) == 505
+    assert len(parents) == 84
+    assert sum(len(record["components"]) for record in parents) == 506
     # 3 components moved EXTERNAL_TERM -> MIM_CATALOG when `clarified rumen fluid`
     # (MICRO:0000520) gained a MIM record; 1 moved MIM_CATALOG -> EXTERNAL_TERM when
     # `Esculin Monohydrate` was re-grounded to a hydrate-specific CHEBI term (#321).
     # 2 tetramethylammonium component references stayed on the cation as an
     # EXTERNAL_TERM when the standalone supplied ingredient moved to a complete
     # salt/ion-pair identity (#315).
-    # The total is unchanged, which is what the guard is for.
-    assert scopes.count("MIM_CATALOG") == 490
+    # The 2026-09-21 identity review added the explicitly named disodium
+    # nitrilotriacetate solute of a 0.5 M stock as one catalog component.
+    assert scopes.count("MIM_CATALOG") == 491
     assert scopes.count("EXTERNAL_TERM") == 10
     assert scopes.count("UNMAPPED") == 5
 

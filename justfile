@@ -100,6 +100,10 @@ bump-sssom-header *ARGS:
 qc-sssom:
     uv run --frozen python scripts/validate_sssom_invariants.py
 
+# Export the complete explicit MIM ingredient graph into a new directory.
+export-kgx output="output/mim-kgx":
+    uv run --frozen python -m mediaingredientmech.export.kgx --output "$1"
+
 # UNIFIED_INGREDIENT_MAPPING.tsv is built by claw from MIM's records plus
 # CultureMech's recipes and committed here. Nothing recorded what it was built
 # from, so it went three weeks and forty PRs stale unnoticed (#359) and ended up

@@ -124,6 +124,8 @@ See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:
 - [Workflows](docs/WORKFLOWS.md) - Common operations and integration
 - [Mapping Semantics](MAPPING_SEMANTICS.md) - SSSOM predicate semantics and registry/identity row pattern
 - [Component Partonomy](docs/stock_components.md) - Typed has-part references, evidence, and validation
+- [MIM KGX Export](docs/KGX_EXPORT.md) - Standalone ingredient graph with mappings, roles, components, and provenance
+- [Current semantic review](reports/semantic_review_20260921/corrections/README.md) - Identity corrections, validated MIM-only counts, and remaining approval blockers
 
 ## Development
 

@@ -100,3 +100,18 @@ def test_the_published_set_passes_rule_k():
     body = [ln for ln in text.splitlines() if not ln.startswith("#")]
     rows = list(csv.DictReader(body, delimiter="\t"))
     assert list(val.evaluate_rule_k(rows)) == []
+
+
+def test_merge_tombstone_releases_label_but_active_record_keeps_it(tmp_path, monkeypatch):
+    import yaml
+
+    path = tmp_path / 'loser.yaml'
+    monkeypatch.setattr(val, '_subject_to_path', lambda: {'MIM:Loser': path})
+    monkeypatch.setattr(val, '_other_baseline', frozenset)
+    try:
+        for status, fails in [('REJECTED', False), ('MAPPED', True), ('AMBIGUOUS', True)]:
+            path.write_text(yaml.safe_dump({'preferred_term': 'Old label', 'mapping_status': status}))
+            val._preferred_term_owners.cache_clear()
+            assert bool(list(val.evaluate_rule_k(_rows(other='Old label')))) is fails
+    finally:
+        val._preferred_term_owners.cache_clear()

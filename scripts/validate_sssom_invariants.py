@@ -901,7 +901,7 @@ def _preferred_term_owners() -> dict[str, frozenset[str]]:
     """
     Map a casefolded ``preferred_term`` to the subjects that own it.
 
-    Built from every mapped record rather than from the SSSOM's own
+    Built from every active mapped-directory record rather than from the SSSOM's own
     ``subject_label`` values: a record whose label never appears as a subject
     label still owns its name, and keying on the published labels alone misses
     44% of the cross-record cases (64 of 115).
@@ -911,6 +911,10 @@ def _preferred_term_owners() -> dict[str, frozenset[str]]:
         try:
             data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         except (OSError, yaml.YAMLError):
+            continue
+        # A merge tombstone no longer owns its former preferred label. The
+        # surviving record must be allowed to publish that label as a synonym.
+        if data.get("mapping_status") == "REJECTED":
             continue
         term = str(data.get("preferred_term") or "").strip()
         if term:

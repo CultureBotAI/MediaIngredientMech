@@ -41,6 +41,16 @@ def _source_label_key(value: str) -> str:
 # These are source labels that CultureMech still resolves to a broader parent
 # or retired local mint, but MIM now publishes as narrower records.
 SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
+    # Reviewed source-label corrections (semantic review 2026-09-21).
+    # Do not rewrite whole old-ID groups: CHEBI:37583 included both mono-
+    # and dibasic phosphate, and CHEBI:132766 included a disodium stock.
+    _source_label_key("NaNO"): "CHEBI:63005",
+    _source_label_key("Sodium phosphate dibasic"): "CHEBI:34683",
+    _source_label_key("Sodium dihydrogen phosphate"): "CHEBI:37585",
+    _source_label_key(
+        "0.5 M Nitrilotriacetic acid, disodium salt"
+    ): "kgmicrobe.ingredient:05_m_nitrilotriacetic_acid_disodium_salt",
+    _source_label_key("Artificial Sea Salt"): "kgmicrobe.ingredient:artificial_sea_salt",
     _source_label_key("air-dried garden soil"): AIR_DRIED_GARDEN_SOIL_ID,
     _source_label_key("Betaine x H2O"): BETAINE_HYDRATE_ID,
     _source_label_key("1-ethyl-3-methylimidazolium lysine"): EMIM_LYSINE_ID,

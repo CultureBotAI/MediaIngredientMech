@@ -4,7 +4,7 @@ synonyms:
 - synonym_text: EDTA (chelating agent)
   synonym_type: RAW_TEXT
   source: communitymech-unmapped
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -29,6 +29,16 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CHELATOR -> physicochemical_roles.CHELATOR'
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:4735 (EDTA). The source explicitly names EDTA; the parenthetical
+    function does not turn the substance into the generic class of chelators. Original
+    fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:4735'
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: gpt-6
 notes: Imported from communitymech-unmapped (source_id=communitymech.ingredient:EDTA_(chelating_agent));
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
@@ -48,3 +58,4 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Inferred from curated media-role name pattern
     curator_note: Provisional role from a curated name-pattern rule; review recommended.
+representative: CHEBI:4735
