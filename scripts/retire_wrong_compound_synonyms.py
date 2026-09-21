@@ -75,6 +75,14 @@ TARGETS: tuple[tuple[str, str, str], ...] = (
     ("CHEBI:30745", "CHEBI:103822", "phenylacetic acid is not LSM-15166"),
     ("CHEBI:9532", "CHEBI:45395", "thiamine pyrophosphate is not pyrithiamine pyrophosphate, its antagonist"),
     ("CHEBI:53258", "CHEBI:30769", "trisodium citrate is a salt of citric acid, not citric acid (Section 3)"),
+    # The CAS-as-accession importer bug: a CAS RN with its hyphens stripped was
+    # read as a ChEBI accession, so the record was briefly mapped to whatever term
+    # holds that number and harvested its names. Eleven records show it in their
+    # history (87-51-4 -> CHEBI:87514 and 156-38-7 -> CHEBI:156387 above are two of
+    # them); every mapping was corrected, and these three kept the residue.
+    ("CHEBI:25351", "CHEBI:150970", "mevalonic acid is not the oligosaccharide at CHEBI:150970 -- its CAS 150-97-0 read as an accession"),
+    ("CHEBI:91247", "CHEBI:52891", "L-cysteine hydrochloride is not the QSY9 dye at CHEBI:52891 -- its CAS 52-89-1 read as an accession"),
+    ("cas:150-90-3", "CHEBI:150903", "disodium succinate is not the trisaccharide at CHEBI:150903 -- its CAS 150-90-3 read as an accession"),
 )
 
 _NAME_PREDICATES = (
@@ -88,7 +96,9 @@ def chebi_names(connection: sqlite3.Connection, curie: str) -> set[str]:
     Return every name ChEBI gives a term, casefolded.
 
     :param connection: An open connection to a semantic-sql ChEBI build.
-    :param curie: The term, e.g. ``CHEBI:77732``.
+    :param curie: The term, e.g. ``CHEBI:77732``. A registry identifier such as
+        ``cas:150-90-3`` has no ChEBI names and yields the empty set, so every
+        name of the wrong term counts as foreign to it.
     :return: Its label and synonyms, casefolded.
     """
     marks = ",".join("?" for _ in _NAME_PREDICATES)
