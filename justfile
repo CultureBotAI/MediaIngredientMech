@@ -114,6 +114,10 @@ qc-sssom:
 check-unified-freshness:
     uv run --frozen python scripts/check_unified_freshness.py --check
 
+# Reject known bad IDs even if an older builder regenerated and stamped them.
+check-unified-rejections:
+    uv run --frozen python scripts/check_unified_rejections.py
+
 # Record what the snapshot was built from. Run after rebuild-unified.
 stamp-unified-freshness:
     uv run --frozen python scripts/check_unified_freshness.py --stamp
@@ -125,6 +129,7 @@ rebuild-unified CLAW="../../KG-Hub/KG-Microbe/culturebotai-claw" CULTUREMECH="..
     {{CLAW}}/.venv/bin/python {{CLAW}}/scripts/build_unified_ingredient_mapping.py \
         --culturemech {{CULTUREMECH}} --mim . \
         --output UNIFIED_INGREDIENT_MAPPING.tsv --format tsv
+    just check-unified-rejections
     just stamp-unified-freshness
 
 # A merged raw label survives only as a synonym on its target, and merges add no

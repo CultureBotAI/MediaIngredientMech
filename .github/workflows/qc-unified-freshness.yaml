@@ -13,6 +13,8 @@ on:
     - UNIFIED_INGREDIENT_MAPPING.tsv
     - UNIFIED_INGREDIENT_MAPPING.provenance.json
     - scripts/check_unified_freshness.py
+    - scripts/check_unified_rejections.py
+    - mappings/unified_mapping_rejections.tsv
   workflow_dispatch:
 
 permissions:
@@ -39,3 +41,6 @@ jobs:
       # needs. Rebuilding is a local, three-checkout operation (#359).
       - name: Check the unified snapshot is current with data/ingredients
         run: python3 scripts/check_unified_freshness.py --check
+
+      - name: Check reviewed identity rejections
+        run: python3 scripts/check_unified_rejections.py
