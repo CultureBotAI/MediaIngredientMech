@@ -20,10 +20,17 @@ Criterion -- deliberately narrow, and re-derived from ChEBI on every run:
 
   * the synonym is a name (label or synonym) ChEBI gives the WRONG term,
   * it is NOT a name ChEBI gives the record's own term, and
-  * the (own, wrong) pair is listed below, each one checked by hand: no ChEBI
-    edge joins the two in either direction, and their InChIKey connectivity
-    blocks differ. Related forms -- a salt and its parent, a stereoisomer and
-    its racemate -- are a curator's call and are not touched here.
+  * the (own, wrong) pair is listed below, each one checked by hand. Ten are
+    unrelated compounds: no ChEBI edge joins the two in either direction and
+    their InChIKey connectivity blocks differ. The eleventh is the one
+    deliberate exception -- trisodium citrate carrying "Citric Acid" -- a salt
+    and its parent acid, which Section 3 makes distinct substances and which MIM
+    already holds as two records with different identifiers. Other related forms
+    (paraquat and its dichloride, a stereoisomer and its racemate) are a
+    curator's call and are not touched here.
+
+Each pair was then attacked by two independent reviewers told to refute it, one
+from nomenclature and one from the ChEBI graph: 22 verdicts, none refuted.
 
 Synonyms are marked REJECTED_LABEL rather than deleted. The label did arrive on
 this record, so the provenance is real; and claw's builder filters every
@@ -40,6 +47,7 @@ from __future__ import annotations
 
 import argparse
 import sqlite3
+from datetime import datetime, timezone
 import sys
 from pathlib import Path
 
@@ -53,7 +61,6 @@ from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 MAPPED = ROOT / "data" / "ingredients" / "mapped"
 CURATOR = "retire_wrong_compound_synonyms"
-TIMESTAMP = "2026-09-20T00:00:00Z"
 
 #: (the record's own term, the unrelated term whose names leaked onto it, why).
 TARGETS: tuple[tuple[str, str, str], ...] = (
@@ -124,6 +131,10 @@ def main(argv: list[str]) -> int:
         if record.get("mapping_status") == "MAPPED":
             by_identifier.setdefault(str(record.get("identifier") or ""), []).append(path)
 
+    # Stamped at run time, not with a constant: the names are re-derived from
+    # ChEBI on every run, so a later run that retires something new must not
+    # date it to a day on which ChEBI did not yet carry that name.
+    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     retired = 0
     for own_curie, wrong_curie, reason in TARGETS:
         own, wrong = chebi_names(connection, own_curie), chebi_names(connection, wrong_curie)
@@ -142,7 +153,7 @@ def main(argv: list[str]) -> int:
             for hit in hits:
                 hit["synonym_type"] = "REJECTED_LABEL"
             record.setdefault("curation_history", []).append({
-                "timestamp": TIMESTAMP,
+                "timestamp": stamp,
                 "curator": CURATOR,
                 "action": "CORRECTED",
                 "changes": (

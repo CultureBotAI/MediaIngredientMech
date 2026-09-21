@@ -45,7 +45,9 @@ PER_RECORD_AUTHORED_FIELDS: tuple[str, ...] = ("discussions",)
 def iter_record_files(ingredients_root: Path):
     """Yield the per-record files: direct ``*.yaml`` children of each category dir.
 
-    Mirrors ``aggregate_records``, which is the authority on what a record is.
+    Follows ``aggregate_records``, the authority on what a record is, in reading
+    only a category directory's direct children (it also accepts ``*.yml``, which
+    the corpus does not use).
     A recursive glob is not equivalent: ``save_yaml`` backs a file up into a
     gitignored ``backups/`` directory beside it before overwriting, so after any
     scripted edit a recursive walk sees every edited record twice. Both
@@ -53,8 +55,10 @@ def iter_record_files(ingredients_root: Path):
     the export falls back to today's naming rule -- renaming the record. On a
     case-insensitive filesystem that re-cases the file where git cannot see it;
     on a case-sensitive one it strands the published ``MIM:<stem>`` subject.
-    Measured: 21 records lost continuity after one ten-record edit, 8 of them
-    published subjects, and zero on a checkout with no backups (#236, #300).
+    Measured on one ten-record edit: all ten records lost continuity (the index
+    saw 21 files -- ten records plus eleven backups -- and found none of them), 8
+    were renamed and all 8 were published subjects; zero on a checkout with no
+    backups (#236, #300).
     """
     if not ingredients_root.exists():
         return

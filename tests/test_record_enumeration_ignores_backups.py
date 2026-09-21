@@ -11,8 +11,8 @@ records that had just been edited*.
 On a case-insensitive filesystem that re-cases the file where git cannot see it,
 and a local claw rebuild then publishes a different `MIM:` subject. On a
 case-sensitive one it strands the published subject outright. Measured on a
-ten-record edit: 21 records lost continuity, 8 of them published subjects; zero
-on a checkout with no backups.
+ten-record edit: all ten lost continuity, 8 were renamed, all 8 published
+subjects; zero on a checkout with no backups.
 """
 
 from __future__ import annotations

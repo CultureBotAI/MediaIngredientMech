@@ -905,22 +905,46 @@ def _preferred_term_owners() -> dict[str, frozenset[str]]:
     ``subject_label`` values: a record whose label never appears as a subject
     label still owns its name, and keying on the published labels alone misses
     44% of the cross-record cases (64 of 115).
+
+    A REJECTED record under mapped/ is a merge tombstone, and a merge moves the
+    name to its target -- so ``MIM:Acetate`` carrying "Acetate (carbon source)"
+    is the rightful holder, not a thief (#669). The name is therefore credited
+    to the live record(s) sharing the tombstone's ``identifier``: all 63
+    tombstones in the corpus share theirs with at least one, 59 with exactly one.
+
+    Credited, not dropped. Dropping it -- the first version of this fix -- left
+    the name with no owner at all, so *any* record could publish it unflagged:
+    ``MIM:Feso4`` carrying a heptahydrate tombstone's name passed, where on
+    ``main`` it was caught. And "REJECTED means merged" is an observed fact about
+    the corpus, not an enforced invariant, so a REJECTED record with no live
+    identifier-sharer keeps its own name rather than losing it.
     """
-    owners: dict[str, set[str]] = {}
+    records: list[tuple[str, dict]] = []
     for subject_id, path in _subject_to_path().items():
         try:
             data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         except (OSError, yaml.YAMLError):
             continue
-        # A REJECTED record under mapped/ is a merge tombstone: 62 of the 63 in
-        # the corpus carry a MERGE-type event and the last is an explicit
-        # REPOINTED_TOMBSTONE_IDENTIFIER. The merge moved the name to the target,
-        # so the tombstone no longer owns it -- and counting it as an owner
-        # reported the rightful holder of 51 names as a thief (#669).
-        if str(data.get("mapping_status") or "").strip().upper() == "REJECTED":
-            continue
+        records.append((subject_id, data))
+
+    def _rejected(data: dict) -> bool:
+        return str(data.get("mapping_status") or "").strip().upper() == "REJECTED"
+
+    live_by_identifier: dict[str, set[str]] = {}
+    for subject_id, data in records:
+        identifier = str(data.get("identifier") or "").strip()
+        if identifier and not _rejected(data):
+            live_by_identifier.setdefault(identifier, set()).add(subject_id)
+
+    owners: dict[str, set[str]] = {}
+    for subject_id, data in records:
         term = str(data.get("preferred_term") or "").strip()
-        if term:
+        if not term:
+            continue
+        if _rejected(data):
+            targets = live_by_identifier.get(str(data.get("identifier") or "").strip())
+            owners.setdefault(term.casefold(), set()).update(targets or {subject_id})
+        else:
             owners.setdefault(term.casefold(), set()).add(subject_id)
     return {term: frozenset(ids) for term, ids in owners.items()}
 

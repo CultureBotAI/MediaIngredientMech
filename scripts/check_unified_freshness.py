@@ -65,10 +65,17 @@ def inputs_digest(inputs: Path = INPUTS) -> tuple[str, int]:
     :param inputs: The `data/ingredients` tree.
     :return: (digest, number of record files).
     """
-    # Direct children of each category dir, as aggregate_records reads them. A
-    # recursive glob also walks the gitignored backups/ that save_yaml leaves
-    # beside an edited record, so the digest would differ between a machine
-    # that has edited records and one that has not.
+    # Direct children of each category dir: the RECORDS, as aggregate_records
+    # reads them. A recursive glob also walks the gitignored backups/ that
+    # save_yaml leaves beside an edited record, so the digest would differ
+    # between a machine that has edited records and one that has not.
+    #
+    # This is deliberately NOT "whatever the builder happens to read". claw's
+    # unified builder enumerated with rglob and so ingested those backups as
+    # records -- 2,962 loaded where 2,951 exist -- and because its index is
+    # first-writer-wins over sorted paths, a stale backup beats the live record
+    # for any stem sorting after "backups". That is a defect in the builder
+    # (claw#458), not an input this digest should follow.
     records = sorted(
         path
         for category in sorted(d for d in inputs.iterdir() if d.is_dir())

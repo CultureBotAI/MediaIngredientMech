@@ -102,29 +102,67 @@ def test_the_published_set_passes_rule_k():
     assert list(val.evaluate_rule_k(rows)) == []
 
 
-def test_a_merge_tombstone_does_not_own_its_name(tmp_path, monkeypatch):
-    """A REJECTED record under mapped/ is a merge tombstone (#669).
-
-    62 of the 63 in the corpus carry a MERGE-type event and the last is an
-    explicit REPOINTED_TOMBSTONE_IDENTIFIER. The merge moved the name to the
-    target, so the target carrying it is the rightful holder -- yet Rule K
-    counted the tombstone as an owner and baselined 51 such pairs as theft.
-    """
+def _tombstone_corpus(tmp_path, monkeypatch, target_identifier="CHEBI:30089"):
     live = tmp_path / "Acetate.yaml"
-    live.write_text("preferred_term: Acetate\nmapping_status: MAPPED\n", encoding="utf-8")
+    live.write_text(
+        "identifier: CHEBI:30089\npreferred_term: Acetate\nmapping_status: MAPPED\n", encoding="utf-8"
+    )
+    other = tmp_path / "Sodium_Acetate.yaml"
+    other.write_text(
+        "identifier: CHEBI:32954\npreferred_term: Sodium acetate\nmapping_status: MAPPED\n",
+        encoding="utf-8",
+    )
     tomb = tmp_path / "Acetate_Carbon_Source.yaml"
     tomb.write_text(
-        "preferred_term: Acetate (carbon source)\nmapping_status: REJECTED\n", encoding="utf-8"
+        f"identifier: {target_identifier}\npreferred_term: Acetate (carbon source)\n"
+        "mapping_status: REJECTED\n",
+        encoding="utf-8",
     )
     monkeypatch.setattr(
         val, "_subject_to_path",
-        lambda: {"MIM:Acetate": live, "MIM:Acetate_Carbon_Source": tomb},
+        lambda: {"MIM:Acetate": live, "MIM:Sodium_Acetate": other, "MIM:Acetate_Carbon_Source": tomb},
     )
+    monkeypatch.setattr(val, "_other_baseline", frozenset)
     val._preferred_term_owners.cache_clear()
+
+
+def test_a_merge_tombstones_name_belongs_to_its_target(tmp_path, monkeypatch):
+    """A REJECTED record under mapped/ is a merge tombstone (#669): the merge
+    moved the name to the live record sharing its identifier, so that record
+    carrying it is the rightful holder -- Rule K had baselined 51 such pairs."""
+    _tombstone_corpus(tmp_path, monkeypatch)
     try:
-        owners = val._preferred_term_owners()
-        assert "acetate" in owners
-        assert "acetate (carbon source)" not in owners, "a tombstone must not own a name"
+        assert val._preferred_term_owners()["acetate (carbon source)"] == frozenset({"MIM:Acetate"})
+        target_row = [{"subject_id": "MIM:Acetate", "other": "Acetate (carbon source)"}]
+        assert list(val.evaluate_rule_k(target_row)) == []
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+def test_a_tombstones_name_is_still_refused_to_everyone_else(tmp_path, monkeypatch):
+    """The first version of the #669 fix DROPPED the tombstone's name instead of
+    crediting it, which left it with no owner: any record could then publish it
+    unflagged. An adversarial review caught it -- ``MIM:Feso4`` carrying a
+    heptahydrate tombstone's name passed where ``main`` had flagged it."""
+    _tombstone_corpus(tmp_path, monkeypatch)
+    try:
+        thief = [{"subject_id": "MIM:Sodium_Acetate", "other": "Acetate (carbon source)"}]
+        findings = list(val.evaluate_rule_k(thief))
+        assert findings and "MIM:Acetate" in findings[0][2]
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+def test_a_rejected_record_with_no_live_target_keeps_its_own_name(tmp_path, monkeypatch):
+    """ "REJECTED means merged" is an observed fact, not an enforced invariant --
+    ``retire_assay_labels`` writes REJECTED records that were never merged. With
+    no live record sharing the identifier, the name must not become ownerless."""
+    _tombstone_corpus(tmp_path, monkeypatch, target_identifier="CHEBI:99999999")
+    try:
+        assert val._preferred_term_owners()["acetate (carbon source)"] == frozenset(
+            {"MIM:Acetate_Carbon_Source"}
+        )
+        assert list(val.evaluate_rule_k([{"subject_id": "MIM:Acetate", "other": "Acetate (carbon source)"}]))
     finally:
         val._preferred_term_owners.cache_clear()
 
