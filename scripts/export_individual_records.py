@@ -42,6 +42,26 @@ console = Console()
 PER_RECORD_AUTHORED_FIELDS: tuple[str, ...] = ("discussions",)
 
 
+def iter_record_files(ingredients_root: Path):
+    """Yield the per-record files: direct ``*.yaml`` children of each category dir.
+
+    Mirrors ``aggregate_records``, which is the authority on what a record is.
+    A recursive glob is not equivalent: ``save_yaml`` backs a file up into a
+    gitignored ``backups/`` directory beside it before overwriting, so after any
+    scripted edit a recursive walk sees every edited record twice. Both
+    continuity keys then collide, ``FilenameIndex.for_record`` returns None, and
+    the export falls back to today's naming rule -- renaming the record. On a
+    case-insensitive filesystem that re-cases the file where git cannot see it;
+    on a case-sensitive one it strands the published ``MIM:<stem>`` subject.
+    Measured: 21 records lost continuity after one ten-record edit, 8 of them
+    published subjects, and zero on a checkout with no backups (#236, #300).
+    """
+    if not ingredients_root.exists():
+        return
+    for category_dir in sorted(p for p in ingredients_root.iterdir() if p.is_dir()):
+        yield from sorted(category_dir.glob("*.yaml"))
+
+
 @dataclass
 class PreservedFields:
     """Per-record-authored fields recovered from disk, looked up by a move-stable key.
@@ -92,7 +112,7 @@ def collect_preserved_fields(ingredients_root: Path) -> PreservedFields:
     identifier_collisions: set[str] = set()
     seen_terms: set[str] = set()
     term_collisions: set[str] = set()
-    for path in ingredients_root.rglob("*.yaml"):
+    for path in iter_record_files(ingredients_root):
         try:
             record = load_yaml(path)
         except Exception:
@@ -165,7 +185,7 @@ def collect_existing_filenames(ingredients_root: Path) -> FilenameIndex:
     if not ingredients_root.exists():
         return result
     term_collisions: set[str] = set()
-    for path in ingredients_root.rglob("*.yaml"):
+    for path in iter_record_files(ingredients_root):
         try:
             record = load_yaml(path)
         except Exception:

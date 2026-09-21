@@ -912,6 +912,13 @@ def _preferred_term_owners() -> dict[str, frozenset[str]]:
             data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         except (OSError, yaml.YAMLError):
             continue
+        # A REJECTED record under mapped/ is a merge tombstone: 62 of the 63 in
+        # the corpus carry a MERGE-type event and the last is an explicit
+        # REPOINTED_TOMBSTONE_IDENTIFIER. The merge moved the name to the target,
+        # so the tombstone no longer owns it -- and counting it as an owner
+        # reported the rightful holder of 51 names as a thief (#669).
+        if str(data.get("mapping_status") or "").strip().upper() == "REJECTED":
+            continue
         term = str(data.get("preferred_term") or "").strip()
         if term:
             owners.setdefault(term.casefold(), set()).add(subject_id)

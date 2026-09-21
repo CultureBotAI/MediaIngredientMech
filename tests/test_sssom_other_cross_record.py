@@ -100,3 +100,48 @@ def test_the_published_set_passes_rule_k():
     body = [ln for ln in text.splitlines() if not ln.startswith("#")]
     rows = list(csv.DictReader(body, delimiter="\t"))
     assert list(val.evaluate_rule_k(rows)) == []
+
+
+def test_a_merge_tombstone_does_not_own_its_name(tmp_path, monkeypatch):
+    """A REJECTED record under mapped/ is a merge tombstone (#669).
+
+    62 of the 63 in the corpus carry a MERGE-type event and the last is an
+    explicit REPOINTED_TOMBSTONE_IDENTIFIER. The merge moved the name to the
+    target, so the target carrying it is the rightful holder -- yet Rule K
+    counted the tombstone as an owner and baselined 51 such pairs as theft.
+    """
+    live = tmp_path / "Acetate.yaml"
+    live.write_text("preferred_term: Acetate\nmapping_status: MAPPED\n", encoding="utf-8")
+    tomb = tmp_path / "Acetate_Carbon_Source.yaml"
+    tomb.write_text(
+        "preferred_term: Acetate (carbon source)\nmapping_status: REJECTED\n", encoding="utf-8"
+    )
+    monkeypatch.setattr(
+        val, "_subject_to_path",
+        lambda: {"MIM:Acetate": live, "MIM:Acetate_Carbon_Source": tomb},
+    )
+    val._preferred_term_owners.cache_clear()
+    try:
+        owners = val._preferred_term_owners()
+        assert "acetate" in owners
+        assert "acetate (carbon source)" not in owners, "a tombstone must not own a name"
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+def test_the_baseline_has_no_unused_entries():
+    """A stale entry silently licenses the pair's reintroduction."""
+    text = (_REPO / "mappings" / "ingredient_mappings.sssom.tsv").read_text(encoding="utf-8")
+    rows = list(csv.DictReader([ln for ln in text.splitlines() if not ln.startswith("#")], delimiter="\t"))
+    val._preferred_term_owners.cache_clear()
+    owners = val._preferred_term_owners()
+    live = set()
+    for row in rows:
+        subject = (row.get("subject_id") or "").strip()
+        for token in (row.get("other") or "").split("|"):
+            token = token.strip()
+            holder = owners.get(token.casefold()) if token else None
+            if holder and subject not in holder:
+                live.add((subject, token.casefold()))
+    unused = sorted(val._other_baseline() - live)
+    assert not unused, f"baseline entries matching no live violation: {unused[:5]}"

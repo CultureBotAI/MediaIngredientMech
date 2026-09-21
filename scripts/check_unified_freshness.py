@@ -65,7 +65,16 @@ def inputs_digest(inputs: Path = INPUTS) -> tuple[str, int]:
     :param inputs: The `data/ingredients` tree.
     :return: (digest, number of record files).
     """
-    records = sorted(p for p in inputs.rglob("*.yaml") if p.is_file())
+    # Direct children of each category dir, as aggregate_records reads them. A
+    # recursive glob also walks the gitignored backups/ that save_yaml leaves
+    # beside an edited record, so the digest would differ between a machine
+    # that has edited records and one that has not.
+    records = sorted(
+        path
+        for category in sorted(d for d in inputs.iterdir() if d.is_dir())
+        for path in category.glob("*.yaml")
+        if path.is_file()
+    ) if inputs.exists() else []
     accumulator = hashlib.sha256()
     for path in records:
         accumulator.update(str(path.relative_to(inputs)).encode("utf-8"))
