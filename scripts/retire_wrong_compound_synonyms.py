@@ -39,7 +39,6 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import os
 import sqlite3
 import sys
 from pathlib import Path
@@ -49,10 +48,10 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
+from mediaingredientmech.utils.oaklib_cache import require_db  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import save_yaml  # noqa: E402
 
 MAPPED = ROOT / "data" / "ingredients" / "mapped"
-CHEBI_DB = Path(os.environ.get("CHEBI_DB", Path.home() / ".data" / "oaklib" / "chebi.db"))
 CURATOR = "retire_wrong_compound_synonyms"
 TIMESTAMP = "2026-09-20T00:00:00Z"
 
@@ -114,10 +113,10 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--apply", action="store_true", help="Write the change")
     args = parser.parse_args(argv)
 
-    if not CHEBI_DB.is_file() or CHEBI_DB.stat().st_size == 0:
-        print(f"ChEBI build not found at {CHEBI_DB}; set CHEBI_DB.", file=sys.stderr)
-        return 2
-    connection = sqlite3.connect(CHEBI_DB)
+    # Resolved through pystow like every other script (#306); require_db exits
+    # naming the path it tried rather than letting a missing build read as
+    # "this term has no names", which here would retire nothing and say so.
+    connection = sqlite3.connect(require_db("CHEBI"))
 
     by_identifier: dict[str, list[Path]] = {}
     for path in sorted(MAPPED.glob("*.yaml")):
