@@ -125,10 +125,18 @@ stamp-unified-freshness:
 # Rebuild the snapshot. Needs CultureMech, MIM and claw checked out as siblings
 # and claw's own virtualenv: the builder imports kg_microbe_fleet, which pulls
 # in python-dotenv that MIM's venv does not carry. Stamp and commit both files.
-rebuild-unified CLAW="../../KG-Hub/KG-Microbe/culturebotai-claw" CULTUREMECH="../CultureMech":
-    {{CLAW}}/.venv/bin/python {{CLAW}}/scripts/build_unified_ingredient_mapping.py \
+#
+# The roots go in the environment as well as on the command line: claw resolves
+# them through kg_microbe_fleet.roots, which raises MechRootError when
+# CULTUREMECH_ROOT is unset even if --culturemech was passed. Each line is its
+# own shell, so a failed build aborts the recipe before the stamp -- which
+# matters, because stamping an artifact the build never rewrote records the stale
+# file as current (#699).
+rebuild-unified CLAW="../../KG-Hub/KG-Microbe/culturebotai-claw" CULTUREMECH="../CultureMech" OUTPUT="UNIFIED_INGREDIENT_MAPPING.tsv":
+    CULTUREMECH_ROOT="$(cd {{CULTUREMECH}} && pwd)" MEDIAINGREDIENTMECH_ROOT="$(pwd)" \
+        {{CLAW}}/.venv/bin/python {{CLAW}}/scripts/build_unified_ingredient_mapping.py \
         --culturemech {{CULTUREMECH}} --mim . \
-        --output UNIFIED_INGREDIENT_MAPPING.tsv --format tsv
+        --output {{OUTPUT}} --format tsv
     just check-unified-rejections
     just stamp-unified-freshness
 
