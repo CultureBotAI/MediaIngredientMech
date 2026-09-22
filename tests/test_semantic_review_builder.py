@@ -51,10 +51,17 @@ def test_stale_role_plan_cannot_close_old_finding(role_review, change):
 @pytest.mark.parametrize("change", ["source", "hash", "position"])
 def test_identical_payload_does_not_transfer_review_to_another_source(change):
     old = {"source_record": "reviewed.yaml", "assertion_type": "nutritional_roles", "assertion_sha256": "shared-payload",
-           "verdict": "pass", "record_sha256": "original-hash", "edge_id": "reviewed-edge"}
+           "verdict": "pass", "record_sha256": "original-hash", "edge_id": "reviewed-edge",
+           "review_report": "review.md", "historical_review_sha256": "reasoning-hash"}
     claim = {"evidence": [{"reference_type": "PEER_REVIEWED_PUBLICATION"}]}
+    role_review = {"source_record": "reviewed.yaml", "source_record_sha256": "original-hash",
+                   "assertion_type": "nutritional_roles", "assertion_sha256": "shared-payload",
+                   "edge_id": "reviewed-edge", "source_position": "1", "disposition": "ELIGIBLE_PRIMARY_STUDY",
+                   "historical_review_path": "review.md", "historical_review_sha256": "reasoning-hash",
+                   "review_reason": "Exact scoped claim inspected in primary study"}
     args = dict(old_rows=[old], hashes={"reviewed.yaml": "original-hash"}, owner="reviewed.yaml",
-                kind="nutritional_roles", payload_sha="shared-payload", edge={"id": "reviewed-edge"}, assertion=claim)
+                kind="nutritional_roles", payload_sha="shared-payload", edge={"id": "reviewed-edge", "source_position": "1"}, assertion=claim,
+                role_reviews=[role_review])
     assert builder.inherited_approval(**args)
     if change == "source":
         args["owner"] = "unreviewed.yaml"
@@ -144,3 +151,42 @@ def test_unbound_historical_reasoning_does_not_grant_approval(tmp_path, change):
         report.unlink()
         archive.write_text(json.dumps({"reports": {report.name: {"sha256": expected, "text": "Tampered approval"}}}))
     assert builder.archive_historical_reviews(tmp_path, [old], original, {"a.yaml": "record"}, archive) == []
+
+
+@pytest.mark.parametrize("mutation", ["missing_role_review", "unverified_promotion", "record", "position", "report", "reason"])
+def test_record_pass_cannot_approve_unreviewed_biological_promotion(mutation):
+    old = {"source_record": "Bacl2.yaml", "assertion_type": "nutritional_roles", "assertion_sha256": "claim",
+           "verdict": "pass", "record_sha256": "record", "edge_id": "edge",
+           "review_report": "Bacl2.md", "historical_review_sha256": "report"}
+    claim = {"role": "TRACE_ELEMENT", "evidence": [{"reference_type": "DATABASE_ENTRY", "curator_note": "Original role text: Mineral"}]}
+    review = {"source_record": "Bacl2.yaml", "source_record_sha256": "record", "assertion_type": "nutritional_roles",
+              "assertion_sha256": "claim", "edge_id": "edge", "source_position": "1",
+              "historical_review_path": "Bacl2.md", "historical_review_sha256": "report",
+              "review_reason": "Synthetic explicit source-scope review", "disposition": "ELIGIBLE_PRIMARY_STUDY"}
+    reviews = [review]
+    if mutation == "missing_role_review":
+        reviews = []
+    elif mutation == "unverified_promotion":
+        review["disposition"] = "OPEN_NEEDS_CLAIM_EVIDENCE"
+    elif mutation == "record":
+        review["source_record_sha256"] = "different-chemical"
+    elif mutation == "position":
+        review["source_position"] = "2"
+    elif mutation == "report":
+        review["historical_review_sha256"] = "changed-reasoning"
+    else:
+        review["review_reason"] = " "
+    assert not builder.inherited_approval([old], {"Bacl2.yaml": "record"}, "Bacl2.yaml", "nutritional_roles",
+                                          "claim", {"id": "edge", "source_position": "1"}, claim, reviews)
+
+
+def test_scientific_role_audit_keeps_all24_unverified_promotions_open():
+    ledger = json.loads((PATH.parent / "roles/inherited-role-review.json").read_text())
+    entries = ledger["entries"]
+    assert len(entries) == 138
+    opened = [entry for entry in entries if entry["disposition"] == "OPEN_NEEDS_CLAIM_EVIDENCE"]
+    assert len(opened) == 24
+    assert {entry["role"] for entry in opened} == {
+        "TRACE_ELEMENT", "IRON_SOURCE", "PHOSPHATE_SOURCE", "SULFUR_SOURCE", "VITAMIN_SOURCE"}
+    for stem in ("Bacl2", "Sncl2_X_2_H2o", "Dl-alpha-lipoic_Acid"):
+        assert any(entry["source_record"].endswith(f"/{stem}.yaml") for entry in opened)

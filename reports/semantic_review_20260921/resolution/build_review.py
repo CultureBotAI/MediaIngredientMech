@@ -87,7 +87,24 @@ def archive_historical_reviews(root, old_rows, original_records, hashes, archive
     return eligible
 
 
-def inherited_approval(old_rows, hashes, owner, kind, payload_sha, edge, assertion):
+def inherited_role_supported(reviews, old, owner, kind, payload_sha, edge, record_hash):
+    """Record review does not approve a role's later, narrower biological meaning."""
+    return any(review.get("disposition") in {
+                   "ELIGIBLE_SAME_ROLE_SOURCE", "ELIGIBLE_RECIPE_SOURCE", "ELIGIBLE_PRIMARY_STUDY"}
+               and review.get("source_record") == owner
+               and review.get("source_record_sha256") == record_hash
+               and review.get("assertion_type") == kind
+               and review.get("assertion_sha256") == payload_sha
+               and review.get("edge_id") == edge["id"]
+               and review.get("source_position") == edge.get("source_position")
+               and review.get("historical_review_path") == old.get("review_report")
+               and bool(review.get("historical_review_sha256"))
+               and review["historical_review_sha256"] == old.get("historical_review_sha256")
+               and bool(review.get("review_reason", "").strip())
+               for review in reviews)
+
+
+def inherited_approval(old_rows, hashes, owner, kind, payload_sha, edge, assertion, role_reviews=()):
     """Match original source identity, bytes, claim and (for roles/parts) position."""
     if has_mechanical_evidence_gap(kind, assertion):
         return False
@@ -96,6 +113,8 @@ def inherited_approval(old_rows, hashes, owner, kind, payload_sha, edge, asserti
                and old["verdict"] in {"pass", "pass_with_minor_issues"}
                and hashes.get(owner) == old["record_sha256"]
                and (kind == "mapping" or old["edge_id"] == edge["id"])
+               and (not kind.endswith("_roles") or inherited_role_supported(
+                   role_reviews, old, owner, kind, payload_sha, edge, hashes.get(owner)))
                for old in old_rows)
 
 
@@ -219,6 +238,11 @@ def main():
     # Historical approvals require both the original source bytes and original assertion payload.
     historical_evidence = HERE / "historical-review-evidence.json"
     inherited = archive_historical_reviews(ROOT, rows(BASE / "kgx_assertions.tsv"), original_records, hashes, historical_evidence)
+    archived_reports = json.loads(historical_evidence.read_text())["reports"]
+    for old in inherited:
+        old["historical_review_sha256"] = archived_reports[old["review_report"]]["sha256"]
+    role_review_path = HERE / "roles/inherited-role-review.json"
+    role_reviews = json.loads(role_review_path.read_text())["entries"]
     graph_owners = {node["id"]: node["source_record"] for node in rows(bundle / "mim_nodes.tsv", kgx=True) if node["node_kind"] == "ingredient"}
     payloads = {}
     for edge in rows(bundle / "mim_edges.tsv", kgx=True):
@@ -235,9 +259,10 @@ def main():
         proof = None
         reason = ""
         owner = graph_owners[assertion["subject_id"]] if kind == "mapping" else name
-        if inherited_approval(inherited, hashes, owner, kind, packed_sha, edge, assertion):
-            proof = historical_evidence
-            reason = "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review."
+        if inherited_approval(inherited, hashes, owner, kind, packed_sha, edge, assertion, role_reviews):
+            proof = role_review_path if kind.endswith("_roles") else historical_evidence
+            reason = ("Explicit role-level source-scope review and archived reasoning apply to the exact unchanged record, assertion and position; not a fresh growth experiment."
+                      if kind.endswith("_roles") else "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.")
         if kind == "cellular_metabolic_roles" and role_supported(role_support.get(name, {}), name, records[name], hashes[name], decision["source_position"], assertion):
             proof = HERE / "roles/cellular-role-plan.json"
             reason = "Primary evidence inspected for the explicit organism and conditions; supplied-hydrate extensions are documented inferences."

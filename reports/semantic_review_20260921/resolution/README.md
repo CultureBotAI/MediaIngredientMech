@@ -1,20 +1,19 @@
 # Reviewed MIM release with a separate scientific backlog
 
-The supported assertion subset passes semantic release validation. The user
-explicitly chose to preserve unsupported claims separately rather than publish
-them as supported knowledge. The complete source graph still has a **FAIL**
+The supported assertion subset passes semantic release validation. Unsupported
+claims are preserved in a separate review backlog. The complete source graph still has a **FAIL**
 verdict; this release does not change that verdict or erase its findings.
 
 | Artifact | Scope | Count |
 | --- | --- | ---: |
 | Supported KGX nodes | All active ingredient record references plus referenced terms | 4,588 |
 | Active ingredient record nodes | Source labels and paths; no unreviewed identity annotations | 2,874 |
-| Supported KGX edges | Individually reviewed assertions | 2,137 |
+| Supported KGX edges | Individually reviewed assertions | 2,113 |
 | Supported SSSOM | Reviewed mapping rows | 1,604 |
-| Supported roles | 121 nutritional, 17 physicochemical, 8 cellular | 146 |
+| Supported roles | 97 nutritional, 17 physicochemical, 8 cellular | 122 |
 | Supported components | Reviewed material part assertions | 381 |
 | Supported environmental assertions | Reviewed contexts | 6 |
-| Separate backlog | Current assertions excluded from the supported graph | 2,386 |
+| Separate backlog | Current assertions excluded from the supported graph | 2,410 |
 | Complete source graph | Preserved source assertions; semantically unapproved | 5,788 nodes / 4,523 edges |
 
 Every active ingredient remains represented as a source-record node. All nodes
@@ -22,7 +21,7 @@ use the conservative `biolink:NamedThing` category. Chemical identities, roles,
 components, and hierarchy are asserted only by selected reviewed edges. Raw
 `record_json`, unreviewed identifier annotations, and old review verdicts are
 absent from supported nodes. All 5,788 original full-graph node payloads are
-preserved in the separate backlog alongside the 2,386 excluded edges and their
+preserved in the separate backlog alongside the 2,410 excluded edges and their
 current review dispositions. The backlog is outside the KGX archive.
 
 The full checked-in SSSOM has 3,018 rows and passes structural validation. Its
@@ -54,7 +53,9 @@ its four component claims remain open. See the [component audit](components/READ
 findings. [Assertion dispositions](assertion-dispositions.tsv) cover every current
 full-graph assertion. New positive dispositions require explicit reviewed plans;
 historical positives are inherited only for the same source record, identical
-source bytes, and identical assertion payload. The relevant 1,455 historical
+source bytes, and identical assertion payload. Every inherited role also requires
+a separate assertion-specific source-scope decision. The [role inheritance audit](roles/inherited-role-review.md)
+withheld 24 unsupported promotions from generic mineral/growth-factor wording. The relevant 1,455 historical
 review reports are archived with their original content hashes in
 [historical-review-evidence.json](historical-review-evidence.json), so an ignored
 local report directory is not needed to reproduce the release.
@@ -72,8 +73,11 @@ Independent adversarial review produced issues
 [#713](https://github.com/CultureBotAI/MediaIngredientMech/issues/713),
 [#714](https://github.com/CultureBotAI/MediaIngredientMech/issues/714),
 [#715](https://github.com/CultureBotAI/MediaIngredientMech/issues/715),
-[#716](https://github.com/CultureBotAI/MediaIngredientMech/issues/716), and
-[#717](https://github.com/CultureBotAI/MediaIngredientMech/issues/717).
+[#716](https://github.com/CultureBotAI/MediaIngredientMech/issues/716),
+[#717](https://github.com/CultureBotAI/MediaIngredientMech/issues/717),
+[#719](https://github.com/CultureBotAI/MediaIngredientMech/issues/719),
+[#720](https://github.com/CultureBotAI/MediaIngredientMech/issues/720), and
+[#721](https://github.com/CultureBotAI/MediaIngredientMech/issues/721).
 Their corrections have regression coverage. Agent review is not human sign-off.
 
 SSSOM JsonSchema, PrefixMapCompleteness, and StrictCurieFormat pass for both
@@ -108,7 +112,7 @@ Re-running the complete-corpus gate with `--require-pass` intentionally exits 1.
 
 [Issue #718](https://github.com/CultureBotAI/MediaIngredientMech/issues/718) tracks
 the separate scientific backlog: 662 prediction-only roles, 11 empty-evidence
-roles, 43 source-unverified component assertions, the ambiguous CMC/PY expression,
+roles, 24 additional unsupported role promotions, 43 source-unverified component assertions, the ambiguous CMC/PY expression,
 and the unresolved record-level findings. These overlapping findings remain
 explicit in the full ledger. New evidence can admit a claim into the supported
 release only after another content-bound review.

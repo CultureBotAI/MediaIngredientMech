@@ -250,7 +250,7 @@
       "support_kind": "DIRECT_PRIMARY_SUPPORT",
       "reviewed_source_section": "Abstract, culture methods, and growth results",
       "other_assertions_approved": false,
-      "after_sha256": "15675d550525b42552d2aa95d2dfc32dcae265126d2e223878198ab9ff245bc0",
+      "after_sha256": "8721a533a7671b464ce2c9104f12e273da24ce3f1566d0b33df6b59ba2e44146",
       "original_applied_sha256": "15675d550525b42552d2aa95d2dfc32dcae265126d2e223878198ab9ff245bc0",
       "source_position": "1",
       "after_record": {
@@ -297,17 +297,17 @@
           },
           {
             "synonym_text": "2,5,8,11,14,17,20,23,26-nonaoxaoctacosan-28-ol",
-            "synonym_type": "EXACT_SYNONYM",
+            "synonym_type": "REJECTED_LABEL",
             "source": "kg_microbe"
           },
           {
             "synonym_text": "O-methyl-nonaethyleneglycol",
-            "synonym_type": "EXACT_SYNONYM",
+            "synonym_type": "REJECTED_LABEL",
             "source": "kg_microbe"
           },
           {
             "synonym_text": "nonaethylene glycol monomethyl ether",
-            "synonym_type": "EXACT_SYNONYM",
+            "synonym_type": "REJECTED_LABEL",
             "source": "kg_microbe"
           },
           {
@@ -539,6 +539,13 @@
             "llm_assisted": false
           },
           {
+            "timestamp": "2026-09-20T00:00:00Z",
+            "curator": "retire_wrong_compound_synonyms",
+            "action": "CORRECTED",
+            "changes": "Marked 3 synonym(s) non-resolving: ['2,5,8,11,14,17,20,23,26-nonaoxaoctacosan-28-ol', 'O-methyl-nonaethyleneglycol', 'nonaethylene glycol monomethyl ether']. ChEBI gives these names to CHEBI:59168, not to this record's CHEBI:132112 -- sodium thiosulfate is not a nonaethylene glycol ether. Kept as REJECTED_LABEL so a rebuild cannot restore them from kg-microbe's synonym list (#669).",
+            "llm_assisted": true
+          },
+          {
             "timestamp": "2026-09-22T02:06:34+00:00",
             "curator": "codex_issue_710_semantic_evidence_review",
             "action": "CORRECTED_ROLE_EVIDENCE",
@@ -577,7 +584,8 @@
             "metabolic_context": "Electron donor for Thiobacillus denitrificans during anaerobic growth with nitrate as electron acceptor in aqueous mineral medium."
           }
         ]
-      }
+      },
+      "upstream_integration_receipt": "reports/semantic_review_20260921/resolution/roles/upstream-integration-receipt.json"
     },
     {
       "source_path": "data/ingredients/mapped/Na2s2o3_X_5_H2o.yaml",
