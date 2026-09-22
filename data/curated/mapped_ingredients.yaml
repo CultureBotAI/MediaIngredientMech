@@ -1,6 +1,6 @@
-generation_date: '2026-09-12T00:00:00+00:00'
+generation_date: '2026-09-21T03:52:30.639570+00:00'
 total_count: 2679
-mapped_count: 2618
+mapped_count: 2616
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o
@@ -17289,8 +17289,7 @@ ingredients:
       notes: 'Exact NCIT label match; CHEBI:759883 is live upstream but absent from
         the local build (#249, #213).'
   physicochemical_roles:
-  - &id002
-    role: SELECTIVE_AGENT
+  - role: SELECTIVE_AGENT
     confidence: 0.8
     evidence:
     - reference_type: COMPUTATIONAL_PREDICTION
@@ -29430,10 +29429,10 @@ ingredients:
         CHEBI:16411 (indole-3-acetic acid). CAS-RN 87-51-4 confirms CHEBI:16411.
   synonyms:
   - synonym_text: ethyl 2-hexenoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ethyl hex-2-enoate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 1H-indol-3-ylacetic acid
     synonym_type: EXACT_SYNONYM
@@ -29494,6 +29493,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 2 synonym(s) non-resolving: [''ethyl 2-hexenoate'', ''ethyl hex-2-enoate''].
+      ChEBI gives these names to CHEBI:87514, not to this record''s CHEBI:16411 --
+      indole-3-acetic acid is not ethyl 2-hexenoate. Kept as REJECTED_LABEL so a rebuild
+      cannot restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 87-51-4
     data_source: PubChem API
@@ -31780,10 +31787,10 @@ ingredients:
     synonym_type: EXACT
     source: CHEBI
   - synonym_text: (5S,6R)-5-hydroxy-6-methyl-3-[(2S,3S)-3-methyloxiran-2-yl]-5,6-dihydro-2H-pyran-2-one
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: aspyrone
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
@@ -31851,6 +31858,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 2 synonym(s) non-resolving: [''(5S,6R)-5-hydroxy-6-methyl-3-[(2S,3S)-3-methyloxiran-2-yl]-5,6-dihydro-2H-pyran-2-one'',
+      ''aspyrone'']. ChEBI gives these names to CHEBI:156387, not to this record''s
+      CHEBI:18101 -- 4-hydroxyphenylacetic acid is not aspyrone. Kept as REJECTED_LABEL
+      so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 156-38-7
     data_source: PubChem API
@@ -42125,7 +42140,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: dihydrogen arsenite
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 'reduction: arsenate detoxification'
     synonym_type: EXACT_SYNONYM
@@ -42143,19 +42158,19 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: H2AsO3(-)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: '[AsO(OH)2](-)'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: arsenite
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: arsenite(1-)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: dihydroxidooxidoarsenate(1-)
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -42236,6 +42251,15 @@ ingredients:
       ''arsenite''; ''arsenite(1-)''; ''dihydroxidooxidoarsenate(1-)''. Tokens already
       present on the kg-microbe ontology node were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 6 synonym(s) non-resolving: [''dihydrogen arsenite'', ''H2AsO3(-)'',
+      ''[AsO(OH)2](-)'', ''arsenite'', ''arsenite(1-)'', ''dihydroxidooxidoarsenate(1-)''].
+      ChEBI gives these names to CHEBI:29242, not to this record''s CHEBI:29125 --
+      arsenate is not arsenite: a different oxidation state. Kept as REJECTED_LABEL
+      so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 15584-04-0
     data_source: PubChem API
@@ -49851,22 +49875,22 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Cadmium(II) nitrate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cd(NO3)2
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Nitric acid, cadmium salt
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Nitric acid, cadmium salt (2:1)
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: cadmium dinitrate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: cadmium nitrate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: calcium dinitrate
     synonym_type: EXACT_SYNONYM
@@ -49936,6 +49960,16 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 6 synonym(s) non-resolving: [''Cadmium(II) nitrate'', ''Cd(NO3)2'',
+      ''Nitric acid, cadmium salt'', ''Nitric acid, cadmium salt (2:1)'', ''cadmium
+      dinitrate'', ''cadmium nitrate'']. ChEBI gives these names to CHEBI:77732, not
+      to this record''s CHEBI:64205 -- calcium nitrate is not cadmium nitrate. Kept
+      as REJECTED_LABEL so a rebuild cannot restore them from kg-microbe''s synonym
+      list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 10124-37-5
     data_source: PubChem API
@@ -62248,7 +62282,12 @@ ingredients:
   chemical_properties: {}
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
-  - *id002
+  - role: SELECTIVE_AGENT
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: kgmicrobe.compound:collinomycin
   preferred_term: Collinomycin
   ontology_mapping:
@@ -77677,10 +77716,10 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: merged_from_duplicate_mim_record
   - synonym_text: 7,10-dihydroxy-2-(2-methoxypropan-2-yl)-8-(2-methylbut-3-en-2-yl)-6H-furo[3,2-c]xanthen-6-one
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: garciniaxanthone F
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 'Role: Carbon source; Properties: Organic compound, Simple component,
       Defined component'
@@ -77810,6 +77849,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 2 synonym(s) non-resolving: [''7,10-dihydroxy-2-(2-methoxypropan-2-yl)-8-(2-methylbut-3-en-2-yl)-6H-furo[3,2-c]xanthen-6-one'',
+      ''garciniaxanthone F'']. ChEBI gives these names to CHEBI:65947, not to this
+      record''s CHEBI:6650 -- malic acid is not garciniaxanthone F. Kept as REJECTED_LABEL
+      so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 6915-15-7
     data_source: PubChem API
@@ -77995,7 +78042,7 @@ ingredients:
   synonyms:
   - synonym_text: (2R,4S,5R,6R)-5-Acetamido-2-[(2R,3S,4R,5S)-5-acetamido-4-[(2R,3R,4R,5S,6R)-3-acetamido-6-(hydroxymethyl)-5-[(2S,3R,4S,5R,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-4-[(2S,3S,4R,5S,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxyoxan-2-yl]oxy-2,3,6-trihydroxyhexoxy]-4-hydroxy-6-[(1R,2R)-1,2,3-trihydroxypropyl]oxane-2-carboxylic
       acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: rac-3,5-dihydroxy-3-methylpentanoic acid
     synonym_type: EXACT_SYNONYM
@@ -78075,6 +78122,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-21T03:52:08Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 1 synonym(s) non-resolving: [''(2R,4S,5R,6R)-5-Acetamido-2-[(2R,3S,4R,5S)-5-acetamido-4-[(2R,3R,4R,5S,6R)-3-acetamido-6-(hydroxymethyl)-5-[(2S,3R,4S,5R,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-4-[(2S,3S,4R,5S,6S)-3,4,5-trihydroxy-6-methyloxan-2-yl]oxyoxan-2-yl]oxy-2,3,6-trihydroxyhexoxy]-4-hydroxy-6-[(1R,2R)-1,2,3-trihydroxypropyl]oxane-2-carboxylic
+      acid'']. ChEBI gives these names to CHEBI:150970, not to this record''s CHEBI:25351
+      -- mevalonic acid is not the oligosaccharide at CHEBI:150970 -- its CAS 150-97-0
+      read as an accession. Kept as REJECTED_LABEL so a rebuild cannot restore them
+      from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 150-97-0
     data_source: PubChem API
@@ -84243,13 +84299,13 @@ ingredients:
   nutritional_roles:
   - role: IRON_SOURCE
     confidence: 1.0
-    evidence: &id003
+    evidence: &id002
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: PHOSPHATE_SOURCE
     confidence: 1.0
-    evidence: *id003
+    evidence: *id002
 - identifier: CHEBI:31604
   preferred_term: Ferric ammonium citrate
   ontology_mapping:
@@ -107004,7 +107060,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: N-(9-{2-[(4-{[(2,5-dioxopyrrolidin-1-yl)oxy]carbonyl}piperidin-1-yl)sulfonyl]phenyl}-6-[methyl(4-sulfophenyl)amino]-3H-xanthen-3-ylidene)-N-methyl-4-sulfoanilinium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: L-Cysteine . HCl
     synonym_type: RAW_TEXT
@@ -107129,6 +107185,15 @@ ingredients:
       · HCl'' (x1 CultureMech mentions); ''cysteine . HCl'' (x1 CultureMech mentions).
       Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-09-21T03:52:08Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 1 synonym(s) non-resolving: [''N-(9-{2-[(4-{[(2,5-dioxopyrrolidin-1-yl)oxy]carbonyl}piperidin-1-yl)sulfonyl]phenyl}-6-[methyl(4-sulfophenyl)amino]-3H-xanthen-3-ylidene)-N-methyl-4-sulfoanilinium''].
+      ChEBI gives these names to CHEBI:52891, not to this record''s CHEBI:91247 --
+      L-cysteine hydrochloride is not the QSY9 dye at CHEBI:52891 -- its CAS 52-89-1
+      read as an accession. Kept as REJECTED_LABEL so a rebuild cannot restore them
+      from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 52-89-1
     data_source: OAK/CHEBI xref
@@ -113485,16 +113550,16 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: N-(tri(hydroxymethyl)methyl)glycine
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: N-[2-hydroxy-1,1-bis(hydroxymethyl)ethyl]glycine
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: N-tris(hydroxymethyl)methylglycine
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: berbaman
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -113540,6 +113605,23 @@ ingredients:
       ''N-tris(hydroxymethyl)methylglycine''; ''berbaman''. Tokens already present
       on the kg-microbe ontology node were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 3 synonym(s) non-resolving: [''N-(tri(hydroxymethyl)methyl)glycine'',
+      ''N-[2-hydroxy-1,1-bis(hydroxymethyl)ethyl]glycine'', ''N-tris(hydroxymethyl)methylglycine''].
+      ChEBI gives these names to CHEBI:39063, not to this record''s CHEBI:16325 --
+      lithocholic acid is not tricine. Kept as REJECTED_LABEL so a rebuild cannot
+      restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 1 synonym(s) non-resolving: [''berbaman'']. ChEBI gives these
+      names to CHEBI:35920, not to this record''s CHEBI:16325 -- lithocholic acid
+      is not berbaman. Kept as REJECTED_LABEL so a rebuild cannot restore them from
+      kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 434-13-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -114668,13 +114750,13 @@ ingredients:
   nutritional_roles:
   - role: CARBON_SOURCE
     confidence: 1.0
-    evidence: &id004
+    evidence: &id003
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
   - role: MINERAL_SOURCE
     confidence: 1.0
-    evidence: *id004
+    evidence: *id003
 - identifier: CHEBI:86345
   preferred_term: Magnesium chloride
   ontology_mapping:
@@ -134609,13 +134691,13 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: 2,5,8,11,14,17,20,23,26-nonaoxaoctacosan-28-ol
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: O-methyl-nonaethyleneglycol
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: nonaethylene glycol monomethyl ether
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Sodium thiosulphate
     synonym_type: EXACT_SYNONYM
@@ -134810,6 +134892,15 @@ ingredients:
       not resolve them: ''Na2S2O3 (if needed)'' (x2 CultureMech mentions). Source:
       culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 3 synonym(s) non-resolving: [''2,5,8,11,14,17,20,23,26-nonaoxaoctacosan-28-ol'',
+      ''O-methyl-nonaethyleneglycol'', ''nonaethylene glycol monomethyl ether''].
+      ChEBI gives these names to CHEBI:59168, not to this record''s CHEBI:132112 --
+      sodium thiosulfate is not a nonaethylene glycol ether. Kept as REJECTED_LABEL
+      so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 7772-98-7
     data_source: PubChem API
@@ -150531,7 +150622,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: LSM-15166
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -150599,6 +150690,14 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 1 synonym(s) non-resolving: [''LSM-15166'']. ChEBI gives these
+      names to CHEBI:103822, not to this record''s CHEBI:30745 -- phenylacetic acid
+      is not LSM-15166. Kept as REJECTED_LABEL so a rebuild cannot restore them from
+      kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 103-82-2
     data_source: PubChem API
@@ -175654,13 +175753,13 @@ ingredients:
     synonym_type: RELATED
     source: historical_nomenclature
   - synonym_text: 1-[(4-amino-2-methylpyrimidin-5-yl)methyl]-3-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-2-methylpyridinium
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: pyrithiamine diphosphate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: pyrithiamine pyrophosphate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Co-carboxylase
     synonym_type: EXACT_SYNONYM
@@ -175775,6 +175874,15 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 3 synonym(s) non-resolving: [''1-[(4-amino-2-methylpyrimidin-5-yl)methyl]-3-(2-{[hydroxy(phosphonooxy)phosphoryl]oxy}ethyl)-2-methylpyridinium'',
+      ''pyrithiamine diphosphate'', ''pyrithiamine pyrophosphate'']. ChEBI gives these
+      names to CHEBI:45395, not to this record''s CHEBI:9532 -- thiamine pyrophosphate
+      is not pyrithiamine pyrophosphate, its antagonist. Kept as REJECTED_LABEL so
+      a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 136-09-4
     data_source: PubChem API
@@ -179432,7 +179540,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: merged_from_duplicate_mim_record
   - synonym_text: Citric Acid
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: merged_from_duplicate_mim_record
   - synonym_text: 'Role: Buffer; Properties: Simple component, Organic compound, Defined
       component'
@@ -179563,6 +179671,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-20T00:00:00Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 1 synonym(s) non-resolving: [''Citric Acid'']. ChEBI gives these
+      names to CHEBI:30769, not to this record''s CHEBI:53258 -- trisodium citrate
+      is a salt of citric acid, not citric acid (Section 3). Kept as REJECTED_LABEL
+      so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   kg_microbe_node_id: CHEBI:53258
   chemical_properties:
     cas_rn: 68-04-2
@@ -211695,13 +211811,13 @@ ingredients:
         only the parent moves.
   synonyms:
   - synonym_text: (2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 6-deoxy-alpha-L-galacto-hexopyranosyl-(1->3)-[alpha-D-gluco-hexopyranosyl-(1->4)]-D-galacto-hexopyranose
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Fuc(a1-3)[Glc(a1-4)]Gal
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
@@ -211800,6 +211916,16 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-21T03:52:08Z'
+    curator: retire_wrong_compound_synonyms
+    action: CORRECTED
+    changes: 'Marked 3 synonym(s) non-resolving: [''(2S,3S,4R,5S,6S)-2-[(3R,4R,5S,6R)-2,3-Dihydroxy-6-(hydroxymethyl)-5-[(2R,3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxyoxan-4-yl]oxy-6-methyloxane-3,4,5-triol'',
+      ''6-deoxy-alpha-L-galacto-hexopyranosyl-(1->3)-[alpha-D-gluco-hexopyranosyl-(1->4)]-D-galacto-hexopyranose'',
+      ''Fuc(a1-3)[Glc(a1-4)]Gal'']. ChEBI gives these names to CHEBI:150903, not to
+      this record''s cas:150-90-3 -- disodium succinate is not the trisaccharide at
+      CHEBI:150903 -- its CAS 150-90-3 read as an accession. Kept as REJECTED_LABEL
+      so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 150-90-3
     data_source: PubChem API

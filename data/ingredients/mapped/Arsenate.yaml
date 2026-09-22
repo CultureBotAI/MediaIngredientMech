@@ -20,7 +20,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: dihydrogen arsenite
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: 'reduction: arsenate detoxification'
   synonym_type: EXACT_SYNONYM
@@ -38,19 +38,19 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
 - synonym_text: H2AsO3(-)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: '[AsO(OH)2](-)'
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: arsenite
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: arsenite(1-)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 - synonym_text: dihydroxidooxidoarsenate(1-)
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
@@ -131,6 +131,15 @@ curation_history:
     ''arsenite''; ''arsenite(1-)''; ''dihydroxidooxidoarsenate(1-)''. Tokens already
     present on the kg-microbe ontology node were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-20T00:00:00Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 6 synonym(s) non-resolving: [''dihydrogen arsenite'', ''H2AsO3(-)'',
+    ''[AsO(OH)2](-)'', ''arsenite'', ''arsenite(1-)'', ''dihydroxidooxidoarsenate(1-)''].
+    ChEBI gives these names to CHEBI:29242, not to this record''s CHEBI:29125 -- arsenate
+    is not arsenite: a different oxidation state. Kept as REJECTED_LABEL so a rebuild
+    cannot restore them from kg-microbe''s synonym list (#669).'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 15584-04-0
   data_source: PubChem API
