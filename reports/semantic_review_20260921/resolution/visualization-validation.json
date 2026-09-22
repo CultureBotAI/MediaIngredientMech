@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "writer": "scripts/refresh_visualization_metadata.py",
+  "validator": "scripts/check_visualization_currency.py --strict",
+  "artifacts": {
+    "docs/data/ingredient_umap.json": {
+      "removed": [
+        "MIM:Edta_Chelating_Agent",
+        "MIM:Nano",
+        "MIM:Sodium_Phosphate_Dibasic"
+      ],
+      "metadata_updated": 11,
+      "nodes": 2339,
+      "coordinates_preserved": true,
+      "sha256": "3201e8576aee445180b31164c1a80c01823ee27ef13a6e44ac304d791b1cc156"
+    },
+    "docs/data/ingredient_graph.json": {
+      "removed": [
+        "MIM:Edta_Chelating_Agent",
+        "MIM:Nano",
+        "MIM:Sodium_Phosphate_Dibasic"
+      ],
+      "metadata_updated": 11,
+      "nodes": 2339,
+      "coordinates_preserved": true,
+      "sha256": "55fd22daab25cefeb6cdf7037e101a620da15d17567c431159bc3934e18c16aa"
+    }
+  }
+}

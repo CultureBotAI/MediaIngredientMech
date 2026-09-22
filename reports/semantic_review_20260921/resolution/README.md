@@ -76,8 +76,9 @@ Independent adversarial review produced issues
 [#716](https://github.com/CultureBotAI/MediaIngredientMech/issues/716),
 [#717](https://github.com/CultureBotAI/MediaIngredientMech/issues/717),
 [#719](https://github.com/CultureBotAI/MediaIngredientMech/issues/719),
-[#720](https://github.com/CultureBotAI/MediaIngredientMech/issues/720), and
-[#721](https://github.com/CultureBotAI/MediaIngredientMech/issues/721).
+[#720](https://github.com/CultureBotAI/MediaIngredientMech/issues/720),
+[#721](https://github.com/CultureBotAI/MediaIngredientMech/issues/721), and
+[#723](https://github.com/CultureBotAI/MediaIngredientMech/issues/723).
 Their corrections have regression coverage. Agent review is not human sign-off.
 
 SSSOM JsonSchema, PrefixMapCompleteness, and StrictCurieFormat pass for both
@@ -90,7 +91,9 @@ A clean `git archive` checkout reproduced all 11 full/supported artifact files
 byte for byte, with no ignored source files. The final focused regression run
 passed 182 tests; maintained-package coverage is 65% against the 35% floor.
 See [validation-summary.json](validation-summary.json) and
-[clean-checkout-validation.json](clean-checkout-validation.json). Required CI
+[clean-checkout-validation.json](clean-checkout-validation.json). Published visualization metadata now passes its strict currency check after
+removing three retired nodes and refreshing 11 nodes in each artifact; see
+[visualization-validation.json](visualization-validation.json). Required CI
 runs the complete test suite and repository QC before merge.
 
 ## Reproduce from a clean checkout
