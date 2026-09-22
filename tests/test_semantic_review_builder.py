@@ -194,6 +194,9 @@ def test_scientific_role_audit_keeps_all24_unverified_promotions_open():
 @pytest.fixture
 def release_hold():
     document = json.loads((PATH.parent / "release-holds.json").read_text())
+    # Keep exercising the original active hold after its source correction.
+    document = {"schema_version": 1, "required_hold_ids": document["required_hold_ids"],
+                "holds": document.get("historical_holds", document["holds"])}
     hold = document["holds"][0]
     fields = (
         "assertion_id",

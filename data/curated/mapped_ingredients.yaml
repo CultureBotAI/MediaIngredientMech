@@ -1,4 +1,4 @@
-generation_date: '2026-09-22T02:34:28.207540+00:00'
+generation_date: '2026-09-22T06:17:21.481984+00:00'
 total_count: 2679
 mapped_count: 2612
 unmapped_count: 0
@@ -28412,7 +28412,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'reduction: 3-O-methylgallate'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -28449,6 +28449,14 @@ ingredients:
       3-O-methylgallate''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''reduction:
+      3-O-methylgallate''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C8H8O5
@@ -31440,10 +31448,10 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'degradation: 4-nitrophenyl beta-D-galactopyranoside'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: 'hydrolysis: 4-nitrophenyl beta-D-galactopyranoside'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -31492,6 +31500,15 @@ ingredients:
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''degradation:
+      4-nitrophenyl beta-D-galactopyranoside''; ''hydrolysis: 4-nitrophenyl beta-D-galactopyranoside''.
+      Preserved original text and source metadata. No identity, mapping, role, or
+      remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C12H15NO8
@@ -34300,10 +34317,10 @@ ingredients:
     synonym_type: RAW_TEXT
     source: merged_record
   - synonym_text: 'aerobic catabolization: acetate'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: 'anaerobic catabolization: acetate'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -34415,6 +34432,15 @@ ingredients:
       catabolization: acetate''. Tokens already present on the kg-microbe ontology
       node were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''aerobic
+      catabolization: acetate''; ''anaerobic catabolization: acetate''. Preserved
+      original text and source metadata. No identity, mapping, role, or remaining-synonym
+      claim was adjudicated.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 71-50-1
     data_source: PubChem API
@@ -35289,7 +35315,7 @@ ingredients:
       notes: Parent class identified via label-exact; matched_via='Actinomycin'
   synonyms:
   - synonym_text: 'produces: actinomycin A'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -35338,6 +35364,14 @@ ingredients:
       actinomycin A''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      actinomycin A''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: SELECTIVE_AGENT
@@ -36486,7 +36520,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: alanosine'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -36524,6 +36558,14 @@ ingredients:
       alanosine''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      alanosine''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C3H7N3O4
@@ -39779,7 +39821,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: microbedecoder
   - synonym_text: 'produces: angustmycin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -39851,6 +39893,14 @@ ingredients:
       angustmycin''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      angustmycin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C11H15N5O5
@@ -41425,7 +41475,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'degradation: aromatic compound'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -41456,6 +41506,14 @@ ingredients:
       aromatic compound''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''degradation:
+      aromatic compound''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:33658
   preferred_term: Aromatic hydrocarbon
@@ -41574,7 +41632,7 @@ ingredients:
     synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 'reduction: arsenate detoxification'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: tetraoxoarsenate(V)
     synonym_type: EXACT_SYNONYM
@@ -41690,6 +41748,14 @@ ingredients:
       ChEBI gives these names to CHEBI:29242, not to this record''s CHEBI:29125 --
       arsenate is not arsenite: a different oxidation state. Kept as REJECTED_LABEL
       so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
+    llm_assisted: true
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''reduction:
+      arsenate detoxification''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 15584-04-0
@@ -56661,7 +56727,7 @@ ingredients:
       notes: Parent class identified via label-exact; matched_via='Cephamycin'
   synonyms:
   - synonym_text: 'produces: cephamycin A'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -56715,6 +56781,14 @@ ingredients:
       cephamycin A''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      cephamycin A''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C8H7NO4SR2
@@ -57502,7 +57576,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'hydrolysis: crab shell chitin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -57556,6 +57630,14 @@ ingredients:
       crab shell chitin''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''hydrolysis:
+      crab shell chitin''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: (C8H13NO5)n.H2O
@@ -57598,7 +57680,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 'hydrolysis: cationic chitosan'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: poliglusam
     synonym_type: EXACT_SYNONYM
@@ -57667,6 +57749,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''hydrolysis:
+      cationic chitosan''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 9012-76-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -59196,7 +59286,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'assimilation: citrate'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -59270,6 +59360,14 @@ ingredients:
       citrate''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''assimilation:
+      citrate''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C6H5O7
@@ -78955,7 +79053,7 @@ ingredients:
       notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.special:elastin; '
   synonyms:
   - synonym_text: 'degradation: elastin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -78986,6 +79084,14 @@ ingredients:
       elastin''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''degradation:
+      elastin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:42223
   preferred_term: Emodin
@@ -79418,7 +79524,7 @@ ingredients:
         term for that hydrate, so MAPPING_SEMANTICS.md Section 3 step 1 applies.
   synonyms:
   - synonym_text: 'hydrolysis: esculin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: 7-hydroxy-2-oxo-2H-chromen-6-yl beta-D-glucopyranoside--water (1/1)
     synonym_type: EXACT_SYNONYM
@@ -79477,6 +79583,14 @@ ingredients:
       ChEBI hydrate term, 1 stale anhydrous exact synonym(s) were replaced, and stale
       kg_microbe_node_id values were aligned where present (#321).
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''hydrolysis:
+      esculin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   chemical_properties:
     data_source: OAK/CHEBI exact hydrate term CHEBI:73111
     retrieval_date: '2026-09-10T00:00:00+00:00'
@@ -79834,7 +79948,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 'produces: ethanol'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: spiritus vini
     synonym_type: EXACT_SYNONYM
@@ -79947,6 +80061,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      ethanol''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 64-17-5
     data_source: PubChem API
@@ -81534,7 +81656,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 'electron acceptor: ethylenediaminetetraacetatoferrate'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ethylenediaminetetraacetatoferrate
     synonym_type: EXACT_SYNONYM
@@ -81659,6 +81781,15 @@ ingredients:
       (0.66% [wt/vol] in water)'' (x1 CultureMech mentions); ''Fe·EDTA'' (x1 CultureMech
       mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''electron
+      acceptor: ethylenediaminetetraacetatoferrate''. Preserved original text and
+      source metadata. No identity, mapping, role, or remaining-synonym claim was
+      adjudicated.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 15275-07-7
     data_source: PubChem API
@@ -83843,10 +83974,10 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 'electron acceptor: amorphous fe(iii) oxyhydroxid'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 'electron acceptor: amorphous iron (iii) oxide'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ferric hydroxide oxide
     synonym_type: EXACT_SYNONYM
@@ -83864,16 +83995,16 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 'reduction: amorphous fe(iii) oxyhydroxid'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 'reduction: amorphous iron (iii) oxide'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: goethite
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   - synonym_text: 'growth: goethite'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -83929,6 +84060,16 @@ ingredients:
       goethite''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''electron
+      acceptor: amorphous fe(iii) oxyhydroxid''; ''electron acceptor: amorphous iron
+      (iii) oxide''; ''reduction: amorphous fe(iii) oxyhydroxid''; ''reduction: amorphous
+      iron (iii) oxide''; ''growth: goethite''. Preserved original text and source
+      metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   kg_microbe_node_id: CHEBI:192761
   ingredient_type: SINGLE_INGREDIENT
 - identifier: mesh:C016600
@@ -83997,7 +84138,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: ferroverdin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -84035,6 +84176,14 @@ ingredients:
       ferroverdin''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      ferroverdin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: 3C15H11NO4.Fe
@@ -89728,7 +89877,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 'fermentation: glucose'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: gluco-hexose
     synonym_type: EXACT_SYNONYM
@@ -89832,6 +89981,14 @@ ingredients:
     action: CORRECTED
     changes: Marked anomer-specific Unicode-Greek synonym α-D-Glucose non-resolving;
       the alpha anomer is CHEBI:17925, not generic glucose CHEBI:17234 (#518).
+    llm_assisted: true
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''fermentation:
+      glucose''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 50-99-7
@@ -90515,7 +90672,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'reduction: glutathione oxidized'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -90552,6 +90709,14 @@ ingredients:
       glutathione oxidized''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''reduction:
+      glutathione oxidized''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C20H32N6O12S2
@@ -96538,7 +96703,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'degradation: hydrocarbon'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -96569,6 +96734,14 @@ ingredients:
       hydrocarbon''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''degradation:
+      hydrocarbon''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:16240
   preferred_term: Hydrogen peroxide
@@ -96651,7 +96824,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: hydrogen sulfide'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -96700,6 +96873,14 @@ ingredients:
       hydrogen sulfide''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      hydrogen sulfide''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: H2S
@@ -96769,7 +96950,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: microbedecoder
   - synonym_text: 'aerobic catabolization: dihydrogen'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -96827,6 +97008,14 @@ ingredients:
       catabolization: dihydrogen''. Tokens already present on the kg-microbe ontology
       node were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''aerobic
+      catabolization: dihydrogen''. Preserved original text and source metadata. No
+      identity, mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: H2
@@ -97967,7 +98156,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: indole'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -98019,6 +98208,14 @@ ingredients:
       indole''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      indole''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C8H7N
@@ -102737,7 +102934,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: kijanimicin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -102784,6 +102981,14 @@ ingredients:
       kijanimicin''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      kijanimicin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C67H100N2O24
@@ -110055,7 +110260,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 'produces: DL-lactate'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: DL-lactate
     synonym_type: RAW_TEXT
@@ -110134,6 +110339,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      DL-lactate''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 113-21-3
     data_source: PubChem API
@@ -117775,10 +117988,10 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: methane from acetate'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   - synonym_text: 'produces: methane from formate'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -117831,6 +118044,15 @@ ingredients:
       methane from formate''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      methane from acetate''; ''produces: methane from formate''. Preserved original
+      text and source metadata. No identity, mapping, role, or remaining-synonym claim
+      was adjudicated.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 74-82-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -121809,7 +122031,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: miharamycin A'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -121856,6 +122078,14 @@ ingredients:
       miharamycin A''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      miharamycin A''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C20H30N10O9
@@ -124003,7 +124233,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: monazomycin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -124050,6 +124280,14 @@ ingredients:
       monazomycin''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      monazomycin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C72H133NO22
@@ -145031,7 +145269,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: nocamycin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -145078,6 +145316,14 @@ ingredients:
       nocamycin''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      nocamycin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C26H33NO9
@@ -152036,7 +152282,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: merged_record
   - synonym_text: 'produces: poly(L-lysine) polymer'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -152075,6 +152321,14 @@ ingredients:
       poly(L-lysine) polymer''. Tokens already present on the kg-microbe ontology
       node were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      poly(L-lysine) polymer''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:53389
   preferred_term: Poly(3-hydroxybutyrate)
@@ -156691,7 +156945,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'oxidation: pyrite'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -156727,6 +156981,14 @@ ingredients:
       pyrite''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''oxidation:
+      pyrite''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: Fe.S2
@@ -159115,7 +159377,7 @@ ingredients:
       notes: Parent class identified via label-exact; matched_via='Ristocetin'
   synonyms:
   - synonym_text: 'produces: ristocetin B'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -159161,6 +159423,14 @@ ingredients:
       ristocetin B''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      ristocetin B''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C95H110N8O44
@@ -159612,7 +159882,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
   - synonym_text: 'produces: rubradirin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -159650,6 +159920,14 @@ ingredients:
       rubradirin''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      rubradirin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C40H33N3O15
@@ -161134,7 +161412,7 @@ ingredients:
       notes: 'Imported from kgm-metatraits via source-preset. source_id=kgm.metatraits.chemical:siderophore; '
   synonyms:
   - synonym_text: 'produces: siderophore'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -161173,6 +161451,14 @@ ingredients:
       siderophore''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      siderophore''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   physicochemical_roles:
   - role: CHELATOR
@@ -169775,7 +170061,7 @@ ingredients:
         A — same molecule (curator-confirmed synonym).
   synonyms:
   - synonym_text: 'produces: stallimycin'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -169834,6 +170120,14 @@ ingredients:
       stallimycin''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''produces:
+      stallimycin''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C22H27N9O4
@@ -169969,7 +170263,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 'degradation: starch'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Starch soluble
     synonym_type: EXACT_SYNONYM
@@ -170124,6 +170418,14 @@ ingredients:
       starch''. Tokens already present on the kg-microbe ontology node were left out
       as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''degradation:
+      starch''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 9005-25-8
     data_source: CultureBotHT compounds_to_cas.csv
@@ -171951,7 +172253,7 @@ ingredients:
         Re-graded because plural of the same class.
   synonyms:
   - synonym_text: 'oxidation in darkness: sulfur compounds'
-    synonym_type: RAW_TEXT
+    synonym_type: REJECTED_LABEL
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
@@ -171988,6 +172290,14 @@ ingredients:
       in darkness: sulfur compounds''. Tokens already present on the kg-microbe ontology
       node were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''oxidation
+      in darkness: sulfur compounds''. Preserved original text and source metadata.
+      No identity, mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:33403
   preferred_term: Sulfur (powder)
@@ -181286,7 +181596,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: 'hydrolysis: urea'
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ur
     synonym_type: EXACT_SYNONYM
@@ -181367,6 +181677,14 @@ ingredients:
       not resolve them: ''Urea (Sigma U5218)'' (x1 CultureMech mentions). Source:
       culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-09-22T06:14:49.563933+00:00'
+    curator: claude
+    action: REJECTED_TRAIT_SYNONYMS
+    changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+      they describe a process or organism trait, not an ingredient name (#703): ''hydrolysis:
+      urea''. Preserved original text and source metadata. No identity, mapping, role,
+      or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
   chemical_properties:
     cas_rn: 57-13-6
     data_source: PubChem API

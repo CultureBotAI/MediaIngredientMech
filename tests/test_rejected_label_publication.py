@@ -7,6 +7,8 @@ import importlib.util
 import sys
 from pathlib import Path
 
+import pytest
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -121,3 +123,49 @@ def test_rule_j_fires_on_synthetic_curation_note_leak():
 
     assert len(violations) == 1
     assert "Original amount: (NH4)2HPO4(Fisher A686)" in violations[0][2]
+
+
+@pytest.mark.parametrize(
+    "prefix",
+    [
+        "produces",
+        "reduction",
+        "degradation",
+        "hydrolysis",
+        "electron acceptor",
+        "aerobic catabolization",
+        "anaerobic catabolization",
+        "assimilation",
+        "growth",
+        "fermentation",
+        "oxidation",
+        "oxidation in darkness",
+    ],
+)
+def test_trait_assertions_cannot_become_resolving_labels(prefix):
+    text = f"  {prefix.upper()} : glucose"
+    record = _record()
+    record["synonyms"] = [{"synonym_text": text, "synonym_type": "EXACT_SYNONYM"}]
+    assert export_lists._synonyms(record) == []
+    browser = browser_export.extract_ingredient_for_browser(record, "mapped/X.yaml")
+    assert browser["synonyms"] == []
+    assert list(validator.evaluate_rule_j([{"subject_id": "MIM:X", "other": text}]))
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "CAS:50-99-7",
+        "CHEBI:17234",
+        "H2/CO2 (80:20)",
+        "PC(16:0/18:1)",
+        "reduction indicator",
+        "growth factor",
+        "oxidation in darkness indicator",
+    ],
+)
+def test_colons_and_trait_words_in_real_names_remain_allowed(text):
+    record = _record()
+    record["synonyms"] = [{"synonym_text": text, "synonym_type": "EXACT_SYNONYM"}]
+    assert export_lists._synonyms(record) == [text]
+    assert not list(validator.evaluate_rule_j([{"subject_id": "MIM:X", "other": text}]))
