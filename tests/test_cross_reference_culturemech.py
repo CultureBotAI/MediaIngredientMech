@@ -159,12 +159,12 @@ def test_no_record_carries_the_retired_name_only_field():
 
 @pytest.mark.parametrize(
     ("stem", "medium_id", "relationship"),
-    [("BHI", "CultureMech:015492", "EXACT_FORMULATION"),
+    [("BHI", "CultureMech:015492", "CANDIDATE_UNVERIFIED"),
      ("GYPS", "CultureMech:002799", "SIMILAR_COMPOSITION")],
 )
 def test_the_two_links_are_typed_and_id_bearing(stem, medium_id, relationship):
-    """GYPS is the one that matters: its name matches `gyps_medium` exactly and
-    it is NOT the same formulation, so it must not be EXACT_FORMULATION."""
+    """Shared names prove neither formulation: BHI lacks a verified recipe and
+    GYPS has a source-specific comparison supporting similarity only (#710)."""
     record = yaml.safe_load(
         (ROOT / "data" / "ingredients" / "mapped" / f"{stem}.yaml").read_text(encoding="utf-8"))
     reference = record["culturemech_reference"]
@@ -181,8 +181,10 @@ def test_gyps_keeps_its_compositional_caveat():
 
     evidence = record["culturemech_reference"]["evidence"]
 
-    assert "not identical" in evidence.lower()
-    assert "mes" in evidence.lower() and "starch" in evidence.lower()
+    assert record["culturemech_reference"]["relationship"] == "SIMILAR_COMPOSITION"
+    assert "not exact identity" in evidence.lower()
+    assert all(term in evidence.lower() for term in ("mes", "pipes", "sulfur"))
+    assert "starch" not in evidence.lower()
 
 
 def test_the_whole_medium_filter_admits_records_that_actually_have_links(mod):

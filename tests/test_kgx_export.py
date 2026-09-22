@@ -229,13 +229,44 @@ def test_review_findings_remain_visible(corpus, tmp_path):
         "path\tverdict\tseverity\n" "data/ingredients/mapped/Water_A.yaml\tneeds_curation\tmajor\n"
     )
     output = tmp_path / "release"
-    manifest = kgx.export_graph(corpus, output)
+    manifest = kgx.export_graph(corpus, output, path)
     nodes = {r["id"]: r for r in read_rows(output / "mim_nodes.tsv")}
     assert nodes["MIM:opaque_water_a"]["review_status"] == "needs_curation"
     assert manifest["counts"]["ingredient_review_status"] == {
         "needs_curation": 1,
         "not_reviewed": 3,
     }
+
+
+@pytest.mark.parametrize("binding", ["missing", "stale", "current"])
+def test_positive_review_requires_current_record_hash(corpus, tmp_path, binding):
+    record = corpus / "data/ingredients/mapped/Water_A.yaml"
+    record_hash = hashlib.sha256(record.read_bytes()).hexdigest()
+    path = corpus / "reports/yaml_record_review/manifest.tsv"
+    path.parent.mkdir(parents=True)
+    supplied_hash = {"missing": "", "stale": "0" * 64, "current": record_hash}[binding]
+    path.write_text(
+        "path\tverdict\trecord_sha256\n"
+        f"data/ingredients/mapped/Water_A.yaml\tpass\t{supplied_hash}\n"
+    )
+    output = tmp_path / "release"
+    kgx.export_graph(corpus, output, path)
+    nodes = {r["id"]: r for r in read_rows(output / "mim_nodes.tsv")}
+    node = nodes["MIM:opaque_water_a"]
+    assert node["review_status"] == (
+        "pass" if binding == "current" else "historical_review_unverified"
+    )
+    assert json.loads(node["review_json"])["verdict"] == "pass"
+
+
+def test_ignored_review_ledger_does_not_silently_change_default_export(corpus, tmp_path):
+    first, second = tmp_path / "before", tmp_path / "after"
+    kgx.export_graph(corpus, first)
+    ledger = corpus / "reports/yaml_record_review/manifest.tsv"
+    ledger.parent.mkdir(parents=True)
+    ledger.write_text("path\tverdict\ndata/ingredients/mapped/Water_A.yaml\tpass\n")
+    kgx.export_graph(corpus, second)
+    assert (first / "mim-kgx.tar.gz").read_bytes() == (second / "mim-kgx.tar.gz").read_bytes()
 
 
 def test_hierarchy_cycles_through_primary_identity_are_rejected(corpus, tmp_path):

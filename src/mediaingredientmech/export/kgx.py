@@ -202,9 +202,6 @@ def _load_inputs(root: Path) -> tuple[list[tuple[str, dict]], dict[str, str]]:
             raise ValueError(f"Collection/per-record drift in {group}")
         records.extend(individual)
     paths.extend([root / "mappings/ingredient_mappings.sssom.tsv"])
-    ledger = root / "reports/yaml_record_review/manifest.tsv"
-    if ledger.exists():
-        paths.append(ledger)
     for path in paths:
         name = str(path.relative_to(root))
         current = digest(path)
@@ -278,7 +275,9 @@ class Graph:
         self.edges.append(row)
 
 
-def build_graph(root: Path) -> tuple[Graph, dict[str, Any], list[dict[str, str]]]:
+def build_graph(
+    root: Path, review_ledger: Path | None = None
+) -> tuple[Graph, dict[str, Any], list[dict[str, str]]]:
     """Validate source structure and construct the complete explicit MIM projection."""
     package = Path(__file__).parents[1]
     implementation_paths = [
@@ -308,9 +307,12 @@ def build_graph(root: Path) -> tuple[Graph, dict[str, Any], list[dict[str, str]]
         by_label[row["subject_label"]].add(row["subject_id"])
     if any(len(subjects) != 1 for subjects in by_label.values()):
         raise ValueError("Ambiguous SSSOM subject label")
-    ledger_path = root / "reports/yaml_record_review/manifest.tsv"
     reviews = {}
-    if ledger_path.exists():
+    if review_ledger is not None:
+        ledger_path = (root / review_ledger).resolve()
+        if not ledger_path.is_relative_to(root.resolve()):
+            raise ValueError("Review ledger must be inside the repository")
+        hashes[str(ledger_path.relative_to(root.resolve()))] = digest(ledger_path)
         with ledger_path.open() as stream:
             for row in csv.DictReader(stream, delimiter="\t"):
                 if row["path"] in reviews:
@@ -354,6 +356,15 @@ def build_graph(root: Path) -> tuple[Graph, dict[str, Any], list[dict[str, str]]
         else:
             raise ValueError(f"Unsupported active mapping status: {status}")
         review = reviews.get(path, {})
+        # A historical ledger entry is not approval of the current file. Legacy
+        # ledgers do not carry record hashes; keep their text as provenance but
+        # never expose an unbound positive verdict as a current semantic pass.
+        review_status = review.get("verdict", "not_reviewed")
+        if (
+            review_status in {"pass", "pass_with_minor_issues"}
+            and review.get("record_sha256") != hashes[path]
+        ):
+            review_status = "historical_review_unverified"
         graph.node(
             identifier,
             record["preferred_term"],
@@ -363,7 +374,7 @@ def build_graph(root: Path) -> tuple[Graph, dict[str, Any], list[dict[str, str]]
             record_identifier=record["identifier"],
             mapping_status=status,
             ingredient_type=record.get("ingredient_type", ""),
-            review_status=review.get("verdict", "not_reviewed"),
+            review_status=review_status,
             review_json=packed(review),
             record_json=packed(record),
         )
@@ -543,7 +554,7 @@ def build_graph(root: Path) -> tuple[Graph, dict[str, Any], list[dict[str, str]]
         },
         "limitations": [
             "Structural and faithful-projection validation is not semantic approval of every curated assertion.",
-            "Review dispositions are copied from the ledger; not re-adjudicated or content-bound approvals.",
+            "Positive review dispositions require an exact record hash; unbound historical reviews remain provenance only. A record review is not whole-graph release approval.",
             "No local ingredient variant hierarchy is encoded by MIM; only published broad/narrow mappings are exported.",
             "External-reference labels are source labels, not a fresh ontology-authority claim; categories remain NamedThing.",
             "Native environmental and recipe predicates are MIM extensions; strict Biolink conformance is not claimed.",
@@ -564,12 +575,12 @@ def _write_tsv(path: Path, columns: tuple[str, ...], rows: list[dict[str, str]])
     return {"rows": len(rows), "bytes": path.stat().st_size, "sha256": digest(path)}
 
 
-def export_graph(root: Path, output: Path) -> dict[str, Any]:
+def export_graph(root: Path, output: Path, review_ledger: Path | None = None) -> dict[str, Any]:
     """Publish a validated, deterministic bundle into a new directory atomically."""
     root, output = root.resolve(), output.resolve()
     if output.exists():
         raise FileExistsError(f"Use a new output directory; refusing to replace {output}")
-    graph, manifest, excluded = build_graph(root)
+    graph, manifest, excluded = build_graph(root, review_ledger)
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".mim-kgx-", dir=output.parent) as temporary:
         staging = Path(temporary) / "bundle"
@@ -616,9 +627,6 @@ def export_graph(root: Path, output: Path) -> dict[str, Any]:
         expected = {p for p in manifest["inputs"] if p.startswith("data/ingredients/")}
         if live != expected:
             raise ValueError("Live ingredient files changed during export")
-        ledger = "reports/yaml_record_review/manifest.tsv"
-        if (root / ledger).exists() != (ledger in manifest["inputs"]):
-            raise ValueError("Review ledger presence changed during export")
         for name, before in manifest["implementation"].items():
             if digest(Path(__file__).parents[1] / name) != before:
                 raise ValueError(f"Exporter implementation changed during export: {name}")
@@ -631,8 +639,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", type=Path, default=Path(__file__).resolve().parents[3])
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--review-ledger",
+        type=Path,
+        help="Optional, explicit record-review TSV inside the repository",
+    )
     args = parser.parse_args()
-    manifest = export_graph(args.repo_root, args.output)
+    manifest = export_graph(args.repo_root, args.output, args.review_ledger)
     print(json.dumps(manifest["counts"], indent=2))
 
 

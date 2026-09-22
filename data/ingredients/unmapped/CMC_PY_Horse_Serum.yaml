@@ -1,10 +1,10 @@
-identifier: kgmicrobe.ingredient:cmc_py_horse_serum
+identifier: UNMAPPED_0740
 preferred_term: CMC + PY + Horse Serum
 synonyms:
 - synonym_text: CMC + PY + Horse Serum
   synonym_type: RAW_TEXT
   source: microbedecoder
-mapping_status: MAPPED
+mapping_status: AMBIGUOUS
 occurrence_statistics:
   total_occurrences: 0
   media_count: 0
@@ -83,50 +83,20 @@ curation_history:
     to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names, identifiers,
     and concentrations were not changed.'
   llm_assisted: false
-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum);
-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
-ingredient_type: UNDEFINED_MIXTURE
-components:
-- component_name: carboxymethylcellulose
-  component_id: CHEBI:85146
-  reference_scope: EXTERNAL_TERM
-  source: microbedecoder research decomposition (#213/#308)
-- component_name: peptone
-  component_id: MICRO:0000178
-  reference_scope: MIM_CATALOG
-  source: microbedecoder research decomposition (#213/#308)
-- component_name: yeast extract
-  component_id: FOODON:03315426
-  reference_scope: MIM_CATALOG
-  source: microbedecoder research decomposition (#213/#308)
-- component_name: horse serum
-  component_id: MICRO:0001235
-  reference_scope: MIM_CATALOG
-  source: microbedecoder research decomposition (#213/#308)
-component_assertion:
-  method: ABBREVIATION_EXPANSION
-  completeness: UNKNOWN
-  evidence:
-  - evidence_type: CURATED_DATASET
-    source: mappings/microbedecoder_residual_research_decomposition.tsv
-    source_record: CMC + PY + Horse Serum
-    notes: 'Reviewed row: strategy=split, confidence=high; Cellulolytic-anaerobe medium;
-      CMC carbon source in PY base + horse serum.'
-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-    variant hierarchy, or complete culturing recipe.
-ontology_mapping:
-  ontology_id: kgmicrobe.ingredient:cmc_py_horse_serum
-  ontology_label: CMC + PY + Horse Serum
-  ontology_source: kgmicrobe.ingredient
-  mapping_quality: FALLBACK_REGISTRY
-  evidence:
-  - evidence_type: MANUAL_CURATION
-    source: MIM curation (#213/#308)
-    notes: 'The label enumerates its own constituents, so this is a decomposition
-      rather than a mapping: no ontology has a term for ''CMC + PY + Horse Serum'',
-      and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
-      convention and split on ''+'', which transcribes the label rather than inferring
-      anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv;
-      PY carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
-      because at least one constituent is itself an undefined preparation. No concentrations
-      are recorded: the label states none.'
+- timestamp: '2026-09-21T00:00:00+00:00'
+  curator: mim-semantic-evidence-review
+  action: CORRECTED
+  changes: '#710: original species-description evidence disproves carboxymethylcellulose
+    expansion and a single CMC/PY/serum mixture. Withdrew all four invented component
+    edges and fallback identity, restored UNMAPPED_0740, marked AMBIGUOUS and moved
+    to unmapped. Kept original raw label; full withdrawn claims and prior source record
+    are preserved in reports/semantic_review_20260921/resolution/components/before-records.json.'
+  previous_status: MAPPED
+  new_status: AMBIGUOUS
+  llm_assisted: true
+notes: MicrobeDecoder flattened separate Filifactor villosus culture contexts into
+  CMC + PY + Horse Serum. Love et al. 1979 (doi:10.1099/00207713-29-3-241) describes
+  cooked meat-carbohydrate and peptone-yeast extract cultures supplemented with horse
+  serum. CMC is not carboxymethylcellulose here. This source expression is retained
+  as AMBIGUOUS until separate source preparations are represented; it has no asserted
+  single-mixture components or ontology identity.

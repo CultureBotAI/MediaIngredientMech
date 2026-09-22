@@ -1,6 +1,6 @@
-generation_date: '2026-09-21T21:38:40.199092+00:00'
-total_count: 2677
-mapped_count: 2610
+generation_date: '2026-09-22T02:13:41.175902+00:00'
+total_count: 2679
+mapped_count: 2612
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o
@@ -1548,8 +1548,17 @@ ingredients:
       in a sentence is not a reference. Neither claim is strengthened: BHI was already
       composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical
       (#447).'
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+  - timestamp: '2026-09-21T00:00:00+00:00'
+    curator: mim-semantic-evidence-review
+    action: CORRECTED
+    changes: '#710: withdrew unsupported EXACT_FORMULATION equivalence to CultureMech:015492;
+      retained the link only as CANDIDATE_UNVERIFIED because the source-specific BHI
+      recipe and quantities were not compared. Original claim is preserved in the
+      review audit.'
+    llm_assisted: true
+  notes: BHI is a source label for Hespellia porcina in MicrobeDecoder. Its CultureMech
+    link is an unverified candidate pending original recipe comparison; no exact formulation
+    equivalence is asserted.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:bhi
@@ -1566,12 +1575,15 @@ ingredients:
   culturemech_reference:
     medium_id: CultureMech:015492
     medium_name: BHI
-    relationship: EXACT_FORMULATION
+    relationship: CANDIDATE_UNVERIFIED
     source_path: data/normalized_yaml/specialized/bhi.yaml
-    evidence: 'Verified by composition, not by name: CultureMech:015492 lists Beef
-      heart + Calf brains + Proteose Peptone + Disodium phosphate + Sodium Chloride,
-      which is brain heart infusion. The name agreeing is incidental — it was the
-      composition that was checked (#213/#308).'
+    evidence: MicrobeDecoder source BHI is recorded for Hespellia porcina (database.csv
+      row 8022; Bergey doi:10.1002/9781118960608.gbm00644). CultureMech:015492 is
+      a CultureBotHT/FEBA brain-heart-infusion salt broth without supplements. The
+      original MicrobeDecoder formulation and quantities are unavailable in that row.
+      Common constituent names and abbreviation agreement do not establish either
+      exact formulation or a verified source-specific composition comparison; retain
+      only an unverified candidate.
 - identifier: CHEBI:41189
   preferred_term: Butane-1,4-diol
   synonyms:
@@ -1672,139 +1684,6 @@ ingredients:
         The ingest strips commas from every chemical label, so a name containing one
         arrives as separate fragment records — the same mechanism that produced the
         `D` record resolved in #346.'
-- identifier: kgmicrobe.ingredient:cmc_py_horse_serum
-  preferred_term: CMC + PY + Horse Serum
-  synonyms:
-  - synonym_text: CMC + PY + Horse Serum
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 1
-      source_columns: bergey:substrates
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum);
-      no CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-08-05T00:01:30.894952+00:00'
-    curator: microbedecoder-residual-dispositions
-    action: FLAGGED_NEEDS_EXPERT
-    changes: 'Not a single-compound grounding target: multi-component blend or named
-      medium; no single ontology term grounds it -- needs decomposition into constituents.'
-    previous_status: UNMAPPED
-    new_status: NEEDS_EXPERT
-    llm_assisted: true
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: edison_literature_identity
-    action: ANNOTATED
-    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CMC_PY_Horse_Serum-edison-literature.md
-      (local artifact — research/ is gitignored, so the findings are quoted here rather
-      than linked). Report verdict: **Recommended interpretation:** a **composite
-      culture-medium recipe shorthand**, not a single chemical, salt/hydrate, commercial
-      product, or uniquely defined named medium. The most defensible decomposition
-      is: CURIEs discussed: UBERON:0001977. Recorded as provenance only — no grounding
-      applied from this run. Edison''s recommendations are deliberately conservative,
-      and a plausible identifier promoted by a mechanism that never decided anything
-      is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
-      or reject.'
-    llm_assisted: true
-  - timestamp: '2026-08-14T00:00:00+00:00'
-    curator: decompose_substrate_combinations
-    action: DECOMPOSED_TO_COMPONENTS
-    previous_status: NEEDS_EXPERT
-    new_status: MAPPED
-    changes: 'UNMAPPED_0740 -> kgmicrobe.ingredient:cmc_py_horse_serum (FALLBACK_REGISTRY).
-      The label enumerates its own constituents, so this is a decomposition rather
-      than a mapping: no ontology has a term for ''CMC + PY + Horse Serum'', and none
-      could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
-      convention and split on ''+'', which transcribes the label rather than inferring
-      anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv;
-      PY carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
-      because at least one constituent is itself an undefined preparation. No concentrations
-      are recorded: the label states none.'
-    llm_assisted: false
-  - timestamp: '2026-08-14T00:00:00+00:00'
-    curator: apply_curated_decompositions
-    action: REPLACED_COMPONENTS_WITH_CURATED
-    changes: 'components replaced with the curated research decomposition, superseding
-      the label split. Components taken from the curated microbedecoder research decomposition
-      (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
-      the label names its constituents. 4 constituent(s), 4 carrying an identifier.
-      That file was produced by the research pass and never written into the records;
-      this applies it. It resolves constituents a label split cannot — abbreviations
-      such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE.
-      No concentrations are recorded: the curated row states none.'
-    llm_assisted: false
-  - timestamp: '2026-08-15T00:00:00+00:00'
-    curator: move_mapped_out_of_unmapped_collection
-    action: MOVED_TO_MAPPED_COLLECTION
-    changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
-      The record was already MAPPED; it had been promoted in place by a path that
-      does not move between collections, and reconcile_sssom reads only the mapped
-      collection — so its mapping was curated but unpublished.
-    llm_assisted: false
-  - timestamp: '2026-08-24T00:00:00+00:00'
-    curator: migrate_component_partonomy
-    action: TYPED_COMPONENT_PARTONOMY
-    changes: '#369: added method/evidence/completeness and explicit reference scope
-      to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names,
-      identifiers, and concentrations were not changed.'
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
-  ingredient_type: UNDEFINED_MIXTURE
-  components:
-  - component_name: carboxymethylcellulose
-    component_id: CHEBI:85146
-    reference_scope: EXTERNAL_TERM
-    source: microbedecoder research decomposition (#213/#308)
-  - component_name: peptone
-    component_id: MICRO:0000178
-    reference_scope: MIM_CATALOG
-    source: microbedecoder research decomposition (#213/#308)
-  - component_name: yeast extract
-    component_id: FOODON:03315426
-    reference_scope: MIM_CATALOG
-    source: microbedecoder research decomposition (#213/#308)
-  - component_name: horse serum
-    component_id: MICRO:0001235
-    reference_scope: MIM_CATALOG
-    source: microbedecoder research decomposition (#213/#308)
-  component_assertion:
-    method: ABBREVIATION_EXPANSION
-    completeness: UNKNOWN
-    evidence:
-    - evidence_type: CURATED_DATASET
-      source: mappings/microbedecoder_residual_research_decomposition.tsv
-      source_record: CMC + PY + Horse Serum
-      notes: 'Reviewed row: strategy=split, confidence=high; Cellulolytic-anaerobe
-        medium; CMC carbon source in PY base + horse serum.'
-    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-      variant hierarchy, or complete culturing recipe.
-  ontology_mapping:
-    ontology_id: kgmicrobe.ingredient:cmc_py_horse_serum
-    ontology_label: CMC + PY + Horse Serum
-    ontology_source: kgmicrobe.ingredient
-    mapping_quality: FALLBACK_REGISTRY
-    evidence:
-    - evidence_type: MANUAL_CURATION
-      source: MIM curation (#213/#308)
-      notes: 'The label enumerates its own constituents, so this is a decomposition
-        rather than a mapping: no ontology has a term for ''CMC + PY + Horse Serum'',
-        and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
-        convention and split on ''+'', which transcribes the label rather than inferring
-        anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv;
-        PY carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
-        because at least one constituent is itself an undefined preparation. No concentrations
-        are recorded: the label states none.'
 - identifier: kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid
   preferred_term: Casitone + Yeast Extract + Rumen Fluid
   synonyms:
@@ -3367,36 +3246,58 @@ ingredients:
       in a sentence is not a reference. Neither claim is strengthened: BHI was already
       composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical
       (#447).'
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
+  - timestamp: '2026-09-21T00:00:00+00:00'
+    curator: mim-semantic-evidence-review
+    action: CORRECTED
+    changes: '#710: traced GYPS to Caminicella sporogenes in original MicrobeDecoder
+      data; replaced incorrect starch component with elemental sulfur using Alain
+      et al. 2002 p.1622, changed guessed abbreviation evidence to source-specific
+      partial recipe transcription, and corrected the limited CultureMech composition
+      comparison.'
+    llm_assisted: true
+  notes: MicrobeDecoder source label GYPS for Caminicella sporogenes; original species-description
+    recipe resolves the component expansion. Local registry identity is retained;
+    this is not a universal GYPS formulation.
   components:
   - component_name: glucose
     component_id: CHEBI:17234
     reference_scope: MIM_CATALOG
-    source: microbedecoder research decomposition (#213/#308)
+    source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+      GYPS medium)
   - component_name: yeast extract
     component_id: FOODON:03315426
     reference_scope: MIM_CATALOG
-    source: microbedecoder research decomposition (#213/#308)
+    source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+      GYPS medium)
   - component_name: peptone
     component_id: MICRO:0000178
     reference_scope: MIM_CATALOG
-    source: microbedecoder research decomposition (#213/#308)
-  - component_name: starch
-    component_id: CHEBI:28017
+    source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+      GYPS medium)
+  - component_name: elemental sulfur
+    component_id: CHEBI:33403
     reference_scope: MIM_CATALOG
-    source: microbedecoder research decomposition (#213/#308)
+    source: https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes
+      GYPS medium)
   component_assertion:
-    method: ABBREVIATION_EXPANSION
-    completeness: UNKNOWN
+    method: RECIPE_TRANSCRIPTION
+    completeness: PARTIAL
     evidence:
+    - evidence_type: RECIPE_SOURCE
+      source: https://doi.org/10.1099/00207713-52-5-1621
+      source_record: p. 1622, Culture medium and conditions
+      notes: Original Caminicella sporogenes description explicitly defines GYPS using
+        glucose, yeast extract, peptone and elemental sulfur. This partial constituent
+        list omits documented sea salts, buffer, redox indicator and reducing agent;
+        quantities are not projected.
     - evidence_type: CURATED_DATASET
-      source: mappings/microbedecoder_residual_research_decomposition.tsv
-      source_record: GYPS
-      notes: 'Reviewed row: strategy=split, confidence=medium; Glucose-Yeast-Peptone
-        (DSMZ Medium 852) + Salts (or Starch). Same set as PYG family, reordered.'
-    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-      variant hierarchy, or complete culturing recipe.
+      source: reports/semantic_review_20260921/resolution/components/source-contexts.json
+      source_record: database.csv row 3351; Bergey doi:10.1002/9781118960608.gbm00618
+      notes: Exact raw MicrobeDecoder substrate label GYPS belongs to Caminicella
+        sporogenes. This source context distinguishes the preparation from unrelated
+        GYPS expansions.
+    notes: Source-specific partial partonomy. S means sulfur here, not starch. Original
+      guessed assertions are retained in the review before-records.json audit.
   ingredient_type: UNDEFINED_MIXTURE
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:gyps
@@ -3405,28 +3306,21 @@ ingredients:
     mapping_quality: FALLBACK_REGISTRY
     evidence:
     - evidence_type: MANUAL_CURATION
-      source: MIM curation (#213/#308)
-      notes: 'Components taken from the curated microbedecoder research decomposition
-        (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split):
-        the label names its constituents. 4 constituent(s), 4 carrying an identifier.
-        That file was produced by the research pass and never written into the records;
-        this applies it. It resolves constituents a label split cannot — abbreviations
-        such as PY, and named media such as BHI, state no composition to split on.
-        ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated
-        row states none. Cross-referenced to CultureMech medium CultureMech:002799
-        (''gyps_medium'') via culturemech_medium_name, verified by COMPOSITION not
-        by name: name matches exactly and 3 of 4 curated constituents agree (glucose,
-        peptone, yeast extract); CultureMech additionally lists MES and Sea Salt and
-        no starch, so the recipes are close but not identical.'
+      source: MIM semantic evidence review (#710)
+      notes: Local registry identity denotes the source label. Component membership
+        is separately supported by the source-specific recipe transcription; it is
+        not an ontology equivalence assertion.
   culturemech_reference:
     medium_id: CultureMech:002799
     medium_name: gyps_medium
     relationship: SIMILAR_COMPOSITION
     source_path: data/normalized_yaml/bacterial/gyps_medium.yaml
-    evidence: Close but NOT identical, so deliberately not EXACT_FORMULATION. 3 of
-      4 curated constituents agree (glucose, peptone, yeast extract); CultureMech
-      additionally lists MES and Sea Salt and no starch. The names match exactly,
-      which is precisely why the name is not the evidence (#213/#308).
+    evidence: Compared source-specific Alain et al. 2002 p.1622 GYPS with CultureMech:002799
+      (JCM J449). Both specify glucose 5 g/L, yeast extract 0.5 g/L, peptone 1 g/L
+      and sea salts 30 g/L. J449 uses MES 3.9 g/L and pH 6.0; the original uses PIPES
+      6.05 g/L, sulfur 12 g/L and pH 7.5 plus reducing agent and redox indicator.
+      This substantiates composition similarity, not exact identity or a documented
+      variant relationship.
 - identifier: kgmicrobe.ingredient:gallate_formate
   preferred_term: Gallate + Formate
   synonyms:
@@ -7489,8 +7383,19 @@ ingredients:
       to 4 existing component(s) (MIM_CATALOG, UNMAPPED); constituent names, identifiers,
       and concentrations were not changed.'
     llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.compound:tygvs_glucose);
-    no CAS-RN or CHEBI/NCIT match. Curator review needed.
+  - timestamp: '2026-09-21T00:00:00+00:00'
+    curator: mim-semantic-evidence-review
+    action: ANNOTATED
+    changes: '#710: recovered original Treponema medium source context for TYGVS +
+      glucose and explicitly retained the existing decomposition as unverified. Adversarial
+      comparison found Trypticase/Tryptone differences between primary oral-medium
+      protocols; no constituent identity or assertion method was promoted from those
+      different-species recipes.'
+    llm_assisted: true
+  notes: MicrobeDecoder TYGVS + glucose belongs to Treponema medium. Its original
+    formula is not yet verified; oral TYGVS protocols differ in named casein digest.
+    The prior rumen-medium interpretation is not established, and the current inferred
+    components remain provisional.
   ingredient_type: UNDEFINED_MIXTURE
   components:
   - component_name: Trypticase peptone
@@ -7518,8 +7423,20 @@ ingredients:
       notes: 'Reviewed row: strategy=split, confidence=medium; Trypticase-Yeast-Glucose-VFA-Salts
         rumen medium (Caldwell & Bryant 1966) + extra glucose. VFA mix = acetate/propionate/butyrate/isobutyrate/valerate/isovalerate;
         no single CURIE.'
-    notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-      variant hierarchy, or complete culturing recipe.
+    - evidence_type: CURATED_DATASET
+      source: reports/semantic_review_20260921/resolution/components/source-contexts.json
+      source_record: database.csv row 20378; Bergey doi:10.1002/9781118960608.gbm01249
+      notes: Source-context recovery identifies Treponema medium only. It does not
+        verify the original inferred part list. Counterexamples in primary oral-medium
+        methods name Trypticase (https://pmc.ncbi.nlm.nih.gov/articles/PMC145376/)
+        versus Tryptone (https://academic.oup.com/femspd/article/60/3/251/530699).
+        This provenance is not evidence of complete or exact composition.
+    notes: Original inferred component claims remain unverified. Raw MicrobeDecoder
+      context is Treponema medium, not a demonstrated rumen/Caldwell preparation.
+      Later primary oral-medium recipes differ in named peptone (Trypticase versus
+      Tryptone); matching the TYGVS acronym or oral context does not establish which
+      preparation the original source used. The original recipe/citation chain must
+      be inspected before constituent identity is certified.
   ontology_mapping:
     ontology_id: kgmicrobe.ingredient:tygvs_glucose
     ontology_label: TYGVS + Glucose
@@ -7527,15 +7444,9 @@ ingredients:
     mapping_quality: FALLBACK_REGISTRY
     evidence:
     - evidence_type: MANUAL_CURATION
-      source: MIM curation (#213/#308)
-      notes: 'The label enumerates its own constituents, so this is a decomposition
-        rather than a mapping: no ontology has a term for ''TYGVS + Glucose'', and
-        none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
-        convention and split on ''+'', which transcribes the label rather than inferring
-        anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
-        TYGVS carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
-        because at least one constituent is itself an undefined preparation. No concentrations
-        are recorded: the label states none.'
+      source: MIM semantic evidence review (#710)
+      notes: Local registry label identity retained. It does not certify the still-provisional
+        component decomposition or any particular TYGVS recipe.
 - identifier: kgmicrobe.ingredient:trypticase_glucose_yeast_extract
   preferred_term: Trypticase-glucose-yeast Extract
   synonyms:
@@ -100914,6 +100825,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T02:06:34+00:00'
+    curator: codex_issue_710_semantic_evidence_review
+    action: CORRECTED_ROLE_EVIDENCE
+    changes: Added inspected primary-publication support and bounded organism/condition
+      context to the cellular metabolic role (#710). Retained original computational
+      provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+      for the assertion-specific interpretation.
+    llm_assisted: true
+    llm_model: gpt-6
   kg_microbe_node_id: CHEBI:86466
   chemical_properties:
     cas_rn: 13932-13-3
@@ -100930,6 +100850,16 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
+    - reference_type: PEER_REVIEWED_PUBLICATION
+      doi: 10.1007/s11274-010-0441-4
+      url: https://scholarworks.montana.edu/server/api/core/bitstreams/178af696-e5b3-47aa-a0e1-182a47ab782a/content
+      reference_text: Aston et al. (2011). Growth effects and assimilation of organic
+        acids in chemostat and batch cultures of Acidithiobacillus caldus.
+      curator_note: The study explicitly supplies potassium tetrathionate as the electron
+        donor in autotrophic and mixotrophic cultures. This supports the named organism
+        and culture conditions, not universal microbial utilization.
+    metabolic_context: Electron donor during aerobic growth of Acidithiobacillus caldus
+      in the studied tetrathionate-supplemented mineral medium.
 - identifier: CHEBI:32036
   preferred_term: K2SO4
   ontology_mapping:
@@ -134191,6 +134121,15 @@ ingredients:
       not resolve them: ''Na2S2O3 (if needed)'' (x2 CultureMech mentions). Source:
       culturemech:output/ingredient_occurrences.tsv.'
     llm_assisted: false
+  - timestamp: '2026-09-22T02:06:34+00:00'
+    curator: codex_issue_710_semantic_evidence_review
+    action: CORRECTED_ROLE_EVIDENCE
+    changes: Added inspected primary-publication support and bounded organism/condition
+      context to the cellular metabolic role (#710). Retained original computational
+      provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+      for the assertion-specific interpretation.
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 7772-98-7
     data_source: PubChem API
@@ -134207,6 +134146,15 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
+    - reference_type: PEER_REVIEWED_PUBLICATION
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3382511/
+      reference_text: Kato et al. (2012). Microbial interspecies electron transfer
+        via electric currents through conductive minerals.
+      curator_note: The culture method supplies 20 mM sodium thiosulfate and 20 mM
+        sodium nitrate as donor and acceptor, respectively. Scope is limited to the
+        studied organism and conditions.
+    metabolic_context: Electron donor for Thiobacillus denitrificans during anaerobic
+      growth with nitrate as electron acceptor in aqueous mineral medium.
 - identifier: CHEBI:32150
   preferred_term: Na2S2O3 x 5 H2O
   ontology_mapping:
@@ -134405,6 +134353,15 @@ ingredients:
       x 5 H20''. Tokens already present on the kg-microbe ontology node were left
       out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-22T02:06:34+00:00'
+    curator: codex_issue_710_semantic_evidence_review
+    action: CORRECTED_ROLE_EVIDENCE
+    changes: Added inspected primary-publication support and bounded organism/condition
+      context to the cellular metabolic role (#710). Retained original computational
+      provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+      for the assertion-specific interpretation.
+    llm_assisted: true
+    llm_model: gpt-6
   kg_microbe_node_id: CHEBI:32150
   chemical_properties:
     cas_rn: 10102-17-7
@@ -134421,6 +134378,17 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
+    - reference_type: PEER_REVIEWED_PUBLICATION
+      doi: 10.1128/AEM.02111-16
+      pmid: '27565613'
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5066360/
+      reference_text: Levy et al. (2016). Chlorobaculum tepidum modulates amino acid
+        composition in response to energy availability.
+      curator_note: The paper tests thiosulfate-fed cultures. Applying this role to
+        dissolved sodium thiosulfate pentahydrate is a chemical inference about the
+        supplied anion; the study does not establish a hydrate-specific growth comparison.
+    metabolic_context: Dissolved thiosulfate donor for Chlorobaculum tepidum WT2321
+      under the studied illuminated, anoxic culture conditions.
 - identifier: CHEBI:114786
   preferred_term: Na2S2O5
   ontology_mapping:
@@ -144873,6 +144841,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T02:06:34+00:00'
+    curator: codex_issue_710_semantic_evidence_review
+    action: CORRECTED_ROLE_EVIDENCE
+    changes: Added inspected primary-publication support and bounded organism/condition
+      context to the cellular metabolic role (#710). Retained original computational
+      provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+      for the assertion-specific interpretation.
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 10024-97-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -144888,6 +144865,18 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
+    - reference_type: PEER_REVIEWED_PUBLICATION
+      doi: 10.1128/AEM.00409-16
+      pmid: '27084012'
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4907195/
+      reference_text: Yoon et al. (2016). Nitrous oxide reduction kinetics distinguish
+        bacteria harboring clade I NosZ from those harboring clade II NosZ.
+      curator_note: Growth and N2O consumption were measured together in the named
+        isolates with acetate supplying electrons. The role is confined to these tested
+        nitrous-oxide-respiring cultures.
+    metabolic_context: Terminal electron acceptor during anoxic, acetate-fed growth
+      of Dechloromonas aromatica RCB, Anaeromyxobacter dehalogenans 2CP-C, Pseudomonas
+      stutzeri DCP-Ps1, and Shewanella loihica PV-4 at 30 degrees C.
 - identifier: CHEBI:7602
   preferred_term: Nobiletin
   ontology_mapping:
@@ -166621,6 +166610,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T02:06:34+00:00'
+    curator: codex_issue_710_semantic_evidence_review
+    action: CORRECTED_ROLE_EVIDENCE
+    changes: Added inspected primary-publication support and bounded organism/condition
+      context to the cellular metabolic role (#710). Retained original computational
+      provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+      for the assertion-specific interpretation.
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 7601-89-0
     data_source: PubChem API
@@ -166636,6 +166634,16 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
+    - reference_type: PEER_REVIEWED_PUBLICATION
+      doi: 10.1128/AEM.68.9.4425-4430.2002
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC124121/
+      reference_text: Chaudhuri et al. (2002). Environmental factors that control
+        microbial perchlorate reduction.
+      curator_note: The methods supply sodium perchlorate as acceptor. Results demonstrate
+        oxygen and nitrate effects; this role is restricted to the described perchlorate-respiring
+        organisms and anoxic conditions.
+    metabolic_context: Terminal electron acceptor for Dechlorosoma suillum PS and
+      Dechloromonas agitata CKB during anoxic, acetate-fed culture.
 - identifier: cas:7791-07-3
   preferred_term: Sodium perchlorate monohydrate
   ontology_mapping:
@@ -166721,6 +166729,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T02:06:34+00:00'
+    curator: codex_issue_710_semantic_evidence_review
+    action: CORRECTED_ROLE_EVIDENCE
+    changes: Added inspected primary-publication support and bounded organism/condition
+      context to the cellular metabolic role (#710). Retained original computational
+      provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+      for the assertion-specific interpretation.
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 7791-07-3
     data_source: CultureBotHT compounds_to_cas.csv
@@ -166737,6 +166754,16 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
+    - reference_type: PEER_REVIEWED_PUBLICATION
+      doi: 10.1128/AEM.68.9.4425-4430.2002
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC124121/
+      reference_text: Chaudhuri et al. (2002). Environmental factors that control
+        microbial perchlorate reduction.
+      curator_note: Extending the demonstrated sodium-perchlorate role to the dissolved
+        monohydrate is a chemical inference about perchlorate supply. The paper does
+        not identify the monohydrate reagent or establish solid-form identity.
+    metabolic_context: Dissolved perchlorate acceptor for Dechlorosoma suillum PS
+      and Dechloromonas agitata CKB under the studied anoxic, acetate-fed conditions.
 - identifier: CHEBI:75226
   preferred_term: Sodium periodate
   ontology_mapping:
@@ -173449,6 +173476,15 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T02:06:34+00:00'
+    curator: codex_issue_710_semantic_evidence_review
+    action: CORRECTED_ROLE_EVIDENCE
+    changes: Added inspected primary-publication support and bounded organism/condition
+      context to the cellular metabolic role (#710). Retained original computational
+      provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+      for the assertion-specific interpretation.
+    llm_assisted: true
+    llm_model: gpt-6
   chemical_properties:
     cas_rn: 127-18-4
     data_source: PubChem API
@@ -173465,6 +173501,18 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
+    - reference_type: PEER_REVIEWED_PUBLICATION
+      doi: 10.1128/AEM.65.7.3108-3113.1999
+      pmid: '10388710'
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC91463/
+      reference_text: Maymo-Gatell et al. (1999). Reductive dechlorination of chlorinated
+        ethenes and 1,2-dichloroethane by Dehalococcoides ethenogenes 195.
+      curator_note: The study demonstrates growth-linked tetrachloroethene dechlorination
+        by strain 195 with hydrogen supplying electrons. It does not imply equivalent
+        utilization by other Dehalococcoides strains or other microbes.
+    metabolic_context: Respiratory electron acceptor for Dehalococcoides ethenogenes
+      strain 195 during anaerobic reductive dechlorination with hydrogen as electron
+      donor.
 - identifier: CHEBI:27902
   preferred_term: Tetracycline
   ontology_mapping:
@@ -175695,6 +175743,15 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T02:06:34+00:00'
+    curator: codex_issue_710_semantic_evidence_review
+    action: CORRECTED_ROLE_EVIDENCE
+    changes: Added inspected primary-publication support and bounded organism/condition
+      context to the cellular metabolic role (#710). Retained original computational
+      provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+      for the assertion-specific interpretation.
+    llm_assisted: true
+    llm_model: gpt-6
   ingredient_type: SINGLE_INGREDIENT
   cellular_metabolic_roles:
   - role: ELECTRON_DONOR
@@ -175703,6 +175760,17 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Assigned by in-session Claude reasoning (no external API)
       curator_note: Provisional in-session LLM role assignment; review recommended.
+    - reference_type: PEER_REVIEWED_PUBLICATION
+      doi: 10.1128/AEM.02111-16
+      pmid: '27565613'
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5066360/
+      reference_text: Levy et al. (2016). Chlorobaculum tepidum modulates amino acid
+        composition in response to energy availability.
+      curator_note: The study varies thiosulfate as an electron donor and measures
+        growth responses. This is organism-scoped evidence, not an assertion that
+        all microbes use thiosulfate.
+    metabolic_context: Electron donor for Chlorobaculum tepidum WT2321 during illuminated,
+      anoxic growth in thiosulfate-supplemented Pf-7 medium.
 - identifier: CHEBI:36946
   preferred_term: Thiourea
   ontology_mapping:
@@ -218711,3 +218779,285 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-6
+- identifier: CHEBI:36026
+  preferred_term: 1,1,2,2-tetrachloroethane
+  synonyms:
+  - synonym_text: 2-tetrachloroethane
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  - synonym_text: 1,1,2,2-Tetrachloroethane
+    synonym_type: EXACT
+    source: BacDive original-source identity recovery
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 1
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_tetrachloroethane);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-05T00:01:30.894952+00:00'
+    curator: microbedecoder-residual-dispositions
+    action: FLAGGED_NEEDS_EXPERT
+    changes: 'Not a single-compound grounding target: raw fragment is reachable from
+      both 1,1,1,2- (CHEBI:34024) and 1,1,2,2-tetrachloroethane (CHEBI:36026); no
+      unique reconstruction.'
+    previous_status: UNMAPPED
+    new_status: NEEDS_EXPERT
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: edison_literature_identity
+    action: ANNOTATED
+    changes: 'Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/2-tetrachloroethane-edison-literature.md
+      (local artifact — research/ is gitignored, so the findings are quoted here rather
+      than linked). Report verdict: **Recommended status: `UNMAPPED` / `NEEDS_EXPERT`.**
+      The string `2-tetrachloroethane` is not a complete, uniquely identifying chemical
+      name. It lacks enough locants to distinguish two constitutional isomers: CURIEs
+      discussed: CHEBI:34024, CHEBI:36026. Recorded as provenance only — no grounding
+      applied from this run. Edison''s recommendations are deliberately conservative,
+      and a plausible identifier promoted by a mechanism that never decided anything
+      is what #203 and #263 exist to undo. Any CURIE above is a curator''s to accept
+      or reject.'
+    llm_assisted: true
+  - timestamp: '2026-08-14T00:00:00+00:00'
+    curator: repair_comma_split_labels
+    action: REPAIRED_COMMA_SPLIT_LABEL
+    previous_status: NEEDS_EXPERT
+    new_status: MAPPED
+    changes: 'preferred_term ''2-tetrachloroethane'' -> ''1,1,2,2-Tetrachloroethane'';
+      UNMAPPED_0785 -> CHEBI:36026. Repaired a comma-split label (#308/#313): `2-tetrachloroethane`
+      is the tail of `1,1,2,2-tetrachloroethane`: splitting that name on commas yields
+      `1`, `1`, `2` and `2-tetrachloroethane`, and only the last survives as a record
+      because bare digits are not labels. The reconstruction is unambiguous — no other
+      compound ends in `2-tetrachloroethane`. The ingest strips commas from every
+      chemical label, so a name containing one arrives as separate fragment records
+      — the same mechanism that produced the `D` record resolved in #346.'
+    llm_assisted: false
+  - timestamp: '2026-08-15T00:00:00+00:00'
+    curator: move_mapped_out_of_unmapped_collection
+    action: MOVED_TO_MAPPED_COLLECTION
+    changes: Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370).
+      The record was already MAPPED; it had been promoted in place by a path that
+      does not move between collections, and reconcile_sssom reads only the mapped
+      collection — so its mapping was curated but unpublished.
+    llm_assisted: false
+  - timestamp: '2026-09-21T21:33:25.379198+00:00'
+    curator: mim_semantic_review_20260921
+    action: WITHDREW_UNSUPPORTED_MAPPING
+    changes: 'Reverse unsupported comma-tail reconstruction. Both 1,1,1,2- and 1,1,2,2-tetrachloroethane
+      can yield this fragment. Original source locants are required. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34024
+      ; https://www.ebi.ac.uk/chebi/CHEBI:36026 ; MAPPING_SEMANTICS.md'
+    previous_status: MAPPED
+    new_status: AMBIGUOUS
+    llm_assisted: true
+    llm_model: gpt-6
+  - timestamp: '2026-09-22T02:07:38.917319+00:00'
+    curator: mim_semantic_review_710
+    action: RESOLVED_FROM_ORIGINAL_SOURCE
+    changes: 'The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane,
+      in the sole matching source row (BacDive 140462); the same BacDive record explicitly
+      identifies CHEBI:36026. This replaces unsupported comma-tail inference with
+      original-source disambiguation. Evidence: https://bacdive.dsmz.de/strain/140462
+      ; https://www.ebi.ac.uk/chebi/CHEBI:36026'
+    previous_status: AMBIGUOUS
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  notes: 'Original MicrobeDecoder label and BacDive term recovered during #710 review.
+    The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane, in
+    the sole matching source row (BacDive 140462); the same BacDive record explicitly
+    identifies CHEBI:36026. This replaces unsupported comma-tail inference with original-source
+    disambiguation. The raw truncated label is retained for source lookup; historical
+    incorrect inference remains in curation history only.'
+  ingredient_type: SINGLE_INGREDIENT
+  ontology_mapping:
+    ontology_id: CHEBI:36026
+    ontology_label: 1,1,2,2-tetrachloroethane
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MicrobeDecoder original CSV and BacDive
+      notes: 'The complete original MicrobeDecoder CSV label is 1,1,2,2-tetrachloroethane,
+        in the sole matching source row (BacDive 140462); the same BacDive record
+        explicitly identifies CHEBI:36026. This replaces unsupported comma-tail inference
+        with original-source disambiguation. Source records: https://bacdive.dsmz.de/strain/140462
+        ; https://www.ebi.ac.uk/chebi/CHEBI:36026 . Hash-bound source extracts: reports/semantic_review_20260921/resolution/identities/microbedecoder-source-recovery.json'
+- identifier: CHEBI:86537
+  preferred_term: 2,2-dimethylsuccinic acid
+  synonyms:
+  - synonym_text: 2-dimethylsuccinic Acid
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 4
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:2_dimethylsuccinic_acid);
+      no CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0696 -> CHEBI:167506 "2,3-dimethylsuccinic acid" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+      definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-09-21T21:33:25.379198+00:00'
+    curator: mim_semantic_review_20260921
+    action: WITHDREW_UNSUPPORTED_MAPPING
+    changes: 'Withdraw unproved 2,3-isomer identity. Two methyl groups can occupy
+      carbon 2 (2,2-dimethylsuccinic acid); the incomplete source name does not establish
+      2,3 substitution. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:86537 ; https://www.ebi.ac.uk/chebi/CHEBI:167506'
+    previous_status: MAPPED
+    new_status: AMBIGUOUS
+    llm_assisted: true
+    llm_model: gpt-6
+  - timestamp: '2026-09-22T02:07:38.917319+00:00'
+    curator: mim_semantic_review_710
+    action: RESOLVED_FROM_ORIGINAL_SOURCE
+    changes: 'All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic
+      acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer
+      CHEBI:167506 is rejected; this is a distinct constitutional isomer, not a close
+      match. Evidence: https://bacdive.dsmz.de/strain/140942 ; https://bacdive.dsmz.de/strain/168456
+      ; https://bacdive.dsmz.de/strain/140923 ; https://bacdive.dsmz.de/strain/158680
+      ; https://www.ebi.ac.uk/chebi/CHEBI:86537'
+    previous_status: AMBIGUOUS
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  notes: 'Original MicrobeDecoder label and BacDive term recovered during #710 review.
+    All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic
+    acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer CHEBI:167506
+    is rejected; this is a distinct constitutional isomer, not a close match. The
+    raw truncated label is retained for source lookup; historical incorrect inference
+    remains in curation history only.'
+  ingredient_type: SINGLE_INGREDIENT
+  ontology_mapping:
+    ontology_id: CHEBI:86537
+    ontology_label: 2,2-dimethylsuccinic acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MicrobeDecoder original CSV and BacDive
+      notes: 'All four original MicrobeDecoder source rows explicitly name 2,2-dimethylsuccinic
+        acid. Their BacDive records identify CHEBI:86537. The historical 2,3-isomer
+        CHEBI:167506 is rejected; this is a distinct constitutional isomer, not a
+        close match. Source records: https://bacdive.dsmz.de/strain/140942 ; https://bacdive.dsmz.de/strain/168456
+        ; https://bacdive.dsmz.de/strain/140923 ; https://bacdive.dsmz.de/strain/158680
+        ; https://www.ebi.ac.uk/chebi/CHEBI:86537 . Hash-bound source extracts: reports/semantic_review_20260921/resolution/identities/microbedecoder-source-recovery.json'
+- identifier: cas:13902-54-0
+  preferred_term: Artepaulin
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_FROM_CAS_FALLBACK
+    changes: Created with cas:13902-54-0 as primary identifier; no CHEBI entry exists
+      for this compound.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.265793+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.591875+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-09-21T21:33:25.379198+00:00'
+    curator: mim_semantic_review_20260921
+    action: WITHDREW_UNSUPPORTED_MAPPING
+    changes: 'Withdraw conflicting CAS 13902-54-0 identity rather than guessing a
+      stereoisomer from a name hit. Prior reviewed PubChem CAS/name queries disagree;
+      source supplier or original structure is needed. Historical mapping and chemistry
+      remain in the before snapshot and curation history. Evidence: reports/yaml_record_review/Artepaulin.md
+      ; https://pubchem.ncbi.nlm.nih.gov/compound/10977881 ; https://pubchem.ncbi.nlm.nih.gov/compound/325292'
+    previous_status: MAPPED
+    new_status: AMBIGUOUS
+    llm_assisted: true
+    llm_model: gpt-6
+  - timestamp: '2026-09-22T02:08:31.475377+00:00'
+    curator: mim_semantic_review_710
+    action: RESTORED_SOURCE_BACKED_REGISTRY_IDENTITY
+    changes: 'Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly
+      assigns Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates
+      that same name and CAS, and its complete stereochemical InChI exactly matches
+      PubChem CID 10977881. PubChem name-search results are less stereochemically
+      specified; their synonym membership does not contradict the original CAS identity.
+      Restore only the supported CAS registry fallback. KNApSAcK displays an InChIKey
+      inconsistent with its own InChI and PubChem key; that key is not imported. No
+      exact CHEBI:174307 or name-search CID mapping is asserted. Structure fields
+      remain unbackfilled. The earlier withdrawal and evidence concern remain in curation
+      history. Evidence: https://www.knapsackfamily.com/knapsack_core/information.php?word=C00013080
+      ; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10977881/property/IUPACName,InChIKey,InChI,MolecularFormula/JSON'
+    previous_status: AMBIGUOUS
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  ingredient_type: SINGLE_INGREDIENT
+  notes: Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly assigns
+    Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates that same
+    name and CAS, and its complete stereochemical InChI exactly matches PubChem CID
+    10977881. PubChem name-search results are less stereochemically specified; their
+    synonym membership does not contradict the original CAS identity. Restore only
+    the supported CAS registry fallback. KNApSAcK displays an InChIKey inconsistent
+    with its own InChI and PubChem key; that key is not imported. No exact CHEBI:174307
+    or name-search CID mapping is asserted. Structure fields remain unbackfilled.
+    The earlier withdrawal and evidence concern remain in curation history.
+  ontology_mapping:
+    ontology_id: cas:13902-54-0
+    ontology_label: Artepaulin
+    ontology_source: CAS
+    mapping_quality: FALLBACK_REGISTRY
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT original CSV; KNApSAcK; PubChem
+      notes: 'Recovered original CultureBotHT compounds_to_cas.csv row 784 explicitly
+        assigns Artepaulin to CAS 13902-54-0. KNApSAcK C00013080 explicitly associates
+        that same name and CAS, and its complete stereochemical InChI exactly matches
+        PubChem CID 10977881. PubChem name-search results are less stereochemically
+        specified; their synonym membership does not contradict the original CAS identity.
+        Restore only the supported CAS registry fallback. KNApSAcK displays an InChIKey
+        inconsistent with its own InChI and PubChem key; that key is not imported.
+        No exact CHEBI:174307 or name-search CID mapping is asserted. Structure fields
+        remain unbackfilled. The earlier withdrawal and evidence concern remain in
+        curation history. Evidence: https://www.knapsackfamily.com/knapsack_core/information.php?word=C00013080
+        ; https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/10977881/property/IUPACName,InChIKey,InChI,MolecularFormula/JSON
+        . Hash-bound source extracts and exact InChI comparison: reports/semantic_review_20260921/resolution/identities/'
+  chemical_properties:
+    cas_rn: 13902-54-0
+    data_source: CultureBotHT compounds_to_cas.csv row 784; corroborated by KNApSAcK
+      C00013080 and PubChem CID 10977881
+    retrieval_date: '2026-09-22T02:08:31.475368+00:00'

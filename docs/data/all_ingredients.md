@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-21T21:40:03.720703+00:00
+Generated: 2026-09-22T02:18:16.870169+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -23,7 +23,6 @@ Total: 2952 ingredients
 | kgmicrobe.ingredient:2_propanol_co2 | kgmicrobe.ingredient:2_propanol_co2 | 2-propanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:bhi | kgmicrobe.ingredient:bhi | BHI | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | CHEBI:41189 | CHEBI:41189 | Butane-1,4-diol | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.ingredient:cmc_py_horse_serum | kgmicrobe.ingredient:cmc_py_horse_serum | CMC + PY + Horse Serum | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | Casitone + Yeast Extract + Rumen Fluid | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | Corn Steep Liquor + Glucose + Fumarate | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:cyclopentanol_co2 | kgmicrobe.ingredient:cyclopentanol_co2 | Cyclopentanol+CO2 | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2682,6 +2681,9 @@ Total: 2952 ingredients
 | cas:1073-62-7 | cas:1073-62-7 | Benzylhydrazine Hydrochloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:542-32-5 | cas:542-32-5 | DL-2-Aminoadipic acid | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:132766 | CHEBI:132766 | Nitrilotriacetic acid, trisodium salt | MAPPED | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:36026 | CHEBI:36026 | 1,1,2,2-tetrachloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:86537 | CHEBI:86537 | 2,2-dimethylsuccinic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| cas:13902-54-0 | cas:13902-54-0 | Artepaulin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |
@@ -2954,6 +2956,4 @@ Total: 2952 ingredients
 | UNMAPPED_0734 |  | Tetrazolium | REJECTED |  |  | 0 |
 | UNMAPPED_0341 |  | Bordet-Gengou-Agar-Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
-| UNMAPPED_0785 |  | 2-tetrachloroethane | AMBIGUOUS |  |  | 0 |
-| UNMAPPED_0696 |  | 2-dimethylsuccinic Acid | AMBIGUOUS |  |  | 0 |
-| UNMAPPED_0819 |  | Artepaulin | AMBIGUOUS |  |  | 0 |
+| UNMAPPED_0740 |  | CMC + PY + Horse Serum | AMBIGUOUS |  |  | 0 |

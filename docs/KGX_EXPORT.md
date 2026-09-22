@@ -1,5 +1,19 @@
 # Standalone MIM ingredient graph
 
+The [reviewed release](../reports/semantic_review_20260921/resolution/README.md)
+contains only supported assertions and preserves the rest in a separate backlog.
+Build and check it with:
+
+```bash
+just export-kgx output/mim-kgx-710-full
+just export-supported-kgx reports/semantic_review_20260921/resolution/current-review.json output/mim-kgx-710-supported
+just qc-supported-kgx reports/semantic_review_20260921/resolution/current-review.json output/mim-kgx-710-supported
+```
+
+The supported output includes its own SSSOM subset and a separate
+`unsupported-backlog.json`. PASS applies to that reviewed subset. The complete
+source projection described below retains its failing semantic verdict.
+
 Build a complete projection of the assertions held by MIM:
 
 ```bash
@@ -12,6 +26,10 @@ The destination must be a new directory. The exporter validates and stages the
 bundle before publishing it locally. It needs no network connection, KG-Microbe
 checkout, or KGX installation. Files under `output/` are ignored by Git.
 For a non-editable installation, supply `--repo-root /path/to/MediaIngredientMech`.
+Local ignored review ledgers are not loaded implicitly. Supply `--review-ledger
+reports/path/to/ledger.tsv` to include a particular review; its bytes are then
+recorded as an export input. This keeps default exports reproducible in a clean
+checkout and a research workspace.
 
 ## Scope and identity
 
@@ -65,7 +83,10 @@ files. Nodes precede edges in the archive for streaming readers.
   confidence, metabolic context, and component assertion metadata. Convenience
   columns expose common values without replacing the original data.
 * `definition_json` preserves each role enum definition.
-* `review_json` and `review_status` retain existing review ledger dispositions.
+* `review_json` retains the historical review ledger entry. `review_status` exposes
+  a positive verdict only when the ledger's `record_sha256` matches the current
+  file; otherwise it is `historical_review_unverified`. Existing unresolved
+  findings remain visible. These fields do not grant whole-graph release approval.
   A ledger entry is not a fresh, content-bound approval of the current record.
 * JSON cells escape literal pipes so KGX list parsing does not split them.
   Parse them as JSON to recover the original strings, including tabs/newlines.

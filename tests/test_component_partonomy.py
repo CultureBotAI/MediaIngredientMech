@@ -129,8 +129,10 @@ def test_real_curated_corpus_has_no_partonomy_violations():
     records = load_curated_records(ROOT / "data" / "curated")
     assert validate_component_partonomy(records) == []
     parents = [record for record in records if record.get("components")]
-    assert len(parents) == 84
-    assert sum(len(record["components"]) for record in parents) == 506
+    # #710 withdrew the four-part CMC/PY/serum blend after the original
+    # source showed separate culture contexts, not one ingredient mixture.
+    assert len(parents) == 83
+    assert sum(len(record["components"]) for record in parents) == 502
 
 
 def test_curated_loader_reports_missing_and_invalid_yaml(tmp_path):

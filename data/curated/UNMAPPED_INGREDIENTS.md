@@ -1,8 +1,8 @@
 # Unmapped Ingredients Index
-**Total Records**: 275
+**Total Records**: 273
 **Mapped**: 0 (0.0%)
-**Unmapped**: 261 (94.9%)
-**Other statuses**: 14 (5.1%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Unmapped**: 261 (95.6%)
+**Other statuses**: 12 (4.4%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 597
 
 ---
@@ -288,7 +288,5 @@
 | UNMAPPED_0817 | Glycyl-L-bromosuccinic Glutamic Acid | REJECTED |  |  | 0 |
 | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
 | UNMAPPED_0734 | Tetrazolium | REJECTED |  |  | 0 |
-| UNMAPPED_0785 | 2-tetrachloroethane | AMBIGUOUS |  |  | 0 |
-| UNMAPPED_0696 | 2-dimethylsuccinic Acid | AMBIGUOUS |  |  | 0 |
-| UNMAPPED_0819 | Artepaulin | AMBIGUOUS |  |  | 0 |
+| UNMAPPED_0740 | CMC + PY + Horse Serum | AMBIGUOUS |  |  | 0 |
 

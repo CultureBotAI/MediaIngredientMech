@@ -1,0 +1,75 @@
+{
+  "before_sha256": "acc15e15aba5d42971a41d3d55369b47c0d5937e3db874d476eeda76058cc861",
+  "after_sha256": "e59d6b4d8de2a71a2ea84c5eb4a5a557bd1c79d3b52a32d0b8e8bdb42610e071",
+  "withdrawn_rows": [
+    {
+      "subject_id": "MIM:CMC_PY_Horse_Serum",
+      "subject_label": "CMC + PY + Horse Serum",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "kgmicrobe.ingredient:cmc_py_horse_serum",
+      "object_label": "CMC + PY + Horse Serum",
+      "object_source": "kgm:ingredient",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:MIM curation (#213/#308)|MIM:curator=migrate_component_partonomy",
+      "mapping_date": "2026-08-24",
+      "confidence": "0.9",
+      "comment": "",
+      "other": "",
+      "validation_method": "manual:move_mapped_out_of_unmapped_collection|MOVED|2026-08-15"
+    }
+  ],
+  "added_rows": [
+    {
+      "subject_id": "MIM:1122-Tetrachloroethane",
+      "subject_label": "1,1,2,2-tetrachloroethane",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:36026",
+      "object_label": "1,1,2,2-tetrachloroethane",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:curator=mim_semantic_review_710",
+      "mapping_date": "2026-09-21",
+      "confidence": "0.99",
+      "comment": "Original source identity recovered and checked; reports/semantic_review_20260921/resolution/identities/README.md",
+      "other": "1,1,2,2-Tetrachloroethane|2-tetrachloroethane",
+      "validation_method": "manual:original_source_identity_review|IDENTITY_REVIEWED|2026-09-21"
+    },
+    {
+      "subject_id": "MIM:2-dimethylsuccinic_Acid",
+      "subject_label": "2,2-dimethylsuccinic acid",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "CHEBI:86537",
+      "object_label": "2,2-dimethylsuccinic acid",
+      "object_source": "obo:chebi.owl",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:curator=mim_semantic_review_710",
+      "mapping_date": "2026-09-21",
+      "confidence": "0.99",
+      "comment": "Original source identity recovered and checked; reports/semantic_review_20260921/resolution/identities/README.md",
+      "other": "2-dimethylsuccinic Acid",
+      "validation_method": "manual:original_source_identity_review|IDENTITY_REVIEWED|2026-09-21"
+    },
+    {
+      "subject_id": "MIM:Artepaulin",
+      "subject_label": "Artepaulin",
+      "predicate_id": "skos:exactMatch",
+      "object_id": "cas:13902-54-0",
+      "object_label": "Artepaulin",
+      "object_source": "registry:cas",
+      "mapping_justification": "semapv:ManualMappingCuration",
+      "source": "MIM:curator=mim_semantic_review_710",
+      "mapping_date": "2026-09-21",
+      "confidence": "0.99",
+      "comment": "Original source identity recovered and checked; reports/semantic_review_20260921/resolution/identities/README.md",
+      "other": "CAS:13902-54-0",
+      "validation_method": "manual:original_source_identity_review|IDENTITY_REVIEWED|2026-09-21"
+    }
+  ],
+  "before_cas_lookup_repair_sha256": "5844a5525cbbce738c773e7bcdf3e33826e70b13bdd619f7bf04e82c201d9138",
+  "cas_lookup_repair": {
+    "issue": 719,
+    "command": "python scripts/publish_cas_as_synonym.py --apply",
+    "rows_changed": 1,
+    "token": "CAS:13902-54-0"
+  }
+}

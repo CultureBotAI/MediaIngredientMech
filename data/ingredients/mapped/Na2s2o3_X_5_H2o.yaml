@@ -193,6 +193,15 @@ curation_history:
     x 5 H20''. Tokens already present on the kg-microbe ontology node were left out
     as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-22T02:06:34+00:00'
+  curator: codex_issue_710_semantic_evidence_review
+  action: CORRECTED_ROLE_EVIDENCE
+  changes: Added inspected primary-publication support and bounded organism/condition
+    context to the cellular metabolic role (#710). Retained original computational
+    provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+    for the assertion-specific interpretation.
+  llm_assisted: true
+  llm_model: gpt-6
 kg_microbe_node_id: CHEBI:32150
 chemical_properties:
   cas_rn: 10102-17-7
@@ -209,3 +218,14 @@ cellular_metabolic_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+  - reference_type: PEER_REVIEWED_PUBLICATION
+    doi: 10.1128/AEM.02111-16
+    pmid: '27565613'
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5066360/
+    reference_text: Levy et al. (2016). Chlorobaculum tepidum modulates amino acid
+      composition in response to energy availability.
+    curator_note: The paper tests thiosulfate-fed cultures. Applying this role to
+      dissolved sodium thiosulfate pentahydrate is a chemical inference about the
+      supplied anion; the study does not establish a hydrate-specific growth comparison.
+  metabolic_context: Dissolved thiosulfate donor for Chlorobaculum tepidum WT2321
+    under the studied illuminated, anoxic culture conditions.

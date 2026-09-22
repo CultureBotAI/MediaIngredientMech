@@ -227,6 +227,15 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''Na2S2O3 (if needed)'' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-22T02:06:34+00:00'
+  curator: codex_issue_710_semantic_evidence_review
+  action: CORRECTED_ROLE_EVIDENCE
+  changes: Added inspected primary-publication support and bounded organism/condition
+    context to the cellular metabolic role (#710). Retained original computational
+    provenance and confidence. See reports/semantic_review_20260921/resolution/roles/cellular-role-plan.json
+    for the assertion-specific interpretation.
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 7772-98-7
   data_source: PubChem API
@@ -243,3 +252,12 @@ cellular_metabolic_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+  - reference_type: PEER_REVIEWED_PUBLICATION
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3382511/
+    reference_text: Kato et al. (2012). Microbial interspecies electron transfer via
+      electric currents through conductive minerals.
+    curator_note: The culture method supplies 20 mM sodium thiosulfate and 20 mM sodium
+      nitrate as donor and acceptor, respectively. Scope is limited to the studied
+      organism and conditions.
+  metabolic_context: Electron donor for Thiobacillus denitrificans during anaerobic
+    growth with nitrate as electron acceptor in aqueous mineral medium.

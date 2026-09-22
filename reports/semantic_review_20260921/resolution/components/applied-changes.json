@@ -1,0 +1,1041 @@
+[
+  {
+    "source_record": "data/ingredients/mapped/GYPS.yaml",
+    "before_sha256": "5350629f1b8d5282d374363962b0e495378c1da8a1fdc791c36a8cc2774e2c80",
+    "after_sha256": "36840ca128760eb0ac542753d24d155fd1ebb6ccd8229be130953a0d01f2cf6e",
+    "reason": "#710: traced GYPS to Caminicella sporogenes in original MicrobeDecoder data; replaced incorrect starch component with elemental sulfur using Alain et al. 2002 p.1622, changed guessed abbreviation evidence to source-specific partial recipe transcription, and corrected the limited CultureMech composition comparison.",
+    "sources": [
+      "https://doi.org/10.1099/00207713-52-5-1621",
+      "https://archimer.ifremer.fr/doc/2002/publication-528.pdf"
+    ],
+    "before": {
+      "identifier": "kgmicrobe.ingredient:gyps",
+      "preferred_term": "GYPS",
+      "synonyms": [
+        {
+          "synonym_text": "GYPS",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0,
+        "source_occurrences": [
+          {
+            "source": "microbedecoder",
+            "count": 1,
+            "source_columns": "bergey:substrates"
+          }
+        ]
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-08-04T02:54:09.684805+00:00",
+          "curator": "audit_import_ingredients[microbedecoder]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-05T00:01:30.894952+00:00",
+          "curator": "microbedecoder-residual-dispositions",
+          "action": "FLAGGED_NEEDS_EXPERT",
+          "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+          "previous_status": "UNMAPPED",
+          "new_status": "NEEDS_EXPERT",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "edison_literature_identity",
+          "action": "ANNOTATED",
+          "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/GYPS-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | Recommended status | Retain `UNMAPPED` / `NEEDS_EXPERT` | Current evidence supports that the label is ambiguous/recipe-variable and requires decomposition rather than single-term grounding (burgaud2013decipheringthepresence pages 2-4, cha2021culturablefungalcommunity pages 2-4, reis2024sustainableomega3lipid pages 2-4, kim2026improvementofgrowth pages 2-5) | No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "apply_curated_decompositions",
+          "action": "DECOMPOSED_FROM_CURATED_RESEARCH",
+          "previous_status": "NEEDS_EXPERT",
+          "new_status": "MAPPED",
+          "changes": "UNMAPPED_0755 -> kgmicrobe.ingredient:gyps (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split): the label names its constituents. 4 constituent(s), 4 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none. Cross-referenced to CultureMech medium CultureMech:002799 ('gyps_medium') via culturemech_medium_name, verified by COMPOSITION not by name: name matches exactly and 3 of 4 curated constituents agree (glucose, peptone, yeast extract); CultureMech additionally lists MES and Sea Salt and no starch, so the recipes are close but not identical.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-15T00:00:00+00:00",
+          "curator": "move_mapped_out_of_unmapped_collection",
+          "action": "MOVED_TO_MAPPED_COLLECTION",
+          "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00+00:00",
+          "curator": "migrate_component_partonomy",
+          "action": "TYPED_COMPONENT_PARTONOMY",
+          "changes": "#369: added method/evidence/completeness and explicit reference scope to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and concentrations were not changed.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-27T18:00:01.745103+00:00",
+          "curator": "migrate_culturemech_reference",
+          "action": "CORRECTED",
+          "changes": "culturemech_medium_name='gyps_medium' -> culturemech_reference CultureMech:002799 (SIMILAR_COMPOSITION). The id was already in the evidence prose; a stable reference in a sentence is not a reference. Neither claim is strengthened: BHI was already composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical (#447)."
+        }
+      ],
+      "notes": "Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+      "components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "starch",
+          "component_id": "CHEBI:28017",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "GYPS",
+            "notes": "Reviewed row: strategy=split, confidence=medium; Glucose-Yeast-Peptone (DSMZ Medium 852) + Salts (or Starch). Same set as PYG family, reordered."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "ingredient_type": "UNDEFINED_MIXTURE",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:gyps",
+        "ontology_label": "GYPS",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#213/#308)",
+            "notes": "Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split): the label names its constituents. 4 constituent(s), 4 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none. Cross-referenced to CultureMech medium CultureMech:002799 ('gyps_medium') via culturemech_medium_name, verified by COMPOSITION not by name: name matches exactly and 3 of 4 curated constituents agree (glucose, peptone, yeast extract); CultureMech additionally lists MES and Sea Salt and no starch, so the recipes are close but not identical."
+          }
+        ]
+      },
+      "culturemech_reference": {
+        "medium_id": "CultureMech:002799",
+        "medium_name": "gyps_medium",
+        "relationship": "SIMILAR_COMPOSITION",
+        "source_path": "data/normalized_yaml/bacterial/gyps_medium.yaml",
+        "evidence": "Close but NOT identical, so deliberately not EXACT_FORMULATION. 3 of 4 curated constituents agree (glucose, peptone, yeast extract); CultureMech additionally lists MES and Sea Salt and no starch. The names match exactly, which is precisely why the name is not the evidence (#213/#308)."
+      }
+    },
+    "after": {
+      "identifier": "kgmicrobe.ingredient:gyps",
+      "preferred_term": "GYPS",
+      "synonyms": [
+        {
+          "synonym_text": "GYPS",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0,
+        "source_occurrences": [
+          {
+            "source": "microbedecoder",
+            "count": 1,
+            "source_columns": "bergey:substrates"
+          }
+        ]
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-08-04T02:54:09.684805+00:00",
+          "curator": "audit_import_ingredients[microbedecoder]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:gyps); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-05T00:01:30.894952+00:00",
+          "curator": "microbedecoder-residual-dispositions",
+          "action": "FLAGGED_NEEDS_EXPERT",
+          "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+          "previous_status": "UNMAPPED",
+          "new_status": "NEEDS_EXPERT",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "edison_literature_identity",
+          "action": "ANNOTATED",
+          "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/GYPS-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | Recommended status | Retain `UNMAPPED` / `NEEDS_EXPERT` | Current evidence supports that the label is ambiguous/recipe-variable and requires decomposition rather than single-term grounding (burgaud2013decipheringthepresence pages 2-4, cha2021culturablefungalcommunity pages 2-4, reis2024sustainableomega3lipid pages 2-4, kim2026improvementofgrowth pages 2-5) | No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "apply_curated_decompositions",
+          "action": "DECOMPOSED_FROM_CURATED_RESEARCH",
+          "previous_status": "NEEDS_EXPERT",
+          "new_status": "MAPPED",
+          "changes": "UNMAPPED_0755 -> kgmicrobe.ingredient:gyps (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split): the label names its constituents. 4 constituent(s), 4 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none. Cross-referenced to CultureMech medium CultureMech:002799 ('gyps_medium') via culturemech_medium_name, verified by COMPOSITION not by name: name matches exactly and 3 of 4 curated constituents agree (glucose, peptone, yeast extract); CultureMech additionally lists MES and Sea Salt and no starch, so the recipes are close but not identical.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-15T00:00:00+00:00",
+          "curator": "move_mapped_out_of_unmapped_collection",
+          "action": "MOVED_TO_MAPPED_COLLECTION",
+          "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00+00:00",
+          "curator": "migrate_component_partonomy",
+          "action": "TYPED_COMPONENT_PARTONOMY",
+          "changes": "#369: added method/evidence/completeness and explicit reference scope to 4 existing component(s) (MIM_CATALOG); constituent names, identifiers, and concentrations were not changed.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-27T18:00:01.745103+00:00",
+          "curator": "migrate_culturemech_reference",
+          "action": "CORRECTED",
+          "changes": "culturemech_medium_name='gyps_medium' -> culturemech_reference CultureMech:002799 (SIMILAR_COMPOSITION). The id was already in the evidence prose; a stable reference in a sentence is not a reference. Neither claim is strengthened: BHI was already composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical (#447)."
+        },
+        {
+          "timestamp": "2026-09-21T00:00:00+00:00",
+          "curator": "mim-semantic-evidence-review",
+          "action": "CORRECTED",
+          "changes": "#710: traced GYPS to Caminicella sporogenes in original MicrobeDecoder data; replaced incorrect starch component with elemental sulfur using Alain et al. 2002 p.1622, changed guessed abbreviation evidence to source-specific partial recipe transcription, and corrected the limited CultureMech composition comparison.",
+          "llm_assisted": true
+        }
+      ],
+      "notes": "MicrobeDecoder source label GYPS for Caminicella sporogenes; original species-description recipe resolves the component expansion. Local registry identity is retained; this is not a universal GYPS formulation.",
+      "components": [
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+        },
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+        },
+        {
+          "component_name": "elemental sulfur",
+          "component_id": "CHEBI:33403",
+          "reference_scope": "MIM_CATALOG",
+          "source": "https://doi.org/10.1099/00207713-52-5-1621 (p. 1622; Caminicella sporogenes GYPS medium)"
+        }
+      ],
+      "component_assertion": {
+        "method": "RECIPE_TRANSCRIPTION",
+        "completeness": "PARTIAL",
+        "evidence": [
+          {
+            "evidence_type": "RECIPE_SOURCE",
+            "source": "https://doi.org/10.1099/00207713-52-5-1621",
+            "source_record": "p. 1622, Culture medium and conditions",
+            "notes": "Original Caminicella sporogenes description explicitly defines GYPS using glucose, yeast extract, peptone and elemental sulfur. This partial constituent list omits documented sea salts, buffer, redox indicator and reducing agent; quantities are not projected."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "reports/semantic_review_20260921/resolution/components/source-contexts.json",
+            "source_record": "database.csv row 3351; Bergey doi:10.1002/9781118960608.gbm00618",
+            "notes": "Exact raw MicrobeDecoder substrate label GYPS belongs to Caminicella sporogenes. This source context distinguishes the preparation from unrelated GYPS expansions."
+          }
+        ],
+        "notes": "Source-specific partial partonomy. S means sulfur here, not starch. Original guessed assertions are retained in the review before-records.json audit."
+      },
+      "ingredient_type": "UNDEFINED_MIXTURE",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:gyps",
+        "ontology_label": "GYPS",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM semantic evidence review (#710)",
+            "notes": "Local registry identity denotes the source label. Component membership is separately supported by the source-specific recipe transcription; it is not an ontology equivalence assertion."
+          }
+        ]
+      },
+      "culturemech_reference": {
+        "medium_id": "CultureMech:002799",
+        "medium_name": "gyps_medium",
+        "relationship": "SIMILAR_COMPOSITION",
+        "source_path": "data/normalized_yaml/bacterial/gyps_medium.yaml",
+        "evidence": "Compared source-specific Alain et al. 2002 p.1622 GYPS with CultureMech:002799 (JCM J449). Both specify glucose 5 g/L, yeast extract 0.5 g/L, peptone 1 g/L and sea salts 30 g/L. J449 uses MES 3.9 g/L and pH 6.0; the original uses PIPES 6.05 g/L, sulfur 12 g/L and pH 7.5 plus reducing agent and redox indicator. This substantiates composition similarity, not exact identity or a documented variant relationship."
+      }
+    }
+  },
+  {
+    "source_record": "data/ingredients/mapped/BHI.yaml",
+    "before_sha256": "82a2fe8d90aa38036cb153f3e7bd0304e693be2145ab4545cc2e02b35830d44e",
+    "after_sha256": "8a92a45109104ea66b2df383dcb5b22a82683e29d201ba493125cf35e968ce0d",
+    "reason": "#710: withdrew unsupported EXACT_FORMULATION equivalence to CultureMech:015492; retained the link only as CANDIDATE_UNVERIFIED because the source-specific BHI recipe and quantities were not compared. Original claim is preserved in the review audit.",
+    "sources": [
+      "https://doi.org/10.1002/9781118960608.gbm00644",
+      "https://www.atcc.org/products/baa-675"
+    ],
+    "before": {
+      "identifier": "kgmicrobe.ingredient:bhi",
+      "preferred_term": "BHI",
+      "synonyms": [
+        {
+          "synonym_text": "BHI",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0,
+        "source_occurrences": [
+          {
+            "source": "microbedecoder",
+            "count": 2,
+            "source_columns": "bergey:substrates"
+          }
+        ]
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-08-04T02:54:09.684805+00:00",
+          "curator": "audit_import_ingredients[microbedecoder]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-05T00:01:30.894952+00:00",
+          "curator": "microbedecoder-residual-dispositions",
+          "action": "FLAGGED_NEEDS_EXPERT",
+          "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+          "previous_status": "UNMAPPED",
+          "new_status": "NEEDS_EXPERT",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "edison_literature_identity",
+          "action": "ANNOTATED",
+          "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/BHI-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | Recommended status | **UNMAPPED** for single-ingredient identity curation, or retain a **non-identity formulation-family handling** if the data model supports named media/formulations. Do **not** map as a single chemical ingredient (le2023anewisolation pages 1-2, atlas2004handbookofmicrobiological pages 8-10) | No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "apply_curated_decompositions",
+          "action": "DECOMPOSED_FROM_CURATED_RESEARCH",
+          "previous_status": "NEEDS_EXPERT",
+          "new_status": "MAPPED",
+          "changes": "UNMAPPED_0716 -> kgmicrobe.ingredient:bhi (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium): it is a named medium and these are what the recipe contains. 1 constituent(s), 1 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none. Cross-referenced to CultureMech medium CultureMech:015492 ('BHI') via culturemech_medium_name, verified by COMPOSITION not by name: composition Beef heart + Calf brains + Proteose Peptone + Disodium phosphate + Sodium Chloride is brain heart infusion.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-15T00:00:00+00:00",
+          "curator": "move_mapped_out_of_unmapped_collection",
+          "action": "MOVED_TO_MAPPED_COLLECTION",
+          "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00+00:00",
+          "curator": "migrate_component_partonomy",
+          "action": "REMOVED_NON_PARTONOMIC_COMPONENTS",
+          "changes": "#369: BHI to MICRO:0000193 brain heart infusion is a whole-medium identity/alias claim, not a has-part edge. The component was removed; identity cleanup must be handled separately. Replaced the active mapping evidence that described the false component claim; registry identity and ingredient type were not changed.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-27T18:00:01.744834+00:00",
+          "curator": "migrate_culturemech_reference",
+          "action": "CORRECTED",
+          "changes": "culturemech_medium_name='BHI' -> culturemech_reference CultureMech:015492 (EXACT_FORMULATION). The id was already in the evidence prose; a stable reference in a sentence is not a reference. Neither claim is strengthened: BHI was already composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical (#447)."
+        }
+      ],
+      "notes": "Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+      "ingredient_type": "UNDEFINED_MIXTURE",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:bhi",
+        "ontology_label": "BHI",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#369)",
+            "notes": "Registry identity retained while the whole-record grounding is reviewed separately. Corrected prior active evidence: BHI to MICRO:0000193 brain heart infusion is a whole-medium identity/alias claim, not a has-part edge. The component was removed; identity cleanup must be handled separately."
+          }
+        ]
+      },
+      "culturemech_reference": {
+        "medium_id": "CultureMech:015492",
+        "medium_name": "BHI",
+        "relationship": "EXACT_FORMULATION",
+        "source_path": "data/normalized_yaml/specialized/bhi.yaml",
+        "evidence": "Verified by composition, not by name: CultureMech:015492 lists Beef heart + Calf brains + Proteose Peptone + Disodium phosphate + Sodium Chloride, which is brain heart infusion. The name agreeing is incidental — it was the composition that was checked (#213/#308)."
+      }
+    },
+    "after": {
+      "identifier": "kgmicrobe.ingredient:bhi",
+      "preferred_term": "BHI",
+      "synonyms": [
+        {
+          "synonym_text": "BHI",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0,
+        "source_occurrences": [
+          {
+            "source": "microbedecoder",
+            "count": 2,
+            "source_columns": "bergey:substrates"
+          }
+        ]
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-08-04T02:54:09.684805+00:00",
+          "curator": "audit_import_ingredients[microbedecoder]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:bhi); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-05T00:01:30.894952+00:00",
+          "curator": "microbedecoder-residual-dispositions",
+          "action": "FLAGGED_NEEDS_EXPERT",
+          "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+          "previous_status": "UNMAPPED",
+          "new_status": "NEEDS_EXPERT",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "edison_literature_identity",
+          "action": "ANNOTATED",
+          "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/BHI-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: | Recommended status | **UNMAPPED** for single-ingredient identity curation, or retain a **non-identity formulation-family handling** if the data model supports named media/formulations. Do **not** map as a single chemical ingredient (le2023anewisolation pages 1-2, atlas2004handbookofmicrobiological pages 8-10) | No ontology CURIE was proposed. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "apply_curated_decompositions",
+          "action": "DECOMPOSED_FROM_CURATED_RESEARCH",
+          "previous_status": "NEEDS_EXPERT",
+          "new_status": "MAPPED",
+          "changes": "UNMAPPED_0716 -> kgmicrobe.ingredient:bhi (FALLBACK_REGISTRY). Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=map_to_medium): it is a named medium and these are what the recipe contains. 1 constituent(s), 1 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none. Cross-referenced to CultureMech medium CultureMech:015492 ('BHI') via culturemech_medium_name, verified by COMPOSITION not by name: composition Beef heart + Calf brains + Proteose Peptone + Disodium phosphate + Sodium Chloride is brain heart infusion.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-15T00:00:00+00:00",
+          "curator": "move_mapped_out_of_unmapped_collection",
+          "action": "MOVED_TO_MAPPED_COLLECTION",
+          "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00+00:00",
+          "curator": "migrate_component_partonomy",
+          "action": "REMOVED_NON_PARTONOMIC_COMPONENTS",
+          "changes": "#369: BHI to MICRO:0000193 brain heart infusion is a whole-medium identity/alias claim, not a has-part edge. The component was removed; identity cleanup must be handled separately. Replaced the active mapping evidence that described the false component claim; registry identity and ingredient type were not changed.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-27T18:00:01.744834+00:00",
+          "curator": "migrate_culturemech_reference",
+          "action": "CORRECTED",
+          "changes": "culturemech_medium_name='BHI' -> culturemech_reference CultureMech:015492 (EXACT_FORMULATION). The id was already in the evidence prose; a stable reference in a sentence is not a reference. Neither claim is strengthened: BHI was already composition-verified as the same formulation, GYPS was already recorded as close-but-not-identical (#447)."
+        },
+        {
+          "timestamp": "2026-09-21T00:00:00+00:00",
+          "curator": "mim-semantic-evidence-review",
+          "action": "CORRECTED",
+          "changes": "#710: withdrew unsupported EXACT_FORMULATION equivalence to CultureMech:015492; retained the link only as CANDIDATE_UNVERIFIED because the source-specific BHI recipe and quantities were not compared. Original claim is preserved in the review audit.",
+          "llm_assisted": true
+        }
+      ],
+      "notes": "BHI is a source label for Hespellia porcina in MicrobeDecoder. Its CultureMech link is an unverified candidate pending original recipe comparison; no exact formulation equivalence is asserted.",
+      "ingredient_type": "UNDEFINED_MIXTURE",
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:bhi",
+        "ontology_label": "BHI",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#369)",
+            "notes": "Registry identity retained while the whole-record grounding is reviewed separately. Corrected prior active evidence: BHI to MICRO:0000193 brain heart infusion is a whole-medium identity/alias claim, not a has-part edge. The component was removed; identity cleanup must be handled separately."
+          }
+        ]
+      },
+      "culturemech_reference": {
+        "medium_id": "CultureMech:015492",
+        "medium_name": "BHI",
+        "relationship": "CANDIDATE_UNVERIFIED",
+        "source_path": "data/normalized_yaml/specialized/bhi.yaml",
+        "evidence": "MicrobeDecoder source BHI is recorded for Hespellia porcina (database.csv row 8022; Bergey doi:10.1002/9781118960608.gbm00644). CultureMech:015492 is a CultureBotHT/FEBA brain-heart-infusion salt broth without supplements. The original MicrobeDecoder formulation and quantities are unavailable in that row. Common constituent names and abbreviation agreement do not establish either exact formulation or a verified source-specific composition comparison; retain only an unverified candidate."
+      }
+    }
+  },
+  {
+    "source_record": "data/ingredients/mapped/CMC_PY_Horse_Serum.yaml",
+    "after_path": "data/ingredients/unmapped/CMC_PY_Horse_Serum.yaml",
+    "before_sha256": "5e8e7958c7c85e55dd772304e8644d2116a91f4799ab24459672f238260e071f",
+    "after_sha256": "39e3ff65e31ecd99696afd0b2d3429fba96751361b019a92933e136372b74077",
+    "reason": "#710: original species-description evidence disproves carboxymethylcellulose expansion and a single CMC/PY/serum mixture. Withdrew all four invented component edges and fallback identity, restored UNMAPPED_0740, marked AMBIGUOUS and moved to unmapped. Kept original raw label; full withdrawn claims and prior source record are preserved in reports/semantic_review_20260921/resolution/components/before-records.json.",
+    "sources": [
+      "https://www.microbiologyresearch.org/content/journal/ijsem/10.1099/00207713-29-3-241",
+      "https://doi.org/10.1002/9781118960608.gbm00667"
+    ],
+    "before": {
+      "identifier": "kgmicrobe.ingredient:cmc_py_horse_serum",
+      "preferred_term": "CMC + PY + Horse Serum",
+      "synonyms": [
+        {
+          "synonym_text": "CMC + PY + Horse Serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0,
+        "source_occurrences": [
+          {
+            "source": "microbedecoder",
+            "count": 1,
+            "source_columns": "bergey:substrates"
+          }
+        ]
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-08-04T02:54:09.684805+00:00",
+          "curator": "audit_import_ingredients[microbedecoder]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-05T00:01:30.894952+00:00",
+          "curator": "microbedecoder-residual-dispositions",
+          "action": "FLAGGED_NEEDS_EXPERT",
+          "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+          "previous_status": "UNMAPPED",
+          "new_status": "NEEDS_EXPERT",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "edison_literature_identity",
+          "action": "ANNOTATED",
+          "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CMC_PY_Horse_Serum-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** a **composite culture-medium recipe shorthand**, not a single chemical, salt/hydrate, commercial product, or uniquely defined named medium. The most defensible decomposition is: CURIEs discussed: UBERON:0001977. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "decompose_substrate_combinations",
+          "action": "DECOMPOSED_TO_COMPONENTS",
+          "previous_status": "NEEDS_EXPERT",
+          "new_status": "MAPPED",
+          "changes": "UNMAPPED_0740 -> kgmicrobe.ingredient:cmc_py_horse_serum (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'CMC + PY + Horse Serum', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv; PY carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an undefined preparation. No concentrations are recorded: the label states none.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "apply_curated_decompositions",
+          "action": "REPLACED_COMPONENTS_WITH_CURATED",
+          "changes": "components replaced with the curated research decomposition, superseding the label split. Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split): the label names its constituents. 4 constituent(s), 4 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-15T00:00:00+00:00",
+          "curator": "move_mapped_out_of_unmapped_collection",
+          "action": "MOVED_TO_MAPPED_COLLECTION",
+          "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00+00:00",
+          "curator": "migrate_component_partonomy",
+          "action": "TYPED_COMPONENT_PARTONOMY",
+          "changes": "#369: added method/evidence/completeness and explicit reference scope to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names, identifiers, and concentrations were not changed.",
+          "llm_assisted": false
+        }
+      ],
+      "notes": "Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+      "ingredient_type": "UNDEFINED_MIXTURE",
+      "components": [
+        {
+          "component_name": "carboxymethylcellulose",
+          "component_id": "CHEBI:85146",
+          "reference_scope": "EXTERNAL_TERM",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "peptone",
+          "component_id": "MICRO:0000178",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "horse serum",
+          "component_id": "MICRO:0001235",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "CMC + PY + Horse Serum",
+            "notes": "Reviewed row: strategy=split, confidence=high; Cellulolytic-anaerobe medium; CMC carbon source in PY base + horse serum."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:cmc_py_horse_serum",
+        "ontology_label": "CMC + PY + Horse Serum",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#213/#308)",
+            "notes": "The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'CMC + PY + Horse Serum', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv; PY carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an undefined preparation. No concentrations are recorded: the label states none."
+          }
+        ]
+      }
+    },
+    "after": {
+      "identifier": "UNMAPPED_0740",
+      "preferred_term": "CMC + PY + Horse Serum",
+      "synonyms": [
+        {
+          "synonym_text": "CMC + PY + Horse Serum",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "mapping_status": "AMBIGUOUS",
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0,
+        "source_occurrences": [
+          {
+            "source": "microbedecoder",
+            "count": 1,
+            "source_columns": "bergey:substrates"
+          }
+        ]
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-08-04T02:54:09.684805+00:00",
+          "curator": "audit_import_ingredients[microbedecoder]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:cmc_py_horse_serum); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-05T00:01:30.894952+00:00",
+          "curator": "microbedecoder-residual-dispositions",
+          "action": "FLAGGED_NEEDS_EXPERT",
+          "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+          "previous_status": "UNMAPPED",
+          "new_status": "NEEDS_EXPERT",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "edison_literature_identity",
+          "action": "ANNOTATED",
+          "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/CMC_PY_Horse_Serum-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended interpretation:** a **composite culture-medium recipe shorthand**, not a single chemical, salt/hydrate, commercial product, or uniquely defined named medium. The most defensible decomposition is: CURIEs discussed: UBERON:0001977. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "decompose_substrate_combinations",
+          "action": "DECOMPOSED_TO_COMPONENTS",
+          "previous_status": "NEEDS_EXPERT",
+          "new_status": "MAPPED",
+          "changes": "UNMAPPED_0740 -> kgmicrobe.ingredient:cmc_py_horse_serum (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'CMC + PY + Horse Serum', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 2 of 3 constituents resolve to existing MIM records via docs/data/label_index.csv; PY carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an undefined preparation. No concentrations are recorded: the label states none.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "apply_curated_decompositions",
+          "action": "REPLACED_COMPONENTS_WITH_CURATED",
+          "changes": "components replaced with the curated research decomposition, superseding the label split. Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split): the label names its constituents. 4 constituent(s), 4 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-15T00:00:00+00:00",
+          "curator": "move_mapped_out_of_unmapped_collection",
+          "action": "MOVED_TO_MAPPED_COLLECTION",
+          "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00+00:00",
+          "curator": "migrate_component_partonomy",
+          "action": "TYPED_COMPONENT_PARTONOMY",
+          "changes": "#369: added method/evidence/completeness and explicit reference scope to 4 existing component(s) (EXTERNAL_TERM, MIM_CATALOG); constituent names, identifiers, and concentrations were not changed.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-09-21T00:00:00+00:00",
+          "curator": "mim-semantic-evidence-review",
+          "action": "CORRECTED",
+          "changes": "#710: original species-description evidence disproves carboxymethylcellulose expansion and a single CMC/PY/serum mixture. Withdrew all four invented component edges and fallback identity, restored UNMAPPED_0740, marked AMBIGUOUS and moved to unmapped. Kept original raw label; full withdrawn claims and prior source record are preserved in reports/semantic_review_20260921/resolution/components/before-records.json.",
+          "previous_status": "MAPPED",
+          "new_status": "AMBIGUOUS",
+          "llm_assisted": true
+        }
+      ],
+      "notes": "MicrobeDecoder flattened separate Filifactor villosus culture contexts into CMC + PY + Horse Serum. Love et al. 1979 (doi:10.1099/00207713-29-3-241) describes cooked meat-carbohydrate and peptone-yeast extract cultures supplemented with horse serum. CMC is not carboxymethylcellulose here. This source expression is retained as AMBIGUOUS until separate source preparations are represented; it has no asserted single-mixture components or ontology identity."
+    }
+  },
+  {
+    "source_record": "data/ingredients/mapped/TYGVS_Glucose.yaml",
+    "before_sha256": "689fb39c671e99636488c16438ba026133be33b0421ef394f2517769911b150c",
+    "after_sha256": "0914aecb007a71a9f4e010c08b24d55c1b02b1b522c32a8c5384bc56d5959c6e",
+    "reason": "#710: recovered original Treponema medium source context for TYGVS + glucose and explicitly retained the existing decomposition as unverified. Adversarial comparison found Trypticase/Tryptone differences between primary oral-medium protocols; no constituent identity or assertion method was promoted from those different-species recipes.",
+    "sources": [
+      "https://doi.org/10.1099/00207713-47-1-67",
+      "https://academic.oup.com/femspd/article/60/3/251/530699",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC145376/"
+    ],
+    "before": {
+      "identifier": "kgmicrobe.ingredient:tygvs_glucose",
+      "preferred_term": "TYGVS + Glucose",
+      "synonyms": [
+        {
+          "synonym_text": "TYGVS + Glucose",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0,
+        "source_occurrences": [
+          {
+            "source": "microbedecoder",
+            "count": 1,
+            "source_columns": "bergey:substrates"
+          }
+        ]
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-08-04T02:54:09.684805+00:00",
+          "curator": "audit_import_ingredients[microbedecoder]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:tygvs_glucose); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-05T00:01:30.894952+00:00",
+          "curator": "microbedecoder-residual-dispositions",
+          "action": "FLAGGED_NEEDS_EXPERT",
+          "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+          "previous_status": "UNMAPPED",
+          "new_status": "NEEDS_EXPERT",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "edison_literature_identity",
+          "action": "ANNOTATED",
+          "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TYGVS_Glucose-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended entity class:** named culture-medium formulation / multi-component mixture. It is not a salt, hydrate, buffer, extract alone, or commercial single-product identity. CURIEs discussed: CHEBI:17234. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "decompose_substrate_combinations",
+          "action": "DECOMPOSED_TO_COMPONENTS",
+          "previous_status": "NEEDS_EXPERT",
+          "new_status": "MAPPED",
+          "changes": "UNMAPPED_0776 -> kgmicrobe.ingredient:tygvs_glucose (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'TYGVS + Glucose', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv; TYGVS carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an undefined preparation. No concentrations are recorded: the label states none.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "apply_curated_decompositions",
+          "action": "REPLACED_COMPONENTS_WITH_CURATED",
+          "changes": "components replaced with the curated research decomposition, superseding the label split. Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split): the label names its constituents. 4 constituent(s), 3 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-15T00:00:00+00:00",
+          "curator": "move_mapped_out_of_unmapped_collection",
+          "action": "MOVED_TO_MAPPED_COLLECTION",
+          "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00+00:00",
+          "curator": "migrate_component_partonomy",
+          "action": "TYPED_COMPONENT_PARTONOMY",
+          "changes": "#369: added method/evidence/completeness and explicit reference scope to 4 existing component(s) (MIM_CATALOG, UNMAPPED); constituent names, identifiers, and concentrations were not changed.",
+          "llm_assisted": false
+        }
+      ],
+      "notes": "Imported from microbedecoder (source_id=kgmicrobe.compound:tygvs_glucose); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+      "ingredient_type": "UNDEFINED_MIXTURE",
+      "components": [
+        {
+          "component_name": "Trypticase peptone",
+          "component_id": "MICRO:0000175",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "volatile fatty acid mixture (undefined)",
+          "reference_scope": "UNMAPPED",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "TYGVS + Glucose",
+            "notes": "Reviewed row: strategy=split, confidence=medium; Trypticase-Yeast-Glucose-VFA-Salts rumen medium (Caldwell & Bryant 1966) + extra glucose. VFA mix = acetate/propionate/butyrate/isobutyrate/valerate/isovalerate; no single CURIE."
+          }
+        ],
+        "notes": "This is an ingredient/mixture has-part assertion, not an identity mapping, variant hierarchy, or complete culturing recipe."
+      },
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:tygvs_glucose",
+        "ontology_label": "TYGVS + Glucose",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM curation (#213/#308)",
+            "notes": "The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'TYGVS + Glucose', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv; TYGVS carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an undefined preparation. No concentrations are recorded: the label states none."
+          }
+        ]
+      }
+    },
+    "after": {
+      "identifier": "kgmicrobe.ingredient:tygvs_glucose",
+      "preferred_term": "TYGVS + Glucose",
+      "synonyms": [
+        {
+          "synonym_text": "TYGVS + Glucose",
+          "synonym_type": "RAW_TEXT",
+          "source": "microbedecoder"
+        }
+      ],
+      "mapping_status": "MAPPED",
+      "occurrence_statistics": {
+        "total_occurrences": 0,
+        "media_count": 0,
+        "source_occurrences": [
+          {
+            "source": "microbedecoder",
+            "count": 1,
+            "source_columns": "bergey:substrates"
+          }
+        ]
+      },
+      "curation_history": [
+        {
+          "timestamp": "2026-08-04T02:54:09.684805+00:00",
+          "curator": "audit_import_ingredients[microbedecoder]",
+          "action": "CREATED_AS_UNMAPPED",
+          "changes": "Imported from microbedecoder (source_id=kgmicrobe.compound:tygvs_glucose); no CAS-RN or CHEBI/NCIT match. Curator review needed.",
+          "new_status": "UNMAPPED",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-05T00:01:30.894952+00:00",
+          "curator": "microbedecoder-residual-dispositions",
+          "action": "FLAGGED_NEEDS_EXPERT",
+          "changes": "Not a single-compound grounding target: multi-component blend or named medium; no single ontology term grounds it -- needs decomposition into constituents.",
+          "previous_status": "UNMAPPED",
+          "new_status": "NEEDS_EXPERT",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-06T00:00:00+00:00",
+          "curator": "edison_literature_identity",
+          "action": "ANNOTATED",
+          "changes": "Edison LITERATURE (PaperQA3) identity research; report at research/ingredients/TYGVS_Glucose-edison-literature.md (local artifact — research/ is gitignored, so the findings are quoted here rather than linked). Report verdict: **Recommended entity class:** named culture-medium formulation / multi-component mixture. It is not a salt, hydrate, buffer, extract alone, or commercial single-product identity. CURIEs discussed: CHEBI:17234. Recorded as provenance only — no grounding applied from this run. Edison's recommendations are deliberately conservative, and a plausible identifier promoted by a mechanism that never decided anything is what #203 and #263 exist to undo. Any CURIE above is a curator's to accept or reject.",
+          "llm_assisted": true
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "decompose_substrate_combinations",
+          "action": "DECOMPOSED_TO_COMPONENTS",
+          "previous_status": "NEEDS_EXPERT",
+          "new_status": "MAPPED",
+          "changes": "UNMAPPED_0776 -> kgmicrobe.ingredient:tygvs_glucose (FALLBACK_REGISTRY). The label enumerates its own constituents, so this is a decomposition rather than a mapping: no ontology has a term for 'TYGVS + Glucose', and none could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION convention and split on '+', which transcribes the label rather than inferring anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv; TYGVS carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE because at least one constituent is itself an undefined preparation. No concentrations are recorded: the label states none.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-14T00:00:00+00:00",
+          "curator": "apply_curated_decompositions",
+          "action": "REPLACED_COMPONENTS_WITH_CURATED",
+          "changes": "components replaced with the curated research decomposition, superseding the label split. Components taken from the curated microbedecoder research decomposition (mappings/microbedecoder_residual_research_decomposition.tsv, strategy=split): the label names its constituents. 4 constituent(s), 3 carrying an identifier. That file was produced by the research pass and never written into the records; this applies it. It resolves constituents a label split cannot — abbreviations such as PY, and named media such as BHI, state no composition to split on. ingredient_type=UNDEFINED_MIXTURE. No concentrations are recorded: the curated row states none.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-15T00:00:00+00:00",
+          "curator": "move_mapped_out_of_unmapped_collection",
+          "action": "MOVED_TO_MAPPED_COLLECTION",
+          "changes": "Moved from unmapped_ingredients.yaml to mapped_ingredients.yaml (#370). The record was already MAPPED; it had been promoted in place by a path that does not move between collections, and reconcile_sssom reads only the mapped collection — so its mapping was curated but unpublished.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-08-24T00:00:00+00:00",
+          "curator": "migrate_component_partonomy",
+          "action": "TYPED_COMPONENT_PARTONOMY",
+          "changes": "#369: added method/evidence/completeness and explicit reference scope to 4 existing component(s) (MIM_CATALOG, UNMAPPED); constituent names, identifiers, and concentrations were not changed.",
+          "llm_assisted": false
+        },
+        {
+          "timestamp": "2026-09-21T00:00:00+00:00",
+          "curator": "mim-semantic-evidence-review",
+          "action": "ANNOTATED",
+          "changes": "#710: recovered original Treponema medium source context for TYGVS + glucose and explicitly retained the existing decomposition as unverified. Adversarial comparison found Trypticase/Tryptone differences between primary oral-medium protocols; no constituent identity or assertion method was promoted from those different-species recipes.",
+          "llm_assisted": true
+        }
+      ],
+      "notes": "MicrobeDecoder TYGVS + glucose belongs to Treponema medium. Its original formula is not yet verified; oral TYGVS protocols differ in named casein digest. The prior rumen-medium interpretation is not established, and the current inferred components remain provisional.",
+      "ingredient_type": "UNDEFINED_MIXTURE",
+      "components": [
+        {
+          "component_name": "Trypticase peptone",
+          "component_id": "MICRO:0000175",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "yeast extract",
+          "component_id": "FOODON:03315426",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "glucose",
+          "component_id": "CHEBI:17234",
+          "reference_scope": "MIM_CATALOG",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        },
+        {
+          "component_name": "volatile fatty acid mixture (undefined)",
+          "reference_scope": "UNMAPPED",
+          "source": "microbedecoder research decomposition (#213/#308)"
+        }
+      ],
+      "component_assertion": {
+        "method": "ABBREVIATION_EXPANSION",
+        "completeness": "UNKNOWN",
+        "evidence": [
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "mappings/microbedecoder_residual_research_decomposition.tsv",
+            "source_record": "TYGVS + Glucose",
+            "notes": "Reviewed row: strategy=split, confidence=medium; Trypticase-Yeast-Glucose-VFA-Salts rumen medium (Caldwell & Bryant 1966) + extra glucose. VFA mix = acetate/propionate/butyrate/isobutyrate/valerate/isovalerate; no single CURIE."
+          },
+          {
+            "evidence_type": "CURATED_DATASET",
+            "source": "reports/semantic_review_20260921/resolution/components/source-contexts.json",
+            "source_record": "database.csv row 20378; Bergey doi:10.1002/9781118960608.gbm01249",
+            "notes": "Source-context recovery identifies Treponema medium only. It does not verify the original inferred part list. Counterexamples in primary oral-medium methods name Trypticase (https://pmc.ncbi.nlm.nih.gov/articles/PMC145376/) versus Tryptone (https://academic.oup.com/femspd/article/60/3/251/530699). This provenance is not evidence of complete or exact composition."
+          }
+        ],
+        "notes": "Original inferred component claims remain unverified. Raw MicrobeDecoder context is Treponema medium, not a demonstrated rumen/Caldwell preparation. Later primary oral-medium recipes differ in named peptone (Trypticase versus Tryptone); matching the TYGVS acronym or oral context does not establish which preparation the original source used. The original recipe/citation chain must be inspected before constituent identity is certified."
+      },
+      "ontology_mapping": {
+        "ontology_id": "kgmicrobe.ingredient:tygvs_glucose",
+        "ontology_label": "TYGVS + Glucose",
+        "ontology_source": "kgmicrobe.ingredient",
+        "mapping_quality": "FALLBACK_REGISTRY",
+        "evidence": [
+          {
+            "evidence_type": "MANUAL_CURATION",
+            "source": "MIM semantic evidence review (#710)",
+            "notes": "Local registry label identity retained. It does not certify the still-provisional component decomposition or any particular TYGVS recipe."
+          }
+        ]
+      }
+    }
+  }
+]

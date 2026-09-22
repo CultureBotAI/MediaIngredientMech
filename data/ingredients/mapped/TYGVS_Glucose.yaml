@@ -83,8 +83,19 @@ curation_history:
     to 4 existing component(s) (MIM_CATALOG, UNMAPPED); constituent names, identifiers,
     and concentrations were not changed.'
   llm_assisted: false
-notes: Imported from microbedecoder (source_id=kgmicrobe.compound:tygvs_glucose);
-  no CAS-RN or CHEBI/NCIT match. Curator review needed.
+- timestamp: '2026-09-21T00:00:00+00:00'
+  curator: mim-semantic-evidence-review
+  action: ANNOTATED
+  changes: '#710: recovered original Treponema medium source context for TYGVS + glucose
+    and explicitly retained the existing decomposition as unverified. Adversarial
+    comparison found Trypticase/Tryptone differences between primary oral-medium protocols;
+    no constituent identity or assertion method was promoted from those different-species
+    recipes.'
+  llm_assisted: true
+notes: MicrobeDecoder TYGVS + glucose belongs to Treponema medium. Its original formula
+  is not yet verified; oral TYGVS protocols differ in named casein digest. The prior
+  rumen-medium interpretation is not established, and the current inferred components
+  remain provisional.
 ingredient_type: UNDEFINED_MIXTURE
 components:
 - component_name: Trypticase peptone
@@ -112,8 +123,20 @@ component_assertion:
     notes: 'Reviewed row: strategy=split, confidence=medium; Trypticase-Yeast-Glucose-VFA-Salts
       rumen medium (Caldwell & Bryant 1966) + extra glucose. VFA mix = acetate/propionate/butyrate/isobutyrate/valerate/isovalerate;
       no single CURIE.'
-  notes: This is an ingredient/mixture has-part assertion, not an identity mapping,
-    variant hierarchy, or complete culturing recipe.
+  - evidence_type: CURATED_DATASET
+    source: reports/semantic_review_20260921/resolution/components/source-contexts.json
+    source_record: database.csv row 20378; Bergey doi:10.1002/9781118960608.gbm01249
+    notes: Source-context recovery identifies Treponema medium only. It does not verify
+      the original inferred part list. Counterexamples in primary oral-medium methods
+      name Trypticase (https://pmc.ncbi.nlm.nih.gov/articles/PMC145376/) versus Tryptone
+      (https://academic.oup.com/femspd/article/60/3/251/530699). This provenance is
+      not evidence of complete or exact composition.
+  notes: Original inferred component claims remain unverified. Raw MicrobeDecoder
+    context is Treponema medium, not a demonstrated rumen/Caldwell preparation. Later
+    primary oral-medium recipes differ in named peptone (Trypticase versus Tryptone);
+    matching the TYGVS acronym or oral context does not establish which preparation
+    the original source used. The original recipe/citation chain must be inspected
+    before constituent identity is certified.
 ontology_mapping:
   ontology_id: kgmicrobe.ingredient:tygvs_glucose
   ontology_label: TYGVS + Glucose
@@ -121,12 +144,6 @@ ontology_mapping:
   mapping_quality: FALLBACK_REGISTRY
   evidence:
   - evidence_type: MANUAL_CURATION
-    source: MIM curation (#213/#308)
-    notes: 'The label enumerates its own constituents, so this is a decomposition
-      rather than a mapping: no ontology has a term for ''TYGVS + Glucose'', and none
-      could — a combination is not a substance. Minted under the #288 STOCK_SOLUTION
-      convention and split on ''+'', which transcribes the label rather than inferring
-      anything. 1 of 2 constituents resolve to existing MIM records via docs/data/label_index.csv;
-      TYGVS carries no component_id because MIM has no record for it. ingredient_type=UNDEFINED_MIXTURE
-      because at least one constituent is itself an undefined preparation. No concentrations
-      are recorded: the label states none.'
+    source: MIM semantic evidence review (#710)
+    notes: Local registry label identity retained. It does not certify the still-provisional
+      component decomposition or any particular TYGVS recipe.

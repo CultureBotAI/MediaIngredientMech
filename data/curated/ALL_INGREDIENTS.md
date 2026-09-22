@@ -1,8 +1,8 @@
 # Complete Ingredients Index
 **Total Records**: 2952
-**Mapped**: 2610 (88.4%)
+**Mapped**: 2612 (88.5%)
 **Unmapped**: 261 (8.8%)
-**Other statuses**: 81 (2.7%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 79 (2.7%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 218,621
 
 ---
@@ -28,7 +28,6 @@
 | kgmicrobe.ingredient:2_butanol_co2 | 2-butanol+CO2 | kgmicrobe.ingredient:2_butanol_co2 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:2_propanol_co2 | 2-propanol+CO2 | kgmicrobe.ingredient:2_propanol_co2 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:bhi | BHI | kgmicrobe.ingredient:bhi | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
-| kgmicrobe.ingredient:cmc_py_horse_serum | CMC + PY + Horse Serum | kgmicrobe.ingredient:cmc_py_horse_serum | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | Casitone + Yeast Extract + Rumen Fluid | kgmicrobe.ingredient:casitone_yeast_extract_rumen_fluid | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | Corn Steep Liquor + Glucose + Fumarate | kgmicrobe.ingredient:corn_steep_liquor_glucose_fumarate | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:cyclopentanol_co2 | Cyclopentanol+CO2 | kgmicrobe.ingredient:cyclopentanol_co2 | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
@@ -2621,6 +2620,9 @@
 | cas:1073-62-7 | Benzylhydrazine Hydrochloride | cas:1073-62-7 | CAS | FALLBACK_REGISTRY | 0 |
 | cas:542-32-5 | DL-2-Aminoadipic acid | cas:542-32-5 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:132766 | Nitrilotriacetic acid, trisodium salt | CHEBI:132766 | CHEBI | EXACT_MATCH | 1 |
+| CHEBI:36026 | 1,1,2,2-tetrachloroethane | CHEBI:36026 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:86537 | 2,2-dimethylsuccinic acid | CHEBI:86537 | CHEBI | EXACT_MATCH | 0 |
+| cas:13902-54-0 | Artepaulin | cas:13902-54-0 | CAS | FALLBACK_REGISTRY | 0 |
 
 ## Unmapped Ingredients
 
@@ -2970,7 +2972,5 @@
 | UNMAPPED_0817 | Glycyl-L-bromosuccinic Glutamic Acid | REJECTED |  |  | 0 |
 | kgmicrobe.compound:ethylenediamine_n_n_disuccinic_acid | N'-disuccinic Acid (EDDS) | REJECTED |  |  | 0 |
 | UNMAPPED_0734 | Tetrazolium | REJECTED |  |  | 0 |
-| UNMAPPED_0785 | 2-tetrachloroethane | AMBIGUOUS |  |  | 0 |
-| UNMAPPED_0696 | 2-dimethylsuccinic Acid | AMBIGUOUS |  |  | 0 |
-| UNMAPPED_0819 | Artepaulin | AMBIGUOUS |  |  | 0 |
+| UNMAPPED_0740 | CMC + PY + Horse Serum | AMBIGUOUS |  |  | 0 |
 

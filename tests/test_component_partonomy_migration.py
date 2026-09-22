@@ -1,9 +1,12 @@
 """The reviewed 57-record #369 migration is finite and idempotent."""
 
 import importlib.util
+import json
 import sys
 from copy import deepcopy
 from pathlib import Path
+
+import pytest
 
 from mediaingredientmech.validation.component_partonomy import (
     load_curated_records,
@@ -20,9 +23,17 @@ sys.modules[SPEC.name] = MIGRATION
 SPEC.loader.exec_module(MIGRATION)
 
 
-def test_migration_is_idempotent_and_has_reviewed_final_inventory():
+def test_migration_is_idempotent_on_its_historical_reviewed_inventory():
     records = load_curated_records(ROOT / "data" / "curated")
-    first = deepcopy(records)
+    # #710 corrected later source interpretations. The finite 2026-08 migration
+    # must be tested against its historical inputs, not overwrite fresh curation.
+    snapshot = json.loads(
+        (
+            ROOT / "reports/semantic_review_20260921/resolution/components/before-records.json"
+        ).read_text()
+    )
+    historical = {item["record"]["preferred_term"]: item["record"] for item in snapshot.values()}
+    first = [deepcopy(historical.get(record["preferred_term"], record)) for record in records]
     assert MIGRATION.migrate(first) == (54, 3)
     assert validate_component_partonomy(first) == []
 
@@ -55,3 +66,23 @@ def test_migration_is_idempotent_and_has_reviewed_final_inventory():
             event.get("action") == "REMOVED_NON_PARTONOMIC_COMPONENTS"
             for event in by_label[label].get("curation_history") or []
         )
+
+
+def test_historical_migration_refuses_current_reviewed_inventory_without_changes():
+    records = load_curated_records(ROOT / "data" / "curated")
+    before = deepcopy(records)
+    with pytest.raises(ValueError, match="neither the reviewed pre-migration"):
+        MIGRATION.migrate(records)
+    assert records == before
+
+    parents = [record for record in records if record.get("components")]
+    scopes = [
+        component["reference_scope"] for record in parents for component in record["components"]
+    ]
+    assert len(parents) == 83
+    assert len(scopes) == 502
+    # CMC's withdrawn false blend contained three catalog terms and one
+    # external term. Other component scopes were unchanged by #710.
+    assert scopes.count("MIM_CATALOG") == 488
+    assert scopes.count("EXTERNAL_TERM") == 9
+    assert scopes.count("UNMAPPED") == 5
