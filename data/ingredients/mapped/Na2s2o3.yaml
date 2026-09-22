@@ -28,13 +28,13 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: 2,5,8,11,14,17,20,23,26-nonaoxaoctacosan-28-ol
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: O-methyl-nonaethyleneglycol
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: nonaethylene glycol monomethyl ether
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Sodium thiosulphate
   synonym_type: EXACT_SYNONYM
@@ -227,6 +227,15 @@ curation_history:
     published label but were absent from MIM''s label index, so CultureMech could
     not resolve them: ''Na2S2O3 (if needed)'' (x2 CultureMech mentions). Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-20T00:00:00Z'
+  curator: retire_wrong_compound_synonyms
+  action: CORRECTED
+  changes: 'Marked 3 synonym(s) non-resolving: [''2,5,8,11,14,17,20,23,26-nonaoxaoctacosan-28-ol'',
+    ''O-methyl-nonaethyleneglycol'', ''nonaethylene glycol monomethyl ether'']. ChEBI
+    gives these names to CHEBI:59168, not to this record''s CHEBI:132112 -- sodium
+    thiosulfate is not a nonaethylene glycol ether. Kept as REJECTED_LABEL so a rebuild
+    cannot restore them from kg-microbe''s synonym list (#669).'
+  llm_assisted: true
 - timestamp: '2026-09-22T02:06:34+00:00'
   curator: codex_issue_710_semantic_evidence_review
   action: CORRECTED_ROLE_EVIDENCE

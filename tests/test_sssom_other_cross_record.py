@@ -102,16 +102,129 @@ def test_the_published_set_passes_rule_k():
     assert list(val.evaluate_rule_k(rows)) == []
 
 
-def test_merge_tombstone_releases_label_but_active_record_keeps_it(tmp_path, monkeypatch):
-    import yaml
-
-    path = tmp_path / 'loser.yaml'
-    monkeypatch.setattr(val, '_subject_to_path', lambda: {'MIM:Loser': path})
-    monkeypatch.setattr(val, '_other_baseline', frozenset)
+@pytest.mark.parametrize("status", ["MAPPED", "AMBIGUOUS"])
+def test_active_record_keeps_ownership_even_when_ambiguous(tmp_path, monkeypatch, status):
+    path = tmp_path / "active.yaml"
+    path.write_text(f"preferred_term: Old label\nmapping_status: {status}\n")
+    monkeypatch.setattr(val, "_subject_to_path", lambda: {"MIM:Active": path})
+    monkeypatch.setattr(val, "_other_baseline", frozenset)
     try:
-        for status, fails in [('REJECTED', False), ('MAPPED', True), ('AMBIGUOUS', True)]:
-            path.write_text(yaml.safe_dump({'preferred_term': 'Old label', 'mapping_status': status}))
-            val._preferred_term_owners.cache_clear()
-            assert bool(list(val.evaluate_rule_k(_rows(other='Old label')))) is fails
+        val._preferred_term_owners.cache_clear()
+        assert val._preferred_term_owners()["old label"] == frozenset({"MIM:Active"})
+        assert list(val.evaluate_rule_k(_rows(other="Old label")))
     finally:
         val._preferred_term_owners.cache_clear()
+
+
+def _tombstone_corpus(tmp_path, monkeypatch, target_identifier="CHEBI:30089", representative=None):
+    live = tmp_path / "Acetate.yaml"
+    live.write_text(
+        "identifier: CHEBI:30089\npreferred_term: Acetate\nmapping_status: MAPPED\n", encoding="utf-8"
+    )
+    other = tmp_path / "Sodium_Acetate.yaml"
+    other.write_text(
+        "identifier: CHEBI:32954\npreferred_term: Sodium acetate\nmapping_status: MAPPED\n",
+        encoding="utf-8",
+    )
+    tomb = tmp_path / "Acetate_Carbon_Source.yaml"
+    tombstone_text = (
+        f"identifier: {target_identifier}\npreferred_term: Acetate (carbon source)\n"
+        "mapping_status: REJECTED\n"
+    )
+    if representative is not None:
+        tombstone_text += f"representative: {representative}\n"
+    tomb.write_text(tombstone_text, encoding="utf-8")
+    monkeypatch.setattr(
+        val, "_subject_to_path",
+        lambda: {"MIM:Acetate": live, "MIM:Sodium_Acetate": other, "MIM:Acetate_Carbon_Source": tomb},
+    )
+    monkeypatch.setattr(val, "_other_baseline", frozenset)
+    val._preferred_term_owners.cache_clear()
+
+
+def test_a_merge_tombstones_name_belongs_to_its_target(tmp_path, monkeypatch):
+    """A REJECTED record under mapped/ is a merge tombstone (#669): the merge
+    moved the name to the live record sharing its identifier, so that record
+    carrying it is the rightful holder -- Rule K had baselined 51 such pairs."""
+    _tombstone_corpus(tmp_path, monkeypatch)
+    try:
+        assert val._preferred_term_owners()["acetate (carbon source)"] == frozenset({"MIM:Acetate"})
+        target_row = [{"subject_id": "MIM:Acetate", "other": "Acetate (carbon source)"}]
+        assert list(val.evaluate_rule_k(target_row)) == []
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+def test_a_tombstones_name_is_still_refused_to_everyone_else(tmp_path, monkeypatch):
+    """The first version of the #669 fix DROPPED the tombstone's name instead of
+    crediting it, which left it with no owner: any record could then publish it
+    unflagged. An adversarial review caught it -- ``MIM:Feso4`` carrying a
+    heptahydrate tombstone's name passed where ``main`` had flagged it."""
+    _tombstone_corpus(tmp_path, monkeypatch)
+    try:
+        thief = [{"subject_id": "MIM:Sodium_Acetate", "other": "Acetate (carbon source)"}]
+        findings = list(val.evaluate_rule_k(thief))
+        assert findings and "MIM:Acetate" in findings[0][2]
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+def test_a_rejected_record_with_no_live_target_keeps_its_own_name(tmp_path, monkeypatch):
+    """ "REJECTED means merged" is an observed fact, not an enforced invariant --
+    ``retire_assay_labels`` writes REJECTED records that were never merged. With
+    no live record sharing the identifier, the name must not become ownerless."""
+    _tombstone_corpus(tmp_path, monkeypatch, target_identifier="CHEBI:99999999")
+    try:
+        assert val._preferred_term_owners()["acetate (carbon source)"] == frozenset(
+            {"MIM:Acetate_Carbon_Source"}
+        )
+        assert list(val.evaluate_rule_k([{"subject_id": "MIM:Acetate", "other": "Acetate (carbon source)"}]))
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+def test_explicit_representative_owns_name_instead_of_old_identifier(tmp_path, monkeypatch):
+    """A corrected merge target wins over the loser's retained wrong identifier."""
+    _tombstone_corpus(
+        tmp_path, monkeypatch, target_identifier="CHEBI:32954", representative="CHEBI:30089"
+    )
+    try:
+        assert val._preferred_term_owners()["acetate (carbon source)"] == frozenset({"MIM:Acetate"})
+        assert not list(val.evaluate_rule_k(_rows("MIM:Acetate", "Acetate (carbon source)")))
+        assert list(val.evaluate_rule_k(_rows("MIM:Sodium_Acetate", "Acetate (carbon source)")))
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+@pytest.mark.parametrize("representative", ["CHEBI:99999999", ""])
+def test_missing_explicit_target_never_credits_former_identifier_owner(
+    tmp_path, monkeypatch, representative
+):
+    _tombstone_corpus(
+        tmp_path, monkeypatch, target_identifier="CHEBI:30089", representative=representative
+    )
+    try:
+        assert val._preferred_term_owners()["acetate (carbon source)"] == frozenset(
+            {"MIM:Acetate_Carbon_Source"}
+        )
+        assert list(val.evaluate_rule_k(_rows("MIM:Acetate", "Acetate (carbon source)")))
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+def test_the_baseline_has_no_unused_entries():
+    """A stale entry silently licenses the pair's reintroduction."""
+    text = (_REPO / "mappings" / "ingredient_mappings.sssom.tsv").read_text(encoding="utf-8")
+    rows = list(csv.DictReader([ln for ln in text.splitlines() if not ln.startswith("#")], delimiter="\t"))
+    val._preferred_term_owners.cache_clear()
+    owners = val._preferred_term_owners()
+    live = set()
+    for row in rows:
+        subject = (row.get("subject_id") or "").strip()
+        for token in (row.get("other") or "").split("|"):
+            token = token.strip()
+            holder = owners.get(token.casefold()) if token else None
+            if holder and subject not in holder:
+                live.add((subject, token.casefold()))
+    unused = sorted(val._other_baseline() - live)
+    assert not unused, f"baseline entries matching no live violation: {unused[:5]}"
