@@ -115,3 +115,7 @@ Use [curate-yaml-record](.claude/skills/curate-yaml-record/SKILL.md) to audit or
 curate one ingredient record. It applies the identity and mapping contract,
 keeps the individual/aggregate/SSSOM surfaces synchronized, and is read-only
 when the request asks only for review.
+
+Use [review-yaml-category](.claude/skills/review-yaml-category/SKILL.md) to
+audit a coherent ingredient category or cohort without editing records,
+including member selection and lump/split boundaries.
