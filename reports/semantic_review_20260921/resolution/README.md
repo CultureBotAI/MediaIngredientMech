@@ -6,14 +6,14 @@ verdict; this release does not change that verdict or erase its findings.
 
 | Artifact | Scope | Count |
 | --- | --- | ---: |
-| Supported KGX nodes | All active ingredient record references plus referenced terms | 4,588 |
+| Supported KGX nodes | All active ingredient record references plus referenced terms | 4,587 |
 | Active ingredient record nodes | Source labels and paths; no unreviewed identity annotations | 2,874 |
-| Supported KGX edges | Individually reviewed assertions | 2,113 |
-| Supported SSSOM | Reviewed mapping rows | 1,604 |
+| Supported KGX edges | Individually reviewed assertions | 2,112 |
+| Supported SSSOM | Reviewed mapping rows | 1,603 |
 | Supported roles | 97 nutritional, 17 physicochemical, 8 cellular | 122 |
 | Supported components | Reviewed material part assertions | 381 |
 | Supported environmental assertions | Reviewed contexts | 6 |
-| Separate backlog | Current assertions excluded from the supported graph | 2,410 |
+| Separate backlog | Current assertions excluded from the supported graph | 2,411 |
 | Complete source graph | Preserved source assertions; semantically unapproved | 5,788 nodes / 4,523 edges |
 
 Every active ingredient remains represented as a source-record node. All nodes
@@ -21,11 +21,11 @@ use the conservative `biolink:NamedThing` category. Chemical identities, roles,
 components, and hierarchy are asserted only by selected reviewed edges. Raw
 `record_json`, unreviewed identifier annotations, and old review verdicts are
 absent from supported nodes. All 5,788 original full-graph node payloads are
-preserved in the separate backlog alongside the 2,410 excluded edges and their
+preserved in the separate backlog alongside the 2,411 excluded edges and their
 current review dispositions. The backlog is outside the KGX archive.
 
 The full checked-in SSSOM has 3,018 rows and passes structural validation. Its
-supported release is a separate 1,604-row SSSOM, with its own mapping-set ID.
+supported release is a separate 1,603-row SSSOM, with its own mapping-set ID.
 Do not describe the full source SSSOM as scientifically approved.
 
 ## Source corrections
@@ -79,7 +79,13 @@ Independent adversarial review produced issues
 [#720](https://github.com/CultureBotAI/MediaIngredientMech/issues/720),
 [#721](https://github.com/CultureBotAI/MediaIngredientMech/issues/721), and
 [#723](https://github.com/CultureBotAI/MediaIngredientMech/issues/723).
-Their corrections have regression coverage. Agent review is not human sign-off.
+Their corrections have regression coverage. Final consumer review additionally
+produced [#724](https://github.com/CultureBotAI/MediaIngredientMech/issues/724)
+and [#725](https://github.com/CultureBotAI/MediaIngredientMech/issues/725).
+The [finalization review](finalization-review.md) records the trait-bearing
+aromatic-compound mapping exclusion and the independent policy that prevents
+its hold from being removed or redirected through a rehashed ledger.
+Agent review is not human sign-off.
 
 SSSOM JsonSchema, PrefixMapCompleteness, and StrictCurieFormat pass for both
 mapping artifacts. The supported archive also passes the native KGX 2.7.0 reader,
@@ -88,8 +94,8 @@ Biolink conformance is not claimed for MIM's native relationships. Exact hashes
 are in [supported-release.json](supported-release.json) and the validation receipts.
 
 A clean `git archive` checkout reproduced all 11 full/supported artifact files
-byte for byte, with no ignored source files. The final focused regression run
-passed 182 tests; maintained-package coverage is 65% against the 35% floor.
+byte for byte, with no ignored source files. The finalization regression run passed 115 focused tests; maintained-package
+coverage from the preceding complete CI run was 65% against the 35% floor.
 See [validation-summary.json](validation-summary.json) and
 [clean-checkout-validation.json](clean-checkout-validation.json). Published visualization metadata now passes its strict currency check after
 removing three retired nodes and refreshing 11 nodes in each artifact; see
@@ -107,6 +113,13 @@ just export-kgx output/mim-kgx-710-full
 just export-supported-kgx reports/semantic_review_20260921/resolution/current-review.json output/mim-kgx-710-supported
 just qc-supported-kgx reports/semantic_review_20260921/resolution/current-review.json output/mim-kgx-710-supported
 ```
+
+The [consumer TSV audit](tsv-consumer-validation.json) verifies format, endpoint
+closure, exact SSSOM/KGX mapping agreement, and the complete approved/backlog
+partition. There are 1,395 isolated ingredient source-reference nodes. Source
+confidence annotations are preserved verbatim, including 12 values of `0.8` and
+17 values of `0.95`; their grading-policy provenance remains open in
+[#662](https://github.com/CultureBotAI/MediaIngredientMech/issues/662).
 
 The supported directory contains `mim-kgx.tar.gz`,
 `ingredient_mappings.sssom.tsv`, `unsupported-backlog.json`, the manifest, and

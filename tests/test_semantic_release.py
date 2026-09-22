@@ -269,6 +269,9 @@ def reviewed_bundle(tmp_path):
     (root / "findings.tsv").write_text("finding_id\n")
     (root / "dispositions.tsv").write_text("finding_id\n")
     (root / "evidence.md").write_text("Synthetic review evidence, for tests only.\n")
+    (root / "holds.json").write_text(
+        json.dumps({"schema_version": 1, "required_hold_ids": [], "holds": []})
+    )
     record_hashes = {name: _hash(root / name) for name in records}
     (root / "baseline.json").write_text(
         json.dumps(
@@ -294,6 +297,7 @@ def reviewed_bundle(tmp_path):
         "baseline.json",
         "assertions.tsv",
         "evidence.md",
+        "holds.json",
         "mappings/ingredient_mappings.sssom.tsv",
         "bundle/manifest.json",
     ]
@@ -303,6 +307,7 @@ def reviewed_bundle(tmp_path):
         "baseline_manifest": "baseline.json",
         "finding_dispositions": "dispositions.tsv",
         "assertion_dispositions": "assertions.tsv",
+        "release_holds": "holds.json",
         "inputs": {name: _hash(root / name) for name in inputs},
         "record_inputs": record_hashes,
         "bundle": "bundle",

@@ -3,18 +3,153 @@
 import copy
 import csv
 import hashlib
+import importlib.util
+import json
 from pathlib import Path
 
 import pytest
 import yaml
 
 from mediaingredientmech.export import kgx
+from mediaingredientmech.validation import semantic_release
 from mediaingredientmech.validation.semantic_release import (
     adjudicate_assertions,
     current_assertions,
     evidence_gaps,
     verify_projection,
+    validate,
+    rows,
 )
+
+
+@pytest.fixture
+def held_review(tmp_path, monkeypatch):
+    spec = importlib.util.spec_from_file_location(
+        "hold_review_fixture", Path(__file__).with_name("test_semantic_release.py")
+    )
+    fixture_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(fixture_module)
+    root, report_path = fixture_module.reviewed_bundle.__wrapped__(tmp_path)
+    report = json.loads(report_path.read_text())
+    decisions = rows(root / "assertions.tsv")
+    identity = {
+        key: value
+        for key, value in decisions[0].items()
+        if key not in {"resolution_status", "review_reason", "review_evidence"}
+    }
+    edge = rows(root / "bundle/mim_edges.tsv", kgx=True)[0]
+    owner = "data/ingredients/mapped/Water.yaml"
+    hold = {
+        "hold_id": "test:hold",
+        **identity,
+        "edge_id": edge["id"],
+        "owner_record": owner,
+        "owner_record_sha256": report["record_inputs"][owner],
+        "assertion": json.loads(edge["assertion_json"]),
+        "disposition": "WITHHOLD",
+        "review_reason": "Synthetic negative review of this exact mapping",
+        "issues": ["https://github.com/example/test/issues/1"],
+    }
+    # Model a maintained negative decision independently of the editable ledger.
+    monkeypatch.setitem(semantic_release.FROZEN_RELEASE_HOLDS, "test:hold", copy.deepcopy(hold))
+    (root / "holds.json").write_text(
+        json.dumps({"schema_version": 1, "required_hold_ids": ["test:hold"], "holds": [hold]})
+    )
+    decisions[0].update(
+        resolution_status="OPEN", review_reason=hold["review_reason"], review_evidence="holds.json"
+    )
+    with (root / "assertions.tsv").open("w") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(decisions[0]), delimiter="\t")
+        writer.writeheader()
+        writer.writerows(decisions)
+    report["inputs"].update(
+        {
+            name: hashlib.sha256((root / name).read_bytes()).hexdigest()
+            for name in ("holds.json", "assertions.tsv")
+        }
+    )
+    report.update(release_verdict="FAIL", blocking_assertion_ids=[identity["assertion_id"]])
+    report_path.write_text(json.dumps(report))
+    return root, report_path
+
+
+def test_full_gate_accepts_bound_negative_review_as_blocking(held_review):
+    root, report = held_review
+    assert validate(root, report)["semantic_release"] == "FAIL"
+
+
+def test_rehashed_positive_disposition_cannot_bypass_active_hold(held_review):
+    root, report_path = held_review
+    decisions = rows(root / "assertions.tsv")
+    decisions[0]["resolution_status"] = "APPROVED"
+    with (root / "assertions.tsv").open("w") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(decisions[0]), delimiter="\t")
+        writer.writeheader()
+        writer.writerows(decisions)
+    report = json.loads(report_path.read_text())
+    report["inputs"]["assertions.tsv"] = hashlib.sha256(
+        (root / "assertions.tsv").read_bytes()
+    ).hexdigest()
+    report.update(release_verdict="PASS", blocking_assertion_ids=[])
+    report_path.write_text(json.dumps(report))
+    with pytest.raises(ValueError, match="Active release hold was approved"):
+        validate(root, report_path)
+
+
+def test_clearing_both_hold_inventories_and_rehashing_cannot_publish_claim(held_review):
+    from mediaingredientmech.export.supported_kgx import export_supported
+
+    root, report_path = held_review
+    (root / "holds.json").write_text(
+        json.dumps({"schema_version": 1, "required_hold_ids": [], "holds": []})
+    )
+    decisions = rows(root / "assertions.tsv")
+    decisions[0]["resolution_status"] = "APPROVED"
+    with (root / "assertions.tsv").open("w") as stream:
+        writer = csv.DictWriter(stream, fieldnames=list(decisions[0]), delimiter="\t")
+        writer.writeheader()
+        writer.writerows(decisions)
+    report = json.loads(report_path.read_text())
+    for name in ("holds.json", "assertions.tsv"):
+        report["inputs"][name] = hashlib.sha256((root / name).read_bytes()).hexdigest()
+    report.update(release_verdict="PASS", blocking_assertion_ids=[])
+    report_path.write_text(json.dumps(report))
+    with pytest.raises(ValueError, match="Maintained release-hold policy was removed"):
+        validate(root, report_path)
+    with pytest.raises(ValueError, match="Maintained release-hold policy was removed"):
+        export_supported(root, report_path, root / "must-not-publish")
+    assert not (root / "must-not-publish").exists()
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    ["proof_path", "unhashed", "missing_hold", "duplicate", "owner", "payload", "reason"],
+)
+def test_full_gate_rejects_missing_or_rehashed_stale_hold(held_review, mutation):
+    root, report_path = held_review
+    report = json.loads(report_path.read_text())
+    hold_path = root / "holds.json"
+    document = json.loads(hold_path.read_text())
+    if mutation == "proof_path":
+        del report["release_holds"]
+    elif mutation == "unhashed":
+        del report["inputs"]["holds.json"]
+    elif mutation == "missing_hold":
+        document["holds"] = []
+    elif mutation == "duplicate":
+        document["holds"].append(copy.deepcopy(document["holds"][0]))
+    elif mutation == "owner":
+        document["holds"][0]["owner_record_sha256"] = "unreviewed-owner"
+    elif mutation == "payload":
+        document["holds"][0]["assertion"]["object_label"] = "different chemical"
+    else:
+        document["holds"][0]["review_reason"] = " "
+    hold_path.write_text(json.dumps(document))
+    if mutation != "unhashed":
+        report["inputs"]["holds.json"] = hashlib.sha256(hold_path.read_bytes()).hexdigest()
+    report_path.write_text(json.dumps(report))
+    with pytest.raises(ValueError):
+        validate(root, report_path)
 
 
 @pytest.fixture

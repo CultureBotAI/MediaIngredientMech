@@ -21,11 +21,19 @@ from mediaingredientmech.validation.semantic_release import (
     evidence_gaps,
     rows,
     sha,
+    validate_release_holds,
 )
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = Path(__file__).resolve().parent
 BASE = HERE.parent
+FROZEN_RELEASE_HOLD_ID = "MIM.hold:724-aromatic-trait-synonym"
+FROZEN_RELEASE_HOLD_REASON = (
+    "The mapping's other field publishes 'degradation: aromatic compound' as a compound synonym. "
+    "This is an organism trait phrase, not a compound name (#703). Withhold the entire mapping "
+    "from the supported release and preserve its unchanged row in the separate backlog (#724). "
+    "The broader source correction in #703 remains open."
+)
 
 
 def relative(path):
@@ -37,6 +45,23 @@ def write_rows(path, entries):
         writer = csv.DictWriter(stream, fieldnames=list(entries[0]), delimiter="\t", lineterminator="\n")
         writer.writeheader()
         writer.writerows(entries)
+
+
+def apply_release_holds(document, assertions, edges, owners, record_hashes, evidence_path):
+    """Apply the frozen negative review after every positive approval path."""
+    if document.get("required_hold_ids") != [FROZEN_RELEASE_HOLD_ID]:
+        raise ValueError("Missing frozen release hold #724")
+    held = validate_release_holds(document, assertions, edges, owners, record_hashes)
+    hold = next(iter(held.values()))
+    if (hold["owner_record"] != "data/ingredients/mapped/Aromatic_Compound.yaml"
+            or hold["review_reason"] != FROZEN_RELEASE_HOLD_REASON
+            or hold["issues"] != ["https://github.com/CultureBotAI/MediaIngredientMech/issues/703",
+                                  "https://github.com/CultureBotAI/MediaIngredientMech/issues/724"]):
+        raise ValueError("Frozen release-hold owner, reason or issue scope changed")
+    for decision in assertions:
+        if decision["assertion_id"] in held:
+            decision.update(resolution_status="OPEN", review_reason=hold["review_reason"], review_evidence=evidence_path)
+    validate_release_holds(document, assertions, edges, owners, record_hashes, assertions, evidence_path)
 
 
 def has_mechanical_evidence_gap(kind, assertion):
@@ -245,7 +270,8 @@ def main():
     role_reviews = json.loads(role_review_path.read_text())["entries"]
     graph_owners = {node["id"]: node["source_record"] for node in rows(bundle / "mim_nodes.tsv", kgx=True) if node["node_kind"] == "ingredient"}
     payloads = {}
-    for edge in rows(bundle / "mim_edges.tsv", kgx=True):
+    graph_edges = rows(bundle / "mim_edges.tsv", kgx=True)
+    for edge in graph_edges:
         normal = json.dumps(json.loads(edge["assertion_json"]), sort_keys=True, separators=(",", ":"))
         payloads[(edge["source_record"], edge["assertion_type"], edge["source_position"])] = (normal, edge)
     role_support = {item["source_path"]: item for item in roles}
@@ -281,11 +307,15 @@ def main():
             reason = "Original source preparation explicitly supports the partial glucose/yeast/peptone/sulfur membership."
         if proof:
             decision.update(resolution_status="APPROVED", review_reason=reason, review_evidence=relative(proof))
+    release_holds_path = HERE / "release-holds.json"
+    apply_release_holds(json.loads(release_holds_path.read_text()), assertion_rows, graph_edges,
+                        graph_owners, hashes, relative(release_holds_path))
     write_rows(HERE / "assertion-dispositions.tsv", assertion_rows)
     proof_files = [BASE / "manifest.json", BASE / "findings.tsv", BASE / "kgx_assertions.tsv", BASE / "records.tsv",
                    BASE / "corrections/identity-plan.json", HERE / "finding-dispositions.tsv", HERE / "assertion-dispositions.tsv",
                    HERE / "record-lineage.json", sssom_path, bundle / "manifest.json", Path(__file__),
                    historical_evidence,
+                   release_holds_path,
                    ROOT / "src/mediaingredientmech/validation/semantic_release.py"]
     for folder in ("identities", "roles", "components"):
         proof_files.extend(path for path in (HERE / folder).iterdir() if path.is_file())
@@ -297,6 +327,7 @@ def main():
     report = dict(schema_version=1, release_verdict="FAIL" if blocking or blocking_assertions or gaps else "PASS",
                   baseline_manifest=relative(BASE / "manifest.json"), baseline_findings=relative(BASE / "findings.tsv"),
                   finding_dispositions=relative(HERE / "finding-dispositions.tsv"), assertion_dispositions=relative(HERE / "assertion-dispositions.tsv"),
+                  release_holds=relative(release_holds_path),
                   record_lineage=relative(HERE / "record-lineage.json"), bundle=relative(bundle), inputs=inputs, record_inputs=hashes,
                   blocking_finding_ids=blocking, blocking_assertion_ids=blocking_assertions, evidence_gaps=gaps)
     (HERE / "current-review.json").write_text(json.dumps(report, indent=2) + "\n")

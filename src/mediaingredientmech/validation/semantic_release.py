@@ -19,6 +19,35 @@ import yaml
 from mediaingredientmech.sssom_grading import predicate_for
 from mediaingredientmech.validation.write_validated import DEFAULT_SCHEMA_PATH
 
+# Negative scientific review must survive edits to both a report and its ledger.
+# A change to this exact release decision requires a reviewed policy revision,
+# not merely fresh hashes on a cleared or retargeted ledger (#724, #725).
+FROZEN_RELEASE_HOLDS = {
+    "MIM.hold:724-aromatic-trait-synonym": {
+        "hold_id": "MIM.hold:724-aromatic-trait-synonym",
+        "assertion_id": "MIM.review:0932a61d300f2a4adf3a44e93be1e495b0c310946cda0e85c6d51b907bd0bc90",
+        "source_record": "mappings/ingredient_mappings.sssom.tsv",
+        "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+        "assertion_type": "mapping",
+        "source_position": "437",
+        "assertion_sha256": "54d74839ecc2eadcb8d2f8f787288f509aeeda698867ecbc38d14ead740376b6",
+        "edge_id": "MIM.assertion:fb0977bd847b293ab7e79a6968678e52d36c2a11db2f88cd0a01883ab0494594",
+        "owner_record": "data/ingredients/mapped/Aromatic_Compound.yaml",
+        "owner_record_sha256": "1b934b840f9941aadbc305120f44c072f113ccd89745915ea190ecc588a4d9c9",
+        "disposition": "WITHHOLD",
+        "review_reason": (
+            "The mapping's other field publishes 'degradation: aromatic compound' as a compound synonym. "
+            "This is an organism trait phrase, not a compound name (#703). Withhold the entire mapping "
+            "from the supported release and preserve its unchanged row in the separate backlog (#724). "
+            "The broader source correction in #703 remains open."
+        ),
+        "issues": [
+            "https://github.com/CultureBotAI/MediaIngredientMech/issues/703",
+            "https://github.com/CultureBotAI/MediaIngredientMech/issues/724",
+        ],
+    }
+}
+
 
 def require(condition: bool, message: str) -> None:
     """Keep validation enabled under Python's optimized mode, too."""
@@ -531,16 +560,116 @@ def adjudicate_findings(
     return sorted(blocking)
 
 
+def validate_release_holds(
+    document, assertions, edges, owners, record_hashes, dispositions=None, evidence_path=None
+):
+    """Bind negative review to the exact current claim and prevent approval overrides."""
+    require(document.get("schema_version") == 1, "Unsupported release-hold schema")
+    required = document.get("required_hold_ids")
+    holds = document.get("holds")
+    require(
+        isinstance(required, list) and all(isinstance(key, str) and key for key in required),
+        "Missing required release-hold inventory",
+    )
+    require(len(required) == len(set(required)), "Duplicate required release hold")
+    require(isinstance(holds, list), "Missing release holds")
+    hold_ids = [hold.get("hold_id") for hold in holds]
+    require(len(hold_ids) == len(set(hold_ids)), "Duplicate release hold")
+    require(set(hold_ids) == set(required), "Missing or unexpected release hold")
+    by_hold_id = {hold["hold_id"]: hold for hold in holds}
+    for policy_id, policy in FROZEN_RELEASE_HOLDS.items():
+        if policy["owner_record"] in record_hashes or policy_id in by_hold_id:
+            require(policy_id in by_hold_id, "Maintained release-hold policy was removed")
+            require(
+                all(by_hold_id[policy_id].get(field) == value for field, value in policy.items()),
+                "Maintained release-hold policy was altered or retargeted",
+            )
+    identities = {row["assertion_id"]: row for row in assertions}
+    require(len(identities) == len(assertions), "Duplicate current assertion for release holds")
+    edge_index = {
+        (edge["source_record"], edge["assertion_type"], edge["source_position"]): edge
+        for edge in edges
+    }
+    require(len(edge_index) == len(edges), "Duplicate graph assertion for release holds")
+    held = {}
+    for hold in holds:
+        key = hold.get("assertion_id")
+        require(key in identities, "Missing current assertion for release hold")
+        require(key not in held, "Multiple release holds for one assertion")
+        identity = identities[key]
+        identity_fields = (
+            "assertion_id",
+            "source_record",
+            "source_record_sha256",
+            "assertion_type",
+            "source_position",
+            "assertion_sha256",
+        )
+        require(
+            all(hold.get(field) == identity.get(field) for field in identity_fields),
+            f"Stale release-hold assertion: {key}",
+        )
+        edge = edge_index.get(
+            (identity["source_record"], identity["assertion_type"], identity["source_position"])
+        )
+        if edge is None:
+            raise ValueError("Missing release-hold graph edge")
+        require(hold.get("edge_id") == edge["id"], "Stale release-hold graph edge")
+        claim = json.loads(edge["assertion_json"])
+        require(hold.get("assertion") == claim, "Stale release-hold payload")
+        owner = (
+            owners.get(claim.get("subject_id"))
+            if identity["assertion_type"] == "mapping"
+            else identity["source_record"]
+        )
+        require(owner is not None and hold.get("owner_record") == owner, "Wrong release-hold owner")
+        require(
+            owner in record_hashes and hold.get("owner_record_sha256") == record_hashes[owner],
+            "Stale release-hold owner record",
+        )
+        require(hold.get("disposition") == "WITHHOLD", "Unknown release-hold disposition")
+        require(bool(hold.get("review_reason", "").strip()), "Missing release-hold reason")
+        issues = hold.get("issues")
+        require(
+            isinstance(issues, list)
+            and bool(issues)
+            and len(issues) == len(set(issues))
+            and all(
+                isinstance(issue, str) and issue.startswith("https://github.com/")
+                for issue in issues
+            ),
+            "Missing release-hold issue provenance",
+        )
+        held[key] = hold
+    if dispositions is not None:
+        decisions = {row["assertion_id"]: row for row in dispositions}
+        require(len(decisions) == len(dispositions), "Duplicate release-hold disposition")
+        for key, hold in held.items():
+            decision = decisions.get(key, {})
+            require(decision.get("resolution_status") == "OPEN", "Active release hold was approved")
+            require(
+                decision.get("review_reason") == hold["review_reason"],
+                "Release-hold reason was replaced",
+            )
+            require(
+                evidence_path is not None and decision.get("review_evidence") == evidence_path,
+                "Release-hold disposition lacks its bound evidence",
+            )
+    return held
+
+
 def validate(root: Path, report_path: Path) -> dict:
     root = root.resolve()
     report = json.loads(report_path.read_text())
     require(report["schema_version"] == 1, "Unsupported review schema")
+    require(bool(report.get("release_holds")), "Missing release-hold proof")
     inputs = report["inputs"]
     required_inputs = {
         report["baseline_findings"],
         report["baseline_manifest"],
         report["finding_dispositions"],
         report["assertion_dispositions"],
+        report["release_holds"],
         "mappings/ingredient_mappings.sssom.tsv",
         report["bundle"] + "/manifest.json",
     }
@@ -622,12 +751,19 @@ def validate(root: Path, report_path: Path) -> dict:
         baseline_manifest["inputs"],
         lineage,
     )
-    blocking_assertions = adjudicate_assertions(
-        current_assertions(
-            records, mappings, record_hashes, inputs["mappings/ingredient_mappings.sssom.tsv"]
-        ),
-        rows(local(root, report["assertion_dispositions"])),
-        inputs,
+    current = current_assertions(
+        records, mappings, record_hashes, inputs["mappings/ingredient_mappings.sssom.tsv"]
+    )
+    assertion_decisions = rows(local(root, report["assertion_dispositions"]))
+    blocking_assertions = adjudicate_assertions(current, assertion_decisions, inputs)
+    validate_release_holds(
+        json.loads(local(root, report["release_holds"]).read_text()),
+        current,
+        edges,
+        {node["id"]: node["source_record"] for node in ingredients},
+        record_hashes,
+        assertion_decisions,
+        report["release_holds"],
     )
     gaps = evidence_gaps(records)
     verdict = "FAIL" if blocking or gaps or blocking_assertions else "PASS"

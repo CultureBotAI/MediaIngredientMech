@@ -48,5 +48,16 @@ for filename, actual in [('mim_nodes.tsv', nodes), ('mim_edges.tsv', edges)]:
                 if key in row:
                     assert row[key] == parsed_row[key]
 report = {'result':'passed', 'kgx_version':importlib.metadata.version('kgx'), 'reader':'kgx.source.tsv_source.TsvSource', 'archive_sha256':hashlib.sha256((bundle / 'mim-kgx.tar.gz').read_bytes()).hexdigest(), 'nodes':len(nodes), 'edges':len(edges), 'json_annotations_preserved':json_cells, 'configuration':'Pinned local Biolink model and prefix context; manifest prefix overrides; no remote ontology import', 'limits':'Reader compatibility, endpoints, predicates, and JSON preservation; not strict Biolink schema validation.'}
+schema_path = model._configured_path('KG_MICROBE_BIOLINK_MODEL', model.DEFAULT_SCHEMA_PATH)
+predicate_path = model._configured_path('KG_MICROBE_BIOLINK_PREDICATE_MAP', model.DEFAULT_PREDICATE_MAP_PATH)
+dependencies = [kg_root / 'kg_microbe/utils/biolink_model.py',
+                kg_root / 'kg_microbe/merge_utils/local_context.py',
+                schema_path, predicate_path, *model.sibling_imports(schema_path)]
+report['validation_implementation_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+report['local_dependency_sha256'] = {
+    str(path.relative_to(kg_root)) if path.is_relative_to(kg_root) else str(path):
+        hashlib.sha256(path.read_bytes()).hexdigest() for path in dependencies}
+report['dependency_versions'] = {name: importlib.metadata.version(name)
+                                 for name in ('bmt', 'linkml-runtime', 'prefixcommons')}
 (bundle / 'native-kgx-reader.json').write_text(json.dumps(report, indent=2) + '\n')
 print(json.dumps(report, indent=2))
