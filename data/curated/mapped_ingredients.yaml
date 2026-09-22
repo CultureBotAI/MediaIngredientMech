@@ -1,4 +1,4 @@
-generation_date: '2026-09-22T19:09:07.680121+00:00'
+generation_date: '2026-09-22T20:44:07.317838+00:00'
 total_count: 2679
 mapped_count: 2612
 unmapped_count: 0
@@ -30582,13 +30582,14 @@ ingredients:
     action: BACKFILL_PARENT_CHEBI
     changes: set ontology_mapping parent=CHEBI:48430 (stem-substring)
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 1 synonym(s) non-resolving: [''4-Methyl-2-oxopentanoate'']. Each
-      is a name of the parent compound or of a different hydrate, not of this form;
-      Section 3 keeps them distinct and the label index resolved the parent''s name
-      here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''4-Methyl-2-oxopentanoate''.
+      Preserved original text and source metadata. No identity, mapping, role, or
+      remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 4502-00-5
@@ -38606,13 +38607,14 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 1 synonym(s) non-resolving: [''bisammonium dioxido(dioxo)molybdenum''].
-      Each is a name of the parent compound or of a different hydrate, not of this
-      form; Section 3 keeps them distinct and the label index resolved the parent''s
-      name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''bisammonium
+      dioxido(dioxo)molybdenum''. Preserved original text and source metadata. No
+      identity, mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 12054-85-2
@@ -55010,14 +55012,15 @@ ingredients:
       weight. ChEBI has no term for this hydration state, so no authoritative value
       can be substituted. The grounding is separately wrong (#321); this corrects
       only the CAS (#334).'
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 3 synonym(s) non-resolving: [''cerium(3+) chloride'', ''cerium(III)
-      chloride'', ''trichloridocerium'']. Each is a name of the parent compound or
-      of a different hydrate, not of this form; Section 3 keeps them distinct and
-      the label index resolved the parent''s name here (#232). Kept as REJECTED_LABEL
-      so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''cerium(3+)
+      chloride''; ''cerium(III) chloride''; ''trichloridocerium''. Preserved original
+      text and source metadata. No identity, mapping, role, or remaining-synonym claim
+      was adjudicated.'
     llm_assisted: true
   chemical_properties:
     data_source: PubChem (via CHEBI:35458)
@@ -67747,13 +67750,14 @@ ingredients:
       inherited from the parent rather than measured for this record. Water appended
       in ChEBI's own dot-separated notation.
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 1 synonym(s) non-resolving: [''D-galacturonate'']. Each is a
-      name of the parent compound or of a different hydrate, not of this form; Section
-      3 keeps them distinct and the label index resolved the parent''s name here (#232).
-      Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''D-galacturonate''.
+      Preserved original text and source metadata. No identity, mapping, role, or
+      remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 91510-62-2
@@ -68549,14 +68553,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 2 synonym(s) non-resolving: [''alpha-D-glucopyranosyl-(1->4)-D-glucopyranose'',
-      ''alpha-D-glucopyranosyl-(1->4)-D-glucose'']. Each is a name of the parent compound
-      or of a different hydrate, not of this form; Section 3 keeps them distinct and
-      the label index resolved the parent''s name here (#232). Kept as REJECTED_LABEL
-      so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''alpha-D-glucopyranosyl-(1->4)-D-glucopyranose'';
+      ''alpha-D-glucopyranosyl-(1->4)-D-glucose''. Preserved original text and source
+      metadata. No identity, mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 6363-53-7
@@ -68644,13 +68648,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 1 synonym(s) non-resolving: [''D-mannose 6-(dihydrogen phosphate)''].
-      Each is a name of the parent compound or of a different hydrate, not of this
-      form; Section 3 keeps them distinct and the label index resolved the parent''s
-      name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''D-mannose
+      6-(dihydrogen phosphate)''. Preserved original text and source metadata. No
+      identity, mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 70442-25-0
@@ -85245,15 +85250,16 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 8 synonym(s) non-resolving: [''FeSO4 x 5 H2O'', ''FeSO4 x 6 H2O'',
-      ''FeSO4 x 6H2O'', ''FeSO4·6H2O'', ''FeSO4・6H2O'', ''ferrous sulfate (anhydrous)'',
-      ''ferrous sulfate anhydrous'', ''iron(2+) sulfate'']. Each is a name of the
-      parent compound or of a different hydrate, not of this form; Section 3 keeps
-      them distinct and the label index resolved the parent''s name here (#232). Kept
-      as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''FeSO4 x
+      5 H2O''; ''FeSO4 x 6 H2O''; ''FeSO4 x 6H2O''; ''FeSO4·6H2O''; ''FeSO4・6H2O'';
+      ''ferrous sulfate (anhydrous)''; ''ferrous sulfate anhydrous''; ''iron(2+) sulfate''.
+      Preserved original text and source metadata. No identity, mapping, role, or
+      remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 7782-63-0
@@ -104043,14 +104049,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 2 synonym(s) non-resolving: [''(2S)-2-aminobutanedioic acid'',
-      ''ASPARTIC ACID'']. Each is a name of the parent compound or of a different
-      hydrate, not of this form; Section 3 keeps them distinct and the label index
-      resolved the parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild
-      cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''(2S)-2-aminobutanedioic
+      acid''; ''ASPARTIC ACID''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 1115-63-5
@@ -104157,14 +104163,14 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 2 synonym(s) non-resolving: [''(2S)-2-aminobutanedioic acid'',
-      ''ASPARTIC ACID'']. Each is a name of the parent compound or of a different
-      hydrate, not of this form; Section 3 keeps them distinct and the label index
-      resolved the parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild
-      cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''(2S)-2-aminobutanedioic
+      acid''; ''ASPARTIC ACID''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 323194-76-9
@@ -104679,14 +104685,14 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 2 synonym(s) non-resolving: [''(2S)-2-aminopentanedioic acid'',
-      ''GLUTAMIC ACID'']. Each is a name of the parent compound or of a different
-      hydrate, not of this form; Section 3 keeps them distinct and the label index
-      resolved the parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild
-      cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''(2S)-2-aminopentanedioic
+      acid''; ''GLUTAMIC ACID''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 6382-01-0
@@ -121139,13 +121145,14 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 2 synonym(s) non-resolving: [''MgSO4 x 6 H2O'', ''MgSO4 x 6H2O''].
-      Each is a name of the parent compound or of a different hydrate, not of this
-      form; Section 3 keeps them distinct and the label index resolved the parent''s
-      name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''MgSO4 x
+      6 H2O''; ''MgSO4 x 6H2O''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 7487-88-9
@@ -123334,15 +123341,16 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 7 synonym(s) non-resolving: [''Manganese sulfate anhydrous'',
-      ''MnSO4 . 7H2O'', ''MnSO4 x 7 H2O'', ''MnSO4 x 7H2O'', ''MnSO4.7H2O'', ''MnSO4·7H2O'',
-      ''manganese(2+) sulfate'']. Each is a name of the parent compound or of a different
-      hydrate, not of this form; Section 3 keeps them distinct and the label index
-      resolved the parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild
-      cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''Manganese
+      sulfate anhydrous''; ''MnSO4 . 7H2O''; ''MnSO4 x 7 H2O''; ''MnSO4 x 7H2O'';
+      ''MnSO4.7H2O''; ''MnSO4·7H2O''; ''manganese(2+) sulfate''. Preserved original
+      text and source metadata. No identity, mapping, role, or remaining-synonym claim
+      was adjudicated.'
     llm_assisted: true
   kg_microbe_node_id: CHEBI:86364
   chemical_properties:
@@ -130566,14 +130574,16 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 4 synonym(s) non-resolving: [''EDTA disodium (anhydrous)'', ''EDTA
-      disodium salt (anhydrous)'', ''Edetate disodium anhydrous'', "disodium 2,2'',2'''',2''''''-(ethane-1,2-diyldiammonio)tetraacetate"].
-      Each is a name of the parent compound or of a different hydrate, not of this
-      form; Section 3 keeps them distinct and the label index resolved the parent''s
-      name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''EDTA disodium
+      (anhydrous)''; ''EDTA disodium salt (anhydrous)''; ''Edetate disodium anhydrous'';
+      "disodium 2,2'',2'''',2''''''-(ethane-1,2-diyldiammonio)tetraacetate". Preserved
+      original text and source metadata. No identity, mapping, role, or remaining-synonym
+      claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 7487-55-0
@@ -143187,14 +143197,14 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 2 synonym(s) non-resolving: [''nickel(2+) chloride'', ''nickel(II)
-      chloride'']. Each is a name of the parent compound or of a different hydrate,
-      not of this form; Section 3 keeps them distinct and the label index resolved
-      the parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore
-      them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''nickel(2+)
+      chloride''; ''nickel(II) chloride''. Preserved original text and source metadata.
+      No identity, mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   kg_microbe_node_id: CHEBI:34887
   chemical_properties:
@@ -143646,15 +143656,16 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 7 synonym(s) non-resolving: [''NiCl2 x 2 H2O'', ''NiCl2 x 2H2O'',
-      ''NiCl2 x 5 H2O'', ''NiCl2·2H2O'', ''NiCl2・5H2O'', ''nickel(2+) chloride'',
-      ''nickel(II) chloride'']. Each is a name of the parent compound or of a different
-      hydrate, not of this form; Section 3 keeps them distinct and the label index
-      resolved the parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild
-      cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''NiCl2 x
+      2 H2O''; ''NiCl2 x 2H2O''; ''NiCl2 x 5 H2O''; ''NiCl2·2H2O''; ''NiCl2・5H2O'';
+      ''nickel(2+) chloride''; ''nickel(II) chloride''. Preserved original text and
+      source metadata. No identity, mapping, role, or remaining-synonym claim was
+      adjudicated.'
     llm_assisted: true
   kg_microbe_node_id: CHEBI:53542
   chemical_properties:
@@ -144416,14 +144427,15 @@ ingredients:
       it. Now agrees with the merge target ''Nickel (II) sulfate hexahydrate''. Provenance
       is unaffected: what the record used to assert is in this history.'
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 3 synonym(s) non-resolving: [''NiSO4 x 7 H2O'', ''NiSO4・7H2O'',
-      ''nickel(2+) sulfate'']. Each is a name of the parent compound or of a different
-      hydrate, not of this form; Section 3 keeps them distinct and the label index
-      resolved the parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild
-      cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''NiSO4 x
+      7 H2O''; ''NiSO4・7H2O''; ''nickel(2+) sulfate''. Preserved original text and
+      source metadata. No identity, mapping, role, or remaining-synonym claim was
+      adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 10101-97-0
@@ -144587,13 +144599,14 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 1 synonym(s) non-resolving: [''nickel(2+) sulfate'']. Each is
-      a name of the parent compound or of a different hydrate, not of this form; Section
-      3 keeps them distinct and the label index resolved the parent''s name here (#232).
-      Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''nickel(2+)
+      sulfate''. Preserved original text and source metadata. No identity, mapping,
+      role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -145020,13 +145033,14 @@ ingredients:
       trisodium salt)''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 1 synonym(s) non-resolving: [''N,N-bis(carboxymethyl)glycine''].
-      Each is a name of the parent compound or of a different hydrate, not of this
-      form; Section 3 keeps them distinct and the label index resolved the parent''s
-      name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''N,N-bis(carboxymethyl)glycine''.
+      Preserved original text and source metadata. No identity, mapping, role, or
+      remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 15467-20-6
@@ -152405,13 +152419,14 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 1 synonym(s) non-resolving: [''3-hydroxybutanoic acid'']. Each
-      is a name of the parent compound or of a different hydrate, not of this form;
-      Section 3 keeps them distinct and the label index resolved the parent''s name
-      here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''3-hydroxybutanoic
+      acid''. Preserved original text and source metadata. No identity, mapping, role,
+      or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 29435-48-1
@@ -162436,14 +162451,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 2 synonym(s) non-resolving: [''(2R)-2,3-dihydroxypropyl dihydrogen
-      phosphate'', ''sn-glycerol 3-(dihydrogen phosphate)'']. Each is a name of the
-      parent compound or of a different hydrate, not of this form; Section 3 keeps
-      them distinct and the label index resolved the parent''s name here (#232). Kept
-      as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''(2R)-2,3-dihydroxypropyl
+      dihydrogen phosphate''; ''sn-glycerol 3-(dihydrogen phosphate)''. Preserved
+      original text and source metadata. No identity, mapping, role, or remaining-synonym
+      claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 29849-82-9
@@ -162525,14 +162541,15 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 2 synonym(s) non-resolving: [''(2R)-2,3-dihydroxypropyl dihydrogen
-      phosphate'', ''sn-glycerol 3-(dihydrogen phosphate)'']. Each is a name of the
-      parent compound or of a different hydrate, not of this form; Section 3 keeps
-      them distinct and the label index resolved the parent''s name here (#232). Kept
-      as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''(2R)-2,3-dihydroxypropyl
+      dihydrogen phosphate''; ''sn-glycerol 3-(dihydrogen phosphate)''. Preserved
+      original text and source metadata. No identity, mapping, role, or remaining-synonym
+      claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 17989-41-2
@@ -163748,13 +163765,14 @@ ingredients:
       if required)''. Tokens already present on the kg-microbe ontology node were
       left out as redundant (#520).'
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 1 synonym(s) non-resolving: [''disodium trioxidocarbonate''].
-      Each is a name of the parent compound or of a different hydrate, not of this
-      form; Section 3 keeps them distinct and the label index resolved the parent''s
-      name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''disodium
+      trioxidocarbonate''. Preserved original text and source metadata. No identity,
+      mapping, role, or remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 5968-11-6
@@ -164487,13 +164505,14 @@ ingredients:
     changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
       subsumed by its anhydrous form, and ChEBI does not model it as such.
     llm_assisted: false
-  - timestamp: '2026-09-22T19:08:44Z'
-    curator: retire_parent_names_on_forms
-    action: CORRECTED
-    changes: 'Marked 1 synonym(s) non-resolving: [''sodium 3alpha,12alpha-dihydroxy-5beta-cholan-24-oate''].
-      Each is a name of the parent compound or of a different hydrate, not of this
-      form; Section 3 keeps them distinct and the label index resolved the parent''s
-      name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''sodium 3alpha,12alpha-dihydroxy-5beta-cholan-24-oate''.
+      Preserved original text and source metadata. No identity, mapping, role, or
+      remaining-synonym claim was adjudicated.'
     llm_assisted: true
   chemical_properties:
     cas_rn: 145224-92-6

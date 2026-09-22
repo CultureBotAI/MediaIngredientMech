@@ -19,7 +19,10 @@ from mediaingredientmech.export.reviewed_sssom import _owners, digest, read_ssso
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
 SOURCE = "mappings/ingredient_mappings.sssom.tsv"
-REVIEWED_SOURCE = "761b7dee1e7eef7ecd999a848f6188fe1a0d394c79a8b53b957c2e477cec9f3f"
+# Updated by each bounded synonym-only refresh, in order: trait phrases (#703),
+# then parent-compound names on salt/hydrate forms (#232). Each refresh receipt
+# records its own before/after pair, so the chain is auditable link by link.
+REVIEWED_SOURCE = "d51304e7bd30aac75d1f35750e9da37749190080208a99fcc5e71c59deba8792"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 
@@ -38,18 +41,35 @@ def assemble():
     baseline = read("baseline-mapping-review.json")
     traits = read("trait_synonyms/decisions.json")
     refresh = read("trait-synonym-refresh.json")
+    parents = read("parent_names/decisions.json")
+    parent_refresh = read("parent-name-refresh.json")
+    if parent_refresh["before_sha256"] != refresh["after_sha256"]:
+        raise ValueError("Parent-name refresh does not chain from the trait refresh")
+    if parent_refresh["after_sha256"] != REVIEWED_SOURCE:
+        raise ValueError("Parent-name refresh does not produce the reviewed source")
     expected_hashes = dict(baseline["record_inputs"])
-    for entry in traits["records"]:
-        if expected_hashes[entry["source_record"]] != entry["before_yaml_sha256"]:
-            raise ValueError("Trait correction no longer extends the reviewed baseline")
-        expected_hashes[entry["source_record"]] = entry["after_yaml_sha256"]
+    for label, plan in (("Trait", traits), ("Parent-name", parents)):
+        for entry in plan["records"]:
+            if expected_hashes[entry["source_record"]] != entry["before_yaml_sha256"]:
+                raise ValueError(f"{label} correction no longer extends the reviewed baseline")
+            expected_hashes[entry["source_record"]] = entry["after_yaml_sha256"]
     _, _, mappings = read_sssom(ROOT / SOURCE)
     owners, records = _owners(ROOT, mappings)
     record_hashes = {owner: digest(ROOT / owner) for owner in set(owners)}
     if any(record_hashes[owner] != expected_hashes[owner] for owner in record_hashes):
         raise ValueError("Owner changed after scientific review; do not restamp its approval")
     prior = {int(d["source_position"]): d for d in baseline["decisions"]}
-    changed_rows = {item["source_position"]: item for item in refresh["changes"]}
+    changed_rows = {item["source_position"]: dict(item, receipt="trait-synonym-refresh.json") for item in refresh["changes"]}
+    for item in parent_refresh["changes"]:
+        position = item["source_position"]
+        # A row corrected twice must chain: the parent-name "before" is the trait "after".
+        if position in changed_rows and changed_rows[position]["after"] != item["before"]:
+            raise ValueError("Parent-name refresh does not chain from the trait refresh on a shared row")
+        merged = dict(item, receipt="parent-name-refresh.json")
+        if position in changed_rows:
+            merged["before"] = changed_rows[position]["before"]
+            merged["removed_tokens"] = sorted(set(changed_rows[position]["removed_tokens"]) | set(item["removed_tokens"]))
+        changed_rows[position] = merged
     original_records = {
         r["source_record"]: r
         for r in csv.DictReader(
@@ -141,8 +161,8 @@ def assemble():
                 + original["review_reason"]
             )
         elif position in changed_rows:
-            reason = "The trait-phrase rejection corrects a non-name token, but does not itself approve the record's remaining identity and aliases. Preserve this changed row pending a complete mapping-specific decision."
-            basis["trait_correction"] = "trait-synonym-refresh.json"
+            reason = "The synonym rejection corrects a token that is not a name of this substance, but does not itself approve the record's remaining identity and aliases. Preserve this changed row pending a complete mapping-specific decision."
+            basis["synonym_correction"] = changed_rows[position]["receipt"]
         if position in concerns:
             entry = concerns[position]
             disposition, reason = "WITHHOLD", entry["reason"]

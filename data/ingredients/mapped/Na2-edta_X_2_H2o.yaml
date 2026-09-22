@@ -180,14 +180,16 @@ curation_history:
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
   llm_assisted: false
-- timestamp: '2026-09-22T19:08:44Z'
-  curator: retire_parent_names_on_forms
-  action: CORRECTED
-  changes: 'Marked 4 synonym(s) non-resolving: [''EDTA disodium (anhydrous)'', ''EDTA
-    disodium salt (anhydrous)'', ''Edetate disodium anhydrous'', "disodium 2,2'',2'''',2''''''-(ethane-1,2-diyldiammonio)tetraacetate"].
-    Each is a name of the parent compound or of a different hydrate, not of this form;
-    Section 3 keeps them distinct and the label index resolved the parent''s name
-    here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+- timestamp: '2026-09-22T20:41:14.285965+00:00'
+  curator: claude
+  action: REJECTED_PARENT_NAME_SYNONYMS
+  changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+    REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone form
+    and the label index resolved the parent''s name here (#232): ''EDTA disodium (anhydrous)'';
+    ''EDTA disodium salt (anhydrous)''; ''Edetate disodium anhydrous''; "disodium
+    2,2'',2'''',2''''''-(ethane-1,2-diyldiammonio)tetraacetate". Preserved original
+    text and source metadata. No identity, mapping, role, or remaining-synonym claim
+    was adjudicated.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 7487-55-0
