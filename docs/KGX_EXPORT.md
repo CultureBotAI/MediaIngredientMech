@@ -88,7 +88,10 @@ For `broadMatch`, the **object is broader than the subject**. The exporter follo
 MIM's explicit [mapping contract](../MAPPING_SEMANTICS.md#1-predicate-semantics):
 both asymmetric predicates become child-to-parent `subclass_of` edges, reversing
 endpoints for `narrowMatch`. The original row and SKOS relation are retained in
-annotations; this conversion is specific to MIM's kind-of convention. The retired
+annotations; this conversion is specific to MIM's kind-of convention. It
+predates the #245 ruling, under which consumers emit `biolink:broad_match`
+rather than `subclass_of`; aligning the exporter and the reviewed bundle is
+tracked as #734. The retired
 local ingredient-variant hierarchy is not recreated. Role enum mappings to broader classes or METPO predicates are
 retained as annotations, not treated as identities of role nodes.
 
