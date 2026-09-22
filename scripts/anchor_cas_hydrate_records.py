@@ -1,12 +1,12 @@
 """Give a `cas:`-identified record its Section 3 anchor rows (#239).
 
 MAPPING_SEMANTICS.md Section 3 step 2: a substance with no exact ontology term
-takes `cas:<its own CAS>` as its identifier, a `skos:narrowMatch` to the nearest
+takes `cas:<its own CAS>` as its identifier, a `skos:broadMatch` to the nearest
 ontology parent, AND the Rule B1 registry row. 34 hydrate records satisfy all
 three. 22 have only the `cas:` id — they assert no parent at all, so Rule B1
 never fires on them (it only requires a registry row for a subject that already
-asserts a narrowMatch) and they are invisible to the rule rather than violating
-it. That is the "healthiest when it has stopped working" shape.
+asserts an asymmetric parent row) and they are invisible to the rule rather
+than violating it. That is the "healthiest when it has stopped working" shape.
 
 This adds the two missing rows and points the record's ontology_mapping at the
 parent with NARROW_MATCH, leaving the identifier alone.
@@ -127,11 +127,11 @@ def main() -> int:
         om.setdefault("evidence", []).append({
             "evidence_type": "DATABASE_MATCH", "source": args.curator,
             "notes": (f"{term} is a hydrate/salt with its own CAS and no exact ChEBI term; "
-                      f"anchored to the parent {parent} '{label}' by narrowMatch per "
+                      f"anchored to the parent {parent} '{label}' by broadMatch per "
                       f"MAPPING_SEMANTICS.md Section 3 step 2. {p['rationale']}")})
         rec.setdefault("curation_history", []).append({
             "timestamp": stamp, "curator": args.curator, "action": "CORRECTED",
-            "changes": (f"Added Section 3 anchor rows: narrowMatch {parent} '{label}' and "
+            "changes": (f"Added Section 3 anchor rows: broadMatch {parent} '{label}' and "
                         f"registry {registry}. identifier {rec['identifier']} unchanged; "
                         f"mapping_quality FALLBACK_REGISTRY -> NARROW_MATCH. {p['rationale']}"),
             "llm_assisted": True})
@@ -154,7 +154,7 @@ def main() -> int:
 
     print(f"anchored {len(done)}/{len(plan)}; {len(new_rows)} SSSOM row(s) to add\n")
     for ident, term, parent, label, sid in done:
-        print(f"  {sid[:38]:38} --narrowMatch--> {parent} '{label}'")
+        print(f"  {sid[:38]:38} --broadMatch--> {parent} '{label}'")
     if problems:
         print(f"\n{len(problems)} problem(s):")
         for x in problems:
