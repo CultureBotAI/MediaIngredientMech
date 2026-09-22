@@ -19,10 +19,12 @@ from mediaingredientmech.export.reviewed_sssom import _owners, digest, read_ssso
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
 SOURCE = "mappings/ingredient_mappings.sssom.tsv"
-# Updated by each bounded synonym-only refresh, in order: trait phrases (#703),
-# then parent-compound names on salt/hydrate forms (#232). Each refresh receipt
-# records its own before/after pair, so the chain is auditable link by link.
-REVIEWED_SOURCE = "d51304e7bd30aac75d1f35750e9da37749190080208a99fcc5e71c59deba8792"
+# Updated by each link in the chain, in order: the trait-phrase refresh (#703),
+# the parent-name refresh (#232), then every mapping-change receipt under
+# mapping_changes/ in sequence order (#312 ...). Each link records its own
+# before/after pair, so the chain is auditable link by link, and no link can
+# turn a prior approval into an approval of a changed row.
+REVIEWED_SOURCE = "c418f8062967e772911978cc51b680d031228019dfe744773a6307d51b87f0e0"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 
@@ -45,19 +47,61 @@ def assemble():
     parent_refresh = read("parent-name-refresh.json")
     if parent_refresh["before_sha256"] != refresh["after_sha256"]:
         raise ValueError("Parent-name refresh does not chain from the trait refresh")
-    if parent_refresh["after_sha256"] != REVIEWED_SOURCE:
-        raise ValueError("Parent-name refresh does not produce the reviewed source")
+    # Mapping-change receipts (identity, parent, grade, merge, mint) follow the
+    # synonym refreshes. They are explicit links, never approvals: every row a
+    # receipt touches is withheld below, and every owner it touches loses the
+    # byte-identical carry-forward.
+    mapping_changes = sorted(
+        (json.loads(path.read_text()) for path in (HERE / "mapping_changes").glob("*.json")),
+        key=lambda receipt: receipt["sequence"],
+    )
+    if [r["sequence"] for r in mapping_changes] != list(range(1, len(mapping_changes) + 1)):
+        raise ValueError("Mapping-change receipts must be numbered 1..n without gaps")
+    link = parent_refresh["after_sha256"]
+    for receipt in mapping_changes:
+        if receipt.get("schema_version") != 1 or receipt.get("approval", "").split(":")[0] != "NONE":
+            raise ValueError(f"Mapping-change receipt {receipt.get('batch')} is not an approval-free link")
+        if receipt["before_sha256"] != link:
+            raise ValueError(f"Mapping-change receipt {receipt['batch']} does not chain from the previous link")
+        link = receipt["after_sha256"]
+    if link != REVIEWED_SOURCE:
+        raise ValueError("The last chain link does not produce the reviewed source")
     expected_hashes = dict(baseline["record_inputs"])
-    for label, plan in (("Trait", traits), ("Parent-name", parents)):
+    plans = [("Trait", traits), ("Parent-name", parents)] + [
+        (f"Mapping-change {receipt['batch']}", receipt) for receipt in mapping_changes
+    ]
+    for label, plan in plans:
         for entry in plan["records"]:
-            if expected_hashes[entry["source_record"]] != entry["before_yaml_sha256"]:
+            # A record first touched by a mapping change may be new to the reviewed
+            # set (a registry mint) or a tombstone outside it; both start from
+            # whatever the receipt recorded.
+            known = expected_hashes.get(entry["source_record"], entry["before_yaml_sha256"])
+            if known != entry["before_yaml_sha256"]:
                 raise ValueError(f"{label} correction no longer extends the reviewed baseline")
             expected_hashes[entry["source_record"]] = entry["after_yaml_sha256"]
     _, _, mappings = read_sssom(ROOT / SOURCE)
     owners, records = _owners(ROOT, mappings)
     record_hashes = {owner: digest(ROOT / owner) for owner in set(owners)}
-    if any(record_hashes[owner] != expected_hashes[owner] for owner in record_hashes):
+    if any(record_hashes[owner] != expected_hashes.get(owner) for owner in record_hashes):
         raise ValueError("Owner changed after scientific review; do not restamp its approval")
+    # Compose the position maps: baseline position -> current position (None when
+    # a receipt removed the row), and its inverse for rows that still exist.
+    forward = list(range(1, len(baseline["rows"]) + 1))
+    for receipt in mapping_changes:
+        if len(receipt["position_map"]) != receipt["before_row_count"]:
+            raise ValueError(f"Mapping-change receipt {receipt['batch']} position map is incomplete")
+        forward = [receipt["position_map"][p - 1] if p is not None else None for p in forward]
+    if len(mappings) != (mapping_changes[-1]["after_row_count"] if mapping_changes else len(baseline["rows"])):
+        raise ValueError("Current row count disagrees with the last chain link")
+    baseline_of = {current: bp for bp, current in enumerate(forward, 1) if current is not None}
+    if len(baseline_of) != sum(1 for current in forward if current is not None):
+        raise ValueError("Position map is not injective")
+    mapping_changed_rows = {}
+    for receipt in mapping_changes:
+        for change in receipt["changes"]:
+            if change["kind"] == "removed":
+                continue
+            mapping_changed_rows[change["after_position"]] = dict(change, receipt=receipt["batch"])
     prior = {int(d["source_position"]): d for d in baseline["decisions"]}
     changed_rows = {item["source_position"]: dict(item, receipt="trait-synonym-refresh.json") for item in refresh["changes"]}
     for item in parent_refresh["changes"]:
@@ -89,7 +133,10 @@ def assemble():
     for cohort in (concerns, candidates, changed):
         for position, entry in cohort.items():
             owner = entry.get("owner_record", entry.get("owner", entry.get("source_record")))
-            if entry["mapping"] != baseline["rows"][position - 1] or owner != owners[position - 1]:
+            current = forward[position - 1]
+            if entry["mapping"] != baseline["rows"][position - 1] or (
+                current is not None and owner != owners[current - 1]
+            ):
                 raise ValueError("Scoped review was moved to another mapping or owner")
     intersections = read("mapping_review/issue-intersections.json")
     explicit_holds = {}
@@ -134,12 +181,52 @@ def assemble():
             )
 
     entries, decisions = {}, []
-    for position, (mapping, owner) in enumerate(zip(mappings, owners, strict=True), 1):
+    for current_position, (mapping, owner) in enumerate(zip(mappings, owners, strict=True), 1):
+        # ``position`` is the baseline position every cohort, hold and prior
+        # decision is keyed by; ``current_position`` is where the row sits now.
+        position = baseline_of.get(current_position)
+        mapping_change = mapping_changed_rows.get(current_position)
+        if position is None:
+            # A row a mapping-change receipt added: it has no baseline decision and
+            # no prior review to inherit. Withhold it with the receipt as basis.
+            if not mapping_change or mapping_change["kind"] != "added" or mapping_change["after"] != mapping:
+                raise ValueError("Row added outside a mapping-change receipt")
+            key = str(current_position)
+            reason = (
+                f"Row added by mapping-change receipt {mapping_change['receipt']} ({mapping_change.get('kind')}). "
+                "It has no prior scientific review; preserve the claim pending a mapping-specific decision."
+            )
+            entry = {
+                "row_sha256": row_sha256(mapping),
+                "owner_record": owner,
+                "owner_record_sha256": record_hashes[owner],
+                "disposition": "WITHHOLD",
+                "review_reason": reason,
+                "basis": {"baseline_position": None, "mapping_change": mapping_change["receipt"]},
+            }
+            entries[key] = entry
+            decisions.append(
+                {
+                    "source_position": current_position,
+                    "row_sha256": entry["row_sha256"],
+                    "owner_record": owner,
+                    "disposition": "WITHHOLD",
+                    "review_reason": reason,
+                    "review_evidence": relative(HERE / "mapping-evidence.json"),
+                    "evidence_key": key,
+                }
+            )
+            continue
         previous_mapping = baseline["rows"][position - 1]
         if mapping != previous_mapping:
             correction = changed_rows.get(position, {})
-            if correction.get("before") != previous_mapping or correction.get("after") != mapping:
-                raise ValueError("Mapping changed outside the reviewed synonym correction")
+            synonym_only = correction.get("before") == previous_mapping and correction.get("after") == mapping
+            if not synonym_only:
+                if not mapping_change or mapping_change["after"] != mapping:
+                    raise ValueError("Mapping changed outside the reviewed synonym correction or a mapping-change receipt")
+                expected_before = correction.get("after", previous_mapping)
+                if mapping_change["before"] != expected_before:
+                    raise ValueError("Mapping-change receipt does not chain from the reviewed row")
         original = prior[position]
         disposition = "WITHHOLD"
         reason = "This assertion lacks a mapping-specific positive disposition. Its full unchanged claim is preserved for source review."
@@ -153,13 +240,20 @@ def assemble():
         if (
             original["resolution_status"] == "APPROVED"
             and mapping == previous_mapping
-            and record_hashes[owner] == baseline["record_inputs"][owner]
+            and record_hashes[owner] == baseline["record_inputs"].get(owner)
         ):
             disposition = "SUPPORTED"
             reason = (
                 "Retain the existing explicit scientific approval for the identical owner and complete mapping payload, subject to this review's independent negative findings and relation/alias-scope safeguards. "
                 + original["review_reason"]
             )
+        elif mapping_change:
+            reason = (
+                f"Mapping corrected by receipt {mapping_change['receipt']}: the row payload or its owner record changed after the "
+                "prior review, which therefore does not carry. The correction's verification is recorded in the receipt; "
+                "preserve the corrected claim pending a mapping-specific decision."
+            )
+            basis["mapping_change"] = mapping_change["receipt"]
         elif position in changed_rows:
             reason = "The synonym rejection corrects a token that is not a name of this substance, but does not itself approve the record's remaining identity and aliases. Preserve this changed row pending a complete mapping-specific decision."
             basis["synonym_correction"] = changed_rows[position]["receipt"]
@@ -265,7 +359,7 @@ def assemble():
             disposition = "WITHHOLD"
             reason = " ".join(dict.fromkeys(item["reason"] for item in explicit_holds[position]))
             basis["negative_reviews"] = explicit_holds[position]
-        key = str(position)
+        key = str(current_position)
         entry = {
             "row_sha256": row_sha256(mapping),
             "owner_record": owner,
@@ -277,7 +371,7 @@ def assemble():
         entries[key] = entry
         decisions.append(
             {
-                "source_position": position,
+                "source_position": current_position,
                 "row_sha256": entry["row_sha256"],
                 "owner_record": owner,
                 "disposition": disposition,

@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-22T20:45:27.910724+00:00
+Generated: 2026-09-22T23:42:32.907487+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -210,15 +210,15 @@ Total: 2952 ingredients
 | CHEBI:55507 | CHEBI:55507 | 1-o-methyl Alpha-galactopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:36241 | CHEBI:36241 | Protocatechuate | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:17464 | CHEBI:17464 | L-galactonic Acid Gamma-lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:5390 | CHEBI:5390 | Glutamyl-glutamic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:5390 | CHEBI:5390 | Glutamyl-glutamic Acid | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:149531 | CHEBI:149531 | Carminate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:90601 | CHEBI:90601 | L-pyroglutamic Acid 2-naphthylamide | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16077 | CHEBI:16077 | Glucose 1-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:73804 | CHEBI:73804 | Glycyl L-aspartic Acid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:15895 | CHEBI:15895 | D-galactonic Acid Lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15895 | CHEBI:15895 | D-galactonic Acid Lactone | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:90144 | CHEBI:90144 | O-nitrophenyl-beta-D-galactopyranosid | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15978 | CHEBI:15978 | Glycerol 3-phosphate | MAPPED | CHEBI | CLOSE_MATCH | 1 |
-| CHEBI:24750 | CHEBI:24750 | Hydroxystreptomycin | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:24750 | CHEBI:24750 | Hydroxystreptomycin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81287 | CHEBI:81287 | Neomycin F | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81430 | CHEBI:81430 | Dactimicin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27907 | CHEBI:27907 | Alpha-L-rhamnose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -293,7 +293,7 @@ Total: 2952 ingredients
 | CHEBI:16885 | CHEBI:16885 | 1-Kestose | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:44884 | CHEBI:44884 | 1-Pentanol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:18053 | CHEBI:18053 | 1-aminocyclopropane-1-carboxylate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:143314-17-4 | CHEBI:61326 | 1-ethyl-3-methylimidazolium acetate | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:143314-17-4 | CHEBI:63895 | 1-ethyl-3-methylimidazolium acetate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:61327 | CHEBI:61327 | 1-ethyl-3-methylimidazolium chloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine | CHEBI:63895 | 1-ethyl-3-methylimidazolium lysine | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:34118 | CHEBI:34118 | 1-octen-3-ol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -339,7 +339,7 @@ Total: 2952 ingredients
 | CHEBI:48945 | CHEBI:48945 | 2-methyl-1-butanol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:53620 | CHEBI:53620 | 2-methyl-4-isothizaolin-3-one | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:28362 | CHEBI:28362 | 2-n-Heptyl-4-hydroxyquinoline N-oxide | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:2013-26-5 | CHEBI:16763 | 2-oxobutyric acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:2013-26-5 | CHEBI:30831 | 2-oxobutyric acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:89197 | CHEBI:89197 | 2-pentyl-furan | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:77930 | CHEBI:77930 | 2-undecanol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:30351 | CHEBI:30351 | 2,2'-Dipyridyl | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -377,7 +377,7 @@ Total: 2952 ingredients
 | CHEBI:35932 | CHEBI:35932 | 3-methyl-2-oxopentanoic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:62898 | CHEBI:62898 | 3-methyl-3-butenol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:80946 | CHEBI:80946 | 3-octanone | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:128596-80-5 | CHEBI:26714 | 3'-sialyllactose sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:128596-80-5 | CHEBI:151472 | 3'-sialyllactose sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:14919-49-4 | mesh:C559991 | 3,4'-Dihydroxyflavone | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:232299 | CHEBI:232299 | 3,4'-Dimethoxyflavone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:53648 | CHEBI:53648 | 3,5-Dinitrosalicylic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -415,7 +415,7 @@ Total: 2952 ingredients
 | CHEBI:80627 | CHEBI:80627 | 5'-Deoxy-5-fluorocytidine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:80624 | CHEBI:80624 | 5-Fluorodihydropyrimidine-2,4-dione | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:207291-81-4 | CHEBI:74498 | 5-Fluoroorotic acid hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:195418 | CHEBI:195418 | 5-Hydroxydodecanoate | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:195418 | CHEBI:195418 | 5-Hydroxydodecanoate | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:412516 | CHEBI:412516 | 5-Hydroxymethylfurfural | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:180039 | CHEBI:180039 | 5-Hydroxyoctanoate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:91446-96-7 | CHEBI:17426 | 5-Keto-D-Gluconic Acid potassium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -426,7 +426,7 @@ Total: 2952 ingredients
 | CHEBI:45996 | CHEBI:45996 | 5-methyluridine | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:34472 | CHEBI:34472 | 6-Hydroxyflavone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17901 | CHEBI:17901 | 6-O-Acetyl-D-glucose | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:157574-76-0 | CHEBI:26714 | 6'-O-sialyllactose sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| cas:157574-76-0 | CHEBI:153372 | 6'-O-sialyllactose sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:27593-23-3 | CHEBI:66729 | 6-Pentyl-2H-pyran-2-one | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16168 | CHEBI:16168 | 6-hydroxypyridine-3-carboxylic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:173101 | CHEBI:173101 | 6-methoxy-2(3H)-benzoxazolone | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -523,7 +523,7 @@ Total: 2952 ingredients
 | CHEBI:18388 | CHEBI:18388 | Apigenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:70353 | CHEBI:70353 | Apiole | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:65710-07-8 | CHEBI:190734 | Apramycin sulfate salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| cas:11078-27-6 | FOODON:00003412 | Arabinan from Sugar Beet | MAPPED | FOODON | NARROW_MATCH | 0 |
+| cas:11078-27-6 | CHEBI:22590 | Arabinan from Sugar Beet | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:78088-21-8 | mesh:C434937 | Arabinobiose | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:22599 | CHEBI:22599 | Arabinose | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | cas:89315-59-3 | CHEBI:62799 | Arabinotriose | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -668,7 +668,7 @@ Total: 2952 ingredients
 | mesh:C033379 | mesh:C033379 | Candiplanecin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:64213 | CHEBI:64213 | Cantharidin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31348 | CHEBI:31348 | Capecitabine | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:30776 | CHEBI:30776 | Caproic acid | MAPPED | CHEBI | EXACT_MATCH | 16 |
+| CHEBI:30776 | CHEBI:30776 | Caproic acid | MAPPED | CHEBI | SYNONYM_MATCH | 16 |
 | CHEBI:28579 | CHEBI:28579 | Caprolactam | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:191088 | CHEBI:191088 | CAPS buffer | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:3374 | CHEBI:3374 | capsaicin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1428,7 +1428,7 @@ Total: 2952 ingredients
 | CHEBI:86345 | CHEBI:86345 | MgCl2 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 4026 |
 | kgmicrobe.compound:mgcl2_x_7_h2o | CHEBI:6636 | MgCl2 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 19 |
 | CHEBI:86355 | CHEBI:86355 | MgCl2 x H2O | MAPPED | CHEBI | EXACT_MATCH | 5 |
-| CHEBI:86345 | CHEBI:6636 | MgCl2x 6 H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:86345 | CHEBI:86345 | MgCl2x 6 H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:31793 | CHEBI:31793 | MgCO3 | MAPPED | CHEBI | SYNONYM_MATCH | 11 |
 | CHEBI:31795 | CHEBI:31795 | MgSO4·7H2O | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31795 | CHEBI:31795 | MgSO47H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |

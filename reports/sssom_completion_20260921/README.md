@@ -15,6 +15,16 @@ does not mean every source mapping has been scientifically approved.
   39 records, preserving their text and provenance as `REJECTED_LABEL`.
 - `trait-synonym-refresh.json` verifies the bounded synonym-only output change
   against the pinned Claw producer. All other source row fields are unchanged.
+- `mapping_changes/` holds one receipt per verified mapping-change batch
+  (re-anchored parents, regrades, later re-groundings, merges, mints), in
+  `sequence` order after the two synonym refreshes. A receipt records the
+  SSSOM digest before and after, every owner record's before/after YAML hash
+  with the curator's verification, every changed/added/removed row with both
+  positions, and a position map so the position-keyed cohorts and holds carry
+  forward. It is a link, not an approval: every row it touches is withheld
+  until a mapping-specific review approves the corrected mapping, and every
+  owner it touches loses the byte-identical carry-forward. `make_receipt.py`
+  writes one from a mutator's apply log.
 - `mapping-evidence.json` and `review.json` bind all final decisions to current
   sources. `assemble_review.py --check` reproduces the decisions and negative
   overrides without accepting refreshed source hashes as scientific approval.

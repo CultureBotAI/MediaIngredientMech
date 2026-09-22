@@ -1,8 +1,8 @@
 identifier: cas:157574-76-0
 preferred_term: 6'-O-sialyllactose sodium salt
 ontology_mapping:
-  ontology_id: CHEBI:26714
-  ontology_label: sodium salt
+  ontology_id: CHEBI:153372
+  ontology_label: 5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->6)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -13,8 +13,16 @@ ontology_mapping:
       to a CHEBI primary if/when CHEBI adds the term.
   - evidence_type: DATABASE_MATCH
     source: CHEBI via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via="6'-O-sialyllactose
-      sodium salt"
+    notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via="6''-O-sialyllactose
+      sodium salt"'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'parent CHEBI:26714 (''sodium salt'') -> CHEBI:153372 (''5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->6)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose'').
+      As for the 3''-isomer: CHEBI:26714 is the class of sodium salts. The label names
+      6''-sialyllactose, and CHEBI:153372 carries the related synonyms "6''-sialyllactose"
+      and "6''SL"; it is the anomer-unspecified D-glucopyranose form, so it is the
+      closest broader term for the salt. cas:157574-76-0 identity, NARROW_MATCH grade
+      and both registry rows unchanged (Section 3 step 2, #245).'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -57,6 +65,19 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE -> nutritional_roles.CARBON_SOURCE'
+- timestamp: '2026-09-22T23:25:51.038995+00:00'
+  curator: claude
+  action: REGROUNDED_PARENT_TERM
+  changes: 'broadMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:153372 (''5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->6)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose'')
+    (#312). As for the 3''-isomer: CHEBI:26714 is the class of sodium salts. The label
+    names 6''-sialyllactose, and CHEBI:153372 carries the related synonyms "6''-sialyllactose"
+    and "6''SL"; it is the anomer-unspecified D-glucopyranose form, so it is the closest
+    broader term for the salt. cas:157574-76-0 identity, NARROW_MATCH grade and both
+    registry rows unchanged (Section 3 step 2, #245).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 157574-76-0
   data_source: CultureBotHT compounds_to_cas.csv

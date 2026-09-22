@@ -34,16 +34,35 @@ curation_history:
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
   llm_assisted: false
+- timestamp: '2026-09-22T23:25:50.998756+00:00'
+  curator: claude
+  action: REGRADED_MAPPING_QUALITY
+  changes: mapping_quality CLOSE_MATCH -> SYNONYM_MATCH (#312). 'Hydroxystreptomycin'
+    is a verbatim ChEBI related synonym of CHEBI:24750 and of no other term, and the
+    term carries xref cas:6835-00-3. The earlier CLOSE_MATCH note ('the term names
+    the position and the label does not') understated a unique synonym resolution,
+    which Section 0 grades SYNONYM_MATCH. Identifier unchanged.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:hydroxystreptomycin);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
   ontology_id: CHEBI:24750
   ontology_label: 5'-hydroxystreptomycin
   ontology_source: CHEBI
-  mapping_quality: CLOSE_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#213)
     notes: Hydroxystreptomycin conventionally denotes 5'-hydroxystreptomycin; CLOSE_MATCH
       because the term names the position and the label does not (#213).
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: mapping_quality CLOSE_MATCH -> SYNONYM_MATCH. 'Hydroxystreptomycin' is
+      a verbatim ChEBI related synonym of CHEBI:24750 and of no other term, and the
+      term carries xref cas:6835-00-3. The earlier CLOSE_MATCH note ('the term names
+      the position and the label does not') understated a unique synonym resolution,
+      which Section 0 grades SYNONYM_MATCH. Identifier unchanged.
 ingredient_type: SINGLE_INGREDIENT

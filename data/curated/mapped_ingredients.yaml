@@ -1,4 +1,4 @@
-generation_date: '2026-09-22T20:44:07.317838+00:00'
+generation_date: '2026-09-22T23:31:01.985270+00:00'
 total_count: 2679
 mapped_count: 2612
 unmapped_count: 0
@@ -18176,17 +18176,38 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
     llm_assisted: false
+  - timestamp: '2026-09-22T23:25:51.005485+00:00'
+    curator: claude
+    action: REGRADED_MAPPING_QUALITY
+    changes: mapping_quality SYNONYM_MATCH -> CLOSE_MATCH (#312). 'Glutamyl-glutamic
+      Acid' is not a name on CHEBI:5390 (its names are Glu-Glu and L-alpha-glutamyl-L-glutamic
+      acid). The term is alpha-linked and L,L-specific; the label states neither,
+      and the gamma isomer is the separate term CHEBI:73705. The alpha/L,L reading
+      was supplied by peptide-nomenclature convention, so Section 0 grades it CLOSE_MATCH.
+      Identifier unchanged; own-identifier row stays exactMatch.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glutamyl_glutamic_acid);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
     ontology_id: CHEBI:5390
     ontology_label: Glu-Glu
     ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MIM curation (#213)
       notes: Glutamyl-glutamic acid is the dipeptide Glu-Glu (#213).
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: mapping_quality SYNONYM_MATCH -> CLOSE_MATCH. 'Glutamyl-glutamic Acid'
+        is not a name on CHEBI:5390 (its names are Glu-Glu and L-alpha-glutamyl-L-glutamic
+        acid). The term is alpha-linked and L,L-specific; the label states neither,
+        and the gamma isomer is the separate term CHEBI:73705. The alpha/L,L reading
+        was supplied by peptide-nomenclature convention, so Section 0 grades it CLOSE_MATCH.
+        Identifier unchanged; own-identifier row stays exactMatch.
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C10H16N2O7
@@ -18448,17 +18469,39 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
     llm_assisted: false
+  - timestamp: '2026-09-22T23:25:50.992216+00:00'
+    curator: claude
+    action: REGRADED_MAPPING_QUALITY
+    changes: 'mapping_quality SYNONYM_MATCH -> CLOSE_MATCH (#312). ''D-galactonic
+      Acid Lactone'' is not a label or synonym of any ChEBI term: every name on CHEBI:15895
+      states gamma or 1,4, and the bare ''D-Galactonolactone'' is a synonym of the
+      1,5-lactone CHEBI:15945. The ring size was supplied from outside ChEBI (the
+      Biolog substrate is the gamma-lactone), so the grade is CLOSE_MATCH per Section
+      0. Identifier unchanged; the own-identifier row stays skos:exactMatch (Rule
+      D).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:d_galactonic_acid_lactone);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
     ontology_id: CHEBI:15895
     ontology_label: D-galactono-1,4-lactone
     ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
+    mapping_quality: CLOSE_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MIM curation (#213)
       notes: D-galactonic acid lactone is D-galactono-1,4-lactone (#213).
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'mapping_quality SYNONYM_MATCH -> CLOSE_MATCH. ''D-galactonic Acid Lactone''
+        is not a label or synonym of any ChEBI term: every name on CHEBI:15895 states
+        gamma or 1,4, and the bare ''D-Galactonolactone'' is a synonym of the 1,5-lactone
+        CHEBI:15945. The ring size was supplied from outside ChEBI (the Biolog substrate
+        is the gamma-lactone), so the grade is CLOSE_MATCH per Section 0. Identifier
+        unchanged; the own-identifier row stays skos:exactMatch (Rule D).'
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C6H10O6
@@ -18646,18 +18689,37 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
     llm_assisted: false
+  - timestamp: '2026-09-22T23:25:50.998756+00:00'
+    curator: claude
+    action: REGRADED_MAPPING_QUALITY
+    changes: mapping_quality CLOSE_MATCH -> SYNONYM_MATCH (#312). 'Hydroxystreptomycin'
+      is a verbatim ChEBI related synonym of CHEBI:24750 and of no other term, and
+      the term carries xref cas:6835-00-3. The earlier CLOSE_MATCH note ('the term
+      names the position and the label does not') understated a unique synonym resolution,
+      which Section 0 grades SYNONYM_MATCH. Identifier unchanged.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: Imported from microbedecoder (source_id=kgmicrobe.trait:hydroxystreptomycin);
     no CAS-RN or CHEBI/NCIT match. Curator review needed.
   ontology_mapping:
     ontology_id: CHEBI:24750
     ontology_label: 5'-hydroxystreptomycin
     ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: MIM curation (#213)
       notes: Hydroxystreptomycin conventionally denotes 5'-hydroxystreptomycin; CLOSE_MATCH
         because the term names the position and the label does not (#213).
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: mapping_quality CLOSE_MATCH -> SYNONYM_MATCH. 'Hydroxystreptomycin' is
+        a verbatim ChEBI related synonym of CHEBI:24750 and of no other term, and
+        the term carries xref cas:6835-00-3. The earlier CLOSE_MATCH note ('the term
+        names the position and the label does not') understated a unique synonym resolution,
+        which Section 0 grades SYNONYM_MATCH. Identifier unchanged.
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:81287
   preferred_term: Neomycin F
@@ -23370,8 +23432,8 @@ ingredients:
 - identifier: cas:143314-17-4
   preferred_term: 1-ethyl-3-methylimidazolium acetate
   ontology_mapping:
-    ontology_id: CHEBI:61326
-    ontology_label: 1-ethyl-3-methylimidazolium
+    ontology_id: CHEBI:63895
+    ontology_label: ionic liquid
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -23383,8 +23445,18 @@ ingredients:
         adds the term.'
     - evidence_type: DATABASE_MATCH
       source: CHEBI via OLS (stem-substring)
-      notes: Parent class identified via stem-substring; matched_via='1-ethyl-3-methylimidazolium
-        acetate'
+      notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via=''1-ethyl-3-methylimidazolium
+        acetate'''
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'parent CHEBI:61326 (''1-ethyl-3-methylimidazolium'') -> CHEBI:63895
+        (''ionic liquid''). The record is the neutral salt (CAS 143314-17-4, two-fragment
+        SMILES). CHEBI:61326 ''1-ethyl-3-methylimidazolium'' is the bare cation, C6H11N2
+        charge +1: a component of the salt, not a broader term for it (Section 6).
+        ChEBI has no term for the acetate salt, so the closest broader class is CHEBI:63895
+        ''ionic liquid'', the parent the sibling record 1-ethyl-3-methylimidazolium_Lysine
+        already uses. cas: identity, NARROW_MATCH grade and both registry rows unchanged
+        (Section 3 step 2).'
   synonyms:
   - synonym_text: 1-ethyl-3-methyl-1H-imidazol-3-ium
     synonym_type: REJECTED_LABEL
@@ -23431,6 +23503,21 @@ ingredients:
       leak through SSSOM `other`: ''1-ethyl-3-methyl-1H-imidazol-3-ium'', ''1-ethyl-3-methylimidazolium
       lysine'' (#315).'
     llm_assisted: false
+  - timestamp: '2026-09-22T23:25:51.013985+00:00'
+    curator: claude
+    action: REGROUNDED_PARENT_TERM
+    changes: 'broadMatch parent CHEBI:61326 (''1-ethyl-3-methylimidazolium'') -> CHEBI:63895
+      (''ionic liquid'') (#312). The record is the neutral salt (CAS 143314-17-4,
+      two-fragment SMILES). CHEBI:61326 ''1-ethyl-3-methylimidazolium'' is the bare
+      cation, C6H11N2 charge +1: a component of the salt, not a broader term for it
+      (Section 6). ChEBI has no term for the acetate salt, so the closest broader
+      class is CHEBI:63895 ''ionic liquid'', the parent the sibling record 1-ethyl-3-methylimidazolium_Lysine
+      already uses. cas: identity, NARROW_MATCH grade and both registry rows unchanged
+      (Section 3 step 2).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 143314-17-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -26753,8 +26840,8 @@ ingredients:
 - identifier: cas:2013-26-5
   preferred_term: 2-oxobutyric acid sodium salt
   ontology_mapping:
-    ontology_id: CHEBI:16763
-    ontology_label: 2-oxobutanoate
+    ontology_id: CHEBI:30831
+    ontology_label: 2-oxobutanoic acid
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -26769,12 +26856,21 @@ ingredients:
         acid sodium salt'
     - evidence_type: DATABASE_MATCH
       source: MIM curation (#322)
-      notes: 'narrowMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:16763 (''2-oxobutanoate'').
-        The previous parent was the class of all sodium salts: it retained the counterion
-        and discarded the compound, collapsing unrelated ingredients onto one node.
-        Chosen because it is ChEBI has no ''2-oxobutanoic acid'' term, so the anion
-        is the nearest available parent for the sodium salt. The record stays cas-primary
-        per MAPPING_SEMANTICS §3 step 2; only the parent moves.'
+      notes: 'SUPERSEDED (#312): narrowMatch parent CHEBI:26714 (''sodium salt'')
+        -> CHEBI:16763 (''2-oxobutanoate''). The previous parent was the class of
+        all sodium salts: it retained the counterion and discarded the compound, collapsing
+        unrelated ingredients onto one node. Chosen because it is ChEBI has no ''2-oxobutanoic
+        acid'' term, so the anion is the nearest available parent for the sodium salt.
+        The record stays cas-primary per MAPPING_SEMANTICS §3 step 2; only the parent
+        moves.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'parent CHEBI:16763 (''2-oxobutanoate'') -> CHEBI:30831 (''2-oxobutanoic
+        acid''). Section 3: for a salt the broadMatch parent follows the label, and
+        ''...Acid sodium salt'' names the acid. The #322 note said ChEBI has no ''2-oxobutanoic
+        acid'' term; it does: CHEBI:30831, xref cas:600-18-0, synonym ''2-Oxobutyric
+        acid''. The anion CHEBI:16763 was the fallback for a false premise. cas: identity
+        unchanged.'
   synonyms:
   - synonym_text: Sodium 2-oxobutyrate
     synonym_type: EXACT_SYNONYM
@@ -26813,6 +26909,19 @@ ingredients:
       (#322); ChEBI has no '2-oxobutanoic acid' term, so the anion is the nearest
       available parent for the sodium salt.
     llm_assisted: false
+  - timestamp: '2026-09-22T23:25:51.023682+00:00'
+    curator: claude
+    action: REGROUNDED_PARENT_TERM
+    changes: 'broadMatch parent CHEBI:16763 (''2-oxobutanoate'') -> CHEBI:30831 (''2-oxobutanoic
+      acid'') (#312). Section 3: for a salt the broadMatch parent follows the label,
+      and ''...Acid sodium salt'' names the acid. The #322 note said ChEBI has no
+      ''2-oxobutanoic acid'' term; it does: CHEBI:30831, xref cas:600-18-0, synonym
+      ''2-Oxobutyric acid''. The anion CHEBI:16763 was the fallback for a false premise.
+      cas: identity unchanged.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 2013-26-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -29396,8 +29505,8 @@ ingredients:
 - identifier: cas:128596-80-5
   preferred_term: 3'-sialyllactose sodium salt
   ontology_mapping:
-    ontology_id: CHEBI:26714
-    ontology_label: sodium salt
+    ontology_id: CHEBI:151472
+    ontology_label: N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-D-glucose
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -29408,8 +29517,18 @@ ingredients:
         promote to a CHEBI primary if/when CHEBI adds the term.
     - evidence_type: DATABASE_MATCH
       source: CHEBI via OLS (stem-substring)
-      notes: Parent class identified via stem-substring; matched_via="3'-sialyllactose
-        sodium salt"
+      notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via="3''-sialyllactose
+        sodium salt"'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'parent CHEBI:26714 (''sodium salt'') -> CHEBI:151472 (''N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-D-glucose'').
+        CHEBI:26714 ''sodium salt'' is the class of all sodium salts: it keeps the
+        counterion and discards the compound (#322). The label names 3''-sialyllactose,
+        and ChEBI has it: CHEBI:151472 carries the related synonym "3''-sialyllactose"
+        and xref cas:35890-38-1 (the free trisaccharide). The reground_compositional_classes
+        NO_PARENT claim ''no sialyllactose term of any form'' was false. cas:128596-80-5
+        identity, NARROW_MATCH grade and both registry rows unchanged (Section 3 step
+        2, #245).'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -29453,6 +29572,21 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-09-22T23:25:51.030915+00:00'
+    curator: claude
+    action: REGROUNDED_PARENT_TERM
+    changes: 'broadMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:151472 (''N-acetyl-alpha-neuraminyl-(2->3)-beta-D-galactosyl-(1->4)-D-glucose'')
+      (#312). CHEBI:26714 ''sodium salt'' is the class of all sodium salts: it keeps
+      the counterion and discards the compound (#322). The label names 3''-sialyllactose,
+      and ChEBI has it: CHEBI:151472 carries the related synonym "3''-sialyllactose"
+      and xref cas:35890-38-1 (the free trisaccharide). The reground_compositional_classes
+      NO_PARENT claim ''no sialyllactose term of any form'' was false. cas:128596-80-5
+      identity, NARROW_MATCH grade and both registry rows unchanged (Section 3 step
+      2, #245).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 128596-80-5
     data_source: CultureBotHT compounds_to_cas.csv
@@ -32120,12 +32254,19 @@ ingredients:
     ontology_id: CHEBI:195418
     ontology_label: 5-hydroxylaurate
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: local kg-microbe CHEBI transform
       notes: Local CHEBI labels CHEBI:195418 5-hydroxylaurate with 5-hydroxydodecanoate
         as an exact synonym.
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH. The label ''5-Hydroxydodecanoate''
+        resolves through the ChEBI related synonym ''5-hydroxydodecanoate''; the primary
+        label is ''5-hydroxylaurate''. Section 0: a resolution through a unique ontology
+        synonym is SYNONYM_MATCH, not EXACT_MATCH. Identifier and term unchanged;
+        the own-identifier row stays skos:exactMatch (Rule D).'
   synonyms:
   - synonym_text: 5-Hydroxydodecanoate
     synonym_type: RAW_TEXT
@@ -32156,6 +32297,18 @@ ingredients:
     previous_status: UNMAPPED
     new_status: MAPPED
     llm_assisted: true
+  - timestamp: '2026-09-22T23:25:50.793291+00:00'
+    curator: claude
+    action: REGRADED_MAPPING_QUALITY
+    changes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#312). The label ''5-Hydroxydodecanoate''
+      resolves through the ChEBI related synonym ''5-hydroxydodecanoate''; the primary
+      label is ''5-hydroxylaurate''. Section 0: a resolution through a unique ontology
+      synonym is SYNONYM_MATCH, not EXACT_MATCH. Identifier and term unchanged; the
+      own-identifier row stays skos:exactMatch (Rule D).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)); curated to
     CHEBI:195418 5-hydroxylaurate by local CHEBI exact synonym review on 2026-05-11.
   kg_microbe_node_id: CHEBI:195418
@@ -32853,8 +33006,8 @@ ingredients:
 - identifier: cas:157574-76-0
   preferred_term: 6'-O-sialyllactose sodium salt
   ontology_mapping:
-    ontology_id: CHEBI:26714
-    ontology_label: sodium salt
+    ontology_id: CHEBI:153372
+    ontology_label: 5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->6)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose
     ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
@@ -32865,8 +33018,16 @@ ingredients:
         promote to a CHEBI primary if/when CHEBI adds the term.
     - evidence_type: DATABASE_MATCH
       source: CHEBI via OLS (stem-substring)
-      notes: Parent class identified via stem-substring; matched_via="6'-O-sialyllactose
-        sodium salt"
+      notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via="6''-O-sialyllactose
+        sodium salt"'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'parent CHEBI:26714 (''sodium salt'') -> CHEBI:153372 (''5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->6)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose'').
+        As for the 3''-isomer: CHEBI:26714 is the class of sodium salts. The label
+        names 6''-sialyllactose, and CHEBI:153372 carries the related synonyms "6''-sialyllactose"
+        and "6''SL"; it is the anomer-unspecified D-glucopyranose form, so it is the
+        closest broader term for the salt. cas:157574-76-0 identity, NARROW_MATCH
+        grade and both registry rows unchanged (Section 3 step 2, #245).'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -32910,6 +33071,19 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-09-22T23:25:51.038995+00:00'
+    curator: claude
+    action: REGROUNDED_PARENT_TERM
+    changes: 'broadMatch parent CHEBI:26714 (''sodium salt'') -> CHEBI:153372 (''5-acetamido-3,5-dideoxy-D-glycero-alpha-D-galacto-non-2-ulopyranonosyl-(2->6)-beta-D-galactopyranosyl-(1->4)-D-glucopyranose'')
+      (#312). As for the 3''-isomer: CHEBI:26714 is the class of sodium salts. The
+      label names 6''-sialyllactose, and CHEBI:153372 carries the related synonyms
+      "6''-sialyllactose" and "6''SL"; it is the anomer-unspecified D-glucopyranose
+      form, so it is the closest broader term for the salt. cas:157574-76-0 identity,
+      NARROW_MATCH grade and both registry rows unchanged (Section 3 step 2, #245).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 157574-76-0
     data_source: CultureBotHT compounds_to_cas.csv
@@ -40569,9 +40743,9 @@ ingredients:
 - identifier: cas:11078-27-6
   preferred_term: Arabinan from Sugar Beet
   ontology_mapping:
-    ontology_id: FOODON:00003412
-    ontology_label: sugar beet
-    ontology_source: FOODON
+    ontology_id: CHEBI:22590
+    ontology_label: arabinan
+    ontology_source: CHEBI
     mapping_quality: NARROW_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
@@ -40581,8 +40755,16 @@ ingredients:
         to a CHEBI primary if/when CHEBI adds the term.
     - evidence_type: DATABASE_MATCH
       source: FOODON via OLS (stem-substring)
-      notes: Parent class identified via stem-substring; matched_via='Arabinan from
-        Sugar Beet'
+      notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via=''Arabinan
+        from Sugar Beet'''
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'parent FOODON:00003412 (''sugar beet'') -> CHEBI:22590 (''arabinan'').
+        FOODON:00003412 ''sugar beet'' is the source organ the stem-substring matcher
+        took from the trailing qualifier; a polysaccharide is not a kind of a root.
+        The head noun is arabinan, CHEBI:22590, the closest broader term (the botanical
+        source stays in the preferred_term). cas:11078-27-6 identity, NARROW_MATCH
+        grade and both registry rows unchanged (Section 3 step 2, #245).'
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -40611,6 +40793,19 @@ ingredients:
     action: BACKFILL_PARENT_FOODON
     changes: set ontology_mapping parent=FOODON:00003412 (stem-substring)
     llm_assisted: false
+  - timestamp: '2026-09-22T23:25:51.045781+00:00'
+    curator: claude
+    action: REGROUNDED_PARENT_TERM
+    changes: 'broadMatch parent FOODON:00003412 (''sugar beet'') -> CHEBI:22590 (''arabinan'')
+      (#312). FOODON:00003412 ''sugar beet'' is the source organ the stem-substring
+      matcher took from the trailing qualifier; a polysaccharide is not a kind of
+      a root. The head noun is arabinan, CHEBI:22590, the closest broader term (the
+      botanical source stays in the preferred_term). cas:11078-27-6 identity, NARROW_MATCH
+      grade and both registry rows unchanged (Section 3 step 2, #245).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 11078-27-6
     data_source: CultureBotHT compounds_to_cas.csv
@@ -52220,11 +52415,17 @@ ingredients:
     ontology_id: CHEBI:30776
     ontology_label: hexanoic acid
     ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
+    mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH. The label ''Caproic acid''
+        is a ChEBI related synonym of CHEBI:30776, whose primary label is ''hexanoic
+        acid''. Section 0: synonym resolution is SYNONYM_MATCH. The CAS 142-62-1 on
+        the record is ChEBI''s own xref for the term. Identifier unchanged.'
   synonyms:
   - synonym_text: 'Role: Growth factor; Properties: Organic compound, Defined component,
       Simple component'
@@ -52362,6 +52563,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-22T23:25:50.982109+00:00'
+    curator: claude
+    action: REGRADED_MAPPING_QUALITY
+    changes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#312). The label ''Caproic
+      acid'' is a ChEBI related synonym of CHEBI:30776, whose primary label is ''hexanoic
+      acid''. Section 0: synonym resolution is SYNONYM_MATCH. The CAS 142-62-1 on
+      the record is ChEBI''s own xref for the term. Identifier unchanged.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 142-62-1
     data_source: PubChem API
@@ -120721,21 +120933,28 @@ ingredients:
 - identifier: CHEBI:86345
   preferred_term: MgCl2x 6 H2O
   ontology_mapping:
-    ontology_id: CHEBI:6636
-    ontology_label: magnesium dichloride
+    ontology_id: CHEBI:86345
+    ontology_label: magnesium dichloride hexahydrate
     ontology_source: CHEBI
     mapping_quality: SYNONYM_MATCH
     evidence:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'REJECTED tombstone (merged into Mgcl2_X_6_H2o by #414): its identifier
+        was re-pointed to CHEBI:86345 on 2026-08-20 but ontology_mapping still named
+        CHEBI:6636 ''magnesium dichloride'', so the anhydrous label was still claimed
+        by a hexahydrate record (#232). Point the mapping at the hexahydrate term
+        and retype the anhydrous alias REJECTED_LABEL.'
   synonyms:
   - synonym_text: 'Role: Mineral source; Properties: Inorganic compound, Defined component,
       Simple component'
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Magnesium chloride anhydrous
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: MgCl2  x 7 H2O
     synonym_type: HYDRATE_FORM
@@ -120860,6 +121079,18 @@ ingredients:
       node id lagged a same-prefix identifier correction; the downstream node id must
       match the curated identifier unless a record intentionally crosses CURIE prefixes.
     llm_assisted: false
+  - timestamp: '2026-09-22T23:25:51.063197+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'ontology_id CHEBI:6636 -> CHEBI:86345 (#312). REJECTED tombstone (merged
+      into Mgcl2_X_6_H2o by #414): its identifier was re-pointed to CHEBI:86345 on
+      2026-08-20 but ontology_mapping still named CHEBI:6636 ''magnesium dichloride'',
+      so the anhydrous label was still claimed by a hexahydrate record (#232). Point
+      the mapping at the hexahydrate term and retype the anhydrous alias REJECTED_LABEL.'
+    previous_status: REJECTED
+    new_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 12285-34-6
     data_source: NCI CACTUS Chemical Identifier Resolver

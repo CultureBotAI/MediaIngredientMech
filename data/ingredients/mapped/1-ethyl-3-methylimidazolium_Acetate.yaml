@@ -1,8 +1,8 @@
 identifier: cas:143314-17-4
 preferred_term: 1-ethyl-3-methylimidazolium acetate
 ontology_mapping:
-  ontology_id: CHEBI:61326
-  ontology_label: 1-ethyl-3-methylimidazolium
+  ontology_id: CHEBI:63895
+  ontology_label: ionic liquid
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:
@@ -13,8 +13,18 @@ ontology_mapping:
       FEBA_stress. Curator can promote to a CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: CHEBI via OLS (stem-substring)
-    notes: Parent class identified via stem-substring; matched_via='1-ethyl-3-methylimidazolium
-      acetate'
+    notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via=''1-ethyl-3-methylimidazolium
+      acetate'''
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'parent CHEBI:61326 (''1-ethyl-3-methylimidazolium'') -> CHEBI:63895 (''ionic
+      liquid''). The record is the neutral salt (CAS 143314-17-4, two-fragment SMILES).
+      CHEBI:61326 ''1-ethyl-3-methylimidazolium'' is the bare cation, C6H11N2 charge
+      +1: a component of the salt, not a broader term for it (Section 6). ChEBI has
+      no term for the acetate salt, so the closest broader class is CHEBI:63895 ''ionic
+      liquid'', the parent the sibling record 1-ethyl-3-methylimidazolium_Lysine already
+      uses. cas: identity, NARROW_MATCH grade and both registry rows unchanged (Section
+      3 step 2).'
 synonyms:
 - synonym_text: 1-ethyl-3-methyl-1H-imidazol-3-ium
   synonym_type: REJECTED_LABEL
@@ -61,6 +71,21 @@ curation_history:
     through SSSOM `other`: ''1-ethyl-3-methyl-1H-imidazol-3-ium'', ''1-ethyl-3-methylimidazolium
     lysine'' (#315).'
   llm_assisted: false
+- timestamp: '2026-09-22T23:25:51.013985+00:00'
+  curator: claude
+  action: REGROUNDED_PARENT_TERM
+  changes: 'broadMatch parent CHEBI:61326 (''1-ethyl-3-methylimidazolium'') -> CHEBI:63895
+    (''ionic liquid'') (#312). The record is the neutral salt (CAS 143314-17-4, two-fragment
+    SMILES). CHEBI:61326 ''1-ethyl-3-methylimidazolium'' is the bare cation, C6H11N2
+    charge +1: a component of the salt, not a broader term for it (Section 6). ChEBI
+    has no term for the acetate salt, so the closest broader class is CHEBI:63895
+    ''ionic liquid'', the parent the sibling record 1-ethyl-3-methylimidazolium_Lysine
+    already uses. cas: identity, NARROW_MATCH grade and both registry rows unchanged
+    (Section 3 step 2).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 143314-17-4
   data_source: CultureBotHT compounds_to_cas.csv
