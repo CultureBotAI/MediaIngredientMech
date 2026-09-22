@@ -126,7 +126,7 @@ See [MAPPING_SEMANTICS.md](MAPPING_SEMANTICS.md) for predicate semantics (`skos:
 - [Component Partonomy](docs/stock_components.md) - Typed has-part references, evidence, and validation
 - [MIM KGX Export](docs/KGX_EXPORT.md) - Standalone ingredient graph with mappings, roles, components, and provenance
 - [Reviewed MIM SSSOM](docs/SSSOM_RELEASE.md) - Supported mappings and a separate lossless review backlog
-- [Current semantic review](reports/semantic_review_20260921/resolution/README.md) - Supported MIM release, validated counts, and separately preserved scientific backlog
+- [Historical MIM graph release review](reports/semantic_review_20260921/resolution/README.md) - Published 2026-09-21 snapshot, its validated counts, and scientific backlog
 
 ## Development
 

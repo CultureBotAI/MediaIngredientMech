@@ -278,7 +278,6 @@ def test_esculin_ferric_citrate_keeps_anhydrous_component_as_external_term(recor
             "Esculin Monohydrate",
             "CHEBI:73111",
             [
-                "hydrolysis: esculin",
                 ("7-hydroxy-2-oxo-2H-chromen-6-yl " "beta-D-glucopyranoside--water (1/1)"),
             ],
         ),

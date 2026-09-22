@@ -232,7 +232,7 @@ def load_review(root: Path, review_path: Path) -> dict:
         if row["predicate_id"] == "skos:exactMatch"
     }
     for row in selected:
-        if row["predicate_id"] in {"skos:broadMatch", "skos:narrowMatch"}:
+        if row["predicate_id"] in {"skos:narrowMatch", "skos:broadMatch"}:
             slug = row["subject_id"].removeprefix("MIM:").lower()
             if not any(
                 (row["subject_id"], f"kgmicrobe.{kind}:{slug}") in identities

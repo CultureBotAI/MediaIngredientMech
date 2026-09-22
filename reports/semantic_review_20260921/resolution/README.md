@@ -1,8 +1,22 @@
-# Reviewed MIM release with a separate scientific backlog
+# Historical MIM graph release: 2026-09-21
 
-The supported assertion subset passes semantic release validation. Unsupported
-claims are preserved in a separate review backlog. The complete source graph still has a **FAIL**
-verdict; this release does not change that verdict or erase its findings.
+This page documents the published
+[mim-supported-2026-09-21 release](https://github.com/CultureBotAI/MediaIngredientMech/releases/tag/mim-supported-2026-09-21),
+from commit `199696ba30ca871c3afec56dcf09c805bc244370`. All counts, validation
+receipts and reproduction results below describe that historical snapshot.
+The [original review files](https://github.com/CultureBotAI/MediaIngredientMech/tree/mim-supported-2026-09-21/reports/semantic_review_20260921/resolution)
+remain available at its release tag.
+
+For current mappings, use the [standalone SSSOM release guide](../../../docs/SSSOM_RELEASE.md)
+and [completed mapping disposition review](../../sssom_completion_20260921/README.md):
+1,763 supported rows and 1,255 withheld rows. Those decisions supersede the older
+mapping selection. This page does not announce a new KGX release; the current
+checked-in review ledgers have advanced beyond this published graph snapshot.
+
+The historical supported assertion subset passed semantic release validation.
+Unsupported claims were preserved in a separate review backlog. Its complete
+source graph retained a **FAIL** verdict; publishing the subset did not change
+that verdict or erase its findings.
 
 | Artifact | Scope | Count |
 | --- | --- | ---: |
@@ -49,9 +63,9 @@ its four component claims remain open. See the [component audit](components/READ
 
 ## Review and release gates
 
-[Finding dispositions](finding-dispositions.tsv) retain all 2,106 historical
-findings. [Assertion dispositions](assertion-dispositions.tsv) cover every current
-full-graph assertion. New positive dispositions require explicit reviewed plans;
+[Finding dispositions](https://github.com/CultureBotAI/MediaIngredientMech/blob/mim-supported-2026-09-21/reports/semantic_review_20260921/resolution/finding-dispositions.tsv) retained all 2,106 historical
+findings. [Assertion dispositions](https://github.com/CultureBotAI/MediaIngredientMech/blob/mim-supported-2026-09-21/reports/semantic_review_20260921/resolution/assertion-dispositions.tsv) covered every
+full-graph assertion in that release. New positive dispositions required explicit reviewed plans;
 historical positives are inherited only for the same source record, identical
 source bytes, and identical assertion payload. Every inherited role also requires
 a separate assertion-specific source-scope decision. The [role inheritance audit](roles/inherited-role-review.md)
@@ -103,6 +117,10 @@ removing three retired nodes and refreshing 11 nodes in each artifact; see
 runs the complete test suite and repository QC before merge.
 
 ## Reproduce from a clean checkout
+
+Run these commands from a checkout of tag `mim-supported-2026-09-21` to reproduce
+the historical counts and receipts above. Running them on current `main` uses
+the later mapping decisions and does not reproduce this published snapshot.
 
 Use new output directories; the exporters refuse to overwrite existing bundles.
 The reviewed report binds the complete graph to its deterministic directory and
