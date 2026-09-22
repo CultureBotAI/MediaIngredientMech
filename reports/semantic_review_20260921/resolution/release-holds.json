@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "scope": "Frozen negative release review; retain the full unchanged mapping assertion in the separate backlog. No source-row normalization or deletion.",
+  "required_hold_ids": [
+    "MIM.hold:724-aromatic-trait-synonym"
+  ],
+  "holds": [
+    {
+      "hold_id": "MIM.hold:724-aromatic-trait-synonym",
+      "assertion_id": "MIM.review:0932a61d300f2a4adf3a44e93be1e495b0c310946cda0e85c6d51b907bd0bc90",
+      "source_record": "mappings/ingredient_mappings.sssom.tsv",
+      "source_record_sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809",
+      "assertion_type": "mapping",
+      "source_position": "437",
+      "assertion_sha256": "54d74839ecc2eadcb8d2f8f787288f509aeeda698867ecbc38d14ead740376b6",
+      "edge_id": "MIM.assertion:fb0977bd847b293ab7e79a6968678e52d36c2a11db2f88cd0a01883ab0494594",
+      "owner_record": "data/ingredients/mapped/Aromatic_Compound.yaml",
+      "owner_record_sha256": "1b934b840f9941aadbc305120f44c072f113ccd89745915ea190ecc588a4d9c9",
+      "assertion": {
+        "comment": "",
+        "confidence": "0.99",
+        "mapping_date": "2026-09-02",
+        "mapping_justification": "semapv:LexicalMatching",
+        "object_id": "CHEBI:33655",
+        "object_label": "aromatic compound",
+        "object_source": "obo:chebi.owl",
+        "other": "aromatic compounds|aromatic molecular entity|degradation: aromatic compound",
+        "predicate_id": "skos:exactMatch",
+        "source": "MIM:kgm-metatraits|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_import_ingredients[kgm-metatraits]]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:metatraits_special_chemicals|kgm:metatraits_special_chemicals[corrected_2026-04-08]",
+        "subject_id": "MIM:Aromatic_Compound",
+        "subject_label": "Aromatic compound",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "disposition": "WITHHOLD",
+      "review_reason": "The mapping's other field publishes 'degradation: aromatic compound' as a compound synonym. This is an organism trait phrase, not a compound name (#703). Withhold the entire mapping from the supported release and preserve its unchanged row in the separate backlog (#724). The broader source correction in #703 remains open.",
+      "issues": [
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/703",
+        "https://github.com/CultureBotAI/MediaIngredientMech/issues/724"
+      ]
+    }
+  ]
+}

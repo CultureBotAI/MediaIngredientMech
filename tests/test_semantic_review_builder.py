@@ -190,3 +190,123 @@ def test_scientific_role_audit_keeps_all24_unverified_promotions_open():
         "TRACE_ELEMENT", "IRON_SOURCE", "PHOSPHATE_SOURCE", "SULFUR_SOURCE", "VITAMIN_SOURCE"}
     for stem in ("Bacl2", "Sncl2_X_2_H2o", "Dl-alpha-lipoic_Acid"):
         assert any(entry["source_record"].endswith(f"/{stem}.yaml") for entry in opened)
+
+@pytest.fixture
+def release_hold():
+    document = json.loads((PATH.parent / "release-holds.json").read_text())
+    hold = document["holds"][0]
+    fields = (
+        "assertion_id",
+        "source_record",
+        "source_record_sha256",
+        "assertion_type",
+        "source_position",
+        "assertion_sha256",
+    )
+    decision = {
+        **{key: hold[key] for key in fields},
+        "resolution_status": "APPROVED",
+        "review_reason": "Existing positive review",
+        "review_evidence": "old-review.json",
+    }
+    edge = {key: hold[key] for key in ("source_record", "assertion_type", "source_position")}
+    edge.update(id=hold["edge_id"], assertion_json=json.dumps(hold["assertion"]))
+    unaffected = copy.deepcopy(decision)
+    unaffected.update(assertion_id="MIM.review:unaffected", source_position="999")
+    unaffected_edge = copy.deepcopy(edge)
+    unaffected_edge.update(id="MIM.assertion:unaffected", source_position="999")
+    return {
+        "document": document,
+        "assertions": [decision, unaffected],
+        "edges": [edge, unaffected_edge],
+        "owners": {hold["assertion"]["subject_id"]: hold["owner_record"]},
+        "record_hashes": {hold["owner_record"]: hold["owner_record_sha256"]},
+        "evidence_path": "release-holds.json",
+    }
+
+
+def test_negative_release_review_overrides_positive_without_editing_raw_claim(release_hold):
+    raw_edges = copy.deepcopy(release_hold["edges"])
+    unaffected = copy.deepcopy(release_hold["assertions"][1])
+    builder.apply_release_holds(**release_hold)
+    held = release_hold["assertions"][0]
+    assert held["resolution_status"] == "OPEN"
+    assert held["review_evidence"] == "release-holds.json"
+    assert held["review_reason"] == builder.FROZEN_RELEASE_HOLD_REASON
+    assert release_hold["assertions"][1] == unaffected
+    assert release_hold["edges"] == raw_edges
+    assert "degradation: aromatic compound" in json.loads(raw_edges[0]["assertion_json"])["other"]
+
+
+def test_hold_cannot_be_retargeted_to_a_different_claim_from_same_owner(release_hold):
+    hold = release_hold["document"]["holds"][0]
+    other = release_hold["assertions"][1]
+    for field in (
+        "assertion_id",
+        "source_record",
+        "source_record_sha256",
+        "assertion_type",
+        "source_position",
+        "assertion_sha256",
+    ):
+        hold[field] = other[field]
+    hold["edge_id"] = release_hold["edges"][1]["id"]
+    before = copy.deepcopy(release_hold["assertions"])
+    with pytest.raises(
+        ValueError, match="Maintained release-hold policy was altered or retargeted"
+    ):
+        builder.apply_release_holds(**release_hold)
+    assert release_hold["assertions"] == before
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    [
+        "required",
+        "missing",
+        "duplicate",
+        "assertion_id",
+        "payload_hash",
+        "source_hash",
+        "position",
+        "owner",
+        "owner_hash",
+        "payload",
+        "reason",
+        "reason_scope",
+        "issue",
+    ],
+)
+def test_invalid_frozen_release_hold_stops_before_any_decision_changes(release_hold, mutation):
+    document = release_hold["document"]
+    hold = document["holds"][0]
+    if mutation == "required":
+        document["required_hold_ids"] = []
+    elif mutation == "missing":
+        document["holds"] = []
+    elif mutation == "duplicate":
+        document["holds"].append(copy.deepcopy(hold))
+    elif mutation == "assertion_id":
+        hold["assertion_id"] = "MIM.review:missing"
+    elif mutation == "payload_hash":
+        hold["assertion_sha256"] = "stale-payload"
+    elif mutation == "source_hash":
+        hold["source_record_sha256"] = "stale-sssom"
+    elif mutation == "position":
+        hold["source_position"] = "2"
+    elif mutation == "owner":
+        hold["owner_record"] = "another-ingredient.yaml"
+    elif mutation == "owner_hash":
+        hold["owner_record_sha256"] = "stale-ingredient"
+    elif mutation == "payload":
+        hold["assertion"]["other"] = "cleaned without a new review"
+    elif mutation == "reason":
+        hold["review_reason"] = " "
+    elif mutation == "reason_scope":
+        hold["review_reason"] = "Different unreviewed exclusion"
+    else:
+        hold["issues"] = []
+    before = copy.deepcopy(release_hold["assertions"])
+    with pytest.raises(ValueError):
+        builder.apply_release_holds(**release_hold)
+    assert release_hold["assertions"] == before

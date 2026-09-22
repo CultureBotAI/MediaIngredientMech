@@ -1,15 +1,17 @@
 {
   "focused_tests": {
     "result": "PASS",
-    "passed": 182,
+    "passed": 115,
     "environment": "Python 3.13, frozen uv.lock with dev extras",
-    "scope": "All failures from the earlier full run plus semantic gate, review builder, KGX exporters, adversarial direction/partition checks and representative ownership tests",
-    "log_sha256": "476c1a92666a7fcd3b4cdb7204117f731fa581b72eb69489dcd2b9cac4da82c5"
+    "scope": "Review builder, semantic gate, supported exporter, adversarial hold deletion/retargeting and existing regression coverage",
+    "command": "python -m pytest -q -o addopts='' tests/test_semantic_review_builder.py tests/test_semantic_release_adversarial.py tests/test_semantic_release.py tests/test_supported_kgx.py tests/test_supported_kgx_adversarial.py",
+    "log_sha256": "edd0a8d469bb5c9ce0dc6580045a839baba8af65130a9c982a261fa4cfbcf7e3"
   },
   "maintained_package_coverage": {
     "percent": 65,
     "required_percent": 35,
-    "result": "PASS"
+    "result": "PASS",
+    "scope": "Preceding complete CI run for PR #722; required CI reruns the complete suite before this finalization is merged."
   },
   "static_quality": {
     "ruff": "PASS",
@@ -23,5 +25,14 @@
   "full_sssom": "sssom-validation.json",
   "supported_sssom": "supported-sssom-validation.json",
   "ontology_labels": "counts-and-label-check.json",
-  "full_ci_required_before_merge": true
+  "full_ci_required_before_merge": true,
+  "consumer_tsv": "tsv-consumer-validation.json",
+  "adversarial_review": {
+    "result": "PASS",
+    "issues": [
+      724,
+      725
+    ],
+    "proof": "finalization-review.md"
+  }
 }

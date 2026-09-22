@@ -14,6 +14,34 @@ The supported output includes its own SSSOM subset and a separate
 `unsupported-backlog.json`. PASS applies to that reviewed subset. The complete
 source projection described below retains its failing semantic verdict.
 
+Use these three TSVs from the same supported bundle:
+
+| File | Contents |
+| --- | --- |
+| `ingredient_mappings.sssom.tsv` | Reviewed identity and parent mappings, with SSSOM metadata |
+| `mim_nodes.tsv` | Active ingredient record references and terms used by reviewed assertions |
+| `mim_edges.tsv` | Reviewed mappings, roles, components, and environmental assertions |
+
+Load both KGX TSVs together, or load `mim-kgx.tar.gz`, which contains the two
+graph TSVs and their manifest. The SSSOM and `unsupported-backlog.json` are
+separate files outside that archive. The backlog preserves excluded assertions
+and raw source node annotations; it must not be loaded as approved graph data.
+An ingredient node alone identifies a source record, not an approved chemical
+identity. Isolated ingredient nodes are retained deliberately.
+
+Read TSVs as UTF-8 tab-delimited files. Skip `#` metadata lines when reading the
+SSSOM with a generic TSV reader. KGX JSON annotations escape literal pipes;
+decode the JSON cells to recover the original values. The manifest binds the
+review, counts, and data file hashes. A versioned data snapshot additionally
+includes `SHA256SUMS`, validation receipts, and `release-provenance.json` naming
+the exact source commit. Verify all downloaded files with `sha256sum -c
+SHA256SUMS` (or `shasum -a 256 -c SHA256SUMS` on macOS).
+
+The supported SSSOM preserves source confidence annotations verbatim, including
+values whose grading provenance remains under discussion in
+[#662](https://github.com/CultureBotAI/MediaIngredientMech/issues/662). Semantic
+review does not silently rescale those annotations.
+
 Build a complete projection of the assertions held by MIM:
 
 ```bash
@@ -71,7 +99,7 @@ that components in different records are identical. Reference scope, quantity,
 unit, completeness, method, and evidence remain attached to each component edge.
 These assertions do not establish complete CultureMech recipes.
 
-## Files and annotations
+## Complete source projection: files and annotations
 
 The output contains `mim_nodes.tsv`, `mim_edges.tsv`, `excluded_records.tsv`,
 `manifest.json`, and a deterministic `mim-kgx.tar.gz` containing the four other
