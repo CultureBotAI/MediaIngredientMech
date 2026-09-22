@@ -13,6 +13,7 @@ from pathlib import Path
 
 import yaml
 
+from mediaingredientmech.export.reviewed_sssom import load_review
 from mediaingredientmech.sssom_grading import predicate_for
 from mediaingredientmech.validation.semantic_release import (
     adjudicate_assertions,
@@ -52,6 +53,10 @@ def apply_release_holds(document, assertions, edges, owners, record_hashes, evid
     if document.get("required_hold_ids") != [FROZEN_RELEASE_HOLD_ID]:
         raise ValueError("Missing frozen release hold #724")
     held = validate_release_holds(document, assertions, edges, owners, record_hashes)
+    if not held:
+        # The gate independently accepts only the exact source correction in
+        # maintained policy; this is not permission to clear an active hold.
+        return
     hold = next(iter(held.values()))
     if (hold["owner_record"] != "data/ingredients/mapped/Aromatic_Compound.yaml"
             or hold["review_reason"] != FROZEN_RELEASE_HOLD_REASON
@@ -78,7 +83,9 @@ def has_mechanical_evidence_gap(kind, assertion):
 def archive_historical_reviews(root, old_rows, original_records, hashes, archive_path):
     """Preserve exact prior reasoning; a missing or changed receipt grants no approval."""
     existing = json.loads(archive_path.read_text()).get("reports", {}) if archive_path.exists() else {}
-    archived, eligible = {}, []
+    # Keep previously archived texts available to later mapping-only reviews.
+    # Eligibility still requires the current source bytes and payload below.
+    archived, eligible = dict(existing), []
     for old in old_rows:
         name = old["source_record"]
         original = original_records.get(name, {})
@@ -307,6 +314,14 @@ def main():
             reason = "Original source preparation explicitly supports the partial glucose/yeast/peptone/sulfur membership."
         if proof:
             decision.update(resolution_status="APPROVED", review_reason=reason, review_evidence=relative(proof))
+    mapping_review_path = ROOT / "reports/sssom_completion_20260921/review.json"
+    mapping_review = load_review(ROOT, mapping_review_path)
+    mapping_decisions = {d["source_position"]: d for d in mapping_review["decisions"]}
+    for decision in assertion_rows:
+        if decision["assertion_type"] == "mapping":
+            scoped = mapping_decisions[int(decision["source_position"])]
+            decision.update(resolution_status="APPROVED" if scoped["disposition"] == "SUPPORTED" else "OPEN",
+                            review_reason=scoped["review_reason"], review_evidence=relative(mapping_review_path))
     release_holds_path = HERE / "release-holds.json"
     apply_release_holds(json.loads(release_holds_path.read_text()), assertion_rows, graph_edges,
                         graph_owners, hashes, relative(release_holds_path))
@@ -317,6 +332,10 @@ def main():
                    historical_evidence,
                    release_holds_path,
                    ROOT / "src/mediaingredientmech/validation/semantic_release.py"]
+    proof_files.append(mapping_review_path)
+    proof_files.extend(ROOT / name for name in mapping_review["review"]["inputs"])
+    for resolution in json.loads(release_holds_path.read_text()).get("resolutions", []):
+        proof_files.append(ROOT / resolution["evidence"])
     for folder in ("identities", "roles", "components"):
         proof_files.extend(path for path in (HERE / folder).iterdir() if path.is_file())
     inputs = {relative(path): sha(path) for path in sorted(set(proof_files))}
@@ -328,6 +347,7 @@ def main():
                   baseline_manifest=relative(BASE / "manifest.json"), baseline_findings=relative(BASE / "findings.tsv"),
                   finding_dispositions=relative(HERE / "finding-dispositions.tsv"), assertion_dispositions=relative(HERE / "assertion-dispositions.tsv"),
                   release_holds=relative(release_holds_path),
+                  mapping_review=relative(mapping_review_path),
                   record_lineage=relative(HERE / "record-lineage.json"), bundle=relative(bundle), inputs=inputs, record_inputs=hashes,
                   blocking_finding_ids=blocking, blocking_assertion_ids=blocking_assertions, evidence_gaps=gaps)
     (HERE / "current-review.json").write_text(json.dumps(report, indent=2) + "\n")

@@ -23,7 +23,7 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: 'reduction: arsenate detoxification'
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: tetraoxoarsenate(V)
   synonym_type: EXACT_SYNONYM
@@ -139,6 +139,14 @@ curation_history:
     ChEBI gives these names to CHEBI:29242, not to this record''s CHEBI:29125 -- arsenate
     is not arsenite: a different oxidation state. Kept as REJECTED_LABEL so a rebuild
     cannot restore them from kg-microbe''s synonym list (#669).'
+  llm_assisted: true
+- timestamp: '2026-09-22T06:14:49.563933+00:00'
+  curator: claude
+  action: REJECTED_TRAIT_SYNONYMS
+  changes: 'Retyped activity/assay phrases as provenance-only REJECTED_LABEL because
+    they describe a process or organism trait, not an ingredient name (#703): ''reduction:
+    arsenate detoxification''. Preserved original text and source metadata. No identity,
+    mapping, role, or remaining-synonym claim was adjudicated.'
   llm_assisted: true
 chemical_properties:
   cas_rn: 15584-04-0

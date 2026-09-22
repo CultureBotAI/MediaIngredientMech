@@ -48,6 +48,24 @@ FROZEN_RELEASE_HOLDS = {
     }
 }
 
+# #729 explicitly resolves #724 after the source-level #703 correction. Keep
+# the original negative decision above: neither deleting the hold nor merely
+# editing its disposition may release the old payload. Only this reviewed
+# corrected assertion and owner can use the resolution path.
+FROZEN_RELEASE_HOLD_RESOLUTIONS = {
+    "MIM.hold:724-aromatic-trait-synonym": {
+        "assertion_id": "MIM.review:71c5d62cb680d1a5b93580c6c6b073893eefa8ee60d20482e351232d576462d6",
+        "assertion_sha256": "48222f60d12c7acb38223d3036eb44e7a7c687fb868e7dbe134a77964edb8491",
+        "owner_record": "data/ingredients/mapped/Aromatic_Compound.yaml",
+        "owner_record_sha256": "bbbfcafd33a763fc81b1a1bc425a4e270c791aac6e51d668726798ee16ff47b6",
+        "edge_id": "MIM.assertion:9b1195cc271ae650aeb4f71cb448fd2beaafa01b075508b3d17ba00866b9560a",
+        "resolution": "SOURCE_CORRECTED",
+        "evidence": "reports/sssom_completion_20260921/trait-synonym-refresh.json",
+        "evidence_sha256": "00eb08f04e988859ff76605bf4567114f106f73f314fbd36f66261662c45433c",
+        "mapping_review": "reports/sssom_completion_20260921/review.json",
+    }
+}
+
 
 def require(condition: bool, message: str) -> None:
     """Keep validation enabled under Python's optimized mode, too."""
@@ -573,11 +591,41 @@ def validate_release_holds(
     )
     require(len(required) == len(set(required)), "Duplicate required release hold")
     require(isinstance(holds, list), "Missing release holds")
+    resolutions = document.get("resolutions", [])
+    require(isinstance(resolutions, list), "Invalid release-hold resolutions")
+    resolved_ids = [item.get("hold_id") for item in resolutions]
+    require(len(resolved_ids) == len(set(resolved_ids)), "Duplicate release-hold resolution")
     hold_ids = [hold.get("hold_id") for hold in holds]
     require(len(hold_ids) == len(set(hold_ids)), "Duplicate release hold")
-    require(set(hold_ids) == set(required), "Missing or unexpected release hold")
+    require(not set(hold_ids) & set(resolved_ids), "Release hold both active and resolved")
+    require(set(hold_ids + resolved_ids) == set(required), "Missing or unexpected release hold")
     by_hold_id = {hold["hold_id"]: hold for hold in holds}
+    by_resolution = {item["hold_id"]: item for item in resolutions}
     for policy_id, policy in FROZEN_RELEASE_HOLDS.items():
+        if policy_id in by_resolution:
+            resolution = by_resolution[policy_id]
+            expected = FROZEN_RELEASE_HOLD_RESOLUTIONS.get(policy_id)
+            if expected is None:
+                raise ValueError("Unreviewed release-hold resolution")
+            require(
+                all(resolution.get(k) == v for k, v in expected.items()),
+                "Maintained release-hold resolution was altered or retargeted",
+            )
+            historical = [
+                h for h in document.get("historical_holds", []) if h.get("hold_id") == policy_id
+            ]
+            require(
+                len(historical) == 1 and all(historical[0].get(k) == v for k, v in policy.items()),
+                "Original negative release review was not preserved",
+            )
+            original_payload = json.dumps(
+                historical[0].get("assertion"), sort_keys=True, separators=(",", ":")
+            )
+            require(
+                hashlib.sha256(original_payload.encode()).hexdigest() == policy["assertion_sha256"],
+                "Original negative release payload was altered",
+            )
+            continue
         if policy["owner_record"] in record_hashes or policy_id in by_hold_id:
             require(policy_id in by_hold_id, "Maintained release-hold policy was removed")
             require(
@@ -591,6 +639,31 @@ def validate_release_holds(
         for edge in edges
     }
     require(len(edge_index) == len(edges), "Duplicate graph assertion for release holds")
+    for key, resolution in by_resolution.items():
+        require(key in FROZEN_RELEASE_HOLD_RESOLUTIONS, "Unknown release-hold resolution")
+        identity = identities.get(resolution.get("assertion_id"), {})
+        require(
+            identity.get("assertion_sha256") == resolution["assertion_sha256"],
+            "Resolved release hold has no matching current assertion",
+        )
+        edge = edge_index.get(
+            (
+                identity.get("source_record"),
+                identity.get("assertion_type"),
+                identity.get("source_position"),
+            ),
+            {},
+        )
+        require(edge.get("id") == resolution["edge_id"], "Resolved release-hold edge changed")
+        claim = json.loads(edge.get("assertion_json", "{}"))
+        require(
+            owners.get(claim.get("subject_id")) == resolution["owner_record"],
+            "Resolved release-hold owner changed",
+        )
+        require(
+            record_hashes.get(resolution["owner_record"]) == resolution["owner_record_sha256"],
+            "Resolved release-hold source changed",
+        )
     held = {}
     for hold in holds:
         key = hold.get("assertion_id")
@@ -765,6 +838,48 @@ def validate(root: Path, report_path: Path) -> dict:
         assertion_decisions,
         report["release_holds"],
     )
+    hold_document = json.loads(local(root, report["release_holds"]).read_text())
+    for resolution in hold_document.get("resolutions", []):
+        require(
+            inputs.get(resolution["evidence"]) == resolution["evidence_sha256"],
+            "Release-hold resolution lacks bound correction evidence",
+        )
+        if resolution.get("mapping_review"):
+            require(
+                report.get("mapping_review") == resolution["mapping_review"],
+                "Corrected release hold requires its mapping-specific review",
+            )
+    if report.get("mapping_review"):
+        from mediaingredientmech.export.reviewed_sssom import load_review
+
+        mapping_review_path = report["mapping_review"]
+        require(mapping_review_path in inputs, "Missing bound mapping-specific review")
+        reviewed = load_review(root, local(root, mapping_review_path))
+        require(
+            reviewed["review"]["source_sssom"] == "mappings/ingredient_mappings.sssom.tsv"
+            and reviewed["review"]["source_sha256"]
+            == inputs["mappings/ingredient_mappings.sssom.tsv"]
+            and reviewed["rows"] == mappings,
+            "Mapping-specific review describes a different source or payload",
+        )
+        mapping_decisions = {
+            int(d["source_position"]): d
+            for d in assertion_decisions
+            if d["assertion_type"] == "mapping"
+        }
+        require(
+            len(mapping_decisions) == len(reviewed["decisions"]),
+            "Graph mapping review coverage differs from SSSOM",
+        )
+        for decision in reviewed["decisions"]:
+            actual_mapping = mapping_decisions[decision["source_position"]]
+            expected_status = "APPROVED" if decision["disposition"] == "SUPPORTED" else "OPEN"
+            require(
+                actual_mapping["resolution_status"] == expected_status
+                and actual_mapping["review_reason"] == decision["review_reason"]
+                and actual_mapping["review_evidence"] == mapping_review_path,
+                "Graph mapping disposition overrides the mapping-specific review",
+            )
     gaps = evidence_gaps(records)
     verdict = "FAIL" if blocking or gaps or blocking_assertions else "PASS"
     require(report["blocking_finding_ids"] == blocking, "Incorrect blocking finding inventory")

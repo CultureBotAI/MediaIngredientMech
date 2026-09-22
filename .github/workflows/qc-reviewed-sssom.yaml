@@ -1,0 +1,40 @@
+name: QC — reviewed MIM SSSOM
+
+on:
+  pull_request:
+  merge_group:
+    types: [checks_requested]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  UV_PYTHON: "3.13"
+
+jobs:
+  reviewed-sssom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - name: Install locked runtime
+        run: uv sync --frozen
+      - name: Reproduce every scientific disposition
+        run: uv run --frozen python reports/sssom_completion_20260921/assemble_review.py --check
+      - name: Export and verify the supported mappings and separate backlog
+        run: |
+          uv run --frozen python -m mediaingredientmech.export.reviewed_sssom \
+            --review reports/sssom_completion_20260921/review.json --output output/mim-reviewed-sssom
+          uv run --frozen python -m mediaingredientmech.export.reviewed_sssom \
+            --review reports/sssom_completion_20260921/review.json --output output/mim-reviewed-sssom --validate-only
+      - name: Validate both SSSOM tables
+        run: uv run --frozen python scripts/validate_reviewed_sssom_schema.py output/mim-reviewed-sssom
+      - name: Upload standalone SSSOM release
+        uses: actions/upload-artifact@v4
+        with:
+          name: mim-reviewed-sssom
+          path: output/mim-reviewed-sssom/
+          if-no-files-found: error
