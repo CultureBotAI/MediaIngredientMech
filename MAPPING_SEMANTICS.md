@@ -130,9 +130,10 @@ ingredient for review, not to weaken the predicate.
 
 ### `skos:broadMatch`
 
-> **MIM:X is a kind-of Y (Y is the broader/parent term). Used to anchor MIM
-> children to OBO parents. Downstream consumers MUST emit this as
-> `biolink:subclass_of` (or `rdfs:subClassOf`), NEVER as identity.**
+> **MIM:X is a form of Y, or a kind of Y (Y is the closest broader term).
+> Used to anchor MIM records to OBO parents. Downstream consumers MUST emit
+> this as `biolink:broad_match` — NOT as `biolink:subclass_of`, and NEVER as
+> identity (#245).**
 
 `skos:broadMatch` is a sub-property of `skos:broader`, and `A skos:broader B`
 means **B is broader than A**. So `MIM:Vermont_Soil skos:broadMatch
@@ -145,9 +146,12 @@ record. The grade name and the predicate still agree: a record graded
 
 This predicate is **asymmetric**: substitution is only legal in one
 direction (specific → general for inference like "Vermont Soil is soil"),
-and even that direction is only valid for subclass-of reasoning, not
+and even that direction is only valid for broader-than reasoning, not
 identity. The MIM child and the ontology parent are **different graph
-nodes**.
+nodes**. The row does not say *which* broader-than relation holds — strict
+subclass, salt of, hydrate of, solution of, racemate of — and that is why it
+must not be projected as `subclass_of`; see "The parent anchor means
+'form of'" below.
 
 Use `skos:broadMatch` when:
 
@@ -155,8 +159,11 @@ Use `skos:broadMatch` when:
   and you want to anchor it to the closest parent. Example: there is no
   CHEBI/ENVO term for "Vermont Soil" specifically, so `MIM:Vermont_Soil`
   broadMatches `ENVO:00001998 "soil"`.
-- You are asserting subclass-of, not identity. The parent term retains
-  its own identity; the MIM subject does not collapse into it.
+- You are asserting that Y is the closest broader term, not identity. The
+  parent term retains its own identity; the MIM subject does not collapse
+  into it. A salt anchored to its parent acid, a hydrate anchored to its
+  anhydrous compound and a solution anchored to its solute are all correct
+  uses (Section 3, step 2).
 
 Do **not** use `skos:broadMatch` when:
 
@@ -367,7 +374,9 @@ Work down the list and stop at the first that applies.
    `cas:<its own CAS>`, `skos:broadMatch` to the nearest ontology parent, plus
    the mandatory registry row (Section 2, Rule B1).
    `Sodium hypophosphite monohydrate` → `cas:10039-56-2`, broadMatch
-   `sodium hypophosphite`.
+   `sodium hypophosphite`. The parent row says the anhydrous compound is the
+   nearest broader term; it does not claim the hydrate is a subclass of it
+   (#245).
 
    The registry row's `kgmicrobe.*` CURIE is **not a competing identifier** — it
    is the kg-microbe-namespace handle for the same MIM subject, required by
@@ -469,12 +478,15 @@ from this repo as a sibling checkout. Its rule:
 > `broadMatch`) keep the ontology label canonical and add the MIM term as a
 > synonym.
 
+(The skill text reads "`broadMatch`, `broadMatch`" after the #390 rewrite; it
+means `narrowMatch`, `broadMatch`.)
+
 So:
 
 | predicate | effect on the ontology term in kg-microbe |
 |---|---|
 | `skos:exactMatch` / `skos:closeMatch` | **renamed** to MIM's `subject_label` |
-| `skos:broadMatch` / `skos:narrowMatch` | keeps its label; MIM's term added as a synonym, and a parent/child edge is emitted |
+| `skos:broadMatch` / `skos:narrowMatch` | keeps its label; MIM's term added as a synonym, and a `biolink:broad_match` child-to-parent edge is emitted (`subclass_of` until the #245 reader change lands) |
 
 **2,805 of 2,946 rows are symmetric, and 835 carry a label that differs from the
 ontology's** — every one renames a node. That is deliberate: a recipe says `KOH`,
@@ -537,6 +549,59 @@ Consequences for curators:
 - Rule B1 keys on both asymmetric predicates and was unaffected.
 - `skos:narrowMatch` is now rare-to-nonexistent in the corpus; treat a new one
   as a likely mislabelled `broadMatch`.
+
+### The parent anchor means "form of", not subsumption (#245)
+
+Section 1 used to say a consumer *must* emit `broadMatch` as
+`biolink:subclass_of`. That was measured against ChEBI on 2026-09-22 (set at
+`c5993f67`, 165 `broadMatch` rows), classifying each CHEBI parent by whether
+it carries an InChIKey — a fully specified molecule — or is a class:
+
+| subject shape | parent is a… | rows |
+|---|---|---:|
+| salt-named (`…sodium salt`, `…hydrochloride`) | specific molecule | 31 |
+| hydrate-named (`MgSO4 x 6 H2O`) | specific molecule | 10 |
+| solution-named (`84 g/L NaHCO3 solution`) | specific molecule | 3 |
+| other (racemates, cation-named salts, polymers, concentrates) | specific molecule | 25 |
+| any | class (`sodium salt`, `ionic liquid`, `hydroxyflavone`) | 26 |
+| any | non-CHEBI parent (NCIT, MeSH, FOODON, ENVO, MICRO, UBERON) | 70 |
+
+**69 of the 95 CHEBI-parent rows point at a fully specified molecule.** ChEBI
+relates a salt to its parent acid, and a hydrate to its anhydrous form, with
+`has part` — never `is_a`. A `subclass_of` edge for those rows is therefore
+false in the source ontology, and a prepared solution is not a kind of its
+solute under any model. The 26 class-parent rows and most of the 70 material
+rows ("Vermont Soil is a soil") are genuine subclass assertions. The row
+itself does not distinguish the two shapes.
+
+**Ruling: keep `skos:broadMatch`, change nothing in the data, and state what
+it means.** A MIM `broadMatch` row asserts that the object is the closest
+broader term for the subject — the subject is a *form of* it (salt, hydrate,
+solution, racemate) or a *kind of* it — and asserts nothing more specific
+than that. Consequences:
+
+- Consumers **must not** project a MIM `broadMatch` row as
+  `biolink:subclass_of` / `rdfs:subClassOf`. Emit `biolink:broad_match`
+  (Biolink's predicate whose exact mapping is `skos:broadMatch`). The parent
+  link stays in the graph for navigation and grouping; no subsumption claim
+  that ChEBI contradicts is made. The kg-microbe reader change is a one-line
+  predicate swap at the MediaDive parent-edge emission.
+- `skos:narrowMatch`, the inverse, carries the same reading in the other
+  direction: `biolink:narrow_match`, not a reversed `subclass_of`.
+- Curators keep following Section 3 step 2. Anchoring a hydrate to its
+  anhydrous molecule, or a salt to its parent acid, is correct and required —
+  it is not an error to be "fixed" by re-pointing the row at `CHEBI:35505
+  hydrate` or `CHEBI:24866 salt`. A class parent is equally fine when it is
+  the nearest one.
+- `skos:closeMatch` was rejected for the 69 rows: it carries no direction,
+  and Rule B1's registry-row obligation is keyed on the asymmetric
+  predicates, so those records would have lost it. A new salt-of/hydrate-of
+  predicate was rejected because no consumer reads one and `has part` on the
+  SSSOM subject would assert a partonomy MIM does not curate (Section 6).
+
+Transition: MIM's own KGX exporter (`src/mediaingredientmech/export/kgx.py`)
+and the 2026-09-21 semantic-review bundle still project `subclass_of`; that
+is tracked as #734 and is a release decision, not a curation one.
 
 ### What *not* to do
 
