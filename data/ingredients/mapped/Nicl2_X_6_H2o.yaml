@@ -18,13 +18,13 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2 x 2 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 2H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 5 H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2 x 6 H2O (0.1% w/v)
   synonym_type: HYDRATE_FORM
@@ -45,7 +45,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2·2H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2·6H2O
   synonym_type: HYDRATE_FORM
@@ -54,7 +54,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: NiCl2・5H2O
-  synonym_type: HYDRATE_FORM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: NiCl2・6H2O
   synonym_type: HYDRATE_FORM
@@ -80,10 +80,10 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: nickel(2+) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: nickel(II) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: REJECTED
 occurrence_statistics:
@@ -216,6 +216,16 @@ curation_history:
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
   llm_assisted: false
+- timestamp: '2026-09-22T19:08:44Z'
+  curator: retire_parent_names_on_forms
+  action: CORRECTED
+  changes: 'Marked 7 synonym(s) non-resolving: [''NiCl2 x 2 H2O'', ''NiCl2 x 2H2O'',
+    ''NiCl2 x 5 H2O'', ''NiCl2·2H2O'', ''NiCl2・5H2O'', ''nickel(2+) chloride'', ''nickel(II)
+    chloride'']. Each is a name of the parent compound or of a different hydrate,
+    not of this form; Section 3 keeps them distinct and the label index resolved the
+    parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore
+    them.'
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:53542
 chemical_properties:
   cas_rn: 7791-20-0

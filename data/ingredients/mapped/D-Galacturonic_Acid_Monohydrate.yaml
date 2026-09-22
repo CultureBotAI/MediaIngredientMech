@@ -35,7 +35,7 @@ ontology_mapping:
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
 synonyms:
 - synonym_text: D-galacturonate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -84,6 +84,14 @@ curation_history:
     from the parent rather than measured for this record. Water appended in ChEBI's
     own dot-separated notation.
   llm_assisted: false
+- timestamp: '2026-09-22T19:08:44Z'
+  curator: retire_parent_names_on_forms
+  action: CORRECTED
+  changes: 'Marked 1 synonym(s) non-resolving: [''D-galacturonate'']. Each is a name
+    of the parent compound or of a different hydrate, not of this form; Section 3
+    keeps them distinct and the label index resolved the parent''s name here (#232).
+    Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 91510-62-2
   data_source: CultureBotHT compounds_to_cas.csv

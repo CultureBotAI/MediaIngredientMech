@@ -88,10 +88,10 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: nickel(2+) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: nickel(II) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -204,6 +204,15 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-09-22T19:08:44Z'
+  curator: retire_parent_names_on_forms
+  action: CORRECTED
+  changes: 'Marked 2 synonym(s) non-resolving: [''nickel(2+) chloride'', ''nickel(II)
+    chloride'']. Each is a name of the parent compound or of a different hydrate,
+    not of this form; Section 3 keeps them distinct and the label index resolved the
+    parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore
+    them.'
+  llm_assisted: true
 kg_microbe_node_id: CHEBI:34887
 chemical_properties:
   data_source: CultureBotHT/compounds_to_cas.csv

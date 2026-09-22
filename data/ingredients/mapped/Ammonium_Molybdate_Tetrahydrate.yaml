@@ -28,7 +28,7 @@ ontology_mapping:
       are unchanged.'
 synonyms:
 - synonym_text: bisammonium dioxido(dioxo)molybdenum
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: (NH4)6Mo7O4
   synonym_type: RAW_TEXT
@@ -126,6 +126,14 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-09-22T19:08:44Z'
+  curator: retire_parent_names_on_forms
+  action: CORRECTED
+  changes: 'Marked 1 synonym(s) non-resolving: [''bisammonium dioxido(dioxo)molybdenum''].
+    Each is a name of the parent compound or of a different hydrate, not of this form;
+    Section 3 keeps them distinct and the label index resolved the parent''s name
+    here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 12054-85-2
   data_source: CultureBotHT compounds_to_cas.csv

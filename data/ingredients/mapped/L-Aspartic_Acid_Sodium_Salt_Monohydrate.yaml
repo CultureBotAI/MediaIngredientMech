@@ -27,10 +27,10 @@ ontology_mapping:
       are unchanged.'
 synonyms:
 - synonym_text: (2S)-2-aminobutanedioic acid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: ASPARTIC ACID
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -87,6 +87,15 @@ curation_history:
     came from the importer retired in #453, whose media_count counted a list truncated
     to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-22T19:08:44Z'
+  curator: retire_parent_names_on_forms
+  action: CORRECTED
+  changes: 'Marked 2 synonym(s) non-resolving: [''(2S)-2-aminobutanedioic acid'',
+    ''ASPARTIC ACID'']. Each is a name of the parent compound or of a different hydrate,
+    not of this form; Section 3 keeps them distinct and the label index resolved the
+    parent''s name here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore
+    them.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 323194-76-9
   data_source: CultureBotHT compounds_to_cas.csv

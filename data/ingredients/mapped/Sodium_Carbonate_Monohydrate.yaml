@@ -27,7 +27,7 @@ ontology_mapping:
       are unchanged.'
 synonyms:
 - synonym_text: disodium trioxidocarbonate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: (adjust if required)
   synonym_type: RAW_TEXT
@@ -78,6 +78,14 @@ curation_history:
     if required)''. Tokens already present on the kg-microbe ontology node were left
     out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-22T19:08:44Z'
+  curator: retire_parent_names_on_forms
+  action: CORRECTED
+  changes: 'Marked 1 synonym(s) non-resolving: [''disodium trioxidocarbonate'']. Each
+    is a name of the parent compound or of a different hydrate, not of this form;
+    Section 3 keeps them distinct and the label index resolved the parent''s name
+    here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 5968-11-6
   data_source: CultureBotHT compounds_to_cas.csv

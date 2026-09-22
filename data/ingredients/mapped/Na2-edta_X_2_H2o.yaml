@@ -37,13 +37,13 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: EDTA disodium (anhydrous)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: EDTA disodium salt (anhydrous)
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Edetate disodium anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Na-EDTA x 2 H2O
   synonym_type: HYDRATE_FORM
@@ -55,7 +55,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: disodium 2,2',2'',2'''-(ethane-1,2-diyldiammonio)tetraacetate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: REJECTED
 occurrence_statistics:
@@ -180,6 +180,15 @@ curation_history:
     node id lagged a same-prefix identifier correction; the downstream node id must
     match the curated identifier unless a record intentionally crosses CURIE prefixes.
   llm_assisted: false
+- timestamp: '2026-09-22T19:08:44Z'
+  curator: retire_parent_names_on_forms
+  action: CORRECTED
+  changes: 'Marked 4 synonym(s) non-resolving: [''EDTA disodium (anhydrous)'', ''EDTA
+    disodium salt (anhydrous)'', ''Edetate disodium anhydrous'', "disodium 2,2'',2'''',2''''''-(ethane-1,2-diyldiammonio)tetraacetate"].
+    Each is a name of the parent compound or of a different hydrate, not of this form;
+    Section 3 keeps them distinct and the label index resolved the parent''s name
+    here (#232). Kept as REJECTED_LABEL so a rebuild cannot restore them.'
+  llm_assisted: true
 chemical_properties:
   cas_rn: 7487-55-0
   data_source: PubChem API (preprocessed)
