@@ -37,6 +37,83 @@ def relative(path):
     return str(path.relative_to(ROOT))
 
 
+def walk_mapping_changes(receipts, *, start_sha256, reviewed_sha256, baseline_rows, refreshed_rows):
+    """Verify the mapping-change receipts as one chain and replay them over the rows.
+
+    ``receipts`` are the ``mapping_changes/*.json`` documents (any order);
+    ``start_sha256`` is the SSSOM digest the last synonym refresh produced;
+    ``refreshed_rows`` maps a baseline position to the row as the synonym
+    refreshes left it. Every receipt must chain by digest, be numbered without
+    gaps, carry no approval, and describe each touched row's ``before`` exactly
+    as the previous link left it -- a row corrected twice chains through its
+    first correction, not back to the baseline (#742).
+
+    Returns ``(forward, last, state)``: the baseline-to-current position map
+    (``None`` for removed rows), the last receipt change per current position
+    for rows a receipt changed or added, and the replayed rows, which the caller
+    compares to the current source.
+    """
+    receipts = sorted(receipts, key=lambda receipt: receipt["sequence"])
+    if [r["sequence"] for r in receipts] != list(range(1, len(receipts) + 1)):
+        raise ValueError("Mapping-change receipts must be numbered 1..n without gaps")
+    state = [dict(refreshed_rows.get(position, row)) for position, row in enumerate(baseline_rows, 1)]
+    forward = list(range(1, len(baseline_rows) + 1))
+    last = {}
+    link = start_sha256
+    for receipt in receipts:
+        batch = receipt.get("batch")
+        if receipt.get("schema_version") != 1 or str(receipt.get("approval", "")).split(":")[0] != "NONE":
+            raise ValueError(f"Mapping-change receipt {batch} is not an approval-free link")
+        if receipt["before_sha256"] != link:
+            raise ValueError(f"Mapping-change receipt {batch} does not chain from the previous link")
+        link = receipt["after_sha256"]
+        position_map = receipt["position_map"]
+        if len(position_map) != receipt["before_row_count"] or receipt["before_row_count"] != len(state):
+            raise ValueError(f"Mapping-change receipt {batch} position map is incomplete")
+        after_count = receipt["after_row_count"]
+        new_state = [None] * after_count
+        for position, row in enumerate(state, 1):
+            target = position_map[position - 1]
+            if target is None:
+                continue
+            if not 1 <= target <= after_count or new_state[target - 1] is not None:
+                raise ValueError(f"Mapping-change receipt {batch} position map is not injective")
+            new_state[target - 1] = row
+        moved = {}
+        for current, change in last.items():
+            target = position_map[current - 1]
+            if target is not None:
+                moved[target] = change
+        for change in receipt["changes"]:
+            kind = change["kind"]
+            if kind in {"changed", "removed"}:
+                before = change["before_position"]
+                if state[before - 1] != change["before"]:
+                    raise ValueError(f"Mapping-change receipt {batch} does not chain from the reviewed row")
+                target = position_map[before - 1]
+                if kind == "removed":
+                    if target is not None:
+                        raise ValueError(f"Mapping-change receipt {batch} removes a row its position map keeps")
+                    continue
+                if target != change["after_position"]:
+                    raise ValueError(f"Mapping-change receipt {batch} moves a changed row inconsistently")
+            elif kind == "added":
+                target = change["after_position"]
+                if not 1 <= target <= after_count or new_state[target - 1] is not None:
+                    raise ValueError(f"Mapping-change receipt {batch} adds a row onto an occupied position")
+            else:
+                raise ValueError(f"Mapping-change receipt {batch} has an unknown change kind {kind!r}")
+            new_state[target - 1] = change["after"]
+            moved[target] = dict(change, receipt=batch)
+        if any(row is None for row in new_state):
+            raise ValueError(f"Mapping-change receipt {batch} leaves a hole in the row order")
+        forward = [position_map[p - 1] if p is not None else None for p in forward]
+        last, state = moved, new_state
+    if link != reviewed_sha256:
+        raise ValueError("The last chain link does not produce the reviewed source")
+    return forward, last, state
+
+
 def assemble():
     if digest(ROOT / SOURCE) != REVIEWED_SOURCE:
         raise ValueError("SSSOM differs from this completed scientific review; review it again")
@@ -51,24 +128,13 @@ def assemble():
     # synonym refreshes. They are explicit links, never approvals: every row a
     # receipt touches is withheld below, and every owner it touches loses the
     # byte-identical carry-forward.
-    mapping_changes = sorted(
-        (json.loads(path.read_text()) for path in (HERE / "mapping_changes").glob("*.json")),
-        key=lambda receipt: receipt["sequence"],
-    )
-    if [r["sequence"] for r in mapping_changes] != list(range(1, len(mapping_changes) + 1)):
-        raise ValueError("Mapping-change receipts must be numbered 1..n without gaps")
-    link = parent_refresh["after_sha256"]
-    for receipt in mapping_changes:
-        if receipt.get("schema_version") != 1 or receipt.get("approval", "").split(":")[0] != "NONE":
-            raise ValueError(f"Mapping-change receipt {receipt.get('batch')} is not an approval-free link")
-        if receipt["before_sha256"] != link:
-            raise ValueError(f"Mapping-change receipt {receipt['batch']} does not chain from the previous link")
-        link = receipt["after_sha256"]
-    if link != REVIEWED_SOURCE:
-        raise ValueError("The last chain link does not produce the reviewed source")
+    mapping_changes = [
+        json.loads(path.read_text()) for path in sorted((HERE / "mapping_changes").glob("*.json"))
+    ]
     expected_hashes = dict(baseline["record_inputs"])
     plans = [("Trait", traits), ("Parent-name", parents)] + [
-        (f"Mapping-change {receipt['batch']}", receipt) for receipt in mapping_changes
+        (f"Mapping-change {receipt['batch']}", receipt)
+        for receipt in sorted(mapping_changes, key=lambda receipt: receipt["sequence"])
     ]
     for label, plan in plans:
         for entry in plan["records"]:
@@ -84,24 +150,6 @@ def assemble():
     record_hashes = {owner: digest(ROOT / owner) for owner in set(owners)}
     if any(record_hashes[owner] != expected_hashes.get(owner) for owner in record_hashes):
         raise ValueError("Owner changed after scientific review; do not restamp its approval")
-    # Compose the position maps: baseline position -> current position (None when
-    # a receipt removed the row), and its inverse for rows that still exist.
-    forward = list(range(1, len(baseline["rows"]) + 1))
-    for receipt in mapping_changes:
-        if len(receipt["position_map"]) != receipt["before_row_count"]:
-            raise ValueError(f"Mapping-change receipt {receipt['batch']} position map is incomplete")
-        forward = [receipt["position_map"][p - 1] if p is not None else None for p in forward]
-    if len(mappings) != (mapping_changes[-1]["after_row_count"] if mapping_changes else len(baseline["rows"])):
-        raise ValueError("Current row count disagrees with the last chain link")
-    baseline_of = {current: bp for bp, current in enumerate(forward, 1) if current is not None}
-    if len(baseline_of) != sum(1 for current in forward if current is not None):
-        raise ValueError("Position map is not injective")
-    mapping_changed_rows = {}
-    for receipt in mapping_changes:
-        for change in receipt["changes"]:
-            if change["kind"] == "removed":
-                continue
-            mapping_changed_rows[change["after_position"]] = dict(change, receipt=receipt["batch"])
     prior = {int(d["source_position"]): d for d in baseline["decisions"]}
     changed_rows = {item["source_position"]: dict(item, receipt="trait-synonym-refresh.json") for item in refresh["changes"]}
     for item in parent_refresh["changes"]:
@@ -114,6 +162,16 @@ def assemble():
             merged["before"] = changed_rows[position]["before"]
             merged["removed_tokens"] = sorted(set(changed_rows[position]["removed_tokens"]) | set(item["removed_tokens"]))
         changed_rows[position] = merged
+    forward, mapping_changed_rows, replayed = walk_mapping_changes(
+        mapping_changes,
+        start_sha256=parent_refresh["after_sha256"],
+        reviewed_sha256=REVIEWED_SOURCE,
+        baseline_rows=baseline["rows"],
+        refreshed_rows={position: item["after"] for position, item in changed_rows.items()},
+    )
+    if replayed != mappings:
+        raise ValueError("Current source rows differ from the reviewed chain's replay")
+    baseline_of = {current: bp for bp, current in enumerate(forward, 1) if current is not None}
     original_records = {
         r["source_record"]: r
         for r in csv.DictReader(
@@ -218,15 +276,13 @@ def assemble():
             )
             continue
         previous_mapping = baseline["rows"][position - 1]
-        if mapping != previous_mapping:
+        if mapping != previous_mapping and not mapping_change:
+            # Not touched by any receipt, so the only admissible difference is the
+            # reviewed synonym correction (the replay above already proved a
+            # receipt-touched row matches its receipt).
             correction = changed_rows.get(position, {})
-            synonym_only = correction.get("before") == previous_mapping and correction.get("after") == mapping
-            if not synonym_only:
-                if not mapping_change or mapping_change["after"] != mapping:
-                    raise ValueError("Mapping changed outside the reviewed synonym correction or a mapping-change receipt")
-                expected_before = correction.get("after", previous_mapping)
-                if mapping_change["before"] != expected_before:
-                    raise ValueError("Mapping-change receipt does not chain from the reviewed row")
+            if correction.get("before") != previous_mapping or correction.get("after") != mapping:
+                raise ValueError("Mapping changed outside the reviewed synonym correction")
         original = prior[position]
         disposition = "WITHHOLD"
         reason = "This assertion lacks a mapping-specific positive disposition. Its full unchanged claim is preserved for source review."
