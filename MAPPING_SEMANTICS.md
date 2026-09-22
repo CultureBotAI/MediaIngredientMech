@@ -177,11 +177,13 @@ Do **not** use `skos:broadMatch` when:
 
 ### `skos:narrowMatch`
 
-> **Inverse of broadMatch. MIM:X is broader than Y; Y is a kind-of MIM:X.**
+> **Inverse of broadMatch. MIM:X is broader than Y; Y is a form of, or a
+> kind of, MIM:X. Consumers emit `biolink:narrow_match`, not a reversed
+> `subclass_of` (#245).**
 
 Used rarely in MIM, since the typical pattern is "MIM ingredient → OBO
 parent" (i.e. broadMatch). The semantic guarantee is symmetric to
-broadMatch: asymmetric, subclass-of only, not identity. If you find
+broadMatch: asymmetric, closest-broader-term only, not identity. If you find
 yourself reaching for `narrowMatch`, double-check that the relationship
 really runs broad-to-narrow in the direction the row claims, and is not a
 mislabeled `broadMatch`.
@@ -474,19 +476,16 @@ kg-microbe consumes this file as the **authoritative** ingredient-mapping source
 from this repo as a sibling checkout. Its rule:
 
 > symmetric matches (`skos:exactMatch`, `skos:closeMatch`) **overwrite the
-> canonical name** with MIM's `subject_label`; asymmetric (`broadMatch`,
-> `broadMatch`) keep the ontology label canonical and add the MIM term as a
-> synonym.
-
-(The skill text reads "`broadMatch`, `broadMatch`" after the #390 rewrite; it
-means `narrowMatch`, `broadMatch`.)
+> canonical name** with MIM's `subject_label`; asymmetric
+> (`narrowMatch`/`broadMatch`) keep the ontology label canonical and add the
+> MIM term as a synonym.
 
 So:
 
 | predicate | effect on the ontology term in kg-microbe |
 |---|---|
 | `skos:exactMatch` / `skos:closeMatch` | **renamed** to MIM's `subject_label` |
-| `skos:broadMatch` / `skos:narrowMatch` | keeps its label; MIM's term added as a synonym, and a `biolink:broad_match` child-to-parent edge is emitted (`subclass_of` until the #245 reader change lands) |
+| `skos:broadMatch` / `skos:narrowMatch` | keeps its label; MIM's term added as a synonym, and a `biolink:broad_match` child-to-parent edge is emitted (`subclass_of` until kg-microbe#1120 lands) |
 
 **2,805 of 2,946 rows are symmetric, and 835 carry a label that differs from the
 ontology's** — every one renames a node. That is deliberate: a recipe says `KOH`,
@@ -568,11 +567,15 @@ it carries an InChIKey — a fully specified molecule — or is a class:
 
 **69 of the 95 CHEBI-parent rows point at a fully specified molecule.** ChEBI
 relates a salt to its parent acid, and a hydrate to its anhydrous form, with
-`has part` — never `is_a`. A `subclass_of` edge for those rows is therefore
-false in the source ontology, and a prepared solution is not a kind of its
-solute under any model. The 26 class-parent rows and most of the 70 material
-rows ("Vermont Soil is a soil") are genuine subclass assertions. The row
-itself does not distinguish the two shapes.
+`has part`, not `is_a`: in `chebi.db` no term carries both `BFO:0000051` and
+`rdfs:subClassOf` to the same target (0 of 4,117 has-part edges, 0 of the
+201 on hydrate-labelled terms). A `subclass_of` edge for those rows is
+therefore false in the source ontology, and a prepared solution is not a
+kind of its solute under any model. The 26 class-parent rows are genuine
+subclass assertions ("3'-sialyllactose sodium salt is a sodium salt"). The
+70 non-CHEBI rows were not classified; their typical shape is a material
+under a material class ("Vermont Soil is a soil"), where subclass would
+hold. The row itself does not distinguish the shapes.
 
 **Ruling: keep `skos:broadMatch`, change nothing in the data, and state what
 it means.** A MIM `broadMatch` row asserts that the object is the closest
@@ -584,8 +587,8 @@ than that. Consequences:
   `biolink:subclass_of` / `rdfs:subClassOf`. Emit `biolink:broad_match`
   (Biolink's predicate whose exact mapping is `skos:broadMatch`). The parent
   link stays in the graph for navigation and grouping; no subsumption claim
-  that ChEBI contradicts is made. The kg-microbe reader change is a one-line
-  predicate swap at the MediaDive parent-edge emission.
+  that ChEBI contradicts is made. The kg-microbe reader change is a predicate and
+  relation swap at the MediaDive parent-edge emission (kg-microbe#1120).
 - `skos:narrowMatch`, the inverse, carries the same reading in the other
   direction: `biolink:narrow_match`, not a reversed `subclass_of`.
 - Curators keep following Section 3 step 2. Anchoring a hydrate to its
