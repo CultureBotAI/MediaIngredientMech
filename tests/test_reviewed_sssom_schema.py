@@ -64,7 +64,7 @@ def test_native_mapping_identity_changes_rejected(reviewed_fixture, monkeypatch)
         return result
 
     monkeypatch.setattr(native_gate, "parse_sssom_table", changed_label)
-    with pytest.raises(ValueError, match="ordered mapping identity"):
+    with pytest.raises(ValueError, match="mapping identities"):
         native_gate.validate_native(output)
 
 
@@ -90,3 +90,66 @@ def test_empty_supported_partition_is_valid_when_all_source_rows_withheld(review
     result = native_gate.validate_native(output)
     assert result["partitions"]["ingredient_mappings.sssom.tsv"]["raw_rows"] == 0
     assert result["partitions"]["withheld_mappings.sssom.tsv"]["raw_rows"] == 2
+
+
+def two_supported_rows(fixture):
+    root, path, output = fixture
+    review = json.loads(path.read_text())
+    evidence = root / "evidence.json"
+    proof = json.loads(evidence.read_text())
+    review["decisions"][1]["disposition"] = "SUPPORTED"
+    proof["entries"]["2"]["disposition"] = "SUPPORTED"
+    fixture_support.write_json(evidence, proof)
+    review["inputs"]["evidence.json"] = reviewed.digest(evidence)
+    source = root / "source.sssom.tsv"
+    _, fields, rows = reviewed.read_sssom(source)
+    header = "".join(
+        line for line in source.read_text().splitlines(keepends=True) if line.startswith("#")
+    )
+    source.write_bytes(header.encode() + reviewed._tsv(fields, list(reversed(rows))))
+    review["source_sha256"] = reviewed.digest(source)
+    for decision in review["decisions"]:
+        decision["source_position"] = 3 - decision["source_position"]
+    fixture_support.write_json(path, review)
+    reviewed.export_reviewed(root, path, output)
+
+
+def test_real_native_sorting_preserves_mapping_multiset(reviewed_fixture):
+    _, _, output = reviewed_fixture
+    two_supported_rows(reviewed_fixture)
+    table = output / "ingredient_mappings.sssom.tsv"
+    _, _, raw = reviewed.read_sssom(table)
+    native = native_gate.parse_sssom_table(table, strict=True)
+    assert [row["subject_id"] for row in raw] == ["MIM:Beta", "MIM:Alpha"]
+    assert native.df.subject_id.tolist() == ["MIM:Alpha", "MIM:Beta"]
+    assert native_gate.validate_native(output)["status"] == "PASS"
+
+
+def test_multiset_preserves_duplicate_multiplicity_and_bound_confidence():
+    alpha = {"subject_id": "MIM:Alpha", "subject_label": "Alpha", "confidence": "0.80"}
+    beta = {"subject_id": "MIM:Beta", "subject_label": "Beta", "confidence": "0.99"}
+    assert native_gate._mapping_multiset([alpha, alpha, beta]) != native_gate._mapping_multiset(
+        [alpha, beta, beta]
+    )
+    assert native_gate._mapping_multiset([alpha, beta]) == native_gate._mapping_multiset(
+        [{**beta, "confidence": 0.99}, {**alpha, "confidence": 0.8}], native=True
+    )
+    assert native_gate._mapping_multiset([alpha, beta]) != native_gate._mapping_multiset(
+        [{**beta, "confidence": 0.8}, {**alpha, "confidence": 0.99}], native=True
+    )
+
+
+def test_native_reordering_cannot_hide_substituted_mapping(reviewed_fixture, monkeypatch):
+    _, _, output = reviewed_fixture
+    two_supported_rows(reviewed_fixture)
+    parse = native_gate.parse_sssom_table
+
+    def substitute(*args, **kwargs):
+        native = parse(*args, **kwargs)
+        if len(native.df) == 2:
+            native.df.iloc[1] = native.df.iloc[0]
+        return native
+
+    monkeypatch.setattr(native_gate, "parse_sssom_table", substitute)
+    with pytest.raises(ValueError, match="mapping identities"):
+        native_gate.validate_native(output)

@@ -1,7 +1,7 @@
 """Native SSSOM schema gate with loss detection for both reviewed partitions (#730).
 
 The native parser can drop malformed rows while returning an empty, schema-valid
-mapping set. Row counts and ordered mapping identities must survive parsing.
+mapping set. Row counts and mapping identity multisets must survive parsing.
 Extension-column normalization is permitted here: the independent reviewed
 exporter checks every output byte against its evidence-derived expectation.
 """
@@ -12,6 +12,7 @@ import argparse
 import csv
 import io
 import json
+from collections import Counter
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
@@ -37,6 +38,19 @@ def _confidence(value) -> Decimal | None:
     return result
 
 
+def _mapping_multiset(rows: list[dict], *, native: bool = False) -> Counter:
+    result = Counter()
+    for row in rows:
+        confidence = row.get("confidence", "")
+        # Pandas represents an absent optional numeric value as NaN. Raw NaN
+        # strings remain invalid: only parsed absence receives this treatment.
+        if native and str(confidence).lower() in {"nan", "none", ""}:
+            confidence = ""
+        key = tuple(str(row.get(field, "")) for field in IDENTITY_FIELDS)
+        result[key + (_confidence(confidence),)] += 1
+    return result
+
+
 def validate_native(output: Path) -> dict:
     manifest = json.loads((output / "manifest.json").read_text())
     results = {}
@@ -55,26 +69,13 @@ def validate_native(output: Path) -> dict:
             raise ValueError(
                 f"Native parser dropped or added rows: {filename}: raw={len(raw)} native={len(native.df)}"
             )
-        for position, (original, parsed) in enumerate(
-            zip(raw, native.df.to_dict("records"), strict=True), 1
-        ):
-            if any(
-                str(parsed.get(field, "")) != original.get(field, "") for field in IDENTITY_FIELDS
-            ):
-                raise ValueError(
-                    f"Native parser changed ordered mapping identity: {filename}:{position}"
-                )
-            raw_confidence = original.get("confidence", "")
-            parsed_confidence = parsed.get("confidence", "")
-            # An absent optional value may become pandas NaN. It is not a numeric assertion.
-            if not str(raw_confidence).strip() and str(parsed_confidence).lower() in {
-                "nan",
-                "none",
-                "",
-            }:
-                parsed_confidence = ""
-            if _confidence(raw_confidence) != _confidence(parsed_confidence):
-                raise ValueError(f"Native parser changed confidence: {filename}:{position}")
+        # The maintained native parser sorts mappings. Compare the complete
+        # identity/label/confidence multiset so sorting is harmless while a
+        # substituted, relabeled, or duplicated mapping still fails.
+        if _mapping_multiset(raw) != _mapping_multiset(native.df.to_dict("records"), native=True):
+            raise ValueError(
+                f"Native parser changed mapping identities, labels, confidence, or duplicate multiplicity: {filename}"
+            )
         document = to_mapping_set_document(native)
         if len(document.mapping_set.mappings or []) != len(raw):
             raise ValueError(f"Native LinkML conversion dropped rows: {filename}")
@@ -89,7 +90,7 @@ def validate_native(output: Path) -> dict:
         raise ValueError("Partition counts do not reconcile to the source count")
     return {
         "status": "PASS",
-        "scope": "Native SSSOM parsing and LinkML schema; exact row count, ordered identifiers/labels, and numeric confidence preserved. Other extension-field normalization is permitted; reviewed exporter independently verifies complete output bytes.",
+        "scope": "Native SSSOM parsing and LinkML schema; exact row count and mapping identity/label/numeric-confidence multiset, including duplicate multiplicity, preserved. Native sorting and other extension-field normalization are permitted; reviewed exporter independently verifies complete output bytes.",
         "partitions": results,
     }
 
