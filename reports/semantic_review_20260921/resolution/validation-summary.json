@@ -1,0 +1,27 @@
+{
+  "focused_tests": {
+    "result": "PASS",
+    "passed": 182,
+    "environment": "Python 3.13, frozen uv.lock with dev extras",
+    "scope": "All failures from the earlier full run plus semantic gate, review builder, KGX exporters, adversarial direction/partition checks and representative ownership tests",
+    "log_sha256": "476c1a92666a7fcd3b4cdb7204117f731fa581b72eb69489dcd2b9cac4da82c5"
+  },
+  "maintained_package_coverage": {
+    "percent": 65,
+    "required_percent": 35,
+    "result": "PASS"
+  },
+  "static_quality": {
+    "ruff": "PASS",
+    "black_maintained_source_files": 42,
+    "mypy_source_files": 42,
+    "result": "PASS",
+    "note": "Ignored locally generated datamodel was excluded from Black; clean-checkout CI checks the tracked package."
+  },
+  "clean_checkout": "clean-checkout-validation.json",
+  "native_kgx": "native-kgx-reader.json",
+  "full_sssom": "sssom-validation.json",
+  "supported_sssom": "supported-sssom-validation.json",
+  "ontology_labels": "counts-and-label-check.json",
+  "full_ci_required_before_merge": true
+}

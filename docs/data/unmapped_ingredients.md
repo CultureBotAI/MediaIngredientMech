@@ -1,7 +1,7 @@
 # Unmapped Ingredients
 
-Generated: 2026-09-21T03:54:03.995353+00:00
-Total: 272 ingredients
+Generated: 2026-09-22T02:35:43.450589+00:00
+Total: 273 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -277,3 +277,4 @@ Total: 272 ingredients
 | UNMAPPED_0734 |  | Tetrazolium | REJECTED |  |  | 0 |
 | UNMAPPED_0341 |  | Bordet-Gengou-Agar-Base | UNMAPPED |  |  | 0 |
 | UNMAPPED_0353 |  | Casman-Agar-Base | UNMAPPED |  |  | 0 |
+| UNMAPPED_0740 |  | CMC + PY + Horse Serum | AMBIGUOUS |  |  | 0 |

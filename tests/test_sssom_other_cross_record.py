@@ -102,7 +102,21 @@ def test_the_published_set_passes_rule_k():
     assert list(val.evaluate_rule_k(rows)) == []
 
 
-def _tombstone_corpus(tmp_path, monkeypatch, target_identifier="CHEBI:30089"):
+@pytest.mark.parametrize("status", ["MAPPED", "AMBIGUOUS"])
+def test_active_record_keeps_ownership_even_when_ambiguous(tmp_path, monkeypatch, status):
+    path = tmp_path / "active.yaml"
+    path.write_text(f"preferred_term: Old label\nmapping_status: {status}\n")
+    monkeypatch.setattr(val, "_subject_to_path", lambda: {"MIM:Active": path})
+    monkeypatch.setattr(val, "_other_baseline", frozenset)
+    try:
+        val._preferred_term_owners.cache_clear()
+        assert val._preferred_term_owners()["old label"] == frozenset({"MIM:Active"})
+        assert list(val.evaluate_rule_k(_rows(other="Old label")))
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+def _tombstone_corpus(tmp_path, monkeypatch, target_identifier="CHEBI:30089", representative=None):
     live = tmp_path / "Acetate.yaml"
     live.write_text(
         "identifier: CHEBI:30089\npreferred_term: Acetate\nmapping_status: MAPPED\n", encoding="utf-8"
@@ -113,11 +127,13 @@ def _tombstone_corpus(tmp_path, monkeypatch, target_identifier="CHEBI:30089"):
         encoding="utf-8",
     )
     tomb = tmp_path / "Acetate_Carbon_Source.yaml"
-    tomb.write_text(
+    tombstone_text = (
         f"identifier: {target_identifier}\npreferred_term: Acetate (carbon source)\n"
-        "mapping_status: REJECTED\n",
-        encoding="utf-8",
+        "mapping_status: REJECTED\n"
     )
+    if representative is not None:
+        tombstone_text += f"representative: {representative}\n"
+    tomb.write_text(tombstone_text, encoding="utf-8")
     monkeypatch.setattr(
         val, "_subject_to_path",
         lambda: {"MIM:Acetate": live, "MIM:Sodium_Acetate": other, "MIM:Acetate_Carbon_Source": tomb},
@@ -163,6 +179,35 @@ def test_a_rejected_record_with_no_live_target_keeps_its_own_name(tmp_path, monk
             {"MIM:Acetate_Carbon_Source"}
         )
         assert list(val.evaluate_rule_k([{"subject_id": "MIM:Acetate", "other": "Acetate (carbon source)"}]))
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+def test_explicit_representative_owns_name_instead_of_old_identifier(tmp_path, monkeypatch):
+    """A corrected merge target wins over the loser's retained wrong identifier."""
+    _tombstone_corpus(
+        tmp_path, monkeypatch, target_identifier="CHEBI:32954", representative="CHEBI:30089"
+    )
+    try:
+        assert val._preferred_term_owners()["acetate (carbon source)"] == frozenset({"MIM:Acetate"})
+        assert not list(val.evaluate_rule_k(_rows("MIM:Acetate", "Acetate (carbon source)")))
+        assert list(val.evaluate_rule_k(_rows("MIM:Sodium_Acetate", "Acetate (carbon source)")))
+    finally:
+        val._preferred_term_owners.cache_clear()
+
+
+@pytest.mark.parametrize("representative", ["CHEBI:99999999", ""])
+def test_missing_explicit_target_never_credits_former_identifier_owner(
+    tmp_path, monkeypatch, representative
+):
+    _tombstone_corpus(
+        tmp_path, monkeypatch, target_identifier="CHEBI:30089", representative=representative
+    )
+    try:
+        assert val._preferred_term_owners()["acetate (carbon source)"] == frozenset(
+            {"MIM:Acetate_Carbon_Source"}
+        )
+        assert list(val.evaluate_rule_k(_rows("MIM:Acetate", "Acetate (carbon source)")))
     finally:
         val._preferred_term_owners.cache_clear()
 

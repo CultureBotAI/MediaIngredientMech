@@ -1,18 +1,20 @@
-identifier: CHEBI:37023
+identifier: cas:542-32-5
 preferred_term: DL-2-Aminoadipic acid
 ontology_mapping:
-  ontology_id: CHEBI:37023
-  ontology_label: L-2-aminoadipic acid
-  ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  ontology_id: cas:542-32-5
+  ontology_label: DL-2-Aminoadipic acid
+  ontology_source: CAS
+  mapping_quality: FALLBACK_REGISTRY
   evidence:
-  - evidence_type: DATABASE_MATCH
-    source: CultureBotHT
-    notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-      sqlite (cas xref). '
+  - evidence_type: MANUAL_CURATION
+    source: https://www.sigmaaldrich.com/DE/en/product/sial/52458
+    notes: Retain the explicitly DL source substance as CAS 542-32-5. Withdraw L-enantiomer
+      CHEBI:37023 and its stereospecific synonym/structure; a racemate is not one
+      enantiomer. CAS registry identity does not imply that a new exact ChEBI search
+      was exhaustive.
 synonyms:
 - synonym_text: (2S)-2-aminohexanedioic acid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -52,13 +54,24 @@ curation_history:
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): AMINO_ACID_SOURCE ->
     nutritional_roles.AMINO_ACID_SOURCE'
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: CORRECTED
+  changes: 'Retain the explicitly DL source substance as CAS 542-32-5. Withdraw L-enantiomer
+    CHEBI:37023 and its stereospecific synonym/structure; a racemate is not one enantiomer.
+    CAS registry identity does not imply that a new exact ChEBI search was exhaustive.
+    Evidence: https://www.sigmaaldrich.com/DE/en/product/sial/52458'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 542-32-5
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:34:31.158938+00:00'
   molecular_formula: C6H11NO4
-  inchi: InChI=1S/C6H11NO4/c7-4(6(10)11)2-1-3-5(8)9/h4H,1-3,7H2,(H,8,9)(H,10,11)/t4-/m0/s1
-  smiles: N[C@@H](CCCC(=O)O)C(=O)O
+  smiles: NC(CCCC(O)=O)C(O)=O
+  inchi: InChI=1S/C6H11NO4/c7-4(6(10)11)2-1-3-5(8)9/h4H,1-3,7H2,(H,8,9)(H,10,11)
+  data_source: https://www.sigmaaldrich.com/DE/en/product/sial/52458
+  retrieval_date: '2026-09-21T21:33:25.379198+00:00'
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: AMINO_ACID_SOURCE

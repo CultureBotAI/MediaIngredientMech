@@ -12,12 +12,12 @@ ontology_mapping:
       defined nocarbon, 2x_UGA_defined_nocarbon, Hans Basal Media….'
 synonyms:
 - synonym_text: Sodium dihydrogen phosphate
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: sssom_other_backfill
-mapping_status: MAPPED
+mapping_status: REJECTED
 occurrence_statistics:
-  total_occurrences: 33
-  media_count: 33
+  total_occurrences: 0
+  media_count: 0
 curation_history:
 - timestamp: '2026-04-29T06:04:17.380972+00:00'
   curator: audit_integrate_culturebotht
@@ -67,6 +67,17 @@ curation_history:
     dihydrogen phosphate''. Tokens already present on the kg-microbe ontology node
     were left out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-21T21:33:25.379198+00:00'
+  curator: mim_semantic_review_20260921
+  action: MERGED_INTO
+  changes: 'Merged into CHEBI:34683 (Na2HPO4). Dibasic sodium phosphate is disodium
+    hydrogenphosphate, not trisodium phosphate. Sodium dihydrogen phosphate is monobasic
+    and is a REJECTED_LABEL here; its 78 recipe rows are excluded from this transfer.
+    Original fields remain only on this excluded tombstone. Evidence: https://www.ebi.ac.uk/chebi/CHEBI:34683'
+  previous_status: MAPPED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: gpt-6
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: 3Na.O4P
@@ -80,3 +91,4 @@ physicochemical_roles:
   - reference_type: COMPUTATIONAL_PREDICTION
     reference_text: Assigned by in-session Claude reasoning (no external API)
     curator_note: Provisional in-session LLM role assignment; review recommended.
+representative: CHEBI:34683
