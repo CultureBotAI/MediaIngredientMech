@@ -27,88 +27,177 @@
     },
     "output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv": {
       "byte_identical": true,
-      "bytes": 779524,
-      "sha256": "3483be2130b7dad82deb224958d791ad91d3bb19bc515d71dfa3c5d32267a70a"
+      "bytes": 778931,
+      "sha256": "9c80f5ab65094d843fd184a749ec946c7b55dc67a6d0bac3762b0589675a6c98"
     },
     "output/mim-kgx-710-supported/manifest.json": {
       "byte_identical": true,
       "bytes": 4233,
-      "sha256": "fbfd3c9b0e221487d48729699fd181f8dfdd44446ca849b41d7368d7970f8dc5"
+      "sha256": "1a6b09b20f80d5cf3953b2536c9d83f0965cb400eb13e91b9672e9fe7344674b"
     },
     "output/mim-kgx-710-supported/mim-kgx.tar.gz": {
       "byte_identical": true,
-      "bytes": 374913,
-      "sha256": "3aaa1db656c29d2345ac4d61f6532976d742f33663164a1e8d72e529a0f45a12"
+      "bytes": 374733,
+      "sha256": "895b3c54d01bbf0886e7d397a2cd7d84a87cef08b150fd7779cc62dc408ac7c0"
     },
     "output/mim-kgx-710-supported/mim_edges.tsv": {
       "byte_identical": true,
-      "bytes": 2040795,
-      "sha256": "577b146cdadcb6514b2904a5cf1d3a97c9b6bb2a37a1c12e49107c71d900b3b1"
+      "bytes": 2039694,
+      "sha256": "f9c896cfc907699726153758041160fee3eaa05717fe6ee23341c6395dd1ac88"
     },
     "output/mim-kgx-710-supported/mim_nodes.tsv": {
       "byte_identical": true,
-      "bytes": 561433,
-      "sha256": "c3942e7d64cf89edc9924afacf3a22e1c9e2b7ad56c369a79eb238267ded13ba"
+      "bytes": 561340,
+      "sha256": "3341694edae3bc9c574b9da7d6aa5335a90861fbc6c204f65ea49d5c8f324ddf"
     },
     "output/mim-kgx-710-supported/unsupported-backlog.json": {
       "byte_identical": true,
-      "bytes": 18592828,
-      "sha256": "7fc9c61140c3cfdcdc7d2a37307c47649f4ce5c6d291b07af664f1d61e14ad0c"
+      "bytes": 18595499,
+      "sha256": "deaf7be82c495e81d5abf733bd6a292ea9a60d9a90f83ebe11e462acabebcb6f"
     }
   },
-  "current_review_sha256": "d2e734620701fa18af976ef347ec404d292128411698aa3b73909ac8f54e86a2",
+  "current_review_sha256": "2516e4c1b793c42569f17f8582b255c66c254c6ab14965d1eb0a78db7d76b7f4",
+  "driver_sha256": "668ba2be412c4c74d5e2ebba19aec2f32790730a5f3d1ddd371de5805c4535a5",
   "integrity": "PASS",
-  "isolated_checkout": "/private/tmp/mim-710-clean-checkout-5ecmfvc5/checkout",
+  "isolated_checkout": "/private/tmp/mim-724-clean-checkout-2uka11q8/checkout",
   "limitations": [
-    "This verifies clean committed-source reproducibility using the locked dependency environment on macOS; GitHub Actions separately exercises Ubuntu.",
+    "Verifies committed-source reproduction using the locked dependency environment on macOS; GitHub Actions separately exercises Ubuntu.",
     "PASS applies only to the supported assertion subset; the complete corpus retains FAIL."
   ],
   "python_executable": "/private/tmp/mim-710-locked/bin/python",
   "python_version": "Python 3.13.12",
+  "review_proof_comparisons": {
+    "reports/semantic_review_20260921/resolution/assertion-dispositions.tsv": {
+      "byte_identical": true,
+      "bytes": 1855131,
+      "sha256": "338b679efbe7342dbb21c7896ccf8ee9f35d0a9a30cd4e09033f4a2127544cf8"
+    },
+    "reports/semantic_review_20260921/resolution/current-review.json": {
+      "byte_identical": true,
+      "bytes": 621211,
+      "sha256": "2516e4c1b793c42569f17f8582b255c66c254c6ab14965d1eb0a78db7d76b7f4"
+    },
+    "reports/semantic_review_20260921/resolution/finding-dispositions.tsv": {
+      "byte_identical": true,
+      "bytes": 1116574,
+      "sha256": "f5a75443b96c8f547c659d9cc2301f4e1f2065dfe088c30b840c26ffbbe1df8a"
+    },
+    "reports/semantic_review_20260921/resolution/historical-review-evidence.json": {
+      "byte_identical": true,
+      "bytes": 4080502,
+      "sha256": "a0ce8e6066912f8a945f5df57af465cfc3cd25dc941bea1c876debd5c3ccd8b2"
+    },
+    "reports/semantic_review_20260921/resolution/record-lineage.json": {
+      "byte_identical": true,
+      "bytes": 485,
+      "sha256": "997ba2c97d3323f405f9e1b980156829d5c5d9164743adb4c9aebb707f87e544"
+    }
+  },
   "schema_version": 1,
-  "scope": "Clean checkout reproduction of the reviewed assertion subset and complete source graph",
-  "source_archive_sha256": "11a6a0535c62e01709165db24faaeac254eff71a8df44d23eec5abb2351eecf7",
-  "source_commit": "12ad8b4f13159f4dc42ce5ae51e08338f28c5ffc",
-  "source_method": "git archive --format=tar of committed HEAD only; no working tree or ignored files copied",
+  "scope": "Clean committed-source reproduction of full/supported artifacts and dated review proofs",
+  "source_archive_sha256": "1867df536e045ed37091231d49e5ecd8bc439f81f3b951904f11aa509b6d106e",
+  "source_commit": "8c0e522f69474af02875c0b4190ce4f776fdac58",
+  "source_method": "git archive --format=tar of the exact supplied committed SHA; no working tree or ignored files copied",
+  "sssom_validation": {
+    "mappings/ingredient_mappings.sssom.tsv": {
+      "result": "PASS",
+      "sha256": "aa328df9bab3d7a5cf555c0200d43c6987820268f2b48757d8d203b281d3f809"
+    },
+    "output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv": {
+      "result": "PASS",
+      "sha256": "9c80f5ab65094d843fd184a749ec946c7b55dc67a6d0bac3762b0589675a6c98"
+    }
+  },
   "steps": [
     {
+      "command": [
+        "python",
+        "-c",
+        "import json; from pathlib import Path; from mediaingredientmech.export import kgx,supported_kgx; from mediaingredientmech.validation import semantic_release; paths=[Path(m.__file__).resolve() for m in (kgx,supported_kgx,semantic_release)]; assert all(p.is_relative_to(Path.cwd()/'src') for p in paths),paths; print(json.dumps([str(p) for p in paths]))"
+      ],
       "exit_code": 0,
-      "log_sha256": "ccb78e416d7e3e4111e05e79d48751688b9e1191752ce594d8ac8ea49abce7bd",
+      "log_sha256": "9d02dc7ff49fb97a8d1e521e98a2d8e1498d7951c38eba25b34198146ac4d78e",
       "name": "import-origin"
     },
     {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.export.kgx",
+        "--output",
+        "output/mim-kgx-710-full"
+      ],
       "exit_code": 0,
-      "log_sha256": "556a98e590ee79ae5ec75682b2b4119f1ae40334bc9dd45cba65fbde3b7b47f0",
+      "log_sha256": "fcd224cf4c1bff9d7c593fee4fdb30213608132d8997dadefd1b9b3e70fd4904",
       "name": "full-export"
     },
     {
+      "command": [
+        "python",
+        "reports/semantic_review_20260921/resolution/build_review.py",
+        "--bundle",
+        "output/mim-kgx-710-full"
+      ],
       "exit_code": 0,
-      "log_sha256": "4538df938b469709f306ddf112c158d02a729ca43f19a7aab605595824e3c2b9",
+      "log_sha256": "678869f86553f8198b9ff290a2663747b9bad3226caaea5435c6025f86c52244",
+      "name": "dated-review-builder"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.export.supported_kgx",
+        "--root",
+        ".",
+        "--report",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "--output",
+        "output/mim-kgx-710-supported"
+      ],
+      "exit_code": 0,
+      "log_sha256": "64107f227abd07f014f383ab79f11752ca2863144e186f3f9eb427566a030b08",
       "name": "supported-export"
     },
     {
+      "command": [
+        "python",
+        "-m",
+        "mediaingredientmech.export.supported_kgx",
+        "--root",
+        ".",
+        "--report",
+        "reports/semantic_review_20260921/resolution/current-review.json",
+        "--output",
+        "output/mim-kgx-710-supported",
+        "--validate-only"
+      ],
       "exit_code": 0,
-      "log_sha256": "d47c5f319791a946ea00771e16d444d6b313a4badb91ec3710fe1a16eedae597",
+      "log_sha256": "d06bea5020fc48ffd2e80c0c0902b9df2e7a495cb1564125b3335e7bd6078002",
       "name": "supported-validation"
     },
     {
+      "command": [
+        "python",
+        "-c",
+        "import hashlib,json; from pathlib import Path; from sssom.parsers import parse_sssom_table; from sssom.validators import SchemaValidationType,validate; paths=['mappings/ingredient_mappings.sssom.tsv','output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv']; validators=[SchemaValidationType.JsonSchema,SchemaValidationType.PrefixMapCompleteness,SchemaValidationType.StrictCurieFormat]; [validate(parse_sssom_table(p),validation_types=validators) for p in paths]; print(json.dumps({p:{'result':'PASS','sha256':hashlib.sha256(Path(p).read_bytes()).hexdigest()} for p in paths}))"
+      ],
       "exit_code": 0,
-      "log_sha256": "37fc265cef1b3226b269351234f74518d58105ff2ae855662a2ec3c91429db81",
+      "log_sha256": "a4db9aa9363e4d2b6586c72422d7c139feb44181cb30afe541cb9c85b402ce4e",
       "name": "sssom-validation"
     }
   ],
   "uv_lock_sha256": "bde97a4ea5602668aeaa7392b0b75970313ddde87928c3c62ba50feafe85dd6b",
   "validation": {
-    "archive_sha256": "3aaa1db656c29d2345ac4d61f6532976d742f33663164a1e8d72e529a0f45a12",
+    "archive_sha256": "895b3c54d01bbf0886e7d397a2cd7d84a87cef08b150fd7779cc62dc408ac7c0",
     "counts": {
       "active_ingredient_record_nodes": 2874,
       "backlog_raw_nodes": 5788,
-      "backlog_unapproved_edges": 2410,
-      "edges": 2113,
+      "backlog_unapproved_edges": 2411,
+      "edges": 2112,
       "full_edges": 4523,
       "full_nodes": 5788,
-      "nodes": 4588,
-      "sssom_rows": 1604
+      "nodes": 4587,
+      "sssom_rows": 1603
     },
     "full_release_verdict": "FAIL",
     "integrity": "PASS",
