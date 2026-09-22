@@ -94,6 +94,29 @@ def test_broad_mapping_direction_cannot_be_reversed(projection):
         check_projection(projection)
 
 
+def test_narrow_mapping_requires_the_opposite_orientation(projection, tmp_path):
+    path = tmp_path / "mappings/ingredient_mappings.sssom.tsv"
+    path.write_text(
+        path.read_text()
+        + "MIM:opaque_water_a\tWater A\tskos:narrowMatch\tFOODON:00000002\tfixture child\t0.9\n"
+    )
+    projection["mappings"] = list(csv.DictReader(
+        (line for line in path.read_text().splitlines() if not line.startswith("#")),
+        delimiter="\t",
+    ))
+    graph, _, _ = kgx.build_graph(tmp_path)
+    projection.update(nodes=list(graph.nodes.values()), edges=graph.edges)
+    edge = next(row for row in projection["edges"] if row["relation"] == "skos:narrowMatch")
+    assert (edge["subject"], edge["predicate"], edge["object"]) == (
+        "FOODON:00000002", "biolink:subclass_of", "MIM:opaque_water_a"
+    )
+    check_projection(projection)
+    edge["subject"], edge["object"] = edge["object"], edge["subject"]
+    rehash_edge(edge)
+    with pytest.raises(ValueError, match="projection differs"):
+        check_projection(projection)
+
+
 def test_external_reference_label_cannot_imply_another_identity(projection):
     node = next(row for row in projection["nodes"] if row["id"] == "CHEBI:15377")
     node["name"] = "tetrachloroethene"

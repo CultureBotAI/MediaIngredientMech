@@ -86,6 +86,13 @@ including all endpoints, predicates, and retained JSON annotations. Strict
 Biolink conformance is not claimed for MIM's native relationships. Exact hashes
 are in [supported-release.json](supported-release.json) and the validation receipts.
 
+A clean `git archive` checkout reproduced all 11 full/supported artifact files
+byte for byte, with no ignored source files. The final focused regression run
+passed 182 tests; maintained-package coverage is 65% against the 35% floor.
+See [validation-summary.json](validation-summary.json) and
+[clean-checkout-validation.json](clean-checkout-validation.json). Required CI
+runs the complete test suite and repository QC before merge.
+
 ## Reproduce from a clean checkout
 
 Use new output directories; the exporters refuse to overwrite existing bundles.

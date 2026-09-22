@@ -1,0 +1,118 @@
+{
+  "artifact_comparisons": {
+    "output/mim-kgx-710-full/excluded_records.tsv": {
+      "byte_identical": true,
+      "bytes": 368210,
+      "sha256": "5bdfde76191c4066e9920aafb16e5915a4b210fdee65218d1492e0a982bad9a8"
+    },
+    "output/mim-kgx-710-full/manifest.json": {
+      "byte_identical": true,
+      "bytes": 362414,
+      "sha256": "76a80d6bd4efa1dea12b208577c01a52d20e8f7425ed7914e18240e609362eac"
+    },
+    "output/mim-kgx-710-full/mim-kgx.tar.gz": {
+      "byte_identical": true,
+      "bytes": 2168773,
+      "sha256": "b27a31c621e83bdd15b1482d3b902d55983db6053782d41a6cd9800fc1bf2f59"
+    },
+    "output/mim-kgx-710-full/mim_edges.tsv": {
+      "byte_identical": true,
+      "bytes": 4305187,
+      "sha256": "d6003187f3fe95e559e413038ef4bb343dd6eb7c63d2fdaf9e9cd0120b283c2d"
+    },
+    "output/mim-kgx-710-full/mim_nodes.tsv": {
+      "byte_identical": true,
+      "bytes": 10500053,
+      "sha256": "0440f269d29e95f607c37d6e4b4bcc6454a122a3b9426359c97a1b8d90dfeb85"
+    },
+    "output/mim-kgx-710-supported/ingredient_mappings.sssom.tsv": {
+      "byte_identical": true,
+      "bytes": 779524,
+      "sha256": "3483be2130b7dad82deb224958d791ad91d3bb19bc515d71dfa3c5d32267a70a"
+    },
+    "output/mim-kgx-710-supported/manifest.json": {
+      "byte_identical": true,
+      "bytes": 4233,
+      "sha256": "fbfd3c9b0e221487d48729699fd181f8dfdd44446ca849b41d7368d7970f8dc5"
+    },
+    "output/mim-kgx-710-supported/mim-kgx.tar.gz": {
+      "byte_identical": true,
+      "bytes": 374913,
+      "sha256": "3aaa1db656c29d2345ac4d61f6532976d742f33663164a1e8d72e529a0f45a12"
+    },
+    "output/mim-kgx-710-supported/mim_edges.tsv": {
+      "byte_identical": true,
+      "bytes": 2040795,
+      "sha256": "577b146cdadcb6514b2904a5cf1d3a97c9b6bb2a37a1c12e49107c71d900b3b1"
+    },
+    "output/mim-kgx-710-supported/mim_nodes.tsv": {
+      "byte_identical": true,
+      "bytes": 561433,
+      "sha256": "c3942e7d64cf89edc9924afacf3a22e1c9e2b7ad56c369a79eb238267ded13ba"
+    },
+    "output/mim-kgx-710-supported/unsupported-backlog.json": {
+      "byte_identical": true,
+      "bytes": 18592828,
+      "sha256": "7fc9c61140c3cfdcdc7d2a37307c47649f4ce5c6d291b07af664f1d61e14ad0c"
+    }
+  },
+  "current_review_sha256": "d2e734620701fa18af976ef347ec404d292128411698aa3b73909ac8f54e86a2",
+  "integrity": "PASS",
+  "isolated_checkout": "/private/tmp/mim-710-clean-checkout-5ecmfvc5/checkout",
+  "limitations": [
+    "This verifies clean committed-source reproducibility using the locked dependency environment on macOS; GitHub Actions separately exercises Ubuntu.",
+    "PASS applies only to the supported assertion subset; the complete corpus retains FAIL."
+  ],
+  "python_executable": "/private/tmp/mim-710-locked/bin/python",
+  "python_version": "Python 3.13.12",
+  "schema_version": 1,
+  "scope": "Clean checkout reproduction of the reviewed assertion subset and complete source graph",
+  "source_archive_sha256": "11a6a0535c62e01709165db24faaeac254eff71a8df44d23eec5abb2351eecf7",
+  "source_commit": "12ad8b4f13159f4dc42ce5ae51e08338f28c5ffc",
+  "source_method": "git archive --format=tar of committed HEAD only; no working tree or ignored files copied",
+  "steps": [
+    {
+      "exit_code": 0,
+      "log_sha256": "ccb78e416d7e3e4111e05e79d48751688b9e1191752ce594d8ac8ea49abce7bd",
+      "name": "import-origin"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "556a98e590ee79ae5ec75682b2b4119f1ae40334bc9dd45cba65fbde3b7b47f0",
+      "name": "full-export"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "4538df938b469709f306ddf112c158d02a729ca43f19a7aab605595824e3c2b9",
+      "name": "supported-export"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "d47c5f319791a946ea00771e16d444d6b313a4badb91ec3710fe1a16eedae597",
+      "name": "supported-validation"
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "37fc265cef1b3226b269351234f74518d58105ff2ae855662a2ec3c91429db81",
+      "name": "sssom-validation"
+    }
+  ],
+  "uv_lock_sha256": "bde97a4ea5602668aeaa7392b0b75970313ddde87928c3c62ba50feafe85dd6b",
+  "validation": {
+    "archive_sha256": "3aaa1db656c29d2345ac4d61f6532976d742f33663164a1e8d72e529a0f45a12",
+    "counts": {
+      "active_ingredient_record_nodes": 2874,
+      "backlog_raw_nodes": 5788,
+      "backlog_unapproved_edges": 2410,
+      "edges": 2113,
+      "full_edges": 4523,
+      "full_nodes": 5788,
+      "nodes": 4588,
+      "sssom_rows": 1604
+    },
+    "full_release_verdict": "FAIL",
+    "integrity": "PASS",
+    "scope": "reviewed_assertion_subset",
+    "semantic_release": "PASS"
+  }
+}

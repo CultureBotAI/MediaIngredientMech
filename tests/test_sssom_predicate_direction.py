@@ -36,7 +36,7 @@ ASYMMETRIC = {"skos:narrowMatch", "skos:broadMatch"}
 def _rows():
     with SSSOM.open(encoding="utf-8") as fh:
         return list(csv.DictReader(
-            (l for l in fh if not l.startswith("#")), delimiter="\t"))
+            (line for line in fh if not line.startswith("#")), delimiter="\t"))
 
 
 def _header():
@@ -109,9 +109,18 @@ def test_no_script_emits_the_legacy_literal():
     Parent-anchoring writers take PREDICATE_BROAD from sssom_grading instead.
     """
     allowed_fragments = ('"skos:narrowMatch", "skos:broadMatch"',)  # direction-agnostic sets
+    # These consumers read valid SKOS mappings and project narrowMatch in the
+    # inverse direction; neither publishes SSSOM predicates. Their opposite
+    # broad/narrow orientations are tested in the KGX and semantic-gate suites.
+    input_consumers = {
+        Path("src/mediaingredientmech/export/kgx.py"),
+        Path("src/mediaingredientmech/validation/semantic_release.py"),
+    }
     offenders = []
     for folder in ("scripts", "src"):
         for path in (ROOT / folder).rglob("*.py"):
+            if path.relative_to(ROOT) in input_consumers:
+                continue
             for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
                 if '"skos:narrowMatch"' not in line or line.lstrip().startswith("#"):
                     continue
