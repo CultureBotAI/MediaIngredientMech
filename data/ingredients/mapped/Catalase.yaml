@@ -1,14 +1,25 @@
-identifier: NCIT:C61062
+identifier: cas:9001-05-2
 preferred_term: Catalase
 ontology_mapping:
-  ontology_id: NCIT:C61062
+  ontology_id: mesh:D002374
   ontology_label: Catalase
-  ontology_source: NCIT
-  mapping_quality: EXACT_MATCH
+  ontology_source: MESH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    notes: 'SUPERSEDED (#312): Imported from CultureMech pipeline, quality=DIRECT_MATCH'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier NCIT:C61062 -> cas:9001-05-2; ontology NCIT:C61062 (''Catalase'')
+      -> mesh:D002374 (''Catalase''); mapping_quality EXACT_MATCH -> NARROW_MATCH.
+      ncit.db defines NCIT:C61062 ''Catalase'' as ''Catalase (527 aa, ~60 kDa) is
+      encoded by the human CAT gene'' (Swiss-Prot P04040, R54 -> NCIT:C61060 CAT Gene):
+      the human gene product, not the media reagent (Sigma C-10, bovine liver). skos:exactMatch
+      would substitute that node for the reagent. Follow the protein-reagent siblings
+      Bovine_Serum_Albumin and Lysozyme: identifier is the enzyme''s CAS 9001-05-2
+      (EC 1.11.1.6), broadMatch to the species-neutral MeSH descriptor mesh:D002374
+      ''Catalase'', Rule B1 registry row.'
 synonyms:
 - synonym_text: 'Properties: Defined component, Simple component'
   synonym_type: RAW_TEXT
@@ -61,4 +72,23 @@ curation_history:
     not resolve them: ''Catalase (Sigma C--10)'' (x1 CultureMech mentions). Source:
     culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-23T00:44:54.489778+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier NCIT:C61062 -> cas:9001-05-2; ontology NCIT:C61062 (''Catalase'')
+    -> mesh:D002374 (''Catalase''); mapping_quality EXACT_MATCH -> NARROW_MATCH. ncit.db
+    defines NCIT:C61062 ''Catalase'' as ''Catalase (527 aa, ~60 kDa) is encoded by
+    the human CAT gene'' (Swiss-Prot P04040, R54 -> NCIT:C61060 CAT Gene): the human
+    gene product, not the media reagent (Sigma C-10, bovine liver). skos:exactMatch
+    would substitute that node for the reagent. Follow the protein-reagent siblings
+    Bovine_Serum_Albumin and Lysozyme: identifier is the enzyme''s CAS 9001-05-2 (EC
+    1.11.1.6), broadMatch to the species-neutral MeSH descriptor mesh:D002374 ''Catalase'',
+    Rule B1 registry row. (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 ingredient_type: SINGLE_INGREDIENT
+chemical_properties:
+  cas_rn: 9001-05-2
+  data_source: CAS registry number of catalase, EC 1.11.1.6 (enzyme, no single structure)
