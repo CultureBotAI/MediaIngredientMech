@@ -193,6 +193,32 @@ def test_supported_non_name_phrase_refused_even_with_positive_evidence(reviewed_
         reviewed.export_reviewed(*reviewed_fixture)
 
 
+@pytest.mark.parametrize("curie", ["cas:2650-88-3", "cas:480-14-4", "CAS:89471-28-0", "cas:12-3-4"])
+def test_invalid_cas_cannot_be_published_even_with_rehashed_approval(reviewed_fixture, curie):
+    change_source_row(reviewed_fixture, {"object_id": curie})
+    with pytest.raises(ValueError, match="Invalid CAS"):
+        reviewed.export_reviewed(*reviewed_fixture)
+
+
+def test_valid_cas_is_accepted_with_the_existing_explicit_review(reviewed_fixture):
+    change_source_row(reviewed_fixture, {"object_id": "cas:7732-18-5"})
+    assert reviewed.export_reviewed(*reviewed_fixture)["counts"]["supported"] == 1
+
+
+def test_invalid_cas_payload_is_preserved_in_withheld_backlog(reviewed_fixture):
+    change_source_row(reviewed_fixture, {"object_id": "cas:2650-88-3"})
+    root, path, output = reviewed_fixture
+    review = json.loads(path.read_text())
+    proof = json.loads((root / "evidence.json").read_text())
+    review["decisions"][0]["disposition"] = "WITHHOLD"
+    proof["entries"]["1"]["disposition"] = "WITHHOLD"
+    write_json(root / "evidence.json", proof)
+    review["inputs"]["evidence.json"] = reviewed.digest(root / "evidence.json")
+    write_json(path, review)
+    assert reviewed.export_reviewed(*reviewed_fixture)["counts"]["withhold"] == 2
+    assert "cas:2650-88-3" in (output / "withheld_mappings.sssom.tsv").read_text()
+
+
 def test_source_rejected_alias_cannot_be_published(reviewed_fixture):
     root, path, _ = reviewed_fixture
     owner = root / "data/ingredients/mapped/Alpha.yaml"
