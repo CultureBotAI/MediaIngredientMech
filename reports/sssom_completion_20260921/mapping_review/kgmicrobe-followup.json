@@ -1,0 +1,615 @@
+{
+  "schema_version": 1,
+  "scope": "Mapping-only re-review of the 17 kg-microbe fallback blockers (#752), plus three independently identified invalid CAS assertions (#753). No role approval or source identity rewrite.",
+  "decisions": [
+    {
+      "mapping": {
+        "subject_id": "MIM:Abyssomicin_D",
+        "subject_label": "Abyssomicin D",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "mesh:C512805",
+        "object_label": "abyssomicin D",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS search|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-07-20",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "5634093d7c8dfa33b4b60f360ab319082960a2e061b7ea9c40f3ced33442a6cf",
+      "owner_record": "data/ingredients/mapped/Abyssomicin_D.yaml",
+      "owner_record_sha256": "a690df5475b0fbbad01dca95f3afd96dff58d64980d36af56420faa102180994",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Abyssomicin_D.md": "31278da0748b5a4af05bd86e8a8678a54aa180947c56b032ea882ba26ca3eb38",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Alanosine",
+        "subject_label": "alanosine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:221124",
+        "object_label": "L-alanosine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:alanosine|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "[(2S)-2-amino-2-carboxyethyl]-hydroxyimino-oxidoazanium",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "3df0c1867093fbfb8ac427385c8cd1e20dcd43000c7b2e66a70ba68b3bc16a5f",
+      "owner_record": "data/ingredients/mapped/Alanosine.yaml",
+      "owner_record_sha256": "6012bd15b0d4d8d3daa3d86728fb318494735b5c49f4c1efb28e1a7bc9927378",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. The archived source review explicitly establishes the L-alanosine structure and its sole remaining exact IUPAC synonym; this approval is for that defined MIM record. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. The archived source review explicitly establishes the L-alanosine structure and its sole remaining exact IUPAC synonym; this approval is for that defined MIM record.",
+      "token_reviews": {
+        "[(2S)-2-amino-2-carboxyethyl]-hydroxyimino-oxidoazanium": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Alanosine.md": "d6e5ca9382cb7d1e70fb55b1e266811a9c41265f55e47be8d5cd45975a23dbe6",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Angustmycin",
+        "subject_label": "Angustmycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:8612",
+        "object_label": "psicofuranin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:kgmicrobe.compound:angustmycin|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=regrade_synonym_matches]|kgm:mediaingredientmech_reviewed[curator=user_approved_curator_synonym]|kgm:metatraits_special_chemicals|kgm:primary_mappings[kegg_compound]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Psicofuranine",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "e7aaa856c1ae738835d158e22fc5b104fd9664c9210a6fb0dc2a1bcafff8a371",
+      "owner_record": "data/ingredients/mapped/Angustmycin.yaml",
+      "owner_record_sha256": "98448654820d35acf79659ff04c3290ef0a56f493a57adc0488228dfa6d501b0",
+      "disposition": "WITHHOLD",
+      "reason": "The produces phrase has already been rejected. The remaining bare Angustmycin label does not distinguish angustmycin A (decoyinine) from C (psicofuranin); the authorizing A=C note is false (#741). Keep WITHHOLD pending a source-specific identity decision.",
+      "identity_review": "CHEBI:8612 represents psicofuranin / angustmycin C. CHEBI:191094 is decoyinine / angustmycin A. These have different formulas.",
+      "token_reviews": {
+        "Psicofuranine": "Unresolved token; complete payload remains withheld."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Angustmycin.md": "94642167d8c67c560e576dee8df3250ade64531f22318c0c9767bdc7ac91b701",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Beta-Lipomycin",
+        "subject_label": "beta-Lipomycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "mesh:C000601869",
+        "object_label": "beta-lipomycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:MESH via OLS search (resolve_unmapped)|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-07-20",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Beta Lipomycin",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "b4d52c2c3dd9f165f4abd8daf84a8712c7e69202318af4b2a9a6f214bfb34621",
+      "owner_record": "data/ingredients/mapped/Beta-Lipomycin.yaml",
+      "owner_record_sha256": "a7193b382eb78c71fcf00c5950e2f41194ba3757218f5fd812dc8492821d8524",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "Beta Lipomycin": "The archived Identity section explicitly documents Beta Lipomycin as the case/spacing variant from the duplicate placeholder of beta-lipomycin. Reviewed this single token individually; it changes neither the beta designation nor chemical scope."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Beta-Lipomycin.md": "c5df0507bb9d878241c7e12790ce57930cbbe72cc234c46e357f3e9eaada292b",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Butyricin_7423",
+        "subject_label": "Butyricin 7423",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "mesh:C010427",
+        "object_label": "butyricin 7423",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS search|MIM:curator=auto_classify_ingredient_type",
+        "mapping_date": "2026-05-01",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "b9d1d1cee9910ddd3e04035d40f2b6cd5f2309bdf4223d1a7ee6c8c88c01d2db",
+      "owner_record": "data/ingredients/mapped/Butyricin_7423.yaml",
+      "owner_record_sha256": "c8e2e72f3c440270df94faaa39536ee59990df442a154fec09c9b92cbbc9128b",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Butyricin_7423.md": "de28d59078aced934748b4c2e71846d1301e0be1f0e73327ab229ba31ada0047",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Etamycin",
+        "subject_label": "Etamycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "mesh:C004910",
+        "object_label": "etamycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS search|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-07-20",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "Viridogrisein",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "50529a2c3b085e4f808ac3e9e87c89baf975ab59e81ad52234d36f7433b2c3d1",
+      "owner_record": "data/ingredients/mapped/Etamycin.yaml",
+      "owner_record_sha256": "84d07722cb91d161afb8211b2a1cf76bfec8eaa9182b01d12c9e5f85648d8933",
+      "disposition": "WITHHOLD",
+      "reason": "The Etamycin identity resolves to mesh:C004910, but its sole exported alias Viridogrisein has only a related-synonym MeSH assertion in the inspected evidence. No independent same-structure comparison resolves the prior exact-alias objection. Keep WITHHOLD; provisional role evidence is a separate concern.",
+      "identity_review": "MeSH labels etamycin and hasRelatedSynonym viridogrisein. Related synonym scope alone does not prove the full exact-synonym payload.",
+      "token_reviews": {
+        "Viridogrisein": "Unresolved token; complete payload remains withheld."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Etamycin.md": "7490ca330b2038b44260df8605c934005e4ad4a97a39cc3c3610a9027812df79",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Ferroverdin",
+        "subject_label": "ferroverdin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:219729",
+        "object_label": "Ferroverdin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:ferroverdin|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "(4-ethenylphenyl) 4-hydroxy-3-nitrosobenzoate;iron(2+)",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "9ac7dbbc68ea070f0214188984382f9b0762372a7bf43f364b05200b089429bf",
+      "owner_record": "data/ingredients/mapped/Ferroverdin.yaml",
+      "owner_record_sha256": "864fc36c80ef2968a4c72b26701156e69b979a949716105c34b7b6031a7e2b9a",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "(4-ethenylphenyl) 4-hydroxy-3-nitrosobenzoate;iron(2+)": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Ferroverdin.md": "e8740bcad92f433cb5aa31ed4c1a511dc2720bddcef85aba9843ed9ae13c398c",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Hydrogen_gas",
+        "subject_label": "Hydrogen gas",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:18276",
+        "object_label": "dihydrogen",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:manual curation|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:culturebotai_reviewed|kgm:manual_annotation[SUPPLEMENT]|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:mediaingredientmech_reviewed[curator=issue_213_grounding]|kgm:metatraits_special_chemicals|kgm:primary_mappings[kegg_compound]|kgm:primary_mappings[madin_etal_manual]",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "H2|Hydrogen|Hydrogen (gas)|E 949|E-949|E949|H(2)|H2_CO2|H2_methanol|molecular hydrogen|Diydrogen",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "a46690c5a1bab25c1e0e1d3fbdf3daae7171082db7d69a3c108a486703a9a448",
+      "owner_record": "data/ingredients/mapped/Hydrogen_gas.yaml",
+      "owner_record_sha256": "16228278ff97e5b39800c957294c01e7cd5a2e2fafdb733189b2b4123504c88f",
+      "disposition": "WITHHOLD",
+      "reason": "The exact dihydrogen identity is supported independently, but the complete row still exports H2_CO2 and H2_methanol mixture aliases and Diydrogen typo provenance. The removed aerobic-catabolization phrase is no longer a current defect. WITHHOLD the complete payload pending token curation; role evidence is outside this decision.",
+      "identity_review": "The source has H2 structure and CHEBI:18276, but its two mixture labels are not names of the pure substance.",
+      "token_reviews": {
+        "H2": "Unresolved token; complete payload remains withheld.",
+        "Hydrogen": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity.",
+        "Hydrogen (gas)": "Unresolved token; complete payload remains withheld.",
+        "E 949": "Unresolved token; complete payload remains withheld.",
+        "E-949": "Unresolved token; complete payload remains withheld.",
+        "E949": "Unresolved token; complete payload remains withheld.",
+        "H(2)": "Unresolved token; complete payload remains withheld.",
+        "H2_CO2": "Unresolved token; complete payload remains withheld.",
+        "H2_methanol": "Unresolved token; complete payload remains withheld.",
+        "molecular hydrogen": "Unresolved token; complete payload remains withheld.",
+        "Diydrogen": "Unresolved token; complete payload remains withheld."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Hydrogen_gas.md": "ce9304c4044d24950ad00340ccafc069299a156d155e3bb8ceef5e1976e2a1b1",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Kijanimicin",
+        "subject_label": "kijanimicin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:220048",
+        "object_label": "Kijanimicin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:kijanimicin|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "methyl N-[(2R,3R,4S,6R)-6-[[(1S,3R,6S,7E,9S,11E,13S,16S,17S,18S,20S,21R,22S,23E)-17-[(2R,4R,5S,6S)-4-[(2S,6S)-4-[(2S,4S,5R,6S)-4,5-dihydroxy-6-methyloxan-2-yl]oxy-5-[(2R,4R,5R,6S)-4-hydroxy-5-methoxy-6-methyloxan-2-yl]oxy-6-methyloxan-2-yl]oxy-5-hydroxy-6-methyloxan-2-yl]oxy-23-hydroxy-4-(hydroxymethyl)-3,8,12,18,20,22-hexamethyl-25,27-dioxo-26-oxapentacyclo[22.2.1.01,6.013,22.016,21]heptacosa-4,7,11,14,23-pentaen-9-yl]oxy]-2,4-dimethyl-4-nitrooxan-3-yl]carbamate",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "781a242913901c19f569fea35bb103d52cd9e06e0990eccb7a65b0fbe97e8c24",
+      "owner_record": "data/ingredients/mapped/Kijanimicin.yaml",
+      "owner_record_sha256": "9ea82812bb3f0165e7cf8f74c66d00c9bbe3b4bb2756a617e8156da7e59edae1",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "methyl N-[(2R,3R,4S,6R)-6-[[(1S,3R,6S,7E,9S,11E,13S,16S,17S,18S,20S,21R,22S,23E)-17-[(2R,4R,5S,6S)-4-[(2S,6S)-4-[(2S,4S,5R,6S)-4,5-dihydroxy-6-methyloxan-2-yl]oxy-5-[(2R,4R,5R,6S)-4-hydroxy-5-methoxy-6-methyloxan-2-yl]oxy-6-methyloxan-2-yl]oxy-5-hydroxy-6-methyloxan-2-yl]oxy-23-hydroxy-4-(hydroxymethyl)-3,8,12,18,20,22-hexamethyl-25,27-dioxo-26-oxapentacyclo[22.2.1.01,6.013,22.016,21]heptacosa-4,7,11,14,23-pentaen-9-yl]oxy]-2,4-dimethyl-4-nitrooxan-3-yl]carbamate": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Kijanimicin.md": "ad7ac24da8610131b8900749e82cc556fdd37cf8181c9a3667d5b29463fdfc8a",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Miharamycin_A",
+        "subject_label": "miharamycin A",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:216282",
+        "object_label": "Miharamycin A",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:miharamycin_a|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "2-[(3S,3aS,4R,5R,7R,7aR)-7-(2-aminopurin-9-yl)-3,3a,4-trihydroxy-2,3,4,5,7,7a-hexahydrouro[2,3-c]pyran-5-yl]-2-[[2-amino-5-[carbamimidoyl(hydroxy)amino]pentanoyl]amino]acetic acid",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "7241b02b9cbb788653411097d99ad28e359ff2c1809612e25384caf47ea48fa7",
+      "owner_record": "data/ingredients/mapped/Miharamycin_A.yaml",
+      "owner_record_sha256": "7982e8f6beb03ee7d3a69759cf0da5efadbae7e1910447084a3fe538ff66b0e7",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "2-[(3S,3aS,4R,5R,7R,7aR)-7-(2-aminopurin-9-yl)-3,3a,4-trihydroxy-2,3,4,5,7,7a-hexahydrouro[2,3-c]pyran-5-yl]-2-[[2-amino-5-[carbamimidoyl(hydroxy)amino]pentanoyl]amino]acetic acid": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Miharamycin_A.md": "61e5ab217b7bf24782e8e532ce9c911db6d41e5f4d66c8b16835053137e3ebf6",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Monazomycin",
+        "subject_label": "monazomycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:201539",
+        "object_label": "Monazomycin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:monazomycin|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "(13E,17E,21E,29E)-48-(8-aminooctan-2-yl)-8,10,16,20,24,26,28,32,36,38,40,42,44,46-tetradecahydroxy-9,15,17,19,21,25,31,33,39,41,47-undecamethyl-23-[(2S,3S,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1-oxacyclooctatetraconta-13,17,21,29-tetraen-2-one",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "dfd31f0031fb603457e46ef2973ec0caf6e5d4837003b3e7ed01313ccc88add1",
+      "owner_record": "data/ingredients/mapped/Monazomycin.yaml",
+      "owner_record_sha256": "e593d4d7e3380e6a8ce589b3aef7d1158de2cf5fb4d22d35ec8413ba7d35539c",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "(13E,17E,21E,29E)-48-(8-aminooctan-2-yl)-8,10,16,20,24,26,28,32,36,38,40,42,44,46-tetradecahydroxy-9,15,17,19,21,25,31,33,39,41,47-undecamethyl-23-[(2S,3S,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl]oxy-1-oxacyclooctatetraconta-13,17,21,29-tetraen-2-one": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Monazomycin.md": "14ac35c2226060b8ebad931c8b4c12915f8c9a50017706eacc302d6dc24e2516",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Nocamycin",
+        "subject_label": "nocamycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:219652",
+        "object_label": "Nocamycin",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:nocamycin|MIM:curator=claude_sssom_surface_form_backfill|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=infer_roles_from_name_lists]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "methyl 2-[3-[(3E,5E)-7-(2,4-dioxopyrrolidin-3-ylidene)-7-hydroxy-4-methylhepta-3,5-dien-2-yl]-1,4-dimethyl-6-oxospiro[2,9-dioxabicyclo[3.3.1]nonane-8,3'-oxirane]-2'-yl]propanoate",
+        "validation_method": "OAK+OLS:chebi|CONFIRMED|2026-07-07"
+      },
+      "row_sha256": "3da91aaa5dacc594c6f7652b5318b4280657652b0162374f0f565a4a3d715725",
+      "owner_record": "data/ingredients/mapped/Nocamycin.yaml",
+      "owner_record_sha256": "f6d628b833ff4c17019869eec96bc7d6e287d53bbe3a8754916a68ca37d04077",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below.",
+      "token_reviews": {
+        "methyl 2-[3-[(3E,5E)-7-(2,4-dioxopyrrolidin-3-ylidene)-7-hydroxy-4-methylhepta-3,5-dien-2-yl]-1,4-dimethyl-6-oxospiro[2,9-dioxabicyclo[3.3.1]nonane-8,3'-oxirane]-2'-yl]propanoate": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Nocamycin.md": "dfdb72c1225b1afd4066888716796f07a91ac1bc527e0089e209211145942672",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Pluramycin_A",
+        "subject_label": "Pluramycin A",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "mesh:C003169",
+        "object_label": "pluramycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS (label-exact)|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "row_sha256": "e754f4761cadcbbc2912489e70ed728f4881a8c13c496cb7347184e7a7aca3d6",
+      "owner_record": "data/ingredients/mapped/Pluramycin_A.yaml",
+      "owner_record_sha256": "032b55fd9f1dbabfcc795f04f6426413ea0f23718f269b736e8888e260507317",
+      "disposition": "WITHHOLD",
+      "reason": "Keep WITHHOLD on the mesh:C003169 parent relation: current MeSH labels pluramycin, and the specific A-compound relation/scope needs evidence. The separate exact registry identity is already supported.",
+      "identity_review": "Preserve kgmicrobe.compound:pluramycin_a without upgrading its MeSH family anchor to chemical identity.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Pluramycin_A.md": "8bb5b34e84ee8bc6054c9ae852f5667221f198fea26c23f005991dc9a4dbaaad",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Racemomycin_E",
+        "subject_label": "Racemomycin E",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "mesh:C019594",
+        "object_label": "racemomycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS (label-exact)|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "row_sha256": "e90b9bd535cf1b516749dd1adb1d23bd148771a70b7eae80434d4867056397b0",
+      "owner_record": "data/ingredients/mapped/Racemomycin_E.yaml",
+      "owner_record_sha256": "da451fa75decffab222bf5609caa734bb00c5b345e999c2c086e4ed33269a592",
+      "disposition": "WITHHOLD",
+      "reason": "Keep WITHHOLD on the mesh:C019594 parent relation: current MeSH labels racemomycin, and the specific E-compound relation/scope needs evidence. The separate exact registry identity is already supported.",
+      "identity_review": "Preserve kgmicrobe.compound:racemomycin_e without upgrading its MeSH family anchor to chemical identity.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Racemomycin_E.md": "7b89a8f701b0c00c61e6d45e6085a3c335dddef15a34bbd5dc8738749ab2e534",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Rhodomycin_A",
+        "subject_label": "Rhodomycin A",
+        "predicate_id": "skos:broadMatch",
+        "object_id": "mesh:C004977",
+        "object_label": "rhodomycin",
+        "object_source": "registry:mesh",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:kg-microbe metatraits unmapped_compounds.tsv|MIM:MESH via OLS (label-exact)|MIM:curator=migrate_media_roles_to_facets",
+        "mapping_date": "2026-09-20",
+        "confidence": "0.9",
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos]",
+        "other": "",
+        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-20"
+      },
+      "row_sha256": "7fbe614f0515434d04f7b56eed79dfc28717792d3a82cf9daf7daad0d0e47cca",
+      "owner_record": "data/ingredients/mapped/Rhodomycin_A.yaml",
+      "owner_record_sha256": "0322b51898c62189ea0a2cedcab1fb8b3c093bce5484d966b904b8518d6deb80",
+      "disposition": "WITHHOLD",
+      "reason": "Keep WITHHOLD on the mesh:C004977 parent relation: the current MeSH record is rhodomycin, and the specific A-compound relation/scope has not been independently established. The separate exact registry identity is already supported.",
+      "identity_review": "A family/parent association is not exact identity. KGM can preserve kgmicrobe.compound:rhodomycin_a using the independently published exact registry row.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Rhodomycin_A.md": "d43438506272f4d0cd7d3fadfca51808f96fa20729648f1dbb3b29ff0690eb26",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Rubradirin",
+        "subject_label": "rubradirin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:223718",
+        "object_label": "Rubradirin B",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:rubradirin|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_propose_chebi_for_unmapped]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "[(10E,12S,13S,14R,16S)-7,14-dihydroxy-6,10,12,16-tetramethyl-2,9,15,21-tetraoxo-20-oxa-18-azatetracyclo[14.3.1.14,19.03,8]henicosa-1(19),3,5,7,10-pentaen-13-yl] 3-hydroxy-6-[(4-hydroxy-7-methoxy-2-oxochromen-3-yl)carbamoyl]pyridine-2-carboxylate",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "3ae670058aefdf10ec85cae6705cfbd6bfc20d3bffddbddd9b16a07363a42ded",
+      "owner_record": "data/ingredients/mapped/Rubradirin.yaml",
+      "owner_record_sha256": "81bc7193787d64f9fef6561aed7423e02dfba2e86849cd3517977ee9eaf750ee",
+      "disposition": "WITHHOLD",
+      "reason": "The process phrase has already been removed. The remaining exact assertion maps generic rubradirin to Rubradirin B (CHEBI:223718); no source-scoped evidence establishes that specificity. Keep WITHHOLD pending identity resolution.",
+      "identity_review": "The selected ChEBI record is specifically Rubradirin B. The bare trait/ingredient name does not establish that congener.",
+      "token_reviews": {
+        "[(10E,12S,13S,14R,16S)-7,14-dihydroxy-6,10,12,16-tetramethyl-2,9,15,21-tetraoxo-20-oxa-18-azatetracyclo[14.3.1.14,19.03,8]henicosa-1(19),3,5,7,10-pentaen-13-yl] 3-hydroxy-6-[(4-hydroxy-7-methoxy-2-oxochromen-3-yl)carbamoyl]pyridine-2-carboxylate": "Verified verbatim as oio:hasExactSynonym on the exact current target in kgmicrobe-ontology-evidence.json; archived record review confirms the same chemical identity."
+      },
+      "evidence_inputs": {
+        "reports/yaml_record_review/Rubradirin.md": "82691aa32a11ecc8df18811afe9275f15a1d62e908c53721d5c28153a0dc23fe",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Stallimycin",
+        "subject_label": "Stallimycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:41958",
+        "object_label": "DISTAMYCIN A",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:LexicalMatching",
+        "source": "MIM:kgmicrobe.compound:stallimycin|MIM:curator=claude_sssom_surface_form_backfill|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=correct_stale_ontology_labels.py]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]|kgm:mediaingredientmech_reviewed[curator=user_approved_curator_synonym]|kgm:metatraits_special_chemicals",
+        "mapping_date": "2026-09-02",
+        "confidence": "0.99",
+        "comment": "",
+        "other": "",
+        "validation_method": "OAK+OLS:chebi|SYNONYM_ENRICH|2026-07-07"
+      },
+      "row_sha256": "e780ed47cc82d31ab839fb8d1c461f42279e1fea69b7580e478047f35e8e5348",
+      "owner_record": "data/ingredients/mapped/Stallimycin.yaml",
+      "owner_record_sha256": "ba4c8c0afdef4efcba7627f20e2b08664a8bd693818b203b89e27e481f8317e0",
+      "disposition": "SUPPORTED",
+      "reason": "Approve only the exact mapping after current row-specific review: Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. The archived PubChem CID 3115 comparison supplies same-formula/structure support for Stallimycin = distamycin A; this decision does not rely on ChEBI hydrochloride-related synonyms. Every exported other token was individually reviewed. Removed trait phrases are historical findings, not current payload defects. Provisional ingredient roles and stale historical validation annotations confer no additional approval.",
+      "identity_review": "Reviewed the archived Identity and Evidence sections against the current complete row and current ontology statements. The report explicitly confirms this exact chemical identity; the source owner and complete remaining synonym set are bound below. The archived PubChem CID 3115 comparison supplies same-formula/structure support for Stallimycin = distamycin A; this decision does not rely on ChEBI hydrochloride-related synonyms.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/yaml_record_review/Stallimycin.md": "3059d925b51fd8b5004e3bf63e125bd97ff9c6224854de3846cfed3ef19f11dc",
+        "reports/sssom_completion_20260921/mapping_review/kgmicrobe-ontology-evidence.json": "f330996ea4039449044831ea2829fd36c3aa619c9936690b9a43b059e6a5251a"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Izalpinin",
+        "subject_label": "Izalpinin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:480-14-4",
+        "object_label": "Izalpinin",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:480-14-4",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "68111d965a4bc786721a87326332582a93b767e91e1d9d22104e1986b693266a",
+      "owner_record": "data/ingredients/mapped/Izalpinin.yaml",
+      "owner_record_sha256": "279a4bc187f755b580b834a85b7d6641b1b9836b08c8f007af405218acad1f7b",
+      "disposition": "WITHHOLD",
+      "reason": "WITHHOLD invalid CAS identifier cas:480-14-4: weighted digit sum 58 gives check digit 8, not 4 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "identity_review": "WITHHOLD invalid CAS identifier cas:480-14-4: weighted digit sum 58 gives check digit 8, not 4 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "token_reviews": {},
+      "resolved_negative_reviews": [],
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/cas-check-digit-evidence.json": "c7cd8f0d9b36cc11ae19ea129a1e9a9e4d828a938af41e27612695254b1003fb"
+      }
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Lysozyme",
+        "subject_label": "Lysozyme",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:2650-88-3",
+        "object_label": "Lysozyme",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:FOODON via OLS (label-exact)|MIM:curator=backfill_parent_terms",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.99",
+        "comment": "Registry/identity row preserving cas:2650-88-3 alongside parent FOODON:03413135.",
+        "other": "CAS:2650-88-3",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "ea5a200687a6bc152f59e0df90481cfda4a34d4d1e2bedd428c2f7306caa45e6",
+      "owner_record": "data/ingredients/mapped/Lysozyme.yaml",
+      "owner_record_sha256": "fd645161cabecafb75b68f95ab1295471ffc5d3c18061f041d90eef7b2379680",
+      "disposition": "WITHHOLD",
+      "reason": "WITHHOLD invalid CAS identifier cas:2650-88-3: weighted digit sum 86 gives check digit 6, not 3 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "identity_review": "WITHHOLD invalid CAS identifier cas:2650-88-3: weighted digit sum 86 gives check digit 6, not 3 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "token_reviews": {},
+      "resolved_negative_reviews": [],
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/cas-check-digit-evidence.json": "c7cd8f0d9b36cc11ae19ea129a1e9a9e4d828a938af41e27612695254b1003fb"
+      }
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Methyl-2-Hydroxy-Phenylproprionate",
+        "subject_label": "Methyl-2-Hydroxy-Phenylproprionate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "cas:89471-28-0",
+        "object_label": "Methyl-2-Hydroxy-Phenylproprionate",
+        "object_source": "registry:cas",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type",
+        "mapping_date": "2026-05-02",
+        "confidence": "0.9",
+        "comment": "",
+        "other": "CAS:89471-28-0",
+        "validation_method": "none|UNKNOWN_TERM|2026-07-07"
+      },
+      "row_sha256": "adaec6e82a811adadea48de586ff48227a0a76a6039ff2f178a5f73dd2b3b14a",
+      "owner_record": "data/ingredients/mapped/Methyl-2-Hydroxy-Phenylproprionate.yaml",
+      "owner_record_sha256": "1b76547623a77d4ad8f527403ce65c3b8bb4cab61910baa6b1ed292dab97a5c7",
+      "disposition": "WITHHOLD",
+      "reason": "WITHHOLD invalid CAS identifier cas:89471-28-0: weighted digit sum 173 gives check digit 3, not 0 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "identity_review": "WITHHOLD invalid CAS identifier cas:89471-28-0: weighted digit sum 173 gives check digit 3, not 0 (#753). A source-specific identity review must determine the correct identifier; changing only the check digit would not establish identity. Preserve the unchanged assertion in the backlog.",
+      "token_reviews": {},
+      "resolved_negative_reviews": [],
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/cas-check-digit-evidence.json": "c7cd8f0d9b36cc11ae19ea129a1e9a9e4d828a938af41e27612695254b1003fb"
+      }
+    }
+  ]
+}
