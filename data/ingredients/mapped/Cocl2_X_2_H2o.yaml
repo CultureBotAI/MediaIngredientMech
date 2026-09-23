@@ -64,10 +64,10 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: cobalt(2+) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 - synonym_text: cobalt(II) chloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -167,6 +167,17 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
+- timestamp: '2026-09-23T06:21:57.516596+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''cobalt(2+) chloride'' (EXACT_SYNONYM), ''cobalt(II)
+    chloride'' (EXACT_SYNONYM): ChEBI names of the anhydrous parent CHEBI:35696, enriched
+    onto the hydrate when it still shared that term (#232). The token is kept as provenance
+    only; it must not resolve, be exported, or enter the SSSOM other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 kg_microbe_node_id: CHEBI:35696
 chemical_properties:
   data_source: PubChem (via CHEBI:35696)

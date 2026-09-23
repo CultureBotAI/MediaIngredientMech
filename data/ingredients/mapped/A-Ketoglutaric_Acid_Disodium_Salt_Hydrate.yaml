@@ -31,7 +31,7 @@ ontology_mapping:
       are unchanged.'
 synonyms:
 - synonym_text: a-Ketoglutaric acid
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: culturebotht
 mapping_status: MAPPED
 occurrence_statistics:
@@ -96,6 +96,17 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-23T06:21:57.287844+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''a-Ketoglutaric acid'' (EXACT_SYNONYM): names
+    the free acid (Alpha-ketoglutaric_Acid holds it), not the disodium salt hydrate
+    (#232). The token is kept as provenance only; it must not resolve, be exported,
+    or enter the SSSOM other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 305-72-6
   data_source: CultureBotHT compounds_to_cas.csv
