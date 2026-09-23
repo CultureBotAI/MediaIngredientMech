@@ -2959,8 +2959,8 @@
 | kgmicrobe.ingredient:vitamins_solution | Vitamins-solution | REJECTED | kgmicrobe.ingredient:vitamins_solution |  | 0 |
 | CHEBI:29108 | Calcium | REJECTED | CHEBI:29108 | CHEBI:29108 | 0 |
 | CHEBI:18420 | Magnesium | REJECTED | CHEBI:18420 | CHEBI:18420 | 0 |
-| CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:27386 |  | 0 |
-| CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:37585 |  | 0 |
+| CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:35697 |  | 0 |
+| CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:114249 |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 0129 (2 | REJECTED |  |  | 0 |
 | UNMAPPED_0736 | 3-methylacetate | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 4-Diamino-6 | REJECTED |  |  | 0 |

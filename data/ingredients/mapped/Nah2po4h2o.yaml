@@ -57,12 +57,27 @@ curation_history:
   new_status: REJECTED
   llm_assisted: true
   llm_model: claude-fable-5-1
+- timestamp: '2026-09-23T05:17:01.921583+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'ontology_id CHEBI:37585 (''sodium dihydrogenphosphate'') -> CHEBI:114249
+    (''sodium dihydrogenphosphate monohydrate'') on the merge tombstone, so the merged
+    name is credited to the live record that holds the identifier (Rule K; the #414
+    Mgcl2x_6_H2o precedent). The 2026-08-06 promotion used the Section 3 step 2 cas:
+    fallback on the premise that ChEBI has no hydrate term. CHEBI:114249 ''sodium
+    dihydrogenphosphate monohydrate'' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M)
+    exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_monobasic_monohydrate
+    already holds it: one substance under two identifiers -> merge (#312).'
+  previous_status: REJECTED
+  new_status: REJECTED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 and left unmapped for
   hydrate-state curation rather than merging to CHEBI:37585 anhydrous sodium dihydrogenphosphate.'
 ingredient_type: SINGLE_INGREDIENT
 ontology_mapping:
-  ontology_id: CHEBI:37585
-  ontology_label: sodium dihydrogenphosphate
+  ontology_id: CHEBI:114249
+  ontology_label: sodium dihydrogenphosphate monohydrate
   ontology_source: CHEBI
   mapping_quality: NARROW_MATCH
   evidence:

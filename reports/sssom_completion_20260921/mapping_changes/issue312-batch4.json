@@ -3,7 +3,7 @@
   "batch": "issue312-batch4",
   "sequence": 4,
   "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/312",
-  "scope": "Verified #312 batch 4: two merges through scripts/merge_mapped_records.py (Cinnamic_Acid into Trans-cinnamic_Acid, Nah2po4h2o into Sodium_phosphate_monobasic_monohydrate), tombstones re-pointed to the survivor's identifier, a parent-only synonym rejected on the trans record, 4 recipe-membership edges added for the merged label. 6-deoxy-d-galactose into D-fucose deferred (#745).",
+  "scope": "Verified #312 batch 4: two merges through scripts/merge_mapped_records.py (Cinnamic_Acid into Trans-cinnamic_Acid, Nah2po4h2o into Sodium_phosphate_monobasic_monohydrate), tombstones re-pointed to the survivor's identifier and term, a parent-only synonym rejected on the trans record, 4 recipe-membership edges added for the merged label. 6-deoxy-d-galactose into D-fucose deferred (#745).",
   "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
   "before_sha256": "b2712b1209c4bf6ff803f94ade264475dcc075d781d2c5fedb12ad0c8549dd71",
   "after_sha256": "842f7514f33d049f6c3557e11d5cfcd07636b15e5f75c385775969b446e9d771",
@@ -14,33 +14,33 @@
       "source_record": "data/ingredients/mapped/Cinnamic_Acid.yaml",
       "shape": "merge_tombstone",
       "before_yaml_sha256": "72a24bf9ba91bbda12289420650ba9fb1152e4fce548f3e871ebb4b2d00b98c9",
-      "after_yaml_sha256": "4b8362856622d3f17ad3755b4832ab4fa3dbb11e678ad6a64177693f15dfb65c",
-      "change": "merged into Trans-cinnamic_Acid; mapping_status REJECTED; identifier CHEBI:27386 -> CHEBI:35697",
-      "verification": "The record's only source-supplied identity is CAS 140-10-3 (CultureBotHT), which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified CHEBI:27386's sole CAS is 621-82-9. Section 3 step 4's evidence hatch picks the trans isomer, which Trans-cinnamic_Acid already holds, so the two records denote one substance (#312)."
-    },
-    {
-      "source_record": "data/ingredients/mapped/Trans-cinnamic_Acid.yaml",
-      "shape": "merge_survivor",
-      "before_yaml_sha256": "a47a4dad1bd7204ee15edc4307a9491b6da91d3b51d0586e6018982e416f1003",
-      "after_yaml_sha256": "317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9",
-      "change": "absorbed Cinnamic_Acid (synonyms, occurrences); '3-phenylprop-2-enoic acid' -> REJECTED_LABEL (the exact synonym of the geometry-unspecified parent CHEBI:27386, not of the trans isomer); evidence note added",
-      "verification": "The record's only source-supplied identity is CAS 140-10-3 (CultureBotHT), which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified CHEBI:27386's sole CAS is 621-82-9. Section 3 step 4's evidence hatch picks the trans isomer, which Trans-cinnamic_Acid already holds, so the two records denote one substance (#312)."
+      "after_yaml_sha256": "70ca0c7f6f12da7f16ea79140bd5163d54a1cfc823b9a0dfaefbc8abd3e90bfe",
+      "change": "MERGED_INTO; CORRECTED; CORRECTED",
+      "verification": "Merged into CHEBI:35697 'trans-Cinnamic acid'; occurrences transferred. Tombstoned REJECTED, SSSOM rows dropped. The record's only source-supplied identity is CAS 140-10-3, which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified CHEBI:27386's sole CAS is 621-82-9. MAPPING_SEMANTICS Section 3 step 4's evidence hatch picks the trans isomer, already held by this record (#312). || identifier CHEBI:27386 -> CHEBI:35697 on the merge tombstone, so the merged name is credited to the live record that holds the identifier (Rule K; the #414 Mgcl2x_6_H2o precedent). The record's only source-supplied identity is CAS 140-10-3 (CultureBotHT), which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified CHEBI:27386's sole CAS is 621-82-9. Section 3 step 4's evidence hatch picks the trans isomer, which Trans-cinnamic_Acid already holds, so the two records denote || ontology_id CHEBI:27386 ('cinnamic acid') -> CHEBI:35697 ('trans-cinnamic acid') on the merge tombstone, so the merged name is credited to the live record that holds the identifier (Rule K; the #414 Mgcl2x_6_H2o precedent). The record's only source-supplied identity is CAS 140-10-3 (CultureBotHT), which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified CHEBI:27386's sole CAS is 621-82-9. Section 3 step 4's evidence hatch picks the trans isomer, which Trans-cinnamic_Ac"
     },
     {
       "source_record": "data/ingredients/mapped/Nah2po4h2o.yaml",
       "shape": "merge_tombstone",
       "before_yaml_sha256": "53f08b9a049969fb6cc02f726f2e1f3577cc19d4130fca5a89ca898c9496a689",
-      "after_yaml_sha256": "44526bce027568cecb10f7a79f62854e545f8701c94a16a34f8730295c00746d",
-      "change": "merged into Sodium_phosphate_monobasic_monohydrate; mapping_status REJECTED; identifier cas:10049-21-5 -> CHEBI:114249",
-      "verification": "The 2026-08-06 promotion used the Section 3 step 2 cas: fallback on the premise that ChEBI has no hydrate term. CHEBI:114249 'sodium dihydrogenphosphate monohydrate' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M) exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_monobasic_monohydrate already holds it: one substance under two identifiers -> merge (#312)."
+      "after_yaml_sha256": "a86c7e9bf02b894541631a824e5d65216b0c3c3c887eefe583083f85e75670b8",
+      "change": "MERGED_INTO; CORRECTED; CORRECTED",
+      "verification": "Merged into CHEBI:114249 'Sodium phosphate monobasic monohydrate'; occurrences transferred. Tombstoned REJECTED, SSSOM rows dropped. The cas: identity was the Section 3 step 2 fallback on the premise that ChEBI has no monohydrate term; CHEBI:114249 sodium dihydrogenphosphate monohydrate exists, xrefs cas:10049-21-5, and is held by this record: one substance under two identifiers (#312). || identifier cas:10049-21-5 -> CHEBI:114249 on the merge tombstone, so the merged name is credited to the live record that holds the identifier (Rule K; the #414 Mgcl2x_6_H2o precedent). The 2026-08-06 promotion used the Section 3 step 2 cas: fallback on the premise that ChEBI has no hydrate term. CHEBI:114249 'sodium dihydrogenphosphate monohydrate' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M) exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_mono || ontology_id CHEBI:37585 ('sodium dihydrogenphosphate') -> CHEBI:114249 ('sodium dihydrogenphosphate monohydrate') on the merge tombstone, so the merged name is credited to the live record that holds the identifier (Rule K; the #414 Mgcl2x_6_H2o precedent). The 2026-08-06 promotion used the Section 3 step 2 cas: fallback on the premise that ChEBI has no hydrate term. CHEBI:114249 'sodium dihydrogenphosphate monohydrate' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M) exists and xrefs cas:100"
     },
     {
       "source_record": "data/ingredients/mapped/Sodium_phosphate_monobasic_monohydrate.yaml",
       "shape": "merge_survivor",
       "before_yaml_sha256": "03a04c1897d54a7d57a924d99d4f8411a87c990a4e02b5405ee4d26608a885e0",
       "after_yaml_sha256": "e11652b78ae7590718cd4e259026cac5da0d9d51777792c7d12513355f4b1022",
-      "change": "absorbed Nah2po4h2o (synonyms, occurrences); evidence note added",
-      "verification": "The 2026-08-06 promotion used the Section 3 step 2 cas: fallback on the premise that ChEBI has no hydrate term. CHEBI:114249 'sodium dihydrogenphosphate monohydrate' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M) exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_monobasic_monohydrate already holds it: one substance under two identifiers -> merge (#312)."
+      "change": "MERGED_FROM_MAPPED_RECORD; CORRECTED",
+      "verification": "Absorbed cas:10049-21-5 'NaH2PO4\u2022H2O': 2 synonym(s), occurrences +4/4. The cas: identity was the Section 3 step 2 fallback on the premise that ChEBI has no monohydrate term; CHEBI:114249 sodium dihydrogenphosphate monohydrate exists, xrefs cas:10049-21-5, and is held by this record: one substance under two identifiers (#312). || evidence note added. The 2026-08-06 promotion used the Section 3 step 2 cas: fallback on the premise that ChEBI has no hydrate term. CHEBI:114249 'sodium dihydrogenphosphate monohydrate' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M) exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_monobasic_monohydrate already holds it: one substance under two identifiers -> merge (#312)."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Trans-cinnamic_Acid.yaml",
+      "shape": "merge_survivor",
+      "before_yaml_sha256": "a47a4dad1bd7204ee15edc4307a9491b6da91d3b51d0586e6018982e416f1003",
+      "after_yaml_sha256": "317e87dde94dea859dced9aa22b75134ee97a4b43e1a7c178e44a73f58e1f8d9",
+      "change": "MERGED_FROM_MAPPED_RECORD; CORRECTED",
+      "verification": "Absorbed CHEBI:27386 'Cinnamic acid': 2 synonym(s), occurrences +0/0. The record's only source-supplied identity is CAS 140-10-3, which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified CHEBI:27386's sole CAS is 621-82-9. MAPPING_SEMANTICS Section 3 step 4's evidence hatch picks the trans isomer, already held by this record (#312). || '3-phenylprop-2-enoic acid' -> REJECTED_LABEL (the exact synonym of the geometry-unspecified parent CHEBI:27386, not of the trans isomer); evidence note added. The record's only source-supplied identity is CAS 140-10-3 (CultureBotHT), which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified CHEBI:27386's sole CAS is 621-82-9. Section 3 step 4's evidence hatch picks the trans isomer, which Trans-cinnamic_Acid already holds, so the two records denote one substance (#312)"
     }
   ],
   "changed_rows": 2,

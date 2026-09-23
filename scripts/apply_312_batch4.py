@@ -138,23 +138,35 @@ def post_merge(log: list, write: bool) -> None:
         path, record = load(spec.source_slug)
         if record.get("mapping_status") != "REJECTED":
             raise SystemExit(f"{spec.source_slug} is not REJECTED yet; run merge_mapped_records.py first")
+        survivor = load(spec.target_slug)[1]["ontology_mapping"]
+        mapping = record["ontology_mapping"]
+        moves = []
         if record["identifier"] != spec.target_identifier:
-            before = _git_head_sha(path)
-            old = record["identifier"]
+            moves.append(f"identifier {record['identifier']} -> {spec.target_identifier}")
             record["identifier"] = spec.target_identifier
+        if mapping["ontology_id"] != survivor["ontology_id"]:
+            # The tombstone's mapping follows the survivor's term too, or the label index
+            # keeps publishing the merged name under the retired term (#756, the batch-1
+            # Mgcl2x_6_H2o precedent).
+            moves.append(f"ontology_id {mapping['ontology_id']} ('{mapping.get('ontology_label')}') -> "
+                         f"{survivor['ontology_id']} ('{survivor.get('ontology_label')}')")
+            mapping["ontology_id"] = survivor["ontology_id"]
+            mapping["ontology_label"] = survivor.get("ontology_label")
+            mapping["ontology_source"] = survivor.get("ontology_source")
+        if moves:
+            before = _git_head_sha(path)
             record_curation_event(
                 record, curator=CURATOR, action="CORRECTED",
-                changes=(f"identifier {old} -> {spec.target_identifier} on the merge tombstone, so the merged "
-                         f"name is credited to the live record that holds the identifier (Rule K; the #414 "
-                         f"Mgcl2x_6_H2o precedent). {spec.reason}"),
+                changes=("; ".join(moves) + " on the merge tombstone, so the merged name is credited to the live "
+                         f"record that holds the identifier (Rule K; the #414 Mgcl2x_6_H2o precedent). {spec.reason}"),
                 previous_status="REJECTED", new_status="REJECTED", llm_assisted=True, llm_model=LLM_MODEL,
             )
-            print(f"TOMBSTONE {spec.source_slug}: identifier {old} -> {spec.target_identifier}")
+            print(f"TOMBSTONE {spec.source_slug}: {'; '.join(moves)}")
             if write:
                 write_validated_ingredient(record, path)
             log.append({"source_record": str(path.relative_to(ROOT)), "shape": "merge_tombstone",
                         "before_yaml_sha256": before, "after_yaml_sha256": sha(path) if write else None,
-                        "change": f"merged into {spec.target_slug}; mapping_status REJECTED; identifier {old} -> {spec.target_identifier}",
+                        "change": f"merged into {spec.target_slug}; mapping_status REJECTED; " + "; ".join(moves),
                         "verification": spec.reason})
         else:
             print(f"SKIP      {spec.source_slug}: tombstone already re-pointed")

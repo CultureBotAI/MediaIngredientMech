@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-23T05:03:17.868131+00:00
+Generated: 2026-09-23T05:20:43.834682+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2682,8 +2682,8 @@ Total: 2952 ingredients
 | kgmicrobe.ingredient:casamino_acids_vitamin_assay | mesh:C017721 | Casamino acids (vitamin assay) | MAPPED | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.compound:cuso4_x_2_h2o | CHEBI:23414 | CuSO4 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 8 |
 | kgmicrobe.compound:cuso4_x_4_h2o | CHEBI:23414 | CuSO4 x 4 H2O | MAPPED | CHEBI | CLOSE_MATCH | 2 |
-| CHEBI:35697 | CHEBI:27386 | Cinnamic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:114249 | CHEBI:37585 | NaH2PO4•H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
+| CHEBI:35697 | CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:114249 | CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |

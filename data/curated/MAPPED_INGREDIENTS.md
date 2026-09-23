@@ -2693,6 +2693,6 @@
 | kgmicrobe.ingredient:vitamins_solution | Vitamins-solution | REJECTED | kgmicrobe.ingredient:vitamins_solution |  | 0 |
 | CHEBI:29108 | Calcium | REJECTED | CHEBI:29108 | CHEBI:29108 | 0 |
 | CHEBI:18420 | Magnesium | REJECTED | CHEBI:18420 | CHEBI:18420 | 0 |
-| CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:27386 |  | 0 |
-| CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:37585 |  | 0 |
+| CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:35697 |  | 0 |
+| CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:114249 |  | 0 |
 
