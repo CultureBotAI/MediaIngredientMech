@@ -27,8 +27,6 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from mediaingredientmech.micro_source import source_term
-
 REPO = Path(__file__).resolve().parents[2]
 SSSOM = REPO / "mappings" / "ingredient_mappings.sssom.tsv"
 ALIASES = REPO / "mappings" / "mim_curie_aliases.tsv"
@@ -272,15 +270,20 @@ class CurieNormalizer:
                 note=f"{canonical} accessions do not reach {local}; "
                 "this is most likely a PubChem CID",
             )
-        if canonical == "MICRO" and out not in MICRO_VERIFIED and source_term(out) is None:
-            return Verdict(
-                False,
-                curie=out,
-                problem="MICRO_UNVERIFIED",
-                note="MICRO term has neither canonical OLS verification nor a reviewed "
-                "entry in the pinned KG-Microbe source; verify the term and its original IRI "
-                "before use",
-            )
+        if canonical == "MICRO" and out not in MICRO_VERIFIED:
+            # The bare-Python published-CURIE gate imports this module by path
+            # for its syntax/prefix constants, without installing the package.
+            from mediaingredientmech.micro_source import source_term
+
+            if source_term(out) is None:
+                return Verdict(
+                    False,
+                    curie=out,
+                    problem="MICRO_UNVERIFIED",
+                    note="MICRO term has neither canonical OLS verification nor a reviewed "
+                    "entry in the pinned KG-Microbe source; verify the term and its original IRI "
+                    "before use",
+                )
         note = "" if out == raw else f"prefix case normalised from {prefix!r}"
         return Verdict(True, curie=out, note=note)
 
