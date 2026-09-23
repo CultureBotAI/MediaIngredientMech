@@ -1,4 +1,4 @@
-identifier: MICRO:0000455
+identifier: kgmicrobe.ingredient:algal_trace_elements_solution
 preferred_term: Algal Trace Elements Solution
 synonyms:
 - synonym_text: Algal Trace Elements Solution
@@ -34,17 +34,44 @@ curation_history:
   changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'solution')
     (#323)
   llm_assisted: false
+- timestamp: '2026-09-23T03:41:22.513892+00:00'
+  curator: claude
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: 'identifier MICRO:0000455 -> kgmicrobe.ingredient:algal_trace_elements_solution;
+    ontology MICRO:0000455 (''trace elements solution'') -> MICRO:0000455 (''trace
+    elements solution''); mapping_quality LEXICAL_MATCH -> NARROW_MATCH. MICRO:0000455
+    ''trace elements solution'' is a class (''a solution of trace elements ..., sometimes
+    also having an organic chelator''), and two MIM records held it as their identifier
+    (this one and WC Trace Elements Solution): two different recipes collapsed onto
+    one node. This is the UTEX algal trace-element recipe, a specific formulation.
+    Section 3 step 3: mint a registry identity, broadMatch to the class, the Proteose_Peptone_No_2
+    shape. (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: 'CultureMech placeholder_id: 9'
 ontology_mapping:
   ontology_id: MICRO:0000455
   ontology_label: trace elements solution
   ontology_source: MICRO
-  mapping_quality: LEXICAL_MATCH
+  mapping_quality: NARROW_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
-    notes: Auto-upgraded from UNMAPPED_0097; matched via 'Algal Trace Elements Solution';
-      stem-substring
+    notes: 'SUPERSEDED (#312): Auto-upgraded from UNMAPPED_0097; matched via ''Algal
+      Trace Elements Solution''; stem-substring'
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier MICRO:0000455 -> kgmicrobe.ingredient:algal_trace_elements_solution;
+      ontology MICRO:0000455 (''trace elements solution'') -> MICRO:0000455 (''trace
+      elements solution''); mapping_quality LEXICAL_MATCH -> NARROW_MATCH. MICRO:0000455
+      ''trace elements solution'' is a class (''a solution of trace elements ...,
+      sometimes also having an organic chelator''), and two MIM records held it as
+      their identifier (this one and WC Trace Elements Solution): two different recipes
+      collapsed onto one node. This is the UTEX algal trace-element recipe, a specific
+      formulation. Section 3 step 3: mint a registry identity, broadMatch to the class,
+      the Proteose_Peptone_No_2 shape.'
 nutritional_roles:
 - role: TRACE_ELEMENT
   confidence: 0.6

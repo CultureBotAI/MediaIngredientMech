@@ -1,4 +1,4 @@
-generation_date: '2026-09-23T01:09:30.781836+00:00'
+generation_date: '2026-09-23T03:43:43.557209+00:00'
 total_count: 2679
 mapped_count: 2612
 unmapped_count: 0
@@ -36890,62 +36890,6 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
-- identifier: MICRO:0000455
-  preferred_term: Algal Trace Elements Solution
-  synonyms:
-  - synonym_text: Algal Trace Elements Solution
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 1
-    media_count: 1
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:18:21.870388+00:00'
-    curator: resolve_unmapped_v2
-    action: AUTO_UPGRADE_TO_MICRO
-    changes: primary UNMAPPED_0097 → MICRO:0000455 (strategy=stem-match)
-    llm_assisted: false
-  - timestamp: '2026-06-09T04:56:30.247762+00:00'
-    curator: claude_in_session_curation
-    action: ANNOTATED
-    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
-      nutritional_roles.TRACE_ELEMENT'
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'solution')
-      (#323)
-    llm_assisted: false
-  notes: 'CultureMech placeholder_id: 9'
-  ontology_mapping:
-    ontology_id: MICRO:0000455
-    ontology_label: trace elements solution
-    ontology_source: MICRO
-    mapping_quality: LEXICAL_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
-      notes: Auto-upgraded from UNMAPPED_0097; matched via 'Algal Trace Elements Solution';
-        stem-substring
-  nutritional_roles:
-  - role: TRACE_ELEMENT
-    confidence: 0.6
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Assigned by in-session Claude reasoning (no external API)
-      curator_note: Provisional in-session LLM role assignment; review recommended.
-  ingredient_type: STOCK_SOLUTION
 - identifier: CHEBI:86463
   preferred_term: AlK(SO4)2
   ontology_mapping:
@@ -42631,81 +42575,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:28793
-  preferred_term: b-Glucan from Oat
-  ontology_mapping:
-    ontology_id: CHEBI:28793
-    ontology_label: beta-D-glucan
-    ontology_source: CHEBI
-    mapping_quality: CAS_RN_LOOKUP
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved via OAK CHEBI
-        sqlite (cas xref). '
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:34:31.158938+00:00'
-    curator: audit_cas_chebi_followup
-    action: CREATED_FROM_CAS_LOOKUP
-    changes: 'Created from CultureBotHT CAS-RN=9041-22-9; CHEBI resolved via OAK CHEBI
-      sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved
-      via OAK CHEBI sqlite (cas xref). '
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.311597+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.127623+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C12H22O11(C6H10O5)n
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.658364+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-05-30T00:34:39.267325+00:00'
-    curator: infer_roles_from_chebi_ancestry
-    action: ANNOTATED
-    changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
-      nutritional_roles.CARBON_SOURCE'
-  - timestamp: '2026-08-24T00:00:00+00:00'
-    curator: regrade_synonym_matches
-    action: REGRADED_TO_CAS_RN_LOOKUP
-    changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
-      by an explicit CAS-to-ChEBI lookup and its current CAS RN 9041-22-9 uniquely
-      resolves by ChEBI xref to CHEBI:28793 'beta-D-glucan'. CAS_RN_LOOKUP records
-      the method that established this mapping; a lexical grade would discard that
-      provenance. ontology_id is unchanged. The own-identifier SSSOM predicate remains
-      skos:exactMatch under Rule D (#438), independently of mapping quality.
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 9041-22-9
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
-    molecular_formula: C12H22O11(C6H10O5)n
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: CARBON_SOURCE
-    confidence: 0.7
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
-        (carbohydrate)'
-      curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
-        recommended.
 - identifier: cas:9036-88-8
   preferred_term: b-Mannan borohydrate reduced carob seed
   ontology_mapping:
@@ -53121,78 +52990,6 @@ ingredients:
     inchi: InChI=1S/C15H24/c1-11-6-5-7-12(2)13-10-15(3,4)14(13)9-8-11/h6,13-14H,2,5,7-10H2,1,3-4H3/b11-6+/t13-,14-/m1/s1
     smiles: '[H][C@@]12CC/C(C)=C/CCC(=C)[C@@]1([H])CC2(C)C'
   ingredient_type: SINGLE_INGREDIENT
-- identifier: mesh:C017721
-  preferred_term: Casamino acids (vitamin assay)
-  synonyms:
-  - synonym_text: Casamino acids (vit. assay)
-    synonym_type: RAW_TEXT
-    source: culturebotht
-  - synonym_text: Casamino acids, vitamin assay (BD-Difco)
-    synonym_type: CATALOG_VARIANT
-    source: culturemech:output/ingredient_occurrences.tsv
-  - synonym_text: Casamino acids, vitamin assay (Difco)
-    synonym_type: CATALOG_VARIANT
-    source: culturemech:output/ingredient_occurrences.tsv
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-      or CHEBI mapping available; curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:19.521740+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Casamino')
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:18:21.911027+00:00'
-    curator: resolve_unmapped_v2
-    action: AUTO_UPGRADE_TO_MESH
-    changes: primary UNMAPPED_0185 → mesh:C017721 (strategy=stem-match)
-    llm_assisted: false
-  - timestamp: '2026-06-03T02:06:01.736894+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE ->
-      nutritional_roles.PROTEIN_SOURCE'
-  - timestamp: '2026-08-30T04:48:06.233536+00:00'
-    curator: claude_culturemech_alias_backfill
-    action: ADDED_SYNONYMS
-    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
-      published label but were absent from MIM''s label index, so CultureMech could
-      not resolve them: ''Casamino acids, vitamin assay (BD-Difco)'' (x5 CultureMech
-      mentions); ''Casamino acids, vitamin assay (Difco)'' (x3 CultureMech mentions).
-      Source: culturemech:output/ingredient_occurrences.tsv.'
-    llm_assisted: false
-  notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
-    or CHEBI mapping available; curator review needed.
-  ingredient_type: UNDEFINED_MIXTURE
-  ontology_mapping:
-    ontology_id: mesh:C017721
-    ontology_label: casamino acids
-    ontology_source: MESH
-    mapping_quality: LEXICAL_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: MESH via OLS (resolve_unmapped_v2 strategy=stem-match)
-      notes: Auto-upgraded from UNMAPPED_0185; matched via 'Casamino acids (vitamin
-        assay)'; stem-substring
-  nutritional_roles:
-  - role: PROTEIN_SOURCE
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: FOODON:03420180
   preferred_term: Casein
   ontology_mapping:
@@ -64182,8 +63979,8 @@ ingredients:
     source: kg_microbe
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 187
-    media_count: 187
+    total_occurrences: 177
+    media_count: 177
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -64280,6 +64077,16 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-09-23T03:43:07.290807+00:00'
+    curator: claude
+    action: REFRESHED_OCCURRENCE_STATISTICS
+    changes: 'occurrence_statistics 187/187 -> 177/177 after the #312 registry mints
+      moved memberships off the shared identifier; counts follow the source label
+      through SOURCE_LABEL_IDENTIFIER_OVERRIDES.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 7758-98-7
     data_source: PubChem API (ontology label)
@@ -64296,292 +64103,6 @@ ingredients:
     - reference_type: DATABASE_ENTRY
       reference_text: Imported from CultureMech pipeline
       curator_note: 'Original role text: Mineral'
-- identifier: CHEBI:23414
-  preferred_term: CuSO4 x 2 H2O
-  ontology_mapping:
-    ontology_id: CHEBI:23414
-    ontology_label: copper(II) sulfate
-    ontology_source: CHEBI
-    mapping_quality: SYNONYM_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#321)
-      notes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.2H2O'. The recorded value described
-        the anhydrous salt while the label names a hydrate, understating the mass
-        by 18 g/mol per water. Corrected because the label states 2 water(s) of hydration,
-        and the recorded formula was byte-identical to the anhydrous parent CHEBI:23414's
-        ChEBI formula ('Cu.O4S') — the mark of a value inherited from the parent rather
-        than measured for this record. Water appended in ChEBI's own dot-separated
-        notation.
-  synonyms:
-  - synonym_text: CuSO4 . 2H2O
-    synonym_type: HYDRATE_FORM
-    source: kg_microbe
-  - synonym_text: CuSO4 x 4 H2O
-    synonym_type: REJECTED_LABEL
-    source: kg_microbe
-  - synonym_text: CuSO4 x H2O
-    synonym_type: REJECTED_LABEL
-    source: kg_microbe
-  - synonym_text: cupric sulfate anhydrous
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: copper(2+) sulfate
-    synonym_type: EXACT_SYNONYM
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 187
-    media_count: 187
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-09T00:32:50.689620+00:00'
-    curator: enrich_mim_cas_rn_batch
-    action: CAS_RN_ADDED
-    changes: Added CAS-RN 7758-98-7 from PubChem (via CHEBI:23414)
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: CuSO4 . 2H2O, CuSO4
-      x 4 H2O, CuSO4 x H2O, cupric sulfate anhydrous'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-05-01T07:35:32.979894+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.881923+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=Cu.O4S; inchi=InChI=1S/Cu.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/;
-      smiles=O=S(=O)([O-])[O-].[Cu+2]
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.629812+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-06-02T07:05:13.387933+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: MINERAL (confidence: 0.80)'
-  - timestamp: '2026-06-09T05:23:46.747385+00:00'
-    curator: correct_stale_ontology_labels.py
-    action: CORRECTED
-    changes: 'ontology_label ''CuSO4 x 2 H2O'' -> ''copper(II) sulfate'': synced to
-      canonical CHEBI label (preferred_term ''CuSO4 x 2 H2O'' unchanged).'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
-  - timestamp: '2026-08-10T00:00:00+00:00'
-    curator: regrade_synonym_matches
-    action: REGRADED_EXACT_TO_SYNONYM
-    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
-      does not equal the term's primary label 'copper(II) sulfate'; it matches the
-      ChEBI synonym 'cupric sulfate anhydrous' on CHEBI:23414. The schema defines
-      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
-      known synonym, so the recorded grade overstated. ontology_id is unchanged —
-      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
-    llm_assisted: false
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: add_water_of_hydration
-    action: ADDED_WATER_OF_HYDRATION
-    changes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.2H2O' (#321); the label states
-      2 water(s) of hydration, and the recorded formula was byte-identical to the
-      anhydrous parent CHEBI:23414's ChEBI formula ('Cu.O4S') — the mark of a value
-      inherited from the parent rather than measured for this record. Water appended
-      in ChEBI's own dot-separated notation.
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.518651+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 4/4 -> 187/187 (media_count/total_occurrences),
-      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-      prior values came from the importer retired in #453, whose media_count counted
-      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-08-29T04:13:24.025883+00:00'
-    curator: hydrate_family_cas
-    action: CORRECTED
-    changes: 'cas_rn 7758-98-7 REMOVED, not replaced: it is the anhydrous CuSO4 CAS,
-      and this record names a hydrate -- a different substance with a different formula
-      weight. ChEBI has no term for this hydration state, so no authoritative value
-      can be substituted and a guess is how wrong CAS numbers spread. The grounding
-      is separately wrong (#321); this corrects only the CAS (#334).'
-  - timestamp: '2026-09-12T00:00:00+00:00'
-    curator: reject_hidden_hydrate_synonym_collapses
-    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
-    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
-      longer resolves sibling hydrate identities (#251): ''CuSO4 x 4 H2O'', ''CuSO4
-      x H2O''.'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: false
-  kg_microbe_node_id: CHEBI:23414
-  chemical_properties:
-    data_source: PubChem (via CHEBI:23414)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cu.O4S.2H2O
-    inchi: InChI=1S/Cu.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Cu+2]
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: TRACE_ELEMENT
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:23414
-  preferred_term: CuSO4 x 4 H2O
-  ontology_mapping:
-    ontology_id: CHEBI:23414
-    ontology_label: copper(II) sulfate
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#321)
-      notes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.4H2O'. The recorded value described
-        the anhydrous salt while the label names a hydrate, understating the mass
-        by 18 g/mol per water. Corrected because the label states 4 water(s) of hydration,
-        and the recorded formula was byte-identical to the anhydrous parent CHEBI:23414's
-        ChEBI formula ('Cu.O4S') — the mark of a value inherited from the parent rather
-        than measured for this record. Water appended in ChEBI's own dot-separated
-        notation.
-  synonyms:
-  - synonym_text: CuSO4 . 2H2O
-    synonym_type: REJECTED_LABEL
-    source: kg_microbe
-  - synonym_text: CuSO4 x 2 H2O
-    synonym_type: REJECTED_LABEL
-    source: kg_microbe
-  - synonym_text: CuSO4 x H2O
-    synonym_type: REJECTED_LABEL
-    source: kg_microbe
-  - synonym_text: cupric sulfate anhydrous
-    synonym_type: EXACT_SYNONYM
-    source: kg_microbe
-  - synonym_text: copper(2+) sulfate
-    synonym_type: EXACT_SYNONYM
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 187
-    media_count: 187
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-09T00:32:50.689620+00:00'
-    curator: enrich_mim_cas_rn_batch
-    action: CAS_RN_ADDED
-    changes: Added CAS-RN 7758-98-7 from PubChem (via CHEBI:23414)
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-04-18T00:00:00+00:00'
-    curator: cbclaw_kg_microbe_sweep
-    action: ADDED_SYNONYMS
-    changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: CuSO4 . 2H2O, CuSO4
-      x 2 H2O, CuSO4 x H2O, cupric sulfate anhydrous'
-    new_status: MAPPED
-    llm_assisted: true
-  - timestamp: '2026-05-01T07:35:32.983050+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.885865+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=Cu.O4S; inchi=InChI=1S/Cu.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/;
-      smiles=O=S(=O)([O-])[O-].[Cu+2]
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.633932+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-06-02T07:05:13.387942+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: MINERAL (confidence: 0.80)'
-  - timestamp: '2026-06-09T05:23:46.747476+00:00'
-    curator: correct_stale_ontology_labels.py
-    action: CORRECTED
-    changes: 'ontology_label ''CuSO4 x 4 H2O'' -> ''copper(II) sulfate'': synced to
-      canonical CHEBI label (preferred_term ''CuSO4 x 4 H2O'' unchanged).'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: add_water_of_hydration
-    action: ADDED_WATER_OF_HYDRATION
-    changes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.4H2O' (#321); the label states
-      4 water(s) of hydration, and the recorded formula was byte-identical to the
-      anhydrous parent CHEBI:23414's ChEBI formula ('Cu.O4S') — the mark of a value
-      inherited from the parent rather than measured for this record. Water appended
-      in ChEBI's own dot-separated notation.
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.518657+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 1/1 -> 187/187 (media_count/total_occurrences),
-      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-      prior values came from the importer retired in #453, whose media_count counted
-      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-08-29T04:13:24.026123+00:00'
-    curator: hydrate_family_cas
-    action: CORRECTED
-    changes: 'cas_rn 7758-98-7 REMOVED, not replaced: it is the anhydrous CuSO4 CAS,
-      and this record names a hydrate -- a different substance with a different formula
-      weight. ChEBI has no term for this hydration state, so no authoritative value
-      can be substituted and a guess is how wrong CAS numbers spread. The grounding
-      is separately wrong (#321); this corrects only the CAS (#334).'
-  - timestamp: '2026-09-12T00:00:00+00:00'
-    curator: reject_hidden_hydrate_synonym_collapses
-    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
-    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
-      longer resolves sibling hydrate identities (#251): ''CuSO4 . 2H2O'', ''CuSO4
-      x 2 H2O'', ''CuSO4 x H2O''.'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: false
-  kg_microbe_node_id: CHEBI:23414
-  chemical_properties:
-    data_source: PubChem (via CHEBI:23414)
-    retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-    molecular_formula: Cu.O4S.4H2O
-    inchi: InChI=1S/Cu.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-    smiles: O=S(=O)([O-])[O-].[Cu+2]
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: TRACE_ELEMENT
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: CHEBI:31440
   preferred_term: CuSO4 x 5 H2O
   ontology_mapping:
@@ -220338,3 +219859,646 @@ ingredients:
         ferulate anion.'
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties: {}
+- identifier: kgmicrobe.ingredient:algal_trace_elements_solution
+  preferred_term: Algal Trace Elements Solution
+  synonyms:
+  - synonym_text: Algal Trace Elements Solution
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:18:21.870388+00:00'
+    curator: resolve_unmapped_v2
+    action: AUTO_UPGRADE_TO_MICRO
+    changes: primary UNMAPPED_0097 → MICRO:0000455 (strategy=stem-match)
+    llm_assisted: false
+  - timestamp: '2026-06-09T04:56:30.247762+00:00'
+    curator: claude_in_session_curation
+    action: ANNOTATED
+    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
+      nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=STOCK_SOLUTION (name matches solution pattern 'solution')
+      (#323)
+    llm_assisted: false
+  - timestamp: '2026-09-23T03:41:22.513892+00:00'
+    curator: claude
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: 'identifier MICRO:0000455 -> kgmicrobe.ingredient:algal_trace_elements_solution;
+      ontology MICRO:0000455 (''trace elements solution'') -> MICRO:0000455 (''trace
+      elements solution''); mapping_quality LEXICAL_MATCH -> NARROW_MATCH. MICRO:0000455
+      ''trace elements solution'' is a class (''a solution of trace elements ...,
+      sometimes also having an organic chelator''), and two MIM records held it as
+      their identifier (this one and WC Trace Elements Solution): two different recipes
+      collapsed onto one node. This is the UTEX algal trace-element recipe, a specific
+      formulation. Section 3 step 3: mint a registry identity, broadMatch to the class,
+      the Proteose_Peptone_No_2 shape. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  notes: 'CultureMech placeholder_id: 9'
+  ontology_mapping:
+    ontology_id: MICRO:0000455
+    ontology_label: trace elements solution
+    ontology_source: MICRO
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MICRO via OLS (resolve_unmapped_v2 strategy=stem-match)
+      notes: 'SUPERSEDED (#312): Auto-upgraded from UNMAPPED_0097; matched via ''Algal
+        Trace Elements Solution''; stem-substring'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier MICRO:0000455 -> kgmicrobe.ingredient:algal_trace_elements_solution;
+        ontology MICRO:0000455 (''trace elements solution'') -> MICRO:0000455 (''trace
+        elements solution''); mapping_quality LEXICAL_MATCH -> NARROW_MATCH. MICRO:0000455
+        ''trace elements solution'' is a class (''a solution of trace elements ...,
+        sometimes also having an organic chelator''), and two MIM records held it
+        as their identifier (this one and WC Trace Elements Solution): two different
+        recipes collapsed onto one node. This is the UTEX algal trace-element recipe,
+        a specific formulation. Section 3 step 3: mint a registry identity, broadMatch
+        to the class, the Proteose_Peptone_No_2 shape.'
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 0.6
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Assigned by in-session Claude reasoning (no external API)
+      curator_note: Provisional in-session LLM role assignment; review recommended.
+  ingredient_type: STOCK_SOLUTION
+- identifier: kgmicrobe.ingredient:b-glucan_from_oat
+  preferred_term: b-Glucan from Oat
+  ontology_mapping:
+    ontology_id: CHEBI:18504
+    ontology_label: (1->3,1->4)-beta-D-glucan
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: 'SUPERSEDED (#312): Imported from CultureBotHT. CAS-RN→CHEBI mapping
+        resolved via OAK CHEBI sqlite (cas xref). '
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier CHEBI:28793 -> kgmicrobe.ingredient:b-glucan_from_oat; ontology
+        CHEBI:28793 (''beta-D-glucan'') -> CHEBI:18504 (''(1->3,1->4)-beta-D-glucan'');
+        mapping_quality CAS_RN_LOOKUP -> NARROW_MATCH. CHEBI:28793 ''beta-D-glucan''
+        is the linkage-agnostic class with 18 subclasses (cellulose, nitrocellulose,
+        schizophyllan, ...); an exactMatch licensed substituting oat beta-glucan for
+        the whole class, and MIM:Cellulose already sits under it. Oat beta-glucan
+        is the mixed-linkage (1->3,1->4)-beta-D-glucan, CHEBI:18504, and the record
+        is source-qualified (''from Oat''), so it is narrower than that term too.
+        Section 3 step 3, the Amylopectin_From_Maize / Lichenan shape: registry identity,
+        broadMatch CHEBI:18504. CAS 9041-22-9 is the generic beta-glucan registration
+        (ChEBI xrefs it on CHEBI:28793) and stays in chemical_properties as such.'
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:34:31.158938+00:00'
+    curator: audit_cas_chebi_followup
+    action: CREATED_FROM_CAS_LOOKUP
+    changes: 'Created from CultureBotHT CAS-RN=9041-22-9; CHEBI resolved via OAK CHEBI
+      sqlite (cas xref); Imported from CultureBotHT. CAS-RN→CHEBI mapping resolved
+      via OAK CHEBI sqlite (cas xref). '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.311597+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.127623+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C12H22O11(C6H10O5)n
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.658364+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-05-30T00:34:39.267325+00:00'
+    curator: infer_roles_from_chebi_ancestry
+    action: ANNOTATED
+    changes: 'Added media role: CARBON_SOURCE (confidence: 0.70)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
+      nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-08-24T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_TO_CAS_RN_LOOKUP
+    changes: mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP (#317). The record was created
+      by an explicit CAS-to-ChEBI lookup and its current CAS RN 9041-22-9 uniquely
+      resolves by ChEBI xref to CHEBI:28793 'beta-D-glucan'. CAS_RN_LOOKUP records
+      the method that established this mapping; a lexical grade would discard that
+      provenance. ontology_id is unchanged. The own-identifier SSSOM predicate remains
+      skos:exactMatch under Rule D (#438), independently of mapping quality.
+    llm_assisted: false
+  - timestamp: '2026-09-23T03:41:22.729918+00:00'
+    curator: claude
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: 'identifier CHEBI:28793 -> kgmicrobe.ingredient:b-glucan_from_oat; ontology
+      CHEBI:28793 (''beta-D-glucan'') -> CHEBI:18504 (''(1->3,1->4)-beta-D-glucan'');
+      mapping_quality CAS_RN_LOOKUP -> NARROW_MATCH. CHEBI:28793 ''beta-D-glucan''
+      is the linkage-agnostic class with 18 subclasses (cellulose, nitrocellulose,
+      schizophyllan, ...); an exactMatch licensed substituting oat beta-glucan for
+      the whole class, and MIM:Cellulose already sits under it. Oat beta-glucan is
+      the mixed-linkage (1->3,1->4)-beta-D-glucan, CHEBI:18504, and the record is
+      source-qualified (''from Oat''), so it is narrower than that term too. Section
+      3 step 3, the Amylopectin_From_Maize / Lichenan shape: registry identity, broadMatch
+      CHEBI:18504. CAS 9041-22-9 is the generic beta-glucan registration (ChEBI xrefs
+      it on CHEBI:28793) and stays in chemical_properties as such. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 9041-22-9
+    data_source: CultureBotHT compounds_to_cas.csv
+    retrieval_date: '2026-04-29T06:34:31.158938+00:00'
+    molecular_formula: C12H22O11(C6H10O5)n
+  ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: CARBON_SOURCE
+    confidence: 0.7
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: 'Inferred from CHEBI ancestry: subclass/has_role of CHEBI:16646
+        (carbohydrate)'
+      curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
+        recommended.
+- identifier: kgmicrobe.ingredient:casamino_acids_vitamin_assay
+  preferred_term: Casamino acids (vitamin assay)
+  synonyms:
+  - synonym_text: Casamino acids (vit. assay)
+    synonym_type: RAW_TEXT
+    source: culturebotht
+  - synonym_text: Casamino acids, vitamin assay (BD-Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: Casamino acids, vitamin assay (Difco)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+      or CHEBI mapping available; curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:19.521740+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'Casamino')
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:18:21.911027+00:00'
+    curator: resolve_unmapped_v2
+    action: AUTO_UPGRADE_TO_MESH
+    changes: primary UNMAPPED_0185 → mesh:C017721 (strategy=stem-match)
+    llm_assisted: false
+  - timestamp: '2026-06-03T02:06:01.736894+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE ->
+      nutritional_roles.PROTEIN_SOURCE'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 2 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Casamino acids, vitamin assay (BD-Difco)'' (x5 CultureMech
+      mentions); ''Casamino acids, vitamin assay (Difco)'' (x3 CultureMech mentions).
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-09-23T03:41:22.738468+00:00'
+    curator: claude
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: 'identifier mesh:C017721 -> kgmicrobe.ingredient:casamino_acids_vitamin_assay;
+      ontology mesh:C017721 (''casamino acids'') -> mesh:C017721 (''casamino acids'');
+      mapping_quality LEXICAL_MATCH -> NARROW_MATCH. mesh:C017721 ''casamino acids''
+      is the generic acid-hydrolysed casein (scope note ''acid hydrolyzed casein'');
+      this record is the vitamin-depleted Difco/BD vitamin-assay grade, ordered separately,
+      and MIM holds a separate generic Casamino_Acids record. An exactMatch collapsed
+      a narrower product into its parent. Section 3 step 3: registry identity, broadMatch
+      to the MeSH descriptor. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  notes: Imported from CultureBotHT (compounds_to_cas.csv (no CAS-RN)). No CAS-RN
+    or CHEBI mapping available; curator review needed.
+  ingredient_type: UNDEFINED_MIXTURE
+  ontology_mapping:
+    ontology_id: mesh:C017721
+    ontology_label: casamino acids
+    ontology_source: MESH
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MESH via OLS (resolve_unmapped_v2 strategy=stem-match)
+      notes: 'SUPERSEDED (#312): Auto-upgraded from UNMAPPED_0185; matched via ''Casamino
+        acids (vitamin assay)''; stem-substring'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier mesh:C017721 -> kgmicrobe.ingredient:casamino_acids_vitamin_assay;
+        ontology mesh:C017721 (''casamino acids'') -> mesh:C017721 (''casamino acids'');
+        mapping_quality LEXICAL_MATCH -> NARROW_MATCH. mesh:C017721 ''casamino acids''
+        is the generic acid-hydrolysed casein (scope note ''acid hydrolyzed casein'');
+        this record is the vitamin-depleted Difco/BD vitamin-assay grade, ordered
+        separately, and MIM holds a separate generic Casamino_Acids record. An exactMatch
+        collapsed a narrower product into its parent. Section 3 step 3: registry identity,
+        broadMatch to the MeSH descriptor.'
+  nutritional_roles:
+  - role: PROTEIN_SOURCE
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- identifier: kgmicrobe.compound:cuso4_x_2_h2o
+  preferred_term: CuSO4 x 2 H2O
+  ontology_mapping:
+    ontology_id: CHEBI:23414
+    ontology_label: copper(II) sulfate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: 'SUPERSEDED (#312): Imported from CultureMech pipeline, quality=DIRECT_MATCH'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.2H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 2 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:23414's
+        ChEBI formula ('Cu.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier CHEBI:23414 -> kgmicrobe.compound:cuso4_x_2_h2o; ontology
+        CHEBI:23414 (''copper(II) sulfate'') -> CHEBI:23414 (''copper(II) sulfate'');
+        mapping_quality SYNONYM_MATCH -> CLOSE_MATCH. CuSO4 x 2 H2O is a MediaDive
+        label for a hydration state no source verifies (hydrate_review: WRONG_TERM_ANHYDROUS,
+        ''Probably CuSO4 x 5 H2O; phase studies establish the pentahydrate''). It
+        shared CHEBI:23414 with the anhydrous CuSO4 record; the 2026-08-10 regrade
+        to SYNONYM_MATCH still published exactMatch. The #344 malformed-hydrate shape:
+        local identity, closeMatch to the anhydrous parent, chemistry blank, anhydrous
+        aliases REJECTED_LABEL, memberships only for recipes whose source label names
+        this row (''CuSO4 x 2 H2O'', ''CuSO4 . 2H2O'').'
+  synonyms:
+  - synonym_text: CuSO4 . 2H2O
+    synonym_type: HYDRATE_FORM
+    source: kg_microbe
+  - synonym_text: CuSO4 x 4 H2O
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: CuSO4 x H2O
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: cupric sulfate anhydrous
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: copper(2+) sulfate
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 8
+    media_count: 8
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-09T00:32:50.689620+00:00'
+    curator: enrich_mim_cas_rn_batch
+    action: CAS_RN_ADDED
+    changes: Added CAS-RN 7758-98-7 from PubChem (via CHEBI:23414)
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: CuSO4 . 2H2O, CuSO4
+      x 4 H2O, CuSO4 x H2O, cupric sulfate anhydrous'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-01T07:35:32.979894+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.881923+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=Cu.O4S; inchi=InChI=1S/Cu.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/;
+      smiles=O=S(=O)([O-])[O-].[Cu+2]
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.629812+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-06-02T07:05:13.387933+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: MINERAL (confidence: 0.80)'
+  - timestamp: '2026-06-09T05:23:46.747385+00:00'
+    curator: correct_stale_ontology_labels.py
+    action: CORRECTED
+    changes: 'ontology_label ''CuSO4 x 2 H2O'' -> ''copper(II) sulfate'': synced to
+      canonical CHEBI label (preferred_term ''CuSO4 x 2 H2O'' unchanged).'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-10T00:00:00+00:00'
+    curator: regrade_synonym_matches
+    action: REGRADED_EXACT_TO_SYNONYM
+    changes: mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#317). The record's label
+      does not equal the term's primary label 'copper(II) sulfate'; it matches the
+      ChEBI synonym 'cupric sulfate anhydrous' on CHEBI:23414. The schema defines
+      EXACT_MATCH as a direct match to the term and SYNONYM_MATCH as a match to a
+      known synonym, so the recorded grade overstated. ontology_id is unchanged —
+      the term is correct. The SSSOM predicate is unaffected (both grades emit skos:exactMatch).
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.2H2O' (#321); the label states
+      2 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:23414's ChEBI formula ('Cu.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.518651+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 4/4 -> 187/187 (media_count/total_occurrences),
+      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+      prior values came from the importer retired in #453, whose media_count counted
+      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:13:24.025883+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7758-98-7 REMOVED, not replaced: it is the anhydrous CuSO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted and a guess is how wrong CAS numbers spread. The grounding
+      is separately wrong (#321); this corrects only the CAS (#334).'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CuSO4 x 4 H2O'', ''CuSO4
+      x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-23T03:41:22.763552+00:00'
+    curator: claude
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: 'identifier CHEBI:23414 -> kgmicrobe.compound:cuso4_x_2_h2o; ontology
+      CHEBI:23414 (''copper(II) sulfate'') -> CHEBI:23414 (''copper(II) sulfate'');
+      mapping_quality SYNONYM_MATCH -> CLOSE_MATCH. CuSO4 x 2 H2O is a MediaDive label
+      for a hydration state no source verifies (hydrate_review: WRONG_TERM_ANHYDROUS,
+      ''Probably CuSO4 x 5 H2O; phase studies establish the pentahydrate''). It shared
+      CHEBI:23414 with the anhydrous CuSO4 record; the 2026-08-10 regrade to SYNONYM_MATCH
+      still published exactMatch. The #344 malformed-hydrate shape: local identity,
+      closeMatch to the anhydrous parent, chemistry blank, anhydrous aliases REJECTED_LABEL,
+      memberships only for recipes whose source label names this row (''CuSO4 x 2
+      H2O'', ''CuSO4 . 2H2O''). (#312) REJECTED_LABEL: cupric sulfate anhydrous, copper(2+)
+      sulfate. chemical_properties blanked: the recorded structure was the anhydrous
+      salt''s.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  - timestamp: '2026-09-23T03:43:07.507160+00:00'
+    curator: claude
+    action: REFRESHED_OCCURRENCE_STATISTICS
+    changes: 'occurrence_statistics 187/187 -> 8/8 after the #312 registry mints moved
+      memberships off the shared identifier; counts follow the source label through
+      SOURCE_LABEL_IDENTIFIER_OVERRIDES.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties: {}
+  ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- identifier: kgmicrobe.compound:cuso4_x_4_h2o
+  preferred_term: CuSO4 x 4 H2O
+  ontology_mapping:
+    ontology_id: CHEBI:23414
+    ontology_label: copper(II) sulfate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: 'SUPERSEDED (#312): Imported from CultureMech pipeline, quality=DIRECT_MATCH'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#321)
+      notes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.4H2O'. The recorded value described
+        the anhydrous salt while the label names a hydrate, understating the mass
+        by 18 g/mol per water. Corrected because the label states 4 water(s) of hydration,
+        and the recorded formula was byte-identical to the anhydrous parent CHEBI:23414's
+        ChEBI formula ('Cu.O4S') — the mark of a value inherited from the parent rather
+        than measured for this record. Water appended in ChEBI's own dot-separated
+        notation.
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier CHEBI:23414 -> kgmicrobe.compound:cuso4_x_4_h2o; ontology
+        CHEBI:23414 (''copper(II) sulfate'') -> CHEBI:23414 (''copper(II) sulfate'');
+        mapping_quality EXACT_MATCH -> CLOSE_MATCH. CuSO4 x 4 H2O is a MediaDive label
+        for a hydration state no source verifies (hydrate_review: ''Probably CuSO4
+        x 5 H2O; no stable copper(II) sulfate tetrahydrate''). It shared CHEBI:23414
+        ''copper(II) sulfate'' with the anhydrous CuSO4 record and the dihydrate label,
+        pooling 187 recipe memberships across three records. The #344 malformed-hydrate
+        shape (Caso4_X_7_H2o, Cucl2_X_6_H2o): local identity, closeMatch to the anhydrous
+        parent, chemistry blank until the upstream count is corrected, anhydrous aliases
+        REJECTED_LABEL, memberships only for recipes whose source label names this
+        row.'
+  synonyms:
+  - synonym_text: CuSO4 . 2H2O
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: CuSO4 x 2 H2O
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: CuSO4 x H2O
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: cupric sulfate anhydrous
+    synonym_type: REJECTED_LABEL
+    source: kg_microbe
+  - synonym_text: copper(2+) sulfate
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-09T00:32:50.689620+00:00'
+    curator: enrich_mim_cas_rn_batch
+    action: CAS_RN_ADDED
+    changes: Added CAS-RN 7758-98-7 from PubChem (via CHEBI:23414)
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-04-18T00:00:00+00:00'
+    curator: cbclaw_kg_microbe_sweep
+    action: ADDED_SYNONYMS
+    changes: 'Added 4 synonyms from kg-microbe P4.4 enrichment: CuSO4 . 2H2O, CuSO4
+      x 2 H2O, CuSO4 x H2O, cupric sulfate anhydrous'
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-05-01T07:35:32.983050+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.885865+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=Cu.O4S; inchi=InChI=1S/Cu.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/;
+      smiles=O=S(=O)([O-])[O-].[Cu+2]
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.633932+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-06-02T07:05:13.387942+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: MINERAL (confidence: 0.80)'
+  - timestamp: '2026-06-09T05:23:46.747476+00:00'
+    curator: correct_stale_ontology_labels.py
+    action: CORRECTED
+    changes: 'ontology_label ''CuSO4 x 4 H2O'' -> ''copper(II) sulfate'': synced to
+      canonical CHEBI label (preferred_term ''CuSO4 x 4 H2O'' unchanged).'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): MINERAL -> nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: add_water_of_hydration
+    action: ADDED_WATER_OF_HYDRATION
+    changes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.4H2O' (#321); the label states
+      4 water(s) of hydration, and the recorded formula was byte-identical to the
+      anhydrous parent CHEBI:23414's ChEBI formula ('Cu.O4S') — the mark of a value
+      inherited from the parent rather than measured for this record. Water appended
+      in ChEBI's own dot-separated notation.
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.518657+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 1/1 -> 187/187 (media_count/total_occurrences),
+      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+      prior values came from the importer retired in #453, whose media_count counted
+      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-29T04:13:24.026123+00:00'
+    curator: hydrate_family_cas
+    action: CORRECTED
+    changes: 'cas_rn 7758-98-7 REMOVED, not replaced: it is the anhydrous CuSO4 CAS,
+      and this record names a hydrate -- a different substance with a different formula
+      weight. ChEBI has no term for this hydration state, so no authoritative value
+      can be substituted and a guess is how wrong CAS numbers spread. The grounding
+      is separately wrong (#321); this corrects only the CAS (#334).'
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''CuSO4 . 2H2O'', ''CuSO4
+      x 2 H2O'', ''CuSO4 x H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-23T03:41:22.749673+00:00'
+    curator: claude
+    action: MINTED_REGISTRY_IDENTIFIER
+    changes: 'identifier CHEBI:23414 -> kgmicrobe.compound:cuso4_x_4_h2o; ontology
+      CHEBI:23414 (''copper(II) sulfate'') -> CHEBI:23414 (''copper(II) sulfate'');
+      mapping_quality EXACT_MATCH -> CLOSE_MATCH. CuSO4 x 4 H2O is a MediaDive label
+      for a hydration state no source verifies (hydrate_review: ''Probably CuSO4 x
+      5 H2O; no stable copper(II) sulfate tetrahydrate''). It shared CHEBI:23414 ''copper(II)
+      sulfate'' with the anhydrous CuSO4 record and the dihydrate label, pooling 187
+      recipe memberships across three records. The #344 malformed-hydrate shape (Caso4_X_7_H2o,
+      Cucl2_X_6_H2o): local identity, closeMatch to the anhydrous parent, chemistry
+      blank until the upstream count is corrected, anhydrous aliases REJECTED_LABEL,
+      memberships only for recipes whose source label names this row. (#312) REJECTED_LABEL:
+      cupric sulfate anhydrous, copper(2+) sulfate. chemical_properties blanked: the
+      recorded structure was the anhydrous salt''s.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  - timestamp: '2026-09-23T03:43:07.522055+00:00'
+    curator: claude
+    action: REFRESHED_OCCURRENCE_STATISTICS
+    changes: 'occurrence_statistics 187/187 -> 2/2 after the #312 registry mints moved
+      memberships off the shared identifier; counts follow the source label through
+      SOURCE_LABEL_IDENTIFIER_OVERRIDES.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties: {}
+  ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.

@@ -3,7 +3,7 @@
 **Mapped**: 2612 (97.5%)
 **Unmapped**: 0 (0.0%)
 **Other statuses**: 67 (2.5%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
-**Total Occurrences**: 218,024
+**Total Occurrences**: 217,650
 
 ---
 
@@ -478,7 +478,6 @@
 | kgmicrobe.compound:alboverticillin | Alboverticillin | kgmicrobe.compound:alboverticillin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:30114 | AlCl3 | CHEBI:30114 | CHEBI | EXACT_MATCH | 77 |
 | CHEBI:30115 | AlCl3 x 6 H2O | CHEBI:30115 | CHEBI | EXACT_MATCH | 46 |
-| MICRO:0000455 | Algal Trace Elements Solution | MICRO:0000455 | MICRO | LEXICAL_MATCH | 1 |
 | CHEBI:86463 | AlK(SO4)2 | CHEBI:86463 | CHEBI | EXACT_MATCH | 240 |
 | CHEBI:86465 | AlK(SO4)2 x 12 H2O | CHEBI:86465 | CHEBI | EXACT_MATCH | 813 |
 | CHEBI:15676 | Allantoin | CHEBI:15676 | CHEBI | EXACT_MATCH | 5 |
@@ -549,7 +548,6 @@
 | CHEBI:51864 | Azlocillin sodium salt | CHEBI:51864 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:161680 | Aztreonam | CHEBI:161680 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:azureomycin | Azureomycin | kgmicrobe.compound:azureomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
-| CHEBI:28793 | b-Glucan from Oat | CHEBI:28793 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:9036-88-8 | b-Mannan borohydrate reduced carob seed | cas:9036-88-8 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:28669 | Bacitracin | CHEBI:28669 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:63317 | BaCl2 | CHEBI:63317 | CHEBI | EXACT_MATCH | 7 |
@@ -665,7 +663,6 @@
 | NCIT:C72000 | Carrot | NCIT:C72000 | NCIT | EXACT_MATCH | 7 |
 | kgmicrobe.compound:caryomycin | Caryomycin | kgmicrobe.compound:caryomycin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:10357 | Caryophyllene [T(-)] | CHEBI:10357 | CHEBI | CAS_RN_LOOKUP | 0 |
-| mesh:C017721 | Casamino acids (vitamin assay) | mesh:C017721 | MESH | LEXICAL_MATCH | 0 |
 | FOODON:03420180 | Casein | FOODON:03420180 | FOODON | EXACT_MATCH | 20 |
 | FOODON:03315719 | Casein peptone | FOODON:03315719 | FOODON | CLOSE_MATCH | 1313 |
 | MICRO:0001366 | Casein hydrolysate | MICRO:0001366 | MICRO | EXACT_MATCH | 54 |
@@ -784,9 +781,7 @@
 | CHEBI:78673 | Cumene hydroperoxide | CHEBI:78673 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3962 | Curcumin | CHEBI:3962 | CHEBI | EXACT_MATCH | 0 |
 | cas:54724-00-4 | Curdlan | mesh:C038459 | MESH | NARROW_MATCH | 0 |
-| CHEBI:23414 | CuSO4 | CHEBI:23414 | CHEBI | EXACT_MATCH | 187 |
-| CHEBI:23414 | CuSO4 x 2 H2O | CHEBI:23414 | CHEBI | SYNONYM_MATCH | 187 |
-| CHEBI:23414 | CuSO4 x 4 H2O | CHEBI:23414 | CHEBI | EXACT_MATCH | 187 |
+| CHEBI:23414 | CuSO4 | CHEBI:23414 | CHEBI | EXACT_MATCH | 177 |
 | CHEBI:31440 | CuSO4 x 5 H2O | CHEBI:31440 | CHEBI | EXACT_MATCH | 1490 |
 | CHEBI:91246 | CuSO4 x 6 H2O | CHEBI:91246 | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:17439 | Cyanocobalamin | CHEBI:17439 | CHEBI | EXACT_MATCH | 275 |
@@ -2623,6 +2618,11 @@
 | CHEBI:49240 | Bisabolene | CHEBI:49240 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:9001-05-2 | Catalase | mesh:D002374 | MESH | NARROW_MATCH | 34 |
 | CHEBI:29749 | Ferulate | CHEBI:29749 | CHEBI | CLOSE_MATCH | 0 |
+| kgmicrobe.ingredient:algal_trace_elements_solution | Algal Trace Elements Solution | MICRO:0000455 | MICRO | NARROW_MATCH | 1 |
+| kgmicrobe.ingredient:b-glucan_from_oat | b-Glucan from Oat | CHEBI:18504 | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:casamino_acids_vitamin_assay | Casamino acids (vitamin assay) | mesh:C017721 | MESH | NARROW_MATCH | 0 |
+| kgmicrobe.compound:cuso4_x_2_h2o | CuSO4 x 2 H2O | CHEBI:23414 | CHEBI | CLOSE_MATCH | 8 |
+| kgmicrobe.compound:cuso4_x_4_h2o | CuSO4 x 4 H2O | CHEBI:23414 | CHEBI | CLOSE_MATCH | 2 |
 
 ## Other Statuses
 

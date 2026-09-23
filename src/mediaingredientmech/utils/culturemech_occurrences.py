@@ -98,6 +98,21 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("K2SO4 x 7 H2O"): POTASSIUM_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("K2SO4·7H2O"): POTASSIUM_SULFATE_HEPTAHYDRATE_ID,
     _source_label_key("K2SO4・7H2O"): POTASSIUM_SULFATE_HEPTAHYDRATE_ID,
+    # #312 batch 3: registry mints for records that shared their identifier with
+    # a sibling (CHEBI:23414 with CuSO4, MICRO:0000455 with the WC solution) or
+    # left it altogether. CultureMech still resolves these labels to the old id.
+    _source_label_key(
+        "Algal Trace Elements Solution"
+    ): "kgmicrobe.ingredient:algal_trace_elements_solution",
+    _source_label_key(
+        "Casamino acids, vitamin assay (BD-Difco)"
+    ): "kgmicrobe.ingredient:casamino_acids_vitamin_assay",
+    _source_label_key(
+        "Casamino acids, vitamin assay (Difco)"
+    ): "kgmicrobe.ingredient:casamino_acids_vitamin_assay",
+    _source_label_key("CuSO4 x 4 H2O"): "kgmicrobe.compound:cuso4_x_4_h2o",
+    _source_label_key("CuSO4 x 2 H2O"): "kgmicrobe.compound:cuso4_x_2_h2o",
+    _source_label_key("CuSO4 . 2H2O"): "kgmicrobe.compound:cuso4_x_2_h2o",
 }
 
 
