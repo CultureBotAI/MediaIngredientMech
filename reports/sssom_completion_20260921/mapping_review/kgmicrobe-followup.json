@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Mapping-only re-review of the 17 kg-microbe fallback blockers (#752), three invalid CAS assertions (#753), and three exact MICRO identity restorations using pinned KGX source (#759). No role approval.",
+  "scope": "Mapping-only re-review of the 17 kg-microbe fallback blockers (#752), three invalid CAS assertions (#753), and three exact MICRO identity restorations using pinned KGX source (#759). No role approval. Four chemical scope decisions (five records), with Sorbitan local identity only and external molecular grounding held.",
   "decisions": [
     {
       "mapping": {
@@ -706,6 +706,183 @@
         "src/mediaingredientmech/ontology_sources/micro/manifest.json": "9e3ee88942aafbf0687bbbfc08c3e653b0ad0d104e7ea80efd07b1f0a4350feb",
         "src/mediaingredientmech/ontology_sources/micro/micro_edges.tsv": "ebe1ab2d3f21eb9227597d1b409103a92096beb584ddd74a697c22446ac411cc",
         "src/mediaingredientmech/ontology_sources/micro/micro_nodes.tsv": "a2ac455b4c4a6b94b7d3f2846ccdbf72779069ed2c09a052c391e2ee9fb6d282"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Polymyxin_B",
+        "subject_label": "Polymyxin B",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "NCIT:C61894",
+        "object_label": "Polymyxin B",
+        "object_source": "obo:ncit.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:MIM curation (#213)|MIM:curator=curator_ruling_2026_08_07|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture; CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to this record.",
+        "other": "CAS:1404-26-8",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "99a594a30eeb353d288681a429205dc88b0cd6db4a9fc8a4c6a36486cd564ded",
+      "owner_record": "data/ingredients/mapped/Polymyxin_B.yaml",
+      "owner_record_sha256": "d722a6e60a46c79b843b9a1c539b989d9a066619792dcebaa0167aaab20d5bb2",
+      "disposition": "SUPPORTED",
+      "reason": "Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture; CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to this record.",
+      "identity_review": "Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture; CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to this record.",
+      "token_reviews": {
+        "CAS:1404-26-8": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence."
+      },
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Rifamycin",
+        "subject_label": "Rifamycin",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:26580",
+        "object_label": "rifamycins",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:microbedecoder|MIM:curator=review-ingredients|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "f0f4f6ef74a10427e2c3aa8ed12e2d2b37f4c08d5e0236e9010631731a6803c0",
+      "owner_record": "data/ingredients/mapped/Rifamycin.yaml",
+      "owner_record_sha256": "0319c48944ab91a2af53000f5e7488646224cf4683c327a2839ba6d56c8a2a8e",
+      "disposition": "SUPPORTED",
+      "reason": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+      "identity_review": "Re-ground the three unqualified MicrobeDecoder observations at unspecified rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports resistance. None specifies SV or a CAS. Family indexing does not imply production of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673; no single CAS is assigned to this family.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Rifamycin_Sv",
+        "subject_label": "Rifamycin Sv",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:29673",
+        "object_label": "rifamycin SV",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:microbedecoder|MIM:curator=classify_ingredient_type|kgm:bacdive_antibiotics[manual_pre-2026]|kgm:bacdive_metabolites|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=review-ingredients]|kgm:primary_mappings[bacdive_metabolite]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673. ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin family.",
+        "other": "CAS:6998-60-3",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "2373a1e70ea6b23da46484475985a6e34f05c835442865a626b148ca13352864",
+      "owner_record": "data/ingredients/mapped/Rifamycin_Sv.yaml",
+      "owner_record_sha256": "7e2cf0690eb1c0e345eed29f9f69a339bb53a5e14f69ebd230c6e86174db77e2",
+      "disposition": "SUPPORTED",
+      "reason": "Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673. ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin family.",
+      "identity_review": "Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673. ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin family.",
+      "token_reviews": {
+        "CAS:6998-60-3": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence."
+      },
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Sorbitan_Monooleate",
+        "subject_label": "Sorbitan Monooleate",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "kgmicrobe.ingredient:sorbitan_monooleate",
+        "object_label": "Sorbitan Monooleate",
+        "object_source": "kgm:ingredient",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:culturemech:output/ingredient_occurrences.tsv|MIM:curator=claude_restore_culturemech_evidence|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.99",
+        "comment": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+        "other": "",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "19f6ebd3a00a42ad9684fc8f6aac4ad44f3af0bf9067f392186a0b942648c2da",
+      "owner_record": "data/ingredients/mapped/Sorbitan_Monooleate.yaml",
+      "owner_record_sha256": "09a88638de346c0f2cb44d3c09fd751b03f6266c9abdf7b6b927dec56c17d083",
+      "disposition": "SUPPORTED",
+      "reason": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+      "identity_review": "Use a local unresolved material identity for the two CultureMech ATCC 416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.",
+      "token_reviews": {},
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
+      },
+      "resolved_negative_reviews": []
+    },
+    {
+      "mapping": {
+        "subject_id": "MIM:Xanthine",
+        "subject_label": "Xanthine",
+        "predicate_id": "skos:exactMatch",
+        "object_id": "CHEBI:17712",
+        "object_label": "9H-xanthine",
+        "object_source": "obo:chebi.owl",
+        "mapping_justification": "semapv:ManualMappingCuration",
+        "source": "MIM:PubChem|MIM:curator=refresh_occurrence_statistics|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=cbclaw_kg_microbe_sweep]|kgm:primary_mappings[kegg_compound]|MIM:curator=kgmicrobe_scope_review",
+        "mapping_date": "2026-09-23",
+        "confidence": "0.8",
+        "comment": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+        "other": "2,6-dihydroxypurine|2,6-dioxo-1,2,3,6-tetrahydropurine|3,9-dihydro-1H-purine-2,6-dione|9H-purine-2,6-(1H,3H)-dione|Xan|purine-2(3H),6(1H)-dione|CAS:69-89-6",
+        "validation_method": "manual:kgmicrobe_scope_review|SCOPE_REVIEW|2026-09-23"
+      },
+      "row_sha256": "2b3a032395eaa06a18220a6badf7b901867d182a57509b408b8757842884923c",
+      "owner_record": "data/ingredients/mapped/Xanthine.yaml",
+      "owner_record_sha256": "c72c948fb793dd36ba53def8a77230d0ac337bec0962369f01c6e29848bccd22",
+      "disposition": "SUPPORTED",
+      "reason": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+      "identity_review": "Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent relation, not global exact equivalence. Standard InChI agreement does not establish a tautomer-pure reagent. Existing recipe references are retained; unqualified source observations do not acquire 9H specificity.",
+      "token_reviews": {
+        "2,6-dihydroxypurine": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "2,6-dioxo-1,2,3,6-tetrahydropurine": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "3,9-dihydro-1H-purine-2,6-dione": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "9H-purine-2,6-(1H,3H)-dione": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "Xan": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "purine-2(3H),6(1H)-dione": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence.",
+        "CAS:69-89-6": "Reviewed in chemical-scope-ontology-evidence.json for this exact source-scoped ingredient representation; not a global name or parent/member equivalence."
+      },
+      "evidence_inputs": {
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md": "2640ed96433d8a134385d15fa39a7a3149042882305aefcbb62b884bad23bc52",
+        "reports/sssom_completion_20260921/mapping_review/chemical-scope-ontology-evidence.json": "4e3c3b691aac234d837d187100d0cea546210c3205e9a5cd78c4e43b39b4159c",
+        "reports/sssom_completion_20260921/mapping_review/rifamycin-source-occurrences.json": "9fb5e074cc0f093922be16555ff427fc7b59ef1a7f29f001fc20e7fd823b8cbd",
+        "reports/sssom_completion_20260921/mapping_review/sorbitan-recipe-occurrences.json": "4d84bfbb010966647860e5b203cc6003f9ac02f3b87951f99f3b842613bb42c6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.xml": "2e82fa182f67e7240eafc67cb3b6fa34b5d5d15246331f242927d2f8e27391b6",
+        "reports/sssom_completion_20260921/mapping_review/foodon-sorbitan-conflict.json": "36ed88a3daf1a3041d9ea70b4ac5294ee6668a7580318303222c3199a0223701"
       },
       "resolved_negative_reviews": []
     }

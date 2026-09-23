@@ -99,3 +99,30 @@ def test_evidence_path_must_be_repository_relative(reviewed, path):
     reviewed[0]["evidence_inputs"] = {path: "digest"}
     with pytest.raises(ValueError, match="within repository"):
         apply(reviewed)
+
+
+@pytest.mark.parametrize("mutation", [None, "external", "wrong_owner", "alias", "parent"])
+def test_added_local_identity_requires_its_own_complete_review(reviewed, mutation):
+    entry, row, _, root = reviewed
+    row.update(object_id="kgmicrobe.ingredient:a", subject_label="A", object_label="A", other="")
+    record = {"identifier": row["object_id"], "preferred_term": "A"}
+    if mutation == "external":
+        row["object_id"] = record["identifier"] = "NCIT:C1"
+    elif mutation == "wrong_owner":
+        record["identifier"] = "kgmicrobe.ingredient:b"
+    elif mutation == "alias":
+        row["other"] = "unreviewed mixture"
+    elif mutation == "parent":
+        row["predicate_id"] = "skos:broadMatch"
+    entry.update(
+        mapping=dict(row),
+        row_sha256=row_sha256(row),
+        token_reviews={},
+        resolved_negative_reviews=[],
+    )
+    args = (entry, row, "A.yaml", "owner-digest", record, root)
+    if mutation:
+        with pytest.raises(ValueError):
+            assembler.apply_added_identity_followup(*args)
+    else:
+        assert assembler.apply_added_identity_followup(*args)[0] == "SUPPORTED"

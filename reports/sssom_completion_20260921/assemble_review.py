@@ -24,7 +24,7 @@ SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 # mapping_changes/ in sequence order (#312 ...). Each link records its own
 # before/after pair, so the chain is auditable link by link, and no link can
 # turn a prior approval into an approval of a changed row.
-REVIEWED_SOURCE = "ebf21aadcd3e55a18ae4a9de6b23575b1234afea12fad7e61ee72ad843eeab7f"
+REVIEWED_SOURCE = "0dcf0bf18b22e0a42044797f01748c3babc2b3ef8f67b5a488da71ff5e0157bb"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 
@@ -146,6 +146,18 @@ def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *,
         if entry.get("resolved_negative_reviews", []) != negative_reviews:
             raise ValueError("Mapping follow-up does not resolve the exact prior negative reviews")
     return entry["disposition"], entry["reason"]
+
+
+def apply_added_identity_followup(entry, mapping, owner, owner_hash, record, root):
+    """Review a newly minted local identity without approving an external grounding."""
+    local_identity = (
+        mapping["object_id"].startswith(("kgmicrobe.ingredient:", "kgmicrobe.compound:"))
+        and mapping["object_id"] == record.get("identifier")
+        and mapping["subject_label"] == mapping["object_label"] == record.get("preferred_term")
+        and not mapping["other"]
+    )
+    return apply_followup(entry, mapping, owner, owner_hash, [], root,
+                          safeguards=[] if local_identity else ["New rows require a separate external-mapping review"])
 
 
 def assemble():
@@ -304,14 +316,26 @@ def assemble():
                 "review_reason": reason,
                 "basis": {"baseline_position": None, "mapping_change": mapping_change["receipt"]},
             }
+            followup_key = tuple(mapping[field] for field in ("subject_id", "predicate_id", "object_id"))
+            if followup_key in followups_by_key:
+                followup = followups_by_key[followup_key]
+                entry["disposition"], entry["review_reason"] = apply_added_identity_followup(
+                    followup, mapping, owner, record_hashes[owner], records[owner], ROOT,
+                )
+                entry["basis"]["mapping_followup"] = {
+                    "file": "mapping_review/kgmicrobe-followup.json",
+                    "row_sha256": followup["row_sha256"],
+                    "identity_review": followup["identity_review"],
+                }
+                used_followups.add(followup_key)
             entries[key] = entry
             decisions.append(
                 {
                     "source_position": current_position,
                     "row_sha256": entry["row_sha256"],
                     "owner_record": owner,
-                    "disposition": "WITHHOLD",
-                    "review_reason": reason,
+                    "disposition": entry["disposition"],
+                    "review_reason": entry["review_reason"],
                     "review_evidence": relative(HERE / "mapping-evidence.json"),
                     "evidence_key": key,
                 }

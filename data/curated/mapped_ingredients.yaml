@@ -1,4 +1,4 @@
-generation_date: '2026-09-23T17:11:15.504309+00:00'
+generation_date: '2026-09-23T19:25:14.419081+00:00'
 total_count: 2679
 mapped_count: 2610
 unmapped_count: 0
@@ -17194,6 +17194,16 @@ ingredients:
       It is not. A term this repo can resolve and label-check is the better published
       mapping, and that judgement does not expire when the build catches up. Do not
       re-ground to CHEBI:759086 without a new curator decision.'
+  - timestamp: '2026-09-23T19:20:32.965320+00:00'
+    curator: kgmicrobe_scope_review
+    action: CORRECTED
+    changes: Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture;
+      CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent
+      to this record.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   ontology_mapping:
     ontology_id: NCIT:C61894
     ontology_label: Polymyxin B
@@ -17206,6 +17216,17 @@ ingredients:
         live ChEBI accession absent from the local semsql build (#249) -- NCIT carries
         the same substance and IS resolvable here, so the record is grounded rather
         than left unmapped waiting on a build refresh (#213).
+    - evidence_type: CURATOR_JUDGMENT
+      source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+      notes: Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture;
+        CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent
+        to this record.
+  notes: Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture;
+    CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to
+    this record.
+  chemical_properties:
+    cas_rn: 1404-26-8
+    data_source: CAS verified in reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
 - identifier: CHEBI:27374
   preferred_term: L-inositol
   synonyms:
@@ -183662,6 +183683,14 @@ ingredients:
       source: PubChem
       cas_rn: 69-89-6
       notes: ChEBI ID CHEBI:17712 found via PubChem CAS-RN cross-reference
+    - evidence_type: CURATOR_JUDGMENT
+      source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+      notes: Retain the existing CAS-grounded ingredient representation CHEBI:17712
+        and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318.
+        Preserve the native child-to-parent relation, not global exact equivalence.
+        Standard InChI agreement does not establish a tautomer-pure reagent. Existing
+        recipe references are retained; unqualified source observations do not acquire
+        9H specificity.
   synonyms:
   - synonym_text: 2,6-dihydroxypurine
     synonym_type: EXACT_SYNONYM
@@ -183728,7 +183757,26 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
-  notes: Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.
+  - timestamp: '2026-09-23T19:20:33.158882+00:00'
+    curator: kgmicrobe_scope_review
+    action: CORRECTED
+    changes: Retain the existing CAS-grounded ingredient representation CHEBI:17712
+      and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318.
+      Preserve the native child-to-parent relation, not global exact equivalence.
+      Standard InChI agreement does not establish a tautomer-pure reagent. Existing
+      recipe references are retained; unqualified source observations do not acquire
+      9H specificity.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  notes: 'Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.
+
+    Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS
+    69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve the
+    native child-to-parent relation, not global exact equivalence. Standard InChI
+    agreement does not establish a tautomer-pure reagent. Existing recipe references
+    are retained; unqualified source observations do not acquire 9H specificity.'
   chemical_properties:
     cas_rn: 69-89-6
     data_source: FEBA ontology enrichment (via PubChem)
@@ -206044,52 +206092,6 @@ ingredients:
     molecular_weight: 847.019
     data_source: ChEBI
     retrieval_date: '2026-08-13T04:29:52.276817+00:00'
-- identifier: NCIT:C29406
-  preferred_term: Rifamycin
-  ontology_mapping:
-    ontology_id: NCIT:C29406
-    ontology_label: Rifamycin
-    ontology_source: NCIT
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: LEXICAL_MATCH
-      source: microbedecoder
-      notes: 'Imported from microbedecoder via ols-label-exact-ncit. source_id=kgmicrobe.trait:rifamycin; '
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 3
-      source_columns: BacDive_Antibiotic_resistance|BacDive_Metabolite_production
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_FROM_INGREDIENT_IMPORT
-    changes: 'Imported from microbedecoder via ols-label-exact-ncit. source_id=kgmicrobe.trait:rifamycin; '
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-08-04T03:08:34.142678+00:00'
-    curator: microbedecoder-import-review
-    action: FLAGGED_FOR_REVIEW
-    changes: mapping_status MAPPED -> PENDING_REVIEW
-    notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at
-      PENDING_REVIEW so the mapping does not reach the published SSSOM before a review-ingredients
-      pass. See reports/microbedecoder_auto_mapped_review.tsv.
-    llm_assisted: true
-  - timestamp: '2026-08-04T00:00:00+00:00'
-    curator: review-ingredients
-    action: REVIEWED_AND_PROMOTED
-    changes: mapping_status PENDING_REVIEW -> MAPPED
-    previous_status: PENDING_REVIEW
-    new_status: MAPPED
-    notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
-      canonical label exact-matches the record ontology_label (case-insensitive).
-      This does NOT check for homonyms or wrong-sense class-level matches (see #203).
-      Promoted PENDING_REVIEW -> MAPPED.'
-    llm_assisted: true
 - identifier: CHEBI:17876
   preferred_term: Rifamycin B
   ontology_mapping:
@@ -206281,6 +206283,11 @@ ingredients:
     - evidence_type: LEXICAL_MATCH
       source: microbedecoder
       notes: 'Imported from microbedecoder via ols-label-exact-chebi. source_id=kgmicrobe.trait:rifamycin_sv; '
+    - evidence_type: CURATOR_JUDGMENT
+      source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+      notes: Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673.
+        ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the
+        rifamycin family.
   synonyms: []
   mapping_status: MAPPED
   occurrence_statistics:
@@ -206322,14 +206329,28 @@ ingredients:
     changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
       definition) (#323)
     llm_assisted: false
+  - timestamp: '2026-09-23T19:20:33.154400+00:00'
+    curator: kgmicrobe_scope_review
+    action: CORRECTED
+    changes: Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673.
+      ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the
+      rifamycin family.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
   ingredient_type: SINGLE_INGREDIENT
   chemical_properties:
     molecular_formula: C37H47NO12
     smiles: CO[C@H]1/C=C/O[C@@]2(C)Oc3c(C)c(O)c4c(O)c(cc(O)c4c3C2=O)NC(=O)/C(C)=CC=C[C@H](C)[C@H](O)[C@@H](C)[C@@H](O)[C@@H](C)[C@H](OC(C)=O)[C@@H]1C
     inchi: InChI=1S/C37H47NO12/c1-16-11-10-12-17(2)36(46)38-23-15-24(40)26-27(32(23)44)31(43)21(6)34-28(26)35(45)37(8,50-34)48-14-13-25(47-9)18(3)33(49-22(7)39)20(5)30(42)19(4)29(16)41/h10-16,18-20,25,29-30,33,40-44H,1-9H3,(H,38,46)/b11-10+,14-13+,17-12-/t16-,18+,19+,20+,25-,29-,30+,33+,37-/m0/s1
     molecular_weight: 697.778
-    data_source: ChEBI+PubChem
+    data_source: ChEBI+PubChem; CAS verified in reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
     retrieval_date: '2026-08-13T04:29:56.454541+00:00'
+    cas_rn: 6998-60-3
+  notes: Preserve explicit rifamycin SV and its 28 source observations as CHEBI:29673.
+    ChEBI independently supports CAS 6998-60-3 on SV; do not propagate it to the rifamycin
+    family.
 - identifier: CHEBI:87084
   preferred_term: Rosaramicin
   ontology_mapping:
@@ -216437,44 +216458,6 @@ ingredients:
       field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
       from the published row (#541).
     llm_assisted: false
-- identifier: NCIT:C75654
-  preferred_term: Sorbitan Monooleate
-  ontology_mapping:
-    ontology_id: NCIT:C75654
-    ontology_label: Sorbitan Monooleate
-    ontology_source: NCIT
-    mapping_quality: EXACT_MATCH
-    match_level: EXACT
-    evidence:
-    - evidence_type: LEXICAL_MATCH
-      source: culturemech:output/ingredient_occurrences.tsv
-      notes: Surface form appears in CultureMech's occurrence table and was grounded
-        to NCIT:C75654 on an exact match against the ontology label. Restored from
-        the record's own creation history (#541); the residual importer wrote this
-        provenance only into the published SSSOM.
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 2
-    media_count: 2
-  curation_history:
-  - timestamp: '2026-08-30T10:35:03.361102+00:00'
-    curator: claude_culturemech_residual_grounding
-    action: CREATED_FROM_CULTUREMECH_RESIDUAL
-    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
-      (2 mentions across 2 recipes). Grounded to NCIT:C75654 (''Sorbitan Monooleate'')
-      on an exact match of the canonical label to the query ''Sorbitan Monooleate''.
-      Source: culturemech:output/ingredient_occurrences.tsv.'
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-09-06T07:34:56.956907+00:00'
-    curator: claude_restore_culturemech_evidence
-    action: CORRECTED
-    changes: Added ontology_mapping.evidence recording the CultureMech occurrence
-      table as the source of this grounding. The provenance was already in this record's
-      CREATED_FROM_CULTUREMECH_RESIDUAL history entry but absent from the structured
-      field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
-      from the published row (#541).
-    llm_assisted: false
 - identifier: FOODON:00004062
   preferred_term: Table wine
   ontology_mapping:
@@ -220862,3 +220845,139 @@ ingredients:
         parent(s): MICRO:0000167. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002250.
         This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
         defining-ontology status. No verified CAS RN is supplied for this material.'
+- identifier: CHEBI:26580
+  preferred_term: Rifamycin
+  ontology_mapping:
+    ontology_id: CHEBI:26580
+    ontology_label: rifamycins
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: LEXICAL_MATCH
+      source: microbedecoder
+      notes: 'SUPERSEDED by chemical-scope review: Imported from microbedecoder via
+        ols-label-exact-ncit. source_id=kgmicrobe.trait:rifamycin; '
+    - evidence_type: CURATOR_JUDGMENT
+      source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+      notes: Re-ground the three unqualified MicrobeDecoder observations at unspecified
+        rifamycin-family scope. BacDive 16969 and 13220 report production; 166282
+        reports resistance. None specifies SV or a CAS. Family indexing does not imply
+        production of, or resistance to, every member. The separate Rifamycin_Sv record
+        remains CHEBI:29673; no single CAS is assigned to this family.
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 3
+      source_columns: BacDive_Antibiotic_resistance|BacDive_Metabolite_production
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_FROM_INGREDIENT_IMPORT
+    changes: 'Imported from microbedecoder via ols-label-exact-ncit. source_id=kgmicrobe.trait:rifamycin; '
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-04T03:08:34.142678+00:00'
+    curator: microbedecoder-import-review
+    action: FLAGGED_FOR_REVIEW
+    changes: mapping_status MAPPED -> PENDING_REVIEW
+    notes: Auto-grounded by the microbedecoder import via ols-label-exact. Held at
+      PENDING_REVIEW so the mapping does not reach the published SSSOM before a review-ingredients
+      pass. See reports/microbedecoder_auto_mapped_review.tsv.
+    llm_assisted: true
+  - timestamp: '2026-08-04T00:00:00+00:00'
+    curator: review-ingredients
+    action: REVIEWED_AND_PROMOTED
+    changes: mapping_status PENDING_REVIEW -> MAPPED
+    previous_status: PENDING_REVIEW
+    new_status: MAPPED
+    notes: 'Reviewed by review-ingredients: id resolves in local OAK adapter and its
+      canonical label exact-matches the record ontology_label (case-insensitive).
+      This does NOT check for homonyms or wrong-sense class-level matches (see #203).
+      Promoted PENDING_REVIEW -> MAPPED.'
+    llm_assisted: true
+  - timestamp: '2026-09-23T19:20:33.150870+00:00'
+    curator: kgmicrobe_scope_review
+    action: CORRECTED
+    changes: Re-ground the three unqualified MicrobeDecoder observations at unspecified
+      rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports
+      resistance. None specifies SV or a CAS. Family indexing does not imply production
+      of, or resistance to, every member. The separate Rifamycin_Sv record remains
+      CHEBI:29673; no single CAS is assigned to this family.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  notes: Re-ground the three unqualified MicrobeDecoder observations at unspecified
+    rifamycin-family scope. BacDive 16969 and 13220 report production; 166282 reports
+    resistance. None specifies SV or a CAS. Family indexing does not imply production
+    of, or resistance to, every member. The separate Rifamycin_Sv record remains CHEBI:29673;
+    no single CAS is assigned to this family.
+- identifier: kgmicrobe.ingredient:sorbitan_monooleate
+  preferred_term: Sorbitan Monooleate
+  ontology_mapping:
+    ontology_id: kgmicrobe.ingredient:sorbitan_monooleate
+    ontology_label: Sorbitan Monooleate
+    ontology_source: kgmicrobe.ingredient
+    mapping_quality: EXACT_MATCH
+    match_level: EXACT
+    evidence:
+    - evidence_type: LEXICAL_MATCH
+      source: culturemech:output/ingredient_occurrences.tsv
+      notes: 'SUPERSEDED by chemical-scope review: Surface form appears in CultureMech''s
+        occurrence table and was grounded to NCIT:C75654 on an exact match against
+        the ontology label. Restored from the record''s own creation history (#541);
+        the residual importer wrote this provenance only into the published SSSOM.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+      notes: Use a local unresolved material identity for the two CultureMech ATCC
+        416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding;
+        exact molecular mapping to it or CHEBI:183688 is withheld pending material/product
+        evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial
+        mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias.
+        Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 2
+    media_count: 2
+  curation_history:
+  - timestamp: '2026-08-30T10:35:03.361102+00:00'
+    curator: claude_culturemech_residual_grounding
+    action: CREATED_FROM_CULTUREMECH_RESIDUAL
+    changes: 'Created from a CultureMech recipe ingredient MIM held no record for
+      (2 mentions across 2 recipes). Grounded to NCIT:C75654 (''Sorbitan Monooleate'')
+      on an exact match of the canonical label to the query ''Sorbitan Monooleate''.
+      Source: culturemech:output/ingredient_occurrences.tsv.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-06T07:34:56.956907+00:00'
+    curator: claude_restore_culturemech_evidence
+    action: CORRECTED
+    changes: Added ontology_mapping.evidence recording the CultureMech occurrence
+      table as the source of this grounding. The provenance was already in this record's
+      CREATED_FROM_CULTUREMECH_RESIDUAL history entry but absent from the structured
+      field the SSSOM builder reads, so a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv
+      from the published row (#541).
+    llm_assisted: false
+  - timestamp: '2026-09-23T19:20:33.161389+00:00'
+    curator: kgmicrobe_scope_review
+    action: CORRECTED
+    changes: Use a local unresolved material identity for the two CultureMech ATCC
+      416 recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding;
+      exact molecular mapping to it or CHEBI:183688 is withheld pending material/product
+      evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial
+      mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias.
+      Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  notes: Use a local unresolved material identity for the two CultureMech ATCC 416
+    recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact
+    molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence.
+    ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture.
+    Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS
+    1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.

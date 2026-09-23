@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-09-23T17:14:24.081121+00:00
+Generated: 2026-09-23T19:26:35.908162+00:00
 Total: 2679 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -2437,7 +2437,6 @@ Total: 2679 ingredients
 | CHEBI:26546 | CHEBI:26546 | Rhamnose | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:15963 | CHEBI:15963 | Ribitol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45367 | CHEBI:45367 | Rifabutin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| NCIT:C29406 | NCIT:C29406 | Rifamycin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:17876 | CHEBI:17876 | Rifamycin B | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16324 | CHEBI:16324 | Rifamycin O | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:34948 | CHEBI:34948 | Rifamycin S | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2629,7 +2628,6 @@ Total: 2679 ingredients
 | MICRO:0001241 | MICRO:0001241 | Skim milk powder | MAPPED | MICRO | EXACT_MATCH | 1 |
 | MICRO:0000521 | MICRO:0000521 | Sludge fluid | MAPPED | MICRO | EXACT_MATCH | 2 |
 | NCIT:C220851 | NCIT:C220851 | Sodium Pantothenate | MAPPED | NCIT | EXACT_MATCH | 2 |
-| NCIT:C75654 | NCIT:C75654 | Sorbitan Monooleate | MAPPED | NCIT | EXACT_MATCH | 2 |
 | FOODON:00004062 | FOODON:00004062 | Table wine | MAPPED | FOODON | SYNONYM_MATCH | 1 |
 | FOODON:03315081 | FOODON:03315081 | Tea | MAPPED | FOODON | SYNONYM_MATCH | 2 |
 | CHEBI:17347 | CHEBI:17347 | testosterone | MAPPED | CHEBI | EXACT_MATCH | 1 |
@@ -2684,3 +2682,5 @@ Total: 2679 ingredients
 | MICRO:0002393 | MICRO:0002393 | Proteose peptone no. 2 | MAPPED | MICRO | EXACT_MATCH | 7 |
 | MICRO:0002392 | MICRO:0002392 | Rabbit serum | MAPPED | MICRO | EXACT_MATCH | 21 |
 | MICRO:0002250 | MICRO:0002250 | V-8 Juice | MAPPED | MICRO | EXACT_MATCH | 3 |
+| CHEBI:26580 | CHEBI:26580 | Rifamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.ingredient:sorbitan_monooleate | kgmicrobe.ingredient:sorbitan_monooleate | Sorbitan Monooleate | MAPPED | kgmicrobe.ingredient | EXACT_MATCH | 2 |

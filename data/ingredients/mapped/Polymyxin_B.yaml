@@ -45,6 +45,16 @@ curation_history:
     is not. A term this repo can resolve and label-check is the better published mapping,
     and that judgement does not expire when the build catches up. Do not re-ground
     to CHEBI:759086 without a new curator decision.'
+- timestamp: '2026-09-23T19:20:32.965320+00:00'
+  curator: kgmicrobe_scope_review
+  action: CORRECTED
+  changes: Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture;
+    CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to
+    this record.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 ontology_mapping:
   ontology_id: NCIT:C61894
   ontology_label: Polymyxin B
@@ -57,3 +67,13 @@ ontology_mapping:
       live ChEBI accession absent from the local semsql build (#249) -- NCIT carries
       the same substance and IS resolvable here, so the record is grounded rather
       than left unmapped waiting on a build refresh (#213).
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+    notes: Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture;
+      CHEBI:8309 and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent
+      to this record.
+notes: Keep the NCI-defined B1/B2 mixture. CAS 1404-26-8 annotates this mixture; CHEBI:8309
+  and CAS 4135-11-9 denote B1. Neither B1 nor sulfate is equivalent to this record.
+chemical_properties:
+  cas_rn: 1404-26-8
+  data_source: CAS verified in reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md

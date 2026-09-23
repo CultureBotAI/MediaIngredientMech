@@ -2381,7 +2381,6 @@
 | CHEBI:26546 | Rhamnose | CHEBI:26546 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:15963 | Ribitol | CHEBI:15963 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45367 | Rifabutin | CHEBI:45367 | CHEBI | EXACT_MATCH | 0 |
-| NCIT:C29406 | Rifamycin | NCIT:C29406 | NCIT | EXACT_MATCH | 0 |
 | CHEBI:17876 | Rifamycin B | CHEBI:17876 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16324 | Rifamycin O | CHEBI:16324 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:34948 | Rifamycin S | CHEBI:34948 | CHEBI | EXACT_MATCH | 0 |
@@ -2568,7 +2567,6 @@
 | MICRO:0001241 | Skim milk powder | MICRO:0001241 | MICRO | EXACT_MATCH | 1 |
 | MICRO:0000521 | Sludge fluid | MICRO:0000521 | MICRO | EXACT_MATCH | 2 |
 | NCIT:C220851 | Sodium Pantothenate | NCIT:C220851 | NCIT | EXACT_MATCH | 2 |
-| NCIT:C75654 | Sorbitan Monooleate | NCIT:C75654 | NCIT | EXACT_MATCH | 2 |
 | FOODON:00004062 | Table wine | FOODON:00004062 | FOODON | SYNONYM_MATCH | 1 |
 | FOODON:03315081 | Tea | FOODON:03315081 | FOODON | SYNONYM_MATCH | 2 |
 | CHEBI:17347 | testosterone | CHEBI:17347 | CHEBI | EXACT_MATCH | 1 |
@@ -2621,6 +2619,8 @@
 | MICRO:0002393 | Proteose peptone no. 2 | MICRO:0002393 | MICRO | EXACT_MATCH | 7 |
 | MICRO:0002392 | Rabbit serum | MICRO:0002392 | MICRO | EXACT_MATCH | 21 |
 | MICRO:0002250 | V-8 Juice | MICRO:0002250 | MICRO | EXACT_MATCH | 3 |
+| CHEBI:26580 | Rifamycin | CHEBI:26580 | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.ingredient:sorbitan_monooleate | Sorbitan Monooleate | kgmicrobe.ingredient:sorbitan_monooleate | kgmicrobe.ingredient | EXACT_MATCH | 2 |
 
 ## Other Statuses
 

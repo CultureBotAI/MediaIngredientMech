@@ -1,18 +1,26 @@
-identifier: NCIT:C75654
+identifier: kgmicrobe.ingredient:sorbitan_monooleate
 preferred_term: Sorbitan Monooleate
 ontology_mapping:
-  ontology_id: NCIT:C75654
+  ontology_id: kgmicrobe.ingredient:sorbitan_monooleate
   ontology_label: Sorbitan Monooleate
-  ontology_source: NCIT
+  ontology_source: kgmicrobe.ingredient
   mapping_quality: EXACT_MATCH
   match_level: EXACT
   evidence:
   - evidence_type: LEXICAL_MATCH
     source: culturemech:output/ingredient_occurrences.tsv
-    notes: Surface form appears in CultureMech's occurrence table and was grounded
-      to NCIT:C75654 on an exact match against the ontology label. Restored from the
-      record's own creation history (#541); the residual importer wrote this provenance
-      only into the published SSSOM.
+    notes: 'SUPERSEDED by chemical-scope review: Surface form appears in CultureMech''s
+      occurrence table and was grounded to NCIT:C75654 on an exact match against the
+      ontology label. Restored from the record''s own creation history (#541); the
+      residual importer wrote this provenance only into the published SSSOM.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+    notes: Use a local unresolved material identity for the two CultureMech ATCC 416
+      recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact
+      molecular mapping to it or CHEBI:183688 is withheld pending material/product
+      evidence. ATCC supplies only the generic name (1 g/L); JECFA describes a commercial
+      mixture. Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias.
+      Neither CAS 1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.
 mapping_status: MAPPED
 occurrence_statistics:
   total_occurrences: 2
@@ -36,3 +44,22 @@ curation_history:
     a rebuild dropped MIM:culturemech:output/ingredient_occurrences.tsv from the published
     row (#541).
   llm_assisted: false
+- timestamp: '2026-09-23T19:20:33.161389+00:00'
+  curator: kgmicrobe_scope_review
+  action: CORRECTED
+  changes: Use a local unresolved material identity for the two CultureMech ATCC 416
+    recipe occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact
+    molecular mapping to it or CHEBI:183688 is withheld pending material/product evidence.
+    ATCC supplies only the generic name (1 g/L); JECFA describes a commercial mixture.
+    Do not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS
+    1338-43-8 nor CAS 9005-65-6 is assigned without product confirmation.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: Use a local unresolved material identity for the two CultureMech ATCC 416 recipe
+  occurrences. Withdraw the label-only exact NCIT:C75654 grounding; exact molecular
+  mapping to it or CHEBI:183688 is withheld pending material/product evidence. ATCC
+  supplies only the generic name (1 g/L); JECFA describes a commercial mixture. Do
+  not infer Tween 80/CHEBI:53426 from the conflicting FoodOn alias. Neither CAS 1338-43-8
+  nor CAS 9005-65-6 is assigned without product confirmation.
