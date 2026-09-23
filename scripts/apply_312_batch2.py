@@ -300,6 +300,16 @@ class Terms:
     def label(self, curie: str) -> str | None:
         return self.value(curie, "rdfs:label")
 
+    def names(self, curie: str) -> set[str]:
+        return {
+            r[0]
+            for r in self.dbs["CHEBI"].execute(
+                "select value from statements where subject=? and predicate in "
+                "('rdfs:label','oio:hasExactSynonym','oio:hasRelatedSynonym')",
+                (curie,),
+            )
+        }
+
     def terms_named(self, text: str) -> set[str]:
         return {
             r[0]
@@ -532,7 +542,15 @@ def finish_sssom() -> None:
     comments, fields, rows = _read_rows()
     by_slug = {spec.slug: spec for spec in IDENTITIES}
     records = {slug: load(slug)[1] for slug in by_slug}
-    synced = dropped = rewritten = added = scrubbed = 0
+    terms = Terms()
+    # Names of the term each own-identifier row left, minus the names of the term it
+    # now carries: the enrichment builder filled ``other`` for the old term (#747).
+    old_only: dict[str, set[str]] = {}
+    for spec in IDENTITIES:
+        old_term = spec.old_ontology_id or (spec.old_identifier if spec.old_identifier.startswith("CHEBI:") else None)
+        if old_term and old_term != spec.ontology_id and spec.ontology_id.startswith("CHEBI:"):
+            old_only[spec.slug] = terms.names(old_term) - terms.names(spec.ontology_id)
+    synced = dropped = rewritten = added = scrubbed = relabelled = 0
     kept: list[dict] = []
     for row in rows:
         slug = row["subject_id"][4:] if row["subject_id"].startswith("MIM:") else None
@@ -569,14 +587,26 @@ def finish_sssom() -> None:
             row["comment"] = f"Registry/identity row preserving cas:{spec.new_cas_row} alongside identifier {record['identifier']}."
             _stamp(row, f"[{old} named the free base; the salt's CAS is {spec.new_cas_row} ({ISSUE})]", "REGISTRY")
             rewritten += 1
+        if spec.new_preferred_term and obj.startswith(("cas:", "kgmicrobe.compound:", "kgmicrobe.ingredient:")):
+            if row["object_label"] != record["preferred_term"]:
+                row["object_label"] = record["preferred_term"]
+                _stamp(row, f"[object_label follows the corrected preferred_term ({ISSUE})]", "REGISTRY")
+                relabelled += 1
         rejected = {
             s["synonym_text"] for s in record.get("synonyms") or [] if s.get("synonym_type") == "REJECTED_LABEL"
         }
-        if rejected and row["other"]:
+        resolving = {
+            s["synonym_text"] for s in record.get("synonyms") or [] if s.get("synonym_type") != "REJECTED_LABEL"
+        }
+        stale = {t for t in old_only.get(slug, set()) if t not in resolving} if obj == record["identifier"] else set()
+        drop_tokens = rejected | stale
+        if drop_tokens and row["other"]:
             tokens = row["other"].split("|")
-            keep_tokens = [t for t in tokens if t not in rejected]
+            keep_tokens = [t for t in tokens if t not in drop_tokens]
             if len(keep_tokens) != len(tokens):
                 row["other"] = "|".join(keep_tokens)
+                removed = [t for t in tokens if t in drop_tokens]
+                _stamp(row, f"[other: dropped {removed}: rejected or names of the term this row left ({ISSUE})]", "OTHER")
                 scrubbed += 1
         kept.append(row)
     rows = kept
@@ -607,7 +637,7 @@ def finish_sssom() -> None:
             added += 1
     _write_rows(comments, fields, rows)
     print(f"own-identifier rows synced {synced}; registry rows dropped {dropped}; cas rows rewritten {rewritten}; "
-          f"rows added {added}; rejected tokens scrubbed from {scrubbed} row(s)")
+          f"registry labels corrected {relabelled}; rows added {added}; tokens scrubbed from {scrubbed} row(s)")
 
 
 def main() -> int:

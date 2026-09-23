@@ -3,10 +3,10 @@
   "batch": "issue312-batch2",
   "sequence": 2,
   "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/312",
-  "scope": "Verified #312 batch 2: twelve identity re-groundings (parent promoted to identity, class to CAS-selected member, wrong form, or localized cas: identity with parent and registry rows) plus two mixtures whose components referenced a re-grounded identifier; every ChEBI/MeSH/NCIT fact re-checked at apply time by scripts/apply_312_batch2.py, PubChem InChIKeys pinned in the script. No rows removed: the frozen release-hold resolutions are bound to row positions.",
+  "scope": "Verified #312 batch 2: twelve identity re-groundings (parent promoted to identity, class to CAS-selected member, wrong form, or localized cas: identity with parent and registry rows) plus two mixtures whose components referenced a re-grounded identifier; every ChEBI/MeSH/NCIT fact re-checked at apply time by scripts/apply_312_batch2.py, PubChem InChIKeys pinned in the script. No rows removed: the frozen release-hold resolutions are bound to row positions (#745).",
   "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
   "before_sha256": "c418f8062967e772911978cc51b680d031228019dfe744773a6307d51b87f0e0",
-  "after_sha256": "920a56702d0ad2e33feaffd5a74d7c1fc7c0313f270af0a02e6f0f1cb8e66f4b",
+  "after_sha256": "666923fa17a18dc9dce2388f8d5114092c47e19c1bcf69592cd12065df57de79",
   "before_row_count": 3018,
   "after_row_count": 3022,
   "records": [
@@ -311,9 +311,9 @@
         "source": "MIM:CultureBotHT|MIM:CHEBI via OLS (stem-substring)|MIM:MIM curation (#342)|MIM:curator=claude_sssom_surface_form_backfill|kgm:culturebotai_reviewed|kgm:mediadive_compounds|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_resolve_risky_cas_rn]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]|kgm:mediaingredientmech_reviewed[curator=claude_in_session_curation]|kgm:mediaingredientmech_reviewed[curator=extract_roles_from_synonyms]|kgm:mediaingredientmech_reviewed[curator=migrate_media_roles_to_facets]",
         "mapping_date": "2026-09-22",
         "confidence": "0.99",
-        "comment": "[reconciled to curated mapping 2026-09-22]",
-        "other": "Diammonium molybdate|(NH4)6Mo7O4|(NH4)6MoO24\u00b74H2O|(NH4)6MoO7O24|(NH4)6MoO7O24 x 4 H2O|(NH4)Mo7O24\u00b74H2O|(NH4)MoO7O24|(NH4)MoO7O24 x 4 H2O|CAS:12054-85-2",
-        "validation_method": "manual:reconcile_sssom|REMAPPED|2026-09-22"
+        "comment": "[reconciled to curated mapping 2026-09-22] [other: dropped ['Diammonium molybdate']: rejected or names of the term this row left (#312)]",
+        "other": "(NH4)6Mo7O4|(NH4)6MoO24\u00b74H2O|(NH4)6MoO7O24|(NH4)6MoO7O24 x 4 H2O|(NH4)Mo7O24\u00b74H2O|(NH4)MoO7O24|(NH4)MoO7O24 x 4 H2O|CAS:12054-85-2",
+        "validation_method": "manual:apply_312_batch2|OTHER|2026-09-22"
       }
     },
     {
@@ -445,13 +445,13 @@
         "subject_label": "Anisodamine Hydrobromide",
         "predicate_id": "skos:exactMatch",
         "object_id": "kgmicrobe.compound:anisodamine_hydrobromide",
-        "object_label": "Anisodamine Hydrobromide ()",
+        "object_label": "Anisodamine Hydrobromide",
         "object_source": "kgm:compound",
         "mapping_justification": "semapv:ManualMappingCuration",
         "source": "MIM:CultureBotHT|MIM:NCIT via OLS (stem-substring)|MIM:curator=backfill_parent_terms",
         "mapping_date": "2026-09-22",
         "confidence": "0.99",
-        "comment": "Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.compound:anisodamine_hydrobromide alongside parent NCIT:C221850. [registry row carried the free-base CAS; the salt's CAS is 55449-49-5 (#312)]",
+        "comment": "Registry/identity row (Rule B1) for broadMatch subject; kg-microbe primary id kgmicrobe.compound:anisodamine_hydrobromide alongside parent NCIT:C221850. [registry row carried the free-base CAS; the salt's CAS is 55449-49-5 (#312)] [object_label follows the corrected preferred_term (#312)]",
         "other": "CAS:55449-49-5",
         "validation_method": "manual:apply_312_batch2|REGISTRY|2026-09-22"
       }
@@ -681,10 +681,10 @@
         "mapping_justification": "semapv:ManualMappingCuration",
         "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:primary_mappings[kegg_compound]|MIM:curator=claude",
         "mapping_date": "2026-09-22",
-        "confidence": "0.99",
-        "comment": "Registry/identity row preserving cas:108032-11-7 alongside parent CHEBI:69499.",
+        "confidence": "0.9",
+        "comment": "Registry/identity row preserving cas:108032-11-7 alongside parent CHEBI:69499. [own-identifier row: exactMatch per Rule D, grade NARROW_MATCH (#312)]",
         "other": "CAS:108032-11-7",
-        "validation_method": "manual:apply_312_batch2|REGISTRY|2026-09-22"
+        "validation_method": "manual:apply_312_batch2|IDENTITY|2026-09-22"
       }
     },
     {
@@ -723,10 +723,10 @@
         "mapping_justification": "semapv:ManualMappingCuration",
         "source": "MIM:CultureMech|MIM:curator=claude_culturemech_alias_backfill|MIM:curator=claude",
         "mapping_date": "2026-09-22",
-        "confidence": "0.99",
-        "comment": "Registry/identity row preserving cas:9001-05-2 alongside parent mesh:D002374.",
+        "confidence": "0.9",
+        "comment": "Registry/identity row preserving cas:9001-05-2 alongside parent mesh:D002374. [own-identifier row: exactMatch per Rule D, grade NARROW_MATCH (#312)]",
         "other": "CAS:9001-05-2",
-        "validation_method": "manual:apply_312_batch2|REGISTRY|2026-09-22"
+        "validation_method": "manual:apply_312_batch2|IDENTITY|2026-09-22"
       }
     },
     {
