@@ -3,7 +3,7 @@
   "batch": "issue232-wrong-form-names",
   "sequence": 5,
   "issue": "https://github.com/CultureBotAI/MediaIngredientMech/issues/232",
-  "scope": "Residual #232 label conflicts: 18 synonyms on 14 records retyped REJECTED_LABEL because each names a different chemical form (an anhydrous term's names on hydrates and hydrate tombstones, a hydrate label on an anhydrous tombstone, a parent acid's and an anion's name on salts) or is a recipe annotation ('Optional ingredient'); each checked against chebi.db and the owning record at apply time by scripts/retire_wrong_form_names.py. Synonym-only; no identifier, predicate or grade changes.",
+  "scope": "Residual #232 label conflicts: 18 synonyms on 14 records retyped REJECTED_LABEL because each names a different chemical form (an anhydrous term's names on hydrates and hydrate tombstones, a hydrate label on an anhydrous tombstone, a parent acid's and an anion's name on salts) or is a recipe annotation ('Optional ingredient'); each checked against chebi.db and the owning record at apply time by scripts/retire_wrong_form_names.py. Synonym-only; no identifier, predicate or grade changes. The NaH2PO4 hydrate-spelling move (#758) is deferred behind #740.",
   "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
   "before_sha256": "842f7514f33d049f6c3557e11d5cfcd07636b15e5f75c385775969b446e9d771",
   "after_sha256": "87e8aa1c48a5d471dd641c9cd1605a780b3cfa5282d8073d1f5603856c4833aa",
@@ -15,112 +15,112 @@
       "shape": "synonym_retirement",
       "before_yaml_sha256": "09dcea028f806cc4d490096bd79e8e1391c27d23ff523f97e732016ab83f0450",
       "after_yaml_sha256": "bc096f0393d86296abd52781a877b306d64b8830a026b73df84a27508e4c846c",
-      "change": "REJECTED_LABEL: 'a-Ketoglutaric acid' (EXACT_SYNONYM)",
-      "verification": "names the free acid (Alpha-ketoglutaric_Acid holds it), not the disodium salt hydrate"
-    },
-    {
-      "source_record": "data/ingredients/mapped/Calcium_Chloride.yaml",
-      "shape": "synonym_retirement",
-      "before_yaml_sha256": "c26d211d61d5df94a3e6c9f282b16dd84c0f060473aeb4ec40f742dfad86d079",
-      "after_yaml_sha256": "9c8d517e9746cd4a01454b479be86eaaeee67623a3ae162a93557978df1a4742",
-      "change": "REJECTED_LABEL: 'CaCl2 \u00d7 2 H2O' (HYDRATE_FORM), 'CaCl2*2H2O' (HYDRATE_FORM)",
-      "verification": "dihydrate labels on the anhydrous CHEBI:3312 tombstone; the dihydrate is Cacl2_X_2_H2o"
-    },
-    {
-      "source_record": "data/ingredients/mapped/Cocl2_X_2_H2o.yaml",
-      "shape": "synonym_retirement",
-      "before_yaml_sha256": "a46da48c9462ac8fe0edff72ca633ab0c78f3bd5a397819f57558fbee1ce9d63",
-      "after_yaml_sha256": "2ceb41745b08d8db408350eb5e0ad38a933df6224ebac60a81ce2a2085f647e3",
-      "change": "REJECTED_LABEL: 'cobalt(2+) chloride' (EXACT_SYNONYM), 'cobalt(II) chloride' (EXACT_SYNONYM)",
-      "verification": "ChEBI names of the anhydrous parent CHEBI:35696, enriched onto the hydrate when it still shared that term"
-    },
-    {
-      "source_record": "data/ingredients/mapped/Cocl2_X_4_H2o.yaml",
-      "shape": "synonym_retirement",
-      "before_yaml_sha256": "1a6126fe5b3c767170ca5d42b25220b4dbf98bcdd109dc21255dae878415b9fc",
-      "after_yaml_sha256": "89cd1f551a2f46f4ea5ea33c96a56fddd66cf6c3be2f3e72bc4b2e957d303907",
-      "change": "REJECTED_LABEL: 'cobalt(2+) chloride' (EXACT_SYNONYM), 'cobalt(II) chloride' (EXACT_SYNONYM)",
-      "verification": "ChEBI names of the anhydrous parent CHEBI:35696, enriched onto the hydrate when it still shared that term"
-    },
-    {
-      "source_record": "data/ingredients/mapped/Cocl2_X_6_H2o.yaml",
-      "shape": "synonym_retirement",
-      "before_yaml_sha256": "4da53a3bb5c72f71b3306cee2ac15743e6356d606b5b37fbae944d105be05a47",
-      "after_yaml_sha256": "f0b76d3fe6ea95ba1af8eb2bd3c438b8de3f7d137e1fb901429694559627a8a6",
-      "change": "REJECTED_LABEL: 'cobalt(2+) chloride' (EXACT_SYNONYM), 'cobalt(II) chloride' (EXACT_SYNONYM)",
-      "verification": "ChEBI names of the anhydrous CHEBI:35696 on the hexahydrate CHEBI:53503 tombstone"
-    },
-    {
-      "source_record": "data/ingredients/mapped/Na-glutamate.yaml",
-      "shape": "synonym_retirement",
-      "before_yaml_sha256": "672503ab4b7aff99a7d874316bd6004a9bd2751e9d5d0761ab70408c4c7b77b3",
-      "after_yaml_sha256": "9ceb40b22220c91efe39bbe93e19fd84754a399c1db52d6b2441be4fb2472317",
-      "change": "REJECTED_LABEL: 'L-glutamate' (EXACT_SYNONYM)",
-      "verification": "the anion's name on the monosodium L-glutamate CHEBI:64243 tombstone"
-    },
-    {
-      "source_record": "data/ingredients/mapped/D-fructose.yaml",
-      "shape": "synonym_retirement",
-      "before_yaml_sha256": "2c443404266f5d8e8260d733e235e3d7ee6293519afa8bf0e9afca231be8abfb",
-      "after_yaml_sha256": "05b9d5a79984d5afd90077147ed421ce227ea80946344db298c80e985f8f718e",
-      "change": "REJECTED_LABEL: 'Optional ingredient' (RAW_TEXT)",
-      "verification": "a CultureMech recipe annotation, not a name of D-fructose"
-    },
-    {
-      "source_record": "data/ingredients/mapped/Cellulose.yaml",
-      "shape": "synonym_retirement",
-      "before_yaml_sha256": "ef8af16a7cf385843a7d887a779c0e83a44246dc18b5f1bbf4a7955527519e5d",
-      "after_yaml_sha256": "65050b762a448d04092507444502e42bc905761aa2b6aafef7e550298da8980a",
-      "change": "REJECTED_LABEL: 'Optional ingredient' (RAW_TEXT)",
-      "verification": "a CultureMech recipe annotation, not a name of cellulose"
-    },
-    {
-      "source_record": "data/ingredients/mapped/Na-acetate.yaml",
-      "shape": "synonym_retirement",
-      "before_yaml_sha256": "d7f225aee9f7e5a8698cde45b7d8a7af634c66c593ebb22470046e1aee7c164f",
-      "after_yaml_sha256": "81fae683dc7acb9eb097e4fde9f80d5f146e2d00373b726fb9ee2ae05768e3e2",
-      "change": "REJECTED_LABEL: 'Optional ingredient' (RAW_TEXT)",
-      "verification": "a CultureMech recipe annotation, not a name of sodium acetate"
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'a-Ketoglutaric acid' (EXACT_SYNONYM): names the free acid (Alpha-ketoglutaric_Acid holds it), not the disodium salt hydrate (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
     },
     {
       "source_record": "data/ingredients/mapped/Caco3.yaml",
       "shape": "synonym_retirement",
       "before_yaml_sha256": "4c316a9a10351cb3104f3f9fb0d5a628644893c54360ae3f6120eb9d1819b646",
       "after_yaml_sha256": "1f1c3ed20e6efa4ace018526b9919ded284fb2b011471bc7b39c4942ffef6cba",
-      "change": "REJECTED_LABEL: 'Optional ingredient' (RAW_TEXT)",
-      "verification": "a CultureMech recipe annotation, not a name of calcium carbonate"
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'Optional ingredient' (RAW_TEXT): a CultureMech recipe annotation, not a name of calcium carbonate (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Calcium_Chloride.yaml",
+      "shape": "synonym_retirement",
+      "before_yaml_sha256": "c26d211d61d5df94a3e6c9f282b16dd84c0f060473aeb4ec40f742dfad86d079",
+      "after_yaml_sha256": "9c8d517e9746cd4a01454b479be86eaaeee67623a3ae162a93557978df1a4742",
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'CaCl2 \u00d7 2 H2O' (HYDRATE_FORM), 'CaCl2*2H2O' (HYDRATE_FORM): dihydrate labels on the anhydrous CHEBI:3312 tombstone; the dihydrate is Cacl2_X_2_H2o (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cellulose.yaml",
+      "shape": "synonym_retirement",
+      "before_yaml_sha256": "ef8af16a7cf385843a7d887a779c0e83a44246dc18b5f1bbf4a7955527519e5d",
+      "after_yaml_sha256": "65050b762a448d04092507444502e42bc905761aa2b6aafef7e550298da8980a",
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'Optional ingredient' (RAW_TEXT): a CultureMech recipe annotation, not a name of cellulose (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cocl2_X_2_H2o.yaml",
+      "shape": "synonym_retirement",
+      "before_yaml_sha256": "a46da48c9462ac8fe0edff72ca633ab0c78f3bd5a397819f57558fbee1ce9d63",
+      "after_yaml_sha256": "2ceb41745b08d8db408350eb5e0ad38a933df6224ebac60a81ce2a2085f647e3",
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'cobalt(2+) chloride' (EXACT_SYNONYM), 'cobalt(II) chloride' (EXACT_SYNONYM): ChEBI names of the anhydrous parent CHEBI:35696, enriched onto the hydrate when it still shared that term (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cocl2_X_4_H2o.yaml",
+      "shape": "synonym_retirement",
+      "before_yaml_sha256": "1a6126fe5b3c767170ca5d42b25220b4dbf98bcdd109dc21255dae878415b9fc",
+      "after_yaml_sha256": "89cd1f551a2f46f4ea5ea33c96a56fddd66cf6c3be2f3e72bc4b2e957d303907",
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'cobalt(2+) chloride' (EXACT_SYNONYM), 'cobalt(II) chloride' (EXACT_SYNONYM): ChEBI names of the anhydrous parent CHEBI:35696, enriched onto the hydrate when it still shared that term (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Cocl2_X_6_H2o.yaml",
+      "shape": "synonym_retirement",
+      "before_yaml_sha256": "4da53a3bb5c72f71b3306cee2ac15743e6356d606b5b37fbae944d105be05a47",
+      "after_yaml_sha256": "f0b76d3fe6ea95ba1af8eb2bd3c438b8de3f7d137e1fb901429694559627a8a6",
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'cobalt(2+) chloride' (EXACT_SYNONYM), 'cobalt(II) chloride' (EXACT_SYNONYM): ChEBI names of the anhydrous CHEBI:35696 on the hexahydrate CHEBI:53503 tombstone (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
+    },
+    {
+      "source_record": "data/ingredients/mapped/D-fructose.yaml",
+      "shape": "synonym_retirement",
+      "before_yaml_sha256": "2c443404266f5d8e8260d733e235e3d7ee6293519afa8bf0e9afca231be8abfb",
+      "after_yaml_sha256": "05b9d5a79984d5afd90077147ed421ce227ea80946344db298c80e985f8f718e",
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'Optional ingredient' (RAW_TEXT): a CultureMech recipe annotation, not a name of D-fructose (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Na-acetate.yaml",
+      "shape": "synonym_retirement",
+      "before_yaml_sha256": "d7f225aee9f7e5a8698cde45b7d8a7af634c66c593ebb22470046e1aee7c164f",
+      "after_yaml_sha256": "81fae683dc7acb9eb097e4fde9f80d5f146e2d00373b726fb9ee2ae05768e3e2",
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'Optional ingredient' (RAW_TEXT): a CultureMech recipe annotation, not a name of sodium acetate (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
+    },
+    {
+      "source_record": "data/ingredients/mapped/Na-glutamate.yaml",
+      "shape": "synonym_retirement",
+      "before_yaml_sha256": "672503ab4b7aff99a7d874316bd6004a9bd2751e9d5d0761ab70408c4c7b77b3",
+      "after_yaml_sha256": "9ceb40b22220c91efe39bbe93e19fd84754a399c1db52d6b2441be4fb2472317",
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'L-glutamate' (EXACT_SYNONYM): the anion's name on the monosodium L-glutamate CHEBI:64243 tombstone (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
     },
     {
       "source_record": "data/ingredients/mapped/Na2moo42h2o.yaml",
       "shape": "synonym_retirement",
       "before_yaml_sha256": "6989f6abb436d4dd233aaba3cef895de13f399f5ccc12f0dd15062b8efabbf6d",
       "after_yaml_sha256": "dbe39939582011fd142440ef4e62b7c5430f90672b61c7fe4829c2d5e3057343",
-      "change": "REJECTED_LABEL: 'sodium dioxido(dioxo)molybdenum' (EXACT_SYNONYM)",
-      "verification": "the anhydrous CHEBI:75215 name on the dihydrate CHEBI:75213 tombstone"
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'sodium dioxido(dioxo)molybdenum' (EXACT_SYNONYM): the anhydrous CHEBI:75215 name on the dihydrate CHEBI:75213 tombstone (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
     },
     {
       "source_record": "data/ingredients/mapped/Nah2po4_X_2_H2o.yaml",
       "shape": "synonym_retirement",
       "before_yaml_sha256": "5244e8b5d5626388269ea9788197f7df9aad36aafb44d750326e536254957373",
       "after_yaml_sha256": "c17c89b89156b9ad96ba50bb7b81a3e438f7de6cf8aa1460f4f896c69ba8b207",
-      "change": "REJECTED_LABEL: 'sodium phosphate monobasic anhydrous' (EXACT_SYNONYM)",
-      "verification": "the anhydrous CHEBI:37585 name on a dihydrate label's local identity"
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'sodium phosphate monobasic anhydrous' (EXACT_SYNONYM): the anhydrous CHEBI:37585 name on a dihydrate label's local identity (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
     },
     {
       "source_record": "data/ingredients/mapped/Sodium_Citrate.yaml",
       "shape": "synonym_retirement",
       "before_yaml_sha256": "4194495543653bc48777b0c89dfb8e43f62165b39702c03b175df0b11c884bfa",
       "after_yaml_sha256": "dede4bf4630f673fc6fe4ac5b70791b6d91e583c905f1d2ca0df56249640dbc9",
-      "change": "REJECTED_LABEL: 'trisodium 2-hydroxypropane-1,2,3-tricarboxylate' (EXACT_SYNONYM)",
-      "verification": "the anhydrous trisodium citrate CHEBI:53258 name on the sodium citrate dihydrate CHEBI:32142 tombstone"
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'trisodium 2-hydroxypropane-1,2,3-tricarboxylate' (EXACT_SYNONYM): the anhydrous trisodium citrate CHEBI:53258 name on the sodium citrate dihydrate CHEBI:32142 tombstone (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
     },
     {
       "source_record": "data/ingredients/mapped/Trisodium_Citrate_X_2_H2o.yaml",
       "shape": "synonym_retirement",
       "before_yaml_sha256": "2ff97169ff4b12e889f319d92958ae786a0b0e05bfb86c0f5d5bc97ff5d30b40",
       "after_yaml_sha256": "434f429cbbb51fd5704ae557b55bb4c48440461840db61265bf51c6ba1365e7f",
-      "change": "REJECTED_LABEL: 'trisodium 2-hydroxypropane-1,2,3-tricarboxylate' (EXACT_SYNONYM)",
-      "verification": "the anhydrous trisodium citrate CHEBI:53258 name on the sodium citrate dihydrate CHEBI:32142 tombstone"
+      "change": "REJECTED_WRONG_FORM_SYNONYMS",
+      "verification": "Retyped REJECTED_LABEL: 'trisodium 2-hydroxypropane-1,2,3-tricarboxylate' (EXACT_SYNONYM): the anhydrous trisodium citrate CHEBI:53258 name on the sodium citrate dihydrate CHEBI:32142 tombstone (#232). The token is kept as provenance only; it must not resolve, be exported, or enter the SSSOM other column."
     }
   ],
   "changed_rows": 8,
