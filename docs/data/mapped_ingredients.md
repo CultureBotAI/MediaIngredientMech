@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-09-23T02:03:14.123779+00:00
+Generated: 2026-09-23T03:47:39.698573+00:00
 Total: 2679 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -475,7 +475,6 @@ Total: 2679 ingredients
 | kgmicrobe.compound:alboverticillin | kgmicrobe.compound:alboverticillin | Alboverticillin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:30114 | CHEBI:30114 | AlCl3 | MAPPED | CHEBI | EXACT_MATCH | 77 |
 | CHEBI:30115 | CHEBI:30115 | AlCl3 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 46 |
-| MICRO:0000455 | MICRO:0000455 | Algal Trace Elements Solution | MAPPED | MICRO | LEXICAL_MATCH | 1 |
 | CHEBI:86463 | CHEBI:86463 | AlK(SO4)2 | MAPPED | CHEBI | EXACT_MATCH | 240 |
 | CHEBI:86465 | CHEBI:86465 | AlK(SO4)2 x 12 H2O | MAPPED | CHEBI | EXACT_MATCH | 813 |
 | CHEBI:15676 | CHEBI:15676 | Allantoin | MAPPED | CHEBI | EXACT_MATCH | 5 |
@@ -549,7 +548,6 @@ Total: 2679 ingredients
 | CHEBI:51864 | CHEBI:51864 | Azlocillin sodium salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:161680 | CHEBI:161680 | Aztreonam | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:azureomycin | kgmicrobe.compound:azureomycin | Azureomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
-| CHEBI:28793 | CHEBI:28793 | b-Glucan from Oat | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:9036-88-8 | cas:9036-88-8 | b-Mannan borohydrate reduced carob seed | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:28669 | CHEBI:28669 | Bacitracin | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:63317 | CHEBI:63317 | BaCl2 | MAPPED | CHEBI | EXACT_MATCH | 7 |
@@ -673,7 +671,6 @@ Total: 2679 ingredients
 | NCIT:C72000 | NCIT:C72000 | Carrot | MAPPED | NCIT | EXACT_MATCH | 7 |
 | kgmicrobe.compound:caryomycin | kgmicrobe.compound:caryomycin | Caryomycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:10357 | CHEBI:10357 | Caryophyllene [T(-)] | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| mesh:C017721 | mesh:C017721 | Casamino acids (vitamin assay) | MAPPED | MESH | LEXICAL_MATCH | 0 |
 | FOODON:03420180 | FOODON:03420180 | Casein | MAPPED | FOODON | EXACT_MATCH | 20 |
 | FOODON:03315719 | FOODON:03315719 | Casein peptone | MAPPED | FOODON | CLOSE_MATCH | 1313 |
 | MICRO:0001366 | MICRO:0001366 | Casein hydrolysate | MAPPED | MICRO | EXACT_MATCH | 54 |
@@ -795,9 +792,7 @@ Total: 2679 ingredients
 | CHEBI:78673 | CHEBI:78673 | Cumene hydroperoxide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3962 | CHEBI:3962 | Curcumin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:54724-00-4 | mesh:C038459 | Curdlan | MAPPED | MESH | NARROW_MATCH | 0 |
-| CHEBI:23414 | CHEBI:23414 | CuSO4 | MAPPED | CHEBI | EXACT_MATCH | 187 |
-| CHEBI:23414 | CHEBI:23414 | CuSO4 x 2 H2O | MAPPED | CHEBI | SYNONYM_MATCH | 187 |
-| CHEBI:23414 | CHEBI:23414 | CuSO4 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 187 |
+| CHEBI:23414 | CHEBI:23414 | CuSO4 | MAPPED | CHEBI | EXACT_MATCH | 177 |
 | CHEBI:31440 | CHEBI:31440 | CuSO4 x 5 H2O | MAPPED | CHEBI | EXACT_MATCH | 1490 |
 | CHEBI:91246 | CHEBI:91246 | CuSO4 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:17439 | CHEBI:17439 | Cyanocobalamin | MAPPED | CHEBI | EXACT_MATCH | 275 |
@@ -2684,3 +2679,8 @@ Total: 2679 ingredients
 | CHEBI:49240 | CHEBI:49240 | Bisabolene | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:9001-05-2 | mesh:D002374 | Catalase | MAPPED | MESH | NARROW_MATCH | 34 |
 | CHEBI:29749 | CHEBI:29749 | Ferulate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
+| kgmicrobe.ingredient:algal_trace_elements_solution | MICRO:0000455 | Algal Trace Elements Solution | MAPPED | MICRO | NARROW_MATCH | 1 |
+| kgmicrobe.ingredient:b-glucan_from_oat | CHEBI:18504 | b-Glucan from Oat | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| kgmicrobe.ingredient:casamino_acids_vitamin_assay | mesh:C017721 | Casamino acids (vitamin assay) | MAPPED | MESH | NARROW_MATCH | 0 |
+| kgmicrobe.compound:cuso4_x_2_h2o | CHEBI:23414 | CuSO4 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 8 |
+| kgmicrobe.compound:cuso4_x_4_h2o | CHEBI:23414 | CuSO4 x 4 H2O | MAPPED | CHEBI | CLOSE_MATCH | 2 |

@@ -1,14 +1,14 @@
-identifier: CHEBI:23414
+identifier: kgmicrobe.compound:cuso4_x_2_h2o
 preferred_term: CuSO4 x 2 H2O
 ontology_mapping:
   ontology_id: CHEBI:23414
   ontology_label: copper(II) sulfate
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
-    notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    notes: 'SUPERSEDED (#312): Imported from CultureMech pipeline, quality=DIRECT_MATCH'
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#321)
     notes: molecular_formula 'Cu.O4S' -> 'Cu.O4S.2H2O'. The recorded value described
@@ -17,6 +17,18 @@ ontology_mapping:
       and the recorded formula was byte-identical to the anhydrous parent CHEBI:23414's
       ChEBI formula ('Cu.O4S') — the mark of a value inherited from the parent rather
       than measured for this record. Water appended in ChEBI's own dot-separated notation.
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier CHEBI:23414 -> kgmicrobe.compound:cuso4_x_2_h2o; ontology CHEBI:23414
+      (''copper(II) sulfate'') -> CHEBI:23414 (''copper(II) sulfate''); mapping_quality
+      SYNONYM_MATCH -> CLOSE_MATCH. CuSO4 x 2 H2O is a MediaDive label for a hydration
+      state no source verifies (hydrate_review: WRONG_TERM_ANHYDROUS, ''Probably CuSO4
+      x 5 H2O; phase studies establish the pentahydrate''). It shared CHEBI:23414
+      with the anhydrous CuSO4 record; the 2026-08-10 regrade to SYNONYM_MATCH still
+      published exactMatch. The #344 malformed-hydrate shape: local identity, closeMatch
+      to the anhydrous parent, chemistry blank, anhydrous aliases REJECTED_LABEL,
+      memberships only for recipes whose source label names this row (''CuSO4 x 2
+      H2O'', ''CuSO4 . 2H2O'').'
 synonyms:
 - synonym_text: CuSO4 . 2H2O
   synonym_type: HYDRATE_FORM
@@ -28,15 +40,15 @@ synonyms:
   synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: cupric sulfate anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: copper(2+) sulfate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 187
-  media_count: 187
+  total_occurrences: 8
+  media_count: 8
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -129,13 +141,35 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: false
-kg_microbe_node_id: CHEBI:23414
-chemical_properties:
-  data_source: PubChem (via CHEBI:23414)
-  retrieval_date: '2026-04-09T00:32:50.689620+00:00'
-  molecular_formula: Cu.O4S.2H2O
-  inchi: InChI=1S/Cu.H2O4S/c;1-5(2,3)4/h;(H2,1,2,3,4)/q+2;/p-2
-  smiles: O=S(=O)([O-])[O-].[Cu+2]
+- timestamp: '2026-09-23T03:41:22.763552+00:00'
+  curator: claude
+  action: MINTED_REGISTRY_IDENTIFIER
+  changes: 'identifier CHEBI:23414 -> kgmicrobe.compound:cuso4_x_2_h2o; ontology CHEBI:23414
+    (''copper(II) sulfate'') -> CHEBI:23414 (''copper(II) sulfate''); mapping_quality
+    SYNONYM_MATCH -> CLOSE_MATCH. CuSO4 x 2 H2O is a MediaDive label for a hydration
+    state no source verifies (hydrate_review: WRONG_TERM_ANHYDROUS, ''Probably CuSO4
+    x 5 H2O; phase studies establish the pentahydrate''). It shared CHEBI:23414 with
+    the anhydrous CuSO4 record; the 2026-08-10 regrade to SYNONYM_MATCH still published
+    exactMatch. The #344 malformed-hydrate shape: local identity, closeMatch to the
+    anhydrous parent, chemistry blank, anhydrous aliases REJECTED_LABEL, memberships
+    only for recipes whose source label names this row (''CuSO4 x 2 H2O'', ''CuSO4
+    . 2H2O''). (#312) REJECTED_LABEL: cupric sulfate anhydrous, copper(2+) sulfate.
+    chemical_properties blanked: the recorded structure was the anhydrous salt''s.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-09-23T03:43:07.507160+00:00'
+  curator: claude
+  action: REFRESHED_OCCURRENCE_STATISTICS
+  changes: 'occurrence_statistics 187/187 -> 8/8 after the #312 registry mints moved
+    memberships off the shared identifier; counts follow the source label through
+    SOURCE_LABEL_IDENTIFIER_OVERRIDES.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+chemical_properties: {}
 ingredient_type: SINGLE_INGREDIENT
 nutritional_roles:
 - role: TRACE_ELEMENT
