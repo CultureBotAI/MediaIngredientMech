@@ -1,10 +1,10 @@
-identifier: cas:14919-49-4
+identifier: mesh:C559991
 preferred_term: 3,4'-Dihydroxyflavone
 ontology_mapping:
   ontology_id: mesh:C559991
   ontology_label: 3,4'-dihydroxyflavone
   ontology_source: MESH
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -14,6 +14,17 @@ ontology_mapping:
   - evidence_type: DATABASE_MATCH
     source: MESH via OLS (label-exact)
     notes: Parent class identified via label-exact; matched_via="3,4'-Dihydroxyflavone"
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier cas:14919-49-4 -> mesh:C559991; ontology mesh:C559991 (''3,4''-dihydroxyflavone'')
+      -> mesh:C559991 (''3,4''-dihydroxyflavone''); mapping_quality NARROW_MATCH ->
+      EXACT_MATCH. mesh.db gives MESH:C559991 the label "3,4''-dihydroxyflavone",
+      identical to the record''s label and distinct from MESH:C028288 "3'',4''-dihydroxyflavone".
+      chebi.db has no term for this compound (CAS 14919-49-4 and the name resolve
+      to nothing). A broadMatch from a record to the same compound is false; Section
+      3 step 1 makes the MeSH term the identifier (68 records already carry mesh:
+      primaries) with EXACT_MATCH. The CAS stays in chemical_properties and on its
+      registry row; the kgmicrobe.compound row is dropped as #326 did for 72-Dihydroxyflavone.'
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -48,6 +59,22 @@ curation_history:
   action: BACKFILL_PARENT_MESH
   changes: set ontology_mapping parent=mesh:C559991 (label-exact)
   llm_assisted: false
+- timestamp: '2026-09-23T00:44:54.166138+00:00'
+  curator: claude
+  action: REGRADED_PARENT_TO_IDENTITY
+  changes: 'identifier cas:14919-49-4 -> mesh:C559991; ontology mesh:C559991 (''3,4''-dihydroxyflavone'')
+    -> mesh:C559991 (''3,4''-dihydroxyflavone''); mapping_quality NARROW_MATCH ->
+    EXACT_MATCH. mesh.db gives MESH:C559991 the label "3,4''-dihydroxyflavone", identical
+    to the record''s label and distinct from MESH:C028288 "3'',4''-dihydroxyflavone".
+    chebi.db has no term for this compound (CAS 14919-49-4 and the name resolve to
+    nothing). A broadMatch from a record to the same compound is false; Section 3
+    step 1 makes the MeSH term the identifier (68 records already carry mesh: primaries)
+    with EXACT_MATCH. The CAS stays in chemical_properties and on its registry row;
+    the kgmicrobe.compound row is dropped as #326 did for 72-Dihydroxyflavone. (#312)'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 14919-49-4
   data_source: CultureBotHT compounds_to_cas.csv

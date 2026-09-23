@@ -211,7 +211,6 @@
 | kgmicrobe.compound:potassium_2-dehydro-d-gluconate | Potassium 2-dehydro-D-gluconate | CHEBI:16808 | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_5-dehydro-d-gluconate | Potassium 5-dehydro-D-gluconate | CHEBI:58143 | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_5-ketogluconate | Potassium 5-ketogluconate | CHEBI:58143 | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:17620 | Ferulate | CHEBI:17620 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:55507 | 1-o-methyl Alpha-galactopyranoside | CHEBI:55507 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:36241 | Protocatechuate | CHEBI:36241 | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:17464 | L-galactonic Acid Gamma-lactone | CHEBI:17464 | CHEBI | SYNONYM_MATCH | 0 |
@@ -383,7 +382,6 @@
 | CHEBI:62898 | 3-methyl-3-butenol | CHEBI:62898 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:80946 | 3-octanone | CHEBI:80946 | CHEBI | EXACT_MATCH | 0 |
 | cas:128596-80-5 | 3'-sialyllactose sodium salt | CHEBI:151472 | CHEBI | NARROW_MATCH | 0 |
-| cas:14919-49-4 | 3,4'-Dihydroxyflavone | mesh:C559991 | MESH | NARROW_MATCH | 0 |
 | CHEBI:232299 | 3,4'-Dimethoxyflavone | CHEBI:232299 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:53648 | 3,5-Dinitrosalicylic acid | CHEBI:53648 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:36-dihydroxyflavone | 3',6-Dihydroxyflavone | CHEBI:24698 | CHEBI | NARROW_MATCH | 0 |
@@ -395,7 +393,6 @@
 | CHEBI:17597 | 4-Hydroxybenzaldehyde | CHEBI:17597 | CHEBI | EXACT_MATCH | 2 |
 | cas:184901-84-6 | 4-Hydroxymandelic acid monohydrate | CHEBI:16388 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:165411 | 4-Hydroxynonanoic acid | CHEBI:165411 | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:142593 | 4-Hydroxynonenal | CHEBI:142593 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32980 | 4-Hydroxyphenylpropionic acid | CHEBI:32980 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:4143-74-2 | 4'-Methoxyflavone | CHEBI:114194 | CHEBI | SYNONYM_MATCH | 0 |
 | cas:4502-00-5 | 4-Methyl-2-oxopentanoic acid sodium salt | CHEBI:48430 | CHEBI | NARROW_MATCH | 0 |
@@ -458,7 +455,6 @@
 | CHEBI:2781 | Acetovanillone | CHEBI:2781 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:134431 | Acetylated xylan | CHEBI:134431 | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:achromoviromycin | Achromoviromycin | kgmicrobe.compound:achromoviromycin | kgmicrobe.compound | PLACEHOLDER | 0 |
-| CHEBI:51739 | Acridine orange | CHEBI:51739 | CHEBI | EXACT_MATCH | 0 |
 | cas:8048-52-0 | Acriflavine | NCIT:C76253 | NCIT | NARROW_MATCH | 0 |
 | CHEBI:70241 | Actein | CHEBI:70241 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:actinohivin | Actinohivin | kgmicrobe.compound:actinohivin | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -493,11 +489,9 @@
 | kgmicrobe.compound:alpha-toxicarol_dl | Alpha-Toxicarol (Dl) | kgmicrobe.compound:alpha-toxicarol_dl | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | CHEBI:17925 | alpha-D-Glucose | CHEBI:17925 | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:30915 | alpha-ketoglutaric acid | CHEBI:30915 | CHEBI | EXACT_MATCH | 7 |
-| CHEBI:74772 | Aluminium sulfate | CHEBI:74772 | CHEBI | EXACT_MATCH | 1 |
 | cas:10124-27-3 | Aluminum chloride hydrate | NCIT:C83530 | NCIT | NARROW_MATCH | 28 |
 | CHEBI:2638 | Amikacin disulfate salt | CHEBI:2638 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:62947 | Ammonium acetate | CHEBI:62947 | CHEBI | EXACT_MATCH | 67 |
-| cas:12054-85-2 | ammonium molybdate tetrahydrate | CHEBI:91249 | CHEBI | CLOSE_MATCH | 12 |
 | CHEBI:156543 | ammonium persulfate | CHEBI:156543 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:81950 | Ammonium Sulfamate | CHEBI:81950 | CHEBI | EXACT_MATCH | 0 |
 | cas:12135-76-1 | ammonium sulfide solution | mesh:C027711 | MESH | NARROW_MATCH | 0 |
@@ -515,7 +509,6 @@
 | mesh:C002547 | Angolamycin | mesh:C002547 | MESH | EXACT_MATCH | 0 |
 | CHEBI:8612 | Angustmycin | CHEBI:8612 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:201752 | Anhydrotetracycline hydrochloride | CHEBI:201752 | CHEBI | EXACT_MATCH | 0 |
-| cas:17659-49-3 | Anisodamine Hydrobromide () | NCIT:C221850 | NCIT | NARROW_MATCH | 0 |
 | CHEBI:193638 | anthranilamide | CHEBI:193638 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:30754 | anthranilic acid | CHEBI:30754 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2762 | Antimycin A | CHEBI:2762 | CHEBI | EXACT_MATCH | 0 |
@@ -523,7 +516,6 @@
 | mesh:C061361 | Apidaecin IB | mesh:C061361 | MESH | EXACT_MATCH | 0 |
 | CHEBI:18388 | Apigenin | CHEBI:18388 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:70353 | Apiole | CHEBI:70353 | CHEBI | EXACT_MATCH | 0 |
-| cas:65710-07-8 | Apramycin sulfate salt | CHEBI:190734 | CHEBI | NARROW_MATCH | 0 |
 | cas:11078-27-6 | Arabinan from Sugar Beet | CHEBI:22590 | CHEBI | NARROW_MATCH | 0 |
 | cas:78088-21-8 | Arabinobiose | mesh:C434937 | MESH | NARROW_MATCH | 0 |
 | CHEBI:22599 | Arabinose | CHEBI:22599 | CHEBI | EXACT_MATCH | 5 |
@@ -545,7 +537,6 @@
 | CHEBI:79928 | Asiaticoside | CHEBI:79928 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:22653 | Asparagine | CHEBI:22653 | CHEBI | EXACT_MATCH | 28 |
 | CHEBI:2911 | Atorvastatin calcium salt trihydrate | CHEBI:2911 | CHEBI | CAS_RN_LOOKUP | 0 |
-| mesh:C509797 | Atrop Abyssomicin C | mesh:C509797 | MESH | EXACT_MATCH | 0 |
 | CHEBI:134355 | Auraptene | CHEBI:134355 | CHEBI | EXACT_MATCH | 0 |
 | cas:1405-69-2 | Avidin | mesh:D001360 | MESH | NARROW_MATCH | 0 |
 | CHEBI:172520 | Avocadene | CHEBI:172520 | CHEBI | EXACT_MATCH | 0 |
@@ -590,7 +581,6 @@
 | CHEBI:25979 | Benzylcyanide | CHEBI:25979 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:31271 | Berberine | CHEBI:31271 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18293 | Bergapten | CHEBI:18293 | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:69499 | Bergenin | CHEBI:69499 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:53502 | beryllium sulfate tetrahydrate | CHEBI:53502 | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:10352 | Beta-Amyrin | CHEBI:10352 | CHEBI | EXACT_MATCH | 0 |
 | cas:154804-51-0 | Beta-Glycerophosphate disodium salt hydrate | CHEBI:17270 | CHEBI | CLOSE_MATCH | 0 |
@@ -611,7 +601,6 @@
 | kgmicrobe.ingredient:biotin_vitamin_solution | Biotin Vitamin Solution | MICRO:0000460 | MICRO | CLOSE_MATCH | 18 |
 | CHEBI:16841 | Bis(3-aminopropyl)amine | CHEBI:16841 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:41250 | Bis-Tris | CHEBI:41250 | CHEBI | EXACT_MATCH | 4 |
-| CHEBI:49235 | Bisabolene | CHEBI:49235 | CHEBI | EXACT_MATCH | 0 |
 | cas:7787-60-2 | bismuth(III) chloride | cas:7787-60-2 | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:34582 | Bleomycin sulfate | CHEBI:34582 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3148 | Boldine | CHEBI:3148 | CHEBI | EXACT_MATCH | 0 |
@@ -684,7 +673,6 @@
 | CHEBI:31346 | CaSO4 | CHEBI:31346 | CHEBI | EXACT_MATCH | 15 |
 | CHEBI:32583 | CaSO4 x 2 H2O | CHEBI:32583 | CHEBI | EXACT_MATCH | 158 |
 | kgmicrobe.compound:caso4_x_7_h2o | CaSO4 x 7 H2O | CHEBI:31346 | CHEBI | CLOSE_MATCH | 4 |
-| NCIT:C61062 | Catalase | NCIT:C61062 | NCIT | EXACT_MATCH | 34 |
 | CHEBI:86156 | Cd(NO3)2 x 4 H2O | CHEBI:86156 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:35458 | CeCl3 | CHEBI:35458 | CHEBI | EXACT_MATCH | 4 |
 | kgmicrobe.compound:cecl3_x_7_h2o | CeCl3 x 7 H2O | CHEBI:35458 | CHEBI | CLOSE_MATCH | 4 |
@@ -2623,6 +2611,18 @@
 | CHEBI:36026 | 1,1,2,2-tetrachloroethane | CHEBI:36026 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:86537 | 2,2-dimethylsuccinic acid | CHEBI:86537 | CHEBI | EXACT_MATCH | 0 |
 | cas:13902-54-0 | Artepaulin | cas:13902-54-0 | CAS | FALLBACK_REGISTRY | 0 |
+| mesh:C559991 | 3,4'-Dihydroxyflavone | mesh:C559991 | MESH | EXACT_MATCH | 0 |
+| CHEBI:58968 | 4-Hydroxynonenal | CHEBI:58968 | CHEBI | CAS_RN_LOOKUP | 0 |
+| CHEBI:87346 | Acridine orange | CHEBI:87346 | CHEBI | CAS_RN_LOOKUP | 0 |
+| CHEBI:74768 | Aluminium sulfate | CHEBI:74768 | CHEBI | CAS_RN_LOOKUP | 1 |
+| CHEBI:86244 | ammonium molybdate tetrahydrate | CHEBI:86244 | CHEBI | SYNONYM_MATCH | 12 |
+| NCIT:C221850 | Anisodamine Hydrobromide | NCIT:C221850 | NCIT | EXACT_MATCH | 0 |
+| CHEBI:190734 | Apramycin sulfate salt | CHEBI:190734 | CHEBI | CAS_RN_LOOKUP | 0 |
+| CHEBI:208735 | Atrop Abyssomicin C | CHEBI:208735 | CHEBI | MANUAL_CURATION | 0 |
+| cas:108032-11-7 | Bergenin | CHEBI:69499 | CHEBI | NARROW_MATCH | 0 |
+| CHEBI:49240 | Bisabolene | CHEBI:49240 | CHEBI | CAS_RN_LOOKUP | 0 |
+| cas:9001-05-2 | Catalase | mesh:D002374 | MESH | NARROW_MATCH | 34 |
+| CHEBI:29749 | Ferulate | CHEBI:29749 | CHEBI | CLOSE_MATCH | 0 |
 
 ## Other Statuses
 

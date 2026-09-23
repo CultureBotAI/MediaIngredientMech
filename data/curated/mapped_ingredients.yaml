@@ -1,4 +1,4 @@
-generation_date: '2026-09-22T23:31:01.985270+00:00'
+generation_date: '2026-09-23T01:09:30.781836+00:00'
 total_count: 2679
 mapped_count: 2612
 unmapped_count: 0
@@ -9619,6 +9619,14 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-5
+  - timestamp: '2026-09-23T01:09:00.614023+00:00'
+    curator: claude
+    action: RESCOPED_COMPONENT
+    changes: 'components[3] ''ammonium molybdate tetrahydrate'' component_id cas:12054-85-2
+      -> CHEBI:86244: the referenced MIM record was re-grounded (#312); the part identity
+      and amount are unchanged.'
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 1 CultureBot media; samples: NoS. No CAS-RN or CHEBI mapping available; curator
     reviewed on 2026-05-11 as a variant concentrated base stock. Component-level recipe
@@ -9642,7 +9650,7 @@ ingredients:
     concentration_value: '6.67'
     concentration_unit: G_PER_L
   - component_name: ammonium molybdate tetrahydrate
-    component_id: cas:12054-85-2
+    component_id: CHEBI:86244
     reference_scope: MIM_CATALOG
     concentration_value: '0.0185'
     concentration_unit: G_PER_L
@@ -13224,6 +13232,14 @@ ingredients:
     new_status: MAPPED
     llm_assisted: true
     llm_model: gpt-5
+  - timestamp: '2026-09-23T01:09:00.338823+00:00'
+    curator: claude
+    action: RESCOPED_COMPONENT
+    changes: 'components[3] ''ammonium molybdate tetrahydrate'' component_id cas:12054-85-2
+      -> CHEBI:86244: the referenced MIM record was re-grounded (#312); the part identity
+      and amount are unchanged.'
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: 'Imported from CultureBotHT (consolidated_media.json (media-only)). Used
     in 9 CultureBot media; samples: CAAc, PM, MDC…. No CAS-RN or CHEBI mapping available;
     reviewed on 2026-05-11 as a concentrated base stock formulation. Component-level
@@ -13247,7 +13263,7 @@ ingredients:
     concentration_value: '6.67'
     concentration_unit: G_PER_L
   - component_name: ammonium molybdate tetrahydrate
-    component_id: cas:12054-85-2
+    component_id: CHEBI:86244
     reference_scope: MIM_CATALOG
     concentration_value: '0.0185'
     concentration_unit: G_PER_L
@@ -17914,56 +17930,6 @@ ingredients:
         CHEBI has the anion CHEBI:58143 but no term for the potassium salt, so MAPPING_SEMANTICS.md
         Section 3 applies: a registry identifier plus a narrowMatch to the parent,
         rather than asserting the salt IS its parent (#213).'
-- identifier: CHEBI:17620
-  preferred_term: Ferulate
-  synonyms:
-  - synonym_text: Ferulate
-    synonym_type: RAW_TEXT
-    source: microbedecoder
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-    source_occurrences:
-    - source: microbedecoder
-      count: 2
-      source_columns: BacDive_Metabolite_utilization
-  curation_history:
-  - timestamp: '2026-08-04T02:54:09.684805+00:00'
-    curator: audit_import_ingredients[microbedecoder]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferulate); no
-      CAS-RN or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: promote_resolved_unmapped
-    action: PROMOTED_TO_MAPPED
-    previous_status: UNMAPPED
-    new_status: MAPPED
-    llm_assisted: false
-    changes: Promoted UNMAPPED_0730 -> CHEBI:17620 "trans-ferulic acid" (CLOSE_MATCH);
-      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
-      definition) (#323)
-    llm_assisted: false
-  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferulate); no CAS-RN
-    or CHEBI/NCIT match. Curator review needed.
-  ontology_mapping:
-    ontology_id: CHEBI:17620
-    ontology_label: trans-ferulic acid
-    ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#213)
-      notes: Ferulate grounded to trans-ferulic acid, the naturally occurring isomer.
-        CHEBI has no ferulate anion term; CLOSE_MATCH because the label is the anion
-        and states no isomer (#213).
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:55507
   preferred_term: 1-o-methyl Alpha-galactopyranoside
   synonyms:
@@ -29603,65 +29569,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: cas:14919-49-4
-  preferred_term: 3,4'-Dihydroxyflavone
-  ontology_mapping:
-    ontology_id: mesh:C559991
-    ontology_label: 3,4'-dihydroxyflavone
-    ontology_source: MESH
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT. CAS-RN 14919-49-4 present, but no CHEBI entry
-        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-        to a CHEBI primary if/when CHEBI adds the term.
-    - evidence_type: DATABASE_MATCH
-      source: MESH via OLS (label-exact)
-      notes: Parent class identified via label-exact; matched_via="3,4'-Dihydroxyflavone"
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_FROM_CAS_FALLBACK
-    changes: Created with cas:14919-49-4 as primary identifier; no CHEBI entry exists
-      for this compound.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:31.863369+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
-    llm_assisted: false
-  - timestamp: '2026-05-02T02:51:22.040524+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
-    changes: molecular_formula=C15H10O4; smiles=C1=CC=C2C(=C1)C(=O)C(=C(O2)C3=CC=C(C=C3)O)O;
-      inchi=InChI=1S/C15H10O4/c16-10-7-5-9(6-8-10)15-14(18)13(
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.033855+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-05-02T04:38:02.386202+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_MESH
-    changes: set ontology_mapping parent=mesh:C559991 (label-exact)
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 14919-49-4
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C15H10O4
-    smiles: C1=CC=C2C(=C1)C(=O)C(=C(O2)C3=CC=C(C=C3)O)O
-    inchi: InChI=1S/C15H10O4/c16-10-7-5-9(6-8-10)15-14(18)13(17)11-3-1-2-4-12(11)19-15/h1-8,16,18H
-    pubchem_cid: 688715
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:232299
   preferred_term: 3,4'-Dimethoxyflavone
   ontology_mapping:
@@ -30466,52 +30373,6 @@ ingredients:
     molecular_formula: C9H18O3
     inchi: InChI=1S/C9H18O3/c1-2-3-4-5-8(10)6-7-9(11)12/h8,10H,2-7H2,1H3,(H,11,12)
     smiles: CCCCCC(O)CCC(=O)O
-  ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:142593
-  preferred_term: 4-Hydroxynonenal
-  ontology_mapping:
-    ontology_id: CHEBI:142593
-    ontology_label: 4-hydroxynonenal
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT.
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:04:17.380972+00:00'
-    curator: audit_integrate_culturebotht
-    action: CREATED_FROM_CULTUREBOTHT
-    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=75899-68-2); Imported
-      from CultureBotHT.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:31.892254+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:27.712527+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C9H16O2; smiles=*C([H])=O
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.077193+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 75899-68-2
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-    molecular_formula: C9H16O2
-    smiles: '*C([H])=O'
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:32980
   preferred_term: 4-Hydroxyphenylpropionic acid
@@ -35219,57 +35080,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:51739
-  preferred_term: Acridine orange
-  ontology_mapping:
-    ontology_id: CHEBI:51739
-    ontology_label: acridine orange
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT.
-  synonyms:
-  - synonym_text: N,N,N',N'-tetramethylacridine-3,6-diamine hydrochloride
-    synonym_type: EXACT_SYNONYM
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:04:17.380972+00:00'
-    curator: audit_integrate_culturebotht
-    action: CREATED_FROM_CULTUREBOTHT
-    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=494-38-2); Imported
-      from CultureBotHT.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.038135+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:27.867421+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=H.C17H19N3.Cl; inchi=InChI=1S/C17H19N3.ClH/c1-19(2)14-7-5-12-9-13-6-8-1;
-      smiles=CN(C)c1ccc2cc3ccc(N(C)C)cc3nc2c1.[Cl-].[H+]
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.281806+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 494-38-2
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-    molecular_formula: H.C17H19N3.Cl
-    inchi: InChI=1S/C17H19N3.ClH/c1-19(2)14-7-5-12-9-13-6-8-15(20(3)4)11-17(13)18-16(12)10-14;/h5-11H,1-4H3;1H
-    smiles: CN(C)c1ccc2cc3ccc(N(C)C)cc3nc2c1.[Cl-].[H+]
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: cas:8048-52-0
   preferred_term: Acriflavine
   ontology_mapping:
@@ -38253,46 +38063,6 @@ ingredients:
       reference_text: Canonical energy substrate (catabolised for energy)
       curator_note: Provisional ENERGY_SOURCE added alongside CARBON_SOURCE; review
         recommended.
-- identifier: CHEBI:74772
-  preferred_term: Aluminium sulfate
-  ontology_mapping:
-    ontology_id: CHEBI:74772
-    ontology_label: aluminium sulfate
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: 'Imported from CultureBotHT. Used in 1 CultureBot media; samples: FW104
-        COMM.'
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 1
-    media_count: 1
-  curation_history:
-  - timestamp: '2026-04-29T06:04:17.380972+00:00'
-    curator: audit_integrate_culturebotht
-    action: CREATED_FROM_CULTUREBOTHT
-    changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=10043-01-3); Imported
-      from CultureBotHT. Used in 1 CultureBot media; samples: FW104 COMM.'
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.144614+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.426848+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 10043-01-3
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: cas:10124-27-3
   preferred_term: Aluminum chloride hydrate
   ontology_mapping:
@@ -38651,161 +38421,6 @@ ingredients:
         (inorganic ammonium salt)'
       curator_note: Provisional role inferred from CHEBI is_a/has_role closure; review
         recommended.
-- identifier: cas:12054-85-2
-  preferred_term: ammonium molybdate tetrahydrate
-  ontology_mapping:
-    ontology_id: CHEBI:91249
-    ontology_label: ammonium molybdate
-    ontology_source: CHEBI
-    mapping_quality: CLOSE_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN 12054-85-2 present, but no CHEBI
-        entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 11
-        CultureBot media; samples: PM acetate, PM N2O, CAAc…. Curator can promote
-        to a CHEBI primary if/when CHEBI adds the term.'
-    - evidence_type: DATABASE_MATCH
-      source: CHEBI via OLS (stem-substring)
-      notes: Parent class identified via stem-substring; matched_via='ammonium molybdate
-        tetrahydrate'
-    - evidence_type: DATABASE_MATCH
-      source: MIM curation (#342)
-      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
-        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
-        than CHEBI:91249 (''ammonium molybdate'') — a subsumption ChEBI itself denies:
-        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
-        compound, which is not an ancestor even transitively. A hydrate is a distinct
-        substance containing the anhydrous form, not a specialization of it. closeMatch
-        claims similarity without subsumption. The ontology_id and the record''s own
-        identifier are unchanged.'
-  synonyms:
-  - synonym_text: bisammonium dioxido(dioxo)molybdenum
-    synonym_type: REJECTED_LABEL
-    source: chebi_synonym_review
-  - synonym_text: (NH4)6Mo7O4
-    synonym_type: RAW_TEXT
-    source: sssom_other_backfill
-  - synonym_text: (NH4)6Mo7O4 x 24 H2O
-    synonym_type: REJECTED_LABEL
-    source: sssom_other_backfill
-  - synonym_text: (NH4)6MoO24·4H2O
-    synonym_type: RAW_TEXT
-    source: sssom_other_backfill
-  - synonym_text: (NH4)6MoO7O24
-    synonym_type: RAW_TEXT
-    source: sssom_other_backfill
-  - synonym_text: (NH4)6MoO7O24 x 4 H2O
-    synonym_type: RAW_TEXT
-    source: sssom_other_backfill
-  - synonym_text: (NH4)Mo7O24·4H2O
-    synonym_type: RAW_TEXT
-    source: sssom_other_backfill
-  - synonym_text: (NH4)MoO7O24
-    synonym_type: RAW_TEXT
-    source: sssom_other_backfill
-  - synonym_text: (NH4)MoO7O24 x 4 H2O
-    synonym_type: RAW_TEXT
-    source: sssom_other_backfill
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 12
-    media_count: 12
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_FROM_CAS_FALLBACK
-    changes: Created with cas:12054-85-2 as primary identifier; no CHEBI entry exists
-      for this compound.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.157060+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
-    llm_assisted: false
-  - timestamp: '2026-05-02T02:51:46.884925+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
-    changes: molecular_formula=H32Mo7N6O28; smiles=N.N.N.N.N.N.O.O.O.O.O[Mo](=O)(=O)O.O[Mo](=O)(=O)O.;
-      inchi=InChI=1S/7Mo.6H3N.10H2O.18O/h;;;;;;;6*1H3;10*1H2;;
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.447070+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-05-02T04:39:54.900201+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_CHEBI
-    changes: set ontology_mapping parent=CHEBI:91249 (stem-substring)
-    llm_assisted: false
-  - timestamp: '2026-06-09T04:56:30.247767+00:00'
-    curator: claude_in_session_curation
-    action: ANNOTATED
-    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
-      nutritional_roles.TRACE_ELEMENT'
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: regrade_hydrate_to_close_match
-    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
-    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
-      subsumed by its anhydrous form, and ChEBI does not model it as such.
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.518346+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 11/11 -> 12/12 (media_count/total_occurrences),
-      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-      prior values came from the importer retired in #453, whose media_count counted
-      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-09-02T22:41:49.137449+00:00'
-    curator: claude_sssom_surface_form_backfill
-    action: ADDED_SYNONYMS
-    changes: 'Recovered 8 surface form(s) that the published SSSOM `other` carried
-      but no curated record did, so a rebuild would have dropped them from KGX: ''(NH4)6Mo7O4'';
-      ''(NH4)6Mo7O4 x 24 H2O''; ''(NH4)6MoO24·4H2O''; ''(NH4)6MoO7O24''; ''(NH4)6MoO7O24
-      x 4 H2O''; ''(NH4)Mo7O24·4H2O''; ''(NH4)MoO7O24''; ''(NH4)MoO7O24 x 4 H2O''.
-      Tokens already present on the kg-microbe ontology node were left out as redundant
-      (#520).'
-    llm_assisted: false
-  - timestamp: '2026-09-12T00:00:00+00:00'
-    curator: reject_hidden_hydrate_synonym_collapses
-    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
-    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
-      longer resolves sibling hydrate identities (#251): ''(NH4)6Mo7O4 x 24 H2O''.'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-09-22T20:41:14.285965+00:00'
-    curator: claude
-    action: REJECTED_PARENT_NAME_SYNONYMS
-    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
-      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
-      form and the label index resolved the parent''s name here (#232): ''bisammonium
-      dioxido(dioxo)molybdenum''. Preserved original text and source metadata. No
-      identity, mapping, role, or remaining-synonym claim was adjudicated.'
-    llm_assisted: true
-  chemical_properties:
-    cas_rn: 12054-85-2
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: H32Mo7N6O28
-    smiles: N.N.N.N.N.N.O.O.O.O.O[Mo](=O)(=O)O.O[Mo](=O)(=O)O.O[Mo](=O)(=O)O.O=[Mo](=O)=O.O=[Mo](=O)=O.O=[Mo](=O)=O.O=[Mo](=O)=O
-    inchi: InChI=1S/7Mo.6H3N.10H2O.18O/h;;;;;;;6*1H3;10*1H2;;;;;;;;;;;;;;;;;;/q;;;;3*+2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;/p-6
-    pubchem_cid: 16211167
-  ingredient_type: SINGLE_INGREDIENT
-  nutritional_roles:
-  - role: TRACE_ELEMENT
-    confidence: 0.6
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Assigned by in-session Claude reasoning (no external API)
-      curator_note: Provisional in-session LLM role assignment; review recommended.
 - identifier: CHEBI:156543
   preferred_term: ammonium persulfate
   ontology_mapping:
@@ -40173,66 +39788,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: cas:17659-49-3
-  preferred_term: Anisodamine Hydrobromide ()
-  ontology_mapping:
-    ontology_id: NCIT:C221850
-    ontology_label: Anisodamine Hydrobromide
-    ontology_source: NCIT
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT. CAS-RN 17659-49-3 present, but no CHEBI entry
-        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-        to a CHEBI primary if/when CHEBI adds the term.
-    - evidence_type: DATABASE_MATCH
-      source: NCIT via OLS (stem-substring)
-      notes: Parent class identified via stem-substring; matched_via='Anisodamine
-        Hydrobromide ()'
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_FROM_CAS_FALLBACK
-    changes: Created with cas:17659-49-3 as primary identifier; no CHEBI entry exists
-      for this compound.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.206263+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
-    llm_assisted: false
-  - timestamp: '2026-05-02T02:51:53.151451+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
-    changes: molecular_formula=C17H23NO4; smiles=CN1C2CC(CC1C(C2)O)OC(=O)C(CO)C3=CC=CC=C3;
-      inchi=InChI=1S/C17H23NO4/c1-18-12-7-13(9-15(18)16(20)8-1
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.511800+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-05-02T04:40:29.665007+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_NCIT
-    changes: set ontology_mapping parent=NCIT:C221850 (stem-substring)
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 17659-49-3
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C17H23NO4
-    smiles: CN1C2CC(CC1C(C2)O)OC(=O)C(CO)C3=CC=CC=C3
-    inchi: InChI=1S/C17H23NO4/c1-18-12-7-13(9-15(18)16(20)8-12)22-17(21)14(10-19)11-5-3-2-4-6-11/h2-6,12-16,19-20H,7-10H2,1H3/t12-,13-,14+,15+,16-/m0/s1
-    pubchem_cid: 6918612
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:193638
   preferred_term: anthranilamide
   ontology_mapping:
@@ -40661,85 +40216,6 @@ ingredients:
     inchi: InChI=1S/C12H14O4/c1-4-5-8-6-9(13-2)11-12(10(8)14-3)16-7-15-11/h4,6H,1,5,7H2,2-3H3
     smiles: C=CCc1cc(OC)c2c(c1OC)OCO2
   ingredient_type: SINGLE_INGREDIENT
-- identifier: cas:65710-07-8
-  preferred_term: Apramycin sulfate salt
-  ontology_mapping:
-    ontology_id: CHEBI:190734
-    ontology_label: Apramycin sulfate
-    ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT. CAS-RN 65710-07-8 present, but no CHEBI entry
-        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-        to a CHEBI primary if/when CHEBI adds the term.
-    - evidence_type: DATABASE_MATCH
-      source: CHEBI via PubChem (pubchem-xref)
-      notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 3081544'
-  synonyms:
-  - synonym_text: (2R,3R,4S,5S,6S)-2-[[(2R,3S,4R,4aR,6S,7R,8aS)-7-amino-6-[(1R,2R,3S,4R,6S)-4,6-diamino-2,3-dihydroxycyclohexyl]oxy-4-hydroxy-3-(methylamino)-2,3,4,4a,6,7,8,8a-octahydropyrano[3,2-b]pyran-2-yl]oxy]-5-amino-6-(hydroxymethyl)oxane-3,4-diol;suluric
-      acid
-    synonym_type: EXACT_SYNONYM
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_FROM_CAS_FALLBACK
-    changes: Created with cas:65710-07-8 as primary identifier; no CHEBI entry exists
-      for this compound.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.224615+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
-    llm_assisted: false
-  - timestamp: '2026-05-02T02:51:55.942540+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
-    changes: molecular_formula=C21H43N5O15S; smiles=CNC1C(C2C(CC(C(O2)OC3C(CC(C(C3O)O)N)N)N)OC1OC4C(C(;
-      inchi=InChI=1S/C21H41N5O11.H2O4S/c1-26-11-14(30)18-8(33-
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.537383+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-05-02T04:40:34.191234+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_CHEBI
-    changes: set ontology_mapping parent=CHEBI:190734 (pubchem-xref)
-    llm_assisted: false
-  - timestamp: '2026-06-02T07:05:13.386285+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
-      physicochemical_roles.SELECTIVE_AGENT'
-  chemical_properties:
-    cas_rn: 65710-07-8
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
-    molecular_formula: C21H43N5O15S
-    smiles: CNC1C(C2C(CC(C(O2)OC3C(CC(C(C3O)O)N)N)N)OC1OC4C(C(C(C(O4)CO)N)O)O)O.OS(=O)(=O)O
-    inchi: InChI=1S/C21H41N5O11.H2O4S/c1-26-11-14(30)18-8(33-20(11)37-21-16(32)13(29)10(25)9(4-27)34-21)3-7(24)19(36-18)35-17-6(23)2-5(22)12(28)15(17)31;1-5(2,3)4/h5-21,26-32H,2-4,22-25H2,1H3;(H2,1,2,3,4)/t5-,6+,7-,8+,9-,10-,11+,12+,13+,14-,15-,16-,17-,18+,19+,20-,21-;/m1./s1
-    pubchem_cid: 3081544
-  ingredient_type: SINGLE_INGREDIENT
-  physicochemical_roles:
-  - role: SELECTIVE_AGENT
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: cas:11078-27-6
   preferred_term: Arabinan from Sugar Beet
   ontology_mapping:
@@ -42495,86 +41971,6 @@ ingredients:
     retrieval_date: '2026-04-29T06:51:33.117170+00:00'
   ingredient_type: SINGLE_INGREDIENT
   representative: CHEBI:15930
-- identifier: mesh:C509797
-  preferred_term: Atrop Abyssomicin C
-  ontology_mapping:
-    ontology_id: mesh:C509797
-    ontology_label: abyssomicin C
-    ontology_source: MESH
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: kg-microbe metatraits unmapped_compounds.tsv
-      notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested
-        into MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
-        CHEBI:208735(Atrop-Abybetaomicin C), CHEBI:70593(Abyssomicin I), CHEBI:226794(Atrop-Ilyoresorcy
-        A). Pending curator promotion to a CHEBI/NCIT primary identifier.'
-    - evidence_type: DATABASE_MATCH
-      source: MESH via EBI OLS exact synonym search
-      notes: Promoted from kgmicrobe.compound:atrop_abyssomicin_c after OLS returned
-        mesh:C509797 with exact synonym "Atrop Abyssomicin C".
-  synonyms:
-  - synonym_text: atrop-abyssomicin C
-    synonym_type: EXACT_SYNONYM
-    source: unmapped_duplicate_review_2026_05_07
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-26T04:54:19.839959+00:00'
-    curator: audit_curate_unmapped_kgm_antibiotics
-    action: CREATED_FROM_KGM_PLACEHOLDER
-    changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:atrop_abyssomicin_c;
-      OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier
-      kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.285969+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder
-      (defined))
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.620645+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder
-      (defined))
-    llm_assisted: false
-  - timestamp: '2026-05-06T00:00:00+00:00'
-    curator: unknown_term_placeholder_ols_review
-    action: PROMOTED_FROM_KGM_PLACEHOLDER
-    changes: primary kgmicrobe.compound:atrop_abyssomicin_c → mesh:C509797 after EBI
-      OLS exact synonym match to "Atrop Abyssomicin C".
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-07T00:00:00+00:00'
-    curator: unmapped_duplicate_review_2026_05_07
-    action: MERGED_FROM_UNMAPPED_DUPLICATE
-    changes: Absorbed duplicate unmapped record Atrop-abyssomicin_C.yaml (UNMAPPED_0591);
-      MESH target mesh:C509797 resolves in EBI OLS and the source label is an exact
-      variant of the mapped record.
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-06-02T07:05:13.386427+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
-      physicochemical_roles.SELECTIVE_AGENT'
-  ingredient_type: SINGLE_INGREDIENT
-  physicochemical_roles:
-  - role: SELECTIVE_AGENT
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: CHEBI:134355
   preferred_term: Auraptene
   ontology_mapping:
@@ -45775,54 +45171,6 @@ ingredients:
     inchi: InChI=1S/C12H8O4/c1-14-12-7-2-3-11(13)16-10(7)6-9-8(12)4-5-15-9/h2-6H,1H3
     smiles: COc1c2ccoc2cc2oc(=O)ccc12
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:69499
-  preferred_term: Bergenin
-  ontology_mapping:
-    ontology_id: CHEBI:69499
-    ontology_label: Bergenin
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT.
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:04:17.380972+00:00'
-    curator: audit_integrate_culturebotht
-    action: CREATED_FROM_CULTUREBOTHT
-    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=108032-11-7); Imported
-      from CultureBotHT.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.378726+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.188343+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C14H16O9; inchi=InChI=1S/C14H16O9/c1-21-11-5(16)2-4-7(9(11)18)12-1;
-      smiles=[H][C@@]12O[C@H](CO)[C@@H](O)[C@H](O)[C@@]1([H])OC
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.774321+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 108032-11-7
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-    molecular_formula: C14H16O9
-    inchi: InChI=1S/C14H16O9/c1-21-11-5(16)2-4-7(9(11)18)12-13(23-14(4)20)10(19)8(17)6(3-15)22-12/h2,6,8,10,12-13,15-19H,3H2,1H3/t6-,8-,10+,12+,13-/m1/s1
-    smiles: '[H][C@@]12O[C@H](CO)[C@@H](O)[C@H](O)[C@@]1([H])OC(=O)c1cc(O)c(OC)c(O)c12'
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:53502
   preferred_term: beryllium sulfate tetrahydrate
   ontology_mapping:
@@ -47664,51 +47012,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: CHEBI:49235
-  preferred_term: Bisabolene
-  ontology_mapping:
-    ontology_id: CHEBI:49235
-    ontology_label: bisabolene
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT.
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:04:17.380972+00:00'
-    curator: audit_integrate_culturebotht
-    action: CREATED_FROM_CULTUREBOTHT
-    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=17627-44-0); Imported
-      from CultureBotHT.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.437721+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.250581+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C15H24
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:12.860415+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 17627-44-0
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-    molecular_formula: C15H24
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: cas:7787-60-2
   preferred_term: bismuth(III) chloride
   ontology_mapping:
@@ -54819,70 +54122,6 @@ ingredients:
   - role: MINERAL_SOURCE
     confidence: 0.8
     evidence: []
-- identifier: NCIT:C61062
-  preferred_term: Catalase
-  ontology_mapping:
-    ontology_id: NCIT:C61062
-    ontology_label: Catalase
-    ontology_source: NCIT
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureMech
-      notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
-  synonyms:
-  - synonym_text: 'Properties: Defined component, Simple component'
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  - synonym_text: 'Properties: Simple component, Defined component'
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  - synonym_text: Catalase (Sigma C--10)
-    synonym_type: CATALOG_VARIANT
-    source: culturemech:output/ingredient_occurrences.tsv
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 34
-    media_count: 34
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.659756+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.174638+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-06-10T06:49:42.119337+00:00'
-    curator: fix_dead_chebi_ids.py
-    action: CORRECTED
-    changes: 'identifier CHEBI:3463 -> NCIT:C61062 (Catalase, source NCIT): CHEBI:3463
-      is absent from current ChEBI (OLS4 404).'
-  - timestamp: '2026-08-27T03:16:39.518532+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 26/26 -> 34/34 (media_count/total_occurrences),
-      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-      prior values came from the importer retired in #453, whose media_count counted
-      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-08-30T04:48:06.233536+00:00'
-    curator: claude_culturemech_alias_backfill
-    action: ADDED_SYNONYMS
-    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
-      published label but were absent from MIM''s label index, so CultureMech could
-      not resolve them: ''Catalase (Sigma C--10)'' (x1 CultureMech mentions). Source:
-      culturemech:output/ingredient_occurrences.tsv.'
-    llm_assisted: false
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:86156
   preferred_term: Cd(NO3)2 x 4 H2O
   ontology_mapping:
@@ -219951,3 +219190,1151 @@ ingredients:
     data_source: CultureBotHT compounds_to_cas.csv row 784; corroborated by KNApSAcK
       C00013080 and PubChem CID 10977881
     retrieval_date: '2026-09-22T02:08:31.475368+00:00'
+- identifier: mesh:C559991
+  preferred_term: 3,4'-Dihydroxyflavone
+  ontology_mapping:
+    ontology_id: mesh:C559991
+    ontology_label: 3,4'-dihydroxyflavone
+    ontology_source: MESH
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: Imported from CultureBotHT. CAS-RN 14919-49-4 present, but no CHEBI entry
+        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+        to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: MESH via OLS (label-exact)
+      notes: Parent class identified via label-exact; matched_via="3,4'-Dihydroxyflavone"
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier cas:14919-49-4 -> mesh:C559991; ontology mesh:C559991 (''3,4''-dihydroxyflavone'')
+        -> mesh:C559991 (''3,4''-dihydroxyflavone''); mapping_quality NARROW_MATCH
+        -> EXACT_MATCH. mesh.db gives MESH:C559991 the label "3,4''-dihydroxyflavone",
+        identical to the record''s label and distinct from MESH:C028288 "3'',4''-dihydroxyflavone".
+        chebi.db has no term for this compound (CAS 14919-49-4 and the name resolve
+        to nothing). A broadMatch from a record to the same compound is false; Section
+        3 step 1 makes the MeSH term the identifier (68 records already carry mesh:
+        primaries) with EXACT_MATCH. The CAS stays in chemical_properties and on its
+        registry row; the kgmicrobe.compound row is dropped as #326 did for 72-Dihydroxyflavone.'
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_FROM_CAS_FALLBACK
+    changes: Created with cas:14919-49-4 as primary identifier; no CHEBI entry exists
+      for this compound.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:31.863369+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-05-02T02:51:22.040524+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+    changes: molecular_formula=C15H10O4; smiles=C1=CC=C2C(=C1)C(=O)C(=C(O2)C3=CC=C(C=C3)O)O;
+      inchi=InChI=1S/C15H10O4/c16-10-7-5-9(6-8-10)15-14(18)13(
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.033855+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-05-02T04:38:02.386202+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_MESH
+    changes: set ontology_mapping parent=mesh:C559991 (label-exact)
+    llm_assisted: false
+  - timestamp: '2026-09-23T00:44:54.166138+00:00'
+    curator: claude
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: 'identifier cas:14919-49-4 -> mesh:C559991; ontology mesh:C559991 (''3,4''-dihydroxyflavone'')
+      -> mesh:C559991 (''3,4''-dihydroxyflavone''); mapping_quality NARROW_MATCH ->
+      EXACT_MATCH. mesh.db gives MESH:C559991 the label "3,4''-dihydroxyflavone",
+      identical to the record''s label and distinct from MESH:C028288 "3'',4''-dihydroxyflavone".
+      chebi.db has no term for this compound (CAS 14919-49-4 and the name resolve
+      to nothing). A broadMatch from a record to the same compound is false; Section
+      3 step 1 makes the MeSH term the identifier (68 records already carry mesh:
+      primaries) with EXACT_MATCH. The CAS stays in chemical_properties and on its
+      registry row; the kgmicrobe.compound row is dropped as #326 did for 72-Dihydroxyflavone.
+      (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 14919-49-4
+    data_source: CultureBotHT compounds_to_cas.csv
+    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+    molecular_formula: C15H10O4
+    smiles: C1=CC=C2C(=C1)C(=O)C(=C(O2)C3=CC=C(C=C3)O)O
+    inchi: InChI=1S/C15H10O4/c16-10-7-5-9(6-8-10)15-14(18)13(17)11-3-1-2-4-12(11)19-15/h1-8,16,18H
+    pubchem_cid: 688715
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: CHEBI:58968
+  preferred_term: 4-Hydroxynonenal
+  ontology_mapping:
+    ontology_id: CHEBI:58968
+    ontology_label: (E)-4-hydroxynon-2-enal
+    ontology_source: CHEBI
+    mapping_quality: CAS_RN_LOOKUP
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: Imported from CultureBotHT.
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier CHEBI:142593 -> CHEBI:58968; ontology CHEBI:142593 (''4-hydroxynonenal'')
+        -> CHEBI:58968 (''(E)-4-hydroxynon-2-enal''); mapping_quality EXACT_MATCH
+        -> CAS_RN_LOOKUP. CHEBI:142593 ''4-hydroxynonenal'' is a class (definition:
+        double bond ''at any position''; wildcard SMILES ''*C([H])=O'', which had
+        been copied into the record; no InChIKey, no CAS). The record has carried
+        CAS 75899-68-2 since creation; PubChem resolves it to CID 5283344 with InChIKey
+        JVJFIQYAHPMBBX-FNORWQNLSA-N, which is CHEBI:58968 ''(E)-4-hydroxynon-2-enal''
+        (synonyms ''4-hydroxynonenal'', ''HNE''). Section 3 step 4''s evidence hatch:
+        the CAS picks the member. Structure fields refreshed from the term.'
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:04:17.380972+00:00'
+    curator: audit_integrate_culturebotht
+    action: CREATED_FROM_CULTUREBOTHT
+    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=75899-68-2); Imported
+      from CultureBotHT.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:31.892254+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:27.712527+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C9H16O2; smiles=*C([H])=O
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.077193+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-09-23T00:44:54.402559+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier CHEBI:142593 -> CHEBI:58968; ontology CHEBI:142593 (''4-hydroxynonenal'')
+      -> CHEBI:58968 (''(E)-4-hydroxynon-2-enal''); mapping_quality EXACT_MATCH ->
+      CAS_RN_LOOKUP. CHEBI:142593 ''4-hydroxynonenal'' is a class (definition: double
+      bond ''at any position''; wildcard SMILES ''*C([H])=O'', which had been copied
+      into the record; no InChIKey, no CAS). The record has carried CAS 75899-68-2
+      since creation; PubChem resolves it to CID 5283344 with InChIKey JVJFIQYAHPMBBX-FNORWQNLSA-N,
+      which is CHEBI:58968 ''(E)-4-hydroxynon-2-enal'' (synonyms ''4-hydroxynonenal'',
+      ''HNE''). Section 3 step 4''s evidence hatch: the CAS picks the member. Structure
+      fields refreshed from the term. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 75899-68-2
+    data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:58968
+      (#312)
+    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+    molecular_formula: C9H16O2
+    smiles: '[H]C(=O)/C=C/C(O)CCCCC'
+    inchi: InChI=1S/C9H16O2/c1-2-3-4-6-9(11)7-5-8-10/h5,7-9,11H,2-4,6H2,1H3/b7-5+
+    pubchem_cid: 5283344
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: CHEBI:87346
+  preferred_term: Acridine orange
+  ontology_mapping:
+    ontology_id: CHEBI:87346
+    ontology_label: acridine orange free base
+    ontology_source: CHEBI
+    mapping_quality: CAS_RN_LOOKUP
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: Imported from CultureBotHT.
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier CHEBI:51739 -> CHEBI:87346; ontology CHEBI:51739 (''acridine
+        orange'') -> CHEBI:87346 (''acridine orange free base''); mapping_quality
+        EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:51739 ''acridine orange'' is the hydrochloride
+        (formula H.C17H19N3.Cl, is_a hydrochloride); its formula, InChI, SMILES and
+        the ''tetramethylacridine-3,6-diamine hydrochloride'' synonym were copied
+        onto the record from the term. The record''s only source-supplied identity
+        evidence is CAS 494-38-2, which PubChem resolves to CID 62344, C17H19N3, InChIKey
+        DPKHZNPWBDQZCN-UHFFFAOYSA-N: CHEBI:87346 ''acridine orange free base'' (synonyms
+        ''Acridine Orange'', ''Acridine Orange Base''). ChEBI xrefs 494-38-2 on both
+        terms, so the PubChem InChIKey decides. The CAS governs the form (#320). Structure
+        fields refreshed from the term; the hydrochloride alias is REJECTED_LABEL.'
+  synonyms:
+  - synonym_text: N,N,N',N'-tetramethylacridine-3,6-diamine hydrochloride
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:04:17.380972+00:00'
+    curator: audit_integrate_culturebotht
+    action: CREATED_FROM_CULTUREBOTHT
+    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=494-38-2); Imported
+      from CultureBotHT.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.038135+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:27.867421+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=H.C17H19N3.Cl; inchi=InChI=1S/C17H19N3.ClH/c1-19(2)14-7-5-12-9-13-6-8-1;
+      smiles=CN(C)c1ccc2cc3ccc(N(C)C)cc3nc2c1.[Cl-].[H+]
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.281806+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-09-23T00:44:54.408844+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier CHEBI:51739 -> CHEBI:87346; ontology CHEBI:51739 (''acridine
+      orange'') -> CHEBI:87346 (''acridine orange free base''); mapping_quality EXACT_MATCH
+      -> CAS_RN_LOOKUP. CHEBI:51739 ''acridine orange'' is the hydrochloride (formula
+      H.C17H19N3.Cl, is_a hydrochloride); its formula, InChI, SMILES and the ''tetramethylacridine-3,6-diamine
+      hydrochloride'' synonym were copied onto the record from the term. The record''s
+      only source-supplied identity evidence is CAS 494-38-2, which PubChem resolves
+      to CID 62344, C17H19N3, InChIKey DPKHZNPWBDQZCN-UHFFFAOYSA-N: CHEBI:87346 ''acridine
+      orange free base'' (synonyms ''Acridine Orange'', ''Acridine Orange Base'').
+      ChEBI xrefs 494-38-2 on both terms, so the PubChem InChIKey decides. The CAS
+      governs the form (#320). Structure fields refreshed from the term; the hydrochloride
+      alias is REJECTED_LABEL. (#312) REJECTED_LABEL: N,N,N'',N''-tetramethylacridine-3,6-diamine
+      hydrochloride (names the hydrochloride CHEBI:51739, not the free base).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 494-38-2
+    data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:87346
+      (#312)
+    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+    molecular_formula: C17H19N3
+    inchi: InChI=1S/C17H19N3/c1-19(2)14-7-5-12-9-13-6-8-15(20(3)4)11-17(13)18-16(12)10-14/h5-11H,1-4H3
+    smiles: CN(C)c1ccc2cc3ccc(N(C)C)cc3nc2c1
+    pubchem_cid: 62344
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: CHEBI:74768
+  preferred_term: Aluminium sulfate
+  ontology_mapping:
+    ontology_id: CHEBI:74768
+    ontology_label: aluminium sulfate (anhydrous)
+    ontology_source: CHEBI
+    mapping_quality: CAS_RN_LOOKUP
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: 'Imported from CultureBotHT. Used in 1 CultureBot media; samples: FW104
+        COMM.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier CHEBI:74772 -> CHEBI:74768; ontology CHEBI:74772 (''aluminium
+        sulfate'') -> CHEBI:74768 (''aluminium sulfate (anhydrous)''); mapping_quality
+        EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:74772 ''aluminium sulfate'' is a class
+        (''any inorganic sulfate salt ...''; no formula, InChIKey or CAS) with three
+        members: anhydrous, hexadecahydrate, octadecahydrate. The record''s CAS 10043-01-3
+        came from the CultureBotHT source row with FW 342.15, the anhydrous mass,
+        and ChEBI xrefs that CAS on exactly one term, CHEBI:74768 ''aluminium sulfate
+        (anhydrous)''. Section 3 step 4''s evidence hatch: the CAS picks the member;
+        the mapping was lexical, so the CAS is independent evidence.'
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 1
+    media_count: 1
+  curation_history:
+  - timestamp: '2026-04-29T06:04:17.380972+00:00'
+    curator: audit_integrate_culturebotht
+    action: CREATED_FROM_CULTUREBOTHT
+    changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=10043-01-3); Imported
+      from CultureBotHT. Used in 1 CultureBot media; samples: FW104 COMM.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.144614+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.426848+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-09-23T00:44:54.446218+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier CHEBI:74772 -> CHEBI:74768; ontology CHEBI:74772 (''aluminium
+      sulfate'') -> CHEBI:74768 (''aluminium sulfate (anhydrous)''); mapping_quality
+      EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:74772 ''aluminium sulfate'' is a class (''any
+      inorganic sulfate salt ...''; no formula, InChIKey or CAS) with three members:
+      anhydrous, hexadecahydrate, octadecahydrate. The record''s CAS 10043-01-3 came
+      from the CultureBotHT source row with FW 342.15, the anhydrous mass, and ChEBI
+      xrefs that CAS on exactly one term, CHEBI:74768 ''aluminium sulfate (anhydrous)''.
+      Section 3 step 4''s evidence hatch: the CAS picks the member; the mapping was
+      lexical, so the CAS is independent evidence. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 10043-01-3
+    data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:74768
+      (#312)
+    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+    molecular_formula: 2Al.3O4S
+    inchi: InChI=1S/2Al.3H2O4S/c;;3*1-5(2,3)4/h;;3*(H2,1,2,3,4)/q2*+3;;;/p-6
+    smiles: O=S(=O)([O-])[O-].O=S(=O)([O-])[O-].O=S(=O)([O-])[O-].[Al+3].[Al+3]
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: CHEBI:86244
+  preferred_term: ammonium molybdate tetrahydrate
+  ontology_mapping:
+    ontology_id: CHEBI:86244
+    ontology_label: hexaammonium heptamolybdate tetrahydrate
+    ontology_source: CHEBI
+    mapping_quality: SYNONYM_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: 'Imported from CultureBotHT. CAS-RN 12054-85-2 present, but no CHEBI
+        entry exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Used in 11
+        CultureBot media; samples: PM acetate, PM N2O, CAAc…. Curator can promote
+        to a CHEBI primary if/when CHEBI adds the term.'
+    - evidence_type: DATABASE_MATCH
+      source: CHEBI via OLS (stem-substring)
+      notes: Parent class identified via stem-substring; matched_via='ammonium molybdate
+        tetrahydrate'
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#342)
+      notes: 'mapping_quality NARROW_MATCH -> CLOSE_MATCH, predicate skos:narrowMatch
+        -> skos:closeMatch. narrowMatch asserts this record is *narrower in meaning*
+        than CHEBI:91249 (''ammonium molybdate'') — a subsumption ChEBI itself denies:
+        it files hydrates under CHEBI:35505 ''hydrate'', never under the anhydrous
+        compound, which is not an ancestor even transitively. A hydrate is a distinct
+        substance containing the anhydrous form, not a specialization of it. closeMatch
+        claims similarity without subsumption. The ontology_id and the record''s own
+        identifier are unchanged.'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier cas:12054-85-2 -> CHEBI:86244; ontology CHEBI:91249 (''ammonium
+        molybdate'') -> CHEBI:86244 (''hexaammonium heptamolybdate tetrahydrate'');
+        mapping_quality CLOSE_MATCH -> SYNONYM_MATCH. The record (H32Mo7N6O28, CAS
+        12054-85-2) is the heptamolybdate; CHEBI:91249 ''ammonium molybdate'' is the
+        diammonium orthomolybdate (2H4N.MoO4, one Mo), a different polyanion, not
+        the anhydrous parent of this hydrate. ChEBI has the substance: CHEBI:86244
+        ''hexaammonium heptamolybdate tetrahydrate'' (4H2O.6H4N.Mo7O24) carries the
+        related synonym ''ammonium molybdate tetrahydrate'', the record''s exact label,
+        on no other term. Section 3 step 1 with a unique synonym: SYNONYM_MATCH. The
+        CAS stays on its registry row.'
+  synonyms:
+  - synonym_text: bisammonium dioxido(dioxo)molybdenum
+    synonym_type: REJECTED_LABEL
+    source: chebi_synonym_review
+  - synonym_text: (NH4)6Mo7O4
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)6Mo7O4 x 24 H2O
+    synonym_type: REJECTED_LABEL
+    source: sssom_other_backfill
+  - synonym_text: (NH4)6MoO24·4H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)6MoO7O24
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)6MoO7O24 x 4 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)Mo7O24·4H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)MoO7O24
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: (NH4)MoO7O24 x 4 H2O
+    synonym_type: RAW_TEXT
+    source: sssom_other_backfill
+  - synonym_text: ammonium heptamolybdate tetrahydrate
+    synonym_type: RELATED_SYNONYM
+    source: CHEBI:86244
+  - synonym_text: ammonium paramolybdate tetrahydrate
+    synonym_type: RELATED_SYNONYM
+    source: CHEBI:86244
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 12
+    media_count: 12
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_FROM_CAS_FALLBACK
+    changes: Created with cas:12054-85-2 as primary identifier; no CHEBI entry exists
+      for this compound.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.157060+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-05-02T02:51:46.884925+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+    changes: molecular_formula=H32Mo7N6O28; smiles=N.N.N.N.N.N.O.O.O.O.O[Mo](=O)(=O)O.O[Mo](=O)(=O)O.;
+      inchi=InChI=1S/7Mo.6H3N.10H2O.18O/h;;;;;;;6*1H3;10*1H2;;
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.447070+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-05-02T04:39:54.900201+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_CHEBI
+    changes: set ontology_mapping parent=CHEBI:91249 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-06-09T04:56:30.247767+00:00'
+    curator: claude_in_session_curation
+    action: ANNOTATED
+    changes: 'Added media role: TRACE_ELEMENT (confidence: 0.60)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): TRACE_ELEMENT ->
+      nutritional_roles.TRACE_ELEMENT'
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: regrade_hydrate_to_close_match
+    action: REGRADED_HYDRATE_TO_CLOSE_MATCH
+    changes: mapping_quality NARROW_MATCH -> CLOSE_MATCH (#342); a hydrate is not
+      subsumed by its anhydrous form, and ChEBI does not model it as such.
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.518346+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 11/11 -> 12/12 (media_count/total_occurrences),
+      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+      prior values came from the importer retired in #453, whose media_count counted
+      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-02T22:41:49.137449+00:00'
+    curator: claude_sssom_surface_form_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Recovered 8 surface form(s) that the published SSSOM `other` carried
+      but no curated record did, so a rebuild would have dropped them from KGX: ''(NH4)6Mo7O4'';
+      ''(NH4)6Mo7O4 x 24 H2O''; ''(NH4)6MoO24·4H2O''; ''(NH4)6MoO7O24''; ''(NH4)6MoO7O24
+      x 4 H2O''; ''(NH4)Mo7O24·4H2O''; ''(NH4)MoO7O24''; ''(NH4)MoO7O24 x 4 H2O''.
+      Tokens already present on the kg-microbe ontology node were left out as redundant
+      (#520).'
+    llm_assisted: false
+  - timestamp: '2026-09-12T00:00:00+00:00'
+    curator: reject_hidden_hydrate_synonym_collapses
+    action: REJECTED_HIDDEN_HYDRATE_SYNONYMS
+    changes: 'Marked hidden hydrate synonym(s) as REJECTED_LABEL so this record no
+      longer resolves sibling hydrate identities (#251): ''(NH4)6Mo7O4 x 24 H2O''.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-09-22T20:41:14.285965+00:00'
+    curator: claude
+    action: REJECTED_PARENT_NAME_SYNONYMS
+    changes: 'Retyped names of the parent compound or of a different hydrate as provenance-only
+      REJECTED_LABEL, because this record is a distinct salt, hydrate or tombstone
+      form and the label index resolved the parent''s name here (#232): ''bisammonium
+      dioxido(dioxo)molybdenum''. Preserved original text and source metadata. No
+      identity, mapping, role, or remaining-synonym claim was adjudicated.'
+    llm_assisted: true
+  - timestamp: '2026-09-23T00:44:54.421176+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier cas:12054-85-2 -> CHEBI:86244; ontology CHEBI:91249 (''ammonium
+      molybdate'') -> CHEBI:86244 (''hexaammonium heptamolybdate tetrahydrate'');
+      mapping_quality CLOSE_MATCH -> SYNONYM_MATCH. The record (H32Mo7N6O28, CAS 12054-85-2)
+      is the heptamolybdate; CHEBI:91249 ''ammonium molybdate'' is the diammonium
+      orthomolybdate (2H4N.MoO4, one Mo), a different polyanion, not the anhydrous
+      parent of this hydrate. ChEBI has the substance: CHEBI:86244 ''hexaammonium
+      heptamolybdate tetrahydrate'' (4H2O.6H4N.Mo7O24) carries the related synonym
+      ''ammonium molybdate tetrahydrate'', the record''s exact label, on no other
+      term. Section 3 step 1 with a unique synonym: SYNONYM_MATCH. The CAS stays on
+      its registry row. (#312) Synonyms added: ammonium heptamolybdate tetrahydrate,
+      ammonium paramolybdate tetrahydrate.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 12054-85-2
+    data_source: CultureBotHT compounds_to_cas.csv
+    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+    molecular_formula: H32Mo7N6O28
+    smiles: N.N.N.N.N.N.O.O.O.O.O[Mo](=O)(=O)O.O[Mo](=O)(=O)O.O[Mo](=O)(=O)O.O=[Mo](=O)=O.O=[Mo](=O)=O.O=[Mo](=O)=O.O=[Mo](=O)=O
+    inchi: InChI=1S/7Mo.6H3N.10H2O.18O/h;;;;;;;6*1H3;10*1H2;;;;;;;;;;;;;;;;;;/q;;;;3*+2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;/p-6
+    pubchem_cid: 16211167
+  ingredient_type: SINGLE_INGREDIENT
+  nutritional_roles:
+  - role: TRACE_ELEMENT
+    confidence: 0.6
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Assigned by in-session Claude reasoning (no external API)
+      curator_note: Provisional in-session LLM role assignment; review recommended.
+- identifier: NCIT:C221850
+  preferred_term: Anisodamine Hydrobromide
+  ontology_mapping:
+    ontology_id: NCIT:C221850
+    ontology_label: Anisodamine Hydrobromide
+    ontology_source: NCIT
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: Imported from CultureBotHT. CAS-RN 17659-49-3 present, but no CHEBI entry
+        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+        to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: NCIT via OLS (stem-substring)
+      notes: 'SUPERSEDED (#312): Parent class identified via stem-substring; matched_via=''Anisodamine
+        Hydrobromide ()'''
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier cas:17659-49-3 -> NCIT:C221850; ontology NCIT:C221850 (''Anisodamine
+        Hydrobromide'') -> NCIT:C221850 (''Anisodamine Hydrobromide''); mapping_quality
+        NARROW_MATCH -> EXACT_MATCH. The label is the hydrobromide; the identifier
+        cas:17659-49-3 is the free base (PubChem CID 2198, C17H23NO4, no bromine),
+        so the published exactMatch asserted identity between a salt and its free
+        base. NCIT:C221850 has the label ''Anisodamine Hydrobromide'' exactly, once
+        the empty ''()'' ingest artefact is stripped from the record''s label (kept
+        as RAW_TEXT). Section 3 step 1: the NCIT term is the identifier, EXACT_MATCH.
+        The salt''s CAS is 55449-49-5 (PubChem CID 118856046, C17H24BrNO4); the free-base
+        InChI/SMILES are dropped and 17659-49-3 is recorded in the note as the upstream
+        free-base CAS, not as identity.'
+  synonyms:
+  - synonym_text: Anisodamine Hydrobromide ()
+    synonym_type: RAW_TEXT
+    source: CultureBotHT
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_FROM_CAS_FALLBACK
+    changes: Created with cas:17659-49-3 as primary identifier; no CHEBI entry exists
+      for this compound.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.206263+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-05-02T02:51:53.151451+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+    changes: molecular_formula=C17H23NO4; smiles=CN1C2CC(CC1C(C2)O)OC(=O)C(CO)C3=CC=CC=C3;
+      inchi=InChI=1S/C17H23NO4/c1-18-12-7-13(9-15(18)16(20)8-1
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.511800+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-05-02T04:40:29.665007+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_NCIT
+    changes: set ontology_mapping parent=NCIT:C221850 (stem-substring)
+    llm_assisted: false
+  - timestamp: '2026-09-23T00:44:54.439691+00:00'
+    curator: claude
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: 'identifier cas:17659-49-3 -> NCIT:C221850; ontology NCIT:C221850 (''Anisodamine
+      Hydrobromide'') -> NCIT:C221850 (''Anisodamine Hydrobromide''); mapping_quality
+      NARROW_MATCH -> EXACT_MATCH. The label is the hydrobromide; the identifier cas:17659-49-3
+      is the free base (PubChem CID 2198, C17H23NO4, no bromine), so the published
+      exactMatch asserted identity between a salt and its free base. NCIT:C221850
+      has the label ''Anisodamine Hydrobromide'' exactly, once the empty ''()'' ingest
+      artefact is stripped from the record''s label (kept as RAW_TEXT). Section 3
+      step 1: the NCIT term is the identifier, EXACT_MATCH. The salt''s CAS is 55449-49-5
+      (PubChem CID 118856046, C17H24BrNO4); the free-base InChI/SMILES are dropped
+      and 17659-49-3 is recorded in the note as the upstream free-base CAS, not as
+      identity. (#312) preferred_term ''Anisodamine Hydrobromide ()'' -> ''Anisodamine
+      Hydrobromide''; the raw string is kept as RAW_TEXT.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 55449-49-5
+    data_source: PubChem CID 118856046 (anisodamine hydrobromide) via CAS 55449-49-5;
+      upstream CultureBotHT row carried the free-base CAS 17659-49-3
+    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+    molecular_formula: C17H24BrNO4
+    pubchem_cid: 118856046
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: CHEBI:190734
+  preferred_term: Apramycin sulfate salt
+  ontology_mapping:
+    ontology_id: CHEBI:190734
+    ontology_label: Apramycin sulfate
+    ontology_source: CHEBI
+    mapping_quality: CAS_RN_LOOKUP
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: Imported from CultureBotHT. CAS-RN 65710-07-8 present, but no CHEBI entry
+        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
+        to a CHEBI primary if/when CHEBI adds the term.
+    - evidence_type: DATABASE_MATCH
+      source: CHEBI via PubChem (pubchem-xref)
+      notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 3081544'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier cas:65710-07-8 -> CHEBI:190734; ontology CHEBI:190734 (''Apramycin
+        sulfate'') -> CHEBI:190734 (''Apramycin sulfate''); mapping_quality NARROW_MATCH
+        -> CAS_RN_LOOKUP. The ''no CHEBI entry exists'' note was wrong: CHEBI:190734
+        ''Apramycin sulfate'' (C21H41N5O11.H2O4S = the record''s C21H43N5O15S) has
+        InChIKey WGLYHYWDYPSNPF-RQFIXDHTSA-N, and the record''s CAS 65710-07-8 resolves
+        on PubChem (CID 3081544) to the same InChIKey. The broadMatch parent is the
+        substance itself; Section 3 step 1 promotes it to the identifier (#326 precedent),
+        graded CAS_RN_LOOKUP because the CAS, not the label, established it. The CAS
+        stays on its registry row; the kgmicrobe.compound row is dropped.'
+  synonyms:
+  - synonym_text: (2R,3R,4S,5S,6S)-2-[[(2R,3S,4R,4aR,6S,7R,8aS)-7-amino-6-[(1R,2R,3S,4R,6S)-4,6-diamino-2,3-dihydroxycyclohexyl]oxy-4-hydroxy-3-(methylamino)-2,3,4,4a,6,7,8,8a-octahydropyrano[3,2-b]pyran-2-yl]oxy]-5-amino-6-(hydroxymethyl)oxane-3,4-diol;suluric
+      acid
+    synonym_type: EXACT_SYNONYM
+    source: chebi_synonym_review
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_FROM_CAS_FALLBACK
+    changes: Created with cas:65710-07-8 as primary identifier; no CHEBI entry exists
+      for this compound.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.224615+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-05-02T02:51:55.942540+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_PUBCHEM_CHEMISTRY
+    changes: molecular_formula=C21H43N5O15S; smiles=CNC1C(C2C(CC(C(O2)OC3C(CC(C(C3O)O)N)N)N)OC1OC4C(C(;
+      inchi=InChI=1S/C21H41N5O11.H2O4S/c1-26-11-14(30)18-8(33-
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.537383+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-05-02T04:40:34.191234+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_CHEBI
+    changes: set ontology_mapping parent=CHEBI:190734 (pubchem-xref)
+    llm_assisted: false
+  - timestamp: '2026-06-02T07:05:13.386285+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+      physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-09-23T00:44:54.453584+00:00'
+    curator: claude
+    action: REGRADED_PARENT_TO_IDENTITY
+    changes: 'identifier cas:65710-07-8 -> CHEBI:190734; ontology CHEBI:190734 (''Apramycin
+      sulfate'') -> CHEBI:190734 (''Apramycin sulfate''); mapping_quality NARROW_MATCH
+      -> CAS_RN_LOOKUP. The ''no CHEBI entry exists'' note was wrong: CHEBI:190734
+      ''Apramycin sulfate'' (C21H41N5O11.H2O4S = the record''s C21H43N5O15S) has InChIKey
+      WGLYHYWDYPSNPF-RQFIXDHTSA-N, and the record''s CAS 65710-07-8 resolves on PubChem
+      (CID 3081544) to the same InChIKey. The broadMatch parent is the substance itself;
+      Section 3 step 1 promotes it to the identifier (#326 precedent), graded CAS_RN_LOOKUP
+      because the CAS, not the label, established it. The CAS stays on its registry
+      row; the kgmicrobe.compound row is dropped. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 65710-07-8
+    data_source: CultureBotHT compounds_to_cas.csv
+    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+    molecular_formula: C21H43N5O15S
+    smiles: CNC1C(C2C(CC(C(O2)OC3C(CC(C(C3O)O)N)N)N)OC1OC4C(C(C(C(O4)CO)N)O)O)O.OS(=O)(=O)O
+    inchi: InChI=1S/C21H41N5O11.H2O4S/c1-26-11-14(30)18-8(33-20(11)37-21-16(32)13(29)10(25)9(4-27)34-21)3-7(24)19(36-18)35-17-6(23)2-5(22)12(28)15(17)31;1-5(2,3)4/h5-21,26-32H,2-4,22-25H2,1H3;(H2,1,2,3,4)/t5-,6+,7-,8+,9-,10-,11+,12+,13+,14-,15-,16-,17-,18+,19+,20-,21-;/m1./s1
+    pubchem_cid: 3081544
+  ingredient_type: SINGLE_INGREDIENT
+  physicochemical_roles:
+  - role: SELECTIVE_AGENT
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- identifier: CHEBI:208735
+  preferred_term: Atrop Abyssomicin C
+  ontology_mapping:
+    ontology_id: CHEBI:208735
+    ontology_label: Atrop-Abybetaomicin C
+    ontology_source: CHEBI
+    mapping_quality: MANUAL_CURATION
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: kg-microbe metatraits unmapped_compounds.tsv
+      notes: 'Imported from kg-microbe''s unmapped placeholder namespace. Ingested
+        into MIM''s pipeline; confidence=LOW; rationale=5 candidates; top OLS candidates:
+        CHEBI:208735(Atrop-Abybetaomicin C), CHEBI:70593(Abyssomicin I), CHEBI:226794(Atrop-Ilyoresorcy
+        A). Pending curator promotion to a CHEBI/NCIT primary identifier.'
+    - evidence_type: DATABASE_MATCH
+      source: MESH via EBI OLS exact synonym search
+      notes: Promoted from kgmicrobe.compound:atrop_abyssomicin_c after OLS returned
+        mesh:C509797 with exact synonym "Atrop Abyssomicin C".
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier mesh:C509797 -> CHEBI:208735; ontology mesh:C509797 (''abyssomicin
+        C'') -> CHEBI:208735 (''Atrop-Abybetaomicin C''); mapping_quality EXACT_MATCH
+        -> MANUAL_CURATION. MeSH SCR C509797 is ''abyssomicin C''; NLM lists ''atrop-abyssomicin
+        C'' as a separate, narrower concept (M0511053) that OLS flattened into a synonym,
+        so the record sat on the broader compound. ChEBI has the atropisomer as CHEBI:208735
+        ''Atrop-Abybetaomicin C'' (the label''s ''ss'' was corrupted to ''beta'' upstream),
+        C19H22O6, InChIKey FNEADFUPWHAVTA-PLNGDYQASA-N, which equals PubChem CID 23232701
+        ''atrop-abyssomicin C''. No name matches lexically because of the corruption
+        and the record has no CAS, so the grade is MANUAL_CURATION: identity rests
+        on the InChIKey/IUPAC agreement.'
+  synonyms:
+  - synonym_text: atrop-abyssomicin C
+    synonym_type: EXACT_SYNONYM
+    source: unmapped_duplicate_review_2026_05_07
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-26T04:54:19.839959+00:00'
+    curator: audit_curate_unmapped_kgm_antibiotics
+    action: CREATED_FROM_KGM_PLACEHOLDER
+    changes: 'Created MIM record from kg-microbe placeholder kgmicrobe.compound:atrop_abyssomicin_c;
+      OLS search across CHEBI+NCIT returned LOW-confidence (5 candidates). Identifier
+      kept as kgmicrobe.compound: until upstream curation finds a CHEBI/NCIT primary.'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.285969+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder
+      (defined))
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.620645+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (kgmicrobe.compound placeholder
+      (defined))
+    llm_assisted: false
+  - timestamp: '2026-05-06T00:00:00+00:00'
+    curator: unknown_term_placeholder_ols_review
+    action: PROMOTED_FROM_KGM_PLACEHOLDER
+    changes: primary kgmicrobe.compound:atrop_abyssomicin_c → mesh:C509797 after EBI
+      OLS exact synonym match to "Atrop Abyssomicin C".
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-07T00:00:00+00:00'
+    curator: unmapped_duplicate_review_2026_05_07
+    action: MERGED_FROM_UNMAPPED_DUPLICATE
+    changes: Absorbed duplicate unmapped record Atrop-abyssomicin_C.yaml (UNMAPPED_0591);
+      MESH target mesh:C509797 resolves in EBI OLS and the source label is an exact
+      variant of the mapped record.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-06-02T07:05:13.386427+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: SELECTIVE_AGENT (confidence: 0.80)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): SELECTIVE_AGENT ->
+      physicochemical_roles.SELECTIVE_AGENT'
+  - timestamp: '2026-09-23T00:44:54.462592+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier mesh:C509797 -> CHEBI:208735; ontology mesh:C509797 (''abyssomicin
+      C'') -> CHEBI:208735 (''Atrop-Abybetaomicin C''); mapping_quality EXACT_MATCH
+      -> MANUAL_CURATION. MeSH SCR C509797 is ''abyssomicin C''; NLM lists ''atrop-abyssomicin
+      C'' as a separate, narrower concept (M0511053) that OLS flattened into a synonym,
+      so the record sat on the broader compound. ChEBI has the atropisomer as CHEBI:208735
+      ''Atrop-Abybetaomicin C'' (the label''s ''ss'' was corrupted to ''beta'' upstream),
+      C19H22O6, InChIKey FNEADFUPWHAVTA-PLNGDYQASA-N, which equals PubChem CID 23232701
+      ''atrop-abyssomicin C''. No name matches lexically because of the corruption
+      and the record has no CAS, so the grade is MANUAL_CURATION: identity rests on
+      the InChIKey/IUPAC agreement. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  ingredient_type: SINGLE_INGREDIENT
+  physicochemical_roles:
+  - role: SELECTIVE_AGENT
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+  chemical_properties:
+    molecular_formula: C19H22O6
+    inchi: InChI=1S/C19H22O6/c1-8-6-9(2)14(21)13-17-19(25-18(13)23)7-10(3)16(24-17)15(22)11(19)4-5-12(8)20/h4-5,8-11,15-16,22H,6-7H2,1-3H3/b5-4-
+    smiles: CC1CC(C)C(=O)C2=C3OC4C(C)CC3(OC2=O)C(/C=CC1=O)C4O
+    data_source: structure from chebi.db CHEBI:208735 (#312)
+    pubchem_cid: 23232701
+- identifier: cas:108032-11-7
+  preferred_term: Bergenin
+  ontology_mapping:
+    ontology_id: CHEBI:69499
+    ontology_label: Bergenin
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: Imported from CultureBotHT.
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier CHEBI:69499 -> cas:108032-11-7; ontology CHEBI:69499 (''Bergenin'')
+        -> CHEBI:69499 (''Bergenin''); mapping_quality EXACT_MATCH -> NARROW_MATCH.
+        The record''s only source-supplied identity is CAS 108032-11-7, which PubChem
+        resolves to CID 201412, C14H18O10: bergenin monohydrate (C14H16O9.H2O, MW
+        346.29). CHEBI:69499 ''Bergenin'' is the anhydrous compound (C14H16O9, cas
+        477-90-7), whose InChI/SMILES had been copied onto the record. ChEBI has no
+        hydrate term, so Section 3 step 2 applies: identifier cas:108032-11-7, broadMatch
+        to CHEBI:69499 as the nearest parent, Rule B1 registry row. The CAS governs
+        the form (#320). Formula corrected to the monohydrate; the anhydrous InChI/SMILES
+        are dropped.'
+  synonyms:
+  - synonym_text: Bergenin monohydrate
+    synonym_type: EXACT_SYNONYM
+    source: PubChem CID 201412
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:04:17.380972+00:00'
+    curator: audit_integrate_culturebotht
+    action: CREATED_FROM_CULTUREBOTHT
+    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=108032-11-7); Imported
+      from CultureBotHT.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.378726+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.188343+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C14H16O9; inchi=InChI=1S/C14H16O9/c1-21-11-5(16)2-4-7(9(11)18)12-1;
+      smiles=[H][C@@]12O[C@H](CO)[C@@H](O)[C@H](O)[C@@]1([H])OC
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.774321+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-09-23T00:44:54.478367+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier CHEBI:69499 -> cas:108032-11-7; ontology CHEBI:69499 (''Bergenin'')
+      -> CHEBI:69499 (''Bergenin''); mapping_quality EXACT_MATCH -> NARROW_MATCH.
+      The record''s only source-supplied identity is CAS 108032-11-7, which PubChem
+      resolves to CID 201412, C14H18O10: bergenin monohydrate (C14H16O9.H2O, MW 346.29).
+      CHEBI:69499 ''Bergenin'' is the anhydrous compound (C14H16O9, cas 477-90-7),
+      whose InChI/SMILES had been copied onto the record. ChEBI has no hydrate term,
+      so Section 3 step 2 applies: identifier cas:108032-11-7, broadMatch to CHEBI:69499
+      as the nearest parent, Rule B1 registry row. The CAS governs the form (#320).
+      Formula corrected to the monohydrate; the anhydrous InChI/SMILES are dropped.
+      (#312) Synonyms added: Bergenin monohydrate.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 108032-11-7
+    data_source: CultureBotHT compounds_to_cas.csv (CAS); PubChem CID 201412 (monohydrate
+      formula)
+    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+    molecular_formula: C14H18O10
+    pubchem_cid: 201412
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: CHEBI:49240
+  preferred_term: Bisabolene
+  ontology_mapping:
+    ontology_id: CHEBI:49240
+    ontology_label: alpha-bisabolene
+    ontology_source: CHEBI
+    mapping_quality: CAS_RN_LOOKUP
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: Imported from CultureBotHT.
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier CHEBI:49235 -> CHEBI:49240; ontology CHEBI:49235 (''bisabolene'')
+        -> CHEBI:49240 (''alpha-bisabolene''); mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP.
+        CHEBI:49235 ''bisabolene'' is a class (formula only, no InChIKey, no CAS;
+        members alpha, beta, gamma). The record was created from CultureBotHT with
+        CAS 17627-44-0, which ChEBI xrefs on exactly one term, CHEBI:49240 ''alpha-bisabolene''.
+        Section 3 step 4''s evidence hatch: the CAS picks the member. Structure fields
+        filled from the term.'
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:04:17.380972+00:00'
+    curator: audit_integrate_culturebotht
+    action: CREATED_FROM_CULTUREBOTHT
+    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=17627-44-0); Imported
+      from CultureBotHT.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.437721+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.250581+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C15H24
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:12.860415+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-09-23T00:44:54.470212+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier CHEBI:49235 -> CHEBI:49240; ontology CHEBI:49235 (''bisabolene'')
+      -> CHEBI:49240 (''alpha-bisabolene''); mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP.
+      CHEBI:49235 ''bisabolene'' is a class (formula only, no InChIKey, no CAS; members
+      alpha, beta, gamma). The record was created from CultureBotHT with CAS 17627-44-0,
+      which ChEBI xrefs on exactly one term, CHEBI:49240 ''alpha-bisabolene''. Section
+      3 step 4''s evidence hatch: the CAS picks the member. Structure fields filled
+      from the term. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 17627-44-0
+    data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:49240
+      (#312)
+    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+    molecular_formula: C15H24
+    inchi: InChI=1S/C15H24/c1-12(2)6-5-7-14(4)15-10-8-13(3)9-11-15/h6-8,15H,5,9-11H2,1-4H3
+    smiles: CC(C)=CCC=C(C)C1CC=C(C)CC1
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: cas:9001-05-2
+  preferred_term: Catalase
+  ontology_mapping:
+    ontology_id: mesh:D002374
+    ontology_label: Catalase
+    ontology_source: MESH
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureMech
+      notes: 'SUPERSEDED (#312): Imported from CultureMech pipeline, quality=DIRECT_MATCH'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier NCIT:C61062 -> cas:9001-05-2; ontology NCIT:C61062 (''Catalase'')
+        -> mesh:D002374 (''Catalase''); mapping_quality EXACT_MATCH -> NARROW_MATCH.
+        ncit.db defines NCIT:C61062 ''Catalase'' as ''Catalase (527 aa, ~60 kDa) is
+        encoded by the human CAT gene'' (Swiss-Prot P04040, R54 -> NCIT:C61060 CAT
+        Gene): the human gene product, not the media reagent (Sigma C-10, bovine liver).
+        skos:exactMatch would substitute that node for the reagent. Follow the protein-reagent
+        siblings Bovine_Serum_Albumin and Lysozyme: identifier is the enzyme''s CAS
+        9001-05-2 (EC 1.11.1.6), broadMatch to the species-neutral MeSH descriptor
+        mesh:D002374 ''Catalase'', Rule B1 registry row.'
+  synonyms:
+  - synonym_text: 'Properties: Defined component, Simple component'
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  - synonym_text: 'Properties: Simple component, Defined component'
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  - synonym_text: Catalase (Sigma C--10)
+    synonym_type: CATALOG_VARIANT
+    source: culturemech:output/ingredient_occurrences.tsv
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 34
+    media_count: 34
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.659756+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.174638+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-06-10T06:49:42.119337+00:00'
+    curator: fix_dead_chebi_ids.py
+    action: CORRECTED
+    changes: 'identifier CHEBI:3463 -> NCIT:C61062 (Catalase, source NCIT): CHEBI:3463
+      is absent from current ChEBI (OLS4 404).'
+  - timestamp: '2026-08-27T03:16:39.518532+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 26/26 -> 34/34 (media_count/total_occurrences),
+      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+      prior values came from the importer retired in #453, whose media_count counted
+      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-08-30T04:48:06.233536+00:00'
+    curator: claude_culturemech_alias_backfill
+    action: ADDED_SYNONYMS
+    changes: 'Added 1 CultureMech recipe surface form(s) that folded onto this record''s
+      published label but were absent from MIM''s label index, so CultureMech could
+      not resolve them: ''Catalase (Sigma C--10)'' (x1 CultureMech mentions). Source:
+      culturemech:output/ingredient_occurrences.tsv.'
+    llm_assisted: false
+  - timestamp: '2026-09-23T00:44:54.489778+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier NCIT:C61062 -> cas:9001-05-2; ontology NCIT:C61062 (''Catalase'')
+      -> mesh:D002374 (''Catalase''); mapping_quality EXACT_MATCH -> NARROW_MATCH.
+      ncit.db defines NCIT:C61062 ''Catalase'' as ''Catalase (527 aa, ~60 kDa) is
+      encoded by the human CAT gene'' (Swiss-Prot P04040, R54 -> NCIT:C61060 CAT Gene):
+      the human gene product, not the media reagent (Sigma C-10, bovine liver). skos:exactMatch
+      would substitute that node for the reagent. Follow the protein-reagent siblings
+      Bovine_Serum_Albumin and Lysozyme: identifier is the enzyme''s CAS 9001-05-2
+      (EC 1.11.1.6), broadMatch to the species-neutral MeSH descriptor mesh:D002374
+      ''Catalase'', Rule B1 registry row. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  ingredient_type: SINGLE_INGREDIENT
+  chemical_properties:
+    cas_rn: 9001-05-2
+    data_source: CAS registry number of catalase, EC 1.11.1.6 (enzyme, no single structure)
+- identifier: CHEBI:29749
+  preferred_term: Ferulate
+  synonyms:
+  - synonym_text: Ferulate
+    synonym_type: RAW_TEXT
+    source: microbedecoder
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+    source_occurrences:
+    - source: microbedecoder
+      count: 2
+      source_columns: BacDive_Metabolite_utilization
+  curation_history:
+  - timestamp: '2026-08-04T02:54:09.684805+00:00'
+    curator: audit_import_ingredients[microbedecoder]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferulate); no
+      CAS-RN or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0730 -> CHEBI:17620 "trans-ferulic acid" (CLOSE_MATCH);
+      mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
+      definition) (#323)
+    llm_assisted: false
+  - timestamp: '2026-09-23T00:44:54.497643+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier CHEBI:17620 -> CHEBI:29749; ontology CHEBI:17620 (''trans-ferulic
+      acid'') -> CHEBI:29749 (''trans-ferulate''); mapping_quality CLOSE_MATCH ->
+      CLOSE_MATCH. The record''s note ''CHEBI has no ferulate anion term'' was false:
+      CHEBI:29749 ''trans-ferulate'' (C10H9O4, charge -1, synonym ''(E)-ferulate'')
+      is the conjugate base of CHEBI:17620 ''trans-ferulic acid'' (C10H10O4, charge
+      0), which the record was grounded to. A bare -ate label denotes the anion (Section
+      3, protonation state). The grade stays CLOSE_MATCH: the trans descriptor was
+      supplied, not stated by the label, and ChEBI has no geometry-unspecified ferulate
+      anion. (#312)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  notes: Imported from microbedecoder (source_id=kgmicrobe.trait:ferulate); no CAS-RN
+    or CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: CHEBI:29749
+    ontology_label: trans-ferulate
+    ontology_source: CHEBI
+    mapping_quality: CLOSE_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: MIM curation (#213)
+      notes: Ferulate grounded to trans-ferulic acid, the naturally occurring isomer.
+        CHEBI has no ferulate anion term; CLOSE_MATCH because the label is the anion
+        and states no isomer (#213).
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'identifier CHEBI:17620 -> CHEBI:29749; ontology CHEBI:17620 (''trans-ferulic
+        acid'') -> CHEBI:29749 (''trans-ferulate''); mapping_quality CLOSE_MATCH ->
+        CLOSE_MATCH. The record''s note ''CHEBI has no ferulate anion term'' was false:
+        CHEBI:29749 ''trans-ferulate'' (C10H9O4, charge -1, synonym ''(E)-ferulate'')
+        is the conjugate base of CHEBI:17620 ''trans-ferulic acid'' (C10H10O4, charge
+        0), which the record was grounded to. A bare -ate label denotes the anion
+        (Section 3, protonation state). The grade stays CLOSE_MATCH: the trans descriptor
+        was supplied, not stated by the label, and ChEBI has no geometry-unspecified
+        ferulate anion.'
+  ingredient_type: SINGLE_INGREDIENT
+  chemical_properties: {}

@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-22T23:42:32.907487+00:00
+Generated: 2026-09-23T02:03:14.128624+00:00
 Total: 2952 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -206,7 +206,6 @@ Total: 2952 ingredients
 | kgmicrobe.compound:potassium_2-dehydro-d-gluconate | CHEBI:16808 | Potassium 2-dehydro-D-gluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_5-dehydro-d-gluconate | CHEBI:58143 | Potassium 5-dehydro-D-gluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:potassium_5-ketogluconate | CHEBI:58143 | Potassium 5-ketogluconate | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| CHEBI:17620 | CHEBI:17620 | Ferulate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:55507 | CHEBI:55507 | 1-o-methyl Alpha-galactopyranoside | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:36241 | CHEBI:36241 | Protocatechuate | MAPPED | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:17464 | CHEBI:17464 | L-galactonic Acid Gamma-lactone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
@@ -378,7 +377,6 @@ Total: 2952 ingredients
 | CHEBI:62898 | CHEBI:62898 | 3-methyl-3-butenol | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:80946 | CHEBI:80946 | 3-octanone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:128596-80-5 | CHEBI:151472 | 3'-sialyllactose sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
-| cas:14919-49-4 | mesh:C559991 | 3,4'-Dihydroxyflavone | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:232299 | CHEBI:232299 | 3,4'-Dimethoxyflavone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:53648 | CHEBI:53648 | 3,5-Dinitrosalicylic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:36-dihydroxyflavone | CHEBI:24698 | 3',6-Dihydroxyflavone | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -390,7 +388,6 @@ Total: 2952 ingredients
 | CHEBI:17597 | CHEBI:17597 | 4-Hydroxybenzaldehyde | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | cas:184901-84-6 | CHEBI:16388 | 4-Hydroxymandelic acid monohydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:165411 | CHEBI:165411 | 4-Hydroxynonanoic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:142593 | CHEBI:142593 | 4-Hydroxynonenal | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32980 | CHEBI:32980 | 4-Hydroxyphenylpropionic acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:4143-74-2 | CHEBI:114194 | 4'-Methoxyflavone | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | cas:4502-00-5 | CHEBI:48430 | 4-Methyl-2-oxopentanoic acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -455,7 +452,6 @@ Total: 2952 ingredients
 | CHEBI:2781 | CHEBI:2781 | Acetovanillone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:134431 | CHEBI:134431 | Acetylated xylan | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:achromoviromycin | kgmicrobe.compound:achromoviromycin | Achromoviromycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
-| CHEBI:51739 | CHEBI:51739 | Acridine orange | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:8048-52-0 | NCIT:C76253 | Acriflavine | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:70241 | CHEBI:70241 | Actein | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:actinohivin | kgmicrobe.compound:actinohivin | Actinohivin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -490,12 +486,10 @@ Total: 2952 ingredients
 | kgmicrobe.compound:alpha-toxicarol_dl | kgmicrobe.compound:alpha-toxicarol_dl | Alpha-Toxicarol (Dl) | MAPPED | kgmicrobe.compound | FALLBACK_REGISTRY | 0 |
 | CHEBI:17925 | CHEBI:17925 | alpha-D-Glucose | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:30915 | CHEBI:30915 | alpha-ketoglutaric acid | MAPPED | CHEBI | EXACT_MATCH | 7 |
-| CHEBI:74772 | CHEBI:74772 | Aluminium sulfate | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | cas:10124-27-3 | NCIT:C83530 | Aluminum chloride hydrate | MAPPED | NCIT | NARROW_MATCH | 28 |
 | CHEBI:2638 | CHEBI:2638 | Amikacin disulfate salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:62947 | CHEBI:62947 | Ammonium acetate | MAPPED | CHEBI | EXACT_MATCH | 67 |
 | CHEBI:31206 | CHEBI:31206 | Ammonium chloride (nitrogen source) | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| cas:12054-85-2 | CHEBI:91249 | ammonium molybdate tetrahydrate | MAPPED | CHEBI | CLOSE_MATCH | 12 |
 | CHEBI:156543 | CHEBI:156543 | ammonium persulfate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:81950 | CHEBI:81950 | Ammonium Sulfamate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:12135-76-1 | mesh:C027711 | ammonium sulfide solution | MAPPED | MESH | NARROW_MATCH | 0 |
@@ -514,7 +508,6 @@ Total: 2952 ingredients
 | mesh:C002547 | mesh:C002547 | Angolamycin | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:8612 | CHEBI:8612 | Angustmycin | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:201752 | CHEBI:201752 | Anhydrotetracycline hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:17659-49-3 | NCIT:C221850 | Anisodamine Hydrobromide () | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:193638 | CHEBI:193638 | anthranilamide | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:30754 | CHEBI:30754 | anthranilic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2762 | CHEBI:2762 | Antimycin A | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -522,7 +515,6 @@ Total: 2952 ingredients
 | mesh:C061361 | mesh:C061361 | Apidaecin IB | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:18388 | CHEBI:18388 | Apigenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:70353 | CHEBI:70353 | Apiole | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:65710-07-8 | CHEBI:190734 | Apramycin sulfate salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:11078-27-6 | CHEBI:22590 | Arabinan from Sugar Beet | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | cas:78088-21-8 | mesh:C434937 | Arabinobiose | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:22599 | CHEBI:22599 | Arabinose | MAPPED | CHEBI | EXACT_MATCH | 5 |
@@ -545,7 +537,6 @@ Total: 2952 ingredients
 | CHEBI:22653 | CHEBI:22653 | Asparagine | MAPPED | CHEBI | EXACT_MATCH | 28 |
 | CHEBI:2911 | CHEBI:2911 | Atorvastatin calcium salt trihydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:1924-24-9 | cas:1924-24-9 | Atrazin | REJECTED | CAS | FALLBACK_REGISTRY | 0 |
-| mesh:C509797 | mesh:C509797 | Atrop Abyssomicin C | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:134355 | CHEBI:134355 | Auraptene | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:1405-69-2 | mesh:D001360 | Avidin | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:172520 | CHEBI:172520 | Avocadene | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -593,7 +584,6 @@ Total: 2952 ingredients
 | CHEBI:25979 | CHEBI:25979 | Benzylcyanide | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:31271 | CHEBI:31271 | Berberine | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:18293 | CHEBI:18293 | Bergapten | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| CHEBI:69499 | CHEBI:69499 | Bergenin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:53502 | CHEBI:53502 | beryllium sulfate tetrahydrate | MAPPED | CHEBI | EXACT_MATCH | 1 |
 | CHEBI:10352 | CHEBI:10352 | Beta-Amyrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:154804-51-0 | CHEBI:17270 | Beta-Glycerophosphate disodium salt hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
@@ -615,7 +605,6 @@ Total: 2952 ingredients
 | kgmicrobe.ingredient:biotin_vitamin_solution | MICRO:0000460 | Biotin Vitamin Solution | MAPPED | MICRO | CLOSE_MATCH | 18 |
 | CHEBI:16841 | CHEBI:16841 | Bis(3-aminopropyl)amine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:41250 | CHEBI:41250 | Bis-Tris | MAPPED | CHEBI | EXACT_MATCH | 4 |
-| CHEBI:49235 | CHEBI:49235 | Bisabolene | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:7787-60-2 | cas:7787-60-2 | bismuth(III) chloride | MAPPED | CAS | FALLBACK_REGISTRY | 1 |
 | CHEBI:34582 | CHEBI:34582 | Bleomycin sulfate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:3148 | CHEBI:3148 | Boldine | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -692,7 +681,6 @@ Total: 2952 ingredients
 | CHEBI:31346 | CHEBI:31346 | CaSO4 | MAPPED | CHEBI | EXACT_MATCH | 15 |
 | CHEBI:32583 | CHEBI:32583 | CaSO4 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 158 |
 | kgmicrobe.compound:caso4_x_7_h2o | CHEBI:31346 | CaSO4 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 4 |
-| NCIT:C61062 | NCIT:C61062 | Catalase | MAPPED | NCIT | EXACT_MATCH | 34 |
 | CHEBI:86156 | CHEBI:86156 | Cd(NO3)2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:35458 | CHEBI:35458 | CeCl3 | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | kgmicrobe.compound:cecl3_x_7_h2o | CHEBI:35458 | CeCl3 x 7 H2O | MAPPED | CHEBI | CLOSE_MATCH | 4 |
@@ -2684,6 +2672,18 @@ Total: 2952 ingredients
 | CHEBI:36026 | CHEBI:36026 | 1,1,2,2-tetrachloroethane | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:86537 | CHEBI:86537 | 2,2-dimethylsuccinic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:13902-54-0 | cas:13902-54-0 | Artepaulin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
+| mesh:C559991 | mesh:C559991 | 3,4'-Dihydroxyflavone | MAPPED | MESH | EXACT_MATCH | 0 |
+| CHEBI:58968 | CHEBI:58968 | 4-Hydroxynonenal | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
+| CHEBI:87346 | CHEBI:87346 | Acridine orange | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
+| CHEBI:74768 | CHEBI:74768 | Aluminium sulfate | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
+| CHEBI:86244 | CHEBI:86244 | ammonium molybdate tetrahydrate | MAPPED | CHEBI | SYNONYM_MATCH | 12 |
+| NCIT:C221850 | NCIT:C221850 | Anisodamine Hydrobromide | MAPPED | NCIT | EXACT_MATCH | 0 |
+| CHEBI:190734 | CHEBI:190734 | Apramycin sulfate salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
+| CHEBI:208735 | CHEBI:208735 | Atrop Abyssomicin C | MAPPED | CHEBI | MANUAL_CURATION | 0 |
+| cas:108032-11-7 | CHEBI:69499 | Bergenin | MAPPED | CHEBI | NARROW_MATCH | 0 |
+| CHEBI:49240 | CHEBI:49240 | Bisabolene | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
+| cas:9001-05-2 | mesh:D002374 | Catalase | MAPPED | MESH | NARROW_MATCH | 34 |
+| CHEBI:29749 | CHEBI:29749 | Ferulate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |

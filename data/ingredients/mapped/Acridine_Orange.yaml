@@ -1,17 +1,30 @@
-identifier: CHEBI:51739
+identifier: CHEBI:87346
 preferred_term: Acridine orange
 ontology_mapping:
-  ontology_id: CHEBI:51739
-  ontology_label: acridine orange
+  ontology_id: CHEBI:87346
+  ontology_label: acridine orange free base
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: CAS_RN_LOOKUP
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
     notes: Imported from CultureBotHT.
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'identifier CHEBI:51739 -> CHEBI:87346; ontology CHEBI:51739 (''acridine
+      orange'') -> CHEBI:87346 (''acridine orange free base''); mapping_quality EXACT_MATCH
+      -> CAS_RN_LOOKUP. CHEBI:51739 ''acridine orange'' is the hydrochloride (formula
+      H.C17H19N3.Cl, is_a hydrochloride); its formula, InChI, SMILES and the ''tetramethylacridine-3,6-diamine
+      hydrochloride'' synonym were copied onto the record from the term. The record''s
+      only source-supplied identity evidence is CAS 494-38-2, which PubChem resolves
+      to CID 62344, C17H19N3, InChIKey DPKHZNPWBDQZCN-UHFFFAOYSA-N: CHEBI:87346 ''acridine
+      orange free base'' (synonyms ''Acridine Orange'', ''Acridine Orange Base'').
+      ChEBI xrefs 494-38-2 on both terms, so the PubChem InChIKey decides. The CAS
+      governs the form (#320). Structure fields refreshed from the term; the hydrochloride
+      alias is REJECTED_LABEL.'
 synonyms:
 - synonym_text: N,N,N',N'-tetramethylacridine-3,6-diamine hydrochloride
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: chebi_synonym_review
 mapping_status: MAPPED
 occurrence_statistics:
@@ -41,11 +54,32 @@ curation_history:
   action: AUTO_CLASSIFY_INGREDIENT_TYPE
   changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
   llm_assisted: false
+- timestamp: '2026-09-23T00:44:54.408844+00:00'
+  curator: claude
+  action: REGROUNDED_IDENTITY
+  changes: 'identifier CHEBI:51739 -> CHEBI:87346; ontology CHEBI:51739 (''acridine
+    orange'') -> CHEBI:87346 (''acridine orange free base''); mapping_quality EXACT_MATCH
+    -> CAS_RN_LOOKUP. CHEBI:51739 ''acridine orange'' is the hydrochloride (formula
+    H.C17H19N3.Cl, is_a hydrochloride); its formula, InChI, SMILES and the ''tetramethylacridine-3,6-diamine
+    hydrochloride'' synonym were copied onto the record from the term. The record''s
+    only source-supplied identity evidence is CAS 494-38-2, which PubChem resolves
+    to CID 62344, C17H19N3, InChIKey DPKHZNPWBDQZCN-UHFFFAOYSA-N: CHEBI:87346 ''acridine
+    orange free base'' (synonyms ''Acridine Orange'', ''Acridine Orange Base''). ChEBI
+    xrefs 494-38-2 on both terms, so the PubChem InChIKey decides. The CAS governs
+    the form (#320). Structure fields refreshed from the term; the hydrochloride alias
+    is REJECTED_LABEL. (#312) REJECTED_LABEL: N,N,N'',N''-tetramethylacridine-3,6-diamine
+    hydrochloride (names the hydrochloride CHEBI:51739, not the free base).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 494-38-2
-  data_source: CultureBotHT compounds_to_cas.csv
+  data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:87346
+    (#312)
   retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-  molecular_formula: H.C17H19N3.Cl
-  inchi: InChI=1S/C17H19N3.ClH/c1-19(2)14-7-5-12-9-13-6-8-15(20(3)4)11-17(13)18-16(12)10-14;/h5-11H,1-4H3;1H
-  smiles: CN(C)c1ccc2cc3ccc(N(C)C)cc3nc2c1.[Cl-].[H+]
+  molecular_formula: C17H19N3
+  inchi: InChI=1S/C17H19N3/c1-19(2)14-7-5-12-9-13-6-8-15(20(3)4)11-17(13)18-16(12)10-14/h5-11H,1-4H3
+  smiles: CN(C)c1ccc2cc3ccc(N(C)C)cc3nc2c1
+  pubchem_cid: 62344
 ingredient_type: SINGLE_INGREDIENT
