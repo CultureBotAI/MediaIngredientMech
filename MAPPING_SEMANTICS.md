@@ -454,8 +454,11 @@ does not.
 **For a salt, the `broadMatch` parent follows the label**: where the label says
 "…Acid sodium salt" the parent is that acid, where it names a neutral compound,
 that compound. This avoids the acid-vs-anion choice entirely. Only reach for the
-anion when ChEBI has no acid term (`2-oxobutyric acid sodium salt` →
-`CHEBI:16763 2-oxobutanoate`).
+anion when ChEBI has no acid term — and check that it really has none: the
+earlier example here, `2-oxobutyric acid sodium salt` → `CHEBI:16763
+2-oxobutanoate`, rested on the claim that ChEBI lacked the acid, but
+`CHEBI:30831 2-oxobutanoic acid` exists, and the record was re-anchored to it
+(#312).
 
 ### What this decides
 

@@ -4,11 +4,17 @@ ontology_mapping:
   ontology_id: CHEBI:30776
   ontology_label: hexanoic acid
   ontology_source: CHEBI
-  mapping_quality: EXACT_MATCH
+  mapping_quality: SYNONYM_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureMech
     notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH. The label ''Caproic acid''
+      is a ChEBI related synonym of CHEBI:30776, whose primary label is ''hexanoic
+      acid''. Section 0: synonym resolution is SYNONYM_MATCH. The CAS 142-62-1 on
+      the record is ChEBI''s own xref for the term. Identifier unchanged.'
 synonyms:
 - synonym_text: 'Role: Growth factor; Properties: Organic compound, Defined component,
     Simple component'
@@ -145,6 +151,17 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
+- timestamp: '2026-09-22T23:25:50.982109+00:00'
+  curator: claude
+  action: REGRADED_MAPPING_QUALITY
+  changes: 'mapping_quality EXACT_MATCH -> SYNONYM_MATCH (#312). The label ''Caproic
+    acid'' is a ChEBI related synonym of CHEBI:30776, whose primary label is ''hexanoic
+    acid''. Section 0: synonym resolution is SYNONYM_MATCH. The CAS 142-62-1 on the
+    record is ChEBI''s own xref for the term. Identifier unchanged.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 142-62-1
   data_source: PubChem API

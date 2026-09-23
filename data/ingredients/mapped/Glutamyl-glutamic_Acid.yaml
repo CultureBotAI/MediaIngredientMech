@@ -34,17 +34,38 @@ curation_history:
   changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary with a structural
     definition) (#323)
   llm_assisted: false
+- timestamp: '2026-09-22T23:25:51.005485+00:00'
+  curator: claude
+  action: REGRADED_MAPPING_QUALITY
+  changes: mapping_quality SYNONYM_MATCH -> CLOSE_MATCH (#312). 'Glutamyl-glutamic
+    Acid' is not a name on CHEBI:5390 (its names are Glu-Glu and L-alpha-glutamyl-L-glutamic
+    acid). The term is alpha-linked and L,L-specific; the label states neither, and
+    the gamma isomer is the separate term CHEBI:73705. The alpha/L,L reading was supplied
+    by peptide-nomenclature convention, so Section 0 grades it CLOSE_MATCH. Identifier
+    unchanged; own-identifier row stays exactMatch.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: Imported from microbedecoder (source_id=kgmicrobe.trait:glutamyl_glutamic_acid);
   no CAS-RN or CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
   ontology_id: CHEBI:5390
   ontology_label: Glu-Glu
   ontology_source: CHEBI
-  mapping_quality: SYNONYM_MATCH
+  mapping_quality: CLOSE_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: MIM curation (#213)
     notes: Glutamyl-glutamic acid is the dipeptide Glu-Glu (#213).
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: mapping_quality SYNONYM_MATCH -> CLOSE_MATCH. 'Glutamyl-glutamic Acid'
+      is not a name on CHEBI:5390 (its names are Glu-Glu and L-alpha-glutamyl-L-glutamic
+      acid). The term is alpha-linked and L,L-specific; the label states neither,
+      and the gamma isomer is the separate term CHEBI:73705. The alpha/L,L reading
+      was supplied by peptide-nomenclature convention, so Section 0 grades it CLOSE_MATCH.
+      Identifier unchanged; own-identifier row stays exactMatch.
 ingredient_type: SINGLE_INGREDIENT
 chemical_properties:
   molecular_formula: C10H16N2O7

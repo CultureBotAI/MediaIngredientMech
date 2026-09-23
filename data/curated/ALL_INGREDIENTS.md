@@ -215,15 +215,15 @@
 | CHEBI:55507 | 1-o-methyl Alpha-galactopyranoside | CHEBI:55507 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:36241 | Protocatechuate | CHEBI:36241 | CHEBI | SYNONYM_MATCH | 1 |
 | CHEBI:17464 | L-galactonic Acid Gamma-lactone | CHEBI:17464 | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:5390 | Glutamyl-glutamic Acid | CHEBI:5390 | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:5390 | Glutamyl-glutamic Acid | CHEBI:5390 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:149531 | Carminate | CHEBI:149531 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:90601 | L-pyroglutamic Acid 2-naphthylamide | CHEBI:90601 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16077 | Glucose 1-phosphate | CHEBI:16077 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:73804 | Glycyl L-aspartic Acid | CHEBI:73804 | CHEBI | SYNONYM_MATCH | 0 |
-| CHEBI:15895 | D-galactonic Acid Lactone | CHEBI:15895 | CHEBI | SYNONYM_MATCH | 0 |
+| CHEBI:15895 | D-galactonic Acid Lactone | CHEBI:15895 | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:90144 | O-nitrophenyl-beta-D-galactopyranosid | CHEBI:90144 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:15978 | Glycerol 3-phosphate | CHEBI:15978 | CHEBI | CLOSE_MATCH | 1 |
-| CHEBI:24750 | Hydroxystreptomycin | CHEBI:24750 | CHEBI | CLOSE_MATCH | 0 |
+| CHEBI:24750 | Hydroxystreptomycin | CHEBI:24750 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81287 | Neomycin F | CHEBI:81287 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:81430 | Dactimicin | CHEBI:81430 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:27907 | Alpha-L-rhamnose | CHEBI:27907 | CHEBI | SYNONYM_MATCH | 0 |
@@ -298,7 +298,7 @@
 | CHEBI:16885 | 1-Kestose | CHEBI:16885 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:44884 | 1-Pentanol | CHEBI:44884 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:18053 | 1-aminocyclopropane-1-carboxylate | CHEBI:18053 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:143314-17-4 | 1-ethyl-3-methylimidazolium acetate | CHEBI:61326 | CHEBI | NARROW_MATCH | 0 |
+| cas:143314-17-4 | 1-ethyl-3-methylimidazolium acetate | CHEBI:63895 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:61327 | 1-ethyl-3-methylimidazolium chloride | CHEBI:61327 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:1-ethyl-3-methylimidazolium_lysine | 1-ethyl-3-methylimidazolium lysine | CHEBI:63895 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:34118 | 1-octen-3-ol | CHEBI:34118 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -344,7 +344,7 @@
 | CHEBI:48945 | 2-methyl-1-butanol | CHEBI:48945 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:53620 | 2-methyl-4-isothizaolin-3-one | CHEBI:53620 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:28362 | 2-n-Heptyl-4-hydroxyquinoline N-oxide | CHEBI:28362 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:2013-26-5 | 2-oxobutyric acid sodium salt | CHEBI:16763 | CHEBI | NARROW_MATCH | 0 |
+| cas:2013-26-5 | 2-oxobutyric acid sodium salt | CHEBI:30831 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:89197 | 2-pentyl-furan | CHEBI:89197 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:77930 | 2-undecanol | CHEBI:77930 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:30351 | 2,2'-Dipyridyl | CHEBI:30351 | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -382,7 +382,7 @@
 | CHEBI:35932 | 3-methyl-2-oxopentanoic acid | CHEBI:35932 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:62898 | 3-methyl-3-butenol | CHEBI:62898 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:80946 | 3-octanone | CHEBI:80946 | CHEBI | EXACT_MATCH | 0 |
-| cas:128596-80-5 | 3'-sialyllactose sodium salt | CHEBI:26714 | CHEBI | NARROW_MATCH | 0 |
+| cas:128596-80-5 | 3'-sialyllactose sodium salt | CHEBI:151472 | CHEBI | NARROW_MATCH | 0 |
 | cas:14919-49-4 | 3,4'-Dihydroxyflavone | mesh:C559991 | MESH | NARROW_MATCH | 0 |
 | CHEBI:232299 | 3,4'-Dimethoxyflavone | CHEBI:232299 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:53648 | 3,5-Dinitrosalicylic acid | CHEBI:53648 | CHEBI | EXACT_MATCH | 0 |
@@ -420,7 +420,7 @@
 | CHEBI:80627 | 5'-Deoxy-5-fluorocytidine | CHEBI:80627 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:80624 | 5-Fluorodihydropyrimidine-2,4-dione | CHEBI:80624 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:207291-81-4 | 5-Fluoroorotic acid hydrate | CHEBI:74498 | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:195418 | 5-Hydroxydodecanoate | CHEBI:195418 | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:195418 | 5-Hydroxydodecanoate | CHEBI:195418 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:412516 | 5-Hydroxymethylfurfural | CHEBI:412516 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:180039 | 5-Hydroxyoctanoate | CHEBI:180039 | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:91446-96-7 | 5-Keto-D-Gluconic Acid potassium salt | CHEBI:17426 | CHEBI | NARROW_MATCH | 0 |
@@ -431,7 +431,7 @@
 | CHEBI:45996 | 5-methyluridine | CHEBI:45996 | CHEBI | CAS_RN_LOOKUP | 10 |
 | CHEBI:34472 | 6-Hydroxyflavone | CHEBI:34472 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17901 | 6-O-Acetyl-D-glucose | CHEBI:17901 | CHEBI | EXACT_MATCH | 0 |
-| cas:157574-76-0 | 6'-O-sialyllactose sodium salt | CHEBI:26714 | CHEBI | NARROW_MATCH | 0 |
+| cas:157574-76-0 | 6'-O-sialyllactose sodium salt | CHEBI:153372 | CHEBI | NARROW_MATCH | 0 |
 | cas:27593-23-3 | 6-Pentyl-2H-pyran-2-one | CHEBI:66729 | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:16168 | 6-hydroxypyridine-3-carboxylic acid | CHEBI:16168 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:173101 | 6-methoxy-2(3H)-benzoxazolone | CHEBI:173101 | CHEBI | EXACT_MATCH | 0 |
@@ -524,7 +524,7 @@
 | CHEBI:18388 | Apigenin | CHEBI:18388 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:70353 | Apiole | CHEBI:70353 | CHEBI | EXACT_MATCH | 0 |
 | cas:65710-07-8 | Apramycin sulfate salt | CHEBI:190734 | CHEBI | NARROW_MATCH | 0 |
-| cas:11078-27-6 | Arabinan from Sugar Beet | FOODON:00003412 | FOODON | NARROW_MATCH | 0 |
+| cas:11078-27-6 | Arabinan from Sugar Beet | CHEBI:22590 | CHEBI | NARROW_MATCH | 0 |
 | cas:78088-21-8 | Arabinobiose | mesh:C434937 | MESH | NARROW_MATCH | 0 |
 | CHEBI:22599 | Arabinose | CHEBI:22599 | CHEBI | EXACT_MATCH | 5 |
 | cas:89315-59-3 | Arabinotriose | CHEBI:62799 | CHEBI | SYNONYM_MATCH | 0 |
@@ -660,7 +660,7 @@
 | mesh:C033379 | Candiplanecin | mesh:C033379 | MESH | EXACT_MATCH | 0 |
 | CHEBI:64213 | Cantharidin | CHEBI:64213 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31348 | Capecitabine | CHEBI:31348 | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:30776 | Caproic acid | CHEBI:30776 | CHEBI | EXACT_MATCH | 16 |
+| CHEBI:30776 | Caproic acid | CHEBI:30776 | CHEBI | SYNONYM_MATCH | 16 |
 | CHEBI:28579 | Caprolactam | CHEBI:28579 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:191088 | CAPS buffer | CHEBI:191088 | CHEBI | EXACT_MATCH | 5 |
 | CHEBI:3374 | capsaicin | CHEBI:3374 | CHEBI | EXACT_MATCH | 0 |
@@ -2927,7 +2927,7 @@
 | CHEBI:16856 | L-Glutathione | REJECTED | CHEBI:16856 |  | 0 |
 | CHEBI:91248 | L-Cysteine hydrochloride monohydrate | REJECTED | CHEBI:91248 |  | 0 |
 | CHEBI:17306 | maltose | REJECTED | CHEBI:17306 |  | 0 |
-| CHEBI:86345 | MgCl2x 6 H2O | REJECTED | CHEBI:6636 |  | 0 |
+| CHEBI:86345 | MgCl2x 6 H2O | REJECTED | CHEBI:86345 |  | 0 |
 | CHEBI:31795 | MgSO4·7H2O | REJECTED | CHEBI:31795 |  | 0 |
 | CHEBI:31795 | MgSO47H2O | REJECTED | CHEBI:31795 |  | 0 |
 | CHEBI:86364 | MnSO4 x 1 H2O | REJECTED | CHEBI:86364 |  | 0 |
