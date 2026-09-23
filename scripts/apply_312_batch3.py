@@ -144,7 +144,7 @@ MINTS: tuple[Mint, ...] = (
         blank_chemistry=True, drop_node_id=True,
         supersede_sources=("CultureMech",),
         source_labels=("CuSO4 x 4 H2O",),
-        hydrate_review=True, mediadive_compound_id="MediaDive compound for 'CuSO4 x 4 H2O'",
+        hydrate_review=True, mediadive_compound_id="the MediaDive label 'CuSO4 x 4 H2O'",
     ),
     Mint(
         "Cuso4_X_2_H2o", "CHEBI:23414", "kgmicrobe.compound:cuso4_x_2_h2o",
@@ -160,7 +160,7 @@ MINTS: tuple[Mint, ...] = (
         blank_chemistry=True, drop_node_id=True,
         supersede_sources=("CultureMech",),
         source_labels=("CuSO4 x 2 H2O", "CuSO4 . 2H2O"),
-        hydrate_review=True, mediadive_compound_id="MediaDive compound 719",
+        hydrate_review=True, mediadive_compound_id="the MediaDive labels 'CuSO4 x 2 H2O' and 'CuSO4 . 2H2O'",
     ),
 )
 
