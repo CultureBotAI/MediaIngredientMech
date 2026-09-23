@@ -10,6 +10,11 @@ ontology_mapping:
     source: PubChem
     cas_rn: 10049-21-5
     notes: ChEBI ID CHEBI:114249 found via PubChem CAS-RN cross-reference
+  - evidence_type: MANUAL_CURATION
+    source: MIM curation (#312); chebi.db
+    notes: 'Absorbed Nah2po4h2o (#312): the raw labels ''NaH2PO4•H2O'' and ''NaH2PO4•H2O(MCIB
+      742)'' and their 4 CultureMech occurrences now belong here; the cas: identity
+      was the step-2 fallback for a term that exists.'
 synonyms:
 - synonym_text: Monosodium phosphate monohydrate
   synonym_type: EXACT_SYNONYM
@@ -26,10 +31,16 @@ synonyms:
 - synonym_text: sodium dihydrogen phosphate--water (1/1)
   synonym_type: EXACT_SYNONYM
   source: chebi_synonym_review
+- synonym_text: NaH2PO4•H2O
+  synonym_type: RAW_TEXT
+  source: merged_record
+- synonym_text: NaH2PO4•H2O(MCIB 742)
+  synonym_type: RAW_TEXT
+  source: merged_record
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 46
-  media_count: 46
+  total_occurrences: 50
+  media_count: 50
 curation_history:
 - timestamp: '2026-04-07T10:20:04.918526+00:00'
   curator: feba_ontology_enrichment_batch
@@ -70,6 +81,27 @@ curation_history:
   curator: migrate_media_roles_to_facets
   action: ANNOTATED
   changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+- timestamp: '2026-09-23T04:49:55.744418+00:00'
+  curator: claude
+  action: MERGED_FROM_MAPPED_RECORD
+  changes: 'Absorbed cas:10049-21-5 ''NaH2PO4•H2O'': 2 synonym(s), occurrences +4/4.
+    The cas: identity was the Section 3 step 2 fallback on the premise that ChEBI
+    has no monohydrate term; CHEBI:114249 sodium dihydrogenphosphate monohydrate exists,
+    xrefs cas:10049-21-5, and is held by this record: one substance under two identifiers
+    (#312).'
+  llm_assisted: true
+- timestamp: '2026-09-23T04:53:11.738703+00:00'
+  curator: claude
+  action: CORRECTED
+  changes: 'evidence note added. The 2026-08-06 promotion used the Section 3 step
+    2 cas: fallback on the premise that ChEBI has no hydrate term. CHEBI:114249 ''sodium
+    dihydrogenphosphate monohydrate'' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M)
+    exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_monobasic_monohydrate
+    already holds it: one substance under two identifiers -> merge (#312).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 notes: Created from FEBA ontology enrichment workflow. Used in 46 FEBA media formulations.
 chemical_properties:
   cas_rn: 10049-21-5

@@ -113,6 +113,10 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     _source_label_key("CuSO4 x 4 H2O"): "kgmicrobe.compound:cuso4_x_4_h2o",
     _source_label_key("CuSO4 x 2 H2O"): "kgmicrobe.compound:cuso4_x_2_h2o",
     _source_label_key("CuSO4 . 2H2O"): "kgmicrobe.compound:cuso4_x_2_h2o",
+    # #312 batch 4: NaH2PO4•H2O merged into the CHEBI:114249 monohydrate record;
+    # CultureMech still resolves the label to the retired cas: identity.
+    _source_label_key("NaH2PO4•H2O"): "CHEBI:114249",
+    _source_label_key("NaH2PO4•H2O(MCIB 742)"): "CHEBI:114249",
 }
 
 

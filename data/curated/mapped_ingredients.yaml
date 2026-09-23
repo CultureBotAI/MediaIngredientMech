@@ -1,6 +1,6 @@
-generation_date: '2026-09-23T03:43:43.557209+00:00'
+generation_date: '2026-09-23T04:53:31.542161+00:00'
 total_count: 2679
-mapped_count: 2612
+mapped_count: 2610
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o
@@ -8803,58 +8803,6 @@ ingredients:
         pentahydrate, CAS 13408-09-8 -- rather than a mixture. ChEBI has no term for
         the disodium pentahydrate, so Section 3 applies: the cas: identifier with
         a narrowMatch to CHEBI:15978 sn-glycerol 3-phosphate, the parent phosphate.'
-- identifier: cas:10049-21-5
-  preferred_term: NaH2PO4•H2O
-  synonyms:
-  - synonym_text: NaH2PO4•H2O(MCIB 742)
-    synonym_type: RAW_TEXT
-    source: CultureMech
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 4
-    media_count: 4
-  curation_history:
-  - timestamp: '2026-03-09T06:54:18.022301+00:00'
-    curator: import_from_culturemech
-    action: IMPORTED
-    changes: Initial import from CultureMech pipeline
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-11T05:36:00Z'
-    curator: mediaingredientmech-agentic-curation
-    action: REVIEWED_HYDRATE_AMBIGUITY
-    changes: Reviewed against local CHEBI:37585 mapped records; not merged because
-      the source term is explicit NaH2PO4 monohydrate while the local mapped representatives
-      carry anhydrous sodium dihydrogenphosphate chemistry.
-    previous_status: UNMAPPED
-    new_status: UNMAPPED
-    llm_assisted: true
-  - timestamp: '2026-08-06T00:00:00+00:00'
-    curator: promote_resolved_unmapped
-    action: PROMOTED_TO_MAPPED
-    previous_status: UNMAPPED
-    new_status: MAPPED
-    llm_assisted: false
-    changes: Promoted UNMAPPED_0028 -> cas:10049-21-5 "sodium dihydrogenphosphate"
-      (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
-  notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 and left unmapped
-    for hydrate-state curation rather than merging to CHEBI:37585 anhydrous sodium
-    dihydrogenphosphate.'
-  ingredient_type: SINGLE_INGREDIENT
-  ontology_mapping:
-    ontology_id: CHEBI:37585
-    ontology_label: sodium dihydrogenphosphate
-    ontology_source: CHEBI
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: Edison LITERATURE deep research
-      notes: 'Edison literature research (research/ingredients/NaH2PO4H2O-edison-literature.md)
-        identifies this as sodium dihydrogen phosphate MONOHYDRATE, CAS 10049-21-5.
-        CHEBI:37585 ''sodium dihydrogenphosphate'' is the ANHYDROUS form (its own
-        dbxref is CAS 7558-80-7), so the two are distinct substances -- MAPPING_SEMANTICS.md
-        Section 3: the hydrate takes its own cas: identifier with a narrowMatch to
-        the anhydrous parent, rather than being folded onto it.'
 - identifier: kgmicrobe.ingredient:hans_100x_vitamins
   preferred_term: Hans 100x vitamins
   synonyms:
@@ -58303,66 +58251,6 @@ ingredients:
   notes: '2026-05-10 manual candidate review: retained kgmicrobe.compound primary
     identifier; reviewed OLS candidates were not exact identity matches for the source
     label.'
-- identifier: CHEBI:27386
-  preferred_term: Cinnamic acid
-  ontology_mapping:
-    ontology_id: CHEBI:27386
-    ontology_label: cinnamic acid
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: Imported from CultureBotHT.
-  synonyms:
-  - synonym_text: 3-phenylprop-2-enoic acid
-    synonym_type: EXACT_SYNONYM
-    source: chebi_synonym_review
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:04:17.380972+00:00'
-    curator: audit_integrate_culturebotht
-    action: CREATED_FROM_CULTUREBOTHT
-    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=0140-10-3); Imported
-      from CultureBotHT.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:32.798295+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-01T08:08:28.637023+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
-    changes: molecular_formula=C9H8O2; inchi=InChI=1S/C9H8O2/c10-9(11)7-6-8-4-2-1-3-5-8/h1-7H,(;
-      smiles=[H]C(=Cc1ccccc1)C(=O)O
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:13.385529+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
-    llm_assisted: false
-  - timestamp: '2026-08-16T00:00:00+00:00'
-    curator: strip_cas_leading_zeros
-    action: STRIPPED_CAS_LEADING_ZERO
-    changes: chemical_properties.cas_rn 0140-10-3 -> 140-10-3 (#310). A CAS Registry
-      Number never carries leading zeros, so the padded form resolved against nothing
-      and any join on CAS-RN silently missed this record. The stripped value passes
-      the CAS check digit and resolves on PubChem to exactly this compound; the padding
-      was ingest alignment, not identity.
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 140-10-3
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-    molecular_formula: C9H8O2
-    inchi: InChI=1S/C9H8O2/c10-9(11)7-6-8-4-2-1-3-5-8/h1-7H,(H,10,11)
-    smiles: '[H]C(=Cc1ccccc1)C(=O)O'
-  ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:59936
   preferred_term: Ciprofloxacin Hydrochloride
   ontology_mapping:
@@ -167557,6 +167445,11 @@ ingredients:
       source: PubChem
       cas_rn: 10049-21-5
       notes: ChEBI ID CHEBI:114249 found via PubChem CAS-RN cross-reference
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: 'Absorbed Nah2po4h2o (#312): the raw labels ''NaH2PO4•H2O'' and ''NaH2PO4•H2O(MCIB
+        742)'' and their 4 CultureMech occurrences now belong here; the cas: identity
+        was the step-2 fallback for a term that exists.'
   synonyms:
   - synonym_text: Monosodium phosphate monohydrate
     synonym_type: EXACT_SYNONYM
@@ -167573,10 +167466,16 @@ ingredients:
   - synonym_text: sodium dihydrogen phosphate--water (1/1)
     synonym_type: EXACT_SYNONYM
     source: chebi_synonym_review
+  - synonym_text: NaH2PO4•H2O
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: NaH2PO4•H2O(MCIB 742)
+    synonym_type: RAW_TEXT
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 46
-    media_count: 46
+    total_occurrences: 50
+    media_count: 50
   curation_history:
   - timestamp: '2026-04-07T10:20:04.918526+00:00'
     curator: feba_ontology_enrichment_batch
@@ -167617,6 +167516,27 @@ ingredients:
     curator: migrate_media_roles_to_facets
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-09-23T04:49:55.744418+00:00'
+    curator: claude
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed cas:10049-21-5 ''NaH2PO4•H2O'': 2 synonym(s), occurrences +4/4.
+      The cas: identity was the Section 3 step 2 fallback on the premise that ChEBI
+      has no monohydrate term; CHEBI:114249 sodium dihydrogenphosphate monohydrate
+      exists, xrefs cas:10049-21-5, and is held by this record: one substance under
+      two identifiers (#312).'
+    llm_assisted: true
+  - timestamp: '2026-09-23T04:53:11.738703+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'evidence note added. The 2026-08-06 promotion used the Section 3 step
+      2 cas: fallback on the premise that ChEBI has no hydrate term. CHEBI:114249
+      ''sodium dihydrogenphosphate monohydrate'' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M)
+      exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_monobasic_monohydrate
+      already holds it: one substance under two identifiers -> merge (#312).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   notes: Created from FEBA ontology enrichment workflow. Used in 46 FEBA media formulations.
   chemical_properties:
     cas_rn: 10049-21-5
@@ -176687,6 +176607,12 @@ ingredients:
     - evidence_type: DATABASE_MATCH
       source: CultureMech
       notes: Imported from CultureMech pipeline, quality=DIRECT_MATCH
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#312); chebi.db
+      notes: Absorbed Cinnamic_Acid (#312). Its CAS 140-10-3 is a second ChEBI xref
+        of CHEBI:35697 alongside the recorded 621-82-9; both denote trans-cinnamic
+        acid. The carried synonym '3-phenylprop-2-enoic acid' names the geometry-free
+        parent and is REJECTED_LABEL.
   synonyms:
   - synonym_text: (2E)-3-phenyl-2-propenoic acid
     synonym_type: EXACT_SYNONYM
@@ -176718,6 +176644,12 @@ ingredients:
   - synonym_text: trans-beta-carboxystyrene
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
+  - synonym_text: Cinnamic acid
+    synonym_type: RAW_TEXT
+    source: merged_record
+  - synonym_text: 3-phenylprop-2-enoic acid
+    synonym_type: REJECTED_LABEL
+    source: merged_record
   mapping_status: MAPPED
   occurrence_statistics:
     total_occurrences: 3
@@ -176782,6 +176714,29 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-23T04:49:29.777562+00:00'
+    curator: claude
+    action: MERGED_FROM_MAPPED_RECORD
+    changes: 'Absorbed CHEBI:27386 ''Cinnamic acid'': 2 synonym(s), occurrences +0/0.
+      The record''s only source-supplied identity is CAS 140-10-3, which ChEBI xrefs
+      on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified CHEBI:27386''s
+      sole CAS is 621-82-9. MAPPING_SEMANTICS Section 3 step 4''s evidence hatch picks
+      the trans isomer, already held by this record (#312).'
+    llm_assisted: true
+  - timestamp: '2026-09-23T04:53:11.683397+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: '''3-phenylprop-2-enoic acid'' -> REJECTED_LABEL (the exact synonym of
+      the geometry-unspecified parent CHEBI:27386, not of the trans isomer); evidence
+      note added. The record''s only source-supplied identity is CAS 140-10-3 (CultureBotHT),
+      which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only; the geometry-unspecified
+      CHEBI:27386''s sole CAS is 621-82-9. Section 3 step 4''s evidence hatch picks
+      the trans isomer, which Trans-cinnamic_Acid already holds, so the two records
+      denote one substance (#312).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 621-82-9
     data_source: PubChem API
@@ -220502,3 +220457,166 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- identifier: CHEBI:35697
+  preferred_term: Cinnamic acid
+  ontology_mapping:
+    ontology_id: CHEBI:27386
+    ontology_label: cinnamic acid
+    ontology_source: CHEBI
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: Imported from CultureBotHT.
+  synonyms:
+  - synonym_text: 3-phenylprop-2-enoic acid
+    synonym_type: EXACT_SYNONYM
+    source: chebi_synonym_review
+  mapping_status: REJECTED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:04:17.380972+00:00'
+    curator: audit_integrate_culturebotht
+    action: CREATED_FROM_CULTUREBOTHT
+    changes: Created from CultureBotHT compounds_to_cas.csv (CAS=0140-10-3); Imported
+      from CultureBotHT.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:32.798295+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-01T08:08:28.637023+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_BACKFILL_CHEBI_CHEMISTRY
+    changes: molecular_formula=C9H8O2; inchi=InChI=1S/C9H8O2/c10-9(11)7-6-8-4-2-1-3-5-8/h1-7H,(;
+      smiles=[H]C(=Cc1ccccc1)C(=O)O
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:13.385529+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (chemical structure populated (molecular_formula))
+    llm_assisted: false
+  - timestamp: '2026-08-16T00:00:00+00:00'
+    curator: strip_cas_leading_zeros
+    action: STRIPPED_CAS_LEADING_ZERO
+    changes: chemical_properties.cas_rn 0140-10-3 -> 140-10-3 (#310). A CAS Registry
+      Number never carries leading zeros, so the padded form resolved against nothing
+      and any join on CAS-RN silently missed this record. The stripped value passes
+      the CAS check digit and resolves on PubChem to exactly this compound; the padding
+      was ingest alignment, not identity.
+    llm_assisted: false
+  - timestamp: '2026-09-23T04:49:29.777562+00:00'
+    curator: claude
+    action: MERGED_INTO
+    changes: Merged into CHEBI:35697 'trans-Cinnamic acid'; occurrences transferred.
+      Tombstoned REJECTED, SSSOM rows dropped. The record's only source-supplied identity
+      is CAS 140-10-3, which ChEBI xrefs on CHEBI:35697 trans-cinnamic acid only;
+      the geometry-unspecified CHEBI:27386's sole CAS is 621-82-9. MAPPING_SEMANTICS
+      Section 3 step 4's evidence hatch picks the trans isomer, already held by this
+      record (#312).
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
+  - timestamp: '2026-09-23T04:53:11.442718+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'identifier CHEBI:27386 -> CHEBI:35697 on the merge tombstone, so the
+      merged name is credited to the live record that holds the identifier (Rule K;
+      the #414 Mgcl2x_6_H2o precedent). The record''s only source-supplied identity
+      is CAS 140-10-3 (CultureBotHT), which ChEBI xrefs on CHEBI:35697 trans-cinnamic
+      acid only; the geometry-unspecified CHEBI:27386''s sole CAS is 621-82-9. Section
+      3 step 4''s evidence hatch picks the trans isomer, which Trans-cinnamic_Acid
+      already holds, so the two records denote one substance (#312).'
+    previous_status: REJECTED
+    new_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 140-10-3
+    data_source: CultureBotHT compounds_to_cas.csv
+    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+    molecular_formula: C9H8O2
+    inchi: InChI=1S/C9H8O2/c10-9(11)7-6-8-4-2-1-3-5-8/h1-7H,(H,10,11)
+    smiles: '[H]C(=Cc1ccccc1)C(=O)O'
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: CHEBI:114249
+  preferred_term: NaH2PO4•H2O
+  synonyms:
+  - synonym_text: NaH2PO4•H2O(MCIB 742)
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  mapping_status: REJECTED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-03-09T06:54:18.022301+00:00'
+    curator: import_from_culturemech
+    action: IMPORTED
+    changes: Initial import from CultureMech pipeline
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-11T05:36:00Z'
+    curator: mediaingredientmech-agentic-curation
+    action: REVIEWED_HYDRATE_AMBIGUITY
+    changes: Reviewed against local CHEBI:37585 mapped records; not merged because
+      the source term is explicit NaH2PO4 monohydrate while the local mapped representatives
+      carry anhydrous sodium dihydrogenphosphate chemistry.
+    previous_status: UNMAPPED
+    new_status: UNMAPPED
+    llm_assisted: true
+  - timestamp: '2026-08-06T00:00:00+00:00'
+    curator: promote_resolved_unmapped
+    action: PROMOTED_TO_MAPPED
+    previous_status: UNMAPPED
+    new_status: MAPPED
+    llm_assisted: false
+    changes: Promoted UNMAPPED_0028 -> cas:10049-21-5 "sodium dihydrogenphosphate"
+      (NARROW_MATCH); mapping_status UNMAPPED -> MAPPED, SSSOM row added.
+  - timestamp: '2026-09-23T04:49:55.744418+00:00'
+    curator: claude
+    action: MERGED_INTO
+    changes: 'Merged into CHEBI:114249 ''Sodium phosphate monobasic monohydrate'';
+      occurrences transferred. Tombstoned REJECTED, SSSOM rows dropped. The cas: identity
+      was the Section 3 step 2 fallback on the premise that ChEBI has no monohydrate
+      term; CHEBI:114249 sodium dihydrogenphosphate monohydrate exists, xrefs cas:10049-21-5,
+      and is held by this record: one substance under two identifiers (#312).'
+    previous_status: MAPPED
+    new_status: REJECTED
+    llm_assisted: true
+  - timestamp: '2026-09-23T04:53:11.712894+00:00'
+    curator: claude
+    action: CORRECTED
+    changes: 'identifier cas:10049-21-5 -> CHEBI:114249 on the merge tombstone, so
+      the merged name is credited to the live record that holds the identifier (Rule
+      K; the #414 Mgcl2x_6_H2o precedent). The 2026-08-06 promotion used the Section
+      3 step 2 cas: fallback on the premise that ChEBI has no hydrate term. CHEBI:114249
+      ''sodium dihydrogenphosphate monohydrate'' (H2O.H2O4P.Na, InChIKey BBMHARZCALWXSL-UHFFFAOYSA-M)
+      exists and xrefs cas:10049-21-5, the very CAS the record was keyed on, and Sodium_phosphate_monobasic_monohydrate
+      already holds it: one substance under two identifiers -> merge (#312).'
+    previous_status: REJECTED
+    new_status: REJECTED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  notes: 'CultureMech placeholder_id: 2; reviewed on 2026-05-11 and left unmapped
+    for hydrate-state curation rather than merging to CHEBI:37585 anhydrous sodium
+    dihydrogenphosphate.'
+  ingredient_type: SINGLE_INGREDIENT
+  ontology_mapping:
+    ontology_id: CHEBI:37585
+    ontology_label: sodium dihydrogenphosphate
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: Edison LITERATURE deep research
+      notes: 'Edison literature research (research/ingredients/NaH2PO4H2O-edison-literature.md)
+        identifies this as sodium dihydrogen phosphate MONOHYDRATE, CAS 10049-21-5.
+        CHEBI:37585 ''sodium dihydrogenphosphate'' is the ANHYDROUS form (its own
+        dbxref is CAS 7558-80-7), so the two are distinct substances -- MAPPING_SEMANTICS.md
+        Section 3: the hydrate takes its own cas: identifier with a narrowMatch to
+        the anhydrous parent, rather than being folded onto it.'

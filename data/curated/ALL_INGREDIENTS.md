@@ -1,8 +1,8 @@
 # Complete Ingredients Index
 **Total Records**: 2952
-**Mapped**: 2612 (88.5%)
+**Mapped**: 2610 (88.4%)
 **Unmapped**: 261 (8.8%)
-**Other statuses**: 79 (2.7%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Other statuses**: 81 (2.7%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 218,247
 
 ---
@@ -88,7 +88,6 @@
 | cas:7788-99-0 | CrKSO42 x 12 H2O | CHEBI:53471 | CHEBI | CLOSE_MATCH | 0 |
 | cas:145224-94-8 | MES Hydrat | CHEBI:39005 | CHEBI | NARROW_MATCH | 4 |
 | cas:13408-09-8 | Na2glycerophosphate•5H2O | CHEBI:15978 | CHEBI | NARROW_MATCH | 6 |
-| cas:10049-21-5 | NaH2PO4•H2O | CHEBI:37585 | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.ingredient:hans_100x_vitamins | Hans 100x vitamins | kgmicrobe.ingredient:hans_100x_vitamins | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:hans_1000x_minerals | Hans 1000x minerals | kgmicrobe.ingredient:hans_1000x_minerals | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:glycine-naoh_buffer | Glycine-NaOH buffer | kgmicrobe.ingredient:glycine-naoh_buffer | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
@@ -728,7 +727,6 @@
 | CHEBI:3687 | Chrysophanol | CHEBI:3687 | CHEBI | EXACT_MATCH | 0 |
 | cas:163046-73-9 | Cimicifugoside H1 | cas:163046-73-9 | CAS | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:cinerubin_a | Cinerubin A | kgmicrobe.compound:cinerubin_a | kgmicrobe.compound | PLACEHOLDER | 0 |
-| CHEBI:27386 | Cinnamic acid | CHEBI:27386 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:59936 | Ciprofloxacin Hydrochloride | CHEBI:59936 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27899 | Cisplatin | CHEBI:27899 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17626 | Citraconic acid | CHEBI:17626 | CHEBI | EXACT_MATCH | 0 |
@@ -1844,7 +1842,7 @@
 | CHEBI:63675 | Sodium succinate | CHEBI:63675 | CHEBI | SYNONYM_MATCH | 195 |
 | CHEBI:63017 | Sodium tartrate | CHEBI:63017 | CHEBI | EXACT_MATCH | 25 |
 | cas:10489-48-2 | Sodium thiophosphate tribasic hydrate | CHEBI:46612 | CHEBI | CLOSE_MATCH | 0 |
-| CHEBI:114249 | Sodium phosphate monobasic monohydrate | CHEBI:114249 | CHEBI | CAS_RN_LOOKUP | 46 |
+| CHEBI:114249 | Sodium phosphate monobasic monohydrate | CHEBI:114249 | CHEBI | CAS_RN_LOOKUP | 50 |
 | CHEBI:63686 | Sodium succinate dibasic hexahydrate | CHEBI:63686 | CHEBI | CAS_RN_LOOKUP | 20 |
 | ENVO:00001998 | Soil | ENVO:00001998 | ENVO | EXACT_MATCH | 46 |
 | MICRO:0000457 | Soil extract | MICRO:0000457 | MICRO | EXACT_MATCH | 17 |
@@ -2961,6 +2959,8 @@
 | kgmicrobe.ingredient:vitamins_solution | Vitamins-solution | REJECTED | kgmicrobe.ingredient:vitamins_solution |  | 0 |
 | CHEBI:29108 | Calcium | REJECTED | CHEBI:29108 | CHEBI:29108 | 0 |
 | CHEBI:18420 | Magnesium | REJECTED | CHEBI:18420 | CHEBI:18420 | 0 |
+| CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:27386 |  | 0 |
+| CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:37585 |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 0129 (2 | REJECTED |  |  | 0 |
 | UNMAPPED_0736 | 3-methylacetate | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 4-Diamino-6 | REJECTED |  |  | 0 |
