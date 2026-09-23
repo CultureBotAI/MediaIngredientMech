@@ -550,7 +550,7 @@ def finish_sssom() -> None:
         old_term = spec.old_ontology_id or (spec.old_identifier if spec.old_identifier.startswith("CHEBI:") else None)
         if old_term and old_term != spec.ontology_id and spec.ontology_id.startswith("CHEBI:"):
             old_only[spec.slug] = terms.names(old_term) - terms.names(spec.ontology_id)
-    synced = dropped = rewritten = added = scrubbed = relabelled = 0
+    synced = dropped = rewritten = added = scrubbed = relabelled = cas_fixed = 0
     kept: list[dict] = []
     for row in rows:
         slug = row["subject_id"][4:] if row["subject_id"].startswith("MIM:") else None
@@ -608,6 +608,21 @@ def finish_sssom() -> None:
                 removed = [t for t in tokens if t in drop_tokens]
                 _stamp(row, f"[other: dropped {removed}: rejected or names of the term this row left ({ISSUE})]", "OTHER")
                 scrubbed += 1
+        # #403: the orderable CAS reaches KGX through `other` on symmetric rows only;
+        # kg-microbe drops `other` on asymmetric rows, so a CAS there is dead weight.
+        cas_rn = str((record.get("chemical_properties") or {}).get("cas_rn") or "").strip()
+        tokens = [t for t in row["other"].split("|") if t]
+        cas_tokens = [t for t in tokens if t.upper().startswith("CAS:")]
+        if row["predicate_id"] in {"skos:exactMatch", "skos:closeMatch"} and cas_rn:
+            wanted = [t for t in tokens if not t.upper().startswith("CAS:")] + [f"CAS:{cas_rn}"]
+            if tokens != wanted:
+                row["other"] = "|".join(wanted)
+                _stamp(row, f"[other: CAS token follows the record's cas_rn on a symmetric row, #403 ({ISSUE})]", "OTHER")
+                cas_fixed += 1
+        elif row["predicate_id"] not in {"skos:exactMatch", "skos:closeMatch"} and cas_tokens:
+            row["other"] = "|".join(t for t in tokens if not t.upper().startswith("CAS:"))
+            _stamp(row, f"[other: CAS token removed from an asymmetric row, #403 ({ISSUE})]", "OTHER")
+            cas_fixed += 1
         kept.append(row)
     rows = kept
     existing = {(r["subject_id"], r["object_id"]) for r in rows}
@@ -637,7 +652,32 @@ def finish_sssom() -> None:
             added += 1
     _write_rows(comments, fields, rows)
     print(f"own-identifier rows synced {synced}; registry rows dropped {dropped}; cas rows rewritten {rewritten}; "
-          f"registry labels corrected {relabelled}; rows added {added}; tokens scrubbed from {scrubbed} row(s)")
+          f"registry labels corrected {relabelled}; rows added {added}; tokens scrubbed from {scrubbed} row(s); "
+          f"CAS tokens fixed on {cas_fixed} row(s)")
+    repoint_membership()
+
+
+def repoint_membership() -> None:
+    """mappings/culturemech_recipe_membership.tsv is keyed by MIM identifier; follow the re-groundings."""
+    path = ROOT / "mappings" / "culturemech_recipe_membership.tsv"
+    old_to_new = {spec.old_identifier: spec.new_identifier for spec in IDENTITIES}
+    comments, header, data, changed = [], None, [], 0
+    for line in path.read_text(encoding="utf-8").splitlines(keepends=True):
+        if line.startswith("#"):
+            comments.append(line)
+            continue
+        if header is None:
+            header = line
+            continue
+        first, sep, rest = line.partition("\t")
+        if first in old_to_new:
+            line = old_to_new[first] + sep + rest
+            changed += 1
+        data.append(line)
+    # The artifact is sorted by (mim_identifier, recipe_id) so rebuilds diff cleanly.
+    data.sort(key=lambda line: tuple(line.rstrip("\n").split("\t")[:2]))
+    path.write_text("".join(comments) + (header or "") + "".join(data), encoding="utf-8")
+    print(f"membership rows re-pointed: {changed}")
 
 
 def main() -> int:

@@ -6,7 +6,7 @@
   "scope": "Verified #312 batch 2: twelve identity re-groundings (parent promoted to identity, class to CAS-selected member, wrong form, or localized cas: identity with parent and registry rows) plus two mixtures whose components referenced a re-grounded identifier; every ChEBI/MeSH/NCIT fact re-checked at apply time by scripts/apply_312_batch2.py, PubChem InChIKeys pinned in the script. No rows removed: the frozen release-hold resolutions are bound to row positions (#745).",
   "approval": "NONE: every touched row is withheld pending mapping-specific review; no prior approval carries across this link.",
   "before_sha256": "c418f8062967e772911978cc51b680d031228019dfe744773a6307d51b87f0e0",
-  "after_sha256": "666923fa17a18dc9dce2388f8d5114092c47e19c1bcf69592cd12065df57de79",
+  "after_sha256": "2f7643f89430b88429df416ccc5dda26d014cd1e7fa641f59d69cd7815cba5bf",
   "before_row_count": 3018,
   "after_row_count": 3022,
   "records": [
@@ -171,9 +171,9 @@
         "source": "MIM:CultureBotHT|MIM:MESH via OLS (label-exact)|MIM:curator=backfill_parent_terms",
         "mapping_date": "2026-09-22",
         "confidence": "0.99",
-        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos] [own-identifier row: exactMatch per Rule D, grade EXACT_MATCH (#312)]",
-        "other": "",
-        "validation_method": "manual:apply_312_batch2|IDENTITY|2026-09-22"
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos] [own-identifier row: exactMatch per Rule D, grade EXACT_MATCH (#312)] [other: CAS token follows the record's cas_rn on a symmetric row, #403 (#312)]",
+        "other": "CAS:14919-49-4",
+        "validation_method": "manual:apply_312_batch2|OTHER|2026-09-22"
       }
     },
     {
@@ -381,9 +381,9 @@
         "source": "MIM:CultureBotHT|MIM:NCIT via OLS (stem-substring)|MIM:curator=backfill_parent_terms",
         "mapping_date": "2026-09-22",
         "confidence": "0.99",
-        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos] [own-identifier row: exactMatch per Rule D, grade EXACT_MATCH (#312)]",
-        "other": "",
-        "validation_method": "manual:apply_312_batch2|IDENTITY|2026-09-22"
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos] [own-identifier row: exactMatch per Rule D, grade EXACT_MATCH (#312)] [other: CAS token follows the record's cas_rn on a symmetric row, #403 (#312)]",
+        "other": "CAS:55449-49-5",
+        "validation_method": "manual:apply_312_batch2|OTHER|2026-09-22"
       }
     },
     {
@@ -486,9 +486,9 @@
         "source": "MIM:CultureBotHT|MIM:CHEBI via PubChem (pubchem-xref)|MIM:curator=migrate_media_roles_to_facets|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=backfill_parent_terms]",
         "mapping_date": "2026-09-22",
         "confidence": "0.9",
-        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos] [own-identifier row: exactMatch per Rule D, grade CAS_RN_LOOKUP (#312)]",
-        "other": "(2R,3R,4S,5S,6S)-2-[[(2R,3S,4R,4aR,6S,7R,8aS)-7-amino-6-[(1R,2R,3S,4R,6S)-4,6-diamino-2,3-dihydroxycyclohexyl]oxy-4-hydroxy-3-(methylamino)-2,3,4,4a,6,7,8,8a-octahydropyrano[3,2-b]pyran-2-yl]oxy]-5-amino-6-(hydroxymethyl)oxane-3,4-diol;suluric acid",
-        "validation_method": "manual:apply_312_batch2|IDENTITY|2026-09-22"
+        "comment": "[#390 2026-09-20: skos:narrowMatch -> skos:broadMatch. The record is narrower, so the ontology parent is the broader concept; the set now declares predicate_semantics: skos] [own-identifier row: exactMatch per Rule D, grade CAS_RN_LOOKUP (#312)] [other: CAS token follows the record's cas_rn on a symmetric row, #403 (#312)]",
+        "other": "(2R,3R,4S,5S,6S)-2-[[(2R,3S,4R,4aR,6S,7R,8aS)-7-amino-6-[(1R,2R,3S,4R,6S)-4,6-diamino-2,3-dihydroxycyclohexyl]oxy-4-hydroxy-3-(methylamino)-2,3,4,4a,6,7,8,8a-octahydropyrano[3,2-b]pyran-2-yl]oxy]-5-amino-6-(hydroxymethyl)oxane-3,4-diol;suluric acid|CAS:65710-07-8",
+        "validation_method": "manual:apply_312_batch2|OTHER|2026-09-22"
       }
     },
     {
@@ -556,9 +556,9 @@
         "source": "MIM:CultureBotHT|MIM:curator=auto_classify_ingredient_type|kgm:chebi_xrefs|kgm:mediaingredientmech_reviewed|kgm:mediaingredientmech_reviewed[curator=audit_integrate_culturebotht]|kgm:mediaingredientmech_reviewed[curator=auto_classify_ingredient_type]|kgm:primary_mappings[kegg_compound]",
         "mapping_date": "2026-09-22",
         "confidence": "0.9",
-        "comment": "[predicate reconciled to curated mapping 2026-09-22]",
-        "other": "CAS:108032-11-7",
-        "validation_method": "manual:reconcile_sssom|PREDICATE|2026-09-22"
+        "comment": "[predicate reconciled to curated mapping 2026-09-22] [other: CAS token removed from an asymmetric row, #403 (#312)]",
+        "other": "",
+        "validation_method": "manual:apply_312_batch2|OTHER|2026-09-22"
       }
     },
     {
