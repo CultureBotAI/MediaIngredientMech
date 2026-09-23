@@ -58,7 +58,7 @@ synonyms:
   synonym_type: HYDRATE_FORM
   source: kg_microbe
 - synonym_text: sodium phosphate monobasic anhydrous
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: 'Role: Buffer; Properties: Inorganic compound, Defined component,
     Simple component'
@@ -193,6 +193,17 @@ curation_history:
     weight. ChEBI has no term for this hydration state, so no authoritative value
     can be substituted. The grounding is separately wrong (#321); this corrects only
     the CAS (#334).'
+- timestamp: '2026-09-23T06:21:57.657338+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''sodium phosphate monobasic anhydrous'' (EXACT_SYNONYM):
+    the anhydrous CHEBI:37585 name on a dihydrate label''s local identity (#232).
+    The token is kept as provenance only; it must not resolve, be exported, or enter
+    the SSSOM other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 kg_microbe_node_id: CHEBI:37585
 chemical_properties:
   data_source: OAK/CHEBI xref

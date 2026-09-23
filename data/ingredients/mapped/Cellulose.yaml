@@ -14,7 +14,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: Optional ingredient
-  synonym_type: RAW_TEXT
+  synonym_type: REJECTED_LABEL
   source: CultureMech
 - synonym_text: Optional ingredient (Avicel SIGMA)
   synonym_type: RAW_TEXT
@@ -120,6 +120,16 @@ curation_history:
     not resolve them: ''Cellulose (Avicel or MN 300)'' (x2 CultureMech mentions).
     Source: culturemech:output/ingredient_occurrences.tsv.'
   llm_assisted: false
+- timestamp: '2026-09-23T06:21:57.585213+00:00'
+  curator: claude
+  action: REJECTED_WRONG_FORM_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''Optional ingredient'' (RAW_TEXT): a CultureMech
+    recipe annotation, not a name of cellulose (#232). The token is kept as provenance
+    only; it must not resolve, be exported, or enter the SSSOM other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 9004-34-6
   data_source: CultureBotHT compounds_to_cas.csv
