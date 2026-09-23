@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-09-23T03:47:39.698573+00:00
+Generated: 2026-09-23T05:20:43.830616+00:00
 Total: 2679 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -83,7 +83,6 @@ Total: 2679 ingredients
 | cas:7788-99-0 | CHEBI:53471 | CrKSO42 x 12 H2O | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | cas:145224-94-8 | CHEBI:39005 | MES Hydrat | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | cas:13408-09-8 | CHEBI:15978 | Na2glycerophosphate•5H2O | MAPPED | CHEBI | NARROW_MATCH | 6 |
-| cas:10049-21-5 | CHEBI:37585 | NaH2PO4•H2O | MAPPED | CHEBI | NARROW_MATCH | 4 |
 | kgmicrobe.ingredient:hans_100x_vitamins | kgmicrobe.ingredient:hans_100x_vitamins | Hans 100x vitamins | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:hans_1000x_minerals | kgmicrobe.ingredient:hans_1000x_minerals | Hans 1000x minerals | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.ingredient:glycine-naoh_buffer | kgmicrobe.ingredient:glycine-naoh_buffer | Glycine-NaOH buffer | MAPPED | kgmicrobe.ingredient | FALLBACK_REGISTRY | 2 |
@@ -736,7 +735,6 @@ Total: 2679 ingredients
 | CHEBI:3687 | CHEBI:3687 | Chrysophanol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:163046-73-9 | cas:163046-73-9 | Cimicifugoside H1 | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | kgmicrobe.compound:cinerubin_a | kgmicrobe.compound:cinerubin_a | Cinerubin A | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
-| CHEBI:27386 | CHEBI:27386 | Cinnamic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:59936 | CHEBI:59936 | Ciprofloxacin Hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:27899 | CHEBI:27899 | Cisplatin | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:17626 | CHEBI:17626 | Citraconic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1893,7 +1891,7 @@ Total: 2679 ingredients
 | CHEBI:63017 | CHEBI:63017 | Sodium tartrate | MAPPED | CHEBI | EXACT_MATCH | 25 |
 | cas:10489-48-2 | CHEBI:46612 | Sodium thiophosphate tribasic hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
 | CHEBI:32150 | CHEBI:32150 | Sodium Thiosulfate Pentahydrate | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| CHEBI:114249 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 46 |
+| CHEBI:114249 | CHEBI:114249 | Sodium phosphate monobasic monohydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 50 |
 | CHEBI:63686 | CHEBI:63686 | Sodium succinate dibasic hexahydrate | MAPPED | CHEBI | CAS_RN_LOOKUP | 20 |
 | ENVO:00001998 | ENVO:00001998 | Soil | MAPPED | ENVO | EXACT_MATCH | 46 |
 | MICRO:0000457 | MICRO:0000457 | Soil extract | MAPPED | MICRO | EXACT_MATCH | 17 |
@@ -2684,3 +2682,5 @@ Total: 2679 ingredients
 | kgmicrobe.ingredient:casamino_acids_vitamin_assay | mesh:C017721 | Casamino acids (vitamin assay) | MAPPED | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.compound:cuso4_x_2_h2o | CHEBI:23414 | CuSO4 x 2 H2O | MAPPED | CHEBI | CLOSE_MATCH | 8 |
 | kgmicrobe.compound:cuso4_x_4_h2o | CHEBI:23414 | CuSO4 x 4 H2O | MAPPED | CHEBI | CLOSE_MATCH | 2 |
+| CHEBI:35697 | CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |
+| CHEBI:114249 | CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
