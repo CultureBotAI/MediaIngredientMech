@@ -421,12 +421,9 @@ class TestRecordCreatorRoutesPromotions:
 class TestMicroRoundTripGuard:
     """Looking a term up by obo_id must not defeat the reason MICRO is gated.
 
-    MicrO has ~1,472 classes under `.../obo/MicrO.owl/MICRO_NNNNNNN` that do not
-    round-trip: kg-microbe's ontology transform never produces them, so a published
-    row dangles. `curie.py` gates MICRO behind MICRO_VERIFIED for exactly this. The
-    OLS4 fallback was added to look terms up by obo_id *because* the IRI is malformed
-    -- which routed around the guard and promoted two of them before the CI gate
-    caught it.
+    Unreviewed legacy MicrO.owl IRIs must not be admitted by an obo_id lookup
+    alone. Canonical OLS verification and the three separately reviewed KGX
+    exceptions are distinct evidence paths; the normalizer owns their union.
     """
 
     @pytest.fixture
@@ -455,15 +452,28 @@ class TestMicroRoundTripGuard:
 
     def test_no_record_is_grounded_to_an_unverified_micro_id(self):
         """No record may sit on an unverified MICRO id."""
-        from mediaingredientmech.curie import MICRO_VERIFIED
+        from mediaingredientmech.curie import CurieNormalizer
 
+        normalizer = CurieNormalizer()
         offenders = []
         for path in (_REPO / "data" / "ingredients").rglob("*.yaml"):
             data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
             identifier = str(data.get("identifier") or "")
-            if identifier.startswith("MICRO:") and identifier not in MICRO_VERIFIED:
+            if identifier.startswith("MICRO:") and not normalizer.normalize(identifier):
                 offenders.append((path.name, identifier))
         assert not offenders, f"records on unverified MICRO ids: {offenders}"
+
+    @pytest.mark.parametrize("curie,label", [
+        ("MICRO:0002393", "Proteose Peptone No. 2"),
+        ("MICRO:0002392", "rabbit serum"),
+        ("MICRO:0002250", "V-8 juice"),
+    ])
+    def test_reviewed_legacy_labels_use_the_pinned_source(self, promote, monkeypatch, curie, label):
+        def no_network(*args, **kwargs):
+            pytest.fail("source-backed MICRO labels must resolve offline")
+
+        monkeypatch.setattr("urllib.request.urlopen", no_network)
+        assert promote.canonical_label(curie) == label
 
 
 class TestMatchedTermMustDenoteASubstance:
