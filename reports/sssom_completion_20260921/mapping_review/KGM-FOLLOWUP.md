@@ -1,4 +1,4 @@
-# kg-microbe integration follow-up, 2026-09-22
+# kg-microbe integration follow-up, 2026-09-22–23
 
 This is a new mapping-specific review of the 17 fallback blockers in
 [kg-microbe #1123](https://github.com/Knowledge-Graph-Hub/kg-microbe/issues/1123),
@@ -49,7 +49,8 @@ malformed CAS RNs; valid arithmetic still requires scientific identity review.
 Relative to main `5019d687`, the result is ten new supported decisions and
 three withdrawals: 1,758 supported / 1,269 withheld / 3,027 source rows.
 The seven remaining decisions in the original 17-row cohort stay withheld.
-No source YAML or canonical mapping payload changes in this follow-up.
+Those counts describe the original fallback review before subsequent main
+corrections and the MICRO restoration below.
 The full graph remains unreleasable while unrelated scientific findings stay
 open; supported-subset export remains independently validated.
 
@@ -57,3 +58,17 @@ A new reviewed release is required before downstream consumes these changed
 approvals. The old KGM pin remains candidate-only. This review does not clear
 coverage losses, remaining identifier disagreements, or the downstream
 producer/merge review in #1123.
+
+The 2026-09-23 extension restores three exact MICRO identities in
+[#759](https://github.com/CultureBotAI/MediaIngredientMech/issues/759), using
+the [pinned source review](micro-source-review.md). Proteose Peptone No. 2,
+rabbit serum and V-8 juice replace their local fallback IDs with MICRO:0002393,
+MICRO:0002392 and MICRO:0002250. The receipt changes three parent rows, removes
+three superseded local rows, and moves 31 recipe memberships. Complete-row
+follow-up decisions approve the restored identities without approving roles.
+These records have no verified CAS RN; none is inferred from a parent.
+
+On main `0b4d0f0f` plus this combined follow-up, the current result is
+**1,758 supported / 1,262 withheld / 3,020 source rows**. The three supported
+MICRO mappings replace three supported local identities. The source-backed
+normalizer and original-IRI links remain distinct from canonical OLS verification.

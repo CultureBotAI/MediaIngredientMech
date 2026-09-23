@@ -1,4 +1,4 @@
-identifier: kgmicrobe.ingredient:v-8_juice
+identifier: MICRO:0002250
 preferred_term: V-8 Juice
 synonyms:
 - synonym_text: V-8 Juice
@@ -39,16 +39,35 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-09-23T17:09:56.136248+00:00'
+  curator: restore_micro_source_identities
+  action: CORRECTED
+  changes: 'Restore MICRO:0002250 ''V-8 juice'' from the pinned KG-Microbe MICRO KGX
+    (#759). Both node snapshots contain this exact class label; current KGX parent(s):
+    MICRO:0000167. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002250.
+    This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS defining-ontology
+    status. No verified CAS RN is supplied for this material.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 notes: Imported from mim-queue (source_id=mediadive.ingredient:363); no CAS-RN or
   CHEBI/NCIT match. Curator review needed.
 ontology_mapping:
-  ontology_id: FOODON:03400264
-  ontology_label: vegetable juice (us cfr)
-  ontology_source: FOODON
-  mapping_quality: NARROW_MATCH
+  ontology_id: MICRO:0002250
+  ontology_label: V-8 juice
+  ontology_source: MICRO
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: fix_micro_malformed_iris
-    notes: MICRO:0002250 is an OLS4 non-defining MicrO.owl IRI; V-8 Juice has no well-formed
-      exact OBO term, so this record keeps a local identity and anchors to the vegetable
-      juice parent.
+    notes: 'SUPERSEDED by source-backed review #759: MICRO:0002250 is an OLS4 non-defining
+      MicrO.owl IRI; V-8 Juice has no well-formed exact OBO term, so this record keeps
+      a local identity and anchors to the vegetable juice parent.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: src/mediaingredientmech/ontology_sources/micro/manifest.json
+    notes: 'Restore MICRO:0002250 ''V-8 juice'' from the pinned KG-Microbe MICRO KGX
+      (#759). Both node snapshots contain this exact class label; current KGX parent(s):
+      MICRO:0000167. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002250.
+      This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+      defining-ontology status. No verified CAS RN is supplied for this material.'

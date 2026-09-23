@@ -160,6 +160,6 @@ def test_every_published_object_id_normalises(n):
 
 
 @pytest.mark.parametrize("curie", ["MICRO:0002250", "MICRO:0002392", "MICRO:0002393"])
-def test_retired_malformed_micro_ids_stay_blocked(n, curie):
-    """Issue #137 re-grounded these records; the bad upstream terms stay blocked."""
-    assert not n.normalize(curie)
+def test_reviewed_legacy_micro_ids_are_source_backed(n, curie):
+    """KGX evidence supersedes the canonical-IRI-only refusal from #137."""
+    assert n.normalize(curie)

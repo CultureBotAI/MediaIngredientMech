@@ -193,8 +193,14 @@ def test_parent_label_does_not_bypass_local_oak_lookup(tmp_path, monkeypatch):
 
 
 def test_parent_label_checks_micro_allowlist():
-    with pytest.raises(SystemExit, match=re.escape("MICRO:0002393 failed CURIE validation")):
-        mod.ontology_label("MICRO:0002393", "Proteose Peptone No. 2")
+    with pytest.raises(SystemExit, match=re.escape("MICRO:0002390 failed CURIE validation")):
+        mod.ontology_label("MICRO:0002390", "unreviewed term")
+
+
+def test_source_backed_micro_label_is_resolved_and_checked():
+    assert mod.ontology_label("MICRO:0002393") == "Proteose Peptone No. 2"
+    with pytest.raises(SystemExit, match="label differs from the pinned MICRO source"):
+        mod.ontology_label("MICRO:0002393", "proteose peptone")
 
 
 def test_parent_label_is_allowed_for_verified_micro_parent():

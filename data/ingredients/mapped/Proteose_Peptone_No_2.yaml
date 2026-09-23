@@ -1,20 +1,28 @@
-identifier: kgmicrobe.ingredient:proteose_peptone_no_2
+identifier: MICRO:0002393
 preferred_term: Proteose peptone no. 2
 synonyms:
 - synonym_text: Proteose peptone No 2 (DIFCO 0121-01-3)
   synonym_type: CATALOG_VARIANT
   source: manual
 ontology_mapping:
-  ontology_id: MICRO:0000180
-  ontology_label: proteose peptone
+  ontology_id: MICRO:0002393
+  ontology_label: Proteose Peptone No. 2
   ontology_source: MICRO
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: CURATOR_JUDGMENT
     source: fix_micro_malformed_iris
-    notes: MICRO:0002393 is an OLS4 non-defining MicrO.owl IRI; Proteose Peptone No.
-      2 is a distinct catalog-specific peptone, so this record keeps a local identity
-      and anchors to the well-formed generic Proteose peptone parent.
+    notes: 'SUPERSEDED by source-backed review #759: MICRO:0002393 is an OLS4 non-defining
+      MicrO.owl IRI; Proteose Peptone No. 2 is a distinct catalog-specific peptone,
+      so this record keeps a local identity and anchors to the well-formed generic
+      Proteose peptone parent.'
+  - evidence_type: CURATOR_JUDGMENT
+    source: src/mediaingredientmech/ontology_sources/micro/manifest.json
+    notes: 'Restore MICRO:0002393 ''Proteose Peptone No. 2'' from the pinned KG-Microbe
+      MICRO KGX (#759). Both node snapshots contain this exact class label; current
+      KGX parent(s): MICRO:0000180. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002393.
+      This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+      defining-ontology status. No verified CAS RN is supplied for this material.'
 mapping_status: MAPPED
 curation_history:
 - timestamp: '2026-05-01T19:55:09.678923+00:00'
@@ -59,6 +67,18 @@ curation_history:
   previous_status: MAPPED
   new_status: MAPPED
   llm_assisted: true
+- timestamp: '2026-09-23T17:09:55.758900+00:00'
+  curator: restore_micro_source_identities
+  action: CORRECTED
+  changes: 'Restore MICRO:0002393 ''Proteose Peptone No. 2'' from the pinned KG-Microbe
+    MICRO KGX (#759). Both node snapshots contain this exact class label; current
+    KGX parent(s): MICRO:0000180. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002393.
+    This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS defining-ontology
+    status. No verified CAS RN is supplied for this material.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 ingredient_type: UNDEFINED_MIXTURE
 occurrence_statistics:
   total_occurrences: 7

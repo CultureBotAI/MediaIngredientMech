@@ -1,4 +1,4 @@
-generation_date: '2026-09-23T07:17:45.675939+00:00'
+generation_date: '2026-09-23T17:11:15.504309+00:00'
 total_count: 2679
 mapped_count: 2610
 unmapped_count: 0
@@ -153975,79 +153975,6 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
-- identifier: kgmicrobe.ingredient:proteose_peptone_no_2
-  preferred_term: Proteose peptone no. 2
-  synonyms:
-  - synonym_text: Proteose peptone No 2 (DIFCO 0121-01-3)
-    synonym_type: CATALOG_VARIANT
-    source: manual
-  ontology_mapping:
-    ontology_id: MICRO:0000180
-    ontology_label: proteose peptone
-    ontology_source: MICRO
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: CURATOR_JUDGMENT
-      source: fix_micro_malformed_iris
-      notes: MICRO:0002393 is an OLS4 non-defining MicrO.owl IRI; Proteose Peptone
-        No. 2 is a distinct catalog-specific peptone, so this record keeps a local
-        identity and anchors to the well-formed generic Proteose peptone parent.
-  mapping_status: MAPPED
-  curation_history:
-  - timestamp: '2026-05-01T19:55:09.678923+00:00'
-    curator: foodon_pass
-    action: AUTO_CREATE_FROM_MICRO
-    changes: created with primary MICRO:0002393
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:17.926549+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'peptone')
-    llm_assisted: false
-  - timestamp: '2026-06-03T02:06:01.748347+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
-  - timestamp: '2026-06-08T23:23:58.335582+00:00'
-    curator: audit_occurrence_stats
-    action: CORRECTED
-    changes: 'Backfilled missing occurrence_statistics (0/0): ontology-derived record
-      with no tracked media occurrences.'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE ->
-      nutritional_roles.PROTEIN_SOURCE'
-  - timestamp: '2026-08-27T03:16:39.519753+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 0/0 -> 7/7 (media_count/total_occurrences), derived
-      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
-      values came from the importer retired in #453, whose media_count counted a list
-      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-09-10T11:28:59.951056+00:00'
-    curator: fix_micro_malformed_iris
-    action: CORRECTED
-    changes: 'Re-grounded MICRO:0002393 ''Proteose Peptone No. 2'' -> kgmicrobe.ingredient:proteose_peptone_no_2
-      ''proteose peptone'' (NARROW_MATCH). MICRO:0002393 is an OLS4 non-defining MicrO.owl
-      IRI; Proteose Peptone No. 2 is a distinct catalog-specific peptone, so this
-      keeps a local identity and anchors it to the well-formed generic Proteose peptone
-      parent. See #137.'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: true
-  ingredient_type: UNDEFINED_MIXTURE
-  occurrence_statistics:
-    total_occurrences: 7
-    media_count: 7
-  nutritional_roles:
-  - role: PROTEIN_SOURCE
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: CHEBI:50205
   preferred_term: Protocatechualdehyde
   ontology_mapping:
@@ -157044,68 +156971,6 @@ ingredients:
         MICRO:0001229 is this record''s identifier, and in MIM the identifier IS the
         ontology CURIE, so a second record on it would be a duplicate primary key
         rather than added coverage.'
-  ingredient_type: UNDEFINED_MIXTURE
-- identifier: kgmicrobe.ingredient:rabbit_serum
-  preferred_term: Rabbit serum
-  synonyms:
-  - synonym_text: Rabbit serum
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 21
-    media_count: 21
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T00:41:18.446134+00:00'
-    curator: resolve_unmapped
-    action: AUTO_UPGRADE_TO_MICRO
-    changes: primary UNMAPPED_0506 → MICRO:0002392 via name normalization to 'Rabbit
-      serum'
-    llm_assisted: false
-  - timestamp: '2026-08-13T00:00:00+00:00'
-    curator: classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'serum')
-      (#323)
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.519794+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 0/0 -> 21/21 (media_count/total_occurrences),
-      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-      prior values came from the importer retired in #453, whose media_count counted
-      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-09-10T11:26:28.923830+00:00'
-    curator: fix_micro_malformed_iris
-    action: CORRECTED
-    changes: 'Re-grounded MICRO:0002392 ''rabbit serum'' -> kgmicrobe.ingredient:rabbit_serum
-      ''blood serum'' (NARROW_MATCH). MICRO:0002392 is an OLS4 non-defining MicrO.owl
-      IRI; rabbit serum has no well-formed exact OBO term, so this keeps a local identity
-      and anchors it to blood serum. See #137.'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN or
-    CHEBI/NCIT match. Curator review needed.
-  ontology_mapping:
-    ontology_id: UBERON:0001977
-    ontology_label: blood serum
-    ontology_source: UBERON
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: CURATOR_JUDGMENT
-      source: fix_micro_malformed_iris
-      notes: MICRO:0002392 is an OLS4 non-defining MicrO.owl IRI; rabbit serum has
-        no well-formed exact OBO term, so this record keeps a local identity and anchors
-        to the blood serum parent.
   ingredient_type: UNDEFINED_MIXTURE
 - identifier: cas:10237-77-1
   preferred_term: rac-3-Hydroxypentanoic Acid
@@ -181323,61 +181188,6 @@ ingredients:
     inchi: InChI=1S/C18H16O7/c1-6-14(22)12(8(3)20)16-13(15(6)23)18(4)10(25-16)5-9(21)11(7(2)19)17(18)24/h5,21-23H,1-4H3
     smiles: CC(=O)C1=C(O)C=C2Oc3c(C(C)=O)c(O)c(C)c(O)c3C2(C)C1=O
   ingredient_type: SINGLE_INGREDIENT
-- identifier: kgmicrobe.ingredient:v-8_juice
-  preferred_term: V-8 Juice
-  synonyms:
-  - synonym_text: V-8 Juice
-    synonym_type: RAW_TEXT
-    source: mim-queue
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 3
-    media_count: 3
-  curation_history:
-  - timestamp: '2026-04-30T18:43:03.698454+00:00'
-    curator: audit_import_ingredients[mim-queue]
-    action: CREATED_AS_UNMAPPED
-    changes: Imported from mim-queue (source_id=mediadive.ingredient:363); no CAS-RN
-      or CHEBI/NCIT match. Curator review needed.
-    new_status: UNMAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-02T00:41:18.474917+00:00'
-    curator: resolve_unmapped
-    action: AUTO_UPGRADE_TO_MICRO
-    changes: primary UNMAPPED_0563 → MICRO:0002250 via name normalization to 'V-8
-      Juice'
-    llm_assisted: false
-  - timestamp: '2026-08-27T03:16:39.520056+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 0/0 -> 3/3 (media_count/total_occurrences), derived
-      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
-      values came from the importer retired in #453, whose media_count counted a list
-      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  - timestamp: '2026-09-10T11:25:00.020162+00:00'
-    curator: fix_micro_malformed_iris
-    action: CORRECTED
-    changes: 'Re-grounded MICRO:0002250 ''V-8 juice'' -> kgmicrobe.ingredient:v-8_juice
-      ''vegetable juice (us cfr)'' (NARROW_MATCH). MICRO:0002250 is an OLS4 non-defining
-      MicrO.owl IRI; V-8 Juice has no well-formed exact OBO term, so this keeps a
-      local identity and anchors it to the vegetable juice parent. See #137.'
-    previous_status: MAPPED
-    new_status: MAPPED
-    llm_assisted: true
-  notes: Imported from mim-queue (source_id=mediadive.ingredient:363); no CAS-RN or
-    CHEBI/NCIT match. Curator review needed.
-  ontology_mapping:
-    ontology_id: FOODON:03400264
-    ontology_label: vegetable juice (us cfr)
-    ontology_source: FOODON
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: CURATOR_JUDGMENT
-      source: fix_micro_malformed_iris
-      notes: MICRO:0002250 is an OLS4 non-defining MicrO.owl IRI; V-8 Juice has no
-        well-formed exact OBO term, so this record keeps a local identity and anchors
-        to the vegetable juice parent.
 - identifier: CHEBI:17418
   preferred_term: Valeric acid
   ontology_mapping:
@@ -220804,3 +220614,251 @@ ingredients:
         dbxref is CAS 7558-80-7), so the two are distinct substances -- MAPPING_SEMANTICS.md
         Section 3: the hydrate takes its own cas: identifier with a narrowMatch to
         the anhydrous parent, rather than being folded onto it.'
+- identifier: MICRO:0002393
+  preferred_term: Proteose peptone no. 2
+  synonyms:
+  - synonym_text: Proteose peptone No 2 (DIFCO 0121-01-3)
+    synonym_type: CATALOG_VARIANT
+    source: manual
+  ontology_mapping:
+    ontology_id: MICRO:0002393
+    ontology_label: Proteose Peptone No. 2
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: CURATOR_JUDGMENT
+      source: fix_micro_malformed_iris
+      notes: 'SUPERSEDED by source-backed review #759: MICRO:0002393 is an OLS4 non-defining
+        MicrO.owl IRI; Proteose Peptone No. 2 is a distinct catalog-specific peptone,
+        so this record keeps a local identity and anchors to the well-formed generic
+        Proteose peptone parent.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: src/mediaingredientmech/ontology_sources/micro/manifest.json
+      notes: 'Restore MICRO:0002393 ''Proteose Peptone No. 2'' from the pinned KG-Microbe
+        MICRO KGX (#759). Both node snapshots contain this exact class label; current
+        KGX parent(s): MICRO:0000180. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002393.
+        This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+        defining-ontology status. No verified CAS RN is supplied for this material.'
+  mapping_status: MAPPED
+  curation_history:
+  - timestamp: '2026-05-01T19:55:09.678923+00:00'
+    curator: foodon_pass
+    action: AUTO_CREATE_FROM_MICRO
+    changes: created with primary MICRO:0002393
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:17.926549+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'peptone')
+    llm_assisted: false
+  - timestamp: '2026-06-03T02:06:01.748347+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: PROTEIN_SOURCE (confidence: 0.80)'
+  - timestamp: '2026-06-08T23:23:58.335582+00:00'
+    curator: audit_occurrence_stats
+    action: CORRECTED
+    changes: 'Backfilled missing occurrence_statistics (0/0): ontology-derived record
+      with no tracked media occurrences.'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): PROTEIN_SOURCE ->
+      nutritional_roles.PROTEIN_SOURCE'
+  - timestamp: '2026-08-27T03:16:39.519753+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 7/7 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-10T11:28:59.951056+00:00'
+    curator: fix_micro_malformed_iris
+    action: CORRECTED
+    changes: 'Re-grounded MICRO:0002393 ''Proteose Peptone No. 2'' -> kgmicrobe.ingredient:proteose_peptone_no_2
+      ''proteose peptone'' (NARROW_MATCH). MICRO:0002393 is an OLS4 non-defining MicrO.owl
+      IRI; Proteose Peptone No. 2 is a distinct catalog-specific peptone, so this
+      keeps a local identity and anchors it to the well-formed generic Proteose peptone
+      parent. See #137.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-09-23T17:09:55.758900+00:00'
+    curator: restore_micro_source_identities
+    action: CORRECTED
+    changes: 'Restore MICRO:0002393 ''Proteose Peptone No. 2'' from the pinned KG-Microbe
+      MICRO KGX (#759). Both node snapshots contain this exact class label; current
+      KGX parent(s): MICRO:0000180. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002393.
+      This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+      defining-ontology status. No verified CAS RN is supplied for this material.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  ingredient_type: UNDEFINED_MIXTURE
+  occurrence_statistics:
+    total_occurrences: 7
+    media_count: 7
+  nutritional_roles:
+  - role: PROTEIN_SOURCE
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- identifier: MICRO:0002392
+  preferred_term: Rabbit serum
+  synonyms:
+  - synonym_text: Rabbit serum
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 21
+    media_count: 21
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T00:41:18.446134+00:00'
+    curator: resolve_unmapped
+    action: AUTO_UPGRADE_TO_MICRO
+    changes: primary UNMAPPED_0506 → MICRO:0002392 via name normalization to 'Rabbit
+      serum'
+    llm_assisted: false
+  - timestamp: '2026-08-13T00:00:00+00:00'
+    curator: classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=UNDEFINED_MIXTURE (name matches complex pattern 'serum')
+      (#323)
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.519794+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 21/21 (media_count/total_occurrences),
+      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+      prior values came from the importer retired in #453, whose media_count counted
+      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-10T11:26:28.923830+00:00'
+    curator: fix_micro_malformed_iris
+    action: CORRECTED
+    changes: 'Re-grounded MICRO:0002392 ''rabbit serum'' -> kgmicrobe.ingredient:rabbit_serum
+      ''blood serum'' (NARROW_MATCH). MICRO:0002392 is an OLS4 non-defining MicrO.owl
+      IRI; rabbit serum has no well-formed exact OBO term, so this keeps a local identity
+      and anchors it to blood serum. See #137.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-09-23T17:09:56.133081+00:00'
+    curator: restore_micro_source_identities
+    action: CORRECTED
+    changes: 'Restore MICRO:0002392 ''rabbit serum'' from the pinned KG-Microbe MICRO
+      KGX (#759). Both node snapshots contain this exact class label; current KGX
+      parent(s): MICRO:0001236. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002392.
+      This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+      defining-ontology status. No verified CAS RN is supplied for this material.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:464); no CAS-RN or
+    CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: MICRO:0002392
+    ontology_label: rabbit serum
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: CURATOR_JUDGMENT
+      source: fix_micro_malformed_iris
+      notes: 'SUPERSEDED by source-backed review #759: MICRO:0002392 is an OLS4 non-defining
+        MicrO.owl IRI; rabbit serum has no well-formed exact OBO term, so this record
+        keeps a local identity and anchors to the blood serum parent.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: src/mediaingredientmech/ontology_sources/micro/manifest.json
+      notes: 'Restore MICRO:0002392 ''rabbit serum'' from the pinned KG-Microbe MICRO
+        KGX (#759). Both node snapshots contain this exact class label; current KGX
+        parent(s): MICRO:0001236. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002392.
+        This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+        defining-ontology status. No verified CAS RN is supplied for this material.'
+  ingredient_type: UNDEFINED_MIXTURE
+- identifier: MICRO:0002250
+  preferred_term: V-8 Juice
+  synonyms:
+  - synonym_text: V-8 Juice
+    synonym_type: RAW_TEXT
+    source: mim-queue
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-04-30T18:43:03.698454+00:00'
+    curator: audit_import_ingredients[mim-queue]
+    action: CREATED_AS_UNMAPPED
+    changes: Imported from mim-queue (source_id=mediadive.ingredient:363); no CAS-RN
+      or CHEBI/NCIT match. Curator review needed.
+    new_status: UNMAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-02T00:41:18.474917+00:00'
+    curator: resolve_unmapped
+    action: AUTO_UPGRADE_TO_MICRO
+    changes: primary UNMAPPED_0563 → MICRO:0002250 via name normalization to 'V-8
+      Juice'
+    llm_assisted: false
+  - timestamp: '2026-08-27T03:16:39.520056+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 0/0 -> 3/3 (media_count/total_occurrences), derived
+      from distinct CultureMech recipe ids in the #337 occurrence table. The prior
+      values came from the importer retired in #453, whose media_count counted a list
+      truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-10T11:25:00.020162+00:00'
+    curator: fix_micro_malformed_iris
+    action: CORRECTED
+    changes: 'Re-grounded MICRO:0002250 ''V-8 juice'' -> kgmicrobe.ingredient:v-8_juice
+      ''vegetable juice (us cfr)'' (NARROW_MATCH). MICRO:0002250 is an OLS4 non-defining
+      MicrO.owl IRI; V-8 Juice has no well-formed exact OBO term, so this keeps a
+      local identity and anchors it to the vegetable juice parent. See #137.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+  - timestamp: '2026-09-23T17:09:56.136248+00:00'
+    curator: restore_micro_source_identities
+    action: CORRECTED
+    changes: 'Restore MICRO:0002250 ''V-8 juice'' from the pinned KG-Microbe MICRO
+      KGX (#759). Both node snapshots contain this exact class label; current KGX
+      parent(s): MICRO:0000167. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002250.
+      This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+      defining-ontology status. No verified CAS RN is supplied for this material.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: gpt-6
+  notes: Imported from mim-queue (source_id=mediadive.ingredient:363); no CAS-RN or
+    CHEBI/NCIT match. Curator review needed.
+  ontology_mapping:
+    ontology_id: MICRO:0002250
+    ontology_label: V-8 juice
+    ontology_source: MICRO
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: CURATOR_JUDGMENT
+      source: fix_micro_malformed_iris
+      notes: 'SUPERSEDED by source-backed review #759: MICRO:0002250 is an OLS4 non-defining
+        MicrO.owl IRI; V-8 Juice has no well-formed exact OBO term, so this record
+        keeps a local identity and anchors to the vegetable juice parent.'
+    - evidence_type: CURATOR_JUDGMENT
+      source: src/mediaingredientmech/ontology_sources/micro/manifest.json
+      notes: 'Restore MICRO:0002250 ''V-8 juice'' from the pinned KG-Microbe MICRO
+        KGX (#759). Both node snapshots contain this exact class label; current KGX
+        parent(s): MICRO:0000167. Original IRI: http://purl.obolibrary.org/obo/MicrO.owl/MICRO_0002250.
+        This supersedes #137''s canonical-IRI-only rejection; it does not claim OLS
+        defining-ontology status. No verified CAS RN is supplied for this material.'
