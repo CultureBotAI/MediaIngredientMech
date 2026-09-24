@@ -1,19 +1,26 @@
-identifier: cas:7486-38-6
+identifier: FOODON:03413240
 preferred_term: Sodium adipate
 ontology_mapping:
   ontology_id: FOODON:03413240
   ontology_label: sodium adipate
   ontology_source: FOODON
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 7486-38-6 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 7486-38-6 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: FOODON via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Sodium adipate'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Sodium adipate'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem
+      24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium
+      form or hydrate is inferred.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -48,12 +55,26 @@ curation_history:
   action: BACKFILL_PARENT_FOODON
   changes: set ontology_mapping parent=FOODON:03413240 (label-exact)
   llm_assisted: false
+- timestamp: '2026-09-24T07:10:47.897994+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem
+    24073 agrees with MIM formula and InChI containing two sodium ions. No monosodium
+    form or hydrate is inferred.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 7486-38-6
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
   molecular_formula: C6H8Na2O4
   smiles: C(CCC(=O)[O-])CC(=O)[O-].[Na+].[Na+]
   inchi: InChI=1S/C6H10O4.2Na/c7-5(8)3-1-2-4-6(9)10;;/h1-4H2,(H,7,8)(H,9,10);;/q;2*+1/p-2
   pubchem_cid: 24073
 ingredient_type: SINGLE_INGREDIENT
+notes: Original CAS, FoodOn INS 356 and JECFA identify disodium adipate. PubChem 24073
+  agrees with MIM formula and InChI containing two sodium ions. No monosodium form
+  or hydrate is inferred.

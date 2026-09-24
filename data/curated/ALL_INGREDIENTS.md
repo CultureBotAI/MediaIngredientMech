@@ -454,7 +454,6 @@
 | CHEBI:2781 | Acetovanillone | CHEBI:2781 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:134431 | Acetylated xylan | CHEBI:134431 | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:achromoviromycin | Achromoviromycin | kgmicrobe.compound:achromoviromycin | kgmicrobe.compound | PLACEHOLDER | 0 |
-| cas:8048-52-0 | Acriflavine | NCIT:C76253 | NCIT | NARROW_MATCH | 0 |
 | CHEBI:70241 | Actein | CHEBI:70241 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:actinohivin | Actinohivin | kgmicrobe.compound:actinohivin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | kgmicrobe.compound:actinomycetin | Actinomycetin | kgmicrobe.compound:actinomycetin | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -500,7 +499,6 @@
 | CHEBI:28971 | Ampicillin | CHEBI:28971 | CHEBI | EXACT_MATCH | 23 |
 | kgmicrobe.ingredient:amylopectin_from_maize | amylopectin from maize | CHEBI:28057 | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:28102 | Amylose from potato | CHEBI:28102 | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:53912-89-3 | Anabasine Hydrochloride | NCIT:C216370 | NCIT | NARROW_MATCH | 0 |
 | cas:6488-63-7 | Andirobin | cas:6488-63-7 | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:65408 | Andrographolide | CHEBI:65408 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2716 | Anethole | CHEBI:2716 | CHEBI | EXACT_MATCH | 0 |
@@ -604,7 +602,6 @@
 | CHEBI:28093 | Borneol | CHEBI:28093 | CHEBI | EXACT_MATCH | 0 |
 | MICRO:0000307 | Bovine albumin | MICRO:0000307 | MICRO | EXACT_MATCH | 4 |
 | MICRO:0001709 | Bovine calf serum | MICRO:0001709 | MICRO | LEXICAL_MATCH | 8 |
-| cas:9048-46-8 | bovine serum albumin | NCIT:C85253 | NCIT | NARROW_MATCH | 7 |
 | MICRO:0000193 | Brain heart infusion | MICRO:0000193 | MICRO | EXACT_MATCH | 29 |
 | MICRO:0000193 | Brain heart infusion broth | MICRO:0000193 | MICRO | LEXICAL_MATCH | 29 |
 | CHEBI:69196 | Brazilein | CHEBI:69196 | CHEBI | EXACT_MATCH | 0 |
@@ -758,7 +755,6 @@
 | FOODON:03310257 | Corn meal | FOODON:03310257 | FOODON | EXACT_MATCH | 6 |
 | CHEBI:53470 | CoSO4 | CHEBI:53470 | CHEBI | EXACT_MATCH | 64 |
 | CHEBI:91244 | CoSO4 x 7 H2O | CHEBI:91244 | CHEBI | EXACT_MATCH | 828 |
-| cas:10018-19-6 | Cotarnine Chloride | NCIT:C79997 | NCIT | NARROW_MATCH | 0 |
 | FOODON:02020891 | Cow's milk | FOODON:02020891 | FOODON | LEXICAL_MATCH | 2 |
 | ENVO:00001998 | CR1 Soil | ENVO:00001998 | ENVO | CLOSE_MATCH | 46 |
 | kgmicrobe.compound:cr2_so43_x_n_h2o | Cr2(SO4)3 x n H2O | CHEBI:53471 | CHEBI | NARROW_MATCH | 3 |
@@ -1299,7 +1295,6 @@
 | MICRO:0001363 | Liver extract | MICRO:0001363 | MICRO | EXACT_MATCH | 10 |
 | MICRO:0001363 | Liver extract concentrate | MICRO:0001363 | MICRO | LEXICAL_MATCH | 10 |
 | MICRO:0001363 | Liver extract infusion | MICRO:0001363 | MICRO | LEXICAL_MATCH | 10 |
-| cas:9000-40-2 | Locust bean gum | FOODON:03413132 | FOODON | NARROW_MATCH | 0 |
 | CHEBI:6518 | Lomefloxacin hydrochloride | CHEBI:6518 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:6538 | Loratadine | CHEBI:6538 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:40303 | Lovastatin | CHEBI:40303 | CHEBI | EXACT_MATCH | 0 |
@@ -1307,7 +1302,6 @@
 | CHEBI:17781 | Lumichrome | CHEBI:17781 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:6570 | Lupeol | CHEBI:6570 | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C90684 | Lydimycin | NCIT:C90684 | NCIT | EXACT_MATCH | 0 |
-| cas:2650-88-3 | Lysozyme | FOODON:03413135 | FOODON | NARROW_MATCH | 0 |
 | CHEBI:28488 | m-Xylene | CHEBI:28488 | CHEBI | EXACT_MATCH | 9 |
 | CHEBI:62955 | MES sodium salt | CHEBI:62955 | CHEBI | CAS_RN_LOOKUP | 4 |
 | CHEBI:201898 | Magainin I | CHEBI:201898 | CHEBI | EXACT_MATCH | 0 |
@@ -1674,7 +1668,6 @@
 | FOODON:03302378 | Potato flour | FOODON:03302378 | FOODON | EXACT_MATCH | 7 |
 | CHEBI:145933 | Pravastatin lactone | CHEBI:145933 | CHEBI | EXACT_MATCH | 0 |
 | cas:15870-91-4 | Prenyletin | cas:15870-91-4 | CAS | FALLBACK_REGISTRY | 0 |
-| cas:187235-37-6 | Pretomanid | NCIT:C166606 | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.compound:primocarcin | Primocarcin | kgmicrobe.compound:primocarcin | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:8431 | Procaine hydrochloride | CHEBI:8431 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:26271 | Proline | CHEBI:26271 | CHEBI | EXACT_MATCH | 23 |
@@ -1787,7 +1780,6 @@
 | CHEBI:31824 | Sodium 2-mercaptoethanesulfonate | CHEBI:31824 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:113449 | Sodium 4-Hydroxybenzoate | CHEBI:113449 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32138 | Sodium acetate trihydrate | CHEBI:32138 | CHEBI | EXACT_MATCH | 116 |
-| cas:7486-38-6 | Sodium adipate | FOODON:03413240 | FOODON | NARROW_MATCH | 0 |
 | CHEBI:53311 | Sodium alginate | CHEBI:53311 | CHEBI | EXACT_MATCH | 4 |
 | cas:15432-85-6 | Sodium antimonate | mesh:C034426 | MESH | NARROW_MATCH | 0 |
 | CHEBI:278547 | Sodium azide | CHEBI:278547 | CHEBI | EXACT_MATCH | 0 |
@@ -1888,10 +1880,8 @@
 | CHEBI:50519 | Sulfoacetic acid | CHEBI:50519 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33403 | Sulfur | CHEBI:33403 | CHEBI | EXACT_MATCH | 477 |
 | CHEBI:26835 | Sulfur compounds | CHEBI:26835 | CHEBI | SYNONYM_MATCH | 0 |
-| cas:8001-21-6 | Sunflower oil | NCIT:C1241 | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:supplemented_seawater | Supplemented Seawater | ENVO:00002149 | ENVO | CLOSE_MATCH | 2 |
 | CHEBI:35195 | Surfactant | CHEBI:35195 | CHEBI | EXACT_MATCH | 3 |
-| cas:168828-58-8 | Sutezolid | NCIT:C152482 | NCIT | NARROW_MATCH | 0 |
 | cas:16589-24-5 | Synephrine Tartrate | cas:16589-24-5 | CAS | FALLBACK_REGISTRY | 0 |
 | mesh:C003372 | Synergistin A | mesh:C003372 | MESH | EXACT_MATCH | 0 |
 | CHEBI:67380 | syringaldehyde | CHEBI:67380 | CHEBI | EXACT_MATCH | 0 |
@@ -1899,7 +1889,6 @@
 | cas:91000-53-2 | TAPS sodium salt | CHEBI:191055 | CHEBI | NARROW_MATCH | 8 |
 | CHEBI:9400 | Tangeritin | CHEBI:9400 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:75211 | tannic acid | CHEBI:75211 | CHEBI | EXACT_MATCH | 0 |
-| cas:39300-88-4 | Tara gum | FOODON:03413299 | FOODON | NARROW_MATCH | 0 |
 | CHEBI:15891 | Taurine | CHEBI:15891 | CHEBI | EXACT_MATCH | 12 |
 | CHEBI:181226 | Taurocholic acid sodium salt hydrate | CHEBI:181226 | CHEBI | EXACT_MATCH | 0 |
 | cas:2451-01-6 | Terpene hydrate | CHEBI:134806 | CHEBI | CLOSE_MATCH | 0 |
@@ -2046,7 +2035,6 @@
 | CHEBI:49976 | ZnCl2 | CHEBI:49976 | CHEBI | EXACT_MATCH | 1839 |
 | CHEBI:132762 | ZnSO4 x 6 H2O | CHEBI:132762 | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:32312 | ZnSO4 x 7 H2O | CHEBI:32312 | CHEBI | EXACT_MATCH | 2410 |
-| cas:9010-72-4 | Zymosan | NCIT:C183132 | NCIT | NARROW_MATCH | 0 |
 | CHEBI:16113 | cholesterol | CHEBI:16113 | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:41981 | deuterated water | CHEBI:41981 | CHEBI | CAS_RN_LOOKUP | 1 |
 | CHEBI:73685 | n-Acetyl-glutamine | CHEBI:73685 | CHEBI | CAS_RN_LOOKUP | 10 |
@@ -2621,6 +2609,18 @@
 | MICRO:0002250 | V-8 Juice | MICRO:0002250 | MICRO | EXACT_MATCH | 3 |
 | CHEBI:26580 | Rifamycin | CHEBI:26580 | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.ingredient:sorbitan_monooleate | Sorbitan Monooleate | kgmicrobe.ingredient:sorbitan_monooleate | kgmicrobe.ingredient | EXACT_MATCH | 2 |
+| NCIT:C76253 | Acriflavine | NCIT:C76253 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C216370 | Anabasine Hydrochloride | NCIT:C216370 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C85253 | bovine serum albumin | NCIT:C85253 | NCIT | EXACT_MATCH | 7 |
+| NCIT:C79997 | Cotarnine Chloride | NCIT:C79997 | NCIT | EXACT_MATCH | 0 |
+| FOODON:03413132 | Locust bean gum | FOODON:03413132 | FOODON | EXACT_MATCH | 0 |
+| kgmicrobe.ingredient:lysozyme | Lysozyme | kgmicrobe.ingredient:lysozyme | kgmicrobe.ingredient | EXACT_MATCH | 0 |
+| NCIT:C166606 | Pretomanid | NCIT:C166606 | NCIT | EXACT_MATCH | 0 |
+| FOODON:03413240 | Sodium adipate | FOODON:03413240 | FOODON | EXACT_MATCH | 0 |
+| NCIT:C1241 | Sunflower oil | NCIT:C1241 | NCIT | EXACT_MATCH | 0 |
+| NCIT:C152482 | Sutezolid | NCIT:C152482 | NCIT | EXACT_MATCH | 0 |
+| FOODON:03413299 | Tara gum | FOODON:03413299 | FOODON | EXACT_MATCH | 0 |
+| NCIT:C183132 | Zymosan | NCIT:C183132 | NCIT | EXACT_MATCH | 0 |
 
 ## Unmapped Ingredients
 

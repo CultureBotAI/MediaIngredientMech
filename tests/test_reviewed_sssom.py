@@ -205,6 +205,23 @@ def test_valid_cas_is_accepted_with_the_existing_explicit_review(reviewed_fixtur
     assert reviewed.export_reviewed(*reviewed_fixture)["counts"]["supported"] == 1
 
 
+@pytest.mark.parametrize("token", ["CAS:2650-88-3", " cas:2650-88-3 ", "2650-88-3", "CAS:12-3-4"])
+def test_invalid_cas_annotation_cannot_escape_through_supported_synonyms(reviewed_fixture, token):
+    change_source_row(reviewed_fixture, {"other": "alpha|" + token + "|CAS:7732-18-5"})
+    with pytest.raises(ValueError, match="Invalid CAS"):
+        reviewed.export_reviewed(*reviewed_fixture)
+
+
+def test_reviewed_valid_cas_annotations_and_plain_names_remain_usable(reviewed_fixture):
+    change_source_row(reviewed_fixture, {"other": "alpha|CAS:7732-18-5|69-89-6"})
+    assert reviewed.export_reviewed(*reviewed_fixture)["counts"]["supported"] == 1
+
+
+def test_invalid_cas_xref_is_rejected_by_annotation_guard():
+    with pytest.raises(ValueError, match="Invalid CAS"):
+        reviewed._safe_identifiers({"xref": "CHEBI:15377|CAS:2650-88-3"})
+
+
 def test_invalid_cas_payload_is_preserved_in_withheld_backlog(reviewed_fixture):
     change_source_row(reviewed_fixture, {"object_id": "cas:2650-88-3"})
     root, path, output = reviewed_fixture

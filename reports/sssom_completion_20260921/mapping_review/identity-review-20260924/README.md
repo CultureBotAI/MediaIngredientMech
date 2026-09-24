@@ -1,0 +1,32 @@
+# Remaining ingredient identity reviews — 2026-09-24
+
+This batch resolves the requested eleven NCIT/FoodOn identity reviews and contains the invalid Lysozyme CAS. The review applies to the ingredient concepts represented by these MIM records. A supplier preparation remains in `supplied_form` and in its original recipe; it does not become an exact synonym or a claim that every preparation is interchangeable. Tracking: MIM #762 and #753; KG-Microbe #1123.
+
+The twelve original CultureBotHT rows (including empty supplier/grade fields), complete before-records and source hash are archived in `source-records.json`. `native-authorities.json` captures the consumed NCIT statements and FoodOn KGX assertions. `fda-gsrs.json` captures selected current FDA GSRS records, exact registry statuses, references and response hashes. `pubchem-structures.json` captures current structures and the request hash. These are inspected inputs, not inferred approvals from a label or prefix preference.
+
+| MIM ingredient | Reviewed primary | Current CAS annotation | Source-specific decision |
+| --- | --- | --- | --- |
+| Anabasine Hydrochloride | NCIT:C216370 | 53912-89-3 | Original CAS, NCIT P210/P319, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific monohydrochloride. Its existing InChI is identical to the retrieved structure. Preserve that form; align the previously unstereospecific SMILES. |
+| Cotarnine Chloride | NCIT:C79997 | 10018-19-6 | Original CAS and FDA 03F6B8N3QN identify the 1:1 cotarninium chloride salt. NCIT carries that CAS and UNII. Neither free cotarnine nor the isolated cation is substituted. |
+| Pretomanid | NCIT:C166606 | 187235-37-6 | Original record names the antibiotic and CAS. FDA 2XOI31YC4N, NCIT and PubChem 456199 agree; existing stereochemical InChI is identical. Align SMILES with the same S identity. |
+| Sutezolid | NCIT:C152482 | 168828-58-8 | Original CAS, NCIT, FDA 3A71182L8P and PubChem 465951 agree on the S stereoisomer. Existing InChI is identical; align its SMILES. |
+| Bovine Serum Albumin | NCIT:C85253 | 9048-46-8 | The generic bovine albumin ingredient agrees with NCIT and FDA 27432CM55Q; FDA qualifies this CAS as GENERIC (FAMILY). Source Sigma A7030 is a supplied preparation, not the definition of the shared ingredient. Preserve its heat-shock/low-fatty-acid/protease qualifiers and all seven source-scoped recipes, including fraction V and Sigma A9647/A7409 alternatives. |
+| Sunflower Oil | NCIT:C1241 | 8001-21-6 | The original generic name/CAS agrees with the NCIT seed-oil definition and FDA 3W1JG795YI. The source row supplies no processing or grade qualifier. Do not infer a hydrogenated, refined or high-oleic preparation. |
+| Zymosan | NCIT:C183132 | 9010-72-4 | Original name/CAS, NCIT and NLM MeSH D015054 identify the named yeast-wall material. Preserve this preparation concept, without equivalence to arbitrary beta-glucan or a pure single molecule. |
+| Locust Bean Gum | FOODON:03413132 | 9000-40-2 | FoodOn INS 410, JECFA carob/locust gum and the original Sigma G0753 product agree. G0753 is seed-derived powder. The source's autoclaved text is a preparation qualifier, previously removed from exact synonyms; retain it in supplied-form notes. Do not infer a clarified gum preparation. |
+| Tara Gum | FOODON:03413299 | 39300-88-4 | FoodOn INS 417, JECFA seed-endosperm gum definition and the original Biosynth YT58656 name/CAS agree. Retain the product reference; no unreported viscosity grade is inferred. |
+| Sodium Adipate | FOODON:03413240 | 7486-38-6 | FoodOn INS 356 and JECFA CAS agree with the original source. MIM and PubChem 24073 have the same disodium formula and InChI. Preserve two sodium ions; no mono-sodium salt or hydrate is inferred. |
+| Acriflavine | NCIT:C76253 | 65589-70-0 | FDA 1T3A50395T explicitly lists NCIT:C76253, both mixture components, PRIMARY CAS 65589-70-0 and SUPERSEDED CAS 8048-52-0. MIM's existing multicomponent InChI agrees with PubChem 443101. Keep the original CAS in source-qualified history, outside active xrefs/synonyms/exact CAS mappings. This is not a claim that CAS globally withdrew the old RN. |
+| Lysozyme | kgmicrobe.ingredient:lysozyme | None assigned | Original source says only Lysozyme and invalid 2650-88-3, with blank supplier/catalog fields. Remove that RN from active identifier, properties and SSSOM annotations; preserve the rejected source assertion in evidence/history. Neither checksum substitution nor the plausible 12650-88-3 establishes the source material. Withdraw the unsupported FoodOn food-additive scope pending original preparation evidence. |
+
+Additional inspected primary sources:
+
+- [Sigma A7030](https://www.sigmaaldrich.com/US/en/product/sigma/a7030): bovine albumin preparation and CAS; [FDA bovine albumin](https://precision.fda.gov/uniisearch/srs/unii/27432CM55Q).
+- [Sigma G0753](https://www.sigmaaldrich.com/US/en/product/sigma/g0753): Ceratonia siliqua seed gum and CAS; [JECFA INS 410](https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/940).
+- [Biosynth YT58656](https://www.biosynth.com/p/YT58656/39300-88-4-tara-gum): original product/CAS; [JECFA INS 417](https://www.fao.org/fileadmin/user_upload/jecfa_additives/docs/Monograph1/Additive-455.pdf): gum material scope.
+- [JECFA INS 356](https://apps.who.int/food-additives-contaminants-jecfa-database/Home/Chemical/2972): sodium adipate/CAS. Mapping an identity does not assert current food-use authorization.
+- [NLM MeSH Zymosan](https://ncbi.nlm.nih.gov/mesh/68015054): named preparation and registry number.
+
+`bsa-recipe-occurrences.json` preserves all seven original links, amounts and preparation notes. Their individual recipe qualifiers remain authoritative; this review does not replace them with A7030 or any common grade.
+
+Implementation removes redundant CAS/local primary rows only for the eleven reviewed ontology promotions, retains stable MIM subjects, and emits CAS through independently reviewed KG-Microbe node-xref annotations. The Acriflavine legacy RN remains source-qualified history. Lysozyme's local self-identity makes no external molecular or food-additive equivalence claim. Changed complete rows, owning records and this evidence receive fresh hash-bound decisions; mapping receipts confer no approval by themselves. Ingredient roles, unrelated scientific holds and production release pins remain outside these identity decisions.
