@@ -213,8 +213,16 @@ def test_recomputed_ids_match_the_gate_and_the_exporter():
     graph = Graph()
     graph.node("MIM:Thing", "thing", "biolink:ChemicalEntity", "ingredient")
     graph.reference("CHEBI:1", "one")
-    graph.edge("MIM:Thing", "biolink:exact_match", "CHEBI:1", "skos:exactMatch", "mapping", OWNER, 2, mappings[1],
-               mapping_justification="semapv:ManualMappingCuration")
+    # Exactly the exporter's mapping call: no optional fields.
+    graph.edge("MIM:Thing", "biolink:exact_match", "CHEBI:1", "skos:exactMatch", "mapping",
+               "mappings/ingredient_mappings.sssom.tsv", 2, mappings[1])
     edge = graph.edges[0]
     assert mcr._edge_id_at(edge, 2) == edge["id"]
     assert mcr._edge_id_at(edge, 1) != edge["id"]
+    # The KGX TSV carries every optional column as "" (#765); the recomputation
+    # must reproduce the id from that shape too.
+    from mediaingredientmech.export.kgx import EDGE_COLUMNS
+
+    tsv_shaped = {column: edge.get(column, "") for column in EDGE_COLUMNS}
+    assert set(tsv_shaped) > set(edge)
+    assert mcr._edge_id_at(tsv_shaped, 2) == edge["id"]

@@ -173,16 +173,38 @@ def _assertion_id(position: int, payload_sha: str, source: str = SSSOM_SOURCE) -
     return assertion_identity(source, "mapping", position, payload_sha)
 
 
+# The columns a *mapping* edge carries when ``Graph.edge`` hashes it. The KGX TSV
+# adds every optional column (publications, reference_scope, ...) as an empty
+# string, which was not part of the hashed row, so the recomputation must use
+# exactly this set (#765).
+MAPPING_EDGE_KEYS = frozenset(
+    {
+        "subject",
+        "predicate",
+        "object",
+        "relation",
+        "primary_knowledge_source",
+        "provided_by",
+        "assertion_type",
+        "source_record",
+        "source_position",
+        "confidence",
+        "assertion_json",
+    }
+)
+
+
 def _edge_id_at(edge: dict, position: int) -> str:
-    """The KGX edge id the same edge carried when its SSSOM row sat at ``position``.
+    """The KGX edge id a *mapping* edge carried when its SSSOM row sat at ``position``.
 
     Mirrors ``mediaingredientmech.export.kgx.Graph.edge`` (the id is the digest
-    of the packed row without ``id``); ``tests/test_mapping_change_receipts.py``
-    pins the two together.
+    of the packed row without ``id``) for the mapping kind, whose rows carry
+    exactly ``MAPPING_EDGE_KEYS``; ``tests/test_mapping_change_receipts.py``
+    pins the two together, on an in-memory edge and on a TSV-shaped one.
     """
     from mediaingredientmech.export.kgx import packed
 
-    row = {key: value for key, value in edge.items() if key != "id"}
+    row = {key: value for key, value in edge.items() if key in MAPPING_EDGE_KEYS}
     row["source_position"] = str(position)
     return "MIM.assertion:" + hashlib.sha256(packed(row).encode()).hexdigest()
 
