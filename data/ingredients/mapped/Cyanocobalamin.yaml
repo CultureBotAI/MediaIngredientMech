@@ -25,7 +25,7 @@ synonyms:
   synonym_type: EXACT
   source: manual
 - synonym_text: Vitamin B12
-  synonym_type: EXACT
+  synonym_type: REJECTED_LABEL
   source: manual
 - synonym_text: CN-Cbl
   synonym_type: EXACT_SYNONYM
@@ -183,6 +183,17 @@ curation_history:
     autoclaving)''. Tokens already present on the kg-microbe ontology node were left
     out as redundant (#520).'
   llm_assisted: false
+- timestamp: '2026-09-24T07:48:22.735873+00:00'
+  curator: claude
+  action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''Vitamin B12'' (EXACT): ChEBI assigns ''vitamin
+    B12'' to CHEBI:176843, the class record, not to cyanocobalamin CHEBI:17439 (#669).
+    Kept as provenance only; it must not resolve, be exported, or enter the SSSOM
+    other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 68-19-9
   data_source: CultureBotHT/compounds_to_cas.csv

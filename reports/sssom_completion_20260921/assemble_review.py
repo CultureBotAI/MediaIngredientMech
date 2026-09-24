@@ -24,7 +24,7 @@ SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 # mapping_changes/ in sequence order (#312 ...). Each link records its own
 # before/after pair, so the chain is auditable link by link, and no link can
 # turn a prior approval into an approval of a changed row.
-REVIEWED_SOURCE = "87e8aa1c48a5d471dd641c9cd1605a780b3cfa5282d8073d1f5603856c4833aa"
+REVIEWED_SOURCE = "418c96557bad914aa29cc52ad423c645182edfa906b749b0a86399f019aedbd4"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 
