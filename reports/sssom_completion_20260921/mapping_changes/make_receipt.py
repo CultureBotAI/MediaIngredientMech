@@ -12,7 +12,12 @@ A receipt therefore records, for one batch:
 
 * the SSSOM digest before and after, so the chain stays link-by-link;
 * every owner record the batch touched, with before/after YAML digests and the
-  verification the curator wrote for it (from the mutator's apply log);
+  verification the curator wrote for it (from the mutator's apply log), plus,
+  when ``--before-records`` points at byte copies of the pre-batch records, the
+  canonical digest of each record's parsed pre-batch content
+  (``before_record_sha256``) so the resolution review can prove that a plan
+  pinned by *content* rather than by file hash was the state this link started
+  from (``mediaingredientmech.validation.mapping_change_receipts``);
 * every row that changed, was added or was removed, with its full before/after
   payload and both positions; and
 * ``position_map``: for each pre-batch row position, the post-batch position
@@ -35,6 +40,10 @@ import csv
 import hashlib
 import json
 from pathlib import Path
+
+import yaml
+
+from mediaingredientmech.validation.mapping_change_receipts import record_digest
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = Path(__file__).resolve().parent
@@ -100,6 +109,7 @@ def main() -> None:
     parser.add_argument("--scope", required=True, help="one sentence: what kind of change this batch makes")
     parser.add_argument("--before-sssom", type=Path, required=True, help="byte copy of the SSSOM taken before the batch")
     parser.add_argument("--apply-log", type=Path, required=True, help="the mutator's apply log (records with before/after hashes)")
+    parser.add_argument("--before-records", type=Path, help="directory holding byte copies of the touched records as they were before the batch, at their repository-relative paths")
     args = parser.parse_args()
     before_bytes = args.before_sssom.read_bytes()
     after_bytes = SOURCE.read_bytes()
@@ -112,14 +122,21 @@ def main() -> None:
         current = digest(path.read_bytes())
         if entry["after_yaml_sha256"] != current:
             raise ValueError(f"{entry['source_record']} changed after the apply log was written")
-        records.append({
+        item = {
             "source_record": entry["source_record"],
             "shape": entry["shape"],
             "before_yaml_sha256": entry["before_yaml_sha256"],
             "after_yaml_sha256": entry["after_yaml_sha256"],
             "change": entry["change"],
             "verification": entry["verification"],
-        })
+        }
+        if args.before_records is not None and entry["before_yaml_sha256"]:
+            before_path = args.before_records / entry["source_record"]
+            before_bytes_record = before_path.read_bytes()
+            if digest(before_bytes_record) != entry["before_yaml_sha256"]:
+                raise ValueError(f"{before_path} is not the pre-batch copy the apply log names")
+            item["before_record_sha256"] = record_digest(yaml.load(before_bytes_record, Loader=yaml.CSafeLoader))
+        records.append(item)
     touched_subjects = {c["after"]["subject_id"] if c["after"] else c["before"]["subject_id"] for c in changes}
     receipt = {
         "schema_version": 1,

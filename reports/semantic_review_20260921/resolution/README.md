@@ -81,6 +81,34 @@ and verifies the separate backlog and deterministic archive. Missing evidence,
 stale reviews, relabeled targets, reversed hierarchy, unrelated tombstones, and
 unreviewed assertions cannot acquire approval through structural validation.
 
+### Superseded pins
+
+The reviewed plans pin what they approved byte for byte: role and component
+plans pin a record hash, identity plans pin the record's parsed content, and
+the frozen release-hold resolution pins an assertion id that includes its
+SSSOM row position. A verified later correction to a pinned record or a row
+above the held row therefore could not land at all
+([#740](https://github.com/CultureBotAI/MediaIngredientMech/issues/740),
+[#745](https://github.com/CultureBotAI/MediaIngredientMech/issues/745),
+[#748](https://github.com/CultureBotAI/MediaIngredientMech/issues/748)).
+
+The builder and the gate now read the completion review's
+[mapping-change receipts](../../sssom_completion_20260921/README.md) through
+`mediaingredientmech.validation.mapping_change_receipts` as explicit links:
+
+- A plan pin is **superseded**, not violated, when the receipts chain the
+  record from the pinned hash (or, for an identity plan, from the recorded
+  canonical content digest) to its current bytes without a gap. A superseded
+  plan grants nothing: its identity, role, component and inherited approvals
+  lapse, the findings it closed reopen with that reason, and the record is
+  listed under `superseded_plans` in `current-review.json`.
+- The frozen release-hold resolution is re-derived at the held row's current
+  position by composing the receipts' position maps, and accepted only when
+  recomputing both the assertion id and the KGX edge id at the baseline
+  position reproduces the frozen ids exactly (`hold_lineage`).
+- The receipts and the module are hashed review inputs; a gap, an
+  approval-bearing receipt, or an undocumented change still fails the build.
+
 Independent adversarial review produced issues
 [#711](https://github.com/CultureBotAI/MediaIngredientMech/issues/711),
 [#712](https://github.com/CultureBotAI/MediaIngredientMech/issues/712),
