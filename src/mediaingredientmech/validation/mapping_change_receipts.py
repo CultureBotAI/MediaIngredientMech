@@ -115,7 +115,7 @@ def _walk(links: list[dict], start: int, current: str) -> bool:
         if link["before"] != running:
             return False
         running = link["after"]
-    return running == current
+    return bool(running == current)
 
 
 def supersedes(chains: dict[str, list[dict]], name: str, expected: str, current: str) -> bool:
@@ -170,7 +170,7 @@ def baseline_position(forward: list[int | None], current: int) -> int | None:
 def _assertion_id(position: int, payload_sha: str, source: str = SSSOM_SOURCE) -> str:
     from mediaingredientmech.validation.semantic_release import assertion_identity
 
-    return assertion_identity(source, "mapping", position, payload_sha)
+    return str(assertion_identity(source, "mapping", position, payload_sha))
 
 
 # The columns a *mapping* edge carries when ``Graph.edge`` hashes it. The KGX TSV
