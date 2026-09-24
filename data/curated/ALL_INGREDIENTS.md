@@ -1,6 +1,6 @@
 # Complete Ingredients Index
-**Total Records**: 2952
-**Mapped**: 2610 (88.4%)
+**Total Records**: 2953
+**Mapped**: 2611 (88.4%)
 **Unmapped**: 261 (8.8%)
 **Other statuses**: 81 (2.7%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 218,247
@@ -1957,7 +1957,6 @@
 | CHEBI:9678 | Tribenuron-methyl | CHEBI:9678 | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:9679 | Tricalcium phosphate | CHEBI:9679 | CHEBI | CAS_RN_LOOKUP | 1 |
 | CHEBI:16602 | Trichloroethylene | CHEBI:16602 | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:46760 | Tricine | CHEBI:46760 | CHEBI | EXACT_MATCH | 44 |
 | CHEBI:28621 | Triethanolamine | CHEBI:28621 | CHEBI | EXACT_MATCH | 5 |
 | mesh:C009560 | Trigonelline | mesh:C009560 | MESH | EXACT_MATCH | 2 |
 | CHEBI:229203 | Trigonelline HCl | CHEBI:229203 | CHEBI | CAS_RN_LOOKUP | 10 |
@@ -1969,7 +1968,7 @@
 | CHEBI:9747 | Triptolide | CHEBI:9747 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:66869 | Tris Acetate Stock Solution | CHEBI:66869 | CHEBI | LEXICAL_MATCH | 1 |
 | CHEBI:9754 | Tris base | CHEBI:9754 | CHEBI | EXACT_MATCH | 212 |
-| CHEBI:53258 | Trisodium citrate | CHEBI:53258 | CHEBI | EXACT_MATCH | 182 |
+| CHEBI:53258 | Trisodium citrate | CHEBI:53258 | CHEBI | EXACT_MATCH | 179 |
 | mesh:C514290 | Trisodium citrate x H2O | mesh:C514290 | MESH | EXACT_MATCH | 2 |
 | CHEBI:9750 | Triton X-100 | CHEBI:9750 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16765 | Tryptamine | CHEBI:16765 | CHEBI | EXACT_MATCH | 0 |
@@ -2621,6 +2620,8 @@
 | kgmicrobe.ingredient:casamino_acids_vitamin_assay | Casamino acids (vitamin assay) | mesh:C017721 | MESH | NARROW_MATCH | 0 |
 | kgmicrobe.compound:cuso4_x_2_h2o | CuSO4 x 2 H2O | CHEBI:23414 | CHEBI | CLOSE_MATCH | 8 |
 | kgmicrobe.compound:cuso4_x_4_h2o | CuSO4 x 4 H2O | CHEBI:23414 | CHEBI | CLOSE_MATCH | 2 |
+| cas:144-33-2 | Na2-citrate | CHEBI:30769 | CHEBI | NARROW_MATCH | 3 |
+| CHEBI:39063 | Tricine | CHEBI:39063 | CHEBI | CAS_RN_LOOKUP | 44 |
 
 ## Unmapped Ingredients
 
