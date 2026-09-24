@@ -56,19 +56,28 @@ def walk_mapping_changes(receipts, *, start_sha256, reviewed_sha256, baseline_ro
     receipts = sorted(receipts, key=lambda receipt: receipt["sequence"])
     if [r["sequence"] for r in receipts] != list(range(1, len(receipts) + 1)):
         raise ValueError("Mapping-change receipts must be numbered 1..n without gaps")
-    state = [dict(refreshed_rows.get(position, row)) for position, row in enumerate(baseline_rows, 1)]
+    state = [
+        dict(refreshed_rows.get(position, row)) for position, row in enumerate(baseline_rows, 1)
+    ]
     forward = list(range(1, len(baseline_rows) + 1))
     last = {}
     link = start_sha256
     for receipt in receipts:
         batch = receipt.get("batch")
-        if receipt.get("schema_version") != 1 or str(receipt.get("approval", "")).split(":")[0] != "NONE":
+        if (
+            receipt.get("schema_version") != 1
+            or str(receipt.get("approval", "")).split(":")[0] != "NONE"
+        ):
             raise ValueError(f"Mapping-change receipt {batch} is not an approval-free link")
         if receipt["before_sha256"] != link:
-            raise ValueError(f"Mapping-change receipt {batch} does not chain from the previous link")
+            raise ValueError(
+                f"Mapping-change receipt {batch} does not chain from the previous link"
+            )
         link = receipt["after_sha256"]
         position_map = receipt["position_map"]
-        if len(position_map) != receipt["before_row_count"] or receipt["before_row_count"] != len(state):
+        if len(position_map) != receipt["before_row_count"] or receipt["before_row_count"] != len(
+            state
+        ):
             raise ValueError(f"Mapping-change receipt {batch} position map is incomplete")
         after_count = receipt["after_row_count"]
         new_state = [None] * after_count
@@ -89,20 +98,30 @@ def walk_mapping_changes(receipts, *, start_sha256, reviewed_sha256, baseline_ro
             if kind in {"changed", "removed"}:
                 before = change["before_position"]
                 if state[before - 1] != change["before"]:
-                    raise ValueError(f"Mapping-change receipt {batch} does not chain from the reviewed row")
+                    raise ValueError(
+                        f"Mapping-change receipt {batch} does not chain from the reviewed row"
+                    )
                 target = position_map[before - 1]
                 if kind == "removed":
                     if target is not None:
-                        raise ValueError(f"Mapping-change receipt {batch} removes a row its position map keeps")
+                        raise ValueError(
+                            f"Mapping-change receipt {batch} removes a row its position map keeps"
+                        )
                     continue
                 if target != change["after_position"]:
-                    raise ValueError(f"Mapping-change receipt {batch} moves a changed row inconsistently")
+                    raise ValueError(
+                        f"Mapping-change receipt {batch} moves a changed row inconsistently"
+                    )
             elif kind == "added":
                 target = change["after_position"]
                 if not 1 <= target <= after_count or new_state[target - 1] is not None:
-                    raise ValueError(f"Mapping-change receipt {batch} adds a row onto an occupied position")
+                    raise ValueError(
+                        f"Mapping-change receipt {batch} adds a row onto an occupied position"
+                    )
             else:
-                raise ValueError(f"Mapping-change receipt {batch} has an unknown change kind {kind!r}")
+                raise ValueError(
+                    f"Mapping-change receipt {batch} has an unknown change kind {kind!r}"
+                )
             new_state[target - 1] = change["after"]
             moved[target] = dict(change, receipt=batch)
         if any(row is None for row in new_state):
@@ -132,6 +151,9 @@ def assemble():
         json.loads(path.read_text()) for path in sorted((HERE / "mapping_changes").glob("*.json"))
     ]
     expected_hashes = dict(baseline["record_inputs"])
+    receipt_owners = {
+        entry["source_record"] for receipt in mapping_changes for entry in receipt["records"]
+    }
     plans = [("Trait", traits), ("Parent-name", parents)] + [
         (f"Mapping-change {receipt['batch']}", receipt)
         for receipt in sorted(mapping_changes, key=lambda receipt: receipt["sequence"])
@@ -151,16 +173,23 @@ def assemble():
     if any(record_hashes[owner] != expected_hashes.get(owner) for owner in record_hashes):
         raise ValueError("Owner changed after scientific review; do not restamp its approval")
     prior = {int(d["source_position"]): d for d in baseline["decisions"]}
-    changed_rows = {item["source_position"]: dict(item, receipt="trait-synonym-refresh.json") for item in refresh["changes"]}
+    changed_rows = {
+        item["source_position"]: dict(item, receipt="trait-synonym-refresh.json")
+        for item in refresh["changes"]
+    }
     for item in parent_refresh["changes"]:
         position = item["source_position"]
         # A row corrected twice must chain: the parent-name "before" is the trait "after".
         if position in changed_rows and changed_rows[position]["after"] != item["before"]:
-            raise ValueError("Parent-name refresh does not chain from the trait refresh on a shared row")
+            raise ValueError(
+                "Parent-name refresh does not chain from the trait refresh on a shared row"
+            )
         merged = dict(item, receipt="parent-name-refresh.json")
         if position in changed_rows:
             merged["before"] = changed_rows[position]["before"]
-            merged["removed_tokens"] = sorted(set(changed_rows[position]["removed_tokens"]) | set(item["removed_tokens"]))
+            merged["removed_tokens"] = sorted(
+                set(changed_rows[position]["removed_tokens"]) | set(item["removed_tokens"])
+            )
         changed_rows[position] = merged
     forward, mapping_changed_rows, replayed = walk_mapping_changes(
         mapping_changes,
@@ -247,7 +276,11 @@ def assemble():
         if position is None:
             # A row a mapping-change receipt added: it has no baseline decision and
             # no prior review to inherit. Withhold it with the receipt as basis.
-            if not mapping_change or mapping_change["kind"] != "added" or mapping_change["after"] != mapping:
+            if (
+                not mapping_change
+                or mapping_change["kind"] != "added"
+                or mapping_change["after"] != mapping
+            ):
                 raise ValueError("Row added outside a mapping-change receipt")
             key = str(current_position)
             reason = (
@@ -326,7 +359,17 @@ def assemble():
             if disposition == "SUPPORTED" and (
                 entry["mapping"] != mapping or entry["owner_record_sha256"] != record_hashes[owner]
             ):
-                raise ValueError("Nonmapping-cohort approval has stale owner or row")
+                if owner not in receipt_owners:
+                    raise ValueError("Nonmapping-cohort approval has stale owner or row")
+                # A mapping-change receipt corrected this owner after the cohort
+                # approval; the approval does not carry and the row is withheld.
+                disposition = "WITHHOLD"
+                reason = (
+                    "A mapping-change receipt corrected the owner record after this cohort "
+                    "approval, which therefore does not carry; preserve the claim pending "
+                    "a mapping-specific decision. Original: " + entry["reason"]
+                )
+                basis["mapping_change"] = "owner corrected after cohort approval"
             basis["scoped_review"] = {
                 "file": "mapping_review/nonmapping_cohorts.json",
                 "position": position,
@@ -339,7 +382,15 @@ def assemble():
                 or entry["owner"] != owner
                 or entry["owner_record_sha256"] != record_hashes[owner]
             ):
-                raise ValueError("Changed-owner approval has stale row or owner")
+                if owner not in receipt_owners:
+                    raise ValueError("Changed-owner approval has stale row or owner")
+                disposition = "WITHHOLD"
+                reason = (
+                    "A mapping-change receipt corrected the owner record after this "
+                    "changed-owner approval, which therefore does not carry; preserve the "
+                    "claim pending a mapping-specific decision. Original: " + entry["reason"]
+                )
+                basis["mapping_change"] = "owner corrected after changed-owner approval"
             basis["scoped_review"] = {
                 "file": "mapping_review/changed-owner-review.json",
                 "position": position,

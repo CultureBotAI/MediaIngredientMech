@@ -23,8 +23,14 @@ does not mean every source mapping has been scientifically approved.
   positions, and a position map so the position-keyed cohorts and holds carry
   forward. It is a link, not an approval: every row it touches is withheld
   until a mapping-specific review approves the corrected mapping, and every
-  owner it touches loses the byte-identical carry-forward. `make_receipt.py`
-  writes one from a mutator's apply log.
+  owner it touches loses the byte-identical carry-forward; a cohort or
+  changed-owner approval on such an owner becomes WITHHOLD instead of failing
+  the build. `make_receipt.py` writes one from a mutator's apply log; with
+  `--before-records DIR` (byte copies of the touched records taken before the
+  batch) it also records `before_record_sha256`, the canonical digest of each
+  record's parsed pre-batch content, which the resolution review needs to
+  supersede a plan that pins content rather than bytes (see
+  [the resolution README](../semantic_review_20260921/resolution/README.md#superseded-pins)).
 - `mapping-evidence.json` and `review.json` bind all final decisions to current
   sources. `assemble_review.py --check` reproduces the decisions and negative
   overrides without accepting refreshed source hashes as scientific approval.

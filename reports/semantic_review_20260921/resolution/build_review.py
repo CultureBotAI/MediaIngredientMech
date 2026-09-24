@@ -14,6 +14,14 @@ from pathlib import Path
 import yaml
 
 from mediaingredientmech.export.reviewed_sssom import load_review
+from mediaingredientmech.validation.mapping_change_receipts import (
+    hold_lineage,
+    load_receipts,
+    receipt_paths,
+    record_chains,
+    supersedes,
+    supersedes_content,
+)
 from mediaingredientmech.sssom_grading import predicate_for
 from mediaingredientmech.validation.semantic_release import (
     adjudicate_assertions,
@@ -48,11 +56,11 @@ def write_rows(path, entries):
         writer.writerows(entries)
 
 
-def apply_release_holds(document, assertions, edges, owners, record_hashes, evidence_path):
+def apply_release_holds(document, assertions, edges, owners, record_hashes, evidence_path, lineage=None):
     """Apply the frozen negative review after every positive approval path."""
     if document.get("required_hold_ids") != [FROZEN_RELEASE_HOLD_ID]:
         raise ValueError("Missing frozen release hold #724")
-    held = validate_release_holds(document, assertions, edges, owners, record_hashes)
+    held = validate_release_holds(document, assertions, edges, owners, record_hashes, lineage=lineage)
     if not held:
         # The gate independently accepts only the exact source correction in
         # maintained policy; this is not permission to clear an active hold.
@@ -66,7 +74,7 @@ def apply_release_holds(document, assertions, edges, owners, record_hashes, evid
     for decision in assertions:
         if decision["assertion_id"] in held:
             decision.update(resolution_status="OPEN", review_reason=hold["review_reason"], review_evidence=evidence_path)
-    validate_release_holds(document, assertions, edges, owners, record_hashes, assertions, evidence_path)
+    validate_release_holds(document, assertions, edges, owners, record_hashes, assertions, evidence_path, lineage)
 
 
 def has_mechanical_evidence_gap(kind, assertion):
@@ -168,25 +176,51 @@ def role_supported(item, name, record, record_hash, position, assertion):
             and assertion == item.get("after_assertion"))
 
 
-def validate_explicit_plans(records, hashes, roles, identity_support, component_plans, component_dispositions):
-    """Fail stale evidence before it can close either findings or current assertions."""
+def validate_explicit_plans(records, hashes, roles, identity_support, component_plans, component_dispositions,
+                            chains=None):
+    """Fail stale evidence before it can close either findings or current assertions.
+
+    A plan whose record was later corrected through a mapping-change receipt is
+    *superseded*: the chain from the plan's after-hash to the current bytes is
+    explicit, so the build does not fail, but the plan grants nothing for that
+    record (#740, #748). Returns the set of superseded record names.
+    """
+    chains = chains or {}
+    superseded = set()
+
+    def documented(name, expected):
+        return name in hashes and supersedes(chains, name, expected, hashes[name])
+
     for item in roles:
         name = item["source_path"]
         if records.get(name) != item["after_record"] or hashes.get(name) != item["after_sha256"]:
+            if documented(name, item["after_sha256"]):
+                superseded.add(name)
+                continue
             raise ValueError(f"Role plan no longer describes current record: {name}")
         position = int(item["source_position"]) - 1
         if records[name]["cellular_metabolic_roles"][position] != item["after_assertion"]:
             raise ValueError(f"Role plan position changed: {name}")
     for name, record in identity_support.items():
         if records.get(name) != record:
+            if name in hashes and supersedes_content(chains, name, record, hashes[name]):
+                superseded.add(name)
+                continue
             raise ValueError(f"Identity plan no longer describes current record: {name}")
     for item in component_plans:
         name = item.get("after_path", item["source_record"])
         if records.get(name) != item["after"] or hashes.get(name) != item["after_sha256"]:
+            if documented(name, item["after_sha256"]):
+                superseded.add(name)
+                continue
             raise ValueError(f"Component plan no longer describes current record: {name}")
     for item in component_dispositions:
         if hashes.get(item["current_record"]) != item["current_record_sha256"]:
+            if documented(item["current_record"], item["current_record_sha256"]):
+                superseded.add(item["current_record"])
+                continue
             raise ValueError(f"Stale component disposition: {item['finding_id']}")
+    return superseded
 
 
 def main():
@@ -208,7 +242,14 @@ def main():
     components = rows(HERE / "components/dispositions.tsv")
     current_components = json.loads((HERE / "components/applied-changes.json").read_text())
     identity_support = {item["destination_path"]: item["after_record"] for item in initial_plan + recovered if item["after_record"]["mapping_status"] == "MAPPED"}
-    validate_explicit_plans(records, hashes, roles, identity_support, current_components, components)
+    receipts = load_receipts(ROOT)
+    chains = record_chains(receipts)
+    superseded = validate_explicit_plans(records, hashes, roles, identity_support, current_components, components,
+                                         chains=chains)
+    # A superseded plan grants nothing: drop it from every approval path.
+    identity_support = {name: record for name, record in identity_support.items() if name not in superseded}
+    roles = [item for item in roles if item["source_path"] not in superseded]
+    components = [item for item in components if item["current_record"] not in superseded]
     component_index = {r["finding_id"]: r for r in components}
     role_index = {r["before_edge_id"]: r for r in rows(HERE / "roles/role-dispositions.tsv")}
     move_map = {item["source_path"]: item["destination_path"] for item in initial_plan + recovered}
@@ -241,6 +282,10 @@ def main():
         if records[name]["mapping_status"] == "REJECTED":
             decision["resolution_status"] = "EXCLUDED_REJECTED"
             decision["resolution_reason"] = "Source record is explicitly rejected and absent from active graph."
+        elif name in superseded:
+            # A mapping-change receipt corrected this record after the identity or
+            # component plan that closed the finding; the closure does not carry.
+            decision["resolution_reason"] = "The plan that closed this finding was superseded by a mapping-change receipt; no re-review has closed it since."
         elif finding["finding_id"] in initial_decisions:
             prior = initial_decisions[finding["finding_id"]]
             if prior["disposition"] == "IDENTITY_CORRECTED":
@@ -292,7 +337,7 @@ def main():
         proof = None
         reason = ""
         owner = graph_owners[assertion["subject_id"]] if kind == "mapping" else name
-        if inherited_approval(inherited, hashes, owner, kind, packed_sha, edge, assertion, role_reviews):
+        if owner not in superseded and inherited_approval(inherited, hashes, owner, kind, packed_sha, edge, assertion, role_reviews):
             proof = role_review_path if kind.endswith("_roles") else historical_evidence
             reason = ("Explicit role-level source-scope review and archived reasoning apply to the exact unchanged record, assertion and position; not a fresh growth experiment."
                       if kind.endswith("_roles") else "Existing positive review applies to byte-identical source record and assertion payload; not a fresh literature review.")
@@ -307,7 +352,7 @@ def main():
             if identity_mapping_supported(record, assertion):
                 proof = HERE / "identities/identity-plan.json" if source_name in recovered_names else BASE / "corrections/identity-plan.json"
                 reason = "This exact target, predicate and label are supported by the explicit chemical identity correction plan; this does not approve separate roles or other targets."
-        elif kind == "component" and name.endswith("/GYPS.yaml"):
+        elif kind == "component" and name.endswith("/GYPS.yaml") and name not in superseded:
             if records[name] != gyps["after"]:
                 raise ValueError("GYPS differs from reviewed recipe correction")
             proof = HERE / "components/applied-changes.json"
@@ -323,8 +368,10 @@ def main():
             decision.update(resolution_status="APPROVED" if scoped["disposition"] == "SUPPORTED" else "OPEN",
                             review_reason=scoped["review_reason"], review_evidence=relative(mapping_review_path))
     release_holds_path = HERE / "release-holds.json"
-    apply_release_holds(json.loads(release_holds_path.read_text()), assertion_rows, graph_edges,
-                        graph_owners, hashes, relative(release_holds_path))
+    hold_document = json.loads(release_holds_path.read_text())
+    hold_map = hold_lineage(receipts, assertion_rows, graph_edges, hold_document.get("resolutions", []))
+    apply_release_holds(hold_document, assertion_rows, graph_edges, graph_owners, hashes,
+                        relative(release_holds_path), hold_map)
     write_rows(HERE / "assertion-dispositions.tsv", assertion_rows)
     proof_files = [BASE / "manifest.json", BASE / "findings.tsv", BASE / "kgx_assertions.tsv", BASE / "records.tsv",
                    BASE / "corrections/identity-plan.json", HERE / "finding-dispositions.tsv", HERE / "assertion-dispositions.tsv",
@@ -334,6 +381,8 @@ def main():
                    ROOT / "src/mediaingredientmech/validation/semantic_release.py"]
     proof_files.append(mapping_review_path)
     proof_files.extend(ROOT / name for name in mapping_review["review"]["inputs"])
+    proof_files.append(ROOT / "src/mediaingredientmech/validation/mapping_change_receipts.py")
+    proof_files.extend(ROOT / name for name in receipt_paths(ROOT))
     for resolution in json.loads(release_holds_path.read_text()).get("resolutions", []):
         proof_files.append(ROOT / resolution["evidence"])
     for folder in ("identities", "roles", "components"):
@@ -349,6 +398,7 @@ def main():
                   release_holds=relative(release_holds_path),
                   mapping_review=relative(mapping_review_path),
                   record_lineage=relative(HERE / "record-lineage.json"), bundle=relative(bundle), inputs=inputs, record_inputs=hashes,
+                  mapping_change_receipts=receipt_paths(ROOT), superseded_plans=sorted(superseded), hold_lineage=hold_map,
                   blocking_finding_ids=blocking, blocking_assertion_ids=blocking_assertions, evidence_gaps=gaps)
     (HERE / "current-review.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps({"verdict": report["release_verdict"], "blocking_findings": len(blocking), "blocking_assertions": len(blocking_assertions), "evidence_gaps": gaps}, indent=2))

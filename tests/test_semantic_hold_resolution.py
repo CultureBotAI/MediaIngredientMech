@@ -318,3 +318,40 @@ def test_full_gate_rejects_rehashed_rewrite_of_original_negative_payload(resolve
     path.write_text(json.dumps(report))
     with pytest.raises(ValueError):
         gate.validate(root, path)
+
+
+def test_lineage_lets_the_same_row_resolve_the_hold_from_a_new_position(corrected_hold, monkeypatch):
+    """A receipt removed rows above the held row; ids move, the claim does not (#745)."""
+    from mediaingredientmech.validation import mapping_change_receipts as mcr
+
+    args = copy.deepcopy(corrected_hold)
+    frozen = next(r for r in args["document"]["resolutions"] if r["hold_id"] == HOLD_ID)
+    decision, edge = args["assertions"][0], args["edges"][0]
+    baseline = int(decision["source_position"])
+    moved = baseline - 1
+    # The fixture's edge is a stub, so its baseline id is not the real graph id; pin the
+    # frozen resolution to the stub's own baseline id (the formula is tested elsewhere).
+    frozen["edge_id"] = edge["id"] = mcr._edge_id_at(edge, baseline)
+    monkeypatch.setitem(gate.FROZEN_RELEASE_HOLD_RESOLUTIONS, HOLD_ID,
+                        dict(gate.FROZEN_RELEASE_HOLD_RESOLUTIONS[HOLD_ID], edge_id=frozen["edge_id"]))
+    assert check(args) == {}
+    decision["source_position"] = str(moved)
+    decision["assertion_id"] = mcr._assertion_id(moved, decision["assertion_sha256"])
+    edge["source_position"] = str(moved)
+    edge["id"] = mcr._edge_id_at(edge, moved)
+    with pytest.raises(ValueError, match="no matching current assertion"):
+        check(args)
+    position_map = [None] + list(range(1, baseline))
+    receipts = [{"before_row_count": baseline, "position_map": position_map}]
+    lineage = mcr.hold_lineage(receipts, args["assertions"], args["edges"], [frozen])
+    assert lineage[frozen["assertion_id"]]["assertion_id"] == decision["assertion_id"]
+    assert check(dict(args, lineage=lineage)) == {}
+    # A lineage entry cannot loosen the resolution: the payload is still checked exactly.
+    tampered = copy.deepcopy(args)
+    tampered["assertions"][0]["assertion_sha256"] = "rehashed"
+    with pytest.raises(ValueError, match="no matching current assertion"):
+        check(dict(tampered, lineage=lineage))
+    wrong_edge = copy.deepcopy(args)
+    wrong_edge["edges"][0]["id"] = "MIM.assertion:other"
+    with pytest.raises(ValueError, match="edge changed"):
+        check(dict(wrong_edge, lineage=lineage))

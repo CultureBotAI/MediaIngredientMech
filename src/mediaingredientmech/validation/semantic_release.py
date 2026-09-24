@@ -163,6 +163,12 @@ def assertion_inventory(records: dict[str, dict], mappings: list[dict[str, str]]
     return inventory
 
 
+def assertion_identity(source, kind, position, payload_sha):
+    """The position-bound id of one current assertion (shared with the receipt lineage)."""
+    identity = json.dumps([source, kind, str(position), payload_sha], separators=(",", ":"))
+    return "MIM.review:" + hashlib.sha256(identity.encode()).hexdigest()
+
+
 def current_assertions(records, mappings, record_hashes, sssom_sha):
     """Return content identities only; this function never grants scientific approval."""
     result = []
@@ -172,10 +178,9 @@ def current_assertions(records, mappings, record_hashes, sssom_sha):
     ):
         require(count == 1, "Repeated assertion inventory key")
         payload_sha = hashlib.sha256(payload.encode()).hexdigest()
-        identity = json.dumps([source, kind, position, payload_sha], separators=(",", ":"))
         result.append(
             {
-                "assertion_id": "MIM.review:" + hashlib.sha256(identity.encode()).hexdigest(),
+                "assertion_id": assertion_identity(source, kind, position, payload_sha),
                 "source_record": source,
                 "source_record_sha256": hashes[source],
                 "assertion_type": kind,
@@ -579,9 +584,23 @@ def adjudicate_findings(
 
 
 def validate_release_holds(
-    document, assertions, edges, owners, record_hashes, dispositions=None, evidence_path=None
+    document,
+    assertions,
+    edges,
+    owners,
+    record_hashes,
+    dispositions=None,
+    evidence_path=None,
+    lineage=None,
 ):
-    """Bind negative review to the exact current claim and prevent approval overrides."""
+    """Bind negative review to the exact current claim and prevent approval overrides.
+
+    ``lineage`` (from ``mapping_change_receipts.hold_lineage``) maps a frozen
+    resolution's baseline assertion/edge ids to the ids the same row carries
+    after receipts removed rows before it. It never loosens what the resolution
+    asserts: the payload, owner and owner bytes are still checked exactly.
+    """
+    lineage = lineage or {}
     require(document.get("schema_version") == 1, "Unsupported release-hold schema")
     required = document.get("required_hold_ids")
     holds = document.get("holds")
@@ -641,11 +660,13 @@ def validate_release_holds(
     require(len(edge_index) == len(edges), "Duplicate graph assertion for release holds")
     for key, resolution in by_resolution.items():
         require(key in FROZEN_RELEASE_HOLD_RESOLUTIONS, "Unknown release-hold resolution")
-        identity = identities.get(resolution.get("assertion_id"), {})
+        moved = lineage.get(resolution.get("assertion_id"), {})
+        identity = identities.get(moved.get("assertion_id", resolution.get("assertion_id")), {})
         require(
             identity.get("assertion_sha256") == resolution["assertion_sha256"],
             "Resolved release hold has no matching current assertion",
         )
+        expected_edge_id = moved.get("edge_id", resolution["edge_id"])
         edge = edge_index.get(
             (
                 identity.get("source_record"),
@@ -654,7 +675,7 @@ def validate_release_holds(
             ),
             {},
         )
-        require(edge.get("id") == resolution["edge_id"], "Resolved release-hold edge changed")
+        require(edge.get("id") == expected_edge_id, "Resolved release-hold edge changed")
         claim = json.loads(edge.get("assertion_json", "{}"))
         require(
             owners.get(claim.get("subject_id")) == resolution["owner_record"],
@@ -829,16 +850,34 @@ def validate(root: Path, report_path: Path) -> dict:
     )
     assertion_decisions = rows(local(root, report["assertion_dispositions"]))
     blocking_assertions = adjudicate_assertions(current, assertion_decisions, inputs)
+    hold_document = json.loads(local(root, report["release_holds"]).read_text())
+    # Mapping-change receipts are explicit, hash-bound links (#740/#745/#748); the
+    # gate re-reads them itself rather than trusting the builder's lineage.
+    from mediaingredientmech.validation.mapping_change_receipts import (
+        hold_lineage,
+        load_receipts,
+        receipt_paths,
+    )
+
+    receipt_names = receipt_paths(root)
+    require(
+        set(receipt_names) <= inputs.keys()
+        and set(report.get("mapping_change_receipts", [])) == set(receipt_names),
+        "Mapping-change receipts are not bound review inputs",
+    )
+    lineage = hold_lineage(
+        load_receipts(root), current, edges, hold_document.get("resolutions", [])
+    )
     validate_release_holds(
-        json.loads(local(root, report["release_holds"]).read_text()),
+        hold_document,
         current,
         edges,
         {node["id"]: node["source_record"] for node in ingredients},
         record_hashes,
         assertion_decisions,
         report["release_holds"],
+        lineage,
     )
-    hold_document = json.loads(local(root, report["release_holds"]).read_text())
     for resolution in hold_document.get("resolutions", []):
         require(
             inputs.get(resolution["evidence"]) == resolution["evidence_sha256"],
