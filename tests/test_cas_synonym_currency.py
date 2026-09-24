@@ -44,10 +44,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SSSOM = ROOT / "mappings" / "ingredient_mappings.sssom.tsv"
 MAPPED = ROOT / "data" / "curated" / "mapped_ingredients.yaml"
 SYMMETRIC = {"skos:exactMatch", "skos:closeMatch"}
-ANNOTATION_AUDIT = ROOT / (
-    "reports/sssom_completion_20260921/mapping_review/"
-    "identity-review-20260924/kgmicrobe-cas-transport.json"
-)
+ANNOTATION_AUDIT = ROOT / "tests/resources/kgmicrobe_cas_transport_20260924.json"
 
 
 @pytest.fixture(scope="module")
