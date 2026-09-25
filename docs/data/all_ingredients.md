@@ -1,6 +1,6 @@
 # All Ingredients
 
-Generated: 2026-09-24T08:00:26.903219+00:00
+Generated: 2026-09-25T04:55:44.055081+00:00
 Total: 2953 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -451,7 +451,6 @@ Total: 2953 ingredients
 | CHEBI:2781 | CHEBI:2781 | Acetovanillone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:134431 | CHEBI:134431 | Acetylated xylan | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | kgmicrobe.compound:achromoviromycin | kgmicrobe.compound:achromoviromycin | Achromoviromycin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
-| cas:8048-52-0 | NCIT:C76253 | Acriflavine | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:70241 | CHEBI:70241 | Actein | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | kgmicrobe.compound:actinohivin | kgmicrobe.compound:actinohivin | Actinohivin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | kgmicrobe.compound:actinomycetin | kgmicrobe.compound:actinomycetin | Actinomycetin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
@@ -499,7 +498,6 @@ Total: 2953 ingredients
 | CHEBI:34535 | CHEBI:34535 | Ampicillin sodium salt | REJECTED | CHEBI | LEXICAL_MATCH | 0 |
 | kgmicrobe.ingredient:amylopectin_from_maize | CHEBI:28057 | amylopectin from maize | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:28102 | CHEBI:28102 | Amylose from potato | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
-| cas:53912-89-3 | NCIT:C216370 | Anabasine Hydrochloride | MAPPED | NCIT | NARROW_MATCH | 0 |
 | cas:6488-63-7 | cas:6488-63-7 | Andirobin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:65408 | CHEBI:65408 | Andrographolide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:2716 | CHEBI:2716 | Anethole | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -608,7 +606,6 @@ Total: 2953 ingredients
 | CHEBI:28093 | CHEBI:28093 | Borneol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | MICRO:0000307 | MICRO:0000307 | Bovine albumin | MAPPED | MICRO | EXACT_MATCH | 4 |
 | MICRO:0001709 | MICRO:0001709 | Bovine calf serum | MAPPED | MICRO | LEXICAL_MATCH | 8 |
-| cas:9048-46-8 | NCIT:C85253 | bovine serum albumin | MAPPED | NCIT | NARROW_MATCH | 7 |
 | MICRO:0000193 | MICRO:0000193 | Brain heart infusion | MAPPED | MICRO | EXACT_MATCH | 29 |
 | MICRO:0000193 | MICRO:0000193 | Brain heart infusion broth | MAPPED | MICRO | LEXICAL_MATCH | 29 |
 | CHEBI:69196 | CHEBI:69196 | Brazilein | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -769,7 +766,6 @@ Total: 2953 ingredients
 | FOODON:03310257 | FOODON:03310257 | Corn meal | MAPPED | FOODON | EXACT_MATCH | 6 |
 | CHEBI:53470 | CHEBI:53470 | CoSO4 | MAPPED | CHEBI | EXACT_MATCH | 64 |
 | CHEBI:91244 | CHEBI:91244 | CoSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 828 |
-| cas:10018-19-6 | NCIT:C79997 | Cotarnine Chloride | MAPPED | NCIT | NARROW_MATCH | 0 |
 | FOODON:02020891 | FOODON:02020891 | Cow's milk | MAPPED | FOODON | LEXICAL_MATCH | 2 |
 | ENVO:00001998 | ENVO:00001998 | CR1 Soil | MAPPED | ENVO | CLOSE_MATCH | 46 |
 | kgmicrobe.compound:cr2_so43_x_n_h2o | CHEBI:53471 | Cr2(SO4)3 x n H2O | MAPPED | CHEBI | NARROW_MATCH | 3 |
@@ -1325,7 +1321,6 @@ Total: 2953 ingredients
 | MICRO:0001363 | MICRO:0001363 | Liver extract | MAPPED | MICRO | EXACT_MATCH | 10 |
 | MICRO:0001363 | MICRO:0001363 | Liver extract concentrate | MAPPED | MICRO | LEXICAL_MATCH | 10 |
 | MICRO:0001363 | MICRO:0001363 | Liver extract infusion | MAPPED | MICRO | LEXICAL_MATCH | 10 |
-| cas:9000-40-2 | FOODON:03413132 | Locust bean gum | MAPPED | FOODON | NARROW_MATCH | 0 |
 | CHEBI:6518 | CHEBI:6518 | Lomefloxacin hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:6538 | CHEBI:6538 | Loratadine | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:40303 | CHEBI:40303 | Lovastatin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1333,7 +1328,6 @@ Total: 2953 ingredients
 | CHEBI:17781 | CHEBI:17781 | Lumichrome | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:6570 | CHEBI:6570 | Lupeol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | NCIT:C90684 | NCIT:C90684 | Lydimycin | MAPPED | NCIT | EXACT_MATCH | 0 |
-| cas:2650-88-3 | FOODON:03413135 | Lysozyme | MAPPED | FOODON | NARROW_MATCH | 0 |
 | CHEBI:28488 | CHEBI:28488 | m-Xylene | MAPPED | CHEBI | EXACT_MATCH | 9 |
 | CHEBI:62955 | CHEBI:62955 | MES sodium salt | MAPPED | CHEBI | CAS_RN_LOOKUP | 4 |
 | CHEBI:201898 | CHEBI:201898 | Magainin I | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1714,7 +1708,6 @@ Total: 2953 ingredients
 | FOODON:03302378 | FOODON:03302378 | Potato flour | MAPPED | FOODON | EXACT_MATCH | 7 |
 | CHEBI:145933 | CHEBI:145933 | Pravastatin lactone | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:15870-91-4 | cas:15870-91-4 | Prenyletin | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
-| cas:187235-37-6 | NCIT:C166606 | Pretomanid | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.compound:primocarcin | kgmicrobe.compound:primocarcin | Primocarcin | MAPPED | kgmicrobe.compound | PLACEHOLDER | 0 |
 | CHEBI:8431 | CHEBI:8431 | Procaine hydrochloride | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:26271 | CHEBI:26271 | Proline | MAPPED | CHEBI | EXACT_MATCH | 23 |
@@ -1723,7 +1716,6 @@ Total: 2953 ingredients
 | CHEBI:51240 | CHEBI:51240 | Propidium iodide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:30768 | CHEBI:30768 | Propionic acid | MAPPED | CHEBI | EXACT_MATCH | 37 |
 | MICRO:0000180 | MICRO:0000180 | Proteose Peptone | MAPPED | MICRO | EXACT_MATCH | 571 |
-| kgmicrobe.ingredient:proteose_peptone_no_2 | MICRO:0000180 | Proteose peptone no. 2 | MAPPED | MICRO | NARROW_MATCH | 7 |
 | CHEBI:50205 | CHEBI:50205 | Protocatechualdehyde | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:36062 | CHEBI:36062 | Protocatechuic Acid | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:15430 | CHEBI:15430 | Protoporphyrin | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1756,7 +1748,6 @@ Total: 2953 ingredients
 | CHEBI:26493 | CHEBI:26493 | Quinic acid | MAPPED | CHEBI | EXACT_MATCH | 11 |
 | cas:6119-47-7 | cas:6119-47-7 | Quinine Hdrochloride | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | MICRO:0001229 | MICRO:0001229 | Rabbit blood | MAPPED | MICRO | EXACT_MATCH | 9 |
-| kgmicrobe.ingredient:rabbit_serum | UBERON:0001977 | Rabbit serum | MAPPED | UBERON | NARROW_MATCH | 21 |
 | cas:10237-77-1 | CHEBI:139272 | rac-3-Hydroxypentanoic Acid | MAPPED | CHEBI | NARROW_MATCH | 0 |
 | kgmicrobe.compound:racemomycin_e | mesh:C019594 | Racemomycin E | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:556075 | CHEBI:556075 | Radicicol | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1832,7 +1823,6 @@ Total: 2953 ingredients
 | CHEBI:32954 | CHEBI:32954 | Sodium acetate | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:32138 | CHEBI:32138 | Sodium acetate·3H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
 | CHEBI:32138 | CHEBI:32138 | Sodium acetate trihydrate | MAPPED | CHEBI | EXACT_MATCH | 116 |
-| cas:7486-38-6 | FOODON:03413240 | Sodium adipate | MAPPED | FOODON | NARROW_MATCH | 0 |
 | CHEBI:53311 | CHEBI:53311 | Sodium alginate | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | cas:15432-85-6 | mesh:C034426 | Sodium antimonate | MAPPED | MESH | NARROW_MATCH | 0 |
 | CHEBI:278547 | CHEBI:278547 | Sodium azide | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1941,10 +1931,8 @@ Total: 2953 ingredients
 | CHEBI:26835 | CHEBI:26835 | Sulfur compounds | MAPPED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:33403 | CHEBI:33403 | Sulfur (powder) | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:33403 | CHEBI:33403 | Sulphur | REJECTED | CHEBI | EXACT_MATCH | 0 |
-| cas:8001-21-6 | NCIT:C1241 | Sunflower oil | MAPPED | NCIT | NARROW_MATCH | 0 |
 | kgmicrobe.ingredient:supplemented_seawater | ENVO:00002149 | Supplemented Seawater | MAPPED | ENVO | CLOSE_MATCH | 2 |
 | CHEBI:35195 | CHEBI:35195 | Surfactant | MAPPED | CHEBI | EXACT_MATCH | 3 |
-| cas:168828-58-8 | NCIT:C152482 | Sutezolid | MAPPED | NCIT | NARROW_MATCH | 0 |
 | cas:16589-24-5 | cas:16589-24-5 | Synephrine Tartrate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | mesh:C003372 | mesh:C003372 | Synergistin A | MAPPED | MESH | EXACT_MATCH | 0 |
 | CHEBI:67380 | CHEBI:67380 | syringaldehyde | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -1952,7 +1940,6 @@ Total: 2953 ingredients
 | cas:91000-53-2 | CHEBI:191055 | TAPS sodium salt | MAPPED | CHEBI | NARROW_MATCH | 8 |
 | CHEBI:9400 | CHEBI:9400 | Tangeritin | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:75211 | CHEBI:75211 | tannic acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:39300-88-4 | FOODON:03413299 | Tara gum | MAPPED | FOODON | NARROW_MATCH | 0 |
 | CHEBI:15891 | CHEBI:15891 | Taurine | MAPPED | CHEBI | EXACT_MATCH | 12 |
 | CHEBI:181226 | CHEBI:181226 | Taurocholic acid sodium salt hydrate | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:2451-01-6 | CHEBI:134806 | Terpene hydrate | MAPPED | CHEBI | CLOSE_MATCH | 0 |
@@ -2050,7 +2037,6 @@ Total: 2953 ingredients
 | cas:3387-36-8 | cas:3387-36-8 | Uridine 5-monophosphate disodium salt | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | cas:28290-51-9 | cas:28290-51-9 | Ursololactone Acetate | MAPPED | CAS | FALLBACK_REGISTRY | 0 |
 | CHEBI:38319 | CHEBI:38319 | Usnic Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| kgmicrobe.ingredient:v-8_juice | FOODON:03400264 | V-8 Juice | MAPPED | FOODON | NARROW_MATCH | 3 |
 | CHEBI:17418 | CHEBI:17418 | Valeric acid | MAPPED | CHEBI | EXACT_MATCH | 113 |
 | CHEBI:16545 | CHEBI:16545 | Valerolactone | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | cas:7718-98-1 | cas:7718-98-1 | vanadium chloride | MAPPED | CAS | FALLBACK_REGISTRY | 26 |
@@ -2101,7 +2087,6 @@ Total: 2953 ingredients
 | CHEBI:49976 | CHEBI:49976 | ZnCl2 | MAPPED | CHEBI | EXACT_MATCH | 1839 |
 | CHEBI:132762 | CHEBI:132762 | ZnSO4 x 6 H2O | MAPPED | CHEBI | EXACT_MATCH | 3 |
 | CHEBI:32312 | CHEBI:32312 | ZnSO4 x 7 H2O | MAPPED | CHEBI | EXACT_MATCH | 2410 |
-| cas:9010-72-4 | NCIT:C183132 | Zymosan | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:16113 | CHEBI:16113 | cholesterol | MAPPED | CHEBI | EXACT_MATCH | 4 |
 | CHEBI:41981 | CHEBI:41981 | deuterated water | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
 | CHEBI:17268 | CHEBI:17268 | m-Inositol | REJECTED | CHEBI | CAS_RN_LOOKUP | 0 |
@@ -2439,7 +2424,6 @@ Total: 2953 ingredients
 | CHEBI:26546 | CHEBI:26546 | Rhamnose | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:15963 | CHEBI:15963 | Ribitol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:45367 | CHEBI:45367 | Rifabutin | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| NCIT:C29406 | NCIT:C29406 | Rifamycin | MAPPED | NCIT | EXACT_MATCH | 0 |
 | CHEBI:17876 | CHEBI:17876 | Rifamycin B | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:16324 | CHEBI:16324 | Rifamycin O | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:34948 | CHEBI:34948 | Rifamycin S | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2631,7 +2615,6 @@ Total: 2953 ingredients
 | MICRO:0001241 | MICRO:0001241 | Skim milk powder | MAPPED | MICRO | EXACT_MATCH | 1 |
 | MICRO:0000521 | MICRO:0000521 | Sludge fluid | MAPPED | MICRO | EXACT_MATCH | 2 |
 | NCIT:C220851 | NCIT:C220851 | Sodium Pantothenate | MAPPED | NCIT | EXACT_MATCH | 2 |
-| NCIT:C75654 | NCIT:C75654 | Sorbitan Monooleate | MAPPED | NCIT | EXACT_MATCH | 2 |
 | FOODON:00004062 | FOODON:00004062 | Table wine | MAPPED | FOODON | SYNONYM_MATCH | 1 |
 | FOODON:03315081 | FOODON:03315081 | Tea | MAPPED | FOODON | SYNONYM_MATCH | 2 |
 | CHEBI:17347 | CHEBI:17347 | testosterone | MAPPED | CHEBI | EXACT_MATCH | 1 |
@@ -2683,6 +2666,23 @@ Total: 2953 ingredients
 | kgmicrobe.compound:cuso4_x_4_h2o | CHEBI:23414 | CuSO4 x 4 H2O | MAPPED | CHEBI | CLOSE_MATCH | 2 |
 | CHEBI:35697 | CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:114249 | CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
+| MICRO:0002393 | MICRO:0002393 | Proteose peptone no. 2 | MAPPED | MICRO | EXACT_MATCH | 7 |
+| MICRO:0002392 | MICRO:0002392 | Rabbit serum | MAPPED | MICRO | EXACT_MATCH | 21 |
+| MICRO:0002250 | MICRO:0002250 | V-8 Juice | MAPPED | MICRO | EXACT_MATCH | 3 |
+| CHEBI:26580 | CHEBI:26580 | Rifamycin | MAPPED | CHEBI | EXACT_MATCH | 0 |
+| kgmicrobe.ingredient:sorbitan_monooleate | kgmicrobe.ingredient:sorbitan_monooleate | Sorbitan Monooleate | MAPPED | kgmicrobe.ingredient | EXACT_MATCH | 2 |
+| NCIT:C76253 | NCIT:C76253 | Acriflavine | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C216370 | NCIT:C216370 | Anabasine Hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C85253 | NCIT:C85253 | bovine serum albumin | MAPPED | NCIT | EXACT_MATCH | 7 |
+| NCIT:C79997 | NCIT:C79997 | Cotarnine Chloride | MAPPED | NCIT | EXACT_MATCH | 0 |
+| FOODON:03413132 | FOODON:03413132 | Locust bean gum | MAPPED | FOODON | EXACT_MATCH | 0 |
+| kgmicrobe.ingredient:lysozyme | kgmicrobe.ingredient:lysozyme | Lysozyme | MAPPED | kgmicrobe.ingredient | EXACT_MATCH | 0 |
+| NCIT:C166606 | NCIT:C166606 | Pretomanid | MAPPED | NCIT | EXACT_MATCH | 0 |
+| FOODON:03413240 | FOODON:03413240 | Sodium adipate | MAPPED | FOODON | EXACT_MATCH | 0 |
+| NCIT:C1241 | NCIT:C1241 | Sunflower oil | MAPPED | NCIT | EXACT_MATCH | 0 |
+| NCIT:C152482 | NCIT:C152482 | Sutezolid | MAPPED | NCIT | EXACT_MATCH | 0 |
+| FOODON:03413299 | FOODON:03413299 | Tara gum | MAPPED | FOODON | EXACT_MATCH | 0 |
+| NCIT:C183132 | NCIT:C183132 | Zymosan | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:144-33-2 | CHEBI:30769 | Na2-citrate | MAPPED | CHEBI | NARROW_MATCH | 3 |
 | CHEBI:39063 | CHEBI:39063 | Tricine | MAPPED | CHEBI | CAS_RN_LOOKUP | 44 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |

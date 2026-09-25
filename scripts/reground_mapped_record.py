@@ -144,6 +144,14 @@ def ontology_label(curie: str, explicit: str | None = None) -> str:
     label is accepted after the prefix itself has been declared publishable.
     """
     curie = normalize_object_curie(curie)
+    if curie.startswith("MICRO:"):
+        from mediaingredientmech.micro_source import source_term
+
+        term = source_term(curie)
+        if term:
+            if explicit and explicit != term.label:
+                raise SystemExit(f"{curie} label differs from the pinned MICRO source: {term.label}")
+            return term.label
     prefix = source_enum(curie)
     db = OAK_DB.get(prefix)
     if db is None:

@@ -13,6 +13,7 @@ import hashlib
 import io
 import json
 import math
+import re
 import shutil
 import tempfile
 from collections import defaultdict
@@ -157,6 +158,25 @@ def _safe_synonyms(row: dict, record: dict) -> None:
         raise ValueError(f"Non-resolving/rejected synonym in supported row: {row['subject_id']}")
 
 
+def _safe_identifiers(row: dict) -> None:
+    """Check active CAS identities and annotations without inferring chemical identity."""
+    for field in ("subject_id", "object_id", "other", "xref"):
+        for value in row.get(field, "").split("|"):
+            token = value.strip()
+            if token.lower().startswith("cas:"):
+                number = token.split(":", 1)[1]
+            elif re.fullmatch(r"\d+-\d+-\d+", token):
+                number = token
+            else:
+                continue
+            if not re.fullmatch(r"[1-9][0-9]{1,6}-[0-9]{2}-[0-9]", number):
+                raise ValueError(f"Invalid CAS identifier in supported {field}: {token}")
+            digits = number.replace("-", "")
+            check = sum(weight * int(digit) for weight, digit in enumerate(digits[-2::-1], 1)) % 10
+            if check != int(digits[-1]):
+                raise ValueError(f"Invalid CAS check digit in supported {field}: {token}")
+
+
 def load_review(root: Path, review_path: Path) -> dict:
     root = root.resolve()
     review_path = review_path if review_path.is_absolute() else root / review_path
@@ -222,6 +242,7 @@ def load_review(root: Path, review_path: Path) -> dict:
             raise ValueError("Scientific decision disagrees with exact evidence entry")
         if decision["disposition"] == "SUPPORTED":
             _safe_synonyms(row, records[owner])
+            _safe_identifiers(row)
         indexed[position] = decision
     selected = [
         rows[i - 1] for i, decision in indexed.items() if decision["disposition"] == "SUPPORTED"

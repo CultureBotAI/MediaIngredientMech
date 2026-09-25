@@ -1,19 +1,26 @@
-identifier: cas:53912-89-3
+identifier: NCIT:C216370
 preferred_term: Anabasine Hydrochloride
 ontology_mapping:
   ontology_id: NCIT:C216370
   ontology_label: Anabasine Hydrochloride
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 53912-89-3 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 53912-89-3 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Anabasine Hydrochloride'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Anabasine Hydrochloride'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific
+      monohydrochloride. Preserve the existing stereochemical InChI and align its
+      SMILES; no free base or other salt is substituted.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -47,12 +54,26 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C216370 (label-exact)
   llm_assisted: false
+- timestamp: '2026-09-24T07:10:47.876708+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific
+    monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES;
+    no free base or other salt is substituted.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 53912-89-3
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
   molecular_formula: C10H15ClN2
-  smiles: C1CCNC(C1)C2=CN=CC=C2.Cl
+  smiles: C1CCN[C@@H](C1)C2=CN=CC=C2.Cl
   inchi: InChI=1S/C10H14N2.ClH/c1-2-7-12-10(5-1)9-4-3-6-11-8-9;/h3-4,6,8,10,12H,1-2,5,7H2;1H/t10-;/m0./s1
   pubchem_cid: 3041330
 ingredient_type: SINGLE_INGREDIENT
+notes: Source CAS, NCIT, FDA W4917XZ12G and PubChem 3041330 agree on the stereospecific
+  monohydrochloride. Preserve the existing stereochemical InChI and align its SMILES;
+  no free base or other salt is substituted.

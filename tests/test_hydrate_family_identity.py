@@ -88,8 +88,8 @@ def membership_rows() -> list[dict]:
 def test_a_record_that_is_the_chebi_term_carries_its_id(records, term, chebi, label):
     """These were grounded to the right specific hydrate term while keeping a
     registry mint and a CLOSE_MATCH -- understating a record that IS that
-    substance. The corpus convention makes the two inseparable: every
-    registry-identified record is graded non-exact."""
+    substance. A registry record's grounding to an external ontology term
+    remains non-exact; a local self-identity makes no external claim."""
     record = _by_term(records, term)
 
     assert record["identifier"] == chebi
@@ -98,10 +98,12 @@ def test_a_record_that_is_the_chebi_term_carries_its_id(records, term, chebi, la
     assert label in record["ontology_mapping"]["ontology_label"]
 
 
-def test_a_registry_identifier_still_implies_a_non_exact_grounding(records):
-    """The invariant the promotions were reasoned from, asserted so it cannot
-    erode: a record kept on a `kgmicrobe.` mint is one that is NOT the ontology
-    term, so grading it exact would make the mint meaningless."""
+def test_a_registry_identifier_cannot_claim_an_exact_external_grounding(records):
+    """A local mint must not collapse into an external term or another material.
+
+    A self-mapping to the same local ID is an identity between records for the
+    unresolved material, not an exact ontology grounding (Sorbitan, #760).
+    """
     offenders = [
         (
             r.get("preferred_term"),
@@ -110,11 +112,22 @@ def test_a_registry_identifier_still_implies_a_non_exact_grounding(records):
         )
         for r in records
         if str(r.get("identifier") or "").startswith("kgmicrobe.")
+        and (r.get("ontology_mapping") or {}).get("ontology_id") != r["identifier"]
         and (r.get("ontology_mapping") or {}).get("mapping_quality")
         in {"EXACT_MATCH", "SYNONYM_MATCH"}
     ]
 
     assert not offenders, f"registry mint with an exact grounding: {offenders[:3]}"
+
+
+@pytest.mark.parametrize("target", ["CHEBI:1", "NCIT:C1", "kgmicrobe.ingredient:other"])
+def test_local_self_identity_exception_cannot_approve_another_target(target):
+    record = {
+        "identifier": "kgmicrobe.ingredient:material",
+        "ontology_mapping": {"ontology_id": target, "mapping_quality": "EXACT_MATCH"},
+    }
+    with pytest.raises(AssertionError, match="registry mint with an exact grounding"):
+        test_a_registry_identifier_cannot_claim_an_exact_external_grounding([record])
 
 
 # --- #334: CAS within a hydrate family ------------------------------------

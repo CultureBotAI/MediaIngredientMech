@@ -18,9 +18,12 @@ import datetime as _dt
 import re
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+
+from mediaingredientmech.micro_source import source_term
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INGREDIENTS = REPO_ROOT / "data" / "ingredients"
@@ -47,6 +50,10 @@ def curie_to_url(curie: str | None) -> str:
     if not curie or ":" not in curie:
         return "#"
     prefix, local = curie.split(":", 1)
+    if prefix == "MICRO" and (term := source_term(curie)):
+        return "https://www.ebi.ac.uk/ols4/ontologies/micro/classes/" + quote(
+            quote(term.iri, safe=""), safe=""
+        )
     template = _CURIE_RESOLVERS.get(prefix)
     if not template:
         return "#"

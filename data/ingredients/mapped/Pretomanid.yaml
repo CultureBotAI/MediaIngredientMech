@@ -1,19 +1,26 @@
-identifier: cas:187235-37-6
+identifier: NCIT:C166606
 preferred_term: Pretomanid
 ontology_mapping:
   ontology_id: NCIT:C166606
   ontology_label: Pretomanid
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 187235-37-6 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 187235-37-6 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Pretomanid'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Pretomanid'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the
+      S identity. Existing InChI agrees exactly; align the previously unstereospecific
+      SMILES.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -48,12 +55,25 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C166606 (label-exact)
   llm_assisted: false
+- timestamp: '2026-09-24T07:10:47.892883+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the
+    S identity. Existing InChI agrees exactly; align the previously unstereospecific
+    SMILES.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 187235-37-6
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
   molecular_formula: C14H12F3N3O5
-  smiles: C1C(COC2=NC(=CN21)[N+](=O)[O-])OCC3=CC=C(C=C3)OC(F)(F)F
+  smiles: C1[C@@H](COC2=NC(=CN21)[N+](=O)[O-])OCC3=CC=C(C=C3)OC(F)(F)F
   inchi: InChI=1S/C14H12F3N3O5/c15-14(16,17)25-10-3-1-9(2-4-10)7-23-11-5-19-6-12(20(21)22)18-13(19)24-8-11/h1-4,6,11H,5,7-8H2/t11-/m0/s1
   pubchem_cid: 456199
 ingredient_type: SINGLE_INGREDIENT
+notes: Original name/CAS, NCIT, FDA 2XOI31YC4N and PubChem 456199 establish the S
+  identity. Existing InChI agrees exactly; align the previously unstereospecific SMILES.

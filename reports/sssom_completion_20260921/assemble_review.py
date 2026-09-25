@@ -24,7 +24,7 @@ SOURCE = "mappings/ingredient_mappings.sssom.tsv"
 # mapping_changes/ in sequence order (#312 ...). Each link records its own
 # before/after pair, so the chain is auditable link by link, and no link can
 # turn a prior approval into an approval of a changed row.
-REVIEWED_SOURCE = "418c96557bad914aa29cc52ad423c645182edfa906b749b0a86399f019aedbd4"
+REVIEWED_SOURCE = "7567e33fe5e5f4239afbe42065e3d119ea3b4023ba28cb5559781ddc0f41f260"
 WEAK_EXACT_GRADES = {"CLOSE_MATCH", "NARROW_MATCH", "BROAD_MATCH", "PLACEHOLDER", "LEXICAL_MATCH"}
 REGISTRIES = ("kgmicrobe.ingredient:", "kgmicrobe.compound:", "cas:")
 
@@ -112,6 +112,52 @@ def walk_mapping_changes(receipts, *, start_sha256, reviewed_sha256, baseline_ro
     if link != reviewed_sha256:
         raise ValueError("The last chain link does not produce the reviewed source")
     return forward, last, state
+
+
+def apply_followup(entry, mapping, owner, owner_hash, negative_reviews, root, *, safeguards=()):
+    """Bind a new scientific decision to its complete row, owner and archived evidence."""
+    if (
+        entry["mapping"] != mapping
+        or entry["row_sha256"] != row_sha256(mapping)
+        or entry["owner_record"] != owner
+        or entry["owner_record_sha256"] != owner_hash
+    ):
+        raise ValueError("Mapping follow-up has stale row or owner")
+    if entry["disposition"] not in {"SUPPORTED", "WITHHOLD"}:
+        raise ValueError("Invalid mapping follow-up disposition")
+    for path, expected in entry["evidence_inputs"].items():
+        relative_path = Path(path)
+        if relative_path.is_absolute() or ".." in relative_path.parts:
+            raise ValueError("Follow-up evidence must stay within repository")
+        if digest(root / relative_path) != expected:
+            raise ValueError("Mapping follow-up evidence changed")
+    if not entry["evidence_inputs"] or not entry["identity_review"] or not entry["reason"]:
+        raise ValueError("Mapping follow-up requires explicit scientific evidence")
+    if entry["disposition"] == "SUPPORTED":
+        if safeguards:
+            raise ValueError("Mapping follow-up cannot override relation, grade or preparation safeguards")
+        if mapping["predicate_id"] != "skos:exactMatch":
+            raise ValueError("This follow-up does not approve non-exact relations")
+        tokens = {token for token in mapping["other"].split("|") if token}
+        if set(entry["token_reviews"]) != tokens or any(
+            not review for review in entry["token_reviews"].values()
+        ):
+            raise ValueError("Mapping follow-up does not review every synonym token")
+        if entry.get("resolved_negative_reviews", []) != negative_reviews:
+            raise ValueError("Mapping follow-up does not resolve the exact prior negative reviews")
+    return entry["disposition"], entry["reason"]
+
+
+def apply_added_identity_followup(entry, mapping, owner, owner_hash, record, root):
+    """Review a newly minted local identity without approving an external grounding."""
+    local_identity = (
+        mapping["object_id"].startswith(("kgmicrobe.ingredient:", "kgmicrobe.compound:"))
+        and mapping["object_id"] == record.get("identifier")
+        and mapping["subject_label"] == mapping["object_label"] == record.get("preferred_term")
+        and not mapping["other"]
+    )
+    return apply_followup(entry, mapping, owner, owner_hash, [], root,
+                          safeguards=[] if local_identity else ["New rows require a separate external-mapping review"])
 
 
 def assemble():
@@ -238,6 +284,14 @@ def assemble():
                 finding.get("id", finding.get("subject_id")),
             )
 
+    followups = read("mapping_review/kgmicrobe-followup.json")["decisions"]
+    followups_by_key = {}
+    for item in followups:
+        key = tuple(item["mapping"][field] for field in ("subject_id", "predicate_id", "object_id"))
+        if key in followups_by_key:
+            raise ValueError("Duplicate mapping follow-up")
+        followups_by_key[key] = item
+    used_followups = set()
     entries, decisions = {}, []
     for current_position, (mapping, owner) in enumerate(zip(mappings, owners, strict=True), 1):
         # ``position`` is the baseline position every cohort, hold and prior
@@ -262,14 +316,26 @@ def assemble():
                 "review_reason": reason,
                 "basis": {"baseline_position": None, "mapping_change": mapping_change["receipt"]},
             }
+            followup_key = tuple(mapping[field] for field in ("subject_id", "predicate_id", "object_id"))
+            if followup_key in followups_by_key:
+                followup = followups_by_key[followup_key]
+                entry["disposition"], entry["review_reason"] = apply_added_identity_followup(
+                    followup, mapping, owner, record_hashes[owner], records[owner], ROOT,
+                )
+                entry["basis"]["mapping_followup"] = {
+                    "file": "mapping_review/kgmicrobe-followup.json",
+                    "row_sha256": followup["row_sha256"],
+                    "identity_review": followup["identity_review"],
+                }
+                used_followups.add(followup_key)
             entries[key] = entry
             decisions.append(
                 {
                     "source_position": current_position,
                     "row_sha256": entry["row_sha256"],
                     "owner_record": owner,
-                    "disposition": "WITHHOLD",
-                    "review_reason": reason,
+                    "disposition": entry["disposition"],
+                    "review_reason": entry["review_reason"],
                     "review_evidence": relative(HERE / "mapping-evidence.json"),
                     "evidence_key": key,
                 }
@@ -415,6 +481,21 @@ def assemble():
             disposition = "WITHHOLD"
             reason = " ".join(dict.fromkeys(item["reason"] for item in explicit_holds[position]))
             basis["negative_reviews"] = explicit_holds[position]
+        followup_key = tuple(mapping[field] for field in ("subject_id", "predicate_id", "object_id"))
+        if followup_key in followups_by_key:
+            followup = followups_by_key[followup_key]
+            disposition, reason = apply_followup(
+                followup, mapping, owner, record_hashes[owner], explicit_holds.get(position, []), ROOT,
+                safeguards=[basis[k] for k in ("policy", "preparation_tokens") if k in basis],
+            )
+            used_followups.add(followup_key)
+            basis["mapping_followup"] = {
+                "file": "mapping_review/kgmicrobe-followup.json",
+                "row_sha256": followup["row_sha256"],
+                "identity_review": followup["identity_review"],
+            }
+            if disposition == "SUPPORTED" and "negative_reviews" in basis:
+                basis["resolved_prior_negative_reviews"] = basis.pop("negative_reviews")
         key = str(current_position)
         entry = {
             "row_sha256": row_sha256(mapping),
@@ -436,6 +517,8 @@ def assemble():
                 "evidence_key": key,
             }
         )
+    if used_followups != set(followups_by_key):
+        raise ValueError("Mapping follow-up refers to a missing source assertion")
     evidence = {
         "schema_version": 1,
         "scope": "Completed mapping-only disposition review; WITHHOLD preserves a review obligation and does not assert that every withheld triple is false. No role/component approval.",
@@ -464,6 +547,10 @@ def assemble():
         if decision["resolution_status"] == "APPROVED":
             path = ROOT / decision["review_evidence"]
             inputs[relative(path)] = digest(path)
+    for followup in followups:
+        # The standalone release verifier must check the same source evidence
+        # even when the dated assembler is not run again.
+        inputs.update(followup["evidence_inputs"])
     inputs[relative(HERE / "mapping-evidence.json")] = hashlib.sha256(evidence_bytes).hexdigest()
     review = {
         "schema_version": 1,

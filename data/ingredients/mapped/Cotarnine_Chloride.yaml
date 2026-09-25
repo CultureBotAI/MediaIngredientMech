@@ -1,19 +1,25 @@
-identifier: cas:10018-19-6
+identifier: NCIT:C79997
 preferred_term: Cotarnine Chloride
 ontology_mapping:
   ontology_id: NCIT:C79997
   ontology_label: Cotarnine Chloride
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
-    notes: Imported from CultureBotHT. CAS-RN 10018-19-6 present, but no CHEBI entry
-      exists (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote
-      to a CHEBI primary if/when CHEBI adds the term.
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Imported from CultureBotHT. CAS-RN 10018-19-6 present, but no CHEBI entry exists
+      (checked OAK CHEBI sqlite + PubChem CID synonyms). Curator can promote to a
+      CHEBI primary if/when CHEBI adds the term.'
   - evidence_type: DATABASE_MATCH
     source: NCIT via OLS (label-exact)
-    notes: Parent class identified via label-exact; matched_via='Cotarnine Chloride'
+    notes: 'Historical source assertion; grounding superseded by #762/#753 review:
+      Parent class identified via label-exact; matched_via=''Cotarnine Chloride'''
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md
+    notes: Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride
+      salt. Preserve that salt, not free cotarnine or its isolated cation.
 synonyms: []
 mapping_status: MAPPED
 occurrence_statistics:
@@ -42,8 +48,20 @@ curation_history:
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C79997 (label-exact)
   llm_assisted: false
+- timestamp: '2026-09-24T07:10:47.883058+00:00'
+  curator: kgmicrobe_identity_review_20260924
+  action: CORRECTED
+  changes: Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride
+    salt. Preserve that salt, not free cotarnine or its isolated cation.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
 chemical_properties:
   cas_rn: 10018-19-6
-  data_source: CultureBotHT compounds_to_cas.csv
-  retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  data_source: reports/sssom_completion_20260921/mapping_review/identity-review-20260924/README.md;
+    original source claim preserved in source-records.json
+  retrieval_date: '2026-09-24T00:00:00Z'
 ingredient_type: SINGLE_INGREDIENT
+notes: Source CAS, NCIT and FDA 03F6B8N3QN agree on the 1:1 cotarninium chloride salt.
+  Preserve that salt, not free cotarnine or its isolated cation.

@@ -9,6 +9,7 @@ standard" while running only `pytest tests/test_curie_normalizer.py`. It passed
 from __future__ import annotations
 
 import importlib.util
+import subprocess
 import sys
 from pathlib import Path
 
@@ -26,6 +27,16 @@ def test_the_published_set_is_clean():
 
     assert rows, "fixture: the published SSSOM has rows"
     assert checker.check(rows) == []
+
+
+def test_bare_python_gate_needs_no_installed_mim_package(tmp_path):
+    result = subprocess.run(
+        [sys.executable, "-I", "-S", str(ROOT / "scripts/validate_published_curies.py")],
+        cwd=tmp_path,
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stdout + result.stderr
 
 
 def test_an_unescaped_paren_is_caught():

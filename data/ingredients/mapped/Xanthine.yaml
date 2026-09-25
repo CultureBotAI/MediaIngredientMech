@@ -10,6 +10,14 @@ ontology_mapping:
     source: PubChem
     cas_rn: 69-89-6
     notes: ChEBI ID CHEBI:17712 found via PubChem CAS-RN cross-reference
+  - evidence_type: CURATOR_JUDGMENT
+    source: reports/sssom_completion_20260921/mapping_review/chemical-scope-review.md
+    notes: Retain the existing CAS-grounded ingredient representation CHEBI:17712
+      and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318.
+      Preserve the native child-to-parent relation, not global exact equivalence.
+      Standard InChI agreement does not establish a tautomer-pure reagent. Existing
+      recipe references are retained; unqualified source observations do not acquire
+      9H specificity.
 synonyms:
 - synonym_text: 2,6-dihydroxypurine
   synonym_type: EXACT_SYNONYM
@@ -76,7 +84,25 @@ curation_history:
     prior values came from the importer retired in #453, whose media_count counted
     a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
     rows=194137 distinct_recipes=15257]'
-notes: Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.
+- timestamp: '2026-09-23T19:20:33.158882+00:00'
+  curator: kgmicrobe_scope_review
+  action: CORRECTED
+  changes: Retain the existing CAS-grounded ingredient representation CHEBI:17712
+    and CAS 69-89-6. Generic trait observations named xanthine use CHEBI:15318. Preserve
+    the native child-to-parent relation, not global exact equivalence. Standard InChI
+    agreement does not establish a tautomer-pure reagent. Existing recipe references
+    are retained; unqualified source observations do not acquire 9H specificity.
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: gpt-6
+notes: 'Created from FEBA ontology enrichment workflow. Used in 16 FEBA media formulations.
+
+  Retain the existing CAS-grounded ingredient representation CHEBI:17712 and CAS 69-89-6.
+  Generic trait observations named xanthine use CHEBI:15318. Preserve the native child-to-parent
+  relation, not global exact equivalence. Standard InChI agreement does not establish
+  a tautomer-pure reagent. Existing recipe references are retained; unqualified source
+  observations do not acquire 9H specificity.'
 chemical_properties:
   cas_rn: 69-89-6
   data_source: FEBA ontology enrichment (via PubChem)
