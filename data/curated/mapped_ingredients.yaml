@@ -1,6 +1,6 @@
-generation_date: '2026-09-24T07:11:43.942039+00:00'
-total_count: 2679
-mapped_count: 2610
+generation_date: '2026-09-25T04:55:23.734411+00:00'
+total_count: 2680
+mapped_count: 2611
 unmapped_count: 0
 ingredients:
 - identifier: kgmicrobe.compound:na2_beta-glycerol_po4_x_5_h2o
@@ -43085,7 +43085,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: manual
   - synonym_text: Meat peptone
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: Bacteriological peptone
     synonym_type: EXACT_SYNONYM
@@ -43112,7 +43112,7 @@ ingredients:
     synonym_type: RELATED_SYNONYM
     source: manual
   - synonym_text: Fish peptone
-    synonym_type: RELATED_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: Fish peptone (Fluka)
     synonym_type: CATALOG_VARIANT
@@ -43168,6 +43168,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-24T07:48:22.445824+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''Meat peptone'' (EXACT_SYNONYM), ''Fish peptone''
+      (RELATED_SYNONYM): names of other peptone products, each with its own record
+      (Fish_peptone, Meat_peptone) (#669). Kept as provenance only; it must not resolve,
+      be exported, or enter the SSSOM other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   ingredient_type: UNDEFINED_MIXTURE
   nutritional_roles:
   - role: PROTEIN_SOURCE
@@ -52942,7 +52953,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: manual
   - synonym_text: Casein hydrolysate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: casein hydrolysate
     synonym_type: EXACT_SYNONYM
@@ -53002,6 +53013,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-24T07:48:22.676543+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''Casein hydrolysate'' (EXACT_SYNONYM): the
+      acid hydrolysate product has its own record (Casein_hydrolysate, MICRO:0001366)
+      (#669). Kept as provenance only; it must not resolve, be exported, or enter
+      the SSSOM other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   ingredient_type: UNDEFINED_MIXTURE
   nutritional_roles:
   - role: PROTEIN_SOURCE
@@ -58469,7 +58491,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Citrate
-    synonym_type: EXACT
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: 2-Hydroxy-1,2,3-propanetricarboxylic acid
     synonym_type: EXACT_SYNONYM
@@ -58588,6 +58610,17 @@ ingredients:
     previous_status: MAPPED
     new_status: MAPPED
     llm_assisted: false
+  - timestamp: '2026-09-24T07:48:22.769599+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''Citrate'' (EXACT): a bare -ate label denotes
+      the anion (Section 3 protonation rule); the Citrate record holds CHEBI:16947
+      (#669). Kept as provenance only; it must not resolve, be exported, or enter
+      the SSSOM other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 77-92-9
     data_source: PubChem API
@@ -64236,7 +64269,7 @@ ingredients:
     synonym_type: EXACT
     source: manual
   - synonym_text: Vitamin B12
-    synonym_type: EXACT
+    synonym_type: REJECTED_LABEL
     source: manual
   - synonym_text: CN-Cbl
     synonym_type: EXACT_SYNONYM
@@ -64395,6 +64428,17 @@ ingredients:
       after autoclaving)''. Tokens already present on the kg-microbe ontology node
       were left out as redundant (#520).'
     llm_assisted: false
+  - timestamp: '2026-09-24T07:48:22.735873+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''Vitamin B12'' (EXACT): ChEBI assigns ''vitamin
+      B12'' to CHEBI:176843, the class record, not to cyanocobalamin CHEBI:17439 (#669).
+      Kept as provenance only; it must not resolve, be exported, or enter the SSSOM
+      other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 68-19-9
     data_source: CultureBotHT/compounds_to_cas.csv
@@ -85765,7 +85809,7 @@ ingredients:
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 439709'
   synonyms:
   - synonym_text: FRUCTOSE
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: chebi_synonym_review
   mapping_status: MAPPED
   occurrence_statistics:
@@ -85808,6 +85852,16 @@ ingredients:
     action: ANNOTATED
     changes: 'Migrated legacy media_roles to role facets (#128): CARBON_SOURCE ->
       nutritional_roles.CARBON_SOURCE'
+  - timestamp: '2026-09-24T07:48:22.781028+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''FRUCTOSE'' (EXACT_SYNONYM): the monomer''s
+      name on the oligosaccharide record (#669). Kept as provenance only; it must
+      not resolve, be exported, or enter the SSSOM other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 308066-66-2
     data_source: CultureBotHT compounds_to_cas.csv
@@ -105222,7 +105276,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: L-cysteine zwitterion
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: 'Role: Nitrogen source; Properties: Organic compound, Defined component,
       Simple component'
@@ -105328,6 +105382,17 @@ ingredients:
     changes: Marked hydrate/salt synonym Cysteine-HCl∙H2O non-resolving for free L-cysteine;
       the monohydrate resolves to CHEBI:91248 (#521).
     llm_assisted: true
+  - timestamp: '2026-09-24T07:48:22.690313+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''L-cysteine zwitterion'' (EXACT_SYNONYM): the
+      zwitterion CHEBI:35235 has its own record; the record is neutral L-cysteine
+      CHEBI:17561 (#669). Kept as provenance only; it must not resolve, be exported,
+      or enter the SSSOM other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 52-90-4
     data_source: CultureBotHT compounds_to_cas.csv
@@ -139971,7 +140036,7 @@ ingredients:
     synonym_type: HYDRATE_FORM
     source: merged_from_duplicate_mim_record
   - synonym_text: (NH4)2Ni(SO4)2
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: ammonium nickel(2+) sulfate--water (2/1/2/6)
     synonym_type: EXACT_SYNONYM
@@ -140083,6 +140148,16 @@ ingredients:
     changes: cas_rn 56110-30-6 -> 7785-20-8. 56110-30-6 is the ANHYDROUS parent's
       CAS; this record is grounded to CHEBI:86149 ammonium nickel sulfate hexahydrate,
       whose ChEBI dbxref is 7785-20-8 (#334).
+  - timestamp: '2026-09-24T07:48:22.753683+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''(NH4)2Ni(SO4)2'' (EXACT_SYNONYM): the anhydrous
+      salt''s label on the hexahydrate record (#669). Kept as provenance only; it
+      must not resolve, be exported, or enter the SSSOM other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 7785-20-8
     data_source: PubChem (via CHEBI:86149)
@@ -154310,7 +154385,7 @@ ingredients:
       notes: Parent class identified via pubchem-xref; matched_via='pubchem CID 9532'
   synonyms:
   - synonym_text: Putrescine
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: culturebotht
   - synonym_text: Putrescine 2 HCl
     synonym_type: EXACT_SYNONYM
@@ -154367,6 +154442,17 @@ ingredients:
       values came from the importer retired in #453, whose media_count counted a list
       truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-24T07:48:22.703216+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''Putrescine'' (EXACT_SYNONYM): the free base''s
+      name on the dihydrochloride salt (Section 3: salts are not the parent) (#669).
+      Kept as provenance only; it must not resolve, be exported, or enter the SSSOM
+      other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 333-93-7
     data_source: CultureBotHT compounds_to_cas.csv
@@ -176785,71 +176871,6 @@ ingredients:
     inchi: InChI=1S/C2HCl3/c3-1-2(4)5/h1H
     smiles: ClC=C(Cl)Cl
   ingredient_type: SINGLE_INGREDIENT
-- identifier: CHEBI:46760
-  preferred_term: Tricine
-  ontology_mapping:
-    ontology_id: CHEBI:46760
-    ontology_label: tricine
-    ontology_source: CHEBI
-    mapping_quality: EXACT_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: 'Imported from CultureBotHT. Used in 10 CultureBot media; samples: MOPS
-        Rich Defined media noCarbon, MOPS Rich Defined media_noCarbon, MOPS minimal
-        media Glucose noNitrogen….'
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 44
-    media_count: 44
-  curation_history:
-  - timestamp: '2026-04-29T06:04:17.380972+00:00'
-    curator: audit_integrate_culturebotht
-    action: CREATED_FROM_CULTUREBOTHT
-    changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=5704-04-1); Imported
-      from CultureBotHT. Used in 10 CultureBot media; samples: MOPS Rich Defined media
-      noCarbon, MOPS Rich Defined media_noCarbon, MOPS minimal media Glucose noNitrogen….'
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:36.699915+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:18.970882+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
-    llm_assisted: false
-  - timestamp: '2026-06-03T02:06:01.752992+00:00'
-    curator: infer_roles_from_name_lists
-    action: ANNOTATED
-    changes: 'Added media role: BUFFER (confidence: 0.80)'
-  - timestamp: '2026-07-20T00:00:00+00:00'
-    curator: migrate_media_roles_to_facets
-    action: ANNOTATED
-    changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
-  - timestamp: '2026-08-27T03:16:39.520003+00:00'
-    curator: refresh_occurrence_statistics
-    action: CORRECTED
-    changes: 'occurrence_statistics 10/10 -> 44/44 (media_count/total_occurrences),
-      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
-      prior values came from the importer retired in #453, whose media_count counted
-      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
-      rows=194137 distinct_recipes=15257]'
-  chemical_properties:
-    cas_rn: 5704-04-1
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
-  ingredient_type: SINGLE_INGREDIENT
-  physicochemical_roles:
-  - role: BUFFER
-    confidence: 0.8
-    evidence:
-    - reference_type: COMPUTATIONAL_PREDICTION
-      reference_text: Inferred from curated media-role name pattern
-      curator_note: Provisional role from a curated name-pattern rule; review recommended.
 - identifier: CHEBI:28621
   preferred_term: Triethanolamine
   ontology_mapping:
@@ -177932,7 +177953,7 @@ ingredients:
     synonym_type: RAW_TEXT
     source: CultureMech
   - synonym_text: Na2-citrate
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Tri-sodium citrate
     synonym_type: EXACT_SYNONYM
@@ -177964,8 +177985,8 @@ ingredients:
     source: CultureMech
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 182
-    media_count: 182
+    total_occurrences: 179
+    media_count: 179
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -178089,6 +178110,26 @@ ingredients:
       is a salt of citric acid, not citric acid (Section 3). Kept as REJECTED_LABEL
       so a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
     llm_assisted: true
+  - timestamp: '2026-09-24T07:48:22.802313+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''Na2-citrate'' (EXACT_SYNONYM): by nomenclature
+      disodium hydrogen citrate (PubChem CID 8950, CAS 144-33-2, C6H6Na2O7), a different
+      salt from trisodium citrate; the 2026-04-19 merge conflated it. The name now
+      has its own record, Na2-citrate (#704).'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  - timestamp: '2026-09-24T07:50:13.970481+00:00'
+    curator: claude
+    action: REFRESHED_OCCURRENCE_STATISTICS
+    changes: 'occurrence_statistics 182/182 -> 179/179 after the #704 identity split/re-grounding
+      moved recipe memberships.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   kg_microbe_node_id: CHEBI:53258
   chemical_properties:
     cas_rn: 68-04-2
@@ -181678,7 +181719,7 @@ ingredients:
     synonym_type: EXACT_SYNONYM
     source: kg_microbe
   - synonym_text: Cyanocobalamin
-    synonym_type: EXACT_SYNONYM
+    synonym_type: REJECTED_LABEL
     source: kg_microbe
   - synonym_text: Cyanocobalamin (B )
     synonym_type: EXACT_SYNONYM
@@ -181827,6 +181868,17 @@ ingredients:
       prior values came from the importer retired in #453, whose media_count counted
       a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
       rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-24T07:48:22.717101+00:00'
+    curator: claude
+    action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+    changes: 'Retyped REJECTED_LABEL: ''Cyanocobalamin'' (EXACT_SYNONYM): the member''s
+      name on the vitamin B12 class record CHEBI:176843; Cyanocobalamin has its own
+      record (#669). Kept as provenance only; it must not resolve, be exported, or
+      enter the SSSOM other column.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
   chemical_properties:
     cas_rn: 68-19-9
     data_source: CultureBotHT compounds_to_cas.csv
@@ -221274,3 +221326,155 @@ ingredients:
   notes: Original name/CAS, NCIT and MeSH D015054 agree on the named yeast-wall zymosan
     preparation. This does not equate arbitrary purified beta-glucan or a single molecule
     with zymosan.
+- identifier: cas:144-33-2
+  preferred_term: Na2-citrate
+  ontology_mapping:
+    ontology_id: CHEBI:30769
+    ontology_label: citric acid
+    ontology_source: CHEBI
+    mapping_quality: NARROW_MATCH
+    evidence:
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#704); PubChem CID 8950; chebi.db
+      notes: 'Na2-citrate is disodium hydrogen citrate (PubChem CID 8950, CAS 144-33-2,
+        C6H6Na2O7, InChIKey CEYULKASIQJZGP-UHFFFAOYSA-L). ChEBI has no disodium citrate
+        term, and three CultureMech recipes name it, so MAPPING_SEMANTICS Section
+        3 step 2 applies: cas: identity, broadMatch to the acid the label''s salt
+        derives from (CHEBI:30769 citric acid), Rule B1 registry row. Previously an
+        EXACT_SYNONYM on Trisodium_Citrate after a 2026-04-19 merge that conflated
+        the two salts (#704).'
+  synonyms:
+  - synonym_text: Na2-citrate
+    synonym_type: RAW_TEXT
+    source: CultureMech
+  - synonym_text: disodium hydrogen citrate
+    synonym_type: EXACT_SYNONYM
+    source: PubChem CID 8950
+  - synonym_text: disodium citrate
+    synonym_type: RELATED_SYNONYM
+    source: PubChem CID 8950
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 3
+    media_count: 3
+  curation_history:
+  - timestamp: '2026-09-24T07:48:22.811524+00:00'
+    curator: claude
+    action: CREATED
+    changes: 'Created from the raw label ''Na2-citrate'' split off Trisodium_Citrate.
+      Na2-citrate is disodium hydrogen citrate (PubChem CID 8950, CAS 144-33-2, C6H6Na2O7,
+      InChIKey CEYULKASIQJZGP-UHFFFAOYSA-L). ChEBI has no disodium citrate term, and
+      three CultureMech recipes name it, so MAPPING_SEMANTICS Section 3 step 2 applies:
+      cas: identity, broadMatch to the acid the label''s salt derives from (CHEBI:30769
+      citric acid), Rule B1 registry row. Previously an EXACT_SYNONYM on Trisodium_Citrate
+      after a 2026-04-19 merge that conflated the two salts (#704).'
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  - timestamp: '2026-09-24T07:50:13.754866+00:00'
+    curator: claude
+    action: REFRESHED_OCCURRENCE_STATISTICS
+    changes: 'occurrence_statistics 0/0 -> 3/3 after the #704 identity split/re-grounding
+      moved recipe memberships.'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 144-33-2
+    molecular_formula: C6H6Na2O7
+    data_source: PubChem CID 8950 (CAS 144-33-2)
+    retrieval_date: '2026-09-24T07:48:22.811507+00:00'
+  ingredient_type: SINGLE_INGREDIENT
+- identifier: CHEBI:39063
+  preferred_term: Tricine
+  ontology_mapping:
+    ontology_id: CHEBI:39063
+    ontology_label: N-tris(hydroxymethyl)methylglycine
+    ontology_source: CHEBI
+    mapping_quality: CAS_RN_LOOKUP
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: 'Imported from CultureBotHT. Used in 10 CultureBot media; samples: MOPS
+        Rich Defined media noCarbon, MOPS Rich Defined media_noCarbon, MOPS minimal
+        media Glucose noNitrogen….'
+    - evidence_type: MANUAL_CURATION
+      source: MIM curation (#704); chebi.db
+      notes: 'identifier CHEBI:46760 -> CHEBI:39063; ontology ''tricine'' -> ''N-tris(hydroxymethyl)methylglycine'';
+        mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:46760 is a grouping class
+        with a label and nothing else (no formula, InChIKey or definition); its children
+        are the neutral CHEBI:39063, which owns the structure, the systematic names
+        and the xref cas:5704-04-1 (the record''s own CAS, on no other term), and
+        the zwitterion CHEBI:46759. Section 3: the most specific stable identifier
+        (#704).'
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 44
+    media_count: 44
+  curation_history:
+  - timestamp: '2026-04-29T06:04:17.380972+00:00'
+    curator: audit_integrate_culturebotht
+    action: CREATED_FROM_CULTUREBOTHT
+    changes: 'Created from CultureBotHT compounds_to_cas.csv (CAS=5704-04-1); Imported
+      from CultureBotHT. Used in 10 CultureBot media; samples: MOPS Rich Defined media
+      noCarbon, MOPS Rich Defined media_noCarbon, MOPS minimal media Glucose noNitrogen….'
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:36.699915+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:18.970882+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: set ingredient_type=SINGLE_INGREDIENT (CHEBI primary)
+    llm_assisted: false
+  - timestamp: '2026-06-03T02:06:01.752992+00:00'
+    curator: infer_roles_from_name_lists
+    action: ANNOTATED
+    changes: 'Added media role: BUFFER (confidence: 0.80)'
+  - timestamp: '2026-07-20T00:00:00+00:00'
+    curator: migrate_media_roles_to_facets
+    action: ANNOTATED
+    changes: 'Migrated legacy media_roles to role facets (#128): BUFFER -> physicochemical_roles.BUFFER'
+  - timestamp: '2026-08-27T03:16:39.520003+00:00'
+    curator: refresh_occurrence_statistics
+    action: CORRECTED
+    changes: 'occurrence_statistics 10/10 -> 44/44 (media_count/total_occurrences),
+      derived from distinct CultureMech recipe ids in the #337 occurrence table. The
+      prior values came from the importer retired in #453, whose media_count counted
+      a list truncated to 50 examples (#449). [source=ingredient_occurrences.tsv culturemech_rev=15a4da5c08
+      rows=194137 distinct_recipes=15257]'
+  - timestamp: '2026-09-24T07:48:22.788923+00:00'
+    curator: claude
+    action: REGROUNDED_IDENTITY
+    changes: 'identifier CHEBI:46760 -> CHEBI:39063; ontology ''tricine'' -> ''N-tris(hydroxymethyl)methylglycine'';
+      mapping_quality EXACT_MATCH -> CAS_RN_LOOKUP. CHEBI:46760 is a grouping class
+      with a label and nothing else (no formula, InChIKey or definition); its children
+      are the neutral CHEBI:39063, which owns the structure, the systematic names
+      and the xref cas:5704-04-1 (the record''s own CAS, on no other term), and the
+      zwitterion CHEBI:46759. Section 3: the most specific stable identifier (#704).
+      (#704)'
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: true
+    llm_model: claude-fable-5-1
+  chemical_properties:
+    cas_rn: 5704-04-1
+    data_source: CultureBotHT compounds_to_cas.csv; structure from chebi.db CHEBI:39063
+      (#704)
+    retrieval_date: '2026-04-29T06:04:17.380972+00:00'
+    molecular_formula: C6H13NO5
+    inchi: InChI=1S/C6H13NO5/c8-2-6(3-9,4-10)7-1-5(11)12/h7-10H,1-4H2,(H,11,12)
+    smiles: O=C(O)CNC(CO)(CO)CO
+  ingredient_type: SINGLE_INGREDIENT
+  physicochemical_roles:
+  - role: BUFFER
+    confidence: 0.8
+    evidence:
+    - reference_type: COMPUTATIONAL_PREDICTION
+      reference_text: Inferred from curated media-role name pattern
+      curator_note: Provisional role from a curated name-pattern rule; review recommended.

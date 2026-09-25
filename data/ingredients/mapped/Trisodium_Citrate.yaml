@@ -31,7 +31,7 @@ synonyms:
   synonym_type: RAW_TEXT
   source: CultureMech
 - synonym_text: Na2-citrate
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: Tri-sodium citrate
   synonym_type: EXACT_SYNONYM
@@ -63,8 +63,8 @@ synonyms:
   source: CultureMech
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 182
-  media_count: 182
+  total_occurrences: 179
+  media_count: 179
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -187,6 +187,26 @@ curation_history:
     a salt of citric acid, not citric acid (Section 3). Kept as REJECTED_LABEL so
     a rebuild cannot restore them from kg-microbe''s synonym list (#669).'
   llm_assisted: true
+- timestamp: '2026-09-24T07:48:22.802313+00:00'
+  curator: claude
+  action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''Na2-citrate'' (EXACT_SYNONYM): by nomenclature
+    disodium hydrogen citrate (PubChem CID 8950, CAS 144-33-2, C6H6Na2O7), a different
+    salt from trisodium citrate; the 2026-04-19 merge conflated it. The name now has
+    its own record, Na2-citrate (#704).'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
+- timestamp: '2026-09-24T07:50:13.970481+00:00'
+  curator: claude
+  action: REFRESHED_OCCURRENCE_STATISTICS
+  changes: 'occurrence_statistics 182/182 -> 179/179 after the #704 identity split/re-grounding
+    moved recipe memberships.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 kg_microbe_node_id: CHEBI:53258
 chemical_properties:
   cas_rn: 68-04-2
