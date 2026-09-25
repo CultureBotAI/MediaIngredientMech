@@ -32,6 +32,17 @@ jobs:
             --review reports/sssom_completion_20260921/review.json --output output/mim-reviewed-sssom --validate-only
       - name: Validate both SSSOM tables
         run: uv run --frozen python scripts/validate_reviewed_sssom_schema.py output/mim-reviewed-sssom
+      - name: Export and replay the opt-in scoped ingredient cohort
+        run: |
+          uv run --frozen python -m mediaingredientmech.export.ingredient_bundle export \
+            --review reports/ingredient_bundle_20260924/review.json \
+            --output output/mim-reviewed-ingredient-bundle
+      - name: Upload scoped cohort candidate for consumer acceptance
+        uses: actions/upload-artifact@v4
+        with:
+          name: mim-reviewed-ingredient-bundle
+          path: output/mim-reviewed-ingredient-bundle/
+          if-no-files-found: error
       - name: Upload standalone SSSOM release
         uses: actions/upload-artifact@v4
         with:
