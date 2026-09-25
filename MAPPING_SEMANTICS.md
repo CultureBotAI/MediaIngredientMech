@@ -81,13 +81,16 @@ both producers (the claw builder, human curators) and consumers (kg-microbe's
 
 ### `skos:exactMatch`
 
-> **MIM:X and Y denote the SAME entity. Bidirectional substitution is safe in
-> any graph context.**
+> **MIM:X and Y have reviewed matching chemical/material scope.
+> Canonical ID replacement follows the applicable release profile.**
 
-If `MIM:Glucose skos:exactMatch CHEBI:17234` is present, then for any
-graph operation, `MIM:Glucose` and `CHEBI:17234` are interchangeable: same
-node identity, same incoming edges, same outgoing edges. A consumer is free
-to drop one of the two CURIEs and rewrite all triples to the other.
+For `MIM:Glucose skos:exactMatch CHEBI:17234`, MIM's reviewed identity
+policy permits using the target for that scoped ingredient concept.
+`skos:exactMatch` itself is not `owl:sameAs` and does not make a source
+record, product preparation or occurrence interchangeable in every context.
+The [ingredient scope profile](docs/INGREDIENT_SCOPE_PROFILE.md) makes scope
+and identity authorization explicit; source-specific product detail and
+registry history remain separately owned claims.
 
 Use `skos:exactMatch` when:
 
