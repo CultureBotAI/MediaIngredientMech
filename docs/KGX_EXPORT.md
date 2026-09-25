@@ -77,7 +77,7 @@ conservative `biolink:NamedThing`.
 | Source assertion | Graph relationship |
 | --- | --- |
 | SSSOM exact and close matches | Corresponding Biolink match predicate |
-| SSSOM broad and narrow matches | Child-to-parent `biolink:subclass_of`, under MIM's declared kind-of mapping convention |
+| SSSOM broad and narrow matches | Specific-to-broader `biolink:broad_match`; inverse mappings reverse endpoints |
 | Nutritional, physicochemical, cellular metabolic roles | `biolink:has_chemical_role` to facet-specific `MIM.role:` nodes |
 | Community organism roles, when present | `biolink:has_attribute` to facet-specific role nodes |
 | Components | `biolink:has_part`, with `BFO:0000051` as the relation |
@@ -86,13 +86,13 @@ conservative `biolink:NamedThing`.
 
 For `broadMatch`, the **object is broader than the subject**. The exporter follows
 MIM's explicit [mapping contract](../MAPPING_SEMANTICS.md#1-predicate-semantics):
-both asymmetric predicates become child-to-parent `subclass_of` edges, reversing
-endpoints for `narrowMatch`. The original row and SKOS relation are retained in
-annotations; this conversion is specific to MIM's kind-of convention. It
-predates the #245 ruling, under which consumers emit `biolink:broad_match`
-rather than `subclass_of`; aligning the exporter and the reviewed bundle is
-tracked as #734. The retired
-local ingredient-variant hierarchy is not recreated. Role enum mappings to broader classes or METPO predicates are
+both asymmetric predicates become specific-to-broader `biolink:broad_match`
+edges with `relation=skos:broadMatch`, reversing endpoints for `narrowMatch`.
+The complete original row, including its original endpoints and predicate,
+remains in `assertion_json`. A broader alignment does not establish an ontology
+subclass relationship (#245/#734). The application checks broader-link cycles
+separately from material part cycles; neither check implies identity or subsumption.
+The retired local ingredient-variant hierarchy is not recreated. Role enum mappings to broader classes or METPO predicates are
 retained as annotations, not treated as identities of role nodes.
 
 A known component points to its supplied semantic identifier. It does not choose

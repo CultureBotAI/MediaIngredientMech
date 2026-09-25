@@ -91,13 +91,14 @@ def test_complete_graph_preserves_scope_and_annotations(corpus, tmp_path):
     unresolved = [e for e in parts if e["reference_scope"] == "UNMAPPED"]
     assert len({e["object"] for e in unresolved}) == 2
     assert all(nodes[e["object"]]["name"] == "unknown fraction" for e in unresolved)
-    broad = next(e for e in edges if e["predicate"] == "biolink:subclass_of")
+    broad = next(e for e in edges if e["predicate"] == "biolink:broad_match")
     assert (broad["subject"], broad["object"], broad["relation"]) == (
         "MIM:fixture_mix",
         "FOODON:00000001",
         "skos:broadMatch",
     )
-    assert sum(e["predicate"] == "biolink:subclass_of" for e in edges) == 1
+    assert sum(e["predicate"] == "biolink:broad_match" for e in edges) == 1
+    assert not any(e["predicate"] == "biolink:subclass_of" for e in edges)
     candidate = next(e for e in edges if e["assertion_type"] == "recipe_reference")
     assert candidate["predicate"] == "MIM.vocab:recipe_candidate_unverified"
     assert all(e["subject"] in nodes and e["object"] in nodes for e in edges)
@@ -149,14 +150,17 @@ def test_inverse_mapping_projects_child_to_parent_and_retains_original_row(corpu
     output = tmp_path / "release"
     kgx.export_graph(corpus, output)
     inverse = next(
-        e for e in read_rows(output / "mim_edges.tsv") if e["relation"] == "skos:narrowMatch"
+        e for e in read_rows(output / "mim_edges.tsv")
+        if e["assertion_type"] == "mapping"
+        and json.loads(e["assertion_json"])["predicate_id"] == "skos:narrowMatch"
     )
     assert (inverse["subject"], inverse["predicate"], inverse["object"]) == (
         "FOODON:00000002",
-        "biolink:subclass_of",
+        "biolink:broad_match",
         "MIM:opaque_water_a",
     )
     original = json.loads(inverse["assertion_json"])
+    assert inverse["relation"] == "skos:broadMatch"
     assert (original["subject_id"], original["object_id"]) == (
         "MIM:opaque_water_a",
         "FOODON:00000002",
@@ -269,7 +273,7 @@ def test_ignored_review_ledger_does_not_silently_change_default_export(corpus, t
     assert (first / "mim-kgx.tar.gz").read_bytes() == (second / "mim-kgx.tar.gz").read_bytes()
 
 
-def test_hierarchy_cycles_through_primary_identity_are_rejected(corpus, tmp_path):
+def test_broader_mapping_cycles_through_primary_identity_are_rejected(corpus, tmp_path):
     path = corpus / "mappings/ingredient_mappings.sssom.tsv"
     rows = path.read_text()
     header = next(line for line in rows.splitlines() if not line.startswith("#"))
@@ -319,6 +323,6 @@ def test_ambiguous_source_survives_without_identity_mapping(corpus, tmp_path):
     assert not any(
         row["subject"] == source
         and row["predicate"]
-        in {"biolink:exact_match", "biolink:close_match", "biolink:subclass_of"}
+        in {"biolink:exact_match", "biolink:close_match", "biolink:broad_match"}
         for row in read_rows(output / "mim_edges.tsv")
     )

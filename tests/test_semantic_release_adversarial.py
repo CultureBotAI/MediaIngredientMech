@@ -241,10 +241,13 @@ def test_narrow_mapping_requires_the_opposite_orientation(projection, tmp_path):
     ))
     graph, _, _ = kgx.build_graph(tmp_path)
     projection.update(nodes=list(graph.nodes.values()), edges=graph.edges)
-    edge = next(row for row in projection["edges"] if row["relation"] == "skos:narrowMatch")
+    edge = next(row for row in projection["edges"]
+                if row["assertion_type"] == "mapping"
+                and json.loads(row["assertion_json"])["predicate_id"] == "skos:narrowMatch")
     assert (edge["subject"], edge["predicate"], edge["object"]) == (
-        "FOODON:00000002", "biolink:subclass_of", "MIM:opaque_water_a"
+        "FOODON:00000002", "biolink:broad_match", "MIM:opaque_water_a"
     )
+    assert edge["relation"] == "skos:broadMatch"
     check_projection(projection)
     edge["subject"], edge["object"] = edge["object"], edge["subject"]
     rehash_edge(edge)
@@ -307,3 +310,13 @@ def test_open_assertion_cannot_be_masked_by_other_approvals(projection):
     open_row.update(resolution_status="OPEN", review_reason="", review_evidence="")
     decisions[0] = open_row
     assert adjudicate_assertions(expected, decisions, {"review.txt": "hash"}) == [open_row["assertion_id"]]
+
+
+def test_broader_mapping_cannot_be_upgraded_to_subclass(projection):
+    """Fresh hashes cannot turn a source broadMatch into a subclass assertion."""
+    edge = next(row for row in projection['edges'] if row['predicate'] == 'biolink:broad_match')
+    check_projection(projection)
+    edge['predicate'] = 'biolink:subclass_of'
+    rehash_edge(edge)
+    with pytest.raises(ValueError, match='projection differs'):
+        check_projection(projection)

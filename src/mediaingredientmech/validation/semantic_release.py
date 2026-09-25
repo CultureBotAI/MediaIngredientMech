@@ -336,11 +336,13 @@ def verify_projection(records, mappings, nodes, edges):
         )
         require(subject in local_ids.values(), "Mapping subject is not an active ingredient")
         reference(obj, mapping["object_label"])
+        relation = predicate
         if predicate == "skos:broadMatch":
-            projected = "biolink:subclass_of"
+            projected = "biolink:broad_match"
         elif predicate == "skos:narrowMatch":
             subject, obj = obj, subject
-            projected = "biolink:subclass_of"
+            projected = "biolink:broad_match"
+            relation = "skos:broadMatch"
         else:
             require(
                 predicate in {"skos:exactMatch", "skos:closeMatch"}, "Unsupported mapping relation"
@@ -355,7 +357,7 @@ def verify_projection(records, mappings, nodes, edges):
             subject,
             projected,
             obj,
-            predicate,
+            relation,
             mapping,
         )
     enums = {

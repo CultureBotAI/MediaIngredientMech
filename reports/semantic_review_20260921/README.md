@@ -44,11 +44,18 @@ These counts overlap at the record level. A blocked record does not make every
 one of its mappings false. Unsupported predictions remain distinguishable from
 demonstrably wrong identities; no prediction was relabeled as experimental truth.
 
-## Correction made
+## Historical projection, superseded by #734
+
+The current exporter and semantic gate preserve broad/narrow alignment as
+`biolink:broad_match`, with `relation=skos:broadMatch` and specific-to-broader
+endpoints. The original SSSOM row remains in `assertion_json`. The #245 ruling
+supersedes the subclass conversion described below. Current review bundles
+must be rebuilt with this projection; published historical graph artifacts
+remain unchanged and can be reproduced using their release-tag code.
 
 Fixed the new KGX exporter's hierarchy projection: **166 broader-parent mappings
-now become child-to-parent `biolink:subclass_of` edges**, following MIM's explicit
-mapping contract. Original SSSOM rows and relations remain in the edge annotations.
+became child-to-parent `biolink:subclass_of` edges in that historical snapshot**,
+following the mapping contract then in effect. Original SSSOM rows and relations remain in the edge annotations.
 The inverse direction is covered by a regression test. No scientific curation
 finding was silently closed or removed from the corpus.
 
