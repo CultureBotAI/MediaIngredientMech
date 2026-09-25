@@ -104,10 +104,12 @@ def validate(root, report):
         e = projection[m["subject_id"] + "\t" + m["object_id"]]
         subject, obj = m["subject_id"], m["object_id"]
         pred = m["predicate_id"]
+        relation = pred
         if pred == "skos:broadMatch":
-            predicate = "biolink:subclass_of"
+            predicate = "biolink:broad_match"
         elif pred.endswith("narrowMatch"):
-            subject, obj, predicate = obj, subject, "biolink:subclass_of"
+            subject, obj, predicate = obj, subject, "biolink:broad_match"
+            relation = "skos:broadMatch"
         else:
             predicate = {
                 "skos:exactMatch": "biolink:exact_match",
@@ -117,7 +119,7 @@ def validate(root, report):
             subject,
             predicate,
             obj,
-            pred,
+            relation,
         )
     unresolved = any(
         r["verdict"] == "needs_curation" for r in records if r["mapping_status"] != "REJECTED"

@@ -381,7 +381,7 @@ def build_graph(
         active.append((identifier, path, record))
     if set().union(*by_label.values()) - graph.nodes.keys():
         raise ValueError("SSSOM references absent or rejected ingredient records")
-    hierarchy = []
+    broader_links = []
     primary_ids = {identifier: record["identifier"] for identifier, _, record in active}
     seen_pairs = set()
     for position, row in enumerate(mappings, 1):
@@ -391,20 +391,21 @@ def build_graph(
         seen_pairs.add((subject, obj))
         graph.reference(obj, row["object_label"])
         edge_subject, edge_object, predicate = subject, obj, MATCHES[pred]
-        # MAPPING_SEMANTICS.md Section 1 explicitly requires subclass projection
-        # for MIM's curated kind-of mappings. This is a dataset-specific contract,
-        # not a general assertion that arbitrary SKOS mappings imply OWL classes.
+        relation = pred
+        # Broad/narrow alignment does not establish ontological subsumption.
+        # Normalize inverse mappings to the same specific-to-broader direction;
+        # assertion_json retains the original row, endpoints and predicate.
         if pred == "skos:broadMatch":
-            predicate = "biolink:subclass_of"
-            hierarchy.append((primary_ids[subject], obj))
+            broader_links.append((primary_ids[subject], obj))
         elif MATCHES[pred] == "biolink:narrow_match":
-            edge_subject, edge_object, predicate = obj, subject, "biolink:subclass_of"
-            hierarchy.append((obj, primary_ids[subject]))
+            edge_subject, edge_object, predicate = obj, subject, "biolink:broad_match"
+            relation = "skos:broadMatch"
+            broader_links.append((obj, primary_ids[subject]))
         graph.edge(
             edge_subject,
             predicate,
             edge_object,
-            pred,
+            relation,
             "mapping",
             "mappings/ingredient_mappings.sssom.tsv",
             position,
@@ -485,7 +486,7 @@ def build_graph(
             relation = "MIM.vocab:recipe_" + reference["relationship"].lower()
             graph.edge(subject, relation, obj, relation, "recipe_reference", path, 1, reference)
     _acyclic(component_pairs, "material component assertions")
-    _acyclic(hierarchy, "broader/narrower mappings")
+    _acyclic(broader_links, "broader/narrower mappings")
     for identifier, labels in graph.reference_labels.items():
         node = graph.nodes[identifier]
         node["reference_labels_json"] = packed(sorted(labels))
@@ -550,7 +551,7 @@ def build_graph(
             "component_partonomy": "passed",
             "endpoint_closure": "passed",
             "component_cycles": 0,
-            "mapping_hierarchy_cycles": 0,
+            "mapping_broader_cycles": 0,
         },
         "limitations": [
             "Structural and faithful-projection validation is not semantic approval of every curated assertion.",

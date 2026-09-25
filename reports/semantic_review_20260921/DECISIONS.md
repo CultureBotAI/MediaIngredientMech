@@ -35,12 +35,19 @@ conservatively block certification of the associated rows; this does not mean
 every mapping on a problematic record is false. In particular, an exact registry
 row does not certify the biological correctness of a separate ontology grounding.
 
-## Exporter correction
+## Historical exporter correction, superseded by #734
+
+The #245 ruling supersedes the conversion recorded in this dated review.
+Current export and review validation use `biolink:broad_match` with
+`relation=skos:broadMatch`; narrow mappings reverse endpoints and preserve their
+original row in `assertion_json`. A broadMatch is not evidence of ontological
+subsumption. Rebuilt current bundles follow that rule; the historical release
+is immutable and uses the validator preserved at its release tag.
 
 The first standalone KGX exporter retained `biolink:broad_match` for the 166
-parent mappings. MIM's own `MAPPING_SEMANTICS.md` Section 1 explicitly requires
+parent mappings. MIM's own `MAPPING_SEMANTICS.md` Section 1 then required
 these curated kind-of relationships to become `biolink:subclass_of` downstream.
-The exporter now follows that dataset-specific contract, retaining the original
+The historical exporter followed that dataset-specific contract, retaining the original
 SSSOM row and SKOS relation. An inverse-mapping regression test verifies that a
 future narrowMatch points from its child object to its broader subject in KGX.
 This corrects the projection; it does not approve an unsupported source mapping.
