@@ -65,7 +65,7 @@ synonyms:
   synonym_type: EXACT_SYNONYM
   source: kg_microbe
 - synonym_text: L-cysteine zwitterion
-  synonym_type: EXACT_SYNONYM
+  synonym_type: REJECTED_LABEL
   source: kg_microbe
 - synonym_text: 'Role: Nitrogen source; Properties: Organic compound, Defined component,
     Simple component'
@@ -170,6 +170,17 @@ curation_history:
   changes: Marked hydrate/salt synonym Cysteine-HCl∙H2O non-resolving for free L-cysteine;
     the monohydrate resolves to CHEBI:91248 (#521).
   llm_assisted: true
+- timestamp: '2026-09-24T07:48:22.690313+00:00'
+  curator: claude
+  action: REJECTED_WRONG_SUBSTANCE_SYNONYMS
+  changes: 'Retyped REJECTED_LABEL: ''L-cysteine zwitterion'' (EXACT_SYNONYM): the
+    zwitterion CHEBI:35235 has its own record; the record is neutral L-cysteine CHEBI:17561
+    (#669). Kept as provenance only; it must not resolve, be exported, or enter the
+    SSSOM other column.'
+  previous_status: MAPPED
+  new_status: MAPPED
+  llm_assisted: true
+  llm_model: claude-fable-5-1
 chemical_properties:
   cas_rn: 52-90-4
   data_source: CultureBotHT compounds_to_cas.csv

@@ -1,7 +1,7 @@
 # All Ingredients
 
-Generated: 2026-09-24T07:15:00.150249+00:00
-Total: 2952 ingredients
+Generated: 2026-09-25T04:55:44.055081+00:00
+Total: 2953 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
 |---|---|---|---|---|---|---|
@@ -1996,7 +1996,6 @@ Total: 2952 ingredients
 | CHEBI:9678 | CHEBI:9678 | Tribenuron-methyl | MAPPED | CHEBI | CAS_RN_LOOKUP | 0 |
 | CHEBI:9679 | CHEBI:9679 | Tricalcium phosphate | MAPPED | CHEBI | CAS_RN_LOOKUP | 1 |
 | CHEBI:16602 | CHEBI:16602 | Trichloroethylene | MAPPED | CHEBI | EXACT_MATCH | 2 |
-| CHEBI:46760 | CHEBI:46760 | Tricine | MAPPED | CHEBI | EXACT_MATCH | 44 |
 | CHEBI:28621 | CHEBI:28621 | Triethanolamine | MAPPED | CHEBI | EXACT_MATCH | 5 |
 | mesh:C009560 | mesh:C009560 | Trigonelline | MAPPED | MESH | EXACT_MATCH | 2 |
 | CHEBI:229203 | CHEBI:229203 | Trigonelline HCl | MAPPED | CHEBI | CAS_RN_LOOKUP | 10 |
@@ -2008,7 +2007,7 @@ Total: 2952 ingredients
 | CHEBI:9747 | CHEBI:9747 | Triptolide | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:66869 | CHEBI:66869 | Tris Acetate Stock Solution | MAPPED | CHEBI | LEXICAL_MATCH | 1 |
 | CHEBI:9754 | CHEBI:9754 | Tris base | MAPPED | CHEBI | EXACT_MATCH | 212 |
-| CHEBI:53258 | CHEBI:53258 | Trisodium citrate | MAPPED | CHEBI | EXACT_MATCH | 182 |
+| CHEBI:53258 | CHEBI:53258 | Trisodium citrate | MAPPED | CHEBI | EXACT_MATCH | 179 |
 | CHEBI:32142 | CHEBI:32142 | Trisodium citrate x 2 H2O | REJECTED | CHEBI | NARROW_MATCH | 0 |
 | mesh:C514290 | mesh:C514290 | Trisodium citrate x H2O | MAPPED | MESH | EXACT_MATCH | 2 |
 | CHEBI:9750 | CHEBI:9750 | Triton X-100 | MAPPED | CHEBI | EXACT_MATCH | 0 |
@@ -2684,6 +2683,8 @@ Total: 2952 ingredients
 | NCIT:C152482 | NCIT:C152482 | Sutezolid | MAPPED | NCIT | EXACT_MATCH | 0 |
 | FOODON:03413299 | FOODON:03413299 | Tara gum | MAPPED | FOODON | EXACT_MATCH | 0 |
 | NCIT:C183132 | NCIT:C183132 | Zymosan | MAPPED | NCIT | EXACT_MATCH | 0 |
+| cas:144-33-2 | CHEBI:30769 | Na2-citrate | MAPPED | CHEBI | NARROW_MATCH | 3 |
+| CHEBI:39063 | CHEBI:39063 | Tricine | MAPPED | CHEBI | CAS_RN_LOOKUP | 44 |
 | UNMAPPED_0818 |  | X | UNMAPPED |  |  | 101 |
 | UNMAPPED_0196 |  | 2-Carene-3-One | UNMAPPED |  |  | 0 |
 | UNMAPPED_0182 |  | 2-methyladeninyl cobamide | UNMAPPED |  |  | 0 |

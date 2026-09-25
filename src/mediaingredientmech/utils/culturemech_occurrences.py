@@ -117,6 +117,9 @@ SOURCE_LABEL_IDENTIFIER_OVERRIDES = {
     # CultureMech still resolves the label to the retired cas: identity.
     _source_label_key("NaH2PO4•H2O"): "CHEBI:114249",
     _source_label_key("NaH2PO4•H2O(MCIB 742)"): "CHEBI:114249",
+    # #704: Na2-citrate is disodium hydrogen citrate, split off the trisodium record;
+    # CultureMech still resolves the label to CHEBI:53258.
+    _source_label_key("Na2-citrate"): "cas:144-33-2",
 }
 
 
