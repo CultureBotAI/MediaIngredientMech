@@ -537,6 +537,7 @@ def assemble():
     for p in (
         ROOT / "MAPPING_SEMANTICS.md",
         ROOT / "src/mediaingredientmech/export/reviewed_sssom.py",
+        ROOT / "src/mediaingredientmech/review_claims.py",
         ROOT / "src/mediaingredientmech/synonym_policy.py",
         ROOT / "scripts/validate_reviewed_sssom_schema.py",
         ROOT / "reports/semantic_review_20260921/records.tsv",

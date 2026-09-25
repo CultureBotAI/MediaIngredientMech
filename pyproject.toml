@@ -43,6 +43,7 @@ dependencies = [
     # 0.7.3 widened it to <3.15. Matches CultureMech and TraitMech (#488).
     "oaklib>=0.7.3",
     "pyyaml>=6.0",
+    "jsonschema>=4.0",
     "click>=8.1.0",
     "rich>=13.0.0",
     # Used directly by chemical_properties_client, doi_resolver,
@@ -90,7 +91,7 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-mediaingredientmech = ["schema/*.yaml", "profiles/*.yaml", "ontology_sources/micro/*.json", "ontology_sources/micro/*.tsv"]
+mediaingredientmech = ["schema/*.yaml", "profiles/*.yaml", "profiles/*.json", "ontology_sources/micro/*.json", "ontology_sources/micro/*.tsv"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -172,6 +173,7 @@ module = [
     "mediaingredientmech.export.supported_kgx",
     "mediaingredientmech.export.reviewed_sssom",
     "mediaingredientmech.mapping_scope",
+    "mediaingredientmech.ingredient_bundle_contract",
     "mediaingredientmech.render_ingredient_pages",
     "mediaingredientmech.utils.chemical_properties_client",
     "mediaingredientmech.utils.doi_resolver",

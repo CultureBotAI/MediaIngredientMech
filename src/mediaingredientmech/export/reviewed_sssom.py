@@ -22,6 +22,7 @@ from pathlib import Path
 import yaml
 
 from mediaingredientmech.curie import mim_curie_for_stem
+from mediaingredientmech.review_claims import validate_review_decision
 from mediaingredientmech.synonym_policy import is_resolving_synonym_text
 
 PRODUCTS = (
@@ -211,35 +212,22 @@ def load_review(root: Path, review_path: Path) -> dict:
     decisions = review.get("decisions")
     if not isinstance(decisions, list) or len(decisions) != len(rows):
         raise ValueError("Review decisions must completely cover source rows")
-    indexed, proofs = {}, {}
+    indexed: dict = {}
+    proofs: dict = {}
+    evidence_inputs = {name: verified[name] for name in review["inputs"]}
     for decision in decisions:
         position = decision.get("source_position")
         if type(position) is not int or not 1 <= position <= len(rows) or position in indexed:
             raise ValueError("Invalid/duplicate review source position")
         row, owner = rows[position - 1], owners[position - 1]
-        if decision.get("row_sha256") != row_sha256(row) or decision.get("owner_record") != owner:
-            raise ValueError("Review row payload or owner does not match source")
-        if decision.get("disposition") not in {"SUPPORTED", "WITHHOLD"}:
-            raise ValueError("Invalid scientific disposition")
-        if (
-            not isinstance(decision.get("review_reason"), str)
-            or not decision["review_reason"].strip()
-        ):
-            raise ValueError("Missing scientific review reason")
-        evidence, key = decision.get("review_evidence"), decision.get("evidence_key")
-        if evidence not in review["inputs"] or not isinstance(key, str) or not key.strip():
-            raise ValueError("Missing hash-bound evidence reference")
-        if evidence not in proofs:
-            proofs[evidence] = _json_bytes(verified[evidence], evidence)
-        entry = proofs[evidence].get("entries", {}).get(key)
-        expected = {
-            field: decision[field] for field in ("row_sha256", "disposition", "review_reason")
-        }
-        expected["owner_record_sha256"] = review["record_inputs"][owner]
-        if not isinstance(entry, dict) or any(
-            entry.get(field) != value for field, value in expected.items()
-        ):
-            raise ValueError("Scientific decision disagrees with exact evidence entry")
+        validate_review_decision(
+            decision,
+            row,
+            owner,
+            review["record_inputs"][owner],
+            evidence_inputs,
+            proofs,
+        )
         if decision["disposition"] == "SUPPORTED":
             _safe_synonyms(row, records[owner])
             _safe_identifiers(row)
