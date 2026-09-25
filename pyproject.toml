@@ -90,7 +90,7 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-mediaingredientmech = ["schema/*.yaml", "ontology_sources/micro/*.json", "ontology_sources/micro/*.tsv"]
+mediaingredientmech = ["schema/*.yaml", "profiles/*.yaml", "ontology_sources/micro/*.json", "ontology_sources/micro/*.tsv"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -171,6 +171,7 @@ module = [
     "mediaingredientmech.export.kgx",
     "mediaingredientmech.export.supported_kgx",
     "mediaingredientmech.export.reviewed_sssom",
+    "mediaingredientmech.mapping_scope",
     "mediaingredientmech.render_ingredient_pages",
     "mediaingredientmech.utils.chemical_properties_client",
     "mediaingredientmech.utils.doi_resolver",
