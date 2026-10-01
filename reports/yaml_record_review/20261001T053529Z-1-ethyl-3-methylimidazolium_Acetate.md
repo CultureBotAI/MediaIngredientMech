@@ -2,8 +2,8 @@
 
 - Repository: CultureBotAI/MediaIngredientMech
 - Record: `data/ingredients/mapped/1-ethyl-3-methylimidazolium_Acetate.yaml`
-- Started UTC: 2026-10-01T04:58:58Z
-- Finished UTC: 2026-10-01T04:58:59Z
+- Started UTC: 2026-10-01T05:35:29Z
+- Finished UTC: 2026-10-01T05:35:30Z
 - Verdict: needs_curation
 
 ## Target
@@ -30,7 +30,7 @@
 - Ontology label: `ionic liquid`.
 - Mapping quality: `NARROW_MATCH`.
 - Active SSSOM rows for this subject: 3.
-- Identity judgement: Refreshed `reports/yaml_record_review/1-ethyl-3-methylimidazolium_Acetate.md` after the record changed from 0406799826473dee458b6358022420cc7555ba9ee3fbbd2e0b7689cde32fa6d5 to 38814f2038706907038c87a8bff6785abaf177e4746c63ddfae6fcb8836acda5; preserved the previous major finding floor pending targeted retirement.
+- Identity judgement: Refreshed `reports/yaml_record_review/1-ethyl-3-methylimidazolium_Acetate.md` after the record changed from 0406799826473dee458b6358022420cc7555ba9ee3fbbd2e0b7689cde32fa6d5 to 38814f2038706907038c87a8bff6785abaf177e4746c63ddfae6fcb8836acda5; preserved the previous minor finding floor pending targeted retirement.
 
 ## Evidence
 
@@ -40,22 +40,20 @@
 - Source occurrence traceability: 0 occurrence(s) across 0 medium/media.
 - Latest curation event: REGROUNDED_PARENT_TERM by claude at 2026-09-22T23:25:51.013985+00:00: broadMatch parent CHEBI:61326 ('1-ethyl-3-methylimidazolium') -> CHEBI:63895 ('ionic liquid') (#312). The record is the neutral salt (CAS 143314-17-4, two-fragment SMILES). CHEBI:61326 '1-ethyl-3-methylimidazolium' is the bare cation, C6H11N2 charge +1: a component of the salt, not a broader term for it (Section 6). ChEBI has no term for the acetate salt, so the closest broader class is CHEBI:63895 'ionic liquid', the parent the sibling record 1-ethyl-3-methylimidazolium_Lysine already uses. cas: identity, NARROW_MATCH grade and both registry rows unchanged (Section 3 step 2).
 - Active SSSOM state: 3 active row(s) for `MIM:1-ethyl-3-methylimidazolium_Acetate`.
-- Aggregate state: Major: per-record YAML differs from its keyed row in `data/curated/mapped_ingredients.yaml`.
+- Aggregate state: Per-record YAML is identical to its keyed row in `data/curated/mapped_ingredients.yaml`.
 
 ## Completeness
 
 - The record has raw-label/source provenance through its synonyms or history.
-- Major: per-record YAML differs from its keyed row in `data/curated/mapped_ingredients.yaml`.
-- Consequential unresolved item: Refreshed `reports/yaml_record_review/1-ethyl-3-methylimidazolium_Acetate.md` after the record changed from 0406799826473dee458b6358022420cc7555ba9ee3fbbd2e0b7689cde32fa6d5 to 38814f2038706907038c87a8bff6785abaf177e4746c63ddfae6fcb8836acda5; preserved the previous major finding floor pending targeted retirement.
+- Per-record YAML is identical to its keyed row in `data/curated/mapped_ingredients.yaml`.
+- Consequential unresolved item: Refreshed `reports/yaml_record_review/1-ethyl-3-methylimidazolium_Acetate.md` after the record changed from 0406799826473dee458b6358022420cc7555ba9ee3fbbd2e0b7689cde32fa6d5 to 38814f2038706907038c87a8bff6785abaf177e4746c63ddfae6fcb8836acda5; preserved the previous minor finding floor pending targeted retirement.
 
 ## Findings
 
 - **minor**: The previous finding set in `reports/yaml_record_review/1-ethyl-3-methylimidazolium_Acetate.md` was tied to the prior record content; carry it forward as an unresolved curation floor until a targeted current review retires it. Previous summary: CAS-primary salt identity and narrow cation mapping pass, but the open kgscan discussion is irrelevant and unattached.
-- **major**: `data/ingredients/mapped/1-ethyl-3-methylimidazolium_Acetate.yaml` is not synchronized with `data/curated/mapped_ingredients.yaml`.
 
 ## Recommended Edits
 
-- Synchronize `data/ingredients/mapped/1-ethyl-3-methylimidazolium_Acetate.yaml` and `data/curated/mapped_ingredients.yaml` with `just sync-curated` or an equivalent maintained-input update.
 - Resolve or explicitly retire the findings provisionally carried forward from `reports/yaml_record_review/1-ethyl-3-methylimidazolium_Acetate.md`.
 - After any edit, run `just sync-curated`, `just validate-strict data/ingredients/mapped/1-ethyl-3-methylimidazolium_Acetate.yaml`, `just validate-terms data/ingredients/mapped/1-ethyl-3-methylimidazolium_Acetate.yaml` where applicable, and `just qc-sssom`.
 

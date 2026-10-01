@@ -13,8 +13,10 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import importlib.util
 import json
 import re
+import sys
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
@@ -41,6 +43,22 @@ VERDICT_BY_SEVERITY = {
     "major": "needs_curation",
     "blocker": "needs_curation",
 }
+
+
+def exporter_authored_fields() -> tuple[str, ...]:
+    spec = importlib.util.spec_from_file_location(
+        "_mim_export_individual_records",
+        ROOT / "scripts" / "export_individual_records.py",
+    )
+    if spec is None or spec.loader is None:
+        raise RuntimeError("could not load scripts/export_individual_records.py")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return tuple(module.PER_RECORD_AUTHORED_FIELDS)
+
+
+PER_RECORD_AUTHORED_FIELDS = exporter_authored_fields()
 
 
 def rel(path: Path) -> str:
@@ -100,6 +118,14 @@ def aggregate_index() -> dict[tuple[str, str], tuple[str, dict]]:
                 raise ValueError(f"duplicate aggregate record for {key}")
             index[key] = (rel(path), record)
     return index
+
+
+def curated_shape(record: dict) -> dict:
+    return {
+        key: value
+        for key, value in record.items()
+        if key not in PER_RECORD_AUTHORED_FIELDS
+    }
 
 
 def sssom_rows() -> list[dict[str, str]]:
@@ -546,7 +572,7 @@ def main() -> None:
             path=path,
             record=record,
             aggregate_path=aggregate_path,
-            aggregate_matches=aggregate_record == record,
+            aggregate_matches=aggregate_record == curated_shape(record),
             own_sssom=sssom_by_subject.get("MIM:" + path.stem, []),
             reviewed_at=reviewed_at,
             previous_row=previous_row,
