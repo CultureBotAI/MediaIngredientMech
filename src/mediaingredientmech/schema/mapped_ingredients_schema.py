@@ -4,7 +4,7 @@
 #
 # id: https://w3id.org/culturemech/mapped-ingredients
 # description: LinkML schema for aggregating successfully mapped media ingredients with proper ontology terms. This provides statistics and tracking for ingredients that have been successfully mapped to ontology terms (CHEBI, FOODON, etc.).
-# license: MIT
+# license: BSD-3-Clause
 
 import dataclasses
 import re
