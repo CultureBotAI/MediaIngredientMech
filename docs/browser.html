@@ -497,6 +497,13 @@
                         Array.isArray(ing.synonyms) && typeof ing.mapping_status === 'string')) {
                     throw new Error('Invalid ingredient data');
                 }
+                const counts = data.metadata;
+                if (!['total_ingredients', 'mapped_count', 'unmapped_count'].every(
+                    key => Number.isInteger(counts[key]) && counts[key] >= 0) ||
+                    counts.total_ingredients !== data.ingredients.length ||
+                    counts.mapped_count + counts.unmapped_count !== counts.total_ingredients) {
+                    throw new Error('Invalid ingredient counts');
+                }
                 allIngredients = data.ingredients;
                 dataReady = true;
                 document.getElementById('subtitle').textContent =
@@ -506,7 +513,9 @@
             } catch (error) {
                 dataReady = false;
                 status.textContent = 'Ingredients could not be loaded. Retry to load the catalog.';
-                document.getElementById('filtered-count').textContent = 'Unavailable';
+                ['total-count', 'mapped-count', 'unmapped-count', 'filtered-count'].forEach(id => {
+                    document.getElementById(id).textContent = 'Unavailable';
+                });
                 container.replaceChildren();
                 const retry = document.createElement('button');
                 retry.type = 'button';
