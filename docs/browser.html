@@ -174,6 +174,10 @@
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
+        .ingredient-card { overflow-wrap: anywhere; min-width: 0; }
+        .ingredient-header { gap: .5rem; }
+        .ingredient-title { min-width: 0; }
+
         .ingredient-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
@@ -366,6 +370,8 @@
         :root[data-theme="dark"] .synonym-tag{background:#1e1b29;border-color:#302b40;}
         :root[data-theme="dark"] .badge-mapped{background:rgba(52,211,153,.15);color:#34d399;}
         :root[data-theme="dark"] .badge-unmapped{background:rgba(251,191,36,.15);color:#fbbf24;}
+            button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid var(--accent, #7c3aed); outline-offset: 3px; }
+        #reset-filters { margin-top: 1rem; padding: .5rem; }
     </style>
 </head>
 <body>
@@ -373,11 +379,13 @@
         <h1>MediaIngredientMech Browser</h1>
         <p id="subtitle">Explore curated media ingredients with ontology mappings</p>
         <a href="index.html" class="nav-link">← Back to Home</a>
+        <a href="https://culturebotai.github.io/mechs/" class="nav-link">All Mech projects</a>
     </header>
 
     <div class="layout">
         <aside class="sidebar">
             <div class="controls">
+                <label for="search">Search ingredients</label>
                 <input type="text"
                        id="search"
                        class="search-box"
@@ -417,6 +425,7 @@
                         </select>
                     </div>
                 </div>
+                <button type="button" id="reset-filters">Clear search and filters</button>
             </div>
         </aside>
 
@@ -440,7 +449,8 @@
                 </div>
             </div>
 
-            <div class="ingredient-list" id="ingredient-list">
+            <p id="results-status" role="status" aria-live="polite" aria-atomic="true">Loading ingredients…</p>
+            <div class="ingredient-list" id="ingredient-list" aria-busy="true">
                 <div class="loading">Loading ingredients...</div>
             </div>
         </main>
@@ -453,6 +463,7 @@
     <script>
         let allIngredients = [];
         let filteredIngredients = [];
+        let dataReady = false;
 
         function applyHashFilters() {
             const params = new URLSearchParams(window.location.hash.replace(/^#/, ''));
@@ -469,20 +480,44 @@
             applyFilters();
         });
 
-        // Load data
-        fetch('data/ingredients.json')
-            .then(response => response.json())
-            .then(data => {
+        // A failed request is distinct from a valid empty dataset or search.
+        async function loadIngredients() {
+            dataReady = false;
+            const container = document.getElementById('ingredient-list');
+            const status = document.getElementById('results-status');
+            container.setAttribute('aria-busy', 'true');
+            container.textContent = 'Loading ingredients…';
+            status.textContent = 'Loading ingredients…';
+            try {
+                const response = await fetch('data/ingredients.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                if (!data || !Array.isArray(data.ingredients) || !data.metadata ||
+                    !data.ingredients.every(ing => ing && typeof ing.searchable === 'string' &&
+                        Array.isArray(ing.synonyms) && typeof ing.mapping_status === 'string')) {
+                    throw new Error('Invalid ingredient data');
+                }
                 allIngredients = data.ingredients;
+                dataReady = true;
                 document.getElementById('subtitle').textContent =
                     `Explore ${allIngredients.length.toLocaleString()} curated media ingredients with ontology mappings`;
                 updateStats(data.metadata);
                 applyFilters();
-            })
-            .catch(error => {
-                document.getElementById('ingredient-list').innerHTML =
-                    '<div class="no-results">Error loading data: ' + error + '</div>';
-            });
+            } catch (error) {
+                dataReady = false;
+                status.textContent = 'Ingredients could not be loaded. Retry to load the catalog.';
+                document.getElementById('filtered-count').textContent = 'Unavailable';
+                container.replaceChildren();
+                const retry = document.createElement('button');
+                retry.type = 'button';
+                retry.textContent = 'Retry loading ingredients';
+                retry.addEventListener('click', loadIngredients);
+                container.appendChild(retry);
+            } finally {
+                container.setAttribute('aria-busy', 'false');
+            }
+        }
+        loadIngredients();
 
         // Update statistics
         function updateStats(metadata) {
@@ -493,6 +528,7 @@
 
         // Apply filters
         function applyFilters() {
+            if (!dataReady) return;
             const searchTerm = document.getElementById('search').value.toLowerCase();
             const statusFilter = document.getElementById('filter-status').value;
             const sourceFilter = document.getElementById('filter-source').value;
@@ -508,6 +544,8 @@
             });
 
             document.getElementById('filtered-count').textContent = filteredIngredients.length;
+            document.getElementById('results-status').textContent =
+                `Showing ${filteredIngredients.length} of ${allIngredients.length} ingredients`;
             renderIngredients();
         }
 
@@ -593,6 +631,14 @@
         }
 
         // Event listeners
+        document.getElementById('reset-filters').addEventListener('click', () => {
+            document.getElementById('search').value = '';
+            document.querySelectorAll('.filters select').forEach(control => { control.value = ''; });
+            // Remove a landing-page status filter too, so reloading preserves reset.
+            if (window.location.hash) history.replaceState(null, '', window.location.pathname + window.location.search);
+            applyFilters();
+            document.getElementById('search').focus();
+        });
         document.getElementById('search').addEventListener('input', applyFilters);
         document.getElementById('filter-status').addEventListener('change', applyFilters);
         document.getElementById('filter-source').addEventListener('change', applyFilters);
