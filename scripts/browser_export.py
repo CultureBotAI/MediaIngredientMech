@@ -22,6 +22,7 @@ _src = _project_root / "src"
 if str(_src) not in sys.path:
     sys.path.insert(0, str(_src))
 
+from mediaingredientmech.render_ingredient_pages import slug_for  # noqa: E402
 from mediaingredientmech.synonym_policy import is_resolving_synonym  # noqa: E402
 from mediaingredientmech.utils.yaml_handler import load_yaml  # noqa: E402
 
@@ -103,6 +104,7 @@ def extract_ingredient_for_browser(ingredient: dict, source_file: str) -> dict:
         'last_curated': last_curated,
         'curator': curator,
         'source_file': source_file,
+        'detail_page': f'records/ingredient/{slug_for(ingredient, Path(source_file))}.html',
         # Searchable text (for quick filtering)
         'searchable': searchable
     }

@@ -17,6 +17,7 @@ import argparse
 import datetime as _dt
 import re
 import sys
+from html import escape
 from pathlib import Path
 from urllib.parse import quote
 
@@ -122,15 +123,18 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MIM — Ingredient index</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<nav aria-label="Site navigation"><a href="../browser.html">Browse ingredients</a> &middot; <a href="https://culturebotai.github.io/mechs/">All Mech projects</a></nav>
 <header>
 <h1>MIM — Ingredient index</h1>
 <p class="muted">{count:,} ingredients, generated {generated_at}.</p>
 </header>
-{by_prefix}
+<main>{by_prefix}</main>
+<script src="../theme-toggle.js"></script>
 </body>
 </html>
 """
@@ -138,12 +142,12 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 
 def _section(prefix: str, items: list[tuple[str, str, str]]) -> str:
     rows = "".join(
-        f'<li><a href="ingredient/{slug}.html">{name}</a> '
-        f'<span class="muted">— <code>{ident}</code></span></li>'
+        f'<li><a href="ingredient/{escape(slug, quote=True)}.html">{escape(name)}</a> '
+        f'<span class="muted">— <code>{escape(ident)}</code></span></li>'
         for (ident, slug, name) in sorted(items, key=lambda x: x[2].lower())
     )
     return (
-        f"<section><h2>{prefix} "
+        f"<section><h2>{escape(prefix)} "
         f'<small class="muted">({len(items)})</small></h2>'
         f'<ul class="medium-index">{rows}</ul></section>'
     )

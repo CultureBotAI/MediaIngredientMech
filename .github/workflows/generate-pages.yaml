@@ -1,16 +1,19 @@
 name: Deploy GitHub Pages
 
-# Publishes MIM's static site (the committed `docs/` web root: landing page,
-# ingredient browser, ingredient UMAP, and their JSON data) to GitHub Pages
-# via the Actions deploy path. `docs/` is authored/committed in-repo (the
-# landing + browser + umap are static; per-ingredient detail pages are a
-# separate artifact build). The site is served verbatim (no Jekyll).
+# Build catalog and per-ingredient pages from current YAML before publication.
+# docs/ supplies the landing/browser/maps; generated records live under records/.
 
 on:
   push:
     branches: [main]
     paths:
       - "docs/**"
+      - "data/ingredients/**"
+      - "src/mediaingredientmech/**"
+      - "scripts/browser_export.py"
+      - "scripts/build_pages_site.py"
+      - "uv.lock"
+      - "pyproject.toml"
       - ".github/workflows/generate-pages.yaml"
   workflow_dispatch:
 
@@ -33,18 +36,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Disable Jekyll (serve docs/ as static)
-        run: touch docs/.nojekyll
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Install locked build dependencies
+        run: uv sync --frozen --python 3.13
+
+      - name: Build and verify complete ingredient site
+        run: uv run python scripts/build_pages_site.py --output site
+
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
 
-      - name: Upload docs/ artifact
+      - name: Upload verified site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: site
 
       - name: Deploy to GitHub Pages
         id: deployment

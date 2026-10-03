@@ -75,7 +75,13 @@ def test_loading_errors_remain_distinct_from_empty_catalogs(tmp_path):
 const vm = require('node:vm');
 const source = SOURCE;
 const empty = {ingredients: [], metadata: {total_ingredients: 0, mapped_count: 0, unmapped_count: 0}};
+const valid = {ingredients: [{searchable:'salt', synonyms:[], mapping_status:'MAPPED',
+  preferred_term:'Salt', detail_page:'records/ingredient/mapped/Salt.html'}],
+  metadata:{total_ingredients:1,mapped_count:1,unmapped_count:0}};
 const cases = [
+  ['record', 200, valid, false],
+  ['unsafe-url', 200, {...valid, ingredients:[{...valid.ingredients[0], detail_page:'javascript:alert(1)'}]}, true],
+  ['missing-url', 200, {...valid, ingredients:[{...valid.ingredients[0], detail_page:undefined}]}, true],
   ['empty', 200, empty, false],
   ['http', 500, empty, true],
   ['shape', 200, {}, true],
@@ -102,7 +108,7 @@ function element() { return {textContent: '', innerHTML: '', value: '', options:
       }
       context.applyFilters();
       if (elements.get('results-status').textContent !== statusText) throw Error(name + ': filtering hid failure');
-    } else if (statusText !== 'Showing 0 of 0 ingredients') throw Error(name + ': legitimate empty data rejected');
+    } else if (statusText !== `Showing ${data.ingredients.length} of ${data.ingredients.length} ingredients`) throw Error(name + ': legitimate empty data rejected');
   }
 })().catch(error => {console.error(error); process.exitCode=1});
 """.replace("SOURCE", json.dumps(script))
