@@ -115,3 +115,27 @@ def test_pages_and_required_check_build_the_same_public_artifact():
     assert "data/ingredients/**" in triggers["push"]["paths"]
     ci = yaml.safe_load((ROOT / ".github/workflows/qc-flat-coverage.yaml").read_text())
     assert any("build_pages_site.py" in s.get("run", "") for s in ci["jobs"]["qc"]["steps"])
+
+
+@pytest.mark.parametrize(
+    "dependency",
+    [
+        "micro_source.py",
+        "ontology_sources/micro/manifest.json",
+        "synonym_policy.py",
+        "utils/yaml_handler.py",
+    ],
+)
+def test_checker_rejects_dependency_only_drift(corpus, builder, tmp_path, monkeypatch, dependency):
+    import shutil
+
+    repo, _ = corpus
+    package = tmp_path / "package"
+    shutil.copytree(builder.PACKAGE_ROOT, package, ignore=shutil.ignore_patterns("__pycache__"))
+    monkeypatch.setattr(builder, "PACKAGE_ROOT", package)
+    output = tmp_path / "site"
+    builder.build_site(repo, output)
+    changed = package / dependency
+    changed.write_text(changed.read_text() + "\n")
+    with pytest.raises(ValueError, match="build inputs are stale"):
+        builder.check_site(repo, output)

@@ -19,6 +19,8 @@ import browser_export  # noqa: E402
 
 from mediaingredientmech import render_ingredient_pages as render  # noqa: E402
 
+PACKAGE_ROOT = Path(render.__file__).resolve().parent
+
 
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -43,6 +45,15 @@ def build_inputs(repo: Path) -> dict[str, str]:
             "template/" + p.relative_to(render.TEMPLATES_DIR).as_posix(): p
             for p in render.TEMPLATES_DIR.rglob("*")
             if p.is_file()
+        }
+    )
+    # Local renderer/exporter dependencies affect scientific labels and URLs too.
+    # Exclude interpreter caches, which are unrelated to the generated content.
+    files.update(
+        {
+            "package/" + p.relative_to(PACKAGE_ROOT).as_posix(): p
+            for p in PACKAGE_ROOT.rglob("*")
+            if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"
         }
     )
     files.update(

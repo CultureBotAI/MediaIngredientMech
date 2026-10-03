@@ -9,7 +9,8 @@ including source directory, so mapped and unmapped names cannot collide.
 From a source checkout, run `uv run python scripts/build_pages_site.py --output site`.
 The output must not exist. The builder stages all output, renders every current
 source with `force=True`, and verifies catalog coverage, unique URLs, source hashes,
-renderer/template hashes, and generated-page hashes before publishing the directory.
+renderer/template and local package dependency hashes (including pinned ontology
+resources), and generated-page hashes before publishing the directory.
 `--check site` verifies an existing artifact and fails for missing or stale records.
 The required flat-export coverage job runs the same complete build before merge.
 No generated detail pages are committed; data changes trigger a fresh Pages build.
