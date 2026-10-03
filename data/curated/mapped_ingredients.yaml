@@ -1,4 +1,4 @@
-generation_date: '2026-09-25T04:55:23.734411+00:00'
+generation_date: '2026-10-03T07:26:44.032096+00:00'
 total_count: 2680
 mapped_count: 2611
 unmapped_count: 0
@@ -48611,13 +48611,16 @@ ingredients:
   - synonym_text: Ca(NO3)2•4H2O
     synonym_type: RAW_TEXT
     source: culturemech:output/ingredient_occurrences.tsv
+  - synonym_text: 'Ca(NO3)2•4H2O(CAS: 13477-34-4)'
+    synonym_type: RAW_TEXT
+    source: CultureMech
   - synonym_text: (1)  Ca(NO3)2
     synonym_type: RAW_TEXT
     source: sssom_other_backfill
   mapping_status: MAPPED
   occurrence_statistics:
-    total_occurrences: 199
-    media_count: 199
+    total_occurrences: 202
+    media_count: 202
   curation_history:
   - timestamp: '2026-03-09T06:54:18.022301+00:00'
     curator: import_from_culturemech
@@ -48729,6 +48732,14 @@ ingredients:
       but no curated record did, so a rebuild would have dropped them from KGX: ''(1)  Ca(NO3)2''.
       Tokens already present on the kg-microbe ontology node were left out as redundant
       (#520).'
+    llm_assisted: false
+  - timestamp: '2026-10-03T07:30:00+00:00'
+    curator: yaml_record_review
+    action: MERGED_SOURCE_OCCURRENCE
+    changes: Moved the CAS-qualified Ca(NO3)2•4H2O source label and three CultureMech
+      occurrences from stale UNMAPPED_0049 onto this calcium nitrate tetrahydrate
+      identity; the truncated Ca placeholder was retired instead of mapping to elemental
+      calcium.
     llm_assisted: false
   chemical_properties:
     cas_rn: 13477-34-4
@@ -86496,56 +86507,6 @@ ingredients:
     molecular_formula: C22H16O12
     inchi: InChI=1S/C22H16O12/c1-8-5-12(24)10(6-23)19-15(8)22(31)34-20-11(7-32-14(27)4-3-13(25)26)17(28)16(21(29)30)9(2)18(20)33-19/h3-6,24,28H,7H2,1-2H3,(H,25,26)(H,29,30)/b4-3+
     smiles: Cc1cc(O)c(C=O)c2c1C(=O)Oc1c(COC(=O)/C=C/C(=O)O)c(O)c(C(=O)O)c(C)c1O2
-  ingredient_type: SINGLE_INGREDIENT
-- identifier: cas:3759-92-1
-  preferred_term: Furaltadone hydrochloride
-  ontology_mapping:
-    ontology_id: NCIT:C217928
-    ontology_label: Furaltadone Hydrochloride
-    ontology_source: NCIT
-    mapping_quality: NARROW_MATCH
-    evidence:
-    - evidence_type: DATABASE_MATCH
-      source: CultureBotHT
-      notes: 'Imported from CultureBotHT. CAS-RN 3759-92-1 present, but no CHEBI entry
-        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
-        Hans80Anti. Curator can promote to a CHEBI primary if/when CHEBI adds the
-        term.'
-    - evidence_type: DATABASE_MATCH
-      source: NCIT via OLS (label-exact)
-      notes: Parent class identified via label-exact; matched_via='Furaltadone hydrochloride'
-  synonyms: []
-  mapping_status: MAPPED
-  occurrence_statistics:
-    total_occurrences: 0
-    media_count: 0
-  curation_history:
-  - timestamp: '2026-04-29T06:51:33.117170+00:00'
-    curator: audit_add_remaining_culturebotht
-    action: CREATED_FROM_CAS_FALLBACK
-    changes: Created with cas:3759-92-1 as primary identifier; no CHEBI entry exists
-      for this compound.
-    new_status: MAPPED
-    llm_assisted: false
-  - timestamp: '2026-05-01T07:35:33.711965+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
-    llm_assisted: false
-  - timestamp: '2026-05-02T03:12:14.599581+00:00'
-    curator: auto_classify_ingredient_type
-    action: AUTO_CLASSIFY_INGREDIENT_TYPE
-    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
-    llm_assisted: false
-  - timestamp: '2026-05-02T04:47:47.724637+00:00'
-    curator: backfill_parent_terms
-    action: BACKFILL_PARENT_NCIT
-    changes: set ontology_mapping parent=NCIT:C217928 (label-exact)
-    llm_assisted: false
-  chemical_properties:
-    cas_rn: 3759-92-1
-    data_source: CultureBotHT compounds_to_cas.csv
-    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
   ingredient_type: SINGLE_INGREDIENT
 - identifier: CHEBI:207496
   preferred_term: Furfuryl Alcohol
@@ -221478,3 +221439,62 @@ ingredients:
     - reference_type: COMPUTATIONAL_PREDICTION
       reference_text: Inferred from curated media-role name pattern
       curator_note: Provisional role from a curated name-pattern rule; review recommended.
+- identifier: NCIT:C217928
+  preferred_term: Furaltadone hydrochloride
+  ontology_mapping:
+    ontology_id: NCIT:C217928
+    ontology_label: Furaltadone Hydrochloride
+    ontology_source: NCIT
+    mapping_quality: EXACT_MATCH
+    evidence:
+    - evidence_type: DATABASE_MATCH
+      source: CultureBotHT
+      notes: 'Imported from CultureBotHT. CAS-RN 3759-92-1 present, but no CHEBI entry
+        exists (checked OAK CHEBI sqlite + PubChem CID synonyms). FEBA/Hans80 panels:
+        Hans80Anti. Curator can promote to a CHEBI primary if/when CHEBI adds the
+        term.'
+    - evidence_type: DATABASE_MATCH
+      source: NCIT via OLS (label-exact)
+      notes: Parent class identified via label-exact; matched_via='Furaltadone hydrochloride'
+  synonyms: []
+  mapping_status: MAPPED
+  occurrence_statistics:
+    total_occurrences: 0
+    media_count: 0
+  curation_history:
+  - timestamp: '2026-04-29T06:51:33.117170+00:00'
+    curator: audit_add_remaining_culturebotht
+    action: CREATED_FROM_CAS_FALLBACK
+    changes: Created with cas:3759-92-1 as primary identifier; no CHEBI entry exists
+      for this compound.
+    new_status: MAPPED
+    llm_assisted: false
+  - timestamp: '2026-05-01T07:35:33.711965+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-05-02T03:12:14.599581+00:00'
+    curator: auto_classify_ingredient_type
+    action: AUTO_CLASSIFY_INGREDIENT_TYPE
+    changes: 'set ingredient_type=SINGLE_INGREDIENT (cas: primary (defined chemical))'
+    llm_assisted: false
+  - timestamp: '2026-05-02T04:47:47.724637+00:00'
+    curator: backfill_parent_terms
+    action: BACKFILL_PARENT_NCIT
+    changes: set ontology_mapping parent=NCIT:C217928 (label-exact)
+    llm_assisted: false
+  - timestamp: '2026-10-03T07:30:00+00:00'
+    curator: yaml_record_review
+    action: PROMOTED_TO_EXACT_NCIT
+    changes: Promoted NCIT:C217928 to the exact primary identifier because its label
+      exactly matches furaltadone hydrochloride; the unverified CAS registry CURIE
+      should no longer be emitted as the SSSOM identity row.
+    previous_status: MAPPED
+    new_status: MAPPED
+    llm_assisted: false
+  chemical_properties:
+    cas_rn: 3759-92-1
+    data_source: CultureBotHT compounds_to_cas.csv
+    retrieval_date: '2026-04-29T06:51:33.117170+00:00'
+  ingredient_type: SINGLE_INGREDIENT

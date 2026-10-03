@@ -1,10 +1,10 @@
-identifier: cas:3759-92-1
+identifier: NCIT:C217928
 preferred_term: Furaltadone hydrochloride
 ontology_mapping:
   ontology_id: NCIT:C217928
   ontology_label: Furaltadone Hydrochloride
   ontology_source: NCIT
-  mapping_quality: NARROW_MATCH
+  mapping_quality: EXACT_MATCH
   evidence:
   - evidence_type: DATABASE_MATCH
     source: CultureBotHT
@@ -41,6 +41,15 @@ curation_history:
   curator: backfill_parent_terms
   action: BACKFILL_PARENT_NCIT
   changes: set ontology_mapping parent=NCIT:C217928 (label-exact)
+  llm_assisted: false
+- timestamp: '2026-10-03T07:30:00+00:00'
+  curator: yaml_record_review
+  action: PROMOTED_TO_EXACT_NCIT
+  changes: Promoted NCIT:C217928 to the exact primary identifier because its label
+    exactly matches furaltadone hydrochloride; the unverified CAS registry CURIE should
+    no longer be emitted as the SSSOM identity row.
+  previous_status: MAPPED
+  new_status: MAPPED
   llm_assisted: false
 chemical_properties:
   cas_rn: 3759-92-1

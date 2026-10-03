@@ -1,8 +1,8 @@
 # Complete Ingredients Index
 **Total Records**: 2953
 **Mapped**: 2611 (88.4%)
-**Unmapped**: 261 (8.8%)
-**Other statuses**: 81 (2.7%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
+**Unmapped**: 260 (8.8%)
+**Other statuses**: 82 (2.8%) — REJECTED, NEEDS_EXPERT, PENDING_REVIEW, IN_PROGRESS, AMBIGUOUS
 **Total Occurrences**: 218,247
 
 ---
@@ -619,7 +619,7 @@
 | CHEBI:134107 | CHIR-090 | CHEBI:134107 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:31340 | Ca-folinate | CHEBI:31340 | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:64205 | Ca(NO3)2 | CHEBI:64205 | CHEBI | EXACT_MATCH | 37 |
-| CHEBI:86159 | Ca(NO3)2 x 4 H2O | CHEBI:86159 | CHEBI | EXACT_MATCH | 199 |
+| CHEBI:86159 | Ca(NO3)2 x 4 H2O | CHEBI:86159 | CHEBI | EXACT_MATCH | 202 |
 | CHEBI:3312 | CaCl2 | CHEBI:3312 | CHEBI | EXACT_MATCH | 1052 |
 | CHEBI:86158 | CaCl2 x 2 H2O | CHEBI:86158 | CHEBI | EXACT_MATCH | 6013 |
 | CHEBI:91243 | CaCl2 x 6 H2O | CHEBI:91243 | CHEBI | EXACT_MATCH | 70 |
@@ -1016,7 +1016,6 @@
 | CHEBI:33984 | Fucose | CHEBI:33984 | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:18012 | Fumaric acid | CHEBI:18012 | CHEBI | EXACT_MATCH | 10 |
 | CHEBI:144157 | Fumarprotocetraric Acid | CHEBI:144157 | CHEBI | EXACT_MATCH | 0 |
-| cas:3759-92-1 | Furaltadone hydrochloride | NCIT:C217928 | NCIT | NARROW_MATCH | 0 |
 | CHEBI:207496 | Furfuryl Alcohol | CHEBI:207496 | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:5199 | Fusaric acid | CHEBI:5199 | CHEBI | EXACT_MATCH | 0 |
 | cas:751-94-0 | Fusidic acid sodium salt | CHEBI:29013 | CHEBI | NARROW_MATCH | 0 |
@@ -2622,6 +2621,7 @@
 | NCIT:C183132 | Zymosan | NCIT:C183132 | NCIT | EXACT_MATCH | 0 |
 | cas:144-33-2 | Na2-citrate | CHEBI:30769 | CHEBI | NARROW_MATCH | 3 |
 | CHEBI:39063 | Tricine | CHEBI:39063 | CHEBI | CAS_RN_LOOKUP | 44 |
+| NCIT:C217928 | Furaltadone hydrochloride | NCIT:C217928 | NCIT | EXACT_MATCH | 0 |
 
 ## Unmapped Ingredients
 
@@ -2675,7 +2675,6 @@
 | UNMAPPED_0023 | Bristol Medium | UNMAPPED | 6 |
 | UNMAPPED_0348 | Brucella Broth | UNMAPPED | 0 |
 | UNMAPPED_0359 | CMRL 1066 | UNMAPPED | 0 |
-| UNMAPPED_0049 | Ca | UNMAPPED | 3 |
 | UNMAPPED_0156 | Cadmium-NTA | UNMAPPED | 0 |
 | UNMAPPED_0170 | Calf brains | UNMAPPED | 7 |
 | UNMAPPED_0229 | Calprotectin S1 | UNMAPPED | 0 |
@@ -2962,6 +2961,7 @@
 | CHEBI:18420 | Magnesium | REJECTED | CHEBI:18420 | CHEBI:18420 | 0 |
 | CHEBI:35697 | Cinnamic acid | REJECTED | CHEBI:35697 |  | 0 |
 | CHEBI:114249 | NaH2PO4•H2O | REJECTED | CHEBI:114249 |  | 0 |
+| UNMAPPED_0049 | Ca | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 0129 (2 | REJECTED |  |  | 0 |
 | UNMAPPED_0736 | 3-methylacetate | REJECTED |  |  | 0 |
 | kgmicrobe.compound:24-diamino-67-di-iso-propylpteridine_phosphate | 4-Diamino-6 | REJECTED |  |  | 0 |

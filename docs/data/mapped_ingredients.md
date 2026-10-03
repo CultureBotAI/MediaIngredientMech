@@ -1,6 +1,6 @@
 # Mapped Ingredients
 
-Generated: 2026-09-25T04:55:44.051137+00:00
+Generated: 2026-10-03T07:35:22.644177+00:00
 Total: 2680 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -624,7 +624,7 @@ Total: 2680 ingredients
 | CHEBI:31340 | CHEBI:31340 | Ca-folinate | MAPPED | CHEBI | EXACT_MATCH | 7 |
 | CHEBI:31345 | CHEBI:31345 | Ca-pantothenate | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:64205 | CHEBI:64205 | Ca(NO3)2 | MAPPED | CHEBI | EXACT_MATCH | 37 |
-| CHEBI:86159 | CHEBI:86159 | Ca(NO3)2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 199 |
+| CHEBI:86159 | CHEBI:86159 | Ca(NO3)2 x 4 H2O | MAPPED | CHEBI | EXACT_MATCH | 202 |
 | CHEBI:3312 | CHEBI:3312 | CaCl2 | MAPPED | CHEBI | EXACT_MATCH | 1052 |
 | CHEBI:86158 | CHEBI:86158 | CaCl22H2O | REJECTED | CHEBI | SYNONYM_MATCH | 0 |
 | CHEBI:86158 | CHEBI:86158 | CaCl2 x 2 H2O | MAPPED | CHEBI | EXACT_MATCH | 6013 |
@@ -1035,7 +1035,6 @@ Total: 2680 ingredients
 | CHEBI:33984 | CHEBI:33984 | Fucose | MAPPED | CHEBI | EXACT_MATCH | 2 |
 | CHEBI:18012 | CHEBI:18012 | Fumaric acid | MAPPED | CHEBI | EXACT_MATCH | 10 |
 | CHEBI:144157 | CHEBI:144157 | Fumarprotocetraric Acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
-| cas:3759-92-1 | NCIT:C217928 | Furaltadone hydrochloride | MAPPED | NCIT | NARROW_MATCH | 0 |
 | CHEBI:207496 | CHEBI:207496 | Furfuryl Alcohol | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | CHEBI:5199 | CHEBI:5199 | Fusaric acid | MAPPED | CHEBI | EXACT_MATCH | 0 |
 | cas:751-94-0 | CHEBI:29013 | Fusidic acid sodium salt | MAPPED | CHEBI | NARROW_MATCH | 0 |
@@ -2685,3 +2684,4 @@ Total: 2680 ingredients
 | NCIT:C183132 | NCIT:C183132 | Zymosan | MAPPED | NCIT | EXACT_MATCH | 0 |
 | cas:144-33-2 | CHEBI:30769 | Na2-citrate | MAPPED | CHEBI | NARROW_MATCH | 3 |
 | CHEBI:39063 | CHEBI:39063 | Tricine | MAPPED | CHEBI | CAS_RN_LOOKUP | 44 |
+| NCIT:C217928 | NCIT:C217928 | Furaltadone hydrochloride | MAPPED | NCIT | EXACT_MATCH | 0 |

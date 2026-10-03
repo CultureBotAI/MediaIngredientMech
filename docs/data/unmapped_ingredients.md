@@ -1,6 +1,6 @@
 # Unmapped Ingredients
 
-Generated: 2026-09-25T04:55:44.054392+00:00
+Generated: 2026-10-03T07:35:22.653326+00:00
 Total: 273 ingredients
 
 | Identifier | Ontology ID | Preferred Term | Status | Source | Quality | Occurrences |
@@ -53,7 +53,7 @@ Total: 273 ingredients
 | UNMAPPED_0023 |  | Bristol Medium | UNMAPPED |  |  | 6 |
 | UNMAPPED_0348 |  | Brucella Broth | UNMAPPED |  |  | 0 |
 | UNMAPPED_0359 |  | CMRL 1066 | UNMAPPED |  |  | 0 |
-| UNMAPPED_0049 |  | Ca | UNMAPPED |  |  | 3 |
+| UNMAPPED_0049 |  | Ca | REJECTED |  |  | 0 |
 | UNMAPPED_0156 |  | Cadmium-NTA | UNMAPPED |  |  | 0 |
 | UNMAPPED_0170 | UBERON:0000955 | Calf brains | UNMAPPED | UBERON | NARROW_MATCH | 7 |
 | UNMAPPED_0229 |  | Calprotectin S1 | UNMAPPED |  |  | 0 |

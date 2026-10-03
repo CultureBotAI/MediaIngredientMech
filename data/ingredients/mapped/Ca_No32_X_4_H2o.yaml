@@ -55,13 +55,16 @@ synonyms:
 - synonym_text: Ca(NO3)2•4H2O
   synonym_type: RAW_TEXT
   source: culturemech:output/ingredient_occurrences.tsv
+- synonym_text: 'Ca(NO3)2•4H2O(CAS: 13477-34-4)'
+  synonym_type: RAW_TEXT
+  source: CultureMech
 - synonym_text: (1)  Ca(NO3)2
   synonym_type: RAW_TEXT
   source: sssom_other_backfill
 mapping_status: MAPPED
 occurrence_statistics:
-  total_occurrences: 199
-  media_count: 199
+  total_occurrences: 202
+  media_count: 202
 curation_history:
 - timestamp: '2026-03-09T06:54:18.022301+00:00'
   curator: import_from_culturemech
@@ -172,6 +175,13 @@ curation_history:
     no curated record did, so a rebuild would have dropped them from KGX: ''(1)  Ca(NO3)2''.
     Tokens already present on the kg-microbe ontology node were left out as redundant
     (#520).'
+  llm_assisted: false
+- timestamp: '2026-10-03T07:30:00+00:00'
+  curator: yaml_record_review
+  action: MERGED_SOURCE_OCCURRENCE
+  changes: Moved the CAS-qualified Ca(NO3)2•4H2O source label and three CultureMech
+    occurrences from stale UNMAPPED_0049 onto this calcium nitrate tetrahydrate identity;
+    the truncated Ca placeholder was retired instead of mapping to elemental calcium.
   llm_assisted: false
 chemical_properties:
   cas_rn: 13477-34-4
